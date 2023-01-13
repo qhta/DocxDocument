@@ -55,6 +55,7 @@ public static class ScatterSerExtensionListConverter
     if (value != null)
     {
       var openXmlElement = new OpenXmlElementType();
+      SetScatterSerExtensions(openXmlElement, value?.ScatterSerExtensions);
       return openXmlElement;
     }
     return default;

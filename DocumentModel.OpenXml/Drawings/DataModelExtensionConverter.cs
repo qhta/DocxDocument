@@ -94,6 +94,8 @@ public static class DataModelExtensionConverter
     {
       var openXmlElement = new OpenXmlElementType();
       SetUri(openXmlElement, value?.Uri);
+      SetDataModelExtensionBlock(openXmlElement, value?.DataModelExtensionBlock);
+      SetRecolorImages(openXmlElement, value?.RecolorImages);
       return openXmlElement;
     }
     return default;

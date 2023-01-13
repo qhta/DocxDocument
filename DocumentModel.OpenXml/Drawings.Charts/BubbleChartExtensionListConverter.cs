@@ -55,6 +55,7 @@ public static class BubbleChartExtensionListConverter
     if (value != null)
     {
       var openXmlElement = new OpenXmlElementType();
+      SetBubbleChartExtensions(openXmlElement, value?.BubbleChartExtensions);
       return openXmlElement;
     }
     return default;

@@ -276,6 +276,16 @@ public static class FormFieldDataConverter
     if (value != null)
     {
       var openXmlElement = new OpenXmlElementType();
+      SetFormFieldName(openXmlElement, value?.FormFieldName);
+      SetEnabled(openXmlElement, value?.Enabled);
+      SetCalculateOnExit(openXmlElement, value?.CalculateOnExit);
+      SetEntryMacro(openXmlElement, value?.EntryMacro);
+      SetExitMacro(openXmlElement, value?.ExitMacro);
+      SetHelpText(openXmlElement, value?.HelpText);
+      SetStatusText(openXmlElement, value?.StatusText);
+      SetCheckBox(openXmlElement, value?.CheckBox);
+      SetDropDownListFormField(openXmlElement, value?.DropDownListFormField);
+      SetTextInput(openXmlElement, value?.TextInput);
       return openXmlElement;
     }
     return default;

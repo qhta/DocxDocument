@@ -55,6 +55,7 @@ public static class PieSerExtensionListConverter
     if (value != null)
     {
       var openXmlElement = new OpenXmlElementType();
+      SetPieSerExtensions(openXmlElement, value?.PieSerExtensions);
       return openXmlElement;
     }
     return default;

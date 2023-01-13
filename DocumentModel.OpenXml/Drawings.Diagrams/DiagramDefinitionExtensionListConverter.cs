@@ -55,6 +55,7 @@ public static class DiagramDefinitionExtensionListConverter
     if (value != null)
     {
       var openXmlElement = new OpenXmlElementType();
+      SetDiagramDefinitionExtensions(openXmlElement, value?.DiagramDefinitionExtensions);
       return openXmlElement;
     }
     return default;

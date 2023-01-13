@@ -46,6 +46,7 @@ public static class MinorGridlinesConverter
     if (value != null)
     {
       var openXmlElement = new OpenXmlElementType();
+      SetChartShapeProperties(openXmlElement, value?.ChartShapeProperties);
       return openXmlElement;
     }
     return default;

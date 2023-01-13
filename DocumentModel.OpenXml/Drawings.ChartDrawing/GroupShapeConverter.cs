@@ -204,6 +204,11 @@ public static class GroupShapeConverter
       var openXmlElement = new OpenXmlElementType();
       SetNonVisualGroupShapeProperties(openXmlElement, value?.NonVisualGroupShapeProperties);
       SetGroupShapeProperties(openXmlElement, value?.GroupShapeProperties);
+      SetShape(openXmlElement, value?.Shape);
+      SetChildGroupShape(openXmlElement, value?.ChildGroupShape);
+      SetGraphicFrame(openXmlElement, value?.GraphicFrame);
+      SetConnectionShape(openXmlElement, value?.ConnectionShape);
+      SetPicture(openXmlElement, value?.Picture);
       return openXmlElement;
     }
     return default;

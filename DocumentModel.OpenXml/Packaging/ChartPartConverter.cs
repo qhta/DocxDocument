@@ -29,12 +29,20 @@ public static class ChartPartConverter
   /// </summary>
   public static DocumentModel.Drawings.Charts.ChartSpace? GetChartSpace(DocumentFormat.OpenXml.Packaging.ChartPart? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented in GeneratePropertyGetter: 1");
+    if (openXmlElement?.RootElement is DocumentFormat.OpenXml.Drawing.Charts.ChartSpace rootElement)
+      return DocumentModel.OpenXml.Drawings.Charts.ChartSpaceConverter.CreateModelElement(rootElement);
+    return null;
   }
   
   public static void SetChartSpace(DocumentFormat.OpenXml.Packaging.ChartPart? openXmlElement, DocumentModel.Drawings.Charts.ChartSpace? value)
   {
-    throw new NotImplementedException("Not implemented in GeneratePropertySetter: 1");
+    if (openXmlElement != null)
+      if (value != null)
+      {
+         var rootElement = DocumentModel.OpenXml.Drawings.Charts.ChartSpaceConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Charts.ChartSpace>(value);
+         if (rootElement != null)
+           openXmlElement.ChartSpace = rootElement;
+      }
   }
   
   /// <summary>
@@ -107,7 +115,12 @@ public static class ChartPartConverter
     if (value != null)
     {
       var openXmlElement = new OpenXmlElementType();
+      //SetChartColorStyleParts(openXmlElement, value?.ChartColorStyleParts);
       SetChartSpace(openXmlElement, value?.ChartSpace);
+      //SetChartStyleParts(openXmlElement, value?.ChartStyleParts);
+      //SetContentType(openXmlElement, value?.ContentType);
+      //SetImageParts(openXmlElement, value?.ImageParts);
+      //SetRelationshipType(openXmlElement, value?.RelationshipType);
       return openXmlElement;
     }
     return default;

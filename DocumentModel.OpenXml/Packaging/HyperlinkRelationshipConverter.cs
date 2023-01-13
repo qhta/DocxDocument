@@ -30,6 +30,7 @@ public static class HyperlinkRelationshipConverter
     if (value != null)
     {
       var openXmlElement = new OpenXmlElementType();
+      //SetRelationshipType(openXmlElement, value?.RelationshipType);
       return openXmlElement;
     }
     return default;

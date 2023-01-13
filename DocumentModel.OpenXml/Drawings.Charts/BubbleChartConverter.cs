@@ -284,6 +284,14 @@ public static class BubbleChartConverter
     {
       var openXmlElement = new OpenXmlElementType();
       SetVaryColors(openXmlElement, value?.VaryColors);
+      SetBubbleChartSerieses(openXmlElement, value?.BubbleChartSerieses);
+      SetDataLabels(openXmlElement, value?.DataLabels);
+      SetBubble3D(openXmlElement, value?.Bubble3D);
+      SetBubbleScale(openXmlElement, value?.BubbleScale);
+      SetShowNegativeBubbles(openXmlElement, value?.ShowNegativeBubbles);
+      SetSizeRepresents(openXmlElement, value?.SizeRepresents);
+      SetAxisIds(openXmlElement, value?.AxisIds);
+      SetBubbleChartExtensionList(openXmlElement, value?.BubbleChartExtensionList);
       return openXmlElement;
     }
     return default;

@@ -146,6 +146,11 @@ public static class ControlPropertiesConverter
     if (value != null)
     {
       var openXmlElement = new OpenXmlElementType();
+      SetRunProperties(openXmlElement, value?.RunProperties);
+      SetInsertedMathControl(openXmlElement, value?.InsertedMathControl);
+      SetDeletedMathControl(openXmlElement, value?.DeletedMathControl);
+      SetMoveFromMathControl(openXmlElement, value?.MoveFromMathControl);
+      SetMoveToMathControl(openXmlElement, value?.MoveToMathControl);
       return openXmlElement;
     }
     return default;

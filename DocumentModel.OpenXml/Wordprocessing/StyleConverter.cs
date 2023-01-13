@@ -776,6 +776,7 @@ public static class StyleConverter
       SetStyleTableProperties(openXmlElement, value?.StyleTableProperties);
       SetTableStyleConditionalFormattingTableRowProperties(openXmlElement, value?.TableStyleConditionalFormattingTableRowProperties);
       SetStyleTableCellProperties(openXmlElement, value?.StyleTableCellProperties);
+      SetTableStylePropertieses(openXmlElement, value?.TableStylePropertieses);
       return openXmlElement;
     }
     return default;

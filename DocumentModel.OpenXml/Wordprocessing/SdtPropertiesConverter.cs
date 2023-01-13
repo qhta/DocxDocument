@@ -801,6 +801,35 @@ public static class SdtPropertiesConverter
     if (value != null)
     {
       var openXmlElement = new OpenXmlElementType();
+      SetRunProperties(openXmlElement, value?.RunProperties);
+      SetSdtAlias(openXmlElement, value?.SdtAlias);
+      SetLock(openXmlElement, value?.Lock);
+      SetSdtPlaceholder(openXmlElement, value?.SdtPlaceholder);
+      SetShowingPlaceholder(openXmlElement, value?.ShowingPlaceholder);
+      SetDataBinding(openXmlElement, value?.DataBinding);
+      SetTemporarySdt(openXmlElement, value?.TemporarySdt);
+      SetSdtId(openXmlElement, value?.SdtId);
+      SetTag(openXmlElement, value?.Tag);
+      SetColor(openXmlElement, value?.Color);
+      SetAppearance(openXmlElement, value?.Appearance);
+      SetWebExtensionLinked(openXmlElement, value?.WebExtensionLinked);
+      SetWebExtensionCreated(openXmlElement, value?.WebExtensionCreated);
+      SetSdtContentEquation(openXmlElement, value?.SdtContentEquation);
+      SetSdtContentComboBox(openXmlElement, value?.SdtContentComboBox);
+      SetSdtContentDate(openXmlElement, value?.SdtContentDate);
+      SetSdtContentDocPartObject(openXmlElement, value?.SdtContentDocPartObject);
+      SetSdtContentDocPartList(openXmlElement, value?.SdtContentDocPartList);
+      SetSdtContentDropDownList(openXmlElement, value?.SdtContentDropDownList);
+      SetSdtContentPicture(openXmlElement, value?.SdtContentPicture);
+      SetSdtContentRichText(openXmlElement, value?.SdtContentRichText);
+      SetSdtContentText(openXmlElement, value?.SdtContentText);
+      SetSdtContentCitation(openXmlElement, value?.SdtContentCitation);
+      SetSdtContentGroup(openXmlElement, value?.SdtContentGroup);
+      SetSdtContentBibliography(openXmlElement, value?.SdtContentBibliography);
+      SetEntityPickerEmpty(openXmlElement, value?.EntityPickerEmpty);
+      SetSdtContentCheckBox(openXmlElement, value?.SdtContentCheckBox);
+      SetSdtRepeatedSection(openXmlElement, value?.SdtRepeatedSection);
+      SetSdtRepeatedSectionItem(openXmlElement, value?.SdtRepeatedSectionItem);
       return openXmlElement;
     }
     return default;

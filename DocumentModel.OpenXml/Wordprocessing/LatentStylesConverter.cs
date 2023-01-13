@@ -163,6 +163,7 @@ public static class LatentStylesConverter
       SetDefaultUnhideWhenUsed(openXmlElement, value?.DefaultUnhideWhenUsed);
       SetDefaultPrimaryStyle(openXmlElement, value?.DefaultPrimaryStyle);
       SetCount(openXmlElement, value?.Count);
+      SetLatentStyleExceptionInfos(openXmlElement, value?.LatentStyleExceptionInfos);
       return openXmlElement;
     }
     return default;

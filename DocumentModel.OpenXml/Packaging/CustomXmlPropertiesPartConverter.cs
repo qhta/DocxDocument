@@ -15,12 +15,20 @@ public static class CustomXmlPropertiesPartConverter
   /// </summary>
   public static DocumentModel.CustomXml.DataStoreItem? GetDataStoreItem(DocumentFormat.OpenXml.Packaging.CustomXmlPropertiesPart? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented in GeneratePropertyGetter: 1");
+    if (openXmlElement?.RootElement is DocumentFormat.OpenXml.CustomXmlDataProperties.DataStoreItem rootElement)
+      return DocumentModel.OpenXml.CustomXml.DataStoreItemConverter.CreateModelElement(rootElement);
+    return null;
   }
   
   public static void SetDataStoreItem(DocumentFormat.OpenXml.Packaging.CustomXmlPropertiesPart? openXmlElement, DocumentModel.CustomXml.DataStoreItem? value)
   {
-    throw new NotImplementedException("Not implemented in GeneratePropertySetter: 1");
+    if (openXmlElement != null)
+      if (value != null)
+      {
+         var rootElement = DocumentModel.OpenXml.CustomXml.DataStoreItemConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.CustomXmlDataProperties.DataStoreItem>(value);
+         if (rootElement != null)
+           openXmlElement.DataStoreItem = rootElement;
+      }
   }
   
   public static String? GetRelationshipType(DocumentFormat.OpenXml.Packaging.CustomXmlPropertiesPart? openXmlElement)
@@ -47,7 +55,9 @@ public static class CustomXmlPropertiesPartConverter
     if (value != null)
     {
       var openXmlElement = new OpenXmlElementType();
+      //SetContentType(openXmlElement, value?.ContentType);
       SetDataStoreItem(openXmlElement, value?.DataStoreItem);
+      //SetRelationshipType(openXmlElement, value?.RelationshipType);
       return openXmlElement;
     }
     return default;

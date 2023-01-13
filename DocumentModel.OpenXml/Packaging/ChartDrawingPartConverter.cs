@@ -39,12 +39,20 @@ public static class ChartDrawingPartConverter
   /// </summary>
   public static DocumentModel.Drawings.Charts.UserShapes? GetUserShapes(DocumentFormat.OpenXml.Packaging.ChartDrawingPart? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented in GeneratePropertyGetter: 1");
+    if (openXmlElement?.RootElement is DocumentFormat.OpenXml.Drawing.Charts.UserShapes rootElement)
+      return DocumentModel.OpenXml.Drawings.Charts.UserShapesConverter.CreateModelElement(rootElement);
+    return null;
   }
   
   public static void SetUserShapes(DocumentFormat.OpenXml.Packaging.ChartDrawingPart? openXmlElement, DocumentModel.Drawings.Charts.UserShapes? value)
   {
-    throw new NotImplementedException("Not implemented in GeneratePropertySetter: 1");
+    if (openXmlElement != null)
+      if (value != null)
+      {
+         var rootElement = DocumentModel.OpenXml.Drawings.Charts.UserShapesConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Charts.UserShapes>(value);
+         if (rootElement != null)
+           openXmlElement.UserShapes = rootElement;
+      }
   }
   
   public static DocumentModel.Packaging.ChartDrawingPart? CreateModelElement(DocumentFormat.OpenXml.Packaging.ChartDrawingPart? openXmlElement)
@@ -67,6 +75,9 @@ public static class ChartDrawingPartConverter
     if (value != null)
     {
       var openXmlElement = new OpenXmlElementType();
+      //SetContentType(openXmlElement, value?.ContentType);
+      //SetImageParts(openXmlElement, value?.ImageParts);
+      //SetRelationshipType(openXmlElement, value?.RelationshipType);
       SetUserShapes(openXmlElement, value?.UserShapes);
       return openXmlElement;
     }

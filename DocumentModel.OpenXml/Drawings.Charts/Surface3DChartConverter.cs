@@ -205,6 +205,10 @@ public static class Surface3DChartConverter
       var openXmlElement = new OpenXmlElementType();
       SetWireframe(openXmlElement, value?.Wireframe);
       SetVaryColors(openXmlElement, value?.VaryColors);
+      SetSurfaceChartSerieses(openXmlElement, value?.SurfaceChartSerieses);
+      SetBandFormats(openXmlElement, value?.BandFormats);
+      SetAxisIds(openXmlElement, value?.AxisIds);
+      SetSurface3DChartExtensionList(openXmlElement, value?.Surface3DChartExtensionList);
       return openXmlElement;
     }
     return default;

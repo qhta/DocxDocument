@@ -146,6 +146,11 @@ public static class ShapeTreeConverter
     if (value != null)
     {
       var openXmlElement = new OpenXmlElementType();
+      SetGroupShapeNonVisualProperties(openXmlElement, value?.GroupShapeNonVisualProperties);
+      SetGroupShapeProperties(openXmlElement, value?.GroupShapeProperties);
+      SetShape(openXmlElement, value?.Shape);
+      SetGroupShape(openXmlElement, value?.GroupShape);
+      SetOfficeArtExtensionList(openXmlElement, value?.OfficeArtExtensionList);
       return openXmlElement;
     }
     return default;

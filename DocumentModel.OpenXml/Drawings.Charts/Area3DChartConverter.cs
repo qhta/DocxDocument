@@ -255,6 +255,12 @@ public static class Area3DChartConverter
       var openXmlElement = new OpenXmlElementType();
       SetGrouping(openXmlElement, value?.Grouping);
       SetVaryColors(openXmlElement, value?.VaryColors);
+      SetAreaChartSerieses(openXmlElement, value?.AreaChartSerieses);
+      SetDataLabels(openXmlElement, value?.DataLabels);
+      SetDropLines(openXmlElement, value?.DropLines);
+      SetGapDepth(openXmlElement, value?.GapDepth);
+      SetAxisIds(openXmlElement, value?.AxisIds);
+      SetArea3DChartExtensionList(openXmlElement, value?.Area3DChartExtensionList);
       return openXmlElement;
     }
     return default;

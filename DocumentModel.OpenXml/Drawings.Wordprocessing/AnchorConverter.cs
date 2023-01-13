@@ -635,6 +635,15 @@ public static class AnchorConverter
       SetVerticalPosition(openXmlElement, value?.VerticalPosition);
       SetExtent(openXmlElement, value?.Extent);
       SetEffectExtent(openXmlElement, value?.EffectExtent);
+      SetWrapNone(openXmlElement, value?.WrapNone);
+      SetWrapSquare(openXmlElement, value?.WrapSquare);
+      SetWrapTight(openXmlElement, value?.WrapTight);
+      SetWrapThrough(openXmlElement, value?.WrapThrough);
+      SetWrapTopBottom(openXmlElement, value?.WrapTopBottom);
+      SetDocProperties(openXmlElement, value?.DocProperties);
+      SetNonVisualGraphicFrameDrawingProperties(openXmlElement, value?.NonVisualGraphicFrameDrawingProperties);
+      SetGraphic(openXmlElement, value?.Graphic);
+      SetRelativeWidth(openXmlElement, value?.RelativeWidth);
       return openXmlElement;
     }
     return default;

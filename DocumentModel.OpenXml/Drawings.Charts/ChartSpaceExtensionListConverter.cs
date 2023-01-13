@@ -55,6 +55,7 @@ public static class ChartSpaceExtensionListConverter
     if (value != null)
     {
       var openXmlElement = new OpenXmlElementType();
+      SetChartSpaceExtensions(openXmlElement, value?.ChartSpaceExtensions);
       return openXmlElement;
     }
     return default;

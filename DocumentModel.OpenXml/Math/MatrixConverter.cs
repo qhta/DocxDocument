@@ -84,6 +84,7 @@ public static class MatrixConverter
     {
       var openXmlElement = new OpenXmlElementType();
       SetMatrixProperties(openXmlElement, value?.MatrixProperties);
+      SetMatrixRows(openXmlElement, value?.MatrixRows);
       return openXmlElement;
     }
     return default;

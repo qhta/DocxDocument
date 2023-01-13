@@ -115,6 +115,9 @@ public static class MultiLvlStrRefExtensionConverter
     {
       var openXmlElement = new OpenXmlElementType();
       SetUri(openXmlElement, value?.Uri);
+      SetFullReference(openXmlElement, value?.FullReference);
+      SetLevelReference(openXmlElement, value?.LevelReference);
+      SetFormulaReference(openXmlElement, value?.FormulaReference);
       return openXmlElement;
     }
     return default;

@@ -71,6 +71,8 @@ public static class MinorGridlinesGridlinesConverter
     if (value != null)
     {
       var openXmlElement = new OpenXmlElementType();
+      SetShapeProperties(openXmlElement, value?.ShapeProperties);
+      SetExtensionList(openXmlElement, value?.ExtensionList);
       return openXmlElement;
     }
     return default;

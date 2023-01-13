@@ -420,6 +420,14 @@ public static class BarChartSeries3Converter
       SetChartShapeProperties(openXmlElement, value?.ChartShapeProperties);
       SetInvertIfNegative(openXmlElement, value?.InvertIfNegative);
       SetPictureOptions(openXmlElement, value?.PictureOptions);
+      SetDataPoints(openXmlElement, value?.DataPoints);
+      SetDataLabels(openXmlElement, value?.DataLabels);
+      SetTrendlines(openXmlElement, value?.Trendlines);
+      SetErrorBars(openXmlElement, value?.ErrorBars);
+      SetCategoryAxisData(openXmlElement, value?.CategoryAxisData);
+      SetValues(openXmlElement, value?.Values);
+      SetShape(openXmlElement, value?.Shape);
+      SetBarSerExtensionList(openXmlElement, value?.BarSerExtensionList);
       return openXmlElement;
     }
     return default;

@@ -55,6 +55,7 @@ public static class CatAxExtensionListConverter
     if (value != null)
     {
       var openXmlElement = new OpenXmlElementType();
+      SetCatAxExtensions(openXmlElement, value?.CatAxExtensions);
       return openXmlElement;
     }
     return default;

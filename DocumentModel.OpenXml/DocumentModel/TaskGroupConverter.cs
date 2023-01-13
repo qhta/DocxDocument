@@ -375,6 +375,7 @@ public static class TaskGroupConverter
       SetShowLabel(openXmlElement, value?.ShowLabel);
       SetGetShowLabel(openXmlElement, value?.GetShowLabel);
       SetAllowedTaskSizes(openXmlElement, value?.AllowedTaskSizes);
+      SetTaskGroupCategories(openXmlElement, value?.TaskGroupCategories);
       return openXmlElement;
     }
     return default;

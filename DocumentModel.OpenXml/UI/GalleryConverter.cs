@@ -1024,6 +1024,8 @@ public static class GalleryConverter
       SetGetShowLabel(openXmlElement, value?.GetShowLabel);
       SetShowImage(openXmlElement, value?.ShowImage);
       SetGetShowImage(openXmlElement, value?.GetShowImage);
+      SetItems(openXmlElement, value?.Items);
+      SetUnsizedButtons(openXmlElement, value?.UnsizedButtons);
       return openXmlElement;
     }
     return default;

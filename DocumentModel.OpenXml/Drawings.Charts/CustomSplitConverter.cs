@@ -55,6 +55,7 @@ public static class CustomSplitConverter
     if (value != null)
     {
       var openXmlElement = new OpenXmlElementType();
+      SetSecondPiePoints(openXmlElement, value?.SecondPiePoints);
       return openXmlElement;
     }
     return default;

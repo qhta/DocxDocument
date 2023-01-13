@@ -55,6 +55,7 @@ public static class QuadraticBezierCurveToConverter
     if (value != null)
     {
       var openXmlElement = new OpenXmlElementType();
+      SetPoints(openXmlElement, value?.Points);
       return openXmlElement;
     }
     return default;

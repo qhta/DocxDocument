@@ -71,6 +71,7 @@ public static class RulesConverter
     {
       var openXmlElement = new OpenXmlElementType();
       SetExtension(openXmlElement, value?.Extension);
+      SetItems(openXmlElement, value?.Items);
       return openXmlElement;
     }
     return default;

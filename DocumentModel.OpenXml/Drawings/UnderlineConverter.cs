@@ -338,6 +338,18 @@ public static class UnderlineConverter
     if (value != null)
     {
       var openXmlElement = new OpenXmlElementType();
+      SetNoFill(openXmlElement, value?.NoFill);
+      SetSolidFill(openXmlElement, value?.SolidFill);
+      SetGradientFill(openXmlElement, value?.GradientFill);
+      SetPatternFill(openXmlElement, value?.PatternFill);
+      SetPresetDash(openXmlElement, value?.PresetDash);
+      SetCustomDash(openXmlElement, value?.CustomDash);
+      SetRound(openXmlElement, value?.Round);
+      SetLineJoinBevel(openXmlElement, value?.LineJoinBevel);
+      SetMiter(openXmlElement, value?.Miter);
+      SetHeadEnd(openXmlElement, value?.HeadEnd);
+      SetTailEnd(openXmlElement, value?.TailEnd);
+      SetLinePropertiesExtensionList(openXmlElement, value?.LinePropertiesExtensionList);
       return openXmlElement;
     }
     return default;

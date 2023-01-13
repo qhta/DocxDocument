@@ -80,6 +80,8 @@ public static class ClassificationLabelListConverter
     if (value != null)
     {
       var openXmlElement = new OpenXmlElementType();
+      SetClassificationLabels(openXmlElement, value?.ClassificationLabels);
+      SetClassificationExtensionList(openXmlElement, value?.ClassificationExtensionList);
       return openXmlElement;
     }
     return default;

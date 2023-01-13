@@ -456,6 +456,21 @@ public static class DataLabel3Converter
     {
       var openXmlElement = new OpenXmlElementType();
       SetIndex(openXmlElement, value?.Index);
+      SetDelete(openXmlElement, value?.Delete);
+      SetLayout(openXmlElement, value?.Layout);
+      SetChartText(openXmlElement, value?.ChartText);
+      SetNumberingFormat(openXmlElement, value?.NumberingFormat);
+      SetChartShapeProperties(openXmlElement, value?.ChartShapeProperties);
+      SetTextProperties(openXmlElement, value?.TextProperties);
+      SetDataLabelPosition(openXmlElement, value?.DataLabelPosition);
+      SetShowLegendKey(openXmlElement, value?.ShowLegendKey);
+      SetShowValue(openXmlElement, value?.ShowValue);
+      SetShowCategoryName(openXmlElement, value?.ShowCategoryName);
+      SetShowSeriesName(openXmlElement, value?.ShowSeriesName);
+      SetShowPercent(openXmlElement, value?.ShowPercent);
+      SetShowBubbleSize(openXmlElement, value?.ShowBubbleSize);
+      SetSeparator(openXmlElement, value?.Separator);
+      SetDLblExtensionList(openXmlElement, value?.DLblExtensionList);
       return openXmlElement;
     }
     return default;

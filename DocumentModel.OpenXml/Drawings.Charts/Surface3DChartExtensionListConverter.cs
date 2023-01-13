@@ -55,6 +55,7 @@ public static class Surface3DChartExtensionListConverter
     if (value != null)
     {
       var openXmlElement = new OpenXmlElementType();
+      SetSurface3DChartExtensions(openXmlElement, value?.Surface3DChartExtensions);
       return openXmlElement;
     }
     return default;

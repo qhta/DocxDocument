@@ -55,6 +55,7 @@ public static class NonVisualPicturePropertiesExtensionListConverter
     if (value != null)
     {
       var openXmlElement = new OpenXmlElementType();
+      SetNonVisualPicturePropertiesExtensions(openXmlElement, value?.NonVisualPicturePropertiesExtensions);
       return openXmlElement;
     }
     return default;

@@ -173,6 +173,11 @@ public static class DLblExtensionConverter
     {
       var openXmlElement = new OpenXmlElementType();
       SetUri(openXmlElement, value?.Uri);
+      SetDataLabelFieldTable(openXmlElement, value?.DataLabelFieldTable);
+      SetExceptionForSave(openXmlElement, value?.ExceptionForSave);
+      SetShowDataLabelsRange(openXmlElement, value?.ShowDataLabelsRange);
+      SetShapeProperties(openXmlElement, value?.ShapeProperties);
+      SetLayout(openXmlElement, value?.Layout);
       return openXmlElement;
     }
     return default;

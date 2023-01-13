@@ -55,6 +55,7 @@ public static class SerAxExtensionListConverter
     if (value != null)
     {
       var openXmlElement = new OpenXmlElementType();
+      SetSerAxExtensions(openXmlElement, value?.SerAxExtensions);
       return openXmlElement;
     }
     return default;

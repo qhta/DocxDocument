@@ -108,6 +108,8 @@ public static class MultiLevelStringCacheConverter
     {
       var openXmlElement = new OpenXmlElementType();
       SetPointCount(openXmlElement, value?.PointCount);
+      SetLevels(openXmlElement, value?.Levels);
+      SetExtensionList(openXmlElement, value?.ExtensionList);
       return openXmlElement;
     }
     return default;

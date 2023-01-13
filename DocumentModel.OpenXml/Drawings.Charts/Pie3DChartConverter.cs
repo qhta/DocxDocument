@@ -138,6 +138,9 @@ public static class Pie3DChartConverter
     {
       var openXmlElement = new OpenXmlElementType();
       SetVaryColors(openXmlElement, value?.VaryColors);
+      SetPieChartSerieses(openXmlElement, value?.PieChartSerieses);
+      SetDataLabels(openXmlElement, value?.DataLabels);
+      SetPie3DChartExtensionList(openXmlElement, value?.Pie3DChartExtensionList);
       return openXmlElement;
     }
     return default;

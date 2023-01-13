@@ -146,6 +146,10 @@ public static class StringDimensionConverter
     {
       var openXmlElement = new OpenXmlElementType();
       SetType(openXmlElement, value?.Type);
+      SetFormula(openXmlElement, value?.Formula);
+      SetNfFormula(openXmlElement, value?.NfFormula);
+      SetStringLevels(openXmlElement, value?.StringLevels);
+      SetStringLevel(openXmlElement, value?.StringLevel);
       return openXmlElement;
     }
     return default;

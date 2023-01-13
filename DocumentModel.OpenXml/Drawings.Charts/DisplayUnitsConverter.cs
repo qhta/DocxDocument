@@ -125,6 +125,10 @@ public static class DisplayUnitsConverter
     if (value != null)
     {
       var openXmlElement = new OpenXmlElementType();
+      SetCustomDisplayUnit(openXmlElement, value?.CustomDisplayUnit);
+      SetBuiltInUnit(openXmlElement, value?.BuiltInUnit);
+      SetDisplayUnitsLabel(openXmlElement, value?.DisplayUnitsLabel);
+      SetExtensionList(openXmlElement, value?.ExtensionList);
       return openXmlElement;
     }
     return default;

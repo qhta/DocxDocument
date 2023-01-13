@@ -164,6 +164,8 @@ public static class BlipFillConverter
       SetRotateWithShape(openXmlElement, value?.RotateWithShape);
       SetBlip(openXmlElement, value?.Blip);
       SetSourceRectangle(openXmlElement, value?.SourceRectangle);
+      SetTile(openXmlElement, value?.Tile);
+      SetStretch(openXmlElement, value?.Stretch);
       return openXmlElement;
     }
     return default;

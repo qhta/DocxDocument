@@ -46,6 +46,7 @@ public static class SdtEndCharPropertiesConverter
     if (value != null)
     {
       var openXmlElement = new OpenXmlElementType();
+      SetRunProperties(openXmlElement, value?.RunProperties);
       return openXmlElement;
     }
     return default;

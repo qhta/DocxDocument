@@ -46,6 +46,7 @@ public static class StyleDataConverter
     if (value != null)
     {
       var openXmlElement = new OpenXmlElementType();
+      SetDataModel(openXmlElement, value?.DataModel);
       return openXmlElement;
     }
     return default;

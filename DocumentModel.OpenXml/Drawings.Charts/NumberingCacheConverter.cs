@@ -128,6 +128,10 @@ public static class NumberingCacheConverter
     if (value != null)
     {
       var openXmlElement = new OpenXmlElementType();
+      SetFormatCode(openXmlElement, value?.FormatCode);
+      SetPointCount(openXmlElement, value?.PointCount);
+      SetNumericPoints(openXmlElement, value?.NumericPoints);
+      SetExtensionList(openXmlElement, value?.ExtensionList);
       return openXmlElement;
     }
     return default;

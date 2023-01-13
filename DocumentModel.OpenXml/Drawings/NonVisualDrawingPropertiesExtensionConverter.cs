@@ -219,6 +219,13 @@ public static class NonVisualDrawingPropertiesExtensionConverter
     {
       var openXmlElement = new OpenXmlElementType();
       SetUri(openXmlElement, value?.Uri);
+      SetCompatExtension(openXmlElement, value?.CompatExtension);
+      SetBackgroundProperties(openXmlElement, value?.BackgroundProperties);
+      SetCreationId(openXmlElement, value?.CreationId);
+      SetPredecessorDrawingElementReference(openXmlElement, value?.PredecessorDrawingElementReference);
+      SetDecorative(openXmlElement, value?.Decorative);
+      SetClassificationOutcome(openXmlElement, value?.ClassificationOutcome);
+      SetScriptLink(openXmlElement, value?.ScriptLink);
       return openXmlElement;
     }
     return default;

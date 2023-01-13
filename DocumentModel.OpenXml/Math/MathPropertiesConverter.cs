@@ -501,6 +501,10 @@ public static class MathPropertiesConverter
       SetPostSpacing(openXmlElement, value?.PostSpacing);
       SetInterSpacing(openXmlElement, value?.InterSpacing);
       SetIntraSpacing(openXmlElement, value?.IntraSpacing);
+      SetWrapIndent(openXmlElement, value?.WrapIndent);
+      SetWrapRight(openXmlElement, value?.WrapRight);
+      SetIntegralLimitLocation(openXmlElement, value?.IntegralLimitLocation);
+      SetNaryLimitLocation(openXmlElement, value?.NaryLimitLocation);
       return openXmlElement;
     }
     return default;

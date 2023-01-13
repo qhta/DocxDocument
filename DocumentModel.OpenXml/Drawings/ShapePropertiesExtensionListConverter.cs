@@ -55,6 +55,7 @@ public static class ShapePropertiesExtensionListConverter
     if (value != null)
     {
       var openXmlElement = new OpenXmlElementType();
+      SetShapePropertiesExtensions(openXmlElement, value?.ShapePropertiesExtensions);
       return openXmlElement;
     }
     return default;

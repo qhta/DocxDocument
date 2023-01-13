@@ -65,6 +65,7 @@ public static class ScatterChartExtensionConverter
     {
       var openXmlElement = new OpenXmlElementType();
       SetUri(openXmlElement, value?.Uri);
+      SetFilteredScatterSeries(openXmlElement, value?.FilteredScatterSeries);
       return openXmlElement;
     }
     return default;

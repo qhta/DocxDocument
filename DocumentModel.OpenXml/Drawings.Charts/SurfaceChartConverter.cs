@@ -172,6 +172,10 @@ public static class SurfaceChartConverter
     {
       var openXmlElement = new OpenXmlElementType();
       SetWireframe(openXmlElement, value?.Wireframe);
+      SetSurfaceChartSerieses(openXmlElement, value?.SurfaceChartSerieses);
+      SetBandFormats(openXmlElement, value?.BandFormats);
+      SetAxisIds(openXmlElement, value?.AxisIds);
+      SetSurfaceChartExtensionList(openXmlElement, value?.SurfaceChartExtensionList);
       return openXmlElement;
     }
     return default;

@@ -299,6 +299,7 @@ public static class TaskFormGroupConverter
       SetShowLabel(openXmlElement, value?.ShowLabel);
       SetGetShowLabel(openXmlElement, value?.GetShowLabel);
       SetAllowedTaskSizes(openXmlElement, value?.AllowedTaskSizes);
+      SetTaskFormGroupCategories(openXmlElement, value?.TaskFormGroupCategories);
       return openXmlElement;
     }
     return default;

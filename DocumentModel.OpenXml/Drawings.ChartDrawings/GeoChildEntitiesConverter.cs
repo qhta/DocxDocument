@@ -55,6 +55,7 @@ public static class GeoChildEntitiesConverter
     if (value != null)
     {
       var openXmlElement = new OpenXmlElementType();
+      SetGeoHierarchyEntities(openXmlElement, value?.GeoHierarchyEntities);
       return openXmlElement;
     }
     return default;

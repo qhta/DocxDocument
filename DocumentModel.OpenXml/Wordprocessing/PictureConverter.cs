@@ -394,6 +394,20 @@ public static class PictureConverter
     {
       var openXmlElement = new OpenXmlElementType();
       SetAnchorId(openXmlElement, value?.AnchorId);
+      SetGroup(openXmlElement, value?.Group);
+      SetImageFile(openXmlElement, value?.ImageFile);
+      SetLine(openXmlElement, value?.Line);
+      SetOval(openXmlElement, value?.Oval);
+      SetPolyLine(openXmlElement, value?.PolyLine);
+      SetRectangle(openXmlElement, value?.Rectangle);
+      SetRoundRectangle(openXmlElement, value?.RoundRectangle);
+      SetShape(openXmlElement, value?.Shape);
+      SetShapetype(openXmlElement, value?.Shapetype);
+      SetArc(openXmlElement, value?.Arc);
+      SetCurve(openXmlElement, value?.Curve);
+      SetOleObject(openXmlElement, value?.OleObject);
+      SetMovieReference(openXmlElement, value?.MovieReference);
+      SetControl(openXmlElement, value?.Control);
       return openXmlElement;
     }
     return default;

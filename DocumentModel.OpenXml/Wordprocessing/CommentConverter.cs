@@ -421,6 +421,18 @@ public static class CommentConverter
       SetAuthor(openXmlElement, value?.Author);
       SetDate(openXmlElement, value?.Date);
       SetId(openXmlElement, value?.Id);
+      SetAltChunks(openXmlElement, value?.AltChunks);
+      SetCustomXmlBlock(openXmlElement, value?.CustomXmlBlock);
+      SetSdtBlock(openXmlElement, value?.SdtBlock);
+      SetParagraphs(openXmlElement, value?.Paragraphs);
+      SetTables(openXmlElement, value?.Tables);
+      SetProofError(openXmlElement, value?.ProofError);
+      SetPermStart(openXmlElement, value?.PermStart);
+      SetPermEnd(openXmlElement, value?.PermEnd);
+      SetBookmarkStart(openXmlElement, value?.BookmarkStart);
+      SetBookmarkEnd(openXmlElement, value?.BookmarkEnd);
+      SetCommentRangeStart(openXmlElement, value?.CommentRangeStart);
+      SetCommentRangeEnd(openXmlElement, value?.CommentRangeEnd);
       return openXmlElement;
     }
     return default;

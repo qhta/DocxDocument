@@ -65,6 +65,7 @@ public static class RadarChartExtensionConverter
     {
       var openXmlElement = new OpenXmlElementType();
       SetUri(openXmlElement, value?.Uri);
+      SetFilteredRadarSeries(openXmlElement, value?.FilteredRadarSeries);
       return openXmlElement;
     }
     return default;

@@ -558,6 +558,13 @@ public static class TextBodyPropertiesConverter
       SetUpRight(openXmlElement, value?.UpRight);
       SetCompatibleLineSpacing(openXmlElement, value?.CompatibleLineSpacing);
       SetPresetTextWrap(openXmlElement, value?.PresetTextWrap);
+      SetNoAutoFit(openXmlElement, value?.NoAutoFit);
+      SetNormalAutoFit(openXmlElement, value?.NormalAutoFit);
+      SetShapeAutoFit(openXmlElement, value?.ShapeAutoFit);
+      SetScene3DType(openXmlElement, value?.Scene3DType);
+      SetShape3DType(openXmlElement, value?.Shape3DType);
+      SetFlatText(openXmlElement, value?.FlatText);
+      SetExtensionList(openXmlElement, value?.ExtensionList);
       return openXmlElement;
     }
     return default;

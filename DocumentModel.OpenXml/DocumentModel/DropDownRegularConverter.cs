@@ -830,6 +830,8 @@ public static class DropDownRegularConverter
       SetGetShowLabel(openXmlElement, value?.GetShowLabel);
       SetShowImage(openXmlElement, value?.ShowImage);
       SetGetShowImage(openXmlElement, value?.GetShowImage);
+      SetItems(openXmlElement, value?.Items);
+      SetButtonRegulars(openXmlElement, value?.ButtonRegulars);
       return openXmlElement;
     }
     return default;

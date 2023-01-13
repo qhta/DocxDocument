@@ -461,6 +461,15 @@ public static class DiagramChooseIfConverter
       SetArgument(openXmlElement, value?.Argument);
       SetOperator(openXmlElement, value?.Operator);
       SetVal(openXmlElement, value?.Val);
+      SetAlgorithm(openXmlElement, value?.Algorithm);
+      SetShape(openXmlElement, value?.Shape);
+      SetPresentationOf(openXmlElement, value?.PresentationOf);
+      SetConstraints(openXmlElement, value?.Constraints);
+      SetRuleList(openXmlElement, value?.RuleList);
+      SetForEach(openXmlElement, value?.ForEach);
+      SetLayoutNode(openXmlElement, value?.LayoutNode);
+      SetChoose(openXmlElement, value?.Choose);
+      SetExtensionList(openXmlElement, value?.ExtensionList);
       return openXmlElement;
     }
     return default;

@@ -55,6 +55,7 @@ public static class PeopleConverter
     if (value != null)
     {
       var openXmlElement = new OpenXmlElementType();
+      SetPersons(openXmlElement, value?.Persons);
       return openXmlElement;
     }
     return default;

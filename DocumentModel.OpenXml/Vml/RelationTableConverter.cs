@@ -71,6 +71,7 @@ public static class RelationTableConverter
     {
       var openXmlElement = new OpenXmlElementType();
       SetExtension(openXmlElement, value?.Extension);
+      SetRelations(openXmlElement, value?.Relations);
       return openXmlElement;
     }
     return default;

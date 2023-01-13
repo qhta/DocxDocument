@@ -10,12 +10,20 @@ public static class MailMergeRecipientDataPartConverter
   /// </summary>
   public static DocumentModel.Wordprocessing.Recipients? GetRecipients(DocumentFormat.OpenXml.Packaging.MailMergeRecipientDataPart? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented in GeneratePropertyGetter: 1");
+    if (openXmlElement?.RootElement is DocumentFormat.OpenXml.Wordprocessing.Recipients rootElement)
+      return DocumentModel.OpenXml.Wordprocessing.RecipientsConverter.CreateModelElement(rootElement);
+    return null;
   }
   
   public static void SetRecipients(DocumentFormat.OpenXml.Packaging.MailMergeRecipientDataPart? openXmlElement, DocumentModel.Wordprocessing.Recipients? value)
   {
-    throw new NotImplementedException("Not implemented in GeneratePropertySetter: 1");
+    if (openXmlElement != null)
+      if (value != null)
+      {
+         var rootElement = DocumentModel.OpenXml.Wordprocessing.RecipientsConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.Recipients>(value);
+         if (rootElement != null)
+           openXmlElement.Recipients = rootElement;
+      }
   }
   
   /// <summary>
@@ -23,12 +31,20 @@ public static class MailMergeRecipientDataPartConverter
   /// </summary>
   public static DocumentModel.Wordprocessing.MailMergeRecipients? GetMailMergeRecipients(DocumentFormat.OpenXml.Packaging.MailMergeRecipientDataPart? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented in GeneratePropertyGetter: 1");
+    if (openXmlElement?.RootElement is DocumentFormat.OpenXml.Office.Word.MailMergeRecipients rootElement)
+      return DocumentModel.OpenXml.Wordprocessing.MailMergeRecipientsConverter.CreateModelElement(rootElement);
+    return null;
   }
   
   public static void SetMailMergeRecipients(DocumentFormat.OpenXml.Packaging.MailMergeRecipientDataPart? openXmlElement, DocumentModel.Wordprocessing.MailMergeRecipients? value)
   {
-    throw new NotImplementedException("Not implemented in GeneratePropertySetter: 1");
+    if (openXmlElement != null)
+      if (value != null)
+      {
+         var rootElement = DocumentModel.OpenXml.Wordprocessing.MailMergeRecipientsConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office.Word.MailMergeRecipients>(value);
+         if (rootElement != null)
+           openXmlElement.MailMergeRecipients = rootElement;
+      }
   }
   
   public static String? GetRelationshipType(DocumentFormat.OpenXml.Packaging.MailMergeRecipientDataPart? openXmlElement)
@@ -57,6 +73,7 @@ public static class MailMergeRecipientDataPartConverter
       var openXmlElement = new OpenXmlElementType();
       SetRecipients(openXmlElement, value?.Recipients);
       SetMailMergeRecipients(openXmlElement, value?.MailMergeRecipients);
+      //SetRelationshipType(openXmlElement, value?.RelationshipType);
       return openXmlElement;
     }
     return default;

@@ -366,6 +366,13 @@ public static class AreaChartSeries3Converter
       SetSeriesText(openXmlElement, value?.SeriesText);
       SetChartShapeProperties(openXmlElement, value?.ChartShapeProperties);
       SetPictureOptions(openXmlElement, value?.PictureOptions);
+      SetDataPoints(openXmlElement, value?.DataPoints);
+      SetDataLabels(openXmlElement, value?.DataLabels);
+      SetTrendlines(openXmlElement, value?.Trendlines);
+      SetErrorBarses(openXmlElement, value?.ErrorBarses);
+      SetCategoryAxisData(openXmlElement, value?.CategoryAxisData);
+      SetValues(openXmlElement, value?.Values);
+      SetAreaSerExtensionList(openXmlElement, value?.AreaSerExtensionList);
       return openXmlElement;
     }
     return default;

@@ -55,6 +55,7 @@ public static class AreaChartExtensionListConverter
     if (value != null)
     {
       var openXmlElement = new OpenXmlElementType();
+      SetAreaChartExtensions(openXmlElement, value?.AreaChartExtensions);
       return openXmlElement;
     }
     return default;

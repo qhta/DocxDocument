@@ -631,6 +631,13 @@ public static class ValueAxisConverter
       SetChartShapeProperties(openXmlElement, value?.ChartShapeProperties);
       SetTextProperties(openXmlElement, value?.TextProperties);
       SetCrossingAxis(openXmlElement, value?.CrossingAxis);
+      SetCrosses(openXmlElement, value?.Crosses);
+      SetCrossesAt(openXmlElement, value?.CrossesAt);
+      SetCrossBetween(openXmlElement, value?.CrossBetween);
+      SetMajorUnit(openXmlElement, value?.MajorUnit);
+      SetMinorUnit(openXmlElement, value?.MinorUnit);
+      SetDisplayUnits(openXmlElement, value?.DisplayUnits);
+      SetValAxExtensionList(openXmlElement, value?.ValAxExtensionList);
       return openXmlElement;
     }
     return default;

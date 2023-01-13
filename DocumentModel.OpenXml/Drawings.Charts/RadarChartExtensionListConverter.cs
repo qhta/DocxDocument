@@ -55,6 +55,7 @@ public static class RadarChartExtensionListConverter
     if (value != null)
     {
       var openXmlElement = new OpenXmlElementType();
+      SetRadarChartExtensions(openXmlElement, value?.RadarChartExtensions);
       return openXmlElement;
     }
     return default;

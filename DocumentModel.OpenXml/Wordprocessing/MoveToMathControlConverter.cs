@@ -96,6 +96,9 @@ public static class MoveToMathControlConverter
     if (value != null)
     {
       var openXmlElement = new OpenXmlElementType();
+      SetRunProperties(openXmlElement, value?.RunProperties);
+      SetInsertedMathControl(openXmlElement, value?.InsertedMathControl);
+      SetDeletedMathControl(openXmlElement, value?.DeletedMathControl);
       return openXmlElement;
     }
     return default;

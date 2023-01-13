@@ -46,6 +46,7 @@ public static class MailMergeRecipientsConverter
     if (value != null)
     {
       var openXmlElement = new OpenXmlElementType();
+      SetSingleDataSourceRecord(openXmlElement, value?.SingleDataSourceRecord);
       return openXmlElement;
     }
     return default;

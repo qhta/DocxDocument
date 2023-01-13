@@ -91,7 +91,7 @@ public static class ListValueConverter
     {
       var itemObject = EnumValueConverter.CreateEnumValue<EnumType, EnumKind>(item);
       if (itemObject != null)
-        resultList.Add((EnumValue<EnumType>)itemObject);
+        resultList.Add(itemObject);
     }
     var element = new DocumentFormat.OpenXml.ListValue<EnumValue<EnumType>>(resultList);
     return element;

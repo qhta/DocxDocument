@@ -55,6 +55,7 @@ public static class GradientStopListConverter
     if (value != null)
     {
       var openXmlElement = new OpenXmlElementType();
+      SetGradientStops(openXmlElement, value?.GradientStops);
       return openXmlElement;
     }
     return default;

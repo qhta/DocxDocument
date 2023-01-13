@@ -70,6 +70,8 @@ public static class TextDataConverter
     if (value != null)
     {
       var openXmlElement = new OpenXmlElementType();
+      SetFormula(openXmlElement, value?.Formula);
+      SetVXsdstring(openXmlElement, value?.VXsdstring);
       return openXmlElement;
     }
     return default;

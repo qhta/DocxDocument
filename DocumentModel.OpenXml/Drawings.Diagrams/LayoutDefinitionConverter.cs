@@ -296,6 +296,14 @@ public static class LayoutDefinitionConverter
       SetUniqueId(openXmlElement, value?.UniqueId);
       SetMinVersion(openXmlElement, value?.MinVersion);
       SetDefaultStyle(openXmlElement, value?.DefaultStyle);
+      SetTitles(openXmlElement, value?.Titles);
+      SetDescriptions(openXmlElement, value?.Descriptions);
+      SetCategoryList(openXmlElement, value?.CategoryList);
+      SetSampleData(openXmlElement, value?.SampleData);
+      SetStyleData(openXmlElement, value?.StyleData);
+      SetColorData(openXmlElement, value?.ColorData);
+      SetLayoutNode(openXmlElement, value?.LayoutNode);
+      SetDiagramDefinitionExtensionList(openXmlElement, value?.DiagramDefinitionExtensionList);
       return openXmlElement;
     }
     return default;

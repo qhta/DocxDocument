@@ -453,6 +453,15 @@ public static class BubbleChartSeries3Converter
       SetChartShapeProperties(openXmlElement, value?.ChartShapeProperties);
       SetPictureOptions(openXmlElement, value?.PictureOptions);
       SetInvertIfNegative(openXmlElement, value?.InvertIfNegative);
+      SetDataPoints(openXmlElement, value?.DataPoints);
+      SetDataLabels(openXmlElement, value?.DataLabels);
+      SetTrendlines(openXmlElement, value?.Trendlines);
+      SetErrorBarses(openXmlElement, value?.ErrorBarses);
+      SetXValues(openXmlElement, value?.XValues);
+      SetYValues(openXmlElement, value?.YValues);
+      SetBubbleSize(openXmlElement, value?.BubbleSize);
+      SetBubble3D(openXmlElement, value?.Bubble3D);
+      SetBubbleSerExtensionList(openXmlElement, value?.BubbleSerExtensionList);
       return openXmlElement;
     }
     return default;

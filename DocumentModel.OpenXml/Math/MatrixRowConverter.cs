@@ -55,6 +55,7 @@ public static class MatrixRowConverter
     if (value != null)
     {
       var openXmlElement = new OpenXmlElementType();
+      SetBases(openXmlElement, value?.Bases);
       return openXmlElement;
     }
     return default;

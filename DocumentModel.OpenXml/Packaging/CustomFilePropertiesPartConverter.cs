@@ -15,12 +15,20 @@ public static class CustomFilePropertiesPartConverter
   /// </summary>
   public static DocumentModel.Properties.CustomProperties? GetProperties(DocumentFormat.OpenXml.Packaging.CustomFilePropertiesPart? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented in GeneratePropertyGetter: 1");
+    if (openXmlElement?.RootElement is DocumentFormat.OpenXml.CustomProperties.Properties rootElement)
+      return DocumentModel.OpenXml.Properties.CustomPropertiesConverter.CreateModelElement(rootElement);
+    return null;
   }
   
   public static void SetProperties(DocumentFormat.OpenXml.Packaging.CustomFilePropertiesPart? openXmlElement, DocumentModel.Properties.CustomProperties? value)
   {
-    throw new NotImplementedException("Not implemented in GeneratePropertySetter: 1");
+    if (openXmlElement != null)
+      if (value != null)
+      {
+         var rootElement = DocumentModel.OpenXml.Properties.CustomPropertiesConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.CustomProperties.Properties>(value);
+         if (rootElement != null)
+           openXmlElement.Properties = rootElement;
+      }
   }
   
   public static String? GetRelationshipType(DocumentFormat.OpenXml.Packaging.CustomFilePropertiesPart? openXmlElement)
@@ -47,7 +55,9 @@ public static class CustomFilePropertiesPartConverter
     if (value != null)
     {
       var openXmlElement = new OpenXmlElementType();
+      //SetContentType(openXmlElement, value?.ContentType);
       SetProperties(openXmlElement, value?.Properties);
+      //SetRelationshipType(openXmlElement, value?.RelationshipType);
       return openXmlElement;
     }
     return default;

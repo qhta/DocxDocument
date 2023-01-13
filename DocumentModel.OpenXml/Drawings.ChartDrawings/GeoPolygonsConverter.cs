@@ -55,6 +55,7 @@ public static class GeoPolygonsConverter
     if (value != null)
     {
       var openXmlElement = new OpenXmlElementType();
+      SetItems(openXmlElement, value?.Items);
       return openXmlElement;
     }
     return default;

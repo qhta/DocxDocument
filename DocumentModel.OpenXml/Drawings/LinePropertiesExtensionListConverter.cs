@@ -55,6 +55,7 @@ public static class LinePropertiesExtensionListConverter
     if (value != null)
     {
       var openXmlElement = new OpenXmlElementType();
+      SetLinePropertiesExtensions(openXmlElement, value?.LinePropertiesExtensions);
       return openXmlElement;
     }
     return default;

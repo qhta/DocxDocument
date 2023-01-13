@@ -2200,6 +2200,7 @@ public static class CompatibilityConverter
       SetDoNotVerticallyAlignInTextBox(openXmlElement, value?.DoNotVerticallyAlignInTextBox);
       SetUseAnsiKerningPairs(openXmlElement, value?.UseAnsiKerningPairs);
       SetCachedColumnBalance(openXmlElement, value?.CachedColumnBalance);
+      SetCompatibilitySettings(openXmlElement, value?.CompatibilitySettings);
       return openXmlElement;
     }
     return default;

@@ -24,12 +24,16 @@ public static class SignatureLineConverter
   /// </summary>
   public static Boolean? GetIsSignatureLine(DocumentFormat.OpenXml.Vml.Office.SignatureLine? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented in GenerateBooleanPropertyGetCode: propertyType is DocumentFormat.OpenXml.TrueFalseValue");
+    return openXmlElement?.IsSignatureLine?.Value;
   }
   
   public static void SetIsSignatureLine(DocumentFormat.OpenXml.Vml.Office.SignatureLine? openXmlElement, Boolean? value)
   {
-    throw new NotImplementedException("Not implemented in GenerateBooleanPropertySetCode: propertyType is DocumentFormat.OpenXml.TrueFalseValue");
+    if (openXmlElement != null)
+      if (value != null)
+        openXmlElement.IsSignatureLine = value;
+      else
+        openXmlElement.IsSignatureLine = null;
   }
   
   /// <summary>
@@ -71,12 +75,16 @@ public static class SignatureLineConverter
   /// </summary>
   public static Boolean? GetSigningInstructionsSet(DocumentFormat.OpenXml.Vml.Office.SignatureLine? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented in GenerateBooleanPropertyGetCode: propertyType is DocumentFormat.OpenXml.TrueFalseValue");
+    return openXmlElement?.SigningInstructionsSet?.Value;
   }
   
   public static void SetSigningInstructionsSet(DocumentFormat.OpenXml.Vml.Office.SignatureLine? openXmlElement, Boolean? value)
   {
-    throw new NotImplementedException("Not implemented in GenerateBooleanPropertySetCode: propertyType is DocumentFormat.OpenXml.TrueFalseValue");
+    if (openXmlElement != null)
+      if (value != null)
+        openXmlElement.SigningInstructionsSet = value;
+      else
+        openXmlElement.SigningInstructionsSet = null;
   }
   
   /// <summary>
@@ -84,12 +92,16 @@ public static class SignatureLineConverter
   /// </summary>
   public static Boolean? GetAllowComments(DocumentFormat.OpenXml.Vml.Office.SignatureLine? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented in GenerateBooleanPropertyGetCode: propertyType is DocumentFormat.OpenXml.TrueFalseValue");
+    return openXmlElement?.AllowComments?.Value;
   }
   
   public static void SetAllowComments(DocumentFormat.OpenXml.Vml.Office.SignatureLine? openXmlElement, Boolean? value)
   {
-    throw new NotImplementedException("Not implemented in GenerateBooleanPropertySetCode: propertyType is DocumentFormat.OpenXml.TrueFalseValue");
+    if (openXmlElement != null)
+      if (value != null)
+        openXmlElement.AllowComments = value;
+      else
+        openXmlElement.AllowComments = null;
   }
   
   /// <summary>
@@ -97,12 +109,16 @@ public static class SignatureLineConverter
   /// </summary>
   public static Boolean? GetShowSignDate(DocumentFormat.OpenXml.Vml.Office.SignatureLine? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented in GenerateBooleanPropertyGetCode: propertyType is DocumentFormat.OpenXml.TrueFalseValue");
+    return openXmlElement?.ShowSignDate?.Value;
   }
   
   public static void SetShowSignDate(DocumentFormat.OpenXml.Vml.Office.SignatureLine? openXmlElement, Boolean? value)
   {
-    throw new NotImplementedException("Not implemented in GenerateBooleanPropertySetCode: propertyType is DocumentFormat.OpenXml.TrueFalseValue");
+    if (openXmlElement != null)
+      if (value != null)
+        openXmlElement.ShowSignDate = value;
+      else
+        openXmlElement.ShowSignDate = null;
   }
   
   /// <summary>

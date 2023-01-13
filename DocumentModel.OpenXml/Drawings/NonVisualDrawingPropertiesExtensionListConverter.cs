@@ -55,6 +55,7 @@ public static class NonVisualDrawingPropertiesExtensionListConverter
     if (value != null)
     {
       var openXmlElement = new OpenXmlElementType();
+      SetNonVisualDrawingPropertiesExtensions(openXmlElement, value?.NonVisualDrawingPropertiesExtensions);
       return openXmlElement;
     }
     return default;

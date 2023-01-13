@@ -55,6 +55,7 @@ public static class SurfaceChartExtensionListConverter
     if (value != null)
     {
       var openXmlElement = new OpenXmlElementType();
+      SetSurfaceChartExtensions(openXmlElement, value?.SurfaceChartExtensions);
       return openXmlElement;
     }
     return default;

@@ -813,6 +813,15 @@ public static class MenuRegularConverter
       SetGetShowLabel(openXmlElement, value?.GetShowLabel);
       SetShowImage(openXmlElement, value?.ShowImage);
       SetGetShowImage(openXmlElement, value?.GetShowImage);
+      SetControlCloneRegular(openXmlElement, value?.ControlCloneRegular);
+      SetButtonRegular(openXmlElement, value?.ButtonRegular);
+      SetCheckBox(openXmlElement, value?.CheckBox);
+      SetGalleryRegular(openXmlElement, value?.GalleryRegular);
+      SetToggleButtonRegular(openXmlElement, value?.ToggleButtonRegular);
+      SetMenuSeparator(openXmlElement, value?.MenuSeparator);
+      SetSplitButtonRegular(openXmlElement, value?.SplitButtonRegular);
+      SetChildMenuRegular(openXmlElement, value?.ChildMenuRegular);
+      SetDynamicMenuRegular(openXmlElement, value?.DynamicMenuRegular);
       return openXmlElement;
     }
     return default;

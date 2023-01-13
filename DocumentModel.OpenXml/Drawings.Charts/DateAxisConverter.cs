@@ -719,6 +719,16 @@ public static class DateAxisConverter
       SetChartShapeProperties(openXmlElement, value?.ChartShapeProperties);
       SetTextProperties(openXmlElement, value?.TextProperties);
       SetCrossingAxis(openXmlElement, value?.CrossingAxis);
+      SetCrosses(openXmlElement, value?.Crosses);
+      SetCrossesAt(openXmlElement, value?.CrossesAt);
+      SetAutoLabeled(openXmlElement, value?.AutoLabeled);
+      SetLabelOffset(openXmlElement, value?.LabelOffset);
+      SetBaseTimeUnit(openXmlElement, value?.BaseTimeUnit);
+      SetMajorUnit(openXmlElement, value?.MajorUnit);
+      SetMajorTimeUnit(openXmlElement, value?.MajorTimeUnit);
+      SetMinorUnit(openXmlElement, value?.MinorUnit);
+      SetMinorTimeUnit(openXmlElement, value?.MinorTimeUnit);
+      SetDateAxExtensionList(openXmlElement, value?.DateAxExtensionList);
       return openXmlElement;
     }
     return default;

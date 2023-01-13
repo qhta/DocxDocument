@@ -10,7 +10,7 @@ public static class OpenXmlPartConverter
   /// </summary>
   public static Uri? GetUri(DocumentFormat.OpenXml.Packaging.OpenXmlPart? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented in GeneratePropertyGetter: 1");
+    return openXmlElement?.Uri;
   }
   
   /// <summary>
@@ -34,7 +34,9 @@ public static class OpenXmlPartConverter
   /// </summary>
   public static DocumentModel.ModelElement? GetRootElement(DocumentFormat.OpenXml.Packaging.OpenXmlPart? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented in GeneratePropertyGetter: 1");
+    //if (openXmlElement?.RootElement is DocumentFormat.OpenXml.OpenXmlPartRootElement rootElement)
+    //  return DocumentModel.OpenXml.ModelElementConverter.CreateModelElement(rootElement);
+    return null;
   }
   
   public static DocumentModel.Packaging.OpenXmlPart? CreateModelElement(DocumentFormat.OpenXml.Packaging.OpenXmlPart? openXmlElement)

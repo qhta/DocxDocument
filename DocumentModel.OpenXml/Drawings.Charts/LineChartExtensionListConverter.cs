@@ -55,6 +55,7 @@ public static class LineChartExtensionListConverter
     if (value != null)
     {
       var openXmlElement = new OpenXmlElementType();
+      SetLineChartExtensions(openXmlElement, value?.LineChartExtensions);
       return openXmlElement;
     }
     return default;

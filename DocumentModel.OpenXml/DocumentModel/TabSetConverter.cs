@@ -112,6 +112,7 @@ public static class TabSetConverter
       SetIdMso(openXmlElement, value?.IdMso);
       SetVisible(openXmlElement, value?.Visible);
       SetGetVisible(openXmlElement, value?.GetVisible);
+      SetTabs(openXmlElement, value?.Tabs);
       return openXmlElement;
     }
     return default;

@@ -229,6 +229,14 @@ public static class BackgroundConverter
     if (value != null)
     {
       var openXmlElement = new OpenXmlElementType();
+      SetNoFill(openXmlElement, value?.NoFill);
+      SetSolidFill(openXmlElement, value?.SolidFill);
+      SetGradientFill(openXmlElement, value?.GradientFill);
+      SetBlipFill(openXmlElement, value?.BlipFill);
+      SetPatternFill(openXmlElement, value?.PatternFill);
+      SetGroupFill(openXmlElement, value?.GroupFill);
+      SetEffectList(openXmlElement, value?.EffectList);
+      SetEffectDag(openXmlElement, value?.EffectDag);
       return openXmlElement;
     }
     return default;

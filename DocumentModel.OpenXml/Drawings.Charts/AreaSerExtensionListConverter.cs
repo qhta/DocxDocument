@@ -55,6 +55,7 @@ public static class AreaSerExtensionListConverter
     if (value != null)
     {
       var openXmlElement = new OpenXmlElementType();
+      SetAreaSerExtensions(openXmlElement, value?.AreaSerExtensions);
       return openXmlElement;
     }
     return default;

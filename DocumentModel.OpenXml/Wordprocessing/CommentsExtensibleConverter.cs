@@ -80,6 +80,8 @@ public static class CommentsExtensibleConverter
     if (value != null)
     {
       var openXmlElement = new OpenXmlElementType();
+      SetCommentExtensibles(openXmlElement, value?.CommentExtensibles);
+      SetExtensionList(openXmlElement, value?.ExtensionList);
       return openXmlElement;
     }
     return default;

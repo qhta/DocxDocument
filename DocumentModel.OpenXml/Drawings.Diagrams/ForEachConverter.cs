@@ -410,6 +410,15 @@ public static class ForEachConverter
       SetStart(openXmlElement, value?.Start);
       SetCount(openXmlElement, value?.Count);
       SetStep(openXmlElement, value?.Step);
+      SetAlgorithm(openXmlElement, value?.Algorithm);
+      SetShape(openXmlElement, value?.Shape);
+      SetPresentationOf(openXmlElement, value?.PresentationOf);
+      SetConstraints(openXmlElement, value?.Constraints);
+      SetRuleList(openXmlElement, value?.RuleList);
+      SetChildForEach(openXmlElement, value?.ChildForEach);
+      SetLayoutNode(openXmlElement, value?.LayoutNode);
+      SetChoose(openXmlElement, value?.Choose);
+      SetExtensionList(openXmlElement, value?.ExtensionList);
       return openXmlElement;
     }
     return default;

@@ -20,12 +20,20 @@ public static class WebSettingsPartConverter
   /// </summary>
   public static DocumentModel.Wordprocessing.WebSettings? GetWebSettings(DocumentFormat.OpenXml.Packaging.WebSettingsPart? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented in GeneratePropertyGetter: 1");
+    if (openXmlElement?.RootElement is DocumentFormat.OpenXml.Wordprocessing.WebSettings rootElement)
+      return DocumentModel.OpenXml.Wordprocessing.WebSettingsConverter.CreateModelElement(rootElement);
+    return null;
   }
   
   public static void SetWebSettings(DocumentFormat.OpenXml.Packaging.WebSettingsPart? openXmlElement, DocumentModel.Wordprocessing.WebSettings? value)
   {
-    throw new NotImplementedException("Not implemented in GeneratePropertySetter: 1");
+    if (openXmlElement != null)
+      if (value != null)
+      {
+         var rootElement = DocumentModel.OpenXml.Wordprocessing.WebSettingsConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.WebSettings>(value);
+         if (rootElement != null)
+           openXmlElement.WebSettings = rootElement;
+      }
   }
   
   public static DocumentModel.Packaging.WebSettingsPart? CreateModelElement(DocumentFormat.OpenXml.Packaging.WebSettingsPart? openXmlElement)
@@ -47,6 +55,8 @@ public static class WebSettingsPartConverter
     if (value != null)
     {
       var openXmlElement = new OpenXmlElementType();
+      //SetContentType(openXmlElement, value?.ContentType);
+      //SetRelationshipType(openXmlElement, value?.RelationshipType);
       SetWebSettings(openXmlElement, value?.WebSettings);
       return openXmlElement;
     }

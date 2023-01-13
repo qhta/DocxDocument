@@ -163,12 +163,16 @@ public static class ImageDataConverter
   /// </summary>
   public static Boolean? GetGrayscale(DocumentFormat.OpenXml.Vml.ImageData? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented in GenerateBooleanPropertyGetCode: propertyType is DocumentFormat.OpenXml.TrueFalseValue");
+    return openXmlElement?.Grayscale?.Value;
   }
   
   public static void SetGrayscale(DocumentFormat.OpenXml.Vml.ImageData? openXmlElement, Boolean? value)
   {
-    throw new NotImplementedException("Not implemented in GenerateBooleanPropertySetCode: propertyType is DocumentFormat.OpenXml.TrueFalseValue");
+    if (openXmlElement != null)
+      if (value != null)
+        openXmlElement.Grayscale = value;
+      else
+        openXmlElement.Grayscale = null;
   }
   
   /// <summary>
@@ -176,12 +180,16 @@ public static class ImageDataConverter
   /// </summary>
   public static Boolean? GetBiLevel(DocumentFormat.OpenXml.Vml.ImageData? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented in GenerateBooleanPropertyGetCode: propertyType is DocumentFormat.OpenXml.TrueFalseValue");
+    return openXmlElement?.BiLevel?.Value;
   }
   
   public static void SetBiLevel(DocumentFormat.OpenXml.Vml.ImageData? openXmlElement, Boolean? value)
   {
-    throw new NotImplementedException("Not implemented in GenerateBooleanPropertySetCode: propertyType is DocumentFormat.OpenXml.TrueFalseValue");
+    if (openXmlElement != null)
+      if (value != null)
+        openXmlElement.BiLevel = value;
+      else
+        openXmlElement.BiLevel = null;
   }
   
   /// <summary>
@@ -240,12 +248,16 @@ public static class ImageDataConverter
   /// </summary>
   public static Boolean? GetDetectMouseClick(DocumentFormat.OpenXml.Vml.ImageData? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented in GenerateBooleanPropertyGetCode: propertyType is DocumentFormat.OpenXml.TrueFalseValue");
+    return openXmlElement?.DetectMouseClick?.Value;
   }
   
   public static void SetDetectMouseClick(DocumentFormat.OpenXml.Vml.ImageData? openXmlElement, Boolean? value)
   {
-    throw new NotImplementedException("Not implemented in GenerateBooleanPropertySetCode: propertyType is DocumentFormat.OpenXml.TrueFalseValue");
+    if (openXmlElement != null)
+      if (value != null)
+        openXmlElement.DetectMouseClick = value;
+      else
+        openXmlElement.DetectMouseClick = null;
   }
   
   /// <summary>

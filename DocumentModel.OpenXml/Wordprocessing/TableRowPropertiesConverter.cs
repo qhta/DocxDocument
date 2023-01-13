@@ -462,6 +462,23 @@ public static class TableRowPropertiesConverter
     if (value != null)
     {
       var openXmlElement = new OpenXmlElementType();
+      SetConditionalFormatStyle(openXmlElement, value?.ConditionalFormatStyle);
+      SetDivId(openXmlElement, value?.DivId);
+      SetGridBefore(openXmlElement, value?.GridBefore);
+      SetGridAfter(openXmlElement, value?.GridAfter);
+      SetWidthBeforeTableRow(openXmlElement, value?.WidthBeforeTableRow);
+      SetWidthAfterTableRow(openXmlElement, value?.WidthAfterTableRow);
+      SetTableRowHeight(openXmlElement, value?.TableRowHeight);
+      SetHidden(openXmlElement, value?.Hidden);
+      SetCantSplit(openXmlElement, value?.CantSplit);
+      SetTableHeader(openXmlElement, value?.TableHeader);
+      SetTableCellSpacing(openXmlElement, value?.TableCellSpacing);
+      SetTableJustification(openXmlElement, value?.TableJustification);
+      SetInserted(openXmlElement, value?.Inserted);
+      SetDeleted(openXmlElement, value?.Deleted);
+      SetTableRowPropertiesChange(openXmlElement, value?.TableRowPropertiesChange);
+      SetConflictInsertion(openXmlElement, value?.ConflictInsertion);
+      SetConflictDeletion(openXmlElement, value?.ConflictDeletion);
       return openXmlElement;
     }
     return default;

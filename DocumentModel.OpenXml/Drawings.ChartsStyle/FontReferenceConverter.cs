@@ -233,6 +233,13 @@ public static class FontReferenceConverter
       var openXmlElement = new OpenXmlElementType();
       SetIndex(openXmlElement, value?.Index);
       SetModifiers(openXmlElement, value?.Modifiers);
+      SetRgbColorModelPercentage(openXmlElement, value?.RgbColorModelPercentage);
+      SetRgbColorModelHex(openXmlElement, value?.RgbColorModelHex);
+      SetHslColor(openXmlElement, value?.HslColor);
+      SetSystemColor(openXmlElement, value?.SystemColor);
+      SetSchemeColor(openXmlElement, value?.SchemeColor);
+      SetPresetColor(openXmlElement, value?.PresetColor);
+      SetStyleColor(openXmlElement, value?.StyleColor);
       return openXmlElement;
     }
     return default;

@@ -65,6 +65,7 @@ public static class PtExtensionConverter
     {
       var openXmlElement = new OpenXmlElementType();
       SetUri(openXmlElement, value?.Uri);
+      SetNonVisualDrawingProperties(openXmlElement, value?.NonVisualDrawingProperties);
       return openXmlElement;
     }
     return default;

@@ -401,6 +401,17 @@ public static class LayoutContainerConverter
       SetAlign(openXmlElement, value?.Align);
       SetExpand(openXmlElement, value?.Expand);
       SetLayoutChildren(openXmlElement, value?.LayoutChildren);
+      SetBackstageGroupButton(openXmlElement, value?.BackstageGroupButton);
+      SetBackstageCheckBox(openXmlElement, value?.BackstageCheckBox);
+      SetBackstageEditBox(openXmlElement, value?.BackstageEditBox);
+      SetBackstageDropDown(openXmlElement, value?.BackstageDropDown);
+      SetRadioGroup(openXmlElement, value?.RadioGroup);
+      SetBackstageComboBox(openXmlElement, value?.BackstageComboBox);
+      SetHyperlink(openXmlElement, value?.Hyperlink);
+      SetBackstageLabelControl(openXmlElement, value?.BackstageLabelControl);
+      SetGroupBox(openXmlElement, value?.GroupBox);
+      SetChildLayoutContainer(openXmlElement, value?.ChildLayoutContainer);
+      SetImageControl(openXmlElement, value?.ImageControl);
       return openXmlElement;
     }
     return default;

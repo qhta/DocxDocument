@@ -84,6 +84,7 @@ public static class RsidsConverter
     {
       var openXmlElement = new OpenXmlElementType();
       SetRsidRoot(openXmlElement, value?.RsidRoot);
+      SetItems(openXmlElement, value?.Items);
       return openXmlElement;
     }
     return default;

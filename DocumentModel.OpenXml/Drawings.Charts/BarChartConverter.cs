@@ -322,6 +322,13 @@ public static class BarChartConverter
       SetBarDirection(openXmlElement, value?.BarDirection);
       SetBarGrouping(openXmlElement, value?.BarGrouping);
       SetVaryColors(openXmlElement, value?.VaryColors);
+      SetBarChartSerieses(openXmlElement, value?.BarChartSerieses);
+      SetDataLabels(openXmlElement, value?.DataLabels);
+      SetGapWidth(openXmlElement, value?.GapWidth);
+      SetOverlap(openXmlElement, value?.Overlap);
+      SetSeriesLineses(openXmlElement, value?.SeriesLineses);
+      SetAxisIds(openXmlElement, value?.AxisIds);
+      SetBarChartExtensionList(openXmlElement, value?.BarChartExtensionList);
       return openXmlElement;
     }
     return default;

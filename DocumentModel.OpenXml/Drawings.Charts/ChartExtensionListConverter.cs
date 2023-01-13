@@ -55,6 +55,7 @@ public static class ChartExtensionListConverter
     if (value != null)
     {
       var openXmlElement = new OpenXmlElementType();
+      SetDataDisplayOptions16s(openXmlElement, value?.DataDisplayOptions16s);
       return openXmlElement;
     }
     return default;

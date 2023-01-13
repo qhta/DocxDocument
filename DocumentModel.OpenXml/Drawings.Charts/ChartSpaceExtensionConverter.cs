@@ -115,6 +115,9 @@ public static class ChartSpaceExtensionConverter
     {
       var openXmlElement = new OpenXmlElementType();
       SetUri(openXmlElement, value?.Uri);
+      SetPivotOptions(openXmlElement, value?.PivotOptions);
+      SetSketchOptions(openXmlElement, value?.SketchOptions);
+      SetPivotSource(openXmlElement, value?.PivotSource);
       return openXmlElement;
     }
     return default;

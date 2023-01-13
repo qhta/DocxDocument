@@ -55,6 +55,7 @@ public static class MultiLvlStrRefExtensionListConverter
     if (value != null)
     {
       var openXmlElement = new OpenXmlElementType();
+      SetMultiLvlStrRefExtensions(openXmlElement, value?.MultiLvlStrRefExtensions);
       return openXmlElement;
     }
     return default;

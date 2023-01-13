@@ -84,6 +84,7 @@ public static class EquationArrayConverter
     {
       var openXmlElement = new OpenXmlElementType();
       SetEquationArrayProperties(openXmlElement, value?.EquationArrayProperties);
+      SetBases(openXmlElement, value?.Bases);
       return openXmlElement;
     }
     return default;

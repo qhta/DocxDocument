@@ -277,6 +277,16 @@ public static class SchemeColorConverter
     {
       var openXmlElement = new OpenXmlElementType();
       SetVal(openXmlElement, value?.Val);
+      SetTint(openXmlElement, value?.Tint);
+      SetShade(openXmlElement, value?.Shade);
+      SetAlpha(openXmlElement, value?.Alpha);
+      SetHueModulation(openXmlElement, value?.HueModulation);
+      SetSaturation(openXmlElement, value?.Saturation);
+      SetSaturationOffset(openXmlElement, value?.SaturationOffset);
+      SetSaturationModulation(openXmlElement, value?.SaturationModulation);
+      SetLuminance(openXmlElement, value?.Luminance);
+      SetLuminanceOffset(openXmlElement, value?.LuminanceOffset);
+      SetLuminanceModulation(openXmlElement, value?.LuminanceModulation);
       return openXmlElement;
     }
     return default;

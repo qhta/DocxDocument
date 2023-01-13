@@ -101,6 +101,10 @@ public static class OpenXmlPartContainerConverter
     if (value != null)
     {
       var openXmlElement = new OpenXmlElementType();
+      //SetExternalRelationships(openXmlElement, value?.ExternalRelationships);
+      //SetHyperlinkRelationships(openXmlElement, value?.HyperlinkRelationships);
+      //SetDataPartReferenceRelationships(openXmlElement, value?.DataPartReferenceRelationships);
+      //SetParts(openXmlElement, value?.Parts);
       return openXmlElement;
     }
     return default;

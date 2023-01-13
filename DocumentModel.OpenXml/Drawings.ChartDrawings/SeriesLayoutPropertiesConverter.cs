@@ -267,6 +267,12 @@ public static class SeriesLayoutPropertiesConverter
       SetParentLabelLayout(openXmlElement, value?.ParentLabelLayout);
       SetRegionLabelLayout(openXmlElement, value?.RegionLabelLayout);
       SetSeriesElementVisibilities(openXmlElement, value?.SeriesElementVisibilities);
+      SetAggregation(openXmlElement, value?.Aggregation);
+      SetBinning(openXmlElement, value?.Binning);
+      SetGeography(openXmlElement, value?.Geography);
+      SetStatistics(openXmlElement, value?.Statistics);
+      SetSubtotals(openXmlElement, value?.Subtotals);
+      SetExtensionList(openXmlElement, value?.ExtensionList);
       return openXmlElement;
     }
     return default;

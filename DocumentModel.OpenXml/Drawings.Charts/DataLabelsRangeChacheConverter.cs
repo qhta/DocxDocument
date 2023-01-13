@@ -104,6 +104,9 @@ public static class DataLabelsRangeChacheConverter
     if (value != null)
     {
       var openXmlElement = new OpenXmlElementType();
+      SetPointCount(openXmlElement, value?.PointCount);
+      SetStringPoints(openXmlElement, value?.StringPoints);
+      SetStrDataExtensionList(openXmlElement, value?.StrDataExtensionList);
       return openXmlElement;
     }
     return default;

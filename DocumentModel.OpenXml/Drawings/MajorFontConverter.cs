@@ -155,6 +155,11 @@ public static class MajorFontConverter
     if (value != null)
     {
       var openXmlElement = new OpenXmlElementType();
+      SetLatinFont(openXmlElement, value?.LatinFont);
+      SetEastAsianFont(openXmlElement, value?.EastAsianFont);
+      SetComplexScriptFont(openXmlElement, value?.ComplexScriptFont);
+      SetSupplementalFonts(openXmlElement, value?.SupplementalFonts);
+      SetExtensionList(openXmlElement, value?.ExtensionList);
       return openXmlElement;
     }
     return default;

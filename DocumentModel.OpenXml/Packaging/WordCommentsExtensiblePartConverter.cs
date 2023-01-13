@@ -10,12 +10,20 @@ public static class WordCommentsExtensiblePartConverter
   /// </summary>
   public static DocumentModel.Wordprocessing.CommentsExtensible? GetCommentsExtensible(DocumentFormat.OpenXml.Packaging.WordCommentsExtensiblePart? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented in GeneratePropertyGetter: 1");
+    if (openXmlElement?.RootElement is DocumentFormat.OpenXml.Office2021.Word.CommentsExt.CommentsExtensible rootElement)
+      return DocumentModel.OpenXml.Wordprocessing.CommentsExtensibleConverter.CreateModelElement(rootElement);
+    return null;
   }
   
   public static void SetCommentsExtensible(DocumentFormat.OpenXml.Packaging.WordCommentsExtensiblePart? openXmlElement, DocumentModel.Wordprocessing.CommentsExtensible? value)
   {
-    throw new NotImplementedException("Not implemented in GeneratePropertySetter: 1");
+    if (openXmlElement != null)
+      if (value != null)
+      {
+         var rootElement = DocumentModel.OpenXml.Wordprocessing.CommentsExtensibleConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2021.Word.CommentsExt.CommentsExtensible>(value);
+         if (rootElement != null)
+           openXmlElement.CommentsExtensible = rootElement;
+      }
   }
   
   public static String? GetContentType(DocumentFormat.OpenXml.Packaging.WordCommentsExtensiblePart? openXmlElement)
@@ -48,6 +56,8 @@ public static class WordCommentsExtensiblePartConverter
     {
       var openXmlElement = new OpenXmlElementType();
       SetCommentsExtensible(openXmlElement, value?.CommentsExtensible);
+      //SetContentType(openXmlElement, value?.ContentType);
+      //SetRelationshipType(openXmlElement, value?.RelationshipType);
       return openXmlElement;
     }
     return default;

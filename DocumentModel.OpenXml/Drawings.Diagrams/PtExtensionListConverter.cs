@@ -55,6 +55,7 @@ public static class PtExtensionListConverter
     if (value != null)
     {
       var openXmlElement = new OpenXmlElementType();
+      SetPtExtensions(openXmlElement, value?.PtExtensions);
       return openXmlElement;
     }
     return default;

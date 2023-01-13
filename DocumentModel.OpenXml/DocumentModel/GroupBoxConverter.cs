@@ -407,6 +407,17 @@ public static class GroupBoxConverter
       SetExpand(openXmlElement, value?.Expand);
       SetLabel(openXmlElement, value?.Label);
       SetGetLabel(openXmlElement, value?.GetLabel);
+      SetBackstageGroupButton(openXmlElement, value?.BackstageGroupButton);
+      SetBackstageCheckBox(openXmlElement, value?.BackstageCheckBox);
+      SetBackstageEditBox(openXmlElement, value?.BackstageEditBox);
+      SetBackstageDropDown(openXmlElement, value?.BackstageDropDown);
+      SetRadioGroup(openXmlElement, value?.RadioGroup);
+      SetBackstageComboBox(openXmlElement, value?.BackstageComboBox);
+      SetHyperlink(openXmlElement, value?.Hyperlink);
+      SetBackstageLabelControl(openXmlElement, value?.BackstageLabelControl);
+      SetChildGroupBox(openXmlElement, value?.ChildGroupBox);
+      SetLayoutContainer(openXmlElement, value?.LayoutContainer);
+      SetImageControl(openXmlElement, value?.ImageControl);
       return openXmlElement;
     }
     return default;

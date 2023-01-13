@@ -858,6 +858,22 @@ public static class GroupConverter
       SetGetKeytip(openXmlElement, value?.GetKeytip);
       SetAutoScale(openXmlElement, value?.AutoScale);
       SetCenterVertically(openXmlElement, value?.CenterVertically);
+      SetControlClone(openXmlElement, value?.ControlClone);
+      SetLabelControl(openXmlElement, value?.LabelControl);
+      SetButton(openXmlElement, value?.Button);
+      SetToggleButton(openXmlElement, value?.ToggleButton);
+      SetCheckBox(openXmlElement, value?.CheckBox);
+      SetEditBox(openXmlElement, value?.EditBox);
+      SetComboBox(openXmlElement, value?.ComboBox);
+      SetDropDownRegular(openXmlElement, value?.DropDownRegular);
+      SetGallery(openXmlElement, value?.Gallery);
+      SetMenu(openXmlElement, value?.Menu);
+      SetDynamicMenu(openXmlElement, value?.DynamicMenu);
+      SetSplitButton(openXmlElement, value?.SplitButton);
+      SetBox(openXmlElement, value?.Box);
+      SetButtonGroup(openXmlElement, value?.ButtonGroup);
+      SetSeparator(openXmlElement, value?.Separator);
+      SetDialogBoxLauncher(openXmlElement, value?.DialogBoxLauncher);
       return openXmlElement;
     }
     return default;

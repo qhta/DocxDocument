@@ -55,6 +55,7 @@ public static class CommentsIdsConverter
     if (value != null)
     {
       var openXmlElement = new OpenXmlElementType();
+      SetCommentIds(openXmlElement, value?.CommentIds);
       return openXmlElement;
     }
     return default;

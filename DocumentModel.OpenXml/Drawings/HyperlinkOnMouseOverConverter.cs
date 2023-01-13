@@ -71,6 +71,8 @@ public static class HyperlinkOnMouseOverConverter
     if (value != null)
     {
       var openXmlElement = new OpenXmlElementType();
+      SetHyperlinkSound(openXmlElement, value?.HyperlinkSound);
+      SetHyperlinkExtensionList(openXmlElement, value?.HyperlinkExtensionList);
       return openXmlElement;
     }
     return default;

@@ -46,6 +46,7 @@ public static class RecipientsConverter
     if (value != null)
     {
       var openXmlElement = new OpenXmlElementType();
+      SetRecipientData(openXmlElement, value?.RecipientData);
       return openXmlElement;
     }
     return default;

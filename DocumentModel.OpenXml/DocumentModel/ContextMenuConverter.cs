@@ -265,6 +265,15 @@ public static class ContextMenuConverter
     {
       var openXmlElement = new OpenXmlElementType();
       SetIdMso(openXmlElement, value?.IdMso);
+      SetControlCloneRegular(openXmlElement, value?.ControlCloneRegular);
+      SetButtonRegular(openXmlElement, value?.ButtonRegular);
+      SetCheckBox(openXmlElement, value?.CheckBox);
+      SetGalleryRegular(openXmlElement, value?.GalleryRegular);
+      SetToggleButtonRegular(openXmlElement, value?.ToggleButtonRegular);
+      SetSplitButtonRegular(openXmlElement, value?.SplitButtonRegular);
+      SetMenuRegular(openXmlElement, value?.MenuRegular);
+      SetDynamicMenuRegular(openXmlElement, value?.DynamicMenuRegular);
+      SetMenuSeparatorNoTitle(openXmlElement, value?.MenuSeparatorNoTitle);
       return openXmlElement;
     }
     return default;

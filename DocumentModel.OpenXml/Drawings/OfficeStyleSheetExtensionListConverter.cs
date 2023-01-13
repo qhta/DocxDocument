@@ -55,6 +55,7 @@ public static class OfficeStyleSheetExtensionListConverter
     if (value != null)
     {
       var openXmlElement = new OpenXmlElementType();
+      SetOfficeStyleSheetExtensions(openXmlElement, value?.OfficeStyleSheetExtensions);
       return openXmlElement;
     }
     return default;

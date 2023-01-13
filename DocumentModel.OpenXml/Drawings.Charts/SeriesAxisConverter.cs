@@ -576,6 +576,11 @@ public static class SeriesAxisConverter
       SetChartShapeProperties(openXmlElement, value?.ChartShapeProperties);
       SetTextProperties(openXmlElement, value?.TextProperties);
       SetCrossingAxis(openXmlElement, value?.CrossingAxis);
+      SetCrosses(openXmlElement, value?.Crosses);
+      SetCrossesAt(openXmlElement, value?.CrossesAt);
+      SetTickLabelSkip(openXmlElement, value?.TickLabelSkip);
+      SetTickMarkSkip(openXmlElement, value?.TickMarkSkip);
+      SetSerAxExtensionList(openXmlElement, value?.SerAxExtensionList);
       return openXmlElement;
     }
     return default;

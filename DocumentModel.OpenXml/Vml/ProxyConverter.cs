@@ -10,12 +10,16 @@ public static class ProxyConverter
   /// </summary>
   public static Boolean? GetStart(DocumentFormat.OpenXml.Vml.Office.Proxy? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented in GenerateBooleanPropertyGetCode: propertyType is DocumentFormat.OpenXml.TrueFalseBlankValue");
+    return openXmlElement?.Start?.Value;
   }
   
   public static void SetStart(DocumentFormat.OpenXml.Vml.Office.Proxy? openXmlElement, Boolean? value)
   {
-    throw new NotImplementedException("Not implemented in GenerateBooleanPropertySetCode: propertyType is DocumentFormat.OpenXml.TrueFalseBlankValue");
+    if (openXmlElement != null)
+      if (value != null)
+        openXmlElement.Start = value;
+      else
+        openXmlElement.Start = null;
   }
   
   /// <summary>
@@ -23,12 +27,16 @@ public static class ProxyConverter
   /// </summary>
   public static Boolean? GetEnd(DocumentFormat.OpenXml.Vml.Office.Proxy? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented in GenerateBooleanPropertyGetCode: propertyType is DocumentFormat.OpenXml.TrueFalseBlankValue");
+    return openXmlElement?.End?.Value;
   }
   
   public static void SetEnd(DocumentFormat.OpenXml.Vml.Office.Proxy? openXmlElement, Boolean? value)
   {
-    throw new NotImplementedException("Not implemented in GenerateBooleanPropertySetCode: propertyType is DocumentFormat.OpenXml.TrueFalseBlankValue");
+    if (openXmlElement != null)
+      if (value != null)
+        openXmlElement.End = value;
+      else
+        openXmlElement.End = null;
   }
   
   /// <summary>

@@ -53,6 +53,9 @@ public static class DigitalSignatureOriginPartConverter
     if (value != null)
     {
       var openXmlElement = new OpenXmlElementType();
+      //SetContentType(openXmlElement, value?.ContentType);
+      //SetRelationshipType(openXmlElement, value?.RelationshipType);
+      //SetXmlSignatureParts(openXmlElement, value?.XmlSignatureParts);
       return openXmlElement;
     }
     return default;

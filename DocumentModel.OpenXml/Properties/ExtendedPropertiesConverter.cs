@@ -622,9 +622,10 @@ public static class ExtendedPropertiesConverter
     return value;
   }
   
-  public static void SetValue(DocumentFormat.OpenXml.ExtendedProperties.Properties? openXmlElement, DocumentModel.Properties.ExtendedProperties value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Properties.ExtendedProperties value)
+    where OpenXmlElementType : DocumentFormat.OpenXml.ExtendedProperties.Properties, new()
   {
-    if (openXmlElement != null)
+    var openXmlElement = new OpenXmlElementType();
     {
       SetTemplate(openXmlElement, value.Template);
       SetManager(openXmlElement, value.Manager);
@@ -654,5 +655,6 @@ public static class ExtendedPropertiesConverter
       SetApplicationVersion(openXmlElement, value.ApplicationVersion);
       SetDocumentSecurity(openXmlElement, value.DocumentSecurity);
     }
+    return openXmlElement;
   }
 }

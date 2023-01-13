@@ -55,6 +55,7 @@ public static class SurfaceSerExtensionListConverter
     if (value != null)
     {
       var openXmlElement = new OpenXmlElementType();
+      SetSurfaceSerExtensions(openXmlElement, value?.SurfaceSerExtensions);
       return openXmlElement;
     }
     return default;

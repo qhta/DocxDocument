@@ -39,12 +39,20 @@ public static class WebExtensionPartConverter
   /// </summary>
   public static DocumentModel.WebExtensions.WebExtension? GetWebExtension(DocumentFormat.OpenXml.Packaging.WebExtensionPart? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented in GeneratePropertyGetter: 1");
+    if (openXmlElement?.RootElement is DocumentFormat.OpenXml.Office2013.WebExtension.WebExtension rootElement)
+      return DocumentModel.OpenXml.WebExtensions.WebExtensionConverter.CreateModelElement(rootElement);
+    return null;
   }
   
   public static void SetWebExtension(DocumentFormat.OpenXml.Packaging.WebExtensionPart? openXmlElement, DocumentModel.WebExtensions.WebExtension? value)
   {
-    throw new NotImplementedException("Not implemented in GeneratePropertySetter: 1");
+    if (openXmlElement != null)
+      if (value != null)
+      {
+         var rootElement = DocumentModel.OpenXml.WebExtensions.WebExtensionConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2013.WebExtension.WebExtension>(value);
+         if (rootElement != null)
+           openXmlElement.WebExtension = rootElement;
+      }
   }
   
   public static DocumentModel.Packaging.WebExtensionPart? CreateModelElement(DocumentFormat.OpenXml.Packaging.WebExtensionPart? openXmlElement)
@@ -67,6 +75,9 @@ public static class WebExtensionPartConverter
     if (value != null)
     {
       var openXmlElement = new OpenXmlElementType();
+      //SetContentType(openXmlElement, value?.ContentType);
+      //SetImageParts(openXmlElement, value?.ImageParts);
+      //SetRelationshipType(openXmlElement, value?.RelationshipType);
       SetWebExtension(openXmlElement, value?.WebExtension);
       return openXmlElement;
     }

@@ -255,6 +255,12 @@ public static class Line3DChartConverter
       var openXmlElement = new OpenXmlElementType();
       SetGrouping(openXmlElement, value?.Grouping);
       SetVaryColors(openXmlElement, value?.VaryColors);
+      SetLineChartSerieses(openXmlElement, value?.LineChartSerieses);
+      SetDataLabels(openXmlElement, value?.DataLabels);
+      SetDropLines(openXmlElement, value?.DropLines);
+      SetGapDepth(openXmlElement, value?.GapDepth);
+      SetAxisIds(openXmlElement, value?.AxisIds);
+      SetLine3DChartExtensionList(openXmlElement, value?.Line3DChartExtensionList);
       return openXmlElement;
     }
     return default;

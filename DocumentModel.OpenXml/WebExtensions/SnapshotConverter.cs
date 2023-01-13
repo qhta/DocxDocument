@@ -537,6 +537,24 @@ public static class SnapshotConverter
       SetEmbed(openXmlElement, value?.Embed);
       SetLink(openXmlElement, value?.Link);
       SetCompressionState(openXmlElement, value?.CompressionState);
+      SetAlphaBiLevel(openXmlElement, value?.AlphaBiLevel);
+      SetAlphaCeiling(openXmlElement, value?.AlphaCeiling);
+      SetAlphaFloor(openXmlElement, value?.AlphaFloor);
+      SetAlphaInverse(openXmlElement, value?.AlphaInverse);
+      SetAlphaModulationEffect(openXmlElement, value?.AlphaModulationEffect);
+      SetAlphaModulationFixed(openXmlElement, value?.AlphaModulationFixed);
+      SetAlphaReplace(openXmlElement, value?.AlphaReplace);
+      SetBiLevel(openXmlElement, value?.BiLevel);
+      SetBlur(openXmlElement, value?.Blur);
+      SetColorChange(openXmlElement, value?.ColorChange);
+      SetColorReplacement(openXmlElement, value?.ColorReplacement);
+      SetDuotone(openXmlElement, value?.Duotone);
+      SetFillOverlay(openXmlElement, value?.FillOverlay);
+      SetGrayscale(openXmlElement, value?.Grayscale);
+      SetHsl(openXmlElement, value?.Hsl);
+      SetLuminanceEffect(openXmlElement, value?.LuminanceEffect);
+      SetTintEffect(openXmlElement, value?.TintEffect);
+      SetBlipExtensionList(openXmlElement, value?.BlipExtensionList);
       return openXmlElement;
     }
     return default;

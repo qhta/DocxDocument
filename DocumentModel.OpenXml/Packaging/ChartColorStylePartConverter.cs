@@ -10,12 +10,20 @@ public static class ChartColorStylePartConverter
   /// </summary>
   public static DocumentModel.Drawings.ChartsStyle.ColorStyle? GetColorStyle(DocumentFormat.OpenXml.Packaging.ChartColorStylePart? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented in GeneratePropertyGetter: 1");
+    if (openXmlElement?.RootElement is DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.ColorStyle rootElement)
+      return DocumentModel.OpenXml.Drawings.ChartsStyle.ColorStyleConverter.CreateModelElement(rootElement);
+    return null;
   }
   
   public static void SetColorStyle(DocumentFormat.OpenXml.Packaging.ChartColorStylePart? openXmlElement, DocumentModel.Drawings.ChartsStyle.ColorStyle? value)
   {
-    throw new NotImplementedException("Not implemented in GeneratePropertySetter: 1");
+    if (openXmlElement != null)
+      if (value != null)
+      {
+         var rootElement = DocumentModel.OpenXml.Drawings.ChartsStyle.ColorStyleConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.ColorStyle>(value);
+         if (rootElement != null)
+           openXmlElement.ColorStyle = rootElement;
+      }
   }
   
   public static String? GetContentType(DocumentFormat.OpenXml.Packaging.ChartColorStylePart? openXmlElement)
@@ -48,6 +56,8 @@ public static class ChartColorStylePartConverter
     {
       var openXmlElement = new OpenXmlElementType();
       SetColorStyle(openXmlElement, value?.ColorStyle);
+      //SetContentType(openXmlElement, value?.ContentType);
+      //SetRelationshipType(openXmlElement, value?.RelationshipType);
       return openXmlElement;
     }
     return default;

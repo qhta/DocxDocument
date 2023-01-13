@@ -223,6 +223,13 @@ public static class DLblsExtensionConverter
     {
       var openXmlElement = new OpenXmlElementType();
       SetUri(openXmlElement, value?.Uri);
+      SetChartText(openXmlElement, value?.ChartText);
+      SetDataLabelFieldTable(openXmlElement, value?.DataLabelFieldTable);
+      SetShowDataLabelsRange(openXmlElement, value?.ShowDataLabelsRange);
+      SetShapeProperties(openXmlElement, value?.ShapeProperties);
+      SetLayout(openXmlElement, value?.Layout);
+      SetShowLeaderLines(openXmlElement, value?.ShowLeaderLines);
+      SetLeaderLines(openXmlElement, value?.LeaderLines);
       return openXmlElement;
     }
     return default;

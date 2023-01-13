@@ -55,6 +55,7 @@ public static class Area3DChartExtensionListConverter
     if (value != null)
     {
       var openXmlElement = new OpenXmlElementType();
+      SetArea3DChartExtensions(openXmlElement, value?.Area3DChartExtensions);
       return openXmlElement;
     }
     return default;

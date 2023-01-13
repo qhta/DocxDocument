@@ -34,12 +34,20 @@ public static class DiagramLayoutDefinitionPartConverter
   /// </summary>
   public static DocumentModel.Drawings.Diagrams.LayoutDefinition? GetLayoutDefinition(DocumentFormat.OpenXml.Packaging.DiagramLayoutDefinitionPart? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented in GeneratePropertyGetter: 1");
+    if (openXmlElement?.RootElement is DocumentFormat.OpenXml.Drawing.Diagrams.LayoutDefinition rootElement)
+      return DocumentModel.OpenXml.Drawings.Diagrams.LayoutDefinitionConverter.CreateModelElement(rootElement);
+    return null;
   }
   
   public static void SetLayoutDefinition(DocumentFormat.OpenXml.Packaging.DiagramLayoutDefinitionPart? openXmlElement, DocumentModel.Drawings.Diagrams.LayoutDefinition? value)
   {
-    throw new NotImplementedException("Not implemented in GeneratePropertySetter: 1");
+    if (openXmlElement != null)
+      if (value != null)
+      {
+         var rootElement = DocumentModel.OpenXml.Drawings.Diagrams.LayoutDefinitionConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Diagrams.LayoutDefinition>(value);
+         if (rootElement != null)
+           openXmlElement.LayoutDefinition = rootElement;
+      }
   }
   
   public static String? GetRelationshipType(DocumentFormat.OpenXml.Packaging.DiagramLayoutDefinitionPart? openXmlElement)
@@ -67,7 +75,10 @@ public static class DiagramLayoutDefinitionPartConverter
     if (value != null)
     {
       var openXmlElement = new OpenXmlElementType();
+      //SetContentType(openXmlElement, value?.ContentType);
+      //SetImageParts(openXmlElement, value?.ImageParts);
       SetLayoutDefinition(openXmlElement, value?.LayoutDefinition);
+      //SetRelationshipType(openXmlElement, value?.RelationshipType);
       return openXmlElement;
     }
     return default;

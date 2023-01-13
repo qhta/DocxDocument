@@ -625,6 +625,29 @@ public static class PlotAreaConverter
     {
       var openXmlElement = new OpenXmlElementType();
       SetLayout(openXmlElement, value?.Layout);
+      SetAreaChart(openXmlElement, value?.AreaChart);
+      SetArea3DChart(openXmlElement, value?.Area3DChart);
+      SetLineChart(openXmlElement, value?.LineChart);
+      SetLine3DChart(openXmlElement, value?.Line3DChart);
+      SetStockChart(openXmlElement, value?.StockChart);
+      SetRadarChart(openXmlElement, value?.RadarChart);
+      SetScatterChart(openXmlElement, value?.ScatterChart);
+      SetPieChart(openXmlElement, value?.PieChart);
+      SetPie3DChart(openXmlElement, value?.Pie3DChart);
+      SetDoughnutChart(openXmlElement, value?.DoughnutChart);
+      SetBarChart(openXmlElement, value?.BarChart);
+      SetBar3DChart(openXmlElement, value?.Bar3DChart);
+      SetOfPieChart(openXmlElement, value?.OfPieChart);
+      SetSurfaceChart(openXmlElement, value?.SurfaceChart);
+      SetSurface3DChart(openXmlElement, value?.Surface3DChart);
+      SetBubbleChart(openXmlElement, value?.BubbleChart);
+      SetValueAxis(openXmlElement, value?.ValueAxis);
+      SetCategoryAxis(openXmlElement, value?.CategoryAxis);
+      SetDateAxis(openXmlElement, value?.DateAxis);
+      SetSeriesAxis(openXmlElement, value?.SeriesAxis);
+      SetDataTable(openXmlElement, value?.DataTable);
+      SetShapeProperties(openXmlElement, value?.ShapeProperties);
+      SetExtensionList(openXmlElement, value?.ExtensionList);
       return openXmlElement;
     }
     return default;

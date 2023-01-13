@@ -15,12 +15,20 @@ public static class DiagramPersistLayoutPartConverter
   /// </summary>
   public static DocumentModel.Drawings.Office.Drawing? GetDrawing(DocumentFormat.OpenXml.Packaging.DiagramPersistLayoutPart? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented in GeneratePropertyGetter: 1");
+    if (openXmlElement?.RootElement is DocumentFormat.OpenXml.Office.Drawing.Drawing rootElement)
+      return DocumentModel.OpenXml.Drawings.Office.DrawingConverter.CreateModelElement(rootElement);
+    return null;
   }
   
   public static void SetDrawing(DocumentFormat.OpenXml.Packaging.DiagramPersistLayoutPart? openXmlElement, DocumentModel.Drawings.Office.Drawing? value)
   {
-    throw new NotImplementedException("Not implemented in GeneratePropertySetter: 1");
+    if (openXmlElement != null)
+      if (value != null)
+      {
+         var rootElement = DocumentModel.OpenXml.Drawings.Office.DrawingConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office.Drawing.Drawing>(value);
+         if (rootElement != null)
+           openXmlElement.Drawing = rootElement;
+      }
   }
   
   /// <summary>
@@ -67,7 +75,10 @@ public static class DiagramPersistLayoutPartConverter
     if (value != null)
     {
       var openXmlElement = new OpenXmlElementType();
+      //SetContentType(openXmlElement, value?.ContentType);
       SetDrawing(openXmlElement, value?.Drawing);
+      //SetImageParts(openXmlElement, value?.ImageParts);
+      //SetRelationshipType(openXmlElement, value?.RelationshipType);
       return openXmlElement;
     }
     return default;

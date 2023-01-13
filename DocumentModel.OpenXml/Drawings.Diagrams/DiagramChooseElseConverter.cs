@@ -265,6 +265,15 @@ public static class DiagramChooseElseConverter
     {
       var openXmlElement = new OpenXmlElementType();
       SetName(openXmlElement, value?.Name);
+      SetAlgorithm(openXmlElement, value?.Algorithm);
+      SetShape(openXmlElement, value?.Shape);
+      SetPresentationOf(openXmlElement, value?.PresentationOf);
+      SetConstraints(openXmlElement, value?.Constraints);
+      SetRuleList(openXmlElement, value?.RuleList);
+      SetForEach(openXmlElement, value?.ForEach);
+      SetLayoutNode(openXmlElement, value?.LayoutNode);
+      SetChoose(openXmlElement, value?.Choose);
+      SetExtensionList(openXmlElement, value?.ExtensionList);
       return openXmlElement;
     }
     return default;

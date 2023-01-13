@@ -55,6 +55,7 @@ public static class AllocatedCommandManifestConverter
     if (value != null)
     {
       var openXmlElement = new OpenXmlElementType();
+      SetAllocatedCommandManifestEntries(openXmlElement, value?.AllocatedCommandManifestEntries);
       return openXmlElement;
     }
     return default;

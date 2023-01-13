@@ -69,6 +69,7 @@ public static class StrDataExtensionConverter
     {
       var openXmlElement = new OpenXmlElementType();
       SetUri(openXmlElement, value?.Uri);
+      SetAutoGeneneratedCategories(openXmlElement, value?.AutoGeneneratedCategories);
       return openXmlElement;
     }
     return default;

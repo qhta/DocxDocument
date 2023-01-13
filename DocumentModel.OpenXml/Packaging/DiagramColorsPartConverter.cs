@@ -10,12 +10,20 @@ public static class DiagramColorsPartConverter
   /// </summary>
   public static DocumentModel.Drawings.Diagrams.ColorsDefinition? GetColorsDefinition(DocumentFormat.OpenXml.Packaging.DiagramColorsPart? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented in GeneratePropertyGetter: 1");
+    if (openXmlElement?.RootElement is DocumentFormat.OpenXml.Drawing.Diagrams.ColorsDefinition rootElement)
+      return DocumentModel.OpenXml.Drawings.Diagrams.ColorsDefinitionConverter.CreateModelElement(rootElement);
+    return null;
   }
   
   public static void SetColorsDefinition(DocumentFormat.OpenXml.Packaging.DiagramColorsPart? openXmlElement, DocumentModel.Drawings.Diagrams.ColorsDefinition? value)
   {
-    throw new NotImplementedException("Not implemented in GeneratePropertySetter: 1");
+    if (openXmlElement != null)
+      if (value != null)
+      {
+         var rootElement = DocumentModel.OpenXml.Drawings.Diagrams.ColorsDefinitionConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Diagrams.ColorsDefinition>(value);
+         if (rootElement != null)
+           openXmlElement.ColorsDefinition = rootElement;
+      }
   }
   
   public static String? GetContentType(DocumentFormat.OpenXml.Packaging.DiagramColorsPart? openXmlElement)
@@ -48,6 +56,8 @@ public static class DiagramColorsPartConverter
     {
       var openXmlElement = new OpenXmlElementType();
       SetColorsDefinition(openXmlElement, value?.ColorsDefinition);
+      //SetContentType(openXmlElement, value?.ContentType);
+      //SetRelationshipType(openXmlElement, value?.RelationshipType);
       return openXmlElement;
     }
     return default;

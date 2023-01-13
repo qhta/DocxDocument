@@ -55,6 +55,7 @@ public static class PreviousTableGridConverter
     if (value != null)
     {
       var openXmlElement = new OpenXmlElementType();
+      SetGridColumns(openXmlElement, value?.GridColumns);
       return openXmlElement;
     }
     return default;

@@ -161,6 +161,11 @@ public static class LineSketchStylePropertiesConverter
     {
       var openXmlElement = new OpenXmlElementType();
       SetSd(openXmlElement, value?.Sd);
+      SetCustomGeometry(openXmlElement, value?.CustomGeometry);
+      SetPresetGeometry(openXmlElement, value?.PresetGeometry);
+      SetLineSketchTypeProperties(openXmlElement, value?.LineSketchTypeProperties);
+      SetLineSketchSeed(openXmlElement, value?.LineSketchSeed);
+      SetOfficeArtExtensionList(openXmlElement, value?.OfficeArtExtensionList);
       return openXmlElement;
     }
     return default;

@@ -65,6 +65,7 @@ public static class Surface3DChartExtensionConverter
     {
       var openXmlElement = new OpenXmlElementType();
       SetUri(openXmlElement, value?.Uri);
+      SetFilteredSurfaceSeries(openXmlElement, value?.FilteredSurfaceSeries);
       return openXmlElement;
     }
     return default;

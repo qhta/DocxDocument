@@ -146,6 +146,11 @@ public static class CategoryAxisDataConverter
     if (value != null)
     {
       var openXmlElement = new OpenXmlElementType();
+      SetMultiLevelStringReference(openXmlElement, value?.MultiLevelStringReference);
+      SetNumberReference(openXmlElement, value?.NumberReference);
+      SetNumberLiteral(openXmlElement, value?.NumberLiteral);
+      SetStringReference(openXmlElement, value?.StringReference);
+      SetStringLiteral(openXmlElement, value?.StringLiteral);
       return openXmlElement;
     }
     return default;

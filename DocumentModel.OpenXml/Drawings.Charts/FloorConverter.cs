@@ -120,6 +120,10 @@ public static class FloorConverter
     if (value != null)
     {
       var openXmlElement = new OpenXmlElementType();
+      SetThickness(openXmlElement, value?.Thickness);
+      SetShapeProperties(openXmlElement, value?.ShapeProperties);
+      SetPictureOptions(openXmlElement, value?.PictureOptions);
+      SetExtensionList(openXmlElement, value?.ExtensionList);
       return openXmlElement;
     }
     return default;

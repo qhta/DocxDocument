@@ -793,6 +793,7 @@ public static class ComboBoxConverter
       SetGetShowLabel(openXmlElement, value?.GetShowLabel);
       SetShowImage(openXmlElement, value?.ShowImage);
       SetGetShowImage(openXmlElement, value?.GetShowImage);
+      SetItems(openXmlElement, value?.Items);
       return openXmlElement;
     }
     return default;

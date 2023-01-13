@@ -274,6 +274,9 @@ public static class DataLabelsConverter
       SetTxPrTextBody(openXmlElement, value?.TxPrTextBody);
       SetDataLabelVisibilities(openXmlElement, value?.DataLabelVisibilities);
       SetSeparatorXsdstring(openXmlElement, value?.SeparatorXsdstring);
+      SetItems(openXmlElement, value?.Items);
+      SetDataLabelHiddens(openXmlElement, value?.DataLabelHiddens);
+      SetExtensionList(openXmlElement, value?.ExtensionList);
       return openXmlElement;
     }
     return default;

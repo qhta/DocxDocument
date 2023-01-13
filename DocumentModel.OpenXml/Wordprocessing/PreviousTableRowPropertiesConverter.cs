@@ -337,6 +337,18 @@ public static class PreviousTableRowPropertiesConverter
     if (value != null)
     {
       var openXmlElement = new OpenXmlElementType();
+      SetConditionalFormatStyle(openXmlElement, value?.ConditionalFormatStyle);
+      SetDivId(openXmlElement, value?.DivId);
+      SetGridBefore(openXmlElement, value?.GridBefore);
+      SetGridAfter(openXmlElement, value?.GridAfter);
+      SetWidthBeforeTableRow(openXmlElement, value?.WidthBeforeTableRow);
+      SetWidthAfterTableRow(openXmlElement, value?.WidthAfterTableRow);
+      SetTableRowHeight(openXmlElement, value?.TableRowHeight);
+      SetHidden(openXmlElement, value?.Hidden);
+      SetCantSplit(openXmlElement, value?.CantSplit);
+      SetTableHeader(openXmlElement, value?.TableHeader);
+      SetTableCellSpacing(openXmlElement, value?.TableCellSpacing);
+      SetTableJustification(openXmlElement, value?.TableJustification);
       return openXmlElement;
     }
     return default;

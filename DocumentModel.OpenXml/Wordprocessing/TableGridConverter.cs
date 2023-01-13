@@ -80,6 +80,8 @@ public static class TableGridConverter
     if (value != null)
     {
       var openXmlElement = new OpenXmlElementType();
+      SetGridColumns(openXmlElement, value?.GridColumns);
+      SetTableGridChange(openXmlElement, value?.TableGridChange);
       return openXmlElement;
     }
     return default;

@@ -55,6 +55,7 @@ public static class SchemaLibraryConverter
     if (value != null)
     {
       var openXmlElement = new OpenXmlElementType();
+      SetSchemas(openXmlElement, value?.Schemas);
       return openXmlElement;
     }
     return default;

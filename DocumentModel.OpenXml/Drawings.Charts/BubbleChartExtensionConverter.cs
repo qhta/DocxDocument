@@ -65,6 +65,7 @@ public static class BubbleChartExtensionConverter
     {
       var openXmlElement = new OpenXmlElementType();
       SetUri(openXmlElement, value?.Uri);
+      SetFilteredBubbleSeries(openXmlElement, value?.FilteredBubbleSeries);
       return openXmlElement;
     }
     return default;

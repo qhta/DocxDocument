@@ -204,6 +204,11 @@ public static class AbsoluteAnchorSizeConverter
       var openXmlElement = new OpenXmlElementType();
       SetFromAnchor(openXmlElement, value?.FromAnchor);
       SetExtent(openXmlElement, value?.Extent);
+      SetShape(openXmlElement, value?.Shape);
+      SetGroupShape(openXmlElement, value?.GroupShape);
+      SetGraphicFrame(openXmlElement, value?.GraphicFrame);
+      SetConnectionShape(openXmlElement, value?.ConnectionShape);
+      SetPicture(openXmlElement, value?.Picture);
       return openXmlElement;
     }
     return default;

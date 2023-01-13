@@ -400,6 +400,9 @@ public static class SplitButtonWithTitleConverter
       SetGetKeytip(openXmlElement, value?.GetKeytip);
       SetShowLabel(openXmlElement, value?.ShowLabel);
       SetGetShowLabel(openXmlElement, value?.GetShowLabel);
+      SetVisibleButton(openXmlElement, value?.VisibleButton);
+      SetVisibleToggleButton(openXmlElement, value?.VisibleToggleButton);
+      SetMenuWithTitle(openXmlElement, value?.MenuWithTitle);
       return openXmlElement;
     }
     return default;

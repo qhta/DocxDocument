@@ -15,12 +15,20 @@ public static class RibbonAndBackstageCustomizationsPartConverter
   /// </summary>
   public static DocumentModel.CustomUI? GetCustomUI(DocumentFormat.OpenXml.Packaging.RibbonAndBackstageCustomizationsPart? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented in GeneratePropertyGetter: 1");
+    if (openXmlElement?.RootElement is DocumentFormat.OpenXml.Office2010.CustomUI.CustomUI rootElement)
+      return DocumentModel.OpenXml.CustomUIConverter.CreateModelElement(rootElement);
+    return null;
   }
   
   public static void SetCustomUI(DocumentFormat.OpenXml.Packaging.RibbonAndBackstageCustomizationsPart? openXmlElement, DocumentModel.CustomUI? value)
   {
-    throw new NotImplementedException("Not implemented in GeneratePropertySetter: 1");
+    if (openXmlElement != null)
+      if (value != null)
+      {
+         var rootElement = DocumentModel.OpenXml.CustomUIConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2010.CustomUI.CustomUI>(value);
+         if (rootElement != null)
+           openXmlElement.CustomUI = rootElement;
+      }
   }
   
   /// <summary>
@@ -67,7 +75,10 @@ public static class RibbonAndBackstageCustomizationsPartConverter
     if (value != null)
     {
       var openXmlElement = new OpenXmlElementType();
+      //SetContentType(openXmlElement, value?.ContentType);
       SetCustomUI(openXmlElement, value?.CustomUI);
+      //SetImageParts(openXmlElement, value?.ImageParts);
+      //SetRelationshipType(openXmlElement, value?.RelationshipType);
       return openXmlElement;
     }
     return default;

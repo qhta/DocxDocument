@@ -65,6 +65,7 @@ public static class SerAxExtensionConverter
     {
       var openXmlElement = new OpenXmlElementType();
       SetUri(openXmlElement, value?.Uri);
+      SetNumberingFormat(openXmlElement, value?.NumberingFormat);
       return openXmlElement;
     }
     return default;

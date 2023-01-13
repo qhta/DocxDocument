@@ -39,12 +39,20 @@ public static class ThemeOverridePartConverter
   /// </summary>
   public static DocumentModel.Drawings.ThemeOverride? GetThemeOverride(DocumentFormat.OpenXml.Packaging.ThemeOverridePart? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented in GeneratePropertyGetter: 1");
+    if (openXmlElement?.RootElement is DocumentFormat.OpenXml.Drawing.ThemeOverride rootElement)
+      return DocumentModel.OpenXml.Drawings.ThemeOverrideConverter.CreateModelElement(rootElement);
+    return null;
   }
   
   public static void SetThemeOverride(DocumentFormat.OpenXml.Packaging.ThemeOverridePart? openXmlElement, DocumentModel.Drawings.ThemeOverride? value)
   {
-    throw new NotImplementedException("Not implemented in GeneratePropertySetter: 1");
+    if (openXmlElement != null)
+      if (value != null)
+      {
+         var rootElement = DocumentModel.OpenXml.Drawings.ThemeOverrideConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.ThemeOverride>(value);
+         if (rootElement != null)
+           openXmlElement.ThemeOverride = rootElement;
+      }
   }
   
   public static DocumentModel.Packaging.ThemeOverridePart? CreateModelElement(DocumentFormat.OpenXml.Packaging.ThemeOverridePart? openXmlElement)
@@ -67,6 +75,9 @@ public static class ThemeOverridePartConverter
     if (value != null)
     {
       var openXmlElement = new OpenXmlElementType();
+      //SetContentType(openXmlElement, value?.ContentType);
+      //SetImageParts(openXmlElement, value?.ImageParts);
+      //SetRelationshipType(openXmlElement, value?.RelationshipType);
       SetThemeOverride(openXmlElement, value?.ThemeOverride);
       return openXmlElement;
     }

@@ -206,6 +206,10 @@ public static class ScatterChartConverter
       var openXmlElement = new OpenXmlElementType();
       SetScatterStyle(openXmlElement, value?.ScatterStyle);
       SetVaryColors(openXmlElement, value?.VaryColors);
+      SetScatterChartSerieses(openXmlElement, value?.ScatterChartSerieses);
+      SetDataLabels(openXmlElement, value?.DataLabels);
+      SetAxisIds(openXmlElement, value?.AxisIds);
+      SetScatterChartExtensionList(openXmlElement, value?.ScatterChartExtensionList);
       return openXmlElement;
     }
     return default;

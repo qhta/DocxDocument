@@ -339,6 +339,15 @@ public static class LineChartConverter
       var openXmlElement = new OpenXmlElementType();
       SetGrouping(openXmlElement, value?.Grouping);
       SetVaryColors(openXmlElement, value?.VaryColors);
+      SetLineChartSerieses(openXmlElement, value?.LineChartSerieses);
+      SetDataLabels(openXmlElement, value?.DataLabels);
+      SetDropLines(openXmlElement, value?.DropLines);
+      SetHighLowLines(openXmlElement, value?.HighLowLines);
+      SetUpDownBars(openXmlElement, value?.UpDownBars);
+      SetShowMarker(openXmlElement, value?.ShowMarker);
+      SetSmooth(openXmlElement, value?.Smooth);
+      SetAxisIds(openXmlElement, value?.AxisIds);
+      SetLineChartExtensionList(openXmlElement, value?.LineChartExtensionList);
       return openXmlElement;
     }
     return default;

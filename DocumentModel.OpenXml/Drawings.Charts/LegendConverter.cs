@@ -218,6 +218,12 @@ public static class LegendConverter
     {
       var openXmlElement = new OpenXmlElementType();
       SetLegendPosition(openXmlElement, value?.LegendPosition);
+      SetLegendEntries(openXmlElement, value?.LegendEntries);
+      SetLayout(openXmlElement, value?.Layout);
+      SetOverlay(openXmlElement, value?.Overlay);
+      SetChartShapeProperties(openXmlElement, value?.ChartShapeProperties);
+      SetTextProperties(openXmlElement, value?.TextProperties);
+      SetExtensionList(openXmlElement, value?.ExtensionList);
       return openXmlElement;
     }
     return default;

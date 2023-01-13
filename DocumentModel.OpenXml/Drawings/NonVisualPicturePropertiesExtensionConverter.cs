@@ -140,6 +140,10 @@ public static class NonVisualPicturePropertiesExtensionConverter
     {
       var openXmlElement = new OpenXmlElementType();
       SetUri(openXmlElement, value?.Uri);
+      SetCameraTool(openXmlElement, value?.CameraTool);
+      SetSignatureLine(openXmlElement, value?.SignatureLine);
+      SetObjectProperties(openXmlElement, value?.ObjectProperties);
+      SetLiveFeedProperties(openXmlElement, value?.LiveFeedProperties);
       return openXmlElement;
     }
     return default;

@@ -61,12 +61,16 @@ public static class ShapeHandleConverter
   /// </summary>
   public static Boolean? GetInvertX(DocumentFormat.OpenXml.Vml.ShapeHandle? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented in GenerateBooleanPropertyGetCode: propertyType is DocumentFormat.OpenXml.TrueFalseBlankValue");
+    return openXmlElement?.InvertX?.Value;
   }
   
   public static void SetInvertX(DocumentFormat.OpenXml.Vml.ShapeHandle? openXmlElement, Boolean? value)
   {
-    throw new NotImplementedException("Not implemented in GenerateBooleanPropertySetCode: propertyType is DocumentFormat.OpenXml.TrueFalseBlankValue");
+    if (openXmlElement != null)
+      if (value != null)
+        openXmlElement.InvertX = value;
+      else
+        openXmlElement.InvertX = null;
   }
   
   /// <summary>
@@ -74,12 +78,16 @@ public static class ShapeHandleConverter
   /// </summary>
   public static Boolean? GetInvertY(DocumentFormat.OpenXml.Vml.ShapeHandle? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented in GenerateBooleanPropertyGetCode: propertyType is DocumentFormat.OpenXml.TrueFalseBlankValue");
+    return openXmlElement?.InvertY?.Value;
   }
   
   public static void SetInvertY(DocumentFormat.OpenXml.Vml.ShapeHandle? openXmlElement, Boolean? value)
   {
-    throw new NotImplementedException("Not implemented in GenerateBooleanPropertySetCode: propertyType is DocumentFormat.OpenXml.TrueFalseBlankValue");
+    if (openXmlElement != null)
+      if (value != null)
+        openXmlElement.InvertY = value;
+      else
+        openXmlElement.InvertY = null;
   }
   
   /// <summary>
@@ -87,12 +95,16 @@ public static class ShapeHandleConverter
   /// </summary>
   public static Boolean? GetSwitch(DocumentFormat.OpenXml.Vml.ShapeHandle? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented in GenerateBooleanPropertyGetCode: propertyType is DocumentFormat.OpenXml.TrueFalseBlankValue");
+    return openXmlElement?.Switch?.Value;
   }
   
   public static void SetSwitch(DocumentFormat.OpenXml.Vml.ShapeHandle? openXmlElement, Boolean? value)
   {
-    throw new NotImplementedException("Not implemented in GenerateBooleanPropertySetCode: propertyType is DocumentFormat.OpenXml.TrueFalseBlankValue");
+    if (openXmlElement != null)
+      if (value != null)
+        openXmlElement.Switch = value;
+      else
+        openXmlElement.Switch = null;
   }
   
   /// <summary>

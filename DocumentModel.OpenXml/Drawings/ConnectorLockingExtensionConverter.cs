@@ -65,6 +65,7 @@ public static class ConnectorLockingExtensionConverter
     {
       var openXmlElement = new OpenXmlElementType();
       SetUri(openXmlElement, value?.Uri);
+      SetGraphic(openXmlElement, value?.Graphic);
       return openXmlElement;
     }
     return default;

@@ -71,6 +71,8 @@ public static class AdjustHandleListConverter
     if (value != null)
     {
       var openXmlElement = new OpenXmlElementType();
+      SetAdjustHandleXY(openXmlElement, value?.AdjustHandleXY);
+      SetAdjustHandlePolar(openXmlElement, value?.AdjustHandlePolar);
       return openXmlElement;
     }
     return default;

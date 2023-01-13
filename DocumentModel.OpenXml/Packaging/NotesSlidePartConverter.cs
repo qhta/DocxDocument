@@ -333,6 +333,23 @@ public static class NotesSlidePartConverter
     if (value != null)
     {
       var openXmlElement = new OpenXmlElementType();
+      //SetChartParts(openXmlElement, value?.ChartParts);
+      //SetContentType(openXmlElement, value?.ContentType);
+      //SetCustomXmlParts(openXmlElement, value?.CustomXmlParts);
+      //SetDiagramColorsParts(openXmlElement, value?.DiagramColorsParts);
+      //SetDiagramDataParts(openXmlElement, value?.DiagramDataParts);
+      //SetDiagramLayoutDefinitionParts(openXmlElement, value?.DiagramLayoutDefinitionParts);
+      //SetDiagramPersistLayoutParts(openXmlElement, value?.DiagramPersistLayoutParts);
+      //SetDiagramStyleParts(openXmlElement, value?.DiagramStyleParts);
+      //SetEmbeddedControlPersistenceBinaryDataParts(openXmlElement, value?.EmbeddedControlPersistenceBinaryDataParts);
+      //SetEmbeddedObjectParts(openXmlElement, value?.EmbeddedObjectParts);
+      //SetEmbeddedPackageParts(openXmlElement, value?.EmbeddedPackageParts);
+      //SetExtendedChartParts(openXmlElement, value?.ExtendedChartParts);
+      //SetImageParts(openXmlElement, value?.ImageParts);
+      //SetModel3DReferenceRelationshipParts(openXmlElement, value?.Model3DReferenceRelationshipParts);
+      //SetRelationshipType(openXmlElement, value?.RelationshipType);
+      //SetUserDefinedTagsParts(openXmlElement, value?.UserDefinedTagsParts);
+      //SetVmlDrawingParts(openXmlElement, value?.VmlDrawingParts);
       return openXmlElement;
     }
     return default;

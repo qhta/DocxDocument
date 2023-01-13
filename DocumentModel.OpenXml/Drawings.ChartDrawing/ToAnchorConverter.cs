@@ -69,6 +69,8 @@ public static class ToAnchorConverter
     if (value != null)
     {
       var openXmlElement = new OpenXmlElementType();
+      SetXPosition(openXmlElement, value?.XPosition);
+      SetYPosition(openXmlElement, value?.YPosition);
       return openXmlElement;
     }
     return default;

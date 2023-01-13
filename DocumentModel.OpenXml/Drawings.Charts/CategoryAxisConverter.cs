@@ -688,6 +688,15 @@ public static class CategoryAxisConverter
       SetChartShapeProperties(openXmlElement, value?.ChartShapeProperties);
       SetTextProperties(openXmlElement, value?.TextProperties);
       SetCrossingAxis(openXmlElement, value?.CrossingAxis);
+      SetCrosses(openXmlElement, value?.Crosses);
+      SetCrossesAt(openXmlElement, value?.CrossesAt);
+      SetAutoLabeled(openXmlElement, value?.AutoLabeled);
+      SetLabelAlignment(openXmlElement, value?.LabelAlignment);
+      SetLabelOffset(openXmlElement, value?.LabelOffset);
+      SetTickLabelSkip(openXmlElement, value?.TickLabelSkip);
+      SetTickMarkSkip(openXmlElement, value?.TickMarkSkip);
+      SetNoMultiLevelLabels(openXmlElement, value?.NoMultiLevelLabels);
+      SetCatAxExtensionList(openXmlElement, value?.CatAxExtensionList);
       return openXmlElement;
     }
     return default;

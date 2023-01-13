@@ -70,6 +70,7 @@ public static class DocPartTypesConverter
     {
       var openXmlElement = new OpenXmlElementType();
       SetAll(openXmlElement, value?.All);
+      SetDocPartType(openXmlElement, value?.DocPartType);
       return openXmlElement;
     }
     return default;

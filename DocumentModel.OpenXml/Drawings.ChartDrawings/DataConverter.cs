@@ -112,6 +112,9 @@ public static class DataConverter
     {
       var openXmlElement = new OpenXmlElementType();
       SetId(openXmlElement, value?.Id);
+      SetNumericDimension(openXmlElement, value?.NumericDimension);
+      SetStringDimension(openXmlElement, value?.StringDimension);
+      SetExtensionList(openXmlElement, value?.ExtensionList);
       return openXmlElement;
     }
     return default;

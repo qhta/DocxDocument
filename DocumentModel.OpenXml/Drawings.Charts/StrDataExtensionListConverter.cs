@@ -55,6 +55,7 @@ public static class StrDataExtensionListConverter
     if (value != null)
     {
       var openXmlElement = new OpenXmlElementType();
+      SetStrDataExtensions(openXmlElement, value?.StrDataExtensions);
       return openXmlElement;
     }
     return default;

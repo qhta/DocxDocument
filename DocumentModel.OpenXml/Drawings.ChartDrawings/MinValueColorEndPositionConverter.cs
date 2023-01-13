@@ -98,6 +98,9 @@ public static class MinValueColorEndPositionConverter
     if (value != null)
     {
       var openXmlElement = new OpenXmlElementType();
+      SetExtremeValueColorPosition(openXmlElement, value?.ExtremeValueColorPosition);
+      SetNumberColorPosition(openXmlElement, value?.NumberColorPosition);
+      SetPercentageColorPosition(openXmlElement, value?.PercentageColorPosition);
       return openXmlElement;
     }
     return default;

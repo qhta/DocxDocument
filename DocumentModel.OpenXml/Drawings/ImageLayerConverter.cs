@@ -74,6 +74,7 @@ public static class ImageLayerConverter
     {
       var openXmlElement = new OpenXmlElementType();
       SetEmbed(openXmlElement, value?.Embed);
+      SetImageEffects(openXmlElement, value?.ImageEffects);
       return openXmlElement;
     }
     return default;

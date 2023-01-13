@@ -65,6 +65,7 @@ public static class OfficeStyleSheetExtensionConverter
     {
       var openXmlElement = new OpenXmlElementType();
       SetUri(openXmlElement, value?.Uri);
+      SetThemeFamily(openXmlElement, value?.ThemeFamily);
       return openXmlElement;
     }
     return default;

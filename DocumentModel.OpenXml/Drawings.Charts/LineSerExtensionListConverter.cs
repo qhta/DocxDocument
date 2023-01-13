@@ -55,6 +55,7 @@ public static class LineSerExtensionListConverter
     if (value != null)
     {
       var openXmlElement = new OpenXmlElementType();
+      SetLineSerExtensions(openXmlElement, value?.LineSerExtensions);
       return openXmlElement;
     }
     return default;

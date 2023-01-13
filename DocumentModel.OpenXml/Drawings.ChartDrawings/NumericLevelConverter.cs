@@ -109,6 +109,7 @@ public static class NumericLevelConverter
       SetPtCount(openXmlElement, value?.PtCount);
       SetFormatCode(openXmlElement, value?.FormatCode);
       SetName(openXmlElement, value?.Name);
+      SetNumericValues(openXmlElement, value?.NumericValues);
       return openXmlElement;
     }
     return default;

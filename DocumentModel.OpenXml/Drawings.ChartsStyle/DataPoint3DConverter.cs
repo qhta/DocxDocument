@@ -245,6 +245,15 @@ public static class DataPoint3DConverter
     if (value != null)
     {
       var openXmlElement = new OpenXmlElementType();
+      SetLineReference(openXmlElement, value?.LineReference);
+      SetLineWidthScale(openXmlElement, value?.LineWidthScale);
+      SetFillReference(openXmlElement, value?.FillReference);
+      SetEffectReference(openXmlElement, value?.EffectReference);
+      SetFontReference(openXmlElement, value?.FontReference);
+      SetShapeProperties(openXmlElement, value?.ShapeProperties);
+      SetTextCharacterPropertiesType(openXmlElement, value?.TextCharacterPropertiesType);
+      SetTextBodyProperties(openXmlElement, value?.TextBodyProperties);
+      SetOfficeArtExtensionList(openXmlElement, value?.OfficeArtExtensionList);
       return openXmlElement;
     }
     return default;

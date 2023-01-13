@@ -162,6 +162,8 @@ public static class FramesetConverter
       SetFrameSize(openXmlElement, value?.FrameSize);
       SetFramesetSplitbar(openXmlElement, value?.FramesetSplitbar);
       SetFrameLayout(openXmlElement, value?.FrameLayout);
+      SetChildFrameset(openXmlElement, value?.ChildFrameset);
+      SetFrame(openXmlElement, value?.Frame);
       return openXmlElement;
     }
     return default;

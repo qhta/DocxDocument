@@ -165,6 +165,11 @@ public static class TableStyleConditionalFormattingTableRowPropertiesConverter
     if (value != null)
     {
       var openXmlElement = new OpenXmlElementType();
+      SetHidden(openXmlElement, value?.Hidden);
+      SetCantSplit(openXmlElement, value?.CantSplit);
+      SetTableHeader(openXmlElement, value?.TableHeader);
+      SetTableCellSpacing(openXmlElement, value?.TableCellSpacing);
+      SetTableJustification(openXmlElement, value?.TableJustification);
       return openXmlElement;
     }
     return default;

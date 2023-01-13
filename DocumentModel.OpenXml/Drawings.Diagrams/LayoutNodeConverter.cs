@@ -344,6 +344,16 @@ public static class LayoutNodeConverter
       SetStyleLabel(openXmlElement, value?.StyleLabel);
       SetChildOrder(openXmlElement, value?.ChildOrder);
       SetMoveWith(openXmlElement, value?.MoveWith);
+      SetAlgorithm(openXmlElement, value?.Algorithm);
+      SetShape(openXmlElement, value?.Shape);
+      SetPresentationOf(openXmlElement, value?.PresentationOf);
+      SetConstraints(openXmlElement, value?.Constraints);
+      SetRuleList(openXmlElement, value?.RuleList);
+      SetVariableList(openXmlElement, value?.VariableList);
+      SetForEach(openXmlElement, value?.ForEach);
+      SetChildLayoutNode(openXmlElement, value?.ChildLayoutNode);
+      SetChoose(openXmlElement, value?.Choose);
+      SetExtensionList(openXmlElement, value?.ExtensionList);
       return openXmlElement;
     }
     return default;

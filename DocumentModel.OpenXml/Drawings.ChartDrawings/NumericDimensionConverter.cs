@@ -146,6 +146,10 @@ public static class NumericDimensionConverter
     {
       var openXmlElement = new OpenXmlElementType();
       SetType(openXmlElement, value?.Type);
+      SetFormula(openXmlElement, value?.Formula);
+      SetNfFormula(openXmlElement, value?.NfFormula);
+      SetNumericLevels(openXmlElement, value?.NumericLevels);
+      SetNumericLevel(openXmlElement, value?.NumericLevel);
       return openXmlElement;
     }
     return default;

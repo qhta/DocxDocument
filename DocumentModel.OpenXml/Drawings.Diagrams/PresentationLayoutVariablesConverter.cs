@@ -277,6 +277,15 @@ public static class PresentationLayoutVariablesConverter
     if (value != null)
     {
       var openXmlElement = new OpenXmlElementType();
+      SetOrganizationChart(openXmlElement, value?.OrganizationChart);
+      SetMaxNumberOfChildren(openXmlElement, value?.MaxNumberOfChildren);
+      SetPreferredNumberOfChildren(openXmlElement, value?.PreferredNumberOfChildren);
+      SetBulletEnabled(openXmlElement, value?.BulletEnabled);
+      SetDirection(openXmlElement, value?.Direction);
+      SetHierarchyBranch(openXmlElement, value?.HierarchyBranch);
+      SetAnimateOneByOne(openXmlElement, value?.AnimateOneByOne);
+      SetAnimationLevel(openXmlElement, value?.AnimationLevel);
+      SetResizeHandles(openXmlElement, value?.ResizeHandles);
       return openXmlElement;
     }
     return default;

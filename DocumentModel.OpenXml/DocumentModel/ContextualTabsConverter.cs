@@ -55,6 +55,7 @@ public static class ContextualTabsConverter
     if (value != null)
     {
       var openXmlElement = new OpenXmlElementType();
+      SetTabSets(openXmlElement, value?.TabSets);
       return openXmlElement;
     }
     return default;

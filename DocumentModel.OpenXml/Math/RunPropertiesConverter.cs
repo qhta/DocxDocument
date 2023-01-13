@@ -200,6 +200,11 @@ public static class RunPropertiesConverter
     {
       var openXmlElement = new OpenXmlElementType();
       SetLiteral(openXmlElement, value?.Literal);
+      SetNormalText(openXmlElement, value?.NormalText);
+      SetScript(openXmlElement, value?.Script);
+      SetStyle(openXmlElement, value?.Style);
+      SetBreak(openXmlElement, value?.Break);
+      SetAlignment(openXmlElement, value?.Alignment);
       return openXmlElement;
     }
     return default;

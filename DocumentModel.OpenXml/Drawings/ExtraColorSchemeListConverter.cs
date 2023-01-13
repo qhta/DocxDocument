@@ -55,6 +55,7 @@ public static class ExtraColorSchemeListConverter
     if (value != null)
     {
       var openXmlElement = new OpenXmlElementType();
+      SetExtraColorSchemes(openXmlElement, value?.ExtraColorSchemes);
       return openXmlElement;
     }
     return default;

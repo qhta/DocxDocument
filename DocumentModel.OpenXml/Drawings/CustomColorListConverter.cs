@@ -55,6 +55,7 @@ public static class CustomColorListConverter
     if (value != null)
     {
       var openXmlElement = new OpenXmlElementType();
+      SetCustomColors(openXmlElement, value?.CustomColors);
       return openXmlElement;
     }
     return default;
