@@ -7,12 +7,12 @@ public static class PivotTableCacheRecordsPartConverter
 {
   public static String? GetContentType(DocumentFormat.OpenXml.Packaging.PivotTableCacheRecordsPart? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented in GenerateStringPropertyGetCode: propertyType is System.String");
+    return openXmlElement?.ContentType;
   }
   
   public static String? GetRelationshipType(DocumentFormat.OpenXml.Packaging.PivotTableCacheRecordsPart? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented in GenerateStringPropertyGetCode: propertyType is System.String");
+    return openXmlElement?.RelationshipType;
   }
   
   public static DocumentModel.Packaging.PivotTableCacheRecordsPart? CreateModelElement(DocumentFormat.OpenXml.Packaging.PivotTableCacheRecordsPart? openXmlElement)

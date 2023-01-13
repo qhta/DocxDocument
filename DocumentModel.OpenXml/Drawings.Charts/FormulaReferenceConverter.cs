@@ -10,12 +10,25 @@ public static class FormulaReferenceConverter
   /// </summary>
   public static String? GetSequenceOfReferences(DocumentFormat.OpenXml.Office2013.Drawing.Chart.FormulaReference? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented in GenerateStringPropertyGetCode: propertyType is DocumentFormat.OpenXml.Office2013.Drawing.Chart.SequenceOfReferences");
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office2013.Drawing.Chart.SequenceOfReferences>();
+    if (itemElement != null)
+      return itemElement.Text;
+    return null;
   }
   
   public static void SetSequenceOfReferences(DocumentFormat.OpenXml.Office2013.Drawing.Chart.FormulaReference? openXmlElement, String? value)
   {
-    throw new NotImplementedException("Not implemented in GenerateStringPropertySetCode: propertyType is DocumentFormat.OpenXml.Office2013.Drawing.Chart.SequenceOfReferences");
+    if (openXmlElement != null)
+    {
+      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2013.Drawing.Chart.SequenceOfReferences>();
+      if (itemElement != null)
+        itemElement.Remove();
+      if (value != null)
+      {
+        itemElement = new DocumentFormat.OpenXml.Office2013.Drawing.Chart.SequenceOfReferences { Text = value };
+        openXmlElement.AddChild(itemElement);
+      }
+    }
   }
   
   public static DocumentModel.Drawings.Charts.FormulaReference? CreateModelElement(DocumentFormat.OpenXml.Office2013.Drawing.Chart.FormulaReference? openXmlElement)

@@ -7,12 +7,25 @@ public static class CheckBoxConverter
 {
   public static String? GetFormFieldSize(DocumentFormat.OpenXml.Wordprocessing.CheckBox? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented in GenerateStringPropertyGetCode: propertyType is DocumentFormat.OpenXml.Wordprocessing.FormFieldSize");
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.FormFieldSize>();
+    if (itemElement != null)
+      return itemElement.Val?.Value;
+    return null;
   }
   
   public static void SetFormFieldSize(DocumentFormat.OpenXml.Wordprocessing.CheckBox? openXmlElement, String? value)
   {
-    throw new NotImplementedException("Not implemented in GenerateStringPropertySetCode: propertyType is DocumentFormat.OpenXml.Wordprocessing.FormFieldSize");
+    if (openXmlElement != null)
+    {
+      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.FormFieldSize>();
+      if (itemElement != null)
+        itemElement.Remove();
+      if (value != null)
+      {
+        itemElement = new DocumentFormat.OpenXml.Wordprocessing.FormFieldSize { Val = value };
+        openXmlElement.AddChild(itemElement);
+      }
+    }
   }
   
   public static Boolean? GetAutomaticallySizeFormField(DocumentFormat.OpenXml.Wordprocessing.CheckBox? openXmlElement)

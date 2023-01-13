@@ -8,19 +8,28 @@ namespace DocumentModel;
 
 /// <summary>Represents the list value attributes (xsd:list).</summary>
 [DebuggerDisplay("{InnerText}")]
-public class ListOf<T>: IEnumerable<T>, IEnumerable
+public class ListOf<T>: ICollection<T>
   where T : IConvertible
 {
   private string? TextValue;
   private const string _listSeparator = " ";
-  private ObservableCollection<T>? _list;
+  private ObservableCollection<T> _list = null!;
 
+  /// <summary>
+  /// Initializes a new instance of the <see cref="T:DocumentFormat.OpenXml.ListValue`1" /> class.
+  /// </summary>
+  /// <param name="list">The list of the values.</param>
+  public ListOf()
+  {
+    _list = new ObservableCollection<T>();
+    _list.CollectionChanged += new NotifyCollectionChangedEventHandler(CollectionChanged);
+  }
 
   /// <summary>
   /// Initializes a new instance of the <see cref="T:DocumentFormat.OpenXml.ListValue`1" /> class using the supplied list of values.
   /// </summary>
   /// <param name="list">The list of the values.</param>
-  public ListOf(IEnumerable<T> list)
+  public ListOf(IEnumerable<T> list): this()
   {
     _list = new ObservableCollection<T>();
     _list.CollectionChanged += new NotifyCollectionChangedEventHandler(CollectionChanged);
@@ -33,8 +42,11 @@ public class ListOf<T>: IEnumerable<T>, IEnumerable
   /// </summary>
   /// <param name="list">The source <see cref="T:DocumentFormat.OpenXml.ListValue`1" /> class.</param>
   public ListOf(ListOf<T> list)
-    : this(list.Items)
   {
+    _list = new ObservableCollection<T>();
+    _list.CollectionChanged += new NotifyCollectionChangedEventHandler(CollectionChanged);
+    foreach (T obj in list)
+      _list.Add(obj);
   }
 
   /// <summary>
@@ -126,7 +138,7 @@ public class ListOf<T>: IEnumerable<T>, IEnumerable
     set
     {
       TextValue = value;
-      _list = null;
+      Parse();
     }
   }
 
@@ -136,5 +148,34 @@ public class ListOf<T>: IEnumerable<T>, IEnumerable
   public IEnumerator<T> GetEnumerator() => Items.GetEnumerator();
 
   IEnumerator IEnumerable.GetEnumerator() => (IEnumerator)GetEnumerator();
+
+  public void Add(T item)
+  {
+    (_list).Add(item);
+  }
+
+  public void Clear()
+  {
+    (_list).Clear();
+  }
+
+  public bool Contains(T item)
+  {
+    return (_list).Contains(item);
+  }
+
+  public void CopyTo(T[] array, int arrayIndex)
+  {
+    (_list).CopyTo(array, arrayIndex);
+  }
+
+  public bool Remove(T item)
+  {
+    return (_list).Remove(item);
+  }
+
+  public int Count => (_list).Count;
+
+  public bool IsReadOnly => false;
 }
 

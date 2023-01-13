@@ -61,12 +61,25 @@ public static class HeaderFooterConverter
   /// </summary>
   public static String? GetOddHeader(DocumentFormat.OpenXml.Drawing.Charts.HeaderFooter? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented in GenerateStringPropertyGetCode: propertyType is DocumentFormat.OpenXml.Drawing.Charts.OddHeader");
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.OddHeader>();
+    if (itemElement != null)
+      return itemElement.Text;
+    return null;
   }
   
   public static void SetOddHeader(DocumentFormat.OpenXml.Drawing.Charts.HeaderFooter? openXmlElement, String? value)
   {
-    throw new NotImplementedException("Not implemented in GenerateStringPropertySetCode: propertyType is DocumentFormat.OpenXml.Drawing.Charts.OddHeader");
+    if (openXmlElement != null)
+    {
+      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.OddHeader>();
+      if (itemElement != null)
+        itemElement.Remove();
+      if (value != null)
+      {
+        itemElement = new DocumentFormat.OpenXml.Drawing.Charts.OddHeader { Text = value };
+        openXmlElement.AddChild(itemElement);
+      }
+    }
   }
   
   /// <summary>
@@ -74,12 +87,25 @@ public static class HeaderFooterConverter
   /// </summary>
   public static String? GetOddFooter(DocumentFormat.OpenXml.Drawing.Charts.HeaderFooter? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented in GenerateStringPropertyGetCode: propertyType is DocumentFormat.OpenXml.Drawing.Charts.OddFooter");
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.OddFooter>();
+    if (itemElement != null)
+      return itemElement.Text;
+    return null;
   }
   
   public static void SetOddFooter(DocumentFormat.OpenXml.Drawing.Charts.HeaderFooter? openXmlElement, String? value)
   {
-    throw new NotImplementedException("Not implemented in GenerateStringPropertySetCode: propertyType is DocumentFormat.OpenXml.Drawing.Charts.OddFooter");
+    if (openXmlElement != null)
+    {
+      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.OddFooter>();
+      if (itemElement != null)
+        itemElement.Remove();
+      if (value != null)
+      {
+        itemElement = new DocumentFormat.OpenXml.Drawing.Charts.OddFooter { Text = value };
+        openXmlElement.AddChild(itemElement);
+      }
+    }
   }
   
   /// <summary>
@@ -87,12 +113,25 @@ public static class HeaderFooterConverter
   /// </summary>
   public static String? GetEvenHeader(DocumentFormat.OpenXml.Drawing.Charts.HeaderFooter? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented in GenerateStringPropertyGetCode: propertyType is DocumentFormat.OpenXml.Drawing.Charts.EvenHeader");
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.EvenHeader>();
+    if (itemElement != null)
+      return itemElement.Text;
+    return null;
   }
   
   public static void SetEvenHeader(DocumentFormat.OpenXml.Drawing.Charts.HeaderFooter? openXmlElement, String? value)
   {
-    throw new NotImplementedException("Not implemented in GenerateStringPropertySetCode: propertyType is DocumentFormat.OpenXml.Drawing.Charts.EvenHeader");
+    if (openXmlElement != null)
+    {
+      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.EvenHeader>();
+      if (itemElement != null)
+        itemElement.Remove();
+      if (value != null)
+      {
+        itemElement = new DocumentFormat.OpenXml.Drawing.Charts.EvenHeader { Text = value };
+        openXmlElement.AddChild(itemElement);
+      }
+    }
   }
   
   /// <summary>
@@ -100,12 +139,25 @@ public static class HeaderFooterConverter
   /// </summary>
   public static String? GetEvenFooter(DocumentFormat.OpenXml.Drawing.Charts.HeaderFooter? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented in GenerateStringPropertyGetCode: propertyType is DocumentFormat.OpenXml.Drawing.Charts.EvenFooter");
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.EvenFooter>();
+    if (itemElement != null)
+      return itemElement.Text;
+    return null;
   }
   
   public static void SetEvenFooter(DocumentFormat.OpenXml.Drawing.Charts.HeaderFooter? openXmlElement, String? value)
   {
-    throw new NotImplementedException("Not implemented in GenerateStringPropertySetCode: propertyType is DocumentFormat.OpenXml.Drawing.Charts.EvenFooter");
+    if (openXmlElement != null)
+    {
+      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.EvenFooter>();
+      if (itemElement != null)
+        itemElement.Remove();
+      if (value != null)
+      {
+        itemElement = new DocumentFormat.OpenXml.Drawing.Charts.EvenFooter { Text = value };
+        openXmlElement.AddChild(itemElement);
+      }
+    }
   }
   
   /// <summary>
@@ -113,12 +165,25 @@ public static class HeaderFooterConverter
   /// </summary>
   public static String? GetFirstHeader(DocumentFormat.OpenXml.Drawing.Charts.HeaderFooter? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented in GenerateStringPropertyGetCode: propertyType is DocumentFormat.OpenXml.Drawing.Charts.FirstHeader");
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.FirstHeader>();
+    if (itemElement != null)
+      return itemElement.Text;
+    return null;
   }
   
   public static void SetFirstHeader(DocumentFormat.OpenXml.Drawing.Charts.HeaderFooter? openXmlElement, String? value)
   {
-    throw new NotImplementedException("Not implemented in GenerateStringPropertySetCode: propertyType is DocumentFormat.OpenXml.Drawing.Charts.FirstHeader");
+    if (openXmlElement != null)
+    {
+      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.FirstHeader>();
+      if (itemElement != null)
+        itemElement.Remove();
+      if (value != null)
+      {
+        itemElement = new DocumentFormat.OpenXml.Drawing.Charts.FirstHeader { Text = value };
+        openXmlElement.AddChild(itemElement);
+      }
+    }
   }
   
   /// <summary>
@@ -126,12 +191,25 @@ public static class HeaderFooterConverter
   /// </summary>
   public static String? GetFirstFooter(DocumentFormat.OpenXml.Drawing.Charts.HeaderFooter? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented in GenerateStringPropertyGetCode: propertyType is DocumentFormat.OpenXml.Drawing.Charts.FirstFooter");
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.FirstFooter>();
+    if (itemElement != null)
+      return itemElement.Text;
+    return null;
   }
   
   public static void SetFirstFooter(DocumentFormat.OpenXml.Drawing.Charts.HeaderFooter? openXmlElement, String? value)
   {
-    throw new NotImplementedException("Not implemented in GenerateStringPropertySetCode: propertyType is DocumentFormat.OpenXml.Drawing.Charts.FirstFooter");
+    if (openXmlElement != null)
+    {
+      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.FirstFooter>();
+      if (itemElement != null)
+        itemElement.Remove();
+      if (value != null)
+      {
+        itemElement = new DocumentFormat.OpenXml.Drawing.Charts.FirstFooter { Text = value };
+        openXmlElement.AddChild(itemElement);
+      }
+    }
   }
   
   public static DocumentModel.Drawings.Charts.HeaderFooter? CreateModelElement(DocumentFormat.OpenXml.Drawing.Charts.HeaderFooter? openXmlElement)

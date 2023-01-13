@@ -10,12 +10,25 @@ public static class DelimiterPropertiesConverter
   /// </summary>
   public static String? GetBeginChar(DocumentFormat.OpenXml.Math.DelimiterProperties? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented in GenerateStringPropertyGetCode: propertyType is DocumentFormat.OpenXml.Math.BeginChar");
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Math.BeginChar>();
+    if (itemElement != null)
+      return itemElement.Val?.Value;
+    return null;
   }
   
   public static void SetBeginChar(DocumentFormat.OpenXml.Math.DelimiterProperties? openXmlElement, String? value)
   {
-    throw new NotImplementedException("Not implemented in GenerateStringPropertySetCode: propertyType is DocumentFormat.OpenXml.Math.BeginChar");
+    if (openXmlElement != null)
+    {
+      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Math.BeginChar>();
+      if (itemElement != null)
+        itemElement.Remove();
+      if (value != null)
+      {
+        itemElement = new DocumentFormat.OpenXml.Math.BeginChar { Val = value };
+        openXmlElement.AddChild(itemElement);
+      }
+    }
   }
   
   /// <summary>
@@ -23,12 +36,25 @@ public static class DelimiterPropertiesConverter
   /// </summary>
   public static String? GetSeparatorChar(DocumentFormat.OpenXml.Math.DelimiterProperties? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented in GenerateStringPropertyGetCode: propertyType is DocumentFormat.OpenXml.Math.SeparatorChar");
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Math.SeparatorChar>();
+    if (itemElement != null)
+      return itemElement.Val?.Value;
+    return null;
   }
   
   public static void SetSeparatorChar(DocumentFormat.OpenXml.Math.DelimiterProperties? openXmlElement, String? value)
   {
-    throw new NotImplementedException("Not implemented in GenerateStringPropertySetCode: propertyType is DocumentFormat.OpenXml.Math.SeparatorChar");
+    if (openXmlElement != null)
+    {
+      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Math.SeparatorChar>();
+      if (itemElement != null)
+        itemElement.Remove();
+      if (value != null)
+      {
+        itemElement = new DocumentFormat.OpenXml.Math.SeparatorChar { Val = value };
+        openXmlElement.AddChild(itemElement);
+      }
+    }
   }
   
   /// <summary>
@@ -36,12 +62,25 @@ public static class DelimiterPropertiesConverter
   /// </summary>
   public static String? GetEndChar(DocumentFormat.OpenXml.Math.DelimiterProperties? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented in GenerateStringPropertyGetCode: propertyType is DocumentFormat.OpenXml.Math.EndChar");
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Math.EndChar>();
+    if (itemElement != null)
+      return itemElement.Val?.Value;
+    return null;
   }
   
   public static void SetEndChar(DocumentFormat.OpenXml.Math.DelimiterProperties? openXmlElement, String? value)
   {
-    throw new NotImplementedException("Not implemented in GenerateStringPropertySetCode: propertyType is DocumentFormat.OpenXml.Math.EndChar");
+    if (openXmlElement != null)
+    {
+      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Math.EndChar>();
+      if (itemElement != null)
+        itemElement.Remove();
+      if (value != null)
+      {
+        itemElement = new DocumentFormat.OpenXml.Math.EndChar { Val = value };
+        openXmlElement.AddChild(itemElement);
+      }
+    }
   }
   
   /// <summary>

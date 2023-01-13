@@ -10,12 +10,18 @@ public static class StyleEntryConverter
   /// </summary>
   public static DocumentModel.ListOf<String>? GetModifiers(DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.StyleEntry? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented in GenerateSimplePropertyGetCode: ListValue<> property is of DocumentFormat.OpenXml.ListValue`1[DocumentFormat.OpenXml.StringValue] type");
+    return ListValueConverter.GetValue(openXmlElement?.Modifiers);
   }
   
   public static void SetModifiers(DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.StyleEntry? openXmlElement, DocumentModel.ListOf<String>? value)
   {
-    throw new NotImplementedException("Not implemented in GenerateSimplePropertySetCode: ListValue<> property is of DocumentFormat.OpenXml.ListValue`1[DocumentFormat.OpenXml.StringValue] type");
+    if (openXmlElement != null)
+    {
+      if (value != null)
+        openXmlElement.Modifiers = ListValueConverter.CreateListValue<DocumentFormat.OpenXml.StringValue>(value);
+      else
+        openXmlElement.Modifiers = null;
+    }
   }
   
   /// <summary>
@@ -50,12 +56,25 @@ public static class StyleEntryConverter
   /// </summary>
   public static String? GetLineWidthScale(DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.StyleEntry? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented in GenerateStringPropertyGetCode: propertyType is DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.LineWidthScale");
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.LineWidthScale>();
+    if (itemElement != null)
+      return itemElement.Text;
+    return null;
   }
   
   public static void SetLineWidthScale(DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.StyleEntry? openXmlElement, String? value)
   {
-    throw new NotImplementedException("Not implemented in GenerateStringPropertySetCode: propertyType is DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.LineWidthScale");
+    if (openXmlElement != null)
+    {
+      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.LineWidthScale>();
+      if (itemElement != null)
+        itemElement.Remove();
+      if (value != null)
+      {
+        itemElement = new DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.LineWidthScale { Text = value };
+        openXmlElement.AddChild(itemElement);
+      }
+    }
   }
   
   /// <summary>

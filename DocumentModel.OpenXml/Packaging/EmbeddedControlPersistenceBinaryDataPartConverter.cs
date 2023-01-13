@@ -7,7 +7,7 @@ public static class EmbeddedControlPersistenceBinaryDataPartConverter
 {
   public static String? GetRelationshipType(DocumentFormat.OpenXml.Packaging.EmbeddedControlPersistenceBinaryDataPart? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented in GenerateStringPropertyGetCode: propertyType is System.String");
+    return openXmlElement?.RelationshipType;
   }
   
   public static DocumentModel.Packaging.EmbeddedControlPersistenceBinaryDataPart? CreateModelElement(DocumentFormat.OpenXml.Packaging.EmbeddedControlPersistenceBinaryDataPart? openXmlElement)

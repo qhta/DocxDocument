@@ -7,22 +7,48 @@ public static class ToAnchorConverter
 {
   public static String? GetXPosition(DocumentFormat.OpenXml.Drawing.ChartDrawing.ToAnchor? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented in GenerateStringPropertyGetCode: propertyType is DocumentFormat.OpenXml.Drawing.ChartDrawing.XPosition");
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.ChartDrawing.XPosition>();
+    if (itemElement != null)
+      return itemElement.Text;
+    return null;
   }
   
   public static void SetXPosition(DocumentFormat.OpenXml.Drawing.ChartDrawing.ToAnchor? openXmlElement, String? value)
   {
-    throw new NotImplementedException("Not implemented in GenerateStringPropertySetCode: propertyType is DocumentFormat.OpenXml.Drawing.ChartDrawing.XPosition");
+    if (openXmlElement != null)
+    {
+      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.ChartDrawing.XPosition>();
+      if (itemElement != null)
+        itemElement.Remove();
+      if (value != null)
+      {
+        itemElement = new DocumentFormat.OpenXml.Drawing.ChartDrawing.XPosition { Text = value };
+        openXmlElement.AddChild(itemElement);
+      }
+    }
   }
   
   public static String? GetYPosition(DocumentFormat.OpenXml.Drawing.ChartDrawing.ToAnchor? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented in GenerateStringPropertyGetCode: propertyType is DocumentFormat.OpenXml.Drawing.ChartDrawing.YPosition");
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.ChartDrawing.YPosition>();
+    if (itemElement != null)
+      return itemElement.Text;
+    return null;
   }
   
   public static void SetYPosition(DocumentFormat.OpenXml.Drawing.ChartDrawing.ToAnchor? openXmlElement, String? value)
   {
-    throw new NotImplementedException("Not implemented in GenerateStringPropertySetCode: propertyType is DocumentFormat.OpenXml.Drawing.ChartDrawing.YPosition");
+    if (openXmlElement != null)
+    {
+      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.ChartDrawing.YPosition>();
+      if (itemElement != null)
+        itemElement.Remove();
+      if (value != null)
+      {
+        itemElement = new DocumentFormat.OpenXml.Drawing.ChartDrawing.YPosition { Text = value };
+        openXmlElement.AddChild(itemElement);
+      }
+    }
   }
   
   public static DocumentModel.Drawings.ChartDrawing.ToAnchor? CreateModelElement(DocumentFormat.OpenXml.Drawing.ChartDrawing.ToAnchor? openXmlElement)

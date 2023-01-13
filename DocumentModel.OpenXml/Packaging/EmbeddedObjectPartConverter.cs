@@ -7,7 +7,7 @@ public static class EmbeddedObjectPartConverter
 {
   public static String? GetRelationshipType(DocumentFormat.OpenXml.Packaging.EmbeddedObjectPart? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented in GenerateStringPropertyGetCode: propertyType is System.String");
+    return openXmlElement?.RelationshipType;
   }
   
   public static DocumentModel.Packaging.EmbeddedObjectPart? CreateModelElement(DocumentFormat.OpenXml.Packaging.EmbeddedObjectPart? openXmlElement)

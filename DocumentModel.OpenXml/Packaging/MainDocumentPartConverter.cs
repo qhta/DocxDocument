@@ -324,7 +324,7 @@ public static class MainDocumentPartConverter
   
   public static String? GetRelationshipType(DocumentFormat.OpenXml.Packaging.MainDocumentPart? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented in GenerateStringPropertyGetCode: propertyType is System.String");
+    return openXmlElement?.RelationshipType;
   }
   
   /// <summary>

@@ -26,7 +26,7 @@ public static class NotesMasterPartConverter
   
   public static String? GetContentType(DocumentFormat.OpenXml.Packaging.NotesMasterPart? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented in GenerateStringPropertyGetCode: propertyType is System.String");
+    return openXmlElement?.ContentType;
   }
   
   /// <summary>
@@ -259,7 +259,7 @@ public static class NotesMasterPartConverter
   
   public static String? GetRelationshipType(DocumentFormat.OpenXml.Packaging.NotesMasterPart? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented in GenerateStringPropertyGetCode: propertyType is System.String");
+    return openXmlElement?.RelationshipType;
   }
   
   /// <summary>

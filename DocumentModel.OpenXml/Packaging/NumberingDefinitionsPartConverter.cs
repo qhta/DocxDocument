@@ -7,7 +7,7 @@ public static class NumberingDefinitionsPartConverter
 {
   public static String? GetContentType(DocumentFormat.OpenXml.Packaging.NumberingDefinitionsPart? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented in GenerateStringPropertyGetCode: propertyType is System.String");
+    return openXmlElement?.ContentType;
   }
   
   /// <summary>
@@ -44,7 +44,7 @@ public static class NumberingDefinitionsPartConverter
   
   public static String? GetRelationshipType(DocumentFormat.OpenXml.Packaging.NumberingDefinitionsPart? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented in GenerateStringPropertyGetCode: propertyType is System.String");
+    return openXmlElement?.RelationshipType;
   }
   
   public static DocumentModel.Packaging.NumberingDefinitionsPart? CreateModelElement(DocumentFormat.OpenXml.Packaging.NumberingDefinitionsPart? openXmlElement)

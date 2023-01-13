@@ -26,7 +26,7 @@ public static class NotesSlidePartConverter
   
   public static String? GetContentType(DocumentFormat.OpenXml.Packaging.NotesSlidePart? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented in GenerateStringPropertyGetCode: propertyType is System.String");
+    return openXmlElement?.ContentType;
   }
   
   /// <summary>
@@ -259,7 +259,7 @@ public static class NotesSlidePartConverter
   
   public static String? GetRelationshipType(DocumentFormat.OpenXml.Packaging.NotesSlidePart? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented in GenerateStringPropertyGetCode: propertyType is System.String");
+    return openXmlElement?.RelationshipType;
   }
   
   /// <summary>

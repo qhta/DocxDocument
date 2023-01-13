@@ -7,12 +7,12 @@ public static class StyleDefinitionsPartConverter
 {
   public static String? GetContentType(DocumentFormat.OpenXml.Packaging.StyleDefinitionsPart? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented in GenerateStringPropertyGetCode: propertyType is System.String");
+    return openXmlElement?.ContentType;
   }
   
   public static String? GetRelationshipType(DocumentFormat.OpenXml.Packaging.StyleDefinitionsPart? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented in GenerateStringPropertyGetCode: propertyType is System.String");
+    return openXmlElement?.RelationshipType;
   }
   
   public static DocumentModel.Packaging.StyleDefinitionsPart? CreateModelElement(DocumentFormat.OpenXml.Packaging.StyleDefinitionsPart? openXmlElement)

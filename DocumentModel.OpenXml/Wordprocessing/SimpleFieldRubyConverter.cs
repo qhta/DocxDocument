@@ -61,12 +61,25 @@ public static class SimpleFieldRubyConverter
   /// </summary>
   public static String? GetFieldData(DocumentFormat.OpenXml.Wordprocessing.SimpleFieldRuby? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented in GenerateStringPropertyGetCode: propertyType is DocumentFormat.OpenXml.Wordprocessing.FieldData");
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.FieldData>();
+    if (itemElement != null)
+      return itemElement.Text;
+    return null;
   }
   
   public static void SetFieldData(DocumentFormat.OpenXml.Wordprocessing.SimpleFieldRuby? openXmlElement, String? value)
   {
-    throw new NotImplementedException("Not implemented in GenerateStringPropertySetCode: propertyType is DocumentFormat.OpenXml.Wordprocessing.FieldData");
+    if (openXmlElement != null)
+    {
+      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.FieldData>();
+      if (itemElement != null)
+        itemElement.Remove();
+      if (value != null)
+      {
+        itemElement = new DocumentFormat.OpenXml.Wordprocessing.FieldData { Text = value };
+        openXmlElement.AddChild(itemElement);
+      }
+    }
   }
   
   public static DocumentModel.Wordprocessing.CustomXmlRuby? GetCustomXmlRuby(DocumentFormat.OpenXml.Wordprocessing.SimpleFieldRuby? openXmlElement)

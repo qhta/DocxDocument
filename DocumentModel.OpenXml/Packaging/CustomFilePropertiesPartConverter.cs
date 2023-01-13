@@ -7,7 +7,7 @@ public static class CustomFilePropertiesPartConverter
 {
   public static String? GetContentType(DocumentFormat.OpenXml.Packaging.CustomFilePropertiesPart? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented in GenerateStringPropertyGetCode: propertyType is System.String");
+    return openXmlElement?.ContentType;
   }
   
   /// <summary>
@@ -25,7 +25,7 @@ public static class CustomFilePropertiesPartConverter
   
   public static String? GetRelationshipType(DocumentFormat.OpenXml.Packaging.CustomFilePropertiesPart? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented in GenerateStringPropertyGetCode: propertyType is System.String");
+    return openXmlElement?.RelationshipType;
   }
   
   public static DocumentModel.Packaging.CustomFilePropertiesPart? CreateModelElement(DocumentFormat.OpenXml.Packaging.CustomFilePropertiesPart? openXmlElement)

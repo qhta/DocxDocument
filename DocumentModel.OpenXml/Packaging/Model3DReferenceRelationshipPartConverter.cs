@@ -7,12 +7,12 @@ public static class Model3DReferenceRelationshipPartConverter
 {
   public static String? GetContentType(DocumentFormat.OpenXml.Packaging.Model3DReferenceRelationshipPart? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented in GenerateStringPropertyGetCode: propertyType is System.String");
+    return openXmlElement?.ContentType;
   }
   
   public static String? GetRelationshipType(DocumentFormat.OpenXml.Packaging.Model3DReferenceRelationshipPart? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented in GenerateStringPropertyGetCode: propertyType is System.String");
+    return openXmlElement?.RelationshipType;
   }
   
   public static DocumentModel.Packaging.Model3DReferenceRelationshipPart? CreateModelElement(DocumentFormat.OpenXml.Packaging.Model3DReferenceRelationshipPart? openXmlElement)
