@@ -10,12 +10,13 @@ public static class IdPartPairConverter
   /// </summary>
   public static String? GetRelationshipId(DocumentFormat.OpenXml.Packaging.IdPartPair? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented in GenerateStringPropertyGetCode: propertyType is System.String");
+    return openXmlElement?.RelationshipId;
   }
   
   public static void SetRelationshipId(DocumentFormat.OpenXml.Packaging.IdPartPair? openXmlElement, String? value)
   {
-    throw new NotImplementedException("Not implemented in GenerateStringPropertySetCode: propertyType is System.String");
+    if (openXmlElement != null && value != null)
+        openXmlElement.RelationshipId = value;
   }
   
   public static DocumentModel.Packaging.IdPartPair? CreateModelElement(DocumentFormat.OpenXml.Packaging.IdPartPair? openXmlElement)

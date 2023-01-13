@@ -7,7 +7,7 @@ public static class WorksheetPartConverter
 {
   public static String? GetContentType(DocumentFormat.OpenXml.Packaging.WorksheetPart? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented in GenerateStringPropertyGetCode: propertyType is System.String");
+    return openXmlElement?.ContentType;
   }
   
   /// <summary>
@@ -221,7 +221,7 @@ public static class WorksheetPartConverter
   
   public static String? GetRelationshipType(DocumentFormat.OpenXml.Packaging.WorksheetPart? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented in GenerateStringPropertyGetCode: propertyType is System.String");
+    return openXmlElement?.RelationshipType;
   }
   
   /// <summary>

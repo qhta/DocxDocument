@@ -20,12 +20,12 @@ public static class WordCommentsExtensiblePartConverter
   
   public static String? GetContentType(DocumentFormat.OpenXml.Packaging.WordCommentsExtensiblePart? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented in GenerateStringPropertyGetCode: propertyType is System.String");
+    return openXmlElement?.ContentType;
   }
   
   public static String? GetRelationshipType(DocumentFormat.OpenXml.Packaging.WordCommentsExtensiblePart? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented in GenerateStringPropertyGetCode: propertyType is System.String");
+    return openXmlElement?.RelationshipType;
   }
   
   public static DocumentModel.Packaging.WordCommentsExtensiblePart? CreateModelElement(DocumentFormat.OpenXml.Packaging.WordCommentsExtensiblePart? openXmlElement)

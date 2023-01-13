@@ -58,7 +58,7 @@ public static class ChartPartConverter
   
   public static String? GetContentType(DocumentFormat.OpenXml.Packaging.ChartPart? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented in GenerateStringPropertyGetCode: propertyType is System.String");
+    return openXmlElement?.ContentType;
   }
   
   /// <summary>
@@ -82,7 +82,7 @@ public static class ChartPartConverter
   
   public static String? GetRelationshipType(DocumentFormat.OpenXml.Packaging.ChartPart? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented in GenerateStringPropertyGetCode: propertyType is System.String");
+    return openXmlElement?.RelationshipType;
   }
   
   public static DocumentModel.Packaging.ChartPart? CreateModelElement(DocumentFormat.OpenXml.Packaging.ChartPart? openXmlElement)

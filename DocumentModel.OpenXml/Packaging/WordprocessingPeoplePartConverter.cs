@@ -7,7 +7,7 @@ public static class WordprocessingPeoplePartConverter
 {
   public static String? GetContentType(DocumentFormat.OpenXml.Packaging.WordprocessingPeoplePart? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented in GenerateStringPropertyGetCode: propertyType is System.String");
+    return openXmlElement?.ContentType;
   }
   
   /// <summary>
@@ -25,7 +25,7 @@ public static class WordprocessingPeoplePartConverter
   
   public static String? GetRelationshipType(DocumentFormat.OpenXml.Packaging.WordprocessingPeoplePart? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented in GenerateStringPropertyGetCode: propertyType is System.String");
+    return openXmlElement?.RelationshipType;
   }
   
   public static DocumentModel.Packaging.WordprocessingPeoplePart? CreateModelElement(DocumentFormat.OpenXml.Packaging.WordprocessingPeoplePart? openXmlElement)

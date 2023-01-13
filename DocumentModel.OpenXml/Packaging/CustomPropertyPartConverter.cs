@@ -7,7 +7,7 @@ public static class CustomPropertyPartConverter
 {
   public static String? GetRelationshipType(DocumentFormat.OpenXml.Packaging.CustomPropertyPart? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented in GenerateStringPropertyGetCode: propertyType is System.String");
+    return openXmlElement?.RelationshipType;
   }
   
   public static DocumentModel.Packaging.CustomPropertyPart? CreateModelElement(DocumentFormat.OpenXml.Packaging.CustomPropertyPart? openXmlElement)

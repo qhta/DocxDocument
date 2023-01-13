@@ -7,12 +7,25 @@ public static class NumberLiteralConverter
 {
   public static String? GetFormatCode(DocumentFormat.OpenXml.Drawing.Charts.NumberLiteral? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented in GenerateStringPropertyGetCode: propertyType is DocumentFormat.OpenXml.Drawing.Charts.FormatCode");
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.FormatCode>();
+    if (itemElement != null)
+      return itemElement.Text;
+    return null;
   }
   
   public static void SetFormatCode(DocumentFormat.OpenXml.Drawing.Charts.NumberLiteral? openXmlElement, String? value)
   {
-    throw new NotImplementedException("Not implemented in GenerateStringPropertySetCode: propertyType is DocumentFormat.OpenXml.Drawing.Charts.FormatCode");
+    if (openXmlElement != null)
+    {
+      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.FormatCode>();
+      if (itemElement != null)
+        itemElement.Remove();
+      if (value != null)
+      {
+        itemElement = new DocumentFormat.OpenXml.Drawing.Charts.FormatCode { Text = value };
+        openXmlElement.AddChild(itemElement);
+      }
+    }
   }
   
   public static UInt32? GetPointCount(DocumentFormat.OpenXml.Drawing.Charts.NumberLiteral? openXmlElement)

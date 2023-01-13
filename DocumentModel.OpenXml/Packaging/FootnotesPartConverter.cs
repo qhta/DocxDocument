@@ -45,7 +45,7 @@ public static class FootnotesPartConverter
   
   public static String? GetContentType(DocumentFormat.OpenXml.Packaging.FootnotesPart? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented in GenerateStringPropertyGetCode: propertyType is System.String");
+    return openXmlElement?.ContentType;
   }
   
   /// <summary>
@@ -272,7 +272,7 @@ public static class FootnotesPartConverter
   
   public static String? GetRelationshipType(DocumentFormat.OpenXml.Packaging.FootnotesPart? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented in GenerateStringPropertyGetCode: propertyType is System.String");
+    return openXmlElement?.RelationshipType;
   }
   
   public static DocumentModel.Packaging.FootnotesPart? CreateModelElement(DocumentFormat.OpenXml.Packaging.FootnotesPart? openXmlElement)

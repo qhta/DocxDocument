@@ -7,12 +7,12 @@ public static class TimeLinePartConverter
 {
   public static String? GetContentType(DocumentFormat.OpenXml.Packaging.TimeLinePart? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented in GenerateStringPropertyGetCode: propertyType is System.String");
+    return openXmlElement?.ContentType;
   }
   
   public static String? GetRelationshipType(DocumentFormat.OpenXml.Packaging.TimeLinePart? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented in GenerateStringPropertyGetCode: propertyType is System.String");
+    return openXmlElement?.RelationshipType;
   }
   
   public static DocumentModel.Packaging.TimeLinePart? CreateModelElement(DocumentFormat.OpenXml.Packaging.TimeLinePart? openXmlElement)

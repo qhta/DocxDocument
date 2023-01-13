@@ -18,7 +18,7 @@ public static class OpenXmlPartConverter
   /// </summary>
   public static String? GetContentType(DocumentFormat.OpenXml.Packaging.OpenXmlPart? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented in GenerateStringPropertyGetCode: propertyType is System.String");
+    return openXmlElement?.ContentType;
   }
   
   /// <summary>
@@ -26,7 +26,7 @@ public static class OpenXmlPartConverter
   /// </summary>
   public static String? GetRelationshipType(DocumentFormat.OpenXml.Packaging.OpenXmlPart? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented in GenerateStringPropertyGetCode: propertyType is System.String");
+    return openXmlElement?.RelationshipType;
   }
   
   /// <summary>

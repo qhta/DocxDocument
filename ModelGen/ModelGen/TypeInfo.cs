@@ -1,5 +1,6 @@
 ﻿using System.Collections.ObjectModel;
 using System.Diagnostics;
+using System.Diagnostics.CodeAnalysis;
 using System.Reflection.Metadata.Ecma335;
 using DocumentFormat.OpenXml.Framework.Metadata;
 using System.Runtime.CompilerServices;
@@ -65,6 +66,17 @@ public class TypeInfo : ModelElement
   public bool IsSimple()
   {
     return Type.IsSimple() || Type == typeof(Byte[]) || Type == typeof(HexWord);
+  }
+
+  public bool IsEnum([NotNullWhen(true)] out TypeInfo? enumType)
+  {
+    if (Type.Name.StartsWith("EnumValue`"))
+    {
+      enumType = TypeManager.GetGenericArgTypes(this).FirstOrDefault();
+      return (enumType != null);
+    }
+    enumType = null;
+    return false;
   }
 
   internal IElementMetadata? Metadata { get; set;}

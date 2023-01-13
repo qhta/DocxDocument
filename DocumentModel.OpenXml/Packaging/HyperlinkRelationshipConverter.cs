@@ -10,7 +10,7 @@ public static class HyperlinkRelationshipConverter
   /// </summary>
   public static String? GetRelationshipType(DocumentFormat.OpenXml.Packaging.HyperlinkRelationship? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented in GenerateStringPropertyGetCode: propertyType is System.String");
+    return openXmlElement?.RelationshipType;
   }
   
   public static DocumentModel.Packaging.HyperlinkRelationship? CreateModelElement(DocumentFormat.OpenXml.Packaging.HyperlinkRelationship? openXmlElement)
