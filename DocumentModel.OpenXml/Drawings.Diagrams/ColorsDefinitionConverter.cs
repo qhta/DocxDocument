@@ -211,6 +211,11 @@ public static class ColorsDefinitionConverter
       var openXmlElement = new OpenXmlElementType();
       SetUniqueId(openXmlElement, value?.UniqueId);
       SetMinVersion(openXmlElement, value?.MinVersion);
+      SetColorDefinitionTitles(openXmlElement, value?.ColorDefinitionTitles);
+      SetColorTransformDescriptions(openXmlElement, value?.ColorTransformDescriptions);
+      SetColorTransformCategories(openXmlElement, value?.ColorTransformCategories);
+      SetColorTransformStyleLabels(openXmlElement, value?.ColorTransformStyleLabels);
+      SetExtensionList(openXmlElement, value?.ExtensionList);
       return openXmlElement;
     }
     return default;

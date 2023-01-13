@@ -813,6 +813,15 @@ public static class MenuWithTitleConverter
       SetGetShowLabel(openXmlElement, value?.GetShowLabel);
       SetShowImage(openXmlElement, value?.ShowImage);
       SetGetShowImage(openXmlElement, value?.GetShowImage);
+      SetUnsizedControlClone(openXmlElement, value?.UnsizedControlClone);
+      SetUnsizedButton(openXmlElement, value?.UnsizedButton);
+      SetCheckBox(openXmlElement, value?.CheckBox);
+      SetUnsizedGallery(openXmlElement, value?.UnsizedGallery);
+      SetUnsizedToggleButton(openXmlElement, value?.UnsizedToggleButton);
+      SetMenuSeparator(openXmlElement, value?.MenuSeparator);
+      SetSplitButtonWithTitle(openXmlElement, value?.SplitButtonWithTitle);
+      SetChildMenuWithTitle(openXmlElement, value?.ChildMenuWithTitle);
+      SetUnsizedDynamicMenu(openXmlElement, value?.UnsizedDynamicMenu);
       return openXmlElement;
     }
     return default;

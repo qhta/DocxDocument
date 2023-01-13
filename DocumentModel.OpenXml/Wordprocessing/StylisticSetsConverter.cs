@@ -55,6 +55,7 @@ public static class StylisticSetsConverter
     if (value != null)
     {
       var openXmlElement = new OpenXmlElementType();
+      SetStyleSets(openXmlElement, value?.StyleSets);
       return openXmlElement;
     }
     return default;

@@ -558,6 +558,20 @@ public static class BoxConverter
       SetInsertAfterQulifiedId(openXmlElement, value?.InsertAfterQulifiedId);
       SetInsertBeforeQulifiedId(openXmlElement, value?.InsertBeforeQulifiedId);
       SetBoxStyle(openXmlElement, value?.BoxStyle);
+      SetControlClone(openXmlElement, value?.ControlClone);
+      SetLabelControl(openXmlElement, value?.LabelControl);
+      SetButton(openXmlElement, value?.Button);
+      SetToggleButton(openXmlElement, value?.ToggleButton);
+      SetCheckBox(openXmlElement, value?.CheckBox);
+      SetEditBox(openXmlElement, value?.EditBox);
+      SetComboBox(openXmlElement, value?.ComboBox);
+      SetDropDownRegular(openXmlElement, value?.DropDownRegular);
+      SetGallery(openXmlElement, value?.Gallery);
+      SetMenu(openXmlElement, value?.Menu);
+      SetDynamicMenu(openXmlElement, value?.DynamicMenu);
+      SetSplitButton(openXmlElement, value?.SplitButton);
+      SetChildBox(openXmlElement, value?.ChildBox);
+      SetButtonGroup(openXmlElement, value?.ButtonGroup);
       return openXmlElement;
     }
     return default;

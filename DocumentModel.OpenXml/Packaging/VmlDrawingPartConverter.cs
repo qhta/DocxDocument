@@ -73,6 +73,10 @@ public static class VmlDrawingPartConverter
     if (value != null)
     {
       var openXmlElement = new OpenXmlElementType();
+      //SetContentType(openXmlElement, value?.ContentType);
+      //SetImageParts(openXmlElement, value?.ImageParts);
+      //SetLegacyDiagramTextParts(openXmlElement, value?.LegacyDiagramTextParts);
+      //SetRelationshipType(openXmlElement, value?.RelationshipType);
       return openXmlElement;
     }
     return default;

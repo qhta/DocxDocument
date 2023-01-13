@@ -153,6 +153,8 @@ public static class BackgroundRemovalConverter
       SetMarqueeBottom(openXmlElement, value?.MarqueeBottom);
       SetMarqueeLeft(openXmlElement, value?.MarqueeLeft);
       SetMarqueeRight(openXmlElement, value?.MarqueeRight);
+      SetForegroundMarks(openXmlElement, value?.ForegroundMarks);
+      SetBackgroundMarks(openXmlElement, value?.BackgroundMarks);
       return openXmlElement;
     }
     return default;

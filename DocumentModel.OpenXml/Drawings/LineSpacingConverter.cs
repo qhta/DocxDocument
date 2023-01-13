@@ -69,6 +69,8 @@ public static class LineSpacingConverter
     if (value != null)
     {
       var openXmlElement = new OpenXmlElementType();
+      SetSpacingPercent(openXmlElement, value?.SpacingPercent);
+      SetSpacingPoints(openXmlElement, value?.SpacingPoints);
       return openXmlElement;
     }
     return default;

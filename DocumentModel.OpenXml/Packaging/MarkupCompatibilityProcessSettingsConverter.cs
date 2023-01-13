@@ -10,12 +10,9 @@ public static class MarkupCompatibilityProcessSettingsConverter
   /// </summary>
   public static DocumentModel.Packaging.MarkupCompatibilityProcessMode? GetProcessMode(DocumentFormat.OpenXml.Packaging.MarkupCompatibilityProcessSettings? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented in GenerateEnumPropertyGetCode: 1");
-  }
-  
-  public static void SetProcessMode(DocumentFormat.OpenXml.Packaging.MarkupCompatibilityProcessSettings? openXmlElement, DocumentModel.Packaging.MarkupCompatibilityProcessMode? value)
-  {
-    throw new NotImplementedException("Not implemented in GenerateEnumPropertySetCode: 1");
+    if (openXmlElement?.ProcessMode != null)
+      return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Packaging.MarkupCompatibilityProcessMode, DocumentModel.Packaging.MarkupCompatibilityProcessMode>(openXmlElement.ProcessMode);
+    return null;
   }
   
   /// <summary>
@@ -23,12 +20,9 @@ public static class MarkupCompatibilityProcessSettingsConverter
   /// </summary>
   public static DocumentModel.FileFormatVersions? GetTargetFileFormatVersions(DocumentFormat.OpenXml.Packaging.MarkupCompatibilityProcessSettings? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented in GenerateEnumPropertyGetCode: 1");
-  }
-  
-  public static void SetTargetFileFormatVersions(DocumentFormat.OpenXml.Packaging.MarkupCompatibilityProcessSettings? openXmlElement, DocumentModel.FileFormatVersions? value)
-  {
-    throw new NotImplementedException("Not implemented in GenerateEnumPropertySetCode: 1");
+    if (openXmlElement?.TargetFileFormatVersions != null)
+      return EnumValueConverter.GetValue<DocumentFormat.OpenXml.FileFormatVersions, DocumentModel.FileFormatVersions>(openXmlElement.TargetFileFormatVersions);
+    return null;
   }
   
   public static DocumentModel.Packaging.MarkupCompatibilityProcessSettings? CreateModelElement(DocumentFormat.OpenXml.Packaging.MarkupCompatibilityProcessSettings? openXmlElement)
@@ -49,8 +43,8 @@ public static class MarkupCompatibilityProcessSettingsConverter
     if (value != null)
     {
       var openXmlElement = new OpenXmlElementType();
-      SetProcessMode(openXmlElement, value?.ProcessMode);
-      SetTargetFileFormatVersions(openXmlElement, value?.TargetFileFormatVersions);
+      //SetProcessMode(openXmlElement, value?.ProcessMode);
+      //SetTargetFileFormatVersions(openXmlElement, value?.TargetFileFormatVersions);
       return openXmlElement;
     }
     return default;

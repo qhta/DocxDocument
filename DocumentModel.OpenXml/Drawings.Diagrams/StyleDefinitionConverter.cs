@@ -227,6 +227,12 @@ public static class StyleDefinitionConverter
       var openXmlElement = new OpenXmlElementType();
       SetUniqueId(openXmlElement, value?.UniqueId);
       SetMinVersion(openXmlElement, value?.MinVersion);
+      SetStyleDefinitionTitles(openXmlElement, value?.StyleDefinitionTitles);
+      SetStyleLabelDescriptions(openXmlElement, value?.StyleLabelDescriptions);
+      SetStyleDisplayCategories(openXmlElement, value?.StyleDisplayCategories);
+      SetScene3D(openXmlElement, value?.Scene3D);
+      SetStyleLabel(openXmlElement, value?.StyleLabel);
+      SetExtensionList(openXmlElement, value?.ExtensionList);
       return openXmlElement;
     }
     return default;

@@ -46,6 +46,7 @@ public static class FootnotesConverter
     if (value != null)
     {
       var openXmlElement = new OpenXmlElementType();
+      SetFootnote(openXmlElement, value?.Footnote);
       return openXmlElement;
     }
     return default;

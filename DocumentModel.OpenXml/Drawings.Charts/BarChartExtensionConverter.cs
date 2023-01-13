@@ -65,6 +65,7 @@ public static class BarChartExtensionConverter
     {
       var openXmlElement = new OpenXmlElementType();
       SetUri(openXmlElement, value?.Uri);
+      SetFilteredBarSeries(openXmlElement, value?.FilteredBarSeries);
       return openXmlElement;
     }
     return default;

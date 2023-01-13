@@ -55,6 +55,7 @@ public static class PieChartExtensionListConverter
     if (value != null)
     {
       var openXmlElement = new OpenXmlElementType();
+      SetPieChartExtensions(openXmlElement, value?.PieChartExtensions);
       return openXmlElement;
     }
     return default;

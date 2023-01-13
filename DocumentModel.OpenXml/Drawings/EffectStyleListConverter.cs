@@ -46,6 +46,7 @@ public static class EffectStyleListConverter
     if (value != null)
     {
       var openXmlElement = new OpenXmlElementType();
+      SetEffectStyle(openXmlElement, value?.EffectStyle);
       return openXmlElement;
     }
     return default;

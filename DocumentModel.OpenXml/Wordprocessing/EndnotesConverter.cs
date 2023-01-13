@@ -46,6 +46,7 @@ public static class EndnotesConverter
     if (value != null)
     {
       var openXmlElement = new OpenXmlElementType();
+      SetEndnote(openXmlElement, value?.Endnote);
       return openXmlElement;
     }
     return default;

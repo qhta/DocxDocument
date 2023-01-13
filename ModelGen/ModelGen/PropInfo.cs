@@ -43,7 +43,7 @@ public class PropInfo: ModelElement
     //else
     //  IsAbstract = true;
 
-    if (propertyInfo.SetMethod == null)
+    if (propertyInfo.SetMethod == null || !propertyInfo.SetMethod.IsPublic)
       IsReadonly = true;
 
     if (ModelData.ExcludedProperties.Contains(propertyInfo.Name))

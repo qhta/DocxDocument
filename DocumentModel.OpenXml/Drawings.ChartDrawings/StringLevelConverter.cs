@@ -90,6 +90,7 @@ public static class StringLevelConverter
       var openXmlElement = new OpenXmlElementType();
       SetPtCount(openXmlElement, value?.PtCount);
       SetName(openXmlElement, value?.Name);
+      SetChartStringValues(openXmlElement, value?.ChartStringValues);
       return openXmlElement;
     }
     return default;

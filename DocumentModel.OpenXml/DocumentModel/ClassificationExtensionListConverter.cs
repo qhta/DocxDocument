@@ -55,6 +55,7 @@ public static class ClassificationExtensionListConverter
     if (value != null)
     {
       var openXmlElement = new OpenXmlElementType();
+      SetClassificationExtensions(openXmlElement, value?.ClassificationExtensions);
       return openXmlElement;
     }
     return default;

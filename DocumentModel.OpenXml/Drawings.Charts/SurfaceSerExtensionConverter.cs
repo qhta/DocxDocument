@@ -115,6 +115,9 @@ public static class SurfaceSerExtensionConverter
     {
       var openXmlElement = new OpenXmlElementType();
       SetUri(openXmlElement, value?.Uri);
+      SetFilteredSeriesTitle(openXmlElement, value?.FilteredSeriesTitle);
+      SetFilteredCategoryTitle(openXmlElement, value?.FilteredCategoryTitle);
+      SetCategoryFilterExceptions(openXmlElement, value?.CategoryFilterExceptions);
       return openXmlElement;
     }
     return default;

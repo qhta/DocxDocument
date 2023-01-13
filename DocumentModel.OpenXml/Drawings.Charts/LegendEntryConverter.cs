@@ -128,6 +128,9 @@ public static class LegendEntryConverter
     {
       var openXmlElement = new OpenXmlElementType();
       SetIndex(openXmlElement, value?.Index);
+      SetDelete(openXmlElement, value?.Delete);
+      SetTextProperties(openXmlElement, value?.TextProperties);
+      SetExtensionList(openXmlElement, value?.ExtensionList);
       return openXmlElement;
     }
     return default;

@@ -146,6 +146,11 @@ public static class LiveFeedBackgroundPropertiesConverter
     if (value != null)
     {
       var openXmlElement = new OpenXmlElementType();
+      SetBackgroundNormalProperties(openXmlElement, value?.BackgroundNormalProperties);
+      SetBackgroundRemovedProperties(openXmlElement, value?.BackgroundRemovedProperties);
+      SetBackgroundBlurProperties(openXmlElement, value?.BackgroundBlurProperties);
+      SetBackgroundCustomProperties(openXmlElement, value?.BackgroundCustomProperties);
+      SetOfficeArtExtensionList(openXmlElement, value?.OfficeArtExtensionList);
       return openXmlElement;
     }
     return default;

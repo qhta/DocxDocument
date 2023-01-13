@@ -98,6 +98,9 @@ public static class SdtContentDocPartListConverter
     if (value != null)
     {
       var openXmlElement = new OpenXmlElementType();
+      SetDocPartGallery(openXmlElement, value?.DocPartGallery);
+      SetDocPartCategory(openXmlElement, value?.DocPartCategory);
+      SetDocPartUnique(openXmlElement, value?.DocPartUnique);
       return openXmlElement;
     }
     return default;

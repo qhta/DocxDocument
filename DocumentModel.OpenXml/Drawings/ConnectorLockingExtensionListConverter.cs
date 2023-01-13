@@ -55,6 +55,7 @@ public static class ConnectorLockingExtensionListConverter
     if (value != null)
     {
       var openXmlElement = new OpenXmlElementType();
+      SetConnectorLockingExtensions(openXmlElement, value?.ConnectorLockingExtensions);
       return openXmlElement;
     }
     return default;

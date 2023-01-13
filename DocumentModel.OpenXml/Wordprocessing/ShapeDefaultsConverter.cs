@@ -71,6 +71,8 @@ public static class ShapeDefaultsConverter
     if (value != null)
     {
       var openXmlElement = new OpenXmlElementType();
+      SetChildShapeDefaults(openXmlElement, value?.ChildShapeDefaults);
+      SetShapeLayout(openXmlElement, value?.ShapeLayout);
       return openXmlElement;
     }
     return default;

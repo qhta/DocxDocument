@@ -392,6 +392,14 @@ public static class ButtonGroupConverter
       SetInsertBeforeMso(openXmlElement, value?.InsertBeforeMso);
       SetInsertAfterQulifiedId(openXmlElement, value?.InsertAfterQulifiedId);
       SetInsertBeforeQulifiedId(openXmlElement, value?.InsertBeforeQulifiedId);
+      SetControlCloneRegular(openXmlElement, value?.ControlCloneRegular);
+      SetButtonRegular(openXmlElement, value?.ButtonRegular);
+      SetToggleButtonRegular(openXmlElement, value?.ToggleButtonRegular);
+      SetGalleryRegular(openXmlElement, value?.GalleryRegular);
+      SetMenuRegular(openXmlElement, value?.MenuRegular);
+      SetDynamicMenuRegular(openXmlElement, value?.DynamicMenuRegular);
+      SetSplitButtonRegular(openXmlElement, value?.SplitButtonRegular);
+      SetSeparator(openXmlElement, value?.Separator);
       return openXmlElement;
     }
     return default;

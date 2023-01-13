@@ -27,12 +27,16 @@ public static class StrokeConverter
   /// </summary>
   public static Boolean? GetOn(DocumentFormat.OpenXml.Vml.Stroke? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented in GenerateBooleanPropertyGetCode: propertyType is DocumentFormat.OpenXml.TrueFalseValue");
+    return openXmlElement?.On?.Value;
   }
   
   public static void SetOn(DocumentFormat.OpenXml.Vml.Stroke? openXmlElement, Boolean? value)
   {
-    throw new NotImplementedException("Not implemented in GenerateBooleanPropertySetCode: propertyType is DocumentFormat.OpenXml.TrueFalseValue");
+    if (openXmlElement != null)
+      if (value != null)
+        openXmlElement.On = value;
+      else
+        openXmlElement.On = null;
   }
   
   /// <summary>
@@ -229,12 +233,16 @@ public static class StrokeConverter
   /// </summary>
   public static Boolean? GetImageAlignShape(DocumentFormat.OpenXml.Vml.Stroke? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented in GenerateBooleanPropertyGetCode: propertyType is DocumentFormat.OpenXml.TrueFalseValue");
+    return openXmlElement?.ImageAlignShape?.Value;
   }
   
   public static void SetImageAlignShape(DocumentFormat.OpenXml.Vml.Stroke? openXmlElement, Boolean? value)
   {
-    throw new NotImplementedException("Not implemented in GenerateBooleanPropertySetCode: propertyType is DocumentFormat.OpenXml.TrueFalseValue");
+    if (openXmlElement != null)
+      if (value != null)
+        openXmlElement.ImageAlignShape = value;
+      else
+        openXmlElement.ImageAlignShape = null;
   }
   
   /// <summary>
@@ -394,12 +402,16 @@ public static class StrokeConverter
   /// </summary>
   public static Boolean? GetForceDash(DocumentFormat.OpenXml.Vml.Stroke? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented in GenerateBooleanPropertyGetCode: propertyType is DocumentFormat.OpenXml.TrueFalseValue");
+    return openXmlElement?.ForceDash?.Value;
   }
   
   public static void SetForceDash(DocumentFormat.OpenXml.Vml.Stroke? openXmlElement, Boolean? value)
   {
-    throw new NotImplementedException("Not implemented in GenerateBooleanPropertySetCode: propertyType is DocumentFormat.OpenXml.TrueFalseValue");
+    if (openXmlElement != null)
+      if (value != null)
+        openXmlElement.ForceDash = value;
+      else
+        openXmlElement.ForceDash = null;
   }
   
   /// <summary>
@@ -424,12 +436,16 @@ public static class StrokeConverter
   /// </summary>
   public static Boolean? GetInsetpen(DocumentFormat.OpenXml.Vml.Stroke? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented in GenerateBooleanPropertyGetCode: propertyType is DocumentFormat.OpenXml.TrueFalseValue");
+    return openXmlElement?.Insetpen?.Value;
   }
   
   public static void SetInsetpen(DocumentFormat.OpenXml.Vml.Stroke? openXmlElement, Boolean? value)
   {
-    throw new NotImplementedException("Not implemented in GenerateBooleanPropertySetCode: propertyType is DocumentFormat.OpenXml.TrueFalseValue");
+    if (openXmlElement != null)
+      if (value != null)
+        openXmlElement.Insetpen = value;
+      else
+        openXmlElement.Insetpen = null;
   }
   
   /// <summary>

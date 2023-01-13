@@ -71,6 +71,8 @@ public static class UserShapesConverter
     if (value != null)
     {
       var openXmlElement = new OpenXmlElementType();
+      SetRelativeAnchorSize(openXmlElement, value?.RelativeAnchorSize);
+      SetAbsoluteAnchorSize(openXmlElement, value?.AbsoluteAnchorSize);
       return openXmlElement;
     }
     return default;

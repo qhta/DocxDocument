@@ -125,6 +125,8 @@ public static class InsertedMathControlConverter
       SetAuthor(openXmlElement, value?.Author);
       SetDate(openXmlElement, value?.Date);
       SetId(openXmlElement, value?.Id);
+      SetRunProperties(openXmlElement, value?.RunProperties);
+      SetDeletedMathControl(openXmlElement, value?.DeletedMathControl);
       return openXmlElement;
     }
     return default;

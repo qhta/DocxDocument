@@ -111,6 +111,7 @@ public static class DropDownListFormFieldConverter
       var openXmlElement = new OpenXmlElementType();
       SetDropDownListSelection(openXmlElement, value?.DropDownListSelection);
       SetDefaultDropDownListItemIndex(openXmlElement, value?.DefaultDropDownListItemIndex);
+      SetListEntryFormFields(openXmlElement, value?.ListEntryFormFields);
       return openXmlElement;
     }
     return default;

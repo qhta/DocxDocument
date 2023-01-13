@@ -27,12 +27,16 @@ public static class BackgroundConverter
   /// </summary>
   public static Boolean? GetFilled(DocumentFormat.OpenXml.Vml.Background? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented in GenerateBooleanPropertyGetCode: propertyType is DocumentFormat.OpenXml.TrueFalseValue");
+    return openXmlElement?.Filled?.Value;
   }
   
   public static void SetFilled(DocumentFormat.OpenXml.Vml.Background? openXmlElement, Boolean? value)
   {
-    throw new NotImplementedException("Not implemented in GenerateBooleanPropertySetCode: propertyType is DocumentFormat.OpenXml.TrueFalseValue");
+    if (openXmlElement != null)
+      if (value != null)
+        openXmlElement.Filled = value;
+      else
+        openXmlElement.Filled = null;
   }
   
   /// <summary>

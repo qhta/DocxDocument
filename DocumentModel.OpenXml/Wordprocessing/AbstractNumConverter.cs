@@ -247,6 +247,7 @@ public static class AbstractNumConverter
       SetAbstractNumDefinitionName(openXmlElement, value?.AbstractNumDefinitionName);
       SetStyleLink(openXmlElement, value?.StyleLink);
       SetNumberingStyleLink(openXmlElement, value?.NumberingStyleLink);
+      SetLevels(openXmlElement, value?.Levels);
       return openXmlElement;
     }
     return default;

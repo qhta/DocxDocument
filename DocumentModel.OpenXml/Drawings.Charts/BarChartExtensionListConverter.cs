@@ -55,6 +55,7 @@ public static class BarChartExtensionListConverter
     if (value != null)
     {
       var openXmlElement = new OpenXmlElementType();
+      SetBarChartExtensions(openXmlElement, value?.BarChartExtensions);
       return openXmlElement;
     }
     return default;

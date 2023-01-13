@@ -61,12 +61,16 @@ public static class TextBoxConverter
   /// </summary>
   public static Boolean? GetSingleClick(DocumentFormat.OpenXml.Vml.TextBox? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented in GenerateBooleanPropertyGetCode: propertyType is DocumentFormat.OpenXml.TrueFalseValue");
+    return openXmlElement?.SingleClick?.Value;
   }
   
   public static void SetSingleClick(DocumentFormat.OpenXml.Vml.TextBox? openXmlElement, Boolean? value)
   {
-    throw new NotImplementedException("Not implemented in GenerateBooleanPropertySetCode: propertyType is DocumentFormat.OpenXml.TrueFalseValue");
+    if (openXmlElement != null)
+      if (value != null)
+        openXmlElement.SingleClick = value;
+      else
+        openXmlElement.SingleClick = null;
   }
   
   public static DocumentModel.Wordprocessing.TextBoxContent? GetTextBoxContent(DocumentFormat.OpenXml.Vml.TextBox? openXmlElement)
@@ -118,6 +122,7 @@ public static class TextBoxConverter
       SetStyle(openXmlElement, value?.Style);
       SetInset(openXmlElement, value?.Inset);
       SetSingleClick(openXmlElement, value?.SingleClick);
+      SetTextBoxContent(openXmlElement, value?.TextBoxContent);
       return openXmlElement;
     }
     return default;

@@ -214,6 +214,13 @@ public static class StockChartConverter
     if (value != null)
     {
       var openXmlElement = new OpenXmlElementType();
+      SetLineChartSerieses(openXmlElement, value?.LineChartSerieses);
+      SetDataLabels(openXmlElement, value?.DataLabels);
+      SetDropLines(openXmlElement, value?.DropLines);
+      SetHighLowLines(openXmlElement, value?.HighLowLines);
+      SetUpDownBars(openXmlElement, value?.UpDownBars);
+      SetAxisIds(openXmlElement, value?.AxisIds);
+      SetStockChartExtensionList(openXmlElement, value?.StockChartExtensionList);
       return openXmlElement;
     }
     return default;

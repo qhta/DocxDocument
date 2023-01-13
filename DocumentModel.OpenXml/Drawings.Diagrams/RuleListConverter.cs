@@ -55,6 +55,7 @@ public static class RuleListConverter
     if (value != null)
     {
       var openXmlElement = new OpenXmlElementType();
+      SetRules(openXmlElement, value?.Rules);
       return openXmlElement;
     }
     return default;

@@ -277,6 +277,13 @@ public static class TextOutlineEffectConverter
       SetCapType(openXmlElement, value?.CapType);
       SetCompound(openXmlElement, value?.Compound);
       SetAlignment(openXmlElement, value?.Alignment);
+      SetNoFillEmpty(openXmlElement, value?.NoFillEmpty);
+      SetSolidColorFillProperties(openXmlElement, value?.SolidColorFillProperties);
+      SetGradientFillProperties(openXmlElement, value?.GradientFillProperties);
+      SetPresetLineDashProperties(openXmlElement, value?.PresetLineDashProperties);
+      SetRoundEmpty(openXmlElement, value?.RoundEmpty);
+      SetBevelEmpty(openXmlElement, value?.BevelEmpty);
+      SetLineJoinMiterProperties(openXmlElement, value?.LineJoinMiterProperties);
       return openXmlElement;
     }
     return default;

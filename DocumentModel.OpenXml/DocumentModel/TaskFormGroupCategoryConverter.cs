@@ -283,6 +283,7 @@ public static class TaskFormGroupCategoryConverter
       SetGetVisible(openXmlElement, value?.GetVisible);
       SetLabel(openXmlElement, value?.Label);
       SetGetLabel(openXmlElement, value?.GetLabel);
+      SetTaskFormGroupTasks(openXmlElement, value?.TaskFormGroupTasks);
       return openXmlElement;
     }
     return default;

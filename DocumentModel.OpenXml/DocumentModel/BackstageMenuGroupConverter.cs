@@ -232,6 +232,10 @@ public static class BackstageMenuGroupConverter
       SetLabel(openXmlElement, value?.Label);
       SetGetLabel(openXmlElement, value?.GetLabel);
       SetItemSize(openXmlElement, value?.ItemSize);
+      SetBackstageMenuButton(openXmlElement, value?.BackstageMenuButton);
+      SetBackstageMenuCheckBox(openXmlElement, value?.BackstageMenuCheckBox);
+      SetBackstageSubMenu(openXmlElement, value?.BackstageSubMenu);
+      SetBackstageMenuToggleButton(openXmlElement, value?.BackstageMenuToggleButton);
       return openXmlElement;
     }
     return default;

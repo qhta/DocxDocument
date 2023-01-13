@@ -47,6 +47,8 @@ public static class EmbeddedControlPersistencePartConverter
     if (value != null)
     {
       var openXmlElement = new OpenXmlElementType();
+      //SetEmbeddedControlPersistenceBinaryDataParts(openXmlElement, value?.EmbeddedControlPersistenceBinaryDataParts);
+      //SetRelationshipType(openXmlElement, value?.RelationshipType);
       return openXmlElement;
     }
     return default;

@@ -20,12 +20,20 @@ public static class DocumentTasksPartConverter
   /// </summary>
   public static DocumentModel.Tasks? GetTasks(DocumentFormat.OpenXml.Packaging.DocumentTasksPart? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented in GeneratePropertyGetter: 1");
+    if (openXmlElement?.RootElement is DocumentFormat.OpenXml.Office2021.DocumentTasks.Tasks rootElement)
+      return DocumentModel.OpenXml.TasksConverter.CreateModelElement(rootElement);
+    return null;
   }
   
   public static void SetTasks(DocumentFormat.OpenXml.Packaging.DocumentTasksPart? openXmlElement, DocumentModel.Tasks? value)
   {
-    throw new NotImplementedException("Not implemented in GeneratePropertySetter: 1");
+    if (openXmlElement != null)
+      if (value != null)
+      {
+         var rootElement = DocumentModel.OpenXml.TasksConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2021.DocumentTasks.Tasks>(value);
+         if (rootElement != null)
+           openXmlElement.Tasks = rootElement;
+      }
   }
   
   public static DocumentModel.Packaging.DocumentTasksPart? CreateModelElement(DocumentFormat.OpenXml.Packaging.DocumentTasksPart? openXmlElement)
@@ -47,6 +55,8 @@ public static class DocumentTasksPartConverter
     if (value != null)
     {
       var openXmlElement = new OpenXmlElementType();
+      //SetContentType(openXmlElement, value?.ContentType);
+      //SetRelationshipType(openXmlElement, value?.RelationshipType);
       SetTasks(openXmlElement, value?.Tasks);
       return openXmlElement;
     }

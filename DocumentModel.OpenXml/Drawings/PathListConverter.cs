@@ -55,6 +55,7 @@ public static class PathListConverter
     if (value != null)
     {
       var openXmlElement = new OpenXmlElementType();
+      SetPaths(openXmlElement, value?.Paths);
       return openXmlElement;
     }
     return default;

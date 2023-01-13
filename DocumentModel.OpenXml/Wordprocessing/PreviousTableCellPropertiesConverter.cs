@@ -507,6 +507,9 @@ public static class PreviousTableCellPropertiesConverter
       SetTableCellFitText(openXmlElement, value?.TableCellFitText);
       SetTableCellVerticalAlignment(openXmlElement, value?.TableCellVerticalAlignment);
       SetHideMark(openXmlElement, value?.HideMark);
+      SetCellInsertion(openXmlElement, value?.CellInsertion);
+      SetCellDeletion(openXmlElement, value?.CellDeletion);
+      SetCellMerge(openXmlElement, value?.CellMerge);
       return openXmlElement;
     }
     return default;

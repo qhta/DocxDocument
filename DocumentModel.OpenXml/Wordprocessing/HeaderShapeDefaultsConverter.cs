@@ -71,6 +71,8 @@ public static class HeaderShapeDefaultsConverter
     if (value != null)
     {
       var openXmlElement = new OpenXmlElementType();
+      SetShapeDefaults(openXmlElement, value?.ShapeDefaults);
+      SetShapeLayout(openXmlElement, value?.ShapeLayout);
       return openXmlElement;
     }
     return default;

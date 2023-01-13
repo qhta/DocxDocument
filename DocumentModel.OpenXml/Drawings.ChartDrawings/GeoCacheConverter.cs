@@ -89,6 +89,8 @@ public static class GeoCacheConverter
     {
       var openXmlElement = new OpenXmlElementType();
       SetProvider(openXmlElement, value?.Provider);
+      SetXsdbase64Binary(openXmlElement, value?.Xsdbase64Binary);
+      SetClear(openXmlElement, value?.Clear);
       return openXmlElement;
     }
     return default;

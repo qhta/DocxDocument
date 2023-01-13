@@ -395,6 +395,14 @@ public static class ScatterChartSeriesConverter
       SetSeriesText(openXmlElement, value?.SeriesText);
       SetChartShapeProperties(openXmlElement, value?.ChartShapeProperties);
       SetMarker(openXmlElement, value?.Marker);
+      SetDataPoints(openXmlElement, value?.DataPoints);
+      SetDataLabels(openXmlElement, value?.DataLabels);
+      SetTrendlines(openXmlElement, value?.Trendlines);
+      SetErrorBarses(openXmlElement, value?.ErrorBarses);
+      SetXValues(openXmlElement, value?.XValues);
+      SetYValues(openXmlElement, value?.YValues);
+      SetSmooth(openXmlElement, value?.Smooth);
+      SetScatterSerExtensionList(openXmlElement, value?.ScatterSerExtensionList);
       return openXmlElement;
     }
     return default;

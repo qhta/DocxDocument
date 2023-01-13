@@ -148,6 +148,10 @@ public static class TemplateCommandGroupConverter
     if (value != null)
     {
       var openXmlElement = new OpenXmlElementType();
+      SetKeyMapCustomizationses(openXmlElement, value?.KeyMapCustomizationses);
+      SetMismatchedKeyMapCustomizations(openXmlElement, value?.MismatchedKeyMapCustomizations);
+      SetToolbars(openXmlElement, value?.Toolbars);
+      SetAllocatedCommandses(openXmlElement, value?.AllocatedCommandses);
       return openXmlElement;
     }
     return default;

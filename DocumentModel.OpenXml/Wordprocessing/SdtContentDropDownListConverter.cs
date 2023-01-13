@@ -74,6 +74,7 @@ public static class SdtContentDropDownListConverter
     {
       var openXmlElement = new OpenXmlElementType();
       SetLastValue(openXmlElement, value?.LastValue);
+      SetListItems(openXmlElement, value?.ListItems);
       return openXmlElement;
     }
     return default;

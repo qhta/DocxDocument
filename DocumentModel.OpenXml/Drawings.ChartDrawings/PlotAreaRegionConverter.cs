@@ -109,6 +109,8 @@ public static class PlotAreaRegionConverter
     {
       var openXmlElement = new OpenXmlElementType();
       SetPlotSurface(openXmlElement, value?.PlotSurface);
+      SetSerieses(openXmlElement, value?.Serieses);
+      SetExtensionList(openXmlElement, value?.ExtensionList);
       return openXmlElement;
     }
     return default;

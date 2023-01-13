@@ -55,6 +55,7 @@ public static class CategoryListConverter
     if (value != null)
     {
       var openXmlElement = new OpenXmlElementType();
+      SetCategories(openXmlElement, value?.Categories);
       return openXmlElement;
     }
     return default;

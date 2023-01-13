@@ -20,12 +20,20 @@ public static class DiagramStylePartConverter
   /// </summary>
   public static DocumentModel.Drawings.Diagrams.StyleDefinition? GetStyleDefinition(DocumentFormat.OpenXml.Packaging.DiagramStylePart? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented in GeneratePropertyGetter: 1");
+    if (openXmlElement?.RootElement is DocumentFormat.OpenXml.Drawing.Diagrams.StyleDefinition rootElement)
+      return DocumentModel.OpenXml.Drawings.Diagrams.StyleDefinitionConverter.CreateModelElement(rootElement);
+    return null;
   }
   
   public static void SetStyleDefinition(DocumentFormat.OpenXml.Packaging.DiagramStylePart? openXmlElement, DocumentModel.Drawings.Diagrams.StyleDefinition? value)
   {
-    throw new NotImplementedException("Not implemented in GeneratePropertySetter: 1");
+    if (openXmlElement != null)
+      if (value != null)
+      {
+         var rootElement = DocumentModel.OpenXml.Drawings.Diagrams.StyleDefinitionConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Diagrams.StyleDefinition>(value);
+         if (rootElement != null)
+           openXmlElement.StyleDefinition = rootElement;
+      }
   }
   
   public static DocumentModel.Packaging.DiagramStylePart? CreateModelElement(DocumentFormat.OpenXml.Packaging.DiagramStylePart? openXmlElement)
@@ -47,6 +55,8 @@ public static class DiagramStylePartConverter
     if (value != null)
     {
       var openXmlElement = new OpenXmlElementType();
+      //SetContentType(openXmlElement, value?.ContentType);
+      //SetRelationshipType(openXmlElement, value?.RelationshipType);
       SetStyleDefinition(openXmlElement, value?.StyleDefinition);
       return openXmlElement;
     }

@@ -55,6 +55,7 @@ public static class MismatchedKeyMapCustomizationConverter
     if (value != null)
     {
       var openXmlElement = new OpenXmlElementType();
+      SetKeyMapEntries(openXmlElement, value?.KeyMapEntries);
       return openXmlElement;
     }
     return default;

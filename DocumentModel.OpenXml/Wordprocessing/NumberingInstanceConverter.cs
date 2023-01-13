@@ -115,6 +115,7 @@ public static class NumberingInstanceConverter
       SetNumberID(openXmlElement, value?.NumberID);
       SetDurableId(openXmlElement, value?.DurableId);
       SetAbstractNumId(openXmlElement, value?.AbstractNumId);
+      SetLevelOverrides(openXmlElement, value?.LevelOverrides);
       return openXmlElement;
     }
     return default;

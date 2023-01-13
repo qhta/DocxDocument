@@ -100,6 +100,8 @@ public static class WholeConverter
     {
       var openXmlElement = new OpenXmlElementType();
       SetOutline(openXmlElement, value?.Outline);
+      SetEffectList(openXmlElement, value?.EffectList);
+      SetEffectDag(openXmlElement, value?.EffectDag);
       return openXmlElement;
     }
     return default;

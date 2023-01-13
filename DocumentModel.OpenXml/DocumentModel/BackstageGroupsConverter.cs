@@ -96,6 +96,9 @@ public static class BackstageGroupsConverter
     if (value != null)
     {
       var openXmlElement = new OpenXmlElementType();
+      SetTaskFormGroup(openXmlElement, value?.TaskFormGroup);
+      SetBackstageGroup(openXmlElement, value?.BackstageGroup);
+      SetTaskGroup(openXmlElement, value?.TaskGroup);
       return openXmlElement;
     }
     return default;

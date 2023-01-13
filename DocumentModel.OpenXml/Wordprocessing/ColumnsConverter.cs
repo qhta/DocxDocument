@@ -128,6 +128,7 @@ public static class ColumnsConverter
       SetSpace(openXmlElement, value?.Space);
       SetColumnCount(openXmlElement, value?.ColumnCount);
       SetSeparator(openXmlElement, value?.Separator);
+      SetItems(openXmlElement, value?.Items);
       return openXmlElement;
     }
     return default;

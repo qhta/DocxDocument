@@ -194,6 +194,12 @@ public static class ShapePropertiesExtensionConverter
     {
       var openXmlElement = new OpenXmlElementType();
       SetUri(openXmlElement, value?.Uri);
+      SetHiddenFillProperties(openXmlElement, value?.HiddenFillProperties);
+      SetHiddenLineProperties(openXmlElement, value?.HiddenLineProperties);
+      SetHiddenEffectsProperties(openXmlElement, value?.HiddenEffectsProperties);
+      SetHiddenScene3D(openXmlElement, value?.HiddenScene3D);
+      SetHiddenShape3D(openXmlElement, value?.HiddenShape3D);
+      SetShadowObscured(openXmlElement, value?.ShadowObscured);
       return openXmlElement;
     }
     return default;

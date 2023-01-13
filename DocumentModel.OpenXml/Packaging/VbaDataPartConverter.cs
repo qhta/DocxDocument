@@ -20,12 +20,20 @@ public static class VbaDataPartConverter
   /// </summary>
   public static DocumentModel.Wordprocessing.VbaSuppData? GetVbaSuppData(DocumentFormat.OpenXml.Packaging.VbaDataPart? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented in GeneratePropertyGetter: 1");
+    if (openXmlElement?.RootElement is DocumentFormat.OpenXml.Office.Word.VbaSuppData rootElement)
+      return DocumentModel.OpenXml.Wordprocessing.VbaSuppDataConverter.CreateModelElement(rootElement);
+    return null;
   }
   
   public static void SetVbaSuppData(DocumentFormat.OpenXml.Packaging.VbaDataPart? openXmlElement, DocumentModel.Wordprocessing.VbaSuppData? value)
   {
-    throw new NotImplementedException("Not implemented in GeneratePropertySetter: 1");
+    if (openXmlElement != null)
+      if (value != null)
+      {
+         var rootElement = DocumentModel.OpenXml.Wordprocessing.VbaSuppDataConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office.Word.VbaSuppData>(value);
+         if (rootElement != null)
+           openXmlElement.VbaSuppData = rootElement;
+      }
   }
   
   public static DocumentModel.Packaging.VbaDataPart? CreateModelElement(DocumentFormat.OpenXml.Packaging.VbaDataPart? openXmlElement)
@@ -47,6 +55,8 @@ public static class VbaDataPartConverter
     if (value != null)
     {
       var openXmlElement = new OpenXmlElementType();
+      //SetContentType(openXmlElement, value?.ContentType);
+      //SetRelationshipType(openXmlElement, value?.RelationshipType);
       SetVbaSuppData(openXmlElement, value?.VbaSuppData);
       return openXmlElement;
     }

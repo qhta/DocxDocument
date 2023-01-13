@@ -65,6 +65,7 @@ public static class AreaChartExtensionConverter
     {
       var openXmlElement = new OpenXmlElementType();
       SetUri(openXmlElement, value?.Uri);
+      SetFilteredAreaSeries(openXmlElement, value?.FilteredAreaSeries);
       return openXmlElement;
     }
     return default;

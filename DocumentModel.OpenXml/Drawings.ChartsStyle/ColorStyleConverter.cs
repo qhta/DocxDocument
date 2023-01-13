@@ -265,6 +265,14 @@ public static class ColorStyleConverter
       var openXmlElement = new OpenXmlElementType();
       SetMethod(openXmlElement, value?.Method);
       SetId(openXmlElement, value?.Id);
+      SetRgbColorModelPercentage(openXmlElement, value?.RgbColorModelPercentage);
+      SetRgbColorModelHex(openXmlElement, value?.RgbColorModelHex);
+      SetHslColor(openXmlElement, value?.HslColor);
+      SetSystemColor(openXmlElement, value?.SystemColor);
+      SetSchemeColor(openXmlElement, value?.SchemeColor);
+      SetPresetColor(openXmlElement, value?.PresetColor);
+      SetColorStyleVariations(openXmlElement, value?.ColorStyleVariations);
+      SetOfficeArtExtensionList(openXmlElement, value?.OfficeArtExtensionList);
       return openXmlElement;
     }
     return default;

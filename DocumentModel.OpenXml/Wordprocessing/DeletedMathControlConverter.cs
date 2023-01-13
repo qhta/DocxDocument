@@ -100,6 +100,7 @@ public static class DeletedMathControlConverter
       SetAuthor(openXmlElement, value?.Author);
       SetDate(openXmlElement, value?.Date);
       SetId(openXmlElement, value?.Id);
+      SetRunProperties(openXmlElement, value?.RunProperties);
       return openXmlElement;
     }
     return default;

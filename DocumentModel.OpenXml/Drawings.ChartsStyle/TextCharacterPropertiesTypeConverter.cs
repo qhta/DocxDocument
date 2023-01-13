@@ -942,6 +942,26 @@ public static class TextCharacterPropertiesTypeConverter
       SetSmartTagId(openXmlElement, value?.SmartTagId);
       SetBookmark(openXmlElement, value?.Bookmark);
       SetOutline(openXmlElement, value?.Outline);
+      SetNoFill(openXmlElement, value?.NoFill);
+      SetSolidFill(openXmlElement, value?.SolidFill);
+      SetGradientFill(openXmlElement, value?.GradientFill);
+      SetBlipFill(openXmlElement, value?.BlipFill);
+      SetPatternFill(openXmlElement, value?.PatternFill);
+      SetGroupFill(openXmlElement, value?.GroupFill);
+      SetEffectList(openXmlElement, value?.EffectList);
+      SetEffectDag(openXmlElement, value?.EffectDag);
+      SetHighlight(openXmlElement, value?.Highlight);
+      SetUnderlineFollowsText(openXmlElement, value?.UnderlineFollowsText);
+      SetUnderlineFillText(openXmlElement, value?.UnderlineFillText);
+      SetUnderlineFill(openXmlElement, value?.UnderlineFill);
+      SetLatinFont(openXmlElement, value?.LatinFont);
+      SetEastAsianFont(openXmlElement, value?.EastAsianFont);
+      SetComplexScriptFont(openXmlElement, value?.ComplexScriptFont);
+      SetSymbolFont(openXmlElement, value?.SymbolFont);
+      SetHyperlinkOnClick(openXmlElement, value?.HyperlinkOnClick);
+      SetHyperlinkOnMouseOver(openXmlElement, value?.HyperlinkOnMouseOver);
+      SetRightToLeft(openXmlElement, value?.RightToLeft);
+      SetExtensionList(openXmlElement, value?.ExtensionList);
       return openXmlElement;
     }
     return default;

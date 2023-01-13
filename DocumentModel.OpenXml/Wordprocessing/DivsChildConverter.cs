@@ -46,6 +46,7 @@ public static class DivsChildConverter
     if (value != null)
     {
       var openXmlElement = new OpenXmlElementType();
+      SetDiv(openXmlElement, value?.Div);
       return openXmlElement;
     }
     return default;

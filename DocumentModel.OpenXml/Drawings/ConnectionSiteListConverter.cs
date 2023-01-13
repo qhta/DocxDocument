@@ -55,6 +55,7 @@ public static class ConnectionSiteListConverter
     if (value != null)
     {
       var openXmlElement = new OpenXmlElementType();
+      SetConnectionSites(openXmlElement, value?.ConnectionSites);
       return openXmlElement;
     }
     return default;

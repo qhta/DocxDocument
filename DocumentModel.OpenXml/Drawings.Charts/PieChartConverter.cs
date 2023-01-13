@@ -162,6 +162,10 @@ public static class PieChartConverter
     {
       var openXmlElement = new OpenXmlElementType();
       SetVaryColors(openXmlElement, value?.VaryColors);
+      SetPieChartSerieses(openXmlElement, value?.PieChartSerieses);
+      SetDataLabels(openXmlElement, value?.DataLabels);
+      SetFirstSliceAngle(openXmlElement, value?.FirstSliceAngle);
+      SetPieChartExtensionList(openXmlElement, value?.PieChartExtensionList);
       return openXmlElement;
     }
     return default;

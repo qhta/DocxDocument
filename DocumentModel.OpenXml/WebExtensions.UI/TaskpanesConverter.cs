@@ -55,6 +55,7 @@ public static class TaskpanesConverter
     if (value != null)
     {
       var openXmlElement = new OpenXmlElementType();
+      SetWebExtensionTaskpanes(openXmlElement, value?.WebExtensionTaskpanes);
       return openXmlElement;
     }
     return default;

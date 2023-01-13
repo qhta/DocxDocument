@@ -390,6 +390,12 @@ public static class SeriesConverter
       SetShapeProperties(openXmlElement, value?.ShapeProperties);
       SetValueColors(openXmlElement, value?.ValueColors);
       SetValueColorPositions(openXmlElement, value?.ValueColorPositions);
+      SetDataPoints(openXmlElement, value?.DataPoints);
+      SetDataLabels(openXmlElement, value?.DataLabels);
+      SetDataId(openXmlElement, value?.DataId);
+      SetSeriesLayoutProperties(openXmlElement, value?.SeriesLayoutProperties);
+      SetAxisIds(openXmlElement, value?.AxisIds);
+      SetExtensionList(openXmlElement, value?.ExtensionList);
       return openXmlElement;
     }
     return default;

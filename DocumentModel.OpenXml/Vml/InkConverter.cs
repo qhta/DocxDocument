@@ -31,12 +31,16 @@ public static class InkConverter
   /// </summary>
   public static Boolean? GetAnnotationFlag(DocumentFormat.OpenXml.Vml.Office.Ink? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented in GenerateBooleanPropertyGetCode: propertyType is DocumentFormat.OpenXml.TrueFalseValue");
+    return openXmlElement?.AnnotationFlag?.Value;
   }
   
   public static void SetAnnotationFlag(DocumentFormat.OpenXml.Vml.Office.Ink? openXmlElement, Boolean? value)
   {
-    throw new NotImplementedException("Not implemented in GenerateBooleanPropertySetCode: propertyType is DocumentFormat.OpenXml.TrueFalseValue");
+    if (openXmlElement != null)
+      if (value != null)
+        openXmlElement.AnnotationFlag = value;
+      else
+        openXmlElement.AnnotationFlag = null;
   }
   
   public static DocumentModel.Vml.Ink? CreateModelElement(DocumentFormat.OpenXml.Vml.Office.Ink? openXmlElement)

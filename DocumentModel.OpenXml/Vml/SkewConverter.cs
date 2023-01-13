@@ -41,12 +41,16 @@ public static class SkewConverter
   /// </summary>
   public static Boolean? GetOn(DocumentFormat.OpenXml.Vml.Office.Skew? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented in GenerateBooleanPropertyGetCode: propertyType is DocumentFormat.OpenXml.TrueFalseValue");
+    return openXmlElement?.On?.Value;
   }
   
   public static void SetOn(DocumentFormat.OpenXml.Vml.Office.Skew? openXmlElement, Boolean? value)
   {
-    throw new NotImplementedException("Not implemented in GenerateBooleanPropertySetCode: propertyType is DocumentFormat.OpenXml.TrueFalseValue");
+    if (openXmlElement != null)
+      if (value != null)
+        openXmlElement.On = value;
+      else
+        openXmlElement.On = null;
   }
   
   /// <summary>

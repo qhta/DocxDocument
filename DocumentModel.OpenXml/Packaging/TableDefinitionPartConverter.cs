@@ -53,6 +53,9 @@ public static class TableDefinitionPartConverter
     if (value != null)
     {
       var openXmlElement = new OpenXmlElementType();
+      //SetContentType(openXmlElement, value?.ContentType);
+      //SetQueryTableParts(openXmlElement, value?.QueryTableParts);
+      //SetRelationshipType(openXmlElement, value?.RelationshipType);
       return openXmlElement;
     }
     return default;

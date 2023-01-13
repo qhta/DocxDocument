@@ -24,12 +24,16 @@ public static class ExtrusionConverter
   /// </summary>
   public static Boolean? GetOn(DocumentFormat.OpenXml.Vml.Office.Extrusion? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented in GenerateBooleanPropertyGetCode: propertyType is DocumentFormat.OpenXml.TrueFalseValue");
+    return openXmlElement?.On?.Value;
   }
   
   public static void SetOn(DocumentFormat.OpenXml.Vml.Office.Extrusion? openXmlElement, Boolean? value)
   {
-    throw new NotImplementedException("Not implemented in GenerateBooleanPropertySetCode: propertyType is DocumentFormat.OpenXml.TrueFalseValue");
+    if (openXmlElement != null)
+      if (value != null)
+        openXmlElement.On = value;
+      else
+        openXmlElement.On = null;
   }
   
   /// <summary>
@@ -195,12 +199,16 @@ public static class ExtrusionConverter
   /// </summary>
   public static Boolean? GetLockRotationCenter(DocumentFormat.OpenXml.Vml.Office.Extrusion? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented in GenerateBooleanPropertyGetCode: propertyType is DocumentFormat.OpenXml.TrueFalseValue");
+    return openXmlElement?.LockRotationCenter?.Value;
   }
   
   public static void SetLockRotationCenter(DocumentFormat.OpenXml.Vml.Office.Extrusion? openXmlElement, Boolean? value)
   {
-    throw new NotImplementedException("Not implemented in GenerateBooleanPropertySetCode: propertyType is DocumentFormat.OpenXml.TrueFalseValue");
+    if (openXmlElement != null)
+      if (value != null)
+        openXmlElement.LockRotationCenter = value;
+      else
+        openXmlElement.LockRotationCenter = null;
   }
   
   /// <summary>
@@ -208,12 +216,16 @@ public static class ExtrusionConverter
   /// </summary>
   public static Boolean? GetAutoRotationCenter(DocumentFormat.OpenXml.Vml.Office.Extrusion? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented in GenerateBooleanPropertyGetCode: propertyType is DocumentFormat.OpenXml.TrueFalseValue");
+    return openXmlElement?.AutoRotationCenter?.Value;
   }
   
   public static void SetAutoRotationCenter(DocumentFormat.OpenXml.Vml.Office.Extrusion? openXmlElement, Boolean? value)
   {
-    throw new NotImplementedException("Not implemented in GenerateBooleanPropertySetCode: propertyType is DocumentFormat.OpenXml.TrueFalseValue");
+    if (openXmlElement != null)
+      if (value != null)
+        openXmlElement.AutoRotationCenter = value;
+      else
+        openXmlElement.AutoRotationCenter = null;
   }
   
   /// <summary>
@@ -320,12 +332,16 @@ public static class ExtrusionConverter
   /// </summary>
   public static Boolean? GetMetal(DocumentFormat.OpenXml.Vml.Office.Extrusion? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented in GenerateBooleanPropertyGetCode: propertyType is DocumentFormat.OpenXml.TrueFalseValue");
+    return openXmlElement?.Metal?.Value;
   }
   
   public static void SetMetal(DocumentFormat.OpenXml.Vml.Office.Extrusion? openXmlElement, Boolean? value)
   {
-    throw new NotImplementedException("Not implemented in GenerateBooleanPropertySetCode: propertyType is DocumentFormat.OpenXml.TrueFalseValue");
+    if (openXmlElement != null)
+      if (value != null)
+        openXmlElement.Metal = value;
+      else
+        openXmlElement.Metal = null;
   }
   
   /// <summary>
@@ -367,12 +383,16 @@ public static class ExtrusionConverter
   /// </summary>
   public static Boolean? GetLightFace(DocumentFormat.OpenXml.Vml.Office.Extrusion? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented in GenerateBooleanPropertyGetCode: propertyType is DocumentFormat.OpenXml.TrueFalseValue");
+    return openXmlElement?.LightFace?.Value;
   }
   
   public static void SetLightFace(DocumentFormat.OpenXml.Vml.Office.Extrusion? openXmlElement, Boolean? value)
   {
-    throw new NotImplementedException("Not implemented in GenerateBooleanPropertySetCode: propertyType is DocumentFormat.OpenXml.TrueFalseValue");
+    if (openXmlElement != null)
+      if (value != null)
+        openXmlElement.LightFace = value;
+      else
+        openXmlElement.LightFace = null;
   }
   
   /// <summary>
@@ -431,12 +451,16 @@ public static class ExtrusionConverter
   /// </summary>
   public static Boolean? GetLightHarsh(DocumentFormat.OpenXml.Vml.Office.Extrusion? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented in GenerateBooleanPropertyGetCode: propertyType is DocumentFormat.OpenXml.TrueFalseValue");
+    return openXmlElement?.LightHarsh?.Value;
   }
   
   public static void SetLightHarsh(DocumentFormat.OpenXml.Vml.Office.Extrusion? openXmlElement, Boolean? value)
   {
-    throw new NotImplementedException("Not implemented in GenerateBooleanPropertySetCode: propertyType is DocumentFormat.OpenXml.TrueFalseValue");
+    if (openXmlElement != null)
+      if (value != null)
+        openXmlElement.LightHarsh = value;
+      else
+        openXmlElement.LightHarsh = null;
   }
   
   /// <summary>
@@ -478,12 +502,16 @@ public static class ExtrusionConverter
   /// </summary>
   public static Boolean? GetLightHarsh2(DocumentFormat.OpenXml.Vml.Office.Extrusion? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented in GenerateBooleanPropertyGetCode: propertyType is DocumentFormat.OpenXml.TrueFalseValue");
+    return openXmlElement?.LightHarsh2?.Value;
   }
   
   public static void SetLightHarsh2(DocumentFormat.OpenXml.Vml.Office.Extrusion? openXmlElement, Boolean? value)
   {
-    throw new NotImplementedException("Not implemented in GenerateBooleanPropertySetCode: propertyType is DocumentFormat.OpenXml.TrueFalseValue");
+    if (openXmlElement != null)
+      if (value != null)
+        openXmlElement.LightHarsh2 = value;
+      else
+        openXmlElement.LightHarsh2 = null;
   }
   
   public static DocumentModel.Vml.Extrusion? CreateModelElement(DocumentFormat.OpenXml.Vml.Office.Extrusion? openXmlElement)

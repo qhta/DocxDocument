@@ -55,6 +55,7 @@ public static class DataLabelFieldTableConverter
     if (value != null)
     {
       var openXmlElement = new OpenXmlElementType();
+      SetDataLabelFieldTableEntries(openXmlElement, value?.DataLabelFieldTableEntries);
       return openXmlElement;
     }
     return default;

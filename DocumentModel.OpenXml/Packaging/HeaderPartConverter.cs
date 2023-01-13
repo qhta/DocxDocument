@@ -224,12 +224,20 @@ public static class HeaderPartConverter
   /// </summary>
   public static DocumentModel.Wordprocessing.Header? GetHeader(DocumentFormat.OpenXml.Packaging.HeaderPart? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented in GeneratePropertyGetter: 1");
+    if (openXmlElement?.RootElement is DocumentFormat.OpenXml.Wordprocessing.Header rootElement)
+      return DocumentModel.OpenXml.Wordprocessing.HeaderConverter.CreateModelElement(rootElement);
+    return null;
   }
   
   public static void SetHeader(DocumentFormat.OpenXml.Packaging.HeaderPart? openXmlElement, DocumentModel.Wordprocessing.Header? value)
   {
-    throw new NotImplementedException("Not implemented in GeneratePropertySetter: 1");
+    if (openXmlElement != null)
+      if (value != null)
+      {
+         var rootElement = DocumentModel.OpenXml.Wordprocessing.HeaderConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.Header>(value);
+         if (rootElement != null)
+           openXmlElement.Header = rootElement;
+      }
   }
   
   /// <summary>
@@ -307,7 +315,22 @@ public static class HeaderPartConverter
     if (value != null)
     {
       var openXmlElement = new OpenXmlElementType();
+      //SetAlternativeFormatImportParts(openXmlElement, value?.AlternativeFormatImportParts);
+      //SetChartParts(openXmlElement, value?.ChartParts);
+      //SetContentType(openXmlElement, value?.ContentType);
+      //SetDiagramColorsParts(openXmlElement, value?.DiagramColorsParts);
+      //SetDiagramDataParts(openXmlElement, value?.DiagramDataParts);
+      //SetDiagramLayoutDefinitionParts(openXmlElement, value?.DiagramLayoutDefinitionParts);
+      //SetDiagramPersistLayoutParts(openXmlElement, value?.DiagramPersistLayoutParts);
+      //SetDiagramStyleParts(openXmlElement, value?.DiagramStyleParts);
+      //SetEmbeddedControlPersistenceParts(openXmlElement, value?.EmbeddedControlPersistenceParts);
+      //SetEmbeddedObjectParts(openXmlElement, value?.EmbeddedObjectParts);
+      //SetEmbeddedPackageParts(openXmlElement, value?.EmbeddedPackageParts);
+      //SetExtendedChartParts(openXmlElement, value?.ExtendedChartParts);
       SetHeader(openXmlElement, value?.Header);
+      //SetImageParts(openXmlElement, value?.ImageParts);
+      //SetModel3DReferenceRelationshipParts(openXmlElement, value?.Model3DReferenceRelationshipParts);
+      //SetRelationshipType(openXmlElement, value?.RelationshipType);
       return openXmlElement;
     }
     return default;

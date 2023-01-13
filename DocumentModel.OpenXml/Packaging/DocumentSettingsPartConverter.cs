@@ -39,12 +39,20 @@ public static class DocumentSettingsPartConverter
   /// </summary>
   public static DocumentModel.Wordprocessing.Settings? GetSettings(DocumentFormat.OpenXml.Packaging.DocumentSettingsPart? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented in GeneratePropertyGetter: 1");
+    if (openXmlElement?.RootElement is DocumentFormat.OpenXml.Wordprocessing.Settings rootElement)
+      return DocumentModel.OpenXml.Wordprocessing.SettingsConverter.CreateModelElement(rootElement);
+    return null;
   }
   
   public static void SetSettings(DocumentFormat.OpenXml.Packaging.DocumentSettingsPart? openXmlElement, DocumentModel.Wordprocessing.Settings? value)
   {
-    throw new NotImplementedException("Not implemented in GeneratePropertySetter: 1");
+    if (openXmlElement != null)
+      if (value != null)
+      {
+         var rootElement = DocumentModel.OpenXml.Wordprocessing.SettingsConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.Settings>(value);
+         if (rootElement != null)
+           openXmlElement.Settings = rootElement;
+      }
   }
   
   public static DocumentModel.Packaging.DocumentSettingsPart? CreateModelElement(DocumentFormat.OpenXml.Packaging.DocumentSettingsPart? openXmlElement)
@@ -67,6 +75,9 @@ public static class DocumentSettingsPartConverter
     if (value != null)
     {
       var openXmlElement = new OpenXmlElementType();
+      //SetContentType(openXmlElement, value?.ContentType);
+      //SetImageParts(openXmlElement, value?.ImageParts);
+      //SetRelationshipType(openXmlElement, value?.RelationshipType);
       SetSettings(openXmlElement, value?.Settings);
       return openXmlElement;
     }

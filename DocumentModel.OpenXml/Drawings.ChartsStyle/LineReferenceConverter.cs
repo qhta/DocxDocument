@@ -196,6 +196,13 @@ public static class LineReferenceConverter
     if (value != null)
     {
       var openXmlElement = new OpenXmlElementType();
+      SetRgbColorModelPercentage(openXmlElement, value?.RgbColorModelPercentage);
+      SetRgbColorModelHex(openXmlElement, value?.RgbColorModelHex);
+      SetHslColor(openXmlElement, value?.HslColor);
+      SetSystemColor(openXmlElement, value?.SystemColor);
+      SetSchemeColor(openXmlElement, value?.SchemeColor);
+      SetPresetColor(openXmlElement, value?.PresetColor);
+      SetStyleColor(openXmlElement, value?.StyleColor);
       return openXmlElement;
     }
     return default;

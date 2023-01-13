@@ -388,6 +388,7 @@ public static class BackstagePrimaryMenuConverter
       SetGetImage(openXmlElement, value?.GetImage);
       SetKeytip(openXmlElement, value?.Keytip);
       SetGetKeytip(openXmlElement, value?.GetKeytip);
+      SetBackstageMenuGroup(openXmlElement, value?.BackstageMenuGroup);
       return openXmlElement;
     }
     return default;

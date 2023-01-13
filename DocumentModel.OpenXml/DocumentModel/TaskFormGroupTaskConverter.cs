@@ -454,6 +454,7 @@ public static class TaskFormGroupTaskConverter
       SetGetDescription(openXmlElement, value?.GetDescription);
       SetKeytip(openXmlElement, value?.Keytip);
       SetGetKeytip(openXmlElement, value?.GetKeytip);
+      SetBackstageGroups(openXmlElement, value?.BackstageGroups);
       return openXmlElement;
     }
     return default;

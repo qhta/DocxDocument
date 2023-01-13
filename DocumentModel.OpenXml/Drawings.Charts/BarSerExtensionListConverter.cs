@@ -55,6 +55,7 @@ public static class BarSerExtensionListConverter
     if (value != null)
     {
       var openXmlElement = new OpenXmlElementType();
+      SetBarSerExtensions(openXmlElement, value?.BarSerExtensions);
       return openXmlElement;
     }
     return default;

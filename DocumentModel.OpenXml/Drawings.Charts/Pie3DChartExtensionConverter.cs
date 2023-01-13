@@ -65,6 +65,7 @@ public static class Pie3DChartExtensionConverter
     {
       var openXmlElement = new OpenXmlElementType();
       SetUri(openXmlElement, value?.Uri);
+      SetFilteredPieSeries(openXmlElement, value?.FilteredPieSeries);
       return openXmlElement;
     }
     return default;

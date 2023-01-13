@@ -381,6 +381,19 @@ public static class AxisConverter
       var openXmlElement = new OpenXmlElementType();
       SetId(openXmlElement, value?.Id);
       SetHidden(openXmlElement, value?.Hidden);
+      SetCategoryAxisScaling(openXmlElement, value?.CategoryAxisScaling);
+      SetValueAxisScaling(openXmlElement, value?.ValueAxisScaling);
+      SetAxisTitle(openXmlElement, value?.AxisTitle);
+      SetAxisUnits(openXmlElement, value?.AxisUnits);
+      SetMajorGridlinesGridlines(openXmlElement, value?.MajorGridlinesGridlines);
+      SetMinorGridlinesGridlines(openXmlElement, value?.MinorGridlinesGridlines);
+      SetMajorTickMarksTickMarks(openXmlElement, value?.MajorTickMarksTickMarks);
+      SetMinorTickMarksTickMarks(openXmlElement, value?.MinorTickMarksTickMarks);
+      SetTickLabels(openXmlElement, value?.TickLabels);
+      SetNumberFormat(openXmlElement, value?.NumberFormat);
+      SetShapeProperties(openXmlElement, value?.ShapeProperties);
+      SetTxPrTextBody(openXmlElement, value?.TxPrTextBody);
+      SetExtensionList(openXmlElement, value?.ExtensionList);
       return openXmlElement;
     }
     return default;

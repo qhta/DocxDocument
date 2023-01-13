@@ -435,6 +435,9 @@ public static class BackstageGroupConverter
       SetGetHelperText(openXmlElement, value?.GetHelperText);
       SetShowLabel(openXmlElement, value?.ShowLabel);
       SetGetShowLabel(openXmlElement, value?.GetShowLabel);
+      SetPrimaryItem(openXmlElement, value?.PrimaryItem);
+      SetTopItemsGroupControls(openXmlElement, value?.TopItemsGroupControls);
+      SetBottomItemsGroupControls(openXmlElement, value?.BottomItemsGroupControls);
       return openXmlElement;
     }
     return default;

@@ -55,6 +55,7 @@ public static class TaskHistoryConverter
     if (value != null)
     {
       var openXmlElement = new OpenXmlElementType();
+      SetTaskHistoryEvents(openXmlElement, value?.TaskHistoryEvents);
       return openXmlElement;
     }
     return default;

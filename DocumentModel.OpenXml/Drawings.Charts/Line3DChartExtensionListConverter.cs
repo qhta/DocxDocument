@@ -55,6 +55,7 @@ public static class Line3DChartExtensionListConverter
     if (value != null)
     {
       var openXmlElement = new OpenXmlElementType();
+      SetLine3DChartExtensions(openXmlElement, value?.Line3DChartExtensions);
       return openXmlElement;
     }
     return default;

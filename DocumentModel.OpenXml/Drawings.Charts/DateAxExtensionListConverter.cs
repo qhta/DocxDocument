@@ -55,6 +55,7 @@ public static class DateAxExtensionListConverter
     if (value != null)
     {
       var openXmlElement = new OpenXmlElementType();
+      SetDateAxExtensions(openXmlElement, value?.DateAxExtensions);
       return openXmlElement;
     }
     return default;

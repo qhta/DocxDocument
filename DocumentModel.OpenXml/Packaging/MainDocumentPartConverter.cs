@@ -162,12 +162,20 @@ public static class MainDocumentPartConverter
   /// </summary>
   public static DocumentModel.Wordprocessing.Document? GetDocument(DocumentFormat.OpenXml.Packaging.MainDocumentPart? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented in GeneratePropertyGetter: 1");
+    if (openXmlElement?.RootElement is DocumentFormat.OpenXml.Wordprocessing.Document rootElement)
+      return DocumentModel.OpenXml.Wordprocessing.DocumentConverter.CreateModelElement(rootElement);
+    return null;
   }
   
   public static void SetDocument(DocumentFormat.OpenXml.Packaging.MainDocumentPart? openXmlElement, DocumentModel.Wordprocessing.Document? value)
   {
-    throw new NotImplementedException("Not implemented in GeneratePropertySetter: 1");
+    if (openXmlElement != null)
+      if (value != null)
+      {
+         var rootElement = DocumentModel.OpenXml.Wordprocessing.DocumentConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.Document>(value);
+         if (rootElement != null)
+           openXmlElement.Document = rootElement;
+      }
   }
   
   /// <summary>
@@ -381,7 +389,25 @@ public static class MainDocumentPartConverter
     if (value != null)
     {
       var openXmlElement = new OpenXmlElementType();
+      //SetAlternativeFormatImportParts(openXmlElement, value?.AlternativeFormatImportParts);
+      //SetChartParts(openXmlElement, value?.ChartParts);
+      //SetCustomXmlParts(openXmlElement, value?.CustomXmlParts);
+      //SetDiagramColorsParts(openXmlElement, value?.DiagramColorsParts);
+      //SetDiagramDataParts(openXmlElement, value?.DiagramDataParts);
+      //SetDiagramLayoutDefinitionParts(openXmlElement, value?.DiagramLayoutDefinitionParts);
+      //SetDiagramPersistLayoutParts(openXmlElement, value?.DiagramPersistLayoutParts);
+      //SetDiagramStyleParts(openXmlElement, value?.DiagramStyleParts);
       SetDocument(openXmlElement, value?.Document);
+      //SetEmbeddedControlPersistenceParts(openXmlElement, value?.EmbeddedControlPersistenceParts);
+      //SetEmbeddedObjectParts(openXmlElement, value?.EmbeddedObjectParts);
+      //SetEmbeddedPackageParts(openXmlElement, value?.EmbeddedPackageParts);
+      //SetExtendedChartParts(openXmlElement, value?.ExtendedChartParts);
+      //SetFooterParts(openXmlElement, value?.FooterParts);
+      //SetHeaderParts(openXmlElement, value?.HeaderParts);
+      //SetImageParts(openXmlElement, value?.ImageParts);
+      //SetModel3DReferenceRelationshipParts(openXmlElement, value?.Model3DReferenceRelationshipParts);
+      //SetRelationshipType(openXmlElement, value?.RelationshipType);
+      //SetWordprocessingPrinterSettingsParts(openXmlElement, value?.WordprocessingPrinterSettingsParts);
       return openXmlElement;
     }
     return default;

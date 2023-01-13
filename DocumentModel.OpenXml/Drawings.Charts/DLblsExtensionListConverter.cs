@@ -55,6 +55,7 @@ public static class DLblsExtensionListConverter
     if (value != null)
     {
       var openXmlElement = new OpenXmlElementType();
+      SetDLblsExtensions(openXmlElement, value?.DLblsExtensions);
       return openXmlElement;
     }
     return default;

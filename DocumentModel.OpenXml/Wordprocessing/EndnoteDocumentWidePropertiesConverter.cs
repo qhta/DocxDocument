@@ -180,6 +180,7 @@ public static class EndnoteDocumentWidePropertiesConverter
       SetNumberingFormat(openXmlElement, value?.NumberingFormat);
       SetNumberingStart(openXmlElement, value?.NumberingStart);
       SetNumberingRestart(openXmlElement, value?.NumberingRestart);
+      SetEndnoteSpecialReferences(openXmlElement, value?.EndnoteSpecialReferences);
       return openXmlElement;
     }
     return default;

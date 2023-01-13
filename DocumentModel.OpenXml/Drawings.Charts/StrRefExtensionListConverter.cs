@@ -55,6 +55,7 @@ public static class StrRefExtensionListConverter
     if (value != null)
     {
       var openXmlElement = new OpenXmlElementType();
+      SetStrRefExtensions(openXmlElement, value?.StrRefExtensions);
       return openXmlElement;
     }
     return default;

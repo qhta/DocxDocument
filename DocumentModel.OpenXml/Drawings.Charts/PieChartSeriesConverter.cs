@@ -326,6 +326,11 @@ public static class PieChartSeriesConverter
       SetChartShapeProperties(openXmlElement, value?.ChartShapeProperties);
       SetPictureOptions(openXmlElement, value?.PictureOptions);
       SetExplosion(openXmlElement, value?.Explosion);
+      SetDataPoints(openXmlElement, value?.DataPoints);
+      SetDataLabels(openXmlElement, value?.DataLabels);
+      SetCategoryAxisData(openXmlElement, value?.CategoryAxisData);
+      SetValues(openXmlElement, value?.Values);
+      SetPieSerExtensionList(openXmlElement, value?.PieSerExtensionList);
       return openXmlElement;
     }
     return default;

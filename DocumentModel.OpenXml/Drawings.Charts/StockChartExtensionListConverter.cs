@@ -55,6 +55,7 @@ public static class StockChartExtensionListConverter
     if (value != null)
     {
       var openXmlElement = new OpenXmlElementType();
+      SetStockChartExtensions(openXmlElement, value?.StockChartExtensions);
       return openXmlElement;
     }
     return default;

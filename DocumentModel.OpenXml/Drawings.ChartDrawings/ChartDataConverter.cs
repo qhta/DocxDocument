@@ -100,6 +100,8 @@ public static class ChartDataConverter
     {
       var openXmlElement = new OpenXmlElementType();
       SetExternalData(openXmlElement, value?.ExternalData);
+      SetData(openXmlElement, value?.Data);
+      SetExtensionList(openXmlElement, value?.ExtensionList);
       return openXmlElement;
     }
     return default;

@@ -233,6 +233,18 @@ public static class DrawingsPartConverter
     if (value != null)
     {
       var openXmlElement = new OpenXmlElementType();
+      //SetChartParts(openXmlElement, value?.ChartParts);
+      //SetContentType(openXmlElement, value?.ContentType);
+      //SetCustomXmlParts(openXmlElement, value?.CustomXmlParts);
+      //SetDiagramColorsParts(openXmlElement, value?.DiagramColorsParts);
+      //SetDiagramDataParts(openXmlElement, value?.DiagramDataParts);
+      //SetDiagramLayoutDefinitionParts(openXmlElement, value?.DiagramLayoutDefinitionParts);
+      //SetDiagramPersistLayoutParts(openXmlElement, value?.DiagramPersistLayoutParts);
+      //SetDiagramStyleParts(openXmlElement, value?.DiagramStyleParts);
+      //SetExtendedChartParts(openXmlElement, value?.ExtendedChartParts);
+      //SetImageParts(openXmlElement, value?.ImageParts);
+      //SetRelationshipType(openXmlElement, value?.RelationshipType);
+      //SetWebExtensionParts(openXmlElement, value?.WebExtensionParts);
       return openXmlElement;
     }
     return default;

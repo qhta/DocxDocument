@@ -55,6 +55,7 @@ public static class ConnectionListConverter
     if (value != null)
     {
       var openXmlElement = new OpenXmlElementType();
+      SetConnections(openXmlElement, value?.Connections);
       return openXmlElement;
     }
     return default;

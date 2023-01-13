@@ -224,12 +224,20 @@ public static class FootnotesPartConverter
   /// </summary>
   public static DocumentModel.Wordprocessing.Footnotes? GetFootnotes(DocumentFormat.OpenXml.Packaging.FootnotesPart? openXmlElement)
   {
-    throw new NotImplementedException("Not implemented in GeneratePropertyGetter: 1");
+    if (openXmlElement?.RootElement is DocumentFormat.OpenXml.Wordprocessing.Footnotes rootElement)
+      return DocumentModel.OpenXml.Wordprocessing.FootnotesConverter.CreateModelElement(rootElement);
+    return null;
   }
   
   public static void SetFootnotes(DocumentFormat.OpenXml.Packaging.FootnotesPart? openXmlElement, DocumentModel.Wordprocessing.Footnotes? value)
   {
-    throw new NotImplementedException("Not implemented in GeneratePropertySetter: 1");
+    if (openXmlElement != null)
+      if (value != null)
+      {
+         var rootElement = DocumentModel.OpenXml.Wordprocessing.FootnotesConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.Footnotes>(value);
+         if (rootElement != null)
+           openXmlElement.Footnotes = rootElement;
+      }
   }
   
   /// <summary>
@@ -307,7 +315,22 @@ public static class FootnotesPartConverter
     if (value != null)
     {
       var openXmlElement = new OpenXmlElementType();
+      //SetAlternativeFormatImportParts(openXmlElement, value?.AlternativeFormatImportParts);
+      //SetChartParts(openXmlElement, value?.ChartParts);
+      //SetContentType(openXmlElement, value?.ContentType);
+      //SetDiagramColorsParts(openXmlElement, value?.DiagramColorsParts);
+      //SetDiagramDataParts(openXmlElement, value?.DiagramDataParts);
+      //SetDiagramLayoutDefinitionParts(openXmlElement, value?.DiagramLayoutDefinitionParts);
+      //SetDiagramPersistLayoutParts(openXmlElement, value?.DiagramPersistLayoutParts);
+      //SetDiagramStyleParts(openXmlElement, value?.DiagramStyleParts);
+      //SetEmbeddedControlPersistenceParts(openXmlElement, value?.EmbeddedControlPersistenceParts);
+      //SetEmbeddedObjectParts(openXmlElement, value?.EmbeddedObjectParts);
+      //SetEmbeddedPackageParts(openXmlElement, value?.EmbeddedPackageParts);
+      //SetExtendedChartParts(openXmlElement, value?.ExtendedChartParts);
       SetFootnotes(openXmlElement, value?.Footnotes);
+      //SetImageParts(openXmlElement, value?.ImageParts);
+      //SetModel3DReferenceRelationshipParts(openXmlElement, value?.Model3DReferenceRelationshipParts);
+      //SetRelationshipType(openXmlElement, value?.RelationshipType);
       return openXmlElement;
     }
     return default;
