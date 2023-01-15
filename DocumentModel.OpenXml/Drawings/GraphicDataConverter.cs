@@ -1,19 +1,21 @@
+using DocumentFormat.OpenXml.Drawing;
+
 namespace DocumentModel.OpenXml.Drawings;
 
 /// <summary>
-/// Graphic Object Data.
+///   Graphic Object Data.
 /// </summary>
 public static class GraphicDataConverter
 {
   /// <summary>
-  /// Uniform Resource Identifier
+  ///   Uniform Resource Identifier
   /// </summary>
-  public static String? GetUri(DocumentFormat.OpenXml.Drawing.GraphicData? openXmlElement)
+  public static String? GetUri(GraphicData? openXmlElement)
   {
     return openXmlElement?.Uri?.Value;
   }
-  
-  public static void SetUri(DocumentFormat.OpenXml.Drawing.GraphicData? openXmlElement, String? value)
+
+  public static void SetUri(GraphicData? openXmlElement, String? value)
   {
     if (openXmlElement != null)
       if (value != null)
@@ -21,8 +23,8 @@ public static class GraphicDataConverter
       else
         openXmlElement.Uri = null;
   }
-  
-  public static DocumentModel.Drawings.GraphicData? CreateModelElement(DocumentFormat.OpenXml.Drawing.GraphicData? openXmlElement)
+
+  public static DocumentModel.Drawings.GraphicData? CreateModelElement(GraphicData? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -32,9 +34,9 @@ public static class GraphicDataConverter
     }
     return null;
   }
-  
+
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.GraphicData? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.GraphicData, new()
+    where OpenXmlElementType : GraphicData, new()
   {
     if (value != null)
     {

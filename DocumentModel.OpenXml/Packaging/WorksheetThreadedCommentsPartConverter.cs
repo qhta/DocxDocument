@@ -1,21 +1,23 @@
+using DocumentFormat.OpenXml.Packaging;
+
 namespace DocumentModel.OpenXml.Packaging;
 
 /// <summary>
-/// Defines the WorksheetThreadedCommentsPart
+///   Defines the WorksheetThreadedCommentsPart
 /// </summary>
 public static class WorksheetThreadedCommentsPartConverter
 {
-  public static String? GetContentType(DocumentFormat.OpenXml.Packaging.WorksheetThreadedCommentsPart? openXmlElement)
+  public static String? GetContentType(WorksheetThreadedCommentsPart? openXmlElement)
   {
     return openXmlElement?.ContentType;
   }
-  
-  public static String? GetRelationshipType(DocumentFormat.OpenXml.Packaging.WorksheetThreadedCommentsPart? openXmlElement)
+
+  public static String? GetRelationshipType(WorksheetThreadedCommentsPart? openXmlElement)
   {
     return openXmlElement?.RelationshipType;
   }
-  
-  public static DocumentModel.Packaging.WorksheetThreadedCommentsPart? CreateModelElement(DocumentFormat.OpenXml.Packaging.WorksheetThreadedCommentsPart? openXmlElement)
+
+  public static DocumentModel.Packaging.WorksheetThreadedCommentsPart? CreateModelElement(WorksheetThreadedCommentsPart? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -26,9 +28,9 @@ public static class WorksheetThreadedCommentsPartConverter
     }
     return null;
   }
-  
+
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Packaging.WorksheetThreadedCommentsPart? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Packaging.WorksheetThreadedCommentsPart, new()
+    where OpenXmlElementType : WorksheetThreadedCommentsPart, new()
   {
     if (value != null)
     {

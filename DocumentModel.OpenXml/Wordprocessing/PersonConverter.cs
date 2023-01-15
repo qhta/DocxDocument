@@ -1,19 +1,22 @@
+using DocumentFormat.OpenXml.Office2013.Word;
+using PresenceInfo = DocumentModel.Wordprocessing.PresenceInfo;
+
 namespace DocumentModel.OpenXml.Wordprocessing;
 
 /// <summary>
-/// Defines the Person Class.
+///   Defines the Person Class.
 /// </summary>
 public static class PersonConverter
 {
   /// <summary>
-  /// Gets or sets the  value. It is only available for backwards compatibility
+  ///   Gets or sets the  value. It is only available for backwards compatibility
   /// </summary>
-  public static String? GetContact(DocumentFormat.OpenXml.Office2013.Word.Person? openXmlElement)
+  public static String? GetContact(Person? openXmlElement)
   {
     return openXmlElement?.Contact?.Value;
   }
-  
-  public static void SetContact(DocumentFormat.OpenXml.Office2013.Word.Person? openXmlElement, String? value)
+
+  public static void SetContact(Person? openXmlElement, String? value)
   {
     if (openXmlElement != null)
       if (value != null)
@@ -21,16 +24,16 @@ public static class PersonConverter
       else
         openXmlElement.Contact = null;
   }
-  
+
   /// <summary>
-  /// author, this property is only available in Office 2013 and later.
+  ///   author, this property is only available in Office 2013 and later.
   /// </summary>
-  public static String? GetAuthor(DocumentFormat.OpenXml.Office2013.Word.Person? openXmlElement)
+  public static String? GetAuthor(Person? openXmlElement)
   {
     return openXmlElement?.Author?.Value;
   }
-  
-  public static void SetAuthor(DocumentFormat.OpenXml.Office2013.Word.Person? openXmlElement, String? value)
+
+  public static void SetAuthor(Person? openXmlElement, String? value)
   {
     if (openXmlElement != null)
       if (value != null)
@@ -38,19 +41,19 @@ public static class PersonConverter
       else
         openXmlElement.Author = null;
   }
-  
+
   /// <summary>
-  /// PresenceInfo.
+  ///   PresenceInfo.
   /// </summary>
-  public static DocumentModel.Wordprocessing.PresenceInfo? GetPresenceInfo(DocumentFormat.OpenXml.Office2013.Word.Person? openXmlElement)
+  public static PresenceInfo? GetPresenceInfo(Person? openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office2013.Word.PresenceInfo>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Wordprocessing.PresenceInfoConverter.CreateModelElement(itemElement);
+      return PresenceInfoConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetPresenceInfo(DocumentFormat.OpenXml.Office2013.Word.Person? openXmlElement, DocumentModel.Wordprocessing.PresenceInfo? value)
+
+  public static void SetPresenceInfo(Person? openXmlElement, PresenceInfo? value)
   {
     if (openXmlElement != null)
     {
@@ -59,14 +62,14 @@ public static class PersonConverter
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Wordprocessing.PresenceInfoConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2013.Word.PresenceInfo>(value);
+        itemElement = PresenceInfoConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2013.Word.PresenceInfo>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static DocumentModel.Wordprocessing.Person? CreateModelElement(DocumentFormat.OpenXml.Office2013.Word.Person? openXmlElement)
+
+  public static DocumentModel.Wordprocessing.Person? CreateModelElement(Person? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -78,9 +81,9 @@ public static class PersonConverter
     }
     return null;
   }
-  
+
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.Person? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Office2013.Word.Person, new()
+    where OpenXmlElementType : Person, new()
   {
     if (value != null)
     {

@@ -1,28 +1,27 @@
 namespace DocumentModel.Drawings.Charts;
 
 /// <summary>
-/// Tick Label Position
+///   Tick Label Position
 /// </summary>
 public enum TickLabelPositionKind
 {
   /// <summary>
-  /// High.
+  ///   High.
   /// </summary>
   High,
-  
+
   /// <summary>
-  /// Low.
+  ///   Low.
   /// </summary>
   Low,
-  
+
   /// <summary>
-  /// Next To.
+  ///   Next To.
   /// </summary>
   NextTo,
-  
+
   /// <summary>
-  /// None.
+  ///   None.
   /// </summary>
-  None,
-  
+  None
 }

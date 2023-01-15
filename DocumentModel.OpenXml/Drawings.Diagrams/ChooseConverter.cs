@@ -1,19 +1,23 @@
+using DocumentFormat.OpenXml.Drawing.Diagrams;
+using DiagramChooseElse = DocumentModel.Drawings.Diagrams.DiagramChooseElse;
+using DiagramChooseIf = DocumentModel.Drawings.Diagrams.DiagramChooseIf;
+
 namespace DocumentModel.OpenXml.Drawings.Diagrams;
 
 /// <summary>
-/// Choose Element.
+///   Choose Element.
 /// </summary>
 public static class ChooseConverter
 {
   /// <summary>
-  /// Name
+  ///   Name
   /// </summary>
-  public static String? GetName(DocumentFormat.OpenXml.Drawing.Diagrams.Choose? openXmlElement)
+  public static String? GetName(Choose? openXmlElement)
   {
     return openXmlElement?.Name?.Value;
   }
-  
-  public static void SetName(DocumentFormat.OpenXml.Drawing.Diagrams.Choose? openXmlElement, String? value)
+
+  public static void SetName(Choose? openXmlElement, String? value)
   {
     if (openXmlElement != null)
       if (value != null)
@@ -21,16 +25,16 @@ public static class ChooseConverter
       else
         openXmlElement.Name = null;
   }
-  
-  public static DocumentModel.Drawings.Diagrams.DiagramChooseIf? GetDiagramChooseIf(DocumentFormat.OpenXml.Drawing.Diagrams.Choose? openXmlElement)
+
+  public static DiagramChooseIf? GetDiagramChooseIf(Choose? openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.Diagrams.DiagramChooseIf>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.Diagrams.DiagramChooseIfConverter.CreateModelElement(itemElement);
+      return DiagramChooseIfConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetDiagramChooseIf(DocumentFormat.OpenXml.Drawing.Diagrams.Choose? openXmlElement, DocumentModel.Drawings.Diagrams.DiagramChooseIf? value)
+
+  public static void SetDiagramChooseIf(Choose? openXmlElement, DiagramChooseIf? value)
   {
     if (openXmlElement != null)
     {
@@ -39,22 +43,22 @@ public static class ChooseConverter
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Drawings.Diagrams.DiagramChooseIfConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Diagrams.DiagramChooseIf>(value);
+        itemElement = DiagramChooseIfConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Diagrams.DiagramChooseIf>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static DocumentModel.Drawings.Diagrams.DiagramChooseElse? GetDiagramChooseElse(DocumentFormat.OpenXml.Drawing.Diagrams.Choose? openXmlElement)
+
+  public static DiagramChooseElse? GetDiagramChooseElse(Choose? openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.Diagrams.DiagramChooseElse>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.Diagrams.DiagramChooseElseConverter.CreateModelElement(itemElement);
+      return DiagramChooseElseConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetDiagramChooseElse(DocumentFormat.OpenXml.Drawing.Diagrams.Choose? openXmlElement, DocumentModel.Drawings.Diagrams.DiagramChooseElse? value)
+
+  public static void SetDiagramChooseElse(Choose? openXmlElement, DiagramChooseElse? value)
   {
     if (openXmlElement != null)
     {
@@ -63,14 +67,14 @@ public static class ChooseConverter
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Drawings.Diagrams.DiagramChooseElseConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Diagrams.DiagramChooseElse>(value);
+        itemElement = DiagramChooseElseConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Diagrams.DiagramChooseElse>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static DocumentModel.Drawings.Diagrams.Choose? CreateModelElement(DocumentFormat.OpenXml.Drawing.Diagrams.Choose? openXmlElement)
+
+  public static DocumentModel.Drawings.Diagrams.Choose? CreateModelElement(Choose? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -82,9 +86,9 @@ public static class ChooseConverter
     }
     return null;
   }
-  
+
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.Diagrams.Choose? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.Diagrams.Choose, new()
+    where OpenXmlElementType : Choose, new()
   {
     if (value != null)
     {

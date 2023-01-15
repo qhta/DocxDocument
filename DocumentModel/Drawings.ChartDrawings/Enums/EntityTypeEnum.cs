@@ -1,68 +1,67 @@
 namespace DocumentModel.Drawings.ChartDrawings;
 
 /// <summary>
-/// Defines the EntityTypeEnum enumeration.
+///   Defines the EntityTypeEnum enumeration.
 /// </summary>
 public enum EntityTypeEnum
 {
   /// <summary>
-  /// Address.
+  ///   Address.
   /// </summary>
   Address,
-  
+
   /// <summary>
-  /// AdminDistrict.
+  ///   AdminDistrict.
   /// </summary>
   AdminDistrict,
-  
+
   /// <summary>
-  /// AdminDistrict2.
+  ///   AdminDistrict2.
   /// </summary>
   AdminDistrict2,
-  
+
   /// <summary>
-  /// AdminDistrict3.
+  ///   AdminDistrict3.
   /// </summary>
   AdminDistrict3,
-  
+
   /// <summary>
-  /// Continent.
+  ///   Continent.
   /// </summary>
   Continent,
-  
+
   /// <summary>
-  /// CountryRegion.
+  ///   CountryRegion.
   /// </summary>
   CountryRegion,
-  
+
   /// <summary>
-  /// Locality.
+  ///   Locality.
   /// </summary>
   Locality,
-  
+
   /// <summary>
-  /// Ocean.
+  ///   Ocean.
   /// </summary>
   Ocean,
-  
+
   /// <summary>
-  /// Planet.
+  ///   Planet.
   /// </summary>
   Planet,
-  
+
   /// <summary>
-  /// PostalCode.
+  ///   PostalCode.
   /// </summary>
   PostalCode,
-  
+
   /// <summary>
-  /// Region.
+  ///   Region.
   /// </summary>
   Region,
-  
+
   /// <summary>
-  /// Unsupported.
+  ///   Unsupported.
   /// </summary>
-  Unsupported,
-  
+  Unsupported
 }

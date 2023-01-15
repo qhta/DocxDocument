@@ -1,28 +1,27 @@
 namespace DocumentModel.Drawings;
 
 /// <summary>
-/// Defines the ClassificationOutcomeType enumeration.
+///   Defines the ClassificationOutcomeType enumeration.
 /// </summary>
 public enum ClassificationOutcomeType
 {
   /// <summary>
-  /// none.
+  ///   none.
   /// </summary>
   None,
-  
+
   /// <summary>
-  /// hdr.
+  ///   hdr.
   /// </summary>
   Hdr,
-  
+
   /// <summary>
-  /// ftr.
+  ///   ftr.
   /// </summary>
   Ftr,
-  
+
   /// <summary>
-  /// watermark.
+  ///   watermark.
   /// </summary>
-  Watermark,
-  
+  Watermark
 }

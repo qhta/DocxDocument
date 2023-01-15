@@ -1,38 +1,37 @@
 namespace DocumentModel.Vml;
 
 /// <summary>
-/// Alignment Type
+///   Alignment Type
 /// </summary>
 public enum AlignmentKind
 {
   /// <summary>
-  /// Top Alignment.
+  ///   Top Alignment.
   /// </summary>
   Top,
-  
+
   /// <summary>
-  /// Middle Alignment.
+  ///   Middle Alignment.
   /// </summary>
   Middle,
-  
+
   /// <summary>
-  /// Bottom Alignment.
+  ///   Bottom Alignment.
   /// </summary>
   Bottom,
-  
+
   /// <summary>
-  /// Left Alignment.
+  ///   Left Alignment.
   /// </summary>
   Left,
-  
+
   /// <summary>
-  /// Center Alignment.
+  ///   Center Alignment.
   /// </summary>
   Center,
-  
+
   /// <summary>
-  /// Right Alignment.
+  ///   Right Alignment.
   /// </summary>
-  Right,
-  
+  Right
 }

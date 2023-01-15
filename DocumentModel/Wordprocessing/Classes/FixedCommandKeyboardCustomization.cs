@@ -1,23 +1,22 @@
 namespace DocumentModel.Wordprocessing;
 
 /// <summary>
-/// Defines the FixedCommandKeyboardCustomization Class.
+///   Defines the FixedCommandKeyboardCustomization Class.
 /// </summary>
-public partial class FixedCommandKeyboardCustomization
+public class FixedCommandKeyboardCustomization
 {
   /// <summary>
-  /// fciName
+  ///   fciName
   /// </summary>
   public String? CommandName { get; set; }
-  
+
   /// <summary>
-  /// fciIndex
+  ///   fciIndex
   /// </summary>
   public Byte[]? CommandIndex { get; set; }
-  
+
   /// <summary>
-  /// swArg
+  ///   swArg
   /// </summary>
   public Byte[]? Argument { get; set; }
-  
 }

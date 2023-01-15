@@ -1,72 +1,71 @@
 namespace DocumentModel.Wordprocessing;
 
 /// <summary>
-/// Cell-Level Structured Document Tag Content.
+///   Cell-Level Structured Document Tag Content.
 /// </summary>
-public partial class SdtContentCell
+public class SdtContentCell
 {
-  public Collection<DocumentModel.Wordprocessing.TableCell>? TableCells { get; set; }
-  
-  public DocumentModel.Wordprocessing.CustomXmlCell? CustomXmlCell { get; set; }
-  
-  public DocumentModel.Wordprocessing.SdtCell? SdtCell { get; set; }
-  
-  public DocumentModel.Wordprocessing.ProofError? ProofError { get; set; }
-  
-  public DocumentModel.Wordprocessing.PermStart? PermStart { get; set; }
-  
-  public DocumentModel.Wordprocessing.PermEnd? PermEnd { get; set; }
-  
-  public DocumentModel.Wordprocessing.BookmarkStart? BookmarkStart { get; set; }
-  
-  public DocumentModel.Wordprocessing.MarkupRangeType? BookmarkEnd { get; set; }
-  
-  public DocumentModel.Wordprocessing.MarkupRangeType? CommentRangeStart { get; set; }
-  
-  public DocumentModel.Wordprocessing.MarkupRangeType? CommentRangeEnd { get; set; }
-  
-  public DocumentModel.Wordprocessing.MoveBookmarkType? MoveFromRangeStart { get; set; }
-  
-  public DocumentModel.Wordprocessing.MarkupRangeType? MoveFromRangeEnd { get; set; }
-  
-  public DocumentModel.Wordprocessing.MoveBookmarkType? MoveToRangeStart { get; set; }
-  
-  public DocumentModel.Wordprocessing.MarkupRangeType? MoveToRangeEnd { get; set; }
-  
-  public DocumentModel.Wordprocessing.TrackChangeType? CustomXmlInsRangeStart { get; set; }
-  
-  public DocumentModel.Wordprocessing.MarkupType? CustomXmlInsRangeEnd { get; set; }
-  
-  public DocumentModel.Wordprocessing.TrackChangeType? CustomXmlDelRangeStart { get; set; }
-  
-  public DocumentModel.Wordprocessing.MarkupType? CustomXmlDelRangeEnd { get; set; }
-  
-  public DocumentModel.Wordprocessing.TrackChangeType? CustomXmlMoveFromRangeStart { get; set; }
-  
-  public DocumentModel.Wordprocessing.MarkupType? CustomXmlMoveFromRangeEnd { get; set; }
-  
-  public DocumentModel.Wordprocessing.TrackChangeType? CustomXmlMoveToRangeStart { get; set; }
-  
-  public DocumentModel.Wordprocessing.MarkupType? CustomXmlMoveToRangeEnd { get; set; }
-  
-  public DocumentModel.Wordprocessing.TrackChangeType2? CustomXmlConflictInsertionRangeStart { get; set; }
-  
-  public DocumentModel.Wordprocessing.MarkupType2? CustomXmlConflictInsertionRangeEnd { get; set; }
-  
-  public DocumentModel.Wordprocessing.TrackChangeType2? CustomXmlConflictDeletionRangeStart { get; set; }
-  
-  public DocumentModel.Wordprocessing.MarkupType2? CustomXmlConflictDeletionRangeEnd { get; set; }
-  
-  public DocumentModel.Wordprocessing.InsertedRun? InsertedRun { get; set; }
-  
-  public DocumentModel.Wordprocessing.DeletedRun? DeletedRun { get; set; }
-  
-  public DocumentModel.Wordprocessing.MoveFromRun? MoveFromRun { get; set; }
-  
-  public DocumentModel.Wordprocessing.MoveToRun? MoveToRun { get; set; }
-  
-  public DocumentModel.Wordprocessing.RunConflictInsertion? RunConflictInsertion { get; set; }
-  
-  public DocumentModel.Wordprocessing.RunConflictDeletion? RunConflictDeletion { get; set; }
-  
+  public Collection<TableCell>? TableCells { get; set; }
+
+  public CustomXmlCell? CustomXmlCell { get; set; }
+
+  public SdtCell? SdtCell { get; set; }
+
+  public ProofError? ProofError { get; set; }
+
+  public PermStart? PermStart { get; set; }
+
+  public PermEnd? PermEnd { get; set; }
+
+  public BookmarkStart? BookmarkStart { get; set; }
+
+  public MarkupRangeType? BookmarkEnd { get; set; }
+
+  public MarkupRangeType? CommentRangeStart { get; set; }
+
+  public MarkupRangeType? CommentRangeEnd { get; set; }
+
+  public MoveBookmarkType? MoveFromRangeStart { get; set; }
+
+  public MarkupRangeType? MoveFromRangeEnd { get; set; }
+
+  public MoveBookmarkType? MoveToRangeStart { get; set; }
+
+  public MarkupRangeType? MoveToRangeEnd { get; set; }
+
+  public TrackChangeType? CustomXmlInsRangeStart { get; set; }
+
+  public MarkupType? CustomXmlInsRangeEnd { get; set; }
+
+  public TrackChangeType? CustomXmlDelRangeStart { get; set; }
+
+  public MarkupType? CustomXmlDelRangeEnd { get; set; }
+
+  public TrackChangeType? CustomXmlMoveFromRangeStart { get; set; }
+
+  public MarkupType? CustomXmlMoveFromRangeEnd { get; set; }
+
+  public TrackChangeType? CustomXmlMoveToRangeStart { get; set; }
+
+  public MarkupType? CustomXmlMoveToRangeEnd { get; set; }
+
+  public TrackChangeType2? CustomXmlConflictInsertionRangeStart { get; set; }
+
+  public MarkupType2? CustomXmlConflictInsertionRangeEnd { get; set; }
+
+  public TrackChangeType2? CustomXmlConflictDeletionRangeStart { get; set; }
+
+  public MarkupType2? CustomXmlConflictDeletionRangeEnd { get; set; }
+
+  public InsertedRun? InsertedRun { get; set; }
+
+  public DeletedRun? DeletedRun { get; set; }
+
+  public MoveFromRun? MoveFromRun { get; set; }
+
+  public MoveToRun? MoveToRun { get; set; }
+
+  public RunConflictInsertion? RunConflictInsertion { get; set; }
+
+  public RunConflictDeletion? RunConflictDeletion { get; set; }
 }

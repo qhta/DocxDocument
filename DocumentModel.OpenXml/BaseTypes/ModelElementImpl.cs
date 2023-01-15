@@ -1,12 +1,13 @@
 ﻿namespace DocumentModel.OpenXml;
 
-public class ModelElementImpl: ModelObjectImpl
+public class ModelElementImpl : ModelObjectImpl
 {
-  public ModelElementImpl() { }
+  public ModelElementImpl()
+  {
+  }
 
-  public ModelElementImpl(DocumentFormat.OpenXml.OpenXmlElement openXmlElement)
+  public ModelElementImpl(OpenXmlElement openXmlElement)
   {
     _OpenXmlElement = openXmlElement;
   }
-
 }

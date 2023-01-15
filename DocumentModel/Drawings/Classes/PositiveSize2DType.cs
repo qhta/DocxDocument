@@ -1,18 +1,17 @@
 namespace DocumentModel.Drawings;
 
 /// <summary>
-/// Defines the PositiveSize2DType Class.
+///   Defines the PositiveSize2DType Class.
 /// </summary>
-public partial class PositiveSize2DType
+public class PositiveSize2DType
 {
   /// <summary>
-  /// Extent Length
+  ///   Extent Length
   /// </summary>
   public Int64? Cx { get; set; }
-  
+
   /// <summary>
-  /// Extent Width
+  ///   Extent Width
   /// </summary>
   public Int64? Cy { get; set; }
-  
 }

@@ -1,38 +1,37 @@
 namespace DocumentModel.Math;
 
 /// <summary>
-/// n-ary Properties.
+///   n-ary Properties.
 /// </summary>
-public partial class NaryProperties
+public class NaryProperties
 {
   /// <summary>
-  /// n-ary Operator Character.
+  ///   n-ary Operator Character.
   /// </summary>
   public String? AccentChar { get; set; }
-  
+
   /// <summary>
-  /// n-ary Limit Location.
+  ///   n-ary Limit Location.
   /// </summary>
-  public DocumentModel.Math.LimitLocationKind? LimitLocation { get; set; }
-  
+  public LimitLocationKind? LimitLocation { get; set; }
+
   /// <summary>
-  /// n-ary Grow.
+  ///   n-ary Grow.
   /// </summary>
-  public DocumentModel.Math.BooleanKind? GrowOperators { get; set; }
-  
+  public BooleanKind? GrowOperators { get; set; }
+
   /// <summary>
-  /// Hide Subscript (n-ary).
+  ///   Hide Subscript (n-ary).
   /// </summary>
-  public DocumentModel.Math.BooleanKind? HideSubArgument { get; set; }
-  
+  public BooleanKind? HideSubArgument { get; set; }
+
   /// <summary>
-  /// Hide Superscript (n-ary).
+  ///   Hide Superscript (n-ary).
   /// </summary>
-  public DocumentModel.Math.BooleanKind? HideSuperArgument { get; set; }
-  
+  public BooleanKind? HideSuperArgument { get; set; }
+
   /// <summary>
-  /// ControlProperties.
+  ///   ControlProperties.
   /// </summary>
-  public DocumentModel.Math.ControlProperties? ControlProperties { get; set; }
-  
+  public ControlProperties? ControlProperties { get; set; }
 }

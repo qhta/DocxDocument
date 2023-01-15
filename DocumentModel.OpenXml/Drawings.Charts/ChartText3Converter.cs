@@ -1,22 +1,25 @@
+using DocumentModel.Drawings.Charts;
+using ChartText = DocumentFormat.OpenXml.Office2013.Drawing.Chart.ChartText;
+
 namespace DocumentModel.OpenXml.Drawings.Charts;
 
 /// <summary>
-/// Defines the ChartText Class.
+///   Defines the ChartText Class.
 /// </summary>
 public static class ChartText3Converter
 {
   /// <summary>
-  /// String Reference.
+  ///   String Reference.
   /// </summary>
-  public static DocumentModel.Drawings.Charts.StringReference? GetStringReference(DocumentFormat.OpenXml.Office2013.Drawing.Chart.ChartText? openXmlElement)
+  public static StringReference? GetStringReference(ChartText? openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.StringReference>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.Charts.StringReferenceConverter.CreateModelElement(itemElement);
+      return StringReferenceConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetStringReference(DocumentFormat.OpenXml.Office2013.Drawing.Chart.ChartText? openXmlElement, DocumentModel.Drawings.Charts.StringReference? value)
+
+  public static void SetStringReference(ChartText? openXmlElement, StringReference? value)
   {
     if (openXmlElement != null)
     {
@@ -25,25 +28,25 @@ public static class ChartText3Converter
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Drawings.Charts.StringReferenceConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Charts.StringReference>(value);
+        itemElement = StringReferenceConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Charts.StringReference>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
+
   /// <summary>
-  /// Rich Text.
+  ///   Rich Text.
   /// </summary>
-  public static DocumentModel.Drawings.Charts.RichText? GetRichText(DocumentFormat.OpenXml.Office2013.Drawing.Chart.ChartText? openXmlElement)
+  public static RichText? GetRichText(ChartText? openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.RichText>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.Charts.RichTextConverter.CreateModelElement(itemElement);
+      return RichTextConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetRichText(DocumentFormat.OpenXml.Office2013.Drawing.Chart.ChartText? openXmlElement, DocumentModel.Drawings.Charts.RichText? value)
+
+  public static void SetRichText(ChartText? openXmlElement, RichText? value)
   {
     if (openXmlElement != null)
     {
@@ -52,25 +55,25 @@ public static class ChartText3Converter
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Drawings.Charts.RichTextConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Charts.RichText>(value);
+        itemElement = RichTextConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Charts.RichText>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
+
   /// <summary>
-  /// String Literal.
+  ///   String Literal.
   /// </summary>
-  public static DocumentModel.Drawings.Charts.StringLiteral? GetStringLiteral(DocumentFormat.OpenXml.Office2013.Drawing.Chart.ChartText? openXmlElement)
+  public static StringLiteral? GetStringLiteral(ChartText? openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.StringLiteral>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.Charts.StringLiteralConverter.CreateModelElement(itemElement);
+      return StringLiteralConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetStringLiteral(DocumentFormat.OpenXml.Office2013.Drawing.Chart.ChartText? openXmlElement, DocumentModel.Drawings.Charts.StringLiteral? value)
+
+  public static void SetStringLiteral(ChartText? openXmlElement, StringLiteral? value)
   {
     if (openXmlElement != null)
     {
@@ -79,18 +82,18 @@ public static class ChartText3Converter
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Drawings.Charts.StringLiteralConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Charts.StringLiteral>(value);
+        itemElement = StringLiteralConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Charts.StringLiteral>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static DocumentModel.Drawings.Charts.ChartText3? CreateModelElement(DocumentFormat.OpenXml.Office2013.Drawing.Chart.ChartText? openXmlElement)
+
+  public static ChartText3? CreateModelElement(ChartText? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.Charts.ChartText3();
+      var value = new ChartText3();
       value.StringReference = GetStringReference(openXmlElement);
       value.RichText = GetRichText(openXmlElement);
       value.StringLiteral = GetStringLiteral(openXmlElement);
@@ -98,9 +101,9 @@ public static class ChartText3Converter
     }
     return null;
   }
-  
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.Charts.ChartText3? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Office2013.Drawing.Chart.ChartText, new()
+
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(ChartText3? value)
+    where OpenXmlElementType : ChartText, new()
   {
     if (value != null)
     {

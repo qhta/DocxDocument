@@ -1,10 +1,9 @@
 namespace DocumentModel.Drawings.Diagrams;
 
 /// <summary>
-/// Defines the StyleData Class.
+///   Defines the StyleData Class.
 /// </summary>
-public partial class StyleData
+public class StyleData
 {
-  public DocumentModel.Drawings.Diagrams.DataModel? DataModel { get; set; }
-  
+  public DataModel? DataModel { get; set; }
 }

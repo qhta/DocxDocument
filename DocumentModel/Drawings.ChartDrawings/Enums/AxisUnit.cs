@@ -1,58 +1,57 @@
 namespace DocumentModel.Drawings.ChartDrawings;
 
 /// <summary>
-/// Defines the AxisUnit enumeration.
+///   Defines the AxisUnit enumeration.
 /// </summary>
 public enum AxisUnit
 {
   /// <summary>
-  /// hundreds.
+  ///   hundreds.
   /// </summary>
   Hundreds,
-  
+
   /// <summary>
-  /// thousands.
+  ///   thousands.
   /// </summary>
   Thousands,
-  
+
   /// <summary>
-  /// tenThousands.
+  ///   tenThousands.
   /// </summary>
   TenThousands,
-  
+
   /// <summary>
-  /// hundredThousands.
+  ///   hundredThousands.
   /// </summary>
   HundredThousands,
-  
+
   /// <summary>
-  /// millions.
+  ///   millions.
   /// </summary>
   Millions,
-  
+
   /// <summary>
-  /// tenMillions.
+  ///   tenMillions.
   /// </summary>
   TenMillions,
-  
+
   /// <summary>
-  /// hundredMillions.
+  ///   hundredMillions.
   /// </summary>
   HundredMillions,
-  
+
   /// <summary>
-  /// billions.
+  ///   billions.
   /// </summary>
   Billions,
-  
+
   /// <summary>
-  /// trillions.
+  ///   trillions.
   /// </summary>
   Trillions,
-  
+
   /// <summary>
-  /// percentage.
+  ///   percentage.
   /// </summary>
-  Percentage,
-  
+  Percentage
 }

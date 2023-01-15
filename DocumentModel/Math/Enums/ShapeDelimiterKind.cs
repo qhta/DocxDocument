@@ -1,18 +1,17 @@
 namespace DocumentModel.Math;
 
 /// <summary>
-/// Defines the ShapeDelimiterValues enumeration.
+///   Defines the ShapeDelimiterValues enumeration.
 /// </summary>
 public enum ShapeDelimiterKind
 {
   /// <summary>
-  /// Centered (Delimiters).
+  ///   Centered (Delimiters).
   /// </summary>
   Centered,
-  
+
   /// <summary>
-  /// Match.
+  ///   Match.
   /// </summary>
-  Match,
-  
+  Match
 }

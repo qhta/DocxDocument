@@ -1,38 +1,37 @@
 namespace DocumentModel.Wordprocessing;
 
 /// <summary>
-/// Defines the TextWrappingValues enumeration.
+///   Defines the TextWrappingValues enumeration.
 /// </summary>
 public enum TextWrappingKind
 {
   /// <summary>
-  /// Default Text Wrapping Around Frame.
+  ///   Default Text Wrapping Around Frame.
   /// </summary>
   Auto,
-  
+
   /// <summary>
-  /// No Text Wrapping Beside Frame.
+  ///   No Text Wrapping Beside Frame.
   /// </summary>
   NotBeside,
-  
+
   /// <summary>
-  /// Allow Text Wrapping Around Frame.
+  ///   Allow Text Wrapping Around Frame.
   /// </summary>
   Around,
-  
+
   /// <summary>
-  /// Tight Text Wrapping Around Frame.
+  ///   Tight Text Wrapping Around Frame.
   /// </summary>
   Tight,
-  
+
   /// <summary>
-  /// Through Text Wrapping Around Frame.
+  ///   Through Text Wrapping Around Frame.
   /// </summary>
   Through,
-  
+
   /// <summary>
-  /// No Text Wrapping Around Frame.
+  ///   No Text Wrapping Around Frame.
   /// </summary>
-  None,
-  
+  None
 }

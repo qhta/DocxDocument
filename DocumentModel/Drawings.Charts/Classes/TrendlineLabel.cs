@@ -1,38 +1,37 @@
 namespace DocumentModel.Drawings.Charts;
 
 /// <summary>
-/// Trendline Label.
+///   Trendline Label.
 /// </summary>
-public partial class TrendlineLabel
+public class TrendlineLabel
 {
   /// <summary>
-  /// Layout.
+  ///   Layout.
   /// </summary>
-  public DocumentModel.Drawings.Charts.Layout? Layout { get; set; }
-  
+  public Layout? Layout { get; set; }
+
   /// <summary>
-  /// ChartText.
+  ///   ChartText.
   /// </summary>
-  public DocumentModel.Drawings.Charts.ChartText? ChartText { get; set; }
-  
+  public ChartText? ChartText { get; set; }
+
   /// <summary>
-  /// Number Format.
+  ///   Number Format.
   /// </summary>
-  public DocumentModel.Drawings.Charts.NumberingFormat? NumberingFormat { get; set; }
-  
+  public NumberingFormat? NumberingFormat { get; set; }
+
   /// <summary>
-  /// ChartShapeProperties.
+  ///   ChartShapeProperties.
   /// </summary>
-  public DocumentModel.Drawings.Charts.ChartShapeProperties? ChartShapeProperties { get; set; }
-  
+  public ChartShapeProperties? ChartShapeProperties { get; set; }
+
   /// <summary>
-  /// TextProperties.
+  ///   TextProperties.
   /// </summary>
-  public DocumentModel.Drawings.Charts.TextProperties? TextProperties { get; set; }
-  
+  public TextProperties? TextProperties { get; set; }
+
   /// <summary>
-  /// Chart Extensibility.
+  ///   Chart Extensibility.
   /// </summary>
-  public DocumentModel.Drawings.Charts.ExtensionList? ExtensionList { get; set; }
-  
+  public ExtensionList? ExtensionList { get; set; }
 }

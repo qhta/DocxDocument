@@ -1,18 +1,17 @@
 namespace DocumentModel.Vml;
 
 /// <summary>
-/// OLE Update Method Type
+///   OLE Update Method Type
 /// </summary>
 public enum OleUpdateMode
 {
   /// <summary>
-  /// Server Application Update.
+  ///   Server Application Update.
   /// </summary>
   Always,
-  
+
   /// <summary>
-  /// User Update.
+  ///   User Update.
   /// </summary>
-  OnCall,
-  
+  OnCall
 }

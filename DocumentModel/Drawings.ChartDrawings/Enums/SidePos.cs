@@ -1,28 +1,27 @@
 namespace DocumentModel.Drawings.ChartDrawings;
 
 /// <summary>
-/// Defines the SidePos enumeration.
+///   Defines the SidePos enumeration.
 /// </summary>
 public enum SidePos
 {
   /// <summary>
-  /// l.
+  ///   l.
   /// </summary>
   L,
-  
+
   /// <summary>
-  /// t.
+  ///   t.
   /// </summary>
   T,
-  
+
   /// <summary>
-  /// r.
+  ///   r.
   /// </summary>
   R,
-  
+
   /// <summary>
-  /// b.
+  ///   b.
   /// </summary>
-  B,
-  
+  B
 }

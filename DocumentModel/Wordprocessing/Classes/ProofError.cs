@@ -1,13 +1,12 @@
 namespace DocumentModel.Wordprocessing;
 
 /// <summary>
-/// Defines the ProofError Class.
+///   Defines the ProofError Class.
 /// </summary>
-public partial class ProofError
+public class ProofError
 {
   /// <summary>
-  /// Proofing Error Anchor Type
+  ///   Proofing Error Anchor Type
   /// </summary>
-  public DocumentModel.Wordprocessing.ProofingErrorKind? Type { get; set; }
-  
+  public ProofingErrorKind? Type { get; set; }
 }

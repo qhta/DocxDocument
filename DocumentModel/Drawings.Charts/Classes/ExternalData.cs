@@ -1,18 +1,17 @@
 namespace DocumentModel.Drawings.Charts;
 
 /// <summary>
-/// Defines the ExternalData Class.
+///   Defines the ExternalData Class.
 /// </summary>
-public partial class ExternalData
+public class ExternalData
 {
   /// <summary>
-  /// Relationship Reference
+  ///   Relationship Reference
   /// </summary>
   public String? Id { get; set; }
-  
+
   /// <summary>
-  /// Update Automatically.
+  ///   Update Automatically.
   /// </summary>
   public Boolean? AutoUpdate { get; set; }
-  
 }

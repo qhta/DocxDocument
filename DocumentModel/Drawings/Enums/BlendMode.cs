@@ -1,33 +1,32 @@
 namespace DocumentModel.Drawings;
 
 /// <summary>
-/// Blend Mode
+///   Blend Mode
 /// </summary>
 public enum BlendMode
 {
   /// <summary>
-  /// Overlay.
+  ///   Overlay.
   /// </summary>
   Overlay,
-  
+
   /// <summary>
-  /// Multiply.
+  ///   Multiply.
   /// </summary>
   Multiply,
-  
+
   /// <summary>
-  /// Screen.
+  ///   Screen.
   /// </summary>
   Screen,
-  
+
   /// <summary>
-  /// Darken.
+  ///   Darken.
   /// </summary>
   Darken,
-  
+
   /// <summary>
-  /// Lighten.
+  ///   Lighten.
   /// </summary>
-  Lighten,
-  
+  Lighten
 }

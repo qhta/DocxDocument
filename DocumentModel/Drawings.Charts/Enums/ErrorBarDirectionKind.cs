@@ -1,18 +1,17 @@
 namespace DocumentModel.Drawings.Charts;
 
 /// <summary>
-/// Error Bar Direction
+///   Error Bar Direction
 /// </summary>
 public enum ErrorBarDirectionKind
 {
   /// <summary>
-  /// X.
+  ///   X.
   /// </summary>
   X,
-  
+
   /// <summary>
-  /// Y.
+  ///   Y.
   /// </summary>
-  Y,
-  
+  Y
 }

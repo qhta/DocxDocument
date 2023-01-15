@@ -1,18 +1,21 @@
+using DocumentFormat.OpenXml.Drawing.Diagrams;
+using DocumentModel.Drawings;
+
 namespace DocumentModel.OpenXml.Drawings.Diagrams;
 
 /// <summary>
-/// Defines the DataModelExtensionList Class.
+///   Defines the DataModelExtensionList Class.
 /// </summary>
 public static class DataModelExtensionListConverter
 {
-  public static System.Collections.ObjectModel.Collection<DocumentModel.Drawings.DataModelExtension>? GetDataModelExtensions(DocumentFormat.OpenXml.Drawing.Diagrams.DataModelExtensionList? openXmlElement)
+  public static Collection<DataModelExtension>? GetDataModelExtensions(DataModelExtensionList? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var collection = new System.Collections.ObjectModel.Collection<DocumentModel.Drawings.DataModelExtension>();
+      var collection = new Collection<DataModelExtension>();
       foreach (var item in openXmlElement.Elements<DocumentFormat.OpenXml.Drawing.DataModelExtension>())
       {
-        var newItem = DocumentModel.OpenXml.Drawings.DataModelExtensionConverter.CreateModelElement(item);
+        var newItem = DataModelExtensionConverter.CreateModelElement(item);
         if (newItem != null)
           collection.Add(newItem);
       }
@@ -20,25 +23,23 @@ public static class DataModelExtensionListConverter
     }
     return null;
   }
-  
-  public static void SetDataModelExtensions(DocumentFormat.OpenXml.Drawing.Diagrams.DataModelExtensionList? openXmlElement, System.Collections.ObjectModel.Collection<DocumentModel.Drawings.DataModelExtension>? value)
+
+  public static void SetDataModelExtensions(DataModelExtensionList? openXmlElement, Collection<DataModelExtension>? value)
   {
     if (openXmlElement != null)
     {
       openXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Drawing.DataModelExtension>();
       if (value != null)
-      {
         foreach (var item in value)
         {
-          var newItem = DocumentModel.OpenXml.Drawings.DataModelExtensionConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.DataModelExtension>(item);
+          var newItem = DataModelExtensionConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.DataModelExtension>(item);
           if (newItem != null)
             openXmlElement.AddChild(newItem);
         }
-      }
     }
   }
-  
-  public static DocumentModel.Drawings.Diagrams.DataModelExtensionList? CreateModelElement(DocumentFormat.OpenXml.Drawing.Diagrams.DataModelExtensionList? openXmlElement)
+
+  public static DocumentModel.Drawings.Diagrams.DataModelExtensionList? CreateModelElement(DataModelExtensionList? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -48,9 +49,9 @@ public static class DataModelExtensionListConverter
     }
     return null;
   }
-  
+
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.Diagrams.DataModelExtensionList? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.Diagrams.DataModelExtensionList, new()
+    where OpenXmlElementType : DataModelExtensionList, new()
   {
     if (value != null)
     {

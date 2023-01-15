@@ -1,38 +1,37 @@
 namespace DocumentModel.Wordprocessing;
 
 /// <summary>
-/// Grammar Checking Settings.
+///   Grammar Checking Settings.
 /// </summary>
-public partial class ActiveWritingStyle
+public class ActiveWritingStyle
 {
   /// <summary>
-  /// Writing Style Language
+  ///   Writing Style Language
   /// </summary>
   public String? Language { get; set; }
-  
+
   /// <summary>
-  /// Grammatical Engine ID
+  ///   Grammatical Engine ID
   /// </summary>
   public UInt16? VendorID { get; set; }
-  
+
   /// <summary>
-  /// Grammatical Check Engine Version
+  ///   Grammatical Check Engine Version
   /// </summary>
   public Int32? DllVersion { get; set; }
-  
+
   /// <summary>
-  /// Natural Language Grammar Check
+  ///   Natural Language Grammar Check
   /// </summary>
   public Boolean? NaturalLanguageGrammarCheck { get; set; }
-  
+
   /// <summary>
-  /// Check Stylistic Rules With Grammar
+  ///   Check Stylistic Rules With Grammar
   /// </summary>
   public Boolean? CheckStyle { get; set; }
-  
+
   /// <summary>
-  /// Application Name
+  ///   Application Name
   /// </summary>
   public String? ApplicationName { get; set; }
-  
 }

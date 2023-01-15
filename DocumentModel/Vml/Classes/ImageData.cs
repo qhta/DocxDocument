@@ -1,103 +1,102 @@
 namespace DocumentModel.Vml;
 
 /// <summary>
-/// Defines the ImageData Class.
+///   Defines the ImageData Class.
 /// </summary>
-public partial class ImageData
+public class ImageData
 {
   /// <summary>
-  /// Unique Identifier
+  ///   Unique Identifier
   /// </summary>
   public String? Id { get; set; }
-  
+
   /// <summary>
-  /// Image Transparency Color
+  ///   Image Transparency Color
   /// </summary>
   public String? ChromAKey { get; set; }
-  
+
   /// <summary>
-  /// Image Left Crop
+  ///   Image Left Crop
   /// </summary>
   public String? CropLeft { get; set; }
-  
+
   /// <summary>
-  /// Image Top Crop
+  ///   Image Top Crop
   /// </summary>
   public String? CropTop { get; set; }
-  
+
   /// <summary>
-  /// Image Right Crop
+  ///   Image Right Crop
   /// </summary>
   public String? CropRight { get; set; }
-  
+
   /// <summary>
-  /// Image Bottom Crop
+  ///   Image Bottom Crop
   /// </summary>
   public String? CropBottom { get; set; }
-  
+
   /// <summary>
-  /// Image Intensity
+  ///   Image Intensity
   /// </summary>
   public String? Gain { get; set; }
-  
+
   /// <summary>
-  /// Image Brightness
+  ///   Image Brightness
   /// </summary>
   public String? BlackLevel { get; set; }
-  
+
   /// <summary>
-  /// Image Gamma Correction
+  ///   Image Gamma Correction
   /// </summary>
   public String? Gamma { get; set; }
-  
+
   /// <summary>
-  /// Image Grayscale Toggle
+  ///   Image Grayscale Toggle
   /// </summary>
   public Boolean? Grayscale { get; set; }
-  
+
   /// <summary>
-  /// Image Bilevel Toggle
+  ///   Image Bilevel Toggle
   /// </summary>
   public Boolean? BiLevel { get; set; }
-  
+
   /// <summary>
-  /// Embossed Color
+  ///   Embossed Color
   /// </summary>
   public String? EmbossColor { get; set; }
-  
+
   /// <summary>
-  /// Black Recoloring Color
+  ///   Black Recoloring Color
   /// </summary>
   public String? RecolorTarget { get; set; }
-  
+
   /// <summary>
-  /// Image Data Title
+  ///   Image Data Title
   /// </summary>
   public String? Title { get; set; }
-  
+
   /// <summary>
-  /// Detect Mouse Click
+  ///   Detect Mouse Click
   /// </summary>
   public Boolean? DetectMouseClick { get; set; }
-  
+
   /// <summary>
-  /// Relationship to Part
+  ///   Relationship to Part
   /// </summary>
   public String? RelId { get; set; }
-  
+
   /// <summary>
-  /// Explicit Relationship to Image Data
+  ///   Explicit Relationship to Image Data
   /// </summary>
   public String? RelationshipId { get; set; }
-  
+
   /// <summary>
-  /// Explicit Relationship to Alternate Image Data
+  ///   Explicit Relationship to Alternate Image Data
   /// </summary>
   public String? Picture { get; set; }
-  
+
   /// <summary>
-  /// Explicit Relationship to Hyperlink Target
+  ///   Explicit Relationship to Hyperlink Target
   /// </summary>
   public String? RelHref { get; set; }
-  
 }

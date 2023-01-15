@@ -1,18 +1,19 @@
+using DocumentModel.Drawings.Wordprocessing;
+
 namespace DocumentModel.Wordprocessing;
 
 /// <summary>
-/// DrawingML Object.
+///   DrawingML Object.
 /// </summary>
-public partial class Drawing
+public class Drawing
 {
   /// <summary>
-  /// Drawing Element Anchor.
+  ///   Drawing Element Anchor.
   /// </summary>
-  public DocumentModel.Drawings.Wordprocessing.Anchor? Anchor { get; set; }
-  
+  public Anchor? Anchor { get; set; }
+
   /// <summary>
-  /// Inline Drawing Object.
+  ///   Inline Drawing Object.
   /// </summary>
-  public DocumentModel.Drawings.Wordprocessing.Inline? Inline { get; set; }
-  
+  public Inline? Inline { get; set; }
 }

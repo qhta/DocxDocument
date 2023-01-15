@@ -1,28 +1,27 @@
 namespace DocumentModel.Wordprocessing;
 
 /// <summary>
-/// Revision Information for Section Properties.
+///   Revision Information for Section Properties.
 /// </summary>
-public partial class SectionPropertiesChange
+public class SectionPropertiesChange
 {
   /// <summary>
-  /// author
+  ///   author
   /// </summary>
   public String? Author { get; set; }
-  
+
   /// <summary>
-  /// date
+  ///   date
   /// </summary>
   public DateTime? Date { get; set; }
-  
+
   /// <summary>
-  /// Annotation Identifier
+  ///   Annotation Identifier
   /// </summary>
   public String? Id { get; set; }
-  
+
   /// <summary>
-  /// Previous Section Properties.
+  ///   Previous Section Properties.
   /// </summary>
-  public DocumentModel.Wordprocessing.PreviousSectionProperties? PreviousSectionProperties { get; set; }
-  
+  public PreviousSectionProperties? PreviousSectionProperties { get; set; }
 }

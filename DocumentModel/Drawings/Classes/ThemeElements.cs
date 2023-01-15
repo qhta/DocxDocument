@@ -1,28 +1,27 @@
 namespace DocumentModel.Drawings;
 
 /// <summary>
-/// Defines the ThemeElements Class.
+///   Defines the ThemeElements Class.
 /// </summary>
-public partial class ThemeElements
+public class ThemeElements
 {
   /// <summary>
-  /// ColorScheme.
+  ///   ColorScheme.
   /// </summary>
-  public DocumentModel.Drawings.ColorScheme? ColorScheme { get; set; }
-  
+  public ColorScheme? ColorScheme { get; set; }
+
   /// <summary>
-  /// Font Scheme.
+  ///   Font Scheme.
   /// </summary>
-  public DocumentModel.Drawings.FontScheme? FontScheme { get; set; }
-  
+  public FontScheme? FontScheme { get; set; }
+
   /// <summary>
-  /// Format Scheme.
+  ///   Format Scheme.
   /// </summary>
-  public DocumentModel.Drawings.FormatScheme? FormatScheme { get; set; }
-  
+  public FormatScheme? FormatScheme { get; set; }
+
   /// <summary>
-  /// ExtensionList.
+  ///   ExtensionList.
   /// </summary>
-  public DocumentModel.Drawings.ExtensionList? ExtensionList { get; set; }
-  
+  public ExtensionList? ExtensionList { get; set; }
 }

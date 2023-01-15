@@ -1,18 +1,17 @@
 namespace DocumentModel.Drawings.Diagrams;
 
 /// <summary>
-/// Text Properties.
+///   Text Properties.
 /// </summary>
-public partial class TextProperties
+public class TextProperties
 {
   /// <summary>
-  /// Apply 3D shape properties.
+  ///   Apply 3D shape properties.
   /// </summary>
-  public DocumentModel.Drawings.Shape3DType? Shape3DType { get; set; }
-  
+  public Shape3DType? Shape3DType { get; set; }
+
   /// <summary>
-  /// No text in 3D scene.
+  ///   No text in 3D scene.
   /// </summary>
-  public DocumentModel.Drawings.FlatText? FlatText { get; set; }
-  
+  public FlatText? FlatText { get; set; }
 }

@@ -1,33 +1,32 @@
 namespace DocumentModel.Drawings.Charts;
 
 /// <summary>
-/// Defines the PivotOptions Class.
+///   Defines the PivotOptions Class.
 /// </summary>
-public partial class PivotOptions
+public class PivotOptions
 {
   /// <summary>
-  /// DropZoneFilter.
+  ///   DropZoneFilter.
   /// </summary>
   public Boolean? DropZoneFilter { get; set; }
-  
+
   /// <summary>
-  /// DropZoneCategories.
+  ///   DropZoneCategories.
   /// </summary>
   public Boolean? DropZoneCategories { get; set; }
-  
+
   /// <summary>
-  /// DropZoneData.
+  ///   DropZoneData.
   /// </summary>
   public Boolean? DropZoneData { get; set; }
-  
+
   /// <summary>
-  /// DropZoneSeries.
+  ///   DropZoneSeries.
   /// </summary>
   public Boolean? DropZoneSeries { get; set; }
-  
+
   /// <summary>
-  /// DropZonesVisible.
+  ///   DropZonesVisible.
   /// </summary>
   public Boolean? DropZonesVisible { get; set; }
-  
 }

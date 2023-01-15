@@ -1,13 +1,12 @@
 namespace DocumentModel.Drawings.Charts;
 
 /// <summary>
-/// Defines the DataDisplayOptions16 Class.
+///   Defines the DataDisplayOptions16 Class.
 /// </summary>
-public partial class DataDisplayOptions16
+public class DataDisplayOptions16
 {
   /// <summary>
-  /// BooleanFalse.
+  ///   BooleanFalse.
   /// </summary>
   public Boolean? BooleanFalse { get; set; }
-  
 }

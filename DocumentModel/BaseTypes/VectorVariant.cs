@@ -1,19 +1,17 @@
-using DocumentModel.Properties;
-
 namespace DocumentModel;
 
 /// <summary>
-/// Variant implementation. Value is of any type.
+///   Variant implementation. Value is of any type.
 /// </summary>
 [XmlRoot("Vector")]
-public record VectorVariant: Variant, IList<object?>
+public record VectorVariant : Variant, IList<object?>
 {
+  private List<object?> _items = new();
+
   public VectorVariant()
   {
     base.VariantType = VariantType.Vector;
   }
-
-  [XmlIgnore] public new VariantType VariantType => VariantType.Vector;
 
   public VectorVariant(VariantType baseType)
   {
@@ -21,12 +19,12 @@ public record VectorVariant: Variant, IList<object?>
     BaseType = baseType;
   }
 
+  [XmlIgnore] public new VariantType VariantType => VariantType.Vector;
+
   /// <summary>
-  /// Vector Base Type
+  ///   Vector Base Type
   /// </summary>
   public VariantType? BaseType { get; set; }
-
-  private List<object?> _items = new List<object?>();
 
   public IEnumerator<object?> GetEnumerator()
   {

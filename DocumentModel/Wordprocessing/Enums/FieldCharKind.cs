@@ -1,23 +1,22 @@
 namespace DocumentModel.Wordprocessing;
 
 /// <summary>
-/// Defines the FieldCharValues enumeration.
+///   Defines the FieldCharValues enumeration.
 /// </summary>
 public enum FieldCharKind
 {
   /// <summary>
-  /// Start Character.
+  ///   Start Character.
   /// </summary>
   Begin,
-  
+
   /// <summary>
-  /// Separator Character.
+  ///   Separator Character.
   /// </summary>
   Separate,
-  
+
   /// <summary>
-  /// End Character.
+  ///   End Character.
   /// </summary>
-  End,
-  
+  End
 }

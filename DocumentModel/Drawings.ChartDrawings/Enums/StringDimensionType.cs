@@ -1,23 +1,22 @@
 namespace DocumentModel.Drawings.ChartDrawings;
 
 /// <summary>
-/// Defines the StringDimensionType enumeration.
+///   Defines the StringDimensionType enumeration.
 /// </summary>
 public enum StringDimensionType
 {
   /// <summary>
-  /// cat.
+  ///   cat.
   /// </summary>
   Cat,
-  
+
   /// <summary>
-  /// colorStr.
+  ///   colorStr.
   /// </summary>
   ColorStr,
-  
+
   /// <summary>
-  /// entityId.
+  ///   entityId.
   /// </summary>
-  EntityId,
-  
+  EntityId
 }

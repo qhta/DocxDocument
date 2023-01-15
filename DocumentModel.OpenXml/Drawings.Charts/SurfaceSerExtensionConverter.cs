@@ -1,19 +1,22 @@
+using DocumentModel.Drawings.Charts;
+using SurfaceSerExtension = DocumentFormat.OpenXml.Drawing.Charts.SurfaceSerExtension;
+
 namespace DocumentModel.OpenXml.Drawings.Charts;
 
 /// <summary>
-/// Defines the SurfaceSerExtension Class.
+///   Defines the SurfaceSerExtension Class.
 /// </summary>
 public static class SurfaceSerExtensionConverter
 {
   /// <summary>
-  /// URI
+  ///   URI
   /// </summary>
-  public static String? GetUri(DocumentFormat.OpenXml.Drawing.Charts.SurfaceSerExtension? openXmlElement)
+  public static String? GetUri(SurfaceSerExtension? openXmlElement)
   {
     return openXmlElement?.Uri?.Value;
   }
-  
-  public static void SetUri(DocumentFormat.OpenXml.Drawing.Charts.SurfaceSerExtension? openXmlElement, String? value)
+
+  public static void SetUri(SurfaceSerExtension? openXmlElement, String? value)
   {
     if (openXmlElement != null)
       if (value != null)
@@ -21,16 +24,16 @@ public static class SurfaceSerExtensionConverter
       else
         openXmlElement.Uri = null;
   }
-  
-  public static DocumentModel.Drawings.Charts.FilteredSeriesTitle? GetFilteredSeriesTitle(DocumentFormat.OpenXml.Drawing.Charts.SurfaceSerExtension? openXmlElement)
+
+  public static FilteredSeriesTitle? GetFilteredSeriesTitle(SurfaceSerExtension? openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office2013.Drawing.Chart.FilteredSeriesTitle>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.Charts.FilteredSeriesTitleConverter.CreateModelElement(itemElement);
+      return FilteredSeriesTitleConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetFilteredSeriesTitle(DocumentFormat.OpenXml.Drawing.Charts.SurfaceSerExtension? openXmlElement, DocumentModel.Drawings.Charts.FilteredSeriesTitle? value)
+
+  public static void SetFilteredSeriesTitle(SurfaceSerExtension? openXmlElement, FilteredSeriesTitle? value)
   {
     if (openXmlElement != null)
     {
@@ -39,22 +42,22 @@ public static class SurfaceSerExtensionConverter
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Drawings.Charts.FilteredSeriesTitleConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2013.Drawing.Chart.FilteredSeriesTitle>(value);
+        itemElement = FilteredSeriesTitleConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2013.Drawing.Chart.FilteredSeriesTitle>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static DocumentModel.Drawings.Charts.FilteredCategoryTitle? GetFilteredCategoryTitle(DocumentFormat.OpenXml.Drawing.Charts.SurfaceSerExtension? openXmlElement)
+
+  public static FilteredCategoryTitle? GetFilteredCategoryTitle(SurfaceSerExtension? openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office2013.Drawing.Chart.FilteredCategoryTitle>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.Charts.FilteredCategoryTitleConverter.CreateModelElement(itemElement);
+      return FilteredCategoryTitleConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetFilteredCategoryTitle(DocumentFormat.OpenXml.Drawing.Charts.SurfaceSerExtension? openXmlElement, DocumentModel.Drawings.Charts.FilteredCategoryTitle? value)
+
+  public static void SetFilteredCategoryTitle(SurfaceSerExtension? openXmlElement, FilteredCategoryTitle? value)
   {
     if (openXmlElement != null)
     {
@@ -63,22 +66,22 @@ public static class SurfaceSerExtensionConverter
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Drawings.Charts.FilteredCategoryTitleConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2013.Drawing.Chart.FilteredCategoryTitle>(value);
+        itemElement = FilteredCategoryTitleConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2013.Drawing.Chart.FilteredCategoryTitle>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static DocumentModel.Drawings.Charts.CategoryFilterExceptions? GetCategoryFilterExceptions(DocumentFormat.OpenXml.Drawing.Charts.SurfaceSerExtension? openXmlElement)
+
+  public static CategoryFilterExceptions? GetCategoryFilterExceptions(SurfaceSerExtension? openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office2013.Drawing.Chart.CategoryFilterExceptions>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.Charts.CategoryFilterExceptionsConverter.CreateModelElement(itemElement);
+      return CategoryFilterExceptionsConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetCategoryFilterExceptions(DocumentFormat.OpenXml.Drawing.Charts.SurfaceSerExtension? openXmlElement, DocumentModel.Drawings.Charts.CategoryFilterExceptions? value)
+
+  public static void SetCategoryFilterExceptions(SurfaceSerExtension? openXmlElement, CategoryFilterExceptions? value)
   {
     if (openXmlElement != null)
     {
@@ -87,14 +90,14 @@ public static class SurfaceSerExtensionConverter
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Drawings.Charts.CategoryFilterExceptionsConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2013.Drawing.Chart.CategoryFilterExceptions>(value);
+        itemElement = CategoryFilterExceptionsConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2013.Drawing.Chart.CategoryFilterExceptions>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static DocumentModel.Drawings.Charts.SurfaceSerExtension? CreateModelElement(DocumentFormat.OpenXml.Drawing.Charts.SurfaceSerExtension? openXmlElement)
+
+  public static DocumentModel.Drawings.Charts.SurfaceSerExtension? CreateModelElement(SurfaceSerExtension? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -107,9 +110,9 @@ public static class SurfaceSerExtensionConverter
     }
     return null;
   }
-  
+
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.Charts.SurfaceSerExtension? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.Charts.SurfaceSerExtension, new()
+    where OpenXmlElementType : SurfaceSerExtension, new()
   {
     if (value != null)
     {

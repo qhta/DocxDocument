@@ -1,12 +1,11 @@
 namespace DocumentModel.Drawings;
 
 /// <summary>
-/// Line Spacing.
+///   Line Spacing.
 /// </summary>
-public partial class LineSpacing
+public class LineSpacing
 {
   public Int32? SpacingPercent { get; set; }
-  
+
   public Int32? SpacingPoints { get; set; }
-  
 }

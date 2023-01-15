@@ -1,23 +1,22 @@
 namespace DocumentModel.Wordprocessing;
 
 /// <summary>
-/// Defines the GradientStop Class.
+///   Defines the GradientStop Class.
 /// </summary>
-public partial class GradientStop
+public class GradientStop
 {
   /// <summary>
-  /// pos, this property is only available in Office 2010 and later.
+  ///   pos, this property is only available in Office 2010 and later.
   /// </summary>
   public Int32? StopPosition { get; set; }
-  
+
   /// <summary>
-  /// RgbColorModelHex.
+  ///   RgbColorModelHex.
   /// </summary>
-  public DocumentModel.Wordprocessing.RgbColorModelHex? RgbColorModelHex { get; set; }
-  
+  public RgbColorModelHex? RgbColorModelHex { get; set; }
+
   /// <summary>
-  /// SchemeColor.
+  ///   SchemeColor.
   /// </summary>
-  public DocumentModel.Wordprocessing.SchemeColor? SchemeColor { get; set; }
-  
+  public SchemeColor? SchemeColor { get; set; }
 }

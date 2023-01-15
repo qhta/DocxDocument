@@ -1,38 +1,37 @@
 namespace DocumentModel.Drawings;
 
 /// <summary>
-/// Path Fill Mode
+///   Path Fill Mode
 /// </summary>
 public enum PathFillMode
 {
   /// <summary>
-  /// No Path Fill.
+  ///   No Path Fill.
   /// </summary>
   None,
-  
+
   /// <summary>
-  /// Normal Path Fill.
+  ///   Normal Path Fill.
   /// </summary>
   Norm,
-  
+
   /// <summary>
-  /// Lighten Path Fill.
+  ///   Lighten Path Fill.
   /// </summary>
   Lighten,
-  
+
   /// <summary>
-  /// Lighten Path Fill Less.
+  ///   Lighten Path Fill Less.
   /// </summary>
   LightenLess,
-  
+
   /// <summary>
-  /// Darken Path Fill.
+  ///   Darken Path Fill.
   /// </summary>
   Darken,
-  
+
   /// <summary>
-  /// Darken Path Fill Less.
+  ///   Darken Path Fill Less.
   /// </summary>
-  DarkenLess,
-  
+  DarkenLess
 }

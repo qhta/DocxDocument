@@ -1,92 +1,91 @@
 namespace DocumentModel.Drawings.Charts;
 
 /// <summary>
-/// Value Axis.
+///   Value Axis.
 /// </summary>
-public partial class ValueAxis
+public class ValueAxis
 {
   /// <summary>
-  /// Axis ID.
+  ///   Axis ID.
   /// </summary>
   public UInt32? AxisId { get; set; }
-  
+
   /// <summary>
-  /// Scaling.
+  ///   Scaling.
   /// </summary>
-  public DocumentModel.Drawings.Charts.Scaling? Scaling { get; set; }
-  
+  public Scaling? Scaling { get; set; }
+
   /// <summary>
-  /// Delete.
+  ///   Delete.
   /// </summary>
   public Boolean? Delete { get; set; }
-  
+
   /// <summary>
-  /// Axis Position.
+  ///   Axis Position.
   /// </summary>
-  public DocumentModel.Drawings.Charts.AxisPositionKind? AxisPosition { get; set; }
-  
+  public AxisPositionKind? AxisPosition { get; set; }
+
   /// <summary>
-  /// Major Gridlines.
+  ///   Major Gridlines.
   /// </summary>
-  public DocumentModel.Drawings.Charts.MajorGridlines? MajorGridlines { get; set; }
-  
+  public MajorGridlines? MajorGridlines { get; set; }
+
   /// <summary>
-  /// Minor Gridlines.
+  ///   Minor Gridlines.
   /// </summary>
-  public DocumentModel.Drawings.Charts.MinorGridlines? MinorGridlines { get; set; }
-  
+  public MinorGridlines? MinorGridlines { get; set; }
+
   /// <summary>
-  /// Title.
+  ///   Title.
   /// </summary>
-  public DocumentModel.Drawings.Charts.Title? Title { get; set; }
-  
+  public Title? Title { get; set; }
+
   /// <summary>
-  /// Number Format.
+  ///   Number Format.
   /// </summary>
-  public DocumentModel.Drawings.Charts.NumberingFormat? NumberingFormat { get; set; }
-  
+  public NumberingFormat? NumberingFormat { get; set; }
+
   /// <summary>
-  /// Major Tick Mark.
+  ///   Major Tick Mark.
   /// </summary>
-  public DocumentModel.Drawings.Charts.TickMarkKind? MajorTickMark { get; set; }
-  
+  public TickMarkKind? MajorTickMark { get; set; }
+
   /// <summary>
-  /// Minor Tick Mark.
+  ///   Minor Tick Mark.
   /// </summary>
-  public DocumentModel.Drawings.Charts.TickMarkKind? MinorTickMark { get; set; }
-  
+  public TickMarkKind? MinorTickMark { get; set; }
+
   /// <summary>
-  /// Tick Label Position.
+  ///   Tick Label Position.
   /// </summary>
-  public DocumentModel.Drawings.Charts.TickLabelPositionKind? TickLabelPosition { get; set; }
-  
+  public TickLabelPositionKind? TickLabelPosition { get; set; }
+
   /// <summary>
-  /// ChartShapeProperties.
+  ///   ChartShapeProperties.
   /// </summary>
-  public DocumentModel.Drawings.Charts.ChartShapeProperties? ChartShapeProperties { get; set; }
-  
+  public ChartShapeProperties? ChartShapeProperties { get; set; }
+
   /// <summary>
-  /// TextProperties.
+  ///   TextProperties.
   /// </summary>
-  public DocumentModel.Drawings.Charts.TextProperties? TextProperties { get; set; }
-  
+  public TextProperties? TextProperties { get; set; }
+
   /// <summary>
-  /// Crossing Axis ID.
+  ///   Crossing Axis ID.
   /// </summary>
   public UInt32? CrossingAxis { get; set; }
-  
-  public DocumentModel.Drawings.Charts.CrossesKind? Crosses { get; set; }
-  
+
+  public CrossesKind? Crosses { get; set; }
+
   public Double? CrossesAt { get; set; }
-  
-  public DocumentModel.Drawings.Charts.CrossBetweenKind? CrossBetween { get; set; }
-  
+
+  public CrossBetweenKind? CrossBetween { get; set; }
+
   public Double? MajorUnit { get; set; }
-  
+
   public Double? MinorUnit { get; set; }
-  
-  public DocumentModel.Drawings.Charts.DisplayUnits? DisplayUnits { get; set; }
-  
-  public DocumentModel.Drawings.Charts.ValAxExtensionList? ValAxExtensionList { get; set; }
-  
+
+  public DisplayUnits? DisplayUnits { get; set; }
+
+  public ValAxExtensionList? ValAxExtensionList { get; set; }
 }

@@ -1,15 +1,14 @@
 namespace DocumentModel.Wordprocessing;
 
 /// <summary>
-/// Defines the SdtContentDropDownList Class.
+///   Defines the SdtContentDropDownList Class.
 /// </summary>
-public partial class SdtContentDropDownList
+public class SdtContentDropDownList
 {
   /// <summary>
-  /// Drop-down List Last Saved Value
+  ///   Drop-down List Last Saved Value
   /// </summary>
   public String? LastValue { get; set; }
-  
-  public Collection<DocumentModel.Wordprocessing.ListItem>? ListItems { get; set; }
-  
+
+  public Collection<ListItem>? ListItems { get; set; }
 }

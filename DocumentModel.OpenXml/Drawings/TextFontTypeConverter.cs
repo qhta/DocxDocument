@@ -1,19 +1,21 @@
+using DocumentFormat.OpenXml.Drawing;
+
 namespace DocumentModel.OpenXml.Drawings;
 
 /// <summary>
-/// Defines the TextFontType Class.
+///   Defines the TextFontType Class.
 /// </summary>
 public static class TextFontTypeConverter
 {
   /// <summary>
-  /// Text Typeface
+  ///   Text Typeface
   /// </summary>
-  public static String? GetTypeface(DocumentFormat.OpenXml.Drawing.TextFontType? openXmlElement)
+  public static String? GetTypeface(TextFontType? openXmlElement)
   {
     return openXmlElement?.Typeface?.Value;
   }
-  
-  public static void SetTypeface(DocumentFormat.OpenXml.Drawing.TextFontType? openXmlElement, String? value)
+
+  public static void SetTypeface(TextFontType? openXmlElement, String? value)
   {
     if (openXmlElement != null)
       if (value != null)
@@ -21,18 +23,18 @@ public static class TextFontTypeConverter
       else
         openXmlElement.Typeface = null;
   }
-  
+
   /// <summary>
-  /// Panose Setting
+  ///   Panose Setting
   /// </summary>
-  public static Byte[]? GetPanose(DocumentFormat.OpenXml.Drawing.TextFontType? openXmlElement)
+  public static Byte[]? GetPanose(TextFontType? openXmlElement)
   {
     if (openXmlElement?.Panose?.Value != null)
       return Convert.FromHexString(openXmlElement.Panose.Value);
     return null;
   }
-  
-  public static void SetPanose(DocumentFormat.OpenXml.Drawing.TextFontType? openXmlElement, Byte[]? value)
+
+  public static void SetPanose(TextFontType? openXmlElement, Byte[]? value)
   {
     if (openXmlElement != null)
     {
@@ -42,36 +44,36 @@ public static class TextFontTypeConverter
         openXmlElement.Panose = null;
     }
   }
-  
+
   /// <summary>
-  /// Similar Font Family
+  ///   Similar Font Family
   /// </summary>
-  public static SByte? GetPitchFamily(DocumentFormat.OpenXml.Drawing.TextFontType? openXmlElement)
+  public static SByte? GetPitchFamily(TextFontType? openXmlElement)
   {
     return openXmlElement?.PitchFamily?.Value;
   }
-  
-  public static void SetPitchFamily(DocumentFormat.OpenXml.Drawing.TextFontType? openXmlElement, SByte? value)
+
+  public static void SetPitchFamily(TextFontType? openXmlElement, SByte? value)
   {
     if (openXmlElement != null)
       openXmlElement.PitchFamily = value;
   }
-  
+
   /// <summary>
-  /// Similar Character Set
+  ///   Similar Character Set
   /// </summary>
-  public static SByte? GetCharacterSet(DocumentFormat.OpenXml.Drawing.TextFontType? openXmlElement)
+  public static SByte? GetCharacterSet(TextFontType? openXmlElement)
   {
     return openXmlElement?.CharacterSet?.Value;
   }
-  
-  public static void SetCharacterSet(DocumentFormat.OpenXml.Drawing.TextFontType? openXmlElement, SByte? value)
+
+  public static void SetCharacterSet(TextFontType? openXmlElement, SByte? value)
   {
     if (openXmlElement != null)
       openXmlElement.CharacterSet = value;
   }
-  
-  public static DocumentModel.Drawings.TextFontType? CreateModelElement(DocumentFormat.OpenXml.Drawing.TextFontType? openXmlElement)
+
+  public static DocumentModel.Drawings.TextFontType? CreateModelElement(TextFontType? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -84,9 +86,9 @@ public static class TextFontTypeConverter
     }
     return null;
   }
-  
+
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.TextFontType? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.TextFontType, new()
+    where OpenXmlElementType : TextFontType, new()
   {
     if (value != null)
     {

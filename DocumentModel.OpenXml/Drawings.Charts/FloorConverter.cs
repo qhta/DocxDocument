@@ -1,42 +1,46 @@
+using DocumentFormat.OpenXml.Drawing.Charts;
+using PictureOptions = DocumentModel.Drawings.Charts.PictureOptions;
+using ShapeProperties = DocumentModel.Drawings.Charts.ShapeProperties;
+
 namespace DocumentModel.OpenXml.Drawings.Charts;
 
 /// <summary>
-/// 3D floor formatting.
+///   3D floor formatting.
 /// </summary>
 public static class FloorConverter
 {
-  public static Byte? GetThickness(DocumentFormat.OpenXml.Drawing.Charts.Floor? openXmlElement)
+  public static Byte? GetThickness(Floor? openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.Thickness>();
+    var itemElement = openXmlElement?.GetFirstChild<Thickness>();
     if (itemElement != null)
       return itemElement.Val?.Value;
     return null;
   }
-  
-  public static void SetThickness(DocumentFormat.OpenXml.Drawing.Charts.Floor? openXmlElement, Byte? value)
+
+  public static void SetThickness(Floor? openXmlElement, Byte? value)
   {
     if (openXmlElement != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.Thickness>();
+      var itemElement = openXmlElement.GetFirstChild<Thickness>();
       if (itemElement != null)
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = new DocumentFormat.OpenXml.Drawing.Charts.Thickness{ Val = value };
+        itemElement = new Thickness { Val = value };
         openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static DocumentModel.Drawings.Charts.ShapeProperties? GetShapeProperties(DocumentFormat.OpenXml.Drawing.Charts.Floor? openXmlElement)
+
+  public static ShapeProperties? GetShapeProperties(Floor? openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.ShapeProperties>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.Charts.ShapePropertiesConverter.CreateModelElement(itemElement);
+      return ShapePropertiesConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetShapeProperties(DocumentFormat.OpenXml.Drawing.Charts.Floor? openXmlElement, DocumentModel.Drawings.Charts.ShapeProperties? value)
+
+  public static void SetShapeProperties(Floor? openXmlElement, ShapeProperties? value)
   {
     if (openXmlElement != null)
     {
@@ -45,22 +49,22 @@ public static class FloorConverter
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Drawings.Charts.ShapePropertiesConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Charts.ShapeProperties>(value);
+        itemElement = ShapePropertiesConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Charts.ShapeProperties>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static DocumentModel.Drawings.Charts.PictureOptions? GetPictureOptions(DocumentFormat.OpenXml.Drawing.Charts.Floor? openXmlElement)
+
+  public static PictureOptions? GetPictureOptions(Floor? openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.PictureOptions>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.Charts.PictureOptionsConverter.CreateModelElement(itemElement);
+      return PictureOptionsConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetPictureOptions(DocumentFormat.OpenXml.Drawing.Charts.Floor? openXmlElement, DocumentModel.Drawings.Charts.PictureOptions? value)
+
+  public static void SetPictureOptions(Floor? openXmlElement, PictureOptions? value)
   {
     if (openXmlElement != null)
     {
@@ -69,22 +73,22 @@ public static class FloorConverter
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Drawings.Charts.PictureOptionsConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Charts.PictureOptions>(value);
+        itemElement = PictureOptionsConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Charts.PictureOptions>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static DocumentModel.Drawings.Charts.ExtensionList? GetExtensionList(DocumentFormat.OpenXml.Drawing.Charts.Floor? openXmlElement)
+
+  public static DocumentModel.Drawings.Charts.ExtensionList? GetExtensionList(Floor? openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.ExtensionList>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.Charts.ExtensionListConverter.CreateModelElement(itemElement);
+      return ExtensionListConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetExtensionList(DocumentFormat.OpenXml.Drawing.Charts.Floor? openXmlElement, DocumentModel.Drawings.Charts.ExtensionList? value)
+
+  public static void SetExtensionList(Floor? openXmlElement, DocumentModel.Drawings.Charts.ExtensionList? value)
   {
     if (openXmlElement != null)
     {
@@ -93,14 +97,14 @@ public static class FloorConverter
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Drawings.Charts.ExtensionListConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Charts.ExtensionList>(value);
+        itemElement = ExtensionListConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Charts.ExtensionList>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static DocumentModel.Drawings.Charts.Floor? CreateModelElement(DocumentFormat.OpenXml.Drawing.Charts.Floor? openXmlElement)
+
+  public static DocumentModel.Drawings.Charts.Floor? CreateModelElement(Floor? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -113,9 +117,9 @@ public static class FloorConverter
     }
     return null;
   }
-  
+
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.Charts.Floor? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.Charts.Floor, new()
+    where OpenXmlElementType : Floor, new()
   {
     if (value != null)
     {

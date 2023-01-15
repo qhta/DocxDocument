@@ -1,18 +1,21 @@
+using DocumentModel.Wordprocessing;
+using TableGrid = DocumentFormat.OpenXml.Wordprocessing.TableGrid;
+
 namespace DocumentModel.OpenXml.Wordprocessing;
 
 /// <summary>
-/// Table Grid.
+///   Table Grid.
 /// </summary>
 public static class TableGridConverter
 {
-  public static System.Collections.ObjectModel.Collection<DocumentModel.Wordprocessing.GridColumn>? GetGridColumns(DocumentFormat.OpenXml.Wordprocessing.TableGrid? openXmlElement)
+  public static Collection<GridColumn>? GetGridColumns(TableGrid? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var collection = new System.Collections.ObjectModel.Collection<DocumentModel.Wordprocessing.GridColumn>();
+      var collection = new Collection<GridColumn>();
       foreach (var item in openXmlElement.Elements<DocumentFormat.OpenXml.Wordprocessing.GridColumn>())
       {
-        var newItem = DocumentModel.OpenXml.Wordprocessing.GridColumnConverter.CreateModelElement(item);
+        var newItem = GridColumnConverter.CreateModelElement(item);
         if (newItem != null)
           collection.Add(newItem);
       }
@@ -20,33 +23,31 @@ public static class TableGridConverter
     }
     return null;
   }
-  
-  public static void SetGridColumns(DocumentFormat.OpenXml.Wordprocessing.TableGrid? openXmlElement, System.Collections.ObjectModel.Collection<DocumentModel.Wordprocessing.GridColumn>? value)
+
+  public static void SetGridColumns(TableGrid? openXmlElement, Collection<GridColumn>? value)
   {
     if (openXmlElement != null)
     {
       openXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Wordprocessing.GridColumn>();
       if (value != null)
-      {
         foreach (var item in value)
         {
-          var newItem = DocumentModel.OpenXml.Wordprocessing.GridColumnConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.GridColumn>(item);
+          var newItem = GridColumnConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.GridColumn>(item);
           if (newItem != null)
             openXmlElement.AddChild(newItem);
         }
-      }
     }
   }
-  
-  public static DocumentModel.Wordprocessing.TableGridChange? GetTableGridChange(DocumentFormat.OpenXml.Wordprocessing.TableGrid? openXmlElement)
+
+  public static TableGridChange? GetTableGridChange(TableGrid? openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.TableGridChange>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Wordprocessing.TableGridChangeConverter.CreateModelElement(itemElement);
+      return TableGridChangeConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetTableGridChange(DocumentFormat.OpenXml.Wordprocessing.TableGrid? openXmlElement, DocumentModel.Wordprocessing.TableGridChange? value)
+
+  public static void SetTableGridChange(TableGrid? openXmlElement, TableGridChange? value)
   {
     if (openXmlElement != null)
     {
@@ -55,14 +56,14 @@ public static class TableGridConverter
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Wordprocessing.TableGridChangeConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.TableGridChange>(value);
+        itemElement = TableGridChangeConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.TableGridChange>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static DocumentModel.Wordprocessing.TableGrid? CreateModelElement(DocumentFormat.OpenXml.Wordprocessing.TableGrid? openXmlElement)
+
+  public static DocumentModel.Wordprocessing.TableGrid? CreateModelElement(TableGrid? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -73,9 +74,9 @@ public static class TableGridConverter
     }
     return null;
   }
-  
+
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.TableGrid? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Wordprocessing.TableGrid, new()
+    where OpenXmlElementType : TableGrid, new()
   {
     if (value != null)
     {

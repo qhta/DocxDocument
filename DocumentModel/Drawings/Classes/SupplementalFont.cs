@@ -1,18 +1,17 @@
 namespace DocumentModel.Drawings;
 
 /// <summary>
-/// Font.
+///   Font.
 /// </summary>
-public partial class SupplementalFont
+public class SupplementalFont
 {
   /// <summary>
-  /// Script
+  ///   Script
   /// </summary>
   public String? Script { get; set; }
-  
+
   /// <summary>
-  /// Typeface
+  ///   Typeface
   /// </summary>
   public String? Typeface { get; set; }
-  
 }

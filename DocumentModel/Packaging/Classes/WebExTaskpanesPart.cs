@@ -1,22 +1,23 @@
+using DocumentModel.WebExtensions.UI;
+
 namespace DocumentModel.Packaging;
 
 /// <summary>
-/// Defines the WebExTaskpanesPart
+///   Defines the WebExTaskpanesPart
 /// </summary>
-public partial class WebExTaskpanesPart
+public class WebExTaskpanesPart
 {
   public String? ContentType { get; set; }
-  
+
   public String? RelationshipType { get; set; }
-  
+
   /// <summary>
-  /// Gets or sets the root element of this part.
+  ///   Gets or sets the root element of this part.
   /// </summary>
-  public DocumentModel.WebExtensions.UI.Taskpanes? Taskpanes { get; set; }
-  
+  public Taskpanes? Taskpanes { get; set; }
+
   /// <summary>
-  /// Gets the WebExtensionParts of the WebExTaskpanesPart
+  ///   Gets the WebExtensionParts of the WebExTaskpanesPart
   /// </summary>
-  public Collection<DocumentModel.Packaging.WebExtensionPart>? WebExtensionParts { get; set; }
-  
+  public Collection<WebExtensionPart>? WebExtensionParts { get; set; }
 }

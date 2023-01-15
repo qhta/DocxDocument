@@ -1,13 +1,12 @@
 namespace DocumentModel.Drawings.ChartDrawings;
 
 /// <summary>
-/// Defines the Extension2 Class.
+///   Defines the Extension2 Class.
 /// </summary>
-public partial class Extension2
+public class Extension2
 {
   /// <summary>
-  /// uri, this property is only available in Office 2016 and later.
+  ///   uri, this property is only available in Office 2016 and later.
   /// </summary>
   public String? Uri { get; set; }
-  
 }

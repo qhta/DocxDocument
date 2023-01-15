@@ -1,10 +1,9 @@
 namespace DocumentModel.Drawings.Charts;
 
 /// <summary>
-/// Defines the AreaSerExtensionList Class.
+///   Defines the AreaSerExtensionList Class.
 /// </summary>
-public partial class AreaSerExtensionList
+public class AreaSerExtensionList
 {
-  public Collection<DocumentModel.Drawings.Charts.AreaSerExtension>? AreaSerExtensions { get; set; }
-  
+  public Collection<AreaSerExtension>? AreaSerExtensions { get; set; }
 }

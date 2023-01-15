@@ -1,173 +1,178 @@
+using DocumentFormat.OpenXml.Wordprocessing;
+using TableCellMarginDefault = DocumentFormat.OpenXml.Wordprocessing.TableCellMarginDefault;
+using TableWidthDxaNilType = DocumentModel.Wordprocessing.TableWidthDxaNilType;
+using TableWidthType = DocumentModel.Wordprocessing.TableWidthType;
+
 namespace DocumentModel.OpenXml.Wordprocessing;
 
 /// <summary>
-/// Defines the TableCellMarginDefault Class.
+///   Defines the TableCellMarginDefault Class.
 /// </summary>
 public static class TableCellMarginDefaultConverter
 {
   /// <summary>
-  /// Table Cell Top Margin Default.
+  ///   Table Cell Top Margin Default.
   /// </summary>
-  public static DocumentModel.Wordprocessing.TableWidthType? GetTopMargin(DocumentFormat.OpenXml.Wordprocessing.TableCellMarginDefault? openXmlElement)
+  public static TableWidthType? GetTopMargin(TableCellMarginDefault? openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.TopMargin>();
+    var itemElement = openXmlElement?.GetFirstChild<TopMargin>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Wordprocessing.TableWidthTypeConverter.CreateModelElement(itemElement);
+      return TableWidthTypeConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetTopMargin(DocumentFormat.OpenXml.Wordprocessing.TableCellMarginDefault? openXmlElement, DocumentModel.Wordprocessing.TableWidthType? value)
+
+  public static void SetTopMargin(TableCellMarginDefault? openXmlElement, TableWidthType? value)
   {
     if (openXmlElement != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.TopMargin>();
+      var itemElement = openXmlElement.GetFirstChild<TopMargin>();
       if (itemElement != null)
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Wordprocessing.TableWidthTypeConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.TopMargin>(value);
+        itemElement = TableWidthTypeConverter.CreateOpenXmlElement<TopMargin>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
+
   /// <summary>
-  /// Table Cell Left Margin Default.
+  ///   Table Cell Left Margin Default.
   /// </summary>
-  public static DocumentModel.Wordprocessing.TableWidthDxaNilType? GetTableCellLeftMargin(DocumentFormat.OpenXml.Wordprocessing.TableCellMarginDefault? openXmlElement)
+  public static TableWidthDxaNilType? GetTableCellLeftMargin(TableCellMarginDefault? openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.TableCellLeftMargin>();
+    var itemElement = openXmlElement?.GetFirstChild<TableCellLeftMargin>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Wordprocessing.TableWidthDxaNilTypeConverter.CreateModelElement(itemElement);
+      return TableWidthDxaNilTypeConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetTableCellLeftMargin(DocumentFormat.OpenXml.Wordprocessing.TableCellMarginDefault? openXmlElement, DocumentModel.Wordprocessing.TableWidthDxaNilType? value)
+
+  public static void SetTableCellLeftMargin(TableCellMarginDefault? openXmlElement, TableWidthDxaNilType? value)
   {
     if (openXmlElement != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.TableCellLeftMargin>();
+      var itemElement = openXmlElement.GetFirstChild<TableCellLeftMargin>();
       if (itemElement != null)
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Wordprocessing.TableWidthDxaNilTypeConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.TableCellLeftMargin>(value);
+        itemElement = TableWidthDxaNilTypeConverter.CreateOpenXmlElement<TableCellLeftMargin>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
+
   /// <summary>
-  /// StartMargin, this property is only available in Office 2010 and later..
+  ///   StartMargin, this property is only available in Office 2010 and later..
   /// </summary>
-  public static DocumentModel.Wordprocessing.TableWidthType? GetStartMargin(DocumentFormat.OpenXml.Wordprocessing.TableCellMarginDefault? openXmlElement)
+  public static TableWidthType? GetStartMargin(TableCellMarginDefault? openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.StartMargin>();
+    var itemElement = openXmlElement?.GetFirstChild<StartMargin>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Wordprocessing.TableWidthTypeConverter.CreateModelElement(itemElement);
+      return TableWidthTypeConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetStartMargin(DocumentFormat.OpenXml.Wordprocessing.TableCellMarginDefault? openXmlElement, DocumentModel.Wordprocessing.TableWidthType? value)
+
+  public static void SetStartMargin(TableCellMarginDefault? openXmlElement, TableWidthType? value)
   {
     if (openXmlElement != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.StartMargin>();
+      var itemElement = openXmlElement.GetFirstChild<StartMargin>();
       if (itemElement != null)
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Wordprocessing.TableWidthTypeConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.StartMargin>(value);
+        itemElement = TableWidthTypeConverter.CreateOpenXmlElement<StartMargin>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
+
   /// <summary>
-  /// Table Cell Bottom Margin Default.
+  ///   Table Cell Bottom Margin Default.
   /// </summary>
-  public static DocumentModel.Wordprocessing.TableWidthType? GetBottomMargin(DocumentFormat.OpenXml.Wordprocessing.TableCellMarginDefault? openXmlElement)
+  public static TableWidthType? GetBottomMargin(TableCellMarginDefault? openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.BottomMargin>();
+    var itemElement = openXmlElement?.GetFirstChild<BottomMargin>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Wordprocessing.TableWidthTypeConverter.CreateModelElement(itemElement);
+      return TableWidthTypeConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetBottomMargin(DocumentFormat.OpenXml.Wordprocessing.TableCellMarginDefault? openXmlElement, DocumentModel.Wordprocessing.TableWidthType? value)
+
+  public static void SetBottomMargin(TableCellMarginDefault? openXmlElement, TableWidthType? value)
   {
     if (openXmlElement != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.BottomMargin>();
+      var itemElement = openXmlElement.GetFirstChild<BottomMargin>();
       if (itemElement != null)
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Wordprocessing.TableWidthTypeConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.BottomMargin>(value);
+        itemElement = TableWidthTypeConverter.CreateOpenXmlElement<BottomMargin>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
+
   /// <summary>
-  /// Table Cell Right Margin Default.
+  ///   Table Cell Right Margin Default.
   /// </summary>
-  public static DocumentModel.Wordprocessing.TableWidthDxaNilType? GetTableCellRightMargin(DocumentFormat.OpenXml.Wordprocessing.TableCellMarginDefault? openXmlElement)
+  public static TableWidthDxaNilType? GetTableCellRightMargin(TableCellMarginDefault? openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.TableCellRightMargin>();
+    var itemElement = openXmlElement?.GetFirstChild<TableCellRightMargin>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Wordprocessing.TableWidthDxaNilTypeConverter.CreateModelElement(itemElement);
+      return TableWidthDxaNilTypeConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetTableCellRightMargin(DocumentFormat.OpenXml.Wordprocessing.TableCellMarginDefault? openXmlElement, DocumentModel.Wordprocessing.TableWidthDxaNilType? value)
+
+  public static void SetTableCellRightMargin(TableCellMarginDefault? openXmlElement, TableWidthDxaNilType? value)
   {
     if (openXmlElement != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.TableCellRightMargin>();
+      var itemElement = openXmlElement.GetFirstChild<TableCellRightMargin>();
       if (itemElement != null)
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Wordprocessing.TableWidthDxaNilTypeConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.TableCellRightMargin>(value);
+        itemElement = TableWidthDxaNilTypeConverter.CreateOpenXmlElement<TableCellRightMargin>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
+
   /// <summary>
-  /// EndMargin, this property is only available in Office 2010 and later..
+  ///   EndMargin, this property is only available in Office 2010 and later..
   /// </summary>
-  public static DocumentModel.Wordprocessing.TableWidthType? GetEndMargin(DocumentFormat.OpenXml.Wordprocessing.TableCellMarginDefault? openXmlElement)
+  public static TableWidthType? GetEndMargin(TableCellMarginDefault? openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.EndMargin>();
+    var itemElement = openXmlElement?.GetFirstChild<EndMargin>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Wordprocessing.TableWidthTypeConverter.CreateModelElement(itemElement);
+      return TableWidthTypeConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetEndMargin(DocumentFormat.OpenXml.Wordprocessing.TableCellMarginDefault? openXmlElement, DocumentModel.Wordprocessing.TableWidthType? value)
+
+  public static void SetEndMargin(TableCellMarginDefault? openXmlElement, TableWidthType? value)
   {
     if (openXmlElement != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.EndMargin>();
+      var itemElement = openXmlElement.GetFirstChild<EndMargin>();
       if (itemElement != null)
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Wordprocessing.TableWidthTypeConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.EndMargin>(value);
+        itemElement = TableWidthTypeConverter.CreateOpenXmlElement<EndMargin>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static DocumentModel.Wordprocessing.TableCellMarginDefault? CreateModelElement(DocumentFormat.OpenXml.Wordprocessing.TableCellMarginDefault? openXmlElement)
+
+  public static DocumentModel.Wordprocessing.TableCellMarginDefault? CreateModelElement(TableCellMarginDefault? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -182,9 +187,9 @@ public static class TableCellMarginDefaultConverter
     }
     return null;
   }
-  
+
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.TableCellMarginDefault? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Wordprocessing.TableCellMarginDefault, new()
+    where OpenXmlElementType : TableCellMarginDefault, new()
   {
     if (value != null)
     {

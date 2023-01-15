@@ -1,18 +1,17 @@
 namespace DocumentModel.Wordprocessing;
 
 /// <summary>
-/// Symbol Character.
+///   Symbol Character.
 /// </summary>
-public partial class SymbolChar
+public class SymbolChar
 {
   /// <summary>
-  /// Symbol Character Font
+  ///   Symbol Character Font
   /// </summary>
   public String? Font { get; set; }
-  
+
   /// <summary>
-  /// Symbol Character Code
+  ///   Symbol Character Code
   /// </summary>
   public Byte[]? Char { get; set; }
-  
 }

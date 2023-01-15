@@ -1,8 +1,7 @@
 ﻿namespace DocumentModel.Properties;
 
-public partial class CustomDocumentProperty: DocumentProperty
+public partial class CustomDocumentProperty : DocumentProperty
 {
-
   public override string ToString()
   {
     var str = $"{Name} = {Value}";
@@ -12,5 +11,4 @@ public partial class CustomDocumentProperty: DocumentProperty
       str += $", LinkTarget={LinkTarget}";
     return str;
   }
-
 }

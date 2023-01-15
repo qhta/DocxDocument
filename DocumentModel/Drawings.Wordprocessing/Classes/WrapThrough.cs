@@ -1,28 +1,27 @@
 namespace DocumentModel.Drawings.Wordprocessing;
 
 /// <summary>
-/// Through Wrapping.
+///   Through Wrapping.
 /// </summary>
-public partial class WrapThrough
+public class WrapThrough
 {
   /// <summary>
-  /// Text Wrapping Location
+  ///   Text Wrapping Location
   /// </summary>
-  public DocumentModel.Drawings.Wordprocessing.WrapTextKind? WrapText { get; set; }
-  
+  public WrapTextKind? WrapText { get; set; }
+
   /// <summary>
-  /// Distance From Text on Left Edge
+  ///   Distance From Text on Left Edge
   /// </summary>
   public UInt32? DistanceFromLeft { get; set; }
-  
+
   /// <summary>
-  /// Distance From Text on Right Edge
+  ///   Distance From Text on Right Edge
   /// </summary>
   public UInt32? DistanceFromRight { get; set; }
-  
+
   /// <summary>
-  /// Wrapping Polygon.
+  ///   Wrapping Polygon.
   /// </summary>
-  public DocumentModel.Drawings.Wordprocessing.WrapPolygon? WrapPolygon { get; set; }
-  
+  public WrapPolygon? WrapPolygon { get; set; }
 }

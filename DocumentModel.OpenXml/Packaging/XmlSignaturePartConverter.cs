@@ -1,21 +1,23 @@
+using DocumentFormat.OpenXml.Packaging;
+
 namespace DocumentModel.OpenXml.Packaging;
 
 /// <summary>
-/// Defines the XmlSignaturePart
+///   Defines the XmlSignaturePart
 /// </summary>
 public static class XmlSignaturePartConverter
 {
-  public static String? GetContentType(DocumentFormat.OpenXml.Packaging.XmlSignaturePart? openXmlElement)
+  public static String? GetContentType(XmlSignaturePart? openXmlElement)
   {
     return openXmlElement?.ContentType;
   }
-  
-  public static String? GetRelationshipType(DocumentFormat.OpenXml.Packaging.XmlSignaturePart? openXmlElement)
+
+  public static String? GetRelationshipType(XmlSignaturePart? openXmlElement)
   {
     return openXmlElement?.RelationshipType;
   }
-  
-  public static DocumentModel.Packaging.XmlSignaturePart? CreateModelElement(DocumentFormat.OpenXml.Packaging.XmlSignaturePart? openXmlElement)
+
+  public static DocumentModel.Packaging.XmlSignaturePart? CreateModelElement(XmlSignaturePart? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -26,9 +28,9 @@ public static class XmlSignaturePartConverter
     }
     return null;
   }
-  
+
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Packaging.XmlSignaturePart? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Packaging.XmlSignaturePart, new()
+    where OpenXmlElementType : XmlSignaturePart, new()
   {
     if (value != null)
     {

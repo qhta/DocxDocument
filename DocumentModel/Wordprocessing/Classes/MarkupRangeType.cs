@@ -1,18 +1,17 @@
 namespace DocumentModel.Wordprocessing;
 
 /// <summary>
-/// Defines the MarkupRangeType Class.
+///   Defines the MarkupRangeType Class.
 /// </summary>
-public partial class MarkupRangeType
+public class MarkupRangeType
 {
   /// <summary>
-  /// displacedByCustomXml
+  ///   displacedByCustomXml
   /// </summary>
-  public DocumentModel.Wordprocessing.DisplacedByCustomXmlKind? DisplacedByCustomXml { get; set; }
-  
+  public DisplacedByCustomXmlKind? DisplacedByCustomXml { get; set; }
+
   /// <summary>
-  /// Annotation Identifier
+  ///   Annotation Identifier
   /// </summary>
   public String? Id { get; set; }
-  
 }

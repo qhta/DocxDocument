@@ -1,23 +1,22 @@
 namespace DocumentModel.Wordprocessing;
 
 /// <summary>
-/// Defines the CommentEx Class.
+///   Defines the CommentEx Class.
 /// </summary>
-public partial class CommentEx
+public class CommentEx
 {
   /// <summary>
-  /// paraId, this property is only available in Office 2013 and later.
+  ///   paraId, this property is only available in Office 2013 and later.
   /// </summary>
   public Byte[]? ParaId { get; set; }
-  
+
   /// <summary>
-  /// paraIdParent, this property is only available in Office 2013 and later.
+  ///   paraIdParent, this property is only available in Office 2013 and later.
   /// </summary>
   public Byte[]? ParaIdParent { get; set; }
-  
+
   /// <summary>
-  /// done, this property is only available in Office 2013 and later.
+  ///   done, this property is only available in Office 2013 and later.
   /// </summary>
   public Boolean? Done { get; set; }
-  
 }

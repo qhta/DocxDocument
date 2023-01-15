@@ -1,33 +1,32 @@
 namespace DocumentModel.Drawings.Charts;
 
 /// <summary>
-/// Scaling.
+///   Scaling.
 /// </summary>
-public partial class Scaling
+public class Scaling
 {
   /// <summary>
-  /// Logarithmic Base.
+  ///   Logarithmic Base.
   /// </summary>
   public Double? LogBase { get; set; }
-  
+
   /// <summary>
-  /// Axis Orientation.
+  ///   Axis Orientation.
   /// </summary>
-  public DocumentModel.Drawings.Charts.OrientationKind? Orientation { get; set; }
-  
+  public OrientationKind? Orientation { get; set; }
+
   /// <summary>
-  /// Maximum.
+  ///   Maximum.
   /// </summary>
   public Double? MaxAxisValue { get; set; }
-  
+
   /// <summary>
-  /// Minimum.
+  ///   Minimum.
   /// </summary>
   public Double? MinAxisValue { get; set; }
-  
+
   /// <summary>
-  /// Chart Extensibility.
+  ///   Chart Extensibility.
   /// </summary>
-  public DocumentModel.Drawings.Charts.ExtensionList? ExtensionList { get; set; }
-  
+  public ExtensionList? ExtensionList { get; set; }
 }

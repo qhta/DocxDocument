@@ -1,18 +1,17 @@
 namespace DocumentModel.Drawings;
 
 /// <summary>
-/// Defines the AudioCDTimeType Class.
+///   Defines the AudioCDTimeType Class.
 /// </summary>
-public partial class AudioCDTimeType
+public class AudioCDTimeType
 {
   /// <summary>
-  /// Track
+  ///   Track
   /// </summary>
   public Byte? Track { get; set; }
-  
+
   /// <summary>
-  /// Time
+  ///   Time
   /// </summary>
   public UInt32? Time { get; set; }
-  
 }

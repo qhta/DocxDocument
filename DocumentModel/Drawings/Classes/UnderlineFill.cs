@@ -1,38 +1,37 @@
 namespace DocumentModel.Drawings;
 
 /// <summary>
-/// Underline Fill.
+///   Underline Fill.
 /// </summary>
-public partial class UnderlineFill
+public class UnderlineFill
 {
   /// <summary>
-  /// NoFill.
+  ///   NoFill.
   /// </summary>
   public Boolean? NoFill { get; set; }
-  
+
   /// <summary>
-  /// SolidFill.
+  ///   SolidFill.
   /// </summary>
-  public DocumentModel.Drawings.SolidFill? SolidFill { get; set; }
-  
+  public SolidFill? SolidFill { get; set; }
+
   /// <summary>
-  /// GradientFill.
+  ///   GradientFill.
   /// </summary>
-  public DocumentModel.Drawings.GradientFill? GradientFill { get; set; }
-  
+  public GradientFill? GradientFill { get; set; }
+
   /// <summary>
-  /// BlipFill.
+  ///   BlipFill.
   /// </summary>
-  public DocumentModel.Drawings.BlipFill? BlipFill { get; set; }
-  
+  public BlipFill? BlipFill { get; set; }
+
   /// <summary>
-  /// Pattern Fill.
+  ///   Pattern Fill.
   /// </summary>
-  public DocumentModel.Drawings.PatternFill? PatternFill { get; set; }
-  
+  public PatternFill? PatternFill { get; set; }
+
   /// <summary>
-  /// Group Fill.
+  ///   Group Fill.
   /// </summary>
   public Boolean? GroupFill { get; set; }
-  
 }

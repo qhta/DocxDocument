@@ -1,15 +1,14 @@
 namespace DocumentModel.Math;
 
 /// <summary>
-/// Matrix Function.
+///   Matrix Function.
 /// </summary>
-public partial class Matrix
+public class Matrix
 {
   /// <summary>
-  /// Matrix Properties.
+  ///   Matrix Properties.
   /// </summary>
-  public DocumentModel.Math.MatrixProperties? MatrixProperties { get; set; }
-  
-  public Collection<DocumentModel.Math.MatrixRow>? MatrixRows { get; set; }
-  
+  public MatrixProperties? MatrixProperties { get; set; }
+
+  public Collection<MatrixRow>? MatrixRows { get; set; }
 }

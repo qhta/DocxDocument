@@ -1,43 +1,42 @@
 namespace DocumentModel.Drawings;
 
 /// <summary>
-/// XY Adjust Handle.
+///   XY Adjust Handle.
 /// </summary>
-public partial class AdjustHandleXY
+public class AdjustHandleXY
 {
   /// <summary>
-  /// Horizontal Adjustment Guide
+  ///   Horizontal Adjustment Guide
   /// </summary>
   public String? XAdjustmentGuide { get; set; }
-  
+
   /// <summary>
-  /// Minimum Horizontal Adjustment
+  ///   Minimum Horizontal Adjustment
   /// </summary>
   public String? MinX { get; set; }
-  
+
   /// <summary>
-  /// Maximum Horizontal Adjustment
+  ///   Maximum Horizontal Adjustment
   /// </summary>
   public String? MaxX { get; set; }
-  
+
   /// <summary>
-  /// Vertical Adjustment Guide
+  ///   Vertical Adjustment Guide
   /// </summary>
   public String? YAdjustmentGuide { get; set; }
-  
+
   /// <summary>
-  /// Minimum Vertical Adjustment
+  ///   Minimum Vertical Adjustment
   /// </summary>
   public String? MinY { get; set; }
-  
+
   /// <summary>
-  /// Maximum Vertical Adjustment
+  ///   Maximum Vertical Adjustment
   /// </summary>
   public String? MaxY { get; set; }
-  
+
   /// <summary>
-  /// Position.
+  ///   Position.
   /// </summary>
-  public DocumentModel.Drawings.AdjustPoint2DType? Position { get; set; }
-  
+  public AdjustPoint2DType? Position { get; set; }
 }

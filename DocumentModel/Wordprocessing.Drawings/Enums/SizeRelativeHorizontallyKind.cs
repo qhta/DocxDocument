@@ -1,38 +1,37 @@
 namespace DocumentModel.Wordprocessing.Drawings;
 
 /// <summary>
-/// Defines the SizeRelativeHorizontallyValues enumeration.
+///   Defines the SizeRelativeHorizontallyValues enumeration.
 /// </summary>
 public enum SizeRelativeHorizontallyKind
 {
   /// <summary>
-  /// margin.
+  ///   margin.
   /// </summary>
   Margin,
-  
+
   /// <summary>
-  /// page.
+  ///   page.
   /// </summary>
   Page,
-  
+
   /// <summary>
-  /// leftMargin.
+  ///   leftMargin.
   /// </summary>
   LeftMargin,
-  
+
   /// <summary>
-  /// rightMargin.
+  ///   rightMargin.
   /// </summary>
   RightMargin,
-  
+
   /// <summary>
-  /// insideMargin.
+  ///   insideMargin.
   /// </summary>
   InsideMargin,
-  
+
   /// <summary>
-  /// outsideMargin.
+  ///   outsideMargin.
   /// </summary>
-  OutsideMargin,
-  
+  OutsideMargin
 }

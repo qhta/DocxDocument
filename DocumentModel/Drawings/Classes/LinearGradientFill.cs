@@ -1,18 +1,17 @@
 namespace DocumentModel.Drawings;
 
 /// <summary>
-/// Linear Gradient Fill.
+///   Linear Gradient Fill.
 /// </summary>
-public partial class LinearGradientFill
+public class LinearGradientFill
 {
   /// <summary>
-  /// Angle
+  ///   Angle
   /// </summary>
   public Int32? Angle { get; set; }
-  
+
   /// <summary>
-  /// Scaled
+  ///   Scaled
   /// </summary>
   public Boolean? Scaled { get; set; }
-  
 }

@@ -1,13 +1,12 @@
 namespace DocumentModel.Drawings.Charts;
 
 /// <summary>
-/// Extension.
+///   Extension.
 /// </summary>
-public partial class Extension
+public class Extension
 {
   /// <summary>
-  /// Uniform Resource Identifier
+  ///   Uniform Resource Identifier
   /// </summary>
   public String? Uri { get; set; }
-  
 }

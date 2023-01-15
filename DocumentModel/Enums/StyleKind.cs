@@ -1,23 +1,22 @@
 namespace DocumentModel;
 
 /// <summary>
-/// Defines the StyleValues enumeration.
+///   Defines the StyleValues enumeration.
 /// </summary>
 public enum StyleKind
 {
   /// <summary>
-  /// normal.
+  ///   normal.
   /// </summary>
   Normal,
-  
+
   /// <summary>
-  /// warning.
+  ///   warning.
   /// </summary>
   Warning,
-  
+
   /// <summary>
-  /// error.
+  ///   error.
   /// </summary>
-  Error,
-  
+  Error
 }

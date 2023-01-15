@@ -1,18 +1,17 @@
 namespace DocumentModel.Drawings.Office;
 
 /// <summary>
-/// Defines the DataModelExtensionBlock Class.
+///   Defines the DataModelExtensionBlock Class.
 /// </summary>
-public partial class DataModelExtensionBlock
+public class DataModelExtensionBlock
 {
   /// <summary>
-  /// relId, this property is only available in Office 2010 and later.
+  ///   relId, this property is only available in Office 2010 and later.
   /// </summary>
   public String? RelId { get; set; }
-  
+
   /// <summary>
-  /// minVer, this property is only available in Office 2010 and later.
+  ///   minVer, this property is only available in Office 2010 and later.
   /// </summary>
   public String? MinVer { get; set; }
-  
 }

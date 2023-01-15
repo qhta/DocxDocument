@@ -1,116 +1,117 @@
+using DocumentModel.Wordprocessing.Drawings;
+
 namespace DocumentModel.Drawings.Wordprocessing;
 
 /// <summary>
-/// Anchor for Floating DrawingML Object.
+///   Anchor for Floating DrawingML Object.
 /// </summary>
-public partial class Anchor
+public class Anchor
 {
   /// <summary>
-  /// Distance From Text on Top Edge
+  ///   Distance From Text on Top Edge
   /// </summary>
   public UInt32? DistanceFromTop { get; set; }
-  
+
   /// <summary>
-  /// Distance From Text on Bottom Edge
+  ///   Distance From Text on Bottom Edge
   /// </summary>
   public UInt32? DistanceFromBottom { get; set; }
-  
+
   /// <summary>
-  /// Distance From Text on Left Edge
+  ///   Distance From Text on Left Edge
   /// </summary>
   public UInt32? DistanceFromLeft { get; set; }
-  
+
   /// <summary>
-  /// Distance From Text on Right Edge
+  ///   Distance From Text on Right Edge
   /// </summary>
   public UInt32? DistanceFromRight { get; set; }
-  
+
   /// <summary>
-  /// Page Positioning
+  ///   Page Positioning
   /// </summary>
   public Boolean? SimplePos { get; set; }
-  
+
   /// <summary>
-  /// Relative Z-Ordering Position
+  ///   Relative Z-Ordering Position
   /// </summary>
   public UInt32? RelativeHeight { get; set; }
-  
+
   /// <summary>
-  /// Display Behind Document Text
+  ///   Display Behind Document Text
   /// </summary>
   public Boolean? BehindDoc { get; set; }
-  
+
   /// <summary>
-  /// Lock Anchor
+  ///   Lock Anchor
   /// </summary>
   public Boolean? Locked { get; set; }
-  
+
   /// <summary>
-  /// Layout In Table Cell
+  ///   Layout In Table Cell
   /// </summary>
   public Boolean? LayoutInCell { get; set; }
-  
+
   /// <summary>
-  /// Hidden
+  ///   Hidden
   /// </summary>
   public Boolean? Hidden { get; set; }
-  
+
   /// <summary>
-  /// Allow Objects to Overlap
+  ///   Allow Objects to Overlap
   /// </summary>
   public Boolean? AllowOverlap { get; set; }
-  
+
   /// <summary>
-  /// editId, this property is only available in Office 2010 and later.
+  ///   editId, this property is only available in Office 2010 and later.
   /// </summary>
   public Byte[]? EditId { get; set; }
-  
+
   /// <summary>
-  /// anchorId, this property is only available in Office 2010 and later.
+  ///   anchorId, this property is only available in Office 2010 and later.
   /// </summary>
   public Byte[]? AnchorId { get; set; }
-  
+
   /// <summary>
-  /// Simple Positioning Coordinates.
+  ///   Simple Positioning Coordinates.
   /// </summary>
-  public DocumentModel.Drawings.Wordprocessing.Point2DType? SimplePosition { get; set; }
-  
+  public Point2DType? SimplePosition { get; set; }
+
   /// <summary>
-  /// Horizontal Positioning.
+  ///   Horizontal Positioning.
   /// </summary>
-  public DocumentModel.Drawings.Wordprocessing.HorizontalPosition? HorizontalPosition { get; set; }
-  
+  public HorizontalPosition? HorizontalPosition { get; set; }
+
   /// <summary>
-  /// Vertical Positioning.
+  ///   Vertical Positioning.
   /// </summary>
-  public DocumentModel.Drawings.Wordprocessing.VerticalPosition? VerticalPosition { get; set; }
-  
+  public VerticalPosition? VerticalPosition { get; set; }
+
   /// <summary>
-  /// Inline Drawing Object Extents.
+  ///   Inline Drawing Object Extents.
   /// </summary>
-  public DocumentModel.Drawings.Wordprocessing.Extent? Extent { get; set; }
-  
+  public Extent? Extent { get; set; }
+
   /// <summary>
-  /// EffectExtent.
+  ///   EffectExtent.
   /// </summary>
-  public DocumentModel.Drawings.Wordprocessing.EffectExtent? EffectExtent { get; set; }
-  
+  public EffectExtent? EffectExtent { get; set; }
+
   public Boolean? WrapNone { get; set; }
-  
-  public DocumentModel.Drawings.Wordprocessing.WrapSquare? WrapSquare { get; set; }
-  
-  public DocumentModel.Drawings.Wordprocessing.WrapTight? WrapTight { get; set; }
-  
-  public DocumentModel.Drawings.Wordprocessing.WrapThrough? WrapThrough { get; set; }
-  
-  public DocumentModel.Drawings.Wordprocessing.WrapTopBottom? WrapTopBottom { get; set; }
-  
-  public DocumentModel.Drawings.Wordprocessing.DocProperties? DocProperties { get; set; }
-  
-  public DocumentModel.Drawings.Wordprocessing.NonVisualGraphicFrameDrawingProperties? NonVisualGraphicFrameDrawingProperties { get; set; }
-  
-  public DocumentModel.Drawings.Graphic? Graphic { get; set; }
-  
-  public DocumentModel.Wordprocessing.Drawings.RelativeWidth? RelativeWidth { get; set; }
-  
+
+  public WrapSquare? WrapSquare { get; set; }
+
+  public WrapTight? WrapTight { get; set; }
+
+  public WrapThrough? WrapThrough { get; set; }
+
+  public WrapTopBottom? WrapTopBottom { get; set; }
+
+  public DocProperties? DocProperties { get; set; }
+
+  public NonVisualGraphicFrameDrawingProperties? NonVisualGraphicFrameDrawingProperties { get; set; }
+
+  public Graphic? Graphic { get; set; }
+
+  public RelativeWidth? RelativeWidth { get; set; }
 }

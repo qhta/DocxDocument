@@ -1,19 +1,36 @@
+using DocumentFormat.OpenXml.Drawing;
+using DocumentModel.Drawings;
+using BlipFill = DocumentModel.Drawings.BlipFill;
+using Boolean = System.Boolean;
+using EffectDag = DocumentModel.Drawings.EffectDag;
+using EffectList = DocumentModel.Drawings.EffectList;
+using GradientFill = DocumentModel.Drawings.GradientFill;
+using Highlight = DocumentModel.Drawings.Highlight;
+using HyperlinkOnClick = DocumentModel.Drawings.HyperlinkOnClick;
+using HyperlinkOnMouseOver = DocumentModel.Drawings.HyperlinkOnMouseOver;
+using Outline = DocumentModel.Drawings.Outline;
+using PatternFill = DocumentModel.Drawings.PatternFill;
+using SolidFill = DocumentModel.Drawings.SolidFill;
+using TextCharacterPropertiesType = DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.TextCharacterPropertiesType;
+using TextFontType = DocumentModel.Drawings.TextFontType;
+using UnderlineFill = DocumentModel.Drawings.UnderlineFill;
+
 namespace DocumentModel.OpenXml.Drawings.ChartsStyle;
 
 /// <summary>
-/// Defines the TextCharacterPropertiesType Class.
+///   Defines the TextCharacterPropertiesType Class.
 /// </summary>
 public static class TextCharacterPropertiesTypeConverter
 {
   /// <summary>
-  /// Gets or sets the  value. It is only available for backwards compatibility
+  ///   Gets or sets the  value. It is only available for backwards compatibility
   /// </summary>
-  public static Boolean? GetSmtClean(DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.TextCharacterPropertiesType? openXmlElement)
+  public static Boolean? GetSmtClean(TextCharacterPropertiesType? openXmlElement)
   {
     return openXmlElement?.SmtClean?.Value;
   }
-  
-  public static void SetSmtClean(DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.TextCharacterPropertiesType? openXmlElement, Boolean? value)
+
+  public static void SetSmtClean(TextCharacterPropertiesType? openXmlElement, Boolean? value)
   {
     if (openXmlElement != null)
       if (value != null)
@@ -21,30 +38,30 @@ public static class TextCharacterPropertiesTypeConverter
       else
         openXmlElement.SmtClean = null;
   }
-  
+
   /// <summary>
-  /// Gets or sets the  value. It is only available for backwards compatibility
+  ///   Gets or sets the  value. It is only available for backwards compatibility
   /// </summary>
-  public static UInt32? GetSmtId(DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.TextCharacterPropertiesType? openXmlElement)
+  public static UInt32? GetSmtId(TextCharacterPropertiesType? openXmlElement)
   {
     return openXmlElement?.SmtId?.Value;
   }
-  
-  public static void SetSmtId(DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.TextCharacterPropertiesType? openXmlElement, UInt32? value)
+
+  public static void SetSmtId(TextCharacterPropertiesType? openXmlElement, UInt32? value)
   {
     if (openXmlElement != null)
       openXmlElement.SmtId = value;
   }
-  
+
   /// <summary>
-  /// kumimoji
+  ///   kumimoji
   /// </summary>
-  public static Boolean? GetKumimoji(DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.TextCharacterPropertiesType? openXmlElement)
+  public static Boolean? GetKumimoji(TextCharacterPropertiesType? openXmlElement)
   {
     return openXmlElement?.Kumimoji?.Value;
   }
-  
-  public static void SetKumimoji(DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.TextCharacterPropertiesType? openXmlElement, Boolean? value)
+
+  public static void SetKumimoji(TextCharacterPropertiesType? openXmlElement, Boolean? value)
   {
     if (openXmlElement != null)
       if (value != null)
@@ -52,16 +69,16 @@ public static class TextCharacterPropertiesTypeConverter
       else
         openXmlElement.Kumimoji = null;
   }
-  
+
   /// <summary>
-  /// lang
+  ///   lang
   /// </summary>
-  public static String? GetLanguage(DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.TextCharacterPropertiesType? openXmlElement)
+  public static String? GetLanguage(TextCharacterPropertiesType? openXmlElement)
   {
     return openXmlElement?.Language?.Value;
   }
-  
-  public static void SetLanguage(DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.TextCharacterPropertiesType? openXmlElement, String? value)
+
+  public static void SetLanguage(TextCharacterPropertiesType? openXmlElement, String? value)
   {
     if (openXmlElement != null)
       if (value != null)
@@ -69,16 +86,16 @@ public static class TextCharacterPropertiesTypeConverter
       else
         openXmlElement.Language = null;
   }
-  
+
   /// <summary>
-  /// altLang
+  ///   altLang
   /// </summary>
-  public static String? GetAlternativeLanguage(DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.TextCharacterPropertiesType? openXmlElement)
+  public static String? GetAlternativeLanguage(TextCharacterPropertiesType? openXmlElement)
   {
     return openXmlElement?.AlternativeLanguage?.Value;
   }
-  
-  public static void SetAlternativeLanguage(DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.TextCharacterPropertiesType? openXmlElement, String? value)
+
+  public static void SetAlternativeLanguage(TextCharacterPropertiesType? openXmlElement, String? value)
   {
     if (openXmlElement != null)
       if (value != null)
@@ -86,30 +103,30 @@ public static class TextCharacterPropertiesTypeConverter
       else
         openXmlElement.AlternativeLanguage = null;
   }
-  
+
   /// <summary>
-  /// sz
+  ///   sz
   /// </summary>
-  public static Int32? GetFontSize(DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.TextCharacterPropertiesType? openXmlElement)
+  public static Int32? GetFontSize(TextCharacterPropertiesType? openXmlElement)
   {
     return openXmlElement?.FontSize?.Value;
   }
-  
-  public static void SetFontSize(DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.TextCharacterPropertiesType? openXmlElement, Int32? value)
+
+  public static void SetFontSize(TextCharacterPropertiesType? openXmlElement, Int32? value)
   {
     if (openXmlElement != null)
       openXmlElement.FontSize = value;
   }
-  
+
   /// <summary>
-  /// b
+  ///   b
   /// </summary>
-  public static Boolean? GetBold(DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.TextCharacterPropertiesType? openXmlElement)
+  public static Boolean? GetBold(TextCharacterPropertiesType? openXmlElement)
   {
     return openXmlElement?.Bold?.Value;
   }
-  
-  public static void SetBold(DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.TextCharacterPropertiesType? openXmlElement, Boolean? value)
+
+  public static void SetBold(TextCharacterPropertiesType? openXmlElement, Boolean? value)
   {
     if (openXmlElement != null)
       if (value != null)
@@ -117,16 +134,16 @@ public static class TextCharacterPropertiesTypeConverter
       else
         openXmlElement.Bold = null;
   }
-  
+
   /// <summary>
-  /// i
+  ///   i
   /// </summary>
-  public static Boolean? GetItalic(DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.TextCharacterPropertiesType? openXmlElement)
+  public static Boolean? GetItalic(TextCharacterPropertiesType? openXmlElement)
   {
     return openXmlElement?.Italic?.Value;
   }
-  
-  public static void SetItalic(DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.TextCharacterPropertiesType? openXmlElement, Boolean? value)
+
+  public static void SetItalic(TextCharacterPropertiesType? openXmlElement, Boolean? value)
   {
     if (openXmlElement != null)
       if (value != null)
@@ -134,86 +151,86 @@ public static class TextCharacterPropertiesTypeConverter
       else
         openXmlElement.Italic = null;
   }
-  
+
   /// <summary>
-  /// u
+  ///   u
   /// </summary>
-  public static DocumentModel.Drawings.TextUnderlineKind? GetUnderline(DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.TextCharacterPropertiesType? openXmlElement)
+  public static TextUnderlineKind? GetUnderline(TextCharacterPropertiesType? openXmlElement)
   {
-    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Drawing.TextUnderlineValues, DocumentModel.Drawings.TextUnderlineKind>(openXmlElement?.Underline?.Value);
+    return EnumValueConverter.GetValue<TextUnderlineValues, TextUnderlineKind>(openXmlElement?.Underline?.Value);
   }
-  
-  public static void SetUnderline(DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.TextCharacterPropertiesType? openXmlElement, DocumentModel.Drawings.TextUnderlineKind? value)
+
+  public static void SetUnderline(TextCharacterPropertiesType? openXmlElement, TextUnderlineKind? value)
   {
     if (openXmlElement != null)
-      openXmlElement.Underline = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Drawing.TextUnderlineValues, DocumentModel.Drawings.TextUnderlineKind>(value);
+      openXmlElement.Underline = EnumValueConverter.CreateEnumValue<TextUnderlineValues, TextUnderlineKind>(value);
   }
-  
+
   /// <summary>
-  /// strike
+  ///   strike
   /// </summary>
-  public static DocumentModel.Drawings.TextStrikeKind? GetStrike(DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.TextCharacterPropertiesType? openXmlElement)
+  public static TextStrikeKind? GetStrike(TextCharacterPropertiesType? openXmlElement)
   {
-    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Drawing.TextStrikeValues, DocumentModel.Drawings.TextStrikeKind>(openXmlElement?.Strike?.Value);
+    return EnumValueConverter.GetValue<TextStrikeValues, TextStrikeKind>(openXmlElement?.Strike?.Value);
   }
-  
-  public static void SetStrike(DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.TextCharacterPropertiesType? openXmlElement, DocumentModel.Drawings.TextStrikeKind? value)
+
+  public static void SetStrike(TextCharacterPropertiesType? openXmlElement, TextStrikeKind? value)
   {
     if (openXmlElement != null)
-      openXmlElement.Strike = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Drawing.TextStrikeValues, DocumentModel.Drawings.TextStrikeKind>(value);
+      openXmlElement.Strike = EnumValueConverter.CreateEnumValue<TextStrikeValues, TextStrikeKind>(value);
   }
-  
+
   /// <summary>
-  /// kern
+  ///   kern
   /// </summary>
-  public static Int32? GetKerning(DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.TextCharacterPropertiesType? openXmlElement)
+  public static Int32? GetKerning(TextCharacterPropertiesType? openXmlElement)
   {
     return openXmlElement?.Kerning?.Value;
   }
-  
-  public static void SetKerning(DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.TextCharacterPropertiesType? openXmlElement, Int32? value)
+
+  public static void SetKerning(TextCharacterPropertiesType? openXmlElement, Int32? value)
   {
     if (openXmlElement != null)
       openXmlElement.Kerning = value;
   }
-  
+
   /// <summary>
-  /// cap
+  ///   cap
   /// </summary>
-  public static DocumentModel.Drawings.TextCapsKind? GetCapital(DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.TextCharacterPropertiesType? openXmlElement)
+  public static TextCapsKind? GetCapital(TextCharacterPropertiesType? openXmlElement)
   {
-    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Drawing.TextCapsValues, DocumentModel.Drawings.TextCapsKind>(openXmlElement?.Capital?.Value);
+    return EnumValueConverter.GetValue<TextCapsValues, TextCapsKind>(openXmlElement?.Capital?.Value);
   }
-  
-  public static void SetCapital(DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.TextCharacterPropertiesType? openXmlElement, DocumentModel.Drawings.TextCapsKind? value)
+
+  public static void SetCapital(TextCharacterPropertiesType? openXmlElement, TextCapsKind? value)
   {
     if (openXmlElement != null)
-      openXmlElement.Capital = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Drawing.TextCapsValues, DocumentModel.Drawings.TextCapsKind>(value);
+      openXmlElement.Capital = EnumValueConverter.CreateEnumValue<TextCapsValues, TextCapsKind>(value);
   }
-  
+
   /// <summary>
-  /// spc
+  ///   spc
   /// </summary>
-  public static Int32? GetSpacing(DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.TextCharacterPropertiesType? openXmlElement)
+  public static Int32? GetSpacing(TextCharacterPropertiesType? openXmlElement)
   {
     return openXmlElement?.Spacing?.Value;
   }
-  
-  public static void SetSpacing(DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.TextCharacterPropertiesType? openXmlElement, Int32? value)
+
+  public static void SetSpacing(TextCharacterPropertiesType? openXmlElement, Int32? value)
   {
     if (openXmlElement != null)
       openXmlElement.Spacing = value;
   }
-  
+
   /// <summary>
-  /// normalizeH
+  ///   normalizeH
   /// </summary>
-  public static Boolean? GetNormalizeHeight(DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.TextCharacterPropertiesType? openXmlElement)
+  public static Boolean? GetNormalizeHeight(TextCharacterPropertiesType? openXmlElement)
   {
     return openXmlElement?.NormalizeHeight?.Value;
   }
-  
-  public static void SetNormalizeHeight(DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.TextCharacterPropertiesType? openXmlElement, Boolean? value)
+
+  public static void SetNormalizeHeight(TextCharacterPropertiesType? openXmlElement, Boolean? value)
   {
     if (openXmlElement != null)
       if (value != null)
@@ -221,30 +238,30 @@ public static class TextCharacterPropertiesTypeConverter
       else
         openXmlElement.NormalizeHeight = null;
   }
-  
+
   /// <summary>
-  /// baseline
+  ///   baseline
   /// </summary>
-  public static Int32? GetBaseline(DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.TextCharacterPropertiesType? openXmlElement)
+  public static Int32? GetBaseline(TextCharacterPropertiesType? openXmlElement)
   {
     return openXmlElement?.Baseline?.Value;
   }
-  
-  public static void SetBaseline(DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.TextCharacterPropertiesType? openXmlElement, Int32? value)
+
+  public static void SetBaseline(TextCharacterPropertiesType? openXmlElement, Int32? value)
   {
     if (openXmlElement != null)
       openXmlElement.Baseline = value;
   }
-  
+
   /// <summary>
-  /// noProof
+  ///   noProof
   /// </summary>
-  public static Boolean? GetNoProof(DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.TextCharacterPropertiesType? openXmlElement)
+  public static Boolean? GetNoProof(TextCharacterPropertiesType? openXmlElement)
   {
     return openXmlElement?.NoProof?.Value;
   }
-  
-  public static void SetNoProof(DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.TextCharacterPropertiesType? openXmlElement, Boolean? value)
+
+  public static void SetNoProof(TextCharacterPropertiesType? openXmlElement, Boolean? value)
   {
     if (openXmlElement != null)
       if (value != null)
@@ -252,16 +269,16 @@ public static class TextCharacterPropertiesTypeConverter
       else
         openXmlElement.NoProof = null;
   }
-  
+
   /// <summary>
-  /// dirty
+  ///   dirty
   /// </summary>
-  public static Boolean? GetDirty(DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.TextCharacterPropertiesType? openXmlElement)
+  public static Boolean? GetDirty(TextCharacterPropertiesType? openXmlElement)
   {
     return openXmlElement?.Dirty?.Value;
   }
-  
-  public static void SetDirty(DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.TextCharacterPropertiesType? openXmlElement, Boolean? value)
+
+  public static void SetDirty(TextCharacterPropertiesType? openXmlElement, Boolean? value)
   {
     if (openXmlElement != null)
       if (value != null)
@@ -269,16 +286,16 @@ public static class TextCharacterPropertiesTypeConverter
       else
         openXmlElement.Dirty = null;
   }
-  
+
   /// <summary>
-  /// err
+  ///   err
   /// </summary>
-  public static Boolean? GetSpellingError(DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.TextCharacterPropertiesType? openXmlElement)
+  public static Boolean? GetSpellingError(TextCharacterPropertiesType? openXmlElement)
   {
     return openXmlElement?.SpellingError?.Value;
   }
-  
-  public static void SetSpellingError(DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.TextCharacterPropertiesType? openXmlElement, Boolean? value)
+
+  public static void SetSpellingError(TextCharacterPropertiesType? openXmlElement, Boolean? value)
   {
     if (openXmlElement != null)
       if (value != null)
@@ -286,16 +303,16 @@ public static class TextCharacterPropertiesTypeConverter
       else
         openXmlElement.SpellingError = null;
   }
-  
+
   /// <summary>
-  /// smtClean
+  ///   smtClean
   /// </summary>
-  public static Boolean? GetSmartTagClean(DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.TextCharacterPropertiesType? openXmlElement)
+  public static Boolean? GetSmartTagClean(TextCharacterPropertiesType? openXmlElement)
   {
     return openXmlElement?.SmartTagClean?.Value;
   }
-  
-  public static void SetSmartTagClean(DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.TextCharacterPropertiesType? openXmlElement, Boolean? value)
+
+  public static void SetSmartTagClean(TextCharacterPropertiesType? openXmlElement, Boolean? value)
   {
     if (openXmlElement != null)
       if (value != null)
@@ -303,30 +320,30 @@ public static class TextCharacterPropertiesTypeConverter
       else
         openXmlElement.SmartTagClean = null;
   }
-  
+
   /// <summary>
-  /// smtId
+  ///   smtId
   /// </summary>
-  public static UInt32? GetSmartTagId(DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.TextCharacterPropertiesType? openXmlElement)
+  public static UInt32? GetSmartTagId(TextCharacterPropertiesType? openXmlElement)
   {
     return openXmlElement?.SmartTagId?.Value;
   }
-  
-  public static void SetSmartTagId(DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.TextCharacterPropertiesType? openXmlElement, UInt32? value)
+
+  public static void SetSmartTagId(TextCharacterPropertiesType? openXmlElement, UInt32? value)
   {
     if (openXmlElement != null)
       openXmlElement.SmartTagId = value;
   }
-  
+
   /// <summary>
-  /// bmk
+  ///   bmk
   /// </summary>
-  public static String? GetBookmark(DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.TextCharacterPropertiesType? openXmlElement)
+  public static String? GetBookmark(TextCharacterPropertiesType? openXmlElement)
   {
     return openXmlElement?.Bookmark?.Value;
   }
-  
-  public static void SetBookmark(DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.TextCharacterPropertiesType? openXmlElement, String? value)
+
+  public static void SetBookmark(TextCharacterPropertiesType? openXmlElement, String? value)
   {
     if (openXmlElement != null)
       if (value != null)
@@ -334,19 +351,19 @@ public static class TextCharacterPropertiesTypeConverter
       else
         openXmlElement.Bookmark = null;
   }
-  
+
   /// <summary>
-  /// Outline.
+  ///   Outline.
   /// </summary>
-  public static DocumentModel.Drawings.Outline? GetOutline(DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.TextCharacterPropertiesType? openXmlElement)
+  public static Outline? GetOutline(TextCharacterPropertiesType? openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.Outline>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.OutlineConverter.CreateModelElement(itemElement);
+      return OutlineConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetOutline(DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.TextCharacterPropertiesType? openXmlElement, DocumentModel.Drawings.Outline? value)
+
+  public static void SetOutline(TextCharacterPropertiesType? openXmlElement, Outline? value)
   {
     if (openXmlElement != null)
     {
@@ -355,50 +372,50 @@ public static class TextCharacterPropertiesTypeConverter
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Drawings.OutlineConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Outline>(value);
+        itemElement = OutlineConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Outline>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static Boolean? GetNoFill(DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.TextCharacterPropertiesType? openXmlElement)
+
+  public static Boolean? GetNoFill(TextCharacterPropertiesType? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.NoFill>();
+      var itemElement = openXmlElement.GetFirstChild<NoFill>();
       return itemElement != null;
     }
     return null;
   }
-  
-  public static void SetNoFill(DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.TextCharacterPropertiesType? openXmlElement, Boolean? value)
+
+  public static void SetNoFill(TextCharacterPropertiesType? openXmlElement, Boolean? value)
   {
     if (openXmlElement != null)
     {
       if (value == false)
       {
-        var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.NoFill>();
+        var itemElement = openXmlElement.GetFirstChild<NoFill>();
         if (itemElement != null)
           itemElement.Remove();
       }
       if (value == true)
       {
-        var itemElement = new DocumentFormat.OpenXml.Drawing.NoFill();
+        var itemElement = new NoFill();
         openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static DocumentModel.Drawings.SolidFill? GetSolidFill(DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.TextCharacterPropertiesType? openXmlElement)
+
+  public static SolidFill? GetSolidFill(TextCharacterPropertiesType? openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.SolidFill>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.SolidFillConverter.CreateModelElement(itemElement);
+      return SolidFillConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetSolidFill(DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.TextCharacterPropertiesType? openXmlElement, DocumentModel.Drawings.SolidFill? value)
+
+  public static void SetSolidFill(TextCharacterPropertiesType? openXmlElement, SolidFill? value)
   {
     if (openXmlElement != null)
     {
@@ -407,22 +424,22 @@ public static class TextCharacterPropertiesTypeConverter
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Drawings.SolidFillConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.SolidFill>(value);
+        itemElement = SolidFillConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.SolidFill>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static DocumentModel.Drawings.GradientFill? GetGradientFill(DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.TextCharacterPropertiesType? openXmlElement)
+
+  public static GradientFill? GetGradientFill(TextCharacterPropertiesType? openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.GradientFill>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.GradientFillConverter.CreateModelElement(itemElement);
+      return GradientFillConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetGradientFill(DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.TextCharacterPropertiesType? openXmlElement, DocumentModel.Drawings.GradientFill? value)
+
+  public static void SetGradientFill(TextCharacterPropertiesType? openXmlElement, GradientFill? value)
   {
     if (openXmlElement != null)
     {
@@ -431,22 +448,22 @@ public static class TextCharacterPropertiesTypeConverter
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Drawings.GradientFillConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.GradientFill>(value);
+        itemElement = GradientFillConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.GradientFill>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static DocumentModel.Drawings.BlipFill? GetBlipFill(DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.TextCharacterPropertiesType? openXmlElement)
+
+  public static BlipFill? GetBlipFill(TextCharacterPropertiesType? openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.BlipFill>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.BlipFillConverter.CreateModelElement(itemElement);
+      return BlipFillConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetBlipFill(DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.TextCharacterPropertiesType? openXmlElement, DocumentModel.Drawings.BlipFill? value)
+
+  public static void SetBlipFill(TextCharacterPropertiesType? openXmlElement, BlipFill? value)
   {
     if (openXmlElement != null)
     {
@@ -455,22 +472,22 @@ public static class TextCharacterPropertiesTypeConverter
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Drawings.BlipFillConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.BlipFill>(value);
+        itemElement = BlipFillConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.BlipFill>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static DocumentModel.Drawings.PatternFill? GetPatternFill(DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.TextCharacterPropertiesType? openXmlElement)
+
+  public static PatternFill? GetPatternFill(TextCharacterPropertiesType? openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.PatternFill>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.PatternFillConverter.CreateModelElement(itemElement);
+      return PatternFillConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetPatternFill(DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.TextCharacterPropertiesType? openXmlElement, DocumentModel.Drawings.PatternFill? value)
+
+  public static void SetPatternFill(TextCharacterPropertiesType? openXmlElement, PatternFill? value)
   {
     if (openXmlElement != null)
     {
@@ -479,50 +496,50 @@ public static class TextCharacterPropertiesTypeConverter
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Drawings.PatternFillConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.PatternFill>(value);
+        itemElement = PatternFillConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.PatternFill>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static Boolean? GetGroupFill(DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.TextCharacterPropertiesType? openXmlElement)
+
+  public static Boolean? GetGroupFill(TextCharacterPropertiesType? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.GroupFill>();
+      var itemElement = openXmlElement.GetFirstChild<GroupFill>();
       return itemElement != null;
     }
     return null;
   }
-  
-  public static void SetGroupFill(DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.TextCharacterPropertiesType? openXmlElement, Boolean? value)
+
+  public static void SetGroupFill(TextCharacterPropertiesType? openXmlElement, Boolean? value)
   {
     if (openXmlElement != null)
     {
       if (value == false)
       {
-        var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.GroupFill>();
+        var itemElement = openXmlElement.GetFirstChild<GroupFill>();
         if (itemElement != null)
           itemElement.Remove();
       }
       if (value == true)
       {
-        var itemElement = new DocumentFormat.OpenXml.Drawing.GroupFill();
+        var itemElement = new GroupFill();
         openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static DocumentModel.Drawings.EffectList? GetEffectList(DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.TextCharacterPropertiesType? openXmlElement)
+
+  public static EffectList? GetEffectList(TextCharacterPropertiesType? openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.EffectList>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.EffectListConverter.CreateModelElement(itemElement);
+      return EffectListConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetEffectList(DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.TextCharacterPropertiesType? openXmlElement, DocumentModel.Drawings.EffectList? value)
+
+  public static void SetEffectList(TextCharacterPropertiesType? openXmlElement, EffectList? value)
   {
     if (openXmlElement != null)
     {
@@ -531,22 +548,22 @@ public static class TextCharacterPropertiesTypeConverter
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Drawings.EffectListConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.EffectList>(value);
+        itemElement = EffectListConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.EffectList>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static DocumentModel.Drawings.EffectDag? GetEffectDag(DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.TextCharacterPropertiesType? openXmlElement)
+
+  public static EffectDag? GetEffectDag(TextCharacterPropertiesType? openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.EffectDag>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.EffectDagConverter.CreateModelElement(itemElement);
+      return EffectDagConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetEffectDag(DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.TextCharacterPropertiesType? openXmlElement, DocumentModel.Drawings.EffectDag? value)
+
+  public static void SetEffectDag(TextCharacterPropertiesType? openXmlElement, EffectDag? value)
   {
     if (openXmlElement != null)
     {
@@ -555,22 +572,22 @@ public static class TextCharacterPropertiesTypeConverter
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Drawings.EffectDagConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.EffectDag>(value);
+        itemElement = EffectDagConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.EffectDag>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static DocumentModel.Drawings.Highlight? GetHighlight(DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.TextCharacterPropertiesType? openXmlElement)
+
+  public static Highlight? GetHighlight(TextCharacterPropertiesType? openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.Highlight>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.HighlightConverter.CreateModelElement(itemElement);
+      return HighlightConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetHighlight(DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.TextCharacterPropertiesType? openXmlElement, DocumentModel.Drawings.Highlight? value)
+
+  public static void SetHighlight(TextCharacterPropertiesType? openXmlElement, Highlight? value)
   {
     if (openXmlElement != null)
     {
@@ -579,78 +596,78 @@ public static class TextCharacterPropertiesTypeConverter
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Drawings.HighlightConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Highlight>(value);
+        itemElement = HighlightConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Highlight>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static Boolean? GetUnderlineFollowsText(DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.TextCharacterPropertiesType? openXmlElement)
+
+  public static Boolean? GetUnderlineFollowsText(TextCharacterPropertiesType? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.UnderlineFollowsText>();
+      var itemElement = openXmlElement.GetFirstChild<UnderlineFollowsText>();
       return itemElement != null;
     }
     return null;
   }
-  
-  public static void SetUnderlineFollowsText(DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.TextCharacterPropertiesType? openXmlElement, Boolean? value)
+
+  public static void SetUnderlineFollowsText(TextCharacterPropertiesType? openXmlElement, Boolean? value)
   {
     if (openXmlElement != null)
     {
       if (value == false)
       {
-        var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.UnderlineFollowsText>();
+        var itemElement = openXmlElement.GetFirstChild<UnderlineFollowsText>();
         if (itemElement != null)
           itemElement.Remove();
       }
       if (value == true)
       {
-        var itemElement = new DocumentFormat.OpenXml.Drawing.UnderlineFollowsText();
+        var itemElement = new UnderlineFollowsText();
         openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static Boolean? GetUnderlineFillText(DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.TextCharacterPropertiesType? openXmlElement)
+
+  public static Boolean? GetUnderlineFillText(TextCharacterPropertiesType? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.UnderlineFillText>();
+      var itemElement = openXmlElement.GetFirstChild<UnderlineFillText>();
       return itemElement != null;
     }
     return null;
   }
-  
-  public static void SetUnderlineFillText(DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.TextCharacterPropertiesType? openXmlElement, Boolean? value)
+
+  public static void SetUnderlineFillText(TextCharacterPropertiesType? openXmlElement, Boolean? value)
   {
     if (openXmlElement != null)
     {
       if (value == false)
       {
-        var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.UnderlineFillText>();
+        var itemElement = openXmlElement.GetFirstChild<UnderlineFillText>();
         if (itemElement != null)
           itemElement.Remove();
       }
       if (value == true)
       {
-        var itemElement = new DocumentFormat.OpenXml.Drawing.UnderlineFillText();
+        var itemElement = new UnderlineFillText();
         openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static DocumentModel.Drawings.UnderlineFill? GetUnderlineFill(DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.TextCharacterPropertiesType? openXmlElement)
+
+  public static UnderlineFill? GetUnderlineFill(TextCharacterPropertiesType? openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.UnderlineFill>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.UnderlineFillConverter.CreateModelElement(itemElement);
+      return UnderlineFillConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetUnderlineFill(DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.TextCharacterPropertiesType? openXmlElement, DocumentModel.Drawings.UnderlineFill? value)
+
+  public static void SetUnderlineFill(TextCharacterPropertiesType? openXmlElement, UnderlineFill? value)
   {
     if (openXmlElement != null)
     {
@@ -659,118 +676,118 @@ public static class TextCharacterPropertiesTypeConverter
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Drawings.UnderlineFillConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.UnderlineFill>(value);
+        itemElement = UnderlineFillConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.UnderlineFill>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static DocumentModel.Drawings.TextFontType? GetLatinFont(DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.TextCharacterPropertiesType? openXmlElement)
+
+  public static TextFontType? GetLatinFont(TextCharacterPropertiesType? openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.LatinFont>();
+    var itemElement = openXmlElement?.GetFirstChild<LatinFont>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.TextFontTypeConverter.CreateModelElement(itemElement);
+      return TextFontTypeConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetLatinFont(DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.TextCharacterPropertiesType? openXmlElement, DocumentModel.Drawings.TextFontType? value)
+
+  public static void SetLatinFont(TextCharacterPropertiesType? openXmlElement, TextFontType? value)
   {
     if (openXmlElement != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.LatinFont>();
+      var itemElement = openXmlElement.GetFirstChild<LatinFont>();
       if (itemElement != null)
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Drawings.TextFontTypeConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.LatinFont>(value);
+        itemElement = TextFontTypeConverter.CreateOpenXmlElement<LatinFont>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static DocumentModel.Drawings.TextFontType? GetEastAsianFont(DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.TextCharacterPropertiesType? openXmlElement)
+
+  public static TextFontType? GetEastAsianFont(TextCharacterPropertiesType? openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.EastAsianFont>();
+    var itemElement = openXmlElement?.GetFirstChild<EastAsianFont>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.TextFontTypeConverter.CreateModelElement(itemElement);
+      return TextFontTypeConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetEastAsianFont(DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.TextCharacterPropertiesType? openXmlElement, DocumentModel.Drawings.TextFontType? value)
+
+  public static void SetEastAsianFont(TextCharacterPropertiesType? openXmlElement, TextFontType? value)
   {
     if (openXmlElement != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.EastAsianFont>();
+      var itemElement = openXmlElement.GetFirstChild<EastAsianFont>();
       if (itemElement != null)
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Drawings.TextFontTypeConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.EastAsianFont>(value);
+        itemElement = TextFontTypeConverter.CreateOpenXmlElement<EastAsianFont>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static DocumentModel.Drawings.TextFontType? GetComplexScriptFont(DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.TextCharacterPropertiesType? openXmlElement)
+
+  public static TextFontType? GetComplexScriptFont(TextCharacterPropertiesType? openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.ComplexScriptFont>();
+    var itemElement = openXmlElement?.GetFirstChild<ComplexScriptFont>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.TextFontTypeConverter.CreateModelElement(itemElement);
+      return TextFontTypeConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetComplexScriptFont(DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.TextCharacterPropertiesType? openXmlElement, DocumentModel.Drawings.TextFontType? value)
+
+  public static void SetComplexScriptFont(TextCharacterPropertiesType? openXmlElement, TextFontType? value)
   {
     if (openXmlElement != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.ComplexScriptFont>();
+      var itemElement = openXmlElement.GetFirstChild<ComplexScriptFont>();
       if (itemElement != null)
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Drawings.TextFontTypeConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.ComplexScriptFont>(value);
+        itemElement = TextFontTypeConverter.CreateOpenXmlElement<ComplexScriptFont>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static DocumentModel.Drawings.TextFontType? GetSymbolFont(DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.TextCharacterPropertiesType? openXmlElement)
+
+  public static TextFontType? GetSymbolFont(TextCharacterPropertiesType? openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.SymbolFont>();
+    var itemElement = openXmlElement?.GetFirstChild<SymbolFont>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.TextFontTypeConverter.CreateModelElement(itemElement);
+      return TextFontTypeConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetSymbolFont(DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.TextCharacterPropertiesType? openXmlElement, DocumentModel.Drawings.TextFontType? value)
+
+  public static void SetSymbolFont(TextCharacterPropertiesType? openXmlElement, TextFontType? value)
   {
     if (openXmlElement != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.SymbolFont>();
+      var itemElement = openXmlElement.GetFirstChild<SymbolFont>();
       if (itemElement != null)
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Drawings.TextFontTypeConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.SymbolFont>(value);
+        itemElement = TextFontTypeConverter.CreateOpenXmlElement<SymbolFont>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static DocumentModel.Drawings.HyperlinkOnClick? GetHyperlinkOnClick(DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.TextCharacterPropertiesType? openXmlElement)
+
+  public static HyperlinkOnClick? GetHyperlinkOnClick(TextCharacterPropertiesType? openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.HyperlinkOnClick>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.HyperlinkOnClickConverter.CreateModelElement(itemElement);
+      return HyperlinkOnClickConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetHyperlinkOnClick(DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.TextCharacterPropertiesType? openXmlElement, DocumentModel.Drawings.HyperlinkOnClick? value)
+
+  public static void SetHyperlinkOnClick(TextCharacterPropertiesType? openXmlElement, HyperlinkOnClick? value)
   {
     if (openXmlElement != null)
     {
@@ -779,22 +796,22 @@ public static class TextCharacterPropertiesTypeConverter
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Drawings.HyperlinkOnClickConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.HyperlinkOnClick>(value);
+        itemElement = HyperlinkOnClickConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.HyperlinkOnClick>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static DocumentModel.Drawings.HyperlinkOnMouseOver? GetHyperlinkOnMouseOver(DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.TextCharacterPropertiesType? openXmlElement)
+
+  public static HyperlinkOnMouseOver? GetHyperlinkOnMouseOver(TextCharacterPropertiesType? openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.HyperlinkOnMouseOver>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.HyperlinkOnMouseOverConverter.CreateModelElement(itemElement);
+      return HyperlinkOnMouseOverConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetHyperlinkOnMouseOver(DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.TextCharacterPropertiesType? openXmlElement, DocumentModel.Drawings.HyperlinkOnMouseOver? value)
+
+  public static void SetHyperlinkOnMouseOver(TextCharacterPropertiesType? openXmlElement, HyperlinkOnMouseOver? value)
   {
     if (openXmlElement != null)
     {
@@ -803,50 +820,50 @@ public static class TextCharacterPropertiesTypeConverter
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Drawings.HyperlinkOnMouseOverConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.HyperlinkOnMouseOver>(value);
+        itemElement = HyperlinkOnMouseOverConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.HyperlinkOnMouseOver>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static Boolean? GetRightToLeft(DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.TextCharacterPropertiesType? openXmlElement)
+
+  public static Boolean? GetRightToLeft(TextCharacterPropertiesType? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.RightToLeft>();
+      var itemElement = openXmlElement.GetFirstChild<RightToLeft>();
       return itemElement != null;
     }
     return null;
   }
-  
-  public static void SetRightToLeft(DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.TextCharacterPropertiesType? openXmlElement, Boolean? value)
+
+  public static void SetRightToLeft(TextCharacterPropertiesType? openXmlElement, Boolean? value)
   {
     if (openXmlElement != null)
     {
       if (value == false)
       {
-        var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.RightToLeft>();
+        var itemElement = openXmlElement.GetFirstChild<RightToLeft>();
         if (itemElement != null)
           itemElement.Remove();
       }
       if (value == true)
       {
-        var itemElement = new DocumentFormat.OpenXml.Drawing.RightToLeft();
+        var itemElement = new RightToLeft();
         openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static DocumentModel.Drawings.ExtensionList? GetExtensionList(DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.TextCharacterPropertiesType? openXmlElement)
+
+  public static DocumentModel.Drawings.ExtensionList? GetExtensionList(TextCharacterPropertiesType? openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.ExtensionList>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.ExtensionListConverter.CreateModelElement(itemElement);
+      return ExtensionListConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetExtensionList(DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.TextCharacterPropertiesType? openXmlElement, DocumentModel.Drawings.ExtensionList? value)
+
+  public static void SetExtensionList(TextCharacterPropertiesType? openXmlElement, DocumentModel.Drawings.ExtensionList? value)
   {
     if (openXmlElement != null)
     {
@@ -855,14 +872,14 @@ public static class TextCharacterPropertiesTypeConverter
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Drawings.ExtensionListConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.ExtensionList>(value);
+        itemElement = ExtensionListConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.ExtensionList>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static DocumentModel.Drawings.ChartsStyle.TextCharacterPropertiesType? CreateModelElement(DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.TextCharacterPropertiesType? openXmlElement)
+
+  public static DocumentModel.Drawings.ChartsStyle.TextCharacterPropertiesType? CreateModelElement(TextCharacterPropertiesType? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -913,9 +930,9 @@ public static class TextCharacterPropertiesTypeConverter
     }
     return null;
   }
-  
+
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.ChartsStyle.TextCharacterPropertiesType? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.TextCharacterPropertiesType, new()
+    where OpenXmlElementType : TextCharacterPropertiesType, new()
   {
     if (value != null)
     {

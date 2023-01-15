@@ -1,19 +1,22 @@
+using DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing;
+using EntityTypeEnum = DocumentModel.Drawings.ChartDrawings.EntityTypeEnum;
+
 namespace DocumentModel.OpenXml.Drawings.ChartDrawings;
 
 /// <summary>
-/// Defines the GeoHierarchyEntity Class.
+///   Defines the GeoHierarchyEntity Class.
 /// </summary>
 public static class GeoHierarchyEntityConverter
 {
   /// <summary>
-  /// entityName, this property is only available in Office 2016 and later.
+  ///   entityName, this property is only available in Office 2016 and later.
   /// </summary>
-  public static String? GetEntityName(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.GeoHierarchyEntity? openXmlElement)
+  public static String? GetEntityName(GeoHierarchyEntity? openXmlElement)
   {
     return openXmlElement?.EntityName?.Value;
   }
-  
-  public static void SetEntityName(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.GeoHierarchyEntity? openXmlElement, String? value)
+
+  public static void SetEntityName(GeoHierarchyEntity? openXmlElement, String? value)
   {
     if (openXmlElement != null)
       if (value != null)
@@ -21,16 +24,16 @@ public static class GeoHierarchyEntityConverter
       else
         openXmlElement.EntityName = null;
   }
-  
+
   /// <summary>
-  /// entityId, this property is only available in Office 2016 and later.
+  ///   entityId, this property is only available in Office 2016 and later.
   /// </summary>
-  public static String? GetEntityId(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.GeoHierarchyEntity? openXmlElement)
+  public static String? GetEntityId(GeoHierarchyEntity? openXmlElement)
   {
     return openXmlElement?.EntityId?.Value;
   }
-  
-  public static void SetEntityId(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.GeoHierarchyEntity? openXmlElement, String? value)
+
+  public static void SetEntityId(GeoHierarchyEntity? openXmlElement, String? value)
   {
     if (openXmlElement != null)
       if (value != null)
@@ -38,22 +41,22 @@ public static class GeoHierarchyEntityConverter
       else
         openXmlElement.EntityId = null;
   }
-  
+
   /// <summary>
-  /// entityType, this property is only available in Office 2016 and later.
+  ///   entityType, this property is only available in Office 2016 and later.
   /// </summary>
-  public static DocumentModel.Drawings.ChartDrawings.EntityTypeEnum? GetEntityType(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.GeoHierarchyEntity? openXmlElement)
+  public static EntityTypeEnum? GetEntityType(GeoHierarchyEntity? openXmlElement)
   {
-    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.EntityTypeEnum, DocumentModel.Drawings.ChartDrawings.EntityTypeEnum>(openXmlElement?.EntityType?.Value);
+    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.EntityTypeEnum, EntityTypeEnum>(openXmlElement?.EntityType?.Value);
   }
-  
-  public static void SetEntityType(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.GeoHierarchyEntity? openXmlElement, DocumentModel.Drawings.ChartDrawings.EntityTypeEnum? value)
+
+  public static void SetEntityType(GeoHierarchyEntity? openXmlElement, EntityTypeEnum? value)
   {
     if (openXmlElement != null)
-      openXmlElement.EntityType = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.EntityTypeEnum, DocumentModel.Drawings.ChartDrawings.EntityTypeEnum>(value);
+      openXmlElement.EntityType = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.EntityTypeEnum, EntityTypeEnum>(value);
   }
-  
-  public static DocumentModel.Drawings.ChartDrawings.GeoHierarchyEntity? CreateModelElement(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.GeoHierarchyEntity? openXmlElement)
+
+  public static DocumentModel.Drawings.ChartDrawings.GeoHierarchyEntity? CreateModelElement(GeoHierarchyEntity? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -65,9 +68,9 @@ public static class GeoHierarchyEntityConverter
     }
     return null;
   }
-  
+
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.ChartDrawings.GeoHierarchyEntity? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.GeoHierarchyEntity, new()
+    where OpenXmlElementType : GeoHierarchyEntity, new()
   {
     if (value != null)
     {

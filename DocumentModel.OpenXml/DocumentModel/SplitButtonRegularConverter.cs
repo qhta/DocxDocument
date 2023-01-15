@@ -1,18 +1,18 @@
 namespace DocumentModel.OpenXml;
 
 /// <summary>
-/// Defines the SplitButtonRegular Class.
+///   Defines the SplitButtonRegular Class.
 /// </summary>
 public static class SplitButtonRegularConverter
 {
   /// <summary>
-  /// enabled, this property is only available in Office 2010 and later.
+  ///   enabled, this property is only available in Office 2010 and later.
   /// </summary>
   public static Boolean? GetEnabled(DocumentFormat.OpenXml.Office2010.CustomUI.SplitButtonRegular? openXmlElement)
   {
     return openXmlElement?.Enabled?.Value;
   }
-  
+
   public static void SetEnabled(DocumentFormat.OpenXml.Office2010.CustomUI.SplitButtonRegular? openXmlElement, Boolean? value)
   {
     if (openXmlElement != null)
@@ -21,15 +21,15 @@ public static class SplitButtonRegularConverter
       else
         openXmlElement.Enabled = null;
   }
-  
+
   /// <summary>
-  /// getEnabled, this property is only available in Office 2010 and later.
+  ///   getEnabled, this property is only available in Office 2010 and later.
   /// </summary>
   public static String? GetGetEnabled(DocumentFormat.OpenXml.Office2010.CustomUI.SplitButtonRegular? openXmlElement)
   {
     return openXmlElement?.GetEnabled?.Value;
   }
-  
+
   public static void SetGetEnabled(DocumentFormat.OpenXml.Office2010.CustomUI.SplitButtonRegular? openXmlElement, String? value)
   {
     if (openXmlElement != null)
@@ -38,15 +38,15 @@ public static class SplitButtonRegularConverter
       else
         openXmlElement.GetEnabled = null;
   }
-  
+
   /// <summary>
-  /// id, this property is only available in Office 2010 and later.
+  ///   id, this property is only available in Office 2010 and later.
   /// </summary>
   public static String? GetId(DocumentFormat.OpenXml.Office2010.CustomUI.SplitButtonRegular? openXmlElement)
   {
     return openXmlElement?.Id?.Value;
   }
-  
+
   public static void SetId(DocumentFormat.OpenXml.Office2010.CustomUI.SplitButtonRegular? openXmlElement, String? value)
   {
     if (openXmlElement != null)
@@ -55,15 +55,15 @@ public static class SplitButtonRegularConverter
       else
         openXmlElement.Id = null;
   }
-  
+
   /// <summary>
-  /// idQ, this property is only available in Office 2010 and later.
+  ///   idQ, this property is only available in Office 2010 and later.
   /// </summary>
   public static String? GetQualifiedId(DocumentFormat.OpenXml.Office2010.CustomUI.SplitButtonRegular? openXmlElement)
   {
     return openXmlElement?.QualifiedId?.Value;
   }
-  
+
   public static void SetQualifiedId(DocumentFormat.OpenXml.Office2010.CustomUI.SplitButtonRegular? openXmlElement, String? value)
   {
     if (openXmlElement != null)
@@ -72,15 +72,15 @@ public static class SplitButtonRegularConverter
       else
         openXmlElement.QualifiedId = null;
   }
-  
+
   /// <summary>
-  /// tag, this property is only available in Office 2010 and later.
+  ///   tag, this property is only available in Office 2010 and later.
   /// </summary>
   public static String? GetTag(DocumentFormat.OpenXml.Office2010.CustomUI.SplitButtonRegular? openXmlElement)
   {
     return openXmlElement?.Tag?.Value;
   }
-  
+
   public static void SetTag(DocumentFormat.OpenXml.Office2010.CustomUI.SplitButtonRegular? openXmlElement, String? value)
   {
     if (openXmlElement != null)
@@ -89,15 +89,15 @@ public static class SplitButtonRegularConverter
       else
         openXmlElement.Tag = null;
   }
-  
+
   /// <summary>
-  /// idMso, this property is only available in Office 2010 and later.
+  ///   idMso, this property is only available in Office 2010 and later.
   /// </summary>
   public static String? GetIdMso(DocumentFormat.OpenXml.Office2010.CustomUI.SplitButtonRegular? openXmlElement)
   {
     return openXmlElement?.IdMso?.Value;
   }
-  
+
   public static void SetIdMso(DocumentFormat.OpenXml.Office2010.CustomUI.SplitButtonRegular? openXmlElement, String? value)
   {
     if (openXmlElement != null)
@@ -106,15 +106,15 @@ public static class SplitButtonRegularConverter
       else
         openXmlElement.IdMso = null;
   }
-  
+
   /// <summary>
-  /// insertAfterMso, this property is only available in Office 2010 and later.
+  ///   insertAfterMso, this property is only available in Office 2010 and later.
   /// </summary>
   public static String? GetInsertAfterMso(DocumentFormat.OpenXml.Office2010.CustomUI.SplitButtonRegular? openXmlElement)
   {
     return openXmlElement?.InsertAfterMso?.Value;
   }
-  
+
   public static void SetInsertAfterMso(DocumentFormat.OpenXml.Office2010.CustomUI.SplitButtonRegular? openXmlElement, String? value)
   {
     if (openXmlElement != null)
@@ -123,15 +123,15 @@ public static class SplitButtonRegularConverter
       else
         openXmlElement.InsertAfterMso = null;
   }
-  
+
   /// <summary>
-  /// insertBeforeMso, this property is only available in Office 2010 and later.
+  ///   insertBeforeMso, this property is only available in Office 2010 and later.
   /// </summary>
   public static String? GetInsertBeforeMso(DocumentFormat.OpenXml.Office2010.CustomUI.SplitButtonRegular? openXmlElement)
   {
     return openXmlElement?.InsertBeforeMso?.Value;
   }
-  
+
   public static void SetInsertBeforeMso(DocumentFormat.OpenXml.Office2010.CustomUI.SplitButtonRegular? openXmlElement, String? value)
   {
     if (openXmlElement != null)
@@ -140,15 +140,15 @@ public static class SplitButtonRegularConverter
       else
         openXmlElement.InsertBeforeMso = null;
   }
-  
+
   /// <summary>
-  /// insertAfterQ, this property is only available in Office 2010 and later.
+  ///   insertAfterQ, this property is only available in Office 2010 and later.
   /// </summary>
   public static String? GetInsertAfterQulifiedId(DocumentFormat.OpenXml.Office2010.CustomUI.SplitButtonRegular? openXmlElement)
   {
     return openXmlElement?.InsertAfterQulifiedId?.Value;
   }
-  
+
   public static void SetInsertAfterQulifiedId(DocumentFormat.OpenXml.Office2010.CustomUI.SplitButtonRegular? openXmlElement, String? value)
   {
     if (openXmlElement != null)
@@ -157,15 +157,15 @@ public static class SplitButtonRegularConverter
       else
         openXmlElement.InsertAfterQulifiedId = null;
   }
-  
+
   /// <summary>
-  /// insertBeforeQ, this property is only available in Office 2010 and later.
+  ///   insertBeforeQ, this property is only available in Office 2010 and later.
   /// </summary>
   public static String? GetInsertBeforeQulifiedId(DocumentFormat.OpenXml.Office2010.CustomUI.SplitButtonRegular? openXmlElement)
   {
     return openXmlElement?.InsertBeforeQulifiedId?.Value;
   }
-  
+
   public static void SetInsertBeforeQulifiedId(DocumentFormat.OpenXml.Office2010.CustomUI.SplitButtonRegular? openXmlElement, String? value)
   {
     if (openXmlElement != null)
@@ -174,15 +174,15 @@ public static class SplitButtonRegularConverter
       else
         openXmlElement.InsertBeforeQulifiedId = null;
   }
-  
+
   /// <summary>
-  /// visible, this property is only available in Office 2010 and later.
+  ///   visible, this property is only available in Office 2010 and later.
   /// </summary>
   public static Boolean? GetVisible(DocumentFormat.OpenXml.Office2010.CustomUI.SplitButtonRegular? openXmlElement)
   {
     return openXmlElement?.Visible?.Value;
   }
-  
+
   public static void SetVisible(DocumentFormat.OpenXml.Office2010.CustomUI.SplitButtonRegular? openXmlElement, Boolean? value)
   {
     if (openXmlElement != null)
@@ -191,15 +191,15 @@ public static class SplitButtonRegularConverter
       else
         openXmlElement.Visible = null;
   }
-  
+
   /// <summary>
-  /// getVisible, this property is only available in Office 2010 and later.
+  ///   getVisible, this property is only available in Office 2010 and later.
   /// </summary>
   public static String? GetGetVisible(DocumentFormat.OpenXml.Office2010.CustomUI.SplitButtonRegular? openXmlElement)
   {
     return openXmlElement?.GetVisible?.Value;
   }
-  
+
   public static void SetGetVisible(DocumentFormat.OpenXml.Office2010.CustomUI.SplitButtonRegular? openXmlElement, String? value)
   {
     if (openXmlElement != null)
@@ -208,15 +208,15 @@ public static class SplitButtonRegularConverter
       else
         openXmlElement.GetVisible = null;
   }
-  
+
   /// <summary>
-  /// keytip, this property is only available in Office 2010 and later.
+  ///   keytip, this property is only available in Office 2010 and later.
   /// </summary>
   public static String? GetKeytip(DocumentFormat.OpenXml.Office2010.CustomUI.SplitButtonRegular? openXmlElement)
   {
     return openXmlElement?.Keytip?.Value;
   }
-  
+
   public static void SetKeytip(DocumentFormat.OpenXml.Office2010.CustomUI.SplitButtonRegular? openXmlElement, String? value)
   {
     if (openXmlElement != null)
@@ -225,15 +225,15 @@ public static class SplitButtonRegularConverter
       else
         openXmlElement.Keytip = null;
   }
-  
+
   /// <summary>
-  /// getKeytip, this property is only available in Office 2010 and later.
+  ///   getKeytip, this property is only available in Office 2010 and later.
   /// </summary>
   public static String? GetGetKeytip(DocumentFormat.OpenXml.Office2010.CustomUI.SplitButtonRegular? openXmlElement)
   {
     return openXmlElement?.GetKeytip?.Value;
   }
-  
+
   public static void SetGetKeytip(DocumentFormat.OpenXml.Office2010.CustomUI.SplitButtonRegular? openXmlElement, String? value)
   {
     if (openXmlElement != null)
@@ -242,15 +242,15 @@ public static class SplitButtonRegularConverter
       else
         openXmlElement.GetKeytip = null;
   }
-  
+
   /// <summary>
-  /// showLabel, this property is only available in Office 2010 and later.
+  ///   showLabel, this property is only available in Office 2010 and later.
   /// </summary>
   public static Boolean? GetShowLabel(DocumentFormat.OpenXml.Office2010.CustomUI.SplitButtonRegular? openXmlElement)
   {
     return openXmlElement?.ShowLabel?.Value;
   }
-  
+
   public static void SetShowLabel(DocumentFormat.OpenXml.Office2010.CustomUI.SplitButtonRegular? openXmlElement, Boolean? value)
   {
     if (openXmlElement != null)
@@ -259,15 +259,15 @@ public static class SplitButtonRegularConverter
       else
         openXmlElement.ShowLabel = null;
   }
-  
+
   /// <summary>
-  /// getShowLabel, this property is only available in Office 2010 and later.
+  ///   getShowLabel, this property is only available in Office 2010 and later.
   /// </summary>
   public static String? GetGetShowLabel(DocumentFormat.OpenXml.Office2010.CustomUI.SplitButtonRegular? openXmlElement)
   {
     return openXmlElement?.GetShowLabel?.Value;
   }
-  
+
   public static void SetGetShowLabel(DocumentFormat.OpenXml.Office2010.CustomUI.SplitButtonRegular? openXmlElement, String? value)
   {
     if (openXmlElement != null)
@@ -276,16 +276,16 @@ public static class SplitButtonRegularConverter
       else
         openXmlElement.GetShowLabel = null;
   }
-  
-  public static DocumentModel.VisibleButton? GetVisibleButton(DocumentFormat.OpenXml.Office2010.CustomUI.SplitButtonRegular? openXmlElement)
+
+  public static VisibleButton? GetVisibleButton(DocumentFormat.OpenXml.Office2010.CustomUI.SplitButtonRegular? openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office2010.CustomUI.VisibleButton>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.VisibleButtonConverter.CreateModelElement(itemElement);
+      return VisibleButtonConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetVisibleButton(DocumentFormat.OpenXml.Office2010.CustomUI.SplitButtonRegular? openXmlElement, DocumentModel.VisibleButton? value)
+
+  public static void SetVisibleButton(DocumentFormat.OpenXml.Office2010.CustomUI.SplitButtonRegular? openXmlElement, VisibleButton? value)
   {
     if (openXmlElement != null)
     {
@@ -294,22 +294,22 @@ public static class SplitButtonRegularConverter
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.VisibleButtonConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2010.CustomUI.VisibleButton>(value);
+        itemElement = VisibleButtonConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2010.CustomUI.VisibleButton>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static DocumentModel.VisibleToggleButton? GetVisibleToggleButton(DocumentFormat.OpenXml.Office2010.CustomUI.SplitButtonRegular? openXmlElement)
+
+  public static VisibleToggleButton? GetVisibleToggleButton(DocumentFormat.OpenXml.Office2010.CustomUI.SplitButtonRegular? openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office2010.CustomUI.VisibleToggleButton>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.VisibleToggleButtonConverter.CreateModelElement(itemElement);
+      return VisibleToggleButtonConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetVisibleToggleButton(DocumentFormat.OpenXml.Office2010.CustomUI.SplitButtonRegular? openXmlElement, DocumentModel.VisibleToggleButton? value)
+
+  public static void SetVisibleToggleButton(DocumentFormat.OpenXml.Office2010.CustomUI.SplitButtonRegular? openXmlElement, VisibleToggleButton? value)
   {
     if (openXmlElement != null)
     {
@@ -318,22 +318,22 @@ public static class SplitButtonRegularConverter
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.VisibleToggleButtonConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2010.CustomUI.VisibleToggleButton>(value);
+        itemElement = VisibleToggleButtonConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2010.CustomUI.VisibleToggleButton>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static DocumentModel.MenuRegular? GetMenuRegular(DocumentFormat.OpenXml.Office2010.CustomUI.SplitButtonRegular? openXmlElement)
+
+  public static MenuRegular? GetMenuRegular(DocumentFormat.OpenXml.Office2010.CustomUI.SplitButtonRegular? openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office2010.CustomUI.MenuRegular>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.MenuRegularConverter.CreateModelElement(itemElement);
+      return MenuRegularConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetMenuRegular(DocumentFormat.OpenXml.Office2010.CustomUI.SplitButtonRegular? openXmlElement, DocumentModel.MenuRegular? value)
+
+  public static void SetMenuRegular(DocumentFormat.OpenXml.Office2010.CustomUI.SplitButtonRegular? openXmlElement, MenuRegular? value)
   {
     if (openXmlElement != null)
     {
@@ -342,18 +342,18 @@ public static class SplitButtonRegularConverter
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.MenuRegularConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2010.CustomUI.MenuRegular>(value);
+        itemElement = MenuRegularConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2010.CustomUI.MenuRegular>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static DocumentModel.SplitButtonRegular? CreateModelElement(DocumentFormat.OpenXml.Office2010.CustomUI.SplitButtonRegular? openXmlElement)
+
+  public static SplitButtonRegular? CreateModelElement(DocumentFormat.OpenXml.Office2010.CustomUI.SplitButtonRegular? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.SplitButtonRegular();
+      var value = new SplitButtonRegular();
       value.Enabled = GetEnabled(openXmlElement);
       value.GetEnabled = GetGetEnabled(openXmlElement);
       value.Id = GetId(openXmlElement);
@@ -377,9 +377,9 @@ public static class SplitButtonRegularConverter
     }
     return null;
   }
-  
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.SplitButtonRegular? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Office2010.CustomUI.SplitButtonRegular, new()
+
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(SplitButtonRegular? value)
+    where OpenXmlElementType : DocumentFormat.OpenXml.Office2010.CustomUI.SplitButtonRegular, new()
   {
     if (value != null)
     {

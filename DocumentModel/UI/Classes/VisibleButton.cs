@@ -1,148 +1,147 @@
 namespace DocumentModel.UI;
 
 /// <summary>
-/// Defines the VisibleButton Class.
+///   Defines the VisibleButton Class.
 /// </summary>
-public partial class VisibleButton
+public class VisibleButton
 {
   /// <summary>
-  /// onAction
+  ///   onAction
   /// </summary>
   public String? OnAction { get; set; }
-  
+
   /// <summary>
-  /// enabled
+  ///   enabled
   /// </summary>
   public Boolean? Enabled { get; set; }
-  
+
   /// <summary>
-  /// getEnabled
+  ///   getEnabled
   /// </summary>
   public String? GetEnabled { get; set; }
-  
+
   /// <summary>
-  /// description
+  ///   description
   /// </summary>
   public String? Description { get; set; }
-  
+
   /// <summary>
-  /// getDescription
+  ///   getDescription
   /// </summary>
   public String? GetDescription { get; set; }
-  
+
   /// <summary>
-  /// image
+  ///   image
   /// </summary>
   public String? Image { get; set; }
-  
+
   /// <summary>
-  /// imageMso
+  ///   imageMso
   /// </summary>
   public String? ImageMso { get; set; }
-  
+
   /// <summary>
-  /// getImage
+  ///   getImage
   /// </summary>
   public String? GetImage { get; set; }
-  
+
   /// <summary>
-  /// id
+  ///   id
   /// </summary>
   public String? Id { get; set; }
-  
+
   /// <summary>
-  /// idQ
+  ///   idQ
   /// </summary>
   public String? IdQ { get; set; }
-  
+
   /// <summary>
-  /// idMso
+  ///   idMso
   /// </summary>
   public String? IdMso { get; set; }
-  
+
   /// <summary>
-  /// tag
+  ///   tag
   /// </summary>
   public String? Tag { get; set; }
-  
+
   /// <summary>
-  /// screentip
+  ///   screentip
   /// </summary>
   public String? Screentip { get; set; }
-  
+
   /// <summary>
-  /// getScreentip
+  ///   getScreentip
   /// </summary>
   public String? GetScreentip { get; set; }
-  
+
   /// <summary>
-  /// supertip
+  ///   supertip
   /// </summary>
   public String? Supertip { get; set; }
-  
+
   /// <summary>
-  /// getSupertip
+  ///   getSupertip
   /// </summary>
   public String? GetSupertip { get; set; }
-  
+
   /// <summary>
-  /// label
+  ///   label
   /// </summary>
   public String? Label { get; set; }
-  
+
   /// <summary>
-  /// getLabel
+  ///   getLabel
   /// </summary>
   public String? GetLabel { get; set; }
-  
+
   /// <summary>
-  /// insertAfterMso
+  ///   insertAfterMso
   /// </summary>
   public String? InsertAfterMso { get; set; }
-  
+
   /// <summary>
-  /// insertBeforeMso
+  ///   insertBeforeMso
   /// </summary>
   public String? InsertBeforeMso { get; set; }
-  
+
   /// <summary>
-  /// insertAfterQ
+  ///   insertAfterQ
   /// </summary>
   public String? InsertAfterQ { get; set; }
-  
+
   /// <summary>
-  /// insertBeforeQ
+  ///   insertBeforeQ
   /// </summary>
   public String? InsertBeforeQ { get; set; }
-  
+
   /// <summary>
-  /// keytip
+  ///   keytip
   /// </summary>
   public String? Keytip { get; set; }
-  
+
   /// <summary>
-  /// getKeytip
+  ///   getKeytip
   /// </summary>
   public String? GetKeytip { get; set; }
-  
+
   /// <summary>
-  /// showLabel
+  ///   showLabel
   /// </summary>
   public Boolean? ShowLabel { get; set; }
-  
+
   /// <summary>
-  /// getShowLabel
+  ///   getShowLabel
   /// </summary>
   public String? GetShowLabel { get; set; }
-  
+
   /// <summary>
-  /// showImage
+  ///   showImage
   /// </summary>
   public Boolean? ShowImage { get; set; }
-  
+
   /// <summary>
-  /// getShowImage
+  ///   getShowImage
   /// </summary>
   public String? GetShowImage { get; set; }
-  
 }

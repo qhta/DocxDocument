@@ -1,15 +1,14 @@
 namespace DocumentModel.Drawings.Charts;
 
 /// <summary>
-/// Defines the Line3DChartExtension Class.
+///   Defines the Line3DChartExtension Class.
 /// </summary>
-public partial class Line3DChartExtension
+public class Line3DChartExtension
 {
   /// <summary>
-  /// URI
+  ///   URI
   /// </summary>
   public String? Uri { get; set; }
-  
-  public DocumentModel.Drawings.Charts.FilteredLineSeriesExtension? FilteredLineSeriesExtension { get; set; }
-  
+
+  public FilteredLineSeriesExtension? FilteredLineSeriesExtension { get; set; }
 }

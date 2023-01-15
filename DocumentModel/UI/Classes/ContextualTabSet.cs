@@ -1,25 +1,24 @@
 namespace DocumentModel.UI;
 
 /// <summary>
-/// Defines the ContextualTabSet Class.
+///   Defines the ContextualTabSet Class.
 /// </summary>
-public partial class ContextualTabSet
+public class ContextualTabSet
 {
   /// <summary>
-  /// idMso
+  ///   idMso
   /// </summary>
   public String? IdMso { get; set; }
-  
+
   /// <summary>
-  /// visible
+  ///   visible
   /// </summary>
   public Boolean? Visible { get; set; }
-  
+
   /// <summary>
-  /// getVisible
+  ///   getVisible
   /// </summary>
   public String? GetVisible { get; set; }
-  
-  public Collection<DocumentModel.UI.Tab>? Tabs { get; set; }
-  
+
+  public Collection<Tab>? Tabs { get; set; }
 }

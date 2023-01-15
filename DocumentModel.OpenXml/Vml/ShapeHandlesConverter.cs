@@ -1,18 +1,21 @@
+using DocumentModel.Vml;
+using ShapeHandles = DocumentFormat.OpenXml.Vml.ShapeHandles;
+
 namespace DocumentModel.OpenXml.Vml;
 
 /// <summary>
-/// Defines the ShapeHandles Class.
+///   Defines the ShapeHandles Class.
 /// </summary>
 public static class ShapeHandlesConverter
 {
-  public static System.Collections.ObjectModel.Collection<DocumentModel.Vml.ShapeHandle>? GetItems(DocumentFormat.OpenXml.Vml.ShapeHandles? openXmlElement)
+  public static Collection<ShapeHandle>? GetItems(ShapeHandles? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var collection = new System.Collections.ObjectModel.Collection<DocumentModel.Vml.ShapeHandle>();
+      var collection = new Collection<ShapeHandle>();
       foreach (var item in openXmlElement.Elements<DocumentFormat.OpenXml.Vml.ShapeHandle>())
       {
-        var newItem = DocumentModel.OpenXml.Vml.ShapeHandleConverter.CreateModelElement(item);
+        var newItem = ShapeHandleConverter.CreateModelElement(item);
         if (newItem != null)
           collection.Add(newItem);
       }
@@ -20,25 +23,23 @@ public static class ShapeHandlesConverter
     }
     return null;
   }
-  
-  public static void SetItems(DocumentFormat.OpenXml.Vml.ShapeHandles? openXmlElement, System.Collections.ObjectModel.Collection<DocumentModel.Vml.ShapeHandle>? value)
+
+  public static void SetItems(ShapeHandles? openXmlElement, Collection<ShapeHandle>? value)
   {
     if (openXmlElement != null)
     {
       openXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Vml.ShapeHandle>();
       if (value != null)
-      {
         foreach (var item in value)
         {
-          var newItem = DocumentModel.OpenXml.Vml.ShapeHandleConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Vml.ShapeHandle>(item);
+          var newItem = ShapeHandleConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Vml.ShapeHandle>(item);
           if (newItem != null)
             openXmlElement.AddChild(newItem);
         }
-      }
     }
   }
-  
-  public static DocumentModel.Vml.ShapeHandles? CreateModelElement(DocumentFormat.OpenXml.Vml.ShapeHandles? openXmlElement)
+
+  public static DocumentModel.Vml.ShapeHandles? CreateModelElement(ShapeHandles? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -48,9 +49,9 @@ public static class ShapeHandlesConverter
     }
     return null;
   }
-  
+
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Vml.ShapeHandles? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Vml.ShapeHandles, new()
+    where OpenXmlElementType : ShapeHandles, new()
   {
     if (value != null)
     {

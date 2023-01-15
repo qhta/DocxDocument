@@ -1,43 +1,42 @@
 namespace DocumentModel.Drawings.Charts;
 
 /// <summary>
-/// Defines the CategoryFilterException Class.
+///   Defines the CategoryFilterException Class.
 /// </summary>
-public partial class CategoryFilterException
+public class CategoryFilterException
 {
   /// <summary>
-  /// SequenceOfReferences.
+  ///   SequenceOfReferences.
   /// </summary>
   public String? SequenceOfReferences { get; set; }
-  
+
   /// <summary>
-  /// ShapeProperties.
+  ///   ShapeProperties.
   /// </summary>
-  public DocumentModel.Drawings.Charts.ShapeProperties3? ShapeProperties { get; set; }
-  
+  public ShapeProperties3? ShapeProperties { get; set; }
+
   /// <summary>
-  /// Explosion.
+  ///   Explosion.
   /// </summary>
   public UInt32? Explosion { get; set; }
-  
+
   /// <summary>
-  /// InvertIfNegativeBoolean.
+  ///   InvertIfNegativeBoolean.
   /// </summary>
   public Boolean? InvertIfNegativeBoolean { get; set; }
-  
+
   /// <summary>
-  /// Bubble3D.
+  ///   Bubble3D.
   /// </summary>
   public Boolean? Bubble3D { get; set; }
-  
+
   /// <summary>
-  /// Marker.
+  ///   Marker.
   /// </summary>
-  public DocumentModel.Drawings.Charts.Marker3? Marker { get; set; }
-  
+  public Marker3? Marker { get; set; }
+
   /// <summary>
-  /// DataLabel.
+  ///   DataLabel.
   /// </summary>
-  public DocumentModel.Drawings.Charts.DataLabel3? DataLabel { get; set; }
-  
+  public DataLabel3? DataLabel { get; set; }
 }

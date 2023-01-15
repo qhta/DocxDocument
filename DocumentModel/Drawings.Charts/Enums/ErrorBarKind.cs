@@ -1,23 +1,22 @@
 namespace DocumentModel.Drawings.Charts;
 
 /// <summary>
-/// Error Bar Type
+///   Error Bar Type
 /// </summary>
 public enum ErrorBarKind
 {
   /// <summary>
-  /// Both.
+  ///   Both.
   /// </summary>
   Both,
-  
+
   /// <summary>
-  /// Minus.
+  ///   Minus.
   /// </summary>
   Minus,
-  
+
   /// <summary>
-  /// Plus.
+  ///   Plus.
   /// </summary>
-  Plus,
-  
+  Plus
 }

@@ -1,88 +1,87 @@
 namespace DocumentModel.Wordprocessing;
 
 /// <summary>
-/// Defines the StrictCharacterSet enumeration.
+///   Defines the StrictCharacterSet enumeration.
 /// </summary>
 public enum StrictCharacterSet
 {
   /// <summary>
-  /// iso-8859-1.
+  ///   iso-8859-1.
   /// </summary>
   chsAnsi,
-  
+
   /// <summary>
-  /// macintosh.
+  ///   macintosh.
   /// </summary>
   chsMacFfn,
-  
+
   /// <summary>
-  /// shift_jis.
+  ///   shift_jis.
   /// </summary>
   chsShiftJIS,
-  
+
   /// <summary>
-  /// ks_c-5601-1987.
+  ///   ks_c-5601-1987.
   /// </summary>
   chsHangeul,
-  
+
   /// <summary>
-  /// KS_C-5601-1992.
+  ///   KS_C-5601-1992.
   /// </summary>
   chsJohab,
-  
+
   /// <summary>
-  /// GBK.
+  ///   GBK.
   /// </summary>
   chsGB2312,
-  
+
   /// <summary>
-  /// Big5.
+  ///   Big5.
   /// </summary>
   chsChinese5,
-  
+
   /// <summary>
-  /// windows-1253.
+  ///   windows-1253.
   /// </summary>
   chsGreek,
-  
+
   /// <summary>
-  /// iso-8859-9.
+  ///   iso-8859-9.
   /// </summary>
   chsTurkish,
-  
+
   /// <summary>
-  /// windows-1258.
+  ///   windows-1258.
   /// </summary>
   chsVietnamese,
-  
+
   /// <summary>
-  /// windows-1255.
+  ///   windows-1255.
   /// </summary>
   chsHebrew,
-  
+
   /// <summary>
-  /// windows-1256.
+  ///   windows-1256.
   /// </summary>
   chsArabic,
-  
+
   /// <summary>
-  /// windows-1257.
+  ///   windows-1257.
   /// </summary>
   chsBaltic,
-  
+
   /// <summary>
-  /// windows-1251.
+  ///   windows-1251.
   /// </summary>
   chsRussian,
-  
+
   /// <summary>
-  /// windows-874.
+  ///   windows-874.
   /// </summary>
   chsThai,
-  
+
   /// <summary>
-  /// windows-1250.
+  ///   windows-1250.
   /// </summary>
-  chsEastEurope,
-  
+  chsEastEurope
 }

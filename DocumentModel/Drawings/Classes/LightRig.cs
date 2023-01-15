@@ -1,23 +1,22 @@
 namespace DocumentModel.Drawings;
 
 /// <summary>
-/// Light Rig.
+///   Light Rig.
 /// </summary>
-public partial class LightRig
+public class LightRig
 {
   /// <summary>
-  /// Rig Preset
+  ///   Rig Preset
   /// </summary>
-  public DocumentModel.Drawings.LightRigKind? Rig { get; set; }
-  
+  public LightRigKind? Rig { get; set; }
+
   /// <summary>
-  /// Direction
+  ///   Direction
   /// </summary>
-  public DocumentModel.Drawings.LightRigDirectionKind? Direction { get; set; }
-  
+  public LightRigDirectionKind? Direction { get; set; }
+
   /// <summary>
-  /// Rotation.
+  ///   Rotation.
   /// </summary>
-  public DocumentModel.Drawings.Rotation? Rotation { get; set; }
-  
+  public Rotation? Rotation { get; set; }
 }

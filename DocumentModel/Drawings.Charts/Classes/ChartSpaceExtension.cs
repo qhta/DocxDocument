@@ -1,19 +1,18 @@
 namespace DocumentModel.Drawings.Charts;
 
 /// <summary>
-/// Defines the ChartSpaceExtension Class.
+///   Defines the ChartSpaceExtension Class.
 /// </summary>
-public partial class ChartSpaceExtension
+public class ChartSpaceExtension
 {
   /// <summary>
-  /// URI
+  ///   URI
   /// </summary>
   public String? Uri { get; set; }
-  
-  public DocumentModel.Drawings.Charts.PivotOptions? PivotOptions { get; set; }
-  
-  public DocumentModel.Drawings.Charts.SketchOptions? SketchOptions { get; set; }
-  
-  public DocumentModel.Drawings.Charts.PivotSource3? PivotSource { get; set; }
-  
+
+  public PivotOptions? PivotOptions { get; set; }
+
+  public SketchOptions? SketchOptions { get; set; }
+
+  public PivotSource3? PivotSource { get; set; }
 }

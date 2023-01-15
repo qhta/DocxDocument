@@ -1,23 +1,22 @@
 namespace DocumentModel.Math;
 
 /// <summary>
-/// Upper-Limit Function.
+///   Upper-Limit Function.
 /// </summary>
-public partial class LimitUpper
+public class LimitUpper
 {
   /// <summary>
-  /// Upper Limit Properties.
+  ///   Upper Limit Properties.
   /// </summary>
-  public DocumentModel.Math.LimitUpperProperties? LimitUpperProperties { get; set; }
-  
+  public LimitUpperProperties? LimitUpperProperties { get; set; }
+
   /// <summary>
-  /// Base.
+  ///   Base.
   /// </summary>
-  public DocumentModel.Math.Base? Base { get; set; }
-  
+  public Base? Base { get; set; }
+
   /// <summary>
-  /// Limit (Upper).
+  ///   Limit (Upper).
   /// </summary>
-  public DocumentModel.Math.Limit? Limit { get; set; }
-  
+  public Limit? Limit { get; set; }
 }

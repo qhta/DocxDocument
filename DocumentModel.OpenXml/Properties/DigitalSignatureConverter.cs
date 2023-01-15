@@ -1,19 +1,20 @@
 namespace DocumentModel.OpenXml.Properties;
 
 /// <summary>
-/// Digital Signature.
+///   Digital Signature.
 /// </summary>
 public static class DigitalSignatureConverter
 {
   /// <summary>
-  /// Binary Blob.
+  ///   Binary Blob.
   /// </summary>
   public static byte[]? GetVTBlob(DocumentFormat.OpenXml.ExtendedProperties.DigitalSignature? openXmlElement)
   {
-    if (openXmlElement?.VTBlob?.Text!=null)
+    if (openXmlElement?.VTBlob?.Text != null)
       return Convert.FromBase64String(openXmlElement.VTBlob.Text);
     return null;
   }
+
   public static void SetVTBlob(DocumentFormat.OpenXml.ExtendedProperties.DigitalSignature? openXmlElement, byte[]? value)
   {
     if (openXmlElement?.VTBlob != null)
@@ -26,10 +27,10 @@ public static class DigitalSignatureConverter
     else
     {
       if (value != null)
-        openXmlElement?.AddChild(new DocumentFormat.OpenXml.VariantTypes.VTBlob() {Text = Convert.ToBase64String(value) });
+        openXmlElement?.AddChild(new VTBlob { Text = Convert.ToBase64String(value) });
     }
   }
-  
+
   public static DocumentModel.Properties.DigitalSignature? CreateModelElement(DocumentFormat.OpenXml.ExtendedProperties.DigitalSignature? openXmlElement)
   {
     if (openXmlElement != null)
@@ -40,9 +41,9 @@ public static class DigitalSignatureConverter
     }
     return null;
   }
-  
+
   public static void SetValue(DocumentFormat.OpenXml.ExtendedProperties.DigitalSignature openXmlElement, DocumentModel.Properties.DigitalSignature? value)
-  { 
+  {
     if (value?.VTBlob != null)
       SetVTBlob(openXmlElement, Convert.FromBase64String(value.VTBlob));
   }

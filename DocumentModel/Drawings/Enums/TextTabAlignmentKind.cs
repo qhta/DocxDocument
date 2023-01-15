@@ -1,28 +1,27 @@
 namespace DocumentModel.Drawings;
 
 /// <summary>
-/// Text Tab Alignment Types
+///   Text Tab Alignment Types
 /// </summary>
 public enum TextTabAlignmentKind
 {
   /// <summary>
-  /// Text Tab Alignment Enum ( Left).
+  ///   Text Tab Alignment Enum ( Left).
   /// </summary>
   Left,
-  
+
   /// <summary>
-  /// Text Tab Alignment Enum ( Center ).
+  ///   Text Tab Alignment Enum ( Center ).
   /// </summary>
   Center,
-  
+
   /// <summary>
-  /// Text Tab Alignment Enum ( Right ).
+  ///   Text Tab Alignment Enum ( Right ).
   /// </summary>
   Right,
-  
+
   /// <summary>
-  /// Text Tab Alignment Enum ( Decimal ).
+  ///   Text Tab Alignment Enum ( Decimal ).
   /// </summary>
-  Decimal,
-  
+  Decimal
 }

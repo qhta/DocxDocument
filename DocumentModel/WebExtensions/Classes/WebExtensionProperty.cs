@@ -1,18 +1,17 @@
 namespace DocumentModel.WebExtensions;
 
 /// <summary>
-/// Defines the WebExtensionProperty Class.
+///   Defines the WebExtensionProperty Class.
 /// </summary>
-public partial class WebExtensionProperty
+public class WebExtensionProperty
 {
   /// <summary>
-  /// name, this property is only available in Office 2013 and later.
+  ///   name, this property is only available in Office 2013 and later.
   /// </summary>
   public String? Name { get; set; }
-  
+
   /// <summary>
-  /// value, this property is only available in Office 2013 and later.
+  ///   value, this property is only available in Office 2013 and later.
   /// </summary>
   public String? Value { get; set; }
-  
 }

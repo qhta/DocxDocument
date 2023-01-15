@@ -1,23 +1,22 @@
 namespace DocumentModel.Wordprocessing;
 
 /// <summary>
-/// Defines the LevelOverride Class.
+///   Defines the LevelOverride Class.
 /// </summary>
-public partial class LevelOverride
+public class LevelOverride
 {
   /// <summary>
-  /// Numbering Level ID
+  ///   Numbering Level ID
   /// </summary>
   public Int32? LevelIndex { get; set; }
-  
+
   /// <summary>
-  /// Numbering Level Starting Value Override.
+  ///   Numbering Level Starting Value Override.
   /// </summary>
   public Int32? StartOverrideNumberingValue { get; set; }
-  
+
   /// <summary>
-  /// Numbering Level Override Definition.
+  ///   Numbering Level Override Definition.
   /// </summary>
-  public DocumentModel.Wordprocessing.Level? Level { get; set; }
-  
+  public Level? Level { get; set; }
 }

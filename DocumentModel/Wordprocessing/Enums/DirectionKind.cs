@@ -1,18 +1,17 @@
 namespace DocumentModel.Wordprocessing;
 
 /// <summary>
-/// Defines the DirectionValues enumeration.
+///   Defines the DirectionValues enumeration.
 /// </summary>
 public enum DirectionKind
 {
   /// <summary>
-  /// ltr.
+  ///   ltr.
   /// </summary>
   Ltr,
-  
+
   /// <summary>
-  /// rtl.
+  ///   rtl.
   /// </summary>
-  Rtl,
-  
+  Rtl
 }

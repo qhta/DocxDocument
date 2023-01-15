@@ -1,22 +1,28 @@
+using DocumentFormat.OpenXml.Wordprocessing;
+using DocumentModel.Wordprocessing;
+using Divs = DocumentModel.Wordprocessing.Divs;
+using Frameset = DocumentModel.Wordprocessing.Frameset;
+using WebSettings = DocumentFormat.OpenXml.Wordprocessing.WebSettings;
+
 namespace DocumentModel.OpenXml.Wordprocessing;
 
 /// <summary>
-/// Web Page Settings.
+///   Web Page Settings.
 /// </summary>
 public static class WebSettingsConverter
 {
   /// <summary>
-  /// Frameset.
+  ///   Frameset.
   /// </summary>
-  public static DocumentModel.Wordprocessing.Frameset? GetFrameset(DocumentFormat.OpenXml.Wordprocessing.WebSettings? openXmlElement)
+  public static Frameset? GetFrameset(WebSettings? openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.Frameset>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Wordprocessing.FramesetConverter.CreateModelElement(itemElement);
+      return FramesetConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetFrameset(DocumentFormat.OpenXml.Wordprocessing.WebSettings? openXmlElement, DocumentModel.Wordprocessing.Frameset? value)
+
+  public static void SetFrameset(WebSettings? openXmlElement, Frameset? value)
   {
     if (openXmlElement != null)
     {
@@ -25,25 +31,25 @@ public static class WebSettingsConverter
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Wordprocessing.FramesetConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.Frameset>(value);
+        itemElement = FramesetConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.Frameset>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
+
   /// <summary>
-  /// Divs.
+  ///   Divs.
   /// </summary>
-  public static DocumentModel.Wordprocessing.Divs? GetDivs(DocumentFormat.OpenXml.Wordprocessing.WebSettings? openXmlElement)
+  public static Divs? GetDivs(WebSettings? openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.Divs>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Wordprocessing.DivsConverter.CreateModelElement(itemElement);
+      return DivsConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetDivs(DocumentFormat.OpenXml.Wordprocessing.WebSettings? openXmlElement, DocumentModel.Wordprocessing.Divs? value)
+
+  public static void SetDivs(WebSettings? openXmlElement, Divs? value)
   {
     if (openXmlElement != null)
     {
@@ -52,315 +58,312 @@ public static class WebSettingsConverter
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Wordprocessing.DivsConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.Divs>(value);
+        itemElement = DivsConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.Divs>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
+
   /// <summary>
-  /// WebPageEncoding.
+  ///   WebPageEncoding.
   /// </summary>
-  public static String? GetWebPageEncoding(DocumentFormat.OpenXml.Wordprocessing.WebSettings? openXmlElement)
+  public static String? GetWebPageEncoding(WebSettings? openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.WebPageEncoding>();
+    var itemElement = openXmlElement?.GetFirstChild<WebPageEncoding>();
     if (itemElement != null)
       return itemElement.Val?.Value;
     return null;
   }
-  
-  public static void SetWebPageEncoding(DocumentFormat.OpenXml.Wordprocessing.WebSettings? openXmlElement, String? value)
+
+  public static void SetWebPageEncoding(WebSettings? openXmlElement, String? value)
   {
     if (openXmlElement != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.WebPageEncoding>();
+      var itemElement = openXmlElement.GetFirstChild<WebPageEncoding>();
       if (itemElement != null)
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = new DocumentFormat.OpenXml.Wordprocessing.WebPageEncoding { Val = value };
+        itemElement = new WebPageEncoding { Val = value };
         openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
+
   /// <summary>
-  /// OptimizeForBrowser.
+  ///   OptimizeForBrowser.
   /// </summary>
-  public static Boolean? GetOptimizeForBrowser(DocumentFormat.OpenXml.Wordprocessing.WebSettings? openXmlElement)
+  public static Boolean? GetOptimizeForBrowser(WebSettings? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.OptimizeForBrowser>();
+      var itemElement = openXmlElement.GetFirstChild<OptimizeForBrowser>();
       return itemElement != null;
     }
     return null;
   }
-  
-  public static void SetOptimizeForBrowser(DocumentFormat.OpenXml.Wordprocessing.WebSettings? openXmlElement, Boolean? value)
+
+  public static void SetOptimizeForBrowser(WebSettings? openXmlElement, Boolean? value)
   {
     if (openXmlElement != null)
     {
       if (value == false)
       {
-        var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.OptimizeForBrowser>();
+        var itemElement = openXmlElement.GetFirstChild<OptimizeForBrowser>();
         if (itemElement != null)
           itemElement.Remove();
       }
       if (value == true)
       {
-        var itemElement = new DocumentFormat.OpenXml.Wordprocessing.OptimizeForBrowser();
+        var itemElement = new OptimizeForBrowser();
         openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
+
   /// <summary>
-  /// RelyOnVML.
+  ///   RelyOnVML.
   /// </summary>
-  public static Boolean? GetRelyOnVML(DocumentFormat.OpenXml.Wordprocessing.WebSettings? openXmlElement)
+  public static Boolean? GetRelyOnVML(WebSettings? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.RelyOnVML>();
+      var itemElement = openXmlElement.GetFirstChild<RelyOnVML>();
       return itemElement != null;
     }
     return null;
   }
-  
-  public static void SetRelyOnVML(DocumentFormat.OpenXml.Wordprocessing.WebSettings? openXmlElement, Boolean? value)
+
+  public static void SetRelyOnVML(WebSettings? openXmlElement, Boolean? value)
   {
     if (openXmlElement != null)
     {
       if (value == false)
       {
-        var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.RelyOnVML>();
+        var itemElement = openXmlElement.GetFirstChild<RelyOnVML>();
         if (itemElement != null)
           itemElement.Remove();
       }
       if (value == true)
       {
-        var itemElement = new DocumentFormat.OpenXml.Wordprocessing.RelyOnVML();
+        var itemElement = new RelyOnVML();
         openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
+
   /// <summary>
-  /// AllowPNG.
+  ///   AllowPNG.
   /// </summary>
-  public static Boolean? GetAllowPNG(DocumentFormat.OpenXml.Wordprocessing.WebSettings? openXmlElement)
+  public static Boolean? GetAllowPNG(WebSettings? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.AllowPNG>();
+      var itemElement = openXmlElement.GetFirstChild<AllowPNG>();
       return itemElement != null;
     }
     return null;
   }
-  
-  public static void SetAllowPNG(DocumentFormat.OpenXml.Wordprocessing.WebSettings? openXmlElement, Boolean? value)
+
+  public static void SetAllowPNG(WebSettings? openXmlElement, Boolean? value)
   {
     if (openXmlElement != null)
     {
       if (value == false)
       {
-        var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.AllowPNG>();
+        var itemElement = openXmlElement.GetFirstChild<AllowPNG>();
         if (itemElement != null)
           itemElement.Remove();
       }
       if (value == true)
       {
-        var itemElement = new DocumentFormat.OpenXml.Wordprocessing.AllowPNG();
+        var itemElement = new AllowPNG();
         openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
+
   /// <summary>
-  /// DoNotRelyOnCSS.
+  ///   DoNotRelyOnCSS.
   /// </summary>
-  public static Boolean? GetDoNotRelyOnCSS(DocumentFormat.OpenXml.Wordprocessing.WebSettings? openXmlElement)
+  public static Boolean? GetDoNotRelyOnCSS(WebSettings? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.DoNotRelyOnCSS>();
+      var itemElement = openXmlElement.GetFirstChild<DoNotRelyOnCSS>();
       return itemElement != null;
     }
     return null;
   }
-  
-  public static void SetDoNotRelyOnCSS(DocumentFormat.OpenXml.Wordprocessing.WebSettings? openXmlElement, Boolean? value)
+
+  public static void SetDoNotRelyOnCSS(WebSettings? openXmlElement, Boolean? value)
   {
     if (openXmlElement != null)
     {
       if (value == false)
       {
-        var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.DoNotRelyOnCSS>();
+        var itemElement = openXmlElement.GetFirstChild<DoNotRelyOnCSS>();
         if (itemElement != null)
           itemElement.Remove();
       }
       if (value == true)
       {
-        var itemElement = new DocumentFormat.OpenXml.Wordprocessing.DoNotRelyOnCSS();
+        var itemElement = new DoNotRelyOnCSS();
         openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
+
   /// <summary>
-  /// DoNotSaveAsSingleFile.
+  ///   DoNotSaveAsSingleFile.
   /// </summary>
-  public static Boolean? GetDoNotSaveAsSingleFile(DocumentFormat.OpenXml.Wordprocessing.WebSettings? openXmlElement)
+  public static Boolean? GetDoNotSaveAsSingleFile(WebSettings? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.DoNotSaveAsSingleFile>();
+      var itemElement = openXmlElement.GetFirstChild<DoNotSaveAsSingleFile>();
       return itemElement != null;
     }
     return null;
   }
-  
-  public static void SetDoNotSaveAsSingleFile(DocumentFormat.OpenXml.Wordprocessing.WebSettings? openXmlElement, Boolean? value)
+
+  public static void SetDoNotSaveAsSingleFile(WebSettings? openXmlElement, Boolean? value)
   {
     if (openXmlElement != null)
     {
       if (value == false)
       {
-        var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.DoNotSaveAsSingleFile>();
+        var itemElement = openXmlElement.GetFirstChild<DoNotSaveAsSingleFile>();
         if (itemElement != null)
           itemElement.Remove();
       }
       if (value == true)
       {
-        var itemElement = new DocumentFormat.OpenXml.Wordprocessing.DoNotSaveAsSingleFile();
+        var itemElement = new DoNotSaveAsSingleFile();
         openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
+
   /// <summary>
-  /// DoNotOrganizeInFolder.
+  ///   DoNotOrganizeInFolder.
   /// </summary>
-  public static Boolean? GetDoNotOrganizeInFolder(DocumentFormat.OpenXml.Wordprocessing.WebSettings? openXmlElement)
+  public static Boolean? GetDoNotOrganizeInFolder(WebSettings? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.DoNotOrganizeInFolder>();
+      var itemElement = openXmlElement.GetFirstChild<DoNotOrganizeInFolder>();
       return itemElement != null;
     }
     return null;
   }
-  
-  public static void SetDoNotOrganizeInFolder(DocumentFormat.OpenXml.Wordprocessing.WebSettings? openXmlElement, Boolean? value)
+
+  public static void SetDoNotOrganizeInFolder(WebSettings? openXmlElement, Boolean? value)
   {
     if (openXmlElement != null)
     {
       if (value == false)
       {
-        var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.DoNotOrganizeInFolder>();
+        var itemElement = openXmlElement.GetFirstChild<DoNotOrganizeInFolder>();
         if (itemElement != null)
           itemElement.Remove();
       }
       if (value == true)
       {
-        var itemElement = new DocumentFormat.OpenXml.Wordprocessing.DoNotOrganizeInFolder();
+        var itemElement = new DoNotOrganizeInFolder();
         openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
+
   /// <summary>
-  /// DoNotUseLongFileNames.
+  ///   DoNotUseLongFileNames.
   /// </summary>
-  public static Boolean? GetDoNotUseLongFileNames(DocumentFormat.OpenXml.Wordprocessing.WebSettings? openXmlElement)
+  public static Boolean? GetDoNotUseLongFileNames(WebSettings? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.DoNotUseLongFileNames>();
+      var itemElement = openXmlElement.GetFirstChild<DoNotUseLongFileNames>();
       return itemElement != null;
     }
     return null;
   }
-  
-  public static void SetDoNotUseLongFileNames(DocumentFormat.OpenXml.Wordprocessing.WebSettings? openXmlElement, Boolean? value)
+
+  public static void SetDoNotUseLongFileNames(WebSettings? openXmlElement, Boolean? value)
   {
     if (openXmlElement != null)
     {
       if (value == false)
       {
-        var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.DoNotUseLongFileNames>();
+        var itemElement = openXmlElement.GetFirstChild<DoNotUseLongFileNames>();
         if (itemElement != null)
           itemElement.Remove();
       }
       if (value == true)
       {
-        var itemElement = new DocumentFormat.OpenXml.Wordprocessing.DoNotUseLongFileNames();
+        var itemElement = new DoNotUseLongFileNames();
         openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
+
   /// <summary>
-  /// PixelsPerInch.
+  ///   PixelsPerInch.
   /// </summary>
-  public static Int32? GetPixelsPerInch(DocumentFormat.OpenXml.Wordprocessing.WebSettings? openXmlElement)
+  public static Int32? GetPixelsPerInch(WebSettings? openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.PixelsPerInch>();
+    var itemElement = openXmlElement?.GetFirstChild<PixelsPerInch>();
     if (itemElement != null)
       return itemElement.Val?.Value;
     return null;
   }
-  
-  public static void SetPixelsPerInch(DocumentFormat.OpenXml.Wordprocessing.WebSettings? openXmlElement, Int32? value)
+
+  public static void SetPixelsPerInch(WebSettings? openXmlElement, Int32? value)
   {
     if (openXmlElement != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.PixelsPerInch>();
+      var itemElement = openXmlElement.GetFirstChild<PixelsPerInch>();
       if (itemElement != null)
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = new DocumentFormat.OpenXml.Wordprocessing.PixelsPerInch{ Val = value };
+        itemElement = new PixelsPerInch { Val = value };
         openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
+
   /// <summary>
-  /// TargetScreenSize.
+  ///   TargetScreenSize.
   /// </summary>
-  public static DocumentModel.Wordprocessing.TargetScreenSizeKind? GetTargetScreenSize(DocumentFormat.OpenXml.Wordprocessing.WebSettings? openXmlElement)
+  public static TargetScreenSizeKind? GetTargetScreenSize(WebSettings? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.TargetScreenSize>();
-      if (itemElement?.Val?.Value != null)
-      {
-        return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Wordprocessing.TargetScreenSizeValues, DocumentModel.Wordprocessing.TargetScreenSizeKind>(itemElement.Val.Value);
-      }
+      var itemElement = openXmlElement.GetFirstChild<TargetScreenSize>();
+      if (itemElement?.Val?.Value != null) return EnumValueConverter.GetValue<TargetScreenSizeValues, TargetScreenSizeKind>(itemElement.Val.Value);
     }
     return null;
   }
-  
-  public static void SetTargetScreenSize(DocumentFormat.OpenXml.Wordprocessing.WebSettings? openXmlElement, DocumentModel.Wordprocessing.TargetScreenSizeKind? value)
+
+  public static void SetTargetScreenSize(WebSettings? openXmlElement, TargetScreenSizeKind? value)
   {
     if (openXmlElement != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.TargetScreenSize>();
+      var itemElement = openXmlElement.GetFirstChild<TargetScreenSize>();
       if (itemElement != null)
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = EnumValueConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.TargetScreenSize, DocumentFormat.OpenXml.Wordprocessing.TargetScreenSizeValues, DocumentModel.Wordprocessing.TargetScreenSizeKind>(value);
+        itemElement = EnumValueConverter.CreateOpenXmlElement<TargetScreenSize, TargetScreenSizeValues, TargetScreenSizeKind>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static DocumentModel.Wordprocessing.WebSettings? CreateModelElement(DocumentFormat.OpenXml.Wordprocessing.WebSettings? openXmlElement)
+
+  public static DocumentModel.Wordprocessing.WebSettings? CreateModelElement(WebSettings? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -381,9 +384,9 @@ public static class WebSettingsConverter
     }
     return null;
   }
-  
+
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.WebSettings? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Wordprocessing.WebSettings, new()
+    where OpenXmlElementType : WebSettings, new()
   {
     if (value != null)
     {

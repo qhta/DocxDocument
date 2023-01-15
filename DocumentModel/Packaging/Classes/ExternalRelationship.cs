@@ -1,8 +1,8 @@
 namespace DocumentModel.Packaging;
 
 /// <summary>
-/// Represents an external relationship.
+///   Represents an external relationship.
 /// </summary>
-public partial class ExternalRelationship
+public class ExternalRelationship
 {
 }

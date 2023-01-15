@@ -1,18 +1,17 @@
 namespace DocumentModel;
 
 /// <summary>
-/// Defines the ItemSizeValues enumeration.
+///   Defines the ItemSizeValues enumeration.
 /// </summary>
 public enum ItemSizeKind
 {
   /// <summary>
-  /// normal.
+  ///   normal.
   /// </summary>
   Normal,
-  
+
   /// <summary>
-  /// large.
+  ///   large.
   /// </summary>
-  Large,
-  
+  Large
 }

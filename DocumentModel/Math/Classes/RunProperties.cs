@@ -1,23 +1,22 @@
 namespace DocumentModel.Math;
 
 /// <summary>
-/// Run Properties.
+///   Run Properties.
 /// </summary>
-public partial class RunProperties
+public class RunProperties
 {
   /// <summary>
-  /// Literal.
+  ///   Literal.
   /// </summary>
-  public DocumentModel.Math.BooleanKind? Literal { get; set; }
-  
-  public DocumentModel.Math.BooleanKind? NormalText { get; set; }
-  
-  public DocumentModel.Math.ScriptKind? Script { get; set; }
-  
-  public DocumentModel.Math.StyleKind? Style { get; set; }
-  
-  public DocumentModel.Math.Break? Break { get; set; }
-  
-  public DocumentModel.Math.BooleanKind? Alignment { get; set; }
-  
+  public BooleanKind? Literal { get; set; }
+
+  public BooleanKind? NormalText { get; set; }
+
+  public ScriptKind? Script { get; set; }
+
+  public StyleKind? Style { get; set; }
+
+  public Break? Break { get; set; }
+
+  public BooleanKind? Alignment { get; set; }
 }

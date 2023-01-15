@@ -1,35 +1,34 @@
 namespace DocumentModel.Drawings.ChartDrawings;
 
 /// <summary>
-/// Defines the SeriesLayoutProperties Class.
+///   Defines the SeriesLayoutProperties Class.
 /// </summary>
-public partial class SeriesLayoutProperties
+public class SeriesLayoutProperties
 {
   /// <summary>
-  /// ParentLabelLayout.
+  ///   ParentLabelLayout.
   /// </summary>
-  public DocumentModel.Drawings.ChartDrawings.ParentLabelLayout? ParentLabelLayout { get; set; }
-  
+  public ParentLabelLayout? ParentLabelLayout { get; set; }
+
   /// <summary>
-  /// RegionLabelLayout.
+  ///   RegionLabelLayout.
   /// </summary>
-  public DocumentModel.Drawings.ChartDrawings.RegionLabelLayoutEnum? RegionLabelLayout { get; set; }
-  
+  public RegionLabelLayoutEnum? RegionLabelLayout { get; set; }
+
   /// <summary>
-  /// SeriesElementVisibilities.
+  ///   SeriesElementVisibilities.
   /// </summary>
-  public DocumentModel.Drawings.ChartDrawings.SeriesElementVisibilities? SeriesElementVisibilities { get; set; }
-  
+  public SeriesElementVisibilities? SeriesElementVisibilities { get; set; }
+
   public Boolean? Aggregation { get; set; }
-  
-  public DocumentModel.Drawings.ChartDrawings.Binning? Binning { get; set; }
-  
-  public DocumentModel.Drawings.ChartDrawings.Geography? Geography { get; set; }
-  
-  public DocumentModel.Drawings.ChartDrawings.Statistics? Statistics { get; set; }
-  
-  public DocumentModel.Drawings.ChartDrawings.Subtotals? Subtotals { get; set; }
-  
-  public DocumentModel.Drawings.ChartDrawings.ExtensionList? ExtensionList { get; set; }
-  
+
+  public Binning? Binning { get; set; }
+
+  public Geography? Geography { get; set; }
+
+  public Statistics? Statistics { get; set; }
+
+  public Subtotals? Subtotals { get; set; }
+
+  public ExtensionList? ExtensionList { get; set; }
 }

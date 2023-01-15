@@ -1,53 +1,52 @@
 namespace DocumentModel.Drawings.Charts;
 
 /// <summary>
-/// Defines the ErrorBars Class.
+///   Defines the ErrorBars Class.
 /// </summary>
-public partial class ErrorBars
+public class ErrorBars
 {
   /// <summary>
-  /// Error Bar Direction.
+  ///   Error Bar Direction.
   /// </summary>
-  public DocumentModel.Drawings.Charts.ErrorBarDirectionKind? ErrorDirection { get; set; }
-  
+  public ErrorBarDirectionKind? ErrorDirection { get; set; }
+
   /// <summary>
-  /// Error Bar Type.
+  ///   Error Bar Type.
   /// </summary>
-  public DocumentModel.Drawings.Charts.ErrorBarKind? ErrorBarType { get; set; }
-  
+  public ErrorBarKind? ErrorBarType { get; set; }
+
   /// <summary>
-  /// Error Bar Value Type.
+  ///   Error Bar Value Type.
   /// </summary>
-  public DocumentModel.Drawings.Charts.ErrorKind? ErrorBarValueType { get; set; }
-  
+  public ErrorKind? ErrorBarValueType { get; set; }
+
   /// <summary>
-  /// No End Cap.
+  ///   No End Cap.
   /// </summary>
   public Boolean? NoEndCap { get; set; }
-  
+
   /// <summary>
-  /// Plus.
+  ///   Plus.
   /// </summary>
-  public DocumentModel.Drawings.Charts.Plus? Plus { get; set; }
-  
+  public Plus? Plus { get; set; }
+
   /// <summary>
-  /// Minus.
+  ///   Minus.
   /// </summary>
-  public DocumentModel.Drawings.Charts.Minus? Minus { get; set; }
-  
+  public Minus? Minus { get; set; }
+
   /// <summary>
-  /// Error Bar Value.
+  ///   Error Bar Value.
   /// </summary>
   public Double? ErrorBarValue { get; set; }
-  
+
   /// <summary>
-  /// ChartShapeProperties.
+  ///   ChartShapeProperties.
   /// </summary>
-  public DocumentModel.Drawings.Charts.ChartShapeProperties? ChartShapeProperties { get; set; }
-  
+  public ChartShapeProperties? ChartShapeProperties { get; set; }
+
   /// <summary>
-  /// Chart Extensibility.
+  ///   Chart Extensibility.
   /// </summary>
-  public DocumentModel.Drawings.Charts.ExtensionList? ExtensionList { get; set; }
-  
+  public ExtensionList? ExtensionList { get; set; }
 }

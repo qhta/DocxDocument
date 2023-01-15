@@ -1,26 +1,31 @@
+using DocumentFormat.OpenXml.Packaging;
+using DocumentModel.Drawings.Diagrams;
+using DocumentModel.OpenXml.Drawings.Diagrams;
+using ImagePart = DocumentModel.Packaging.ImagePart;
+
 namespace DocumentModel.OpenXml.Packaging;
 
 /// <summary>
-/// Defines the DiagramLayoutDefinitionPart
+///   Defines the DiagramLayoutDefinitionPart
 /// </summary>
 public static class DiagramLayoutDefinitionPartConverter
 {
-  public static String? GetContentType(DocumentFormat.OpenXml.Packaging.DiagramLayoutDefinitionPart? openXmlElement)
+  public static String? GetContentType(DiagramLayoutDefinitionPart? openXmlElement)
   {
     return openXmlElement?.ContentType;
   }
-  
+
   /// <summary>
-  /// Gets the ImageParts of the DiagramLayoutDefinitionPart
+  ///   Gets the ImageParts of the DiagramLayoutDefinitionPart
   /// </summary>
-  public static System.Collections.ObjectModel.Collection<DocumentModel.Packaging.ImagePart>? GetImageParts(DocumentFormat.OpenXml.Packaging.DiagramLayoutDefinitionPart? openXmlElement)
+  public static Collection<ImagePart>? GetImageParts(DiagramLayoutDefinitionPart? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var collection = new System.Collections.ObjectModel.Collection<DocumentModel.Packaging.ImagePart>();
+      var collection = new Collection<ImagePart>();
       foreach (var item in openXmlElement.GetPartsOfType<DocumentFormat.OpenXml.Packaging.ImagePart>())
       {
-        var newItem = DocumentModel.OpenXml.Packaging.ImagePartConverter.CreateModelElement(item);
+        var newItem = ImagePartConverter.CreateModelElement(item);
         if (newItem != null)
           collection.Add(newItem);
       }
@@ -28,34 +33,34 @@ public static class DiagramLayoutDefinitionPartConverter
     }
     return null;
   }
-  
+
   /// <summary>
-  /// Gets or sets the root element of this part.
+  ///   Gets or sets the root element of this part.
   /// </summary>
-  public static DocumentModel.Drawings.Diagrams.LayoutDefinition? GetLayoutDefinition(DocumentFormat.OpenXml.Packaging.DiagramLayoutDefinitionPart? openXmlElement)
+  public static LayoutDefinition? GetLayoutDefinition(DiagramLayoutDefinitionPart? openXmlElement)
   {
     if (openXmlElement?.RootElement is DocumentFormat.OpenXml.Drawing.Diagrams.LayoutDefinition rootElement)
-      return DocumentModel.OpenXml.Drawings.Diagrams.LayoutDefinitionConverter.CreateModelElement(rootElement);
+      return LayoutDefinitionConverter.CreateModelElement(rootElement);
     return null;
   }
-  
-  public static void SetLayoutDefinition(DocumentFormat.OpenXml.Packaging.DiagramLayoutDefinitionPart? openXmlElement, DocumentModel.Drawings.Diagrams.LayoutDefinition? value)
+
+  public static void SetLayoutDefinition(DiagramLayoutDefinitionPart? openXmlElement, LayoutDefinition? value)
   {
     if (openXmlElement != null)
       if (value != null)
       {
-         var rootElement = DocumentModel.OpenXml.Drawings.Diagrams.LayoutDefinitionConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Diagrams.LayoutDefinition>(value);
-         if (rootElement != null)
-           openXmlElement.LayoutDefinition = rootElement;
+        var rootElement = LayoutDefinitionConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Diagrams.LayoutDefinition>(value);
+        if (rootElement != null)
+          openXmlElement.LayoutDefinition = rootElement;
       }
   }
-  
-  public static String? GetRelationshipType(DocumentFormat.OpenXml.Packaging.DiagramLayoutDefinitionPart? openXmlElement)
+
+  public static String? GetRelationshipType(DiagramLayoutDefinitionPart? openXmlElement)
   {
     return openXmlElement?.RelationshipType;
   }
-  
-  public static DocumentModel.Packaging.DiagramLayoutDefinitionPart? CreateModelElement(DocumentFormat.OpenXml.Packaging.DiagramLayoutDefinitionPart? openXmlElement)
+
+  public static DocumentModel.Packaging.DiagramLayoutDefinitionPart? CreateModelElement(DiagramLayoutDefinitionPart? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -68,9 +73,9 @@ public static class DiagramLayoutDefinitionPartConverter
     }
     return null;
   }
-  
+
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Packaging.DiagramLayoutDefinitionPart? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Packaging.DiagramLayoutDefinitionPart, new()
+    where OpenXmlElementType : DiagramLayoutDefinitionPart, new()
   {
     if (value != null)
     {

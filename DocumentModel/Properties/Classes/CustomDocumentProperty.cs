@@ -1,26 +1,25 @@
 namespace DocumentModel.Properties;
 
 /// <summary>
-/// Custom File Property.
+///   Custom File Property.
 /// </summary>
 public partial class CustomDocumentProperty
 {
   /// <summary>
-  /// Format ID
+  ///   Format ID
   /// </summary>
   [XmlAttribute]
   public String? FormatId { get; set; }
-  
+
   /// <summary>
-  /// Property ID
+  ///   Property ID
   /// </summary>
   [XmlAttribute]
   public Int32? PropertyId { get; set; }
 
   /// <summary>
-  /// Bookmark Link Target
+  ///   Bookmark Link Target
   /// </summary>
   [XmlAttribute]
   public String? LinkTarget { get; set; }
-  
 }

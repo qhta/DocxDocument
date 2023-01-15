@@ -1,63 +1,62 @@
 namespace DocumentModel.Drawings;
 
 /// <summary>
-/// Black and White Mode
+///   Black and White Mode
 /// </summary>
 public enum BlackWhiteMode
 {
   /// <summary>
-  /// Color.
+  ///   Color.
   /// </summary>
   Color,
-  
+
   /// <summary>
-  /// Automatic.
+  ///   Automatic.
   /// </summary>
   Auto,
-  
+
   /// <summary>
-  /// Gray.
+  ///   Gray.
   /// </summary>
   Gray,
-  
+
   /// <summary>
-  /// Light Gray.
+  ///   Light Gray.
   /// </summary>
   LightGray,
-  
+
   /// <summary>
-  /// Inverse Gray.
+  ///   Inverse Gray.
   /// </summary>
   InvGray,
-  
+
   /// <summary>
-  /// Gray and White.
+  ///   Gray and White.
   /// </summary>
   GrayWhite,
-  
+
   /// <summary>
-  /// Black and Gray.
+  ///   Black and Gray.
   /// </summary>
   BlackGray,
-  
+
   /// <summary>
-  /// Black and White.
+  ///   Black and White.
   /// </summary>
   BlackWhite,
-  
+
   /// <summary>
-  /// Black.
+  ///   Black.
   /// </summary>
   Black,
-  
+
   /// <summary>
-  /// White.
+  ///   White.
   /// </summary>
   White,
-  
+
   /// <summary>
-  /// Hidden.
+  ///   Hidden.
   /// </summary>
-  Hidden,
-  
+  Hidden
 }

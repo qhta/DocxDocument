@@ -1,48 +1,47 @@
 namespace DocumentModel.Wordprocessing;
 
 /// <summary>
-/// Defines the LightRigDirectionValues enumeration.
+///   Defines the LightRigDirectionValues enumeration.
 /// </summary>
 public enum LightRigDirectionKind
 {
   /// <summary>
-  /// tl.
+  ///   tl.
   /// </summary>
   TopLeft,
-  
+
   /// <summary>
-  /// t.
+  ///   t.
   /// </summary>
   Top,
-  
+
   /// <summary>
-  /// tr.
+  ///   tr.
   /// </summary>
   TopRight,
-  
+
   /// <summary>
-  /// l.
+  ///   l.
   /// </summary>
   Left,
-  
+
   /// <summary>
-  /// r.
+  ///   r.
   /// </summary>
   Right,
-  
+
   /// <summary>
-  /// bl.
+  ///   bl.
   /// </summary>
   BottomLeft,
-  
+
   /// <summary>
-  /// b.
+  ///   b.
   /// </summary>
   Bottom,
-  
+
   /// <summary>
-  /// br.
+  ///   br.
   /// </summary>
-  BottomRight,
-  
+  BottomRight
 }

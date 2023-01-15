@@ -1,18 +1,17 @@
 namespace DocumentModel.Wordprocessing;
 
 /// <summary>
-/// Defines the PageBorderZOrderValues enumeration.
+///   Defines the PageBorderZOrderValues enumeration.
 /// </summary>
 public enum PageBorderZOrderKind
 {
   /// <summary>
-  /// Page Border Ahead of Text.
+  ///   Page Border Ahead of Text.
   /// </summary>
   Front,
-  
+
   /// <summary>
-  /// Page Border Behind Text.
+  ///   Page Border Behind Text.
   /// </summary>
-  Back,
-  
+  Back
 }

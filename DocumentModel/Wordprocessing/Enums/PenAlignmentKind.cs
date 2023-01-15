@@ -1,18 +1,17 @@
 namespace DocumentModel.Wordprocessing;
 
 /// <summary>
-/// Defines the PenAlignmentValues enumeration.
+///   Defines the PenAlignmentValues enumeration.
 /// </summary>
 public enum PenAlignmentKind
 {
   /// <summary>
-  /// ctr.
+  ///   ctr.
   /// </summary>
   Center,
-  
+
   /// <summary>
-  /// in.
+  ///   in.
   /// </summary>
-  Inset,
-  
+  Inset
 }

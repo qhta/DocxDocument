@@ -1,23 +1,22 @@
 namespace DocumentModel.Drawings;
 
 /// <summary>
-/// Defines the BevelType Class.
+///   Defines the BevelType Class.
 /// </summary>
-public partial class BevelType
+public class BevelType
 {
   /// <summary>
-  /// Width
+  ///   Width
   /// </summary>
   public Int64? Width { get; set; }
-  
+
   /// <summary>
-  /// Height
+  ///   Height
   /// </summary>
   public Int64? Height { get; set; }
-  
+
   /// <summary>
-  /// Preset Bevel
+  ///   Preset Bevel
   /// </summary>
-  public DocumentModel.Drawings.BevelPresetKind? Preset { get; set; }
-  
+  public BevelPresetKind? Preset { get; set; }
 }

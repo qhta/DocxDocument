@@ -1,13 +1,12 @@
 namespace DocumentModel.Drawings;
 
 /// <summary>
-/// Defines the BiLevel Class.
+///   Defines the BiLevel Class.
 /// </summary>
-public partial class BiLevel
+public class BiLevel
 {
   /// <summary>
-  /// Threshold
+  ///   Threshold
   /// </summary>
   public Int32? Threshold { get; set; }
-  
 }

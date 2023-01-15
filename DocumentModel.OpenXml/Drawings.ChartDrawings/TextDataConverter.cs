@@ -1,58 +1,62 @@
+using DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing;
+using OpenXmlFormulaElement = DocumentModel.Drawings.ChartDrawings.OpenXmlFormulaElement;
+using TextData = DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.TextData;
+
 namespace DocumentModel.OpenXml.Drawings.ChartDrawings;
 
 /// <summary>
-/// Defines the TextData Class.
+///   Defines the TextData Class.
 /// </summary>
 public static class TextDataConverter
 {
-  public static DocumentModel.Drawings.ChartDrawings.OpenXmlFormulaElement? GetFormula(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.TextData? openXmlElement)
+  public static OpenXmlFormulaElement? GetFormula(TextData? openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.Formula>();
+    var itemElement = openXmlElement?.GetFirstChild<Formula>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.ChartDrawings.OpenXmlFormulaElementConverter.CreateModelElement(itemElement);
+      return OpenXmlFormulaElementConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetFormula(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.TextData? openXmlElement, DocumentModel.Drawings.ChartDrawings.OpenXmlFormulaElement? value)
+
+  public static void SetFormula(TextData? openXmlElement, OpenXmlFormulaElement? value)
   {
     if (openXmlElement != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.Formula>();
+      var itemElement = openXmlElement.GetFirstChild<Formula>();
       if (itemElement != null)
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Drawings.ChartDrawings.OpenXmlFormulaElementConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.Formula>(value);
+        itemElement = OpenXmlFormulaElementConverter.CreateOpenXmlElement<Formula>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static String? GetVXsdstring(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.TextData? openXmlElement)
+
+  public static String? GetVXsdstring(TextData? openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.VXsdstring>();
+    var itemElement = openXmlElement?.GetFirstChild<VXsdstring>();
     if (itemElement != null)
       return itemElement.Text;
     return null;
   }
-  
-  public static void SetVXsdstring(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.TextData? openXmlElement, String? value)
+
+  public static void SetVXsdstring(TextData? openXmlElement, String? value)
   {
     if (openXmlElement != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.VXsdstring>();
+      var itemElement = openXmlElement.GetFirstChild<VXsdstring>();
       if (itemElement != null)
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = new DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.VXsdstring { Text = value };
+        itemElement = new VXsdstring { Text = value };
         openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static DocumentModel.Drawings.ChartDrawings.TextData? CreateModelElement(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.TextData? openXmlElement)
+
+  public static DocumentModel.Drawings.ChartDrawings.TextData? CreateModelElement(TextData? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -63,9 +67,9 @@ public static class TextDataConverter
     }
     return null;
   }
-  
+
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.ChartDrawings.TextData? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.TextData, new()
+    where OpenXmlElementType : TextData, new()
   {
     if (value != null)
     {

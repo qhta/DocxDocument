@@ -1,18 +1,21 @@
+using DocumentModel.Drawings;
+using ShapePropertiesExtensionList = DocumentFormat.OpenXml.Drawing.ShapePropertiesExtensionList;
+
 namespace DocumentModel.OpenXml.Drawings;
 
 /// <summary>
-/// Defines the ShapePropertiesExtensionList Class.
+///   Defines the ShapePropertiesExtensionList Class.
 /// </summary>
 public static class ShapePropertiesExtensionListConverter
 {
-  public static System.Collections.ObjectModel.Collection<DocumentModel.Drawings.ShapePropertiesExtension>? GetShapePropertiesExtensions(DocumentFormat.OpenXml.Drawing.ShapePropertiesExtensionList? openXmlElement)
+  public static Collection<ShapePropertiesExtension>? GetShapePropertiesExtensions(ShapePropertiesExtensionList? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var collection = new System.Collections.ObjectModel.Collection<DocumentModel.Drawings.ShapePropertiesExtension>();
+      var collection = new Collection<ShapePropertiesExtension>();
       foreach (var item in openXmlElement.Elements<DocumentFormat.OpenXml.Drawing.ShapePropertiesExtension>())
       {
-        var newItem = DocumentModel.OpenXml.Drawings.ShapePropertiesExtensionConverter.CreateModelElement(item);
+        var newItem = ShapePropertiesExtensionConverter.CreateModelElement(item);
         if (newItem != null)
           collection.Add(newItem);
       }
@@ -20,25 +23,23 @@ public static class ShapePropertiesExtensionListConverter
     }
     return null;
   }
-  
-  public static void SetShapePropertiesExtensions(DocumentFormat.OpenXml.Drawing.ShapePropertiesExtensionList? openXmlElement, System.Collections.ObjectModel.Collection<DocumentModel.Drawings.ShapePropertiesExtension>? value)
+
+  public static void SetShapePropertiesExtensions(ShapePropertiesExtensionList? openXmlElement, Collection<ShapePropertiesExtension>? value)
   {
     if (openXmlElement != null)
     {
       openXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Drawing.ShapePropertiesExtension>();
       if (value != null)
-      {
         foreach (var item in value)
         {
-          var newItem = DocumentModel.OpenXml.Drawings.ShapePropertiesExtensionConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.ShapePropertiesExtension>(item);
+          var newItem = ShapePropertiesExtensionConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.ShapePropertiesExtension>(item);
           if (newItem != null)
             openXmlElement.AddChild(newItem);
         }
-      }
     }
   }
-  
-  public static DocumentModel.Drawings.ShapePropertiesExtensionList? CreateModelElement(DocumentFormat.OpenXml.Drawing.ShapePropertiesExtensionList? openXmlElement)
+
+  public static DocumentModel.Drawings.ShapePropertiesExtensionList? CreateModelElement(ShapePropertiesExtensionList? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -48,9 +49,9 @@ public static class ShapePropertiesExtensionListConverter
     }
     return null;
   }
-  
+
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.ShapePropertiesExtensionList? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.ShapePropertiesExtensionList, new()
+    where OpenXmlElementType : ShapePropertiesExtensionList, new()
   {
     if (value != null)
     {

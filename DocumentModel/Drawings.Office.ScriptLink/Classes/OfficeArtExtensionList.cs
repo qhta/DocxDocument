@@ -1,10 +1,9 @@
 namespace DocumentModel.Drawings.Office.ScriptLink;
 
 /// <summary>
-/// Defines the OfficeArtExtensionList Class.
+///   Defines the OfficeArtExtensionList Class.
 /// </summary>
-public partial class OfficeArtExtensionList
+public class OfficeArtExtensionList
 {
-  public Collection<DocumentModel.Drawings.Extension>? Extensions { get; set; }
-  
+  public Collection<Extension>? Extensions { get; set; }
 }

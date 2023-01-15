@@ -1,15 +1,14 @@
 namespace DocumentModel.Drawings.Charts;
 
 /// <summary>
-/// Defines the BarChartExtension Class.
+///   Defines the BarChartExtension Class.
 /// </summary>
-public partial class BarChartExtension
+public class BarChartExtension
 {
   /// <summary>
-  /// URI
+  ///   URI
   /// </summary>
   public String? Uri { get; set; }
-  
-  public DocumentModel.Drawings.Charts.FilteredBarSeries? FilteredBarSeries { get; set; }
-  
+
+  public FilteredBarSeries? FilteredBarSeries { get; set; }
 }

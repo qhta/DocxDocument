@@ -1,18 +1,18 @@
 namespace DocumentModel.OpenXml;
 
 /// <summary>
-/// Defines the MenuSeparator Class.
+///   Defines the MenuSeparator Class.
 /// </summary>
 public static class MenuSeparatorConverter
 {
   /// <summary>
-  /// id, this property is only available in Office 2010 and later.
+  ///   id, this property is only available in Office 2010 and later.
   /// </summary>
   public static String? GetId(DocumentFormat.OpenXml.Office2010.CustomUI.MenuSeparator? openXmlElement)
   {
     return openXmlElement?.Id?.Value;
   }
-  
+
   public static void SetId(DocumentFormat.OpenXml.Office2010.CustomUI.MenuSeparator? openXmlElement, String? value)
   {
     if (openXmlElement != null)
@@ -21,15 +21,15 @@ public static class MenuSeparatorConverter
       else
         openXmlElement.Id = null;
   }
-  
+
   /// <summary>
-  /// idQ, this property is only available in Office 2010 and later.
+  ///   idQ, this property is only available in Office 2010 and later.
   /// </summary>
   public static String? GetQualifiedId(DocumentFormat.OpenXml.Office2010.CustomUI.MenuSeparator? openXmlElement)
   {
     return openXmlElement?.QualifiedId?.Value;
   }
-  
+
   public static void SetQualifiedId(DocumentFormat.OpenXml.Office2010.CustomUI.MenuSeparator? openXmlElement, String? value)
   {
     if (openXmlElement != null)
@@ -38,15 +38,15 @@ public static class MenuSeparatorConverter
       else
         openXmlElement.QualifiedId = null;
   }
-  
+
   /// <summary>
-  /// tag, this property is only available in Office 2010 and later.
+  ///   tag, this property is only available in Office 2010 and later.
   /// </summary>
   public static String? GetTag(DocumentFormat.OpenXml.Office2010.CustomUI.MenuSeparator? openXmlElement)
   {
     return openXmlElement?.Tag?.Value;
   }
-  
+
   public static void SetTag(DocumentFormat.OpenXml.Office2010.CustomUI.MenuSeparator? openXmlElement, String? value)
   {
     if (openXmlElement != null)
@@ -55,15 +55,15 @@ public static class MenuSeparatorConverter
       else
         openXmlElement.Tag = null;
   }
-  
+
   /// <summary>
-  /// insertAfterMso, this property is only available in Office 2010 and later.
+  ///   insertAfterMso, this property is only available in Office 2010 and later.
   /// </summary>
   public static String? GetInsertAfterMso(DocumentFormat.OpenXml.Office2010.CustomUI.MenuSeparator? openXmlElement)
   {
     return openXmlElement?.InsertAfterMso?.Value;
   }
-  
+
   public static void SetInsertAfterMso(DocumentFormat.OpenXml.Office2010.CustomUI.MenuSeparator? openXmlElement, String? value)
   {
     if (openXmlElement != null)
@@ -72,15 +72,15 @@ public static class MenuSeparatorConverter
       else
         openXmlElement.InsertAfterMso = null;
   }
-  
+
   /// <summary>
-  /// insertBeforeMso, this property is only available in Office 2010 and later.
+  ///   insertBeforeMso, this property is only available in Office 2010 and later.
   /// </summary>
   public static String? GetInsertBeforeMso(DocumentFormat.OpenXml.Office2010.CustomUI.MenuSeparator? openXmlElement)
   {
     return openXmlElement?.InsertBeforeMso?.Value;
   }
-  
+
   public static void SetInsertBeforeMso(DocumentFormat.OpenXml.Office2010.CustomUI.MenuSeparator? openXmlElement, String? value)
   {
     if (openXmlElement != null)
@@ -89,15 +89,15 @@ public static class MenuSeparatorConverter
       else
         openXmlElement.InsertBeforeMso = null;
   }
-  
+
   /// <summary>
-  /// insertAfterQ, this property is only available in Office 2010 and later.
+  ///   insertAfterQ, this property is only available in Office 2010 and later.
   /// </summary>
   public static String? GetInsertAfterQulifiedId(DocumentFormat.OpenXml.Office2010.CustomUI.MenuSeparator? openXmlElement)
   {
     return openXmlElement?.InsertAfterQulifiedId?.Value;
   }
-  
+
   public static void SetInsertAfterQulifiedId(DocumentFormat.OpenXml.Office2010.CustomUI.MenuSeparator? openXmlElement, String? value)
   {
     if (openXmlElement != null)
@@ -106,15 +106,15 @@ public static class MenuSeparatorConverter
       else
         openXmlElement.InsertAfterQulifiedId = null;
   }
-  
+
   /// <summary>
-  /// insertBeforeQ, this property is only available in Office 2010 and later.
+  ///   insertBeforeQ, this property is only available in Office 2010 and later.
   /// </summary>
   public static String? GetInsertBeforeQulifiedId(DocumentFormat.OpenXml.Office2010.CustomUI.MenuSeparator? openXmlElement)
   {
     return openXmlElement?.InsertBeforeQulifiedId?.Value;
   }
-  
+
   public static void SetInsertBeforeQulifiedId(DocumentFormat.OpenXml.Office2010.CustomUI.MenuSeparator? openXmlElement, String? value)
   {
     if (openXmlElement != null)
@@ -123,15 +123,15 @@ public static class MenuSeparatorConverter
       else
         openXmlElement.InsertBeforeQulifiedId = null;
   }
-  
+
   /// <summary>
-  /// title, this property is only available in Office 2010 and later.
+  ///   title, this property is only available in Office 2010 and later.
   /// </summary>
   public static String? GetTitle(DocumentFormat.OpenXml.Office2010.CustomUI.MenuSeparator? openXmlElement)
   {
     return openXmlElement?.Title?.Value;
   }
-  
+
   public static void SetTitle(DocumentFormat.OpenXml.Office2010.CustomUI.MenuSeparator? openXmlElement, String? value)
   {
     if (openXmlElement != null)
@@ -140,15 +140,15 @@ public static class MenuSeparatorConverter
       else
         openXmlElement.Title = null;
   }
-  
+
   /// <summary>
-  /// getTitle, this property is only available in Office 2010 and later.
+  ///   getTitle, this property is only available in Office 2010 and later.
   /// </summary>
   public static String? GetGetTitle(DocumentFormat.OpenXml.Office2010.CustomUI.MenuSeparator? openXmlElement)
   {
     return openXmlElement?.GetTitle?.Value;
   }
-  
+
   public static void SetGetTitle(DocumentFormat.OpenXml.Office2010.CustomUI.MenuSeparator? openXmlElement, String? value)
   {
     if (openXmlElement != null)
@@ -157,12 +157,12 @@ public static class MenuSeparatorConverter
       else
         openXmlElement.GetTitle = null;
   }
-  
-  public static DocumentModel.MenuSeparator? CreateModelElement(DocumentFormat.OpenXml.Office2010.CustomUI.MenuSeparator? openXmlElement)
+
+  public static MenuSeparator? CreateModelElement(DocumentFormat.OpenXml.Office2010.CustomUI.MenuSeparator? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.MenuSeparator();
+      var value = new MenuSeparator();
       value.Id = GetId(openXmlElement);
       value.QualifiedId = GetQualifiedId(openXmlElement);
       value.Tag = GetTag(openXmlElement);
@@ -176,9 +176,9 @@ public static class MenuSeparatorConverter
     }
     return null;
   }
-  
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.MenuSeparator? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Office2010.CustomUI.MenuSeparator, new()
+
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(MenuSeparator? value)
+    where OpenXmlElementType : DocumentFormat.OpenXml.Office2010.CustomUI.MenuSeparator, new()
   {
     if (value != null)
     {

@@ -1,23 +1,22 @@
 namespace DocumentModel.Drawings;
 
 /// <summary>
-/// End Line Cap
+///   End Line Cap
 /// </summary>
 public enum LineCapKind
 {
   /// <summary>
-  /// Round Line Cap.
+  ///   Round Line Cap.
   /// </summary>
   Round,
-  
+
   /// <summary>
-  /// Square Line Cap.
+  ///   Square Line Cap.
   /// </summary>
   Square,
-  
+
   /// <summary>
-  /// Flat Line Cap.
+  ///   Flat Line Cap.
   /// </summary>
-  Flat,
-  
+  Flat
 }

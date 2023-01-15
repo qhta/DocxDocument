@@ -1,27 +1,28 @@
+using DocumentModel.Drawings.Office.ScriptLink;
+
 namespace DocumentModel.Drawings;
 
 /// <summary>
-/// Defines the NonVisualDrawingPropertiesExtension Class.
+///   Defines the NonVisualDrawingPropertiesExtension Class.
 /// </summary>
-public partial class NonVisualDrawingPropertiesExtension
+public class NonVisualDrawingPropertiesExtension
 {
   /// <summary>
-  /// URI
+  ///   URI
   /// </summary>
   public String? Uri { get; set; }
-  
-  public DocumentModel.Drawings.CompatExtension? CompatExtension { get; set; }
-  
-  public DocumentModel.Drawings.BackgroundProperties? BackgroundProperties { get; set; }
-  
-  public DocumentModel.Drawings.CreationId? CreationId { get; set; }
-  
-  public DocumentModel.Drawings.PredecessorDrawingElementReference? PredecessorDrawingElementReference { get; set; }
-  
+
+  public CompatExtension? CompatExtension { get; set; }
+
+  public BackgroundProperties? BackgroundProperties { get; set; }
+
+  public CreationId? CreationId { get; set; }
+
+  public PredecessorDrawingElementReference? PredecessorDrawingElementReference { get; set; }
+
   public Boolean? Decorative { get; set; }
-  
-  public DocumentModel.Drawings.ClassificationOutcome? ClassificationOutcome { get; set; }
-  
-  public DocumentModel.Drawings.Office.ScriptLink.ScriptLink? ScriptLink { get; set; }
-  
+
+  public ClassificationOutcome? ClassificationOutcome { get; set; }
+
+  public ScriptLink? ScriptLink { get; set; }
 }

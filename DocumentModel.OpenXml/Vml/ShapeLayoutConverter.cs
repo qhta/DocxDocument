@@ -1,36 +1,40 @@
+using DocumentFormat.OpenXml.Vml;
+using DocumentModel.Vml;
+using ShapeLayout = DocumentFormat.OpenXml.Vml.Office.ShapeLayout;
+
 namespace DocumentModel.OpenXml.Vml;
 
 /// <summary>
-/// Shape Layout Properties.
+///   Shape Layout Properties.
 /// </summary>
 public static class ShapeLayoutConverter
 {
   /// <summary>
-  /// VML Extension Handling Behavior
+  ///   VML Extension Handling Behavior
   /// </summary>
-  public static DocumentModel.Vml.ExtensionHandlingBehaviorKind? GetExtension(DocumentFormat.OpenXml.Vml.Office.ShapeLayout? openXmlElement)
+  public static ExtensionHandlingBehaviorKind? GetExtension(ShapeLayout? openXmlElement)
   {
-    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Vml.ExtensionHandlingBehaviorValues, DocumentModel.Vml.ExtensionHandlingBehaviorKind>(openXmlElement?.Extension?.Value);
+    return EnumValueConverter.GetValue<ExtensionHandlingBehaviorValues, ExtensionHandlingBehaviorKind>(openXmlElement?.Extension?.Value);
   }
-  
-  public static void SetExtension(DocumentFormat.OpenXml.Vml.Office.ShapeLayout? openXmlElement, DocumentModel.Vml.ExtensionHandlingBehaviorKind? value)
+
+  public static void SetExtension(ShapeLayout? openXmlElement, ExtensionHandlingBehaviorKind? value)
   {
     if (openXmlElement != null)
-      openXmlElement.Extension = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Vml.ExtensionHandlingBehaviorValues, DocumentModel.Vml.ExtensionHandlingBehaviorKind>(value);
+      openXmlElement.Extension = EnumValueConverter.CreateEnumValue<ExtensionHandlingBehaviorValues, ExtensionHandlingBehaviorKind>(value);
   }
-  
+
   /// <summary>
-  /// Shape ID Map.
+  ///   Shape ID Map.
   /// </summary>
-  public static DocumentModel.Vml.ShapeIdMap? GetShapeIdMap(DocumentFormat.OpenXml.Vml.Office.ShapeLayout? openXmlElement)
+  public static ShapeIdMap? GetShapeIdMap(ShapeLayout? openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Vml.Office.ShapeIdMap>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Vml.ShapeIdMapConverter.CreateModelElement(itemElement);
+      return ShapeIdMapConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetShapeIdMap(DocumentFormat.OpenXml.Vml.Office.ShapeLayout? openXmlElement, DocumentModel.Vml.ShapeIdMap? value)
+
+  public static void SetShapeIdMap(ShapeLayout? openXmlElement, ShapeIdMap? value)
   {
     if (openXmlElement != null)
     {
@@ -39,25 +43,25 @@ public static class ShapeLayoutConverter
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Vml.ShapeIdMapConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Vml.Office.ShapeIdMap>(value);
+        itemElement = ShapeIdMapConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Vml.Office.ShapeIdMap>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
+
   /// <summary>
-  /// Shape Grouping History.
+  ///   Shape Grouping History.
   /// </summary>
-  public static DocumentModel.Vml.RegroupTable? GetRegroupTable(DocumentFormat.OpenXml.Vml.Office.ShapeLayout? openXmlElement)
+  public static RegroupTable? GetRegroupTable(ShapeLayout? openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Vml.Office.RegroupTable>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Vml.RegroupTableConverter.CreateModelElement(itemElement);
+      return RegroupTableConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetRegroupTable(DocumentFormat.OpenXml.Vml.Office.ShapeLayout? openXmlElement, DocumentModel.Vml.RegroupTable? value)
+
+  public static void SetRegroupTable(ShapeLayout? openXmlElement, RegroupTable? value)
   {
     if (openXmlElement != null)
     {
@@ -66,25 +70,25 @@ public static class ShapeLayoutConverter
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Vml.RegroupTableConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Vml.Office.RegroupTable>(value);
+        itemElement = RegroupTableConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Vml.Office.RegroupTable>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
+
   /// <summary>
-  /// Rule Set.
+  ///   Rule Set.
   /// </summary>
-  public static DocumentModel.Vml.Rules? GetRules(DocumentFormat.OpenXml.Vml.Office.ShapeLayout? openXmlElement)
+  public static Rules? GetRules(ShapeLayout? openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Vml.Office.Rules>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Vml.RulesConverter.CreateModelElement(itemElement);
+      return RulesConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetRules(DocumentFormat.OpenXml.Vml.Office.ShapeLayout? openXmlElement, DocumentModel.Vml.Rules? value)
+
+  public static void SetRules(ShapeLayout? openXmlElement, Rules? value)
   {
     if (openXmlElement != null)
     {
@@ -93,14 +97,14 @@ public static class ShapeLayoutConverter
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Vml.RulesConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Vml.Office.Rules>(value);
+        itemElement = RulesConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Vml.Office.Rules>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static DocumentModel.Vml.ShapeLayout? CreateModelElement(DocumentFormat.OpenXml.Vml.Office.ShapeLayout? openXmlElement)
+
+  public static DocumentModel.Vml.ShapeLayout? CreateModelElement(ShapeLayout? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -113,9 +117,9 @@ public static class ShapeLayoutConverter
     }
     return null;
   }
-  
+
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Vml.ShapeLayout? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Vml.Office.ShapeLayout, new()
+    where OpenXmlElementType : ShapeLayout, new()
   {
     if (value != null)
     {

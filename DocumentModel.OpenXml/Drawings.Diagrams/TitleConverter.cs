@@ -1,19 +1,21 @@
+using DocumentFormat.OpenXml.Drawing.Diagrams;
+
 namespace DocumentModel.OpenXml.Drawings.Diagrams;
 
 /// <summary>
-/// Title.
+///   Title.
 /// </summary>
 public static class TitleConverter
 {
   /// <summary>
-  /// Language
+  ///   Language
   /// </summary>
-  public static String? GetLanguage(DocumentFormat.OpenXml.Drawing.Diagrams.Title? openXmlElement)
+  public static String? GetLanguage(Title? openXmlElement)
   {
     return openXmlElement?.Language?.Value;
   }
-  
-  public static void SetLanguage(DocumentFormat.OpenXml.Drawing.Diagrams.Title? openXmlElement, String? value)
+
+  public static void SetLanguage(Title? openXmlElement, String? value)
   {
     if (openXmlElement != null)
       if (value != null)
@@ -21,16 +23,16 @@ public static class TitleConverter
       else
         openXmlElement.Language = null;
   }
-  
+
   /// <summary>
-  /// Value
+  ///   Value
   /// </summary>
-  public static String? GetVal(DocumentFormat.OpenXml.Drawing.Diagrams.Title? openXmlElement)
+  public static String? GetVal(Title? openXmlElement)
   {
     return openXmlElement?.Val?.Value;
   }
-  
-  public static void SetVal(DocumentFormat.OpenXml.Drawing.Diagrams.Title? openXmlElement, String? value)
+
+  public static void SetVal(Title? openXmlElement, String? value)
   {
     if (openXmlElement != null)
       if (value != null)
@@ -38,8 +40,8 @@ public static class TitleConverter
       else
         openXmlElement.Val = null;
   }
-  
-  public static DocumentModel.Drawings.Diagrams.Title? CreateModelElement(DocumentFormat.OpenXml.Drawing.Diagrams.Title? openXmlElement)
+
+  public static DocumentModel.Drawings.Diagrams.Title? CreateModelElement(Title? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -50,9 +52,9 @@ public static class TitleConverter
     }
     return null;
   }
-  
+
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.Diagrams.Title? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.Diagrams.Title, new()
+    where OpenXmlElementType : Title, new()
   {
     if (value != null)
     {

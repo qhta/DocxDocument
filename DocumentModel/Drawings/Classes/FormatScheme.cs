@@ -1,33 +1,32 @@
 namespace DocumentModel.Drawings;
 
 /// <summary>
-/// Format Scheme.
+///   Format Scheme.
 /// </summary>
-public partial class FormatScheme
+public class FormatScheme
 {
   /// <summary>
-  /// Name
+  ///   Name
   /// </summary>
   public String? Name { get; set; }
-  
+
   /// <summary>
-  /// Fill Style List.
+  ///   Fill Style List.
   /// </summary>
-  public DocumentModel.Drawings.FillStyleList? FillStyleList { get; set; }
-  
+  public FillStyleList? FillStyleList { get; set; }
+
   /// <summary>
-  /// Line Style List.
+  ///   Line Style List.
   /// </summary>
-  public DocumentModel.Drawings.LineStyleList? LineStyleList { get; set; }
-  
+  public LineStyleList? LineStyleList { get; set; }
+
   /// <summary>
-  /// Effect Style List.
+  ///   Effect Style List.
   /// </summary>
-  public DocumentModel.Drawings.EffectStyleList? EffectStyleList { get; set; }
-  
+  public EffectStyleList? EffectStyleList { get; set; }
+
   /// <summary>
-  /// Background Fill Style List.
+  ///   Background Fill Style List.
   /// </summary>
-  public DocumentModel.Drawings.BackgroundFillStyleList? BackgroundFillStyleList { get; set; }
-  
+  public BackgroundFillStyleList? BackgroundFillStyleList { get; set; }
 }

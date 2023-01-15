@@ -1,26 +1,29 @@
+using DocumentFormat.OpenXml.Packaging;
+using QueryTablePart = DocumentModel.Packaging.QueryTablePart;
+
 namespace DocumentModel.OpenXml.Packaging;
 
 /// <summary>
-/// Defines the TableDefinitionPart
+///   Defines the TableDefinitionPart
 /// </summary>
 public static class TableDefinitionPartConverter
 {
-  public static String? GetContentType(DocumentFormat.OpenXml.Packaging.TableDefinitionPart? openXmlElement)
+  public static String? GetContentType(TableDefinitionPart? openXmlElement)
   {
     return openXmlElement?.ContentType;
   }
-  
+
   /// <summary>
-  /// Gets the QueryTableParts of the TableDefinitionPart
+  ///   Gets the QueryTableParts of the TableDefinitionPart
   /// </summary>
-  public static System.Collections.ObjectModel.Collection<DocumentModel.Packaging.QueryTablePart>? GetQueryTableParts(DocumentFormat.OpenXml.Packaging.TableDefinitionPart? openXmlElement)
+  public static Collection<QueryTablePart>? GetQueryTableParts(TableDefinitionPart? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var collection = new System.Collections.ObjectModel.Collection<DocumentModel.Packaging.QueryTablePart>();
+      var collection = new Collection<QueryTablePart>();
       foreach (var item in openXmlElement.GetPartsOfType<DocumentFormat.OpenXml.Packaging.QueryTablePart>())
       {
-        var newItem = DocumentModel.OpenXml.Packaging.QueryTablePartConverter.CreateModelElement(item);
+        var newItem = QueryTablePartConverter.CreateModelElement(item);
         if (newItem != null)
           collection.Add(newItem);
       }
@@ -28,13 +31,13 @@ public static class TableDefinitionPartConverter
     }
     return null;
   }
-  
-  public static String? GetRelationshipType(DocumentFormat.OpenXml.Packaging.TableDefinitionPart? openXmlElement)
+
+  public static String? GetRelationshipType(TableDefinitionPart? openXmlElement)
   {
     return openXmlElement?.RelationshipType;
   }
-  
-  public static DocumentModel.Packaging.TableDefinitionPart? CreateModelElement(DocumentFormat.OpenXml.Packaging.TableDefinitionPart? openXmlElement)
+
+  public static DocumentModel.Packaging.TableDefinitionPart? CreateModelElement(TableDefinitionPart? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -46,9 +49,9 @@ public static class TableDefinitionPartConverter
     }
     return null;
   }
-  
+
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Packaging.TableDefinitionPart? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Packaging.TableDefinitionPart, new()
+    where OpenXmlElementType : TableDefinitionPart, new()
   {
     if (value != null)
     {

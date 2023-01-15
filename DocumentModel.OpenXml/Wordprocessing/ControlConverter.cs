@@ -1,19 +1,21 @@
+using DocumentFormat.OpenXml.Wordprocessing;
+
 namespace DocumentModel.OpenXml.Wordprocessing;
 
 /// <summary>
-/// Defines the Control Class.
+///   Defines the Control Class.
 /// </summary>
 public static class ControlConverter
 {
   /// <summary>
-  /// Unique Name for Embedded Control
+  ///   Unique Name for Embedded Control
   /// </summary>
-  public static String? GetName(DocumentFormat.OpenXml.Wordprocessing.Control? openXmlElement)
+  public static String? GetName(Control? openXmlElement)
   {
     return openXmlElement?.Name?.Value;
   }
-  
-  public static void SetName(DocumentFormat.OpenXml.Wordprocessing.Control? openXmlElement, String? value)
+
+  public static void SetName(Control? openXmlElement, String? value)
   {
     if (openXmlElement != null)
       if (value != null)
@@ -21,16 +23,16 @@ public static class ControlConverter
       else
         openXmlElement.Name = null;
   }
-  
+
   /// <summary>
-  /// Associated VML Data Reference
+  ///   Associated VML Data Reference
   /// </summary>
-  public static String? GetShapeId(DocumentFormat.OpenXml.Wordprocessing.Control? openXmlElement)
+  public static String? GetShapeId(Control? openXmlElement)
   {
     return openXmlElement?.ShapeId?.Value;
   }
-  
-  public static void SetShapeId(DocumentFormat.OpenXml.Wordprocessing.Control? openXmlElement, String? value)
+
+  public static void SetShapeId(Control? openXmlElement, String? value)
   {
     if (openXmlElement != null)
       if (value != null)
@@ -38,16 +40,16 @@ public static class ControlConverter
       else
         openXmlElement.ShapeId = null;
   }
-  
+
   /// <summary>
-  /// Embedded Control Properties Relationship Reference
+  ///   Embedded Control Properties Relationship Reference
   /// </summary>
-  public static String? GetId(DocumentFormat.OpenXml.Wordprocessing.Control? openXmlElement)
+  public static String? GetId(Control? openXmlElement)
   {
     return openXmlElement?.Id?.Value;
   }
-  
-  public static void SetId(DocumentFormat.OpenXml.Wordprocessing.Control? openXmlElement, String? value)
+
+  public static void SetId(Control? openXmlElement, String? value)
   {
     if (openXmlElement != null)
       if (value != null)
@@ -55,8 +57,8 @@ public static class ControlConverter
       else
         openXmlElement.Id = null;
   }
-  
-  public static DocumentModel.Wordprocessing.Control? CreateModelElement(DocumentFormat.OpenXml.Wordprocessing.Control? openXmlElement)
+
+  public static DocumentModel.Wordprocessing.Control? CreateModelElement(Control? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -68,9 +70,9 @@ public static class ControlConverter
     }
     return null;
   }
-  
+
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.Control? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Wordprocessing.Control, new()
+    where OpenXmlElementType : Control, new()
   {
     if (value != null)
     {

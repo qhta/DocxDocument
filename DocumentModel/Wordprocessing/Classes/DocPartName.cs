@@ -1,18 +1,17 @@
 namespace DocumentModel.Wordprocessing;
 
 /// <summary>
-/// Entry Name.
+///   Entry Name.
 /// </summary>
-public partial class DocPartName
+public class DocPartName
 {
   /// <summary>
-  /// Name Value
+  ///   Name Value
   /// </summary>
   public String? Val { get; set; }
-  
+
   /// <summary>
-  /// Built-In Entry
+  ///   Built-In Entry
   /// </summary>
   public Boolean? Decorated { get; set; }
-  
 }

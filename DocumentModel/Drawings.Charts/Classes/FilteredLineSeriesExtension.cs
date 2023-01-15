@@ -1,13 +1,12 @@
 namespace DocumentModel.Drawings.Charts;
 
 /// <summary>
-/// Defines the FilteredLineSeriesExtension Class.
+///   Defines the FilteredLineSeriesExtension Class.
 /// </summary>
-public partial class FilteredLineSeriesExtension
+public class FilteredLineSeriesExtension
 {
   /// <summary>
-  /// LineChartSeries.
+  ///   LineChartSeries.
   /// </summary>
-  public DocumentModel.Drawings.Charts.LineChartSeries3? LineChartSeries { get; set; }
-  
+  public LineChartSeries3? LineChartSeries { get; set; }
 }

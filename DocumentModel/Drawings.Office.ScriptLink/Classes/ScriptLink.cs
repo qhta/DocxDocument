@@ -1,18 +1,17 @@
 namespace DocumentModel.Drawings.Office.ScriptLink;
 
 /// <summary>
-/// Defines the ScriptLink Class.
+///   Defines the ScriptLink Class.
 /// </summary>
-public partial class ScriptLink
+public class ScriptLink
 {
   /// <summary>
-  /// val, this property is only available in Microsoft365 and later.
+  ///   val, this property is only available in Microsoft365 and later.
   /// </summary>
   public String? Val { get; set; }
-  
+
   /// <summary>
-  /// OfficeArtExtensionList.
+  ///   OfficeArtExtensionList.
   /// </summary>
-  public DocumentModel.Drawings.Office.ScriptLink.OfficeArtExtensionList? OfficeArtExtensionList { get; set; }
-  
+  public OfficeArtExtensionList? OfficeArtExtensionList { get; set; }
 }

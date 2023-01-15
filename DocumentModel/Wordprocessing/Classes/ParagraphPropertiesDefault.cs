@@ -1,13 +1,12 @@
 namespace DocumentModel.Wordprocessing;
 
 /// <summary>
-/// Default Paragraph Properties.
+///   Default Paragraph Properties.
 /// </summary>
-public partial class ParagraphPropertiesDefault
+public class ParagraphPropertiesDefault
 {
   /// <summary>
-  /// Paragraph Properties.
+  ///   Paragraph Properties.
   /// </summary>
-  public DocumentModel.Wordprocessing.ParagraphPropertiesBaseStyle? ParagraphPropertiesBaseStyle { get; set; }
-  
+  public ParagraphPropertiesBaseStyle? ParagraphPropertiesBaseStyle { get; set; }
 }

@@ -1,58 +1,57 @@
 namespace DocumentModel.Drawings.ChartsStyle;
 
 /// <summary>
-/// Defines the StyleEntry Class.
+///   Defines the StyleEntry Class.
 /// </summary>
-public partial class StyleEntry
+public class StyleEntry
 {
   /// <summary>
-  /// mods, this property is only available in Office 2013 and later.
+  ///   mods, this property is only available in Office 2013 and later.
   /// </summary>
-  public DocumentModel.ListOf<System.String>? Modifiers { get; set; }
-  
+  public ListOf<String>? Modifiers { get; set; }
+
   /// <summary>
-  /// LineReference.
+  ///   LineReference.
   /// </summary>
-  public DocumentModel.Drawings.ChartsStyle.LineReference? LineReference { get; set; }
-  
+  public LineReference? LineReference { get; set; }
+
   /// <summary>
-  /// LineWidthScale.
+  ///   LineWidthScale.
   /// </summary>
   public String? LineWidthScale { get; set; }
-  
+
   /// <summary>
-  /// FillReference.
+  ///   FillReference.
   /// </summary>
-  public DocumentModel.Drawings.ChartsStyle.FillReference? FillReference { get; set; }
-  
+  public FillReference? FillReference { get; set; }
+
   /// <summary>
-  /// EffectReference.
+  ///   EffectReference.
   /// </summary>
-  public DocumentModel.Drawings.ChartsStyle.EffectReference? EffectReference { get; set; }
-  
+  public EffectReference? EffectReference { get; set; }
+
   /// <summary>
-  /// FontReference.
+  ///   FontReference.
   /// </summary>
-  public DocumentModel.Drawings.ChartsStyle.FontReference? FontReference { get; set; }
-  
+  public FontReference? FontReference { get; set; }
+
   /// <summary>
-  /// ShapeProperties.
+  ///   ShapeProperties.
   /// </summary>
-  public DocumentModel.Drawings.ChartsStyle.ShapeProperties? ShapeProperties { get; set; }
-  
+  public ShapeProperties? ShapeProperties { get; set; }
+
   /// <summary>
-  /// TextCharacterPropertiesType.
+  ///   TextCharacterPropertiesType.
   /// </summary>
-  public DocumentModel.Drawings.ChartsStyle.TextCharacterPropertiesType? TextCharacterPropertiesType { get; set; }
-  
+  public TextCharacterPropertiesType? TextCharacterPropertiesType { get; set; }
+
   /// <summary>
-  /// TextBodyProperties.
+  ///   TextBodyProperties.
   /// </summary>
-  public DocumentModel.Drawings.ChartsStyle.TextBodyProperties? TextBodyProperties { get; set; }
-  
+  public TextBodyProperties? TextBodyProperties { get; set; }
+
   /// <summary>
-  /// OfficeArtExtensionList.
+  ///   OfficeArtExtensionList.
   /// </summary>
-  public DocumentModel.Drawings.ChartsStyle.OfficeArtExtensionList? OfficeArtExtensionList { get; set; }
-  
+  public OfficeArtExtensionList? OfficeArtExtensionList { get; set; }
 }

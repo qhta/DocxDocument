@@ -1,53 +1,52 @@
 namespace DocumentModel.Wordprocessing;
 
 /// <summary>
-/// Defines the TabStopValues enumeration.
+///   Defines the TabStopValues enumeration.
 /// </summary>
 public enum TabStopKind
 {
   /// <summary>
-  /// No Tab Stop.
+  ///   No Tab Stop.
   /// </summary>
   Clear,
-  
+
   /// <summary>
-  /// Left Tab.
+  ///   Left Tab.
   /// </summary>
   Left,
-  
+
   /// <summary>
-  /// start.
+  ///   start.
   /// </summary>
   Start,
-  
+
   /// <summary>
-  /// Centered Tab.
+  ///   Centered Tab.
   /// </summary>
   Center,
-  
+
   /// <summary>
-  /// Right Tab.
+  ///   Right Tab.
   /// </summary>
   Right,
-  
+
   /// <summary>
-  /// end.
+  ///   end.
   /// </summary>
   End,
-  
+
   /// <summary>
-  /// Decimal Tab.
+  ///   Decimal Tab.
   /// </summary>
   Decimal,
-  
+
   /// <summary>
-  /// Bar Tab.
+  ///   Bar Tab.
   /// </summary>
   Bar,
-  
+
   /// <summary>
-  /// List Tab.
+  ///   List Tab.
   /// </summary>
-  Number,
-  
+  Number
 }

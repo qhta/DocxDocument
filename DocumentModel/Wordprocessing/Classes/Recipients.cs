@@ -1,10 +1,9 @@
 namespace DocumentModel.Wordprocessing;
 
 /// <summary>
-/// Defines Recipients.
+///   Defines Recipients.
 /// </summary>
-public partial class Recipients
+public class Recipients
 {
-  public DocumentModel.Wordprocessing.RecipientData? RecipientData { get; set; }
-  
+  public RecipientData? RecipientData { get; set; }
 }

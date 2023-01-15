@@ -1,48 +1,54 @@
+using DocumentFormat.OpenXml.Wordprocessing;
+using DocumentModel.Wordprocessing;
+using Frame = DocumentModel.Wordprocessing.Frame;
+using Frameset = DocumentFormat.OpenXml.Wordprocessing.Frameset;
+using FramesetSplitbar = DocumentModel.Wordprocessing.FramesetSplitbar;
+
 namespace DocumentModel.OpenXml.Wordprocessing;
 
 /// <summary>
-/// Nested Frameset Definition.
+///   Nested Frameset Definition.
 /// </summary>
 public static class FramesetConverter
 {
   /// <summary>
-  /// Nested Frameset Size.
+  ///   Nested Frameset Size.
   /// </summary>
-  public static String? GetFrameSize(DocumentFormat.OpenXml.Wordprocessing.Frameset? openXmlElement)
+  public static String? GetFrameSize(Frameset? openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.FrameSize>();
+    var itemElement = openXmlElement?.GetFirstChild<FrameSize>();
     if (itemElement != null)
       return itemElement.Val?.Value;
     return null;
   }
-  
-  public static void SetFrameSize(DocumentFormat.OpenXml.Wordprocessing.Frameset? openXmlElement, String? value)
+
+  public static void SetFrameSize(Frameset? openXmlElement, String? value)
   {
     if (openXmlElement != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.FrameSize>();
+      var itemElement = openXmlElement.GetFirstChild<FrameSize>();
       if (itemElement != null)
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = new DocumentFormat.OpenXml.Wordprocessing.FrameSize { Val = value };
+        itemElement = new FrameSize { Val = value };
         openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
+
   /// <summary>
-  /// Frameset Splitter Properties.
+  ///   Frameset Splitter Properties.
   /// </summary>
-  public static DocumentModel.Wordprocessing.FramesetSplitbar? GetFramesetSplitbar(DocumentFormat.OpenXml.Wordprocessing.Frameset? openXmlElement)
+  public static FramesetSplitbar? GetFramesetSplitbar(Frameset? openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.FramesetSplitbar>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Wordprocessing.FramesetSplitbarConverter.CreateModelElement(itemElement);
+      return FramesetSplitbarConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetFramesetSplitbar(DocumentFormat.OpenXml.Wordprocessing.Frameset? openXmlElement, DocumentModel.Wordprocessing.FramesetSplitbar? value)
+
+  public static void SetFramesetSplitbar(Frameset? openXmlElement, FramesetSplitbar? value)
   {
     if (openXmlElement != null)
     {
@@ -51,78 +57,75 @@ public static class FramesetConverter
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Wordprocessing.FramesetSplitbarConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.FramesetSplitbar>(value);
+        itemElement = FramesetSplitbarConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.FramesetSplitbar>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
+
   /// <summary>
-  /// Frameset Layout.
+  ///   Frameset Layout.
   /// </summary>
-  public static DocumentModel.Wordprocessing.FrameLayoutKind? GetFrameLayout(DocumentFormat.OpenXml.Wordprocessing.Frameset? openXmlElement)
+  public static FrameLayoutKind? GetFrameLayout(Frameset? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.FrameLayout>();
-      if (itemElement?.Val?.Value != null)
-      {
-        return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Wordprocessing.FrameLayoutValues, DocumentModel.Wordprocessing.FrameLayoutKind>(itemElement.Val.Value);
-      }
+      var itemElement = openXmlElement.GetFirstChild<FrameLayout>();
+      if (itemElement?.Val?.Value != null) return EnumValueConverter.GetValue<FrameLayoutValues, FrameLayoutKind>(itemElement.Val.Value);
     }
     return null;
   }
-  
-  public static void SetFrameLayout(DocumentFormat.OpenXml.Wordprocessing.Frameset? openXmlElement, DocumentModel.Wordprocessing.FrameLayoutKind? value)
+
+  public static void SetFrameLayout(Frameset? openXmlElement, FrameLayoutKind? value)
   {
     if (openXmlElement != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.FrameLayout>();
+      var itemElement = openXmlElement.GetFirstChild<FrameLayout>();
       if (itemElement != null)
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = EnumValueConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.FrameLayout, DocumentFormat.OpenXml.Wordprocessing.FrameLayoutValues, DocumentModel.Wordprocessing.FrameLayoutKind>(value);
+        itemElement = EnumValueConverter.CreateOpenXmlElement<FrameLayout, FrameLayoutValues, FrameLayoutKind>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static DocumentModel.Wordprocessing.Frameset? GetChildFrameset(DocumentFormat.OpenXml.Wordprocessing.Frameset? openXmlElement)
+
+  public static DocumentModel.Wordprocessing.Frameset? GetChildFrameset(Frameset? openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.Frameset>();
+    var itemElement = openXmlElement?.GetFirstChild<Frameset>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Wordprocessing.FramesetConverter.CreateModelElement(itemElement);
+      return CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetChildFrameset(DocumentFormat.OpenXml.Wordprocessing.Frameset? openXmlElement, DocumentModel.Wordprocessing.Frameset? value)
+
+  public static void SetChildFrameset(Frameset? openXmlElement, DocumentModel.Wordprocessing.Frameset? value)
   {
     if (openXmlElement != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.Frameset>();
+      var itemElement = openXmlElement.GetFirstChild<Frameset>();
       if (itemElement != null)
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Wordprocessing.FramesetConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.Frameset>(value);
+        itemElement = CreateOpenXmlElement<Frameset>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static DocumentModel.Wordprocessing.Frame? GetFrame(DocumentFormat.OpenXml.Wordprocessing.Frameset? openXmlElement)
+
+  public static Frame? GetFrame(Frameset? openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.Frame>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Wordprocessing.FrameConverter.CreateModelElement(itemElement);
+      return FrameConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetFrame(DocumentFormat.OpenXml.Wordprocessing.Frameset? openXmlElement, DocumentModel.Wordprocessing.Frame? value)
+
+  public static void SetFrame(Frameset? openXmlElement, Frame? value)
   {
     if (openXmlElement != null)
     {
@@ -131,14 +134,14 @@ public static class FramesetConverter
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Wordprocessing.FrameConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.Frame>(value);
+        itemElement = FrameConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.Frame>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static DocumentModel.Wordprocessing.Frameset? CreateModelElement(DocumentFormat.OpenXml.Wordprocessing.Frameset? openXmlElement)
+
+  public static DocumentModel.Wordprocessing.Frameset? CreateModelElement(Frameset? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -152,9 +155,9 @@ public static class FramesetConverter
     }
     return null;
   }
-  
+
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.Frameset? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Wordprocessing.Frameset, new()
+    where OpenXmlElementType : Frameset, new()
   {
     if (value != null)
     {

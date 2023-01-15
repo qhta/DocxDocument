@@ -1,18 +1,17 @@
 namespace DocumentModel.Wordprocessing;
 
 /// <summary>
-/// Numbering Level Text.
+///   Numbering Level Text.
 /// </summary>
-public partial class LevelText
+public class LevelText
 {
   /// <summary>
-  /// Level Text
+  ///   Level Text
   /// </summary>
   public String? Val { get; set; }
-  
+
   /// <summary>
-  /// Level Text Is Null Character
+  ///   Level Text Is Null Character
   /// </summary>
   public Boolean? Null { get; set; }
-  
 }

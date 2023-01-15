@@ -1,18 +1,17 @@
 namespace DocumentModel.Math;
 
 /// <summary>
-/// Sub-Superscript Properties.
+///   Sub-Superscript Properties.
 /// </summary>
-public partial class SubSuperscriptProperties
+public class SubSuperscriptProperties
 {
   /// <summary>
-  /// Align Scripts.
+  ///   Align Scripts.
   /// </summary>
-  public DocumentModel.Math.BooleanKind? AlignScripts { get; set; }
-  
+  public BooleanKind? AlignScripts { get; set; }
+
   /// <summary>
-  /// ControlProperties.
+  ///   ControlProperties.
   /// </summary>
-  public DocumentModel.Math.ControlProperties? ControlProperties { get; set; }
-  
+  public ControlProperties? ControlProperties { get; set; }
 }

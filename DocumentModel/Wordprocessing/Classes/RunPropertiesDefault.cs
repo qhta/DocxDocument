@@ -1,13 +1,12 @@
 namespace DocumentModel.Wordprocessing;
 
 /// <summary>
-/// Default Run Properties.
+///   Default Run Properties.
 /// </summary>
-public partial class RunPropertiesDefault
+public class RunPropertiesDefault
 {
   /// <summary>
-  /// Run Properties.
+  ///   Run Properties.
   /// </summary>
-  public DocumentModel.Wordprocessing.RunPropertiesBaseStyle? RunPropertiesBaseStyle { get; set; }
-  
+  public RunPropertiesBaseStyle? RunPropertiesBaseStyle { get; set; }
 }

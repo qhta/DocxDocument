@@ -1,10 +1,9 @@
 namespace DocumentModel.Drawings.Diagrams;
 
 /// <summary>
-/// Shape Adjust List.
+///   Shape Adjust List.
 /// </summary>
-public partial class AdjustList
+public class AdjustList
 {
-  public Collection<DocumentModel.Drawings.Diagrams.Adjust>? Adjusts { get; set; }
-  
+  public Collection<Adjust>? Adjusts { get; set; }
 }

@@ -1,23 +1,22 @@
 namespace DocumentModel.Wordprocessing;
 
 /// <summary>
-/// Defines the PathShadeTypeValues enumeration.
+///   Defines the PathShadeTypeValues enumeration.
 /// </summary>
 public enum PathShadeKind
 {
   /// <summary>
-  /// shape.
+  ///   shape.
   /// </summary>
   Shape,
-  
+
   /// <summary>
-  /// circle.
+  ///   circle.
   /// </summary>
   Circle,
-  
+
   /// <summary>
-  /// rect.
+  ///   rect.
   /// </summary>
-  Rect,
-  
+  Rect
 }

@@ -1,53 +1,52 @@
 namespace DocumentModel.Math;
 
 /// <summary>
-/// Border Box Properties.
+///   Border Box Properties.
 /// </summary>
-public partial class BorderBoxProperties
+public class BorderBoxProperties
 {
   /// <summary>
-  /// Hide Top Edge.
+  ///   Hide Top Edge.
   /// </summary>
-  public DocumentModel.Math.BooleanKind? HideTop { get; set; }
-  
+  public BooleanKind? HideTop { get; set; }
+
   /// <summary>
-  /// Hide Bottom Edge.
+  ///   Hide Bottom Edge.
   /// </summary>
-  public DocumentModel.Math.BooleanKind? HideBottom { get; set; }
-  
+  public BooleanKind? HideBottom { get; set; }
+
   /// <summary>
-  /// Hide Left Edge.
+  ///   Hide Left Edge.
   /// </summary>
-  public DocumentModel.Math.BooleanKind? HideLeft { get; set; }
-  
+  public BooleanKind? HideLeft { get; set; }
+
   /// <summary>
-  /// Hide Right Edge.
+  ///   Hide Right Edge.
   /// </summary>
-  public DocumentModel.Math.BooleanKind? HideRight { get; set; }
-  
+  public BooleanKind? HideRight { get; set; }
+
   /// <summary>
-  /// Border Box Strikethrough Horizontal.
+  ///   Border Box Strikethrough Horizontal.
   /// </summary>
-  public DocumentModel.Math.BooleanKind? StrikeHorizontal { get; set; }
-  
+  public BooleanKind? StrikeHorizontal { get; set; }
+
   /// <summary>
-  /// Border Box Strikethrough Vertical.
+  ///   Border Box Strikethrough Vertical.
   /// </summary>
-  public DocumentModel.Math.BooleanKind? StrikeVertical { get; set; }
-  
+  public BooleanKind? StrikeVertical { get; set; }
+
   /// <summary>
-  /// Border Box Strikethrough Bottom-Left to Top-Right.
+  ///   Border Box Strikethrough Bottom-Left to Top-Right.
   /// </summary>
-  public DocumentModel.Math.BooleanKind? StrikeBottomLeftToTopRight { get; set; }
-  
+  public BooleanKind? StrikeBottomLeftToTopRight { get; set; }
+
   /// <summary>
-  /// Border Box Strikethrough Top-Left to Bottom-Right.
+  ///   Border Box Strikethrough Top-Left to Bottom-Right.
   /// </summary>
-  public DocumentModel.Math.BooleanKind? StrikeTopLeftToBottomRight { get; set; }
-  
+  public BooleanKind? StrikeTopLeftToBottomRight { get; set; }
+
   /// <summary>
-  /// ControlProperties.
+  ///   ControlProperties.
   /// </summary>
-  public DocumentModel.Math.ControlProperties? ControlProperties { get; set; }
-  
+  public ControlProperties? ControlProperties { get; set; }
 }

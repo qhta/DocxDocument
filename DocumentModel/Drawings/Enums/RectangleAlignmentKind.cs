@@ -1,53 +1,52 @@
 namespace DocumentModel.Drawings;
 
 /// <summary>
-/// Rectangle Alignments
+///   Rectangle Alignments
 /// </summary>
 public enum RectangleAlignmentKind
 {
   /// <summary>
-  /// Rectangle Alignment Enum ( Top Left ).
+  ///   Rectangle Alignment Enum ( Top Left ).
   /// </summary>
   TopLeft,
-  
+
   /// <summary>
-  /// Rectangle Alignment Enum ( Top ).
+  ///   Rectangle Alignment Enum ( Top ).
   /// </summary>
   Top,
-  
+
   /// <summary>
-  /// Rectangle Alignment Enum ( Top Right ).
+  ///   Rectangle Alignment Enum ( Top Right ).
   /// </summary>
   TopRight,
-  
+
   /// <summary>
-  /// Rectangle Alignment Enum ( Left ).
+  ///   Rectangle Alignment Enum ( Left ).
   /// </summary>
   Left,
-  
+
   /// <summary>
-  /// Rectangle Alignment Enum ( Center ).
+  ///   Rectangle Alignment Enum ( Center ).
   /// </summary>
   Center,
-  
+
   /// <summary>
-  /// Rectangle Alignment Enum ( Right ).
+  ///   Rectangle Alignment Enum ( Right ).
   /// </summary>
   Right,
-  
+
   /// <summary>
-  /// Rectangle Alignment Enum ( Bottom Left ).
+  ///   Rectangle Alignment Enum ( Bottom Left ).
   /// </summary>
   BottomLeft,
-  
+
   /// <summary>
-  /// Rectangle Alignment Enum ( Bottom ).
+  ///   Rectangle Alignment Enum ( Bottom ).
   /// </summary>
   Bottom,
-  
+
   /// <summary>
-  /// Rectangle Alignment Enum ( Bottom Right ).
+  ///   Rectangle Alignment Enum ( Bottom Right ).
   /// </summary>
-  BottomRight,
-  
+  BottomRight
 }

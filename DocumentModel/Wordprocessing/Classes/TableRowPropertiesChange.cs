@@ -1,28 +1,27 @@
 namespace DocumentModel.Wordprocessing;
 
 /// <summary>
-/// Revision Information for Table Row Properties.
+///   Revision Information for Table Row Properties.
 /// </summary>
-public partial class TableRowPropertiesChange
+public class TableRowPropertiesChange
 {
   /// <summary>
-  /// author
+  ///   author
   /// </summary>
   public String? Author { get; set; }
-  
+
   /// <summary>
-  /// date
+  ///   date
   /// </summary>
   public DateTime? Date { get; set; }
-  
+
   /// <summary>
-  /// Annotation Identifier
+  ///   Annotation Identifier
   /// </summary>
   public String? Id { get; set; }
-  
+
   /// <summary>
-  /// Previous Table Row Properties.
+  ///   Previous Table Row Properties.
   /// </summary>
-  public DocumentModel.Wordprocessing.PreviousTableRowProperties? PreviousTableRowProperties { get; set; }
-  
+  public PreviousTableRowProperties? PreviousTableRowProperties { get; set; }
 }

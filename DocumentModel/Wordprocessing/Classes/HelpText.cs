@@ -1,18 +1,17 @@
 namespace DocumentModel.Wordprocessing;
 
 /// <summary>
-/// Associated Help Text.
+///   Associated Help Text.
 /// </summary>
-public partial class HelpText
+public class HelpText
 {
   /// <summary>
-  /// Help Text Type
+  ///   Help Text Type
   /// </summary>
-  public DocumentModel.Wordprocessing.InfoTextKind? Type { get; set; }
-  
+  public InfoTextKind? Type { get; set; }
+
   /// <summary>
-  /// Help Text Value
+  ///   Help Text Value
   /// </summary>
   public String? Val { get; set; }
-  
 }

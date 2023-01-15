@@ -1,68 +1,67 @@
 namespace DocumentModel.Wordprocessing;
 
 /// <summary>
-/// Web Page Settings.
+///   Web Page Settings.
 /// </summary>
-public partial class WebSettings
+public class WebSettings
 {
   /// <summary>
-  /// Frameset.
+  ///   Frameset.
   /// </summary>
-  public DocumentModel.Wordprocessing.Frameset? Frameset { get; set; }
-  
+  public Frameset? Frameset { get; set; }
+
   /// <summary>
-  /// Divs.
+  ///   Divs.
   /// </summary>
-  public DocumentModel.Wordprocessing.Divs? Divs { get; set; }
-  
+  public Divs? Divs { get; set; }
+
   /// <summary>
-  /// WebPageEncoding.
+  ///   WebPageEncoding.
   /// </summary>
   public String? WebPageEncoding { get; set; }
-  
+
   /// <summary>
-  /// OptimizeForBrowser.
+  ///   OptimizeForBrowser.
   /// </summary>
   public Boolean? OptimizeForBrowser { get; set; }
-  
+
   /// <summary>
-  /// RelyOnVML.
+  ///   RelyOnVML.
   /// </summary>
   public Boolean? RelyOnVML { get; set; }
-  
+
   /// <summary>
-  /// AllowPNG.
+  ///   AllowPNG.
   /// </summary>
   public Boolean? AllowPNG { get; set; }
-  
+
   /// <summary>
-  /// DoNotRelyOnCSS.
+  ///   DoNotRelyOnCSS.
   /// </summary>
   public Boolean? DoNotRelyOnCSS { get; set; }
-  
+
   /// <summary>
-  /// DoNotSaveAsSingleFile.
+  ///   DoNotSaveAsSingleFile.
   /// </summary>
   public Boolean? DoNotSaveAsSingleFile { get; set; }
-  
+
   /// <summary>
-  /// DoNotOrganizeInFolder.
+  ///   DoNotOrganizeInFolder.
   /// </summary>
   public Boolean? DoNotOrganizeInFolder { get; set; }
-  
+
   /// <summary>
-  /// DoNotUseLongFileNames.
+  ///   DoNotUseLongFileNames.
   /// </summary>
   public Boolean? DoNotUseLongFileNames { get; set; }
-  
+
   /// <summary>
-  /// PixelsPerInch.
+  ///   PixelsPerInch.
   /// </summary>
   public Int32? PixelsPerInch { get; set; }
-  
+
   /// <summary>
-  /// TargetScreenSize.
+  ///   TargetScreenSize.
   /// </summary>
-  public DocumentModel.Wordprocessing.TargetScreenSizeKind? TargetScreenSize { get; set; }
-  
+  public TargetScreenSizeKind? TargetScreenSize { get; set; }
 }

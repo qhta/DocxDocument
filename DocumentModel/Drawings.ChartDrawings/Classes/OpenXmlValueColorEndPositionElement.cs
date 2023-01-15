@@ -1,23 +1,22 @@
 namespace DocumentModel.Drawings.ChartDrawings;
 
 /// <summary>
-/// Defines the OpenXmlValueColorEndPositionElement Class.
+///   Defines the OpenXmlValueColorEndPositionElement Class.
 /// </summary>
-public partial class OpenXmlValueColorEndPositionElement
+public class OpenXmlValueColorEndPositionElement
 {
   /// <summary>
-  /// ExtremeValueColorPosition.
+  ///   ExtremeValueColorPosition.
   /// </summary>
   public Boolean? ExtremeValueColorPosition { get; set; }
-  
+
   /// <summary>
-  /// NumberColorPosition.
+  ///   NumberColorPosition.
   /// </summary>
   public Double? NumberColorPosition { get; set; }
-  
+
   /// <summary>
-  /// PercentageColorPosition.
+  ///   PercentageColorPosition.
   /// </summary>
   public Double? PercentageColorPosition { get; set; }
-  
 }

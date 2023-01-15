@@ -1,19 +1,21 @@
+using DocumentFormat.OpenXml.Drawing;
+
 namespace DocumentModel.OpenXml.Drawings;
 
 /// <summary>
-/// Shape Text Rectangle.
+///   Shape Text Rectangle.
 /// </summary>
 public static class RectangleConverter
 {
   /// <summary>
-  /// Left
+  ///   Left
   /// </summary>
-  public static String? GetLeft(DocumentFormat.OpenXml.Drawing.Rectangle? openXmlElement)
+  public static String? GetLeft(Rectangle? openXmlElement)
   {
     return openXmlElement?.Left?.Value;
   }
-  
-  public static void SetLeft(DocumentFormat.OpenXml.Drawing.Rectangle? openXmlElement, String? value)
+
+  public static void SetLeft(Rectangle? openXmlElement, String? value)
   {
     if (openXmlElement != null)
       if (value != null)
@@ -21,16 +23,16 @@ public static class RectangleConverter
       else
         openXmlElement.Left = null;
   }
-  
+
   /// <summary>
-  /// Top
+  ///   Top
   /// </summary>
-  public static String? GetTop(DocumentFormat.OpenXml.Drawing.Rectangle? openXmlElement)
+  public static String? GetTop(Rectangle? openXmlElement)
   {
     return openXmlElement?.Top?.Value;
   }
-  
-  public static void SetTop(DocumentFormat.OpenXml.Drawing.Rectangle? openXmlElement, String? value)
+
+  public static void SetTop(Rectangle? openXmlElement, String? value)
   {
     if (openXmlElement != null)
       if (value != null)
@@ -38,16 +40,16 @@ public static class RectangleConverter
       else
         openXmlElement.Top = null;
   }
-  
+
   /// <summary>
-  /// Right
+  ///   Right
   /// </summary>
-  public static String? GetRight(DocumentFormat.OpenXml.Drawing.Rectangle? openXmlElement)
+  public static String? GetRight(Rectangle? openXmlElement)
   {
     return openXmlElement?.Right?.Value;
   }
-  
-  public static void SetRight(DocumentFormat.OpenXml.Drawing.Rectangle? openXmlElement, String? value)
+
+  public static void SetRight(Rectangle? openXmlElement, String? value)
   {
     if (openXmlElement != null)
       if (value != null)
@@ -55,16 +57,16 @@ public static class RectangleConverter
       else
         openXmlElement.Right = null;
   }
-  
+
   /// <summary>
-  /// Bottom Position
+  ///   Bottom Position
   /// </summary>
-  public static String? GetBottom(DocumentFormat.OpenXml.Drawing.Rectangle? openXmlElement)
+  public static String? GetBottom(Rectangle? openXmlElement)
   {
     return openXmlElement?.Bottom?.Value;
   }
-  
-  public static void SetBottom(DocumentFormat.OpenXml.Drawing.Rectangle? openXmlElement, String? value)
+
+  public static void SetBottom(Rectangle? openXmlElement, String? value)
   {
     if (openXmlElement != null)
       if (value != null)
@@ -72,8 +74,8 @@ public static class RectangleConverter
       else
         openXmlElement.Bottom = null;
   }
-  
-  public static DocumentModel.Drawings.Rectangle? CreateModelElement(DocumentFormat.OpenXml.Drawing.Rectangle? openXmlElement)
+
+  public static DocumentModel.Drawings.Rectangle? CreateModelElement(Rectangle? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -86,9 +88,9 @@ public static class RectangleConverter
     }
     return null;
   }
-  
+
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.Rectangle? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.Rectangle, new()
+    where OpenXmlElementType : Rectangle, new()
   {
     if (value != null)
     {

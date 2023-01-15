@@ -1,10 +1,9 @@
 namespace DocumentModel.Drawings;
 
 /// <summary>
-/// Tab List.
+///   Tab List.
 /// </summary>
-public partial class TabStopList
+public class TabStopList
 {
-  public Collection<DocumentModel.Drawings.TabStop>? TabStops { get; set; }
-  
+  public Collection<TabStop>? TabStops { get; set; }
 }

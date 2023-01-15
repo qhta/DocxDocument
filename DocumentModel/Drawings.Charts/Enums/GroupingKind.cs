@@ -1,23 +1,22 @@
 namespace DocumentModel.Drawings.Charts;
 
 /// <summary>
-/// Grouping
+///   Grouping
 /// </summary>
 public enum GroupingKind
 {
   /// <summary>
-  /// 100% Stacked.
+  ///   100% Stacked.
   /// </summary>
   PercentStacked,
-  
+
   /// <summary>
-  /// Standard.
+  ///   Standard.
   /// </summary>
   Standard,
-  
+
   /// <summary>
-  /// Stacked.
+  ///   Stacked.
   /// </summary>
-  Stacked,
-  
+  Stacked
 }

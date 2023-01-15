@@ -1,23 +1,22 @@
 namespace DocumentModel.Wordprocessing;
 
 /// <summary>
-/// Legacy Numbering Level Properties.
+///   Legacy Numbering Level Properties.
 /// </summary>
-public partial class LegacyNumbering
+public class LegacyNumbering
 {
   /// <summary>
-  /// Use Legacy Numbering Properties
+  ///   Use Legacy Numbering Properties
   /// </summary>
   public Boolean? Legacy { get; set; }
-  
+
   /// <summary>
-  /// Legacy Spacing
+  ///   Legacy Spacing
   /// </summary>
   public String? LegacySpace { get; set; }
-  
+
   /// <summary>
-  /// Legacy Indent
+  ///   Legacy Indent
   /// </summary>
   public String? LegacyIndent { get; set; }
-  
 }

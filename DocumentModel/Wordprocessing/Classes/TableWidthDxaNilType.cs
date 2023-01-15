@@ -1,18 +1,17 @@
 namespace DocumentModel.Wordprocessing;
 
 /// <summary>
-/// Defines the TableWidthDxaNilType Class.
+///   Defines the TableWidthDxaNilType Class.
 /// </summary>
-public partial class TableWidthDxaNilType
+public class TableWidthDxaNilType
 {
   /// <summary>
-  /// w
+  ///   w
   /// </summary>
   public Int16? Width { get; set; }
-  
+
   /// <summary>
-  /// type
+  ///   type
   /// </summary>
-  public DocumentModel.Wordprocessing.TableWidthKind? Type { get; set; }
-  
+  public TableWidthKind? Type { get; set; }
 }

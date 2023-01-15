@@ -1,18 +1,18 @@
 namespace DocumentModel.OpenXml;
 
 /// <summary>
-/// Defines the ThemeFamily Class.
+///   Defines the ThemeFamily Class.
 /// </summary>
 public static class ThemeFamilyConverter
 {
   /// <summary>
-  /// name, this property is only available in Office 2013 and later.
+  ///   name, this property is only available in Office 2013 and later.
   /// </summary>
   public static String? GetName(DocumentFormat.OpenXml.Office2013.Theme.ThemeFamily? openXmlElement)
   {
     return openXmlElement?.Name?.Value;
   }
-  
+
   public static void SetName(DocumentFormat.OpenXml.Office2013.Theme.ThemeFamily? openXmlElement, String? value)
   {
     if (openXmlElement != null)
@@ -21,15 +21,15 @@ public static class ThemeFamilyConverter
       else
         openXmlElement.Name = null;
   }
-  
+
   /// <summary>
-  /// id, this property is only available in Office 2013 and later.
+  ///   id, this property is only available in Office 2013 and later.
   /// </summary>
   public static String? GetId(DocumentFormat.OpenXml.Office2013.Theme.ThemeFamily? openXmlElement)
   {
     return openXmlElement?.Id?.Value;
   }
-  
+
   public static void SetId(DocumentFormat.OpenXml.Office2013.Theme.ThemeFamily? openXmlElement, String? value)
   {
     if (openXmlElement != null)
@@ -38,15 +38,15 @@ public static class ThemeFamilyConverter
       else
         openXmlElement.Id = null;
   }
-  
+
   /// <summary>
-  /// vid, this property is only available in Office 2013 and later.
+  ///   vid, this property is only available in Office 2013 and later.
   /// </summary>
   public static String? GetVid(DocumentFormat.OpenXml.Office2013.Theme.ThemeFamily? openXmlElement)
   {
     return openXmlElement?.Vid?.Value;
   }
-  
+
   public static void SetVid(DocumentFormat.OpenXml.Office2013.Theme.ThemeFamily? openXmlElement, String? value)
   {
     if (openXmlElement != null)
@@ -55,19 +55,19 @@ public static class ThemeFamilyConverter
       else
         openXmlElement.Vid = null;
   }
-  
+
   /// <summary>
-  /// OfficeArtExtensionList.
+  ///   OfficeArtExtensionList.
   /// </summary>
-  public static DocumentModel.OfficeArtExtensionList? GetOfficeArtExtensionList(DocumentFormat.OpenXml.Office2013.Theme.ThemeFamily? openXmlElement)
+  public static OfficeArtExtensionList? GetOfficeArtExtensionList(DocumentFormat.OpenXml.Office2013.Theme.ThemeFamily? openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office2013.Theme.OfficeArtExtensionList>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.OfficeArtExtensionListConverter.CreateModelElement(itemElement);
+      return OfficeArtExtensionListConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetOfficeArtExtensionList(DocumentFormat.OpenXml.Office2013.Theme.ThemeFamily? openXmlElement, DocumentModel.OfficeArtExtensionList? value)
+
+  public static void SetOfficeArtExtensionList(DocumentFormat.OpenXml.Office2013.Theme.ThemeFamily? openXmlElement, OfficeArtExtensionList? value)
   {
     if (openXmlElement != null)
     {
@@ -76,18 +76,18 @@ public static class ThemeFamilyConverter
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.OfficeArtExtensionListConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2013.Theme.OfficeArtExtensionList>(value);
+        itemElement = OfficeArtExtensionListConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2013.Theme.OfficeArtExtensionList>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static DocumentModel.ThemeFamily? CreateModelElement(DocumentFormat.OpenXml.Office2013.Theme.ThemeFamily? openXmlElement)
+
+  public static ThemeFamily? CreateModelElement(DocumentFormat.OpenXml.Office2013.Theme.ThemeFamily? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.ThemeFamily();
+      var value = new ThemeFamily();
       value.Name = GetName(openXmlElement);
       value.Id = GetId(openXmlElement);
       value.Vid = GetVid(openXmlElement);
@@ -96,9 +96,9 @@ public static class ThemeFamilyConverter
     }
     return null;
   }
-  
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.ThemeFamily? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Office2013.Theme.ThemeFamily, new()
+
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(ThemeFamily? value)
+    where OpenXmlElementType : DocumentFormat.OpenXml.Office2013.Theme.ThemeFamily, new()
   {
     if (value != null)
     {

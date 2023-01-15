@@ -1,54 +1,57 @@
+using DocumentFormat.OpenXml.Wordprocessing;
+using DocumentModel.Wordprocessing;
+using FootnoteDocumentWideProperties = DocumentFormat.OpenXml.Wordprocessing.FootnoteDocumentWideProperties;
+using FootnoteEndnoteSeparatorReferenceType = DocumentModel.Wordprocessing.FootnoteEndnoteSeparatorReferenceType;
+using NumberingFormat = DocumentModel.Wordprocessing.NumberingFormat;
+
 namespace DocumentModel.OpenXml.Wordprocessing;
 
 /// <summary>
-/// Document-Wide Footnote Properties.
+///   Document-Wide Footnote Properties.
 /// </summary>
 public static class FootnoteDocumentWidePropertiesConverter
 {
   /// <summary>
-  /// Footnote Placement.
+  ///   Footnote Placement.
   /// </summary>
-  public static DocumentModel.Wordprocessing.FootnotePositionKind? GetFootnotePosition(DocumentFormat.OpenXml.Wordprocessing.FootnoteDocumentWideProperties? openXmlElement)
+  public static FootnotePositionKind? GetFootnotePosition(FootnoteDocumentWideProperties? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.FootnotePosition>();
-      if (itemElement?.Val?.Value != null)
-      {
-        return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Wordprocessing.FootnotePositionValues, DocumentModel.Wordprocessing.FootnotePositionKind>(itemElement.Val.Value);
-      }
+      var itemElement = openXmlElement.GetFirstChild<FootnotePosition>();
+      if (itemElement?.Val?.Value != null) return EnumValueConverter.GetValue<FootnotePositionValues, FootnotePositionKind>(itemElement.Val.Value);
     }
     return null;
   }
-  
-  public static void SetFootnotePosition(DocumentFormat.OpenXml.Wordprocessing.FootnoteDocumentWideProperties? openXmlElement, DocumentModel.Wordprocessing.FootnotePositionKind? value)
+
+  public static void SetFootnotePosition(FootnoteDocumentWideProperties? openXmlElement, FootnotePositionKind? value)
   {
     if (openXmlElement != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.FootnotePosition>();
+      var itemElement = openXmlElement.GetFirstChild<FootnotePosition>();
       if (itemElement != null)
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = EnumValueConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.FootnotePosition, DocumentFormat.OpenXml.Wordprocessing.FootnotePositionValues, DocumentModel.Wordprocessing.FootnotePositionKind>(value);
+        itemElement = EnumValueConverter.CreateOpenXmlElement<FootnotePosition, FootnotePositionValues, FootnotePositionKind>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
+
   /// <summary>
-  /// Footnote Numbering Format.
+  ///   Footnote Numbering Format.
   /// </summary>
-  public static DocumentModel.Wordprocessing.NumberingFormat? GetNumberingFormat(DocumentFormat.OpenXml.Wordprocessing.FootnoteDocumentWideProperties? openXmlElement)
+  public static NumberingFormat? GetNumberingFormat(FootnoteDocumentWideProperties? openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.NumberingFormat>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Wordprocessing.NumberingFormatConverter.CreateModelElement(itemElement);
+      return NumberingFormatConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetNumberingFormat(DocumentFormat.OpenXml.Wordprocessing.FootnoteDocumentWideProperties? openXmlElement, DocumentModel.Wordprocessing.NumberingFormat? value)
+
+  public static void SetNumberingFormat(FootnoteDocumentWideProperties? openXmlElement, NumberingFormat? value)
   {
     if (openXmlElement != null)
     {
@@ -57,79 +60,76 @@ public static class FootnoteDocumentWidePropertiesConverter
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Wordprocessing.NumberingFormatConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.NumberingFormat>(value);
+        itemElement = NumberingFormatConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.NumberingFormat>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
+
   /// <summary>
-  /// Footnote and Endnote Numbering Starting Value.
+  ///   Footnote and Endnote Numbering Starting Value.
   /// </summary>
-  public static UInt16? GetNumberingStart(DocumentFormat.OpenXml.Wordprocessing.FootnoteDocumentWideProperties? openXmlElement)
+  public static UInt16? GetNumberingStart(FootnoteDocumentWideProperties? openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.NumberingStart>();
+    var itemElement = openXmlElement?.GetFirstChild<NumberingStart>();
     if (itemElement != null)
       return itemElement.Val?.Value;
     return null;
   }
-  
-  public static void SetNumberingStart(DocumentFormat.OpenXml.Wordprocessing.FootnoteDocumentWideProperties? openXmlElement, UInt16? value)
+
+  public static void SetNumberingStart(FootnoteDocumentWideProperties? openXmlElement, UInt16? value)
   {
     if (openXmlElement != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.NumberingStart>();
+      var itemElement = openXmlElement.GetFirstChild<NumberingStart>();
       if (itemElement != null)
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = new DocumentFormat.OpenXml.Wordprocessing.NumberingStart{ Val = value };
+        itemElement = new NumberingStart { Val = value };
         openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
+
   /// <summary>
-  /// Footnote and Endnote Numbering Restart Location.
+  ///   Footnote and Endnote Numbering Restart Location.
   /// </summary>
-  public static DocumentModel.Wordprocessing.RestartNumberKind? GetNumberingRestart(DocumentFormat.OpenXml.Wordprocessing.FootnoteDocumentWideProperties? openXmlElement)
+  public static RestartNumberKind? GetNumberingRestart(FootnoteDocumentWideProperties? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.NumberingRestart>();
-      if (itemElement?.Val?.Value != null)
-      {
-        return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Wordprocessing.RestartNumberValues, DocumentModel.Wordprocessing.RestartNumberKind>(itemElement.Val.Value);
-      }
+      var itemElement = openXmlElement.GetFirstChild<NumberingRestart>();
+      if (itemElement?.Val?.Value != null) return EnumValueConverter.GetValue<RestartNumberValues, RestartNumberKind>(itemElement.Val.Value);
     }
     return null;
   }
-  
-  public static void SetNumberingRestart(DocumentFormat.OpenXml.Wordprocessing.FootnoteDocumentWideProperties? openXmlElement, DocumentModel.Wordprocessing.RestartNumberKind? value)
+
+  public static void SetNumberingRestart(FootnoteDocumentWideProperties? openXmlElement, RestartNumberKind? value)
   {
     if (openXmlElement != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.NumberingRestart>();
+      var itemElement = openXmlElement.GetFirstChild<NumberingRestart>();
       if (itemElement != null)
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = EnumValueConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.NumberingRestart, DocumentFormat.OpenXml.Wordprocessing.RestartNumberValues, DocumentModel.Wordprocessing.RestartNumberKind>(value);
+        itemElement = EnumValueConverter.CreateOpenXmlElement<NumberingRestart, RestartNumberValues, RestartNumberKind>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static System.Collections.ObjectModel.Collection<DocumentModel.Wordprocessing.FootnoteEndnoteSeparatorReferenceType>? GetFootnoteSpecialReferences(DocumentFormat.OpenXml.Wordprocessing.FootnoteDocumentWideProperties? openXmlElement)
+
+  public static Collection<FootnoteEndnoteSeparatorReferenceType>? GetFootnoteSpecialReferences(FootnoteDocumentWideProperties? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var collection = new System.Collections.ObjectModel.Collection<DocumentModel.Wordprocessing.FootnoteEndnoteSeparatorReferenceType>();
-      foreach (var item in openXmlElement.Elements<DocumentFormat.OpenXml.Wordprocessing.FootnoteSpecialReference>())
+      var collection = new Collection<FootnoteEndnoteSeparatorReferenceType>();
+      foreach (var item in openXmlElement.Elements<FootnoteSpecialReference>())
       {
-        var newItem = DocumentModel.OpenXml.Wordprocessing.FootnoteEndnoteSeparatorReferenceTypeConverter.CreateModelElement(item);
+        var newItem = FootnoteEndnoteSeparatorReferenceTypeConverter.CreateModelElement(item);
         if (newItem != null)
           collection.Add(newItem);
       }
@@ -137,25 +137,23 @@ public static class FootnoteDocumentWidePropertiesConverter
     }
     return null;
   }
-  
-  public static void SetFootnoteSpecialReferences(DocumentFormat.OpenXml.Wordprocessing.FootnoteDocumentWideProperties? openXmlElement, System.Collections.ObjectModel.Collection<DocumentModel.Wordprocessing.FootnoteEndnoteSeparatorReferenceType>? value)
+
+  public static void SetFootnoteSpecialReferences(FootnoteDocumentWideProperties? openXmlElement, Collection<FootnoteEndnoteSeparatorReferenceType>? value)
   {
     if (openXmlElement != null)
     {
-      openXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Wordprocessing.FootnoteSpecialReference>();
+      openXmlElement.RemoveAllChildren<FootnoteSpecialReference>();
       if (value != null)
-      {
         foreach (var item in value)
         {
-          var newItem = DocumentModel.OpenXml.Wordprocessing.FootnoteEndnoteSeparatorReferenceTypeConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.FootnoteSpecialReference>(item);
+          var newItem = FootnoteEndnoteSeparatorReferenceTypeConverter.CreateOpenXmlElement<FootnoteSpecialReference>(item);
           if (newItem != null)
             openXmlElement.AddChild(newItem);
         }
-      }
     }
   }
-  
-  public static DocumentModel.Wordprocessing.FootnoteDocumentWideProperties? CreateModelElement(DocumentFormat.OpenXml.Wordprocessing.FootnoteDocumentWideProperties? openXmlElement)
+
+  public static DocumentModel.Wordprocessing.FootnoteDocumentWideProperties? CreateModelElement(FootnoteDocumentWideProperties? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -169,9 +167,9 @@ public static class FootnoteDocumentWidePropertiesConverter
     }
     return null;
   }
-  
+
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.FootnoteDocumentWideProperties? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Wordprocessing.FootnoteDocumentWideProperties, new()
+    where OpenXmlElementType : FootnoteDocumentWideProperties, new()
   {
     if (value != null)
     {

@@ -1,18 +1,17 @@
 namespace DocumentModel.Drawings;
 
 /// <summary>
-/// Dark 1.
+///   Dark 1.
 /// </summary>
-public partial class Dark1Color
+public class Dark1Color
 {
-  public DocumentModel.Drawings.RgbColorModelPercentage? RgbColorModelPercentage { get; set; }
-  
-  public DocumentModel.Drawings.RgbColorModelHex? RgbColorModelHex { get; set; }
-  
-  public DocumentModel.Drawings.HslColor? HslColor { get; set; }
-  
-  public DocumentModel.Drawings.SystemColor? SystemColor { get; set; }
-  
-  public DocumentModel.Drawings.PresetColor? PresetColor { get; set; }
-  
+  public RgbColorModelPercentage? RgbColorModelPercentage { get; set; }
+
+  public RgbColorModelHex? RgbColorModelHex { get; set; }
+
+  public HslColor? HslColor { get; set; }
+
+  public SystemColor? SystemColor { get; set; }
+
+  public PresetColor? PresetColor { get; set; }
 }

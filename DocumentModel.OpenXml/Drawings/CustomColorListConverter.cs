@@ -1,18 +1,21 @@
+using DocumentModel.Drawings;
+using CustomColorList = DocumentFormat.OpenXml.Drawing.CustomColorList;
+
 namespace DocumentModel.OpenXml.Drawings;
 
 /// <summary>
-/// Defines the CustomColorList Class.
+///   Defines the CustomColorList Class.
 /// </summary>
 public static class CustomColorListConverter
 {
-  public static System.Collections.ObjectModel.Collection<DocumentModel.Drawings.CustomColor>? GetCustomColors(DocumentFormat.OpenXml.Drawing.CustomColorList? openXmlElement)
+  public static Collection<CustomColor>? GetCustomColors(CustomColorList? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var collection = new System.Collections.ObjectModel.Collection<DocumentModel.Drawings.CustomColor>();
+      var collection = new Collection<CustomColor>();
       foreach (var item in openXmlElement.Elements<DocumentFormat.OpenXml.Drawing.CustomColor>())
       {
-        var newItem = DocumentModel.OpenXml.Drawings.CustomColorConverter.CreateModelElement(item);
+        var newItem = CustomColorConverter.CreateModelElement(item);
         if (newItem != null)
           collection.Add(newItem);
       }
@@ -20,25 +23,23 @@ public static class CustomColorListConverter
     }
     return null;
   }
-  
-  public static void SetCustomColors(DocumentFormat.OpenXml.Drawing.CustomColorList? openXmlElement, System.Collections.ObjectModel.Collection<DocumentModel.Drawings.CustomColor>? value)
+
+  public static void SetCustomColors(CustomColorList? openXmlElement, Collection<CustomColor>? value)
   {
     if (openXmlElement != null)
     {
       openXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Drawing.CustomColor>();
       if (value != null)
-      {
         foreach (var item in value)
         {
-          var newItem = DocumentModel.OpenXml.Drawings.CustomColorConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.CustomColor>(item);
+          var newItem = CustomColorConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.CustomColor>(item);
           if (newItem != null)
             openXmlElement.AddChild(newItem);
         }
-      }
     }
   }
-  
-  public static DocumentModel.Drawings.CustomColorList? CreateModelElement(DocumentFormat.OpenXml.Drawing.CustomColorList? openXmlElement)
+
+  public static DocumentModel.Drawings.CustomColorList? CreateModelElement(CustomColorList? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -48,9 +49,9 @@ public static class CustomColorListConverter
     }
     return null;
   }
-  
+
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.CustomColorList? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.CustomColorList, new()
+    where OpenXmlElementType : CustomColorList, new()
   {
     if (value != null)
     {

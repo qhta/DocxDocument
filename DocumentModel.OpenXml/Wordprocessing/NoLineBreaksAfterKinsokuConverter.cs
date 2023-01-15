@@ -1,19 +1,21 @@
+using DocumentFormat.OpenXml.Wordprocessing;
+
 namespace DocumentModel.OpenXml.Wordprocessing;
 
 /// <summary>
-/// Custom Set of Characters Which Cannot End a Line.
+///   Custom Set of Characters Which Cannot End a Line.
 /// </summary>
 public static class NoLineBreaksAfterKinsokuConverter
 {
   /// <summary>
-  /// lang
+  ///   lang
   /// </summary>
-  public static String? GetLanguage(DocumentFormat.OpenXml.Wordprocessing.NoLineBreaksAfterKinsoku? openXmlElement)
+  public static String? GetLanguage(NoLineBreaksAfterKinsoku? openXmlElement)
   {
     return openXmlElement?.Language?.Value;
   }
-  
-  public static void SetLanguage(DocumentFormat.OpenXml.Wordprocessing.NoLineBreaksAfterKinsoku? openXmlElement, String? value)
+
+  public static void SetLanguage(NoLineBreaksAfterKinsoku? openXmlElement, String? value)
   {
     if (openXmlElement != null)
       if (value != null)
@@ -21,16 +23,16 @@ public static class NoLineBreaksAfterKinsokuConverter
       else
         openXmlElement.Language = null;
   }
-  
+
   /// <summary>
-  /// val
+  ///   val
   /// </summary>
-  public static String? GetVal(DocumentFormat.OpenXml.Wordprocessing.NoLineBreaksAfterKinsoku? openXmlElement)
+  public static String? GetVal(NoLineBreaksAfterKinsoku? openXmlElement)
   {
     return openXmlElement?.Val?.Value;
   }
-  
-  public static void SetVal(DocumentFormat.OpenXml.Wordprocessing.NoLineBreaksAfterKinsoku? openXmlElement, String? value)
+
+  public static void SetVal(NoLineBreaksAfterKinsoku? openXmlElement, String? value)
   {
     if (openXmlElement != null)
       if (value != null)
@@ -38,8 +40,8 @@ public static class NoLineBreaksAfterKinsokuConverter
       else
         openXmlElement.Val = null;
   }
-  
-  public static DocumentModel.Wordprocessing.NoLineBreaksAfterKinsoku? CreateModelElement(DocumentFormat.OpenXml.Wordprocessing.NoLineBreaksAfterKinsoku? openXmlElement)
+
+  public static DocumentModel.Wordprocessing.NoLineBreaksAfterKinsoku? CreateModelElement(NoLineBreaksAfterKinsoku? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -50,9 +52,9 @@ public static class NoLineBreaksAfterKinsokuConverter
     }
     return null;
   }
-  
+
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.NoLineBreaksAfterKinsoku? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Wordprocessing.NoLineBreaksAfterKinsoku, new()
+    where OpenXmlElementType : NoLineBreaksAfterKinsoku, new()
   {
     if (value != null)
     {

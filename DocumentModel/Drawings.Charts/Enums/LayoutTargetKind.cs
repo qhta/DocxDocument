@@ -1,18 +1,17 @@
 namespace DocumentModel.Drawings.Charts;
 
 /// <summary>
-/// Layout Target
+///   Layout Target
 /// </summary>
 public enum LayoutTargetKind
 {
   /// <summary>
-  /// Inner.
+  ///   Inner.
   /// </summary>
   Inner,
-  
+
   /// <summary>
-  /// Outer.
+  ///   Outer.
   /// </summary>
-  Outer,
-  
+  Outer
 }

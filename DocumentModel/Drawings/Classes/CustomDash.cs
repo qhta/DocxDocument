@@ -1,10 +1,9 @@
 namespace DocumentModel.Drawings;
 
 /// <summary>
-/// Custom Dash.
+///   Custom Dash.
 /// </summary>
-public partial class CustomDash
+public class CustomDash
 {
-  public Collection<DocumentModel.Drawings.DashStop>? DashStops { get; set; }
-  
+  public Collection<DashStop>? DashStops { get; set; }
 }

@@ -1,23 +1,22 @@
 namespace DocumentModel.Math;
 
 /// <summary>
-/// Defines the BreakBinaryOperatorValues enumeration.
+///   Defines the BreakBinaryOperatorValues enumeration.
 /// </summary>
 public enum BreakBinaryOperatorKind
 {
   /// <summary>
-  /// Before.
+  ///   Before.
   /// </summary>
   Before,
-  
+
   /// <summary>
-  /// After.
+  ///   After.
   /// </summary>
   After,
-  
+
   /// <summary>
-  /// Repeat.
+  ///   Repeat.
   /// </summary>
-  Repeat,
-  
+  Repeat
 }

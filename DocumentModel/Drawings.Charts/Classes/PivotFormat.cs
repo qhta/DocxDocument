@@ -1,33 +1,32 @@
 namespace DocumentModel.Drawings.Charts;
 
 /// <summary>
-/// Pivot Format.
+///   Pivot Format.
 /// </summary>
-public partial class PivotFormat
+public class PivotFormat
 {
   /// <summary>
-  /// Index.
+  ///   Index.
   /// </summary>
   public UInt32? Index { get; set; }
-  
+
   /// <summary>
-  /// ShapeProperties.
+  ///   ShapeProperties.
   /// </summary>
-  public DocumentModel.Drawings.Charts.ShapeProperties? ShapeProperties { get; set; }
-  
+  public ShapeProperties? ShapeProperties { get; set; }
+
   /// <summary>
-  /// Marker.
+  ///   Marker.
   /// </summary>
-  public DocumentModel.Drawings.Charts.Marker? Marker { get; set; }
-  
+  public Marker? Marker { get; set; }
+
   /// <summary>
-  /// Data Label.
+  ///   Data Label.
   /// </summary>
-  public DocumentModel.Drawings.Charts.DataLabel? DataLabel { get; set; }
-  
+  public DataLabel? DataLabel { get; set; }
+
   /// <summary>
-  /// Chart Extensibility.
+  ///   Chart Extensibility.
   /// </summary>
-  public DocumentModel.Drawings.Charts.ExtensionList? ExtensionList { get; set; }
-  
+  public ExtensionList? ExtensionList { get; set; }
 }

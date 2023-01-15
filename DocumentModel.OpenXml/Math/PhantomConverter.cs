@@ -1,22 +1,25 @@
+using DocumentModel.Math;
+using Phantom = DocumentFormat.OpenXml.Math.Phantom;
+
 namespace DocumentModel.OpenXml.Math;
 
 /// <summary>
-/// Phantom Function.
+///   Phantom Function.
 /// </summary>
 public static class PhantomConverter
 {
   /// <summary>
-  /// Phantom Properties.
+  ///   Phantom Properties.
   /// </summary>
-  public static DocumentModel.Math.PhantomProperties? GetPhantomProperties(DocumentFormat.OpenXml.Math.Phantom? openXmlElement)
+  public static PhantomProperties? GetPhantomProperties(Phantom? openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Math.PhantomProperties>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Math.PhantomPropertiesConverter.CreateModelElement(itemElement);
+      return PhantomPropertiesConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetPhantomProperties(DocumentFormat.OpenXml.Math.Phantom? openXmlElement, DocumentModel.Math.PhantomProperties? value)
+
+  public static void SetPhantomProperties(Phantom? openXmlElement, PhantomProperties? value)
   {
     if (openXmlElement != null)
     {
@@ -25,25 +28,25 @@ public static class PhantomConverter
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Math.PhantomPropertiesConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Math.PhantomProperties>(value);
+        itemElement = PhantomPropertiesConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Math.PhantomProperties>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
+
   /// <summary>
-  /// Base.
+  ///   Base.
   /// </summary>
-  public static DocumentModel.Math.Base? GetBase(DocumentFormat.OpenXml.Math.Phantom? openXmlElement)
+  public static Base? GetBase(Phantom? openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Math.Base>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Math.BaseConverter.CreateModelElement(itemElement);
+      return BaseConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetBase(DocumentFormat.OpenXml.Math.Phantom? openXmlElement, DocumentModel.Math.Base? value)
+
+  public static void SetBase(Phantom? openXmlElement, Base? value)
   {
     if (openXmlElement != null)
     {
@@ -52,14 +55,14 @@ public static class PhantomConverter
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Math.BaseConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Math.Base>(value);
+        itemElement = BaseConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Math.Base>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static DocumentModel.Math.Phantom? CreateModelElement(DocumentFormat.OpenXml.Math.Phantom? openXmlElement)
+
+  public static DocumentModel.Math.Phantom? CreateModelElement(Phantom? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -70,9 +73,9 @@ public static class PhantomConverter
     }
     return null;
   }
-  
+
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Math.Phantom? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Math.Phantom, new()
+    where OpenXmlElementType : Phantom, new()
   {
     if (value != null)
     {

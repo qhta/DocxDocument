@@ -1,14 +1,13 @@
 namespace DocumentModel.Drawings.ChartDrawings;
 
 /// <summary>
-/// Defines the TxPrTextBody Class.
+///   Defines the TxPrTextBody Class.
 /// </summary>
-public partial class TxPrTextBody
+public class TxPrTextBody
 {
-  public DocumentModel.Drawings.BodyProperties? BodyProperties { get; set; }
-  
-  public DocumentModel.Drawings.ListStyle? ListStyle { get; set; }
-  
-  public DocumentModel.Drawings.Paragraph? Paragraph { get; set; }
-  
+  public BodyProperties? BodyProperties { get; set; }
+
+  public ListStyle? ListStyle { get; set; }
+
+  public Paragraph? Paragraph { get; set; }
 }

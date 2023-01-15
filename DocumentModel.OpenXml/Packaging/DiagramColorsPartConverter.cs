@@ -1,42 +1,46 @@
+using DocumentFormat.OpenXml.Packaging;
+using DocumentModel.Drawings.Diagrams;
+using DocumentModel.OpenXml.Drawings.Diagrams;
+
 namespace DocumentModel.OpenXml.Packaging;
 
 /// <summary>
-/// Defines the DiagramColorsPart
+///   Defines the DiagramColorsPart
 /// </summary>
 public static class DiagramColorsPartConverter
 {
   /// <summary>
-  /// Gets or sets the root element of this part.
+  ///   Gets or sets the root element of this part.
   /// </summary>
-  public static DocumentModel.Drawings.Diagrams.ColorsDefinition? GetColorsDefinition(DocumentFormat.OpenXml.Packaging.DiagramColorsPart? openXmlElement)
+  public static ColorsDefinition? GetColorsDefinition(DiagramColorsPart? openXmlElement)
   {
     if (openXmlElement?.RootElement is DocumentFormat.OpenXml.Drawing.Diagrams.ColorsDefinition rootElement)
-      return DocumentModel.OpenXml.Drawings.Diagrams.ColorsDefinitionConverter.CreateModelElement(rootElement);
+      return ColorsDefinitionConverter.CreateModelElement(rootElement);
     return null;
   }
-  
-  public static void SetColorsDefinition(DocumentFormat.OpenXml.Packaging.DiagramColorsPart? openXmlElement, DocumentModel.Drawings.Diagrams.ColorsDefinition? value)
+
+  public static void SetColorsDefinition(DiagramColorsPart? openXmlElement, ColorsDefinition? value)
   {
     if (openXmlElement != null)
       if (value != null)
       {
-         var rootElement = DocumentModel.OpenXml.Drawings.Diagrams.ColorsDefinitionConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Diagrams.ColorsDefinition>(value);
-         if (rootElement != null)
-           openXmlElement.ColorsDefinition = rootElement;
+        var rootElement = ColorsDefinitionConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Diagrams.ColorsDefinition>(value);
+        if (rootElement != null)
+          openXmlElement.ColorsDefinition = rootElement;
       }
   }
-  
-  public static String? GetContentType(DocumentFormat.OpenXml.Packaging.DiagramColorsPart? openXmlElement)
+
+  public static String? GetContentType(DiagramColorsPart? openXmlElement)
   {
     return openXmlElement?.ContentType;
   }
-  
-  public static String? GetRelationshipType(DocumentFormat.OpenXml.Packaging.DiagramColorsPart? openXmlElement)
+
+  public static String? GetRelationshipType(DiagramColorsPart? openXmlElement)
   {
     return openXmlElement?.RelationshipType;
   }
-  
-  public static DocumentModel.Packaging.DiagramColorsPart? CreateModelElement(DocumentFormat.OpenXml.Packaging.DiagramColorsPart? openXmlElement)
+
+  public static DocumentModel.Packaging.DiagramColorsPart? CreateModelElement(DiagramColorsPart? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -48,9 +52,9 @@ public static class DiagramColorsPartConverter
     }
     return null;
   }
-  
+
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Packaging.DiagramColorsPart? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Packaging.DiagramColorsPart, new()
+    where OpenXmlElementType : DiagramColorsPart, new()
   {
     if (value != null)
     {

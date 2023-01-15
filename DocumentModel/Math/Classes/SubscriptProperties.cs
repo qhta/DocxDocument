@@ -1,13 +1,12 @@
 namespace DocumentModel.Math;
 
 /// <summary>
-/// Subscript Properties.
+///   Subscript Properties.
 /// </summary>
-public partial class SubscriptProperties
+public class SubscriptProperties
 {
   /// <summary>
-  /// ControlProperties.
+  ///   ControlProperties.
   /// </summary>
-  public DocumentModel.Math.ControlProperties? ControlProperties { get; set; }
-  
+  public ControlProperties? ControlProperties { get; set; }
 }

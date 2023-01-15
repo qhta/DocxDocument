@@ -1,33 +1,32 @@
 namespace DocumentModel.Wordprocessing.Vml;
 
 /// <summary>
-/// Text Wrapping Type
+///   Text Wrapping Type
 /// </summary>
 public enum WrapKind
 {
   /// <summary>
-  /// Top and bottom wrapping.
+  ///   Top and bottom wrapping.
   /// </summary>
   TopAndBottom,
-  
+
   /// <summary>
-  /// Square wrapping.
+  ///   Square wrapping.
   /// </summary>
   Square,
-  
+
   /// <summary>
-  /// No wrapping.
+  ///   No wrapping.
   /// </summary>
   None,
-  
+
   /// <summary>
-  /// Tight wrapping.
+  ///   Tight wrapping.
   /// </summary>
   Tight,
-  
+
   /// <summary>
-  /// Through wrapping.
+  ///   Through wrapping.
   /// </summary>
-  Through,
-  
+  Through
 }

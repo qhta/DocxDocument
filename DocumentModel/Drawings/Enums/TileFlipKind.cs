@@ -1,28 +1,27 @@
 namespace DocumentModel.Drawings;
 
 /// <summary>
-/// Tile Flip Mode
+///   Tile Flip Mode
 /// </summary>
 public enum TileFlipKind
 {
   /// <summary>
-  /// None.
+  ///   None.
   /// </summary>
   None,
-  
+
   /// <summary>
-  /// Horizontal.
+  ///   Horizontal.
   /// </summary>
   Horizontal,
-  
+
   /// <summary>
-  /// Vertical.
+  ///   Vertical.
   /// </summary>
   Vertical,
-  
+
   /// <summary>
-  /// Horizontal and Vertical.
+  ///   Horizontal and Vertical.
   /// </summary>
-  HorizontalAndVertical,
-  
+  HorizontalAndVertical
 }

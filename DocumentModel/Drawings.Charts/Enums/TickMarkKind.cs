@@ -1,28 +1,27 @@
 namespace DocumentModel.Drawings.Charts;
 
 /// <summary>
-/// Tick Mark
+///   Tick Mark
 /// </summary>
 public enum TickMarkKind
 {
   /// <summary>
-  /// Cross.
+  ///   Cross.
   /// </summary>
   Cross,
-  
+
   /// <summary>
-  /// Inside.
+  ///   Inside.
   /// </summary>
   Inside,
-  
+
   /// <summary>
-  /// None.
+  ///   None.
   /// </summary>
   None,
-  
+
   /// <summary>
-  /// Outside.
+  ///   Outside.
   /// </summary>
-  Outside,
-  
+  Outside
 }

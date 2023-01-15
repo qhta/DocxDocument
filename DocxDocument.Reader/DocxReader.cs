@@ -130,10 +130,10 @@ public partial class DocxReader
   private DMW.Styles ReadStyleDefinitions(Parts parts)
   {
     DMW.Styles styleDefinitions;
-    //var stylesOpenXmlElement = WordprocessingDocument.GetPartsOfType<StylesPart>().FirstOrDefault()?.Styles;
-    //if (stylesOpenXmlElement != null)
-    //  styleDefinitions = DocumentModel.OpenXml.Wordprocessing.StylesConverter.GetValue(stylesOpenXmlElement);
-    //else
+    var stylesOpenXmlElement = WordprocessingDocument.MainDocumentPart?.GetPartsOfType<StylesPart>()?.FirstOrDefault()?.Styles;
+    if (stylesOpenXmlElement != null)
+      styleDefinitions = DocumentModel.OpenXml.Wordprocessing.StylesConverter.CreateModelElement(stylesOpenXmlElement) ?? new();
+    else
       styleDefinitions = new();
     return styleDefinitions;
   }

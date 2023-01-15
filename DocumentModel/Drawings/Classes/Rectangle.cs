@@ -1,28 +1,27 @@
 namespace DocumentModel.Drawings;
 
 /// <summary>
-/// Shape Text Rectangle.
+///   Shape Text Rectangle.
 /// </summary>
-public partial class Rectangle
+public class Rectangle
 {
   /// <summary>
-  /// Left
+  ///   Left
   /// </summary>
   public String? Left { get; set; }
-  
+
   /// <summary>
-  /// Top
+  ///   Top
   /// </summary>
   public String? Top { get; set; }
-  
+
   /// <summary>
-  /// Right
+  ///   Right
   /// </summary>
   public String? Right { get; set; }
-  
+
   /// <summary>
-  /// Bottom Position
+  ///   Bottom Position
   /// </summary>
   public String? Bottom { get; set; }
-  
 }

@@ -1,18 +1,17 @@
 namespace DocumentModel.Drawings.Diagrams;
 
 /// <summary>
-/// Defines the ColorsType Class.
+///   Defines the ColorsType Class.
 /// </summary>
-public partial class ColorsType
+public class ColorsType
 {
   /// <summary>
-  /// Color Application Method Type
+  ///   Color Application Method Type
   /// </summary>
-  public DocumentModel.Drawings.Diagrams.ColorApplicationMethodKind? Method { get; set; }
-  
+  public ColorApplicationMethodKind? Method { get; set; }
+
   /// <summary>
-  /// Hue Direction
+  ///   Hue Direction
   /// </summary>
-  public DocumentModel.Drawings.Diagrams.HueDirectionKind? HueDirection { get; set; }
-  
+  public HueDirectionKind? HueDirection { get; set; }
 }

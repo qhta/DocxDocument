@@ -1,23 +1,22 @@
 namespace DocumentModel.Wordprocessing;
 
 /// <summary>
-/// Defines the HorizontalAnchorValues enumeration.
+///   Defines the HorizontalAnchorValues enumeration.
 /// </summary>
 public enum HorizontalAnchorKind
 {
   /// <summary>
-  /// Relative to Text Extents.
+  ///   Relative to Text Extents.
   /// </summary>
   Text,
-  
+
   /// <summary>
-  /// Relative To Margin.
+  ///   Relative To Margin.
   /// </summary>
   Margin,
-  
+
   /// <summary>
-  /// Relative to Page.
+  ///   Relative to Page.
   /// </summary>
-  Page,
-  
+  Page
 }

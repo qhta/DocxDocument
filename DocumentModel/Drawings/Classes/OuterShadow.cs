@@ -1,83 +1,82 @@
 namespace DocumentModel.Drawings;
 
 /// <summary>
-/// Outer Shadow Effect.
+///   Outer Shadow Effect.
 /// </summary>
-public partial class OuterShadow
+public class OuterShadow
 {
   /// <summary>
-  /// Blur Radius
+  ///   Blur Radius
   /// </summary>
   public Int64? BlurRadius { get; set; }
-  
+
   /// <summary>
-  /// Shadow Offset Distance
+  ///   Shadow Offset Distance
   /// </summary>
   public Int64? Distance { get; set; }
-  
+
   /// <summary>
-  /// Shadow Direction
+  ///   Shadow Direction
   /// </summary>
   public Int32? Direction { get; set; }
-  
+
   /// <summary>
-  /// Horizontal Scaling Factor
+  ///   Horizontal Scaling Factor
   /// </summary>
   public Int32? HorizontalRatio { get; set; }
-  
+
   /// <summary>
-  /// Vertical Scaling Factor
+  ///   Vertical Scaling Factor
   /// </summary>
   public Int32? VerticalRatio { get; set; }
-  
+
   /// <summary>
-  /// Horizontal Skew
+  ///   Horizontal Skew
   /// </summary>
   public Int32? HorizontalSkew { get; set; }
-  
+
   /// <summary>
-  /// Vertical Skew
+  ///   Vertical Skew
   /// </summary>
   public Int32? VerticalSkew { get; set; }
-  
+
   /// <summary>
-  /// Shadow Alignment
+  ///   Shadow Alignment
   /// </summary>
-  public DocumentModel.Drawings.RectangleAlignmentKind? Alignment { get; set; }
-  
+  public RectangleAlignmentKind? Alignment { get; set; }
+
   /// <summary>
-  /// Rotate With Shape
+  ///   Rotate With Shape
   /// </summary>
   public Boolean? RotateWithShape { get; set; }
-  
+
   /// <summary>
-  /// RGB Color Model - Percentage Variant.
+  ///   RGB Color Model - Percentage Variant.
   /// </summary>
-  public DocumentModel.Drawings.RgbColorModelPercentage? RgbColorModelPercentage { get; set; }
-  
+  public RgbColorModelPercentage? RgbColorModelPercentage { get; set; }
+
   /// <summary>
-  /// RGB Color Model - Hex Variant.
+  ///   RGB Color Model - Hex Variant.
   /// </summary>
-  public DocumentModel.Drawings.RgbColorModelHex? RgbColorModelHex { get; set; }
-  
+  public RgbColorModelHex? RgbColorModelHex { get; set; }
+
   /// <summary>
-  /// Hue, Saturation, Luminance Color Model.
+  ///   Hue, Saturation, Luminance Color Model.
   /// </summary>
-  public DocumentModel.Drawings.HslColor? HslColor { get; set; }
-  
+  public HslColor? HslColor { get; set; }
+
   /// <summary>
-  /// System Color.
+  ///   System Color.
   /// </summary>
-  public DocumentModel.Drawings.SystemColor? SystemColor { get; set; }
-  
+  public SystemColor? SystemColor { get; set; }
+
   /// <summary>
-  /// Scheme Color.
+  ///   Scheme Color.
   /// </summary>
-  public DocumentModel.Drawings.SchemeColor? SchemeColor { get; set; }
-  
+  public SchemeColor? SchemeColor { get; set; }
+
   /// <summary>
-  /// Preset Color.
+  ///   Preset Color.
   /// </summary>
-  public DocumentModel.Drawings.PresetColor? PresetColor { get; set; }
-  
+  public PresetColor? PresetColor { get; set; }
 }

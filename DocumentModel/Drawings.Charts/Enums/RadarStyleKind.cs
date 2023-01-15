@@ -1,23 +1,22 @@
 namespace DocumentModel.Drawings.Charts;
 
 /// <summary>
-/// Radar Style
+///   Radar Style
 /// </summary>
 public enum RadarStyleKind
 {
   /// <summary>
-  /// Standard.
+  ///   Standard.
   /// </summary>
   Standard,
-  
+
   /// <summary>
-  /// Marker.
+  ///   Marker.
   /// </summary>
   Marker,
-  
+
   /// <summary>
-  /// Filled.
+  ///   Filled.
   /// </summary>
-  Filled,
-  
+  Filled
 }

@@ -1,22 +1,23 @@
+using DocumentModel.Drawings.Office;
+
 namespace DocumentModel.Packaging;
 
 /// <summary>
-/// Defines the DiagramPersistLayoutPart
+///   Defines the DiagramPersistLayoutPart
 /// </summary>
-public partial class DiagramPersistLayoutPart
+public class DiagramPersistLayoutPart
 {
   public String? ContentType { get; set; }
-  
+
   /// <summary>
-  /// Gets or sets the root element of this part.
+  ///   Gets or sets the root element of this part.
   /// </summary>
-  public DocumentModel.Drawings.Office.Drawing? Drawing { get; set; }
-  
+  public Drawing? Drawing { get; set; }
+
   /// <summary>
-  /// Gets the ImageParts of the DiagramPersistLayoutPart
+  ///   Gets the ImageParts of the DiagramPersistLayoutPart
   /// </summary>
-  public Collection<DocumentModel.Packaging.ImagePart>? ImageParts { get; set; }
-  
+  public Collection<ImagePart>? ImageParts { get; set; }
+
   public String? RelationshipType { get; set; }
-  
 }

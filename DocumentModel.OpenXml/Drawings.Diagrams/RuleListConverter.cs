@@ -1,18 +1,21 @@
+using DocumentModel.Drawings.Diagrams;
+using RuleList = DocumentFormat.OpenXml.Drawing.Diagrams.RuleList;
+
 namespace DocumentModel.OpenXml.Drawings.Diagrams;
 
 /// <summary>
-/// Rule List.
+///   Rule List.
 /// </summary>
 public static class RuleListConverter
 {
-  public static System.Collections.ObjectModel.Collection<DocumentModel.Drawings.Diagrams.Rule>? GetRules(DocumentFormat.OpenXml.Drawing.Diagrams.RuleList? openXmlElement)
+  public static Collection<Rule>? GetRules(RuleList? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var collection = new System.Collections.ObjectModel.Collection<DocumentModel.Drawings.Diagrams.Rule>();
+      var collection = new Collection<Rule>();
       foreach (var item in openXmlElement.Elements<DocumentFormat.OpenXml.Drawing.Diagrams.Rule>())
       {
-        var newItem = DocumentModel.OpenXml.Drawings.Diagrams.RuleConverter.CreateModelElement(item);
+        var newItem = RuleConverter.CreateModelElement(item);
         if (newItem != null)
           collection.Add(newItem);
       }
@@ -20,25 +23,23 @@ public static class RuleListConverter
     }
     return null;
   }
-  
-  public static void SetRules(DocumentFormat.OpenXml.Drawing.Diagrams.RuleList? openXmlElement, System.Collections.ObjectModel.Collection<DocumentModel.Drawings.Diagrams.Rule>? value)
+
+  public static void SetRules(RuleList? openXmlElement, Collection<Rule>? value)
   {
     if (openXmlElement != null)
     {
       openXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Drawing.Diagrams.Rule>();
       if (value != null)
-      {
         foreach (var item in value)
         {
-          var newItem = DocumentModel.OpenXml.Drawings.Diagrams.RuleConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Diagrams.Rule>(item);
+          var newItem = RuleConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Diagrams.Rule>(item);
           if (newItem != null)
             openXmlElement.AddChild(newItem);
         }
-      }
     }
   }
-  
-  public static DocumentModel.Drawings.Diagrams.RuleList? CreateModelElement(DocumentFormat.OpenXml.Drawing.Diagrams.RuleList? openXmlElement)
+
+  public static DocumentModel.Drawings.Diagrams.RuleList? CreateModelElement(RuleList? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -48,9 +49,9 @@ public static class RuleListConverter
     }
     return null;
   }
-  
+
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.Diagrams.RuleList? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.Diagrams.RuleList, new()
+    where OpenXmlElementType : RuleList, new()
   {
     if (value != null)
     {

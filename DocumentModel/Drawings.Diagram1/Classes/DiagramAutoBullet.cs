@@ -1,38 +1,37 @@
 namespace DocumentModel.Drawings.Diagram1;
 
 /// <summary>
-/// Defines the DiagramAutoBullet Class.
+///   Defines the DiagramAutoBullet Class.
 /// </summary>
-public partial class DiagramAutoBullet
+public class DiagramAutoBullet
 {
   /// <summary>
-  /// prefix, this property is only available in Office 2019 and later.
+  ///   prefix, this property is only available in Office 2019 and later.
   /// </summary>
   public String? AutoBulletPrefix { get; set; }
-  
+
   /// <summary>
-  /// leadZeros, this property is only available in Office 2019 and later.
+  ///   leadZeros, this property is only available in Office 2019 and later.
   /// </summary>
   public Boolean? LeadZeros { get; set; }
-  
+
   /// <summary>
-  /// No Bullet.
+  ///   No Bullet.
   /// </summary>
   public Boolean? NoBullet { get; set; }
-  
+
   /// <summary>
-  /// Auto-Numbered Bullet.
+  ///   Auto-Numbered Bullet.
   /// </summary>
-  public DocumentModel.Drawings.AutoNumberedBullet? AutoNumberedBullet { get; set; }
-  
+  public AutoNumberedBullet? AutoNumberedBullet { get; set; }
+
   /// <summary>
-  /// Character Bullet.
+  ///   Character Bullet.
   /// </summary>
-  public DocumentModel.Drawings.CharacterBullet? CharacterBullet { get; set; }
-  
+  public CharacterBullet? CharacterBullet { get; set; }
+
   /// <summary>
-  /// Picture Bullet.
+  ///   Picture Bullet.
   /// </summary>
-  public DocumentModel.Drawings.PictureBullet? PictureBullet { get; set; }
-  
+  public PictureBullet? PictureBullet { get; set; }
 }

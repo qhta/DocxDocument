@@ -1,23 +1,22 @@
 namespace DocumentModel.Drawings;
 
 /// <summary>
-/// Defines the LineEndPropertiesType Class.
+///   Defines the LineEndPropertiesType Class.
 /// </summary>
-public partial class LineEndPropertiesType
+public class LineEndPropertiesType
 {
   /// <summary>
-  /// Line Head/End Type
+  ///   Line Head/End Type
   /// </summary>
-  public DocumentModel.Drawings.LineEndKind? Type { get; set; }
-  
+  public LineEndKind? Type { get; set; }
+
   /// <summary>
-  /// Width of Head/End
+  ///   Width of Head/End
   /// </summary>
-  public DocumentModel.Drawings.LineEndWidthKind? Width { get; set; }
-  
+  public LineEndWidthKind? Width { get; set; }
+
   /// <summary>
-  /// Length of Head/End
+  ///   Length of Head/End
   /// </summary>
-  public DocumentModel.Drawings.LineEndLengthKind? Length { get; set; }
-  
+  public LineEndLengthKind? Length { get; set; }
 }

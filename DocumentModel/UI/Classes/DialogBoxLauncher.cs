@@ -1,13 +1,12 @@
 namespace DocumentModel.UI;
 
 /// <summary>
-/// Defines the DialogBoxLauncher Class.
+///   Defines the DialogBoxLauncher Class.
 /// </summary>
-public partial class DialogBoxLauncher
+public class DialogBoxLauncher
 {
   /// <summary>
-  /// UnsizedButton.
+  ///   UnsizedButton.
   /// </summary>
-  public DocumentModel.UI.UnsizedButton? UnsizedButton { get; set; }
-  
+  public UnsizedButton? UnsizedButton { get; set; }
 }

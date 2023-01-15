@@ -1,23 +1,22 @@
 namespace DocumentModel.Drawings.ChartDrawing;
 
 /// <summary>
-/// Non-Visual Shape Drawing Properties.
+///   Non-Visual Shape Drawing Properties.
 /// </summary>
-public partial class NonVisualShapeDrawingProperties
+public class NonVisualShapeDrawingProperties
 {
   /// <summary>
-  /// Text Box
+  ///   Text Box
   /// </summary>
   public Boolean? TextBox { get; set; }
-  
+
   /// <summary>
-  /// Shape Locks.
+  ///   Shape Locks.
   /// </summary>
-  public DocumentModel.Drawings.ShapeLocks? ShapeLocks { get; set; }
-  
+  public ShapeLocks? ShapeLocks { get; set; }
+
   /// <summary>
-  /// ExtensionList.
+  ///   ExtensionList.
   /// </summary>
-  public DocumentModel.Drawings.ExtensionList? ExtensionList { get; set; }
-  
+  public ExtensionList? ExtensionList { get; set; }
 }

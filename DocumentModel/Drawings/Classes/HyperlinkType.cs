@@ -1,58 +1,57 @@
 namespace DocumentModel.Drawings;
 
 /// <summary>
-/// Defines the HyperlinkType Class.
+///   Defines the HyperlinkType Class.
 /// </summary>
-public partial class HyperlinkType
+public class HyperlinkType
 {
   /// <summary>
-  /// relationship identifier to find target URI
+  ///   relationship identifier to find target URI
   /// </summary>
   public String? Id { get; set; }
-  
+
   /// <summary>
-  /// In case the url is invalid so we can't create a relationship, we'll save it here, r:id will point to a NULL one
+  ///   In case the url is invalid so we can't create a relationship, we'll save it here, r:id will point to a NULL one
   /// </summary>
   public String? InvalidUrl { get; set; }
-  
+
   /// <summary>
-  /// Action to take, it may still need r:id to specify an action target
+  ///   Action to take, it may still need r:id to specify an action target
   /// </summary>
   public String? Action { get; set; }
-  
+
   /// <summary>
-  /// target frame for navigating to the URI
+  ///   target frame for navigating to the URI
   /// </summary>
   public String? TargetFrame { get; set; }
-  
+
   /// <summary>
-  /// tooltip for display
+  ///   tooltip for display
   /// </summary>
   public String? Tooltip { get; set; }
-  
+
   /// <summary>
-  /// whether to add this URI to the history when navigating to it
+  ///   whether to add this URI to the history when navigating to it
   /// </summary>
   public Boolean? History { get; set; }
-  
+
   /// <summary>
-  /// Whether to highlight it when click on a shape
+  ///   Whether to highlight it when click on a shape
   /// </summary>
   public Boolean? HighlightClick { get; set; }
-  
+
   /// <summary>
-  /// Whether to stop previous sound when click on it
+  ///   Whether to stop previous sound when click on it
   /// </summary>
   public Boolean? EndSound { get; set; }
-  
+
   /// <summary>
-  /// Sound to play..
+  ///   Sound to play..
   /// </summary>
-  public DocumentModel.Drawings.EmbeddedWavAudioFileType? HyperlinkSound { get; set; }
-  
+  public EmbeddedWavAudioFileType? HyperlinkSound { get; set; }
+
   /// <summary>
-  /// Future extensions..
+  ///   Future extensions..
   /// </summary>
-  public DocumentModel.Drawings.HyperlinkExtensionList? HyperlinkExtensionList { get; set; }
-  
+  public HyperlinkExtensionList? HyperlinkExtensionList { get; set; }
 }

@@ -1,21 +1,26 @@
+using DocumentFormat.OpenXml.Office.Word;
+using AcceleratorKeymapType = DocumentModel.Wordprocessing.AcceleratorKeymapType;
+using FixedCommandKeyboardCustomization = DocumentModel.Wordprocessing.FixedCommandKeyboardCustomization;
+using MacroWllType = DocumentModel.Wordprocessing.MacroWllType;
+
 namespace DocumentModel.OpenXml.Wordprocessing;
 
 /// <summary>
-/// Defines the KeyMapEntry Class.
+///   Defines the KeyMapEntry Class.
 /// </summary>
 public static class KeyMapEntryConverter
 {
   /// <summary>
-  /// chmPrimary
+  ///   chmPrimary
   /// </summary>
-  public static Byte[]? GetCharacterMapPrimary(DocumentFormat.OpenXml.Office.Word.KeyMapEntry? openXmlElement)
+  public static Byte[]? GetCharacterMapPrimary(KeyMapEntry? openXmlElement)
   {
     if (openXmlElement?.CharacterMapPrimary?.Value != null)
       return Convert.FromHexString(openXmlElement.CharacterMapPrimary.Value);
     return null;
   }
-  
-  public static void SetCharacterMapPrimary(DocumentFormat.OpenXml.Office.Word.KeyMapEntry? openXmlElement, Byte[]? value)
+
+  public static void SetCharacterMapPrimary(KeyMapEntry? openXmlElement, Byte[]? value)
   {
     if (openXmlElement != null)
     {
@@ -25,18 +30,18 @@ public static class KeyMapEntryConverter
         openXmlElement.CharacterMapPrimary = null;
     }
   }
-  
+
   /// <summary>
-  /// chmSecondary
+  ///   chmSecondary
   /// </summary>
-  public static Byte[]? GetCharacterMapSecondary(DocumentFormat.OpenXml.Office.Word.KeyMapEntry? openXmlElement)
+  public static Byte[]? GetCharacterMapSecondary(KeyMapEntry? openXmlElement)
   {
     if (openXmlElement?.CharacterMapSecondary?.Value != null)
       return Convert.FromHexString(openXmlElement.CharacterMapSecondary.Value);
     return null;
   }
-  
-  public static void SetCharacterMapSecondary(DocumentFormat.OpenXml.Office.Word.KeyMapEntry? openXmlElement, Byte[]? value)
+
+  public static void SetCharacterMapSecondary(KeyMapEntry? openXmlElement, Byte[]? value)
   {
     if (openXmlElement != null)
     {
@@ -46,18 +51,18 @@ public static class KeyMapEntryConverter
         openXmlElement.CharacterMapSecondary = null;
     }
   }
-  
+
   /// <summary>
-  /// kcmPrimary
+  ///   kcmPrimary
   /// </summary>
-  public static Byte[]? GetKeyCodePrimary(DocumentFormat.OpenXml.Office.Word.KeyMapEntry? openXmlElement)
+  public static Byte[]? GetKeyCodePrimary(KeyMapEntry? openXmlElement)
   {
     if (openXmlElement?.KeyCodePrimary?.Value != null)
       return Convert.FromHexString(openXmlElement.KeyCodePrimary.Value);
     return null;
   }
-  
-  public static void SetKeyCodePrimary(DocumentFormat.OpenXml.Office.Word.KeyMapEntry? openXmlElement, Byte[]? value)
+
+  public static void SetKeyCodePrimary(KeyMapEntry? openXmlElement, Byte[]? value)
   {
     if (openXmlElement != null)
     {
@@ -67,18 +72,18 @@ public static class KeyMapEntryConverter
         openXmlElement.KeyCodePrimary = null;
     }
   }
-  
+
   /// <summary>
-  /// kcmSecondary
+  ///   kcmSecondary
   /// </summary>
-  public static Byte[]? GetKeyCodeSecondary(DocumentFormat.OpenXml.Office.Word.KeyMapEntry? openXmlElement)
+  public static Byte[]? GetKeyCodeSecondary(KeyMapEntry? openXmlElement)
   {
     if (openXmlElement?.KeyCodeSecondary?.Value != null)
       return Convert.FromHexString(openXmlElement.KeyCodeSecondary.Value);
     return null;
   }
-  
-  public static void SetKeyCodeSecondary(DocumentFormat.OpenXml.Office.Word.KeyMapEntry? openXmlElement, Byte[]? value)
+
+  public static void SetKeyCodeSecondary(KeyMapEntry? openXmlElement, Byte[]? value)
   {
     if (openXmlElement != null)
     {
@@ -88,16 +93,16 @@ public static class KeyMapEntryConverter
         openXmlElement.KeyCodeSecondary = null;
     }
   }
-  
+
   /// <summary>
-  /// mask
+  ///   mask
   /// </summary>
-  public static Boolean? GetMask(DocumentFormat.OpenXml.Office.Word.KeyMapEntry? openXmlElement)
+  public static Boolean? GetMask(KeyMapEntry? openXmlElement)
   {
     return openXmlElement?.Mask?.Value;
   }
-  
-  public static void SetMask(DocumentFormat.OpenXml.Office.Word.KeyMapEntry? openXmlElement, Boolean? value)
+
+  public static void SetMask(KeyMapEntry? openXmlElement, Boolean? value)
   {
     if (openXmlElement != null)
       if (value != null)
@@ -105,19 +110,19 @@ public static class KeyMapEntryConverter
       else
         openXmlElement.Mask = null;
   }
-  
+
   /// <summary>
-  /// FixedCommandKeyboardCustomization.
+  ///   FixedCommandKeyboardCustomization.
   /// </summary>
-  public static DocumentModel.Wordprocessing.FixedCommandKeyboardCustomization? GetFixedCommandKeyboardCustomization(DocumentFormat.OpenXml.Office.Word.KeyMapEntry? openXmlElement)
+  public static FixedCommandKeyboardCustomization? GetFixedCommandKeyboardCustomization(KeyMapEntry? openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office.Word.FixedCommandKeyboardCustomization>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Wordprocessing.FixedCommandKeyboardCustomizationConverter.CreateModelElement(itemElement);
+      return FixedCommandKeyboardCustomizationConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetFixedCommandKeyboardCustomization(DocumentFormat.OpenXml.Office.Word.KeyMapEntry? openXmlElement, DocumentModel.Wordprocessing.FixedCommandKeyboardCustomization? value)
+
+  public static void SetFixedCommandKeyboardCustomization(KeyMapEntry? openXmlElement, FixedCommandKeyboardCustomization? value)
   {
     if (openXmlElement != null)
     {
@@ -126,122 +131,122 @@ public static class KeyMapEntryConverter
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Wordprocessing.FixedCommandKeyboardCustomizationConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office.Word.FixedCommandKeyboardCustomization>(value);
+        itemElement = FixedCommandKeyboardCustomizationConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office.Word.FixedCommandKeyboardCustomization>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
+
   /// <summary>
-  /// MacroKeyboardCustomization.
+  ///   MacroKeyboardCustomization.
   /// </summary>
-  public static DocumentModel.Wordprocessing.MacroWllType? GetMacroKeyboardCustomization(DocumentFormat.OpenXml.Office.Word.KeyMapEntry? openXmlElement)
+  public static MacroWllType? GetMacroKeyboardCustomization(KeyMapEntry? openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office.Word.MacroKeyboardCustomization>();
+    var itemElement = openXmlElement?.GetFirstChild<MacroKeyboardCustomization>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Wordprocessing.MacroWllTypeConverter.CreateModelElement(itemElement);
+      return MacroWllTypeConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetMacroKeyboardCustomization(DocumentFormat.OpenXml.Office.Word.KeyMapEntry? openXmlElement, DocumentModel.Wordprocessing.MacroWllType? value)
+
+  public static void SetMacroKeyboardCustomization(KeyMapEntry? openXmlElement, MacroWllType? value)
   {
     if (openXmlElement != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office.Word.MacroKeyboardCustomization>();
+      var itemElement = openXmlElement.GetFirstChild<MacroKeyboardCustomization>();
       if (itemElement != null)
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Wordprocessing.MacroWllTypeConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office.Word.MacroKeyboardCustomization>(value);
+        itemElement = MacroWllTypeConverter.CreateOpenXmlElement<MacroKeyboardCustomization>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
+
   /// <summary>
-  /// AllocatedCommandKeyboardCustomization.
+  ///   AllocatedCommandKeyboardCustomization.
   /// </summary>
-  public static DocumentModel.Wordprocessing.AcceleratorKeymapType? GetAllocatedCommandKeyboardCustomization(DocumentFormat.OpenXml.Office.Word.KeyMapEntry? openXmlElement)
+  public static AcceleratorKeymapType? GetAllocatedCommandKeyboardCustomization(KeyMapEntry? openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office.Word.AllocatedCommandKeyboardCustomization>();
+    var itemElement = openXmlElement?.GetFirstChild<AllocatedCommandKeyboardCustomization>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Wordprocessing.AcceleratorKeymapTypeConverter.CreateModelElement(itemElement);
+      return AcceleratorKeymapTypeConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetAllocatedCommandKeyboardCustomization(DocumentFormat.OpenXml.Office.Word.KeyMapEntry? openXmlElement, DocumentModel.Wordprocessing.AcceleratorKeymapType? value)
+
+  public static void SetAllocatedCommandKeyboardCustomization(KeyMapEntry? openXmlElement, AcceleratorKeymapType? value)
   {
     if (openXmlElement != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office.Word.AllocatedCommandKeyboardCustomization>();
+      var itemElement = openXmlElement.GetFirstChild<AllocatedCommandKeyboardCustomization>();
       if (itemElement != null)
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Wordprocessing.AcceleratorKeymapTypeConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office.Word.AllocatedCommandKeyboardCustomization>(value);
+        itemElement = AcceleratorKeymapTypeConverter.CreateOpenXmlElement<AllocatedCommandKeyboardCustomization>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
+
   /// <summary>
-  /// WllMacroKeyboardCustomization.
+  ///   WllMacroKeyboardCustomization.
   /// </summary>
-  public static DocumentModel.Wordprocessing.MacroWllType? GetWllMacroKeyboardCustomization(DocumentFormat.OpenXml.Office.Word.KeyMapEntry? openXmlElement)
+  public static MacroWllType? GetWllMacroKeyboardCustomization(KeyMapEntry? openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office.Word.WllMacroKeyboardCustomization>();
+    var itemElement = openXmlElement?.GetFirstChild<WllMacroKeyboardCustomization>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Wordprocessing.MacroWllTypeConverter.CreateModelElement(itemElement);
+      return MacroWllTypeConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetWllMacroKeyboardCustomization(DocumentFormat.OpenXml.Office.Word.KeyMapEntry? openXmlElement, DocumentModel.Wordprocessing.MacroWllType? value)
+
+  public static void SetWllMacroKeyboardCustomization(KeyMapEntry? openXmlElement, MacroWllType? value)
   {
     if (openXmlElement != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office.Word.WllMacroKeyboardCustomization>();
+      var itemElement = openXmlElement.GetFirstChild<WllMacroKeyboardCustomization>();
       if (itemElement != null)
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Wordprocessing.MacroWllTypeConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office.Word.WllMacroKeyboardCustomization>(value);
+        itemElement = MacroWllTypeConverter.CreateOpenXmlElement<WllMacroKeyboardCustomization>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
+
   /// <summary>
-  /// CharacterInsertion.
+  ///   CharacterInsertion.
   /// </summary>
-  public static Byte[]? GetCharacterInsertion(DocumentFormat.OpenXml.Office.Word.KeyMapEntry? openXmlElement)
+  public static Byte[]? GetCharacterInsertion(KeyMapEntry? openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office.Word.CharacterInsertion>();
+    var itemElement = openXmlElement?.GetFirstChild<CharacterInsertion>();
     if (itemElement != null)
       return ByteArrayConverter.GetValue(itemElement);
     return null;
   }
-  
-  public static void SetCharacterInsertion(DocumentFormat.OpenXml.Office.Word.KeyMapEntry? openXmlElement, Byte[]? value)
+
+  public static void SetCharacterInsertion(KeyMapEntry? openXmlElement, Byte[]? value)
   {
     if (openXmlElement != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office.Word.CharacterInsertion>();
+      var itemElement = openXmlElement.GetFirstChild<CharacterInsertion>();
       if (itemElement != null)
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = ByteArrayConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office.Word.CharacterInsertion>(value);
+        itemElement = ByteArrayConverter.CreateOpenXmlElement<CharacterInsertion>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static DocumentModel.Wordprocessing.KeyMapEntry? CreateModelElement(DocumentFormat.OpenXml.Office.Word.KeyMapEntry? openXmlElement)
+
+  public static DocumentModel.Wordprocessing.KeyMapEntry? CreateModelElement(KeyMapEntry? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -260,9 +265,9 @@ public static class KeyMapEntryConverter
     }
     return null;
   }
-  
+
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.KeyMapEntry? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Office.Word.KeyMapEntry, new()
+    where OpenXmlElementType : KeyMapEntry, new()
   {
     if (value != null)
     {

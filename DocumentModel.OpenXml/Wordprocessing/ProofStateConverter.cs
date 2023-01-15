@@ -1,39 +1,43 @@
+using DocumentFormat.OpenXml.Wordprocessing;
+using DocumentModel.Wordprocessing;
+using ProofState = DocumentFormat.OpenXml.Wordprocessing.ProofState;
+
 namespace DocumentModel.OpenXml.Wordprocessing;
 
 /// <summary>
-/// Spelling and Grammatical Checking State.
+///   Spelling and Grammatical Checking State.
 /// </summary>
 public static class ProofStateConverter
 {
   /// <summary>
-  /// Spell Checking State
+  ///   Spell Checking State
   /// </summary>
-  public static DocumentModel.Wordprocessing.ProofingStateKind? GetSpelling(DocumentFormat.OpenXml.Wordprocessing.ProofState? openXmlElement)
+  public static ProofingStateKind? GetSpelling(ProofState? openXmlElement)
   {
-    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Wordprocessing.ProofingStateValues, DocumentModel.Wordprocessing.ProofingStateKind>(openXmlElement?.Spelling?.Value);
+    return EnumValueConverter.GetValue<ProofingStateValues, ProofingStateKind>(openXmlElement?.Spelling?.Value);
   }
-  
-  public static void SetSpelling(DocumentFormat.OpenXml.Wordprocessing.ProofState? openXmlElement, DocumentModel.Wordprocessing.ProofingStateKind? value)
+
+  public static void SetSpelling(ProofState? openXmlElement, ProofingStateKind? value)
   {
     if (openXmlElement != null)
-      openXmlElement.Spelling = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Wordprocessing.ProofingStateValues, DocumentModel.Wordprocessing.ProofingStateKind>(value);
+      openXmlElement.Spelling = EnumValueConverter.CreateEnumValue<ProofingStateValues, ProofingStateKind>(value);
   }
-  
+
   /// <summary>
-  /// Grammatical Checking State
+  ///   Grammatical Checking State
   /// </summary>
-  public static DocumentModel.Wordprocessing.ProofingStateKind? GetGrammar(DocumentFormat.OpenXml.Wordprocessing.ProofState? openXmlElement)
+  public static ProofingStateKind? GetGrammar(ProofState? openXmlElement)
   {
-    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Wordprocessing.ProofingStateValues, DocumentModel.Wordprocessing.ProofingStateKind>(openXmlElement?.Grammar?.Value);
+    return EnumValueConverter.GetValue<ProofingStateValues, ProofingStateKind>(openXmlElement?.Grammar?.Value);
   }
-  
-  public static void SetGrammar(DocumentFormat.OpenXml.Wordprocessing.ProofState? openXmlElement, DocumentModel.Wordprocessing.ProofingStateKind? value)
+
+  public static void SetGrammar(ProofState? openXmlElement, ProofingStateKind? value)
   {
     if (openXmlElement != null)
-      openXmlElement.Grammar = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Wordprocessing.ProofingStateValues, DocumentModel.Wordprocessing.ProofingStateKind>(value);
+      openXmlElement.Grammar = EnumValueConverter.CreateEnumValue<ProofingStateValues, ProofingStateKind>(value);
   }
-  
-  public static DocumentModel.Wordprocessing.ProofState? CreateModelElement(DocumentFormat.OpenXml.Wordprocessing.ProofState? openXmlElement)
+
+  public static DocumentModel.Wordprocessing.ProofState? CreateModelElement(ProofState? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -44,9 +48,9 @@ public static class ProofStateConverter
     }
     return null;
   }
-  
+
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.ProofState? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Wordprocessing.ProofState, new()
+    where OpenXmlElementType : ProofState, new()
   {
     if (value != null)
     {

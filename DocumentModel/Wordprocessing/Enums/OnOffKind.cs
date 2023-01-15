@@ -1,28 +1,27 @@
 namespace DocumentModel.Wordprocessing;
 
 /// <summary>
-/// Defines the OnOffValues enumeration.
+///   Defines the OnOffValues enumeration.
 /// </summary>
 public enum OnOffKind
 {
   /// <summary>
-  /// true.
+  ///   true.
   /// </summary>
   True,
-  
+
   /// <summary>
-  /// false.
+  ///   false.
   /// </summary>
   False,
-  
+
   /// <summary>
-  /// 0.
+  ///   0.
   /// </summary>
   Zero,
-  
+
   /// <summary>
-  /// 1.
+  ///   1.
   /// </summary>
-  One,
-  
+  One
 }

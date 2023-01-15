@@ -1,32 +1,31 @@
 namespace DocumentModel.Drawings;
 
 /// <summary>
-/// Defines the BlipFill Class.
+///   Defines the BlipFill Class.
 /// </summary>
-public partial class BlipFill
+public class BlipFill
 {
   /// <summary>
-  /// DPI Setting
+  ///   DPI Setting
   /// </summary>
   public UInt32? Dpi { get; set; }
-  
+
   /// <summary>
-  /// Rotate With Shape
+  ///   Rotate With Shape
   /// </summary>
   public Boolean? RotateWithShape { get; set; }
-  
+
   /// <summary>
-  /// Blip.
+  ///   Blip.
   /// </summary>
-  public DocumentModel.Drawings.Blip? Blip { get; set; }
-  
+  public Blip? Blip { get; set; }
+
   /// <summary>
-  /// Source Rectangle.
+  ///   Source Rectangle.
   /// </summary>
-  public DocumentModel.Drawings.RelativeRectangleType? SourceRectangle { get; set; }
-  
-  public DocumentModel.Drawings.Tile? Tile { get; set; }
-  
-  public DocumentModel.Drawings.Stretch? Stretch { get; set; }
-  
+  public RelativeRectangleType? SourceRectangle { get; set; }
+
+  public Tile? Tile { get; set; }
+
+  public Stretch? Stretch { get; set; }
 }

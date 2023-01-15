@@ -1,53 +1,52 @@
 namespace DocumentModel.Drawings.Diagrams;
 
 /// <summary>
-/// Defines the LayoutVariablePropertySetType Class.
+///   Defines the LayoutVariablePropertySetType Class.
 /// </summary>
-public partial class LayoutVariablePropertySetType
+public class LayoutVariablePropertySetType
 {
   /// <summary>
-  /// Show Organization Chart User Interface.
+  ///   Show Organization Chart User Interface.
   /// </summary>
   public Boolean? OrganizationChart { get; set; }
-  
+
   /// <summary>
-  /// Maximum Children.
+  ///   Maximum Children.
   /// </summary>
   public Int32? MaxNumberOfChildren { get; set; }
-  
+
   /// <summary>
-  /// Preferred Number of Children.
+  ///   Preferred Number of Children.
   /// </summary>
   public Int32? PreferredNumberOfChildren { get; set; }
-  
+
   /// <summary>
-  /// Show Insert Bullet.
+  ///   Show Insert Bullet.
   /// </summary>
   public Boolean? BulletEnabled { get; set; }
-  
+
   /// <summary>
-  /// Diagram Direction.
+  ///   Diagram Direction.
   /// </summary>
-  public DocumentModel.Drawings.Diagrams.DirectionKind? Direction { get; set; }
-  
+  public DirectionKind? Direction { get; set; }
+
   /// <summary>
-  /// Organization Chart Branch Style.
+  ///   Organization Chart Branch Style.
   /// </summary>
-  public DocumentModel.Drawings.Diagrams.HierarchyBranchStyleKind? HierarchyBranch { get; set; }
-  
+  public HierarchyBranchStyleKind? HierarchyBranch { get; set; }
+
   /// <summary>
-  /// One by One Animation String.
+  ///   One by One Animation String.
   /// </summary>
-  public DocumentModel.Drawings.Diagrams.AnimateOneByOneKind? AnimateOneByOne { get; set; }
-  
+  public AnimateOneByOneKind? AnimateOneByOne { get; set; }
+
   /// <summary>
-  /// Level Animation.
+  ///   Level Animation.
   /// </summary>
-  public DocumentModel.Drawings.Diagrams.AnimationLevelStringKind? AnimationLevel { get; set; }
-  
+  public AnimationLevelStringKind? AnimationLevel { get; set; }
+
   /// <summary>
-  /// Shape Resize Style.
+  ///   Shape Resize Style.
   /// </summary>
-  public DocumentModel.Drawings.Diagrams.ResizeHandlesStringKind? ResizeHandles { get; set; }
-  
+  public ResizeHandlesStringKind? ResizeHandles { get; set; }
 }

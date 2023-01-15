@@ -1,12 +1,11 @@
 namespace DocumentModel.Drawings;
 
 /// <summary>
-/// List of Shape Adjust Handles.
+///   List of Shape Adjust Handles.
 /// </summary>
-public partial class AdjustHandleList
+public class AdjustHandleList
 {
-  public DocumentModel.Drawings.AdjustHandleXY? AdjustHandleXY { get; set; }
-  
-  public DocumentModel.Drawings.AdjustHandlePolar? AdjustHandlePolar { get; set; }
-  
+  public AdjustHandleXY? AdjustHandleXY { get; set; }
+
+  public AdjustHandlePolar? AdjustHandlePolar { get; set; }
 }

@@ -1,18 +1,17 @@
 namespace DocumentModel.Drawings;
 
 /// <summary>
-/// Tab Stop.
+///   Tab Stop.
 /// </summary>
-public partial class TabStop
+public class TabStop
 {
   /// <summary>
-  /// Tab Position
+  ///   Tab Position
   /// </summary>
   public Int32? Position { get; set; }
-  
+
   /// <summary>
-  /// Tab Alignment
+  ///   Tab Alignment
   /// </summary>
-  public DocumentModel.Drawings.TextTabAlignmentKind? Alignment { get; set; }
-  
+  public TextTabAlignmentKind? Alignment { get; set; }
 }

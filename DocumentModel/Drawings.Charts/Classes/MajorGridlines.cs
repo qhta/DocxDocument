@@ -1,10 +1,9 @@
 namespace DocumentModel.Drawings.Charts;
 
 /// <summary>
-/// Major Gridlines.
+///   Major Gridlines.
 /// </summary>
-public partial class MajorGridlines
+public class MajorGridlines
 {
-  public DocumentModel.Drawings.Charts.ChartShapeProperties? ChartShapeProperties { get; set; }
-  
+  public ChartShapeProperties? ChartShapeProperties { get; set; }
 }

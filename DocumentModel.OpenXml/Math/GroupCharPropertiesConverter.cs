@@ -1,112 +1,111 @@
+using DocumentFormat.OpenXml.Math;
+using DocumentModel.Math;
+using ControlProperties = DocumentModel.Math.ControlProperties;
+using GroupCharProperties = DocumentFormat.OpenXml.Math.GroupCharProperties;
+
 namespace DocumentModel.OpenXml.Math;
 
 /// <summary>
-/// Group-Character Properties.
+///   Group-Character Properties.
 /// </summary>
 public static class GroupCharPropertiesConverter
 {
   /// <summary>
-  /// Group Character (Grouping Character).
+  ///   Group Character (Grouping Character).
   /// </summary>
-  public static String? GetAccentChar(DocumentFormat.OpenXml.Math.GroupCharProperties? openXmlElement)
+  public static String? GetAccentChar(GroupCharProperties? openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Math.AccentChar>();
+    var itemElement = openXmlElement?.GetFirstChild<AccentChar>();
     if (itemElement != null)
       return itemElement.Val?.Value;
     return null;
   }
-  
-  public static void SetAccentChar(DocumentFormat.OpenXml.Math.GroupCharProperties? openXmlElement, String? value)
+
+  public static void SetAccentChar(GroupCharProperties? openXmlElement, String? value)
   {
     if (openXmlElement != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Math.AccentChar>();
+      var itemElement = openXmlElement.GetFirstChild<AccentChar>();
       if (itemElement != null)
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = new DocumentFormat.OpenXml.Math.AccentChar { Val = value };
+        itemElement = new AccentChar { Val = value };
         openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
+
   /// <summary>
-  /// Position (Group Character).
+  ///   Position (Group Character).
   /// </summary>
-  public static DocumentModel.Math.VerticalJustificationKind? GetPosition(DocumentFormat.OpenXml.Math.GroupCharProperties? openXmlElement)
+  public static VerticalJustificationKind? GetPosition(GroupCharProperties? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Math.Position>();
-      if (itemElement?.Val?.Value != null)
-      {
-        return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Math.VerticalJustificationValues, DocumentModel.Math.VerticalJustificationKind>(itemElement.Val.Value);
-      }
+      var itemElement = openXmlElement.GetFirstChild<Position>();
+      if (itemElement?.Val?.Value != null) return EnumValueConverter.GetValue<VerticalJustificationValues, VerticalJustificationKind>(itemElement.Val.Value);
     }
     return null;
   }
-  
-  public static void SetPosition(DocumentFormat.OpenXml.Math.GroupCharProperties? openXmlElement, DocumentModel.Math.VerticalJustificationKind? value)
+
+  public static void SetPosition(GroupCharProperties? openXmlElement, VerticalJustificationKind? value)
   {
     if (openXmlElement != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Math.Position>();
+      var itemElement = openXmlElement.GetFirstChild<Position>();
       if (itemElement != null)
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = EnumValueConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Math.Position, DocumentFormat.OpenXml.Math.VerticalJustificationValues, DocumentModel.Math.VerticalJustificationKind>(value);
+        itemElement = EnumValueConverter.CreateOpenXmlElement<Position, VerticalJustificationValues, VerticalJustificationKind>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
+
   /// <summary>
-  /// Vertical Justification.
+  ///   Vertical Justification.
   /// </summary>
-  public static DocumentModel.Math.VerticalJustificationKind? GetVerticalJustification(DocumentFormat.OpenXml.Math.GroupCharProperties? openXmlElement)
+  public static VerticalJustificationKind? GetVerticalJustification(GroupCharProperties? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Math.VerticalJustification>();
-      if (itemElement?.Val?.Value != null)
-      {
-        return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Math.VerticalJustificationValues, DocumentModel.Math.VerticalJustificationKind>(itemElement.Val.Value);
-      }
+      var itemElement = openXmlElement.GetFirstChild<VerticalJustification>();
+      if (itemElement?.Val?.Value != null) return EnumValueConverter.GetValue<VerticalJustificationValues, VerticalJustificationKind>(itemElement.Val.Value);
     }
     return null;
   }
-  
-  public static void SetVerticalJustification(DocumentFormat.OpenXml.Math.GroupCharProperties? openXmlElement, DocumentModel.Math.VerticalJustificationKind? value)
+
+  public static void SetVerticalJustification(GroupCharProperties? openXmlElement, VerticalJustificationKind? value)
   {
     if (openXmlElement != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Math.VerticalJustification>();
+      var itemElement = openXmlElement.GetFirstChild<VerticalJustification>();
       if (itemElement != null)
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = EnumValueConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Math.VerticalJustification, DocumentFormat.OpenXml.Math.VerticalJustificationValues, DocumentModel.Math.VerticalJustificationKind>(value);
+        itemElement = EnumValueConverter.CreateOpenXmlElement<VerticalJustification, VerticalJustificationValues, VerticalJustificationKind>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
+
   /// <summary>
-  /// ControlProperties.
+  ///   ControlProperties.
   /// </summary>
-  public static DocumentModel.Math.ControlProperties? GetControlProperties(DocumentFormat.OpenXml.Math.GroupCharProperties? openXmlElement)
+  public static ControlProperties? GetControlProperties(GroupCharProperties? openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Math.ControlProperties>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Math.ControlPropertiesConverter.CreateModelElement(itemElement);
+      return ControlPropertiesConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetControlProperties(DocumentFormat.OpenXml.Math.GroupCharProperties? openXmlElement, DocumentModel.Math.ControlProperties? value)
+
+  public static void SetControlProperties(GroupCharProperties? openXmlElement, ControlProperties? value)
   {
     if (openXmlElement != null)
     {
@@ -115,14 +114,14 @@ public static class GroupCharPropertiesConverter
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Math.ControlPropertiesConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Math.ControlProperties>(value);
+        itemElement = ControlPropertiesConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Math.ControlProperties>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static DocumentModel.Math.GroupCharProperties? CreateModelElement(DocumentFormat.OpenXml.Math.GroupCharProperties? openXmlElement)
+
+  public static DocumentModel.Math.GroupCharProperties? CreateModelElement(GroupCharProperties? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -135,9 +134,9 @@ public static class GroupCharPropertiesConverter
     }
     return null;
   }
-  
+
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Math.GroupCharProperties? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Math.GroupCharProperties, new()
+    where OpenXmlElementType : GroupCharProperties, new()
   {
     if (value != null)
     {

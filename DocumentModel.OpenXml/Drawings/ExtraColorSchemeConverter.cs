@@ -1,22 +1,25 @@
+using DocumentModel.Drawings;
+using ExtraColorScheme = DocumentFormat.OpenXml.Drawing.ExtraColorScheme;
+
 namespace DocumentModel.OpenXml.Drawings;
 
 /// <summary>
-/// Extra Color Scheme.
+///   Extra Color Scheme.
 /// </summary>
 public static class ExtraColorSchemeConverter
 {
   /// <summary>
-  /// ColorScheme.
+  ///   ColorScheme.
   /// </summary>
-  public static DocumentModel.Drawings.ColorScheme? GetColorScheme(DocumentFormat.OpenXml.Drawing.ExtraColorScheme? openXmlElement)
+  public static ColorScheme? GetColorScheme(ExtraColorScheme? openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.ColorScheme>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.ColorSchemeConverter.CreateModelElement(itemElement);
+      return ColorSchemeConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetColorScheme(DocumentFormat.OpenXml.Drawing.ExtraColorScheme? openXmlElement, DocumentModel.Drawings.ColorScheme? value)
+
+  public static void SetColorScheme(ExtraColorScheme? openXmlElement, ColorScheme? value)
   {
     if (openXmlElement != null)
     {
@@ -25,25 +28,25 @@ public static class ExtraColorSchemeConverter
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Drawings.ColorSchemeConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.ColorScheme>(value);
+        itemElement = ColorSchemeConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.ColorScheme>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
+
   /// <summary>
-  /// ColorMap.
+  ///   ColorMap.
   /// </summary>
-  public static DocumentModel.Drawings.ColorMap? GetColorMap(DocumentFormat.OpenXml.Drawing.ExtraColorScheme? openXmlElement)
+  public static ColorMap? GetColorMap(ExtraColorScheme? openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.ColorMap>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.ColorMapConverter.CreateModelElement(itemElement);
+      return ColorMapConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetColorMap(DocumentFormat.OpenXml.Drawing.ExtraColorScheme? openXmlElement, DocumentModel.Drawings.ColorMap? value)
+
+  public static void SetColorMap(ExtraColorScheme? openXmlElement, ColorMap? value)
   {
     if (openXmlElement != null)
     {
@@ -52,14 +55,14 @@ public static class ExtraColorSchemeConverter
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Drawings.ColorMapConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.ColorMap>(value);
+        itemElement = ColorMapConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.ColorMap>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static DocumentModel.Drawings.ExtraColorScheme? CreateModelElement(DocumentFormat.OpenXml.Drawing.ExtraColorScheme? openXmlElement)
+
+  public static DocumentModel.Drawings.ExtraColorScheme? CreateModelElement(ExtraColorScheme? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -70,9 +73,9 @@ public static class ExtraColorSchemeConverter
     }
     return null;
   }
-  
+
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.ExtraColorScheme? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.ExtraColorScheme, new()
+    where OpenXmlElementType : ExtraColorScheme, new()
   {
     if (value != null)
     {

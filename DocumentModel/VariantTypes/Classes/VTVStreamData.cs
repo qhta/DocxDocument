@@ -1,13 +1,12 @@
 namespace DocumentModel.VariantTypes;
 
 /// <summary>
-/// Binary Versioned Stream.
+///   Binary Versioned Stream.
 /// </summary>
-public partial class VTVStreamData
+public class VTVStreamData
 {
   /// <summary>
-  /// VSTREAM Version Attribute
+  ///   VSTREAM Version Attribute
   /// </summary>
   public String? Version { get; set; }
-  
 }

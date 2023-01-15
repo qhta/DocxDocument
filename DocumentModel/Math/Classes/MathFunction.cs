@@ -1,23 +1,22 @@
 namespace DocumentModel.Math;
 
 /// <summary>
-/// Function Apply Function.
+///   Function Apply Function.
 /// </summary>
-public partial class MathFunction
+public class MathFunction
 {
   /// <summary>
-  /// Function Properties.
+  ///   Function Properties.
   /// </summary>
-  public DocumentModel.Math.FunctionProperties? FunctionProperties { get; set; }
-  
+  public FunctionProperties? FunctionProperties { get; set; }
+
   /// <summary>
-  /// Function Name.
+  ///   Function Name.
   /// </summary>
-  public DocumentModel.Math.FunctionName? FunctionName { get; set; }
-  
+  public FunctionName? FunctionName { get; set; }
+
   /// <summary>
-  /// Base (Argument).
+  ///   Base (Argument).
   /// </summary>
-  public DocumentModel.Math.Base? Base { get; set; }
-  
+  public Base? Base { get; set; }
 }

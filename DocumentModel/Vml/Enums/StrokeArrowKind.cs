@@ -1,38 +1,37 @@
 namespace DocumentModel.Vml;
 
 /// <summary>
-/// Stroke Arrowhead Type
+///   Stroke Arrowhead Type
 /// </summary>
 public enum StrokeArrowKind
 {
   /// <summary>
-  /// No Arrowhead.
+  ///   No Arrowhead.
   /// </summary>
   None,
-  
+
   /// <summary>
-  /// Block Arrowhead.
+  ///   Block Arrowhead.
   /// </summary>
   Block,
-  
+
   /// <summary>
-  /// Classic Arrowhead.
+  ///   Classic Arrowhead.
   /// </summary>
   Classic,
-  
+
   /// <summary>
-  /// Oval Arrowhead.
+  ///   Oval Arrowhead.
   /// </summary>
   Oval,
-  
+
   /// <summary>
-  /// Diamond Arrowhead.
+  ///   Diamond Arrowhead.
   /// </summary>
   Diamond,
-  
+
   /// <summary>
-  /// Open Arrowhead.
+  ///   Open Arrowhead.
   /// </summary>
-  Open,
-  
+  Open
 }

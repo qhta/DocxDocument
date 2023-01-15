@@ -1,13 +1,12 @@
 namespace DocumentModel.Drawings;
 
 /// <summary>
-/// Stretch.
+///   Stretch.
 /// </summary>
-public partial class Stretch
+public class Stretch
 {
   /// <summary>
-  /// Fill Rectangle.
+  ///   Fill Rectangle.
   /// </summary>
-  public DocumentModel.Drawings.RelativeRectangleType? FillRectangle { get; set; }
-  
+  public RelativeRectangleType? FillRectangle { get; set; }
 }

@@ -1,23 +1,22 @@
 namespace DocumentModel.Drawings;
 
 /// <summary>
-/// Text Vertical Overflow
+///   Text Vertical Overflow
 /// </summary>
 public enum TextVerticalOverflowKind
 {
   /// <summary>
-  /// Text Overflow Enum ( Overflow ).
+  ///   Text Overflow Enum ( Overflow ).
   /// </summary>
   Overflow,
-  
+
   /// <summary>
-  /// Text Overflow Enum ( Ellipsis ).
+  ///   Text Overflow Enum ( Ellipsis ).
   /// </summary>
   Ellipsis,
-  
+
   /// <summary>
-  /// Text Overflow Enum ( Clip ).
+  ///   Text Overflow Enum ( Clip ).
   /// </summary>
-  Clip,
-  
+  Clip
 }

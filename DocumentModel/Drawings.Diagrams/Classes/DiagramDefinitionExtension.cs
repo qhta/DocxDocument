@@ -1,17 +1,19 @@
+using DocumentModel.Drawings.Diagram1;
+using DocumentModel.Drawings.Diagram2;
+
 namespace DocumentModel.Drawings.Diagrams;
 
 /// <summary>
-/// Defines the DiagramDefinitionExtension Class.
+///   Defines the DiagramDefinitionExtension Class.
 /// </summary>
-public partial class DiagramDefinitionExtension
+public class DiagramDefinitionExtension
 {
   /// <summary>
-  /// URI
+  ///   URI
   /// </summary>
   public String? Uri { get; set; }
-  
-  public DocumentModel.Drawings.Diagram1.NumberDiagramInfoList? NumberDiagramInfoList { get; set; }
-  
-  public DocumentModel.Drawings.Diagram2.TextListStyleType? TextListStyleType { get; set; }
-  
+
+  public NumberDiagramInfoList? NumberDiagramInfoList { get; set; }
+
+  public TextListStyleType? TextListStyleType { get; set; }
 }

@@ -1,19 +1,22 @@
+using DocumentModel.Drawings;
+using LineStyleList = DocumentFormat.OpenXml.Drawing.LineStyleList;
+
 namespace DocumentModel.OpenXml.Drawings;
 
 /// <summary>
-/// Line Style List.
+///   Line Style List.
 /// </summary>
 public static class LineStyleListConverter
 {
-  public static DocumentModel.Drawings.Outline? GetOutline(DocumentFormat.OpenXml.Drawing.LineStyleList? openXmlElement)
+  public static Outline? GetOutline(LineStyleList? openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.Outline>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.OutlineConverter.CreateModelElement(itemElement);
+      return OutlineConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetOutline(DocumentFormat.OpenXml.Drawing.LineStyleList? openXmlElement, DocumentModel.Drawings.Outline? value)
+
+  public static void SetOutline(LineStyleList? openXmlElement, Outline? value)
   {
     if (openXmlElement != null)
     {
@@ -22,14 +25,14 @@ public static class LineStyleListConverter
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Drawings.OutlineConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Outline>(value);
+        itemElement = OutlineConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Outline>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static DocumentModel.Drawings.LineStyleList? CreateModelElement(DocumentFormat.OpenXml.Drawing.LineStyleList? openXmlElement)
+
+  public static DocumentModel.Drawings.LineStyleList? CreateModelElement(LineStyleList? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -39,9 +42,9 @@ public static class LineStyleListConverter
     }
     return null;
   }
-  
+
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.LineStyleList? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.LineStyleList, new()
+    where OpenXmlElementType : LineStyleList, new()
   {
     if (value != null)
     {

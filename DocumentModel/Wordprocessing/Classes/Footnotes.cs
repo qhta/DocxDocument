@@ -1,10 +1,9 @@
 namespace DocumentModel.Wordprocessing;
 
 /// <summary>
-/// Document Footnotes.
+///   Document Footnotes.
 /// </summary>
-public partial class Footnotes
+public class Footnotes
 {
-  public DocumentModel.Wordprocessing.Footnote? Footnote { get; set; }
-  
+  public Footnote? Footnote { get; set; }
 }

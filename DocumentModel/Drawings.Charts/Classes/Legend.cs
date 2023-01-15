@@ -1,25 +1,24 @@
 namespace DocumentModel.Drawings.Charts;
 
 /// <summary>
-/// Legend data and formatting.
+///   Legend data and formatting.
 /// </summary>
-public partial class Legend
+public class Legend
 {
   /// <summary>
-  /// Legend Position.
+  ///   Legend Position.
   /// </summary>
-  public DocumentModel.Drawings.Charts.LegendPositionKind? LegendPosition { get; set; }
-  
-  public Collection<DocumentModel.Drawings.Charts.LegendEntry>? LegendEntries { get; set; }
-  
-  public DocumentModel.Drawings.Charts.Layout? Layout { get; set; }
-  
+  public LegendPositionKind? LegendPosition { get; set; }
+
+  public Collection<LegendEntry>? LegendEntries { get; set; }
+
+  public Layout? Layout { get; set; }
+
   public Boolean? Overlay { get; set; }
-  
-  public DocumentModel.Drawings.Charts.ChartShapeProperties? ChartShapeProperties { get; set; }
-  
-  public DocumentModel.Drawings.Charts.TextProperties? TextProperties { get; set; }
-  
-  public DocumentModel.Drawings.Charts.ExtensionList? ExtensionList { get; set; }
-  
+
+  public ChartShapeProperties? ChartShapeProperties { get; set; }
+
+  public TextProperties? TextProperties { get; set; }
+
+  public ExtensionList? ExtensionList { get; set; }
 }

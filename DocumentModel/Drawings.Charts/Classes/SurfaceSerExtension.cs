@@ -1,19 +1,18 @@
 namespace DocumentModel.Drawings.Charts;
 
 /// <summary>
-/// Defines the SurfaceSerExtension Class.
+///   Defines the SurfaceSerExtension Class.
 /// </summary>
-public partial class SurfaceSerExtension
+public class SurfaceSerExtension
 {
   /// <summary>
-  /// URI
+  ///   URI
   /// </summary>
   public String? Uri { get; set; }
-  
-  public DocumentModel.Drawings.Charts.FilteredSeriesTitle? FilteredSeriesTitle { get; set; }
-  
-  public DocumentModel.Drawings.Charts.FilteredCategoryTitle? FilteredCategoryTitle { get; set; }
-  
-  public DocumentModel.Drawings.Charts.CategoryFilterExceptions? CategoryFilterExceptions { get; set; }
-  
+
+  public FilteredSeriesTitle? FilteredSeriesTitle { get; set; }
+
+  public FilteredCategoryTitle? FilteredCategoryTitle { get; set; }
+
+  public CategoryFilterExceptions? CategoryFilterExceptions { get; set; }
 }

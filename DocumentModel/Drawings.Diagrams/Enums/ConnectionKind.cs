@@ -1,28 +1,27 @@
 namespace DocumentModel.Drawings.Diagrams;
 
 /// <summary>
-/// Connection Type
+///   Connection Type
 /// </summary>
 public enum ConnectionKind
 {
   /// <summary>
-  /// Parent Of.
+  ///   Parent Of.
   /// </summary>
   ParentOf,
-  
+
   /// <summary>
-  /// Presentation Of.
+  ///   Presentation Of.
   /// </summary>
   PresentationOf,
-  
+
   /// <summary>
-  /// Presentation Parent Of.
+  ///   Presentation Parent Of.
   /// </summary>
   PresentationParentOf,
-  
+
   /// <summary>
-  /// Unknown Relationship.
+  ///   Unknown Relationship.
   /// </summary>
-  UnknownRelationship,
-  
+  UnknownRelationship
 }

@@ -1,19 +1,21 @@
+using DocumentFormat.OpenXml.Wordprocessing;
+
 namespace DocumentModel.OpenXml.Wordprocessing;
 
 /// <summary>
-/// Latent Style Exception.
+///   Latent Style Exception.
 /// </summary>
 public static class LatentStyleExceptionInfoConverter
 {
   /// <summary>
-  /// Primary Style Name
+  ///   Primary Style Name
   /// </summary>
-  public static String? GetName(DocumentFormat.OpenXml.Wordprocessing.LatentStyleExceptionInfo? openXmlElement)
+  public static String? GetName(LatentStyleExceptionInfo? openXmlElement)
   {
     return openXmlElement?.Name?.Value;
   }
-  
-  public static void SetName(DocumentFormat.OpenXml.Wordprocessing.LatentStyleExceptionInfo? openXmlElement, String? value)
+
+  public static void SetName(LatentStyleExceptionInfo? openXmlElement, String? value)
   {
     if (openXmlElement != null)
       if (value != null)
@@ -21,16 +23,16 @@ public static class LatentStyleExceptionInfoConverter
       else
         openXmlElement.Name = null;
   }
-  
+
   /// <summary>
-  /// Latent Style Locking Setting
+  ///   Latent Style Locking Setting
   /// </summary>
-  public static Boolean? GetLocked(DocumentFormat.OpenXml.Wordprocessing.LatentStyleExceptionInfo? openXmlElement)
+  public static Boolean? GetLocked(LatentStyleExceptionInfo? openXmlElement)
   {
     return openXmlElement?.Locked?.Value;
   }
-  
-  public static void SetLocked(DocumentFormat.OpenXml.Wordprocessing.LatentStyleExceptionInfo? openXmlElement, Boolean? value)
+
+  public static void SetLocked(LatentStyleExceptionInfo? openXmlElement, Boolean? value)
   {
     if (openXmlElement != null)
       if (value != null)
@@ -38,30 +40,30 @@ public static class LatentStyleExceptionInfoConverter
       else
         openXmlElement.Locked = null;
   }
-  
+
   /// <summary>
-  /// Override default sorting order
+  ///   Override default sorting order
   /// </summary>
-  public static Int32? GetUiPriority(DocumentFormat.OpenXml.Wordprocessing.LatentStyleExceptionInfo? openXmlElement)
+  public static Int32? GetUiPriority(LatentStyleExceptionInfo? openXmlElement)
   {
     return openXmlElement?.UiPriority?.Value;
   }
-  
-  public static void SetUiPriority(DocumentFormat.OpenXml.Wordprocessing.LatentStyleExceptionInfo? openXmlElement, Int32? value)
+
+  public static void SetUiPriority(LatentStyleExceptionInfo? openXmlElement, Int32? value)
   {
     if (openXmlElement != null)
       openXmlElement.UiPriority = value;
   }
-  
+
   /// <summary>
-  /// Semi hidden text override
+  ///   Semi hidden text override
   /// </summary>
-  public static Boolean? GetSemiHidden(DocumentFormat.OpenXml.Wordprocessing.LatentStyleExceptionInfo? openXmlElement)
+  public static Boolean? GetSemiHidden(LatentStyleExceptionInfo? openXmlElement)
   {
     return openXmlElement?.SemiHidden?.Value;
   }
-  
-  public static void SetSemiHidden(DocumentFormat.OpenXml.Wordprocessing.LatentStyleExceptionInfo? openXmlElement, Boolean? value)
+
+  public static void SetSemiHidden(LatentStyleExceptionInfo? openXmlElement, Boolean? value)
   {
     if (openXmlElement != null)
       if (value != null)
@@ -69,16 +71,16 @@ public static class LatentStyleExceptionInfoConverter
       else
         openXmlElement.SemiHidden = null;
   }
-  
+
   /// <summary>
-  /// Unhide when used
+  ///   Unhide when used
   /// </summary>
-  public static Boolean? GetUnhideWhenUsed(DocumentFormat.OpenXml.Wordprocessing.LatentStyleExceptionInfo? openXmlElement)
+  public static Boolean? GetUnhideWhenUsed(LatentStyleExceptionInfo? openXmlElement)
   {
     return openXmlElement?.UnhideWhenUsed?.Value;
   }
-  
-  public static void SetUnhideWhenUsed(DocumentFormat.OpenXml.Wordprocessing.LatentStyleExceptionInfo? openXmlElement, Boolean? value)
+
+  public static void SetUnhideWhenUsed(LatentStyleExceptionInfo? openXmlElement, Boolean? value)
   {
     if (openXmlElement != null)
       if (value != null)
@@ -86,16 +88,16 @@ public static class LatentStyleExceptionInfoConverter
       else
         openXmlElement.UnhideWhenUsed = null;
   }
-  
+
   /// <summary>
-  /// Latent Style Primary Style Setting
+  ///   Latent Style Primary Style Setting
   /// </summary>
-  public static Boolean? GetPrimaryStyle(DocumentFormat.OpenXml.Wordprocessing.LatentStyleExceptionInfo? openXmlElement)
+  public static Boolean? GetPrimaryStyle(LatentStyleExceptionInfo? openXmlElement)
   {
     return openXmlElement?.PrimaryStyle?.Value;
   }
-  
-  public static void SetPrimaryStyle(DocumentFormat.OpenXml.Wordprocessing.LatentStyleExceptionInfo? openXmlElement, Boolean? value)
+
+  public static void SetPrimaryStyle(LatentStyleExceptionInfo? openXmlElement, Boolean? value)
   {
     if (openXmlElement != null)
       if (value != null)
@@ -103,8 +105,8 @@ public static class LatentStyleExceptionInfoConverter
       else
         openXmlElement.PrimaryStyle = null;
   }
-  
-  public static DocumentModel.Wordprocessing.LatentStyleExceptionInfo? CreateModelElement(DocumentFormat.OpenXml.Wordprocessing.LatentStyleExceptionInfo? openXmlElement)
+
+  public static DocumentModel.Wordprocessing.LatentStyleExceptionInfo? CreateModelElement(LatentStyleExceptionInfo? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -119,9 +121,9 @@ public static class LatentStyleExceptionInfoConverter
     }
     return null;
   }
-  
+
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.LatentStyleExceptionInfo? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Wordprocessing.LatentStyleExceptionInfo, new()
+    where OpenXmlElementType : LatentStyleExceptionInfo, new()
   {
     if (value != null)
     {

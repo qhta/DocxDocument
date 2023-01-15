@@ -1,10 +1,9 @@
 namespace DocumentModel.Wordprocessing;
 
 /// <summary>
-/// Defines the KeyMapCustomizations Class.
+///   Defines the KeyMapCustomizations Class.
 /// </summary>
-public partial class KeyMapCustomizations
+public class KeyMapCustomizations
 {
-  public Collection<DocumentModel.Wordprocessing.KeyMapEntry>? KeyMapEntries { get; set; }
-  
+  public Collection<KeyMapEntry>? KeyMapEntries { get; set; }
 }

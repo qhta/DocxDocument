@@ -1,19 +1,22 @@
+using DocumentModel.Drawings.Charts;
+using BubbleSerExtension = DocumentFormat.OpenXml.Drawing.Charts.BubbleSerExtension;
+
 namespace DocumentModel.OpenXml.Drawings.Charts;
 
 /// <summary>
-/// Defines the BubbleSerExtension Class.
+///   Defines the BubbleSerExtension Class.
 /// </summary>
 public static class BubbleSerExtensionConverter
 {
   /// <summary>
-  /// URI
+  ///   URI
   /// </summary>
-  public static String? GetUri(DocumentFormat.OpenXml.Drawing.Charts.BubbleSerExtension? openXmlElement)
+  public static String? GetUri(BubbleSerExtension? openXmlElement)
   {
     return openXmlElement?.Uri?.Value;
   }
-  
-  public static void SetUri(DocumentFormat.OpenXml.Drawing.Charts.BubbleSerExtension? openXmlElement, String? value)
+
+  public static void SetUri(BubbleSerExtension? openXmlElement, String? value)
   {
     if (openXmlElement != null)
       if (value != null)
@@ -21,16 +24,16 @@ public static class BubbleSerExtensionConverter
       else
         openXmlElement.Uri = null;
   }
-  
-  public static DocumentModel.Drawings.Charts.InvertSolidFillFormat? GetInvertSolidFillFormat(DocumentFormat.OpenXml.Drawing.Charts.BubbleSerExtension? openXmlElement)
+
+  public static InvertSolidFillFormat? GetInvertSolidFillFormat(BubbleSerExtension? openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office2010.Drawing.Charts.InvertSolidFillFormat>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.Charts.InvertSolidFillFormatConverter.CreateModelElement(itemElement);
+      return InvertSolidFillFormatConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetInvertSolidFillFormat(DocumentFormat.OpenXml.Drawing.Charts.BubbleSerExtension? openXmlElement, DocumentModel.Drawings.Charts.InvertSolidFillFormat? value)
+
+  public static void SetInvertSolidFillFormat(BubbleSerExtension? openXmlElement, InvertSolidFillFormat? value)
   {
     if (openXmlElement != null)
     {
@@ -39,22 +42,22 @@ public static class BubbleSerExtensionConverter
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Drawings.Charts.InvertSolidFillFormatConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2010.Drawing.Charts.InvertSolidFillFormat>(value);
+        itemElement = InvertSolidFillFormatConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2010.Drawing.Charts.InvertSolidFillFormat>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static DocumentModel.Drawings.Charts.FilteredCategoryTitle? GetFilteredCategoryTitle(DocumentFormat.OpenXml.Drawing.Charts.BubbleSerExtension? openXmlElement)
+
+  public static FilteredCategoryTitle? GetFilteredCategoryTitle(BubbleSerExtension? openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office2013.Drawing.Chart.FilteredCategoryTitle>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.Charts.FilteredCategoryTitleConverter.CreateModelElement(itemElement);
+      return FilteredCategoryTitleConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetFilteredCategoryTitle(DocumentFormat.OpenXml.Drawing.Charts.BubbleSerExtension? openXmlElement, DocumentModel.Drawings.Charts.FilteredCategoryTitle? value)
+
+  public static void SetFilteredCategoryTitle(BubbleSerExtension? openXmlElement, FilteredCategoryTitle? value)
   {
     if (openXmlElement != null)
     {
@@ -63,22 +66,22 @@ public static class BubbleSerExtensionConverter
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Drawings.Charts.FilteredCategoryTitleConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2013.Drawing.Chart.FilteredCategoryTitle>(value);
+        itemElement = FilteredCategoryTitleConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2013.Drawing.Chart.FilteredCategoryTitle>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static DocumentModel.Drawings.Charts.DataLabelsRange? GetDataLabelsRange(DocumentFormat.OpenXml.Drawing.Charts.BubbleSerExtension? openXmlElement)
+
+  public static DataLabelsRange? GetDataLabelsRange(BubbleSerExtension? openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office2013.Drawing.Chart.DataLabelsRange>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.Charts.DataLabelsRangeConverter.CreateModelElement(itemElement);
+      return DataLabelsRangeConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetDataLabelsRange(DocumentFormat.OpenXml.Drawing.Charts.BubbleSerExtension? openXmlElement, DocumentModel.Drawings.Charts.DataLabelsRange? value)
+
+  public static void SetDataLabelsRange(BubbleSerExtension? openXmlElement, DataLabelsRange? value)
   {
     if (openXmlElement != null)
     {
@@ -87,22 +90,22 @@ public static class BubbleSerExtensionConverter
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Drawings.Charts.DataLabelsRangeConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2013.Drawing.Chart.DataLabelsRange>(value);
+        itemElement = DataLabelsRangeConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2013.Drawing.Chart.DataLabelsRange>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static DocumentModel.Drawings.Charts.CategoryFilterExceptions? GetCategoryFilterExceptions(DocumentFormat.OpenXml.Drawing.Charts.BubbleSerExtension? openXmlElement)
+
+  public static CategoryFilterExceptions? GetCategoryFilterExceptions(BubbleSerExtension? openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office2013.Drawing.Chart.CategoryFilterExceptions>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.Charts.CategoryFilterExceptionsConverter.CreateModelElement(itemElement);
+      return CategoryFilterExceptionsConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetCategoryFilterExceptions(DocumentFormat.OpenXml.Drawing.Charts.BubbleSerExtension? openXmlElement, DocumentModel.Drawings.Charts.CategoryFilterExceptions? value)
+
+  public static void SetCategoryFilterExceptions(BubbleSerExtension? openXmlElement, CategoryFilterExceptions? value)
   {
     if (openXmlElement != null)
     {
@@ -111,14 +114,14 @@ public static class BubbleSerExtensionConverter
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Drawings.Charts.CategoryFilterExceptionsConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2013.Drawing.Chart.CategoryFilterExceptions>(value);
+        itemElement = CategoryFilterExceptionsConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2013.Drawing.Chart.CategoryFilterExceptions>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static DocumentModel.Drawings.Charts.BubbleSerExtension? CreateModelElement(DocumentFormat.OpenXml.Drawing.Charts.BubbleSerExtension? openXmlElement)
+
+  public static DocumentModel.Drawings.Charts.BubbleSerExtension? CreateModelElement(BubbleSerExtension? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -132,9 +135,9 @@ public static class BubbleSerExtensionConverter
     }
     return null;
   }
-  
+
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.Charts.BubbleSerExtension? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.Charts.BubbleSerExtension, new()
+    where OpenXmlElementType : BubbleSerExtension, new()
   {
     if (value != null)
     {

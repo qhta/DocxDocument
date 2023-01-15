@@ -1,38 +1,37 @@
 namespace DocumentModel.Drawings;
 
 /// <summary>
-/// Tile.
+///   Tile.
 /// </summary>
-public partial class Tile
+public class Tile
 {
   /// <summary>
-  /// Horizontal Offset
+  ///   Horizontal Offset
   /// </summary>
   public Int64? HorizontalOffset { get; set; }
-  
+
   /// <summary>
-  /// Vertical Offset
+  ///   Vertical Offset
   /// </summary>
   public Int64? VerticalOffset { get; set; }
-  
+
   /// <summary>
-  /// Horizontal Ratio
+  ///   Horizontal Ratio
   /// </summary>
   public Int32? HorizontalRatio { get; set; }
-  
+
   /// <summary>
-  /// Vertical Ratio
+  ///   Vertical Ratio
   /// </summary>
   public Int32? VerticalRatio { get; set; }
-  
+
   /// <summary>
-  /// Tile Flipping
+  ///   Tile Flipping
   /// </summary>
-  public DocumentModel.Drawings.TileFlipKind? Flip { get; set; }
-  
+  public TileFlipKind? Flip { get; set; }
+
   /// <summary>
-  /// Alignment
+  ///   Alignment
   /// </summary>
-  public DocumentModel.Drawings.RectangleAlignmentKind? Alignment { get; set; }
-  
+  public RectangleAlignmentKind? Alignment { get; set; }
 }

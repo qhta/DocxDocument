@@ -1,13 +1,12 @@
 namespace DocumentModel;
 
 /// <summary>
-/// Defines the ClassificationExtension Class.
+///   Defines the ClassificationExtension Class.
 /// </summary>
-public partial class ClassificationExtension
+public class ClassificationExtension
 {
   /// <summary>
-  /// uri, this property is only available in Office 2021 and later.
+  ///   uri, this property is only available in Office 2021 and later.
   /// </summary>
   public String? Uri { get; set; }
-  
 }

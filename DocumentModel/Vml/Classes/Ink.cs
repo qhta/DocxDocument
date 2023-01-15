@@ -1,18 +1,17 @@
 namespace DocumentModel.Vml;
 
 /// <summary>
-/// Ink.
+///   Ink.
 /// </summary>
-public partial class Ink
+public class Ink
 {
   /// <summary>
-  /// Ink Data
+  ///   Ink Data
   /// </summary>
   public Byte[]? InkData { get; set; }
-  
+
   /// <summary>
-  /// Annotation Flag
+  ///   Annotation Flag
   /// </summary>
   public Boolean? AnnotationFlag { get; set; }
-  
 }

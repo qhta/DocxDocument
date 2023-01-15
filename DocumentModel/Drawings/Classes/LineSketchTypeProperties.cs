@@ -1,28 +1,27 @@
 namespace DocumentModel.Drawings;
 
 /// <summary>
-/// Defines the LineSketchTypeProperties Class.
+///   Defines the LineSketchTypeProperties Class.
 /// </summary>
-public partial class LineSketchTypeProperties
+public class LineSketchTypeProperties
 {
   /// <summary>
-  /// LineSketchNoneEmpty.
+  ///   LineSketchNoneEmpty.
   /// </summary>
   public Boolean? LineSketchNoneEmpty { get; set; }
-  
+
   /// <summary>
-  /// LineSketchCurvedEmpty.
+  ///   LineSketchCurvedEmpty.
   /// </summary>
   public Boolean? LineSketchCurvedEmpty { get; set; }
-  
+
   /// <summary>
-  /// LineSketchFreehandEmpty.
+  ///   LineSketchFreehandEmpty.
   /// </summary>
   public Boolean? LineSketchFreehandEmpty { get; set; }
-  
+
   /// <summary>
-  /// LineSketchScribbleEmpty.
+  ///   LineSketchScribbleEmpty.
   /// </summary>
   public Boolean? LineSketchScribbleEmpty { get; set; }
-  
 }

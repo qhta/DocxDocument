@@ -1,22 +1,25 @@
+using DocumentModel.Drawings.ChartDrawings;
+using GeoLocations = DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.GeoLocations;
+
 namespace DocumentModel.OpenXml.Drawings.ChartDrawings;
 
 /// <summary>
-/// Defines the GeoLocations Class.
+///   Defines the GeoLocations Class.
 /// </summary>
 public static class GeoLocationsConverter
 {
   /// <summary>
-  /// GeoLocation.
+  ///   GeoLocation.
   /// </summary>
-  public static DocumentModel.Drawings.ChartDrawings.GeoLocation? GetGeoLocation(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.GeoLocations? openXmlElement)
+  public static GeoLocation? GetGeoLocation(GeoLocations? openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.GeoLocation>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.ChartDrawings.GeoLocationConverter.CreateModelElement(itemElement);
+      return GeoLocationConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetGeoLocation(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.GeoLocations? openXmlElement, DocumentModel.Drawings.ChartDrawings.GeoLocation? value)
+
+  public static void SetGeoLocation(GeoLocations? openXmlElement, GeoLocation? value)
   {
     if (openXmlElement != null)
     {
@@ -25,14 +28,14 @@ public static class GeoLocationsConverter
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Drawings.ChartDrawings.GeoLocationConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.GeoLocation>(value);
+        itemElement = GeoLocationConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.GeoLocation>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static DocumentModel.Drawings.ChartDrawings.GeoLocations? CreateModelElement(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.GeoLocations? openXmlElement)
+
+  public static DocumentModel.Drawings.ChartDrawings.GeoLocations? CreateModelElement(GeoLocations? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -42,9 +45,9 @@ public static class GeoLocationsConverter
     }
     return null;
   }
-  
+
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.ChartDrawings.GeoLocations? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.GeoLocations, new()
+    where OpenXmlElementType : GeoLocations, new()
   {
     if (value != null)
     {

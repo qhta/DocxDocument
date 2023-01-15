@@ -1,18 +1,17 @@
 namespace DocumentModel.Wordprocessing;
 
 /// <summary>
-/// Defines the AbsolutePositionTabPositioningBaseValues enumeration.
+///   Defines the AbsolutePositionTabPositioningBaseValues enumeration.
 /// </summary>
 public enum AbsolutePositionTabPositioningBaseKind
 {
   /// <summary>
-  /// Relative To Text Margins.
+  ///   Relative To Text Margins.
   /// </summary>
   Margin,
-  
+
   /// <summary>
-  /// Relative To Indents.
+  ///   Relative To Indents.
   /// </summary>
-  Indent,
-  
+  Indent
 }

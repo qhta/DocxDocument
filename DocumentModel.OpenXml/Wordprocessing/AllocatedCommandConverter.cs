@@ -1,19 +1,21 @@
+using DocumentFormat.OpenXml.Office.Word;
+
 namespace DocumentModel.OpenXml.Wordprocessing;
 
 /// <summary>
-/// Defines the AllocatedCommand Class.
+///   Defines the AllocatedCommand Class.
 /// </summary>
 public static class AllocatedCommandConverter
 {
   /// <summary>
-  /// argValue
+  ///   argValue
   /// </summary>
-  public static String? GetArgumentValue(DocumentFormat.OpenXml.Office.Word.AllocatedCommand? openXmlElement)
+  public static String? GetArgumentValue(AllocatedCommand? openXmlElement)
   {
     return openXmlElement?.ArgumentValue?.Value;
   }
-  
-  public static void SetArgumentValue(DocumentFormat.OpenXml.Office.Word.AllocatedCommand? openXmlElement, String? value)
+
+  public static void SetArgumentValue(AllocatedCommand? openXmlElement, String? value)
   {
     if (openXmlElement != null)
       if (value != null)
@@ -21,16 +23,16 @@ public static class AllocatedCommandConverter
       else
         openXmlElement.ArgumentValue = null;
   }
-  
+
   /// <summary>
-  /// fciBasedOn
+  ///   fciBasedOn
   /// </summary>
-  public static String? GetCommandBasedOn(DocumentFormat.OpenXml.Office.Word.AllocatedCommand? openXmlElement)
+  public static String? GetCommandBasedOn(AllocatedCommand? openXmlElement)
   {
     return openXmlElement?.CommandBasedOn?.Value;
   }
-  
-  public static void SetCommandBasedOn(DocumentFormat.OpenXml.Office.Word.AllocatedCommand? openXmlElement, String? value)
+
+  public static void SetCommandBasedOn(AllocatedCommand? openXmlElement, String? value)
   {
     if (openXmlElement != null)
       if (value != null)
@@ -38,18 +40,18 @@ public static class AllocatedCommandConverter
       else
         openXmlElement.CommandBasedOn = null;
   }
-  
+
   /// <summary>
-  /// fciIndexBasedOn
+  ///   fciIndexBasedOn
   /// </summary>
-  public static Byte[]? GetCommandIndexBasedOn(DocumentFormat.OpenXml.Office.Word.AllocatedCommand? openXmlElement)
+  public static Byte[]? GetCommandIndexBasedOn(AllocatedCommand? openXmlElement)
   {
     if (openXmlElement?.CommandIndexBasedOn?.Value != null)
       return Convert.FromHexString(openXmlElement.CommandIndexBasedOn.Value);
     return null;
   }
-  
-  public static void SetCommandIndexBasedOn(DocumentFormat.OpenXml.Office.Word.AllocatedCommand? openXmlElement, Byte[]? value)
+
+  public static void SetCommandIndexBasedOn(AllocatedCommand? openXmlElement, Byte[]? value)
   {
     if (openXmlElement != null)
     {
@@ -59,16 +61,16 @@ public static class AllocatedCommandConverter
         openXmlElement.CommandIndexBasedOn = null;
     }
   }
-  
+
   /// <summary>
-  /// acdName
+  ///   acdName
   /// </summary>
-  public static String? GetAcceleratorName(DocumentFormat.OpenXml.Office.Word.AllocatedCommand? openXmlElement)
+  public static String? GetAcceleratorName(AllocatedCommand? openXmlElement)
   {
     return openXmlElement?.AcceleratorName?.Value;
   }
-  
-  public static void SetAcceleratorName(DocumentFormat.OpenXml.Office.Word.AllocatedCommand? openXmlElement, String? value)
+
+  public static void SetAcceleratorName(AllocatedCommand? openXmlElement, String? value)
   {
     if (openXmlElement != null)
       if (value != null)
@@ -76,8 +78,8 @@ public static class AllocatedCommandConverter
       else
         openXmlElement.AcceleratorName = null;
   }
-  
-  public static DocumentModel.Wordprocessing.AllocatedCommand? CreateModelElement(DocumentFormat.OpenXml.Office.Word.AllocatedCommand? openXmlElement)
+
+  public static DocumentModel.Wordprocessing.AllocatedCommand? CreateModelElement(AllocatedCommand? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -90,9 +92,9 @@ public static class AllocatedCommandConverter
     }
     return null;
   }
-  
+
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.AllocatedCommand? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Office.Word.AllocatedCommand, new()
+    where OpenXmlElementType : AllocatedCommand, new()
   {
     if (value != null)
     {

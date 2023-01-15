@@ -1,68 +1,67 @@
 namespace DocumentModel.Wordprocessing;
 
 /// <summary>
-/// Defines the JustificationValues enumeration.
+///   Defines the JustificationValues enumeration.
 /// </summary>
 public enum JustificationKind
 {
   /// <summary>
-  /// Align Left.
+  ///   Align Left.
   /// </summary>
   Left,
-  
+
   /// <summary>
-  /// start.
+  ///   start.
   /// </summary>
   Start,
-  
+
   /// <summary>
-  /// Align Center.
+  ///   Align Center.
   /// </summary>
   Center,
-  
+
   /// <summary>
-  /// Align Right.
+  ///   Align Right.
   /// </summary>
   Right,
-  
+
   /// <summary>
-  /// end.
+  ///   end.
   /// </summary>
   End,
-  
+
   /// <summary>
-  /// Justified.
+  ///   Justified.
   /// </summary>
   Both,
-  
+
   /// <summary>
-  /// Medium Kashida Length.
+  ///   Medium Kashida Length.
   /// </summary>
   MediumKashida,
-  
+
   /// <summary>
-  /// Distribute All Characters Equally.
+  ///   Distribute All Characters Equally.
   /// </summary>
   Distribute,
-  
+
   /// <summary>
-  /// Align to List Tab.
+  ///   Align to List Tab.
   /// </summary>
   NumTab,
-  
+
   /// <summary>
-  /// Widest Kashida Length.
+  ///   Widest Kashida Length.
   /// </summary>
   HighKashida,
-  
+
   /// <summary>
-  /// Low Kashida Length.
+  ///   Low Kashida Length.
   /// </summary>
   LowKashida,
-  
+
   /// <summary>
-  /// Thai Language Justification.
+  ///   Thai Language Justification.
   /// </summary>
-  ThaiDistribute,
-  
+  ThaiDistribute
 }

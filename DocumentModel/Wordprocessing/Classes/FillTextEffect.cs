@@ -1,23 +1,22 @@
 namespace DocumentModel.Wordprocessing;
 
 /// <summary>
-/// Defines the FillTextEffect Class.
+///   Defines the FillTextEffect Class.
 /// </summary>
-public partial class FillTextEffect
+public class FillTextEffect
 {
   /// <summary>
-  /// NoFillEmpty.
+  ///   NoFillEmpty.
   /// </summary>
   public Boolean? NoFillEmpty { get; set; }
-  
+
   /// <summary>
-  /// SolidColorFillProperties.
+  ///   SolidColorFillProperties.
   /// </summary>
-  public DocumentModel.Wordprocessing.SolidColorFillProperties? SolidColorFillProperties { get; set; }
-  
+  public SolidColorFillProperties? SolidColorFillProperties { get; set; }
+
   /// <summary>
-  /// GradientFillProperties.
+  ///   GradientFillProperties.
   /// </summary>
-  public DocumentModel.Wordprocessing.GradientFillProperties? GradientFillProperties { get; set; }
-  
+  public GradientFillProperties? GradientFillProperties { get; set; }
 }

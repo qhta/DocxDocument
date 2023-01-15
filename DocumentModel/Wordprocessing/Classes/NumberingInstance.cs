@@ -1,25 +1,24 @@
 namespace DocumentModel.Wordprocessing;
 
 /// <summary>
-/// Numbering Definition Instance.
+///   Numbering Definition Instance.
 /// </summary>
-public partial class NumberingInstance
+public class NumberingInstance
 {
   /// <summary>
-  /// numId
+  ///   numId
   /// </summary>
   public Int32? NumberID { get; set; }
-  
+
   /// <summary>
-  /// durableId
+  ///   durableId
   /// </summary>
   public Int32? DurableId { get; set; }
-  
+
   /// <summary>
-  /// AbstractNumId.
+  ///   AbstractNumId.
   /// </summary>
   public Int32? AbstractNumId { get; set; }
-  
-  public Collection<DocumentModel.Wordprocessing.LevelOverride>? LevelOverrides { get; set; }
-  
+
+  public Collection<LevelOverride>? LevelOverrides { get; set; }
 }

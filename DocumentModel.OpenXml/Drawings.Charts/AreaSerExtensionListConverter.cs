@@ -1,18 +1,21 @@
+using DocumentModel.Drawings.Charts;
+using AreaSerExtensionList = DocumentFormat.OpenXml.Drawing.Charts.AreaSerExtensionList;
+
 namespace DocumentModel.OpenXml.Drawings.Charts;
 
 /// <summary>
-/// Defines the AreaSerExtensionList Class.
+///   Defines the AreaSerExtensionList Class.
 /// </summary>
 public static class AreaSerExtensionListConverter
 {
-  public static System.Collections.ObjectModel.Collection<DocumentModel.Drawings.Charts.AreaSerExtension>? GetAreaSerExtensions(DocumentFormat.OpenXml.Drawing.Charts.AreaSerExtensionList? openXmlElement)
+  public static Collection<AreaSerExtension>? GetAreaSerExtensions(AreaSerExtensionList? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var collection = new System.Collections.ObjectModel.Collection<DocumentModel.Drawings.Charts.AreaSerExtension>();
+      var collection = new Collection<AreaSerExtension>();
       foreach (var item in openXmlElement.Elements<DocumentFormat.OpenXml.Drawing.Charts.AreaSerExtension>())
       {
-        var newItem = DocumentModel.OpenXml.Drawings.Charts.AreaSerExtensionConverter.CreateModelElement(item);
+        var newItem = AreaSerExtensionConverter.CreateModelElement(item);
         if (newItem != null)
           collection.Add(newItem);
       }
@@ -20,25 +23,23 @@ public static class AreaSerExtensionListConverter
     }
     return null;
   }
-  
-  public static void SetAreaSerExtensions(DocumentFormat.OpenXml.Drawing.Charts.AreaSerExtensionList? openXmlElement, System.Collections.ObjectModel.Collection<DocumentModel.Drawings.Charts.AreaSerExtension>? value)
+
+  public static void SetAreaSerExtensions(AreaSerExtensionList? openXmlElement, Collection<AreaSerExtension>? value)
   {
     if (openXmlElement != null)
     {
       openXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Drawing.Charts.AreaSerExtension>();
       if (value != null)
-      {
         foreach (var item in value)
         {
-          var newItem = DocumentModel.OpenXml.Drawings.Charts.AreaSerExtensionConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Charts.AreaSerExtension>(item);
+          var newItem = AreaSerExtensionConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Charts.AreaSerExtension>(item);
           if (newItem != null)
             openXmlElement.AddChild(newItem);
         }
-      }
     }
   }
-  
-  public static DocumentModel.Drawings.Charts.AreaSerExtensionList? CreateModelElement(DocumentFormat.OpenXml.Drawing.Charts.AreaSerExtensionList? openXmlElement)
+
+  public static DocumentModel.Drawings.Charts.AreaSerExtensionList? CreateModelElement(AreaSerExtensionList? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -48,9 +49,9 @@ public static class AreaSerExtensionListConverter
     }
     return null;
   }
-  
+
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.Charts.AreaSerExtensionList? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.Charts.AreaSerExtensionList, new()
+    where OpenXmlElementType : AreaSerExtensionList, new()
   {
     if (value != null)
     {

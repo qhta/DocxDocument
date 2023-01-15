@@ -1,38 +1,37 @@
 namespace DocumentModel.Wordprocessing;
 
 /// <summary>
-/// Defines the RubyAlignValues enumeration.
+///   Defines the RubyAlignValues enumeration.
 /// </summary>
 public enum RubyAlignKind
 {
   /// <summary>
-  /// Center.
+  ///   Center.
   /// </summary>
   Center,
-  
+
   /// <summary>
-  /// Distribute All Characters.
+  ///   Distribute All Characters.
   /// </summary>
   DistributeLetter,
-  
+
   /// <summary>
-  /// Distribute all Characters w/ Additional Space On Either Side.
+  ///   Distribute all Characters w/ Additional Space On Either Side.
   /// </summary>
   DistributeSpace,
-  
+
   /// <summary>
-  /// Left Aligned.
+  ///   Left Aligned.
   /// </summary>
   Left,
-  
+
   /// <summary>
-  /// Right Aligned.
+  ///   Right Aligned.
   /// </summary>
   Right,
-  
+
   /// <summary>
-  /// Vertically Aligned to Right of Base Text.
+  ///   Vertically Aligned to Right of Base Text.
   /// </summary>
-  RightVertical,
-  
+  RightVertical
 }

@@ -1,18 +1,17 @@
 namespace DocumentModel.Drawings;
 
 /// <summary>
-/// Luminance.
+///   Luminance.
 /// </summary>
-public partial class LuminanceEffect
+public class LuminanceEffect
 {
   /// <summary>
-  /// Brightness
+  ///   Brightness
   /// </summary>
   public Int32? Brightness { get; set; }
-  
+
   /// <summary>
-  /// Contrast
+  ///   Contrast
   /// </summary>
   public Int32? Contrast { get; set; }
-  
 }

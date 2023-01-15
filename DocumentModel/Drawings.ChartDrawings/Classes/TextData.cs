@@ -1,12 +1,11 @@
 namespace DocumentModel.Drawings.ChartDrawings;
 
 /// <summary>
-/// Defines the TextData Class.
+///   Defines the TextData Class.
 /// </summary>
-public partial class TextData
+public class TextData
 {
-  public DocumentModel.Drawings.ChartDrawings.OpenXmlFormulaElement? Formula { get; set; }
-  
+  public OpenXmlFormulaElement? Formula { get; set; }
+
   public String? VXsdstring { get; set; }
-  
 }

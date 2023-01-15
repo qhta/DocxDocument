@@ -1,56 +1,55 @@
 namespace DocumentModel.Drawings.Charts;
 
 /// <summary>
-/// Defines the BubbleChartSeries Class.
+///   Defines the BubbleChartSeries Class.
 /// </summary>
-public partial class BubbleChartSeries
+public class BubbleChartSeries
 {
   /// <summary>
-  /// Index.
+  ///   Index.
   /// </summary>
   public UInt32? Index { get; set; }
-  
+
   /// <summary>
-  /// Order.
+  ///   Order.
   /// </summary>
   public UInt32? Order { get; set; }
-  
+
   /// <summary>
-  /// Series Text.
+  ///   Series Text.
   /// </summary>
-  public DocumentModel.Drawings.Charts.SeriesText? SeriesText { get; set; }
-  
+  public SeriesText? SeriesText { get; set; }
+
   /// <summary>
-  /// ChartShapeProperties.
+  ///   ChartShapeProperties.
   /// </summary>
-  public DocumentModel.Drawings.Charts.ChartShapeProperties? ChartShapeProperties { get; set; }
-  
+  public ChartShapeProperties? ChartShapeProperties { get; set; }
+
   /// <summary>
-  /// PictureOptions.
+  ///   PictureOptions.
   /// </summary>
-  public DocumentModel.Drawings.Charts.PictureOptions? PictureOptions { get; set; }
-  
+  public PictureOptions? PictureOptions { get; set; }
+
   /// <summary>
-  /// InvertIfNegative.
+  ///   InvertIfNegative.
   /// </summary>
   public Boolean? InvertIfNegative { get; set; }
-  
-  public Collection<DocumentModel.Drawings.Charts.DataPoint>? DataPoints { get; set; }
-  
-  public DocumentModel.Drawings.Charts.DataLabels? DataLabels { get; set; }
-  
-  public Collection<DocumentModel.Drawings.Charts.Trendline>? Trendlines { get; set; }
-  
-  public Collection<DocumentModel.Drawings.Charts.ErrorBars>? ErrorBarses { get; set; }
-  
-  public DocumentModel.Drawings.Charts.XValues? XValues { get; set; }
-  
-  public DocumentModel.Drawings.Charts.YValues? YValues { get; set; }
-  
-  public DocumentModel.Drawings.Charts.BubbleSize? BubbleSize { get; set; }
-  
+
+  public Collection<DataPoint>? DataPoints { get; set; }
+
+  public DataLabels? DataLabels { get; set; }
+
+  public Collection<Trendline>? Trendlines { get; set; }
+
+  public Collection<ErrorBars>? ErrorBarses { get; set; }
+
+  public XValues? XValues { get; set; }
+
+  public YValues? YValues { get; set; }
+
+  public BubbleSize? BubbleSize { get; set; }
+
   public Boolean? Bubble3D { get; set; }
-  
-  public DocumentModel.Drawings.Charts.BubbleSerExtensionList? BubbleSerExtensionList { get; set; }
-  
+
+  public BubbleSerExtensionList? BubbleSerExtensionList { get; set; }
 }

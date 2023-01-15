@@ -1,33 +1,32 @@
 namespace DocumentModel.Drawings.ChartDrawings;
 
 /// <summary>
-/// Defines the Binning Class.
+///   Defines the Binning Class.
 /// </summary>
-public partial class Binning
+public class Binning
 {
   /// <summary>
-  /// intervalClosed, this property is only available in Office 2016 and later.
+  ///   intervalClosed, this property is only available in Office 2016 and later.
   /// </summary>
-  public DocumentModel.Drawings.ChartDrawings.IntervalClosedSide? IntervalClosed { get; set; }
-  
+  public IntervalClosedSide? IntervalClosed { get; set; }
+
   /// <summary>
-  /// underflow, this property is only available in Office 2016 and later.
+  ///   underflow, this property is only available in Office 2016 and later.
   /// </summary>
   public String? Underflow { get; set; }
-  
+
   /// <summary>
-  /// overflow, this property is only available in Office 2016 and later.
+  ///   overflow, this property is only available in Office 2016 and later.
   /// </summary>
   public String? Overflow { get; set; }
-  
+
   /// <summary>
-  /// Xsddouble.
+  ///   Xsddouble.
   /// </summary>
   public String? Xsddouble { get; set; }
-  
+
   /// <summary>
-  /// BinCountXsdunsignedInt.
+  ///   BinCountXsdunsignedInt.
   /// </summary>
   public String? BinCountXsdunsignedInt { get; set; }
-  
 }

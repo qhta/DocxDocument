@@ -1,30 +1,29 @@
 namespace DocumentModel.Vml;
 
 /// <summary>
-/// Rule.
+///   Rule.
 /// </summary>
-public partial class Rule
+public class Rule
 {
   /// <summary>
-  /// Rule ID
+  ///   Rule ID
   /// </summary>
   public String? Id { get; set; }
-  
+
   /// <summary>
-  /// Rule Type
+  ///   Rule Type
   /// </summary>
-  public DocumentModel.Vml.RuleKind? Type { get; set; }
-  
+  public RuleKind? Type { get; set; }
+
   /// <summary>
-  /// Alignment Rule Type
+  ///   Alignment Rule Type
   /// </summary>
-  public DocumentModel.Vml.AlignmentKind? How { get; set; }
-  
+  public AlignmentKind? How { get; set; }
+
   /// <summary>
-  /// Rule Shape Reference
+  ///   Rule Shape Reference
   /// </summary>
   public String? ShapeReference { get; set; }
-  
-  public Collection<DocumentModel.Vml.Proxy>? Proxies { get; set; }
-  
+
+  public Collection<Proxy>? Proxies { get; set; }
 }

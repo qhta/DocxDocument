@@ -1,19 +1,20 @@
-﻿namespace DocumentModel.OpenXml;
+﻿using DocumentFormat.OpenXml.Wordprocessing;
+
+namespace DocumentModel.OpenXml;
 
 public static class StringValueConverter
 {
-
-  public static string GetValue(DocumentFormat.OpenXml.StringValue element)
+  public static string GetValue(StringValue element)
   {
     return element.Value ?? string.Empty;
   }
 
-  public static string GetValue(DocumentFormat.OpenXml.Wordprocessing.StringType element)
+  public static string GetValue(StringType element)
   {
     return element.Val?.Value ?? string.Empty;
   }
 
-  public static string GetValue(DocumentFormat.OpenXml.Wordprocessing.String255Type element)
+  public static string GetValue(String255Type element)
   {
     return element.Val?.Value ?? string.Empty;
   }
@@ -32,5 +33,4 @@ public static class StringValueConverter
       valProperty.SetValue(element, value);
     return element;
   }
-
 }

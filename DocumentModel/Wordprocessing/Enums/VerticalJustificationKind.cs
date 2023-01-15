@@ -1,28 +1,27 @@
 namespace DocumentModel.Wordprocessing;
 
 /// <summary>
-/// Defines the VerticalJustificationValues enumeration.
+///   Defines the VerticalJustificationValues enumeration.
 /// </summary>
 public enum VerticalJustificationKind
 {
   /// <summary>
-  /// Align Top.
+  ///   Align Top.
   /// </summary>
   Top,
-  
+
   /// <summary>
-  /// Align Center.
+  ///   Align Center.
   /// </summary>
   Center,
-  
+
   /// <summary>
-  /// Vertical Justification.
+  ///   Vertical Justification.
   /// </summary>
   Both,
-  
+
   /// <summary>
-  /// Align Bottom.
+  ///   Align Bottom.
   /// </summary>
-  Bottom,
-  
+  Bottom
 }

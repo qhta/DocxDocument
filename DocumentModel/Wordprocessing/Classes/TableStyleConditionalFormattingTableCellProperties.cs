@@ -1,33 +1,32 @@
 namespace DocumentModel.Wordprocessing;
 
 /// <summary>
-/// Table Style Conditional Formatting Table Cell Properties.
+///   Table Style Conditional Formatting Table Cell Properties.
 /// </summary>
-public partial class TableStyleConditionalFormattingTableCellProperties
+public class TableStyleConditionalFormattingTableCellProperties
 {
   /// <summary>
-  /// TableCellBorders.
+  ///   TableCellBorders.
   /// </summary>
-  public DocumentModel.Wordprocessing.TableCellBorders? TableCellBorders { get; set; }
-  
+  public TableCellBorders? TableCellBorders { get; set; }
+
   /// <summary>
-  /// Shading.
+  ///   Shading.
   /// </summary>
-  public DocumentModel.Wordprocessing.Shading? Shading { get; set; }
-  
+  public Shading? Shading { get; set; }
+
   /// <summary>
-  /// NoWrap.
+  ///   NoWrap.
   /// </summary>
-  public DocumentModel.Wordprocessing.OnOffOnlyKind? NoWrap { get; set; }
-  
+  public OnOffOnlyKind? NoWrap { get; set; }
+
   /// <summary>
-  /// TableCellMargin.
+  ///   TableCellMargin.
   /// </summary>
-  public DocumentModel.Wordprocessing.TableCellMargin? TableCellMargin { get; set; }
-  
+  public TableCellMargin? TableCellMargin { get; set; }
+
   /// <summary>
-  /// TableCellVerticalAlignment.
+  ///   TableCellVerticalAlignment.
   /// </summary>
-  public DocumentModel.Wordprocessing.TableVerticalAlignmentKind? TableCellVerticalAlignment { get; set; }
-  
+  public TableVerticalAlignmentKind? TableCellVerticalAlignment { get; set; }
 }

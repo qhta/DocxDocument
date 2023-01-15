@@ -1,19 +1,22 @@
+using DocumentModel.Drawings.Charts;
+using NumRefExtension = DocumentFormat.OpenXml.Drawing.Charts.NumRefExtension;
+
 namespace DocumentModel.OpenXml.Drawings.Charts;
 
 /// <summary>
-/// Defines the NumRefExtension Class.
+///   Defines the NumRefExtension Class.
 /// </summary>
 public static class NumRefExtensionConverter
 {
   /// <summary>
-  /// URI
+  ///   URI
   /// </summary>
-  public static String? GetUri(DocumentFormat.OpenXml.Drawing.Charts.NumRefExtension? openXmlElement)
+  public static String? GetUri(NumRefExtension? openXmlElement)
   {
     return openXmlElement?.Uri?.Value;
   }
-  
-  public static void SetUri(DocumentFormat.OpenXml.Drawing.Charts.NumRefExtension? openXmlElement, String? value)
+
+  public static void SetUri(NumRefExtension? openXmlElement, String? value)
   {
     if (openXmlElement != null)
       if (value != null)
@@ -21,16 +24,16 @@ public static class NumRefExtensionConverter
       else
         openXmlElement.Uri = null;
   }
-  
-  public static DocumentModel.Drawings.Charts.FullReference? GetFullReference(DocumentFormat.OpenXml.Drawing.Charts.NumRefExtension? openXmlElement)
+
+  public static FullReference? GetFullReference(NumRefExtension? openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office2013.Drawing.Chart.FullReference>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.Charts.FullReferenceConverter.CreateModelElement(itemElement);
+      return FullReferenceConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetFullReference(DocumentFormat.OpenXml.Drawing.Charts.NumRefExtension? openXmlElement, DocumentModel.Drawings.Charts.FullReference? value)
+
+  public static void SetFullReference(NumRefExtension? openXmlElement, FullReference? value)
   {
     if (openXmlElement != null)
     {
@@ -39,22 +42,22 @@ public static class NumRefExtensionConverter
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Drawings.Charts.FullReferenceConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2013.Drawing.Chart.FullReference>(value);
+        itemElement = FullReferenceConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2013.Drawing.Chart.FullReference>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static DocumentModel.Drawings.Charts.LevelReference? GetLevelReference(DocumentFormat.OpenXml.Drawing.Charts.NumRefExtension? openXmlElement)
+
+  public static LevelReference? GetLevelReference(NumRefExtension? openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office2013.Drawing.Chart.LevelReference>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.Charts.LevelReferenceConverter.CreateModelElement(itemElement);
+      return LevelReferenceConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetLevelReference(DocumentFormat.OpenXml.Drawing.Charts.NumRefExtension? openXmlElement, DocumentModel.Drawings.Charts.LevelReference? value)
+
+  public static void SetLevelReference(NumRefExtension? openXmlElement, LevelReference? value)
   {
     if (openXmlElement != null)
     {
@@ -63,22 +66,22 @@ public static class NumRefExtensionConverter
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Drawings.Charts.LevelReferenceConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2013.Drawing.Chart.LevelReference>(value);
+        itemElement = LevelReferenceConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2013.Drawing.Chart.LevelReference>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static DocumentModel.Drawings.Charts.FormulaReference? GetFormulaReference(DocumentFormat.OpenXml.Drawing.Charts.NumRefExtension? openXmlElement)
+
+  public static FormulaReference? GetFormulaReference(NumRefExtension? openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office2013.Drawing.Chart.FormulaReference>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.Charts.FormulaReferenceConverter.CreateModelElement(itemElement);
+      return FormulaReferenceConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetFormulaReference(DocumentFormat.OpenXml.Drawing.Charts.NumRefExtension? openXmlElement, DocumentModel.Drawings.Charts.FormulaReference? value)
+
+  public static void SetFormulaReference(NumRefExtension? openXmlElement, FormulaReference? value)
   {
     if (openXmlElement != null)
     {
@@ -87,14 +90,14 @@ public static class NumRefExtensionConverter
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Drawings.Charts.FormulaReferenceConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2013.Drawing.Chart.FormulaReference>(value);
+        itemElement = FormulaReferenceConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2013.Drawing.Chart.FormulaReference>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static DocumentModel.Drawings.Charts.NumRefExtension? CreateModelElement(DocumentFormat.OpenXml.Drawing.Charts.NumRefExtension? openXmlElement)
+
+  public static DocumentModel.Drawings.Charts.NumRefExtension? CreateModelElement(NumRefExtension? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -107,9 +110,9 @@ public static class NumRefExtensionConverter
     }
     return null;
   }
-  
+
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.Charts.NumRefExtension? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.Charts.NumRefExtension, new()
+    where OpenXmlElementType : NumRefExtension, new()
   {
     if (value != null)
     {

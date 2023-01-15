@@ -1,25 +1,27 @@
+using DocumentFormat.OpenXml.Drawing;
+
 namespace DocumentModel.OpenXml.Drawings;
 
 /// <summary>
-/// Soft Edge Effect.
+///   Soft Edge Effect.
 /// </summary>
 public static class SoftEdgeConverter
 {
   /// <summary>
-  /// Radius
+  ///   Radius
   /// </summary>
-  public static Int64? GetRadius(DocumentFormat.OpenXml.Drawing.SoftEdge? openXmlElement)
+  public static Int64? GetRadius(SoftEdge? openXmlElement)
   {
     return openXmlElement?.Radius?.Value;
   }
-  
-  public static void SetRadius(DocumentFormat.OpenXml.Drawing.SoftEdge? openXmlElement, Int64? value)
+
+  public static void SetRadius(SoftEdge? openXmlElement, Int64? value)
   {
     if (openXmlElement != null)
       openXmlElement.Radius = value;
   }
-  
-  public static DocumentModel.Drawings.SoftEdge? CreateModelElement(DocumentFormat.OpenXml.Drawing.SoftEdge? openXmlElement)
+
+  public static DocumentModel.Drawings.SoftEdge? CreateModelElement(SoftEdge? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -29,9 +31,9 @@ public static class SoftEdgeConverter
     }
     return null;
   }
-  
+
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.SoftEdge? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.SoftEdge, new()
+    where OpenXmlElementType : SoftEdge, new()
   {
     if (value != null)
     {

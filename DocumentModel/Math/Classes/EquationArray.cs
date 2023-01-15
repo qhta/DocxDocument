@@ -1,15 +1,14 @@
 namespace DocumentModel.Math;
 
 /// <summary>
-/// Equation-Array Function.
+///   Equation-Array Function.
 /// </summary>
-public partial class EquationArray
+public class EquationArray
 {
   /// <summary>
-  /// Equation Array Properties.
+  ///   Equation Array Properties.
   /// </summary>
-  public DocumentModel.Math.EquationArrayProperties? EquationArrayProperties { get; set; }
-  
-  public Collection<DocumentModel.Math.Base>? Bases { get; set; }
-  
+  public EquationArrayProperties? EquationArrayProperties { get; set; }
+
+  public Collection<Base>? Bases { get; set; }
 }

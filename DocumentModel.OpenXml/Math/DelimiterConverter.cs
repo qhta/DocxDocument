@@ -1,22 +1,25 @@
+using DocumentModel.Math;
+using Delimiter = DocumentFormat.OpenXml.Math.Delimiter;
+
 namespace DocumentModel.OpenXml.Math;
 
 /// <summary>
-/// Delimiter Function.
+///   Delimiter Function.
 /// </summary>
 public static class DelimiterConverter
 {
   /// <summary>
-  /// Delimiter Properties.
+  ///   Delimiter Properties.
   /// </summary>
-  public static DocumentModel.Math.DelimiterProperties? GetDelimiterProperties(DocumentFormat.OpenXml.Math.Delimiter? openXmlElement)
+  public static DelimiterProperties? GetDelimiterProperties(Delimiter? openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Math.DelimiterProperties>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Math.DelimiterPropertiesConverter.CreateModelElement(itemElement);
+      return DelimiterPropertiesConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetDelimiterProperties(DocumentFormat.OpenXml.Math.Delimiter? openXmlElement, DocumentModel.Math.DelimiterProperties? value)
+
+  public static void SetDelimiterProperties(Delimiter? openXmlElement, DelimiterProperties? value)
   {
     if (openXmlElement != null)
     {
@@ -25,21 +28,21 @@ public static class DelimiterConverter
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Math.DelimiterPropertiesConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Math.DelimiterProperties>(value);
+        itemElement = DelimiterPropertiesConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Math.DelimiterProperties>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static System.Collections.ObjectModel.Collection<DocumentModel.Math.Base>? GetBases(DocumentFormat.OpenXml.Math.Delimiter? openXmlElement)
+
+  public static Collection<Base>? GetBases(Delimiter? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var collection = new System.Collections.ObjectModel.Collection<DocumentModel.Math.Base>();
+      var collection = new Collection<Base>();
       foreach (var item in openXmlElement.Elements<DocumentFormat.OpenXml.Math.Base>())
       {
-        var newItem = DocumentModel.OpenXml.Math.BaseConverter.CreateModelElement(item);
+        var newItem = BaseConverter.CreateModelElement(item);
         if (newItem != null)
           collection.Add(newItem);
       }
@@ -47,25 +50,23 @@ public static class DelimiterConverter
     }
     return null;
   }
-  
-  public static void SetBases(DocumentFormat.OpenXml.Math.Delimiter? openXmlElement, System.Collections.ObjectModel.Collection<DocumentModel.Math.Base>? value)
+
+  public static void SetBases(Delimiter? openXmlElement, Collection<Base>? value)
   {
     if (openXmlElement != null)
     {
       openXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Math.Base>();
       if (value != null)
-      {
         foreach (var item in value)
         {
-          var newItem = DocumentModel.OpenXml.Math.BaseConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Math.Base>(item);
+          var newItem = BaseConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Math.Base>(item);
           if (newItem != null)
             openXmlElement.AddChild(newItem);
         }
-      }
     }
   }
-  
-  public static DocumentModel.Math.Delimiter? CreateModelElement(DocumentFormat.OpenXml.Math.Delimiter? openXmlElement)
+
+  public static DocumentModel.Math.Delimiter? CreateModelElement(Delimiter? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -76,9 +77,9 @@ public static class DelimiterConverter
     }
     return null;
   }
-  
+
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Math.Delimiter? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Math.Delimiter, new()
+    where OpenXmlElementType : Delimiter, new()
   {
     if (value != null)
     {

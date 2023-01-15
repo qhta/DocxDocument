@@ -1,33 +1,32 @@
 namespace DocumentModel.Vml;
 
 /// <summary>
-/// UI Default Colors.
+///   UI Default Colors.
 /// </summary>
-public partial class ColorMenu
+public class ColorMenu
 {
   /// <summary>
-  /// VML Extension Handling Behavior
+  ///   VML Extension Handling Behavior
   /// </summary>
-  public DocumentModel.Vml.ExtensionHandlingBehaviorKind? Extension { get; set; }
-  
+  public ExtensionHandlingBehaviorKind? Extension { get; set; }
+
   /// <summary>
-  /// Default stroke color
+  ///   Default stroke color
   /// </summary>
   public String? StrokeColor { get; set; }
-  
+
   /// <summary>
-  /// Default fill color
+  ///   Default fill color
   /// </summary>
   public String? FillColor { get; set; }
-  
+
   /// <summary>
-  /// Default shadow color
+  ///   Default shadow color
   /// </summary>
   public String? ShadowColor { get; set; }
-  
+
   /// <summary>
-  /// Default extrusion color
+  ///   Default extrusion color
   /// </summary>
   public String? ExtrusionColor { get; set; }
-  
 }

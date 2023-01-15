@@ -2,27 +2,26 @@ namespace DocumentModel.OpenXml;
 
 public static class VTArrayConverter
 {
-
-  private static BiDiDictionary<ArrayBaseValues, VariantType> ArrayBaseTypeConversion = new()
-    {
-      { ArrayBaseValues.Variant, VariantType.Variant },
-      { ArrayBaseValues.OneByteSignedInteger, VariantType.SByte },
-      { ArrayBaseValues.TwoBytesSignedInteger, VariantType.Int16 },
-      { ArrayBaseValues.FourBytesSignedInteger, VariantType.Int32 },
-      { ArrayBaseValues.Integer, VariantType.Integer },
-      { ArrayBaseValues.OneByteUnsignedInteger, VariantType.Byte },
-      { ArrayBaseValues.TwoBytesUnsignedInteger, VariantType.UInt16 },
-      { ArrayBaseValues.FourBytesUnsignedInteger, VariantType.UInt32 },
-      { ArrayBaseValues.UnsignedInteger, VariantType.UnsignedInteger },
-      { ArrayBaseValues.FourBytesReal, VariantType.Single },
-      { ArrayBaseValues.EightBytesReal, VariantType.Double },
-      { ArrayBaseValues.Decimal, VariantType.Decimal },
-      { ArrayBaseValues.Bstr, VariantType.Bstr },
-      { ArrayBaseValues.Date, VariantType.Date },
-      { ArrayBaseValues.Bool, VariantType.Bool },
-      { ArrayBaseValues.Currency, VariantType.Currency },
-      { ArrayBaseValues.Error, VariantType.Error },
-    };
+  private static readonly BiDiDictionary<ArrayBaseValues, VariantType> ArrayBaseTypeConversion = new()
+  {
+    { ArrayBaseValues.Variant, VariantType.Variant },
+    { ArrayBaseValues.OneByteSignedInteger, VariantType.SByte },
+    { ArrayBaseValues.TwoBytesSignedInteger, VariantType.Int16 },
+    { ArrayBaseValues.FourBytesSignedInteger, VariantType.Int32 },
+    { ArrayBaseValues.Integer, VariantType.Integer },
+    { ArrayBaseValues.OneByteUnsignedInteger, VariantType.Byte },
+    { ArrayBaseValues.TwoBytesUnsignedInteger, VariantType.UInt16 },
+    { ArrayBaseValues.FourBytesUnsignedInteger, VariantType.UInt32 },
+    { ArrayBaseValues.UnsignedInteger, VariantType.UnsignedInteger },
+    { ArrayBaseValues.FourBytesReal, VariantType.Single },
+    { ArrayBaseValues.EightBytesReal, VariantType.Double },
+    { ArrayBaseValues.Decimal, VariantType.Decimal },
+    { ArrayBaseValues.Bstr, VariantType.Bstr },
+    { ArrayBaseValues.Date, VariantType.Date },
+    { ArrayBaseValues.Bool, VariantType.Bool },
+    { ArrayBaseValues.Currency, VariantType.Currency },
+    { ArrayBaseValues.Error, VariantType.Error }
+  };
 
   public static VariantType? GetBaseType(VTArray openXmlElement)
   {
@@ -44,7 +43,7 @@ public static class VTArrayConverter
 
   public static int? GetLowerBounds(VTArray openXmlElement)
   {
-    return (openXmlElement?.LowerBounds?.Value != null) ? openXmlElement.LowerBounds.Value : null;
+    return openXmlElement?.LowerBounds?.Value != null ? openXmlElement.LowerBounds.Value : null;
   }
 
   public static void SetLowerBounds(VTArray openXmlElement, int? value)
@@ -55,12 +54,13 @@ public static class VTArrayConverter
         openXmlElement.LowerBounds = value;
       else
         openXmlElement.LowerBounds = null;
-    };
+    }
+    ;
   }
 
   public static int? GetUpperBounds(VTArray openXmlElement)
   {
-    return (openXmlElement?.UpperBounds?.Value != null) ? openXmlElement.UpperBounds.Value : null;
+    return openXmlElement?.UpperBounds?.Value != null ? openXmlElement.UpperBounds.Value : null;
   }
 
   public static void SetUpperBounds(VTArray openXmlElement, int? value)
@@ -71,7 +71,8 @@ public static class VTArrayConverter
         openXmlElement.UpperBounds = value;
       else
         openXmlElement.UpperBounds = null;
-    };
+    }
+    ;
   }
 
   public static ArrayVariant? GetValue(VTArray openXmlElement)
@@ -81,13 +82,13 @@ public static class VTArrayConverter
       var baseType = GetBaseType(openXmlElement);
       var lowerBounds = GetLowerBounds(openXmlElement);
       var upperBounds = GetUpperBounds(openXmlElement);
-      var itemType = (baseType != null) ? ArrayVariant.ItemTypes[(VariantType)baseType] : null;
-      var _value = new ArrayVariant(baseType ?? VariantType.Variant, lowerBounds ?? 0, upperBounds ?? openXmlElement.Elements().Count()+1);
-      int i = _value.LowerBounds;
+      var itemType = baseType != null ? Variant.ItemTypes[(VariantType)baseType] : null;
+      var _value = new ArrayVariant(baseType ?? VariantType.Variant, lowerBounds ?? 0, upperBounds ?? openXmlElement.Elements().Count() + 1);
+      var i = _value.LowerBounds;
       foreach (var item in openXmlElement.Elements())
       {
         var itemVariant = VariantConverter.CreateModelElement(item);
-        var itemValue = (itemType != null) ? Convert.ChangeType(itemVariant, itemType) : itemVariant.Value;
+        var itemValue = itemType != null ? Convert.ChangeType(itemVariant, itemType) : itemVariant.Value;
         _value[i] = itemValue;
       }
       return _value;
@@ -108,7 +109,6 @@ public static class VTArrayConverter
         }
     }
   }
-
 
   public static VTArray CreateOpenXmlElement(ArrayVariant? value)
   {

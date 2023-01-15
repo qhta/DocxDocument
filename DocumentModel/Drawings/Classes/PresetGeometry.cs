@@ -1,18 +1,17 @@
 namespace DocumentModel.Drawings;
 
 /// <summary>
-/// Preset geometry.
+///   Preset geometry.
 /// </summary>
-public partial class PresetGeometry
+public class PresetGeometry
 {
   /// <summary>
-  /// Preset Shape
+  ///   Preset Shape
   /// </summary>
-  public DocumentModel.Drawings.ShapeKind? Preset { get; set; }
-  
+  public ShapeKind? Preset { get; set; }
+
   /// <summary>
-  /// List of Shape Adjust Values.
+  ///   List of Shape Adjust Values.
   /// </summary>
-  public DocumentModel.Drawings.AdjustValueList? AdjustValueList { get; set; }
-  
+  public AdjustValueList? AdjustValueList { get; set; }
 }

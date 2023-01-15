@@ -1,64 +1,67 @@
+using DocumentFormat.OpenXml.Drawing.Charts;
+using NumericPoint = DocumentModel.Drawings.Charts.NumericPoint;
+
 namespace DocumentModel.OpenXml.Drawings.Charts;
 
 /// <summary>
-/// Number Literal.
+///   Number Literal.
 /// </summary>
 public static class NumberLiteralConverter
 {
-  public static String? GetFormatCode(DocumentFormat.OpenXml.Drawing.Charts.NumberLiteral? openXmlElement)
+  public static String? GetFormatCode(NumberLiteral? openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.FormatCode>();
+    var itemElement = openXmlElement?.GetFirstChild<FormatCode>();
     if (itemElement != null)
       return itemElement.Text;
     return null;
   }
-  
-  public static void SetFormatCode(DocumentFormat.OpenXml.Drawing.Charts.NumberLiteral? openXmlElement, String? value)
+
+  public static void SetFormatCode(NumberLiteral? openXmlElement, String? value)
   {
     if (openXmlElement != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.FormatCode>();
+      var itemElement = openXmlElement.GetFirstChild<FormatCode>();
       if (itemElement != null)
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = new DocumentFormat.OpenXml.Drawing.Charts.FormatCode { Text = value };
+        itemElement = new FormatCode { Text = value };
         openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static UInt32? GetPointCount(DocumentFormat.OpenXml.Drawing.Charts.NumberLiteral? openXmlElement)
+
+  public static UInt32? GetPointCount(NumberLiteral? openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.PointCount>();
+    var itemElement = openXmlElement?.GetFirstChild<PointCount>();
     if (itemElement != null)
       return itemElement.Val?.Value;
     return null;
   }
-  
-  public static void SetPointCount(DocumentFormat.OpenXml.Drawing.Charts.NumberLiteral? openXmlElement, UInt32? value)
+
+  public static void SetPointCount(NumberLiteral? openXmlElement, UInt32? value)
   {
     if (openXmlElement != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.PointCount>();
+      var itemElement = openXmlElement.GetFirstChild<PointCount>();
       if (itemElement != null)
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = new DocumentFormat.OpenXml.Drawing.Charts.PointCount{ Val = value };
+        itemElement = new PointCount { Val = value };
         openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static System.Collections.ObjectModel.Collection<DocumentModel.Drawings.Charts.NumericPoint>? GetNumericPoints(DocumentFormat.OpenXml.Drawing.Charts.NumberLiteral? openXmlElement)
+
+  public static Collection<NumericPoint>? GetNumericPoints(NumberLiteral? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var collection = new System.Collections.ObjectModel.Collection<DocumentModel.Drawings.Charts.NumericPoint>();
+      var collection = new Collection<NumericPoint>();
       foreach (var item in openXmlElement.Elements<DocumentFormat.OpenXml.Drawing.Charts.NumericPoint>())
       {
-        var newItem = DocumentModel.OpenXml.Drawings.Charts.NumericPointConverter.CreateModelElement(item);
+        var newItem = NumericPointConverter.CreateModelElement(item);
         if (newItem != null)
           collection.Add(newItem);
       }
@@ -66,33 +69,31 @@ public static class NumberLiteralConverter
     }
     return null;
   }
-  
-  public static void SetNumericPoints(DocumentFormat.OpenXml.Drawing.Charts.NumberLiteral? openXmlElement, System.Collections.ObjectModel.Collection<DocumentModel.Drawings.Charts.NumericPoint>? value)
+
+  public static void SetNumericPoints(NumberLiteral? openXmlElement, Collection<NumericPoint>? value)
   {
     if (openXmlElement != null)
     {
       openXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Drawing.Charts.NumericPoint>();
       if (value != null)
-      {
         foreach (var item in value)
         {
-          var newItem = DocumentModel.OpenXml.Drawings.Charts.NumericPointConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Charts.NumericPoint>(item);
+          var newItem = NumericPointConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Charts.NumericPoint>(item);
           if (newItem != null)
             openXmlElement.AddChild(newItem);
         }
-      }
     }
   }
-  
-  public static DocumentModel.Drawings.Charts.ExtensionList? GetExtensionList(DocumentFormat.OpenXml.Drawing.Charts.NumberLiteral? openXmlElement)
+
+  public static DocumentModel.Drawings.Charts.ExtensionList? GetExtensionList(NumberLiteral? openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.ExtensionList>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.Charts.ExtensionListConverter.CreateModelElement(itemElement);
+      return ExtensionListConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetExtensionList(DocumentFormat.OpenXml.Drawing.Charts.NumberLiteral? openXmlElement, DocumentModel.Drawings.Charts.ExtensionList? value)
+
+  public static void SetExtensionList(NumberLiteral? openXmlElement, DocumentModel.Drawings.Charts.ExtensionList? value)
   {
     if (openXmlElement != null)
     {
@@ -101,14 +102,14 @@ public static class NumberLiteralConverter
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Drawings.Charts.ExtensionListConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Charts.ExtensionList>(value);
+        itemElement = ExtensionListConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Charts.ExtensionList>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static DocumentModel.Drawings.Charts.NumberLiteral? CreateModelElement(DocumentFormat.OpenXml.Drawing.Charts.NumberLiteral? openXmlElement)
+
+  public static DocumentModel.Drawings.Charts.NumberLiteral? CreateModelElement(NumberLiteral? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -121,9 +122,9 @@ public static class NumberLiteralConverter
     }
     return null;
   }
-  
+
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.Charts.NumberLiteral? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.Charts.NumberLiteral, new()
+    where OpenXmlElementType : NumberLiteral, new()
   {
     if (value != null)
     {

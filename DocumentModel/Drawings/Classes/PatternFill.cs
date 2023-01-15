@@ -1,23 +1,22 @@
 namespace DocumentModel.Drawings;
 
 /// <summary>
-/// Pattern Fill.
+///   Pattern Fill.
 /// </summary>
-public partial class PatternFill
+public class PatternFill
 {
   /// <summary>
-  /// Preset Pattern
+  ///   Preset Pattern
   /// </summary>
-  public DocumentModel.Drawings.PresetPatternKind? Preset { get; set; }
-  
+  public PresetPatternKind? Preset { get; set; }
+
   /// <summary>
-  /// Foreground color.
+  ///   Foreground color.
   /// </summary>
-  public DocumentModel.Drawings.ForegroundColor? ForegroundColor { get; set; }
-  
+  public ForegroundColor? ForegroundColor { get; set; }
+
   /// <summary>
-  /// Background color.
+  ///   Background color.
   /// </summary>
-  public DocumentModel.Drawings.BackgroundColor? BackgroundColor { get; set; }
-  
+  public BackgroundColor? BackgroundColor { get; set; }
 }

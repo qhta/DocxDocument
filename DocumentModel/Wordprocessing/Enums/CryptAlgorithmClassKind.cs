@@ -1,18 +1,17 @@
 namespace DocumentModel.Wordprocessing;
 
 /// <summary>
-/// Defines the CryptAlgorithmClassValues enumeration.
+///   Defines the CryptAlgorithmClassValues enumeration.
 /// </summary>
 public enum CryptAlgorithmClassKind
 {
   /// <summary>
-  /// Hashing.
+  ///   Hashing.
   /// </summary>
   Hash,
-  
+
   /// <summary>
-  /// custom.
+  ///   custom.
   /// </summary>
-  Custom,
-  
+  Custom
 }

@@ -1,23 +1,22 @@
 namespace DocumentModel.Math;
 
 /// <summary>
-/// Lower-Limit Function.
+///   Lower-Limit Function.
 /// </summary>
-public partial class LimitLower
+public class LimitLower
 {
   /// <summary>
-  /// Lower Limit Properties.
+  ///   Lower Limit Properties.
   /// </summary>
-  public DocumentModel.Math.LimitLowerProperties? LimitLowerProperties { get; set; }
-  
+  public LimitLowerProperties? LimitLowerProperties { get; set; }
+
   /// <summary>
-  /// Base.
+  ///   Base.
   /// </summary>
-  public DocumentModel.Math.Base? Base { get; set; }
-  
+  public Base? Base { get; set; }
+
   /// <summary>
-  /// Limit (Lower).
+  ///   Limit (Lower).
   /// </summary>
-  public DocumentModel.Math.Limit? Limit { get; set; }
-  
+  public Limit? Limit { get; set; }
 }

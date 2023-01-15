@@ -1,10 +1,9 @@
 namespace DocumentModel.Drawings.Charts;
 
 /// <summary>
-/// Defines the ScatterChartExtensionList Class.
+///   Defines the ScatterChartExtensionList Class.
 /// </summary>
-public partial class ScatterChartExtensionList
+public class ScatterChartExtensionList
 {
-  public Collection<DocumentModel.Drawings.Charts.ScatterChartExtension>? ScatterChartExtensions { get; set; }
-  
+  public Collection<ScatterChartExtension>? ScatterChartExtensions { get; set; }
 }

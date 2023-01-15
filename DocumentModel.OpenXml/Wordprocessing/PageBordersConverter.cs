@@ -1,161 +1,166 @@
+using DocumentFormat.OpenXml.Wordprocessing;
+using DocumentModel.Wordprocessing;
+using BorderType = DocumentModel.Wordprocessing.BorderType;
+using PageBorders = DocumentFormat.OpenXml.Wordprocessing.PageBorders;
+
 namespace DocumentModel.OpenXml.Wordprocessing;
 
 /// <summary>
-/// Defines the PageBorders Class.
+///   Defines the PageBorders Class.
 /// </summary>
 public static class PageBordersConverter
 {
   /// <summary>
-  /// Z-Ordering of Page Border
+  ///   Z-Ordering of Page Border
   /// </summary>
-  public static DocumentModel.Wordprocessing.PageBorderZOrderKind? GetZOrder(DocumentFormat.OpenXml.Wordprocessing.PageBorders? openXmlElement)
+  public static PageBorderZOrderKind? GetZOrder(PageBorders? openXmlElement)
   {
-    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Wordprocessing.PageBorderZOrderValues, DocumentModel.Wordprocessing.PageBorderZOrderKind>(openXmlElement?.ZOrder?.Value);
+    return EnumValueConverter.GetValue<PageBorderZOrderValues, PageBorderZOrderKind>(openXmlElement?.ZOrder?.Value);
   }
-  
-  public static void SetZOrder(DocumentFormat.OpenXml.Wordprocessing.PageBorders? openXmlElement, DocumentModel.Wordprocessing.PageBorderZOrderKind? value)
+
+  public static void SetZOrder(PageBorders? openXmlElement, PageBorderZOrderKind? value)
   {
     if (openXmlElement != null)
-      openXmlElement.ZOrder = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Wordprocessing.PageBorderZOrderValues, DocumentModel.Wordprocessing.PageBorderZOrderKind>(value);
+      openXmlElement.ZOrder = EnumValueConverter.CreateEnumValue<PageBorderZOrderValues, PageBorderZOrderKind>(value);
   }
-  
+
   /// <summary>
-  /// Pages to Display Page Borders
+  ///   Pages to Display Page Borders
   /// </summary>
-  public static DocumentModel.Wordprocessing.PageBorderDisplayKind? GetDisplay(DocumentFormat.OpenXml.Wordprocessing.PageBorders? openXmlElement)
+  public static PageBorderDisplayKind? GetDisplay(PageBorders? openXmlElement)
   {
-    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Wordprocessing.PageBorderDisplayValues, DocumentModel.Wordprocessing.PageBorderDisplayKind>(openXmlElement?.Display?.Value);
+    return EnumValueConverter.GetValue<PageBorderDisplayValues, PageBorderDisplayKind>(openXmlElement?.Display?.Value);
   }
-  
-  public static void SetDisplay(DocumentFormat.OpenXml.Wordprocessing.PageBorders? openXmlElement, DocumentModel.Wordprocessing.PageBorderDisplayKind? value)
+
+  public static void SetDisplay(PageBorders? openXmlElement, PageBorderDisplayKind? value)
   {
     if (openXmlElement != null)
-      openXmlElement.Display = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Wordprocessing.PageBorderDisplayValues, DocumentModel.Wordprocessing.PageBorderDisplayKind>(value);
+      openXmlElement.Display = EnumValueConverter.CreateEnumValue<PageBorderDisplayValues, PageBorderDisplayKind>(value);
   }
-  
+
   /// <summary>
-  /// Page Border Positioning
+  ///   Page Border Positioning
   /// </summary>
-  public static DocumentModel.Wordprocessing.PageBorderOffsetKind? GetOffsetFrom(DocumentFormat.OpenXml.Wordprocessing.PageBorders? openXmlElement)
+  public static PageBorderOffsetKind? GetOffsetFrom(PageBorders? openXmlElement)
   {
-    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Wordprocessing.PageBorderOffsetValues, DocumentModel.Wordprocessing.PageBorderOffsetKind>(openXmlElement?.OffsetFrom?.Value);
+    return EnumValueConverter.GetValue<PageBorderOffsetValues, PageBorderOffsetKind>(openXmlElement?.OffsetFrom?.Value);
   }
-  
-  public static void SetOffsetFrom(DocumentFormat.OpenXml.Wordprocessing.PageBorders? openXmlElement, DocumentModel.Wordprocessing.PageBorderOffsetKind? value)
+
+  public static void SetOffsetFrom(PageBorders? openXmlElement, PageBorderOffsetKind? value)
   {
     if (openXmlElement != null)
-      openXmlElement.OffsetFrom = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Wordprocessing.PageBorderOffsetValues, DocumentModel.Wordprocessing.PageBorderOffsetKind>(value);
+      openXmlElement.OffsetFrom = EnumValueConverter.CreateEnumValue<PageBorderOffsetValues, PageBorderOffsetKind>(value);
   }
-  
+
   /// <summary>
-  /// Top Border.
+  ///   Top Border.
   /// </summary>
-  public static DocumentModel.Wordprocessing.BorderType? GetTopBorder(DocumentFormat.OpenXml.Wordprocessing.PageBorders? openXmlElement)
+  public static BorderType? GetTopBorder(PageBorders? openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.TopBorder>();
+    var itemElement = openXmlElement?.GetFirstChild<TopBorder>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Wordprocessing.BorderTypeConverter.CreateModelElement(itemElement);
+      return BorderTypeConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetTopBorder(DocumentFormat.OpenXml.Wordprocessing.PageBorders? openXmlElement, DocumentModel.Wordprocessing.BorderType? value)
+
+  public static void SetTopBorder(PageBorders? openXmlElement, BorderType? value)
   {
     if (openXmlElement != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.TopBorder>();
+      var itemElement = openXmlElement.GetFirstChild<TopBorder>();
       if (itemElement != null)
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Wordprocessing.BorderTypeConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.TopBorder>(value);
+        itemElement = BorderTypeConverter.CreateOpenXmlElement<TopBorder>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
+
   /// <summary>
-  /// Left Border.
+  ///   Left Border.
   /// </summary>
-  public static DocumentModel.Wordprocessing.BorderType? GetLeftBorder(DocumentFormat.OpenXml.Wordprocessing.PageBorders? openXmlElement)
+  public static BorderType? GetLeftBorder(PageBorders? openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.LeftBorder>();
+    var itemElement = openXmlElement?.GetFirstChild<LeftBorder>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Wordprocessing.BorderTypeConverter.CreateModelElement(itemElement);
+      return BorderTypeConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetLeftBorder(DocumentFormat.OpenXml.Wordprocessing.PageBorders? openXmlElement, DocumentModel.Wordprocessing.BorderType? value)
+
+  public static void SetLeftBorder(PageBorders? openXmlElement, BorderType? value)
   {
     if (openXmlElement != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.LeftBorder>();
+      var itemElement = openXmlElement.GetFirstChild<LeftBorder>();
       if (itemElement != null)
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Wordprocessing.BorderTypeConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.LeftBorder>(value);
+        itemElement = BorderTypeConverter.CreateOpenXmlElement<LeftBorder>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
+
   /// <summary>
-  /// Bottom Border.
+  ///   Bottom Border.
   /// </summary>
-  public static DocumentModel.Wordprocessing.BorderType? GetBottomBorder(DocumentFormat.OpenXml.Wordprocessing.PageBorders? openXmlElement)
+  public static BorderType? GetBottomBorder(PageBorders? openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.BottomBorder>();
+    var itemElement = openXmlElement?.GetFirstChild<BottomBorder>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Wordprocessing.BorderTypeConverter.CreateModelElement(itemElement);
+      return BorderTypeConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetBottomBorder(DocumentFormat.OpenXml.Wordprocessing.PageBorders? openXmlElement, DocumentModel.Wordprocessing.BorderType? value)
+
+  public static void SetBottomBorder(PageBorders? openXmlElement, BorderType? value)
   {
     if (openXmlElement != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.BottomBorder>();
+      var itemElement = openXmlElement.GetFirstChild<BottomBorder>();
       if (itemElement != null)
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Wordprocessing.BorderTypeConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.BottomBorder>(value);
+        itemElement = BorderTypeConverter.CreateOpenXmlElement<BottomBorder>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
+
   /// <summary>
-  /// Right Border.
+  ///   Right Border.
   /// </summary>
-  public static DocumentModel.Wordprocessing.BorderType? GetRightBorder(DocumentFormat.OpenXml.Wordprocessing.PageBorders? openXmlElement)
+  public static BorderType? GetRightBorder(PageBorders? openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.RightBorder>();
+    var itemElement = openXmlElement?.GetFirstChild<RightBorder>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Wordprocessing.BorderTypeConverter.CreateModelElement(itemElement);
+      return BorderTypeConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetRightBorder(DocumentFormat.OpenXml.Wordprocessing.PageBorders? openXmlElement, DocumentModel.Wordprocessing.BorderType? value)
+
+  public static void SetRightBorder(PageBorders? openXmlElement, BorderType? value)
   {
     if (openXmlElement != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.RightBorder>();
+      var itemElement = openXmlElement.GetFirstChild<RightBorder>();
       if (itemElement != null)
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Wordprocessing.BorderTypeConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.RightBorder>(value);
+        itemElement = BorderTypeConverter.CreateOpenXmlElement<RightBorder>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static DocumentModel.Wordprocessing.PageBorders? CreateModelElement(DocumentFormat.OpenXml.Wordprocessing.PageBorders? openXmlElement)
+
+  public static DocumentModel.Wordprocessing.PageBorders? CreateModelElement(PageBorders? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -171,9 +176,9 @@ public static class PageBordersConverter
     }
     return null;
   }
-  
+
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.PageBorders? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Wordprocessing.PageBorders, new()
+    where OpenXmlElementType : PageBorders, new()
   {
     if (value != null)
     {

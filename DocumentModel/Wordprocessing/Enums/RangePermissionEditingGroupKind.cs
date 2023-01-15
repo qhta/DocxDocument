@@ -1,43 +1,42 @@
 namespace DocumentModel.Wordprocessing;
 
 /// <summary>
-/// Defines the RangePermissionEditingGroupValues enumeration.
+///   Defines the RangePermissionEditingGroupValues enumeration.
 /// </summary>
 public enum RangePermissionEditingGroupKind
 {
   /// <summary>
-  /// No Users Have Editing Permissions.
+  ///   No Users Have Editing Permissions.
   /// </summary>
   None,
-  
+
   /// <summary>
-  /// All Users Have Editing Permissions.
+  ///   All Users Have Editing Permissions.
   /// </summary>
   Everyone,
-  
+
   /// <summary>
-  /// Administrator Group.
+  ///   Administrator Group.
   /// </summary>
   Administrators,
-  
+
   /// <summary>
-  /// Contributors Group.
+  ///   Contributors Group.
   /// </summary>
   Contributors,
-  
+
   /// <summary>
-  /// Editors Group.
+  ///   Editors Group.
   /// </summary>
   Editors,
-  
+
   /// <summary>
-  /// Owners Group.
+  ///   Owners Group.
   /// </summary>
   Owners,
-  
+
   /// <summary>
-  /// Current Group.
+  ///   Current Group.
   /// </summary>
-  Current,
-  
+  Current
 }

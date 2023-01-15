@@ -1,49 +1,48 @@
 namespace DocumentModel.Drawings.Charts;
 
 /// <summary>
-/// Defines the ScatterChartSeries Class.
+///   Defines the ScatterChartSeries Class.
 /// </summary>
-public partial class ScatterChartSeries
+public class ScatterChartSeries
 {
   /// <summary>
-  /// Index.
+  ///   Index.
   /// </summary>
   public UInt32? Index { get; set; }
-  
+
   /// <summary>
-  /// Order.
+  ///   Order.
   /// </summary>
   public UInt32? Order { get; set; }
-  
+
   /// <summary>
-  /// Series Text.
+  ///   Series Text.
   /// </summary>
-  public DocumentModel.Drawings.Charts.SeriesText? SeriesText { get; set; }
-  
+  public SeriesText? SeriesText { get; set; }
+
   /// <summary>
-  /// ChartShapeProperties.
+  ///   ChartShapeProperties.
   /// </summary>
-  public DocumentModel.Drawings.Charts.ChartShapeProperties? ChartShapeProperties { get; set; }
-  
+  public ChartShapeProperties? ChartShapeProperties { get; set; }
+
   /// <summary>
-  /// Marker.
+  ///   Marker.
   /// </summary>
-  public DocumentModel.Drawings.Charts.Marker? Marker { get; set; }
-  
-  public Collection<DocumentModel.Drawings.Charts.DataPoint>? DataPoints { get; set; }
-  
-  public DocumentModel.Drawings.Charts.DataLabels? DataLabels { get; set; }
-  
-  public Collection<DocumentModel.Drawings.Charts.Trendline>? Trendlines { get; set; }
-  
-  public Collection<DocumentModel.Drawings.Charts.ErrorBars>? ErrorBarses { get; set; }
-  
-  public DocumentModel.Drawings.Charts.XValues? XValues { get; set; }
-  
-  public DocumentModel.Drawings.Charts.YValues? YValues { get; set; }
-  
+  public Marker? Marker { get; set; }
+
+  public Collection<DataPoint>? DataPoints { get; set; }
+
+  public DataLabels? DataLabels { get; set; }
+
+  public Collection<Trendline>? Trendlines { get; set; }
+
+  public Collection<ErrorBars>? ErrorBarses { get; set; }
+
+  public XValues? XValues { get; set; }
+
+  public YValues? YValues { get; set; }
+
   public Boolean? Smooth { get; set; }
-  
-  public DocumentModel.Drawings.Charts.ScatterSerExtensionList? ScatterSerExtensionList { get; set; }
-  
+
+  public ScatterSerExtensionList? ScatterSerExtensionList { get; set; }
 }

@@ -1,18 +1,21 @@
+using DocumentModel.Drawings.Charts;
+using SerAxExtensionList = DocumentFormat.OpenXml.Drawing.Charts.SerAxExtensionList;
+
 namespace DocumentModel.OpenXml.Drawings.Charts;
 
 /// <summary>
-/// Defines the SerAxExtensionList Class.
+///   Defines the SerAxExtensionList Class.
 /// </summary>
 public static class SerAxExtensionListConverter
 {
-  public static System.Collections.ObjectModel.Collection<DocumentModel.Drawings.Charts.SerAxExtension>? GetSerAxExtensions(DocumentFormat.OpenXml.Drawing.Charts.SerAxExtensionList? openXmlElement)
+  public static Collection<SerAxExtension>? GetSerAxExtensions(SerAxExtensionList? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var collection = new System.Collections.ObjectModel.Collection<DocumentModel.Drawings.Charts.SerAxExtension>();
+      var collection = new Collection<SerAxExtension>();
       foreach (var item in openXmlElement.Elements<DocumentFormat.OpenXml.Drawing.Charts.SerAxExtension>())
       {
-        var newItem = DocumentModel.OpenXml.Drawings.Charts.SerAxExtensionConverter.CreateModelElement(item);
+        var newItem = SerAxExtensionConverter.CreateModelElement(item);
         if (newItem != null)
           collection.Add(newItem);
       }
@@ -20,25 +23,23 @@ public static class SerAxExtensionListConverter
     }
     return null;
   }
-  
-  public static void SetSerAxExtensions(DocumentFormat.OpenXml.Drawing.Charts.SerAxExtensionList? openXmlElement, System.Collections.ObjectModel.Collection<DocumentModel.Drawings.Charts.SerAxExtension>? value)
+
+  public static void SetSerAxExtensions(SerAxExtensionList? openXmlElement, Collection<SerAxExtension>? value)
   {
     if (openXmlElement != null)
     {
       openXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Drawing.Charts.SerAxExtension>();
       if (value != null)
-      {
         foreach (var item in value)
         {
-          var newItem = DocumentModel.OpenXml.Drawings.Charts.SerAxExtensionConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Charts.SerAxExtension>(item);
+          var newItem = SerAxExtensionConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Charts.SerAxExtension>(item);
           if (newItem != null)
             openXmlElement.AddChild(newItem);
         }
-      }
     }
   }
-  
-  public static DocumentModel.Drawings.Charts.SerAxExtensionList? CreateModelElement(DocumentFormat.OpenXml.Drawing.Charts.SerAxExtensionList? openXmlElement)
+
+  public static DocumentModel.Drawings.Charts.SerAxExtensionList? CreateModelElement(SerAxExtensionList? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -48,9 +49,9 @@ public static class SerAxExtensionListConverter
     }
     return null;
   }
-  
+
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.Charts.SerAxExtensionList? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.Charts.SerAxExtensionList, new()
+    where OpenXmlElementType : SerAxExtensionList, new()
   {
     if (value != null)
     {

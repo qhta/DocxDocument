@@ -1,38 +1,37 @@
 namespace DocumentModel.Math;
 
 /// <summary>
-/// Box Properties.
+///   Box Properties.
 /// </summary>
-public partial class BoxProperties
+public class BoxProperties
 {
   /// <summary>
-  /// Operator Emulator.
+  ///   Operator Emulator.
   /// </summary>
-  public DocumentModel.Math.BooleanKind? OperatorEmulator { get; set; }
-  
+  public BooleanKind? OperatorEmulator { get; set; }
+
   /// <summary>
-  /// No Break.
+  ///   No Break.
   /// </summary>
-  public DocumentModel.Math.BooleanKind? NoBreak { get; set; }
-  
+  public BooleanKind? NoBreak { get; set; }
+
   /// <summary>
-  /// Differential.
+  ///   Differential.
   /// </summary>
-  public DocumentModel.Math.BooleanKind? Differential { get; set; }
-  
+  public BooleanKind? Differential { get; set; }
+
   /// <summary>
-  /// Break.
+  ///   Break.
   /// </summary>
-  public DocumentModel.Math.Break? Break { get; set; }
-  
+  public Break? Break { get; set; }
+
   /// <summary>
-  /// Alignment.
+  ///   Alignment.
   /// </summary>
-  public DocumentModel.Math.BooleanKind? Alignment { get; set; }
-  
+  public BooleanKind? Alignment { get; set; }
+
   /// <summary>
-  /// ControlProperties.
+  ///   ControlProperties.
   /// </summary>
-  public DocumentModel.Math.ControlProperties? ControlProperties { get; set; }
-  
+  public ControlProperties? ControlProperties { get; set; }
 }

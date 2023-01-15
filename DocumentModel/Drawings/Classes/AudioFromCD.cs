@@ -1,23 +1,22 @@
 namespace DocumentModel.Drawings;
 
 /// <summary>
-/// Audio from CD.
+///   Audio from CD.
 /// </summary>
-public partial class AudioFromCD
+public class AudioFromCD
 {
   /// <summary>
-  /// Audio Start Time.
+  ///   Audio Start Time.
   /// </summary>
-  public DocumentModel.Drawings.AudioCDTimeType? StartTime { get; set; }
-  
+  public AudioCDTimeType? StartTime { get; set; }
+
   /// <summary>
-  /// Audio End Time.
+  ///   Audio End Time.
   /// </summary>
-  public DocumentModel.Drawings.AudioCDTimeType? EndTime { get; set; }
-  
+  public AudioCDTimeType? EndTime { get; set; }
+
   /// <summary>
-  /// ExtensionList.
+  ///   ExtensionList.
   /// </summary>
-  public DocumentModel.Drawings.ExtensionList? ExtensionList { get; set; }
-  
+  public ExtensionList? ExtensionList { get; set; }
 }

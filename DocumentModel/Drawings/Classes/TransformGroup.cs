@@ -1,43 +1,42 @@
 namespace DocumentModel.Drawings;
 
 /// <summary>
-/// 2D Transform for Grouped Objects.
+///   2D Transform for Grouped Objects.
 /// </summary>
-public partial class TransformGroup
+public class TransformGroup
 {
   /// <summary>
-  /// Rotation
+  ///   Rotation
   /// </summary>
   public Int32? Rotation { get; set; }
-  
+
   /// <summary>
-  /// Horizontal Flip
+  ///   Horizontal Flip
   /// </summary>
   public Boolean? HorizontalFlip { get; set; }
-  
+
   /// <summary>
-  /// Vertical Flip
+  ///   Vertical Flip
   /// </summary>
   public Boolean? VerticalFlip { get; set; }
-  
+
   /// <summary>
-  /// Offset.
+  ///   Offset.
   /// </summary>
-  public DocumentModel.Drawings.Point2DType? Offset { get; set; }
-  
+  public Point2DType? Offset { get; set; }
+
   /// <summary>
-  /// Extents.
+  ///   Extents.
   /// </summary>
-  public DocumentModel.Drawings.PositiveSize2DType? Extents { get; set; }
-  
+  public PositiveSize2DType? Extents { get; set; }
+
   /// <summary>
-  /// Child Offset.
+  ///   Child Offset.
   /// </summary>
-  public DocumentModel.Drawings.Point2DType? ChildOffset { get; set; }
-  
+  public Point2DType? ChildOffset { get; set; }
+
   /// <summary>
-  /// Child Extents.
+  ///   Child Extents.
   /// </summary>
-  public DocumentModel.Drawings.PositiveSize2DType? ChildExtents { get; set; }
-  
+  public PositiveSize2DType? ChildExtents { get; set; }
 }

@@ -1,23 +1,22 @@
 namespace DocumentModel.Wordprocessing;
 
 /// <summary>
-/// Defines the HeaderFooterValues enumeration.
+///   Defines the HeaderFooterValues enumeration.
 /// </summary>
 public enum HeaderFooterKind
 {
   /// <summary>
-  /// Even Numbered Pages Only.
+  ///   Even Numbered Pages Only.
   /// </summary>
   Even,
-  
+
   /// <summary>
-  /// Default Header or Footer.
+  ///   Default Header or Footer.
   /// </summary>
   Default,
-  
+
   /// <summary>
-  /// First Page Only.
+  ///   First Page Only.
   /// </summary>
-  First,
-  
+  First
 }

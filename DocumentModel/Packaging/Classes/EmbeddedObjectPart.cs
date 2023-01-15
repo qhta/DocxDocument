@@ -1,10 +1,9 @@
 namespace DocumentModel.Packaging;
 
 /// <summary>
-/// Defines the EmbeddedObjectPart
+///   Defines the EmbeddedObjectPart
 /// </summary>
-public partial class EmbeddedObjectPart
+public class EmbeddedObjectPart
 {
   public String? RelationshipType { get; set; }
-  
 }

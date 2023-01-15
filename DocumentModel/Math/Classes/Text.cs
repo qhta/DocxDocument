@@ -1,13 +1,12 @@
 namespace DocumentModel.Math;
 
 /// <summary>
-/// Text.
+///   Text.
 /// </summary>
-public partial class Text
+public class Text
 {
   /// <summary>
-  /// space
+  ///   space
   /// </summary>
-  public DocumentModel.SpaceProcessingMode? Space { get; set; }
-  
+  public SpaceProcessingMode? Space { get; set; }
 }

@@ -1,33 +1,36 @@
+using DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing;
+using ChartStringValue = DocumentModel.Drawings.ChartDrawings.ChartStringValue;
+
 namespace DocumentModel.OpenXml.Drawings.ChartDrawings;
 
 /// <summary>
-/// Defines the StringLevel Class.
+///   Defines the StringLevel Class.
 /// </summary>
 public static class StringLevelConverter
 {
   /// <summary>
-  /// ptCount, this property is only available in Office 2016 and later.
+  ///   ptCount, this property is only available in Office 2016 and later.
   /// </summary>
-  public static UInt32? GetPtCount(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.StringLevel? openXmlElement)
+  public static UInt32? GetPtCount(StringLevel? openXmlElement)
   {
     return openXmlElement?.PtCount?.Value;
   }
-  
-  public static void SetPtCount(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.StringLevel? openXmlElement, UInt32? value)
+
+  public static void SetPtCount(StringLevel? openXmlElement, UInt32? value)
   {
     if (openXmlElement != null)
       openXmlElement.PtCount = value;
   }
-  
+
   /// <summary>
-  /// name, this property is only available in Office 2016 and later.
+  ///   name, this property is only available in Office 2016 and later.
   /// </summary>
-  public static String? GetName(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.StringLevel? openXmlElement)
+  public static String? GetName(StringLevel? openXmlElement)
   {
     return openXmlElement?.Name?.Value;
   }
-  
-  public static void SetName(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.StringLevel? openXmlElement, String? value)
+
+  public static void SetName(StringLevel? openXmlElement, String? value)
   {
     if (openXmlElement != null)
       if (value != null)
@@ -35,15 +38,15 @@ public static class StringLevelConverter
       else
         openXmlElement.Name = null;
   }
-  
-  public static System.Collections.ObjectModel.Collection<DocumentModel.Drawings.ChartDrawings.ChartStringValue>? GetChartStringValues(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.StringLevel? openXmlElement)
+
+  public static Collection<ChartStringValue>? GetChartStringValues(StringLevel? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var collection = new System.Collections.ObjectModel.Collection<DocumentModel.Drawings.ChartDrawings.ChartStringValue>();
+      var collection = new Collection<ChartStringValue>();
       foreach (var item in openXmlElement.Elements<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.ChartStringValue>())
       {
-        var newItem = DocumentModel.OpenXml.Drawings.ChartDrawings.ChartStringValueConverter.CreateModelElement(item);
+        var newItem = ChartStringValueConverter.CreateModelElement(item);
         if (newItem != null)
           collection.Add(newItem);
       }
@@ -51,25 +54,23 @@ public static class StringLevelConverter
     }
     return null;
   }
-  
-  public static void SetChartStringValues(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.StringLevel? openXmlElement, System.Collections.ObjectModel.Collection<DocumentModel.Drawings.ChartDrawings.ChartStringValue>? value)
+
+  public static void SetChartStringValues(StringLevel? openXmlElement, Collection<ChartStringValue>? value)
   {
     if (openXmlElement != null)
     {
       openXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.ChartStringValue>();
       if (value != null)
-      {
         foreach (var item in value)
         {
-          var newItem = DocumentModel.OpenXml.Drawings.ChartDrawings.ChartStringValueConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.ChartStringValue>(item);
+          var newItem = ChartStringValueConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.ChartStringValue>(item);
           if (newItem != null)
             openXmlElement.AddChild(newItem);
         }
-      }
     }
   }
-  
-  public static DocumentModel.Drawings.ChartDrawings.StringLevel? CreateModelElement(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.StringLevel? openXmlElement)
+
+  public static DocumentModel.Drawings.ChartDrawings.StringLevel? CreateModelElement(StringLevel? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -81,9 +82,9 @@ public static class StringLevelConverter
     }
     return null;
   }
-  
+
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.ChartDrawings.StringLevel? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.StringLevel, new()
+    where OpenXmlElementType : StringLevel, new()
   {
     if (value != null)
     {

@@ -1,33 +1,32 @@
 namespace DocumentModel.Wordprocessing;
 
 /// <summary>
-/// Vertically Merged/Split Table Cells.
+///   Vertically Merged/Split Table Cells.
 /// </summary>
-public partial class CellMerge
+public class CellMerge
 {
   /// <summary>
-  /// vMerge
+  ///   vMerge
   /// </summary>
-  public DocumentModel.Wordprocessing.VerticalMergeRevisionKind? VerticalMerge { get; set; }
-  
+  public VerticalMergeRevisionKind? VerticalMerge { get; set; }
+
   /// <summary>
-  /// vMergeOrig
+  ///   vMergeOrig
   /// </summary>
-  public DocumentModel.Wordprocessing.VerticalMergeRevisionKind? VerticalMergeOriginal { get; set; }
-  
+  public VerticalMergeRevisionKind? VerticalMergeOriginal { get; set; }
+
   /// <summary>
-  /// author
+  ///   author
   /// </summary>
   public String? Author { get; set; }
-  
+
   /// <summary>
-  /// date
+  ///   date
   /// </summary>
   public DateTime? Date { get; set; }
-  
+
   /// <summary>
-  /// Annotation Identifier
+  ///   Annotation Identifier
   /// </summary>
   public String? Id { get; set; }
-  
 }

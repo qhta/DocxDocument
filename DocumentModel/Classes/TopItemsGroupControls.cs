@@ -1,30 +1,29 @@
 namespace DocumentModel;
 
 /// <summary>
-/// Defines the TopItemsGroupControls Class.
+///   Defines the TopItemsGroupControls Class.
 /// </summary>
-public partial class TopItemsGroupControls
+public class TopItemsGroupControls
 {
-  public DocumentModel.BackstageGroupButton? BackstageGroupButton { get; set; }
-  
-  public DocumentModel.BackstageCheckBox? BackstageCheckBox { get; set; }
-  
-  public DocumentModel.BackstageEditBox? BackstageEditBox { get; set; }
-  
-  public DocumentModel.BackstageDropDown? BackstageDropDown { get; set; }
-  
-  public DocumentModel.RadioGroup? RadioGroup { get; set; }
-  
-  public DocumentModel.BackstageComboBox? BackstageComboBox { get; set; }
-  
-  public DocumentModel.Hyperlink? Hyperlink { get; set; }
-  
-  public DocumentModel.BackstageLabelControl? BackstageLabelControl { get; set; }
-  
-  public DocumentModel.GroupBox? GroupBox { get; set; }
-  
-  public DocumentModel.LayoutContainer? LayoutContainer { get; set; }
-  
-  public DocumentModel.ImageControl? ImageControl { get; set; }
-  
+  public BackstageGroupButton? BackstageGroupButton { get; set; }
+
+  public BackstageCheckBox? BackstageCheckBox { get; set; }
+
+  public BackstageEditBox? BackstageEditBox { get; set; }
+
+  public BackstageDropDown? BackstageDropDown { get; set; }
+
+  public RadioGroup? RadioGroup { get; set; }
+
+  public BackstageComboBox? BackstageComboBox { get; set; }
+
+  public Hyperlink? Hyperlink { get; set; }
+
+  public BackstageLabelControl? BackstageLabelControl { get; set; }
+
+  public GroupBox? GroupBox { get; set; }
+
+  public LayoutContainer? LayoutContainer { get; set; }
+
+  public ImageControl? ImageControl { get; set; }
 }

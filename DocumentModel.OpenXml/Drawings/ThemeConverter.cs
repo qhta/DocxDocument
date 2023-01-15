@@ -1,19 +1,26 @@
+using DocumentFormat.OpenXml.Drawing;
+using CustomColorList = DocumentModel.Drawings.CustomColorList;
+using ExtraColorSchemeList = DocumentModel.Drawings.ExtraColorSchemeList;
+using ObjectDefaults = DocumentModel.Drawings.ObjectDefaults;
+using OfficeStyleSheetExtensionList = DocumentModel.Drawings.OfficeStyleSheetExtensionList;
+using ThemeElements = DocumentModel.Drawings.ThemeElements;
+
 namespace DocumentModel.OpenXml.Drawings;
 
 /// <summary>
-/// Theme.
+///   Theme.
 /// </summary>
 public static class ThemeConverter
 {
   /// <summary>
-  /// name
+  ///   name
   /// </summary>
-  public static String? GetName(DocumentFormat.OpenXml.Drawing.Theme? openXmlElement)
+  public static String? GetName(Theme? openXmlElement)
   {
     return openXmlElement?.Name?.Value;
   }
-  
-  public static void SetName(DocumentFormat.OpenXml.Drawing.Theme? openXmlElement, String? value)
+
+  public static void SetName(Theme? openXmlElement, String? value)
   {
     if (openXmlElement != null)
       if (value != null)
@@ -21,16 +28,16 @@ public static class ThemeConverter
       else
         openXmlElement.Name = null;
   }
-  
+
   /// <summary>
-  /// id, this property is only available in Office 2013 and later.
+  ///   id, this property is only available in Office 2013 and later.
   /// </summary>
-  public static String? GetThemeId(DocumentFormat.OpenXml.Drawing.Theme? openXmlElement)
+  public static String? GetThemeId(Theme? openXmlElement)
   {
     return openXmlElement?.ThemeId?.Value;
   }
-  
-  public static void SetThemeId(DocumentFormat.OpenXml.Drawing.Theme? openXmlElement, String? value)
+
+  public static void SetThemeId(Theme? openXmlElement, String? value)
   {
     if (openXmlElement != null)
       if (value != null)
@@ -38,19 +45,19 @@ public static class ThemeConverter
       else
         openXmlElement.ThemeId = null;
   }
-  
+
   /// <summary>
-  /// ThemeElements.
+  ///   ThemeElements.
   /// </summary>
-  public static DocumentModel.Drawings.ThemeElements? GetThemeElements(DocumentFormat.OpenXml.Drawing.Theme? openXmlElement)
+  public static ThemeElements? GetThemeElements(Theme? openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.ThemeElements>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.ThemeElementsConverter.CreateModelElement(itemElement);
+      return ThemeElementsConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetThemeElements(DocumentFormat.OpenXml.Drawing.Theme? openXmlElement, DocumentModel.Drawings.ThemeElements? value)
+
+  public static void SetThemeElements(Theme? openXmlElement, ThemeElements? value)
   {
     if (openXmlElement != null)
     {
@@ -59,25 +66,25 @@ public static class ThemeConverter
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Drawings.ThemeElementsConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.ThemeElements>(value);
+        itemElement = ThemeElementsConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.ThemeElements>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
+
   /// <summary>
-  /// ObjectDefaults.
+  ///   ObjectDefaults.
   /// </summary>
-  public static DocumentModel.Drawings.ObjectDefaults? GetObjectDefaults(DocumentFormat.OpenXml.Drawing.Theme? openXmlElement)
+  public static ObjectDefaults? GetObjectDefaults(Theme? openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.ObjectDefaults>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.ObjectDefaultsConverter.CreateModelElement(itemElement);
+      return ObjectDefaultsConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetObjectDefaults(DocumentFormat.OpenXml.Drawing.Theme? openXmlElement, DocumentModel.Drawings.ObjectDefaults? value)
+
+  public static void SetObjectDefaults(Theme? openXmlElement, ObjectDefaults? value)
   {
     if (openXmlElement != null)
     {
@@ -86,25 +93,25 @@ public static class ThemeConverter
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Drawings.ObjectDefaultsConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.ObjectDefaults>(value);
+        itemElement = ObjectDefaultsConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.ObjectDefaults>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
+
   /// <summary>
-  /// ExtraColorSchemeList.
+  ///   ExtraColorSchemeList.
   /// </summary>
-  public static DocumentModel.Drawings.ExtraColorSchemeList? GetExtraColorSchemeList(DocumentFormat.OpenXml.Drawing.Theme? openXmlElement)
+  public static ExtraColorSchemeList? GetExtraColorSchemeList(Theme? openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.ExtraColorSchemeList>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.ExtraColorSchemeListConverter.CreateModelElement(itemElement);
+      return ExtraColorSchemeListConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetExtraColorSchemeList(DocumentFormat.OpenXml.Drawing.Theme? openXmlElement, DocumentModel.Drawings.ExtraColorSchemeList? value)
+
+  public static void SetExtraColorSchemeList(Theme? openXmlElement, ExtraColorSchemeList? value)
   {
     if (openXmlElement != null)
     {
@@ -113,25 +120,25 @@ public static class ThemeConverter
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Drawings.ExtraColorSchemeListConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.ExtraColorSchemeList>(value);
+        itemElement = ExtraColorSchemeListConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.ExtraColorSchemeList>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
+
   /// <summary>
-  /// CustomColorList.
+  ///   CustomColorList.
   /// </summary>
-  public static DocumentModel.Drawings.CustomColorList? GetCustomColorList(DocumentFormat.OpenXml.Drawing.Theme? openXmlElement)
+  public static CustomColorList? GetCustomColorList(Theme? openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.CustomColorList>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.CustomColorListConverter.CreateModelElement(itemElement);
+      return CustomColorListConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetCustomColorList(DocumentFormat.OpenXml.Drawing.Theme? openXmlElement, DocumentModel.Drawings.CustomColorList? value)
+
+  public static void SetCustomColorList(Theme? openXmlElement, CustomColorList? value)
   {
     if (openXmlElement != null)
     {
@@ -140,25 +147,25 @@ public static class ThemeConverter
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Drawings.CustomColorListConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.CustomColorList>(value);
+        itemElement = CustomColorListConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.CustomColorList>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
+
   /// <summary>
-  /// OfficeStyleSheetExtensionList.
+  ///   OfficeStyleSheetExtensionList.
   /// </summary>
-  public static DocumentModel.Drawings.OfficeStyleSheetExtensionList? GetOfficeStyleSheetExtensionList(DocumentFormat.OpenXml.Drawing.Theme? openXmlElement)
+  public static OfficeStyleSheetExtensionList? GetOfficeStyleSheetExtensionList(Theme? openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.OfficeStyleSheetExtensionList>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.OfficeStyleSheetExtensionListConverter.CreateModelElement(itemElement);
+      return OfficeStyleSheetExtensionListConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetOfficeStyleSheetExtensionList(DocumentFormat.OpenXml.Drawing.Theme? openXmlElement, DocumentModel.Drawings.OfficeStyleSheetExtensionList? value)
+
+  public static void SetOfficeStyleSheetExtensionList(Theme? openXmlElement, OfficeStyleSheetExtensionList? value)
   {
     if (openXmlElement != null)
     {
@@ -167,14 +174,14 @@ public static class ThemeConverter
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Drawings.OfficeStyleSheetExtensionListConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.OfficeStyleSheetExtensionList>(value);
+        itemElement = OfficeStyleSheetExtensionListConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.OfficeStyleSheetExtensionList>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static DocumentModel.Drawings.Theme? CreateModelElement(DocumentFormat.OpenXml.Drawing.Theme? openXmlElement)
+
+  public static DocumentModel.Drawings.Theme? CreateModelElement(Theme? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -190,9 +197,9 @@ public static class ThemeConverter
     }
     return null;
   }
-  
+
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.Theme? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.Theme, new()
+    where OpenXmlElementType : Theme, new()
   {
     if (value != null)
     {

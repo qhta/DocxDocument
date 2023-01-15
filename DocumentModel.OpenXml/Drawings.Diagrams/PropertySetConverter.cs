@@ -1,19 +1,23 @@
+using DocumentFormat.OpenXml.Drawing.Diagrams;
+using PresentationLayoutVariables = DocumentModel.Drawings.Diagrams.PresentationLayoutVariables;
+using Style = DocumentModel.Drawings.Diagrams.Style;
+
 namespace DocumentModel.OpenXml.Drawings.Diagrams;
 
 /// <summary>
-/// Property Set.
+///   Property Set.
 /// </summary>
 public static class PropertySetConverter
 {
   /// <summary>
-  /// Presentation Element Identifier
+  ///   Presentation Element Identifier
   /// </summary>
-  public static String? GetPresentationElementId(DocumentFormat.OpenXml.Drawing.Diagrams.PropertySet? openXmlElement)
+  public static String? GetPresentationElementId(PropertySet? openXmlElement)
   {
     return openXmlElement?.PresentationElementId?.Value;
   }
-  
-  public static void SetPresentationElementId(DocumentFormat.OpenXml.Drawing.Diagrams.PropertySet? openXmlElement, String? value)
+
+  public static void SetPresentationElementId(PropertySet? openXmlElement, String? value)
   {
     if (openXmlElement != null)
       if (value != null)
@@ -21,16 +25,16 @@ public static class PropertySetConverter
       else
         openXmlElement.PresentationElementId = null;
   }
-  
+
   /// <summary>
-  /// Presentation Name
+  ///   Presentation Name
   /// </summary>
-  public static String? GetPresentationName(DocumentFormat.OpenXml.Drawing.Diagrams.PropertySet? openXmlElement)
+  public static String? GetPresentationName(PropertySet? openXmlElement)
   {
     return openXmlElement?.PresentationName?.Value;
   }
-  
-  public static void SetPresentationName(DocumentFormat.OpenXml.Drawing.Diagrams.PropertySet? openXmlElement, String? value)
+
+  public static void SetPresentationName(PropertySet? openXmlElement, String? value)
   {
     if (openXmlElement != null)
       if (value != null)
@@ -38,16 +42,16 @@ public static class PropertySetConverter
       else
         openXmlElement.PresentationName = null;
   }
-  
+
   /// <summary>
-  /// Presentation Style Label
+  ///   Presentation Style Label
   /// </summary>
-  public static String? GetPresentationStyleLabel(DocumentFormat.OpenXml.Drawing.Diagrams.PropertySet? openXmlElement)
+  public static String? GetPresentationStyleLabel(PropertySet? openXmlElement)
   {
     return openXmlElement?.PresentationStyleLabel?.Value;
   }
-  
-  public static void SetPresentationStyleLabel(DocumentFormat.OpenXml.Drawing.Diagrams.PropertySet? openXmlElement, String? value)
+
+  public static void SetPresentationStyleLabel(PropertySet? openXmlElement, String? value)
   {
     if (openXmlElement != null)
       if (value != null)
@@ -55,44 +59,44 @@ public static class PropertySetConverter
       else
         openXmlElement.PresentationStyleLabel = null;
   }
-  
+
   /// <summary>
-  /// Presentation Style Index
+  ///   Presentation Style Index
   /// </summary>
-  public static Int32? GetPresentationStyleIndex(DocumentFormat.OpenXml.Drawing.Diagrams.PropertySet? openXmlElement)
+  public static Int32? GetPresentationStyleIndex(PropertySet? openXmlElement)
   {
     return openXmlElement?.PresentationStyleIndex?.Value;
   }
-  
-  public static void SetPresentationStyleIndex(DocumentFormat.OpenXml.Drawing.Diagrams.PropertySet? openXmlElement, Int32? value)
+
+  public static void SetPresentationStyleIndex(PropertySet? openXmlElement, Int32? value)
   {
     if (openXmlElement != null)
       openXmlElement.PresentationStyleIndex = value;
   }
-  
+
   /// <summary>
-  /// Presentation Style Count
+  ///   Presentation Style Count
   /// </summary>
-  public static Int32? GetPresentationStyleCount(DocumentFormat.OpenXml.Drawing.Diagrams.PropertySet? openXmlElement)
+  public static Int32? GetPresentationStyleCount(PropertySet? openXmlElement)
   {
     return openXmlElement?.PresentationStyleCount?.Value;
   }
-  
-  public static void SetPresentationStyleCount(DocumentFormat.OpenXml.Drawing.Diagrams.PropertySet? openXmlElement, Int32? value)
+
+  public static void SetPresentationStyleCount(PropertySet? openXmlElement, Int32? value)
   {
     if (openXmlElement != null)
       openXmlElement.PresentationStyleCount = value;
   }
-  
+
   /// <summary>
-  /// Current Diagram Type
+  ///   Current Diagram Type
   /// </summary>
-  public static String? GetLayoutTypeId(DocumentFormat.OpenXml.Drawing.Diagrams.PropertySet? openXmlElement)
+  public static String? GetLayoutTypeId(PropertySet? openXmlElement)
   {
     return openXmlElement?.LayoutTypeId?.Value;
   }
-  
-  public static void SetLayoutTypeId(DocumentFormat.OpenXml.Drawing.Diagrams.PropertySet? openXmlElement, String? value)
+
+  public static void SetLayoutTypeId(PropertySet? openXmlElement, String? value)
   {
     if (openXmlElement != null)
       if (value != null)
@@ -100,16 +104,16 @@ public static class PropertySetConverter
       else
         openXmlElement.LayoutTypeId = null;
   }
-  
+
   /// <summary>
-  /// Current Diagram Category
+  ///   Current Diagram Category
   /// </summary>
-  public static String? GetLayoutCategoryId(DocumentFormat.OpenXml.Drawing.Diagrams.PropertySet? openXmlElement)
+  public static String? GetLayoutCategoryId(PropertySet? openXmlElement)
   {
     return openXmlElement?.LayoutCategoryId?.Value;
   }
-  
-  public static void SetLayoutCategoryId(DocumentFormat.OpenXml.Drawing.Diagrams.PropertySet? openXmlElement, String? value)
+
+  public static void SetLayoutCategoryId(PropertySet? openXmlElement, String? value)
   {
     if (openXmlElement != null)
       if (value != null)
@@ -117,16 +121,16 @@ public static class PropertySetConverter
       else
         openXmlElement.LayoutCategoryId = null;
   }
-  
+
   /// <summary>
-  /// Current Style Type
+  ///   Current Style Type
   /// </summary>
-  public static String? GetQuickStyleTypeId(DocumentFormat.OpenXml.Drawing.Diagrams.PropertySet? openXmlElement)
+  public static String? GetQuickStyleTypeId(PropertySet? openXmlElement)
   {
     return openXmlElement?.QuickStyleTypeId?.Value;
   }
-  
-  public static void SetQuickStyleTypeId(DocumentFormat.OpenXml.Drawing.Diagrams.PropertySet? openXmlElement, String? value)
+
+  public static void SetQuickStyleTypeId(PropertySet? openXmlElement, String? value)
   {
     if (openXmlElement != null)
       if (value != null)
@@ -134,16 +138,16 @@ public static class PropertySetConverter
       else
         openXmlElement.QuickStyleTypeId = null;
   }
-  
+
   /// <summary>
-  /// Current Style Category
+  ///   Current Style Category
   /// </summary>
-  public static String? GetQuickStyleCategoryId(DocumentFormat.OpenXml.Drawing.Diagrams.PropertySet? openXmlElement)
+  public static String? GetQuickStyleCategoryId(PropertySet? openXmlElement)
   {
     return openXmlElement?.QuickStyleCategoryId?.Value;
   }
-  
-  public static void SetQuickStyleCategoryId(DocumentFormat.OpenXml.Drawing.Diagrams.PropertySet? openXmlElement, String? value)
+
+  public static void SetQuickStyleCategoryId(PropertySet? openXmlElement, String? value)
   {
     if (openXmlElement != null)
       if (value != null)
@@ -151,16 +155,16 @@ public static class PropertySetConverter
       else
         openXmlElement.QuickStyleCategoryId = null;
   }
-  
+
   /// <summary>
-  /// Color Transform Type Identifier
+  ///   Color Transform Type Identifier
   /// </summary>
-  public static String? GetColorType(DocumentFormat.OpenXml.Drawing.Diagrams.PropertySet? openXmlElement)
+  public static String? GetColorType(PropertySet? openXmlElement)
   {
     return openXmlElement?.ColorType?.Value;
   }
-  
-  public static void SetColorType(DocumentFormat.OpenXml.Drawing.Diagrams.PropertySet? openXmlElement, String? value)
+
+  public static void SetColorType(PropertySet? openXmlElement, String? value)
   {
     if (openXmlElement != null)
       if (value != null)
@@ -168,16 +172,16 @@ public static class PropertySetConverter
       else
         openXmlElement.ColorType = null;
   }
-  
+
   /// <summary>
-  /// Color Transform Category
+  ///   Color Transform Category
   /// </summary>
-  public static String? GetColorCategoryId(DocumentFormat.OpenXml.Drawing.Diagrams.PropertySet? openXmlElement)
+  public static String? GetColorCategoryId(PropertySet? openXmlElement)
   {
     return openXmlElement?.ColorCategoryId?.Value;
   }
-  
-  public static void SetColorCategoryId(DocumentFormat.OpenXml.Drawing.Diagrams.PropertySet? openXmlElement, String? value)
+
+  public static void SetColorCategoryId(PropertySet? openXmlElement, String? value)
   {
     if (openXmlElement != null)
       if (value != null)
@@ -185,16 +189,16 @@ public static class PropertySetConverter
       else
         openXmlElement.ColorCategoryId = null;
   }
-  
+
   /// <summary>
-  /// Coherent 3D Behavior
+  ///   Coherent 3D Behavior
   /// </summary>
-  public static Boolean? GetCoherent3D(DocumentFormat.OpenXml.Drawing.Diagrams.PropertySet? openXmlElement)
+  public static Boolean? GetCoherent3D(PropertySet? openXmlElement)
   {
     return openXmlElement?.Coherent3D?.Value;
   }
-  
-  public static void SetCoherent3D(DocumentFormat.OpenXml.Drawing.Diagrams.PropertySet? openXmlElement, Boolean? value)
+
+  public static void SetCoherent3D(PropertySet? openXmlElement, Boolean? value)
   {
     if (openXmlElement != null)
       if (value != null)
@@ -202,16 +206,16 @@ public static class PropertySetConverter
       else
         openXmlElement.Coherent3D = null;
   }
-  
+
   /// <summary>
-  /// Placeholder Text
+  ///   Placeholder Text
   /// </summary>
-  public static String? GetPlaceholderText(DocumentFormat.OpenXml.Drawing.Diagrams.PropertySet? openXmlElement)
+  public static String? GetPlaceholderText(PropertySet? openXmlElement)
   {
     return openXmlElement?.PlaceholderText?.Value;
   }
-  
-  public static void SetPlaceholderText(DocumentFormat.OpenXml.Drawing.Diagrams.PropertySet? openXmlElement, String? value)
+
+  public static void SetPlaceholderText(PropertySet? openXmlElement, String? value)
   {
     if (openXmlElement != null)
       if (value != null)
@@ -219,16 +223,16 @@ public static class PropertySetConverter
       else
         openXmlElement.PlaceholderText = null;
   }
-  
+
   /// <summary>
-  /// Placeholder
+  ///   Placeholder
   /// </summary>
-  public static Boolean? GetPlaceholder(DocumentFormat.OpenXml.Drawing.Diagrams.PropertySet? openXmlElement)
+  public static Boolean? GetPlaceholder(PropertySet? openXmlElement)
   {
     return openXmlElement?.Placeholder?.Value;
   }
-  
-  public static void SetPlaceholder(DocumentFormat.OpenXml.Drawing.Diagrams.PropertySet? openXmlElement, Boolean? value)
+
+  public static void SetPlaceholder(PropertySet? openXmlElement, Boolean? value)
   {
     if (openXmlElement != null)
       if (value != null)
@@ -236,30 +240,30 @@ public static class PropertySetConverter
       else
         openXmlElement.Placeholder = null;
   }
-  
+
   /// <summary>
-  /// Custom Rotation
+  ///   Custom Rotation
   /// </summary>
-  public static Int32? GetRotation(DocumentFormat.OpenXml.Drawing.Diagrams.PropertySet? openXmlElement)
+  public static Int32? GetRotation(PropertySet? openXmlElement)
   {
     return openXmlElement?.Rotation?.Value;
   }
-  
-  public static void SetRotation(DocumentFormat.OpenXml.Drawing.Diagrams.PropertySet? openXmlElement, Int32? value)
+
+  public static void SetRotation(PropertySet? openXmlElement, Int32? value)
   {
     if (openXmlElement != null)
       openXmlElement.Rotation = value;
   }
-  
+
   /// <summary>
-  /// Custom Vertical Flip
+  ///   Custom Vertical Flip
   /// </summary>
-  public static Boolean? GetVerticalFlip(DocumentFormat.OpenXml.Drawing.Diagrams.PropertySet? openXmlElement)
+  public static Boolean? GetVerticalFlip(PropertySet? openXmlElement)
   {
     return openXmlElement?.VerticalFlip?.Value;
   }
-  
-  public static void SetVerticalFlip(DocumentFormat.OpenXml.Drawing.Diagrams.PropertySet? openXmlElement, Boolean? value)
+
+  public static void SetVerticalFlip(PropertySet? openXmlElement, Boolean? value)
   {
     if (openXmlElement != null)
       if (value != null)
@@ -267,16 +271,16 @@ public static class PropertySetConverter
       else
         openXmlElement.VerticalFlip = null;
   }
-  
+
   /// <summary>
-  /// Custom Horizontal Flip
+  ///   Custom Horizontal Flip
   /// </summary>
-  public static Boolean? GetHorizontalFlip(DocumentFormat.OpenXml.Drawing.Diagrams.PropertySet? openXmlElement)
+  public static Boolean? GetHorizontalFlip(PropertySet? openXmlElement)
   {
     return openXmlElement?.HorizontalFlip?.Value;
   }
-  
-  public static void SetHorizontalFlip(DocumentFormat.OpenXml.Drawing.Diagrams.PropertySet? openXmlElement, Boolean? value)
+
+  public static void SetHorizontalFlip(PropertySet? openXmlElement, Boolean? value)
   {
     if (openXmlElement != null)
       if (value != null)
@@ -284,72 +288,72 @@ public static class PropertySetConverter
       else
         openXmlElement.HorizontalFlip = null;
   }
-  
+
   /// <summary>
-  /// Fixed Width Override
+  ///   Fixed Width Override
   /// </summary>
-  public static Int32? GetFixedWidthOverride(DocumentFormat.OpenXml.Drawing.Diagrams.PropertySet? openXmlElement)
+  public static Int32? GetFixedWidthOverride(PropertySet? openXmlElement)
   {
     return openXmlElement?.FixedWidthOverride?.Value;
   }
-  
-  public static void SetFixedWidthOverride(DocumentFormat.OpenXml.Drawing.Diagrams.PropertySet? openXmlElement, Int32? value)
+
+  public static void SetFixedWidthOverride(PropertySet? openXmlElement, Int32? value)
   {
     if (openXmlElement != null)
       openXmlElement.FixedWidthOverride = value;
   }
-  
+
   /// <summary>
-  /// Fixed Height Override
+  ///   Fixed Height Override
   /// </summary>
-  public static Int32? GetFixedHeightOverride(DocumentFormat.OpenXml.Drawing.Diagrams.PropertySet? openXmlElement)
+  public static Int32? GetFixedHeightOverride(PropertySet? openXmlElement)
   {
     return openXmlElement?.FixedHeightOverride?.Value;
   }
-  
-  public static void SetFixedHeightOverride(DocumentFormat.OpenXml.Drawing.Diagrams.PropertySet? openXmlElement, Int32? value)
+
+  public static void SetFixedHeightOverride(PropertySet? openXmlElement, Int32? value)
   {
     if (openXmlElement != null)
       openXmlElement.FixedHeightOverride = value;
   }
-  
+
   /// <summary>
-  /// Width Scale
+  ///   Width Scale
   /// </summary>
-  public static Int32? GetWidthScale(DocumentFormat.OpenXml.Drawing.Diagrams.PropertySet? openXmlElement)
+  public static Int32? GetWidthScale(PropertySet? openXmlElement)
   {
     return openXmlElement?.WidthScale?.Value;
   }
-  
-  public static void SetWidthScale(DocumentFormat.OpenXml.Drawing.Diagrams.PropertySet? openXmlElement, Int32? value)
+
+  public static void SetWidthScale(PropertySet? openXmlElement, Int32? value)
   {
     if (openXmlElement != null)
       openXmlElement.WidthScale = value;
   }
-  
+
   /// <summary>
-  /// Height Scale
+  ///   Height Scale
   /// </summary>
-  public static Int32? GetHightScale(DocumentFormat.OpenXml.Drawing.Diagrams.PropertySet? openXmlElement)
+  public static Int32? GetHightScale(PropertySet? openXmlElement)
   {
     return openXmlElement?.HightScale?.Value;
   }
-  
-  public static void SetHightScale(DocumentFormat.OpenXml.Drawing.Diagrams.PropertySet? openXmlElement, Int32? value)
+
+  public static void SetHightScale(PropertySet? openXmlElement, Int32? value)
   {
     if (openXmlElement != null)
       openXmlElement.HightScale = value;
   }
-  
+
   /// <summary>
-  /// Text Changed
+  ///   Text Changed
   /// </summary>
-  public static Boolean? GetTextChanged(DocumentFormat.OpenXml.Drawing.Diagrams.PropertySet? openXmlElement)
+  public static Boolean? GetTextChanged(PropertySet? openXmlElement)
   {
     return openXmlElement?.TextChanged?.Value;
   }
-  
-  public static void SetTextChanged(DocumentFormat.OpenXml.Drawing.Diagrams.PropertySet? openXmlElement, Boolean? value)
+
+  public static void SetTextChanged(PropertySet? openXmlElement, Boolean? value)
   {
     if (openXmlElement != null)
       if (value != null)
@@ -357,103 +361,103 @@ public static class PropertySetConverter
       else
         openXmlElement.TextChanged = null;
   }
-  
+
   /// <summary>
-  /// Custom Factor Width
+  ///   Custom Factor Width
   /// </summary>
-  public static Int32? GetFactorWidth(DocumentFormat.OpenXml.Drawing.Diagrams.PropertySet? openXmlElement)
+  public static Int32? GetFactorWidth(PropertySet? openXmlElement)
   {
     return openXmlElement?.FactorWidth?.Value;
   }
-  
-  public static void SetFactorWidth(DocumentFormat.OpenXml.Drawing.Diagrams.PropertySet? openXmlElement, Int32? value)
+
+  public static void SetFactorWidth(PropertySet? openXmlElement, Int32? value)
   {
     if (openXmlElement != null)
       openXmlElement.FactorWidth = value;
   }
-  
+
   /// <summary>
-  /// Custom Factor Height
+  ///   Custom Factor Height
   /// </summary>
-  public static Int32? GetFactorHeight(DocumentFormat.OpenXml.Drawing.Diagrams.PropertySet? openXmlElement)
+  public static Int32? GetFactorHeight(PropertySet? openXmlElement)
   {
     return openXmlElement?.FactorHeight?.Value;
   }
-  
-  public static void SetFactorHeight(DocumentFormat.OpenXml.Drawing.Diagrams.PropertySet? openXmlElement, Int32? value)
+
+  public static void SetFactorHeight(PropertySet? openXmlElement, Int32? value)
   {
     if (openXmlElement != null)
       openXmlElement.FactorHeight = value;
   }
-  
+
   /// <summary>
-  /// Neighbor Offset Width
+  ///   Neighbor Offset Width
   /// </summary>
-  public static Int32? GetNeighborOffsetWidth(DocumentFormat.OpenXml.Drawing.Diagrams.PropertySet? openXmlElement)
+  public static Int32? GetNeighborOffsetWidth(PropertySet? openXmlElement)
   {
     return openXmlElement?.NeighborOffsetWidth?.Value;
   }
-  
-  public static void SetNeighborOffsetWidth(DocumentFormat.OpenXml.Drawing.Diagrams.PropertySet? openXmlElement, Int32? value)
+
+  public static void SetNeighborOffsetWidth(PropertySet? openXmlElement, Int32? value)
   {
     if (openXmlElement != null)
       openXmlElement.NeighborOffsetWidth = value;
   }
-  
+
   /// <summary>
-  /// Neighbor Offset Height
+  ///   Neighbor Offset Height
   /// </summary>
-  public static Int32? GetNeighborOffsetHeight(DocumentFormat.OpenXml.Drawing.Diagrams.PropertySet? openXmlElement)
+  public static Int32? GetNeighborOffsetHeight(PropertySet? openXmlElement)
   {
     return openXmlElement?.NeighborOffsetHeight?.Value;
   }
-  
-  public static void SetNeighborOffsetHeight(DocumentFormat.OpenXml.Drawing.Diagrams.PropertySet? openXmlElement, Int32? value)
+
+  public static void SetNeighborOffsetHeight(PropertySet? openXmlElement, Int32? value)
   {
     if (openXmlElement != null)
       openXmlElement.NeighborOffsetHeight = value;
   }
-  
+
   /// <summary>
-  /// Radius Scale
+  ///   Radius Scale
   /// </summary>
-  public static Int32? GetRadiusScale(DocumentFormat.OpenXml.Drawing.Diagrams.PropertySet? openXmlElement)
+  public static Int32? GetRadiusScale(PropertySet? openXmlElement)
   {
     return openXmlElement?.RadiusScale?.Value;
   }
-  
-  public static void SetRadiusScale(DocumentFormat.OpenXml.Drawing.Diagrams.PropertySet? openXmlElement, Int32? value)
+
+  public static void SetRadiusScale(PropertySet? openXmlElement, Int32? value)
   {
     if (openXmlElement != null)
       openXmlElement.RadiusScale = value;
   }
-  
+
   /// <summary>
-  /// Include Angle Scale
+  ///   Include Angle Scale
   /// </summary>
-  public static Int32? GetIncludeAngleScale(DocumentFormat.OpenXml.Drawing.Diagrams.PropertySet? openXmlElement)
+  public static Int32? GetIncludeAngleScale(PropertySet? openXmlElement)
   {
     return openXmlElement?.IncludeAngleScale?.Value;
   }
-  
-  public static void SetIncludeAngleScale(DocumentFormat.OpenXml.Drawing.Diagrams.PropertySet? openXmlElement, Int32? value)
+
+  public static void SetIncludeAngleScale(PropertySet? openXmlElement, Int32? value)
   {
     if (openXmlElement != null)
       openXmlElement.IncludeAngleScale = value;
   }
-  
+
   /// <summary>
-  /// Presentation Layout Variables.
+  ///   Presentation Layout Variables.
   /// </summary>
-  public static DocumentModel.Drawings.Diagrams.PresentationLayoutVariables? GetPresentationLayoutVariables(DocumentFormat.OpenXml.Drawing.Diagrams.PropertySet? openXmlElement)
+  public static PresentationLayoutVariables? GetPresentationLayoutVariables(PropertySet? openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.Diagrams.PresentationLayoutVariables>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.Diagrams.PresentationLayoutVariablesConverter.CreateModelElement(itemElement);
+      return PresentationLayoutVariablesConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetPresentationLayoutVariables(DocumentFormat.OpenXml.Drawing.Diagrams.PropertySet? openXmlElement, DocumentModel.Drawings.Diagrams.PresentationLayoutVariables? value)
+
+  public static void SetPresentationLayoutVariables(PropertySet? openXmlElement, PresentationLayoutVariables? value)
   {
     if (openXmlElement != null)
     {
@@ -462,25 +466,25 @@ public static class PropertySetConverter
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Drawings.Diagrams.PresentationLayoutVariablesConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Diagrams.PresentationLayoutVariables>(value);
+        itemElement = PresentationLayoutVariablesConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Diagrams.PresentationLayoutVariables>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
+
   /// <summary>
-  /// Shape Style.
+  ///   Shape Style.
   /// </summary>
-  public static DocumentModel.Drawings.Diagrams.Style? GetStyle(DocumentFormat.OpenXml.Drawing.Diagrams.PropertySet? openXmlElement)
+  public static Style? GetStyle(PropertySet? openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.Diagrams.Style>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.Diagrams.StyleConverter.CreateModelElement(itemElement);
+      return StyleConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetStyle(DocumentFormat.OpenXml.Drawing.Diagrams.PropertySet? openXmlElement, DocumentModel.Drawings.Diagrams.Style? value)
+
+  public static void SetStyle(PropertySet? openXmlElement, Style? value)
   {
     if (openXmlElement != null)
     {
@@ -489,14 +493,14 @@ public static class PropertySetConverter
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Drawings.Diagrams.StyleConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Diagrams.Style>(value);
+        itemElement = StyleConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Diagrams.Style>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static DocumentModel.Drawings.Diagrams.PropertySet? CreateModelElement(DocumentFormat.OpenXml.Drawing.Diagrams.PropertySet? openXmlElement)
+
+  public static DocumentModel.Drawings.Diagrams.PropertySet? CreateModelElement(PropertySet? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -535,9 +539,9 @@ public static class PropertySetConverter
     }
     return null;
   }
-  
+
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.Diagrams.PropertySet? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.Diagrams.PropertySet, new()
+    where OpenXmlElementType : PropertySet, new()
   {
     if (value != null)
     {

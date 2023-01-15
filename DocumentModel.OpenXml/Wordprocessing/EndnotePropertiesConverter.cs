@@ -1,54 +1,56 @@
+using DocumentFormat.OpenXml.Wordprocessing;
+using DocumentModel.Wordprocessing;
+using EndnoteProperties = DocumentFormat.OpenXml.Wordprocessing.EndnoteProperties;
+using NumberingFormat = DocumentModel.Wordprocessing.NumberingFormat;
+
 namespace DocumentModel.OpenXml.Wordprocessing;
 
 /// <summary>
-/// Defines the EndnoteProperties Class.
+///   Defines the EndnoteProperties Class.
 /// </summary>
 public static class EndnotePropertiesConverter
 {
   /// <summary>
-  /// Endnote Placement.
+  ///   Endnote Placement.
   /// </summary>
-  public static DocumentModel.Wordprocessing.EndnotePositionKind? GetEndnotePosition(DocumentFormat.OpenXml.Wordprocessing.EndnoteProperties? openXmlElement)
+  public static EndnotePositionKind? GetEndnotePosition(EndnoteProperties? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.EndnotePosition>();
-      if (itemElement?.Val?.Value != null)
-      {
-        return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Wordprocessing.EndnotePositionValues, DocumentModel.Wordprocessing.EndnotePositionKind>(itemElement.Val.Value);
-      }
+      var itemElement = openXmlElement.GetFirstChild<EndnotePosition>();
+      if (itemElement?.Val?.Value != null) return EnumValueConverter.GetValue<EndnotePositionValues, EndnotePositionKind>(itemElement.Val.Value);
     }
     return null;
   }
-  
-  public static void SetEndnotePosition(DocumentFormat.OpenXml.Wordprocessing.EndnoteProperties? openXmlElement, DocumentModel.Wordprocessing.EndnotePositionKind? value)
+
+  public static void SetEndnotePosition(EndnoteProperties? openXmlElement, EndnotePositionKind? value)
   {
     if (openXmlElement != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.EndnotePosition>();
+      var itemElement = openXmlElement.GetFirstChild<EndnotePosition>();
       if (itemElement != null)
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = EnumValueConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.EndnotePosition, DocumentFormat.OpenXml.Wordprocessing.EndnotePositionValues, DocumentModel.Wordprocessing.EndnotePositionKind>(value);
+        itemElement = EnumValueConverter.CreateOpenXmlElement<EndnotePosition, EndnotePositionValues, EndnotePositionKind>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
+
   /// <summary>
-  /// Endnote Numbering Format.
+  ///   Endnote Numbering Format.
   /// </summary>
-  public static DocumentModel.Wordprocessing.NumberingFormat? GetNumberingFormat(DocumentFormat.OpenXml.Wordprocessing.EndnoteProperties? openXmlElement)
+  public static NumberingFormat? GetNumberingFormat(EndnoteProperties? openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.NumberingFormat>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Wordprocessing.NumberingFormatConverter.CreateModelElement(itemElement);
+      return NumberingFormatConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetNumberingFormat(DocumentFormat.OpenXml.Wordprocessing.EndnoteProperties? openXmlElement, DocumentModel.Wordprocessing.NumberingFormat? value)
+
+  public static void SetNumberingFormat(EndnoteProperties? openXmlElement, NumberingFormat? value)
   {
     if (openXmlElement != null)
     {
@@ -57,72 +59,69 @@ public static class EndnotePropertiesConverter
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Wordprocessing.NumberingFormatConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.NumberingFormat>(value);
+        itemElement = NumberingFormatConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.NumberingFormat>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
+
   /// <summary>
-  /// Footnote and Endnote Numbering Starting Value.
+  ///   Footnote and Endnote Numbering Starting Value.
   /// </summary>
-  public static UInt16? GetNumberingStart(DocumentFormat.OpenXml.Wordprocessing.EndnoteProperties? openXmlElement)
+  public static UInt16? GetNumberingStart(EndnoteProperties? openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.NumberingStart>();
+    var itemElement = openXmlElement?.GetFirstChild<NumberingStart>();
     if (itemElement != null)
       return itemElement.Val?.Value;
     return null;
   }
-  
-  public static void SetNumberingStart(DocumentFormat.OpenXml.Wordprocessing.EndnoteProperties? openXmlElement, UInt16? value)
+
+  public static void SetNumberingStart(EndnoteProperties? openXmlElement, UInt16? value)
   {
     if (openXmlElement != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.NumberingStart>();
+      var itemElement = openXmlElement.GetFirstChild<NumberingStart>();
       if (itemElement != null)
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = new DocumentFormat.OpenXml.Wordprocessing.NumberingStart{ Val = value };
+        itemElement = new NumberingStart { Val = value };
         openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
+
   /// <summary>
-  /// Footnote and Endnote Numbering Restart Location.
+  ///   Footnote and Endnote Numbering Restart Location.
   /// </summary>
-  public static DocumentModel.Wordprocessing.RestartNumberKind? GetNumberingRestart(DocumentFormat.OpenXml.Wordprocessing.EndnoteProperties? openXmlElement)
+  public static RestartNumberKind? GetNumberingRestart(EndnoteProperties? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.NumberingRestart>();
-      if (itemElement?.Val?.Value != null)
-      {
-        return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Wordprocessing.RestartNumberValues, DocumentModel.Wordprocessing.RestartNumberKind>(itemElement.Val.Value);
-      }
+      var itemElement = openXmlElement.GetFirstChild<NumberingRestart>();
+      if (itemElement?.Val?.Value != null) return EnumValueConverter.GetValue<RestartNumberValues, RestartNumberKind>(itemElement.Val.Value);
     }
     return null;
   }
-  
-  public static void SetNumberingRestart(DocumentFormat.OpenXml.Wordprocessing.EndnoteProperties? openXmlElement, DocumentModel.Wordprocessing.RestartNumberKind? value)
+
+  public static void SetNumberingRestart(EndnoteProperties? openXmlElement, RestartNumberKind? value)
   {
     if (openXmlElement != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.NumberingRestart>();
+      var itemElement = openXmlElement.GetFirstChild<NumberingRestart>();
       if (itemElement != null)
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = EnumValueConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.NumberingRestart, DocumentFormat.OpenXml.Wordprocessing.RestartNumberValues, DocumentModel.Wordprocessing.RestartNumberKind>(value);
+        itemElement = EnumValueConverter.CreateOpenXmlElement<NumberingRestart, RestartNumberValues, RestartNumberKind>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static DocumentModel.Wordprocessing.EndnoteProperties? CreateModelElement(DocumentFormat.OpenXml.Wordprocessing.EndnoteProperties? openXmlElement)
+
+  public static DocumentModel.Wordprocessing.EndnoteProperties? CreateModelElement(EndnoteProperties? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -135,9 +134,9 @@ public static class EndnotePropertiesConverter
     }
     return null;
   }
-  
+
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.EndnoteProperties? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Wordprocessing.EndnoteProperties, new()
+    where OpenXmlElementType : EndnoteProperties, new()
   {
     if (value != null)
     {

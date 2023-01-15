@@ -1,48 +1,47 @@
 namespace DocumentModel.Wordprocessing;
 
 /// <summary>
-/// Defines the SpacingBetweenLines Class.
+///   Defines the SpacingBetweenLines Class.
 /// </summary>
-public partial class SpacingBetweenLines
+public class SpacingBetweenLines
 {
   /// <summary>
-  /// Spacing Above Paragraph
+  ///   Spacing Above Paragraph
   /// </summary>
   public String? Before { get; set; }
-  
+
   /// <summary>
-  /// Spacing Above Paragraph IN Line Units
+  ///   Spacing Above Paragraph IN Line Units
   /// </summary>
   public Int32? BeforeLines { get; set; }
-  
+
   /// <summary>
-  /// Automatically Determine Spacing Above Paragraph
+  ///   Automatically Determine Spacing Above Paragraph
   /// </summary>
   public Boolean? BeforeAutoSpacing { get; set; }
-  
+
   /// <summary>
-  /// Spacing Below Paragraph
+  ///   Spacing Below Paragraph
   /// </summary>
   public String? After { get; set; }
-  
+
   /// <summary>
-  /// Spacing Below Paragraph in Line Units
+  ///   Spacing Below Paragraph in Line Units
   /// </summary>
   public Int32? AfterLines { get; set; }
-  
+
   /// <summary>
-  /// Automatically Determine Spacing Below Paragraph
+  ///   Automatically Determine Spacing Below Paragraph
   /// </summary>
   public Boolean? AfterAutoSpacing { get; set; }
-  
+
   /// <summary>
-  /// Spacing Between Lines in Paragraph
+  ///   Spacing Between Lines in Paragraph
   /// </summary>
   public String? Line { get; set; }
-  
+
   /// <summary>
-  /// Type of Spacing Between Lines
+  ///   Type of Spacing Between Lines
   /// </summary>
-  public DocumentModel.Wordprocessing.LineSpacingRuleKind? LineRule { get; set; }
-  
+  public LineSpacingRuleKind? LineRule { get; set; }
 }

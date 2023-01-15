@@ -1,38 +1,37 @@
 namespace DocumentModel.Drawings;
 
 /// <summary>
-/// Transform Effect.
+///   Transform Effect.
 /// </summary>
-public partial class TransformEffect
+public class TransformEffect
 {
   /// <summary>
-  /// Horizontal Ratio
+  ///   Horizontal Ratio
   /// </summary>
   public Int32? HorizontalRatio { get; set; }
-  
+
   /// <summary>
-  /// Vertical Ratio
+  ///   Vertical Ratio
   /// </summary>
   public Int32? VerticalRatio { get; set; }
-  
+
   /// <summary>
-  /// Horizontal Skew
+  ///   Horizontal Skew
   /// </summary>
   public Int32? HorizontalSkew { get; set; }
-  
+
   /// <summary>
-  /// Vertical Skew
+  ///   Vertical Skew
   /// </summary>
   public Int32? VerticalSkew { get; set; }
-  
+
   /// <summary>
-  /// Horizontal Shift
+  ///   Horizontal Shift
   /// </summary>
   public Int64? HorizontalShift { get; set; }
-  
+
   /// <summary>
-  /// Vertical Shift
+  ///   Vertical Shift
   /// </summary>
   public Int64? VerticalShift { get; set; }
-  
 }

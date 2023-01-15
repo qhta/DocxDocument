@@ -1,18 +1,20 @@
+using DocumentModel.UI;
+
 namespace DocumentModel.OpenXml.UI;
 
 /// <summary>
-/// Defines CustomUI.
+///   Defines CustomUI.
 /// </summary>
 public static class CustomUIConverter
 {
   /// <summary>
-  /// onLoad
+  ///   onLoad
   /// </summary>
   public static String? GetOnLoad(DocumentFormat.OpenXml.Office.CustomUI.CustomUI? openXmlElement)
   {
     return openXmlElement?.OnLoad?.Value;
   }
-  
+
   public static void SetOnLoad(DocumentFormat.OpenXml.Office.CustomUI.CustomUI? openXmlElement, String? value)
   {
     if (openXmlElement != null)
@@ -21,15 +23,15 @@ public static class CustomUIConverter
       else
         openXmlElement.OnLoad = null;
   }
-  
+
   /// <summary>
-  /// loadImage
+  ///   loadImage
   /// </summary>
   public static String? GetLoadImage(DocumentFormat.OpenXml.Office.CustomUI.CustomUI? openXmlElement)
   {
     return openXmlElement?.LoadImage?.Value;
   }
-  
+
   public static void SetLoadImage(DocumentFormat.OpenXml.Office.CustomUI.CustomUI? openXmlElement, String? value)
   {
     if (openXmlElement != null)
@@ -38,19 +40,19 @@ public static class CustomUIConverter
       else
         openXmlElement.LoadImage = null;
   }
-  
+
   /// <summary>
-  /// RepurposedCommands.
+  ///   RepurposedCommands.
   /// </summary>
-  public static DocumentModel.UI.RepurposedCommands? GetRepurposedCommands(DocumentFormat.OpenXml.Office.CustomUI.CustomUI? openXmlElement)
+  public static RepurposedCommands? GetRepurposedCommands(DocumentFormat.OpenXml.Office.CustomUI.CustomUI? openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office.CustomUI.RepurposedCommands>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.UI.RepurposedCommandsConverter.CreateModelElement(itemElement);
+      return RepurposedCommandsConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetRepurposedCommands(DocumentFormat.OpenXml.Office.CustomUI.CustomUI? openXmlElement, DocumentModel.UI.RepurposedCommands? value)
+
+  public static void SetRepurposedCommands(DocumentFormat.OpenXml.Office.CustomUI.CustomUI? openXmlElement, RepurposedCommands? value)
   {
     if (openXmlElement != null)
     {
@@ -59,24 +61,24 @@ public static class CustomUIConverter
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.UI.RepurposedCommandsConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office.CustomUI.RepurposedCommands>(value);
+        itemElement = RepurposedCommandsConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office.CustomUI.RepurposedCommands>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
+
   /// <summary>
-  /// Ribbon.
+  ///   Ribbon.
   /// </summary>
   public static DocumentModel.UI.Ribbon? GetRibbon(DocumentFormat.OpenXml.Office.CustomUI.CustomUI? openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office.CustomUI.Ribbon>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.UI.RibbonConverter.CreateModelElement(itemElement);
+      return RibbonConverter.CreateModelElement(itemElement);
     return null;
   }
-  
+
   public static void SetRibbon(DocumentFormat.OpenXml.Office.CustomUI.CustomUI? openXmlElement, DocumentModel.UI.Ribbon? value)
   {
     if (openXmlElement != null)
@@ -86,13 +88,13 @@ public static class CustomUIConverter
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.UI.RibbonConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office.CustomUI.Ribbon>(value);
+        itemElement = RibbonConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office.CustomUI.Ribbon>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
+
   public static DocumentModel.UI.CustomUI? CreateModelElement(DocumentFormat.OpenXml.Office.CustomUI.CustomUI? openXmlElement)
   {
     if (openXmlElement != null)
@@ -106,9 +108,9 @@ public static class CustomUIConverter
     }
     return null;
   }
-  
+
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.UI.CustomUI? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Office.CustomUI.CustomUI, new()
+    where OpenXmlElementType : DocumentFormat.OpenXml.Office.CustomUI.CustomUI, new()
   {
     if (value != null)
     {

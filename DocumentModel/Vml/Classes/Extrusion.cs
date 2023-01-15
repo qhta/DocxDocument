@@ -1,163 +1,162 @@
 namespace DocumentModel.Vml;
 
 /// <summary>
-/// 3D Extrusion.
+///   3D Extrusion.
 /// </summary>
-public partial class Extrusion
+public class Extrusion
 {
   /// <summary>
-  /// VML Extension Handling Behavior
+  ///   VML Extension Handling Behavior
   /// </summary>
-  public DocumentModel.Vml.ExtensionHandlingBehaviorKind? Extension { get; set; }
-  
+  public ExtensionHandlingBehaviorKind? Extension { get; set; }
+
   /// <summary>
-  /// Extrusion Toggle
+  ///   Extrusion Toggle
   /// </summary>
   public Boolean? On { get; set; }
-  
+
   /// <summary>
-  /// Extrusion Type
+  ///   Extrusion Type
   /// </summary>
-  public DocumentModel.Vml.ExtrusionKind? Type { get; set; }
-  
+  public ExtrusionKind? Type { get; set; }
+
   /// <summary>
-  /// Extrusion Render Mode
+  ///   Extrusion Render Mode
   /// </summary>
-  public DocumentModel.Vml.ExtrusionRenderKind? Render { get; set; }
-  
+  public ExtrusionRenderKind? Render { get; set; }
+
   /// <summary>
-  /// Extrusion Viewpoint Origin
+  ///   Extrusion Viewpoint Origin
   /// </summary>
   public String? ViewpointOrigin { get; set; }
-  
+
   /// <summary>
-  /// Extrusion Viewpoint
+  ///   Extrusion Viewpoint
   /// </summary>
   public String? Viewpoint { get; set; }
-  
+
   /// <summary>
-  /// Extrusion Skew Angle
+  ///   Extrusion Skew Angle
   /// </summary>
   public Single? SkewAngle { get; set; }
-  
+
   /// <summary>
-  /// Extrusion Skew
+  ///   Extrusion Skew
   /// </summary>
   public String? SkewAmount { get; set; }
-  
+
   /// <summary>
-  /// Forward Extrusion
+  ///   Forward Extrusion
   /// </summary>
   public String? ForceDepth { get; set; }
-  
+
   /// <summary>
-  /// Backward Extrusion Depth
+  ///   Backward Extrusion Depth
   /// </summary>
   public String? BackDepth { get; set; }
-  
+
   /// <summary>
-  /// Rotation Axis
+  ///   Rotation Axis
   /// </summary>
   public String? Orientation { get; set; }
-  
+
   /// <summary>
-  /// Rotation Around Axis
+  ///   Rotation Around Axis
   /// </summary>
   public Single? OrientationAngle { get; set; }
-  
+
   /// <summary>
-  /// Rotation Toggle
+  ///   Rotation Toggle
   /// </summary>
   public Boolean? LockRotationCenter { get; set; }
-  
+
   /// <summary>
-  /// Center of Rotation Toggle
+  ///   Center of Rotation Toggle
   /// </summary>
   public Boolean? AutoRotationCenter { get; set; }
-  
+
   /// <summary>
-  /// Rotation Center
+  ///   Rotation Center
   /// </summary>
   public String? RotationCenter { get; set; }
-  
+
   /// <summary>
-  /// X-Y Rotation Angle
+  ///   X-Y Rotation Angle
   /// </summary>
   public String? RotationAngle { get; set; }
-  
+
   /// <summary>
-  /// Extrusion Color
+  ///   Extrusion Color
   /// </summary>
   public String? Color { get; set; }
-  
+
   /// <summary>
-  /// Shininess
+  ///   Shininess
   /// </summary>
   public Single? Shininess { get; set; }
-  
+
   /// <summary>
-  /// Specularity
+  ///   Specularity
   /// </summary>
   public String? Specularity { get; set; }
-  
+
   /// <summary>
-  /// Diffuse Reflection
+  ///   Diffuse Reflection
   /// </summary>
   public String? Diffusity { get; set; }
-  
+
   /// <summary>
-  /// Metallic Surface Toggle
+  ///   Metallic Surface Toggle
   /// </summary>
   public Boolean? Metal { get; set; }
-  
+
   /// <summary>
-  /// Simulated Bevel
+  ///   Simulated Bevel
   /// </summary>
   public String? Edge { get; set; }
-  
+
   /// <summary>
-  /// Faceting Quality
+  ///   Faceting Quality
   /// </summary>
   public String? Facet { get; set; }
-  
+
   /// <summary>
-  /// Shape Face Lighting Toggle
+  ///   Shape Face Lighting Toggle
   /// </summary>
   public Boolean? LightFace { get; set; }
-  
+
   /// <summary>
-  /// Brightness
+  ///   Brightness
   /// </summary>
   public String? Brightness { get; set; }
-  
+
   /// <summary>
-  /// Primary Light Position
+  ///   Primary Light Position
   /// </summary>
   public String? LightPosition { get; set; }
-  
+
   /// <summary>
-  /// Primary Light Intensity
+  ///   Primary Light Intensity
   /// </summary>
   public String? LightLevel { get; set; }
-  
+
   /// <summary>
-  /// Primary Light Harshness Toggle
+  ///   Primary Light Harshness Toggle
   /// </summary>
   public Boolean? LightHarsh { get; set; }
-  
+
   /// <summary>
-  /// Secondary Light Position
+  ///   Secondary Light Position
   /// </summary>
   public String? LightPosition2 { get; set; }
-  
+
   /// <summary>
-  /// Secondary Light Intensity
+  ///   Secondary Light Intensity
   /// </summary>
   public String? LightLevel2 { get; set; }
-  
+
   /// <summary>
-  /// Secondary Light Harshness Toggle
+  ///   Secondary Light Harshness Toggle
   /// </summary>
   public Boolean? LightHarsh2 { get; set; }
-  
 }

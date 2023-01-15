@@ -1,18 +1,17 @@
 namespace DocumentModel.Wordprocessing;
 
 /// <summary>
-/// Defines the Scene3D Class.
+///   Defines the Scene3D Class.
 /// </summary>
-public partial class Scene3D
+public class Scene3D
 {
   /// <summary>
-  /// Camera.
+  ///   Camera.
   /// </summary>
-  public DocumentModel.Wordprocessing.Camera? Camera { get; set; }
-  
+  public Camera? Camera { get; set; }
+
   /// <summary>
-  /// LightRig.
+  ///   LightRig.
   /// </summary>
-  public DocumentModel.Wordprocessing.LightRig? LightRig { get; set; }
-  
+  public LightRig? LightRig { get; set; }
 }

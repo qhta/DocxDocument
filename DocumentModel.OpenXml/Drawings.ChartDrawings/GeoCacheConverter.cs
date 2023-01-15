@@ -1,19 +1,22 @@
+using DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing;
+using Clear = DocumentModel.Drawings.ChartDrawings.Clear;
+
 namespace DocumentModel.OpenXml.Drawings.ChartDrawings;
 
 /// <summary>
-/// Defines the GeoCache Class.
+///   Defines the GeoCache Class.
 /// </summary>
 public static class GeoCacheConverter
 {
   /// <summary>
-  /// provider, this property is only available in Office 2016 and later.
+  ///   provider, this property is only available in Office 2016 and later.
   /// </summary>
-  public static String? GetProvider(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.GeoCache? openXmlElement)
+  public static String? GetProvider(GeoCache? openXmlElement)
   {
     return openXmlElement?.Provider?.Value;
   }
-  
-  public static void SetProvider(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.GeoCache? openXmlElement, String? value)
+
+  public static void SetProvider(GeoCache? openXmlElement, String? value)
   {
     if (openXmlElement != null)
       if (value != null)
@@ -21,39 +24,39 @@ public static class GeoCacheConverter
       else
         openXmlElement.Provider = null;
   }
-  
-  public static String? GetXsdbase64Binary(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.GeoCache? openXmlElement)
+
+  public static String? GetXsdbase64Binary(GeoCache? openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.Xsdbase64Binary>();
+    var itemElement = openXmlElement?.GetFirstChild<Xsdbase64Binary>();
     if (itemElement != null)
       return itemElement.Text;
     return null;
   }
-  
-  public static void SetXsdbase64Binary(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.GeoCache? openXmlElement, String? value)
+
+  public static void SetXsdbase64Binary(GeoCache? openXmlElement, String? value)
   {
     if (openXmlElement != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.Xsdbase64Binary>();
+      var itemElement = openXmlElement.GetFirstChild<Xsdbase64Binary>();
       if (itemElement != null)
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = new DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.Xsdbase64Binary { Text = value };
+        itemElement = new Xsdbase64Binary { Text = value };
         openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static DocumentModel.Drawings.ChartDrawings.Clear? GetClear(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.GeoCache? openXmlElement)
+
+  public static Clear? GetClear(GeoCache? openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.Clear>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.ChartDrawings.ClearConverter.CreateModelElement(itemElement);
+      return ClearConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetClear(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.GeoCache? openXmlElement, DocumentModel.Drawings.ChartDrawings.Clear? value)
+
+  public static void SetClear(GeoCache? openXmlElement, Clear? value)
   {
     if (openXmlElement != null)
     {
@@ -62,14 +65,14 @@ public static class GeoCacheConverter
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Drawings.ChartDrawings.ClearConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.Clear>(value);
+        itemElement = ClearConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.Clear>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static DocumentModel.Drawings.ChartDrawings.GeoCache? CreateModelElement(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.GeoCache? openXmlElement)
+
+  public static DocumentModel.Drawings.ChartDrawings.GeoCache? CreateModelElement(GeoCache? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -81,9 +84,9 @@ public static class GeoCacheConverter
     }
     return null;
   }
-  
+
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.ChartDrawings.GeoCache? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.GeoCache, new()
+    where OpenXmlElementType : GeoCache, new()
   {
     if (value != null)
     {

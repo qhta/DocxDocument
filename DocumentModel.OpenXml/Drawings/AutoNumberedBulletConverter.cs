@@ -1,39 +1,43 @@
+using DocumentFormat.OpenXml.Drawing;
+using DocumentModel.Drawings;
+using AutoNumberedBullet = DocumentFormat.OpenXml.Drawing.AutoNumberedBullet;
+
 namespace DocumentModel.OpenXml.Drawings;
 
 /// <summary>
-/// Auto-Numbered Bullet.
+///   Auto-Numbered Bullet.
 /// </summary>
 public static class AutoNumberedBulletConverter
 {
   /// <summary>
-  /// Bullet Autonumbering Type
+  ///   Bullet Autonumbering Type
   /// </summary>
-  public static DocumentModel.Drawings.TextAutoNumberSchemeKind? GetType(DocumentFormat.OpenXml.Drawing.AutoNumberedBullet? openXmlElement)
+  public static TextAutoNumberSchemeKind? GetType(AutoNumberedBullet? openXmlElement)
   {
-    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Drawing.TextAutoNumberSchemeValues, DocumentModel.Drawings.TextAutoNumberSchemeKind>(openXmlElement?.Type?.Value);
+    return EnumValueConverter.GetValue<TextAutoNumberSchemeValues, TextAutoNumberSchemeKind>(openXmlElement?.Type?.Value);
   }
-  
-  public static void SetType(DocumentFormat.OpenXml.Drawing.AutoNumberedBullet? openXmlElement, DocumentModel.Drawings.TextAutoNumberSchemeKind? value)
+
+  public static void SetType(AutoNumberedBullet? openXmlElement, TextAutoNumberSchemeKind? value)
   {
     if (openXmlElement != null)
-      openXmlElement.Type = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Drawing.TextAutoNumberSchemeValues, DocumentModel.Drawings.TextAutoNumberSchemeKind>(value);
+      openXmlElement.Type = EnumValueConverter.CreateEnumValue<TextAutoNumberSchemeValues, TextAutoNumberSchemeKind>(value);
   }
-  
+
   /// <summary>
-  /// Start Numbering At
+  ///   Start Numbering At
   /// </summary>
-  public static Int32? GetStartAt(DocumentFormat.OpenXml.Drawing.AutoNumberedBullet? openXmlElement)
+  public static Int32? GetStartAt(AutoNumberedBullet? openXmlElement)
   {
     return openXmlElement?.StartAt?.Value;
   }
-  
-  public static void SetStartAt(DocumentFormat.OpenXml.Drawing.AutoNumberedBullet? openXmlElement, Int32? value)
+
+  public static void SetStartAt(AutoNumberedBullet? openXmlElement, Int32? value)
   {
     if (openXmlElement != null)
       openXmlElement.StartAt = value;
   }
-  
-  public static DocumentModel.Drawings.AutoNumberedBullet? CreateModelElement(DocumentFormat.OpenXml.Drawing.AutoNumberedBullet? openXmlElement)
+
+  public static DocumentModel.Drawings.AutoNumberedBullet? CreateModelElement(AutoNumberedBullet? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -44,9 +48,9 @@ public static class AutoNumberedBulletConverter
     }
     return null;
   }
-  
+
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.AutoNumberedBullet? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.AutoNumberedBullet, new()
+    where OpenXmlElementType : AutoNumberedBullet, new()
   {
     if (value != null)
     {

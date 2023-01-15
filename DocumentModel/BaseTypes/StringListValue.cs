@@ -1,24 +1,19 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Collections.Specialized;
+﻿#nullable enable
 using System.Diagnostics;
-using System.Text;
 
-
-#nullable enable
 namespace DocumentModel;
 
 /// <summary>Represents the list value attributes (xsd:list).</summary>
 [DebuggerDisplay("{InnerText}")]
-public class StringListValue: ICollection<string>, IEnumerable
+public class StringListValue : ICollection<string>, IEnumerable
 {
-  private string? TextValue;
   private const string _listSeparator = " ";
   private ObservableCollection<string>? _list;
-
+  private string? TextValue;
 
   /// <summary>
-  /// Initializes a new instance of the <see cref="string:DocumentFormat.OpenXml.ListValue`1" /> class using the supplied list of values.
+  ///   Initializes a new instance of the <see cref="string:DocumentFormat.OpenXml.ListValue`1" /> class using the supplied
+  ///   list of values.
   /// </summary>
   /// <param name="list">The list of the values.</param>
   public StringListValue(IEnumerable<string> list)
@@ -26,8 +21,8 @@ public class StringListValue: ICollection<string>, IEnumerable
     if (list == null)
       throw new ArgumentNullException(nameof(list));
     _list = new ObservableCollection<string>();
-    _list.CollectionChanged += new NotifyCollectionChangedEventHandler(CollectionChanged);
-    foreach (string obj in list)
+    _list.CollectionChanged += CollectionChanged;
+    foreach (var obj in list)
       _list.Add(obj);
   }
 
@@ -40,7 +35,6 @@ public class StringListValue: ICollection<string>, IEnumerable
   //{
   //}
 
-  
   /// <summary>Gets the values.</summary>
   public ICollection<string> Items
   {
@@ -51,49 +45,17 @@ public class StringListValue: ICollection<string>, IEnumerable
         if (!string.IsNullOrEmpty(TextValue))
         {
           Parse();
-          if (_list==null)
+          if (_list == null)
             _list = new ObservableCollection<string>();
         }
         else
         {
           _list = new ObservableCollection<string>();
-          _list.CollectionChanged += new NotifyCollectionChangedEventHandler(CollectionChanged);
+          _list.CollectionChanged += CollectionChanged;
         }
       }
       return _list;
     }
-  }
-
-  /// <summary>Convert the text to meaningful value.</summary>
-  private void Parse()
-  {
-    _list = new ObservableCollection<string>();
-    _list.CollectionChanged += new NotifyCollectionChangedEventHandler(CollectionChanged);
-    if (TextValue==null || TextValue.Length==0)
-      return;
-    foreach (string str in TextValue.Split(new char[]{' '}, StringSplitOptions.RemoveEmptyEntries))
-    {
-      var obj = (string)Convert.ChangeType(str, typeof(string));
-      _list.Add(obj);
-    }
-  }
-
-  /// <summary>Convert the text to meaningful value.</summary>
-  /// <returns></returns>
-  private bool TryParse()
-  {
-    if (TextValue == null || TextValue.Length == 0)
-      return false;
-    string[] strArray = TextValue.Split(new char[] {' '}, StringSplitOptions.RemoveEmptyEntries);
-    ObservableCollection<string> observableCollection = new ObservableCollection<string>();
-    foreach (string str in strArray)
-    {
-      var obj2 = (string)Convert.ChangeType(str, typeof(string));
-      observableCollection.Add(obj2);
-    }
-    _list = observableCollection;
-    _list.CollectionChanged += new NotifyCollectionChangedEventHandler(CollectionChanged);
-    return true;
   }
 
   /// <summary>Gets or sets the inner XML text.</summary>
@@ -103,17 +65,15 @@ public class StringListValue: ICollection<string>, IEnumerable
     {
       if (TextValue == null && _list != null)
       {
-        StringBuilder stringBuilder = new StringBuilder();
-        string str = string.Empty;
-        foreach (string obj in (Collection<string>)_list)
-        {
-          if ((object)obj != null)
+        var stringBuilder = new StringBuilder();
+        var str = string.Empty;
+        foreach (var obj in _list)
+          if (obj != null)
           {
             stringBuilder.Append(str);
-            stringBuilder.Append(obj.ToString());
+            stringBuilder.Append(obj);
             str = " ";
           }
-        }
         TextValue = stringBuilder.ToString();
       }
       return TextValue;
@@ -125,12 +85,17 @@ public class StringListValue: ICollection<string>, IEnumerable
     }
   }
 
-  private void CollectionChanged(object? sender, NotifyCollectionChangedEventArgs e) => TextValue = null;
-
   /// <inheritdoc />
-  public IEnumerator<string> GetEnumerator() => Items.GetEnumerator();
+  public IEnumerator<string> GetEnumerator()
+  {
+    return Items.GetEnumerator();
+  }
 
-  IEnumerator IEnumerable.GetEnumerator() => (IEnumerator)GetEnumerator();
+  IEnumerator IEnumerable.GetEnumerator()
+  {
+    return GetEnumerator();
+  }
+
   public void Add(string item)
   {
     _list?.Add(item);
@@ -159,5 +124,41 @@ public class StringListValue: ICollection<string>, IEnumerable
   public int Count => _list?.Count ?? 0;
 
   public bool IsReadOnly => false;
-}
 
+  /// <summary>Convert the text to meaningful value.</summary>
+  private void Parse()
+  {
+    _list = new ObservableCollection<string>();
+    _list.CollectionChanged += CollectionChanged;
+    if (TextValue == null || TextValue.Length == 0)
+      return;
+    foreach (var str in TextValue.Split(new[] { ' ' }, StringSplitOptions.RemoveEmptyEntries))
+    {
+      var obj = (string)Convert.ChangeType(str, typeof(string));
+      _list.Add(obj);
+    }
+  }
+
+  /// <summary>Convert the text to meaningful value.</summary>
+  /// <returns></returns>
+  private bool TryParse()
+  {
+    if (TextValue == null || TextValue.Length == 0)
+      return false;
+    var strArray = TextValue.Split(new[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
+    var observableCollection = new ObservableCollection<string>();
+    foreach (var str in strArray)
+    {
+      var obj2 = (string)Convert.ChangeType(str, typeof(string));
+      observableCollection.Add(obj2);
+    }
+    _list = observableCollection;
+    _list.CollectionChanged += CollectionChanged;
+    return true;
+  }
+
+  private void CollectionChanged(object? sender, NotifyCollectionChangedEventArgs e)
+  {
+    TextValue = null;
+  }
+}

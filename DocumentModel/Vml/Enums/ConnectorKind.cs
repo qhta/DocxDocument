@@ -1,28 +1,27 @@
 namespace DocumentModel.Vml;
 
 /// <summary>
-/// Connector Type
+///   Connector Type
 /// </summary>
 public enum ConnectorKind
 {
   /// <summary>
-  /// No Connector.
+  ///   No Connector.
   /// </summary>
   None,
-  
+
   /// <summary>
-  /// Straight Connector.
+  ///   Straight Connector.
   /// </summary>
   Straight,
-  
+
   /// <summary>
-  /// Elbow Connector.
+  ///   Elbow Connector.
   /// </summary>
   Elbow,
-  
+
   /// <summary>
-  /// Curved Connector.
+  ///   Curved Connector.
   /// </summary>
-  Curved,
-  
+  Curved
 }

@@ -1,21 +1,23 @@
+using DocumentFormat.OpenXml.Packaging;
+
 namespace DocumentModel.OpenXml.Packaging;
 
 /// <summary>
-/// Defines the NamedSheetViewsPart
+///   Defines the NamedSheetViewsPart
 /// </summary>
 public static class NamedSheetViewsPartConverter
 {
-  public static String? GetContentType(DocumentFormat.OpenXml.Packaging.NamedSheetViewsPart? openXmlElement)
+  public static String? GetContentType(NamedSheetViewsPart? openXmlElement)
   {
     return openXmlElement?.ContentType;
   }
-  
-  public static String? GetRelationshipType(DocumentFormat.OpenXml.Packaging.NamedSheetViewsPart? openXmlElement)
+
+  public static String? GetRelationshipType(NamedSheetViewsPart? openXmlElement)
   {
     return openXmlElement?.RelationshipType;
   }
-  
-  public static DocumentModel.Packaging.NamedSheetViewsPart? CreateModelElement(DocumentFormat.OpenXml.Packaging.NamedSheetViewsPart? openXmlElement)
+
+  public static DocumentModel.Packaging.NamedSheetViewsPart? CreateModelElement(NamedSheetViewsPart? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -26,9 +28,9 @@ public static class NamedSheetViewsPartConverter
     }
     return null;
   }
-  
+
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Packaging.NamedSheetViewsPart? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Packaging.NamedSheetViewsPart, new()
+    where OpenXmlElementType : NamedSheetViewsPart, new()
   {
     if (value != null)
     {

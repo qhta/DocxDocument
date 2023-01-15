@@ -1,151 +1,155 @@
+using DocumentFormat.OpenXml.Wordprocessing;
+using DocumentModel.Wordprocessing;
+using TablePositionProperties = DocumentFormat.OpenXml.Wordprocessing.TablePositionProperties;
+
 namespace DocumentModel.OpenXml.Wordprocessing;
 
 /// <summary>
-/// Defines the TablePositionProperties Class.
+///   Defines the TablePositionProperties Class.
 /// </summary>
 public static class TablePositionPropertiesConverter
 {
   /// <summary>
-  /// Distance From Left of Table to Text
+  ///   Distance From Left of Table to Text
   /// </summary>
-  public static Int16? GetLeftFromText(DocumentFormat.OpenXml.Wordprocessing.TablePositionProperties? openXmlElement)
+  public static Int16? GetLeftFromText(TablePositionProperties? openXmlElement)
   {
     return openXmlElement?.LeftFromText?.Value;
   }
-  
-  public static void SetLeftFromText(DocumentFormat.OpenXml.Wordprocessing.TablePositionProperties? openXmlElement, Int16? value)
+
+  public static void SetLeftFromText(TablePositionProperties? openXmlElement, Int16? value)
   {
     if (openXmlElement != null)
       openXmlElement.LeftFromText = value;
   }
-  
+
   /// <summary>
-  /// (Distance From Right of Table to Text
+  ///   (Distance From Right of Table to Text
   /// </summary>
-  public static Int16? GetRightFromText(DocumentFormat.OpenXml.Wordprocessing.TablePositionProperties? openXmlElement)
+  public static Int16? GetRightFromText(TablePositionProperties? openXmlElement)
   {
     return openXmlElement?.RightFromText?.Value;
   }
-  
-  public static void SetRightFromText(DocumentFormat.OpenXml.Wordprocessing.TablePositionProperties? openXmlElement, Int16? value)
+
+  public static void SetRightFromText(TablePositionProperties? openXmlElement, Int16? value)
   {
     if (openXmlElement != null)
       openXmlElement.RightFromText = value;
   }
-  
+
   /// <summary>
-  /// Distance From Top of Table to Text
+  ///   Distance From Top of Table to Text
   /// </summary>
-  public static Int16? GetTopFromText(DocumentFormat.OpenXml.Wordprocessing.TablePositionProperties? openXmlElement)
+  public static Int16? GetTopFromText(TablePositionProperties? openXmlElement)
   {
     return openXmlElement?.TopFromText?.Value;
   }
-  
-  public static void SetTopFromText(DocumentFormat.OpenXml.Wordprocessing.TablePositionProperties? openXmlElement, Int16? value)
+
+  public static void SetTopFromText(TablePositionProperties? openXmlElement, Int16? value)
   {
     if (openXmlElement != null)
       openXmlElement.TopFromText = value;
   }
-  
+
   /// <summary>
-  /// Distance From Bottom of Table to Text
+  ///   Distance From Bottom of Table to Text
   /// </summary>
-  public static Int16? GetBottomFromText(DocumentFormat.OpenXml.Wordprocessing.TablePositionProperties? openXmlElement)
+  public static Int16? GetBottomFromText(TablePositionProperties? openXmlElement)
   {
     return openXmlElement?.BottomFromText?.Value;
   }
-  
-  public static void SetBottomFromText(DocumentFormat.OpenXml.Wordprocessing.TablePositionProperties? openXmlElement, Int16? value)
+
+  public static void SetBottomFromText(TablePositionProperties? openXmlElement, Int16? value)
   {
     if (openXmlElement != null)
       openXmlElement.BottomFromText = value;
   }
-  
+
   /// <summary>
-  /// Table Vertical Anchor
+  ///   Table Vertical Anchor
   /// </summary>
-  public static DocumentModel.Wordprocessing.VerticalAnchorKind? GetVerticalAnchor(DocumentFormat.OpenXml.Wordprocessing.TablePositionProperties? openXmlElement)
+  public static VerticalAnchorKind? GetVerticalAnchor(TablePositionProperties? openXmlElement)
   {
-    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Wordprocessing.VerticalAnchorValues, DocumentModel.Wordprocessing.VerticalAnchorKind>(openXmlElement?.VerticalAnchor?.Value);
+    return EnumValueConverter.GetValue<VerticalAnchorValues, VerticalAnchorKind>(openXmlElement?.VerticalAnchor?.Value);
   }
-  
-  public static void SetVerticalAnchor(DocumentFormat.OpenXml.Wordprocessing.TablePositionProperties? openXmlElement, DocumentModel.Wordprocessing.VerticalAnchorKind? value)
+
+  public static void SetVerticalAnchor(TablePositionProperties? openXmlElement, VerticalAnchorKind? value)
   {
     if (openXmlElement != null)
-      openXmlElement.VerticalAnchor = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Wordprocessing.VerticalAnchorValues, DocumentModel.Wordprocessing.VerticalAnchorKind>(value);
+      openXmlElement.VerticalAnchor = EnumValueConverter.CreateEnumValue<VerticalAnchorValues, VerticalAnchorKind>(value);
   }
-  
+
   /// <summary>
-  /// Table Horizontal Anchor
+  ///   Table Horizontal Anchor
   /// </summary>
-  public static DocumentModel.Wordprocessing.HorizontalAnchorKind? GetHorizontalAnchor(DocumentFormat.OpenXml.Wordprocessing.TablePositionProperties? openXmlElement)
+  public static HorizontalAnchorKind? GetHorizontalAnchor(TablePositionProperties? openXmlElement)
   {
-    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Wordprocessing.HorizontalAnchorValues, DocumentModel.Wordprocessing.HorizontalAnchorKind>(openXmlElement?.HorizontalAnchor?.Value);
+    return EnumValueConverter.GetValue<HorizontalAnchorValues, HorizontalAnchorKind>(openXmlElement?.HorizontalAnchor?.Value);
   }
-  
-  public static void SetHorizontalAnchor(DocumentFormat.OpenXml.Wordprocessing.TablePositionProperties? openXmlElement, DocumentModel.Wordprocessing.HorizontalAnchorKind? value)
+
+  public static void SetHorizontalAnchor(TablePositionProperties? openXmlElement, HorizontalAnchorKind? value)
   {
     if (openXmlElement != null)
-      openXmlElement.HorizontalAnchor = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Wordprocessing.HorizontalAnchorValues, DocumentModel.Wordprocessing.HorizontalAnchorKind>(value);
+      openXmlElement.HorizontalAnchor = EnumValueConverter.CreateEnumValue<HorizontalAnchorValues, HorizontalAnchorKind>(value);
   }
-  
+
   /// <summary>
-  /// Relative Horizontal Alignment From Anchor
+  ///   Relative Horizontal Alignment From Anchor
   /// </summary>
-  public static DocumentModel.Wordprocessing.HorizontalAlignmentKind? GetTablePositionXAlignment(DocumentFormat.OpenXml.Wordprocessing.TablePositionProperties? openXmlElement)
+  public static HorizontalAlignmentKind? GetTablePositionXAlignment(TablePositionProperties? openXmlElement)
   {
-    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Wordprocessing.HorizontalAlignmentValues, DocumentModel.Wordprocessing.HorizontalAlignmentKind>(openXmlElement?.TablePositionXAlignment?.Value);
+    return EnumValueConverter.GetValue<HorizontalAlignmentValues, HorizontalAlignmentKind>(openXmlElement?.TablePositionXAlignment?.Value);
   }
-  
-  public static void SetTablePositionXAlignment(DocumentFormat.OpenXml.Wordprocessing.TablePositionProperties? openXmlElement, DocumentModel.Wordprocessing.HorizontalAlignmentKind? value)
+
+  public static void SetTablePositionXAlignment(TablePositionProperties? openXmlElement, HorizontalAlignmentKind? value)
   {
     if (openXmlElement != null)
-      openXmlElement.TablePositionXAlignment = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Wordprocessing.HorizontalAlignmentValues, DocumentModel.Wordprocessing.HorizontalAlignmentKind>(value);
+      openXmlElement.TablePositionXAlignment = EnumValueConverter.CreateEnumValue<HorizontalAlignmentValues, HorizontalAlignmentKind>(value);
   }
-  
+
   /// <summary>
-  /// Absolute Horizontal Distance From Anchor
+  ///   Absolute Horizontal Distance From Anchor
   /// </summary>
-  public static Int32? GetTablePositionX(DocumentFormat.OpenXml.Wordprocessing.TablePositionProperties? openXmlElement)
+  public static Int32? GetTablePositionX(TablePositionProperties? openXmlElement)
   {
     return openXmlElement?.TablePositionX?.Value;
   }
-  
-  public static void SetTablePositionX(DocumentFormat.OpenXml.Wordprocessing.TablePositionProperties? openXmlElement, Int32? value)
+
+  public static void SetTablePositionX(TablePositionProperties? openXmlElement, Int32? value)
   {
     if (openXmlElement != null)
       openXmlElement.TablePositionX = value;
   }
-  
+
   /// <summary>
-  /// Relative Vertical Alignment from Anchor
+  ///   Relative Vertical Alignment from Anchor
   /// </summary>
-  public static DocumentModel.Wordprocessing.VerticalAlignmentKind? GetTablePositionYAlignment(DocumentFormat.OpenXml.Wordprocessing.TablePositionProperties? openXmlElement)
+  public static VerticalAlignmentKind? GetTablePositionYAlignment(TablePositionProperties? openXmlElement)
   {
-    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Wordprocessing.VerticalAlignmentValues, DocumentModel.Wordprocessing.VerticalAlignmentKind>(openXmlElement?.TablePositionYAlignment?.Value);
+    return EnumValueConverter.GetValue<VerticalAlignmentValues, VerticalAlignmentKind>(openXmlElement?.TablePositionYAlignment?.Value);
   }
-  
-  public static void SetTablePositionYAlignment(DocumentFormat.OpenXml.Wordprocessing.TablePositionProperties? openXmlElement, DocumentModel.Wordprocessing.VerticalAlignmentKind? value)
+
+  public static void SetTablePositionYAlignment(TablePositionProperties? openXmlElement, VerticalAlignmentKind? value)
   {
     if (openXmlElement != null)
-      openXmlElement.TablePositionYAlignment = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Wordprocessing.VerticalAlignmentValues, DocumentModel.Wordprocessing.VerticalAlignmentKind>(value);
+      openXmlElement.TablePositionYAlignment = EnumValueConverter.CreateEnumValue<VerticalAlignmentValues, VerticalAlignmentKind>(value);
   }
-  
+
   /// <summary>
-  /// Absolute Vertical Distance From Anchor
+  ///   Absolute Vertical Distance From Anchor
   /// </summary>
-  public static Int32? GetTablePositionY(DocumentFormat.OpenXml.Wordprocessing.TablePositionProperties? openXmlElement)
+  public static Int32? GetTablePositionY(TablePositionProperties? openXmlElement)
   {
     return openXmlElement?.TablePositionY?.Value;
   }
-  
-  public static void SetTablePositionY(DocumentFormat.OpenXml.Wordprocessing.TablePositionProperties? openXmlElement, Int32? value)
+
+  public static void SetTablePositionY(TablePositionProperties? openXmlElement, Int32? value)
   {
     if (openXmlElement != null)
       openXmlElement.TablePositionY = value;
   }
-  
-  public static DocumentModel.Wordprocessing.TablePositionProperties? CreateModelElement(DocumentFormat.OpenXml.Wordprocessing.TablePositionProperties? openXmlElement)
+
+  public static DocumentModel.Wordprocessing.TablePositionProperties? CreateModelElement(TablePositionProperties? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -164,9 +168,9 @@ public static class TablePositionPropertiesConverter
     }
     return null;
   }
-  
+
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.TablePositionProperties? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Wordprocessing.TablePositionProperties, new()
+    where OpenXmlElementType : TablePositionProperties, new()
   {
     if (value != null)
     {

@@ -1,18 +1,21 @@
+using DocumentModel.Drawings.Charts;
+using ScatterChartExtensionList = DocumentFormat.OpenXml.Drawing.Charts.ScatterChartExtensionList;
+
 namespace DocumentModel.OpenXml.Drawings.Charts;
 
 /// <summary>
-/// Defines the ScatterChartExtensionList Class.
+///   Defines the ScatterChartExtensionList Class.
 /// </summary>
 public static class ScatterChartExtensionListConverter
 {
-  public static System.Collections.ObjectModel.Collection<DocumentModel.Drawings.Charts.ScatterChartExtension>? GetScatterChartExtensions(DocumentFormat.OpenXml.Drawing.Charts.ScatterChartExtensionList? openXmlElement)
+  public static Collection<ScatterChartExtension>? GetScatterChartExtensions(ScatterChartExtensionList? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var collection = new System.Collections.ObjectModel.Collection<DocumentModel.Drawings.Charts.ScatterChartExtension>();
+      var collection = new Collection<ScatterChartExtension>();
       foreach (var item in openXmlElement.Elements<DocumentFormat.OpenXml.Drawing.Charts.ScatterChartExtension>())
       {
-        var newItem = DocumentModel.OpenXml.Drawings.Charts.ScatterChartExtensionConverter.CreateModelElement(item);
+        var newItem = ScatterChartExtensionConverter.CreateModelElement(item);
         if (newItem != null)
           collection.Add(newItem);
       }
@@ -20,25 +23,23 @@ public static class ScatterChartExtensionListConverter
     }
     return null;
   }
-  
-  public static void SetScatterChartExtensions(DocumentFormat.OpenXml.Drawing.Charts.ScatterChartExtensionList? openXmlElement, System.Collections.ObjectModel.Collection<DocumentModel.Drawings.Charts.ScatterChartExtension>? value)
+
+  public static void SetScatterChartExtensions(ScatterChartExtensionList? openXmlElement, Collection<ScatterChartExtension>? value)
   {
     if (openXmlElement != null)
     {
       openXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Drawing.Charts.ScatterChartExtension>();
       if (value != null)
-      {
         foreach (var item in value)
         {
-          var newItem = DocumentModel.OpenXml.Drawings.Charts.ScatterChartExtensionConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Charts.ScatterChartExtension>(item);
+          var newItem = ScatterChartExtensionConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Charts.ScatterChartExtension>(item);
           if (newItem != null)
             openXmlElement.AddChild(newItem);
         }
-      }
     }
   }
-  
-  public static DocumentModel.Drawings.Charts.ScatterChartExtensionList? CreateModelElement(DocumentFormat.OpenXml.Drawing.Charts.ScatterChartExtensionList? openXmlElement)
+
+  public static DocumentModel.Drawings.Charts.ScatterChartExtensionList? CreateModelElement(ScatterChartExtensionList? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -48,9 +49,9 @@ public static class ScatterChartExtensionListConverter
     }
     return null;
   }
-  
+
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.Charts.ScatterChartExtensionList? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.Charts.ScatterChartExtensionList, new()
+    where OpenXmlElementType : ScatterChartExtensionList, new()
   {
     if (value != null)
     {

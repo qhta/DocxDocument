@@ -1,39 +1,41 @@
+using DocumentFormat.OpenXml.Office2010.Drawing;
+
 namespace DocumentModel.OpenXml.Drawings;
 
 /// <summary>
-/// Defines the ArtisticTexturizer Class.
+///   Defines the ArtisticTexturizer Class.
 /// </summary>
 public static class ArtisticTexturizerConverter
 {
   /// <summary>
-  /// trans, this property is only available in Office 2010 and later.
+  ///   trans, this property is only available in Office 2010 and later.
   /// </summary>
-  public static Int32? GetTransparancy(DocumentFormat.OpenXml.Office2010.Drawing.ArtisticTexturizer? openXmlElement)
+  public static Int32? GetTransparancy(ArtisticTexturizer? openXmlElement)
   {
     return openXmlElement?.Transparancy?.Value;
   }
-  
-  public static void SetTransparancy(DocumentFormat.OpenXml.Office2010.Drawing.ArtisticTexturizer? openXmlElement, Int32? value)
+
+  public static void SetTransparancy(ArtisticTexturizer? openXmlElement, Int32? value)
   {
     if (openXmlElement != null)
       openXmlElement.Transparancy = value;
   }
-  
+
   /// <summary>
-  /// scaling, this property is only available in Office 2010 and later.
+  ///   scaling, this property is only available in Office 2010 and later.
   /// </summary>
-  public static Int32? GetScaling(DocumentFormat.OpenXml.Office2010.Drawing.ArtisticTexturizer? openXmlElement)
+  public static Int32? GetScaling(ArtisticTexturizer? openXmlElement)
   {
     return openXmlElement?.Scaling?.Value;
   }
-  
-  public static void SetScaling(DocumentFormat.OpenXml.Office2010.Drawing.ArtisticTexturizer? openXmlElement, Int32? value)
+
+  public static void SetScaling(ArtisticTexturizer? openXmlElement, Int32? value)
   {
     if (openXmlElement != null)
       openXmlElement.Scaling = value;
   }
-  
-  public static DocumentModel.Drawings.ArtisticTexturizer? CreateModelElement(DocumentFormat.OpenXml.Office2010.Drawing.ArtisticTexturizer? openXmlElement)
+
+  public static DocumentModel.Drawings.ArtisticTexturizer? CreateModelElement(ArtisticTexturizer? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -44,9 +46,9 @@ public static class ArtisticTexturizerConverter
     }
     return null;
   }
-  
+
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.ArtisticTexturizer? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Office2010.Drawing.ArtisticTexturizer, new()
+    where OpenXmlElementType : ArtisticTexturizer, new()
   {
     if (value != null)
     {

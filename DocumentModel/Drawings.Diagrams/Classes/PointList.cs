@@ -1,10 +1,9 @@
 namespace DocumentModel.Drawings.Diagrams;
 
 /// <summary>
-/// Point List.
+///   Point List.
 /// </summary>
-public partial class PointList
+public class PointList
 {
-  public Collection<DocumentModel.Drawings.Diagrams.Point>? Points { get; set; }
-  
+  public Collection<Point>? Points { get; set; }
 }

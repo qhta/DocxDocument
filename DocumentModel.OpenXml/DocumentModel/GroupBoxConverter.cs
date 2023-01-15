@@ -1,18 +1,20 @@
+using DocumentFormat.OpenXml.Office2010.CustomUI;
+
 namespace DocumentModel.OpenXml;
 
 /// <summary>
-/// Defines the GroupBox Class.
+///   Defines the GroupBox Class.
 /// </summary>
 public static class GroupBoxConverter
 {
   /// <summary>
-  /// id, this property is only available in Office 2010 and later.
+  ///   id, this property is only available in Office 2010 and later.
   /// </summary>
   public static String? GetId(DocumentFormat.OpenXml.Office2010.CustomUI.GroupBox? openXmlElement)
   {
     return openXmlElement?.Id?.Value;
   }
-  
+
   public static void SetId(DocumentFormat.OpenXml.Office2010.CustomUI.GroupBox? openXmlElement, String? value)
   {
     if (openXmlElement != null)
@@ -21,15 +23,15 @@ public static class GroupBoxConverter
       else
         openXmlElement.Id = null;
   }
-  
+
   /// <summary>
-  /// idQ, this property is only available in Office 2010 and later.
+  ///   idQ, this property is only available in Office 2010 and later.
   /// </summary>
   public static String? GetQualifiedId(DocumentFormat.OpenXml.Office2010.CustomUI.GroupBox? openXmlElement)
   {
     return openXmlElement?.QualifiedId?.Value;
   }
-  
+
   public static void SetQualifiedId(DocumentFormat.OpenXml.Office2010.CustomUI.GroupBox? openXmlElement, String? value)
   {
     if (openXmlElement != null)
@@ -38,15 +40,15 @@ public static class GroupBoxConverter
       else
         openXmlElement.QualifiedId = null;
   }
-  
+
   /// <summary>
-  /// tag, this property is only available in Office 2010 and later.
+  ///   tag, this property is only available in Office 2010 and later.
   /// </summary>
   public static String? GetTag(DocumentFormat.OpenXml.Office2010.CustomUI.GroupBox? openXmlElement)
   {
     return openXmlElement?.Tag?.Value;
   }
-  
+
   public static void SetTag(DocumentFormat.OpenXml.Office2010.CustomUI.GroupBox? openXmlElement, String? value)
   {
     if (openXmlElement != null)
@@ -55,29 +57,29 @@ public static class GroupBoxConverter
       else
         openXmlElement.Tag = null;
   }
-  
+
   /// <summary>
-  /// expand, this property is only available in Office 2010 and later.
+  ///   expand, this property is only available in Office 2010 and later.
   /// </summary>
-  public static DocumentModel.ExpandKind? GetExpand(DocumentFormat.OpenXml.Office2010.CustomUI.GroupBox? openXmlElement)
+  public static ExpandKind? GetExpand(DocumentFormat.OpenXml.Office2010.CustomUI.GroupBox? openXmlElement)
   {
-    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Office2010.CustomUI.ExpandValues, DocumentModel.ExpandKind>(openXmlElement?.Expand?.Value);
+    return EnumValueConverter.GetValue<ExpandValues, ExpandKind>(openXmlElement?.Expand?.Value);
   }
-  
-  public static void SetExpand(DocumentFormat.OpenXml.Office2010.CustomUI.GroupBox? openXmlElement, DocumentModel.ExpandKind? value)
+
+  public static void SetExpand(DocumentFormat.OpenXml.Office2010.CustomUI.GroupBox? openXmlElement, ExpandKind? value)
   {
     if (openXmlElement != null)
-      openXmlElement.Expand = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Office2010.CustomUI.ExpandValues, DocumentModel.ExpandKind>(value);
+      openXmlElement.Expand = EnumValueConverter.CreateEnumValue<ExpandValues, ExpandKind>(value);
   }
-  
+
   /// <summary>
-  /// label, this property is only available in Office 2010 and later.
+  ///   label, this property is only available in Office 2010 and later.
   /// </summary>
   public static String? GetLabel(DocumentFormat.OpenXml.Office2010.CustomUI.GroupBox? openXmlElement)
   {
     return openXmlElement?.Label?.Value;
   }
-  
+
   public static void SetLabel(DocumentFormat.OpenXml.Office2010.CustomUI.GroupBox? openXmlElement, String? value)
   {
     if (openXmlElement != null)
@@ -86,15 +88,15 @@ public static class GroupBoxConverter
       else
         openXmlElement.Label = null;
   }
-  
+
   /// <summary>
-  /// getLabel, this property is only available in Office 2010 and later.
+  ///   getLabel, this property is only available in Office 2010 and later.
   /// </summary>
   public static String? GetGetLabel(DocumentFormat.OpenXml.Office2010.CustomUI.GroupBox? openXmlElement)
   {
     return openXmlElement?.GetLabel?.Value;
   }
-  
+
   public static void SetGetLabel(DocumentFormat.OpenXml.Office2010.CustomUI.GroupBox? openXmlElement, String? value)
   {
     if (openXmlElement != null)
@@ -103,16 +105,16 @@ public static class GroupBoxConverter
       else
         openXmlElement.GetLabel = null;
   }
-  
-  public static DocumentModel.BackstageGroupButton? GetBackstageGroupButton(DocumentFormat.OpenXml.Office2010.CustomUI.GroupBox? openXmlElement)
+
+  public static BackstageGroupButton? GetBackstageGroupButton(DocumentFormat.OpenXml.Office2010.CustomUI.GroupBox? openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office2010.CustomUI.BackstageGroupButton>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.BackstageGroupButtonConverter.CreateModelElement(itemElement);
+      return BackstageGroupButtonConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetBackstageGroupButton(DocumentFormat.OpenXml.Office2010.CustomUI.GroupBox? openXmlElement, DocumentModel.BackstageGroupButton? value)
+
+  public static void SetBackstageGroupButton(DocumentFormat.OpenXml.Office2010.CustomUI.GroupBox? openXmlElement, BackstageGroupButton? value)
   {
     if (openXmlElement != null)
     {
@@ -121,22 +123,22 @@ public static class GroupBoxConverter
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.BackstageGroupButtonConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2010.CustomUI.BackstageGroupButton>(value);
+        itemElement = BackstageGroupButtonConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2010.CustomUI.BackstageGroupButton>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static DocumentModel.BackstageCheckBox? GetBackstageCheckBox(DocumentFormat.OpenXml.Office2010.CustomUI.GroupBox? openXmlElement)
+
+  public static BackstageCheckBox? GetBackstageCheckBox(DocumentFormat.OpenXml.Office2010.CustomUI.GroupBox? openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office2010.CustomUI.BackstageCheckBox>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.BackstageCheckBoxConverter.CreateModelElement(itemElement);
+      return BackstageCheckBoxConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetBackstageCheckBox(DocumentFormat.OpenXml.Office2010.CustomUI.GroupBox? openXmlElement, DocumentModel.BackstageCheckBox? value)
+
+  public static void SetBackstageCheckBox(DocumentFormat.OpenXml.Office2010.CustomUI.GroupBox? openXmlElement, BackstageCheckBox? value)
   {
     if (openXmlElement != null)
     {
@@ -145,22 +147,22 @@ public static class GroupBoxConverter
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.BackstageCheckBoxConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2010.CustomUI.BackstageCheckBox>(value);
+        itemElement = BackstageCheckBoxConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2010.CustomUI.BackstageCheckBox>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static DocumentModel.BackstageEditBox? GetBackstageEditBox(DocumentFormat.OpenXml.Office2010.CustomUI.GroupBox? openXmlElement)
+
+  public static BackstageEditBox? GetBackstageEditBox(DocumentFormat.OpenXml.Office2010.CustomUI.GroupBox? openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office2010.CustomUI.BackstageEditBox>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.BackstageEditBoxConverter.CreateModelElement(itemElement);
+      return BackstageEditBoxConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetBackstageEditBox(DocumentFormat.OpenXml.Office2010.CustomUI.GroupBox? openXmlElement, DocumentModel.BackstageEditBox? value)
+
+  public static void SetBackstageEditBox(DocumentFormat.OpenXml.Office2010.CustomUI.GroupBox? openXmlElement, BackstageEditBox? value)
   {
     if (openXmlElement != null)
     {
@@ -169,22 +171,22 @@ public static class GroupBoxConverter
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.BackstageEditBoxConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2010.CustomUI.BackstageEditBox>(value);
+        itemElement = BackstageEditBoxConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2010.CustomUI.BackstageEditBox>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static DocumentModel.BackstageDropDown? GetBackstageDropDown(DocumentFormat.OpenXml.Office2010.CustomUI.GroupBox? openXmlElement)
+
+  public static BackstageDropDown? GetBackstageDropDown(DocumentFormat.OpenXml.Office2010.CustomUI.GroupBox? openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office2010.CustomUI.BackstageDropDown>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.BackstageDropDownConverter.CreateModelElement(itemElement);
+      return BackstageDropDownConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetBackstageDropDown(DocumentFormat.OpenXml.Office2010.CustomUI.GroupBox? openXmlElement, DocumentModel.BackstageDropDown? value)
+
+  public static void SetBackstageDropDown(DocumentFormat.OpenXml.Office2010.CustomUI.GroupBox? openXmlElement, BackstageDropDown? value)
   {
     if (openXmlElement != null)
     {
@@ -193,22 +195,22 @@ public static class GroupBoxConverter
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.BackstageDropDownConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2010.CustomUI.BackstageDropDown>(value);
+        itemElement = BackstageDropDownConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2010.CustomUI.BackstageDropDown>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static DocumentModel.RadioGroup? GetRadioGroup(DocumentFormat.OpenXml.Office2010.CustomUI.GroupBox? openXmlElement)
+
+  public static RadioGroup? GetRadioGroup(DocumentFormat.OpenXml.Office2010.CustomUI.GroupBox? openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office2010.CustomUI.RadioGroup>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.RadioGroupConverter.CreateModelElement(itemElement);
+      return RadioGroupConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetRadioGroup(DocumentFormat.OpenXml.Office2010.CustomUI.GroupBox? openXmlElement, DocumentModel.RadioGroup? value)
+
+  public static void SetRadioGroup(DocumentFormat.OpenXml.Office2010.CustomUI.GroupBox? openXmlElement, RadioGroup? value)
   {
     if (openXmlElement != null)
     {
@@ -217,22 +219,22 @@ public static class GroupBoxConverter
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.RadioGroupConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2010.CustomUI.RadioGroup>(value);
+        itemElement = RadioGroupConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2010.CustomUI.RadioGroup>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static DocumentModel.BackstageComboBox? GetBackstageComboBox(DocumentFormat.OpenXml.Office2010.CustomUI.GroupBox? openXmlElement)
+
+  public static BackstageComboBox? GetBackstageComboBox(DocumentFormat.OpenXml.Office2010.CustomUI.GroupBox? openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office2010.CustomUI.BackstageComboBox>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.BackstageComboBoxConverter.CreateModelElement(itemElement);
+      return BackstageComboBoxConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetBackstageComboBox(DocumentFormat.OpenXml.Office2010.CustomUI.GroupBox? openXmlElement, DocumentModel.BackstageComboBox? value)
+
+  public static void SetBackstageComboBox(DocumentFormat.OpenXml.Office2010.CustomUI.GroupBox? openXmlElement, BackstageComboBox? value)
   {
     if (openXmlElement != null)
     {
@@ -241,22 +243,22 @@ public static class GroupBoxConverter
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.BackstageComboBoxConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2010.CustomUI.BackstageComboBox>(value);
+        itemElement = BackstageComboBoxConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2010.CustomUI.BackstageComboBox>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static DocumentModel.Hyperlink? GetHyperlink(DocumentFormat.OpenXml.Office2010.CustomUI.GroupBox? openXmlElement)
+
+  public static Hyperlink? GetHyperlink(DocumentFormat.OpenXml.Office2010.CustomUI.GroupBox? openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office2010.CustomUI.Hyperlink>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.HyperlinkConverter.CreateModelElement(itemElement);
+      return HyperlinkConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetHyperlink(DocumentFormat.OpenXml.Office2010.CustomUI.GroupBox? openXmlElement, DocumentModel.Hyperlink? value)
+
+  public static void SetHyperlink(DocumentFormat.OpenXml.Office2010.CustomUI.GroupBox? openXmlElement, Hyperlink? value)
   {
     if (openXmlElement != null)
     {
@@ -265,22 +267,22 @@ public static class GroupBoxConverter
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.HyperlinkConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2010.CustomUI.Hyperlink>(value);
+        itemElement = HyperlinkConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2010.CustomUI.Hyperlink>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static DocumentModel.BackstageLabelControl? GetBackstageLabelControl(DocumentFormat.OpenXml.Office2010.CustomUI.GroupBox? openXmlElement)
+
+  public static BackstageLabelControl? GetBackstageLabelControl(DocumentFormat.OpenXml.Office2010.CustomUI.GroupBox? openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office2010.CustomUI.BackstageLabelControl>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.BackstageLabelControlConverter.CreateModelElement(itemElement);
+      return BackstageLabelControlConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetBackstageLabelControl(DocumentFormat.OpenXml.Office2010.CustomUI.GroupBox? openXmlElement, DocumentModel.BackstageLabelControl? value)
+
+  public static void SetBackstageLabelControl(DocumentFormat.OpenXml.Office2010.CustomUI.GroupBox? openXmlElement, BackstageLabelControl? value)
   {
     if (openXmlElement != null)
     {
@@ -289,22 +291,22 @@ public static class GroupBoxConverter
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.BackstageLabelControlConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2010.CustomUI.BackstageLabelControl>(value);
+        itemElement = BackstageLabelControlConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2010.CustomUI.BackstageLabelControl>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static DocumentModel.GroupBox? GetChildGroupBox(DocumentFormat.OpenXml.Office2010.CustomUI.GroupBox? openXmlElement)
+
+  public static GroupBox? GetChildGroupBox(DocumentFormat.OpenXml.Office2010.CustomUI.GroupBox? openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office2010.CustomUI.GroupBox>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.GroupBoxConverter.CreateModelElement(itemElement);
+      return CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetChildGroupBox(DocumentFormat.OpenXml.Office2010.CustomUI.GroupBox? openXmlElement, DocumentModel.GroupBox? value)
+
+  public static void SetChildGroupBox(DocumentFormat.OpenXml.Office2010.CustomUI.GroupBox? openXmlElement, GroupBox? value)
   {
     if (openXmlElement != null)
     {
@@ -313,22 +315,22 @@ public static class GroupBoxConverter
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.GroupBoxConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2010.CustomUI.GroupBox>(value);
+        itemElement = CreateOpenXmlElement<DocumentFormat.OpenXml.Office2010.CustomUI.GroupBox>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static DocumentModel.LayoutContainer? GetLayoutContainer(DocumentFormat.OpenXml.Office2010.CustomUI.GroupBox? openXmlElement)
+
+  public static LayoutContainer? GetLayoutContainer(DocumentFormat.OpenXml.Office2010.CustomUI.GroupBox? openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office2010.CustomUI.LayoutContainer>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.LayoutContainerConverter.CreateModelElement(itemElement);
+      return LayoutContainerConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetLayoutContainer(DocumentFormat.OpenXml.Office2010.CustomUI.GroupBox? openXmlElement, DocumentModel.LayoutContainer? value)
+
+  public static void SetLayoutContainer(DocumentFormat.OpenXml.Office2010.CustomUI.GroupBox? openXmlElement, LayoutContainer? value)
   {
     if (openXmlElement != null)
     {
@@ -337,22 +339,22 @@ public static class GroupBoxConverter
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.LayoutContainerConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2010.CustomUI.LayoutContainer>(value);
+        itemElement = LayoutContainerConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2010.CustomUI.LayoutContainer>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static DocumentModel.ImageControl? GetImageControl(DocumentFormat.OpenXml.Office2010.CustomUI.GroupBox? openXmlElement)
+
+  public static ImageControl? GetImageControl(DocumentFormat.OpenXml.Office2010.CustomUI.GroupBox? openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office2010.CustomUI.ImageControl>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.ImageControlConverter.CreateModelElement(itemElement);
+      return ImageControlConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetImageControl(DocumentFormat.OpenXml.Office2010.CustomUI.GroupBox? openXmlElement, DocumentModel.ImageControl? value)
+
+  public static void SetImageControl(DocumentFormat.OpenXml.Office2010.CustomUI.GroupBox? openXmlElement, ImageControl? value)
   {
     if (openXmlElement != null)
     {
@@ -361,18 +363,18 @@ public static class GroupBoxConverter
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.ImageControlConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2010.CustomUI.ImageControl>(value);
+        itemElement = ImageControlConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2010.CustomUI.ImageControl>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static DocumentModel.GroupBox? CreateModelElement(DocumentFormat.OpenXml.Office2010.CustomUI.GroupBox? openXmlElement)
+
+  public static GroupBox? CreateModelElement(DocumentFormat.OpenXml.Office2010.CustomUI.GroupBox? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.GroupBox();
+      var value = new GroupBox();
       value.Id = GetId(openXmlElement);
       value.QualifiedId = GetQualifiedId(openXmlElement);
       value.Tag = GetTag(openXmlElement);
@@ -394,9 +396,9 @@ public static class GroupBoxConverter
     }
     return null;
   }
-  
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.GroupBox? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Office2010.CustomUI.GroupBox, new()
+
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(GroupBox? value)
+    where OpenXmlElementType : DocumentFormat.OpenXml.Office2010.CustomUI.GroupBox, new()
   {
     if (value != null)
     {

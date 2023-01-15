@@ -1,22 +1,25 @@
+using DocumentModel.Wordprocessing;
+using ParagraphPropertiesDefault = DocumentFormat.OpenXml.Wordprocessing.ParagraphPropertiesDefault;
+
 namespace DocumentModel.OpenXml.Wordprocessing;
 
 /// <summary>
-/// Default Paragraph Properties.
+///   Default Paragraph Properties.
 /// </summary>
 public static class ParagraphPropertiesDefaultConverter
 {
   /// <summary>
-  /// Paragraph Properties.
+  ///   Paragraph Properties.
   /// </summary>
-  public static DocumentModel.Wordprocessing.ParagraphPropertiesBaseStyle? GetParagraphPropertiesBaseStyle(DocumentFormat.OpenXml.Wordprocessing.ParagraphPropertiesDefault? openXmlElement)
+  public static ParagraphPropertiesBaseStyle? GetParagraphPropertiesBaseStyle(ParagraphPropertiesDefault? openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.ParagraphPropertiesBaseStyle>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Wordprocessing.ParagraphPropertiesBaseStyleConverter.CreateModelElement(itemElement);
+      return ParagraphPropertiesBaseStyleConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetParagraphPropertiesBaseStyle(DocumentFormat.OpenXml.Wordprocessing.ParagraphPropertiesDefault? openXmlElement, DocumentModel.Wordprocessing.ParagraphPropertiesBaseStyle? value)
+
+  public static void SetParagraphPropertiesBaseStyle(ParagraphPropertiesDefault? openXmlElement, ParagraphPropertiesBaseStyle? value)
   {
     if (openXmlElement != null)
     {
@@ -25,14 +28,14 @@ public static class ParagraphPropertiesDefaultConverter
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Wordprocessing.ParagraphPropertiesBaseStyleConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.ParagraphPropertiesBaseStyle>(value);
+        itemElement = ParagraphPropertiesBaseStyleConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.ParagraphPropertiesBaseStyle>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static DocumentModel.Wordprocessing.ParagraphPropertiesDefault? CreateModelElement(DocumentFormat.OpenXml.Wordprocessing.ParagraphPropertiesDefault? openXmlElement)
+
+  public static DocumentModel.Wordprocessing.ParagraphPropertiesDefault? CreateModelElement(ParagraphPropertiesDefault? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -42,9 +45,9 @@ public static class ParagraphPropertiesDefaultConverter
     }
     return null;
   }
-  
+
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.ParagraphPropertiesDefault? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Wordprocessing.ParagraphPropertiesDefault, new()
+    where OpenXmlElementType : ParagraphPropertiesDefault, new()
   {
     if (value != null)
     {

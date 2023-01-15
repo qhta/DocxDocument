@@ -1,33 +1,32 @@
 namespace DocumentModel.Wordprocessing;
 
 /// <summary>
-/// Defines the BookmarkStart Class.
+///   Defines the BookmarkStart Class.
 /// </summary>
-public partial class BookmarkStart
+public class BookmarkStart
 {
   /// <summary>
-  /// name
+  ///   name
   /// </summary>
   public String? Name { get; set; }
-  
+
   /// <summary>
-  /// colFirst
+  ///   colFirst
   /// </summary>
   public Int32? ColumnFirst { get; set; }
-  
+
   /// <summary>
-  /// colLast
+  ///   colLast
   /// </summary>
   public Int32? ColumnLast { get; set; }
-  
+
   /// <summary>
-  /// displacedByCustomXml
+  ///   displacedByCustomXml
   /// </summary>
-  public DocumentModel.Wordprocessing.DisplacedByCustomXmlKind? DisplacedByCustomXml { get; set; }
-  
+  public DisplacedByCustomXmlKind? DisplacedByCustomXml { get; set; }
+
   /// <summary>
-  /// Annotation Identifier
+  ///   Annotation Identifier
   /// </summary>
   public String? Id { get; set; }
-  
 }

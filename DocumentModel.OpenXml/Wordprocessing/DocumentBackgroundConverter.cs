@@ -1,19 +1,25 @@
+using DocumentFormat.OpenXml.Wordprocessing;
+using DocumentModel.OpenXml.Vml;
+using DocumentModel.Vml;
+using DocumentModel.Wordprocessing;
+using DocumentBackground = DocumentFormat.OpenXml.Wordprocessing.DocumentBackground;
+
 namespace DocumentModel.OpenXml.Wordprocessing;
 
 /// <summary>
-/// Document Background.
+///   Document Background.
 /// </summary>
 public static class DocumentBackgroundConverter
 {
   /// <summary>
-  /// color
+  ///   color
   /// </summary>
-  public static String? GetColor(DocumentFormat.OpenXml.Wordprocessing.DocumentBackground? openXmlElement)
+  public static String? GetColor(DocumentBackground? openXmlElement)
   {
     return openXmlElement?.Color?.Value;
   }
-  
-  public static void SetColor(DocumentFormat.OpenXml.Wordprocessing.DocumentBackground? openXmlElement, String? value)
+
+  public static void SetColor(DocumentBackground? openXmlElement, String? value)
   {
     if (openXmlElement != null)
       if (value != null)
@@ -21,30 +27,30 @@ public static class DocumentBackgroundConverter
       else
         openXmlElement.Color = null;
   }
-  
+
   /// <summary>
-  /// themeColor
+  ///   themeColor
   /// </summary>
-  public static DocumentModel.Wordprocessing.ThemeColorKind? GetThemeColor(DocumentFormat.OpenXml.Wordprocessing.DocumentBackground? openXmlElement)
+  public static ThemeColorKind? GetThemeColor(DocumentBackground? openXmlElement)
   {
-    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Wordprocessing.ThemeColorValues, DocumentModel.Wordprocessing.ThemeColorKind>(openXmlElement?.ThemeColor?.Value);
+    return EnumValueConverter.GetValue<ThemeColorValues, ThemeColorKind>(openXmlElement?.ThemeColor?.Value);
   }
-  
-  public static void SetThemeColor(DocumentFormat.OpenXml.Wordprocessing.DocumentBackground? openXmlElement, DocumentModel.Wordprocessing.ThemeColorKind? value)
+
+  public static void SetThemeColor(DocumentBackground? openXmlElement, ThemeColorKind? value)
   {
     if (openXmlElement != null)
-      openXmlElement.ThemeColor = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Wordprocessing.ThemeColorValues, DocumentModel.Wordprocessing.ThemeColorKind>(value);
+      openXmlElement.ThemeColor = EnumValueConverter.CreateEnumValue<ThemeColorValues, ThemeColorKind>(value);
   }
-  
+
   /// <summary>
-  /// themeTint
+  ///   themeTint
   /// </summary>
-  public static String? GetThemeTint(DocumentFormat.OpenXml.Wordprocessing.DocumentBackground? openXmlElement)
+  public static String? GetThemeTint(DocumentBackground? openXmlElement)
   {
     return openXmlElement?.ThemeTint?.Value;
   }
-  
-  public static void SetThemeTint(DocumentFormat.OpenXml.Wordprocessing.DocumentBackground? openXmlElement, String? value)
+
+  public static void SetThemeTint(DocumentBackground? openXmlElement, String? value)
   {
     if (openXmlElement != null)
       if (value != null)
@@ -52,16 +58,16 @@ public static class DocumentBackgroundConverter
       else
         openXmlElement.ThemeTint = null;
   }
-  
+
   /// <summary>
-  /// themeShade
+  ///   themeShade
   /// </summary>
-  public static String? GetThemeShade(DocumentFormat.OpenXml.Wordprocessing.DocumentBackground? openXmlElement)
+  public static String? GetThemeShade(DocumentBackground? openXmlElement)
   {
     return openXmlElement?.ThemeShade?.Value;
   }
-  
-  public static void SetThemeShade(DocumentFormat.OpenXml.Wordprocessing.DocumentBackground? openXmlElement, String? value)
+
+  public static void SetThemeShade(DocumentBackground? openXmlElement, String? value)
   {
     if (openXmlElement != null)
       if (value != null)
@@ -69,19 +75,19 @@ public static class DocumentBackgroundConverter
       else
         openXmlElement.ThemeShade = null;
   }
-  
+
   /// <summary>
-  /// Background.
+  ///   Background.
   /// </summary>
-  public static DocumentModel.Vml.Background? GetBackground(DocumentFormat.OpenXml.Wordprocessing.DocumentBackground? openXmlElement)
+  public static Background? GetBackground(DocumentBackground? openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Vml.Background>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Vml.BackgroundConverter.CreateModelElement(itemElement);
+      return BackgroundConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetBackground(DocumentFormat.OpenXml.Wordprocessing.DocumentBackground? openXmlElement, DocumentModel.Vml.Background? value)
+
+  public static void SetBackground(DocumentBackground? openXmlElement, Background? value)
   {
     if (openXmlElement != null)
     {
@@ -90,14 +96,14 @@ public static class DocumentBackgroundConverter
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Vml.BackgroundConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Vml.Background>(value);
+        itemElement = BackgroundConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Vml.Background>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static DocumentModel.Wordprocessing.DocumentBackground? CreateModelElement(DocumentFormat.OpenXml.Wordprocessing.DocumentBackground? openXmlElement)
+
+  public static DocumentModel.Wordprocessing.DocumentBackground? CreateModelElement(DocumentBackground? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -111,9 +117,9 @@ public static class DocumentBackgroundConverter
     }
     return null;
   }
-  
+
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.DocumentBackground? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Wordprocessing.DocumentBackground, new()
+    where OpenXmlElementType : DocumentBackground, new()
   {
     if (value != null)
     {

@@ -1,23 +1,22 @@
 namespace DocumentModel.Drawings;
 
 /// <summary>
-/// Text Paragraphs.
+///   Text Paragraphs.
 /// </summary>
-public partial class Paragraph
+public class Paragraph
 {
   /// <summary>
-  /// Text Paragraph Properties.
+  ///   Text Paragraph Properties.
   /// </summary>
-  public DocumentModel.Drawings.ParagraphProperties? ParagraphProperties { get; set; }
-  
-  public DocumentModel.Drawings.Run? Run { get; set; }
-  
-  public DocumentModel.Drawings.Break? Break { get; set; }
-  
-  public DocumentModel.Drawings.Field? Field { get; set; }
-  
+  public ParagraphProperties? ParagraphProperties { get; set; }
+
+  public Run? Run { get; set; }
+
+  public Break? Break { get; set; }
+
+  public Field? Field { get; set; }
+
   public Boolean? TextMath { get; set; }
-  
-  public DocumentModel.Drawings.EndParagraphRunProperties? EndParagraphRunProperties { get; set; }
-  
+
+  public EndParagraphRunProperties? EndParagraphRunProperties { get; set; }
 }

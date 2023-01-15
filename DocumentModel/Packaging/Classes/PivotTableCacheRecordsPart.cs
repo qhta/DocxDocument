@@ -1,12 +1,11 @@
 namespace DocumentModel.Packaging;
 
 /// <summary>
-/// Defines the PivotTableCacheRecordsPart
+///   Defines the PivotTableCacheRecordsPart
 /// </summary>
-public partial class PivotTableCacheRecordsPart
+public class PivotTableCacheRecordsPart
 {
   public String? ContentType { get; set; }
-  
+
   public String? RelationshipType { get; set; }
-  
 }

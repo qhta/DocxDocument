@@ -1,18 +1,17 @@
 namespace DocumentModel.Wordprocessing;
 
 /// <summary>
-/// Defines the TableWidthValues enumeration.
+///   Defines the TableWidthValues enumeration.
 /// </summary>
 public enum TableWidthKind
 {
   /// <summary>
-  /// nil.
+  ///   nil.
   /// </summary>
   Nil,
-  
+
   /// <summary>
-  /// dxa.
+  ///   dxa.
   /// </summary>
-  Dxa,
-  
+  Dxa
 }

@@ -1,17 +1,16 @@
 namespace DocumentModel.Wordprocessing;
 
 /// <summary>
-/// Defines the GradientFillProperties Class.
+///   Defines the GradientFillProperties Class.
 /// </summary>
-public partial class GradientFillProperties
+public class GradientFillProperties
 {
   /// <summary>
-  /// GradientStopList.
+  ///   GradientStopList.
   /// </summary>
-  public DocumentModel.Wordprocessing.GradientStopList? GradientStopList { get; set; }
-  
-  public DocumentModel.Wordprocessing.LinearShadeProperties? LinearShadeProperties { get; set; }
-  
-  public DocumentModel.Wordprocessing.PathShadeProperties? PathShadeProperties { get; set; }
-  
+  public GradientStopList? GradientStopList { get; set; }
+
+  public LinearShadeProperties? LinearShadeProperties { get; set; }
+
+  public PathShadeProperties? PathShadeProperties { get; set; }
 }

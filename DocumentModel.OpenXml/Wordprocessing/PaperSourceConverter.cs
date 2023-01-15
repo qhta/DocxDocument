@@ -1,39 +1,41 @@
+using DocumentFormat.OpenXml.Wordprocessing;
+
 namespace DocumentModel.OpenXml.Wordprocessing;
 
 /// <summary>
-/// Defines the PaperSource Class.
+///   Defines the PaperSource Class.
 /// </summary>
 public static class PaperSourceConverter
 {
   /// <summary>
-  /// First Page Printer Tray Code
+  ///   First Page Printer Tray Code
   /// </summary>
-  public static UInt16? GetFirst(DocumentFormat.OpenXml.Wordprocessing.PaperSource? openXmlElement)
+  public static UInt16? GetFirst(PaperSource? openXmlElement)
   {
     return openXmlElement?.First?.Value;
   }
-  
-  public static void SetFirst(DocumentFormat.OpenXml.Wordprocessing.PaperSource? openXmlElement, UInt16? value)
+
+  public static void SetFirst(PaperSource? openXmlElement, UInt16? value)
   {
     if (openXmlElement != null)
       openXmlElement.First = value;
   }
-  
+
   /// <summary>
-  /// Non-First Page Printer Tray Code
+  ///   Non-First Page Printer Tray Code
   /// </summary>
-  public static UInt16? GetOther(DocumentFormat.OpenXml.Wordprocessing.PaperSource? openXmlElement)
+  public static UInt16? GetOther(PaperSource? openXmlElement)
   {
     return openXmlElement?.Other?.Value;
   }
-  
-  public static void SetOther(DocumentFormat.OpenXml.Wordprocessing.PaperSource? openXmlElement, UInt16? value)
+
+  public static void SetOther(PaperSource? openXmlElement, UInt16? value)
   {
     if (openXmlElement != null)
       openXmlElement.Other = value;
   }
-  
-  public static DocumentModel.Wordprocessing.PaperSource? CreateModelElement(DocumentFormat.OpenXml.Wordprocessing.PaperSource? openXmlElement)
+
+  public static DocumentModel.Wordprocessing.PaperSource? CreateModelElement(PaperSource? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -44,9 +46,9 @@ public static class PaperSourceConverter
     }
     return null;
   }
-  
+
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.PaperSource? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Wordprocessing.PaperSource, new()
+    where OpenXmlElementType : PaperSource, new()
   {
     if (value != null)
     {

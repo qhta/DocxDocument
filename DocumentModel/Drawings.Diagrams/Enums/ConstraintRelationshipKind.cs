@@ -1,23 +1,22 @@
 namespace DocumentModel.Drawings.Diagrams;
 
 /// <summary>
-/// Constraint Relationship
+///   Constraint Relationship
 /// </summary>
 public enum ConstraintRelationshipKind
 {
   /// <summary>
-  /// Self.
+  ///   Self.
   /// </summary>
   Self,
-  
+
   /// <summary>
-  /// Child.
+  ///   Child.
   /// </summary>
   Child,
-  
+
   /// <summary>
-  /// Descendant.
+  ///   Descendant.
   /// </summary>
-  Descendant,
-  
+  Descendant
 }

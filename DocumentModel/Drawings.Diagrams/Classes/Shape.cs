@@ -1,53 +1,52 @@
 namespace DocumentModel.Drawings.Diagrams;
 
 /// <summary>
-/// Shape.
+///   Shape.
 /// </summary>
-public partial class Shape
+public class Shape
 {
   /// <summary>
-  /// Rotation
+  ///   Rotation
   /// </summary>
   public Double? Rotation { get; set; }
-  
+
   /// <summary>
-  /// Shape Type
+  ///   Shape Type
   /// </summary>
   public String? Type { get; set; }
-  
+
   /// <summary>
-  /// Relationship to Image Part
+  ///   Relationship to Image Part
   /// </summary>
   public String? Blip { get; set; }
-  
+
   /// <summary>
-  /// Z-Order Offset
+  ///   Z-Order Offset
   /// </summary>
   public Int32? ZOrderOffset { get; set; }
-  
+
   /// <summary>
-  /// Hide Geometry
+  ///   Hide Geometry
   /// </summary>
   public Boolean? HideGeometry { get; set; }
-  
+
   /// <summary>
-  /// Prevent Text Editing
+  ///   Prevent Text Editing
   /// </summary>
   public Boolean? LockedText { get; set; }
-  
+
   /// <summary>
-  /// Image Placeholder
+  ///   Image Placeholder
   /// </summary>
   public Boolean? BlipPlaceholder { get; set; }
-  
+
   /// <summary>
-  /// Shape Adjust List.
+  ///   Shape Adjust List.
   /// </summary>
-  public DocumentModel.Drawings.Diagrams.AdjustList? AdjustList { get; set; }
-  
+  public AdjustList? AdjustList { get; set; }
+
   /// <summary>
-  /// ExtensionList.
+  ///   ExtensionList.
   /// </summary>
-  public DocumentModel.Drawings.Diagrams.ExtensionList? ExtensionList { get; set; }
-  
+  public ExtensionList? ExtensionList { get; set; }
 }

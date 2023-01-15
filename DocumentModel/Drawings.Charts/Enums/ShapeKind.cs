@@ -1,38 +1,37 @@
 namespace DocumentModel.Drawings.Charts;
 
 /// <summary>
-/// Shape
+///   Shape
 /// </summary>
 public enum ShapeKind
 {
   /// <summary>
-  /// Cone.
+  ///   Cone.
   /// </summary>
   Cone,
-  
+
   /// <summary>
-  /// Cone to Max.
+  ///   Cone to Max.
   /// </summary>
   ConeToMax,
-  
+
   /// <summary>
-  /// Box.
+  ///   Box.
   /// </summary>
   Box,
-  
+
   /// <summary>
-  /// Cylinder.
+  ///   Cylinder.
   /// </summary>
   Cylinder,
-  
+
   /// <summary>
-  /// Pyramid.
+  ///   Pyramid.
   /// </summary>
   Pyramid,
-  
+
   /// <summary>
-  /// Pyramid to Maximum.
+  ///   Pyramid to Maximum.
   /// </summary>
-  PyramidToMaximum,
-  
+  PyramidToMaximum
 }

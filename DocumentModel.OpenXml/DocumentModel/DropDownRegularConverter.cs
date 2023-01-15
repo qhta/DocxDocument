@@ -1,18 +1,18 @@
 namespace DocumentModel.OpenXml;
 
 /// <summary>
-/// Defines the DropDownRegular Class.
+///   Defines the DropDownRegular Class.
 /// </summary>
 public static class DropDownRegularConverter
 {
   /// <summary>
-  /// onAction, this property is only available in Office 2010 and later.
+  ///   onAction, this property is only available in Office 2010 and later.
   /// </summary>
   public static String? GetOnAction(DocumentFormat.OpenXml.Office2010.CustomUI.DropDownRegular? openXmlElement)
   {
     return openXmlElement?.OnAction?.Value;
   }
-  
+
   public static void SetOnAction(DocumentFormat.OpenXml.Office2010.CustomUI.DropDownRegular? openXmlElement, String? value)
   {
     if (openXmlElement != null)
@@ -21,15 +21,15 @@ public static class DropDownRegularConverter
       else
         openXmlElement.OnAction = null;
   }
-  
+
   /// <summary>
-  /// enabled, this property is only available in Office 2010 and later.
+  ///   enabled, this property is only available in Office 2010 and later.
   /// </summary>
   public static Boolean? GetEnabled(DocumentFormat.OpenXml.Office2010.CustomUI.DropDownRegular? openXmlElement)
   {
     return openXmlElement?.Enabled?.Value;
   }
-  
+
   public static void SetEnabled(DocumentFormat.OpenXml.Office2010.CustomUI.DropDownRegular? openXmlElement, Boolean? value)
   {
     if (openXmlElement != null)
@@ -38,15 +38,15 @@ public static class DropDownRegularConverter
       else
         openXmlElement.Enabled = null;
   }
-  
+
   /// <summary>
-  /// getEnabled, this property is only available in Office 2010 and later.
+  ///   getEnabled, this property is only available in Office 2010 and later.
   /// </summary>
   public static String? GetGetEnabled(DocumentFormat.OpenXml.Office2010.CustomUI.DropDownRegular? openXmlElement)
   {
     return openXmlElement?.GetEnabled?.Value;
   }
-  
+
   public static void SetGetEnabled(DocumentFormat.OpenXml.Office2010.CustomUI.DropDownRegular? openXmlElement, String? value)
   {
     if (openXmlElement != null)
@@ -55,15 +55,15 @@ public static class DropDownRegularConverter
       else
         openXmlElement.GetEnabled = null;
   }
-  
+
   /// <summary>
-  /// image, this property is only available in Office 2010 and later.
+  ///   image, this property is only available in Office 2010 and later.
   /// </summary>
   public static String? GetImage(DocumentFormat.OpenXml.Office2010.CustomUI.DropDownRegular? openXmlElement)
   {
     return openXmlElement?.Image?.Value;
   }
-  
+
   public static void SetImage(DocumentFormat.OpenXml.Office2010.CustomUI.DropDownRegular? openXmlElement, String? value)
   {
     if (openXmlElement != null)
@@ -72,15 +72,15 @@ public static class DropDownRegularConverter
       else
         openXmlElement.Image = null;
   }
-  
+
   /// <summary>
-  /// imageMso, this property is only available in Office 2010 and later.
+  ///   imageMso, this property is only available in Office 2010 and later.
   /// </summary>
   public static String? GetImageMso(DocumentFormat.OpenXml.Office2010.CustomUI.DropDownRegular? openXmlElement)
   {
     return openXmlElement?.ImageMso?.Value;
   }
-  
+
   public static void SetImageMso(DocumentFormat.OpenXml.Office2010.CustomUI.DropDownRegular? openXmlElement, String? value)
   {
     if (openXmlElement != null)
@@ -89,15 +89,15 @@ public static class DropDownRegularConverter
       else
         openXmlElement.ImageMso = null;
   }
-  
+
   /// <summary>
-  /// getImage, this property is only available in Office 2010 and later.
+  ///   getImage, this property is only available in Office 2010 and later.
   /// </summary>
   public static String? GetGetImage(DocumentFormat.OpenXml.Office2010.CustomUI.DropDownRegular? openXmlElement)
   {
     return openXmlElement?.GetImage?.Value;
   }
-  
+
   public static void SetGetImage(DocumentFormat.OpenXml.Office2010.CustomUI.DropDownRegular? openXmlElement, String? value)
   {
     if (openXmlElement != null)
@@ -106,15 +106,15 @@ public static class DropDownRegularConverter
       else
         openXmlElement.GetImage = null;
   }
-  
+
   /// <summary>
-  /// showItemImage, this property is only available in Office 2010 and later.
+  ///   showItemImage, this property is only available in Office 2010 and later.
   /// </summary>
   public static Boolean? GetShowItemImage(DocumentFormat.OpenXml.Office2010.CustomUI.DropDownRegular? openXmlElement)
   {
     return openXmlElement?.ShowItemImage?.Value;
   }
-  
+
   public static void SetShowItemImage(DocumentFormat.OpenXml.Office2010.CustomUI.DropDownRegular? openXmlElement, Boolean? value)
   {
     if (openXmlElement != null)
@@ -123,15 +123,15 @@ public static class DropDownRegularConverter
       else
         openXmlElement.ShowItemImage = null;
   }
-  
+
   /// <summary>
-  /// getItemCount, this property is only available in Office 2010 and later.
+  ///   getItemCount, this property is only available in Office 2010 and later.
   /// </summary>
   public static String? GetGetItemCount(DocumentFormat.OpenXml.Office2010.CustomUI.DropDownRegular? openXmlElement)
   {
     return openXmlElement?.GetItemCount?.Value;
   }
-  
+
   public static void SetGetItemCount(DocumentFormat.OpenXml.Office2010.CustomUI.DropDownRegular? openXmlElement, String? value)
   {
     if (openXmlElement != null)
@@ -140,15 +140,15 @@ public static class DropDownRegularConverter
       else
         openXmlElement.GetItemCount = null;
   }
-  
+
   /// <summary>
-  /// getItemLabel, this property is only available in Office 2010 and later.
+  ///   getItemLabel, this property is only available in Office 2010 and later.
   /// </summary>
   public static String? GetGetItemLabel(DocumentFormat.OpenXml.Office2010.CustomUI.DropDownRegular? openXmlElement)
   {
     return openXmlElement?.GetItemLabel?.Value;
   }
-  
+
   public static void SetGetItemLabel(DocumentFormat.OpenXml.Office2010.CustomUI.DropDownRegular? openXmlElement, String? value)
   {
     if (openXmlElement != null)
@@ -157,15 +157,15 @@ public static class DropDownRegularConverter
       else
         openXmlElement.GetItemLabel = null;
   }
-  
+
   /// <summary>
-  /// getItemScreentip, this property is only available in Office 2010 and later.
+  ///   getItemScreentip, this property is only available in Office 2010 and later.
   /// </summary>
   public static String? GetGetItemScreentip(DocumentFormat.OpenXml.Office2010.CustomUI.DropDownRegular? openXmlElement)
   {
     return openXmlElement?.GetItemScreentip?.Value;
   }
-  
+
   public static void SetGetItemScreentip(DocumentFormat.OpenXml.Office2010.CustomUI.DropDownRegular? openXmlElement, String? value)
   {
     if (openXmlElement != null)
@@ -174,15 +174,15 @@ public static class DropDownRegularConverter
       else
         openXmlElement.GetItemScreentip = null;
   }
-  
+
   /// <summary>
-  /// getItemSupertip, this property is only available in Office 2010 and later.
+  ///   getItemSupertip, this property is only available in Office 2010 and later.
   /// </summary>
   public static String? GetGetItemSupertip(DocumentFormat.OpenXml.Office2010.CustomUI.DropDownRegular? openXmlElement)
   {
     return openXmlElement?.GetItemSupertip?.Value;
   }
-  
+
   public static void SetGetItemSupertip(DocumentFormat.OpenXml.Office2010.CustomUI.DropDownRegular? openXmlElement, String? value)
   {
     if (openXmlElement != null)
@@ -191,15 +191,15 @@ public static class DropDownRegularConverter
       else
         openXmlElement.GetItemSupertip = null;
   }
-  
+
   /// <summary>
-  /// getItemImage, this property is only available in Office 2010 and later.
+  ///   getItemImage, this property is only available in Office 2010 and later.
   /// </summary>
   public static String? GetGetItemImage(DocumentFormat.OpenXml.Office2010.CustomUI.DropDownRegular? openXmlElement)
   {
     return openXmlElement?.GetItemImage?.Value;
   }
-  
+
   public static void SetGetItemImage(DocumentFormat.OpenXml.Office2010.CustomUI.DropDownRegular? openXmlElement, String? value)
   {
     if (openXmlElement != null)
@@ -208,15 +208,15 @@ public static class DropDownRegularConverter
       else
         openXmlElement.GetItemImage = null;
   }
-  
+
   /// <summary>
-  /// getItemID, this property is only available in Office 2010 and later.
+  ///   getItemID, this property is only available in Office 2010 and later.
   /// </summary>
   public static String? GetGetItemID(DocumentFormat.OpenXml.Office2010.CustomUI.DropDownRegular? openXmlElement)
   {
     return openXmlElement?.GetItemID?.Value;
   }
-  
+
   public static void SetGetItemID(DocumentFormat.OpenXml.Office2010.CustomUI.DropDownRegular? openXmlElement, String? value)
   {
     if (openXmlElement != null)
@@ -225,15 +225,15 @@ public static class DropDownRegularConverter
       else
         openXmlElement.GetItemID = null;
   }
-  
+
   /// <summary>
-  /// sizeString, this property is only available in Office 2010 and later.
+  ///   sizeString, this property is only available in Office 2010 and later.
   /// </summary>
   public static String? GetSizeString(DocumentFormat.OpenXml.Office2010.CustomUI.DropDownRegular? openXmlElement)
   {
     return openXmlElement?.SizeString?.Value;
   }
-  
+
   public static void SetSizeString(DocumentFormat.OpenXml.Office2010.CustomUI.DropDownRegular? openXmlElement, String? value)
   {
     if (openXmlElement != null)
@@ -242,15 +242,15 @@ public static class DropDownRegularConverter
       else
         openXmlElement.SizeString = null;
   }
-  
+
   /// <summary>
-  /// getSelectedItemID, this property is only available in Office 2010 and later.
+  ///   getSelectedItemID, this property is only available in Office 2010 and later.
   /// </summary>
   public static String? GetGetSelectedItemID(DocumentFormat.OpenXml.Office2010.CustomUI.DropDownRegular? openXmlElement)
   {
     return openXmlElement?.GetSelectedItemID?.Value;
   }
-  
+
   public static void SetGetSelectedItemID(DocumentFormat.OpenXml.Office2010.CustomUI.DropDownRegular? openXmlElement, String? value)
   {
     if (openXmlElement != null)
@@ -259,15 +259,15 @@ public static class DropDownRegularConverter
       else
         openXmlElement.GetSelectedItemID = null;
   }
-  
+
   /// <summary>
-  /// getSelectedItemIndex, this property is only available in Office 2010 and later.
+  ///   getSelectedItemIndex, this property is only available in Office 2010 and later.
   /// </summary>
   public static String? GetGetSelectedItemIndex(DocumentFormat.OpenXml.Office2010.CustomUI.DropDownRegular? openXmlElement)
   {
     return openXmlElement?.GetSelectedItemIndex?.Value;
   }
-  
+
   public static void SetGetSelectedItemIndex(DocumentFormat.OpenXml.Office2010.CustomUI.DropDownRegular? openXmlElement, String? value)
   {
     if (openXmlElement != null)
@@ -276,15 +276,15 @@ public static class DropDownRegularConverter
       else
         openXmlElement.GetSelectedItemIndex = null;
   }
-  
+
   /// <summary>
-  /// showItemLabel, this property is only available in Office 2010 and later.
+  ///   showItemLabel, this property is only available in Office 2010 and later.
   /// </summary>
   public static Boolean? GetShowItemLabel(DocumentFormat.OpenXml.Office2010.CustomUI.DropDownRegular? openXmlElement)
   {
     return openXmlElement?.ShowItemLabel?.Value;
   }
-  
+
   public static void SetShowItemLabel(DocumentFormat.OpenXml.Office2010.CustomUI.DropDownRegular? openXmlElement, Boolean? value)
   {
     if (openXmlElement != null)
@@ -293,15 +293,15 @@ public static class DropDownRegularConverter
       else
         openXmlElement.ShowItemLabel = null;
   }
-  
+
   /// <summary>
-  /// id, this property is only available in Office 2010 and later.
+  ///   id, this property is only available in Office 2010 and later.
   /// </summary>
   public static String? GetId(DocumentFormat.OpenXml.Office2010.CustomUI.DropDownRegular? openXmlElement)
   {
     return openXmlElement?.Id?.Value;
   }
-  
+
   public static void SetId(DocumentFormat.OpenXml.Office2010.CustomUI.DropDownRegular? openXmlElement, String? value)
   {
     if (openXmlElement != null)
@@ -310,15 +310,15 @@ public static class DropDownRegularConverter
       else
         openXmlElement.Id = null;
   }
-  
+
   /// <summary>
-  /// idQ, this property is only available in Office 2010 and later.
+  ///   idQ, this property is only available in Office 2010 and later.
   /// </summary>
   public static String? GetQualifiedId(DocumentFormat.OpenXml.Office2010.CustomUI.DropDownRegular? openXmlElement)
   {
     return openXmlElement?.QualifiedId?.Value;
   }
-  
+
   public static void SetQualifiedId(DocumentFormat.OpenXml.Office2010.CustomUI.DropDownRegular? openXmlElement, String? value)
   {
     if (openXmlElement != null)
@@ -327,15 +327,15 @@ public static class DropDownRegularConverter
       else
         openXmlElement.QualifiedId = null;
   }
-  
+
   /// <summary>
-  /// tag, this property is only available in Office 2010 and later.
+  ///   tag, this property is only available in Office 2010 and later.
   /// </summary>
   public static String? GetTag(DocumentFormat.OpenXml.Office2010.CustomUI.DropDownRegular? openXmlElement)
   {
     return openXmlElement?.Tag?.Value;
   }
-  
+
   public static void SetTag(DocumentFormat.OpenXml.Office2010.CustomUI.DropDownRegular? openXmlElement, String? value)
   {
     if (openXmlElement != null)
@@ -344,15 +344,15 @@ public static class DropDownRegularConverter
       else
         openXmlElement.Tag = null;
   }
-  
+
   /// <summary>
-  /// idMso, this property is only available in Office 2010 and later.
+  ///   idMso, this property is only available in Office 2010 and later.
   /// </summary>
   public static String? GetIdMso(DocumentFormat.OpenXml.Office2010.CustomUI.DropDownRegular? openXmlElement)
   {
     return openXmlElement?.IdMso?.Value;
   }
-  
+
   public static void SetIdMso(DocumentFormat.OpenXml.Office2010.CustomUI.DropDownRegular? openXmlElement, String? value)
   {
     if (openXmlElement != null)
@@ -361,15 +361,15 @@ public static class DropDownRegularConverter
       else
         openXmlElement.IdMso = null;
   }
-  
+
   /// <summary>
-  /// screentip, this property is only available in Office 2010 and later.
+  ///   screentip, this property is only available in Office 2010 and later.
   /// </summary>
   public static String? GetScreentip(DocumentFormat.OpenXml.Office2010.CustomUI.DropDownRegular? openXmlElement)
   {
     return openXmlElement?.Screentip?.Value;
   }
-  
+
   public static void SetScreentip(DocumentFormat.OpenXml.Office2010.CustomUI.DropDownRegular? openXmlElement, String? value)
   {
     if (openXmlElement != null)
@@ -378,15 +378,15 @@ public static class DropDownRegularConverter
       else
         openXmlElement.Screentip = null;
   }
-  
+
   /// <summary>
-  /// getScreentip, this property is only available in Office 2010 and later.
+  ///   getScreentip, this property is only available in Office 2010 and later.
   /// </summary>
   public static String? GetGetScreentip(DocumentFormat.OpenXml.Office2010.CustomUI.DropDownRegular? openXmlElement)
   {
     return openXmlElement?.GetScreentip?.Value;
   }
-  
+
   public static void SetGetScreentip(DocumentFormat.OpenXml.Office2010.CustomUI.DropDownRegular? openXmlElement, String? value)
   {
     if (openXmlElement != null)
@@ -395,15 +395,15 @@ public static class DropDownRegularConverter
       else
         openXmlElement.GetScreentip = null;
   }
-  
+
   /// <summary>
-  /// supertip, this property is only available in Office 2010 and later.
+  ///   supertip, this property is only available in Office 2010 and later.
   /// </summary>
   public static String? GetSupertip(DocumentFormat.OpenXml.Office2010.CustomUI.DropDownRegular? openXmlElement)
   {
     return openXmlElement?.Supertip?.Value;
   }
-  
+
   public static void SetSupertip(DocumentFormat.OpenXml.Office2010.CustomUI.DropDownRegular? openXmlElement, String? value)
   {
     if (openXmlElement != null)
@@ -412,15 +412,15 @@ public static class DropDownRegularConverter
       else
         openXmlElement.Supertip = null;
   }
-  
+
   /// <summary>
-  /// getSupertip, this property is only available in Office 2010 and later.
+  ///   getSupertip, this property is only available in Office 2010 and later.
   /// </summary>
   public static String? GetGetSupertip(DocumentFormat.OpenXml.Office2010.CustomUI.DropDownRegular? openXmlElement)
   {
     return openXmlElement?.GetSupertip?.Value;
   }
-  
+
   public static void SetGetSupertip(DocumentFormat.OpenXml.Office2010.CustomUI.DropDownRegular? openXmlElement, String? value)
   {
     if (openXmlElement != null)
@@ -429,15 +429,15 @@ public static class DropDownRegularConverter
       else
         openXmlElement.GetSupertip = null;
   }
-  
+
   /// <summary>
-  /// label, this property is only available in Office 2010 and later.
+  ///   label, this property is only available in Office 2010 and later.
   /// </summary>
   public static String? GetLabel(DocumentFormat.OpenXml.Office2010.CustomUI.DropDownRegular? openXmlElement)
   {
     return openXmlElement?.Label?.Value;
   }
-  
+
   public static void SetLabel(DocumentFormat.OpenXml.Office2010.CustomUI.DropDownRegular? openXmlElement, String? value)
   {
     if (openXmlElement != null)
@@ -446,15 +446,15 @@ public static class DropDownRegularConverter
       else
         openXmlElement.Label = null;
   }
-  
+
   /// <summary>
-  /// getLabel, this property is only available in Office 2010 and later.
+  ///   getLabel, this property is only available in Office 2010 and later.
   /// </summary>
   public static String? GetGetLabel(DocumentFormat.OpenXml.Office2010.CustomUI.DropDownRegular? openXmlElement)
   {
     return openXmlElement?.GetLabel?.Value;
   }
-  
+
   public static void SetGetLabel(DocumentFormat.OpenXml.Office2010.CustomUI.DropDownRegular? openXmlElement, String? value)
   {
     if (openXmlElement != null)
@@ -463,15 +463,15 @@ public static class DropDownRegularConverter
       else
         openXmlElement.GetLabel = null;
   }
-  
+
   /// <summary>
-  /// insertAfterMso, this property is only available in Office 2010 and later.
+  ///   insertAfterMso, this property is only available in Office 2010 and later.
   /// </summary>
   public static String? GetInsertAfterMso(DocumentFormat.OpenXml.Office2010.CustomUI.DropDownRegular? openXmlElement)
   {
     return openXmlElement?.InsertAfterMso?.Value;
   }
-  
+
   public static void SetInsertAfterMso(DocumentFormat.OpenXml.Office2010.CustomUI.DropDownRegular? openXmlElement, String? value)
   {
     if (openXmlElement != null)
@@ -480,15 +480,15 @@ public static class DropDownRegularConverter
       else
         openXmlElement.InsertAfterMso = null;
   }
-  
+
   /// <summary>
-  /// insertBeforeMso, this property is only available in Office 2010 and later.
+  ///   insertBeforeMso, this property is only available in Office 2010 and later.
   /// </summary>
   public static String? GetInsertBeforeMso(DocumentFormat.OpenXml.Office2010.CustomUI.DropDownRegular? openXmlElement)
   {
     return openXmlElement?.InsertBeforeMso?.Value;
   }
-  
+
   public static void SetInsertBeforeMso(DocumentFormat.OpenXml.Office2010.CustomUI.DropDownRegular? openXmlElement, String? value)
   {
     if (openXmlElement != null)
@@ -497,15 +497,15 @@ public static class DropDownRegularConverter
       else
         openXmlElement.InsertBeforeMso = null;
   }
-  
+
   /// <summary>
-  /// insertAfterQ, this property is only available in Office 2010 and later.
+  ///   insertAfterQ, this property is only available in Office 2010 and later.
   /// </summary>
   public static String? GetInsertAfterQulifiedId(DocumentFormat.OpenXml.Office2010.CustomUI.DropDownRegular? openXmlElement)
   {
     return openXmlElement?.InsertAfterQulifiedId?.Value;
   }
-  
+
   public static void SetInsertAfterQulifiedId(DocumentFormat.OpenXml.Office2010.CustomUI.DropDownRegular? openXmlElement, String? value)
   {
     if (openXmlElement != null)
@@ -514,15 +514,15 @@ public static class DropDownRegularConverter
       else
         openXmlElement.InsertAfterQulifiedId = null;
   }
-  
+
   /// <summary>
-  /// insertBeforeQ, this property is only available in Office 2010 and later.
+  ///   insertBeforeQ, this property is only available in Office 2010 and later.
   /// </summary>
   public static String? GetInsertBeforeQulifiedId(DocumentFormat.OpenXml.Office2010.CustomUI.DropDownRegular? openXmlElement)
   {
     return openXmlElement?.InsertBeforeQulifiedId?.Value;
   }
-  
+
   public static void SetInsertBeforeQulifiedId(DocumentFormat.OpenXml.Office2010.CustomUI.DropDownRegular? openXmlElement, String? value)
   {
     if (openXmlElement != null)
@@ -531,15 +531,15 @@ public static class DropDownRegularConverter
       else
         openXmlElement.InsertBeforeQulifiedId = null;
   }
-  
+
   /// <summary>
-  /// visible, this property is only available in Office 2010 and later.
+  ///   visible, this property is only available in Office 2010 and later.
   /// </summary>
   public static Boolean? GetVisible(DocumentFormat.OpenXml.Office2010.CustomUI.DropDownRegular? openXmlElement)
   {
     return openXmlElement?.Visible?.Value;
   }
-  
+
   public static void SetVisible(DocumentFormat.OpenXml.Office2010.CustomUI.DropDownRegular? openXmlElement, Boolean? value)
   {
     if (openXmlElement != null)
@@ -548,15 +548,15 @@ public static class DropDownRegularConverter
       else
         openXmlElement.Visible = null;
   }
-  
+
   /// <summary>
-  /// getVisible, this property is only available in Office 2010 and later.
+  ///   getVisible, this property is only available in Office 2010 and later.
   /// </summary>
   public static String? GetGetVisible(DocumentFormat.OpenXml.Office2010.CustomUI.DropDownRegular? openXmlElement)
   {
     return openXmlElement?.GetVisible?.Value;
   }
-  
+
   public static void SetGetVisible(DocumentFormat.OpenXml.Office2010.CustomUI.DropDownRegular? openXmlElement, String? value)
   {
     if (openXmlElement != null)
@@ -565,15 +565,15 @@ public static class DropDownRegularConverter
       else
         openXmlElement.GetVisible = null;
   }
-  
+
   /// <summary>
-  /// keytip, this property is only available in Office 2010 and later.
+  ///   keytip, this property is only available in Office 2010 and later.
   /// </summary>
   public static String? GetKeytip(DocumentFormat.OpenXml.Office2010.CustomUI.DropDownRegular? openXmlElement)
   {
     return openXmlElement?.Keytip?.Value;
   }
-  
+
   public static void SetKeytip(DocumentFormat.OpenXml.Office2010.CustomUI.DropDownRegular? openXmlElement, String? value)
   {
     if (openXmlElement != null)
@@ -582,15 +582,15 @@ public static class DropDownRegularConverter
       else
         openXmlElement.Keytip = null;
   }
-  
+
   /// <summary>
-  /// getKeytip, this property is only available in Office 2010 and later.
+  ///   getKeytip, this property is only available in Office 2010 and later.
   /// </summary>
   public static String? GetGetKeytip(DocumentFormat.OpenXml.Office2010.CustomUI.DropDownRegular? openXmlElement)
   {
     return openXmlElement?.GetKeytip?.Value;
   }
-  
+
   public static void SetGetKeytip(DocumentFormat.OpenXml.Office2010.CustomUI.DropDownRegular? openXmlElement, String? value)
   {
     if (openXmlElement != null)
@@ -599,15 +599,15 @@ public static class DropDownRegularConverter
       else
         openXmlElement.GetKeytip = null;
   }
-  
+
   /// <summary>
-  /// showLabel, this property is only available in Office 2010 and later.
+  ///   showLabel, this property is only available in Office 2010 and later.
   /// </summary>
   public static Boolean? GetShowLabel(DocumentFormat.OpenXml.Office2010.CustomUI.DropDownRegular? openXmlElement)
   {
     return openXmlElement?.ShowLabel?.Value;
   }
-  
+
   public static void SetShowLabel(DocumentFormat.OpenXml.Office2010.CustomUI.DropDownRegular? openXmlElement, Boolean? value)
   {
     if (openXmlElement != null)
@@ -616,15 +616,15 @@ public static class DropDownRegularConverter
       else
         openXmlElement.ShowLabel = null;
   }
-  
+
   /// <summary>
-  /// getShowLabel, this property is only available in Office 2010 and later.
+  ///   getShowLabel, this property is only available in Office 2010 and later.
   /// </summary>
   public static String? GetGetShowLabel(DocumentFormat.OpenXml.Office2010.CustomUI.DropDownRegular? openXmlElement)
   {
     return openXmlElement?.GetShowLabel?.Value;
   }
-  
+
   public static void SetGetShowLabel(DocumentFormat.OpenXml.Office2010.CustomUI.DropDownRegular? openXmlElement, String? value)
   {
     if (openXmlElement != null)
@@ -633,15 +633,15 @@ public static class DropDownRegularConverter
       else
         openXmlElement.GetShowLabel = null;
   }
-  
+
   /// <summary>
-  /// showImage, this property is only available in Office 2010 and later.
+  ///   showImage, this property is only available in Office 2010 and later.
   /// </summary>
   public static Boolean? GetShowImage(DocumentFormat.OpenXml.Office2010.CustomUI.DropDownRegular? openXmlElement)
   {
     return openXmlElement?.ShowImage?.Value;
   }
-  
+
   public static void SetShowImage(DocumentFormat.OpenXml.Office2010.CustomUI.DropDownRegular? openXmlElement, Boolean? value)
   {
     if (openXmlElement != null)
@@ -650,15 +650,15 @@ public static class DropDownRegularConverter
       else
         openXmlElement.ShowImage = null;
   }
-  
+
   /// <summary>
-  /// getShowImage, this property is only available in Office 2010 and later.
+  ///   getShowImage, this property is only available in Office 2010 and later.
   /// </summary>
   public static String? GetGetShowImage(DocumentFormat.OpenXml.Office2010.CustomUI.DropDownRegular? openXmlElement)
   {
     return openXmlElement?.GetShowImage?.Value;
   }
-  
+
   public static void SetGetShowImage(DocumentFormat.OpenXml.Office2010.CustomUI.DropDownRegular? openXmlElement, String? value)
   {
     if (openXmlElement != null)
@@ -667,15 +667,15 @@ public static class DropDownRegularConverter
       else
         openXmlElement.GetShowImage = null;
   }
-  
-  public static System.Collections.ObjectModel.Collection<DocumentModel.Item>? GetItems(DocumentFormat.OpenXml.Office2010.CustomUI.DropDownRegular? openXmlElement)
+
+  public static Collection<Item>? GetItems(DocumentFormat.OpenXml.Office2010.CustomUI.DropDownRegular? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var collection = new System.Collections.ObjectModel.Collection<DocumentModel.Item>();
+      var collection = new Collection<Item>();
       foreach (var item in openXmlElement.Elements<DocumentFormat.OpenXml.Office2010.CustomUI.Item>())
       {
-        var newItem = DocumentModel.OpenXml.ItemConverter.CreateModelElement(item);
+        var newItem = ItemConverter.CreateModelElement(item);
         if (newItem != null)
           collection.Add(newItem);
       }
@@ -683,32 +683,30 @@ public static class DropDownRegularConverter
     }
     return null;
   }
-  
-  public static void SetItems(DocumentFormat.OpenXml.Office2010.CustomUI.DropDownRegular? openXmlElement, System.Collections.ObjectModel.Collection<DocumentModel.Item>? value)
+
+  public static void SetItems(DocumentFormat.OpenXml.Office2010.CustomUI.DropDownRegular? openXmlElement, Collection<Item>? value)
   {
     if (openXmlElement != null)
     {
       openXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Office2010.CustomUI.Item>();
       if (value != null)
-      {
         foreach (var item in value)
         {
-          var newItem = DocumentModel.OpenXml.ItemConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2010.CustomUI.Item>(item);
+          var newItem = ItemConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2010.CustomUI.Item>(item);
           if (newItem != null)
             openXmlElement.AddChild(newItem);
         }
-      }
     }
   }
-  
-  public static System.Collections.ObjectModel.Collection<DocumentModel.ButtonRegular>? GetButtonRegulars(DocumentFormat.OpenXml.Office2010.CustomUI.DropDownRegular? openXmlElement)
+
+  public static Collection<ButtonRegular>? GetButtonRegulars(DocumentFormat.OpenXml.Office2010.CustomUI.DropDownRegular? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var collection = new System.Collections.ObjectModel.Collection<DocumentModel.ButtonRegular>();
+      var collection = new Collection<ButtonRegular>();
       foreach (var item in openXmlElement.Elements<DocumentFormat.OpenXml.Office2010.CustomUI.ButtonRegular>())
       {
-        var newItem = DocumentModel.OpenXml.ButtonRegularConverter.CreateModelElement(item);
+        var newItem = ButtonRegularConverter.CreateModelElement(item);
         if (newItem != null)
           collection.Add(newItem);
       }
@@ -716,29 +714,27 @@ public static class DropDownRegularConverter
     }
     return null;
   }
-  
-  public static void SetButtonRegulars(DocumentFormat.OpenXml.Office2010.CustomUI.DropDownRegular? openXmlElement, System.Collections.ObjectModel.Collection<DocumentModel.ButtonRegular>? value)
+
+  public static void SetButtonRegulars(DocumentFormat.OpenXml.Office2010.CustomUI.DropDownRegular? openXmlElement, Collection<ButtonRegular>? value)
   {
     if (openXmlElement != null)
     {
       openXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Office2010.CustomUI.ButtonRegular>();
       if (value != null)
-      {
         foreach (var item in value)
         {
-          var newItem = DocumentModel.OpenXml.ButtonRegularConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2010.CustomUI.ButtonRegular>(item);
+          var newItem = ButtonRegularConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2010.CustomUI.ButtonRegular>(item);
           if (newItem != null)
             openXmlElement.AddChild(newItem);
         }
-      }
     }
   }
-  
-  public static DocumentModel.DropDownRegular? CreateModelElement(DocumentFormat.OpenXml.Office2010.CustomUI.DropDownRegular? openXmlElement)
+
+  public static DropDownRegular? CreateModelElement(DocumentFormat.OpenXml.Office2010.CustomUI.DropDownRegular? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.DropDownRegular();
+      var value = new DropDownRegular();
       value.OnAction = GetOnAction(openXmlElement);
       value.Enabled = GetEnabled(openXmlElement);
       value.GetEnabled = GetGetEnabled(openXmlElement);
@@ -784,9 +780,9 @@ public static class DropDownRegularConverter
     }
     return null;
   }
-  
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.DropDownRegular? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Office2010.CustomUI.DropDownRegular, new()
+
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DropDownRegular? value)
+    where OpenXmlElementType : DocumentFormat.OpenXml.Office2010.CustomUI.DropDownRegular, new()
   {
     if (value != null)
     {

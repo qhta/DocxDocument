@@ -1,10 +1,9 @@
 namespace DocumentModel.Wordprocessing;
 
 /// <summary>
-/// Defines the CommentsIds Class.
+///   Defines the CommentsIds Class.
 /// </summary>
-public partial class CommentsIds
+public class CommentsIds
 {
-  public Collection<DocumentModel.Wordprocessing.CommentId>? CommentIds { get; set; }
-  
+  public Collection<CommentId>? CommentIds { get; set; }
 }

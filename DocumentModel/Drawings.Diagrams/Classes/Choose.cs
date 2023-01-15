@@ -1,17 +1,16 @@
 namespace DocumentModel.Drawings.Diagrams;
 
 /// <summary>
-/// Choose Element.
+///   Choose Element.
 /// </summary>
-public partial class Choose
+public class Choose
 {
   /// <summary>
-  /// Name
+  ///   Name
   /// </summary>
   public String? Name { get; set; }
-  
-  public DocumentModel.Drawings.Diagrams.DiagramChooseIf? DiagramChooseIf { get; set; }
-  
-  public DocumentModel.Drawings.Diagrams.DiagramChooseElse? DiagramChooseElse { get; set; }
-  
+
+  public DiagramChooseIf? DiagramChooseIf { get; set; }
+
+  public DiagramChooseElse? DiagramChooseElse { get; set; }
 }

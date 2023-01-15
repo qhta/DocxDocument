@@ -1,33 +1,32 @@
 namespace DocumentModel.Drawings.Charts;
 
 /// <summary>
-/// Legend Position
+///   Legend Position
 /// </summary>
 public enum LegendPositionKind
 {
   /// <summary>
-  /// Bottom.
+  ///   Bottom.
   /// </summary>
   Bottom,
-  
+
   /// <summary>
-  /// Top Right.
+  ///   Top Right.
   /// </summary>
   TopRight,
-  
+
   /// <summary>
-  /// Left.
+  ///   Left.
   /// </summary>
   Left,
-  
+
   /// <summary>
-  /// Right.
+  ///   Right.
   /// </summary>
   Right,
-  
+
   /// <summary>
-  /// Top.
+  ///   Top.
   /// </summary>
-  Top,
-  
+  Top
 }

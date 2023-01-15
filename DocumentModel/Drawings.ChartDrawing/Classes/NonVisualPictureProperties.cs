@@ -1,18 +1,17 @@
 namespace DocumentModel.Drawings.ChartDrawing;
 
 /// <summary>
-/// Non-Visual Picture Properties.
+///   Non-Visual Picture Properties.
 /// </summary>
-public partial class NonVisualPictureProperties
+public class NonVisualPictureProperties
 {
   /// <summary>
-  /// NonVisualDrawingProperties.
+  ///   NonVisualDrawingProperties.
   /// </summary>
-  public DocumentModel.Drawings.ChartDrawing.NonVisualDrawingProperties? NonVisualDrawingProperties { get; set; }
-  
+  public NonVisualDrawingProperties? NonVisualDrawingProperties { get; set; }
+
   /// <summary>
-  /// Non-Visual Picture Drawing Properties.
+  ///   Non-Visual Picture Drawing Properties.
   /// </summary>
-  public DocumentModel.Drawings.ChartDrawing.NonVisualPictureDrawingProperties? NonVisualPictureDrawingProperties { get; set; }
-  
+  public NonVisualPictureDrawingProperties? NonVisualPictureDrawingProperties { get; set; }
 }

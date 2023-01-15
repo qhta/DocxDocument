@@ -1,33 +1,37 @@
+using DocumentFormat.OpenXml.Wordprocessing;
+using DocumentModel.Wordprocessing;
+using PermStart = DocumentFormat.OpenXml.Wordprocessing.PermStart;
+
 namespace DocumentModel.OpenXml.Wordprocessing;
 
 /// <summary>
-/// Defines the PermStart Class.
+///   Defines the PermStart Class.
 /// </summary>
 public static class PermStartConverter
 {
   /// <summary>
-  /// edGrp
+  ///   edGrp
   /// </summary>
-  public static DocumentModel.Wordprocessing.RangePermissionEditingGroupKind? GetEditorGroup(DocumentFormat.OpenXml.Wordprocessing.PermStart? openXmlElement)
+  public static RangePermissionEditingGroupKind? GetEditorGroup(PermStart? openXmlElement)
   {
-    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Wordprocessing.RangePermissionEditingGroupValues, DocumentModel.Wordprocessing.RangePermissionEditingGroupKind>(openXmlElement?.EditorGroup?.Value);
+    return EnumValueConverter.GetValue<RangePermissionEditingGroupValues, RangePermissionEditingGroupKind>(openXmlElement?.EditorGroup?.Value);
   }
-  
-  public static void SetEditorGroup(DocumentFormat.OpenXml.Wordprocessing.PermStart? openXmlElement, DocumentModel.Wordprocessing.RangePermissionEditingGroupKind? value)
+
+  public static void SetEditorGroup(PermStart? openXmlElement, RangePermissionEditingGroupKind? value)
   {
     if (openXmlElement != null)
-      openXmlElement.EditorGroup = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Wordprocessing.RangePermissionEditingGroupValues, DocumentModel.Wordprocessing.RangePermissionEditingGroupKind>(value);
+      openXmlElement.EditorGroup = EnumValueConverter.CreateEnumValue<RangePermissionEditingGroupValues, RangePermissionEditingGroupKind>(value);
   }
-  
+
   /// <summary>
-  /// ed
+  ///   ed
   /// </summary>
-  public static String? GetEd(DocumentFormat.OpenXml.Wordprocessing.PermStart? openXmlElement)
+  public static String? GetEd(PermStart? openXmlElement)
   {
     return openXmlElement?.Ed?.Value;
   }
-  
-  public static void SetEd(DocumentFormat.OpenXml.Wordprocessing.PermStart? openXmlElement, String? value)
+
+  public static void SetEd(PermStart? openXmlElement, String? value)
   {
     if (openXmlElement != null)
       if (value != null)
@@ -35,64 +39,64 @@ public static class PermStartConverter
       else
         openXmlElement.Ed = null;
   }
-  
+
   /// <summary>
-  /// colFirst
+  ///   colFirst
   /// </summary>
-  public static Int32? GetColumnFirst(DocumentFormat.OpenXml.Wordprocessing.PermStart? openXmlElement)
+  public static Int32? GetColumnFirst(PermStart? openXmlElement)
   {
     return openXmlElement?.ColumnFirst?.Value;
   }
-  
-  public static void SetColumnFirst(DocumentFormat.OpenXml.Wordprocessing.PermStart? openXmlElement, Int32? value)
+
+  public static void SetColumnFirst(PermStart? openXmlElement, Int32? value)
   {
     if (openXmlElement != null)
       openXmlElement.ColumnFirst = value;
   }
-  
+
   /// <summary>
-  /// colLast
+  ///   colLast
   /// </summary>
-  public static Int32? GetColumnLast(DocumentFormat.OpenXml.Wordprocessing.PermStart? openXmlElement)
+  public static Int32? GetColumnLast(PermStart? openXmlElement)
   {
     return openXmlElement?.ColumnLast?.Value;
   }
-  
-  public static void SetColumnLast(DocumentFormat.OpenXml.Wordprocessing.PermStart? openXmlElement, Int32? value)
+
+  public static void SetColumnLast(PermStart? openXmlElement, Int32? value)
   {
     if (openXmlElement != null)
       openXmlElement.ColumnLast = value;
   }
-  
+
   /// <summary>
-  /// Annotation ID
+  ///   Annotation ID
   /// </summary>
-  public static Int32? GetId(DocumentFormat.OpenXml.Wordprocessing.PermStart? openXmlElement)
+  public static Int32? GetId(PermStart? openXmlElement)
   {
     return openXmlElement?.Id?.Value;
   }
-  
-  public static void SetId(DocumentFormat.OpenXml.Wordprocessing.PermStart? openXmlElement, Int32? value)
+
+  public static void SetId(PermStart? openXmlElement, Int32? value)
   {
     if (openXmlElement != null)
       openXmlElement.Id = value;
   }
-  
+
   /// <summary>
-  /// Annotation Displaced By Custom XML Markup
+  ///   Annotation Displaced By Custom XML Markup
   /// </summary>
-  public static DocumentModel.Wordprocessing.DisplacedByCustomXmlKind? GetDisplacedByCustomXml(DocumentFormat.OpenXml.Wordprocessing.PermStart? openXmlElement)
+  public static DisplacedByCustomXmlKind? GetDisplacedByCustomXml(PermStart? openXmlElement)
   {
-    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Wordprocessing.DisplacedByCustomXmlValues, DocumentModel.Wordprocessing.DisplacedByCustomXmlKind>(openXmlElement?.DisplacedByCustomXml?.Value);
+    return EnumValueConverter.GetValue<DisplacedByCustomXmlValues, DisplacedByCustomXmlKind>(openXmlElement?.DisplacedByCustomXml?.Value);
   }
-  
-  public static void SetDisplacedByCustomXml(DocumentFormat.OpenXml.Wordprocessing.PermStart? openXmlElement, DocumentModel.Wordprocessing.DisplacedByCustomXmlKind? value)
+
+  public static void SetDisplacedByCustomXml(PermStart? openXmlElement, DisplacedByCustomXmlKind? value)
   {
     if (openXmlElement != null)
-      openXmlElement.DisplacedByCustomXml = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Wordprocessing.DisplacedByCustomXmlValues, DocumentModel.Wordprocessing.DisplacedByCustomXmlKind>(value);
+      openXmlElement.DisplacedByCustomXml = EnumValueConverter.CreateEnumValue<DisplacedByCustomXmlValues, DisplacedByCustomXmlKind>(value);
   }
-  
-  public static DocumentModel.Wordprocessing.PermStart? CreateModelElement(DocumentFormat.OpenXml.Wordprocessing.PermStart? openXmlElement)
+
+  public static DocumentModel.Wordprocessing.PermStart? CreateModelElement(PermStart? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -107,9 +111,9 @@ public static class PermStartConverter
     }
     return null;
   }
-  
+
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.PermStart? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Wordprocessing.PermStart, new()
+    where OpenXmlElementType : PermStart, new()
   {
     if (value != null)
     {

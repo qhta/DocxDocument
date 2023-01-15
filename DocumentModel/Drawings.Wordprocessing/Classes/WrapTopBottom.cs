@@ -1,23 +1,22 @@
 namespace DocumentModel.Drawings.Wordprocessing;
 
 /// <summary>
-/// Top and Bottom Wrapping.
+///   Top and Bottom Wrapping.
 /// </summary>
-public partial class WrapTopBottom
+public class WrapTopBottom
 {
   /// <summary>
-  /// Distance From Text on Top Edge
+  ///   Distance From Text on Top Edge
   /// </summary>
   public UInt32? DistanceFromTop { get; set; }
-  
+
   /// <summary>
-  /// Distance From Text on Bottom Edge
+  ///   Distance From Text on Bottom Edge
   /// </summary>
   public UInt32? DistanceFromBottom { get; set; }
-  
+
   /// <summary>
-  /// Wrapping Boundaries.
+  ///   Wrapping Boundaries.
   /// </summary>
-  public DocumentModel.Drawings.Wordprocessing.EffectExtent? EffectExtent { get; set; }
-  
+  public EffectExtent? EffectExtent { get; set; }
 }

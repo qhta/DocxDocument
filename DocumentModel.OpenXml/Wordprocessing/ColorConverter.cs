@@ -1,19 +1,23 @@
+using DocumentFormat.OpenXml.Wordprocessing;
+using DocumentModel.Wordprocessing;
+using Color = DocumentFormat.OpenXml.Wordprocessing.Color;
+
 namespace DocumentModel.OpenXml.Wordprocessing;
 
 /// <summary>
-/// Defines the Color Class.
+///   Defines the Color Class.
 /// </summary>
 public static class ColorConverter
 {
   /// <summary>
-  /// Run Content Color
+  ///   Run Content Color
   /// </summary>
-  public static String? GetVal(DocumentFormat.OpenXml.Wordprocessing.Color? openXmlElement)
+  public static String? GetVal(Color? openXmlElement)
   {
     return openXmlElement?.Val?.Value;
   }
-  
-  public static void SetVal(DocumentFormat.OpenXml.Wordprocessing.Color? openXmlElement, String? value)
+
+  public static void SetVal(Color? openXmlElement, String? value)
   {
     if (openXmlElement != null)
       if (value != null)
@@ -21,30 +25,30 @@ public static class ColorConverter
       else
         openXmlElement.Val = null;
   }
-  
+
   /// <summary>
-  /// Run Content Theme Color
+  ///   Run Content Theme Color
   /// </summary>
-  public static DocumentModel.Wordprocessing.ThemeColorKind? GetThemeColor(DocumentFormat.OpenXml.Wordprocessing.Color? openXmlElement)
+  public static ThemeColorKind? GetThemeColor(Color? openXmlElement)
   {
-    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Wordprocessing.ThemeColorValues, DocumentModel.Wordprocessing.ThemeColorKind>(openXmlElement?.ThemeColor?.Value);
+    return EnumValueConverter.GetValue<ThemeColorValues, ThemeColorKind>(openXmlElement?.ThemeColor?.Value);
   }
-  
-  public static void SetThemeColor(DocumentFormat.OpenXml.Wordprocessing.Color? openXmlElement, DocumentModel.Wordprocessing.ThemeColorKind? value)
+
+  public static void SetThemeColor(Color? openXmlElement, ThemeColorKind? value)
   {
     if (openXmlElement != null)
-      openXmlElement.ThemeColor = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Wordprocessing.ThemeColorValues, DocumentModel.Wordprocessing.ThemeColorKind>(value);
+      openXmlElement.ThemeColor = EnumValueConverter.CreateEnumValue<ThemeColorValues, ThemeColorKind>(value);
   }
-  
+
   /// <summary>
-  /// Run Content Theme Color Tint
+  ///   Run Content Theme Color Tint
   /// </summary>
-  public static String? GetThemeTint(DocumentFormat.OpenXml.Wordprocessing.Color? openXmlElement)
+  public static String? GetThemeTint(Color? openXmlElement)
   {
     return openXmlElement?.ThemeTint?.Value;
   }
-  
-  public static void SetThemeTint(DocumentFormat.OpenXml.Wordprocessing.Color? openXmlElement, String? value)
+
+  public static void SetThemeTint(Color? openXmlElement, String? value)
   {
     if (openXmlElement != null)
       if (value != null)
@@ -52,16 +56,16 @@ public static class ColorConverter
       else
         openXmlElement.ThemeTint = null;
   }
-  
+
   /// <summary>
-  /// Run Content Theme Color Shade
+  ///   Run Content Theme Color Shade
   /// </summary>
-  public static String? GetThemeShade(DocumentFormat.OpenXml.Wordprocessing.Color? openXmlElement)
+  public static String? GetThemeShade(Color? openXmlElement)
   {
     return openXmlElement?.ThemeShade?.Value;
   }
-  
-  public static void SetThemeShade(DocumentFormat.OpenXml.Wordprocessing.Color? openXmlElement, String? value)
+
+  public static void SetThemeShade(Color? openXmlElement, String? value)
   {
     if (openXmlElement != null)
       if (value != null)
@@ -69,8 +73,8 @@ public static class ColorConverter
       else
         openXmlElement.ThemeShade = null;
   }
-  
-  public static DocumentModel.Wordprocessing.Color? CreateModelElement(DocumentFormat.OpenXml.Wordprocessing.Color? openXmlElement)
+
+  public static DocumentModel.Wordprocessing.Color? CreateModelElement(Color? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -83,9 +87,9 @@ public static class ColorConverter
     }
     return null;
   }
-  
+
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.Color? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Wordprocessing.Color, new()
+    where OpenXmlElementType : Color, new()
   {
     if (value != null)
     {

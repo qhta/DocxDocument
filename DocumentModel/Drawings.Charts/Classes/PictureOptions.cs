@@ -1,33 +1,32 @@
 namespace DocumentModel.Drawings.Charts;
 
 /// <summary>
-/// Defines the PictureOptions Class.
+///   Defines the PictureOptions Class.
 /// </summary>
-public partial class PictureOptions
+public class PictureOptions
 {
   /// <summary>
-  /// Apply To Front.
+  ///   Apply To Front.
   /// </summary>
   public Boolean? ApplyToFront { get; set; }
-  
+
   /// <summary>
-  /// Apply To Sides.
+  ///   Apply To Sides.
   /// </summary>
   public Boolean? ApplyToSides { get; set; }
-  
+
   /// <summary>
-  /// Apply to End.
+  ///   Apply to End.
   /// </summary>
   public Boolean? ApplyToEnd { get; set; }
-  
+
   /// <summary>
-  /// Picture Format.
+  ///   Picture Format.
   /// </summary>
-  public DocumentModel.Drawings.Charts.PictureFormatKind? PictureFormat { get; set; }
-  
+  public PictureFormatKind? PictureFormat { get; set; }
+
   /// <summary>
-  /// Picture Stack Unit.
+  ///   Picture Stack Unit.
   /// </summary>
   public Double? PictureStackUnit { get; set; }
-  
 }

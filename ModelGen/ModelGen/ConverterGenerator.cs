@@ -536,11 +536,11 @@ public class ConverterGenerator : BaseCodeGenerator
   private bool GenerateListValuePropertyGetCode(PropInfo prop)
   {
     var origPropName = prop.Name;
-    var origPropItemType = prop.PropertyType.GetGenericArgTypes().FirstOrDefault();
+    var origPropItemType = prop.PropertyType.GetGenericTypeArguments().FirstOrDefault();
     if (origPropItemType != null)
     {
       var origPropItemTypeName = origPropItemType.GetFullName(true);
-      bool isEnum = (origPropItemType.IsEnum(out var enumType));
+      bool isEnum = (origPropItemType.IsEnumValue(out var enumType));
       if (isEnum && enumType != null)
         Writer.WriteLine($"return ListValueConverter.GetValue<{enumType.GetFullName(true)}, {enumType.GetFullName()}>(openXmlElement?.{origPropName});");
       else
@@ -552,11 +552,11 @@ public class ConverterGenerator : BaseCodeGenerator
   private bool GenerateListValuePropertySetCode(PropInfo prop)
   {
     var origPropName = prop.Name;
-    var origPropItemType = prop.PropertyType.GetGenericArgTypes().FirstOrDefault();
+    var origPropItemType = prop.PropertyType.GetGenericTypeArguments().FirstOrDefault();
     if (origPropItemType != null)
     {
       var origPropItemTypeName = origPropItemType.GetFullName(true);
-      bool isEnum = (origPropItemType.IsEnum(out var enumType));
+      bool isEnum = (origPropItemType.IsEnumValue(out var enumType));
       Writer.WriteLine($"if (openXmlElement != null)");
       Writer.WriteLine($"{{");
       Writer.WriteLine($"  if (value != null)");
@@ -1121,9 +1121,9 @@ public class ConverterGenerator : BaseCodeGenerator
   {
     var origPropTypeName = prop.PropertyType.GetFullName(true);
     var origPropType = prop.PropertyType;
-    var origItemType = origPropType.GetGenericArgTypes().FirstOrDefault();
+    var origItemType = origPropType.GetGenericTypeArguments().FirstOrDefault();
     var targetPropType = prop.PropertyType.GetConversionTarget();
-    var targetItemType = targetPropType.GetGenericArgTypes().FirstOrDefault();
+    var targetItemType = targetPropType.GetGenericTypeArguments().FirstOrDefault();
     if (origItemType != null && targetItemType != null)
     {
       var origItemTypeName = origItemType.GetFullName(true);
@@ -1146,9 +1146,9 @@ public class ConverterGenerator : BaseCodeGenerator
   {
     var origPropTypeName = prop.PropertyType.GetFullName(true);
     var origPropType = prop.PropertyType;
-    var origItemType = origPropType.GetGenericArgTypes().FirstOrDefault();
+    var origItemType = origPropType.GetGenericTypeArguments().FirstOrDefault();
     var targetPropType = prop.PropertyType.GetConversionTarget();
-    var targetItemType = targetPropType.GetGenericArgTypes().FirstOrDefault();
+    var targetItemType = targetPropType.GetGenericTypeArguments().FirstOrDefault();
     if (origItemType != null && targetItemType != null)
     {
       var origItemTypeName = origItemType.GetFullName(true);
@@ -1331,8 +1331,8 @@ public class ConverterGenerator : BaseCodeGenerator
     FullTypeName convPropName;
     if (targetPropTypeName.Name == "Collection")
     {
-      var origItemType = origPropType.GetGenericArgTypes().First();
-      var targetItemType = targetPropType.GetGenericArgTypes().First();
+      var origItemType = origPropType.GetGenericTypeArguments().First();
+      var targetItemType = targetPropType.GetGenericTypeArguments().First();
       if (targetItemType.IsSimple())
         return SimpleTypeConverterGetMethodName(targetItemType.GetFullName(), origItemType.GetFullName());
 
@@ -1353,8 +1353,8 @@ public class ConverterGenerator : BaseCodeGenerator
       return "StringValueConverter.GetValue";
     if (targetPropTypeName.Name == "UInt32")
       return "UInt32ValueConverter.GetValue";
-    if (targetPropTypeName.Name == "HexWord")
-      return "HexWordConverter.GetValue";
+    if (targetPropTypeName.Name == "NumId")
+      return "NumIdConverter.GetValue";
     if (targetPropTypeName.Name == "HexBinary")
       return "HexBinaryConverter.GetValue";
     if (targetPropTypeName.Name == "Base64Binary")
@@ -1382,8 +1382,8 @@ public class ConverterGenerator : BaseCodeGenerator
     FullTypeName convPropName;
     if (targetPropTypeName.Name == "Collection")
     {
-      var origItemType = origPropType.GetGenericArgTypes().First();
-      var targetItemType = targetPropType.GetGenericArgTypes().First();
+      var origItemType = origPropType.GetGenericTypeArguments().First();
+      var targetItemType = targetPropType.GetGenericTypeArguments().First();
       if (targetItemType.IsSimple())
         return SimpleTypeConverterCreateMethodName(targetItemType.GetFullName(), origItemType.GetFullName(true));
 
@@ -1408,8 +1408,8 @@ public class ConverterGenerator : BaseCodeGenerator
       return $"StringValueConverter.CreateOpenXmlElement<{origPropTypeName}>";
     if (targetPropTypeName.Name == "UInt32")
       return $"UInt32ValueConverter.CreateOpenXmlElement<{origPropTypeName}>";
-    if (targetPropTypeName.Name == "HexWord")
-      return $"HexWordConverter.CreateOpenXmlElement<{origPropTypeName}>";
+    if (targetPropTypeName.Name == "NumId")
+      return $"NumIdConverter.CreateOpenXmlElement<{origPropTypeName}>";
     if (targetPropTypeName.Name == "Byte[]")
     {
       if (origPropTypeName.Name == "HexBinaryValue")
@@ -1430,8 +1430,8 @@ public class ConverterGenerator : BaseCodeGenerator
       return SimpleTypeConverterTypeCast(targetPropTypeName);
     if (targetPropTypeName.Name == "Collection")
     {
-      var origItemType = origPropType.GetGenericArgTypes().First();
-      var targetItemType = targetPropType.GetGenericArgTypes().First();
+      var origItemType = origPropType.GetGenericTypeArguments().First();
+      var targetItemType = targetPropType.GetGenericTypeArguments().First();
       if (targetItemType.IsSimple())
         return SimpleTypeConverterTypeCast(targetItemType.GetFullName());
     }
@@ -1444,8 +1444,8 @@ public class ConverterGenerator : BaseCodeGenerator
       return "(string)";
     if (targetPropTypeName.Name == "UInt32")
       return "(UInt32)";
-    if (targetPropTypeName.Name == "HexWord")
-      return "(HexWord)";
+    if (targetPropTypeName.Name == "NumId")
+      return "(NumId)";
     return null;
   }
   #endregion

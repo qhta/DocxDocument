@@ -1,42 +1,46 @@
+using DocumentFormat.OpenXml.Packaging;
+using DocumentModel.OpenXml.Wordprocessing;
+using DocumentModel.Wordprocessing;
+
 namespace DocumentModel.OpenXml.Packaging;
 
 /// <summary>
-/// Defines the CustomizationPart
+///   Defines the CustomizationPart
 /// </summary>
 public static class CustomizationPartConverter
 {
-  public static String? GetContentType(DocumentFormat.OpenXml.Packaging.CustomizationPart? openXmlElement)
+  public static String? GetContentType(CustomizationPart? openXmlElement)
   {
     return openXmlElement?.ContentType;
   }
-  
-  public static String? GetRelationshipType(DocumentFormat.OpenXml.Packaging.CustomizationPart? openXmlElement)
+
+  public static String? GetRelationshipType(CustomizationPart? openXmlElement)
   {
     return openXmlElement?.RelationshipType;
   }
-  
+
   /// <summary>
-  /// Gets or sets the root element of this part.
+  ///   Gets or sets the root element of this part.
   /// </summary>
-  public static DocumentModel.Wordprocessing.TemplateCommandGroup? GetTemplateCommandGroup(DocumentFormat.OpenXml.Packaging.CustomizationPart? openXmlElement)
+  public static TemplateCommandGroup? GetTemplateCommandGroup(CustomizationPart? openXmlElement)
   {
     if (openXmlElement?.RootElement is DocumentFormat.OpenXml.Office.Word.TemplateCommandGroup rootElement)
-      return DocumentModel.OpenXml.Wordprocessing.TemplateCommandGroupConverter.CreateModelElement(rootElement);
+      return TemplateCommandGroupConverter.CreateModelElement(rootElement);
     return null;
   }
-  
-  public static void SetTemplateCommandGroup(DocumentFormat.OpenXml.Packaging.CustomizationPart? openXmlElement, DocumentModel.Wordprocessing.TemplateCommandGroup? value)
+
+  public static void SetTemplateCommandGroup(CustomizationPart? openXmlElement, TemplateCommandGroup? value)
   {
     if (openXmlElement != null)
       if (value != null)
       {
-         var rootElement = DocumentModel.OpenXml.Wordprocessing.TemplateCommandGroupConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office.Word.TemplateCommandGroup>(value);
-         if (rootElement != null)
-           openXmlElement.TemplateCommandGroup = rootElement;
+        var rootElement = TemplateCommandGroupConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office.Word.TemplateCommandGroup>(value);
+        if (rootElement != null)
+          openXmlElement.TemplateCommandGroup = rootElement;
       }
   }
-  
-  public static DocumentModel.Packaging.CustomizationPart? CreateModelElement(DocumentFormat.OpenXml.Packaging.CustomizationPart? openXmlElement)
+
+  public static DocumentModel.Packaging.CustomizationPart? CreateModelElement(CustomizationPart? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -48,9 +52,9 @@ public static class CustomizationPartConverter
     }
     return null;
   }
-  
+
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Packaging.CustomizationPart? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Packaging.CustomizationPart, new()
+    where OpenXmlElementType : CustomizationPart, new()
   {
     if (value != null)
     {

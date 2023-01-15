@@ -1,28 +1,27 @@
 namespace DocumentModel.Drawings.ChartDrawings;
 
 /// <summary>
-/// Defines the GeoProjectionType enumeration.
+///   Defines the GeoProjectionType enumeration.
 /// </summary>
 public enum GeoProjectionType
 {
   /// <summary>
-  /// mercator.
+  ///   mercator.
   /// </summary>
   Mercator,
-  
+
   /// <summary>
-  /// miller.
+  ///   miller.
   /// </summary>
   Miller,
-  
+
   /// <summary>
-  /// robinson.
+  ///   robinson.
   /// </summary>
   Robinson,
-  
+
   /// <summary>
-  /// albers.
+  ///   albers.
   /// </summary>
-  Albers,
-  
+  Albers
 }

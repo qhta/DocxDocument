@@ -1,19 +1,21 @@
+using DocumentFormat.OpenXml.Drawing;
+
 namespace DocumentModel.OpenXml.Drawings;
 
 /// <summary>
-/// Override Color Mapping.
+///   Override Color Mapping.
 /// </summary>
 public static class OverrideColorMappingConverter
 {
-  public static DocumentModel.Drawings.ExtensionList? GetExtensionList(DocumentFormat.OpenXml.Drawing.OverrideColorMapping? openXmlElement)
+  public static DocumentModel.Drawings.ExtensionList? GetExtensionList(OverrideColorMapping? openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.ExtensionList>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.ExtensionListConverter.CreateModelElement(itemElement);
+      return ExtensionListConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetExtensionList(DocumentFormat.OpenXml.Drawing.OverrideColorMapping? openXmlElement, DocumentModel.Drawings.ExtensionList? value)
+
+  public static void SetExtensionList(OverrideColorMapping? openXmlElement, DocumentModel.Drawings.ExtensionList? value)
   {
     if (openXmlElement != null)
     {
@@ -22,14 +24,14 @@ public static class OverrideColorMappingConverter
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Drawings.ExtensionListConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.ExtensionList>(value);
+        itemElement = ExtensionListConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.ExtensionList>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static DocumentModel.Drawings.OverrideColorMapping? CreateModelElement(DocumentFormat.OpenXml.Drawing.OverrideColorMapping? openXmlElement)
+
+  public static DocumentModel.Drawings.OverrideColorMapping? CreateModelElement(OverrideColorMapping? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -39,9 +41,9 @@ public static class OverrideColorMappingConverter
     }
     return null;
   }
-  
+
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.OverrideColorMapping? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.OverrideColorMapping, new()
+    where OpenXmlElementType : OverrideColorMapping, new()
   {
     if (value != null)
     {

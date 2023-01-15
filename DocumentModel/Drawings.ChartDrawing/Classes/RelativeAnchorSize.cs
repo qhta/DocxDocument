@@ -1,28 +1,27 @@
 namespace DocumentModel.Drawings.ChartDrawing;
 
 /// <summary>
-/// Relative Anchor Shape Size.
+///   Relative Anchor Shape Size.
 /// </summary>
-public partial class RelativeAnchorSize
+public class RelativeAnchorSize
 {
   /// <summary>
-  /// Starting Anchor Point.
+  ///   Starting Anchor Point.
   /// </summary>
-  public DocumentModel.Drawings.ChartDrawing.FromAnchor? FromAnchor { get; set; }
-  
+  public FromAnchor? FromAnchor { get; set; }
+
   /// <summary>
-  /// Ending Anchor Point.
+  ///   Ending Anchor Point.
   /// </summary>
-  public DocumentModel.Drawings.ChartDrawing.ToAnchor? ToAnchor { get; set; }
-  
-  public DocumentModel.Drawings.ChartDrawing.Shape? Shape { get; set; }
-  
-  public DocumentModel.Drawings.ChartDrawing.GroupShape? GroupShape { get; set; }
-  
-  public DocumentModel.Drawings.ChartDrawing.GraphicFrame? GraphicFrame { get; set; }
-  
-  public DocumentModel.Drawings.ChartDrawing.ConnectionShape? ConnectionShape { get; set; }
-  
-  public DocumentModel.Drawings.ChartDrawing.Picture? Picture { get; set; }
-  
+  public ToAnchor? ToAnchor { get; set; }
+
+  public Shape? Shape { get; set; }
+
+  public GroupShape? GroupShape { get; set; }
+
+  public GraphicFrame? GraphicFrame { get; set; }
+
+  public ConnectionShape? ConnectionShape { get; set; }
+
+  public Picture? Picture { get; set; }
 }

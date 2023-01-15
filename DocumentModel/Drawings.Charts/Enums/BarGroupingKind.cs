@@ -1,28 +1,27 @@
 namespace DocumentModel.Drawings.Charts;
 
 /// <summary>
-/// Bar Grouping
+///   Bar Grouping
 /// </summary>
 public enum BarGroupingKind
 {
   /// <summary>
-  /// 100% Stacked.
+  ///   100% Stacked.
   /// </summary>
   PercentStacked,
-  
+
   /// <summary>
-  /// Clustered.
+  ///   Clustered.
   /// </summary>
   Clustered,
-  
+
   /// <summary>
-  /// Standard.
+  ///   Standard.
   /// </summary>
   Standard,
-  
+
   /// <summary>
-  /// Stacked.
+  ///   Stacked.
   /// </summary>
-  Stacked,
-  
+  Stacked
 }

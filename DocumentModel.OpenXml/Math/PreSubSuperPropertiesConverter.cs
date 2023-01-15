@@ -1,22 +1,25 @@
+using DocumentModel.Math;
+using PreSubSuperProperties = DocumentFormat.OpenXml.Math.PreSubSuperProperties;
+
 namespace DocumentModel.OpenXml.Math;
 
 /// <summary>
-/// Pre-Sub-Superscript Properties.
+///   Pre-Sub-Superscript Properties.
 /// </summary>
 public static class PreSubSuperPropertiesConverter
 {
   /// <summary>
-  /// ControlProperties.
+  ///   ControlProperties.
   /// </summary>
-  public static DocumentModel.Math.ControlProperties? GetControlProperties(DocumentFormat.OpenXml.Math.PreSubSuperProperties? openXmlElement)
+  public static ControlProperties? GetControlProperties(PreSubSuperProperties? openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Math.ControlProperties>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Math.ControlPropertiesConverter.CreateModelElement(itemElement);
+      return ControlPropertiesConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetControlProperties(DocumentFormat.OpenXml.Math.PreSubSuperProperties? openXmlElement, DocumentModel.Math.ControlProperties? value)
+
+  public static void SetControlProperties(PreSubSuperProperties? openXmlElement, ControlProperties? value)
   {
     if (openXmlElement != null)
     {
@@ -25,14 +28,14 @@ public static class PreSubSuperPropertiesConverter
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Math.ControlPropertiesConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Math.ControlProperties>(value);
+        itemElement = ControlPropertiesConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Math.ControlProperties>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static DocumentModel.Math.PreSubSuperProperties? CreateModelElement(DocumentFormat.OpenXml.Math.PreSubSuperProperties? openXmlElement)
+
+  public static DocumentModel.Math.PreSubSuperProperties? CreateModelElement(PreSubSuperProperties? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -42,9 +45,9 @@ public static class PreSubSuperPropertiesConverter
     }
     return null;
   }
-  
+
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Math.PreSubSuperProperties? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Math.PreSubSuperProperties, new()
+    where OpenXmlElementType : PreSubSuperProperties, new()
   {
     if (value != null)
     {

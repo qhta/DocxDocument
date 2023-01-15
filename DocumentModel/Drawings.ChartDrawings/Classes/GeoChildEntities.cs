@@ -1,10 +1,9 @@
 namespace DocumentModel.Drawings.ChartDrawings;
 
 /// <summary>
-/// Defines the GeoChildEntities Class.
+///   Defines the GeoChildEntities Class.
 /// </summary>
-public partial class GeoChildEntities
+public class GeoChildEntities
 {
-  public Collection<DocumentModel.Drawings.ChartDrawings.GeoHierarchyEntity>? GeoHierarchyEntities { get; set; }
-  
+  public Collection<GeoHierarchyEntity>? GeoHierarchyEntities { get; set; }
 }

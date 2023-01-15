@@ -1,22 +1,25 @@
+using DocumentModel.Math;
+using SuperscriptProperties = DocumentFormat.OpenXml.Math.SuperscriptProperties;
+
 namespace DocumentModel.OpenXml.Math;
 
 /// <summary>
-/// Superscript Properties.
+///   Superscript Properties.
 /// </summary>
 public static class SuperscriptPropertiesConverter
 {
   /// <summary>
-  /// ControlProperties.
+  ///   ControlProperties.
   /// </summary>
-  public static DocumentModel.Math.ControlProperties? GetControlProperties(DocumentFormat.OpenXml.Math.SuperscriptProperties? openXmlElement)
+  public static ControlProperties? GetControlProperties(SuperscriptProperties? openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Math.ControlProperties>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Math.ControlPropertiesConverter.CreateModelElement(itemElement);
+      return ControlPropertiesConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetControlProperties(DocumentFormat.OpenXml.Math.SuperscriptProperties? openXmlElement, DocumentModel.Math.ControlProperties? value)
+
+  public static void SetControlProperties(SuperscriptProperties? openXmlElement, ControlProperties? value)
   {
     if (openXmlElement != null)
     {
@@ -25,14 +28,14 @@ public static class SuperscriptPropertiesConverter
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Math.ControlPropertiesConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Math.ControlProperties>(value);
+        itemElement = ControlPropertiesConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Math.ControlProperties>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static DocumentModel.Math.SuperscriptProperties? CreateModelElement(DocumentFormat.OpenXml.Math.SuperscriptProperties? openXmlElement)
+
+  public static DocumentModel.Math.SuperscriptProperties? CreateModelElement(SuperscriptProperties? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -42,9 +45,9 @@ public static class SuperscriptPropertiesConverter
     }
     return null;
   }
-  
+
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Math.SuperscriptProperties? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Math.SuperscriptProperties, new()
+    where OpenXmlElementType : SuperscriptProperties, new()
   {
     if (value != null)
     {

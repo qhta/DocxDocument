@@ -1,36 +1,40 @@
+using DocumentFormat.OpenXml.Office2010.Word;
+using RgbColorModelHex = DocumentModel.Wordprocessing.RgbColorModelHex;
+using SchemeColor = DocumentModel.Wordprocessing.SchemeColor;
+
 namespace DocumentModel.OpenXml.Wordprocessing;
 
 /// <summary>
-/// Defines the GradientStop Class.
+///   Defines the GradientStop Class.
 /// </summary>
 public static class GradientStopConverter
 {
   /// <summary>
-  /// pos, this property is only available in Office 2010 and later.
+  ///   pos, this property is only available in Office 2010 and later.
   /// </summary>
-  public static Int32? GetStopPosition(DocumentFormat.OpenXml.Office2010.Word.GradientStop? openXmlElement)
+  public static Int32? GetStopPosition(GradientStop? openXmlElement)
   {
     return openXmlElement?.StopPosition?.Value;
   }
-  
-  public static void SetStopPosition(DocumentFormat.OpenXml.Office2010.Word.GradientStop? openXmlElement, Int32? value)
+
+  public static void SetStopPosition(GradientStop? openXmlElement, Int32? value)
   {
     if (openXmlElement != null)
       openXmlElement.StopPosition = value;
   }
-  
+
   /// <summary>
-  /// RgbColorModelHex.
+  ///   RgbColorModelHex.
   /// </summary>
-  public static DocumentModel.Wordprocessing.RgbColorModelHex? GetRgbColorModelHex(DocumentFormat.OpenXml.Office2010.Word.GradientStop? openXmlElement)
+  public static RgbColorModelHex? GetRgbColorModelHex(GradientStop? openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office2010.Word.RgbColorModelHex>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Wordprocessing.RgbColorModelHexConverter.CreateModelElement(itemElement);
+      return RgbColorModelHexConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetRgbColorModelHex(DocumentFormat.OpenXml.Office2010.Word.GradientStop? openXmlElement, DocumentModel.Wordprocessing.RgbColorModelHex? value)
+
+  public static void SetRgbColorModelHex(GradientStop? openXmlElement, RgbColorModelHex? value)
   {
     if (openXmlElement != null)
     {
@@ -39,25 +43,25 @@ public static class GradientStopConverter
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Wordprocessing.RgbColorModelHexConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2010.Word.RgbColorModelHex>(value);
+        itemElement = RgbColorModelHexConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2010.Word.RgbColorModelHex>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
+
   /// <summary>
-  /// SchemeColor.
+  ///   SchemeColor.
   /// </summary>
-  public static DocumentModel.Wordprocessing.SchemeColor? GetSchemeColor(DocumentFormat.OpenXml.Office2010.Word.GradientStop? openXmlElement)
+  public static SchemeColor? GetSchemeColor(GradientStop? openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office2010.Word.SchemeColor>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Wordprocessing.SchemeColorConverter.CreateModelElement(itemElement);
+      return SchemeColorConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetSchemeColor(DocumentFormat.OpenXml.Office2010.Word.GradientStop? openXmlElement, DocumentModel.Wordprocessing.SchemeColor? value)
+
+  public static void SetSchemeColor(GradientStop? openXmlElement, SchemeColor? value)
   {
     if (openXmlElement != null)
     {
@@ -66,14 +70,14 @@ public static class GradientStopConverter
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Wordprocessing.SchemeColorConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2010.Word.SchemeColor>(value);
+        itemElement = SchemeColorConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2010.Word.SchemeColor>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static DocumentModel.Wordprocessing.GradientStop? CreateModelElement(DocumentFormat.OpenXml.Office2010.Word.GradientStop? openXmlElement)
+
+  public static DocumentModel.Wordprocessing.GradientStop? CreateModelElement(GradientStop? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -85,9 +89,9 @@ public static class GradientStopConverter
     }
     return null;
   }
-  
+
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.GradientStop? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Office2010.Word.GradientStop, new()
+    where OpenXmlElementType : GradientStop, new()
   {
     if (value != null)
     {

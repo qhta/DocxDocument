@@ -1,33 +1,32 @@
 namespace DocumentModel.Drawings.Pictures;
 
 /// <summary>
-/// Picture.
+///   Picture.
 /// </summary>
-public partial class Picture
+public class Picture
 {
   /// <summary>
-  /// Non-Visual Picture Properties.
+  ///   Non-Visual Picture Properties.
   /// </summary>
-  public DocumentModel.Drawings.Pictures.NonVisualPictureProperties? NonVisualPictureProperties { get; set; }
-  
+  public NonVisualPictureProperties? NonVisualPictureProperties { get; set; }
+
   /// <summary>
-  /// Picture Fill.
+  ///   Picture Fill.
   /// </summary>
-  public DocumentModel.Drawings.Pictures.BlipFill? BlipFill { get; set; }
-  
+  public BlipFill? BlipFill { get; set; }
+
   /// <summary>
-  /// Shape Properties.
+  ///   Shape Properties.
   /// </summary>
-  public DocumentModel.Drawings.Pictures.ShapeProperties? ShapeProperties { get; set; }
-  
+  public ShapeProperties? ShapeProperties { get; set; }
+
   /// <summary>
-  /// ShapeStyle, this property is only available in Office 2010 and later..
+  ///   ShapeStyle, this property is only available in Office 2010 and later..
   /// </summary>
-  public DocumentModel.Drawings.Pictures.ShapeStyle? ShapeStyle { get; set; }
-  
+  public ShapeStyle? ShapeStyle { get; set; }
+
   /// <summary>
-  /// OfficeArtExtensionList, this property is only available in Office 2010 and later..
+  ///   OfficeArtExtensionList, this property is only available in Office 2010 and later..
   /// </summary>
-  public DocumentModel.Drawings.Pictures.OfficeArtExtensionList? OfficeArtExtensionList { get; set; }
-  
+  public OfficeArtExtensionList? OfficeArtExtensionList { get; set; }
 }

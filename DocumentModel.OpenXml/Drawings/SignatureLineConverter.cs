@@ -1,19 +1,21 @@
+using DocumentFormat.OpenXml.Office2013.Drawing;
+
 namespace DocumentModel.OpenXml.Drawings;
 
 /// <summary>
-/// Defines the SignatureLine Class.
+///   Defines the SignatureLine Class.
 /// </summary>
 public static class SignatureLineConverter
 {
   /// <summary>
-  /// isSignatureLine, this property is only available in Office 2013 and later.
+  ///   isSignatureLine, this property is only available in Office 2013 and later.
   /// </summary>
-  public static Boolean? GetIsSignatureLine(DocumentFormat.OpenXml.Office2013.Drawing.SignatureLine? openXmlElement)
+  public static Boolean? GetIsSignatureLine(SignatureLine? openXmlElement)
   {
     return openXmlElement?.IsSignatureLine?.Value;
   }
-  
-  public static void SetIsSignatureLine(DocumentFormat.OpenXml.Office2013.Drawing.SignatureLine? openXmlElement, Boolean? value)
+
+  public static void SetIsSignatureLine(SignatureLine? openXmlElement, Boolean? value)
   {
     if (openXmlElement != null)
       if (value != null)
@@ -21,16 +23,16 @@ public static class SignatureLineConverter
       else
         openXmlElement.IsSignatureLine = null;
   }
-  
+
   /// <summary>
-  /// id, this property is only available in Office 2013 and later.
+  ///   id, this property is only available in Office 2013 and later.
   /// </summary>
-  public static String? GetId(DocumentFormat.OpenXml.Office2013.Drawing.SignatureLine? openXmlElement)
+  public static String? GetId(SignatureLine? openXmlElement)
   {
     return openXmlElement?.Id?.Value;
   }
-  
-  public static void SetId(DocumentFormat.OpenXml.Office2013.Drawing.SignatureLine? openXmlElement, String? value)
+
+  public static void SetId(SignatureLine? openXmlElement, String? value)
   {
     if (openXmlElement != null)
       if (value != null)
@@ -38,16 +40,16 @@ public static class SignatureLineConverter
       else
         openXmlElement.Id = null;
   }
-  
+
   /// <summary>
-  /// provId, this property is only available in Office 2013 and later.
+  ///   provId, this property is only available in Office 2013 and later.
   /// </summary>
-  public static String? GetProviderId(DocumentFormat.OpenXml.Office2013.Drawing.SignatureLine? openXmlElement)
+  public static String? GetProviderId(SignatureLine? openXmlElement)
   {
     return openXmlElement?.ProviderId?.Value;
   }
-  
-  public static void SetProviderId(DocumentFormat.OpenXml.Office2013.Drawing.SignatureLine? openXmlElement, String? value)
+
+  public static void SetProviderId(SignatureLine? openXmlElement, String? value)
   {
     if (openXmlElement != null)
       if (value != null)
@@ -55,16 +57,16 @@ public static class SignatureLineConverter
       else
         openXmlElement.ProviderId = null;
   }
-  
+
   /// <summary>
-  /// signingInstructionsSet, this property is only available in Office 2013 and later.
+  ///   signingInstructionsSet, this property is only available in Office 2013 and later.
   /// </summary>
-  public static Boolean? GetSigningInstructionsSet(DocumentFormat.OpenXml.Office2013.Drawing.SignatureLine? openXmlElement)
+  public static Boolean? GetSigningInstructionsSet(SignatureLine? openXmlElement)
   {
     return openXmlElement?.SigningInstructionsSet?.Value;
   }
-  
-  public static void SetSigningInstructionsSet(DocumentFormat.OpenXml.Office2013.Drawing.SignatureLine? openXmlElement, Boolean? value)
+
+  public static void SetSigningInstructionsSet(SignatureLine? openXmlElement, Boolean? value)
   {
     if (openXmlElement != null)
       if (value != null)
@@ -72,16 +74,16 @@ public static class SignatureLineConverter
       else
         openXmlElement.SigningInstructionsSet = null;
   }
-  
+
   /// <summary>
-  /// allowComments, this property is only available in Office 2013 and later.
+  ///   allowComments, this property is only available in Office 2013 and later.
   /// </summary>
-  public static Boolean? GetAllowComments(DocumentFormat.OpenXml.Office2013.Drawing.SignatureLine? openXmlElement)
+  public static Boolean? GetAllowComments(SignatureLine? openXmlElement)
   {
     return openXmlElement?.AllowComments?.Value;
   }
-  
-  public static void SetAllowComments(DocumentFormat.OpenXml.Office2013.Drawing.SignatureLine? openXmlElement, Boolean? value)
+
+  public static void SetAllowComments(SignatureLine? openXmlElement, Boolean? value)
   {
     if (openXmlElement != null)
       if (value != null)
@@ -89,16 +91,16 @@ public static class SignatureLineConverter
       else
         openXmlElement.AllowComments = null;
   }
-  
+
   /// <summary>
-  /// showSignDate, this property is only available in Office 2013 and later.
+  ///   showSignDate, this property is only available in Office 2013 and later.
   /// </summary>
-  public static Boolean? GetShowSignDate(DocumentFormat.OpenXml.Office2013.Drawing.SignatureLine? openXmlElement)
+  public static Boolean? GetShowSignDate(SignatureLine? openXmlElement)
   {
     return openXmlElement?.ShowSignDate?.Value;
   }
-  
-  public static void SetShowSignDate(DocumentFormat.OpenXml.Office2013.Drawing.SignatureLine? openXmlElement, Boolean? value)
+
+  public static void SetShowSignDate(SignatureLine? openXmlElement, Boolean? value)
   {
     if (openXmlElement != null)
       if (value != null)
@@ -106,16 +108,16 @@ public static class SignatureLineConverter
       else
         openXmlElement.ShowSignDate = null;
   }
-  
+
   /// <summary>
-  /// suggestedSigner, this property is only available in Office 2013 and later.
+  ///   suggestedSigner, this property is only available in Office 2013 and later.
   /// </summary>
-  public static String? GetSuggestedSigner(DocumentFormat.OpenXml.Office2013.Drawing.SignatureLine? openXmlElement)
+  public static String? GetSuggestedSigner(SignatureLine? openXmlElement)
   {
     return openXmlElement?.SuggestedSigner?.Value;
   }
-  
-  public static void SetSuggestedSigner(DocumentFormat.OpenXml.Office2013.Drawing.SignatureLine? openXmlElement, String? value)
+
+  public static void SetSuggestedSigner(SignatureLine? openXmlElement, String? value)
   {
     if (openXmlElement != null)
       if (value != null)
@@ -123,16 +125,16 @@ public static class SignatureLineConverter
       else
         openXmlElement.SuggestedSigner = null;
   }
-  
+
   /// <summary>
-  /// suggestedSigner2, this property is only available in Office 2013 and later.
+  ///   suggestedSigner2, this property is only available in Office 2013 and later.
   /// </summary>
-  public static String? GetSuggestedSigner2(DocumentFormat.OpenXml.Office2013.Drawing.SignatureLine? openXmlElement)
+  public static String? GetSuggestedSigner2(SignatureLine? openXmlElement)
   {
     return openXmlElement?.SuggestedSigner2?.Value;
   }
-  
-  public static void SetSuggestedSigner2(DocumentFormat.OpenXml.Office2013.Drawing.SignatureLine? openXmlElement, String? value)
+
+  public static void SetSuggestedSigner2(SignatureLine? openXmlElement, String? value)
   {
     if (openXmlElement != null)
       if (value != null)
@@ -140,16 +142,16 @@ public static class SignatureLineConverter
       else
         openXmlElement.SuggestedSigner2 = null;
   }
-  
+
   /// <summary>
-  /// suggestedSignerEmail, this property is only available in Office 2013 and later.
+  ///   suggestedSignerEmail, this property is only available in Office 2013 and later.
   /// </summary>
-  public static String? GetSuggestedSignerEmail(DocumentFormat.OpenXml.Office2013.Drawing.SignatureLine? openXmlElement)
+  public static String? GetSuggestedSignerEmail(SignatureLine? openXmlElement)
   {
     return openXmlElement?.SuggestedSignerEmail?.Value;
   }
-  
-  public static void SetSuggestedSignerEmail(DocumentFormat.OpenXml.Office2013.Drawing.SignatureLine? openXmlElement, String? value)
+
+  public static void SetSuggestedSignerEmail(SignatureLine? openXmlElement, String? value)
   {
     if (openXmlElement != null)
       if (value != null)
@@ -157,16 +159,16 @@ public static class SignatureLineConverter
       else
         openXmlElement.SuggestedSignerEmail = null;
   }
-  
+
   /// <summary>
-  /// signingInstructions, this property is only available in Office 2013 and later.
+  ///   signingInstructions, this property is only available in Office 2013 and later.
   /// </summary>
-  public static String? GetSigningInstructions(DocumentFormat.OpenXml.Office2013.Drawing.SignatureLine? openXmlElement)
+  public static String? GetSigningInstructions(SignatureLine? openXmlElement)
   {
     return openXmlElement?.SigningInstructions?.Value;
   }
-  
-  public static void SetSigningInstructions(DocumentFormat.OpenXml.Office2013.Drawing.SignatureLine? openXmlElement, String? value)
+
+  public static void SetSigningInstructions(SignatureLine? openXmlElement, String? value)
   {
     if (openXmlElement != null)
       if (value != null)
@@ -174,16 +176,16 @@ public static class SignatureLineConverter
       else
         openXmlElement.SigningInstructions = null;
   }
-  
+
   /// <summary>
-  /// addlXml, this property is only available in Office 2013 and later.
+  ///   addlXml, this property is only available in Office 2013 and later.
   /// </summary>
-  public static String? GetAdditionalXml(DocumentFormat.OpenXml.Office2013.Drawing.SignatureLine? openXmlElement)
+  public static String? GetAdditionalXml(SignatureLine? openXmlElement)
   {
     return openXmlElement?.AdditionalXml?.Value;
   }
-  
-  public static void SetAdditionalXml(DocumentFormat.OpenXml.Office2013.Drawing.SignatureLine? openXmlElement, String? value)
+
+  public static void SetAdditionalXml(SignatureLine? openXmlElement, String? value)
   {
     if (openXmlElement != null)
       if (value != null)
@@ -191,16 +193,16 @@ public static class SignatureLineConverter
       else
         openXmlElement.AdditionalXml = null;
   }
-  
+
   /// <summary>
-  /// sigProvUrl, this property is only available in Office 2013 and later.
+  ///   sigProvUrl, this property is only available in Office 2013 and later.
   /// </summary>
-  public static String? GetSignatureProviderUrl(DocumentFormat.OpenXml.Office2013.Drawing.SignatureLine? openXmlElement)
+  public static String? GetSignatureProviderUrl(SignatureLine? openXmlElement)
   {
     return openXmlElement?.SignatureProviderUrl?.Value;
   }
-  
-  public static void SetSignatureProviderUrl(DocumentFormat.OpenXml.Office2013.Drawing.SignatureLine? openXmlElement, String? value)
+
+  public static void SetSignatureProviderUrl(SignatureLine? openXmlElement, String? value)
   {
     if (openXmlElement != null)
       if (value != null)
@@ -208,8 +210,8 @@ public static class SignatureLineConverter
       else
         openXmlElement.SignatureProviderUrl = null;
   }
-  
-  public static DocumentModel.Drawings.SignatureLine? CreateModelElement(DocumentFormat.OpenXml.Office2013.Drawing.SignatureLine? openXmlElement)
+
+  public static DocumentModel.Drawings.SignatureLine? CreateModelElement(SignatureLine? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -230,9 +232,9 @@ public static class SignatureLineConverter
     }
     return null;
   }
-  
+
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.SignatureLine? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Office2013.Drawing.SignatureLine, new()
+    where OpenXmlElementType : SignatureLine, new()
   {
     if (value != null)
     {

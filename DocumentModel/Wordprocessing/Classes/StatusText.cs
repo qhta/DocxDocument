@@ -1,18 +1,17 @@
 namespace DocumentModel.Wordprocessing;
 
 /// <summary>
-/// Associated Status Text.
+///   Associated Status Text.
 /// </summary>
-public partial class StatusText
+public class StatusText
 {
   /// <summary>
-  /// Status Text Type
+  ///   Status Text Type
   /// </summary>
-  public DocumentModel.Wordprocessing.InfoTextKind? Type { get; set; }
-  
+  public InfoTextKind? Type { get; set; }
+
   /// <summary>
-  /// Status Text Value
+  ///   Status Text Value
   /// </summary>
   public String? Val { get; set; }
-  
 }

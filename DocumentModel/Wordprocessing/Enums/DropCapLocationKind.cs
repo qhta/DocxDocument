@@ -1,23 +1,22 @@
 namespace DocumentModel.Wordprocessing;
 
 /// <summary>
-/// Defines the DropCapLocationValues enumeration.
+///   Defines the DropCapLocationValues enumeration.
 /// </summary>
 public enum DropCapLocationKind
 {
   /// <summary>
-  /// Not Drop Cap.
+  ///   Not Drop Cap.
   /// </summary>
   None,
-  
+
   /// <summary>
-  /// Drop Cap Inside Margin.
+  ///   Drop Cap Inside Margin.
   /// </summary>
   Drop,
-  
+
   /// <summary>
-  /// Drop Cap Outside Margin.
+  ///   Drop Cap Outside Margin.
   /// </summary>
-  Margin,
-  
+  Margin
 }

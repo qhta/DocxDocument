@@ -1,25 +1,29 @@
+using DocumentFormat.OpenXml.Vml;
+using DocumentModel.Vml;
+using Complex = DocumentFormat.OpenXml.Vml.Office.Complex;
+
 namespace DocumentModel.OpenXml.Vml;
 
 /// <summary>
-/// Complex.
+///   Complex.
 /// </summary>
 public static class ComplexConverter
 {
   /// <summary>
-  /// VML Extension Handling Behavior
+  ///   VML Extension Handling Behavior
   /// </summary>
-  public static DocumentModel.Vml.ExtensionHandlingBehaviorKind? GetExtension(DocumentFormat.OpenXml.Vml.Office.Complex? openXmlElement)
+  public static ExtensionHandlingBehaviorKind? GetExtension(Complex? openXmlElement)
   {
-    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Vml.ExtensionHandlingBehaviorValues, DocumentModel.Vml.ExtensionHandlingBehaviorKind>(openXmlElement?.Extension?.Value);
+    return EnumValueConverter.GetValue<ExtensionHandlingBehaviorValues, ExtensionHandlingBehaviorKind>(openXmlElement?.Extension?.Value);
   }
-  
-  public static void SetExtension(DocumentFormat.OpenXml.Vml.Office.Complex? openXmlElement, DocumentModel.Vml.ExtensionHandlingBehaviorKind? value)
+
+  public static void SetExtension(Complex? openXmlElement, ExtensionHandlingBehaviorKind? value)
   {
     if (openXmlElement != null)
-      openXmlElement.Extension = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Vml.ExtensionHandlingBehaviorValues, DocumentModel.Vml.ExtensionHandlingBehaviorKind>(value);
+      openXmlElement.Extension = EnumValueConverter.CreateEnumValue<ExtensionHandlingBehaviorValues, ExtensionHandlingBehaviorKind>(value);
   }
-  
-  public static DocumentModel.Vml.Complex? CreateModelElement(DocumentFormat.OpenXml.Vml.Office.Complex? openXmlElement)
+
+  public static DocumentModel.Vml.Complex? CreateModelElement(Complex? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -29,9 +33,9 @@ public static class ComplexConverter
     }
     return null;
   }
-  
+
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Vml.Complex? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Vml.Office.Complex, new()
+    where OpenXmlElementType : Complex, new()
   {
     if (value != null)
     {

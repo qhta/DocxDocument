@@ -1,34 +1,33 @@
 namespace DocumentModel.Wordprocessing.DrawingShape;
 
 /// <summary>
-/// Defines the WordprocessingShape Class.
+///   Defines the WordprocessingShape Class.
 /// </summary>
-public partial class WordprocessingShape
+public class WordprocessingShape
 {
   /// <summary>
-  /// normalEastAsianFlow, this property is only available in Office 2010 and later.
+  ///   normalEastAsianFlow, this property is only available in Office 2010 and later.
   /// </summary>
   public Boolean? NormalEastAsianFlow { get; set; }
-  
+
   /// <summary>
-  /// NonVisualDrawingProperties.
+  ///   NonVisualDrawingProperties.
   /// </summary>
-  public DocumentModel.Wordprocessing.DrawingShape.NonVisualDrawingProperties? NonVisualDrawingProperties { get; set; }
-  
-  public DocumentModel.Wordprocessing.DrawingShape.NonVisualDrawingShapeProperties? NonVisualDrawingShapeProperties { get; set; }
-  
-  public DocumentModel.Wordprocessing.DrawingShape.NonVisualConnectorProperties? NonVisualConnectorProperties { get; set; }
-  
-  public DocumentModel.Wordprocessing.DrawingShape.ShapeProperties? ShapeProperties { get; set; }
-  
-  public DocumentModel.Wordprocessing.DrawingShape.ShapeStyle? ShapeStyle { get; set; }
-  
-  public DocumentModel.Wordprocessing.DrawingShape.OfficeArtExtensionList? OfficeArtExtensionList { get; set; }
-  
-  public DocumentModel.Wordprocessing.DrawingShape.TextBoxInfo2? TextBoxInfo2 { get; set; }
-  
-  public DocumentModel.Wordprocessing.DrawingShape.LinkedTextBox? LinkedTextBox { get; set; }
-  
-  public DocumentModel.Wordprocessing.DrawingShape.TextBodyProperties? TextBodyProperties { get; set; }
-  
+  public NonVisualDrawingProperties? NonVisualDrawingProperties { get; set; }
+
+  public NonVisualDrawingShapeProperties? NonVisualDrawingShapeProperties { get; set; }
+
+  public NonVisualConnectorProperties? NonVisualConnectorProperties { get; set; }
+
+  public ShapeProperties? ShapeProperties { get; set; }
+
+  public ShapeStyle? ShapeStyle { get; set; }
+
+  public OfficeArtExtensionList? OfficeArtExtensionList { get; set; }
+
+  public TextBoxInfo2? TextBoxInfo2 { get; set; }
+
+  public LinkedTextBox? LinkedTextBox { get; set; }
+
+  public TextBodyProperties? TextBodyProperties { get; set; }
 }

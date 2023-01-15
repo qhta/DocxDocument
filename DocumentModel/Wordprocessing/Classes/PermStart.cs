@@ -1,38 +1,37 @@
 namespace DocumentModel.Wordprocessing;
 
 /// <summary>
-/// Defines the PermStart Class.
+///   Defines the PermStart Class.
 /// </summary>
-public partial class PermStart
+public class PermStart
 {
   /// <summary>
-  /// edGrp
+  ///   edGrp
   /// </summary>
-  public DocumentModel.Wordprocessing.RangePermissionEditingGroupKind? EditorGroup { get; set; }
-  
+  public RangePermissionEditingGroupKind? EditorGroup { get; set; }
+
   /// <summary>
-  /// ed
+  ///   ed
   /// </summary>
   public String? Ed { get; set; }
-  
+
   /// <summary>
-  /// colFirst
+  ///   colFirst
   /// </summary>
   public Int32? ColumnFirst { get; set; }
-  
+
   /// <summary>
-  /// colLast
+  ///   colLast
   /// </summary>
   public Int32? ColumnLast { get; set; }
-  
+
   /// <summary>
-  /// Annotation ID
+  ///   Annotation ID
   /// </summary>
   public Int32? Id { get; set; }
-  
+
   /// <summary>
-  /// Annotation Displaced By Custom XML Markup
+  ///   Annotation Displaced By Custom XML Markup
   /// </summary>
-  public DocumentModel.Wordprocessing.DisplacedByCustomXmlKind? DisplacedByCustomXml { get; set; }
-  
+  public DisplacedByCustomXmlKind? DisplacedByCustomXml { get; set; }
 }

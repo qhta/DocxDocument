@@ -1,12 +1,11 @@
 namespace DocumentModel.Drawings.Charts;
 
 /// <summary>
-/// Plus.
+///   Plus.
 /// </summary>
-public partial class Plus
+public class Plus
 {
-  public DocumentModel.Drawings.Charts.NumberReference? NumberReference { get; set; }
-  
-  public DocumentModel.Drawings.Charts.NumberLiteral? NumberLiteral { get; set; }
-  
+  public NumberReference? NumberReference { get; set; }
+
+  public NumberLiteral? NumberLiteral { get; set; }
 }

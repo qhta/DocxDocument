@@ -1,18 +1,17 @@
 namespace DocumentModel.Wordprocessing;
 
 /// <summary>
-/// Linked Object Update Modes
+///   Linked Object Update Modes
 /// </summary>
 public enum ObjectUpdateMode
 {
   /// <summary>
-  /// always.
+  ///   always.
   /// </summary>
   always,
-  
+
   /// <summary>
-  /// onCall.
+  ///   onCall.
   /// </summary>
-  onCall,
-  
+  onCall
 }

@@ -1,53 +1,52 @@
 namespace DocumentModel;
 
 /// <summary>
-/// Defines the ExpandValues enumeration.
+///   Defines the ExpandValues enumeration.
 /// </summary>
 public enum ExpandKind
 {
   /// <summary>
-  /// topLeft.
+  ///   topLeft.
   /// </summary>
   TopLeft,
-  
+
   /// <summary>
-  /// top.
+  ///   top.
   /// </summary>
   Top,
-  
+
   /// <summary>
-  /// topRight.
+  ///   topRight.
   /// </summary>
   TopRight,
-  
+
   /// <summary>
-  /// left.
+  ///   left.
   /// </summary>
   Left,
-  
+
   /// <summary>
-  /// center.
+  ///   center.
   /// </summary>
   Center,
-  
+
   /// <summary>
-  /// right.
+  ///   right.
   /// </summary>
   Right,
-  
+
   /// <summary>
-  /// bottomLeft.
+  ///   bottomLeft.
   /// </summary>
   BottomLeft,
-  
+
   /// <summary>
-  /// bottom.
+  ///   bottom.
   /// </summary>
   Bottom,
-  
+
   /// <summary>
-  /// bottomRight.
+  ///   bottomRight.
   /// </summary>
-  BottomRight,
-  
+  BottomRight
 }

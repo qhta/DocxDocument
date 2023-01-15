@@ -1,22 +1,24 @@
+using DocumentModel.UI;
+
 namespace DocumentModel.OpenXml.UI;
 
 /// <summary>
-/// Defines the QuickAccessToolbar Class.
+///   Defines the QuickAccessToolbar Class.
 /// </summary>
 public static class QuickAccessToolbarConverter
 {
   /// <summary>
-  /// SharedQatControls.
+  ///   SharedQatControls.
   /// </summary>
-  public static DocumentModel.UI.SharedQatControls? GetSharedQatControls(DocumentFormat.OpenXml.Office.CustomUI.QuickAccessToolbar? openXmlElement)
+  public static SharedQatControls? GetSharedQatControls(DocumentFormat.OpenXml.Office.CustomUI.QuickAccessToolbar? openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office.CustomUI.SharedQatControls>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.UI.SharedQatControlsConverter.CreateModelElement(itemElement);
+      return SharedQatControlsConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetSharedQatControls(DocumentFormat.OpenXml.Office.CustomUI.QuickAccessToolbar? openXmlElement, DocumentModel.UI.SharedQatControls? value)
+
+  public static void SetSharedQatControls(DocumentFormat.OpenXml.Office.CustomUI.QuickAccessToolbar? openXmlElement, SharedQatControls? value)
   {
     if (openXmlElement != null)
     {
@@ -25,25 +27,25 @@ public static class QuickAccessToolbarConverter
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.UI.SharedQatControlsConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office.CustomUI.SharedQatControls>(value);
+        itemElement = SharedQatControlsConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office.CustomUI.SharedQatControls>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
+
   /// <summary>
-  /// DocumentSpecificQuickAccessToolbarControls.
+  ///   DocumentSpecificQuickAccessToolbarControls.
   /// </summary>
-  public static DocumentModel.UI.DocumentSpecificQuickAccessToolbarControls? GetDocumentSpecificQuickAccessToolbarControls(DocumentFormat.OpenXml.Office.CustomUI.QuickAccessToolbar? openXmlElement)
+  public static DocumentSpecificQuickAccessToolbarControls? GetDocumentSpecificQuickAccessToolbarControls(DocumentFormat.OpenXml.Office.CustomUI.QuickAccessToolbar? openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office.CustomUI.DocumentSpecificQuickAccessToolbarControls>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.UI.DocumentSpecificQuickAccessToolbarControlsConverter.CreateModelElement(itemElement);
+      return DocumentSpecificQuickAccessToolbarControlsConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetDocumentSpecificQuickAccessToolbarControls(DocumentFormat.OpenXml.Office.CustomUI.QuickAccessToolbar? openXmlElement, DocumentModel.UI.DocumentSpecificQuickAccessToolbarControls? value)
+
+  public static void SetDocumentSpecificQuickAccessToolbarControls(DocumentFormat.OpenXml.Office.CustomUI.QuickAccessToolbar? openXmlElement, DocumentSpecificQuickAccessToolbarControls? value)
   {
     if (openXmlElement != null)
     {
@@ -52,13 +54,13 @@ public static class QuickAccessToolbarConverter
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.UI.DocumentSpecificQuickAccessToolbarControlsConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office.CustomUI.DocumentSpecificQuickAccessToolbarControls>(value);
+        itemElement = DocumentSpecificQuickAccessToolbarControlsConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office.CustomUI.DocumentSpecificQuickAccessToolbarControls>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
+
   public static DocumentModel.UI.QuickAccessToolbar? CreateModelElement(DocumentFormat.OpenXml.Office.CustomUI.QuickAccessToolbar? openXmlElement)
   {
     if (openXmlElement != null)
@@ -70,9 +72,9 @@ public static class QuickAccessToolbarConverter
     }
     return null;
   }
-  
+
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.UI.QuickAccessToolbar? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Office.CustomUI.QuickAccessToolbar, new()
+    where OpenXmlElementType : DocumentFormat.OpenXml.Office.CustomUI.QuickAccessToolbar, new()
   {
     if (value != null)
     {

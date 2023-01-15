@@ -1,19 +1,21 @@
+using DocumentFormat.OpenXml.Office.CustomUI;
+
 namespace DocumentModel.OpenXml.UI;
 
 /// <summary>
-/// Defines the UnsizedControlClone Class.
+///   Defines the UnsizedControlClone Class.
 /// </summary>
 public static class UnsizedControlCloneConverter
 {
   /// <summary>
-  /// idQ
+  ///   idQ
   /// </summary>
-  public static String? GetIdQ(DocumentFormat.OpenXml.Office.CustomUI.UnsizedControlClone? openXmlElement)
+  public static String? GetIdQ(UnsizedControlClone? openXmlElement)
   {
     return openXmlElement?.IdQ?.Value;
   }
-  
-  public static void SetIdQ(DocumentFormat.OpenXml.Office.CustomUI.UnsizedControlClone? openXmlElement, String? value)
+
+  public static void SetIdQ(UnsizedControlClone? openXmlElement, String? value)
   {
     if (openXmlElement != null)
       if (value != null)
@@ -21,16 +23,16 @@ public static class UnsizedControlCloneConverter
       else
         openXmlElement.IdQ = null;
   }
-  
+
   /// <summary>
-  /// idMso
+  ///   idMso
   /// </summary>
-  public static String? GetIdMso(DocumentFormat.OpenXml.Office.CustomUI.UnsizedControlClone? openXmlElement)
+  public static String? GetIdMso(UnsizedControlClone? openXmlElement)
   {
     return openXmlElement?.IdMso?.Value;
   }
-  
-  public static void SetIdMso(DocumentFormat.OpenXml.Office.CustomUI.UnsizedControlClone? openXmlElement, String? value)
+
+  public static void SetIdMso(UnsizedControlClone? openXmlElement, String? value)
   {
     if (openXmlElement != null)
       if (value != null)
@@ -38,16 +40,16 @@ public static class UnsizedControlCloneConverter
       else
         openXmlElement.IdMso = null;
   }
-  
+
   /// <summary>
-  /// tag
+  ///   tag
   /// </summary>
-  public static String? GetTag(DocumentFormat.OpenXml.Office.CustomUI.UnsizedControlClone? openXmlElement)
+  public static String? GetTag(UnsizedControlClone? openXmlElement)
   {
     return openXmlElement?.Tag?.Value;
   }
-  
-  public static void SetTag(DocumentFormat.OpenXml.Office.CustomUI.UnsizedControlClone? openXmlElement, String? value)
+
+  public static void SetTag(UnsizedControlClone? openXmlElement, String? value)
   {
     if (openXmlElement != null)
       if (value != null)
@@ -55,16 +57,16 @@ public static class UnsizedControlCloneConverter
       else
         openXmlElement.Tag = null;
   }
-  
+
   /// <summary>
-  /// image
+  ///   image
   /// </summary>
-  public static String? GetImage(DocumentFormat.OpenXml.Office.CustomUI.UnsizedControlClone? openXmlElement)
+  public static String? GetImage(UnsizedControlClone? openXmlElement)
   {
     return openXmlElement?.Image?.Value;
   }
-  
-  public static void SetImage(DocumentFormat.OpenXml.Office.CustomUI.UnsizedControlClone? openXmlElement, String? value)
+
+  public static void SetImage(UnsizedControlClone? openXmlElement, String? value)
   {
     if (openXmlElement != null)
       if (value != null)
@@ -72,16 +74,16 @@ public static class UnsizedControlCloneConverter
       else
         openXmlElement.Image = null;
   }
-  
+
   /// <summary>
-  /// imageMso
+  ///   imageMso
   /// </summary>
-  public static String? GetImageMso(DocumentFormat.OpenXml.Office.CustomUI.UnsizedControlClone? openXmlElement)
+  public static String? GetImageMso(UnsizedControlClone? openXmlElement)
   {
     return openXmlElement?.ImageMso?.Value;
   }
-  
-  public static void SetImageMso(DocumentFormat.OpenXml.Office.CustomUI.UnsizedControlClone? openXmlElement, String? value)
+
+  public static void SetImageMso(UnsizedControlClone? openXmlElement, String? value)
   {
     if (openXmlElement != null)
       if (value != null)
@@ -89,16 +91,16 @@ public static class UnsizedControlCloneConverter
       else
         openXmlElement.ImageMso = null;
   }
-  
+
   /// <summary>
-  /// getImage
+  ///   getImage
   /// </summary>
-  public static String? GetGetImage(DocumentFormat.OpenXml.Office.CustomUI.UnsizedControlClone? openXmlElement)
+  public static String? GetGetImage(UnsizedControlClone? openXmlElement)
   {
     return openXmlElement?.GetImage?.Value;
   }
-  
-  public static void SetGetImage(DocumentFormat.OpenXml.Office.CustomUI.UnsizedControlClone? openXmlElement, String? value)
+
+  public static void SetGetImage(UnsizedControlClone? openXmlElement, String? value)
   {
     if (openXmlElement != null)
       if (value != null)
@@ -106,16 +108,16 @@ public static class UnsizedControlCloneConverter
       else
         openXmlElement.GetImage = null;
   }
-  
+
   /// <summary>
-  /// screentip
+  ///   screentip
   /// </summary>
-  public static String? GetScreentip(DocumentFormat.OpenXml.Office.CustomUI.UnsizedControlClone? openXmlElement)
+  public static String? GetScreentip(UnsizedControlClone? openXmlElement)
   {
     return openXmlElement?.Screentip?.Value;
   }
-  
-  public static void SetScreentip(DocumentFormat.OpenXml.Office.CustomUI.UnsizedControlClone? openXmlElement, String? value)
+
+  public static void SetScreentip(UnsizedControlClone? openXmlElement, String? value)
   {
     if (openXmlElement != null)
       if (value != null)
@@ -123,16 +125,16 @@ public static class UnsizedControlCloneConverter
       else
         openXmlElement.Screentip = null;
   }
-  
+
   /// <summary>
-  /// getScreentip
+  ///   getScreentip
   /// </summary>
-  public static String? GetGetScreentip(DocumentFormat.OpenXml.Office.CustomUI.UnsizedControlClone? openXmlElement)
+  public static String? GetGetScreentip(UnsizedControlClone? openXmlElement)
   {
     return openXmlElement?.GetScreentip?.Value;
   }
-  
-  public static void SetGetScreentip(DocumentFormat.OpenXml.Office.CustomUI.UnsizedControlClone? openXmlElement, String? value)
+
+  public static void SetGetScreentip(UnsizedControlClone? openXmlElement, String? value)
   {
     if (openXmlElement != null)
       if (value != null)
@@ -140,16 +142,16 @@ public static class UnsizedControlCloneConverter
       else
         openXmlElement.GetScreentip = null;
   }
-  
+
   /// <summary>
-  /// supertip
+  ///   supertip
   /// </summary>
-  public static String? GetSupertip(DocumentFormat.OpenXml.Office.CustomUI.UnsizedControlClone? openXmlElement)
+  public static String? GetSupertip(UnsizedControlClone? openXmlElement)
   {
     return openXmlElement?.Supertip?.Value;
   }
-  
-  public static void SetSupertip(DocumentFormat.OpenXml.Office.CustomUI.UnsizedControlClone? openXmlElement, String? value)
+
+  public static void SetSupertip(UnsizedControlClone? openXmlElement, String? value)
   {
     if (openXmlElement != null)
       if (value != null)
@@ -157,16 +159,16 @@ public static class UnsizedControlCloneConverter
       else
         openXmlElement.Supertip = null;
   }
-  
+
   /// <summary>
-  /// getSupertip
+  ///   getSupertip
   /// </summary>
-  public static String? GetGetSupertip(DocumentFormat.OpenXml.Office.CustomUI.UnsizedControlClone? openXmlElement)
+  public static String? GetGetSupertip(UnsizedControlClone? openXmlElement)
   {
     return openXmlElement?.GetSupertip?.Value;
   }
-  
-  public static void SetGetSupertip(DocumentFormat.OpenXml.Office.CustomUI.UnsizedControlClone? openXmlElement, String? value)
+
+  public static void SetGetSupertip(UnsizedControlClone? openXmlElement, String? value)
   {
     if (openXmlElement != null)
       if (value != null)
@@ -174,16 +176,16 @@ public static class UnsizedControlCloneConverter
       else
         openXmlElement.GetSupertip = null;
   }
-  
+
   /// <summary>
-  /// enabled
+  ///   enabled
   /// </summary>
-  public static Boolean? GetEnabled(DocumentFormat.OpenXml.Office.CustomUI.UnsizedControlClone? openXmlElement)
+  public static Boolean? GetEnabled(UnsizedControlClone? openXmlElement)
   {
     return openXmlElement?.Enabled?.Value;
   }
-  
-  public static void SetEnabled(DocumentFormat.OpenXml.Office.CustomUI.UnsizedControlClone? openXmlElement, Boolean? value)
+
+  public static void SetEnabled(UnsizedControlClone? openXmlElement, Boolean? value)
   {
     if (openXmlElement != null)
       if (value != null)
@@ -191,16 +193,16 @@ public static class UnsizedControlCloneConverter
       else
         openXmlElement.Enabled = null;
   }
-  
+
   /// <summary>
-  /// getEnabled
+  ///   getEnabled
   /// </summary>
-  public static String? GetGetEnabled(DocumentFormat.OpenXml.Office.CustomUI.UnsizedControlClone? openXmlElement)
+  public static String? GetGetEnabled(UnsizedControlClone? openXmlElement)
   {
     return openXmlElement?.GetEnabled?.Value;
   }
-  
-  public static void SetGetEnabled(DocumentFormat.OpenXml.Office.CustomUI.UnsizedControlClone? openXmlElement, String? value)
+
+  public static void SetGetEnabled(UnsizedControlClone? openXmlElement, String? value)
   {
     if (openXmlElement != null)
       if (value != null)
@@ -208,16 +210,16 @@ public static class UnsizedControlCloneConverter
       else
         openXmlElement.GetEnabled = null;
   }
-  
+
   /// <summary>
-  /// label
+  ///   label
   /// </summary>
-  public static String? GetLabel(DocumentFormat.OpenXml.Office.CustomUI.UnsizedControlClone? openXmlElement)
+  public static String? GetLabel(UnsizedControlClone? openXmlElement)
   {
     return openXmlElement?.Label?.Value;
   }
-  
-  public static void SetLabel(DocumentFormat.OpenXml.Office.CustomUI.UnsizedControlClone? openXmlElement, String? value)
+
+  public static void SetLabel(UnsizedControlClone? openXmlElement, String? value)
   {
     if (openXmlElement != null)
       if (value != null)
@@ -225,16 +227,16 @@ public static class UnsizedControlCloneConverter
       else
         openXmlElement.Label = null;
   }
-  
+
   /// <summary>
-  /// getLabel
+  ///   getLabel
   /// </summary>
-  public static String? GetGetLabel(DocumentFormat.OpenXml.Office.CustomUI.UnsizedControlClone? openXmlElement)
+  public static String? GetGetLabel(UnsizedControlClone? openXmlElement)
   {
     return openXmlElement?.GetLabel?.Value;
   }
-  
-  public static void SetGetLabel(DocumentFormat.OpenXml.Office.CustomUI.UnsizedControlClone? openXmlElement, String? value)
+
+  public static void SetGetLabel(UnsizedControlClone? openXmlElement, String? value)
   {
     if (openXmlElement != null)
       if (value != null)
@@ -242,16 +244,16 @@ public static class UnsizedControlCloneConverter
       else
         openXmlElement.GetLabel = null;
   }
-  
+
   /// <summary>
-  /// insertAfterMso
+  ///   insertAfterMso
   /// </summary>
-  public static String? GetInsertAfterMso(DocumentFormat.OpenXml.Office.CustomUI.UnsizedControlClone? openXmlElement)
+  public static String? GetInsertAfterMso(UnsizedControlClone? openXmlElement)
   {
     return openXmlElement?.InsertAfterMso?.Value;
   }
-  
-  public static void SetInsertAfterMso(DocumentFormat.OpenXml.Office.CustomUI.UnsizedControlClone? openXmlElement, String? value)
+
+  public static void SetInsertAfterMso(UnsizedControlClone? openXmlElement, String? value)
   {
     if (openXmlElement != null)
       if (value != null)
@@ -259,16 +261,16 @@ public static class UnsizedControlCloneConverter
       else
         openXmlElement.InsertAfterMso = null;
   }
-  
+
   /// <summary>
-  /// insertBeforeMso
+  ///   insertBeforeMso
   /// </summary>
-  public static String? GetInsertBeforeMso(DocumentFormat.OpenXml.Office.CustomUI.UnsizedControlClone? openXmlElement)
+  public static String? GetInsertBeforeMso(UnsizedControlClone? openXmlElement)
   {
     return openXmlElement?.InsertBeforeMso?.Value;
   }
-  
-  public static void SetInsertBeforeMso(DocumentFormat.OpenXml.Office.CustomUI.UnsizedControlClone? openXmlElement, String? value)
+
+  public static void SetInsertBeforeMso(UnsizedControlClone? openXmlElement, String? value)
   {
     if (openXmlElement != null)
       if (value != null)
@@ -276,16 +278,16 @@ public static class UnsizedControlCloneConverter
       else
         openXmlElement.InsertBeforeMso = null;
   }
-  
+
   /// <summary>
-  /// insertAfterQ
+  ///   insertAfterQ
   /// </summary>
-  public static String? GetInsertAfterQ(DocumentFormat.OpenXml.Office.CustomUI.UnsizedControlClone? openXmlElement)
+  public static String? GetInsertAfterQ(UnsizedControlClone? openXmlElement)
   {
     return openXmlElement?.InsertAfterQ?.Value;
   }
-  
-  public static void SetInsertAfterQ(DocumentFormat.OpenXml.Office.CustomUI.UnsizedControlClone? openXmlElement, String? value)
+
+  public static void SetInsertAfterQ(UnsizedControlClone? openXmlElement, String? value)
   {
     if (openXmlElement != null)
       if (value != null)
@@ -293,16 +295,16 @@ public static class UnsizedControlCloneConverter
       else
         openXmlElement.InsertAfterQ = null;
   }
-  
+
   /// <summary>
-  /// insertBeforeQ
+  ///   insertBeforeQ
   /// </summary>
-  public static String? GetInsertBeforeQ(DocumentFormat.OpenXml.Office.CustomUI.UnsizedControlClone? openXmlElement)
+  public static String? GetInsertBeforeQ(UnsizedControlClone? openXmlElement)
   {
     return openXmlElement?.InsertBeforeQ?.Value;
   }
-  
-  public static void SetInsertBeforeQ(DocumentFormat.OpenXml.Office.CustomUI.UnsizedControlClone? openXmlElement, String? value)
+
+  public static void SetInsertBeforeQ(UnsizedControlClone? openXmlElement, String? value)
   {
     if (openXmlElement != null)
       if (value != null)
@@ -310,16 +312,16 @@ public static class UnsizedControlCloneConverter
       else
         openXmlElement.InsertBeforeQ = null;
   }
-  
+
   /// <summary>
-  /// visible
+  ///   visible
   /// </summary>
-  public static Boolean? GetVisible(DocumentFormat.OpenXml.Office.CustomUI.UnsizedControlClone? openXmlElement)
+  public static Boolean? GetVisible(UnsizedControlClone? openXmlElement)
   {
     return openXmlElement?.Visible?.Value;
   }
-  
-  public static void SetVisible(DocumentFormat.OpenXml.Office.CustomUI.UnsizedControlClone? openXmlElement, Boolean? value)
+
+  public static void SetVisible(UnsizedControlClone? openXmlElement, Boolean? value)
   {
     if (openXmlElement != null)
       if (value != null)
@@ -327,16 +329,16 @@ public static class UnsizedControlCloneConverter
       else
         openXmlElement.Visible = null;
   }
-  
+
   /// <summary>
-  /// getVisible
+  ///   getVisible
   /// </summary>
-  public static String? GetGetVisible(DocumentFormat.OpenXml.Office.CustomUI.UnsizedControlClone? openXmlElement)
+  public static String? GetGetVisible(UnsizedControlClone? openXmlElement)
   {
     return openXmlElement?.GetVisible?.Value;
   }
-  
-  public static void SetGetVisible(DocumentFormat.OpenXml.Office.CustomUI.UnsizedControlClone? openXmlElement, String? value)
+
+  public static void SetGetVisible(UnsizedControlClone? openXmlElement, String? value)
   {
     if (openXmlElement != null)
       if (value != null)
@@ -344,16 +346,16 @@ public static class UnsizedControlCloneConverter
       else
         openXmlElement.GetVisible = null;
   }
-  
+
   /// <summary>
-  /// keytip
+  ///   keytip
   /// </summary>
-  public static String? GetKeytip(DocumentFormat.OpenXml.Office.CustomUI.UnsizedControlClone? openXmlElement)
+  public static String? GetKeytip(UnsizedControlClone? openXmlElement)
   {
     return openXmlElement?.Keytip?.Value;
   }
-  
-  public static void SetKeytip(DocumentFormat.OpenXml.Office.CustomUI.UnsizedControlClone? openXmlElement, String? value)
+
+  public static void SetKeytip(UnsizedControlClone? openXmlElement, String? value)
   {
     if (openXmlElement != null)
       if (value != null)
@@ -361,16 +363,16 @@ public static class UnsizedControlCloneConverter
       else
         openXmlElement.Keytip = null;
   }
-  
+
   /// <summary>
-  /// getKeytip
+  ///   getKeytip
   /// </summary>
-  public static String? GetGetKeytip(DocumentFormat.OpenXml.Office.CustomUI.UnsizedControlClone? openXmlElement)
+  public static String? GetGetKeytip(UnsizedControlClone? openXmlElement)
   {
     return openXmlElement?.GetKeytip?.Value;
   }
-  
-  public static void SetGetKeytip(DocumentFormat.OpenXml.Office.CustomUI.UnsizedControlClone? openXmlElement, String? value)
+
+  public static void SetGetKeytip(UnsizedControlClone? openXmlElement, String? value)
   {
     if (openXmlElement != null)
       if (value != null)
@@ -378,16 +380,16 @@ public static class UnsizedControlCloneConverter
       else
         openXmlElement.GetKeytip = null;
   }
-  
+
   /// <summary>
-  /// showLabel
+  ///   showLabel
   /// </summary>
-  public static Boolean? GetShowLabel(DocumentFormat.OpenXml.Office.CustomUI.UnsizedControlClone? openXmlElement)
+  public static Boolean? GetShowLabel(UnsizedControlClone? openXmlElement)
   {
     return openXmlElement?.ShowLabel?.Value;
   }
-  
-  public static void SetShowLabel(DocumentFormat.OpenXml.Office.CustomUI.UnsizedControlClone? openXmlElement, Boolean? value)
+
+  public static void SetShowLabel(UnsizedControlClone? openXmlElement, Boolean? value)
   {
     if (openXmlElement != null)
       if (value != null)
@@ -395,16 +397,16 @@ public static class UnsizedControlCloneConverter
       else
         openXmlElement.ShowLabel = null;
   }
-  
+
   /// <summary>
-  /// getShowLabel
+  ///   getShowLabel
   /// </summary>
-  public static String? GetGetShowLabel(DocumentFormat.OpenXml.Office.CustomUI.UnsizedControlClone? openXmlElement)
+  public static String? GetGetShowLabel(UnsizedControlClone? openXmlElement)
   {
     return openXmlElement?.GetShowLabel?.Value;
   }
-  
-  public static void SetGetShowLabel(DocumentFormat.OpenXml.Office.CustomUI.UnsizedControlClone? openXmlElement, String? value)
+
+  public static void SetGetShowLabel(UnsizedControlClone? openXmlElement, String? value)
   {
     if (openXmlElement != null)
       if (value != null)
@@ -412,16 +414,16 @@ public static class UnsizedControlCloneConverter
       else
         openXmlElement.GetShowLabel = null;
   }
-  
+
   /// <summary>
-  /// showImage
+  ///   showImage
   /// </summary>
-  public static Boolean? GetShowImage(DocumentFormat.OpenXml.Office.CustomUI.UnsizedControlClone? openXmlElement)
+  public static Boolean? GetShowImage(UnsizedControlClone? openXmlElement)
   {
     return openXmlElement?.ShowImage?.Value;
   }
-  
-  public static void SetShowImage(DocumentFormat.OpenXml.Office.CustomUI.UnsizedControlClone? openXmlElement, Boolean? value)
+
+  public static void SetShowImage(UnsizedControlClone? openXmlElement, Boolean? value)
   {
     if (openXmlElement != null)
       if (value != null)
@@ -429,16 +431,16 @@ public static class UnsizedControlCloneConverter
       else
         openXmlElement.ShowImage = null;
   }
-  
+
   /// <summary>
-  /// getShowImage
+  ///   getShowImage
   /// </summary>
-  public static String? GetGetShowImage(DocumentFormat.OpenXml.Office.CustomUI.UnsizedControlClone? openXmlElement)
+  public static String? GetGetShowImage(UnsizedControlClone? openXmlElement)
   {
     return openXmlElement?.GetShowImage?.Value;
   }
-  
-  public static void SetGetShowImage(DocumentFormat.OpenXml.Office.CustomUI.UnsizedControlClone? openXmlElement, String? value)
+
+  public static void SetGetShowImage(UnsizedControlClone? openXmlElement, String? value)
   {
     if (openXmlElement != null)
       if (value != null)
@@ -446,8 +448,8 @@ public static class UnsizedControlCloneConverter
       else
         openXmlElement.GetShowImage = null;
   }
-  
-  public static DocumentModel.UI.UnsizedControlClone? CreateModelElement(DocumentFormat.OpenXml.Office.CustomUI.UnsizedControlClone? openXmlElement)
+
+  public static DocumentModel.UI.UnsizedControlClone? CreateModelElement(UnsizedControlClone? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -482,9 +484,9 @@ public static class UnsizedControlCloneConverter
     }
     return null;
   }
-  
+
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.UI.UnsizedControlClone? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Office.CustomUI.UnsizedControlClone, new()
+    where OpenXmlElementType : UnsizedControlClone, new()
   {
     if (value != null)
     {

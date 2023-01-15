@@ -1,28 +1,27 @@
 namespace DocumentModel.UI;
 
 /// <summary>
-/// Defines the RepurposedCommand Class.
+///   Defines the RepurposedCommand Class.
 /// </summary>
-public partial class RepurposedCommand
+public class RepurposedCommand
 {
   /// <summary>
-  /// onAction
+  ///   onAction
   /// </summary>
   public String? OnAction { get; set; }
-  
+
   /// <summary>
-  /// enabled
+  ///   enabled
   /// </summary>
   public Boolean? Enabled { get; set; }
-  
+
   /// <summary>
-  /// getEnabled
+  ///   getEnabled
   /// </summary>
   public String? GetEnabled { get; set; }
-  
+
   /// <summary>
-  /// idMso
+  ///   idMso
   /// </summary>
   public String? IdMso { get; set; }
-  
 }

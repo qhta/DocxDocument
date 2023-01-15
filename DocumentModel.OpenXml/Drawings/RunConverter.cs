@@ -1,22 +1,26 @@
+using DocumentFormat.OpenXml.Drawing;
+using Run = DocumentFormat.OpenXml.Drawing.Run;
+using RunProperties = DocumentModel.Drawings.RunProperties;
+
 namespace DocumentModel.OpenXml.Drawings;
 
 /// <summary>
-/// Text Run.
+///   Text Run.
 /// </summary>
 public static class RunConverter
 {
   /// <summary>
-  /// Text Character Properties.
+  ///   Text Character Properties.
   /// </summary>
-  public static DocumentModel.Drawings.RunProperties? GetRunProperties(DocumentFormat.OpenXml.Drawing.Run? openXmlElement)
+  public static RunProperties? GetRunProperties(Run? openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.RunProperties>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.RunPropertiesConverter.CreateModelElement(itemElement);
+      return RunPropertiesConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetRunProperties(DocumentFormat.OpenXml.Drawing.Run? openXmlElement, DocumentModel.Drawings.RunProperties? value)
+
+  public static void SetRunProperties(Run? openXmlElement, RunProperties? value)
   {
     if (openXmlElement != null)
     {
@@ -25,33 +29,33 @@ public static class RunConverter
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Drawings.RunPropertiesConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.RunProperties>(value);
+        itemElement = RunPropertiesConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.RunProperties>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
+
   /// <summary>
-  /// Text String.
+  ///   Text String.
   /// </summary>
-  public static String? GetText(DocumentFormat.OpenXml.Drawing.Run? openXmlElement)
+  public static String? GetText(Run? openXmlElement)
   {
     return openXmlElement?.Text?.Text;
   }
-  
-  public static void SetText(DocumentFormat.OpenXml.Drawing.Run? openXmlElement, String? value)
+
+  public static void SetText(Run? openXmlElement, String? value)
   {
     if (openXmlElement != null)
     {
       if (value != null)
-        openXmlElement.Text = new DocumentFormat.OpenXml.Drawing.Text(value);
+        openXmlElement.Text = new Text(value);
       else
         openXmlElement.Text = null;
     }
   }
-  
-  public static DocumentModel.Drawings.Run? CreateModelElement(DocumentFormat.OpenXml.Drawing.Run? openXmlElement)
+
+  public static DocumentModel.Drawings.Run? CreateModelElement(Run? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -62,9 +66,9 @@ public static class RunConverter
     }
     return null;
   }
-  
+
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.Run? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.Run, new()
+    where OpenXmlElementType : Run, new()
   {
     if (value != null)
     {

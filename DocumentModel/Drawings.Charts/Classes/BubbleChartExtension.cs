@@ -1,15 +1,14 @@
 namespace DocumentModel.Drawings.Charts;
 
 /// <summary>
-/// Defines the BubbleChartExtension Class.
+///   Defines the BubbleChartExtension Class.
 /// </summary>
-public partial class BubbleChartExtension
+public class BubbleChartExtension
 {
   /// <summary>
-  /// URI
+  ///   URI
   /// </summary>
   public String? Uri { get; set; }
-  
-  public DocumentModel.Drawings.Charts.FilteredBubbleSeries? FilteredBubbleSeries { get; set; }
-  
+
+  public FilteredBubbleSeries? FilteredBubbleSeries { get; set; }
 }

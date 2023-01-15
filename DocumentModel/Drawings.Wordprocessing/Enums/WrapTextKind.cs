@@ -1,28 +1,27 @@
 namespace DocumentModel.Drawings.Wordprocessing;
 
 /// <summary>
-/// Text Wrapping Location
+///   Text Wrapping Location
 /// </summary>
 public enum WrapTextKind
 {
   /// <summary>
-  /// Both Sides.
+  ///   Both Sides.
   /// </summary>
   BothSides,
-  
+
   /// <summary>
-  /// Left Side Only.
+  ///   Left Side Only.
   /// </summary>
   Left,
-  
+
   /// <summary>
-  /// Right Side Only.
+  ///   Right Side Only.
   /// </summary>
   Right,
-  
+
   /// <summary>
-  /// Largest Side Only.
+  ///   Largest Side Only.
   /// </summary>
-  Largest,
-  
+  Largest
 }

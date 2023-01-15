@@ -1,26 +1,25 @@
 namespace DocumentModel.Drawings.ChartsStyle;
 
 /// <summary>
-/// Defines the PlotArea Class.
+///   Defines the PlotArea Class.
 /// </summary>
-public partial class PlotArea
+public class PlotArea
 {
-  public DocumentModel.Drawings.ChartsStyle.LineReference? LineReference { get; set; }
-  
+  public LineReference? LineReference { get; set; }
+
   public String? LineWidthScale { get; set; }
-  
-  public DocumentModel.Drawings.ChartsStyle.FillReference? FillReference { get; set; }
-  
-  public DocumentModel.Drawings.ChartsStyle.EffectReference? EffectReference { get; set; }
-  
-  public DocumentModel.Drawings.ChartsStyle.FontReference? FontReference { get; set; }
-  
-  public DocumentModel.Drawings.ChartsStyle.ShapeProperties? ShapeProperties { get; set; }
-  
-  public DocumentModel.Drawings.ChartsStyle.TextCharacterPropertiesType? TextCharacterPropertiesType { get; set; }
-  
-  public DocumentModel.Drawings.ChartsStyle.TextBodyProperties? TextBodyProperties { get; set; }
-  
-  public DocumentModel.Drawings.ChartsStyle.OfficeArtExtensionList? OfficeArtExtensionList { get; set; }
-  
+
+  public FillReference? FillReference { get; set; }
+
+  public EffectReference? EffectReference { get; set; }
+
+  public FontReference? FontReference { get; set; }
+
+  public ShapeProperties? ShapeProperties { get; set; }
+
+  public TextCharacterPropertiesType? TextCharacterPropertiesType { get; set; }
+
+  public TextBodyProperties? TextBodyProperties { get; set; }
+
+  public OfficeArtExtensionList? OfficeArtExtensionList { get; set; }
 }

@@ -1,22 +1,25 @@
+using DocumentModel.Drawings.ChartDrawings;
+using ValueColors = DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.ValueColors;
+
 namespace DocumentModel.OpenXml.Drawings.ChartDrawings;
 
 /// <summary>
-/// Defines the ValueColors Class.
+///   Defines the ValueColors Class.
 /// </summary>
 public static class ValueColorsConverter
 {
   /// <summary>
-  /// MinColorSolidColorFillProperties.
+  ///   MinColorSolidColorFillProperties.
   /// </summary>
-  public static DocumentModel.Drawings.ChartDrawings.MinColorSolidColorFillProperties? GetMinColorSolidColorFillProperties(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.ValueColors? openXmlElement)
+  public static MinColorSolidColorFillProperties? GetMinColorSolidColorFillProperties(ValueColors? openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.MinColorSolidColorFillProperties>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.ChartDrawings.MinColorSolidColorFillPropertiesConverter.CreateModelElement(itemElement);
+      return MinColorSolidColorFillPropertiesConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetMinColorSolidColorFillProperties(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.ValueColors? openXmlElement, DocumentModel.Drawings.ChartDrawings.MinColorSolidColorFillProperties? value)
+
+  public static void SetMinColorSolidColorFillProperties(ValueColors? openXmlElement, MinColorSolidColorFillProperties? value)
   {
     if (openXmlElement != null)
     {
@@ -25,25 +28,25 @@ public static class ValueColorsConverter
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Drawings.ChartDrawings.MinColorSolidColorFillPropertiesConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.MinColorSolidColorFillProperties>(value);
+        itemElement = MinColorSolidColorFillPropertiesConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.MinColorSolidColorFillProperties>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
+
   /// <summary>
-  /// MidColorSolidColorFillProperties.
+  ///   MidColorSolidColorFillProperties.
   /// </summary>
-  public static DocumentModel.Drawings.ChartDrawings.MidColorSolidColorFillProperties? GetMidColorSolidColorFillProperties(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.ValueColors? openXmlElement)
+  public static MidColorSolidColorFillProperties? GetMidColorSolidColorFillProperties(ValueColors? openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.MidColorSolidColorFillProperties>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.ChartDrawings.MidColorSolidColorFillPropertiesConverter.CreateModelElement(itemElement);
+      return MidColorSolidColorFillPropertiesConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetMidColorSolidColorFillProperties(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.ValueColors? openXmlElement, DocumentModel.Drawings.ChartDrawings.MidColorSolidColorFillProperties? value)
+
+  public static void SetMidColorSolidColorFillProperties(ValueColors? openXmlElement, MidColorSolidColorFillProperties? value)
   {
     if (openXmlElement != null)
     {
@@ -52,25 +55,25 @@ public static class ValueColorsConverter
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Drawings.ChartDrawings.MidColorSolidColorFillPropertiesConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.MidColorSolidColorFillProperties>(value);
+        itemElement = MidColorSolidColorFillPropertiesConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.MidColorSolidColorFillProperties>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
+
   /// <summary>
-  /// MaxColorSolidColorFillProperties.
+  ///   MaxColorSolidColorFillProperties.
   /// </summary>
-  public static DocumentModel.Drawings.ChartDrawings.MaxColorSolidColorFillProperties? GetMaxColorSolidColorFillProperties(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.ValueColors? openXmlElement)
+  public static MaxColorSolidColorFillProperties? GetMaxColorSolidColorFillProperties(ValueColors? openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.MaxColorSolidColorFillProperties>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.ChartDrawings.MaxColorSolidColorFillPropertiesConverter.CreateModelElement(itemElement);
+      return MaxColorSolidColorFillPropertiesConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetMaxColorSolidColorFillProperties(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.ValueColors? openXmlElement, DocumentModel.Drawings.ChartDrawings.MaxColorSolidColorFillProperties? value)
+
+  public static void SetMaxColorSolidColorFillProperties(ValueColors? openXmlElement, MaxColorSolidColorFillProperties? value)
   {
     if (openXmlElement != null)
     {
@@ -79,14 +82,14 @@ public static class ValueColorsConverter
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Drawings.ChartDrawings.MaxColorSolidColorFillPropertiesConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.MaxColorSolidColorFillProperties>(value);
+        itemElement = MaxColorSolidColorFillPropertiesConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.MaxColorSolidColorFillProperties>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static DocumentModel.Drawings.ChartDrawings.ValueColors? CreateModelElement(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.ValueColors? openXmlElement)
+
+  public static DocumentModel.Drawings.ChartDrawings.ValueColors? CreateModelElement(ValueColors? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -98,9 +101,9 @@ public static class ValueColorsConverter
     }
     return null;
   }
-  
+
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.ChartDrawings.ValueColors? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.ValueColors, new()
+    where OpenXmlElementType : ValueColors, new()
   {
     if (value != null)
     {

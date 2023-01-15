@@ -1,13 +1,12 @@
 namespace DocumentModel.Math;
 
 /// <summary>
-/// Office Math Paragraph Properties.
+///   Office Math Paragraph Properties.
 /// </summary>
-public partial class ParagraphProperties
+public class ParagraphProperties
 {
   /// <summary>
-  /// Justification.
+  ///   Justification.
   /// </summary>
-  public DocumentModel.Math.JustificationKind? Justification { get; set; }
-  
+  public JustificationKind? Justification { get; set; }
 }

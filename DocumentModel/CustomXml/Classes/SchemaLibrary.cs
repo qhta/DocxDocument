@@ -1,10 +1,9 @@
 namespace DocumentModel.CustomXml;
 
 /// <summary>
-/// Embedded Custom XML Schema Supplementary Data.
+///   Embedded Custom XML Schema Supplementary Data.
 /// </summary>
-public partial class SchemaLibrary
+public class SchemaLibrary
 {
-  public Collection<DocumentModel.CustomXml.Schema>? Schemas { get; set; }
-  
+  public Collection<Schema>? Schemas { get; set; }
 }

@@ -1,18 +1,17 @@
 namespace DocumentModel.Drawings.ChartDrawings;
 
 /// <summary>
-/// Defines the TextBodyType Class.
+///   Defines the TextBodyType Class.
 /// </summary>
-public partial class TextBodyType
+public class TextBodyType
 {
   /// <summary>
-  /// Body Properties.
+  ///   Body Properties.
   /// </summary>
-  public DocumentModel.Drawings.BodyProperties? BodyProperties { get; set; }
-  
+  public BodyProperties? BodyProperties { get; set; }
+
   /// <summary>
-  /// Text List Styles.
+  ///   Text List Styles.
   /// </summary>
-  public DocumentModel.Drawings.ListStyle? ListStyle { get; set; }
-  
+  public ListStyle? ListStyle { get; set; }
 }

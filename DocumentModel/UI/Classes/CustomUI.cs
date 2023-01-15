@@ -1,28 +1,27 @@
 namespace DocumentModel.UI;
 
 /// <summary>
-/// Defines CustomUI.
+///   Defines CustomUI.
 /// </summary>
-public partial class CustomUI
+public class CustomUI
 {
   /// <summary>
-  /// onLoad
+  ///   onLoad
   /// </summary>
   public String? OnLoad { get; set; }
-  
+
   /// <summary>
-  /// loadImage
+  ///   loadImage
   /// </summary>
   public String? LoadImage { get; set; }
-  
+
   /// <summary>
-  /// RepurposedCommands.
+  ///   RepurposedCommands.
   /// </summary>
-  public DocumentModel.UI.RepurposedCommands? RepurposedCommands { get; set; }
-  
+  public RepurposedCommands? RepurposedCommands { get; set; }
+
   /// <summary>
-  /// Ribbon.
+  ///   Ribbon.
   /// </summary>
-  public DocumentModel.UI.Ribbon? Ribbon { get; set; }
-  
+  public Ribbon? Ribbon { get; set; }
 }

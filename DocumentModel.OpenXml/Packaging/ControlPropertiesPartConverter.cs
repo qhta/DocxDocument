@@ -1,21 +1,23 @@
+using DocumentFormat.OpenXml.Packaging;
+
 namespace DocumentModel.OpenXml.Packaging;
 
 /// <summary>
-/// Defines the ControlPropertiesPart
+///   Defines the ControlPropertiesPart
 /// </summary>
 public static class ControlPropertiesPartConverter
 {
-  public static String? GetContentType(DocumentFormat.OpenXml.Packaging.ControlPropertiesPart? openXmlElement)
+  public static String? GetContentType(ControlPropertiesPart? openXmlElement)
   {
     return openXmlElement?.ContentType;
   }
-  
-  public static String? GetRelationshipType(DocumentFormat.OpenXml.Packaging.ControlPropertiesPart? openXmlElement)
+
+  public static String? GetRelationshipType(ControlPropertiesPart? openXmlElement)
   {
     return openXmlElement?.RelationshipType;
   }
-  
-  public static DocumentModel.Packaging.ControlPropertiesPart? CreateModelElement(DocumentFormat.OpenXml.Packaging.ControlPropertiesPart? openXmlElement)
+
+  public static DocumentModel.Packaging.ControlPropertiesPart? CreateModelElement(ControlPropertiesPart? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -26,9 +28,9 @@ public static class ControlPropertiesPartConverter
     }
     return null;
   }
-  
+
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Packaging.ControlPropertiesPart? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Packaging.ControlPropertiesPart, new()
+    where OpenXmlElementType : ControlPropertiesPart, new()
   {
     if (value != null)
     {

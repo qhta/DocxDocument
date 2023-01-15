@@ -1,19 +1,22 @@
+using DocumentModel.Wordprocessing;
+using MoveFromMathControl = DocumentFormat.OpenXml.Wordprocessing.MoveFromMathControl;
+
 namespace DocumentModel.OpenXml.Wordprocessing;
 
 /// <summary>
-/// Defines the MoveFromMathControl Class.
+///   Defines the MoveFromMathControl Class.
 /// </summary>
 public static class MoveFromMathControlConverter
 {
-  public static DocumentModel.Wordprocessing.RunProperties? GetRunProperties(DocumentFormat.OpenXml.Wordprocessing.MoveFromMathControl? openXmlElement)
+  public static RunProperties? GetRunProperties(MoveFromMathControl? openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.RunProperties>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Wordprocessing.RunPropertiesConverter.CreateModelElement(itemElement);
+      return RunPropertiesConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetRunProperties(DocumentFormat.OpenXml.Wordprocessing.MoveFromMathControl? openXmlElement, DocumentModel.Wordprocessing.RunProperties? value)
+
+  public static void SetRunProperties(MoveFromMathControl? openXmlElement, RunProperties? value)
   {
     if (openXmlElement != null)
     {
@@ -22,22 +25,22 @@ public static class MoveFromMathControlConverter
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Wordprocessing.RunPropertiesConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.RunProperties>(value);
+        itemElement = RunPropertiesConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.RunProperties>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static DocumentModel.Wordprocessing.InsertedMathControl? GetInsertedMathControl(DocumentFormat.OpenXml.Wordprocessing.MoveFromMathControl? openXmlElement)
+
+  public static InsertedMathControl? GetInsertedMathControl(MoveFromMathControl? openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.InsertedMathControl>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Wordprocessing.InsertedMathControlConverter.CreateModelElement(itemElement);
+      return InsertedMathControlConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetInsertedMathControl(DocumentFormat.OpenXml.Wordprocessing.MoveFromMathControl? openXmlElement, DocumentModel.Wordprocessing.InsertedMathControl? value)
+
+  public static void SetInsertedMathControl(MoveFromMathControl? openXmlElement, InsertedMathControl? value)
   {
     if (openXmlElement != null)
     {
@@ -46,22 +49,22 @@ public static class MoveFromMathControlConverter
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Wordprocessing.InsertedMathControlConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.InsertedMathControl>(value);
+        itemElement = InsertedMathControlConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.InsertedMathControl>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static DocumentModel.Wordprocessing.DeletedMathControl? GetDeletedMathControl(DocumentFormat.OpenXml.Wordprocessing.MoveFromMathControl? openXmlElement)
+
+  public static DeletedMathControl? GetDeletedMathControl(MoveFromMathControl? openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.DeletedMathControl>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Wordprocessing.DeletedMathControlConverter.CreateModelElement(itemElement);
+      return DeletedMathControlConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetDeletedMathControl(DocumentFormat.OpenXml.Wordprocessing.MoveFromMathControl? openXmlElement, DocumentModel.Wordprocessing.DeletedMathControl? value)
+
+  public static void SetDeletedMathControl(MoveFromMathControl? openXmlElement, DeletedMathControl? value)
   {
     if (openXmlElement != null)
     {
@@ -70,14 +73,14 @@ public static class MoveFromMathControlConverter
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Wordprocessing.DeletedMathControlConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.DeletedMathControl>(value);
+        itemElement = DeletedMathControlConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.DeletedMathControl>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static DocumentModel.Wordprocessing.MoveFromMathControl? CreateModelElement(DocumentFormat.OpenXml.Wordprocessing.MoveFromMathControl? openXmlElement)
+
+  public static DocumentModel.Wordprocessing.MoveFromMathControl? CreateModelElement(MoveFromMathControl? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -89,9 +92,9 @@ public static class MoveFromMathControlConverter
     }
     return null;
   }
-  
+
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.MoveFromMathControl? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Wordprocessing.MoveFromMathControl, new()
+    where OpenXmlElementType : MoveFromMathControl, new()
   {
     if (value != null)
     {

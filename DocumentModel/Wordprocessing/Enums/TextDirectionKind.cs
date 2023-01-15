@@ -1,68 +1,67 @@
 namespace DocumentModel.Wordprocessing;
 
 /// <summary>
-/// Defines the TextDirectionValues enumeration.
+///   Defines the TextDirectionValues enumeration.
 /// </summary>
 public enum TextDirectionKind
 {
   /// <summary>
-  /// Left to Right, Top to Bottom.
+  ///   Left to Right, Top to Bottom.
   /// </summary>
   LefToRightTopToBottom,
-  
+
   /// <summary>
-  /// tb.
+  ///   tb.
   /// </summary>
   LeftToRightTopToBottom2010,
-  
+
   /// <summary>
-  /// Top to Bottom, Right to Left.
+  ///   Top to Bottom, Right to Left.
   /// </summary>
   TopToBottomRightToLeft,
-  
+
   /// <summary>
-  /// rl.
+  ///   rl.
   /// </summary>
   TopToBottomRightToLeft2010,
-  
+
   /// <summary>
-  /// Bottom to Top, Left to Right.
+  ///   Bottom to Top, Left to Right.
   /// </summary>
   BottomToTopLeftToRight,
-  
+
   /// <summary>
-  /// lr.
+  ///   lr.
   /// </summary>
   BottomToTopLeftToRight2010,
-  
+
   /// <summary>
-  /// Left to Right, Top to Bottom Rotated.
+  ///   Left to Right, Top to Bottom Rotated.
   /// </summary>
   LefttoRightTopToBottomRotated,
-  
+
   /// <summary>
-  /// tbV.
+  ///   tbV.
   /// </summary>
   LeftToRightTopToBottomRotated2010,
-  
+
   /// <summary>
-  /// Top to Bottom, Right to Left Rotated.
+  ///   Top to Bottom, Right to Left Rotated.
   /// </summary>
   TopToBottomRightToLeftRotated,
-  
+
   /// <summary>
-  /// rlV.
+  ///   rlV.
   /// </summary>
   TopToBottomRightToLeftRotated2010,
-  
+
   /// <summary>
-  /// Top to Bottom, Left to Right Rotated.
+  ///   Top to Bottom, Left to Right Rotated.
   /// </summary>
   TopToBottomLeftToRightRotated,
-  
+
   /// <summary>
-  /// lrV.
+  ///   lrV.
   /// </summary>
-  TopToBottomLeftToRightRotated2010,
-  
+  TopToBottomLeftToRightRotated2010
 }

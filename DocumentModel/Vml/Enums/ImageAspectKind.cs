@@ -1,23 +1,22 @@
 namespace DocumentModel.Vml;
 
 /// <summary>
-/// Image Scaling Behavior
+///   Image Scaling Behavior
 /// </summary>
 public enum ImageAspectKind
 {
   /// <summary>
-  /// Ignore Aspect Ratio.
+  ///   Ignore Aspect Ratio.
   /// </summary>
   Ignore,
-  
+
   /// <summary>
-  /// At Most.
+  ///   At Most.
   /// </summary>
   AtMost,
-  
+
   /// <summary>
-  /// At Least.
+  ///   At Least.
   /// </summary>
-  AtLeast,
-  
+  AtLeast
 }

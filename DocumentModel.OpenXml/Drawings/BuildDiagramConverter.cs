@@ -1,19 +1,21 @@
+using DocumentFormat.OpenXml.Drawing;
+
 namespace DocumentModel.OpenXml.Drawings;
 
 /// <summary>
-/// Build Diagram.
+///   Build Diagram.
 /// </summary>
 public static class BuildDiagramConverter
 {
   /// <summary>
-  /// Build
+  ///   Build
   /// </summary>
-  public static String? GetBuild(DocumentFormat.OpenXml.Drawing.BuildDiagram? openXmlElement)
+  public static String? GetBuild(BuildDiagram? openXmlElement)
   {
     return openXmlElement?.Build?.Value;
   }
-  
-  public static void SetBuild(DocumentFormat.OpenXml.Drawing.BuildDiagram? openXmlElement, String? value)
+
+  public static void SetBuild(BuildDiagram? openXmlElement, String? value)
   {
     if (openXmlElement != null)
       if (value != null)
@@ -21,16 +23,16 @@ public static class BuildDiagramConverter
       else
         openXmlElement.Build = null;
   }
-  
+
   /// <summary>
-  /// Reverse Animation
+  ///   Reverse Animation
   /// </summary>
-  public static Boolean? GetReverseAnimation(DocumentFormat.OpenXml.Drawing.BuildDiagram? openXmlElement)
+  public static Boolean? GetReverseAnimation(BuildDiagram? openXmlElement)
   {
     return openXmlElement?.ReverseAnimation?.Value;
   }
-  
-  public static void SetReverseAnimation(DocumentFormat.OpenXml.Drawing.BuildDiagram? openXmlElement, Boolean? value)
+
+  public static void SetReverseAnimation(BuildDiagram? openXmlElement, Boolean? value)
   {
     if (openXmlElement != null)
       if (value != null)
@@ -38,8 +40,8 @@ public static class BuildDiagramConverter
       else
         openXmlElement.ReverseAnimation = null;
   }
-  
-  public static DocumentModel.Drawings.BuildDiagram? CreateModelElement(DocumentFormat.OpenXml.Drawing.BuildDiagram? openXmlElement)
+
+  public static DocumentModel.Drawings.BuildDiagram? CreateModelElement(BuildDiagram? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -50,9 +52,9 @@ public static class BuildDiagramConverter
     }
     return null;
   }
-  
+
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.BuildDiagram? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.BuildDiagram, new()
+    where OpenXmlElementType : BuildDiagram, new()
   {
     if (value != null)
     {

@@ -1,13 +1,12 @@
 namespace DocumentModel.Vml;
 
 /// <summary>
-/// Single Formula.
+///   Single Formula.
 /// </summary>
-public partial class Formula
+public class Formula
 {
   /// <summary>
-  /// Equation
+  ///   Equation
   /// </summary>
   public String? Equation { get; set; }
-  
 }

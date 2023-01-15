@@ -1,18 +1,17 @@
 namespace DocumentModel.Wordprocessing;
 
 /// <summary>
-/// Defines the SdtRepeatedSection Class.
+///   Defines the SdtRepeatedSection Class.
 /// </summary>
-public partial class SdtRepeatedSection
+public class SdtRepeatedSection
 {
   /// <summary>
-  /// SectionTitle.
+  ///   SectionTitle.
   /// </summary>
   public String? SectionTitle { get; set; }
-  
+
   /// <summary>
-  /// DoNotAllowInsertDeleteSection.
+  ///   DoNotAllowInsertDeleteSection.
   /// </summary>
   public Boolean? DoNotAllowInsertDeleteSection { get; set; }
-  
 }

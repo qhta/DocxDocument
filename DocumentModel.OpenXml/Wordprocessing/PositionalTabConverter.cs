@@ -1,53 +1,57 @@
+using DocumentFormat.OpenXml.Wordprocessing;
+using DocumentModel.Wordprocessing;
+using PositionalTab = DocumentFormat.OpenXml.Wordprocessing.PositionalTab;
+
 namespace DocumentModel.OpenXml.Wordprocessing;
 
 /// <summary>
-/// Absolute Position Tab Character.
+///   Absolute Position Tab Character.
 /// </summary>
 public static class PositionalTabConverter
 {
   /// <summary>
-  /// Positional Tab Stop Alignment
+  ///   Positional Tab Stop Alignment
   /// </summary>
-  public static DocumentModel.Wordprocessing.AbsolutePositionTabAlignmentKind? GetAlignment(DocumentFormat.OpenXml.Wordprocessing.PositionalTab? openXmlElement)
+  public static AbsolutePositionTabAlignmentKind? GetAlignment(PositionalTab? openXmlElement)
   {
-    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Wordprocessing.AbsolutePositionTabAlignmentValues, DocumentModel.Wordprocessing.AbsolutePositionTabAlignmentKind>(openXmlElement?.Alignment?.Value);
+    return EnumValueConverter.GetValue<AbsolutePositionTabAlignmentValues, AbsolutePositionTabAlignmentKind>(openXmlElement?.Alignment?.Value);
   }
-  
-  public static void SetAlignment(DocumentFormat.OpenXml.Wordprocessing.PositionalTab? openXmlElement, DocumentModel.Wordprocessing.AbsolutePositionTabAlignmentKind? value)
+
+  public static void SetAlignment(PositionalTab? openXmlElement, AbsolutePositionTabAlignmentKind? value)
   {
     if (openXmlElement != null)
-      openXmlElement.Alignment = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Wordprocessing.AbsolutePositionTabAlignmentValues, DocumentModel.Wordprocessing.AbsolutePositionTabAlignmentKind>(value);
+      openXmlElement.Alignment = EnumValueConverter.CreateEnumValue<AbsolutePositionTabAlignmentValues, AbsolutePositionTabAlignmentKind>(value);
   }
-  
+
   /// <summary>
-  /// Positional Tab Base
+  ///   Positional Tab Base
   /// </summary>
-  public static DocumentModel.Wordprocessing.AbsolutePositionTabPositioningBaseKind? GetRelativeTo(DocumentFormat.OpenXml.Wordprocessing.PositionalTab? openXmlElement)
+  public static AbsolutePositionTabPositioningBaseKind? GetRelativeTo(PositionalTab? openXmlElement)
   {
-    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Wordprocessing.AbsolutePositionTabPositioningBaseValues, DocumentModel.Wordprocessing.AbsolutePositionTabPositioningBaseKind>(openXmlElement?.RelativeTo?.Value);
+    return EnumValueConverter.GetValue<AbsolutePositionTabPositioningBaseValues, AbsolutePositionTabPositioningBaseKind>(openXmlElement?.RelativeTo?.Value);
   }
-  
-  public static void SetRelativeTo(DocumentFormat.OpenXml.Wordprocessing.PositionalTab? openXmlElement, DocumentModel.Wordprocessing.AbsolutePositionTabPositioningBaseKind? value)
+
+  public static void SetRelativeTo(PositionalTab? openXmlElement, AbsolutePositionTabPositioningBaseKind? value)
   {
     if (openXmlElement != null)
-      openXmlElement.RelativeTo = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Wordprocessing.AbsolutePositionTabPositioningBaseValues, DocumentModel.Wordprocessing.AbsolutePositionTabPositioningBaseKind>(value);
+      openXmlElement.RelativeTo = EnumValueConverter.CreateEnumValue<AbsolutePositionTabPositioningBaseValues, AbsolutePositionTabPositioningBaseKind>(value);
   }
-  
+
   /// <summary>
-  /// Tab Leader Character
+  ///   Tab Leader Character
   /// </summary>
-  public static DocumentModel.Wordprocessing.AbsolutePositionTabLeaderCharKind? GetLeader(DocumentFormat.OpenXml.Wordprocessing.PositionalTab? openXmlElement)
+  public static AbsolutePositionTabLeaderCharKind? GetLeader(PositionalTab? openXmlElement)
   {
-    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Wordprocessing.AbsolutePositionTabLeaderCharValues, DocumentModel.Wordprocessing.AbsolutePositionTabLeaderCharKind>(openXmlElement?.Leader?.Value);
+    return EnumValueConverter.GetValue<AbsolutePositionTabLeaderCharValues, AbsolutePositionTabLeaderCharKind>(openXmlElement?.Leader?.Value);
   }
-  
-  public static void SetLeader(DocumentFormat.OpenXml.Wordprocessing.PositionalTab? openXmlElement, DocumentModel.Wordprocessing.AbsolutePositionTabLeaderCharKind? value)
+
+  public static void SetLeader(PositionalTab? openXmlElement, AbsolutePositionTabLeaderCharKind? value)
   {
     if (openXmlElement != null)
-      openXmlElement.Leader = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Wordprocessing.AbsolutePositionTabLeaderCharValues, DocumentModel.Wordprocessing.AbsolutePositionTabLeaderCharKind>(value);
+      openXmlElement.Leader = EnumValueConverter.CreateEnumValue<AbsolutePositionTabLeaderCharValues, AbsolutePositionTabLeaderCharKind>(value);
   }
-  
-  public static DocumentModel.Wordprocessing.PositionalTab? CreateModelElement(DocumentFormat.OpenXml.Wordprocessing.PositionalTab? openXmlElement)
+
+  public static DocumentModel.Wordprocessing.PositionalTab? CreateModelElement(PositionalTab? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -59,9 +63,9 @@ public static class PositionalTabConverter
     }
     return null;
   }
-  
+
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.PositionalTab? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Wordprocessing.PositionalTab, new()
+    where OpenXmlElementType : PositionalTab, new()
   {
     if (value != null)
     {

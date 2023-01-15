@@ -1,18 +1,17 @@
 namespace DocumentModel.Drawings.ChartDrawing;
 
 /// <summary>
-/// Non-Visual Group Shape Drawing Properties.
+///   Non-Visual Group Shape Drawing Properties.
 /// </summary>
-public partial class NonVisualGroupShapeDrawingProperties
+public class NonVisualGroupShapeDrawingProperties
 {
   /// <summary>
-  /// GroupShapeLocks.
+  ///   GroupShapeLocks.
   /// </summary>
-  public DocumentModel.Drawings.GroupShapeLocks? GroupShapeLocks { get; set; }
-  
+  public GroupShapeLocks? GroupShapeLocks { get; set; }
+
   /// <summary>
-  /// NonVisualGroupDrawingShapePropsExtensionList.
+  ///   NonVisualGroupDrawingShapePropsExtensionList.
   /// </summary>
-  public DocumentModel.Drawings.NonVisualGroupDrawingShapePropsExtensionList? NonVisualGroupDrawingShapePropsExtensionList { get; set; }
-  
+  public NonVisualGroupDrawingShapePropsExtensionList? NonVisualGroupDrawingShapePropsExtensionList { get; set; }
 }

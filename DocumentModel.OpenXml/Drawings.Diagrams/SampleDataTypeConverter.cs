@@ -1,19 +1,22 @@
+using DocumentFormat.OpenXml.Drawing.Diagrams;
+using DataModel = DocumentModel.Drawings.Diagrams.DataModel;
+
 namespace DocumentModel.OpenXml.Drawings.Diagrams;
 
 /// <summary>
-/// Defines the SampleDataType Class.
+///   Defines the SampleDataType Class.
 /// </summary>
 public static class SampleDataTypeConverter
 {
   /// <summary>
-  /// Use Default
+  ///   Use Default
   /// </summary>
-  public static Boolean? GetUseDefault(DocumentFormat.OpenXml.Drawing.Diagrams.SampleDataType? openXmlElement)
+  public static Boolean? GetUseDefault(SampleDataType? openXmlElement)
   {
     return openXmlElement?.UseDefault?.Value;
   }
-  
-  public static void SetUseDefault(DocumentFormat.OpenXml.Drawing.Diagrams.SampleDataType? openXmlElement, Boolean? value)
+
+  public static void SetUseDefault(SampleDataType? openXmlElement, Boolean? value)
   {
     if (openXmlElement != null)
       if (value != null)
@@ -21,19 +24,19 @@ public static class SampleDataTypeConverter
       else
         openXmlElement.UseDefault = null;
   }
-  
+
   /// <summary>
-  /// Data Model.
+  ///   Data Model.
   /// </summary>
-  public static DocumentModel.Drawings.Diagrams.DataModel? GetDataModel(DocumentFormat.OpenXml.Drawing.Diagrams.SampleDataType? openXmlElement)
+  public static DataModel? GetDataModel(SampleDataType? openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.Diagrams.DataModel>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.Diagrams.DataModelConverter.CreateModelElement(itemElement);
+      return DataModelConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetDataModel(DocumentFormat.OpenXml.Drawing.Diagrams.SampleDataType? openXmlElement, DocumentModel.Drawings.Diagrams.DataModel? value)
+
+  public static void SetDataModel(SampleDataType? openXmlElement, DataModel? value)
   {
     if (openXmlElement != null)
     {
@@ -42,14 +45,14 @@ public static class SampleDataTypeConverter
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Drawings.Diagrams.DataModelConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Diagrams.DataModel>(value);
+        itemElement = DataModelConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Diagrams.DataModel>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static DocumentModel.Drawings.Diagrams.SampleDataType? CreateModelElement(DocumentFormat.OpenXml.Drawing.Diagrams.SampleDataType? openXmlElement)
+
+  public static DocumentModel.Drawings.Diagrams.SampleDataType? CreateModelElement(SampleDataType? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -60,9 +63,9 @@ public static class SampleDataTypeConverter
     }
     return null;
   }
-  
+
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.Diagrams.SampleDataType? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.Diagrams.SampleDataType, new()
+    where OpenXmlElementType : SampleDataType, new()
   {
     if (value != null)
     {

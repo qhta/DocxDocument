@@ -1,61 +1,65 @@
+using DocumentFormat.OpenXml.Drawing.Charts;
+using DocumentModel.Drawings.Charts;
+using PageSetup = DocumentFormat.OpenXml.Drawing.Charts.PageSetup;
+
 namespace DocumentModel.OpenXml.Drawings.Charts;
 
 /// <summary>
-/// Page Setup.
+///   Page Setup.
 /// </summary>
 public static class PageSetupConverter
 {
   /// <summary>
-  /// Page Size
+  ///   Page Size
   /// </summary>
-  public static UInt32? GetPaperSize(DocumentFormat.OpenXml.Drawing.Charts.PageSetup? openXmlElement)
+  public static UInt32? GetPaperSize(PageSetup? openXmlElement)
   {
     return openXmlElement?.PaperSize?.Value;
   }
-  
-  public static void SetPaperSize(DocumentFormat.OpenXml.Drawing.Charts.PageSetup? openXmlElement, UInt32? value)
+
+  public static void SetPaperSize(PageSetup? openXmlElement, UInt32? value)
   {
     if (openXmlElement != null)
       openXmlElement.PaperSize = value;
   }
-  
+
   /// <summary>
-  /// First Page Number
+  ///   First Page Number
   /// </summary>
-  public static Int32? GetFirstPageNumber(DocumentFormat.OpenXml.Drawing.Charts.PageSetup? openXmlElement)
+  public static Int32? GetFirstPageNumber(PageSetup? openXmlElement)
   {
     return openXmlElement?.FirstPageNumber?.Value;
   }
-  
-  public static void SetFirstPageNumber(DocumentFormat.OpenXml.Drawing.Charts.PageSetup? openXmlElement, Int32? value)
+
+  public static void SetFirstPageNumber(PageSetup? openXmlElement, Int32? value)
   {
     if (openXmlElement != null)
       openXmlElement.FirstPageNumber = value;
   }
-  
+
   /// <summary>
-  /// Orientation
+  ///   Orientation
   /// </summary>
-  public static DocumentModel.Drawings.Charts.PageSetupOrientationKind? GetOrientation(DocumentFormat.OpenXml.Drawing.Charts.PageSetup? openXmlElement)
+  public static PageSetupOrientationKind? GetOrientation(PageSetup? openXmlElement)
   {
-    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Drawing.Charts.PageSetupOrientationValues, DocumentModel.Drawings.Charts.PageSetupOrientationKind>(openXmlElement?.Orientation?.Value);
+    return EnumValueConverter.GetValue<PageSetupOrientationValues, PageSetupOrientationKind>(openXmlElement?.Orientation?.Value);
   }
-  
-  public static void SetOrientation(DocumentFormat.OpenXml.Drawing.Charts.PageSetup? openXmlElement, DocumentModel.Drawings.Charts.PageSetupOrientationKind? value)
+
+  public static void SetOrientation(PageSetup? openXmlElement, PageSetupOrientationKind? value)
   {
     if (openXmlElement != null)
-      openXmlElement.Orientation = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Drawing.Charts.PageSetupOrientationValues, DocumentModel.Drawings.Charts.PageSetupOrientationKind>(value);
+      openXmlElement.Orientation = EnumValueConverter.CreateEnumValue<PageSetupOrientationValues, PageSetupOrientationKind>(value);
   }
-  
+
   /// <summary>
-  /// Black and White
+  ///   Black and White
   /// </summary>
-  public static Boolean? GetBlackAndWhite(DocumentFormat.OpenXml.Drawing.Charts.PageSetup? openXmlElement)
+  public static Boolean? GetBlackAndWhite(PageSetup? openXmlElement)
   {
     return openXmlElement?.BlackAndWhite?.Value;
   }
-  
-  public static void SetBlackAndWhite(DocumentFormat.OpenXml.Drawing.Charts.PageSetup? openXmlElement, Boolean? value)
+
+  public static void SetBlackAndWhite(PageSetup? openXmlElement, Boolean? value)
   {
     if (openXmlElement != null)
       if (value != null)
@@ -63,16 +67,16 @@ public static class PageSetupConverter
       else
         openXmlElement.BlackAndWhite = null;
   }
-  
+
   /// <summary>
-  /// Draft
+  ///   Draft
   /// </summary>
-  public static Boolean? GetDraft(DocumentFormat.OpenXml.Drawing.Charts.PageSetup? openXmlElement)
+  public static Boolean? GetDraft(PageSetup? openXmlElement)
   {
     return openXmlElement?.Draft?.Value;
   }
-  
-  public static void SetDraft(DocumentFormat.OpenXml.Drawing.Charts.PageSetup? openXmlElement, Boolean? value)
+
+  public static void SetDraft(PageSetup? openXmlElement, Boolean? value)
   {
     if (openXmlElement != null)
       if (value != null)
@@ -80,16 +84,16 @@ public static class PageSetupConverter
       else
         openXmlElement.Draft = null;
   }
-  
+
   /// <summary>
-  /// Use First Page Number
+  ///   Use First Page Number
   /// </summary>
-  public static Boolean? GetUseFirstPageNumber(DocumentFormat.OpenXml.Drawing.Charts.PageSetup? openXmlElement)
+  public static Boolean? GetUseFirstPageNumber(PageSetup? openXmlElement)
   {
     return openXmlElement?.UseFirstPageNumber?.Value;
   }
-  
-  public static void SetUseFirstPageNumber(DocumentFormat.OpenXml.Drawing.Charts.PageSetup? openXmlElement, Boolean? value)
+
+  public static void SetUseFirstPageNumber(PageSetup? openXmlElement, Boolean? value)
   {
     if (openXmlElement != null)
       if (value != null)
@@ -97,50 +101,50 @@ public static class PageSetupConverter
       else
         openXmlElement.UseFirstPageNumber = null;
   }
-  
+
   /// <summary>
-  /// Horizontal DPI
+  ///   Horizontal DPI
   /// </summary>
-  public static Int32? GetHorizontalDpi(DocumentFormat.OpenXml.Drawing.Charts.PageSetup? openXmlElement)
+  public static Int32? GetHorizontalDpi(PageSetup? openXmlElement)
   {
     return openXmlElement?.HorizontalDpi?.Value;
   }
-  
-  public static void SetHorizontalDpi(DocumentFormat.OpenXml.Drawing.Charts.PageSetup? openXmlElement, Int32? value)
+
+  public static void SetHorizontalDpi(PageSetup? openXmlElement, Int32? value)
   {
     if (openXmlElement != null)
       openXmlElement.HorizontalDpi = value;
   }
-  
+
   /// <summary>
-  /// Vertical DPI
+  ///   Vertical DPI
   /// </summary>
-  public static Int32? GetVerticalDpi(DocumentFormat.OpenXml.Drawing.Charts.PageSetup? openXmlElement)
+  public static Int32? GetVerticalDpi(PageSetup? openXmlElement)
   {
     return openXmlElement?.VerticalDpi?.Value;
   }
-  
-  public static void SetVerticalDpi(DocumentFormat.OpenXml.Drawing.Charts.PageSetup? openXmlElement, Int32? value)
+
+  public static void SetVerticalDpi(PageSetup? openXmlElement, Int32? value)
   {
     if (openXmlElement != null)
       openXmlElement.VerticalDpi = value;
   }
-  
+
   /// <summary>
-  /// Copies
+  ///   Copies
   /// </summary>
-  public static UInt32? GetCopies(DocumentFormat.OpenXml.Drawing.Charts.PageSetup? openXmlElement)
+  public static UInt32? GetCopies(PageSetup? openXmlElement)
   {
     return openXmlElement?.Copies?.Value;
   }
-  
-  public static void SetCopies(DocumentFormat.OpenXml.Drawing.Charts.PageSetup? openXmlElement, UInt32? value)
+
+  public static void SetCopies(PageSetup? openXmlElement, UInt32? value)
   {
     if (openXmlElement != null)
       openXmlElement.Copies = value;
   }
-  
-  public static DocumentModel.Drawings.Charts.PageSetup? CreateModelElement(DocumentFormat.OpenXml.Drawing.Charts.PageSetup? openXmlElement)
+
+  public static DocumentModel.Drawings.Charts.PageSetup? CreateModelElement(PageSetup? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -158,9 +162,9 @@ public static class PageSetupConverter
     }
     return null;
   }
-  
+
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.Charts.PageSetup? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.Charts.PageSetup, new()
+    where OpenXmlElementType : PageSetup, new()
   {
     if (value != null)
     {

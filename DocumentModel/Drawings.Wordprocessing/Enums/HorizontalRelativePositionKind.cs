@@ -1,48 +1,47 @@
 namespace DocumentModel.Drawings.Wordprocessing;
 
 /// <summary>
-/// Horizontal Relative Positioning
+///   Horizontal Relative Positioning
 /// </summary>
 public enum HorizontalRelativePositionKind
 {
   /// <summary>
-  /// Page Margin.
+  ///   Page Margin.
   /// </summary>
   Margin,
-  
+
   /// <summary>
-  /// Page Edge.
+  ///   Page Edge.
   /// </summary>
   Page,
-  
+
   /// <summary>
-  /// Column.
+  ///   Column.
   /// </summary>
   Column,
-  
+
   /// <summary>
-  /// Character.
+  ///   Character.
   /// </summary>
   Character,
-  
+
   /// <summary>
-  /// Left Margin.
+  ///   Left Margin.
   /// </summary>
   LeftMargin,
-  
+
   /// <summary>
-  /// Right Margin.
+  ///   Right Margin.
   /// </summary>
   RightMargin,
-  
+
   /// <summary>
-  /// Inside Margin.
+  ///   Inside Margin.
   /// </summary>
   InsideMargin,
-  
+
   /// <summary>
-  /// Outside Margin.
+  ///   Outside Margin.
   /// </summary>
-  OutsideMargin,
-  
+  OutsideMargin
 }

@@ -1,23 +1,22 @@
 namespace DocumentModel.Wordprocessing.Vml;
 
 /// <summary>
-/// Defines the BorderType Class.
+///   Defines the BorderType Class.
 /// </summary>
-public partial class BorderType
+public class BorderType
 {
   /// <summary>
-  /// Border Style
+  ///   Border Style
   /// </summary>
-  public DocumentModel.Wordprocessing.Vml.BorderKind? Type { get; set; }
-  
+  public BorderKind? Type { get; set; }
+
   /// <summary>
-  /// Border Width
+  ///   Border Width
   /// </summary>
   public Int64? Width { get; set; }
-  
+
   /// <summary>
-  /// Border shadow
+  ///   Border shadow
   /// </summary>
   public Boolean? Shadow { get; set; }
-  
 }

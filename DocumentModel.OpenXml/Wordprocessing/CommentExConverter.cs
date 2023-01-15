@@ -1,21 +1,23 @@
+using DocumentFormat.OpenXml.Office2013.Word;
+
 namespace DocumentModel.OpenXml.Wordprocessing;
 
 /// <summary>
-/// Defines the CommentEx Class.
+///   Defines the CommentEx Class.
 /// </summary>
 public static class CommentExConverter
 {
   /// <summary>
-  /// paraId, this property is only available in Office 2013 and later.
+  ///   paraId, this property is only available in Office 2013 and later.
   /// </summary>
-  public static Byte[]? GetParaId(DocumentFormat.OpenXml.Office2013.Word.CommentEx? openXmlElement)
+  public static Byte[]? GetParaId(CommentEx? openXmlElement)
   {
     if (openXmlElement?.ParaId?.Value != null)
       return Convert.FromHexString(openXmlElement.ParaId.Value);
     return null;
   }
-  
-  public static void SetParaId(DocumentFormat.OpenXml.Office2013.Word.CommentEx? openXmlElement, Byte[]? value)
+
+  public static void SetParaId(CommentEx? openXmlElement, Byte[]? value)
   {
     if (openXmlElement != null)
     {
@@ -25,18 +27,18 @@ public static class CommentExConverter
         openXmlElement.ParaId = null;
     }
   }
-  
+
   /// <summary>
-  /// paraIdParent, this property is only available in Office 2013 and later.
+  ///   paraIdParent, this property is only available in Office 2013 and later.
   /// </summary>
-  public static Byte[]? GetParaIdParent(DocumentFormat.OpenXml.Office2013.Word.CommentEx? openXmlElement)
+  public static Byte[]? GetParaIdParent(CommentEx? openXmlElement)
   {
     if (openXmlElement?.ParaIdParent?.Value != null)
       return Convert.FromHexString(openXmlElement.ParaIdParent.Value);
     return null;
   }
-  
-  public static void SetParaIdParent(DocumentFormat.OpenXml.Office2013.Word.CommentEx? openXmlElement, Byte[]? value)
+
+  public static void SetParaIdParent(CommentEx? openXmlElement, Byte[]? value)
   {
     if (openXmlElement != null)
     {
@@ -46,16 +48,16 @@ public static class CommentExConverter
         openXmlElement.ParaIdParent = null;
     }
   }
-  
+
   /// <summary>
-  /// done, this property is only available in Office 2013 and later.
+  ///   done, this property is only available in Office 2013 and later.
   /// </summary>
-  public static Boolean? GetDone(DocumentFormat.OpenXml.Office2013.Word.CommentEx? openXmlElement)
+  public static Boolean? GetDone(CommentEx? openXmlElement)
   {
     return openXmlElement?.Done?.Value;
   }
-  
-  public static void SetDone(DocumentFormat.OpenXml.Office2013.Word.CommentEx? openXmlElement, Boolean? value)
+
+  public static void SetDone(CommentEx? openXmlElement, Boolean? value)
   {
     if (openXmlElement != null)
       if (value != null)
@@ -63,8 +65,8 @@ public static class CommentExConverter
       else
         openXmlElement.Done = null;
   }
-  
-  public static DocumentModel.Wordprocessing.CommentEx? CreateModelElement(DocumentFormat.OpenXml.Office2013.Word.CommentEx? openXmlElement)
+
+  public static DocumentModel.Wordprocessing.CommentEx? CreateModelElement(CommentEx? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -76,9 +78,9 @@ public static class CommentExConverter
     }
     return null;
   }
-  
+
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.CommentEx? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Office2013.Word.CommentEx, new()
+    where OpenXmlElementType : CommentEx, new()
   {
     if (value != null)
     {

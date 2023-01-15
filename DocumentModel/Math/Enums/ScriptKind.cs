@@ -1,38 +1,37 @@
 namespace DocumentModel.Math;
 
 /// <summary>
-/// Defines the ScriptValues enumeration.
+///   Defines the ScriptValues enumeration.
 /// </summary>
 public enum ScriptKind
 {
   /// <summary>
-  /// Roman.
+  ///   Roman.
   /// </summary>
   Roman,
-  
+
   /// <summary>
-  /// Script.
+  ///   Script.
   /// </summary>
   Script,
-  
+
   /// <summary>
-  /// Fraktur.
+  ///   Fraktur.
   /// </summary>
   Fraktur,
-  
+
   /// <summary>
-  /// double-struck.
+  ///   double-struck.
   /// </summary>
   DoubleStruck,
-  
+
   /// <summary>
-  /// Sans-Serif.
+  ///   Sans-Serif.
   /// </summary>
   SansSerif,
-  
+
   /// <summary>
-  /// Monospace.
+  ///   Monospace.
   /// </summary>
-  Monospace,
-  
+  Monospace
 }

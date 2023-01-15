@@ -1,28 +1,27 @@
 namespace DocumentModel.Drawings;
 
 /// <summary>
-/// Camera.
+///   Camera.
 /// </summary>
-public partial class Camera
+public class Camera
 {
   /// <summary>
-  /// Preset Camera Type
+  ///   Preset Camera Type
   /// </summary>
-  public DocumentModel.Drawings.PresetCameraKind? Preset { get; set; }
-  
+  public PresetCameraKind? Preset { get; set; }
+
   /// <summary>
-  /// Field of View
+  ///   Field of View
   /// </summary>
   public Int32? FieldOfView { get; set; }
-  
+
   /// <summary>
-  /// Zoom
+  ///   Zoom
   /// </summary>
   public Int32? Zoom { get; set; }
-  
+
   /// <summary>
-  /// Rotation.
+  ///   Rotation.
   /// </summary>
-  public DocumentModel.Drawings.Rotation? Rotation { get; set; }
-  
+  public Rotation? Rotation { get; set; }
 }

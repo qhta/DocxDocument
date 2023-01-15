@@ -1,12 +1,11 @@
 namespace DocumentModel.Drawings;
 
 /// <summary>
-/// Space Before.
+///   Space Before.
 /// </summary>
-public partial class SpaceBefore
+public class SpaceBefore
 {
   public Int32? SpacingPercent { get; set; }
-  
+
   public Int32? SpacingPoints { get; set; }
-  
 }

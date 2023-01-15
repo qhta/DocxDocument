@@ -1,18 +1,21 @@
+using DocumentModel.Wordprocessing;
+using Comments = DocumentFormat.OpenXml.Wordprocessing.Comments;
+
 namespace DocumentModel.OpenXml.Wordprocessing;
 
 /// <summary>
-/// Comments Collection.
+///   Comments Collection.
 /// </summary>
 public static class CommentsConverter
 {
-  public static System.Collections.ObjectModel.Collection<DocumentModel.Wordprocessing.Comment>? GetItems(DocumentFormat.OpenXml.Wordprocessing.Comments? openXmlElement)
+  public static Collection<Comment>? GetItems(Comments? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var collection = new System.Collections.ObjectModel.Collection<DocumentModel.Wordprocessing.Comment>();
+      var collection = new Collection<Comment>();
       foreach (var item in openXmlElement.Elements<DocumentFormat.OpenXml.Wordprocessing.Comment>())
       {
-        var newItem = DocumentModel.OpenXml.Wordprocessing.CommentConverter.CreateModelElement(item);
+        var newItem = CommentConverter.CreateModelElement(item);
         if (newItem != null)
           collection.Add(newItem);
       }
@@ -20,25 +23,23 @@ public static class CommentsConverter
     }
     return null;
   }
-  
-  public static void SetItems(DocumentFormat.OpenXml.Wordprocessing.Comments? openXmlElement, System.Collections.ObjectModel.Collection<DocumentModel.Wordprocessing.Comment>? value)
+
+  public static void SetItems(Comments? openXmlElement, Collection<Comment>? value)
   {
     if (openXmlElement != null)
     {
       openXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Wordprocessing.Comment>();
       if (value != null)
-      {
         foreach (var item in value)
         {
-          var newItem = DocumentModel.OpenXml.Wordprocessing.CommentConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.Comment>(item);
+          var newItem = CommentConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.Comment>(item);
           if (newItem != null)
             openXmlElement.AddChild(newItem);
         }
-      }
     }
   }
-  
-  public static DocumentModel.Wordprocessing.Comments? CreateModelElement(DocumentFormat.OpenXml.Wordprocessing.Comments? openXmlElement)
+
+  public static DocumentModel.Wordprocessing.Comments? CreateModelElement(Comments? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -48,9 +49,9 @@ public static class CommentsConverter
     }
     return null;
   }
-  
+
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.Comments? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Wordprocessing.Comments, new()
+    where OpenXmlElementType : Comments, new()
   {
     if (value != null)
     {

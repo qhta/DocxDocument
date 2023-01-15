@@ -1,13 +1,12 @@
 namespace DocumentModel.Drawings;
 
 /// <summary>
-/// Effect.
+///   Effect.
 /// </summary>
-public partial class Effect
+public class Effect
 {
   /// <summary>
-  /// Reference
+  ///   Reference
   /// </summary>
   public String? Reference { get; set; }
-  
 }

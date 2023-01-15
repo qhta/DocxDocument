@@ -1,19 +1,21 @@
+using DocumentFormat.OpenXml.Drawing;
+
 namespace DocumentModel.OpenXml.Drawings;
 
 /// <summary>
-/// Defines the GroupShapeLocks Class.
+///   Defines the GroupShapeLocks Class.
 /// </summary>
 public static class GroupShapeLocksConverter
 {
   /// <summary>
-  /// Disallow Shape Grouping
+  ///   Disallow Shape Grouping
   /// </summary>
-  public static Boolean? GetNoGrouping(DocumentFormat.OpenXml.Drawing.GroupShapeLocks? openXmlElement)
+  public static Boolean? GetNoGrouping(GroupShapeLocks? openXmlElement)
   {
     return openXmlElement?.NoGrouping?.Value;
   }
-  
-  public static void SetNoGrouping(DocumentFormat.OpenXml.Drawing.GroupShapeLocks? openXmlElement, Boolean? value)
+
+  public static void SetNoGrouping(GroupShapeLocks? openXmlElement, Boolean? value)
   {
     if (openXmlElement != null)
       if (value != null)
@@ -21,16 +23,16 @@ public static class GroupShapeLocksConverter
       else
         openXmlElement.NoGrouping = null;
   }
-  
+
   /// <summary>
-  /// Disallow Shape Ungrouping
+  ///   Disallow Shape Ungrouping
   /// </summary>
-  public static Boolean? GetNoUngrouping(DocumentFormat.OpenXml.Drawing.GroupShapeLocks? openXmlElement)
+  public static Boolean? GetNoUngrouping(GroupShapeLocks? openXmlElement)
   {
     return openXmlElement?.NoUngrouping?.Value;
   }
-  
-  public static void SetNoUngrouping(DocumentFormat.OpenXml.Drawing.GroupShapeLocks? openXmlElement, Boolean? value)
+
+  public static void SetNoUngrouping(GroupShapeLocks? openXmlElement, Boolean? value)
   {
     if (openXmlElement != null)
       if (value != null)
@@ -38,16 +40,16 @@ public static class GroupShapeLocksConverter
       else
         openXmlElement.NoUngrouping = null;
   }
-  
+
   /// <summary>
-  /// Disallow Shape Selection
+  ///   Disallow Shape Selection
   /// </summary>
-  public static Boolean? GetNoSelection(DocumentFormat.OpenXml.Drawing.GroupShapeLocks? openXmlElement)
+  public static Boolean? GetNoSelection(GroupShapeLocks? openXmlElement)
   {
     return openXmlElement?.NoSelection?.Value;
   }
-  
-  public static void SetNoSelection(DocumentFormat.OpenXml.Drawing.GroupShapeLocks? openXmlElement, Boolean? value)
+
+  public static void SetNoSelection(GroupShapeLocks? openXmlElement, Boolean? value)
   {
     if (openXmlElement != null)
       if (value != null)
@@ -55,16 +57,16 @@ public static class GroupShapeLocksConverter
       else
         openXmlElement.NoSelection = null;
   }
-  
+
   /// <summary>
-  /// Disallow Shape Rotation
+  ///   Disallow Shape Rotation
   /// </summary>
-  public static Boolean? GetNoRotation(DocumentFormat.OpenXml.Drawing.GroupShapeLocks? openXmlElement)
+  public static Boolean? GetNoRotation(GroupShapeLocks? openXmlElement)
   {
     return openXmlElement?.NoRotation?.Value;
   }
-  
-  public static void SetNoRotation(DocumentFormat.OpenXml.Drawing.GroupShapeLocks? openXmlElement, Boolean? value)
+
+  public static void SetNoRotation(GroupShapeLocks? openXmlElement, Boolean? value)
   {
     if (openXmlElement != null)
       if (value != null)
@@ -72,16 +74,16 @@ public static class GroupShapeLocksConverter
       else
         openXmlElement.NoRotation = null;
   }
-  
+
   /// <summary>
-  /// Disallow Aspect Ratio Change
+  ///   Disallow Aspect Ratio Change
   /// </summary>
-  public static Boolean? GetNoChangeAspect(DocumentFormat.OpenXml.Drawing.GroupShapeLocks? openXmlElement)
+  public static Boolean? GetNoChangeAspect(GroupShapeLocks? openXmlElement)
   {
     return openXmlElement?.NoChangeAspect?.Value;
   }
-  
-  public static void SetNoChangeAspect(DocumentFormat.OpenXml.Drawing.GroupShapeLocks? openXmlElement, Boolean? value)
+
+  public static void SetNoChangeAspect(GroupShapeLocks? openXmlElement, Boolean? value)
   {
     if (openXmlElement != null)
       if (value != null)
@@ -89,16 +91,16 @@ public static class GroupShapeLocksConverter
       else
         openXmlElement.NoChangeAspect = null;
   }
-  
+
   /// <summary>
-  /// Disallow Moving Shape
+  ///   Disallow Moving Shape
   /// </summary>
-  public static Boolean? GetNoMove(DocumentFormat.OpenXml.Drawing.GroupShapeLocks? openXmlElement)
+  public static Boolean? GetNoMove(GroupShapeLocks? openXmlElement)
   {
     return openXmlElement?.NoMove?.Value;
   }
-  
-  public static void SetNoMove(DocumentFormat.OpenXml.Drawing.GroupShapeLocks? openXmlElement, Boolean? value)
+
+  public static void SetNoMove(GroupShapeLocks? openXmlElement, Boolean? value)
   {
     if (openXmlElement != null)
       if (value != null)
@@ -106,16 +108,16 @@ public static class GroupShapeLocksConverter
       else
         openXmlElement.NoMove = null;
   }
-  
+
   /// <summary>
-  /// Disallow Shape Resizing
+  ///   Disallow Shape Resizing
   /// </summary>
-  public static Boolean? GetNoResize(DocumentFormat.OpenXml.Drawing.GroupShapeLocks? openXmlElement)
+  public static Boolean? GetNoResize(GroupShapeLocks? openXmlElement)
   {
     return openXmlElement?.NoResize?.Value;
   }
-  
-  public static void SetNoResize(DocumentFormat.OpenXml.Drawing.GroupShapeLocks? openXmlElement, Boolean? value)
+
+  public static void SetNoResize(GroupShapeLocks? openXmlElement, Boolean? value)
   {
     if (openXmlElement != null)
       if (value != null)
@@ -123,19 +125,19 @@ public static class GroupShapeLocksConverter
       else
         openXmlElement.NoResize = null;
   }
-  
+
   /// <summary>
-  /// ExtensionList.
+  ///   ExtensionList.
   /// </summary>
-  public static DocumentModel.Drawings.ExtensionList? GetExtensionList(DocumentFormat.OpenXml.Drawing.GroupShapeLocks? openXmlElement)
+  public static DocumentModel.Drawings.ExtensionList? GetExtensionList(GroupShapeLocks? openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.ExtensionList>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.ExtensionListConverter.CreateModelElement(itemElement);
+      return ExtensionListConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetExtensionList(DocumentFormat.OpenXml.Drawing.GroupShapeLocks? openXmlElement, DocumentModel.Drawings.ExtensionList? value)
+
+  public static void SetExtensionList(GroupShapeLocks? openXmlElement, DocumentModel.Drawings.ExtensionList? value)
   {
     if (openXmlElement != null)
     {
@@ -144,14 +146,14 @@ public static class GroupShapeLocksConverter
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Drawings.ExtensionListConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.ExtensionList>(value);
+        itemElement = ExtensionListConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.ExtensionList>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static DocumentModel.Drawings.GroupShapeLocks? CreateModelElement(DocumentFormat.OpenXml.Drawing.GroupShapeLocks? openXmlElement)
+
+  public static DocumentModel.Drawings.GroupShapeLocks? CreateModelElement(GroupShapeLocks? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -168,9 +170,9 @@ public static class GroupShapeLocksConverter
     }
     return null;
   }
-  
+
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.GroupShapeLocks? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.GroupShapeLocks, new()
+    where OpenXmlElementType : GroupShapeLocks, new()
   {
     if (value != null)
     {

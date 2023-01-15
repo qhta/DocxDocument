@@ -1,23 +1,22 @@
 namespace DocumentModel.Math;
 
 /// <summary>
-/// Defines the HorizontalAlignmentValues enumeration.
+///   Defines the HorizontalAlignmentValues enumeration.
 /// </summary>
 public enum HorizontalAlignmentKind
 {
   /// <summary>
-  /// Left Justification.
+  ///   Left Justification.
   /// </summary>
   Left,
-  
+
   /// <summary>
-  /// Center.
+  ///   Center.
   /// </summary>
   Center,
-  
+
   /// <summary>
-  /// Right.
+  ///   Right.
   /// </summary>
-  Right,
-  
+  Right
 }

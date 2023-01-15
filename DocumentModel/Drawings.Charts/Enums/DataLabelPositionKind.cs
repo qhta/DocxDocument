@@ -1,53 +1,52 @@
 namespace DocumentModel.Drawings.Charts;
 
 /// <summary>
-/// Data Label Position
+///   Data Label Position
 /// </summary>
 public enum DataLabelPositionKind
 {
   /// <summary>
-  /// Best Fit.
+  ///   Best Fit.
   /// </summary>
   BestFit,
-  
+
   /// <summary>
-  /// Bottom.
+  ///   Bottom.
   /// </summary>
   Bottom,
-  
+
   /// <summary>
-  /// Center.
+  ///   Center.
   /// </summary>
   Center,
-  
+
   /// <summary>
-  /// Inside Base.
+  ///   Inside Base.
   /// </summary>
   InsideBase,
-  
+
   /// <summary>
-  /// Inside End.
+  ///   Inside End.
   /// </summary>
   InsideEnd,
-  
+
   /// <summary>
-  /// Left.
+  ///   Left.
   /// </summary>
   Left,
-  
+
   /// <summary>
-  /// Outside End.
+  ///   Outside End.
   /// </summary>
   OutsideEnd,
-  
+
   /// <summary>
-  /// Right.
+  ///   Right.
   /// </summary>
   Right,
-  
+
   /// <summary>
-  /// Top.
+  ///   Top.
   /// </summary>
-  Top,
-  
+  Top
 }

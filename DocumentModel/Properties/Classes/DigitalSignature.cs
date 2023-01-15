@@ -1,13 +1,12 @@
 namespace DocumentModel.Properties;
 
 /// <summary>
-/// Digital Signature.
+///   Digital Signature.
 /// </summary>
-public partial class DigitalSignature
+public class DigitalSignature
 {
   /// <summary>
-  /// Binary Blob.
+  ///   Binary Blob.
   /// </summary>
   public String? VTBlob { get; set; }
-  
 }

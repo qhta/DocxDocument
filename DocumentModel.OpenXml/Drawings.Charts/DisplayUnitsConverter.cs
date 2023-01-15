@@ -1,71 +1,73 @@
+using DocumentFormat.OpenXml.Drawing.Charts;
+using DocumentModel.Drawings.Charts;
+using DisplayUnits = DocumentFormat.OpenXml.Drawing.Charts.DisplayUnits;
+using DisplayUnitsLabel = DocumentModel.Drawings.Charts.DisplayUnitsLabel;
+
 namespace DocumentModel.OpenXml.Drawings.Charts;
 
 /// <summary>
-/// Defines the DisplayUnits Class.
+///   Defines the DisplayUnits Class.
 /// </summary>
 public static class DisplayUnitsConverter
 {
-  public static Double? GetCustomDisplayUnit(DocumentFormat.OpenXml.Drawing.Charts.DisplayUnits? openXmlElement)
+  public static Double? GetCustomDisplayUnit(DisplayUnits? openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.CustomDisplayUnit>();
+    var itemElement = openXmlElement?.GetFirstChild<CustomDisplayUnit>();
     if (itemElement != null)
       return itemElement.Val?.Value;
     return null;
   }
-  
-  public static void SetCustomDisplayUnit(DocumentFormat.OpenXml.Drawing.Charts.DisplayUnits? openXmlElement, Double? value)
+
+  public static void SetCustomDisplayUnit(DisplayUnits? openXmlElement, Double? value)
   {
     if (openXmlElement != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.CustomDisplayUnit>();
+      var itemElement = openXmlElement.GetFirstChild<CustomDisplayUnit>();
       if (itemElement != null)
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = new DocumentFormat.OpenXml.Drawing.Charts.CustomDisplayUnit{ Val = value };
+        itemElement = new CustomDisplayUnit { Val = value };
         openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static DocumentModel.Drawings.Charts.BuiltInUnitKind? GetBuiltInUnit(DocumentFormat.OpenXml.Drawing.Charts.DisplayUnits? openXmlElement)
+
+  public static BuiltInUnitKind? GetBuiltInUnit(DisplayUnits? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.BuiltInUnit>();
-      if (itemElement?.Val?.Value != null)
-      {
-        return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Drawing.Charts.BuiltInUnitValues, DocumentModel.Drawings.Charts.BuiltInUnitKind>(itemElement.Val.Value);
-      }
+      var itemElement = openXmlElement.GetFirstChild<BuiltInUnit>();
+      if (itemElement?.Val?.Value != null) return EnumValueConverter.GetValue<BuiltInUnitValues, BuiltInUnitKind>(itemElement.Val.Value);
     }
     return null;
   }
-  
-  public static void SetBuiltInUnit(DocumentFormat.OpenXml.Drawing.Charts.DisplayUnits? openXmlElement, DocumentModel.Drawings.Charts.BuiltInUnitKind? value)
+
+  public static void SetBuiltInUnit(DisplayUnits? openXmlElement, BuiltInUnitKind? value)
   {
     if (openXmlElement != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.BuiltInUnit>();
+      var itemElement = openXmlElement.GetFirstChild<BuiltInUnit>();
       if (itemElement != null)
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = EnumValueConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Charts.BuiltInUnit, DocumentFormat.OpenXml.Drawing.Charts.BuiltInUnitValues, DocumentModel.Drawings.Charts.BuiltInUnitKind>(value);
+        itemElement = EnumValueConverter.CreateOpenXmlElement<BuiltInUnit, BuiltInUnitValues, BuiltInUnitKind>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static DocumentModel.Drawings.Charts.DisplayUnitsLabel? GetDisplayUnitsLabel(DocumentFormat.OpenXml.Drawing.Charts.DisplayUnits? openXmlElement)
+
+  public static DisplayUnitsLabel? GetDisplayUnitsLabel(DisplayUnits? openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.DisplayUnitsLabel>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.Charts.DisplayUnitsLabelConverter.CreateModelElement(itemElement);
+      return DisplayUnitsLabelConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetDisplayUnitsLabel(DocumentFormat.OpenXml.Drawing.Charts.DisplayUnits? openXmlElement, DocumentModel.Drawings.Charts.DisplayUnitsLabel? value)
+
+  public static void SetDisplayUnitsLabel(DisplayUnits? openXmlElement, DisplayUnitsLabel? value)
   {
     if (openXmlElement != null)
     {
@@ -74,22 +76,22 @@ public static class DisplayUnitsConverter
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Drawings.Charts.DisplayUnitsLabelConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Charts.DisplayUnitsLabel>(value);
+        itemElement = DisplayUnitsLabelConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Charts.DisplayUnitsLabel>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static DocumentModel.Drawings.Charts.ExtensionList? GetExtensionList(DocumentFormat.OpenXml.Drawing.Charts.DisplayUnits? openXmlElement)
+
+  public static DocumentModel.Drawings.Charts.ExtensionList? GetExtensionList(DisplayUnits? openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.ExtensionList>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.Charts.ExtensionListConverter.CreateModelElement(itemElement);
+      return ExtensionListConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetExtensionList(DocumentFormat.OpenXml.Drawing.Charts.DisplayUnits? openXmlElement, DocumentModel.Drawings.Charts.ExtensionList? value)
+
+  public static void SetExtensionList(DisplayUnits? openXmlElement, DocumentModel.Drawings.Charts.ExtensionList? value)
   {
     if (openXmlElement != null)
     {
@@ -98,14 +100,14 @@ public static class DisplayUnitsConverter
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Drawings.Charts.ExtensionListConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Charts.ExtensionList>(value);
+        itemElement = ExtensionListConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Charts.ExtensionList>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static DocumentModel.Drawings.Charts.DisplayUnits? CreateModelElement(DocumentFormat.OpenXml.Drawing.Charts.DisplayUnits? openXmlElement)
+
+  public static DocumentModel.Drawings.Charts.DisplayUnits? CreateModelElement(DisplayUnits? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -118,9 +120,9 @@ public static class DisplayUnitsConverter
     }
     return null;
   }
-  
+
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.Charts.DisplayUnits? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.Charts.DisplayUnits, new()
+    where OpenXmlElementType : DisplayUnits, new()
   {
     if (value != null)
     {

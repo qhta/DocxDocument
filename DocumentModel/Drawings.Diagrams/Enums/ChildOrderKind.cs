@@ -1,18 +1,17 @@
 namespace DocumentModel.Drawings.Diagrams;
 
 /// <summary>
-/// Child Order
+///   Child Order
 /// </summary>
 public enum ChildOrderKind
 {
   /// <summary>
-  /// Bottom.
+  ///   Bottom.
   /// </summary>
   Bottom,
-  
+
   /// <summary>
-  /// Top.
+  ///   Top.
   /// </summary>
-  Top,
-  
+  Top
 }

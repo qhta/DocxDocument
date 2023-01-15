@@ -1,70 +1,72 @@
+using DocumentFormat.OpenXml.CustomProperties;
+
 namespace DocumentModel.OpenXml.Properties;
 
 /// <summary>
-/// Custom File Property.
+///   Custom File Property.
 /// </summary>
 public static class CustomDocumentPropertyConverter
 {
   /// <summary>
-  /// Format ID
+  ///   Format ID
   /// </summary>
-  public static String? GetFormatId(DocumentFormat.OpenXml.CustomProperties.CustomDocumentProperty openXmlElement)
+  public static String? GetFormatId(CustomDocumentProperty openXmlElement)
   {
     return openXmlElement?.FormatId;
   }
-  
-  public static void SetFormatId(DocumentFormat.OpenXml.CustomProperties.CustomDocumentProperty openXmlElement, String? value)
+
+  public static void SetFormatId(CustomDocumentProperty openXmlElement, String? value)
   {
     if (openXmlElement != null)
       openXmlElement.FormatId = value;
   }
-  
+
   /// <summary>
-  /// Property ID
+  ///   Property ID
   /// </summary>
-  public static Int32? GetPropertyId(DocumentFormat.OpenXml.CustomProperties.CustomDocumentProperty openXmlElement)
+  public static Int32? GetPropertyId(CustomDocumentProperty openXmlElement)
   {
     return openXmlElement?.PropertyId?.Value;
   }
-  
-  public static void SetPropertyId(DocumentFormat.OpenXml.CustomProperties.CustomDocumentProperty openXmlElement, Int32? value)
+
+  public static void SetPropertyId(CustomDocumentProperty openXmlElement, Int32? value)
   {
     if (openXmlElement != null)
       openXmlElement.PropertyId = value;
   }
-  
+
   /// <summary>
-  /// Custom File Property Name
+  ///   Custom File Property Name
   /// </summary>
-  public static String? GetName(DocumentFormat.OpenXml.CustomProperties.CustomDocumentProperty openXmlElement)
+  public static String? GetName(CustomDocumentProperty openXmlElement)
   {
     return openXmlElement?.Name;
   }
-  
-  public static void SetName(DocumentFormat.OpenXml.CustomProperties.CustomDocumentProperty openXmlElement, String? value)
+
+  public static void SetName(CustomDocumentProperty openXmlElement, String? value)
   {
     if (openXmlElement != null)
       openXmlElement.Name = value;
   }
-  
+
   /// <summary>
-  /// Bookmark Link Target
+  ///   Bookmark Link Target
   /// </summary>
-  public static String? GetLinkTarget(DocumentFormat.OpenXml.CustomProperties.CustomDocumentProperty openXmlElement)
+  public static String? GetLinkTarget(CustomDocumentProperty openXmlElement)
   {
     return openXmlElement?.LinkTarget;
   }
-  
-  public static void SetLinkTarget(DocumentFormat.OpenXml.CustomProperties.CustomDocumentProperty openXmlElement, String? value)
+
+  public static void SetLinkTarget(CustomDocumentProperty openXmlElement, String? value)
   {
     if (openXmlElement != null)
       openXmlElement.LinkTarget = value;
   }
 
   /// <summary>
-  /// Variant Value
+  ///   Variant Value
   /// </summary>
-  public static object? GetValue(DocumentFormat.OpenXml.CustomProperties.CustomDocumentProperty openXmlElement)
+  public static object? GetValue(CustomDocumentProperty openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -74,7 +76,8 @@ public static class CustomDocumentPropertyConverter
     }
     return null;
   }
-  public static void SetValue(DocumentFormat.OpenXml.CustomProperties.CustomDocumentProperty openXmlElement, object? value)
+
+  public static void SetValue(CustomDocumentProperty openXmlElement, object? value)
   {
     if (openXmlElement != null)
     {
@@ -90,7 +93,7 @@ public static class CustomDocumentPropertyConverter
     }
   }
 
-  public static DocumentModel.Properties.CustomDocumentProperty? CreateModelElement(DocumentFormat.OpenXml.CustomProperties.CustomDocumentProperty? openXmlElement)
+  public static DocumentModel.Properties.CustomDocumentProperty? CreateModelElement(CustomDocumentProperty? openXmlElement)
   {
     var value = new DocumentModel.Properties.CustomDocumentProperty();
     if (openXmlElement != null)
@@ -103,12 +106,12 @@ public static class CustomDocumentPropertyConverter
     }
     return value;
   }
-  
-  public static DocumentFormat.OpenXml.CustomProperties.CustomDocumentProperty? CreateOpenXmlElement(DocumentModel.Properties.CustomDocumentProperty? value)
+
+  public static CustomDocumentProperty? CreateOpenXmlElement(DocumentModel.Properties.CustomDocumentProperty? value)
   {
     if (value != null)
     {
-      var openXmlElement = new DocumentFormat.OpenXml.CustomProperties.CustomDocumentProperty();
+      var openXmlElement = new CustomDocumentProperty();
       SetFormatId(openXmlElement, value.FormatId);
       SetPropertyId(openXmlElement, value.PropertyId);
       SetName(openXmlElement, value.Name);

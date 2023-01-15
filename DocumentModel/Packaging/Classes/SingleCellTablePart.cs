@@ -1,12 +1,11 @@
 namespace DocumentModel.Packaging;
 
 /// <summary>
-/// Defines the SingleCellTablePart
+///   Defines the SingleCellTablePart
 /// </summary>
-public partial class SingleCellTablePart
+public class SingleCellTablePart
 {
   public String? ContentType { get; set; }
-  
+
   public String? RelationshipType { get; set; }
-  
 }

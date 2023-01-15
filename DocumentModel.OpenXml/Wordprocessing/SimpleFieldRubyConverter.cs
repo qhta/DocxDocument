@@ -1,19 +1,46 @@
+using DocumentFormat.OpenXml.Office2010.Word;
+using DocumentFormat.OpenXml.Wordprocessing;
+using DocumentModel.Math;
+using DocumentModel.OpenXml.Math;
+using DocumentModel.Wordprocessing;
+using BookmarkStart = DocumentModel.Wordprocessing.BookmarkStart;
+using CustomXmlRuby = DocumentModel.Wordprocessing.CustomXmlRuby;
+using DeletedRun = DocumentModel.Wordprocessing.DeletedRun;
+using HyperlinkRuby = DocumentModel.Wordprocessing.HyperlinkRuby;
+using InsertedRun = DocumentModel.Wordprocessing.InsertedRun;
+using MarkupRangeType = DocumentModel.Wordprocessing.MarkupRangeType;
+using MarkupType = DocumentModel.Wordprocessing.MarkupType;
+using MoveBookmarkType = DocumentModel.Wordprocessing.MoveBookmarkType;
+using MoveFromRun = DocumentModel.Wordprocessing.MoveFromRun;
+using MoveToRun = DocumentModel.Wordprocessing.MoveToRun;
+using OfficeMath = DocumentModel.Math.OfficeMath;
+using Paragraph = DocumentModel.Math.Paragraph;
+using PermEnd = DocumentModel.Wordprocessing.PermEnd;
+using PermStart = DocumentModel.Wordprocessing.PermStart;
+using ProofError = DocumentModel.Wordprocessing.ProofError;
+using Run = DocumentModel.Wordprocessing.Run;
+using RunConflictDeletion = DocumentModel.Wordprocessing.RunConflictDeletion;
+using RunConflictInsertion = DocumentModel.Wordprocessing.RunConflictInsertion;
+using SdtRunRuby = DocumentModel.Wordprocessing.SdtRunRuby;
+using SimpleFieldRuby = DocumentFormat.OpenXml.Wordprocessing.SimpleFieldRuby;
+using TrackChangeType = DocumentModel.Wordprocessing.TrackChangeType;
+
 namespace DocumentModel.OpenXml.Wordprocessing;
 
 /// <summary>
-/// Defines the SimpleFieldRuby Class.
+///   Defines the SimpleFieldRuby Class.
 /// </summary>
 public static class SimpleFieldRubyConverter
 {
   /// <summary>
-  /// instr
+  ///   instr
   /// </summary>
-  public static String? GetInstruction(DocumentFormat.OpenXml.Wordprocessing.SimpleFieldRuby? openXmlElement)
+  public static String? GetInstruction(SimpleFieldRuby? openXmlElement)
   {
     return openXmlElement?.Instruction?.Value;
   }
-  
-  public static void SetInstruction(DocumentFormat.OpenXml.Wordprocessing.SimpleFieldRuby? openXmlElement, String? value)
+
+  public static void SetInstruction(SimpleFieldRuby? openXmlElement, String? value)
   {
     if (openXmlElement != null)
       if (value != null)
@@ -21,16 +48,16 @@ public static class SimpleFieldRubyConverter
       else
         openXmlElement.Instruction = null;
   }
-  
+
   /// <summary>
-  /// fldLock
+  ///   fldLock
   /// </summary>
-  public static Boolean? GetFieldLock(DocumentFormat.OpenXml.Wordprocessing.SimpleFieldRuby? openXmlElement)
+  public static Boolean? GetFieldLock(SimpleFieldRuby? openXmlElement)
   {
     return openXmlElement?.FieldLock?.Value;
   }
-  
-  public static void SetFieldLock(DocumentFormat.OpenXml.Wordprocessing.SimpleFieldRuby? openXmlElement, Boolean? value)
+
+  public static void SetFieldLock(SimpleFieldRuby? openXmlElement, Boolean? value)
   {
     if (openXmlElement != null)
       if (value != null)
@@ -38,16 +65,16 @@ public static class SimpleFieldRubyConverter
       else
         openXmlElement.FieldLock = null;
   }
-  
+
   /// <summary>
-  /// dirty
+  ///   dirty
   /// </summary>
-  public static Boolean? GetDirty(DocumentFormat.OpenXml.Wordprocessing.SimpleFieldRuby? openXmlElement)
+  public static Boolean? GetDirty(SimpleFieldRuby? openXmlElement)
   {
     return openXmlElement?.Dirty?.Value;
   }
-  
-  public static void SetDirty(DocumentFormat.OpenXml.Wordprocessing.SimpleFieldRuby? openXmlElement, Boolean? value)
+
+  public static void SetDirty(SimpleFieldRuby? openXmlElement, Boolean? value)
   {
     if (openXmlElement != null)
       if (value != null)
@@ -55,42 +82,42 @@ public static class SimpleFieldRubyConverter
       else
         openXmlElement.Dirty = null;
   }
-  
+
   /// <summary>
-  /// FieldData.
+  ///   FieldData.
   /// </summary>
-  public static String? GetFieldData(DocumentFormat.OpenXml.Wordprocessing.SimpleFieldRuby? openXmlElement)
+  public static String? GetFieldData(SimpleFieldRuby? openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.FieldData>();
+    var itemElement = openXmlElement?.GetFirstChild<FieldData>();
     if (itemElement != null)
       return itemElement.Text;
     return null;
   }
-  
-  public static void SetFieldData(DocumentFormat.OpenXml.Wordprocessing.SimpleFieldRuby? openXmlElement, String? value)
+
+  public static void SetFieldData(SimpleFieldRuby? openXmlElement, String? value)
   {
     if (openXmlElement != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.FieldData>();
+      var itemElement = openXmlElement.GetFirstChild<FieldData>();
       if (itemElement != null)
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = new DocumentFormat.OpenXml.Wordprocessing.FieldData { Text = value };
+        itemElement = new FieldData { Text = value };
         openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static DocumentModel.Wordprocessing.CustomXmlRuby? GetCustomXmlRuby(DocumentFormat.OpenXml.Wordprocessing.SimpleFieldRuby? openXmlElement)
+
+  public static CustomXmlRuby? GetCustomXmlRuby(SimpleFieldRuby? openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.CustomXmlRuby>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Wordprocessing.CustomXmlRubyConverter.CreateModelElement(itemElement);
+      return CustomXmlRubyConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetCustomXmlRuby(DocumentFormat.OpenXml.Wordprocessing.SimpleFieldRuby? openXmlElement, DocumentModel.Wordprocessing.CustomXmlRuby? value)
+
+  public static void SetCustomXmlRuby(SimpleFieldRuby? openXmlElement, CustomXmlRuby? value)
   {
     if (openXmlElement != null)
     {
@@ -99,46 +126,46 @@ public static class SimpleFieldRubyConverter
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Wordprocessing.CustomXmlRubyConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.CustomXmlRuby>(value);
+        itemElement = CustomXmlRubyConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.CustomXmlRuby>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static DocumentModel.Wordprocessing.SimpleFieldRuby? GetChildSimpleFieldRuby(DocumentFormat.OpenXml.Wordprocessing.SimpleFieldRuby? openXmlElement)
+
+  public static DocumentModel.Wordprocessing.SimpleFieldRuby? GetChildSimpleFieldRuby(SimpleFieldRuby? openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.SimpleFieldRuby>();
+    var itemElement = openXmlElement?.GetFirstChild<SimpleFieldRuby>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Wordprocessing.SimpleFieldRubyConverter.CreateModelElement(itemElement);
+      return CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetChildSimpleFieldRuby(DocumentFormat.OpenXml.Wordprocessing.SimpleFieldRuby? openXmlElement, DocumentModel.Wordprocessing.SimpleFieldRuby? value)
+
+  public static void SetChildSimpleFieldRuby(SimpleFieldRuby? openXmlElement, DocumentModel.Wordprocessing.SimpleFieldRuby? value)
   {
     if (openXmlElement != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.SimpleFieldRuby>();
+      var itemElement = openXmlElement.GetFirstChild<SimpleFieldRuby>();
       if (itemElement != null)
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Wordprocessing.SimpleFieldRubyConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.SimpleFieldRuby>(value);
+        itemElement = CreateOpenXmlElement<SimpleFieldRuby>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static DocumentModel.Wordprocessing.HyperlinkRuby? GetHyperlinkRuby(DocumentFormat.OpenXml.Wordprocessing.SimpleFieldRuby? openXmlElement)
+
+  public static HyperlinkRuby? GetHyperlinkRuby(SimpleFieldRuby? openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.HyperlinkRuby>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Wordprocessing.HyperlinkRubyConverter.CreateModelElement(itemElement);
+      return HyperlinkRubyConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetHyperlinkRuby(DocumentFormat.OpenXml.Wordprocessing.SimpleFieldRuby? openXmlElement, DocumentModel.Wordprocessing.HyperlinkRuby? value)
+
+  public static void SetHyperlinkRuby(SimpleFieldRuby? openXmlElement, HyperlinkRuby? value)
   {
     if (openXmlElement != null)
     {
@@ -147,22 +174,22 @@ public static class SimpleFieldRubyConverter
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Wordprocessing.HyperlinkRubyConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.HyperlinkRuby>(value);
+        itemElement = HyperlinkRubyConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.HyperlinkRuby>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static DocumentModel.Wordprocessing.Run? GetRun(DocumentFormat.OpenXml.Wordprocessing.SimpleFieldRuby? openXmlElement)
+
+  public static Run? GetRun(SimpleFieldRuby? openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.Run>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Wordprocessing.RunConverter.CreateModelElement(itemElement);
+      return RunConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetRun(DocumentFormat.OpenXml.Wordprocessing.SimpleFieldRuby? openXmlElement, DocumentModel.Wordprocessing.Run? value)
+
+  public static void SetRun(SimpleFieldRuby? openXmlElement, Run? value)
   {
     if (openXmlElement != null)
     {
@@ -171,22 +198,22 @@ public static class SimpleFieldRubyConverter
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Wordprocessing.RunConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.Run>(value);
+        itemElement = RunConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.Run>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static DocumentModel.Wordprocessing.SdtRunRuby? GetSdtRunRuby(DocumentFormat.OpenXml.Wordprocessing.SimpleFieldRuby? openXmlElement)
+
+  public static SdtRunRuby? GetSdtRunRuby(SimpleFieldRuby? openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.SdtRunRuby>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Wordprocessing.SdtRunRubyConverter.CreateModelElement(itemElement);
+      return SdtRunRubyConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetSdtRunRuby(DocumentFormat.OpenXml.Wordprocessing.SimpleFieldRuby? openXmlElement, DocumentModel.Wordprocessing.SdtRunRuby? value)
+
+  public static void SetSdtRunRuby(SimpleFieldRuby? openXmlElement, SdtRunRuby? value)
   {
     if (openXmlElement != null)
     {
@@ -195,22 +222,22 @@ public static class SimpleFieldRubyConverter
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Wordprocessing.SdtRunRubyConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.SdtRunRuby>(value);
+        itemElement = SdtRunRubyConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.SdtRunRuby>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static DocumentModel.Wordprocessing.ProofError? GetProofError(DocumentFormat.OpenXml.Wordprocessing.SimpleFieldRuby? openXmlElement)
+
+  public static ProofError? GetProofError(SimpleFieldRuby? openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.ProofError>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Wordprocessing.ProofErrorConverter.CreateModelElement(itemElement);
+      return ProofErrorConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetProofError(DocumentFormat.OpenXml.Wordprocessing.SimpleFieldRuby? openXmlElement, DocumentModel.Wordprocessing.ProofError? value)
+
+  public static void SetProofError(SimpleFieldRuby? openXmlElement, ProofError? value)
   {
     if (openXmlElement != null)
     {
@@ -219,22 +246,22 @@ public static class SimpleFieldRubyConverter
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Wordprocessing.ProofErrorConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.ProofError>(value);
+        itemElement = ProofErrorConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.ProofError>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static DocumentModel.Wordprocessing.PermStart? GetPermStart(DocumentFormat.OpenXml.Wordprocessing.SimpleFieldRuby? openXmlElement)
+
+  public static PermStart? GetPermStart(SimpleFieldRuby? openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.PermStart>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Wordprocessing.PermStartConverter.CreateModelElement(itemElement);
+      return PermStartConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetPermStart(DocumentFormat.OpenXml.Wordprocessing.SimpleFieldRuby? openXmlElement, DocumentModel.Wordprocessing.PermStart? value)
+
+  public static void SetPermStart(SimpleFieldRuby? openXmlElement, PermStart? value)
   {
     if (openXmlElement != null)
     {
@@ -243,22 +270,22 @@ public static class SimpleFieldRubyConverter
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Wordprocessing.PermStartConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.PermStart>(value);
+        itemElement = PermStartConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.PermStart>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static DocumentModel.Wordprocessing.PermEnd? GetPermEnd(DocumentFormat.OpenXml.Wordprocessing.SimpleFieldRuby? openXmlElement)
+
+  public static PermEnd? GetPermEnd(SimpleFieldRuby? openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.PermEnd>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Wordprocessing.PermEndConverter.CreateModelElement(itemElement);
+      return PermEndConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetPermEnd(DocumentFormat.OpenXml.Wordprocessing.SimpleFieldRuby? openXmlElement, DocumentModel.Wordprocessing.PermEnd? value)
+
+  public static void SetPermEnd(SimpleFieldRuby? openXmlElement, PermEnd? value)
   {
     if (openXmlElement != null)
     {
@@ -267,22 +294,22 @@ public static class SimpleFieldRubyConverter
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Wordprocessing.PermEndConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.PermEnd>(value);
+        itemElement = PermEndConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.PermEnd>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static DocumentModel.Wordprocessing.BookmarkStart? GetBookmarkStart(DocumentFormat.OpenXml.Wordprocessing.SimpleFieldRuby? openXmlElement)
+
+  public static BookmarkStart? GetBookmarkStart(SimpleFieldRuby? openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.BookmarkStart>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Wordprocessing.BookmarkStartConverter.CreateModelElement(itemElement);
+      return BookmarkStartConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetBookmarkStart(DocumentFormat.OpenXml.Wordprocessing.SimpleFieldRuby? openXmlElement, DocumentModel.Wordprocessing.BookmarkStart? value)
+
+  public static void SetBookmarkStart(SimpleFieldRuby? openXmlElement, BookmarkStart? value)
   {
     if (openXmlElement != null)
     {
@@ -291,478 +318,478 @@ public static class SimpleFieldRubyConverter
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Wordprocessing.BookmarkStartConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.BookmarkStart>(value);
+        itemElement = BookmarkStartConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.BookmarkStart>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static DocumentModel.Wordprocessing.MarkupRangeType? GetBookmarkEnd(DocumentFormat.OpenXml.Wordprocessing.SimpleFieldRuby? openXmlElement)
+
+  public static MarkupRangeType? GetBookmarkEnd(SimpleFieldRuby? openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.BookmarkEnd>();
+    var itemElement = openXmlElement?.GetFirstChild<BookmarkEnd>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Wordprocessing.MarkupRangeTypeConverter.CreateModelElement(itemElement);
+      return MarkupRangeTypeConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetBookmarkEnd(DocumentFormat.OpenXml.Wordprocessing.SimpleFieldRuby? openXmlElement, DocumentModel.Wordprocessing.MarkupRangeType? value)
+
+  public static void SetBookmarkEnd(SimpleFieldRuby? openXmlElement, MarkupRangeType? value)
   {
     if (openXmlElement != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.BookmarkEnd>();
+      var itemElement = openXmlElement.GetFirstChild<BookmarkEnd>();
       if (itemElement != null)
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Wordprocessing.MarkupRangeTypeConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.BookmarkEnd>(value);
+        itemElement = MarkupRangeTypeConverter.CreateOpenXmlElement<BookmarkEnd>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static DocumentModel.Wordprocessing.MarkupRangeType? GetCommentRangeStart(DocumentFormat.OpenXml.Wordprocessing.SimpleFieldRuby? openXmlElement)
+
+  public static MarkupRangeType? GetCommentRangeStart(SimpleFieldRuby? openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.CommentRangeStart>();
+    var itemElement = openXmlElement?.GetFirstChild<CommentRangeStart>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Wordprocessing.MarkupRangeTypeConverter.CreateModelElement(itemElement);
+      return MarkupRangeTypeConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetCommentRangeStart(DocumentFormat.OpenXml.Wordprocessing.SimpleFieldRuby? openXmlElement, DocumentModel.Wordprocessing.MarkupRangeType? value)
+
+  public static void SetCommentRangeStart(SimpleFieldRuby? openXmlElement, MarkupRangeType? value)
   {
     if (openXmlElement != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.CommentRangeStart>();
+      var itemElement = openXmlElement.GetFirstChild<CommentRangeStart>();
       if (itemElement != null)
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Wordprocessing.MarkupRangeTypeConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.CommentRangeStart>(value);
+        itemElement = MarkupRangeTypeConverter.CreateOpenXmlElement<CommentRangeStart>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static DocumentModel.Wordprocessing.MarkupRangeType? GetCommentRangeEnd(DocumentFormat.OpenXml.Wordprocessing.SimpleFieldRuby? openXmlElement)
+
+  public static MarkupRangeType? GetCommentRangeEnd(SimpleFieldRuby? openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.CommentRangeEnd>();
+    var itemElement = openXmlElement?.GetFirstChild<CommentRangeEnd>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Wordprocessing.MarkupRangeTypeConverter.CreateModelElement(itemElement);
+      return MarkupRangeTypeConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetCommentRangeEnd(DocumentFormat.OpenXml.Wordprocessing.SimpleFieldRuby? openXmlElement, DocumentModel.Wordprocessing.MarkupRangeType? value)
+
+  public static void SetCommentRangeEnd(SimpleFieldRuby? openXmlElement, MarkupRangeType? value)
   {
     if (openXmlElement != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.CommentRangeEnd>();
+      var itemElement = openXmlElement.GetFirstChild<CommentRangeEnd>();
       if (itemElement != null)
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Wordprocessing.MarkupRangeTypeConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.CommentRangeEnd>(value);
+        itemElement = MarkupRangeTypeConverter.CreateOpenXmlElement<CommentRangeEnd>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static DocumentModel.Wordprocessing.MoveBookmarkType? GetMoveFromRangeStart(DocumentFormat.OpenXml.Wordprocessing.SimpleFieldRuby? openXmlElement)
+
+  public static MoveBookmarkType? GetMoveFromRangeStart(SimpleFieldRuby? openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.MoveFromRangeStart>();
+    var itemElement = openXmlElement?.GetFirstChild<MoveFromRangeStart>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Wordprocessing.MoveBookmarkTypeConverter.CreateModelElement(itemElement);
+      return MoveBookmarkTypeConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetMoveFromRangeStart(DocumentFormat.OpenXml.Wordprocessing.SimpleFieldRuby? openXmlElement, DocumentModel.Wordprocessing.MoveBookmarkType? value)
+
+  public static void SetMoveFromRangeStart(SimpleFieldRuby? openXmlElement, MoveBookmarkType? value)
   {
     if (openXmlElement != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.MoveFromRangeStart>();
+      var itemElement = openXmlElement.GetFirstChild<MoveFromRangeStart>();
       if (itemElement != null)
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Wordprocessing.MoveBookmarkTypeConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.MoveFromRangeStart>(value);
+        itemElement = MoveBookmarkTypeConverter.CreateOpenXmlElement<MoveFromRangeStart>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static DocumentModel.Wordprocessing.MarkupRangeType? GetMoveFromRangeEnd(DocumentFormat.OpenXml.Wordprocessing.SimpleFieldRuby? openXmlElement)
+
+  public static MarkupRangeType? GetMoveFromRangeEnd(SimpleFieldRuby? openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.MoveFromRangeEnd>();
+    var itemElement = openXmlElement?.GetFirstChild<MoveFromRangeEnd>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Wordprocessing.MarkupRangeTypeConverter.CreateModelElement(itemElement);
+      return MarkupRangeTypeConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetMoveFromRangeEnd(DocumentFormat.OpenXml.Wordprocessing.SimpleFieldRuby? openXmlElement, DocumentModel.Wordprocessing.MarkupRangeType? value)
+
+  public static void SetMoveFromRangeEnd(SimpleFieldRuby? openXmlElement, MarkupRangeType? value)
   {
     if (openXmlElement != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.MoveFromRangeEnd>();
+      var itemElement = openXmlElement.GetFirstChild<MoveFromRangeEnd>();
       if (itemElement != null)
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Wordprocessing.MarkupRangeTypeConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.MoveFromRangeEnd>(value);
+        itemElement = MarkupRangeTypeConverter.CreateOpenXmlElement<MoveFromRangeEnd>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static DocumentModel.Wordprocessing.MoveBookmarkType? GetMoveToRangeStart(DocumentFormat.OpenXml.Wordprocessing.SimpleFieldRuby? openXmlElement)
+
+  public static MoveBookmarkType? GetMoveToRangeStart(SimpleFieldRuby? openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.MoveToRangeStart>();
+    var itemElement = openXmlElement?.GetFirstChild<MoveToRangeStart>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Wordprocessing.MoveBookmarkTypeConverter.CreateModelElement(itemElement);
+      return MoveBookmarkTypeConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetMoveToRangeStart(DocumentFormat.OpenXml.Wordprocessing.SimpleFieldRuby? openXmlElement, DocumentModel.Wordprocessing.MoveBookmarkType? value)
+
+  public static void SetMoveToRangeStart(SimpleFieldRuby? openXmlElement, MoveBookmarkType? value)
   {
     if (openXmlElement != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.MoveToRangeStart>();
+      var itemElement = openXmlElement.GetFirstChild<MoveToRangeStart>();
       if (itemElement != null)
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Wordprocessing.MoveBookmarkTypeConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.MoveToRangeStart>(value);
+        itemElement = MoveBookmarkTypeConverter.CreateOpenXmlElement<MoveToRangeStart>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static DocumentModel.Wordprocessing.MarkupRangeType? GetMoveToRangeEnd(DocumentFormat.OpenXml.Wordprocessing.SimpleFieldRuby? openXmlElement)
+
+  public static MarkupRangeType? GetMoveToRangeEnd(SimpleFieldRuby? openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.MoveToRangeEnd>();
+    var itemElement = openXmlElement?.GetFirstChild<MoveToRangeEnd>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Wordprocessing.MarkupRangeTypeConverter.CreateModelElement(itemElement);
+      return MarkupRangeTypeConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetMoveToRangeEnd(DocumentFormat.OpenXml.Wordprocessing.SimpleFieldRuby? openXmlElement, DocumentModel.Wordprocessing.MarkupRangeType? value)
+
+  public static void SetMoveToRangeEnd(SimpleFieldRuby? openXmlElement, MarkupRangeType? value)
   {
     if (openXmlElement != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.MoveToRangeEnd>();
+      var itemElement = openXmlElement.GetFirstChild<MoveToRangeEnd>();
       if (itemElement != null)
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Wordprocessing.MarkupRangeTypeConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.MoveToRangeEnd>(value);
+        itemElement = MarkupRangeTypeConverter.CreateOpenXmlElement<MoveToRangeEnd>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static DocumentModel.Wordprocessing.TrackChangeType? GetCustomXmlInsRangeStart(DocumentFormat.OpenXml.Wordprocessing.SimpleFieldRuby? openXmlElement)
+
+  public static TrackChangeType? GetCustomXmlInsRangeStart(SimpleFieldRuby? openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.CustomXmlInsRangeStart>();
+    var itemElement = openXmlElement?.GetFirstChild<CustomXmlInsRangeStart>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Wordprocessing.TrackChangeTypeConverter.CreateModelElement(itemElement);
+      return TrackChangeTypeConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetCustomXmlInsRangeStart(DocumentFormat.OpenXml.Wordprocessing.SimpleFieldRuby? openXmlElement, DocumentModel.Wordprocessing.TrackChangeType? value)
+
+  public static void SetCustomXmlInsRangeStart(SimpleFieldRuby? openXmlElement, TrackChangeType? value)
   {
     if (openXmlElement != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.CustomXmlInsRangeStart>();
+      var itemElement = openXmlElement.GetFirstChild<CustomXmlInsRangeStart>();
       if (itemElement != null)
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Wordprocessing.TrackChangeTypeConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.CustomXmlInsRangeStart>(value);
+        itemElement = TrackChangeTypeConverter.CreateOpenXmlElement<CustomXmlInsRangeStart>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static DocumentModel.Wordprocessing.MarkupType? GetCustomXmlInsRangeEnd(DocumentFormat.OpenXml.Wordprocessing.SimpleFieldRuby? openXmlElement)
+
+  public static MarkupType? GetCustomXmlInsRangeEnd(SimpleFieldRuby? openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.CustomXmlInsRangeEnd>();
+    var itemElement = openXmlElement?.GetFirstChild<CustomXmlInsRangeEnd>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Wordprocessing.MarkupTypeConverter.CreateModelElement(itemElement);
+      return MarkupTypeConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetCustomXmlInsRangeEnd(DocumentFormat.OpenXml.Wordprocessing.SimpleFieldRuby? openXmlElement, DocumentModel.Wordprocessing.MarkupType? value)
+
+  public static void SetCustomXmlInsRangeEnd(SimpleFieldRuby? openXmlElement, MarkupType? value)
   {
     if (openXmlElement != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.CustomXmlInsRangeEnd>();
+      var itemElement = openXmlElement.GetFirstChild<CustomXmlInsRangeEnd>();
       if (itemElement != null)
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Wordprocessing.MarkupTypeConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.CustomXmlInsRangeEnd>(value);
+        itemElement = MarkupTypeConverter.CreateOpenXmlElement<CustomXmlInsRangeEnd>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static DocumentModel.Wordprocessing.TrackChangeType? GetCustomXmlDelRangeStart(DocumentFormat.OpenXml.Wordprocessing.SimpleFieldRuby? openXmlElement)
+
+  public static TrackChangeType? GetCustomXmlDelRangeStart(SimpleFieldRuby? openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.CustomXmlDelRangeStart>();
+    var itemElement = openXmlElement?.GetFirstChild<CustomXmlDelRangeStart>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Wordprocessing.TrackChangeTypeConverter.CreateModelElement(itemElement);
+      return TrackChangeTypeConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetCustomXmlDelRangeStart(DocumentFormat.OpenXml.Wordprocessing.SimpleFieldRuby? openXmlElement, DocumentModel.Wordprocessing.TrackChangeType? value)
+
+  public static void SetCustomXmlDelRangeStart(SimpleFieldRuby? openXmlElement, TrackChangeType? value)
   {
     if (openXmlElement != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.CustomXmlDelRangeStart>();
+      var itemElement = openXmlElement.GetFirstChild<CustomXmlDelRangeStart>();
       if (itemElement != null)
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Wordprocessing.TrackChangeTypeConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.CustomXmlDelRangeStart>(value);
+        itemElement = TrackChangeTypeConverter.CreateOpenXmlElement<CustomXmlDelRangeStart>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static DocumentModel.Wordprocessing.MarkupType? GetCustomXmlDelRangeEnd(DocumentFormat.OpenXml.Wordprocessing.SimpleFieldRuby? openXmlElement)
+
+  public static MarkupType? GetCustomXmlDelRangeEnd(SimpleFieldRuby? openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.CustomXmlDelRangeEnd>();
+    var itemElement = openXmlElement?.GetFirstChild<CustomXmlDelRangeEnd>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Wordprocessing.MarkupTypeConverter.CreateModelElement(itemElement);
+      return MarkupTypeConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetCustomXmlDelRangeEnd(DocumentFormat.OpenXml.Wordprocessing.SimpleFieldRuby? openXmlElement, DocumentModel.Wordprocessing.MarkupType? value)
+
+  public static void SetCustomXmlDelRangeEnd(SimpleFieldRuby? openXmlElement, MarkupType? value)
   {
     if (openXmlElement != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.CustomXmlDelRangeEnd>();
+      var itemElement = openXmlElement.GetFirstChild<CustomXmlDelRangeEnd>();
       if (itemElement != null)
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Wordprocessing.MarkupTypeConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.CustomXmlDelRangeEnd>(value);
+        itemElement = MarkupTypeConverter.CreateOpenXmlElement<CustomXmlDelRangeEnd>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static DocumentModel.Wordprocessing.TrackChangeType? GetCustomXmlMoveFromRangeStart(DocumentFormat.OpenXml.Wordprocessing.SimpleFieldRuby? openXmlElement)
+
+  public static TrackChangeType? GetCustomXmlMoveFromRangeStart(SimpleFieldRuby? openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.CustomXmlMoveFromRangeStart>();
+    var itemElement = openXmlElement?.GetFirstChild<CustomXmlMoveFromRangeStart>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Wordprocessing.TrackChangeTypeConverter.CreateModelElement(itemElement);
+      return TrackChangeTypeConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetCustomXmlMoveFromRangeStart(DocumentFormat.OpenXml.Wordprocessing.SimpleFieldRuby? openXmlElement, DocumentModel.Wordprocessing.TrackChangeType? value)
+
+  public static void SetCustomXmlMoveFromRangeStart(SimpleFieldRuby? openXmlElement, TrackChangeType? value)
   {
     if (openXmlElement != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.CustomXmlMoveFromRangeStart>();
+      var itemElement = openXmlElement.GetFirstChild<CustomXmlMoveFromRangeStart>();
       if (itemElement != null)
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Wordprocessing.TrackChangeTypeConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.CustomXmlMoveFromRangeStart>(value);
+        itemElement = TrackChangeTypeConverter.CreateOpenXmlElement<CustomXmlMoveFromRangeStart>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static DocumentModel.Wordprocessing.MarkupType? GetCustomXmlMoveFromRangeEnd(DocumentFormat.OpenXml.Wordprocessing.SimpleFieldRuby? openXmlElement)
+
+  public static MarkupType? GetCustomXmlMoveFromRangeEnd(SimpleFieldRuby? openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.CustomXmlMoveFromRangeEnd>();
+    var itemElement = openXmlElement?.GetFirstChild<CustomXmlMoveFromRangeEnd>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Wordprocessing.MarkupTypeConverter.CreateModelElement(itemElement);
+      return MarkupTypeConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetCustomXmlMoveFromRangeEnd(DocumentFormat.OpenXml.Wordprocessing.SimpleFieldRuby? openXmlElement, DocumentModel.Wordprocessing.MarkupType? value)
+
+  public static void SetCustomXmlMoveFromRangeEnd(SimpleFieldRuby? openXmlElement, MarkupType? value)
   {
     if (openXmlElement != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.CustomXmlMoveFromRangeEnd>();
+      var itemElement = openXmlElement.GetFirstChild<CustomXmlMoveFromRangeEnd>();
       if (itemElement != null)
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Wordprocessing.MarkupTypeConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.CustomXmlMoveFromRangeEnd>(value);
+        itemElement = MarkupTypeConverter.CreateOpenXmlElement<CustomXmlMoveFromRangeEnd>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static DocumentModel.Wordprocessing.TrackChangeType? GetCustomXmlMoveToRangeStart(DocumentFormat.OpenXml.Wordprocessing.SimpleFieldRuby? openXmlElement)
+
+  public static TrackChangeType? GetCustomXmlMoveToRangeStart(SimpleFieldRuby? openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.CustomXmlMoveToRangeStart>();
+    var itemElement = openXmlElement?.GetFirstChild<CustomXmlMoveToRangeStart>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Wordprocessing.TrackChangeTypeConverter.CreateModelElement(itemElement);
+      return TrackChangeTypeConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetCustomXmlMoveToRangeStart(DocumentFormat.OpenXml.Wordprocessing.SimpleFieldRuby? openXmlElement, DocumentModel.Wordprocessing.TrackChangeType? value)
+
+  public static void SetCustomXmlMoveToRangeStart(SimpleFieldRuby? openXmlElement, TrackChangeType? value)
   {
     if (openXmlElement != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.CustomXmlMoveToRangeStart>();
+      var itemElement = openXmlElement.GetFirstChild<CustomXmlMoveToRangeStart>();
       if (itemElement != null)
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Wordprocessing.TrackChangeTypeConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.CustomXmlMoveToRangeStart>(value);
+        itemElement = TrackChangeTypeConverter.CreateOpenXmlElement<CustomXmlMoveToRangeStart>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static DocumentModel.Wordprocessing.MarkupType? GetCustomXmlMoveToRangeEnd(DocumentFormat.OpenXml.Wordprocessing.SimpleFieldRuby? openXmlElement)
+
+  public static MarkupType? GetCustomXmlMoveToRangeEnd(SimpleFieldRuby? openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.CustomXmlMoveToRangeEnd>();
+    var itemElement = openXmlElement?.GetFirstChild<CustomXmlMoveToRangeEnd>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Wordprocessing.MarkupTypeConverter.CreateModelElement(itemElement);
+      return MarkupTypeConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetCustomXmlMoveToRangeEnd(DocumentFormat.OpenXml.Wordprocessing.SimpleFieldRuby? openXmlElement, DocumentModel.Wordprocessing.MarkupType? value)
+
+  public static void SetCustomXmlMoveToRangeEnd(SimpleFieldRuby? openXmlElement, MarkupType? value)
   {
     if (openXmlElement != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.CustomXmlMoveToRangeEnd>();
+      var itemElement = openXmlElement.GetFirstChild<CustomXmlMoveToRangeEnd>();
       if (itemElement != null)
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Wordprocessing.MarkupTypeConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.CustomXmlMoveToRangeEnd>(value);
+        itemElement = MarkupTypeConverter.CreateOpenXmlElement<CustomXmlMoveToRangeEnd>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static DocumentModel.Wordprocessing.TrackChangeType2? GetCustomXmlConflictInsertionRangeStart(DocumentFormat.OpenXml.Wordprocessing.SimpleFieldRuby? openXmlElement)
+
+  public static TrackChangeType2? GetCustomXmlConflictInsertionRangeStart(SimpleFieldRuby? openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office2010.Word.CustomXmlConflictInsertionRangeStart>();
+    var itemElement = openXmlElement?.GetFirstChild<CustomXmlConflictInsertionRangeStart>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Wordprocessing.TrackChangeType2Converter.CreateModelElement(itemElement);
+      return TrackChangeType2Converter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetCustomXmlConflictInsertionRangeStart(DocumentFormat.OpenXml.Wordprocessing.SimpleFieldRuby? openXmlElement, DocumentModel.Wordprocessing.TrackChangeType2? value)
+
+  public static void SetCustomXmlConflictInsertionRangeStart(SimpleFieldRuby? openXmlElement, TrackChangeType2? value)
   {
     if (openXmlElement != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2010.Word.CustomXmlConflictInsertionRangeStart>();
+      var itemElement = openXmlElement.GetFirstChild<CustomXmlConflictInsertionRangeStart>();
       if (itemElement != null)
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Wordprocessing.TrackChangeType2Converter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2010.Word.CustomXmlConflictInsertionRangeStart>(value);
+        itemElement = TrackChangeType2Converter.CreateOpenXmlElement<CustomXmlConflictInsertionRangeStart>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static DocumentModel.Wordprocessing.MarkupType2? GetCustomXmlConflictInsertionRangeEnd(DocumentFormat.OpenXml.Wordprocessing.SimpleFieldRuby? openXmlElement)
+
+  public static MarkupType2? GetCustomXmlConflictInsertionRangeEnd(SimpleFieldRuby? openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office2010.Word.CustomXmlConflictInsertionRangeEnd>();
+    var itemElement = openXmlElement?.GetFirstChild<CustomXmlConflictInsertionRangeEnd>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Wordprocessing.MarkupType2Converter.CreateModelElement(itemElement);
+      return MarkupType2Converter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetCustomXmlConflictInsertionRangeEnd(DocumentFormat.OpenXml.Wordprocessing.SimpleFieldRuby? openXmlElement, DocumentModel.Wordprocessing.MarkupType2? value)
+
+  public static void SetCustomXmlConflictInsertionRangeEnd(SimpleFieldRuby? openXmlElement, MarkupType2? value)
   {
     if (openXmlElement != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2010.Word.CustomXmlConflictInsertionRangeEnd>();
+      var itemElement = openXmlElement.GetFirstChild<CustomXmlConflictInsertionRangeEnd>();
       if (itemElement != null)
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Wordprocessing.MarkupType2Converter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2010.Word.CustomXmlConflictInsertionRangeEnd>(value);
+        itemElement = MarkupType2Converter.CreateOpenXmlElement<CustomXmlConflictInsertionRangeEnd>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static DocumentModel.Wordprocessing.TrackChangeType2? GetCustomXmlConflictDeletionRangeStart(DocumentFormat.OpenXml.Wordprocessing.SimpleFieldRuby? openXmlElement)
+
+  public static TrackChangeType2? GetCustomXmlConflictDeletionRangeStart(SimpleFieldRuby? openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office2010.Word.CustomXmlConflictDeletionRangeStart>();
+    var itemElement = openXmlElement?.GetFirstChild<CustomXmlConflictDeletionRangeStart>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Wordprocessing.TrackChangeType2Converter.CreateModelElement(itemElement);
+      return TrackChangeType2Converter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetCustomXmlConflictDeletionRangeStart(DocumentFormat.OpenXml.Wordprocessing.SimpleFieldRuby? openXmlElement, DocumentModel.Wordprocessing.TrackChangeType2? value)
+
+  public static void SetCustomXmlConflictDeletionRangeStart(SimpleFieldRuby? openXmlElement, TrackChangeType2? value)
   {
     if (openXmlElement != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2010.Word.CustomXmlConflictDeletionRangeStart>();
+      var itemElement = openXmlElement.GetFirstChild<CustomXmlConflictDeletionRangeStart>();
       if (itemElement != null)
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Wordprocessing.TrackChangeType2Converter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2010.Word.CustomXmlConflictDeletionRangeStart>(value);
+        itemElement = TrackChangeType2Converter.CreateOpenXmlElement<CustomXmlConflictDeletionRangeStart>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static DocumentModel.Wordprocessing.MarkupType2? GetCustomXmlConflictDeletionRangeEnd(DocumentFormat.OpenXml.Wordprocessing.SimpleFieldRuby? openXmlElement)
+
+  public static MarkupType2? GetCustomXmlConflictDeletionRangeEnd(SimpleFieldRuby? openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office2010.Word.CustomXmlConflictDeletionRangeEnd>();
+    var itemElement = openXmlElement?.GetFirstChild<CustomXmlConflictDeletionRangeEnd>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Wordprocessing.MarkupType2Converter.CreateModelElement(itemElement);
+      return MarkupType2Converter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetCustomXmlConflictDeletionRangeEnd(DocumentFormat.OpenXml.Wordprocessing.SimpleFieldRuby? openXmlElement, DocumentModel.Wordprocessing.MarkupType2? value)
+
+  public static void SetCustomXmlConflictDeletionRangeEnd(SimpleFieldRuby? openXmlElement, MarkupType2? value)
   {
     if (openXmlElement != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2010.Word.CustomXmlConflictDeletionRangeEnd>();
+      var itemElement = openXmlElement.GetFirstChild<CustomXmlConflictDeletionRangeEnd>();
       if (itemElement != null)
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Wordprocessing.MarkupType2Converter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2010.Word.CustomXmlConflictDeletionRangeEnd>(value);
+        itemElement = MarkupType2Converter.CreateOpenXmlElement<CustomXmlConflictDeletionRangeEnd>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static DocumentModel.Wordprocessing.InsertedRun? GetInsertedRun(DocumentFormat.OpenXml.Wordprocessing.SimpleFieldRuby? openXmlElement)
+
+  public static InsertedRun? GetInsertedRun(SimpleFieldRuby? openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.InsertedRun>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Wordprocessing.InsertedRunConverter.CreateModelElement(itemElement);
+      return InsertedRunConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetInsertedRun(DocumentFormat.OpenXml.Wordprocessing.SimpleFieldRuby? openXmlElement, DocumentModel.Wordprocessing.InsertedRun? value)
+
+  public static void SetInsertedRun(SimpleFieldRuby? openXmlElement, InsertedRun? value)
   {
     if (openXmlElement != null)
     {
@@ -771,22 +798,22 @@ public static class SimpleFieldRubyConverter
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Wordprocessing.InsertedRunConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.InsertedRun>(value);
+        itemElement = InsertedRunConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.InsertedRun>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static DocumentModel.Wordprocessing.DeletedRun? GetDeletedRun(DocumentFormat.OpenXml.Wordprocessing.SimpleFieldRuby? openXmlElement)
+
+  public static DeletedRun? GetDeletedRun(SimpleFieldRuby? openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.DeletedRun>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Wordprocessing.DeletedRunConverter.CreateModelElement(itemElement);
+      return DeletedRunConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetDeletedRun(DocumentFormat.OpenXml.Wordprocessing.SimpleFieldRuby? openXmlElement, DocumentModel.Wordprocessing.DeletedRun? value)
+
+  public static void SetDeletedRun(SimpleFieldRuby? openXmlElement, DeletedRun? value)
   {
     if (openXmlElement != null)
     {
@@ -795,22 +822,22 @@ public static class SimpleFieldRubyConverter
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Wordprocessing.DeletedRunConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.DeletedRun>(value);
+        itemElement = DeletedRunConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.DeletedRun>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static DocumentModel.Wordprocessing.MoveFromRun? GetMoveFromRun(DocumentFormat.OpenXml.Wordprocessing.SimpleFieldRuby? openXmlElement)
+
+  public static MoveFromRun? GetMoveFromRun(SimpleFieldRuby? openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.MoveFromRun>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Wordprocessing.MoveFromRunConverter.CreateModelElement(itemElement);
+      return MoveFromRunConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetMoveFromRun(DocumentFormat.OpenXml.Wordprocessing.SimpleFieldRuby? openXmlElement, DocumentModel.Wordprocessing.MoveFromRun? value)
+
+  public static void SetMoveFromRun(SimpleFieldRuby? openXmlElement, MoveFromRun? value)
   {
     if (openXmlElement != null)
     {
@@ -819,22 +846,22 @@ public static class SimpleFieldRubyConverter
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Wordprocessing.MoveFromRunConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.MoveFromRun>(value);
+        itemElement = MoveFromRunConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.MoveFromRun>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static DocumentModel.Wordprocessing.MoveToRun? GetMoveToRun(DocumentFormat.OpenXml.Wordprocessing.SimpleFieldRuby? openXmlElement)
+
+  public static MoveToRun? GetMoveToRun(SimpleFieldRuby? openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.MoveToRun>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Wordprocessing.MoveToRunConverter.CreateModelElement(itemElement);
+      return MoveToRunConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetMoveToRun(DocumentFormat.OpenXml.Wordprocessing.SimpleFieldRuby? openXmlElement, DocumentModel.Wordprocessing.MoveToRun? value)
+
+  public static void SetMoveToRun(SimpleFieldRuby? openXmlElement, MoveToRun? value)
   {
     if (openXmlElement != null)
     {
@@ -843,22 +870,22 @@ public static class SimpleFieldRubyConverter
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Wordprocessing.MoveToRunConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.MoveToRun>(value);
+        itemElement = MoveToRunConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.MoveToRun>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static DocumentModel.Wordprocessing.RunConflictInsertion? GetRunConflictInsertion(DocumentFormat.OpenXml.Wordprocessing.SimpleFieldRuby? openXmlElement)
+
+  public static RunConflictInsertion? GetRunConflictInsertion(SimpleFieldRuby? openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office2010.Word.RunConflictInsertion>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Wordprocessing.RunConflictInsertionConverter.CreateModelElement(itemElement);
+      return RunConflictInsertionConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetRunConflictInsertion(DocumentFormat.OpenXml.Wordprocessing.SimpleFieldRuby? openXmlElement, DocumentModel.Wordprocessing.RunConflictInsertion? value)
+
+  public static void SetRunConflictInsertion(SimpleFieldRuby? openXmlElement, RunConflictInsertion? value)
   {
     if (openXmlElement != null)
     {
@@ -867,22 +894,22 @@ public static class SimpleFieldRubyConverter
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Wordprocessing.RunConflictInsertionConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2010.Word.RunConflictInsertion>(value);
+        itemElement = RunConflictInsertionConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2010.Word.RunConflictInsertion>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static DocumentModel.Wordprocessing.RunConflictDeletion? GetRunConflictDeletion(DocumentFormat.OpenXml.Wordprocessing.SimpleFieldRuby? openXmlElement)
+
+  public static RunConflictDeletion? GetRunConflictDeletion(SimpleFieldRuby? openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office2010.Word.RunConflictDeletion>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Wordprocessing.RunConflictDeletionConverter.CreateModelElement(itemElement);
+      return RunConflictDeletionConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetRunConflictDeletion(DocumentFormat.OpenXml.Wordprocessing.SimpleFieldRuby? openXmlElement, DocumentModel.Wordprocessing.RunConflictDeletion? value)
+
+  public static void SetRunConflictDeletion(SimpleFieldRuby? openXmlElement, RunConflictDeletion? value)
   {
     if (openXmlElement != null)
     {
@@ -891,22 +918,22 @@ public static class SimpleFieldRubyConverter
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Wordprocessing.RunConflictDeletionConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2010.Word.RunConflictDeletion>(value);
+        itemElement = RunConflictDeletionConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2010.Word.RunConflictDeletion>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static DocumentModel.Math.Paragraph? GetParagraph(DocumentFormat.OpenXml.Wordprocessing.SimpleFieldRuby? openXmlElement)
+
+  public static Paragraph? GetParagraph(SimpleFieldRuby? openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Math.Paragraph>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Math.ParagraphConverter.CreateModelElement(itemElement);
+      return Math.ParagraphConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetParagraph(DocumentFormat.OpenXml.Wordprocessing.SimpleFieldRuby? openXmlElement, DocumentModel.Math.Paragraph? value)
+
+  public static void SetParagraph(SimpleFieldRuby? openXmlElement, Paragraph? value)
   {
     if (openXmlElement != null)
     {
@@ -915,22 +942,22 @@ public static class SimpleFieldRubyConverter
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Math.ParagraphConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Math.Paragraph>(value);
+        itemElement = Math.ParagraphConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Math.Paragraph>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static DocumentModel.Math.OfficeMath? GetOfficeMath(DocumentFormat.OpenXml.Wordprocessing.SimpleFieldRuby? openXmlElement)
+
+  public static OfficeMath? GetOfficeMath(SimpleFieldRuby? openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Math.OfficeMath>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Math.OfficeMathConverter.CreateModelElement(itemElement);
+      return OfficeMathConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetOfficeMath(DocumentFormat.OpenXml.Wordprocessing.SimpleFieldRuby? openXmlElement, DocumentModel.Math.OfficeMath? value)
+
+  public static void SetOfficeMath(SimpleFieldRuby? openXmlElement, OfficeMath? value)
   {
     if (openXmlElement != null)
     {
@@ -939,22 +966,22 @@ public static class SimpleFieldRubyConverter
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Math.OfficeMathConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Math.OfficeMath>(value);
+        itemElement = OfficeMathConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Math.OfficeMath>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static DocumentModel.Math.Accent? GetAccent(DocumentFormat.OpenXml.Wordprocessing.SimpleFieldRuby? openXmlElement)
+
+  public static Accent? GetAccent(SimpleFieldRuby? openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Math.Accent>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Math.AccentConverter.CreateModelElement(itemElement);
+      return AccentConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetAccent(DocumentFormat.OpenXml.Wordprocessing.SimpleFieldRuby? openXmlElement, DocumentModel.Math.Accent? value)
+
+  public static void SetAccent(SimpleFieldRuby? openXmlElement, Accent? value)
   {
     if (openXmlElement != null)
     {
@@ -963,22 +990,22 @@ public static class SimpleFieldRubyConverter
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Math.AccentConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Math.Accent>(value);
+        itemElement = AccentConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Math.Accent>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static DocumentModel.Math.Bar? GetBar(DocumentFormat.OpenXml.Wordprocessing.SimpleFieldRuby? openXmlElement)
+
+  public static Bar? GetBar(SimpleFieldRuby? openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Math.Bar>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Math.BarConverter.CreateModelElement(itemElement);
+      return BarConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetBar(DocumentFormat.OpenXml.Wordprocessing.SimpleFieldRuby? openXmlElement, DocumentModel.Math.Bar? value)
+
+  public static void SetBar(SimpleFieldRuby? openXmlElement, Bar? value)
   {
     if (openXmlElement != null)
     {
@@ -987,22 +1014,22 @@ public static class SimpleFieldRubyConverter
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Math.BarConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Math.Bar>(value);
+        itemElement = BarConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Math.Bar>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static DocumentModel.Math.Box? GetBox(DocumentFormat.OpenXml.Wordprocessing.SimpleFieldRuby? openXmlElement)
+
+  public static DocumentModel.Math.Box? GetBox(SimpleFieldRuby? openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Math.Box>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Math.BoxConverter.CreateModelElement(itemElement);
+      return Math.BoxConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetBox(DocumentFormat.OpenXml.Wordprocessing.SimpleFieldRuby? openXmlElement, DocumentModel.Math.Box? value)
+
+  public static void SetBox(SimpleFieldRuby? openXmlElement, DocumentModel.Math.Box? value)
   {
     if (openXmlElement != null)
     {
@@ -1011,22 +1038,22 @@ public static class SimpleFieldRubyConverter
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Math.BoxConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Math.Box>(value);
+        itemElement = Math.BoxConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Math.Box>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static DocumentModel.Math.BorderBox? GetBorderBox(DocumentFormat.OpenXml.Wordprocessing.SimpleFieldRuby? openXmlElement)
+
+  public static BorderBox? GetBorderBox(SimpleFieldRuby? openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Math.BorderBox>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Math.BorderBoxConverter.CreateModelElement(itemElement);
+      return BorderBoxConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetBorderBox(DocumentFormat.OpenXml.Wordprocessing.SimpleFieldRuby? openXmlElement, DocumentModel.Math.BorderBox? value)
+
+  public static void SetBorderBox(SimpleFieldRuby? openXmlElement, BorderBox? value)
   {
     if (openXmlElement != null)
     {
@@ -1035,22 +1062,22 @@ public static class SimpleFieldRubyConverter
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Math.BorderBoxConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Math.BorderBox>(value);
+        itemElement = BorderBoxConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Math.BorderBox>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static DocumentModel.Math.Delimiter? GetDelimiter(DocumentFormat.OpenXml.Wordprocessing.SimpleFieldRuby? openXmlElement)
+
+  public static Delimiter? GetDelimiter(SimpleFieldRuby? openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Math.Delimiter>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Math.DelimiterConverter.CreateModelElement(itemElement);
+      return DelimiterConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetDelimiter(DocumentFormat.OpenXml.Wordprocessing.SimpleFieldRuby? openXmlElement, DocumentModel.Math.Delimiter? value)
+
+  public static void SetDelimiter(SimpleFieldRuby? openXmlElement, Delimiter? value)
   {
     if (openXmlElement != null)
     {
@@ -1059,22 +1086,22 @@ public static class SimpleFieldRubyConverter
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Math.DelimiterConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Math.Delimiter>(value);
+        itemElement = DelimiterConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Math.Delimiter>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static DocumentModel.Math.EquationArray? GetEquationArray(DocumentFormat.OpenXml.Wordprocessing.SimpleFieldRuby? openXmlElement)
+
+  public static EquationArray? GetEquationArray(SimpleFieldRuby? openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Math.EquationArray>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Math.EquationArrayConverter.CreateModelElement(itemElement);
+      return EquationArrayConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetEquationArray(DocumentFormat.OpenXml.Wordprocessing.SimpleFieldRuby? openXmlElement, DocumentModel.Math.EquationArray? value)
+
+  public static void SetEquationArray(SimpleFieldRuby? openXmlElement, EquationArray? value)
   {
     if (openXmlElement != null)
     {
@@ -1083,22 +1110,22 @@ public static class SimpleFieldRubyConverter
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Math.EquationArrayConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Math.EquationArray>(value);
+        itemElement = EquationArrayConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Math.EquationArray>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static DocumentModel.Math.Fraction? GetFraction(DocumentFormat.OpenXml.Wordprocessing.SimpleFieldRuby? openXmlElement)
+
+  public static Fraction? GetFraction(SimpleFieldRuby? openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Math.Fraction>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Math.FractionConverter.CreateModelElement(itemElement);
+      return FractionConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetFraction(DocumentFormat.OpenXml.Wordprocessing.SimpleFieldRuby? openXmlElement, DocumentModel.Math.Fraction? value)
+
+  public static void SetFraction(SimpleFieldRuby? openXmlElement, Fraction? value)
   {
     if (openXmlElement != null)
     {
@@ -1107,22 +1134,22 @@ public static class SimpleFieldRubyConverter
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Math.FractionConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Math.Fraction>(value);
+        itemElement = FractionConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Math.Fraction>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static DocumentModel.Math.MathFunction? GetMathFunction(DocumentFormat.OpenXml.Wordprocessing.SimpleFieldRuby? openXmlElement)
+
+  public static MathFunction? GetMathFunction(SimpleFieldRuby? openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Math.MathFunction>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Math.MathFunctionConverter.CreateModelElement(itemElement);
+      return MathFunctionConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetMathFunction(DocumentFormat.OpenXml.Wordprocessing.SimpleFieldRuby? openXmlElement, DocumentModel.Math.MathFunction? value)
+
+  public static void SetMathFunction(SimpleFieldRuby? openXmlElement, MathFunction? value)
   {
     if (openXmlElement != null)
     {
@@ -1131,22 +1158,22 @@ public static class SimpleFieldRubyConverter
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Math.MathFunctionConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Math.MathFunction>(value);
+        itemElement = MathFunctionConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Math.MathFunction>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static DocumentModel.Math.GroupChar? GetGroupChar(DocumentFormat.OpenXml.Wordprocessing.SimpleFieldRuby? openXmlElement)
+
+  public static GroupChar? GetGroupChar(SimpleFieldRuby? openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Math.GroupChar>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Math.GroupCharConverter.CreateModelElement(itemElement);
+      return GroupCharConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetGroupChar(DocumentFormat.OpenXml.Wordprocessing.SimpleFieldRuby? openXmlElement, DocumentModel.Math.GroupChar? value)
+
+  public static void SetGroupChar(SimpleFieldRuby? openXmlElement, GroupChar? value)
   {
     if (openXmlElement != null)
     {
@@ -1155,22 +1182,22 @@ public static class SimpleFieldRubyConverter
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Math.GroupCharConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Math.GroupChar>(value);
+        itemElement = GroupCharConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Math.GroupChar>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static DocumentModel.Math.LimitLower? GetLimitLower(DocumentFormat.OpenXml.Wordprocessing.SimpleFieldRuby? openXmlElement)
+
+  public static LimitLower? GetLimitLower(SimpleFieldRuby? openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Math.LimitLower>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Math.LimitLowerConverter.CreateModelElement(itemElement);
+      return LimitLowerConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetLimitLower(DocumentFormat.OpenXml.Wordprocessing.SimpleFieldRuby? openXmlElement, DocumentModel.Math.LimitLower? value)
+
+  public static void SetLimitLower(SimpleFieldRuby? openXmlElement, LimitLower? value)
   {
     if (openXmlElement != null)
     {
@@ -1179,22 +1206,22 @@ public static class SimpleFieldRubyConverter
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Math.LimitLowerConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Math.LimitLower>(value);
+        itemElement = LimitLowerConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Math.LimitLower>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static DocumentModel.Math.LimitUpper? GetLimitUpper(DocumentFormat.OpenXml.Wordprocessing.SimpleFieldRuby? openXmlElement)
+
+  public static LimitUpper? GetLimitUpper(SimpleFieldRuby? openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Math.LimitUpper>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Math.LimitUpperConverter.CreateModelElement(itemElement);
+      return LimitUpperConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetLimitUpper(DocumentFormat.OpenXml.Wordprocessing.SimpleFieldRuby? openXmlElement, DocumentModel.Math.LimitUpper? value)
+
+  public static void SetLimitUpper(SimpleFieldRuby? openXmlElement, LimitUpper? value)
   {
     if (openXmlElement != null)
     {
@@ -1203,22 +1230,22 @@ public static class SimpleFieldRubyConverter
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Math.LimitUpperConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Math.LimitUpper>(value);
+        itemElement = LimitUpperConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Math.LimitUpper>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static DocumentModel.Math.Matrix? GetMatrix(DocumentFormat.OpenXml.Wordprocessing.SimpleFieldRuby? openXmlElement)
+
+  public static Matrix? GetMatrix(SimpleFieldRuby? openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Math.Matrix>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Math.MatrixConverter.CreateModelElement(itemElement);
+      return MatrixConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetMatrix(DocumentFormat.OpenXml.Wordprocessing.SimpleFieldRuby? openXmlElement, DocumentModel.Math.Matrix? value)
+
+  public static void SetMatrix(SimpleFieldRuby? openXmlElement, Matrix? value)
   {
     if (openXmlElement != null)
     {
@@ -1227,22 +1254,22 @@ public static class SimpleFieldRubyConverter
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Math.MatrixConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Math.Matrix>(value);
+        itemElement = MatrixConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Math.Matrix>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static DocumentModel.Math.Nary? GetNary(DocumentFormat.OpenXml.Wordprocessing.SimpleFieldRuby? openXmlElement)
+
+  public static Nary? GetNary(SimpleFieldRuby? openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Math.Nary>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Math.NaryConverter.CreateModelElement(itemElement);
+      return NaryConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetNary(DocumentFormat.OpenXml.Wordprocessing.SimpleFieldRuby? openXmlElement, DocumentModel.Math.Nary? value)
+
+  public static void SetNary(SimpleFieldRuby? openXmlElement, Nary? value)
   {
     if (openXmlElement != null)
     {
@@ -1251,22 +1278,22 @@ public static class SimpleFieldRubyConverter
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Math.NaryConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Math.Nary>(value);
+        itemElement = NaryConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Math.Nary>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static DocumentModel.Math.Phantom? GetPhantom(DocumentFormat.OpenXml.Wordprocessing.SimpleFieldRuby? openXmlElement)
+
+  public static Phantom? GetPhantom(SimpleFieldRuby? openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Math.Phantom>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Math.PhantomConverter.CreateModelElement(itemElement);
+      return PhantomConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetPhantom(DocumentFormat.OpenXml.Wordprocessing.SimpleFieldRuby? openXmlElement, DocumentModel.Math.Phantom? value)
+
+  public static void SetPhantom(SimpleFieldRuby? openXmlElement, Phantom? value)
   {
     if (openXmlElement != null)
     {
@@ -1275,22 +1302,22 @@ public static class SimpleFieldRubyConverter
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Math.PhantomConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Math.Phantom>(value);
+        itemElement = PhantomConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Math.Phantom>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static DocumentModel.Math.Radical? GetRadical(DocumentFormat.OpenXml.Wordprocessing.SimpleFieldRuby? openXmlElement)
+
+  public static Radical? GetRadical(SimpleFieldRuby? openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Math.Radical>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Math.RadicalConverter.CreateModelElement(itemElement);
+      return RadicalConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetRadical(DocumentFormat.OpenXml.Wordprocessing.SimpleFieldRuby? openXmlElement, DocumentModel.Math.Radical? value)
+
+  public static void SetRadical(SimpleFieldRuby? openXmlElement, Radical? value)
   {
     if (openXmlElement != null)
     {
@@ -1299,22 +1326,22 @@ public static class SimpleFieldRubyConverter
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Math.RadicalConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Math.Radical>(value);
+        itemElement = RadicalConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Math.Radical>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static DocumentModel.Math.PreSubSuper? GetPreSubSuper(DocumentFormat.OpenXml.Wordprocessing.SimpleFieldRuby? openXmlElement)
+
+  public static PreSubSuper? GetPreSubSuper(SimpleFieldRuby? openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Math.PreSubSuper>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Math.PreSubSuperConverter.CreateModelElement(itemElement);
+      return PreSubSuperConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetPreSubSuper(DocumentFormat.OpenXml.Wordprocessing.SimpleFieldRuby? openXmlElement, DocumentModel.Math.PreSubSuper? value)
+
+  public static void SetPreSubSuper(SimpleFieldRuby? openXmlElement, PreSubSuper? value)
   {
     if (openXmlElement != null)
     {
@@ -1323,22 +1350,22 @@ public static class SimpleFieldRubyConverter
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Math.PreSubSuperConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Math.PreSubSuper>(value);
+        itemElement = PreSubSuperConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Math.PreSubSuper>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static DocumentModel.Math.Subscript? GetSubscript(DocumentFormat.OpenXml.Wordprocessing.SimpleFieldRuby? openXmlElement)
+
+  public static Subscript? GetSubscript(SimpleFieldRuby? openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Math.Subscript>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Math.SubscriptConverter.CreateModelElement(itemElement);
+      return SubscriptConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetSubscript(DocumentFormat.OpenXml.Wordprocessing.SimpleFieldRuby? openXmlElement, DocumentModel.Math.Subscript? value)
+
+  public static void SetSubscript(SimpleFieldRuby? openXmlElement, Subscript? value)
   {
     if (openXmlElement != null)
     {
@@ -1347,22 +1374,22 @@ public static class SimpleFieldRubyConverter
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Math.SubscriptConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Math.Subscript>(value);
+        itemElement = SubscriptConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Math.Subscript>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static DocumentModel.Math.SubSuperscript? GetSubSuperscript(DocumentFormat.OpenXml.Wordprocessing.SimpleFieldRuby? openXmlElement)
+
+  public static SubSuperscript? GetSubSuperscript(SimpleFieldRuby? openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Math.SubSuperscript>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Math.SubSuperscriptConverter.CreateModelElement(itemElement);
+      return SubSuperscriptConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetSubSuperscript(DocumentFormat.OpenXml.Wordprocessing.SimpleFieldRuby? openXmlElement, DocumentModel.Math.SubSuperscript? value)
+
+  public static void SetSubSuperscript(SimpleFieldRuby? openXmlElement, SubSuperscript? value)
   {
     if (openXmlElement != null)
     {
@@ -1371,22 +1398,22 @@ public static class SimpleFieldRubyConverter
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Math.SubSuperscriptConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Math.SubSuperscript>(value);
+        itemElement = SubSuperscriptConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Math.SubSuperscript>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static DocumentModel.Math.Superscript? GetSuperscript(DocumentFormat.OpenXml.Wordprocessing.SimpleFieldRuby? openXmlElement)
+
+  public static Superscript? GetSuperscript(SimpleFieldRuby? openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Math.Superscript>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Math.SuperscriptConverter.CreateModelElement(itemElement);
+      return SuperscriptConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetSuperscript(DocumentFormat.OpenXml.Wordprocessing.SimpleFieldRuby? openXmlElement, DocumentModel.Math.Superscript? value)
+
+  public static void SetSuperscript(SimpleFieldRuby? openXmlElement, Superscript? value)
   {
     if (openXmlElement != null)
     {
@@ -1395,14 +1422,14 @@ public static class SimpleFieldRubyConverter
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Math.SuperscriptConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Math.Superscript>(value);
+        itemElement = SuperscriptConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Math.Superscript>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static DocumentModel.Wordprocessing.SimpleFieldRuby? CreateModelElement(DocumentFormat.OpenXml.Wordprocessing.SimpleFieldRuby? openXmlElement)
+
+  public static DocumentModel.Wordprocessing.SimpleFieldRuby? CreateModelElement(SimpleFieldRuby? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -1470,9 +1497,9 @@ public static class SimpleFieldRubyConverter
     }
     return null;
   }
-  
+
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.SimpleFieldRuby? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Wordprocessing.SimpleFieldRuby, new()
+    where OpenXmlElementType : SimpleFieldRuby, new()
   {
     if (value != null)
     {

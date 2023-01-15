@@ -1,38 +1,37 @@
 namespace DocumentModel.Wordprocessing;
 
 /// <summary>
-/// Defines the TextBoxFormFieldValues enumeration.
+///   Defines the TextBoxFormFieldValues enumeration.
 /// </summary>
 public enum TextBoxFormFieldKind
 {
   /// <summary>
-  /// Text Box.
+  ///   Text Box.
   /// </summary>
   Regular,
-  
+
   /// <summary>
-  /// Number.
+  ///   Number.
   /// </summary>
   Number,
-  
+
   /// <summary>
-  /// Date.
+  ///   Date.
   /// </summary>
   Date,
-  
+
   /// <summary>
-  /// Current Time Display.
+  ///   Current Time Display.
   /// </summary>
   CurrentTime,
-  
+
   /// <summary>
-  /// Current Date Display.
+  ///   Current Date Display.
   /// </summary>
   CurrentDate,
-  
+
   /// <summary>
-  /// Field Calculation.
+  ///   Field Calculation.
   /// </summary>
-  Calculated,
-  
+  Calculated
 }

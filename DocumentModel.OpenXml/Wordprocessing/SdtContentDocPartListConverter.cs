@@ -1,85 +1,87 @@
+using DocumentFormat.OpenXml.Wordprocessing;
+
 namespace DocumentModel.OpenXml.Wordprocessing;
 
 /// <summary>
-/// Defines the SdtContentDocPartList Class.
+///   Defines the SdtContentDocPartList Class.
 /// </summary>
 public static class SdtContentDocPartListConverter
 {
-  public static String? GetDocPartGallery(DocumentFormat.OpenXml.Wordprocessing.SdtContentDocPartList? openXmlElement)
+  public static String? GetDocPartGallery(SdtContentDocPartList? openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.DocPartGallery>();
+    var itemElement = openXmlElement?.GetFirstChild<DocPartGallery>();
     if (itemElement != null)
       return itemElement.Val?.Value;
     return null;
   }
-  
-  public static void SetDocPartGallery(DocumentFormat.OpenXml.Wordprocessing.SdtContentDocPartList? openXmlElement, String? value)
+
+  public static void SetDocPartGallery(SdtContentDocPartList? openXmlElement, String? value)
   {
     if (openXmlElement != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.DocPartGallery>();
+      var itemElement = openXmlElement.GetFirstChild<DocPartGallery>();
       if (itemElement != null)
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = new DocumentFormat.OpenXml.Wordprocessing.DocPartGallery { Val = value };
+        itemElement = new DocPartGallery { Val = value };
         openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static String? GetDocPartCategory(DocumentFormat.OpenXml.Wordprocessing.SdtContentDocPartList? openXmlElement)
+
+  public static String? GetDocPartCategory(SdtContentDocPartList? openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.DocPartCategory>();
+    var itemElement = openXmlElement?.GetFirstChild<DocPartCategory>();
     if (itemElement != null)
       return itemElement.Val?.Value;
     return null;
   }
-  
-  public static void SetDocPartCategory(DocumentFormat.OpenXml.Wordprocessing.SdtContentDocPartList? openXmlElement, String? value)
+
+  public static void SetDocPartCategory(SdtContentDocPartList? openXmlElement, String? value)
   {
     if (openXmlElement != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.DocPartCategory>();
+      var itemElement = openXmlElement.GetFirstChild<DocPartCategory>();
       if (itemElement != null)
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = new DocumentFormat.OpenXml.Wordprocessing.DocPartCategory { Val = value };
+        itemElement = new DocPartCategory { Val = value };
         openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static Boolean? GetDocPartUnique(DocumentFormat.OpenXml.Wordprocessing.SdtContentDocPartList? openXmlElement)
+
+  public static Boolean? GetDocPartUnique(SdtContentDocPartList? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.DocPartUnique>();
+      var itemElement = openXmlElement.GetFirstChild<DocPartUnique>();
       return itemElement != null;
     }
     return null;
   }
-  
-  public static void SetDocPartUnique(DocumentFormat.OpenXml.Wordprocessing.SdtContentDocPartList? openXmlElement, Boolean? value)
+
+  public static void SetDocPartUnique(SdtContentDocPartList? openXmlElement, Boolean? value)
   {
     if (openXmlElement != null)
     {
       if (value == false)
       {
-        var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.DocPartUnique>();
+        var itemElement = openXmlElement.GetFirstChild<DocPartUnique>();
         if (itemElement != null)
           itemElement.Remove();
       }
       if (value == true)
       {
-        var itemElement = new DocumentFormat.OpenXml.Wordprocessing.DocPartUnique();
+        var itemElement = new DocPartUnique();
         openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static DocumentModel.Wordprocessing.SdtContentDocPartList? CreateModelElement(DocumentFormat.OpenXml.Wordprocessing.SdtContentDocPartList? openXmlElement)
+
+  public static DocumentModel.Wordprocessing.SdtContentDocPartList? CreateModelElement(SdtContentDocPartList? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -91,9 +93,9 @@ public static class SdtContentDocPartListConverter
     }
     return null;
   }
-  
+
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.SdtContentDocPartList? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Wordprocessing.SdtContentDocPartList, new()
+    where OpenXmlElementType : SdtContentDocPartList, new()
   {
     if (value != null)
     {

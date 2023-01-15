@@ -1,18 +1,21 @@
+using DocumentModel.Drawings.Charts;
+using Bar3DChartExtensionList = DocumentFormat.OpenXml.Drawing.Charts.Bar3DChartExtensionList;
+
 namespace DocumentModel.OpenXml.Drawings.Charts;
 
 /// <summary>
-/// Defines the Bar3DChartExtensionList Class.
+///   Defines the Bar3DChartExtensionList Class.
 /// </summary>
 public static class Bar3DChartExtensionListConverter
 {
-  public static System.Collections.ObjectModel.Collection<DocumentModel.Drawings.Charts.Bar3DChartExtension>? GetBar3DChartExtensions(DocumentFormat.OpenXml.Drawing.Charts.Bar3DChartExtensionList? openXmlElement)
+  public static Collection<Bar3DChartExtension>? GetBar3DChartExtensions(Bar3DChartExtensionList? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var collection = new System.Collections.ObjectModel.Collection<DocumentModel.Drawings.Charts.Bar3DChartExtension>();
+      var collection = new Collection<Bar3DChartExtension>();
       foreach (var item in openXmlElement.Elements<DocumentFormat.OpenXml.Drawing.Charts.Bar3DChartExtension>())
       {
-        var newItem = DocumentModel.OpenXml.Drawings.Charts.Bar3DChartExtensionConverter.CreateModelElement(item);
+        var newItem = Bar3DChartExtensionConverter.CreateModelElement(item);
         if (newItem != null)
           collection.Add(newItem);
       }
@@ -20,25 +23,23 @@ public static class Bar3DChartExtensionListConverter
     }
     return null;
   }
-  
-  public static void SetBar3DChartExtensions(DocumentFormat.OpenXml.Drawing.Charts.Bar3DChartExtensionList? openXmlElement, System.Collections.ObjectModel.Collection<DocumentModel.Drawings.Charts.Bar3DChartExtension>? value)
+
+  public static void SetBar3DChartExtensions(Bar3DChartExtensionList? openXmlElement, Collection<Bar3DChartExtension>? value)
   {
     if (openXmlElement != null)
     {
       openXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Drawing.Charts.Bar3DChartExtension>();
       if (value != null)
-      {
         foreach (var item in value)
         {
-          var newItem = DocumentModel.OpenXml.Drawings.Charts.Bar3DChartExtensionConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Charts.Bar3DChartExtension>(item);
+          var newItem = Bar3DChartExtensionConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Charts.Bar3DChartExtension>(item);
           if (newItem != null)
             openXmlElement.AddChild(newItem);
         }
-      }
     }
   }
-  
-  public static DocumentModel.Drawings.Charts.Bar3DChartExtensionList? CreateModelElement(DocumentFormat.OpenXml.Drawing.Charts.Bar3DChartExtensionList? openXmlElement)
+
+  public static DocumentModel.Drawings.Charts.Bar3DChartExtensionList? CreateModelElement(Bar3DChartExtensionList? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -48,9 +49,9 @@ public static class Bar3DChartExtensionListConverter
     }
     return null;
   }
-  
+
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.Charts.Bar3DChartExtensionList? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.Charts.Bar3DChartExtensionList, new()
+    where OpenXmlElementType : Bar3DChartExtensionList, new()
   {
     if (value != null)
     {

@@ -1,18 +1,21 @@
+using DocumentModel.Wordprocessing;
+using GradientStopList = DocumentFormat.OpenXml.Office2010.Word.GradientStopList;
+
 namespace DocumentModel.OpenXml.Wordprocessing;
 
 /// <summary>
-/// Defines the GradientStopList Class.
+///   Defines the GradientStopList Class.
 /// </summary>
 public static class GradientStopListConverter
 {
-  public static System.Collections.ObjectModel.Collection<DocumentModel.Wordprocessing.GradientStop>? GetGradientStops(DocumentFormat.OpenXml.Office2010.Word.GradientStopList? openXmlElement)
+  public static Collection<GradientStop>? GetGradientStops(GradientStopList? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var collection = new System.Collections.ObjectModel.Collection<DocumentModel.Wordprocessing.GradientStop>();
+      var collection = new Collection<GradientStop>();
       foreach (var item in openXmlElement.Elements<DocumentFormat.OpenXml.Office2010.Word.GradientStop>())
       {
-        var newItem = DocumentModel.OpenXml.Wordprocessing.GradientStopConverter.CreateModelElement(item);
+        var newItem = GradientStopConverter.CreateModelElement(item);
         if (newItem != null)
           collection.Add(newItem);
       }
@@ -20,25 +23,23 @@ public static class GradientStopListConverter
     }
     return null;
   }
-  
-  public static void SetGradientStops(DocumentFormat.OpenXml.Office2010.Word.GradientStopList? openXmlElement, System.Collections.ObjectModel.Collection<DocumentModel.Wordprocessing.GradientStop>? value)
+
+  public static void SetGradientStops(GradientStopList? openXmlElement, Collection<GradientStop>? value)
   {
     if (openXmlElement != null)
     {
       openXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Office2010.Word.GradientStop>();
       if (value != null)
-      {
         foreach (var item in value)
         {
-          var newItem = DocumentModel.OpenXml.Wordprocessing.GradientStopConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2010.Word.GradientStop>(item);
+          var newItem = GradientStopConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2010.Word.GradientStop>(item);
           if (newItem != null)
             openXmlElement.AddChild(newItem);
         }
-      }
     }
   }
-  
-  public static DocumentModel.Wordprocessing.GradientStopList? CreateModelElement(DocumentFormat.OpenXml.Office2010.Word.GradientStopList? openXmlElement)
+
+  public static DocumentModel.Wordprocessing.GradientStopList? CreateModelElement(GradientStopList? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -48,9 +49,9 @@ public static class GradientStopListConverter
     }
     return null;
   }
-  
+
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.GradientStopList? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Office2010.Word.GradientStopList, new()
+    where OpenXmlElementType : GradientStopList, new()
   {
     if (value != null)
     {

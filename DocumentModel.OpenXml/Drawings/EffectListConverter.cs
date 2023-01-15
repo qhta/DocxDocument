@@ -1,22 +1,25 @@
+using DocumentModel.Drawings;
+using EffectList = DocumentFormat.OpenXml.Drawing.EffectList;
+
 namespace DocumentModel.OpenXml.Drawings;
 
 /// <summary>
-/// Effect Container.
+///   Effect Container.
 /// </summary>
 public static class EffectListConverter
 {
   /// <summary>
-  /// Blur Effect.
+  ///   Blur Effect.
   /// </summary>
-  public static DocumentModel.Drawings.Blur? GetBlur(DocumentFormat.OpenXml.Drawing.EffectList? openXmlElement)
+  public static Blur? GetBlur(EffectList? openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.Blur>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.BlurConverter.CreateModelElement(itemElement);
+      return BlurConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetBlur(DocumentFormat.OpenXml.Drawing.EffectList? openXmlElement, DocumentModel.Drawings.Blur? value)
+
+  public static void SetBlur(EffectList? openXmlElement, Blur? value)
   {
     if (openXmlElement != null)
     {
@@ -25,25 +28,25 @@ public static class EffectListConverter
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Drawings.BlurConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Blur>(value);
+        itemElement = BlurConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Blur>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
+
   /// <summary>
-  /// FillOverlay.
+  ///   FillOverlay.
   /// </summary>
-  public static DocumentModel.Drawings.FillOverlay? GetFillOverlay(DocumentFormat.OpenXml.Drawing.EffectList? openXmlElement)
+  public static FillOverlay? GetFillOverlay(EffectList? openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.FillOverlay>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.FillOverlayConverter.CreateModelElement(itemElement);
+      return FillOverlayConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetFillOverlay(DocumentFormat.OpenXml.Drawing.EffectList? openXmlElement, DocumentModel.Drawings.FillOverlay? value)
+
+  public static void SetFillOverlay(EffectList? openXmlElement, FillOverlay? value)
   {
     if (openXmlElement != null)
     {
@@ -52,25 +55,25 @@ public static class EffectListConverter
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Drawings.FillOverlayConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.FillOverlay>(value);
+        itemElement = FillOverlayConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.FillOverlay>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
+
   /// <summary>
-  /// Glow.
+  ///   Glow.
   /// </summary>
-  public static DocumentModel.Drawings.Glow? GetGlow(DocumentFormat.OpenXml.Drawing.EffectList? openXmlElement)
+  public static Glow? GetGlow(EffectList? openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.Glow>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.GlowConverter.CreateModelElement(itemElement);
+      return GlowConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetGlow(DocumentFormat.OpenXml.Drawing.EffectList? openXmlElement, DocumentModel.Drawings.Glow? value)
+
+  public static void SetGlow(EffectList? openXmlElement, Glow? value)
   {
     if (openXmlElement != null)
     {
@@ -79,25 +82,25 @@ public static class EffectListConverter
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Drawings.GlowConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Glow>(value);
+        itemElement = GlowConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Glow>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
+
   /// <summary>
-  /// InnerShadow.
+  ///   InnerShadow.
   /// </summary>
-  public static DocumentModel.Drawings.InnerShadow? GetInnerShadow(DocumentFormat.OpenXml.Drawing.EffectList? openXmlElement)
+  public static InnerShadow? GetInnerShadow(EffectList? openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.InnerShadow>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.InnerShadowConverter.CreateModelElement(itemElement);
+      return InnerShadowConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetInnerShadow(DocumentFormat.OpenXml.Drawing.EffectList? openXmlElement, DocumentModel.Drawings.InnerShadow? value)
+
+  public static void SetInnerShadow(EffectList? openXmlElement, InnerShadow? value)
   {
     if (openXmlElement != null)
     {
@@ -106,25 +109,25 @@ public static class EffectListConverter
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Drawings.InnerShadowConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.InnerShadow>(value);
+        itemElement = InnerShadowConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.InnerShadow>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
+
   /// <summary>
-  /// OuterShadow.
+  ///   OuterShadow.
   /// </summary>
-  public static DocumentModel.Drawings.OuterShadow? GetOuterShadow(DocumentFormat.OpenXml.Drawing.EffectList? openXmlElement)
+  public static OuterShadow? GetOuterShadow(EffectList? openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.OuterShadow>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.OuterShadowConverter.CreateModelElement(itemElement);
+      return OuterShadowConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetOuterShadow(DocumentFormat.OpenXml.Drawing.EffectList? openXmlElement, DocumentModel.Drawings.OuterShadow? value)
+
+  public static void SetOuterShadow(EffectList? openXmlElement, OuterShadow? value)
   {
     if (openXmlElement != null)
     {
@@ -133,25 +136,25 @@ public static class EffectListConverter
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Drawings.OuterShadowConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.OuterShadow>(value);
+        itemElement = OuterShadowConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.OuterShadow>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
+
   /// <summary>
-  /// PresetShadow.
+  ///   PresetShadow.
   /// </summary>
-  public static DocumentModel.Drawings.PresetShadow? GetPresetShadow(DocumentFormat.OpenXml.Drawing.EffectList? openXmlElement)
+  public static PresetShadow? GetPresetShadow(EffectList? openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.PresetShadow>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.PresetShadowConverter.CreateModelElement(itemElement);
+      return PresetShadowConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetPresetShadow(DocumentFormat.OpenXml.Drawing.EffectList? openXmlElement, DocumentModel.Drawings.PresetShadow? value)
+
+  public static void SetPresetShadow(EffectList? openXmlElement, PresetShadow? value)
   {
     if (openXmlElement != null)
     {
@@ -160,25 +163,25 @@ public static class EffectListConverter
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Drawings.PresetShadowConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.PresetShadow>(value);
+        itemElement = PresetShadowConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.PresetShadow>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
+
   /// <summary>
-  /// Reflection.
+  ///   Reflection.
   /// </summary>
-  public static DocumentModel.Drawings.Reflection? GetReflection(DocumentFormat.OpenXml.Drawing.EffectList? openXmlElement)
+  public static Reflection? GetReflection(EffectList? openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.Reflection>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.ReflectionConverter.CreateModelElement(itemElement);
+      return ReflectionConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetReflection(DocumentFormat.OpenXml.Drawing.EffectList? openXmlElement, DocumentModel.Drawings.Reflection? value)
+
+  public static void SetReflection(EffectList? openXmlElement, Reflection? value)
   {
     if (openXmlElement != null)
     {
@@ -187,25 +190,25 @@ public static class EffectListConverter
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Drawings.ReflectionConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Reflection>(value);
+        itemElement = ReflectionConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Reflection>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
+
   /// <summary>
-  /// SoftEdge.
+  ///   SoftEdge.
   /// </summary>
-  public static DocumentModel.Drawings.SoftEdge? GetSoftEdge(DocumentFormat.OpenXml.Drawing.EffectList? openXmlElement)
+  public static SoftEdge? GetSoftEdge(EffectList? openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.SoftEdge>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.SoftEdgeConverter.CreateModelElement(itemElement);
+      return SoftEdgeConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetSoftEdge(DocumentFormat.OpenXml.Drawing.EffectList? openXmlElement, DocumentModel.Drawings.SoftEdge? value)
+
+  public static void SetSoftEdge(EffectList? openXmlElement, SoftEdge? value)
   {
     if (openXmlElement != null)
     {
@@ -214,14 +217,14 @@ public static class EffectListConverter
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Drawings.SoftEdgeConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.SoftEdge>(value);
+        itemElement = SoftEdgeConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.SoftEdge>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static DocumentModel.Drawings.EffectList? CreateModelElement(DocumentFormat.OpenXml.Drawing.EffectList? openXmlElement)
+
+  public static DocumentModel.Drawings.EffectList? CreateModelElement(EffectList? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -238,9 +241,9 @@ public static class EffectListConverter
     }
     return null;
   }
-  
+
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.EffectList? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.EffectList, new()
+    where OpenXmlElementType : EffectList, new()
   {
     if (value != null)
     {

@@ -1,23 +1,22 @@
 namespace DocumentModel.Wordprocessing;
 
 /// <summary>
-/// Defines the LineCapValues enumeration.
+///   Defines the LineCapValues enumeration.
 /// </summary>
 public enum LineCapKind
 {
   /// <summary>
-  /// rnd.
+  ///   rnd.
   /// </summary>
   Round,
-  
+
   /// <summary>
-  /// sq.
+  ///   sq.
   /// </summary>
   Square,
-  
+
   /// <summary>
-  /// flat.
+  ///   flat.
   /// </summary>
-  Flat,
-  
+  Flat
 }

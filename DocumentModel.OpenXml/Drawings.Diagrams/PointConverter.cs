@@ -1,19 +1,27 @@
+using DocumentFormat.OpenXml.Drawing.Diagrams;
+using DocumentModel.Drawings.Diagrams;
+using Point = DocumentFormat.OpenXml.Drawing.Diagrams.Point;
+using PropertySet = DocumentModel.Drawings.Diagrams.PropertySet;
+using PtExtensionList = DocumentModel.Drawings.Diagrams.PtExtensionList;
+using ShapeProperties = DocumentModel.Drawings.Diagrams.ShapeProperties;
+using TextBody = DocumentModel.Drawings.Diagrams.TextBody;
+
 namespace DocumentModel.OpenXml.Drawings.Diagrams;
 
 /// <summary>
-/// Point.
+///   Point.
 /// </summary>
 public static class PointConverter
 {
   /// <summary>
-  /// Model Identifier
+  ///   Model Identifier
   /// </summary>
-  public static String? GetModelId(DocumentFormat.OpenXml.Drawing.Diagrams.Point? openXmlElement)
+  public static String? GetModelId(Point? openXmlElement)
   {
     return openXmlElement?.ModelId?.Value;
   }
-  
-  public static void SetModelId(DocumentFormat.OpenXml.Drawing.Diagrams.Point? openXmlElement, String? value)
+
+  public static void SetModelId(Point? openXmlElement, String? value)
   {
     if (openXmlElement != null)
       if (value != null)
@@ -21,30 +29,30 @@ public static class PointConverter
       else
         openXmlElement.ModelId = null;
   }
-  
+
   /// <summary>
-  /// Point Type
+  ///   Point Type
   /// </summary>
-  public static DocumentModel.Drawings.Diagrams.PointKind? GetType(DocumentFormat.OpenXml.Drawing.Diagrams.Point? openXmlElement)
+  public static PointKind? GetType(Point? openXmlElement)
   {
-    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Drawing.Diagrams.PointValues, DocumentModel.Drawings.Diagrams.PointKind>(openXmlElement?.Type?.Value);
+    return EnumValueConverter.GetValue<PointValues, PointKind>(openXmlElement?.Type?.Value);
   }
-  
-  public static void SetType(DocumentFormat.OpenXml.Drawing.Diagrams.Point? openXmlElement, DocumentModel.Drawings.Diagrams.PointKind? value)
+
+  public static void SetType(Point? openXmlElement, PointKind? value)
   {
     if (openXmlElement != null)
-      openXmlElement.Type = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Drawing.Diagrams.PointValues, DocumentModel.Drawings.Diagrams.PointKind>(value);
+      openXmlElement.Type = EnumValueConverter.CreateEnumValue<PointValues, PointKind>(value);
   }
-  
+
   /// <summary>
-  /// Connection Identifier
+  ///   Connection Identifier
   /// </summary>
-  public static String? GetConnectionId(DocumentFormat.OpenXml.Drawing.Diagrams.Point? openXmlElement)
+  public static String? GetConnectionId(Point? openXmlElement)
   {
     return openXmlElement?.ConnectionId?.Value;
   }
-  
-  public static void SetConnectionId(DocumentFormat.OpenXml.Drawing.Diagrams.Point? openXmlElement, String? value)
+
+  public static void SetConnectionId(Point? openXmlElement, String? value)
   {
     if (openXmlElement != null)
       if (value != null)
@@ -52,19 +60,19 @@ public static class PointConverter
       else
         openXmlElement.ConnectionId = null;
   }
-  
+
   /// <summary>
-  /// Property Set.
+  ///   Property Set.
   /// </summary>
-  public static DocumentModel.Drawings.Diagrams.PropertySet? GetPropertySet(DocumentFormat.OpenXml.Drawing.Diagrams.Point? openXmlElement)
+  public static PropertySet? GetPropertySet(Point? openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.Diagrams.PropertySet>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.Diagrams.PropertySetConverter.CreateModelElement(itemElement);
+      return PropertySetConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetPropertySet(DocumentFormat.OpenXml.Drawing.Diagrams.Point? openXmlElement, DocumentModel.Drawings.Diagrams.PropertySet? value)
+
+  public static void SetPropertySet(Point? openXmlElement, PropertySet? value)
   {
     if (openXmlElement != null)
     {
@@ -73,25 +81,25 @@ public static class PointConverter
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Drawings.Diagrams.PropertySetConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Diagrams.PropertySet>(value);
+        itemElement = PropertySetConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Diagrams.PropertySet>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
+
   /// <summary>
-  /// Shape Properties.
+  ///   Shape Properties.
   /// </summary>
-  public static DocumentModel.Drawings.Diagrams.ShapeProperties? GetShapeProperties(DocumentFormat.OpenXml.Drawing.Diagrams.Point? openXmlElement)
+  public static ShapeProperties? GetShapeProperties(Point? openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.Diagrams.ShapeProperties>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.Diagrams.ShapePropertiesConverter.CreateModelElement(itemElement);
+      return ShapePropertiesConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetShapeProperties(DocumentFormat.OpenXml.Drawing.Diagrams.Point? openXmlElement, DocumentModel.Drawings.Diagrams.ShapeProperties? value)
+
+  public static void SetShapeProperties(Point? openXmlElement, ShapeProperties? value)
   {
     if (openXmlElement != null)
     {
@@ -100,25 +108,25 @@ public static class PointConverter
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Drawings.Diagrams.ShapePropertiesConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Diagrams.ShapeProperties>(value);
+        itemElement = ShapePropertiesConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Diagrams.ShapeProperties>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
+
   /// <summary>
-  /// Text Body.
+  ///   Text Body.
   /// </summary>
-  public static DocumentModel.Drawings.Diagrams.TextBody? GetTextBody(DocumentFormat.OpenXml.Drawing.Diagrams.Point? openXmlElement)
+  public static TextBody? GetTextBody(Point? openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.Diagrams.TextBody>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.Diagrams.TextBodyConverter.CreateModelElement(itemElement);
+      return TextBodyConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetTextBody(DocumentFormat.OpenXml.Drawing.Diagrams.Point? openXmlElement, DocumentModel.Drawings.Diagrams.TextBody? value)
+
+  public static void SetTextBody(Point? openXmlElement, TextBody? value)
   {
     if (openXmlElement != null)
     {
@@ -127,25 +135,25 @@ public static class PointConverter
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Drawings.Diagrams.TextBodyConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Diagrams.TextBody>(value);
+        itemElement = TextBodyConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Diagrams.TextBody>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
+
   /// <summary>
-  /// PtExtensionList.
+  ///   PtExtensionList.
   /// </summary>
-  public static DocumentModel.Drawings.Diagrams.PtExtensionList? GetPtExtensionList(DocumentFormat.OpenXml.Drawing.Diagrams.Point? openXmlElement)
+  public static PtExtensionList? GetPtExtensionList(Point? openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.Diagrams.PtExtensionList>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.Diagrams.PtExtensionListConverter.CreateModelElement(itemElement);
+      return PtExtensionListConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetPtExtensionList(DocumentFormat.OpenXml.Drawing.Diagrams.Point? openXmlElement, DocumentModel.Drawings.Diagrams.PtExtensionList? value)
+
+  public static void SetPtExtensionList(Point? openXmlElement, PtExtensionList? value)
   {
     if (openXmlElement != null)
     {
@@ -154,14 +162,14 @@ public static class PointConverter
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Drawings.Diagrams.PtExtensionListConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Diagrams.PtExtensionList>(value);
+        itemElement = PtExtensionListConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Diagrams.PtExtensionList>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static DocumentModel.Drawings.Diagrams.Point? CreateModelElement(DocumentFormat.OpenXml.Drawing.Diagrams.Point? openXmlElement)
+
+  public static DocumentModel.Drawings.Diagrams.Point? CreateModelElement(Point? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -177,9 +185,9 @@ public static class PointConverter
     }
     return null;
   }
-  
+
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.Diagrams.Point? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.Diagrams.Point, new()
+    where OpenXmlElementType : Point, new()
   {
     if (value != null)
     {

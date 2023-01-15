@@ -1,19 +1,22 @@
+using DocumentModel.Drawings.Charts;
+using RadarSerExtension = DocumentFormat.OpenXml.Drawing.Charts.RadarSerExtension;
+
 namespace DocumentModel.OpenXml.Drawings.Charts;
 
 /// <summary>
-/// Defines the RadarSerExtension Class.
+///   Defines the RadarSerExtension Class.
 /// </summary>
 public static class RadarSerExtensionConverter
 {
   /// <summary>
-  /// URI
+  ///   URI
   /// </summary>
-  public static String? GetUri(DocumentFormat.OpenXml.Drawing.Charts.RadarSerExtension? openXmlElement)
+  public static String? GetUri(RadarSerExtension? openXmlElement)
   {
     return openXmlElement?.Uri?.Value;
   }
-  
-  public static void SetUri(DocumentFormat.OpenXml.Drawing.Charts.RadarSerExtension? openXmlElement, String? value)
+
+  public static void SetUri(RadarSerExtension? openXmlElement, String? value)
   {
     if (openXmlElement != null)
       if (value != null)
@@ -21,16 +24,16 @@ public static class RadarSerExtensionConverter
       else
         openXmlElement.Uri = null;
   }
-  
-  public static DocumentModel.Drawings.Charts.FilteredSeriesTitle? GetFilteredSeriesTitle(DocumentFormat.OpenXml.Drawing.Charts.RadarSerExtension? openXmlElement)
+
+  public static FilteredSeriesTitle? GetFilteredSeriesTitle(RadarSerExtension? openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office2013.Drawing.Chart.FilteredSeriesTitle>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.Charts.FilteredSeriesTitleConverter.CreateModelElement(itemElement);
+      return FilteredSeriesTitleConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetFilteredSeriesTitle(DocumentFormat.OpenXml.Drawing.Charts.RadarSerExtension? openXmlElement, DocumentModel.Drawings.Charts.FilteredSeriesTitle? value)
+
+  public static void SetFilteredSeriesTitle(RadarSerExtension? openXmlElement, FilteredSeriesTitle? value)
   {
     if (openXmlElement != null)
     {
@@ -39,22 +42,22 @@ public static class RadarSerExtensionConverter
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Drawings.Charts.FilteredSeriesTitleConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2013.Drawing.Chart.FilteredSeriesTitle>(value);
+        itemElement = FilteredSeriesTitleConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2013.Drawing.Chart.FilteredSeriesTitle>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static DocumentModel.Drawings.Charts.FilteredCategoryTitle? GetFilteredCategoryTitle(DocumentFormat.OpenXml.Drawing.Charts.RadarSerExtension? openXmlElement)
+
+  public static FilteredCategoryTitle? GetFilteredCategoryTitle(RadarSerExtension? openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office2013.Drawing.Chart.FilteredCategoryTitle>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.Charts.FilteredCategoryTitleConverter.CreateModelElement(itemElement);
+      return FilteredCategoryTitleConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetFilteredCategoryTitle(DocumentFormat.OpenXml.Drawing.Charts.RadarSerExtension? openXmlElement, DocumentModel.Drawings.Charts.FilteredCategoryTitle? value)
+
+  public static void SetFilteredCategoryTitle(RadarSerExtension? openXmlElement, FilteredCategoryTitle? value)
   {
     if (openXmlElement != null)
     {
@@ -63,22 +66,22 @@ public static class RadarSerExtensionConverter
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Drawings.Charts.FilteredCategoryTitleConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2013.Drawing.Chart.FilteredCategoryTitle>(value);
+        itemElement = FilteredCategoryTitleConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2013.Drawing.Chart.FilteredCategoryTitle>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static DocumentModel.Drawings.Charts.DataLabelsRange? GetDataLabelsRange(DocumentFormat.OpenXml.Drawing.Charts.RadarSerExtension? openXmlElement)
+
+  public static DataLabelsRange? GetDataLabelsRange(RadarSerExtension? openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office2013.Drawing.Chart.DataLabelsRange>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.Charts.DataLabelsRangeConverter.CreateModelElement(itemElement);
+      return DataLabelsRangeConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetDataLabelsRange(DocumentFormat.OpenXml.Drawing.Charts.RadarSerExtension? openXmlElement, DocumentModel.Drawings.Charts.DataLabelsRange? value)
+
+  public static void SetDataLabelsRange(RadarSerExtension? openXmlElement, DataLabelsRange? value)
   {
     if (openXmlElement != null)
     {
@@ -87,22 +90,22 @@ public static class RadarSerExtensionConverter
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Drawings.Charts.DataLabelsRangeConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2013.Drawing.Chart.DataLabelsRange>(value);
+        itemElement = DataLabelsRangeConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2013.Drawing.Chart.DataLabelsRange>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static DocumentModel.Drawings.Charts.CategoryFilterExceptions? GetCategoryFilterExceptions(DocumentFormat.OpenXml.Drawing.Charts.RadarSerExtension? openXmlElement)
+
+  public static CategoryFilterExceptions? GetCategoryFilterExceptions(RadarSerExtension? openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office2013.Drawing.Chart.CategoryFilterExceptions>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.Charts.CategoryFilterExceptionsConverter.CreateModelElement(itemElement);
+      return CategoryFilterExceptionsConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetCategoryFilterExceptions(DocumentFormat.OpenXml.Drawing.Charts.RadarSerExtension? openXmlElement, DocumentModel.Drawings.Charts.CategoryFilterExceptions? value)
+
+  public static void SetCategoryFilterExceptions(RadarSerExtension? openXmlElement, CategoryFilterExceptions? value)
   {
     if (openXmlElement != null)
     {
@@ -111,14 +114,14 @@ public static class RadarSerExtensionConverter
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Drawings.Charts.CategoryFilterExceptionsConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2013.Drawing.Chart.CategoryFilterExceptions>(value);
+        itemElement = CategoryFilterExceptionsConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2013.Drawing.Chart.CategoryFilterExceptions>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static DocumentModel.Drawings.Charts.RadarSerExtension? CreateModelElement(DocumentFormat.OpenXml.Drawing.Charts.RadarSerExtension? openXmlElement)
+
+  public static DocumentModel.Drawings.Charts.RadarSerExtension? CreateModelElement(RadarSerExtension? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -132,9 +135,9 @@ public static class RadarSerExtensionConverter
     }
     return null;
   }
-  
+
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.Charts.RadarSerExtension? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.Charts.RadarSerExtension, new()
+    where OpenXmlElementType : RadarSerExtension, new()
   {
     if (value != null)
     {

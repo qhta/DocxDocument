@@ -1,43 +1,42 @@
 namespace DocumentModel.Drawings.Diagrams;
 
 /// <summary>
-/// Point.
+///   Point.
 /// </summary>
-public partial class Point
+public class Point
 {
   /// <summary>
-  /// Model Identifier
+  ///   Model Identifier
   /// </summary>
   public String? ModelId { get; set; }
-  
+
   /// <summary>
-  /// Point Type
+  ///   Point Type
   /// </summary>
-  public DocumentModel.Drawings.Diagrams.PointKind? Type { get; set; }
-  
+  public PointKind? Type { get; set; }
+
   /// <summary>
-  /// Connection Identifier
+  ///   Connection Identifier
   /// </summary>
   public String? ConnectionId { get; set; }
-  
+
   /// <summary>
-  /// Property Set.
+  ///   Property Set.
   /// </summary>
-  public DocumentModel.Drawings.Diagrams.PropertySet? PropertySet { get; set; }
-  
+  public PropertySet? PropertySet { get; set; }
+
   /// <summary>
-  /// Shape Properties.
+  ///   Shape Properties.
   /// </summary>
-  public DocumentModel.Drawings.Diagrams.ShapeProperties? ShapeProperties { get; set; }
-  
+  public ShapeProperties? ShapeProperties { get; set; }
+
   /// <summary>
-  /// Text Body.
+  ///   Text Body.
   /// </summary>
-  public DocumentModel.Drawings.Diagrams.TextBody? TextBody { get; set; }
-  
+  public TextBody? TextBody { get; set; }
+
   /// <summary>
-  /// PtExtensionList.
+  ///   PtExtensionList.
   /// </summary>
-  public DocumentModel.Drawings.Diagrams.PtExtensionList? PtExtensionList { get; set; }
-  
+  public PtExtensionList? PtExtensionList { get; set; }
 }

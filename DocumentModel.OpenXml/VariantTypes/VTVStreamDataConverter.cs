@@ -1,19 +1,19 @@
 namespace DocumentModel.OpenXml.VariantTypes;
 
 /// <summary>
-/// Binary Versioned Stream.
+///   Binary Versioned Stream.
 /// </summary>
 public static class VTVStreamDataConverter
 {
   /// <summary>
-  /// VSTREAM Version Attribute
+  ///   VSTREAM Version Attribute
   /// </summary>
-  public static String? GetVersion(DocumentFormat.OpenXml.VariantTypes.VTVStreamData? openXmlElement)
+  public static String? GetVersion(VTVStreamData? openXmlElement)
   {
     return openXmlElement?.Version?.Value;
   }
-  
-  public static void SetVersion(DocumentFormat.OpenXml.VariantTypes.VTVStreamData? openXmlElement, String? value)
+
+  public static void SetVersion(VTVStreamData? openXmlElement, String? value)
   {
     if (openXmlElement != null)
       if (value != null)
@@ -21,8 +21,8 @@ public static class VTVStreamDataConverter
       else
         openXmlElement.Version = null;
   }
-  
-  public static DocumentModel.VariantTypes.VTVStreamData? CreateModelElement(DocumentFormat.OpenXml.VariantTypes.VTVStreamData? openXmlElement)
+
+  public static DocumentModel.VariantTypes.VTVStreamData? CreateModelElement(VTVStreamData? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -32,9 +32,9 @@ public static class VTVStreamDataConverter
     }
     return null;
   }
-  
+
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.VariantTypes.VTVStreamData? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.VariantTypes.VTVStreamData, new()
+    where OpenXmlElementType : VTVStreamData, new()
   {
     if (value != null)
     {

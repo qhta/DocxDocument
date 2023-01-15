@@ -1,18 +1,17 @@
 namespace DocumentModel.Drawings;
 
 /// <summary>
-/// Text Run.
+///   Text Run.
 /// </summary>
-public partial class Run
+public class Run
 {
   /// <summary>
-  /// Text Character Properties.
+  ///   Text Character Properties.
   /// </summary>
-  public DocumentModel.Drawings.RunProperties? RunProperties { get; set; }
-  
+  public RunProperties? RunProperties { get; set; }
+
   /// <summary>
-  /// Text String.
+  ///   Text String.
   /// </summary>
   public String? Text { get; set; }
-  
 }

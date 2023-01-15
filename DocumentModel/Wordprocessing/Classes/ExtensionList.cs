@@ -1,10 +1,9 @@
 namespace DocumentModel.Wordprocessing;
 
 /// <summary>
-/// Defines the ExtensionList Class.
+///   Defines the ExtensionList Class.
 /// </summary>
-public partial class ExtensionList
+public class ExtensionList
 {
-  public Collection<DocumentModel.Wordprocessing.Extension>? Extensions { get; set; }
-  
+  public Collection<Extension>? Extensions { get; set; }
 }

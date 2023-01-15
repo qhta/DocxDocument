@@ -1,19 +1,22 @@
+using DocumentModel.Drawings;
+using AdjustHandleList = DocumentFormat.OpenXml.Drawing.AdjustHandleList;
+
 namespace DocumentModel.OpenXml.Drawings;
 
 /// <summary>
-/// List of Shape Adjust Handles.
+///   List of Shape Adjust Handles.
 /// </summary>
 public static class AdjustHandleListConverter
 {
-  public static DocumentModel.Drawings.AdjustHandleXY? GetAdjustHandleXY(DocumentFormat.OpenXml.Drawing.AdjustHandleList? openXmlElement)
+  public static AdjustHandleXY? GetAdjustHandleXY(AdjustHandleList? openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.AdjustHandleXY>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.AdjustHandleXYConverter.CreateModelElement(itemElement);
+      return AdjustHandleXYConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetAdjustHandleXY(DocumentFormat.OpenXml.Drawing.AdjustHandleList? openXmlElement, DocumentModel.Drawings.AdjustHandleXY? value)
+
+  public static void SetAdjustHandleXY(AdjustHandleList? openXmlElement, AdjustHandleXY? value)
   {
     if (openXmlElement != null)
     {
@@ -22,22 +25,22 @@ public static class AdjustHandleListConverter
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Drawings.AdjustHandleXYConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.AdjustHandleXY>(value);
+        itemElement = AdjustHandleXYConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.AdjustHandleXY>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static DocumentModel.Drawings.AdjustHandlePolar? GetAdjustHandlePolar(DocumentFormat.OpenXml.Drawing.AdjustHandleList? openXmlElement)
+
+  public static AdjustHandlePolar? GetAdjustHandlePolar(AdjustHandleList? openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.AdjustHandlePolar>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.AdjustHandlePolarConverter.CreateModelElement(itemElement);
+      return AdjustHandlePolarConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetAdjustHandlePolar(DocumentFormat.OpenXml.Drawing.AdjustHandleList? openXmlElement, DocumentModel.Drawings.AdjustHandlePolar? value)
+
+  public static void SetAdjustHandlePolar(AdjustHandleList? openXmlElement, AdjustHandlePolar? value)
   {
     if (openXmlElement != null)
     {
@@ -46,14 +49,14 @@ public static class AdjustHandleListConverter
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Drawings.AdjustHandlePolarConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.AdjustHandlePolar>(value);
+        itemElement = AdjustHandlePolarConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.AdjustHandlePolar>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static DocumentModel.Drawings.AdjustHandleList? CreateModelElement(DocumentFormat.OpenXml.Drawing.AdjustHandleList? openXmlElement)
+
+  public static DocumentModel.Drawings.AdjustHandleList? CreateModelElement(AdjustHandleList? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -64,9 +67,9 @@ public static class AdjustHandleListConverter
     }
     return null;
   }
-  
+
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.AdjustHandleList? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.AdjustHandleList, new()
+    where OpenXmlElementType : AdjustHandleList, new()
   {
     if (value != null)
     {

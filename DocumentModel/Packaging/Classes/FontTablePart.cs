@@ -1,22 +1,23 @@
+using DocumentModel.Wordprocessing;
+
 namespace DocumentModel.Packaging;
 
 /// <summary>
-/// Defines the FontTablePart
+///   Defines the FontTablePart
 /// </summary>
-public partial class FontTablePart
+public class FontTablePart
 {
   public String? ContentType { get; set; }
-  
+
   /// <summary>
-  /// Gets the FontParts of the FontTablePart
+  ///   Gets the FontParts of the FontTablePart
   /// </summary>
-  public Collection<DocumentModel.Packaging.FontPart>? FontParts { get; set; }
-  
+  public Collection<FontPart>? FontParts { get; set; }
+
   /// <summary>
-  /// Gets or sets the root element of this part.
+  ///   Gets or sets the root element of this part.
   /// </summary>
-  public DocumentModel.Wordprocessing.Fonts? Fonts { get; set; }
-  
+  public Fonts? Fonts { get; set; }
+
   public String? RelationshipType { get; set; }
-  
 }

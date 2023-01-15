@@ -1,18 +1,17 @@
 namespace DocumentModel.Drawings.Charts;
 
 /// <summary>
-/// Layout.
+///   Layout.
 /// </summary>
-public partial class Layout
+public class Layout
 {
   /// <summary>
-  /// Manual Layout.
+  ///   Manual Layout.
   /// </summary>
-  public DocumentModel.Drawings.Charts.ManualLayout? ManualLayout { get; set; }
-  
+  public ManualLayout? ManualLayout { get; set; }
+
   /// <summary>
-  /// Chart Extensibility.
+  ///   Chart Extensibility.
   /// </summary>
-  public DocumentModel.Drawings.Charts.ExtensionList? ExtensionList { get; set; }
-  
+  public ExtensionList? ExtensionList { get; set; }
 }

@@ -1,10 +1,9 @@
 namespace DocumentModel.Wordprocessing;
 
 /// <summary>
-/// Defines MailMergeRecipients.
+///   Defines MailMergeRecipients.
 /// </summary>
-public partial class MailMergeRecipients
+public class MailMergeRecipients
 {
-  public DocumentModel.Wordprocessing.SingleDataSourceRecord? SingleDataSourceRecord { get; set; }
-  
+  public SingleDataSourceRecord? SingleDataSourceRecord { get; set; }
 }

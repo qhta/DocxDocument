@@ -1,19 +1,21 @@
+using DocumentFormat.OpenXml.Wordprocessing;
+
 namespace DocumentModel.OpenXml.Wordprocessing;
 
 /// <summary>
-/// Defines the FontRelationshipType Class.
+///   Defines the FontRelationshipType Class.
 /// </summary>
 public static class FontRelationshipTypeConverter
 {
   /// <summary>
-  /// fontKey
+  ///   fontKey
   /// </summary>
-  public static String? GetFontKey(DocumentFormat.OpenXml.Wordprocessing.FontRelationshipType? openXmlElement)
+  public static String? GetFontKey(FontRelationshipType? openXmlElement)
   {
     return openXmlElement?.FontKey?.Value;
   }
-  
-  public static void SetFontKey(DocumentFormat.OpenXml.Wordprocessing.FontRelationshipType? openXmlElement, String? value)
+
+  public static void SetFontKey(FontRelationshipType? openXmlElement, String? value)
   {
     if (openXmlElement != null)
       if (value != null)
@@ -21,16 +23,16 @@ public static class FontRelationshipTypeConverter
       else
         openXmlElement.FontKey = null;
   }
-  
+
   /// <summary>
-  /// subsetted
+  ///   subsetted
   /// </summary>
-  public static Boolean? GetSubsetted(DocumentFormat.OpenXml.Wordprocessing.FontRelationshipType? openXmlElement)
+  public static Boolean? GetSubsetted(FontRelationshipType? openXmlElement)
   {
     return openXmlElement?.Subsetted?.Value;
   }
-  
-  public static void SetSubsetted(DocumentFormat.OpenXml.Wordprocessing.FontRelationshipType? openXmlElement, Boolean? value)
+
+  public static void SetSubsetted(FontRelationshipType? openXmlElement, Boolean? value)
   {
     if (openXmlElement != null)
       if (value != null)
@@ -38,16 +40,16 @@ public static class FontRelationshipTypeConverter
       else
         openXmlElement.Subsetted = null;
   }
-  
+
   /// <summary>
-  /// Relationship to Part
+  ///   Relationship to Part
   /// </summary>
-  public static String? GetId(DocumentFormat.OpenXml.Wordprocessing.FontRelationshipType? openXmlElement)
+  public static String? GetId(FontRelationshipType? openXmlElement)
   {
     return openXmlElement?.Id?.Value;
   }
-  
-  public static void SetId(DocumentFormat.OpenXml.Wordprocessing.FontRelationshipType? openXmlElement, String? value)
+
+  public static void SetId(FontRelationshipType? openXmlElement, String? value)
   {
     if (openXmlElement != null)
       if (value != null)
@@ -55,8 +57,8 @@ public static class FontRelationshipTypeConverter
       else
         openXmlElement.Id = null;
   }
-  
-  public static DocumentModel.Wordprocessing.FontRelationshipType? CreateModelElement(DocumentFormat.OpenXml.Wordprocessing.FontRelationshipType? openXmlElement)
+
+  public static DocumentModel.Wordprocessing.FontRelationshipType? CreateModelElement(FontRelationshipType? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -68,9 +70,9 @@ public static class FontRelationshipTypeConverter
     }
     return null;
   }
-  
+
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.FontRelationshipType? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Wordprocessing.FontRelationshipType, new()
+    where OpenXmlElementType : FontRelationshipType, new()
   {
     if (value != null)
     {

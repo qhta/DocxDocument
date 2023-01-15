@@ -1,23 +1,22 @@
 namespace DocumentModel.Drawings.ChartDrawings;
 
 /// <summary>
-/// Defines the PosAlign enumeration.
+///   Defines the PosAlign enumeration.
 /// </summary>
 public enum PosAlign
 {
   /// <summary>
-  /// min.
+  ///   min.
   /// </summary>
   Min,
-  
+
   /// <summary>
-  /// ctr.
+  ///   ctr.
   /// </summary>
   Ctr,
-  
+
   /// <summary>
-  /// max.
+  ///   max.
   /// </summary>
-  Max,
-  
+  Max
 }

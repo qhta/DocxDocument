@@ -1,18 +1,17 @@
 namespace DocumentModel.Drawings;
 
 /// <summary>
-/// Defines the TintEffect Class.
+///   Defines the TintEffect Class.
 /// </summary>
-public partial class TintEffect
+public class TintEffect
 {
   /// <summary>
-  /// Hue
+  ///   Hue
   /// </summary>
   public Int32? Hue { get; set; }
-  
+
   /// <summary>
-  /// Amount
+  ///   Amount
   /// </summary>
   public Int32? Amount { get; set; }
-  
 }

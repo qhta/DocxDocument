@@ -1,188 +1,188 @@
 namespace DocumentModel;
 
 /// <summary>
-/// Array Variant Type Simple Type
+///   Array Variant Type Simple Type
 /// </summary>
 //[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 public enum VariantType
 {
   /// <summary>
-  /// For uninitialized Variant only
+  ///   For uninitialized Variant only
   /// </summary>
   Empty,
-  
+
   /// <summary>
-  /// 1-Byte Signed Integer Variant Type.
+  ///   1-Byte Signed Integer Variant Type.
   /// </summary>
   SByte,
-  
+
   /// <summary>
-  /// 2-Byte Signed Integer Variant Type.
+  ///   2-Byte Signed Integer Variant Type.
   /// </summary>
   Int16,
-  
+
   /// <summary>
-  /// 4-Byte Signed Integer Variant Type.
+  ///   4-Byte Signed Integer Variant Type.
   /// </summary>
   Int32,
 
   /// <summary>
-  /// 8-Byte Signed Integer Variant Type.
+  ///   8-Byte Signed Integer Variant Type.
   /// </summary>
   Int64,
 
   /// <summary>
-  /// Integer Variant Type.
+  ///   Integer Variant Type.
   /// </summary>
   Integer,
-  
+
   /// <summary>
-  /// 1-Byte Unsigned Integer Variant Type.
+  ///   1-Byte Unsigned Integer Variant Type.
   /// </summary>
   Byte,
-  
+
   /// <summary>
-  /// 2-Byte Unsigned Integer Variant Type.
+  ///   2-Byte Unsigned Integer Variant Type.
   /// </summary>
   UInt16,
-  
+
   /// <summary>
-  /// 4-Byte Unsigned Integer Variant Type.
+  ///   4-Byte Unsigned Integer Variant Type.
   /// </summary>
   UInt32,
 
   /// <summary>
-  /// 8-Byte Unsigned Integer Variant Type.
+  ///   8-Byte Unsigned Integer Variant Type.
   /// </summary>
   UInt64,
 
   /// <summary>
-  /// Unsigned Integer Variant Type.
+  ///   Unsigned Integer Variant Type.
   /// </summary>
   UnsignedInteger,
-  
+
   /// <summary>
-  /// 4-Byte Real Number Variant Type.
+  ///   4-Byte Real Number Variant Type.
   /// </summary>
   Single,
-  
+
   /// <summary>
-  /// 8-Byte Real Number Variant Type.
+  ///   8-Byte Real Number Variant Type.
   /// </summary>
   Double,
-  
+
   /// <summary>
-  /// Decimal Variant Type.
+  ///   Decimal Variant Type.
   /// </summary>
   Decimal,
 
   /// <summary>
-  /// LPSTR Variant Type.
+  ///   LPSTR Variant Type.
   /// </summary>
   Lpstr,
 
   /// <summary>
-  /// LPWSTR Variant Type.
+  ///   LPWSTR Variant Type.
   /// </summary>
   Lpwstr,
 
   /// <summary>
-  /// Basic String Variant Type.
+  ///   Basic String Variant Type.
   /// </summary>
   Bstr,
 
   /// <summary>
-  /// Char Variant Type.
+  ///   Char Variant Type.
   /// </summary>
   Char,
 
   /// <summary>
-  /// Date and Time Variant Type.
+  ///   Date and Time Variant Type.
   /// </summary>
   Date,
 
   /// <summary>
-  /// File Time Variant Type.
+  ///   File Time Variant Type.
   /// </summary>
   DateTime,
 
   /// <summary>
-  /// Boolean Variant Type.
+  ///   Boolean Variant Type.
   /// </summary>
   Bool,
-  
+
   /// <summary>
-  /// Currency Variant Type.
+  ///   Currency Variant Type.
   /// </summary>
   Currency,
 
   /// <summary>
-  /// Null Variant Type.
+  ///   Null Variant Type.
   /// </summary>
   Null,
 
   /// <summary>
-  /// Error Status Code Variant Type.
+  ///   Error Status Code Variant Type.
   /// </summary>
   Error,
 
   /// <summary>
-  /// Class ID Variant Type.
+  ///   Class ID Variant Type.
   /// </summary>
   ClassId,
 
   /// <summary>
-  /// Clipboard Data Variant Type.
+  ///   Clipboard Data Variant Type.
   /// </summary>
   ClipboardData,
 
   /// <summary>
-  /// Blob Variant Type.
+  ///   Blob Variant Type.
   /// </summary>
   Blob,
 
   /// <summary>
-  /// OBlob Variant Type.
+  ///   OBlob Variant Type.
   /// </summary>
   OBlob,
 
   /// <summary>
-  /// Storage Variant Type.
+  ///   Storage Variant Type.
   /// </summary>
   Storage,
 
   /// <summary>
-  /// OStorage Variant Type.
+  ///   OStorage Variant Type.
   /// </summary>
   OStorage,
 
   /// <summary>
-  /// VStream Variant Type.
+  ///   VStream Variant Type.
   /// </summary>
   Stream,
 
   /// <summary>
-  /// OStream Variant Type.
+  ///   OStream Variant Type.
   /// </summary>
   OStream,
 
   /// <summary>
-  /// VStream Variant Type.
+  ///   VStream Variant Type.
   /// </summary>
   VStream,
 
   /// <summary>
-  /// Variant Type with internal Variant
+  ///   Variant Type with internal Variant
   /// </summary>
   Variant,
 
   /// <summary>
-  /// Vector Variant Type.
+  ///   Vector Variant Type.
   /// </summary>
   Vector,
 
   /// <summary>
-  /// Array Variant Type.
+  ///   Array Variant Type.
   /// </summary>
-  Array,
+  Array
 }

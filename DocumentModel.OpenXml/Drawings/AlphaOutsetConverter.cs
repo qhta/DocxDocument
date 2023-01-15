@@ -1,25 +1,27 @@
+using DocumentFormat.OpenXml.Drawing;
+
 namespace DocumentModel.OpenXml.Drawings;
 
 /// <summary>
-/// Alpha Inset/Outset Effect.
+///   Alpha Inset/Outset Effect.
 /// </summary>
 public static class AlphaOutsetConverter
 {
   /// <summary>
-  /// Radius
+  ///   Radius
   /// </summary>
-  public static Int64? GetRadius(DocumentFormat.OpenXml.Drawing.AlphaOutset? openXmlElement)
+  public static Int64? GetRadius(AlphaOutset? openXmlElement)
   {
     return openXmlElement?.Radius?.Value;
   }
-  
-  public static void SetRadius(DocumentFormat.OpenXml.Drawing.AlphaOutset? openXmlElement, Int64? value)
+
+  public static void SetRadius(AlphaOutset? openXmlElement, Int64? value)
   {
     if (openXmlElement != null)
       openXmlElement.Radius = value;
   }
-  
-  public static DocumentModel.Drawings.AlphaOutset? CreateModelElement(DocumentFormat.OpenXml.Drawing.AlphaOutset? openXmlElement)
+
+  public static DocumentModel.Drawings.AlphaOutset? CreateModelElement(AlphaOutset? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -29,9 +31,9 @@ public static class AlphaOutsetConverter
     }
     return null;
   }
-  
+
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.AlphaOutset? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.AlphaOutset, new()
+    where OpenXmlElementType : AlphaOutset, new()
   {
     if (value != null)
     {

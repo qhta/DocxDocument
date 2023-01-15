@@ -1,33 +1,32 @@
 namespace DocumentModel.Drawings;
 
 /// <summary>
-/// Defines the DefaultShapeDefinitionType Class.
+///   Defines the DefaultShapeDefinitionType Class.
 /// </summary>
-public partial class DefaultShapeDefinitionType
+public class DefaultShapeDefinitionType
 {
   /// <summary>
-  /// Visual Properties.
+  ///   Visual Properties.
   /// </summary>
-  public DocumentModel.Drawings.ShapeProperties? ShapeProperties { get; set; }
-  
+  public ShapeProperties? ShapeProperties { get; set; }
+
   /// <summary>
-  /// BodyProperties.
+  ///   BodyProperties.
   /// </summary>
-  public DocumentModel.Drawings.BodyProperties? BodyProperties { get; set; }
-  
+  public BodyProperties? BodyProperties { get; set; }
+
   /// <summary>
-  /// ListStyle.
+  ///   ListStyle.
   /// </summary>
-  public DocumentModel.Drawings.ListStyle? ListStyle { get; set; }
-  
+  public ListStyle? ListStyle { get; set; }
+
   /// <summary>
-  /// ShapeStyle.
+  ///   ShapeStyle.
   /// </summary>
-  public DocumentModel.Drawings.ShapeStyle? ShapeStyle { get; set; }
-  
+  public ShapeStyle? ShapeStyle { get; set; }
+
   /// <summary>
-  /// ExtensionList.
+  ///   ExtensionList.
   /// </summary>
-  public DocumentModel.Drawings.ExtensionList? ExtensionList { get; set; }
-  
+  public ExtensionList? ExtensionList { get; set; }
 }

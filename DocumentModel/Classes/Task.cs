@@ -1,28 +1,27 @@
 namespace DocumentModel;
 
 /// <summary>
-/// Defines the Task Class.
+///   Defines the Task Class.
 /// </summary>
-public partial class Task
+public class Task
 {
   /// <summary>
-  /// id, this property is only available in Office 2021 and later.
+  ///   id, this property is only available in Office 2021 and later.
   /// </summary>
   public String? Id { get; set; }
-  
+
   /// <summary>
-  /// TaskAnchor.
+  ///   TaskAnchor.
   /// </summary>
-  public DocumentModel.TaskAnchor? TaskAnchor { get; set; }
-  
+  public TaskAnchor? TaskAnchor { get; set; }
+
   /// <summary>
-  /// TaskHistory.
+  ///   TaskHistory.
   /// </summary>
-  public DocumentModel.TaskHistory? TaskHistory { get; set; }
-  
+  public TaskHistory? TaskHistory { get; set; }
+
   /// <summary>
-  /// ExtensionList.
+  ///   ExtensionList.
   /// </summary>
-  public DocumentModel.ExtensionList? ExtensionList { get; set; }
-  
+  public ExtensionList? ExtensionList { get; set; }
 }

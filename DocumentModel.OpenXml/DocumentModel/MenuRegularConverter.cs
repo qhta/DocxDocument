@@ -1,32 +1,34 @@
+using DocumentFormat.OpenXml.Office2010.CustomUI;
+
 namespace DocumentModel.OpenXml;
 
 /// <summary>
-/// Defines the MenuRegular Class.
+///   Defines the MenuRegular Class.
 /// </summary>
 public static class MenuRegularConverter
 {
   /// <summary>
-  /// itemSize, this property is only available in Office 2010 and later.
+  ///   itemSize, this property is only available in Office 2010 and later.
   /// </summary>
-  public static DocumentModel.ItemSizeKind? GetItemSize(DocumentFormat.OpenXml.Office2010.CustomUI.MenuRegular? openXmlElement)
+  public static ItemSizeKind? GetItemSize(DocumentFormat.OpenXml.Office2010.CustomUI.MenuRegular? openXmlElement)
   {
-    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Office2010.CustomUI.ItemSizeValues, DocumentModel.ItemSizeKind>(openXmlElement?.ItemSize?.Value);
+    return EnumValueConverter.GetValue<ItemSizeValues, ItemSizeKind>(openXmlElement?.ItemSize?.Value);
   }
-  
-  public static void SetItemSize(DocumentFormat.OpenXml.Office2010.CustomUI.MenuRegular? openXmlElement, DocumentModel.ItemSizeKind? value)
+
+  public static void SetItemSize(DocumentFormat.OpenXml.Office2010.CustomUI.MenuRegular? openXmlElement, ItemSizeKind? value)
   {
     if (openXmlElement != null)
-      openXmlElement.ItemSize = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Office2010.CustomUI.ItemSizeValues, DocumentModel.ItemSizeKind>(value);
+      openXmlElement.ItemSize = EnumValueConverter.CreateEnumValue<ItemSizeValues, ItemSizeKind>(value);
   }
-  
+
   /// <summary>
-  /// description, this property is only available in Office 2010 and later.
+  ///   description, this property is only available in Office 2010 and later.
   /// </summary>
   public static String? GetDescription(DocumentFormat.OpenXml.Office2010.CustomUI.MenuRegular? openXmlElement)
   {
     return openXmlElement?.Description?.Value;
   }
-  
+
   public static void SetDescription(DocumentFormat.OpenXml.Office2010.CustomUI.MenuRegular? openXmlElement, String? value)
   {
     if (openXmlElement != null)
@@ -35,15 +37,15 @@ public static class MenuRegularConverter
       else
         openXmlElement.Description = null;
   }
-  
+
   /// <summary>
-  /// getDescription, this property is only available in Office 2010 and later.
+  ///   getDescription, this property is only available in Office 2010 and later.
   /// </summary>
   public static String? GetGetDescription(DocumentFormat.OpenXml.Office2010.CustomUI.MenuRegular? openXmlElement)
   {
     return openXmlElement?.GetDescription?.Value;
   }
-  
+
   public static void SetGetDescription(DocumentFormat.OpenXml.Office2010.CustomUI.MenuRegular? openXmlElement, String? value)
   {
     if (openXmlElement != null)
@@ -52,15 +54,15 @@ public static class MenuRegularConverter
       else
         openXmlElement.GetDescription = null;
   }
-  
+
   /// <summary>
-  /// id, this property is only available in Office 2010 and later.
+  ///   id, this property is only available in Office 2010 and later.
   /// </summary>
   public static String? GetId(DocumentFormat.OpenXml.Office2010.CustomUI.MenuRegular? openXmlElement)
   {
     return openXmlElement?.Id?.Value;
   }
-  
+
   public static void SetId(DocumentFormat.OpenXml.Office2010.CustomUI.MenuRegular? openXmlElement, String? value)
   {
     if (openXmlElement != null)
@@ -69,15 +71,15 @@ public static class MenuRegularConverter
       else
         openXmlElement.Id = null;
   }
-  
+
   /// <summary>
-  /// idQ, this property is only available in Office 2010 and later.
+  ///   idQ, this property is only available in Office 2010 and later.
   /// </summary>
   public static String? GetQualifiedId(DocumentFormat.OpenXml.Office2010.CustomUI.MenuRegular? openXmlElement)
   {
     return openXmlElement?.QualifiedId?.Value;
   }
-  
+
   public static void SetQualifiedId(DocumentFormat.OpenXml.Office2010.CustomUI.MenuRegular? openXmlElement, String? value)
   {
     if (openXmlElement != null)
@@ -86,15 +88,15 @@ public static class MenuRegularConverter
       else
         openXmlElement.QualifiedId = null;
   }
-  
+
   /// <summary>
-  /// tag, this property is only available in Office 2010 and later.
+  ///   tag, this property is only available in Office 2010 and later.
   /// </summary>
   public static String? GetTag(DocumentFormat.OpenXml.Office2010.CustomUI.MenuRegular? openXmlElement)
   {
     return openXmlElement?.Tag?.Value;
   }
-  
+
   public static void SetTag(DocumentFormat.OpenXml.Office2010.CustomUI.MenuRegular? openXmlElement, String? value)
   {
     if (openXmlElement != null)
@@ -103,15 +105,15 @@ public static class MenuRegularConverter
       else
         openXmlElement.Tag = null;
   }
-  
+
   /// <summary>
-  /// idMso, this property is only available in Office 2010 and later.
+  ///   idMso, this property is only available in Office 2010 and later.
   /// </summary>
   public static String? GetIdMso(DocumentFormat.OpenXml.Office2010.CustomUI.MenuRegular? openXmlElement)
   {
     return openXmlElement?.IdMso?.Value;
   }
-  
+
   public static void SetIdMso(DocumentFormat.OpenXml.Office2010.CustomUI.MenuRegular? openXmlElement, String? value)
   {
     if (openXmlElement != null)
@@ -120,15 +122,15 @@ public static class MenuRegularConverter
       else
         openXmlElement.IdMso = null;
   }
-  
+
   /// <summary>
-  /// image, this property is only available in Office 2010 and later.
+  ///   image, this property is only available in Office 2010 and later.
   /// </summary>
   public static String? GetImage(DocumentFormat.OpenXml.Office2010.CustomUI.MenuRegular? openXmlElement)
   {
     return openXmlElement?.Image?.Value;
   }
-  
+
   public static void SetImage(DocumentFormat.OpenXml.Office2010.CustomUI.MenuRegular? openXmlElement, String? value)
   {
     if (openXmlElement != null)
@@ -137,15 +139,15 @@ public static class MenuRegularConverter
       else
         openXmlElement.Image = null;
   }
-  
+
   /// <summary>
-  /// imageMso, this property is only available in Office 2010 and later.
+  ///   imageMso, this property is only available in Office 2010 and later.
   /// </summary>
   public static String? GetImageMso(DocumentFormat.OpenXml.Office2010.CustomUI.MenuRegular? openXmlElement)
   {
     return openXmlElement?.ImageMso?.Value;
   }
-  
+
   public static void SetImageMso(DocumentFormat.OpenXml.Office2010.CustomUI.MenuRegular? openXmlElement, String? value)
   {
     if (openXmlElement != null)
@@ -154,15 +156,15 @@ public static class MenuRegularConverter
       else
         openXmlElement.ImageMso = null;
   }
-  
+
   /// <summary>
-  /// getImage, this property is only available in Office 2010 and later.
+  ///   getImage, this property is only available in Office 2010 and later.
   /// </summary>
   public static String? GetGetImage(DocumentFormat.OpenXml.Office2010.CustomUI.MenuRegular? openXmlElement)
   {
     return openXmlElement?.GetImage?.Value;
   }
-  
+
   public static void SetGetImage(DocumentFormat.OpenXml.Office2010.CustomUI.MenuRegular? openXmlElement, String? value)
   {
     if (openXmlElement != null)
@@ -171,15 +173,15 @@ public static class MenuRegularConverter
       else
         openXmlElement.GetImage = null;
   }
-  
+
   /// <summary>
-  /// screentip, this property is only available in Office 2010 and later.
+  ///   screentip, this property is only available in Office 2010 and later.
   /// </summary>
   public static String? GetScreentip(DocumentFormat.OpenXml.Office2010.CustomUI.MenuRegular? openXmlElement)
   {
     return openXmlElement?.Screentip?.Value;
   }
-  
+
   public static void SetScreentip(DocumentFormat.OpenXml.Office2010.CustomUI.MenuRegular? openXmlElement, String? value)
   {
     if (openXmlElement != null)
@@ -188,15 +190,15 @@ public static class MenuRegularConverter
       else
         openXmlElement.Screentip = null;
   }
-  
+
   /// <summary>
-  /// getScreentip, this property is only available in Office 2010 and later.
+  ///   getScreentip, this property is only available in Office 2010 and later.
   /// </summary>
   public static String? GetGetScreentip(DocumentFormat.OpenXml.Office2010.CustomUI.MenuRegular? openXmlElement)
   {
     return openXmlElement?.GetScreentip?.Value;
   }
-  
+
   public static void SetGetScreentip(DocumentFormat.OpenXml.Office2010.CustomUI.MenuRegular? openXmlElement, String? value)
   {
     if (openXmlElement != null)
@@ -205,15 +207,15 @@ public static class MenuRegularConverter
       else
         openXmlElement.GetScreentip = null;
   }
-  
+
   /// <summary>
-  /// supertip, this property is only available in Office 2010 and later.
+  ///   supertip, this property is only available in Office 2010 and later.
   /// </summary>
   public static String? GetSupertip(DocumentFormat.OpenXml.Office2010.CustomUI.MenuRegular? openXmlElement)
   {
     return openXmlElement?.Supertip?.Value;
   }
-  
+
   public static void SetSupertip(DocumentFormat.OpenXml.Office2010.CustomUI.MenuRegular? openXmlElement, String? value)
   {
     if (openXmlElement != null)
@@ -222,15 +224,15 @@ public static class MenuRegularConverter
       else
         openXmlElement.Supertip = null;
   }
-  
+
   /// <summary>
-  /// getSupertip, this property is only available in Office 2010 and later.
+  ///   getSupertip, this property is only available in Office 2010 and later.
   /// </summary>
   public static String? GetGetSupertip(DocumentFormat.OpenXml.Office2010.CustomUI.MenuRegular? openXmlElement)
   {
     return openXmlElement?.GetSupertip?.Value;
   }
-  
+
   public static void SetGetSupertip(DocumentFormat.OpenXml.Office2010.CustomUI.MenuRegular? openXmlElement, String? value)
   {
     if (openXmlElement != null)
@@ -239,15 +241,15 @@ public static class MenuRegularConverter
       else
         openXmlElement.GetSupertip = null;
   }
-  
+
   /// <summary>
-  /// enabled, this property is only available in Office 2010 and later.
+  ///   enabled, this property is only available in Office 2010 and later.
   /// </summary>
   public static Boolean? GetEnabled(DocumentFormat.OpenXml.Office2010.CustomUI.MenuRegular? openXmlElement)
   {
     return openXmlElement?.Enabled?.Value;
   }
-  
+
   public static void SetEnabled(DocumentFormat.OpenXml.Office2010.CustomUI.MenuRegular? openXmlElement, Boolean? value)
   {
     if (openXmlElement != null)
@@ -256,15 +258,15 @@ public static class MenuRegularConverter
       else
         openXmlElement.Enabled = null;
   }
-  
+
   /// <summary>
-  /// getEnabled, this property is only available in Office 2010 and later.
+  ///   getEnabled, this property is only available in Office 2010 and later.
   /// </summary>
   public static String? GetGetEnabled(DocumentFormat.OpenXml.Office2010.CustomUI.MenuRegular? openXmlElement)
   {
     return openXmlElement?.GetEnabled?.Value;
   }
-  
+
   public static void SetGetEnabled(DocumentFormat.OpenXml.Office2010.CustomUI.MenuRegular? openXmlElement, String? value)
   {
     if (openXmlElement != null)
@@ -273,15 +275,15 @@ public static class MenuRegularConverter
       else
         openXmlElement.GetEnabled = null;
   }
-  
+
   /// <summary>
-  /// label, this property is only available in Office 2010 and later.
+  ///   label, this property is only available in Office 2010 and later.
   /// </summary>
   public static String? GetLabel(DocumentFormat.OpenXml.Office2010.CustomUI.MenuRegular? openXmlElement)
   {
     return openXmlElement?.Label?.Value;
   }
-  
+
   public static void SetLabel(DocumentFormat.OpenXml.Office2010.CustomUI.MenuRegular? openXmlElement, String? value)
   {
     if (openXmlElement != null)
@@ -290,15 +292,15 @@ public static class MenuRegularConverter
       else
         openXmlElement.Label = null;
   }
-  
+
   /// <summary>
-  /// getLabel, this property is only available in Office 2010 and later.
+  ///   getLabel, this property is only available in Office 2010 and later.
   /// </summary>
   public static String? GetGetLabel(DocumentFormat.OpenXml.Office2010.CustomUI.MenuRegular? openXmlElement)
   {
     return openXmlElement?.GetLabel?.Value;
   }
-  
+
   public static void SetGetLabel(DocumentFormat.OpenXml.Office2010.CustomUI.MenuRegular? openXmlElement, String? value)
   {
     if (openXmlElement != null)
@@ -307,15 +309,15 @@ public static class MenuRegularConverter
       else
         openXmlElement.GetLabel = null;
   }
-  
+
   /// <summary>
-  /// insertAfterMso, this property is only available in Office 2010 and later.
+  ///   insertAfterMso, this property is only available in Office 2010 and later.
   /// </summary>
   public static String? GetInsertAfterMso(DocumentFormat.OpenXml.Office2010.CustomUI.MenuRegular? openXmlElement)
   {
     return openXmlElement?.InsertAfterMso?.Value;
   }
-  
+
   public static void SetInsertAfterMso(DocumentFormat.OpenXml.Office2010.CustomUI.MenuRegular? openXmlElement, String? value)
   {
     if (openXmlElement != null)
@@ -324,15 +326,15 @@ public static class MenuRegularConverter
       else
         openXmlElement.InsertAfterMso = null;
   }
-  
+
   /// <summary>
-  /// insertBeforeMso, this property is only available in Office 2010 and later.
+  ///   insertBeforeMso, this property is only available in Office 2010 and later.
   /// </summary>
   public static String? GetInsertBeforeMso(DocumentFormat.OpenXml.Office2010.CustomUI.MenuRegular? openXmlElement)
   {
     return openXmlElement?.InsertBeforeMso?.Value;
   }
-  
+
   public static void SetInsertBeforeMso(DocumentFormat.OpenXml.Office2010.CustomUI.MenuRegular? openXmlElement, String? value)
   {
     if (openXmlElement != null)
@@ -341,15 +343,15 @@ public static class MenuRegularConverter
       else
         openXmlElement.InsertBeforeMso = null;
   }
-  
+
   /// <summary>
-  /// insertAfterQ, this property is only available in Office 2010 and later.
+  ///   insertAfterQ, this property is only available in Office 2010 and later.
   /// </summary>
   public static String? GetInsertAfterQulifiedId(DocumentFormat.OpenXml.Office2010.CustomUI.MenuRegular? openXmlElement)
   {
     return openXmlElement?.InsertAfterQulifiedId?.Value;
   }
-  
+
   public static void SetInsertAfterQulifiedId(DocumentFormat.OpenXml.Office2010.CustomUI.MenuRegular? openXmlElement, String? value)
   {
     if (openXmlElement != null)
@@ -358,15 +360,15 @@ public static class MenuRegularConverter
       else
         openXmlElement.InsertAfterQulifiedId = null;
   }
-  
+
   /// <summary>
-  /// insertBeforeQ, this property is only available in Office 2010 and later.
+  ///   insertBeforeQ, this property is only available in Office 2010 and later.
   /// </summary>
   public static String? GetInsertBeforeQulifiedId(DocumentFormat.OpenXml.Office2010.CustomUI.MenuRegular? openXmlElement)
   {
     return openXmlElement?.InsertBeforeQulifiedId?.Value;
   }
-  
+
   public static void SetInsertBeforeQulifiedId(DocumentFormat.OpenXml.Office2010.CustomUI.MenuRegular? openXmlElement, String? value)
   {
     if (openXmlElement != null)
@@ -375,15 +377,15 @@ public static class MenuRegularConverter
       else
         openXmlElement.InsertBeforeQulifiedId = null;
   }
-  
+
   /// <summary>
-  /// visible, this property is only available in Office 2010 and later.
+  ///   visible, this property is only available in Office 2010 and later.
   /// </summary>
   public static Boolean? GetVisible(DocumentFormat.OpenXml.Office2010.CustomUI.MenuRegular? openXmlElement)
   {
     return openXmlElement?.Visible?.Value;
   }
-  
+
   public static void SetVisible(DocumentFormat.OpenXml.Office2010.CustomUI.MenuRegular? openXmlElement, Boolean? value)
   {
     if (openXmlElement != null)
@@ -392,15 +394,15 @@ public static class MenuRegularConverter
       else
         openXmlElement.Visible = null;
   }
-  
+
   /// <summary>
-  /// getVisible, this property is only available in Office 2010 and later.
+  ///   getVisible, this property is only available in Office 2010 and later.
   /// </summary>
   public static String? GetGetVisible(DocumentFormat.OpenXml.Office2010.CustomUI.MenuRegular? openXmlElement)
   {
     return openXmlElement?.GetVisible?.Value;
   }
-  
+
   public static void SetGetVisible(DocumentFormat.OpenXml.Office2010.CustomUI.MenuRegular? openXmlElement, String? value)
   {
     if (openXmlElement != null)
@@ -409,15 +411,15 @@ public static class MenuRegularConverter
       else
         openXmlElement.GetVisible = null;
   }
-  
+
   /// <summary>
-  /// keytip, this property is only available in Office 2010 and later.
+  ///   keytip, this property is only available in Office 2010 and later.
   /// </summary>
   public static String? GetKeytip(DocumentFormat.OpenXml.Office2010.CustomUI.MenuRegular? openXmlElement)
   {
     return openXmlElement?.Keytip?.Value;
   }
-  
+
   public static void SetKeytip(DocumentFormat.OpenXml.Office2010.CustomUI.MenuRegular? openXmlElement, String? value)
   {
     if (openXmlElement != null)
@@ -426,15 +428,15 @@ public static class MenuRegularConverter
       else
         openXmlElement.Keytip = null;
   }
-  
+
   /// <summary>
-  /// getKeytip, this property is only available in Office 2010 and later.
+  ///   getKeytip, this property is only available in Office 2010 and later.
   /// </summary>
   public static String? GetGetKeytip(DocumentFormat.OpenXml.Office2010.CustomUI.MenuRegular? openXmlElement)
   {
     return openXmlElement?.GetKeytip?.Value;
   }
-  
+
   public static void SetGetKeytip(DocumentFormat.OpenXml.Office2010.CustomUI.MenuRegular? openXmlElement, String? value)
   {
     if (openXmlElement != null)
@@ -443,15 +445,15 @@ public static class MenuRegularConverter
       else
         openXmlElement.GetKeytip = null;
   }
-  
+
   /// <summary>
-  /// showLabel, this property is only available in Office 2010 and later.
+  ///   showLabel, this property is only available in Office 2010 and later.
   /// </summary>
   public static Boolean? GetShowLabel(DocumentFormat.OpenXml.Office2010.CustomUI.MenuRegular? openXmlElement)
   {
     return openXmlElement?.ShowLabel?.Value;
   }
-  
+
   public static void SetShowLabel(DocumentFormat.OpenXml.Office2010.CustomUI.MenuRegular? openXmlElement, Boolean? value)
   {
     if (openXmlElement != null)
@@ -460,15 +462,15 @@ public static class MenuRegularConverter
       else
         openXmlElement.ShowLabel = null;
   }
-  
+
   /// <summary>
-  /// getShowLabel, this property is only available in Office 2010 and later.
+  ///   getShowLabel, this property is only available in Office 2010 and later.
   /// </summary>
   public static String? GetGetShowLabel(DocumentFormat.OpenXml.Office2010.CustomUI.MenuRegular? openXmlElement)
   {
     return openXmlElement?.GetShowLabel?.Value;
   }
-  
+
   public static void SetGetShowLabel(DocumentFormat.OpenXml.Office2010.CustomUI.MenuRegular? openXmlElement, String? value)
   {
     if (openXmlElement != null)
@@ -477,15 +479,15 @@ public static class MenuRegularConverter
       else
         openXmlElement.GetShowLabel = null;
   }
-  
+
   /// <summary>
-  /// showImage, this property is only available in Office 2010 and later.
+  ///   showImage, this property is only available in Office 2010 and later.
   /// </summary>
   public static Boolean? GetShowImage(DocumentFormat.OpenXml.Office2010.CustomUI.MenuRegular? openXmlElement)
   {
     return openXmlElement?.ShowImage?.Value;
   }
-  
+
   public static void SetShowImage(DocumentFormat.OpenXml.Office2010.CustomUI.MenuRegular? openXmlElement, Boolean? value)
   {
     if (openXmlElement != null)
@@ -494,15 +496,15 @@ public static class MenuRegularConverter
       else
         openXmlElement.ShowImage = null;
   }
-  
+
   /// <summary>
-  /// getShowImage, this property is only available in Office 2010 and later.
+  ///   getShowImage, this property is only available in Office 2010 and later.
   /// </summary>
   public static String? GetGetShowImage(DocumentFormat.OpenXml.Office2010.CustomUI.MenuRegular? openXmlElement)
   {
     return openXmlElement?.GetShowImage?.Value;
   }
-  
+
   public static void SetGetShowImage(DocumentFormat.OpenXml.Office2010.CustomUI.MenuRegular? openXmlElement, String? value)
   {
     if (openXmlElement != null)
@@ -511,16 +513,16 @@ public static class MenuRegularConverter
       else
         openXmlElement.GetShowImage = null;
   }
-  
-  public static DocumentModel.ControlCloneRegular? GetControlCloneRegular(DocumentFormat.OpenXml.Office2010.CustomUI.MenuRegular? openXmlElement)
+
+  public static ControlCloneRegular? GetControlCloneRegular(DocumentFormat.OpenXml.Office2010.CustomUI.MenuRegular? openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office2010.CustomUI.ControlCloneRegular>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.ControlCloneRegularConverter.CreateModelElement(itemElement);
+      return ControlCloneRegularConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetControlCloneRegular(DocumentFormat.OpenXml.Office2010.CustomUI.MenuRegular? openXmlElement, DocumentModel.ControlCloneRegular? value)
+
+  public static void SetControlCloneRegular(DocumentFormat.OpenXml.Office2010.CustomUI.MenuRegular? openXmlElement, ControlCloneRegular? value)
   {
     if (openXmlElement != null)
     {
@@ -529,22 +531,22 @@ public static class MenuRegularConverter
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.ControlCloneRegularConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2010.CustomUI.ControlCloneRegular>(value);
+        itemElement = ControlCloneRegularConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2010.CustomUI.ControlCloneRegular>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static DocumentModel.ButtonRegular? GetButtonRegular(DocumentFormat.OpenXml.Office2010.CustomUI.MenuRegular? openXmlElement)
+
+  public static ButtonRegular? GetButtonRegular(DocumentFormat.OpenXml.Office2010.CustomUI.MenuRegular? openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office2010.CustomUI.ButtonRegular>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.ButtonRegularConverter.CreateModelElement(itemElement);
+      return ButtonRegularConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetButtonRegular(DocumentFormat.OpenXml.Office2010.CustomUI.MenuRegular? openXmlElement, DocumentModel.ButtonRegular? value)
+
+  public static void SetButtonRegular(DocumentFormat.OpenXml.Office2010.CustomUI.MenuRegular? openXmlElement, ButtonRegular? value)
   {
     if (openXmlElement != null)
     {
@@ -553,22 +555,22 @@ public static class MenuRegularConverter
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.ButtonRegularConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2010.CustomUI.ButtonRegular>(value);
+        itemElement = ButtonRegularConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2010.CustomUI.ButtonRegular>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static DocumentModel.CheckBox? GetCheckBox(DocumentFormat.OpenXml.Office2010.CustomUI.MenuRegular? openXmlElement)
+
+  public static CheckBox? GetCheckBox(DocumentFormat.OpenXml.Office2010.CustomUI.MenuRegular? openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office2010.CustomUI.CheckBox>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.CheckBoxConverter.CreateModelElement(itemElement);
+      return CheckBoxConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetCheckBox(DocumentFormat.OpenXml.Office2010.CustomUI.MenuRegular? openXmlElement, DocumentModel.CheckBox? value)
+
+  public static void SetCheckBox(DocumentFormat.OpenXml.Office2010.CustomUI.MenuRegular? openXmlElement, CheckBox? value)
   {
     if (openXmlElement != null)
     {
@@ -577,22 +579,22 @@ public static class MenuRegularConverter
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.CheckBoxConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2010.CustomUI.CheckBox>(value);
+        itemElement = CheckBoxConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2010.CustomUI.CheckBox>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static DocumentModel.GalleryRegular? GetGalleryRegular(DocumentFormat.OpenXml.Office2010.CustomUI.MenuRegular? openXmlElement)
+
+  public static GalleryRegular? GetGalleryRegular(DocumentFormat.OpenXml.Office2010.CustomUI.MenuRegular? openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office2010.CustomUI.GalleryRegular>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.GalleryRegularConverter.CreateModelElement(itemElement);
+      return GalleryRegularConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetGalleryRegular(DocumentFormat.OpenXml.Office2010.CustomUI.MenuRegular? openXmlElement, DocumentModel.GalleryRegular? value)
+
+  public static void SetGalleryRegular(DocumentFormat.OpenXml.Office2010.CustomUI.MenuRegular? openXmlElement, GalleryRegular? value)
   {
     if (openXmlElement != null)
     {
@@ -601,22 +603,22 @@ public static class MenuRegularConverter
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.GalleryRegularConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2010.CustomUI.GalleryRegular>(value);
+        itemElement = GalleryRegularConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2010.CustomUI.GalleryRegular>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static DocumentModel.ToggleButtonRegular? GetToggleButtonRegular(DocumentFormat.OpenXml.Office2010.CustomUI.MenuRegular? openXmlElement)
+
+  public static ToggleButtonRegular? GetToggleButtonRegular(DocumentFormat.OpenXml.Office2010.CustomUI.MenuRegular? openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office2010.CustomUI.ToggleButtonRegular>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.ToggleButtonRegularConverter.CreateModelElement(itemElement);
+      return ToggleButtonRegularConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetToggleButtonRegular(DocumentFormat.OpenXml.Office2010.CustomUI.MenuRegular? openXmlElement, DocumentModel.ToggleButtonRegular? value)
+
+  public static void SetToggleButtonRegular(DocumentFormat.OpenXml.Office2010.CustomUI.MenuRegular? openXmlElement, ToggleButtonRegular? value)
   {
     if (openXmlElement != null)
     {
@@ -625,22 +627,22 @@ public static class MenuRegularConverter
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.ToggleButtonRegularConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2010.CustomUI.ToggleButtonRegular>(value);
+        itemElement = ToggleButtonRegularConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2010.CustomUI.ToggleButtonRegular>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static DocumentModel.MenuSeparator? GetMenuSeparator(DocumentFormat.OpenXml.Office2010.CustomUI.MenuRegular? openXmlElement)
+
+  public static MenuSeparator? GetMenuSeparator(DocumentFormat.OpenXml.Office2010.CustomUI.MenuRegular? openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office2010.CustomUI.MenuSeparator>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.MenuSeparatorConverter.CreateModelElement(itemElement);
+      return MenuSeparatorConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetMenuSeparator(DocumentFormat.OpenXml.Office2010.CustomUI.MenuRegular? openXmlElement, DocumentModel.MenuSeparator? value)
+
+  public static void SetMenuSeparator(DocumentFormat.OpenXml.Office2010.CustomUI.MenuRegular? openXmlElement, MenuSeparator? value)
   {
     if (openXmlElement != null)
     {
@@ -649,22 +651,22 @@ public static class MenuRegularConverter
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.MenuSeparatorConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2010.CustomUI.MenuSeparator>(value);
+        itemElement = MenuSeparatorConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2010.CustomUI.MenuSeparator>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static DocumentModel.SplitButtonRegular? GetSplitButtonRegular(DocumentFormat.OpenXml.Office2010.CustomUI.MenuRegular? openXmlElement)
+
+  public static SplitButtonRegular? GetSplitButtonRegular(DocumentFormat.OpenXml.Office2010.CustomUI.MenuRegular? openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office2010.CustomUI.SplitButtonRegular>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.SplitButtonRegularConverter.CreateModelElement(itemElement);
+      return SplitButtonRegularConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetSplitButtonRegular(DocumentFormat.OpenXml.Office2010.CustomUI.MenuRegular? openXmlElement, DocumentModel.SplitButtonRegular? value)
+
+  public static void SetSplitButtonRegular(DocumentFormat.OpenXml.Office2010.CustomUI.MenuRegular? openXmlElement, SplitButtonRegular? value)
   {
     if (openXmlElement != null)
     {
@@ -673,22 +675,22 @@ public static class MenuRegularConverter
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.SplitButtonRegularConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2010.CustomUI.SplitButtonRegular>(value);
+        itemElement = SplitButtonRegularConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2010.CustomUI.SplitButtonRegular>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static DocumentModel.MenuRegular? GetChildMenuRegular(DocumentFormat.OpenXml.Office2010.CustomUI.MenuRegular? openXmlElement)
+
+  public static MenuRegular? GetChildMenuRegular(DocumentFormat.OpenXml.Office2010.CustomUI.MenuRegular? openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office2010.CustomUI.MenuRegular>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.MenuRegularConverter.CreateModelElement(itemElement);
+      return CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetChildMenuRegular(DocumentFormat.OpenXml.Office2010.CustomUI.MenuRegular? openXmlElement, DocumentModel.MenuRegular? value)
+
+  public static void SetChildMenuRegular(DocumentFormat.OpenXml.Office2010.CustomUI.MenuRegular? openXmlElement, MenuRegular? value)
   {
     if (openXmlElement != null)
     {
@@ -697,22 +699,22 @@ public static class MenuRegularConverter
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.MenuRegularConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2010.CustomUI.MenuRegular>(value);
+        itemElement = CreateOpenXmlElement<DocumentFormat.OpenXml.Office2010.CustomUI.MenuRegular>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static DocumentModel.DynamicMenuRegular? GetDynamicMenuRegular(DocumentFormat.OpenXml.Office2010.CustomUI.MenuRegular? openXmlElement)
+
+  public static DynamicMenuRegular? GetDynamicMenuRegular(DocumentFormat.OpenXml.Office2010.CustomUI.MenuRegular? openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office2010.CustomUI.DynamicMenuRegular>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.DynamicMenuRegularConverter.CreateModelElement(itemElement);
+      return DynamicMenuRegularConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetDynamicMenuRegular(DocumentFormat.OpenXml.Office2010.CustomUI.MenuRegular? openXmlElement, DocumentModel.DynamicMenuRegular? value)
+
+  public static void SetDynamicMenuRegular(DocumentFormat.OpenXml.Office2010.CustomUI.MenuRegular? openXmlElement, DynamicMenuRegular? value)
   {
     if (openXmlElement != null)
     {
@@ -721,18 +723,18 @@ public static class MenuRegularConverter
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.DynamicMenuRegularConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2010.CustomUI.DynamicMenuRegular>(value);
+        itemElement = DynamicMenuRegularConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2010.CustomUI.DynamicMenuRegular>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static DocumentModel.MenuRegular? CreateModelElement(DocumentFormat.OpenXml.Office2010.CustomUI.MenuRegular? openXmlElement)
+
+  public static MenuRegular? CreateModelElement(DocumentFormat.OpenXml.Office2010.CustomUI.MenuRegular? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.MenuRegular();
+      var value = new MenuRegular();
       value.ItemSize = GetItemSize(openXmlElement);
       value.Description = GetDescription(openXmlElement);
       value.GetDescription = GetGetDescription(openXmlElement);
@@ -776,9 +778,9 @@ public static class MenuRegularConverter
     }
     return null;
   }
-  
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.MenuRegular? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Office2010.CustomUI.MenuRegular, new()
+
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(MenuRegular? value)
+    where OpenXmlElementType : DocumentFormat.OpenXml.Office2010.CustomUI.MenuRegular, new()
   {
     if (value != null)
     {

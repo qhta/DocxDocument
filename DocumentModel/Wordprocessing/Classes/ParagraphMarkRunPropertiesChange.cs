@@ -1,28 +1,27 @@
 namespace DocumentModel.Wordprocessing;
 
 /// <summary>
-/// Revision Information for Run Properties on the Paragraph Mark.
+///   Revision Information for Run Properties on the Paragraph Mark.
 /// </summary>
-public partial class ParagraphMarkRunPropertiesChange
+public class ParagraphMarkRunPropertiesChange
 {
   /// <summary>
-  /// author
+  ///   author
   /// </summary>
   public String? Author { get; set; }
-  
+
   /// <summary>
-  /// date
+  ///   date
   /// </summary>
   public DateTime? Date { get; set; }
-  
+
   /// <summary>
-  /// Annotation Identifier
+  ///   Annotation Identifier
   /// </summary>
   public String? Id { get; set; }
-  
+
   /// <summary>
-  /// Previous Run Properties for the Paragraph Mark.
+  ///   Previous Run Properties for the Paragraph Mark.
   /// </summary>
-  public DocumentModel.Wordprocessing.PreviousParagraphMarkRunProperties? PreviousParagraphMarkRunProperties { get; set; }
-  
+  public PreviousParagraphMarkRunProperties? PreviousParagraphMarkRunProperties { get; set; }
 }

@@ -1,19 +1,22 @@
+using DocumentModel.Drawings.Charts;
+using AreaChartExtension = DocumentFormat.OpenXml.Drawing.Charts.AreaChartExtension;
+
 namespace DocumentModel.OpenXml.Drawings.Charts;
 
 /// <summary>
-/// Defines the AreaChartExtension Class.
+///   Defines the AreaChartExtension Class.
 /// </summary>
 public static class AreaChartExtensionConverter
 {
   /// <summary>
-  /// URI
+  ///   URI
   /// </summary>
-  public static String? GetUri(DocumentFormat.OpenXml.Drawing.Charts.AreaChartExtension? openXmlElement)
+  public static String? GetUri(AreaChartExtension? openXmlElement)
   {
     return openXmlElement?.Uri?.Value;
   }
-  
-  public static void SetUri(DocumentFormat.OpenXml.Drawing.Charts.AreaChartExtension? openXmlElement, String? value)
+
+  public static void SetUri(AreaChartExtension? openXmlElement, String? value)
   {
     if (openXmlElement != null)
       if (value != null)
@@ -21,16 +24,16 @@ public static class AreaChartExtensionConverter
       else
         openXmlElement.Uri = null;
   }
-  
-  public static DocumentModel.Drawings.Charts.FilteredAreaSeries? GetFilteredAreaSeries(DocumentFormat.OpenXml.Drawing.Charts.AreaChartExtension? openXmlElement)
+
+  public static FilteredAreaSeries? GetFilteredAreaSeries(AreaChartExtension? openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office2013.Drawing.Chart.FilteredAreaSeries>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.Charts.FilteredAreaSeriesConverter.CreateModelElement(itemElement);
+      return FilteredAreaSeriesConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetFilteredAreaSeries(DocumentFormat.OpenXml.Drawing.Charts.AreaChartExtension? openXmlElement, DocumentModel.Drawings.Charts.FilteredAreaSeries? value)
+
+  public static void SetFilteredAreaSeries(AreaChartExtension? openXmlElement, FilteredAreaSeries? value)
   {
     if (openXmlElement != null)
     {
@@ -39,14 +42,14 @@ public static class AreaChartExtensionConverter
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Drawings.Charts.FilteredAreaSeriesConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2013.Drawing.Chart.FilteredAreaSeries>(value);
+        itemElement = FilteredAreaSeriesConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2013.Drawing.Chart.FilteredAreaSeries>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static DocumentModel.Drawings.Charts.AreaChartExtension? CreateModelElement(DocumentFormat.OpenXml.Drawing.Charts.AreaChartExtension? openXmlElement)
+
+  public static DocumentModel.Drawings.Charts.AreaChartExtension? CreateModelElement(AreaChartExtension? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -57,9 +60,9 @@ public static class AreaChartExtensionConverter
     }
     return null;
   }
-  
+
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.Charts.AreaChartExtension? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.Charts.AreaChartExtension, new()
+    where OpenXmlElementType : AreaChartExtension, new()
   {
     if (value != null)
     {

@@ -1,13 +1,12 @@
 namespace DocumentModel.Drawings;
 
 /// <summary>
-/// Soft Edge Effect.
+///   Soft Edge Effect.
 /// </summary>
-public partial class SoftEdge
+public class SoftEdge
 {
   /// <summary>
-  /// Radius
+  ///   Radius
   /// </summary>
   public Int64? Radius { get; set; }
-  
 }

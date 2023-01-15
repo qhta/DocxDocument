@@ -1,19 +1,23 @@
+using DocumentFormat.OpenXml.Wordprocessing;
+using DeletedMathControl = DocumentModel.Wordprocessing.DeletedMathControl;
+using RunProperties = DocumentModel.Wordprocessing.RunProperties;
+
 namespace DocumentModel.OpenXml.Wordprocessing;
 
 /// <summary>
-/// Defines the InsertedMathControl Class.
+///   Defines the InsertedMathControl Class.
 /// </summary>
 public static class InsertedMathControlConverter
 {
   /// <summary>
-  /// author
+  ///   author
   /// </summary>
-  public static String? GetAuthor(DocumentFormat.OpenXml.Wordprocessing.InsertedMathControl? openXmlElement)
+  public static String? GetAuthor(InsertedMathControl? openXmlElement)
   {
     return openXmlElement?.Author?.Value;
   }
-  
-  public static void SetAuthor(DocumentFormat.OpenXml.Wordprocessing.InsertedMathControl? openXmlElement, String? value)
+
+  public static void SetAuthor(InsertedMathControl? openXmlElement, String? value)
   {
     if (openXmlElement != null)
       if (value != null)
@@ -21,30 +25,30 @@ public static class InsertedMathControlConverter
       else
         openXmlElement.Author = null;
   }
-  
+
   /// <summary>
-  /// date
+  ///   date
   /// </summary>
-  public static DateTime? GetDate(DocumentFormat.OpenXml.Wordprocessing.InsertedMathControl? openXmlElement)
+  public static DateTime? GetDate(InsertedMathControl? openXmlElement)
   {
     return openXmlElement?.Date?.Value;
   }
-  
-  public static void SetDate(DocumentFormat.OpenXml.Wordprocessing.InsertedMathControl? openXmlElement, DateTime? value)
+
+  public static void SetDate(InsertedMathControl? openXmlElement, DateTime? value)
   {
     if (openXmlElement != null)
       openXmlElement.Date = value;
   }
-  
+
   /// <summary>
-  /// Annotation Identifier
+  ///   Annotation Identifier
   /// </summary>
-  public static String? GetId(DocumentFormat.OpenXml.Wordprocessing.InsertedMathControl? openXmlElement)
+  public static String? GetId(InsertedMathControl? openXmlElement)
   {
     return openXmlElement?.Id?.Value;
   }
-  
-  public static void SetId(DocumentFormat.OpenXml.Wordprocessing.InsertedMathControl? openXmlElement, String? value)
+
+  public static void SetId(InsertedMathControl? openXmlElement, String? value)
   {
     if (openXmlElement != null)
       if (value != null)
@@ -52,16 +56,16 @@ public static class InsertedMathControlConverter
       else
         openXmlElement.Id = null;
   }
-  
-  public static DocumentModel.Wordprocessing.RunProperties? GetRunProperties(DocumentFormat.OpenXml.Wordprocessing.InsertedMathControl? openXmlElement)
+
+  public static RunProperties? GetRunProperties(InsertedMathControl? openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.RunProperties>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Wordprocessing.RunPropertiesConverter.CreateModelElement(itemElement);
+      return RunPropertiesConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetRunProperties(DocumentFormat.OpenXml.Wordprocessing.InsertedMathControl? openXmlElement, DocumentModel.Wordprocessing.RunProperties? value)
+
+  public static void SetRunProperties(InsertedMathControl? openXmlElement, RunProperties? value)
   {
     if (openXmlElement != null)
     {
@@ -70,22 +74,22 @@ public static class InsertedMathControlConverter
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Wordprocessing.RunPropertiesConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.RunProperties>(value);
+        itemElement = RunPropertiesConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.RunProperties>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static DocumentModel.Wordprocessing.DeletedMathControl? GetDeletedMathControl(DocumentFormat.OpenXml.Wordprocessing.InsertedMathControl? openXmlElement)
+
+  public static DeletedMathControl? GetDeletedMathControl(InsertedMathControl? openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.DeletedMathControl>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Wordprocessing.DeletedMathControlConverter.CreateModelElement(itemElement);
+      return DeletedMathControlConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetDeletedMathControl(DocumentFormat.OpenXml.Wordprocessing.InsertedMathControl? openXmlElement, DocumentModel.Wordprocessing.DeletedMathControl? value)
+
+  public static void SetDeletedMathControl(InsertedMathControl? openXmlElement, DeletedMathControl? value)
   {
     if (openXmlElement != null)
     {
@@ -94,14 +98,14 @@ public static class InsertedMathControlConverter
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Wordprocessing.DeletedMathControlConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.DeletedMathControl>(value);
+        itemElement = DeletedMathControlConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.DeletedMathControl>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static DocumentModel.Wordprocessing.InsertedMathControl? CreateModelElement(DocumentFormat.OpenXml.Wordprocessing.InsertedMathControl? openXmlElement)
+
+  public static DocumentModel.Wordprocessing.InsertedMathControl? CreateModelElement(InsertedMathControl? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -115,9 +119,9 @@ public static class InsertedMathControlConverter
     }
     return null;
   }
-  
+
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.InsertedMathControl? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Wordprocessing.InsertedMathControl, new()
+    where OpenXmlElementType : InsertedMathControl, new()
   {
     if (value != null)
     {

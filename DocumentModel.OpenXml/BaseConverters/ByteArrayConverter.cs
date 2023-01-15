@@ -2,17 +2,17 @@
 
 public static class ByteArrayConverter
 {
-  public static byte[]? GetValue(DocumentFormat.OpenXml.TypedOpenXmlLeafElement? element)
+  public static byte[]? GetValue(TypedOpenXmlLeafElement? element)
   {
     var valProperty = element?.GetType().GetProperty("Val");
     if (valProperty != null)
     {
-      string? value = (string?)valProperty.GetValue(element);
+      var value = (string?)valProperty.GetValue(element);
       if (value != null)
       {
-        if (valProperty.PropertyType == typeof(DocumentFormat.OpenXml.HexBinaryValue))
+        if (valProperty.PropertyType == typeof(HexBinaryValue))
           return Convert.FromHexString(value);
-        if (valProperty.PropertyType == typeof(DocumentFormat.OpenXml.Base64BinaryValue))
+        if (valProperty.PropertyType == typeof(Base64BinaryValue))
           return Convert.FromBase64String(value);
         throw new InvalidOperationException($"ByteArrayConverter can get value only from HexBinaryValue or Base64BinaryValue but \"{valProperty.PropertyType}\" type occured");
       }
@@ -26,8 +26,9 @@ public static class ByteArrayConverter
       return Convert.FromHexString(value);
     return null;
   }
+
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(byte[]? value)
-    where OpenXmlElementType : DocumentFormat.OpenXml.OpenXmlElement, new()
+    where OpenXmlElementType : OpenXmlElement, new()
   {
     if (value != null)
     {
@@ -35,9 +36,9 @@ public static class ByteArrayConverter
       var valProperty = typeof(OpenXmlElementType).GetProperty("Val");
       if (valProperty != null)
       {
-        if (valProperty.PropertyType == typeof(DocumentFormat.OpenXml.HexBinaryValue))
+        if (valProperty.PropertyType == typeof(HexBinaryValue))
           valProperty.SetValue(element, Convert.ToHexString(value));
-        else if (valProperty.PropertyType == typeof(DocumentFormat.OpenXml.Base64BinaryValue))
+        else if (valProperty.PropertyType == typeof(Base64BinaryValue))
           valProperty.SetValue(element, Convert.ToBase64String(value));
         else
           throw new InvalidOperationException(
@@ -47,5 +48,4 @@ public static class ByteArrayConverter
     }
     return null;
   }
-
 }

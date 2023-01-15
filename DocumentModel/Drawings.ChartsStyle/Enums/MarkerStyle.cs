@@ -1,53 +1,52 @@
 namespace DocumentModel.Drawings.ChartsStyle;
 
 /// <summary>
-/// Defines the MarkerStyle enumeration.
+///   Defines the MarkerStyle enumeration.
 /// </summary>
 public enum MarkerStyle
 {
   /// <summary>
-  /// circle.
+  ///   circle.
   /// </summary>
   Circle,
-  
+
   /// <summary>
-  /// dash.
+  ///   dash.
   /// </summary>
   Dash,
-  
+
   /// <summary>
-  /// diamond.
+  ///   diamond.
   /// </summary>
   Diamond,
-  
+
   /// <summary>
-  /// dot.
+  ///   dot.
   /// </summary>
   Dot,
-  
+
   /// <summary>
-  /// plus.
+  ///   plus.
   /// </summary>
   Plus,
-  
+
   /// <summary>
-  /// square.
+  ///   square.
   /// </summary>
   Square,
-  
+
   /// <summary>
-  /// star.
+  ///   star.
   /// </summary>
   Star,
-  
+
   /// <summary>
-  /// triangle.
+  ///   triangle.
   /// </summary>
   Triangle,
-  
+
   /// <summary>
-  /// x.
+  ///   x.
   /// </summary>
-  X,
-  
+  X
 }

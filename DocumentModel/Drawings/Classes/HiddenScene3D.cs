@@ -1,28 +1,27 @@
 namespace DocumentModel.Drawings;
 
 /// <summary>
-/// Defines the HiddenScene3D Class.
+///   Defines the HiddenScene3D Class.
 /// </summary>
-public partial class HiddenScene3D
+public class HiddenScene3D
 {
   /// <summary>
-  /// Camera.
+  ///   Camera.
   /// </summary>
-  public DocumentModel.Drawings.Camera? Camera { get; set; }
-  
+  public Camera? Camera { get; set; }
+
   /// <summary>
-  /// Light Rig.
+  ///   Light Rig.
   /// </summary>
-  public DocumentModel.Drawings.LightRig? LightRig { get; set; }
-  
+  public LightRig? LightRig { get; set; }
+
   /// <summary>
-  /// Backdrop Plane.
+  ///   Backdrop Plane.
   /// </summary>
-  public DocumentModel.Drawings.Backdrop? Backdrop { get; set; }
-  
+  public Backdrop? Backdrop { get; set; }
+
   /// <summary>
-  /// ExtensionList.
+  ///   ExtensionList.
   /// </summary>
-  public DocumentModel.Drawings.ExtensionList? ExtensionList { get; set; }
-  
+  public ExtensionList? ExtensionList { get; set; }
 }

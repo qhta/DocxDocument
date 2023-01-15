@@ -1,60 +1,59 @@
 namespace DocumentModel;
 
 /// <summary>
-/// Defines the GroupBox Class.
+///   Defines the GroupBox Class.
 /// </summary>
-public partial class GroupBox
+public class GroupBox
 {
   /// <summary>
-  /// id, this property is only available in Office 2010 and later.
+  ///   id, this property is only available in Office 2010 and later.
   /// </summary>
   public String? Id { get; set; }
-  
+
   /// <summary>
-  /// idQ, this property is only available in Office 2010 and later.
+  ///   idQ, this property is only available in Office 2010 and later.
   /// </summary>
   public String? QualifiedId { get; set; }
-  
+
   /// <summary>
-  /// tag, this property is only available in Office 2010 and later.
+  ///   tag, this property is only available in Office 2010 and later.
   /// </summary>
   public String? Tag { get; set; }
-  
+
   /// <summary>
-  /// expand, this property is only available in Office 2010 and later.
+  ///   expand, this property is only available in Office 2010 and later.
   /// </summary>
-  public DocumentModel.ExpandKind? Expand { get; set; }
-  
+  public ExpandKind? Expand { get; set; }
+
   /// <summary>
-  /// label, this property is only available in Office 2010 and later.
+  ///   label, this property is only available in Office 2010 and later.
   /// </summary>
   public String? Label { get; set; }
-  
+
   /// <summary>
-  /// getLabel, this property is only available in Office 2010 and later.
+  ///   getLabel, this property is only available in Office 2010 and later.
   /// </summary>
   public String? GetLabel { get; set; }
-  
-  public DocumentModel.BackstageGroupButton? BackstageGroupButton { get; set; }
-  
-  public DocumentModel.BackstageCheckBox? BackstageCheckBox { get; set; }
-  
-  public DocumentModel.BackstageEditBox? BackstageEditBox { get; set; }
-  
-  public DocumentModel.BackstageDropDown? BackstageDropDown { get; set; }
-  
-  public DocumentModel.RadioGroup? RadioGroup { get; set; }
-  
-  public DocumentModel.BackstageComboBox? BackstageComboBox { get; set; }
-  
-  public DocumentModel.Hyperlink? Hyperlink { get; set; }
-  
-  public DocumentModel.BackstageLabelControl? BackstageLabelControl { get; set; }
-  
-  public DocumentModel.GroupBox? ChildGroupBox { get; set; }
-  
-  public DocumentModel.LayoutContainer? LayoutContainer { get; set; }
-  
-  public DocumentModel.ImageControl? ImageControl { get; set; }
-  
+
+  public BackstageGroupButton? BackstageGroupButton { get; set; }
+
+  public BackstageCheckBox? BackstageCheckBox { get; set; }
+
+  public BackstageEditBox? BackstageEditBox { get; set; }
+
+  public BackstageDropDown? BackstageDropDown { get; set; }
+
+  public RadioGroup? RadioGroup { get; set; }
+
+  public BackstageComboBox? BackstageComboBox { get; set; }
+
+  public Hyperlink? Hyperlink { get; set; }
+
+  public BackstageLabelControl? BackstageLabelControl { get; set; }
+
+  public GroupBox? ChildGroupBox { get; set; }
+
+  public LayoutContainer? LayoutContainer { get; set; }
+
+  public ImageControl? ImageControl { get; set; }
 }

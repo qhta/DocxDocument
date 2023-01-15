@@ -1,12 +1,11 @@
 namespace DocumentModel.Packaging;
 
 /// <summary>
-/// Defines the SlideCommentsPart
+///   Defines the SlideCommentsPart
 /// </summary>
-public partial class SlideCommentsPart
+public class SlideCommentsPart
 {
   public String? ContentType { get; set; }
-  
+
   public String? RelationshipType { get; set; }
-  
 }

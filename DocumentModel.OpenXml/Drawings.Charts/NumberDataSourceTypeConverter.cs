@@ -1,22 +1,25 @@
+using DocumentModel.Drawings.Charts;
+using NumberDataSourceType = DocumentFormat.OpenXml.Drawing.Charts.NumberDataSourceType;
+
 namespace DocumentModel.OpenXml.Drawings.Charts;
 
 /// <summary>
-/// Defines the NumberDataSourceType Class.
+///   Defines the NumberDataSourceType Class.
 /// </summary>
 public static class NumberDataSourceTypeConverter
 {
   /// <summary>
-  /// Number Reference.
+  ///   Number Reference.
   /// </summary>
-  public static DocumentModel.Drawings.Charts.NumberReference? GetNumberReference(DocumentFormat.OpenXml.Drawing.Charts.NumberDataSourceType? openXmlElement)
+  public static NumberReference? GetNumberReference(NumberDataSourceType? openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.NumberReference>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.Charts.NumberReferenceConverter.CreateModelElement(itemElement);
+      return NumberReferenceConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetNumberReference(DocumentFormat.OpenXml.Drawing.Charts.NumberDataSourceType? openXmlElement, DocumentModel.Drawings.Charts.NumberReference? value)
+
+  public static void SetNumberReference(NumberDataSourceType? openXmlElement, NumberReference? value)
   {
     if (openXmlElement != null)
     {
@@ -25,25 +28,25 @@ public static class NumberDataSourceTypeConverter
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Drawings.Charts.NumberReferenceConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Charts.NumberReference>(value);
+        itemElement = NumberReferenceConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Charts.NumberReference>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
+
   /// <summary>
-  /// Number Literal.
+  ///   Number Literal.
   /// </summary>
-  public static DocumentModel.Drawings.Charts.NumberLiteral? GetNumberLiteral(DocumentFormat.OpenXml.Drawing.Charts.NumberDataSourceType? openXmlElement)
+  public static NumberLiteral? GetNumberLiteral(NumberDataSourceType? openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.NumberLiteral>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.Charts.NumberLiteralConverter.CreateModelElement(itemElement);
+      return NumberLiteralConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetNumberLiteral(DocumentFormat.OpenXml.Drawing.Charts.NumberDataSourceType? openXmlElement, DocumentModel.Drawings.Charts.NumberLiteral? value)
+
+  public static void SetNumberLiteral(NumberDataSourceType? openXmlElement, NumberLiteral? value)
   {
     if (openXmlElement != null)
     {
@@ -52,14 +55,14 @@ public static class NumberDataSourceTypeConverter
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Drawings.Charts.NumberLiteralConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Charts.NumberLiteral>(value);
+        itemElement = NumberLiteralConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Charts.NumberLiteral>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static DocumentModel.Drawings.Charts.NumberDataSourceType? CreateModelElement(DocumentFormat.OpenXml.Drawing.Charts.NumberDataSourceType? openXmlElement)
+
+  public static DocumentModel.Drawings.Charts.NumberDataSourceType? CreateModelElement(NumberDataSourceType? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -70,9 +73,9 @@ public static class NumberDataSourceTypeConverter
     }
     return null;
   }
-  
+
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.Charts.NumberDataSourceType? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.Charts.NumberDataSourceType, new()
+    where OpenXmlElementType : NumberDataSourceType, new()
   {
     if (value != null)
     {

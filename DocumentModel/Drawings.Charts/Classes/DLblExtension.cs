@@ -1,23 +1,22 @@
 namespace DocumentModel.Drawings.Charts;
 
 /// <summary>
-/// Defines the DLblExtension Class.
+///   Defines the DLblExtension Class.
 /// </summary>
-public partial class DLblExtension
+public class DLblExtension
 {
   /// <summary>
-  /// URI
+  ///   URI
   /// </summary>
   public String? Uri { get; set; }
-  
-  public DocumentModel.Drawings.Charts.DataLabelFieldTable? DataLabelFieldTable { get; set; }
-  
+
+  public DataLabelFieldTable? DataLabelFieldTable { get; set; }
+
   public Boolean? ExceptionForSave { get; set; }
-  
+
   public Boolean? ShowDataLabelsRange { get; set; }
-  
-  public DocumentModel.Drawings.Charts.ShapeProperties3? ShapeProperties { get; set; }
-  
-  public DocumentModel.Drawings.Charts.Layout3? Layout { get; set; }
-  
+
+  public ShapeProperties3? ShapeProperties { get; set; }
+
+  public Layout3? Layout { get; set; }
 }

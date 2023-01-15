@@ -1,22 +1,25 @@
+using DocumentModel.Math;
+using Bar = DocumentFormat.OpenXml.Math.Bar;
+
 namespace DocumentModel.OpenXml.Math;
 
 /// <summary>
-/// Bar.
+///   Bar.
 /// </summary>
 public static class BarConverter
 {
   /// <summary>
-  /// Bar Properties.
+  ///   Bar Properties.
   /// </summary>
-  public static DocumentModel.Math.BarProperties? GetBarProperties(DocumentFormat.OpenXml.Math.Bar? openXmlElement)
+  public static BarProperties? GetBarProperties(Bar? openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Math.BarProperties>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Math.BarPropertiesConverter.CreateModelElement(itemElement);
+      return BarPropertiesConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetBarProperties(DocumentFormat.OpenXml.Math.Bar? openXmlElement, DocumentModel.Math.BarProperties? value)
+
+  public static void SetBarProperties(Bar? openXmlElement, BarProperties? value)
   {
     if (openXmlElement != null)
     {
@@ -25,25 +28,25 @@ public static class BarConverter
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Math.BarPropertiesConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Math.BarProperties>(value);
+        itemElement = BarPropertiesConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Math.BarProperties>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
+
   /// <summary>
-  /// Base.
+  ///   Base.
   /// </summary>
-  public static DocumentModel.Math.Base? GetBase(DocumentFormat.OpenXml.Math.Bar? openXmlElement)
+  public static Base? GetBase(Bar? openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Math.Base>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Math.BaseConverter.CreateModelElement(itemElement);
+      return BaseConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetBase(DocumentFormat.OpenXml.Math.Bar? openXmlElement, DocumentModel.Math.Base? value)
+
+  public static void SetBase(Bar? openXmlElement, Base? value)
   {
     if (openXmlElement != null)
     {
@@ -52,14 +55,14 @@ public static class BarConverter
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Math.BaseConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Math.Base>(value);
+        itemElement = BaseConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Math.Base>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static DocumentModel.Math.Bar? CreateModelElement(DocumentFormat.OpenXml.Math.Bar? openXmlElement)
+
+  public static DocumentModel.Math.Bar? CreateModelElement(Bar? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -70,9 +73,9 @@ public static class BarConverter
     }
     return null;
   }
-  
+
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Math.Bar? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Math.Bar, new()
+    where OpenXmlElementType : Bar, new()
   {
     if (value != null)
     {

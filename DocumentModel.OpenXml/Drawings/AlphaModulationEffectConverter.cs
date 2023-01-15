@@ -1,22 +1,25 @@
+using DocumentModel.Drawings;
+using AlphaModulationEffect = DocumentFormat.OpenXml.Drawing.AlphaModulationEffect;
+
 namespace DocumentModel.OpenXml.Drawings;
 
 /// <summary>
-/// Alpha Modulate Effect.
+///   Alpha Modulate Effect.
 /// </summary>
 public static class AlphaModulationEffectConverter
 {
   /// <summary>
-  /// EffectContainer.
+  ///   EffectContainer.
   /// </summary>
-  public static DocumentModel.Drawings.EffectContainer? GetEffectContainer(DocumentFormat.OpenXml.Drawing.AlphaModulationEffect? openXmlElement)
+  public static EffectContainer? GetEffectContainer(AlphaModulationEffect? openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.EffectContainer>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.EffectContainerConverter.CreateModelElement(itemElement);
+      return EffectContainerConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetEffectContainer(DocumentFormat.OpenXml.Drawing.AlphaModulationEffect? openXmlElement, DocumentModel.Drawings.EffectContainer? value)
+
+  public static void SetEffectContainer(AlphaModulationEffect? openXmlElement, EffectContainer? value)
   {
     if (openXmlElement != null)
     {
@@ -25,14 +28,14 @@ public static class AlphaModulationEffectConverter
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Drawings.EffectContainerConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.EffectContainer>(value);
+        itemElement = EffectContainerConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.EffectContainer>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static DocumentModel.Drawings.AlphaModulationEffect? CreateModelElement(DocumentFormat.OpenXml.Drawing.AlphaModulationEffect? openXmlElement)
+
+  public static DocumentModel.Drawings.AlphaModulationEffect? CreateModelElement(AlphaModulationEffect? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -42,9 +45,9 @@ public static class AlphaModulationEffectConverter
     }
     return null;
   }
-  
+
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.AlphaModulationEffect? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.AlphaModulationEffect, new()
+    where OpenXmlElementType : AlphaModulationEffect, new()
   {
     if (value != null)
     {

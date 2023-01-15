@@ -2,8 +2,7 @@ namespace DocumentModel.OpenXml;
 
 public static class VTVectorConverter
 {
-
-  private static BiDiDictionary<VectorBaseValues, VariantType> VectorBaseTypeConversion = new()
+  private static readonly BiDiDictionary<VectorBaseValues, VariantType> VectorBaseTypeConversion = new()
   {
     { VectorBaseValues.OneByteSignedInteger, VariantType.Byte },
     { VectorBaseValues.TwoBytesSignedInteger, VariantType.Int16 },
@@ -25,7 +24,7 @@ public static class VTVectorConverter
     { VectorBaseValues.Error, VariantType.Error },
     { VectorBaseValues.ClassId, VariantType.ClassId },
     { VectorBaseValues.ClipboardData, VariantType.ClipboardData },
-    { VectorBaseValues.Variant, VariantType.Variant },
+    { VectorBaseValues.Variant, VariantType.Variant }
   };
 
   public static VariantType? GetBaseType(VTVector openXmlElement)
@@ -51,7 +50,7 @@ public static class VTVectorConverter
     if (openXmlElement != null)
     {
       var baseType = GetBaseType(openXmlElement);
-      var itemType = (baseType != null) ? VectorVariant.ItemTypes[(VariantType)baseType] : null;
+      var itemType = baseType != null ? Variant.ItemTypes[(VariantType)baseType] : null;
       var _value = new VectorVariant();
       foreach (var item in openXmlElement.Elements())
       {
@@ -92,7 +91,7 @@ public static class VTVectorConverter
         if (itemType != null)
         {
           var str = (string?)Convert.ChangeType(itemValue, itemType);
-          if (str==null)
+          if (str == null)
             str = string.Empty;
           _value.Add(str);
         }
@@ -115,6 +114,7 @@ public static class VTVectorConverter
         }
     }
   }
+
   public static VTVector CreateOpenXmlElement(VectorVariant? value)
   {
     var openXmlElement = new VTVector();

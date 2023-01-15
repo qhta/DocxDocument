@@ -1,67 +1,75 @@
+using DocumentFormat.OpenXml.Drawing;
+using DocumentModel.Drawings;
+using BlipFill = DocumentModel.Drawings.BlipFill;
+using FillOverlay = DocumentFormat.OpenXml.Drawing.FillOverlay;
+using GradientFill = DocumentModel.Drawings.GradientFill;
+using PatternFill = DocumentModel.Drawings.PatternFill;
+using SolidFill = DocumentModel.Drawings.SolidFill;
+
 namespace DocumentModel.OpenXml.Drawings;
 
 /// <summary>
-/// Fill Overlay Effect.
+///   Fill Overlay Effect.
 /// </summary>
 public static class FillOverlayConverter
 {
   /// <summary>
-  /// Blend
+  ///   Blend
   /// </summary>
-  public static DocumentModel.Drawings.BlendMode? GetBlend(DocumentFormat.OpenXml.Drawing.FillOverlay? openXmlElement)
+  public static BlendMode? GetBlend(FillOverlay? openXmlElement)
   {
-    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Drawing.BlendModeValues, DocumentModel.Drawings.BlendMode>(openXmlElement?.Blend?.Value);
+    return EnumValueConverter.GetValue<BlendModeValues, BlendMode>(openXmlElement?.Blend?.Value);
   }
-  
-  public static void SetBlend(DocumentFormat.OpenXml.Drawing.FillOverlay? openXmlElement, DocumentModel.Drawings.BlendMode? value)
+
+  public static void SetBlend(FillOverlay? openXmlElement, BlendMode? value)
   {
     if (openXmlElement != null)
-      openXmlElement.Blend = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Drawing.BlendModeValues, DocumentModel.Drawings.BlendMode>(value);
+      openXmlElement.Blend = EnumValueConverter.CreateEnumValue<BlendModeValues, BlendMode>(value);
   }
-  
+
   /// <summary>
-  /// NoFill.
+  ///   NoFill.
   /// </summary>
-  public static Boolean? GetNoFill(DocumentFormat.OpenXml.Drawing.FillOverlay? openXmlElement)
+  public static Boolean? GetNoFill(FillOverlay? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.NoFill>();
+      var itemElement = openXmlElement.GetFirstChild<NoFill>();
       return itemElement != null;
     }
     return null;
   }
-  
-  public static void SetNoFill(DocumentFormat.OpenXml.Drawing.FillOverlay? openXmlElement, Boolean? value)
+
+  public static void SetNoFill(FillOverlay? openXmlElement, Boolean? value)
   {
     if (openXmlElement != null)
     {
       if (value == false)
       {
-        var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.NoFill>();
+        var itemElement = openXmlElement.GetFirstChild<NoFill>();
         if (itemElement != null)
           itemElement.Remove();
       }
       if (value == true)
       {
-        var itemElement = new DocumentFormat.OpenXml.Drawing.NoFill();
+        var itemElement = new NoFill();
         openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
+
   /// <summary>
-  /// SolidFill.
+  ///   SolidFill.
   /// </summary>
-  public static DocumentModel.Drawings.SolidFill? GetSolidFill(DocumentFormat.OpenXml.Drawing.FillOverlay? openXmlElement)
+  public static SolidFill? GetSolidFill(FillOverlay? openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.SolidFill>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.SolidFillConverter.CreateModelElement(itemElement);
+      return SolidFillConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetSolidFill(DocumentFormat.OpenXml.Drawing.FillOverlay? openXmlElement, DocumentModel.Drawings.SolidFill? value)
+
+  public static void SetSolidFill(FillOverlay? openXmlElement, SolidFill? value)
   {
     if (openXmlElement != null)
     {
@@ -70,25 +78,25 @@ public static class FillOverlayConverter
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Drawings.SolidFillConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.SolidFill>(value);
+        itemElement = SolidFillConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.SolidFill>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
+
   /// <summary>
-  /// GradientFill.
+  ///   GradientFill.
   /// </summary>
-  public static DocumentModel.Drawings.GradientFill? GetGradientFill(DocumentFormat.OpenXml.Drawing.FillOverlay? openXmlElement)
+  public static GradientFill? GetGradientFill(FillOverlay? openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.GradientFill>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.GradientFillConverter.CreateModelElement(itemElement);
+      return GradientFillConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetGradientFill(DocumentFormat.OpenXml.Drawing.FillOverlay? openXmlElement, DocumentModel.Drawings.GradientFill? value)
+
+  public static void SetGradientFill(FillOverlay? openXmlElement, GradientFill? value)
   {
     if (openXmlElement != null)
     {
@@ -97,25 +105,25 @@ public static class FillOverlayConverter
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Drawings.GradientFillConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.GradientFill>(value);
+        itemElement = GradientFillConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.GradientFill>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
+
   /// <summary>
-  /// BlipFill.
+  ///   BlipFill.
   /// </summary>
-  public static DocumentModel.Drawings.BlipFill? GetBlipFill(DocumentFormat.OpenXml.Drawing.FillOverlay? openXmlElement)
+  public static BlipFill? GetBlipFill(FillOverlay? openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.BlipFill>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.BlipFillConverter.CreateModelElement(itemElement);
+      return BlipFillConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetBlipFill(DocumentFormat.OpenXml.Drawing.FillOverlay? openXmlElement, DocumentModel.Drawings.BlipFill? value)
+
+  public static void SetBlipFill(FillOverlay? openXmlElement, BlipFill? value)
   {
     if (openXmlElement != null)
     {
@@ -124,25 +132,25 @@ public static class FillOverlayConverter
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Drawings.BlipFillConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.BlipFill>(value);
+        itemElement = BlipFillConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.BlipFill>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
+
   /// <summary>
-  /// Pattern Fill.
+  ///   Pattern Fill.
   /// </summary>
-  public static DocumentModel.Drawings.PatternFill? GetPatternFill(DocumentFormat.OpenXml.Drawing.FillOverlay? openXmlElement)
+  public static PatternFill? GetPatternFill(FillOverlay? openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.PatternFill>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.PatternFillConverter.CreateModelElement(itemElement);
+      return PatternFillConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetPatternFill(DocumentFormat.OpenXml.Drawing.FillOverlay? openXmlElement, DocumentModel.Drawings.PatternFill? value)
+
+  public static void SetPatternFill(FillOverlay? openXmlElement, PatternFill? value)
   {
     if (openXmlElement != null)
     {
@@ -151,45 +159,45 @@ public static class FillOverlayConverter
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Drawings.PatternFillConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.PatternFill>(value);
+        itemElement = PatternFillConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.PatternFill>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
+
   /// <summary>
-  /// Group Fill.
+  ///   Group Fill.
   /// </summary>
-  public static Boolean? GetGroupFill(DocumentFormat.OpenXml.Drawing.FillOverlay? openXmlElement)
+  public static Boolean? GetGroupFill(FillOverlay? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.GroupFill>();
+      var itemElement = openXmlElement.GetFirstChild<GroupFill>();
       return itemElement != null;
     }
     return null;
   }
-  
-  public static void SetGroupFill(DocumentFormat.OpenXml.Drawing.FillOverlay? openXmlElement, Boolean? value)
+
+  public static void SetGroupFill(FillOverlay? openXmlElement, Boolean? value)
   {
     if (openXmlElement != null)
     {
       if (value == false)
       {
-        var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.GroupFill>();
+        var itemElement = openXmlElement.GetFirstChild<GroupFill>();
         if (itemElement != null)
           itemElement.Remove();
       }
       if (value == true)
       {
-        var itemElement = new DocumentFormat.OpenXml.Drawing.GroupFill();
+        var itemElement = new GroupFill();
         openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static DocumentModel.Drawings.FillOverlay? CreateModelElement(DocumentFormat.OpenXml.Drawing.FillOverlay? openXmlElement)
+
+  public static DocumentModel.Drawings.FillOverlay? CreateModelElement(FillOverlay? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -205,9 +213,9 @@ public static class FillOverlayConverter
     }
     return null;
   }
-  
+
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.FillOverlay? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.FillOverlay, new()
+    where OpenXmlElementType : FillOverlay, new()
   {
     if (value != null)
     {

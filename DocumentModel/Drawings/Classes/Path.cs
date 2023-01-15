@@ -1,45 +1,44 @@
 namespace DocumentModel.Drawings;
 
 /// <summary>
-/// Shape Path.
+///   Shape Path.
 /// </summary>
-public partial class Path
+public class Path
 {
   /// <summary>
-  /// Path Width
+  ///   Path Width
   /// </summary>
   public Int64? Width { get; set; }
-  
+
   /// <summary>
-  /// Path Height
+  ///   Path Height
   /// </summary>
   public Int64? Height { get; set; }
-  
+
   /// <summary>
-  /// Path Fill
+  ///   Path Fill
   /// </summary>
-  public DocumentModel.Drawings.PathFillMode? Fill { get; set; }
-  
+  public PathFillMode? Fill { get; set; }
+
   /// <summary>
-  /// Path Stroke
+  ///   Path Stroke
   /// </summary>
   public Boolean? Stroke { get; set; }
-  
+
   /// <summary>
-  /// 3D Extrusion Allowed
+  ///   3D Extrusion Allowed
   /// </summary>
   public Boolean? ExtrusionOk { get; set; }
-  
+
   public Boolean? CloseShapePath { get; set; }
-  
-  public DocumentModel.Drawings.MoveTo? MoveTo { get; set; }
-  
-  public DocumentModel.Drawings.LineTo? LineTo { get; set; }
-  
-  public DocumentModel.Drawings.ArcTo? ArcTo { get; set; }
-  
-  public DocumentModel.Drawings.QuadraticBezierCurveTo? QuadraticBezierCurveTo { get; set; }
-  
-  public DocumentModel.Drawings.CubicBezierCurveTo? CubicBezierCurveTo { get; set; }
-  
+
+  public MoveTo? MoveTo { get; set; }
+
+  public LineTo? LineTo { get; set; }
+
+  public ArcTo? ArcTo { get; set; }
+
+  public QuadraticBezierCurveTo? QuadraticBezierCurveTo { get; set; }
+
+  public CubicBezierCurveTo? CubicBezierCurveTo { get; set; }
 }

@@ -1,18 +1,18 @@
 namespace DocumentModel.OpenXml;
 
 /// <summary>
-/// Defines the Task Class.
+///   Defines the Task Class.
 /// </summary>
 public static class TaskConverter
 {
   /// <summary>
-  /// id, this property is only available in Office 2021 and later.
+  ///   id, this property is only available in Office 2021 and later.
   /// </summary>
   public static String? GetId(DocumentFormat.OpenXml.Office2021.DocumentTasks.Task? openXmlElement)
   {
     return openXmlElement?.Id?.Value;
   }
-  
+
   public static void SetId(DocumentFormat.OpenXml.Office2021.DocumentTasks.Task? openXmlElement, String? value)
   {
     if (openXmlElement != null)
@@ -21,19 +21,19 @@ public static class TaskConverter
       else
         openXmlElement.Id = null;
   }
-  
+
   /// <summary>
-  /// TaskAnchor.
+  ///   TaskAnchor.
   /// </summary>
-  public static DocumentModel.TaskAnchor? GetTaskAnchor(DocumentFormat.OpenXml.Office2021.DocumentTasks.Task? openXmlElement)
+  public static TaskAnchor? GetTaskAnchor(DocumentFormat.OpenXml.Office2021.DocumentTasks.Task? openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office2021.DocumentTasks.TaskAnchor>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.TaskAnchorConverter.CreateModelElement(itemElement);
+      return TaskAnchorConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetTaskAnchor(DocumentFormat.OpenXml.Office2021.DocumentTasks.Task? openXmlElement, DocumentModel.TaskAnchor? value)
+
+  public static void SetTaskAnchor(DocumentFormat.OpenXml.Office2021.DocumentTasks.Task? openXmlElement, TaskAnchor? value)
   {
     if (openXmlElement != null)
     {
@@ -42,25 +42,25 @@ public static class TaskConverter
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.TaskAnchorConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2021.DocumentTasks.TaskAnchor>(value);
+        itemElement = TaskAnchorConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2021.DocumentTasks.TaskAnchor>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
+
   /// <summary>
-  /// TaskHistory.
+  ///   TaskHistory.
   /// </summary>
-  public static DocumentModel.TaskHistory? GetTaskHistory(DocumentFormat.OpenXml.Office2021.DocumentTasks.Task? openXmlElement)
+  public static TaskHistory? GetTaskHistory(DocumentFormat.OpenXml.Office2021.DocumentTasks.Task? openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office2021.DocumentTasks.TaskHistory>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.TaskHistoryConverter.CreateModelElement(itemElement);
+      return TaskHistoryConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetTaskHistory(DocumentFormat.OpenXml.Office2021.DocumentTasks.Task? openXmlElement, DocumentModel.TaskHistory? value)
+
+  public static void SetTaskHistory(DocumentFormat.OpenXml.Office2021.DocumentTasks.Task? openXmlElement, TaskHistory? value)
   {
     if (openXmlElement != null)
     {
@@ -69,25 +69,25 @@ public static class TaskConverter
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.TaskHistoryConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2021.DocumentTasks.TaskHistory>(value);
+        itemElement = TaskHistoryConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2021.DocumentTasks.TaskHistory>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
+
   /// <summary>
-  /// ExtensionList.
+  ///   ExtensionList.
   /// </summary>
-  public static DocumentModel.ExtensionList? GetExtensionList(DocumentFormat.OpenXml.Office2021.DocumentTasks.Task? openXmlElement)
+  public static ExtensionList? GetExtensionList(DocumentFormat.OpenXml.Office2021.DocumentTasks.Task? openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office2021.DocumentTasks.ExtensionList>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.ExtensionListConverter.CreateModelElement(itemElement);
+      return ExtensionListConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetExtensionList(DocumentFormat.OpenXml.Office2021.DocumentTasks.Task? openXmlElement, DocumentModel.ExtensionList? value)
+
+  public static void SetExtensionList(DocumentFormat.OpenXml.Office2021.DocumentTasks.Task? openXmlElement, ExtensionList? value)
   {
     if (openXmlElement != null)
     {
@@ -96,18 +96,18 @@ public static class TaskConverter
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.ExtensionListConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2021.DocumentTasks.ExtensionList>(value);
+        itemElement = ExtensionListConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2021.DocumentTasks.ExtensionList>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static DocumentModel.Task? CreateModelElement(DocumentFormat.OpenXml.Office2021.DocumentTasks.Task? openXmlElement)
+
+  public static Task? CreateModelElement(DocumentFormat.OpenXml.Office2021.DocumentTasks.Task? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Task();
+      var value = new Task();
       value.Id = GetId(openXmlElement);
       value.TaskAnchor = GetTaskAnchor(openXmlElement);
       value.TaskHistory = GetTaskHistory(openXmlElement);
@@ -116,9 +116,9 @@ public static class TaskConverter
     }
     return null;
   }
-  
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Task? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Office2021.DocumentTasks.Task, new()
+
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(Task? value)
+    where OpenXmlElementType : DocumentFormat.OpenXml.Office2021.DocumentTasks.Task, new()
   {
     if (value != null)
     {

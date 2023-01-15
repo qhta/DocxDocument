@@ -1,19 +1,23 @@
+using DocumentFormat.OpenXml.Vml.Office;
+using DocumentModel.Vml;
+using Background = DocumentFormat.OpenXml.Vml.Background;
+
 namespace DocumentModel.OpenXml.Vml;
 
 /// <summary>
-/// Document Background.
+///   Document Background.
 /// </summary>
 public static class BackgroundConverter
 {
   /// <summary>
-  /// Unique Identifier
+  ///   Unique Identifier
   /// </summary>
-  public static String? GetId(DocumentFormat.OpenXml.Vml.Background? openXmlElement)
+  public static String? GetId(Background? openXmlElement)
   {
     return openXmlElement?.Id?.Value;
   }
-  
-  public static void SetId(DocumentFormat.OpenXml.Vml.Background? openXmlElement, String? value)
+
+  public static void SetId(Background? openXmlElement, String? value)
   {
     if (openXmlElement != null)
       if (value != null)
@@ -21,16 +25,16 @@ public static class BackgroundConverter
       else
         openXmlElement.Id = null;
   }
-  
+
   /// <summary>
-  /// Shape Fill Toggle
+  ///   Shape Fill Toggle
   /// </summary>
-  public static Boolean? GetFilled(DocumentFormat.OpenXml.Vml.Background? openXmlElement)
+  public static Boolean? GetFilled(Background? openXmlElement)
   {
     return openXmlElement?.Filled?.Value;
   }
-  
-  public static void SetFilled(DocumentFormat.OpenXml.Vml.Background? openXmlElement, Boolean? value)
+
+  public static void SetFilled(Background? openXmlElement, Boolean? value)
   {
     if (openXmlElement != null)
       if (value != null)
@@ -38,16 +42,16 @@ public static class BackgroundConverter
       else
         openXmlElement.Filled = null;
   }
-  
+
   /// <summary>
-  /// Fill Color
+  ///   Fill Color
   /// </summary>
-  public static String? GetFillcolor(DocumentFormat.OpenXml.Vml.Background? openXmlElement)
+  public static String? GetFillcolor(Background? openXmlElement)
   {
     return openXmlElement?.Fillcolor?.Value;
   }
-  
-  public static void SetFillcolor(DocumentFormat.OpenXml.Vml.Background? openXmlElement, String? value)
+
+  public static void SetFillcolor(Background? openXmlElement, String? value)
   {
     if (openXmlElement != null)
       if (value != null)
@@ -55,75 +59,75 @@ public static class BackgroundConverter
       else
         openXmlElement.Fillcolor = null;
   }
-  
+
   /// <summary>
-  /// Black-and-White Mode
+  ///   Black-and-White Mode
   /// </summary>
-  public static DocumentModel.Vml.BlackAndWhiteMode? GetBlackWhiteMode(DocumentFormat.OpenXml.Vml.Background? openXmlElement)
+  public static BlackAndWhiteMode? GetBlackWhiteMode(Background? openXmlElement)
   {
-    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Vml.Office.BlackAndWhiteModeValues, DocumentModel.Vml.BlackAndWhiteMode>(openXmlElement?.BlackWhiteMode?.Value);
+    return EnumValueConverter.GetValue<BlackAndWhiteModeValues, BlackAndWhiteMode>(openXmlElement?.BlackWhiteMode?.Value);
   }
-  
-  public static void SetBlackWhiteMode(DocumentFormat.OpenXml.Vml.Background? openXmlElement, DocumentModel.Vml.BlackAndWhiteMode? value)
+
+  public static void SetBlackWhiteMode(Background? openXmlElement, BlackAndWhiteMode? value)
   {
     if (openXmlElement != null)
-      openXmlElement.BlackWhiteMode = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Vml.Office.BlackAndWhiteModeValues, DocumentModel.Vml.BlackAndWhiteMode>(value);
+      openXmlElement.BlackWhiteMode = EnumValueConverter.CreateEnumValue<BlackAndWhiteModeValues, BlackAndWhiteMode>(value);
   }
-  
+
   /// <summary>
-  /// Pure Black-and-White Mode
+  ///   Pure Black-and-White Mode
   /// </summary>
-  public static DocumentModel.Vml.BlackAndWhiteMode? GetPureBlackWhiteMode(DocumentFormat.OpenXml.Vml.Background? openXmlElement)
+  public static BlackAndWhiteMode? GetPureBlackWhiteMode(Background? openXmlElement)
   {
-    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Vml.Office.BlackAndWhiteModeValues, DocumentModel.Vml.BlackAndWhiteMode>(openXmlElement?.PureBlackWhiteMode?.Value);
+    return EnumValueConverter.GetValue<BlackAndWhiteModeValues, BlackAndWhiteMode>(openXmlElement?.PureBlackWhiteMode?.Value);
   }
-  
-  public static void SetPureBlackWhiteMode(DocumentFormat.OpenXml.Vml.Background? openXmlElement, DocumentModel.Vml.BlackAndWhiteMode? value)
+
+  public static void SetPureBlackWhiteMode(Background? openXmlElement, BlackAndWhiteMode? value)
   {
     if (openXmlElement != null)
-      openXmlElement.PureBlackWhiteMode = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Vml.Office.BlackAndWhiteModeValues, DocumentModel.Vml.BlackAndWhiteMode>(value);
+      openXmlElement.PureBlackWhiteMode = EnumValueConverter.CreateEnumValue<BlackAndWhiteModeValues, BlackAndWhiteMode>(value);
   }
-  
+
   /// <summary>
-  /// Normal Black-and-White Mode
+  ///   Normal Black-and-White Mode
   /// </summary>
-  public static DocumentModel.Vml.BlackAndWhiteMode? GetNormalBlackWhiteMode(DocumentFormat.OpenXml.Vml.Background? openXmlElement)
+  public static BlackAndWhiteMode? GetNormalBlackWhiteMode(Background? openXmlElement)
   {
-    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Vml.Office.BlackAndWhiteModeValues, DocumentModel.Vml.BlackAndWhiteMode>(openXmlElement?.NormalBlackWhiteMode?.Value);
+    return EnumValueConverter.GetValue<BlackAndWhiteModeValues, BlackAndWhiteMode>(openXmlElement?.NormalBlackWhiteMode?.Value);
   }
-  
-  public static void SetNormalBlackWhiteMode(DocumentFormat.OpenXml.Vml.Background? openXmlElement, DocumentModel.Vml.BlackAndWhiteMode? value)
+
+  public static void SetNormalBlackWhiteMode(Background? openXmlElement, BlackAndWhiteMode? value)
   {
     if (openXmlElement != null)
-      openXmlElement.NormalBlackWhiteMode = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Vml.Office.BlackAndWhiteModeValues, DocumentModel.Vml.BlackAndWhiteMode>(value);
+      openXmlElement.NormalBlackWhiteMode = EnumValueConverter.CreateEnumValue<BlackAndWhiteModeValues, BlackAndWhiteMode>(value);
   }
-  
+
   /// <summary>
-  /// Target Screen Size
+  ///   Target Screen Size
   /// </summary>
-  public static DocumentModel.Vml.ScreenSizeKind? GetTargetScreenSize(DocumentFormat.OpenXml.Vml.Background? openXmlElement)
+  public static ScreenSizeKind? GetTargetScreenSize(Background? openXmlElement)
   {
-    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Vml.Office.ScreenSizeValues, DocumentModel.Vml.ScreenSizeKind>(openXmlElement?.TargetScreenSize?.Value);
+    return EnumValueConverter.GetValue<ScreenSizeValues, ScreenSizeKind>(openXmlElement?.TargetScreenSize?.Value);
   }
-  
-  public static void SetTargetScreenSize(DocumentFormat.OpenXml.Vml.Background? openXmlElement, DocumentModel.Vml.ScreenSizeKind? value)
+
+  public static void SetTargetScreenSize(Background? openXmlElement, ScreenSizeKind? value)
   {
     if (openXmlElement != null)
-      openXmlElement.TargetScreenSize = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Vml.Office.ScreenSizeValues, DocumentModel.Vml.ScreenSizeKind>(value);
+      openXmlElement.TargetScreenSize = EnumValueConverter.CreateEnumValue<ScreenSizeValues, ScreenSizeKind>(value);
   }
-  
+
   /// <summary>
-  /// Fill.
+  ///   Fill.
   /// </summary>
-  public static DocumentModel.Vml.Fill? GetFill(DocumentFormat.OpenXml.Vml.Background? openXmlElement)
+  public static Fill? GetFill(Background? openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Vml.Fill>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Vml.FillConverter.CreateModelElement(itemElement);
+      return FillConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetFill(DocumentFormat.OpenXml.Vml.Background? openXmlElement, DocumentModel.Vml.Fill? value)
+
+  public static void SetFill(Background? openXmlElement, Fill? value)
   {
     if (openXmlElement != null)
     {
@@ -132,14 +136,14 @@ public static class BackgroundConverter
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Vml.FillConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Vml.Fill>(value);
+        itemElement = FillConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Vml.Fill>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static DocumentModel.Vml.Background? CreateModelElement(DocumentFormat.OpenXml.Vml.Background? openXmlElement)
+
+  public static DocumentModel.Vml.Background? CreateModelElement(Background? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -156,9 +160,9 @@ public static class BackgroundConverter
     }
     return null;
   }
-  
+
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Vml.Background? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Vml.Background, new()
+    where OpenXmlElementType : Background, new()
   {
     if (value != null)
     {

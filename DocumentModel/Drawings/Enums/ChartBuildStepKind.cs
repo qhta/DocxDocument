@@ -1,38 +1,37 @@
 namespace DocumentModel.Drawings;
 
 /// <summary>
-/// Chart Animation Build Step
+///   Chart Animation Build Step
 /// </summary>
 public enum ChartBuildStepKind
 {
   /// <summary>
-  /// Category.
+  ///   Category.
   /// </summary>
   Category,
-  
+
   /// <summary>
-  /// Category Points.
+  ///   Category Points.
   /// </summary>
   CategoryPoints,
-  
+
   /// <summary>
-  /// Series.
+  ///   Series.
   /// </summary>
   Series,
-  
+
   /// <summary>
-  /// Series Points.
+  ///   Series Points.
   /// </summary>
   SeriesPoints,
-  
+
   /// <summary>
-  /// All Points.
+  ///   All Points.
   /// </summary>
   AllPoints,
-  
+
   /// <summary>
-  /// Grid and Legend.
+  ///   Grid and Legend.
   /// </summary>
-  GridLegend,
-  
+  GridLegend
 }

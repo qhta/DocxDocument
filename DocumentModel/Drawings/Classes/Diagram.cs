@@ -1,18 +1,17 @@
 namespace DocumentModel.Drawings;
 
 /// <summary>
-/// Diagram to Animate.
+///   Diagram to Animate.
 /// </summary>
-public partial class Diagram
+public class Diagram
 {
   /// <summary>
-  /// Identifier
+  ///   Identifier
   /// </summary>
   public String? Id { get; set; }
-  
+
   /// <summary>
-  /// Animation Build Step
+  ///   Animation Build Step
   /// </summary>
-  public DocumentModel.Drawings.DiagramBuildStepKind? BuildStep { get; set; }
-  
+  public DiagramBuildStepKind? BuildStep { get; set; }
 }

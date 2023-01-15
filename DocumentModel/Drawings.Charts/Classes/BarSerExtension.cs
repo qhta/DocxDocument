@@ -1,23 +1,22 @@
 namespace DocumentModel.Drawings.Charts;
 
 /// <summary>
-/// Defines the BarSerExtension Class.
+///   Defines the BarSerExtension Class.
 /// </summary>
-public partial class BarSerExtension
+public class BarSerExtension
 {
   /// <summary>
-  /// URI
+  ///   URI
   /// </summary>
   public String? Uri { get; set; }
-  
-  public DocumentModel.Drawings.Charts.InvertSolidFillFormat? InvertSolidFillFormat { get; set; }
-  
-  public DocumentModel.Drawings.Charts.FilteredSeriesTitle? FilteredSeriesTitle { get; set; }
-  
-  public DocumentModel.Drawings.Charts.FilteredCategoryTitle? FilteredCategoryTitle { get; set; }
-  
-  public DocumentModel.Drawings.Charts.DataLabelsRange? DataLabelsRange { get; set; }
-  
-  public DocumentModel.Drawings.Charts.CategoryFilterExceptions? CategoryFilterExceptions { get; set; }
-  
+
+  public InvertSolidFillFormat? InvertSolidFillFormat { get; set; }
+
+  public FilteredSeriesTitle? FilteredSeriesTitle { get; set; }
+
+  public FilteredCategoryTitle? FilteredCategoryTitle { get; set; }
+
+  public DataLabelsRange? DataLabelsRange { get; set; }
+
+  public CategoryFilterExceptions? CategoryFilterExceptions { get; set; }
 }

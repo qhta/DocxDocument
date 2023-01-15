@@ -1,13 +1,12 @@
 namespace DocumentModel.Drawings.Office;
 
 /// <summary>
-/// Defines the Drawing Class.
+///   Defines the Drawing Class.
 /// </summary>
-public partial class Drawing
+public class Drawing
 {
   /// <summary>
-  /// ShapeTree.
+  ///   ShapeTree.
   /// </summary>
-  public DocumentModel.Drawings.Office.ShapeTree? ShapeTree { get; set; }
-  
+  public ShapeTree? ShapeTree { get; set; }
 }

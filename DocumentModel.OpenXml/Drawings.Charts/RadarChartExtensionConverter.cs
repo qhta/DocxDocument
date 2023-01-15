@@ -1,19 +1,22 @@
+using DocumentModel.Drawings.Charts;
+using RadarChartExtension = DocumentFormat.OpenXml.Drawing.Charts.RadarChartExtension;
+
 namespace DocumentModel.OpenXml.Drawings.Charts;
 
 /// <summary>
-/// Defines the RadarChartExtension Class.
+///   Defines the RadarChartExtension Class.
 /// </summary>
 public static class RadarChartExtensionConverter
 {
   /// <summary>
-  /// URI
+  ///   URI
   /// </summary>
-  public static String? GetUri(DocumentFormat.OpenXml.Drawing.Charts.RadarChartExtension? openXmlElement)
+  public static String? GetUri(RadarChartExtension? openXmlElement)
   {
     return openXmlElement?.Uri?.Value;
   }
-  
-  public static void SetUri(DocumentFormat.OpenXml.Drawing.Charts.RadarChartExtension? openXmlElement, String? value)
+
+  public static void SetUri(RadarChartExtension? openXmlElement, String? value)
   {
     if (openXmlElement != null)
       if (value != null)
@@ -21,16 +24,16 @@ public static class RadarChartExtensionConverter
       else
         openXmlElement.Uri = null;
   }
-  
-  public static DocumentModel.Drawings.Charts.FilteredRadarSeries? GetFilteredRadarSeries(DocumentFormat.OpenXml.Drawing.Charts.RadarChartExtension? openXmlElement)
+
+  public static FilteredRadarSeries? GetFilteredRadarSeries(RadarChartExtension? openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office2013.Drawing.Chart.FilteredRadarSeries>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.Charts.FilteredRadarSeriesConverter.CreateModelElement(itemElement);
+      return FilteredRadarSeriesConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetFilteredRadarSeries(DocumentFormat.OpenXml.Drawing.Charts.RadarChartExtension? openXmlElement, DocumentModel.Drawings.Charts.FilteredRadarSeries? value)
+
+  public static void SetFilteredRadarSeries(RadarChartExtension? openXmlElement, FilteredRadarSeries? value)
   {
     if (openXmlElement != null)
     {
@@ -39,14 +42,14 @@ public static class RadarChartExtensionConverter
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Drawings.Charts.FilteredRadarSeriesConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2013.Drawing.Chart.FilteredRadarSeries>(value);
+        itemElement = FilteredRadarSeriesConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2013.Drawing.Chart.FilteredRadarSeries>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static DocumentModel.Drawings.Charts.RadarChartExtension? CreateModelElement(DocumentFormat.OpenXml.Drawing.Charts.RadarChartExtension? openXmlElement)
+
+  public static DocumentModel.Drawings.Charts.RadarChartExtension? CreateModelElement(RadarChartExtension? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -57,9 +60,9 @@ public static class RadarChartExtensionConverter
     }
     return null;
   }
-  
+
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.Charts.RadarChartExtension? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.Charts.RadarChartExtension, new()
+    where OpenXmlElementType : RadarChartExtension, new()
   {
     if (value != null)
     {

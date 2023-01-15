@@ -1,19 +1,21 @@
+using DocumentFormat.OpenXml.Drawing.Diagrams;
+
 namespace DocumentModel.OpenXml.Drawings.Diagrams;
 
 /// <summary>
-/// Color Transform Category.
+///   Color Transform Category.
 /// </summary>
 public static class ColorTransformCategoryConverter
 {
   /// <summary>
-  /// Category Type
+  ///   Category Type
   /// </summary>
-  public static String? GetType(DocumentFormat.OpenXml.Drawing.Diagrams.ColorTransformCategory? openXmlElement)
+  public static String? GetType(ColorTransformCategory? openXmlElement)
   {
     return openXmlElement?.Type?.Value;
   }
-  
-  public static void SetType(DocumentFormat.OpenXml.Drawing.Diagrams.ColorTransformCategory? openXmlElement, String? value)
+
+  public static void SetType(ColorTransformCategory? openXmlElement, String? value)
   {
     if (openXmlElement != null)
       if (value != null)
@@ -21,22 +23,22 @@ public static class ColorTransformCategoryConverter
       else
         openXmlElement.Type = null;
   }
-  
+
   /// <summary>
-  /// Priority
+  ///   Priority
   /// </summary>
-  public static UInt32? GetPriority(DocumentFormat.OpenXml.Drawing.Diagrams.ColorTransformCategory? openXmlElement)
+  public static UInt32? GetPriority(ColorTransformCategory? openXmlElement)
   {
     return openXmlElement?.Priority?.Value;
   }
-  
-  public static void SetPriority(DocumentFormat.OpenXml.Drawing.Diagrams.ColorTransformCategory? openXmlElement, UInt32? value)
+
+  public static void SetPriority(ColorTransformCategory? openXmlElement, UInt32? value)
   {
     if (openXmlElement != null)
       openXmlElement.Priority = value;
   }
-  
-  public static DocumentModel.Drawings.Diagrams.ColorTransformCategory? CreateModelElement(DocumentFormat.OpenXml.Drawing.Diagrams.ColorTransformCategory? openXmlElement)
+
+  public static DocumentModel.Drawings.Diagrams.ColorTransformCategory? CreateModelElement(ColorTransformCategory? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -47,9 +49,9 @@ public static class ColorTransformCategoryConverter
     }
     return null;
   }
-  
+
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.Diagrams.ColorTransformCategory? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.Diagrams.ColorTransformCategory, new()
+    where OpenXmlElementType : ColorTransformCategory, new()
   {
     if (value != null)
     {

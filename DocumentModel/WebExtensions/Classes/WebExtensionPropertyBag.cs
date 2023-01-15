@@ -1,10 +1,9 @@
 namespace DocumentModel.WebExtensions;
 
 /// <summary>
-/// Defines the WebExtensionPropertyBag Class.
+///   Defines the WebExtensionPropertyBag Class.
 /// </summary>
-public partial class WebExtensionPropertyBag
+public class WebExtensionPropertyBag
 {
-  public Collection<DocumentModel.WebExtensions.WebExtensionProperty>? WebExtensionProperties { get; set; }
-  
+  public Collection<WebExtensionProperty>? WebExtensionProperties { get; set; }
 }

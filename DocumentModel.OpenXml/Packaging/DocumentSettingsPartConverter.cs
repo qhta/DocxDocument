@@ -1,26 +1,31 @@
+using DocumentFormat.OpenXml.Packaging;
+using DocumentModel.OpenXml.Wordprocessing;
+using DocumentModel.Wordprocessing;
+using ImagePart = DocumentModel.Packaging.ImagePart;
+
 namespace DocumentModel.OpenXml.Packaging;
 
 /// <summary>
-/// Defines the DocumentSettingsPart
+///   Defines the DocumentSettingsPart
 /// </summary>
 public static class DocumentSettingsPartConverter
 {
-  public static String? GetContentType(DocumentFormat.OpenXml.Packaging.DocumentSettingsPart? openXmlElement)
+  public static String? GetContentType(DocumentSettingsPart? openXmlElement)
   {
     return openXmlElement?.ContentType;
   }
-  
+
   /// <summary>
-  /// Gets the ImageParts of the DocumentSettingsPart
+  ///   Gets the ImageParts of the DocumentSettingsPart
   /// </summary>
-  public static System.Collections.ObjectModel.Collection<DocumentModel.Packaging.ImagePart>? GetImageParts(DocumentFormat.OpenXml.Packaging.DocumentSettingsPart? openXmlElement)
+  public static Collection<ImagePart>? GetImageParts(DocumentSettingsPart? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var collection = new System.Collections.ObjectModel.Collection<DocumentModel.Packaging.ImagePart>();
+      var collection = new Collection<ImagePart>();
       foreach (var item in openXmlElement.GetPartsOfType<DocumentFormat.OpenXml.Packaging.ImagePart>())
       {
-        var newItem = DocumentModel.OpenXml.Packaging.ImagePartConverter.CreateModelElement(item);
+        var newItem = ImagePartConverter.CreateModelElement(item);
         if (newItem != null)
           collection.Add(newItem);
       }
@@ -28,34 +33,34 @@ public static class DocumentSettingsPartConverter
     }
     return null;
   }
-  
-  public static String? GetRelationshipType(DocumentFormat.OpenXml.Packaging.DocumentSettingsPart? openXmlElement)
+
+  public static String? GetRelationshipType(DocumentSettingsPart? openXmlElement)
   {
     return openXmlElement?.RelationshipType;
   }
-  
+
   /// <summary>
-  /// Gets or sets the root element of this part.
+  ///   Gets or sets the root element of this part.
   /// </summary>
-  public static DocumentModel.Wordprocessing.Settings? GetSettings(DocumentFormat.OpenXml.Packaging.DocumentSettingsPart? openXmlElement)
+  public static Settings? GetSettings(DocumentSettingsPart? openXmlElement)
   {
     if (openXmlElement?.RootElement is DocumentFormat.OpenXml.Wordprocessing.Settings rootElement)
-      return DocumentModel.OpenXml.Wordprocessing.SettingsConverter.CreateModelElement(rootElement);
+      return SettingsConverter.CreateModelElement(rootElement);
     return null;
   }
-  
-  public static void SetSettings(DocumentFormat.OpenXml.Packaging.DocumentSettingsPart? openXmlElement, DocumentModel.Wordprocessing.Settings? value)
+
+  public static void SetSettings(DocumentSettingsPart? openXmlElement, Settings? value)
   {
     if (openXmlElement != null)
       if (value != null)
       {
-         var rootElement = DocumentModel.OpenXml.Wordprocessing.SettingsConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.Settings>(value);
-         if (rootElement != null)
-           openXmlElement.Settings = rootElement;
+        var rootElement = SettingsConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.Settings>(value);
+        if (rootElement != null)
+          openXmlElement.Settings = rootElement;
       }
   }
-  
-  public static DocumentModel.Packaging.DocumentSettingsPart? CreateModelElement(DocumentFormat.OpenXml.Packaging.DocumentSettingsPart? openXmlElement)
+
+  public static DocumentModel.Packaging.DocumentSettingsPart? CreateModelElement(DocumentSettingsPart? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -68,9 +73,9 @@ public static class DocumentSettingsPartConverter
     }
     return null;
   }
-  
+
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Packaging.DocumentSettingsPart? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Packaging.DocumentSettingsPart, new()
+    where OpenXmlElementType : DocumentSettingsPart, new()
   {
     if (value != null)
     {

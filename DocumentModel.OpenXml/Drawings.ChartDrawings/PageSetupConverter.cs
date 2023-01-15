@@ -1,61 +1,64 @@
+using DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing;
+using PageOrientation = DocumentModel.Drawings.ChartDrawings.PageOrientation;
+
 namespace DocumentModel.OpenXml.Drawings.ChartDrawings;
 
 /// <summary>
-/// Defines the PageSetup Class.
+///   Defines the PageSetup Class.
 /// </summary>
 public static class PageSetupConverter
 {
   /// <summary>
-  /// paperSize, this property is only available in Office 2016 and later.
+  ///   paperSize, this property is only available in Office 2016 and later.
   /// </summary>
-  public static UInt32? GetPaperSize(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.PageSetup? openXmlElement)
+  public static UInt32? GetPaperSize(PageSetup? openXmlElement)
   {
     return openXmlElement?.PaperSize?.Value;
   }
-  
-  public static void SetPaperSize(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.PageSetup? openXmlElement, UInt32? value)
+
+  public static void SetPaperSize(PageSetup? openXmlElement, UInt32? value)
   {
     if (openXmlElement != null)
       openXmlElement.PaperSize = value;
   }
-  
+
   /// <summary>
-  /// firstPageNumber, this property is only available in Office 2016 and later.
+  ///   firstPageNumber, this property is only available in Office 2016 and later.
   /// </summary>
-  public static UInt32? GetFirstPageNumber(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.PageSetup? openXmlElement)
+  public static UInt32? GetFirstPageNumber(PageSetup? openXmlElement)
   {
     return openXmlElement?.FirstPageNumber?.Value;
   }
-  
-  public static void SetFirstPageNumber(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.PageSetup? openXmlElement, UInt32? value)
+
+  public static void SetFirstPageNumber(PageSetup? openXmlElement, UInt32? value)
   {
     if (openXmlElement != null)
       openXmlElement.FirstPageNumber = value;
   }
-  
+
   /// <summary>
-  /// orientation, this property is only available in Office 2016 and later.
+  ///   orientation, this property is only available in Office 2016 and later.
   /// </summary>
-  public static DocumentModel.Drawings.ChartDrawings.PageOrientation? GetOrientation(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.PageSetup? openXmlElement)
+  public static PageOrientation? GetOrientation(PageSetup? openXmlElement)
   {
-    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.PageOrientation, DocumentModel.Drawings.ChartDrawings.PageOrientation>(openXmlElement?.Orientation?.Value);
+    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.PageOrientation, PageOrientation>(openXmlElement?.Orientation?.Value);
   }
-  
-  public static void SetOrientation(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.PageSetup? openXmlElement, DocumentModel.Drawings.ChartDrawings.PageOrientation? value)
+
+  public static void SetOrientation(PageSetup? openXmlElement, PageOrientation? value)
   {
     if (openXmlElement != null)
-      openXmlElement.Orientation = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.PageOrientation, DocumentModel.Drawings.ChartDrawings.PageOrientation>(value);
+      openXmlElement.Orientation = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.PageOrientation, PageOrientation>(value);
   }
-  
+
   /// <summary>
-  /// blackAndWhite, this property is only available in Office 2016 and later.
+  ///   blackAndWhite, this property is only available in Office 2016 and later.
   /// </summary>
-  public static Boolean? GetBlackAndWhite(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.PageSetup? openXmlElement)
+  public static Boolean? GetBlackAndWhite(PageSetup? openXmlElement)
   {
     return openXmlElement?.BlackAndWhite?.Value;
   }
-  
-  public static void SetBlackAndWhite(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.PageSetup? openXmlElement, Boolean? value)
+
+  public static void SetBlackAndWhite(PageSetup? openXmlElement, Boolean? value)
   {
     if (openXmlElement != null)
       if (value != null)
@@ -63,16 +66,16 @@ public static class PageSetupConverter
       else
         openXmlElement.BlackAndWhite = null;
   }
-  
+
   /// <summary>
-  /// draft, this property is only available in Office 2016 and later.
+  ///   draft, this property is only available in Office 2016 and later.
   /// </summary>
-  public static Boolean? GetDraft(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.PageSetup? openXmlElement)
+  public static Boolean? GetDraft(PageSetup? openXmlElement)
   {
     return openXmlElement?.Draft?.Value;
   }
-  
-  public static void SetDraft(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.PageSetup? openXmlElement, Boolean? value)
+
+  public static void SetDraft(PageSetup? openXmlElement, Boolean? value)
   {
     if (openXmlElement != null)
       if (value != null)
@@ -80,16 +83,16 @@ public static class PageSetupConverter
       else
         openXmlElement.Draft = null;
   }
-  
+
   /// <summary>
-  /// useFirstPageNumber, this property is only available in Office 2016 and later.
+  ///   useFirstPageNumber, this property is only available in Office 2016 and later.
   /// </summary>
-  public static Boolean? GetUseFirstPageNumber(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.PageSetup? openXmlElement)
+  public static Boolean? GetUseFirstPageNumber(PageSetup? openXmlElement)
   {
     return openXmlElement?.UseFirstPageNumber?.Value;
   }
-  
-  public static void SetUseFirstPageNumber(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.PageSetup? openXmlElement, Boolean? value)
+
+  public static void SetUseFirstPageNumber(PageSetup? openXmlElement, Boolean? value)
   {
     if (openXmlElement != null)
       if (value != null)
@@ -97,50 +100,50 @@ public static class PageSetupConverter
       else
         openXmlElement.UseFirstPageNumber = null;
   }
-  
+
   /// <summary>
-  /// horizontalDpi, this property is only available in Office 2016 and later.
+  ///   horizontalDpi, this property is only available in Office 2016 and later.
   /// </summary>
-  public static Int32? GetHorizontalDpi(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.PageSetup? openXmlElement)
+  public static Int32? GetHorizontalDpi(PageSetup? openXmlElement)
   {
     return openXmlElement?.HorizontalDpi?.Value;
   }
-  
-  public static void SetHorizontalDpi(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.PageSetup? openXmlElement, Int32? value)
+
+  public static void SetHorizontalDpi(PageSetup? openXmlElement, Int32? value)
   {
     if (openXmlElement != null)
       openXmlElement.HorizontalDpi = value;
   }
-  
+
   /// <summary>
-  /// verticalDpi, this property is only available in Office 2016 and later.
+  ///   verticalDpi, this property is only available in Office 2016 and later.
   /// </summary>
-  public static Int32? GetVerticalDpi(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.PageSetup? openXmlElement)
+  public static Int32? GetVerticalDpi(PageSetup? openXmlElement)
   {
     return openXmlElement?.VerticalDpi?.Value;
   }
-  
-  public static void SetVerticalDpi(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.PageSetup? openXmlElement, Int32? value)
+
+  public static void SetVerticalDpi(PageSetup? openXmlElement, Int32? value)
   {
     if (openXmlElement != null)
       openXmlElement.VerticalDpi = value;
   }
-  
+
   /// <summary>
-  /// copies, this property is only available in Office 2016 and later.
+  ///   copies, this property is only available in Office 2016 and later.
   /// </summary>
-  public static UInt32? GetCopies(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.PageSetup? openXmlElement)
+  public static UInt32? GetCopies(PageSetup? openXmlElement)
   {
     return openXmlElement?.Copies?.Value;
   }
-  
-  public static void SetCopies(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.PageSetup? openXmlElement, UInt32? value)
+
+  public static void SetCopies(PageSetup? openXmlElement, UInt32? value)
   {
     if (openXmlElement != null)
       openXmlElement.Copies = value;
   }
-  
-  public static DocumentModel.Drawings.ChartDrawings.PageSetup? CreateModelElement(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.PageSetup? openXmlElement)
+
+  public static DocumentModel.Drawings.ChartDrawings.PageSetup? CreateModelElement(PageSetup? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -158,9 +161,9 @@ public static class PageSetupConverter
     }
     return null;
   }
-  
+
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.ChartDrawings.PageSetup? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.PageSetup, new()
+    where OpenXmlElementType : PageSetup, new()
   {
     if (value != null)
     {

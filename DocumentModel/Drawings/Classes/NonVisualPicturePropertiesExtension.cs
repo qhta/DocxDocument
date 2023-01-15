@@ -1,21 +1,20 @@
 namespace DocumentModel.Drawings;
 
 /// <summary>
-/// Defines the NonVisualPicturePropertiesExtension Class.
+///   Defines the NonVisualPicturePropertiesExtension Class.
 /// </summary>
-public partial class NonVisualPicturePropertiesExtension
+public class NonVisualPicturePropertiesExtension
 {
   /// <summary>
-  /// URI
+  ///   URI
   /// </summary>
   public String? Uri { get; set; }
-  
-  public DocumentModel.Drawings.CameraTool? CameraTool { get; set; }
-  
-  public DocumentModel.Drawings.SignatureLine? SignatureLine { get; set; }
-  
-  public DocumentModel.Drawings.ObjectProperties? ObjectProperties { get; set; }
-  
-  public DocumentModel.Drawings.LiveFeedProperties? LiveFeedProperties { get; set; }
-  
+
+  public CameraTool? CameraTool { get; set; }
+
+  public SignatureLine? SignatureLine { get; set; }
+
+  public ObjectProperties? ObjectProperties { get; set; }
+
+  public LiveFeedProperties? LiveFeedProperties { get; set; }
 }

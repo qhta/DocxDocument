@@ -1,19 +1,21 @@
+using DocumentFormat.OpenXml.Wordprocessing;
+
 namespace DocumentModel.OpenXml.Wordprocessing;
 
 /// <summary>
-/// Combo Box List Item.
+///   Combo Box List Item.
 /// </summary>
 public static class ListItemConverter
 {
   /// <summary>
-  /// List Entry Display Text
+  ///   List Entry Display Text
   /// </summary>
-  public static String? GetDisplayText(DocumentFormat.OpenXml.Wordprocessing.ListItem? openXmlElement)
+  public static String? GetDisplayText(ListItem? openXmlElement)
   {
     return openXmlElement?.DisplayText?.Value;
   }
-  
-  public static void SetDisplayText(DocumentFormat.OpenXml.Wordprocessing.ListItem? openXmlElement, String? value)
+
+  public static void SetDisplayText(ListItem? openXmlElement, String? value)
   {
     if (openXmlElement != null)
       if (value != null)
@@ -21,16 +23,16 @@ public static class ListItemConverter
       else
         openXmlElement.DisplayText = null;
   }
-  
+
   /// <summary>
-  /// List Entry Value
+  ///   List Entry Value
   /// </summary>
-  public static String? GetValue(DocumentFormat.OpenXml.Wordprocessing.ListItem? openXmlElement)
+  public static String? GetValue(ListItem? openXmlElement)
   {
     return openXmlElement?.Value?.Value;
   }
-  
-  public static void SetValue(DocumentFormat.OpenXml.Wordprocessing.ListItem? openXmlElement, String? value)
+
+  public static void SetValue(ListItem? openXmlElement, String? value)
   {
     if (openXmlElement != null)
       if (value != null)
@@ -38,8 +40,8 @@ public static class ListItemConverter
       else
         openXmlElement.Value = null;
   }
-  
-  public static DocumentModel.Wordprocessing.ListItem? CreateModelElement(DocumentFormat.OpenXml.Wordprocessing.ListItem? openXmlElement)
+
+  public static DocumentModel.Wordprocessing.ListItem? CreateModelElement(ListItem? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -50,9 +52,9 @@ public static class ListItemConverter
     }
     return null;
   }
-  
+
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.ListItem? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Wordprocessing.ListItem, new()
+    where OpenXmlElementType : ListItem, new()
   {
     if (value != null)
     {

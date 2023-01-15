@@ -1,10 +1,9 @@
 namespace DocumentModel.Drawings.Charts;
 
 /// <summary>
-/// Custom Split.
+///   Custom Split.
 /// </summary>
-public partial class CustomSplit
+public class CustomSplit
 {
-  public Collection<System.UInt32>? SecondPiePoints { get; set; }
-  
+  public Collection<UInt32>? SecondPiePoints { get; set; }
 }

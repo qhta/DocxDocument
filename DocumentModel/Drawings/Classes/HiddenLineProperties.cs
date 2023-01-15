@@ -1,52 +1,51 @@
 namespace DocumentModel.Drawings;
 
 /// <summary>
-/// Defines the HiddenLineProperties Class.
+///   Defines the HiddenLineProperties Class.
 /// </summary>
-public partial class HiddenLineProperties
+public class HiddenLineProperties
 {
   /// <summary>
-  /// line width
+  ///   line width
   /// </summary>
   public Int32? Width { get; set; }
-  
+
   /// <summary>
-  /// line cap
+  ///   line cap
   /// </summary>
-  public DocumentModel.Drawings.LineCapKind? CapType { get; set; }
-  
+  public LineCapKind? CapType { get; set; }
+
   /// <summary>
-  /// compound line type
+  ///   compound line type
   /// </summary>
-  public DocumentModel.Drawings.CompoundLineKind? CompoundLineType { get; set; }
-  
+  public CompoundLineKind? CompoundLineType { get; set; }
+
   /// <summary>
-  /// pen alignment
+  ///   pen alignment
   /// </summary>
-  public DocumentModel.Drawings.PenAlignmentKind? Alignment { get; set; }
-  
+  public PenAlignmentKind? Alignment { get; set; }
+
   public Boolean? NoFill { get; set; }
-  
-  public DocumentModel.Drawings.SolidFill? SolidFill { get; set; }
-  
-  public DocumentModel.Drawings.GradientFill? GradientFill { get; set; }
-  
-  public DocumentModel.Drawings.PatternFill? PatternFill { get; set; }
-  
-  public DocumentModel.Drawings.PresetLineDashKind? PresetDash { get; set; }
-  
-  public DocumentModel.Drawings.CustomDash? CustomDash { get; set; }
-  
+
+  public SolidFill? SolidFill { get; set; }
+
+  public GradientFill? GradientFill { get; set; }
+
+  public PatternFill? PatternFill { get; set; }
+
+  public PresetLineDashKind? PresetDash { get; set; }
+
+  public CustomDash? CustomDash { get; set; }
+
   public Boolean? Round { get; set; }
-  
+
   public Boolean? LineJoinBevel { get; set; }
-  
-  public DocumentModel.Drawings.Miter? Miter { get; set; }
-  
-  public DocumentModel.Drawings.LineEndPropertiesType? HeadEnd { get; set; }
-  
-  public DocumentModel.Drawings.LineEndPropertiesType? TailEnd { get; set; }
-  
-  public DocumentModel.Drawings.LinePropertiesExtensionList? LinePropertiesExtensionList { get; set; }
-  
+
+  public Miter? Miter { get; set; }
+
+  public LineEndPropertiesType? HeadEnd { get; set; }
+
+  public LineEndPropertiesType? TailEnd { get; set; }
+
+  public LinePropertiesExtensionList? LinePropertiesExtensionList { get; set; }
 }

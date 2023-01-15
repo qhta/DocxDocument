@@ -1,10 +1,9 @@
 namespace DocumentModel.Drawings.Charts;
 
 /// <summary>
-/// Defines the LineSerExtensionList Class.
+///   Defines the LineSerExtensionList Class.
 /// </summary>
-public partial class LineSerExtensionList
+public class LineSerExtensionList
 {
-  public Collection<DocumentModel.Drawings.Charts.LineSerExtension>? LineSerExtensions { get; set; }
-  
+  public Collection<LineSerExtension>? LineSerExtensions { get; set; }
 }

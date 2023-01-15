@@ -1,28 +1,27 @@
 namespace DocumentModel.Vml;
 
 /// <summary>
-/// Shape Reference.
+///   Shape Reference.
 /// </summary>
-public partial class Proxy
+public class Proxy
 {
   /// <summary>
-  /// Start Point Connection Flag
+  ///   Start Point Connection Flag
   /// </summary>
   public Boolean? Start { get; set; }
-  
+
   /// <summary>
-  /// End Point Connection Flag
+  ///   End Point Connection Flag
   /// </summary>
   public Boolean? End { get; set; }
-  
+
   /// <summary>
-  /// Proxy Shape Reference
+  ///   Proxy Shape Reference
   /// </summary>
   public String? ShapeReference { get; set; }
-  
+
   /// <summary>
-  /// Connection Location
+  ///   Connection Location
   /// </summary>
   public Int32? ConnectionLocation { get; set; }
-  
 }

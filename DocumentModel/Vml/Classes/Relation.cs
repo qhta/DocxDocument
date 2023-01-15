@@ -1,28 +1,27 @@
 namespace DocumentModel.Vml;
 
 /// <summary>
-/// Diagram Relationship.
+///   Diagram Relationship.
 /// </summary>
-public partial class Relation
+public class Relation
 {
   /// <summary>
-  /// VML Extension Handling Behavior
+  ///   VML Extension Handling Behavior
   /// </summary>
-  public DocumentModel.Vml.ExtensionHandlingBehaviorKind? Extension { get; set; }
-  
+  public ExtensionHandlingBehaviorKind? Extension { get; set; }
+
   /// <summary>
-  /// Diagram Relationship Source Shape
+  ///   Diagram Relationship Source Shape
   /// </summary>
   public String? SourceId { get; set; }
-  
+
   /// <summary>
-  /// Diagram Relationship Destination Shape
+  ///   Diagram Relationship Destination Shape
   /// </summary>
   public String? DestinationId { get; set; }
-  
+
   /// <summary>
-  /// Diagram Relationship Center Shape
+  ///   Diagram Relationship Center Shape
   /// </summary>
   public String? CenterShapeId { get; set; }
-  
 }

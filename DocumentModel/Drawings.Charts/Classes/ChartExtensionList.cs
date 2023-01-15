@@ -1,10 +1,9 @@
 namespace DocumentModel.Drawings.Charts;
 
 /// <summary>
-/// Extensibility container.
+///   Extensibility container.
 /// </summary>
-public partial class ChartExtensionList
+public class ChartExtensionList
 {
-  public Collection<DocumentModel.Drawings.Charts.DataDisplayOptions16>? DataDisplayOptions16s { get; set; }
-  
+  public Collection<DataDisplayOptions16>? DataDisplayOptions16s { get; set; }
 }

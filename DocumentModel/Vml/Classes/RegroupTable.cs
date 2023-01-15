@@ -1,15 +1,14 @@
 namespace DocumentModel.Vml;
 
 /// <summary>
-/// Shape Grouping History.
+///   Shape Grouping History.
 /// </summary>
-public partial class RegroupTable
+public class RegroupTable
 {
   /// <summary>
-  /// VML Extension Handling Behavior
+  ///   VML Extension Handling Behavior
   /// </summary>
-  public DocumentModel.Vml.ExtensionHandlingBehaviorKind? Extension { get; set; }
-  
-  public Collection<DocumentModel.Vml.Entry>? Entries { get; set; }
-  
+  public ExtensionHandlingBehaviorKind? Extension { get; set; }
+
+  public Collection<Entry>? Entries { get; set; }
 }

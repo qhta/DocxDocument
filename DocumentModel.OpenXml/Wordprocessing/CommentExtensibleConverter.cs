@@ -1,21 +1,23 @@
+using DocumentFormat.OpenXml.Office2021.Word.CommentsExt;
+
 namespace DocumentModel.OpenXml.Wordprocessing;
 
 /// <summary>
-/// Defines the CommentExtensible Class.
+///   Defines the CommentExtensible Class.
 /// </summary>
 public static class CommentExtensibleConverter
 {
   /// <summary>
-  /// durableId, this property is only available in Office 2021 and later.
+  ///   durableId, this property is only available in Office 2021 and later.
   /// </summary>
-  public static Byte[]? GetDurableId(DocumentFormat.OpenXml.Office2021.Word.CommentsExt.CommentExtensible? openXmlElement)
+  public static Byte[]? GetDurableId(CommentExtensible? openXmlElement)
   {
     if (openXmlElement?.DurableId?.Value != null)
       return Convert.FromHexString(openXmlElement.DurableId.Value);
     return null;
   }
-  
-  public static void SetDurableId(DocumentFormat.OpenXml.Office2021.Word.CommentsExt.CommentExtensible? openXmlElement, Byte[]? value)
+
+  public static void SetDurableId(CommentExtensible? openXmlElement, Byte[]? value)
   {
     if (openXmlElement != null)
     {
@@ -25,30 +27,30 @@ public static class CommentExtensibleConverter
         openXmlElement.DurableId = null;
     }
   }
-  
+
   /// <summary>
-  /// dateUtc, this property is only available in Office 2021 and later.
+  ///   dateUtc, this property is only available in Office 2021 and later.
   /// </summary>
-  public static DateTime? GetDateUtc(DocumentFormat.OpenXml.Office2021.Word.CommentsExt.CommentExtensible? openXmlElement)
+  public static DateTime? GetDateUtc(CommentExtensible? openXmlElement)
   {
     return openXmlElement?.DateUtc?.Value;
   }
-  
-  public static void SetDateUtc(DocumentFormat.OpenXml.Office2021.Word.CommentsExt.CommentExtensible? openXmlElement, DateTime? value)
+
+  public static void SetDateUtc(CommentExtensible? openXmlElement, DateTime? value)
   {
     if (openXmlElement != null)
       openXmlElement.DateUtc = value;
   }
-  
+
   /// <summary>
-  /// intelligentPlaceholder, this property is only available in Office 2021 and later.
+  ///   intelligentPlaceholder, this property is only available in Office 2021 and later.
   /// </summary>
-  public static Boolean? GetIntelligentPlaceholder(DocumentFormat.OpenXml.Office2021.Word.CommentsExt.CommentExtensible? openXmlElement)
+  public static Boolean? GetIntelligentPlaceholder(CommentExtensible? openXmlElement)
   {
     return openXmlElement?.IntelligentPlaceholder?.Value;
   }
-  
-  public static void SetIntelligentPlaceholder(DocumentFormat.OpenXml.Office2021.Word.CommentsExt.CommentExtensible? openXmlElement, Boolean? value)
+
+  public static void SetIntelligentPlaceholder(CommentExtensible? openXmlElement, Boolean? value)
   {
     if (openXmlElement != null)
       if (value != null)
@@ -56,19 +58,19 @@ public static class CommentExtensibleConverter
       else
         openXmlElement.IntelligentPlaceholder = null;
   }
-  
+
   /// <summary>
-  /// ExtensionList.
+  ///   ExtensionList.
   /// </summary>
-  public static DocumentModel.Wordprocessing.ExtensionList? GetExtensionList(DocumentFormat.OpenXml.Office2021.Word.CommentsExt.CommentExtensible? openXmlElement)
+  public static DocumentModel.Wordprocessing.ExtensionList? GetExtensionList(CommentExtensible? openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office2021.Word.CommentsExt.ExtensionList>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Wordprocessing.ExtensionListConverter.CreateModelElement(itemElement);
+      return ExtensionListConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetExtensionList(DocumentFormat.OpenXml.Office2021.Word.CommentsExt.CommentExtensible? openXmlElement, DocumentModel.Wordprocessing.ExtensionList? value)
+
+  public static void SetExtensionList(CommentExtensible? openXmlElement, DocumentModel.Wordprocessing.ExtensionList? value)
   {
     if (openXmlElement != null)
     {
@@ -77,14 +79,14 @@ public static class CommentExtensibleConverter
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Wordprocessing.ExtensionListConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2021.Word.CommentsExt.ExtensionList>(value);
+        itemElement = ExtensionListConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2021.Word.CommentsExt.ExtensionList>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static DocumentModel.Wordprocessing.CommentExtensible? CreateModelElement(DocumentFormat.OpenXml.Office2021.Word.CommentsExt.CommentExtensible? openXmlElement)
+
+  public static DocumentModel.Wordprocessing.CommentExtensible? CreateModelElement(CommentExtensible? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -97,9 +99,9 @@ public static class CommentExtensibleConverter
     }
     return null;
   }
-  
+
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.CommentExtensible? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Office2021.Word.CommentsExt.CommentExtensible, new()
+    where OpenXmlElementType : CommentExtensible, new()
   {
     if (value != null)
     {

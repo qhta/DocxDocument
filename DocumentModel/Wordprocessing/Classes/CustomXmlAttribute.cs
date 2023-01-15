@@ -1,23 +1,22 @@
 namespace DocumentModel.Wordprocessing;
 
 /// <summary>
-/// Custom XML Attribute.
+///   Custom XML Attribute.
 /// </summary>
-public partial class CustomXmlAttribute
+public class CustomXmlAttribute
 {
   /// <summary>
-  /// uri
+  ///   uri
   /// </summary>
   public String? Uri { get; set; }
-  
+
   /// <summary>
-  /// name
+  ///   name
   /// </summary>
   public String? Name { get; set; }
-  
+
   /// <summary>
-  /// val
+  ///   val
   /// </summary>
   public String? Val { get; set; }
-  
 }

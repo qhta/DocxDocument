@@ -1,13 +1,12 @@
 namespace DocumentModel.Drawings;
 
 /// <summary>
-/// Miter Line Join.
+///   Miter Line Join.
 /// </summary>
-public partial class Miter
+public class Miter
 {
   /// <summary>
-  /// Miter Join Limit
+  ///   Miter Join Limit
   /// </summary>
   public Int32? Limit { get; set; }
-  
 }

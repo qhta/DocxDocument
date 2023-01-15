@@ -1,18 +1,21 @@
+using DocumentModel.Drawings.Diagrams;
+using CategoryList = DocumentFormat.OpenXml.Drawing.Diagrams.CategoryList;
+
 namespace DocumentModel.OpenXml.Drawings.Diagrams;
 
 /// <summary>
-/// Category List.
+///   Category List.
 /// </summary>
 public static class CategoryListConverter
 {
-  public static System.Collections.ObjectModel.Collection<DocumentModel.Drawings.Diagrams.Category>? GetCategories(DocumentFormat.OpenXml.Drawing.Diagrams.CategoryList? openXmlElement)
+  public static Collection<Category>? GetCategories(CategoryList? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var collection = new System.Collections.ObjectModel.Collection<DocumentModel.Drawings.Diagrams.Category>();
+      var collection = new Collection<Category>();
       foreach (var item in openXmlElement.Elements<DocumentFormat.OpenXml.Drawing.Diagrams.Category>())
       {
-        var newItem = DocumentModel.OpenXml.Drawings.Diagrams.CategoryConverter.CreateModelElement(item);
+        var newItem = CategoryConverter.CreateModelElement(item);
         if (newItem != null)
           collection.Add(newItem);
       }
@@ -20,25 +23,23 @@ public static class CategoryListConverter
     }
     return null;
   }
-  
-  public static void SetCategories(DocumentFormat.OpenXml.Drawing.Diagrams.CategoryList? openXmlElement, System.Collections.ObjectModel.Collection<DocumentModel.Drawings.Diagrams.Category>? value)
+
+  public static void SetCategories(CategoryList? openXmlElement, Collection<Category>? value)
   {
     if (openXmlElement != null)
     {
       openXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Drawing.Diagrams.Category>();
       if (value != null)
-      {
         foreach (var item in value)
         {
-          var newItem = DocumentModel.OpenXml.Drawings.Diagrams.CategoryConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Diagrams.Category>(item);
+          var newItem = CategoryConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Diagrams.Category>(item);
           if (newItem != null)
             openXmlElement.AddChild(newItem);
         }
-      }
     }
   }
-  
-  public static DocumentModel.Drawings.Diagrams.CategoryList? CreateModelElement(DocumentFormat.OpenXml.Drawing.Diagrams.CategoryList? openXmlElement)
+
+  public static DocumentModel.Drawings.Diagrams.CategoryList? CreateModelElement(CategoryList? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -48,9 +49,9 @@ public static class CategoryListConverter
     }
     return null;
   }
-  
+
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.Diagrams.CategoryList? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.Diagrams.CategoryList, new()
+    where OpenXmlElementType : CategoryList, new()
   {
     if (value != null)
     {

@@ -1,23 +1,22 @@
 namespace DocumentModel.Vml;
 
 /// <summary>
-/// VML Extension Handling Behaviors
+///   VML Extension Handling Behaviors
 /// </summary>
 public enum ExtensionHandlingBehaviorKind
 {
   /// <summary>
-  /// Not renderable.
+  ///   Not renderable.
   /// </summary>
   View,
-  
+
   /// <summary>
-  /// Editable.
+  ///   Editable.
   /// </summary>
   Edit,
-  
+
   /// <summary>
-  /// Renderable.
+  ///   Renderable.
   /// </summary>
-  BackwardCompatible,
-  
+  BackwardCompatible
 }

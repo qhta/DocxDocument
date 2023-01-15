@@ -1,19 +1,22 @@
+using DocumentModel.Wordprocessing;
+using Recipients = DocumentFormat.OpenXml.Wordprocessing.Recipients;
+
 namespace DocumentModel.OpenXml.Wordprocessing;
 
 /// <summary>
-/// Defines Recipients.
+///   Defines Recipients.
 /// </summary>
 public static class RecipientsConverter
 {
-  public static DocumentModel.Wordprocessing.RecipientData? GetRecipientData(DocumentFormat.OpenXml.Wordprocessing.Recipients? openXmlElement)
+  public static RecipientData? GetRecipientData(Recipients? openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.RecipientData>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Wordprocessing.RecipientDataConverter.CreateModelElement(itemElement);
+      return RecipientDataConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetRecipientData(DocumentFormat.OpenXml.Wordprocessing.Recipients? openXmlElement, DocumentModel.Wordprocessing.RecipientData? value)
+
+  public static void SetRecipientData(Recipients? openXmlElement, RecipientData? value)
   {
     if (openXmlElement != null)
     {
@@ -22,14 +25,14 @@ public static class RecipientsConverter
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Wordprocessing.RecipientDataConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.RecipientData>(value);
+        itemElement = RecipientDataConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.RecipientData>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static DocumentModel.Wordprocessing.Recipients? CreateModelElement(DocumentFormat.OpenXml.Wordprocessing.Recipients? openXmlElement)
+
+  public static DocumentModel.Wordprocessing.Recipients? CreateModelElement(Recipients? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -39,9 +42,9 @@ public static class RecipientsConverter
     }
     return null;
   }
-  
+
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.Recipients? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Wordprocessing.Recipients, new()
+    where OpenXmlElementType : Recipients, new()
   {
     if (value != null)
     {

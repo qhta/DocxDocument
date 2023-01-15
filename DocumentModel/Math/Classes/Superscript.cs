@@ -1,23 +1,22 @@
 namespace DocumentModel.Math;
 
 /// <summary>
-/// Superscript Function.
+///   Superscript Function.
 /// </summary>
-public partial class Superscript
+public class Superscript
 {
   /// <summary>
-  /// Superscript Properties.
+  ///   Superscript Properties.
   /// </summary>
-  public DocumentModel.Math.SuperscriptProperties? SuperscriptProperties { get; set; }
-  
+  public SuperscriptProperties? SuperscriptProperties { get; set; }
+
   /// <summary>
-  /// Base.
+  ///   Base.
   /// </summary>
-  public DocumentModel.Math.Base? Base { get; set; }
-  
+  public Base? Base { get; set; }
+
   /// <summary>
-  /// Superscript (Superscript function).
+  ///   Superscript (Superscript function).
   /// </summary>
-  public DocumentModel.Math.SuperArgument? SuperArgument { get; set; }
-  
+  public SuperArgument? SuperArgument { get; set; }
 }

@@ -1,23 +1,22 @@
 namespace DocumentModel.Wordprocessing;
 
 /// <summary>
-/// Defines the CryptProviderValues enumeration.
+///   Defines the CryptProviderValues enumeration.
 /// </summary>
 public enum CryptProviderKind
 {
   /// <summary>
-  /// AES Provider.
+  ///   AES Provider.
   /// </summary>
   RsaAdvancedEncryptionStandard,
-  
+
   /// <summary>
-  /// Any Provider.
+  ///   Any Provider.
   /// </summary>
   RsaFull,
-  
+
   /// <summary>
-  /// custom.
+  ///   custom.
   /// </summary>
-  Custom,
-  
+  Custom
 }

@@ -3,7 +3,7 @@ using System.Reflection;
 using System.Text.Json;
 using System.Xml;
 using System.Xml.Serialization;
-
+using DocumentFormat.OpenXml.Wordprocessing;
 using DocumentModel.Properties;
 using Newtonsoft.Json;
 using Qhta.Xml.Serialization;
@@ -45,45 +45,39 @@ namespace DocxDocument.Reader.Test
 
     public virtual DocumentModel.Wordprocessing.Styles ReadStyles(string filename, bool showDetails = false)
     {
-      TestContext.Progress.WriteLine(filename);
+      WriteLine(filename);
       var reader = new DocxReader(filename);
       var document = reader.ReadDocument(Parts.StyleDefinitions);
       Assert.IsNotNull(document, "No document read");
       Assert.IsNotNull(document.Styles, "No document styles read");
-      //Assert.That(document.Properties.Count(), Is.GreaterThan(0), "Document properties count is 0");
-      //TestContext.Progress.WriteLine($"  AllDocumentProperties = {document.Properties.Count()}");
+      var modelDefinedStyles = document.Styles;
+      int modelDefinedStylesCount = modelDefinedStyles?.Count ?? 0;
+      var origDefinedStyles = reader.WordprocessingDocument.MainDocumentPart?.StyleDefinitionsPart?.Styles;
+      int origDefinedStylesCount = origDefinedStyles?.Elements<Style>().Count() ?? 0;
+      WriteLine($"  Document.Styles: found {modelDefinedStylesCount} expected {origDefinedStylesCount}");
 
-      //#region CoreDocumentProperties
-      //CoreProperties? coreDocumentProperties = document.Properties.CoreProperties;
-      //int origCorePropertiesCount = 0;
-      //int corePropertiesCount = 0;
-      //if (coreDocumentProperties != null)
-      //{
-      //  var coreFilePropertiesPart = reader.WordprocessingDocument.PackageProperties;
-      //  var coreFilePropertiesPartProperties = typeof(PackageProperties).GetProperties();
-      //  foreach (var prop in coreFilePropertiesPartProperties)
-      //  {
-      //    if (prop.GetValue(coreFilePropertiesPart, new object[0]) != null)
-      //      origCorePropertiesCount++;
-      //  }
-      //  var coreProperties = typeof(CoreProperties).GetProperties();
-      //  foreach (var prop in coreProperties.Where(item => item.CanWrite))
-      //    if (prop.GetValue(coreDocumentProperties, null) != null)
-      //      corePropertiesCount++;
-      //  TestContext.Progress.WriteLine(
-      //    $"  CoreProperties: defined {coreProperties.Count()} loaded {corePropertiesCount} expected {origCorePropertiesCount}");
-      //  if (showDetails)
-      //  {
-      //    foreach (var prop in coreProperties.Where(item => item.CanWrite))
-      //    {
-      //      var value = document.Properties.Get(prop.Name);
-      //      if (value != null)
-      //        TestContext.Progress.WriteLine($"    {prop.Name} = {value}");
-      //    }
-      //  }
-      //}
+      var missingStyles = new List<string>();
+      if (origDefinedStyles != null && modelDefinedStyles != null)
+      {
+        foreach (var origStyleDefinition in origDefinedStyles.Elements<Style>())
+          if (origStyleDefinition != null)
+          {
+            var origStyleName = origStyleDefinition.StyleName?.Val?.Value;
+            if (origStyleName != null)
+            {
+              if (!modelDefinedStyles.TryGetValue(origStyleName, out var modelStyle))
+                missingStyles.Add(origStyleName);
+            }
+            else
+              WriteLine($"Style with no styleName found");
+          }
 
-      //#endregion
+        if (showDetails)
+          foreach (var style in modelDefinedStyles)
+          {
+            WriteLine($"Style.StyleName={style.StyleName}");
+          }
+      }
 
       //#region ContentDocumentProperties
       //ExtendedProperties? contentDocumentProperties = document.Properties.ExtendedProperties;
@@ -140,7 +134,13 @@ namespace DocxDocument.Reader.Test
       //}
       //#endregion
 
-      //Assert.That(corePropertiesCount, Is.EqualTo(origCorePropertiesCount), "Invalid core properties count");
+      if (modelDefinedStylesCount != origDefinedStylesCount)
+      {
+        WriteLine("MissingStyles:");
+        foreach (var missingStyle in missingStyles)
+          WriteLine($"  {missingStyle}");
+      }
+      Assert.That(modelDefinedStylesCount, Is.EqualTo(origDefinedStylesCount), "Invalid defined styles count");
       //Assert.That(contentPropertiesCount, Is.EqualTo(origContentPropertiesCount), "Invalid content properties count");
       //Assert.That(customPropertiesCount, Is.EqualTo(origCustomPropertiesCount), "Invalid custom properties count");
 

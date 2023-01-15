@@ -1,62 +1,61 @@
 namespace DocumentModel.Packaging;
 
 /// <summary>
-/// Defines the DrawingsPart
+///   Defines the DrawingsPart
 /// </summary>
-public partial class DrawingsPart
+public class DrawingsPart
 {
   /// <summary>
-  /// Gets the ChartParts of the DrawingsPart
+  ///   Gets the ChartParts of the DrawingsPart
   /// </summary>
-  public Collection<DocumentModel.Packaging.ChartPart>? ChartParts { get; set; }
-  
+  public Collection<ChartPart>? ChartParts { get; set; }
+
   public String? ContentType { get; set; }
-  
+
   /// <summary>
-  /// Gets the CustomXmlParts of the DrawingsPart
+  ///   Gets the CustomXmlParts of the DrawingsPart
   /// </summary>
-  public Collection<DocumentModel.Packaging.CustomXmlPart>? CustomXmlParts { get; set; }
-  
+  public Collection<CustomXmlPart>? CustomXmlParts { get; set; }
+
   /// <summary>
-  /// Gets the DiagramColorsParts of the DrawingsPart
+  ///   Gets the DiagramColorsParts of the DrawingsPart
   /// </summary>
-  public Collection<DocumentModel.Packaging.DiagramColorsPart>? DiagramColorsParts { get; set; }
-  
+  public Collection<DiagramColorsPart>? DiagramColorsParts { get; set; }
+
   /// <summary>
-  /// Gets the DiagramDataParts of the DrawingsPart
+  ///   Gets the DiagramDataParts of the DrawingsPart
   /// </summary>
-  public Collection<DocumentModel.Packaging.DiagramDataPart>? DiagramDataParts { get; set; }
-  
+  public Collection<DiagramDataPart>? DiagramDataParts { get; set; }
+
   /// <summary>
-  /// Gets the DiagramLayoutDefinitionParts of the DrawingsPart
+  ///   Gets the DiagramLayoutDefinitionParts of the DrawingsPart
   /// </summary>
-  public Collection<DocumentModel.Packaging.DiagramLayoutDefinitionPart>? DiagramLayoutDefinitionParts { get; set; }
-  
+  public Collection<DiagramLayoutDefinitionPart>? DiagramLayoutDefinitionParts { get; set; }
+
   /// <summary>
-  /// Gets the DiagramPersistLayoutParts of the DrawingsPart
+  ///   Gets the DiagramPersistLayoutParts of the DrawingsPart
   /// </summary>
-  public Collection<DocumentModel.Packaging.DiagramPersistLayoutPart>? DiagramPersistLayoutParts { get; set; }
-  
+  public Collection<DiagramPersistLayoutPart>? DiagramPersistLayoutParts { get; set; }
+
   /// <summary>
-  /// Gets the DiagramStyleParts of the DrawingsPart
+  ///   Gets the DiagramStyleParts of the DrawingsPart
   /// </summary>
-  public Collection<DocumentModel.Packaging.DiagramStylePart>? DiagramStyleParts { get; set; }
-  
+  public Collection<DiagramStylePart>? DiagramStyleParts { get; set; }
+
   /// <summary>
-  /// Gets the ExtendedChartParts of the DrawingsPart
+  ///   Gets the ExtendedChartParts of the DrawingsPart
   /// </summary>
-  public Collection<DocumentModel.Packaging.ExtendedChartPart>? ExtendedChartParts { get; set; }
-  
+  public Collection<ExtendedChartPart>? ExtendedChartParts { get; set; }
+
   /// <summary>
-  /// Gets the ImageParts of the DrawingsPart
+  ///   Gets the ImageParts of the DrawingsPart
   /// </summary>
-  public Collection<DocumentModel.Packaging.ImagePart>? ImageParts { get; set; }
-  
+  public Collection<ImagePart>? ImageParts { get; set; }
+
   public String? RelationshipType { get; set; }
-  
+
   /// <summary>
-  /// Gets the WebExtensionParts of the DrawingsPart
+  ///   Gets the WebExtensionParts of the DrawingsPart
   /// </summary>
-  public Collection<DocumentModel.Packaging.WebExtensionPart>? WebExtensionParts { get; set; }
-  
+  public Collection<WebExtensionPart>? WebExtensionParts { get; set; }
 }

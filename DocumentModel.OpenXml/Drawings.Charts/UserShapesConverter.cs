@@ -1,19 +1,23 @@
+using DocumentFormat.OpenXml.Drawing.Charts;
+using DocumentModel.Drawings.ChartDrawing;
+using DocumentModel.OpenXml.Drawings.ChartDrawing;
+
 namespace DocumentModel.OpenXml.Drawings.Charts;
 
 /// <summary>
-/// User Shapes.
+///   User Shapes.
 /// </summary>
 public static class UserShapesConverter
 {
-  public static DocumentModel.Drawings.ChartDrawing.RelativeAnchorSize? GetRelativeAnchorSize(DocumentFormat.OpenXml.Drawing.Charts.UserShapes? openXmlElement)
+  public static RelativeAnchorSize? GetRelativeAnchorSize(UserShapes? openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.ChartDrawing.RelativeAnchorSize>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.ChartDrawing.RelativeAnchorSizeConverter.CreateModelElement(itemElement);
+      return RelativeAnchorSizeConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetRelativeAnchorSize(DocumentFormat.OpenXml.Drawing.Charts.UserShapes? openXmlElement, DocumentModel.Drawings.ChartDrawing.RelativeAnchorSize? value)
+
+  public static void SetRelativeAnchorSize(UserShapes? openXmlElement, RelativeAnchorSize? value)
   {
     if (openXmlElement != null)
     {
@@ -22,22 +26,22 @@ public static class UserShapesConverter
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Drawings.ChartDrawing.RelativeAnchorSizeConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.ChartDrawing.RelativeAnchorSize>(value);
+        itemElement = RelativeAnchorSizeConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.ChartDrawing.RelativeAnchorSize>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static DocumentModel.Drawings.ChartDrawing.AbsoluteAnchorSize? GetAbsoluteAnchorSize(DocumentFormat.OpenXml.Drawing.Charts.UserShapes? openXmlElement)
+
+  public static AbsoluteAnchorSize? GetAbsoluteAnchorSize(UserShapes? openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.ChartDrawing.AbsoluteAnchorSize>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.ChartDrawing.AbsoluteAnchorSizeConverter.CreateModelElement(itemElement);
+      return AbsoluteAnchorSizeConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetAbsoluteAnchorSize(DocumentFormat.OpenXml.Drawing.Charts.UserShapes? openXmlElement, DocumentModel.Drawings.ChartDrawing.AbsoluteAnchorSize? value)
+
+  public static void SetAbsoluteAnchorSize(UserShapes? openXmlElement, AbsoluteAnchorSize? value)
   {
     if (openXmlElement != null)
     {
@@ -46,14 +50,14 @@ public static class UserShapesConverter
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Drawings.ChartDrawing.AbsoluteAnchorSizeConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.ChartDrawing.AbsoluteAnchorSize>(value);
+        itemElement = AbsoluteAnchorSizeConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.ChartDrawing.AbsoluteAnchorSize>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static DocumentModel.Drawings.Charts.UserShapes? CreateModelElement(DocumentFormat.OpenXml.Drawing.Charts.UserShapes? openXmlElement)
+
+  public static DocumentModel.Drawings.Charts.UserShapes? CreateModelElement(UserShapes? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -64,9 +68,9 @@ public static class UserShapesConverter
     }
     return null;
   }
-  
+
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.Charts.UserShapes? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.Charts.UserShapes, new()
+    where OpenXmlElementType : UserShapes, new()
   {
     if (value != null)
     {

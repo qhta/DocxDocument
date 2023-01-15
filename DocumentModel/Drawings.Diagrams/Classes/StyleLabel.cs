@@ -1,38 +1,37 @@
 namespace DocumentModel.Drawings.Diagrams;
 
 /// <summary>
-/// Style Label.
+///   Style Label.
 /// </summary>
-public partial class StyleLabel
+public class StyleLabel
 {
   /// <summary>
-  /// Style Name
+  ///   Style Name
   /// </summary>
   public String? Name { get; set; }
-  
+
   /// <summary>
-  /// 3-D Scene.
+  ///   3-D Scene.
   /// </summary>
-  public DocumentModel.Drawings.Diagrams.Scene3D? Scene3D { get; set; }
-  
+  public Scene3D? Scene3D { get; set; }
+
   /// <summary>
-  /// 3-D Shape Properties.
+  ///   3-D Shape Properties.
   /// </summary>
-  public DocumentModel.Drawings.Diagrams.Shape3D? Shape3D { get; set; }
-  
+  public Shape3D? Shape3D { get; set; }
+
   /// <summary>
-  /// Text Properties.
+  ///   Text Properties.
   /// </summary>
-  public DocumentModel.Drawings.Diagrams.TextProperties? TextProperties { get; set; }
-  
+  public TextProperties? TextProperties { get; set; }
+
   /// <summary>
-  /// Shape Style.
+  ///   Shape Style.
   /// </summary>
-  public DocumentModel.Drawings.Diagrams.Style? Style { get; set; }
-  
+  public Style? Style { get; set; }
+
   /// <summary>
-  /// ExtensionList.
+  ///   ExtensionList.
   /// </summary>
-  public DocumentModel.Drawings.Diagrams.ExtensionList? ExtensionList { get; set; }
-  
+  public ExtensionList? ExtensionList { get; set; }
 }

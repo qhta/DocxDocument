@@ -1,12 +1,11 @@
 namespace DocumentModel.Packaging;
 
 /// <summary>
-/// Defines the SpreadsheetPrinterSettingsPart
+///   Defines the SpreadsheetPrinterSettingsPart
 /// </summary>
-public partial class SpreadsheetPrinterSettingsPart
+public class SpreadsheetPrinterSettingsPart
 {
   public String? ContentType { get; set; }
-  
+
   public String? RelationshipType { get; set; }
-  
 }

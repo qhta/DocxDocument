@@ -1,13 +1,12 @@
 namespace DocumentModel.Drawings.Charts;
 
 /// <summary>
-/// Defines the FilteredSurfaceSeries Class.
+///   Defines the FilteredSurfaceSeries Class.
 /// </summary>
-public partial class FilteredSurfaceSeries
+public class FilteredSurfaceSeries
 {
   /// <summary>
-  /// SurfaceChartSeries.
+  ///   SurfaceChartSeries.
   /// </summary>
-  public DocumentModel.Drawings.Charts.SurfaceChartSeries3? SurfaceChartSeries { get; set; }
-  
+  public SurfaceChartSeries3? SurfaceChartSeries { get; set; }
 }

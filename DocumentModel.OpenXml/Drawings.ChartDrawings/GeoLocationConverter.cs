@@ -1,47 +1,51 @@
+using DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing;
+using Address = DocumentModel.Drawings.ChartDrawings.Address;
+using EntityTypeEnum = DocumentModel.Drawings.ChartDrawings.EntityTypeEnum;
+
 namespace DocumentModel.OpenXml.Drawings.ChartDrawings;
 
 /// <summary>
-/// Defines the GeoLocation Class.
+///   Defines the GeoLocation Class.
 /// </summary>
 public static class GeoLocationConverter
 {
   /// <summary>
-  /// latitude, this property is only available in Office 2016 and later.
+  ///   latitude, this property is only available in Office 2016 and later.
   /// </summary>
-  public static Double? GetLatitude(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.GeoLocation? openXmlElement)
+  public static Double? GetLatitude(GeoLocation? openXmlElement)
   {
     return openXmlElement?.Latitude?.Value;
   }
-  
-  public static void SetLatitude(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.GeoLocation? openXmlElement, Double? value)
+
+  public static void SetLatitude(GeoLocation? openXmlElement, Double? value)
   {
     if (openXmlElement != null)
       openXmlElement.Latitude = value;
   }
-  
+
   /// <summary>
-  /// longitude, this property is only available in Office 2016 and later.
+  ///   longitude, this property is only available in Office 2016 and later.
   /// </summary>
-  public static Double? GetLongitude(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.GeoLocation? openXmlElement)
+  public static Double? GetLongitude(GeoLocation? openXmlElement)
   {
     return openXmlElement?.Longitude?.Value;
   }
-  
-  public static void SetLongitude(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.GeoLocation? openXmlElement, Double? value)
+
+  public static void SetLongitude(GeoLocation? openXmlElement, Double? value)
   {
     if (openXmlElement != null)
       openXmlElement.Longitude = value;
   }
-  
+
   /// <summary>
-  /// entityName, this property is only available in Office 2016 and later.
+  ///   entityName, this property is only available in Office 2016 and later.
   /// </summary>
-  public static String? GetEntityName(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.GeoLocation? openXmlElement)
+  public static String? GetEntityName(GeoLocation? openXmlElement)
   {
     return openXmlElement?.EntityName?.Value;
   }
-  
-  public static void SetEntityName(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.GeoLocation? openXmlElement, String? value)
+
+  public static void SetEntityName(GeoLocation? openXmlElement, String? value)
   {
     if (openXmlElement != null)
       if (value != null)
@@ -49,33 +53,33 @@ public static class GeoLocationConverter
       else
         openXmlElement.EntityName = null;
   }
-  
+
   /// <summary>
-  /// entityType, this property is only available in Office 2016 and later.
+  ///   entityType, this property is only available in Office 2016 and later.
   /// </summary>
-  public static DocumentModel.Drawings.ChartDrawings.EntityTypeEnum? GetEntityType(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.GeoLocation? openXmlElement)
+  public static EntityTypeEnum? GetEntityType(GeoLocation? openXmlElement)
   {
-    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.EntityTypeEnum, DocumentModel.Drawings.ChartDrawings.EntityTypeEnum>(openXmlElement?.EntityType?.Value);
+    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.EntityTypeEnum, EntityTypeEnum>(openXmlElement?.EntityType?.Value);
   }
-  
-  public static void SetEntityType(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.GeoLocation? openXmlElement, DocumentModel.Drawings.ChartDrawings.EntityTypeEnum? value)
+
+  public static void SetEntityType(GeoLocation? openXmlElement, EntityTypeEnum? value)
   {
     if (openXmlElement != null)
-      openXmlElement.EntityType = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.EntityTypeEnum, DocumentModel.Drawings.ChartDrawings.EntityTypeEnum>(value);
+      openXmlElement.EntityType = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.EntityTypeEnum, EntityTypeEnum>(value);
   }
-  
+
   /// <summary>
-  /// Address.
+  ///   Address.
   /// </summary>
-  public static DocumentModel.Drawings.ChartDrawings.Address? GetAddress(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.GeoLocation? openXmlElement)
+  public static Address? GetAddress(GeoLocation? openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.Address>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.ChartDrawings.AddressConverter.CreateModelElement(itemElement);
+      return AddressConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetAddress(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.GeoLocation? openXmlElement, DocumentModel.Drawings.ChartDrawings.Address? value)
+
+  public static void SetAddress(GeoLocation? openXmlElement, Address? value)
   {
     if (openXmlElement != null)
     {
@@ -84,14 +88,14 @@ public static class GeoLocationConverter
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Drawings.ChartDrawings.AddressConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.Address>(value);
+        itemElement = AddressConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.Address>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static DocumentModel.Drawings.ChartDrawings.GeoLocation? CreateModelElement(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.GeoLocation? openXmlElement)
+
+  public static DocumentModel.Drawings.ChartDrawings.GeoLocation? CreateModelElement(GeoLocation? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -105,9 +109,9 @@ public static class GeoLocationConverter
     }
     return null;
   }
-  
+
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.ChartDrawings.GeoLocation? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.GeoLocation, new()
+    where OpenXmlElementType : GeoLocation, new()
   {
     if (value != null)
     {

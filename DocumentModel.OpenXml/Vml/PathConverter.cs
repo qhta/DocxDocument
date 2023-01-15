@@ -1,19 +1,23 @@
+using DocumentFormat.OpenXml.Vml.Office;
+using DocumentModel.Vml;
+using Path = DocumentFormat.OpenXml.Vml.Path;
+
 namespace DocumentModel.OpenXml.Vml;
 
 /// <summary>
-/// Defines the Path Class.
+///   Defines the Path Class.
 /// </summary>
 public static class PathConverter
 {
   /// <summary>
-  /// Unique Identifier
+  ///   Unique Identifier
   /// </summary>
-  public static String? GetId(DocumentFormat.OpenXml.Vml.Path? openXmlElement)
+  public static String? GetId(Path? openXmlElement)
   {
     return openXmlElement?.Id?.Value;
   }
-  
-  public static void SetId(DocumentFormat.OpenXml.Vml.Path? openXmlElement, String? value)
+
+  public static void SetId(Path? openXmlElement, String? value)
   {
     if (openXmlElement != null)
       if (value != null)
@@ -21,16 +25,16 @@ public static class PathConverter
       else
         openXmlElement.Id = null;
   }
-  
+
   /// <summary>
-  /// Path Definition
+  ///   Path Definition
   /// </summary>
-  public static String? GetValue(DocumentFormat.OpenXml.Vml.Path? openXmlElement)
+  public static String? GetValue(Path? openXmlElement)
   {
     return openXmlElement?.Value?.Value;
   }
-  
-  public static void SetValue(DocumentFormat.OpenXml.Vml.Path? openXmlElement, String? value)
+
+  public static void SetValue(Path? openXmlElement, String? value)
   {
     if (openXmlElement != null)
       if (value != null)
@@ -38,16 +42,16 @@ public static class PathConverter
       else
         openXmlElement.Value = null;
   }
-  
+
   /// <summary>
-  /// Limo Stretch Point
+  ///   Limo Stretch Point
   /// </summary>
-  public static String? GetLimo(DocumentFormat.OpenXml.Vml.Path? openXmlElement)
+  public static String? GetLimo(Path? openXmlElement)
   {
     return openXmlElement?.Limo?.Value;
   }
-  
-  public static void SetLimo(DocumentFormat.OpenXml.Vml.Path? openXmlElement, String? value)
+
+  public static void SetLimo(Path? openXmlElement, String? value)
   {
     if (openXmlElement != null)
       if (value != null)
@@ -55,16 +59,16 @@ public static class PathConverter
       else
         openXmlElement.Limo = null;
   }
-  
+
   /// <summary>
-  /// Text Box Bounding Box
+  ///   Text Box Bounding Box
   /// </summary>
-  public static String? GetTextboxRectangle(DocumentFormat.OpenXml.Vml.Path? openXmlElement)
+  public static String? GetTextboxRectangle(Path? openXmlElement)
   {
     return openXmlElement?.TextboxRectangle?.Value;
   }
-  
-  public static void SetTextboxRectangle(DocumentFormat.OpenXml.Vml.Path? openXmlElement, String? value)
+
+  public static void SetTextboxRectangle(Path? openXmlElement, String? value)
   {
     if (openXmlElement != null)
       if (value != null)
@@ -72,16 +76,16 @@ public static class PathConverter
       else
         openXmlElement.TextboxRectangle = null;
   }
-  
+
   /// <summary>
-  /// Shape Fill Toggle
+  ///   Shape Fill Toggle
   /// </summary>
-  public static Boolean? GetAllowFill(DocumentFormat.OpenXml.Vml.Path? openXmlElement)
+  public static Boolean? GetAllowFill(Path? openXmlElement)
   {
     return openXmlElement?.AllowFill?.Value;
   }
-  
-  public static void SetAllowFill(DocumentFormat.OpenXml.Vml.Path? openXmlElement, Boolean? value)
+
+  public static void SetAllowFill(Path? openXmlElement, Boolean? value)
   {
     if (openXmlElement != null)
       if (value != null)
@@ -89,16 +93,16 @@ public static class PathConverter
       else
         openXmlElement.AllowFill = null;
   }
-  
+
   /// <summary>
-  /// Stroke Toggle
+  ///   Stroke Toggle
   /// </summary>
-  public static Boolean? GetAllowStroke(DocumentFormat.OpenXml.Vml.Path? openXmlElement)
+  public static Boolean? GetAllowStroke(Path? openXmlElement)
   {
     return openXmlElement?.AllowStroke?.Value;
   }
-  
-  public static void SetAllowStroke(DocumentFormat.OpenXml.Vml.Path? openXmlElement, Boolean? value)
+
+  public static void SetAllowStroke(Path? openXmlElement, Boolean? value)
   {
     if (openXmlElement != null)
       if (value != null)
@@ -106,16 +110,16 @@ public static class PathConverter
       else
         openXmlElement.AllowStroke = null;
   }
-  
+
   /// <summary>
-  /// Shadow Toggle
+  ///   Shadow Toggle
   /// </summary>
-  public static Boolean? GetAllowShading(DocumentFormat.OpenXml.Vml.Path? openXmlElement)
+  public static Boolean? GetAllowShading(Path? openXmlElement)
   {
     return openXmlElement?.AllowShading?.Value;
   }
-  
-  public static void SetAllowShading(DocumentFormat.OpenXml.Vml.Path? openXmlElement, Boolean? value)
+
+  public static void SetAllowShading(Path? openXmlElement, Boolean? value)
   {
     if (openXmlElement != null)
       if (value != null)
@@ -123,16 +127,16 @@ public static class PathConverter
       else
         openXmlElement.AllowShading = null;
   }
-  
+
   /// <summary>
-  /// Arrowhead Display Toggle
+  ///   Arrowhead Display Toggle
   /// </summary>
-  public static Boolean? GetShowArrowhead(DocumentFormat.OpenXml.Vml.Path? openXmlElement)
+  public static Boolean? GetShowArrowhead(Path? openXmlElement)
   {
     return openXmlElement?.ShowArrowhead?.Value;
   }
-  
-  public static void SetShowArrowhead(DocumentFormat.OpenXml.Vml.Path? openXmlElement, Boolean? value)
+
+  public static void SetShowArrowhead(Path? openXmlElement, Boolean? value)
   {
     if (openXmlElement != null)
       if (value != null)
@@ -140,16 +144,16 @@ public static class PathConverter
       else
         openXmlElement.ShowArrowhead = null;
   }
-  
+
   /// <summary>
-  /// Gradient Shape Toggle
+  ///   Gradient Shape Toggle
   /// </summary>
-  public static Boolean? GetAllowGradientShape(DocumentFormat.OpenXml.Vml.Path? openXmlElement)
+  public static Boolean? GetAllowGradientShape(Path? openXmlElement)
   {
     return openXmlElement?.AllowGradientShape?.Value;
   }
-  
-  public static void SetAllowGradientShape(DocumentFormat.OpenXml.Vml.Path? openXmlElement, Boolean? value)
+
+  public static void SetAllowGradientShape(Path? openXmlElement, Boolean? value)
   {
     if (openXmlElement != null)
       if (value != null)
@@ -157,16 +161,16 @@ public static class PathConverter
       else
         openXmlElement.AllowGradientShape = null;
   }
-  
+
   /// <summary>
-  /// Text Path Toggle
+  ///   Text Path Toggle
   /// </summary>
-  public static Boolean? GetAllowTextPath(DocumentFormat.OpenXml.Vml.Path? openXmlElement)
+  public static Boolean? GetAllowTextPath(Path? openXmlElement)
   {
     return openXmlElement?.AllowTextPath?.Value;
   }
-  
-  public static void SetAllowTextPath(DocumentFormat.OpenXml.Vml.Path? openXmlElement, Boolean? value)
+
+  public static void SetAllowTextPath(Path? openXmlElement, Boolean? value)
   {
     if (openXmlElement != null)
       if (value != null)
@@ -174,16 +178,16 @@ public static class PathConverter
       else
         openXmlElement.AllowTextPath = null;
   }
-  
+
   /// <summary>
-  /// Inset Stroke From Path Flag
+  ///   Inset Stroke From Path Flag
   /// </summary>
-  public static Boolean? GetAllowInsetPen(DocumentFormat.OpenXml.Vml.Path? openXmlElement)
+  public static Boolean? GetAllowInsetPen(Path? openXmlElement)
   {
     return openXmlElement?.AllowInsetPen?.Value;
   }
-  
-  public static void SetAllowInsetPen(DocumentFormat.OpenXml.Vml.Path? openXmlElement, Boolean? value)
+
+  public static void SetAllowInsetPen(Path? openXmlElement, Boolean? value)
   {
     if (openXmlElement != null)
       if (value != null)
@@ -191,30 +195,30 @@ public static class PathConverter
       else
         openXmlElement.AllowInsetPen = null;
   }
-  
+
   /// <summary>
-  /// Connection Point Type
+  ///   Connection Point Type
   /// </summary>
-  public static DocumentModel.Vml.ConnectKind? GetConnectionPointType(DocumentFormat.OpenXml.Vml.Path? openXmlElement)
+  public static ConnectKind? GetConnectionPointType(Path? openXmlElement)
   {
-    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Vml.Office.ConnectValues, DocumentModel.Vml.ConnectKind>(openXmlElement?.ConnectionPointType?.Value);
+    return EnumValueConverter.GetValue<ConnectValues, ConnectKind>(openXmlElement?.ConnectionPointType?.Value);
   }
-  
-  public static void SetConnectionPointType(DocumentFormat.OpenXml.Vml.Path? openXmlElement, DocumentModel.Vml.ConnectKind? value)
+
+  public static void SetConnectionPointType(Path? openXmlElement, ConnectKind? value)
   {
     if (openXmlElement != null)
-      openXmlElement.ConnectionPointType = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Vml.Office.ConnectValues, DocumentModel.Vml.ConnectKind>(value);
+      openXmlElement.ConnectionPointType = EnumValueConverter.CreateEnumValue<ConnectValues, ConnectKind>(value);
   }
-  
+
   /// <summary>
-  /// Connection Points
+  ///   Connection Points
   /// </summary>
-  public static String? GetConnectionPoints(DocumentFormat.OpenXml.Vml.Path? openXmlElement)
+  public static String? GetConnectionPoints(Path? openXmlElement)
   {
     return openXmlElement?.ConnectionPoints?.Value;
   }
-  
-  public static void SetConnectionPoints(DocumentFormat.OpenXml.Vml.Path? openXmlElement, String? value)
+
+  public static void SetConnectionPoints(Path? openXmlElement, String? value)
   {
     if (openXmlElement != null)
       if (value != null)
@@ -222,16 +226,16 @@ public static class PathConverter
       else
         openXmlElement.ConnectionPoints = null;
   }
-  
+
   /// <summary>
-  /// Connection Point Connect Angles
+  ///   Connection Point Connect Angles
   /// </summary>
-  public static String? GetConnectAngles(DocumentFormat.OpenXml.Vml.Path? openXmlElement)
+  public static String? GetConnectAngles(Path? openXmlElement)
   {
     return openXmlElement?.ConnectAngles?.Value;
   }
-  
-  public static void SetConnectAngles(DocumentFormat.OpenXml.Vml.Path? openXmlElement, String? value)
+
+  public static void SetConnectAngles(Path? openXmlElement, String? value)
   {
     if (openXmlElement != null)
       if (value != null)
@@ -239,16 +243,16 @@ public static class PathConverter
       else
         openXmlElement.ConnectAngles = null;
   }
-  
+
   /// <summary>
-  /// Extrusion Toggle
+  ///   Extrusion Toggle
   /// </summary>
-  public static Boolean? GetAllowExtrusion(DocumentFormat.OpenXml.Vml.Path? openXmlElement)
+  public static Boolean? GetAllowExtrusion(Path? openXmlElement)
   {
     return openXmlElement?.AllowExtrusion?.Value;
   }
-  
-  public static void SetAllowExtrusion(DocumentFormat.OpenXml.Vml.Path? openXmlElement, Boolean? value)
+
+  public static void SetAllowExtrusion(Path? openXmlElement, Boolean? value)
   {
     if (openXmlElement != null)
       if (value != null)
@@ -256,8 +260,8 @@ public static class PathConverter
       else
         openXmlElement.AllowExtrusion = null;
   }
-  
-  public static DocumentModel.Vml.Path? CreateModelElement(DocumentFormat.OpenXml.Vml.Path? openXmlElement)
+
+  public static DocumentModel.Vml.Path? CreateModelElement(Path? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -281,9 +285,9 @@ public static class PathConverter
     }
     return null;
   }
-  
+
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Vml.Path? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Vml.Path, new()
+    where OpenXmlElementType : Path, new()
   {
     if (value != null)
     {

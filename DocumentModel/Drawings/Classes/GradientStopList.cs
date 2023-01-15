@@ -1,10 +1,9 @@
 namespace DocumentModel.Drawings;
 
 /// <summary>
-/// Gradient Stop List.
+///   Gradient Stop List.
 /// </summary>
-public partial class GradientStopList
+public class GradientStopList
 {
-  public DocumentModel.Drawings.GradientStop? GradientStop { get; set; }
-  
+  public GradientStop? GradientStop { get; set; }
 }

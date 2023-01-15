@@ -1,10 +1,9 @@
 namespace DocumentModel.Properties;
 
 /// <summary>
-/// Custom File Properties.
+///   Custom File Properties.
 /// </summary>
 public partial class CustomProperties
 {
-  public Collection<DocumentModel.Properties.CustomDocumentProperty>? CustomDocumentProperties { get; set; }
-  
+  public Collection<CustomDocumentProperty>? CustomDocumentProperties { get; set; }
 }

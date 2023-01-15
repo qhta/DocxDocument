@@ -1,143 +1,142 @@
 namespace DocumentModel.Wordprocessing.Vml;
 
 /// <summary>
-/// Border Type
+///   Border Type
 /// </summary>
 public enum BorderKind
 {
   /// <summary>
-  /// No Border.
+  ///   No Border.
   /// </summary>
   None,
-  
+
   /// <summary>
-  /// Single Line Border.
+  ///   Single Line Border.
   /// </summary>
   Single,
-  
+
   /// <summary>
-  /// Thick Line Border.
+  ///   Thick Line Border.
   /// </summary>
   Thick,
-  
+
   /// <summary>
-  /// Double Line Border.
+  ///   Double Line Border.
   /// </summary>
   Double,
-  
+
   /// <summary>
-  /// Hairline Border.
+  ///   Hairline Border.
   /// </summary>
   Hairline,
-  
+
   /// <summary>
-  /// Dotted Border.
+  ///   Dotted Border.
   /// </summary>
   Dot,
-  
+
   /// <summary>
-  /// pecifies a line border consisting of a dashed line around the parent object..
+  ///   pecifies a line border consisting of a dashed line around the parent object..
   /// </summary>
   Dash,
-  
+
   /// <summary>
-  /// Dot Dash Border.
+  ///   Dot Dash Border.
   /// </summary>
   DotDash,
-  
+
   /// <summary>
-  /// Dash Dot Dot Border.
+  ///   Dash Dot Dot Border.
   /// </summary>
   DashDotDot,
-  
+
   /// <summary>
-  /// Triple Line Border.
+  ///   Triple Line Border.
   /// </summary>
   Triple,
-  
+
   /// <summary>
-  /// Thin Thick Small Gap Border.
+  ///   Thin Thick Small Gap Border.
   /// </summary>
   ThinThickSmall,
-  
+
   /// <summary>
-  /// Small thick-thin lines border.
+  ///   Small thick-thin lines border.
   /// </summary>
   ThickThinSmall,
-  
+
   /// <summary>
-  /// Small thin-thick-thin Lines Border.
+  ///   Small thin-thick-thin Lines Border.
   /// </summary>
   ThickBetweenThinSmall,
-  
+
   /// <summary>
-  /// Thin Thick Line Border.
+  ///   Thin Thick Line Border.
   /// </summary>
   ThinThick,
-  
+
   /// <summary>
-  /// Thick Thin Line Border.
+  ///   Thick Thin Line Border.
   /// </summary>
   ThickThin,
-  
+
   /// <summary>
-  /// Thin-thick-thin Border.
+  ///   Thin-thick-thin Border.
   /// </summary>
   ThickBetweenThin,
-  
+
   /// <summary>
-  /// Thin Thick Large Gap Border.
+  ///   Thin Thick Large Gap Border.
   /// </summary>
   ThinThickLarge,
-  
+
   /// <summary>
-  /// Thick Thin Large Gap Border.
+  ///   Thick Thin Large Gap Border.
   /// </summary>
   ThickThinLarge,
-  
+
   /// <summary>
-  /// Large thin-thick-thin Border.
+  ///   Large thin-thick-thin Border.
   /// </summary>
   ThickBetweenThinLarge,
-  
+
   /// <summary>
-  /// Wavy Border.
+  ///   Wavy Border.
   /// </summary>
   Wave,
-  
+
   /// <summary>
-  /// Double Wavy Lines Border.
+  ///   Double Wavy Lines Border.
   /// </summary>
   DoubleWave,
-  
+
   /// <summary>
-  /// Small Dash Border.
+  ///   Small Dash Border.
   /// </summary>
   DashedSmall,
-  
+
   /// <summary>
-  /// Stroked Dash Dot Border.
+  ///   Stroked Dash Dot Border.
   /// </summary>
   DashDotStroked,
-  
+
   /// <summary>
-  /// 3D Embossed Border.
+  ///   3D Embossed Border.
   /// </summary>
   ThreeDEmboss,
-  
+
   /// <summary>
-  /// 3D Engraved Border.
+  ///   3D Engraved Border.
   /// </summary>
   ThreeDEngrave,
-  
+
   /// <summary>
-  /// Outset Border.
+  ///   Outset Border.
   /// </summary>
   HTMLOutset,
-  
+
   /// <summary>
-  /// Inset Border.
+  ///   Inset Border.
   /// </summary>
-  HTMLInset,
-  
+  HTMLInset
 }

@@ -1,33 +1,32 @@
 namespace DocumentModel.Wordprocessing;
 
 /// <summary>
-/// Defines the HorizontalAlignmentValues enumeration.
+///   Defines the HorizontalAlignmentValues enumeration.
 /// </summary>
 public enum HorizontalAlignmentKind
 {
   /// <summary>
-  /// Left Aligned Horizontally.
+  ///   Left Aligned Horizontally.
   /// </summary>
   Left,
-  
+
   /// <summary>
-  /// Centered Horizontally.
+  ///   Centered Horizontally.
   /// </summary>
   Center,
-  
+
   /// <summary>
-  /// Right Aligned Horizontally.
+  ///   Right Aligned Horizontally.
   /// </summary>
   Right,
-  
+
   /// <summary>
-  /// Inside.
+  ///   Inside.
   /// </summary>
   Inside,
-  
+
   /// <summary>
-  /// Outside.
+  ///   Outside.
   /// </summary>
-  Outside,
-  
+  Outside
 }

@@ -1,22 +1,25 @@
+using DocumentModel.Drawings;
+using Scene3DType = DocumentFormat.OpenXml.Drawing.Scene3DType;
+
 namespace DocumentModel.OpenXml.Drawings;
 
 /// <summary>
-/// 3D Scene Properties.
+///   3D Scene Properties.
 /// </summary>
 public static class Scene3DTypeConverter
 {
   /// <summary>
-  /// Camera.
+  ///   Camera.
   /// </summary>
-  public static DocumentModel.Drawings.Camera? GetCamera(DocumentFormat.OpenXml.Drawing.Scene3DType? openXmlElement)
+  public static Camera? GetCamera(Scene3DType? openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.Camera>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.CameraConverter.CreateModelElement(itemElement);
+      return CameraConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetCamera(DocumentFormat.OpenXml.Drawing.Scene3DType? openXmlElement, DocumentModel.Drawings.Camera? value)
+
+  public static void SetCamera(Scene3DType? openXmlElement, Camera? value)
   {
     if (openXmlElement != null)
     {
@@ -25,25 +28,25 @@ public static class Scene3DTypeConverter
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Drawings.CameraConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Camera>(value);
+        itemElement = CameraConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Camera>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
+
   /// <summary>
-  /// Light Rig.
+  ///   Light Rig.
   /// </summary>
-  public static DocumentModel.Drawings.LightRig? GetLightRig(DocumentFormat.OpenXml.Drawing.Scene3DType? openXmlElement)
+  public static LightRig? GetLightRig(Scene3DType? openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.LightRig>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.LightRigConverter.CreateModelElement(itemElement);
+      return LightRigConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetLightRig(DocumentFormat.OpenXml.Drawing.Scene3DType? openXmlElement, DocumentModel.Drawings.LightRig? value)
+
+  public static void SetLightRig(Scene3DType? openXmlElement, LightRig? value)
   {
     if (openXmlElement != null)
     {
@@ -52,25 +55,25 @@ public static class Scene3DTypeConverter
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Drawings.LightRigConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.LightRig>(value);
+        itemElement = LightRigConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.LightRig>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
+
   /// <summary>
-  /// Backdrop Plane.
+  ///   Backdrop Plane.
   /// </summary>
-  public static DocumentModel.Drawings.Backdrop? GetBackdrop(DocumentFormat.OpenXml.Drawing.Scene3DType? openXmlElement)
+  public static Backdrop? GetBackdrop(Scene3DType? openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.Backdrop>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.BackdropConverter.CreateModelElement(itemElement);
+      return BackdropConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetBackdrop(DocumentFormat.OpenXml.Drawing.Scene3DType? openXmlElement, DocumentModel.Drawings.Backdrop? value)
+
+  public static void SetBackdrop(Scene3DType? openXmlElement, Backdrop? value)
   {
     if (openXmlElement != null)
     {
@@ -79,25 +82,25 @@ public static class Scene3DTypeConverter
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Drawings.BackdropConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Backdrop>(value);
+        itemElement = BackdropConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Backdrop>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
+
   /// <summary>
-  /// ExtensionList.
+  ///   ExtensionList.
   /// </summary>
-  public static DocumentModel.Drawings.ExtensionList? GetExtensionList(DocumentFormat.OpenXml.Drawing.Scene3DType? openXmlElement)
+  public static DocumentModel.Drawings.ExtensionList? GetExtensionList(Scene3DType? openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.ExtensionList>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.ExtensionListConverter.CreateModelElement(itemElement);
+      return ExtensionListConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetExtensionList(DocumentFormat.OpenXml.Drawing.Scene3DType? openXmlElement, DocumentModel.Drawings.ExtensionList? value)
+
+  public static void SetExtensionList(Scene3DType? openXmlElement, DocumentModel.Drawings.ExtensionList? value)
   {
     if (openXmlElement != null)
     {
@@ -106,14 +109,14 @@ public static class Scene3DTypeConverter
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Drawings.ExtensionListConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.ExtensionList>(value);
+        itemElement = ExtensionListConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.ExtensionList>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static DocumentModel.Drawings.Scene3DType? CreateModelElement(DocumentFormat.OpenXml.Drawing.Scene3DType? openXmlElement)
+
+  public static DocumentModel.Drawings.Scene3DType? CreateModelElement(Scene3DType? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -126,9 +129,9 @@ public static class Scene3DTypeConverter
     }
     return null;
   }
-  
+
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.Scene3DType? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.Scene3DType, new()
+    where OpenXmlElementType : Scene3DType, new()
   {
     if (value != null)
     {

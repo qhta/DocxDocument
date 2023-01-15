@@ -1,43 +1,42 @@
 namespace DocumentModel.Drawings;
 
 /// <summary>
-/// Theme.
+///   Theme.
 /// </summary>
-public partial class Theme
+public class Theme
 {
   /// <summary>
-  /// name
+  ///   name
   /// </summary>
   public String? Name { get; set; }
-  
+
   /// <summary>
-  /// id, this property is only available in Office 2013 and later.
+  ///   id, this property is only available in Office 2013 and later.
   /// </summary>
   public String? ThemeId { get; set; }
-  
+
   /// <summary>
-  /// ThemeElements.
+  ///   ThemeElements.
   /// </summary>
-  public DocumentModel.Drawings.ThemeElements? ThemeElements { get; set; }
-  
+  public ThemeElements? ThemeElements { get; set; }
+
   /// <summary>
-  /// ObjectDefaults.
+  ///   ObjectDefaults.
   /// </summary>
-  public DocumentModel.Drawings.ObjectDefaults? ObjectDefaults { get; set; }
-  
+  public ObjectDefaults? ObjectDefaults { get; set; }
+
   /// <summary>
-  /// ExtraColorSchemeList.
+  ///   ExtraColorSchemeList.
   /// </summary>
-  public DocumentModel.Drawings.ExtraColorSchemeList? ExtraColorSchemeList { get; set; }
-  
+  public ExtraColorSchemeList? ExtraColorSchemeList { get; set; }
+
   /// <summary>
-  /// CustomColorList.
+  ///   CustomColorList.
   /// </summary>
-  public DocumentModel.Drawings.CustomColorList? CustomColorList { get; set; }
-  
+  public CustomColorList? CustomColorList { get; set; }
+
   /// <summary>
-  /// OfficeStyleSheetExtensionList.
+  ///   OfficeStyleSheetExtensionList.
   /// </summary>
-  public DocumentModel.Drawings.OfficeStyleSheetExtensionList? OfficeStyleSheetExtensionList { get; set; }
-  
+  public OfficeStyleSheetExtensionList? OfficeStyleSheetExtensionList { get; set; }
 }

@@ -1,10 +1,9 @@
 namespace DocumentModel;
 
 /// <summary>
-/// Defines the ContextMenus Class.
+///   Defines the ContextMenus Class.
 /// </summary>
-public partial class ContextMenus
+public class ContextMenus
 {
-  public Collection<DocumentModel.ContextMenu>? Items { get; set; }
-  
+  public Collection<ContextMenu>? Items { get; set; }
 }

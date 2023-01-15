@@ -1,144 +1,150 @@
+using DocumentFormat.OpenXml.Wordprocessing;
+using DropDownListFormField = DocumentModel.Wordprocessing.DropDownListFormField;
+using HelpText = DocumentModel.Wordprocessing.HelpText;
+using StatusText = DocumentModel.Wordprocessing.StatusText;
+using TextInput = DocumentModel.Wordprocessing.TextInput;
+
 namespace DocumentModel.OpenXml.Wordprocessing;
 
 /// <summary>
-/// Form Field Properties.
+///   Form Field Properties.
 /// </summary>
 public static class FormFieldDataConverter
 {
-  public static String? GetFormFieldName(DocumentFormat.OpenXml.Wordprocessing.FormFieldData? openXmlElement)
+  public static String? GetFormFieldName(FormFieldData? openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.FormFieldName>();
+    var itemElement = openXmlElement?.GetFirstChild<FormFieldName>();
     if (itemElement != null)
       return itemElement.Val?.Value;
     return null;
   }
-  
-  public static void SetFormFieldName(DocumentFormat.OpenXml.Wordprocessing.FormFieldData? openXmlElement, String? value)
+
+  public static void SetFormFieldName(FormFieldData? openXmlElement, String? value)
   {
     if (openXmlElement != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.FormFieldName>();
+      var itemElement = openXmlElement.GetFirstChild<FormFieldName>();
       if (itemElement != null)
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = new DocumentFormat.OpenXml.Wordprocessing.FormFieldName { Val = value };
+        itemElement = new FormFieldName { Val = value };
         openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static Boolean? GetEnabled(DocumentFormat.OpenXml.Wordprocessing.FormFieldData? openXmlElement)
+
+  public static Boolean? GetEnabled(FormFieldData? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.Enabled>();
+      var itemElement = openXmlElement.GetFirstChild<Enabled>();
       return itemElement != null;
     }
     return null;
   }
-  
-  public static void SetEnabled(DocumentFormat.OpenXml.Wordprocessing.FormFieldData? openXmlElement, Boolean? value)
+
+  public static void SetEnabled(FormFieldData? openXmlElement, Boolean? value)
   {
     if (openXmlElement != null)
     {
       if (value == false)
       {
-        var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.Enabled>();
+        var itemElement = openXmlElement.GetFirstChild<Enabled>();
         if (itemElement != null)
           itemElement.Remove();
       }
       if (value == true)
       {
-        var itemElement = new DocumentFormat.OpenXml.Wordprocessing.Enabled();
+        var itemElement = new Enabled();
         openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static Boolean? GetCalculateOnExit(DocumentFormat.OpenXml.Wordprocessing.FormFieldData? openXmlElement)
+
+  public static Boolean? GetCalculateOnExit(FormFieldData? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.CalculateOnExit>();
+      var itemElement = openXmlElement.GetFirstChild<CalculateOnExit>();
       return itemElement != null;
     }
     return null;
   }
-  
-  public static void SetCalculateOnExit(DocumentFormat.OpenXml.Wordprocessing.FormFieldData? openXmlElement, Boolean? value)
+
+  public static void SetCalculateOnExit(FormFieldData? openXmlElement, Boolean? value)
   {
     if (openXmlElement != null)
     {
       if (value == false)
       {
-        var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.CalculateOnExit>();
+        var itemElement = openXmlElement.GetFirstChild<CalculateOnExit>();
         if (itemElement != null)
           itemElement.Remove();
       }
       if (value == true)
       {
-        var itemElement = new DocumentFormat.OpenXml.Wordprocessing.CalculateOnExit();
+        var itemElement = new CalculateOnExit();
         openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static String? GetEntryMacro(DocumentFormat.OpenXml.Wordprocessing.FormFieldData? openXmlElement)
+
+  public static String? GetEntryMacro(FormFieldData? openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.EntryMacro>();
+    var itemElement = openXmlElement?.GetFirstChild<EntryMacro>();
     if (itemElement != null)
       return itemElement.Val?.Value;
     return null;
   }
-  
-  public static void SetEntryMacro(DocumentFormat.OpenXml.Wordprocessing.FormFieldData? openXmlElement, String? value)
+
+  public static void SetEntryMacro(FormFieldData? openXmlElement, String? value)
   {
     if (openXmlElement != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.EntryMacro>();
+      var itemElement = openXmlElement.GetFirstChild<EntryMacro>();
       if (itemElement != null)
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = new DocumentFormat.OpenXml.Wordprocessing.EntryMacro { Val = value };
+        itemElement = new EntryMacro { Val = value };
         openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static String? GetExitMacro(DocumentFormat.OpenXml.Wordprocessing.FormFieldData? openXmlElement)
+
+  public static String? GetExitMacro(FormFieldData? openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.ExitMacro>();
+    var itemElement = openXmlElement?.GetFirstChild<ExitMacro>();
     if (itemElement != null)
       return itemElement.Val?.Value;
     return null;
   }
-  
-  public static void SetExitMacro(DocumentFormat.OpenXml.Wordprocessing.FormFieldData? openXmlElement, String? value)
+
+  public static void SetExitMacro(FormFieldData? openXmlElement, String? value)
   {
     if (openXmlElement != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.ExitMacro>();
+      var itemElement = openXmlElement.GetFirstChild<ExitMacro>();
       if (itemElement != null)
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = new DocumentFormat.OpenXml.Wordprocessing.ExitMacro { Val = value };
+        itemElement = new ExitMacro { Val = value };
         openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static DocumentModel.Wordprocessing.HelpText? GetHelpText(DocumentFormat.OpenXml.Wordprocessing.FormFieldData? openXmlElement)
+
+  public static HelpText? GetHelpText(FormFieldData? openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.HelpText>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Wordprocessing.HelpTextConverter.CreateModelElement(itemElement);
+      return HelpTextConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetHelpText(DocumentFormat.OpenXml.Wordprocessing.FormFieldData? openXmlElement, DocumentModel.Wordprocessing.HelpText? value)
+
+  public static void SetHelpText(FormFieldData? openXmlElement, HelpText? value)
   {
     if (openXmlElement != null)
     {
@@ -147,22 +153,22 @@ public static class FormFieldDataConverter
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Wordprocessing.HelpTextConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.HelpText>(value);
+        itemElement = HelpTextConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.HelpText>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static DocumentModel.Wordprocessing.StatusText? GetStatusText(DocumentFormat.OpenXml.Wordprocessing.FormFieldData? openXmlElement)
+
+  public static StatusText? GetStatusText(FormFieldData? openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.StatusText>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Wordprocessing.StatusTextConverter.CreateModelElement(itemElement);
+      return StatusTextConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetStatusText(DocumentFormat.OpenXml.Wordprocessing.FormFieldData? openXmlElement, DocumentModel.Wordprocessing.StatusText? value)
+
+  public static void SetStatusText(FormFieldData? openXmlElement, StatusText? value)
   {
     if (openXmlElement != null)
     {
@@ -171,22 +177,22 @@ public static class FormFieldDataConverter
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Wordprocessing.StatusTextConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.StatusText>(value);
+        itemElement = StatusTextConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.StatusText>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static DocumentModel.Wordprocessing.CheckBox? GetCheckBox(DocumentFormat.OpenXml.Wordprocessing.FormFieldData? openXmlElement)
+
+  public static DocumentModel.Wordprocessing.CheckBox? GetCheckBox(FormFieldData? openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.CheckBox>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Wordprocessing.CheckBoxConverter.CreateModelElement(itemElement);
+      return CheckBoxConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetCheckBox(DocumentFormat.OpenXml.Wordprocessing.FormFieldData? openXmlElement, DocumentModel.Wordprocessing.CheckBox? value)
+
+  public static void SetCheckBox(FormFieldData? openXmlElement, DocumentModel.Wordprocessing.CheckBox? value)
   {
     if (openXmlElement != null)
     {
@@ -195,22 +201,22 @@ public static class FormFieldDataConverter
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Wordprocessing.CheckBoxConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.CheckBox>(value);
+        itemElement = CheckBoxConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.CheckBox>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static DocumentModel.Wordprocessing.DropDownListFormField? GetDropDownListFormField(DocumentFormat.OpenXml.Wordprocessing.FormFieldData? openXmlElement)
+
+  public static DropDownListFormField? GetDropDownListFormField(FormFieldData? openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.DropDownListFormField>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Wordprocessing.DropDownListFormFieldConverter.CreateModelElement(itemElement);
+      return DropDownListFormFieldConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetDropDownListFormField(DocumentFormat.OpenXml.Wordprocessing.FormFieldData? openXmlElement, DocumentModel.Wordprocessing.DropDownListFormField? value)
+
+  public static void SetDropDownListFormField(FormFieldData? openXmlElement, DropDownListFormField? value)
   {
     if (openXmlElement != null)
     {
@@ -219,22 +225,22 @@ public static class FormFieldDataConverter
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Wordprocessing.DropDownListFormFieldConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.DropDownListFormField>(value);
+        itemElement = DropDownListFormFieldConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.DropDownListFormField>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static DocumentModel.Wordprocessing.TextInput? GetTextInput(DocumentFormat.OpenXml.Wordprocessing.FormFieldData? openXmlElement)
+
+  public static TextInput? GetTextInput(FormFieldData? openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.TextInput>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Wordprocessing.TextInputConverter.CreateModelElement(itemElement);
+      return TextInputConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetTextInput(DocumentFormat.OpenXml.Wordprocessing.FormFieldData? openXmlElement, DocumentModel.Wordprocessing.TextInput? value)
+
+  public static void SetTextInput(FormFieldData? openXmlElement, TextInput? value)
   {
     if (openXmlElement != null)
     {
@@ -243,14 +249,14 @@ public static class FormFieldDataConverter
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Wordprocessing.TextInputConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.TextInput>(value);
+        itemElement = TextInputConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.TextInput>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static DocumentModel.Wordprocessing.FormFieldData? CreateModelElement(DocumentFormat.OpenXml.Wordprocessing.FormFieldData? openXmlElement)
+
+  public static DocumentModel.Wordprocessing.FormFieldData? CreateModelElement(FormFieldData? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -269,9 +275,9 @@ public static class FormFieldDataConverter
     }
     return null;
   }
-  
+
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.FormFieldData? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Wordprocessing.FormFieldData, new()
+    where OpenXmlElementType : FormFieldData, new()
   {
     if (value != null)
     {

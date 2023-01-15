@@ -1,25 +1,27 @@
+using DocumentFormat.OpenXml.Drawing;
+
 namespace DocumentModel.OpenXml.Drawings;
 
 /// <summary>
-/// Alpha Replace Effect.
+///   Alpha Replace Effect.
 /// </summary>
 public static class AlphaReplaceConverter
 {
   /// <summary>
-  /// Alpha
+  ///   Alpha
   /// </summary>
-  public static Int32? GetAlpha(DocumentFormat.OpenXml.Drawing.AlphaReplace? openXmlElement)
+  public static Int32? GetAlpha(AlphaReplace? openXmlElement)
   {
     return openXmlElement?.Alpha?.Value;
   }
-  
-  public static void SetAlpha(DocumentFormat.OpenXml.Drawing.AlphaReplace? openXmlElement, Int32? value)
+
+  public static void SetAlpha(AlphaReplace? openXmlElement, Int32? value)
   {
     if (openXmlElement != null)
       openXmlElement.Alpha = value;
   }
-  
-  public static DocumentModel.Drawings.AlphaReplace? CreateModelElement(DocumentFormat.OpenXml.Drawing.AlphaReplace? openXmlElement)
+
+  public static DocumentModel.Drawings.AlphaReplace? CreateModelElement(AlphaReplace? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -29,9 +31,9 @@ public static class AlphaReplaceConverter
     }
     return null;
   }
-  
+
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.AlphaReplace? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.AlphaReplace, new()
+    where OpenXmlElementType : AlphaReplace, new()
   {
     if (value != null)
     {

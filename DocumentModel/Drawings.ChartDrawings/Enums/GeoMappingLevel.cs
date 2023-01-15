@@ -1,43 +1,42 @@
 namespace DocumentModel.Drawings.ChartDrawings;
 
 /// <summary>
-/// Defines the GeoMappingLevel enumeration.
+///   Defines the GeoMappingLevel enumeration.
 /// </summary>
 public enum GeoMappingLevel
 {
   /// <summary>
-  /// dataOnly.
+  ///   dataOnly.
   /// </summary>
   DataOnly,
-  
+
   /// <summary>
-  /// postalCode.
+  ///   postalCode.
   /// </summary>
   PostalCode,
-  
+
   /// <summary>
-  /// county.
+  ///   county.
   /// </summary>
   County,
-  
+
   /// <summary>
-  /// state.
+  ///   state.
   /// </summary>
   State,
-  
+
   /// <summary>
-  /// countryRegion.
+  ///   countryRegion.
   /// </summary>
   CountryRegion,
-  
+
   /// <summary>
-  /// countryRegionList.
+  ///   countryRegionList.
   /// </summary>
   CountryRegionList,
-  
+
   /// <summary>
-  /// world.
+  ///   world.
   /// </summary>
-  World,
-  
+  World
 }

@@ -1,18 +1,17 @@
 namespace DocumentModel.Wordprocessing;
 
 /// <summary>
-/// Defines the ObjectDrawAspect enumeration.
+///   Defines the ObjectDrawAspect enumeration.
 /// </summary>
 public enum ObjectDrawAspect
 {
   /// <summary>
-  /// content.
+  ///   content.
   /// </summary>
   content,
-  
+
   /// <summary>
-  /// icon.
+  ///   icon.
   /// </summary>
-  icon,
-  
+  icon
 }

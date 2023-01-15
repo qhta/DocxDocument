@@ -1,23 +1,22 @@
 namespace DocumentModel.Drawings;
 
 /// <summary>
-/// Path Shade Type
+///   Path Shade Type
 /// </summary>
 public enum PathShadeKind
 {
   /// <summary>
-  /// Shape.
+  ///   Shape.
   /// </summary>
   Shape,
-  
+
   /// <summary>
-  /// Circle.
+  ///   Circle.
   /// </summary>
   Circle,
-  
+
   /// <summary>
-  /// Rectangle.
+  ///   Rectangle.
   /// </summary>
-  Rectangle,
-  
+  Rectangle
 }

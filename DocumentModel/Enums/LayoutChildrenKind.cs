@@ -1,18 +1,17 @@
 namespace DocumentModel;
 
 /// <summary>
-/// Defines the LayoutChildrenValues enumeration.
+///   Defines the LayoutChildrenValues enumeration.
 /// </summary>
 public enum LayoutChildrenKind
 {
   /// <summary>
-  /// horizontal.
+  ///   horizontal.
   /// </summary>
   Horizontal,
-  
+
   /// <summary>
-  /// vertical.
+  ///   vertical.
   /// </summary>
-  Vertical,
-  
+  Vertical
 }

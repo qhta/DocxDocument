@@ -1,23 +1,22 @@
 namespace DocumentModel.Drawings.Charts;
 
 /// <summary>
-/// Multi Level String Reference.
+///   Multi Level String Reference.
 /// </summary>
-public partial class MultiLevelStringReference
+public class MultiLevelStringReference
 {
   /// <summary>
-  /// Formula.
+  ///   Formula.
   /// </summary>
   public String? Formula { get; set; }
-  
+
   /// <summary>
-  /// MultiLevelStringCache.
+  ///   MultiLevelStringCache.
   /// </summary>
-  public DocumentModel.Drawings.Charts.MultiLevelStringCache? MultiLevelStringCache { get; set; }
-  
+  public MultiLevelStringCache? MultiLevelStringCache { get; set; }
+
   /// <summary>
-  /// MultiLvlStrRefExtensionList.
+  ///   MultiLvlStrRefExtensionList.
   /// </summary>
-  public DocumentModel.Drawings.Charts.MultiLvlStrRefExtensionList? MultiLvlStrRefExtensionList { get; set; }
-  
+  public MultiLvlStrRefExtensionList? MultiLvlStrRefExtensionList { get; set; }
 }

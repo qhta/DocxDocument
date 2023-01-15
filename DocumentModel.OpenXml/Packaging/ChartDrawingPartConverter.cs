@@ -1,26 +1,31 @@
+using DocumentFormat.OpenXml.Packaging;
+using DocumentModel.Drawings.Charts;
+using DocumentModel.OpenXml.Drawings.Charts;
+using ImagePart = DocumentModel.Packaging.ImagePart;
+
 namespace DocumentModel.OpenXml.Packaging;
 
 /// <summary>
-/// Defines the ChartDrawingPart
+///   Defines the ChartDrawingPart
 /// </summary>
 public static class ChartDrawingPartConverter
 {
-  public static String? GetContentType(DocumentFormat.OpenXml.Packaging.ChartDrawingPart? openXmlElement)
+  public static String? GetContentType(ChartDrawingPart? openXmlElement)
   {
     return openXmlElement?.ContentType;
   }
-  
+
   /// <summary>
-  /// Gets the ImageParts of the ChartDrawingPart
+  ///   Gets the ImageParts of the ChartDrawingPart
   /// </summary>
-  public static System.Collections.ObjectModel.Collection<DocumentModel.Packaging.ImagePart>? GetImageParts(DocumentFormat.OpenXml.Packaging.ChartDrawingPart? openXmlElement)
+  public static Collection<ImagePart>? GetImageParts(ChartDrawingPart? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var collection = new System.Collections.ObjectModel.Collection<DocumentModel.Packaging.ImagePart>();
+      var collection = new Collection<ImagePart>();
       foreach (var item in openXmlElement.GetPartsOfType<DocumentFormat.OpenXml.Packaging.ImagePart>())
       {
-        var newItem = DocumentModel.OpenXml.Packaging.ImagePartConverter.CreateModelElement(item);
+        var newItem = ImagePartConverter.CreateModelElement(item);
         if (newItem != null)
           collection.Add(newItem);
       }
@@ -28,34 +33,34 @@ public static class ChartDrawingPartConverter
     }
     return null;
   }
-  
-  public static String? GetRelationshipType(DocumentFormat.OpenXml.Packaging.ChartDrawingPart? openXmlElement)
+
+  public static String? GetRelationshipType(ChartDrawingPart? openXmlElement)
   {
     return openXmlElement?.RelationshipType;
   }
-  
+
   /// <summary>
-  /// Gets or sets the root element of this part.
+  ///   Gets or sets the root element of this part.
   /// </summary>
-  public static DocumentModel.Drawings.Charts.UserShapes? GetUserShapes(DocumentFormat.OpenXml.Packaging.ChartDrawingPart? openXmlElement)
+  public static UserShapes? GetUserShapes(ChartDrawingPart? openXmlElement)
   {
     if (openXmlElement?.RootElement is DocumentFormat.OpenXml.Drawing.Charts.UserShapes rootElement)
-      return DocumentModel.OpenXml.Drawings.Charts.UserShapesConverter.CreateModelElement(rootElement);
+      return UserShapesConverter.CreateModelElement(rootElement);
     return null;
   }
-  
-  public static void SetUserShapes(DocumentFormat.OpenXml.Packaging.ChartDrawingPart? openXmlElement, DocumentModel.Drawings.Charts.UserShapes? value)
+
+  public static void SetUserShapes(ChartDrawingPart? openXmlElement, UserShapes? value)
   {
     if (openXmlElement != null)
       if (value != null)
       {
-         var rootElement = DocumentModel.OpenXml.Drawings.Charts.UserShapesConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Charts.UserShapes>(value);
-         if (rootElement != null)
-           openXmlElement.UserShapes = rootElement;
+        var rootElement = UserShapesConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Charts.UserShapes>(value);
+        if (rootElement != null)
+          openXmlElement.UserShapes = rootElement;
       }
   }
-  
-  public static DocumentModel.Packaging.ChartDrawingPart? CreateModelElement(DocumentFormat.OpenXml.Packaging.ChartDrawingPart? openXmlElement)
+
+  public static DocumentModel.Packaging.ChartDrawingPart? CreateModelElement(ChartDrawingPart? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -68,9 +73,9 @@ public static class ChartDrawingPartConverter
     }
     return null;
   }
-  
+
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Packaging.ChartDrawingPart? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Packaging.ChartDrawingPart, new()
+    where OpenXmlElementType : ChartDrawingPart, new()
   {
     if (value != null)
     {

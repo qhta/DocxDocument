@@ -1,68 +1,67 @@
 namespace DocumentModel.Drawings;
 
 /// <summary>
-/// Bevel Presets
+///   Bevel Presets
 /// </summary>
 public enum BevelPresetKind
 {
   /// <summary>
-  /// Relaxed Inset.
+  ///   Relaxed Inset.
   /// </summary>
   RelaxedInset,
-  
+
   /// <summary>
-  /// Circle.
+  ///   Circle.
   /// </summary>
   Circle,
-  
+
   /// <summary>
-  /// Slope.
+  ///   Slope.
   /// </summary>
   Slope,
-  
+
   /// <summary>
-  /// Cross.
+  ///   Cross.
   /// </summary>
   Cross,
-  
+
   /// <summary>
-  /// Angle.
+  ///   Angle.
   /// </summary>
   Angle,
-  
+
   /// <summary>
-  /// Soft Round.
+  ///   Soft Round.
   /// </summary>
   SoftRound,
-  
+
   /// <summary>
-  /// Convex.
+  ///   Convex.
   /// </summary>
   Convex,
-  
+
   /// <summary>
-  /// Cool Slant.
+  ///   Cool Slant.
   /// </summary>
   CoolSlant,
-  
+
   /// <summary>
-  /// Divot.
+  ///   Divot.
   /// </summary>
   Divot,
-  
+
   /// <summary>
-  /// Riblet.
+  ///   Riblet.
   /// </summary>
   Riblet,
-  
+
   /// <summary>
-  /// Hard Edge.
+  ///   Hard Edge.
   /// </summary>
   HardEdge,
-  
+
   /// <summary>
-  /// Art Deco.
+  ///   Art Deco.
   /// </summary>
-  ArtDeco,
-  
+  ArtDeco
 }

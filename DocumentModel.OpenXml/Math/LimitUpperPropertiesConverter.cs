@@ -1,22 +1,25 @@
+using DocumentModel.Math;
+using LimitUpperProperties = DocumentFormat.OpenXml.Math.LimitUpperProperties;
+
 namespace DocumentModel.OpenXml.Math;
 
 /// <summary>
-/// Upper Limit Properties.
+///   Upper Limit Properties.
 /// </summary>
 public static class LimitUpperPropertiesConverter
 {
   /// <summary>
-  /// ControlProperties.
+  ///   ControlProperties.
   /// </summary>
-  public static DocumentModel.Math.ControlProperties? GetControlProperties(DocumentFormat.OpenXml.Math.LimitUpperProperties? openXmlElement)
+  public static ControlProperties? GetControlProperties(LimitUpperProperties? openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Math.ControlProperties>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Math.ControlPropertiesConverter.CreateModelElement(itemElement);
+      return ControlPropertiesConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetControlProperties(DocumentFormat.OpenXml.Math.LimitUpperProperties? openXmlElement, DocumentModel.Math.ControlProperties? value)
+
+  public static void SetControlProperties(LimitUpperProperties? openXmlElement, ControlProperties? value)
   {
     if (openXmlElement != null)
     {
@@ -25,14 +28,14 @@ public static class LimitUpperPropertiesConverter
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Math.ControlPropertiesConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Math.ControlProperties>(value);
+        itemElement = ControlPropertiesConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Math.ControlProperties>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static DocumentModel.Math.LimitUpperProperties? CreateModelElement(DocumentFormat.OpenXml.Math.LimitUpperProperties? openXmlElement)
+
+  public static DocumentModel.Math.LimitUpperProperties? CreateModelElement(LimitUpperProperties? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -42,9 +45,9 @@ public static class LimitUpperPropertiesConverter
     }
     return null;
   }
-  
+
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Math.LimitUpperProperties? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Math.LimitUpperProperties, new()
+    where OpenXmlElementType : LimitUpperProperties, new()
   {
     if (value != null)
     {

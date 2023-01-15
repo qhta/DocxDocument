@@ -1,10 +1,9 @@
 namespace DocumentModel.Drawings.Charts;
 
 /// <summary>
-/// Level.
+///   Level.
 /// </summary>
-public partial class Level
+public class Level
 {
-  public Collection<DocumentModel.Drawings.Charts.StringPoint>? StringPoints { get; set; }
-  
+  public Collection<StringPoint>? StringPoints { get; set; }
 }

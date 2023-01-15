@@ -1,10 +1,9 @@
 namespace DocumentModel.Drawings.Diagrams;
 
 /// <summary>
-/// Defines the ColorData Class.
+///   Defines the ColorData Class.
 /// </summary>
-public partial class ColorData
+public class ColorData
 {
-  public DocumentModel.Drawings.Diagrams.DataModel? DataModel { get; set; }
-  
+  public DataModel? DataModel { get; set; }
 }

@@ -1,23 +1,22 @@
 namespace DocumentModel.Drawings.ChartDrawings;
 
 /// <summary>
-/// Defines the PrintSettings Class.
+///   Defines the PrintSettings Class.
 /// </summary>
-public partial class PrintSettings
+public class PrintSettings
 {
   /// <summary>
-  /// HeaderFooter.
+  ///   HeaderFooter.
   /// </summary>
-  public DocumentModel.Drawings.ChartDrawings.HeaderFooter? HeaderFooter { get; set; }
-  
+  public HeaderFooter? HeaderFooter { get; set; }
+
   /// <summary>
-  /// PageMargins.
+  ///   PageMargins.
   /// </summary>
-  public DocumentModel.Drawings.ChartDrawings.PageMargins? PageMargins { get; set; }
-  
+  public PageMargins? PageMargins { get; set; }
+
   /// <summary>
-  /// PageSetup.
+  ///   PageSetup.
   /// </summary>
-  public DocumentModel.Drawings.ChartDrawings.PageSetup? PageSetup { get; set; }
-  
+  public PageSetup? PageSetup { get; set; }
 }

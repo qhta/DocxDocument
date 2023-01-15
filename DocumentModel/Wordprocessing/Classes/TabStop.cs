@@ -1,23 +1,22 @@
 namespace DocumentModel.Wordprocessing;
 
 /// <summary>
-/// Custom Tab Stop.
+///   Custom Tab Stop.
 /// </summary>
-public partial class TabStop
+public class TabStop
 {
   /// <summary>
-  /// Tab Stop Type
+  ///   Tab Stop Type
   /// </summary>
-  public DocumentModel.Wordprocessing.TabStopKind? Val { get; set; }
-  
+  public TabStopKind? Val { get; set; }
+
   /// <summary>
-  /// Tab Leader Character
+  ///   Tab Leader Character
   /// </summary>
-  public DocumentModel.Wordprocessing.TabStopLeaderCharKind? Leader { get; set; }
-  
+  public TabStopLeaderCharKind? Leader { get; set; }
+
   /// <summary>
-  /// Tab Stop Position
+  ///   Tab Stop Position
   /// </summary>
   public Int32? Position { get; set; }
-  
 }

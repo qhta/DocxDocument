@@ -1,10 +1,9 @@
 namespace DocumentModel.Drawings.ChartDrawings;
 
 /// <summary>
-/// Defines the FormatOverrides Class.
+///   Defines the FormatOverrides Class.
 /// </summary>
-public partial class FormatOverrides
+public class FormatOverrides
 {
-  public Collection<DocumentModel.Drawings.ChartDrawings.FormatOverride>? Items { get; set; }
-  
+  public Collection<FormatOverride>? Items { get; set; }
 }

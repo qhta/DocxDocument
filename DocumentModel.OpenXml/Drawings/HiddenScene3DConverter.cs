@@ -1,22 +1,25 @@
+using DocumentModel.Drawings;
+using HiddenScene3D = DocumentFormat.OpenXml.Office2010.Drawing.HiddenScene3D;
+
 namespace DocumentModel.OpenXml.Drawings;
 
 /// <summary>
-/// Defines the HiddenScene3D Class.
+///   Defines the HiddenScene3D Class.
 /// </summary>
 public static class HiddenScene3DConverter
 {
   /// <summary>
-  /// Camera.
+  ///   Camera.
   /// </summary>
-  public static DocumentModel.Drawings.Camera? GetCamera(DocumentFormat.OpenXml.Office2010.Drawing.HiddenScene3D? openXmlElement)
+  public static Camera? GetCamera(HiddenScene3D? openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.Camera>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.CameraConverter.CreateModelElement(itemElement);
+      return CameraConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetCamera(DocumentFormat.OpenXml.Office2010.Drawing.HiddenScene3D? openXmlElement, DocumentModel.Drawings.Camera? value)
+
+  public static void SetCamera(HiddenScene3D? openXmlElement, Camera? value)
   {
     if (openXmlElement != null)
     {
@@ -25,25 +28,25 @@ public static class HiddenScene3DConverter
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Drawings.CameraConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Camera>(value);
+        itemElement = CameraConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Camera>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
+
   /// <summary>
-  /// Light Rig.
+  ///   Light Rig.
   /// </summary>
-  public static DocumentModel.Drawings.LightRig? GetLightRig(DocumentFormat.OpenXml.Office2010.Drawing.HiddenScene3D? openXmlElement)
+  public static LightRig? GetLightRig(HiddenScene3D? openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.LightRig>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.LightRigConverter.CreateModelElement(itemElement);
+      return LightRigConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetLightRig(DocumentFormat.OpenXml.Office2010.Drawing.HiddenScene3D? openXmlElement, DocumentModel.Drawings.LightRig? value)
+
+  public static void SetLightRig(HiddenScene3D? openXmlElement, LightRig? value)
   {
     if (openXmlElement != null)
     {
@@ -52,25 +55,25 @@ public static class HiddenScene3DConverter
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Drawings.LightRigConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.LightRig>(value);
+        itemElement = LightRigConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.LightRig>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
+
   /// <summary>
-  /// Backdrop Plane.
+  ///   Backdrop Plane.
   /// </summary>
-  public static DocumentModel.Drawings.Backdrop? GetBackdrop(DocumentFormat.OpenXml.Office2010.Drawing.HiddenScene3D? openXmlElement)
+  public static Backdrop? GetBackdrop(HiddenScene3D? openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.Backdrop>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.BackdropConverter.CreateModelElement(itemElement);
+      return BackdropConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetBackdrop(DocumentFormat.OpenXml.Office2010.Drawing.HiddenScene3D? openXmlElement, DocumentModel.Drawings.Backdrop? value)
+
+  public static void SetBackdrop(HiddenScene3D? openXmlElement, Backdrop? value)
   {
     if (openXmlElement != null)
     {
@@ -79,25 +82,25 @@ public static class HiddenScene3DConverter
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Drawings.BackdropConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Backdrop>(value);
+        itemElement = BackdropConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Backdrop>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
+
   /// <summary>
-  /// ExtensionList.
+  ///   ExtensionList.
   /// </summary>
-  public static DocumentModel.Drawings.ExtensionList? GetExtensionList(DocumentFormat.OpenXml.Office2010.Drawing.HiddenScene3D? openXmlElement)
+  public static DocumentModel.Drawings.ExtensionList? GetExtensionList(HiddenScene3D? openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.ExtensionList>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.ExtensionListConverter.CreateModelElement(itemElement);
+      return ExtensionListConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetExtensionList(DocumentFormat.OpenXml.Office2010.Drawing.HiddenScene3D? openXmlElement, DocumentModel.Drawings.ExtensionList? value)
+
+  public static void SetExtensionList(HiddenScene3D? openXmlElement, DocumentModel.Drawings.ExtensionList? value)
   {
     if (openXmlElement != null)
     {
@@ -106,14 +109,14 @@ public static class HiddenScene3DConverter
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Drawings.ExtensionListConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.ExtensionList>(value);
+        itemElement = ExtensionListConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.ExtensionList>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static DocumentModel.Drawings.HiddenScene3D? CreateModelElement(DocumentFormat.OpenXml.Office2010.Drawing.HiddenScene3D? openXmlElement)
+
+  public static DocumentModel.Drawings.HiddenScene3D? CreateModelElement(HiddenScene3D? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -126,9 +129,9 @@ public static class HiddenScene3DConverter
     }
     return null;
   }
-  
+
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.HiddenScene3D? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Office2010.Drawing.HiddenScene3D, new()
+    where OpenXmlElementType : HiddenScene3D, new()
   {
     if (value != null)
     {

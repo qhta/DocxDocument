@@ -1,18 +1,21 @@
+using DocumentModel.Wordprocessing;
+using Toolbars = DocumentFormat.OpenXml.Office.Word.Toolbars;
+
 namespace DocumentModel.OpenXml.Wordprocessing;
 
 /// <summary>
-/// Defines the Toolbars Class.
+///   Defines the Toolbars Class.
 /// </summary>
 public static class ToolbarsConverter
 {
-  public static System.Collections.ObjectModel.Collection<DocumentModel.Wordprocessing.AllocatedCommandManifest>? GetAllocatedCommandManifests(DocumentFormat.OpenXml.Office.Word.Toolbars? openXmlElement)
+  public static Collection<AllocatedCommandManifest>? GetAllocatedCommandManifests(Toolbars? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var collection = new System.Collections.ObjectModel.Collection<DocumentModel.Wordprocessing.AllocatedCommandManifest>();
+      var collection = new Collection<AllocatedCommandManifest>();
       foreach (var item in openXmlElement.Elements<DocumentFormat.OpenXml.Office.Word.AllocatedCommandManifest>())
       {
-        var newItem = DocumentModel.OpenXml.Wordprocessing.AllocatedCommandManifestConverter.CreateModelElement(item);
+        var newItem = AllocatedCommandManifestConverter.CreateModelElement(item);
         if (newItem != null)
           collection.Add(newItem);
       }
@@ -20,32 +23,30 @@ public static class ToolbarsConverter
     }
     return null;
   }
-  
-  public static void SetAllocatedCommandManifests(DocumentFormat.OpenXml.Office.Word.Toolbars? openXmlElement, System.Collections.ObjectModel.Collection<DocumentModel.Wordprocessing.AllocatedCommandManifest>? value)
+
+  public static void SetAllocatedCommandManifests(Toolbars? openXmlElement, Collection<AllocatedCommandManifest>? value)
   {
     if (openXmlElement != null)
     {
       openXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Office.Word.AllocatedCommandManifest>();
       if (value != null)
-      {
         foreach (var item in value)
         {
-          var newItem = DocumentModel.OpenXml.Wordprocessing.AllocatedCommandManifestConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office.Word.AllocatedCommandManifest>(item);
+          var newItem = AllocatedCommandManifestConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office.Word.AllocatedCommandManifest>(item);
           if (newItem != null)
             openXmlElement.AddChild(newItem);
         }
-      }
     }
   }
-  
-  public static System.Collections.ObjectModel.Collection<DocumentModel.Wordprocessing.ToolbarData>? GetToolbarDatas(DocumentFormat.OpenXml.Office.Word.Toolbars? openXmlElement)
+
+  public static Collection<ToolbarData>? GetToolbarDatas(Toolbars? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var collection = new System.Collections.ObjectModel.Collection<DocumentModel.Wordprocessing.ToolbarData>();
+      var collection = new Collection<ToolbarData>();
       foreach (var item in openXmlElement.Elements<DocumentFormat.OpenXml.Office.Word.ToolbarData>())
       {
-        var newItem = DocumentModel.OpenXml.Wordprocessing.ToolbarDataConverter.CreateModelElement(item);
+        var newItem = ToolbarDataConverter.CreateModelElement(item);
         if (newItem != null)
           collection.Add(newItem);
       }
@@ -53,25 +54,23 @@ public static class ToolbarsConverter
     }
     return null;
   }
-  
-  public static void SetToolbarDatas(DocumentFormat.OpenXml.Office.Word.Toolbars? openXmlElement, System.Collections.ObjectModel.Collection<DocumentModel.Wordprocessing.ToolbarData>? value)
+
+  public static void SetToolbarDatas(Toolbars? openXmlElement, Collection<ToolbarData>? value)
   {
     if (openXmlElement != null)
     {
       openXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Office.Word.ToolbarData>();
       if (value != null)
-      {
         foreach (var item in value)
         {
-          var newItem = DocumentModel.OpenXml.Wordprocessing.ToolbarDataConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office.Word.ToolbarData>(item);
+          var newItem = ToolbarDataConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office.Word.ToolbarData>(item);
           if (newItem != null)
             openXmlElement.AddChild(newItem);
         }
-      }
     }
   }
-  
-  public static DocumentModel.Wordprocessing.Toolbars? CreateModelElement(DocumentFormat.OpenXml.Office.Word.Toolbars? openXmlElement)
+
+  public static DocumentModel.Wordprocessing.Toolbars? CreateModelElement(Toolbars? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -82,9 +81,9 @@ public static class ToolbarsConverter
     }
     return null;
   }
-  
+
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.Toolbars? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Office.Word.Toolbars, new()
+    where OpenXmlElementType : Toolbars, new()
   {
     if (value != null)
     {

@@ -1,19 +1,23 @@
+using DocumentFormat.OpenXml.Drawing;
+using EmbeddedWavAudioFileType = DocumentModel.Drawings.EmbeddedWavAudioFileType;
+using HyperlinkExtensionList = DocumentModel.Drawings.HyperlinkExtensionList;
+
 namespace DocumentModel.OpenXml.Drawings;
 
 /// <summary>
-/// Defines the HyperlinkType Class.
+///   Defines the HyperlinkType Class.
 /// </summary>
 public static class HyperlinkTypeConverter
 {
   /// <summary>
-  /// relationship identifier to find target URI
+  ///   relationship identifier to find target URI
   /// </summary>
-  public static String? GetId(DocumentFormat.OpenXml.Drawing.HyperlinkType? openXmlElement)
+  public static String? GetId(HyperlinkType? openXmlElement)
   {
     return openXmlElement?.Id?.Value;
   }
-  
-  public static void SetId(DocumentFormat.OpenXml.Drawing.HyperlinkType? openXmlElement, String? value)
+
+  public static void SetId(HyperlinkType? openXmlElement, String? value)
   {
     if (openXmlElement != null)
       if (value != null)
@@ -21,16 +25,16 @@ public static class HyperlinkTypeConverter
       else
         openXmlElement.Id = null;
   }
-  
+
   /// <summary>
-  /// In case the url is invalid so we can't create a relationship, we'll save it here, r:id will point to a NULL one
+  ///   In case the url is invalid so we can't create a relationship, we'll save it here, r:id will point to a NULL one
   /// </summary>
-  public static String? GetInvalidUrl(DocumentFormat.OpenXml.Drawing.HyperlinkType? openXmlElement)
+  public static String? GetInvalidUrl(HyperlinkType? openXmlElement)
   {
     return openXmlElement?.InvalidUrl?.Value;
   }
-  
-  public static void SetInvalidUrl(DocumentFormat.OpenXml.Drawing.HyperlinkType? openXmlElement, String? value)
+
+  public static void SetInvalidUrl(HyperlinkType? openXmlElement, String? value)
   {
     if (openXmlElement != null)
       if (value != null)
@@ -38,16 +42,16 @@ public static class HyperlinkTypeConverter
       else
         openXmlElement.InvalidUrl = null;
   }
-  
+
   /// <summary>
-  /// Action to take, it may still need r:id to specify an action target
+  ///   Action to take, it may still need r:id to specify an action target
   /// </summary>
-  public static String? GetAction(DocumentFormat.OpenXml.Drawing.HyperlinkType? openXmlElement)
+  public static String? GetAction(HyperlinkType? openXmlElement)
   {
     return openXmlElement?.Action?.Value;
   }
-  
-  public static void SetAction(DocumentFormat.OpenXml.Drawing.HyperlinkType? openXmlElement, String? value)
+
+  public static void SetAction(HyperlinkType? openXmlElement, String? value)
   {
     if (openXmlElement != null)
       if (value != null)
@@ -55,16 +59,16 @@ public static class HyperlinkTypeConverter
       else
         openXmlElement.Action = null;
   }
-  
+
   /// <summary>
-  /// target frame for navigating to the URI
+  ///   target frame for navigating to the URI
   /// </summary>
-  public static String? GetTargetFrame(DocumentFormat.OpenXml.Drawing.HyperlinkType? openXmlElement)
+  public static String? GetTargetFrame(HyperlinkType? openXmlElement)
   {
     return openXmlElement?.TargetFrame?.Value;
   }
-  
-  public static void SetTargetFrame(DocumentFormat.OpenXml.Drawing.HyperlinkType? openXmlElement, String? value)
+
+  public static void SetTargetFrame(HyperlinkType? openXmlElement, String? value)
   {
     if (openXmlElement != null)
       if (value != null)
@@ -72,16 +76,16 @@ public static class HyperlinkTypeConverter
       else
         openXmlElement.TargetFrame = null;
   }
-  
+
   /// <summary>
-  /// tooltip for display
+  ///   tooltip for display
   /// </summary>
-  public static String? GetTooltip(DocumentFormat.OpenXml.Drawing.HyperlinkType? openXmlElement)
+  public static String? GetTooltip(HyperlinkType? openXmlElement)
   {
     return openXmlElement?.Tooltip?.Value;
   }
-  
-  public static void SetTooltip(DocumentFormat.OpenXml.Drawing.HyperlinkType? openXmlElement, String? value)
+
+  public static void SetTooltip(HyperlinkType? openXmlElement, String? value)
   {
     if (openXmlElement != null)
       if (value != null)
@@ -89,16 +93,16 @@ public static class HyperlinkTypeConverter
       else
         openXmlElement.Tooltip = null;
   }
-  
+
   /// <summary>
-  /// whether to add this URI to the history when navigating to it
+  ///   whether to add this URI to the history when navigating to it
   /// </summary>
-  public static Boolean? GetHistory(DocumentFormat.OpenXml.Drawing.HyperlinkType? openXmlElement)
+  public static Boolean? GetHistory(HyperlinkType? openXmlElement)
   {
     return openXmlElement?.History?.Value;
   }
-  
-  public static void SetHistory(DocumentFormat.OpenXml.Drawing.HyperlinkType? openXmlElement, Boolean? value)
+
+  public static void SetHistory(HyperlinkType? openXmlElement, Boolean? value)
   {
     if (openXmlElement != null)
       if (value != null)
@@ -106,16 +110,16 @@ public static class HyperlinkTypeConverter
       else
         openXmlElement.History = null;
   }
-  
+
   /// <summary>
-  /// Whether to highlight it when click on a shape
+  ///   Whether to highlight it when click on a shape
   /// </summary>
-  public static Boolean? GetHighlightClick(DocumentFormat.OpenXml.Drawing.HyperlinkType? openXmlElement)
+  public static Boolean? GetHighlightClick(HyperlinkType? openXmlElement)
   {
     return openXmlElement?.HighlightClick?.Value;
   }
-  
-  public static void SetHighlightClick(DocumentFormat.OpenXml.Drawing.HyperlinkType? openXmlElement, Boolean? value)
+
+  public static void SetHighlightClick(HyperlinkType? openXmlElement, Boolean? value)
   {
     if (openXmlElement != null)
       if (value != null)
@@ -123,16 +127,16 @@ public static class HyperlinkTypeConverter
       else
         openXmlElement.HighlightClick = null;
   }
-  
+
   /// <summary>
-  /// Whether to stop previous sound when click on it
+  ///   Whether to stop previous sound when click on it
   /// </summary>
-  public static Boolean? GetEndSound(DocumentFormat.OpenXml.Drawing.HyperlinkType? openXmlElement)
+  public static Boolean? GetEndSound(HyperlinkType? openXmlElement)
   {
     return openXmlElement?.EndSound?.Value;
   }
-  
-  public static void SetEndSound(DocumentFormat.OpenXml.Drawing.HyperlinkType? openXmlElement, Boolean? value)
+
+  public static void SetEndSound(HyperlinkType? openXmlElement, Boolean? value)
   {
     if (openXmlElement != null)
       if (value != null)
@@ -140,46 +144,46 @@ public static class HyperlinkTypeConverter
       else
         openXmlElement.EndSound = null;
   }
-  
+
   /// <summary>
-  /// Sound to play..
+  ///   Sound to play..
   /// </summary>
-  public static DocumentModel.Drawings.EmbeddedWavAudioFileType? GetHyperlinkSound(DocumentFormat.OpenXml.Drawing.HyperlinkType? openXmlElement)
+  public static EmbeddedWavAudioFileType? GetHyperlinkSound(HyperlinkType? openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.HyperlinkSound>();
+    var itemElement = openXmlElement?.GetFirstChild<HyperlinkSound>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.EmbeddedWavAudioFileTypeConverter.CreateModelElement(itemElement);
+      return EmbeddedWavAudioFileTypeConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetHyperlinkSound(DocumentFormat.OpenXml.Drawing.HyperlinkType? openXmlElement, DocumentModel.Drawings.EmbeddedWavAudioFileType? value)
+
+  public static void SetHyperlinkSound(HyperlinkType? openXmlElement, EmbeddedWavAudioFileType? value)
   {
     if (openXmlElement != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.HyperlinkSound>();
+      var itemElement = openXmlElement.GetFirstChild<HyperlinkSound>();
       if (itemElement != null)
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Drawings.EmbeddedWavAudioFileTypeConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.HyperlinkSound>(value);
+        itemElement = EmbeddedWavAudioFileTypeConverter.CreateOpenXmlElement<HyperlinkSound>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
+
   /// <summary>
-  /// Future extensions..
+  ///   Future extensions..
   /// </summary>
-  public static DocumentModel.Drawings.HyperlinkExtensionList? GetHyperlinkExtensionList(DocumentFormat.OpenXml.Drawing.HyperlinkType? openXmlElement)
+  public static HyperlinkExtensionList? GetHyperlinkExtensionList(HyperlinkType? openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.HyperlinkExtensionList>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.HyperlinkExtensionListConverter.CreateModelElement(itemElement);
+      return HyperlinkExtensionListConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetHyperlinkExtensionList(DocumentFormat.OpenXml.Drawing.HyperlinkType? openXmlElement, DocumentModel.Drawings.HyperlinkExtensionList? value)
+
+  public static void SetHyperlinkExtensionList(HyperlinkType? openXmlElement, HyperlinkExtensionList? value)
   {
     if (openXmlElement != null)
     {
@@ -188,14 +192,14 @@ public static class HyperlinkTypeConverter
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Drawings.HyperlinkExtensionListConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.HyperlinkExtensionList>(value);
+        itemElement = HyperlinkExtensionListConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.HyperlinkExtensionList>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static DocumentModel.Drawings.HyperlinkType? CreateModelElement(DocumentFormat.OpenXml.Drawing.HyperlinkType? openXmlElement)
+
+  public static DocumentModel.Drawings.HyperlinkType? CreateModelElement(HyperlinkType? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -214,9 +218,9 @@ public static class HyperlinkTypeConverter
     }
     return null;
   }
-  
+
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.HyperlinkType? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.HyperlinkType, new()
+    where OpenXmlElementType : HyperlinkType, new()
   {
     if (value != null)
     {

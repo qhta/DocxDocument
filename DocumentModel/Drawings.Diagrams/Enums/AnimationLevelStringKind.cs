@@ -1,23 +1,22 @@
 namespace DocumentModel.Drawings.Diagrams;
 
 /// <summary>
-/// Animation Level String Definition
+///   Animation Level String Definition
 /// </summary>
 public enum AnimationLevelStringKind
 {
   /// <summary>
-  /// Disable Level At Once.
+  ///   Disable Level At Once.
   /// </summary>
   None,
-  
+
   /// <summary>
-  /// By Level Animation.
+  ///   By Level Animation.
   /// </summary>
   Level,
-  
+
   /// <summary>
-  /// From Center Animation.
+  ///   From Center Animation.
   /// </summary>
-  Center,
-  
+  Center
 }

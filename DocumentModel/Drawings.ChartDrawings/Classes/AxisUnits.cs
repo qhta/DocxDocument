@@ -1,23 +1,22 @@
 namespace DocumentModel.Drawings.ChartDrawings;
 
 /// <summary>
-/// Defines the AxisUnits Class.
+///   Defines the AxisUnits Class.
 /// </summary>
-public partial class AxisUnits
+public class AxisUnits
 {
   /// <summary>
-  /// unit, this property is only available in Office 2016 and later.
+  ///   unit, this property is only available in Office 2016 and later.
   /// </summary>
-  public DocumentModel.Drawings.ChartDrawings.AxisUnit? Unit { get; set; }
-  
+  public AxisUnit? Unit { get; set; }
+
   /// <summary>
-  /// AxisUnitsLabel.
+  ///   AxisUnitsLabel.
   /// </summary>
-  public DocumentModel.Drawings.ChartDrawings.AxisUnitsLabel? AxisUnitsLabel { get; set; }
-  
+  public AxisUnitsLabel? AxisUnitsLabel { get; set; }
+
   /// <summary>
-  /// ExtensionList.
+  ///   ExtensionList.
   /// </summary>
-  public DocumentModel.Drawings.ChartDrawings.ExtensionList? ExtensionList { get; set; }
-  
+  public ExtensionList? ExtensionList { get; set; }
 }

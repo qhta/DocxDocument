@@ -1,12 +1,13 @@
+using DocumentModel.Drawings.ChartDrawing;
+
 namespace DocumentModel.Drawings.Charts;
 
 /// <summary>
-/// User Shapes.
+///   User Shapes.
 /// </summary>
-public partial class UserShapes
+public class UserShapes
 {
-  public DocumentModel.Drawings.ChartDrawing.RelativeAnchorSize? RelativeAnchorSize { get; set; }
-  
-  public DocumentModel.Drawings.ChartDrawing.AbsoluteAnchorSize? AbsoluteAnchorSize { get; set; }
-  
+  public RelativeAnchorSize? RelativeAnchorSize { get; set; }
+
+  public AbsoluteAnchorSize? AbsoluteAnchorSize { get; set; }
 }

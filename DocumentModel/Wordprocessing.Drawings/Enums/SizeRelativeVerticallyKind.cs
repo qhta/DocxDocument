@@ -1,38 +1,37 @@
 namespace DocumentModel.Wordprocessing.Drawings;
 
 /// <summary>
-/// Defines the SizeRelativeVerticallyValues enumeration.
+///   Defines the SizeRelativeVerticallyValues enumeration.
 /// </summary>
 public enum SizeRelativeVerticallyKind
 {
   /// <summary>
-  /// margin.
+  ///   margin.
   /// </summary>
   Margin,
-  
+
   /// <summary>
-  /// page.
+  ///   page.
   /// </summary>
   Page,
-  
+
   /// <summary>
-  /// topMargin.
+  ///   topMargin.
   /// </summary>
   TopMargin,
-  
+
   /// <summary>
-  /// bottomMargin.
+  ///   bottomMargin.
   /// </summary>
   BottomMargin,
-  
+
   /// <summary>
-  /// insideMargin.
+  ///   insideMargin.
   /// </summary>
   InsideMargin,
-  
+
   /// <summary>
-  /// outsideMargin.
+  ///   outsideMargin.
   /// </summary>
-  OutsideMargin,
-  
+  OutsideMargin
 }

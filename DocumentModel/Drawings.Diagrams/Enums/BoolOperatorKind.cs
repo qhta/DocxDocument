@@ -1,28 +1,27 @@
 namespace DocumentModel.Drawings.Diagrams;
 
 /// <summary>
-/// Boolean Constraint
+///   Boolean Constraint
 /// </summary>
 public enum BoolOperatorKind
 {
   /// <summary>
-  /// None.
+  ///   None.
   /// </summary>
   None,
-  
+
   /// <summary>
-  /// Equal.
+  ///   Equal.
   /// </summary>
   Equal,
-  
+
   /// <summary>
-  /// Greater Than or Equal to.
+  ///   Greater Than or Equal to.
   /// </summary>
   GreaterThanOrEqualTo,
-  
+
   /// <summary>
-  /// Less Than or Equal to.
+  ///   Less Than or Equal to.
   /// </summary>
-  LessThanOrEqualTo,
-  
+  LessThanOrEqualTo
 }

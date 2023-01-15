@@ -1,19 +1,23 @@
+using DocumentFormat.OpenXml.Wordprocessing;
+using DivBorder = DocumentModel.Wordprocessing.DivBorder;
+using DivsChild = DocumentModel.Wordprocessing.DivsChild;
+
 namespace DocumentModel.OpenXml.Wordprocessing;
 
 /// <summary>
-/// Information About Single HTML div Element.
+///   Information About Single HTML div Element.
 /// </summary>
 public static class DivConverter
 {
   /// <summary>
-  /// div Data ID
+  ///   div Data ID
   /// </summary>
-  public static String? GetId(DocumentFormat.OpenXml.Wordprocessing.Div? openXmlElement)
+  public static String? GetId(Div? openXmlElement)
   {
     return openXmlElement?.Id?.Value;
   }
-  
-  public static void SetId(DocumentFormat.OpenXml.Wordprocessing.Div? openXmlElement, String? value)
+
+  public static void SetId(Div? openXmlElement, String? value)
   {
     if (openXmlElement != null)
       if (value != null)
@@ -21,185 +25,185 @@ public static class DivConverter
       else
         openXmlElement.Id = null;
   }
-  
+
   /// <summary>
-  /// Data for HTML blockquote Element.
+  ///   Data for HTML blockquote Element.
   /// </summary>
-  public static Boolean? GetBlockQuote(DocumentFormat.OpenXml.Wordprocessing.Div? openXmlElement)
+  public static Boolean? GetBlockQuote(Div? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.BlockQuote>();
+      var itemElement = openXmlElement.GetFirstChild<BlockQuote>();
       return itemElement != null;
     }
     return null;
   }
-  
-  public static void SetBlockQuote(DocumentFormat.OpenXml.Wordprocessing.Div? openXmlElement, Boolean? value)
+
+  public static void SetBlockQuote(Div? openXmlElement, Boolean? value)
   {
     if (openXmlElement != null)
     {
       if (value == false)
       {
-        var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.BlockQuote>();
+        var itemElement = openXmlElement.GetFirstChild<BlockQuote>();
         if (itemElement != null)
           itemElement.Remove();
       }
       if (value == true)
       {
-        var itemElement = new DocumentFormat.OpenXml.Wordprocessing.BlockQuote();
+        var itemElement = new BlockQuote();
         openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
+
   /// <summary>
-  /// Data for HTML body Element.
+  ///   Data for HTML body Element.
   /// </summary>
-  public static Boolean? GetBodyDiv(DocumentFormat.OpenXml.Wordprocessing.Div? openXmlElement)
+  public static Boolean? GetBodyDiv(Div? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.BodyDiv>();
+      var itemElement = openXmlElement.GetFirstChild<BodyDiv>();
       return itemElement != null;
     }
     return null;
   }
-  
-  public static void SetBodyDiv(DocumentFormat.OpenXml.Wordprocessing.Div? openXmlElement, Boolean? value)
+
+  public static void SetBodyDiv(Div? openXmlElement, Boolean? value)
   {
     if (openXmlElement != null)
     {
       if (value == false)
       {
-        var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.BodyDiv>();
+        var itemElement = openXmlElement.GetFirstChild<BodyDiv>();
         if (itemElement != null)
           itemElement.Remove();
       }
       if (value == true)
       {
-        var itemElement = new DocumentFormat.OpenXml.Wordprocessing.BodyDiv();
+        var itemElement = new BodyDiv();
         openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
+
   /// <summary>
-  /// Left Margin for HTML div.
+  ///   Left Margin for HTML div.
   /// </summary>
-  public static String? GetLeftMarginDiv(DocumentFormat.OpenXml.Wordprocessing.Div? openXmlElement)
+  public static String? GetLeftMarginDiv(Div? openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.LeftMarginDiv>();
+    var itemElement = openXmlElement?.GetFirstChild<LeftMarginDiv>();
     if (itemElement != null)
       return itemElement.Val?.Value;
     return null;
   }
-  
-  public static void SetLeftMarginDiv(DocumentFormat.OpenXml.Wordprocessing.Div? openXmlElement, String? value)
+
+  public static void SetLeftMarginDiv(Div? openXmlElement, String? value)
   {
     if (openXmlElement != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.LeftMarginDiv>();
+      var itemElement = openXmlElement.GetFirstChild<LeftMarginDiv>();
       if (itemElement != null)
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = new DocumentFormat.OpenXml.Wordprocessing.LeftMarginDiv { Val = value };
+        itemElement = new LeftMarginDiv { Val = value };
         openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
+
   /// <summary>
-  /// Right Margin for HTML div.
+  ///   Right Margin for HTML div.
   /// </summary>
-  public static String? GetRightMarginDiv(DocumentFormat.OpenXml.Wordprocessing.Div? openXmlElement)
+  public static String? GetRightMarginDiv(Div? openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.RightMarginDiv>();
+    var itemElement = openXmlElement?.GetFirstChild<RightMarginDiv>();
     if (itemElement != null)
       return itemElement.Val?.Value;
     return null;
   }
-  
-  public static void SetRightMarginDiv(DocumentFormat.OpenXml.Wordprocessing.Div? openXmlElement, String? value)
+
+  public static void SetRightMarginDiv(Div? openXmlElement, String? value)
   {
     if (openXmlElement != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.RightMarginDiv>();
+      var itemElement = openXmlElement.GetFirstChild<RightMarginDiv>();
       if (itemElement != null)
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = new DocumentFormat.OpenXml.Wordprocessing.RightMarginDiv { Val = value };
+        itemElement = new RightMarginDiv { Val = value };
         openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
+
   /// <summary>
-  /// Top Margin for HTML div.
+  ///   Top Margin for HTML div.
   /// </summary>
-  public static String? GetTopMarginDiv(DocumentFormat.OpenXml.Wordprocessing.Div? openXmlElement)
+  public static String? GetTopMarginDiv(Div? openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.TopMarginDiv>();
+    var itemElement = openXmlElement?.GetFirstChild<TopMarginDiv>();
     if (itemElement != null)
       return itemElement.Val?.Value;
     return null;
   }
-  
-  public static void SetTopMarginDiv(DocumentFormat.OpenXml.Wordprocessing.Div? openXmlElement, String? value)
+
+  public static void SetTopMarginDiv(Div? openXmlElement, String? value)
   {
     if (openXmlElement != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.TopMarginDiv>();
+      var itemElement = openXmlElement.GetFirstChild<TopMarginDiv>();
       if (itemElement != null)
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = new DocumentFormat.OpenXml.Wordprocessing.TopMarginDiv { Val = value };
+        itemElement = new TopMarginDiv { Val = value };
         openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
+
   /// <summary>
-  /// Bottom Margin for HTML div.
+  ///   Bottom Margin for HTML div.
   /// </summary>
-  public static String? GetBottomMarginDiv(DocumentFormat.OpenXml.Wordprocessing.Div? openXmlElement)
+  public static String? GetBottomMarginDiv(Div? openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.BottomMarginDiv>();
+    var itemElement = openXmlElement?.GetFirstChild<BottomMarginDiv>();
     if (itemElement != null)
       return itemElement.Val?.Value;
     return null;
   }
-  
-  public static void SetBottomMarginDiv(DocumentFormat.OpenXml.Wordprocessing.Div? openXmlElement, String? value)
+
+  public static void SetBottomMarginDiv(Div? openXmlElement, String? value)
   {
     if (openXmlElement != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.BottomMarginDiv>();
+      var itemElement = openXmlElement.GetFirstChild<BottomMarginDiv>();
       if (itemElement != null)
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = new DocumentFormat.OpenXml.Wordprocessing.BottomMarginDiv { Val = value };
+        itemElement = new BottomMarginDiv { Val = value };
         openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
+
   /// <summary>
-  /// Set of Borders for HTML div.
+  ///   Set of Borders for HTML div.
   /// </summary>
-  public static DocumentModel.Wordprocessing.DivBorder? GetDivBorder(DocumentFormat.OpenXml.Wordprocessing.Div? openXmlElement)
+  public static DivBorder? GetDivBorder(Div? openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.DivBorder>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Wordprocessing.DivBorderConverter.CreateModelElement(itemElement);
+      return DivBorderConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetDivBorder(DocumentFormat.OpenXml.Wordprocessing.Div? openXmlElement, DocumentModel.Wordprocessing.DivBorder? value)
+
+  public static void SetDivBorder(Div? openXmlElement, DivBorder? value)
   {
     if (openXmlElement != null)
     {
@@ -208,21 +212,21 @@ public static class DivConverter
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Wordprocessing.DivBorderConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.DivBorder>(value);
+        itemElement = DivBorderConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.DivBorder>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static System.Collections.ObjectModel.Collection<DocumentModel.Wordprocessing.DivsChild>? GetDivsChilds(DocumentFormat.OpenXml.Wordprocessing.Div? openXmlElement)
+
+  public static Collection<DivsChild>? GetDivsChilds(Div? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var collection = new System.Collections.ObjectModel.Collection<DocumentModel.Wordprocessing.DivsChild>();
+      var collection = new Collection<DivsChild>();
       foreach (var item in openXmlElement.Elements<DocumentFormat.OpenXml.Wordprocessing.DivsChild>())
       {
-        var newItem = DocumentModel.OpenXml.Wordprocessing.DivsChildConverter.CreateModelElement(item);
+        var newItem = DivsChildConverter.CreateModelElement(item);
         if (newItem != null)
           collection.Add(newItem);
       }
@@ -230,25 +234,23 @@ public static class DivConverter
     }
     return null;
   }
-  
-  public static void SetDivsChilds(DocumentFormat.OpenXml.Wordprocessing.Div? openXmlElement, System.Collections.ObjectModel.Collection<DocumentModel.Wordprocessing.DivsChild>? value)
+
+  public static void SetDivsChilds(Div? openXmlElement, Collection<DivsChild>? value)
   {
     if (openXmlElement != null)
     {
       openXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Wordprocessing.DivsChild>();
       if (value != null)
-      {
         foreach (var item in value)
         {
-          var newItem = DocumentModel.OpenXml.Wordprocessing.DivsChildConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.DivsChild>(item);
+          var newItem = DivsChildConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.DivsChild>(item);
           if (newItem != null)
             openXmlElement.AddChild(newItem);
         }
-      }
     }
   }
-  
-  public static DocumentModel.Wordprocessing.Div? CreateModelElement(DocumentFormat.OpenXml.Wordprocessing.Div? openXmlElement)
+
+  public static DocumentModel.Wordprocessing.Div? CreateModelElement(Div? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -266,9 +268,9 @@ public static class DivConverter
     }
     return null;
   }
-  
+
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.Div? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Wordprocessing.Div, new()
+    where OpenXmlElementType : Div, new()
   {
     if (value != null)
     {

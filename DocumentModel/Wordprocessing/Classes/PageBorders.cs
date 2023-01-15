@@ -1,43 +1,42 @@
 namespace DocumentModel.Wordprocessing;
 
 /// <summary>
-/// Defines the PageBorders Class.
+///   Defines the PageBorders Class.
 /// </summary>
-public partial class PageBorders
+public class PageBorders
 {
   /// <summary>
-  /// Z-Ordering of Page Border
+  ///   Z-Ordering of Page Border
   /// </summary>
-  public DocumentModel.Wordprocessing.PageBorderZOrderKind? ZOrder { get; set; }
-  
+  public PageBorderZOrderKind? ZOrder { get; set; }
+
   /// <summary>
-  /// Pages to Display Page Borders
+  ///   Pages to Display Page Borders
   /// </summary>
-  public DocumentModel.Wordprocessing.PageBorderDisplayKind? Display { get; set; }
-  
+  public PageBorderDisplayKind? Display { get; set; }
+
   /// <summary>
-  /// Page Border Positioning
+  ///   Page Border Positioning
   /// </summary>
-  public DocumentModel.Wordprocessing.PageBorderOffsetKind? OffsetFrom { get; set; }
-  
+  public PageBorderOffsetKind? OffsetFrom { get; set; }
+
   /// <summary>
-  /// Top Border.
+  ///   Top Border.
   /// </summary>
-  public DocumentModel.Wordprocessing.BorderType? TopBorder { get; set; }
-  
+  public BorderType? TopBorder { get; set; }
+
   /// <summary>
-  /// Left Border.
+  ///   Left Border.
   /// </summary>
-  public DocumentModel.Wordprocessing.BorderType? LeftBorder { get; set; }
-  
+  public BorderType? LeftBorder { get; set; }
+
   /// <summary>
-  /// Bottom Border.
+  ///   Bottom Border.
   /// </summary>
-  public DocumentModel.Wordprocessing.BorderType? BottomBorder { get; set; }
-  
+  public BorderType? BottomBorder { get; set; }
+
   /// <summary>
-  /// Right Border.
+  ///   Right Border.
   /// </summary>
-  public DocumentModel.Wordprocessing.BorderType? RightBorder { get; set; }
-  
+  public BorderType? RightBorder { get; set; }
 }

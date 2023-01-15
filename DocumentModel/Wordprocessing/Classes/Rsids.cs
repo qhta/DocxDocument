@@ -1,15 +1,14 @@
 namespace DocumentModel.Wordprocessing;
 
 /// <summary>
-/// Listing of All Revision Save ID Values.
+///   Listing of All Revision Save ID Values.
 /// </summary>
-public partial class Rsids
+public class Rsids
 {
   /// <summary>
-  /// Original Document Revision Save ID.
+  ///   Original Document Revision Save ID.
   /// </summary>
-  public DocumentModel.HexWord? RsidRoot { get; set; }
-  
-  public Collection<DocumentModel.HexWord>? Items { get; set; }
-  
+  public NumId? RsidRoot { get; set; }
+
+  public Collection<NumId>? Items { get; set; }
 }

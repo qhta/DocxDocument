@@ -1,18 +1,22 @@
+using DocumentFormat.OpenXml.Office.Word;
+using AcceleratorKeymapType = DocumentModel.Wordprocessing.AcceleratorKeymapType;
+using AllocatedCommandManifest = DocumentFormat.OpenXml.Office.Word.AllocatedCommandManifest;
+
 namespace DocumentModel.OpenXml.Wordprocessing;
 
 /// <summary>
-/// Defines the AllocatedCommandManifest Class.
+///   Defines the AllocatedCommandManifest Class.
 /// </summary>
 public static class AllocatedCommandManifestConverter
 {
-  public static System.Collections.ObjectModel.Collection<DocumentModel.Wordprocessing.AcceleratorKeymapType>? GetAllocatedCommandManifestEntries(DocumentFormat.OpenXml.Office.Word.AllocatedCommandManifest? openXmlElement)
+  public static Collection<AcceleratorKeymapType>? GetAllocatedCommandManifestEntries(AllocatedCommandManifest? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var collection = new System.Collections.ObjectModel.Collection<DocumentModel.Wordprocessing.AcceleratorKeymapType>();
-      foreach (var item in openXmlElement.Elements<DocumentFormat.OpenXml.Office.Word.AllocatedCommandManifestEntry>())
+      var collection = new Collection<AcceleratorKeymapType>();
+      foreach (var item in openXmlElement.Elements<AllocatedCommandManifestEntry>())
       {
-        var newItem = DocumentModel.OpenXml.Wordprocessing.AcceleratorKeymapTypeConverter.CreateModelElement(item);
+        var newItem = AcceleratorKeymapTypeConverter.CreateModelElement(item);
         if (newItem != null)
           collection.Add(newItem);
       }
@@ -20,25 +24,23 @@ public static class AllocatedCommandManifestConverter
     }
     return null;
   }
-  
-  public static void SetAllocatedCommandManifestEntries(DocumentFormat.OpenXml.Office.Word.AllocatedCommandManifest? openXmlElement, System.Collections.ObjectModel.Collection<DocumentModel.Wordprocessing.AcceleratorKeymapType>? value)
+
+  public static void SetAllocatedCommandManifestEntries(AllocatedCommandManifest? openXmlElement, Collection<AcceleratorKeymapType>? value)
   {
     if (openXmlElement != null)
     {
-      openXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Office.Word.AllocatedCommandManifestEntry>();
+      openXmlElement.RemoveAllChildren<AllocatedCommandManifestEntry>();
       if (value != null)
-      {
         foreach (var item in value)
         {
-          var newItem = DocumentModel.OpenXml.Wordprocessing.AcceleratorKeymapTypeConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office.Word.AllocatedCommandManifestEntry>(item);
+          var newItem = AcceleratorKeymapTypeConverter.CreateOpenXmlElement<AllocatedCommandManifestEntry>(item);
           if (newItem != null)
             openXmlElement.AddChild(newItem);
         }
-      }
     }
   }
-  
-  public static DocumentModel.Wordprocessing.AllocatedCommandManifest? CreateModelElement(DocumentFormat.OpenXml.Office.Word.AllocatedCommandManifest? openXmlElement)
+
+  public static DocumentModel.Wordprocessing.AllocatedCommandManifest? CreateModelElement(AllocatedCommandManifest? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -48,9 +50,9 @@ public static class AllocatedCommandManifestConverter
     }
     return null;
   }
-  
+
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.AllocatedCommandManifest? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Office.Word.AllocatedCommandManifest, new()
+    where OpenXmlElementType : AllocatedCommandManifest, new()
   {
     if (value != null)
     {

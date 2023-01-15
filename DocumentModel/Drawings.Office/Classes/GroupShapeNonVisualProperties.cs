@@ -1,18 +1,17 @@
 namespace DocumentModel.Drawings.Office;
 
 /// <summary>
-/// Defines the GroupShapeNonVisualProperties Class.
+///   Defines the GroupShapeNonVisualProperties Class.
 /// </summary>
-public partial class GroupShapeNonVisualProperties
+public class GroupShapeNonVisualProperties
 {
   /// <summary>
-  /// NonVisualDrawingProperties.
+  ///   NonVisualDrawingProperties.
   /// </summary>
-  public DocumentModel.Drawings.Office.NonVisualDrawingProperties? NonVisualDrawingProperties { get; set; }
-  
+  public NonVisualDrawingProperties? NonVisualDrawingProperties { get; set; }
+
   /// <summary>
-  /// NonVisualGroupDrawingShapeProperties.
+  ///   NonVisualGroupDrawingShapeProperties.
   /// </summary>
-  public DocumentModel.Drawings.Office.NonVisualGroupDrawingShapeProperties? NonVisualGroupDrawingShapeProperties { get; set; }
-  
+  public NonVisualGroupDrawingShapeProperties? NonVisualGroupDrawingShapeProperties { get; set; }
 }

@@ -1,23 +1,22 @@
 namespace DocumentModel.Drawings.Charts;
 
 /// <summary>
-/// Number Reference.
+///   Number Reference.
 /// </summary>
-public partial class NumberReference
+public class NumberReference
 {
   /// <summary>
-  /// Formula.
+  ///   Formula.
   /// </summary>
   public String? Formula { get; set; }
-  
+
   /// <summary>
-  /// NumberingCache.
+  ///   NumberingCache.
   /// </summary>
-  public DocumentModel.Drawings.Charts.NumberingCache? NumberingCache { get; set; }
-  
+  public NumberingCache? NumberingCache { get; set; }
+
   /// <summary>
-  /// NumRefExtensionList.
+  ///   NumRefExtensionList.
   /// </summary>
-  public DocumentModel.Drawings.Charts.NumRefExtensionList? NumRefExtensionList { get; set; }
-  
+  public NumRefExtensionList? NumRefExtensionList { get; set; }
 }

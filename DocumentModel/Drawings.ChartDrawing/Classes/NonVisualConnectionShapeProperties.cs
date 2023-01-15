@@ -1,28 +1,27 @@
 namespace DocumentModel.Drawings.ChartDrawing;
 
 /// <summary>
-/// Non-Visual Connection Shape Drawing Properties.
+///   Non-Visual Connection Shape Drawing Properties.
 /// </summary>
-public partial class NonVisualConnectionShapeProperties
+public class NonVisualConnectionShapeProperties
 {
   /// <summary>
-  /// Connection Shape Locks.
+  ///   Connection Shape Locks.
   /// </summary>
-  public DocumentModel.Drawings.ConnectionShapeLocks? ConnectionShapeLocks { get; set; }
-  
+  public ConnectionShapeLocks? ConnectionShapeLocks { get; set; }
+
   /// <summary>
-  /// Connection Start.
+  ///   Connection Start.
   /// </summary>
-  public DocumentModel.Drawings.ConnectionType? StartConnection { get; set; }
-  
+  public ConnectionType? StartConnection { get; set; }
+
   /// <summary>
-  /// Connection End.
+  ///   Connection End.
   /// </summary>
-  public DocumentModel.Drawings.ConnectionType? EndConnection { get; set; }
-  
+  public ConnectionType? EndConnection { get; set; }
+
   /// <summary>
-  /// ExtensionList.
+  ///   ExtensionList.
   /// </summary>
-  public DocumentModel.Drawings.ExtensionList? ExtensionList { get; set; }
-  
+  public ExtensionList? ExtensionList { get; set; }
 }

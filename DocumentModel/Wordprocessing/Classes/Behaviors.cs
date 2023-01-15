@@ -1,10 +1,9 @@
 namespace DocumentModel.Wordprocessing;
 
 /// <summary>
-/// Entry Insertion Behaviors.
+///   Entry Insertion Behaviors.
 /// </summary>
-public partial class Behaviors
+public class Behaviors
 {
-  public DocumentModel.Wordprocessing.DocPartBehaviorKind? Behavior { get; set; }
-  
+  public DocPartBehaviorKind? Behavior { get; set; }
 }

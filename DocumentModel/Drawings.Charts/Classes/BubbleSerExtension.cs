@@ -1,21 +1,20 @@
 namespace DocumentModel.Drawings.Charts;
 
 /// <summary>
-/// Defines the BubbleSerExtension Class.
+///   Defines the BubbleSerExtension Class.
 /// </summary>
-public partial class BubbleSerExtension
+public class BubbleSerExtension
 {
   /// <summary>
-  /// URI
+  ///   URI
   /// </summary>
   public String? Uri { get; set; }
-  
-  public DocumentModel.Drawings.Charts.InvertSolidFillFormat? InvertSolidFillFormat { get; set; }
-  
-  public DocumentModel.Drawings.Charts.FilteredCategoryTitle? FilteredCategoryTitle { get; set; }
-  
-  public DocumentModel.Drawings.Charts.DataLabelsRange? DataLabelsRange { get; set; }
-  
-  public DocumentModel.Drawings.Charts.CategoryFilterExceptions? CategoryFilterExceptions { get; set; }
-  
+
+  public InvertSolidFillFormat? InvertSolidFillFormat { get; set; }
+
+  public FilteredCategoryTitle? FilteredCategoryTitle { get; set; }
+
+  public DataLabelsRange? DataLabelsRange { get; set; }
+
+  public CategoryFilterExceptions? CategoryFilterExceptions { get; set; }
 }

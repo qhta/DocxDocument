@@ -1,39 +1,41 @@
+using DocumentFormat.OpenXml.Wordprocessing;
+
 namespace DocumentModel.OpenXml.Wordprocessing;
 
 /// <summary>
-/// Defines the FitText Class.
+///   Defines the FitText Class.
 /// </summary>
 public static class FitTextConverter
 {
   /// <summary>
-  /// Value
+  ///   Value
   /// </summary>
-  public static UInt32? GetVal(DocumentFormat.OpenXml.Wordprocessing.FitText? openXmlElement)
+  public static UInt32? GetVal(FitText? openXmlElement)
   {
     return openXmlElement?.Val?.Value;
   }
-  
-  public static void SetVal(DocumentFormat.OpenXml.Wordprocessing.FitText? openXmlElement, UInt32? value)
+
+  public static void SetVal(FitText? openXmlElement, UInt32? value)
   {
     if (openXmlElement != null)
       openXmlElement.Val = value;
   }
-  
+
   /// <summary>
-  /// Fit Text Run ID
+  ///   Fit Text Run ID
   /// </summary>
-  public static Int32? GetId(DocumentFormat.OpenXml.Wordprocessing.FitText? openXmlElement)
+  public static Int32? GetId(FitText? openXmlElement)
   {
     return openXmlElement?.Id?.Value;
   }
-  
-  public static void SetId(DocumentFormat.OpenXml.Wordprocessing.FitText? openXmlElement, Int32? value)
+
+  public static void SetId(FitText? openXmlElement, Int32? value)
   {
     if (openXmlElement != null)
       openXmlElement.Id = value;
   }
-  
-  public static DocumentModel.Wordprocessing.FitText? CreateModelElement(DocumentFormat.OpenXml.Wordprocessing.FitText? openXmlElement)
+
+  public static DocumentModel.Wordprocessing.FitText? CreateModelElement(FitText? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -44,9 +46,9 @@ public static class FitTextConverter
     }
     return null;
   }
-  
+
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.FitText? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Wordprocessing.FitText, new()
+    where OpenXmlElementType : FitText, new()
   {
     if (value != null)
     {

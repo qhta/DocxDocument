@@ -1,22 +1,25 @@
+using DocumentModel.Wordprocessing;
+using GradientFillProperties = DocumentFormat.OpenXml.Office2010.Word.GradientFillProperties;
+
 namespace DocumentModel.OpenXml.Wordprocessing;
 
 /// <summary>
-/// Defines the GradientFillProperties Class.
+///   Defines the GradientFillProperties Class.
 /// </summary>
 public static class GradientFillPropertiesConverter
 {
   /// <summary>
-  /// GradientStopList.
+  ///   GradientStopList.
   /// </summary>
-  public static DocumentModel.Wordprocessing.GradientStopList? GetGradientStopList(DocumentFormat.OpenXml.Office2010.Word.GradientFillProperties? openXmlElement)
+  public static GradientStopList? GetGradientStopList(GradientFillProperties? openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office2010.Word.GradientStopList>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Wordprocessing.GradientStopListConverter.CreateModelElement(itemElement);
+      return GradientStopListConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetGradientStopList(DocumentFormat.OpenXml.Office2010.Word.GradientFillProperties? openXmlElement, DocumentModel.Wordprocessing.GradientStopList? value)
+
+  public static void SetGradientStopList(GradientFillProperties? openXmlElement, GradientStopList? value)
   {
     if (openXmlElement != null)
     {
@@ -25,22 +28,22 @@ public static class GradientFillPropertiesConverter
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Wordprocessing.GradientStopListConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2010.Word.GradientStopList>(value);
+        itemElement = GradientStopListConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2010.Word.GradientStopList>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static DocumentModel.Wordprocessing.LinearShadeProperties? GetLinearShadeProperties(DocumentFormat.OpenXml.Office2010.Word.GradientFillProperties? openXmlElement)
+
+  public static LinearShadeProperties? GetLinearShadeProperties(GradientFillProperties? openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office2010.Word.LinearShadeProperties>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Wordprocessing.LinearShadePropertiesConverter.CreateModelElement(itemElement);
+      return LinearShadePropertiesConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetLinearShadeProperties(DocumentFormat.OpenXml.Office2010.Word.GradientFillProperties? openXmlElement, DocumentModel.Wordprocessing.LinearShadeProperties? value)
+
+  public static void SetLinearShadeProperties(GradientFillProperties? openXmlElement, LinearShadeProperties? value)
   {
     if (openXmlElement != null)
     {
@@ -49,22 +52,22 @@ public static class GradientFillPropertiesConverter
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Wordprocessing.LinearShadePropertiesConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2010.Word.LinearShadeProperties>(value);
+        itemElement = LinearShadePropertiesConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2010.Word.LinearShadeProperties>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static DocumentModel.Wordprocessing.PathShadeProperties? GetPathShadeProperties(DocumentFormat.OpenXml.Office2010.Word.GradientFillProperties? openXmlElement)
+
+  public static PathShadeProperties? GetPathShadeProperties(GradientFillProperties? openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office2010.Word.PathShadeProperties>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Wordprocessing.PathShadePropertiesConverter.CreateModelElement(itemElement);
+      return PathShadePropertiesConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetPathShadeProperties(DocumentFormat.OpenXml.Office2010.Word.GradientFillProperties? openXmlElement, DocumentModel.Wordprocessing.PathShadeProperties? value)
+
+  public static void SetPathShadeProperties(GradientFillProperties? openXmlElement, PathShadeProperties? value)
   {
     if (openXmlElement != null)
     {
@@ -73,14 +76,14 @@ public static class GradientFillPropertiesConverter
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Wordprocessing.PathShadePropertiesConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2010.Word.PathShadeProperties>(value);
+        itemElement = PathShadePropertiesConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2010.Word.PathShadeProperties>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static DocumentModel.Wordprocessing.GradientFillProperties? CreateModelElement(DocumentFormat.OpenXml.Office2010.Word.GradientFillProperties? openXmlElement)
+
+  public static DocumentModel.Wordprocessing.GradientFillProperties? CreateModelElement(GradientFillProperties? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -92,9 +95,9 @@ public static class GradientFillPropertiesConverter
     }
     return null;
   }
-  
+
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.GradientFillProperties? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Office2010.Word.GradientFillProperties, new()
+    where OpenXmlElementType : GradientFillProperties, new()
   {
     if (value != null)
     {

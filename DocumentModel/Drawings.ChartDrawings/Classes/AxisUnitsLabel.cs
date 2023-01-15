@@ -1,28 +1,27 @@
 namespace DocumentModel.Drawings.ChartDrawings;
 
 /// <summary>
-/// Defines the AxisUnitsLabel Class.
+///   Defines the AxisUnitsLabel Class.
 /// </summary>
-public partial class AxisUnitsLabel
+public class AxisUnitsLabel
 {
   /// <summary>
-  /// Text.
+  ///   Text.
   /// </summary>
-  public DocumentModel.Drawings.ChartDrawings.Text? Text { get; set; }
-  
+  public Text? Text { get; set; }
+
   /// <summary>
-  /// ShapeProperties.
+  ///   ShapeProperties.
   /// </summary>
-  public DocumentModel.Drawings.ChartDrawings.ShapeProperties? ShapeProperties { get; set; }
-  
+  public ShapeProperties? ShapeProperties { get; set; }
+
   /// <summary>
-  /// TxPrTextBody.
+  ///   TxPrTextBody.
   /// </summary>
-  public DocumentModel.Drawings.ChartDrawings.TxPrTextBody? TxPrTextBody { get; set; }
-  
+  public TxPrTextBody? TxPrTextBody { get; set; }
+
   /// <summary>
-  /// ExtensionList.
+  ///   ExtensionList.
   /// </summary>
-  public DocumentModel.Drawings.ChartDrawings.ExtensionList? ExtensionList { get; set; }
-  
+  public ExtensionList? ExtensionList { get; set; }
 }

@@ -1,10 +1,9 @@
 namespace DocumentModel.Drawings;
 
 /// <summary>
-/// Defines the ColorMap Class.
+///   Defines the ColorMap Class.
 /// </summary>
-public partial class ColorMap
+public class ColorMap
 {
-  public DocumentModel.Drawings.ExtensionList? ExtensionList { get; set; }
-  
+  public ExtensionList? ExtensionList { get; set; }
 }

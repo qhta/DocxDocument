@@ -1,28 +1,27 @@
 namespace DocumentModel.Drawings.Charts;
 
 /// <summary>
-/// Defines the SurfaceType Class.
+///   Defines the SurfaceType Class.
 /// </summary>
-public partial class SurfaceType
+public class SurfaceType
 {
   /// <summary>
-  /// Thickness.
+  ///   Thickness.
   /// </summary>
   public Byte? Thickness { get; set; }
-  
+
   /// <summary>
-  /// ShapeProperties.
+  ///   ShapeProperties.
   /// </summary>
-  public DocumentModel.Drawings.Charts.ShapeProperties? ShapeProperties { get; set; }
-  
+  public ShapeProperties? ShapeProperties { get; set; }
+
   /// <summary>
-  /// Picture Options.
+  ///   Picture Options.
   /// </summary>
-  public DocumentModel.Drawings.Charts.PictureOptions? PictureOptions { get; set; }
-  
+  public PictureOptions? PictureOptions { get; set; }
+
   /// <summary>
-  /// Chart Extensibility.
+  ///   Chart Extensibility.
   /// </summary>
-  public DocumentModel.Drawings.Charts.ExtensionList? ExtensionList { get; set; }
-  
+  public ExtensionList? ExtensionList { get; set; }
 }

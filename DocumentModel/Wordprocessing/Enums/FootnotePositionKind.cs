@@ -1,23 +1,22 @@
 namespace DocumentModel.Wordprocessing;
 
 /// <summary>
-/// Defines the FootnotePositionValues enumeration.
+///   Defines the FootnotePositionValues enumeration.
 /// </summary>
 public enum FootnotePositionKind
 {
   /// <summary>
-  /// Footnotes Positioned at Page Bottom.
+  ///   Footnotes Positioned at Page Bottom.
   /// </summary>
   PageBottom,
-  
+
   /// <summary>
-  /// Footnotes Positioned Beneath Text.
+  ///   Footnotes Positioned Beneath Text.
   /// </summary>
   BeneathText,
-  
+
   /// <summary>
-  /// Footnotes Positioned At End of Section.
+  ///   Footnotes Positioned At End of Section.
   /// </summary>
-  SectionEnd,
-  
+  SectionEnd
 }

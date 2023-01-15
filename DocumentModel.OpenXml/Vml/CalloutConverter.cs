@@ -1,33 +1,38 @@
+using DocumentFormat.OpenXml.Vml;
+using DocumentFormat.OpenXml.Vml.Office;
+using DocumentModel.Vml;
+using Callout = DocumentFormat.OpenXml.Vml.Office.Callout;
+
 namespace DocumentModel.OpenXml.Vml;
 
 /// <summary>
-/// Defines the Callout Class.
+///   Defines the Callout Class.
 /// </summary>
 public static class CalloutConverter
 {
   /// <summary>
-  /// VML Extension Handling Behavior
+  ///   VML Extension Handling Behavior
   /// </summary>
-  public static DocumentModel.Vml.ExtensionHandlingBehaviorKind? GetExtension(DocumentFormat.OpenXml.Vml.Office.Callout? openXmlElement)
+  public static ExtensionHandlingBehaviorKind? GetExtension(Callout? openXmlElement)
   {
-    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Vml.ExtensionHandlingBehaviorValues, DocumentModel.Vml.ExtensionHandlingBehaviorKind>(openXmlElement?.Extension?.Value);
+    return EnumValueConverter.GetValue<ExtensionHandlingBehaviorValues, ExtensionHandlingBehaviorKind>(openXmlElement?.Extension?.Value);
   }
-  
-  public static void SetExtension(DocumentFormat.OpenXml.Vml.Office.Callout? openXmlElement, DocumentModel.Vml.ExtensionHandlingBehaviorKind? value)
+
+  public static void SetExtension(Callout? openXmlElement, ExtensionHandlingBehaviorKind? value)
   {
     if (openXmlElement != null)
-      openXmlElement.Extension = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Vml.ExtensionHandlingBehaviorValues, DocumentModel.Vml.ExtensionHandlingBehaviorKind>(value);
+      openXmlElement.Extension = EnumValueConverter.CreateEnumValue<ExtensionHandlingBehaviorValues, ExtensionHandlingBehaviorKind>(value);
   }
-  
+
   /// <summary>
-  /// Callout toggle
+  ///   Callout toggle
   /// </summary>
-  public static Boolean? GetOn(DocumentFormat.OpenXml.Vml.Office.Callout? openXmlElement)
+  public static Boolean? GetOn(Callout? openXmlElement)
   {
     return openXmlElement?.On?.Value;
   }
-  
-  public static void SetOn(DocumentFormat.OpenXml.Vml.Office.Callout? openXmlElement, Boolean? value)
+
+  public static void SetOn(Callout? openXmlElement, Boolean? value)
   {
     if (openXmlElement != null)
       if (value != null)
@@ -35,16 +40,16 @@ public static class CalloutConverter
       else
         openXmlElement.On = null;
   }
-  
+
   /// <summary>
-  /// Callout type
+  ///   Callout type
   /// </summary>
-  public static String? GetType(DocumentFormat.OpenXml.Vml.Office.Callout? openXmlElement)
+  public static String? GetType(Callout? openXmlElement)
   {
     return openXmlElement?.Type?.Value;
   }
-  
-  public static void SetType(DocumentFormat.OpenXml.Vml.Office.Callout? openXmlElement, String? value)
+
+  public static void SetType(Callout? openXmlElement, String? value)
   {
     if (openXmlElement != null)
       if (value != null)
@@ -52,16 +57,16 @@ public static class CalloutConverter
       else
         openXmlElement.Type = null;
   }
-  
+
   /// <summary>
-  /// Callout gap
+  ///   Callout gap
   /// </summary>
-  public static String? GetGap(DocumentFormat.OpenXml.Vml.Office.Callout? openXmlElement)
+  public static String? GetGap(Callout? openXmlElement)
   {
     return openXmlElement?.Gap?.Value;
   }
-  
-  public static void SetGap(DocumentFormat.OpenXml.Vml.Office.Callout? openXmlElement, String? value)
+
+  public static void SetGap(Callout? openXmlElement, String? value)
   {
     if (openXmlElement != null)
       if (value != null)
@@ -69,30 +74,30 @@ public static class CalloutConverter
       else
         openXmlElement.Gap = null;
   }
-  
+
   /// <summary>
-  /// Callout angle
+  ///   Callout angle
   /// </summary>
-  public static DocumentModel.Vml.AngleKind? GetAngle(DocumentFormat.OpenXml.Vml.Office.Callout? openXmlElement)
+  public static AngleKind? GetAngle(Callout? openXmlElement)
   {
-    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Vml.Office.AngleValues, DocumentModel.Vml.AngleKind>(openXmlElement?.Angle?.Value);
+    return EnumValueConverter.GetValue<AngleValues, AngleKind>(openXmlElement?.Angle?.Value);
   }
-  
-  public static void SetAngle(DocumentFormat.OpenXml.Vml.Office.Callout? openXmlElement, DocumentModel.Vml.AngleKind? value)
+
+  public static void SetAngle(Callout? openXmlElement, AngleKind? value)
   {
     if (openXmlElement != null)
-      openXmlElement.Angle = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Vml.Office.AngleValues, DocumentModel.Vml.AngleKind>(value);
+      openXmlElement.Angle = EnumValueConverter.CreateEnumValue<AngleValues, AngleKind>(value);
   }
-  
+
   /// <summary>
-  /// Callout automatic drop toggle
+  ///   Callout automatic drop toggle
   /// </summary>
-  public static Boolean? GetDropAuto(DocumentFormat.OpenXml.Vml.Office.Callout? openXmlElement)
+  public static Boolean? GetDropAuto(Callout? openXmlElement)
   {
     return openXmlElement?.DropAuto?.Value;
   }
-  
-  public static void SetDropAuto(DocumentFormat.OpenXml.Vml.Office.Callout? openXmlElement, Boolean? value)
+
+  public static void SetDropAuto(Callout? openXmlElement, Boolean? value)
   {
     if (openXmlElement != null)
       if (value != null)
@@ -100,16 +105,16 @@ public static class CalloutConverter
       else
         openXmlElement.DropAuto = null;
   }
-  
+
   /// <summary>
-  /// Callout drop position
+  ///   Callout drop position
   /// </summary>
-  public static String? GetDrop(DocumentFormat.OpenXml.Vml.Office.Callout? openXmlElement)
+  public static String? GetDrop(Callout? openXmlElement)
   {
     return openXmlElement?.Drop?.Value;
   }
-  
-  public static void SetDrop(DocumentFormat.OpenXml.Vml.Office.Callout? openXmlElement, String? value)
+
+  public static void SetDrop(Callout? openXmlElement, String? value)
   {
     if (openXmlElement != null)
       if (value != null)
@@ -117,16 +122,16 @@ public static class CalloutConverter
       else
         openXmlElement.Drop = null;
   }
-  
+
   /// <summary>
-  /// Callout drop distance
+  ///   Callout drop distance
   /// </summary>
-  public static String? GetDistance(DocumentFormat.OpenXml.Vml.Office.Callout? openXmlElement)
+  public static String? GetDistance(Callout? openXmlElement)
   {
     return openXmlElement?.Distance?.Value;
   }
-  
-  public static void SetDistance(DocumentFormat.OpenXml.Vml.Office.Callout? openXmlElement, String? value)
+
+  public static void SetDistance(Callout? openXmlElement, String? value)
   {
     if (openXmlElement != null)
       if (value != null)
@@ -134,16 +139,16 @@ public static class CalloutConverter
       else
         openXmlElement.Distance = null;
   }
-  
+
   /// <summary>
-  /// Callout length toggle
+  ///   Callout length toggle
   /// </summary>
-  public static Boolean? GetLengthSpecified(DocumentFormat.OpenXml.Vml.Office.Callout? openXmlElement)
+  public static Boolean? GetLengthSpecified(Callout? openXmlElement)
   {
     return openXmlElement?.LengthSpecified?.Value;
   }
-  
-  public static void SetLengthSpecified(DocumentFormat.OpenXml.Vml.Office.Callout? openXmlElement, Boolean? value)
+
+  public static void SetLengthSpecified(Callout? openXmlElement, Boolean? value)
   {
     if (openXmlElement != null)
       if (value != null)
@@ -151,16 +156,16 @@ public static class CalloutConverter
       else
         openXmlElement.LengthSpecified = null;
   }
-  
+
   /// <summary>
-  /// Callout length
+  ///   Callout length
   /// </summary>
-  public static String? GetLength(DocumentFormat.OpenXml.Vml.Office.Callout? openXmlElement)
+  public static String? GetLength(Callout? openXmlElement)
   {
     return openXmlElement?.Length?.Value;
   }
-  
-  public static void SetLength(DocumentFormat.OpenXml.Vml.Office.Callout? openXmlElement, String? value)
+
+  public static void SetLength(Callout? openXmlElement, String? value)
   {
     if (openXmlElement != null)
       if (value != null)
@@ -168,16 +173,16 @@ public static class CalloutConverter
       else
         openXmlElement.Length = null;
   }
-  
+
   /// <summary>
-  /// Callout accent bar toggle
+  ///   Callout accent bar toggle
   /// </summary>
-  public static Boolean? GetAccentBar(DocumentFormat.OpenXml.Vml.Office.Callout? openXmlElement)
+  public static Boolean? GetAccentBar(Callout? openXmlElement)
   {
     return openXmlElement?.AccentBar?.Value;
   }
-  
-  public static void SetAccentBar(DocumentFormat.OpenXml.Vml.Office.Callout? openXmlElement, Boolean? value)
+
+  public static void SetAccentBar(Callout? openXmlElement, Boolean? value)
   {
     if (openXmlElement != null)
       if (value != null)
@@ -185,16 +190,16 @@ public static class CalloutConverter
       else
         openXmlElement.AccentBar = null;
   }
-  
+
   /// <summary>
-  /// Callout text border toggle
+  ///   Callout text border toggle
   /// </summary>
-  public static Boolean? GetTextBorder(DocumentFormat.OpenXml.Vml.Office.Callout? openXmlElement)
+  public static Boolean? GetTextBorder(Callout? openXmlElement)
   {
     return openXmlElement?.TextBorder?.Value;
   }
-  
-  public static void SetTextBorder(DocumentFormat.OpenXml.Vml.Office.Callout? openXmlElement, Boolean? value)
+
+  public static void SetTextBorder(Callout? openXmlElement, Boolean? value)
   {
     if (openXmlElement != null)
       if (value != null)
@@ -202,16 +207,16 @@ public static class CalloutConverter
       else
         openXmlElement.TextBorder = null;
   }
-  
+
   /// <summary>
-  /// Callout flip x
+  ///   Callout flip x
   /// </summary>
-  public static Boolean? GetMinusX(DocumentFormat.OpenXml.Vml.Office.Callout? openXmlElement)
+  public static Boolean? GetMinusX(Callout? openXmlElement)
   {
     return openXmlElement?.MinusX?.Value;
   }
-  
-  public static void SetMinusX(DocumentFormat.OpenXml.Vml.Office.Callout? openXmlElement, Boolean? value)
+
+  public static void SetMinusX(Callout? openXmlElement, Boolean? value)
   {
     if (openXmlElement != null)
       if (value != null)
@@ -219,16 +224,16 @@ public static class CalloutConverter
       else
         openXmlElement.MinusX = null;
   }
-  
+
   /// <summary>
-  /// Callout flip y
+  ///   Callout flip y
   /// </summary>
-  public static Boolean? GetMinusY(DocumentFormat.OpenXml.Vml.Office.Callout? openXmlElement)
+  public static Boolean? GetMinusY(Callout? openXmlElement)
   {
     return openXmlElement?.MinusY?.Value;
   }
-  
-  public static void SetMinusY(DocumentFormat.OpenXml.Vml.Office.Callout? openXmlElement, Boolean? value)
+
+  public static void SetMinusY(Callout? openXmlElement, Boolean? value)
   {
     if (openXmlElement != null)
       if (value != null)
@@ -236,8 +241,8 @@ public static class CalloutConverter
       else
         openXmlElement.MinusY = null;
   }
-  
-  public static DocumentModel.Vml.Callout? CreateModelElement(DocumentFormat.OpenXml.Vml.Office.Callout? openXmlElement)
+
+  public static DocumentModel.Vml.Callout? CreateModelElement(Callout? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -260,9 +265,9 @@ public static class CalloutConverter
     }
     return null;
   }
-  
+
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Vml.Callout? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Vml.Office.Callout, new()
+    where OpenXmlElementType : Callout, new()
   {
     if (value != null)
     {

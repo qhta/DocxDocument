@@ -1,23 +1,22 @@
 namespace DocumentModel.Drawings;
 
 /// <summary>
-/// Anchor Point.
+///   Anchor Point.
 /// </summary>
-public partial class Anchor
+public class Anchor
 {
   /// <summary>
-  /// X-Coordinate in 3D
+  ///   X-Coordinate in 3D
   /// </summary>
   public Int64? X { get; set; }
-  
+
   /// <summary>
-  /// Y-Coordinate in 3D
+  ///   Y-Coordinate in 3D
   /// </summary>
   public Int64? Y { get; set; }
-  
+
   /// <summary>
-  /// Z-Coordinate in 3D
+  ///   Z-Coordinate in 3D
   /// </summary>
   public Int64? Z { get; set; }
-  
 }

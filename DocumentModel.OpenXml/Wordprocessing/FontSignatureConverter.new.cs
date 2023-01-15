@@ -1,137 +1,139 @@
+using DocumentFormat.OpenXml.Wordprocessing;
+
 namespace DocumentModel.OpenXml.Wordprocessing;
 
 /// <summary>
-/// Defines the FontSignature Class.
+///   Defines the FontSignature Class.
 /// </summary>
 public static class FontSignatureConverter
 {
   /// <summary>
-  /// First 32 Bits of Unicode Subset Bitfield
+  ///   First 32 Bits of Unicode Subset Bitfield
   /// </summary>
-  public static Byte[]? GetUnicodeSignature0(DocumentFormat.OpenXml.Wordprocessing.FontSignature? openXmlElement)
+  public static UInt32? GetUnicodeSignature0(FontSignature? openXmlElement)
   {
     if (openXmlElement?.UnicodeSignature0?.Value != null)
-      return Convert.FromHexString(openXmlElement.UnicodeSignature0.Value);
+      return UInt32.Parse(openXmlElement.UnicodeSignature0.Value);
     return null;
   }
-  
-  public static void SetUnicodeSignature0(DocumentFormat.OpenXml.Wordprocessing.FontSignature? openXmlElement, Byte[]? value)
+
+  public static void SetUnicodeSignature0(FontSignature? openXmlElement, UInt32? value)
   {
     if (openXmlElement != null)
     {
       if (value != null)
-        openXmlElement.UnicodeSignature0 = Convert.ToHexString(value);
+        openXmlElement.UnicodeSignature0 = ((UInt32)value).ToString("X8");
       else
         openXmlElement.UnicodeSignature0 = null;
     }
   }
-  
+
   /// <summary>
-  /// Second 32 Bits of Unicode Subset Bitfield
+  ///   Second 32 Bits of Unicode Subset Bitfield
   /// </summary>
-  public static Byte[]? GetUnicodeSignature1(DocumentFormat.OpenXml.Wordprocessing.FontSignature? openXmlElement)
+  public static UInt32? GetUnicodeSignature1(FontSignature? openXmlElement)
   {
     if (openXmlElement?.UnicodeSignature1?.Value != null)
-      return Convert.FromHexString(openXmlElement.UnicodeSignature1.Value);
+      return UInt32.Parse(openXmlElement.UnicodeSignature1.Value);
     return null;
   }
-  
-  public static void SetUnicodeSignature1(DocumentFormat.OpenXml.Wordprocessing.FontSignature? openXmlElement, Byte[]? value)
+
+  public static void SetUnicodeSignature1(FontSignature? openXmlElement, UInt32? value)
   {
     if (openXmlElement != null)
     {
       if (value != null)
-        openXmlElement.UnicodeSignature1 = Convert.ToHexString(value);
+        openXmlElement.UnicodeSignature1 = ((UInt32)value).ToString("X8");
       else
         openXmlElement.UnicodeSignature1 = null;
     }
   }
-  
+
   /// <summary>
-  /// Third 32 Bits of Unicode Subset Bitfield
+  ///   Third 32 Bits of Unicode Subset Bitfield
   /// </summary>
-  public static Byte[]? GetUnicodeSignature2(DocumentFormat.OpenXml.Wordprocessing.FontSignature? openXmlElement)
+  public static UInt32? GetUnicodeSignature2(FontSignature? openXmlElement)
   {
     if (openXmlElement?.UnicodeSignature2?.Value != null)
-      return Convert.FromHexString(openXmlElement.UnicodeSignature2.Value);
+      return UInt32.Parse(openXmlElement.UnicodeSignature2.Value);
     return null;
   }
-  
-  public static void SetUnicodeSignature2(DocumentFormat.OpenXml.Wordprocessing.FontSignature? openXmlElement, Byte[]? value)
+
+  public static void SetUnicodeSignature2(FontSignature? openXmlElement, UInt32? value)
   {
     if (openXmlElement != null)
     {
       if (value != null)
-        openXmlElement.UnicodeSignature2 = Convert.ToHexString(value);
+        openXmlElement.UnicodeSignature2 = ((UInt32)value).ToString("X8");
       else
         openXmlElement.UnicodeSignature2 = null;
     }
   }
-  
+
   /// <summary>
-  /// Fourth 32 Bits of Unicode Subset Bitfield
+  ///   Fourth 32 Bits of Unicode Subset Bitfield
   /// </summary>
-  public static Byte[]? GetUnicodeSignature3(DocumentFormat.OpenXml.Wordprocessing.FontSignature? openXmlElement)
+  public static UInt32? GetUnicodeSignature3(FontSignature? openXmlElement)
   {
     if (openXmlElement?.UnicodeSignature3?.Value != null)
-      return Convert.FromHexString(openXmlElement.UnicodeSignature3.Value);
+      return UInt32.Parse(openXmlElement.UnicodeSignature3.Value);
     return null;
   }
-  
-  public static void SetUnicodeSignature3(DocumentFormat.OpenXml.Wordprocessing.FontSignature? openXmlElement, Byte[]? value)
+
+  public static void SetUnicodeSignature3(FontSignature? openXmlElement, UInt32? value)
   {
     if (openXmlElement != null)
     {
       if (value != null)
-        openXmlElement.UnicodeSignature3 = Convert.ToHexString(value);
+        openXmlElement.UnicodeSignature3 = ((UInt32)value).ToString("X8");
       else
         openXmlElement.UnicodeSignature3 = null;
     }
   }
-  
+
   /// <summary>
-  /// Lower 32 Bits of Code Page Bit Field
+  ///   Lower 32 Bits of Code Page Bit Field
   /// </summary>
-  public static Byte[]? GetCodePageSignature0(DocumentFormat.OpenXml.Wordprocessing.FontSignature? openXmlElement)
+  public static UInt32? GetCodePageSignature0(FontSignature? openXmlElement)
   {
     if (openXmlElement?.CodePageSignature0?.Value != null)
-      return Convert.FromHexString(openXmlElement.CodePageSignature0.Value);
+      return UInt32.Parse(openXmlElement.CodePageSignature0.Value);
     return null;
   }
-  
-  public static void SetCodePageSignature0(DocumentFormat.OpenXml.Wordprocessing.FontSignature? openXmlElement, Byte[]? value)
+
+  public static void SetCodePageSignature0(FontSignature? openXmlElement, UInt32? value)
   {
     if (openXmlElement != null)
     {
       if (value != null)
-        openXmlElement.CodePageSignature0 = Convert.ToHexString(value);
+        openXmlElement.CodePageSignature0 = ((UInt32)value).ToString("X8");
       else
         openXmlElement.CodePageSignature0 = null;
     }
   }
-  
+
   /// <summary>
-  /// Upper 32 Bits of Code Page Bit Field
+  ///   Upper 32 Bits of Code Page Bit Field
   /// </summary>
-  public static Byte[]? GetCodePageSignature1(DocumentFormat.OpenXml.Wordprocessing.FontSignature? openXmlElement)
+  public static UInt32? GetCodePageSignature1(FontSignature? openXmlElement)
   {
     if (openXmlElement?.CodePageSignature1?.Value != null)
-      return Convert.FromHexString(openXmlElement.CodePageSignature1.Value);
+      return UInt32.Parse(openXmlElement.CodePageSignature1.Value);
     return null;
   }
-  
-  public static void SetCodePageSignature1(DocumentFormat.OpenXml.Wordprocessing.FontSignature? openXmlElement, Byte[]? value)
+
+  public static void SetCodePageSignature1(FontSignature? openXmlElement, UInt32? value)
   {
     if (openXmlElement != null)
     {
       if (value != null)
-        openXmlElement.CodePageSignature1 = Convert.ToHexString(value);
+        openXmlElement.CodePageSignature1 = ((UInt32)value).ToString("X8");
       else
         openXmlElement.CodePageSignature1 = null;
     }
   }
-  
-  public static DocumentModel.Wordprocessing.FontSignature? CreateModelElement(DocumentFormat.OpenXml.Wordprocessing.FontSignature? openXmlElement)
+
+  public static DocumentModel.Wordprocessing.FontSignature? CreateModelElement(FontSignature? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -146,9 +148,9 @@ public static class FontSignatureConverter
     }
     return null;
   }
-  
+
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.FontSignature? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Wordprocessing.FontSignature, new()
+    where OpenXmlElementType : FontSignature, new()
   {
     if (value != null)
     {

@@ -1,13 +1,12 @@
 namespace DocumentModel.Drawings;
 
 /// <summary>
-/// Graphic Object Data.
+///   Graphic Object Data.
 /// </summary>
-public partial class GraphicData
+public class GraphicData
 {
   /// <summary>
-  /// Uniform Resource Identifier
+  ///   Uniform Resource Identifier
   /// </summary>
   public String? Uri { get; set; }
-  
 }

@@ -1,19 +1,21 @@
+using DocumentFormat.OpenXml.Office.Word;
+
 namespace DocumentModel.OpenXml.Wordprocessing;
 
 /// <summary>
-/// Defines the Mcd Class.
+///   Defines the Mcd Class.
 /// </summary>
 public static class McdConverter
 {
   /// <summary>
-  /// macroName
+  ///   macroName
   /// </summary>
-  public static String? GetMacroName(DocumentFormat.OpenXml.Office.Word.Mcd? openXmlElement)
+  public static String? GetMacroName(Mcd? openXmlElement)
   {
     return openXmlElement?.MacroName?.Value;
   }
-  
-  public static void SetMacroName(DocumentFormat.OpenXml.Office.Word.Mcd? openXmlElement, String? value)
+
+  public static void SetMacroName(Mcd? openXmlElement, String? value)
   {
     if (openXmlElement != null)
       if (value != null)
@@ -21,16 +23,16 @@ public static class McdConverter
       else
         openXmlElement.MacroName = null;
   }
-  
+
   /// <summary>
-  /// name
+  ///   name
   /// </summary>
-  public static String? GetName(DocumentFormat.OpenXml.Office.Word.Mcd? openXmlElement)
+  public static String? GetName(Mcd? openXmlElement)
   {
     return openXmlElement?.Name?.Value;
   }
-  
-  public static void SetName(DocumentFormat.OpenXml.Office.Word.Mcd? openXmlElement, String? value)
+
+  public static void SetName(Mcd? openXmlElement, String? value)
   {
     if (openXmlElement != null)
       if (value != null)
@@ -38,16 +40,16 @@ public static class McdConverter
       else
         openXmlElement.Name = null;
   }
-  
+
   /// <summary>
-  /// menuHelp
+  ///   menuHelp
   /// </summary>
-  public static String? GetMenuHelp(DocumentFormat.OpenXml.Office.Word.Mcd? openXmlElement)
+  public static String? GetMenuHelp(Mcd? openXmlElement)
   {
     return openXmlElement?.MenuHelp?.Value;
   }
-  
-  public static void SetMenuHelp(DocumentFormat.OpenXml.Office.Word.Mcd? openXmlElement, String? value)
+
+  public static void SetMenuHelp(Mcd? openXmlElement, String? value)
   {
     if (openXmlElement != null)
       if (value != null)
@@ -55,18 +57,18 @@ public static class McdConverter
       else
         openXmlElement.MenuHelp = null;
   }
-  
+
   /// <summary>
-  /// bEncrypt
+  ///   bEncrypt
   /// </summary>
-  public static Byte[]? GetBEncrypt(DocumentFormat.OpenXml.Office.Word.Mcd? openXmlElement)
+  public static Byte[]? GetBEncrypt(Mcd? openXmlElement)
   {
     if (openXmlElement?.BEncrypt?.Value != null)
       return Convert.FromHexString(openXmlElement.BEncrypt.Value);
     return null;
   }
-  
-  public static void SetBEncrypt(DocumentFormat.OpenXml.Office.Word.Mcd? openXmlElement, Byte[]? value)
+
+  public static void SetBEncrypt(Mcd? openXmlElement, Byte[]? value)
   {
     if (openXmlElement != null)
     {
@@ -76,18 +78,18 @@ public static class McdConverter
         openXmlElement.BEncrypt = null;
     }
   }
-  
+
   /// <summary>
-  /// cmg
+  ///   cmg
   /// </summary>
-  public static Byte[]? GetCmg(DocumentFormat.OpenXml.Office.Word.Mcd? openXmlElement)
+  public static Byte[]? GetCmg(Mcd? openXmlElement)
   {
     if (openXmlElement?.Cmg?.Value != null)
       return Convert.FromHexString(openXmlElement.Cmg.Value);
     return null;
   }
-  
-  public static void SetCmg(DocumentFormat.OpenXml.Office.Word.Mcd? openXmlElement, Byte[]? value)
+
+  public static void SetCmg(Mcd? openXmlElement, Byte[]? value)
   {
     if (openXmlElement != null)
     {
@@ -97,8 +99,8 @@ public static class McdConverter
         openXmlElement.Cmg = null;
     }
   }
-  
-  public static DocumentModel.Wordprocessing.Mcd? CreateModelElement(DocumentFormat.OpenXml.Office.Word.Mcd? openXmlElement)
+
+  public static DocumentModel.Wordprocessing.Mcd? CreateModelElement(Mcd? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -112,9 +114,9 @@ public static class McdConverter
     }
     return null;
   }
-  
+
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.Mcd? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Office.Word.Mcd, new()
+    where OpenXmlElementType : Mcd, new()
   {
     if (value != null)
     {

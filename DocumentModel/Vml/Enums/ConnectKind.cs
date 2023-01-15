@@ -1,28 +1,27 @@
 namespace DocumentModel.Vml;
 
 /// <summary>
-/// Connection Locations Type
+///   Connection Locations Type
 /// </summary>
 public enum ConnectKind
 {
   /// <summary>
-  /// No.
+  ///   No.
   /// </summary>
   None,
-  
+
   /// <summary>
-  /// Four Connections.
+  ///   Four Connections.
   /// </summary>
   Rectangle,
-  
+
   /// <summary>
-  /// Edit Point Connections.
+  ///   Edit Point Connections.
   /// </summary>
   Segments,
-  
+
   /// <summary>
-  /// Custom Connections.
+  ///   Custom Connections.
   /// </summary>
-  Custom,
-  
+  Custom
 }

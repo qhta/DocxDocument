@@ -1,10 +1,9 @@
 namespace DocumentModel.Wordprocessing;
 
 /// <summary>
-/// Font Table Root Element.
+///   Font Table Root Element.
 /// </summary>
-public partial class Fonts
+public class Fonts
 {
-  public Collection<DocumentModel.Wordprocessing.Font>? Items { get; set; }
-  
+  public Collection<Font>? Items { get; set; }
 }

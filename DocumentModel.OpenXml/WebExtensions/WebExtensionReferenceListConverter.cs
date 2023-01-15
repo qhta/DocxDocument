@@ -1,18 +1,21 @@
+using DocumentModel.WebExtensions;
+using WebExtensionReferenceList = DocumentFormat.OpenXml.Office2013.WebExtension.WebExtensionReferenceList;
+
 namespace DocumentModel.OpenXml.WebExtensions;
 
 /// <summary>
-/// Defines the WebExtensionReferenceList Class.
+///   Defines the WebExtensionReferenceList Class.
 /// </summary>
 public static class WebExtensionReferenceListConverter
 {
-  public static System.Collections.ObjectModel.Collection<DocumentModel.WebExtensions.WebExtensionStoreReference>? GetWebExtensionStoreReferences(DocumentFormat.OpenXml.Office2013.WebExtension.WebExtensionReferenceList? openXmlElement)
+  public static Collection<WebExtensionStoreReference>? GetWebExtensionStoreReferences(WebExtensionReferenceList? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var collection = new System.Collections.ObjectModel.Collection<DocumentModel.WebExtensions.WebExtensionStoreReference>();
+      var collection = new Collection<WebExtensionStoreReference>();
       foreach (var item in openXmlElement.Elements<DocumentFormat.OpenXml.Office2013.WebExtension.WebExtensionStoreReference>())
       {
-        var newItem = DocumentModel.OpenXml.WebExtensions.WebExtensionStoreReferenceConverter.CreateModelElement(item);
+        var newItem = WebExtensionStoreReferenceConverter.CreateModelElement(item);
         if (newItem != null)
           collection.Add(newItem);
       }
@@ -20,25 +23,23 @@ public static class WebExtensionReferenceListConverter
     }
     return null;
   }
-  
-  public static void SetWebExtensionStoreReferences(DocumentFormat.OpenXml.Office2013.WebExtension.WebExtensionReferenceList? openXmlElement, System.Collections.ObjectModel.Collection<DocumentModel.WebExtensions.WebExtensionStoreReference>? value)
+
+  public static void SetWebExtensionStoreReferences(WebExtensionReferenceList? openXmlElement, Collection<WebExtensionStoreReference>? value)
   {
     if (openXmlElement != null)
     {
       openXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Office2013.WebExtension.WebExtensionStoreReference>();
       if (value != null)
-      {
         foreach (var item in value)
         {
-          var newItem = DocumentModel.OpenXml.WebExtensions.WebExtensionStoreReferenceConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2013.WebExtension.WebExtensionStoreReference>(item);
+          var newItem = WebExtensionStoreReferenceConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2013.WebExtension.WebExtensionStoreReference>(item);
           if (newItem != null)
             openXmlElement.AddChild(newItem);
         }
-      }
     }
   }
-  
-  public static DocumentModel.WebExtensions.WebExtensionReferenceList? CreateModelElement(DocumentFormat.OpenXml.Office2013.WebExtension.WebExtensionReferenceList? openXmlElement)
+
+  public static DocumentModel.WebExtensions.WebExtensionReferenceList? CreateModelElement(WebExtensionReferenceList? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -48,9 +49,9 @@ public static class WebExtensionReferenceListConverter
     }
     return null;
   }
-  
+
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.WebExtensions.WebExtensionReferenceList? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Office2013.WebExtension.WebExtensionReferenceList, new()
+    where OpenXmlElementType : WebExtensionReferenceList, new()
   {
     if (value != null)
     {

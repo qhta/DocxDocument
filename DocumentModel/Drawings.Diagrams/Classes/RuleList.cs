@@ -1,10 +1,9 @@
 namespace DocumentModel.Drawings.Diagrams;
 
 /// <summary>
-/// Rule List.
+///   Rule List.
 /// </summary>
-public partial class RuleList
+public class RuleList
 {
-  public Collection<DocumentModel.Drawings.Diagrams.Rule>? Rules { get; set; }
-  
+  public Collection<Rule>? Rules { get; set; }
 }

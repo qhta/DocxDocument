@@ -1,18 +1,17 @@
 namespace DocumentModel.Wordprocessing;
 
 /// <summary>
-/// Defines the InfoTextValues enumeration.
+///   Defines the InfoTextValues enumeration.
 /// </summary>
 public enum InfoTextKind
 {
   /// <summary>
-  /// Literal Text.
+  ///   Literal Text.
   /// </summary>
   Text,
-  
+
   /// <summary>
-  /// Glossary Document Entry.
+  ///   Glossary Document Entry.
   /// </summary>
-  AutoText,
-  
+  AutoText
 }

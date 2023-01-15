@@ -1,23 +1,22 @@
 namespace DocumentModel;
 
 /// <summary>
-/// Defines the Style2Values enumeration.
+///   Defines the Style2Values enumeration.
 /// </summary>
 public enum Style2Kind
 {
   /// <summary>
-  /// normal.
+  ///   normal.
   /// </summary>
   Normal,
-  
+
   /// <summary>
-  /// borderless.
+  ///   borderless.
   /// </summary>
   Borderless,
-  
+
   /// <summary>
-  /// large.
+  ///   large.
   /// </summary>
-  Large,
-  
+  Large
 }

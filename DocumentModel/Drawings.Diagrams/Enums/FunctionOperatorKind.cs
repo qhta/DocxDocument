@@ -1,38 +1,37 @@
 namespace DocumentModel.Drawings.Diagrams;
 
 /// <summary>
-/// Function Operator
+///   Function Operator
 /// </summary>
 public enum FunctionOperatorKind
 {
   /// <summary>
-  /// Equal.
+  ///   Equal.
   /// </summary>
   Equal,
-  
+
   /// <summary>
-  /// Not Equal To.
+  ///   Not Equal To.
   /// </summary>
   NotEqualTo,
-  
+
   /// <summary>
-  /// Greater Than.
+  ///   Greater Than.
   /// </summary>
   GreaterThan,
-  
+
   /// <summary>
-  /// Less Than.
+  ///   Less Than.
   /// </summary>
   LessThan,
-  
+
   /// <summary>
-  /// Greater Than or Equal to.
+  ///   Greater Than or Equal to.
   /// </summary>
   GreaterThanOrEqualTo,
-  
+
   /// <summary>
-  /// Less Than or Equal to.
+  ///   Less Than or Equal to.
   /// </summary>
-  LessThanOrEqualTo,
-  
+  LessThanOrEqualTo
 }

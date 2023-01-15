@@ -1,33 +1,32 @@
 namespace DocumentModel.Drawings.Diagrams;
 
 /// <summary>
-/// Data Model.
+///   Data Model.
 /// </summary>
-public partial class DataModelRoot
+public class DataModelRoot
 {
   /// <summary>
-  /// Point List.
+  ///   Point List.
   /// </summary>
-  public DocumentModel.Drawings.Diagrams.PointList? PointList { get; set; }
-  
+  public PointList? PointList { get; set; }
+
   /// <summary>
-  /// Connection List.
+  ///   Connection List.
   /// </summary>
-  public DocumentModel.Drawings.Diagrams.ConnectionList? ConnectionList { get; set; }
-  
+  public ConnectionList? ConnectionList { get; set; }
+
   /// <summary>
-  /// Background Formatting.
+  ///   Background Formatting.
   /// </summary>
-  public DocumentModel.Drawings.Diagrams.Background? Background { get; set; }
-  
+  public Background? Background { get; set; }
+
   /// <summary>
-  /// Whole E2O Formatting.
+  ///   Whole E2O Formatting.
   /// </summary>
-  public DocumentModel.Drawings.Diagrams.Whole? Whole { get; set; }
-  
+  public Whole? Whole { get; set; }
+
   /// <summary>
-  /// DataModelExtensionList.
+  ///   DataModelExtensionList.
   /// </summary>
-  public DocumentModel.Drawings.Diagrams.DataModelExtensionList? DataModelExtensionList { get; set; }
-  
+  public DataModelExtensionList? DataModelExtensionList { get; set; }
 }

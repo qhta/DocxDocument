@@ -1,17 +1,16 @@
 namespace DocumentModel.Packaging;
 
 /// <summary>
-/// Defines the RibbonExtensibilityPart
+///   Defines the RibbonExtensibilityPart
 /// </summary>
-public partial class RibbonExtensibilityPart
+public class RibbonExtensibilityPart
 {
   public String? ContentType { get; set; }
-  
+
   /// <summary>
-  /// Gets the ImageParts of the RibbonExtensibilityPart
+  ///   Gets the ImageParts of the RibbonExtensibilityPart
   /// </summary>
-  public Collection<DocumentModel.Packaging.ImagePart>? ImageParts { get; set; }
-  
+  public Collection<ImagePart>? ImageParts { get; set; }
+
   public String? RelationshipType { get; set; }
-  
 }

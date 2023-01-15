@@ -1,12 +1,11 @@
 namespace DocumentModel.Packaging;
 
 /// <summary>
-/// Defines the PivotTablePart
+///   Defines the PivotTablePart
 /// </summary>
-public partial class PivotTablePart
+public class PivotTablePart
 {
   public String? ContentType { get; set; }
-  
+
   public String? RelationshipType { get; set; }
-  
 }

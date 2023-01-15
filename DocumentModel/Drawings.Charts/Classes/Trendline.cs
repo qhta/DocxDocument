@@ -1,68 +1,67 @@
 namespace DocumentModel.Drawings.Charts;
 
 /// <summary>
-/// Defines the Trendline Class.
+///   Defines the Trendline Class.
 /// </summary>
-public partial class Trendline
+public class Trendline
 {
   /// <summary>
-  /// Trendline Name.
+  ///   Trendline Name.
   /// </summary>
   public String? TrendlineName { get; set; }
-  
+
   /// <summary>
-  /// ChartShapeProperties.
+  ///   ChartShapeProperties.
   /// </summary>
-  public DocumentModel.Drawings.Charts.ChartShapeProperties? ChartShapeProperties { get; set; }
-  
+  public ChartShapeProperties? ChartShapeProperties { get; set; }
+
   /// <summary>
-  /// Trendline Type.
+  ///   Trendline Type.
   /// </summary>
-  public DocumentModel.Drawings.Charts.TrendlineKind? TrendlineType { get; set; }
-  
+  public TrendlineKind? TrendlineType { get; set; }
+
   /// <summary>
-  /// Polynomial Trendline Order.
+  ///   Polynomial Trendline Order.
   /// </summary>
   public Byte? PolynomialOrder { get; set; }
-  
+
   /// <summary>
-  /// Period.
+  ///   Period.
   /// </summary>
   public UInt32? Period { get; set; }
-  
+
   /// <summary>
-  /// Forward.
+  ///   Forward.
   /// </summary>
   public Double? Forward { get; set; }
-  
+
   /// <summary>
-  /// Backward.
+  ///   Backward.
   /// </summary>
   public Double? Backward { get; set; }
-  
+
   /// <summary>
-  /// Intercept.
+  ///   Intercept.
   /// </summary>
   public Double? Intercept { get; set; }
-  
+
   /// <summary>
-  /// Display R Squared Value.
+  ///   Display R Squared Value.
   /// </summary>
   public Boolean? DisplayRSquaredValue { get; set; }
-  
+
   /// <summary>
-  /// Display Equation.
+  ///   Display Equation.
   /// </summary>
   public Boolean? DisplayEquation { get; set; }
-  
+
   /// <summary>
-  /// Trendline Label.
+  ///   Trendline Label.
   /// </summary>
-  public DocumentModel.Drawings.Charts.TrendlineLabel? TrendlineLabel { get; set; }
-  
+  public TrendlineLabel? TrendlineLabel { get; set; }
+
   /// <summary>
-  /// Chart Extensibility.
+  ///   Chart Extensibility.
   /// </summary>
-  public DocumentModel.Drawings.Charts.ExtensionList? ExtensionList { get; set; }
-  
+  public ExtensionList? ExtensionList { get; set; }
 }

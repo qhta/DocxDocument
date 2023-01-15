@@ -1,28 +1,27 @@
 namespace DocumentModel.Drawings;
 
 /// <summary>
-/// Defines the TextFontType Class.
+///   Defines the TextFontType Class.
 /// </summary>
-public partial class TextFontType
+public class TextFontType
 {
   /// <summary>
-  /// Text Typeface
+  ///   Text Typeface
   /// </summary>
   public String? Typeface { get; set; }
-  
+
   /// <summary>
-  /// Panose Setting
+  ///   Panose Setting
   /// </summary>
   public Byte[]? Panose { get; set; }
-  
+
   /// <summary>
-  /// Similar Font Family
+  ///   Similar Font Family
   /// </summary>
   public SByte? PitchFamily { get; set; }
-  
+
   /// <summary>
-  /// Similar Character Set
+  ///   Similar Character Set
   /// </summary>
   public SByte? CharacterSet { get; set; }
-  
 }

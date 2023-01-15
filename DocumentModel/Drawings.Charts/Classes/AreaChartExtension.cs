@@ -1,15 +1,14 @@
 namespace DocumentModel.Drawings.Charts;
 
 /// <summary>
-/// Defines the AreaChartExtension Class.
+///   Defines the AreaChartExtension Class.
 /// </summary>
-public partial class AreaChartExtension
+public class AreaChartExtension
 {
   /// <summary>
-  /// URI
+  ///   URI
   /// </summary>
   public String? Uri { get; set; }
-  
-  public DocumentModel.Drawings.Charts.FilteredAreaSeries? FilteredAreaSeries { get; set; }
-  
+
+  public FilteredAreaSeries? FilteredAreaSeries { get; set; }
 }

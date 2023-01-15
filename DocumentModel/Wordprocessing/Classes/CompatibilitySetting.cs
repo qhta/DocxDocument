@@ -1,23 +1,22 @@
 namespace DocumentModel.Wordprocessing;
 
 /// <summary>
-/// Defines the CompatibilitySetting Class.
+///   Defines the CompatibilitySetting Class.
 /// </summary>
-public partial class CompatibilitySetting
+public class CompatibilitySetting
 {
   /// <summary>
-  /// name
+  ///   name
   /// </summary>
-  public DocumentModel.Wordprocessing.CompatSettingNameKind? Name { get; set; }
-  
+  public CompatSettingNameKind? Name { get; set; }
+
   /// <summary>
-  /// uri
+  ///   uri
   /// </summary>
   public String? Uri { get; set; }
-  
+
   /// <summary>
-  /// val
+  ///   val
   /// </summary>
   public String? Val { get; set; }
-  
 }

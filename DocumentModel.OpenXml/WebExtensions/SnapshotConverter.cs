@@ -1,19 +1,39 @@
+using DocumentFormat.OpenXml.Drawing;
+using DocumentFormat.OpenXml.Office2013.WebExtension;
+using DocumentModel.Drawings;
+using DocumentModel.OpenXml.Drawings;
+using AlphaBiLevel = DocumentModel.Drawings.AlphaBiLevel;
+using AlphaInverse = DocumentModel.Drawings.AlphaInverse;
+using AlphaModulationEffect = DocumentModel.Drawings.AlphaModulationEffect;
+using AlphaModulationFixed = DocumentModel.Drawings.AlphaModulationFixed;
+using AlphaReplace = DocumentModel.Drawings.AlphaReplace;
+using BiLevel = DocumentModel.Drawings.BiLevel;
+using BlipExtensionList = DocumentModel.Drawings.BlipExtensionList;
+using Blur = DocumentModel.Drawings.Blur;
+using ColorChange = DocumentModel.Drawings.ColorChange;
+using ColorReplacement = DocumentModel.Drawings.ColorReplacement;
+using Duotone = DocumentModel.Drawings.Duotone;
+using FillOverlay = DocumentModel.Drawings.FillOverlay;
+using Hsl = DocumentModel.Drawings.Hsl;
+using LuminanceEffect = DocumentModel.Drawings.LuminanceEffect;
+using TintEffect = DocumentModel.Drawings.TintEffect;
+
 namespace DocumentModel.OpenXml.WebExtensions;
 
 /// <summary>
-/// Defines the Snapshot Class.
+///   Defines the Snapshot Class.
 /// </summary>
 public static class SnapshotConverter
 {
   /// <summary>
-  /// Embedded Picture Reference
+  ///   Embedded Picture Reference
   /// </summary>
-  public static String? GetEmbed(DocumentFormat.OpenXml.Office2013.WebExtension.Snapshot? openXmlElement)
+  public static String? GetEmbed(Snapshot? openXmlElement)
   {
     return openXmlElement?.Embed?.Value;
   }
-  
-  public static void SetEmbed(DocumentFormat.OpenXml.Office2013.WebExtension.Snapshot? openXmlElement, String? value)
+
+  public static void SetEmbed(Snapshot? openXmlElement, String? value)
   {
     if (openXmlElement != null)
       if (value != null)
@@ -21,16 +41,16 @@ public static class SnapshotConverter
       else
         openXmlElement.Embed = null;
   }
-  
+
   /// <summary>
-  /// Linked Picture Reference
+  ///   Linked Picture Reference
   /// </summary>
-  public static String? GetLink(DocumentFormat.OpenXml.Office2013.WebExtension.Snapshot? openXmlElement)
+  public static String? GetLink(Snapshot? openXmlElement)
   {
     return openXmlElement?.Link?.Value;
   }
-  
-  public static void SetLink(DocumentFormat.OpenXml.Office2013.WebExtension.Snapshot? openXmlElement, String? value)
+
+  public static void SetLink(Snapshot? openXmlElement, String? value)
   {
     if (openXmlElement != null)
       if (value != null)
@@ -38,30 +58,30 @@ public static class SnapshotConverter
       else
         openXmlElement.Link = null;
   }
-  
+
   /// <summary>
-  /// Compression state for blips.
+  ///   Compression state for blips.
   /// </summary>
-  public static DocumentModel.Drawings.BlipCompressionKind? GetCompressionState(DocumentFormat.OpenXml.Office2013.WebExtension.Snapshot? openXmlElement)
+  public static BlipCompressionKind? GetCompressionState(Snapshot? openXmlElement)
   {
-    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Drawing.BlipCompressionValues, DocumentModel.Drawings.BlipCompressionKind>(openXmlElement?.CompressionState?.Value);
+    return EnumValueConverter.GetValue<BlipCompressionValues, BlipCompressionKind>(openXmlElement?.CompressionState?.Value);
   }
-  
-  public static void SetCompressionState(DocumentFormat.OpenXml.Office2013.WebExtension.Snapshot? openXmlElement, DocumentModel.Drawings.BlipCompressionKind? value)
+
+  public static void SetCompressionState(Snapshot? openXmlElement, BlipCompressionKind? value)
   {
     if (openXmlElement != null)
-      openXmlElement.CompressionState = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Drawing.BlipCompressionValues, DocumentModel.Drawings.BlipCompressionKind>(value);
+      openXmlElement.CompressionState = EnumValueConverter.CreateEnumValue<BlipCompressionValues, BlipCompressionKind>(value);
   }
-  
-  public static DocumentModel.Drawings.AlphaBiLevel? GetAlphaBiLevel(DocumentFormat.OpenXml.Office2013.WebExtension.Snapshot? openXmlElement)
+
+  public static AlphaBiLevel? GetAlphaBiLevel(Snapshot? openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.AlphaBiLevel>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.AlphaBiLevelConverter.CreateModelElement(itemElement);
+      return AlphaBiLevelConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetAlphaBiLevel(DocumentFormat.OpenXml.Office2013.WebExtension.Snapshot? openXmlElement, DocumentModel.Drawings.AlphaBiLevel? value)
+
+  public static void SetAlphaBiLevel(Snapshot? openXmlElement, AlphaBiLevel? value)
   {
     if (openXmlElement != null)
     {
@@ -70,78 +90,78 @@ public static class SnapshotConverter
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Drawings.AlphaBiLevelConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.AlphaBiLevel>(value);
+        itemElement = AlphaBiLevelConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.AlphaBiLevel>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static Boolean? GetAlphaCeiling(DocumentFormat.OpenXml.Office2013.WebExtension.Snapshot? openXmlElement)
+
+  public static Boolean? GetAlphaCeiling(Snapshot? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.AlphaCeiling>();
+      var itemElement = openXmlElement.GetFirstChild<AlphaCeiling>();
       return itemElement != null;
     }
     return null;
   }
-  
-  public static void SetAlphaCeiling(DocumentFormat.OpenXml.Office2013.WebExtension.Snapshot? openXmlElement, Boolean? value)
+
+  public static void SetAlphaCeiling(Snapshot? openXmlElement, Boolean? value)
   {
     if (openXmlElement != null)
     {
       if (value == false)
       {
-        var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.AlphaCeiling>();
+        var itemElement = openXmlElement.GetFirstChild<AlphaCeiling>();
         if (itemElement != null)
           itemElement.Remove();
       }
       if (value == true)
       {
-        var itemElement = new DocumentFormat.OpenXml.Drawing.AlphaCeiling();
+        var itemElement = new AlphaCeiling();
         openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static Boolean? GetAlphaFloor(DocumentFormat.OpenXml.Office2013.WebExtension.Snapshot? openXmlElement)
+
+  public static Boolean? GetAlphaFloor(Snapshot? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.AlphaFloor>();
+      var itemElement = openXmlElement.GetFirstChild<AlphaFloor>();
       return itemElement != null;
     }
     return null;
   }
-  
-  public static void SetAlphaFloor(DocumentFormat.OpenXml.Office2013.WebExtension.Snapshot? openXmlElement, Boolean? value)
+
+  public static void SetAlphaFloor(Snapshot? openXmlElement, Boolean? value)
   {
     if (openXmlElement != null)
     {
       if (value == false)
       {
-        var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.AlphaFloor>();
+        var itemElement = openXmlElement.GetFirstChild<AlphaFloor>();
         if (itemElement != null)
           itemElement.Remove();
       }
       if (value == true)
       {
-        var itemElement = new DocumentFormat.OpenXml.Drawing.AlphaFloor();
+        var itemElement = new AlphaFloor();
         openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static DocumentModel.Drawings.AlphaInverse? GetAlphaInverse(DocumentFormat.OpenXml.Office2013.WebExtension.Snapshot? openXmlElement)
+
+  public static AlphaInverse? GetAlphaInverse(Snapshot? openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.AlphaInverse>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.AlphaInverseConverter.CreateModelElement(itemElement);
+      return AlphaInverseConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetAlphaInverse(DocumentFormat.OpenXml.Office2013.WebExtension.Snapshot? openXmlElement, DocumentModel.Drawings.AlphaInverse? value)
+
+  public static void SetAlphaInverse(Snapshot? openXmlElement, AlphaInverse? value)
   {
     if (openXmlElement != null)
     {
@@ -150,22 +170,22 @@ public static class SnapshotConverter
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Drawings.AlphaInverseConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.AlphaInverse>(value);
+        itemElement = AlphaInverseConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.AlphaInverse>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static DocumentModel.Drawings.AlphaModulationEffect? GetAlphaModulationEffect(DocumentFormat.OpenXml.Office2013.WebExtension.Snapshot? openXmlElement)
+
+  public static AlphaModulationEffect? GetAlphaModulationEffect(Snapshot? openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.AlphaModulationEffect>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.AlphaModulationEffectConverter.CreateModelElement(itemElement);
+      return AlphaModulationEffectConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetAlphaModulationEffect(DocumentFormat.OpenXml.Office2013.WebExtension.Snapshot? openXmlElement, DocumentModel.Drawings.AlphaModulationEffect? value)
+
+  public static void SetAlphaModulationEffect(Snapshot? openXmlElement, AlphaModulationEffect? value)
   {
     if (openXmlElement != null)
     {
@@ -174,22 +194,22 @@ public static class SnapshotConverter
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Drawings.AlphaModulationEffectConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.AlphaModulationEffect>(value);
+        itemElement = AlphaModulationEffectConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.AlphaModulationEffect>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static DocumentModel.Drawings.AlphaModulationFixed? GetAlphaModulationFixed(DocumentFormat.OpenXml.Office2013.WebExtension.Snapshot? openXmlElement)
+
+  public static AlphaModulationFixed? GetAlphaModulationFixed(Snapshot? openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.AlphaModulationFixed>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.AlphaModulationFixedConverter.CreateModelElement(itemElement);
+      return AlphaModulationFixedConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetAlphaModulationFixed(DocumentFormat.OpenXml.Office2013.WebExtension.Snapshot? openXmlElement, DocumentModel.Drawings.AlphaModulationFixed? value)
+
+  public static void SetAlphaModulationFixed(Snapshot? openXmlElement, AlphaModulationFixed? value)
   {
     if (openXmlElement != null)
     {
@@ -198,22 +218,22 @@ public static class SnapshotConverter
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Drawings.AlphaModulationFixedConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.AlphaModulationFixed>(value);
+        itemElement = AlphaModulationFixedConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.AlphaModulationFixed>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static DocumentModel.Drawings.AlphaReplace? GetAlphaReplace(DocumentFormat.OpenXml.Office2013.WebExtension.Snapshot? openXmlElement)
+
+  public static AlphaReplace? GetAlphaReplace(Snapshot? openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.AlphaReplace>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.AlphaReplaceConverter.CreateModelElement(itemElement);
+      return AlphaReplaceConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetAlphaReplace(DocumentFormat.OpenXml.Office2013.WebExtension.Snapshot? openXmlElement, DocumentModel.Drawings.AlphaReplace? value)
+
+  public static void SetAlphaReplace(Snapshot? openXmlElement, AlphaReplace? value)
   {
     if (openXmlElement != null)
     {
@@ -222,22 +242,22 @@ public static class SnapshotConverter
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Drawings.AlphaReplaceConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.AlphaReplace>(value);
+        itemElement = AlphaReplaceConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.AlphaReplace>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static DocumentModel.Drawings.BiLevel? GetBiLevel(DocumentFormat.OpenXml.Office2013.WebExtension.Snapshot? openXmlElement)
+
+  public static BiLevel? GetBiLevel(Snapshot? openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.BiLevel>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.BiLevelConverter.CreateModelElement(itemElement);
+      return BiLevelConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetBiLevel(DocumentFormat.OpenXml.Office2013.WebExtension.Snapshot? openXmlElement, DocumentModel.Drawings.BiLevel? value)
+
+  public static void SetBiLevel(Snapshot? openXmlElement, BiLevel? value)
   {
     if (openXmlElement != null)
     {
@@ -246,22 +266,22 @@ public static class SnapshotConverter
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Drawings.BiLevelConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.BiLevel>(value);
+        itemElement = BiLevelConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.BiLevel>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static DocumentModel.Drawings.Blur? GetBlur(DocumentFormat.OpenXml.Office2013.WebExtension.Snapshot? openXmlElement)
+
+  public static Blur? GetBlur(Snapshot? openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.Blur>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.BlurConverter.CreateModelElement(itemElement);
+      return BlurConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetBlur(DocumentFormat.OpenXml.Office2013.WebExtension.Snapshot? openXmlElement, DocumentModel.Drawings.Blur? value)
+
+  public static void SetBlur(Snapshot? openXmlElement, Blur? value)
   {
     if (openXmlElement != null)
     {
@@ -270,22 +290,22 @@ public static class SnapshotConverter
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Drawings.BlurConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Blur>(value);
+        itemElement = BlurConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Blur>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static DocumentModel.Drawings.ColorChange? GetColorChange(DocumentFormat.OpenXml.Office2013.WebExtension.Snapshot? openXmlElement)
+
+  public static ColorChange? GetColorChange(Snapshot? openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.ColorChange>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.ColorChangeConverter.CreateModelElement(itemElement);
+      return ColorChangeConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetColorChange(DocumentFormat.OpenXml.Office2013.WebExtension.Snapshot? openXmlElement, DocumentModel.Drawings.ColorChange? value)
+
+  public static void SetColorChange(Snapshot? openXmlElement, ColorChange? value)
   {
     if (openXmlElement != null)
     {
@@ -294,22 +314,22 @@ public static class SnapshotConverter
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Drawings.ColorChangeConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.ColorChange>(value);
+        itemElement = ColorChangeConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.ColorChange>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static DocumentModel.Drawings.ColorReplacement? GetColorReplacement(DocumentFormat.OpenXml.Office2013.WebExtension.Snapshot? openXmlElement)
+
+  public static ColorReplacement? GetColorReplacement(Snapshot? openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.ColorReplacement>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.ColorReplacementConverter.CreateModelElement(itemElement);
+      return ColorReplacementConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetColorReplacement(DocumentFormat.OpenXml.Office2013.WebExtension.Snapshot? openXmlElement, DocumentModel.Drawings.ColorReplacement? value)
+
+  public static void SetColorReplacement(Snapshot? openXmlElement, ColorReplacement? value)
   {
     if (openXmlElement != null)
     {
@@ -318,22 +338,22 @@ public static class SnapshotConverter
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Drawings.ColorReplacementConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.ColorReplacement>(value);
+        itemElement = ColorReplacementConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.ColorReplacement>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static DocumentModel.Drawings.Duotone? GetDuotone(DocumentFormat.OpenXml.Office2013.WebExtension.Snapshot? openXmlElement)
+
+  public static Duotone? GetDuotone(Snapshot? openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.Duotone>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.DuotoneConverter.CreateModelElement(itemElement);
+      return DuotoneConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetDuotone(DocumentFormat.OpenXml.Office2013.WebExtension.Snapshot? openXmlElement, DocumentModel.Drawings.Duotone? value)
+
+  public static void SetDuotone(Snapshot? openXmlElement, Duotone? value)
   {
     if (openXmlElement != null)
     {
@@ -342,22 +362,22 @@ public static class SnapshotConverter
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Drawings.DuotoneConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Duotone>(value);
+        itemElement = DuotoneConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Duotone>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static DocumentModel.Drawings.FillOverlay? GetFillOverlay(DocumentFormat.OpenXml.Office2013.WebExtension.Snapshot? openXmlElement)
+
+  public static FillOverlay? GetFillOverlay(Snapshot? openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.FillOverlay>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.FillOverlayConverter.CreateModelElement(itemElement);
+      return FillOverlayConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetFillOverlay(DocumentFormat.OpenXml.Office2013.WebExtension.Snapshot? openXmlElement, DocumentModel.Drawings.FillOverlay? value)
+
+  public static void SetFillOverlay(Snapshot? openXmlElement, FillOverlay? value)
   {
     if (openXmlElement != null)
     {
@@ -366,50 +386,50 @@ public static class SnapshotConverter
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Drawings.FillOverlayConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.FillOverlay>(value);
+        itemElement = FillOverlayConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.FillOverlay>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static Boolean? GetGrayscale(DocumentFormat.OpenXml.Office2013.WebExtension.Snapshot? openXmlElement)
+
+  public static Boolean? GetGrayscale(Snapshot? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Grayscale>();
+      var itemElement = openXmlElement.GetFirstChild<Grayscale>();
       return itemElement != null;
     }
     return null;
   }
-  
-  public static void SetGrayscale(DocumentFormat.OpenXml.Office2013.WebExtension.Snapshot? openXmlElement, Boolean? value)
+
+  public static void SetGrayscale(Snapshot? openXmlElement, Boolean? value)
   {
     if (openXmlElement != null)
     {
       if (value == false)
       {
-        var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Grayscale>();
+        var itemElement = openXmlElement.GetFirstChild<Grayscale>();
         if (itemElement != null)
           itemElement.Remove();
       }
       if (value == true)
       {
-        var itemElement = new DocumentFormat.OpenXml.Drawing.Grayscale();
+        var itemElement = new Grayscale();
         openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static DocumentModel.Drawings.Hsl? GetHsl(DocumentFormat.OpenXml.Office2013.WebExtension.Snapshot? openXmlElement)
+
+  public static Hsl? GetHsl(Snapshot? openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.Hsl>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.HslConverter.CreateModelElement(itemElement);
+      return HslConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetHsl(DocumentFormat.OpenXml.Office2013.WebExtension.Snapshot? openXmlElement, DocumentModel.Drawings.Hsl? value)
+
+  public static void SetHsl(Snapshot? openXmlElement, Hsl? value)
   {
     if (openXmlElement != null)
     {
@@ -418,22 +438,22 @@ public static class SnapshotConverter
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Drawings.HslConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Hsl>(value);
+        itemElement = HslConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Hsl>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static DocumentModel.Drawings.LuminanceEffect? GetLuminanceEffect(DocumentFormat.OpenXml.Office2013.WebExtension.Snapshot? openXmlElement)
+
+  public static LuminanceEffect? GetLuminanceEffect(Snapshot? openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.LuminanceEffect>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.LuminanceEffectConverter.CreateModelElement(itemElement);
+      return LuminanceEffectConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetLuminanceEffect(DocumentFormat.OpenXml.Office2013.WebExtension.Snapshot? openXmlElement, DocumentModel.Drawings.LuminanceEffect? value)
+
+  public static void SetLuminanceEffect(Snapshot? openXmlElement, LuminanceEffect? value)
   {
     if (openXmlElement != null)
     {
@@ -442,22 +462,22 @@ public static class SnapshotConverter
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Drawings.LuminanceEffectConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.LuminanceEffect>(value);
+        itemElement = LuminanceEffectConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.LuminanceEffect>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static DocumentModel.Drawings.TintEffect? GetTintEffect(DocumentFormat.OpenXml.Office2013.WebExtension.Snapshot? openXmlElement)
+
+  public static TintEffect? GetTintEffect(Snapshot? openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.TintEffect>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.TintEffectConverter.CreateModelElement(itemElement);
+      return TintEffectConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetTintEffect(DocumentFormat.OpenXml.Office2013.WebExtension.Snapshot? openXmlElement, DocumentModel.Drawings.TintEffect? value)
+
+  public static void SetTintEffect(Snapshot? openXmlElement, TintEffect? value)
   {
     if (openXmlElement != null)
     {
@@ -466,22 +486,22 @@ public static class SnapshotConverter
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Drawings.TintEffectConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.TintEffect>(value);
+        itemElement = TintEffectConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.TintEffect>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static DocumentModel.Drawings.BlipExtensionList? GetBlipExtensionList(DocumentFormat.OpenXml.Office2013.WebExtension.Snapshot? openXmlElement)
+
+  public static BlipExtensionList? GetBlipExtensionList(Snapshot? openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.BlipExtensionList>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.BlipExtensionListConverter.CreateModelElement(itemElement);
+      return BlipExtensionListConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetBlipExtensionList(DocumentFormat.OpenXml.Office2013.WebExtension.Snapshot? openXmlElement, DocumentModel.Drawings.BlipExtensionList? value)
+
+  public static void SetBlipExtensionList(Snapshot? openXmlElement, BlipExtensionList? value)
   {
     if (openXmlElement != null)
     {
@@ -490,14 +510,14 @@ public static class SnapshotConverter
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Drawings.BlipExtensionListConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.BlipExtensionList>(value);
+        itemElement = BlipExtensionListConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.BlipExtensionList>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static DocumentModel.WebExtensions.Snapshot? CreateModelElement(DocumentFormat.OpenXml.Office2013.WebExtension.Snapshot? openXmlElement)
+
+  public static DocumentModel.WebExtensions.Snapshot? CreateModelElement(Snapshot? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -527,9 +547,9 @@ public static class SnapshotConverter
     }
     return null;
   }
-  
+
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.WebExtensions.Snapshot? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Office2013.WebExtension.Snapshot, new()
+    where OpenXmlElementType : Snapshot, new()
   {
     if (value != null)
     {

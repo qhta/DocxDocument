@@ -1,19 +1,25 @@
+using DocumentFormat.OpenXml.Vml;
+using DocumentFormat.OpenXml.Vml.Office;
+using DocumentModel.Vml;
+using Stroke = DocumentFormat.OpenXml.Vml.Stroke;
+using StrokeChildType = DocumentModel.Vml.StrokeChildType;
+
 namespace DocumentModel.OpenXml.Vml;
 
 /// <summary>
-/// Defines the Stroke Class.
+///   Defines the Stroke Class.
 /// </summary>
 public static class StrokeConverter
 {
   /// <summary>
-  /// Unique Identifier
+  ///   Unique Identifier
   /// </summary>
-  public static String? GetId(DocumentFormat.OpenXml.Vml.Stroke? openXmlElement)
+  public static String? GetId(Stroke? openXmlElement)
   {
     return openXmlElement?.Id?.Value;
   }
-  
-  public static void SetId(DocumentFormat.OpenXml.Vml.Stroke? openXmlElement, String? value)
+
+  public static void SetId(Stroke? openXmlElement, String? value)
   {
     if (openXmlElement != null)
       if (value != null)
@@ -21,16 +27,16 @@ public static class StrokeConverter
       else
         openXmlElement.Id = null;
   }
-  
+
   /// <summary>
-  /// Stroke Toggle
+  ///   Stroke Toggle
   /// </summary>
-  public static Boolean? GetOn(DocumentFormat.OpenXml.Vml.Stroke? openXmlElement)
+  public static Boolean? GetOn(Stroke? openXmlElement)
   {
     return openXmlElement?.On?.Value;
   }
-  
-  public static void SetOn(DocumentFormat.OpenXml.Vml.Stroke? openXmlElement, Boolean? value)
+
+  public static void SetOn(Stroke? openXmlElement, Boolean? value)
   {
     if (openXmlElement != null)
       if (value != null)
@@ -38,16 +44,16 @@ public static class StrokeConverter
       else
         openXmlElement.On = null;
   }
-  
+
   /// <summary>
-  /// Stroke Weight
+  ///   Stroke Weight
   /// </summary>
-  public static String? GetWeight(DocumentFormat.OpenXml.Vml.Stroke? openXmlElement)
+  public static String? GetWeight(Stroke? openXmlElement)
   {
     return openXmlElement?.Weight?.Value;
   }
-  
-  public static void SetWeight(DocumentFormat.OpenXml.Vml.Stroke? openXmlElement, String? value)
+
+  public static void SetWeight(Stroke? openXmlElement, String? value)
   {
     if (openXmlElement != null)
       if (value != null)
@@ -55,16 +61,16 @@ public static class StrokeConverter
       else
         openXmlElement.Weight = null;
   }
-  
+
   /// <summary>
-  /// Stroke Color
+  ///   Stroke Color
   /// </summary>
-  public static String? GetColor(DocumentFormat.OpenXml.Vml.Stroke? openXmlElement)
+  public static String? GetColor(Stroke? openXmlElement)
   {
     return openXmlElement?.Color?.Value;
   }
-  
-  public static void SetColor(DocumentFormat.OpenXml.Vml.Stroke? openXmlElement, String? value)
+
+  public static void SetColor(Stroke? openXmlElement, String? value)
   {
     if (openXmlElement != null)
       if (value != null)
@@ -72,16 +78,16 @@ public static class StrokeConverter
       else
         openXmlElement.Color = null;
   }
-  
+
   /// <summary>
-  /// Stroke Opacity
+  ///   Stroke Opacity
   /// </summary>
-  public static String? GetOpacity(DocumentFormat.OpenXml.Vml.Stroke? openXmlElement)
+  public static String? GetOpacity(Stroke? openXmlElement)
   {
     return openXmlElement?.Opacity?.Value;
   }
-  
-  public static void SetOpacity(DocumentFormat.OpenXml.Vml.Stroke? openXmlElement, String? value)
+
+  public static void SetOpacity(Stroke? openXmlElement, String? value)
   {
     if (openXmlElement != null)
       if (value != null)
@@ -89,30 +95,30 @@ public static class StrokeConverter
       else
         openXmlElement.Opacity = null;
   }
-  
+
   /// <summary>
-  /// Stroke Line Style
+  ///   Stroke Line Style
   /// </summary>
-  public static DocumentModel.Vml.StrokeLineStyleKind? GetLineStyle(DocumentFormat.OpenXml.Vml.Stroke? openXmlElement)
+  public static StrokeLineStyleKind? GetLineStyle(Stroke? openXmlElement)
   {
-    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Vml.StrokeLineStyleValues, DocumentModel.Vml.StrokeLineStyleKind>(openXmlElement?.LineStyle?.Value);
+    return EnumValueConverter.GetValue<StrokeLineStyleValues, StrokeLineStyleKind>(openXmlElement?.LineStyle?.Value);
   }
-  
-  public static void SetLineStyle(DocumentFormat.OpenXml.Vml.Stroke? openXmlElement, DocumentModel.Vml.StrokeLineStyleKind? value)
+
+  public static void SetLineStyle(Stroke? openXmlElement, StrokeLineStyleKind? value)
   {
     if (openXmlElement != null)
-      openXmlElement.LineStyle = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Vml.StrokeLineStyleValues, DocumentModel.Vml.StrokeLineStyleKind>(value);
+      openXmlElement.LineStyle = EnumValueConverter.CreateEnumValue<StrokeLineStyleValues, StrokeLineStyleKind>(value);
   }
-  
+
   /// <summary>
-  /// Miter Joint Limit
+  ///   Miter Joint Limit
   /// </summary>
-  public static String? GetMiterlimit(DocumentFormat.OpenXml.Vml.Stroke? openXmlElement)
+  public static String? GetMiterlimit(Stroke? openXmlElement)
   {
     return openXmlElement?.Miterlimit?.Value;
   }
-  
-  public static void SetMiterlimit(DocumentFormat.OpenXml.Vml.Stroke? openXmlElement, String? value)
+
+  public static void SetMiterlimit(Stroke? openXmlElement, String? value)
   {
     if (openXmlElement != null)
       if (value != null)
@@ -120,44 +126,44 @@ public static class StrokeConverter
       else
         openXmlElement.Miterlimit = null;
   }
-  
+
   /// <summary>
-  /// Line End Join Style
+  ///   Line End Join Style
   /// </summary>
-  public static DocumentModel.Vml.StrokeJoinStyleKind? GetJoinStyle(DocumentFormat.OpenXml.Vml.Stroke? openXmlElement)
+  public static StrokeJoinStyleKind? GetJoinStyle(Stroke? openXmlElement)
   {
-    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Vml.StrokeJoinStyleValues, DocumentModel.Vml.StrokeJoinStyleKind>(openXmlElement?.JoinStyle?.Value);
+    return EnumValueConverter.GetValue<StrokeJoinStyleValues, StrokeJoinStyleKind>(openXmlElement?.JoinStyle?.Value);
   }
-  
-  public static void SetJoinStyle(DocumentFormat.OpenXml.Vml.Stroke? openXmlElement, DocumentModel.Vml.StrokeJoinStyleKind? value)
+
+  public static void SetJoinStyle(Stroke? openXmlElement, StrokeJoinStyleKind? value)
   {
     if (openXmlElement != null)
-      openXmlElement.JoinStyle = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Vml.StrokeJoinStyleValues, DocumentModel.Vml.StrokeJoinStyleKind>(value);
+      openXmlElement.JoinStyle = EnumValueConverter.CreateEnumValue<StrokeJoinStyleValues, StrokeJoinStyleKind>(value);
   }
-  
+
   /// <summary>
-  /// Line End Cap
+  ///   Line End Cap
   /// </summary>
-  public static DocumentModel.Vml.StrokeEndCapKind? GetEndCap(DocumentFormat.OpenXml.Vml.Stroke? openXmlElement)
+  public static StrokeEndCapKind? GetEndCap(Stroke? openXmlElement)
   {
-    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Vml.StrokeEndCapValues, DocumentModel.Vml.StrokeEndCapKind>(openXmlElement?.EndCap?.Value);
+    return EnumValueConverter.GetValue<StrokeEndCapValues, StrokeEndCapKind>(openXmlElement?.EndCap?.Value);
   }
-  
-  public static void SetEndCap(DocumentFormat.OpenXml.Vml.Stroke? openXmlElement, DocumentModel.Vml.StrokeEndCapKind? value)
+
+  public static void SetEndCap(Stroke? openXmlElement, StrokeEndCapKind? value)
   {
     if (openXmlElement != null)
-      openXmlElement.EndCap = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Vml.StrokeEndCapValues, DocumentModel.Vml.StrokeEndCapKind>(value);
+      openXmlElement.EndCap = EnumValueConverter.CreateEnumValue<StrokeEndCapValues, StrokeEndCapKind>(value);
   }
-  
+
   /// <summary>
-  /// Stroke Dash Pattern
+  ///   Stroke Dash Pattern
   /// </summary>
-  public static String? GetDashStyle(DocumentFormat.OpenXml.Vml.Stroke? openXmlElement)
+  public static String? GetDashStyle(Stroke? openXmlElement)
   {
     return openXmlElement?.DashStyle?.Value;
   }
-  
-  public static void SetDashStyle(DocumentFormat.OpenXml.Vml.Stroke? openXmlElement, String? value)
+
+  public static void SetDashStyle(Stroke? openXmlElement, String? value)
   {
     if (openXmlElement != null)
       if (value != null)
@@ -165,30 +171,30 @@ public static class StrokeConverter
       else
         openXmlElement.DashStyle = null;
   }
-  
+
   /// <summary>
-  /// Stroke Image Style
+  ///   Stroke Image Style
   /// </summary>
-  public static DocumentModel.Vml.StrokeFillKind? GetFillType(DocumentFormat.OpenXml.Vml.Stroke? openXmlElement)
+  public static StrokeFillKind? GetFillType(Stroke? openXmlElement)
   {
-    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Vml.StrokeFillTypeValues, DocumentModel.Vml.StrokeFillKind>(openXmlElement?.FillType?.Value);
+    return EnumValueConverter.GetValue<StrokeFillTypeValues, StrokeFillKind>(openXmlElement?.FillType?.Value);
   }
-  
-  public static void SetFillType(DocumentFormat.OpenXml.Vml.Stroke? openXmlElement, DocumentModel.Vml.StrokeFillKind? value)
+
+  public static void SetFillType(Stroke? openXmlElement, StrokeFillKind? value)
   {
     if (openXmlElement != null)
-      openXmlElement.FillType = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Vml.StrokeFillTypeValues, DocumentModel.Vml.StrokeFillKind>(value);
+      openXmlElement.FillType = EnumValueConverter.CreateEnumValue<StrokeFillTypeValues, StrokeFillKind>(value);
   }
-  
+
   /// <summary>
-  /// Stroke Image Location
+  ///   Stroke Image Location
   /// </summary>
-  public static String? GetSource(DocumentFormat.OpenXml.Vml.Stroke? openXmlElement)
+  public static String? GetSource(Stroke? openXmlElement)
   {
     return openXmlElement?.Source?.Value;
   }
-  
-  public static void SetSource(DocumentFormat.OpenXml.Vml.Stroke? openXmlElement, String? value)
+
+  public static void SetSource(Stroke? openXmlElement, String? value)
   {
     if (openXmlElement != null)
       if (value != null)
@@ -196,30 +202,30 @@ public static class StrokeConverter
       else
         openXmlElement.Source = null;
   }
-  
+
   /// <summary>
-  /// Stroke Image Aspect Ratio
+  ///   Stroke Image Aspect Ratio
   /// </summary>
-  public static DocumentModel.Vml.ImageAspectKind? GetImageAspect(DocumentFormat.OpenXml.Vml.Stroke? openXmlElement)
+  public static ImageAspectKind? GetImageAspect(Stroke? openXmlElement)
   {
-    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Vml.ImageAspectValues, DocumentModel.Vml.ImageAspectKind>(openXmlElement?.ImageAspect?.Value);
+    return EnumValueConverter.GetValue<ImageAspectValues, ImageAspectKind>(openXmlElement?.ImageAspect?.Value);
   }
-  
-  public static void SetImageAspect(DocumentFormat.OpenXml.Vml.Stroke? openXmlElement, DocumentModel.Vml.ImageAspectKind? value)
+
+  public static void SetImageAspect(Stroke? openXmlElement, ImageAspectKind? value)
   {
     if (openXmlElement != null)
-      openXmlElement.ImageAspect = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Vml.ImageAspectValues, DocumentModel.Vml.ImageAspectKind>(value);
+      openXmlElement.ImageAspect = EnumValueConverter.CreateEnumValue<ImageAspectValues, ImageAspectKind>(value);
   }
-  
+
   /// <summary>
-  /// Stroke Image Size
+  ///   Stroke Image Size
   /// </summary>
-  public static String? GetImageSize(DocumentFormat.OpenXml.Vml.Stroke? openXmlElement)
+  public static String? GetImageSize(Stroke? openXmlElement)
   {
     return openXmlElement?.ImageSize?.Value;
   }
-  
-  public static void SetImageSize(DocumentFormat.OpenXml.Vml.Stroke? openXmlElement, String? value)
+
+  public static void SetImageSize(Stroke? openXmlElement, String? value)
   {
     if (openXmlElement != null)
       if (value != null)
@@ -227,16 +233,16 @@ public static class StrokeConverter
       else
         openXmlElement.ImageSize = null;
   }
-  
+
   /// <summary>
-  /// Stoke Image Alignment
+  ///   Stoke Image Alignment
   /// </summary>
-  public static Boolean? GetImageAlignShape(DocumentFormat.OpenXml.Vml.Stroke? openXmlElement)
+  public static Boolean? GetImageAlignShape(Stroke? openXmlElement)
   {
     return openXmlElement?.ImageAlignShape?.Value;
   }
-  
-  public static void SetImageAlignShape(DocumentFormat.OpenXml.Vml.Stroke? openXmlElement, Boolean? value)
+
+  public static void SetImageAlignShape(Stroke? openXmlElement, Boolean? value)
   {
     if (openXmlElement != null)
       if (value != null)
@@ -244,16 +250,16 @@ public static class StrokeConverter
       else
         openXmlElement.ImageAlignShape = null;
   }
-  
+
   /// <summary>
-  /// Stroke Alternate Pattern Color
+  ///   Stroke Alternate Pattern Color
   /// </summary>
-  public static String? GetColor2(DocumentFormat.OpenXml.Vml.Stroke? openXmlElement)
+  public static String? GetColor2(Stroke? openXmlElement)
   {
     return openXmlElement?.Color2?.Value;
   }
-  
-  public static void SetColor2(DocumentFormat.OpenXml.Vml.Stroke? openXmlElement, String? value)
+
+  public static void SetColor2(Stroke? openXmlElement, String? value)
   {
     if (openXmlElement != null)
       if (value != null)
@@ -261,100 +267,100 @@ public static class StrokeConverter
       else
         openXmlElement.Color2 = null;
   }
-  
+
   /// <summary>
-  /// Line Start Arrowhead
+  ///   Line Start Arrowhead
   /// </summary>
-  public static DocumentModel.Vml.StrokeArrowKind? GetStartArrow(DocumentFormat.OpenXml.Vml.Stroke? openXmlElement)
+  public static StrokeArrowKind? GetStartArrow(Stroke? openXmlElement)
   {
-    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Vml.StrokeArrowValues, DocumentModel.Vml.StrokeArrowKind>(openXmlElement?.StartArrow?.Value);
+    return EnumValueConverter.GetValue<StrokeArrowValues, StrokeArrowKind>(openXmlElement?.StartArrow?.Value);
   }
-  
-  public static void SetStartArrow(DocumentFormat.OpenXml.Vml.Stroke? openXmlElement, DocumentModel.Vml.StrokeArrowKind? value)
+
+  public static void SetStartArrow(Stroke? openXmlElement, StrokeArrowKind? value)
   {
     if (openXmlElement != null)
-      openXmlElement.StartArrow = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Vml.StrokeArrowValues, DocumentModel.Vml.StrokeArrowKind>(value);
+      openXmlElement.StartArrow = EnumValueConverter.CreateEnumValue<StrokeArrowValues, StrokeArrowKind>(value);
   }
-  
+
   /// <summary>
-  /// Line Start Arrowhead Width
+  ///   Line Start Arrowhead Width
   /// </summary>
-  public static DocumentModel.Vml.StrokeArrowWidthKind? GetStartArrowWidth(DocumentFormat.OpenXml.Vml.Stroke? openXmlElement)
+  public static StrokeArrowWidthKind? GetStartArrowWidth(Stroke? openXmlElement)
   {
-    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Vml.StrokeArrowWidthValues, DocumentModel.Vml.StrokeArrowWidthKind>(openXmlElement?.StartArrowWidth?.Value);
+    return EnumValueConverter.GetValue<StrokeArrowWidthValues, StrokeArrowWidthKind>(openXmlElement?.StartArrowWidth?.Value);
   }
-  
-  public static void SetStartArrowWidth(DocumentFormat.OpenXml.Vml.Stroke? openXmlElement, DocumentModel.Vml.StrokeArrowWidthKind? value)
+
+  public static void SetStartArrowWidth(Stroke? openXmlElement, StrokeArrowWidthKind? value)
   {
     if (openXmlElement != null)
-      openXmlElement.StartArrowWidth = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Vml.StrokeArrowWidthValues, DocumentModel.Vml.StrokeArrowWidthKind>(value);
+      openXmlElement.StartArrowWidth = EnumValueConverter.CreateEnumValue<StrokeArrowWidthValues, StrokeArrowWidthKind>(value);
   }
-  
+
   /// <summary>
-  /// Line Start Arrowhead Length
+  ///   Line Start Arrowhead Length
   /// </summary>
-  public static DocumentModel.Vml.StrokeArrowLengthKind? GetStartArrowLength(DocumentFormat.OpenXml.Vml.Stroke? openXmlElement)
+  public static StrokeArrowLengthKind? GetStartArrowLength(Stroke? openXmlElement)
   {
-    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Vml.StrokeArrowLengthValues, DocumentModel.Vml.StrokeArrowLengthKind>(openXmlElement?.StartArrowLength?.Value);
+    return EnumValueConverter.GetValue<StrokeArrowLengthValues, StrokeArrowLengthKind>(openXmlElement?.StartArrowLength?.Value);
   }
-  
-  public static void SetStartArrowLength(DocumentFormat.OpenXml.Vml.Stroke? openXmlElement, DocumentModel.Vml.StrokeArrowLengthKind? value)
+
+  public static void SetStartArrowLength(Stroke? openXmlElement, StrokeArrowLengthKind? value)
   {
     if (openXmlElement != null)
-      openXmlElement.StartArrowLength = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Vml.StrokeArrowLengthValues, DocumentModel.Vml.StrokeArrowLengthKind>(value);
+      openXmlElement.StartArrowLength = EnumValueConverter.CreateEnumValue<StrokeArrowLengthValues, StrokeArrowLengthKind>(value);
   }
-  
+
   /// <summary>
-  /// Line End Arrowhead
+  ///   Line End Arrowhead
   /// </summary>
-  public static DocumentModel.Vml.StrokeArrowKind? GetEndArrow(DocumentFormat.OpenXml.Vml.Stroke? openXmlElement)
+  public static StrokeArrowKind? GetEndArrow(Stroke? openXmlElement)
   {
-    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Vml.StrokeArrowValues, DocumentModel.Vml.StrokeArrowKind>(openXmlElement?.EndArrow?.Value);
+    return EnumValueConverter.GetValue<StrokeArrowValues, StrokeArrowKind>(openXmlElement?.EndArrow?.Value);
   }
-  
-  public static void SetEndArrow(DocumentFormat.OpenXml.Vml.Stroke? openXmlElement, DocumentModel.Vml.StrokeArrowKind? value)
+
+  public static void SetEndArrow(Stroke? openXmlElement, StrokeArrowKind? value)
   {
     if (openXmlElement != null)
-      openXmlElement.EndArrow = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Vml.StrokeArrowValues, DocumentModel.Vml.StrokeArrowKind>(value);
+      openXmlElement.EndArrow = EnumValueConverter.CreateEnumValue<StrokeArrowValues, StrokeArrowKind>(value);
   }
-  
+
   /// <summary>
-  /// Line End Arrowhead Width
+  ///   Line End Arrowhead Width
   /// </summary>
-  public static DocumentModel.Vml.StrokeArrowWidthKind? GetEndArrowWidth(DocumentFormat.OpenXml.Vml.Stroke? openXmlElement)
+  public static StrokeArrowWidthKind? GetEndArrowWidth(Stroke? openXmlElement)
   {
-    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Vml.StrokeArrowWidthValues, DocumentModel.Vml.StrokeArrowWidthKind>(openXmlElement?.EndArrowWidth?.Value);
+    return EnumValueConverter.GetValue<StrokeArrowWidthValues, StrokeArrowWidthKind>(openXmlElement?.EndArrowWidth?.Value);
   }
-  
-  public static void SetEndArrowWidth(DocumentFormat.OpenXml.Vml.Stroke? openXmlElement, DocumentModel.Vml.StrokeArrowWidthKind? value)
+
+  public static void SetEndArrowWidth(Stroke? openXmlElement, StrokeArrowWidthKind? value)
   {
     if (openXmlElement != null)
-      openXmlElement.EndArrowWidth = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Vml.StrokeArrowWidthValues, DocumentModel.Vml.StrokeArrowWidthKind>(value);
+      openXmlElement.EndArrowWidth = EnumValueConverter.CreateEnumValue<StrokeArrowWidthValues, StrokeArrowWidthKind>(value);
   }
-  
+
   /// <summary>
-  /// Line End Arrowhead Length
+  ///   Line End Arrowhead Length
   /// </summary>
-  public static DocumentModel.Vml.StrokeArrowLengthKind? GetEndArrowLength(DocumentFormat.OpenXml.Vml.Stroke? openXmlElement)
+  public static StrokeArrowLengthKind? GetEndArrowLength(Stroke? openXmlElement)
   {
-    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Vml.StrokeArrowLengthValues, DocumentModel.Vml.StrokeArrowLengthKind>(openXmlElement?.EndArrowLength?.Value);
+    return EnumValueConverter.GetValue<StrokeArrowLengthValues, StrokeArrowLengthKind>(openXmlElement?.EndArrowLength?.Value);
   }
-  
-  public static void SetEndArrowLength(DocumentFormat.OpenXml.Vml.Stroke? openXmlElement, DocumentModel.Vml.StrokeArrowLengthKind? value)
+
+  public static void SetEndArrowLength(Stroke? openXmlElement, StrokeArrowLengthKind? value)
   {
     if (openXmlElement != null)
-      openXmlElement.EndArrowLength = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Vml.StrokeArrowLengthValues, DocumentModel.Vml.StrokeArrowLengthKind>(value);
+      openXmlElement.EndArrowLength = EnumValueConverter.CreateEnumValue<StrokeArrowLengthValues, StrokeArrowLengthKind>(value);
   }
-  
+
   /// <summary>
-  /// Original Image Reference
+  ///   Original Image Reference
   /// </summary>
-  public static String? GetHref(DocumentFormat.OpenXml.Vml.Stroke? openXmlElement)
+  public static String? GetHref(Stroke? openXmlElement)
   {
     return openXmlElement?.Href?.Value;
   }
-  
-  public static void SetHref(DocumentFormat.OpenXml.Vml.Stroke? openXmlElement, String? value)
+
+  public static void SetHref(Stroke? openXmlElement, String? value)
   {
     if (openXmlElement != null)
       if (value != null)
@@ -362,16 +368,16 @@ public static class StrokeConverter
       else
         openXmlElement.Href = null;
   }
-  
+
   /// <summary>
-  /// Alternate Image Reference
+  ///   Alternate Image Reference
   /// </summary>
-  public static String? GetAlternateImageReference(DocumentFormat.OpenXml.Vml.Stroke? openXmlElement)
+  public static String? GetAlternateImageReference(Stroke? openXmlElement)
   {
     return openXmlElement?.AlternateImageReference?.Value;
   }
-  
-  public static void SetAlternateImageReference(DocumentFormat.OpenXml.Vml.Stroke? openXmlElement, String? value)
+
+  public static void SetAlternateImageReference(Stroke? openXmlElement, String? value)
   {
     if (openXmlElement != null)
       if (value != null)
@@ -379,16 +385,16 @@ public static class StrokeConverter
       else
         openXmlElement.AlternateImageReference = null;
   }
-  
+
   /// <summary>
-  /// Stroke Title
+  ///   Stroke Title
   /// </summary>
-  public static String? GetTitle(DocumentFormat.OpenXml.Vml.Stroke? openXmlElement)
+  public static String? GetTitle(Stroke? openXmlElement)
   {
     return openXmlElement?.Title?.Value;
   }
-  
-  public static void SetTitle(DocumentFormat.OpenXml.Vml.Stroke? openXmlElement, String? value)
+
+  public static void SetTitle(Stroke? openXmlElement, String? value)
   {
     if (openXmlElement != null)
       if (value != null)
@@ -396,16 +402,16 @@ public static class StrokeConverter
       else
         openXmlElement.Title = null;
   }
-  
+
   /// <summary>
-  /// Force Dashed Outline
+  ///   Force Dashed Outline
   /// </summary>
-  public static Boolean? GetForceDash(DocumentFormat.OpenXml.Vml.Stroke? openXmlElement)
+  public static Boolean? GetForceDash(Stroke? openXmlElement)
   {
     return openXmlElement?.ForceDash?.Value;
   }
-  
-  public static void SetForceDash(DocumentFormat.OpenXml.Vml.Stroke? openXmlElement, Boolean? value)
+
+  public static void SetForceDash(Stroke? openXmlElement, Boolean? value)
   {
     if (openXmlElement != null)
       if (value != null)
@@ -413,16 +419,16 @@ public static class StrokeConverter
       else
         openXmlElement.ForceDash = null;
   }
-  
+
   /// <summary>
-  /// Relationship
+  ///   Relationship
   /// </summary>
-  public static String? GetRelationshipId(DocumentFormat.OpenXml.Vml.Stroke? openXmlElement)
+  public static String? GetRelationshipId(Stroke? openXmlElement)
   {
     return openXmlElement?.RelationshipId?.Value;
   }
-  
-  public static void SetRelationshipId(DocumentFormat.OpenXml.Vml.Stroke? openXmlElement, String? value)
+
+  public static void SetRelationshipId(Stroke? openXmlElement, String? value)
   {
     if (openXmlElement != null)
       if (value != null)
@@ -430,16 +436,16 @@ public static class StrokeConverter
       else
         openXmlElement.RelationshipId = null;
   }
-  
+
   /// <summary>
-  /// Inset Border From Path
+  ///   Inset Border From Path
   /// </summary>
-  public static Boolean? GetInsetpen(DocumentFormat.OpenXml.Vml.Stroke? openXmlElement)
+  public static Boolean? GetInsetpen(Stroke? openXmlElement)
   {
     return openXmlElement?.Insetpen?.Value;
   }
-  
-  public static void SetInsetpen(DocumentFormat.OpenXml.Vml.Stroke? openXmlElement, Boolean? value)
+
+  public static void SetInsetpen(Stroke? openXmlElement, Boolean? value)
   {
     if (openXmlElement != null)
       if (value != null)
@@ -447,143 +453,143 @@ public static class StrokeConverter
       else
         openXmlElement.Insetpen = null;
   }
-  
+
   /// <summary>
-  /// LeftStroke.
+  ///   LeftStroke.
   /// </summary>
-  public static DocumentModel.Vml.StrokeChildType? GetLeftStroke(DocumentFormat.OpenXml.Vml.Stroke? openXmlElement)
+  public static StrokeChildType? GetLeftStroke(Stroke? openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Vml.Office.LeftStroke>();
+    var itemElement = openXmlElement?.GetFirstChild<LeftStroke>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Vml.StrokeChildTypeConverter.CreateModelElement(itemElement);
+      return StrokeChildTypeConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetLeftStroke(DocumentFormat.OpenXml.Vml.Stroke? openXmlElement, DocumentModel.Vml.StrokeChildType? value)
+
+  public static void SetLeftStroke(Stroke? openXmlElement, StrokeChildType? value)
   {
     if (openXmlElement != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Vml.Office.LeftStroke>();
+      var itemElement = openXmlElement.GetFirstChild<LeftStroke>();
       if (itemElement != null)
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Vml.StrokeChildTypeConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Vml.Office.LeftStroke>(value);
+        itemElement = StrokeChildTypeConverter.CreateOpenXmlElement<LeftStroke>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
+
   /// <summary>
-  /// TopStroke.
+  ///   TopStroke.
   /// </summary>
-  public static DocumentModel.Vml.StrokeChildType? GetTopStroke(DocumentFormat.OpenXml.Vml.Stroke? openXmlElement)
+  public static StrokeChildType? GetTopStroke(Stroke? openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Vml.Office.TopStroke>();
+    var itemElement = openXmlElement?.GetFirstChild<TopStroke>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Vml.StrokeChildTypeConverter.CreateModelElement(itemElement);
+      return StrokeChildTypeConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetTopStroke(DocumentFormat.OpenXml.Vml.Stroke? openXmlElement, DocumentModel.Vml.StrokeChildType? value)
+
+  public static void SetTopStroke(Stroke? openXmlElement, StrokeChildType? value)
   {
     if (openXmlElement != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Vml.Office.TopStroke>();
+      var itemElement = openXmlElement.GetFirstChild<TopStroke>();
       if (itemElement != null)
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Vml.StrokeChildTypeConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Vml.Office.TopStroke>(value);
+        itemElement = StrokeChildTypeConverter.CreateOpenXmlElement<TopStroke>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
+
   /// <summary>
-  /// RightStroke.
+  ///   RightStroke.
   /// </summary>
-  public static DocumentModel.Vml.StrokeChildType? GetRightStroke(DocumentFormat.OpenXml.Vml.Stroke? openXmlElement)
+  public static StrokeChildType? GetRightStroke(Stroke? openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Vml.Office.RightStroke>();
+    var itemElement = openXmlElement?.GetFirstChild<RightStroke>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Vml.StrokeChildTypeConverter.CreateModelElement(itemElement);
+      return StrokeChildTypeConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetRightStroke(DocumentFormat.OpenXml.Vml.Stroke? openXmlElement, DocumentModel.Vml.StrokeChildType? value)
+
+  public static void SetRightStroke(Stroke? openXmlElement, StrokeChildType? value)
   {
     if (openXmlElement != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Vml.Office.RightStroke>();
+      var itemElement = openXmlElement.GetFirstChild<RightStroke>();
       if (itemElement != null)
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Vml.StrokeChildTypeConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Vml.Office.RightStroke>(value);
+        itemElement = StrokeChildTypeConverter.CreateOpenXmlElement<RightStroke>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
+
   /// <summary>
-  /// BottomStroke.
+  ///   BottomStroke.
   /// </summary>
-  public static DocumentModel.Vml.StrokeChildType? GetBottomStroke(DocumentFormat.OpenXml.Vml.Stroke? openXmlElement)
+  public static StrokeChildType? GetBottomStroke(Stroke? openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Vml.Office.BottomStroke>();
+    var itemElement = openXmlElement?.GetFirstChild<BottomStroke>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Vml.StrokeChildTypeConverter.CreateModelElement(itemElement);
+      return StrokeChildTypeConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetBottomStroke(DocumentFormat.OpenXml.Vml.Stroke? openXmlElement, DocumentModel.Vml.StrokeChildType? value)
+
+  public static void SetBottomStroke(Stroke? openXmlElement, StrokeChildType? value)
   {
     if (openXmlElement != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Vml.Office.BottomStroke>();
+      var itemElement = openXmlElement.GetFirstChild<BottomStroke>();
       if (itemElement != null)
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Vml.StrokeChildTypeConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Vml.Office.BottomStroke>(value);
+        itemElement = StrokeChildTypeConverter.CreateOpenXmlElement<BottomStroke>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
+
   /// <summary>
-  /// ColumnStroke.
+  ///   ColumnStroke.
   /// </summary>
-  public static DocumentModel.Vml.StrokeChildType? GetColumnStroke(DocumentFormat.OpenXml.Vml.Stroke? openXmlElement)
+  public static StrokeChildType? GetColumnStroke(Stroke? openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Vml.Office.ColumnStroke>();
+    var itemElement = openXmlElement?.GetFirstChild<ColumnStroke>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Vml.StrokeChildTypeConverter.CreateModelElement(itemElement);
+      return StrokeChildTypeConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetColumnStroke(DocumentFormat.OpenXml.Vml.Stroke? openXmlElement, DocumentModel.Vml.StrokeChildType? value)
+
+  public static void SetColumnStroke(Stroke? openXmlElement, StrokeChildType? value)
   {
     if (openXmlElement != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Vml.Office.ColumnStroke>();
+      var itemElement = openXmlElement.GetFirstChild<ColumnStroke>();
       if (itemElement != null)
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Vml.StrokeChildTypeConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Vml.Office.ColumnStroke>(value);
+        itemElement = StrokeChildTypeConverter.CreateOpenXmlElement<ColumnStroke>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static DocumentModel.Vml.Stroke? CreateModelElement(DocumentFormat.OpenXml.Vml.Stroke? openXmlElement)
+
+  public static DocumentModel.Vml.Stroke? CreateModelElement(Stroke? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -625,9 +631,9 @@ public static class StrokeConverter
     }
     return null;
   }
-  
+
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Vml.Stroke? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Vml.Stroke, new()
+    where OpenXmlElementType : Stroke, new()
   {
     if (value != null)
     {

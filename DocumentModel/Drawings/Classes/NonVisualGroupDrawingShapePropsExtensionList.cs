@@ -1,10 +1,9 @@
 namespace DocumentModel.Drawings;
 
 /// <summary>
-/// Defines the NonVisualGroupDrawingShapePropsExtensionList Class.
+///   Defines the NonVisualGroupDrawingShapePropsExtensionList Class.
 /// </summary>
-public partial class NonVisualGroupDrawingShapePropsExtensionList
+public class NonVisualGroupDrawingShapePropsExtensionList
 {
-  public Collection<DocumentModel.Drawings.NonVisualGroupDrawingShapePropsExtension>? NonVisualGroupDrawingShapePropsExtensions { get; set; }
-  
+  public Collection<NonVisualGroupDrawingShapePropsExtension>? NonVisualGroupDrawingShapePropsExtensions { get; set; }
 }

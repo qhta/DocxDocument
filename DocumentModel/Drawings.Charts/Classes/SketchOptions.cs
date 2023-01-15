@@ -1,18 +1,17 @@
 namespace DocumentModel.Drawings.Charts;
 
 /// <summary>
-/// Defines the SketchOptions Class.
+///   Defines the SketchOptions Class.
 /// </summary>
-public partial class SketchOptions
+public class SketchOptions
 {
   /// <summary>
-  /// InSketchMode.
+  ///   InSketchMode.
   /// </summary>
   public Boolean? InSketchMode { get; set; }
-  
+
   /// <summary>
-  /// ShowSketchButton.
+  ///   ShowSketchButton.
   /// </summary>
   public Boolean? ShowSketchButton { get; set; }
-  
 }

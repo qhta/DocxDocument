@@ -1,23 +1,22 @@
 namespace DocumentModel.Wordprocessing;
 
 /// <summary>
-/// Defines the AbsolutePositionTabAlignmentValues enumeration.
+///   Defines the AbsolutePositionTabAlignmentValues enumeration.
 /// </summary>
 public enum AbsolutePositionTabAlignmentKind
 {
   /// <summary>
-  /// Left.
+  ///   Left.
   /// </summary>
   Left,
-  
+
   /// <summary>
-  /// Center.
+  ///   Center.
   /// </summary>
   Center,
-  
+
   /// <summary>
-  /// Right.
+  ///   Right.
   /// </summary>
-  Right,
-  
+  Right
 }

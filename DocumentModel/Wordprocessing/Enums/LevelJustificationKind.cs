@@ -1,23 +1,22 @@
 namespace DocumentModel.Wordprocessing;
 
 /// <summary>
-/// Horizontal Alignment Type
+///   Horizontal Alignment Type
 /// </summary>
 public enum LevelJustificationKind
 {
   /// <summary>
-  /// Align Left.
+  ///   Align Left.
   /// </summary>
   Left,
-  
+
   /// <summary>
-  /// Align Center.
+  ///   Align Center.
   /// </summary>
   Center,
-  
+
   /// <summary>
-  /// Align Right.
+  ///   Align Right.
   /// </summary>
-  Right,
-  
+  Right
 }

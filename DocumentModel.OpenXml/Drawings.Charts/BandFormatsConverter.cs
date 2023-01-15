@@ -1,18 +1,21 @@
+using DocumentModel.Drawings.Charts;
+using BandFormats = DocumentFormat.OpenXml.Drawing.Charts.BandFormats;
+
 namespace DocumentModel.OpenXml.Drawings.Charts;
 
 /// <summary>
-/// Band Formats.
+///   Band Formats.
 /// </summary>
 public static class BandFormatsConverter
 {
-  public static System.Collections.ObjectModel.Collection<DocumentModel.Drawings.Charts.BandFormat>? GetItems(DocumentFormat.OpenXml.Drawing.Charts.BandFormats? openXmlElement)
+  public static Collection<BandFormat>? GetItems(BandFormats? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var collection = new System.Collections.ObjectModel.Collection<DocumentModel.Drawings.Charts.BandFormat>();
+      var collection = new Collection<BandFormat>();
       foreach (var item in openXmlElement.Elements<DocumentFormat.OpenXml.Drawing.Charts.BandFormat>())
       {
-        var newItem = DocumentModel.OpenXml.Drawings.Charts.BandFormatConverter.CreateModelElement(item);
+        var newItem = BandFormatConverter.CreateModelElement(item);
         if (newItem != null)
           collection.Add(newItem);
       }
@@ -20,25 +23,23 @@ public static class BandFormatsConverter
     }
     return null;
   }
-  
-  public static void SetItems(DocumentFormat.OpenXml.Drawing.Charts.BandFormats? openXmlElement, System.Collections.ObjectModel.Collection<DocumentModel.Drawings.Charts.BandFormat>? value)
+
+  public static void SetItems(BandFormats? openXmlElement, Collection<BandFormat>? value)
   {
     if (openXmlElement != null)
     {
       openXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Drawing.Charts.BandFormat>();
       if (value != null)
-      {
         foreach (var item in value)
         {
-          var newItem = DocumentModel.OpenXml.Drawings.Charts.BandFormatConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Charts.BandFormat>(item);
+          var newItem = BandFormatConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Charts.BandFormat>(item);
           if (newItem != null)
             openXmlElement.AddChild(newItem);
         }
-      }
     }
   }
-  
-  public static DocumentModel.Drawings.Charts.BandFormats? CreateModelElement(DocumentFormat.OpenXml.Drawing.Charts.BandFormats? openXmlElement)
+
+  public static DocumentModel.Drawings.Charts.BandFormats? CreateModelElement(BandFormats? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -48,9 +49,9 @@ public static class BandFormatsConverter
     }
     return null;
   }
-  
+
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.Charts.BandFormats? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.Charts.BandFormats, new()
+    where OpenXmlElementType : BandFormats, new()
   {
     if (value != null)
     {

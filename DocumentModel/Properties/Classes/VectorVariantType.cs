@@ -1,13 +1,12 @@
 namespace DocumentModel.Properties;
 
 /// <summary>
-/// Defines the VectorVariantType Class.
+///   Defines the VectorVariantType Class.
 /// </summary>
-public partial class VectorVariantType
+public class VectorVariantType
 {
   /// <summary>
-  /// Vector.
+  ///   Vector.
   /// </summary>
-  public DocumentModel.VectorVariant? VTVector { get; set; }
-  
+  public VectorVariant? VTVector { get; set; }
 }

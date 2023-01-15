@@ -1,23 +1,22 @@
 namespace DocumentModel.Drawings.Diagrams;
 
 /// <summary>
-/// One by One Animation Value Definition
+///   One by One Animation Value Definition
 /// </summary>
 public enum AnimateOneByOneKind
 {
   /// <summary>
-  /// Disable One-by-One.
+  ///   Disable One-by-One.
   /// </summary>
   None,
-  
+
   /// <summary>
-  /// One By One.
+  ///   One By One.
   /// </summary>
   One,
-  
+
   /// <summary>
-  /// By Branch One By One.
+  ///   By Branch One By One.
   /// </summary>
-  Branch,
-  
+  Branch
 }

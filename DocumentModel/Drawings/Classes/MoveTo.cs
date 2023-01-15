@@ -1,13 +1,12 @@
 namespace DocumentModel.Drawings;
 
 /// <summary>
-/// Move Path To.
+///   Move Path To.
 /// </summary>
-public partial class MoveTo
+public class MoveTo
 {
   /// <summary>
-  /// Move end point.
+  ///   Move end point.
   /// </summary>
-  public DocumentModel.Drawings.AdjustPoint2DType? Point { get; set; }
-  
+  public AdjustPoint2DType? Point { get; set; }
 }

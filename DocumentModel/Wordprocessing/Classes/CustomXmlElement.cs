@@ -1,23 +1,22 @@
 namespace DocumentModel.Wordprocessing;
 
 /// <summary>
-/// Defines CustomXmlElement - the base class for the customXml elements.
+///   Defines CustomXmlElement - the base class for the customXml elements.
 /// </summary>
-public partial class CustomXmlElement
+public class CustomXmlElement
 {
   /// <summary>
-  /// Gets or sets the custom XML Markup Namespace.
+  ///   Gets or sets the custom XML Markup Namespace.
   /// </summary>
   public String? Uri { get; set; }
-  
+
   /// <summary>
-  /// Gets or sets the element name.
+  ///   Gets or sets the element name.
   /// </summary>
   public String? Element { get; set; }
-  
+
   /// <summary>
-  /// Gets or sets the CustomXmlProperties which represents the element tag in schema: w:customXmlPr.
+  ///   Gets or sets the CustomXmlProperties which represents the element tag in schema: w:customXmlPr.
   /// </summary>
-  public DocumentModel.Wordprocessing.CustomXmlProperties? CustomXmlProperties { get; set; }
-  
+  public CustomXmlProperties? CustomXmlProperties { get; set; }
 }

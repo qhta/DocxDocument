@@ -1,19 +1,21 @@
+using DocumentFormat.OpenXml.Wordprocessing;
+
 namespace DocumentModel.OpenXml.Wordprocessing;
 
 /// <summary>
-/// Numbering Level Text.
+///   Numbering Level Text.
 /// </summary>
 public static class LevelTextConverter
 {
   /// <summary>
-  /// Level Text
+  ///   Level Text
   /// </summary>
-  public static String? GetVal(DocumentFormat.OpenXml.Wordprocessing.LevelText? openXmlElement)
+  public static String? GetVal(LevelText? openXmlElement)
   {
     return openXmlElement?.Val?.Value;
   }
-  
-  public static void SetVal(DocumentFormat.OpenXml.Wordprocessing.LevelText? openXmlElement, String? value)
+
+  public static void SetVal(LevelText? openXmlElement, String? value)
   {
     if (openXmlElement != null)
       if (value != null)
@@ -21,16 +23,16 @@ public static class LevelTextConverter
       else
         openXmlElement.Val = null;
   }
-  
+
   /// <summary>
-  /// Level Text Is Null Character
+  ///   Level Text Is Null Character
   /// </summary>
-  public static Boolean? GetNull(DocumentFormat.OpenXml.Wordprocessing.LevelText? openXmlElement)
+  public static Boolean? GetNull(LevelText? openXmlElement)
   {
     return openXmlElement?.Null?.Value;
   }
-  
-  public static void SetNull(DocumentFormat.OpenXml.Wordprocessing.LevelText? openXmlElement, Boolean? value)
+
+  public static void SetNull(LevelText? openXmlElement, Boolean? value)
   {
     if (openXmlElement != null)
       if (value != null)
@@ -38,8 +40,8 @@ public static class LevelTextConverter
       else
         openXmlElement.Null = null;
   }
-  
-  public static DocumentModel.Wordprocessing.LevelText? CreateModelElement(DocumentFormat.OpenXml.Wordprocessing.LevelText? openXmlElement)
+
+  public static DocumentModel.Wordprocessing.LevelText? CreateModelElement(LevelText? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -50,9 +52,9 @@ public static class LevelTextConverter
     }
     return null;
   }
-  
+
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.LevelText? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Wordprocessing.LevelText, new()
+    where OpenXmlElementType : LevelText, new()
   {
     if (value != null)
     {

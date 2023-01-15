@@ -1,18 +1,17 @@
 namespace DocumentModel.Wordprocessing;
 
 /// <summary>
-/// Break.
+///   Break.
 /// </summary>
-public partial class Break
+public class Break
 {
   /// <summary>
-  /// Break Type
+  ///   Break Type
   /// </summary>
-  public DocumentModel.Wordprocessing.BreakKind? Type { get; set; }
-  
+  public BreakKind? Type { get; set; }
+
   /// <summary>
-  /// Restart Location For Text Wrapping Break
+  ///   Restart Location For Text Wrapping Break
   /// </summary>
-  public DocumentModel.Wordprocessing.BreakTextRestartLocationKind? Clear { get; set; }
-  
+  public BreakTextRestartLocationKind? Clear { get; set; }
 }

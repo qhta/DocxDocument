@@ -1,19 +1,21 @@
+using DocumentFormat.OpenXml.Vml;
+
 namespace DocumentModel.OpenXml.Vml;
 
 /// <summary>
-/// Shape Handle.
+///   Shape Handle.
 /// </summary>
 public static class ShapeHandleConverter
 {
   /// <summary>
-  /// Handle Position
+  ///   Handle Position
   /// </summary>
-  public static String? GetPosition(DocumentFormat.OpenXml.Vml.ShapeHandle? openXmlElement)
+  public static String? GetPosition(ShapeHandle? openXmlElement)
   {
     return openXmlElement?.Position?.Value;
   }
-  
-  public static void SetPosition(DocumentFormat.OpenXml.Vml.ShapeHandle? openXmlElement, String? value)
+
+  public static void SetPosition(ShapeHandle? openXmlElement, String? value)
   {
     if (openXmlElement != null)
       if (value != null)
@@ -21,16 +23,16 @@ public static class ShapeHandleConverter
       else
         openXmlElement.Position = null;
   }
-  
+
   /// <summary>
-  /// Handle Polar Center
+  ///   Handle Polar Center
   /// </summary>
-  public static String? GetPolar(DocumentFormat.OpenXml.Vml.ShapeHandle? openXmlElement)
+  public static String? GetPolar(ShapeHandle? openXmlElement)
   {
     return openXmlElement?.Polar?.Value;
   }
-  
-  public static void SetPolar(DocumentFormat.OpenXml.Vml.ShapeHandle? openXmlElement, String? value)
+
+  public static void SetPolar(ShapeHandle? openXmlElement, String? value)
   {
     if (openXmlElement != null)
       if (value != null)
@@ -38,16 +40,16 @@ public static class ShapeHandleConverter
       else
         openXmlElement.Polar = null;
   }
-  
+
   /// <summary>
-  /// Handle Coordinate Mapping
+  ///   Handle Coordinate Mapping
   /// </summary>
-  public static String? GetMap(DocumentFormat.OpenXml.Vml.ShapeHandle? openXmlElement)
+  public static String? GetMap(ShapeHandle? openXmlElement)
   {
     return openXmlElement?.Map?.Value;
   }
-  
-  public static void SetMap(DocumentFormat.OpenXml.Vml.ShapeHandle? openXmlElement, String? value)
+
+  public static void SetMap(ShapeHandle? openXmlElement, String? value)
   {
     if (openXmlElement != null)
       if (value != null)
@@ -55,16 +57,16 @@ public static class ShapeHandleConverter
       else
         openXmlElement.Map = null;
   }
-  
+
   /// <summary>
-  /// Invert Handle's X Position
+  ///   Invert Handle's X Position
   /// </summary>
-  public static Boolean? GetInvertX(DocumentFormat.OpenXml.Vml.ShapeHandle? openXmlElement)
+  public static Boolean? GetInvertX(ShapeHandle? openXmlElement)
   {
     return openXmlElement?.InvertX?.Value;
   }
-  
-  public static void SetInvertX(DocumentFormat.OpenXml.Vml.ShapeHandle? openXmlElement, Boolean? value)
+
+  public static void SetInvertX(ShapeHandle? openXmlElement, Boolean? value)
   {
     if (openXmlElement != null)
       if (value != null)
@@ -72,16 +74,16 @@ public static class ShapeHandleConverter
       else
         openXmlElement.InvertX = null;
   }
-  
+
   /// <summary>
-  /// Invert Handle's Y Position
+  ///   Invert Handle's Y Position
   /// </summary>
-  public static Boolean? GetInvertY(DocumentFormat.OpenXml.Vml.ShapeHandle? openXmlElement)
+  public static Boolean? GetInvertY(ShapeHandle? openXmlElement)
   {
     return openXmlElement?.InvertY?.Value;
   }
-  
-  public static void SetInvertY(DocumentFormat.OpenXml.Vml.ShapeHandle? openXmlElement, Boolean? value)
+
+  public static void SetInvertY(ShapeHandle? openXmlElement, Boolean? value)
   {
     if (openXmlElement != null)
       if (value != null)
@@ -89,16 +91,16 @@ public static class ShapeHandleConverter
       else
         openXmlElement.InvertY = null;
   }
-  
+
   /// <summary>
-  /// Handle Inversion Toggle
+  ///   Handle Inversion Toggle
   /// </summary>
-  public static Boolean? GetSwitch(DocumentFormat.OpenXml.Vml.ShapeHandle? openXmlElement)
+  public static Boolean? GetSwitch(ShapeHandle? openXmlElement)
   {
     return openXmlElement?.Switch?.Value;
   }
-  
-  public static void SetSwitch(DocumentFormat.OpenXml.Vml.ShapeHandle? openXmlElement, Boolean? value)
+
+  public static void SetSwitch(ShapeHandle? openXmlElement, Boolean? value)
   {
     if (openXmlElement != null)
       if (value != null)
@@ -106,16 +108,16 @@ public static class ShapeHandleConverter
       else
         openXmlElement.Switch = null;
   }
-  
+
   /// <summary>
-  /// Handle X Position Range
+  ///   Handle X Position Range
   /// </summary>
-  public static String? GetXRange(DocumentFormat.OpenXml.Vml.ShapeHandle? openXmlElement)
+  public static String? GetXRange(ShapeHandle? openXmlElement)
   {
     return openXmlElement?.XRange?.Value;
   }
-  
-  public static void SetXRange(DocumentFormat.OpenXml.Vml.ShapeHandle? openXmlElement, String? value)
+
+  public static void SetXRange(ShapeHandle? openXmlElement, String? value)
   {
     if (openXmlElement != null)
       if (value != null)
@@ -123,16 +125,16 @@ public static class ShapeHandleConverter
       else
         openXmlElement.XRange = null;
   }
-  
+
   /// <summary>
-  /// Handle Y Position Range
+  ///   Handle Y Position Range
   /// </summary>
-  public static String? GetYRange(DocumentFormat.OpenXml.Vml.ShapeHandle? openXmlElement)
+  public static String? GetYRange(ShapeHandle? openXmlElement)
   {
     return openXmlElement?.YRange?.Value;
   }
-  
-  public static void SetYRange(DocumentFormat.OpenXml.Vml.ShapeHandle? openXmlElement, String? value)
+
+  public static void SetYRange(ShapeHandle? openXmlElement, String? value)
   {
     if (openXmlElement != null)
       if (value != null)
@@ -140,16 +142,16 @@ public static class ShapeHandleConverter
       else
         openXmlElement.YRange = null;
   }
-  
+
   /// <summary>
-  /// Handle Polar Radius Range
+  ///   Handle Polar Radius Range
   /// </summary>
-  public static String? GetRadiusRange(DocumentFormat.OpenXml.Vml.ShapeHandle? openXmlElement)
+  public static String? GetRadiusRange(ShapeHandle? openXmlElement)
   {
     return openXmlElement?.RadiusRange?.Value;
   }
-  
-  public static void SetRadiusRange(DocumentFormat.OpenXml.Vml.ShapeHandle? openXmlElement, String? value)
+
+  public static void SetRadiusRange(ShapeHandle? openXmlElement, String? value)
   {
     if (openXmlElement != null)
       if (value != null)
@@ -157,8 +159,8 @@ public static class ShapeHandleConverter
       else
         openXmlElement.RadiusRange = null;
   }
-  
-  public static DocumentModel.Vml.ShapeHandle? CreateModelElement(DocumentFormat.OpenXml.Vml.ShapeHandle? openXmlElement)
+
+  public static DocumentModel.Vml.ShapeHandle? CreateModelElement(ShapeHandle? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -176,9 +178,9 @@ public static class ShapeHandleConverter
     }
     return null;
   }
-  
+
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Vml.ShapeHandle? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Vml.ShapeHandle, new()
+    where OpenXmlElementType : ShapeHandle, new()
   {
     if (value != null)
     {

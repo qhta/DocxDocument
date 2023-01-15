@@ -1,23 +1,22 @@
 namespace DocumentModel.Drawings;
 
 /// <summary>
-/// Hue Saturation Luminance Effect.
+///   Hue Saturation Luminance Effect.
 /// </summary>
-public partial class Hsl
+public class Hsl
 {
   /// <summary>
-  /// Hue
+  ///   Hue
   /// </summary>
   public Int32? Hue { get; set; }
-  
+
   /// <summary>
-  /// Saturation
+  ///   Saturation
   /// </summary>
   public Int32? Saturation { get; set; }
-  
+
   /// <summary>
-  /// Luminance
+  ///   Luminance
   /// </summary>
   public Int32? Luminance { get; set; }
-  
 }

@@ -1,28 +1,27 @@
 namespace DocumentModel.Wordprocessing;
 
 /// <summary>
-/// Set of Borders for HTML div.
+///   Set of Borders for HTML div.
 /// </summary>
-public partial class DivBorder
+public class DivBorder
 {
   /// <summary>
-  /// Top Border for HTML div.
+  ///   Top Border for HTML div.
   /// </summary>
-  public DocumentModel.Wordprocessing.BorderType? TopBorder { get; set; }
-  
+  public BorderType? TopBorder { get; set; }
+
   /// <summary>
-  /// Left Border for HTML div.
+  ///   Left Border for HTML div.
   /// </summary>
-  public DocumentModel.Wordprocessing.BorderType? LeftBorder { get; set; }
-  
+  public BorderType? LeftBorder { get; set; }
+
   /// <summary>
-  /// Bottom Border for HTML div.
+  ///   Bottom Border for HTML div.
   /// </summary>
-  public DocumentModel.Wordprocessing.BorderType? BottomBorder { get; set; }
-  
+  public BorderType? BottomBorder { get; set; }
+
   /// <summary>
-  /// Right Border for HTML div.
+  ///   Right Border for HTML div.
   /// </summary>
-  public DocumentModel.Wordprocessing.BorderType? RightBorder { get; set; }
-  
+  public BorderType? RightBorder { get; set; }
 }

@@ -1,10 +1,9 @@
 namespace DocumentModel.Drawings.ChartDrawings;
 
 /// <summary>
-/// Defines the GeoChildTypes Class.
+///   Defines the GeoChildTypes Class.
 /// </summary>
-public partial class GeoChildTypes
+public class GeoChildTypes
 {
-  public Collection<System.String>? EntityTypes { get; set; }
-  
+  public Collection<String>? EntityTypes { get; set; }
 }

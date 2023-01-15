@@ -1,18 +1,17 @@
 namespace DocumentModel.Drawings.ChartDrawings;
 
 /// <summary>
-/// Defines the ValueColorMiddlePosition Class.
+///   Defines the ValueColorMiddlePosition Class.
 /// </summary>
-public partial class ValueColorMiddlePosition
+public class ValueColorMiddlePosition
 {
   /// <summary>
-  /// NumberColorPosition.
+  ///   NumberColorPosition.
   /// </summary>
   public Double? NumberColorPosition { get; set; }
-  
+
   /// <summary>
-  /// PercentageColorPosition.
+  ///   PercentageColorPosition.
   /// </summary>
   public Double? PercentageColorPosition { get; set; }
-  
 }

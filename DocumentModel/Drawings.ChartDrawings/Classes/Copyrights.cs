@@ -1,10 +1,9 @@
 namespace DocumentModel.Drawings.ChartDrawings;
 
 /// <summary>
-/// Defines the Copyrights Class.
+///   Defines the Copyrights Class.
 /// </summary>
-public partial class Copyrights
+public class Copyrights
 {
-  public Collection<System.String>? CopyrightXsdstrings { get; set; }
-  
+  public Collection<String>? CopyrightXsdstrings { get; set; }
 }

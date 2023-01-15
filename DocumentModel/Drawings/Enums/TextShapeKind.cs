@@ -1,213 +1,212 @@
 namespace DocumentModel.Drawings;
 
 /// <summary>
-/// Preset Text Shape Types
+///   Preset Text Shape Types
 /// </summary>
 public enum TextShapeKind
 {
   /// <summary>
-  /// No Text Shape.
+  ///   No Text Shape.
   /// </summary>
   TextNoShape,
-  
+
   /// <summary>
-  /// Plain Text Shape.
+  ///   Plain Text Shape.
   /// </summary>
   TextPlain,
-  
+
   /// <summary>
-  /// Stop Sign Text Shape.
+  ///   Stop Sign Text Shape.
   /// </summary>
   TextStop,
-  
+
   /// <summary>
-  /// Triangle Text Shape.
+  ///   Triangle Text Shape.
   /// </summary>
   TextTriangle,
-  
+
   /// <summary>
-  /// Inverted Triangle Text Shape.
+  ///   Inverted Triangle Text Shape.
   /// </summary>
   TextTriangleInverted,
-  
+
   /// <summary>
-  /// Chevron Text Shape.
+  ///   Chevron Text Shape.
   /// </summary>
   TextChevron,
-  
+
   /// <summary>
-  /// Inverted Chevron Text Shape.
+  ///   Inverted Chevron Text Shape.
   /// </summary>
   TextChevronInverted,
-  
+
   /// <summary>
-  /// Inside Ring Text Shape.
+  ///   Inside Ring Text Shape.
   /// </summary>
   TextRingInside,
-  
+
   /// <summary>
-  /// Outside Ring Text Shape.
+  ///   Outside Ring Text Shape.
   /// </summary>
   TextRingOutside,
-  
+
   /// <summary>
-  /// Upward Arch Text Shape.
+  ///   Upward Arch Text Shape.
   /// </summary>
   TextArchUp,
-  
+
   /// <summary>
-  /// Downward Arch Text Shape.
+  ///   Downward Arch Text Shape.
   /// </summary>
   TextArchDown,
-  
+
   /// <summary>
-  /// Circle Text Shape.
+  ///   Circle Text Shape.
   /// </summary>
   TextCircle,
-  
+
   /// <summary>
-  /// Button Text Shape.
+  ///   Button Text Shape.
   /// </summary>
   TextButton,
-  
+
   /// <summary>
-  /// Upward Pour Arch Text Shape.
+  ///   Upward Pour Arch Text Shape.
   /// </summary>
   TextArchUpPour,
-  
+
   /// <summary>
-  /// Downward Pour Arch Text Shape.
+  ///   Downward Pour Arch Text Shape.
   /// </summary>
   TextArchDownPour,
-  
+
   /// <summary>
-  /// Circle Pour Text Shape.
+  ///   Circle Pour Text Shape.
   /// </summary>
   TextCirclePour,
-  
+
   /// <summary>
-  /// Button Pour Text Shape.
+  ///   Button Pour Text Shape.
   /// </summary>
   TextButtonPour,
-  
+
   /// <summary>
-  /// Upward Curve Text Shape.
+  ///   Upward Curve Text Shape.
   /// </summary>
   TextCurveUp,
-  
+
   /// <summary>
-  /// Downward Curve Text Shape.
+  ///   Downward Curve Text Shape.
   /// </summary>
   TextCurveDown,
-  
+
   /// <summary>
-  /// Upward Can Text Shape.
+  ///   Upward Can Text Shape.
   /// </summary>
   TextCanUp,
-  
+
   /// <summary>
-  /// Downward Can Text Shape.
+  ///   Downward Can Text Shape.
   /// </summary>
   TextCanDown,
-  
+
   /// <summary>
-  /// Wave 1 Text Shape.
+  ///   Wave 1 Text Shape.
   /// </summary>
   TextWave1,
-  
+
   /// <summary>
-  /// Wave 2 Text Shape.
+  ///   Wave 2 Text Shape.
   /// </summary>
   TextWave2,
-  
+
   /// <summary>
-  /// Double Wave 1 Text Shape.
+  ///   Double Wave 1 Text Shape.
   /// </summary>
   TextDoubleWave1,
-  
+
   /// <summary>
-  /// Wave 4 Text Shape.
+  ///   Wave 4 Text Shape.
   /// </summary>
   TextWave4,
-  
+
   /// <summary>
-  /// Inflate Text Shape.
+  ///   Inflate Text Shape.
   /// </summary>
   TextInflate,
-  
+
   /// <summary>
-  /// Deflate Text Shape.
+  ///   Deflate Text Shape.
   /// </summary>
   TextDeflate,
-  
+
   /// <summary>
-  /// Bottom Inflate Text Shape.
+  ///   Bottom Inflate Text Shape.
   /// </summary>
   TextInflateBottom,
-  
+
   /// <summary>
-  /// Bottom Deflate Text Shape.
+  ///   Bottom Deflate Text Shape.
   /// </summary>
   TextDeflateBottom,
-  
+
   /// <summary>
-  /// Top Inflate Text Shape.
+  ///   Top Inflate Text Shape.
   /// </summary>
   TextInflateTop,
-  
+
   /// <summary>
-  /// Top Deflate Text Shape.
+  ///   Top Deflate Text Shape.
   /// </summary>
   TextDeflateTop,
-  
+
   /// <summary>
-  /// Deflate-Inflate Text Shape.
+  ///   Deflate-Inflate Text Shape.
   /// </summary>
   TextDeflateInflate,
-  
+
   /// <summary>
-  /// Deflate-Inflate-Deflate Text Shape.
+  ///   Deflate-Inflate-Deflate Text Shape.
   /// </summary>
   TextDeflateInflateDeflate,
-  
+
   /// <summary>
-  /// Right Fade Text Shape.
+  ///   Right Fade Text Shape.
   /// </summary>
   TextFadeRight,
-  
+
   /// <summary>
-  /// Left Fade Text Shape.
+  ///   Left Fade Text Shape.
   /// </summary>
   TextFadeLeft,
-  
+
   /// <summary>
-  /// Upward Fade Text Shape.
+  ///   Upward Fade Text Shape.
   /// </summary>
   TextFadeUp,
-  
+
   /// <summary>
-  /// Downward Fade Text Shape.
+  ///   Downward Fade Text Shape.
   /// </summary>
   TextFadeDown,
-  
+
   /// <summary>
-  /// Upward Slant Text Shape.
+  ///   Upward Slant Text Shape.
   /// </summary>
   TextSlantUp,
-  
+
   /// <summary>
-  /// Downward Slant Text Shape.
+  ///   Downward Slant Text Shape.
   /// </summary>
   TextSlantDown,
-  
+
   /// <summary>
-  /// Upward Cascade Text Shape.
+  ///   Upward Cascade Text Shape.
   /// </summary>
   TextCascadeUp,
-  
+
   /// <summary>
-  /// Downward Cascade Text Shape.
+  ///   Downward Cascade Text Shape.
   /// </summary>
-  TextCascadeDown,
-  
+  TextCascadeDown
 }

@@ -1,18 +1,17 @@
 namespace DocumentModel.Drawings.ChartDrawings;
 
 /// <summary>
-/// Defines the GeoDataEntityQueryResult Class.
+///   Defines the GeoDataEntityQueryResult Class.
 /// </summary>
-public partial class GeoDataEntityQueryResult
+public class GeoDataEntityQueryResult
 {
   /// <summary>
-  /// GeoDataEntityQuery.
+  ///   GeoDataEntityQuery.
   /// </summary>
-  public DocumentModel.Drawings.ChartDrawings.GeoDataEntityQuery? GeoDataEntityQuery { get; set; }
-  
+  public GeoDataEntityQuery? GeoDataEntityQuery { get; set; }
+
   /// <summary>
-  /// GeoData.
+  ///   GeoData.
   /// </summary>
-  public DocumentModel.Drawings.ChartDrawings.GeoData? GeoData { get; set; }
-  
+  public GeoData? GeoData { get; set; }
 }

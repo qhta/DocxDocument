@@ -1,38 +1,37 @@
 namespace DocumentModel.Drawings.Charts;
 
 /// <summary>
-/// Page Margins.
+///   Page Margins.
 /// </summary>
-public partial class PageMargins
+public class PageMargins
 {
   /// <summary>
-  /// Left
+  ///   Left
   /// </summary>
   public Double? Left { get; set; }
-  
+
   /// <summary>
-  /// Right
+  ///   Right
   /// </summary>
   public Double? Right { get; set; }
-  
+
   /// <summary>
-  /// Top
+  ///   Top
   /// </summary>
   public Double? Top { get; set; }
-  
+
   /// <summary>
-  /// Bottom
+  ///   Bottom
   /// </summary>
   public Double? Bottom { get; set; }
-  
+
   /// <summary>
-  /// Header
+  ///   Header
   /// </summary>
   public Double? Header { get; set; }
-  
+
   /// <summary>
-  /// Footer
+  ///   Footer
   /// </summary>
   public Double? Footer { get; set; }
-  
 }

@@ -1,88 +1,87 @@
 namespace DocumentModel.Wordprocessing;
 
 /// <summary>
-/// Defines the PresetMaterialTypeValues enumeration.
+///   Defines the PresetMaterialTypeValues enumeration.
 /// </summary>
 public enum PresetMaterialKind
 {
   /// <summary>
-  /// legacyMatte.
+  ///   legacyMatte.
   /// </summary>
   LegacyMatte,
-  
+
   /// <summary>
-  /// legacyPlastic.
+  ///   legacyPlastic.
   /// </summary>
   LegacyPlastic,
-  
+
   /// <summary>
-  /// legacyMetal.
+  ///   legacyMetal.
   /// </summary>
   LegacyMetal,
-  
+
   /// <summary>
-  /// legacyWireframe.
+  ///   legacyWireframe.
   /// </summary>
   LegacyWireframe,
-  
+
   /// <summary>
-  /// matte.
+  ///   matte.
   /// </summary>
   Matte,
-  
+
   /// <summary>
-  /// plastic.
+  ///   plastic.
   /// </summary>
   Plastic,
-  
+
   /// <summary>
-  /// metal.
+  ///   metal.
   /// </summary>
   Metal,
-  
+
   /// <summary>
-  /// warmMatte.
+  ///   warmMatte.
   /// </summary>
   WarmMatte,
-  
+
   /// <summary>
-  /// translucentPowder.
+  ///   translucentPowder.
   /// </summary>
   TranslucentPowder,
-  
+
   /// <summary>
-  /// powder.
+  ///   powder.
   /// </summary>
   Powder,
-  
+
   /// <summary>
-  /// dkEdge.
+  ///   dkEdge.
   /// </summary>
   DarkEdge,
-  
+
   /// <summary>
-  /// softEdge.
+  ///   softEdge.
   /// </summary>
   SoftEdge,
-  
+
   /// <summary>
-  /// clear.
+  ///   clear.
   /// </summary>
   Clear,
-  
+
   /// <summary>
-  /// flat.
+  ///   flat.
   /// </summary>
   Flat,
-  
+
   /// <summary>
-  /// softmetal.
+  ///   softmetal.
   /// </summary>
   SoftMetal,
-  
+
   /// <summary>
-  /// none.
+  ///   none.
   /// </summary>
-  None,
-  
+  None
 }

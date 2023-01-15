@@ -1,28 +1,27 @@
 namespace DocumentModel.Vml;
 
 /// <summary>
-/// Shape Layout Properties.
+///   Shape Layout Properties.
 /// </summary>
-public partial class ShapeLayout
+public class ShapeLayout
 {
   /// <summary>
-  /// VML Extension Handling Behavior
+  ///   VML Extension Handling Behavior
   /// </summary>
-  public DocumentModel.Vml.ExtensionHandlingBehaviorKind? Extension { get; set; }
-  
+  public ExtensionHandlingBehaviorKind? Extension { get; set; }
+
   /// <summary>
-  /// Shape ID Map.
+  ///   Shape ID Map.
   /// </summary>
-  public DocumentModel.Vml.ShapeIdMap? ShapeIdMap { get; set; }
-  
+  public ShapeIdMap? ShapeIdMap { get; set; }
+
   /// <summary>
-  /// Shape Grouping History.
+  ///   Shape Grouping History.
   /// </summary>
-  public DocumentModel.Vml.RegroupTable? RegroupTable { get; set; }
-  
+  public RegroupTable? RegroupTable { get; set; }
+
   /// <summary>
-  /// Rule Set.
+  ///   Rule Set.
   /// </summary>
-  public DocumentModel.Vml.Rules? Rules { get; set; }
-  
+  public Rules? Rules { get; set; }
 }

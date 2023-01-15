@@ -1,10 +1,9 @@
 namespace DocumentModel.WebExtensions.UI;
 
 /// <summary>
-/// Defines the Taskpanes Class.
+///   Defines the Taskpanes Class.
 /// </summary>
-public partial class Taskpanes
+public class Taskpanes
 {
-  public Collection<DocumentModel.WebExtensions.UI.WebExtensionTaskpane>? WebExtensionTaskpanes { get; set; }
-  
+  public Collection<WebExtensionTaskpane>? WebExtensionTaskpanes { get; set; }
 }

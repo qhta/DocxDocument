@@ -1,22 +1,25 @@
+using DocumentModel.Drawings;
+using PictureBullet = DocumentFormat.OpenXml.Drawing.PictureBullet;
+
 namespace DocumentModel.OpenXml.Drawings;
 
 /// <summary>
-/// Picture Bullet.
+///   Picture Bullet.
 /// </summary>
 public static class PictureBulletConverter
 {
   /// <summary>
-  /// Blip.
+  ///   Blip.
   /// </summary>
-  public static DocumentModel.Drawings.Blip? GetBlip(DocumentFormat.OpenXml.Drawing.PictureBullet? openXmlElement)
+  public static Blip? GetBlip(PictureBullet? openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.Blip>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.BlipConverter.CreateModelElement(itemElement);
+      return BlipConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetBlip(DocumentFormat.OpenXml.Drawing.PictureBullet? openXmlElement, DocumentModel.Drawings.Blip? value)
+
+  public static void SetBlip(PictureBullet? openXmlElement, Blip? value)
   {
     if (openXmlElement != null)
     {
@@ -25,14 +28,14 @@ public static class PictureBulletConverter
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Drawings.BlipConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Blip>(value);
+        itemElement = BlipConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Blip>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static DocumentModel.Drawings.PictureBullet? CreateModelElement(DocumentFormat.OpenXml.Drawing.PictureBullet? openXmlElement)
+
+  public static DocumentModel.Drawings.PictureBullet? CreateModelElement(PictureBullet? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -42,9 +45,9 @@ public static class PictureBulletConverter
     }
     return null;
   }
-  
+
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.PictureBullet? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.PictureBullet, new()
+    where OpenXmlElementType : PictureBullet, new()
   {
     if (value != null)
     {

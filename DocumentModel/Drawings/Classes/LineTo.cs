@@ -1,13 +1,12 @@
 namespace DocumentModel.Drawings;
 
 /// <summary>
-/// Draw Line To.
+///   Draw Line To.
 /// </summary>
-public partial class LineTo
+public class LineTo
 {
   /// <summary>
-  /// Line end point.
+  ///   Line end point.
   /// </summary>
-  public DocumentModel.Drawings.AdjustPoint2DType? Point { get; set; }
-  
+  public AdjustPoint2DType? Point { get; set; }
 }

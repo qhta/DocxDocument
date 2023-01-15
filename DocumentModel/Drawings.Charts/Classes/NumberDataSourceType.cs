@@ -1,18 +1,17 @@
 namespace DocumentModel.Drawings.Charts;
 
 /// <summary>
-/// Defines the NumberDataSourceType Class.
+///   Defines the NumberDataSourceType Class.
 /// </summary>
-public partial class NumberDataSourceType
+public class NumberDataSourceType
 {
   /// <summary>
-  /// Number Reference.
+  ///   Number Reference.
   /// </summary>
-  public DocumentModel.Drawings.Charts.NumberReference? NumberReference { get; set; }
-  
+  public NumberReference? NumberReference { get; set; }
+
   /// <summary>
-  /// Number Literal.
+  ///   Number Literal.
   /// </summary>
-  public DocumentModel.Drawings.Charts.NumberLiteral? NumberLiteral { get; set; }
-  
+  public NumberLiteral? NumberLiteral { get; set; }
 }

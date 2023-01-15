@@ -1,283 +1,282 @@
 namespace DocumentModel.Drawings.Diagrams;
 
 /// <summary>
-/// Parameter Identifier
+///   Parameter Identifier
 /// </summary>
 public enum ParameterIdKind
 {
   /// <summary>
-  /// Horizontal Alignment.
+  ///   Horizontal Alignment.
   /// </summary>
   HorizontalAlignment,
-  
+
   /// <summary>
-  /// Vertical Alignment.
+  ///   Vertical Alignment.
   /// </summary>
   VerticalAlignment,
-  
+
   /// <summary>
-  /// Child Direction.
+  ///   Child Direction.
   /// </summary>
   ChildDirection,
-  
+
   /// <summary>
-  /// Child Alignment.
+  ///   Child Alignment.
   /// </summary>
   ChildAlignment,
-  
+
   /// <summary>
-  /// Secondary Child Alignment.
+  ///   Secondary Child Alignment.
   /// </summary>
   SecondaryChildAlignment,
-  
+
   /// <summary>
-  /// Linear Direction.
+  ///   Linear Direction.
   /// </summary>
   LinearDirection,
-  
+
   /// <summary>
-  /// Secondary Linear Direction.
+  ///   Secondary Linear Direction.
   /// </summary>
   SecondaryLinearDirection,
-  
+
   /// <summary>
-  /// Start Element.
+  ///   Start Element.
   /// </summary>
   StartElement,
-  
+
   /// <summary>
-  /// Bend Point.
+  ///   Bend Point.
   /// </summary>
   BendPoint,
-  
+
   /// <summary>
-  /// Connection Route.
+  ///   Connection Route.
   /// </summary>
   ConnectionRoute,
-  
+
   /// <summary>
-  /// Beginning Arrowhead Style.
+  ///   Beginning Arrowhead Style.
   /// </summary>
   BeginningArrowheadStyle,
-  
+
   /// <summary>
-  /// End Style.
+  ///   End Style.
   /// </summary>
   EndStyle,
-  
+
   /// <summary>
-  /// Connector Dimension.
+  ///   Connector Dimension.
   /// </summary>
   ConnectorDimension,
-  
+
   /// <summary>
-  /// Rotation Path.
+  ///   Rotation Path.
   /// </summary>
   RotationPath,
-  
+
   /// <summary>
-  /// Center Shape Mapping.
+  ///   Center Shape Mapping.
   /// </summary>
   CenterShapeMapping,
-  
+
   /// <summary>
-  /// Node Horizontal Alignment.
+  ///   Node Horizontal Alignment.
   /// </summary>
   NodeHorizontalAlignment,
-  
+
   /// <summary>
-  /// Node Vertical Alignment.
+  ///   Node Vertical Alignment.
   /// </summary>
   NodeVerticalAlignment,
-  
+
   /// <summary>
-  /// Fallback Scale.
+  ///   Fallback Scale.
   /// </summary>
   FallbackScale,
-  
+
   /// <summary>
-  /// Text Direction.
+  ///   Text Direction.
   /// </summary>
   TextDirection,
-  
+
   /// <summary>
-  /// Pyramid Accent Position.
+  ///   Pyramid Accent Position.
   /// </summary>
   PyramidAccentPosition,
-  
+
   /// <summary>
-  /// Pyramid Accent Text Margin.
+  ///   Pyramid Accent Text Margin.
   /// </summary>
   PyramidAccentTextMargin,
-  
+
   /// <summary>
-  /// Text Block Direction.
+  ///   Text Block Direction.
   /// </summary>
   TextBlockDirection,
-  
+
   /// <summary>
-  /// Text Anchor Horizontal.
+  ///   Text Anchor Horizontal.
   /// </summary>
   TextAnchorHorizontal,
-  
+
   /// <summary>
-  /// Text Anchor Vertical.
+  ///   Text Anchor Vertical.
   /// </summary>
   TextAnchorVertical,
-  
+
   /// <summary>
-  /// Text Anchor Horizontal With Children.
+  ///   Text Anchor Horizontal With Children.
   /// </summary>
   TextAnchorHorizontalWithChildren,
-  
+
   /// <summary>
-  /// Text Anchor Vertical With Children.
+  ///   Text Anchor Vertical With Children.
   /// </summary>
   TextAnchorVerticalWithChildren,
-  
+
   /// <summary>
-  /// Parent Text Left-to-Right Alignment.
+  ///   Parent Text Left-to-Right Alignment.
   /// </summary>
   ParentTextLeftToRightAlignment,
-  
+
   /// <summary>
-  /// Parent Text Right-to-Left Alignment.
+  ///   Parent Text Right-to-Left Alignment.
   /// </summary>
   ParentTextRightToLeftAlignment,
-  
+
   /// <summary>
-  /// Shape Text Left-to-Right Alignment.
+  ///   Shape Text Left-to-Right Alignment.
   /// </summary>
   ShapeTextLeftToRightAlignment,
-  
+
   /// <summary>
-  /// Shape Text Right-to-Left Alignment.
+  ///   Shape Text Right-to-Left Alignment.
   /// </summary>
   ShapeTextRightToLeftAlignment,
-  
+
   /// <summary>
-  /// Auto Text Rotation.
+  ///   Auto Text Rotation.
   /// </summary>
   AutoTextRotation,
-  
+
   /// <summary>
-  /// Grow Direction.
+  ///   Grow Direction.
   /// </summary>
   GrowDirection,
-  
+
   /// <summary>
-  /// Flow Direction.
+  ///   Flow Direction.
   /// </summary>
   FlowDirection,
-  
+
   /// <summary>
-  /// Continue Direction.
+  ///   Continue Direction.
   /// </summary>
   ContinueDirection,
-  
+
   /// <summary>
-  /// Breakpoint.
+  ///   Breakpoint.
   /// </summary>
   Breakpoint,
-  
+
   /// <summary>
-  /// Offset.
+  ///   Offset.
   /// </summary>
   Offset,
-  
+
   /// <summary>
-  /// Hierarchy Alignment.
+  ///   Hierarchy Alignment.
   /// </summary>
   HierarchyAlignment,
-  
+
   /// <summary>
-  /// Breakpoint Fixed Value.
+  ///   Breakpoint Fixed Value.
   /// </summary>
   BreakpointFixedValue,
-  
+
   /// <summary>
-  /// Start Bullets At Level.
+  ///   Start Bullets At Level.
   /// </summary>
   StartBulletsAtLevel,
-  
+
   /// <summary>
-  /// Start Angle.
+  ///   Start Angle.
   /// </summary>
   StartAngle,
-  
+
   /// <summary>
-  /// Span Angle.
+  ///   Span Angle.
   /// </summary>
   SpanAngle,
-  
+
   /// <summary>
-  /// Aspect Ratio.
+  ///   Aspect Ratio.
   /// </summary>
   AspectRatio,
-  
+
   /// <summary>
-  /// Line Spacing Parent.
+  ///   Line Spacing Parent.
   /// </summary>
   LineSpacingParent,
-  
+
   /// <summary>
-  /// Line Spacing After Parent Paragraph.
+  ///   Line Spacing After Parent Paragraph.
   /// </summary>
   LineSpacingAfterParentParagraph,
-  
+
   /// <summary>
-  /// Line Spacing Children.
+  ///   Line Spacing Children.
   /// </summary>
   LineSpacingChildren,
-  
+
   /// <summary>
-  /// Line Spacing After Children Paragraph.
+  ///   Line Spacing After Children Paragraph.
   /// </summary>
   LineSpacingAfterChildrenParagraph,
-  
+
   /// <summary>
-  /// Route Shortest Distance.
+  ///   Route Shortest Distance.
   /// </summary>
   RouteShortestDistance,
-  
+
   /// <summary>
-  /// Text Alignment.
+  ///   Text Alignment.
   /// </summary>
   TextAlignment,
-  
+
   /// <summary>
-  /// Pyramid Level Node.
+  ///   Pyramid Level Node.
   /// </summary>
   PyramidLevelNode,
-  
+
   /// <summary>
-  /// Pyramid Accent Background Node.
+  ///   Pyramid Accent Background Node.
   /// </summary>
   PyramidAccentBackgroundNode,
-  
+
   /// <summary>
-  /// Pyramid Accent Text Node.
+  ///   Pyramid Accent Text Node.
   /// </summary>
   PyramidAccentTextNode,
-  
+
   /// <summary>
-  /// Source Node.
+  ///   Source Node.
   /// </summary>
   SourceNode,
-  
+
   /// <summary>
-  /// Destination Node.
+  ///   Destination Node.
   /// </summary>
   DestinationNode,
-  
+
   /// <summary>
-  /// Beginning Points.
+  ///   Beginning Points.
   /// </summary>
   BeginningPoints,
-  
+
   /// <summary>
-  /// End Points.
+  ///   End Points.
   /// </summary>
-  EndPoints,
-  
+  EndPoints
 }

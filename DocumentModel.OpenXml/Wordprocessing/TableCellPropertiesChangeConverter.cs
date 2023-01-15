@@ -1,19 +1,22 @@
+using DocumentFormat.OpenXml.Wordprocessing;
+using PreviousTableCellProperties = DocumentModel.Wordprocessing.PreviousTableCellProperties;
+
 namespace DocumentModel.OpenXml.Wordprocessing;
 
 /// <summary>
-/// Revision Information for Table Cell Properties.
+///   Revision Information for Table Cell Properties.
 /// </summary>
 public static class TableCellPropertiesChangeConverter
 {
   /// <summary>
-  /// author
+  ///   author
   /// </summary>
-  public static String? GetAuthor(DocumentFormat.OpenXml.Wordprocessing.TableCellPropertiesChange? openXmlElement)
+  public static String? GetAuthor(TableCellPropertiesChange? openXmlElement)
   {
     return openXmlElement?.Author?.Value;
   }
-  
-  public static void SetAuthor(DocumentFormat.OpenXml.Wordprocessing.TableCellPropertiesChange? openXmlElement, String? value)
+
+  public static void SetAuthor(TableCellPropertiesChange? openXmlElement, String? value)
   {
     if (openXmlElement != null)
       if (value != null)
@@ -21,30 +24,30 @@ public static class TableCellPropertiesChangeConverter
       else
         openXmlElement.Author = null;
   }
-  
+
   /// <summary>
-  /// date
+  ///   date
   /// </summary>
-  public static DateTime? GetDate(DocumentFormat.OpenXml.Wordprocessing.TableCellPropertiesChange? openXmlElement)
+  public static DateTime? GetDate(TableCellPropertiesChange? openXmlElement)
   {
     return openXmlElement?.Date?.Value;
   }
-  
-  public static void SetDate(DocumentFormat.OpenXml.Wordprocessing.TableCellPropertiesChange? openXmlElement, DateTime? value)
+
+  public static void SetDate(TableCellPropertiesChange? openXmlElement, DateTime? value)
   {
     if (openXmlElement != null)
       openXmlElement.Date = value;
   }
-  
+
   /// <summary>
-  /// Annotation Identifier
+  ///   Annotation Identifier
   /// </summary>
-  public static String? GetId(DocumentFormat.OpenXml.Wordprocessing.TableCellPropertiesChange? openXmlElement)
+  public static String? GetId(TableCellPropertiesChange? openXmlElement)
   {
     return openXmlElement?.Id?.Value;
   }
-  
-  public static void SetId(DocumentFormat.OpenXml.Wordprocessing.TableCellPropertiesChange? openXmlElement, String? value)
+
+  public static void SetId(TableCellPropertiesChange? openXmlElement, String? value)
   {
     if (openXmlElement != null)
       if (value != null)
@@ -52,19 +55,19 @@ public static class TableCellPropertiesChangeConverter
       else
         openXmlElement.Id = null;
   }
-  
+
   /// <summary>
-  /// Previous Table Cell Properties.
+  ///   Previous Table Cell Properties.
   /// </summary>
-  public static DocumentModel.Wordprocessing.PreviousTableCellProperties? GetPreviousTableCellProperties(DocumentFormat.OpenXml.Wordprocessing.TableCellPropertiesChange? openXmlElement)
+  public static PreviousTableCellProperties? GetPreviousTableCellProperties(TableCellPropertiesChange? openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.PreviousTableCellProperties>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Wordprocessing.PreviousTableCellPropertiesConverter.CreateModelElement(itemElement);
+      return PreviousTableCellPropertiesConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetPreviousTableCellProperties(DocumentFormat.OpenXml.Wordprocessing.TableCellPropertiesChange? openXmlElement, DocumentModel.Wordprocessing.PreviousTableCellProperties? value)
+
+  public static void SetPreviousTableCellProperties(TableCellPropertiesChange? openXmlElement, PreviousTableCellProperties? value)
   {
     if (openXmlElement != null)
     {
@@ -73,14 +76,14 @@ public static class TableCellPropertiesChangeConverter
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Wordprocessing.PreviousTableCellPropertiesConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.PreviousTableCellProperties>(value);
+        itemElement = PreviousTableCellPropertiesConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.PreviousTableCellProperties>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static DocumentModel.Wordprocessing.TableCellPropertiesChange? CreateModelElement(DocumentFormat.OpenXml.Wordprocessing.TableCellPropertiesChange? openXmlElement)
+
+  public static DocumentModel.Wordprocessing.TableCellPropertiesChange? CreateModelElement(TableCellPropertiesChange? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -93,9 +96,9 @@ public static class TableCellPropertiesChangeConverter
     }
     return null;
   }
-  
+
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.TableCellPropertiesChange? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Wordprocessing.TableCellPropertiesChange, new()
+    where OpenXmlElementType : TableCellPropertiesChange, new()
   {
     if (value != null)
     {

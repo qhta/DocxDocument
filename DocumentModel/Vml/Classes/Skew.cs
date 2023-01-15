@@ -1,38 +1,37 @@
 namespace DocumentModel.Vml;
 
 /// <summary>
-/// Skew Transform.
+///   Skew Transform.
 /// </summary>
-public partial class Skew
+public class Skew
 {
   /// <summary>
-  /// VML Extension Handling Behavior
+  ///   VML Extension Handling Behavior
   /// </summary>
-  public DocumentModel.Vml.ExtensionHandlingBehaviorKind? Extension { get; set; }
-  
+  public ExtensionHandlingBehaviorKind? Extension { get; set; }
+
   /// <summary>
-  /// Skew ID
+  ///   Skew ID
   /// </summary>
   public String? Id { get; set; }
-  
+
   /// <summary>
-  /// Skew Toggle
+  ///   Skew Toggle
   /// </summary>
   public Boolean? On { get; set; }
-  
+
   /// <summary>
-  /// Skew Offset
+  ///   Skew Offset
   /// </summary>
   public String? Offset { get; set; }
-  
+
   /// <summary>
-  /// Skew Origin
+  ///   Skew Origin
   /// </summary>
   public String? Origin { get; set; }
-  
+
   /// <summary>
-  /// Skew Perspective Matrix
+  ///   Skew Perspective Matrix
   /// </summary>
   public String? Matrix { get; set; }
-  
 }

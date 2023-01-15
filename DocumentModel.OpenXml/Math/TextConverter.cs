@@ -1,25 +1,27 @@
+using DocumentFormat.OpenXml.Math;
+
 namespace DocumentModel.OpenXml.Math;
 
 /// <summary>
-/// Text.
+///   Text.
 /// </summary>
 public static class TextConverter
 {
   /// <summary>
-  /// space
+  ///   space
   /// </summary>
-  public static DocumentModel.SpaceProcessingMode? GetSpace(DocumentFormat.OpenXml.Math.Text? openXmlElement)
+  public static SpaceProcessingMode? GetSpace(Text? openXmlElement)
   {
-    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.SpaceProcessingModeValues, DocumentModel.SpaceProcessingMode>(openXmlElement?.Space?.Value);
+    return EnumValueConverter.GetValue<SpaceProcessingModeValues, SpaceProcessingMode>(openXmlElement?.Space?.Value);
   }
-  
-  public static void SetSpace(DocumentFormat.OpenXml.Math.Text? openXmlElement, DocumentModel.SpaceProcessingMode? value)
+
+  public static void SetSpace(Text? openXmlElement, SpaceProcessingMode? value)
   {
     if (openXmlElement != null)
-      openXmlElement.Space = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.SpaceProcessingModeValues, DocumentModel.SpaceProcessingMode>(value);
+      openXmlElement.Space = EnumValueConverter.CreateEnumValue<SpaceProcessingModeValues, SpaceProcessingMode>(value);
   }
-  
-  public static DocumentModel.Math.Text? CreateModelElement(DocumentFormat.OpenXml.Math.Text? openXmlElement)
+
+  public static DocumentModel.Math.Text? CreateModelElement(Text? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -29,9 +31,9 @@ public static class TextConverter
     }
     return null;
   }
-  
+
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Math.Text? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Math.Text, new()
+    where OpenXmlElementType : Text, new()
   {
     if (value != null)
     {

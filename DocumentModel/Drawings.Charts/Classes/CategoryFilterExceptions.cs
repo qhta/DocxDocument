@@ -1,10 +1,9 @@
 namespace DocumentModel.Drawings.Charts;
 
 /// <summary>
-/// Defines the CategoryFilterExceptions Class.
+///   Defines the CategoryFilterExceptions Class.
 /// </summary>
-public partial class CategoryFilterExceptions
+public class CategoryFilterExceptions
 {
-  public DocumentModel.Drawings.Charts.CategoryFilterException? CategoryFilterException { get; set; }
-  
+  public CategoryFilterException? CategoryFilterException { get; set; }
 }

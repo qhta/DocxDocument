@@ -1,18 +1,17 @@
 namespace DocumentModel.Drawings;
 
 /// <summary>
-/// Blend Effect.
+///   Blend Effect.
 /// </summary>
-public partial class Blend
+public class Blend
 {
   /// <summary>
-  /// Blend Mode
+  ///   Blend Mode
   /// </summary>
-  public DocumentModel.Drawings.BlendMode? BlendMode { get; set; }
-  
+  public BlendMode? BlendMode { get; set; }
+
   /// <summary>
-  /// Effect to blend.
+  ///   Effect to blend.
   /// </summary>
-  public DocumentModel.Drawings.EffectContainer? EffectContainer { get; set; }
-  
+  public EffectContainer? EffectContainer { get; set; }
 }

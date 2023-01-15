@@ -1,15 +1,14 @@
 namespace DocumentModel.Drawings.Charts;
 
 /// <summary>
-/// Defines the SerAxExtension Class.
+///   Defines the SerAxExtension Class.
 /// </summary>
-public partial class SerAxExtension
+public class SerAxExtension
 {
   /// <summary>
-  /// URI
+  ///   URI
   /// </summary>
   public String? Uri { get; set; }
-  
-  public DocumentModel.Drawings.Charts.NumberingFormat3? NumberingFormat { get; set; }
-  
+
+  public NumberingFormat3? NumberingFormat { get; set; }
 }

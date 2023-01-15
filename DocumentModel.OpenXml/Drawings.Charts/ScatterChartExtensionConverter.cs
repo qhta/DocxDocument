@@ -1,19 +1,22 @@
+using DocumentModel.Drawings.Charts;
+using ScatterChartExtension = DocumentFormat.OpenXml.Drawing.Charts.ScatterChartExtension;
+
 namespace DocumentModel.OpenXml.Drawings.Charts;
 
 /// <summary>
-/// Defines the ScatterChartExtension Class.
+///   Defines the ScatterChartExtension Class.
 /// </summary>
 public static class ScatterChartExtensionConverter
 {
   /// <summary>
-  /// URI
+  ///   URI
   /// </summary>
-  public static String? GetUri(DocumentFormat.OpenXml.Drawing.Charts.ScatterChartExtension? openXmlElement)
+  public static String? GetUri(ScatterChartExtension? openXmlElement)
   {
     return openXmlElement?.Uri?.Value;
   }
-  
-  public static void SetUri(DocumentFormat.OpenXml.Drawing.Charts.ScatterChartExtension? openXmlElement, String? value)
+
+  public static void SetUri(ScatterChartExtension? openXmlElement, String? value)
   {
     if (openXmlElement != null)
       if (value != null)
@@ -21,16 +24,16 @@ public static class ScatterChartExtensionConverter
       else
         openXmlElement.Uri = null;
   }
-  
-  public static DocumentModel.Drawings.Charts.FilteredScatterSeries? GetFilteredScatterSeries(DocumentFormat.OpenXml.Drawing.Charts.ScatterChartExtension? openXmlElement)
+
+  public static FilteredScatterSeries? GetFilteredScatterSeries(ScatterChartExtension? openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office2013.Drawing.Chart.FilteredScatterSeries>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.Charts.FilteredScatterSeriesConverter.CreateModelElement(itemElement);
+      return FilteredScatterSeriesConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetFilteredScatterSeries(DocumentFormat.OpenXml.Drawing.Charts.ScatterChartExtension? openXmlElement, DocumentModel.Drawings.Charts.FilteredScatterSeries? value)
+
+  public static void SetFilteredScatterSeries(ScatterChartExtension? openXmlElement, FilteredScatterSeries? value)
   {
     if (openXmlElement != null)
     {
@@ -39,14 +42,14 @@ public static class ScatterChartExtensionConverter
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Drawings.Charts.FilteredScatterSeriesConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2013.Drawing.Chart.FilteredScatterSeries>(value);
+        itemElement = FilteredScatterSeriesConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2013.Drawing.Chart.FilteredScatterSeries>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static DocumentModel.Drawings.Charts.ScatterChartExtension? CreateModelElement(DocumentFormat.OpenXml.Drawing.Charts.ScatterChartExtension? openXmlElement)
+
+  public static DocumentModel.Drawings.Charts.ScatterChartExtension? CreateModelElement(ScatterChartExtension? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -57,9 +60,9 @@ public static class ScatterChartExtensionConverter
     }
     return null;
   }
-  
+
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.Charts.ScatterChartExtension? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.Charts.ScatterChartExtension, new()
+    where OpenXmlElementType : ScatterChartExtension, new()
   {
     if (value != null)
     {

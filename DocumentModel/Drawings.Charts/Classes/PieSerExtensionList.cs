@@ -1,10 +1,9 @@
 namespace DocumentModel.Drawings.Charts;
 
 /// <summary>
-/// Defines the PieSerExtensionList Class.
+///   Defines the PieSerExtensionList Class.
 /// </summary>
-public partial class PieSerExtensionList
+public class PieSerExtensionList
 {
-  public Collection<DocumentModel.Drawings.Charts.PieSerExtension>? PieSerExtensions { get; set; }
-  
+  public Collection<PieSerExtension>? PieSerExtensions { get; set; }
 }

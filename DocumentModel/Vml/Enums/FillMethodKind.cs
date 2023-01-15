@@ -1,33 +1,32 @@
 namespace DocumentModel.Vml;
 
 /// <summary>
-/// Gradient Fill Computation Type
+///   Gradient Fill Computation Type
 /// </summary>
 public enum FillMethodKind
 {
   /// <summary>
-  /// No Gradient Fill.
+  ///   No Gradient Fill.
   /// </summary>
   None,
-  
+
   /// <summary>
-  /// Linear Fill.
+  ///   Linear Fill.
   /// </summary>
   Linear,
-  
+
   /// <summary>
-  /// Sigma Fill.
+  ///   Sigma Fill.
   /// </summary>
   Sigma,
-  
+
   /// <summary>
-  /// Application Default Fill.
+  ///   Application Default Fill.
   /// </summary>
   Any,
-  
+
   /// <summary>
-  /// Linear Sigma Fill.
+  ///   Linear Sigma Fill.
   /// </summary>
-  Linearsigma,
-  
+  Linearsigma
 }

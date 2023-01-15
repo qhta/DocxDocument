@@ -1,83 +1,82 @@
 namespace DocumentModel.Wordprocessing;
 
 /// <summary>
-/// Numbering Level Definition.
+///   Numbering Level Definition.
 /// </summary>
-public partial class Level
+public class Level
 {
   /// <summary>
-  /// Numbering Level
+  ///   Numbering Level
   /// </summary>
   public Int32? LevelIndex { get; set; }
-  
+
   /// <summary>
-  /// Template Code
+  ///   Template Code
   /// </summary>
   public Byte[]? TemplateCode { get; set; }
-  
+
   /// <summary>
-  /// Tentative Numbering
+  ///   Tentative Numbering
   /// </summary>
   public Boolean? Tentative { get; set; }
-  
+
   /// <summary>
-  /// Starting Value.
+  ///   Starting Value.
   /// </summary>
   public Int32? StartNumberingValue { get; set; }
-  
+
   /// <summary>
-  /// Numbering Format.
+  ///   Numbering Format.
   /// </summary>
-  public DocumentModel.Wordprocessing.NumberingFormat? NumberingFormat { get; set; }
-  
+  public NumberingFormat? NumberingFormat { get; set; }
+
   /// <summary>
-  /// Restart Numbering Level Symbol.
+  ///   Restart Numbering Level Symbol.
   /// </summary>
   public Int32? LevelRestart { get; set; }
-  
+
   /// <summary>
-  /// Paragraph Style's Associated Numbering Level.
+  ///   Paragraph Style's Associated Numbering Level.
   /// </summary>
   public String? ParagraphStyleIdInLevel { get; set; }
-  
+
   /// <summary>
-  /// Display All Levels Using Arabic Numerals.
+  ///   Display All Levels Using Arabic Numerals.
   /// </summary>
   public Boolean? IsLegalNumberingStyle { get; set; }
-  
+
   /// <summary>
-  /// Content Between Numbering Symbol and Paragraph Text.
+  ///   Content Between Numbering Symbol and Paragraph Text.
   /// </summary>
-  public DocumentModel.Wordprocessing.LevelSuffixKind? LevelSuffix { get; set; }
-  
+  public LevelSuffixKind? LevelSuffix { get; set; }
+
   /// <summary>
-  /// Numbering Level Text.
+  ///   Numbering Level Text.
   /// </summary>
-  public DocumentModel.Wordprocessing.LevelText? LevelText { get; set; }
-  
+  public LevelText? LevelText { get; set; }
+
   /// <summary>
-  /// Picture Numbering Symbol Definition Reference.
+  ///   Picture Numbering Symbol Definition Reference.
   /// </summary>
   public Int32? LevelPictureBulletId { get; set; }
-  
+
   /// <summary>
-  /// Legacy Numbering Level Properties.
+  ///   Legacy Numbering Level Properties.
   /// </summary>
-  public DocumentModel.Wordprocessing.LegacyNumbering? LegacyNumbering { get; set; }
-  
+  public LegacyNumbering? LegacyNumbering { get; set; }
+
   /// <summary>
-  /// Justification.
+  ///   Justification.
   /// </summary>
-  public DocumentModel.Wordprocessing.LevelJustificationKind? LevelJustification { get; set; }
-  
+  public LevelJustificationKind? LevelJustification { get; set; }
+
   /// <summary>
-  /// Numbering Level Associated Paragraph Properties.
+  ///   Numbering Level Associated Paragraph Properties.
   /// </summary>
-  public DocumentModel.Wordprocessing.PreviousParagraphProperties? PreviousParagraphProperties { get; set; }
-  
+  public PreviousParagraphProperties? PreviousParagraphProperties { get; set; }
+
   /// <summary>
-  /// Numbering Symbol Run Properties.
+  ///   Numbering Symbol Run Properties.
   /// </summary>
-  public DocumentModel.Wordprocessing.NumberingSymbolRunProperties? NumberingSymbolRunProperties { get; set; }
-  
+  public NumberingSymbolRunProperties? NumberingSymbolRunProperties { get; set; }
 }

@@ -1,17 +1,16 @@
 namespace DocumentModel.Drawings.ChartDrawings;
 
 /// <summary>
-/// Defines the PlotAreaRegion Class.
+///   Defines the PlotAreaRegion Class.
 /// </summary>
-public partial class PlotAreaRegion
+public class PlotAreaRegion
 {
   /// <summary>
-  /// PlotSurface.
+  ///   PlotSurface.
   /// </summary>
-  public DocumentModel.Drawings.ChartDrawings.PlotSurface? PlotSurface { get; set; }
-  
-  public Collection<DocumentModel.Drawings.ChartDrawings.Series>? Serieses { get; set; }
-  
-  public DocumentModel.Drawings.ChartDrawings.ExtensionList? ExtensionList { get; set; }
-  
+  public PlotSurface? PlotSurface { get; set; }
+
+  public Collection<Series>? Serieses { get; set; }
+
+  public ExtensionList? ExtensionList { get; set; }
 }

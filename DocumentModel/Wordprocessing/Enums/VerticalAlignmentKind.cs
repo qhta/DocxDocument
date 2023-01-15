@@ -1,38 +1,37 @@
 namespace DocumentModel.Wordprocessing;
 
 /// <summary>
-/// Defines the VerticalAlignmentValues enumeration.
+///   Defines the VerticalAlignmentValues enumeration.
 /// </summary>
 public enum VerticalAlignmentKind
 {
   /// <summary>
-  /// In line With Text.
+  ///   In line With Text.
   /// </summary>
   Inline,
-  
+
   /// <summary>
-  /// Top.
+  ///   Top.
   /// </summary>
   Top,
-  
+
   /// <summary>
-  /// Centered Vertically.
+  ///   Centered Vertically.
   /// </summary>
   Center,
-  
+
   /// <summary>
-  /// Bottom.
+  ///   Bottom.
   /// </summary>
   Bottom,
-  
+
   /// <summary>
-  /// Inside Anchor Extents.
+  ///   Inside Anchor Extents.
   /// </summary>
   Inside,
-  
+
   /// <summary>
-  /// Outside Anchor Extents.
+  ///   Outside Anchor Extents.
   /// </summary>
-  Outside,
-  
+  Outside
 }

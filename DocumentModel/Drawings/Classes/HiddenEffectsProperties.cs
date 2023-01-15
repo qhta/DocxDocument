@@ -1,18 +1,17 @@
 namespace DocumentModel.Drawings;
 
 /// <summary>
-/// Defines the HiddenEffectsProperties Class.
+///   Defines the HiddenEffectsProperties Class.
 /// </summary>
-public partial class HiddenEffectsProperties
+public class HiddenEffectsProperties
 {
   /// <summary>
-  /// Effect Container.
+  ///   Effect Container.
   /// </summary>
-  public DocumentModel.Drawings.EffectList? EffectList { get; set; }
-  
+  public EffectList? EffectList { get; set; }
+
   /// <summary>
-  /// Effect Container.
+  ///   Effect Container.
   /// </summary>
-  public DocumentModel.Drawings.EffectDag? EffectDag { get; set; }
-  
+  public EffectDag? EffectDag { get; set; }
 }

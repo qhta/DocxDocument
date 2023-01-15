@@ -1,23 +1,22 @@
 namespace DocumentModel.Drawings.Charts;
 
 /// <summary>
-/// Printed Page Orientation
+///   Printed Page Orientation
 /// </summary>
 public enum PageSetupOrientationKind
 {
   /// <summary>
-  /// Default Page Orientation.
+  ///   Default Page Orientation.
   /// </summary>
   Default,
-  
+
   /// <summary>
-  /// Portrait Page.
+  ///   Portrait Page.
   /// </summary>
   Portrait,
-  
+
   /// <summary>
-  /// Landscape Page.
+  ///   Landscape Page.
   /// </summary>
-  Landscape,
-  
+  Landscape
 }

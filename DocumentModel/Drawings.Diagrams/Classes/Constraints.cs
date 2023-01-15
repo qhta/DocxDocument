@@ -1,10 +1,9 @@
 namespace DocumentModel.Drawings.Diagrams;
 
 /// <summary>
-/// Constraint List.
+///   Constraint List.
 /// </summary>
-public partial class Constraints
+public class Constraints
 {
-  public Collection<DocumentModel.Drawings.Diagrams.Constraint>? Items { get; set; }
-  
+  public Collection<Constraint>? Items { get; set; }
 }

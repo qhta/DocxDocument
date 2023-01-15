@@ -1,38 +1,37 @@
 namespace DocumentModel.Drawings.ChartDrawings;
 
 /// <summary>
-/// Defines the Geography Class.
+///   Defines the Geography Class.
 /// </summary>
-public partial class Geography
+public class Geography
 {
   /// <summary>
-  /// projectionType, this property is only available in Office 2016 and later.
+  ///   projectionType, this property is only available in Office 2016 and later.
   /// </summary>
-  public DocumentModel.Drawings.ChartDrawings.GeoProjectionType? ProjectionType { get; set; }
-  
+  public GeoProjectionType? ProjectionType { get; set; }
+
   /// <summary>
-  /// viewedRegionType, this property is only available in Office 2016 and later.
+  ///   viewedRegionType, this property is only available in Office 2016 and later.
   /// </summary>
-  public DocumentModel.Drawings.ChartDrawings.GeoMappingLevel? ViewedRegionType { get; set; }
-  
+  public GeoMappingLevel? ViewedRegionType { get; set; }
+
   /// <summary>
-  /// cultureLanguage, this property is only available in Office 2016 and later.
+  ///   cultureLanguage, this property is only available in Office 2016 and later.
   /// </summary>
   public String? CultureLanguage { get; set; }
-  
+
   /// <summary>
-  /// cultureRegion, this property is only available in Office 2016 and later.
+  ///   cultureRegion, this property is only available in Office 2016 and later.
   /// </summary>
   public String? CultureRegion { get; set; }
-  
+
   /// <summary>
-  /// attribution, this property is only available in Office 2016 and later.
+  ///   attribution, this property is only available in Office 2016 and later.
   /// </summary>
   public String? Attribution { get; set; }
-  
+
   /// <summary>
-  /// GeoCache.
+  ///   GeoCache.
   /// </summary>
-  public DocumentModel.Drawings.ChartDrawings.GeoCache? GeoCache { get; set; }
-  
+  public GeoCache? GeoCache { get; set; }
 }

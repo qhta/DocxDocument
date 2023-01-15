@@ -1,10 +1,9 @@
 namespace DocumentModel.Drawings.Diagrams;
 
 /// <summary>
-/// Category List.
+///   Category List.
 /// </summary>
-public partial class CategoryList
+public class CategoryList
 {
-  public Collection<DocumentModel.Drawings.Diagrams.Category>? Categories { get; set; }
-  
+  public Collection<Category>? Categories { get; set; }
 }

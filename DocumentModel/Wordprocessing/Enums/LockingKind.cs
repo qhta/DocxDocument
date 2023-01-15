@@ -1,28 +1,27 @@
 namespace DocumentModel.Wordprocessing;
 
 /// <summary>
-/// Defines the LockingValues enumeration.
+///   Defines the LockingValues enumeration.
 /// </summary>
 public enum LockingKind
 {
   /// <summary>
-  /// SDT Cannot Be Deleted.
+  ///   SDT Cannot Be Deleted.
   /// </summary>
   SdtLocked,
-  
+
   /// <summary>
-  /// Contents Cannot Be Edited At Runtime.
+  ///   Contents Cannot Be Edited At Runtime.
   /// </summary>
   ContentLocked,
-  
+
   /// <summary>
-  /// No Locking.
+  ///   No Locking.
   /// </summary>
   Unlocked,
-  
+
   /// <summary>
-  /// Contents Cannot Be Edited At Runtime And SDT Cannot Be Deleted.
+  ///   Contents Cannot Be Edited At Runtime And SDT Cannot Be Deleted.
   /// </summary>
-  SdtContentLocked,
-  
+  SdtContentLocked
 }

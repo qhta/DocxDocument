@@ -1,26 +1,28 @@
 namespace DocumentModel.OpenXml.Properties;
 
 /// <summary>
-/// Digital Signature.
+///   Digital Signature.
 /// </summary>
-public partial class DigitalSignature: ModelElementImpl
+public class DigitalSignature : ModelElementImpl
 {
+  public DigitalSignature()
+  {
+  }
+
+  public DigitalSignature(DocumentFormat.OpenXml.ExtendedProperties.DigitalSignature openXmlElement) : base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+
   [XmlIgnore]
   public DocumentFormat.OpenXml.ExtendedProperties.DigitalSignature? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.ExtendedProperties.DigitalSignature?)_OpenXmlElement;
     protected set => _OpenXmlElement = value;
   }
-  
-  public DigitalSignature(): base() {}
-  
-  public DigitalSignature(DocumentFormat.OpenXml.ExtendedProperties.DigitalSignature openXmlElement): base(openXmlElement)
-  {
-    OpenXmlElement = openXmlElement;
-  }
-  
+
   /// <summary>
-  /// Binary Blob.
+  ///   Binary Blob.
   /// </summary>
   public byte[]? VTBlob
   {
@@ -28,7 +30,7 @@ public partial class DigitalSignature: ModelElementImpl
     {
       if (OpenXmlElement != null)
       {
-        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.VariantTypes.VTBlob>();
+        var item = OpenXmlElement.GetFirstChild<VTBlob>();
         if (item != null)
           return VariantConverter.CreateModelElement(item).ToBytes();
       }
@@ -38,7 +40,7 @@ public partial class DigitalSignature: ModelElementImpl
     {
       if (OpenXmlElement != null)
       {
-        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.VariantTypes.VTBlob>();
+        var item = OpenXmlElement.GetFirstChild<VTBlob>();
         if (item != null)
           item.Remove();
         if (value != null)
@@ -50,5 +52,4 @@ public partial class DigitalSignature: ModelElementImpl
       }
     }
   }
-  
 }

@@ -1,28 +1,27 @@
 namespace DocumentModel.Wordprocessing;
 
 /// <summary>
-/// Revision Information for Table-Level Property Exceptions.
+///   Revision Information for Table-Level Property Exceptions.
 /// </summary>
-public partial class TablePropertyExceptionsChange
+public class TablePropertyExceptionsChange
 {
   /// <summary>
-  /// author
+  ///   author
   /// </summary>
   public String? Author { get; set; }
-  
+
   /// <summary>
-  /// date
+  ///   date
   /// </summary>
   public DateTime? Date { get; set; }
-  
+
   /// <summary>
-  /// Annotation Identifier
+  ///   Annotation Identifier
   /// </summary>
   public String? Id { get; set; }
-  
+
   /// <summary>
-  /// Previous Table-Level Property Exceptions.
+  ///   Previous Table-Level Property Exceptions.
   /// </summary>
-  public DocumentModel.Wordprocessing.PreviousTablePropertyExceptions? PreviousTablePropertyExceptions { get; set; }
-  
+  public PreviousTablePropertyExceptions? PreviousTablePropertyExceptions { get; set; }
 }

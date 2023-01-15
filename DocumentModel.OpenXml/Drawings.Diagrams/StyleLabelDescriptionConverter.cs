@@ -1,19 +1,21 @@
+using DocumentFormat.OpenXml.Drawing.Diagrams;
+
 namespace DocumentModel.OpenXml.Drawings.Diagrams;
 
 /// <summary>
-/// Style Label Description.
+///   Style Label Description.
 /// </summary>
 public static class StyleLabelDescriptionConverter
 {
   /// <summary>
-  /// Natural Language
+  ///   Natural Language
   /// </summary>
-  public static String? GetLanguage(DocumentFormat.OpenXml.Drawing.Diagrams.StyleLabelDescription? openXmlElement)
+  public static String? GetLanguage(StyleLabelDescription? openXmlElement)
   {
     return openXmlElement?.Language?.Value;
   }
-  
-  public static void SetLanguage(DocumentFormat.OpenXml.Drawing.Diagrams.StyleLabelDescription? openXmlElement, String? value)
+
+  public static void SetLanguage(StyleLabelDescription? openXmlElement, String? value)
   {
     if (openXmlElement != null)
       if (value != null)
@@ -21,16 +23,16 @@ public static class StyleLabelDescriptionConverter
       else
         openXmlElement.Language = null;
   }
-  
+
   /// <summary>
-  /// Description Value
+  ///   Description Value
   /// </summary>
-  public static String? GetVal(DocumentFormat.OpenXml.Drawing.Diagrams.StyleLabelDescription? openXmlElement)
+  public static String? GetVal(StyleLabelDescription? openXmlElement)
   {
     return openXmlElement?.Val?.Value;
   }
-  
-  public static void SetVal(DocumentFormat.OpenXml.Drawing.Diagrams.StyleLabelDescription? openXmlElement, String? value)
+
+  public static void SetVal(StyleLabelDescription? openXmlElement, String? value)
   {
     if (openXmlElement != null)
       if (value != null)
@@ -38,8 +40,8 @@ public static class StyleLabelDescriptionConverter
       else
         openXmlElement.Val = null;
   }
-  
-  public static DocumentModel.Drawings.Diagrams.StyleLabelDescription? CreateModelElement(DocumentFormat.OpenXml.Drawing.Diagrams.StyleLabelDescription? openXmlElement)
+
+  public static DocumentModel.Drawings.Diagrams.StyleLabelDescription? CreateModelElement(StyleLabelDescription? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -50,9 +52,9 @@ public static class StyleLabelDescriptionConverter
     }
     return null;
   }
-  
+
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.Diagrams.StyleLabelDescription? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.Diagrams.StyleLabelDescription, new()
+    where OpenXmlElementType : StyleLabelDescription, new()
   {
     if (value != null)
     {

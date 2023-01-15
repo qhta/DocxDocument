@@ -1,10 +1,9 @@
 namespace DocumentModel.Wordprocessing;
 
 /// <summary>
-/// Document Endnotes.
+///   Document Endnotes.
 /// </summary>
-public partial class Endnotes
+public class Endnotes
 {
-  public DocumentModel.Wordprocessing.Endnote? Endnote { get; set; }
-  
+  public Endnote? Endnote { get; set; }
 }

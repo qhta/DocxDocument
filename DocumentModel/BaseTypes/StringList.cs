@@ -2,14 +2,21 @@
 namespace DocumentModel;
 
 /// <summary>Represents the list of string
-public class StringList: ICollection<string>, IEnumerable
+public class StringList : ICollection<string>, IEnumerable
 {
-  private List<string> _list = new List<string>();
+  private readonly List<string> _list = new();
 
   /// <inheritdoc />
-  public IEnumerator<string> GetEnumerator() => _list.GetEnumerator();
+  public IEnumerator<string> GetEnumerator()
+  {
+    return _list.GetEnumerator();
+  }
 
-  IEnumerator IEnumerable.GetEnumerator() => (IEnumerator)GetEnumerator();
+  IEnumerator IEnumerable.GetEnumerator()
+  {
+    return GetEnumerator();
+  }
+
   public void Add(string item)
   {
     _list?.Add(item);
@@ -39,4 +46,3 @@ public class StringList: ICollection<string>, IEnumerable
 
   public bool IsReadOnly => false;
 }
-

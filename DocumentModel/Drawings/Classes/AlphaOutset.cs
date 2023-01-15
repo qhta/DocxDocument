@@ -1,13 +1,12 @@
 namespace DocumentModel.Drawings;
 
 /// <summary>
-/// Alpha Inset/Outset Effect.
+///   Alpha Inset/Outset Effect.
 /// </summary>
-public partial class AlphaOutset
+public class AlphaOutset
 {
   /// <summary>
-  /// Radius
+  ///   Radius
   /// </summary>
   public Int64? Radius { get; set; }
-  
 }

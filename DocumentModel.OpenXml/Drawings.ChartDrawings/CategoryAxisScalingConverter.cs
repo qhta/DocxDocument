@@ -1,19 +1,21 @@
+using DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing;
+
 namespace DocumentModel.OpenXml.Drawings.ChartDrawings;
 
 /// <summary>
-/// Defines the CategoryAxisScaling Class.
+///   Defines the CategoryAxisScaling Class.
 /// </summary>
 public static class CategoryAxisScalingConverter
 {
   /// <summary>
-  /// gapWidth, this property is only available in Office 2016 and later.
+  ///   gapWidth, this property is only available in Office 2016 and later.
   /// </summary>
-  public static String? GetGapWidth(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.CategoryAxisScaling? openXmlElement)
+  public static String? GetGapWidth(CategoryAxisScaling? openXmlElement)
   {
     return openXmlElement?.GapWidth?.Value;
   }
-  
-  public static void SetGapWidth(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.CategoryAxisScaling? openXmlElement, String? value)
+
+  public static void SetGapWidth(CategoryAxisScaling? openXmlElement, String? value)
   {
     if (openXmlElement != null)
       if (value != null)
@@ -21,8 +23,8 @@ public static class CategoryAxisScalingConverter
       else
         openXmlElement.GapWidth = null;
   }
-  
-  public static DocumentModel.Drawings.ChartDrawings.CategoryAxisScaling? CreateModelElement(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.CategoryAxisScaling? openXmlElement)
+
+  public static DocumentModel.Drawings.ChartDrawings.CategoryAxisScaling? CreateModelElement(CategoryAxisScaling? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -32,9 +34,9 @@ public static class CategoryAxisScalingConverter
     }
     return null;
   }
-  
+
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.ChartDrawings.CategoryAxisScaling? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.CategoryAxisScaling, new()
+    where OpenXmlElementType : CategoryAxisScaling, new()
   {
     if (value != null)
     {

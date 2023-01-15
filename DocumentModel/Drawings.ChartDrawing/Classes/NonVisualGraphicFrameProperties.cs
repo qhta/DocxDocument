@@ -1,18 +1,17 @@
 namespace DocumentModel.Drawings.ChartDrawing;
 
 /// <summary>
-/// Non-Visual Graphic Frame Properties.
+///   Non-Visual Graphic Frame Properties.
 /// </summary>
-public partial class NonVisualGraphicFrameProperties
+public class NonVisualGraphicFrameProperties
 {
   /// <summary>
-  /// Non-Visual Drawing Properties.
+  ///   Non-Visual Drawing Properties.
   /// </summary>
-  public DocumentModel.Drawings.ChartDrawing.NonVisualDrawingProperties? NonVisualDrawingProperties { get; set; }
-  
+  public NonVisualDrawingProperties? NonVisualDrawingProperties { get; set; }
+
   /// <summary>
-  /// Non-Visual Graphic Frame Drawing Properties.
+  ///   Non-Visual Graphic Frame Drawing Properties.
   /// </summary>
-  public DocumentModel.Drawings.ChartDrawing.NonVisualGraphicFrameDrawingProperties? NonVisualGraphicFrameDrawingProperties { get; set; }
-  
+  public NonVisualGraphicFrameDrawingProperties? NonVisualGraphicFrameDrawingProperties { get; set; }
 }

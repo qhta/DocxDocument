@@ -1,72 +1,75 @@
+using DocumentFormat.OpenXml.Wordprocessing;
+using LevelOverride = DocumentModel.Wordprocessing.LevelOverride;
+
 namespace DocumentModel.OpenXml.Wordprocessing;
 
 /// <summary>
-/// Numbering Definition Instance.
+///   Numbering Definition Instance.
 /// </summary>
 public static class NumberingInstanceConverter
 {
   /// <summary>
-  /// numId
+  ///   numId
   /// </summary>
-  public static Int32? GetNumberID(DocumentFormat.OpenXml.Wordprocessing.NumberingInstance? openXmlElement)
+  public static Int32? GetNumberID(NumberingInstance? openXmlElement)
   {
     return openXmlElement?.NumberID?.Value;
   }
-  
-  public static void SetNumberID(DocumentFormat.OpenXml.Wordprocessing.NumberingInstance? openXmlElement, Int32? value)
+
+  public static void SetNumberID(NumberingInstance? openXmlElement, Int32? value)
   {
     if (openXmlElement != null)
       openXmlElement.NumberID = value;
   }
-  
+
   /// <summary>
-  /// durableId
+  ///   durableId
   /// </summary>
-  public static Int32? GetDurableId(DocumentFormat.OpenXml.Wordprocessing.NumberingInstance? openXmlElement)
+  public static Int32? GetDurableId(NumberingInstance? openXmlElement)
   {
     return openXmlElement?.DurableId?.Value;
   }
-  
-  public static void SetDurableId(DocumentFormat.OpenXml.Wordprocessing.NumberingInstance? openXmlElement, Int32? value)
+
+  public static void SetDurableId(NumberingInstance? openXmlElement, Int32? value)
   {
     if (openXmlElement != null)
       openXmlElement.DurableId = value;
   }
-  
+
   /// <summary>
-  /// AbstractNumId.
+  ///   AbstractNumId.
   /// </summary>
-  public static Int32? GetAbstractNumId(DocumentFormat.OpenXml.Wordprocessing.NumberingInstance? openXmlElement)
+  public static Int32? GetAbstractNumId(NumberingInstance? openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.AbstractNumId>();
+    var itemElement = openXmlElement?.GetFirstChild<AbstractNumId>();
     if (itemElement != null)
       return itemElement.Val?.Value;
     return null;
   }
-  
-  public static void SetAbstractNumId(DocumentFormat.OpenXml.Wordprocessing.NumberingInstance? openXmlElement, Int32? value)
+
+  public static void SetAbstractNumId(NumberingInstance? openXmlElement, Int32? value)
   {
     if (openXmlElement != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.AbstractNumId>();
+      var itemElement = openXmlElement.GetFirstChild<AbstractNumId>();
       if (itemElement != null)
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = new DocumentFormat.OpenXml.Wordprocessing.AbstractNumId{ Val = value };
+        itemElement = new AbstractNumId { Val = value };
         openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static System.Collections.ObjectModel.Collection<DocumentModel.Wordprocessing.LevelOverride>? GetLevelOverrides(DocumentFormat.OpenXml.Wordprocessing.NumberingInstance? openXmlElement)
+
+  public static Collection<LevelOverride>? GetLevelOverrides(NumberingInstance? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var collection = new System.Collections.ObjectModel.Collection<DocumentModel.Wordprocessing.LevelOverride>();
+      var collection = new Collection<LevelOverride>();
       foreach (var item in openXmlElement.Elements<DocumentFormat.OpenXml.Wordprocessing.LevelOverride>())
       {
-        var newItem = DocumentModel.OpenXml.Wordprocessing.LevelOverrideConverter.CreateModelElement(item);
+        var newItem = LevelOverrideConverter.CreateModelElement(item);
         if (newItem != null)
           collection.Add(newItem);
       }
@@ -74,25 +77,23 @@ public static class NumberingInstanceConverter
     }
     return null;
   }
-  
-  public static void SetLevelOverrides(DocumentFormat.OpenXml.Wordprocessing.NumberingInstance? openXmlElement, System.Collections.ObjectModel.Collection<DocumentModel.Wordprocessing.LevelOverride>? value)
+
+  public static void SetLevelOverrides(NumberingInstance? openXmlElement, Collection<LevelOverride>? value)
   {
     if (openXmlElement != null)
     {
       openXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Wordprocessing.LevelOverride>();
       if (value != null)
-      {
         foreach (var item in value)
         {
-          var newItem = DocumentModel.OpenXml.Wordprocessing.LevelOverrideConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.LevelOverride>(item);
+          var newItem = LevelOverrideConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.LevelOverride>(item);
           if (newItem != null)
             openXmlElement.AddChild(newItem);
         }
-      }
     }
   }
-  
-  public static DocumentModel.Wordprocessing.NumberingInstance? CreateModelElement(DocumentFormat.OpenXml.Wordprocessing.NumberingInstance? openXmlElement)
+
+  public static DocumentModel.Wordprocessing.NumberingInstance? CreateModelElement(NumberingInstance? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -105,9 +106,9 @@ public static class NumberingInstanceConverter
     }
     return null;
   }
-  
+
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.NumberingInstance? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Wordprocessing.NumberingInstance, new()
+    where OpenXmlElementType : NumberingInstance, new()
   {
     if (value != null)
     {

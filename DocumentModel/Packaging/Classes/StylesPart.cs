@@ -1,13 +1,14 @@
+using DocumentModel.Wordprocessing;
+
 namespace DocumentModel.Packaging;
 
 /// <summary>
-/// Defines StylesPart. The StylesPart served as the base class of StylesWithEffectsPart and StyleDefinitionsPart.
+///   Defines StylesPart. The StylesPart served as the base class of StylesWithEffectsPart and StyleDefinitionsPart.
 /// </summary>
-public partial class StylesPart
+public class StylesPart
 {
   /// <summary>
-  /// Gets or sets the root element of this part.
+  ///   Gets or sets the root element of this part.
   /// </summary>
-  public DocumentModel.Wordprocessing.Styles? Styles { get; set; }
-  
+  public Styles? Styles { get; set; }
 }

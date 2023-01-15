@@ -1,135 +1,137 @@
+using DocumentFormat.OpenXml.Office2021.Drawing.SketchyShapes;
+
 namespace DocumentModel.OpenXml.Drawings;
 
 /// <summary>
-/// Defines the LineSketchTypeProperties Class.
+///   Defines the LineSketchTypeProperties Class.
 /// </summary>
 public static class LineSketchTypePropertiesConverter
 {
   /// <summary>
-  /// LineSketchNoneEmpty.
+  ///   LineSketchNoneEmpty.
   /// </summary>
-  public static Boolean? GetLineSketchNoneEmpty(DocumentFormat.OpenXml.Office2021.Drawing.SketchyShapes.LineSketchTypeProperties? openXmlElement)
+  public static Boolean? GetLineSketchNoneEmpty(LineSketchTypeProperties? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2021.Drawing.SketchyShapes.LineSketchNoneEmpty>();
+      var itemElement = openXmlElement.GetFirstChild<LineSketchNoneEmpty>();
       return itemElement != null;
     }
     return null;
   }
-  
-  public static void SetLineSketchNoneEmpty(DocumentFormat.OpenXml.Office2021.Drawing.SketchyShapes.LineSketchTypeProperties? openXmlElement, Boolean? value)
+
+  public static void SetLineSketchNoneEmpty(LineSketchTypeProperties? openXmlElement, Boolean? value)
   {
     if (openXmlElement != null)
     {
       if (value == false)
       {
-        var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2021.Drawing.SketchyShapes.LineSketchNoneEmpty>();
+        var itemElement = openXmlElement.GetFirstChild<LineSketchNoneEmpty>();
         if (itemElement != null)
           itemElement.Remove();
       }
       if (value == true)
       {
-        var itemElement = new DocumentFormat.OpenXml.Office2021.Drawing.SketchyShapes.LineSketchNoneEmpty();
+        var itemElement = new LineSketchNoneEmpty();
         openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
+
   /// <summary>
-  /// LineSketchCurvedEmpty.
+  ///   LineSketchCurvedEmpty.
   /// </summary>
-  public static Boolean? GetLineSketchCurvedEmpty(DocumentFormat.OpenXml.Office2021.Drawing.SketchyShapes.LineSketchTypeProperties? openXmlElement)
+  public static Boolean? GetLineSketchCurvedEmpty(LineSketchTypeProperties? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2021.Drawing.SketchyShapes.LineSketchCurvedEmpty>();
+      var itemElement = openXmlElement.GetFirstChild<LineSketchCurvedEmpty>();
       return itemElement != null;
     }
     return null;
   }
-  
-  public static void SetLineSketchCurvedEmpty(DocumentFormat.OpenXml.Office2021.Drawing.SketchyShapes.LineSketchTypeProperties? openXmlElement, Boolean? value)
+
+  public static void SetLineSketchCurvedEmpty(LineSketchTypeProperties? openXmlElement, Boolean? value)
   {
     if (openXmlElement != null)
     {
       if (value == false)
       {
-        var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2021.Drawing.SketchyShapes.LineSketchCurvedEmpty>();
+        var itemElement = openXmlElement.GetFirstChild<LineSketchCurvedEmpty>();
         if (itemElement != null)
           itemElement.Remove();
       }
       if (value == true)
       {
-        var itemElement = new DocumentFormat.OpenXml.Office2021.Drawing.SketchyShapes.LineSketchCurvedEmpty();
+        var itemElement = new LineSketchCurvedEmpty();
         openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
+
   /// <summary>
-  /// LineSketchFreehandEmpty.
+  ///   LineSketchFreehandEmpty.
   /// </summary>
-  public static Boolean? GetLineSketchFreehandEmpty(DocumentFormat.OpenXml.Office2021.Drawing.SketchyShapes.LineSketchTypeProperties? openXmlElement)
+  public static Boolean? GetLineSketchFreehandEmpty(LineSketchTypeProperties? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2021.Drawing.SketchyShapes.LineSketchFreehandEmpty>();
+      var itemElement = openXmlElement.GetFirstChild<LineSketchFreehandEmpty>();
       return itemElement != null;
     }
     return null;
   }
-  
-  public static void SetLineSketchFreehandEmpty(DocumentFormat.OpenXml.Office2021.Drawing.SketchyShapes.LineSketchTypeProperties? openXmlElement, Boolean? value)
+
+  public static void SetLineSketchFreehandEmpty(LineSketchTypeProperties? openXmlElement, Boolean? value)
   {
     if (openXmlElement != null)
     {
       if (value == false)
       {
-        var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2021.Drawing.SketchyShapes.LineSketchFreehandEmpty>();
+        var itemElement = openXmlElement.GetFirstChild<LineSketchFreehandEmpty>();
         if (itemElement != null)
           itemElement.Remove();
       }
       if (value == true)
       {
-        var itemElement = new DocumentFormat.OpenXml.Office2021.Drawing.SketchyShapes.LineSketchFreehandEmpty();
+        var itemElement = new LineSketchFreehandEmpty();
         openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
+
   /// <summary>
-  /// LineSketchScribbleEmpty.
+  ///   LineSketchScribbleEmpty.
   /// </summary>
-  public static Boolean? GetLineSketchScribbleEmpty(DocumentFormat.OpenXml.Office2021.Drawing.SketchyShapes.LineSketchTypeProperties? openXmlElement)
+  public static Boolean? GetLineSketchScribbleEmpty(LineSketchTypeProperties? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2021.Drawing.SketchyShapes.LineSketchScribbleEmpty>();
+      var itemElement = openXmlElement.GetFirstChild<LineSketchScribbleEmpty>();
       return itemElement != null;
     }
     return null;
   }
-  
-  public static void SetLineSketchScribbleEmpty(DocumentFormat.OpenXml.Office2021.Drawing.SketchyShapes.LineSketchTypeProperties? openXmlElement, Boolean? value)
+
+  public static void SetLineSketchScribbleEmpty(LineSketchTypeProperties? openXmlElement, Boolean? value)
   {
     if (openXmlElement != null)
     {
       if (value == false)
       {
-        var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2021.Drawing.SketchyShapes.LineSketchScribbleEmpty>();
+        var itemElement = openXmlElement.GetFirstChild<LineSketchScribbleEmpty>();
         if (itemElement != null)
           itemElement.Remove();
       }
       if (value == true)
       {
-        var itemElement = new DocumentFormat.OpenXml.Office2021.Drawing.SketchyShapes.LineSketchScribbleEmpty();
+        var itemElement = new LineSketchScribbleEmpty();
         openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static DocumentModel.Drawings.LineSketchTypeProperties? CreateModelElement(DocumentFormat.OpenXml.Office2021.Drawing.SketchyShapes.LineSketchTypeProperties? openXmlElement)
+
+  public static DocumentModel.Drawings.LineSketchTypeProperties? CreateModelElement(LineSketchTypeProperties? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -142,9 +144,9 @@ public static class LineSketchTypePropertiesConverter
     }
     return null;
   }
-  
+
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.LineSketchTypeProperties? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Office2021.Drawing.SketchyShapes.LineSketchTypeProperties, new()
+    where OpenXmlElementType : LineSketchTypeProperties, new()
   {
     if (value != null)
     {

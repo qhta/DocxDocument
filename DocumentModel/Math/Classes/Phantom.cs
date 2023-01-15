@@ -1,18 +1,17 @@
 namespace DocumentModel.Math;
 
 /// <summary>
-/// Phantom Function.
+///   Phantom Function.
 /// </summary>
-public partial class Phantom
+public class Phantom
 {
   /// <summary>
-  /// Phantom Properties.
+  ///   Phantom Properties.
   /// </summary>
-  public DocumentModel.Math.PhantomProperties? PhantomProperties { get; set; }
-  
+  public PhantomProperties? PhantomProperties { get; set; }
+
   /// <summary>
-  /// Base.
+  ///   Base.
   /// </summary>
-  public DocumentModel.Math.Base? Base { get; set; }
-  
+  public Base? Base { get; set; }
 }

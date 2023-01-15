@@ -1,22 +1,25 @@
+using DocumentModel.Drawings;
+using LiveFeedProperties = DocumentFormat.OpenXml.Office2021.Drawing.Livefeed.LiveFeedProperties;
+
 namespace DocumentModel.OpenXml.Drawings;
 
 /// <summary>
-/// Defines the LiveFeedProperties Class.
+///   Defines the LiveFeedProperties Class.
 /// </summary>
 public static class LiveFeedPropertiesConverter
 {
   /// <summary>
-  /// LiveFeedBackgroundProperties.
+  ///   LiveFeedBackgroundProperties.
   /// </summary>
-  public static DocumentModel.Drawings.LiveFeedBackgroundProperties? GetLiveFeedBackgroundProperties(DocumentFormat.OpenXml.Office2021.Drawing.Livefeed.LiveFeedProperties? openXmlElement)
+  public static LiveFeedBackgroundProperties? GetLiveFeedBackgroundProperties(LiveFeedProperties? openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office2021.Drawing.Livefeed.LiveFeedBackgroundProperties>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.LiveFeedBackgroundPropertiesConverter.CreateModelElement(itemElement);
+      return LiveFeedBackgroundPropertiesConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetLiveFeedBackgroundProperties(DocumentFormat.OpenXml.Office2021.Drawing.Livefeed.LiveFeedProperties? openXmlElement, DocumentModel.Drawings.LiveFeedBackgroundProperties? value)
+
+  public static void SetLiveFeedBackgroundProperties(LiveFeedProperties? openXmlElement, LiveFeedBackgroundProperties? value)
   {
     if (openXmlElement != null)
     {
@@ -25,25 +28,25 @@ public static class LiveFeedPropertiesConverter
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Drawings.LiveFeedBackgroundPropertiesConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2021.Drawing.Livefeed.LiveFeedBackgroundProperties>(value);
+        itemElement = LiveFeedBackgroundPropertiesConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2021.Drawing.Livefeed.LiveFeedBackgroundProperties>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
+
   /// <summary>
-  /// OfficeArtExtensionList.
+  ///   OfficeArtExtensionList.
   /// </summary>
-  public static DocumentModel.Drawings.OfficeArtExtensionList? GetOfficeArtExtensionList(DocumentFormat.OpenXml.Office2021.Drawing.Livefeed.LiveFeedProperties? openXmlElement)
+  public static DocumentModel.Drawings.OfficeArtExtensionList? GetOfficeArtExtensionList(LiveFeedProperties? openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office2021.Drawing.Livefeed.OfficeArtExtensionList>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.OfficeArtExtensionListConverter.CreateModelElement(itemElement);
+      return OfficeArtExtensionListConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetOfficeArtExtensionList(DocumentFormat.OpenXml.Office2021.Drawing.Livefeed.LiveFeedProperties? openXmlElement, DocumentModel.Drawings.OfficeArtExtensionList? value)
+
+  public static void SetOfficeArtExtensionList(LiveFeedProperties? openXmlElement, DocumentModel.Drawings.OfficeArtExtensionList? value)
   {
     if (openXmlElement != null)
     {
@@ -52,14 +55,14 @@ public static class LiveFeedPropertiesConverter
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Drawings.OfficeArtExtensionListConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2021.Drawing.Livefeed.OfficeArtExtensionList>(value);
+        itemElement = OfficeArtExtensionListConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2021.Drawing.Livefeed.OfficeArtExtensionList>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static DocumentModel.Drawings.LiveFeedProperties? CreateModelElement(DocumentFormat.OpenXml.Office2021.Drawing.Livefeed.LiveFeedProperties? openXmlElement)
+
+  public static DocumentModel.Drawings.LiveFeedProperties? CreateModelElement(LiveFeedProperties? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -70,9 +73,9 @@ public static class LiveFeedPropertiesConverter
     }
     return null;
   }
-  
+
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.LiveFeedProperties? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Office2021.Drawing.Livefeed.LiveFeedProperties, new()
+    where OpenXmlElementType : LiveFeedProperties, new()
   {
     if (value != null)
     {

@@ -1,18 +1,17 @@
 namespace DocumentModel.Wordprocessing;
 
 /// <summary>
-/// Single Automatic Captioning Setting.
+///   Single Automatic Captioning Setting.
 /// </summary>
-public partial class AutoCaption
+public class AutoCaption
 {
   /// <summary>
-  /// Identifier of Object to be Automatically Captioned
+  ///   Identifier of Object to be Automatically Captioned
   /// </summary>
   public String? Name { get; set; }
-  
+
   /// <summary>
-  /// Caption Used for Automatic Captioning
+  ///   Caption Used for Automatic Captioning
   /// </summary>
   public String? Caption { get; set; }
-  
 }

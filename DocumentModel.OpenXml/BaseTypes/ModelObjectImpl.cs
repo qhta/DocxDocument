@@ -1,14 +1,14 @@
 ﻿using System.Reflection;
 
-using DocumentFormat.OpenXml.Office.PowerPoint.Y2021.M06.Main;
-
 namespace DocumentModel.OpenXml;
 
 public class ModelObjectImpl
 {
-  public static Type[] ExtraTypes = new Type[]
-    { typeof(Variant) };
-  public ModelObjectImpl() { }
+  public static Type[] ExtraTypes = { typeof(Variant) };
+
+  public ModelObjectImpl()
+  {
+  }
 
   public ModelObjectImpl(object openXmlElement)
   {
@@ -18,20 +18,19 @@ public class ModelObjectImpl
   [XmlIgnore]
   public object? _OpenXmlElement { get; protected set; }
 
-
   public virtual object? GetInstance()
   {
-    var typeName = this.GetType().FullName?.Replace("OpenXml.", "");
+    var typeName = GetType().FullName?.Replace("OpenXml.", "");
     if (typeName != null)
     {
       var newType = Assembly.Load("DocumentModel").GetType(typeName);
       if (newType != null)
       {
         var textWriter = new StringWriter();
-        var serializer = new XmlSerializer(this.GetType(), ExtraTypes);
+        var serializer = new XmlSerializer(GetType(), ExtraTypes);
         serializer.Serialize(textWriter, this);
         textWriter.Flush();
-        string str = textWriter.ToString();
+        var str = textWriter.ToString();
 
         serializer = new XmlSerializer(newType, ExtraTypes);
         var textReader = new StringReader(str);
@@ -40,7 +39,9 @@ public class ModelObjectImpl
       }
     }
     else
+    {
       throw new InvalidOperationException($"Type {typeName} not found");
+    }
     return null;
   }
 

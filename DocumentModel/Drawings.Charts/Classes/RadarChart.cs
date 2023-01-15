@@ -1,26 +1,25 @@
 namespace DocumentModel.Drawings.Charts;
 
 /// <summary>
-/// Radar Charts.
+///   Radar Charts.
 /// </summary>
-public partial class RadarChart
+public class RadarChart
 {
   /// <summary>
-  /// RadarStyle.
+  ///   RadarStyle.
   /// </summary>
-  public DocumentModel.Drawings.Charts.RadarStyleKind? RadarStyle { get; set; }
-  
+  public RadarStyleKind? RadarStyle { get; set; }
+
   /// <summary>
-  /// VaryColors.
+  ///   VaryColors.
   /// </summary>
   public Boolean? VaryColors { get; set; }
-  
-  public Collection<DocumentModel.Drawings.Charts.RadarChartSeries>? RadarChartSerieses { get; set; }
-  
-  public DocumentModel.Drawings.Charts.DataLabels? DataLabels { get; set; }
-  
-  public Collection<System.UInt32>? AxisIds { get; set; }
-  
-  public DocumentModel.Drawings.Charts.RadarChartExtensionList? RadarChartExtensionList { get; set; }
-  
+
+  public Collection<RadarChartSeries>? RadarChartSerieses { get; set; }
+
+  public DataLabels? DataLabels { get; set; }
+
+  public Collection<UInt32>? AxisIds { get; set; }
+
+  public RadarChartExtensionList? RadarChartExtensionList { get; set; }
 }

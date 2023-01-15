@@ -1,118 +1,117 @@
 namespace DocumentModel.Drawings;
 
 /// <summary>
-/// Defines the TextCharacterPropertiesType Class.
+///   Defines the TextCharacterPropertiesType Class.
 /// </summary>
-public partial class TextCharacterPropertiesType
+public class TextCharacterPropertiesType
 {
   /// <summary>
-  /// Gets or sets the  value. It is only available for backwards compatibility
+  ///   Gets or sets the  value. It is only available for backwards compatibility
   /// </summary>
   public Boolean? SmtClean { get; set; }
-  
+
   /// <summary>
-  /// Gets or sets the  value. It is only available for backwards compatibility
+  ///   Gets or sets the  value. It is only available for backwards compatibility
   /// </summary>
   public UInt32? SmtId { get; set; }
-  
+
   /// <summary>
-  /// kumimoji
+  ///   kumimoji
   /// </summary>
   public Boolean? Kumimoji { get; set; }
-  
+
   /// <summary>
-  /// lang
+  ///   lang
   /// </summary>
   public String? Language { get; set; }
-  
+
   /// <summary>
-  /// altLang
+  ///   altLang
   /// </summary>
   public String? AlternativeLanguage { get; set; }
-  
+
   /// <summary>
-  /// sz
+  ///   sz
   /// </summary>
   public Int32? FontSize { get; set; }
-  
+
   /// <summary>
-  /// b
+  ///   b
   /// </summary>
   public Boolean? Bold { get; set; }
-  
+
   /// <summary>
-  /// i
+  ///   i
   /// </summary>
   public Boolean? Italic { get; set; }
-  
+
   /// <summary>
-  /// u
+  ///   u
   /// </summary>
-  public DocumentModel.Drawings.TextUnderlineKind? Underline { get; set; }
-  
+  public TextUnderlineKind? Underline { get; set; }
+
   /// <summary>
-  /// strike
+  ///   strike
   /// </summary>
-  public DocumentModel.Drawings.TextStrikeKind? Strike { get; set; }
-  
+  public TextStrikeKind? Strike { get; set; }
+
   /// <summary>
-  /// kern
+  ///   kern
   /// </summary>
   public Int32? Kerning { get; set; }
-  
+
   /// <summary>
-  /// cap
+  ///   cap
   /// </summary>
-  public DocumentModel.Drawings.TextCapsKind? Capital { get; set; }
-  
+  public TextCapsKind? Capital { get; set; }
+
   /// <summary>
-  /// spc
+  ///   spc
   /// </summary>
   public Int32? Spacing { get; set; }
-  
+
   /// <summary>
-  /// normalizeH
+  ///   normalizeH
   /// </summary>
   public Boolean? NormalizeHeight { get; set; }
-  
+
   /// <summary>
-  /// baseline
+  ///   baseline
   /// </summary>
   public Int32? Baseline { get; set; }
-  
+
   /// <summary>
-  /// noProof
+  ///   noProof
   /// </summary>
   public Boolean? NoProof { get; set; }
-  
+
   /// <summary>
-  /// dirty
+  ///   dirty
   /// </summary>
   public Boolean? Dirty { get; set; }
-  
+
   /// <summary>
-  /// err
+  ///   err
   /// </summary>
   public Boolean? SpellingError { get; set; }
-  
+
   /// <summary>
-  /// smtClean
+  ///   smtClean
   /// </summary>
   public Boolean? SmartTagClean { get; set; }
-  
+
   /// <summary>
-  /// smtId
+  ///   smtId
   /// </summary>
   public UInt32? SmartTagId { get; set; }
-  
+
   /// <summary>
-  /// bmk
+  ///   bmk
   /// </summary>
   public String? Bookmark { get; set; }
-  
+
   /// <summary>
-  /// Outline.
+  ///   Outline.
   /// </summary>
-  public DocumentModel.Drawings.Outline? Outline { get; set; }
-  
+  public Outline? Outline { get; set; }
 }

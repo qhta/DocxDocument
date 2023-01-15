@@ -1,18 +1,17 @@
 namespace DocumentModel.Drawings.Charts;
 
 /// <summary>
-/// Series Text.
+///   Series Text.
 /// </summary>
-public partial class SeriesText
+public class SeriesText
 {
   /// <summary>
-  /// StringReference.
+  ///   StringReference.
   /// </summary>
-  public DocumentModel.Drawings.Charts.StringReference? StringReference { get; set; }
-  
+  public StringReference? StringReference { get; set; }
+
   /// <summary>
-  /// NumericValue.
+  ///   NumericValue.
   /// </summary>
   public String? NumericValue { get; set; }
-  
 }

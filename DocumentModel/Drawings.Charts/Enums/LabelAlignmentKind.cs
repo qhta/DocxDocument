@@ -1,23 +1,22 @@
 namespace DocumentModel.Drawings.Charts;
 
 /// <summary>
-/// Label Alignment
+///   Label Alignment
 /// </summary>
 public enum LabelAlignmentKind
 {
   /// <summary>
-  /// Center.
+  ///   Center.
   /// </summary>
   Center,
-  
+
   /// <summary>
-  /// Left.
+  ///   Left.
   /// </summary>
   Left,
-  
+
   /// <summary>
-  /// Right.
+  ///   Right.
   /// </summary>
-  Right,
-  
+  Right
 }

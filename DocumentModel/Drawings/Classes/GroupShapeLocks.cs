@@ -1,48 +1,47 @@
 namespace DocumentModel.Drawings;
 
 /// <summary>
-/// Defines the GroupShapeLocks Class.
+///   Defines the GroupShapeLocks Class.
 /// </summary>
-public partial class GroupShapeLocks
+public class GroupShapeLocks
 {
   /// <summary>
-  /// Disallow Shape Grouping
+  ///   Disallow Shape Grouping
   /// </summary>
   public Boolean? NoGrouping { get; set; }
-  
+
   /// <summary>
-  /// Disallow Shape Ungrouping
+  ///   Disallow Shape Ungrouping
   /// </summary>
   public Boolean? NoUngrouping { get; set; }
-  
+
   /// <summary>
-  /// Disallow Shape Selection
+  ///   Disallow Shape Selection
   /// </summary>
   public Boolean? NoSelection { get; set; }
-  
+
   /// <summary>
-  /// Disallow Shape Rotation
+  ///   Disallow Shape Rotation
   /// </summary>
   public Boolean? NoRotation { get; set; }
-  
+
   /// <summary>
-  /// Disallow Aspect Ratio Change
+  ///   Disallow Aspect Ratio Change
   /// </summary>
   public Boolean? NoChangeAspect { get; set; }
-  
+
   /// <summary>
-  /// Disallow Moving Shape
+  ///   Disallow Moving Shape
   /// </summary>
   public Boolean? NoMove { get; set; }
-  
+
   /// <summary>
-  /// Disallow Shape Resizing
+  ///   Disallow Shape Resizing
   /// </summary>
   public Boolean? NoResize { get; set; }
-  
+
   /// <summary>
-  /// ExtensionList.
+  ///   ExtensionList.
   /// </summary>
-  public DocumentModel.Drawings.ExtensionList? ExtensionList { get; set; }
-  
+  public ExtensionList? ExtensionList { get; set; }
 }

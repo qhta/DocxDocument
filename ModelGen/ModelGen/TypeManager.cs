@@ -221,7 +221,7 @@ public static class TypeManager
       TypeReflector.WaitForReflection(typeInfo);
     return TypeManager.GetRelatedTypes(typeInfo, Semantics.Include).ToArray();
   }
-  public static TypeInfo[] GetGenericArgTypes(this TypeInfo typeInfo)
+  public static TypeInfo[] GetGenericTypeArguments(this TypeInfo typeInfo)
   {
     if (!typeInfo.IsReflected)
       TypeReflector.WaitForReflection(typeInfo);
@@ -274,7 +274,7 @@ public static class TypeManager
       if (typeInfo.IsReflected)
       {
         if (typeInfo.IsConstructedGenericType)
-          result += GetGenericParamsNames(typeInfo.GetGenericArgTypes());
+          result += GetGenericParamsNames(typeInfo.GetGenericTypeArguments());
         if (typeInfo.IsGenericTypeDefinition)
           result += GetGenericParamsNames(typeInfo.GetGenericParamTypes());
       }

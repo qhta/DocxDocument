@@ -1,28 +1,30 @@
+using DocumentModel.Wordprocessing.DrawingGroup;
+using DocumentModel.Wordprocessing.DrawingShape;
+
 namespace DocumentModel.Wordprocessing.DrawingCanvas;
 
 /// <summary>
-/// Defines the WordprocessingCanvas Class.
+///   Defines the WordprocessingCanvas Class.
 /// </summary>
-public partial class WordprocessingCanvas
+public class WordprocessingCanvas
 {
   /// <summary>
-  /// BackgroundFormatting.
+  ///   BackgroundFormatting.
   /// </summary>
-  public DocumentModel.Wordprocessing.DrawingCanvas.BackgroundFormatting? BackgroundFormatting { get; set; }
-  
+  public BackgroundFormatting? BackgroundFormatting { get; set; }
+
   /// <summary>
-  /// WholeFormatting.
+  ///   WholeFormatting.
   /// </summary>
-  public DocumentModel.Wordprocessing.DrawingCanvas.WholeFormatting? WholeFormatting { get; set; }
-  
-  public DocumentModel.Wordprocessing.DrawingShape.WordprocessingShape? WordprocessingShape { get; set; }
-  
+  public WholeFormatting? WholeFormatting { get; set; }
+
+  public WordprocessingShape? WordprocessingShape { get; set; }
+
   public DocumentModel.Drawings.Pictures.Picture? Picture { get; set; }
-  
-  public DocumentModel.Wordprocessing.DrawingGroup.WordprocessingGroup? WordprocessingGroup { get; set; }
-  
-  public DocumentModel.Wordprocessing.DrawingCanvas.GraphicFrameType? GraphicFrameType { get; set; }
-  
-  public DocumentModel.Wordprocessing.DrawingCanvas.OfficeArtExtensionList? OfficeArtExtensionList { get; set; }
-  
+
+  public WordprocessingGroup? WordprocessingGroup { get; set; }
+
+  public GraphicFrameType? GraphicFrameType { get; set; }
+
+  public OfficeArtExtensionList? OfficeArtExtensionList { get; set; }
 }

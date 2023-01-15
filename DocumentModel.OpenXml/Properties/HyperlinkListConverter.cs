@@ -1,33 +1,33 @@
 namespace DocumentModel.OpenXml.Properties;
 
 /// <summary>
-/// Hyperlink List.
+///   Hyperlink List.
 /// </summary>
 public static class HyperlinkListConverter
 {
-  public static DocumentModel.VectorVariant? GetVTVector(DocumentFormat.OpenXml.ExtendedProperties.HyperlinkList? openXmlElement)
+  public static VectorVariant? GetVTVector(DocumentFormat.OpenXml.ExtendedProperties.HyperlinkList? openXmlElement)
   {
     return VTVectorConverter.CreateModelElement(openXmlElement?.VTVector);
   }
 
-  public static void SetVTVector(DocumentFormat.OpenXml.ExtendedProperties.HyperlinkList? openXmlElement, DocumentModel.VectorVariant? value)
+  public static void SetVTVector(DocumentFormat.OpenXml.ExtendedProperties.HyperlinkList? openXmlElement, VectorVariant? value)
   {
     if (openXmlElement != null)
       openXmlElement.VTVector = VTVectorConverter.CreateOpenXmlElement(value);
   }
 
-  public static DocumentModel.StringList? GetStringList(DocumentFormat.OpenXml.ExtendedProperties.HyperlinkList? openXmlElement)
+  public static StringList? GetStringList(DocumentFormat.OpenXml.ExtendedProperties.HyperlinkList? openXmlElement)
   {
     return VTVectorConverter.GetStringList(openXmlElement?.VTVector);
   }
 
-  public static void SetStringList(DocumentFormat.OpenXml.ExtendedProperties.HyperlinkList? openXmlElement, DocumentModel.StringList? value)
+  public static void SetStringList(DocumentFormat.OpenXml.ExtendedProperties.HyperlinkList? openXmlElement, StringList? value)
   {
     if (openXmlElement != null)
       openXmlElement.VTVector = VTVectorConverter.CreateOpenXmlElement(value);
   }
 
-  public static DocumentModel.StringList? CreateModelElement(DocumentFormat.OpenXml.ExtendedProperties.HyperlinkList? openXmlElement)
+  public static StringList? CreateModelElement(DocumentFormat.OpenXml.ExtendedProperties.HyperlinkList? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -37,8 +37,7 @@ public static class HyperlinkListConverter
     return null;
   }
 
-
-  public static DocumentFormat.OpenXml.ExtendedProperties.HyperlinkList? CreateOpenXmlElement(DocumentModel.VectorVariant? value)
+  public static DocumentFormat.OpenXml.ExtendedProperties.HyperlinkList? CreateOpenXmlElement(VectorVariant? value)
   {
     if (value != null)
     {
@@ -49,7 +48,7 @@ public static class HyperlinkListConverter
     return null;
   }
 
-  public static DocumentFormat.OpenXml.ExtendedProperties.HyperlinkList? CreateOpenXmlElement(DocumentModel.StringList? value)
+  public static DocumentFormat.OpenXml.ExtendedProperties.HyperlinkList? CreateOpenXmlElement(StringList? value)
   {
     if (value != null)
     {

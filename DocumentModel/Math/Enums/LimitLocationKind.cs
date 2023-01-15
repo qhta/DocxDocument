@@ -1,18 +1,17 @@
 namespace DocumentModel.Math;
 
 /// <summary>
-/// Defines the LimitLocationValues enumeration.
+///   Defines the LimitLocationValues enumeration.
 /// </summary>
 public enum LimitLocationKind
 {
   /// <summary>
-  /// Under-Over location.
+  ///   Under-Over location.
   /// </summary>
   UnderOver,
-  
+
   /// <summary>
-  /// Subscript-Superscript location.
+  ///   Subscript-Superscript location.
   /// </summary>
-  SubscriptSuperscript,
-  
+  SubscriptSuperscript
 }

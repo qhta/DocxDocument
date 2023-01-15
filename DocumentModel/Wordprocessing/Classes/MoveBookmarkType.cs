@@ -1,43 +1,42 @@
 namespace DocumentModel.Wordprocessing;
 
 /// <summary>
-/// Defines the MoveBookmarkType Class.
+///   Defines the MoveBookmarkType Class.
 /// </summary>
-public partial class MoveBookmarkType
+public class MoveBookmarkType
 {
   /// <summary>
-  /// author
+  ///   author
   /// </summary>
   public String? Author { get; set; }
-  
+
   /// <summary>
-  /// date
+  ///   date
   /// </summary>
   public DateTime? Date { get; set; }
-  
+
   /// <summary>
-  /// name
+  ///   name
   /// </summary>
   public String? Name { get; set; }
-  
+
   /// <summary>
-  /// colFirst
+  ///   colFirst
   /// </summary>
   public Int32? ColumnFirst { get; set; }
-  
+
   /// <summary>
-  /// colLast
+  ///   colLast
   /// </summary>
   public Int32? ColumnLast { get; set; }
-  
+
   /// <summary>
-  /// displacedByCustomXml
+  ///   displacedByCustomXml
   /// </summary>
-  public DocumentModel.Wordprocessing.DisplacedByCustomXmlKind? DisplacedByCustomXml { get; set; }
-  
+  public DisplacedByCustomXmlKind? DisplacedByCustomXml { get; set; }
+
   /// <summary>
-  /// Annotation Identifier
+  ///   Annotation Identifier
   /// </summary>
   public String? Id { get; set; }
-  
 }

@@ -1,23 +1,22 @@
 namespace DocumentModel.Wordprocessing;
 
 /// <summary>
-/// Defines the SdtContentCheckBox Class.
+///   Defines the SdtContentCheckBox Class.
 /// </summary>
-public partial class SdtContentCheckBox
+public class SdtContentCheckBox
 {
   /// <summary>
-  /// Checked.
+  ///   Checked.
   /// </summary>
-  public DocumentModel.Wordprocessing.OnOffKind? Checked { get; set; }
-  
+  public OnOffKind? Checked { get; set; }
+
   /// <summary>
-  /// CheckedState.
+  ///   CheckedState.
   /// </summary>
-  public DocumentModel.Wordprocessing.CheckBoxSymbolType? CheckedState { get; set; }
-  
+  public CheckBoxSymbolType? CheckedState { get; set; }
+
   /// <summary>
-  /// UncheckedState.
+  ///   UncheckedState.
   /// </summary>
-  public DocumentModel.Wordprocessing.CheckBoxSymbolType? UncheckedState { get; set; }
-  
+  public CheckBoxSymbolType? UncheckedState { get; set; }
 }

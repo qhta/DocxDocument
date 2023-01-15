@@ -1,19 +1,22 @@
+using DocumentModel.Wordprocessing;
+using SdtEndCharProperties = DocumentFormat.OpenXml.Wordprocessing.SdtEndCharProperties;
+
 namespace DocumentModel.OpenXml.Wordprocessing;
 
 /// <summary>
-/// Structured Document Tag End Character Properties.
+///   Structured Document Tag End Character Properties.
 /// </summary>
 public static class SdtEndCharPropertiesConverter
 {
-  public static DocumentModel.Wordprocessing.RunProperties? GetRunProperties(DocumentFormat.OpenXml.Wordprocessing.SdtEndCharProperties? openXmlElement)
+  public static RunProperties? GetRunProperties(SdtEndCharProperties? openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.RunProperties>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Wordprocessing.RunPropertiesConverter.CreateModelElement(itemElement);
+      return RunPropertiesConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetRunProperties(DocumentFormat.OpenXml.Wordprocessing.SdtEndCharProperties? openXmlElement, DocumentModel.Wordprocessing.RunProperties? value)
+
+  public static void SetRunProperties(SdtEndCharProperties? openXmlElement, RunProperties? value)
   {
     if (openXmlElement != null)
     {
@@ -22,14 +25,14 @@ public static class SdtEndCharPropertiesConverter
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Wordprocessing.RunPropertiesConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.RunProperties>(value);
+        itemElement = RunPropertiesConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.RunProperties>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static DocumentModel.Wordprocessing.SdtEndCharProperties? CreateModelElement(DocumentFormat.OpenXml.Wordprocessing.SdtEndCharProperties? openXmlElement)
+
+  public static DocumentModel.Wordprocessing.SdtEndCharProperties? CreateModelElement(SdtEndCharProperties? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -39,9 +42,9 @@ public static class SdtEndCharPropertiesConverter
     }
     return null;
   }
-  
+
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.SdtEndCharProperties? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Wordprocessing.SdtEndCharProperties, new()
+    where OpenXmlElementType : SdtEndCharProperties, new()
   {
     if (value != null)
     {

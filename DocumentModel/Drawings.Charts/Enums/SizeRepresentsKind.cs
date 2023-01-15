@@ -1,18 +1,17 @@
 namespace DocumentModel.Drawings.Charts;
 
 /// <summary>
-/// Size Represents
+///   Size Represents
 /// </summary>
 public enum SizeRepresentsKind
 {
   /// <summary>
-  /// Bubble Size Represents Area.
+  ///   Bubble Size Represents Area.
   /// </summary>
   Area,
-  
+
   /// <summary>
-  /// Bubble Size Represents Width.
+  ///   Bubble Size Represents Width.
   /// </summary>
-  Width,
-  
+  Width
 }

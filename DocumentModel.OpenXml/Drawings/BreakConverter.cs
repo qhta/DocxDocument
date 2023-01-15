@@ -1,22 +1,25 @@
+using DocumentModel.Drawings;
+using Break = DocumentFormat.OpenXml.Drawing.Break;
+
 namespace DocumentModel.OpenXml.Drawings;
 
 /// <summary>
-/// Text Line Break.
+///   Text Line Break.
 /// </summary>
 public static class BreakConverter
 {
   /// <summary>
-  /// Text Run Properties.
+  ///   Text Run Properties.
   /// </summary>
-  public static DocumentModel.Drawings.RunProperties? GetRunProperties(DocumentFormat.OpenXml.Drawing.Break? openXmlElement)
+  public static RunProperties? GetRunProperties(Break? openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.RunProperties>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.RunPropertiesConverter.CreateModelElement(itemElement);
+      return RunPropertiesConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetRunProperties(DocumentFormat.OpenXml.Drawing.Break? openXmlElement, DocumentModel.Drawings.RunProperties? value)
+
+  public static void SetRunProperties(Break? openXmlElement, RunProperties? value)
   {
     if (openXmlElement != null)
     {
@@ -25,14 +28,14 @@ public static class BreakConverter
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Drawings.RunPropertiesConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.RunProperties>(value);
+        itemElement = RunPropertiesConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.RunProperties>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static DocumentModel.Drawings.Break? CreateModelElement(DocumentFormat.OpenXml.Drawing.Break? openXmlElement)
+
+  public static DocumentModel.Drawings.Break? CreateModelElement(Break? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -42,9 +45,9 @@ public static class BreakConverter
     }
     return null;
   }
-  
+
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.Break? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.Break, new()
+    where OpenXmlElementType : Break, new()
   {
     if (value != null)
     {

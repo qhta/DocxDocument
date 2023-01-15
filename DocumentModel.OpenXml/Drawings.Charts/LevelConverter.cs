@@ -1,18 +1,21 @@
+using DocumentModel.Drawings.Charts;
+using Level = DocumentFormat.OpenXml.Drawing.Charts.Level;
+
 namespace DocumentModel.OpenXml.Drawings.Charts;
 
 /// <summary>
-/// Level.
+///   Level.
 /// </summary>
 public static class LevelConverter
 {
-  public static System.Collections.ObjectModel.Collection<DocumentModel.Drawings.Charts.StringPoint>? GetStringPoints(DocumentFormat.OpenXml.Drawing.Charts.Level? openXmlElement)
+  public static Collection<StringPoint>? GetStringPoints(Level? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var collection = new System.Collections.ObjectModel.Collection<DocumentModel.Drawings.Charts.StringPoint>();
+      var collection = new Collection<StringPoint>();
       foreach (var item in openXmlElement.Elements<DocumentFormat.OpenXml.Drawing.Charts.StringPoint>())
       {
-        var newItem = DocumentModel.OpenXml.Drawings.Charts.StringPointConverter.CreateModelElement(item);
+        var newItem = StringPointConverter.CreateModelElement(item);
         if (newItem != null)
           collection.Add(newItem);
       }
@@ -20,25 +23,23 @@ public static class LevelConverter
     }
     return null;
   }
-  
-  public static void SetStringPoints(DocumentFormat.OpenXml.Drawing.Charts.Level? openXmlElement, System.Collections.ObjectModel.Collection<DocumentModel.Drawings.Charts.StringPoint>? value)
+
+  public static void SetStringPoints(Level? openXmlElement, Collection<StringPoint>? value)
   {
     if (openXmlElement != null)
     {
       openXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Drawing.Charts.StringPoint>();
       if (value != null)
-      {
         foreach (var item in value)
         {
-          var newItem = DocumentModel.OpenXml.Drawings.Charts.StringPointConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Charts.StringPoint>(item);
+          var newItem = StringPointConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Charts.StringPoint>(item);
           if (newItem != null)
             openXmlElement.AddChild(newItem);
         }
-      }
     }
   }
-  
-  public static DocumentModel.Drawings.Charts.Level? CreateModelElement(DocumentFormat.OpenXml.Drawing.Charts.Level? openXmlElement)
+
+  public static DocumentModel.Drawings.Charts.Level? CreateModelElement(Level? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -48,9 +49,9 @@ public static class LevelConverter
     }
     return null;
   }
-  
+
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.Charts.Level? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.Charts.Level, new()
+    where OpenXmlElementType : Level, new()
   {
     if (value != null)
     {

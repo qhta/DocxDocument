@@ -1,38 +1,37 @@
 namespace DocumentModel.Math;
 
 /// <summary>
-/// Equation Array Properties.
+///   Equation Array Properties.
 /// </summary>
-public partial class EquationArrayProperties
+public class EquationArrayProperties
 {
   /// <summary>
-  /// Equation Array Base Justification.
+  ///   Equation Array Base Justification.
   /// </summary>
-  public DocumentModel.Math.VerticalAlignmentKind? BaseJustification { get; set; }
-  
+  public VerticalAlignmentKind? BaseJustification { get; set; }
+
   /// <summary>
-  /// Maximum Distribution.
+  ///   Maximum Distribution.
   /// </summary>
-  public DocumentModel.Math.BooleanKind? MaxDistribution { get; set; }
-  
+  public BooleanKind? MaxDistribution { get; set; }
+
   /// <summary>
-  /// Object Distribution.
+  ///   Object Distribution.
   /// </summary>
-  public DocumentModel.Math.BooleanKind? ObjectDistribution { get; set; }
-  
+  public BooleanKind? ObjectDistribution { get; set; }
+
   /// <summary>
-  /// Row Spacing Rule.
+  ///   Row Spacing Rule.
   /// </summary>
   public Int64? RowSpacingRule { get; set; }
-  
+
   /// <summary>
-  /// Row Spacing (Equation Array).
+  ///   Row Spacing (Equation Array).
   /// </summary>
   public UInt16? RowSpacing { get; set; }
-  
+
   /// <summary>
-  /// ControlProperties.
+  ///   ControlProperties.
   /// </summary>
-  public DocumentModel.Math.ControlProperties? ControlProperties { get; set; }
-  
+  public ControlProperties? ControlProperties { get; set; }
 }

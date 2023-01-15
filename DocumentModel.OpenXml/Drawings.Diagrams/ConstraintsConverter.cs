@@ -1,18 +1,21 @@
+using DocumentModel.Drawings.Diagrams;
+using Constraints = DocumentFormat.OpenXml.Drawing.Diagrams.Constraints;
+
 namespace DocumentModel.OpenXml.Drawings.Diagrams;
 
 /// <summary>
-/// Constraint List.
+///   Constraint List.
 /// </summary>
 public static class ConstraintsConverter
 {
-  public static System.Collections.ObjectModel.Collection<DocumentModel.Drawings.Diagrams.Constraint>? GetItems(DocumentFormat.OpenXml.Drawing.Diagrams.Constraints? openXmlElement)
+  public static Collection<Constraint>? GetItems(Constraints? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var collection = new System.Collections.ObjectModel.Collection<DocumentModel.Drawings.Diagrams.Constraint>();
+      var collection = new Collection<Constraint>();
       foreach (var item in openXmlElement.Elements<DocumentFormat.OpenXml.Drawing.Diagrams.Constraint>())
       {
-        var newItem = DocumentModel.OpenXml.Drawings.Diagrams.ConstraintConverter.CreateModelElement(item);
+        var newItem = ConstraintConverter.CreateModelElement(item);
         if (newItem != null)
           collection.Add(newItem);
       }
@@ -20,25 +23,23 @@ public static class ConstraintsConverter
     }
     return null;
   }
-  
-  public static void SetItems(DocumentFormat.OpenXml.Drawing.Diagrams.Constraints? openXmlElement, System.Collections.ObjectModel.Collection<DocumentModel.Drawings.Diagrams.Constraint>? value)
+
+  public static void SetItems(Constraints? openXmlElement, Collection<Constraint>? value)
   {
     if (openXmlElement != null)
     {
       openXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Drawing.Diagrams.Constraint>();
       if (value != null)
-      {
         foreach (var item in value)
         {
-          var newItem = DocumentModel.OpenXml.Drawings.Diagrams.ConstraintConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Diagrams.Constraint>(item);
+          var newItem = ConstraintConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Diagrams.Constraint>(item);
           if (newItem != null)
             openXmlElement.AddChild(newItem);
         }
-      }
     }
   }
-  
-  public static DocumentModel.Drawings.Diagrams.Constraints? CreateModelElement(DocumentFormat.OpenXml.Drawing.Diagrams.Constraints? openXmlElement)
+
+  public static DocumentModel.Drawings.Diagrams.Constraints? CreateModelElement(Constraints? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -48,9 +49,9 @@ public static class ConstraintsConverter
     }
     return null;
   }
-  
+
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.Diagrams.Constraints? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.Diagrams.Constraints, new()
+    where OpenXmlElementType : Constraints, new()
   {
     if (value != null)
     {

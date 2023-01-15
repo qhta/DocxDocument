@@ -1,13 +1,12 @@
 namespace DocumentModel.Drawings;
 
 /// <summary>
-/// Defines the ClassificationOutcome Class.
+///   Defines the ClassificationOutcome Class.
 /// </summary>
-public partial class ClassificationOutcome
+public class ClassificationOutcome
 {
   /// <summary>
-  /// classificationOutcomeType, this property is only available in Office 2021 and later.
+  ///   classificationOutcomeType, this property is only available in Office 2021 and later.
   /// </summary>
-  public DocumentModel.Drawings.ClassificationOutcomeType? ClassificationOutcomeType { get; set; }
-  
+  public ClassificationOutcomeType? ClassificationOutcomeType { get; set; }
 }

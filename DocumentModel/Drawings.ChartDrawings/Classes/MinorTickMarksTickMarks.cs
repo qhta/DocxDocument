@@ -1,10 +1,9 @@
 namespace DocumentModel.Drawings.ChartDrawings;
 
 /// <summary>
-/// Defines the MinorTickMarksTickMarks Class.
+///   Defines the MinorTickMarksTickMarks Class.
 /// </summary>
-public partial class MinorTickMarksTickMarks
+public class MinorTickMarksTickMarks
 {
-  public DocumentModel.Drawings.ChartDrawings.ExtensionList? ExtensionList { get; set; }
-  
+  public ExtensionList? ExtensionList { get; set; }
 }

@@ -1,10 +1,9 @@
 namespace DocumentModel.Drawings.Charts;
 
 /// <summary>
-/// Defines the DLblsExtensionList Class.
+///   Defines the DLblsExtensionList Class.
 /// </summary>
-public partial class DLblsExtensionList
+public class DLblsExtensionList
 {
-  public Collection<DocumentModel.Drawings.Charts.DLblsExtension>? DLblsExtensions { get; set; }
-  
+  public Collection<DLblsExtension>? DLblsExtensions { get; set; }
 }

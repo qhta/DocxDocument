@@ -1,18 +1,20 @@
+using DocumentModel.Drawings;
+
 namespace DocumentModel.OpenXml.Drawings;
 
 /// <summary>
-/// Defines the OfficeArtExtensionList Class.
+///   Defines the OfficeArtExtensionList Class.
 /// </summary>
 public static class OfficeArtExtensionList2Converter
 {
-  public static System.Collections.ObjectModel.Collection<DocumentModel.Drawings.Extension>? GetExtensions(DocumentFormat.OpenXml.Office2010.Drawing.OfficeArtExtensionList? openXmlElement)
+  public static Collection<DocumentModel.Drawings.Extension>? GetExtensions(DocumentFormat.OpenXml.Office2010.Drawing.OfficeArtExtensionList? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var collection = new System.Collections.ObjectModel.Collection<DocumentModel.Drawings.Extension>();
+      var collection = new Collection<DocumentModel.Drawings.Extension>();
       foreach (var item in openXmlElement.Elements<DocumentFormat.OpenXml.Drawing.Extension>())
       {
-        var newItem = DocumentModel.OpenXml.Drawings.ExtensionConverter.CreateModelElement(item);
+        var newItem = ExtensionConverter.CreateModelElement(item);
         if (newItem != null)
           collection.Add(newItem);
       }
@@ -20,37 +22,35 @@ public static class OfficeArtExtensionList2Converter
     }
     return null;
   }
-  
-  public static void SetExtensions(DocumentFormat.OpenXml.Office2010.Drawing.OfficeArtExtensionList? openXmlElement, System.Collections.ObjectModel.Collection<DocumentModel.Drawings.Extension>? value)
+
+  public static void SetExtensions(DocumentFormat.OpenXml.Office2010.Drawing.OfficeArtExtensionList? openXmlElement, Collection<DocumentModel.Drawings.Extension>? value)
   {
     if (openXmlElement != null)
     {
       openXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Drawing.Extension>();
       if (value != null)
-      {
         foreach (var item in value)
         {
-          var newItem = DocumentModel.OpenXml.Drawings.ExtensionConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Extension>(item);
+          var newItem = ExtensionConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Extension>(item);
           if (newItem != null)
             openXmlElement.AddChild(newItem);
         }
-      }
     }
   }
-  
-  public static DocumentModel.Drawings.OfficeArtExtensionList2? CreateModelElement(DocumentFormat.OpenXml.Office2010.Drawing.OfficeArtExtensionList? openXmlElement)
+
+  public static OfficeArtExtensionList2? CreateModelElement(DocumentFormat.OpenXml.Office2010.Drawing.OfficeArtExtensionList? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.OfficeArtExtensionList2();
+      var value = new OfficeArtExtensionList2();
       value.Extensions = GetExtensions(openXmlElement);
       return value;
     }
     return null;
   }
-  
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.OfficeArtExtensionList2? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Office2010.Drawing.OfficeArtExtensionList, new()
+
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(OfficeArtExtensionList2? value)
+    where OpenXmlElementType : DocumentFormat.OpenXml.Office2010.Drawing.OfficeArtExtensionList, new()
   {
     if (value != null)
     {

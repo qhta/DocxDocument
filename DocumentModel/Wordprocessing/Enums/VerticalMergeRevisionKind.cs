@@ -1,18 +1,17 @@
 namespace DocumentModel.Wordprocessing;
 
 /// <summary>
-/// Defines the VerticalMergeRevisionValues enumeration.
+///   Defines the VerticalMergeRevisionValues enumeration.
 /// </summary>
 public enum VerticalMergeRevisionKind
 {
   /// <summary>
-  /// Vertically Merged Cell.
+  ///   Vertically Merged Cell.
   /// </summary>
   Continue,
-  
+
   /// <summary>
-  /// Vertically Split Cell.
+  ///   Vertically Split Cell.
   /// </summary>
-  Restart,
-  
+  Restart
 }

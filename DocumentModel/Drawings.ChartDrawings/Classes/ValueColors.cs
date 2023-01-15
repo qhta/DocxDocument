@@ -1,23 +1,22 @@
 namespace DocumentModel.Drawings.ChartDrawings;
 
 /// <summary>
-/// Defines the ValueColors Class.
+///   Defines the ValueColors Class.
 /// </summary>
-public partial class ValueColors
+public class ValueColors
 {
   /// <summary>
-  /// MinColorSolidColorFillProperties.
+  ///   MinColorSolidColorFillProperties.
   /// </summary>
-  public DocumentModel.Drawings.ChartDrawings.MinColorSolidColorFillProperties? MinColorSolidColorFillProperties { get; set; }
-  
+  public MinColorSolidColorFillProperties? MinColorSolidColorFillProperties { get; set; }
+
   /// <summary>
-  /// MidColorSolidColorFillProperties.
+  ///   MidColorSolidColorFillProperties.
   /// </summary>
-  public DocumentModel.Drawings.ChartDrawings.MidColorSolidColorFillProperties? MidColorSolidColorFillProperties { get; set; }
-  
+  public MidColorSolidColorFillProperties? MidColorSolidColorFillProperties { get; set; }
+
   /// <summary>
-  /// MaxColorSolidColorFillProperties.
+  ///   MaxColorSolidColorFillProperties.
   /// </summary>
-  public DocumentModel.Drawings.ChartDrawings.MaxColorSolidColorFillProperties? MaxColorSolidColorFillProperties { get; set; }
-  
+  public MaxColorSolidColorFillProperties? MaxColorSolidColorFillProperties { get; set; }
 }

@@ -1,53 +1,52 @@
 namespace DocumentModel.Drawings.Charts;
 
 /// <summary>
-/// Built-In Unit
+///   Built-In Unit
 /// </summary>
 public enum BuiltInUnitKind
 {
   /// <summary>
-  /// Hundreds.
+  ///   Hundreds.
   /// </summary>
   Hundreds,
-  
+
   /// <summary>
-  /// Thousands.
+  ///   Thousands.
   /// </summary>
   Thousands,
-  
+
   /// <summary>
-  /// Ten Thousands.
+  ///   Ten Thousands.
   /// </summary>
   TenThousands,
-  
+
   /// <summary>
-  /// Hundred Thousands.
+  ///   Hundred Thousands.
   /// </summary>
   HundredThousands,
-  
+
   /// <summary>
-  /// Millions.
+  ///   Millions.
   /// </summary>
   Millions,
-  
+
   /// <summary>
-  /// Ten Millions.
+  ///   Ten Millions.
   /// </summary>
   TenMillions,
-  
+
   /// <summary>
-  /// Hundred Millions.
+  ///   Hundred Millions.
   /// </summary>
   HundredMillions,
-  
+
   /// <summary>
-  /// Billions.
+  ///   Billions.
   /// </summary>
   Billions,
-  
+
   /// <summary>
-  /// Trillions.
+  ///   Trillions.
   /// </summary>
-  Trillions,
-  
+  Trillions
 }

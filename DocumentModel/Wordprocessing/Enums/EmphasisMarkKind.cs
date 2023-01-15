@@ -1,33 +1,32 @@
 namespace DocumentModel.Wordprocessing;
 
 /// <summary>
-/// Defines the EmphasisMarkValues enumeration.
+///   Defines the EmphasisMarkValues enumeration.
 /// </summary>
 public enum EmphasisMarkKind
 {
   /// <summary>
-  /// No Emphasis Mark.
+  ///   No Emphasis Mark.
   /// </summary>
   None,
-  
+
   /// <summary>
-  /// Dot Emphasis Mark Above Characters.
+  ///   Dot Emphasis Mark Above Characters.
   /// </summary>
   Dot,
-  
+
   /// <summary>
-  /// Comma Emphasis Mark Above Characters.
+  ///   Comma Emphasis Mark Above Characters.
   /// </summary>
   Comma,
-  
+
   /// <summary>
-  /// Circle Emphasis Mark Above Characters.
+  ///   Circle Emphasis Mark Above Characters.
   /// </summary>
   Circle,
-  
+
   /// <summary>
-  /// Dot Emphasis Mark Below Characters.
+  ///   Dot Emphasis Mark Below Characters.
   /// </summary>
-  UnderDot,
-  
+  UnderDot
 }

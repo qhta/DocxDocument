@@ -1,48 +1,47 @@
 namespace DocumentModel.Drawings.Wordprocessing;
 
 /// <summary>
-/// Vertical Relative Positioning
+///   Vertical Relative Positioning
 /// </summary>
 public enum VerticalRelativePositionKind
 {
   /// <summary>
-  /// Page Margin.
+  ///   Page Margin.
   /// </summary>
   Margin,
-  
+
   /// <summary>
-  /// Page Edge.
+  ///   Page Edge.
   /// </summary>
   Page,
-  
+
   /// <summary>
-  /// Paragraph.
+  ///   Paragraph.
   /// </summary>
   Paragraph,
-  
+
   /// <summary>
-  /// Line.
+  ///   Line.
   /// </summary>
   Line,
-  
+
   /// <summary>
-  /// Top Margin.
+  ///   Top Margin.
   /// </summary>
   TopMargin,
-  
+
   /// <summary>
-  /// Bottom Margin.
+  ///   Bottom Margin.
   /// </summary>
   BottomMargin,
-  
+
   /// <summary>
-  /// Inside Margin.
+  ///   Inside Margin.
   /// </summary>
   InsideMargin,
-  
+
   /// <summary>
-  /// Outside Margin.
+  ///   Outside Margin.
   /// </summary>
-  OutsideMargin,
-  
+  OutsideMargin
 }

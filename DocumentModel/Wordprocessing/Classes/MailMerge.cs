@@ -1,88 +1,87 @@
 namespace DocumentModel.Wordprocessing;
 
 /// <summary>
-/// Mail Merge Settings.
+///   Mail Merge Settings.
 /// </summary>
-public partial class MailMerge
+public class MailMerge
 {
   /// <summary>
-  /// Source Document Type.
+  ///   Source Document Type.
   /// </summary>
-  public DocumentModel.Wordprocessing.MailMergeDocumentKind? MainDocumentType { get; set; }
-  
+  public MailMergeDocumentKind? MainDocumentType { get; set; }
+
   /// <summary>
-  /// Query Contains Link to External Query File.
+  ///   Query Contains Link to External Query File.
   /// </summary>
   public Boolean? LinkToQuery { get; set; }
-  
+
   /// <summary>
-  /// Data Source Type.
+  ///   Data Source Type.
   /// </summary>
-  public DocumentModel.Wordprocessing.MailMergeDataKind? DataType { get; set; }
-  
+  public MailMergeDataKind? DataType { get; set; }
+
   /// <summary>
-  /// Data Source Connection String.
+  ///   Data Source Connection String.
   /// </summary>
   public String? ConnectString { get; set; }
-  
+
   /// <summary>
-  /// Query For Data Source Records To Merge.
+  ///   Query For Data Source Records To Merge.
   /// </summary>
   public String? Query { get; set; }
-  
+
   /// <summary>
-  /// Data Source File Path.
+  ///   Data Source File Path.
   /// </summary>
-  public DocumentModel.Wordprocessing.RelationshipType? DataSourceReference { get; set; }
-  
+  public RelationshipType? DataSourceReference { get; set; }
+
   /// <summary>
-  /// Header Definition File Path.
+  ///   Header Definition File Path.
   /// </summary>
-  public DocumentModel.Wordprocessing.RelationshipType? HeaderSource { get; set; }
-  
+  public RelationshipType? HeaderSource { get; set; }
+
   /// <summary>
-  /// Remove Blank Lines from Merged Documents.
+  ///   Remove Blank Lines from Merged Documents.
   /// </summary>
   public Boolean? DoNotSuppressBlankLines { get; set; }
-  
+
   /// <summary>
-  /// Merged Document Destination.
+  ///   Merged Document Destination.
   /// </summary>
-  public DocumentModel.Wordprocessing.MailMergeDestinationKind? Destination { get; set; }
-  
+  public MailMergeDestinationKind? Destination { get; set; }
+
   /// <summary>
-  /// Column Containing E-mail Address.
+  ///   Column Containing E-mail Address.
   /// </summary>
   public String? AddressFieldName { get; set; }
-  
+
   /// <summary>
-  /// Merged E-mail or Fax Subject Line.
+  ///   Merged E-mail or Fax Subject Line.
   /// </summary>
   public String? MailSubject { get; set; }
-  
+
   /// <summary>
-  /// Merged Document To E-Mail Attachment.
+  ///   Merged Document To E-Mail Attachment.
   /// </summary>
   public Boolean? MailAsAttachment { get; set; }
-  
+
   /// <summary>
-  /// View Merged Data Within Document.
+  ///   View Merged Data Within Document.
   /// </summary>
   public Boolean? ViewMergedData { get; set; }
-  
+
   /// <summary>
-  /// Record Currently Displayed In Merged Document.
+  ///   Record Currently Displayed In Merged Document.
   /// </summary>
   public Int32? ActiveRecord { get; set; }
-  
+
   /// <summary>
-  /// Mail Merge Error Reporting Setting.
+  ///   Mail Merge Error Reporting Setting.
   /// </summary>
   public Int32? CheckErrors { get; set; }
-  
+
   /// <summary>
-  /// Office Data Source Object Settings.
+  ///   Office Data Source Object Settings.
   /// </summary>
-  public DocumentModel.Wordprocessing.DataSourceObject? DataSourceObject { get; set; }
-  
+  public DataSourceObject? DataSourceObject { get; set; }
 }

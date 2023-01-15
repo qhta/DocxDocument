@@ -1,18 +1,17 @@
 namespace DocumentModel.Wordprocessing;
 
 /// <summary>
-/// Defines the TableLayoutValues enumeration.
+///   Defines the TableLayoutValues enumeration.
 /// </summary>
 public enum TableLayoutKind
 {
   /// <summary>
-  /// Fixed Width Table Layout.
+  ///   Fixed Width Table Layout.
   /// </summary>
   Fixed,
-  
+
   /// <summary>
-  /// AutoFit Table Layout.
+  ///   AutoFit Table Layout.
   /// </summary>
-  Autofit,
-  
+  Autofit
 }

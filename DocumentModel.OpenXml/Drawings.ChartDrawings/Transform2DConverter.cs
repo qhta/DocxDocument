@@ -1,33 +1,38 @@
+using DocumentFormat.OpenXml.Drawing;
+using Point2DType = DocumentModel.Drawings.Point2DType;
+using PositiveSize2DType = DocumentModel.Drawings.PositiveSize2DType;
+using Transform2D = DocumentFormat.OpenXml.Office2010.Drawing.ChartDrawing.Transform2D;
+
 namespace DocumentModel.OpenXml.Drawings.ChartDrawings;
 
 /// <summary>
-/// Defines the Transform2D Class.
+///   Defines the Transform2D Class.
 /// </summary>
 public static class Transform2DConverter
 {
   /// <summary>
-  /// Rotation
+  ///   Rotation
   /// </summary>
-  public static Int32? GetRotation(DocumentFormat.OpenXml.Office2010.Drawing.ChartDrawing.Transform2D? openXmlElement)
+  public static Int32? GetRotation(Transform2D? openXmlElement)
   {
     return openXmlElement?.Rotation?.Value;
   }
-  
-  public static void SetRotation(DocumentFormat.OpenXml.Office2010.Drawing.ChartDrawing.Transform2D? openXmlElement, Int32? value)
+
+  public static void SetRotation(Transform2D? openXmlElement, Int32? value)
   {
     if (openXmlElement != null)
       openXmlElement.Rotation = value;
   }
-  
+
   /// <summary>
-  /// Horizontal Flip
+  ///   Horizontal Flip
   /// </summary>
-  public static Boolean? GetHorizontalFlip(DocumentFormat.OpenXml.Office2010.Drawing.ChartDrawing.Transform2D? openXmlElement)
+  public static Boolean? GetHorizontalFlip(Transform2D? openXmlElement)
   {
     return openXmlElement?.HorizontalFlip?.Value;
   }
-  
-  public static void SetHorizontalFlip(DocumentFormat.OpenXml.Office2010.Drawing.ChartDrawing.Transform2D? openXmlElement, Boolean? value)
+
+  public static void SetHorizontalFlip(Transform2D? openXmlElement, Boolean? value)
   {
     if (openXmlElement != null)
       if (value != null)
@@ -35,16 +40,16 @@ public static class Transform2DConverter
       else
         openXmlElement.HorizontalFlip = null;
   }
-  
+
   /// <summary>
-  /// Vertical Flip
+  ///   Vertical Flip
   /// </summary>
-  public static Boolean? GetVerticalFlip(DocumentFormat.OpenXml.Office2010.Drawing.ChartDrawing.Transform2D? openXmlElement)
+  public static Boolean? GetVerticalFlip(Transform2D? openXmlElement)
   {
     return openXmlElement?.VerticalFlip?.Value;
   }
-  
-  public static void SetVerticalFlip(DocumentFormat.OpenXml.Office2010.Drawing.ChartDrawing.Transform2D? openXmlElement, Boolean? value)
+
+  public static void SetVerticalFlip(Transform2D? openXmlElement, Boolean? value)
   {
     if (openXmlElement != null)
       if (value != null)
@@ -52,62 +57,62 @@ public static class Transform2DConverter
       else
         openXmlElement.VerticalFlip = null;
   }
-  
+
   /// <summary>
-  /// Offset.
+  ///   Offset.
   /// </summary>
-  public static DocumentModel.Drawings.Point2DType? GetOffset(DocumentFormat.OpenXml.Office2010.Drawing.ChartDrawing.Transform2D? openXmlElement)
+  public static Point2DType? GetOffset(Transform2D? openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.Offset>();
+    var itemElement = openXmlElement?.GetFirstChild<Offset>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.Point2DTypeConverter.CreateModelElement(itemElement);
+      return Point2DTypeConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetOffset(DocumentFormat.OpenXml.Office2010.Drawing.ChartDrawing.Transform2D? openXmlElement, DocumentModel.Drawings.Point2DType? value)
+
+  public static void SetOffset(Transform2D? openXmlElement, Point2DType? value)
   {
     if (openXmlElement != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Offset>();
+      var itemElement = openXmlElement.GetFirstChild<Offset>();
       if (itemElement != null)
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Drawings.Point2DTypeConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Offset>(value);
+        itemElement = Point2DTypeConverter.CreateOpenXmlElement<Offset>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
+
   /// <summary>
-  /// Extents.
+  ///   Extents.
   /// </summary>
-  public static DocumentModel.Drawings.PositiveSize2DType? GetExtents(DocumentFormat.OpenXml.Office2010.Drawing.ChartDrawing.Transform2D? openXmlElement)
+  public static PositiveSize2DType? GetExtents(Transform2D? openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.Extents>();
+    var itemElement = openXmlElement?.GetFirstChild<Extents>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.PositiveSize2DTypeConverter.CreateModelElement(itemElement);
+      return PositiveSize2DTypeConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetExtents(DocumentFormat.OpenXml.Office2010.Drawing.ChartDrawing.Transform2D? openXmlElement, DocumentModel.Drawings.PositiveSize2DType? value)
+
+  public static void SetExtents(Transform2D? openXmlElement, PositiveSize2DType? value)
   {
     if (openXmlElement != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Extents>();
+      var itemElement = openXmlElement.GetFirstChild<Extents>();
       if (itemElement != null)
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Drawings.PositiveSize2DTypeConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Extents>(value);
+        itemElement = PositiveSize2DTypeConverter.CreateOpenXmlElement<Extents>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static DocumentModel.Drawings.ChartDrawings.Transform2D? CreateModelElement(DocumentFormat.OpenXml.Office2010.Drawing.ChartDrawing.Transform2D? openXmlElement)
+
+  public static DocumentModel.Drawings.ChartDrawings.Transform2D? CreateModelElement(Transform2D? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -121,9 +126,9 @@ public static class Transform2DConverter
     }
     return null;
   }
-  
+
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.ChartDrawings.Transform2D? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Office2010.Drawing.ChartDrawing.Transform2D, new()
+    where OpenXmlElementType : Transform2D, new()
   {
     if (value != null)
     {

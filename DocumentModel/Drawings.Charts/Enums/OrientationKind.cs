@@ -1,18 +1,17 @@
 namespace DocumentModel.Drawings.Charts;
 
 /// <summary>
-/// Orientation
+///   Orientation
 /// </summary>
 public enum OrientationKind
 {
   /// <summary>
-  /// Maximum to Minimum.
+  ///   Maximum to Minimum.
   /// </summary>
   MaxMin,
-  
+
   /// <summary>
-  /// Minimum to Maximum.
+  ///   Minimum to Maximum.
   /// </summary>
-  MinMax,
-  
+  MinMax
 }

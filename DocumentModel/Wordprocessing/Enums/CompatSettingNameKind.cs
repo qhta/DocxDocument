@@ -1,48 +1,47 @@
 namespace DocumentModel.Wordprocessing;
 
 /// <summary>
-/// Defines the CompatSettingNameValues enumeration.
+///   Defines the CompatSettingNameValues enumeration.
 /// </summary>
 public enum CompatSettingNameKind
 {
   /// <summary>
-  /// compatibilityMode.
+  ///   compatibilityMode.
   /// </summary>
   CompatibilityMode,
-  
+
   /// <summary>
-  /// overrideTableStyleFontSizeAndJustification.
+  ///   overrideTableStyleFontSizeAndJustification.
   /// </summary>
   OverrideTableStyleFontSizeAndJustification,
-  
+
   /// <summary>
-  /// enableOpenTypeFeatures.
+  ///   enableOpenTypeFeatures.
   /// </summary>
   EnableOpenTypeFeatures,
-  
+
   /// <summary>
-  /// doNotFlipMirrorIndents.
+  ///   doNotFlipMirrorIndents.
   /// </summary>
   DoNotFlipMirrorIndents,
-  
+
   /// <summary>
-  /// differentiateMultirowTableHeaders.
+  ///   differentiateMultirowTableHeaders.
   /// </summary>
   DifferentiateMultirowTableHeaders,
-  
+
   /// <summary>
-  /// useWord2013TrackBottomHyphenation.
+  ///   useWord2013TrackBottomHyphenation.
   /// </summary>
   UseWord2013TrackBottomHyphenation,
-  
+
   /// <summary>
-  /// allowHyphenationAtTrackBottom.
+  ///   allowHyphenationAtTrackBottom.
   /// </summary>
   AllowHyphenationAtTrackBottom,
-  
+
   /// <summary>
-  /// allowTextAfterFloatingTableBreak.
+  ///   allowTextAfterFloatingTableBreak.
   /// </summary>
-  AllowTextAfterFloatingTableBreak,
-  
+  AllowTextAfterFloatingTableBreak
 }

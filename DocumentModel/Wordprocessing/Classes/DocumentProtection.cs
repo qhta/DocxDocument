@@ -1,103 +1,102 @@
 namespace DocumentModel.Wordprocessing;
 
 /// <summary>
-/// Document Editing Restrictions.
+///   Document Editing Restrictions.
 /// </summary>
-public partial class DocumentProtection
+public class DocumentProtection
 {
   /// <summary>
-  /// Document Editing Restrictions
+  ///   Document Editing Restrictions
   /// </summary>
-  public DocumentModel.Wordprocessing.DocumentProtectionKind? Edit { get; set; }
-  
+  public DocumentProtectionKind? Edit { get; set; }
+
   /// <summary>
-  /// Only Allow Formatting With Unlocked Styles
+  ///   Only Allow Formatting With Unlocked Styles
   /// </summary>
   public Boolean? Formatting { get; set; }
-  
+
   /// <summary>
-  /// Enforce Document Protection Settings
+  ///   Enforce Document Protection Settings
   /// </summary>
   public Boolean? Enforcement { get; set; }
-  
+
   /// <summary>
-  /// Cryptographic Provider Type
+  ///   Cryptographic Provider Type
   /// </summary>
-  public DocumentModel.Wordprocessing.CryptProviderKind? CryptographicProviderType { get; set; }
-  
+  public CryptProviderKind? CryptographicProviderType { get; set; }
+
   /// <summary>
-  /// Cryptographic Algorithm Class
+  ///   Cryptographic Algorithm Class
   /// </summary>
-  public DocumentModel.Wordprocessing.CryptAlgorithmClassKind? CryptographicAlgorithmClass { get; set; }
-  
+  public CryptAlgorithmClassKind? CryptographicAlgorithmClass { get; set; }
+
   /// <summary>
-  /// Cryptographic Algorithm Type
+  ///   Cryptographic Algorithm Type
   /// </summary>
-  public DocumentModel.Wordprocessing.CryptAlgorithmKind? CryptographicAlgorithmType { get; set; }
-  
+  public CryptAlgorithmKind? CryptographicAlgorithmType { get; set; }
+
   /// <summary>
-  /// Cryptographic Hashing Algorithm
+  ///   Cryptographic Hashing Algorithm
   /// </summary>
   public Int32? CryptographicAlgorithmSid { get; set; }
-  
+
   /// <summary>
-  /// Iterations to Run Hashing Algorithm
+  ///   Iterations to Run Hashing Algorithm
   /// </summary>
   public UInt32? CryptographicSpinCount { get; set; }
-  
+
   /// <summary>
-  /// Cryptographic Provider
+  ///   Cryptographic Provider
   /// </summary>
   public String? CryptographicProvider { get; set; }
-  
+
   /// <summary>
-  /// Cryptographic Algorithm Extensibility
+  ///   Cryptographic Algorithm Extensibility
   /// </summary>
   public Byte[]? AlgorithmIdExtensibility { get; set; }
-  
+
   /// <summary>
-  /// Algorithm Extensibility Source
+  ///   Algorithm Extensibility Source
   /// </summary>
   public String? AlgorithmIdExtensibilitySource { get; set; }
-  
+
   /// <summary>
-  /// Cryptographic Provider Type Extensibility
+  ///   Cryptographic Provider Type Extensibility
   /// </summary>
   public Byte[]? CryptographicProviderTypeExtensibility { get; set; }
-  
+
   /// <summary>
-  /// Provider Type Extensibility Source
+  ///   Provider Type Extensibility Source
   /// </summary>
   public String? CryptographicProviderTypeExtSource { get; set; }
-  
+
   /// <summary>
-  /// Password Hash
+  ///   Password Hash
   /// </summary>
   public Byte[]? Hash { get; set; }
-  
+
   /// <summary>
-  /// Salt for Password Verifier
+  ///   Salt for Password Verifier
   /// </summary>
   public Byte[]? Salt { get; set; }
-  
+
   /// <summary>
-  /// algorithmName, this property is only available in Office 2010 and later.
+  ///   algorithmName, this property is only available in Office 2010 and later.
   /// </summary>
   public String? AlgorithmName { get; set; }
-  
+
   /// <summary>
-  /// hashValue, this property is only available in Office 2010 and later.
+  ///   hashValue, this property is only available in Office 2010 and later.
   /// </summary>
   public Byte[]? HashValue { get; set; }
-  
+
   /// <summary>
-  /// saltValue, this property is only available in Office 2010 and later.
+  ///   saltValue, this property is only available in Office 2010 and later.
   /// </summary>
   public Byte[]? SaltValue { get; set; }
-  
+
   /// <summary>
-  /// spinCount, this property is only available in Office 2010 and later.
+  ///   spinCount, this property is only available in Office 2010 and later.
   /// </summary>
   public Int32? SpinCount { get; set; }
-  
 }

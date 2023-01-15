@@ -1,18 +1,17 @@
 namespace DocumentModel.Math;
 
 /// <summary>
-/// Group-Character Function.
+///   Group-Character Function.
 /// </summary>
-public partial class GroupChar
+public class GroupChar
 {
   /// <summary>
-  /// Group-Character Properties.
+  ///   Group-Character Properties.
   /// </summary>
-  public DocumentModel.Math.GroupCharProperties? GroupCharProperties { get; set; }
-  
+  public GroupCharProperties? GroupCharProperties { get; set; }
+
   /// <summary>
-  /// Base.
+  ///   Base.
   /// </summary>
-  public DocumentModel.Math.Base? Base { get; set; }
-  
+  public Base? Base { get; set; }
 }

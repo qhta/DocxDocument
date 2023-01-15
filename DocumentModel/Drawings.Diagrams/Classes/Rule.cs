@@ -1,48 +1,47 @@
 namespace DocumentModel.Drawings.Diagrams;
 
 /// <summary>
-/// Rule.
+///   Rule.
 /// </summary>
-public partial class Rule
+public class Rule
 {
   /// <summary>
-  /// Constraint Type
+  ///   Constraint Type
   /// </summary>
-  public DocumentModel.Drawings.Diagrams.ConstraintKind? Type { get; set; }
-  
+  public ConstraintKind? Type { get; set; }
+
   /// <summary>
-  /// For
+  ///   For
   /// </summary>
-  public DocumentModel.Drawings.Diagrams.ConstraintRelationshipKind? For { get; set; }
-  
+  public ConstraintRelationshipKind? For { get; set; }
+
   /// <summary>
-  /// For Name
+  ///   For Name
   /// </summary>
   public String? ForName { get; set; }
-  
+
   /// <summary>
-  /// Data Point Type
+  ///   Data Point Type
   /// </summary>
-  public DocumentModel.Drawings.Diagrams.ElementKind? PointType { get; set; }
-  
+  public ElementKind? PointType { get; set; }
+
   /// <summary>
-  /// Value
+  ///   Value
   /// </summary>
   public Double? Val { get; set; }
-  
+
   /// <summary>
-  /// Factor
+  ///   Factor
   /// </summary>
   public Double? Fact { get; set; }
-  
+
   /// <summary>
-  /// Max Value
+  ///   Max Value
   /// </summary>
   public Double? Max { get; set; }
-  
+
   /// <summary>
-  /// ExtensionList.
+  ///   ExtensionList.
   /// </summary>
-  public DocumentModel.Drawings.Diagrams.ExtensionList? ExtensionList { get; set; }
-  
+  public ExtensionList? ExtensionList { get; set; }
 }

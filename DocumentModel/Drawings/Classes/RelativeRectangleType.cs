@@ -1,28 +1,27 @@
 namespace DocumentModel.Drawings;
 
 /// <summary>
-/// Defines the RelativeRectangleType Class.
+///   Defines the RelativeRectangleType Class.
 /// </summary>
-public partial class RelativeRectangleType
+public class RelativeRectangleType
 {
   /// <summary>
-  /// Left Offset
+  ///   Left Offset
   /// </summary>
   public Int32? Left { get; set; }
-  
+
   /// <summary>
-  /// Top Offset
+  ///   Top Offset
   /// </summary>
   public Int32? Top { get; set; }
-  
+
   /// <summary>
-  /// Right Offset
+  ///   Right Offset
   /// </summary>
   public Int32? Right { get; set; }
-  
+
   /// <summary>
-  /// Bottom Offset
+  ///   Bottom Offset
   /// </summary>
   public Int32? Bottom { get; set; }
-  
 }

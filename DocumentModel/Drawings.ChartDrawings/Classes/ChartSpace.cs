@@ -1,48 +1,47 @@
 namespace DocumentModel.Drawings.ChartDrawings;
 
 /// <summary>
-/// Defines the ChartSpace Class.
+///   Defines the ChartSpace Class.
 /// </summary>
-public partial class ChartSpace
+public class ChartSpace
 {
   /// <summary>
-  /// ChartData.
+  ///   ChartData.
   /// </summary>
-  public DocumentModel.Drawings.ChartDrawings.ChartData? ChartData { get; set; }
-  
+  public ChartData? ChartData { get; set; }
+
   /// <summary>
-  /// Chart.
+  ///   Chart.
   /// </summary>
-  public DocumentModel.Drawings.ChartDrawings.Chart? Chart { get; set; }
-  
+  public Chart? Chart { get; set; }
+
   /// <summary>
-  /// ShapeProperties.
+  ///   ShapeProperties.
   /// </summary>
-  public DocumentModel.Drawings.ChartDrawings.ShapeProperties? ShapeProperties { get; set; }
-  
+  public ShapeProperties? ShapeProperties { get; set; }
+
   /// <summary>
-  /// TxPrTextBody.
+  ///   TxPrTextBody.
   /// </summary>
-  public DocumentModel.Drawings.ChartDrawings.TxPrTextBody? TxPrTextBody { get; set; }
-  
+  public TxPrTextBody? TxPrTextBody { get; set; }
+
   /// <summary>
-  /// ColorMappingType.
+  ///   ColorMappingType.
   /// </summary>
-  public DocumentModel.Drawings.ChartDrawings.ColorMappingType? ColorMappingType { get; set; }
-  
+  public ColorMappingType? ColorMappingType { get; set; }
+
   /// <summary>
-  /// FormatOverrides.
+  ///   FormatOverrides.
   /// </summary>
-  public DocumentModel.Drawings.ChartDrawings.FormatOverrides? FormatOverrides { get; set; }
-  
+  public FormatOverrides? FormatOverrides { get; set; }
+
   /// <summary>
-  /// PrintSettings.
+  ///   PrintSettings.
   /// </summary>
-  public DocumentModel.Drawings.ChartDrawings.PrintSettings? PrintSettings { get; set; }
-  
+  public PrintSettings? PrintSettings { get; set; }
+
   /// <summary>
-  /// ExtensionList.
+  ///   ExtensionList.
   /// </summary>
-  public DocumentModel.Drawings.ChartDrawings.ExtensionList? ExtensionList { get; set; }
-  
+  public ExtensionList? ExtensionList { get; set; }
 }

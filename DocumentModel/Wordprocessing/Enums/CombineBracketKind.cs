@@ -1,33 +1,32 @@
 namespace DocumentModel.Wordprocessing;
 
 /// <summary>
-/// Defines the CombineBracketValues enumeration.
+///   Defines the CombineBracketValues enumeration.
 /// </summary>
 public enum CombineBracketKind
 {
   /// <summary>
-  /// No Enclosing Brackets.
+  ///   No Enclosing Brackets.
   /// </summary>
   None,
-  
+
   /// <summary>
-  /// Round Brackets.
+  ///   Round Brackets.
   /// </summary>
   Round,
-  
+
   /// <summary>
-  /// Square Brackets.
+  ///   Square Brackets.
   /// </summary>
   Square,
-  
+
   /// <summary>
-  /// Angle Brackets.
+  ///   Angle Brackets.
   /// </summary>
   Angle,
-  
+
   /// <summary>
-  /// Curly Brackets.
+  ///   Curly Brackets.
   /// </summary>
-  Curly,
-  
+  Curly
 }

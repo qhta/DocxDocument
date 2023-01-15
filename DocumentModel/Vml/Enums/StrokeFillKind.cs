@@ -1,28 +1,27 @@
 namespace DocumentModel.Vml;
 
 /// <summary>
-/// Defines the StrokeFillTypeValues enumeration.
+///   Defines the StrokeFillTypeValues enumeration.
 /// </summary>
 public enum StrokeFillKind
 {
   /// <summary>
-  /// solid.
+  ///   solid.
   /// </summary>
   Solid,
-  
+
   /// <summary>
-  /// tile.
+  ///   tile.
   /// </summary>
   Tile,
-  
+
   /// <summary>
-  /// pattern.
+  ///   pattern.
   /// </summary>
   Pattern,
-  
+
   /// <summary>
-  /// frame.
+  ///   frame.
   /// </summary>
-  Frame,
-  
+  Frame
 }

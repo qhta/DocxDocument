@@ -1,71 +1,71 @@
+using DocumentFormat.OpenXml.Wordprocessing;
+
 namespace DocumentModel.OpenXml.Wordprocessing;
 
 /// <summary>
-/// Listing of All Revision Save ID Values.
+///   Listing of All Revision Save ID Values.
 /// </summary>
 public static class RsidsConverter
 {
   /// <summary>
-  /// Original Document Revision Save ID.
+  ///   Original Document Revision Save ID.
   /// </summary>
-  public static DocumentModel.HexWord? GetRsidRoot(DocumentFormat.OpenXml.Wordprocessing.Rsids? openXmlElement)
+  public static NumId? GetRsidRoot(Rsids? openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.RsidRoot>();
+    var itemElement = openXmlElement?.GetFirstChild<RsidRoot>();
     if (itemElement != null)
-      return HexWordConverter.GetValue(itemElement);
+      return NumIdConverter.GetValue(itemElement);
     return null;
   }
-  
-  public static void SetRsidRoot(DocumentFormat.OpenXml.Wordprocessing.Rsids? openXmlElement, DocumentModel.HexWord? value)
+
+  public static void SetRsidRoot(Rsids? openXmlElement, NumId? value)
   {
     if (openXmlElement != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.RsidRoot>();
+      var itemElement = openXmlElement.GetFirstChild<RsidRoot>();
       if (itemElement != null)
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = HexWordConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.RsidRoot>(value);
+        itemElement = NumIdConverter.CreateOpenXmlElement<RsidRoot>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static System.Collections.ObjectModel.Collection<DocumentModel.HexWord>? GetItems(DocumentFormat.OpenXml.Wordprocessing.Rsids? openXmlElement)
+
+  public static Collection<NumId>? GetItems(Rsids? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var collection = new System.Collections.ObjectModel.Collection<DocumentModel.HexWord>();
-      foreach (var item in openXmlElement.Elements<DocumentFormat.OpenXml.Wordprocessing.Rsid>())
+      var collection = new Collection<NumId>();
+      foreach (var item in openXmlElement.Elements<Rsid>())
       {
-        var newItem = HexWordConverter.GetValue(item);
+        var newItem = NumIdConverter.GetValue(item);
         if (newItem != null)
-          collection.Add((HexWord)newItem);
+          collection.Add((NumId)newItem);
       }
       return collection;
     }
     return null;
   }
-  
-  public static void SetItems(DocumentFormat.OpenXml.Wordprocessing.Rsids? openXmlElement, System.Collections.ObjectModel.Collection<DocumentModel.HexWord>? value)
+
+  public static void SetItems(Rsids? openXmlElement, Collection<NumId>? value)
   {
     if (openXmlElement != null)
     {
-      openXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Wordprocessing.Rsid>();
+      openXmlElement.RemoveAllChildren<Rsid>();
       if (value != null)
-      {
         foreach (var item in value)
         {
-          var newItem = HexWordConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.Rsid>(item);
+          var newItem = NumIdConverter.CreateOpenXmlElement<Rsid>(item);
           if (newItem != null)
             openXmlElement.AddChild(newItem);
         }
-      }
     }
   }
-  
-  public static DocumentModel.Wordprocessing.Rsids? CreateModelElement(DocumentFormat.OpenXml.Wordprocessing.Rsids? openXmlElement)
+
+  public static DocumentModel.Wordprocessing.Rsids? CreateModelElement(Rsids? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -76,9 +76,9 @@ public static class RsidsConverter
     }
     return null;
   }
-  
+
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.Rsids? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Wordprocessing.Rsids, new()
+    where OpenXmlElementType : Rsids, new()
   {
     if (value != null)
     {

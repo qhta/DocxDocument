@@ -1,21 +1,23 @@
+using DocumentFormat.OpenXml.Packaging;
+
 namespace DocumentModel.OpenXml.Packaging;
 
 /// <summary>
-/// Defines the CoreFilePropertiesPart
+///   Defines the CoreFilePropertiesPart
 /// </summary>
 public static class CoreFilePropertiesPartConverter
 {
-  public static String? GetContentType(DocumentFormat.OpenXml.Packaging.CoreFilePropertiesPart? openXmlElement)
+  public static String? GetContentType(CoreFilePropertiesPart? openXmlElement)
   {
     return openXmlElement?.ContentType;
   }
-  
-  public static String? GetRelationshipType(DocumentFormat.OpenXml.Packaging.CoreFilePropertiesPart? openXmlElement)
+
+  public static String? GetRelationshipType(CoreFilePropertiesPart? openXmlElement)
   {
     return openXmlElement?.RelationshipType;
   }
-  
-  public static DocumentModel.Packaging.CoreFilePropertiesPart? CreateModelElement(DocumentFormat.OpenXml.Packaging.CoreFilePropertiesPart? openXmlElement)
+
+  public static DocumentModel.Packaging.CoreFilePropertiesPart? CreateModelElement(CoreFilePropertiesPart? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -26,9 +28,9 @@ public static class CoreFilePropertiesPartConverter
     }
     return null;
   }
-  
+
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Packaging.CoreFilePropertiesPart? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Packaging.CoreFilePropertiesPart, new()
+    where OpenXmlElementType : CoreFilePropertiesPart, new()
   {
     if (value != null)
     {

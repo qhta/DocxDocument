@@ -1,18 +1,17 @@
 namespace DocumentModel;
 
 /// <summary>
-/// Defines the QuickAccessToolbar Class.
+///   Defines the QuickAccessToolbar Class.
 /// </summary>
-public partial class QuickAccessToolbar
+public class QuickAccessToolbar
 {
   /// <summary>
-  /// SharedControlsQatItems.
+  ///   SharedControlsQatItems.
   /// </summary>
-  public DocumentModel.SharedControlsQatItems? SharedControlsQatItems { get; set; }
-  
+  public SharedControlsQatItems? SharedControlsQatItems { get; set; }
+
   /// <summary>
-  /// DocumentControlsQatItems.
+  ///   DocumentControlsQatItems.
   /// </summary>
-  public DocumentModel.DocumentControlsQatItems? DocumentControlsQatItems { get; set; }
-  
+  public DocumentControlsQatItems? DocumentControlsQatItems { get; set; }
 }

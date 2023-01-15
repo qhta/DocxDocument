@@ -1,23 +1,22 @@
 namespace DocumentModel.Math;
 
 /// <summary>
-/// Fraction Function.
+///   Fraction Function.
 /// </summary>
-public partial class Fraction
+public class Fraction
 {
   /// <summary>
-  /// Fraction Properties.
+  ///   Fraction Properties.
   /// </summary>
-  public DocumentModel.Math.FractionProperties? FractionProperties { get; set; }
-  
+  public FractionProperties? FractionProperties { get; set; }
+
   /// <summary>
-  /// Numerator.
+  ///   Numerator.
   /// </summary>
-  public DocumentModel.Math.Numerator? Numerator { get; set; }
-  
+  public Numerator? Numerator { get; set; }
+
   /// <summary>
-  /// Denominator.
+  ///   Denominator.
   /// </summary>
-  public DocumentModel.Math.Denominator? Denominator { get; set; }
-  
+  public Denominator? Denominator { get; set; }
 }

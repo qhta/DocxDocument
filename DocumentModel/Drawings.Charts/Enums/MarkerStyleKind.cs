@@ -1,68 +1,67 @@
 namespace DocumentModel.Drawings.Charts;
 
 /// <summary>
-/// Marker Style
+///   Marker Style
 /// </summary>
 public enum MarkerStyleKind
 {
   /// <summary>
-  /// auto.
+  ///   auto.
   /// </summary>
   Auto,
-  
+
   /// <summary>
-  /// Circle.
+  ///   Circle.
   /// </summary>
   Circle,
-  
+
   /// <summary>
-  /// Dash.
+  ///   Dash.
   /// </summary>
   Dash,
-  
+
   /// <summary>
-  /// Diamond.
+  ///   Diamond.
   /// </summary>
   Diamond,
-  
+
   /// <summary>
-  /// Dot.
+  ///   Dot.
   /// </summary>
   Dot,
-  
+
   /// <summary>
-  /// None.
+  ///   None.
   /// </summary>
   None,
-  
+
   /// <summary>
-  /// Picture.
+  ///   Picture.
   /// </summary>
   Picture,
-  
+
   /// <summary>
-  /// Plus.
+  ///   Plus.
   /// </summary>
   Plus,
-  
+
   /// <summary>
-  /// Square.
+  ///   Square.
   /// </summary>
   Square,
-  
+
   /// <summary>
-  /// Star.
+  ///   Star.
   /// </summary>
   Star,
-  
+
   /// <summary>
-  /// Triangle.
+  ///   Triangle.
   /// </summary>
   Triangle,
-  
+
   /// <summary>
-  /// X.
+  ///   X.
   /// </summary>
-  X,
-  
+  X
 }

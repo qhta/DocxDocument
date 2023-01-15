@@ -1,18 +1,17 @@
 namespace DocumentModel.Wordprocessing;
 
 /// <summary>
-/// Spelling and Grammatical Checking State.
+///   Spelling and Grammatical Checking State.
 /// </summary>
-public partial class ProofState
+public class ProofState
 {
   /// <summary>
-  /// Spell Checking State
+  ///   Spell Checking State
   /// </summary>
-  public DocumentModel.Wordprocessing.ProofingStateKind? Spelling { get; set; }
-  
+  public ProofingStateKind? Spelling { get; set; }
+
   /// <summary>
-  /// Grammatical Checking State
+  ///   Grammatical Checking State
   /// </summary>
-  public DocumentModel.Wordprocessing.ProofingStateKind? Grammar { get; set; }
-  
+  public ProofingStateKind? Grammar { get; set; }
 }

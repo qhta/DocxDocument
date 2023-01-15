@@ -1,13 +1,12 @@
 namespace DocumentModel.Drawings.Charts;
 
 /// <summary>
-/// Defines the FilteredScatterSeries Class.
+///   Defines the FilteredScatterSeries Class.
 /// </summary>
-public partial class FilteredScatterSeries
+public class FilteredScatterSeries
 {
   /// <summary>
-  /// ScatterChartSeries.
+  ///   ScatterChartSeries.
   /// </summary>
-  public DocumentModel.Drawings.Charts.ScatterChartSeries3? ScatterChartSeries { get; set; }
-  
+  public ScatterChartSeries3? ScatterChartSeries { get; set; }
 }

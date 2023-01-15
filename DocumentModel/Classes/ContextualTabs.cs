@@ -1,10 +1,9 @@
 namespace DocumentModel;
 
 /// <summary>
-/// Defines the ContextualTabs Class.
+///   Defines the ContextualTabs Class.
 /// </summary>
-public partial class ContextualTabs
+public class ContextualTabs
 {
-  public Collection<DocumentModel.TabSet>? TabSets { get; set; }
-  
+  public Collection<TabSet>? TabSets { get; set; }
 }

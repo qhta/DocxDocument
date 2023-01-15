@@ -1,19 +1,23 @@
+using DocumentFormat.OpenXml.Drawing;
+using DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle;
+using Boolean = System.Boolean;
+
 namespace DocumentModel.OpenXml.Drawings.ChartsStyle;
 
 /// <summary>
-/// Defines the StyleColor Class.
+///   Defines the StyleColor Class.
 /// </summary>
 public static class StyleColorConverter
 {
   /// <summary>
-  /// val, this property is only available in Office 2013 and later.
+  ///   val, this property is only available in Office 2013 and later.
   /// </summary>
-  public static String? GetVal(DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.StyleColor? openXmlElement)
+  public static String? GetVal(StyleColor? openXmlElement)
   {
     return openXmlElement?.Val?.Value;
   }
-  
-  public static void SetVal(DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.StyleColor? openXmlElement, String? value)
+
+  public static void SetVal(StyleColor? openXmlElement, String? value)
   {
     if (openXmlElement != null)
       if (value != null)
@@ -21,677 +25,677 @@ public static class StyleColorConverter
       else
         openXmlElement.Val = null;
   }
-  
-  public static Int32? GetTint(DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.StyleColor? openXmlElement)
+
+  public static Int32? GetTint(StyleColor? openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.Tint>();
+    var itemElement = openXmlElement?.GetFirstChild<Tint>();
     if (itemElement != null)
       return itemElement.Val?.Value;
     return null;
   }
-  
-  public static void SetTint(DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.StyleColor? openXmlElement, Int32? value)
+
+  public static void SetTint(StyleColor? openXmlElement, Int32? value)
   {
     if (openXmlElement != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Tint>();
+      var itemElement = openXmlElement.GetFirstChild<Tint>();
       if (itemElement != null)
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = new DocumentFormat.OpenXml.Drawing.Tint{ Val = value };
+        itemElement = new Tint { Val = value };
         openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static Int32? GetShade(DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.StyleColor? openXmlElement)
+
+  public static Int32? GetShade(StyleColor? openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.Shade>();
+    var itemElement = openXmlElement?.GetFirstChild<Shade>();
     if (itemElement != null)
       return itemElement.Val?.Value;
     return null;
   }
-  
-  public static void SetShade(DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.StyleColor? openXmlElement, Int32? value)
+
+  public static void SetShade(StyleColor? openXmlElement, Int32? value)
   {
     if (openXmlElement != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Shade>();
+      var itemElement = openXmlElement.GetFirstChild<Shade>();
       if (itemElement != null)
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = new DocumentFormat.OpenXml.Drawing.Shade{ Val = value };
+        itemElement = new Shade { Val = value };
         openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static Boolean? GetComplement(DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.StyleColor? openXmlElement)
+
+  public static Boolean? GetComplement(StyleColor? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Complement>();
+      var itemElement = openXmlElement.GetFirstChild<Complement>();
       return itemElement != null;
     }
     return null;
   }
-  
-  public static void SetComplement(DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.StyleColor? openXmlElement, Boolean? value)
+
+  public static void SetComplement(StyleColor? openXmlElement, Boolean? value)
   {
     if (openXmlElement != null)
     {
       if (value == false)
       {
-        var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Complement>();
+        var itemElement = openXmlElement.GetFirstChild<Complement>();
         if (itemElement != null)
           itemElement.Remove();
       }
       if (value == true)
       {
-        var itemElement = new DocumentFormat.OpenXml.Drawing.Complement();
+        var itemElement = new Complement();
         openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static Boolean? GetInverse(DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.StyleColor? openXmlElement)
+
+  public static Boolean? GetInverse(StyleColor? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Inverse>();
+      var itemElement = openXmlElement.GetFirstChild<Inverse>();
       return itemElement != null;
     }
     return null;
   }
-  
-  public static void SetInverse(DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.StyleColor? openXmlElement, Boolean? value)
+
+  public static void SetInverse(StyleColor? openXmlElement, Boolean? value)
   {
     if (openXmlElement != null)
     {
       if (value == false)
       {
-        var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Inverse>();
+        var itemElement = openXmlElement.GetFirstChild<Inverse>();
         if (itemElement != null)
           itemElement.Remove();
       }
       if (value == true)
       {
-        var itemElement = new DocumentFormat.OpenXml.Drawing.Inverse();
+        var itemElement = new Inverse();
         openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static Boolean? GetGray(DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.StyleColor? openXmlElement)
+
+  public static Boolean? GetGray(StyleColor? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Gray>();
+      var itemElement = openXmlElement.GetFirstChild<Gray>();
       return itemElement != null;
     }
     return null;
   }
-  
-  public static void SetGray(DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.StyleColor? openXmlElement, Boolean? value)
+
+  public static void SetGray(StyleColor? openXmlElement, Boolean? value)
   {
     if (openXmlElement != null)
     {
       if (value == false)
       {
-        var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Gray>();
+        var itemElement = openXmlElement.GetFirstChild<Gray>();
         if (itemElement != null)
           itemElement.Remove();
       }
       if (value == true)
       {
-        var itemElement = new DocumentFormat.OpenXml.Drawing.Gray();
+        var itemElement = new Gray();
         openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static Int32? GetAlpha(DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.StyleColor? openXmlElement)
+
+  public static Int32? GetAlpha(StyleColor? openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.Alpha>();
+    var itemElement = openXmlElement?.GetFirstChild<Alpha>();
     if (itemElement != null)
       return itemElement.Val?.Value;
     return null;
   }
-  
-  public static void SetAlpha(DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.StyleColor? openXmlElement, Int32? value)
+
+  public static void SetAlpha(StyleColor? openXmlElement, Int32? value)
   {
     if (openXmlElement != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Alpha>();
+      var itemElement = openXmlElement.GetFirstChild<Alpha>();
       if (itemElement != null)
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = new DocumentFormat.OpenXml.Drawing.Alpha{ Val = value };
+        itemElement = new Alpha { Val = value };
         openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static Int32? GetAlphaOffset(DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.StyleColor? openXmlElement)
+
+  public static Int32? GetAlphaOffset(StyleColor? openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.AlphaOffset>();
+    var itemElement = openXmlElement?.GetFirstChild<AlphaOffset>();
     if (itemElement != null)
       return itemElement.Val?.Value;
     return null;
   }
-  
-  public static void SetAlphaOffset(DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.StyleColor? openXmlElement, Int32? value)
+
+  public static void SetAlphaOffset(StyleColor? openXmlElement, Int32? value)
   {
     if (openXmlElement != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.AlphaOffset>();
+      var itemElement = openXmlElement.GetFirstChild<AlphaOffset>();
       if (itemElement != null)
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = new DocumentFormat.OpenXml.Drawing.AlphaOffset{ Val = value };
+        itemElement = new AlphaOffset { Val = value };
         openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static Int32? GetAlphaModulation(DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.StyleColor? openXmlElement)
+
+  public static Int32? GetAlphaModulation(StyleColor? openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.AlphaModulation>();
+    var itemElement = openXmlElement?.GetFirstChild<AlphaModulation>();
     if (itemElement != null)
       return itemElement.Val?.Value;
     return null;
   }
-  
-  public static void SetAlphaModulation(DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.StyleColor? openXmlElement, Int32? value)
+
+  public static void SetAlphaModulation(StyleColor? openXmlElement, Int32? value)
   {
     if (openXmlElement != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.AlphaModulation>();
+      var itemElement = openXmlElement.GetFirstChild<AlphaModulation>();
       if (itemElement != null)
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = new DocumentFormat.OpenXml.Drawing.AlphaModulation{ Val = value };
+        itemElement = new AlphaModulation { Val = value };
         openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static Int32? GetHue(DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.StyleColor? openXmlElement)
+
+  public static Int32? GetHue(StyleColor? openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.Hue>();
+    var itemElement = openXmlElement?.GetFirstChild<Hue>();
     if (itemElement != null)
       return itemElement.Val?.Value;
     return null;
   }
-  
-  public static void SetHue(DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.StyleColor? openXmlElement, Int32? value)
+
+  public static void SetHue(StyleColor? openXmlElement, Int32? value)
   {
     if (openXmlElement != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Hue>();
+      var itemElement = openXmlElement.GetFirstChild<Hue>();
       if (itemElement != null)
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = new DocumentFormat.OpenXml.Drawing.Hue{ Val = value };
+        itemElement = new Hue { Val = value };
         openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static Int32? GetHueOffset(DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.StyleColor? openXmlElement)
+
+  public static Int32? GetHueOffset(StyleColor? openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.HueOffset>();
+    var itemElement = openXmlElement?.GetFirstChild<HueOffset>();
     if (itemElement != null)
       return itemElement.Val?.Value;
     return null;
   }
-  
-  public static void SetHueOffset(DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.StyleColor? openXmlElement, Int32? value)
+
+  public static void SetHueOffset(StyleColor? openXmlElement, Int32? value)
   {
     if (openXmlElement != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.HueOffset>();
+      var itemElement = openXmlElement.GetFirstChild<HueOffset>();
       if (itemElement != null)
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = new DocumentFormat.OpenXml.Drawing.HueOffset{ Val = value };
+        itemElement = new HueOffset { Val = value };
         openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static Int32? GetHueModulation(DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.StyleColor? openXmlElement)
+
+  public static Int32? GetHueModulation(StyleColor? openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.HueModulation>();
+    var itemElement = openXmlElement?.GetFirstChild<HueModulation>();
     if (itemElement != null)
       return itemElement.Val?.Value;
     return null;
   }
-  
-  public static void SetHueModulation(DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.StyleColor? openXmlElement, Int32? value)
+
+  public static void SetHueModulation(StyleColor? openXmlElement, Int32? value)
   {
     if (openXmlElement != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.HueModulation>();
+      var itemElement = openXmlElement.GetFirstChild<HueModulation>();
       if (itemElement != null)
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = new DocumentFormat.OpenXml.Drawing.HueModulation{ Val = value };
+        itemElement = new HueModulation { Val = value };
         openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static Int32? GetSaturation(DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.StyleColor? openXmlElement)
+
+  public static Int32? GetSaturation(StyleColor? openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.Saturation>();
+    var itemElement = openXmlElement?.GetFirstChild<Saturation>();
     if (itemElement != null)
       return itemElement.Val?.Value;
     return null;
   }
-  
-  public static void SetSaturation(DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.StyleColor? openXmlElement, Int32? value)
+
+  public static void SetSaturation(StyleColor? openXmlElement, Int32? value)
   {
     if (openXmlElement != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Saturation>();
+      var itemElement = openXmlElement.GetFirstChild<Saturation>();
       if (itemElement != null)
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = new DocumentFormat.OpenXml.Drawing.Saturation{ Val = value };
+        itemElement = new Saturation { Val = value };
         openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static Int32? GetSaturationOffset(DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.StyleColor? openXmlElement)
+
+  public static Int32? GetSaturationOffset(StyleColor? openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.SaturationOffset>();
+    var itemElement = openXmlElement?.GetFirstChild<SaturationOffset>();
     if (itemElement != null)
       return itemElement.Val?.Value;
     return null;
   }
-  
-  public static void SetSaturationOffset(DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.StyleColor? openXmlElement, Int32? value)
+
+  public static void SetSaturationOffset(StyleColor? openXmlElement, Int32? value)
   {
     if (openXmlElement != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.SaturationOffset>();
+      var itemElement = openXmlElement.GetFirstChild<SaturationOffset>();
       if (itemElement != null)
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = new DocumentFormat.OpenXml.Drawing.SaturationOffset{ Val = value };
+        itemElement = new SaturationOffset { Val = value };
         openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static Int32? GetSaturationModulation(DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.StyleColor? openXmlElement)
+
+  public static Int32? GetSaturationModulation(StyleColor? openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.SaturationModulation>();
+    var itemElement = openXmlElement?.GetFirstChild<SaturationModulation>();
     if (itemElement != null)
       return itemElement.Val?.Value;
     return null;
   }
-  
-  public static void SetSaturationModulation(DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.StyleColor? openXmlElement, Int32? value)
+
+  public static void SetSaturationModulation(StyleColor? openXmlElement, Int32? value)
   {
     if (openXmlElement != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.SaturationModulation>();
+      var itemElement = openXmlElement.GetFirstChild<SaturationModulation>();
       if (itemElement != null)
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = new DocumentFormat.OpenXml.Drawing.SaturationModulation{ Val = value };
+        itemElement = new SaturationModulation { Val = value };
         openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static Int32? GetLuminance(DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.StyleColor? openXmlElement)
+
+  public static Int32? GetLuminance(StyleColor? openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.Luminance>();
+    var itemElement = openXmlElement?.GetFirstChild<Luminance>();
     if (itemElement != null)
       return itemElement.Val?.Value;
     return null;
   }
-  
-  public static void SetLuminance(DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.StyleColor? openXmlElement, Int32? value)
+
+  public static void SetLuminance(StyleColor? openXmlElement, Int32? value)
   {
     if (openXmlElement != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Luminance>();
+      var itemElement = openXmlElement.GetFirstChild<Luminance>();
       if (itemElement != null)
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = new DocumentFormat.OpenXml.Drawing.Luminance{ Val = value };
+        itemElement = new Luminance { Val = value };
         openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static Int32? GetLuminanceOffset(DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.StyleColor? openXmlElement)
+
+  public static Int32? GetLuminanceOffset(StyleColor? openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.LuminanceOffset>();
+    var itemElement = openXmlElement?.GetFirstChild<LuminanceOffset>();
     if (itemElement != null)
       return itemElement.Val?.Value;
     return null;
   }
-  
-  public static void SetLuminanceOffset(DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.StyleColor? openXmlElement, Int32? value)
+
+  public static void SetLuminanceOffset(StyleColor? openXmlElement, Int32? value)
   {
     if (openXmlElement != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.LuminanceOffset>();
+      var itemElement = openXmlElement.GetFirstChild<LuminanceOffset>();
       if (itemElement != null)
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = new DocumentFormat.OpenXml.Drawing.LuminanceOffset{ Val = value };
+        itemElement = new LuminanceOffset { Val = value };
         openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static Int32? GetLuminanceModulation(DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.StyleColor? openXmlElement)
+
+  public static Int32? GetLuminanceModulation(StyleColor? openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.LuminanceModulation>();
+    var itemElement = openXmlElement?.GetFirstChild<LuminanceModulation>();
     if (itemElement != null)
       return itemElement.Val?.Value;
     return null;
   }
-  
-  public static void SetLuminanceModulation(DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.StyleColor? openXmlElement, Int32? value)
+
+  public static void SetLuminanceModulation(StyleColor? openXmlElement, Int32? value)
   {
     if (openXmlElement != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.LuminanceModulation>();
+      var itemElement = openXmlElement.GetFirstChild<LuminanceModulation>();
       if (itemElement != null)
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = new DocumentFormat.OpenXml.Drawing.LuminanceModulation{ Val = value };
+        itemElement = new LuminanceModulation { Val = value };
         openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static Int32? GetRed(DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.StyleColor? openXmlElement)
+
+  public static Int32? GetRed(StyleColor? openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.Red>();
+    var itemElement = openXmlElement?.GetFirstChild<Red>();
     if (itemElement != null)
       return itemElement.Val?.Value;
     return null;
   }
-  
-  public static void SetRed(DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.StyleColor? openXmlElement, Int32? value)
+
+  public static void SetRed(StyleColor? openXmlElement, Int32? value)
   {
     if (openXmlElement != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Red>();
+      var itemElement = openXmlElement.GetFirstChild<Red>();
       if (itemElement != null)
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = new DocumentFormat.OpenXml.Drawing.Red{ Val = value };
+        itemElement = new Red { Val = value };
         openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static Int32? GetRedOffset(DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.StyleColor? openXmlElement)
+
+  public static Int32? GetRedOffset(StyleColor? openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.RedOffset>();
+    var itemElement = openXmlElement?.GetFirstChild<RedOffset>();
     if (itemElement != null)
       return itemElement.Val?.Value;
     return null;
   }
-  
-  public static void SetRedOffset(DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.StyleColor? openXmlElement, Int32? value)
+
+  public static void SetRedOffset(StyleColor? openXmlElement, Int32? value)
   {
     if (openXmlElement != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.RedOffset>();
+      var itemElement = openXmlElement.GetFirstChild<RedOffset>();
       if (itemElement != null)
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = new DocumentFormat.OpenXml.Drawing.RedOffset{ Val = value };
+        itemElement = new RedOffset { Val = value };
         openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static Int32? GetRedModulation(DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.StyleColor? openXmlElement)
+
+  public static Int32? GetRedModulation(StyleColor? openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.RedModulation>();
+    var itemElement = openXmlElement?.GetFirstChild<RedModulation>();
     if (itemElement != null)
       return itemElement.Val?.Value;
     return null;
   }
-  
-  public static void SetRedModulation(DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.StyleColor? openXmlElement, Int32? value)
+
+  public static void SetRedModulation(StyleColor? openXmlElement, Int32? value)
   {
     if (openXmlElement != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.RedModulation>();
+      var itemElement = openXmlElement.GetFirstChild<RedModulation>();
       if (itemElement != null)
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = new DocumentFormat.OpenXml.Drawing.RedModulation{ Val = value };
+        itemElement = new RedModulation { Val = value };
         openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static Int32? GetGreen(DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.StyleColor? openXmlElement)
+
+  public static Int32? GetGreen(StyleColor? openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.Green>();
+    var itemElement = openXmlElement?.GetFirstChild<Green>();
     if (itemElement != null)
       return itemElement.Val?.Value;
     return null;
   }
-  
-  public static void SetGreen(DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.StyleColor? openXmlElement, Int32? value)
+
+  public static void SetGreen(StyleColor? openXmlElement, Int32? value)
   {
     if (openXmlElement != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Green>();
+      var itemElement = openXmlElement.GetFirstChild<Green>();
       if (itemElement != null)
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = new DocumentFormat.OpenXml.Drawing.Green{ Val = value };
+        itemElement = new Green { Val = value };
         openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static Int32? GetGreenOffset(DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.StyleColor? openXmlElement)
+
+  public static Int32? GetGreenOffset(StyleColor? openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.GreenOffset>();
+    var itemElement = openXmlElement?.GetFirstChild<GreenOffset>();
     if (itemElement != null)
       return itemElement.Val?.Value;
     return null;
   }
-  
-  public static void SetGreenOffset(DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.StyleColor? openXmlElement, Int32? value)
+
+  public static void SetGreenOffset(StyleColor? openXmlElement, Int32? value)
   {
     if (openXmlElement != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.GreenOffset>();
+      var itemElement = openXmlElement.GetFirstChild<GreenOffset>();
       if (itemElement != null)
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = new DocumentFormat.OpenXml.Drawing.GreenOffset{ Val = value };
+        itemElement = new GreenOffset { Val = value };
         openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static Int32? GetGreenModulation(DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.StyleColor? openXmlElement)
+
+  public static Int32? GetGreenModulation(StyleColor? openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.GreenModulation>();
+    var itemElement = openXmlElement?.GetFirstChild<GreenModulation>();
     if (itemElement != null)
       return itemElement.Val?.Value;
     return null;
   }
-  
-  public static void SetGreenModulation(DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.StyleColor? openXmlElement, Int32? value)
+
+  public static void SetGreenModulation(StyleColor? openXmlElement, Int32? value)
   {
     if (openXmlElement != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.GreenModulation>();
+      var itemElement = openXmlElement.GetFirstChild<GreenModulation>();
       if (itemElement != null)
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = new DocumentFormat.OpenXml.Drawing.GreenModulation{ Val = value };
+        itemElement = new GreenModulation { Val = value };
         openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static Int32? GetBlue(DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.StyleColor? openXmlElement)
+
+  public static Int32? GetBlue(StyleColor? openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.Blue>();
+    var itemElement = openXmlElement?.GetFirstChild<Blue>();
     if (itemElement != null)
       return itemElement.Val?.Value;
     return null;
   }
-  
-  public static void SetBlue(DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.StyleColor? openXmlElement, Int32? value)
+
+  public static void SetBlue(StyleColor? openXmlElement, Int32? value)
   {
     if (openXmlElement != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Blue>();
+      var itemElement = openXmlElement.GetFirstChild<Blue>();
       if (itemElement != null)
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = new DocumentFormat.OpenXml.Drawing.Blue{ Val = value };
+        itemElement = new Blue { Val = value };
         openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static Int32? GetBlueOffset(DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.StyleColor? openXmlElement)
+
+  public static Int32? GetBlueOffset(StyleColor? openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.BlueOffset>();
+    var itemElement = openXmlElement?.GetFirstChild<BlueOffset>();
     if (itemElement != null)
       return itemElement.Val?.Value;
     return null;
   }
-  
-  public static void SetBlueOffset(DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.StyleColor? openXmlElement, Int32? value)
+
+  public static void SetBlueOffset(StyleColor? openXmlElement, Int32? value)
   {
     if (openXmlElement != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.BlueOffset>();
+      var itemElement = openXmlElement.GetFirstChild<BlueOffset>();
       if (itemElement != null)
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = new DocumentFormat.OpenXml.Drawing.BlueOffset{ Val = value };
+        itemElement = new BlueOffset { Val = value };
         openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static Int32? GetBlueModulation(DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.StyleColor? openXmlElement)
+
+  public static Int32? GetBlueModulation(StyleColor? openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.BlueModulation>();
+    var itemElement = openXmlElement?.GetFirstChild<BlueModulation>();
     if (itemElement != null)
       return itemElement.Val?.Value;
     return null;
   }
-  
-  public static void SetBlueModulation(DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.StyleColor? openXmlElement, Int32? value)
+
+  public static void SetBlueModulation(StyleColor? openXmlElement, Int32? value)
   {
     if (openXmlElement != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.BlueModulation>();
+      var itemElement = openXmlElement.GetFirstChild<BlueModulation>();
       if (itemElement != null)
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = new DocumentFormat.OpenXml.Drawing.BlueModulation{ Val = value };
+        itemElement = new BlueModulation { Val = value };
         openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static Boolean? GetGamma(DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.StyleColor? openXmlElement)
+
+  public static Boolean? GetGamma(StyleColor? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Gamma>();
+      var itemElement = openXmlElement.GetFirstChild<Gamma>();
       return itemElement != null;
     }
     return null;
   }
-  
-  public static void SetGamma(DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.StyleColor? openXmlElement, Boolean? value)
+
+  public static void SetGamma(StyleColor? openXmlElement, Boolean? value)
   {
     if (openXmlElement != null)
     {
       if (value == false)
       {
-        var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Gamma>();
+        var itemElement = openXmlElement.GetFirstChild<Gamma>();
         if (itemElement != null)
           itemElement.Remove();
       }
       if (value == true)
       {
-        var itemElement = new DocumentFormat.OpenXml.Drawing.Gamma();
+        var itemElement = new Gamma();
         openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static Boolean? GetInverseGamma(DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.StyleColor? openXmlElement)
+
+  public static Boolean? GetInverseGamma(StyleColor? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.InverseGamma>();
+      var itemElement = openXmlElement.GetFirstChild<InverseGamma>();
       return itemElement != null;
     }
     return null;
   }
-  
-  public static void SetInverseGamma(DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.StyleColor? openXmlElement, Boolean? value)
+
+  public static void SetInverseGamma(StyleColor? openXmlElement, Boolean? value)
   {
     if (openXmlElement != null)
     {
       if (value == false)
       {
-        var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.InverseGamma>();
+        var itemElement = openXmlElement.GetFirstChild<InverseGamma>();
         if (itemElement != null)
           itemElement.Remove();
       }
       if (value == true)
       {
-        var itemElement = new DocumentFormat.OpenXml.Drawing.InverseGamma();
+        var itemElement = new InverseGamma();
         openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static DocumentModel.Drawings.ChartsStyle.StyleColor? CreateModelElement(DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.StyleColor? openXmlElement)
+
+  public static DocumentModel.Drawings.ChartsStyle.StyleColor? CreateModelElement(StyleColor? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -729,9 +733,9 @@ public static class StyleColorConverter
     }
     return null;
   }
-  
+
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.ChartsStyle.StyleColor? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.StyleColor, new()
+    where OpenXmlElementType : StyleColor, new()
   {
     if (value != null)
     {

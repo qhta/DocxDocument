@@ -1,39 +1,41 @@
+using DocumentFormat.OpenXml.Office2010.Drawing;
+
 namespace DocumentModel.OpenXml.Drawings;
 
 /// <summary>
-/// Defines the ArtisticPaintBrush Class.
+///   Defines the ArtisticPaintBrush Class.
 /// </summary>
 public static class ArtisticPaintBrushConverter
 {
   /// <summary>
-  /// trans, this property is only available in Office 2010 and later.
+  ///   trans, this property is only available in Office 2010 and later.
   /// </summary>
-  public static Int32? GetTransparancy(DocumentFormat.OpenXml.Office2010.Drawing.ArtisticPaintBrush? openXmlElement)
+  public static Int32? GetTransparancy(ArtisticPaintBrush? openXmlElement)
   {
     return openXmlElement?.Transparancy?.Value;
   }
-  
-  public static void SetTransparancy(DocumentFormat.OpenXml.Office2010.Drawing.ArtisticPaintBrush? openXmlElement, Int32? value)
+
+  public static void SetTransparancy(ArtisticPaintBrush? openXmlElement, Int32? value)
   {
     if (openXmlElement != null)
       openXmlElement.Transparancy = value;
   }
-  
+
   /// <summary>
-  /// brushSize, this property is only available in Office 2010 and later.
+  ///   brushSize, this property is only available in Office 2010 and later.
   /// </summary>
-  public static Int32? GetBrushSize(DocumentFormat.OpenXml.Office2010.Drawing.ArtisticPaintBrush? openXmlElement)
+  public static Int32? GetBrushSize(ArtisticPaintBrush? openXmlElement)
   {
     return openXmlElement?.BrushSize?.Value;
   }
-  
-  public static void SetBrushSize(DocumentFormat.OpenXml.Office2010.Drawing.ArtisticPaintBrush? openXmlElement, Int32? value)
+
+  public static void SetBrushSize(ArtisticPaintBrush? openXmlElement, Int32? value)
   {
     if (openXmlElement != null)
       openXmlElement.BrushSize = value;
   }
-  
-  public static DocumentModel.Drawings.ArtisticPaintBrush? CreateModelElement(DocumentFormat.OpenXml.Office2010.Drawing.ArtisticPaintBrush? openXmlElement)
+
+  public static DocumentModel.Drawings.ArtisticPaintBrush? CreateModelElement(ArtisticPaintBrush? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -44,9 +46,9 @@ public static class ArtisticPaintBrushConverter
     }
     return null;
   }
-  
+
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.ArtisticPaintBrush? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Office2010.Drawing.ArtisticPaintBrush, new()
+    where OpenXmlElementType : ArtisticPaintBrush, new()
   {
     if (value != null)
     {

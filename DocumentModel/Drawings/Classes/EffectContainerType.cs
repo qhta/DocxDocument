@@ -1,18 +1,17 @@
 namespace DocumentModel.Drawings;
 
 /// <summary>
-/// Defines the EffectContainerType Class.
+///   Defines the EffectContainerType Class.
 /// </summary>
-public partial class EffectContainerType
+public class EffectContainerType
 {
   /// <summary>
-  /// Effect Container Type
+  ///   Effect Container Type
   /// </summary>
-  public DocumentModel.Drawings.EffectContainerKind? Type { get; set; }
-  
+  public EffectContainerKind? Type { get; set; }
+
   /// <summary>
-  /// Name
+  ///   Name
   /// </summary>
   public String? Name { get; set; }
-  
 }

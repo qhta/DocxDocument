@@ -1,18 +1,17 @@
 namespace DocumentModel.Drawings.Diagrams;
 
 /// <summary>
-/// Color Transform Category.
+///   Color Transform Category.
 /// </summary>
-public partial class ColorTransformCategory
+public class ColorTransformCategory
 {
   /// <summary>
-  /// Category Type
+  ///   Category Type
   /// </summary>
   public String? Type { get; set; }
-  
+
   /// <summary>
-  /// Priority
+  ///   Priority
   /// </summary>
   public UInt32? Priority { get; set; }
-  
 }

@@ -1,19 +1,23 @@
+using DocumentFormat.OpenXml.Drawing;
+using MajorFont = DocumentModel.Drawings.MajorFont;
+using MinorFont = DocumentModel.Drawings.MinorFont;
+
 namespace DocumentModel.OpenXml.Drawings;
 
 /// <summary>
-/// Font Scheme.
+///   Font Scheme.
 /// </summary>
 public static class FontSchemeConverter
 {
   /// <summary>
-  /// Name
+  ///   Name
   /// </summary>
-  public static String? GetName(DocumentFormat.OpenXml.Drawing.FontScheme? openXmlElement)
+  public static String? GetName(FontScheme? openXmlElement)
   {
     return openXmlElement?.Name?.Value;
   }
-  
-  public static void SetName(DocumentFormat.OpenXml.Drawing.FontScheme? openXmlElement, String? value)
+
+  public static void SetName(FontScheme? openXmlElement, String? value)
   {
     if (openXmlElement != null)
       if (value != null)
@@ -21,19 +25,19 @@ public static class FontSchemeConverter
       else
         openXmlElement.Name = null;
   }
-  
+
   /// <summary>
-  /// Major Font.
+  ///   Major Font.
   /// </summary>
-  public static DocumentModel.Drawings.MajorFont? GetMajorFont(DocumentFormat.OpenXml.Drawing.FontScheme? openXmlElement)
+  public static MajorFont? GetMajorFont(FontScheme? openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.MajorFont>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.MajorFontConverter.CreateModelElement(itemElement);
+      return MajorFontConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetMajorFont(DocumentFormat.OpenXml.Drawing.FontScheme? openXmlElement, DocumentModel.Drawings.MajorFont? value)
+
+  public static void SetMajorFont(FontScheme? openXmlElement, MajorFont? value)
   {
     if (openXmlElement != null)
     {
@@ -42,25 +46,25 @@ public static class FontSchemeConverter
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Drawings.MajorFontConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.MajorFont>(value);
+        itemElement = MajorFontConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.MajorFont>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
+
   /// <summary>
-  /// Minor fonts.
+  ///   Minor fonts.
   /// </summary>
-  public static DocumentModel.Drawings.MinorFont? GetMinorFont(DocumentFormat.OpenXml.Drawing.FontScheme? openXmlElement)
+  public static MinorFont? GetMinorFont(FontScheme? openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.MinorFont>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.MinorFontConverter.CreateModelElement(itemElement);
+      return MinorFontConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetMinorFont(DocumentFormat.OpenXml.Drawing.FontScheme? openXmlElement, DocumentModel.Drawings.MinorFont? value)
+
+  public static void SetMinorFont(FontScheme? openXmlElement, MinorFont? value)
   {
     if (openXmlElement != null)
     {
@@ -69,25 +73,25 @@ public static class FontSchemeConverter
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Drawings.MinorFontConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.MinorFont>(value);
+        itemElement = MinorFontConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.MinorFont>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
+
   /// <summary>
-  /// ExtensionList.
+  ///   ExtensionList.
   /// </summary>
-  public static DocumentModel.Drawings.ExtensionList? GetExtensionList(DocumentFormat.OpenXml.Drawing.FontScheme? openXmlElement)
+  public static DocumentModel.Drawings.ExtensionList? GetExtensionList(FontScheme? openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.ExtensionList>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.ExtensionListConverter.CreateModelElement(itemElement);
+      return ExtensionListConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetExtensionList(DocumentFormat.OpenXml.Drawing.FontScheme? openXmlElement, DocumentModel.Drawings.ExtensionList? value)
+
+  public static void SetExtensionList(FontScheme? openXmlElement, DocumentModel.Drawings.ExtensionList? value)
   {
     if (openXmlElement != null)
     {
@@ -96,14 +100,14 @@ public static class FontSchemeConverter
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Drawings.ExtensionListConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.ExtensionList>(value);
+        itemElement = ExtensionListConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.ExtensionList>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static DocumentModel.Drawings.FontScheme? CreateModelElement(DocumentFormat.OpenXml.Drawing.FontScheme? openXmlElement)
+
+  public static DocumentModel.Drawings.FontScheme? CreateModelElement(FontScheme? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -116,9 +120,9 @@ public static class FontSchemeConverter
     }
     return null;
   }
-  
+
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.FontScheme? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.FontScheme, new()
+    where OpenXmlElementType : FontScheme, new()
   {
     if (value != null)
     {

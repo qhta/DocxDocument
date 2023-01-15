@@ -1,33 +1,32 @@
 namespace DocumentModel.Drawings.Charts;
 
 /// <summary>
-/// Error Value Type
+///   Error Value Type
 /// </summary>
 public enum ErrorKind
 {
   /// <summary>
-  /// Custom Error Bars.
+  ///   Custom Error Bars.
   /// </summary>
   Custom,
-  
+
   /// <summary>
-  /// Fixed Value.
+  ///   Fixed Value.
   /// </summary>
   FixedValue,
-  
+
   /// <summary>
-  /// Percentage.
+  ///   Percentage.
   /// </summary>
   Percentage,
-  
+
   /// <summary>
-  /// Standard Deviation.
+  ///   Standard Deviation.
   /// </summary>
   StandardDeviation,
-  
+
   /// <summary>
-  /// Standard Error.
+  ///   Standard Error.
   /// </summary>
-  StandardError,
-  
+  StandardError
 }

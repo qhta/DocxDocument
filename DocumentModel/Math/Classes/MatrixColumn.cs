@@ -1,13 +1,12 @@
 namespace DocumentModel.Math;
 
 /// <summary>
-/// Matrix Column.
+///   Matrix Column.
 /// </summary>
-public partial class MatrixColumn
+public class MatrixColumn
 {
   /// <summary>
-  /// Matrix Column Properties.
+  ///   Matrix Column Properties.
   /// </summary>
-  public DocumentModel.Math.MatrixColumnProperties? MatrixColumnProperties { get; set; }
-  
+  public MatrixColumnProperties? MatrixColumnProperties { get; set; }
 }

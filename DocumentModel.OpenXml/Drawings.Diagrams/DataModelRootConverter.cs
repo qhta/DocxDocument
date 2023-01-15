@@ -1,22 +1,25 @@
+using DocumentModel.Drawings.Diagrams;
+using DataModelRoot = DocumentFormat.OpenXml.Drawing.Diagrams.DataModelRoot;
+
 namespace DocumentModel.OpenXml.Drawings.Diagrams;
 
 /// <summary>
-/// Data Model.
+///   Data Model.
 /// </summary>
 public static class DataModelRootConverter
 {
   /// <summary>
-  /// Point List.
+  ///   Point List.
   /// </summary>
-  public static DocumentModel.Drawings.Diagrams.PointList? GetPointList(DocumentFormat.OpenXml.Drawing.Diagrams.DataModelRoot? openXmlElement)
+  public static PointList? GetPointList(DataModelRoot? openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.Diagrams.PointList>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.Diagrams.PointListConverter.CreateModelElement(itemElement);
+      return PointListConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetPointList(DocumentFormat.OpenXml.Drawing.Diagrams.DataModelRoot? openXmlElement, DocumentModel.Drawings.Diagrams.PointList? value)
+
+  public static void SetPointList(DataModelRoot? openXmlElement, PointList? value)
   {
     if (openXmlElement != null)
     {
@@ -25,25 +28,25 @@ public static class DataModelRootConverter
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Drawings.Diagrams.PointListConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Diagrams.PointList>(value);
+        itemElement = PointListConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Diagrams.PointList>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
+
   /// <summary>
-  /// Connection List.
+  ///   Connection List.
   /// </summary>
-  public static DocumentModel.Drawings.Diagrams.ConnectionList? GetConnectionList(DocumentFormat.OpenXml.Drawing.Diagrams.DataModelRoot? openXmlElement)
+  public static ConnectionList? GetConnectionList(DataModelRoot? openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.Diagrams.ConnectionList>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.Diagrams.ConnectionListConverter.CreateModelElement(itemElement);
+      return ConnectionListConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetConnectionList(DocumentFormat.OpenXml.Drawing.Diagrams.DataModelRoot? openXmlElement, DocumentModel.Drawings.Diagrams.ConnectionList? value)
+
+  public static void SetConnectionList(DataModelRoot? openXmlElement, ConnectionList? value)
   {
     if (openXmlElement != null)
     {
@@ -52,25 +55,25 @@ public static class DataModelRootConverter
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Drawings.Diagrams.ConnectionListConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Diagrams.ConnectionList>(value);
+        itemElement = ConnectionListConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Diagrams.ConnectionList>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
+
   /// <summary>
-  /// Background Formatting.
+  ///   Background Formatting.
   /// </summary>
-  public static DocumentModel.Drawings.Diagrams.Background? GetBackground(DocumentFormat.OpenXml.Drawing.Diagrams.DataModelRoot? openXmlElement)
+  public static Background? GetBackground(DataModelRoot? openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.Diagrams.Background>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.Diagrams.BackgroundConverter.CreateModelElement(itemElement);
+      return BackgroundConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetBackground(DocumentFormat.OpenXml.Drawing.Diagrams.DataModelRoot? openXmlElement, DocumentModel.Drawings.Diagrams.Background? value)
+
+  public static void SetBackground(DataModelRoot? openXmlElement, Background? value)
   {
     if (openXmlElement != null)
     {
@@ -79,25 +82,25 @@ public static class DataModelRootConverter
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Drawings.Diagrams.BackgroundConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Diagrams.Background>(value);
+        itemElement = BackgroundConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Diagrams.Background>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
+
   /// <summary>
-  /// Whole E2O Formatting.
+  ///   Whole E2O Formatting.
   /// </summary>
-  public static DocumentModel.Drawings.Diagrams.Whole? GetWhole(DocumentFormat.OpenXml.Drawing.Diagrams.DataModelRoot? openXmlElement)
+  public static Whole? GetWhole(DataModelRoot? openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.Diagrams.Whole>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.Diagrams.WholeConverter.CreateModelElement(itemElement);
+      return WholeConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetWhole(DocumentFormat.OpenXml.Drawing.Diagrams.DataModelRoot? openXmlElement, DocumentModel.Drawings.Diagrams.Whole? value)
+
+  public static void SetWhole(DataModelRoot? openXmlElement, Whole? value)
   {
     if (openXmlElement != null)
     {
@@ -106,25 +109,25 @@ public static class DataModelRootConverter
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Drawings.Diagrams.WholeConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Diagrams.Whole>(value);
+        itemElement = WholeConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Diagrams.Whole>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
+
   /// <summary>
-  /// DataModelExtensionList.
+  ///   DataModelExtensionList.
   /// </summary>
-  public static DocumentModel.Drawings.Diagrams.DataModelExtensionList? GetDataModelExtensionList(DocumentFormat.OpenXml.Drawing.Diagrams.DataModelRoot? openXmlElement)
+  public static DataModelExtensionList? GetDataModelExtensionList(DataModelRoot? openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.Diagrams.DataModelExtensionList>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.Diagrams.DataModelExtensionListConverter.CreateModelElement(itemElement);
+      return DataModelExtensionListConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetDataModelExtensionList(DocumentFormat.OpenXml.Drawing.Diagrams.DataModelRoot? openXmlElement, DocumentModel.Drawings.Diagrams.DataModelExtensionList? value)
+
+  public static void SetDataModelExtensionList(DataModelRoot? openXmlElement, DataModelExtensionList? value)
   {
     if (openXmlElement != null)
     {
@@ -133,14 +136,14 @@ public static class DataModelRootConverter
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Drawings.Diagrams.DataModelExtensionListConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Diagrams.DataModelExtensionList>(value);
+        itemElement = DataModelExtensionListConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Diagrams.DataModelExtensionList>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static DocumentModel.Drawings.Diagrams.DataModelRoot? CreateModelElement(DocumentFormat.OpenXml.Drawing.Diagrams.DataModelRoot? openXmlElement)
+
+  public static DocumentModel.Drawings.Diagrams.DataModelRoot? CreateModelElement(DataModelRoot? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -154,9 +157,9 @@ public static class DataModelRootConverter
     }
     return null;
   }
-  
+
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.Diagrams.DataModelRoot? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.Diagrams.DataModelRoot, new()
+    where OpenXmlElementType : DataModelRoot, new()
   {
     if (value != null)
     {

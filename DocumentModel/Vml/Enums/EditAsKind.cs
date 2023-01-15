@@ -1,43 +1,42 @@
 namespace DocumentModel.Vml;
 
 /// <summary>
-/// Shape Grouping Types
+///   Shape Grouping Types
 /// </summary>
 public enum EditAsKind
 {
   /// <summary>
-  /// Shape Canvas.
+  ///   Shape Canvas.
   /// </summary>
   Canvas,
-  
+
   /// <summary>
-  /// Organization Chart Diagram.
+  ///   Organization Chart Diagram.
   /// </summary>
   OrganizationChart,
-  
+
   /// <summary>
-  /// Radial Diagram.
+  ///   Radial Diagram.
   /// </summary>
   Radial,
-  
+
   /// <summary>
-  /// Cycle Diagram.
+  ///   Cycle Diagram.
   /// </summary>
   Cycle,
-  
+
   /// <summary>
-  /// Pyramid Diagram.
+  ///   Pyramid Diagram.
   /// </summary>
   Stacked,
-  
+
   /// <summary>
-  /// Venn Diagram.
+  ///   Venn Diagram.
   /// </summary>
   Venn,
-  
+
   /// <summary>
-  /// Bullseye Diagram.
+  ///   Bullseye Diagram.
   /// </summary>
-  Bullseye,
-  
+  Bullseye
 }

@@ -1,13 +1,12 @@
 namespace DocumentModel.Drawings;
 
 /// <summary>
-/// Graphic Object.
+///   Graphic Object.
 /// </summary>
-public partial class Graphic
+public class Graphic
 {
   /// <summary>
-  /// Graphic Object Data.
+  ///   Graphic Object Data.
   /// </summary>
-  public DocumentModel.Drawings.GraphicData? GraphicData { get; set; }
-  
+  public GraphicData? GraphicData { get; set; }
 }

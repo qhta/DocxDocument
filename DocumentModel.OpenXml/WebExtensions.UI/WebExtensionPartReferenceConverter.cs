@@ -1,19 +1,21 @@
+using DocumentFormat.OpenXml.Office2013.WebExtentionPane;
+
 namespace DocumentModel.OpenXml.WebExtensions.UI;
 
 /// <summary>
-/// Defines the WebExtensionPartReference Class.
+///   Defines the WebExtensionPartReference Class.
 /// </summary>
 public static class WebExtensionPartReferenceConverter
 {
   /// <summary>
-  /// id, this property is only available in Office 2013 and later.
+  ///   id, this property is only available in Office 2013 and later.
   /// </summary>
-  public static String? GetId(DocumentFormat.OpenXml.Office2013.WebExtentionPane.WebExtensionPartReference? openXmlElement)
+  public static String? GetId(WebExtensionPartReference? openXmlElement)
   {
     return openXmlElement?.Id?.Value;
   }
-  
-  public static void SetId(DocumentFormat.OpenXml.Office2013.WebExtentionPane.WebExtensionPartReference? openXmlElement, String? value)
+
+  public static void SetId(WebExtensionPartReference? openXmlElement, String? value)
   {
     if (openXmlElement != null)
       if (value != null)
@@ -21,8 +23,8 @@ public static class WebExtensionPartReferenceConverter
       else
         openXmlElement.Id = null;
   }
-  
-  public static DocumentModel.WebExtensions.UI.WebExtensionPartReference? CreateModelElement(DocumentFormat.OpenXml.Office2013.WebExtentionPane.WebExtensionPartReference? openXmlElement)
+
+  public static DocumentModel.WebExtensions.UI.WebExtensionPartReference? CreateModelElement(WebExtensionPartReference? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -32,9 +34,9 @@ public static class WebExtensionPartReferenceConverter
     }
     return null;
   }
-  
+
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.WebExtensions.UI.WebExtensionPartReference? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Office2013.WebExtentionPane.WebExtensionPartReference, new()
+    where OpenXmlElementType : WebExtensionPartReference, new()
   {
     if (value != null)
     {

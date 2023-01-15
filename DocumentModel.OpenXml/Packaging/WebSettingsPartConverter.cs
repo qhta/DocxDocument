@@ -1,42 +1,46 @@
+using DocumentFormat.OpenXml.Packaging;
+using DocumentModel.OpenXml.Wordprocessing;
+using DocumentModel.Wordprocessing;
+
 namespace DocumentModel.OpenXml.Packaging;
 
 /// <summary>
-/// Defines the WebSettingsPart
+///   Defines the WebSettingsPart
 /// </summary>
 public static class WebSettingsPartConverter
 {
-  public static String? GetContentType(DocumentFormat.OpenXml.Packaging.WebSettingsPart? openXmlElement)
+  public static String? GetContentType(WebSettingsPart? openXmlElement)
   {
     return openXmlElement?.ContentType;
   }
-  
-  public static String? GetRelationshipType(DocumentFormat.OpenXml.Packaging.WebSettingsPart? openXmlElement)
+
+  public static String? GetRelationshipType(WebSettingsPart? openXmlElement)
   {
     return openXmlElement?.RelationshipType;
   }
-  
+
   /// <summary>
-  /// Gets or sets the root element of this part.
+  ///   Gets or sets the root element of this part.
   /// </summary>
-  public static DocumentModel.Wordprocessing.WebSettings? GetWebSettings(DocumentFormat.OpenXml.Packaging.WebSettingsPart? openXmlElement)
+  public static WebSettings? GetWebSettings(WebSettingsPart? openXmlElement)
   {
     if (openXmlElement?.RootElement is DocumentFormat.OpenXml.Wordprocessing.WebSettings rootElement)
-      return DocumentModel.OpenXml.Wordprocessing.WebSettingsConverter.CreateModelElement(rootElement);
+      return WebSettingsConverter.CreateModelElement(rootElement);
     return null;
   }
-  
-  public static void SetWebSettings(DocumentFormat.OpenXml.Packaging.WebSettingsPart? openXmlElement, DocumentModel.Wordprocessing.WebSettings? value)
+
+  public static void SetWebSettings(WebSettingsPart? openXmlElement, WebSettings? value)
   {
     if (openXmlElement != null)
       if (value != null)
       {
-         var rootElement = DocumentModel.OpenXml.Wordprocessing.WebSettingsConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.WebSettings>(value);
-         if (rootElement != null)
-           openXmlElement.WebSettings = rootElement;
+        var rootElement = WebSettingsConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.WebSettings>(value);
+        if (rootElement != null)
+          openXmlElement.WebSettings = rootElement;
       }
   }
-  
-  public static DocumentModel.Packaging.WebSettingsPart? CreateModelElement(DocumentFormat.OpenXml.Packaging.WebSettingsPart? openXmlElement)
+
+  public static DocumentModel.Packaging.WebSettingsPart? CreateModelElement(WebSettingsPart? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -48,9 +52,9 @@ public static class WebSettingsPartConverter
     }
     return null;
   }
-  
+
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Packaging.WebSettingsPart? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Packaging.WebSettingsPart, new()
+    where OpenXmlElementType : WebSettingsPart, new()
   {
     if (value != null)
     {

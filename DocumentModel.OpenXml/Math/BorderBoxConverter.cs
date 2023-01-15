@@ -1,22 +1,25 @@
+using DocumentModel.Math;
+using BorderBox = DocumentFormat.OpenXml.Math.BorderBox;
+
 namespace DocumentModel.OpenXml.Math;
 
 /// <summary>
-/// Border-Box Function.
+///   Border-Box Function.
 /// </summary>
 public static class BorderBoxConverter
 {
   /// <summary>
-  /// Border Box Properties.
+  ///   Border Box Properties.
   /// </summary>
-  public static DocumentModel.Math.BorderBoxProperties? GetBorderBoxProperties(DocumentFormat.OpenXml.Math.BorderBox? openXmlElement)
+  public static BorderBoxProperties? GetBorderBoxProperties(BorderBox? openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Math.BorderBoxProperties>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Math.BorderBoxPropertiesConverter.CreateModelElement(itemElement);
+      return BorderBoxPropertiesConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetBorderBoxProperties(DocumentFormat.OpenXml.Math.BorderBox? openXmlElement, DocumentModel.Math.BorderBoxProperties? value)
+
+  public static void SetBorderBoxProperties(BorderBox? openXmlElement, BorderBoxProperties? value)
   {
     if (openXmlElement != null)
     {
@@ -25,25 +28,25 @@ public static class BorderBoxConverter
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Math.BorderBoxPropertiesConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Math.BorderBoxProperties>(value);
+        itemElement = BorderBoxPropertiesConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Math.BorderBoxProperties>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
+
   /// <summary>
-  /// Base.
+  ///   Base.
   /// </summary>
-  public static DocumentModel.Math.Base? GetBase(DocumentFormat.OpenXml.Math.BorderBox? openXmlElement)
+  public static Base? GetBase(BorderBox? openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Math.Base>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Math.BaseConverter.CreateModelElement(itemElement);
+      return BaseConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetBase(DocumentFormat.OpenXml.Math.BorderBox? openXmlElement, DocumentModel.Math.Base? value)
+
+  public static void SetBase(BorderBox? openXmlElement, Base? value)
   {
     if (openXmlElement != null)
     {
@@ -52,14 +55,14 @@ public static class BorderBoxConverter
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Math.BaseConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Math.Base>(value);
+        itemElement = BaseConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Math.Base>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static DocumentModel.Math.BorderBox? CreateModelElement(DocumentFormat.OpenXml.Math.BorderBox? openXmlElement)
+
+  public static DocumentModel.Math.BorderBox? CreateModelElement(BorderBox? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -70,9 +73,9 @@ public static class BorderBoxConverter
     }
     return null;
   }
-  
+
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Math.BorderBox? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Math.BorderBox, new()
+    where OpenXmlElementType : BorderBox, new()
   {
     if (value != null)
     {

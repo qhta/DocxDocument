@@ -1,28 +1,27 @@
 namespace DocumentModel.Wordprocessing;
 
 /// <summary>
-/// Defines the AllocatedCommand Class.
+///   Defines the AllocatedCommand Class.
 /// </summary>
-public partial class AllocatedCommand
+public class AllocatedCommand
 {
   /// <summary>
-  /// argValue
+  ///   argValue
   /// </summary>
   public String? ArgumentValue { get; set; }
-  
+
   /// <summary>
-  /// fciBasedOn
+  ///   fciBasedOn
   /// </summary>
   public String? CommandBasedOn { get; set; }
-  
+
   /// <summary>
-  /// fciIndexBasedOn
+  ///   fciIndexBasedOn
   /// </summary>
   public Byte[]? CommandIndexBasedOn { get; set; }
-  
+
   /// <summary>
-  /// acdName
+  ///   acdName
   /// </summary>
   public String? AcceleratorName { get; set; }
-  
 }

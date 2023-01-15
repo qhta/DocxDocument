@@ -1,263 +1,262 @@
 namespace DocumentModel.Wordprocessing;
 
 /// <summary>
-/// Run Properties.
+///   Run Properties.
 /// </summary>
-public partial class RunProperties
+public class RunProperties
 {
   /// <summary>
-  /// RunStyle.
+  ///   RunStyle.
   /// </summary>
   public String? RunStyle { get; set; }
-  
+
   /// <summary>
-  /// RunFonts.
+  ///   RunFonts.
   /// </summary>
-  public DocumentModel.Wordprocessing.RunFonts? RunFonts { get; set; }
-  
+  public RunFonts? RunFonts { get; set; }
+
   /// <summary>
-  /// Bold.
+  ///   Bold.
   /// </summary>
   public Boolean? Bold { get; set; }
-  
+
   /// <summary>
-  /// BoldComplexScript.
+  ///   BoldComplexScript.
   /// </summary>
   public Boolean? BoldComplexScript { get; set; }
-  
+
   /// <summary>
-  /// Italic.
+  ///   Italic.
   /// </summary>
   public Boolean? Italic { get; set; }
-  
+
   /// <summary>
-  /// ItalicComplexScript.
+  ///   ItalicComplexScript.
   /// </summary>
   public Boolean? ItalicComplexScript { get; set; }
-  
+
   /// <summary>
-  /// Caps.
+  ///   Caps.
   /// </summary>
   public Boolean? Caps { get; set; }
-  
+
   /// <summary>
-  /// SmallCaps.
+  ///   SmallCaps.
   /// </summary>
   public Boolean? SmallCaps { get; set; }
-  
+
   /// <summary>
-  /// Strike.
+  ///   Strike.
   /// </summary>
   public Boolean? Strike { get; set; }
-  
+
   /// <summary>
-  /// DoubleStrike.
+  ///   DoubleStrike.
   /// </summary>
   public Boolean? DoubleStrike { get; set; }
-  
+
   /// <summary>
-  /// Outline.
+  ///   Outline.
   /// </summary>
   public Boolean? Outline { get; set; }
-  
+
   /// <summary>
-  /// Shadow.
+  ///   Shadow.
   /// </summary>
   public Boolean? Shadow { get; set; }
-  
+
   /// <summary>
-  /// Emboss.
+  ///   Emboss.
   /// </summary>
   public Boolean? Emboss { get; set; }
-  
+
   /// <summary>
-  /// Imprint.
+  ///   Imprint.
   /// </summary>
   public Boolean? Imprint { get; set; }
-  
+
   /// <summary>
-  /// NoProof.
+  ///   NoProof.
   /// </summary>
   public Boolean? NoProof { get; set; }
-  
+
   /// <summary>
-  /// SnapToGrid.
+  ///   SnapToGrid.
   /// </summary>
   public Boolean? SnapToGrid { get; set; }
-  
+
   /// <summary>
-  /// Vanish.
+  ///   Vanish.
   /// </summary>
   public Boolean? Vanish { get; set; }
-  
+
   /// <summary>
-  /// WebHidden.
+  ///   WebHidden.
   /// </summary>
   public Boolean? WebHidden { get; set; }
-  
+
   /// <summary>
-  /// Color.
+  ///   Color.
   /// </summary>
-  public DocumentModel.Wordprocessing.Color? Color { get; set; }
-  
+  public Color? Color { get; set; }
+
   /// <summary>
-  /// Spacing.
+  ///   Spacing.
   /// </summary>
   public Int32? Spacing { get; set; }
-  
+
   /// <summary>
-  /// CharacterScale.
+  ///   CharacterScale.
   /// </summary>
   public Int64? CharacterScale { get; set; }
-  
+
   /// <summary>
-  /// Kern.
+  ///   Kern.
   /// </summary>
   public UInt32? Kern { get; set; }
-  
+
   /// <summary>
-  /// Position.
+  ///   Position.
   /// </summary>
   public String? Position { get; set; }
-  
+
   /// <summary>
-  /// FontSize.
+  ///   FontSize.
   /// </summary>
   public String? FontSize { get; set; }
-  
+
   /// <summary>
-  /// FontSizeComplexScript.
+  ///   FontSizeComplexScript.
   /// </summary>
   public String? FontSizeComplexScript { get; set; }
-  
+
   /// <summary>
-  /// Highlight.
+  ///   Highlight.
   /// </summary>
-  public DocumentModel.Wordprocessing.HighlightColorKind? Highlight { get; set; }
-  
+  public HighlightColorKind? Highlight { get; set; }
+
   /// <summary>
-  /// Underline.
+  ///   Underline.
   /// </summary>
-  public DocumentModel.Wordprocessing.Underline? Underline { get; set; }
-  
+  public Underline? Underline { get; set; }
+
   /// <summary>
-  /// TextEffect.
+  ///   TextEffect.
   /// </summary>
-  public DocumentModel.Wordprocessing.TextEffectKind? TextEffect { get; set; }
-  
+  public TextEffectKind? TextEffect { get; set; }
+
   /// <summary>
-  /// Border.
+  ///   Border.
   /// </summary>
-  public DocumentModel.Wordprocessing.BorderType? Border { get; set; }
-  
+  public BorderType? Border { get; set; }
+
   /// <summary>
-  /// Shading.
+  ///   Shading.
   /// </summary>
-  public DocumentModel.Wordprocessing.Shading? Shading { get; set; }
-  
+  public Shading? Shading { get; set; }
+
   /// <summary>
-  /// FitText.
+  ///   FitText.
   /// </summary>
-  public DocumentModel.Wordprocessing.FitText? FitText { get; set; }
-  
+  public FitText? FitText { get; set; }
+
   /// <summary>
-  /// VerticalTextAlignment.
+  ///   VerticalTextAlignment.
   /// </summary>
-  public DocumentModel.Wordprocessing.VerticalPositionKind? VerticalTextAlignment { get; set; }
-  
+  public VerticalPositionKind? VerticalTextAlignment { get; set; }
+
   /// <summary>
-  /// RightToLeftText.
+  ///   RightToLeftText.
   /// </summary>
   public Boolean? RightToLeftText { get; set; }
-  
+
   /// <summary>
-  /// ComplexScript.
+  ///   ComplexScript.
   /// </summary>
   public Boolean? ComplexScript { get; set; }
-  
+
   /// <summary>
-  /// Emphasis.
+  ///   Emphasis.
   /// </summary>
-  public DocumentModel.Wordprocessing.EmphasisMarkKind? Emphasis { get; set; }
-  
+  public EmphasisMarkKind? Emphasis { get; set; }
+
   /// <summary>
-  /// Languages.
+  ///   Languages.
   /// </summary>
-  public DocumentModel.Wordprocessing.LanguageType? Languages { get; set; }
-  
+  public LanguageType? Languages { get; set; }
+
   /// <summary>
-  /// EastAsianLayout.
+  ///   EastAsianLayout.
   /// </summary>
-  public DocumentModel.Wordprocessing.EastAsianLayout? EastAsianLayout { get; set; }
-  
+  public EastAsianLayout? EastAsianLayout { get; set; }
+
   /// <summary>
-  /// SpecVanish.
+  ///   SpecVanish.
   /// </summary>
   public Boolean? SpecVanish { get; set; }
-  
+
   /// <summary>
-  /// Glow, this property is only available in Office 2010 and later..
+  ///   Glow, this property is only available in Office 2010 and later..
   /// </summary>
-  public DocumentModel.Wordprocessing.Glow? Glow { get; set; }
-  
+  public Glow? Glow { get; set; }
+
   /// <summary>
-  /// Shadow14, this property is only available in Office 2010 and later..
+  ///   Shadow14, this property is only available in Office 2010 and later..
   /// </summary>
-  public DocumentModel.Wordprocessing.Shadow2? Shadow14 { get; set; }
-  
+  public Shadow2? Shadow14 { get; set; }
+
   /// <summary>
-  /// Reflection, this property is only available in Office 2010 and later..
+  ///   Reflection, this property is only available in Office 2010 and later..
   /// </summary>
-  public DocumentModel.Wordprocessing.Reflection? Reflection { get; set; }
-  
+  public Reflection? Reflection { get; set; }
+
   /// <summary>
-  /// TextOutlineEffect, this property is only available in Office 2010 and later..
+  ///   TextOutlineEffect, this property is only available in Office 2010 and later..
   /// </summary>
-  public DocumentModel.Wordprocessing.TextOutlineEffect? TextOutlineEffect { get; set; }
-  
+  public TextOutlineEffect? TextOutlineEffect { get; set; }
+
   /// <summary>
-  /// FillTextEffect, this property is only available in Office 2010 and later..
+  ///   FillTextEffect, this property is only available in Office 2010 and later..
   /// </summary>
-  public DocumentModel.Wordprocessing.FillTextEffect? FillTextEffect { get; set; }
-  
+  public FillTextEffect? FillTextEffect { get; set; }
+
   /// <summary>
-  /// Scene3D, this property is only available in Office 2010 and later..
+  ///   Scene3D, this property is only available in Office 2010 and later..
   /// </summary>
-  public DocumentModel.Wordprocessing.Scene3D? Scene3D { get; set; }
-  
+  public Scene3D? Scene3D { get; set; }
+
   /// <summary>
-  /// Properties3D, this property is only available in Office 2010 and later..
+  ///   Properties3D, this property is only available in Office 2010 and later..
   /// </summary>
-  public DocumentModel.Wordprocessing.Properties3D? Properties3D { get; set; }
-  
+  public Properties3D? Properties3D { get; set; }
+
   /// <summary>
-  /// Ligatures, this property is only available in Office 2010 and later..
+  ///   Ligatures, this property is only available in Office 2010 and later..
   /// </summary>
-  public DocumentModel.Wordprocessing.LigaturesKind? Ligatures { get; set; }
-  
+  public LigaturesKind? Ligatures { get; set; }
+
   /// <summary>
-  /// NumberingFormat, this property is only available in Office 2010 and later..
+  ///   NumberingFormat, this property is only available in Office 2010 and later..
   /// </summary>
-  public DocumentModel.Wordprocessing.NumberFormKind? NumberingFormat { get; set; }
-  
+  public NumberFormKind? NumberingFormat { get; set; }
+
   /// <summary>
-  /// NumberSpacing, this property is only available in Office 2010 and later..
+  ///   NumberSpacing, this property is only available in Office 2010 and later..
   /// </summary>
-  public DocumentModel.Wordprocessing.NumberSpacingKind? NumberSpacing { get; set; }
-  
+  public NumberSpacingKind? NumberSpacing { get; set; }
+
   /// <summary>
-  /// StylisticSets, this property is only available in Office 2010 and later..
+  ///   StylisticSets, this property is only available in Office 2010 and later..
   /// </summary>
-  public DocumentModel.Wordprocessing.StylisticSets? StylisticSets { get; set; }
-  
+  public StylisticSets? StylisticSets { get; set; }
+
   /// <summary>
-  /// ContextualAlternatives, this property is only available in Office 2010 and later..
+  ///   ContextualAlternatives, this property is only available in Office 2010 and later..
   /// </summary>
-  public DocumentModel.Wordprocessing.OnOffKind? ContextualAlternatives { get; set; }
-  
+  public OnOffKind? ContextualAlternatives { get; set; }
+
   /// <summary>
-  /// RunPropertiesChange.
+  ///   RunPropertiesChange.
   /// </summary>
-  public DocumentModel.Wordprocessing.RunPropertiesChange? RunPropertiesChange { get; set; }
-  
+  public RunPropertiesChange? RunPropertiesChange { get; set; }
 }

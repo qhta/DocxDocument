@@ -1,23 +1,22 @@
 namespace DocumentModel.Wordprocessing.DrawingShape;
 
 /// <summary>
-/// Defines the LinkedTextBox Class.
+///   Defines the LinkedTextBox Class.
 /// </summary>
-public partial class LinkedTextBox
+public class LinkedTextBox
 {
   /// <summary>
-  /// id, this property is only available in Office 2010 and later.
+  ///   id, this property is only available in Office 2010 and later.
   /// </summary>
   public UInt16? Id { get; set; }
-  
+
   /// <summary>
-  /// seq, this property is only available in Office 2010 and later.
+  ///   seq, this property is only available in Office 2010 and later.
   /// </summary>
   public UInt16? Sequence { get; set; }
-  
+
   /// <summary>
-  /// OfficeArtExtensionList.
+  ///   OfficeArtExtensionList.
   /// </summary>
-  public DocumentModel.Wordprocessing.DrawingShape.OfficeArtExtensionList? OfficeArtExtensionList { get; set; }
-  
+  public OfficeArtExtensionList? OfficeArtExtensionList { get; set; }
 }
