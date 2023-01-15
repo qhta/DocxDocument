@@ -1,48 +1,60 @@
+using DocumentFormat.OpenXml.Drawing.Charts;
+using DocumentModel.Drawings.Charts;
+using CatAxExtensionList = DocumentModel.Drawings.Charts.CatAxExtensionList;
+using CategoryAxis = DocumentFormat.OpenXml.Drawing.Charts.CategoryAxis;
+using ChartShapeProperties = DocumentModel.Drawings.Charts.ChartShapeProperties;
+using MajorGridlines = DocumentModel.Drawings.Charts.MajorGridlines;
+using MinorGridlines = DocumentModel.Drawings.Charts.MinorGridlines;
+using NumberingFormat = DocumentModel.Drawings.Charts.NumberingFormat;
+using Scaling = DocumentModel.Drawings.Charts.Scaling;
+using TextProperties = DocumentModel.Drawings.Charts.TextProperties;
+using Title = DocumentModel.Drawings.Charts.Title;
+
 namespace DocumentModel.OpenXml.Drawings.Charts;
 
 /// <summary>
-/// Category Axis Data.
+///   Category Axis Data.
 /// </summary>
 public static class CategoryAxisConverter
 {
   /// <summary>
-  /// Axis ID.
+  ///   Axis ID.
   /// </summary>
-  public static UInt32? GetAxisId(DocumentFormat.OpenXml.Drawing.Charts.CategoryAxis? openXmlElement)
+  public static UInt32? GetAxisId(CategoryAxis? openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.AxisId>();
+    var itemElement = openXmlElement?.GetFirstChild<AxisId>();
     if (itemElement != null)
       return itemElement.Val?.Value;
     return null;
   }
-  
-  public static void SetAxisId(DocumentFormat.OpenXml.Drawing.Charts.CategoryAxis? openXmlElement, UInt32? value)
+
+  public static void SetAxisId(CategoryAxis? openXmlElement, UInt32? value)
   {
     if (openXmlElement != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.AxisId>();
+      var itemElement = openXmlElement.GetFirstChild<AxisId>();
       if (itemElement != null)
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = new DocumentFormat.OpenXml.Drawing.Charts.AxisId{ Val = value };
+        itemElement = new AxisId { Val = value };
         openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
+
   /// <summary>
-  /// Scaling.
+  ///   Scaling.
   /// </summary>
-  public static DocumentModel.Drawings.Charts.Scaling? GetScaling(DocumentFormat.OpenXml.Drawing.Charts.CategoryAxis? openXmlElement)
+  public static Scaling? GetScaling(CategoryAxis? openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.Scaling>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.Charts.ScalingConverter.CreateModelElement(itemElement);
+      return ScalingConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetScaling(DocumentFormat.OpenXml.Drawing.Charts.CategoryAxis? openXmlElement, DocumentModel.Drawings.Charts.Scaling? value)
+
+  public static void SetScaling(CategoryAxis? openXmlElement, Scaling? value)
   {
     if (openXmlElement != null)
     {
@@ -51,88 +63,85 @@ public static class CategoryAxisConverter
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Drawings.Charts.ScalingConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Charts.Scaling>(value);
+        itemElement = ScalingConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Charts.Scaling>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
+
   /// <summary>
-  /// Delete.
+  ///   Delete.
   /// </summary>
-  public static Boolean? GetDelete(DocumentFormat.OpenXml.Drawing.Charts.CategoryAxis? openXmlElement)
+  public static Boolean? GetDelete(CategoryAxis? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.Delete>();
+      var itemElement = openXmlElement.GetFirstChild<Delete>();
       return itemElement != null;
     }
     return null;
   }
-  
-  public static void SetDelete(DocumentFormat.OpenXml.Drawing.Charts.CategoryAxis? openXmlElement, Boolean? value)
+
+  public static void SetDelete(CategoryAxis? openXmlElement, Boolean? value)
   {
     if (openXmlElement != null)
     {
       if (value == false)
       {
-        var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.Delete>();
+        var itemElement = openXmlElement.GetFirstChild<Delete>();
         if (itemElement != null)
           itemElement.Remove();
       }
       if (value == true)
       {
-        var itemElement = new DocumentFormat.OpenXml.Drawing.Charts.Delete();
+        var itemElement = new Delete();
         openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
+
   /// <summary>
-  /// Axis Position.
+  ///   Axis Position.
   /// </summary>
-  public static DocumentModel.Drawings.Charts.AxisPositionKind? GetAxisPosition(DocumentFormat.OpenXml.Drawing.Charts.CategoryAxis? openXmlElement)
+  public static AxisPositionKind? GetAxisPosition(CategoryAxis? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.AxisPosition>();
-      if (itemElement?.Val?.Value != null)
-      {
-        return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Drawing.Charts.AxisPositionValues, DocumentModel.Drawings.Charts.AxisPositionKind>(itemElement.Val.Value);
-      }
+      var itemElement = openXmlElement.GetFirstChild<AxisPosition>();
+      if (itemElement?.Val?.Value != null) return EnumValueConverter.GetValue<AxisPositionValues, AxisPositionKind>(itemElement.Val.Value);
     }
     return null;
   }
-  
-  public static void SetAxisPosition(DocumentFormat.OpenXml.Drawing.Charts.CategoryAxis? openXmlElement, DocumentModel.Drawings.Charts.AxisPositionKind? value)
+
+  public static void SetAxisPosition(CategoryAxis? openXmlElement, AxisPositionKind? value)
   {
     if (openXmlElement != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.AxisPosition>();
+      var itemElement = openXmlElement.GetFirstChild<AxisPosition>();
       if (itemElement != null)
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = EnumValueConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Charts.AxisPosition, DocumentFormat.OpenXml.Drawing.Charts.AxisPositionValues, DocumentModel.Drawings.Charts.AxisPositionKind>(value);
+        itemElement = EnumValueConverter.CreateOpenXmlElement<AxisPosition, AxisPositionValues, AxisPositionKind>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
+
   /// <summary>
-  /// Major Gridlines.
+  ///   Major Gridlines.
   /// </summary>
-  public static DocumentModel.Drawings.Charts.MajorGridlines? GetMajorGridlines(DocumentFormat.OpenXml.Drawing.Charts.CategoryAxis? openXmlElement)
+  public static MajorGridlines? GetMajorGridlines(CategoryAxis? openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.MajorGridlines>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.Charts.MajorGridlinesConverter.CreateModelElement(itemElement);
+      return MajorGridlinesConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetMajorGridlines(DocumentFormat.OpenXml.Drawing.Charts.CategoryAxis? openXmlElement, DocumentModel.Drawings.Charts.MajorGridlines? value)
+
+  public static void SetMajorGridlines(CategoryAxis? openXmlElement, MajorGridlines? value)
   {
     if (openXmlElement != null)
     {
@@ -141,25 +150,25 @@ public static class CategoryAxisConverter
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Drawings.Charts.MajorGridlinesConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Charts.MajorGridlines>(value);
+        itemElement = MajorGridlinesConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Charts.MajorGridlines>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
+
   /// <summary>
-  /// Minor Gridlines.
+  ///   Minor Gridlines.
   /// </summary>
-  public static DocumentModel.Drawings.Charts.MinorGridlines? GetMinorGridlines(DocumentFormat.OpenXml.Drawing.Charts.CategoryAxis? openXmlElement)
+  public static MinorGridlines? GetMinorGridlines(CategoryAxis? openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.MinorGridlines>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.Charts.MinorGridlinesConverter.CreateModelElement(itemElement);
+      return MinorGridlinesConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetMinorGridlines(DocumentFormat.OpenXml.Drawing.Charts.CategoryAxis? openXmlElement, DocumentModel.Drawings.Charts.MinorGridlines? value)
+
+  public static void SetMinorGridlines(CategoryAxis? openXmlElement, MinorGridlines? value)
   {
     if (openXmlElement != null)
     {
@@ -168,25 +177,25 @@ public static class CategoryAxisConverter
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Drawings.Charts.MinorGridlinesConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Charts.MinorGridlines>(value);
+        itemElement = MinorGridlinesConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Charts.MinorGridlines>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
+
   /// <summary>
-  /// Title.
+  ///   Title.
   /// </summary>
-  public static DocumentModel.Drawings.Charts.Title? GetTitle(DocumentFormat.OpenXml.Drawing.Charts.CategoryAxis? openXmlElement)
+  public static Title? GetTitle(CategoryAxis? openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.Title>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.Charts.TitleConverter.CreateModelElement(itemElement);
+      return TitleConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetTitle(DocumentFormat.OpenXml.Drawing.Charts.CategoryAxis? openXmlElement, DocumentModel.Drawings.Charts.Title? value)
+
+  public static void SetTitle(CategoryAxis? openXmlElement, Title? value)
   {
     if (openXmlElement != null)
     {
@@ -195,25 +204,25 @@ public static class CategoryAxisConverter
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Drawings.Charts.TitleConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Charts.Title>(value);
+        itemElement = TitleConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Charts.Title>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
+
   /// <summary>
-  /// Number Format.
+  ///   Number Format.
   /// </summary>
-  public static DocumentModel.Drawings.Charts.NumberingFormat? GetNumberingFormat(DocumentFormat.OpenXml.Drawing.Charts.CategoryAxis? openXmlElement)
+  public static NumberingFormat? GetNumberingFormat(CategoryAxis? openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.NumberingFormat>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.Charts.NumberingFormatConverter.CreateModelElement(itemElement);
+      return NumberingFormatConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetNumberingFormat(DocumentFormat.OpenXml.Drawing.Charts.CategoryAxis? openXmlElement, DocumentModel.Drawings.Charts.NumberingFormat? value)
+
+  public static void SetNumberingFormat(CategoryAxis? openXmlElement, NumberingFormat? value)
   {
     if (openXmlElement != null)
     {
@@ -222,121 +231,112 @@ public static class CategoryAxisConverter
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Drawings.Charts.NumberingFormatConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Charts.NumberingFormat>(value);
+        itemElement = NumberingFormatConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Charts.NumberingFormat>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
+
   /// <summary>
-  /// Major Tick Mark.
+  ///   Major Tick Mark.
   /// </summary>
-  public static DocumentModel.Drawings.Charts.TickMarkKind? GetMajorTickMark(DocumentFormat.OpenXml.Drawing.Charts.CategoryAxis? openXmlElement)
+  public static TickMarkKind? GetMajorTickMark(CategoryAxis? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.MajorTickMark>();
-      if (itemElement?.Val?.Value != null)
-      {
-        return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Drawing.Charts.TickMarkValues, DocumentModel.Drawings.Charts.TickMarkKind>(itemElement.Val.Value);
-      }
+      var itemElement = openXmlElement.GetFirstChild<MajorTickMark>();
+      if (itemElement?.Val?.Value != null) return EnumValueConverter.GetValue<TickMarkValues, TickMarkKind>(itemElement.Val.Value);
     }
     return null;
   }
-  
-  public static void SetMajorTickMark(DocumentFormat.OpenXml.Drawing.Charts.CategoryAxis? openXmlElement, DocumentModel.Drawings.Charts.TickMarkKind? value)
+
+  public static void SetMajorTickMark(CategoryAxis? openXmlElement, TickMarkKind? value)
   {
     if (openXmlElement != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.MajorTickMark>();
+      var itemElement = openXmlElement.GetFirstChild<MajorTickMark>();
       if (itemElement != null)
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = EnumValueConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Charts.MajorTickMark, DocumentFormat.OpenXml.Drawing.Charts.TickMarkValues, DocumentModel.Drawings.Charts.TickMarkKind>(value);
+        itemElement = EnumValueConverter.CreateOpenXmlElement<MajorTickMark, TickMarkValues, TickMarkKind>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
+
   /// <summary>
-  /// Minor Tick Mark.
+  ///   Minor Tick Mark.
   /// </summary>
-  public static DocumentModel.Drawings.Charts.TickMarkKind? GetMinorTickMark(DocumentFormat.OpenXml.Drawing.Charts.CategoryAxis? openXmlElement)
+  public static TickMarkKind? GetMinorTickMark(CategoryAxis? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.MinorTickMark>();
-      if (itemElement?.Val?.Value != null)
-      {
-        return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Drawing.Charts.TickMarkValues, DocumentModel.Drawings.Charts.TickMarkKind>(itemElement.Val.Value);
-      }
+      var itemElement = openXmlElement.GetFirstChild<MinorTickMark>();
+      if (itemElement?.Val?.Value != null) return EnumValueConverter.GetValue<TickMarkValues, TickMarkKind>(itemElement.Val.Value);
     }
     return null;
   }
-  
-  public static void SetMinorTickMark(DocumentFormat.OpenXml.Drawing.Charts.CategoryAxis? openXmlElement, DocumentModel.Drawings.Charts.TickMarkKind? value)
+
+  public static void SetMinorTickMark(CategoryAxis? openXmlElement, TickMarkKind? value)
   {
     if (openXmlElement != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.MinorTickMark>();
+      var itemElement = openXmlElement.GetFirstChild<MinorTickMark>();
       if (itemElement != null)
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = EnumValueConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Charts.MinorTickMark, DocumentFormat.OpenXml.Drawing.Charts.TickMarkValues, DocumentModel.Drawings.Charts.TickMarkKind>(value);
+        itemElement = EnumValueConverter.CreateOpenXmlElement<MinorTickMark, TickMarkValues, TickMarkKind>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
+
   /// <summary>
-  /// Tick Label Position.
+  ///   Tick Label Position.
   /// </summary>
-  public static DocumentModel.Drawings.Charts.TickLabelPositionKind? GetTickLabelPosition(DocumentFormat.OpenXml.Drawing.Charts.CategoryAxis? openXmlElement)
+  public static TickLabelPositionKind? GetTickLabelPosition(CategoryAxis? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.TickLabelPosition>();
-      if (itemElement?.Val?.Value != null)
-      {
-        return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Drawing.Charts.TickLabelPositionValues, DocumentModel.Drawings.Charts.TickLabelPositionKind>(itemElement.Val.Value);
-      }
+      var itemElement = openXmlElement.GetFirstChild<TickLabelPosition>();
+      if (itemElement?.Val?.Value != null) return EnumValueConverter.GetValue<TickLabelPositionValues, TickLabelPositionKind>(itemElement.Val.Value);
     }
     return null;
   }
-  
-  public static void SetTickLabelPosition(DocumentFormat.OpenXml.Drawing.Charts.CategoryAxis? openXmlElement, DocumentModel.Drawings.Charts.TickLabelPositionKind? value)
+
+  public static void SetTickLabelPosition(CategoryAxis? openXmlElement, TickLabelPositionKind? value)
   {
     if (openXmlElement != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.TickLabelPosition>();
+      var itemElement = openXmlElement.GetFirstChild<TickLabelPosition>();
       if (itemElement != null)
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = EnumValueConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Charts.TickLabelPosition, DocumentFormat.OpenXml.Drawing.Charts.TickLabelPositionValues, DocumentModel.Drawings.Charts.TickLabelPositionKind>(value);
+        itemElement = EnumValueConverter.CreateOpenXmlElement<TickLabelPosition, TickLabelPositionValues, TickLabelPositionKind>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
+
   /// <summary>
-  /// ChartShapeProperties.
+  ///   ChartShapeProperties.
   /// </summary>
-  public static DocumentModel.Drawings.Charts.ChartShapeProperties? GetChartShapeProperties(DocumentFormat.OpenXml.Drawing.Charts.CategoryAxis? openXmlElement)
+  public static ChartShapeProperties? GetChartShapeProperties(CategoryAxis? openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.ChartShapeProperties>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.Charts.ChartShapePropertiesConverter.CreateModelElement(itemElement);
+      return ChartShapePropertiesConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetChartShapeProperties(DocumentFormat.OpenXml.Drawing.Charts.CategoryAxis? openXmlElement, DocumentModel.Drawings.Charts.ChartShapeProperties? value)
+
+  public static void SetChartShapeProperties(CategoryAxis? openXmlElement, ChartShapeProperties? value)
   {
     if (openXmlElement != null)
     {
@@ -345,25 +345,25 @@ public static class CategoryAxisConverter
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Drawings.Charts.ChartShapePropertiesConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Charts.ChartShapeProperties>(value);
+        itemElement = ChartShapePropertiesConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Charts.ChartShapeProperties>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
+
   /// <summary>
-  /// TextProperties.
+  ///   TextProperties.
   /// </summary>
-  public static DocumentModel.Drawings.Charts.TextProperties? GetTextProperties(DocumentFormat.OpenXml.Drawing.Charts.CategoryAxis? openXmlElement)
+  public static TextProperties? GetTextProperties(CategoryAxis? openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.TextProperties>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.Charts.TextPropertiesConverter.CreateModelElement(itemElement);
+      return TextPropertiesConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetTextProperties(DocumentFormat.OpenXml.Drawing.Charts.CategoryAxis? openXmlElement, DocumentModel.Drawings.Charts.TextProperties? value)
+
+  public static void SetTextProperties(CategoryAxis? openXmlElement, TextProperties? value)
   {
     if (openXmlElement != null)
     {
@@ -372,254 +372,248 @@ public static class CategoryAxisConverter
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Drawings.Charts.TextPropertiesConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Charts.TextProperties>(value);
+        itemElement = TextPropertiesConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Charts.TextProperties>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
+
   /// <summary>
-  /// Crossing Axis ID.
+  ///   Crossing Axis ID.
   /// </summary>
-  public static UInt32? GetCrossingAxis(DocumentFormat.OpenXml.Drawing.Charts.CategoryAxis? openXmlElement)
+  public static UInt32? GetCrossingAxis(CategoryAxis? openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.CrossingAxis>();
+    var itemElement = openXmlElement?.GetFirstChild<CrossingAxis>();
     if (itemElement != null)
       return itemElement.Val?.Value;
     return null;
   }
-  
-  public static void SetCrossingAxis(DocumentFormat.OpenXml.Drawing.Charts.CategoryAxis? openXmlElement, UInt32? value)
+
+  public static void SetCrossingAxis(CategoryAxis? openXmlElement, UInt32? value)
   {
     if (openXmlElement != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.CrossingAxis>();
+      var itemElement = openXmlElement.GetFirstChild<CrossingAxis>();
       if (itemElement != null)
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = new DocumentFormat.OpenXml.Drawing.Charts.CrossingAxis{ Val = value };
+        itemElement = new CrossingAxis { Val = value };
         openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static DocumentModel.Drawings.Charts.CrossesKind? GetCrosses(DocumentFormat.OpenXml.Drawing.Charts.CategoryAxis? openXmlElement)
+
+  public static CrossesKind? GetCrosses(CategoryAxis? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.Crosses>();
-      if (itemElement?.Val?.Value != null)
-      {
-        return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Drawing.Charts.CrossesValues, DocumentModel.Drawings.Charts.CrossesKind>(itemElement.Val.Value);
-      }
+      var itemElement = openXmlElement.GetFirstChild<Crosses>();
+      if (itemElement?.Val?.Value != null) return EnumValueConverter.GetValue<CrossesValues, CrossesKind>(itemElement.Val.Value);
     }
     return null;
   }
-  
-  public static void SetCrosses(DocumentFormat.OpenXml.Drawing.Charts.CategoryAxis? openXmlElement, DocumentModel.Drawings.Charts.CrossesKind? value)
+
+  public static void SetCrosses(CategoryAxis? openXmlElement, CrossesKind? value)
   {
     if (openXmlElement != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.Crosses>();
+      var itemElement = openXmlElement.GetFirstChild<Crosses>();
       if (itemElement != null)
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = EnumValueConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Charts.Crosses, DocumentFormat.OpenXml.Drawing.Charts.CrossesValues, DocumentModel.Drawings.Charts.CrossesKind>(value);
+        itemElement = EnumValueConverter.CreateOpenXmlElement<Crosses, CrossesValues, CrossesKind>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static Double? GetCrossesAt(DocumentFormat.OpenXml.Drawing.Charts.CategoryAxis? openXmlElement)
+
+  public static Double? GetCrossesAt(CategoryAxis? openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.CrossesAt>();
+    var itemElement = openXmlElement?.GetFirstChild<CrossesAt>();
     if (itemElement != null)
       return itemElement.Val?.Value;
     return null;
   }
-  
-  public static void SetCrossesAt(DocumentFormat.OpenXml.Drawing.Charts.CategoryAxis? openXmlElement, Double? value)
+
+  public static void SetCrossesAt(CategoryAxis? openXmlElement, Double? value)
   {
     if (openXmlElement != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.CrossesAt>();
+      var itemElement = openXmlElement.GetFirstChild<CrossesAt>();
       if (itemElement != null)
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = new DocumentFormat.OpenXml.Drawing.Charts.CrossesAt{ Val = value };
+        itemElement = new CrossesAt { Val = value };
         openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static Boolean? GetAutoLabeled(DocumentFormat.OpenXml.Drawing.Charts.CategoryAxis? openXmlElement)
+
+  public static Boolean? GetAutoLabeled(CategoryAxis? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.AutoLabeled>();
+      var itemElement = openXmlElement.GetFirstChild<AutoLabeled>();
       return itemElement != null;
     }
     return null;
   }
-  
-  public static void SetAutoLabeled(DocumentFormat.OpenXml.Drawing.Charts.CategoryAxis? openXmlElement, Boolean? value)
+
+  public static void SetAutoLabeled(CategoryAxis? openXmlElement, Boolean? value)
   {
     if (openXmlElement != null)
     {
       if (value == false)
       {
-        var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.AutoLabeled>();
+        var itemElement = openXmlElement.GetFirstChild<AutoLabeled>();
         if (itemElement != null)
           itemElement.Remove();
       }
       if (value == true)
       {
-        var itemElement = new DocumentFormat.OpenXml.Drawing.Charts.AutoLabeled();
+        var itemElement = new AutoLabeled();
         openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static DocumentModel.Drawings.Charts.LabelAlignmentKind? GetLabelAlignment(DocumentFormat.OpenXml.Drawing.Charts.CategoryAxis? openXmlElement)
+
+  public static LabelAlignmentKind? GetLabelAlignment(CategoryAxis? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.LabelAlignment>();
-      if (itemElement?.Val?.Value != null)
-      {
-        return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Drawing.Charts.LabelAlignmentValues, DocumentModel.Drawings.Charts.LabelAlignmentKind>(itemElement.Val.Value);
-      }
+      var itemElement = openXmlElement.GetFirstChild<LabelAlignment>();
+      if (itemElement?.Val?.Value != null) return EnumValueConverter.GetValue<LabelAlignmentValues, LabelAlignmentKind>(itemElement.Val.Value);
     }
     return null;
   }
-  
-  public static void SetLabelAlignment(DocumentFormat.OpenXml.Drawing.Charts.CategoryAxis? openXmlElement, DocumentModel.Drawings.Charts.LabelAlignmentKind? value)
+
+  public static void SetLabelAlignment(CategoryAxis? openXmlElement, LabelAlignmentKind? value)
   {
     if (openXmlElement != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.LabelAlignment>();
+      var itemElement = openXmlElement.GetFirstChild<LabelAlignment>();
       if (itemElement != null)
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = EnumValueConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Charts.LabelAlignment, DocumentFormat.OpenXml.Drawing.Charts.LabelAlignmentValues, DocumentModel.Drawings.Charts.LabelAlignmentKind>(value);
+        itemElement = EnumValueConverter.CreateOpenXmlElement<LabelAlignment, LabelAlignmentValues, LabelAlignmentKind>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static UInt16? GetLabelOffset(DocumentFormat.OpenXml.Drawing.Charts.CategoryAxis? openXmlElement)
+
+  public static UInt16? GetLabelOffset(CategoryAxis? openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.LabelOffset>();
+    var itemElement = openXmlElement?.GetFirstChild<LabelOffset>();
     if (itemElement != null)
       return itemElement.Val?.Value;
     return null;
   }
-  
-  public static void SetLabelOffset(DocumentFormat.OpenXml.Drawing.Charts.CategoryAxis? openXmlElement, UInt16? value)
+
+  public static void SetLabelOffset(CategoryAxis? openXmlElement, UInt16? value)
   {
     if (openXmlElement != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.LabelOffset>();
+      var itemElement = openXmlElement.GetFirstChild<LabelOffset>();
       if (itemElement != null)
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = new DocumentFormat.OpenXml.Drawing.Charts.LabelOffset{ Val = value };
+        itemElement = new LabelOffset { Val = value };
         openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static Int32? GetTickLabelSkip(DocumentFormat.OpenXml.Drawing.Charts.CategoryAxis? openXmlElement)
+
+  public static Int32? GetTickLabelSkip(CategoryAxis? openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.TickLabelSkip>();
+    var itemElement = openXmlElement?.GetFirstChild<TickLabelSkip>();
     if (itemElement != null)
       return itemElement.Val?.Value;
     return null;
   }
-  
-  public static void SetTickLabelSkip(DocumentFormat.OpenXml.Drawing.Charts.CategoryAxis? openXmlElement, Int32? value)
+
+  public static void SetTickLabelSkip(CategoryAxis? openXmlElement, Int32? value)
   {
     if (openXmlElement != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.TickLabelSkip>();
+      var itemElement = openXmlElement.GetFirstChild<TickLabelSkip>();
       if (itemElement != null)
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = new DocumentFormat.OpenXml.Drawing.Charts.TickLabelSkip{ Val = value };
+        itemElement = new TickLabelSkip { Val = value };
         openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static Int32? GetTickMarkSkip(DocumentFormat.OpenXml.Drawing.Charts.CategoryAxis? openXmlElement)
+
+  public static Int32? GetTickMarkSkip(CategoryAxis? openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.TickMarkSkip>();
+    var itemElement = openXmlElement?.GetFirstChild<TickMarkSkip>();
     if (itemElement != null)
       return itemElement.Val?.Value;
     return null;
   }
-  
-  public static void SetTickMarkSkip(DocumentFormat.OpenXml.Drawing.Charts.CategoryAxis? openXmlElement, Int32? value)
+
+  public static void SetTickMarkSkip(CategoryAxis? openXmlElement, Int32? value)
   {
     if (openXmlElement != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.TickMarkSkip>();
+      var itemElement = openXmlElement.GetFirstChild<TickMarkSkip>();
       if (itemElement != null)
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = new DocumentFormat.OpenXml.Drawing.Charts.TickMarkSkip{ Val = value };
+        itemElement = new TickMarkSkip { Val = value };
         openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static Boolean? GetNoMultiLevelLabels(DocumentFormat.OpenXml.Drawing.Charts.CategoryAxis? openXmlElement)
+
+  public static Boolean? GetNoMultiLevelLabels(CategoryAxis? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.NoMultiLevelLabels>();
+      var itemElement = openXmlElement.GetFirstChild<NoMultiLevelLabels>();
       return itemElement != null;
     }
     return null;
   }
-  
-  public static void SetNoMultiLevelLabels(DocumentFormat.OpenXml.Drawing.Charts.CategoryAxis? openXmlElement, Boolean? value)
+
+  public static void SetNoMultiLevelLabels(CategoryAxis? openXmlElement, Boolean? value)
   {
     if (openXmlElement != null)
     {
       if (value == false)
       {
-        var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.NoMultiLevelLabels>();
+        var itemElement = openXmlElement.GetFirstChild<NoMultiLevelLabels>();
         if (itemElement != null)
           itemElement.Remove();
       }
       if (value == true)
       {
-        var itemElement = new DocumentFormat.OpenXml.Drawing.Charts.NoMultiLevelLabels();
+        var itemElement = new NoMultiLevelLabels();
         openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static DocumentModel.Drawings.Charts.CatAxExtensionList? GetCatAxExtensionList(DocumentFormat.OpenXml.Drawing.Charts.CategoryAxis? openXmlElement)
+
+  public static CatAxExtensionList? GetCatAxExtensionList(CategoryAxis? openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.CatAxExtensionList>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.Charts.CatAxExtensionListConverter.CreateModelElement(itemElement);
+      return CatAxExtensionListConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetCatAxExtensionList(DocumentFormat.OpenXml.Drawing.Charts.CategoryAxis? openXmlElement, DocumentModel.Drawings.Charts.CatAxExtensionList? value)
+
+  public static void SetCatAxExtensionList(CategoryAxis? openXmlElement, CatAxExtensionList? value)
   {
     if (openXmlElement != null)
     {
@@ -628,14 +622,14 @@ public static class CategoryAxisConverter
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Drawings.Charts.CatAxExtensionListConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Charts.CatAxExtensionList>(value);
+        itemElement = CatAxExtensionListConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Charts.CatAxExtensionList>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static DocumentModel.Drawings.Charts.CategoryAxis? CreateModelElement(DocumentFormat.OpenXml.Drawing.Charts.CategoryAxis? openXmlElement)
+
+  public static DocumentModel.Drawings.Charts.CategoryAxis? CreateModelElement(CategoryAxis? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -667,9 +661,9 @@ public static class CategoryAxisConverter
     }
     return null;
   }
-  
+
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.Charts.CategoryAxis? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.Charts.CategoryAxis, new()
+    where OpenXmlElementType : CategoryAxis, new()
   {
     if (value != null)
     {

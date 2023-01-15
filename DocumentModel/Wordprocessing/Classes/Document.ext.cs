@@ -3,7 +3,7 @@ using DocumentModel.Properties;
 namespace DocumentModel.Wordprocessing;
 
 /// <summary>
-/// Document.
+///   Document.
 /// </summary>
 public partial class Document
 {

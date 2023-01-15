@@ -1,19 +1,21 @@
+using DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing;
+
 namespace DocumentModel.OpenXml.Drawings.ChartDrawings;
 
 /// <summary>
-/// Defines the ExternalData Class.
+///   Defines the ExternalData Class.
 /// </summary>
 public static class ExternalDataConverter
 {
   /// <summary>
-  /// RelId of the relationship for the external data, this property is only available in Office 2016 and later.
+  ///   RelId of the relationship for the external data, this property is only available in Office 2016 and later.
   /// </summary>
-  public static String? GetId(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.ExternalData? openXmlElement)
+  public static String? GetId(ExternalData? openXmlElement)
   {
     return openXmlElement?.Id?.Value;
   }
-  
-  public static void SetId(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.ExternalData? openXmlElement, String? value)
+
+  public static void SetId(ExternalData? openXmlElement, String? value)
   {
     if (openXmlElement != null)
       if (value != null)
@@ -21,16 +23,16 @@ public static class ExternalDataConverter
       else
         openXmlElement.Id = null;
   }
-  
+
   /// <summary>
-  /// True if the external link should automatically update, this property is only available in Office 2016 and later.
+  ///   True if the external link should automatically update, this property is only available in Office 2016 and later.
   /// </summary>
-  public static Boolean? GetAutoUpdate(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.ExternalData? openXmlElement)
+  public static Boolean? GetAutoUpdate(ExternalData? openXmlElement)
   {
     return openXmlElement?.AutoUpdate?.Value;
   }
-  
-  public static void SetAutoUpdate(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.ExternalData? openXmlElement, Boolean? value)
+
+  public static void SetAutoUpdate(ExternalData? openXmlElement, Boolean? value)
   {
     if (openXmlElement != null)
       if (value != null)
@@ -38,8 +40,8 @@ public static class ExternalDataConverter
       else
         openXmlElement.AutoUpdate = null;
   }
-  
-  public static DocumentModel.Drawings.ChartDrawings.ExternalData? CreateModelElement(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.ExternalData? openXmlElement)
+
+  public static DocumentModel.Drawings.ChartDrawings.ExternalData? CreateModelElement(ExternalData? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -50,9 +52,9 @@ public static class ExternalDataConverter
     }
     return null;
   }
-  
+
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.ChartDrawings.ExternalData? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.ExternalData, new()
+    where OpenXmlElementType : ExternalData, new()
   {
     if (value != null)
     {

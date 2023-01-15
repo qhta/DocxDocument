@@ -1,58 +1,57 @@
 namespace DocumentModel.Wordprocessing;
 
 /// <summary>
-/// Defines the RectangleAlignmentValues enumeration.
+///   Defines the RectangleAlignmentValues enumeration.
 /// </summary>
 public enum RectangleAlignmentKind
 {
   /// <summary>
-  /// none.
+  ///   none.
   /// </summary>
   None,
-  
+
   /// <summary>
-  /// tl.
+  ///   tl.
   /// </summary>
   TopLeft,
-  
+
   /// <summary>
-  /// t.
+  ///   t.
   /// </summary>
   Top,
-  
+
   /// <summary>
-  /// tr.
+  ///   tr.
   /// </summary>
   TopRight,
-  
+
   /// <summary>
-  /// l.
+  ///   l.
   /// </summary>
   Left,
-  
+
   /// <summary>
-  /// ctr.
+  ///   ctr.
   /// </summary>
   Center,
-  
+
   /// <summary>
-  /// r.
+  ///   r.
   /// </summary>
   Right,
-  
+
   /// <summary>
-  /// bl.
+  ///   bl.
   /// </summary>
   BottomLeft,
-  
+
   /// <summary>
-  /// b.
+  ///   b.
   /// </summary>
   Bottom,
-  
+
   /// <summary>
-  /// br.
+  ///   br.
   /// </summary>
-  BottomRight,
-  
+  BottomRight
 }

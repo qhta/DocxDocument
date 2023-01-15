@@ -1,23 +1,22 @@
 namespace DocumentModel.Drawings;
 
 /// <summary>
-/// Defines the FontCollectionType Class.
+///   Defines the FontCollectionType Class.
 /// </summary>
-public partial class FontCollectionType
+public class FontCollectionType
 {
   /// <summary>
-  /// Latin Font.
+  ///   Latin Font.
   /// </summary>
-  public DocumentModel.Drawings.TextFontType? LatinFont { get; set; }
-  
+  public TextFontType? LatinFont { get; set; }
+
   /// <summary>
-  /// East Asian Font.
+  ///   East Asian Font.
   /// </summary>
-  public DocumentModel.Drawings.TextFontType? EastAsianFont { get; set; }
-  
+  public TextFontType? EastAsianFont { get; set; }
+
   /// <summary>
-  /// Complex Script Font.
+  ///   Complex Script Font.
   /// </summary>
-  public DocumentModel.Drawings.TextFontType? ComplexScriptFont { get; set; }
-  
+  public TextFontType? ComplexScriptFont { get; set; }
 }

@@ -1,18 +1,17 @@
 namespace DocumentModel.Wordprocessing;
 
 /// <summary>
-/// Defines the LinearShadeProperties Class.
+///   Defines the LinearShadeProperties Class.
 /// </summary>
-public partial class LinearShadeProperties
+public class LinearShadeProperties
 {
   /// <summary>
-  /// ang, this property is only available in Office 2010 and later.
+  ///   ang, this property is only available in Office 2010 and later.
   /// </summary>
   public Int32? Angle { get; set; }
-  
+
   /// <summary>
-  /// scaled, this property is only available in Office 2010 and later.
+  ///   scaled, this property is only available in Office 2010 and later.
   /// </summary>
-  public DocumentModel.Wordprocessing.OnOffKind? Scaled { get; set; }
-  
+  public OnOffKind? Scaled { get; set; }
 }

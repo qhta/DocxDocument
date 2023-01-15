@@ -1,85 +1,87 @@
+using DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing;
+
 namespace DocumentModel.OpenXml.Drawings.ChartDrawings;
 
 /// <summary>
-/// Defines the MaxValueColorEndPosition Class.
+///   Defines the MaxValueColorEndPosition Class.
 /// </summary>
 public static class MaxValueColorEndPositionConverter
 {
-  public static Boolean? GetExtremeValueColorPosition(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.MaxValueColorEndPosition? openXmlElement)
+  public static Boolean? GetExtremeValueColorPosition(MaxValueColorEndPosition? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.ExtremeValueColorPosition>();
+      var itemElement = openXmlElement.GetFirstChild<ExtremeValueColorPosition>();
       return itemElement != null;
     }
     return null;
   }
-  
-  public static void SetExtremeValueColorPosition(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.MaxValueColorEndPosition? openXmlElement, Boolean? value)
+
+  public static void SetExtremeValueColorPosition(MaxValueColorEndPosition? openXmlElement, Boolean? value)
   {
     if (openXmlElement != null)
     {
       if (value == false)
       {
-        var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.ExtremeValueColorPosition>();
+        var itemElement = openXmlElement.GetFirstChild<ExtremeValueColorPosition>();
         if (itemElement != null)
           itemElement.Remove();
       }
       if (value == true)
       {
-        var itemElement = new DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.ExtremeValueColorPosition();
+        var itemElement = new ExtremeValueColorPosition();
         openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static Double? GetNumberColorPosition(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.MaxValueColorEndPosition? openXmlElement)
+
+  public static Double? GetNumberColorPosition(MaxValueColorEndPosition? openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.NumberColorPosition>();
+    var itemElement = openXmlElement?.GetFirstChild<NumberColorPosition>();
     if (itemElement != null)
       return itemElement.Val?.Value;
     return null;
   }
-  
-  public static void SetNumberColorPosition(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.MaxValueColorEndPosition? openXmlElement, Double? value)
+
+  public static void SetNumberColorPosition(MaxValueColorEndPosition? openXmlElement, Double? value)
   {
     if (openXmlElement != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.NumberColorPosition>();
+      var itemElement = openXmlElement.GetFirstChild<NumberColorPosition>();
       if (itemElement != null)
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = new DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.NumberColorPosition{ Val = value };
+        itemElement = new NumberColorPosition { Val = value };
         openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static Double? GetPercentageColorPosition(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.MaxValueColorEndPosition? openXmlElement)
+
+  public static Double? GetPercentageColorPosition(MaxValueColorEndPosition? openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.PercentageColorPosition>();
+    var itemElement = openXmlElement?.GetFirstChild<PercentageColorPosition>();
     if (itemElement != null)
       return itemElement.Val?.Value;
     return null;
   }
-  
-  public static void SetPercentageColorPosition(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.MaxValueColorEndPosition? openXmlElement, Double? value)
+
+  public static void SetPercentageColorPosition(MaxValueColorEndPosition? openXmlElement, Double? value)
   {
     if (openXmlElement != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.PercentageColorPosition>();
+      var itemElement = openXmlElement.GetFirstChild<PercentageColorPosition>();
       if (itemElement != null)
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = new DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.PercentageColorPosition{ Val = value };
+        itemElement = new PercentageColorPosition { Val = value };
         openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static DocumentModel.Drawings.ChartDrawings.MaxValueColorEndPosition? CreateModelElement(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.MaxValueColorEndPosition? openXmlElement)
+
+  public static DocumentModel.Drawings.ChartDrawings.MaxValueColorEndPosition? CreateModelElement(MaxValueColorEndPosition? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -91,9 +93,9 @@ public static class MaxValueColorEndPositionConverter
     }
     return null;
   }
-  
+
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.ChartDrawings.MaxValueColorEndPosition? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.MaxValueColorEndPosition, new()
+    where OpenXmlElementType : MaxValueColorEndPosition, new()
   {
     if (value != null)
     {

@@ -1,10 +1,9 @@
 namespace DocumentModel.Wordprocessing;
 
 /// <summary>
-/// Defines the StylisticSets Class.
+///   Defines the StylisticSets Class.
 /// </summary>
-public partial class StylisticSets
+public class StylisticSets
 {
-  public Collection<DocumentModel.Wordprocessing.StyleSet>? StyleSets { get; set; }
-  
+  public Collection<StyleSet>? StyleSets { get; set; }
 }

@@ -1,57 +1,59 @@
+using DocumentFormat.OpenXml.Drawing;
+
 namespace DocumentModel.OpenXml.Drawings;
 
 /// <summary>
-/// Space Before.
+///   Space Before.
 /// </summary>
 public static class SpaceBeforeConverter
 {
-  public static Int32? GetSpacingPercent(DocumentFormat.OpenXml.Drawing.SpaceBefore? openXmlElement)
+  public static Int32? GetSpacingPercent(SpaceBefore? openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.SpacingPercent>();
+    var itemElement = openXmlElement?.GetFirstChild<SpacingPercent>();
     if (itemElement != null)
       return itemElement.Val?.Value;
     return null;
   }
-  
-  public static void SetSpacingPercent(DocumentFormat.OpenXml.Drawing.SpaceBefore? openXmlElement, Int32? value)
+
+  public static void SetSpacingPercent(SpaceBefore? openXmlElement, Int32? value)
   {
     if (openXmlElement != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.SpacingPercent>();
+      var itemElement = openXmlElement.GetFirstChild<SpacingPercent>();
       if (itemElement != null)
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = new DocumentFormat.OpenXml.Drawing.SpacingPercent{ Val = value };
+        itemElement = new SpacingPercent { Val = value };
         openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static Int32? GetSpacingPoints(DocumentFormat.OpenXml.Drawing.SpaceBefore? openXmlElement)
+
+  public static Int32? GetSpacingPoints(SpaceBefore? openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.SpacingPoints>();
+    var itemElement = openXmlElement?.GetFirstChild<SpacingPoints>();
     if (itemElement != null)
       return itemElement.Val?.Value;
     return null;
   }
-  
-  public static void SetSpacingPoints(DocumentFormat.OpenXml.Drawing.SpaceBefore? openXmlElement, Int32? value)
+
+  public static void SetSpacingPoints(SpaceBefore? openXmlElement, Int32? value)
   {
     if (openXmlElement != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.SpacingPoints>();
+      var itemElement = openXmlElement.GetFirstChild<SpacingPoints>();
       if (itemElement != null)
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = new DocumentFormat.OpenXml.Drawing.SpacingPoints{ Val = value };
+        itemElement = new SpacingPoints { Val = value };
         openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static DocumentModel.Drawings.SpaceBefore? CreateModelElement(DocumentFormat.OpenXml.Drawing.SpaceBefore? openXmlElement)
+
+  public static DocumentModel.Drawings.SpaceBefore? CreateModelElement(SpaceBefore? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -62,9 +64,9 @@ public static class SpaceBeforeConverter
     }
     return null;
   }
-  
+
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.SpaceBefore? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.SpaceBefore, new()
+    where OpenXmlElementType : SpaceBefore, new()
   {
     if (value != null)
     {

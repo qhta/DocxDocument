@@ -1,19 +1,22 @@
+using DocumentFormat.OpenXml.Drawing;
+using AdjustPoint2DType = DocumentModel.Drawings.AdjustPoint2DType;
+
 namespace DocumentModel.OpenXml.Drawings;
 
 /// <summary>
-/// Polar Adjust Handle.
+///   Polar Adjust Handle.
 /// </summary>
 public static class AdjustHandlePolarConverter
 {
   /// <summary>
-  /// Radial Adjustment Guide
+  ///   Radial Adjustment Guide
   /// </summary>
-  public static String? GetRadialAdjustmentGuide(DocumentFormat.OpenXml.Drawing.AdjustHandlePolar? openXmlElement)
+  public static String? GetRadialAdjustmentGuide(AdjustHandlePolar? openXmlElement)
   {
     return openXmlElement?.RadialAdjustmentGuide?.Value;
   }
-  
-  public static void SetRadialAdjustmentGuide(DocumentFormat.OpenXml.Drawing.AdjustHandlePolar? openXmlElement, String? value)
+
+  public static void SetRadialAdjustmentGuide(AdjustHandlePolar? openXmlElement, String? value)
   {
     if (openXmlElement != null)
       if (value != null)
@@ -21,16 +24,16 @@ public static class AdjustHandlePolarConverter
       else
         openXmlElement.RadialAdjustmentGuide = null;
   }
-  
+
   /// <summary>
-  /// Minimum Radial Adjustment
+  ///   Minimum Radial Adjustment
   /// </summary>
-  public static String? GetMinRadial(DocumentFormat.OpenXml.Drawing.AdjustHandlePolar? openXmlElement)
+  public static String? GetMinRadial(AdjustHandlePolar? openXmlElement)
   {
     return openXmlElement?.MinRadial?.Value;
   }
-  
-  public static void SetMinRadial(DocumentFormat.OpenXml.Drawing.AdjustHandlePolar? openXmlElement, String? value)
+
+  public static void SetMinRadial(AdjustHandlePolar? openXmlElement, String? value)
   {
     if (openXmlElement != null)
       if (value != null)
@@ -38,16 +41,16 @@ public static class AdjustHandlePolarConverter
       else
         openXmlElement.MinRadial = null;
   }
-  
+
   /// <summary>
-  /// Maximum Radial Adjustment
+  ///   Maximum Radial Adjustment
   /// </summary>
-  public static String? GetMaxRadial(DocumentFormat.OpenXml.Drawing.AdjustHandlePolar? openXmlElement)
+  public static String? GetMaxRadial(AdjustHandlePolar? openXmlElement)
   {
     return openXmlElement?.MaxRadial?.Value;
   }
-  
-  public static void SetMaxRadial(DocumentFormat.OpenXml.Drawing.AdjustHandlePolar? openXmlElement, String? value)
+
+  public static void SetMaxRadial(AdjustHandlePolar? openXmlElement, String? value)
   {
     if (openXmlElement != null)
       if (value != null)
@@ -55,16 +58,16 @@ public static class AdjustHandlePolarConverter
       else
         openXmlElement.MaxRadial = null;
   }
-  
+
   /// <summary>
-  /// Angle Adjustment Guide
+  ///   Angle Adjustment Guide
   /// </summary>
-  public static String? GetAngleAdjustmentGuide(DocumentFormat.OpenXml.Drawing.AdjustHandlePolar? openXmlElement)
+  public static String? GetAngleAdjustmentGuide(AdjustHandlePolar? openXmlElement)
   {
     return openXmlElement?.AngleAdjustmentGuide?.Value;
   }
-  
-  public static void SetAngleAdjustmentGuide(DocumentFormat.OpenXml.Drawing.AdjustHandlePolar? openXmlElement, String? value)
+
+  public static void SetAngleAdjustmentGuide(AdjustHandlePolar? openXmlElement, String? value)
   {
     if (openXmlElement != null)
       if (value != null)
@@ -72,16 +75,16 @@ public static class AdjustHandlePolarConverter
       else
         openXmlElement.AngleAdjustmentGuide = null;
   }
-  
+
   /// <summary>
-  /// Minimum Angle Adjustment
+  ///   Minimum Angle Adjustment
   /// </summary>
-  public static String? GetMinAngle(DocumentFormat.OpenXml.Drawing.AdjustHandlePolar? openXmlElement)
+  public static String? GetMinAngle(AdjustHandlePolar? openXmlElement)
   {
     return openXmlElement?.MinAngle?.Value;
   }
-  
-  public static void SetMinAngle(DocumentFormat.OpenXml.Drawing.AdjustHandlePolar? openXmlElement, String? value)
+
+  public static void SetMinAngle(AdjustHandlePolar? openXmlElement, String? value)
   {
     if (openXmlElement != null)
       if (value != null)
@@ -89,16 +92,16 @@ public static class AdjustHandlePolarConverter
       else
         openXmlElement.MinAngle = null;
   }
-  
+
   /// <summary>
-  /// Maximum Angle Adjustment
+  ///   Maximum Angle Adjustment
   /// </summary>
-  public static String? GetMaxAngle(DocumentFormat.OpenXml.Drawing.AdjustHandlePolar? openXmlElement)
+  public static String? GetMaxAngle(AdjustHandlePolar? openXmlElement)
   {
     return openXmlElement?.MaxAngle?.Value;
   }
-  
-  public static void SetMaxAngle(DocumentFormat.OpenXml.Drawing.AdjustHandlePolar? openXmlElement, String? value)
+
+  public static void SetMaxAngle(AdjustHandlePolar? openXmlElement, String? value)
   {
     if (openXmlElement != null)
       if (value != null)
@@ -106,35 +109,35 @@ public static class AdjustHandlePolarConverter
       else
         openXmlElement.MaxAngle = null;
   }
-  
+
   /// <summary>
-  /// Shape Position Coordinate.
+  ///   Shape Position Coordinate.
   /// </summary>
-  public static DocumentModel.Drawings.AdjustPoint2DType? GetPosition(DocumentFormat.OpenXml.Drawing.AdjustHandlePolar? openXmlElement)
+  public static AdjustPoint2DType? GetPosition(AdjustHandlePolar? openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.Position>();
+    var itemElement = openXmlElement?.GetFirstChild<Position>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.AdjustPoint2DTypeConverter.CreateModelElement(itemElement);
+      return AdjustPoint2DTypeConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetPosition(DocumentFormat.OpenXml.Drawing.AdjustHandlePolar? openXmlElement, DocumentModel.Drawings.AdjustPoint2DType? value)
+
+  public static void SetPosition(AdjustHandlePolar? openXmlElement, AdjustPoint2DType? value)
   {
     if (openXmlElement != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Position>();
+      var itemElement = openXmlElement.GetFirstChild<Position>();
       if (itemElement != null)
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Drawings.AdjustPoint2DTypeConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Position>(value);
+        itemElement = AdjustPoint2DTypeConverter.CreateOpenXmlElement<Position>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static DocumentModel.Drawings.AdjustHandlePolar? CreateModelElement(DocumentFormat.OpenXml.Drawing.AdjustHandlePolar? openXmlElement)
+
+  public static DocumentModel.Drawings.AdjustHandlePolar? CreateModelElement(AdjustHandlePolar? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -150,9 +153,9 @@ public static class AdjustHandlePolarConverter
     }
     return null;
   }
-  
+
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.AdjustHandlePolar? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.AdjustHandlePolar, new()
+    where OpenXmlElementType : AdjustHandlePolar, new()
   {
     if (value != null)
     {

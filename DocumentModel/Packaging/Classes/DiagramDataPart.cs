@@ -1,32 +1,33 @@
+using DocumentModel.Drawings.Diagrams;
+
 namespace DocumentModel.Packaging;
 
 /// <summary>
-/// Defines the DiagramDataPart
+///   Defines the DiagramDataPart
 /// </summary>
-public partial class DiagramDataPart
+public class DiagramDataPart
 {
   public String? ContentType { get; set; }
-  
+
   /// <summary>
-  /// Gets or sets the root element of this part.
+  ///   Gets or sets the root element of this part.
   /// </summary>
-  public DocumentModel.Drawings.Diagrams.DataModelRoot? DataModelRoot { get; set; }
-  
+  public DataModelRoot? DataModelRoot { get; set; }
+
   /// <summary>
-  /// Gets the ImageParts of the DiagramDataPart
+  ///   Gets the ImageParts of the DiagramDataPart
   /// </summary>
-  public Collection<DocumentModel.Packaging.ImagePart>? ImageParts { get; set; }
-  
+  public Collection<ImagePart>? ImageParts { get; set; }
+
   public String? RelationshipType { get; set; }
-  
+
   /// <summary>
-  /// Gets the SlideParts of the DiagramDataPart
+  ///   Gets the SlideParts of the DiagramDataPart
   /// </summary>
-  public Collection<DocumentModel.Packaging.SlidePart>? SlideParts { get; set; }
-  
+  public Collection<SlidePart>? SlideParts { get; set; }
+
   /// <summary>
-  /// Gets the WorksheetParts of the DiagramDataPart
+  ///   Gets the WorksheetParts of the DiagramDataPart
   /// </summary>
-  public Collection<DocumentModel.Packaging.WorksheetPart>? WorksheetParts { get; set; }
-  
+  public Collection<WorksheetPart>? WorksheetParts { get; set; }
 }

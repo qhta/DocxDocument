@@ -1,100 +1,101 @@
+using DocumentModel.Wordprocessing;
+
 namespace DocumentModel.Packaging;
 
 /// <summary>
-/// Defines the MainDocumentPart
+///   Defines the MainDocumentPart
 /// </summary>
-public partial class MainDocumentPart
+public class MainDocumentPart
 {
   /// <summary>
-  /// Gets the AlternativeFormatImportParts of the MainDocumentPart
+  ///   Gets the AlternativeFormatImportParts of the MainDocumentPart
   /// </summary>
-  public Collection<DocumentModel.Packaging.AlternativeFormatImportPart>? AlternativeFormatImportParts { get; set; }
-  
+  public Collection<AlternativeFormatImportPart>? AlternativeFormatImportParts { get; set; }
+
   /// <summary>
-  /// Gets the ChartParts of the MainDocumentPart
+  ///   Gets the ChartParts of the MainDocumentPart
   /// </summary>
-  public Collection<DocumentModel.Packaging.ChartPart>? ChartParts { get; set; }
-  
+  public Collection<ChartPart>? ChartParts { get; set; }
+
   /// <summary>
-  /// Gets the CustomXmlParts of the MainDocumentPart
+  ///   Gets the CustomXmlParts of the MainDocumentPart
   /// </summary>
-  public Collection<DocumentModel.Packaging.CustomXmlPart>? CustomXmlParts { get; set; }
-  
+  public Collection<CustomXmlPart>? CustomXmlParts { get; set; }
+
   /// <summary>
-  /// Gets the DiagramColorsParts of the MainDocumentPart
+  ///   Gets the DiagramColorsParts of the MainDocumentPart
   /// </summary>
-  public Collection<DocumentModel.Packaging.DiagramColorsPart>? DiagramColorsParts { get; set; }
-  
+  public Collection<DiagramColorsPart>? DiagramColorsParts { get; set; }
+
   /// <summary>
-  /// Gets the DiagramDataParts of the MainDocumentPart
+  ///   Gets the DiagramDataParts of the MainDocumentPart
   /// </summary>
-  public Collection<DocumentModel.Packaging.DiagramDataPart>? DiagramDataParts { get; set; }
-  
+  public Collection<DiagramDataPart>? DiagramDataParts { get; set; }
+
   /// <summary>
-  /// Gets the DiagramLayoutDefinitionParts of the MainDocumentPart
+  ///   Gets the DiagramLayoutDefinitionParts of the MainDocumentPart
   /// </summary>
-  public Collection<DocumentModel.Packaging.DiagramLayoutDefinitionPart>? DiagramLayoutDefinitionParts { get; set; }
-  
+  public Collection<DiagramLayoutDefinitionPart>? DiagramLayoutDefinitionParts { get; set; }
+
   /// <summary>
-  /// Gets the DiagramPersistLayoutParts of the MainDocumentPart
+  ///   Gets the DiagramPersistLayoutParts of the MainDocumentPart
   /// </summary>
-  public Collection<DocumentModel.Packaging.DiagramPersistLayoutPart>? DiagramPersistLayoutParts { get; set; }
-  
+  public Collection<DiagramPersistLayoutPart>? DiagramPersistLayoutParts { get; set; }
+
   /// <summary>
-  /// Gets the DiagramStyleParts of the MainDocumentPart
+  ///   Gets the DiagramStyleParts of the MainDocumentPart
   /// </summary>
-  public Collection<DocumentModel.Packaging.DiagramStylePart>? DiagramStyleParts { get; set; }
-  
+  public Collection<DiagramStylePart>? DiagramStyleParts { get; set; }
+
   /// <summary>
-  /// Gets or sets the root element of this part.
+  ///   Gets or sets the root element of this part.
   /// </summary>
-  public DocumentModel.Wordprocessing.Document? Document { get; set; }
-  
+  public Document? Document { get; set; }
+
   /// <summary>
-  /// Gets the EmbeddedControlPersistenceParts of the MainDocumentPart
+  ///   Gets the EmbeddedControlPersistenceParts of the MainDocumentPart
   /// </summary>
-  public Collection<DocumentModel.Packaging.EmbeddedControlPersistencePart>? EmbeddedControlPersistenceParts { get; set; }
-  
+  public Collection<EmbeddedControlPersistencePart>? EmbeddedControlPersistenceParts { get; set; }
+
   /// <summary>
-  /// Gets the EmbeddedObjectParts of the MainDocumentPart
+  ///   Gets the EmbeddedObjectParts of the MainDocumentPart
   /// </summary>
-  public Collection<DocumentModel.Packaging.EmbeddedObjectPart>? EmbeddedObjectParts { get; set; }
-  
+  public Collection<EmbeddedObjectPart>? EmbeddedObjectParts { get; set; }
+
   /// <summary>
-  /// Gets the EmbeddedPackageParts of the MainDocumentPart
+  ///   Gets the EmbeddedPackageParts of the MainDocumentPart
   /// </summary>
-  public Collection<DocumentModel.Packaging.EmbeddedPackagePart>? EmbeddedPackageParts { get; set; }
-  
+  public Collection<EmbeddedPackagePart>? EmbeddedPackageParts { get; set; }
+
   /// <summary>
-  /// Gets the ExtendedChartParts of the MainDocumentPart
+  ///   Gets the ExtendedChartParts of the MainDocumentPart
   /// </summary>
-  public Collection<DocumentModel.Packaging.ExtendedChartPart>? ExtendedChartParts { get; set; }
-  
+  public Collection<ExtendedChartPart>? ExtendedChartParts { get; set; }
+
   /// <summary>
-  /// Gets the FooterParts of the MainDocumentPart
+  ///   Gets the FooterParts of the MainDocumentPart
   /// </summary>
-  public Collection<DocumentModel.Packaging.FooterPart>? FooterParts { get; set; }
-  
+  public Collection<FooterPart>? FooterParts { get; set; }
+
   /// <summary>
-  /// Gets the HeaderParts of the MainDocumentPart
+  ///   Gets the HeaderParts of the MainDocumentPart
   /// </summary>
-  public Collection<DocumentModel.Packaging.HeaderPart>? HeaderParts { get; set; }
-  
+  public Collection<HeaderPart>? HeaderParts { get; set; }
+
   /// <summary>
-  /// Gets the ImageParts of the MainDocumentPart
+  ///   Gets the ImageParts of the MainDocumentPart
   /// </summary>
-  public Collection<DocumentModel.Packaging.ImagePart>? ImageParts { get; set; }
-  
+  public Collection<ImagePart>? ImageParts { get; set; }
+
   /// <summary>
-  /// Gets the Model3DReferenceRelationshipParts of the MainDocumentPart
+  ///   Gets the Model3DReferenceRelationshipParts of the MainDocumentPart
   /// </summary>
-  public Collection<DocumentModel.Packaging.Model3DReferenceRelationshipPart>? Model3DReferenceRelationshipParts { get; set; }
-  
+  public Collection<Model3DReferenceRelationshipPart>? Model3DReferenceRelationshipParts { get; set; }
+
   public String? RelationshipType { get; set; }
-  
+
   /// <summary>
-  /// Gets the WordprocessingPrinterSettingsParts of the MainDocumentPart
+  ///   Gets the WordprocessingPrinterSettingsParts of the MainDocumentPart
   /// </summary>
-  public Collection<DocumentModel.Packaging.WordprocessingPrinterSettingsPart>? WordprocessingPrinterSettingsParts { get; set; }
-  
+  public Collection<WordprocessingPrinterSettingsPart>? WordprocessingPrinterSettingsParts { get; set; }
 }

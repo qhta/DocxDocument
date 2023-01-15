@@ -1,22 +1,25 @@
+using DocumentModel.Drawings.ChartDrawing;
+using NonVisualShapeProperties = DocumentFormat.OpenXml.Drawing.ChartDrawing.NonVisualShapeProperties;
+
 namespace DocumentModel.OpenXml.Drawings.ChartDrawing;
 
 /// <summary>
-/// Non-Visual Shape Properties.
+///   Non-Visual Shape Properties.
 /// </summary>
 public static class NonVisualShapePropertiesConverter
 {
   /// <summary>
-  /// Chart Non Visual Properties.
+  ///   Chart Non Visual Properties.
   /// </summary>
-  public static DocumentModel.Drawings.ChartDrawing.NonVisualDrawingProperties? GetNonVisualDrawingProperties(DocumentFormat.OpenXml.Drawing.ChartDrawing.NonVisualShapeProperties? openXmlElement)
+  public static NonVisualDrawingProperties? GetNonVisualDrawingProperties(NonVisualShapeProperties? openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.ChartDrawing.NonVisualDrawingProperties>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.ChartDrawing.NonVisualDrawingPropertiesConverter.CreateModelElement(itemElement);
+      return NonVisualDrawingPropertiesConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetNonVisualDrawingProperties(DocumentFormat.OpenXml.Drawing.ChartDrawing.NonVisualShapeProperties? openXmlElement, DocumentModel.Drawings.ChartDrawing.NonVisualDrawingProperties? value)
+
+  public static void SetNonVisualDrawingProperties(NonVisualShapeProperties? openXmlElement, NonVisualDrawingProperties? value)
   {
     if (openXmlElement != null)
     {
@@ -25,25 +28,25 @@ public static class NonVisualShapePropertiesConverter
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Drawings.ChartDrawing.NonVisualDrawingPropertiesConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.ChartDrawing.NonVisualDrawingProperties>(value);
+        itemElement = NonVisualDrawingPropertiesConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.ChartDrawing.NonVisualDrawingProperties>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
+
   /// <summary>
-  /// Non-Visual Shape Drawing Properties.
+  ///   Non-Visual Shape Drawing Properties.
   /// </summary>
-  public static DocumentModel.Drawings.ChartDrawing.NonVisualShapeDrawingProperties? GetNonVisualShapeDrawingProperties(DocumentFormat.OpenXml.Drawing.ChartDrawing.NonVisualShapeProperties? openXmlElement)
+  public static NonVisualShapeDrawingProperties? GetNonVisualShapeDrawingProperties(NonVisualShapeProperties? openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.ChartDrawing.NonVisualShapeDrawingProperties>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.ChartDrawing.NonVisualShapeDrawingPropertiesConverter.CreateModelElement(itemElement);
+      return NonVisualShapeDrawingPropertiesConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetNonVisualShapeDrawingProperties(DocumentFormat.OpenXml.Drawing.ChartDrawing.NonVisualShapeProperties? openXmlElement, DocumentModel.Drawings.ChartDrawing.NonVisualShapeDrawingProperties? value)
+
+  public static void SetNonVisualShapeDrawingProperties(NonVisualShapeProperties? openXmlElement, NonVisualShapeDrawingProperties? value)
   {
     if (openXmlElement != null)
     {
@@ -52,14 +55,14 @@ public static class NonVisualShapePropertiesConverter
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Drawings.ChartDrawing.NonVisualShapeDrawingPropertiesConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.ChartDrawing.NonVisualShapeDrawingProperties>(value);
+        itemElement = NonVisualShapeDrawingPropertiesConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.ChartDrawing.NonVisualShapeDrawingProperties>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static DocumentModel.Drawings.ChartDrawing.NonVisualShapeProperties? CreateModelElement(DocumentFormat.OpenXml.Drawing.ChartDrawing.NonVisualShapeProperties? openXmlElement)
+
+  public static DocumentModel.Drawings.ChartDrawing.NonVisualShapeProperties? CreateModelElement(NonVisualShapeProperties? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -70,9 +73,9 @@ public static class NonVisualShapePropertiesConverter
     }
     return null;
   }
-  
+
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.ChartDrawing.NonVisualShapeProperties? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.ChartDrawing.NonVisualShapeProperties, new()
+    where OpenXmlElementType : NonVisualShapeProperties, new()
   {
     if (value != null)
     {

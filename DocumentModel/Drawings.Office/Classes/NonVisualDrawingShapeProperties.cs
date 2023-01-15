@@ -1,23 +1,22 @@
 namespace DocumentModel.Drawings.Office;
 
 /// <summary>
-/// Defines the NonVisualDrawingShapeProperties Class.
+///   Defines the NonVisualDrawingShapeProperties Class.
 /// </summary>
-public partial class NonVisualDrawingShapeProperties
+public class NonVisualDrawingShapeProperties
 {
   /// <summary>
-  /// Text Box
+  ///   Text Box
   /// </summary>
   public Boolean? TextBox { get; set; }
-  
+
   /// <summary>
-  /// Shape Locks.
+  ///   Shape Locks.
   /// </summary>
-  public DocumentModel.Drawings.ShapeLocks? ShapeLocks { get; set; }
-  
+  public ShapeLocks? ShapeLocks { get; set; }
+
   /// <summary>
-  /// ExtensionList.
+  ///   ExtensionList.
   /// </summary>
-  public DocumentModel.Drawings.ExtensionList? ExtensionList { get; set; }
-  
+  public ExtensionList? ExtensionList { get; set; }
 }

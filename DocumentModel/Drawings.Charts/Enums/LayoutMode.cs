@@ -1,18 +1,17 @@
 namespace DocumentModel.Drawings.Charts;
 
 /// <summary>
-/// Layout Mode
+///   Layout Mode
 /// </summary>
 public enum LayoutMode
 {
   /// <summary>
-  /// Edge.
+  ///   Edge.
   /// </summary>
   Edge,
-  
+
   /// <summary>
-  /// Factor.
+  ///   Factor.
   /// </summary>
-  Factor,
-  
+  Factor
 }

@@ -1,38 +1,37 @@
 namespace DocumentModel;
 
 /// <summary>
-/// Defines the CustomUI Class.
+///   Defines the CustomUI Class.
 /// </summary>
-public partial class CustomUI
+public class CustomUI
 {
   /// <summary>
-  /// onLoad, this property is only available in Office 2010 and later.
+  ///   onLoad, this property is only available in Office 2010 and later.
   /// </summary>
   public String? OnLoad { get; set; }
-  
+
   /// <summary>
-  /// loadImage, this property is only available in Office 2010 and later.
+  ///   loadImage, this property is only available in Office 2010 and later.
   /// </summary>
   public String? LoadImage { get; set; }
-  
+
   /// <summary>
-  /// Commands.
+  ///   Commands.
   /// </summary>
-  public DocumentModel.Commands? Commands { get; set; }
-  
+  public Commands? Commands { get; set; }
+
   /// <summary>
-  /// Ribbon.
+  ///   Ribbon.
   /// </summary>
-  public DocumentModel.Ribbon? Ribbon { get; set; }
-  
+  public Ribbon? Ribbon { get; set; }
+
   /// <summary>
-  /// Backstage.
+  ///   Backstage.
   /// </summary>
-  public DocumentModel.Backstage? Backstage { get; set; }
-  
+  public Backstage? Backstage { get; set; }
+
   /// <summary>
-  /// ContextMenus.
+  ///   ContextMenus.
   /// </summary>
-  public DocumentModel.ContextMenus? ContextMenus { get; set; }
-  
+  public ContextMenus? ContextMenus { get; set; }
 }

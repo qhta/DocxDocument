@@ -1,19 +1,18 @@
 namespace DocumentModel.Drawings.Charts;
 
 /// <summary>
-/// Defines the StrRefExtension Class.
+///   Defines the StrRefExtension Class.
 /// </summary>
-public partial class StrRefExtension
+public class StrRefExtension
 {
   /// <summary>
-  /// URI
+  ///   URI
   /// </summary>
   public String? Uri { get; set; }
-  
-  public DocumentModel.Drawings.Charts.FullReference? FullReference { get; set; }
-  
-  public DocumentModel.Drawings.Charts.LevelReference? LevelReference { get; set; }
-  
-  public DocumentModel.Drawings.Charts.FormulaReference? FormulaReference { get; set; }
-  
+
+  public FullReference? FullReference { get; set; }
+
+  public LevelReference? LevelReference { get; set; }
+
+  public FormulaReference? FormulaReference { get; set; }
 }

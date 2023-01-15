@@ -1,27 +1,26 @@
 namespace DocumentModel.Wordprocessing;
 
 /// <summary>
-/// Nested Frameset Definition.
+///   Nested Frameset Definition.
 /// </summary>
-public partial class Frameset
+public class Frameset
 {
   /// <summary>
-  /// Nested Frameset Size.
+  ///   Nested Frameset Size.
   /// </summary>
   public String? FrameSize { get; set; }
-  
+
   /// <summary>
-  /// Frameset Splitter Properties.
+  ///   Frameset Splitter Properties.
   /// </summary>
-  public DocumentModel.Wordprocessing.FramesetSplitbar? FramesetSplitbar { get; set; }
-  
+  public FramesetSplitbar? FramesetSplitbar { get; set; }
+
   /// <summary>
-  /// Frameset Layout.
+  ///   Frameset Layout.
   /// </summary>
-  public DocumentModel.Wordprocessing.FrameLayoutKind? FrameLayout { get; set; }
-  
-  public DocumentModel.Wordprocessing.Frameset? ChildFrameset { get; set; }
-  
-  public DocumentModel.Wordprocessing.Frame? Frame { get; set; }
-  
+  public FrameLayoutKind? FrameLayout { get; set; }
+
+  public Frameset? ChildFrameset { get; set; }
+
+  public Frame? Frame { get; set; }
 }

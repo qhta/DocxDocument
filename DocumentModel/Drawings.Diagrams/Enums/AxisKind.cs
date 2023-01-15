@@ -1,73 +1,72 @@
 namespace DocumentModel.Drawings.Diagrams;
 
 /// <summary>
-/// Axis Type
+///   Axis Type
 /// </summary>
 public enum AxisKind
 {
   /// <summary>
-  /// Self.
+  ///   Self.
   /// </summary>
   Self,
-  
+
   /// <summary>
-  /// Child.
+  ///   Child.
   /// </summary>
   Child,
-  
+
   /// <summary>
-  /// Descendant.
+  ///   Descendant.
   /// </summary>
   Descendant,
-  
+
   /// <summary>
-  /// Descendant or Self.
+  ///   Descendant or Self.
   /// </summary>
   DescendantOrSelf,
-  
+
   /// <summary>
-  /// Parent.
+  ///   Parent.
   /// </summary>
   Parent,
-  
+
   /// <summary>
-  /// Ancestor.
+  ///   Ancestor.
   /// </summary>
   Ancestor,
-  
+
   /// <summary>
-  /// Ancestor or Self.
+  ///   Ancestor or Self.
   /// </summary>
   AncestorOrSelf,
-  
+
   /// <summary>
-  /// Follow Sibling.
+  ///   Follow Sibling.
   /// </summary>
   FollowSibling,
-  
+
   /// <summary>
-  /// Preceding Sibling.
+  ///   Preceding Sibling.
   /// </summary>
   PrecedingSibling,
-  
+
   /// <summary>
-  /// Follow.
+  ///   Follow.
   /// </summary>
   Follow,
-  
+
   /// <summary>
-  /// Preceding.
+  ///   Preceding.
   /// </summary>
   Preceding,
-  
+
   /// <summary>
-  /// Root.
+  ///   Root.
   /// </summary>
   Root,
-  
+
   /// <summary>
-  /// None.
+  ///   None.
   /// </summary>
-  None,
-  
+  None
 }

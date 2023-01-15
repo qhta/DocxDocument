@@ -1,13 +1,12 @@
 namespace DocumentModel.Wordprocessing;
 
 /// <summary>
-/// Defines the ToolbarData Class.
+///   Defines the ToolbarData Class.
 /// </summary>
-public partial class ToolbarData
+public class ToolbarData
 {
   /// <summary>
-  /// id
+  ///   id
   /// </summary>
   public String? Id { get; set; }
-  
 }

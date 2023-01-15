@@ -1,21 +1,23 @@
+using DocumentFormat.OpenXml.Packaging;
+
 namespace DocumentModel.OpenXml.Packaging;
 
 /// <summary>
-/// Defines the VbaProjectPart
+///   Defines the VbaProjectPart
 /// </summary>
 public static class VbaProjectPartConverter
 {
-  public static String? GetContentType(DocumentFormat.OpenXml.Packaging.VbaProjectPart? openXmlElement)
+  public static String? GetContentType(VbaProjectPart? openXmlElement)
   {
     return openXmlElement?.ContentType;
   }
-  
-  public static String? GetRelationshipType(DocumentFormat.OpenXml.Packaging.VbaProjectPart? openXmlElement)
+
+  public static String? GetRelationshipType(VbaProjectPart? openXmlElement)
   {
     return openXmlElement?.RelationshipType;
   }
-  
-  public static DocumentModel.Packaging.VbaProjectPart? CreateModelElement(DocumentFormat.OpenXml.Packaging.VbaProjectPart? openXmlElement)
+
+  public static DocumentModel.Packaging.VbaProjectPart? CreateModelElement(VbaProjectPart? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -26,9 +28,9 @@ public static class VbaProjectPartConverter
     }
     return null;
   }
-  
+
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Packaging.VbaProjectPart? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Packaging.VbaProjectPart, new()
+    where OpenXmlElementType : VbaProjectPart, new()
   {
     if (value != null)
     {

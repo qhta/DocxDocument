@@ -1,10 +1,9 @@
 namespace DocumentModel.Math;
 
 /// <summary>
-/// Matrix Columns.
+///   Matrix Columns.
 /// </summary>
-public partial class MatrixColumns
+public class MatrixColumns
 {
-  public Collection<DocumentModel.Math.MatrixColumn>? Items { get; set; }
-  
+  public Collection<MatrixColumn>? Items { get; set; }
 }

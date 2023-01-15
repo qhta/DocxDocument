@@ -1,19 +1,22 @@
+using DocumentFormat.OpenXml.CustomXmlDataProperties;
+using SchemaReferences = DocumentModel.CustomXml.SchemaReferences;
+
 namespace DocumentModel.OpenXml.CustomXml;
 
 /// <summary>
-/// Custom XML Data Properties.
+///   Custom XML Data Properties.
 /// </summary>
 public static class DataStoreItemConverter
 {
   /// <summary>
-  /// Custom XML Data ID
+  ///   Custom XML Data ID
   /// </summary>
-  public static String? GetItemId(DocumentFormat.OpenXml.CustomXmlDataProperties.DataStoreItem? openXmlElement)
+  public static String? GetItemId(DataStoreItem? openXmlElement)
   {
     return openXmlElement?.ItemId?.Value;
   }
-  
-  public static void SetItemId(DocumentFormat.OpenXml.CustomXmlDataProperties.DataStoreItem? openXmlElement, String? value)
+
+  public static void SetItemId(DataStoreItem? openXmlElement, String? value)
   {
     if (openXmlElement != null)
       if (value != null)
@@ -21,19 +24,19 @@ public static class DataStoreItemConverter
       else
         openXmlElement.ItemId = null;
   }
-  
+
   /// <summary>
-  /// Set of Associated XML Schemas.
+  ///   Set of Associated XML Schemas.
   /// </summary>
-  public static DocumentModel.CustomXml.SchemaReferences? GetSchemaReferences(DocumentFormat.OpenXml.CustomXmlDataProperties.DataStoreItem? openXmlElement)
+  public static SchemaReferences? GetSchemaReferences(DataStoreItem? openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.CustomXmlDataProperties.SchemaReferences>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.CustomXml.SchemaReferencesConverter.CreateModelElement(itemElement);
+      return SchemaReferencesConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetSchemaReferences(DocumentFormat.OpenXml.CustomXmlDataProperties.DataStoreItem? openXmlElement, DocumentModel.CustomXml.SchemaReferences? value)
+
+  public static void SetSchemaReferences(DataStoreItem? openXmlElement, SchemaReferences? value)
   {
     if (openXmlElement != null)
     {
@@ -42,14 +45,14 @@ public static class DataStoreItemConverter
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.CustomXml.SchemaReferencesConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.CustomXmlDataProperties.SchemaReferences>(value);
+        itemElement = SchemaReferencesConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.CustomXmlDataProperties.SchemaReferences>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static DocumentModel.CustomXml.DataStoreItem? CreateModelElement(DocumentFormat.OpenXml.CustomXmlDataProperties.DataStoreItem? openXmlElement)
+
+  public static DocumentModel.CustomXml.DataStoreItem? CreateModelElement(DataStoreItem? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -60,9 +63,9 @@ public static class DataStoreItemConverter
     }
     return null;
   }
-  
+
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.CustomXml.DataStoreItem? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.CustomXmlDataProperties.DataStoreItem, new()
+    where OpenXmlElementType : DataStoreItem, new()
   {
     if (value != null)
     {

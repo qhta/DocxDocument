@@ -1,19 +1,21 @@
+using DocumentFormat.OpenXml.Drawing;
+
 namespace DocumentModel.OpenXml.Drawings;
 
 /// <summary>
-/// Effect.
+///   Effect.
 /// </summary>
 public static class EffectConverter
 {
   /// <summary>
-  /// Reference
+  ///   Reference
   /// </summary>
-  public static String? GetReference(DocumentFormat.OpenXml.Drawing.Effect? openXmlElement)
+  public static String? GetReference(Effect? openXmlElement)
   {
     return openXmlElement?.Reference?.Value;
   }
-  
-  public static void SetReference(DocumentFormat.OpenXml.Drawing.Effect? openXmlElement, String? value)
+
+  public static void SetReference(Effect? openXmlElement, String? value)
   {
     if (openXmlElement != null)
       if (value != null)
@@ -21,8 +23,8 @@ public static class EffectConverter
       else
         openXmlElement.Reference = null;
   }
-  
-  public static DocumentModel.Drawings.Effect? CreateModelElement(DocumentFormat.OpenXml.Drawing.Effect? openXmlElement)
+
+  public static DocumentModel.Drawings.Effect? CreateModelElement(Effect? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -32,9 +34,9 @@ public static class EffectConverter
     }
     return null;
   }
-  
+
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.Effect? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.Effect, new()
+    where OpenXmlElementType : Effect, new()
   {
     if (value != null)
     {

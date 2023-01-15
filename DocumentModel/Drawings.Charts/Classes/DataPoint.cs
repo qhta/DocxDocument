@@ -1,48 +1,47 @@
 namespace DocumentModel.Drawings.Charts;
 
 /// <summary>
-/// Defines the DataPoint Class.
+///   Defines the DataPoint Class.
 /// </summary>
-public partial class DataPoint
+public class DataPoint
 {
   /// <summary>
-  /// Index.
+  ///   Index.
   /// </summary>
   public UInt32? Index { get; set; }
-  
+
   /// <summary>
-  /// Invert if Negative.
+  ///   Invert if Negative.
   /// </summary>
   public Boolean? InvertIfNegative { get; set; }
-  
+
   /// <summary>
-  /// Marker.
+  ///   Marker.
   /// </summary>
-  public DocumentModel.Drawings.Charts.Marker? Marker { get; set; }
-  
+  public Marker? Marker { get; set; }
+
   /// <summary>
-  /// 3D Bubble.
+  ///   3D Bubble.
   /// </summary>
   public Boolean? Bubble3D { get; set; }
-  
+
   /// <summary>
-  /// Explosion.
+  ///   Explosion.
   /// </summary>
   public UInt32? Explosion { get; set; }
-  
+
   /// <summary>
-  /// ChartShapeProperties.
+  ///   ChartShapeProperties.
   /// </summary>
-  public DocumentModel.Drawings.Charts.ChartShapeProperties? ChartShapeProperties { get; set; }
-  
+  public ChartShapeProperties? ChartShapeProperties { get; set; }
+
   /// <summary>
-  /// PictureOptions.
+  ///   PictureOptions.
   /// </summary>
-  public DocumentModel.Drawings.Charts.PictureOptions? PictureOptions { get; set; }
-  
+  public PictureOptions? PictureOptions { get; set; }
+
   /// <summary>
-  /// Chart Extensibility.
+  ///   Chart Extensibility.
   /// </summary>
-  public DocumentModel.Drawings.Charts.ExtensionList? ExtensionList { get; set; }
-  
+  public ExtensionList? ExtensionList { get; set; }
 }

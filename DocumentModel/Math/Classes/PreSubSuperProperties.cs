@@ -1,13 +1,12 @@
 namespace DocumentModel.Math;
 
 /// <summary>
-/// Pre-Sub-Superscript Properties.
+///   Pre-Sub-Superscript Properties.
 /// </summary>
-public partial class PreSubSuperProperties
+public class PreSubSuperProperties
 {
   /// <summary>
-  /// ControlProperties.
+  ///   ControlProperties.
   /// </summary>
-  public DocumentModel.Math.ControlProperties? ControlProperties { get; set; }
-  
+  public ControlProperties? ControlProperties { get; set; }
 }

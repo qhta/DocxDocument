@@ -1,38 +1,37 @@
 namespace DocumentModel.Wordprocessing;
 
 /// <summary>
-/// Defines the TableCellMargin Class.
+///   Defines the TableCellMargin Class.
 /// </summary>
-public partial class TableCellMargin
+public class TableCellMargin
 {
   /// <summary>
-  /// Table Cell Top Margin Exception.
+  ///   Table Cell Top Margin Exception.
   /// </summary>
-  public DocumentModel.Wordprocessing.TableWidthType? TopMargin { get; set; }
-  
+  public TableWidthType? TopMargin { get; set; }
+
   /// <summary>
-  /// Table Cell Left Margin Exception.
+  ///   Table Cell Left Margin Exception.
   /// </summary>
-  public DocumentModel.Wordprocessing.TableWidthType? LeftMargin { get; set; }
-  
+  public TableWidthType? LeftMargin { get; set; }
+
   /// <summary>
-  /// StartMargin, this property is only available in Office 2010 and later..
+  ///   StartMargin, this property is only available in Office 2010 and later..
   /// </summary>
-  public DocumentModel.Wordprocessing.TableWidthType? StartMargin { get; set; }
-  
+  public TableWidthType? StartMargin { get; set; }
+
   /// <summary>
-  /// Table Cell Bottom Margin Exception.
+  ///   Table Cell Bottom Margin Exception.
   /// </summary>
-  public DocumentModel.Wordprocessing.TableWidthType? BottomMargin { get; set; }
-  
+  public TableWidthType? BottomMargin { get; set; }
+
   /// <summary>
-  /// Table Cell Right Margin Exception.
+  ///   Table Cell Right Margin Exception.
   /// </summary>
-  public DocumentModel.Wordprocessing.TableWidthType? RightMargin { get; set; }
-  
+  public TableWidthType? RightMargin { get; set; }
+
   /// <summary>
-  /// EndMargin, this property is only available in Office 2010 and later..
+  ///   EndMargin, this property is only available in Office 2010 and later..
   /// </summary>
-  public DocumentModel.Wordprocessing.TableWidthType? EndMargin { get; set; }
-  
+  public TableWidthType? EndMargin { get; set; }
 }

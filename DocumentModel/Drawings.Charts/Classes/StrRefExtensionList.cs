@@ -1,10 +1,9 @@
 namespace DocumentModel.Drawings.Charts;
 
 /// <summary>
-/// Defines the StrRefExtensionList Class.
+///   Defines the StrRefExtensionList Class.
 /// </summary>
-public partial class StrRefExtensionList
+public class StrRefExtensionList
 {
-  public Collection<DocumentModel.Drawings.Charts.StrRefExtension>? StrRefExtensions { get; set; }
-  
+  public Collection<StrRefExtension>? StrRefExtensions { get; set; }
 }

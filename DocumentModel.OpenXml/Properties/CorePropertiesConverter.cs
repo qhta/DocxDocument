@@ -1,239 +1,242 @@
+using System.IO.Packaging;
+using DocumentModel.Properties;
+
 namespace DocumentModel.OpenXml.Properties;
 
 /// <summary>
-/// This class provides access to the "core properties", such as Title and
+///   This class provides access to the "core properties", such as Title and
 /// </summary>
 public static class CorePropertiesConverter
 {
   /// <summary>
-  /// The title.
+  ///   The title.
   /// </summary>
-  public static String? GetTitle(System.IO.Packaging.PackageProperties? openXmlElement)
+  public static String? GetTitle(PackageProperties? openXmlElement)
   {
     return openXmlElement?.Title;
   }
-  
-  public static void SetTitle(System.IO.Packaging.PackageProperties? openXmlElement, String? value)
+
+  public static void SetTitle(PackageProperties? openXmlElement, String? value)
   {
     if (openXmlElement != null)
       openXmlElement.Title = value;
   }
-  
+
   /// <summary>
-  /// The topic of the contents.
+  ///   The topic of the contents.
   /// </summary>
-  public static String? GetSubject(System.IO.Packaging.PackageProperties? openXmlElement)
+  public static String? GetSubject(PackageProperties? openXmlElement)
   {
     return openXmlElement?.Subject;
   }
-  
-  public static void SetSubject(System.IO.Packaging.PackageProperties? openXmlElement, String? value)
+
+  public static void SetSubject(PackageProperties? openXmlElement, String? value)
   {
     if (openXmlElement != null)
       openXmlElement.Subject = value;
   }
-  
+
   /// <summary>
-  /// The primary creator. The identification is environment-specific and
+  ///   The primary creator. The identification is environment-specific and
   /// </summary>
-  public static String? GetCreator(System.IO.Packaging.PackageProperties? openXmlElement)
+  public static String? GetCreator(PackageProperties? openXmlElement)
   {
     return openXmlElement?.Creator;
   }
-  
-  public static void SetCreator(System.IO.Packaging.PackageProperties? openXmlElement, String? value)
+
+  public static void SetCreator(PackageProperties? openXmlElement, String? value)
   {
     if (openXmlElement != null)
       openXmlElement.Creator = value;
   }
-  
+
   /// <summary>
-  /// A delimited set of keywords to support searching and indexing. This
+  ///   A delimited set of keywords to support searching and indexing. This
   /// </summary>
-  public static String? GetKeywords(System.IO.Packaging.PackageProperties? openXmlElement)
+  public static String? GetKeywords(PackageProperties? openXmlElement)
   {
     return openXmlElement?.Keywords;
   }
-  
-  public static void SetKeywords(System.IO.Packaging.PackageProperties? openXmlElement, String? value)
+
+  public static void SetKeywords(PackageProperties? openXmlElement, String? value)
   {
     if (openXmlElement != null)
       openXmlElement.Keywords = value;
   }
-  
+
   /// <summary>
-  /// The description or abstract of the contents.
+  ///   The description or abstract of the contents.
   /// </summary>
-  public static String? GetDescription(System.IO.Packaging.PackageProperties? openXmlElement)
+  public static String? GetDescription(PackageProperties? openXmlElement)
   {
     return openXmlElement?.Description;
   }
-  
-  public static void SetDescription(System.IO.Packaging.PackageProperties? openXmlElement, String? value)
+
+  public static void SetDescription(PackageProperties? openXmlElement, String? value)
   {
     if (openXmlElement != null)
       openXmlElement.Description = value;
   }
-  
+
   /// <summary>
-  /// The user who performed the last modification. The identification is
+  ///   The user who performed the last modification. The identification is
   /// </summary>
-  public static String? GetLastModifiedBy(System.IO.Packaging.PackageProperties? openXmlElement)
+  public static String? GetLastModifiedBy(PackageProperties? openXmlElement)
   {
     return openXmlElement?.LastModifiedBy;
   }
-  
-  public static void SetLastModifiedBy(System.IO.Packaging.PackageProperties? openXmlElement, String? value)
+
+  public static void SetLastModifiedBy(PackageProperties? openXmlElement, String? value)
   {
     if (openXmlElement != null)
       openXmlElement.LastModifiedBy = value;
   }
-  
+
   /// <summary>
-  /// The revision number. This value indicates the number of saves or
+  ///   The revision number. This value indicates the number of saves or
   /// </summary>
-  public static String? GetRevision(System.IO.Packaging.PackageProperties? openXmlElement)
+  public static String? GetRevision(PackageProperties? openXmlElement)
   {
     return openXmlElement?.Revision;
   }
-  
-  public static void SetRevision(System.IO.Packaging.PackageProperties? openXmlElement, String? value)
+
+  public static void SetRevision(PackageProperties? openXmlElement, String? value)
   {
     if (openXmlElement != null)
       openXmlElement.Revision = value;
   }
-  
+
   /// <summary>
-  /// The date and time of the last printing.
+  ///   The date and time of the last printing.
   /// </summary>
-  public static DateTime? GetLastPrinted(System.IO.Packaging.PackageProperties? openXmlElement)
+  public static DateTime? GetLastPrinted(PackageProperties? openXmlElement)
   {
     return openXmlElement?.LastPrinted;
   }
-  
-  public static void SetLastPrinted(System.IO.Packaging.PackageProperties? openXmlElement, DateTime? value)
+
+  public static void SetLastPrinted(PackageProperties? openXmlElement, DateTime? value)
   {
     if (openXmlElement != null)
       openXmlElement.LastPrinted = value;
   }
-  
+
   /// <summary>
-  /// The creation date and time.
+  ///   The creation date and time.
   /// </summary>
-  public static DateTime? GetCreated(System.IO.Packaging.PackageProperties? openXmlElement)
+  public static DateTime? GetCreated(PackageProperties? openXmlElement)
   {
     return openXmlElement?.Created;
   }
-  
-  public static void SetCreated(System.IO.Packaging.PackageProperties? openXmlElement, DateTime? value)
+
+  public static void SetCreated(PackageProperties? openXmlElement, DateTime? value)
   {
     if (openXmlElement != null)
       openXmlElement.Created = value;
   }
-  
+
   /// <summary>
-  /// The date and time of the last modification.
+  ///   The date and time of the last modification.
   /// </summary>
-  public static DateTime? GetModified(System.IO.Packaging.PackageProperties? openXmlElement)
+  public static DateTime? GetModified(PackageProperties? openXmlElement)
   {
     return openXmlElement?.Modified;
   }
-  
-  public static void SetModified(System.IO.Packaging.PackageProperties? openXmlElement, DateTime? value)
+
+  public static void SetModified(PackageProperties? openXmlElement, DateTime? value)
   {
     if (openXmlElement != null)
       openXmlElement.Modified = value;
   }
-  
+
   /// <summary>
-  /// The category. This value is typically used by UI applications to create navigation
+  ///   The category. This value is typically used by UI applications to create navigation
   /// </summary>
-  public static String? GetCategory(System.IO.Packaging.PackageProperties? openXmlElement)
+  public static String? GetCategory(PackageProperties? openXmlElement)
   {
     return openXmlElement?.Category;
   }
-  
-  public static void SetCategory(System.IO.Packaging.PackageProperties? openXmlElement, String? value)
+
+  public static void SetCategory(PackageProperties? openXmlElement, String? value)
   {
     if (openXmlElement != null)
       openXmlElement.Category = value;
   }
-  
+
   /// <summary>
-  /// A unique identifier.
+  ///   A unique identifier.
   /// </summary>
-  public static String? GetIdentifier(System.IO.Packaging.PackageProperties? openXmlElement)
+  public static String? GetIdentifier(PackageProperties? openXmlElement)
   {
     return openXmlElement?.Identifier;
   }
-  
-  public static void SetIdentifier(System.IO.Packaging.PackageProperties? openXmlElement, String? value)
+
+  public static void SetIdentifier(PackageProperties? openXmlElement, String? value)
   {
     if (openXmlElement != null)
       openXmlElement.Identifier = value;
   }
-  
+
   /// <summary>
-  /// The type of content represented, generally defined by a specific
+  ///   The type of content represented, generally defined by a specific
   /// </summary>
-  public static String? GetContentType(System.IO.Packaging.PackageProperties? openXmlElement)
+  public static String? GetContentType(PackageProperties? openXmlElement)
   {
     return openXmlElement?.ContentType;
   }
-  
-  public static void SetContentType(System.IO.Packaging.PackageProperties? openXmlElement, String? value)
+
+  public static void SetContentType(PackageProperties? openXmlElement, String? value)
   {
     if (openXmlElement != null)
       openXmlElement.ContentType = value;
   }
-  
+
   /// <summary>
-  /// The primary language of the package content. The language tag is
+  ///   The primary language of the package content. The language tag is
   /// </summary>
-  public static String? GetLanguage(System.IO.Packaging.PackageProperties? openXmlElement)
+  public static String? GetLanguage(PackageProperties? openXmlElement)
   {
     return openXmlElement?.Language;
   }
-  
-  public static void SetLanguage(System.IO.Packaging.PackageProperties? openXmlElement, String? value)
+
+  public static void SetLanguage(PackageProperties? openXmlElement, String? value)
   {
     if (openXmlElement != null)
       openXmlElement.Language = value;
   }
-  
+
   /// <summary>
-  /// The version number. This value is set by the user or by the application.
+  ///   The version number. This value is set by the user or by the application.
   /// </summary>
-  public static String? GetVersion(System.IO.Packaging.PackageProperties? openXmlElement)
+  public static String? GetVersion(PackageProperties? openXmlElement)
   {
     return openXmlElement?.Version;
   }
-  
-  public static void SetVersion(System.IO.Packaging.PackageProperties? openXmlElement, String? value)
+
+  public static void SetVersion(PackageProperties? openXmlElement, String? value)
   {
     if (openXmlElement != null)
       openXmlElement.Version = value;
   }
-  
+
   /// <summary>
-  /// The status of the content. Example values include "Draft",
+  ///   The status of the content. Example values include "Draft",
   /// </summary>
-  public static String? GetContentStatus(System.IO.Packaging.PackageProperties? openXmlElement)
+  public static String? GetContentStatus(PackageProperties? openXmlElement)
   {
     return openXmlElement?.ContentStatus;
   }
-  
-  public static void SetContentStatus(System.IO.Packaging.PackageProperties? openXmlElement, String? value)
+
+  public static void SetContentStatus(PackageProperties? openXmlElement, String? value)
   {
     if (openXmlElement != null)
       openXmlElement.ContentStatus = value;
   }
-  
-  public static DocumentModel.Properties.CoreProperties? CreateModelElement(System.IO.Packaging.PackageProperties? openXmlElement)
+
+  public static CoreProperties? CreateModelElement(PackageProperties? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Properties.CoreProperties();
+      var value = new CoreProperties();
       value.Title = GetTitle(openXmlElement);
       value.Subject = GetSubject(openXmlElement);
       value.Creator = GetCreator(openXmlElement);
@@ -254,8 +257,8 @@ public static class CorePropertiesConverter
     }
     return null;
   }
-  
-  public static void SetValue(System.IO.Packaging.PackageProperties? openXmlElement, DocumentModel.Properties.CoreProperties? value)
+
+  public static void SetValue(PackageProperties? openXmlElement, CoreProperties? value)
   {
     if (openXmlElement != null)
     {

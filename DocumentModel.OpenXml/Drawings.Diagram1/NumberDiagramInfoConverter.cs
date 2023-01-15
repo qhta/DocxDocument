@@ -1,50 +1,54 @@
+using DocumentFormat.OpenXml.Office2019.Drawing.Diagram11;
+using DiagramAutoBullet = DocumentModel.Drawings.Diagram1.DiagramAutoBullet;
+using STorageType = DocumentModel.Drawings.Diagram1.STorageType;
+
 namespace DocumentModel.OpenXml.Drawings.Diagram1;
 
 /// <summary>
-/// Defines the NumberDiagramInfo Class.
+///   Defines the NumberDiagramInfo Class.
 /// </summary>
 public static class NumberDiagramInfoConverter
 {
   /// <summary>
-  /// lvl, this property is only available in Office 2019 and later.
+  ///   lvl, this property is only available in Office 2019 and later.
   /// </summary>
-  public static UInt32? GetLvl(DocumentFormat.OpenXml.Office2019.Drawing.Diagram11.NumberDiagramInfo? openXmlElement)
+  public static UInt32? GetLvl(NumberDiagramInfo? openXmlElement)
   {
     return openXmlElement?.Lvl?.Value;
   }
-  
-  public static void SetLvl(DocumentFormat.OpenXml.Office2019.Drawing.Diagram11.NumberDiagramInfo? openXmlElement, UInt32? value)
+
+  public static void SetLvl(NumberDiagramInfo? openXmlElement, UInt32? value)
   {
     if (openXmlElement != null)
       openXmlElement.Lvl = value;
   }
-  
+
   /// <summary>
-  /// ptType, this property is only available in Office 2019 and later.
+  ///   ptType, this property is only available in Office 2019 and later.
   /// </summary>
-  public static DocumentModel.Drawings.Diagram1.STorageType? GetPtType(DocumentFormat.OpenXml.Office2019.Drawing.Diagram11.NumberDiagramInfo? openXmlElement)
+  public static STorageType? GetPtType(NumberDiagramInfo? openXmlElement)
   {
-    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Office2019.Drawing.Diagram11.STorageType, DocumentModel.Drawings.Diagram1.STorageType>(openXmlElement?.PtType?.Value);
+    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Office2019.Drawing.Diagram11.STorageType, STorageType>(openXmlElement?.PtType?.Value);
   }
-  
-  public static void SetPtType(DocumentFormat.OpenXml.Office2019.Drawing.Diagram11.NumberDiagramInfo? openXmlElement, DocumentModel.Drawings.Diagram1.STorageType? value)
+
+  public static void SetPtType(NumberDiagramInfo? openXmlElement, STorageType? value)
   {
     if (openXmlElement != null)
-      openXmlElement.PtType = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Office2019.Drawing.Diagram11.STorageType, DocumentModel.Drawings.Diagram1.STorageType>(value);
+      openXmlElement.PtType = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Office2019.Drawing.Diagram11.STorageType, STorageType>(value);
   }
-  
+
   /// <summary>
-  /// DiagramAutoBullet.
+  ///   DiagramAutoBullet.
   /// </summary>
-  public static DocumentModel.Drawings.Diagram1.DiagramAutoBullet? GetDiagramAutoBullet(DocumentFormat.OpenXml.Office2019.Drawing.Diagram11.NumberDiagramInfo? openXmlElement)
+  public static DiagramAutoBullet? GetDiagramAutoBullet(NumberDiagramInfo? openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office2019.Drawing.Diagram11.DiagramAutoBullet>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.Diagram1.DiagramAutoBulletConverter.CreateModelElement(itemElement);
+      return DiagramAutoBulletConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetDiagramAutoBullet(DocumentFormat.OpenXml.Office2019.Drawing.Diagram11.NumberDiagramInfo? openXmlElement, DocumentModel.Drawings.Diagram1.DiagramAutoBullet? value)
+
+  public static void SetDiagramAutoBullet(NumberDiagramInfo? openXmlElement, DiagramAutoBullet? value)
   {
     if (openXmlElement != null)
     {
@@ -53,14 +57,14 @@ public static class NumberDiagramInfoConverter
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Drawings.Diagram1.DiagramAutoBulletConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2019.Drawing.Diagram11.DiagramAutoBullet>(value);
+        itemElement = DiagramAutoBulletConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2019.Drawing.Diagram11.DiagramAutoBullet>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static DocumentModel.Drawings.Diagram1.NumberDiagramInfo? CreateModelElement(DocumentFormat.OpenXml.Office2019.Drawing.Diagram11.NumberDiagramInfo? openXmlElement)
+
+  public static DocumentModel.Drawings.Diagram1.NumberDiagramInfo? CreateModelElement(NumberDiagramInfo? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -72,9 +76,9 @@ public static class NumberDiagramInfoConverter
     }
     return null;
   }
-  
+
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.Diagram1.NumberDiagramInfo? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Office2019.Drawing.Diagram11.NumberDiagramInfo, new()
+    where OpenXmlElementType : NumberDiagramInfo, new()
   {
     if (value != null)
     {

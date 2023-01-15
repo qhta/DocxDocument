@@ -1,19 +1,22 @@
+using DocumentModel.OpenXml.Vml;
+using DocumentModel.Vml;
+
 namespace DocumentModel.OpenXml.Wordprocessing;
 
 /// <summary>
-/// Default Properties for VML Objects in Main Document.
+///   Default Properties for VML Objects in Main Document.
 /// </summary>
 public static class ShapeDefaultsConverter
 {
-  public static DocumentModel.Vml.ShapeDefaults? GetChildShapeDefaults(DocumentFormat.OpenXml.Wordprocessing.ShapeDefaults? openXmlElement)
+  public static ShapeDefaults? GetChildShapeDefaults(DocumentFormat.OpenXml.Wordprocessing.ShapeDefaults? openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Vml.Office.ShapeDefaults>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Vml.ShapeDefaultsConverter.CreateModelElement(itemElement);
+      return OpenXml.Vml.ShapeDefaultsConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetChildShapeDefaults(DocumentFormat.OpenXml.Wordprocessing.ShapeDefaults? openXmlElement, DocumentModel.Vml.ShapeDefaults? value)
+
+  public static void SetChildShapeDefaults(DocumentFormat.OpenXml.Wordprocessing.ShapeDefaults? openXmlElement, ShapeDefaults? value)
   {
     if (openXmlElement != null)
     {
@@ -22,22 +25,22 @@ public static class ShapeDefaultsConverter
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Vml.ShapeDefaultsConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Vml.Office.ShapeDefaults>(value);
+        itemElement = OpenXml.Vml.ShapeDefaultsConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Vml.Office.ShapeDefaults>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static DocumentModel.Vml.ShapeLayout? GetShapeLayout(DocumentFormat.OpenXml.Wordprocessing.ShapeDefaults? openXmlElement)
+
+  public static ShapeLayout? GetShapeLayout(DocumentFormat.OpenXml.Wordprocessing.ShapeDefaults? openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Vml.Office.ShapeLayout>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Vml.ShapeLayoutConverter.CreateModelElement(itemElement);
+      return ShapeLayoutConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetShapeLayout(DocumentFormat.OpenXml.Wordprocessing.ShapeDefaults? openXmlElement, DocumentModel.Vml.ShapeLayout? value)
+
+  public static void SetShapeLayout(DocumentFormat.OpenXml.Wordprocessing.ShapeDefaults? openXmlElement, ShapeLayout? value)
   {
     if (openXmlElement != null)
     {
@@ -46,13 +49,13 @@ public static class ShapeDefaultsConverter
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Vml.ShapeLayoutConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Vml.Office.ShapeLayout>(value);
+        itemElement = ShapeLayoutConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Vml.Office.ShapeLayout>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
+
   public static DocumentModel.Wordprocessing.ShapeDefaults? CreateModelElement(DocumentFormat.OpenXml.Wordprocessing.ShapeDefaults? openXmlElement)
   {
     if (openXmlElement != null)
@@ -64,9 +67,9 @@ public static class ShapeDefaultsConverter
     }
     return null;
   }
-  
+
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.ShapeDefaults? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Wordprocessing.ShapeDefaults, new()
+    where OpenXmlElementType : DocumentFormat.OpenXml.Wordprocessing.ShapeDefaults, new()
   {
     if (value != null)
     {

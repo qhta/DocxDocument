@@ -1,38 +1,37 @@
 namespace DocumentModel;
 
 /// <summary>
-/// Defines the TaskSizesValues enumeration.
+///   Defines the TaskSizesValues enumeration.
 /// </summary>
 public enum TaskSizesKind
 {
   /// <summary>
-  /// largeMediumSmall.
+  ///   largeMediumSmall.
   /// </summary>
   LargeMediumSmall,
-  
+
   /// <summary>
-  /// largeMedium.
+  ///   largeMedium.
   /// </summary>
   LargeMedium,
-  
+
   /// <summary>
-  /// large.
+  ///   large.
   /// </summary>
   Large,
-  
+
   /// <summary>
-  /// mediumSmall.
+  ///   mediumSmall.
   /// </summary>
   MediumSmall,
-  
+
   /// <summary>
-  /// medium.
+  ///   medium.
   /// </summary>
   Medium,
-  
+
   /// <summary>
-  /// small.
+  ///   small.
   /// </summary>
-  Small,
-  
+  Small
 }

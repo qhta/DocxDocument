@@ -1,16 +1,15 @@
 namespace DocumentModel.Drawings.Charts;
 
 /// <summary>
-/// Number Literal.
+///   Number Literal.
 /// </summary>
-public partial class NumberLiteral
+public class NumberLiteral
 {
   public String? FormatCode { get; set; }
-  
+
   public UInt32? PointCount { get; set; }
-  
-  public Collection<DocumentModel.Drawings.Charts.NumericPoint>? NumericPoints { get; set; }
-  
-  public DocumentModel.Drawings.Charts.ExtensionList? ExtensionList { get; set; }
-  
+
+  public Collection<NumericPoint>? NumericPoints { get; set; }
+
+  public ExtensionList? ExtensionList { get; set; }
 }

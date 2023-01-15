@@ -1,38 +1,37 @@
 namespace DocumentModel.Vml;
 
 /// <summary>
-/// Screen Sizes Type
+///   Screen Sizes Type
 /// </summary>
 public enum ScreenSizeKind
 {
   /// <summary>
-  /// 544x376 pixels.
+  ///   544x376 pixels.
   /// </summary>
   Sz544x376,
-  
+
   /// <summary>
-  /// 640x480 pixels.
+  ///   640x480 pixels.
   /// </summary>
   Sz640x480,
-  
+
   /// <summary>
-  /// 720x512 pixels.
+  ///   720x512 pixels.
   /// </summary>
   Sz720x512,
-  
+
   /// <summary>
-  /// 800x600 pixels.
+  ///   800x600 pixels.
   /// </summary>
   Sz800x600,
-  
+
   /// <summary>
-  /// 1024x768 pixels.
+  ///   1024x768 pixels.
   /// </summary>
   Sz1024x768,
-  
+
   /// <summary>
-  /// 1152x862 pixels.
+  ///   1152x862 pixels.
   /// </summary>
-  Sz1152x862,
-  
+  Sz1152x862
 }

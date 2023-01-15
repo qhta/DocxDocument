@@ -1,23 +1,22 @@
 namespace DocumentModel.Wordprocessing;
 
 /// <summary>
-/// Defines the Glow Class.
+///   Defines the Glow Class.
 /// </summary>
-public partial class Glow
+public class Glow
 {
   /// <summary>
-  /// rad, this property is only available in Office 2010 and later.
+  ///   rad, this property is only available in Office 2010 and later.
   /// </summary>
   public Int64? GlowRadius { get; set; }
-  
+
   /// <summary>
-  /// RgbColorModelHex.
+  ///   RgbColorModelHex.
   /// </summary>
-  public DocumentModel.Wordprocessing.RgbColorModelHex? RgbColorModelHex { get; set; }
-  
+  public RgbColorModelHex? RgbColorModelHex { get; set; }
+
   /// <summary>
-  /// SchemeColor.
+  ///   SchemeColor.
   /// </summary>
-  public DocumentModel.Wordprocessing.SchemeColor? SchemeColor { get; set; }
-  
+  public SchemeColor? SchemeColor { get; set; }
 }

@@ -1,18 +1,17 @@
 namespace DocumentModel.Drawings.Wordprocessing;
 
 /// <summary>
-/// Defines the Point2DType Class.
+///   Defines the Point2DType Class.
 /// </summary>
-public partial class Point2DType
+public class Point2DType
 {
   /// <summary>
-  /// X-Axis Coordinate
+  ///   X-Axis Coordinate
   /// </summary>
   public Int64? X { get; set; }
-  
+
   /// <summary>
-  /// Y-Axis Coordinate
+  ///   Y-Axis Coordinate
   /// </summary>
   public Int64? Y { get; set; }
-  
 }

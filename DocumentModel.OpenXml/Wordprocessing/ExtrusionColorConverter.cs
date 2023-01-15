@@ -1,19 +1,22 @@
+using DocumentModel.Wordprocessing;
+using ExtrusionColor = DocumentFormat.OpenXml.Office2010.Word.ExtrusionColor;
+
 namespace DocumentModel.OpenXml.Wordprocessing;
 
 /// <summary>
-/// Defines the ExtrusionColor Class.
+///   Defines the ExtrusionColor Class.
 /// </summary>
 public static class ExtrusionColorConverter
 {
-  public static DocumentModel.Wordprocessing.RgbColorModelHex? GetRgbColorModelHex(DocumentFormat.OpenXml.Office2010.Word.ExtrusionColor? openXmlElement)
+  public static RgbColorModelHex? GetRgbColorModelHex(ExtrusionColor? openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office2010.Word.RgbColorModelHex>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Wordprocessing.RgbColorModelHexConverter.CreateModelElement(itemElement);
+      return RgbColorModelHexConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetRgbColorModelHex(DocumentFormat.OpenXml.Office2010.Word.ExtrusionColor? openXmlElement, DocumentModel.Wordprocessing.RgbColorModelHex? value)
+
+  public static void SetRgbColorModelHex(ExtrusionColor? openXmlElement, RgbColorModelHex? value)
   {
     if (openXmlElement != null)
     {
@@ -22,22 +25,22 @@ public static class ExtrusionColorConverter
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Wordprocessing.RgbColorModelHexConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2010.Word.RgbColorModelHex>(value);
+        itemElement = RgbColorModelHexConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2010.Word.RgbColorModelHex>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static DocumentModel.Wordprocessing.SchemeColor? GetSchemeColor(DocumentFormat.OpenXml.Office2010.Word.ExtrusionColor? openXmlElement)
+
+  public static SchemeColor? GetSchemeColor(ExtrusionColor? openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office2010.Word.SchemeColor>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Wordprocessing.SchemeColorConverter.CreateModelElement(itemElement);
+      return SchemeColorConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetSchemeColor(DocumentFormat.OpenXml.Office2010.Word.ExtrusionColor? openXmlElement, DocumentModel.Wordprocessing.SchemeColor? value)
+
+  public static void SetSchemeColor(ExtrusionColor? openXmlElement, SchemeColor? value)
   {
     if (openXmlElement != null)
     {
@@ -46,14 +49,14 @@ public static class ExtrusionColorConverter
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Wordprocessing.SchemeColorConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2010.Word.SchemeColor>(value);
+        itemElement = SchemeColorConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2010.Word.SchemeColor>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static DocumentModel.Wordprocessing.ExtrusionColor? CreateModelElement(DocumentFormat.OpenXml.Office2010.Word.ExtrusionColor? openXmlElement)
+
+  public static DocumentModel.Wordprocessing.ExtrusionColor? CreateModelElement(ExtrusionColor? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -64,9 +67,9 @@ public static class ExtrusionColorConverter
     }
     return null;
   }
-  
+
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.ExtrusionColor? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Office2010.Word.ExtrusionColor, new()
+    where OpenXmlElementType : ExtrusionColor, new()
   {
     if (value != null)
     {

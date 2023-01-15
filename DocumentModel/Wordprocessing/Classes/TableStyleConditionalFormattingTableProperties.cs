@@ -1,38 +1,37 @@
 namespace DocumentModel.Wordprocessing;
 
 /// <summary>
-/// Table Style Conditional Formatting Table Properties.
+///   Table Style Conditional Formatting Table Properties.
 /// </summary>
-public partial class TableStyleConditionalFormattingTableProperties
+public class TableStyleConditionalFormattingTableProperties
 {
   /// <summary>
-  /// TableJustification.
+  ///   TableJustification.
   /// </summary>
-  public DocumentModel.Wordprocessing.TableRowAlignmentKind? TableJustification { get; set; }
-  
+  public TableRowAlignmentKind? TableJustification { get; set; }
+
   /// <summary>
-  /// TableCellSpacing.
+  ///   TableCellSpacing.
   /// </summary>
-  public DocumentModel.Wordprocessing.TableWidthType? TableCellSpacing { get; set; }
-  
+  public TableWidthType? TableCellSpacing { get; set; }
+
   /// <summary>
-  /// TableIndentation.
+  ///   TableIndentation.
   /// </summary>
-  public DocumentModel.Wordprocessing.TableIndentation? TableIndentation { get; set; }
-  
+  public TableIndentation? TableIndentation { get; set; }
+
   /// <summary>
-  /// TableBorders.
+  ///   TableBorders.
   /// </summary>
-  public DocumentModel.Wordprocessing.TableBorders? TableBorders { get; set; }
-  
+  public TableBorders? TableBorders { get; set; }
+
   /// <summary>
-  /// Shading.
+  ///   Shading.
   /// </summary>
-  public DocumentModel.Wordprocessing.Shading? Shading { get; set; }
-  
+  public Shading? Shading { get; set; }
+
   /// <summary>
-  /// TableCellMarginDefault.
+  ///   TableCellMarginDefault.
   /// </summary>
-  public DocumentModel.Wordprocessing.TableCellMarginDefault? TableCellMarginDefault { get; set; }
-  
+  public TableCellMarginDefault? TableCellMarginDefault { get; set; }
 }

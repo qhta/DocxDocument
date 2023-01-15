@@ -1,19 +1,22 @@
+using DocumentModel.Wordprocessing;
+using Captions = DocumentFormat.OpenXml.Wordprocessing.Captions;
+
 namespace DocumentModel.OpenXml.Wordprocessing;
 
 /// <summary>
-/// Caption Settings.
+///   Caption Settings.
 /// </summary>
 public static class CaptionsConverter
 {
-  public static DocumentModel.Wordprocessing.Caption? GetCaption(DocumentFormat.OpenXml.Wordprocessing.Captions? openXmlElement)
+  public static Caption? GetCaption(Captions? openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.Caption>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Wordprocessing.CaptionConverter.CreateModelElement(itemElement);
+      return CaptionConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetCaption(DocumentFormat.OpenXml.Wordprocessing.Captions? openXmlElement, DocumentModel.Wordprocessing.Caption? value)
+
+  public static void SetCaption(Captions? openXmlElement, Caption? value)
   {
     if (openXmlElement != null)
     {
@@ -22,22 +25,22 @@ public static class CaptionsConverter
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Wordprocessing.CaptionConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.Caption>(value);
+        itemElement = CaptionConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.Caption>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static DocumentModel.Wordprocessing.AutoCaptions? GetAutoCaptions(DocumentFormat.OpenXml.Wordprocessing.Captions? openXmlElement)
+
+  public static AutoCaptions? GetAutoCaptions(Captions? openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.AutoCaptions>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Wordprocessing.AutoCaptionsConverter.CreateModelElement(itemElement);
+      return AutoCaptionsConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetAutoCaptions(DocumentFormat.OpenXml.Wordprocessing.Captions? openXmlElement, DocumentModel.Wordprocessing.AutoCaptions? value)
+
+  public static void SetAutoCaptions(Captions? openXmlElement, AutoCaptions? value)
   {
     if (openXmlElement != null)
     {
@@ -46,14 +49,14 @@ public static class CaptionsConverter
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Wordprocessing.AutoCaptionsConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.AutoCaptions>(value);
+        itemElement = AutoCaptionsConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.AutoCaptions>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static DocumentModel.Wordprocessing.Captions? CreateModelElement(DocumentFormat.OpenXml.Wordprocessing.Captions? openXmlElement)
+
+  public static DocumentModel.Wordprocessing.Captions? CreateModelElement(Captions? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -64,9 +67,9 @@ public static class CaptionsConverter
     }
     return null;
   }
-  
+
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.Captions? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Wordprocessing.Captions, new()
+    where OpenXmlElementType : Captions, new()
   {
     if (value != null)
     {

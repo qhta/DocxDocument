@@ -1,28 +1,27 @@
 namespace DocumentModel;
 
 /// <summary>
-/// Defines the ThemeFamily Class.
+///   Defines the ThemeFamily Class.
 /// </summary>
-public partial class ThemeFamily
+public class ThemeFamily
 {
   /// <summary>
-  /// name, this property is only available in Office 2013 and later.
+  ///   name, this property is only available in Office 2013 and later.
   /// </summary>
   public String? Name { get; set; }
-  
+
   /// <summary>
-  /// id, this property is only available in Office 2013 and later.
+  ///   id, this property is only available in Office 2013 and later.
   /// </summary>
   public String? Id { get; set; }
-  
+
   /// <summary>
-  /// vid, this property is only available in Office 2013 and later.
+  ///   vid, this property is only available in Office 2013 and later.
   /// </summary>
   public String? Vid { get; set; }
-  
+
   /// <summary>
-  /// OfficeArtExtensionList.
+  ///   OfficeArtExtensionList.
   /// </summary>
-  public DocumentModel.OfficeArtExtensionList? OfficeArtExtensionList { get; set; }
-  
+  public OfficeArtExtensionList? OfficeArtExtensionList { get; set; }
 }

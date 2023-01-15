@@ -1,19 +1,21 @@
+using DocumentFormat.OpenXml.Office2010.Drawing;
+
 namespace DocumentModel.OpenXml.Drawings;
 
 /// <summary>
-/// Defines the CameraTool Class.
+///   Defines the CameraTool Class.
 /// </summary>
 public static class CameraToolConverter
 {
   /// <summary>
-  /// cellRange, this property is only available in Office 2010 and later.
+  ///   cellRange, this property is only available in Office 2010 and later.
   /// </summary>
-  public static String? GetCellRange(DocumentFormat.OpenXml.Office2010.Drawing.CameraTool? openXmlElement)
+  public static String? GetCellRange(CameraTool? openXmlElement)
   {
     return openXmlElement?.CellRange?.Value;
   }
-  
-  public static void SetCellRange(DocumentFormat.OpenXml.Office2010.Drawing.CameraTool? openXmlElement, String? value)
+
+  public static void SetCellRange(CameraTool? openXmlElement, String? value)
   {
     if (openXmlElement != null)
       if (value != null)
@@ -21,16 +23,16 @@ public static class CameraToolConverter
       else
         openXmlElement.CellRange = null;
   }
-  
+
   /// <summary>
-  /// spid, this property is only available in Office 2010 and later.
+  ///   spid, this property is only available in Office 2010 and later.
   /// </summary>
-  public static String? GetShapeId(DocumentFormat.OpenXml.Office2010.Drawing.CameraTool? openXmlElement)
+  public static String? GetShapeId(CameraTool? openXmlElement)
   {
     return openXmlElement?.ShapeId?.Value;
   }
-  
-  public static void SetShapeId(DocumentFormat.OpenXml.Office2010.Drawing.CameraTool? openXmlElement, String? value)
+
+  public static void SetShapeId(CameraTool? openXmlElement, String? value)
   {
     if (openXmlElement != null)
       if (value != null)
@@ -38,8 +40,8 @@ public static class CameraToolConverter
       else
         openXmlElement.ShapeId = null;
   }
-  
-  public static DocumentModel.Drawings.CameraTool? CreateModelElement(DocumentFormat.OpenXml.Office2010.Drawing.CameraTool? openXmlElement)
+
+  public static DocumentModel.Drawings.CameraTool? CreateModelElement(CameraTool? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -50,9 +52,9 @@ public static class CameraToolConverter
     }
     return null;
   }
-  
+
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.CameraTool? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Office2010.Drawing.CameraTool, new()
+    where OpenXmlElementType : CameraTool, new()
   {
     if (value != null)
     {

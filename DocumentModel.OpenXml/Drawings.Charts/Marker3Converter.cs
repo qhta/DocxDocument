@@ -1,80 +1,82 @@
+using DocumentFormat.OpenXml.Drawing.Charts;
+using DocumentModel.Drawings.Charts;
+using ChartShapeProperties = DocumentModel.Drawings.Charts.ChartShapeProperties;
+using Marker = DocumentFormat.OpenXml.Office2013.Drawing.Chart.Marker;
+
 namespace DocumentModel.OpenXml.Drawings.Charts;
 
 /// <summary>
-/// Defines the Marker Class.
+///   Defines the Marker Class.
 /// </summary>
 public static class Marker3Converter
 {
   /// <summary>
-  /// Symbol.
+  ///   Symbol.
   /// </summary>
-  public static DocumentModel.Drawings.Charts.MarkerStyleKind? GetSymbol(DocumentFormat.OpenXml.Office2013.Drawing.Chart.Marker? openXmlElement)
+  public static MarkerStyleKind? GetSymbol(Marker? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.Symbol>();
-      if (itemElement?.Val?.Value != null)
-      {
-        return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Drawing.Charts.MarkerStyleValues, DocumentModel.Drawings.Charts.MarkerStyleKind>(itemElement.Val.Value);
-      }
+      var itemElement = openXmlElement.GetFirstChild<Symbol>();
+      if (itemElement?.Val?.Value != null) return EnumValueConverter.GetValue<MarkerStyleValues, MarkerStyleKind>(itemElement.Val.Value);
     }
     return null;
   }
-  
-  public static void SetSymbol(DocumentFormat.OpenXml.Office2013.Drawing.Chart.Marker? openXmlElement, DocumentModel.Drawings.Charts.MarkerStyleKind? value)
+
+  public static void SetSymbol(Marker? openXmlElement, MarkerStyleKind? value)
   {
     if (openXmlElement != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.Symbol>();
+      var itemElement = openXmlElement.GetFirstChild<Symbol>();
       if (itemElement != null)
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = EnumValueConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Charts.Symbol, DocumentFormat.OpenXml.Drawing.Charts.MarkerStyleValues, DocumentModel.Drawings.Charts.MarkerStyleKind>(value);
+        itemElement = EnumValueConverter.CreateOpenXmlElement<Symbol, MarkerStyleValues, MarkerStyleKind>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
+
   /// <summary>
-  /// Size.
+  ///   Size.
   /// </summary>
-  public static Byte? GetSize(DocumentFormat.OpenXml.Office2013.Drawing.Chart.Marker? openXmlElement)
+  public static Byte? GetSize(Marker? openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.Size>();
+    var itemElement = openXmlElement?.GetFirstChild<Size>();
     if (itemElement != null)
       return itemElement.Val?.Value;
     return null;
   }
-  
-  public static void SetSize(DocumentFormat.OpenXml.Office2013.Drawing.Chart.Marker? openXmlElement, Byte? value)
+
+  public static void SetSize(Marker? openXmlElement, Byte? value)
   {
     if (openXmlElement != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.Size>();
+      var itemElement = openXmlElement.GetFirstChild<Size>();
       if (itemElement != null)
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = new DocumentFormat.OpenXml.Drawing.Charts.Size{ Val = value };
+        itemElement = new Size { Val = value };
         openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
+
   /// <summary>
-  /// ChartShapeProperties.
+  ///   ChartShapeProperties.
   /// </summary>
-  public static DocumentModel.Drawings.Charts.ChartShapeProperties? GetChartShapeProperties(DocumentFormat.OpenXml.Office2013.Drawing.Chart.Marker? openXmlElement)
+  public static ChartShapeProperties? GetChartShapeProperties(Marker? openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.ChartShapeProperties>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.Charts.ChartShapePropertiesConverter.CreateModelElement(itemElement);
+      return ChartShapePropertiesConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetChartShapeProperties(DocumentFormat.OpenXml.Office2013.Drawing.Chart.Marker? openXmlElement, DocumentModel.Drawings.Charts.ChartShapeProperties? value)
+
+  public static void SetChartShapeProperties(Marker? openXmlElement, ChartShapeProperties? value)
   {
     if (openXmlElement != null)
     {
@@ -83,25 +85,25 @@ public static class Marker3Converter
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Drawings.Charts.ChartShapePropertiesConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Charts.ChartShapeProperties>(value);
+        itemElement = ChartShapePropertiesConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Charts.ChartShapeProperties>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
+
   /// <summary>
-  /// Chart Extensibility.
+  ///   Chart Extensibility.
   /// </summary>
-  public static DocumentModel.Drawings.Charts.ExtensionList? GetExtensionList(DocumentFormat.OpenXml.Office2013.Drawing.Chart.Marker? openXmlElement)
+  public static DocumentModel.Drawings.Charts.ExtensionList? GetExtensionList(Marker? openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.ExtensionList>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.Charts.ExtensionListConverter.CreateModelElement(itemElement);
+      return ExtensionListConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetExtensionList(DocumentFormat.OpenXml.Office2013.Drawing.Chart.Marker? openXmlElement, DocumentModel.Drawings.Charts.ExtensionList? value)
+
+  public static void SetExtensionList(Marker? openXmlElement, DocumentModel.Drawings.Charts.ExtensionList? value)
   {
     if (openXmlElement != null)
     {
@@ -110,18 +112,18 @@ public static class Marker3Converter
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Drawings.Charts.ExtensionListConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Charts.ExtensionList>(value);
+        itemElement = ExtensionListConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Charts.ExtensionList>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static DocumentModel.Drawings.Charts.Marker3? CreateModelElement(DocumentFormat.OpenXml.Office2013.Drawing.Chart.Marker? openXmlElement)
+
+  public static Marker3? CreateModelElement(Marker? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.Charts.Marker3();
+      var value = new Marker3();
       value.Symbol = GetSymbol(openXmlElement);
       value.Size = GetSize(openXmlElement);
       value.ChartShapeProperties = GetChartShapeProperties(openXmlElement);
@@ -130,9 +132,9 @@ public static class Marker3Converter
     }
     return null;
   }
-  
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.Charts.Marker3? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Office2013.Drawing.Chart.Marker, new()
+
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(Marker3? value)
+    where OpenXmlElementType : Marker, new()
   {
     if (value != null)
     {

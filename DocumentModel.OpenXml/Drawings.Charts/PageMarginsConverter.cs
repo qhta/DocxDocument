@@ -1,95 +1,97 @@
+using DocumentFormat.OpenXml.Drawing.Charts;
+
 namespace DocumentModel.OpenXml.Drawings.Charts;
 
 /// <summary>
-/// Page Margins.
+///   Page Margins.
 /// </summary>
 public static class PageMarginsConverter
 {
   /// <summary>
-  /// Left
+  ///   Left
   /// </summary>
-  public static Double? GetLeft(DocumentFormat.OpenXml.Drawing.Charts.PageMargins? openXmlElement)
+  public static Double? GetLeft(PageMargins? openXmlElement)
   {
     return openXmlElement?.Left?.Value;
   }
-  
-  public static void SetLeft(DocumentFormat.OpenXml.Drawing.Charts.PageMargins? openXmlElement, Double? value)
+
+  public static void SetLeft(PageMargins? openXmlElement, Double? value)
   {
     if (openXmlElement != null)
       openXmlElement.Left = value;
   }
-  
+
   /// <summary>
-  /// Right
+  ///   Right
   /// </summary>
-  public static Double? GetRight(DocumentFormat.OpenXml.Drawing.Charts.PageMargins? openXmlElement)
+  public static Double? GetRight(PageMargins? openXmlElement)
   {
     return openXmlElement?.Right?.Value;
   }
-  
-  public static void SetRight(DocumentFormat.OpenXml.Drawing.Charts.PageMargins? openXmlElement, Double? value)
+
+  public static void SetRight(PageMargins? openXmlElement, Double? value)
   {
     if (openXmlElement != null)
       openXmlElement.Right = value;
   }
-  
+
   /// <summary>
-  /// Top
+  ///   Top
   /// </summary>
-  public static Double? GetTop(DocumentFormat.OpenXml.Drawing.Charts.PageMargins? openXmlElement)
+  public static Double? GetTop(PageMargins? openXmlElement)
   {
     return openXmlElement?.Top?.Value;
   }
-  
-  public static void SetTop(DocumentFormat.OpenXml.Drawing.Charts.PageMargins? openXmlElement, Double? value)
+
+  public static void SetTop(PageMargins? openXmlElement, Double? value)
   {
     if (openXmlElement != null)
       openXmlElement.Top = value;
   }
-  
+
   /// <summary>
-  /// Bottom
+  ///   Bottom
   /// </summary>
-  public static Double? GetBottom(DocumentFormat.OpenXml.Drawing.Charts.PageMargins? openXmlElement)
+  public static Double? GetBottom(PageMargins? openXmlElement)
   {
     return openXmlElement?.Bottom?.Value;
   }
-  
-  public static void SetBottom(DocumentFormat.OpenXml.Drawing.Charts.PageMargins? openXmlElement, Double? value)
+
+  public static void SetBottom(PageMargins? openXmlElement, Double? value)
   {
     if (openXmlElement != null)
       openXmlElement.Bottom = value;
   }
-  
+
   /// <summary>
-  /// Header
+  ///   Header
   /// </summary>
-  public static Double? GetHeader(DocumentFormat.OpenXml.Drawing.Charts.PageMargins? openXmlElement)
+  public static Double? GetHeader(PageMargins? openXmlElement)
   {
     return openXmlElement?.Header?.Value;
   }
-  
-  public static void SetHeader(DocumentFormat.OpenXml.Drawing.Charts.PageMargins? openXmlElement, Double? value)
+
+  public static void SetHeader(PageMargins? openXmlElement, Double? value)
   {
     if (openXmlElement != null)
       openXmlElement.Header = value;
   }
-  
+
   /// <summary>
-  /// Footer
+  ///   Footer
   /// </summary>
-  public static Double? GetFooter(DocumentFormat.OpenXml.Drawing.Charts.PageMargins? openXmlElement)
+  public static Double? GetFooter(PageMargins? openXmlElement)
   {
     return openXmlElement?.Footer?.Value;
   }
-  
-  public static void SetFooter(DocumentFormat.OpenXml.Drawing.Charts.PageMargins? openXmlElement, Double? value)
+
+  public static void SetFooter(PageMargins? openXmlElement, Double? value)
   {
     if (openXmlElement != null)
       openXmlElement.Footer = value;
   }
-  
-  public static DocumentModel.Drawings.Charts.PageMargins? CreateModelElement(DocumentFormat.OpenXml.Drawing.Charts.PageMargins? openXmlElement)
+
+  public static DocumentModel.Drawings.Charts.PageMargins? CreateModelElement(PageMargins? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -104,9 +106,9 @@ public static class PageMarginsConverter
     }
     return null;
   }
-  
+
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.Charts.PageMargins? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.Charts.PageMargins, new()
+    where OpenXmlElementType : PageMargins, new()
   {
     if (value != null)
     {

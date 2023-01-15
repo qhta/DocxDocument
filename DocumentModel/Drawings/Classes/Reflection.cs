@@ -1,78 +1,77 @@
 namespace DocumentModel.Drawings;
 
 /// <summary>
-/// Reflection Effect.
+///   Reflection Effect.
 /// </summary>
-public partial class Reflection
+public class Reflection
 {
   /// <summary>
-  /// Blur Radius
+  ///   Blur Radius
   /// </summary>
   public Int64? BlurRadius { get; set; }
-  
+
   /// <summary>
-  /// Start Opacity
+  ///   Start Opacity
   /// </summary>
   public Int32? StartOpacity { get; set; }
-  
+
   /// <summary>
-  /// Start Position
+  ///   Start Position
   /// </summary>
   public Int32? StartPosition { get; set; }
-  
+
   /// <summary>
-  /// End Alpha
+  ///   End Alpha
   /// </summary>
   public Int32? EndAlpha { get; set; }
-  
+
   /// <summary>
-  /// End Position
+  ///   End Position
   /// </summary>
   public Int32? EndPosition { get; set; }
-  
+
   /// <summary>
-  /// Distance
+  ///   Distance
   /// </summary>
   public Int64? Distance { get; set; }
-  
+
   /// <summary>
-  /// Direction
+  ///   Direction
   /// </summary>
   public Int32? Direction { get; set; }
-  
+
   /// <summary>
-  /// Fade Direction
+  ///   Fade Direction
   /// </summary>
   public Int32? FadeDirection { get; set; }
-  
+
   /// <summary>
-  /// Horizontal Ratio
+  ///   Horizontal Ratio
   /// </summary>
   public Int32? HorizontalRatio { get; set; }
-  
+
   /// <summary>
-  /// Vertical Ratio
+  ///   Vertical Ratio
   /// </summary>
   public Int32? VerticalRatio { get; set; }
-  
+
   /// <summary>
-  /// Horizontal Skew
+  ///   Horizontal Skew
   /// </summary>
   public Int32? HorizontalSkew { get; set; }
-  
+
   /// <summary>
-  /// Vertical Skew
+  ///   Vertical Skew
   /// </summary>
   public Int32? VerticalSkew { get; set; }
-  
+
   /// <summary>
-  /// Shadow Alignment
+  ///   Shadow Alignment
   /// </summary>
-  public DocumentModel.Drawings.RectangleAlignmentKind? Alignment { get; set; }
-  
+  public RectangleAlignmentKind? Alignment { get; set; }
+
   /// <summary>
-  /// Rotate With Shape
+  ///   Rotate With Shape
   /// </summary>
   public Boolean? RotateWithShape { get; set; }
-  
 }

@@ -1,22 +1,25 @@
+using DocumentModel.Wordprocessing;
+using DocDefaults = DocumentFormat.OpenXml.Wordprocessing.DocDefaults;
+
 namespace DocumentModel.OpenXml.Wordprocessing;
 
 /// <summary>
-/// Document Default Paragraph and Run Properties.
+///   Document Default Paragraph and Run Properties.
 /// </summary>
 public static class DocDefaultsConverter
 {
   /// <summary>
-  /// Default Run Properties.
+  ///   Default Run Properties.
   /// </summary>
-  public static DocumentModel.Wordprocessing.RunPropertiesDefault? GetRunPropertiesDefault(DocumentFormat.OpenXml.Wordprocessing.DocDefaults? openXmlElement)
+  public static RunPropertiesDefault? GetRunPropertiesDefault(DocDefaults? openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.RunPropertiesDefault>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Wordprocessing.RunPropertiesDefaultConverter.CreateModelElement(itemElement);
+      return RunPropertiesDefaultConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetRunPropertiesDefault(DocumentFormat.OpenXml.Wordprocessing.DocDefaults? openXmlElement, DocumentModel.Wordprocessing.RunPropertiesDefault? value)
+
+  public static void SetRunPropertiesDefault(DocDefaults? openXmlElement, RunPropertiesDefault? value)
   {
     if (openXmlElement != null)
     {
@@ -25,25 +28,25 @@ public static class DocDefaultsConverter
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Wordprocessing.RunPropertiesDefaultConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.RunPropertiesDefault>(value);
+        itemElement = RunPropertiesDefaultConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.RunPropertiesDefault>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
+
   /// <summary>
-  /// Default Paragraph Properties.
+  ///   Default Paragraph Properties.
   /// </summary>
-  public static DocumentModel.Wordprocessing.ParagraphPropertiesDefault? GetParagraphPropertiesDefault(DocumentFormat.OpenXml.Wordprocessing.DocDefaults? openXmlElement)
+  public static ParagraphPropertiesDefault? GetParagraphPropertiesDefault(DocDefaults? openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.ParagraphPropertiesDefault>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Wordprocessing.ParagraphPropertiesDefaultConverter.CreateModelElement(itemElement);
+      return ParagraphPropertiesDefaultConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetParagraphPropertiesDefault(DocumentFormat.OpenXml.Wordprocessing.DocDefaults? openXmlElement, DocumentModel.Wordprocessing.ParagraphPropertiesDefault? value)
+
+  public static void SetParagraphPropertiesDefault(DocDefaults? openXmlElement, ParagraphPropertiesDefault? value)
   {
     if (openXmlElement != null)
     {
@@ -52,14 +55,14 @@ public static class DocDefaultsConverter
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Wordprocessing.ParagraphPropertiesDefaultConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.ParagraphPropertiesDefault>(value);
+        itemElement = ParagraphPropertiesDefaultConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.ParagraphPropertiesDefault>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static DocumentModel.Wordprocessing.DocDefaults? CreateModelElement(DocumentFormat.OpenXml.Wordprocessing.DocDefaults? openXmlElement)
+
+  public static DocumentModel.Wordprocessing.DocDefaults? CreateModelElement(DocDefaults? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -70,9 +73,9 @@ public static class DocDefaultsConverter
     }
     return null;
   }
-  
+
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.DocDefaults? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Wordprocessing.DocDefaults, new()
+    where OpenXmlElementType : DocDefaults, new()
   {
     if (value != null)
     {

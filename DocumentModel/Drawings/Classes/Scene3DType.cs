@@ -1,28 +1,27 @@
 namespace DocumentModel.Drawings;
 
 /// <summary>
-/// 3D Scene Properties.
+///   3D Scene Properties.
 /// </summary>
-public partial class Scene3DType
+public class Scene3DType
 {
   /// <summary>
-  /// Camera.
+  ///   Camera.
   /// </summary>
-  public DocumentModel.Drawings.Camera? Camera { get; set; }
-  
+  public Camera? Camera { get; set; }
+
   /// <summary>
-  /// Light Rig.
+  ///   Light Rig.
   /// </summary>
-  public DocumentModel.Drawings.LightRig? LightRig { get; set; }
-  
+  public LightRig? LightRig { get; set; }
+
   /// <summary>
-  /// Backdrop Plane.
+  ///   Backdrop Plane.
   /// </summary>
-  public DocumentModel.Drawings.Backdrop? Backdrop { get; set; }
-  
+  public Backdrop? Backdrop { get; set; }
+
   /// <summary>
-  /// ExtensionList.
+  ///   ExtensionList.
   /// </summary>
-  public DocumentModel.Drawings.ExtensionList? ExtensionList { get; set; }
-  
+  public ExtensionList? ExtensionList { get; set; }
 }

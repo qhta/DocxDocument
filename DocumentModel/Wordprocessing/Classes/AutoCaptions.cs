@@ -1,10 +1,9 @@
 namespace DocumentModel.Wordprocessing;
 
 /// <summary>
-/// Automatic Captioning Settings.
+///   Automatic Captioning Settings.
 /// </summary>
-public partial class AutoCaptions
+public class AutoCaptions
 {
-  public DocumentModel.Wordprocessing.AutoCaption? AutoCaption { get; set; }
-  
+  public AutoCaption? AutoCaption { get; set; }
 }

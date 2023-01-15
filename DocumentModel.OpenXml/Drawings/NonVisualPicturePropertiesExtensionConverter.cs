@@ -1,19 +1,22 @@
+using DocumentModel.Drawings;
+using NonVisualPicturePropertiesExtension = DocumentFormat.OpenXml.Drawing.NonVisualPicturePropertiesExtension;
+
 namespace DocumentModel.OpenXml.Drawings;
 
 /// <summary>
-/// Defines the NonVisualPicturePropertiesExtension Class.
+///   Defines the NonVisualPicturePropertiesExtension Class.
 /// </summary>
 public static class NonVisualPicturePropertiesExtensionConverter
 {
   /// <summary>
-  /// URI
+  ///   URI
   /// </summary>
-  public static String? GetUri(DocumentFormat.OpenXml.Drawing.NonVisualPicturePropertiesExtension? openXmlElement)
+  public static String? GetUri(NonVisualPicturePropertiesExtension? openXmlElement)
   {
     return openXmlElement?.Uri?.Value;
   }
-  
-  public static void SetUri(DocumentFormat.OpenXml.Drawing.NonVisualPicturePropertiesExtension? openXmlElement, String? value)
+
+  public static void SetUri(NonVisualPicturePropertiesExtension? openXmlElement, String? value)
   {
     if (openXmlElement != null)
       if (value != null)
@@ -21,16 +24,16 @@ public static class NonVisualPicturePropertiesExtensionConverter
       else
         openXmlElement.Uri = null;
   }
-  
-  public static DocumentModel.Drawings.CameraTool? GetCameraTool(DocumentFormat.OpenXml.Drawing.NonVisualPicturePropertiesExtension? openXmlElement)
+
+  public static CameraTool? GetCameraTool(NonVisualPicturePropertiesExtension? openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office2010.Drawing.CameraTool>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.CameraToolConverter.CreateModelElement(itemElement);
+      return CameraToolConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetCameraTool(DocumentFormat.OpenXml.Drawing.NonVisualPicturePropertiesExtension? openXmlElement, DocumentModel.Drawings.CameraTool? value)
+
+  public static void SetCameraTool(NonVisualPicturePropertiesExtension? openXmlElement, CameraTool? value)
   {
     if (openXmlElement != null)
     {
@@ -39,22 +42,22 @@ public static class NonVisualPicturePropertiesExtensionConverter
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Drawings.CameraToolConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2010.Drawing.CameraTool>(value);
+        itemElement = CameraToolConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2010.Drawing.CameraTool>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static DocumentModel.Drawings.SignatureLine? GetSignatureLine(DocumentFormat.OpenXml.Drawing.NonVisualPicturePropertiesExtension? openXmlElement)
+
+  public static SignatureLine? GetSignatureLine(NonVisualPicturePropertiesExtension? openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office2013.Drawing.SignatureLine>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.SignatureLineConverter.CreateModelElement(itemElement);
+      return SignatureLineConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetSignatureLine(DocumentFormat.OpenXml.Drawing.NonVisualPicturePropertiesExtension? openXmlElement, DocumentModel.Drawings.SignatureLine? value)
+
+  public static void SetSignatureLine(NonVisualPicturePropertiesExtension? openXmlElement, SignatureLine? value)
   {
     if (openXmlElement != null)
     {
@@ -63,22 +66,22 @@ public static class NonVisualPicturePropertiesExtensionConverter
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Drawings.SignatureLineConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2013.Drawing.SignatureLine>(value);
+        itemElement = SignatureLineConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2013.Drawing.SignatureLine>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static DocumentModel.Drawings.ObjectProperties? GetObjectProperties(DocumentFormat.OpenXml.Drawing.NonVisualPicturePropertiesExtension? openXmlElement)
+
+  public static ObjectProperties? GetObjectProperties(NonVisualPicturePropertiesExtension? openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office2013.Drawing.ObjectProperties>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.ObjectPropertiesConverter.CreateModelElement(itemElement);
+      return ObjectPropertiesConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetObjectProperties(DocumentFormat.OpenXml.Drawing.NonVisualPicturePropertiesExtension? openXmlElement, DocumentModel.Drawings.ObjectProperties? value)
+
+  public static void SetObjectProperties(NonVisualPicturePropertiesExtension? openXmlElement, ObjectProperties? value)
   {
     if (openXmlElement != null)
     {
@@ -87,22 +90,22 @@ public static class NonVisualPicturePropertiesExtensionConverter
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Drawings.ObjectPropertiesConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2013.Drawing.ObjectProperties>(value);
+        itemElement = ObjectPropertiesConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2013.Drawing.ObjectProperties>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static DocumentModel.Drawings.LiveFeedProperties? GetLiveFeedProperties(DocumentFormat.OpenXml.Drawing.NonVisualPicturePropertiesExtension? openXmlElement)
+
+  public static LiveFeedProperties? GetLiveFeedProperties(NonVisualPicturePropertiesExtension? openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office2021.Drawing.Livefeed.LiveFeedProperties>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.LiveFeedPropertiesConverter.CreateModelElement(itemElement);
+      return LiveFeedPropertiesConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetLiveFeedProperties(DocumentFormat.OpenXml.Drawing.NonVisualPicturePropertiesExtension? openXmlElement, DocumentModel.Drawings.LiveFeedProperties? value)
+
+  public static void SetLiveFeedProperties(NonVisualPicturePropertiesExtension? openXmlElement, LiveFeedProperties? value)
   {
     if (openXmlElement != null)
     {
@@ -111,14 +114,14 @@ public static class NonVisualPicturePropertiesExtensionConverter
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Drawings.LiveFeedPropertiesConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2021.Drawing.Livefeed.LiveFeedProperties>(value);
+        itemElement = LiveFeedPropertiesConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2021.Drawing.Livefeed.LiveFeedProperties>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static DocumentModel.Drawings.NonVisualPicturePropertiesExtension? CreateModelElement(DocumentFormat.OpenXml.Drawing.NonVisualPicturePropertiesExtension? openXmlElement)
+
+  public static DocumentModel.Drawings.NonVisualPicturePropertiesExtension? CreateModelElement(NonVisualPicturePropertiesExtension? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -132,9 +135,9 @@ public static class NonVisualPicturePropertiesExtensionConverter
     }
     return null;
   }
-  
+
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.NonVisualPicturePropertiesExtension? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.NonVisualPicturePropertiesExtension, new()
+    where OpenXmlElementType : NonVisualPicturePropertiesExtension, new()
   {
     if (value != null)
     {

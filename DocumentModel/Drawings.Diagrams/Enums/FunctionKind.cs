@@ -1,48 +1,47 @@
 namespace DocumentModel.Drawings.Diagrams;
 
 /// <summary>
-/// Function Type
+///   Function Type
 /// </summary>
 public enum FunctionKind
 {
   /// <summary>
-  /// Count.
+  ///   Count.
   /// </summary>
   Count,
-  
+
   /// <summary>
-  /// Position.
+  ///   Position.
   /// </summary>
   Position,
-  
+
   /// <summary>
-  /// Reverse Position.
+  ///   Reverse Position.
   /// </summary>
   ReversePosition,
-  
+
   /// <summary>
-  /// Position Even.
+  ///   Position Even.
   /// </summary>
   PositionEven,
-  
+
   /// <summary>
-  /// Position Odd.
+  ///   Position Odd.
   /// </summary>
   PositionOdd,
-  
+
   /// <summary>
-  /// Variable.
+  ///   Variable.
   /// </summary>
   Variable,
-  
+
   /// <summary>
-  /// Depth.
+  ///   Depth.
   /// </summary>
   Depth,
-  
+
   /// <summary>
-  /// Max Depth.
+  ///   Max Depth.
   /// </summary>
-  MaxDepth,
-  
+  MaxDepth
 }

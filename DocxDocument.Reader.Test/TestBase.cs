@@ -12,7 +12,7 @@ public class TestBase
   {
     var testPath = Assembly.GetExecutingAssembly().Location;
     testPath = testPath.Substring(0, testPath.IndexOf(@"\bin")) + @"\SampleDocs";
-    WriteLine(testPath);
+    //WriteLine(testPath);
     TestPath = testPath;
   }
 

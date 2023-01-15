@@ -1,74 +1,78 @@
+using DocumentFormat.OpenXml.Office2010.Drawing;
+using BackgroundMark = DocumentModel.Drawings.BackgroundMark;
+using ForegroundMark = DocumentModel.Drawings.ForegroundMark;
+
 namespace DocumentModel.OpenXml.Drawings;
 
 /// <summary>
-/// Defines the BackgroundRemoval Class.
+///   Defines the BackgroundRemoval Class.
 /// </summary>
 public static class BackgroundRemovalConverter
 {
   /// <summary>
-  /// t, this property is only available in Office 2010 and later.
+  ///   t, this property is only available in Office 2010 and later.
   /// </summary>
-  public static Int32? GetMarqueeTop(DocumentFormat.OpenXml.Office2010.Drawing.BackgroundRemoval? openXmlElement)
+  public static Int32? GetMarqueeTop(BackgroundRemoval? openXmlElement)
   {
     return openXmlElement?.MarqueeTop?.Value;
   }
-  
-  public static void SetMarqueeTop(DocumentFormat.OpenXml.Office2010.Drawing.BackgroundRemoval? openXmlElement, Int32? value)
+
+  public static void SetMarqueeTop(BackgroundRemoval? openXmlElement, Int32? value)
   {
     if (openXmlElement != null)
       openXmlElement.MarqueeTop = value;
   }
-  
+
   /// <summary>
-  /// b, this property is only available in Office 2010 and later.
+  ///   b, this property is only available in Office 2010 and later.
   /// </summary>
-  public static Int32? GetMarqueeBottom(DocumentFormat.OpenXml.Office2010.Drawing.BackgroundRemoval? openXmlElement)
+  public static Int32? GetMarqueeBottom(BackgroundRemoval? openXmlElement)
   {
     return openXmlElement?.MarqueeBottom?.Value;
   }
-  
-  public static void SetMarqueeBottom(DocumentFormat.OpenXml.Office2010.Drawing.BackgroundRemoval? openXmlElement, Int32? value)
+
+  public static void SetMarqueeBottom(BackgroundRemoval? openXmlElement, Int32? value)
   {
     if (openXmlElement != null)
       openXmlElement.MarqueeBottom = value;
   }
-  
+
   /// <summary>
-  /// l, this property is only available in Office 2010 and later.
+  ///   l, this property is only available in Office 2010 and later.
   /// </summary>
-  public static Int32? GetMarqueeLeft(DocumentFormat.OpenXml.Office2010.Drawing.BackgroundRemoval? openXmlElement)
+  public static Int32? GetMarqueeLeft(BackgroundRemoval? openXmlElement)
   {
     return openXmlElement?.MarqueeLeft?.Value;
   }
-  
-  public static void SetMarqueeLeft(DocumentFormat.OpenXml.Office2010.Drawing.BackgroundRemoval? openXmlElement, Int32? value)
+
+  public static void SetMarqueeLeft(BackgroundRemoval? openXmlElement, Int32? value)
   {
     if (openXmlElement != null)
       openXmlElement.MarqueeLeft = value;
   }
-  
+
   /// <summary>
-  /// r, this property is only available in Office 2010 and later.
+  ///   r, this property is only available in Office 2010 and later.
   /// </summary>
-  public static Int32? GetMarqueeRight(DocumentFormat.OpenXml.Office2010.Drawing.BackgroundRemoval? openXmlElement)
+  public static Int32? GetMarqueeRight(BackgroundRemoval? openXmlElement)
   {
     return openXmlElement?.MarqueeRight?.Value;
   }
-  
-  public static void SetMarqueeRight(DocumentFormat.OpenXml.Office2010.Drawing.BackgroundRemoval? openXmlElement, Int32? value)
+
+  public static void SetMarqueeRight(BackgroundRemoval? openXmlElement, Int32? value)
   {
     if (openXmlElement != null)
       openXmlElement.MarqueeRight = value;
   }
-  
-  public static System.Collections.ObjectModel.Collection<DocumentModel.Drawings.ForegroundMark>? GetForegroundMarks(DocumentFormat.OpenXml.Office2010.Drawing.BackgroundRemoval? openXmlElement)
+
+  public static Collection<ForegroundMark>? GetForegroundMarks(BackgroundRemoval? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var collection = new System.Collections.ObjectModel.Collection<DocumentModel.Drawings.ForegroundMark>();
+      var collection = new Collection<ForegroundMark>();
       foreach (var item in openXmlElement.Elements<DocumentFormat.OpenXml.Office2010.Drawing.ForegroundMark>())
       {
-        var newItem = DocumentModel.OpenXml.Drawings.ForegroundMarkConverter.CreateModelElement(item);
+        var newItem = ForegroundMarkConverter.CreateModelElement(item);
         if (newItem != null)
           collection.Add(newItem);
       }
@@ -76,32 +80,30 @@ public static class BackgroundRemovalConverter
     }
     return null;
   }
-  
-  public static void SetForegroundMarks(DocumentFormat.OpenXml.Office2010.Drawing.BackgroundRemoval? openXmlElement, System.Collections.ObjectModel.Collection<DocumentModel.Drawings.ForegroundMark>? value)
+
+  public static void SetForegroundMarks(BackgroundRemoval? openXmlElement, Collection<ForegroundMark>? value)
   {
     if (openXmlElement != null)
     {
       openXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Office2010.Drawing.ForegroundMark>();
       if (value != null)
-      {
         foreach (var item in value)
         {
-          var newItem = DocumentModel.OpenXml.Drawings.ForegroundMarkConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2010.Drawing.ForegroundMark>(item);
+          var newItem = ForegroundMarkConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2010.Drawing.ForegroundMark>(item);
           if (newItem != null)
             openXmlElement.AddChild(newItem);
         }
-      }
     }
   }
-  
-  public static System.Collections.ObjectModel.Collection<DocumentModel.Drawings.BackgroundMark>? GetBackgroundMarks(DocumentFormat.OpenXml.Office2010.Drawing.BackgroundRemoval? openXmlElement)
+
+  public static Collection<BackgroundMark>? GetBackgroundMarks(BackgroundRemoval? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var collection = new System.Collections.ObjectModel.Collection<DocumentModel.Drawings.BackgroundMark>();
+      var collection = new Collection<BackgroundMark>();
       foreach (var item in openXmlElement.Elements<DocumentFormat.OpenXml.Office2010.Drawing.BackgroundMark>())
       {
-        var newItem = DocumentModel.OpenXml.Drawings.BackgroundMarkConverter.CreateModelElement(item);
+        var newItem = BackgroundMarkConverter.CreateModelElement(item);
         if (newItem != null)
           collection.Add(newItem);
       }
@@ -109,25 +111,23 @@ public static class BackgroundRemovalConverter
     }
     return null;
   }
-  
-  public static void SetBackgroundMarks(DocumentFormat.OpenXml.Office2010.Drawing.BackgroundRemoval? openXmlElement, System.Collections.ObjectModel.Collection<DocumentModel.Drawings.BackgroundMark>? value)
+
+  public static void SetBackgroundMarks(BackgroundRemoval? openXmlElement, Collection<BackgroundMark>? value)
   {
     if (openXmlElement != null)
     {
       openXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Office2010.Drawing.BackgroundMark>();
       if (value != null)
-      {
         foreach (var item in value)
         {
-          var newItem = DocumentModel.OpenXml.Drawings.BackgroundMarkConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2010.Drawing.BackgroundMark>(item);
+          var newItem = BackgroundMarkConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2010.Drawing.BackgroundMark>(item);
           if (newItem != null)
             openXmlElement.AddChild(newItem);
         }
-      }
     }
   }
-  
-  public static DocumentModel.Drawings.BackgroundRemoval? CreateModelElement(DocumentFormat.OpenXml.Office2010.Drawing.BackgroundRemoval? openXmlElement)
+
+  public static DocumentModel.Drawings.BackgroundRemoval? CreateModelElement(BackgroundRemoval? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -142,9 +142,9 @@ public static class BackgroundRemovalConverter
     }
     return null;
   }
-  
+
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.BackgroundRemoval? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Office2010.Drawing.BackgroundRemoval, new()
+    where OpenXmlElementType : BackgroundRemoval, new()
   {
     if (value != null)
     {

@@ -1,62 +1,65 @@
+using DocumentFormat.OpenXml.Wordprocessing;
+using Level = DocumentModel.Wordprocessing.Level;
+
 namespace DocumentModel.OpenXml.Wordprocessing;
 
 /// <summary>
-/// Defines the LevelOverride Class.
+///   Defines the LevelOverride Class.
 /// </summary>
 public static class LevelOverrideConverter
 {
   /// <summary>
-  /// Numbering Level ID
+  ///   Numbering Level ID
   /// </summary>
-  public static Int32? GetLevelIndex(DocumentFormat.OpenXml.Wordprocessing.LevelOverride? openXmlElement)
+  public static Int32? GetLevelIndex(LevelOverride? openXmlElement)
   {
     return openXmlElement?.LevelIndex?.Value;
   }
-  
-  public static void SetLevelIndex(DocumentFormat.OpenXml.Wordprocessing.LevelOverride? openXmlElement, Int32? value)
+
+  public static void SetLevelIndex(LevelOverride? openXmlElement, Int32? value)
   {
     if (openXmlElement != null)
       openXmlElement.LevelIndex = value;
   }
-  
+
   /// <summary>
-  /// Numbering Level Starting Value Override.
+  ///   Numbering Level Starting Value Override.
   /// </summary>
-  public static Int32? GetStartOverrideNumberingValue(DocumentFormat.OpenXml.Wordprocessing.LevelOverride? openXmlElement)
+  public static Int32? GetStartOverrideNumberingValue(LevelOverride? openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.StartOverrideNumberingValue>();
+    var itemElement = openXmlElement?.GetFirstChild<StartOverrideNumberingValue>();
     if (itemElement != null)
       return itemElement.Val?.Value;
     return null;
   }
-  
-  public static void SetStartOverrideNumberingValue(DocumentFormat.OpenXml.Wordprocessing.LevelOverride? openXmlElement, Int32? value)
+
+  public static void SetStartOverrideNumberingValue(LevelOverride? openXmlElement, Int32? value)
   {
     if (openXmlElement != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.StartOverrideNumberingValue>();
+      var itemElement = openXmlElement.GetFirstChild<StartOverrideNumberingValue>();
       if (itemElement != null)
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = new DocumentFormat.OpenXml.Wordprocessing.StartOverrideNumberingValue{ Val = value };
+        itemElement = new StartOverrideNumberingValue { Val = value };
         openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
+
   /// <summary>
-  /// Numbering Level Override Definition.
+  ///   Numbering Level Override Definition.
   /// </summary>
-  public static DocumentModel.Wordprocessing.Level? GetLevel(DocumentFormat.OpenXml.Wordprocessing.LevelOverride? openXmlElement)
+  public static Level? GetLevel(LevelOverride? openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.Level>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Wordprocessing.LevelConverter.CreateModelElement(itemElement);
+      return LevelConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetLevel(DocumentFormat.OpenXml.Wordprocessing.LevelOverride? openXmlElement, DocumentModel.Wordprocessing.Level? value)
+
+  public static void SetLevel(LevelOverride? openXmlElement, Level? value)
   {
     if (openXmlElement != null)
     {
@@ -65,14 +68,14 @@ public static class LevelOverrideConverter
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Wordprocessing.LevelConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.Level>(value);
+        itemElement = LevelConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.Level>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static DocumentModel.Wordprocessing.LevelOverride? CreateModelElement(DocumentFormat.OpenXml.Wordprocessing.LevelOverride? openXmlElement)
+
+  public static DocumentModel.Wordprocessing.LevelOverride? CreateModelElement(LevelOverride? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -84,9 +87,9 @@ public static class LevelOverrideConverter
     }
     return null;
   }
-  
+
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.LevelOverride? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Wordprocessing.LevelOverride, new()
+    where OpenXmlElementType : LevelOverride, new()
   {
     if (value != null)
     {

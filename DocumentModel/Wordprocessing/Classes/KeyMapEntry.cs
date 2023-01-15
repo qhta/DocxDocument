@@ -1,58 +1,57 @@
 namespace DocumentModel.Wordprocessing;
 
 /// <summary>
-/// Defines the KeyMapEntry Class.
+///   Defines the KeyMapEntry Class.
 /// </summary>
-public partial class KeyMapEntry
+public class KeyMapEntry
 {
   /// <summary>
-  /// chmPrimary
+  ///   chmPrimary
   /// </summary>
   public Byte[]? CharacterMapPrimary { get; set; }
-  
+
   /// <summary>
-  /// chmSecondary
+  ///   chmSecondary
   /// </summary>
   public Byte[]? CharacterMapSecondary { get; set; }
-  
+
   /// <summary>
-  /// kcmPrimary
+  ///   kcmPrimary
   /// </summary>
   public Byte[]? KeyCodePrimary { get; set; }
-  
+
   /// <summary>
-  /// kcmSecondary
+  ///   kcmSecondary
   /// </summary>
   public Byte[]? KeyCodeSecondary { get; set; }
-  
+
   /// <summary>
-  /// mask
+  ///   mask
   /// </summary>
   public Boolean? Mask { get; set; }
-  
+
   /// <summary>
-  /// FixedCommandKeyboardCustomization.
+  ///   FixedCommandKeyboardCustomization.
   /// </summary>
-  public DocumentModel.Wordprocessing.FixedCommandKeyboardCustomization? FixedCommandKeyboardCustomization { get; set; }
-  
+  public FixedCommandKeyboardCustomization? FixedCommandKeyboardCustomization { get; set; }
+
   /// <summary>
-  /// MacroKeyboardCustomization.
+  ///   MacroKeyboardCustomization.
   /// </summary>
-  public DocumentModel.Wordprocessing.MacroWllType? MacroKeyboardCustomization { get; set; }
-  
+  public MacroWllType? MacroKeyboardCustomization { get; set; }
+
   /// <summary>
-  /// AllocatedCommandKeyboardCustomization.
+  ///   AllocatedCommandKeyboardCustomization.
   /// </summary>
-  public DocumentModel.Wordprocessing.AcceleratorKeymapType? AllocatedCommandKeyboardCustomization { get; set; }
-  
+  public AcceleratorKeymapType? AllocatedCommandKeyboardCustomization { get; set; }
+
   /// <summary>
-  /// WllMacroKeyboardCustomization.
+  ///   WllMacroKeyboardCustomization.
   /// </summary>
-  public DocumentModel.Wordprocessing.MacroWllType? WllMacroKeyboardCustomization { get; set; }
-  
+  public MacroWllType? WllMacroKeyboardCustomization { get; set; }
+
   /// <summary>
-  /// CharacterInsertion.
+  ///   CharacterInsertion.
   /// </summary>
   public Byte[]? CharacterInsertion { get; set; }
-  
 }

@@ -1,13 +1,12 @@
 namespace DocumentModel.Vml;
 
 /// <summary>
-/// Shape Clipping Path.
+///   Shape Clipping Path.
 /// </summary>
-public partial class ClipPath
+public class ClipPath
 {
   /// <summary>
-  /// Path Definition
+  ///   Path Definition
   /// </summary>
   public String? Value { get; set; }
-  
 }

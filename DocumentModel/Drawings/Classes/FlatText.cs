@@ -1,13 +1,12 @@
 namespace DocumentModel.Drawings;
 
 /// <summary>
-/// No text in 3D scene.
+///   No text in 3D scene.
 /// </summary>
-public partial class FlatText
+public class FlatText
 {
   /// <summary>
-  /// Z Coordinate
+  ///   Z Coordinate
   /// </summary>
   public Int64? Z { get; set; }
-  
 }

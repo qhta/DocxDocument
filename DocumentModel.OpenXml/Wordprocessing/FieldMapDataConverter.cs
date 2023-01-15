@@ -1,178 +1,179 @@
+using DocumentFormat.OpenXml.Wordprocessing;
+using DocumentModel.Wordprocessing;
+using FieldMapData = DocumentFormat.OpenXml.Wordprocessing.FieldMapData;
+
 namespace DocumentModel.OpenXml.Wordprocessing;
 
 /// <summary>
-/// External Data Source to Merge Field Mapping.
+///   External Data Source to Merge Field Mapping.
 /// </summary>
 public static class FieldMapDataConverter
 {
   /// <summary>
-  /// Merge Field Mapping.
+  ///   Merge Field Mapping.
   /// </summary>
-  public static DocumentModel.Wordprocessing.MailMergeOdsoFieldKind? GetMailMergeFieldType(DocumentFormat.OpenXml.Wordprocessing.FieldMapData? openXmlElement)
+  public static MailMergeOdsoFieldKind? GetMailMergeFieldType(FieldMapData? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.MailMergeFieldType>();
-      if (itemElement?.Val?.Value != null)
-      {
-        return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Wordprocessing.MailMergeOdsoFieldValues, DocumentModel.Wordprocessing.MailMergeOdsoFieldKind>(itemElement.Val.Value);
-      }
+      var itemElement = openXmlElement.GetFirstChild<MailMergeFieldType>();
+      if (itemElement?.Val?.Value != null) return EnumValueConverter.GetValue<MailMergeOdsoFieldValues, MailMergeOdsoFieldKind>(itemElement.Val.Value);
     }
     return null;
   }
-  
-  public static void SetMailMergeFieldType(DocumentFormat.OpenXml.Wordprocessing.FieldMapData? openXmlElement, DocumentModel.Wordprocessing.MailMergeOdsoFieldKind? value)
+
+  public static void SetMailMergeFieldType(FieldMapData? openXmlElement, MailMergeOdsoFieldKind? value)
   {
     if (openXmlElement != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.MailMergeFieldType>();
+      var itemElement = openXmlElement.GetFirstChild<MailMergeFieldType>();
       if (itemElement != null)
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = EnumValueConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.MailMergeFieldType, DocumentFormat.OpenXml.Wordprocessing.MailMergeOdsoFieldValues, DocumentModel.Wordprocessing.MailMergeOdsoFieldKind>(value);
+        itemElement = EnumValueConverter.CreateOpenXmlElement<MailMergeFieldType, MailMergeOdsoFieldValues, MailMergeOdsoFieldKind>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
+
   /// <summary>
-  /// Data Source Name for Column.
+  ///   Data Source Name for Column.
   /// </summary>
-  public static String? GetName(DocumentFormat.OpenXml.Wordprocessing.FieldMapData? openXmlElement)
+  public static String? GetName(FieldMapData? openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.Name>();
+    var itemElement = openXmlElement?.GetFirstChild<Name>();
     if (itemElement != null)
       return itemElement.Val?.Value;
     return null;
   }
-  
-  public static void SetName(DocumentFormat.OpenXml.Wordprocessing.FieldMapData? openXmlElement, String? value)
+
+  public static void SetName(FieldMapData? openXmlElement, String? value)
   {
     if (openXmlElement != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.Name>();
+      var itemElement = openXmlElement.GetFirstChild<Name>();
       if (itemElement != null)
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = new DocumentFormat.OpenXml.Wordprocessing.Name { Val = value };
+        itemElement = new Name { Val = value };
         openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
+
   /// <summary>
-  /// Predefined Merge Field Name.
+  ///   Predefined Merge Field Name.
   /// </summary>
-  public static String? GetMappedName(DocumentFormat.OpenXml.Wordprocessing.FieldMapData? openXmlElement)
+  public static String? GetMappedName(FieldMapData? openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.MappedName>();
+    var itemElement = openXmlElement?.GetFirstChild<MappedName>();
     if (itemElement != null)
       return itemElement.Val?.Value;
     return null;
   }
-  
-  public static void SetMappedName(DocumentFormat.OpenXml.Wordprocessing.FieldMapData? openXmlElement, String? value)
+
+  public static void SetMappedName(FieldMapData? openXmlElement, String? value)
   {
     if (openXmlElement != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.MappedName>();
+      var itemElement = openXmlElement.GetFirstChild<MappedName>();
       if (itemElement != null)
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = new DocumentFormat.OpenXml.Wordprocessing.MappedName { Val = value };
+        itemElement = new MappedName { Val = value };
         openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
+
   /// <summary>
-  /// Index of Column Being Mapped.
+  ///   Index of Column Being Mapped.
   /// </summary>
-  public static UInt32? GetColumnIndex(DocumentFormat.OpenXml.Wordprocessing.FieldMapData? openXmlElement)
+  public static UInt32? GetColumnIndex(FieldMapData? openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.ColumnIndex>();
+    var itemElement = openXmlElement?.GetFirstChild<ColumnIndex>();
     if (itemElement != null)
       return itemElement.Val?.Value;
     return null;
   }
-  
-  public static void SetColumnIndex(DocumentFormat.OpenXml.Wordprocessing.FieldMapData? openXmlElement, UInt32? value)
+
+  public static void SetColumnIndex(FieldMapData? openXmlElement, UInt32? value)
   {
     if (openXmlElement != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.ColumnIndex>();
+      var itemElement = openXmlElement.GetFirstChild<ColumnIndex>();
       if (itemElement != null)
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = new DocumentFormat.OpenXml.Wordprocessing.ColumnIndex{ Val = value };
+        itemElement = new ColumnIndex { Val = value };
         openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
+
   /// <summary>
-  /// Merge Field Name Language ID.
+  ///   Merge Field Name Language ID.
   /// </summary>
-  public static String? GetLanguageId(DocumentFormat.OpenXml.Wordprocessing.FieldMapData? openXmlElement)
+  public static String? GetLanguageId(FieldMapData? openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.LanguageId>();
+    var itemElement = openXmlElement?.GetFirstChild<LanguageId>();
     if (itemElement != null)
       return itemElement.Val?.Value;
     return null;
   }
-  
-  public static void SetLanguageId(DocumentFormat.OpenXml.Wordprocessing.FieldMapData? openXmlElement, String? value)
+
+  public static void SetLanguageId(FieldMapData? openXmlElement, String? value)
   {
     if (openXmlElement != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.LanguageId>();
+      var itemElement = openXmlElement.GetFirstChild<LanguageId>();
       if (itemElement != null)
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = new DocumentFormat.OpenXml.Wordprocessing.LanguageId { Val = value };
+        itemElement = new LanguageId { Val = value };
         openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
+
   /// <summary>
-  /// Use Country/Region-Based Address Field Ordering.
+  ///   Use Country/Region-Based Address Field Ordering.
   /// </summary>
-  public static Boolean? GetDynamicAddress(DocumentFormat.OpenXml.Wordprocessing.FieldMapData? openXmlElement)
+  public static Boolean? GetDynamicAddress(FieldMapData? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.DynamicAddress>();
+      var itemElement = openXmlElement.GetFirstChild<DynamicAddress>();
       return itemElement != null;
     }
     return null;
   }
-  
-  public static void SetDynamicAddress(DocumentFormat.OpenXml.Wordprocessing.FieldMapData? openXmlElement, Boolean? value)
+
+  public static void SetDynamicAddress(FieldMapData? openXmlElement, Boolean? value)
   {
     if (openXmlElement != null)
     {
       if (value == false)
       {
-        var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.DynamicAddress>();
+        var itemElement = openXmlElement.GetFirstChild<DynamicAddress>();
         if (itemElement != null)
           itemElement.Remove();
       }
       if (value == true)
       {
-        var itemElement = new DocumentFormat.OpenXml.Wordprocessing.DynamicAddress();
+        var itemElement = new DynamicAddress();
         openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static DocumentModel.Wordprocessing.FieldMapData? CreateModelElement(DocumentFormat.OpenXml.Wordprocessing.FieldMapData? openXmlElement)
+
+  public static DocumentModel.Wordprocessing.FieldMapData? CreateModelElement(FieldMapData? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -187,9 +188,9 @@ public static class FieldMapDataConverter
     }
     return null;
   }
-  
+
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.FieldMapData? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Wordprocessing.FieldMapData, new()
+    where OpenXmlElementType : FieldMapData, new()
   {
     if (value != null)
     {

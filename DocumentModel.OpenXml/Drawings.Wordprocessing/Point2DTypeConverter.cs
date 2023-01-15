@@ -1,39 +1,41 @@
+using DocumentFormat.OpenXml.Drawing.Wordprocessing;
+
 namespace DocumentModel.OpenXml.Drawings.Wordprocessing;
 
 /// <summary>
-/// Defines the Point2DType Class.
+///   Defines the Point2DType Class.
 /// </summary>
 public static class Point2DTypeConverter
 {
   /// <summary>
-  /// X-Axis Coordinate
+  ///   X-Axis Coordinate
   /// </summary>
-  public static Int64? GetX(DocumentFormat.OpenXml.Drawing.Wordprocessing.Point2DType? openXmlElement)
+  public static Int64? GetX(Point2DType? openXmlElement)
   {
     return openXmlElement?.X?.Value;
   }
-  
-  public static void SetX(DocumentFormat.OpenXml.Drawing.Wordprocessing.Point2DType? openXmlElement, Int64? value)
+
+  public static void SetX(Point2DType? openXmlElement, Int64? value)
   {
     if (openXmlElement != null)
       openXmlElement.X = value;
   }
-  
+
   /// <summary>
-  /// Y-Axis Coordinate
+  ///   Y-Axis Coordinate
   /// </summary>
-  public static Int64? GetY(DocumentFormat.OpenXml.Drawing.Wordprocessing.Point2DType? openXmlElement)
+  public static Int64? GetY(Point2DType? openXmlElement)
   {
     return openXmlElement?.Y?.Value;
   }
-  
-  public static void SetY(DocumentFormat.OpenXml.Drawing.Wordprocessing.Point2DType? openXmlElement, Int64? value)
+
+  public static void SetY(Point2DType? openXmlElement, Int64? value)
   {
     if (openXmlElement != null)
       openXmlElement.Y = value;
   }
-  
-  public static DocumentModel.Drawings.Wordprocessing.Point2DType? CreateModelElement(DocumentFormat.OpenXml.Drawing.Wordprocessing.Point2DType? openXmlElement)
+
+  public static DocumentModel.Drawings.Wordprocessing.Point2DType? CreateModelElement(Point2DType? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -44,9 +46,9 @@ public static class Point2DTypeConverter
     }
     return null;
   }
-  
+
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.Wordprocessing.Point2DType? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.Wordprocessing.Point2DType, new()
+    where OpenXmlElementType : Point2DType, new()
   {
     if (value != null)
     {

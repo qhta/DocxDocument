@@ -1,14 +1,13 @@
 namespace DocumentModel.Drawings.Charts;
 
 /// <summary>
-/// String Literal.
+///   String Literal.
 /// </summary>
-public partial class StringLiteral
+public class StringLiteral
 {
   public UInt32? PointCount { get; set; }
-  
-  public Collection<DocumentModel.Drawings.Charts.StringPoint>? StringPoints { get; set; }
-  
-  public DocumentModel.Drawings.Charts.StrDataExtensionList? StrDataExtensionList { get; set; }
-  
+
+  public Collection<StringPoint>? StringPoints { get; set; }
+
+  public StrDataExtensionList? StrDataExtensionList { get; set; }
 }

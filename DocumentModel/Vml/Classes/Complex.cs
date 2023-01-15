@@ -1,13 +1,12 @@
 namespace DocumentModel.Vml;
 
 /// <summary>
-/// Complex.
+///   Complex.
 /// </summary>
-public partial class Complex
+public class Complex
 {
   /// <summary>
-  /// VML Extension Handling Behavior
+  ///   VML Extension Handling Behavior
   /// </summary>
-  public DocumentModel.Vml.ExtensionHandlingBehaviorKind? Extension { get; set; }
-  
+  public ExtensionHandlingBehaviorKind? Extension { get; set; }
 }

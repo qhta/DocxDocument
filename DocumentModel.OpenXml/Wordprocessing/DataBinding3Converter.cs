@@ -1,19 +1,22 @@
+using DocumentModel.Wordprocessing;
+using DataBinding = DocumentFormat.OpenXml.Office2013.Word.DataBinding;
+
 namespace DocumentModel.OpenXml.Wordprocessing;
 
 /// <summary>
-/// Defines the DataBinding Class.
+///   Defines the DataBinding Class.
 /// </summary>
 public static class DataBinding3Converter
 {
   /// <summary>
-  /// XML Namespace Prefix Mappings
+  ///   XML Namespace Prefix Mappings
   /// </summary>
-  public static String? GetPrefixMappings(DocumentFormat.OpenXml.Office2013.Word.DataBinding? openXmlElement)
+  public static String? GetPrefixMappings(DataBinding? openXmlElement)
   {
     return openXmlElement?.PrefixMappings?.Value;
   }
-  
-  public static void SetPrefixMappings(DocumentFormat.OpenXml.Office2013.Word.DataBinding? openXmlElement, String? value)
+
+  public static void SetPrefixMappings(DataBinding? openXmlElement, String? value)
   {
     if (openXmlElement != null)
       if (value != null)
@@ -21,16 +24,16 @@ public static class DataBinding3Converter
       else
         openXmlElement.PrefixMappings = null;
   }
-  
+
   /// <summary>
-  /// XPath
+  ///   XPath
   /// </summary>
-  public static String? GetXPath(DocumentFormat.OpenXml.Office2013.Word.DataBinding? openXmlElement)
+  public static String? GetXPath(DataBinding? openXmlElement)
   {
     return openXmlElement?.XPath?.Value;
   }
-  
-  public static void SetXPath(DocumentFormat.OpenXml.Office2013.Word.DataBinding? openXmlElement, String? value)
+
+  public static void SetXPath(DataBinding? openXmlElement, String? value)
   {
     if (openXmlElement != null)
       if (value != null)
@@ -38,16 +41,16 @@ public static class DataBinding3Converter
       else
         openXmlElement.XPath = null;
   }
-  
+
   /// <summary>
-  /// Custom XML Data Storage ID
+  ///   Custom XML Data Storage ID
   /// </summary>
-  public static String? GetStoreItemId(DocumentFormat.OpenXml.Office2013.Word.DataBinding? openXmlElement)
+  public static String? GetStoreItemId(DataBinding? openXmlElement)
   {
     return openXmlElement?.StoreItemId?.Value;
   }
-  
-  public static void SetStoreItemId(DocumentFormat.OpenXml.Office2013.Word.DataBinding? openXmlElement, String? value)
+
+  public static void SetStoreItemId(DataBinding? openXmlElement, String? value)
   {
     if (openXmlElement != null)
       if (value != null)
@@ -55,12 +58,12 @@ public static class DataBinding3Converter
       else
         openXmlElement.StoreItemId = null;
   }
-  
-  public static DocumentModel.Wordprocessing.DataBinding3? CreateModelElement(DocumentFormat.OpenXml.Office2013.Word.DataBinding? openXmlElement)
+
+  public static DataBinding3? CreateModelElement(DataBinding? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Wordprocessing.DataBinding3();
+      var value = new DataBinding3();
       value.PrefixMappings = GetPrefixMappings(openXmlElement);
       value.XPath = GetXPath(openXmlElement);
       value.StoreItemId = GetStoreItemId(openXmlElement);
@@ -68,9 +71,9 @@ public static class DataBinding3Converter
     }
     return null;
   }
-  
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.DataBinding3? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Office2013.Word.DataBinding, new()
+
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DataBinding3? value)
+    where OpenXmlElementType : DataBinding, new()
   {
     if (value != null)
     {

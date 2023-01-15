@@ -1,23 +1,22 @@
 namespace DocumentModel.Wordprocessing;
 
 /// <summary>
-/// Defines the BreakValues enumeration.
+///   Defines the BreakValues enumeration.
 /// </summary>
 public enum BreakKind
 {
   /// <summary>
-  /// Page Break.
+  ///   Page Break.
   /// </summary>
   Page,
-  
+
   /// <summary>
-  /// Column Break.
+  ///   Column Break.
   /// </summary>
   Column,
-  
+
   /// <summary>
-  /// Line Break.
+  ///   Line Break.
   /// </summary>
-  TextWrapping,
-  
+  TextWrapping
 }

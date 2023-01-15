@@ -2,7 +2,7 @@
 
 namespace DocumentModel.BaseTypes;
 
-public class VariantXmlConverter: TypeConverter
+public class VariantXmlConverter : TypeConverter
 {
   public override bool CanConvertFrom(ITypeDescriptorContext? context, Type sourceType)
   {
@@ -14,7 +14,7 @@ public class VariantXmlConverter: TypeConverter
   public override bool CanConvertTo(ITypeDescriptorContext? context, Type? destinationType)
   {
     if (destinationType == typeof(string))
-      return true; 
+      return true;
     return base.CanConvertTo(context, destinationType);
   }
 
@@ -27,5 +27,4 @@ public class VariantXmlConverter: TypeConverter
   {
     return Variant.ConvertTo(context, culture, value, destinationType);
   }
-
 }

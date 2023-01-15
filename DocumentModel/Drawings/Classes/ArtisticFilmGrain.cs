@@ -1,18 +1,17 @@
 namespace DocumentModel.Drawings;
 
 /// <summary>
-/// Defines the ArtisticFilmGrain Class.
+///   Defines the ArtisticFilmGrain Class.
 /// </summary>
-public partial class ArtisticFilmGrain
+public class ArtisticFilmGrain
 {
   /// <summary>
-  /// trans, this property is only available in Office 2010 and later.
+  ///   trans, this property is only available in Office 2010 and later.
   /// </summary>
   public Int32? Transparancy { get; set; }
-  
+
   /// <summary>
-  /// grainSize, this property is only available in Office 2010 and later.
+  ///   grainSize, this property is only available in Office 2010 and later.
   /// </summary>
   public Int32? GrainSize { get; set; }
-  
 }

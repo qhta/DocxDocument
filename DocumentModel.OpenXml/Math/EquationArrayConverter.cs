@@ -1,22 +1,25 @@
+using DocumentModel.Math;
+using EquationArray = DocumentFormat.OpenXml.Math.EquationArray;
+
 namespace DocumentModel.OpenXml.Math;
 
 /// <summary>
-/// Equation-Array Function.
+///   Equation-Array Function.
 /// </summary>
 public static class EquationArrayConverter
 {
   /// <summary>
-  /// Equation Array Properties.
+  ///   Equation Array Properties.
   /// </summary>
-  public static DocumentModel.Math.EquationArrayProperties? GetEquationArrayProperties(DocumentFormat.OpenXml.Math.EquationArray? openXmlElement)
+  public static EquationArrayProperties? GetEquationArrayProperties(EquationArray? openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Math.EquationArrayProperties>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Math.EquationArrayPropertiesConverter.CreateModelElement(itemElement);
+      return EquationArrayPropertiesConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetEquationArrayProperties(DocumentFormat.OpenXml.Math.EquationArray? openXmlElement, DocumentModel.Math.EquationArrayProperties? value)
+
+  public static void SetEquationArrayProperties(EquationArray? openXmlElement, EquationArrayProperties? value)
   {
     if (openXmlElement != null)
     {
@@ -25,21 +28,21 @@ public static class EquationArrayConverter
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Math.EquationArrayPropertiesConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Math.EquationArrayProperties>(value);
+        itemElement = EquationArrayPropertiesConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Math.EquationArrayProperties>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static System.Collections.ObjectModel.Collection<DocumentModel.Math.Base>? GetBases(DocumentFormat.OpenXml.Math.EquationArray? openXmlElement)
+
+  public static Collection<Base>? GetBases(EquationArray? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var collection = new System.Collections.ObjectModel.Collection<DocumentModel.Math.Base>();
+      var collection = new Collection<Base>();
       foreach (var item in openXmlElement.Elements<DocumentFormat.OpenXml.Math.Base>())
       {
-        var newItem = DocumentModel.OpenXml.Math.BaseConverter.CreateModelElement(item);
+        var newItem = BaseConverter.CreateModelElement(item);
         if (newItem != null)
           collection.Add(newItem);
       }
@@ -47,25 +50,23 @@ public static class EquationArrayConverter
     }
     return null;
   }
-  
-  public static void SetBases(DocumentFormat.OpenXml.Math.EquationArray? openXmlElement, System.Collections.ObjectModel.Collection<DocumentModel.Math.Base>? value)
+
+  public static void SetBases(EquationArray? openXmlElement, Collection<Base>? value)
   {
     if (openXmlElement != null)
     {
       openXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Math.Base>();
       if (value != null)
-      {
         foreach (var item in value)
         {
-          var newItem = DocumentModel.OpenXml.Math.BaseConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Math.Base>(item);
+          var newItem = BaseConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Math.Base>(item);
           if (newItem != null)
             openXmlElement.AddChild(newItem);
         }
-      }
     }
   }
-  
-  public static DocumentModel.Math.EquationArray? CreateModelElement(DocumentFormat.OpenXml.Math.EquationArray? openXmlElement)
+
+  public static DocumentModel.Math.EquationArray? CreateModelElement(EquationArray? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -76,9 +77,9 @@ public static class EquationArrayConverter
     }
     return null;
   }
-  
+
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Math.EquationArray? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Math.EquationArray, new()
+    where OpenXmlElementType : EquationArray, new()
   {
     if (value != null)
     {

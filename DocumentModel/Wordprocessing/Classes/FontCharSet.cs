@@ -1,18 +1,17 @@
 namespace DocumentModel.Wordprocessing;
 
 /// <summary>
-/// Defines the FontCharSet Class.
+///   Defines the FontCharSet Class.
 /// </summary>
-public partial class FontCharSet
+public class FontCharSet
 {
   /// <summary>
-  /// val
+  ///   val
   /// </summary>
   public String? Val { get; set; }
-  
+
   /// <summary>
-  /// characterSet
+  ///   characterSet
   /// </summary>
-  public DocumentModel.Wordprocessing.StrictCharacterSet? StrictCharacterSet { get; set; }
-  
+  public StrictCharacterSet? StrictCharacterSet { get; set; }
 }

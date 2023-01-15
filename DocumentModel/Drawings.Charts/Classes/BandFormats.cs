@@ -1,10 +1,9 @@
 namespace DocumentModel.Drawings.Charts;
 
 /// <summary>
-/// Band Formats.
+///   Band Formats.
 /// </summary>
-public partial class BandFormats
+public class BandFormats
 {
-  public Collection<DocumentModel.Drawings.Charts.BandFormat>? Items { get; set; }
-  
+  public Collection<BandFormat>? Items { get; set; }
 }

@@ -1,38 +1,37 @@
 namespace DocumentModel.Vml;
 
 /// <summary>
-/// Shadow Type
+///   Shadow Type
 /// </summary>
 public enum ShadowKind
 {
   /// <summary>
-  /// Single Shadow.
+  ///   Single Shadow.
   /// </summary>
   Single,
-  
+
   /// <summary>
-  /// Double Shadow.
+  ///   Double Shadow.
   /// </summary>
   Double,
-  
+
   /// <summary>
-  /// Embossed Shadow.
+  ///   Embossed Shadow.
   /// </summary>
   Emboss,
-  
+
   /// <summary>
-  /// Perspective Shadow.
+  ///   Perspective Shadow.
   /// </summary>
   Perspective,
-  
+
   /// <summary>
-  /// shapeRelative.
+  ///   shapeRelative.
   /// </summary>
   ShapeRelative,
-  
+
   /// <summary>
-  /// drawingRelative.
+  ///   drawingRelative.
   /// </summary>
-  DrawingRelative,
-  
+  DrawingRelative
 }

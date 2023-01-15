@@ -1,23 +1,22 @@
 namespace DocumentModel.Wordprocessing.DrawingGroup;
 
 /// <summary>
-/// Defines the WordprocessingGroupType Class.
+///   Defines the WordprocessingGroupType Class.
 /// </summary>
-public partial class WordprocessingGroupType
+public class WordprocessingGroupType
 {
   /// <summary>
-  /// NonVisualDrawingProperties.
+  ///   NonVisualDrawingProperties.
   /// </summary>
-  public DocumentModel.Wordprocessing.DrawingGroup.NonVisualDrawingProperties? NonVisualDrawingProperties { get; set; }
-  
+  public NonVisualDrawingProperties? NonVisualDrawingProperties { get; set; }
+
   /// <summary>
-  /// NonVisualGroupDrawingShapeProperties.
+  ///   NonVisualGroupDrawingShapeProperties.
   /// </summary>
-  public DocumentModel.Wordprocessing.DrawingGroup.NonVisualGroupDrawingShapeProperties? NonVisualGroupDrawingShapeProperties { get; set; }
-  
+  public NonVisualGroupDrawingShapeProperties? NonVisualGroupDrawingShapeProperties { get; set; }
+
   /// <summary>
-  /// GroupShapeProperties.
+  ///   GroupShapeProperties.
   /// </summary>
-  public DocumentModel.Wordprocessing.DrawingGroup.GroupShapeProperties? GroupShapeProperties { get; set; }
-  
+  public GroupShapeProperties? GroupShapeProperties { get; set; }
 }

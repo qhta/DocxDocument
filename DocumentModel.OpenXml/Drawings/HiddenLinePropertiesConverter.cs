@@ -1,103 +1,114 @@
+using DocumentFormat.OpenXml.Drawing;
+using DocumentModel.Drawings;
+using CustomDash = DocumentModel.Drawings.CustomDash;
+using GradientFill = DocumentModel.Drawings.GradientFill;
+using HiddenLineProperties = DocumentFormat.OpenXml.Office2010.Drawing.HiddenLineProperties;
+using LineEndPropertiesType = DocumentModel.Drawings.LineEndPropertiesType;
+using LinePropertiesExtensionList = DocumentModel.Drawings.LinePropertiesExtensionList;
+using Miter = DocumentModel.Drawings.Miter;
+using PatternFill = DocumentModel.Drawings.PatternFill;
+using SolidFill = DocumentModel.Drawings.SolidFill;
+
 namespace DocumentModel.OpenXml.Drawings;
 
 /// <summary>
-/// Defines the HiddenLineProperties Class.
+///   Defines the HiddenLineProperties Class.
 /// </summary>
 public static class HiddenLinePropertiesConverter
 {
   /// <summary>
-  /// line width
+  ///   line width
   /// </summary>
-  public static Int32? GetWidth(DocumentFormat.OpenXml.Office2010.Drawing.HiddenLineProperties? openXmlElement)
+  public static Int32? GetWidth(HiddenLineProperties? openXmlElement)
   {
     return openXmlElement?.Width?.Value;
   }
-  
-  public static void SetWidth(DocumentFormat.OpenXml.Office2010.Drawing.HiddenLineProperties? openXmlElement, Int32? value)
+
+  public static void SetWidth(HiddenLineProperties? openXmlElement, Int32? value)
   {
     if (openXmlElement != null)
       openXmlElement.Width = value;
   }
-  
+
   /// <summary>
-  /// line cap
+  ///   line cap
   /// </summary>
-  public static DocumentModel.Drawings.LineCapKind? GetCapType(DocumentFormat.OpenXml.Office2010.Drawing.HiddenLineProperties? openXmlElement)
+  public static LineCapKind? GetCapType(HiddenLineProperties? openXmlElement)
   {
-    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Drawing.LineCapValues, DocumentModel.Drawings.LineCapKind>(openXmlElement?.CapType?.Value);
+    return EnumValueConverter.GetValue<LineCapValues, LineCapKind>(openXmlElement?.CapType?.Value);
   }
-  
-  public static void SetCapType(DocumentFormat.OpenXml.Office2010.Drawing.HiddenLineProperties? openXmlElement, DocumentModel.Drawings.LineCapKind? value)
+
+  public static void SetCapType(HiddenLineProperties? openXmlElement, LineCapKind? value)
   {
     if (openXmlElement != null)
-      openXmlElement.CapType = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Drawing.LineCapValues, DocumentModel.Drawings.LineCapKind>(value);
+      openXmlElement.CapType = EnumValueConverter.CreateEnumValue<LineCapValues, LineCapKind>(value);
   }
-  
+
   /// <summary>
-  /// compound line type
+  ///   compound line type
   /// </summary>
-  public static DocumentModel.Drawings.CompoundLineKind? GetCompoundLineType(DocumentFormat.OpenXml.Office2010.Drawing.HiddenLineProperties? openXmlElement)
+  public static CompoundLineKind? GetCompoundLineType(HiddenLineProperties? openXmlElement)
   {
-    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Drawing.CompoundLineValues, DocumentModel.Drawings.CompoundLineKind>(openXmlElement?.CompoundLineType?.Value);
+    return EnumValueConverter.GetValue<CompoundLineValues, CompoundLineKind>(openXmlElement?.CompoundLineType?.Value);
   }
-  
-  public static void SetCompoundLineType(DocumentFormat.OpenXml.Office2010.Drawing.HiddenLineProperties? openXmlElement, DocumentModel.Drawings.CompoundLineKind? value)
+
+  public static void SetCompoundLineType(HiddenLineProperties? openXmlElement, CompoundLineKind? value)
   {
     if (openXmlElement != null)
-      openXmlElement.CompoundLineType = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Drawing.CompoundLineValues, DocumentModel.Drawings.CompoundLineKind>(value);
+      openXmlElement.CompoundLineType = EnumValueConverter.CreateEnumValue<CompoundLineValues, CompoundLineKind>(value);
   }
-  
+
   /// <summary>
-  /// pen alignment
+  ///   pen alignment
   /// </summary>
-  public static DocumentModel.Drawings.PenAlignmentKind? GetAlignment(DocumentFormat.OpenXml.Office2010.Drawing.HiddenLineProperties? openXmlElement)
+  public static PenAlignmentKind? GetAlignment(HiddenLineProperties? openXmlElement)
   {
-    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Drawing.PenAlignmentValues, DocumentModel.Drawings.PenAlignmentKind>(openXmlElement?.Alignment?.Value);
+    return EnumValueConverter.GetValue<PenAlignmentValues, PenAlignmentKind>(openXmlElement?.Alignment?.Value);
   }
-  
-  public static void SetAlignment(DocumentFormat.OpenXml.Office2010.Drawing.HiddenLineProperties? openXmlElement, DocumentModel.Drawings.PenAlignmentKind? value)
+
+  public static void SetAlignment(HiddenLineProperties? openXmlElement, PenAlignmentKind? value)
   {
     if (openXmlElement != null)
-      openXmlElement.Alignment = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Drawing.PenAlignmentValues, DocumentModel.Drawings.PenAlignmentKind>(value);
+      openXmlElement.Alignment = EnumValueConverter.CreateEnumValue<PenAlignmentValues, PenAlignmentKind>(value);
   }
-  
-  public static Boolean? GetNoFill(DocumentFormat.OpenXml.Office2010.Drawing.HiddenLineProperties? openXmlElement)
+
+  public static Boolean? GetNoFill(HiddenLineProperties? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.NoFill>();
+      var itemElement = openXmlElement.GetFirstChild<NoFill>();
       return itemElement != null;
     }
     return null;
   }
-  
-  public static void SetNoFill(DocumentFormat.OpenXml.Office2010.Drawing.HiddenLineProperties? openXmlElement, Boolean? value)
+
+  public static void SetNoFill(HiddenLineProperties? openXmlElement, Boolean? value)
   {
     if (openXmlElement != null)
     {
       if (value == false)
       {
-        var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.NoFill>();
+        var itemElement = openXmlElement.GetFirstChild<NoFill>();
         if (itemElement != null)
           itemElement.Remove();
       }
       if (value == true)
       {
-        var itemElement = new DocumentFormat.OpenXml.Drawing.NoFill();
+        var itemElement = new NoFill();
         openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static DocumentModel.Drawings.SolidFill? GetSolidFill(DocumentFormat.OpenXml.Office2010.Drawing.HiddenLineProperties? openXmlElement)
+
+  public static SolidFill? GetSolidFill(HiddenLineProperties? openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.SolidFill>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.SolidFillConverter.CreateModelElement(itemElement);
+      return SolidFillConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetSolidFill(DocumentFormat.OpenXml.Office2010.Drawing.HiddenLineProperties? openXmlElement, DocumentModel.Drawings.SolidFill? value)
+
+  public static void SetSolidFill(HiddenLineProperties? openXmlElement, SolidFill? value)
   {
     if (openXmlElement != null)
     {
@@ -106,22 +117,22 @@ public static class HiddenLinePropertiesConverter
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Drawings.SolidFillConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.SolidFill>(value);
+        itemElement = SolidFillConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.SolidFill>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static DocumentModel.Drawings.GradientFill? GetGradientFill(DocumentFormat.OpenXml.Office2010.Drawing.HiddenLineProperties? openXmlElement)
+
+  public static GradientFill? GetGradientFill(HiddenLineProperties? openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.GradientFill>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.GradientFillConverter.CreateModelElement(itemElement);
+      return GradientFillConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetGradientFill(DocumentFormat.OpenXml.Office2010.Drawing.HiddenLineProperties? openXmlElement, DocumentModel.Drawings.GradientFill? value)
+
+  public static void SetGradientFill(HiddenLineProperties? openXmlElement, GradientFill? value)
   {
     if (openXmlElement != null)
     {
@@ -130,22 +141,22 @@ public static class HiddenLinePropertiesConverter
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Drawings.GradientFillConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.GradientFill>(value);
+        itemElement = GradientFillConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.GradientFill>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static DocumentModel.Drawings.PatternFill? GetPatternFill(DocumentFormat.OpenXml.Office2010.Drawing.HiddenLineProperties? openXmlElement)
+
+  public static PatternFill? GetPatternFill(HiddenLineProperties? openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.PatternFill>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.PatternFillConverter.CreateModelElement(itemElement);
+      return PatternFillConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetPatternFill(DocumentFormat.OpenXml.Office2010.Drawing.HiddenLineProperties? openXmlElement, DocumentModel.Drawings.PatternFill? value)
+
+  public static void SetPatternFill(HiddenLineProperties? openXmlElement, PatternFill? value)
   {
     if (openXmlElement != null)
     {
@@ -154,51 +165,48 @@ public static class HiddenLinePropertiesConverter
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Drawings.PatternFillConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.PatternFill>(value);
+        itemElement = PatternFillConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.PatternFill>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static DocumentModel.Drawings.PresetLineDashKind? GetPresetDash(DocumentFormat.OpenXml.Office2010.Drawing.HiddenLineProperties? openXmlElement)
+
+  public static PresetLineDashKind? GetPresetDash(HiddenLineProperties? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.PresetDash>();
-      if (itemElement?.Val?.Value != null)
-      {
-        return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Drawing.PresetLineDashValues, DocumentModel.Drawings.PresetLineDashKind>(itemElement.Val.Value);
-      }
+      var itemElement = openXmlElement.GetFirstChild<PresetDash>();
+      if (itemElement?.Val?.Value != null) return EnumValueConverter.GetValue<PresetLineDashValues, PresetLineDashKind>(itemElement.Val.Value);
     }
     return null;
   }
-  
-  public static void SetPresetDash(DocumentFormat.OpenXml.Office2010.Drawing.HiddenLineProperties? openXmlElement, DocumentModel.Drawings.PresetLineDashKind? value)
+
+  public static void SetPresetDash(HiddenLineProperties? openXmlElement, PresetLineDashKind? value)
   {
     if (openXmlElement != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.PresetDash>();
+      var itemElement = openXmlElement.GetFirstChild<PresetDash>();
       if (itemElement != null)
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = EnumValueConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.PresetDash, DocumentFormat.OpenXml.Drawing.PresetLineDashValues, DocumentModel.Drawings.PresetLineDashKind>(value);
+        itemElement = EnumValueConverter.CreateOpenXmlElement<PresetDash, PresetLineDashValues, PresetLineDashKind>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static DocumentModel.Drawings.CustomDash? GetCustomDash(DocumentFormat.OpenXml.Office2010.Drawing.HiddenLineProperties? openXmlElement)
+
+  public static CustomDash? GetCustomDash(HiddenLineProperties? openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.CustomDash>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.CustomDashConverter.CreateModelElement(itemElement);
+      return CustomDashConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetCustomDash(DocumentFormat.OpenXml.Office2010.Drawing.HiddenLineProperties? openXmlElement, DocumentModel.Drawings.CustomDash? value)
+
+  public static void SetCustomDash(HiddenLineProperties? openXmlElement, CustomDash? value)
   {
     if (openXmlElement != null)
     {
@@ -207,78 +215,78 @@ public static class HiddenLinePropertiesConverter
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Drawings.CustomDashConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.CustomDash>(value);
+        itemElement = CustomDashConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.CustomDash>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static Boolean? GetRound(DocumentFormat.OpenXml.Office2010.Drawing.HiddenLineProperties? openXmlElement)
+
+  public static Boolean? GetRound(HiddenLineProperties? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Round>();
+      var itemElement = openXmlElement.GetFirstChild<Round>();
       return itemElement != null;
     }
     return null;
   }
-  
-  public static void SetRound(DocumentFormat.OpenXml.Office2010.Drawing.HiddenLineProperties? openXmlElement, Boolean? value)
+
+  public static void SetRound(HiddenLineProperties? openXmlElement, Boolean? value)
   {
     if (openXmlElement != null)
     {
       if (value == false)
       {
-        var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Round>();
+        var itemElement = openXmlElement.GetFirstChild<Round>();
         if (itemElement != null)
           itemElement.Remove();
       }
       if (value == true)
       {
-        var itemElement = new DocumentFormat.OpenXml.Drawing.Round();
+        var itemElement = new Round();
         openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static Boolean? GetLineJoinBevel(DocumentFormat.OpenXml.Office2010.Drawing.HiddenLineProperties? openXmlElement)
+
+  public static Boolean? GetLineJoinBevel(HiddenLineProperties? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.LineJoinBevel>();
+      var itemElement = openXmlElement.GetFirstChild<LineJoinBevel>();
       return itemElement != null;
     }
     return null;
   }
-  
-  public static void SetLineJoinBevel(DocumentFormat.OpenXml.Office2010.Drawing.HiddenLineProperties? openXmlElement, Boolean? value)
+
+  public static void SetLineJoinBevel(HiddenLineProperties? openXmlElement, Boolean? value)
   {
     if (openXmlElement != null)
     {
       if (value == false)
       {
-        var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.LineJoinBevel>();
+        var itemElement = openXmlElement.GetFirstChild<LineJoinBevel>();
         if (itemElement != null)
           itemElement.Remove();
       }
       if (value == true)
       {
-        var itemElement = new DocumentFormat.OpenXml.Drawing.LineJoinBevel();
+        var itemElement = new LineJoinBevel();
         openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static DocumentModel.Drawings.Miter? GetMiter(DocumentFormat.OpenXml.Office2010.Drawing.HiddenLineProperties? openXmlElement)
+
+  public static Miter? GetMiter(HiddenLineProperties? openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.Miter>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.MiterConverter.CreateModelElement(itemElement);
+      return MiterConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetMiter(DocumentFormat.OpenXml.Office2010.Drawing.HiddenLineProperties? openXmlElement, DocumentModel.Drawings.Miter? value)
+
+  public static void SetMiter(HiddenLineProperties? openXmlElement, Miter? value)
   {
     if (openXmlElement != null)
     {
@@ -287,70 +295,70 @@ public static class HiddenLinePropertiesConverter
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Drawings.MiterConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Miter>(value);
+        itemElement = MiterConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Miter>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static DocumentModel.Drawings.LineEndPropertiesType? GetHeadEnd(DocumentFormat.OpenXml.Office2010.Drawing.HiddenLineProperties? openXmlElement)
+
+  public static LineEndPropertiesType? GetHeadEnd(HiddenLineProperties? openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.HeadEnd>();
+    var itemElement = openXmlElement?.GetFirstChild<HeadEnd>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.LineEndPropertiesTypeConverter.CreateModelElement(itemElement);
+      return LineEndPropertiesTypeConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetHeadEnd(DocumentFormat.OpenXml.Office2010.Drawing.HiddenLineProperties? openXmlElement, DocumentModel.Drawings.LineEndPropertiesType? value)
+
+  public static void SetHeadEnd(HiddenLineProperties? openXmlElement, LineEndPropertiesType? value)
   {
     if (openXmlElement != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.HeadEnd>();
+      var itemElement = openXmlElement.GetFirstChild<HeadEnd>();
       if (itemElement != null)
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Drawings.LineEndPropertiesTypeConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.HeadEnd>(value);
+        itemElement = LineEndPropertiesTypeConverter.CreateOpenXmlElement<HeadEnd>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static DocumentModel.Drawings.LineEndPropertiesType? GetTailEnd(DocumentFormat.OpenXml.Office2010.Drawing.HiddenLineProperties? openXmlElement)
+
+  public static LineEndPropertiesType? GetTailEnd(HiddenLineProperties? openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.TailEnd>();
+    var itemElement = openXmlElement?.GetFirstChild<TailEnd>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.LineEndPropertiesTypeConverter.CreateModelElement(itemElement);
+      return LineEndPropertiesTypeConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetTailEnd(DocumentFormat.OpenXml.Office2010.Drawing.HiddenLineProperties? openXmlElement, DocumentModel.Drawings.LineEndPropertiesType? value)
+
+  public static void SetTailEnd(HiddenLineProperties? openXmlElement, LineEndPropertiesType? value)
   {
     if (openXmlElement != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.TailEnd>();
+      var itemElement = openXmlElement.GetFirstChild<TailEnd>();
       if (itemElement != null)
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Drawings.LineEndPropertiesTypeConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.TailEnd>(value);
+        itemElement = LineEndPropertiesTypeConverter.CreateOpenXmlElement<TailEnd>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static DocumentModel.Drawings.LinePropertiesExtensionList? GetLinePropertiesExtensionList(DocumentFormat.OpenXml.Office2010.Drawing.HiddenLineProperties? openXmlElement)
+
+  public static LinePropertiesExtensionList? GetLinePropertiesExtensionList(HiddenLineProperties? openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.LinePropertiesExtensionList>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.LinePropertiesExtensionListConverter.CreateModelElement(itemElement);
+      return LinePropertiesExtensionListConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetLinePropertiesExtensionList(DocumentFormat.OpenXml.Office2010.Drawing.HiddenLineProperties? openXmlElement, DocumentModel.Drawings.LinePropertiesExtensionList? value)
+
+  public static void SetLinePropertiesExtensionList(HiddenLineProperties? openXmlElement, LinePropertiesExtensionList? value)
   {
     if (openXmlElement != null)
     {
@@ -359,14 +367,14 @@ public static class HiddenLinePropertiesConverter
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Drawings.LinePropertiesExtensionListConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.LinePropertiesExtensionList>(value);
+        itemElement = LinePropertiesExtensionListConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.LinePropertiesExtensionList>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static DocumentModel.Drawings.HiddenLineProperties? CreateModelElement(DocumentFormat.OpenXml.Office2010.Drawing.HiddenLineProperties? openXmlElement)
+
+  public static DocumentModel.Drawings.HiddenLineProperties? CreateModelElement(HiddenLineProperties? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -391,9 +399,9 @@ public static class HiddenLinePropertiesConverter
     }
     return null;
   }
-  
+
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.HiddenLineProperties? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Office2010.Drawing.HiddenLineProperties, new()
+    where OpenXmlElementType : HiddenLineProperties, new()
   {
     if (value != null)
     {

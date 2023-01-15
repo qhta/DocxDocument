@@ -1,23 +1,22 @@
 namespace DocumentModel.Drawings.Charts;
 
 /// <summary>
-/// Crosses
+///   Crosses
 /// </summary>
 public enum CrossesKind
 {
   /// <summary>
-  /// Axis Crosses at Zero.
+  ///   Axis Crosses at Zero.
   /// </summary>
   AutoZero,
-  
+
   /// <summary>
-  /// Maximum.
+  ///   Maximum.
   /// </summary>
   Maximum,
-  
+
   /// <summary>
-  /// Minimum.
+  ///   Minimum.
   /// </summary>
-  Minimum,
-  
+  Minimum
 }

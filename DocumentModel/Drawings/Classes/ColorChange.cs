@@ -1,23 +1,22 @@
 namespace DocumentModel.Drawings;
 
 /// <summary>
-/// Color Change Effect.
+///   Color Change Effect.
 /// </summary>
-public partial class ColorChange
+public class ColorChange
 {
   /// <summary>
-  /// Consider Alpha Values
+  ///   Consider Alpha Values
   /// </summary>
   public Boolean? UseAlpha { get; set; }
-  
+
   /// <summary>
-  /// Change Color From.
+  ///   Change Color From.
   /// </summary>
-  public DocumentModel.Drawings.ColorFrom? ColorFrom { get; set; }
-  
+  public ColorFrom? ColorFrom { get; set; }
+
   /// <summary>
-  /// Change Color To.
+  ///   Change Color To.
   /// </summary>
-  public DocumentModel.Drawings.ColorTo? ColorTo { get; set; }
-  
+  public ColorTo? ColorTo { get; set; }
 }

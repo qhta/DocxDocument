@@ -1,18 +1,21 @@
+using DocumentModel.Wordprocessing;
+using PreviousTableGrid = DocumentFormat.OpenXml.Wordprocessing.PreviousTableGrid;
+
 namespace DocumentModel.OpenXml.Wordprocessing;
 
 /// <summary>
-/// Previous Table Grid.
+///   Previous Table Grid.
 /// </summary>
 public static class PreviousTableGridConverter
 {
-  public static System.Collections.ObjectModel.Collection<DocumentModel.Wordprocessing.GridColumn>? GetGridColumns(DocumentFormat.OpenXml.Wordprocessing.PreviousTableGrid? openXmlElement)
+  public static Collection<GridColumn>? GetGridColumns(PreviousTableGrid? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var collection = new System.Collections.ObjectModel.Collection<DocumentModel.Wordprocessing.GridColumn>();
+      var collection = new Collection<GridColumn>();
       foreach (var item in openXmlElement.Elements<DocumentFormat.OpenXml.Wordprocessing.GridColumn>())
       {
-        var newItem = DocumentModel.OpenXml.Wordprocessing.GridColumnConverter.CreateModelElement(item);
+        var newItem = GridColumnConverter.CreateModelElement(item);
         if (newItem != null)
           collection.Add(newItem);
       }
@@ -20,25 +23,23 @@ public static class PreviousTableGridConverter
     }
     return null;
   }
-  
-  public static void SetGridColumns(DocumentFormat.OpenXml.Wordprocessing.PreviousTableGrid? openXmlElement, System.Collections.ObjectModel.Collection<DocumentModel.Wordprocessing.GridColumn>? value)
+
+  public static void SetGridColumns(PreviousTableGrid? openXmlElement, Collection<GridColumn>? value)
   {
     if (openXmlElement != null)
     {
       openXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Wordprocessing.GridColumn>();
       if (value != null)
-      {
         foreach (var item in value)
         {
-          var newItem = DocumentModel.OpenXml.Wordprocessing.GridColumnConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.GridColumn>(item);
+          var newItem = GridColumnConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.GridColumn>(item);
           if (newItem != null)
             openXmlElement.AddChild(newItem);
         }
-      }
     }
   }
-  
-  public static DocumentModel.Wordprocessing.PreviousTableGrid? CreateModelElement(DocumentFormat.OpenXml.Wordprocessing.PreviousTableGrid? openXmlElement)
+
+  public static DocumentModel.Wordprocessing.PreviousTableGrid? CreateModelElement(PreviousTableGrid? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -48,9 +49,9 @@ public static class PreviousTableGridConverter
     }
     return null;
   }
-  
+
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.PreviousTableGrid? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Wordprocessing.PreviousTableGrid, new()
+    where OpenXmlElementType : PreviousTableGrid, new()
   {
     if (value != null)
     {

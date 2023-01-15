@@ -1,18 +1,17 @@
 namespace DocumentModel.Wordprocessing;
 
 /// <summary>
-/// Defines the StyleSet Class.
+///   Defines the StyleSet Class.
 /// </summary>
-public partial class StyleSet
+public class StyleSet
 {
   /// <summary>
-  /// id, this property is only available in Office 2010 and later.
+  ///   id, this property is only available in Office 2010 and later.
   /// </summary>
   public UInt32? Id { get; set; }
-  
+
   /// <summary>
-  /// val, this property is only available in Office 2010 and later.
+  ///   val, this property is only available in Office 2010 and later.
   /// </summary>
-  public DocumentModel.Wordprocessing.OnOffKind? Val { get; set; }
-  
+  public OnOffKind? Val { get; set; }
 }

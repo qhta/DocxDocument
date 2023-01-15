@@ -1,23 +1,22 @@
 namespace DocumentModel.Math;
 
 /// <summary>
-/// Defines the BreakBinarySubtractionValues enumeration.
+///   Defines the BreakBinarySubtractionValues enumeration.
 /// </summary>
 public enum BreakBinarySubtractionKind
 {
   /// <summary>
-  /// Minus Minus.
+  ///   Minus Minus.
   /// </summary>
   MinusMinus,
-  
+
   /// <summary>
-  /// Minus Plus.
+  ///   Minus Plus.
   /// </summary>
   MinusPlus,
-  
+
   /// <summary>
-  /// Plus Minus.
+  ///   Plus Minus.
   /// </summary>
-  PlusMinus,
-  
+  PlusMinus
 }

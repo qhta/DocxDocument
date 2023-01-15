@@ -1,13 +1,12 @@
 namespace DocumentModel.Drawings;
 
 /// <summary>
-/// Alpha Replace Effect.
+///   Alpha Replace Effect.
 /// </summary>
-public partial class AlphaReplace
+public class AlphaReplace
 {
   /// <summary>
-  /// Alpha
+  ///   Alpha
   /// </summary>
   public Int32? Alpha { get; set; }
-  
 }

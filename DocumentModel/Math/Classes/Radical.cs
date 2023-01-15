@@ -1,23 +1,22 @@
 namespace DocumentModel.Math;
 
 /// <summary>
-/// Radical Function.
+///   Radical Function.
 /// </summary>
-public partial class Radical
+public class Radical
 {
   /// <summary>
-  /// Radical Properties.
+  ///   Radical Properties.
   /// </summary>
-  public DocumentModel.Math.RadicalProperties? RadicalProperties { get; set; }
-  
+  public RadicalProperties? RadicalProperties { get; set; }
+
   /// <summary>
-  /// Degree.
+  ///   Degree.
   /// </summary>
-  public DocumentModel.Math.Degree? Degree { get; set; }
-  
+  public Degree? Degree { get; set; }
+
   /// <summary>
-  /// Base.
+  ///   Base.
   /// </summary>
-  public DocumentModel.Math.Base? Base { get; set; }
-  
+  public Base? Base { get; set; }
 }

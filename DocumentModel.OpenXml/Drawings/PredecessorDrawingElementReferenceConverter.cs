@@ -1,19 +1,21 @@
+using DocumentFormat.OpenXml.Office2016.Drawing;
+
 namespace DocumentModel.OpenXml.Drawings;
 
 /// <summary>
-/// Defines the PredecessorDrawingElementReference Class.
+///   Defines the PredecessorDrawingElementReference Class.
 /// </summary>
 public static class PredecessorDrawingElementReferenceConverter
 {
   /// <summary>
-  /// pred, this property is only available in Office 2016 and later.
+  ///   pred, this property is only available in Office 2016 and later.
   /// </summary>
-  public static String? GetPred(DocumentFormat.OpenXml.Office2016.Drawing.PredecessorDrawingElementReference? openXmlElement)
+  public static String? GetPred(PredecessorDrawingElementReference? openXmlElement)
   {
     return openXmlElement?.Pred?.Value;
   }
-  
-  public static void SetPred(DocumentFormat.OpenXml.Office2016.Drawing.PredecessorDrawingElementReference? openXmlElement, String? value)
+
+  public static void SetPred(PredecessorDrawingElementReference? openXmlElement, String? value)
   {
     if (openXmlElement != null)
       if (value != null)
@@ -21,8 +23,8 @@ public static class PredecessorDrawingElementReferenceConverter
       else
         openXmlElement.Pred = null;
   }
-  
-  public static DocumentModel.Drawings.PredecessorDrawingElementReference? CreateModelElement(DocumentFormat.OpenXml.Office2016.Drawing.PredecessorDrawingElementReference? openXmlElement)
+
+  public static DocumentModel.Drawings.PredecessorDrawingElementReference? CreateModelElement(PredecessorDrawingElementReference? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -32,9 +34,9 @@ public static class PredecessorDrawingElementReferenceConverter
     }
     return null;
   }
-  
+
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.PredecessorDrawingElementReference? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Office2016.Drawing.PredecessorDrawingElementReference, new()
+    where OpenXmlElementType : PredecessorDrawingElementReference, new()
   {
     if (value != null)
     {

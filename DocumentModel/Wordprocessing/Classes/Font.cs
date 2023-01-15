@@ -1,68 +1,67 @@
 namespace DocumentModel.Wordprocessing;
 
 /// <summary>
-/// Properties for a Single Font.
+///   Properties for a Single Font.
 /// </summary>
-public partial class Font
+public class Font
 {
   /// <summary>
-  /// name
+  ///   name
   /// </summary>
   public String? Name { get; set; }
-  
+
   /// <summary>
-  /// AltName.
+  ///   AltName.
   /// </summary>
   public String? AltName { get; set; }
-  
+
   /// <summary>
-  /// Panose1Number.
+  ///   Panose1Number.
   /// </summary>
   public Byte[]? Panose1Number { get; set; }
-  
+
   /// <summary>
-  /// FontCharSet.
+  ///   FontCharSet.
   /// </summary>
-  public DocumentModel.Wordprocessing.FontCharSet? FontCharSet { get; set; }
-  
+  public FontCharSet? FontCharSet { get; set; }
+
   /// <summary>
-  /// FontFamily.
+  ///   FontFamily.
   /// </summary>
-  public DocumentModel.Wordprocessing.FontFamilyKind? FontFamily { get; set; }
-  
+  public FontFamilyKind? FontFamily { get; set; }
+
   /// <summary>
-  /// NotTrueType.
+  ///   NotTrueType.
   /// </summary>
   public Boolean? NotTrueType { get; set; }
-  
+
   /// <summary>
-  /// Pitch.
+  ///   Pitch.
   /// </summary>
-  public DocumentModel.Wordprocessing.FontPitchKind? Pitch { get; set; }
-  
+  public FontPitchKind? Pitch { get; set; }
+
   /// <summary>
-  /// FontSignature.
+  ///   FontSignature.
   /// </summary>
-  public DocumentModel.Wordprocessing.FontSignature? FontSignature { get; set; }
-  
+  public FontSignature? FontSignature { get; set; }
+
   /// <summary>
-  /// EmbedRegularFont.
+  ///   EmbedRegularFont.
   /// </summary>
-  public DocumentModel.Wordprocessing.FontRelationshipType? EmbedRegularFont { get; set; }
-  
+  public FontRelationshipType? EmbedRegularFont { get; set; }
+
   /// <summary>
-  /// EmbedBoldFont.
+  ///   EmbedBoldFont.
   /// </summary>
-  public DocumentModel.Wordprocessing.FontRelationshipType? EmbedBoldFont { get; set; }
-  
+  public FontRelationshipType? EmbedBoldFont { get; set; }
+
   /// <summary>
-  /// EmbedItalicFont.
+  ///   EmbedItalicFont.
   /// </summary>
-  public DocumentModel.Wordprocessing.FontRelationshipType? EmbedItalicFont { get; set; }
-  
+  public FontRelationshipType? EmbedItalicFont { get; set; }
+
   /// <summary>
-  /// EmbedBoldItalicFont.
+  ///   EmbedBoldItalicFont.
   /// </summary>
-  public DocumentModel.Wordprocessing.FontRelationshipType? EmbedBoldItalicFont { get; set; }
-  
+  public FontRelationshipType? EmbedBoldItalicFont { get; set; }
 }

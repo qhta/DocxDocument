@@ -1,53 +1,52 @@
 namespace DocumentModel.Drawings.Charts;
 
 /// <summary>
-/// Page Setup.
+///   Page Setup.
 /// </summary>
-public partial class PageSetup
+public class PageSetup
 {
   /// <summary>
-  /// Page Size
+  ///   Page Size
   /// </summary>
   public UInt32? PaperSize { get; set; }
-  
+
   /// <summary>
-  /// First Page Number
+  ///   First Page Number
   /// </summary>
   public Int32? FirstPageNumber { get; set; }
-  
+
   /// <summary>
-  /// Orientation
+  ///   Orientation
   /// </summary>
-  public DocumentModel.Drawings.Charts.PageSetupOrientationKind? Orientation { get; set; }
-  
+  public PageSetupOrientationKind? Orientation { get; set; }
+
   /// <summary>
-  /// Black and White
+  ///   Black and White
   /// </summary>
   public Boolean? BlackAndWhite { get; set; }
-  
+
   /// <summary>
-  /// Draft
+  ///   Draft
   /// </summary>
   public Boolean? Draft { get; set; }
-  
+
   /// <summary>
-  /// Use First Page Number
+  ///   Use First Page Number
   /// </summary>
   public Boolean? UseFirstPageNumber { get; set; }
-  
+
   /// <summary>
-  /// Horizontal DPI
+  ///   Horizontal DPI
   /// </summary>
   public Int32? HorizontalDpi { get; set; }
-  
+
   /// <summary>
-  /// Vertical DPI
+  ///   Vertical DPI
   /// </summary>
   public Int32? VerticalDpi { get; set; }
-  
+
   /// <summary>
-  /// Copies
+  ///   Copies
   /// </summary>
   public UInt32? Copies { get; set; }
-  
 }

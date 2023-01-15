@@ -1,18 +1,17 @@
 namespace DocumentModel.Drawings.ChartDrawings;
 
 /// <summary>
-/// Defines the OpenXmlTickMarksElement Class.
+///   Defines the OpenXmlTickMarksElement Class.
 /// </summary>
-public partial class OpenXmlTickMarksElement
+public class OpenXmlTickMarksElement
 {
   /// <summary>
-  /// type, this property is only available in Office 2016 and later.
+  ///   type, this property is only available in Office 2016 and later.
   /// </summary>
-  public DocumentModel.Drawings.ChartDrawings.TickMarksType? Type { get; set; }
-  
+  public TickMarksType? Type { get; set; }
+
   /// <summary>
-  /// ExtensionList.
+  ///   ExtensionList.
   /// </summary>
-  public DocumentModel.Drawings.ChartDrawings.ExtensionList? ExtensionList { get; set; }
-  
+  public ExtensionList? ExtensionList { get; set; }
 }

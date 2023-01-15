@@ -1,10 +1,9 @@
 namespace DocumentModel;
 
 /// <summary>
-/// Defines the ClassificationExtensionList Class.
+///   Defines the ClassificationExtensionList Class.
 /// </summary>
-public partial class ClassificationExtensionList
+public class ClassificationExtensionList
 {
-  public Collection<DocumentModel.ClassificationExtension>? ClassificationExtensions { get; set; }
-  
+  public Collection<ClassificationExtension>? ClassificationExtensions { get; set; }
 }

@@ -1,18 +1,17 @@
 namespace DocumentModel.Drawings;
 
 /// <summary>
-/// Defines the ArtisticCement Class.
+///   Defines the ArtisticCement Class.
 /// </summary>
-public partial class ArtisticCement
+public class ArtisticCement
 {
   /// <summary>
-  /// trans, this property is only available in Office 2010 and later.
+  ///   trans, this property is only available in Office 2010 and later.
   /// </summary>
   public Int32? Transparancy { get; set; }
-  
+
   /// <summary>
-  /// crackSpacing, this property is only available in Office 2010 and later.
+  ///   crackSpacing, this property is only available in Office 2010 and later.
   /// </summary>
   public Int32? CrackSpacing { get; set; }
-  
 }

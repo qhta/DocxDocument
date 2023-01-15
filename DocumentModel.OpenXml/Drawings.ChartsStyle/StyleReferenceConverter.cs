@@ -1,44 +1,46 @@
+using DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle;
+
 namespace DocumentModel.OpenXml.Drawings.ChartsStyle;
 
 /// <summary>
-/// Defines the StyleReference Class.
+///   Defines the StyleReference Class.
 /// </summary>
 public static class StyleReferenceConverter
 {
   /// <summary>
-  /// idx, this property is only available in Office 2013 and later.
+  ///   idx, this property is only available in Office 2013 and later.
   /// </summary>
-  public static UInt32? GetIndex(DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.StyleReference? openXmlElement)
+  public static UInt32? GetIndex(StyleReference? openXmlElement)
   {
     return openXmlElement?.Index?.Value;
   }
-  
-  public static void SetIndex(DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.StyleReference? openXmlElement, UInt32? value)
+
+  public static void SetIndex(StyleReference? openXmlElement, UInt32? value)
   {
     if (openXmlElement != null)
       openXmlElement.Index = value;
   }
-  
+
   /// <summary>
-  /// mods, this property is only available in Office 2013 and later.
+  ///   mods, this property is only available in Office 2013 and later.
   /// </summary>
-  public static DocumentModel.ListOf<String>? GetModifiers(DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.StyleReference? openXmlElement)
+  public static ListOf<String>? GetModifiers(StyleReference? openXmlElement)
   {
     return ListValueConverter.GetValue(openXmlElement?.Modifiers);
   }
-  
-  public static void SetModifiers(DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.StyleReference? openXmlElement, DocumentModel.ListOf<String>? value)
+
+  public static void SetModifiers(StyleReference? openXmlElement, ListOf<String>? value)
   {
     if (openXmlElement != null)
     {
       if (value != null)
-        openXmlElement.Modifiers = ListValueConverter.CreateListValue<DocumentFormat.OpenXml.StringValue>(value);
+        openXmlElement.Modifiers = ListValueConverter.CreateListValue<StringValue>(value);
       else
         openXmlElement.Modifiers = null;
     }
   }
-  
-  public static DocumentModel.Drawings.ChartsStyle.StyleReference? CreateModelElement(DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.StyleReference? openXmlElement)
+
+  public static DocumentModel.Drawings.ChartsStyle.StyleReference? CreateModelElement(StyleReference? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -49,9 +51,9 @@ public static class StyleReferenceConverter
     }
     return null;
   }
-  
+
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.ChartsStyle.StyleReference? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.StyleReference, new()
+    where OpenXmlElementType : StyleReference, new()
   {
     if (value != null)
     {

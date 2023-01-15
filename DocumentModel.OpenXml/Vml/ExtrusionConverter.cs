@@ -1,33 +1,38 @@
+using DocumentFormat.OpenXml.Vml;
+using DocumentFormat.OpenXml.Vml.Office;
+using DocumentModel.Vml;
+using Extrusion = DocumentFormat.OpenXml.Vml.Office.Extrusion;
+
 namespace DocumentModel.OpenXml.Vml;
 
 /// <summary>
-/// 3D Extrusion.
+///   3D Extrusion.
 /// </summary>
 public static class ExtrusionConverter
 {
   /// <summary>
-  /// VML Extension Handling Behavior
+  ///   VML Extension Handling Behavior
   /// </summary>
-  public static DocumentModel.Vml.ExtensionHandlingBehaviorKind? GetExtension(DocumentFormat.OpenXml.Vml.Office.Extrusion? openXmlElement)
+  public static ExtensionHandlingBehaviorKind? GetExtension(Extrusion? openXmlElement)
   {
-    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Vml.ExtensionHandlingBehaviorValues, DocumentModel.Vml.ExtensionHandlingBehaviorKind>(openXmlElement?.Extension?.Value);
+    return EnumValueConverter.GetValue<ExtensionHandlingBehaviorValues, ExtensionHandlingBehaviorKind>(openXmlElement?.Extension?.Value);
   }
-  
-  public static void SetExtension(DocumentFormat.OpenXml.Vml.Office.Extrusion? openXmlElement, DocumentModel.Vml.ExtensionHandlingBehaviorKind? value)
+
+  public static void SetExtension(Extrusion? openXmlElement, ExtensionHandlingBehaviorKind? value)
   {
     if (openXmlElement != null)
-      openXmlElement.Extension = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Vml.ExtensionHandlingBehaviorValues, DocumentModel.Vml.ExtensionHandlingBehaviorKind>(value);
+      openXmlElement.Extension = EnumValueConverter.CreateEnumValue<ExtensionHandlingBehaviorValues, ExtensionHandlingBehaviorKind>(value);
   }
-  
+
   /// <summary>
-  /// Extrusion Toggle
+  ///   Extrusion Toggle
   /// </summary>
-  public static Boolean? GetOn(DocumentFormat.OpenXml.Vml.Office.Extrusion? openXmlElement)
+  public static Boolean? GetOn(Extrusion? openXmlElement)
   {
     return openXmlElement?.On?.Value;
   }
-  
-  public static void SetOn(DocumentFormat.OpenXml.Vml.Office.Extrusion? openXmlElement, Boolean? value)
+
+  public static void SetOn(Extrusion? openXmlElement, Boolean? value)
   {
     if (openXmlElement != null)
       if (value != null)
@@ -35,44 +40,44 @@ public static class ExtrusionConverter
       else
         openXmlElement.On = null;
   }
-  
+
   /// <summary>
-  /// Extrusion Type
+  ///   Extrusion Type
   /// </summary>
-  public static DocumentModel.Vml.ExtrusionKind? GetType(DocumentFormat.OpenXml.Vml.Office.Extrusion? openXmlElement)
+  public static ExtrusionKind? GetType(Extrusion? openXmlElement)
   {
-    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Vml.Office.ExtrusionValues, DocumentModel.Vml.ExtrusionKind>(openXmlElement?.Type?.Value);
+    return EnumValueConverter.GetValue<ExtrusionValues, ExtrusionKind>(openXmlElement?.Type?.Value);
   }
-  
-  public static void SetType(DocumentFormat.OpenXml.Vml.Office.Extrusion? openXmlElement, DocumentModel.Vml.ExtrusionKind? value)
+
+  public static void SetType(Extrusion? openXmlElement, ExtrusionKind? value)
   {
     if (openXmlElement != null)
-      openXmlElement.Type = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Vml.Office.ExtrusionValues, DocumentModel.Vml.ExtrusionKind>(value);
+      openXmlElement.Type = EnumValueConverter.CreateEnumValue<ExtrusionValues, ExtrusionKind>(value);
   }
-  
+
   /// <summary>
-  /// Extrusion Render Mode
+  ///   Extrusion Render Mode
   /// </summary>
-  public static DocumentModel.Vml.ExtrusionRenderKind? GetRender(DocumentFormat.OpenXml.Vml.Office.Extrusion? openXmlElement)
+  public static ExtrusionRenderKind? GetRender(Extrusion? openXmlElement)
   {
-    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Vml.Office.ExtrusionRenderValues, DocumentModel.Vml.ExtrusionRenderKind>(openXmlElement?.Render?.Value);
+    return EnumValueConverter.GetValue<ExtrusionRenderValues, ExtrusionRenderKind>(openXmlElement?.Render?.Value);
   }
-  
-  public static void SetRender(DocumentFormat.OpenXml.Vml.Office.Extrusion? openXmlElement, DocumentModel.Vml.ExtrusionRenderKind? value)
+
+  public static void SetRender(Extrusion? openXmlElement, ExtrusionRenderKind? value)
   {
     if (openXmlElement != null)
-      openXmlElement.Render = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Vml.Office.ExtrusionRenderValues, DocumentModel.Vml.ExtrusionRenderKind>(value);
+      openXmlElement.Render = EnumValueConverter.CreateEnumValue<ExtrusionRenderValues, ExtrusionRenderKind>(value);
   }
-  
+
   /// <summary>
-  /// Extrusion Viewpoint Origin
+  ///   Extrusion Viewpoint Origin
   /// </summary>
-  public static String? GetViewpointOrigin(DocumentFormat.OpenXml.Vml.Office.Extrusion? openXmlElement)
+  public static String? GetViewpointOrigin(Extrusion? openXmlElement)
   {
     return openXmlElement?.ViewpointOrigin?.Value;
   }
-  
-  public static void SetViewpointOrigin(DocumentFormat.OpenXml.Vml.Office.Extrusion? openXmlElement, String? value)
+
+  public static void SetViewpointOrigin(Extrusion? openXmlElement, String? value)
   {
     if (openXmlElement != null)
       if (value != null)
@@ -80,16 +85,16 @@ public static class ExtrusionConverter
       else
         openXmlElement.ViewpointOrigin = null;
   }
-  
+
   /// <summary>
-  /// Extrusion Viewpoint
+  ///   Extrusion Viewpoint
   /// </summary>
-  public static String? GetViewpoint(DocumentFormat.OpenXml.Vml.Office.Extrusion? openXmlElement)
+  public static String? GetViewpoint(Extrusion? openXmlElement)
   {
     return openXmlElement?.Viewpoint?.Value;
   }
-  
-  public static void SetViewpoint(DocumentFormat.OpenXml.Vml.Office.Extrusion? openXmlElement, String? value)
+
+  public static void SetViewpoint(Extrusion? openXmlElement, String? value)
   {
     if (openXmlElement != null)
       if (value != null)
@@ -97,30 +102,30 @@ public static class ExtrusionConverter
       else
         openXmlElement.Viewpoint = null;
   }
-  
+
   /// <summary>
-  /// Extrusion Skew Angle
+  ///   Extrusion Skew Angle
   /// </summary>
-  public static Single? GetSkewAngle(DocumentFormat.OpenXml.Vml.Office.Extrusion? openXmlElement)
+  public static Single? GetSkewAngle(Extrusion? openXmlElement)
   {
     return openXmlElement?.SkewAngle?.Value;
   }
-  
-  public static void SetSkewAngle(DocumentFormat.OpenXml.Vml.Office.Extrusion? openXmlElement, Single? value)
+
+  public static void SetSkewAngle(Extrusion? openXmlElement, Single? value)
   {
     if (openXmlElement != null)
       openXmlElement.SkewAngle = value;
   }
-  
+
   /// <summary>
-  /// Extrusion Skew
+  ///   Extrusion Skew
   /// </summary>
-  public static String? GetSkewAmount(DocumentFormat.OpenXml.Vml.Office.Extrusion? openXmlElement)
+  public static String? GetSkewAmount(Extrusion? openXmlElement)
   {
     return openXmlElement?.SkewAmount?.Value;
   }
-  
-  public static void SetSkewAmount(DocumentFormat.OpenXml.Vml.Office.Extrusion? openXmlElement, String? value)
+
+  public static void SetSkewAmount(Extrusion? openXmlElement, String? value)
   {
     if (openXmlElement != null)
       if (value != null)
@@ -128,16 +133,16 @@ public static class ExtrusionConverter
       else
         openXmlElement.SkewAmount = null;
   }
-  
+
   /// <summary>
-  /// Forward Extrusion
+  ///   Forward Extrusion
   /// </summary>
-  public static String? GetForceDepth(DocumentFormat.OpenXml.Vml.Office.Extrusion? openXmlElement)
+  public static String? GetForceDepth(Extrusion? openXmlElement)
   {
     return openXmlElement?.ForceDepth?.Value;
   }
-  
-  public static void SetForceDepth(DocumentFormat.OpenXml.Vml.Office.Extrusion? openXmlElement, String? value)
+
+  public static void SetForceDepth(Extrusion? openXmlElement, String? value)
   {
     if (openXmlElement != null)
       if (value != null)
@@ -145,16 +150,16 @@ public static class ExtrusionConverter
       else
         openXmlElement.ForceDepth = null;
   }
-  
+
   /// <summary>
-  /// Backward Extrusion Depth
+  ///   Backward Extrusion Depth
   /// </summary>
-  public static String? GetBackDepth(DocumentFormat.OpenXml.Vml.Office.Extrusion? openXmlElement)
+  public static String? GetBackDepth(Extrusion? openXmlElement)
   {
     return openXmlElement?.BackDepth?.Value;
   }
-  
-  public static void SetBackDepth(DocumentFormat.OpenXml.Vml.Office.Extrusion? openXmlElement, String? value)
+
+  public static void SetBackDepth(Extrusion? openXmlElement, String? value)
   {
     if (openXmlElement != null)
       if (value != null)
@@ -162,16 +167,16 @@ public static class ExtrusionConverter
       else
         openXmlElement.BackDepth = null;
   }
-  
+
   /// <summary>
-  /// Rotation Axis
+  ///   Rotation Axis
   /// </summary>
-  public static String? GetOrientation(DocumentFormat.OpenXml.Vml.Office.Extrusion? openXmlElement)
+  public static String? GetOrientation(Extrusion? openXmlElement)
   {
     return openXmlElement?.Orientation?.Value;
   }
-  
-  public static void SetOrientation(DocumentFormat.OpenXml.Vml.Office.Extrusion? openXmlElement, String? value)
+
+  public static void SetOrientation(Extrusion? openXmlElement, String? value)
   {
     if (openXmlElement != null)
       if (value != null)
@@ -179,30 +184,30 @@ public static class ExtrusionConverter
       else
         openXmlElement.Orientation = null;
   }
-  
+
   /// <summary>
-  /// Rotation Around Axis
+  ///   Rotation Around Axis
   /// </summary>
-  public static Single? GetOrientationAngle(DocumentFormat.OpenXml.Vml.Office.Extrusion? openXmlElement)
+  public static Single? GetOrientationAngle(Extrusion? openXmlElement)
   {
     return openXmlElement?.OrientationAngle?.Value;
   }
-  
-  public static void SetOrientationAngle(DocumentFormat.OpenXml.Vml.Office.Extrusion? openXmlElement, Single? value)
+
+  public static void SetOrientationAngle(Extrusion? openXmlElement, Single? value)
   {
     if (openXmlElement != null)
       openXmlElement.OrientationAngle = value;
   }
-  
+
   /// <summary>
-  /// Rotation Toggle
+  ///   Rotation Toggle
   /// </summary>
-  public static Boolean? GetLockRotationCenter(DocumentFormat.OpenXml.Vml.Office.Extrusion? openXmlElement)
+  public static Boolean? GetLockRotationCenter(Extrusion? openXmlElement)
   {
     return openXmlElement?.LockRotationCenter?.Value;
   }
-  
-  public static void SetLockRotationCenter(DocumentFormat.OpenXml.Vml.Office.Extrusion? openXmlElement, Boolean? value)
+
+  public static void SetLockRotationCenter(Extrusion? openXmlElement, Boolean? value)
   {
     if (openXmlElement != null)
       if (value != null)
@@ -210,16 +215,16 @@ public static class ExtrusionConverter
       else
         openXmlElement.LockRotationCenter = null;
   }
-  
+
   /// <summary>
-  /// Center of Rotation Toggle
+  ///   Center of Rotation Toggle
   /// </summary>
-  public static Boolean? GetAutoRotationCenter(DocumentFormat.OpenXml.Vml.Office.Extrusion? openXmlElement)
+  public static Boolean? GetAutoRotationCenter(Extrusion? openXmlElement)
   {
     return openXmlElement?.AutoRotationCenter?.Value;
   }
-  
-  public static void SetAutoRotationCenter(DocumentFormat.OpenXml.Vml.Office.Extrusion? openXmlElement, Boolean? value)
+
+  public static void SetAutoRotationCenter(Extrusion? openXmlElement, Boolean? value)
   {
     if (openXmlElement != null)
       if (value != null)
@@ -227,16 +232,16 @@ public static class ExtrusionConverter
       else
         openXmlElement.AutoRotationCenter = null;
   }
-  
+
   /// <summary>
-  /// Rotation Center
+  ///   Rotation Center
   /// </summary>
-  public static String? GetRotationCenter(DocumentFormat.OpenXml.Vml.Office.Extrusion? openXmlElement)
+  public static String? GetRotationCenter(Extrusion? openXmlElement)
   {
     return openXmlElement?.RotationCenter?.Value;
   }
-  
-  public static void SetRotationCenter(DocumentFormat.OpenXml.Vml.Office.Extrusion? openXmlElement, String? value)
+
+  public static void SetRotationCenter(Extrusion? openXmlElement, String? value)
   {
     if (openXmlElement != null)
       if (value != null)
@@ -244,16 +249,16 @@ public static class ExtrusionConverter
       else
         openXmlElement.RotationCenter = null;
   }
-  
+
   /// <summary>
-  /// X-Y Rotation Angle
+  ///   X-Y Rotation Angle
   /// </summary>
-  public static String? GetRotationAngle(DocumentFormat.OpenXml.Vml.Office.Extrusion? openXmlElement)
+  public static String? GetRotationAngle(Extrusion? openXmlElement)
   {
     return openXmlElement?.RotationAngle?.Value;
   }
-  
-  public static void SetRotationAngle(DocumentFormat.OpenXml.Vml.Office.Extrusion? openXmlElement, String? value)
+
+  public static void SetRotationAngle(Extrusion? openXmlElement, String? value)
   {
     if (openXmlElement != null)
       if (value != null)
@@ -261,16 +266,16 @@ public static class ExtrusionConverter
       else
         openXmlElement.RotationAngle = null;
   }
-  
+
   /// <summary>
-  /// Extrusion Color
+  ///   Extrusion Color
   /// </summary>
-  public static String? GetColor(DocumentFormat.OpenXml.Vml.Office.Extrusion? openXmlElement)
+  public static String? GetColor(Extrusion? openXmlElement)
   {
     return openXmlElement?.Color?.Value;
   }
-  
-  public static void SetColor(DocumentFormat.OpenXml.Vml.Office.Extrusion? openXmlElement, String? value)
+
+  public static void SetColor(Extrusion? openXmlElement, String? value)
   {
     if (openXmlElement != null)
       if (value != null)
@@ -278,30 +283,30 @@ public static class ExtrusionConverter
       else
         openXmlElement.Color = null;
   }
-  
+
   /// <summary>
-  /// Shininess
+  ///   Shininess
   /// </summary>
-  public static Single? GetShininess(DocumentFormat.OpenXml.Vml.Office.Extrusion? openXmlElement)
+  public static Single? GetShininess(Extrusion? openXmlElement)
   {
     return openXmlElement?.Shininess?.Value;
   }
-  
-  public static void SetShininess(DocumentFormat.OpenXml.Vml.Office.Extrusion? openXmlElement, Single? value)
+
+  public static void SetShininess(Extrusion? openXmlElement, Single? value)
   {
     if (openXmlElement != null)
       openXmlElement.Shininess = value;
   }
-  
+
   /// <summary>
-  /// Specularity
+  ///   Specularity
   /// </summary>
-  public static String? GetSpecularity(DocumentFormat.OpenXml.Vml.Office.Extrusion? openXmlElement)
+  public static String? GetSpecularity(Extrusion? openXmlElement)
   {
     return openXmlElement?.Specularity?.Value;
   }
-  
-  public static void SetSpecularity(DocumentFormat.OpenXml.Vml.Office.Extrusion? openXmlElement, String? value)
+
+  public static void SetSpecularity(Extrusion? openXmlElement, String? value)
   {
     if (openXmlElement != null)
       if (value != null)
@@ -309,16 +314,16 @@ public static class ExtrusionConverter
       else
         openXmlElement.Specularity = null;
   }
-  
+
   /// <summary>
-  /// Diffuse Reflection
+  ///   Diffuse Reflection
   /// </summary>
-  public static String? GetDiffusity(DocumentFormat.OpenXml.Vml.Office.Extrusion? openXmlElement)
+  public static String? GetDiffusity(Extrusion? openXmlElement)
   {
     return openXmlElement?.Diffusity?.Value;
   }
-  
-  public static void SetDiffusity(DocumentFormat.OpenXml.Vml.Office.Extrusion? openXmlElement, String? value)
+
+  public static void SetDiffusity(Extrusion? openXmlElement, String? value)
   {
     if (openXmlElement != null)
       if (value != null)
@@ -326,16 +331,16 @@ public static class ExtrusionConverter
       else
         openXmlElement.Diffusity = null;
   }
-  
+
   /// <summary>
-  /// Metallic Surface Toggle
+  ///   Metallic Surface Toggle
   /// </summary>
-  public static Boolean? GetMetal(DocumentFormat.OpenXml.Vml.Office.Extrusion? openXmlElement)
+  public static Boolean? GetMetal(Extrusion? openXmlElement)
   {
     return openXmlElement?.Metal?.Value;
   }
-  
-  public static void SetMetal(DocumentFormat.OpenXml.Vml.Office.Extrusion? openXmlElement, Boolean? value)
+
+  public static void SetMetal(Extrusion? openXmlElement, Boolean? value)
   {
     if (openXmlElement != null)
       if (value != null)
@@ -343,16 +348,16 @@ public static class ExtrusionConverter
       else
         openXmlElement.Metal = null;
   }
-  
+
   /// <summary>
-  /// Simulated Bevel
+  ///   Simulated Bevel
   /// </summary>
-  public static String? GetEdge(DocumentFormat.OpenXml.Vml.Office.Extrusion? openXmlElement)
+  public static String? GetEdge(Extrusion? openXmlElement)
   {
     return openXmlElement?.Edge?.Value;
   }
-  
-  public static void SetEdge(DocumentFormat.OpenXml.Vml.Office.Extrusion? openXmlElement, String? value)
+
+  public static void SetEdge(Extrusion? openXmlElement, String? value)
   {
     if (openXmlElement != null)
       if (value != null)
@@ -360,16 +365,16 @@ public static class ExtrusionConverter
       else
         openXmlElement.Edge = null;
   }
-  
+
   /// <summary>
-  /// Faceting Quality
+  ///   Faceting Quality
   /// </summary>
-  public static String? GetFacet(DocumentFormat.OpenXml.Vml.Office.Extrusion? openXmlElement)
+  public static String? GetFacet(Extrusion? openXmlElement)
   {
     return openXmlElement?.Facet?.Value;
   }
-  
-  public static void SetFacet(DocumentFormat.OpenXml.Vml.Office.Extrusion? openXmlElement, String? value)
+
+  public static void SetFacet(Extrusion? openXmlElement, String? value)
   {
     if (openXmlElement != null)
       if (value != null)
@@ -377,16 +382,16 @@ public static class ExtrusionConverter
       else
         openXmlElement.Facet = null;
   }
-  
+
   /// <summary>
-  /// Shape Face Lighting Toggle
+  ///   Shape Face Lighting Toggle
   /// </summary>
-  public static Boolean? GetLightFace(DocumentFormat.OpenXml.Vml.Office.Extrusion? openXmlElement)
+  public static Boolean? GetLightFace(Extrusion? openXmlElement)
   {
     return openXmlElement?.LightFace?.Value;
   }
-  
-  public static void SetLightFace(DocumentFormat.OpenXml.Vml.Office.Extrusion? openXmlElement, Boolean? value)
+
+  public static void SetLightFace(Extrusion? openXmlElement, Boolean? value)
   {
     if (openXmlElement != null)
       if (value != null)
@@ -394,16 +399,16 @@ public static class ExtrusionConverter
       else
         openXmlElement.LightFace = null;
   }
-  
+
   /// <summary>
-  /// Brightness
+  ///   Brightness
   /// </summary>
-  public static String? GetBrightness(DocumentFormat.OpenXml.Vml.Office.Extrusion? openXmlElement)
+  public static String? GetBrightness(Extrusion? openXmlElement)
   {
     return openXmlElement?.Brightness?.Value;
   }
-  
-  public static void SetBrightness(DocumentFormat.OpenXml.Vml.Office.Extrusion? openXmlElement, String? value)
+
+  public static void SetBrightness(Extrusion? openXmlElement, String? value)
   {
     if (openXmlElement != null)
       if (value != null)
@@ -411,16 +416,16 @@ public static class ExtrusionConverter
       else
         openXmlElement.Brightness = null;
   }
-  
+
   /// <summary>
-  /// Primary Light Position
+  ///   Primary Light Position
   /// </summary>
-  public static String? GetLightPosition(DocumentFormat.OpenXml.Vml.Office.Extrusion? openXmlElement)
+  public static String? GetLightPosition(Extrusion? openXmlElement)
   {
     return openXmlElement?.LightPosition?.Value;
   }
-  
-  public static void SetLightPosition(DocumentFormat.OpenXml.Vml.Office.Extrusion? openXmlElement, String? value)
+
+  public static void SetLightPosition(Extrusion? openXmlElement, String? value)
   {
     if (openXmlElement != null)
       if (value != null)
@@ -428,16 +433,16 @@ public static class ExtrusionConverter
       else
         openXmlElement.LightPosition = null;
   }
-  
+
   /// <summary>
-  /// Primary Light Intensity
+  ///   Primary Light Intensity
   /// </summary>
-  public static String? GetLightLevel(DocumentFormat.OpenXml.Vml.Office.Extrusion? openXmlElement)
+  public static String? GetLightLevel(Extrusion? openXmlElement)
   {
     return openXmlElement?.LightLevel?.Value;
   }
-  
-  public static void SetLightLevel(DocumentFormat.OpenXml.Vml.Office.Extrusion? openXmlElement, String? value)
+
+  public static void SetLightLevel(Extrusion? openXmlElement, String? value)
   {
     if (openXmlElement != null)
       if (value != null)
@@ -445,16 +450,16 @@ public static class ExtrusionConverter
       else
         openXmlElement.LightLevel = null;
   }
-  
+
   /// <summary>
-  /// Primary Light Harshness Toggle
+  ///   Primary Light Harshness Toggle
   /// </summary>
-  public static Boolean? GetLightHarsh(DocumentFormat.OpenXml.Vml.Office.Extrusion? openXmlElement)
+  public static Boolean? GetLightHarsh(Extrusion? openXmlElement)
   {
     return openXmlElement?.LightHarsh?.Value;
   }
-  
-  public static void SetLightHarsh(DocumentFormat.OpenXml.Vml.Office.Extrusion? openXmlElement, Boolean? value)
+
+  public static void SetLightHarsh(Extrusion? openXmlElement, Boolean? value)
   {
     if (openXmlElement != null)
       if (value != null)
@@ -462,16 +467,16 @@ public static class ExtrusionConverter
       else
         openXmlElement.LightHarsh = null;
   }
-  
+
   /// <summary>
-  /// Secondary Light Position
+  ///   Secondary Light Position
   /// </summary>
-  public static String? GetLightPosition2(DocumentFormat.OpenXml.Vml.Office.Extrusion? openXmlElement)
+  public static String? GetLightPosition2(Extrusion? openXmlElement)
   {
     return openXmlElement?.LightPosition2?.Value;
   }
-  
-  public static void SetLightPosition2(DocumentFormat.OpenXml.Vml.Office.Extrusion? openXmlElement, String? value)
+
+  public static void SetLightPosition2(Extrusion? openXmlElement, String? value)
   {
     if (openXmlElement != null)
       if (value != null)
@@ -479,16 +484,16 @@ public static class ExtrusionConverter
       else
         openXmlElement.LightPosition2 = null;
   }
-  
+
   /// <summary>
-  /// Secondary Light Intensity
+  ///   Secondary Light Intensity
   /// </summary>
-  public static String? GetLightLevel2(DocumentFormat.OpenXml.Vml.Office.Extrusion? openXmlElement)
+  public static String? GetLightLevel2(Extrusion? openXmlElement)
   {
     return openXmlElement?.LightLevel2?.Value;
   }
-  
-  public static void SetLightLevel2(DocumentFormat.OpenXml.Vml.Office.Extrusion? openXmlElement, String? value)
+
+  public static void SetLightLevel2(Extrusion? openXmlElement, String? value)
   {
     if (openXmlElement != null)
       if (value != null)
@@ -496,16 +501,16 @@ public static class ExtrusionConverter
       else
         openXmlElement.LightLevel2 = null;
   }
-  
+
   /// <summary>
-  /// Secondary Light Harshness Toggle
+  ///   Secondary Light Harshness Toggle
   /// </summary>
-  public static Boolean? GetLightHarsh2(DocumentFormat.OpenXml.Vml.Office.Extrusion? openXmlElement)
+  public static Boolean? GetLightHarsh2(Extrusion? openXmlElement)
   {
     return openXmlElement?.LightHarsh2?.Value;
   }
-  
-  public static void SetLightHarsh2(DocumentFormat.OpenXml.Vml.Office.Extrusion? openXmlElement, Boolean? value)
+
+  public static void SetLightHarsh2(Extrusion? openXmlElement, Boolean? value)
   {
     if (openXmlElement != null)
       if (value != null)
@@ -513,8 +518,8 @@ public static class ExtrusionConverter
       else
         openXmlElement.LightHarsh2 = null;
   }
-  
-  public static DocumentModel.Vml.Extrusion? CreateModelElement(DocumentFormat.OpenXml.Vml.Office.Extrusion? openXmlElement)
+
+  public static DocumentModel.Vml.Extrusion? CreateModelElement(Extrusion? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -554,9 +559,9 @@ public static class ExtrusionConverter
     }
     return null;
   }
-  
+
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Vml.Extrusion? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Vml.Office.Extrusion, new()
+    where OpenXmlElementType : Extrusion, new()
   {
     if (value != null)
     {

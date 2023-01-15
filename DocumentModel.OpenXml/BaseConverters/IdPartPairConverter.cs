@@ -1,25 +1,27 @@
+using DocumentFormat.OpenXml.Packaging;
+
 namespace DocumentModel.OpenXml.Packaging;
 
 /// <summary>
-/// Represents a (RelationshipId, OpenXmlPart) pair.
+///   Represents a (RelationshipId, OpenXmlPart) pair.
 /// </summary>
 public static class IdPartPairConverter
 {
   /// <summary>
-  /// Gets or sets the relationship ID in the pair.
+  ///   Gets or sets the relationship ID in the pair.
   /// </summary>
-  public static String? GetRelationshipId(DocumentFormat.OpenXml.Packaging.IdPartPair? openXmlElement)
+  public static String? GetRelationshipId(IdPartPair? openXmlElement)
   {
     return openXmlElement?.RelationshipId;
   }
-  
-  public static void SetRelationshipId(DocumentFormat.OpenXml.Packaging.IdPartPair? openXmlElement, String? value)
+
+  public static void SetRelationshipId(IdPartPair? openXmlElement, String? value)
   {
     if (openXmlElement != null && value != null)
-        openXmlElement.RelationshipId = value;
+      openXmlElement.RelationshipId = value;
   }
-  
-  public static DocumentModel.Packaging.IdPartPair? CreateModelElement(DocumentFormat.OpenXml.Packaging.IdPartPair? openXmlElement)
+
+  public static DocumentModel.Packaging.IdPartPair? CreateModelElement(IdPartPair? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -29,9 +31,9 @@ public static class IdPartPairConverter
     }
     return null;
   }
-  
+
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Packaging.IdPartPair? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Packaging.IdPartPair, new()
+    where OpenXmlElementType : IdPartPair, new()
   {
     if (value != null)
     {

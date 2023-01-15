@@ -1,15 +1,14 @@
 namespace DocumentModel.Drawings.Charts;
 
 /// <summary>
-/// Defines the PieChartExtension Class.
+///   Defines the PieChartExtension Class.
 /// </summary>
-public partial class PieChartExtension
+public class PieChartExtension
 {
   /// <summary>
-  /// URI
+  ///   URI
   /// </summary>
   public String? Uri { get; set; }
-  
-  public DocumentModel.Drawings.Charts.FilteredPieSeries? FilteredPieSeries { get; set; }
-  
+
+  public FilteredPieSeries? FilteredPieSeries { get; set; }
 }

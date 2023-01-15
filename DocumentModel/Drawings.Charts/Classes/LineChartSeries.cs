@@ -1,54 +1,53 @@
 namespace DocumentModel.Drawings.Charts;
 
 /// <summary>
-/// Defines the LineChartSeries Class.
+///   Defines the LineChartSeries Class.
 /// </summary>
-public partial class LineChartSeries
+public class LineChartSeries
 {
   /// <summary>
-  /// Index.
+  ///   Index.
   /// </summary>
   public UInt32? Index { get; set; }
-  
+
   /// <summary>
-  /// Order.
+  ///   Order.
   /// </summary>
   public UInt32? Order { get; set; }
-  
+
   /// <summary>
-  /// Series Text.
+  ///   Series Text.
   /// </summary>
-  public DocumentModel.Drawings.Charts.SeriesText? SeriesText { get; set; }
-  
+  public SeriesText? SeriesText { get; set; }
+
   /// <summary>
-  /// ChartShapeProperties.
+  ///   ChartShapeProperties.
   /// </summary>
-  public DocumentModel.Drawings.Charts.ChartShapeProperties? ChartShapeProperties { get; set; }
-  
+  public ChartShapeProperties? ChartShapeProperties { get; set; }
+
   /// <summary>
-  /// Marker.
+  ///   Marker.
   /// </summary>
-  public DocumentModel.Drawings.Charts.Marker? Marker { get; set; }
-  
+  public Marker? Marker { get; set; }
+
   /// <summary>
-  /// PictureOptions.
+  ///   PictureOptions.
   /// </summary>
-  public DocumentModel.Drawings.Charts.PictureOptions? PictureOptions { get; set; }
-  
-  public Collection<DocumentModel.Drawings.Charts.DataPoint>? DataPoints { get; set; }
-  
-  public DocumentModel.Drawings.Charts.DataLabels? DataLabels { get; set; }
-  
-  public Collection<DocumentModel.Drawings.Charts.Trendline>? Trendlines { get; set; }
-  
-  public DocumentModel.Drawings.Charts.ErrorBars? ErrorBars { get; set; }
-  
-  public DocumentModel.Drawings.Charts.CategoryAxisData? CategoryAxisData { get; set; }
-  
-  public DocumentModel.Drawings.Charts.Values? Values { get; set; }
-  
+  public PictureOptions? PictureOptions { get; set; }
+
+  public Collection<DataPoint>? DataPoints { get; set; }
+
+  public DataLabels? DataLabels { get; set; }
+
+  public Collection<Trendline>? Trendlines { get; set; }
+
+  public ErrorBars? ErrorBars { get; set; }
+
+  public CategoryAxisData? CategoryAxisData { get; set; }
+
+  public Values? Values { get; set; }
+
   public Boolean? Smooth { get; set; }
-  
-  public DocumentModel.Drawings.Charts.LineSerExtensionList? LineSerExtensionList { get; set; }
-  
+
+  public LineSerExtensionList? LineSerExtensionList { get; set; }
 }

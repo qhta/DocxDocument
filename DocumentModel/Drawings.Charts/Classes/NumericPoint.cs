@@ -1,23 +1,22 @@
 namespace DocumentModel.Drawings.Charts;
 
 /// <summary>
-/// Numeric Point.
+///   Numeric Point.
 /// </summary>
-public partial class NumericPoint
+public class NumericPoint
 {
   /// <summary>
-  /// Index
+  ///   Index
   /// </summary>
   public UInt32? Index { get; set; }
-  
+
   /// <summary>
-  /// Number Format
+  ///   Number Format
   /// </summary>
   public String? FormatCode { get; set; }
-  
+
   /// <summary>
-  /// Numeric Value.
+  ///   Numeric Value.
   /// </summary>
   public String? NumericValue { get; set; }
-  
 }

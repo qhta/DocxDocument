@@ -1,23 +1,22 @@
 namespace DocumentModel.Drawings.Diagrams;
 
 /// <summary>
-/// Color Application Method Type
+///   Color Application Method Type
 /// </summary>
 public enum ColorApplicationMethodKind
 {
   /// <summary>
-  /// Span.
+  ///   Span.
   /// </summary>
   Span,
-  
+
   /// <summary>
-  /// Cycle.
+  ///   Cycle.
   /// </summary>
   Cycle,
-  
+
   /// <summary>
-  /// Repeat.
+  ///   Repeat.
   /// </summary>
-  Repeat,
-  
+  Repeat
 }

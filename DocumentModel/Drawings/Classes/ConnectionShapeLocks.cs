@@ -1,63 +1,62 @@
 namespace DocumentModel.Drawings;
 
 /// <summary>
-/// Connection Shape Locks.
+///   Connection Shape Locks.
 /// </summary>
-public partial class ConnectionShapeLocks
+public class ConnectionShapeLocks
 {
   /// <summary>
-  /// Disallow Shape Grouping
+  ///   Disallow Shape Grouping
   /// </summary>
   public Boolean? NoGrouping { get; set; }
-  
+
   /// <summary>
-  /// Disallow Shape Selection
+  ///   Disallow Shape Selection
   /// </summary>
   public Boolean? NoSelection { get; set; }
-  
+
   /// <summary>
-  /// Disallow Shape Rotation
+  ///   Disallow Shape Rotation
   /// </summary>
   public Boolean? NoRotation { get; set; }
-  
+
   /// <summary>
-  /// Disallow Aspect Ratio Change
+  ///   Disallow Aspect Ratio Change
   /// </summary>
   public Boolean? NoChangeAspect { get; set; }
-  
+
   /// <summary>
-  /// Disallow Shape Movement
+  ///   Disallow Shape Movement
   /// </summary>
   public Boolean? NoMove { get; set; }
-  
+
   /// <summary>
-  /// Disallow Shape Resize
+  ///   Disallow Shape Resize
   /// </summary>
   public Boolean? NoResize { get; set; }
-  
+
   /// <summary>
-  /// Disallow Shape Point Editing
+  ///   Disallow Shape Point Editing
   /// </summary>
   public Boolean? NoEditPoints { get; set; }
-  
+
   /// <summary>
-  /// Disallow Showing Adjust Handles
+  ///   Disallow Showing Adjust Handles
   /// </summary>
   public Boolean? NoAdjustHandles { get; set; }
-  
+
   /// <summary>
-  /// Disallow Arrowhead Changes
+  ///   Disallow Arrowhead Changes
   /// </summary>
   public Boolean? NoChangeArrowheads { get; set; }
-  
+
   /// <summary>
-  /// Disallow Shape Type Change
+  ///   Disallow Shape Type Change
   /// </summary>
   public Boolean? NoChangeShapeType { get; set; }
-  
+
   /// <summary>
-  /// ConnectorLockingExtensionList.
+  ///   ConnectorLockingExtensionList.
   /// </summary>
-  public DocumentModel.Drawings.ConnectorLockingExtensionList? ConnectorLockingExtensionList { get; set; }
-  
+  public ConnectorLockingExtensionList? ConnectorLockingExtensionList { get; set; }
 }

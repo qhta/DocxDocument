@@ -1,25 +1,24 @@
 namespace DocumentModel.Wordprocessing;
 
 /// <summary>
-/// Defines the DeletedMathControl Class.
+///   Defines the DeletedMathControl Class.
 /// </summary>
-public partial class DeletedMathControl
+public class DeletedMathControl
 {
   /// <summary>
-  /// author
+  ///   author
   /// </summary>
   public String? Author { get; set; }
-  
+
   /// <summary>
-  /// date
+  ///   date
   /// </summary>
   public DateTime? Date { get; set; }
-  
+
   /// <summary>
-  /// Annotation Identifier
+  ///   Annotation Identifier
   /// </summary>
   public String? Id { get; set; }
-  
-  public DocumentModel.Wordprocessing.RunProperties? RunProperties { get; set; }
-  
+
+  public RunProperties? RunProperties { get; set; }
 }

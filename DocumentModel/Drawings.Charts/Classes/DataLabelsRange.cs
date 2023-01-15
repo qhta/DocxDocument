@@ -1,18 +1,17 @@
 namespace DocumentModel.Drawings.Charts;
 
 /// <summary>
-/// Defines the DataLabelsRange Class.
+///   Defines the DataLabelsRange Class.
 /// </summary>
-public partial class DataLabelsRange
+public class DataLabelsRange
 {
   /// <summary>
-  /// Formula.
+  ///   Formula.
   /// </summary>
   public String? Formula { get; set; }
-  
+
   /// <summary>
-  /// DataLabelsRangeChache.
+  ///   DataLabelsRangeChache.
   /// </summary>
-  public DocumentModel.Drawings.Charts.DataLabelsRangeChache? DataLabelsRangeChache { get; set; }
-  
+  public DataLabelsRangeChache? DataLabelsRangeChache { get; set; }
 }

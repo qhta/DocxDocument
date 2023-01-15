@@ -1,14 +1,13 @@
 namespace DocumentModel.UI;
 
 /// <summary>
-/// Defines the DocumentSpecificQuickAccessToolbarControls Class.
+///   Defines the DocumentSpecificQuickAccessToolbarControls Class.
 /// </summary>
-public partial class DocumentSpecificQuickAccessToolbarControls
+public class DocumentSpecificQuickAccessToolbarControls
 {
-  public DocumentModel.UI.QuickAccessToolbarControlClone? QuickAccessToolbarControlClone { get; set; }
-  
-  public DocumentModel.UI.UnsizedButton? UnsizedButton { get; set; }
-  
-  public DocumentModel.UI.VerticalSeparator? VerticalSeparator { get; set; }
-  
+  public QuickAccessToolbarControlClone? QuickAccessToolbarControlClone { get; set; }
+
+  public UnsizedButton? UnsizedButton { get; set; }
+
+  public VerticalSeparator? VerticalSeparator { get; set; }
 }

@@ -1,40 +1,41 @@
+using DocumentFormat.OpenXml.Wordprocessing;
+using DocumentModel.Wordprocessing;
+using Behaviors = DocumentFormat.OpenXml.Wordprocessing.Behaviors;
+
 namespace DocumentModel.OpenXml.Wordprocessing;
 
 /// <summary>
-/// Entry Insertion Behaviors.
+///   Entry Insertion Behaviors.
 /// </summary>
 public static class BehaviorsConverter
 {
-  public static DocumentModel.Wordprocessing.DocPartBehaviorKind? GetBehavior(DocumentFormat.OpenXml.Wordprocessing.Behaviors? openXmlElement)
+  public static DocPartBehaviorKind? GetBehavior(Behaviors? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.Behavior>();
-      if (itemElement?.Val?.Value != null)
-      {
-        return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Wordprocessing.DocPartBehaviorValues, DocumentModel.Wordprocessing.DocPartBehaviorKind>(itemElement.Val.Value);
-      }
+      var itemElement = openXmlElement.GetFirstChild<Behavior>();
+      if (itemElement?.Val?.Value != null) return EnumValueConverter.GetValue<DocPartBehaviorValues, DocPartBehaviorKind>(itemElement.Val.Value);
     }
     return null;
   }
-  
-  public static void SetBehavior(DocumentFormat.OpenXml.Wordprocessing.Behaviors? openXmlElement, DocumentModel.Wordprocessing.DocPartBehaviorKind? value)
+
+  public static void SetBehavior(Behaviors? openXmlElement, DocPartBehaviorKind? value)
   {
     if (openXmlElement != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.Behavior>();
+      var itemElement = openXmlElement.GetFirstChild<Behavior>();
       if (itemElement != null)
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = EnumValueConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.Behavior, DocumentFormat.OpenXml.Wordprocessing.DocPartBehaviorValues, DocumentModel.Wordprocessing.DocPartBehaviorKind>(value);
+        itemElement = EnumValueConverter.CreateOpenXmlElement<Behavior, DocPartBehaviorValues, DocPartBehaviorKind>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static DocumentModel.Wordprocessing.Behaviors? CreateModelElement(DocumentFormat.OpenXml.Wordprocessing.Behaviors? openXmlElement)
+
+  public static DocumentModel.Wordprocessing.Behaviors? CreateModelElement(Behaviors? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -44,9 +45,9 @@ public static class BehaviorsConverter
     }
     return null;
   }
-  
+
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.Behaviors? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Wordprocessing.Behaviors, new()
+    where OpenXmlElementType : Behaviors, new()
   {
     if (value != null)
     {

@@ -1,48 +1,47 @@
 namespace DocumentModel.UI;
 
 /// <summary>
-/// Defines the VerticalSeparator Class.
+///   Defines the VerticalSeparator Class.
 /// </summary>
-public partial class VerticalSeparator
+public class VerticalSeparator
 {
   /// <summary>
-  /// id
+  ///   id
   /// </summary>
   public String? Id { get; set; }
-  
+
   /// <summary>
-  /// idQ
+  ///   idQ
   /// </summary>
   public String? IdQ { get; set; }
-  
+
   /// <summary>
-  /// visible
+  ///   visible
   /// </summary>
   public Boolean? Visible { get; set; }
-  
+
   /// <summary>
-  /// getVisible
+  ///   getVisible
   /// </summary>
   public String? GetVisible { get; set; }
-  
+
   /// <summary>
-  /// insertAfterMso
+  ///   insertAfterMso
   /// </summary>
   public String? InsertAfterMso { get; set; }
-  
+
   /// <summary>
-  /// insertBeforeMso
+  ///   insertBeforeMso
   /// </summary>
   public String? InsertBeforeMso { get; set; }
-  
+
   /// <summary>
-  /// insertAfterQ
+  ///   insertAfterQ
   /// </summary>
   public String? InsertAfterQ { get; set; }
-  
+
   /// <summary>
-  /// insertBeforeQ
+  ///   insertBeforeQ
   /// </summary>
   public String? InsertBeforeQ { get; set; }
-  
 }

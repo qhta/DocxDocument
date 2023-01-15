@@ -1,28 +1,27 @@
 namespace DocumentModel.Wordprocessing;
 
 /// <summary>
-/// Defines the CommentExtensible Class.
+///   Defines the CommentExtensible Class.
 /// </summary>
-public partial class CommentExtensible
+public class CommentExtensible
 {
   /// <summary>
-  /// durableId, this property is only available in Office 2021 and later.
+  ///   durableId, this property is only available in Office 2021 and later.
   /// </summary>
   public Byte[]? DurableId { get; set; }
-  
+
   /// <summary>
-  /// dateUtc, this property is only available in Office 2021 and later.
+  ///   dateUtc, this property is only available in Office 2021 and later.
   /// </summary>
   public DateTime? DateUtc { get; set; }
-  
+
   /// <summary>
-  /// intelligentPlaceholder, this property is only available in Office 2021 and later.
+  ///   intelligentPlaceholder, this property is only available in Office 2021 and later.
   /// </summary>
   public Boolean? IntelligentPlaceholder { get; set; }
-  
+
   /// <summary>
-  /// ExtensionList.
+  ///   ExtensionList.
   /// </summary>
-  public DocumentModel.Wordprocessing.ExtensionList? ExtensionList { get; set; }
-  
+  public ExtensionList? ExtensionList { get; set; }
 }

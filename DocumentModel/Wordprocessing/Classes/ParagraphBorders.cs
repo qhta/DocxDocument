@@ -1,38 +1,37 @@
 namespace DocumentModel.Wordprocessing;
 
 /// <summary>
-/// Defines the ParagraphBorders Class.
+///   Defines the ParagraphBorders Class.
 /// </summary>
-public partial class ParagraphBorders
+public class ParagraphBorders
 {
   /// <summary>
-  /// Paragraph Border Above Identical Paragraphs.
+  ///   Paragraph Border Above Identical Paragraphs.
   /// </summary>
-  public DocumentModel.Wordprocessing.BorderType? TopBorder { get; set; }
-  
+  public BorderType? TopBorder { get; set; }
+
   /// <summary>
-  /// Left Paragraph Border.
+  ///   Left Paragraph Border.
   /// </summary>
-  public DocumentModel.Wordprocessing.BorderType? LeftBorder { get; set; }
-  
+  public BorderType? LeftBorder { get; set; }
+
   /// <summary>
-  /// Paragraph Border Between Identical Paragraphs.
+  ///   Paragraph Border Between Identical Paragraphs.
   /// </summary>
-  public DocumentModel.Wordprocessing.BorderType? BottomBorder { get; set; }
-  
+  public BorderType? BottomBorder { get; set; }
+
   /// <summary>
-  /// Right Paragraph Border.
+  ///   Right Paragraph Border.
   /// </summary>
-  public DocumentModel.Wordprocessing.BorderType? RightBorder { get; set; }
-  
+  public BorderType? RightBorder { get; set; }
+
   /// <summary>
-  /// Paragraph Border Between Identical Paragraphs.
+  ///   Paragraph Border Between Identical Paragraphs.
   /// </summary>
-  public DocumentModel.Wordprocessing.BorderType? BetweenBorder { get; set; }
-  
+  public BorderType? BetweenBorder { get; set; }
+
   /// <summary>
-  /// Paragraph Border Between Facing Pages.
+  ///   Paragraph Border Between Facing Pages.
   /// </summary>
-  public DocumentModel.Wordprocessing.BorderType? BarBorder { get; set; }
-  
+  public BorderType? BarBorder { get; set; }
 }

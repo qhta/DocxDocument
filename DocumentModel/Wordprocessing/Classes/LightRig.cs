@@ -1,23 +1,22 @@
 namespace DocumentModel.Wordprocessing;
 
 /// <summary>
-/// Defines the LightRig Class.
+///   Defines the LightRig Class.
 /// </summary>
-public partial class LightRig
+public class LightRig
 {
   /// <summary>
-  /// rig, this property is only available in Office 2010 and later.
+  ///   rig, this property is only available in Office 2010 and later.
   /// </summary>
-  public DocumentModel.Wordprocessing.LightRigKind? LightRigType { get; set; }
-  
+  public LightRigKind? LightRigType { get; set; }
+
   /// <summary>
-  /// dir, this property is only available in Office 2010 and later.
+  ///   dir, this property is only available in Office 2010 and later.
   /// </summary>
-  public DocumentModel.Wordprocessing.LightRigDirectionKind? LightDirectionType { get; set; }
-  
+  public LightRigDirectionKind? LightDirectionType { get; set; }
+
   /// <summary>
-  /// SphereCoordinates.
+  ///   SphereCoordinates.
   /// </summary>
-  public DocumentModel.Wordprocessing.SphereCoordinates? SphereCoordinates { get; set; }
-  
+  public SphereCoordinates? SphereCoordinates { get; set; }
 }

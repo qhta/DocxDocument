@@ -1,54 +1,56 @@
+using DocumentFormat.OpenXml.Math;
+using DocumentModel.Math;
+using BarProperties = DocumentFormat.OpenXml.Math.BarProperties;
+using ControlProperties = DocumentModel.Math.ControlProperties;
+
 namespace DocumentModel.OpenXml.Math;
 
 /// <summary>
-/// Bar Properties.
+///   Bar Properties.
 /// </summary>
 public static class BarPropertiesConverter
 {
   /// <summary>
-  /// Position (Bar).
+  ///   Position (Bar).
   /// </summary>
-  public static DocumentModel.Math.VerticalJustificationKind? GetPosition(DocumentFormat.OpenXml.Math.BarProperties? openXmlElement)
+  public static VerticalJustificationKind? GetPosition(BarProperties? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Math.Position>();
-      if (itemElement?.Val?.Value != null)
-      {
-        return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Math.VerticalJustificationValues, DocumentModel.Math.VerticalJustificationKind>(itemElement.Val.Value);
-      }
+      var itemElement = openXmlElement.GetFirstChild<Position>();
+      if (itemElement?.Val?.Value != null) return EnumValueConverter.GetValue<VerticalJustificationValues, VerticalJustificationKind>(itemElement.Val.Value);
     }
     return null;
   }
-  
-  public static void SetPosition(DocumentFormat.OpenXml.Math.BarProperties? openXmlElement, DocumentModel.Math.VerticalJustificationKind? value)
+
+  public static void SetPosition(BarProperties? openXmlElement, VerticalJustificationKind? value)
   {
     if (openXmlElement != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Math.Position>();
+      var itemElement = openXmlElement.GetFirstChild<Position>();
       if (itemElement != null)
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = EnumValueConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Math.Position, DocumentFormat.OpenXml.Math.VerticalJustificationValues, DocumentModel.Math.VerticalJustificationKind>(value);
+        itemElement = EnumValueConverter.CreateOpenXmlElement<Position, VerticalJustificationValues, VerticalJustificationKind>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
+
   /// <summary>
-  /// ControlProperties.
+  ///   ControlProperties.
   /// </summary>
-  public static DocumentModel.Math.ControlProperties? GetControlProperties(DocumentFormat.OpenXml.Math.BarProperties? openXmlElement)
+  public static ControlProperties? GetControlProperties(BarProperties? openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Math.ControlProperties>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Math.ControlPropertiesConverter.CreateModelElement(itemElement);
+      return ControlPropertiesConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetControlProperties(DocumentFormat.OpenXml.Math.BarProperties? openXmlElement, DocumentModel.Math.ControlProperties? value)
+
+  public static void SetControlProperties(BarProperties? openXmlElement, ControlProperties? value)
   {
     if (openXmlElement != null)
     {
@@ -57,14 +59,14 @@ public static class BarPropertiesConverter
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Math.ControlPropertiesConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Math.ControlProperties>(value);
+        itemElement = ControlPropertiesConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Math.ControlProperties>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static DocumentModel.Math.BarProperties? CreateModelElement(DocumentFormat.OpenXml.Math.BarProperties? openXmlElement)
+
+  public static DocumentModel.Math.BarProperties? CreateModelElement(BarProperties? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -75,9 +77,9 @@ public static class BarPropertiesConverter
     }
     return null;
   }
-  
+
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Math.BarProperties? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Math.BarProperties, new()
+    where OpenXmlElementType : BarProperties, new()
   {
     if (value != null)
     {

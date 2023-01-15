@@ -1,18 +1,17 @@
 namespace DocumentModel.Drawings.ChartDrawings;
 
 /// <summary>
-/// Defines the GeoLocationQueryResult Class.
+///   Defines the GeoLocationQueryResult Class.
 /// </summary>
-public partial class GeoLocationQueryResult
+public class GeoLocationQueryResult
 {
   /// <summary>
-  /// GeoLocationQuery.
+  ///   GeoLocationQuery.
   /// </summary>
-  public DocumentModel.Drawings.ChartDrawings.GeoLocationQuery? GeoLocationQuery { get; set; }
-  
+  public GeoLocationQuery? GeoLocationQuery { get; set; }
+
   /// <summary>
-  /// GeoLocations.
+  ///   GeoLocations.
   /// </summary>
-  public DocumentModel.Drawings.ChartDrawings.GeoLocations? GeoLocations { get; set; }
-  
+  public GeoLocations? GeoLocations { get; set; }
 }

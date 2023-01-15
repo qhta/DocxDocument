@@ -1,39 +1,44 @@
+using DocumentFormat.OpenXml.Vml;
+using DocumentFormat.OpenXml.Vml.Office;
+using DocumentModel.Vml;
+using FillExtendedProperties = DocumentFormat.OpenXml.Vml.Office.FillExtendedProperties;
+
 namespace DocumentModel.OpenXml.Vml;
 
 /// <summary>
-/// Shape Fill Extended Properties.
+///   Shape Fill Extended Properties.
 /// </summary>
 public static class FillExtendedPropertiesConverter
 {
   /// <summary>
-  /// VML Extension Handling Behavior
+  ///   VML Extension Handling Behavior
   /// </summary>
-  public static DocumentModel.Vml.ExtensionHandlingBehaviorKind? GetExtension(DocumentFormat.OpenXml.Vml.Office.FillExtendedProperties? openXmlElement)
+  public static ExtensionHandlingBehaviorKind? GetExtension(FillExtendedProperties? openXmlElement)
   {
-    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Vml.ExtensionHandlingBehaviorValues, DocumentModel.Vml.ExtensionHandlingBehaviorKind>(openXmlElement?.Extension?.Value);
+    return EnumValueConverter.GetValue<ExtensionHandlingBehaviorValues, ExtensionHandlingBehaviorKind>(openXmlElement?.Extension?.Value);
   }
-  
-  public static void SetExtension(DocumentFormat.OpenXml.Vml.Office.FillExtendedProperties? openXmlElement, DocumentModel.Vml.ExtensionHandlingBehaviorKind? value)
+
+  public static void SetExtension(FillExtendedProperties? openXmlElement, ExtensionHandlingBehaviorKind? value)
   {
     if (openXmlElement != null)
-      openXmlElement.Extension = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Vml.ExtensionHandlingBehaviorValues, DocumentModel.Vml.ExtensionHandlingBehaviorKind>(value);
+      openXmlElement.Extension = EnumValueConverter.CreateEnumValue<ExtensionHandlingBehaviorValues, ExtensionHandlingBehaviorKind>(value);
   }
-  
+
   /// <summary>
-  /// Fill Type
+  ///   Fill Type
   /// </summary>
-  public static DocumentModel.Vml.FillKind? GetType(DocumentFormat.OpenXml.Vml.Office.FillExtendedProperties? openXmlElement)
+  public static FillKind? GetType(FillExtendedProperties? openXmlElement)
   {
-    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Vml.Office.FillValues, DocumentModel.Vml.FillKind>(openXmlElement?.Type?.Value);
+    return EnumValueConverter.GetValue<FillValues, FillKind>(openXmlElement?.Type?.Value);
   }
-  
-  public static void SetType(DocumentFormat.OpenXml.Vml.Office.FillExtendedProperties? openXmlElement, DocumentModel.Vml.FillKind? value)
+
+  public static void SetType(FillExtendedProperties? openXmlElement, FillKind? value)
   {
     if (openXmlElement != null)
-      openXmlElement.Type = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Vml.Office.FillValues, DocumentModel.Vml.FillKind>(value);
+      openXmlElement.Type = EnumValueConverter.CreateEnumValue<FillValues, FillKind>(value);
   }
-  
-  public static DocumentModel.Vml.FillExtendedProperties? CreateModelElement(DocumentFormat.OpenXml.Vml.Office.FillExtendedProperties? openXmlElement)
+
+  public static DocumentModel.Vml.FillExtendedProperties? CreateModelElement(FillExtendedProperties? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -44,9 +49,9 @@ public static class FillExtendedPropertiesConverter
     }
     return null;
   }
-  
+
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Vml.FillExtendedProperties? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Vml.Office.FillExtendedProperties, new()
+    where OpenXmlElementType : FillExtendedProperties, new()
   {
     if (value != null)
     {

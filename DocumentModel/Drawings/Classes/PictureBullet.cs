@@ -1,13 +1,12 @@
 namespace DocumentModel.Drawings;
 
 /// <summary>
-/// Picture Bullet.
+///   Picture Bullet.
 /// </summary>
-public partial class PictureBullet
+public class PictureBullet
 {
   /// <summary>
-  /// Blip.
+  ///   Blip.
   /// </summary>
-  public DocumentModel.Drawings.Blip? Blip { get; set; }
-  
+  public Blip? Blip { get; set; }
 }

@@ -1,10 +1,9 @@
 namespace DocumentModel.Drawings;
 
 /// <summary>
-/// List of Shape Connection Sites.
+///   List of Shape Connection Sites.
 /// </summary>
-public partial class ConnectionSiteList
+public class ConnectionSiteList
 {
-  public Collection<DocumentModel.Drawings.ConnectionSite>? ConnectionSites { get; set; }
-  
+  public Collection<ConnectionSite>? ConnectionSites { get; set; }
 }

@@ -1,28 +1,27 @@
 namespace DocumentModel.Drawings.Charts;
 
 /// <summary>
-/// Defines the UpDownBars Class.
+///   Defines the UpDownBars Class.
 /// </summary>
-public partial class UpDownBars
+public class UpDownBars
 {
   /// <summary>
-  /// Gap Width.
+  ///   Gap Width.
   /// </summary>
   public UInt16? GapWidth { get; set; }
-  
+
   /// <summary>
-  /// Up Bars.
+  ///   Up Bars.
   /// </summary>
-  public DocumentModel.Drawings.Charts.UpBars? UpBars { get; set; }
-  
+  public UpBars? UpBars { get; set; }
+
   /// <summary>
-  /// Down Bars.
+  ///   Down Bars.
   /// </summary>
-  public DocumentModel.Drawings.Charts.DownBars? DownBars { get; set; }
-  
+  public DownBars? DownBars { get; set; }
+
   /// <summary>
-  /// Chart Extensibility.
+  ///   Chart Extensibility.
   /// </summary>
-  public DocumentModel.Drawings.Charts.ExtensionList? ExtensionList { get; set; }
-  
+  public ExtensionList? ExtensionList { get; set; }
 }

@@ -1,18 +1,17 @@
 namespace DocumentModel.Drawings.ChartDrawings;
 
 /// <summary>
-/// Defines the QuartileMethod enumeration.
+///   Defines the QuartileMethod enumeration.
 /// </summary>
 public enum QuartileMethod
 {
   /// <summary>
-  /// inclusive.
+  ///   inclusive.
   /// </summary>
   Inclusive,
-  
+
   /// <summary>
-  /// exclusive.
+  ///   exclusive.
   /// </summary>
-  Exclusive,
-  
+  Exclusive
 }

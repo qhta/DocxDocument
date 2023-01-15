@@ -1,18 +1,17 @@
 namespace DocumentModel.Drawings.ChartDrawings;
 
 /// <summary>
-/// Defines the GeoChildEntitiesQuery Class.
+///   Defines the GeoChildEntitiesQuery Class.
 /// </summary>
-public partial class GeoChildEntitiesQuery
+public class GeoChildEntitiesQuery
 {
   /// <summary>
-  /// entityId, this property is only available in Office 2016 and later.
+  ///   entityId, this property is only available in Office 2016 and later.
   /// </summary>
   public String? EntityId { get; set; }
-  
+
   /// <summary>
-  /// GeoChildTypes.
+  ///   GeoChildTypes.
   /// </summary>
-  public DocumentModel.Drawings.ChartDrawings.GeoChildTypes? GeoChildTypes { get; set; }
-  
+  public GeoChildTypes? GeoChildTypes { get; set; }
 }

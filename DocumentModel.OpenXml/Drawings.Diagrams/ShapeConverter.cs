@@ -1,33 +1,36 @@
+using DocumentFormat.OpenXml.Drawing.Diagrams;
+using AdjustList = DocumentModel.Drawings.Diagrams.AdjustList;
+
 namespace DocumentModel.OpenXml.Drawings.Diagrams;
 
 /// <summary>
-/// Shape.
+///   Shape.
 /// </summary>
 public static class ShapeConverter
 {
   /// <summary>
-  /// Rotation
+  ///   Rotation
   /// </summary>
-  public static Double? GetRotation(DocumentFormat.OpenXml.Drawing.Diagrams.Shape? openXmlElement)
+  public static Double? GetRotation(Shape? openXmlElement)
   {
     return openXmlElement?.Rotation?.Value;
   }
-  
-  public static void SetRotation(DocumentFormat.OpenXml.Drawing.Diagrams.Shape? openXmlElement, Double? value)
+
+  public static void SetRotation(Shape? openXmlElement, Double? value)
   {
     if (openXmlElement != null)
       openXmlElement.Rotation = value;
   }
-  
+
   /// <summary>
-  /// Shape Type
+  ///   Shape Type
   /// </summary>
-  public static String? GetType(DocumentFormat.OpenXml.Drawing.Diagrams.Shape? openXmlElement)
+  public static String? GetType(Shape? openXmlElement)
   {
     return openXmlElement?.Type?.Value;
   }
-  
-  public static void SetType(DocumentFormat.OpenXml.Drawing.Diagrams.Shape? openXmlElement, String? value)
+
+  public static void SetType(Shape? openXmlElement, String? value)
   {
     if (openXmlElement != null)
       if (value != null)
@@ -35,16 +38,16 @@ public static class ShapeConverter
       else
         openXmlElement.Type = null;
   }
-  
+
   /// <summary>
-  /// Relationship to Image Part
+  ///   Relationship to Image Part
   /// </summary>
-  public static String? GetBlip(DocumentFormat.OpenXml.Drawing.Diagrams.Shape? openXmlElement)
+  public static String? GetBlip(Shape? openXmlElement)
   {
     return openXmlElement?.Blip?.Value;
   }
-  
-  public static void SetBlip(DocumentFormat.OpenXml.Drawing.Diagrams.Shape? openXmlElement, String? value)
+
+  public static void SetBlip(Shape? openXmlElement, String? value)
   {
     if (openXmlElement != null)
       if (value != null)
@@ -52,30 +55,30 @@ public static class ShapeConverter
       else
         openXmlElement.Blip = null;
   }
-  
+
   /// <summary>
-  /// Z-Order Offset
+  ///   Z-Order Offset
   /// </summary>
-  public static Int32? GetZOrderOffset(DocumentFormat.OpenXml.Drawing.Diagrams.Shape? openXmlElement)
+  public static Int32? GetZOrderOffset(Shape? openXmlElement)
   {
     return openXmlElement?.ZOrderOffset?.Value;
   }
-  
-  public static void SetZOrderOffset(DocumentFormat.OpenXml.Drawing.Diagrams.Shape? openXmlElement, Int32? value)
+
+  public static void SetZOrderOffset(Shape? openXmlElement, Int32? value)
   {
     if (openXmlElement != null)
       openXmlElement.ZOrderOffset = value;
   }
-  
+
   /// <summary>
-  /// Hide Geometry
+  ///   Hide Geometry
   /// </summary>
-  public static Boolean? GetHideGeometry(DocumentFormat.OpenXml.Drawing.Diagrams.Shape? openXmlElement)
+  public static Boolean? GetHideGeometry(Shape? openXmlElement)
   {
     return openXmlElement?.HideGeometry?.Value;
   }
-  
-  public static void SetHideGeometry(DocumentFormat.OpenXml.Drawing.Diagrams.Shape? openXmlElement, Boolean? value)
+
+  public static void SetHideGeometry(Shape? openXmlElement, Boolean? value)
   {
     if (openXmlElement != null)
       if (value != null)
@@ -83,16 +86,16 @@ public static class ShapeConverter
       else
         openXmlElement.HideGeometry = null;
   }
-  
+
   /// <summary>
-  /// Prevent Text Editing
+  ///   Prevent Text Editing
   /// </summary>
-  public static Boolean? GetLockedText(DocumentFormat.OpenXml.Drawing.Diagrams.Shape? openXmlElement)
+  public static Boolean? GetLockedText(Shape? openXmlElement)
   {
     return openXmlElement?.LockedText?.Value;
   }
-  
-  public static void SetLockedText(DocumentFormat.OpenXml.Drawing.Diagrams.Shape? openXmlElement, Boolean? value)
+
+  public static void SetLockedText(Shape? openXmlElement, Boolean? value)
   {
     if (openXmlElement != null)
       if (value != null)
@@ -100,16 +103,16 @@ public static class ShapeConverter
       else
         openXmlElement.LockedText = null;
   }
-  
+
   /// <summary>
-  /// Image Placeholder
+  ///   Image Placeholder
   /// </summary>
-  public static Boolean? GetBlipPlaceholder(DocumentFormat.OpenXml.Drawing.Diagrams.Shape? openXmlElement)
+  public static Boolean? GetBlipPlaceholder(Shape? openXmlElement)
   {
     return openXmlElement?.BlipPlaceholder?.Value;
   }
-  
-  public static void SetBlipPlaceholder(DocumentFormat.OpenXml.Drawing.Diagrams.Shape? openXmlElement, Boolean? value)
+
+  public static void SetBlipPlaceholder(Shape? openXmlElement, Boolean? value)
   {
     if (openXmlElement != null)
       if (value != null)
@@ -117,19 +120,19 @@ public static class ShapeConverter
       else
         openXmlElement.BlipPlaceholder = null;
   }
-  
+
   /// <summary>
-  /// Shape Adjust List.
+  ///   Shape Adjust List.
   /// </summary>
-  public static DocumentModel.Drawings.Diagrams.AdjustList? GetAdjustList(DocumentFormat.OpenXml.Drawing.Diagrams.Shape? openXmlElement)
+  public static AdjustList? GetAdjustList(Shape? openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.Diagrams.AdjustList>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.Diagrams.AdjustListConverter.CreateModelElement(itemElement);
+      return AdjustListConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetAdjustList(DocumentFormat.OpenXml.Drawing.Diagrams.Shape? openXmlElement, DocumentModel.Drawings.Diagrams.AdjustList? value)
+
+  public static void SetAdjustList(Shape? openXmlElement, AdjustList? value)
   {
     if (openXmlElement != null)
     {
@@ -138,25 +141,25 @@ public static class ShapeConverter
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Drawings.Diagrams.AdjustListConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Diagrams.AdjustList>(value);
+        itemElement = AdjustListConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Diagrams.AdjustList>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
+
   /// <summary>
-  /// ExtensionList.
+  ///   ExtensionList.
   /// </summary>
-  public static DocumentModel.Drawings.Diagrams.ExtensionList? GetExtensionList(DocumentFormat.OpenXml.Drawing.Diagrams.Shape? openXmlElement)
+  public static DocumentModel.Drawings.Diagrams.ExtensionList? GetExtensionList(Shape? openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.Diagrams.ExtensionList>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.Diagrams.ExtensionListConverter.CreateModelElement(itemElement);
+      return ExtensionListConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetExtensionList(DocumentFormat.OpenXml.Drawing.Diagrams.Shape? openXmlElement, DocumentModel.Drawings.Diagrams.ExtensionList? value)
+
+  public static void SetExtensionList(Shape? openXmlElement, DocumentModel.Drawings.Diagrams.ExtensionList? value)
   {
     if (openXmlElement != null)
     {
@@ -165,14 +168,14 @@ public static class ShapeConverter
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Drawings.Diagrams.ExtensionListConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Diagrams.ExtensionList>(value);
+        itemElement = ExtensionListConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Diagrams.ExtensionList>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static DocumentModel.Drawings.Diagrams.Shape? CreateModelElement(DocumentFormat.OpenXml.Drawing.Diagrams.Shape? openXmlElement)
+
+  public static DocumentModel.Drawings.Diagrams.Shape? CreateModelElement(Shape? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -190,9 +193,9 @@ public static class ShapeConverter
     }
     return null;
   }
-  
+
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.Diagrams.Shape? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.Diagrams.Shape, new()
+    where OpenXmlElementType : Shape, new()
   {
     if (value != null)
     {

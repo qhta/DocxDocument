@@ -1,10 +1,9 @@
 namespace DocumentModel.Drawings.Charts;
 
 /// <summary>
-/// Defines the ValAxExtensionList Class.
+///   Defines the ValAxExtensionList Class.
 /// </summary>
-public partial class ValAxExtensionList
+public class ValAxExtensionList
 {
-  public Collection<DocumentModel.Drawings.Charts.ValAxExtension>? ValAxExtensions { get; set; }
-  
+  public Collection<ValAxExtension>? ValAxExtensions { get; set; }
 }

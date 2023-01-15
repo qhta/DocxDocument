@@ -1,15 +1,14 @@
 namespace DocumentModel.Drawings.Charts;
 
 /// <summary>
-/// Defines the Surface3DChartExtension Class.
+///   Defines the Surface3DChartExtension Class.
 /// </summary>
-public partial class Surface3DChartExtension
+public class Surface3DChartExtension
 {
   /// <summary>
-  /// URI
+  ///   URI
   /// </summary>
   public String? Uri { get; set; }
-  
-  public DocumentModel.Drawings.Charts.FilteredSurfaceSeries? FilteredSurfaceSeries { get; set; }
-  
+
+  public FilteredSurfaceSeries? FilteredSurfaceSeries { get; set; }
 }

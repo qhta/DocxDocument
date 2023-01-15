@@ -1,19 +1,23 @@
+using DocumentFormat.OpenXml.Wordprocessing;
+using DocumentModel.Wordprocessing;
+using Color = DocumentFormat.OpenXml.Office2013.Word.Color;
+
 namespace DocumentModel.OpenXml.Wordprocessing;
 
 /// <summary>
-/// Defines the Color Class.
+///   Defines the Color Class.
 /// </summary>
 public static class Color3Converter
 {
   /// <summary>
-  /// Run Content Color
+  ///   Run Content Color
   /// </summary>
-  public static String? GetVal(DocumentFormat.OpenXml.Office2013.Word.Color? openXmlElement)
+  public static String? GetVal(Color? openXmlElement)
   {
     return openXmlElement?.Val?.Value;
   }
-  
-  public static void SetVal(DocumentFormat.OpenXml.Office2013.Word.Color? openXmlElement, String? value)
+
+  public static void SetVal(Color? openXmlElement, String? value)
   {
     if (openXmlElement != null)
       if (value != null)
@@ -21,30 +25,30 @@ public static class Color3Converter
       else
         openXmlElement.Val = null;
   }
-  
+
   /// <summary>
-  /// Run Content Theme Color
+  ///   Run Content Theme Color
   /// </summary>
-  public static DocumentModel.Wordprocessing.ThemeColorKind? GetThemeColor(DocumentFormat.OpenXml.Office2013.Word.Color? openXmlElement)
+  public static ThemeColorKind? GetThemeColor(Color? openXmlElement)
   {
-    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Wordprocessing.ThemeColorValues, DocumentModel.Wordprocessing.ThemeColorKind>(openXmlElement?.ThemeColor?.Value);
+    return EnumValueConverter.GetValue<ThemeColorValues, ThemeColorKind>(openXmlElement?.ThemeColor?.Value);
   }
-  
-  public static void SetThemeColor(DocumentFormat.OpenXml.Office2013.Word.Color? openXmlElement, DocumentModel.Wordprocessing.ThemeColorKind? value)
+
+  public static void SetThemeColor(Color? openXmlElement, ThemeColorKind? value)
   {
     if (openXmlElement != null)
-      openXmlElement.ThemeColor = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Wordprocessing.ThemeColorValues, DocumentModel.Wordprocessing.ThemeColorKind>(value);
+      openXmlElement.ThemeColor = EnumValueConverter.CreateEnumValue<ThemeColorValues, ThemeColorKind>(value);
   }
-  
+
   /// <summary>
-  /// Run Content Theme Color Tint
+  ///   Run Content Theme Color Tint
   /// </summary>
-  public static String? GetThemeTint(DocumentFormat.OpenXml.Office2013.Word.Color? openXmlElement)
+  public static String? GetThemeTint(Color? openXmlElement)
   {
     return openXmlElement?.ThemeTint?.Value;
   }
-  
-  public static void SetThemeTint(DocumentFormat.OpenXml.Office2013.Word.Color? openXmlElement, String? value)
+
+  public static void SetThemeTint(Color? openXmlElement, String? value)
   {
     if (openXmlElement != null)
       if (value != null)
@@ -52,16 +56,16 @@ public static class Color3Converter
       else
         openXmlElement.ThemeTint = null;
   }
-  
+
   /// <summary>
-  /// Run Content Theme Color Shade
+  ///   Run Content Theme Color Shade
   /// </summary>
-  public static String? GetThemeShade(DocumentFormat.OpenXml.Office2013.Word.Color? openXmlElement)
+  public static String? GetThemeShade(Color? openXmlElement)
   {
     return openXmlElement?.ThemeShade?.Value;
   }
-  
-  public static void SetThemeShade(DocumentFormat.OpenXml.Office2013.Word.Color? openXmlElement, String? value)
+
+  public static void SetThemeShade(Color? openXmlElement, String? value)
   {
     if (openXmlElement != null)
       if (value != null)
@@ -69,12 +73,12 @@ public static class Color3Converter
       else
         openXmlElement.ThemeShade = null;
   }
-  
-  public static DocumentModel.Wordprocessing.Color3? CreateModelElement(DocumentFormat.OpenXml.Office2013.Word.Color? openXmlElement)
+
+  public static Color3? CreateModelElement(Color? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Wordprocessing.Color3();
+      var value = new Color3();
       value.Val = GetVal(openXmlElement);
       value.ThemeColor = GetThemeColor(openXmlElement);
       value.ThemeTint = GetThemeTint(openXmlElement);
@@ -83,9 +87,9 @@ public static class Color3Converter
     }
     return null;
   }
-  
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.Color3? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Office2013.Word.Color, new()
+
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(Color3? value)
+    where OpenXmlElementType : Color, new()
   {
     if (value != null)
     {

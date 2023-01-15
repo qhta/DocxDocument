@@ -1,68 +1,67 @@
 namespace DocumentModel.Wordprocessing;
 
 /// <summary>
-/// Defines the BevelPresetTypeValues enumeration.
+///   Defines the BevelPresetTypeValues enumeration.
 /// </summary>
 public enum BevelPresetKind
 {
   /// <summary>
-  /// relaxedInset.
+  ///   relaxedInset.
   /// </summary>
   RelaxedInset,
-  
+
   /// <summary>
-  /// circle.
+  ///   circle.
   /// </summary>
   Circle,
-  
+
   /// <summary>
-  /// slope.
+  ///   slope.
   /// </summary>
   Slope,
-  
+
   /// <summary>
-  /// cross.
+  ///   cross.
   /// </summary>
   Cross,
-  
+
   /// <summary>
-  /// angle.
+  ///   angle.
   /// </summary>
   Angle,
-  
+
   /// <summary>
-  /// softRound.
+  ///   softRound.
   /// </summary>
   SoftRound,
-  
+
   /// <summary>
-  /// convex.
+  ///   convex.
   /// </summary>
   Convex,
-  
+
   /// <summary>
-  /// coolSlant.
+  ///   coolSlant.
   /// </summary>
   CoolSlant,
-  
+
   /// <summary>
-  /// divot.
+  ///   divot.
   /// </summary>
   Divot,
-  
+
   /// <summary>
-  /// riblet.
+  ///   riblet.
   /// </summary>
   Riblet,
-  
+
   /// <summary>
-  /// hardEdge.
+  ///   hardEdge.
   /// </summary>
   HardEdge,
-  
+
   /// <summary>
-  /// artDeco.
+  ///   artDeco.
   /// </summary>
-  ArtDeco,
-  
+  ArtDeco
 }

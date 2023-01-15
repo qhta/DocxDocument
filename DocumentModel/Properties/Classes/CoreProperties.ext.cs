@@ -1,14 +1,67 @@
-﻿using DocumentModel.Wordprocessing;
-
-using Qhta.Conversion;
+﻿using Qhta.Conversion;
 
 namespace DocumentModel.Properties;
 
 public partial class CoreProperties : ICollection<DocumentProperty>
 {
+  private static string[] _PropNames = null!;
+
+  public IEnumerator<DocumentProperty> GetEnumerator()
+  {
+    foreach (var name in GetPropNames())
+    {
+      var value = Get(name);
+      if (value != null) yield return new DocumentProperty { Name = name, Value = value };
+    }
+  }
+
+  IEnumerator IEnumerable.GetEnumerator()
+  {
+    return GetEnumerator();
+  }
+
+  public void Add(DocumentProperty item)
+  {
+    if (item.Name != null)
+      Set(item.Name, item);
+  }
+
+  public void Clear()
+  {
+    foreach (var name in GetPropNames()) Set(name, null);
+  }
+
+  public bool Contains(DocumentProperty item)
+  {
+    if (item.Name != null && GetPropNames().Contains(item.Name))
+      return Get(item.Name) != null;
+    return false;
+  }
+
+  public void CopyTo(DocumentProperty[] array, int arrayIndex)
+  {
+    var items = new List<DocumentProperty>();
+    foreach (var item in this) items.Add(item);
+    items.CopyTo(array, arrayIndex);
+  }
+
+  public bool Remove(DocumentProperty item)
+  {
+    if (item.Name != null && GetPropNames().Contains(item.Name))
+    {
+      Set(item.Name, null);
+      return true;
+    }
+    return false;
+  }
+
+  int ICollection<DocumentProperty>.Count => Count();
+
+  bool ICollection<DocumentProperty>.IsReadOnly => false;
+
   public int Count()
   {
-    int corePropertiesCount = 0;
+    var corePropertiesCount = 0;
     foreach (var name in GetPropNames())
     {
       var item = Get(name);
@@ -32,7 +85,7 @@ public partial class CoreProperties : ICollection<DocumentProperty>
     {
       if (value is String valStr && value.GetType() != prop.PropertyType)
       {
-        var typeConverter = new ValueTypeConverter(prop.PropertyType, null, null, null, null);
+        var typeConverter = new ValueTypeConverter(prop.PropertyType);
         value = typeConverter.ConvertFromInvariantString(valStr);
       }
       prop.SetValue(this, value);
@@ -43,28 +96,9 @@ public partial class CoreProperties : ICollection<DocumentProperty>
 
   public static string[] GetPropNames()
   {
-    if (_PropNames==null) 
-      _PropNames = typeof(CoreProperties).GetProperties().Where(item => item.Name != "Count" || item.Name!="IsReadOnly").Select(item => item.Name).ToArray();
+    if (_PropNames == null)
+      _PropNames = typeof(CoreProperties).GetProperties().Where(item => item.Name != "Count" || item.Name != "IsReadOnly").Select(item => item.Name).ToArray();
     return _PropNames;
-  }
-
-  private static string[] _PropNames = null!;
-
-  public IEnumerator<DocumentProperty> GetEnumerator()
-  {
-    foreach (var name in GetPropNames())
-    {
-      var value = Get(name);
-      if (value != null)
-      {
-        yield return new DocumentProperty { Name = name, Value = value };
-      }
-    }
-  }
-
-  IEnumerator IEnumerable.GetEnumerator()
-  {
-    return GetEnumerator();
   }
 
   public void Add(object item)
@@ -72,47 +106,4 @@ public partial class CoreProperties : ICollection<DocumentProperty>
     if (item is DocumentProperty documentProperty)
       Add(documentProperty);
   }
-
-  public void Add(DocumentProperty item)
-  {
-    if (item.Name != null)
-      Set(item.Name, item);
-  }
-
-  public void Clear()
-  {
-    foreach (var name in GetPropNames())
-    { Set(name, null); }
-  }
-
-  public bool Contains(DocumentProperty item)
-  {
-    if (item.Name != null && GetPropNames().Contains(item.Name))
-      return Get(item.Name) != null;
-    return false;
-  }
-
-  public void CopyTo(DocumentProperty[] array, int arrayIndex)
-  {
-    var items = new List<DocumentProperty>();
-    foreach (var item in this)
-    {
-      items.Add(item);
-    }
-    items.CopyTo(array, arrayIndex);
-  }
-
-  public bool Remove(DocumentProperty item)
-  {
-    if (item.Name != null && GetPropNames().Contains(item.Name))
-    {
-      Set(item.Name, null);
-      return true;
-    }
-    return false;
-  }
-
-  int ICollection<DocumentProperty>.Count => Count();
-
-  bool ICollection<DocumentProperty>.IsReadOnly => false;
 }

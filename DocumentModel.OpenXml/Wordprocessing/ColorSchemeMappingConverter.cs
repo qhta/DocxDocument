@@ -1,179 +1,183 @@
+using DocumentFormat.OpenXml.Wordprocessing;
+using DocumentModel.Wordprocessing;
+using ColorSchemeMapping = DocumentFormat.OpenXml.Wordprocessing.ColorSchemeMapping;
+
 namespace DocumentModel.OpenXml.Wordprocessing;
 
 /// <summary>
-/// Theme Color Mappings.
+///   Theme Color Mappings.
 /// </summary>
 public static class ColorSchemeMappingConverter
 {
   /// <summary>
-  /// Background 1 Theme Color Mapping
+  ///   Background 1 Theme Color Mapping
   /// </summary>
-  public static DocumentModel.Wordprocessing.ColorSchemeIndexKind? GetBackground1(DocumentFormat.OpenXml.Wordprocessing.ColorSchemeMapping? openXmlElement)
+  public static ColorSchemeIndexKind? GetBackground1(ColorSchemeMapping? openXmlElement)
   {
-    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Wordprocessing.ColorSchemeIndexValues, DocumentModel.Wordprocessing.ColorSchemeIndexKind>(openXmlElement?.Background1?.Value);
+    return EnumValueConverter.GetValue<ColorSchemeIndexValues, ColorSchemeIndexKind>(openXmlElement?.Background1?.Value);
   }
-  
-  public static void SetBackground1(DocumentFormat.OpenXml.Wordprocessing.ColorSchemeMapping? openXmlElement, DocumentModel.Wordprocessing.ColorSchemeIndexKind? value)
+
+  public static void SetBackground1(ColorSchemeMapping? openXmlElement, ColorSchemeIndexKind? value)
   {
     if (openXmlElement != null)
-      openXmlElement.Background1 = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Wordprocessing.ColorSchemeIndexValues, DocumentModel.Wordprocessing.ColorSchemeIndexKind>(value);
+      openXmlElement.Background1 = EnumValueConverter.CreateEnumValue<ColorSchemeIndexValues, ColorSchemeIndexKind>(value);
   }
-  
+
   /// <summary>
-  /// Text 1 Theme Color Mapping
+  ///   Text 1 Theme Color Mapping
   /// </summary>
-  public static DocumentModel.Wordprocessing.ColorSchemeIndexKind? GetText1(DocumentFormat.OpenXml.Wordprocessing.ColorSchemeMapping? openXmlElement)
+  public static ColorSchemeIndexKind? GetText1(ColorSchemeMapping? openXmlElement)
   {
-    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Wordprocessing.ColorSchemeIndexValues, DocumentModel.Wordprocessing.ColorSchemeIndexKind>(openXmlElement?.Text1?.Value);
+    return EnumValueConverter.GetValue<ColorSchemeIndexValues, ColorSchemeIndexKind>(openXmlElement?.Text1?.Value);
   }
-  
-  public static void SetText1(DocumentFormat.OpenXml.Wordprocessing.ColorSchemeMapping? openXmlElement, DocumentModel.Wordprocessing.ColorSchemeIndexKind? value)
+
+  public static void SetText1(ColorSchemeMapping? openXmlElement, ColorSchemeIndexKind? value)
   {
     if (openXmlElement != null)
-      openXmlElement.Text1 = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Wordprocessing.ColorSchemeIndexValues, DocumentModel.Wordprocessing.ColorSchemeIndexKind>(value);
+      openXmlElement.Text1 = EnumValueConverter.CreateEnumValue<ColorSchemeIndexValues, ColorSchemeIndexKind>(value);
   }
-  
+
   /// <summary>
-  /// Background 2 Theme Color Mapping
+  ///   Background 2 Theme Color Mapping
   /// </summary>
-  public static DocumentModel.Wordprocessing.ColorSchemeIndexKind? GetBackground2(DocumentFormat.OpenXml.Wordprocessing.ColorSchemeMapping? openXmlElement)
+  public static ColorSchemeIndexKind? GetBackground2(ColorSchemeMapping? openXmlElement)
   {
-    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Wordprocessing.ColorSchemeIndexValues, DocumentModel.Wordprocessing.ColorSchemeIndexKind>(openXmlElement?.Background2?.Value);
+    return EnumValueConverter.GetValue<ColorSchemeIndexValues, ColorSchemeIndexKind>(openXmlElement?.Background2?.Value);
   }
-  
-  public static void SetBackground2(DocumentFormat.OpenXml.Wordprocessing.ColorSchemeMapping? openXmlElement, DocumentModel.Wordprocessing.ColorSchemeIndexKind? value)
+
+  public static void SetBackground2(ColorSchemeMapping? openXmlElement, ColorSchemeIndexKind? value)
   {
     if (openXmlElement != null)
-      openXmlElement.Background2 = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Wordprocessing.ColorSchemeIndexValues, DocumentModel.Wordprocessing.ColorSchemeIndexKind>(value);
+      openXmlElement.Background2 = EnumValueConverter.CreateEnumValue<ColorSchemeIndexValues, ColorSchemeIndexKind>(value);
   }
-  
+
   /// <summary>
-  /// Text 2 Theme Color Mapping
+  ///   Text 2 Theme Color Mapping
   /// </summary>
-  public static DocumentModel.Wordprocessing.ColorSchemeIndexKind? GetText2(DocumentFormat.OpenXml.Wordprocessing.ColorSchemeMapping? openXmlElement)
+  public static ColorSchemeIndexKind? GetText2(ColorSchemeMapping? openXmlElement)
   {
-    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Wordprocessing.ColorSchemeIndexValues, DocumentModel.Wordprocessing.ColorSchemeIndexKind>(openXmlElement?.Text2?.Value);
+    return EnumValueConverter.GetValue<ColorSchemeIndexValues, ColorSchemeIndexKind>(openXmlElement?.Text2?.Value);
   }
-  
-  public static void SetText2(DocumentFormat.OpenXml.Wordprocessing.ColorSchemeMapping? openXmlElement, DocumentModel.Wordprocessing.ColorSchemeIndexKind? value)
+
+  public static void SetText2(ColorSchemeMapping? openXmlElement, ColorSchemeIndexKind? value)
   {
     if (openXmlElement != null)
-      openXmlElement.Text2 = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Wordprocessing.ColorSchemeIndexValues, DocumentModel.Wordprocessing.ColorSchemeIndexKind>(value);
+      openXmlElement.Text2 = EnumValueConverter.CreateEnumValue<ColorSchemeIndexValues, ColorSchemeIndexKind>(value);
   }
-  
+
   /// <summary>
-  /// Accent 1 Theme Color Mapping
+  ///   Accent 1 Theme Color Mapping
   /// </summary>
-  public static DocumentModel.Wordprocessing.ColorSchemeIndexKind? GetAccent1(DocumentFormat.OpenXml.Wordprocessing.ColorSchemeMapping? openXmlElement)
+  public static ColorSchemeIndexKind? GetAccent1(ColorSchemeMapping? openXmlElement)
   {
-    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Wordprocessing.ColorSchemeIndexValues, DocumentModel.Wordprocessing.ColorSchemeIndexKind>(openXmlElement?.Accent1?.Value);
+    return EnumValueConverter.GetValue<ColorSchemeIndexValues, ColorSchemeIndexKind>(openXmlElement?.Accent1?.Value);
   }
-  
-  public static void SetAccent1(DocumentFormat.OpenXml.Wordprocessing.ColorSchemeMapping? openXmlElement, DocumentModel.Wordprocessing.ColorSchemeIndexKind? value)
+
+  public static void SetAccent1(ColorSchemeMapping? openXmlElement, ColorSchemeIndexKind? value)
   {
     if (openXmlElement != null)
-      openXmlElement.Accent1 = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Wordprocessing.ColorSchemeIndexValues, DocumentModel.Wordprocessing.ColorSchemeIndexKind>(value);
+      openXmlElement.Accent1 = EnumValueConverter.CreateEnumValue<ColorSchemeIndexValues, ColorSchemeIndexKind>(value);
   }
-  
+
   /// <summary>
-  /// Accent 2 Theme Color Mapping
+  ///   Accent 2 Theme Color Mapping
   /// </summary>
-  public static DocumentModel.Wordprocessing.ColorSchemeIndexKind? GetAccent2(DocumentFormat.OpenXml.Wordprocessing.ColorSchemeMapping? openXmlElement)
+  public static ColorSchemeIndexKind? GetAccent2(ColorSchemeMapping? openXmlElement)
   {
-    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Wordprocessing.ColorSchemeIndexValues, DocumentModel.Wordprocessing.ColorSchemeIndexKind>(openXmlElement?.Accent2?.Value);
+    return EnumValueConverter.GetValue<ColorSchemeIndexValues, ColorSchemeIndexKind>(openXmlElement?.Accent2?.Value);
   }
-  
-  public static void SetAccent2(DocumentFormat.OpenXml.Wordprocessing.ColorSchemeMapping? openXmlElement, DocumentModel.Wordprocessing.ColorSchemeIndexKind? value)
+
+  public static void SetAccent2(ColorSchemeMapping? openXmlElement, ColorSchemeIndexKind? value)
   {
     if (openXmlElement != null)
-      openXmlElement.Accent2 = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Wordprocessing.ColorSchemeIndexValues, DocumentModel.Wordprocessing.ColorSchemeIndexKind>(value);
+      openXmlElement.Accent2 = EnumValueConverter.CreateEnumValue<ColorSchemeIndexValues, ColorSchemeIndexKind>(value);
   }
-  
+
   /// <summary>
-  /// Accent3 Theme Color Mapping
+  ///   Accent3 Theme Color Mapping
   /// </summary>
-  public static DocumentModel.Wordprocessing.ColorSchemeIndexKind? GetAccent3(DocumentFormat.OpenXml.Wordprocessing.ColorSchemeMapping? openXmlElement)
+  public static ColorSchemeIndexKind? GetAccent3(ColorSchemeMapping? openXmlElement)
   {
-    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Wordprocessing.ColorSchemeIndexValues, DocumentModel.Wordprocessing.ColorSchemeIndexKind>(openXmlElement?.Accent3?.Value);
+    return EnumValueConverter.GetValue<ColorSchemeIndexValues, ColorSchemeIndexKind>(openXmlElement?.Accent3?.Value);
   }
-  
-  public static void SetAccent3(DocumentFormat.OpenXml.Wordprocessing.ColorSchemeMapping? openXmlElement, DocumentModel.Wordprocessing.ColorSchemeIndexKind? value)
+
+  public static void SetAccent3(ColorSchemeMapping? openXmlElement, ColorSchemeIndexKind? value)
   {
     if (openXmlElement != null)
-      openXmlElement.Accent3 = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Wordprocessing.ColorSchemeIndexValues, DocumentModel.Wordprocessing.ColorSchemeIndexKind>(value);
+      openXmlElement.Accent3 = EnumValueConverter.CreateEnumValue<ColorSchemeIndexValues, ColorSchemeIndexKind>(value);
   }
-  
+
   /// <summary>
-  /// Accent4 Theme Color Mapping
+  ///   Accent4 Theme Color Mapping
   /// </summary>
-  public static DocumentModel.Wordprocessing.ColorSchemeIndexKind? GetAccent4(DocumentFormat.OpenXml.Wordprocessing.ColorSchemeMapping? openXmlElement)
+  public static ColorSchemeIndexKind? GetAccent4(ColorSchemeMapping? openXmlElement)
   {
-    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Wordprocessing.ColorSchemeIndexValues, DocumentModel.Wordprocessing.ColorSchemeIndexKind>(openXmlElement?.Accent4?.Value);
+    return EnumValueConverter.GetValue<ColorSchemeIndexValues, ColorSchemeIndexKind>(openXmlElement?.Accent4?.Value);
   }
-  
-  public static void SetAccent4(DocumentFormat.OpenXml.Wordprocessing.ColorSchemeMapping? openXmlElement, DocumentModel.Wordprocessing.ColorSchemeIndexKind? value)
+
+  public static void SetAccent4(ColorSchemeMapping? openXmlElement, ColorSchemeIndexKind? value)
   {
     if (openXmlElement != null)
-      openXmlElement.Accent4 = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Wordprocessing.ColorSchemeIndexValues, DocumentModel.Wordprocessing.ColorSchemeIndexKind>(value);
+      openXmlElement.Accent4 = EnumValueConverter.CreateEnumValue<ColorSchemeIndexValues, ColorSchemeIndexKind>(value);
   }
-  
+
   /// <summary>
-  /// Accent5 Theme Color Mapping
+  ///   Accent5 Theme Color Mapping
   /// </summary>
-  public static DocumentModel.Wordprocessing.ColorSchemeIndexKind? GetAccent5(DocumentFormat.OpenXml.Wordprocessing.ColorSchemeMapping? openXmlElement)
+  public static ColorSchemeIndexKind? GetAccent5(ColorSchemeMapping? openXmlElement)
   {
-    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Wordprocessing.ColorSchemeIndexValues, DocumentModel.Wordprocessing.ColorSchemeIndexKind>(openXmlElement?.Accent5?.Value);
+    return EnumValueConverter.GetValue<ColorSchemeIndexValues, ColorSchemeIndexKind>(openXmlElement?.Accent5?.Value);
   }
-  
-  public static void SetAccent5(DocumentFormat.OpenXml.Wordprocessing.ColorSchemeMapping? openXmlElement, DocumentModel.Wordprocessing.ColorSchemeIndexKind? value)
+
+  public static void SetAccent5(ColorSchemeMapping? openXmlElement, ColorSchemeIndexKind? value)
   {
     if (openXmlElement != null)
-      openXmlElement.Accent5 = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Wordprocessing.ColorSchemeIndexValues, DocumentModel.Wordprocessing.ColorSchemeIndexKind>(value);
+      openXmlElement.Accent5 = EnumValueConverter.CreateEnumValue<ColorSchemeIndexValues, ColorSchemeIndexKind>(value);
   }
-  
+
   /// <summary>
-  /// Accent6 Theme Color Mapping
+  ///   Accent6 Theme Color Mapping
   /// </summary>
-  public static DocumentModel.Wordprocessing.ColorSchemeIndexKind? GetAccent6(DocumentFormat.OpenXml.Wordprocessing.ColorSchemeMapping? openXmlElement)
+  public static ColorSchemeIndexKind? GetAccent6(ColorSchemeMapping? openXmlElement)
   {
-    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Wordprocessing.ColorSchemeIndexValues, DocumentModel.Wordprocessing.ColorSchemeIndexKind>(openXmlElement?.Accent6?.Value);
+    return EnumValueConverter.GetValue<ColorSchemeIndexValues, ColorSchemeIndexKind>(openXmlElement?.Accent6?.Value);
   }
-  
-  public static void SetAccent6(DocumentFormat.OpenXml.Wordprocessing.ColorSchemeMapping? openXmlElement, DocumentModel.Wordprocessing.ColorSchemeIndexKind? value)
+
+  public static void SetAccent6(ColorSchemeMapping? openXmlElement, ColorSchemeIndexKind? value)
   {
     if (openXmlElement != null)
-      openXmlElement.Accent6 = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Wordprocessing.ColorSchemeIndexValues, DocumentModel.Wordprocessing.ColorSchemeIndexKind>(value);
+      openXmlElement.Accent6 = EnumValueConverter.CreateEnumValue<ColorSchemeIndexValues, ColorSchemeIndexKind>(value);
   }
-  
+
   /// <summary>
-  /// Hyperlink Theme Color Mapping
+  ///   Hyperlink Theme Color Mapping
   /// </summary>
-  public static DocumentModel.Wordprocessing.ColorSchemeIndexKind? GetHyperlink(DocumentFormat.OpenXml.Wordprocessing.ColorSchemeMapping? openXmlElement)
+  public static ColorSchemeIndexKind? GetHyperlink(ColorSchemeMapping? openXmlElement)
   {
-    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Wordprocessing.ColorSchemeIndexValues, DocumentModel.Wordprocessing.ColorSchemeIndexKind>(openXmlElement?.Hyperlink?.Value);
+    return EnumValueConverter.GetValue<ColorSchemeIndexValues, ColorSchemeIndexKind>(openXmlElement?.Hyperlink?.Value);
   }
-  
-  public static void SetHyperlink(DocumentFormat.OpenXml.Wordprocessing.ColorSchemeMapping? openXmlElement, DocumentModel.Wordprocessing.ColorSchemeIndexKind? value)
+
+  public static void SetHyperlink(ColorSchemeMapping? openXmlElement, ColorSchemeIndexKind? value)
   {
     if (openXmlElement != null)
-      openXmlElement.Hyperlink = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Wordprocessing.ColorSchemeIndexValues, DocumentModel.Wordprocessing.ColorSchemeIndexKind>(value);
+      openXmlElement.Hyperlink = EnumValueConverter.CreateEnumValue<ColorSchemeIndexValues, ColorSchemeIndexKind>(value);
   }
-  
+
   /// <summary>
-  /// Followed Hyperlink Theme Color Mapping
+  ///   Followed Hyperlink Theme Color Mapping
   /// </summary>
-  public static DocumentModel.Wordprocessing.ColorSchemeIndexKind? GetFollowedHyperlink(DocumentFormat.OpenXml.Wordprocessing.ColorSchemeMapping? openXmlElement)
+  public static ColorSchemeIndexKind? GetFollowedHyperlink(ColorSchemeMapping? openXmlElement)
   {
-    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Wordprocessing.ColorSchemeIndexValues, DocumentModel.Wordprocessing.ColorSchemeIndexKind>(openXmlElement?.FollowedHyperlink?.Value);
+    return EnumValueConverter.GetValue<ColorSchemeIndexValues, ColorSchemeIndexKind>(openXmlElement?.FollowedHyperlink?.Value);
   }
-  
-  public static void SetFollowedHyperlink(DocumentFormat.OpenXml.Wordprocessing.ColorSchemeMapping? openXmlElement, DocumentModel.Wordprocessing.ColorSchemeIndexKind? value)
+
+  public static void SetFollowedHyperlink(ColorSchemeMapping? openXmlElement, ColorSchemeIndexKind? value)
   {
     if (openXmlElement != null)
-      openXmlElement.FollowedHyperlink = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Wordprocessing.ColorSchemeIndexValues, DocumentModel.Wordprocessing.ColorSchemeIndexKind>(value);
+      openXmlElement.FollowedHyperlink = EnumValueConverter.CreateEnumValue<ColorSchemeIndexValues, ColorSchemeIndexKind>(value);
   }
-  
-  public static DocumentModel.Wordprocessing.ColorSchemeMapping? CreateModelElement(DocumentFormat.OpenXml.Wordprocessing.ColorSchemeMapping? openXmlElement)
+
+  public static DocumentModel.Wordprocessing.ColorSchemeMapping? CreateModelElement(ColorSchemeMapping? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -194,9 +198,9 @@ public static class ColorSchemeMappingConverter
     }
     return null;
   }
-  
+
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.ColorSchemeMapping? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Wordprocessing.ColorSchemeMapping, new()
+    where OpenXmlElementType : ColorSchemeMapping, new()
   {
     if (value != null)
     {

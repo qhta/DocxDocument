@@ -1,13 +1,12 @@
 namespace DocumentModel.Drawings.Charts;
 
 /// <summary>
-/// Defines the FilteredRadarSeries Class.
+///   Defines the FilteredRadarSeries Class.
 /// </summary>
-public partial class FilteredRadarSeries
+public class FilteredRadarSeries
 {
   /// <summary>
-  /// RadarChartSeries.
+  ///   RadarChartSeries.
   /// </summary>
-  public DocumentModel.Drawings.Charts.RadarChartSeries3? RadarChartSeries { get; set; }
-  
+  public RadarChartSeries3? RadarChartSeries { get; set; }
 }

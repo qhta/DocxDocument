@@ -1,19 +1,22 @@
+using DocumentModel.Drawings.Charts;
+using SeriesLines = DocumentFormat.OpenXml.Drawing.Charts.SeriesLines;
+
 namespace DocumentModel.OpenXml.Drawings.Charts;
 
 /// <summary>
-/// Defines the SeriesLines Class.
+///   Defines the SeriesLines Class.
 /// </summary>
 public static class SeriesLinesConverter
 {
-  public static DocumentModel.Drawings.Charts.ChartShapeProperties? GetChartShapeProperties(DocumentFormat.OpenXml.Drawing.Charts.SeriesLines? openXmlElement)
+  public static ChartShapeProperties? GetChartShapeProperties(SeriesLines? openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.ChartShapeProperties>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.Charts.ChartShapePropertiesConverter.CreateModelElement(itemElement);
+      return ChartShapePropertiesConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetChartShapeProperties(DocumentFormat.OpenXml.Drawing.Charts.SeriesLines? openXmlElement, DocumentModel.Drawings.Charts.ChartShapeProperties? value)
+
+  public static void SetChartShapeProperties(SeriesLines? openXmlElement, ChartShapeProperties? value)
   {
     if (openXmlElement != null)
     {
@@ -22,14 +25,14 @@ public static class SeriesLinesConverter
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Drawings.Charts.ChartShapePropertiesConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Charts.ChartShapeProperties>(value);
+        itemElement = ChartShapePropertiesConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Charts.ChartShapeProperties>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static DocumentModel.Drawings.Charts.SeriesLines? CreateModelElement(DocumentFormat.OpenXml.Drawing.Charts.SeriesLines? openXmlElement)
+
+  public static DocumentModel.Drawings.Charts.SeriesLines? CreateModelElement(SeriesLines? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -39,9 +42,9 @@ public static class SeriesLinesConverter
     }
     return null;
   }
-  
+
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.Charts.SeriesLines? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.Charts.SeriesLines, new()
+    where OpenXmlElementType : SeriesLines, new()
   {
     if (value != null)
     {

@@ -1,22 +1,33 @@
+using DocumentFormat.OpenXml.Wordprocessing;
+using DocumentModel.Wordprocessing;
+using CellMerge = DocumentModel.Wordprocessing.CellMerge;
+using ConditionalFormatStyle = DocumentModel.Wordprocessing.ConditionalFormatStyle;
+using PreviousTableCellProperties = DocumentFormat.OpenXml.Wordprocessing.PreviousTableCellProperties;
+using Shading = DocumentModel.Wordprocessing.Shading;
+using TableCellBorders = DocumentModel.Wordprocessing.TableCellBorders;
+using TableCellMargin = DocumentModel.Wordprocessing.TableCellMargin;
+using TableWidthType = DocumentModel.Wordprocessing.TableWidthType;
+using TrackChangeType = DocumentModel.Wordprocessing.TrackChangeType;
+
 namespace DocumentModel.OpenXml.Wordprocessing;
 
 /// <summary>
-/// Previous Table Cell Properties.
+///   Previous Table Cell Properties.
 /// </summary>
 public static class PreviousTableCellPropertiesConverter
 {
   /// <summary>
-  /// ConditionalFormatStyle.
+  ///   ConditionalFormatStyle.
   /// </summary>
-  public static DocumentModel.Wordprocessing.ConditionalFormatStyle? GetConditionalFormatStyle(DocumentFormat.OpenXml.Wordprocessing.PreviousTableCellProperties? openXmlElement)
+  public static ConditionalFormatStyle? GetConditionalFormatStyle(PreviousTableCellProperties? openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.ConditionalFormatStyle>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Wordprocessing.ConditionalFormatStyleConverter.CreateModelElement(itemElement);
+      return ConditionalFormatStyleConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetConditionalFormatStyle(DocumentFormat.OpenXml.Wordprocessing.PreviousTableCellProperties? openXmlElement, DocumentModel.Wordprocessing.ConditionalFormatStyle? value)
+
+  public static void SetConditionalFormatStyle(PreviousTableCellProperties? openXmlElement, ConditionalFormatStyle? value)
   {
     if (openXmlElement != null)
     {
@@ -25,142 +36,136 @@ public static class PreviousTableCellPropertiesConverter
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Wordprocessing.ConditionalFormatStyleConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.ConditionalFormatStyle>(value);
+        itemElement = ConditionalFormatStyleConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.ConditionalFormatStyle>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
+
   /// <summary>
-  /// TableCellWidth.
+  ///   TableCellWidth.
   /// </summary>
-  public static DocumentModel.Wordprocessing.TableWidthType? GetTableCellWidth(DocumentFormat.OpenXml.Wordprocessing.PreviousTableCellProperties? openXmlElement)
+  public static TableWidthType? GetTableCellWidth(PreviousTableCellProperties? openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.TableCellWidth>();
+    var itemElement = openXmlElement?.GetFirstChild<TableCellWidth>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Wordprocessing.TableWidthTypeConverter.CreateModelElement(itemElement);
+      return TableWidthTypeConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetTableCellWidth(DocumentFormat.OpenXml.Wordprocessing.PreviousTableCellProperties? openXmlElement, DocumentModel.Wordprocessing.TableWidthType? value)
+
+  public static void SetTableCellWidth(PreviousTableCellProperties? openXmlElement, TableWidthType? value)
   {
     if (openXmlElement != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.TableCellWidth>();
+      var itemElement = openXmlElement.GetFirstChild<TableCellWidth>();
       if (itemElement != null)
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Wordprocessing.TableWidthTypeConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.TableCellWidth>(value);
+        itemElement = TableWidthTypeConverter.CreateOpenXmlElement<TableCellWidth>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
+
   /// <summary>
-  /// GridSpan.
+  ///   GridSpan.
   /// </summary>
-  public static Int32? GetGridSpan(DocumentFormat.OpenXml.Wordprocessing.PreviousTableCellProperties? openXmlElement)
+  public static Int32? GetGridSpan(PreviousTableCellProperties? openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.GridSpan>();
+    var itemElement = openXmlElement?.GetFirstChild<GridSpan>();
     if (itemElement != null)
       return itemElement.Val?.Value;
     return null;
   }
-  
-  public static void SetGridSpan(DocumentFormat.OpenXml.Wordprocessing.PreviousTableCellProperties? openXmlElement, Int32? value)
+
+  public static void SetGridSpan(PreviousTableCellProperties? openXmlElement, Int32? value)
   {
     if (openXmlElement != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.GridSpan>();
+      var itemElement = openXmlElement.GetFirstChild<GridSpan>();
       if (itemElement != null)
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = new DocumentFormat.OpenXml.Wordprocessing.GridSpan{ Val = value };
+        itemElement = new GridSpan { Val = value };
         openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
+
   /// <summary>
-  /// HorizontalMerge.
+  ///   HorizontalMerge.
   /// </summary>
-  public static DocumentModel.Wordprocessing.MergedCellKind? GetHorizontalMerge(DocumentFormat.OpenXml.Wordprocessing.PreviousTableCellProperties? openXmlElement)
+  public static MergedCellKind? GetHorizontalMerge(PreviousTableCellProperties? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.HorizontalMerge>();
-      if (itemElement?.Val?.Value != null)
-      {
-        return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Wordprocessing.MergedCellValues, DocumentModel.Wordprocessing.MergedCellKind>(itemElement.Val.Value);
-      }
+      var itemElement = openXmlElement.GetFirstChild<HorizontalMerge>();
+      if (itemElement?.Val?.Value != null) return EnumValueConverter.GetValue<MergedCellValues, MergedCellKind>(itemElement.Val.Value);
     }
     return null;
   }
-  
-  public static void SetHorizontalMerge(DocumentFormat.OpenXml.Wordprocessing.PreviousTableCellProperties? openXmlElement, DocumentModel.Wordprocessing.MergedCellKind? value)
+
+  public static void SetHorizontalMerge(PreviousTableCellProperties? openXmlElement, MergedCellKind? value)
   {
     if (openXmlElement != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.HorizontalMerge>();
+      var itemElement = openXmlElement.GetFirstChild<HorizontalMerge>();
       if (itemElement != null)
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = EnumValueConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.HorizontalMerge, DocumentFormat.OpenXml.Wordprocessing.MergedCellValues, DocumentModel.Wordprocessing.MergedCellKind>(value);
+        itemElement = EnumValueConverter.CreateOpenXmlElement<HorizontalMerge, MergedCellValues, MergedCellKind>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
+
   /// <summary>
-  /// VerticalMerge.
+  ///   VerticalMerge.
   /// </summary>
-  public static DocumentModel.Wordprocessing.MergedCellKind? GetVerticalMerge(DocumentFormat.OpenXml.Wordprocessing.PreviousTableCellProperties? openXmlElement)
+  public static MergedCellKind? GetVerticalMerge(PreviousTableCellProperties? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.VerticalMerge>();
-      if (itemElement?.Val?.Value != null)
-      {
-        return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Wordprocessing.MergedCellValues, DocumentModel.Wordprocessing.MergedCellKind>(itemElement.Val.Value);
-      }
+      var itemElement = openXmlElement.GetFirstChild<VerticalMerge>();
+      if (itemElement?.Val?.Value != null) return EnumValueConverter.GetValue<MergedCellValues, MergedCellKind>(itemElement.Val.Value);
     }
     return null;
   }
-  
-  public static void SetVerticalMerge(DocumentFormat.OpenXml.Wordprocessing.PreviousTableCellProperties? openXmlElement, DocumentModel.Wordprocessing.MergedCellKind? value)
+
+  public static void SetVerticalMerge(PreviousTableCellProperties? openXmlElement, MergedCellKind? value)
   {
     if (openXmlElement != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.VerticalMerge>();
+      var itemElement = openXmlElement.GetFirstChild<VerticalMerge>();
       if (itemElement != null)
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = EnumValueConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.VerticalMerge, DocumentFormat.OpenXml.Wordprocessing.MergedCellValues, DocumentModel.Wordprocessing.MergedCellKind>(value);
+        itemElement = EnumValueConverter.CreateOpenXmlElement<VerticalMerge, MergedCellValues, MergedCellKind>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
+
   /// <summary>
-  /// TableCellBorders.
+  ///   TableCellBorders.
   /// </summary>
-  public static DocumentModel.Wordprocessing.TableCellBorders? GetTableCellBorders(DocumentFormat.OpenXml.Wordprocessing.PreviousTableCellProperties? openXmlElement)
+  public static TableCellBorders? GetTableCellBorders(PreviousTableCellProperties? openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.TableCellBorders>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Wordprocessing.TableCellBordersConverter.CreateModelElement(itemElement);
+      return TableCellBordersConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetTableCellBorders(DocumentFormat.OpenXml.Wordprocessing.PreviousTableCellProperties? openXmlElement, DocumentModel.Wordprocessing.TableCellBorders? value)
+
+  public static void SetTableCellBorders(PreviousTableCellProperties? openXmlElement, TableCellBorders? value)
   {
     if (openXmlElement != null)
     {
@@ -169,25 +174,25 @@ public static class PreviousTableCellPropertiesConverter
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Wordprocessing.TableCellBordersConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.TableCellBorders>(value);
+        itemElement = TableCellBordersConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.TableCellBorders>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
+
   /// <summary>
-  /// Shading.
+  ///   Shading.
   /// </summary>
-  public static DocumentModel.Wordprocessing.Shading? GetShading(DocumentFormat.OpenXml.Wordprocessing.PreviousTableCellProperties? openXmlElement)
+  public static Shading? GetShading(PreviousTableCellProperties? openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.Shading>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Wordprocessing.ShadingConverter.CreateModelElement(itemElement);
+      return ShadingConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetShading(DocumentFormat.OpenXml.Wordprocessing.PreviousTableCellProperties? openXmlElement, DocumentModel.Wordprocessing.Shading? value)
+
+  public static void SetShading(PreviousTableCellProperties? openXmlElement, Shading? value)
   {
     if (openXmlElement != null)
     {
@@ -196,57 +201,54 @@ public static class PreviousTableCellPropertiesConverter
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Wordprocessing.ShadingConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.Shading>(value);
+        itemElement = ShadingConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.Shading>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
+
   /// <summary>
-  /// NoWrap.
+  ///   NoWrap.
   /// </summary>
-  public static DocumentModel.Wordprocessing.OnOffOnlyKind? GetNoWrap(DocumentFormat.OpenXml.Wordprocessing.PreviousTableCellProperties? openXmlElement)
+  public static OnOffOnlyKind? GetNoWrap(PreviousTableCellProperties? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.NoWrap>();
-      if (itemElement?.Val?.Value != null)
-      {
-        return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Wordprocessing.OnOffOnlyValues, DocumentModel.Wordprocessing.OnOffOnlyKind>(itemElement.Val.Value);
-      }
+      var itemElement = openXmlElement.GetFirstChild<NoWrap>();
+      if (itemElement?.Val?.Value != null) return EnumValueConverter.GetValue<OnOffOnlyValues, OnOffOnlyKind>(itemElement.Val.Value);
     }
     return null;
   }
-  
-  public static void SetNoWrap(DocumentFormat.OpenXml.Wordprocessing.PreviousTableCellProperties? openXmlElement, DocumentModel.Wordprocessing.OnOffOnlyKind? value)
+
+  public static void SetNoWrap(PreviousTableCellProperties? openXmlElement, OnOffOnlyKind? value)
   {
     if (openXmlElement != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.NoWrap>();
+      var itemElement = openXmlElement.GetFirstChild<NoWrap>();
       if (itemElement != null)
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = EnumValueConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.NoWrap, DocumentFormat.OpenXml.Wordprocessing.OnOffOnlyValues, DocumentModel.Wordprocessing.OnOffOnlyKind>(value);
+        itemElement = EnumValueConverter.CreateOpenXmlElement<NoWrap, OnOffOnlyValues, OnOffOnlyKind>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
+
   /// <summary>
-  /// TableCellMargin.
+  ///   TableCellMargin.
   /// </summary>
-  public static DocumentModel.Wordprocessing.TableCellMargin? GetTableCellMargin(DocumentFormat.OpenXml.Wordprocessing.PreviousTableCellProperties? openXmlElement)
+  public static TableCellMargin? GetTableCellMargin(PreviousTableCellProperties? openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.TableCellMargin>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Wordprocessing.TableCellMarginConverter.CreateModelElement(itemElement);
+      return TableCellMarginConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetTableCellMargin(DocumentFormat.OpenXml.Wordprocessing.PreviousTableCellProperties? openXmlElement, DocumentModel.Wordprocessing.TableCellMargin? value)
+
+  public static void SetTableCellMargin(PreviousTableCellProperties? openXmlElement, TableCellMargin? value)
   {
     if (openXmlElement != null)
     {
@@ -255,198 +257,186 @@ public static class PreviousTableCellPropertiesConverter
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Wordprocessing.TableCellMarginConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.TableCellMargin>(value);
+        itemElement = TableCellMarginConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.TableCellMargin>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
+
   /// <summary>
-  /// TextDirection.
+  ///   TextDirection.
   /// </summary>
-  public static DocumentModel.Wordprocessing.TextDirectionKind? GetTextDirection(DocumentFormat.OpenXml.Wordprocessing.PreviousTableCellProperties? openXmlElement)
+  public static TextDirectionKind? GetTextDirection(PreviousTableCellProperties? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.TextDirection>();
-      if (itemElement?.Val?.Value != null)
-      {
-        return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Wordprocessing.TextDirectionValues, DocumentModel.Wordprocessing.TextDirectionKind>(itemElement.Val.Value);
-      }
+      var itemElement = openXmlElement.GetFirstChild<TextDirection>();
+      if (itemElement?.Val?.Value != null) return EnumValueConverter.GetValue<TextDirectionValues, TextDirectionKind>(itemElement.Val.Value);
     }
     return null;
   }
-  
-  public static void SetTextDirection(DocumentFormat.OpenXml.Wordprocessing.PreviousTableCellProperties? openXmlElement, DocumentModel.Wordprocessing.TextDirectionKind? value)
+
+  public static void SetTextDirection(PreviousTableCellProperties? openXmlElement, TextDirectionKind? value)
   {
     if (openXmlElement != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.TextDirection>();
+      var itemElement = openXmlElement.GetFirstChild<TextDirection>();
       if (itemElement != null)
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = EnumValueConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.TextDirection, DocumentFormat.OpenXml.Wordprocessing.TextDirectionValues, DocumentModel.Wordprocessing.TextDirectionKind>(value);
+        itemElement = EnumValueConverter.CreateOpenXmlElement<TextDirection, TextDirectionValues, TextDirectionKind>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
+
   /// <summary>
-  /// TableCellFitText.
+  ///   TableCellFitText.
   /// </summary>
-  public static DocumentModel.Wordprocessing.OnOffOnlyKind? GetTableCellFitText(DocumentFormat.OpenXml.Wordprocessing.PreviousTableCellProperties? openXmlElement)
+  public static OnOffOnlyKind? GetTableCellFitText(PreviousTableCellProperties? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.TableCellFitText>();
-      if (itemElement?.Val?.Value != null)
-      {
-        return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Wordprocessing.OnOffOnlyValues, DocumentModel.Wordprocessing.OnOffOnlyKind>(itemElement.Val.Value);
-      }
+      var itemElement = openXmlElement.GetFirstChild<TableCellFitText>();
+      if (itemElement?.Val?.Value != null) return EnumValueConverter.GetValue<OnOffOnlyValues, OnOffOnlyKind>(itemElement.Val.Value);
     }
     return null;
   }
-  
-  public static void SetTableCellFitText(DocumentFormat.OpenXml.Wordprocessing.PreviousTableCellProperties? openXmlElement, DocumentModel.Wordprocessing.OnOffOnlyKind? value)
+
+  public static void SetTableCellFitText(PreviousTableCellProperties? openXmlElement, OnOffOnlyKind? value)
   {
     if (openXmlElement != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.TableCellFitText>();
+      var itemElement = openXmlElement.GetFirstChild<TableCellFitText>();
       if (itemElement != null)
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = EnumValueConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.TableCellFitText, DocumentFormat.OpenXml.Wordprocessing.OnOffOnlyValues, DocumentModel.Wordprocessing.OnOffOnlyKind>(value);
+        itemElement = EnumValueConverter.CreateOpenXmlElement<TableCellFitText, OnOffOnlyValues, OnOffOnlyKind>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
+
   /// <summary>
-  /// TableCellVerticalAlignment.
+  ///   TableCellVerticalAlignment.
   /// </summary>
-  public static DocumentModel.Wordprocessing.TableVerticalAlignmentKind? GetTableCellVerticalAlignment(DocumentFormat.OpenXml.Wordprocessing.PreviousTableCellProperties? openXmlElement)
+  public static TableVerticalAlignmentKind? GetTableCellVerticalAlignment(PreviousTableCellProperties? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.TableCellVerticalAlignment>();
-      if (itemElement?.Val?.Value != null)
-      {
-        return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Wordprocessing.TableVerticalAlignmentValues, DocumentModel.Wordprocessing.TableVerticalAlignmentKind>(itemElement.Val.Value);
-      }
+      var itemElement = openXmlElement.GetFirstChild<TableCellVerticalAlignment>();
+      if (itemElement?.Val?.Value != null) return EnumValueConverter.GetValue<TableVerticalAlignmentValues, TableVerticalAlignmentKind>(itemElement.Val.Value);
     }
     return null;
   }
-  
-  public static void SetTableCellVerticalAlignment(DocumentFormat.OpenXml.Wordprocessing.PreviousTableCellProperties? openXmlElement, DocumentModel.Wordprocessing.TableVerticalAlignmentKind? value)
+
+  public static void SetTableCellVerticalAlignment(PreviousTableCellProperties? openXmlElement, TableVerticalAlignmentKind? value)
   {
     if (openXmlElement != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.TableCellVerticalAlignment>();
+      var itemElement = openXmlElement.GetFirstChild<TableCellVerticalAlignment>();
       if (itemElement != null)
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = EnumValueConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.TableCellVerticalAlignment, DocumentFormat.OpenXml.Wordprocessing.TableVerticalAlignmentValues, DocumentModel.Wordprocessing.TableVerticalAlignmentKind>(value);
+        itemElement = EnumValueConverter.CreateOpenXmlElement<TableCellVerticalAlignment, TableVerticalAlignmentValues, TableVerticalAlignmentKind>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
+
   /// <summary>
-  /// HideMark.
+  ///   HideMark.
   /// </summary>
-  public static DocumentModel.Wordprocessing.OnOffOnlyKind? GetHideMark(DocumentFormat.OpenXml.Wordprocessing.PreviousTableCellProperties? openXmlElement)
+  public static OnOffOnlyKind? GetHideMark(PreviousTableCellProperties? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.HideMark>();
-      if (itemElement?.Val?.Value != null)
-      {
-        return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Wordprocessing.OnOffOnlyValues, DocumentModel.Wordprocessing.OnOffOnlyKind>(itemElement.Val.Value);
-      }
+      var itemElement = openXmlElement.GetFirstChild<HideMark>();
+      if (itemElement?.Val?.Value != null) return EnumValueConverter.GetValue<OnOffOnlyValues, OnOffOnlyKind>(itemElement.Val.Value);
     }
     return null;
   }
-  
-  public static void SetHideMark(DocumentFormat.OpenXml.Wordprocessing.PreviousTableCellProperties? openXmlElement, DocumentModel.Wordprocessing.OnOffOnlyKind? value)
+
+  public static void SetHideMark(PreviousTableCellProperties? openXmlElement, OnOffOnlyKind? value)
   {
     if (openXmlElement != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.HideMark>();
+      var itemElement = openXmlElement.GetFirstChild<HideMark>();
       if (itemElement != null)
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = EnumValueConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.HideMark, DocumentFormat.OpenXml.Wordprocessing.OnOffOnlyValues, DocumentModel.Wordprocessing.OnOffOnlyKind>(value);
+        itemElement = EnumValueConverter.CreateOpenXmlElement<HideMark, OnOffOnlyValues, OnOffOnlyKind>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static DocumentModel.Wordprocessing.TrackChangeType? GetCellInsertion(DocumentFormat.OpenXml.Wordprocessing.PreviousTableCellProperties? openXmlElement)
+
+  public static TrackChangeType? GetCellInsertion(PreviousTableCellProperties? openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.CellInsertion>();
+    var itemElement = openXmlElement?.GetFirstChild<CellInsertion>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Wordprocessing.TrackChangeTypeConverter.CreateModelElement(itemElement);
+      return TrackChangeTypeConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetCellInsertion(DocumentFormat.OpenXml.Wordprocessing.PreviousTableCellProperties? openXmlElement, DocumentModel.Wordprocessing.TrackChangeType? value)
+
+  public static void SetCellInsertion(PreviousTableCellProperties? openXmlElement, TrackChangeType? value)
   {
     if (openXmlElement != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.CellInsertion>();
+      var itemElement = openXmlElement.GetFirstChild<CellInsertion>();
       if (itemElement != null)
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Wordprocessing.TrackChangeTypeConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.CellInsertion>(value);
+        itemElement = TrackChangeTypeConverter.CreateOpenXmlElement<CellInsertion>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static DocumentModel.Wordprocessing.TrackChangeType? GetCellDeletion(DocumentFormat.OpenXml.Wordprocessing.PreviousTableCellProperties? openXmlElement)
+
+  public static TrackChangeType? GetCellDeletion(PreviousTableCellProperties? openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.CellDeletion>();
+    var itemElement = openXmlElement?.GetFirstChild<CellDeletion>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Wordprocessing.TrackChangeTypeConverter.CreateModelElement(itemElement);
+      return TrackChangeTypeConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetCellDeletion(DocumentFormat.OpenXml.Wordprocessing.PreviousTableCellProperties? openXmlElement, DocumentModel.Wordprocessing.TrackChangeType? value)
+
+  public static void SetCellDeletion(PreviousTableCellProperties? openXmlElement, TrackChangeType? value)
   {
     if (openXmlElement != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.CellDeletion>();
+      var itemElement = openXmlElement.GetFirstChild<CellDeletion>();
       if (itemElement != null)
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Wordprocessing.TrackChangeTypeConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.CellDeletion>(value);
+        itemElement = TrackChangeTypeConverter.CreateOpenXmlElement<CellDeletion>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static DocumentModel.Wordprocessing.CellMerge? GetCellMerge(DocumentFormat.OpenXml.Wordprocessing.PreviousTableCellProperties? openXmlElement)
+
+  public static CellMerge? GetCellMerge(PreviousTableCellProperties? openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.CellMerge>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Wordprocessing.CellMergeConverter.CreateModelElement(itemElement);
+      return CellMergeConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetCellMerge(DocumentFormat.OpenXml.Wordprocessing.PreviousTableCellProperties? openXmlElement, DocumentModel.Wordprocessing.CellMerge? value)
+
+  public static void SetCellMerge(PreviousTableCellProperties? openXmlElement, CellMerge? value)
   {
     if (openXmlElement != null)
     {
@@ -455,14 +445,14 @@ public static class PreviousTableCellPropertiesConverter
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Wordprocessing.CellMergeConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.CellMerge>(value);
+        itemElement = CellMergeConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.CellMerge>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static DocumentModel.Wordprocessing.PreviousTableCellProperties? CreateModelElement(DocumentFormat.OpenXml.Wordprocessing.PreviousTableCellProperties? openXmlElement)
+
+  public static DocumentModel.Wordprocessing.PreviousTableCellProperties? CreateModelElement(PreviousTableCellProperties? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -487,9 +477,9 @@ public static class PreviousTableCellPropertiesConverter
     }
     return null;
   }
-  
+
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.PreviousTableCellProperties? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Wordprocessing.PreviousTableCellProperties, new()
+    where OpenXmlElementType : PreviousTableCellProperties, new()
   {
     if (value != null)
     {

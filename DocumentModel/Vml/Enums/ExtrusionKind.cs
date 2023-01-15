@@ -1,18 +1,17 @@
 namespace DocumentModel.Vml;
 
 /// <summary>
-/// Extrusion Type
+///   Extrusion Type
 /// </summary>
 public enum ExtrusionKind
 {
   /// <summary>
-  /// Perspective Projection.
+  ///   Perspective Projection.
   /// </summary>
   Perspective,
-  
+
   /// <summary>
-  /// Parallel Projection.
+  ///   Parallel Projection.
   /// </summary>
-  Parallel,
-  
+  Parallel
 }

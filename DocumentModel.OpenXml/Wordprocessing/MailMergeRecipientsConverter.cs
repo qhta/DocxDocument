@@ -1,19 +1,22 @@
+using DocumentModel.Wordprocessing;
+using MailMergeRecipients = DocumentFormat.OpenXml.Office.Word.MailMergeRecipients;
+
 namespace DocumentModel.OpenXml.Wordprocessing;
 
 /// <summary>
-/// Defines MailMergeRecipients.
+///   Defines MailMergeRecipients.
 /// </summary>
 public static class MailMergeRecipientsConverter
 {
-  public static DocumentModel.Wordprocessing.SingleDataSourceRecord? GetSingleDataSourceRecord(DocumentFormat.OpenXml.Office.Word.MailMergeRecipients? openXmlElement)
+  public static SingleDataSourceRecord? GetSingleDataSourceRecord(MailMergeRecipients? openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office.Word.SingleDataSourceRecord>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Wordprocessing.SingleDataSourceRecordConverter.CreateModelElement(itemElement);
+      return SingleDataSourceRecordConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetSingleDataSourceRecord(DocumentFormat.OpenXml.Office.Word.MailMergeRecipients? openXmlElement, DocumentModel.Wordprocessing.SingleDataSourceRecord? value)
+
+  public static void SetSingleDataSourceRecord(MailMergeRecipients? openXmlElement, SingleDataSourceRecord? value)
   {
     if (openXmlElement != null)
     {
@@ -22,14 +25,14 @@ public static class MailMergeRecipientsConverter
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Wordprocessing.SingleDataSourceRecordConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office.Word.SingleDataSourceRecord>(value);
+        itemElement = SingleDataSourceRecordConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office.Word.SingleDataSourceRecord>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static DocumentModel.Wordprocessing.MailMergeRecipients? CreateModelElement(DocumentFormat.OpenXml.Office.Word.MailMergeRecipients? openXmlElement)
+
+  public static DocumentModel.Wordprocessing.MailMergeRecipients? CreateModelElement(MailMergeRecipients? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -39,9 +42,9 @@ public static class MailMergeRecipientsConverter
     }
     return null;
   }
-  
+
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.MailMergeRecipients? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Office.Word.MailMergeRecipients, new()
+    where OpenXmlElementType : MailMergeRecipients, new()
   {
     if (value != null)
     {

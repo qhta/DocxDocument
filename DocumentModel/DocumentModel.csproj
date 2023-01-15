@@ -33,7 +33,7 @@
       <HintPath>..\..\MyLib\Qhta.Conversion\bin\Debug\net6.0\Qhta.Conversion.dll</HintPath>
     </Reference>
     <Reference Include="Qhta.TypeUtils">
-      <HintPath>..\..\MyLib\bin\Qhta.TypeUtils.dll</HintPath>
+      <HintPath>..\..\MyLib\bin\Debug\net6.0\Qhta.TypeUtils.dll</HintPath>
     </Reference>
     <Reference Include="Qhta.Xml.Serialization.Attributes">
       <HintPath>..\..\MyLib\Qhta.Xml.Serialization.Attributes\bin\Debug\net6.0\Qhta.Xml.Serialization.Attributes.dll</HintPath>

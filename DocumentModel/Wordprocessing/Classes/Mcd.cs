@@ -1,33 +1,32 @@
 namespace DocumentModel.Wordprocessing;
 
 /// <summary>
-/// Defines the Mcd Class.
+///   Defines the Mcd Class.
 /// </summary>
-public partial class Mcd
+public class Mcd
 {
   /// <summary>
-  /// macroName
+  ///   macroName
   /// </summary>
   public String? MacroName { get; set; }
-  
+
   /// <summary>
-  /// name
+  ///   name
   /// </summary>
   public String? Name { get; set; }
-  
+
   /// <summary>
-  /// menuHelp
+  ///   menuHelp
   /// </summary>
   public String? MenuHelp { get; set; }
-  
+
   /// <summary>
-  /// bEncrypt
+  ///   bEncrypt
   /// </summary>
   public Byte[]? BEncrypt { get; set; }
-  
+
   /// <summary>
-  /// cmg
+  ///   cmg
   /// </summary>
   public Byte[]? Cmg { get; set; }
-  
 }

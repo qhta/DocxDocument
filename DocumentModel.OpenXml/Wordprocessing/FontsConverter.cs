@@ -1,18 +1,21 @@
+using DocumentModel.Wordprocessing;
+using Fonts = DocumentFormat.OpenXml.Wordprocessing.Fonts;
+
 namespace DocumentModel.OpenXml.Wordprocessing;
 
 /// <summary>
-/// Font Table Root Element.
+///   Font Table Root Element.
 /// </summary>
 public static class FontsConverter
 {
-  public static System.Collections.ObjectModel.Collection<DocumentModel.Wordprocessing.Font>? GetItems(DocumentFormat.OpenXml.Wordprocessing.Fonts? openXmlElement)
+  public static Collection<Font>? GetItems(Fonts? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var collection = new System.Collections.ObjectModel.Collection<DocumentModel.Wordprocessing.Font>();
+      var collection = new Collection<Font>();
       foreach (var item in openXmlElement.Elements<DocumentFormat.OpenXml.Wordprocessing.Font>())
       {
-        var newItem = DocumentModel.OpenXml.Wordprocessing.FontConverter.CreateModelElement(item);
+        var newItem = FontConverter.CreateModelElement(item);
         if (newItem != null)
           collection.Add(newItem);
       }
@@ -20,25 +23,23 @@ public static class FontsConverter
     }
     return null;
   }
-  
-  public static void SetItems(DocumentFormat.OpenXml.Wordprocessing.Fonts? openXmlElement, System.Collections.ObjectModel.Collection<DocumentModel.Wordprocessing.Font>? value)
+
+  public static void SetItems(Fonts? openXmlElement, Collection<Font>? value)
   {
     if (openXmlElement != null)
     {
       openXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Wordprocessing.Font>();
       if (value != null)
-      {
         foreach (var item in value)
         {
-          var newItem = DocumentModel.OpenXml.Wordprocessing.FontConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.Font>(item);
+          var newItem = FontConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.Font>(item);
           if (newItem != null)
             openXmlElement.AddChild(newItem);
         }
-      }
     }
   }
-  
-  public static DocumentModel.Wordprocessing.Fonts? CreateModelElement(DocumentFormat.OpenXml.Wordprocessing.Fonts? openXmlElement)
+
+  public static DocumentModel.Wordprocessing.Fonts? CreateModelElement(Fonts? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -48,9 +49,9 @@ public static class FontsConverter
     }
     return null;
   }
-  
+
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.Fonts? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Wordprocessing.Fonts, new()
+    where OpenXmlElementType : Fonts, new()
   {
     if (value != null)
     {

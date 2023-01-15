@@ -1,43 +1,42 @@
 namespace DocumentModel.Wordprocessing;
 
 /// <summary>
-/// Defines the PageMargin Class.
+///   Defines the PageMargin Class.
 /// </summary>
-public partial class PageMargin
+public class PageMargin
 {
   /// <summary>
-  /// Top Margin Spacing
+  ///   Top Margin Spacing
   /// </summary>
   public Int32? Top { get; set; }
-  
+
   /// <summary>
-  /// Right Margin Spacing
+  ///   Right Margin Spacing
   /// </summary>
   public UInt32? Right { get; set; }
-  
+
   /// <summary>
-  /// Page Bottom Spacing
+  ///   Page Bottom Spacing
   /// </summary>
   public Int32? Bottom { get; set; }
-  
+
   /// <summary>
-  /// Left Margin Spacing
+  ///   Left Margin Spacing
   /// </summary>
   public UInt32? Left { get; set; }
-  
+
   /// <summary>
-  /// Spacing to Top of Header
+  ///   Spacing to Top of Header
   /// </summary>
   public UInt32? Header { get; set; }
-  
+
   /// <summary>
-  /// Spacing to Bottom of Footer
+  ///   Spacing to Bottom of Footer
   /// </summary>
   public UInt32? Footer { get; set; }
-  
+
   /// <summary>
-  /// Page Gutter Spacing
+  ///   Page Gutter Spacing
   /// </summary>
   public UInt32? Gutter { get; set; }
-  
 }

@@ -1,18 +1,17 @@
 namespace DocumentModel.Drawings;
 
 /// <summary>
-/// Shape Guide.
+///   Shape Guide.
 /// </summary>
-public partial class ShapeGuide
+public class ShapeGuide
 {
   /// <summary>
-  /// Shape Guide Name
+  ///   Shape Guide Name
   /// </summary>
   public String? Name { get; set; }
-  
+
   /// <summary>
-  /// Shape Guide Formula
+  ///   Shape Guide Formula
   /// </summary>
   public String? Formula { get; set; }
-  
 }

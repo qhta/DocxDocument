@@ -1,18 +1,21 @@
+using DocumentModel.Drawings.Charts;
+using ChartSpaceExtensionList = DocumentFormat.OpenXml.Drawing.Charts.ChartSpaceExtensionList;
+
 namespace DocumentModel.OpenXml.Drawings.Charts;
 
 /// <summary>
-/// Defines the ChartSpaceExtensionList Class.
+///   Defines the ChartSpaceExtensionList Class.
 /// </summary>
 public static class ChartSpaceExtensionListConverter
 {
-  public static System.Collections.ObjectModel.Collection<DocumentModel.Drawings.Charts.ChartSpaceExtension>? GetChartSpaceExtensions(DocumentFormat.OpenXml.Drawing.Charts.ChartSpaceExtensionList? openXmlElement)
+  public static Collection<ChartSpaceExtension>? GetChartSpaceExtensions(ChartSpaceExtensionList? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var collection = new System.Collections.ObjectModel.Collection<DocumentModel.Drawings.Charts.ChartSpaceExtension>();
+      var collection = new Collection<ChartSpaceExtension>();
       foreach (var item in openXmlElement.Elements<DocumentFormat.OpenXml.Drawing.Charts.ChartSpaceExtension>())
       {
-        var newItem = DocumentModel.OpenXml.Drawings.Charts.ChartSpaceExtensionConverter.CreateModelElement(item);
+        var newItem = ChartSpaceExtensionConverter.CreateModelElement(item);
         if (newItem != null)
           collection.Add(newItem);
       }
@@ -20,25 +23,23 @@ public static class ChartSpaceExtensionListConverter
     }
     return null;
   }
-  
-  public static void SetChartSpaceExtensions(DocumentFormat.OpenXml.Drawing.Charts.ChartSpaceExtensionList? openXmlElement, System.Collections.ObjectModel.Collection<DocumentModel.Drawings.Charts.ChartSpaceExtension>? value)
+
+  public static void SetChartSpaceExtensions(ChartSpaceExtensionList? openXmlElement, Collection<ChartSpaceExtension>? value)
   {
     if (openXmlElement != null)
     {
       openXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Drawing.Charts.ChartSpaceExtension>();
       if (value != null)
-      {
         foreach (var item in value)
         {
-          var newItem = DocumentModel.OpenXml.Drawings.Charts.ChartSpaceExtensionConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Charts.ChartSpaceExtension>(item);
+          var newItem = ChartSpaceExtensionConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Charts.ChartSpaceExtension>(item);
           if (newItem != null)
             openXmlElement.AddChild(newItem);
         }
-      }
     }
   }
-  
-  public static DocumentModel.Drawings.Charts.ChartSpaceExtensionList? CreateModelElement(DocumentFormat.OpenXml.Drawing.Charts.ChartSpaceExtensionList? openXmlElement)
+
+  public static DocumentModel.Drawings.Charts.ChartSpaceExtensionList? CreateModelElement(ChartSpaceExtensionList? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -48,9 +49,9 @@ public static class ChartSpaceExtensionListConverter
     }
     return null;
   }
-  
+
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.Charts.ChartSpaceExtensionList? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.Charts.ChartSpaceExtensionList, new()
+    where OpenXmlElementType : ChartSpaceExtensionList, new()
   {
     if (value != null)
     {

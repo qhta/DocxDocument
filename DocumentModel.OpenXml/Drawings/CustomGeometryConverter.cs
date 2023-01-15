@@ -1,22 +1,25 @@
+using DocumentModel.Drawings;
+using CustomGeometry = DocumentFormat.OpenXml.Drawing.CustomGeometry;
+
 namespace DocumentModel.OpenXml.Drawings;
 
 /// <summary>
-/// Custom geometry.
+///   Custom geometry.
 /// </summary>
 public static class CustomGeometryConverter
 {
   /// <summary>
-  /// Adjust Value List.
+  ///   Adjust Value List.
   /// </summary>
-  public static DocumentModel.Drawings.AdjustValueList? GetAdjustValueList(DocumentFormat.OpenXml.Drawing.CustomGeometry? openXmlElement)
+  public static AdjustValueList? GetAdjustValueList(CustomGeometry? openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.AdjustValueList>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.AdjustValueListConverter.CreateModelElement(itemElement);
+      return AdjustValueListConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetAdjustValueList(DocumentFormat.OpenXml.Drawing.CustomGeometry? openXmlElement, DocumentModel.Drawings.AdjustValueList? value)
+
+  public static void SetAdjustValueList(CustomGeometry? openXmlElement, AdjustValueList? value)
   {
     if (openXmlElement != null)
     {
@@ -25,25 +28,25 @@ public static class CustomGeometryConverter
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Drawings.AdjustValueListConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.AdjustValueList>(value);
+        itemElement = AdjustValueListConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.AdjustValueList>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
+
   /// <summary>
-  /// List of Shape Guides.
+  ///   List of Shape Guides.
   /// </summary>
-  public static DocumentModel.Drawings.ShapeGuideList? GetShapeGuideList(DocumentFormat.OpenXml.Drawing.CustomGeometry? openXmlElement)
+  public static ShapeGuideList? GetShapeGuideList(CustomGeometry? openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.ShapeGuideList>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.ShapeGuideListConverter.CreateModelElement(itemElement);
+      return ShapeGuideListConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetShapeGuideList(DocumentFormat.OpenXml.Drawing.CustomGeometry? openXmlElement, DocumentModel.Drawings.ShapeGuideList? value)
+
+  public static void SetShapeGuideList(CustomGeometry? openXmlElement, ShapeGuideList? value)
   {
     if (openXmlElement != null)
     {
@@ -52,25 +55,25 @@ public static class CustomGeometryConverter
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Drawings.ShapeGuideListConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.ShapeGuideList>(value);
+        itemElement = ShapeGuideListConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.ShapeGuideList>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
+
   /// <summary>
-  /// List of Shape Adjust Handles.
+  ///   List of Shape Adjust Handles.
   /// </summary>
-  public static DocumentModel.Drawings.AdjustHandleList? GetAdjustHandleList(DocumentFormat.OpenXml.Drawing.CustomGeometry? openXmlElement)
+  public static AdjustHandleList? GetAdjustHandleList(CustomGeometry? openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.AdjustHandleList>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.AdjustHandleListConverter.CreateModelElement(itemElement);
+      return AdjustHandleListConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetAdjustHandleList(DocumentFormat.OpenXml.Drawing.CustomGeometry? openXmlElement, DocumentModel.Drawings.AdjustHandleList? value)
+
+  public static void SetAdjustHandleList(CustomGeometry? openXmlElement, AdjustHandleList? value)
   {
     if (openXmlElement != null)
     {
@@ -79,25 +82,25 @@ public static class CustomGeometryConverter
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Drawings.AdjustHandleListConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.AdjustHandleList>(value);
+        itemElement = AdjustHandleListConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.AdjustHandleList>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
+
   /// <summary>
-  /// List of Shape Connection Sites.
+  ///   List of Shape Connection Sites.
   /// </summary>
-  public static DocumentModel.Drawings.ConnectionSiteList? GetConnectionSiteList(DocumentFormat.OpenXml.Drawing.CustomGeometry? openXmlElement)
+  public static ConnectionSiteList? GetConnectionSiteList(CustomGeometry? openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.ConnectionSiteList>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.ConnectionSiteListConverter.CreateModelElement(itemElement);
+      return ConnectionSiteListConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetConnectionSiteList(DocumentFormat.OpenXml.Drawing.CustomGeometry? openXmlElement, DocumentModel.Drawings.ConnectionSiteList? value)
+
+  public static void SetConnectionSiteList(CustomGeometry? openXmlElement, ConnectionSiteList? value)
   {
     if (openXmlElement != null)
     {
@@ -106,25 +109,25 @@ public static class CustomGeometryConverter
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Drawings.ConnectionSiteListConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.ConnectionSiteList>(value);
+        itemElement = ConnectionSiteListConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.ConnectionSiteList>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
+
   /// <summary>
-  /// Shape Text Rectangle.
+  ///   Shape Text Rectangle.
   /// </summary>
-  public static DocumentModel.Drawings.Rectangle? GetRectangle(DocumentFormat.OpenXml.Drawing.CustomGeometry? openXmlElement)
+  public static Rectangle? GetRectangle(CustomGeometry? openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.Rectangle>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.RectangleConverter.CreateModelElement(itemElement);
+      return RectangleConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetRectangle(DocumentFormat.OpenXml.Drawing.CustomGeometry? openXmlElement, DocumentModel.Drawings.Rectangle? value)
+
+  public static void SetRectangle(CustomGeometry? openXmlElement, Rectangle? value)
   {
     if (openXmlElement != null)
     {
@@ -133,25 +136,25 @@ public static class CustomGeometryConverter
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Drawings.RectangleConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Rectangle>(value);
+        itemElement = RectangleConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Rectangle>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
+
   /// <summary>
-  /// List of Shape Paths.
+  ///   List of Shape Paths.
   /// </summary>
-  public static DocumentModel.Drawings.PathList? GetPathList(DocumentFormat.OpenXml.Drawing.CustomGeometry? openXmlElement)
+  public static PathList? GetPathList(CustomGeometry? openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.PathList>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.PathListConverter.CreateModelElement(itemElement);
+      return PathListConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetPathList(DocumentFormat.OpenXml.Drawing.CustomGeometry? openXmlElement, DocumentModel.Drawings.PathList? value)
+
+  public static void SetPathList(CustomGeometry? openXmlElement, PathList? value)
   {
     if (openXmlElement != null)
     {
@@ -160,14 +163,14 @@ public static class CustomGeometryConverter
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Drawings.PathListConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.PathList>(value);
+        itemElement = PathListConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.PathList>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static DocumentModel.Drawings.CustomGeometry? CreateModelElement(DocumentFormat.OpenXml.Drawing.CustomGeometry? openXmlElement)
+
+  public static DocumentModel.Drawings.CustomGeometry? CreateModelElement(CustomGeometry? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -182,9 +185,9 @@ public static class CustomGeometryConverter
     }
     return null;
   }
-  
+
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.CustomGeometry? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.CustomGeometry, new()
+    where OpenXmlElementType : CustomGeometry, new()
   {
     if (value != null)
     {

@@ -1,158 +1,157 @@
 namespace DocumentModel.Drawings.ChartsStyle;
 
 /// <summary>
-/// Defines the TextCharacterPropertiesType Class.
+///   Defines the TextCharacterPropertiesType Class.
 /// </summary>
-public partial class TextCharacterPropertiesType
+public class TextCharacterPropertiesType
 {
   /// <summary>
-  /// Gets or sets the  value. It is only available for backwards compatibility
+  ///   Gets or sets the  value. It is only available for backwards compatibility
   /// </summary>
   public Boolean? SmtClean { get; set; }
-  
+
   /// <summary>
-  /// Gets or sets the  value. It is only available for backwards compatibility
+  ///   Gets or sets the  value. It is only available for backwards compatibility
   /// </summary>
   public UInt32? SmtId { get; set; }
-  
+
   /// <summary>
-  /// kumimoji
+  ///   kumimoji
   /// </summary>
   public Boolean? Kumimoji { get; set; }
-  
+
   /// <summary>
-  /// lang
+  ///   lang
   /// </summary>
   public String? Language { get; set; }
-  
+
   /// <summary>
-  /// altLang
+  ///   altLang
   /// </summary>
   public String? AlternativeLanguage { get; set; }
-  
+
   /// <summary>
-  /// sz
+  ///   sz
   /// </summary>
   public Int32? FontSize { get; set; }
-  
+
   /// <summary>
-  /// b
+  ///   b
   /// </summary>
   public Boolean? Bold { get; set; }
-  
+
   /// <summary>
-  /// i
+  ///   i
   /// </summary>
   public Boolean? Italic { get; set; }
-  
+
   /// <summary>
-  /// u
+  ///   u
   /// </summary>
-  public DocumentModel.Drawings.TextUnderlineKind? Underline { get; set; }
-  
+  public TextUnderlineKind? Underline { get; set; }
+
   /// <summary>
-  /// strike
+  ///   strike
   /// </summary>
-  public DocumentModel.Drawings.TextStrikeKind? Strike { get; set; }
-  
+  public TextStrikeKind? Strike { get; set; }
+
   /// <summary>
-  /// kern
+  ///   kern
   /// </summary>
   public Int32? Kerning { get; set; }
-  
+
   /// <summary>
-  /// cap
+  ///   cap
   /// </summary>
-  public DocumentModel.Drawings.TextCapsKind? Capital { get; set; }
-  
+  public TextCapsKind? Capital { get; set; }
+
   /// <summary>
-  /// spc
+  ///   spc
   /// </summary>
   public Int32? Spacing { get; set; }
-  
+
   /// <summary>
-  /// normalizeH
+  ///   normalizeH
   /// </summary>
   public Boolean? NormalizeHeight { get; set; }
-  
+
   /// <summary>
-  /// baseline
+  ///   baseline
   /// </summary>
   public Int32? Baseline { get; set; }
-  
+
   /// <summary>
-  /// noProof
+  ///   noProof
   /// </summary>
   public Boolean? NoProof { get; set; }
-  
+
   /// <summary>
-  /// dirty
+  ///   dirty
   /// </summary>
   public Boolean? Dirty { get; set; }
-  
+
   /// <summary>
-  /// err
+  ///   err
   /// </summary>
   public Boolean? SpellingError { get; set; }
-  
+
   /// <summary>
-  /// smtClean
+  ///   smtClean
   /// </summary>
   public Boolean? SmartTagClean { get; set; }
-  
+
   /// <summary>
-  /// smtId
+  ///   smtId
   /// </summary>
   public UInt32? SmartTagId { get; set; }
-  
+
   /// <summary>
-  /// bmk
+  ///   bmk
   /// </summary>
   public String? Bookmark { get; set; }
-  
+
   /// <summary>
-  /// Outline.
+  ///   Outline.
   /// </summary>
-  public DocumentModel.Drawings.Outline? Outline { get; set; }
-  
+  public Outline? Outline { get; set; }
+
   public Boolean? NoFill { get; set; }
-  
-  public DocumentModel.Drawings.SolidFill? SolidFill { get; set; }
-  
-  public DocumentModel.Drawings.GradientFill? GradientFill { get; set; }
-  
-  public DocumentModel.Drawings.BlipFill? BlipFill { get; set; }
-  
-  public DocumentModel.Drawings.PatternFill? PatternFill { get; set; }
-  
+
+  public SolidFill? SolidFill { get; set; }
+
+  public GradientFill? GradientFill { get; set; }
+
+  public BlipFill? BlipFill { get; set; }
+
+  public PatternFill? PatternFill { get; set; }
+
   public Boolean? GroupFill { get; set; }
-  
-  public DocumentModel.Drawings.EffectList? EffectList { get; set; }
-  
-  public DocumentModel.Drawings.EffectDag? EffectDag { get; set; }
-  
-  public DocumentModel.Drawings.Highlight? Highlight { get; set; }
-  
+
+  public EffectList? EffectList { get; set; }
+
+  public EffectDag? EffectDag { get; set; }
+
+  public Highlight? Highlight { get; set; }
+
   public Boolean? UnderlineFollowsText { get; set; }
-  
+
   public Boolean? UnderlineFillText { get; set; }
-  
-  public DocumentModel.Drawings.UnderlineFill? UnderlineFill { get; set; }
-  
-  public DocumentModel.Drawings.TextFontType? LatinFont { get; set; }
-  
-  public DocumentModel.Drawings.TextFontType? EastAsianFont { get; set; }
-  
-  public DocumentModel.Drawings.TextFontType? ComplexScriptFont { get; set; }
-  
-  public DocumentModel.Drawings.TextFontType? SymbolFont { get; set; }
-  
-  public DocumentModel.Drawings.HyperlinkOnClick? HyperlinkOnClick { get; set; }
-  
-  public DocumentModel.Drawings.HyperlinkOnMouseOver? HyperlinkOnMouseOver { get; set; }
-  
+
+  public UnderlineFill? UnderlineFill { get; set; }
+
+  public TextFontType? LatinFont { get; set; }
+
+  public TextFontType? EastAsianFont { get; set; }
+
+  public TextFontType? ComplexScriptFont { get; set; }
+
+  public TextFontType? SymbolFont { get; set; }
+
+  public HyperlinkOnClick? HyperlinkOnClick { get; set; }
+
+  public HyperlinkOnMouseOver? HyperlinkOnMouseOver { get; set; }
+
   public Boolean? RightToLeft { get; set; }
-  
-  public DocumentModel.Drawings.ExtensionList? ExtensionList { get; set; }
-  
+
+  public ExtensionList? ExtensionList { get; set; }
 }

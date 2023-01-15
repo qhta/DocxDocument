@@ -1,38 +1,42 @@
+using DocumentModel.Drawings.Charts;
+using FilteredSurfaceSeries = DocumentFormat.OpenXml.Office2013.Drawing.Chart.FilteredSurfaceSeries;
+using SurfaceChartSeries = DocumentFormat.OpenXml.Office2013.Drawing.Chart.SurfaceChartSeries;
+
 namespace DocumentModel.OpenXml.Drawings.Charts;
 
 /// <summary>
-/// Defines the FilteredSurfaceSeries Class.
+///   Defines the FilteredSurfaceSeries Class.
 /// </summary>
 public static class FilteredSurfaceSeriesConverter
 {
   /// <summary>
-  /// SurfaceChartSeries.
+  ///   SurfaceChartSeries.
   /// </summary>
-  public static DocumentModel.Drawings.Charts.SurfaceChartSeries3? GetSurfaceChartSeries(DocumentFormat.OpenXml.Office2013.Drawing.Chart.FilteredSurfaceSeries? openXmlElement)
+  public static SurfaceChartSeries3? GetSurfaceChartSeries(FilteredSurfaceSeries? openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office2013.Drawing.Chart.SurfaceChartSeries>();
+    var itemElement = openXmlElement?.GetFirstChild<SurfaceChartSeries>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.Charts.SurfaceChartSeries3Converter.CreateModelElement(itemElement);
+      return SurfaceChartSeries3Converter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetSurfaceChartSeries(DocumentFormat.OpenXml.Office2013.Drawing.Chart.FilteredSurfaceSeries? openXmlElement, DocumentModel.Drawings.Charts.SurfaceChartSeries3? value)
+
+  public static void SetSurfaceChartSeries(FilteredSurfaceSeries? openXmlElement, SurfaceChartSeries3? value)
   {
     if (openXmlElement != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2013.Drawing.Chart.SurfaceChartSeries>();
+      var itemElement = openXmlElement.GetFirstChild<SurfaceChartSeries>();
       if (itemElement != null)
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Drawings.Charts.SurfaceChartSeries3Converter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2013.Drawing.Chart.SurfaceChartSeries>(value);
+        itemElement = SurfaceChartSeries3Converter.CreateOpenXmlElement<SurfaceChartSeries>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static DocumentModel.Drawings.Charts.FilteredSurfaceSeries? CreateModelElement(DocumentFormat.OpenXml.Office2013.Drawing.Chart.FilteredSurfaceSeries? openXmlElement)
+
+  public static DocumentModel.Drawings.Charts.FilteredSurfaceSeries? CreateModelElement(FilteredSurfaceSeries? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -42,9 +46,9 @@ public static class FilteredSurfaceSeriesConverter
     }
     return null;
   }
-  
+
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.Charts.FilteredSurfaceSeries? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Office2013.Drawing.Chart.FilteredSurfaceSeries, new()
+    where OpenXmlElementType : FilteredSurfaceSeries, new()
   {
     if (value != null)
     {

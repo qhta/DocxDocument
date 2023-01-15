@@ -1,18 +1,17 @@
 namespace DocumentModel;
 
 /// <summary>
-/// Defines the SpaceProcessingModeValues enumeration.
+///   Defines the SpaceProcessingModeValues enumeration.
 /// </summary>
 public enum SpaceProcessingMode
 {
   /// <summary>
-  /// default.
+  ///   default.
   /// </summary>
   Default,
-  
+
   /// <summary>
-  /// preserve.
+  ///   preserve.
   /// </summary>
-  Preserve,
-  
+  Preserve
 }

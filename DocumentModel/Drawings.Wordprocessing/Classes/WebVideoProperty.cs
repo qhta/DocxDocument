@@ -1,23 +1,22 @@
 namespace DocumentModel.Drawings.Wordprocessing;
 
 /// <summary>
-/// Defines the WebVideoProperty Class.
+///   Defines the WebVideoProperty Class.
 /// </summary>
-public partial class WebVideoProperty
+public class WebVideoProperty
 {
   /// <summary>
-  /// embeddedHtml, this property is only available in Office 2013 and later.
+  ///   embeddedHtml, this property is only available in Office 2013 and later.
   /// </summary>
   public String? EmbeddedHtml { get; set; }
-  
+
   /// <summary>
-  /// h, this property is only available in Office 2013 and later.
+  ///   h, this property is only available in Office 2013 and later.
   /// </summary>
   public UInt32? Height { get; set; }
-  
+
   /// <summary>
-  /// w, this property is only available in Office 2013 and later.
+  ///   w, this property is only available in Office 2013 and later.
   /// </summary>
   public UInt32? Width { get; set; }
-  
 }

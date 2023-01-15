@@ -1,190 +1,194 @@
+using DocumentFormat.OpenXml.Drawing;
+using DocumentFormat.OpenXml.Drawing.Charts;
+using DocumentModel.Drawings;
+
 namespace DocumentModel.OpenXml.Drawings.Charts;
 
 /// <summary>
-/// Defines the ColorMapOverride Class.
+///   Defines the ColorMapOverride Class.
 /// </summary>
 public static class ColorMapOverrideConverter
 {
   /// <summary>
-  /// Background 1
+  ///   Background 1
   /// </summary>
-  public static DocumentModel.Drawings.ColorSchemeIndexKind? GetBackground1(DocumentFormat.OpenXml.Drawing.Charts.ColorMapOverride? openXmlElement)
+  public static ColorSchemeIndexKind? GetBackground1(ColorMapOverride? openXmlElement)
   {
-    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Drawing.ColorSchemeIndexValues, DocumentModel.Drawings.ColorSchemeIndexKind>(openXmlElement?.Background1?.Value);
+    return EnumValueConverter.GetValue<ColorSchemeIndexValues, ColorSchemeIndexKind>(openXmlElement?.Background1?.Value);
   }
-  
-  public static void SetBackground1(DocumentFormat.OpenXml.Drawing.Charts.ColorMapOverride? openXmlElement, DocumentModel.Drawings.ColorSchemeIndexKind? value)
+
+  public static void SetBackground1(ColorMapOverride? openXmlElement, ColorSchemeIndexKind? value)
   {
     if (openXmlElement != null)
-      openXmlElement.Background1 = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Drawing.ColorSchemeIndexValues, DocumentModel.Drawings.ColorSchemeIndexKind>(value);
+      openXmlElement.Background1 = EnumValueConverter.CreateEnumValue<ColorSchemeIndexValues, ColorSchemeIndexKind>(value);
   }
-  
+
   /// <summary>
-  /// Text 1
+  ///   Text 1
   /// </summary>
-  public static DocumentModel.Drawings.ColorSchemeIndexKind? GetText1(DocumentFormat.OpenXml.Drawing.Charts.ColorMapOverride? openXmlElement)
+  public static ColorSchemeIndexKind? GetText1(ColorMapOverride? openXmlElement)
   {
-    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Drawing.ColorSchemeIndexValues, DocumentModel.Drawings.ColorSchemeIndexKind>(openXmlElement?.Text1?.Value);
+    return EnumValueConverter.GetValue<ColorSchemeIndexValues, ColorSchemeIndexKind>(openXmlElement?.Text1?.Value);
   }
-  
-  public static void SetText1(DocumentFormat.OpenXml.Drawing.Charts.ColorMapOverride? openXmlElement, DocumentModel.Drawings.ColorSchemeIndexKind? value)
+
+  public static void SetText1(ColorMapOverride? openXmlElement, ColorSchemeIndexKind? value)
   {
     if (openXmlElement != null)
-      openXmlElement.Text1 = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Drawing.ColorSchemeIndexValues, DocumentModel.Drawings.ColorSchemeIndexKind>(value);
+      openXmlElement.Text1 = EnumValueConverter.CreateEnumValue<ColorSchemeIndexValues, ColorSchemeIndexKind>(value);
   }
-  
+
   /// <summary>
-  /// Background 2
+  ///   Background 2
   /// </summary>
-  public static DocumentModel.Drawings.ColorSchemeIndexKind? GetBackground2(DocumentFormat.OpenXml.Drawing.Charts.ColorMapOverride? openXmlElement)
+  public static ColorSchemeIndexKind? GetBackground2(ColorMapOverride? openXmlElement)
   {
-    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Drawing.ColorSchemeIndexValues, DocumentModel.Drawings.ColorSchemeIndexKind>(openXmlElement?.Background2?.Value);
+    return EnumValueConverter.GetValue<ColorSchemeIndexValues, ColorSchemeIndexKind>(openXmlElement?.Background2?.Value);
   }
-  
-  public static void SetBackground2(DocumentFormat.OpenXml.Drawing.Charts.ColorMapOverride? openXmlElement, DocumentModel.Drawings.ColorSchemeIndexKind? value)
+
+  public static void SetBackground2(ColorMapOverride? openXmlElement, ColorSchemeIndexKind? value)
   {
     if (openXmlElement != null)
-      openXmlElement.Background2 = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Drawing.ColorSchemeIndexValues, DocumentModel.Drawings.ColorSchemeIndexKind>(value);
+      openXmlElement.Background2 = EnumValueConverter.CreateEnumValue<ColorSchemeIndexValues, ColorSchemeIndexKind>(value);
   }
-  
+
   /// <summary>
-  /// Text 2
+  ///   Text 2
   /// </summary>
-  public static DocumentModel.Drawings.ColorSchemeIndexKind? GetText2(DocumentFormat.OpenXml.Drawing.Charts.ColorMapOverride? openXmlElement)
+  public static ColorSchemeIndexKind? GetText2(ColorMapOverride? openXmlElement)
   {
-    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Drawing.ColorSchemeIndexValues, DocumentModel.Drawings.ColorSchemeIndexKind>(openXmlElement?.Text2?.Value);
+    return EnumValueConverter.GetValue<ColorSchemeIndexValues, ColorSchemeIndexKind>(openXmlElement?.Text2?.Value);
   }
-  
-  public static void SetText2(DocumentFormat.OpenXml.Drawing.Charts.ColorMapOverride? openXmlElement, DocumentModel.Drawings.ColorSchemeIndexKind? value)
+
+  public static void SetText2(ColorMapOverride? openXmlElement, ColorSchemeIndexKind? value)
   {
     if (openXmlElement != null)
-      openXmlElement.Text2 = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Drawing.ColorSchemeIndexValues, DocumentModel.Drawings.ColorSchemeIndexKind>(value);
+      openXmlElement.Text2 = EnumValueConverter.CreateEnumValue<ColorSchemeIndexValues, ColorSchemeIndexKind>(value);
   }
-  
+
   /// <summary>
-  /// Accent 1
+  ///   Accent 1
   /// </summary>
-  public static DocumentModel.Drawings.ColorSchemeIndexKind? GetAccent1(DocumentFormat.OpenXml.Drawing.Charts.ColorMapOverride? openXmlElement)
+  public static ColorSchemeIndexKind? GetAccent1(ColorMapOverride? openXmlElement)
   {
-    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Drawing.ColorSchemeIndexValues, DocumentModel.Drawings.ColorSchemeIndexKind>(openXmlElement?.Accent1?.Value);
+    return EnumValueConverter.GetValue<ColorSchemeIndexValues, ColorSchemeIndexKind>(openXmlElement?.Accent1?.Value);
   }
-  
-  public static void SetAccent1(DocumentFormat.OpenXml.Drawing.Charts.ColorMapOverride? openXmlElement, DocumentModel.Drawings.ColorSchemeIndexKind? value)
+
+  public static void SetAccent1(ColorMapOverride? openXmlElement, ColorSchemeIndexKind? value)
   {
     if (openXmlElement != null)
-      openXmlElement.Accent1 = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Drawing.ColorSchemeIndexValues, DocumentModel.Drawings.ColorSchemeIndexKind>(value);
+      openXmlElement.Accent1 = EnumValueConverter.CreateEnumValue<ColorSchemeIndexValues, ColorSchemeIndexKind>(value);
   }
-  
+
   /// <summary>
-  /// Accent 2
+  ///   Accent 2
   /// </summary>
-  public static DocumentModel.Drawings.ColorSchemeIndexKind? GetAccent2(DocumentFormat.OpenXml.Drawing.Charts.ColorMapOverride? openXmlElement)
+  public static ColorSchemeIndexKind? GetAccent2(ColorMapOverride? openXmlElement)
   {
-    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Drawing.ColorSchemeIndexValues, DocumentModel.Drawings.ColorSchemeIndexKind>(openXmlElement?.Accent2?.Value);
+    return EnumValueConverter.GetValue<ColorSchemeIndexValues, ColorSchemeIndexKind>(openXmlElement?.Accent2?.Value);
   }
-  
-  public static void SetAccent2(DocumentFormat.OpenXml.Drawing.Charts.ColorMapOverride? openXmlElement, DocumentModel.Drawings.ColorSchemeIndexKind? value)
+
+  public static void SetAccent2(ColorMapOverride? openXmlElement, ColorSchemeIndexKind? value)
   {
     if (openXmlElement != null)
-      openXmlElement.Accent2 = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Drawing.ColorSchemeIndexValues, DocumentModel.Drawings.ColorSchemeIndexKind>(value);
+      openXmlElement.Accent2 = EnumValueConverter.CreateEnumValue<ColorSchemeIndexValues, ColorSchemeIndexKind>(value);
   }
-  
+
   /// <summary>
-  /// Accent 3
+  ///   Accent 3
   /// </summary>
-  public static DocumentModel.Drawings.ColorSchemeIndexKind? GetAccent3(DocumentFormat.OpenXml.Drawing.Charts.ColorMapOverride? openXmlElement)
+  public static ColorSchemeIndexKind? GetAccent3(ColorMapOverride? openXmlElement)
   {
-    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Drawing.ColorSchemeIndexValues, DocumentModel.Drawings.ColorSchemeIndexKind>(openXmlElement?.Accent3?.Value);
+    return EnumValueConverter.GetValue<ColorSchemeIndexValues, ColorSchemeIndexKind>(openXmlElement?.Accent3?.Value);
   }
-  
-  public static void SetAccent3(DocumentFormat.OpenXml.Drawing.Charts.ColorMapOverride? openXmlElement, DocumentModel.Drawings.ColorSchemeIndexKind? value)
+
+  public static void SetAccent3(ColorMapOverride? openXmlElement, ColorSchemeIndexKind? value)
   {
     if (openXmlElement != null)
-      openXmlElement.Accent3 = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Drawing.ColorSchemeIndexValues, DocumentModel.Drawings.ColorSchemeIndexKind>(value);
+      openXmlElement.Accent3 = EnumValueConverter.CreateEnumValue<ColorSchemeIndexValues, ColorSchemeIndexKind>(value);
   }
-  
+
   /// <summary>
-  /// Accent 4
+  ///   Accent 4
   /// </summary>
-  public static DocumentModel.Drawings.ColorSchemeIndexKind? GetAccent4(DocumentFormat.OpenXml.Drawing.Charts.ColorMapOverride? openXmlElement)
+  public static ColorSchemeIndexKind? GetAccent4(ColorMapOverride? openXmlElement)
   {
-    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Drawing.ColorSchemeIndexValues, DocumentModel.Drawings.ColorSchemeIndexKind>(openXmlElement?.Accent4?.Value);
+    return EnumValueConverter.GetValue<ColorSchemeIndexValues, ColorSchemeIndexKind>(openXmlElement?.Accent4?.Value);
   }
-  
-  public static void SetAccent4(DocumentFormat.OpenXml.Drawing.Charts.ColorMapOverride? openXmlElement, DocumentModel.Drawings.ColorSchemeIndexKind? value)
+
+  public static void SetAccent4(ColorMapOverride? openXmlElement, ColorSchemeIndexKind? value)
   {
     if (openXmlElement != null)
-      openXmlElement.Accent4 = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Drawing.ColorSchemeIndexValues, DocumentModel.Drawings.ColorSchemeIndexKind>(value);
+      openXmlElement.Accent4 = EnumValueConverter.CreateEnumValue<ColorSchemeIndexValues, ColorSchemeIndexKind>(value);
   }
-  
+
   /// <summary>
-  /// Accent 5
+  ///   Accent 5
   /// </summary>
-  public static DocumentModel.Drawings.ColorSchemeIndexKind? GetAccent5(DocumentFormat.OpenXml.Drawing.Charts.ColorMapOverride? openXmlElement)
+  public static ColorSchemeIndexKind? GetAccent5(ColorMapOverride? openXmlElement)
   {
-    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Drawing.ColorSchemeIndexValues, DocumentModel.Drawings.ColorSchemeIndexKind>(openXmlElement?.Accent5?.Value);
+    return EnumValueConverter.GetValue<ColorSchemeIndexValues, ColorSchemeIndexKind>(openXmlElement?.Accent5?.Value);
   }
-  
-  public static void SetAccent5(DocumentFormat.OpenXml.Drawing.Charts.ColorMapOverride? openXmlElement, DocumentModel.Drawings.ColorSchemeIndexKind? value)
+
+  public static void SetAccent5(ColorMapOverride? openXmlElement, ColorSchemeIndexKind? value)
   {
     if (openXmlElement != null)
-      openXmlElement.Accent5 = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Drawing.ColorSchemeIndexValues, DocumentModel.Drawings.ColorSchemeIndexKind>(value);
+      openXmlElement.Accent5 = EnumValueConverter.CreateEnumValue<ColorSchemeIndexValues, ColorSchemeIndexKind>(value);
   }
-  
+
   /// <summary>
-  /// Accent 6
+  ///   Accent 6
   /// </summary>
-  public static DocumentModel.Drawings.ColorSchemeIndexKind? GetAccent6(DocumentFormat.OpenXml.Drawing.Charts.ColorMapOverride? openXmlElement)
+  public static ColorSchemeIndexKind? GetAccent6(ColorMapOverride? openXmlElement)
   {
-    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Drawing.ColorSchemeIndexValues, DocumentModel.Drawings.ColorSchemeIndexKind>(openXmlElement?.Accent6?.Value);
+    return EnumValueConverter.GetValue<ColorSchemeIndexValues, ColorSchemeIndexKind>(openXmlElement?.Accent6?.Value);
   }
-  
-  public static void SetAccent6(DocumentFormat.OpenXml.Drawing.Charts.ColorMapOverride? openXmlElement, DocumentModel.Drawings.ColorSchemeIndexKind? value)
+
+  public static void SetAccent6(ColorMapOverride? openXmlElement, ColorSchemeIndexKind? value)
   {
     if (openXmlElement != null)
-      openXmlElement.Accent6 = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Drawing.ColorSchemeIndexValues, DocumentModel.Drawings.ColorSchemeIndexKind>(value);
+      openXmlElement.Accent6 = EnumValueConverter.CreateEnumValue<ColorSchemeIndexValues, ColorSchemeIndexKind>(value);
   }
-  
+
   /// <summary>
-  /// Hyperlink
+  ///   Hyperlink
   /// </summary>
-  public static DocumentModel.Drawings.ColorSchemeIndexKind? GetHyperlink(DocumentFormat.OpenXml.Drawing.Charts.ColorMapOverride? openXmlElement)
+  public static ColorSchemeIndexKind? GetHyperlink(ColorMapOverride? openXmlElement)
   {
-    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Drawing.ColorSchemeIndexValues, DocumentModel.Drawings.ColorSchemeIndexKind>(openXmlElement?.Hyperlink?.Value);
+    return EnumValueConverter.GetValue<ColorSchemeIndexValues, ColorSchemeIndexKind>(openXmlElement?.Hyperlink?.Value);
   }
-  
-  public static void SetHyperlink(DocumentFormat.OpenXml.Drawing.Charts.ColorMapOverride? openXmlElement, DocumentModel.Drawings.ColorSchemeIndexKind? value)
+
+  public static void SetHyperlink(ColorMapOverride? openXmlElement, ColorSchemeIndexKind? value)
   {
     if (openXmlElement != null)
-      openXmlElement.Hyperlink = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Drawing.ColorSchemeIndexValues, DocumentModel.Drawings.ColorSchemeIndexKind>(value);
+      openXmlElement.Hyperlink = EnumValueConverter.CreateEnumValue<ColorSchemeIndexValues, ColorSchemeIndexKind>(value);
   }
-  
+
   /// <summary>
-  /// Followed Hyperlink
+  ///   Followed Hyperlink
   /// </summary>
-  public static DocumentModel.Drawings.ColorSchemeIndexKind? GetFollowedHyperlink(DocumentFormat.OpenXml.Drawing.Charts.ColorMapOverride? openXmlElement)
+  public static ColorSchemeIndexKind? GetFollowedHyperlink(ColorMapOverride? openXmlElement)
   {
-    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Drawing.ColorSchemeIndexValues, DocumentModel.Drawings.ColorSchemeIndexKind>(openXmlElement?.FollowedHyperlink?.Value);
+    return EnumValueConverter.GetValue<ColorSchemeIndexValues, ColorSchemeIndexKind>(openXmlElement?.FollowedHyperlink?.Value);
   }
-  
-  public static void SetFollowedHyperlink(DocumentFormat.OpenXml.Drawing.Charts.ColorMapOverride? openXmlElement, DocumentModel.Drawings.ColorSchemeIndexKind? value)
+
+  public static void SetFollowedHyperlink(ColorMapOverride? openXmlElement, ColorSchemeIndexKind? value)
   {
     if (openXmlElement != null)
-      openXmlElement.FollowedHyperlink = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Drawing.ColorSchemeIndexValues, DocumentModel.Drawings.ColorSchemeIndexKind>(value);
+      openXmlElement.FollowedHyperlink = EnumValueConverter.CreateEnumValue<ColorSchemeIndexValues, ColorSchemeIndexKind>(value);
   }
-  
+
   /// <summary>
-  /// ExtensionList.
+  ///   ExtensionList.
   /// </summary>
-  public static DocumentModel.Drawings.ExtensionList? GetExtensionList(DocumentFormat.OpenXml.Drawing.Charts.ColorMapOverride? openXmlElement)
+  public static DocumentModel.Drawings.ExtensionList? GetExtensionList(ColorMapOverride? openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.ExtensionList>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.ExtensionListConverter.CreateModelElement(itemElement);
+      return Drawings.ExtensionListConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetExtensionList(DocumentFormat.OpenXml.Drawing.Charts.ColorMapOverride? openXmlElement, DocumentModel.Drawings.ExtensionList? value)
+
+  public static void SetExtensionList(ColorMapOverride? openXmlElement, DocumentModel.Drawings.ExtensionList? value)
   {
     if (openXmlElement != null)
     {
@@ -193,14 +197,14 @@ public static class ColorMapOverrideConverter
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Drawings.ExtensionListConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.ExtensionList>(value);
+        itemElement = Drawings.ExtensionListConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.ExtensionList>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static DocumentModel.Drawings.Charts.ColorMapOverride? CreateModelElement(DocumentFormat.OpenXml.Drawing.Charts.ColorMapOverride? openXmlElement)
+
+  public static DocumentModel.Drawings.Charts.ColorMapOverride? CreateModelElement(ColorMapOverride? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -222,9 +226,9 @@ public static class ColorMapOverrideConverter
     }
     return null;
   }
-  
+
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.Charts.ColorMapOverride? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.Charts.ColorMapOverride, new()
+    where OpenXmlElementType : ColorMapOverride, new()
   {
     if (value != null)
     {

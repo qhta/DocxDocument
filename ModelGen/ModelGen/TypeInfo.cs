@@ -65,14 +65,14 @@ public class TypeInfo : ModelElement
 
   public bool IsSimple()
   {
-    return Type.IsSimple() || Type == typeof(Byte[]) || Type == typeof(HexWord) || Type == typeof(Uri);
+    return Type.IsSimple() || Type == typeof(Byte[]) || Type == typeof(NumId) || Type == typeof(Uri);
   }
 
-  public bool IsEnum([NotNullWhen(true)] out TypeInfo? enumType)
+  public bool IsEnumValue([NotNullWhen(true)] out TypeInfo? enumType)
   {
     if (Type.Name.StartsWith("EnumValue`"))
     {
-      enumType = TypeManager.GetGenericArgTypes(this).FirstOrDefault();
+      enumType = TypeManager.GetGenericTypeArguments(this).FirstOrDefault();
       return (enumType != null);
     }
     enumType = null;
@@ -155,7 +155,7 @@ public class TypeInfo : ModelElement
     {
 
       var genericParams = this.GetGenericParamTypes();
-      var genericArgs = this.GetGenericArgTypes();
+      var genericArgs = this.GetGenericTypeArguments();
       var argNames = new List<FullTypeName>();
       if (genericParams.Any())
         foreach (var genericParam in genericParams.ToList())

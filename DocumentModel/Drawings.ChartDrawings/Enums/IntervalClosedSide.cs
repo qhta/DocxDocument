@@ -1,18 +1,17 @@
 namespace DocumentModel.Drawings.ChartDrawings;
 
 /// <summary>
-/// Defines the IntervalClosedSide enumeration.
+///   Defines the IntervalClosedSide enumeration.
 /// </summary>
 public enum IntervalClosedSide
 {
   /// <summary>
-  /// l.
+  ///   l.
   /// </summary>
   L,
-  
+
   /// <summary>
-  /// r.
+  ///   r.
   /// </summary>
-  R,
-  
+  R
 }

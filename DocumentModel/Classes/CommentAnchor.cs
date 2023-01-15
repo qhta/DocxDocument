@@ -1,13 +1,12 @@
 namespace DocumentModel;
 
 /// <summary>
-/// Defines the CommentAnchor Class.
+///   Defines the CommentAnchor Class.
 /// </summary>
-public partial class CommentAnchor
+public class CommentAnchor
 {
   /// <summary>
-  /// id, this property is only available in Office 2021 and later.
+  ///   id, this property is only available in Office 2021 and later.
   /// </summary>
   public String? Id { get; set; }
-  
 }

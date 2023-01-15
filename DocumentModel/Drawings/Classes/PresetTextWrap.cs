@@ -1,18 +1,17 @@
 namespace DocumentModel.Drawings;
 
 /// <summary>
-/// Preset Text Warp.
+///   Preset Text Warp.
 /// </summary>
-public partial class PresetTextWrap
+public class PresetTextWrap
 {
   /// <summary>
-  /// Preset Warp Shape
+  ///   Preset Warp Shape
   /// </summary>
-  public DocumentModel.Drawings.TextShapeKind? Preset { get; set; }
-  
+  public TextShapeKind? Preset { get; set; }
+
   /// <summary>
-  /// Adjust Value List.
+  ///   Adjust Value List.
   /// </summary>
-  public DocumentModel.Drawings.AdjustValueList? AdjustValueList { get; set; }
-  
+  public AdjustValueList? AdjustValueList { get; set; }
 }

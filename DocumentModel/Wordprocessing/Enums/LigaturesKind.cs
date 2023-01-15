@@ -1,88 +1,87 @@
 namespace DocumentModel.Wordprocessing;
 
 /// <summary>
-/// Defines the LigaturesValues enumeration.
+///   Defines the LigaturesValues enumeration.
 /// </summary>
 public enum LigaturesKind
 {
   /// <summary>
-  /// none.
+  ///   none.
   /// </summary>
   None,
-  
+
   /// <summary>
-  /// standard.
+  ///   standard.
   /// </summary>
   Standard,
-  
+
   /// <summary>
-  /// contextual.
+  ///   contextual.
   /// </summary>
   Contextual,
-  
+
   /// <summary>
-  /// historical.
+  ///   historical.
   /// </summary>
   Historical,
-  
+
   /// <summary>
-  /// discretional.
+  ///   discretional.
   /// </summary>
   Discretional,
-  
+
   /// <summary>
-  /// standardContextual.
+  ///   standardContextual.
   /// </summary>
   StandardContextual,
-  
+
   /// <summary>
-  /// standardHistorical.
+  ///   standardHistorical.
   /// </summary>
   StandardHistorical,
-  
+
   /// <summary>
-  /// contextualHistorical.
+  ///   contextualHistorical.
   /// </summary>
   ContextualHistorical,
-  
+
   /// <summary>
-  /// standardDiscretional.
+  ///   standardDiscretional.
   /// </summary>
   StandardDiscretional,
-  
+
   /// <summary>
-  /// contextualDiscretional.
+  ///   contextualDiscretional.
   /// </summary>
   ContextualDiscretional,
-  
+
   /// <summary>
-  /// historicalDiscretional.
+  ///   historicalDiscretional.
   /// </summary>
   HistoricalDiscretional,
-  
+
   /// <summary>
-  /// standardContextualHistorical.
+  ///   standardContextualHistorical.
   /// </summary>
   StandardContextualHistorical,
-  
+
   /// <summary>
-  /// standardContextualDiscretional.
+  ///   standardContextualDiscretional.
   /// </summary>
   StandardContextualDiscretional,
-  
+
   /// <summary>
-  /// standardHistoricalDiscretional.
+  ///   standardHistoricalDiscretional.
   /// </summary>
   StandardHistoricalDiscretional,
-  
+
   /// <summary>
-  /// contextualHistoricalDiscretional.
+  ///   contextualHistoricalDiscretional.
   /// </summary>
   ContextualHistoricalDiscretional,
-  
+
   /// <summary>
-  /// all.
+  ///   all.
   /// </summary>
-  All,
-  
+  All
 }

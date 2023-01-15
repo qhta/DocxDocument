@@ -1,18 +1,17 @@
 namespace DocumentModel.Drawings;
 
 /// <summary>
-/// Path Gradient.
+///   Path Gradient.
 /// </summary>
-public partial class PathGradientFill
+public class PathGradientFill
 {
   /// <summary>
-  /// Gradient Fill Path
+  ///   Gradient Fill Path
   /// </summary>
-  public DocumentModel.Drawings.PathShadeKind? Path { get; set; }
-  
+  public PathShadeKind? Path { get; set; }
+
   /// <summary>
-  /// Fill To Rectangle.
+  ///   Fill To Rectangle.
   /// </summary>
-  public DocumentModel.Drawings.RelativeRectangleType? FillToRectangle { get; set; }
-  
+  public RelativeRectangleType? FillToRectangle { get; set; }
 }

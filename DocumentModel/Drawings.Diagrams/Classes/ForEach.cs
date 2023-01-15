@@ -1,66 +1,65 @@
 namespace DocumentModel.Drawings.Diagrams;
 
 /// <summary>
-/// For Each.
+///   For Each.
 /// </summary>
-public partial class ForEach
+public class ForEach
 {
   /// <summary>
-  /// Name
+  ///   Name
   /// </summary>
   public String? Name { get; set; }
-  
+
   /// <summary>
-  /// Reference
+  ///   Reference
   /// </summary>
   public String? Reference { get; set; }
-  
+
   /// <summary>
-  /// Axis
+  ///   Axis
   /// </summary>
-  public DocumentModel.ListOf<DocumentModel.Drawings.Diagrams.AxisKind>? Axis { get; set; }
-  
+  public ListOf<AxisKind>? Axis { get; set; }
+
   /// <summary>
-  /// Data Point Type
+  ///   Data Point Type
   /// </summary>
-  public DocumentModel.ListOf<DocumentModel.Drawings.Diagrams.ElementKind>? PointType { get; set; }
-  
+  public ListOf<ElementKind>? PointType { get; set; }
+
   /// <summary>
-  /// Hide Last Transition
+  ///   Hide Last Transition
   /// </summary>
-  public DocumentModel.ListOf<System.Boolean>? HideLastTrans { get; set; }
-  
+  public ListOf<Boolean>? HideLastTrans { get; set; }
+
   /// <summary>
-  /// Start
+  ///   Start
   /// </summary>
-  public DocumentModel.ListOf<System.Int32>? Start { get; set; }
-  
+  public ListOf<Int32>? Start { get; set; }
+
   /// <summary>
-  /// Count
+  ///   Count
   /// </summary>
-  public DocumentModel.ListOf<System.UInt32>? Count { get; set; }
-  
+  public ListOf<UInt32>? Count { get; set; }
+
   /// <summary>
-  /// Step
+  ///   Step
   /// </summary>
-  public DocumentModel.ListOf<System.Int32>? Step { get; set; }
-  
-  public DocumentModel.Drawings.Diagrams.Algorithm? Algorithm { get; set; }
-  
-  public DocumentModel.Drawings.Diagrams.Shape? Shape { get; set; }
-  
-  public DocumentModel.Drawings.Diagrams.PresentationOf? PresentationOf { get; set; }
-  
-  public DocumentModel.Drawings.Diagrams.Constraints? Constraints { get; set; }
-  
-  public DocumentModel.Drawings.Diagrams.RuleList? RuleList { get; set; }
-  
-  public DocumentModel.Drawings.Diagrams.ForEach? ChildForEach { get; set; }
-  
-  public DocumentModel.Drawings.Diagrams.LayoutNode? LayoutNode { get; set; }
-  
-  public DocumentModel.Drawings.Diagrams.Choose? Choose { get; set; }
-  
-  public DocumentModel.Drawings.Diagrams.ExtensionList? ExtensionList { get; set; }
-  
+  public ListOf<Int32>? Step { get; set; }
+
+  public Algorithm? Algorithm { get; set; }
+
+  public Shape? Shape { get; set; }
+
+  public PresentationOf? PresentationOf { get; set; }
+
+  public Constraints? Constraints { get; set; }
+
+  public RuleList? RuleList { get; set; }
+
+  public ForEach? ChildForEach { get; set; }
+
+  public LayoutNode? LayoutNode { get; set; }
+
+  public Choose? Choose { get; set; }
+
+  public ExtensionList? ExtensionList { get; set; }
 }

@@ -1,28 +1,27 @@
 namespace DocumentModel.Wordprocessing;
 
 /// <summary>
-/// Defines the FootnoteEndnoteValues enumeration.
+///   Defines the FootnoteEndnoteValues enumeration.
 /// </summary>
 public enum FootnoteEndnoteKind
 {
   /// <summary>
-  /// Normal Footnote/Endnote.
+  ///   Normal Footnote/Endnote.
   /// </summary>
   Normal,
-  
+
   /// <summary>
-  /// Separator.
+  ///   Separator.
   /// </summary>
   Separator,
-  
+
   /// <summary>
-  /// Continuation Separator.
+  ///   Continuation Separator.
   /// </summary>
   ContinuationSeparator,
-  
+
   /// <summary>
-  /// Continuation Notice Separator.
+  ///   Continuation Notice Separator.
   /// </summary>
-  ContinuationNotice,
-  
+  ContinuationNotice
 }

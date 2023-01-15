@@ -1,22 +1,25 @@
+using DocumentModel.Wordprocessing;
+using GlossaryDocument = DocumentFormat.OpenXml.Wordprocessing.GlossaryDocument;
+
 namespace DocumentModel.OpenXml.Wordprocessing;
 
 /// <summary>
-/// Glossary Document Root Element.
+///   Glossary Document Root Element.
 /// </summary>
 public static class GlossaryDocumentConverter
 {
   /// <summary>
-  /// Document Background.
+  ///   Document Background.
   /// </summary>
-  public static DocumentModel.Wordprocessing.DocumentBackground? GetDocumentBackground(DocumentFormat.OpenXml.Wordprocessing.GlossaryDocument? openXmlElement)
+  public static DocumentBackground? GetDocumentBackground(GlossaryDocument? openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.DocumentBackground>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Wordprocessing.DocumentBackgroundConverter.CreateModelElement(itemElement);
+      return DocumentBackgroundConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetDocumentBackground(DocumentFormat.OpenXml.Wordprocessing.GlossaryDocument? openXmlElement, DocumentModel.Wordprocessing.DocumentBackground? value)
+
+  public static void SetDocumentBackground(GlossaryDocument? openXmlElement, DocumentBackground? value)
   {
     if (openXmlElement != null)
     {
@@ -25,25 +28,25 @@ public static class GlossaryDocumentConverter
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Wordprocessing.DocumentBackgroundConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.DocumentBackground>(value);
+        itemElement = DocumentBackgroundConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.DocumentBackground>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
+
   /// <summary>
-  /// List of Glossary Document Entries.
+  ///   List of Glossary Document Entries.
   /// </summary>
-  public static DocumentModel.Wordprocessing.DocParts? GetDocParts(DocumentFormat.OpenXml.Wordprocessing.GlossaryDocument? openXmlElement)
+  public static DocParts? GetDocParts(GlossaryDocument? openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.DocParts>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Wordprocessing.DocPartsConverter.CreateModelElement(itemElement);
+      return DocPartsConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetDocParts(DocumentFormat.OpenXml.Wordprocessing.GlossaryDocument? openXmlElement, DocumentModel.Wordprocessing.DocParts? value)
+
+  public static void SetDocParts(GlossaryDocument? openXmlElement, DocParts? value)
   {
     if (openXmlElement != null)
     {
@@ -52,14 +55,14 @@ public static class GlossaryDocumentConverter
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Wordprocessing.DocPartsConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.DocParts>(value);
+        itemElement = DocPartsConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.DocParts>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static DocumentModel.Wordprocessing.GlossaryDocument? CreateModelElement(DocumentFormat.OpenXml.Wordprocessing.GlossaryDocument? openXmlElement)
+
+  public static DocumentModel.Wordprocessing.GlossaryDocument? CreateModelElement(GlossaryDocument? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -70,9 +73,9 @@ public static class GlossaryDocumentConverter
     }
     return null;
   }
-  
+
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.GlossaryDocument? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Wordprocessing.GlossaryDocument, new()
+    where OpenXmlElementType : GlossaryDocument, new()
   {
     if (value != null)
     {

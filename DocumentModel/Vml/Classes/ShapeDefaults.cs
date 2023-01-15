@@ -1,113 +1,112 @@
 namespace DocumentModel.Vml;
 
 /// <summary>
-/// New Shape Defaults.
+///   New Shape Defaults.
 /// </summary>
-public partial class ShapeDefaults
+public class ShapeDefaults
 {
   /// <summary>
-  /// VML Extension Handling Behavior
+  ///   VML Extension Handling Behavior
   /// </summary>
-  public DocumentModel.Vml.ExtensionHandlingBehaviorKind? Extension { get; set; }
-  
+  public ExtensionHandlingBehaviorKind? Extension { get; set; }
+
   /// <summary>
-  /// Shape ID Optional Storage
+  ///   Shape ID Optional Storage
   /// </summary>
   public Int64? MaxShapeId { get; set; }
-  
+
   /// <summary>
-  /// style
+  ///   style
   /// </summary>
   public String? Style { get; set; }
-  
+
   /// <summary>
-  /// Shape Fill Toggle
+  ///   Shape Fill Toggle
   /// </summary>
   public Boolean? BeFilled { get; set; }
-  
+
   /// <summary>
-  /// Default Fill Color
+  ///   Default Fill Color
   /// </summary>
   public String? FillColor { get; set; }
-  
+
   /// <summary>
-  /// Shape Stroke Toggle
+  ///   Shape Stroke Toggle
   /// </summary>
   public Boolean? IsStroke { get; set; }
-  
+
   /// <summary>
-  /// Shape Stroke Color
+  ///   Shape Stroke Color
   /// </summary>
   public String? StrokeColor { get; set; }
-  
+
   /// <summary>
-  /// Allow in Table Cell
+  ///   Allow in Table Cell
   /// </summary>
   public Boolean? AllowInCell { get; set; }
-  
+
   /// <summary>
-  /// allowoverlap
+  ///   allowoverlap
   /// </summary>
   public Boolean? AllowOverlap { get; set; }
-  
+
   /// <summary>
-  /// insetmode
+  ///   insetmode
   /// </summary>
-  public DocumentModel.Vml.InsetMarginKind? InsetMode { get; set; }
-  
+  public InsetMarginKind? InsetMode { get; set; }
+
   /// <summary>
-  /// Fill.
+  ///   Fill.
   /// </summary>
-  public DocumentModel.Vml.Fill? Fill { get; set; }
-  
+  public Fill? Fill { get; set; }
+
   /// <summary>
-  /// ImageData.
+  ///   ImageData.
   /// </summary>
-  public DocumentModel.Vml.ImageData? ImageData { get; set; }
-  
+  public ImageData? ImageData { get; set; }
+
   /// <summary>
-  /// Stroke.
+  ///   Stroke.
   /// </summary>
-  public DocumentModel.Vml.Stroke? Stroke { get; set; }
-  
+  public Stroke? Stroke { get; set; }
+
   /// <summary>
-  /// TextBox.
+  ///   TextBox.
   /// </summary>
-  public DocumentModel.Vml.TextBox? TextBox { get; set; }
-  
+  public TextBox? TextBox { get; set; }
+
   /// <summary>
-  /// Shadow.
+  ///   Shadow.
   /// </summary>
-  public DocumentModel.Vml.Shadow? Shadow { get; set; }
-  
+  public Shadow? Shadow { get; set; }
+
   /// <summary>
-  /// Skew.
+  ///   Skew.
   /// </summary>
-  public DocumentModel.Vml.Skew? Skew { get; set; }
-  
+  public Skew? Skew { get; set; }
+
   /// <summary>
-  /// Extrusion.
+  ///   Extrusion.
   /// </summary>
-  public DocumentModel.Vml.Extrusion? Extrusion { get; set; }
-  
+  public Extrusion? Extrusion { get; set; }
+
   /// <summary>
-  /// Callout.
+  ///   Callout.
   /// </summary>
-  public DocumentModel.Vml.Callout? Callout { get; set; }
-  
+  public Callout? Callout { get; set; }
+
   /// <summary>
-  /// Shape Protections.
+  ///   Shape Protections.
   /// </summary>
-  public DocumentModel.Vml.Lock? Lock { get; set; }
-  
+  public Lock? Lock { get; set; }
+
   /// <summary>
-  /// Most Recently Used Colors.
+  ///   Most Recently Used Colors.
   /// </summary>
-  public DocumentModel.Vml.ColorMostRecentlyUsed? ColorMostRecentlyUsed { get; set; }
-  
+  public ColorMostRecentlyUsed? ColorMostRecentlyUsed { get; set; }
+
   /// <summary>
-  /// UI Default Colors.
+  ///   UI Default Colors.
   /// </summary>
-  public DocumentModel.Vml.ColorMenu? ColorMenu { get; set; }
-  
+  public ColorMenu? ColorMenu { get; set; }
 }

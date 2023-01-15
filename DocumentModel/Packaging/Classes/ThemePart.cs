@@ -1,22 +1,23 @@
+using DocumentModel.Drawings;
+
 namespace DocumentModel.Packaging;
 
 /// <summary>
-/// Defines the ThemePart
+///   Defines the ThemePart
 /// </summary>
-public partial class ThemePart
+public class ThemePart
 {
   public String? ContentType { get; set; }
-  
+
   /// <summary>
-  /// Gets the ImageParts of the ThemePart
+  ///   Gets the ImageParts of the ThemePart
   /// </summary>
-  public Collection<DocumentModel.Packaging.ImagePart>? ImageParts { get; set; }
-  
+  public Collection<ImagePart>? ImageParts { get; set; }
+
   public String? RelationshipType { get; set; }
-  
+
   /// <summary>
-  /// Gets or sets the root element of this part.
+  ///   Gets or sets the root element of this part.
   /// </summary>
-  public DocumentModel.Drawings.Theme? Theme { get; set; }
-  
+  public Theme? Theme { get; set; }
 }

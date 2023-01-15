@@ -1,18 +1,21 @@
+using DocumentModel.Drawings;
+using ExtraColorSchemeList = DocumentFormat.OpenXml.Drawing.ExtraColorSchemeList;
+
 namespace DocumentModel.OpenXml.Drawings;
 
 /// <summary>
-/// Defines the ExtraColorSchemeList Class.
+///   Defines the ExtraColorSchemeList Class.
 /// </summary>
 public static class ExtraColorSchemeListConverter
 {
-  public static System.Collections.ObjectModel.Collection<DocumentModel.Drawings.ExtraColorScheme>? GetExtraColorSchemes(DocumentFormat.OpenXml.Drawing.ExtraColorSchemeList? openXmlElement)
+  public static Collection<ExtraColorScheme>? GetExtraColorSchemes(ExtraColorSchemeList? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var collection = new System.Collections.ObjectModel.Collection<DocumentModel.Drawings.ExtraColorScheme>();
+      var collection = new Collection<ExtraColorScheme>();
       foreach (var item in openXmlElement.Elements<DocumentFormat.OpenXml.Drawing.ExtraColorScheme>())
       {
-        var newItem = DocumentModel.OpenXml.Drawings.ExtraColorSchemeConverter.CreateModelElement(item);
+        var newItem = ExtraColorSchemeConverter.CreateModelElement(item);
         if (newItem != null)
           collection.Add(newItem);
       }
@@ -20,25 +23,23 @@ public static class ExtraColorSchemeListConverter
     }
     return null;
   }
-  
-  public static void SetExtraColorSchemes(DocumentFormat.OpenXml.Drawing.ExtraColorSchemeList? openXmlElement, System.Collections.ObjectModel.Collection<DocumentModel.Drawings.ExtraColorScheme>? value)
+
+  public static void SetExtraColorSchemes(ExtraColorSchemeList? openXmlElement, Collection<ExtraColorScheme>? value)
   {
     if (openXmlElement != null)
     {
       openXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Drawing.ExtraColorScheme>();
       if (value != null)
-      {
         foreach (var item in value)
         {
-          var newItem = DocumentModel.OpenXml.Drawings.ExtraColorSchemeConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.ExtraColorScheme>(item);
+          var newItem = ExtraColorSchemeConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.ExtraColorScheme>(item);
           if (newItem != null)
             openXmlElement.AddChild(newItem);
         }
-      }
     }
   }
-  
-  public static DocumentModel.Drawings.ExtraColorSchemeList? CreateModelElement(DocumentFormat.OpenXml.Drawing.ExtraColorSchemeList? openXmlElement)
+
+  public static DocumentModel.Drawings.ExtraColorSchemeList? CreateModelElement(ExtraColorSchemeList? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -48,9 +49,9 @@ public static class ExtraColorSchemeListConverter
     }
     return null;
   }
-  
+
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.ExtraColorSchemeList? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.ExtraColorSchemeList, new()
+    where OpenXmlElementType : ExtraColorSchemeList, new()
   {
     if (value != null)
     {

@@ -1,10 +1,9 @@
 namespace DocumentModel.Drawings.Charts;
 
 /// <summary>
-/// Defines the Area3DChartExtensionList Class.
+///   Defines the Area3DChartExtensionList Class.
 /// </summary>
-public partial class Area3DChartExtensionList
+public class Area3DChartExtensionList
 {
-  public Collection<DocumentModel.Drawings.Charts.Area3DChartExtension>? Area3DChartExtensions { get; set; }
-  
+  public Collection<Area3DChartExtension>? Area3DChartExtensions { get; set; }
 }

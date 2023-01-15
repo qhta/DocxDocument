@@ -1,18 +1,17 @@
 namespace DocumentModel.Drawings.Office;
 
 /// <summary>
-/// Defines the ShapeTree Class.
+///   Defines the ShapeTree Class.
 /// </summary>
-public partial class ShapeTree
+public class ShapeTree
 {
-  public DocumentModel.Drawings.Office.GroupShapeNonVisualProperties? GroupShapeNonVisualProperties { get; set; }
-  
-  public DocumentModel.Drawings.Office.GroupShapeProperties? GroupShapeProperties { get; set; }
-  
-  public DocumentModel.Drawings.Office.Shape? Shape { get; set; }
-  
-  public DocumentModel.Drawings.Office.GroupShape? GroupShape { get; set; }
-  
-  public DocumentModel.Drawings.Office.OfficeArtExtensionList? OfficeArtExtensionList { get; set; }
-  
+  public GroupShapeNonVisualProperties? GroupShapeNonVisualProperties { get; set; }
+
+  public GroupShapeProperties? GroupShapeProperties { get; set; }
+
+  public Shape? Shape { get; set; }
+
+  public GroupShape? GroupShape { get; set; }
+
+  public OfficeArtExtensionList? OfficeArtExtensionList { get; set; }
 }

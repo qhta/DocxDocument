@@ -1,18 +1,17 @@
 namespace DocumentModel.Drawings;
 
 /// <summary>
-/// Auto-Numbered Bullet.
+///   Auto-Numbered Bullet.
 /// </summary>
-public partial class AutoNumberedBullet
+public class AutoNumberedBullet
 {
   /// <summary>
-  /// Bullet Autonumbering Type
+  ///   Bullet Autonumbering Type
   /// </summary>
-  public DocumentModel.Drawings.TextAutoNumberSchemeKind? Type { get; set; }
-  
+  public TextAutoNumberSchemeKind? Type { get; set; }
+
   /// <summary>
-  /// Start Numbering At
+  ///   Start Numbering At
   /// </summary>
   public Int32? StartAt { get; set; }
-  
 }

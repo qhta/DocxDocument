@@ -1,13 +1,12 @@
 namespace DocumentModel.Drawings;
 
 /// <summary>
-/// Defines the ImageProperties Class.
+///   Defines the ImageProperties Class.
 /// </summary>
-public partial class ImageProperties
+public class ImageProperties
 {
   /// <summary>
-  /// ImageLayer.
+  ///   ImageLayer.
   /// </summary>
-  public DocumentModel.Drawings.ImageLayer? ImageLayer { get; set; }
-  
+  public ImageLayer? ImageLayer { get; set; }
 }

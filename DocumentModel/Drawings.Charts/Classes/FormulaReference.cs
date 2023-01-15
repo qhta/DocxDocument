@@ -1,13 +1,12 @@
 namespace DocumentModel.Drawings.Charts;
 
 /// <summary>
-/// Defines the FormulaReference Class.
+///   Defines the FormulaReference Class.
 /// </summary>
-public partial class FormulaReference
+public class FormulaReference
 {
   /// <summary>
-  /// SequenceOfReferences.
+  ///   SequenceOfReferences.
   /// </summary>
   public String? SequenceOfReferences { get; set; }
-  
 }

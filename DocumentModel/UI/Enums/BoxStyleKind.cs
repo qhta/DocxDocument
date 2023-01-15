@@ -1,18 +1,17 @@
 namespace DocumentModel.UI;
 
 /// <summary>
-/// Defines the BoxStyleValues enumeration.
+///   Defines the BoxStyleValues enumeration.
 /// </summary>
 public enum BoxStyleKind
 {
   /// <summary>
-  /// horizontal.
+  ///   horizontal.
   /// </summary>
   Horizontal,
-  
+
   /// <summary>
-  /// vertical.
+  ///   vertical.
   /// </summary>
-  Vertical,
-  
+  Vertical
 }

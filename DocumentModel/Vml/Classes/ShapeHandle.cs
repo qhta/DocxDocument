@@ -1,53 +1,52 @@
 namespace DocumentModel.Vml;
 
 /// <summary>
-/// Shape Handle.
+///   Shape Handle.
 /// </summary>
-public partial class ShapeHandle
+public class ShapeHandle
 {
   /// <summary>
-  /// Handle Position
+  ///   Handle Position
   /// </summary>
   public String? Position { get; set; }
-  
+
   /// <summary>
-  /// Handle Polar Center
+  ///   Handle Polar Center
   /// </summary>
   public String? Polar { get; set; }
-  
+
   /// <summary>
-  /// Handle Coordinate Mapping
+  ///   Handle Coordinate Mapping
   /// </summary>
   public String? Map { get; set; }
-  
+
   /// <summary>
-  /// Invert Handle's X Position
+  ///   Invert Handle's X Position
   /// </summary>
   public Boolean? InvertX { get; set; }
-  
+
   /// <summary>
-  /// Invert Handle's Y Position
+  ///   Invert Handle's Y Position
   /// </summary>
   public Boolean? InvertY { get; set; }
-  
+
   /// <summary>
-  /// Handle Inversion Toggle
+  ///   Handle Inversion Toggle
   /// </summary>
   public Boolean? Switch { get; set; }
-  
+
   /// <summary>
-  /// Handle X Position Range
+  ///   Handle X Position Range
   /// </summary>
   public String? XRange { get; set; }
-  
+
   /// <summary>
-  /// Handle Y Position Range
+  ///   Handle Y Position Range
   /// </summary>
   public String? YRange { get; set; }
-  
+
   /// <summary>
-  /// Handle Polar Radius Range
+  ///   Handle Polar Radius Range
   /// </summary>
   public String? RadiusRange { get; set; }
-  
 }

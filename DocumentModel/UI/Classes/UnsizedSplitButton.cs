@@ -1,94 +1,93 @@
 namespace DocumentModel.UI;
 
 /// <summary>
-/// Defines the UnsizedSplitButton Class.
+///   Defines the UnsizedSplitButton Class.
 /// </summary>
-public partial class UnsizedSplitButton
+public class UnsizedSplitButton
 {
   /// <summary>
-  /// enabled
+  ///   enabled
   /// </summary>
   public Boolean? Enabled { get; set; }
-  
+
   /// <summary>
-  /// getEnabled
+  ///   getEnabled
   /// </summary>
   public String? GetEnabled { get; set; }
-  
+
   /// <summary>
-  /// id
+  ///   id
   /// </summary>
   public String? Id { get; set; }
-  
+
   /// <summary>
-  /// idQ
+  ///   idQ
   /// </summary>
   public String? IdQ { get; set; }
-  
+
   /// <summary>
-  /// idMso
+  ///   idMso
   /// </summary>
   public String? IdMso { get; set; }
-  
+
   /// <summary>
-  /// tag
+  ///   tag
   /// </summary>
   public String? Tag { get; set; }
-  
+
   /// <summary>
-  /// insertAfterMso
+  ///   insertAfterMso
   /// </summary>
   public String? InsertAfterMso { get; set; }
-  
+
   /// <summary>
-  /// insertBeforeMso
+  ///   insertBeforeMso
   /// </summary>
   public String? InsertBeforeMso { get; set; }
-  
+
   /// <summary>
-  /// insertAfterQ
+  ///   insertAfterQ
   /// </summary>
   public String? InsertAfterQ { get; set; }
-  
+
   /// <summary>
-  /// insertBeforeQ
+  ///   insertBeforeQ
   /// </summary>
   public String? InsertBeforeQ { get; set; }
-  
+
   /// <summary>
-  /// visible
+  ///   visible
   /// </summary>
   public Boolean? Visible { get; set; }
-  
+
   /// <summary>
-  /// getVisible
+  ///   getVisible
   /// </summary>
   public String? GetVisible { get; set; }
-  
+
   /// <summary>
-  /// keytip
+  ///   keytip
   /// </summary>
   public String? Keytip { get; set; }
-  
+
   /// <summary>
-  /// getKeytip
+  ///   getKeytip
   /// </summary>
   public String? GetKeytip { get; set; }
-  
+
   /// <summary>
-  /// showLabel
+  ///   showLabel
   /// </summary>
   public Boolean? ShowLabel { get; set; }
-  
+
   /// <summary>
-  /// getShowLabel
+  ///   getShowLabel
   /// </summary>
   public String? GetShowLabel { get; set; }
-  
-  public DocumentModel.UI.VisibleButton? VisibleButton { get; set; }
-  
-  public DocumentModel.UI.VisibleToggleButton? VisibleToggleButton { get; set; }
-  
-  public DocumentModel.UI.UnsizedMenu? UnsizedMenu { get; set; }
-  
+
+  public VisibleButton? VisibleButton { get; set; }
+
+  public VisibleToggleButton? VisibleToggleButton { get; set; }
+
+  public UnsizedMenu? UnsizedMenu { get; set; }
 }

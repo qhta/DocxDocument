@@ -1,18 +1,17 @@
 namespace DocumentModel.Drawings.Diagrams;
 
 /// <summary>
-/// Diagram Direction Definition
+///   Diagram Direction Definition
 /// </summary>
 public enum DirectionKind
 {
   /// <summary>
-  /// Normal Direction.
+  ///   Normal Direction.
   /// </summary>
   Normal,
-  
+
   /// <summary>
-  /// Reversed Direction.
+  ///   Reversed Direction.
   /// </summary>
-  Reversed,
-  
+  Reversed
 }

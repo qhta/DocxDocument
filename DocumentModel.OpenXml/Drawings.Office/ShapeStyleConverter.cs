@@ -1,22 +1,25 @@
+using DocumentModel.Drawings;
+using ShapeStyle = DocumentFormat.OpenXml.Office.Drawing.ShapeStyle;
+
 namespace DocumentModel.OpenXml.Drawings.Office;
 
 /// <summary>
-/// Defines the ShapeStyle Class.
+///   Defines the ShapeStyle Class.
 /// </summary>
 public static class ShapeStyleConverter
 {
   /// <summary>
-  /// LineReference.
+  ///   LineReference.
   /// </summary>
-  public static DocumentModel.Drawings.LineReference? GetLineReference(DocumentFormat.OpenXml.Office.Drawing.ShapeStyle? openXmlElement)
+  public static LineReference? GetLineReference(ShapeStyle? openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.LineReference>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.LineReferenceConverter.CreateModelElement(itemElement);
+      return LineReferenceConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetLineReference(DocumentFormat.OpenXml.Office.Drawing.ShapeStyle? openXmlElement, DocumentModel.Drawings.LineReference? value)
+
+  public static void SetLineReference(ShapeStyle? openXmlElement, LineReference? value)
   {
     if (openXmlElement != null)
     {
@@ -25,25 +28,25 @@ public static class ShapeStyleConverter
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Drawings.LineReferenceConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.LineReference>(value);
+        itemElement = LineReferenceConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.LineReference>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
+
   /// <summary>
-  /// FillReference.
+  ///   FillReference.
   /// </summary>
-  public static DocumentModel.Drawings.FillReference? GetFillReference(DocumentFormat.OpenXml.Office.Drawing.ShapeStyle? openXmlElement)
+  public static FillReference? GetFillReference(ShapeStyle? openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.FillReference>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.FillReferenceConverter.CreateModelElement(itemElement);
+      return FillReferenceConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetFillReference(DocumentFormat.OpenXml.Office.Drawing.ShapeStyle? openXmlElement, DocumentModel.Drawings.FillReference? value)
+
+  public static void SetFillReference(ShapeStyle? openXmlElement, FillReference? value)
   {
     if (openXmlElement != null)
     {
@@ -52,25 +55,25 @@ public static class ShapeStyleConverter
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Drawings.FillReferenceConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.FillReference>(value);
+        itemElement = FillReferenceConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.FillReference>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
+
   /// <summary>
-  /// EffectReference.
+  ///   EffectReference.
   /// </summary>
-  public static DocumentModel.Drawings.EffectReference? GetEffectReference(DocumentFormat.OpenXml.Office.Drawing.ShapeStyle? openXmlElement)
+  public static EffectReference? GetEffectReference(ShapeStyle? openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.EffectReference>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.EffectReferenceConverter.CreateModelElement(itemElement);
+      return EffectReferenceConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetEffectReference(DocumentFormat.OpenXml.Office.Drawing.ShapeStyle? openXmlElement, DocumentModel.Drawings.EffectReference? value)
+
+  public static void SetEffectReference(ShapeStyle? openXmlElement, EffectReference? value)
   {
     if (openXmlElement != null)
     {
@@ -79,25 +82,25 @@ public static class ShapeStyleConverter
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Drawings.EffectReferenceConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.EffectReference>(value);
+        itemElement = EffectReferenceConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.EffectReference>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
+
   /// <summary>
-  /// Font Reference.
+  ///   Font Reference.
   /// </summary>
-  public static DocumentModel.Drawings.FontReference? GetFontReference(DocumentFormat.OpenXml.Office.Drawing.ShapeStyle? openXmlElement)
+  public static FontReference? GetFontReference(ShapeStyle? openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.FontReference>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.FontReferenceConverter.CreateModelElement(itemElement);
+      return FontReferenceConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetFontReference(DocumentFormat.OpenXml.Office.Drawing.ShapeStyle? openXmlElement, DocumentModel.Drawings.FontReference? value)
+
+  public static void SetFontReference(ShapeStyle? openXmlElement, FontReference? value)
   {
     if (openXmlElement != null)
     {
@@ -106,14 +109,14 @@ public static class ShapeStyleConverter
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Drawings.FontReferenceConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.FontReference>(value);
+        itemElement = FontReferenceConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.FontReference>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static DocumentModel.Drawings.Office.ShapeStyle? CreateModelElement(DocumentFormat.OpenXml.Office.Drawing.ShapeStyle? openXmlElement)
+
+  public static DocumentModel.Drawings.Office.ShapeStyle? CreateModelElement(ShapeStyle? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -126,9 +129,9 @@ public static class ShapeStyleConverter
     }
     return null;
   }
-  
+
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.Office.ShapeStyle? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Office.Drawing.ShapeStyle, new()
+    where OpenXmlElementType : ShapeStyle, new()
   {
     if (value != null)
     {

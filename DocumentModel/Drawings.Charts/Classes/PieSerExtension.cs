@@ -1,21 +1,20 @@
 namespace DocumentModel.Drawings.Charts;
 
 /// <summary>
-/// Defines the PieSerExtension Class.
+///   Defines the PieSerExtension Class.
 /// </summary>
-public partial class PieSerExtension
+public class PieSerExtension
 {
   /// <summary>
-  /// URI
+  ///   URI
   /// </summary>
   public String? Uri { get; set; }
-  
-  public DocumentModel.Drawings.Charts.FilteredSeriesTitle? FilteredSeriesTitle { get; set; }
-  
-  public DocumentModel.Drawings.Charts.FilteredCategoryTitle? FilteredCategoryTitle { get; set; }
-  
-  public DocumentModel.Drawings.Charts.DataLabelsRange? DataLabelsRange { get; set; }
-  
-  public DocumentModel.Drawings.Charts.CategoryFilterExceptions? CategoryFilterExceptions { get; set; }
-  
+
+  public FilteredSeriesTitle? FilteredSeriesTitle { get; set; }
+
+  public FilteredCategoryTitle? FilteredCategoryTitle { get; set; }
+
+  public DataLabelsRange? DataLabelsRange { get; set; }
+
+  public CategoryFilterExceptions? CategoryFilterExceptions { get; set; }
 }

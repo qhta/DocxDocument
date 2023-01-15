@@ -1,83 +1,82 @@
 namespace DocumentModel.Wordprocessing;
 
 /// <summary>
-/// Defines the CalendarValues enumeration.
+///   Defines the CalendarValues enumeration.
 /// </summary>
 public enum CalendarKind
 {
   /// <summary>
-  /// Gregorian.
+  ///   Gregorian.
   /// </summary>
   Gregorian,
-  
+
   /// <summary>
-  /// Hijri.
+  ///   Hijri.
   /// </summary>
   Hijri,
-  
+
   /// <summary>
-  /// umalqura.
+  ///   umalqura.
   /// </summary>
   Umalqura,
-  
+
   /// <summary>
-  /// Hebrew.
+  ///   Hebrew.
   /// </summary>
   Hebrew,
-  
+
   /// <summary>
-  /// Taiwan.
+  ///   Taiwan.
   /// </summary>
   Taiwan,
-  
+
   /// <summary>
-  /// Japanese Emperor Era.
+  ///   Japanese Emperor Era.
   /// </summary>
   Japan,
-  
+
   /// <summary>
-  /// Thai.
+  ///   Thai.
   /// </summary>
   Thai,
-  
+
   /// <summary>
-  /// Korean Tangun Era.
+  ///   Korean Tangun Era.
   /// </summary>
   Korea,
-  
+
   /// <summary>
-  /// Saka Era.
+  ///   Saka Era.
   /// </summary>
   Saka,
-  
+
   /// <summary>
-  /// Gregorian transliterated English.
+  ///   Gregorian transliterated English.
   /// </summary>
   GregorianTransliteratedEnglish,
-  
+
   /// <summary>
-  /// Gregorian transliterated French.
+  ///   Gregorian transliterated French.
   /// </summary>
   GregorianTransliteratedFrench,
-  
+
   /// <summary>
-  /// gregorianUs.
+  ///   gregorianUs.
   /// </summary>
   GregorianUs,
-  
+
   /// <summary>
-  /// gregorianMeFrench.
+  ///   gregorianMeFrench.
   /// </summary>
   GregorianMeFrench,
-  
+
   /// <summary>
-  /// gregorianArabic.
+  ///   gregorianArabic.
   /// </summary>
   GregorianArabic,
-  
+
   /// <summary>
-  /// none.
+  ///   none.
   /// </summary>
-  None,
-  
+  None
 }

@@ -1,81 +1,86 @@
+using DocumentFormat.OpenXml.Drawing.Charts;
+using DocumentModel.Drawings.Charts;
+using DataLabels = DocumentModel.Drawings.Charts.DataLabels;
+using DropLines = DocumentModel.Drawings.Charts.DropLines;
+using Line3DChart = DocumentFormat.OpenXml.Drawing.Charts.Line3DChart;
+using Line3DChartExtensionList = DocumentModel.Drawings.Charts.Line3DChartExtensionList;
+using LineChartSeries = DocumentModel.Drawings.Charts.LineChartSeries;
+
 namespace DocumentModel.OpenXml.Drawings.Charts;
 
 /// <summary>
-/// 3D Line Charts.
+///   3D Line Charts.
 /// </summary>
 public static class Line3DChartConverter
 {
   /// <summary>
-  /// Grouping.
+  ///   Grouping.
   /// </summary>
-  public static DocumentModel.Drawings.Charts.GroupingKind? GetGrouping(DocumentFormat.OpenXml.Drawing.Charts.Line3DChart? openXmlElement)
+  public static GroupingKind? GetGrouping(Line3DChart? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.Grouping>();
-      if (itemElement?.Val?.Value != null)
-      {
-        return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Drawing.Charts.GroupingValues, DocumentModel.Drawings.Charts.GroupingKind>(itemElement.Val.Value);
-      }
+      var itemElement = openXmlElement.GetFirstChild<Grouping>();
+      if (itemElement?.Val?.Value != null) return EnumValueConverter.GetValue<GroupingValues, GroupingKind>(itemElement.Val.Value);
     }
     return null;
   }
-  
-  public static void SetGrouping(DocumentFormat.OpenXml.Drawing.Charts.Line3DChart? openXmlElement, DocumentModel.Drawings.Charts.GroupingKind? value)
+
+  public static void SetGrouping(Line3DChart? openXmlElement, GroupingKind? value)
   {
     if (openXmlElement != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.Grouping>();
+      var itemElement = openXmlElement.GetFirstChild<Grouping>();
       if (itemElement != null)
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = EnumValueConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Charts.Grouping, DocumentFormat.OpenXml.Drawing.Charts.GroupingValues, DocumentModel.Drawings.Charts.GroupingKind>(value);
+        itemElement = EnumValueConverter.CreateOpenXmlElement<Grouping, GroupingValues, GroupingKind>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
+
   /// <summary>
-  /// VaryColors.
+  ///   VaryColors.
   /// </summary>
-  public static Boolean? GetVaryColors(DocumentFormat.OpenXml.Drawing.Charts.Line3DChart? openXmlElement)
+  public static Boolean? GetVaryColors(Line3DChart? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.VaryColors>();
+      var itemElement = openXmlElement.GetFirstChild<VaryColors>();
       return itemElement != null;
     }
     return null;
   }
-  
-  public static void SetVaryColors(DocumentFormat.OpenXml.Drawing.Charts.Line3DChart? openXmlElement, Boolean? value)
+
+  public static void SetVaryColors(Line3DChart? openXmlElement, Boolean? value)
   {
     if (openXmlElement != null)
     {
       if (value == false)
       {
-        var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.VaryColors>();
+        var itemElement = openXmlElement.GetFirstChild<VaryColors>();
         if (itemElement != null)
           itemElement.Remove();
       }
       if (value == true)
       {
-        var itemElement = new DocumentFormat.OpenXml.Drawing.Charts.VaryColors();
+        var itemElement = new VaryColors();
         openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static System.Collections.ObjectModel.Collection<DocumentModel.Drawings.Charts.LineChartSeries>? GetLineChartSerieses(DocumentFormat.OpenXml.Drawing.Charts.Line3DChart? openXmlElement)
+
+  public static Collection<LineChartSeries>? GetLineChartSerieses(Line3DChart? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var collection = new System.Collections.ObjectModel.Collection<DocumentModel.Drawings.Charts.LineChartSeries>();
+      var collection = new Collection<LineChartSeries>();
       foreach (var item in openXmlElement.Elements<DocumentFormat.OpenXml.Drawing.Charts.LineChartSeries>())
       {
-        var newItem = DocumentModel.OpenXml.Drawings.Charts.LineChartSeriesConverter.CreateModelElement(item);
+        var newItem = LineChartSeriesConverter.CreateModelElement(item);
         if (newItem != null)
           collection.Add(newItem);
       }
@@ -83,33 +88,31 @@ public static class Line3DChartConverter
     }
     return null;
   }
-  
-  public static void SetLineChartSerieses(DocumentFormat.OpenXml.Drawing.Charts.Line3DChart? openXmlElement, System.Collections.ObjectModel.Collection<DocumentModel.Drawings.Charts.LineChartSeries>? value)
+
+  public static void SetLineChartSerieses(Line3DChart? openXmlElement, Collection<LineChartSeries>? value)
   {
     if (openXmlElement != null)
     {
       openXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Drawing.Charts.LineChartSeries>();
       if (value != null)
-      {
         foreach (var item in value)
         {
-          var newItem = DocumentModel.OpenXml.Drawings.Charts.LineChartSeriesConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Charts.LineChartSeries>(item);
+          var newItem = LineChartSeriesConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Charts.LineChartSeries>(item);
           if (newItem != null)
             openXmlElement.AddChild(newItem);
         }
-      }
     }
   }
-  
-  public static DocumentModel.Drawings.Charts.DataLabels? GetDataLabels(DocumentFormat.OpenXml.Drawing.Charts.Line3DChart? openXmlElement)
+
+  public static DataLabels? GetDataLabels(Line3DChart? openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.DataLabels>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.Charts.DataLabelsConverter.CreateModelElement(itemElement);
+      return DataLabelsConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetDataLabels(DocumentFormat.OpenXml.Drawing.Charts.Line3DChart? openXmlElement, DocumentModel.Drawings.Charts.DataLabels? value)
+
+  public static void SetDataLabels(Line3DChart? openXmlElement, DataLabels? value)
   {
     if (openXmlElement != null)
     {
@@ -118,22 +121,22 @@ public static class Line3DChartConverter
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Drawings.Charts.DataLabelsConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Charts.DataLabels>(value);
+        itemElement = DataLabelsConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Charts.DataLabels>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static DocumentModel.Drawings.Charts.DropLines? GetDropLines(DocumentFormat.OpenXml.Drawing.Charts.Line3DChart? openXmlElement)
+
+  public static DropLines? GetDropLines(Line3DChart? openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.DropLines>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.Charts.DropLinesConverter.CreateModelElement(itemElement);
+      return DropLinesConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetDropLines(DocumentFormat.OpenXml.Drawing.Charts.Line3DChart? openXmlElement, DocumentModel.Drawings.Charts.DropLines? value)
+
+  public static void SetDropLines(Line3DChart? openXmlElement, DropLines? value)
   {
     if (openXmlElement != null)
     {
@@ -142,42 +145,42 @@ public static class Line3DChartConverter
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Drawings.Charts.DropLinesConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Charts.DropLines>(value);
+        itemElement = DropLinesConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Charts.DropLines>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static UInt16? GetGapDepth(DocumentFormat.OpenXml.Drawing.Charts.Line3DChart? openXmlElement)
+
+  public static UInt16? GetGapDepth(Line3DChart? openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.GapDepth>();
+    var itemElement = openXmlElement?.GetFirstChild<GapDepth>();
     if (itemElement != null)
       return itemElement.Val?.Value;
     return null;
   }
-  
-  public static void SetGapDepth(DocumentFormat.OpenXml.Drawing.Charts.Line3DChart? openXmlElement, UInt16? value)
+
+  public static void SetGapDepth(Line3DChart? openXmlElement, UInt16? value)
   {
     if (openXmlElement != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.GapDepth>();
+      var itemElement = openXmlElement.GetFirstChild<GapDepth>();
       if (itemElement != null)
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = new DocumentFormat.OpenXml.Drawing.Charts.GapDepth{ Val = value };
+        itemElement = new GapDepth { Val = value };
         openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static System.Collections.ObjectModel.Collection<UInt32>? GetAxisIds(DocumentFormat.OpenXml.Drawing.Charts.Line3DChart? openXmlElement)
+
+  public static Collection<UInt32>? GetAxisIds(Line3DChart? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var collection = new System.Collections.ObjectModel.Collection<UInt32>();
-      foreach (var item in openXmlElement.Elements<DocumentFormat.OpenXml.Drawing.Charts.AxisId>())
+      var collection = new Collection<UInt32>();
+      foreach (var item in openXmlElement.Elements<AxisId>())
       {
         var newItem = UInt32ValueConverter.GetValue(item);
         if (newItem != null)
@@ -187,33 +190,31 @@ public static class Line3DChartConverter
     }
     return null;
   }
-  
-  public static void SetAxisIds(DocumentFormat.OpenXml.Drawing.Charts.Line3DChart? openXmlElement, System.Collections.ObjectModel.Collection<UInt32>? value)
+
+  public static void SetAxisIds(Line3DChart? openXmlElement, Collection<UInt32>? value)
   {
     if (openXmlElement != null)
     {
-      openXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Drawing.Charts.AxisId>();
+      openXmlElement.RemoveAllChildren<AxisId>();
       if (value != null)
-      {
         foreach (var item in value)
         {
-          var newItem = UInt32ValueConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Charts.AxisId>(item);
+          var newItem = UInt32ValueConverter.CreateOpenXmlElement<AxisId>(item);
           if (newItem != null)
             openXmlElement.AddChild(newItem);
         }
-      }
     }
   }
-  
-  public static DocumentModel.Drawings.Charts.Line3DChartExtensionList? GetLine3DChartExtensionList(DocumentFormat.OpenXml.Drawing.Charts.Line3DChart? openXmlElement)
+
+  public static Line3DChartExtensionList? GetLine3DChartExtensionList(Line3DChart? openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.Line3DChartExtensionList>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.Charts.Line3DChartExtensionListConverter.CreateModelElement(itemElement);
+      return Line3DChartExtensionListConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetLine3DChartExtensionList(DocumentFormat.OpenXml.Drawing.Charts.Line3DChart? openXmlElement, DocumentModel.Drawings.Charts.Line3DChartExtensionList? value)
+
+  public static void SetLine3DChartExtensionList(Line3DChart? openXmlElement, Line3DChartExtensionList? value)
   {
     if (openXmlElement != null)
     {
@@ -222,14 +223,14 @@ public static class Line3DChartConverter
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Drawings.Charts.Line3DChartExtensionListConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Charts.Line3DChartExtensionList>(value);
+        itemElement = Line3DChartExtensionListConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Charts.Line3DChartExtensionList>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static DocumentModel.Drawings.Charts.Line3DChart? CreateModelElement(DocumentFormat.OpenXml.Drawing.Charts.Line3DChart? openXmlElement)
+
+  public static DocumentModel.Drawings.Charts.Line3DChart? CreateModelElement(Line3DChart? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -246,9 +247,9 @@ public static class Line3DChartConverter
     }
     return null;
   }
-  
+
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.Charts.Line3DChart? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.Charts.Line3DChart, new()
+    where OpenXmlElementType : Line3DChart, new()
   {
     if (value != null)
     {

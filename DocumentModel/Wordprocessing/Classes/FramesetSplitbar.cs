@@ -1,28 +1,27 @@
 namespace DocumentModel.Wordprocessing;
 
 /// <summary>
-/// Frameset Splitter Properties.
+///   Frameset Splitter Properties.
 /// </summary>
-public partial class FramesetSplitbar
+public class FramesetSplitbar
 {
   /// <summary>
-  /// Frameset Splitter Width.
+  ///   Frameset Splitter Width.
   /// </summary>
   public String? Width { get; set; }
-  
+
   /// <summary>
-  /// Frameset Splitter Color.
+  ///   Frameset Splitter Color.
   /// </summary>
-  public DocumentModel.Wordprocessing.Color? Color { get; set; }
-  
+  public Color? Color { get; set; }
+
   /// <summary>
-  /// Do Not Display Frameset Splitters.
+  ///   Do Not Display Frameset Splitters.
   /// </summary>
-  public DocumentModel.Wordprocessing.OnOffOnlyKind? NoBorder { get; set; }
-  
+  public OnOffOnlyKind? NoBorder { get; set; }
+
   /// <summary>
-  /// Frameset Splitter Border Style.
+  ///   Frameset Splitter Border Style.
   /// </summary>
-  public DocumentModel.Wordprocessing.OnOffOnlyKind? FlatBorders { get; set; }
-  
+  public OnOffOnlyKind? FlatBorders { get; set; }
 }

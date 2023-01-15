@@ -1,18 +1,17 @@
 namespace DocumentModel.Drawings;
 
 /// <summary>
-/// Defines the ConnectionType Class.
+///   Defines the ConnectionType Class.
 /// </summary>
-public partial class ConnectionType
+public class ConnectionType
 {
   /// <summary>
-  /// Identifier
+  ///   Identifier
   /// </summary>
   public UInt32? Id { get; set; }
-  
+
   /// <summary>
-  /// Index
+  ///   Index
   /// </summary>
   public UInt32? Index { get; set; }
-  
 }

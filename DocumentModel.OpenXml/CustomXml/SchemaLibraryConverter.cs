@@ -1,18 +1,21 @@
+using DocumentModel.CustomXml;
+using SchemaLibrary = DocumentFormat.OpenXml.CustomXmlSchemaReferences.SchemaLibrary;
+
 namespace DocumentModel.OpenXml.CustomXml;
 
 /// <summary>
-/// Embedded Custom XML Schema Supplementary Data.
+///   Embedded Custom XML Schema Supplementary Data.
 /// </summary>
 public static class SchemaLibraryConverter
 {
-  public static System.Collections.ObjectModel.Collection<DocumentModel.CustomXml.Schema>? GetSchemas(DocumentFormat.OpenXml.CustomXmlSchemaReferences.SchemaLibrary? openXmlElement)
+  public static Collection<Schema>? GetSchemas(SchemaLibrary? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var collection = new System.Collections.ObjectModel.Collection<DocumentModel.CustomXml.Schema>();
+      var collection = new Collection<Schema>();
       foreach (var item in openXmlElement.Elements<DocumentFormat.OpenXml.CustomXmlSchemaReferences.Schema>())
       {
-        var newItem = DocumentModel.OpenXml.CustomXml.SchemaConverter.CreateModelElement(item);
+        var newItem = SchemaConverter.CreateModelElement(item);
         if (newItem != null)
           collection.Add(newItem);
       }
@@ -20,25 +23,23 @@ public static class SchemaLibraryConverter
     }
     return null;
   }
-  
-  public static void SetSchemas(DocumentFormat.OpenXml.CustomXmlSchemaReferences.SchemaLibrary? openXmlElement, System.Collections.ObjectModel.Collection<DocumentModel.CustomXml.Schema>? value)
+
+  public static void SetSchemas(SchemaLibrary? openXmlElement, Collection<Schema>? value)
   {
     if (openXmlElement != null)
     {
       openXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.CustomXmlSchemaReferences.Schema>();
       if (value != null)
-      {
         foreach (var item in value)
         {
-          var newItem = DocumentModel.OpenXml.CustomXml.SchemaConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.CustomXmlSchemaReferences.Schema>(item);
+          var newItem = SchemaConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.CustomXmlSchemaReferences.Schema>(item);
           if (newItem != null)
             openXmlElement.AddChild(newItem);
         }
-      }
     }
   }
-  
-  public static DocumentModel.CustomXml.SchemaLibrary? CreateModelElement(DocumentFormat.OpenXml.CustomXmlSchemaReferences.SchemaLibrary? openXmlElement)
+
+  public static DocumentModel.CustomXml.SchemaLibrary? CreateModelElement(SchemaLibrary? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -48,9 +49,9 @@ public static class SchemaLibraryConverter
     }
     return null;
   }
-  
+
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.CustomXml.SchemaLibrary? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.CustomXmlSchemaReferences.SchemaLibrary, new()
+    where OpenXmlElementType : SchemaLibrary, new()
   {
     if (value != null)
     {

@@ -1,18 +1,17 @@
 namespace DocumentModel.Drawings.ChartDrawing;
 
 /// <summary>
-/// Shape Extent.
+///   Shape Extent.
 /// </summary>
-public partial class Extent
+public class Extent
 {
   /// <summary>
-  /// Extent Length
+  ///   Extent Length
   /// </summary>
   public Int64? Cx { get; set; }
-  
+
   /// <summary>
-  /// Extent Width
+  ///   Extent Width
   /// </summary>
   public Int64? Cy { get; set; }
-  
 }

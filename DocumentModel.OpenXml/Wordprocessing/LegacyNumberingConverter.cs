@@ -1,19 +1,21 @@
+using DocumentFormat.OpenXml.Wordprocessing;
+
 namespace DocumentModel.OpenXml.Wordprocessing;
 
 /// <summary>
-/// Legacy Numbering Level Properties.
+///   Legacy Numbering Level Properties.
 /// </summary>
 public static class LegacyNumberingConverter
 {
   /// <summary>
-  /// Use Legacy Numbering Properties
+  ///   Use Legacy Numbering Properties
   /// </summary>
-  public static Boolean? GetLegacy(DocumentFormat.OpenXml.Wordprocessing.LegacyNumbering? openXmlElement)
+  public static Boolean? GetLegacy(LegacyNumbering? openXmlElement)
   {
     return openXmlElement?.Legacy?.Value;
   }
-  
-  public static void SetLegacy(DocumentFormat.OpenXml.Wordprocessing.LegacyNumbering? openXmlElement, Boolean? value)
+
+  public static void SetLegacy(LegacyNumbering? openXmlElement, Boolean? value)
   {
     if (openXmlElement != null)
       if (value != null)
@@ -21,16 +23,16 @@ public static class LegacyNumberingConverter
       else
         openXmlElement.Legacy = null;
   }
-  
+
   /// <summary>
-  /// Legacy Spacing
+  ///   Legacy Spacing
   /// </summary>
-  public static String? GetLegacySpace(DocumentFormat.OpenXml.Wordprocessing.LegacyNumbering? openXmlElement)
+  public static String? GetLegacySpace(LegacyNumbering? openXmlElement)
   {
     return openXmlElement?.LegacySpace?.Value;
   }
-  
-  public static void SetLegacySpace(DocumentFormat.OpenXml.Wordprocessing.LegacyNumbering? openXmlElement, String? value)
+
+  public static void SetLegacySpace(LegacyNumbering? openXmlElement, String? value)
   {
     if (openXmlElement != null)
       if (value != null)
@@ -38,16 +40,16 @@ public static class LegacyNumberingConverter
       else
         openXmlElement.LegacySpace = null;
   }
-  
+
   /// <summary>
-  /// Legacy Indent
+  ///   Legacy Indent
   /// </summary>
-  public static String? GetLegacyIndent(DocumentFormat.OpenXml.Wordprocessing.LegacyNumbering? openXmlElement)
+  public static String? GetLegacyIndent(LegacyNumbering? openXmlElement)
   {
     return openXmlElement?.LegacyIndent?.Value;
   }
-  
-  public static void SetLegacyIndent(DocumentFormat.OpenXml.Wordprocessing.LegacyNumbering? openXmlElement, String? value)
+
+  public static void SetLegacyIndent(LegacyNumbering? openXmlElement, String? value)
   {
     if (openXmlElement != null)
       if (value != null)
@@ -55,8 +57,8 @@ public static class LegacyNumberingConverter
       else
         openXmlElement.LegacyIndent = null;
   }
-  
-  public static DocumentModel.Wordprocessing.LegacyNumbering? CreateModelElement(DocumentFormat.OpenXml.Wordprocessing.LegacyNumbering? openXmlElement)
+
+  public static DocumentModel.Wordprocessing.LegacyNumbering? CreateModelElement(LegacyNumbering? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -68,9 +70,9 @@ public static class LegacyNumberingConverter
     }
     return null;
   }
-  
+
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.LegacyNumbering? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Wordprocessing.LegacyNumbering, new()
+    where OpenXmlElementType : LegacyNumbering, new()
   {
     if (value != null)
     {

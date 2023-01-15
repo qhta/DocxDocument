@@ -1,18 +1,17 @@
 namespace DocumentModel.Wordprocessing;
 
 /// <summary>
-/// Entry Categorization.
+///   Entry Categorization.
 /// </summary>
-public partial class Category
+public class Category
 {
   /// <summary>
-  /// Category Associated With Entry.
+  ///   Category Associated With Entry.
   /// </summary>
   public String? Name { get; set; }
-  
+
   /// <summary>
-  /// Gallery Associated With Entry.
+  ///   Gallery Associated With Entry.
   /// </summary>
-  public DocumentModel.Wordprocessing.DocPartGalleryKind? Gallery { get; set; }
-  
+  public DocPartGalleryKind? Gallery { get; set; }
 }

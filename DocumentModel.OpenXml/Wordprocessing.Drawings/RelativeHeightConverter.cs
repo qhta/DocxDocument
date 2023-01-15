@@ -1,51 +1,55 @@
+using DocumentFormat.OpenXml.Office2010.Word.Drawing;
+using DocumentModel.Wordprocessing.Drawings;
+using RelativeHeight = DocumentFormat.OpenXml.Office2010.Word.Drawing.RelativeHeight;
+
 namespace DocumentModel.OpenXml.Wordprocessing.Drawings;
 
 /// <summary>
-/// Defines the RelativeHeight Class.
+///   Defines the RelativeHeight Class.
 /// </summary>
 public static class RelativeHeightConverter
 {
   /// <summary>
-  /// relativeFrom, this property is only available in Office 2010 and later.
+  ///   relativeFrom, this property is only available in Office 2010 and later.
   /// </summary>
-  public static DocumentModel.Wordprocessing.Drawings.SizeRelativeVerticallyKind? GetRelativeFrom(DocumentFormat.OpenXml.Office2010.Word.Drawing.RelativeHeight? openXmlElement)
+  public static SizeRelativeVerticallyKind? GetRelativeFrom(RelativeHeight? openXmlElement)
   {
-    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Office2010.Word.Drawing.SizeRelativeVerticallyValues, DocumentModel.Wordprocessing.Drawings.SizeRelativeVerticallyKind>(openXmlElement?.RelativeFrom?.Value);
+    return EnumValueConverter.GetValue<SizeRelativeVerticallyValues, SizeRelativeVerticallyKind>(openXmlElement?.RelativeFrom?.Value);
   }
-  
-  public static void SetRelativeFrom(DocumentFormat.OpenXml.Office2010.Word.Drawing.RelativeHeight? openXmlElement, DocumentModel.Wordprocessing.Drawings.SizeRelativeVerticallyKind? value)
+
+  public static void SetRelativeFrom(RelativeHeight? openXmlElement, SizeRelativeVerticallyKind? value)
   {
     if (openXmlElement != null)
-      openXmlElement.RelativeFrom = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Office2010.Word.Drawing.SizeRelativeVerticallyValues, DocumentModel.Wordprocessing.Drawings.SizeRelativeVerticallyKind>(value);
+      openXmlElement.RelativeFrom = EnumValueConverter.CreateEnumValue<SizeRelativeVerticallyValues, SizeRelativeVerticallyKind>(value);
   }
-  
+
   /// <summary>
-  /// PercentageHeight.
+  ///   PercentageHeight.
   /// </summary>
-  public static String? GetPercentageHeight(DocumentFormat.OpenXml.Office2010.Word.Drawing.RelativeHeight? openXmlElement)
+  public static String? GetPercentageHeight(RelativeHeight? openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office2010.Word.Drawing.PercentageHeight>();
+    var itemElement = openXmlElement?.GetFirstChild<PercentageHeight>();
     if (itemElement != null)
       return itemElement.Text;
     return null;
   }
-  
-  public static void SetPercentageHeight(DocumentFormat.OpenXml.Office2010.Word.Drawing.RelativeHeight? openXmlElement, String? value)
+
+  public static void SetPercentageHeight(RelativeHeight? openXmlElement, String? value)
   {
     if (openXmlElement != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2010.Word.Drawing.PercentageHeight>();
+      var itemElement = openXmlElement.GetFirstChild<PercentageHeight>();
       if (itemElement != null)
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = new DocumentFormat.OpenXml.Office2010.Word.Drawing.PercentageHeight { Text = value };
+        itemElement = new PercentageHeight { Text = value };
         openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static DocumentModel.Wordprocessing.Drawings.RelativeHeight? CreateModelElement(DocumentFormat.OpenXml.Office2010.Word.Drawing.RelativeHeight? openXmlElement)
+
+  public static DocumentModel.Wordprocessing.Drawings.RelativeHeight? CreateModelElement(RelativeHeight? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -56,9 +60,9 @@ public static class RelativeHeightConverter
     }
     return null;
   }
-  
+
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.Drawings.RelativeHeight? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Office2010.Word.Drawing.RelativeHeight, new()
+    where OpenXmlElementType : RelativeHeight, new()
   {
     if (value != null)
     {

@@ -1,18 +1,17 @@
 namespace DocumentModel.Wordprocessing;
 
 /// <summary>
-/// Defines the VbaSuppData Class.
+///   Defines the VbaSuppData Class.
 /// </summary>
-public partial class VbaSuppData
+public class VbaSuppData
 {
   /// <summary>
-  /// DocEvents.
+  ///   DocEvents.
   /// </summary>
-  public DocumentModel.Wordprocessing.DocEvents? DocEvents { get; set; }
-  
+  public DocEvents? DocEvents { get; set; }
+
   /// <summary>
-  /// Mcds.
+  ///   Mcds.
   /// </summary>
-  public DocumentModel.Wordprocessing.Mcds? Mcds { get; set; }
-  
+  public Mcds? Mcds { get; set; }
 }

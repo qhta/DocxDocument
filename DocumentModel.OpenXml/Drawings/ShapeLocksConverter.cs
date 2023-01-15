@@ -1,19 +1,21 @@
+using DocumentFormat.OpenXml.Drawing;
+
 namespace DocumentModel.OpenXml.Drawings;
 
 /// <summary>
-/// Shape Locks.
+///   Shape Locks.
 /// </summary>
 public static class ShapeLocksConverter
 {
   /// <summary>
-  /// Disallow Shape Grouping
+  ///   Disallow Shape Grouping
   /// </summary>
-  public static Boolean? GetNoGrouping(DocumentFormat.OpenXml.Drawing.ShapeLocks? openXmlElement)
+  public static Boolean? GetNoGrouping(ShapeLocks? openXmlElement)
   {
     return openXmlElement?.NoGrouping?.Value;
   }
-  
-  public static void SetNoGrouping(DocumentFormat.OpenXml.Drawing.ShapeLocks? openXmlElement, Boolean? value)
+
+  public static void SetNoGrouping(ShapeLocks? openXmlElement, Boolean? value)
   {
     if (openXmlElement != null)
       if (value != null)
@@ -21,16 +23,16 @@ public static class ShapeLocksConverter
       else
         openXmlElement.NoGrouping = null;
   }
-  
+
   /// <summary>
-  /// Disallow Shape Selection
+  ///   Disallow Shape Selection
   /// </summary>
-  public static Boolean? GetNoSelection(DocumentFormat.OpenXml.Drawing.ShapeLocks? openXmlElement)
+  public static Boolean? GetNoSelection(ShapeLocks? openXmlElement)
   {
     return openXmlElement?.NoSelection?.Value;
   }
-  
-  public static void SetNoSelection(DocumentFormat.OpenXml.Drawing.ShapeLocks? openXmlElement, Boolean? value)
+
+  public static void SetNoSelection(ShapeLocks? openXmlElement, Boolean? value)
   {
     if (openXmlElement != null)
       if (value != null)
@@ -38,16 +40,16 @@ public static class ShapeLocksConverter
       else
         openXmlElement.NoSelection = null;
   }
-  
+
   /// <summary>
-  /// Disallow Shape Rotation
+  ///   Disallow Shape Rotation
   /// </summary>
-  public static Boolean? GetNoRotation(DocumentFormat.OpenXml.Drawing.ShapeLocks? openXmlElement)
+  public static Boolean? GetNoRotation(ShapeLocks? openXmlElement)
   {
     return openXmlElement?.NoRotation?.Value;
   }
-  
-  public static void SetNoRotation(DocumentFormat.OpenXml.Drawing.ShapeLocks? openXmlElement, Boolean? value)
+
+  public static void SetNoRotation(ShapeLocks? openXmlElement, Boolean? value)
   {
     if (openXmlElement != null)
       if (value != null)
@@ -55,16 +57,16 @@ public static class ShapeLocksConverter
       else
         openXmlElement.NoRotation = null;
   }
-  
+
   /// <summary>
-  /// Disallow Aspect Ratio Change
+  ///   Disallow Aspect Ratio Change
   /// </summary>
-  public static Boolean? GetNoChangeAspect(DocumentFormat.OpenXml.Drawing.ShapeLocks? openXmlElement)
+  public static Boolean? GetNoChangeAspect(ShapeLocks? openXmlElement)
   {
     return openXmlElement?.NoChangeAspect?.Value;
   }
-  
-  public static void SetNoChangeAspect(DocumentFormat.OpenXml.Drawing.ShapeLocks? openXmlElement, Boolean? value)
+
+  public static void SetNoChangeAspect(ShapeLocks? openXmlElement, Boolean? value)
   {
     if (openXmlElement != null)
       if (value != null)
@@ -72,16 +74,16 @@ public static class ShapeLocksConverter
       else
         openXmlElement.NoChangeAspect = null;
   }
-  
+
   /// <summary>
-  /// Disallow Shape Movement
+  ///   Disallow Shape Movement
   /// </summary>
-  public static Boolean? GetNoMove(DocumentFormat.OpenXml.Drawing.ShapeLocks? openXmlElement)
+  public static Boolean? GetNoMove(ShapeLocks? openXmlElement)
   {
     return openXmlElement?.NoMove?.Value;
   }
-  
-  public static void SetNoMove(DocumentFormat.OpenXml.Drawing.ShapeLocks? openXmlElement, Boolean? value)
+
+  public static void SetNoMove(ShapeLocks? openXmlElement, Boolean? value)
   {
     if (openXmlElement != null)
       if (value != null)
@@ -89,16 +91,16 @@ public static class ShapeLocksConverter
       else
         openXmlElement.NoMove = null;
   }
-  
+
   /// <summary>
-  /// Disallow Shape Resize
+  ///   Disallow Shape Resize
   /// </summary>
-  public static Boolean? GetNoResize(DocumentFormat.OpenXml.Drawing.ShapeLocks? openXmlElement)
+  public static Boolean? GetNoResize(ShapeLocks? openXmlElement)
   {
     return openXmlElement?.NoResize?.Value;
   }
-  
-  public static void SetNoResize(DocumentFormat.OpenXml.Drawing.ShapeLocks? openXmlElement, Boolean? value)
+
+  public static void SetNoResize(ShapeLocks? openXmlElement, Boolean? value)
   {
     if (openXmlElement != null)
       if (value != null)
@@ -106,16 +108,16 @@ public static class ShapeLocksConverter
       else
         openXmlElement.NoResize = null;
   }
-  
+
   /// <summary>
-  /// Disallow Shape Point Editing
+  ///   Disallow Shape Point Editing
   /// </summary>
-  public static Boolean? GetNoEditPoints(DocumentFormat.OpenXml.Drawing.ShapeLocks? openXmlElement)
+  public static Boolean? GetNoEditPoints(ShapeLocks? openXmlElement)
   {
     return openXmlElement?.NoEditPoints?.Value;
   }
-  
-  public static void SetNoEditPoints(DocumentFormat.OpenXml.Drawing.ShapeLocks? openXmlElement, Boolean? value)
+
+  public static void SetNoEditPoints(ShapeLocks? openXmlElement, Boolean? value)
   {
     if (openXmlElement != null)
       if (value != null)
@@ -123,16 +125,16 @@ public static class ShapeLocksConverter
       else
         openXmlElement.NoEditPoints = null;
   }
-  
+
   /// <summary>
-  /// Disallow Showing Adjust Handles
+  ///   Disallow Showing Adjust Handles
   /// </summary>
-  public static Boolean? GetNoAdjustHandles(DocumentFormat.OpenXml.Drawing.ShapeLocks? openXmlElement)
+  public static Boolean? GetNoAdjustHandles(ShapeLocks? openXmlElement)
   {
     return openXmlElement?.NoAdjustHandles?.Value;
   }
-  
-  public static void SetNoAdjustHandles(DocumentFormat.OpenXml.Drawing.ShapeLocks? openXmlElement, Boolean? value)
+
+  public static void SetNoAdjustHandles(ShapeLocks? openXmlElement, Boolean? value)
   {
     if (openXmlElement != null)
       if (value != null)
@@ -140,16 +142,16 @@ public static class ShapeLocksConverter
       else
         openXmlElement.NoAdjustHandles = null;
   }
-  
+
   /// <summary>
-  /// Disallow Arrowhead Changes
+  ///   Disallow Arrowhead Changes
   /// </summary>
-  public static Boolean? GetNoChangeArrowheads(DocumentFormat.OpenXml.Drawing.ShapeLocks? openXmlElement)
+  public static Boolean? GetNoChangeArrowheads(ShapeLocks? openXmlElement)
   {
     return openXmlElement?.NoChangeArrowheads?.Value;
   }
-  
-  public static void SetNoChangeArrowheads(DocumentFormat.OpenXml.Drawing.ShapeLocks? openXmlElement, Boolean? value)
+
+  public static void SetNoChangeArrowheads(ShapeLocks? openXmlElement, Boolean? value)
   {
     if (openXmlElement != null)
       if (value != null)
@@ -157,16 +159,16 @@ public static class ShapeLocksConverter
       else
         openXmlElement.NoChangeArrowheads = null;
   }
-  
+
   /// <summary>
-  /// Disallow Shape Type Change
+  ///   Disallow Shape Type Change
   /// </summary>
-  public static Boolean? GetNoChangeShapeType(DocumentFormat.OpenXml.Drawing.ShapeLocks? openXmlElement)
+  public static Boolean? GetNoChangeShapeType(ShapeLocks? openXmlElement)
   {
     return openXmlElement?.NoChangeShapeType?.Value;
   }
-  
-  public static void SetNoChangeShapeType(DocumentFormat.OpenXml.Drawing.ShapeLocks? openXmlElement, Boolean? value)
+
+  public static void SetNoChangeShapeType(ShapeLocks? openXmlElement, Boolean? value)
   {
     if (openXmlElement != null)
       if (value != null)
@@ -174,16 +176,16 @@ public static class ShapeLocksConverter
       else
         openXmlElement.NoChangeShapeType = null;
   }
-  
+
   /// <summary>
-  /// Disallow Shape Text Editing
+  ///   Disallow Shape Text Editing
   /// </summary>
-  public static Boolean? GetNoTextEdit(DocumentFormat.OpenXml.Drawing.ShapeLocks? openXmlElement)
+  public static Boolean? GetNoTextEdit(ShapeLocks? openXmlElement)
   {
     return openXmlElement?.NoTextEdit?.Value;
   }
-  
-  public static void SetNoTextEdit(DocumentFormat.OpenXml.Drawing.ShapeLocks? openXmlElement, Boolean? value)
+
+  public static void SetNoTextEdit(ShapeLocks? openXmlElement, Boolean? value)
   {
     if (openXmlElement != null)
       if (value != null)
@@ -191,19 +193,19 @@ public static class ShapeLocksConverter
       else
         openXmlElement.NoTextEdit = null;
   }
-  
+
   /// <summary>
-  /// ExtensionList.
+  ///   ExtensionList.
   /// </summary>
-  public static DocumentModel.Drawings.ExtensionList? GetExtensionList(DocumentFormat.OpenXml.Drawing.ShapeLocks? openXmlElement)
+  public static DocumentModel.Drawings.ExtensionList? GetExtensionList(ShapeLocks? openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.ExtensionList>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.ExtensionListConverter.CreateModelElement(itemElement);
+      return ExtensionListConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetExtensionList(DocumentFormat.OpenXml.Drawing.ShapeLocks? openXmlElement, DocumentModel.Drawings.ExtensionList? value)
+
+  public static void SetExtensionList(ShapeLocks? openXmlElement, DocumentModel.Drawings.ExtensionList? value)
   {
     if (openXmlElement != null)
     {
@@ -212,14 +214,14 @@ public static class ShapeLocksConverter
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Drawings.ExtensionListConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.ExtensionList>(value);
+        itemElement = ExtensionListConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.ExtensionList>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static DocumentModel.Drawings.ShapeLocks? CreateModelElement(DocumentFormat.OpenXml.Drawing.ShapeLocks? openXmlElement)
+
+  public static DocumentModel.Drawings.ShapeLocks? CreateModelElement(ShapeLocks? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -240,9 +242,9 @@ public static class ShapeLocksConverter
     }
     return null;
   }
-  
+
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.ShapeLocks? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.ShapeLocks, new()
+    where OpenXmlElementType : ShapeLocks, new()
   {
     if (value != null)
     {

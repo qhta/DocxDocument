@@ -1,28 +1,27 @@
 namespace DocumentModel.Drawings;
 
 /// <summary>
-/// Defines the ForegroundMark Class.
+///   Defines the ForegroundMark Class.
 /// </summary>
-public partial class ForegroundMark
+public class ForegroundMark
 {
   /// <summary>
-  /// x1, this property is only available in Office 2010 and later.
+  ///   x1, this property is only available in Office 2010 and later.
   /// </summary>
   public Int32? FirstXCoordinate { get; set; }
-  
+
   /// <summary>
-  /// y1, this property is only available in Office 2010 and later.
+  ///   y1, this property is only available in Office 2010 and later.
   /// </summary>
   public Int32? FirstYCoordinate { get; set; }
-  
+
   /// <summary>
-  /// x2, this property is only available in Office 2010 and later.
+  ///   x2, this property is only available in Office 2010 and later.
   /// </summary>
   public Int32? SecondXCoordinate { get; set; }
-  
+
   /// <summary>
-  /// y2, this property is only available in Office 2010 and later.
+  ///   y2, this property is only available in Office 2010 and later.
   /// </summary>
   public Int32? SecondYCoordinate { get; set; }
-  
 }

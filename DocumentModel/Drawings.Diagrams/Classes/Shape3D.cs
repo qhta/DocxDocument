@@ -1,53 +1,52 @@
 namespace DocumentModel.Drawings.Diagrams;
 
 /// <summary>
-/// 3-D Shape Properties.
+///   3-D Shape Properties.
 /// </summary>
-public partial class Shape3D
+public class Shape3D
 {
   /// <summary>
-  /// Shape Depth
+  ///   Shape Depth
   /// </summary>
   public Int64? Z { get; set; }
-  
+
   /// <summary>
-  /// Extrusion Height
+  ///   Extrusion Height
   /// </summary>
   public Int64? ExtrusionHeight { get; set; }
-  
+
   /// <summary>
-  /// Contour Width
+  ///   Contour Width
   /// </summary>
   public Int64? ContourWidth { get; set; }
-  
+
   /// <summary>
-  /// Preset Material Type
+  ///   Preset Material Type
   /// </summary>
-  public DocumentModel.Drawings.PresetMaterialKind? PresetMaterial { get; set; }
-  
+  public PresetMaterialKind? PresetMaterial { get; set; }
+
   /// <summary>
-  /// Top Bevel.
+  ///   Top Bevel.
   /// </summary>
-  public DocumentModel.Drawings.BevelType? BevelTop { get; set; }
-  
+  public BevelType? BevelTop { get; set; }
+
   /// <summary>
-  /// Bottom Bevel.
+  ///   Bottom Bevel.
   /// </summary>
-  public DocumentModel.Drawings.BevelType? BevelBottom { get; set; }
-  
+  public BevelType? BevelBottom { get; set; }
+
   /// <summary>
-  /// Extrusion Color.
+  ///   Extrusion Color.
   /// </summary>
-  public DocumentModel.Drawings.ExtrusionColor? ExtrusionColor { get; set; }
-  
+  public ExtrusionColor? ExtrusionColor { get; set; }
+
   /// <summary>
-  /// Contour Color.
+  ///   Contour Color.
   /// </summary>
-  public DocumentModel.Drawings.ContourColor? ContourColor { get; set; }
-  
+  public ContourColor? ContourColor { get; set; }
+
   /// <summary>
-  /// ExtensionList.
+  ///   ExtensionList.
   /// </summary>
-  public DocumentModel.Drawings.ExtensionList? ExtensionList { get; set; }
-  
+  public Drawings.ExtensionList? ExtensionList { get; set; }
 }

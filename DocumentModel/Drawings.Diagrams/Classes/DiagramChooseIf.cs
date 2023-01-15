@@ -1,81 +1,80 @@
 namespace DocumentModel.Drawings.Diagrams;
 
 /// <summary>
-/// If.
+///   If.
 /// </summary>
-public partial class DiagramChooseIf
+public class DiagramChooseIf
 {
   /// <summary>
-  /// Name
+  ///   Name
   /// </summary>
   public String? Name { get; set; }
-  
+
   /// <summary>
-  /// Axis
+  ///   Axis
   /// </summary>
-  public DocumentModel.ListOf<DocumentModel.Drawings.Diagrams.AxisKind>? Axis { get; set; }
-  
+  public ListOf<AxisKind>? Axis { get; set; }
+
   /// <summary>
-  /// Data Point Type
+  ///   Data Point Type
   /// </summary>
-  public DocumentModel.ListOf<DocumentModel.Drawings.Diagrams.ElementKind>? PointType { get; set; }
-  
+  public ListOf<ElementKind>? PointType { get; set; }
+
   /// <summary>
-  /// Hide Last Transition
+  ///   Hide Last Transition
   /// </summary>
-  public DocumentModel.ListOf<System.Boolean>? HideLastTrans { get; set; }
-  
+  public ListOf<Boolean>? HideLastTrans { get; set; }
+
   /// <summary>
-  /// Start
+  ///   Start
   /// </summary>
-  public DocumentModel.ListOf<System.Int32>? Start { get; set; }
-  
+  public ListOf<Int32>? Start { get; set; }
+
   /// <summary>
-  /// Count
+  ///   Count
   /// </summary>
-  public DocumentModel.ListOf<System.UInt32>? Count { get; set; }
-  
+  public ListOf<UInt32>? Count { get; set; }
+
   /// <summary>
-  /// Step
+  ///   Step
   /// </summary>
-  public DocumentModel.ListOf<System.Int32>? Step { get; set; }
-  
+  public ListOf<Int32>? Step { get; set; }
+
   /// <summary>
-  /// Function
+  ///   Function
   /// </summary>
-  public DocumentModel.Drawings.Diagrams.FunctionKind? Function { get; set; }
-  
+  public FunctionKind? Function { get; set; }
+
   /// <summary>
-  /// Argument
+  ///   Argument
   /// </summary>
   public String? Argument { get; set; }
-  
+
   /// <summary>
-  /// Operator
+  ///   Operator
   /// </summary>
-  public DocumentModel.Drawings.Diagrams.FunctionOperatorKind? Operator { get; set; }
-  
+  public FunctionOperatorKind? Operator { get; set; }
+
   /// <summary>
-  /// Value
+  ///   Value
   /// </summary>
   public String? Val { get; set; }
-  
-  public DocumentModel.Drawings.Diagrams.Algorithm? Algorithm { get; set; }
-  
-  public DocumentModel.Drawings.Diagrams.Shape? Shape { get; set; }
-  
-  public DocumentModel.Drawings.Diagrams.PresentationOf? PresentationOf { get; set; }
-  
-  public DocumentModel.Drawings.Diagrams.Constraints? Constraints { get; set; }
-  
-  public DocumentModel.Drawings.Diagrams.RuleList? RuleList { get; set; }
-  
-  public DocumentModel.Drawings.Diagrams.ForEach? ForEach { get; set; }
-  
-  public DocumentModel.Drawings.Diagrams.LayoutNode? LayoutNode { get; set; }
-  
-  public DocumentModel.Drawings.Diagrams.Choose? Choose { get; set; }
-  
-  public DocumentModel.Drawings.Diagrams.ExtensionList? ExtensionList { get; set; }
-  
+
+  public Algorithm? Algorithm { get; set; }
+
+  public Shape? Shape { get; set; }
+
+  public PresentationOf? PresentationOf { get; set; }
+
+  public Constraints? Constraints { get; set; }
+
+  public RuleList? RuleList { get; set; }
+
+  public ForEach? ForEach { get; set; }
+
+  public LayoutNode? LayoutNode { get; set; }
+
+  public Choose? Choose { get; set; }
+
+  public ExtensionList? ExtensionList { get; set; }
 }

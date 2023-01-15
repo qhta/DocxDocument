@@ -1,10 +1,9 @@
 namespace DocumentModel.Drawings.Diagrams;
 
 /// <summary>
-/// Connection List.
+///   Connection List.
 /// </summary>
-public partial class ConnectionList
+public class ConnectionList
 {
-  public Collection<DocumentModel.Drawings.Diagrams.Connection>? Connections { get; set; }
-  
+  public Collection<Connection>? Connections { get; set; }
 }

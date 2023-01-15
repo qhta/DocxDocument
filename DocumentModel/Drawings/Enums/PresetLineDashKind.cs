@@ -1,63 +1,62 @@
 namespace DocumentModel.Drawings;
 
 /// <summary>
-/// Preset Line Dash Value
+///   Preset Line Dash Value
 /// </summary>
 public enum PresetLineDashKind
 {
   /// <summary>
-  /// Solid.
+  ///   Solid.
   /// </summary>
   Solid,
-  
+
   /// <summary>
-  /// Dot.
+  ///   Dot.
   /// </summary>
   Dot,
-  
+
   /// <summary>
-  /// Dash.
+  ///   Dash.
   /// </summary>
   Dash,
-  
+
   /// <summary>
-  /// Large Dash.
+  ///   Large Dash.
   /// </summary>
   LargeDash,
-  
+
   /// <summary>
-  /// Dash Dot.
+  ///   Dash Dot.
   /// </summary>
   DashDot,
-  
+
   /// <summary>
-  /// Large Dash Dot.
+  ///   Large Dash Dot.
   /// </summary>
   LargeDashDot,
-  
+
   /// <summary>
-  /// Large Dash Dot Dot.
+  ///   Large Dash Dot Dot.
   /// </summary>
   LargeDashDotDot,
-  
+
   /// <summary>
-  /// System Dash.
+  ///   System Dash.
   /// </summary>
   SystemDash,
-  
+
   /// <summary>
-  /// System Dot.
+  ///   System Dot.
   /// </summary>
   SystemDot,
-  
+
   /// <summary>
-  /// System Dash Dot.
+  ///   System Dash Dot.
   /// </summary>
   SystemDashDot,
-  
+
   /// <summary>
-  /// System Dash Dot Dot.
+  ///   System Dash Dot Dot.
   /// </summary>
-  SystemDashDotDot,
-  
+  SystemDashDotDot
 }

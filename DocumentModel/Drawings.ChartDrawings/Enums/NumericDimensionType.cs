@@ -1,33 +1,32 @@
 namespace DocumentModel.Drawings.ChartDrawings;
 
 /// <summary>
-/// Defines the NumericDimensionType enumeration.
+///   Defines the NumericDimensionType enumeration.
 /// </summary>
 public enum NumericDimensionType
 {
   /// <summary>
-  /// val.
+  ///   val.
   /// </summary>
   Val,
-  
+
   /// <summary>
-  /// x.
+  ///   x.
   /// </summary>
   X,
-  
+
   /// <summary>
-  /// y.
+  ///   y.
   /// </summary>
   Y,
-  
+
   /// <summary>
-  /// size.
+  ///   size.
   /// </summary>
   Size,
-  
+
   /// <summary>
-  /// colorVal.
+  ///   colorVal.
   /// </summary>
-  ColorVal,
-  
+  ColorVal
 }

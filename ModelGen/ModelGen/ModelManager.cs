@@ -209,7 +209,7 @@ public static class ModelManager
     if (apos >= 0)
     {
       var genericParams = typeInfo.GetGenericParamTypes();
-      var genericArgs = typeInfo.GetGenericArgTypes();
+      var genericArgs = typeInfo.GetGenericTypeArguments();
       if (genericParams.Any())
       {
         result.ArgNames = new();
@@ -322,7 +322,7 @@ public static class ModelManager
       return true;
     if (typeInfo.IsConstructedGenericType)
     {
-      foreach (var arg in typeInfo.GetGenericArgTypes())
+      foreach (var arg in typeInfo.GetGenericTypeArguments())
       {
         if (HasExcludedNamespace(arg))
           return true;

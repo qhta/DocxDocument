@@ -1,21 +1,20 @@
 namespace DocumentModel.Drawings.Charts;
 
 /// <summary>
-/// Pie Charts.
+///   Pie Charts.
 /// </summary>
-public partial class PieChart
+public class PieChart
 {
   /// <summary>
-  /// VaryColors.
+  ///   VaryColors.
   /// </summary>
   public Boolean? VaryColors { get; set; }
-  
-  public Collection<DocumentModel.Drawings.Charts.PieChartSeries>? PieChartSerieses { get; set; }
-  
-  public DocumentModel.Drawings.Charts.DataLabels? DataLabels { get; set; }
-  
+
+  public Collection<PieChartSeries>? PieChartSerieses { get; set; }
+
+  public DataLabels? DataLabels { get; set; }
+
   public UInt16? FirstSliceAngle { get; set; }
-  
-  public DocumentModel.Drawings.Charts.PieChartExtensionList? PieChartExtensionList { get; set; }
-  
+
+  public PieChartExtensionList? PieChartExtensionList { get; set; }
 }

@@ -1,15 +1,14 @@
 namespace DocumentModel.Drawings;
 
 /// <summary>
-/// Defines the LinePropertiesExtension Class.
+///   Defines the LinePropertiesExtension Class.
 /// </summary>
-public partial class LinePropertiesExtension
+public class LinePropertiesExtension
 {
   /// <summary>
-  /// URI
+  ///   URI
   /// </summary>
   public String? Uri { get; set; }
-  
-  public DocumentModel.Drawings.LineSketchStyleProperties? LineSketchStyleProperties { get; set; }
-  
+
+  public LineSketchStyleProperties? LineSketchStyleProperties { get; set; }
 }

@@ -1,18 +1,21 @@
+using DocumentModel.Drawings.ChartDrawings;
+using GeoChildEntitiesQueryResults = DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.GeoChildEntitiesQueryResults;
+
 namespace DocumentModel.OpenXml.Drawings.ChartDrawings;
 
 /// <summary>
-/// Defines the GeoChildEntitiesQueryResults Class.
+///   Defines the GeoChildEntitiesQueryResults Class.
 /// </summary>
 public static class GeoChildEntitiesQueryResultsConverter
 {
-  public static System.Collections.ObjectModel.Collection<DocumentModel.Drawings.ChartDrawings.GeoChildEntitiesQueryResult>? GetItems(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.GeoChildEntitiesQueryResults? openXmlElement)
+  public static Collection<GeoChildEntitiesQueryResult>? GetItems(GeoChildEntitiesQueryResults? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var collection = new System.Collections.ObjectModel.Collection<DocumentModel.Drawings.ChartDrawings.GeoChildEntitiesQueryResult>();
+      var collection = new Collection<GeoChildEntitiesQueryResult>();
       foreach (var item in openXmlElement.Elements<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.GeoChildEntitiesQueryResult>())
       {
-        var newItem = DocumentModel.OpenXml.Drawings.ChartDrawings.GeoChildEntitiesQueryResultConverter.CreateModelElement(item);
+        var newItem = GeoChildEntitiesQueryResultConverter.CreateModelElement(item);
         if (newItem != null)
           collection.Add(newItem);
       }
@@ -20,25 +23,23 @@ public static class GeoChildEntitiesQueryResultsConverter
     }
     return null;
   }
-  
-  public static void SetItems(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.GeoChildEntitiesQueryResults? openXmlElement, System.Collections.ObjectModel.Collection<DocumentModel.Drawings.ChartDrawings.GeoChildEntitiesQueryResult>? value)
+
+  public static void SetItems(GeoChildEntitiesQueryResults? openXmlElement, Collection<GeoChildEntitiesQueryResult>? value)
   {
     if (openXmlElement != null)
     {
       openXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.GeoChildEntitiesQueryResult>();
       if (value != null)
-      {
         foreach (var item in value)
         {
-          var newItem = DocumentModel.OpenXml.Drawings.ChartDrawings.GeoChildEntitiesQueryResultConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.GeoChildEntitiesQueryResult>(item);
+          var newItem = GeoChildEntitiesQueryResultConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.GeoChildEntitiesQueryResult>(item);
           if (newItem != null)
             openXmlElement.AddChild(newItem);
         }
-      }
     }
   }
-  
-  public static DocumentModel.Drawings.ChartDrawings.GeoChildEntitiesQueryResults? CreateModelElement(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.GeoChildEntitiesQueryResults? openXmlElement)
+
+  public static DocumentModel.Drawings.ChartDrawings.GeoChildEntitiesQueryResults? CreateModelElement(GeoChildEntitiesQueryResults? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -48,9 +49,9 @@ public static class GeoChildEntitiesQueryResultsConverter
     }
     return null;
   }
-  
+
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.ChartDrawings.GeoChildEntitiesQueryResults? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.GeoChildEntitiesQueryResults, new()
+    where OpenXmlElementType : GeoChildEntitiesQueryResults, new()
   {
     if (value != null)
     {

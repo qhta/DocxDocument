@@ -1,23 +1,22 @@
 namespace DocumentModel.Wordprocessing;
 
 /// <summary>
-/// Phonetic Guide.
+///   Phonetic Guide.
 /// </summary>
-public partial class Ruby
+public class Ruby
 {
   /// <summary>
-  /// Phonetic Guide Properties.
+  ///   Phonetic Guide Properties.
   /// </summary>
-  public DocumentModel.Wordprocessing.RubyProperties? RubyProperties { get; set; }
-  
+  public RubyProperties? RubyProperties { get; set; }
+
   /// <summary>
-  /// Phonetic Guide Text.
+  ///   Phonetic Guide Text.
   /// </summary>
-  public DocumentModel.Wordprocessing.RubyContent? RubyContent { get; set; }
-  
+  public RubyContent? RubyContent { get; set; }
+
   /// <summary>
-  /// Phonetic Guide Base Text.
+  ///   Phonetic Guide Base Text.
   /// </summary>
-  public DocumentModel.Wordprocessing.RubyBase? RubyBase { get; set; }
-  
+  public RubyBase? RubyBase { get; set; }
 }

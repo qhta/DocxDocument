@@ -1,28 +1,27 @@
 namespace DocumentModel.Wordprocessing;
 
 /// <summary>
-/// Defines the RunPropertiesChange Class.
+///   Defines the RunPropertiesChange Class.
 /// </summary>
-public partial class RunPropertiesChange
+public class RunPropertiesChange
 {
   /// <summary>
-  /// author
+  ///   author
   /// </summary>
   public String? Author { get; set; }
-  
+
   /// <summary>
-  /// date
+  ///   date
   /// </summary>
   public DateTime? Date { get; set; }
-  
+
   /// <summary>
-  /// Annotation Identifier
+  ///   Annotation Identifier
   /// </summary>
   public String? Id { get; set; }
-  
+
   /// <summary>
-  /// Previous Run Properties.
+  ///   Previous Run Properties.
   /// </summary>
-  public DocumentModel.Wordprocessing.PreviousRunProperties? PreviousRunProperties { get; set; }
-  
+  public PreviousRunProperties? PreviousRunProperties { get; set; }
 }

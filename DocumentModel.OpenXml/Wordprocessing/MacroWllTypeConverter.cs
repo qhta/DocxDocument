@@ -1,19 +1,21 @@
+using DocumentFormat.OpenXml.Office.Word;
+
 namespace DocumentModel.OpenXml.Wordprocessing;
 
 /// <summary>
-/// Defines the MacroWllType Class.
+///   Defines the MacroWllType Class.
 /// </summary>
 public static class MacroWllTypeConverter
 {
   /// <summary>
-  /// macroName
+  ///   macroName
   /// </summary>
-  public static String? GetMacroName(DocumentFormat.OpenXml.Office.Word.MacroWllType? openXmlElement)
+  public static String? GetMacroName(MacroWllType? openXmlElement)
   {
     return openXmlElement?.MacroName?.Value;
   }
-  
-  public static void SetMacroName(DocumentFormat.OpenXml.Office.Word.MacroWllType? openXmlElement, String? value)
+
+  public static void SetMacroName(MacroWllType? openXmlElement, String? value)
   {
     if (openXmlElement != null)
       if (value != null)
@@ -21,8 +23,8 @@ public static class MacroWllTypeConverter
       else
         openXmlElement.MacroName = null;
   }
-  
-  public static DocumentModel.Wordprocessing.MacroWllType? CreateModelElement(DocumentFormat.OpenXml.Office.Word.MacroWllType? openXmlElement)
+
+  public static DocumentModel.Wordprocessing.MacroWllType? CreateModelElement(MacroWllType? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -32,9 +34,9 @@ public static class MacroWllTypeConverter
     }
     return null;
   }
-  
+
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.MacroWllType? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Office.Word.MacroWllType, new()
+    where OpenXmlElementType : MacroWllType, new()
   {
     if (value != null)
     {

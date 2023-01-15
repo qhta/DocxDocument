@@ -1,18 +1,17 @@
 namespace DocumentModel.Wordprocessing;
 
 /// <summary>
-/// Magnification Setting.
+///   Magnification Setting.
 /// </summary>
-public partial class Zoom
+public class Zoom
 {
   /// <summary>
-  /// Zoom Type
+  ///   Zoom Type
   /// </summary>
-  public DocumentModel.Wordprocessing.PresetZoomKind? Val { get; set; }
-  
+  public PresetZoomKind? Val { get; set; }
+
   /// <summary>
-  /// Zoom Percentage
+  ///   Zoom Percentage
   /// </summary>
   public String? Percent { get; set; }
-  
 }

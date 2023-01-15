@@ -1,18 +1,17 @@
 namespace DocumentModel.Drawings.Charts;
 
 /// <summary>
-/// Pie of Pie or Bar of Pie Type
+///   Pie of Pie or Bar of Pie Type
 /// </summary>
 public enum OfPieKind
 {
   /// <summary>
-  /// Pie.
+  ///   Pie.
   /// </summary>
   Pie,
-  
+
   /// <summary>
-  /// Bar.
+  ///   Bar.
   /// </summary>
-  Bar,
-  
+  Bar
 }

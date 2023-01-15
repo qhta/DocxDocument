@@ -1,10 +1,9 @@
 namespace DocumentModel.Drawings;
 
 /// <summary>
-/// Effect Style List.
+///   Effect Style List.
 /// </summary>
-public partial class EffectStyleList
+public class EffectStyleList
 {
-  public DocumentModel.Drawings.EffectStyle? EffectStyle { get; set; }
-  
+  public EffectStyle? EffectStyle { get; set; }
 }

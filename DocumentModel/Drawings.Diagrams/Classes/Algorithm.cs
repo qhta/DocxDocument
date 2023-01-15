@@ -1,22 +1,21 @@
 namespace DocumentModel.Drawings.Diagrams;
 
 /// <summary>
-/// Algorithm.
+///   Algorithm.
 /// </summary>
-public partial class Algorithm
+public class Algorithm
 {
   /// <summary>
-  /// Algorithm Type
+  ///   Algorithm Type
   /// </summary>
-  public DocumentModel.Drawings.Diagrams.AlgorithmKind? Type { get; set; }
-  
+  public AlgorithmKind? Type { get; set; }
+
   /// <summary>
-  /// Revision Number
+  ///   Revision Number
   /// </summary>
   public UInt32? Revision { get; set; }
-  
-  public Collection<DocumentModel.Drawings.Diagrams.Parameter>? Parameters { get; set; }
-  
-  public DocumentModel.Drawings.Diagrams.ExtensionList? ExtensionList { get; set; }
-  
+
+  public Collection<Parameter>? Parameters { get; set; }
+
+  public ExtensionList? ExtensionList { get; set; }
 }

@@ -1,4 +1,7 @@
-﻿using ModelGen;
+﻿using System.Reflection;
+
+using ModelGen;
+
 using Qhta.TypeUtils;
 
 public static class Program

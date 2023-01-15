@@ -1,18 +1,17 @@
 namespace DocumentModel.Drawings.Charts;
 
 /// <summary>
-/// Number Format.
+///   Number Format.
 /// </summary>
-public partial class NumberingFormat
+public class NumberingFormat
 {
   /// <summary>
-  /// Number Format Code
+  ///   Number Format Code
   /// </summary>
   public String? FormatCode { get; set; }
-  
+
   /// <summary>
-  /// Linked to Source
+  ///   Linked to Source
   /// </summary>
   public Boolean? SourceLinked { get; set; }
-  
 }

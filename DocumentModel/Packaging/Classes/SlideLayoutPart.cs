@@ -1,97 +1,96 @@
 namespace DocumentModel.Packaging;
 
 /// <summary>
-/// Defines the SlideLayoutPart
+///   Defines the SlideLayoutPart
 /// </summary>
-public partial class SlideLayoutPart
+public class SlideLayoutPart
 {
   /// <summary>
-  /// Gets the ChartParts of the SlideLayoutPart
+  ///   Gets the ChartParts of the SlideLayoutPart
   /// </summary>
-  public Collection<DocumentModel.Packaging.ChartPart>? ChartParts { get; set; }
-  
+  public Collection<ChartPart>? ChartParts { get; set; }
+
   public String? ContentType { get; set; }
-  
+
   /// <summary>
-  /// Gets the CustomXmlParts of the SlideLayoutPart
+  ///   Gets the CustomXmlParts of the SlideLayoutPart
   /// </summary>
-  public Collection<DocumentModel.Packaging.CustomXmlPart>? CustomXmlParts { get; set; }
-  
+  public Collection<CustomXmlPart>? CustomXmlParts { get; set; }
+
   /// <summary>
-  /// Gets the DiagramColorsParts of the SlideLayoutPart
+  ///   Gets the DiagramColorsParts of the SlideLayoutPart
   /// </summary>
-  public Collection<DocumentModel.Packaging.DiagramColorsPart>? DiagramColorsParts { get; set; }
-  
+  public Collection<DiagramColorsPart>? DiagramColorsParts { get; set; }
+
   /// <summary>
-  /// Gets the DiagramDataParts of the SlideLayoutPart
+  ///   Gets the DiagramDataParts of the SlideLayoutPart
   /// </summary>
-  public Collection<DocumentModel.Packaging.DiagramDataPart>? DiagramDataParts { get; set; }
-  
+  public Collection<DiagramDataPart>? DiagramDataParts { get; set; }
+
   /// <summary>
-  /// Gets the DiagramLayoutDefinitionParts of the SlideLayoutPart
+  ///   Gets the DiagramLayoutDefinitionParts of the SlideLayoutPart
   /// </summary>
-  public Collection<DocumentModel.Packaging.DiagramLayoutDefinitionPart>? DiagramLayoutDefinitionParts { get; set; }
-  
+  public Collection<DiagramLayoutDefinitionPart>? DiagramLayoutDefinitionParts { get; set; }
+
   /// <summary>
-  /// Gets the DiagramPersistLayoutParts of the SlideLayoutPart
+  ///   Gets the DiagramPersistLayoutParts of the SlideLayoutPart
   /// </summary>
-  public Collection<DocumentModel.Packaging.DiagramPersistLayoutPart>? DiagramPersistLayoutParts { get; set; }
-  
+  public Collection<DiagramPersistLayoutPart>? DiagramPersistLayoutParts { get; set; }
+
   /// <summary>
-  /// Gets the DiagramStyleParts of the SlideLayoutPart
+  ///   Gets the DiagramStyleParts of the SlideLayoutPart
   /// </summary>
-  public Collection<DocumentModel.Packaging.DiagramStylePart>? DiagramStyleParts { get; set; }
-  
+  public Collection<DiagramStylePart>? DiagramStyleParts { get; set; }
+
   /// <summary>
-  /// Gets the EmbeddedControlPersistenceBinaryDataParts of the SlideLayoutPart
+  ///   Gets the EmbeddedControlPersistenceBinaryDataParts of the SlideLayoutPart
   /// </summary>
-  public Collection<DocumentModel.Packaging.EmbeddedControlPersistenceBinaryDataPart>? EmbeddedControlPersistenceBinaryDataParts { get; set; }
-  
+  public Collection<EmbeddedControlPersistenceBinaryDataPart>? EmbeddedControlPersistenceBinaryDataParts { get; set; }
+
   /// <summary>
-  /// Gets the EmbeddedControlPersistenceParts of the SlideLayoutPart
+  ///   Gets the EmbeddedControlPersistenceParts of the SlideLayoutPart
   /// </summary>
-  public Collection<DocumentModel.Packaging.EmbeddedControlPersistencePart>? EmbeddedControlPersistenceParts { get; set; }
-  
+  public Collection<EmbeddedControlPersistencePart>? EmbeddedControlPersistenceParts { get; set; }
+
   /// <summary>
-  /// Gets the EmbeddedObjectParts of the SlideLayoutPart
+  ///   Gets the EmbeddedObjectParts of the SlideLayoutPart
   /// </summary>
-  public Collection<DocumentModel.Packaging.EmbeddedObjectPart>? EmbeddedObjectParts { get; set; }
-  
+  public Collection<EmbeddedObjectPart>? EmbeddedObjectParts { get; set; }
+
   /// <summary>
-  /// Gets the EmbeddedPackageParts of the SlideLayoutPart
+  ///   Gets the EmbeddedPackageParts of the SlideLayoutPart
   /// </summary>
-  public Collection<DocumentModel.Packaging.EmbeddedPackagePart>? EmbeddedPackageParts { get; set; }
-  
+  public Collection<EmbeddedPackagePart>? EmbeddedPackageParts { get; set; }
+
   /// <summary>
-  /// Gets the ExtendedChartParts of the SlideLayoutPart
+  ///   Gets the ExtendedChartParts of the SlideLayoutPart
   /// </summary>
-  public Collection<DocumentModel.Packaging.ExtendedChartPart>? ExtendedChartParts { get; set; }
-  
+  public Collection<ExtendedChartPart>? ExtendedChartParts { get; set; }
+
   /// <summary>
-  /// Gets the ImageParts of the SlideLayoutPart
+  ///   Gets the ImageParts of the SlideLayoutPart
   /// </summary>
-  public Collection<DocumentModel.Packaging.ImagePart>? ImageParts { get; set; }
-  
+  public Collection<ImagePart>? ImageParts { get; set; }
+
   /// <summary>
-  /// Gets the Model3DReferenceRelationshipParts of the SlideLayoutPart
+  ///   Gets the Model3DReferenceRelationshipParts of the SlideLayoutPart
   /// </summary>
-  public Collection<DocumentModel.Packaging.Model3DReferenceRelationshipPart>? Model3DReferenceRelationshipParts { get; set; }
-  
+  public Collection<Model3DReferenceRelationshipPart>? Model3DReferenceRelationshipParts { get; set; }
+
   public String? RelationshipType { get; set; }
-  
+
   /// <summary>
-  /// Gets the SlideParts of the SlideLayoutPart
+  ///   Gets the SlideParts of the SlideLayoutPart
   /// </summary>
-  public Collection<DocumentModel.Packaging.SlidePart>? SlideParts { get; set; }
-  
+  public Collection<SlidePart>? SlideParts { get; set; }
+
   /// <summary>
-  /// Gets the UserDefinedTagsParts of the SlideLayoutPart
+  ///   Gets the UserDefinedTagsParts of the SlideLayoutPart
   /// </summary>
-  public Collection<DocumentModel.Packaging.UserDefinedTagsPart>? UserDefinedTagsParts { get; set; }
-  
+  public Collection<UserDefinedTagsPart>? UserDefinedTagsParts { get; set; }
+
   /// <summary>
-  /// Gets the VmlDrawingParts of the SlideLayoutPart
+  ///   Gets the VmlDrawingParts of the SlideLayoutPart
   /// </summary>
-  public Collection<DocumentModel.Packaging.VmlDrawingPart>? VmlDrawingParts { get; set; }
-  
+  public Collection<VmlDrawingPart>? VmlDrawingParts { get; set; }
 }

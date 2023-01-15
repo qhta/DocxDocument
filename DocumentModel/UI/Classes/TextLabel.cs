@@ -1,108 +1,107 @@
 namespace DocumentModel.UI;
 
 /// <summary>
-/// Defines the TextLabel Class.
+///   Defines the TextLabel Class.
 /// </summary>
-public partial class TextLabel
+public class TextLabel
 {
   /// <summary>
-  /// id
+  ///   id
   /// </summary>
   public String? Id { get; set; }
-  
+
   /// <summary>
-  /// idQ
+  ///   idQ
   /// </summary>
   public String? IdQ { get; set; }
-  
+
   /// <summary>
-  /// idMso
+  ///   idMso
   /// </summary>
   public String? IdMso { get; set; }
-  
+
   /// <summary>
-  /// tag
+  ///   tag
   /// </summary>
   public String? Tag { get; set; }
-  
+
   /// <summary>
-  /// screentip
+  ///   screentip
   /// </summary>
   public String? Screentip { get; set; }
-  
+
   /// <summary>
-  /// getScreentip
+  ///   getScreentip
   /// </summary>
   public String? GetScreentip { get; set; }
-  
+
   /// <summary>
-  /// supertip
+  ///   supertip
   /// </summary>
   public String? Supertip { get; set; }
-  
+
   /// <summary>
-  /// getSupertip
+  ///   getSupertip
   /// </summary>
   public String? GetSupertip { get; set; }
-  
+
   /// <summary>
-  /// enabled
+  ///   enabled
   /// </summary>
   public Boolean? Enabled { get; set; }
-  
+
   /// <summary>
-  /// getEnabled
+  ///   getEnabled
   /// </summary>
   public String? GetEnabled { get; set; }
-  
+
   /// <summary>
-  /// label
+  ///   label
   /// </summary>
   public String? Label { get; set; }
-  
+
   /// <summary>
-  /// getLabel
+  ///   getLabel
   /// </summary>
   public String? GetLabel { get; set; }
-  
+
   /// <summary>
-  /// insertAfterMso
+  ///   insertAfterMso
   /// </summary>
   public String? InsertAfterMso { get; set; }
-  
+
   /// <summary>
-  /// insertBeforeMso
+  ///   insertBeforeMso
   /// </summary>
   public String? InsertBeforeMso { get; set; }
-  
+
   /// <summary>
-  /// insertAfterQ
+  ///   insertAfterQ
   /// </summary>
   public String? InsertAfterQ { get; set; }
-  
+
   /// <summary>
-  /// insertBeforeQ
+  ///   insertBeforeQ
   /// </summary>
   public String? InsertBeforeQ { get; set; }
-  
+
   /// <summary>
-  /// visible
+  ///   visible
   /// </summary>
   public Boolean? Visible { get; set; }
-  
+
   /// <summary>
-  /// getVisible
+  ///   getVisible
   /// </summary>
   public String? GetVisible { get; set; }
-  
+
   /// <summary>
-  /// showLabel
+  ///   showLabel
   /// </summary>
   public Boolean? ShowLabel { get; set; }
-  
+
   /// <summary>
-  /// getShowLabel
+  ///   getShowLabel
   /// </summary>
   public String? GetShowLabel { get; set; }
-  
 }

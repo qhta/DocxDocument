@@ -1,19 +1,21 @@
+using DocumentFormat.OpenXml.Wordprocessing;
+
 namespace DocumentModel.OpenXml.Wordprocessing;
 
 /// <summary>
-/// Defines the RunTrackChangeType Class.
+///   Defines the RunTrackChangeType Class.
 /// </summary>
 public static class RunTrackChangeTypeConverter
 {
   /// <summary>
-  /// author
+  ///   author
   /// </summary>
-  public static String? GetAuthor(DocumentFormat.OpenXml.Wordprocessing.RunTrackChangeType? openXmlElement)
+  public static String? GetAuthor(RunTrackChangeType? openXmlElement)
   {
     return openXmlElement?.Author?.Value;
   }
-  
-  public static void SetAuthor(DocumentFormat.OpenXml.Wordprocessing.RunTrackChangeType? openXmlElement, String? value)
+
+  public static void SetAuthor(RunTrackChangeType? openXmlElement, String? value)
   {
     if (openXmlElement != null)
       if (value != null)
@@ -21,30 +23,30 @@ public static class RunTrackChangeTypeConverter
       else
         openXmlElement.Author = null;
   }
-  
+
   /// <summary>
-  /// date
+  ///   date
   /// </summary>
-  public static DateTime? GetDate(DocumentFormat.OpenXml.Wordprocessing.RunTrackChangeType? openXmlElement)
+  public static DateTime? GetDate(RunTrackChangeType? openXmlElement)
   {
     return openXmlElement?.Date?.Value;
   }
-  
-  public static void SetDate(DocumentFormat.OpenXml.Wordprocessing.RunTrackChangeType? openXmlElement, DateTime? value)
+
+  public static void SetDate(RunTrackChangeType? openXmlElement, DateTime? value)
   {
     if (openXmlElement != null)
       openXmlElement.Date = value;
   }
-  
+
   /// <summary>
-  /// Annotation Identifier
+  ///   Annotation Identifier
   /// </summary>
-  public static String? GetId(DocumentFormat.OpenXml.Wordprocessing.RunTrackChangeType? openXmlElement)
+  public static String? GetId(RunTrackChangeType? openXmlElement)
   {
     return openXmlElement?.Id?.Value;
   }
-  
-  public static void SetId(DocumentFormat.OpenXml.Wordprocessing.RunTrackChangeType? openXmlElement, String? value)
+
+  public static void SetId(RunTrackChangeType? openXmlElement, String? value)
   {
     if (openXmlElement != null)
       if (value != null)
@@ -52,8 +54,8 @@ public static class RunTrackChangeTypeConverter
       else
         openXmlElement.Id = null;
   }
-  
-  public static DocumentModel.Wordprocessing.RunTrackChangeType? CreateModelElement(DocumentFormat.OpenXml.Wordprocessing.RunTrackChangeType? openXmlElement)
+
+  public static DocumentModel.Wordprocessing.RunTrackChangeType? CreateModelElement(RunTrackChangeType? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -65,9 +67,9 @@ public static class RunTrackChangeTypeConverter
     }
     return null;
   }
-  
+
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.RunTrackChangeType? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Wordprocessing.RunTrackChangeType, new()
+    where OpenXmlElementType : RunTrackChangeType, new()
   {
     if (value != null)
     {

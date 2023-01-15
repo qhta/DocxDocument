@@ -1,18 +1,17 @@
 namespace DocumentModel.Drawings;
 
 /// <summary>
-/// Video from File.
+///   Video from File.
 /// </summary>
-public partial class VideoFromFile
+public class VideoFromFile
 {
   /// <summary>
-  /// Linked Relationship ID
+  ///   Linked Relationship ID
   /// </summary>
   public String? Link { get; set; }
-  
+
   /// <summary>
-  /// ExtensionList.
+  ///   ExtensionList.
   /// </summary>
-  public DocumentModel.Drawings.ExtensionList? ExtensionList { get; set; }
-  
+  public ExtensionList? ExtensionList { get; set; }
 }

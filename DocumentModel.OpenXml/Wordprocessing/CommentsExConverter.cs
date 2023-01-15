@@ -1,18 +1,21 @@
+using DocumentModel.Wordprocessing;
+using CommentsEx = DocumentFormat.OpenXml.Office2013.Word.CommentsEx;
+
 namespace DocumentModel.OpenXml.Wordprocessing;
 
 /// <summary>
-/// Defines the CommentsEx Class.
+///   Defines the CommentsEx Class.
 /// </summary>
 public static class CommentsExConverter
 {
-  public static System.Collections.ObjectModel.Collection<DocumentModel.Wordprocessing.CommentEx>? GetCommentExs(DocumentFormat.OpenXml.Office2013.Word.CommentsEx? openXmlElement)
+  public static Collection<CommentEx>? GetCommentExs(CommentsEx? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var collection = new System.Collections.ObjectModel.Collection<DocumentModel.Wordprocessing.CommentEx>();
+      var collection = new Collection<CommentEx>();
       foreach (var item in openXmlElement.Elements<DocumentFormat.OpenXml.Office2013.Word.CommentEx>())
       {
-        var newItem = DocumentModel.OpenXml.Wordprocessing.CommentExConverter.CreateModelElement(item);
+        var newItem = CommentExConverter.CreateModelElement(item);
         if (newItem != null)
           collection.Add(newItem);
       }
@@ -20,25 +23,23 @@ public static class CommentsExConverter
     }
     return null;
   }
-  
-  public static void SetCommentExs(DocumentFormat.OpenXml.Office2013.Word.CommentsEx? openXmlElement, System.Collections.ObjectModel.Collection<DocumentModel.Wordprocessing.CommentEx>? value)
+
+  public static void SetCommentExs(CommentsEx? openXmlElement, Collection<CommentEx>? value)
   {
     if (openXmlElement != null)
     {
       openXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Office2013.Word.CommentEx>();
       if (value != null)
-      {
         foreach (var item in value)
         {
-          var newItem = DocumentModel.OpenXml.Wordprocessing.CommentExConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2013.Word.CommentEx>(item);
+          var newItem = CommentExConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2013.Word.CommentEx>(item);
           if (newItem != null)
             openXmlElement.AddChild(newItem);
         }
-      }
     }
   }
-  
-  public static DocumentModel.Wordprocessing.CommentsEx? CreateModelElement(DocumentFormat.OpenXml.Office2013.Word.CommentsEx? openXmlElement)
+
+  public static DocumentModel.Wordprocessing.CommentsEx? CreateModelElement(CommentsEx? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -48,9 +49,9 @@ public static class CommentsExConverter
     }
     return null;
   }
-  
+
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.CommentsEx? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Office2013.Word.CommentsEx, new()
+    where OpenXmlElementType : CommentsEx, new()
   {
     if (value != null)
     {

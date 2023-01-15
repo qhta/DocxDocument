@@ -1,58 +1,57 @@
 namespace DocumentModel.Drawings.Diagrams;
 
 /// <summary>
-/// Algorithm Types
+///   Algorithm Types
 /// </summary>
 public enum AlgorithmKind
 {
   /// <summary>
-  /// Composite.
+  ///   Composite.
   /// </summary>
   Composite,
-  
+
   /// <summary>
-  /// Connector Algorithm.
+  ///   Connector Algorithm.
   /// </summary>
   Connector,
-  
+
   /// <summary>
-  /// Cycle Algorithm.
+  ///   Cycle Algorithm.
   /// </summary>
   Cycle,
-  
+
   /// <summary>
-  /// Hierarchy Child Algorithm.
+  ///   Hierarchy Child Algorithm.
   /// </summary>
   HierarchyChild,
-  
+
   /// <summary>
-  /// Hierarchy Root Algorithm.
+  ///   Hierarchy Root Algorithm.
   /// </summary>
   HierarchyRoot,
-  
+
   /// <summary>
-  /// Pyramid Algorithm.
+  ///   Pyramid Algorithm.
   /// </summary>
   Pyramid,
-  
+
   /// <summary>
-  /// Linear Algorithm.
+  ///   Linear Algorithm.
   /// </summary>
   Linear,
-  
+
   /// <summary>
-  /// Space Algorithm.
+  ///   Space Algorithm.
   /// </summary>
   Space,
-  
+
   /// <summary>
-  /// Text Algorithm.
+  ///   Text Algorithm.
   /// </summary>
   Text,
-  
+
   /// <summary>
-  /// Snake Algorithm.
+  ///   Snake Algorithm.
   /// </summary>
-  Snake,
-  
+  Snake
 }

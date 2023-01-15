@@ -1,10 +1,9 @@
 namespace DocumentModel.Wordprocessing;
 
 /// <summary>
-/// Comments Collection.
+///   Comments Collection.
 /// </summary>
-public partial class Comments
+public class Comments
 {
-  public Collection<DocumentModel.Wordprocessing.Comment>? Items { get; set; }
-  
+  public Collection<Comment>? Items { get; set; }
 }

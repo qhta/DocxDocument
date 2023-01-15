@@ -1,19 +1,21 @@
+using DocumentFormat.OpenXml.Wordprocessing;
+
 namespace DocumentModel.OpenXml.Wordprocessing;
 
 /// <summary>
-/// Freeze Document Layout.
+///   Freeze Document Layout.
 /// </summary>
 public static class ReadModeInkLockDownConverter
 {
   /// <summary>
-  /// Use Actual Pages, Not Virtual Pages
+  ///   Use Actual Pages, Not Virtual Pages
   /// </summary>
-  public static Boolean? GetUseActualPages(DocumentFormat.OpenXml.Wordprocessing.ReadModeInkLockDown? openXmlElement)
+  public static Boolean? GetUseActualPages(ReadModeInkLockDown? openXmlElement)
   {
     return openXmlElement?.UseActualPages?.Value;
   }
-  
-  public static void SetUseActualPages(DocumentFormat.OpenXml.Wordprocessing.ReadModeInkLockDown? openXmlElement, Boolean? value)
+
+  public static void SetUseActualPages(ReadModeInkLockDown? openXmlElement, Boolean? value)
   {
     if (openXmlElement != null)
       if (value != null)
@@ -21,44 +23,44 @@ public static class ReadModeInkLockDownConverter
       else
         openXmlElement.UseActualPages = null;
   }
-  
+
   /// <summary>
-  /// Virtual Page Width
+  ///   Virtual Page Width
   /// </summary>
-  public static UInt32? GetWidth(DocumentFormat.OpenXml.Wordprocessing.ReadModeInkLockDown? openXmlElement)
+  public static UInt32? GetWidth(ReadModeInkLockDown? openXmlElement)
   {
     return openXmlElement?.Width?.Value;
   }
-  
-  public static void SetWidth(DocumentFormat.OpenXml.Wordprocessing.ReadModeInkLockDown? openXmlElement, UInt32? value)
+
+  public static void SetWidth(ReadModeInkLockDown? openXmlElement, UInt32? value)
   {
     if (openXmlElement != null)
       openXmlElement.Width = value;
   }
-  
+
   /// <summary>
-  /// Virtual Page Height
+  ///   Virtual Page Height
   /// </summary>
-  public static UInt32? GetHeight(DocumentFormat.OpenXml.Wordprocessing.ReadModeInkLockDown? openXmlElement)
+  public static UInt32? GetHeight(ReadModeInkLockDown? openXmlElement)
   {
     return openXmlElement?.Height?.Value;
   }
-  
-  public static void SetHeight(DocumentFormat.OpenXml.Wordprocessing.ReadModeInkLockDown? openXmlElement, UInt32? value)
+
+  public static void SetHeight(ReadModeInkLockDown? openXmlElement, UInt32? value)
   {
     if (openXmlElement != null)
       openXmlElement.Height = value;
   }
-  
+
   /// <summary>
-  /// Font Size Scaling
+  ///   Font Size Scaling
   /// </summary>
-  public static String? GetFontSize(DocumentFormat.OpenXml.Wordprocessing.ReadModeInkLockDown? openXmlElement)
+  public static String? GetFontSize(ReadModeInkLockDown? openXmlElement)
   {
     return openXmlElement?.FontSize?.Value;
   }
-  
-  public static void SetFontSize(DocumentFormat.OpenXml.Wordprocessing.ReadModeInkLockDown? openXmlElement, String? value)
+
+  public static void SetFontSize(ReadModeInkLockDown? openXmlElement, String? value)
   {
     if (openXmlElement != null)
       if (value != null)
@@ -66,8 +68,8 @@ public static class ReadModeInkLockDownConverter
       else
         openXmlElement.FontSize = null;
   }
-  
-  public static DocumentModel.Wordprocessing.ReadModeInkLockDown? CreateModelElement(DocumentFormat.OpenXml.Wordprocessing.ReadModeInkLockDown? openXmlElement)
+
+  public static DocumentModel.Wordprocessing.ReadModeInkLockDown? CreateModelElement(ReadModeInkLockDown? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -80,9 +82,9 @@ public static class ReadModeInkLockDownConverter
     }
     return null;
   }
-  
+
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.ReadModeInkLockDown? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Wordprocessing.ReadModeInkLockDown, new()
+    where OpenXmlElementType : ReadModeInkLockDown, new()
   {
     if (value != null)
     {

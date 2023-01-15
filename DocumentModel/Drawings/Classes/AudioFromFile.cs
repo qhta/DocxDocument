@@ -1,18 +1,17 @@
 namespace DocumentModel.Drawings;
 
 /// <summary>
-/// Audio from File.
+///   Audio from File.
 /// </summary>
-public partial class AudioFromFile
+public class AudioFromFile
 {
   /// <summary>
-  /// Linked Relationship ID
+  ///   Linked Relationship ID
   /// </summary>
   public String? Link { get; set; }
-  
+
   /// <summary>
-  /// ExtensionList.
+  ///   ExtensionList.
   /// </summary>
-  public DocumentModel.Drawings.ExtensionList? ExtensionList { get; set; }
-  
+  public ExtensionList? ExtensionList { get; set; }
 }

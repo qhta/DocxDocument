@@ -1,18 +1,17 @@
 namespace DocumentModel.VariantTypes;
 
 /// <summary>
-/// Clipboard Data.
+///   Clipboard Data.
 /// </summary>
-public partial class VTClipboardData
+public class VTClipboardData
 {
   /// <summary>
-  /// Format Attribute
+  ///   Format Attribute
   /// </summary>
   public Int32? Format { get; set; }
-  
+
   /// <summary>
-  /// size
+  ///   size
   /// </summary>
   public UInt32? Size { get; set; }
-  
 }

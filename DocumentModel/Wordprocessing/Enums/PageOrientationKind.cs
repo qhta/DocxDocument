@@ -1,18 +1,17 @@
 namespace DocumentModel.Wordprocessing;
 
 /// <summary>
-/// Defines the PageOrientationValues enumeration.
+///   Defines the PageOrientationValues enumeration.
 /// </summary>
 public enum PageOrientationKind
 {
   /// <summary>
-  /// Portrait Mode.
+  ///   Portrait Mode.
   /// </summary>
   Portrait,
-  
+
   /// <summary>
-  /// Landscape Mode.
+  ///   Landscape Mode.
   /// </summary>
-  Landscape,
-  
+  Landscape
 }

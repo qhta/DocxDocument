@@ -1,63 +1,62 @@
 namespace DocumentModel.Wordprocessing;
 
 /// <summary>
-/// Defines the PresetLineDashValues enumeration.
+///   Defines the PresetLineDashValues enumeration.
 /// </summary>
 public enum PresetLineDashKind
 {
   /// <summary>
-  /// solid.
+  ///   solid.
   /// </summary>
   Solid,
-  
+
   /// <summary>
-  /// dot.
+  ///   dot.
   /// </summary>
   Dot,
-  
+
   /// <summary>
-  /// sysDot.
+  ///   sysDot.
   /// </summary>
   SysDot,
-  
+
   /// <summary>
-  /// dash.
+  ///   dash.
   /// </summary>
   Dash,
-  
+
   /// <summary>
-  /// sysDash.
+  ///   sysDash.
   /// </summary>
   SysDash,
-  
+
   /// <summary>
-  /// lgDash.
+  ///   lgDash.
   /// </summary>
   LongDash,
-  
+
   /// <summary>
-  /// dashDot.
+  ///   dashDot.
   /// </summary>
   DashDot,
-  
+
   /// <summary>
-  /// sysDashDot.
+  ///   sysDashDot.
   /// </summary>
   SystemDashDot,
-  
+
   /// <summary>
-  /// lgDashDot.
+  ///   lgDashDot.
   /// </summary>
   LongDashDot,
-  
+
   /// <summary>
-  /// lgDashDotDot.
+  ///   lgDashDotDot.
   /// </summary>
   LongDashDotDot,
-  
+
   /// <summary>
-  /// sysDashDotDot.
+  ///   sysDashDotDot.
   /// </summary>
-  SystemDashDotDot,
-  
+  SystemDashDotDot
 }

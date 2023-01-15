@@ -1,53 +1,60 @@
+using DocumentFormat.OpenXml.Drawing;
+using BlipFill = DocumentModel.Drawings.BlipFill;
+using GradientFill = DocumentModel.Drawings.GradientFill;
+using HiddenFillProperties = DocumentFormat.OpenXml.Office2010.Drawing.HiddenFillProperties;
+using PatternFill = DocumentModel.Drawings.PatternFill;
+using SolidFill = DocumentModel.Drawings.SolidFill;
+
 namespace DocumentModel.OpenXml.Drawings;
 
 /// <summary>
-/// Defines the HiddenFillProperties Class.
+///   Defines the HiddenFillProperties Class.
 /// </summary>
 public static class HiddenFillPropertiesConverter
 {
   /// <summary>
-  /// NoFill.
+  ///   NoFill.
   /// </summary>
-  public static Boolean? GetNoFill(DocumentFormat.OpenXml.Office2010.Drawing.HiddenFillProperties? openXmlElement)
+  public static Boolean? GetNoFill(HiddenFillProperties? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.NoFill>();
+      var itemElement = openXmlElement.GetFirstChild<NoFill>();
       return itemElement != null;
     }
     return null;
   }
-  
-  public static void SetNoFill(DocumentFormat.OpenXml.Office2010.Drawing.HiddenFillProperties? openXmlElement, Boolean? value)
+
+  public static void SetNoFill(HiddenFillProperties? openXmlElement, Boolean? value)
   {
     if (openXmlElement != null)
     {
       if (value == false)
       {
-        var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.NoFill>();
+        var itemElement = openXmlElement.GetFirstChild<NoFill>();
         if (itemElement != null)
           itemElement.Remove();
       }
       if (value == true)
       {
-        var itemElement = new DocumentFormat.OpenXml.Drawing.NoFill();
+        var itemElement = new NoFill();
         openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
+
   /// <summary>
-  /// SolidFill.
+  ///   SolidFill.
   /// </summary>
-  public static DocumentModel.Drawings.SolidFill? GetSolidFill(DocumentFormat.OpenXml.Office2010.Drawing.HiddenFillProperties? openXmlElement)
+  public static SolidFill? GetSolidFill(HiddenFillProperties? openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.SolidFill>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.SolidFillConverter.CreateModelElement(itemElement);
+      return SolidFillConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetSolidFill(DocumentFormat.OpenXml.Office2010.Drawing.HiddenFillProperties? openXmlElement, DocumentModel.Drawings.SolidFill? value)
+
+  public static void SetSolidFill(HiddenFillProperties? openXmlElement, SolidFill? value)
   {
     if (openXmlElement != null)
     {
@@ -56,25 +63,25 @@ public static class HiddenFillPropertiesConverter
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Drawings.SolidFillConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.SolidFill>(value);
+        itemElement = SolidFillConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.SolidFill>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
+
   /// <summary>
-  /// GradientFill.
+  ///   GradientFill.
   /// </summary>
-  public static DocumentModel.Drawings.GradientFill? GetGradientFill(DocumentFormat.OpenXml.Office2010.Drawing.HiddenFillProperties? openXmlElement)
+  public static GradientFill? GetGradientFill(HiddenFillProperties? openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.GradientFill>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.GradientFillConverter.CreateModelElement(itemElement);
+      return GradientFillConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetGradientFill(DocumentFormat.OpenXml.Office2010.Drawing.HiddenFillProperties? openXmlElement, DocumentModel.Drawings.GradientFill? value)
+
+  public static void SetGradientFill(HiddenFillProperties? openXmlElement, GradientFill? value)
   {
     if (openXmlElement != null)
     {
@@ -83,25 +90,25 @@ public static class HiddenFillPropertiesConverter
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Drawings.GradientFillConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.GradientFill>(value);
+        itemElement = GradientFillConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.GradientFill>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
+
   /// <summary>
-  /// BlipFill.
+  ///   BlipFill.
   /// </summary>
-  public static DocumentModel.Drawings.BlipFill? GetBlipFill(DocumentFormat.OpenXml.Office2010.Drawing.HiddenFillProperties? openXmlElement)
+  public static BlipFill? GetBlipFill(HiddenFillProperties? openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.BlipFill>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.BlipFillConverter.CreateModelElement(itemElement);
+      return BlipFillConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetBlipFill(DocumentFormat.OpenXml.Office2010.Drawing.HiddenFillProperties? openXmlElement, DocumentModel.Drawings.BlipFill? value)
+
+  public static void SetBlipFill(HiddenFillProperties? openXmlElement, BlipFill? value)
   {
     if (openXmlElement != null)
     {
@@ -110,25 +117,25 @@ public static class HiddenFillPropertiesConverter
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Drawings.BlipFillConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.BlipFill>(value);
+        itemElement = BlipFillConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.BlipFill>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
+
   /// <summary>
-  /// Pattern Fill.
+  ///   Pattern Fill.
   /// </summary>
-  public static DocumentModel.Drawings.PatternFill? GetPatternFill(DocumentFormat.OpenXml.Office2010.Drawing.HiddenFillProperties? openXmlElement)
+  public static PatternFill? GetPatternFill(HiddenFillProperties? openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.PatternFill>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.PatternFillConverter.CreateModelElement(itemElement);
+      return PatternFillConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetPatternFill(DocumentFormat.OpenXml.Office2010.Drawing.HiddenFillProperties? openXmlElement, DocumentModel.Drawings.PatternFill? value)
+
+  public static void SetPatternFill(HiddenFillProperties? openXmlElement, PatternFill? value)
   {
     if (openXmlElement != null)
     {
@@ -137,45 +144,45 @@ public static class HiddenFillPropertiesConverter
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Drawings.PatternFillConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.PatternFill>(value);
+        itemElement = PatternFillConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.PatternFill>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
+
   /// <summary>
-  /// Group Fill.
+  ///   Group Fill.
   /// </summary>
-  public static Boolean? GetGroupFill(DocumentFormat.OpenXml.Office2010.Drawing.HiddenFillProperties? openXmlElement)
+  public static Boolean? GetGroupFill(HiddenFillProperties? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.GroupFill>();
+      var itemElement = openXmlElement.GetFirstChild<GroupFill>();
       return itemElement != null;
     }
     return null;
   }
-  
-  public static void SetGroupFill(DocumentFormat.OpenXml.Office2010.Drawing.HiddenFillProperties? openXmlElement, Boolean? value)
+
+  public static void SetGroupFill(HiddenFillProperties? openXmlElement, Boolean? value)
   {
     if (openXmlElement != null)
     {
       if (value == false)
       {
-        var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.GroupFill>();
+        var itemElement = openXmlElement.GetFirstChild<GroupFill>();
         if (itemElement != null)
           itemElement.Remove();
       }
       if (value == true)
       {
-        var itemElement = new DocumentFormat.OpenXml.Drawing.GroupFill();
+        var itemElement = new GroupFill();
         openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static DocumentModel.Drawings.HiddenFillProperties? CreateModelElement(DocumentFormat.OpenXml.Office2010.Drawing.HiddenFillProperties? openXmlElement)
+
+  public static DocumentModel.Drawings.HiddenFillProperties? CreateModelElement(HiddenFillProperties? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -190,9 +197,9 @@ public static class HiddenFillPropertiesConverter
     }
     return null;
   }
-  
+
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.HiddenFillProperties? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Office2010.Drawing.HiddenFillProperties, new()
+    where OpenXmlElementType : HiddenFillProperties, new()
   {
     if (value != null)
     {

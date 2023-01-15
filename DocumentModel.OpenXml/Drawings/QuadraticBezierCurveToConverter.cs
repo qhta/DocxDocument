@@ -1,18 +1,22 @@
+using DocumentFormat.OpenXml.Drawing;
+using AdjustPoint2DType = DocumentModel.Drawings.AdjustPoint2DType;
+using QuadraticBezierCurveTo = DocumentFormat.OpenXml.Drawing.QuadraticBezierCurveTo;
+
 namespace DocumentModel.OpenXml.Drawings;
 
 /// <summary>
-/// Draw Quadratic Bezier Curve To.
+///   Draw Quadratic Bezier Curve To.
 /// </summary>
 public static class QuadraticBezierCurveToConverter
 {
-  public static System.Collections.ObjectModel.Collection<DocumentModel.Drawings.AdjustPoint2DType>? GetPoints(DocumentFormat.OpenXml.Drawing.QuadraticBezierCurveTo? openXmlElement)
+  public static Collection<AdjustPoint2DType>? GetPoints(QuadraticBezierCurveTo? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var collection = new System.Collections.ObjectModel.Collection<DocumentModel.Drawings.AdjustPoint2DType>();
-      foreach (var item in openXmlElement.Elements<DocumentFormat.OpenXml.Drawing.Point>())
+      var collection = new Collection<AdjustPoint2DType>();
+      foreach (var item in openXmlElement.Elements<Point>())
       {
-        var newItem = DocumentModel.OpenXml.Drawings.AdjustPoint2DTypeConverter.CreateModelElement(item);
+        var newItem = AdjustPoint2DTypeConverter.CreateModelElement(item);
         if (newItem != null)
           collection.Add(newItem);
       }
@@ -20,25 +24,23 @@ public static class QuadraticBezierCurveToConverter
     }
     return null;
   }
-  
-  public static void SetPoints(DocumentFormat.OpenXml.Drawing.QuadraticBezierCurveTo? openXmlElement, System.Collections.ObjectModel.Collection<DocumentModel.Drawings.AdjustPoint2DType>? value)
+
+  public static void SetPoints(QuadraticBezierCurveTo? openXmlElement, Collection<AdjustPoint2DType>? value)
   {
     if (openXmlElement != null)
     {
-      openXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Drawing.Point>();
+      openXmlElement.RemoveAllChildren<Point>();
       if (value != null)
-      {
         foreach (var item in value)
         {
-          var newItem = DocumentModel.OpenXml.Drawings.AdjustPoint2DTypeConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Point>(item);
+          var newItem = AdjustPoint2DTypeConverter.CreateOpenXmlElement<Point>(item);
           if (newItem != null)
             openXmlElement.AddChild(newItem);
         }
-      }
     }
   }
-  
-  public static DocumentModel.Drawings.QuadraticBezierCurveTo? CreateModelElement(DocumentFormat.OpenXml.Drawing.QuadraticBezierCurveTo? openXmlElement)
+
+  public static DocumentModel.Drawings.QuadraticBezierCurveTo? CreateModelElement(QuadraticBezierCurveTo? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -48,9 +50,9 @@ public static class QuadraticBezierCurveToConverter
     }
     return null;
   }
-  
+
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.QuadraticBezierCurveTo? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.QuadraticBezierCurveTo, new()
+    where OpenXmlElementType : QuadraticBezierCurveTo, new()
   {
     if (value != null)
     {

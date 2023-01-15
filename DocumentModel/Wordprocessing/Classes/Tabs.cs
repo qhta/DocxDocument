@@ -1,10 +1,9 @@
 namespace DocumentModel.Wordprocessing;
 
 /// <summary>
-/// Defines the Tabs Class.
+///   Defines the Tabs Class.
 /// </summary>
-public partial class Tabs
+public class Tabs
 {
-  public DocumentModel.Wordprocessing.TabStop? TabStop { get; set; }
-  
+  public TabStop? TabStop { get; set; }
 }

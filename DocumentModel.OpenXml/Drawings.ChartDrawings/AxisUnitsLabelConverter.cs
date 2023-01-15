@@ -1,22 +1,25 @@
+using DocumentModel.Drawings.ChartDrawings;
+using AxisUnitsLabel = DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.AxisUnitsLabel;
+
 namespace DocumentModel.OpenXml.Drawings.ChartDrawings;
 
 /// <summary>
-/// Defines the AxisUnitsLabel Class.
+///   Defines the AxisUnitsLabel Class.
 /// </summary>
 public static class AxisUnitsLabelConverter
 {
   /// <summary>
-  /// Text.
+  ///   Text.
   /// </summary>
-  public static DocumentModel.Drawings.ChartDrawings.Text? GetText(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.AxisUnitsLabel? openXmlElement)
+  public static Text? GetText(AxisUnitsLabel? openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.Text>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.ChartDrawings.TextConverter.CreateModelElement(itemElement);
+      return TextConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetText(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.AxisUnitsLabel? openXmlElement, DocumentModel.Drawings.ChartDrawings.Text? value)
+
+  public static void SetText(AxisUnitsLabel? openXmlElement, Text? value)
   {
     if (openXmlElement != null)
     {
@@ -25,25 +28,25 @@ public static class AxisUnitsLabelConverter
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Drawings.ChartDrawings.TextConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.Text>(value);
+        itemElement = TextConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.Text>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
+
   /// <summary>
-  /// ShapeProperties.
+  ///   ShapeProperties.
   /// </summary>
-  public static DocumentModel.Drawings.ChartDrawings.ShapeProperties? GetShapeProperties(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.AxisUnitsLabel? openXmlElement)
+  public static ShapeProperties? GetShapeProperties(AxisUnitsLabel? openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.ShapeProperties>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.ChartDrawings.ShapePropertiesConverter.CreateModelElement(itemElement);
+      return ShapePropertiesConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetShapeProperties(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.AxisUnitsLabel? openXmlElement, DocumentModel.Drawings.ChartDrawings.ShapeProperties? value)
+
+  public static void SetShapeProperties(AxisUnitsLabel? openXmlElement, ShapeProperties? value)
   {
     if (openXmlElement != null)
     {
@@ -52,25 +55,25 @@ public static class AxisUnitsLabelConverter
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Drawings.ChartDrawings.ShapePropertiesConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.ShapeProperties>(value);
+        itemElement = ShapePropertiesConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.ShapeProperties>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
+
   /// <summary>
-  /// TxPrTextBody.
+  ///   TxPrTextBody.
   /// </summary>
-  public static DocumentModel.Drawings.ChartDrawings.TxPrTextBody? GetTxPrTextBody(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.AxisUnitsLabel? openXmlElement)
+  public static TxPrTextBody? GetTxPrTextBody(AxisUnitsLabel? openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.TxPrTextBody>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.ChartDrawings.TxPrTextBodyConverter.CreateModelElement(itemElement);
+      return TxPrTextBodyConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetTxPrTextBody(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.AxisUnitsLabel? openXmlElement, DocumentModel.Drawings.ChartDrawings.TxPrTextBody? value)
+
+  public static void SetTxPrTextBody(AxisUnitsLabel? openXmlElement, TxPrTextBody? value)
   {
     if (openXmlElement != null)
     {
@@ -79,25 +82,25 @@ public static class AxisUnitsLabelConverter
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Drawings.ChartDrawings.TxPrTextBodyConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.TxPrTextBody>(value);
+        itemElement = TxPrTextBodyConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.TxPrTextBody>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
+
   /// <summary>
-  /// ExtensionList.
+  ///   ExtensionList.
   /// </summary>
-  public static DocumentModel.Drawings.ChartDrawings.ExtensionList? GetExtensionList(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.AxisUnitsLabel? openXmlElement)
+  public static DocumentModel.Drawings.ChartDrawings.ExtensionList? GetExtensionList(AxisUnitsLabel? openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.ExtensionList>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.ChartDrawings.ExtensionListConverter.CreateModelElement(itemElement);
+      return ExtensionListConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetExtensionList(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.AxisUnitsLabel? openXmlElement, DocumentModel.Drawings.ChartDrawings.ExtensionList? value)
+
+  public static void SetExtensionList(AxisUnitsLabel? openXmlElement, DocumentModel.Drawings.ChartDrawings.ExtensionList? value)
   {
     if (openXmlElement != null)
     {
@@ -106,14 +109,14 @@ public static class AxisUnitsLabelConverter
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Drawings.ChartDrawings.ExtensionListConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.ExtensionList>(value);
+        itemElement = ExtensionListConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.ExtensionList>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static DocumentModel.Drawings.ChartDrawings.AxisUnitsLabel? CreateModelElement(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.AxisUnitsLabel? openXmlElement)
+
+  public static DocumentModel.Drawings.ChartDrawings.AxisUnitsLabel? CreateModelElement(AxisUnitsLabel? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -126,9 +129,9 @@ public static class AxisUnitsLabelConverter
     }
     return null;
   }
-  
+
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.ChartDrawings.AxisUnitsLabel? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.AxisUnitsLabel, new()
+    where OpenXmlElementType : AxisUnitsLabel, new()
   {
     if (value != null)
     {

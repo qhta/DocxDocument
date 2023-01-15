@@ -1,18 +1,21 @@
+using DocumentModel.Math;
+using MatrixColumns = DocumentFormat.OpenXml.Math.MatrixColumns;
+
 namespace DocumentModel.OpenXml.Math;
 
 /// <summary>
-/// Matrix Columns.
+///   Matrix Columns.
 /// </summary>
 public static class MatrixColumnsConverter
 {
-  public static System.Collections.ObjectModel.Collection<DocumentModel.Math.MatrixColumn>? GetItems(DocumentFormat.OpenXml.Math.MatrixColumns? openXmlElement)
+  public static Collection<MatrixColumn>? GetItems(MatrixColumns? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var collection = new System.Collections.ObjectModel.Collection<DocumentModel.Math.MatrixColumn>();
+      var collection = new Collection<MatrixColumn>();
       foreach (var item in openXmlElement.Elements<DocumentFormat.OpenXml.Math.MatrixColumn>())
       {
-        var newItem = DocumentModel.OpenXml.Math.MatrixColumnConverter.CreateModelElement(item);
+        var newItem = MatrixColumnConverter.CreateModelElement(item);
         if (newItem != null)
           collection.Add(newItem);
       }
@@ -20,25 +23,23 @@ public static class MatrixColumnsConverter
     }
     return null;
   }
-  
-  public static void SetItems(DocumentFormat.OpenXml.Math.MatrixColumns? openXmlElement, System.Collections.ObjectModel.Collection<DocumentModel.Math.MatrixColumn>? value)
+
+  public static void SetItems(MatrixColumns? openXmlElement, Collection<MatrixColumn>? value)
   {
     if (openXmlElement != null)
     {
       openXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Math.MatrixColumn>();
       if (value != null)
-      {
         foreach (var item in value)
         {
-          var newItem = DocumentModel.OpenXml.Math.MatrixColumnConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Math.MatrixColumn>(item);
+          var newItem = MatrixColumnConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Math.MatrixColumn>(item);
           if (newItem != null)
             openXmlElement.AddChild(newItem);
         }
-      }
     }
   }
-  
-  public static DocumentModel.Math.MatrixColumns? CreateModelElement(DocumentFormat.OpenXml.Math.MatrixColumns? openXmlElement)
+
+  public static DocumentModel.Math.MatrixColumns? CreateModelElement(MatrixColumns? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -48,9 +49,9 @@ public static class MatrixColumnsConverter
     }
     return null;
   }
-  
+
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Math.MatrixColumns? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Math.MatrixColumns, new()
+    where OpenXmlElementType : MatrixColumns, new()
   {
     if (value != null)
     {

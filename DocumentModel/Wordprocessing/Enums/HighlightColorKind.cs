@@ -1,93 +1,92 @@
 namespace DocumentModel.Wordprocessing;
 
 /// <summary>
-/// Defines the HighlightColorValues enumeration.
+///   Defines the HighlightColorValues enumeration.
 /// </summary>
 public enum HighlightColorKind
 {
   /// <summary>
-  /// Black Highlighting Color.
+  ///   Black Highlighting Color.
   /// </summary>
   Black,
-  
+
   /// <summary>
-  /// Blue Highlighting Color.
+  ///   Blue Highlighting Color.
   /// </summary>
   Blue,
-  
+
   /// <summary>
-  /// Cyan Highlighting Color.
+  ///   Cyan Highlighting Color.
   /// </summary>
   Cyan,
-  
+
   /// <summary>
-  /// Green Highlighting Color.
+  ///   Green Highlighting Color.
   /// </summary>
   Green,
-  
+
   /// <summary>
-  /// Magenta Highlighting Color.
+  ///   Magenta Highlighting Color.
   /// </summary>
   Magenta,
-  
+
   /// <summary>
-  /// Red Highlighting Color.
+  ///   Red Highlighting Color.
   /// </summary>
   Red,
-  
+
   /// <summary>
-  /// Yellow Highlighting Color.
+  ///   Yellow Highlighting Color.
   /// </summary>
   Yellow,
-  
+
   /// <summary>
-  /// White Highlighting Color.
+  ///   White Highlighting Color.
   /// </summary>
   White,
-  
+
   /// <summary>
-  /// Dark Blue Highlighting Color.
+  ///   Dark Blue Highlighting Color.
   /// </summary>
   DarkBlue,
-  
+
   /// <summary>
-  /// Dark Cyan Highlighting Color.
+  ///   Dark Cyan Highlighting Color.
   /// </summary>
   DarkCyan,
-  
+
   /// <summary>
-  /// Dark Green Highlighting Color.
+  ///   Dark Green Highlighting Color.
   /// </summary>
   DarkGreen,
-  
+
   /// <summary>
-  /// Dark Magenta Highlighting Color.
+  ///   Dark Magenta Highlighting Color.
   /// </summary>
   DarkMagenta,
-  
+
   /// <summary>
-  /// Dark Red Highlighting Color.
+  ///   Dark Red Highlighting Color.
   /// </summary>
   DarkRed,
-  
+
   /// <summary>
-  /// Dark Yellow Highlighting Color.
+  ///   Dark Yellow Highlighting Color.
   /// </summary>
   DarkYellow,
-  
+
   /// <summary>
-  /// Dark Gray Highlighting Color.
+  ///   Dark Gray Highlighting Color.
   /// </summary>
   DarkGray,
-  
+
   /// <summary>
-  /// Light Gray Highlighting Color.
+  ///   Light Gray Highlighting Color.
   /// </summary>
   LightGray,
-  
+
   /// <summary>
-  /// No Text Highlighting.
+  ///   No Text Highlighting.
   /// </summary>
-  None,
-  
+  None
 }

@@ -1,213 +1,212 @@
 namespace DocumentModel.Drawings;
 
 /// <summary>
-/// Text Auto-number Schemes
+///   Text Auto-number Schemes
 /// </summary>
 public enum TextAutoNumberSchemeKind
 {
   /// <summary>
-  /// Autonumber Enum ( alphaLcParenBoth ).
+  ///   Autonumber Enum ( alphaLcParenBoth ).
   /// </summary>
   AlphaLowerCharacterParenBoth,
-  
+
   /// <summary>
-  /// Autonumbering Enum ( alphaUcParenBoth ).
+  ///   Autonumbering Enum ( alphaUcParenBoth ).
   /// </summary>
   AlphaUpperCharacterParenBoth,
-  
+
   /// <summary>
-  /// Autonumbering Enum ( alphaLcParenR ).
+  ///   Autonumbering Enum ( alphaLcParenR ).
   /// </summary>
   AlphaLowerCharacterParenR,
-  
+
   /// <summary>
-  /// Autonumbering Enum ( alphaUcParenR ).
+  ///   Autonumbering Enum ( alphaUcParenR ).
   /// </summary>
   AlphaUpperCharacterParenR,
-  
+
   /// <summary>
-  /// Autonumbering Enum ( alphaLcPeriod ).
+  ///   Autonumbering Enum ( alphaLcPeriod ).
   /// </summary>
   AlphaLowerCharacterPeriod,
-  
+
   /// <summary>
-  /// Autonumbering Enum ( alphaUcPeriod ).
+  ///   Autonumbering Enum ( alphaUcPeriod ).
   /// </summary>
   AlphaUpperCharacterPeriod,
-  
+
   /// <summary>
-  /// Autonumbering Enum ( arabicParenBoth ).
+  ///   Autonumbering Enum ( arabicParenBoth ).
   /// </summary>
   ArabicParenBoth,
-  
+
   /// <summary>
-  /// Autonumbering Enum ( arabicParenR ).
+  ///   Autonumbering Enum ( arabicParenR ).
   /// </summary>
   ArabicParenR,
-  
+
   /// <summary>
-  /// Autonumbering Enum ( arabicPeriod ).
+  ///   Autonumbering Enum ( arabicPeriod ).
   /// </summary>
   ArabicPeriod,
-  
+
   /// <summary>
-  /// Autonumbering Enum ( arabicPlain ).
+  ///   Autonumbering Enum ( arabicPlain ).
   /// </summary>
   ArabicPlain,
-  
+
   /// <summary>
-  /// Autonumbering Enum ( romanLcParenBoth ).
+  ///   Autonumbering Enum ( romanLcParenBoth ).
   /// </summary>
   RomanLowerCharacterParenBoth,
-  
+
   /// <summary>
-  /// Autonumbering Enum ( romanUcParenBoth ).
+  ///   Autonumbering Enum ( romanUcParenBoth ).
   /// </summary>
   RomanUpperCharacterParenBoth,
-  
+
   /// <summary>
-  /// Autonumbering Enum ( romanLcParenR ).
+  ///   Autonumbering Enum ( romanLcParenR ).
   /// </summary>
   RomanLowerCharacterParenR,
-  
+
   /// <summary>
-  /// Autonumbering Enum ( romanUcParenR ).
+  ///   Autonumbering Enum ( romanUcParenR ).
   /// </summary>
   RomanUpperCharacterParenR,
-  
+
   /// <summary>
-  /// Autonumbering Enum ( romanLcPeriod ).
+  ///   Autonumbering Enum ( romanLcPeriod ).
   /// </summary>
   RomanLowerCharacterPeriod,
-  
+
   /// <summary>
-  /// Autonumbering Enum ( romanUcPeriod ).
+  ///   Autonumbering Enum ( romanUcPeriod ).
   /// </summary>
   RomanUpperCharacterPeriod,
-  
+
   /// <summary>
-  /// Autonumbering Enum ( circleNumDbPlain ).
+  ///   Autonumbering Enum ( circleNumDbPlain ).
   /// </summary>
   CircleNumberDoubleBytePlain,
-  
+
   /// <summary>
-  /// Autonumbering Enum ( circleNumWdBlackPlain ).
+  ///   Autonumbering Enum ( circleNumWdBlackPlain ).
   /// </summary>
   CircleNumberWingdingsBlackPlain,
-  
+
   /// <summary>
-  /// Autonumbering Enum ( circleNumWdWhitePlain ).
+  ///   Autonumbering Enum ( circleNumWdWhitePlain ).
   /// </summary>
   CircleNumberWingdingsWhitePlain,
-  
+
   /// <summary>
-  /// Autonumbering Enum ( arabicDbPeriod ).
+  ///   Autonumbering Enum ( arabicDbPeriod ).
   /// </summary>
   ArabicDoubleBytePeriod,
-  
+
   /// <summary>
-  /// Autonumbering Enum ( arabicDbPlain ).
+  ///   Autonumbering Enum ( arabicDbPlain ).
   /// </summary>
   ArabicDoubleBytePlain,
-  
+
   /// <summary>
-  /// Autonumbering Enum ( ea1ChsPeriod ).
+  ///   Autonumbering Enum ( ea1ChsPeriod ).
   /// </summary>
   EastAsianSimplifiedChinesePeriod,
-  
+
   /// <summary>
-  /// Autonumbering Enum ( ea1ChsPlain ).
+  ///   Autonumbering Enum ( ea1ChsPlain ).
   /// </summary>
   EastAsianSimplifiedChinesePlain,
-  
+
   /// <summary>
-  /// Autonumbering Enum ( ea1ChtPeriod ).
+  ///   Autonumbering Enum ( ea1ChtPeriod ).
   /// </summary>
   EastAsianTraditionalChinesePeriod,
-  
+
   /// <summary>
-  /// Autonumbering Enum ( ea1ChtPlain ).
+  ///   Autonumbering Enum ( ea1ChtPlain ).
   /// </summary>
   EastAsianTraditionalChinesePlain,
-  
+
   /// <summary>
-  /// Autonumbering Enum ( ea1JpnChsDbPeriod ).
+  ///   Autonumbering Enum ( ea1JpnChsDbPeriod ).
   /// </summary>
   EastAsianJapaneseDoubleBytePeriod,
-  
+
   /// <summary>
-  /// Autonumbering Enum ( ea1JpnKorPlain ).
+  ///   Autonumbering Enum ( ea1JpnKorPlain ).
   /// </summary>
   EastAsianJapaneseKoreanPlain,
-  
+
   /// <summary>
-  /// Autonumbering Enum ( ea1JpnKorPeriod ).
+  ///   Autonumbering Enum ( ea1JpnKorPeriod ).
   /// </summary>
   EastAsianJapaneseKoreanPeriod,
-  
+
   /// <summary>
-  /// Autonumbering Enum ( arabic1Minus ).
+  ///   Autonumbering Enum ( arabic1Minus ).
   /// </summary>
   Arabic1Minus,
-  
+
   /// <summary>
-  /// Autonumbering Enum ( arabic2Minus ).
+  ///   Autonumbering Enum ( arabic2Minus ).
   /// </summary>
   Arabic2Minus,
-  
+
   /// <summary>
-  /// Autonumbering Enum ( hebrew2Minus ).
+  ///   Autonumbering Enum ( hebrew2Minus ).
   /// </summary>
   Hebrew2Minus,
-  
+
   /// <summary>
-  /// Autonumbering Enum ( thaiAlphaPeriod ).
+  ///   Autonumbering Enum ( thaiAlphaPeriod ).
   /// </summary>
   ThaiAlphaPeriod,
-  
+
   /// <summary>
-  /// Autonumbering Enum ( thaiAlphaParenR ).
+  ///   Autonumbering Enum ( thaiAlphaParenR ).
   /// </summary>
   ThaiAlphaParenthesisRight,
-  
+
   /// <summary>
-  /// Autonumbering Enum ( thaiAlphaParenBoth ).
+  ///   Autonumbering Enum ( thaiAlphaParenBoth ).
   /// </summary>
   ThaiAlphaParenthesisBoth,
-  
+
   /// <summary>
-  /// Autonumbering Enum ( thaiNumPeriod ).
+  ///   Autonumbering Enum ( thaiNumPeriod ).
   /// </summary>
   ThaiNumberPeriod,
-  
+
   /// <summary>
-  /// Autonumbering Enum ( thaiNumParenR ).
+  ///   Autonumbering Enum ( thaiNumParenR ).
   /// </summary>
   ThaiNumberParenthesisRight,
-  
+
   /// <summary>
-  /// Autonumbering Enum ( thaiNumParenBoth ).
+  ///   Autonumbering Enum ( thaiNumParenBoth ).
   /// </summary>
   ThaiNumberParenthesisBoth,
-  
+
   /// <summary>
-  /// Autonumbering Enum ( hindiAlphaPeriod ).
+  ///   Autonumbering Enum ( hindiAlphaPeriod ).
   /// </summary>
   HindiAlphaPeriod,
-  
+
   /// <summary>
-  /// Autonumbering Enum ( hindiNumPeriod ).
+  ///   Autonumbering Enum ( hindiNumPeriod ).
   /// </summary>
   HindiNumPeriod,
-  
+
   /// <summary>
-  /// Autonumbering Enum ( hindiNumParenR ).
+  ///   Autonumbering Enum ( hindiNumParenR ).
   /// </summary>
   HindiNumberParenthesisRight,
-  
+
   /// <summary>
-  /// Autonumbering Enum ( hindiAlpha1Period ).
+  ///   Autonumbering Enum ( hindiAlpha1Period ).
   /// </summary>
-  HindiAlpha1Period,
-  
+  HindiAlpha1Period
 }

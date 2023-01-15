@@ -1,22 +1,27 @@
+using DocumentFormat.OpenXml.Drawing;
+using ConnectionShapeLocks = DocumentModel.Drawings.ConnectionShapeLocks;
+using ConnectionType = DocumentModel.Drawings.ConnectionType;
+using NonVisualConnectionShapeProperties = DocumentFormat.OpenXml.Drawing.ChartDrawing.NonVisualConnectionShapeProperties;
+
 namespace DocumentModel.OpenXml.Drawings.ChartDrawing;
 
 /// <summary>
-/// Non-Visual Connection Shape Drawing Properties.
+///   Non-Visual Connection Shape Drawing Properties.
 /// </summary>
 public static class NonVisualConnectionShapePropertiesConverter
 {
   /// <summary>
-  /// Connection Shape Locks.
+  ///   Connection Shape Locks.
   /// </summary>
-  public static DocumentModel.Drawings.ConnectionShapeLocks? GetConnectionShapeLocks(DocumentFormat.OpenXml.Drawing.ChartDrawing.NonVisualConnectionShapeProperties? openXmlElement)
+  public static ConnectionShapeLocks? GetConnectionShapeLocks(NonVisualConnectionShapeProperties? openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.ConnectionShapeLocks>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.ConnectionShapeLocksConverter.CreateModelElement(itemElement);
+      return ConnectionShapeLocksConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetConnectionShapeLocks(DocumentFormat.OpenXml.Drawing.ChartDrawing.NonVisualConnectionShapeProperties? openXmlElement, DocumentModel.Drawings.ConnectionShapeLocks? value)
+
+  public static void SetConnectionShapeLocks(NonVisualConnectionShapeProperties? openXmlElement, ConnectionShapeLocks? value)
   {
     if (openXmlElement != null)
     {
@@ -25,79 +30,79 @@ public static class NonVisualConnectionShapePropertiesConverter
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Drawings.ConnectionShapeLocksConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.ConnectionShapeLocks>(value);
+        itemElement = ConnectionShapeLocksConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.ConnectionShapeLocks>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
+
   /// <summary>
-  /// Connection Start.
+  ///   Connection Start.
   /// </summary>
-  public static DocumentModel.Drawings.ConnectionType? GetStartConnection(DocumentFormat.OpenXml.Drawing.ChartDrawing.NonVisualConnectionShapeProperties? openXmlElement)
+  public static ConnectionType? GetStartConnection(NonVisualConnectionShapeProperties? openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.StartConnection>();
+    var itemElement = openXmlElement?.GetFirstChild<StartConnection>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.ConnectionTypeConverter.CreateModelElement(itemElement);
+      return ConnectionTypeConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetStartConnection(DocumentFormat.OpenXml.Drawing.ChartDrawing.NonVisualConnectionShapeProperties? openXmlElement, DocumentModel.Drawings.ConnectionType? value)
+
+  public static void SetStartConnection(NonVisualConnectionShapeProperties? openXmlElement, ConnectionType? value)
   {
     if (openXmlElement != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.StartConnection>();
+      var itemElement = openXmlElement.GetFirstChild<StartConnection>();
       if (itemElement != null)
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Drawings.ConnectionTypeConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.StartConnection>(value);
+        itemElement = ConnectionTypeConverter.CreateOpenXmlElement<StartConnection>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
+
   /// <summary>
-  /// Connection End.
+  ///   Connection End.
   /// </summary>
-  public static DocumentModel.Drawings.ConnectionType? GetEndConnection(DocumentFormat.OpenXml.Drawing.ChartDrawing.NonVisualConnectionShapeProperties? openXmlElement)
+  public static ConnectionType? GetEndConnection(NonVisualConnectionShapeProperties? openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.EndConnection>();
+    var itemElement = openXmlElement?.GetFirstChild<EndConnection>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.ConnectionTypeConverter.CreateModelElement(itemElement);
+      return ConnectionTypeConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetEndConnection(DocumentFormat.OpenXml.Drawing.ChartDrawing.NonVisualConnectionShapeProperties? openXmlElement, DocumentModel.Drawings.ConnectionType? value)
+
+  public static void SetEndConnection(NonVisualConnectionShapeProperties? openXmlElement, ConnectionType? value)
   {
     if (openXmlElement != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.EndConnection>();
+      var itemElement = openXmlElement.GetFirstChild<EndConnection>();
       if (itemElement != null)
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Drawings.ConnectionTypeConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.EndConnection>(value);
+        itemElement = ConnectionTypeConverter.CreateOpenXmlElement<EndConnection>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
+
   /// <summary>
-  /// ExtensionList.
+  ///   ExtensionList.
   /// </summary>
-  public static DocumentModel.Drawings.ExtensionList? GetExtensionList(DocumentFormat.OpenXml.Drawing.ChartDrawing.NonVisualConnectionShapeProperties? openXmlElement)
+  public static DocumentModel.Drawings.ExtensionList? GetExtensionList(NonVisualConnectionShapeProperties? openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.ExtensionList>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.ExtensionListConverter.CreateModelElement(itemElement);
+      return ExtensionListConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetExtensionList(DocumentFormat.OpenXml.Drawing.ChartDrawing.NonVisualConnectionShapeProperties? openXmlElement, DocumentModel.Drawings.ExtensionList? value)
+
+  public static void SetExtensionList(NonVisualConnectionShapeProperties? openXmlElement, DocumentModel.Drawings.ExtensionList? value)
   {
     if (openXmlElement != null)
     {
@@ -106,14 +111,14 @@ public static class NonVisualConnectionShapePropertiesConverter
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Drawings.ExtensionListConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.ExtensionList>(value);
+        itemElement = ExtensionListConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.ExtensionList>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static DocumentModel.Drawings.ChartDrawing.NonVisualConnectionShapeProperties? CreateModelElement(DocumentFormat.OpenXml.Drawing.ChartDrawing.NonVisualConnectionShapeProperties? openXmlElement)
+
+  public static DocumentModel.Drawings.ChartDrawing.NonVisualConnectionShapeProperties? CreateModelElement(NonVisualConnectionShapeProperties? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -126,9 +131,9 @@ public static class NonVisualConnectionShapePropertiesConverter
     }
     return null;
   }
-  
+
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.ChartDrawing.NonVisualConnectionShapeProperties? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.ChartDrawing.NonVisualConnectionShapeProperties, new()
+    where OpenXmlElementType : NonVisualConnectionShapeProperties, new()
   {
     if (value != null)
     {

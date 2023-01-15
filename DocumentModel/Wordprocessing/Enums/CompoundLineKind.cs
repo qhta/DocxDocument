@@ -1,33 +1,32 @@
 namespace DocumentModel.Wordprocessing;
 
 /// <summary>
-/// Defines the CompoundLineValues enumeration.
+///   Defines the CompoundLineValues enumeration.
 /// </summary>
 public enum CompoundLineKind
 {
   /// <summary>
-  /// sng.
+  ///   sng.
   /// </summary>
   Simple,
-  
+
   /// <summary>
-  /// dbl.
+  ///   dbl.
   /// </summary>
   Double,
-  
+
   /// <summary>
-  /// thickThin.
+  ///   thickThin.
   /// </summary>
   ThickThin,
-  
+
   /// <summary>
-  /// thinThick.
+  ///   thinThick.
   /// </summary>
   ThinThick,
-  
+
   /// <summary>
-  /// tri.
+  ///   tri.
   /// </summary>
-  Triple,
-  
+  Triple
 }

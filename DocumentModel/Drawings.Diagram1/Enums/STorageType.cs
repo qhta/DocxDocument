@@ -1,18 +1,17 @@
 namespace DocumentModel.Drawings.Diagram1;
 
 /// <summary>
-/// Defines the STorageType enumeration.
+///   Defines the STorageType enumeration.
 /// </summary>
 public enum STorageType
 {
   /// <summary>
-  /// sibTrans.
+  ///   sibTrans.
   /// </summary>
   SibTrans,
-  
+
   /// <summary>
-  /// parTrans.
+  ///   parTrans.
   /// </summary>
-  ParTrans,
-  
+  ParTrans
 }

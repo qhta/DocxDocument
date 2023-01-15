@@ -1,19 +1,21 @@
+using DocumentFormat.OpenXml.Vml;
+
 namespace DocumentModel.OpenXml.Vml;
 
 /// <summary>
-/// Single Formula.
+///   Single Formula.
 /// </summary>
 public static class FormulaConverter
 {
   /// <summary>
-  /// Equation
+  ///   Equation
   /// </summary>
-  public static String? GetEquation(DocumentFormat.OpenXml.Vml.Formula? openXmlElement)
+  public static String? GetEquation(Formula? openXmlElement)
   {
     return openXmlElement?.Equation?.Value;
   }
-  
-  public static void SetEquation(DocumentFormat.OpenXml.Vml.Formula? openXmlElement, String? value)
+
+  public static void SetEquation(Formula? openXmlElement, String? value)
   {
     if (openXmlElement != null)
       if (value != null)
@@ -21,8 +23,8 @@ public static class FormulaConverter
       else
         openXmlElement.Equation = null;
   }
-  
-  public static DocumentModel.Vml.Formula? CreateModelElement(DocumentFormat.OpenXml.Vml.Formula? openXmlElement)
+
+  public static DocumentModel.Vml.Formula? CreateModelElement(Formula? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -32,9 +34,9 @@ public static class FormulaConverter
     }
     return null;
   }
-  
+
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Vml.Formula? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Vml.Formula, new()
+    where OpenXmlElementType : Formula, new()
   {
     if (value != null)
     {

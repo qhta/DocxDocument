@@ -1,28 +1,27 @@
 namespace DocumentModel.Wordprocessing.Vml;
 
 /// <summary>
-/// Text Wrapping Side
+///   Text Wrapping Side
 /// </summary>
 public enum WrapSideKind
 {
   /// <summary>
-  /// Both sides.
+  ///   Both sides.
   /// </summary>
   Both,
-  
+
   /// <summary>
-  /// Left side.
+  ///   Left side.
   /// </summary>
   Left,
-  
+
   /// <summary>
-  /// Right side.
+  ///   Right side.
   /// </summary>
   Right,
-  
+
   /// <summary>
-  /// Largest side.
+  ///   Largest side.
   /// </summary>
-  Largest,
-  
+  Largest
 }

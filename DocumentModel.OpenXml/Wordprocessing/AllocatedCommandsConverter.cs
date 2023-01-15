@@ -1,18 +1,21 @@
+using DocumentModel.Wordprocessing;
+using AllocatedCommands = DocumentFormat.OpenXml.Office.Word.AllocatedCommands;
+
 namespace DocumentModel.OpenXml.Wordprocessing;
 
 /// <summary>
-/// Defines the AllocatedCommands Class.
+///   Defines the AllocatedCommands Class.
 /// </summary>
 public static class AllocatedCommandsConverter
 {
-  public static System.Collections.ObjectModel.Collection<DocumentModel.Wordprocessing.AllocatedCommand>? GetItems(DocumentFormat.OpenXml.Office.Word.AllocatedCommands? openXmlElement)
+  public static Collection<AllocatedCommand>? GetItems(AllocatedCommands? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var collection = new System.Collections.ObjectModel.Collection<DocumentModel.Wordprocessing.AllocatedCommand>();
+      var collection = new Collection<AllocatedCommand>();
       foreach (var item in openXmlElement.Elements<DocumentFormat.OpenXml.Office.Word.AllocatedCommand>())
       {
-        var newItem = DocumentModel.OpenXml.Wordprocessing.AllocatedCommandConverter.CreateModelElement(item);
+        var newItem = AllocatedCommandConverter.CreateModelElement(item);
         if (newItem != null)
           collection.Add(newItem);
       }
@@ -20,25 +23,23 @@ public static class AllocatedCommandsConverter
     }
     return null;
   }
-  
-  public static void SetItems(DocumentFormat.OpenXml.Office.Word.AllocatedCommands? openXmlElement, System.Collections.ObjectModel.Collection<DocumentModel.Wordprocessing.AllocatedCommand>? value)
+
+  public static void SetItems(AllocatedCommands? openXmlElement, Collection<AllocatedCommand>? value)
   {
     if (openXmlElement != null)
     {
       openXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Office.Word.AllocatedCommand>();
       if (value != null)
-      {
         foreach (var item in value)
         {
-          var newItem = DocumentModel.OpenXml.Wordprocessing.AllocatedCommandConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office.Word.AllocatedCommand>(item);
+          var newItem = AllocatedCommandConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office.Word.AllocatedCommand>(item);
           if (newItem != null)
             openXmlElement.AddChild(newItem);
         }
-      }
     }
   }
-  
-  public static DocumentModel.Wordprocessing.AllocatedCommands? CreateModelElement(DocumentFormat.OpenXml.Office.Word.AllocatedCommands? openXmlElement)
+
+  public static DocumentModel.Wordprocessing.AllocatedCommands? CreateModelElement(AllocatedCommands? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -48,9 +49,9 @@ public static class AllocatedCommandsConverter
     }
     return null;
   }
-  
+
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.AllocatedCommands? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Office.Word.AllocatedCommands, new()
+    where OpenXmlElementType : AllocatedCommands, new()
   {
     if (value != null)
     {

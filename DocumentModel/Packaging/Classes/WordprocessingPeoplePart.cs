@@ -1,17 +1,18 @@
+using DocumentModel.Wordprocessing;
+
 namespace DocumentModel.Packaging;
 
 /// <summary>
-/// Defines the WordprocessingPeoplePart
+///   Defines the WordprocessingPeoplePart
 /// </summary>
-public partial class WordprocessingPeoplePart
+public class WordprocessingPeoplePart
 {
   public String? ContentType { get; set; }
-  
+
   /// <summary>
-  /// Gets or sets the root element of this part.
+  ///   Gets or sets the root element of this part.
   /// </summary>
-  public DocumentModel.Wordprocessing.People? People { get; set; }
-  
+  public People? People { get; set; }
+
   public String? RelationshipType { get; set; }
-  
 }

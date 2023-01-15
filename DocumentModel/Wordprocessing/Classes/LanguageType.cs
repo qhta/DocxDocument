@@ -1,23 +1,22 @@
 namespace DocumentModel.Wordprocessing;
 
 /// <summary>
-/// Defines the LanguageType Class.
+///   Defines the LanguageType Class.
 /// </summary>
-public partial class LanguageType
+public class LanguageType
 {
   /// <summary>
-  /// Latin Language
+  ///   Latin Language
   /// </summary>
   public String? Val { get; set; }
-  
+
   /// <summary>
-  /// East Asian Language
+  ///   East Asian Language
   /// </summary>
   public String? EastAsia { get; set; }
-  
+
   /// <summary>
-  /// Complex Script Language
+  ///   Complex Script Language
   /// </summary>
   public String? Bidi { get; set; }
-  
 }

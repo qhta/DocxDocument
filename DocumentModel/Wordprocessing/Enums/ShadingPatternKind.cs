@@ -1,198 +1,197 @@
 namespace DocumentModel.Wordprocessing;
 
 /// <summary>
-/// Defines the ShadingPatternValues enumeration.
+///   Defines the ShadingPatternValues enumeration.
 /// </summary>
 public enum ShadingPatternKind
 {
   /// <summary>
-  /// No Pattern.
+  ///   No Pattern.
   /// </summary>
   Nil,
-  
+
   /// <summary>
-  /// No Pattern.
+  ///   No Pattern.
   /// </summary>
   Clear,
-  
+
   /// <summary>
-  /// 100% Fill Pattern.
+  ///   100% Fill Pattern.
   /// </summary>
   Solid,
-  
+
   /// <summary>
-  /// Horizontal Stripe Pattern.
+  ///   Horizontal Stripe Pattern.
   /// </summary>
   HorizontalStripe,
-  
+
   /// <summary>
-  /// Vertical Stripe Pattern.
+  ///   Vertical Stripe Pattern.
   /// </summary>
   VerticalStripe,
-  
+
   /// <summary>
-  /// Reverse Diagonal Stripe Pattern.
+  ///   Reverse Diagonal Stripe Pattern.
   /// </summary>
   ReverseDiagonalStripe,
-  
+
   /// <summary>
-  /// Diagonal Stripe Pattern.
+  ///   Diagonal Stripe Pattern.
   /// </summary>
   DiagonalStripe,
-  
+
   /// <summary>
-  /// Horizontal Cross Pattern.
+  ///   Horizontal Cross Pattern.
   /// </summary>
   HorizontalCross,
-  
+
   /// <summary>
-  /// Diagonal Cross Pattern.
+  ///   Diagonal Cross Pattern.
   /// </summary>
   DiagonalCross,
-  
+
   /// <summary>
-  /// Thin Horizontal Stripe Pattern.
+  ///   Thin Horizontal Stripe Pattern.
   /// </summary>
   ThinHorizontalStripe,
-  
+
   /// <summary>
-  /// Thin Vertical Stripe Pattern.
+  ///   Thin Vertical Stripe Pattern.
   /// </summary>
   ThinVerticalStripe,
-  
+
   /// <summary>
-  /// Thin Reverse Diagonal Stripe Pattern.
+  ///   Thin Reverse Diagonal Stripe Pattern.
   /// </summary>
   ThinReverseDiagonalStripe,
-  
+
   /// <summary>
-  /// Thin Diagonal Stripe Pattern.
+  ///   Thin Diagonal Stripe Pattern.
   /// </summary>
   ThinDiagonalStripe,
-  
+
   /// <summary>
-  /// Thin Horizontal Cross Pattern.
+  ///   Thin Horizontal Cross Pattern.
   /// </summary>
   ThinHorizontalCross,
-  
+
   /// <summary>
-  /// Thin Diagonal Cross Pattern.
+  ///   Thin Diagonal Cross Pattern.
   /// </summary>
   ThinDiagonalCross,
-  
+
   /// <summary>
-  /// 5% Fill Pattern.
+  ///   5% Fill Pattern.
   /// </summary>
   Percent5,
-  
+
   /// <summary>
-  /// 10% Fill Pattern.
+  ///   10% Fill Pattern.
   /// </summary>
   Percent10,
-  
+
   /// <summary>
-  /// 12.5% Fill Pattern.
+  ///   12.5% Fill Pattern.
   /// </summary>
   Percent12,
-  
+
   /// <summary>
-  /// 15% Fill Pattern.
+  ///   15% Fill Pattern.
   /// </summary>
   Percent15,
-  
+
   /// <summary>
-  /// 20% Fill Pattern.
+  ///   20% Fill Pattern.
   /// </summary>
   Percent20,
-  
+
   /// <summary>
-  /// 25% Fill Pattern.
+  ///   25% Fill Pattern.
   /// </summary>
   Percent25,
-  
+
   /// <summary>
-  /// 30% Fill Pattern.
+  ///   30% Fill Pattern.
   /// </summary>
   Percent30,
-  
+
   /// <summary>
-  /// 35% Fill Pattern.
+  ///   35% Fill Pattern.
   /// </summary>
   Percent35,
-  
+
   /// <summary>
-  /// 37.5% Fill Pattern.
+  ///   37.5% Fill Pattern.
   /// </summary>
   Percent37,
-  
+
   /// <summary>
-  /// 40% Fill Pattern.
+  ///   40% Fill Pattern.
   /// </summary>
   Percent40,
-  
+
   /// <summary>
-  /// 45% Fill Pattern.
+  ///   45% Fill Pattern.
   /// </summary>
   Percent45,
-  
+
   /// <summary>
-  /// 50% Fill Pattern.
+  ///   50% Fill Pattern.
   /// </summary>
   Percent50,
-  
+
   /// <summary>
-  /// 55% Fill Pattern.
+  ///   55% Fill Pattern.
   /// </summary>
   Percent55,
-  
+
   /// <summary>
-  /// 60% Fill Pattern.
+  ///   60% Fill Pattern.
   /// </summary>
   Percent60,
-  
+
   /// <summary>
-  /// 62.5% Fill Pattern.
+  ///   62.5% Fill Pattern.
   /// </summary>
   Percent62,
-  
+
   /// <summary>
-  /// 65% Fill Pattern.
+  ///   65% Fill Pattern.
   /// </summary>
   Percent65,
-  
+
   /// <summary>
-  /// 70% Fill Pattern.
+  ///   70% Fill Pattern.
   /// </summary>
   Percent70,
-  
+
   /// <summary>
-  /// 75% Fill Pattern.
+  ///   75% Fill Pattern.
   /// </summary>
   Percent75,
-  
+
   /// <summary>
-  /// 80% Fill Pattern.
+  ///   80% Fill Pattern.
   /// </summary>
   Percent80,
-  
+
   /// <summary>
-  /// 85% Fill Pattern.
+  ///   85% Fill Pattern.
   /// </summary>
   Percent85,
-  
+
   /// <summary>
-  /// 87.5% Fill Pattern.
+  ///   87.5% Fill Pattern.
   /// </summary>
   Percent87,
-  
+
   /// <summary>
-  /// 90% Fill Pattern.
+  ///   90% Fill Pattern.
   /// </summary>
   Percent90,
-  
+
   /// <summary>
-  /// 95% Fill Pattern.
+  ///   95% Fill Pattern.
   /// </summary>
-  Percent95,
-  
+  Percent95
 }

@@ -1,48 +1,47 @@
 namespace DocumentModel.Drawings.Wordprocessing;
 
 /// <summary>
-/// Drawing Object Non-Visual Properties.
+///   Drawing Object Non-Visual Properties.
 /// </summary>
-public partial class DocProperties
+public class DocProperties
 {
   /// <summary>
-  /// Application defined unique identifier.
+  ///   Application defined unique identifier.
   /// </summary>
   public UInt32? Id { get; set; }
-  
+
   /// <summary>
-  /// Name compatible with Object Model (non-unique).
+  ///   Name compatible with Object Model (non-unique).
   /// </summary>
   public String? Name { get; set; }
-  
+
   /// <summary>
-  /// Description of the drawing element.
+  ///   Description of the drawing element.
   /// </summary>
   public String? Description { get; set; }
-  
+
   /// <summary>
-  /// Flag determining to show or hide this element.
+  ///   Flag determining to show or hide this element.
   /// </summary>
   public Boolean? Hidden { get; set; }
-  
+
   /// <summary>
-  /// Title
+  ///   Title
   /// </summary>
   public String? Title { get; set; }
-  
+
   /// <summary>
-  /// Hyperlink associated with clicking or selecting the element..
+  ///   Hyperlink associated with clicking or selecting the element..
   /// </summary>
-  public DocumentModel.Drawings.HyperlinkOnClick? HyperlinkOnClick { get; set; }
-  
+  public HyperlinkOnClick? HyperlinkOnClick { get; set; }
+
   /// <summary>
-  /// Hyperlink associated with hovering over the element..
+  ///   Hyperlink associated with hovering over the element..
   /// </summary>
-  public DocumentModel.Drawings.HyperlinkOnHover? HyperlinkOnHover { get; set; }
-  
+  public HyperlinkOnHover? HyperlinkOnHover { get; set; }
+
   /// <summary>
-  /// Future extension.
+  ///   Future extension.
   /// </summary>
-  public DocumentModel.Drawings.NonVisualDrawingPropertiesExtensionList? NonVisualDrawingPropertiesExtensionList { get; set; }
-  
+  public NonVisualDrawingPropertiesExtensionList? NonVisualDrawingPropertiesExtensionList { get; set; }
 }

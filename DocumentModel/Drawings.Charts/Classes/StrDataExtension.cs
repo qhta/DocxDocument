@@ -1,15 +1,14 @@
 namespace DocumentModel.Drawings.Charts;
 
 /// <summary>
-/// Defines the StrDataExtension Class.
+///   Defines the StrDataExtension Class.
 /// </summary>
-public partial class StrDataExtension
+public class StrDataExtension
 {
   /// <summary>
-  /// URI
+  ///   URI
   /// </summary>
   public String? Uri { get; set; }
-  
+
   public Boolean? AutoGeneneratedCategories { get; set; }
-  
 }

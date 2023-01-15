@@ -1,10 +1,9 @@
 namespace DocumentModel.Drawings;
 
 /// <summary>
-/// List of Shape Paths.
+///   List of Shape Paths.
 /// </summary>
-public partial class PathList
+public class PathList
 {
-  public Collection<DocumentModel.Drawings.Path>? Paths { get; set; }
-  
+  public Collection<Path>? Paths { get; set; }
 }

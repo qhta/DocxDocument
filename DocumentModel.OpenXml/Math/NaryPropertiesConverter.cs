@@ -1,176 +1,169 @@
+using DocumentFormat.OpenXml.Math;
+using DocumentModel.Math;
+using ControlProperties = DocumentModel.Math.ControlProperties;
+using NaryProperties = DocumentFormat.OpenXml.Math.NaryProperties;
+
 namespace DocumentModel.OpenXml.Math;
 
 /// <summary>
-/// n-ary Properties.
+///   n-ary Properties.
 /// </summary>
 public static class NaryPropertiesConverter
 {
   /// <summary>
-  /// n-ary Operator Character.
+  ///   n-ary Operator Character.
   /// </summary>
-  public static String? GetAccentChar(DocumentFormat.OpenXml.Math.NaryProperties? openXmlElement)
+  public static String? GetAccentChar(NaryProperties? openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Math.AccentChar>();
+    var itemElement = openXmlElement?.GetFirstChild<AccentChar>();
     if (itemElement != null)
       return itemElement.Val?.Value;
     return null;
   }
-  
-  public static void SetAccentChar(DocumentFormat.OpenXml.Math.NaryProperties? openXmlElement, String? value)
+
+  public static void SetAccentChar(NaryProperties? openXmlElement, String? value)
   {
     if (openXmlElement != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Math.AccentChar>();
+      var itemElement = openXmlElement.GetFirstChild<AccentChar>();
       if (itemElement != null)
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = new DocumentFormat.OpenXml.Math.AccentChar { Val = value };
+        itemElement = new AccentChar { Val = value };
         openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
+
   /// <summary>
-  /// n-ary Limit Location.
+  ///   n-ary Limit Location.
   /// </summary>
-  public static DocumentModel.Math.LimitLocationKind? GetLimitLocation(DocumentFormat.OpenXml.Math.NaryProperties? openXmlElement)
+  public static LimitLocationKind? GetLimitLocation(NaryProperties? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Math.LimitLocation>();
-      if (itemElement?.Val?.Value != null)
-      {
-        return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Math.LimitLocationValues, DocumentModel.Math.LimitLocationKind>(itemElement.Val.Value);
-      }
+      var itemElement = openXmlElement.GetFirstChild<LimitLocation>();
+      if (itemElement?.Val?.Value != null) return EnumValueConverter.GetValue<LimitLocationValues, LimitLocationKind>(itemElement.Val.Value);
     }
     return null;
   }
-  
-  public static void SetLimitLocation(DocumentFormat.OpenXml.Math.NaryProperties? openXmlElement, DocumentModel.Math.LimitLocationKind? value)
+
+  public static void SetLimitLocation(NaryProperties? openXmlElement, LimitLocationKind? value)
   {
     if (openXmlElement != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Math.LimitLocation>();
+      var itemElement = openXmlElement.GetFirstChild<LimitLocation>();
       if (itemElement != null)
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = EnumValueConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Math.LimitLocation, DocumentFormat.OpenXml.Math.LimitLocationValues, DocumentModel.Math.LimitLocationKind>(value);
+        itemElement = EnumValueConverter.CreateOpenXmlElement<LimitLocation, LimitLocationValues, LimitLocationKind>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
+
   /// <summary>
-  /// n-ary Grow.
+  ///   n-ary Grow.
   /// </summary>
-  public static DocumentModel.Math.BooleanKind? GetGrowOperators(DocumentFormat.OpenXml.Math.NaryProperties? openXmlElement)
+  public static BooleanKind? GetGrowOperators(NaryProperties? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Math.GrowOperators>();
-      if (itemElement?.Val?.Value != null)
-      {
-        return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Math.BooleanValues, DocumentModel.Math.BooleanKind>(itemElement.Val.Value);
-      }
+      var itemElement = openXmlElement.GetFirstChild<GrowOperators>();
+      if (itemElement?.Val?.Value != null) return EnumValueConverter.GetValue<BooleanValues, BooleanKind>(itemElement.Val.Value);
     }
     return null;
   }
-  
-  public static void SetGrowOperators(DocumentFormat.OpenXml.Math.NaryProperties? openXmlElement, DocumentModel.Math.BooleanKind? value)
+
+  public static void SetGrowOperators(NaryProperties? openXmlElement, BooleanKind? value)
   {
     if (openXmlElement != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Math.GrowOperators>();
+      var itemElement = openXmlElement.GetFirstChild<GrowOperators>();
       if (itemElement != null)
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = EnumValueConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Math.GrowOperators, DocumentFormat.OpenXml.Math.BooleanValues, DocumentModel.Math.BooleanKind>(value);
+        itemElement = EnumValueConverter.CreateOpenXmlElement<GrowOperators, BooleanValues, BooleanKind>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
+
   /// <summary>
-  /// Hide Subscript (n-ary).
+  ///   Hide Subscript (n-ary).
   /// </summary>
-  public static DocumentModel.Math.BooleanKind? GetHideSubArgument(DocumentFormat.OpenXml.Math.NaryProperties? openXmlElement)
+  public static BooleanKind? GetHideSubArgument(NaryProperties? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Math.HideSubArgument>();
-      if (itemElement?.Val?.Value != null)
-      {
-        return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Math.BooleanValues, DocumentModel.Math.BooleanKind>(itemElement.Val.Value);
-      }
+      var itemElement = openXmlElement.GetFirstChild<HideSubArgument>();
+      if (itemElement?.Val?.Value != null) return EnumValueConverter.GetValue<BooleanValues, BooleanKind>(itemElement.Val.Value);
     }
     return null;
   }
-  
-  public static void SetHideSubArgument(DocumentFormat.OpenXml.Math.NaryProperties? openXmlElement, DocumentModel.Math.BooleanKind? value)
+
+  public static void SetHideSubArgument(NaryProperties? openXmlElement, BooleanKind? value)
   {
     if (openXmlElement != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Math.HideSubArgument>();
+      var itemElement = openXmlElement.GetFirstChild<HideSubArgument>();
       if (itemElement != null)
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = EnumValueConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Math.HideSubArgument, DocumentFormat.OpenXml.Math.BooleanValues, DocumentModel.Math.BooleanKind>(value);
+        itemElement = EnumValueConverter.CreateOpenXmlElement<HideSubArgument, BooleanValues, BooleanKind>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
+
   /// <summary>
-  /// Hide Superscript (n-ary).
+  ///   Hide Superscript (n-ary).
   /// </summary>
-  public static DocumentModel.Math.BooleanKind? GetHideSuperArgument(DocumentFormat.OpenXml.Math.NaryProperties? openXmlElement)
+  public static BooleanKind? GetHideSuperArgument(NaryProperties? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Math.HideSuperArgument>();
-      if (itemElement?.Val?.Value != null)
-      {
-        return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Math.BooleanValues, DocumentModel.Math.BooleanKind>(itemElement.Val.Value);
-      }
+      var itemElement = openXmlElement.GetFirstChild<HideSuperArgument>();
+      if (itemElement?.Val?.Value != null) return EnumValueConverter.GetValue<BooleanValues, BooleanKind>(itemElement.Val.Value);
     }
     return null;
   }
-  
-  public static void SetHideSuperArgument(DocumentFormat.OpenXml.Math.NaryProperties? openXmlElement, DocumentModel.Math.BooleanKind? value)
+
+  public static void SetHideSuperArgument(NaryProperties? openXmlElement, BooleanKind? value)
   {
     if (openXmlElement != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Math.HideSuperArgument>();
+      var itemElement = openXmlElement.GetFirstChild<HideSuperArgument>();
       if (itemElement != null)
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = EnumValueConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Math.HideSuperArgument, DocumentFormat.OpenXml.Math.BooleanValues, DocumentModel.Math.BooleanKind>(value);
+        itemElement = EnumValueConverter.CreateOpenXmlElement<HideSuperArgument, BooleanValues, BooleanKind>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
+
   /// <summary>
-  /// ControlProperties.
+  ///   ControlProperties.
   /// </summary>
-  public static DocumentModel.Math.ControlProperties? GetControlProperties(DocumentFormat.OpenXml.Math.NaryProperties? openXmlElement)
+  public static ControlProperties? GetControlProperties(NaryProperties? openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Math.ControlProperties>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Math.ControlPropertiesConverter.CreateModelElement(itemElement);
+      return ControlPropertiesConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetControlProperties(DocumentFormat.OpenXml.Math.NaryProperties? openXmlElement, DocumentModel.Math.ControlProperties? value)
+
+  public static void SetControlProperties(NaryProperties? openXmlElement, ControlProperties? value)
   {
     if (openXmlElement != null)
     {
@@ -179,14 +172,14 @@ public static class NaryPropertiesConverter
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Math.ControlPropertiesConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Math.ControlProperties>(value);
+        itemElement = ControlPropertiesConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Math.ControlProperties>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static DocumentModel.Math.NaryProperties? CreateModelElement(DocumentFormat.OpenXml.Math.NaryProperties? openXmlElement)
+
+  public static DocumentModel.Math.NaryProperties? CreateModelElement(NaryProperties? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -201,9 +194,9 @@ public static class NaryPropertiesConverter
     }
     return null;
   }
-  
+
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Math.NaryProperties? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Math.NaryProperties, new()
+    where OpenXmlElementType : NaryProperties, new()
   {
     if (value != null)
     {

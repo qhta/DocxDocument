@@ -1,58 +1,57 @@
 namespace DocumentModel.Drawings.Diagrams;
 
 /// <summary>
-/// Connection.
+///   Connection.
 /// </summary>
-public partial class Connection
+public class Connection
 {
   /// <summary>
-  /// Model Identifier
+  ///   Model Identifier
   /// </summary>
   public String? ModelId { get; set; }
-  
+
   /// <summary>
-  /// Point Type
+  ///   Point Type
   /// </summary>
-  public DocumentModel.Drawings.Diagrams.ConnectionKind? Type { get; set; }
-  
+  public ConnectionKind? Type { get; set; }
+
   /// <summary>
-  /// Source Identifier
+  ///   Source Identifier
   /// </summary>
   public String? SourceId { get; set; }
-  
+
   /// <summary>
-  /// Destination Identifier
+  ///   Destination Identifier
   /// </summary>
   public String? DestinationId { get; set; }
-  
+
   /// <summary>
-  /// Source Position
+  ///   Source Position
   /// </summary>
   public UInt32? SourcePosition { get; set; }
-  
+
   /// <summary>
-  /// Destination Position
+  ///   Destination Position
   /// </summary>
   public UInt32? DestinationPosition { get; set; }
-  
+
   /// <summary>
-  /// Parent Transition Identifier
+  ///   Parent Transition Identifier
   /// </summary>
   public String? ParentTransitionId { get; set; }
-  
+
   /// <summary>
-  /// Sibling Transition Identifier
+  ///   Sibling Transition Identifier
   /// </summary>
   public String? SiblingTransitionId { get; set; }
-  
+
   /// <summary>
-  /// Presentation Identifier
+  ///   Presentation Identifier
   /// </summary>
   public String? PresentationId { get; set; }
-  
+
   /// <summary>
-  /// ExtensionList.
+  ///   ExtensionList.
   /// </summary>
-  public DocumentModel.Drawings.Diagrams.ExtensionList? ExtensionList { get; set; }
-  
+  public ExtensionList? ExtensionList { get; set; }
 }

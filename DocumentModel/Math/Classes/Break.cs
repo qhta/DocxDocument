@@ -1,18 +1,17 @@
 namespace DocumentModel.Math;
 
 /// <summary>
-/// Break.
+///   Break.
 /// </summary>
-public partial class Break
+public class Break
 {
   /// <summary>
-  /// Index of Operator to Align To
+  ///   Index of Operator to Align To
   /// </summary>
   public Int64? AlignAt { get; set; }
-  
+
   /// <summary>
-  /// Index of Operator to Align To
+  ///   Index of Operator to Align To
   /// </summary>
   public Int64? Val { get; set; }
-  
 }

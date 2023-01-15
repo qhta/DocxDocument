@@ -1,23 +1,22 @@
 namespace DocumentModel.Wordprocessing.Vml;
 
 /// <summary>
-/// Vertical Anchor Type
+///   Vertical Anchor Type
 /// </summary>
 public enum VerticalAnchorKind
 {
   /// <summary>
-  /// Margin.
+  ///   Margin.
   /// </summary>
   Margin,
-  
+
   /// <summary>
-  /// Page.
+  ///   Page.
   /// </summary>
   Page,
-  
+
   /// <summary>
-  /// Text.
+  ///   Text.
   /// </summary>
-  Text,
-  
+  Text
 }

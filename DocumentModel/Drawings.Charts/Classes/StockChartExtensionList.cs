@@ -1,10 +1,9 @@
 namespace DocumentModel.Drawings.Charts;
 
 /// <summary>
-/// Defines the StockChartExtensionList Class.
+///   Defines the StockChartExtensionList Class.
 /// </summary>
-public partial class StockChartExtensionList
+public class StockChartExtensionList
 {
-  public Collection<DocumentModel.Drawings.Charts.StockChartExtension>? StockChartExtensions { get; set; }
-  
+  public Collection<StockChartExtension>? StockChartExtensions { get; set; }
 }

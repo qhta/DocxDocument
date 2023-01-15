@@ -1,278 +1,277 @@
 namespace DocumentModel.Drawings;
 
 /// <summary>
-/// Preset Pattern Value
+///   Preset Pattern Value
 /// </summary>
 public enum PresetPatternKind
 {
   /// <summary>
-  /// 5%.
+  ///   5%.
   /// </summary>
   Percent5,
-  
+
   /// <summary>
-  /// 10%.
+  ///   10%.
   /// </summary>
   Percent10,
-  
+
   /// <summary>
-  /// 20%.
+  ///   20%.
   /// </summary>
   Percent20,
-  
+
   /// <summary>
-  /// 25%.
+  ///   25%.
   /// </summary>
   Percent25,
-  
+
   /// <summary>
-  /// 30%.
+  ///   30%.
   /// </summary>
   Percent30,
-  
+
   /// <summary>
-  /// 40%.
+  ///   40%.
   /// </summary>
   Percent40,
-  
+
   /// <summary>
-  /// 50%.
+  ///   50%.
   /// </summary>
   Percent50,
-  
+
   /// <summary>
-  /// 60%.
+  ///   60%.
   /// </summary>
   Percent60,
-  
+
   /// <summary>
-  /// 70%.
+  ///   70%.
   /// </summary>
   Percent70,
-  
+
   /// <summary>
-  /// 75%.
+  ///   75%.
   /// </summary>
   Percent75,
-  
+
   /// <summary>
-  /// 80%.
+  ///   80%.
   /// </summary>
   Percent80,
-  
+
   /// <summary>
-  /// 90%.
+  ///   90%.
   /// </summary>
   Percent90,
-  
+
   /// <summary>
-  /// Horizontal.
+  ///   Horizontal.
   /// </summary>
   Horizontal,
-  
+
   /// <summary>
-  /// Vertical.
+  ///   Vertical.
   /// </summary>
   Vertical,
-  
+
   /// <summary>
-  /// Light Horizontal.
+  ///   Light Horizontal.
   /// </summary>
   LightHorizontal,
-  
+
   /// <summary>
-  /// Light Vertical.
+  ///   Light Vertical.
   /// </summary>
   LightVertical,
-  
+
   /// <summary>
-  /// Dark Horizontal.
+  ///   Dark Horizontal.
   /// </summary>
   DarkHorizontal,
-  
+
   /// <summary>
-  /// Dark Vertical.
+  ///   Dark Vertical.
   /// </summary>
   DarkVertical,
-  
+
   /// <summary>
-  /// Narrow Horizontal.
+  ///   Narrow Horizontal.
   /// </summary>
   NarrowHorizontal,
-  
+
   /// <summary>
-  /// Narrow Vertical.
+  ///   Narrow Vertical.
   /// </summary>
   NarrowVertical,
-  
+
   /// <summary>
-  /// Dashed Horizontal.
+  ///   Dashed Horizontal.
   /// </summary>
   DashedHorizontal,
-  
+
   /// <summary>
-  /// Dashed Vertical.
+  ///   Dashed Vertical.
   /// </summary>
   DashedVertical,
-  
+
   /// <summary>
-  /// Cross.
+  ///   Cross.
   /// </summary>
   Cross,
-  
+
   /// <summary>
-  /// Downward Diagonal.
+  ///   Downward Diagonal.
   /// </summary>
   DownwardDiagonal,
-  
+
   /// <summary>
-  /// Upward Diagonal.
+  ///   Upward Diagonal.
   /// </summary>
   UpwardDiagonal,
-  
+
   /// <summary>
-  /// Light Downward Diagonal.
+  ///   Light Downward Diagonal.
   /// </summary>
   LightDownwardDiagonal,
-  
+
   /// <summary>
-  /// Light Upward Diagonal.
+  ///   Light Upward Diagonal.
   /// </summary>
   LightUpwardDiagonal,
-  
+
   /// <summary>
-  /// Dark Downward Diagonal.
+  ///   Dark Downward Diagonal.
   /// </summary>
   DarkDownwardDiagonal,
-  
+
   /// <summary>
-  /// Dark Upward Diagonal.
+  ///   Dark Upward Diagonal.
   /// </summary>
   DarkUpwardDiagonal,
-  
+
   /// <summary>
-  /// Wide Downward Diagonal.
+  ///   Wide Downward Diagonal.
   /// </summary>
   WideDownwardDiagonal,
-  
+
   /// <summary>
-  /// Wide Upward Diagonal.
+  ///   Wide Upward Diagonal.
   /// </summary>
   WideUpwardDiagonal,
-  
+
   /// <summary>
-  /// Dashed Downward Diagonal.
+  ///   Dashed Downward Diagonal.
   /// </summary>
   DashedDownwardDiagonal,
-  
+
   /// <summary>
-  /// Dashed Upward DIagonal.
+  ///   Dashed Upward DIagonal.
   /// </summary>
   DashedUpwardDiagonal,
-  
+
   /// <summary>
-  /// Diagonal Cross.
+  ///   Diagonal Cross.
   /// </summary>
   DiagonalCross,
-  
+
   /// <summary>
-  /// Small Checker Board.
+  ///   Small Checker Board.
   /// </summary>
   SmallCheck,
-  
+
   /// <summary>
-  /// Large Checker Board.
+  ///   Large Checker Board.
   /// </summary>
   LargeCheck,
-  
+
   /// <summary>
-  /// Small Grid.
+  ///   Small Grid.
   /// </summary>
   SmallGrid,
-  
+
   /// <summary>
-  /// Large Grid.
+  ///   Large Grid.
   /// </summary>
   LargeGrid,
-  
+
   /// <summary>
-  /// Dotted Grid.
+  ///   Dotted Grid.
   /// </summary>
   DotGrid,
-  
+
   /// <summary>
-  /// Small Confetti.
+  ///   Small Confetti.
   /// </summary>
   SmallConfetti,
-  
+
   /// <summary>
-  /// Large Confetti.
+  ///   Large Confetti.
   /// </summary>
   LargeConfetti,
-  
+
   /// <summary>
-  /// Horizontal Brick.
+  ///   Horizontal Brick.
   /// </summary>
   HorizontalBrick,
-  
+
   /// <summary>
-  /// Diagonal Brick.
+  ///   Diagonal Brick.
   /// </summary>
   DiagonalBrick,
-  
+
   /// <summary>
-  /// Solid Diamond.
+  ///   Solid Diamond.
   /// </summary>
   SolidDiamond,
-  
+
   /// <summary>
-  /// Open Diamond.
+  ///   Open Diamond.
   /// </summary>
   OpenDiamond,
-  
+
   /// <summary>
-  /// Dotted Diamond.
+  ///   Dotted Diamond.
   /// </summary>
   DottedDiamond,
-  
+
   /// <summary>
-  /// Plaid.
+  ///   Plaid.
   /// </summary>
   Plaid,
-  
+
   /// <summary>
-  /// Sphere.
+  ///   Sphere.
   /// </summary>
   Sphere,
-  
+
   /// <summary>
-  /// Weave.
+  ///   Weave.
   /// </summary>
   Weave,
-  
+
   /// <summary>
-  /// Divot.
+  ///   Divot.
   /// </summary>
   Divot,
-  
+
   /// <summary>
-  /// Shingle.
+  ///   Shingle.
   /// </summary>
   Shingle,
-  
+
   /// <summary>
-  /// Wave.
+  ///   Wave.
   /// </summary>
   Wave,
-  
+
   /// <summary>
-  /// Trellis.
+  ///   Trellis.
   /// </summary>
   Trellis,
-  
+
   /// <summary>
-  /// Zig Zag.
+  ///   Zig Zag.
   /// </summary>
-  ZigZag,
-  
+  ZigZag
 }

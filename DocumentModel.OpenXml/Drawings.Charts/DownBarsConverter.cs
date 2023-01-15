@@ -1,19 +1,22 @@
+using DocumentModel.Drawings.Charts;
+using DownBars = DocumentFormat.OpenXml.Drawing.Charts.DownBars;
+
 namespace DocumentModel.OpenXml.Drawings.Charts;
 
 /// <summary>
-/// Down Bars.
+///   Down Bars.
 /// </summary>
 public static class DownBarsConverter
 {
-  public static DocumentModel.Drawings.Charts.ChartShapeProperties? GetChartShapeProperties(DocumentFormat.OpenXml.Drawing.Charts.DownBars? openXmlElement)
+  public static ChartShapeProperties? GetChartShapeProperties(DownBars? openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.ChartShapeProperties>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.Charts.ChartShapePropertiesConverter.CreateModelElement(itemElement);
+      return ChartShapePropertiesConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetChartShapeProperties(DocumentFormat.OpenXml.Drawing.Charts.DownBars? openXmlElement, DocumentModel.Drawings.Charts.ChartShapeProperties? value)
+
+  public static void SetChartShapeProperties(DownBars? openXmlElement, ChartShapeProperties? value)
   {
     if (openXmlElement != null)
     {
@@ -22,14 +25,14 @@ public static class DownBarsConverter
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Drawings.Charts.ChartShapePropertiesConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Charts.ChartShapeProperties>(value);
+        itemElement = ChartShapePropertiesConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Charts.ChartShapeProperties>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static DocumentModel.Drawings.Charts.DownBars? CreateModelElement(DocumentFormat.OpenXml.Drawing.Charts.DownBars? openXmlElement)
+
+  public static DocumentModel.Drawings.Charts.DownBars? CreateModelElement(DownBars? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -39,9 +42,9 @@ public static class DownBarsConverter
     }
     return null;
   }
-  
+
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.Charts.DownBars? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.Charts.DownBars, new()
+    where OpenXmlElementType : DownBars, new()
   {
     if (value != null)
     {

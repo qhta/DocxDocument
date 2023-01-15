@@ -1,16 +1,18 @@
+using DocumentFormat.OpenXml.Packaging;
+
 namespace DocumentModel.OpenXml.Packaging;
 
 /// <summary>
-/// Defines the EmbeddedObjectPart
+///   Defines the EmbeddedObjectPart
 /// </summary>
 public static class EmbeddedObjectPartConverter
 {
-  public static String? GetRelationshipType(DocumentFormat.OpenXml.Packaging.EmbeddedObjectPart? openXmlElement)
+  public static String? GetRelationshipType(EmbeddedObjectPart? openXmlElement)
   {
     return openXmlElement?.RelationshipType;
   }
-  
-  public static DocumentModel.Packaging.EmbeddedObjectPart? CreateModelElement(DocumentFormat.OpenXml.Packaging.EmbeddedObjectPart? openXmlElement)
+
+  public static DocumentModel.Packaging.EmbeddedObjectPart? CreateModelElement(EmbeddedObjectPart? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -20,9 +22,9 @@ public static class EmbeddedObjectPartConverter
     }
     return null;
   }
-  
+
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Packaging.EmbeddedObjectPart? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Packaging.EmbeddedObjectPart, new()
+    where OpenXmlElementType : EmbeddedObjectPart, new()
   {
     if (value != null)
     {

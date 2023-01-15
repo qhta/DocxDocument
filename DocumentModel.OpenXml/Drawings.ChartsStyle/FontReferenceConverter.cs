@@ -1,52 +1,63 @@
+using DocumentFormat.OpenXml.Drawing;
+using DocumentModel.Drawings;
+using DocumentModel.Drawings.ChartsStyle;
+using FontReference = DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.FontReference;
+using HslColor = DocumentModel.Drawings.HslColor;
+using PresetColor = DocumentModel.Drawings.PresetColor;
+using RgbColorModelHex = DocumentModel.Drawings.RgbColorModelHex;
+using RgbColorModelPercentage = DocumentModel.Drawings.RgbColorModelPercentage;
+using SchemeColor = DocumentModel.Drawings.SchemeColor;
+using SystemColor = DocumentModel.Drawings.SystemColor;
+
 namespace DocumentModel.OpenXml.Drawings.ChartsStyle;
 
 /// <summary>
-/// Defines the FontReference Class.
+///   Defines the FontReference Class.
 /// </summary>
 public static class FontReferenceConverter
 {
   /// <summary>
-  /// idx, this property is only available in Office 2013 and later.
+  ///   idx, this property is only available in Office 2013 and later.
   /// </summary>
-  public static DocumentModel.Drawings.FontCollectionIndexKind? GetIndex(DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.FontReference? openXmlElement)
+  public static FontCollectionIndexKind? GetIndex(FontReference? openXmlElement)
   {
-    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Drawing.FontCollectionIndexValues, DocumentModel.Drawings.FontCollectionIndexKind>(openXmlElement?.Index?.Value);
+    return EnumValueConverter.GetValue<FontCollectionIndexValues, FontCollectionIndexKind>(openXmlElement?.Index?.Value);
   }
-  
-  public static void SetIndex(DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.FontReference? openXmlElement, DocumentModel.Drawings.FontCollectionIndexKind? value)
+
+  public static void SetIndex(FontReference? openXmlElement, FontCollectionIndexKind? value)
   {
     if (openXmlElement != null)
-      openXmlElement.Index = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Drawing.FontCollectionIndexValues, DocumentModel.Drawings.FontCollectionIndexKind>(value);
+      openXmlElement.Index = EnumValueConverter.CreateEnumValue<FontCollectionIndexValues, FontCollectionIndexKind>(value);
   }
-  
+
   /// <summary>
-  /// mods, this property is only available in Office 2013 and later.
+  ///   mods, this property is only available in Office 2013 and later.
   /// </summary>
-  public static DocumentModel.ListOf<String>? GetModifiers(DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.FontReference? openXmlElement)
+  public static ListOf<String>? GetModifiers(FontReference? openXmlElement)
   {
     return ListValueConverter.GetValue(openXmlElement?.Modifiers);
   }
-  
-  public static void SetModifiers(DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.FontReference? openXmlElement, DocumentModel.ListOf<String>? value)
+
+  public static void SetModifiers(FontReference? openXmlElement, ListOf<String>? value)
   {
     if (openXmlElement != null)
     {
       if (value != null)
-        openXmlElement.Modifiers = ListValueConverter.CreateListValue<DocumentFormat.OpenXml.StringValue>(value);
+        openXmlElement.Modifiers = ListValueConverter.CreateListValue<StringValue>(value);
       else
         openXmlElement.Modifiers = null;
     }
   }
-  
-  public static DocumentModel.Drawings.RgbColorModelPercentage? GetRgbColorModelPercentage(DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.FontReference? openXmlElement)
+
+  public static RgbColorModelPercentage? GetRgbColorModelPercentage(FontReference? openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.RgbColorModelPercentage>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.RgbColorModelPercentageConverter.CreateModelElement(itemElement);
+      return RgbColorModelPercentageConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetRgbColorModelPercentage(DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.FontReference? openXmlElement, DocumentModel.Drawings.RgbColorModelPercentage? value)
+
+  public static void SetRgbColorModelPercentage(FontReference? openXmlElement, RgbColorModelPercentage? value)
   {
     if (openXmlElement != null)
     {
@@ -55,22 +66,22 @@ public static class FontReferenceConverter
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Drawings.RgbColorModelPercentageConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.RgbColorModelPercentage>(value);
+        itemElement = RgbColorModelPercentageConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.RgbColorModelPercentage>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static DocumentModel.Drawings.RgbColorModelHex? GetRgbColorModelHex(DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.FontReference? openXmlElement)
+
+  public static RgbColorModelHex? GetRgbColorModelHex(FontReference? openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.RgbColorModelHex>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.RgbColorModelHexConverter.CreateModelElement(itemElement);
+      return RgbColorModelHexConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetRgbColorModelHex(DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.FontReference? openXmlElement, DocumentModel.Drawings.RgbColorModelHex? value)
+
+  public static void SetRgbColorModelHex(FontReference? openXmlElement, RgbColorModelHex? value)
   {
     if (openXmlElement != null)
     {
@@ -79,22 +90,22 @@ public static class FontReferenceConverter
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Drawings.RgbColorModelHexConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.RgbColorModelHex>(value);
+        itemElement = RgbColorModelHexConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.RgbColorModelHex>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static DocumentModel.Drawings.HslColor? GetHslColor(DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.FontReference? openXmlElement)
+
+  public static HslColor? GetHslColor(FontReference? openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.HslColor>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.HslColorConverter.CreateModelElement(itemElement);
+      return HslColorConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetHslColor(DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.FontReference? openXmlElement, DocumentModel.Drawings.HslColor? value)
+
+  public static void SetHslColor(FontReference? openXmlElement, HslColor? value)
   {
     if (openXmlElement != null)
     {
@@ -103,22 +114,22 @@ public static class FontReferenceConverter
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Drawings.HslColorConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.HslColor>(value);
+        itemElement = HslColorConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.HslColor>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static DocumentModel.Drawings.SystemColor? GetSystemColor(DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.FontReference? openXmlElement)
+
+  public static SystemColor? GetSystemColor(FontReference? openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.SystemColor>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.SystemColorConverter.CreateModelElement(itemElement);
+      return SystemColorConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetSystemColor(DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.FontReference? openXmlElement, DocumentModel.Drawings.SystemColor? value)
+
+  public static void SetSystemColor(FontReference? openXmlElement, SystemColor? value)
   {
     if (openXmlElement != null)
     {
@@ -127,22 +138,22 @@ public static class FontReferenceConverter
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Drawings.SystemColorConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.SystemColor>(value);
+        itemElement = SystemColorConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.SystemColor>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static DocumentModel.Drawings.SchemeColor? GetSchemeColor(DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.FontReference? openXmlElement)
+
+  public static SchemeColor? GetSchemeColor(FontReference? openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.SchemeColor>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.SchemeColorConverter.CreateModelElement(itemElement);
+      return SchemeColorConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetSchemeColor(DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.FontReference? openXmlElement, DocumentModel.Drawings.SchemeColor? value)
+
+  public static void SetSchemeColor(FontReference? openXmlElement, SchemeColor? value)
   {
     if (openXmlElement != null)
     {
@@ -151,22 +162,22 @@ public static class FontReferenceConverter
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Drawings.SchemeColorConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.SchemeColor>(value);
+        itemElement = SchemeColorConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.SchemeColor>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static DocumentModel.Drawings.PresetColor? GetPresetColor(DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.FontReference? openXmlElement)
+
+  public static PresetColor? GetPresetColor(FontReference? openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.PresetColor>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.PresetColorConverter.CreateModelElement(itemElement);
+      return PresetColorConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetPresetColor(DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.FontReference? openXmlElement, DocumentModel.Drawings.PresetColor? value)
+
+  public static void SetPresetColor(FontReference? openXmlElement, PresetColor? value)
   {
     if (openXmlElement != null)
     {
@@ -175,22 +186,22 @@ public static class FontReferenceConverter
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Drawings.PresetColorConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.PresetColor>(value);
+        itemElement = PresetColorConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.PresetColor>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static DocumentModel.Drawings.ChartsStyle.StyleColor? GetStyleColor(DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.FontReference? openXmlElement)
+
+  public static StyleColor? GetStyleColor(FontReference? openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.StyleColor>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.ChartsStyle.StyleColorConverter.CreateModelElement(itemElement);
+      return StyleColorConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetStyleColor(DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.FontReference? openXmlElement, DocumentModel.Drawings.ChartsStyle.StyleColor? value)
+
+  public static void SetStyleColor(FontReference? openXmlElement, StyleColor? value)
   {
     if (openXmlElement != null)
     {
@@ -199,14 +210,14 @@ public static class FontReferenceConverter
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Drawings.ChartsStyle.StyleColorConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.StyleColor>(value);
+        itemElement = StyleColorConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.StyleColor>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static DocumentModel.Drawings.ChartsStyle.FontReference? CreateModelElement(DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.FontReference? openXmlElement)
+
+  public static DocumentModel.Drawings.ChartsStyle.FontReference? CreateModelElement(FontReference? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -224,9 +235,9 @@ public static class FontReferenceConverter
     }
     return null;
   }
-  
+
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.ChartsStyle.FontReference? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.FontReference, new()
+    where OpenXmlElementType : FontReference, new()
   {
     if (value != null)
     {

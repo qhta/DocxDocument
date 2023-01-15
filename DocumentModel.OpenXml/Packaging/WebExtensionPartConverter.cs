@@ -1,26 +1,31 @@
+using DocumentFormat.OpenXml.Packaging;
+using DocumentModel.OpenXml.WebExtensions;
+using DocumentModel.WebExtensions;
+using ImagePart = DocumentModel.Packaging.ImagePart;
+
 namespace DocumentModel.OpenXml.Packaging;
 
 /// <summary>
-/// Defines the WebExtensionPart
+///   Defines the WebExtensionPart
 /// </summary>
 public static class WebExtensionPartConverter
 {
-  public static String? GetContentType(DocumentFormat.OpenXml.Packaging.WebExtensionPart? openXmlElement)
+  public static String? GetContentType(WebExtensionPart? openXmlElement)
   {
     return openXmlElement?.ContentType;
   }
-  
+
   /// <summary>
-  /// Gets the ImageParts of the WebExtensionPart
+  ///   Gets the ImageParts of the WebExtensionPart
   /// </summary>
-  public static System.Collections.ObjectModel.Collection<DocumentModel.Packaging.ImagePart>? GetImageParts(DocumentFormat.OpenXml.Packaging.WebExtensionPart? openXmlElement)
+  public static Collection<ImagePart>? GetImageParts(WebExtensionPart? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var collection = new System.Collections.ObjectModel.Collection<DocumentModel.Packaging.ImagePart>();
+      var collection = new Collection<ImagePart>();
       foreach (var item in openXmlElement.GetPartsOfType<DocumentFormat.OpenXml.Packaging.ImagePart>())
       {
-        var newItem = DocumentModel.OpenXml.Packaging.ImagePartConverter.CreateModelElement(item);
+        var newItem = ImagePartConverter.CreateModelElement(item);
         if (newItem != null)
           collection.Add(newItem);
       }
@@ -28,34 +33,34 @@ public static class WebExtensionPartConverter
     }
     return null;
   }
-  
-  public static String? GetRelationshipType(DocumentFormat.OpenXml.Packaging.WebExtensionPart? openXmlElement)
+
+  public static String? GetRelationshipType(WebExtensionPart? openXmlElement)
   {
     return openXmlElement?.RelationshipType;
   }
-  
+
   /// <summary>
-  /// Gets or sets the root element of this part.
+  ///   Gets or sets the root element of this part.
   /// </summary>
-  public static DocumentModel.WebExtensions.WebExtension? GetWebExtension(DocumentFormat.OpenXml.Packaging.WebExtensionPart? openXmlElement)
+  public static WebExtension? GetWebExtension(WebExtensionPart? openXmlElement)
   {
     if (openXmlElement?.RootElement is DocumentFormat.OpenXml.Office2013.WebExtension.WebExtension rootElement)
-      return DocumentModel.OpenXml.WebExtensions.WebExtensionConverter.CreateModelElement(rootElement);
+      return WebExtensionConverter.CreateModelElement(rootElement);
     return null;
   }
-  
-  public static void SetWebExtension(DocumentFormat.OpenXml.Packaging.WebExtensionPart? openXmlElement, DocumentModel.WebExtensions.WebExtension? value)
+
+  public static void SetWebExtension(WebExtensionPart? openXmlElement, WebExtension? value)
   {
     if (openXmlElement != null)
       if (value != null)
       {
-         var rootElement = DocumentModel.OpenXml.WebExtensions.WebExtensionConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2013.WebExtension.WebExtension>(value);
-         if (rootElement != null)
-           openXmlElement.WebExtension = rootElement;
+        var rootElement = WebExtensionConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2013.WebExtension.WebExtension>(value);
+        if (rootElement != null)
+          openXmlElement.WebExtension = rootElement;
       }
   }
-  
-  public static DocumentModel.Packaging.WebExtensionPart? CreateModelElement(DocumentFormat.OpenXml.Packaging.WebExtensionPart? openXmlElement)
+
+  public static DocumentModel.Packaging.WebExtensionPart? CreateModelElement(WebExtensionPart? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -68,9 +73,9 @@ public static class WebExtensionPartConverter
     }
     return null;
   }
-  
+
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Packaging.WebExtensionPart? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Packaging.WebExtensionPart, new()
+    where OpenXmlElementType : WebExtensionPart, new()
   {
     if (value != null)
     {

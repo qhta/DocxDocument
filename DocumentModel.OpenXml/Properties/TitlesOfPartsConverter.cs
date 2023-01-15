@@ -1,33 +1,33 @@
 namespace DocumentModel.OpenXml.Properties;
 
 /// <summary>
-/// Part Titles.
+///   Part Titles.
 /// </summary>
 public static class TitlesOfPartsConverter
 {
-  public static DocumentModel.VectorVariant? GetVTVector(DocumentFormat.OpenXml.ExtendedProperties.TitlesOfParts? openXmlElement)
+  public static VectorVariant? GetVTVector(DocumentFormat.OpenXml.ExtendedProperties.TitlesOfParts? openXmlElement)
   {
     return VTVectorConverter.CreateModelElement(openXmlElement?.VTVector);
   }
-  
-  public static void SetVTVector(DocumentFormat.OpenXml.ExtendedProperties.TitlesOfParts? openXmlElement, DocumentModel.VectorVariant? value)
+
+  public static void SetVTVector(DocumentFormat.OpenXml.ExtendedProperties.TitlesOfParts? openXmlElement, VectorVariant? value)
   {
     if (openXmlElement != null)
       openXmlElement.VTVector = VTVectorConverter.CreateOpenXmlElement(value);
   }
 
-  public static DocumentModel.StringList? GetStringList(DocumentFormat.OpenXml.ExtendedProperties.TitlesOfParts? openXmlElement)
+  public static StringList? GetStringList(DocumentFormat.OpenXml.ExtendedProperties.TitlesOfParts? openXmlElement)
   {
     return VTVectorConverter.GetStringList(openXmlElement?.VTVector);
   }
 
-  public static void SetStringList(DocumentFormat.OpenXml.ExtendedProperties.TitlesOfParts? openXmlElement, DocumentModel.StringList? value)
+  public static void SetStringList(DocumentFormat.OpenXml.ExtendedProperties.TitlesOfParts? openXmlElement, StringList? value)
   {
     if (openXmlElement != null)
       openXmlElement.VTVector = VTVectorConverter.CreateOpenXmlElement(value);
   }
 
-  public static DocumentModel.StringList? CreateModelElement(DocumentFormat.OpenXml.ExtendedProperties.TitlesOfParts? openXmlElement)
+  public static StringList? CreateModelElement(DocumentFormat.OpenXml.ExtendedProperties.TitlesOfParts? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -36,9 +36,8 @@ public static class TitlesOfPartsConverter
     }
     return null;
   }
-  
-  
-  public static DocumentFormat.OpenXml.ExtendedProperties.TitlesOfParts? CreateOpenXmlElement(DocumentModel.VectorVariant? value)
+
+  public static DocumentFormat.OpenXml.ExtendedProperties.TitlesOfParts? CreateOpenXmlElement(VectorVariant? value)
   {
     if (value != null)
     {
@@ -49,7 +48,7 @@ public static class TitlesOfPartsConverter
     return null;
   }
 
-  public static DocumentFormat.OpenXml.ExtendedProperties.TitlesOfParts? CreateOpenXmlElement(DocumentModel.StringList? value)
+  public static DocumentFormat.OpenXml.ExtendedProperties.TitlesOfParts? CreateOpenXmlElement(StringList? value)
   {
     if (value != null)
     {

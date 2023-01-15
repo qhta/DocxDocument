@@ -1,10 +1,9 @@
 namespace DocumentModel.Drawings.Diagrams;
 
 /// <summary>
-/// Color Transform Category List.
+///   Color Transform Category List.
 /// </summary>
-public partial class ColorTransformCategories
+public class ColorTransformCategories
 {
-  public Collection<DocumentModel.Drawings.Diagrams.ColorTransformCategory>? Items { get; set; }
-  
+  public Collection<ColorTransformCategory>? Items { get; set; }
 }

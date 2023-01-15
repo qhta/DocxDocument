@@ -1,23 +1,22 @@
 namespace DocumentModel.Drawings.ChartDrawings;
 
 /// <summary>
-/// Defines the DataPoint Class.
+///   Defines the DataPoint Class.
 /// </summary>
-public partial class DataPoint
+public class DataPoint
 {
   /// <summary>
-  /// idx, this property is only available in Office 2016 and later.
+  ///   idx, this property is only available in Office 2016 and later.
   /// </summary>
   public UInt32? Idx { get; set; }
-  
+
   /// <summary>
-  /// ShapeProperties.
+  ///   ShapeProperties.
   /// </summary>
-  public DocumentModel.Drawings.ChartDrawings.ShapeProperties? ShapeProperties { get; set; }
-  
+  public ShapeProperties? ShapeProperties { get; set; }
+
   /// <summary>
-  /// ExtensionList.
+  ///   ExtensionList.
   /// </summary>
-  public DocumentModel.Drawings.ChartDrawings.ExtensionList? ExtensionList { get; set; }
-  
+  public ExtensionList? ExtensionList { get; set; }
 }

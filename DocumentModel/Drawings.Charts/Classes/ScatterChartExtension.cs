@@ -1,15 +1,14 @@
 namespace DocumentModel.Drawings.Charts;
 
 /// <summary>
-/// Defines the ScatterChartExtension Class.
+///   Defines the ScatterChartExtension Class.
 /// </summary>
-public partial class ScatterChartExtension
+public class ScatterChartExtension
 {
   /// <summary>
-  /// URI
+  ///   URI
   /// </summary>
   public String? Uri { get; set; }
-  
-  public DocumentModel.Drawings.Charts.FilteredScatterSeries? FilteredScatterSeries { get; set; }
-  
+
+  public FilteredScatterSeries? FilteredScatterSeries { get; set; }
 }

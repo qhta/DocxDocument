@@ -1,48 +1,47 @@
 namespace DocumentModel.Drawings.ChartDrawing;
 
 /// <summary>
-/// Shape Definition.
+///   Shape Definition.
 /// </summary>
-public partial class Shape
+public class Shape
 {
   /// <summary>
-  /// Reference to Custom Function
+  ///   Reference to Custom Function
   /// </summary>
   public String? Macro { get; set; }
-  
+
   /// <summary>
-  /// Text Link
+  ///   Text Link
   /// </summary>
   public String? TextLink { get; set; }
-  
+
   /// <summary>
-  /// Lock Text
+  ///   Lock Text
   /// </summary>
   public Boolean? LockText { get; set; }
-  
+
   /// <summary>
-  /// Publish to Server
+  ///   Publish to Server
   /// </summary>
   public Boolean? Published { get; set; }
-  
+
   /// <summary>
-  /// Non-Visual Shape Properties.
+  ///   Non-Visual Shape Properties.
   /// </summary>
-  public DocumentModel.Drawings.ChartDrawing.NonVisualShapeProperties? NonVisualShapeProperties { get; set; }
-  
+  public NonVisualShapeProperties? NonVisualShapeProperties { get; set; }
+
   /// <summary>
-  /// Shape Properties.
+  ///   Shape Properties.
   /// </summary>
-  public DocumentModel.Drawings.ChartDrawing.ShapeProperties? ShapeProperties { get; set; }
-  
+  public ShapeProperties? ShapeProperties { get; set; }
+
   /// <summary>
-  /// Shape Style.
+  ///   Shape Style.
   /// </summary>
-  public DocumentModel.Drawings.ChartDrawing.Style? Style { get; set; }
-  
+  public Style? Style { get; set; }
+
   /// <summary>
-  /// Shape Text Body.
+  ///   Shape Text Body.
   /// </summary>
-  public DocumentModel.Drawings.ChartDrawing.TextBody? TextBody { get; set; }
-  
+  public TextBody? TextBody { get; set; }
 }

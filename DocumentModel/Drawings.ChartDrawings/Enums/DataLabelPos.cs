@@ -1,53 +1,52 @@
 namespace DocumentModel.Drawings.ChartDrawings;
 
 /// <summary>
-/// Defines the DataLabelPos enumeration.
+///   Defines the DataLabelPos enumeration.
 /// </summary>
 public enum DataLabelPos
 {
   /// <summary>
-  /// bestFit.
+  ///   bestFit.
   /// </summary>
   BestFit,
-  
+
   /// <summary>
-  /// b.
+  ///   b.
   /// </summary>
   B,
-  
+
   /// <summary>
-  /// ctr.
+  ///   ctr.
   /// </summary>
   Ctr,
-  
+
   /// <summary>
-  /// inBase.
+  ///   inBase.
   /// </summary>
   InBase,
-  
+
   /// <summary>
-  /// inEnd.
+  ///   inEnd.
   /// </summary>
   InEnd,
-  
+
   /// <summary>
-  /// l.
+  ///   l.
   /// </summary>
   L,
-  
+
   /// <summary>
-  /// outEnd.
+  ///   outEnd.
   /// </summary>
   OutEnd,
-  
+
   /// <summary>
-  /// r.
+  ///   r.
   /// </summary>
   R,
-  
+
   /// <summary>
-  /// t.
+  ///   t.
   /// </summary>
-  T,
-  
+  T
 }

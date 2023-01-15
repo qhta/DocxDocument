@@ -1,50 +1,53 @@
+using DocumentFormat.OpenXml.Drawing.Wordprocessing;
+using EffectExtent = DocumentModel.Drawings.Wordprocessing.EffectExtent;
+
 namespace DocumentModel.OpenXml.Drawings.Wordprocessing;
 
 /// <summary>
-/// Top and Bottom Wrapping.
+///   Top and Bottom Wrapping.
 /// </summary>
 public static class WrapTopBottomConverter
 {
   /// <summary>
-  /// Distance From Text on Top Edge
+  ///   Distance From Text on Top Edge
   /// </summary>
-  public static UInt32? GetDistanceFromTop(DocumentFormat.OpenXml.Drawing.Wordprocessing.WrapTopBottom? openXmlElement)
+  public static UInt32? GetDistanceFromTop(WrapTopBottom? openXmlElement)
   {
     return openXmlElement?.DistanceFromTop?.Value;
   }
-  
-  public static void SetDistanceFromTop(DocumentFormat.OpenXml.Drawing.Wordprocessing.WrapTopBottom? openXmlElement, UInt32? value)
+
+  public static void SetDistanceFromTop(WrapTopBottom? openXmlElement, UInt32? value)
   {
     if (openXmlElement != null)
       openXmlElement.DistanceFromTop = value;
   }
-  
+
   /// <summary>
-  /// Distance From Text on Bottom Edge
+  ///   Distance From Text on Bottom Edge
   /// </summary>
-  public static UInt32? GetDistanceFromBottom(DocumentFormat.OpenXml.Drawing.Wordprocessing.WrapTopBottom? openXmlElement)
+  public static UInt32? GetDistanceFromBottom(WrapTopBottom? openXmlElement)
   {
     return openXmlElement?.DistanceFromBottom?.Value;
   }
-  
-  public static void SetDistanceFromBottom(DocumentFormat.OpenXml.Drawing.Wordprocessing.WrapTopBottom? openXmlElement, UInt32? value)
+
+  public static void SetDistanceFromBottom(WrapTopBottom? openXmlElement, UInt32? value)
   {
     if (openXmlElement != null)
       openXmlElement.DistanceFromBottom = value;
   }
-  
+
   /// <summary>
-  /// Wrapping Boundaries.
+  ///   Wrapping Boundaries.
   /// </summary>
-  public static DocumentModel.Drawings.Wordprocessing.EffectExtent? GetEffectExtent(DocumentFormat.OpenXml.Drawing.Wordprocessing.WrapTopBottom? openXmlElement)
+  public static EffectExtent? GetEffectExtent(WrapTopBottom? openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.Wordprocessing.EffectExtent>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.Wordprocessing.EffectExtentConverter.CreateModelElement(itemElement);
+      return EffectExtentConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetEffectExtent(DocumentFormat.OpenXml.Drawing.Wordprocessing.WrapTopBottom? openXmlElement, DocumentModel.Drawings.Wordprocessing.EffectExtent? value)
+
+  public static void SetEffectExtent(WrapTopBottom? openXmlElement, EffectExtent? value)
   {
     if (openXmlElement != null)
     {
@@ -53,14 +56,14 @@ public static class WrapTopBottomConverter
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Drawings.Wordprocessing.EffectExtentConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Wordprocessing.EffectExtent>(value);
+        itemElement = EffectExtentConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Wordprocessing.EffectExtent>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static DocumentModel.Drawings.Wordprocessing.WrapTopBottom? CreateModelElement(DocumentFormat.OpenXml.Drawing.Wordprocessing.WrapTopBottom? openXmlElement)
+
+  public static DocumentModel.Drawings.Wordprocessing.WrapTopBottom? CreateModelElement(WrapTopBottom? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -72,9 +75,9 @@ public static class WrapTopBottomConverter
     }
     return null;
   }
-  
+
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.Wordprocessing.WrapTopBottom? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.Wordprocessing.WrapTopBottom, new()
+    where OpenXmlElementType : WrapTopBottom, new()
   {
     if (value != null)
     {

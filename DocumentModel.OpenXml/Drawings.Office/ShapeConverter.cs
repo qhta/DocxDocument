@@ -1,19 +1,26 @@
+using DocumentFormat.OpenXml.Office.Drawing;
+using ShapeNonVisualProperties = DocumentModel.Drawings.Office.ShapeNonVisualProperties;
+using ShapeProperties = DocumentModel.Drawings.Office.ShapeProperties;
+using ShapeStyle = DocumentModel.Drawings.Office.ShapeStyle;
+using TextBody = DocumentModel.Drawings.Office.TextBody;
+using Transform2D = DocumentModel.Drawings.Office.Transform2D;
+
 namespace DocumentModel.OpenXml.Drawings.Office;
 
 /// <summary>
-/// Defines the Shape Class.
+///   Defines the Shape Class.
 /// </summary>
 public static class ShapeConverter
 {
   /// <summary>
-  /// modelId, this property is only available in Office 2010 and later.
+  ///   modelId, this property is only available in Office 2010 and later.
   /// </summary>
-  public static String? GetModelId(DocumentFormat.OpenXml.Office.Drawing.Shape? openXmlElement)
+  public static String? GetModelId(Shape? openXmlElement)
   {
     return openXmlElement?.ModelId?.Value;
   }
-  
-  public static void SetModelId(DocumentFormat.OpenXml.Office.Drawing.Shape? openXmlElement, String? value)
+
+  public static void SetModelId(Shape? openXmlElement, String? value)
   {
     if (openXmlElement != null)
       if (value != null)
@@ -21,19 +28,19 @@ public static class ShapeConverter
       else
         openXmlElement.ModelId = null;
   }
-  
+
   /// <summary>
-  /// ShapeNonVisualProperties.
+  ///   ShapeNonVisualProperties.
   /// </summary>
-  public static DocumentModel.Drawings.Office.ShapeNonVisualProperties? GetShapeNonVisualProperties(DocumentFormat.OpenXml.Office.Drawing.Shape? openXmlElement)
+  public static ShapeNonVisualProperties? GetShapeNonVisualProperties(Shape? openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office.Drawing.ShapeNonVisualProperties>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.Office.ShapeNonVisualPropertiesConverter.CreateModelElement(itemElement);
+      return ShapeNonVisualPropertiesConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetShapeNonVisualProperties(DocumentFormat.OpenXml.Office.Drawing.Shape? openXmlElement, DocumentModel.Drawings.Office.ShapeNonVisualProperties? value)
+
+  public static void SetShapeNonVisualProperties(Shape? openXmlElement, ShapeNonVisualProperties? value)
   {
     if (openXmlElement != null)
     {
@@ -42,25 +49,25 @@ public static class ShapeConverter
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Drawings.Office.ShapeNonVisualPropertiesConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office.Drawing.ShapeNonVisualProperties>(value);
+        itemElement = ShapeNonVisualPropertiesConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office.Drawing.ShapeNonVisualProperties>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
+
   /// <summary>
-  /// ShapeProperties.
+  ///   ShapeProperties.
   /// </summary>
-  public static DocumentModel.Drawings.Office.ShapeProperties? GetShapeProperties(DocumentFormat.OpenXml.Office.Drawing.Shape? openXmlElement)
+  public static ShapeProperties? GetShapeProperties(Shape? openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office.Drawing.ShapeProperties>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.Office.ShapePropertiesConverter.CreateModelElement(itemElement);
+      return ShapePropertiesConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetShapeProperties(DocumentFormat.OpenXml.Office.Drawing.Shape? openXmlElement, DocumentModel.Drawings.Office.ShapeProperties? value)
+
+  public static void SetShapeProperties(Shape? openXmlElement, ShapeProperties? value)
   {
     if (openXmlElement != null)
     {
@@ -69,25 +76,25 @@ public static class ShapeConverter
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Drawings.Office.ShapePropertiesConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office.Drawing.ShapeProperties>(value);
+        itemElement = ShapePropertiesConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office.Drawing.ShapeProperties>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
+
   /// <summary>
-  /// ShapeStyle.
+  ///   ShapeStyle.
   /// </summary>
-  public static DocumentModel.Drawings.Office.ShapeStyle? GetShapeStyle(DocumentFormat.OpenXml.Office.Drawing.Shape? openXmlElement)
+  public static ShapeStyle? GetShapeStyle(Shape? openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office.Drawing.ShapeStyle>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.Office.ShapeStyleConverter.CreateModelElement(itemElement);
+      return ShapeStyleConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetShapeStyle(DocumentFormat.OpenXml.Office.Drawing.Shape? openXmlElement, DocumentModel.Drawings.Office.ShapeStyle? value)
+
+  public static void SetShapeStyle(Shape? openXmlElement, ShapeStyle? value)
   {
     if (openXmlElement != null)
     {
@@ -96,25 +103,25 @@ public static class ShapeConverter
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Drawings.Office.ShapeStyleConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office.Drawing.ShapeStyle>(value);
+        itemElement = ShapeStyleConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office.Drawing.ShapeStyle>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
+
   /// <summary>
-  /// TextBody.
+  ///   TextBody.
   /// </summary>
-  public static DocumentModel.Drawings.Office.TextBody? GetTextBody(DocumentFormat.OpenXml.Office.Drawing.Shape? openXmlElement)
+  public static TextBody? GetTextBody(Shape? openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office.Drawing.TextBody>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.Office.TextBodyConverter.CreateModelElement(itemElement);
+      return TextBodyConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetTextBody(DocumentFormat.OpenXml.Office.Drawing.Shape? openXmlElement, DocumentModel.Drawings.Office.TextBody? value)
+
+  public static void SetTextBody(Shape? openXmlElement, TextBody? value)
   {
     if (openXmlElement != null)
     {
@@ -123,25 +130,25 @@ public static class ShapeConverter
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Drawings.Office.TextBodyConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office.Drawing.TextBody>(value);
+        itemElement = TextBodyConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office.Drawing.TextBody>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
+
   /// <summary>
-  /// Transform2D.
+  ///   Transform2D.
   /// </summary>
-  public static DocumentModel.Drawings.Office.Transform2D? GetTransform2D(DocumentFormat.OpenXml.Office.Drawing.Shape? openXmlElement)
+  public static Transform2D? GetTransform2D(Shape? openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office.Drawing.Transform2D>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.Office.Transform2DConverter.CreateModelElement(itemElement);
+      return Transform2DConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetTransform2D(DocumentFormat.OpenXml.Office.Drawing.Shape? openXmlElement, DocumentModel.Drawings.Office.Transform2D? value)
+
+  public static void SetTransform2D(Shape? openXmlElement, Transform2D? value)
   {
     if (openXmlElement != null)
     {
@@ -150,25 +157,25 @@ public static class ShapeConverter
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Drawings.Office.Transform2DConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office.Drawing.Transform2D>(value);
+        itemElement = Transform2DConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office.Drawing.Transform2D>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
+
   /// <summary>
-  /// OfficeArtExtensionList.
+  ///   OfficeArtExtensionList.
   /// </summary>
-  public static DocumentModel.Drawings.Office.OfficeArtExtensionList? GetOfficeArtExtensionList(DocumentFormat.OpenXml.Office.Drawing.Shape? openXmlElement)
+  public static DocumentModel.Drawings.Office.OfficeArtExtensionList? GetOfficeArtExtensionList(Shape? openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office.Drawing.OfficeArtExtensionList>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.Office.OfficeArtExtensionListConverter.CreateModelElement(itemElement);
+      return OfficeArtExtensionListConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetOfficeArtExtensionList(DocumentFormat.OpenXml.Office.Drawing.Shape? openXmlElement, DocumentModel.Drawings.Office.OfficeArtExtensionList? value)
+
+  public static void SetOfficeArtExtensionList(Shape? openXmlElement, DocumentModel.Drawings.Office.OfficeArtExtensionList? value)
   {
     if (openXmlElement != null)
     {
@@ -177,14 +184,14 @@ public static class ShapeConverter
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Drawings.Office.OfficeArtExtensionListConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office.Drawing.OfficeArtExtensionList>(value);
+        itemElement = OfficeArtExtensionListConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office.Drawing.OfficeArtExtensionList>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static DocumentModel.Drawings.Office.Shape? CreateModelElement(DocumentFormat.OpenXml.Office.Drawing.Shape? openXmlElement)
+
+  public static DocumentModel.Drawings.Office.Shape? CreateModelElement(Shape? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -200,9 +207,9 @@ public static class ShapeConverter
     }
     return null;
   }
-  
+
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.Office.Shape? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Office.Drawing.Shape, new()
+    where OpenXmlElementType : Shape, new()
   {
     if (value != null)
     {

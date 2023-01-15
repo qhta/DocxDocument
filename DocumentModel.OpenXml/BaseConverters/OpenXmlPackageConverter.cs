@@ -1,81 +1,91 @@
+using System.IO.Packaging;
+using DocumentFormat.OpenXml.Packaging;
+using DocumentModel.OpenXml.Properties;
+using DocumentModel.Properties;
+using DataPart = DocumentModel.Packaging.DataPart;
+using MarkupCompatibilityProcessSettings = DocumentModel.Packaging.MarkupCompatibilityProcessSettings;
+
 namespace DocumentModel.OpenXml.Packaging;
 
 /// <summary>
-/// Represents a base class for strong typed Open XML document classes.
+///   Represents a base class for strong typed Open XML document classes.
 /// </summary>
 public static class OpenXmlPackageConverter
 {
   /// <summary>
-  /// Gets a value indicating whether this package contains Transitional relationships converted from Strict.
+  ///   Gets a value indicating whether this package contains Transitional relationships converted from Strict.
   /// </summary>
-  public static Boolean? GetStrictRelationshipFound(DocumentFormat.OpenXml.Packaging.OpenXmlPackage? openXmlElement)
+  public static Boolean? GetStrictRelationshipFound(OpenXmlPackage? openXmlElement)
   {
     return openXmlElement?.StrictRelationshipFound;
   }
-  
+
   /// <summary>
-  /// Gets the package of the document.
+  ///   Gets the package of the document.
   /// </summary>
-  public static System.IO.Packaging.Package? GetPackage(DocumentFormat.OpenXml.Packaging.OpenXmlPackage? openXmlElement)
+  public static Package? GetPackage(OpenXmlPackage? openXmlElement)
   {
     return openXmlElement?.Package;
   }
-  
+
   /// <summary>
-  /// Gets the FileAccess setting for the document.
+  ///   Gets the FileAccess setting for the document.
   /// </summary>
-  public static System.IO.FileAccess? GetFileOpenAccess(DocumentFormat.OpenXml.Packaging.OpenXmlPackage? openXmlElement)
+  public static FileAccess? GetFileOpenAccess(OpenXmlPackage? openXmlElement)
   {
     if (openXmlElement?.FileOpenAccess != null)
-      return EnumValueConverter.GetValue<System.IO.FileAccess, System.IO.FileAccess>(openXmlElement.FileOpenAccess);
+      return EnumValueConverter.GetValue<FileAccess, FileAccess>(openXmlElement.FileOpenAccess);
     return null;
   }
-  
+
   /// <summary>
-  /// Gets the core package properties of the Open XML document.
+  ///   Gets the core package properties of the Open XML document.
   /// </summary>
-  public static DocumentModel.Properties.CoreProperties? GetPackageProperties(DocumentFormat.OpenXml.Packaging.OpenXmlPackage? openXmlElement)
+  public static CoreProperties? GetPackageProperties(OpenXmlPackage? openXmlElement)
   {
-    return DocumentModel.OpenXml.Properties.CorePropertiesConverter.CreateModelElement(openXmlElement?.PackageProperties);
+    return CorePropertiesConverter.CreateModelElement(openXmlElement?.PackageProperties);
   }
-  
+
   /// <summary>
-  /// Gets or sets the compression level for the content of the new part
+  ///   Gets or sets the compression level for the content of the new part
   /// </summary>
-  public static System.IO.Packaging.CompressionOption? GetCompressionOption(DocumentFormat.OpenXml.Packaging.OpenXmlPackage? openXmlElement)
+  public static CompressionOption? GetCompressionOption(OpenXmlPackage? openXmlElement)
   {
     if (openXmlElement?.CompressionOption != null)
-      return EnumValueConverter.GetValue<System.IO.Packaging.CompressionOption, System.IO.Packaging.CompressionOption>(openXmlElement.CompressionOption);
+      return EnumValueConverter.GetValue<CompressionOption, CompressionOption>(openXmlElement.CompressionOption);
     return null;
   }
-  
-  public static void SetCompressionOption(DocumentFormat.OpenXml.Packaging.OpenXmlPackage? openXmlElement, System.IO.Packaging.CompressionOption? value)
+
+  public static void SetCompressionOption(OpenXmlPackage? openXmlElement, CompressionOption? value)
   {
     if (openXmlElement != null)
       if (value != null)
-        openXmlElement.CompressionOption = 
-          (System.IO.Packaging.CompressionOption)EnumValueConverter.GetValue<System.IO.Packaging.CompressionOption, System.IO.Packaging.CompressionOption>(value);
+      {
+        var itemElement = EnumValueConverter.GetValue<CompressionOption, CompressionOption>(value);
+        if (itemElement != null)
+          openXmlElement.CompressionOption = (CompressionOption)itemElement;
+      }
   }
-  
+
   /// <summary>
-  /// Gets a PartExtensionProvider part which provides a mapping from ContentType to part extension.
+  ///   Gets a PartExtensionProvider part which provides a mapping from ContentType to part extension.
   /// </summary>
-  public static System.Collections.Generic.Dictionary<String, String>? GetPartExtensionProvider(DocumentFormat.OpenXml.Packaging.OpenXmlPackage? openXmlElement)
+  public static Dictionary<String, String>? GetPartExtensionProvider(OpenXmlPackage? openXmlElement)
   {
-    return openXmlElement.PartExtensionProvider;
+    return openXmlElement?.PartExtensionProvider;
   }
-  
+
   /// <summary>
-  /// Gets all the  parts in the document package.
+  ///   Gets all the  parts in the document package.
   /// </summary>
-  public static System.Collections.ObjectModel.Collection<DocumentModel.Packaging.DataPart>? GetDataParts(DocumentFormat.OpenXml.Packaging.OpenXmlPackage? openXmlElement)
+  public static Collection<DataPart>? GetDataParts(OpenXmlPackage? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var collection = new System.Collections.ObjectModel.Collection<DocumentModel.Packaging.DataPart>();
+      var collection = new Collection<DataPart>();
       foreach (var item in openXmlElement.DataParts)
       {
-        var newItem = DocumentModel.OpenXml.Packaging.DataPartConverter.CreateModelElement(item);
+        var newItem = DataPartConverter.CreateModelElement(item);
         if (newItem != null)
           collection.Add(newItem);
       }
@@ -83,24 +93,24 @@ public static class OpenXmlPackageConverter
     }
     return null;
   }
-  
+
   /// <summary>
-  /// Gets the markup compatibility settings applied at loading time.
+  ///   Gets the markup compatibility settings applied at loading time.
   /// </summary>
-  public static DocumentModel.Packaging.MarkupCompatibilityProcessSettings? GetMarkupCompatibilityProcessSettings(DocumentFormat.OpenXml.Packaging.OpenXmlPackage? openXmlElement)
+  public static MarkupCompatibilityProcessSettings? GetMarkupCompatibilityProcessSettings(OpenXmlPackage? openXmlElement)
   {
-    return DocumentModel.OpenXml.Packaging.MarkupCompatibilityProcessSettingsConverter.CreateModelElement(openXmlElement?.MarkupCompatibilityProcessSettings);
+    return MarkupCompatibilityProcessSettingsConverter.CreateModelElement(openXmlElement?.MarkupCompatibilityProcessSettings);
   }
-  
+
   /// <summary>
-  /// Gets a value indicating whether the parts should be saved when disposed.
+  ///   Gets a value indicating whether the parts should be saved when disposed.
   /// </summary>
-  public static Boolean? GetAutoSave(DocumentFormat.OpenXml.Packaging.OpenXmlPackage? openXmlElement)
+  public static Boolean? GetAutoSave(OpenXmlPackage? openXmlElement)
   {
     return openXmlElement?.AutoSave;
   }
-  
-  public static DocumentModel.Packaging.OpenXmlPackage? CreateModelElement(DocumentFormat.OpenXml.Packaging.OpenXmlPackage? openXmlElement)
+
+  public static DocumentModel.Packaging.OpenXmlPackage? CreateModelElement(OpenXmlPackage? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -118,9 +128,9 @@ public static class OpenXmlPackageConverter
     }
     return null;
   }
-  
+
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Packaging.OpenXmlPackage? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Packaging.OpenXmlPackage, new()
+    where OpenXmlElementType : OpenXmlPackage, new()
   {
     if (value != null)
     {

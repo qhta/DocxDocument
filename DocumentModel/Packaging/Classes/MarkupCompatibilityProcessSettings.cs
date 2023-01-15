@@ -1,18 +1,17 @@
 namespace DocumentModel.Packaging;
 
 /// <summary>
-/// Represents markup compatibility processing settings.
+///   Represents markup compatibility processing settings.
 /// </summary>
-public partial class MarkupCompatibilityProcessSettings
+public class MarkupCompatibilityProcessSettings
 {
   /// <summary>
-  /// Gets the markup compatibility process mode.
+  ///   Gets the markup compatibility process mode.
   /// </summary>
-  public DocumentModel.Packaging.MarkupCompatibilityProcessMode? ProcessMode { get; set; }
-  
+  public MarkupCompatibilityProcessMode? ProcessMode { get; set; }
+
   /// <summary>
-  /// Gets the target file format versions.
+  ///   Gets the target file format versions.
   /// </summary>
-  public DocumentModel.FileFormatVersions? TargetFileFormatVersions { get; set; }
-  
+  public FileFormatVersions? TargetFileFormatVersions { get; set; }
 }

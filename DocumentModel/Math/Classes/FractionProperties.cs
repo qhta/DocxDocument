@@ -1,18 +1,17 @@
 namespace DocumentModel.Math;
 
 /// <summary>
-/// Fraction Properties.
+///   Fraction Properties.
 /// </summary>
-public partial class FractionProperties
+public class FractionProperties
 {
   /// <summary>
-  /// Fraction type.
+  ///   Fraction type.
   /// </summary>
-  public DocumentModel.Math.FractionKind? FractionType { get; set; }
-  
+  public FractionKind? FractionType { get; set; }
+
   /// <summary>
-  /// ControlProperties.
+  ///   ControlProperties.
   /// </summary>
-  public DocumentModel.Math.ControlProperties? ControlProperties { get; set; }
-  
+  public ControlProperties? ControlProperties { get; set; }
 }

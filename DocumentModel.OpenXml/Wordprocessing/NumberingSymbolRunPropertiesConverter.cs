@@ -1,22 +1,34 @@
+using DocumentFormat.OpenXml.Wordprocessing;
+using DocumentModel.Wordprocessing;
+using BorderType = DocumentModel.Wordprocessing.BorderType;
+using Color = DocumentModel.Wordprocessing.Color;
+using EastAsianLayout = DocumentModel.Wordprocessing.EastAsianLayout;
+using FitText = DocumentModel.Wordprocessing.FitText;
+using LanguageType = DocumentModel.Wordprocessing.LanguageType;
+using NumberingSymbolRunProperties = DocumentFormat.OpenXml.Wordprocessing.NumberingSymbolRunProperties;
+using RunFonts = DocumentModel.Wordprocessing.RunFonts;
+using Shading = DocumentModel.Wordprocessing.Shading;
+using Underline = DocumentModel.Wordprocessing.Underline;
+
 namespace DocumentModel.OpenXml.Wordprocessing;
 
 /// <summary>
-/// Numbering Symbol Run Properties.
+///   Numbering Symbol Run Properties.
 /// </summary>
 public static class NumberingSymbolRunPropertiesConverter
 {
   /// <summary>
-  /// RunFonts.
+  ///   RunFonts.
   /// </summary>
-  public static DocumentModel.Wordprocessing.RunFonts? GetRunFonts(DocumentFormat.OpenXml.Wordprocessing.NumberingSymbolRunProperties? openXmlElement)
+  public static RunFonts? GetRunFonts(NumberingSymbolRunProperties? openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.RunFonts>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Wordprocessing.RunFontsConverter.CreateModelElement(itemElement);
+      return RunFontsConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetRunFonts(DocumentFormat.OpenXml.Wordprocessing.NumberingSymbolRunProperties? openXmlElement, DocumentModel.Wordprocessing.RunFonts? value)
+
+  public static void SetRunFonts(NumberingSymbolRunProperties? openXmlElement, RunFonts? value)
   {
     if (openXmlElement != null)
     {
@@ -25,521 +37,521 @@ public static class NumberingSymbolRunPropertiesConverter
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Wordprocessing.RunFontsConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.RunFonts>(value);
+        itemElement = RunFontsConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.RunFonts>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
+
   /// <summary>
-  /// Bold.
+  ///   Bold.
   /// </summary>
-  public static Boolean? GetBold(DocumentFormat.OpenXml.Wordprocessing.NumberingSymbolRunProperties? openXmlElement)
+  public static Boolean? GetBold(NumberingSymbolRunProperties? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.Bold>();
+      var itemElement = openXmlElement.GetFirstChild<Bold>();
       return itemElement != null;
     }
     return null;
   }
-  
-  public static void SetBold(DocumentFormat.OpenXml.Wordprocessing.NumberingSymbolRunProperties? openXmlElement, Boolean? value)
+
+  public static void SetBold(NumberingSymbolRunProperties? openXmlElement, Boolean? value)
   {
     if (openXmlElement != null)
     {
       if (value == false)
       {
-        var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.Bold>();
+        var itemElement = openXmlElement.GetFirstChild<Bold>();
         if (itemElement != null)
           itemElement.Remove();
       }
       if (value == true)
       {
-        var itemElement = new DocumentFormat.OpenXml.Wordprocessing.Bold();
+        var itemElement = new Bold();
         openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
+
   /// <summary>
-  /// BoldComplexScript.
+  ///   BoldComplexScript.
   /// </summary>
-  public static Boolean? GetBoldComplexScript(DocumentFormat.OpenXml.Wordprocessing.NumberingSymbolRunProperties? openXmlElement)
+  public static Boolean? GetBoldComplexScript(NumberingSymbolRunProperties? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.BoldComplexScript>();
+      var itemElement = openXmlElement.GetFirstChild<BoldComplexScript>();
       return itemElement != null;
     }
     return null;
   }
-  
-  public static void SetBoldComplexScript(DocumentFormat.OpenXml.Wordprocessing.NumberingSymbolRunProperties? openXmlElement, Boolean? value)
+
+  public static void SetBoldComplexScript(NumberingSymbolRunProperties? openXmlElement, Boolean? value)
   {
     if (openXmlElement != null)
     {
       if (value == false)
       {
-        var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.BoldComplexScript>();
+        var itemElement = openXmlElement.GetFirstChild<BoldComplexScript>();
         if (itemElement != null)
           itemElement.Remove();
       }
       if (value == true)
       {
-        var itemElement = new DocumentFormat.OpenXml.Wordprocessing.BoldComplexScript();
+        var itemElement = new BoldComplexScript();
         openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
+
   /// <summary>
-  /// Italic.
+  ///   Italic.
   /// </summary>
-  public static Boolean? GetItalic(DocumentFormat.OpenXml.Wordprocessing.NumberingSymbolRunProperties? openXmlElement)
+  public static Boolean? GetItalic(NumberingSymbolRunProperties? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.Italic>();
+      var itemElement = openXmlElement.GetFirstChild<Italic>();
       return itemElement != null;
     }
     return null;
   }
-  
-  public static void SetItalic(DocumentFormat.OpenXml.Wordprocessing.NumberingSymbolRunProperties? openXmlElement, Boolean? value)
+
+  public static void SetItalic(NumberingSymbolRunProperties? openXmlElement, Boolean? value)
   {
     if (openXmlElement != null)
     {
       if (value == false)
       {
-        var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.Italic>();
+        var itemElement = openXmlElement.GetFirstChild<Italic>();
         if (itemElement != null)
           itemElement.Remove();
       }
       if (value == true)
       {
-        var itemElement = new DocumentFormat.OpenXml.Wordprocessing.Italic();
+        var itemElement = new Italic();
         openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
+
   /// <summary>
-  /// ItalicComplexScript.
+  ///   ItalicComplexScript.
   /// </summary>
-  public static Boolean? GetItalicComplexScript(DocumentFormat.OpenXml.Wordprocessing.NumberingSymbolRunProperties? openXmlElement)
+  public static Boolean? GetItalicComplexScript(NumberingSymbolRunProperties? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.ItalicComplexScript>();
+      var itemElement = openXmlElement.GetFirstChild<ItalicComplexScript>();
       return itemElement != null;
     }
     return null;
   }
-  
-  public static void SetItalicComplexScript(DocumentFormat.OpenXml.Wordprocessing.NumberingSymbolRunProperties? openXmlElement, Boolean? value)
+
+  public static void SetItalicComplexScript(NumberingSymbolRunProperties? openXmlElement, Boolean? value)
   {
     if (openXmlElement != null)
     {
       if (value == false)
       {
-        var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.ItalicComplexScript>();
+        var itemElement = openXmlElement.GetFirstChild<ItalicComplexScript>();
         if (itemElement != null)
           itemElement.Remove();
       }
       if (value == true)
       {
-        var itemElement = new DocumentFormat.OpenXml.Wordprocessing.ItalicComplexScript();
+        var itemElement = new ItalicComplexScript();
         openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
+
   /// <summary>
-  /// Caps.
+  ///   Caps.
   /// </summary>
-  public static Boolean? GetCaps(DocumentFormat.OpenXml.Wordprocessing.NumberingSymbolRunProperties? openXmlElement)
+  public static Boolean? GetCaps(NumberingSymbolRunProperties? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.Caps>();
+      var itemElement = openXmlElement.GetFirstChild<Caps>();
       return itemElement != null;
     }
     return null;
   }
-  
-  public static void SetCaps(DocumentFormat.OpenXml.Wordprocessing.NumberingSymbolRunProperties? openXmlElement, Boolean? value)
+
+  public static void SetCaps(NumberingSymbolRunProperties? openXmlElement, Boolean? value)
   {
     if (openXmlElement != null)
     {
       if (value == false)
       {
-        var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.Caps>();
+        var itemElement = openXmlElement.GetFirstChild<Caps>();
         if (itemElement != null)
           itemElement.Remove();
       }
       if (value == true)
       {
-        var itemElement = new DocumentFormat.OpenXml.Wordprocessing.Caps();
+        var itemElement = new Caps();
         openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
+
   /// <summary>
-  /// SmallCaps.
+  ///   SmallCaps.
   /// </summary>
-  public static Boolean? GetSmallCaps(DocumentFormat.OpenXml.Wordprocessing.NumberingSymbolRunProperties? openXmlElement)
+  public static Boolean? GetSmallCaps(NumberingSymbolRunProperties? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.SmallCaps>();
+      var itemElement = openXmlElement.GetFirstChild<SmallCaps>();
       return itemElement != null;
     }
     return null;
   }
-  
-  public static void SetSmallCaps(DocumentFormat.OpenXml.Wordprocessing.NumberingSymbolRunProperties? openXmlElement, Boolean? value)
+
+  public static void SetSmallCaps(NumberingSymbolRunProperties? openXmlElement, Boolean? value)
   {
     if (openXmlElement != null)
     {
       if (value == false)
       {
-        var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.SmallCaps>();
+        var itemElement = openXmlElement.GetFirstChild<SmallCaps>();
         if (itemElement != null)
           itemElement.Remove();
       }
       if (value == true)
       {
-        var itemElement = new DocumentFormat.OpenXml.Wordprocessing.SmallCaps();
+        var itemElement = new SmallCaps();
         openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
+
   /// <summary>
-  /// Strike.
+  ///   Strike.
   /// </summary>
-  public static Boolean? GetStrike(DocumentFormat.OpenXml.Wordprocessing.NumberingSymbolRunProperties? openXmlElement)
+  public static Boolean? GetStrike(NumberingSymbolRunProperties? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.Strike>();
+      var itemElement = openXmlElement.GetFirstChild<Strike>();
       return itemElement != null;
     }
     return null;
   }
-  
-  public static void SetStrike(DocumentFormat.OpenXml.Wordprocessing.NumberingSymbolRunProperties? openXmlElement, Boolean? value)
+
+  public static void SetStrike(NumberingSymbolRunProperties? openXmlElement, Boolean? value)
   {
     if (openXmlElement != null)
     {
       if (value == false)
       {
-        var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.Strike>();
+        var itemElement = openXmlElement.GetFirstChild<Strike>();
         if (itemElement != null)
           itemElement.Remove();
       }
       if (value == true)
       {
-        var itemElement = new DocumentFormat.OpenXml.Wordprocessing.Strike();
+        var itemElement = new Strike();
         openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
+
   /// <summary>
-  /// DoubleStrike.
+  ///   DoubleStrike.
   /// </summary>
-  public static Boolean? GetDoubleStrike(DocumentFormat.OpenXml.Wordprocessing.NumberingSymbolRunProperties? openXmlElement)
+  public static Boolean? GetDoubleStrike(NumberingSymbolRunProperties? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.DoubleStrike>();
+      var itemElement = openXmlElement.GetFirstChild<DoubleStrike>();
       return itemElement != null;
     }
     return null;
   }
-  
-  public static void SetDoubleStrike(DocumentFormat.OpenXml.Wordprocessing.NumberingSymbolRunProperties? openXmlElement, Boolean? value)
+
+  public static void SetDoubleStrike(NumberingSymbolRunProperties? openXmlElement, Boolean? value)
   {
     if (openXmlElement != null)
     {
       if (value == false)
       {
-        var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.DoubleStrike>();
+        var itemElement = openXmlElement.GetFirstChild<DoubleStrike>();
         if (itemElement != null)
           itemElement.Remove();
       }
       if (value == true)
       {
-        var itemElement = new DocumentFormat.OpenXml.Wordprocessing.DoubleStrike();
+        var itemElement = new DoubleStrike();
         openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
+
   /// <summary>
-  /// Outline.
+  ///   Outline.
   /// </summary>
-  public static Boolean? GetOutline(DocumentFormat.OpenXml.Wordprocessing.NumberingSymbolRunProperties? openXmlElement)
+  public static Boolean? GetOutline(NumberingSymbolRunProperties? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.Outline>();
+      var itemElement = openXmlElement.GetFirstChild<Outline>();
       return itemElement != null;
     }
     return null;
   }
-  
-  public static void SetOutline(DocumentFormat.OpenXml.Wordprocessing.NumberingSymbolRunProperties? openXmlElement, Boolean? value)
+
+  public static void SetOutline(NumberingSymbolRunProperties? openXmlElement, Boolean? value)
   {
     if (openXmlElement != null)
     {
       if (value == false)
       {
-        var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.Outline>();
+        var itemElement = openXmlElement.GetFirstChild<Outline>();
         if (itemElement != null)
           itemElement.Remove();
       }
       if (value == true)
       {
-        var itemElement = new DocumentFormat.OpenXml.Wordprocessing.Outline();
+        var itemElement = new Outline();
         openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
+
   /// <summary>
-  /// Shadow.
+  ///   Shadow.
   /// </summary>
-  public static Boolean? GetShadow(DocumentFormat.OpenXml.Wordprocessing.NumberingSymbolRunProperties? openXmlElement)
+  public static Boolean? GetShadow(NumberingSymbolRunProperties? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.Shadow>();
+      var itemElement = openXmlElement.GetFirstChild<Shadow>();
       return itemElement != null;
     }
     return null;
   }
-  
-  public static void SetShadow(DocumentFormat.OpenXml.Wordprocessing.NumberingSymbolRunProperties? openXmlElement, Boolean? value)
+
+  public static void SetShadow(NumberingSymbolRunProperties? openXmlElement, Boolean? value)
   {
     if (openXmlElement != null)
     {
       if (value == false)
       {
-        var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.Shadow>();
+        var itemElement = openXmlElement.GetFirstChild<Shadow>();
         if (itemElement != null)
           itemElement.Remove();
       }
       if (value == true)
       {
-        var itemElement = new DocumentFormat.OpenXml.Wordprocessing.Shadow();
+        var itemElement = new Shadow();
         openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
+
   /// <summary>
-  /// Emboss.
+  ///   Emboss.
   /// </summary>
-  public static Boolean? GetEmboss(DocumentFormat.OpenXml.Wordprocessing.NumberingSymbolRunProperties? openXmlElement)
+  public static Boolean? GetEmboss(NumberingSymbolRunProperties? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.Emboss>();
+      var itemElement = openXmlElement.GetFirstChild<Emboss>();
       return itemElement != null;
     }
     return null;
   }
-  
-  public static void SetEmboss(DocumentFormat.OpenXml.Wordprocessing.NumberingSymbolRunProperties? openXmlElement, Boolean? value)
+
+  public static void SetEmboss(NumberingSymbolRunProperties? openXmlElement, Boolean? value)
   {
     if (openXmlElement != null)
     {
       if (value == false)
       {
-        var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.Emboss>();
+        var itemElement = openXmlElement.GetFirstChild<Emboss>();
         if (itemElement != null)
           itemElement.Remove();
       }
       if (value == true)
       {
-        var itemElement = new DocumentFormat.OpenXml.Wordprocessing.Emboss();
+        var itemElement = new Emboss();
         openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
+
   /// <summary>
-  /// Imprint.
+  ///   Imprint.
   /// </summary>
-  public static Boolean? GetImprint(DocumentFormat.OpenXml.Wordprocessing.NumberingSymbolRunProperties? openXmlElement)
+  public static Boolean? GetImprint(NumberingSymbolRunProperties? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.Imprint>();
+      var itemElement = openXmlElement.GetFirstChild<Imprint>();
       return itemElement != null;
     }
     return null;
   }
-  
-  public static void SetImprint(DocumentFormat.OpenXml.Wordprocessing.NumberingSymbolRunProperties? openXmlElement, Boolean? value)
+
+  public static void SetImprint(NumberingSymbolRunProperties? openXmlElement, Boolean? value)
   {
     if (openXmlElement != null)
     {
       if (value == false)
       {
-        var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.Imprint>();
+        var itemElement = openXmlElement.GetFirstChild<Imprint>();
         if (itemElement != null)
           itemElement.Remove();
       }
       if (value == true)
       {
-        var itemElement = new DocumentFormat.OpenXml.Wordprocessing.Imprint();
+        var itemElement = new Imprint();
         openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
+
   /// <summary>
-  /// NoProof.
+  ///   NoProof.
   /// </summary>
-  public static Boolean? GetNoProof(DocumentFormat.OpenXml.Wordprocessing.NumberingSymbolRunProperties? openXmlElement)
+  public static Boolean? GetNoProof(NumberingSymbolRunProperties? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.NoProof>();
+      var itemElement = openXmlElement.GetFirstChild<NoProof>();
       return itemElement != null;
     }
     return null;
   }
-  
-  public static void SetNoProof(DocumentFormat.OpenXml.Wordprocessing.NumberingSymbolRunProperties? openXmlElement, Boolean? value)
+
+  public static void SetNoProof(NumberingSymbolRunProperties? openXmlElement, Boolean? value)
   {
     if (openXmlElement != null)
     {
       if (value == false)
       {
-        var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.NoProof>();
+        var itemElement = openXmlElement.GetFirstChild<NoProof>();
         if (itemElement != null)
           itemElement.Remove();
       }
       if (value == true)
       {
-        var itemElement = new DocumentFormat.OpenXml.Wordprocessing.NoProof();
+        var itemElement = new NoProof();
         openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
+
   /// <summary>
-  /// SnapToGrid.
+  ///   SnapToGrid.
   /// </summary>
-  public static Boolean? GetSnapToGrid(DocumentFormat.OpenXml.Wordprocessing.NumberingSymbolRunProperties? openXmlElement)
+  public static Boolean? GetSnapToGrid(NumberingSymbolRunProperties? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.SnapToGrid>();
+      var itemElement = openXmlElement.GetFirstChild<SnapToGrid>();
       return itemElement != null;
     }
     return null;
   }
-  
-  public static void SetSnapToGrid(DocumentFormat.OpenXml.Wordprocessing.NumberingSymbolRunProperties? openXmlElement, Boolean? value)
+
+  public static void SetSnapToGrid(NumberingSymbolRunProperties? openXmlElement, Boolean? value)
   {
     if (openXmlElement != null)
     {
       if (value == false)
       {
-        var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.SnapToGrid>();
+        var itemElement = openXmlElement.GetFirstChild<SnapToGrid>();
         if (itemElement != null)
           itemElement.Remove();
       }
       if (value == true)
       {
-        var itemElement = new DocumentFormat.OpenXml.Wordprocessing.SnapToGrid();
+        var itemElement = new SnapToGrid();
         openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
+
   /// <summary>
-  /// Vanish.
+  ///   Vanish.
   /// </summary>
-  public static Boolean? GetVanish(DocumentFormat.OpenXml.Wordprocessing.NumberingSymbolRunProperties? openXmlElement)
+  public static Boolean? GetVanish(NumberingSymbolRunProperties? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.Vanish>();
+      var itemElement = openXmlElement.GetFirstChild<Vanish>();
       return itemElement != null;
     }
     return null;
   }
-  
-  public static void SetVanish(DocumentFormat.OpenXml.Wordprocessing.NumberingSymbolRunProperties? openXmlElement, Boolean? value)
+
+  public static void SetVanish(NumberingSymbolRunProperties? openXmlElement, Boolean? value)
   {
     if (openXmlElement != null)
     {
       if (value == false)
       {
-        var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.Vanish>();
+        var itemElement = openXmlElement.GetFirstChild<Vanish>();
         if (itemElement != null)
           itemElement.Remove();
       }
       if (value == true)
       {
-        var itemElement = new DocumentFormat.OpenXml.Wordprocessing.Vanish();
+        var itemElement = new Vanish();
         openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
+
   /// <summary>
-  /// WebHidden.
+  ///   WebHidden.
   /// </summary>
-  public static Boolean? GetWebHidden(DocumentFormat.OpenXml.Wordprocessing.NumberingSymbolRunProperties? openXmlElement)
+  public static Boolean? GetWebHidden(NumberingSymbolRunProperties? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.WebHidden>();
+      var itemElement = openXmlElement.GetFirstChild<WebHidden>();
       return itemElement != null;
     }
     return null;
   }
-  
-  public static void SetWebHidden(DocumentFormat.OpenXml.Wordprocessing.NumberingSymbolRunProperties? openXmlElement, Boolean? value)
+
+  public static void SetWebHidden(NumberingSymbolRunProperties? openXmlElement, Boolean? value)
   {
     if (openXmlElement != null)
     {
       if (value == false)
       {
-        var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.WebHidden>();
+        var itemElement = openXmlElement.GetFirstChild<WebHidden>();
         if (itemElement != null)
           itemElement.Remove();
       }
       if (value == true)
       {
-        var itemElement = new DocumentFormat.OpenXml.Wordprocessing.WebHidden();
+        var itemElement = new WebHidden();
         openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
+
   /// <summary>
-  /// Color.
+  ///   Color.
   /// </summary>
-  public static DocumentModel.Wordprocessing.Color? GetColor(DocumentFormat.OpenXml.Wordprocessing.NumberingSymbolRunProperties? openXmlElement)
+  public static Color? GetColor(NumberingSymbolRunProperties? openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.Color>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Wordprocessing.ColorConverter.CreateModelElement(itemElement);
+      return ColorConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetColor(DocumentFormat.OpenXml.Wordprocessing.NumberingSymbolRunProperties? openXmlElement, DocumentModel.Wordprocessing.Color? value)
+
+  public static void SetColor(NumberingSymbolRunProperties? openXmlElement, Color? value)
   {
     if (openXmlElement != null)
     {
@@ -548,181 +560,181 @@ public static class NumberingSymbolRunPropertiesConverter
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Wordprocessing.ColorConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.Color>(value);
+        itemElement = ColorConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.Color>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
+
   /// <summary>
-  /// Spacing.
+  ///   Spacing.
   /// </summary>
-  public static Int32? GetSpacing(DocumentFormat.OpenXml.Wordprocessing.NumberingSymbolRunProperties? openXmlElement)
+  public static Int32? GetSpacing(NumberingSymbolRunProperties? openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.Spacing>();
+    var itemElement = openXmlElement?.GetFirstChild<Spacing>();
     if (itemElement != null)
       return itemElement.Val?.Value;
     return null;
   }
-  
-  public static void SetSpacing(DocumentFormat.OpenXml.Wordprocessing.NumberingSymbolRunProperties? openXmlElement, Int32? value)
+
+  public static void SetSpacing(NumberingSymbolRunProperties? openXmlElement, Int32? value)
   {
     if (openXmlElement != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.Spacing>();
+      var itemElement = openXmlElement.GetFirstChild<Spacing>();
       if (itemElement != null)
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = new DocumentFormat.OpenXml.Wordprocessing.Spacing{ Val = value };
+        itemElement = new Spacing { Val = value };
         openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
+
   /// <summary>
-  /// CharacterScale.
+  ///   CharacterScale.
   /// </summary>
-  public static Int64? GetCharacterScale(DocumentFormat.OpenXml.Wordprocessing.NumberingSymbolRunProperties? openXmlElement)
+  public static Int64? GetCharacterScale(NumberingSymbolRunProperties? openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.CharacterScale>();
+    var itemElement = openXmlElement?.GetFirstChild<CharacterScale>();
     if (itemElement != null)
       return itemElement.Val?.Value;
     return null;
   }
-  
-  public static void SetCharacterScale(DocumentFormat.OpenXml.Wordprocessing.NumberingSymbolRunProperties? openXmlElement, Int64? value)
+
+  public static void SetCharacterScale(NumberingSymbolRunProperties? openXmlElement, Int64? value)
   {
     if (openXmlElement != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.CharacterScale>();
+      var itemElement = openXmlElement.GetFirstChild<CharacterScale>();
       if (itemElement != null)
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = new DocumentFormat.OpenXml.Wordprocessing.CharacterScale{ Val = value };
+        itemElement = new CharacterScale { Val = value };
         openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
+
   /// <summary>
-  /// Kern.
+  ///   Kern.
   /// </summary>
-  public static UInt32? GetKern(DocumentFormat.OpenXml.Wordprocessing.NumberingSymbolRunProperties? openXmlElement)
+  public static UInt32? GetKern(NumberingSymbolRunProperties? openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.Kern>();
+    var itemElement = openXmlElement?.GetFirstChild<Kern>();
     if (itemElement != null)
       return itemElement.Val?.Value;
     return null;
   }
-  
-  public static void SetKern(DocumentFormat.OpenXml.Wordprocessing.NumberingSymbolRunProperties? openXmlElement, UInt32? value)
+
+  public static void SetKern(NumberingSymbolRunProperties? openXmlElement, UInt32? value)
   {
     if (openXmlElement != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.Kern>();
+      var itemElement = openXmlElement.GetFirstChild<Kern>();
       if (itemElement != null)
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = new DocumentFormat.OpenXml.Wordprocessing.Kern{ Val = value };
+        itemElement = new Kern { Val = value };
         openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
+
   /// <summary>
-  /// Position.
+  ///   Position.
   /// </summary>
-  public static String? GetPosition(DocumentFormat.OpenXml.Wordprocessing.NumberingSymbolRunProperties? openXmlElement)
+  public static String? GetPosition(NumberingSymbolRunProperties? openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.Position>();
+    var itemElement = openXmlElement?.GetFirstChild<Position>();
     if (itemElement != null)
       return itemElement.Val?.Value;
     return null;
   }
-  
-  public static void SetPosition(DocumentFormat.OpenXml.Wordprocessing.NumberingSymbolRunProperties? openXmlElement, String? value)
+
+  public static void SetPosition(NumberingSymbolRunProperties? openXmlElement, String? value)
   {
     if (openXmlElement != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.Position>();
+      var itemElement = openXmlElement.GetFirstChild<Position>();
       if (itemElement != null)
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = new DocumentFormat.OpenXml.Wordprocessing.Position { Val = value };
+        itemElement = new Position { Val = value };
         openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
+
   /// <summary>
-  /// FontSize.
+  ///   FontSize.
   /// </summary>
-  public static String? GetFontSize(DocumentFormat.OpenXml.Wordprocessing.NumberingSymbolRunProperties? openXmlElement)
+  public static String? GetFontSize(NumberingSymbolRunProperties? openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.FontSize>();
+    var itemElement = openXmlElement?.GetFirstChild<FontSize>();
     if (itemElement != null)
       return itemElement.Val?.Value;
     return null;
   }
-  
-  public static void SetFontSize(DocumentFormat.OpenXml.Wordprocessing.NumberingSymbolRunProperties? openXmlElement, String? value)
+
+  public static void SetFontSize(NumberingSymbolRunProperties? openXmlElement, String? value)
   {
     if (openXmlElement != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.FontSize>();
+      var itemElement = openXmlElement.GetFirstChild<FontSize>();
       if (itemElement != null)
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = new DocumentFormat.OpenXml.Wordprocessing.FontSize { Val = value };
+        itemElement = new FontSize { Val = value };
         openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
+
   /// <summary>
-  /// FontSizeComplexScript.
+  ///   FontSizeComplexScript.
   /// </summary>
-  public static String? GetFontSizeComplexScript(DocumentFormat.OpenXml.Wordprocessing.NumberingSymbolRunProperties? openXmlElement)
+  public static String? GetFontSizeComplexScript(NumberingSymbolRunProperties? openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.FontSizeComplexScript>();
+    var itemElement = openXmlElement?.GetFirstChild<FontSizeComplexScript>();
     if (itemElement != null)
       return itemElement.Val?.Value;
     return null;
   }
-  
-  public static void SetFontSizeComplexScript(DocumentFormat.OpenXml.Wordprocessing.NumberingSymbolRunProperties? openXmlElement, String? value)
+
+  public static void SetFontSizeComplexScript(NumberingSymbolRunProperties? openXmlElement, String? value)
   {
     if (openXmlElement != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.FontSizeComplexScript>();
+      var itemElement = openXmlElement.GetFirstChild<FontSizeComplexScript>();
       if (itemElement != null)
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = new DocumentFormat.OpenXml.Wordprocessing.FontSizeComplexScript { Val = value };
+        itemElement = new FontSizeComplexScript { Val = value };
         openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
+
   /// <summary>
-  /// Underline.
+  ///   Underline.
   /// </summary>
-  public static DocumentModel.Wordprocessing.Underline? GetUnderline(DocumentFormat.OpenXml.Wordprocessing.NumberingSymbolRunProperties? openXmlElement)
+  public static Underline? GetUnderline(NumberingSymbolRunProperties? openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.Underline>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Wordprocessing.UnderlineConverter.CreateModelElement(itemElement);
+      return UnderlineConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetUnderline(DocumentFormat.OpenXml.Wordprocessing.NumberingSymbolRunProperties? openXmlElement, DocumentModel.Wordprocessing.Underline? value)
+
+  public static void SetUnderline(NumberingSymbolRunProperties? openXmlElement, Underline? value)
   {
     if (openXmlElement != null)
     {
@@ -731,84 +743,81 @@ public static class NumberingSymbolRunPropertiesConverter
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Wordprocessing.UnderlineConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.Underline>(value);
+        itemElement = UnderlineConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.Underline>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
+
   /// <summary>
-  /// TextEffect.
+  ///   TextEffect.
   /// </summary>
-  public static DocumentModel.Wordprocessing.TextEffectKind? GetTextEffect(DocumentFormat.OpenXml.Wordprocessing.NumberingSymbolRunProperties? openXmlElement)
+  public static TextEffectKind? GetTextEffect(NumberingSymbolRunProperties? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.TextEffect>();
-      if (itemElement?.Val?.Value != null)
-      {
-        return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Wordprocessing.TextEffectValues, DocumentModel.Wordprocessing.TextEffectKind>(itemElement.Val.Value);
-      }
+      var itemElement = openXmlElement.GetFirstChild<TextEffect>();
+      if (itemElement?.Val?.Value != null) return EnumValueConverter.GetValue<TextEffectValues, TextEffectKind>(itemElement.Val.Value);
     }
     return null;
   }
-  
-  public static void SetTextEffect(DocumentFormat.OpenXml.Wordprocessing.NumberingSymbolRunProperties? openXmlElement, DocumentModel.Wordprocessing.TextEffectKind? value)
+
+  public static void SetTextEffect(NumberingSymbolRunProperties? openXmlElement, TextEffectKind? value)
   {
     if (openXmlElement != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.TextEffect>();
+      var itemElement = openXmlElement.GetFirstChild<TextEffect>();
       if (itemElement != null)
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = EnumValueConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.TextEffect, DocumentFormat.OpenXml.Wordprocessing.TextEffectValues, DocumentModel.Wordprocessing.TextEffectKind>(value);
+        itemElement = EnumValueConverter.CreateOpenXmlElement<TextEffect, TextEffectValues, TextEffectKind>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
+
   /// <summary>
-  /// Border.
+  ///   Border.
   /// </summary>
-  public static DocumentModel.Wordprocessing.BorderType? GetBorder(DocumentFormat.OpenXml.Wordprocessing.NumberingSymbolRunProperties? openXmlElement)
+  public static BorderType? GetBorder(NumberingSymbolRunProperties? openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.Border>();
+    var itemElement = openXmlElement?.GetFirstChild<Border>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Wordprocessing.BorderTypeConverter.CreateModelElement(itemElement);
+      return BorderTypeConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetBorder(DocumentFormat.OpenXml.Wordprocessing.NumberingSymbolRunProperties? openXmlElement, DocumentModel.Wordprocessing.BorderType? value)
+
+  public static void SetBorder(NumberingSymbolRunProperties? openXmlElement, BorderType? value)
   {
     if (openXmlElement != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.Border>();
+      var itemElement = openXmlElement.GetFirstChild<Border>();
       if (itemElement != null)
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Wordprocessing.BorderTypeConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.Border>(value);
+        itemElement = BorderTypeConverter.CreateOpenXmlElement<Border>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
+
   /// <summary>
-  /// Shading.
+  ///   Shading.
   /// </summary>
-  public static DocumentModel.Wordprocessing.Shading? GetShading(DocumentFormat.OpenXml.Wordprocessing.NumberingSymbolRunProperties? openXmlElement)
+  public static Shading? GetShading(NumberingSymbolRunProperties? openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.Shading>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Wordprocessing.ShadingConverter.CreateModelElement(itemElement);
+      return ShadingConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetShading(DocumentFormat.OpenXml.Wordprocessing.NumberingSymbolRunProperties? openXmlElement, DocumentModel.Wordprocessing.Shading? value)
+
+  public static void SetShading(NumberingSymbolRunProperties? openXmlElement, Shading? value)
   {
     if (openXmlElement != null)
     {
@@ -817,25 +826,25 @@ public static class NumberingSymbolRunPropertiesConverter
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Wordprocessing.ShadingConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.Shading>(value);
+        itemElement = ShadingConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.Shading>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
+
   /// <summary>
-  /// FitText.
+  ///   FitText.
   /// </summary>
-  public static DocumentModel.Wordprocessing.FitText? GetFitText(DocumentFormat.OpenXml.Wordprocessing.NumberingSymbolRunProperties? openXmlElement)
+  public static FitText? GetFitText(NumberingSymbolRunProperties? openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.FitText>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Wordprocessing.FitTextConverter.CreateModelElement(itemElement);
+      return FitTextConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetFitText(DocumentFormat.OpenXml.Wordprocessing.NumberingSymbolRunProperties? openXmlElement, DocumentModel.Wordprocessing.FitText? value)
+
+  public static void SetFitText(NumberingSymbolRunProperties? openXmlElement, FitText? value)
   {
     if (openXmlElement != null)
     {
@@ -844,178 +853,172 @@ public static class NumberingSymbolRunPropertiesConverter
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Wordprocessing.FitTextConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.FitText>(value);
+        itemElement = FitTextConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.FitText>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
+
   /// <summary>
-  /// VerticalTextAlignment.
+  ///   VerticalTextAlignment.
   /// </summary>
-  public static DocumentModel.Wordprocessing.VerticalPositionKind? GetVerticalTextAlignment(DocumentFormat.OpenXml.Wordprocessing.NumberingSymbolRunProperties? openXmlElement)
+  public static VerticalPositionKind? GetVerticalTextAlignment(NumberingSymbolRunProperties? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.VerticalTextAlignment>();
-      if (itemElement?.Val?.Value != null)
-      {
-        return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Wordprocessing.VerticalPositionValues, DocumentModel.Wordprocessing.VerticalPositionKind>(itemElement.Val.Value);
-      }
+      var itemElement = openXmlElement.GetFirstChild<VerticalTextAlignment>();
+      if (itemElement?.Val?.Value != null) return EnumValueConverter.GetValue<VerticalPositionValues, VerticalPositionKind>(itemElement.Val.Value);
     }
     return null;
   }
-  
-  public static void SetVerticalTextAlignment(DocumentFormat.OpenXml.Wordprocessing.NumberingSymbolRunProperties? openXmlElement, DocumentModel.Wordprocessing.VerticalPositionKind? value)
+
+  public static void SetVerticalTextAlignment(NumberingSymbolRunProperties? openXmlElement, VerticalPositionKind? value)
   {
     if (openXmlElement != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.VerticalTextAlignment>();
+      var itemElement = openXmlElement.GetFirstChild<VerticalTextAlignment>();
       if (itemElement != null)
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = EnumValueConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.VerticalTextAlignment, DocumentFormat.OpenXml.Wordprocessing.VerticalPositionValues, DocumentModel.Wordprocessing.VerticalPositionKind>(value);
+        itemElement = EnumValueConverter.CreateOpenXmlElement<VerticalTextAlignment, VerticalPositionValues, VerticalPositionKind>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
+
   /// <summary>
-  /// RightToLeftText.
+  ///   RightToLeftText.
   /// </summary>
-  public static Boolean? GetRightToLeftText(DocumentFormat.OpenXml.Wordprocessing.NumberingSymbolRunProperties? openXmlElement)
+  public static Boolean? GetRightToLeftText(NumberingSymbolRunProperties? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.RightToLeftText>();
+      var itemElement = openXmlElement.GetFirstChild<RightToLeftText>();
       return itemElement != null;
     }
     return null;
   }
-  
-  public static void SetRightToLeftText(DocumentFormat.OpenXml.Wordprocessing.NumberingSymbolRunProperties? openXmlElement, Boolean? value)
+
+  public static void SetRightToLeftText(NumberingSymbolRunProperties? openXmlElement, Boolean? value)
   {
     if (openXmlElement != null)
     {
       if (value == false)
       {
-        var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.RightToLeftText>();
+        var itemElement = openXmlElement.GetFirstChild<RightToLeftText>();
         if (itemElement != null)
           itemElement.Remove();
       }
       if (value == true)
       {
-        var itemElement = new DocumentFormat.OpenXml.Wordprocessing.RightToLeftText();
+        var itemElement = new RightToLeftText();
         openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
+
   /// <summary>
-  /// ComplexScript.
+  ///   ComplexScript.
   /// </summary>
-  public static Boolean? GetComplexScript(DocumentFormat.OpenXml.Wordprocessing.NumberingSymbolRunProperties? openXmlElement)
+  public static Boolean? GetComplexScript(NumberingSymbolRunProperties? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.ComplexScript>();
+      var itemElement = openXmlElement.GetFirstChild<ComplexScript>();
       return itemElement != null;
     }
     return null;
   }
-  
-  public static void SetComplexScript(DocumentFormat.OpenXml.Wordprocessing.NumberingSymbolRunProperties? openXmlElement, Boolean? value)
+
+  public static void SetComplexScript(NumberingSymbolRunProperties? openXmlElement, Boolean? value)
   {
     if (openXmlElement != null)
     {
       if (value == false)
       {
-        var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.ComplexScript>();
+        var itemElement = openXmlElement.GetFirstChild<ComplexScript>();
         if (itemElement != null)
           itemElement.Remove();
       }
       if (value == true)
       {
-        var itemElement = new DocumentFormat.OpenXml.Wordprocessing.ComplexScript();
+        var itemElement = new ComplexScript();
         openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
+
   /// <summary>
-  /// Emphasis.
+  ///   Emphasis.
   /// </summary>
-  public static DocumentModel.Wordprocessing.EmphasisMarkKind? GetEmphasis(DocumentFormat.OpenXml.Wordprocessing.NumberingSymbolRunProperties? openXmlElement)
+  public static EmphasisMarkKind? GetEmphasis(NumberingSymbolRunProperties? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.Emphasis>();
-      if (itemElement?.Val?.Value != null)
-      {
-        return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Wordprocessing.EmphasisMarkValues, DocumentModel.Wordprocessing.EmphasisMarkKind>(itemElement.Val.Value);
-      }
+      var itemElement = openXmlElement.GetFirstChild<Emphasis>();
+      if (itemElement?.Val?.Value != null) return EnumValueConverter.GetValue<EmphasisMarkValues, EmphasisMarkKind>(itemElement.Val.Value);
     }
     return null;
   }
-  
-  public static void SetEmphasis(DocumentFormat.OpenXml.Wordprocessing.NumberingSymbolRunProperties? openXmlElement, DocumentModel.Wordprocessing.EmphasisMarkKind? value)
+
+  public static void SetEmphasis(NumberingSymbolRunProperties? openXmlElement, EmphasisMarkKind? value)
   {
     if (openXmlElement != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.Emphasis>();
+      var itemElement = openXmlElement.GetFirstChild<Emphasis>();
       if (itemElement != null)
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = EnumValueConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.Emphasis, DocumentFormat.OpenXml.Wordprocessing.EmphasisMarkValues, DocumentModel.Wordprocessing.EmphasisMarkKind>(value);
+        itemElement = EnumValueConverter.CreateOpenXmlElement<Emphasis, EmphasisMarkValues, EmphasisMarkKind>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
+
   /// <summary>
-  /// Languages.
+  ///   Languages.
   /// </summary>
-  public static DocumentModel.Wordprocessing.LanguageType? GetLanguages(DocumentFormat.OpenXml.Wordprocessing.NumberingSymbolRunProperties? openXmlElement)
+  public static LanguageType? GetLanguages(NumberingSymbolRunProperties? openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.Languages>();
+    var itemElement = openXmlElement?.GetFirstChild<Languages>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Wordprocessing.LanguageTypeConverter.CreateModelElement(itemElement);
+      return LanguageTypeConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetLanguages(DocumentFormat.OpenXml.Wordprocessing.NumberingSymbolRunProperties? openXmlElement, DocumentModel.Wordprocessing.LanguageType? value)
+
+  public static void SetLanguages(NumberingSymbolRunProperties? openXmlElement, LanguageType? value)
   {
     if (openXmlElement != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.Languages>();
+      var itemElement = openXmlElement.GetFirstChild<Languages>();
       if (itemElement != null)
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Wordprocessing.LanguageTypeConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.Languages>(value);
+        itemElement = LanguageTypeConverter.CreateOpenXmlElement<Languages>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
+
   /// <summary>
-  /// EastAsianLayout.
+  ///   EastAsianLayout.
   /// </summary>
-  public static DocumentModel.Wordprocessing.EastAsianLayout? GetEastAsianLayout(DocumentFormat.OpenXml.Wordprocessing.NumberingSymbolRunProperties? openXmlElement)
+  public static EastAsianLayout? GetEastAsianLayout(NumberingSymbolRunProperties? openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.EastAsianLayout>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Wordprocessing.EastAsianLayoutConverter.CreateModelElement(itemElement);
+      return EastAsianLayoutConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetEastAsianLayout(DocumentFormat.OpenXml.Wordprocessing.NumberingSymbolRunProperties? openXmlElement, DocumentModel.Wordprocessing.EastAsianLayout? value)
+
+  public static void SetEastAsianLayout(NumberingSymbolRunProperties? openXmlElement, EastAsianLayout? value)
   {
     if (openXmlElement != null)
     {
@@ -1024,45 +1027,45 @@ public static class NumberingSymbolRunPropertiesConverter
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Wordprocessing.EastAsianLayoutConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.EastAsianLayout>(value);
+        itemElement = EastAsianLayoutConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.EastAsianLayout>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
+
   /// <summary>
-  /// SpecVanish.
+  ///   SpecVanish.
   /// </summary>
-  public static Boolean? GetSpecVanish(DocumentFormat.OpenXml.Wordprocessing.NumberingSymbolRunProperties? openXmlElement)
+  public static Boolean? GetSpecVanish(NumberingSymbolRunProperties? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.SpecVanish>();
+      var itemElement = openXmlElement.GetFirstChild<SpecVanish>();
       return itemElement != null;
     }
     return null;
   }
-  
-  public static void SetSpecVanish(DocumentFormat.OpenXml.Wordprocessing.NumberingSymbolRunProperties? openXmlElement, Boolean? value)
+
+  public static void SetSpecVanish(NumberingSymbolRunProperties? openXmlElement, Boolean? value)
   {
     if (openXmlElement != null)
     {
       if (value == false)
       {
-        var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.SpecVanish>();
+        var itemElement = openXmlElement.GetFirstChild<SpecVanish>();
         if (itemElement != null)
           itemElement.Remove();
       }
       if (value == true)
       {
-        var itemElement = new DocumentFormat.OpenXml.Wordprocessing.SpecVanish();
+        var itemElement = new SpecVanish();
         openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static DocumentModel.Wordprocessing.NumberingSymbolRunProperties? CreateModelElement(DocumentFormat.OpenXml.Wordprocessing.NumberingSymbolRunProperties? openXmlElement)
+
+  public static DocumentModel.Wordprocessing.NumberingSymbolRunProperties? CreateModelElement(NumberingSymbolRunProperties? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -1107,9 +1110,9 @@ public static class NumberingSymbolRunPropertiesConverter
     }
     return null;
   }
-  
+
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.NumberingSymbolRunProperties? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Wordprocessing.NumberingSymbolRunProperties, new()
+    where OpenXmlElementType : NumberingSymbolRunProperties, new()
   {
     if (value != null)
     {

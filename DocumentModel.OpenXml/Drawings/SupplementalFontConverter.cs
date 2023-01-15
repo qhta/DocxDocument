@@ -1,19 +1,21 @@
+using DocumentFormat.OpenXml.Drawing;
+
 namespace DocumentModel.OpenXml.Drawings;
 
 /// <summary>
-/// Font.
+///   Font.
 /// </summary>
 public static class SupplementalFontConverter
 {
   /// <summary>
-  /// Script
+  ///   Script
   /// </summary>
-  public static String? GetScript(DocumentFormat.OpenXml.Drawing.SupplementalFont? openXmlElement)
+  public static String? GetScript(SupplementalFont? openXmlElement)
   {
     return openXmlElement?.Script?.Value;
   }
-  
-  public static void SetScript(DocumentFormat.OpenXml.Drawing.SupplementalFont? openXmlElement, String? value)
+
+  public static void SetScript(SupplementalFont? openXmlElement, String? value)
   {
     if (openXmlElement != null)
       if (value != null)
@@ -21,16 +23,16 @@ public static class SupplementalFontConverter
       else
         openXmlElement.Script = null;
   }
-  
+
   /// <summary>
-  /// Typeface
+  ///   Typeface
   /// </summary>
-  public static String? GetTypeface(DocumentFormat.OpenXml.Drawing.SupplementalFont? openXmlElement)
+  public static String? GetTypeface(SupplementalFont? openXmlElement)
   {
     return openXmlElement?.Typeface?.Value;
   }
-  
-  public static void SetTypeface(DocumentFormat.OpenXml.Drawing.SupplementalFont? openXmlElement, String? value)
+
+  public static void SetTypeface(SupplementalFont? openXmlElement, String? value)
   {
     if (openXmlElement != null)
       if (value != null)
@@ -38,8 +40,8 @@ public static class SupplementalFontConverter
       else
         openXmlElement.Typeface = null;
   }
-  
-  public static DocumentModel.Drawings.SupplementalFont? CreateModelElement(DocumentFormat.OpenXml.Drawing.SupplementalFont? openXmlElement)
+
+  public static DocumentModel.Drawings.SupplementalFont? CreateModelElement(SupplementalFont? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -50,9 +52,9 @@ public static class SupplementalFontConverter
     }
     return null;
   }
-  
+
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.SupplementalFont? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.SupplementalFont, new()
+    where OpenXmlElementType : SupplementalFont, new()
   {
     if (value != null)
     {

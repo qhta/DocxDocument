@@ -1,83 +1,82 @@
 namespace DocumentModel.Drawings;
 
 /// <summary>
-/// Preset Material Type
+///   Preset Material Type
 /// </summary>
 public enum PresetMaterialKind
 {
   /// <summary>
-  /// Legacy Matte.
+  ///   Legacy Matte.
   /// </summary>
   LegacyMatte,
-  
+
   /// <summary>
-  /// Legacy Plastic.
+  ///   Legacy Plastic.
   /// </summary>
   LegacyPlastic,
-  
+
   /// <summary>
-  /// Legacy Metal.
+  ///   Legacy Metal.
   /// </summary>
   LegacyMetal,
-  
+
   /// <summary>
-  /// Legacy Wireframe.
+  ///   Legacy Wireframe.
   /// </summary>
   LegacyWireframe,
-  
+
   /// <summary>
-  /// Matte.
+  ///   Matte.
   /// </summary>
   Matte,
-  
+
   /// <summary>
-  /// Plastic.
+  ///   Plastic.
   /// </summary>
   Plastic,
-  
+
   /// <summary>
-  /// Metal.
+  ///   Metal.
   /// </summary>
   Metal,
-  
+
   /// <summary>
-  /// Warm Matte.
+  ///   Warm Matte.
   /// </summary>
   WarmMatte,
-  
+
   /// <summary>
-  /// Translucent Powder.
+  ///   Translucent Powder.
   /// </summary>
   TranslucentPowder,
-  
+
   /// <summary>
-  /// Powder.
+  ///   Powder.
   /// </summary>
   Powder,
-  
+
   /// <summary>
-  /// Dark Edge.
+  ///   Dark Edge.
   /// </summary>
   DarkEdge,
-  
+
   /// <summary>
-  /// Soft Edge.
+  ///   Soft Edge.
   /// </summary>
   SoftEdge,
-  
+
   /// <summary>
-  /// Clear.
+  ///   Clear.
   /// </summary>
   Clear,
-  
+
   /// <summary>
-  /// Flat.
+  ///   Flat.
   /// </summary>
   Flat,
-  
+
   /// <summary>
-  /// Soft Metal.
+  ///   Soft Metal.
   /// </summary>
-  SoftMetal,
-  
+  SoftMetal
 }

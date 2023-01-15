@@ -1,18 +1,17 @@
 namespace DocumentModel.Drawings.Office;
 
 /// <summary>
-/// Defines the GroupShapeType Class.
+///   Defines the GroupShapeType Class.
 /// </summary>
-public partial class GroupShapeType
+public class GroupShapeType
 {
   /// <summary>
-  /// GroupShapeNonVisualProperties.
+  ///   GroupShapeNonVisualProperties.
   /// </summary>
-  public DocumentModel.Drawings.Office.GroupShapeNonVisualProperties? GroupShapeNonVisualProperties { get; set; }
-  
+  public GroupShapeNonVisualProperties? GroupShapeNonVisualProperties { get; set; }
+
   /// <summary>
-  /// GroupShapeProperties.
+  ///   GroupShapeProperties.
   /// </summary>
-  public DocumentModel.Drawings.Office.GroupShapeProperties? GroupShapeProperties { get; set; }
-  
+  public GroupShapeProperties? GroupShapeProperties { get; set; }
 }

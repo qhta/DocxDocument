@@ -1,18 +1,17 @@
 namespace DocumentModel.Drawings.ChartDrawings;
 
 /// <summary>
-/// Defines the FormulaDirection enumeration.
+///   Defines the FormulaDirection enumeration.
 /// </summary>
 public enum FormulaDirection
 {
   /// <summary>
-  /// col.
+  ///   col.
   /// </summary>
   Col,
-  
+
   /// <summary>
-  /// row.
+  ///   row.
   /// </summary>
-  Row,
-  
+  Row
 }

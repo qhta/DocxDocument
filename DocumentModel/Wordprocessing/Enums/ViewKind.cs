@@ -1,38 +1,37 @@
 namespace DocumentModel.Wordprocessing;
 
 /// <summary>
-/// Defines the ViewValues enumeration.
+///   Defines the ViewValues enumeration.
 /// </summary>
 public enum ViewKind
 {
   /// <summary>
-  /// Default View.
+  ///   Default View.
   /// </summary>
   None,
-  
+
   /// <summary>
-  /// Print Layout View.
+  ///   Print Layout View.
   /// </summary>
   Print,
-  
+
   /// <summary>
-  /// Outline View.
+  ///   Outline View.
   /// </summary>
   Outline,
-  
+
   /// <summary>
-  /// Master Document View.
+  ///   Master Document View.
   /// </summary>
   MasterPages,
-  
+
   /// <summary>
-  /// Draft View.
+  ///   Draft View.
   /// </summary>
   Normal,
-  
+
   /// <summary>
-  /// Web Page View.
+  ///   Web Page View.
   /// </summary>
-  Web,
-  
+  Web
 }

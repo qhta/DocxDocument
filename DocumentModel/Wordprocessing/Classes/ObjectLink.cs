@@ -1,43 +1,42 @@
 namespace DocumentModel.Wordprocessing;
 
 /// <summary>
-/// Defines the ObjectLink Class.
+///   Defines the ObjectLink Class.
 /// </summary>
-public partial class ObjectLink
+public class ObjectLink
 {
   /// <summary>
-  /// updateMode
+  ///   updateMode
   /// </summary>
-  public DocumentModel.Wordprocessing.ObjectUpdateMode? UpdateMode { get; set; }
-  
+  public ObjectUpdateMode? UpdateMode { get; set; }
+
   /// <summary>
-  /// lockedField
+  ///   lockedField
   /// </summary>
   public Boolean? LockedField { get; set; }
-  
+
   /// <summary>
-  /// drawAspect
+  ///   drawAspect
   /// </summary>
-  public DocumentModel.Wordprocessing.ObjectDrawAspect? drawAspect { get; set; }
-  
+  public ObjectDrawAspect? drawAspect { get; set; }
+
   /// <summary>
-  /// id
+  ///   id
   /// </summary>
   public String? Id { get; set; }
-  
+
   /// <summary>
-  /// progId
+  ///   progId
   /// </summary>
   public String? ProgId { get; set; }
-  
+
   /// <summary>
-  /// shapeId
+  ///   shapeId
   /// </summary>
   public String? ShapeId { get; set; }
-  
+
   /// <summary>
-  /// fieldCodes
+  ///   fieldCodes
   /// </summary>
   public String? FieldCodes { get; set; }
-  
 }

@@ -1,18 +1,20 @@
+using DocumentModel.Properties;
+
 namespace DocumentModel.OpenXml.Properties;
 
 /// <summary>
-/// Custom File Properties.
+///   Custom File Properties.
 /// </summary>
 public static class CustomPropertiesConverter
 {
-  public static System.Collections.ObjectModel.Collection<DocumentModel.Properties.CustomDocumentProperty>? GetCustomDocumentProperties(DocumentFormat.OpenXml.CustomProperties.Properties? openXmlElement)
+  public static Collection<CustomDocumentProperty>? GetCustomDocumentProperties(DocumentFormat.OpenXml.CustomProperties.Properties? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var collection = new System.Collections.ObjectModel.Collection<DocumentModel.Properties.CustomDocumentProperty>();
+      var collection = new Collection<CustomDocumentProperty>();
       foreach (var item in openXmlElement.Elements<DocumentFormat.OpenXml.CustomProperties.CustomDocumentProperty>())
       {
-        var newItem = DocumentModel.OpenXml.Properties.CustomDocumentPropertyConverter.CreateModelElement(item);
+        var newItem = CustomDocumentPropertyConverter.CreateModelElement(item);
         if (newItem != null)
           collection.Add(newItem);
       }
@@ -20,43 +22,35 @@ public static class CustomPropertiesConverter
     }
     return null;
   }
-  
-  public static void SetCustomDocumentProperties(DocumentFormat.OpenXml.CustomProperties.Properties? openXmlElement, System.Collections.ObjectModel.Collection<DocumentModel.Properties.CustomDocumentProperty>? value)
+
+  public static void SetCustomDocumentProperties(DocumentFormat.OpenXml.CustomProperties.Properties? openXmlElement, Collection<CustomDocumentProperty>? value)
   {
     if (openXmlElement != null)
     {
       openXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.CustomProperties.CustomDocumentProperty>();
       if (value != null)
-      {
         foreach (var item in value)
         {
-          var newItem = DocumentModel.OpenXml.Properties.CustomDocumentPropertyConverter.CreateOpenXmlElement(item);
+          var newItem = CustomDocumentPropertyConverter.CreateOpenXmlElement(item);
           if (newItem != null)
             openXmlElement.AddChild(newItem);
         }
-      }
     }
   }
-  
-  public static DocumentModel.Properties.CustomProperties? CreateModelElement(DocumentFormat.OpenXml.CustomProperties.Properties? openXmlElement)
+
+  public static CustomProperties? CreateModelElement(DocumentFormat.OpenXml.CustomProperties.Properties? openXmlElement)
   {
-    var value = new DocumentModel.Properties.CustomProperties();
-    if (openXmlElement != null)
-    {
-      value.CustomDocumentProperties = GetCustomDocumentProperties(openXmlElement);
-    }
+    var value = new CustomProperties();
+    if (openXmlElement != null) value.CustomDocumentProperties = GetCustomDocumentProperties(openXmlElement);
     return value;
   }
-  
-  public static void SetValue(DocumentFormat.OpenXml.CustomProperties.Properties? openXmlElement, DocumentModel.Properties.CustomProperties? value)
+
+  public static void SetValue(DocumentFormat.OpenXml.CustomProperties.Properties? openXmlElement, CustomProperties? value)
   {
-    if (openXmlElement != null)
-    {
-      SetCustomDocumentProperties(openXmlElement, value?.CustomDocumentProperties);
-    }
+    if (openXmlElement != null) SetCustomDocumentProperties(openXmlElement, value?.CustomDocumentProperties);
   }
-  
-  public static DocumentFormat.OpenXml.CustomProperties.Properties? CreateOpenXmlElement(DocumentModel.Properties.CustomProperties? value)
+
+  public static DocumentFormat.OpenXml.CustomProperties.Properties? CreateOpenXmlElement(CustomProperties? value)
   {
     if (value != null)
     {
@@ -67,8 +61,8 @@ public static class CustomPropertiesConverter
     return null;
   }
 
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Properties.CustomProperties? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.CustomProperties.Properties, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(CustomProperties? value)
+    where OpenXmlElementType : DocumentFormat.OpenXml.CustomProperties.Properties, new()
   {
     if (value != null)
     {

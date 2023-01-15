@@ -1,18 +1,17 @@
 namespace DocumentModel.Wordprocessing;
 
 /// <summary>
-/// Glossary Document Entry.
+///   Glossary Document Entry.
 /// </summary>
-public partial class DocPart
+public class DocPart
 {
   /// <summary>
-  /// Glossary Document Entry Properties.
+  ///   Glossary Document Entry Properties.
   /// </summary>
-  public DocumentModel.Wordprocessing.DocPartProperties? DocPartProperties { get; set; }
-  
+  public DocPartProperties? DocPartProperties { get; set; }
+
   /// <summary>
-  /// Contents of Glossary Document Entry.
+  ///   Contents of Glossary Document Entry.
   /// </summary>
-  public DocumentModel.Wordprocessing.DocPartBody? DocPartBody { get; set; }
-  
+  public DocPartBody? DocPartBody { get; set; }
 }

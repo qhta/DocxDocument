@@ -1,19 +1,23 @@
+using DocumentModel.Drawings.Charts;
+using NumberingFormat = DocumentFormat.OpenXml.Office2013.Drawing.Chart.NumberingFormat;
+using SerAxExtension = DocumentFormat.OpenXml.Drawing.Charts.SerAxExtension;
+
 namespace DocumentModel.OpenXml.Drawings.Charts;
 
 /// <summary>
-/// Defines the SerAxExtension Class.
+///   Defines the SerAxExtension Class.
 /// </summary>
 public static class SerAxExtensionConverter
 {
   /// <summary>
-  /// URI
+  ///   URI
   /// </summary>
-  public static String? GetUri(DocumentFormat.OpenXml.Drawing.Charts.SerAxExtension? openXmlElement)
+  public static String? GetUri(SerAxExtension? openXmlElement)
   {
     return openXmlElement?.Uri?.Value;
   }
-  
-  public static void SetUri(DocumentFormat.OpenXml.Drawing.Charts.SerAxExtension? openXmlElement, String? value)
+
+  public static void SetUri(SerAxExtension? openXmlElement, String? value)
   {
     if (openXmlElement != null)
       if (value != null)
@@ -21,32 +25,32 @@ public static class SerAxExtensionConverter
       else
         openXmlElement.Uri = null;
   }
-  
-  public static DocumentModel.Drawings.Charts.NumberingFormat3? GetNumberingFormat(DocumentFormat.OpenXml.Drawing.Charts.SerAxExtension? openXmlElement)
+
+  public static NumberingFormat3? GetNumberingFormat(SerAxExtension? openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office2013.Drawing.Chart.NumberingFormat>();
+    var itemElement = openXmlElement?.GetFirstChild<NumberingFormat>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.Charts.NumberingFormat3Converter.CreateModelElement(itemElement);
+      return NumberingFormat3Converter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetNumberingFormat(DocumentFormat.OpenXml.Drawing.Charts.SerAxExtension? openXmlElement, DocumentModel.Drawings.Charts.NumberingFormat3? value)
+
+  public static void SetNumberingFormat(SerAxExtension? openXmlElement, NumberingFormat3? value)
   {
     if (openXmlElement != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2013.Drawing.Chart.NumberingFormat>();
+      var itemElement = openXmlElement.GetFirstChild<NumberingFormat>();
       if (itemElement != null)
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Drawings.Charts.NumberingFormat3Converter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2013.Drawing.Chart.NumberingFormat>(value);
+        itemElement = NumberingFormat3Converter.CreateOpenXmlElement<NumberingFormat>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static DocumentModel.Drawings.Charts.SerAxExtension? CreateModelElement(DocumentFormat.OpenXml.Drawing.Charts.SerAxExtension? openXmlElement)
+
+  public static DocumentModel.Drawings.Charts.SerAxExtension? CreateModelElement(SerAxExtension? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -57,9 +61,9 @@ public static class SerAxExtensionConverter
     }
     return null;
   }
-  
+
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.Charts.SerAxExtension? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.Charts.SerAxExtension, new()
+    where OpenXmlElementType : SerAxExtension, new()
   {
     if (value != null)
     {

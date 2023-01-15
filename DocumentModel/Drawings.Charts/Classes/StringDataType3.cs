@@ -1,13 +1,12 @@
 namespace DocumentModel.Drawings.Charts;
 
 /// <summary>
-/// Defines the StringDataType Class.
+///   Defines the StringDataType Class.
 /// </summary>
-public partial class StringDataType3
+public class StringDataType3
 {
   /// <summary>
-  /// PointCount.
+  ///   PointCount.
   /// </summary>
   public UInt32? PointCount { get; set; }
-  
 }

@@ -1,28 +1,27 @@
 namespace DocumentModel.Drawings.ChartDrawing;
 
 /// <summary>
-/// Group Shape.
+///   Group Shape.
 /// </summary>
-public partial class GroupShape
+public class GroupShape
 {
   /// <summary>
-  /// Non-Visual Group Shape Properties.
+  ///   Non-Visual Group Shape Properties.
   /// </summary>
-  public DocumentModel.Drawings.ChartDrawing.NonVisualGroupShapeProperties? NonVisualGroupShapeProperties { get; set; }
-  
+  public NonVisualGroupShapeProperties? NonVisualGroupShapeProperties { get; set; }
+
   /// <summary>
-  /// Group Shape Properties.
+  ///   Group Shape Properties.
   /// </summary>
-  public DocumentModel.Drawings.ChartDrawing.GroupShapeProperties? GroupShapeProperties { get; set; }
-  
-  public DocumentModel.Drawings.ChartDrawing.Shape? Shape { get; set; }
-  
-  public DocumentModel.Drawings.ChartDrawing.GroupShape? ChildGroupShape { get; set; }
-  
-  public DocumentModel.Drawings.ChartDrawing.GraphicFrame? GraphicFrame { get; set; }
-  
-  public DocumentModel.Drawings.ChartDrawing.ConnectionShape? ConnectionShape { get; set; }
-  
-  public DocumentModel.Drawings.ChartDrawing.Picture? Picture { get; set; }
-  
+  public GroupShapeProperties? GroupShapeProperties { get; set; }
+
+  public Shape? Shape { get; set; }
+
+  public GroupShape? ChildGroupShape { get; set; }
+
+  public GraphicFrame? GraphicFrame { get; set; }
+
+  public ConnectionShape? ConnectionShape { get; set; }
+
+  public Picture? Picture { get; set; }
 }

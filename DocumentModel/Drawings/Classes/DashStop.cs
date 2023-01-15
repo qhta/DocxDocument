@@ -1,18 +1,17 @@
 namespace DocumentModel.Drawings;
 
 /// <summary>
-/// Dash Stop.
+///   Dash Stop.
 /// </summary>
-public partial class DashStop
+public class DashStop
 {
   /// <summary>
-  /// Dash Length
+  ///   Dash Length
   /// </summary>
   public Int32? DashLength { get; set; }
-  
+
   /// <summary>
-  /// Space Length
+  ///   Space Length
   /// </summary>
   public Int32? SpaceLength { get; set; }
-  
 }

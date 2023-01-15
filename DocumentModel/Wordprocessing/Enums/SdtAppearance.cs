@@ -1,23 +1,22 @@
 namespace DocumentModel.Wordprocessing;
 
 /// <summary>
-/// Defines the SdtAppearance enumeration.
+///   Defines the SdtAppearance enumeration.
 /// </summary>
 public enum SdtAppearance
 {
   /// <summary>
-  /// boundingBox.
+  ///   boundingBox.
   /// </summary>
   BoundingBox,
-  
+
   /// <summary>
-  /// tags.
+  ///   tags.
   /// </summary>
   Tags,
-  
+
   /// <summary>
-  /// hidden.
+  ///   hidden.
   /// </summary>
-  Hidden,
-  
+  Hidden
 }

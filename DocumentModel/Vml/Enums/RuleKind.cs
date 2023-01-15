@@ -1,23 +1,22 @@
 namespace DocumentModel.Vml;
 
 /// <summary>
-/// Rule Type
+///   Rule Type
 /// </summary>
 public enum RuleKind
 {
   /// <summary>
-  /// Arc Rule.
+  ///   Arc Rule.
   /// </summary>
   Arc,
-  
+
   /// <summary>
-  /// Callout Rule.
+  ///   Callout Rule.
   /// </summary>
   Callout,
-  
+
   /// <summary>
-  /// Connector Rule.
+  ///   Connector Rule.
   /// </summary>
-  Connector,
-  
+  Connector
 }

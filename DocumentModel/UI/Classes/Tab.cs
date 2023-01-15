@@ -1,80 +1,79 @@
 namespace DocumentModel.UI;
 
 /// <summary>
-/// Defines the Tab Class.
+///   Defines the Tab Class.
 /// </summary>
-public partial class Tab
+public class Tab
 {
   /// <summary>
-  /// id
+  ///   id
   /// </summary>
   public String? Id { get; set; }
-  
+
   /// <summary>
-  /// idQ
+  ///   idQ
   /// </summary>
   public String? IdQ { get; set; }
-  
+
   /// <summary>
-  /// idMso
+  ///   idMso
   /// </summary>
   public String? IdMso { get; set; }
-  
+
   /// <summary>
-  /// tag
+  ///   tag
   /// </summary>
   public String? Tag { get; set; }
-  
+
   /// <summary>
-  /// label
+  ///   label
   /// </summary>
   public String? Label { get; set; }
-  
+
   /// <summary>
-  /// getLabel
+  ///   getLabel
   /// </summary>
   public String? GetLabel { get; set; }
-  
+
   /// <summary>
-  /// insertAfterMso
+  ///   insertAfterMso
   /// </summary>
   public String? InsertAfterMso { get; set; }
-  
+
   /// <summary>
-  /// insertBeforeMso
+  ///   insertBeforeMso
   /// </summary>
   public String? InsertBeforeMso { get; set; }
-  
+
   /// <summary>
-  /// insertAfterQ
+  ///   insertAfterQ
   /// </summary>
   public String? InsertAfterQ { get; set; }
-  
+
   /// <summary>
-  /// insertBeforeQ
+  ///   insertBeforeQ
   /// </summary>
   public String? InsertBeforeQ { get; set; }
-  
+
   /// <summary>
-  /// visible
+  ///   visible
   /// </summary>
   public Boolean? Visible { get; set; }
-  
+
   /// <summary>
-  /// getVisible
+  ///   getVisible
   /// </summary>
   public String? GetVisible { get; set; }
-  
+
   /// <summary>
-  /// keytip
+  ///   keytip
   /// </summary>
   public String? Keytip { get; set; }
-  
+
   /// <summary>
-  /// getKeytip
+  ///   getKeytip
   /// </summary>
   public String? GetKeytip { get; set; }
-  
-  public DocumentModel.UI.Group? Group { get; set; }
-  
+
+  public Group? Group { get; set; }
 }

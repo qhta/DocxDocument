@@ -1,19 +1,22 @@
+using DocumentFormat.OpenXml.Office2010.Drawing;
+using ImageEffect = DocumentModel.Drawings.ImageEffect;
+
 namespace DocumentModel.OpenXml.Drawings;
 
 /// <summary>
-/// Defines the ImageLayer Class.
+///   Defines the ImageLayer Class.
 /// </summary>
 public static class ImageLayerConverter
 {
   /// <summary>
-  /// embed, this property is only available in Office 2010 and later.
+  ///   embed, this property is only available in Office 2010 and later.
   /// </summary>
-  public static String? GetEmbed(DocumentFormat.OpenXml.Office2010.Drawing.ImageLayer? openXmlElement)
+  public static String? GetEmbed(ImageLayer? openXmlElement)
   {
     return openXmlElement?.Embed?.Value;
   }
-  
-  public static void SetEmbed(DocumentFormat.OpenXml.Office2010.Drawing.ImageLayer? openXmlElement, String? value)
+
+  public static void SetEmbed(ImageLayer? openXmlElement, String? value)
   {
     if (openXmlElement != null)
       if (value != null)
@@ -21,15 +24,15 @@ public static class ImageLayerConverter
       else
         openXmlElement.Embed = null;
   }
-  
-  public static System.Collections.ObjectModel.Collection<DocumentModel.Drawings.ImageEffect>? GetImageEffects(DocumentFormat.OpenXml.Office2010.Drawing.ImageLayer? openXmlElement)
+
+  public static Collection<ImageEffect>? GetImageEffects(ImageLayer? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var collection = new System.Collections.ObjectModel.Collection<DocumentModel.Drawings.ImageEffect>();
+      var collection = new Collection<ImageEffect>();
       foreach (var item in openXmlElement.Elements<DocumentFormat.OpenXml.Office2010.Drawing.ImageEffect>())
       {
-        var newItem = DocumentModel.OpenXml.Drawings.ImageEffectConverter.CreateModelElement(item);
+        var newItem = ImageEffectConverter.CreateModelElement(item);
         if (newItem != null)
           collection.Add(newItem);
       }
@@ -37,25 +40,23 @@ public static class ImageLayerConverter
     }
     return null;
   }
-  
-  public static void SetImageEffects(DocumentFormat.OpenXml.Office2010.Drawing.ImageLayer? openXmlElement, System.Collections.ObjectModel.Collection<DocumentModel.Drawings.ImageEffect>? value)
+
+  public static void SetImageEffects(ImageLayer? openXmlElement, Collection<ImageEffect>? value)
   {
     if (openXmlElement != null)
     {
       openXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Office2010.Drawing.ImageEffect>();
       if (value != null)
-      {
         foreach (var item in value)
         {
-          var newItem = DocumentModel.OpenXml.Drawings.ImageEffectConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2010.Drawing.ImageEffect>(item);
+          var newItem = ImageEffectConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2010.Drawing.ImageEffect>(item);
           if (newItem != null)
             openXmlElement.AddChild(newItem);
         }
-      }
     }
   }
-  
-  public static DocumentModel.Drawings.ImageLayer? CreateModelElement(DocumentFormat.OpenXml.Office2010.Drawing.ImageLayer? openXmlElement)
+
+  public static DocumentModel.Drawings.ImageLayer? CreateModelElement(ImageLayer? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -66,9 +67,9 @@ public static class ImageLayerConverter
     }
     return null;
   }
-  
+
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.ImageLayer? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Office2010.Drawing.ImageLayer, new()
+    where OpenXmlElementType : ImageLayer, new()
   {
     if (value != null)
     {

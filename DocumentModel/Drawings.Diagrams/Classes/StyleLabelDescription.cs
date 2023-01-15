@@ -1,18 +1,17 @@
 namespace DocumentModel.Drawings.Diagrams;
 
 /// <summary>
-/// Style Label Description.
+///   Style Label Description.
 /// </summary>
-public partial class StyleLabelDescription
+public class StyleLabelDescription
 {
   /// <summary>
-  /// Natural Language
+  ///   Natural Language
   /// </summary>
   public String? Language { get; set; }
-  
+
   /// <summary>
-  /// Description Value
+  ///   Description Value
   /// </summary>
   public String? Val { get; set; }
-  
 }

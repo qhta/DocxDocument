@@ -1,21 +1,23 @@
+using DocumentFormat.OpenXml.Vml.Office;
+
 namespace DocumentModel.OpenXml.Vml;
 
 /// <summary>
-/// Ink.
+///   Ink.
 /// </summary>
 public static class InkConverter
 {
   /// <summary>
-  /// Ink Data
+  ///   Ink Data
   /// </summary>
-  public static Byte[]? GetInkData(DocumentFormat.OpenXml.Vml.Office.Ink? openXmlElement)
+  public static Byte[]? GetInkData(Ink? openXmlElement)
   {
     if (openXmlElement?.InkData?.Value != null)
       return Convert.FromBase64String(openXmlElement.InkData.Value);
     return null;
   }
-  
-  public static void SetInkData(DocumentFormat.OpenXml.Vml.Office.Ink? openXmlElement, Byte[]? value)
+
+  public static void SetInkData(Ink? openXmlElement, Byte[]? value)
   {
     if (openXmlElement != null)
     {
@@ -25,16 +27,16 @@ public static class InkConverter
         openXmlElement.InkData = null;
     }
   }
-  
+
   /// <summary>
-  /// Annotation Flag
+  ///   Annotation Flag
   /// </summary>
-  public static Boolean? GetAnnotationFlag(DocumentFormat.OpenXml.Vml.Office.Ink? openXmlElement)
+  public static Boolean? GetAnnotationFlag(Ink? openXmlElement)
   {
     return openXmlElement?.AnnotationFlag?.Value;
   }
-  
-  public static void SetAnnotationFlag(DocumentFormat.OpenXml.Vml.Office.Ink? openXmlElement, Boolean? value)
+
+  public static void SetAnnotationFlag(Ink? openXmlElement, Boolean? value)
   {
     if (openXmlElement != null)
       if (value != null)
@@ -42,8 +44,8 @@ public static class InkConverter
       else
         openXmlElement.AnnotationFlag = null;
   }
-  
-  public static DocumentModel.Vml.Ink? CreateModelElement(DocumentFormat.OpenXml.Vml.Office.Ink? openXmlElement)
+
+  public static DocumentModel.Vml.Ink? CreateModelElement(Ink? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -54,9 +56,9 @@ public static class InkConverter
     }
     return null;
   }
-  
+
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Vml.Ink? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Vml.Office.Ink, new()
+    where OpenXmlElementType : Ink, new()
   {
     if (value != null)
     {

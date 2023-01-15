@@ -1,18 +1,17 @@
 namespace DocumentModel.Drawings.Diagrams;
 
 /// <summary>
-/// Parameter.
+///   Parameter.
 /// </summary>
-public partial class Parameter
+public class Parameter
 {
   /// <summary>
-  /// Parameter Type
+  ///   Parameter Type
   /// </summary>
-  public DocumentModel.Drawings.Diagrams.ParameterIdKind? Type { get; set; }
-  
+  public ParameterIdKind? Type { get; set; }
+
   /// <summary>
-  /// Value
+  ///   Value
   /// </summary>
   public String? Val { get; set; }
-  
 }

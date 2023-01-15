@@ -1,73 +1,75 @@
+using DocumentFormat.OpenXml.Office2010.Drawing.Charts;
+
 namespace DocumentModel.OpenXml.Drawings.Charts;
 
 /// <summary>
-/// Defines the SketchOptions Class.
+///   Defines the SketchOptions Class.
 /// </summary>
 public static class SketchOptionsConverter
 {
   /// <summary>
-  /// InSketchMode.
+  ///   InSketchMode.
   /// </summary>
-  public static Boolean? GetInSketchMode(DocumentFormat.OpenXml.Office2010.Drawing.Charts.SketchOptions? openXmlElement)
+  public static Boolean? GetInSketchMode(SketchOptions? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2010.Drawing.Charts.InSketchMode>();
+      var itemElement = openXmlElement.GetFirstChild<InSketchMode>();
       return itemElement != null;
     }
     return null;
   }
-  
-  public static void SetInSketchMode(DocumentFormat.OpenXml.Office2010.Drawing.Charts.SketchOptions? openXmlElement, Boolean? value)
+
+  public static void SetInSketchMode(SketchOptions? openXmlElement, Boolean? value)
   {
     if (openXmlElement != null)
     {
       if (value == false)
       {
-        var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2010.Drawing.Charts.InSketchMode>();
+        var itemElement = openXmlElement.GetFirstChild<InSketchMode>();
         if (itemElement != null)
           itemElement.Remove();
       }
       if (value == true)
       {
-        var itemElement = new DocumentFormat.OpenXml.Office2010.Drawing.Charts.InSketchMode();
+        var itemElement = new InSketchMode();
         openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
+
   /// <summary>
-  /// ShowSketchButton.
+  ///   ShowSketchButton.
   /// </summary>
-  public static Boolean? GetShowSketchButton(DocumentFormat.OpenXml.Office2010.Drawing.Charts.SketchOptions? openXmlElement)
+  public static Boolean? GetShowSketchButton(SketchOptions? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2010.Drawing.Charts.ShowSketchButton>();
+      var itemElement = openXmlElement.GetFirstChild<ShowSketchButton>();
       return itemElement != null;
     }
     return null;
   }
-  
-  public static void SetShowSketchButton(DocumentFormat.OpenXml.Office2010.Drawing.Charts.SketchOptions? openXmlElement, Boolean? value)
+
+  public static void SetShowSketchButton(SketchOptions? openXmlElement, Boolean? value)
   {
     if (openXmlElement != null)
     {
       if (value == false)
       {
-        var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2010.Drawing.Charts.ShowSketchButton>();
+        var itemElement = openXmlElement.GetFirstChild<ShowSketchButton>();
         if (itemElement != null)
           itemElement.Remove();
       }
       if (value == true)
       {
-        var itemElement = new DocumentFormat.OpenXml.Office2010.Drawing.Charts.ShowSketchButton();
+        var itemElement = new ShowSketchButton();
         openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static DocumentModel.Drawings.Charts.SketchOptions? CreateModelElement(DocumentFormat.OpenXml.Office2010.Drawing.Charts.SketchOptions? openXmlElement)
+
+  public static DocumentModel.Drawings.Charts.SketchOptions? CreateModelElement(SketchOptions? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -78,9 +80,9 @@ public static class SketchOptionsConverter
     }
     return null;
   }
-  
+
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.Charts.SketchOptions? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Office2010.Drawing.Charts.SketchOptions, new()
+    where OpenXmlElementType : SketchOptions, new()
   {
     if (value != null)
     {

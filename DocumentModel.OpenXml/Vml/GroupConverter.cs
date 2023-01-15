@@ -1,18 +1,38 @@
+using DocumentFormat.OpenXml.Vml;
+using DocumentFormat.OpenXml.Vml.Office;
+using DocumentFormat.OpenXml.Vml.Wordprocessing;
+using DocumentModel.OpenXml.Wordprocessing.Vml;
+using DocumentModel.Vml;
+using Arc = DocumentModel.Vml.Arc;
+using ClipPath = DocumentModel.Vml.ClipPath;
+using Curve = DocumentModel.Vml.Curve;
+using Diagram = DocumentModel.Vml.Diagram;
+using ImageFile = DocumentModel.Vml.ImageFile;
+using Line = DocumentModel.Vml.Line;
+using Lock = DocumentModel.Vml.Lock;
+using Oval = DocumentModel.Vml.Oval;
+using PolyLine = DocumentModel.Vml.PolyLine;
+using Rectangle = DocumentModel.Vml.Rectangle;
+using RoundRectangle = DocumentModel.Vml.RoundRectangle;
+using Shape = DocumentModel.Vml.Shape;
+using Shapetype = DocumentModel.Vml.Shapetype;
+using TextWrap = DocumentModel.Wordprocessing.Vml.TextWrap;
+
 namespace DocumentModel.OpenXml.Vml;
 
 /// <summary>
-/// Shape Group.
+///   Shape Group.
 /// </summary>
 public static class GroupConverter
 {
   /// <summary>
-  /// Unique Identifier
+  ///   Unique Identifier
   /// </summary>
   public static String? GetId(DocumentFormat.OpenXml.Vml.Group? openXmlElement)
   {
     return openXmlElement?.Id?.Value;
   }
-  
+
   public static void SetId(DocumentFormat.OpenXml.Vml.Group? openXmlElement, String? value)
   {
     if (openXmlElement != null)
@@ -21,15 +41,15 @@ public static class GroupConverter
       else
         openXmlElement.Id = null;
   }
-  
+
   /// <summary>
-  /// Shape Styling Properties
+  ///   Shape Styling Properties
   /// </summary>
   public static String? GetStyle(DocumentFormat.OpenXml.Vml.Group? openXmlElement)
   {
     return openXmlElement?.Style?.Value;
   }
-  
+
   public static void SetStyle(DocumentFormat.OpenXml.Vml.Group? openXmlElement, String? value)
   {
     if (openXmlElement != null)
@@ -38,15 +58,15 @@ public static class GroupConverter
       else
         openXmlElement.Style = null;
   }
-  
+
   /// <summary>
-  /// Hyperlink Target
+  ///   Hyperlink Target
   /// </summary>
   public static String? GetHref(DocumentFormat.OpenXml.Vml.Group? openXmlElement)
   {
     return openXmlElement?.Href?.Value;
   }
-  
+
   public static void SetHref(DocumentFormat.OpenXml.Vml.Group? openXmlElement, String? value)
   {
     if (openXmlElement != null)
@@ -55,15 +75,15 @@ public static class GroupConverter
       else
         openXmlElement.Href = null;
   }
-  
+
   /// <summary>
-  /// Hyperlink Display Target
+  ///   Hyperlink Display Target
   /// </summary>
   public static String? GetTarget(DocumentFormat.OpenXml.Vml.Group? openXmlElement)
   {
     return openXmlElement?.Target?.Value;
   }
-  
+
   public static void SetTarget(DocumentFormat.OpenXml.Vml.Group? openXmlElement, String? value)
   {
     if (openXmlElement != null)
@@ -72,15 +92,15 @@ public static class GroupConverter
       else
         openXmlElement.Target = null;
   }
-  
+
   /// <summary>
-  /// CSS Reference
+  ///   CSS Reference
   /// </summary>
   public static String? GetClass(DocumentFormat.OpenXml.Vml.Group? openXmlElement)
   {
     return openXmlElement?.Class?.Value;
   }
-  
+
   public static void SetClass(DocumentFormat.OpenXml.Vml.Group? openXmlElement, String? value)
   {
     if (openXmlElement != null)
@@ -89,15 +109,15 @@ public static class GroupConverter
       else
         openXmlElement.Class = null;
   }
-  
+
   /// <summary>
-  /// Shape Title
+  ///   Shape Title
   /// </summary>
   public static String? GetTitle(DocumentFormat.OpenXml.Vml.Group? openXmlElement)
   {
     return openXmlElement?.Title?.Value;
   }
-  
+
   public static void SetTitle(DocumentFormat.OpenXml.Vml.Group? openXmlElement, String? value)
   {
     if (openXmlElement != null)
@@ -106,15 +126,15 @@ public static class GroupConverter
       else
         openXmlElement.Title = null;
   }
-  
+
   /// <summary>
-  /// Alternate Text
+  ///   Alternate Text
   /// </summary>
   public static String? GetAlternate(DocumentFormat.OpenXml.Vml.Group? openXmlElement)
   {
     return openXmlElement?.Alternate?.Value;
   }
-  
+
   public static void SetAlternate(DocumentFormat.OpenXml.Vml.Group? openXmlElement, String? value)
   {
     if (openXmlElement != null)
@@ -123,15 +143,15 @@ public static class GroupConverter
       else
         openXmlElement.Alternate = null;
   }
-  
+
   /// <summary>
-  /// Coordinate Space Size
+  ///   Coordinate Space Size
   /// </summary>
   public static String? GetCoordinateSize(DocumentFormat.OpenXml.Vml.Group? openXmlElement)
   {
     return openXmlElement?.CoordinateSize?.Value;
   }
-  
+
   public static void SetCoordinateSize(DocumentFormat.OpenXml.Vml.Group? openXmlElement, String? value)
   {
     if (openXmlElement != null)
@@ -140,15 +160,15 @@ public static class GroupConverter
       else
         openXmlElement.CoordinateSize = null;
   }
-  
+
   /// <summary>
-  /// Coordinate Space Origin
+  ///   Coordinate Space Origin
   /// </summary>
   public static String? GetCoordinateOrigin(DocumentFormat.OpenXml.Vml.Group? openXmlElement)
   {
     return openXmlElement?.CoordinateOrigin?.Value;
   }
-  
+
   public static void SetCoordinateOrigin(DocumentFormat.OpenXml.Vml.Group? openXmlElement, String? value)
   {
     if (openXmlElement != null)
@@ -157,15 +177,15 @@ public static class GroupConverter
       else
         openXmlElement.CoordinateOrigin = null;
   }
-  
+
   /// <summary>
-  /// Shape Bounding Polygon
+  ///   Shape Bounding Polygon
   /// </summary>
   public static String? GetWrapCoordinates(DocumentFormat.OpenXml.Vml.Group? openXmlElement)
   {
     return openXmlElement?.WrapCoordinates?.Value;
   }
-  
+
   public static void SetWrapCoordinates(DocumentFormat.OpenXml.Vml.Group? openXmlElement, String? value)
   {
     if (openXmlElement != null)
@@ -174,15 +194,15 @@ public static class GroupConverter
       else
         openXmlElement.WrapCoordinates = null;
   }
-  
+
   /// <summary>
-  /// Print Toggle
+  ///   Print Toggle
   /// </summary>
   public static Boolean? GetPrint(DocumentFormat.OpenXml.Vml.Group? openXmlElement)
   {
     return openXmlElement?.Print?.Value;
   }
-  
+
   public static void SetPrint(DocumentFormat.OpenXml.Vml.Group? openXmlElement, Boolean? value)
   {
     if (openXmlElement != null)
@@ -191,15 +211,15 @@ public static class GroupConverter
       else
         openXmlElement.Print = null;
   }
-  
+
   /// <summary>
-  /// spid
+  ///   spid
   /// </summary>
   public static String? GetOptionalString(DocumentFormat.OpenXml.Vml.Group? openXmlElement)
   {
     return openXmlElement?.OptionalString?.Value;
   }
-  
+
   public static void SetOptionalString(DocumentFormat.OpenXml.Vml.Group? openXmlElement, String? value)
   {
     if (openXmlElement != null)
@@ -208,15 +228,15 @@ public static class GroupConverter
       else
         openXmlElement.OptionalString = null;
   }
-  
+
   /// <summary>
-  /// oned
+  ///   oned
   /// </summary>
   public static Boolean? GetOned(DocumentFormat.OpenXml.Vml.Group? openXmlElement)
   {
     return openXmlElement?.Oned?.Value;
   }
-  
+
   public static void SetOned(DocumentFormat.OpenXml.Vml.Group? openXmlElement, Boolean? value)
   {
     if (openXmlElement != null)
@@ -225,29 +245,29 @@ public static class GroupConverter
       else
         openXmlElement.Oned = null;
   }
-  
+
   /// <summary>
-  /// regroupid
+  ///   regroupid
   /// </summary>
   public static Int64? GetRegroupId(DocumentFormat.OpenXml.Vml.Group? openXmlElement)
   {
     return openXmlElement?.RegroupId?.Value;
   }
-  
+
   public static void SetRegroupId(DocumentFormat.OpenXml.Vml.Group? openXmlElement, Int64? value)
   {
     if (openXmlElement != null)
       openXmlElement.RegroupId = value;
   }
-  
+
   /// <summary>
-  /// doubleclicknotify
+  ///   doubleclicknotify
   /// </summary>
   public static Boolean? GetDoubleClickNotify(DocumentFormat.OpenXml.Vml.Group? openXmlElement)
   {
     return openXmlElement?.DoubleClickNotify?.Value;
   }
-  
+
   public static void SetDoubleClickNotify(DocumentFormat.OpenXml.Vml.Group? openXmlElement, Boolean? value)
   {
     if (openXmlElement != null)
@@ -256,15 +276,15 @@ public static class GroupConverter
       else
         openXmlElement.DoubleClickNotify = null;
   }
-  
+
   /// <summary>
-  /// button
+  ///   button
   /// </summary>
   public static Boolean? GetButton(DocumentFormat.OpenXml.Vml.Group? openXmlElement)
   {
     return openXmlElement?.Button?.Value;
   }
-  
+
   public static void SetButton(DocumentFormat.OpenXml.Vml.Group? openXmlElement, Boolean? value)
   {
     if (openXmlElement != null)
@@ -273,15 +293,15 @@ public static class GroupConverter
       else
         openXmlElement.Button = null;
   }
-  
+
   /// <summary>
-  /// userhidden
+  ///   userhidden
   /// </summary>
   public static Boolean? GetUserHidden(DocumentFormat.OpenXml.Vml.Group? openXmlElement)
   {
     return openXmlElement?.UserHidden?.Value;
   }
-  
+
   public static void SetUserHidden(DocumentFormat.OpenXml.Vml.Group? openXmlElement, Boolean? value)
   {
     if (openXmlElement != null)
@@ -290,15 +310,15 @@ public static class GroupConverter
       else
         openXmlElement.UserHidden = null;
   }
-  
+
   /// <summary>
-  /// bullet
+  ///   bullet
   /// </summary>
   public static Boolean? GetBullet(DocumentFormat.OpenXml.Vml.Group? openXmlElement)
   {
     return openXmlElement?.Bullet?.Value;
   }
-  
+
   public static void SetBullet(DocumentFormat.OpenXml.Vml.Group? openXmlElement, Boolean? value)
   {
     if (openXmlElement != null)
@@ -307,15 +327,15 @@ public static class GroupConverter
       else
         openXmlElement.Bullet = null;
   }
-  
+
   /// <summary>
-  /// hr
+  ///   hr
   /// </summary>
   public static Boolean? GetHorizontal(DocumentFormat.OpenXml.Vml.Group? openXmlElement)
   {
     return openXmlElement?.Horizontal?.Value;
   }
-  
+
   public static void SetHorizontal(DocumentFormat.OpenXml.Vml.Group? openXmlElement, Boolean? value)
   {
     if (openXmlElement != null)
@@ -324,15 +344,15 @@ public static class GroupConverter
       else
         openXmlElement.Horizontal = null;
   }
-  
+
   /// <summary>
-  /// hrstd
+  ///   hrstd
   /// </summary>
   public static Boolean? GetHorizontalStandard(DocumentFormat.OpenXml.Vml.Group? openXmlElement)
   {
     return openXmlElement?.HorizontalStandard?.Value;
   }
-  
+
   public static void SetHorizontalStandard(DocumentFormat.OpenXml.Vml.Group? openXmlElement, Boolean? value)
   {
     if (openXmlElement != null)
@@ -341,15 +361,15 @@ public static class GroupConverter
       else
         openXmlElement.HorizontalStandard = null;
   }
-  
+
   /// <summary>
-  /// hrnoshade
+  ///   hrnoshade
   /// </summary>
   public static Boolean? GetHorizontalNoShade(DocumentFormat.OpenXml.Vml.Group? openXmlElement)
   {
     return openXmlElement?.HorizontalNoShade?.Value;
   }
-  
+
   public static void SetHorizontalNoShade(DocumentFormat.OpenXml.Vml.Group? openXmlElement, Boolean? value)
   {
     if (openXmlElement != null)
@@ -358,43 +378,43 @@ public static class GroupConverter
       else
         openXmlElement.HorizontalNoShade = null;
   }
-  
+
   /// <summary>
-  /// hrpct
+  ///   hrpct
   /// </summary>
   public static Single? GetHorizontalPercentage(DocumentFormat.OpenXml.Vml.Group? openXmlElement)
   {
     return openXmlElement?.HorizontalPercentage?.Value;
   }
-  
+
   public static void SetHorizontalPercentage(DocumentFormat.OpenXml.Vml.Group? openXmlElement, Single? value)
   {
     if (openXmlElement != null)
       openXmlElement.HorizontalPercentage = value;
   }
-  
+
   /// <summary>
-  /// hralign
+  ///   hralign
   /// </summary>
-  public static DocumentModel.Vml.HorizontalRuleAlignmentKind? GetHorizontalAlignment(DocumentFormat.OpenXml.Vml.Group? openXmlElement)
+  public static HorizontalRuleAlignmentKind? GetHorizontalAlignment(DocumentFormat.OpenXml.Vml.Group? openXmlElement)
   {
-    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Vml.Office.HorizontalRuleAlignmentValues, DocumentModel.Vml.HorizontalRuleAlignmentKind>(openXmlElement?.HorizontalAlignment?.Value);
+    return EnumValueConverter.GetValue<HorizontalRuleAlignmentValues, HorizontalRuleAlignmentKind>(openXmlElement?.HorizontalAlignment?.Value);
   }
-  
-  public static void SetHorizontalAlignment(DocumentFormat.OpenXml.Vml.Group? openXmlElement, DocumentModel.Vml.HorizontalRuleAlignmentKind? value)
+
+  public static void SetHorizontalAlignment(DocumentFormat.OpenXml.Vml.Group? openXmlElement, HorizontalRuleAlignmentKind? value)
   {
     if (openXmlElement != null)
-      openXmlElement.HorizontalAlignment = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Vml.Office.HorizontalRuleAlignmentValues, DocumentModel.Vml.HorizontalRuleAlignmentKind>(value);
+      openXmlElement.HorizontalAlignment = EnumValueConverter.CreateEnumValue<HorizontalRuleAlignmentValues, HorizontalRuleAlignmentKind>(value);
   }
-  
+
   /// <summary>
-  /// allowincell
+  ///   allowincell
   /// </summary>
   public static Boolean? GetAllowInCell(DocumentFormat.OpenXml.Vml.Group? openXmlElement)
   {
     return openXmlElement?.AllowInCell?.Value;
   }
-  
+
   public static void SetAllowInCell(DocumentFormat.OpenXml.Vml.Group? openXmlElement, Boolean? value)
   {
     if (openXmlElement != null)
@@ -403,15 +423,15 @@ public static class GroupConverter
       else
         openXmlElement.AllowInCell = null;
   }
-  
+
   /// <summary>
-  /// allowoverlap
+  ///   allowoverlap
   /// </summary>
   public static Boolean? GetAllowOverlap(DocumentFormat.OpenXml.Vml.Group? openXmlElement)
   {
     return openXmlElement?.AllowOverlap?.Value;
   }
-  
+
   public static void SetAllowOverlap(DocumentFormat.OpenXml.Vml.Group? openXmlElement, Boolean? value)
   {
     if (openXmlElement != null)
@@ -420,15 +440,15 @@ public static class GroupConverter
       else
         openXmlElement.AllowOverlap = null;
   }
-  
+
   /// <summary>
-  /// userdrawn
+  ///   userdrawn
   /// </summary>
   public static Boolean? GetUserDrawn(DocumentFormat.OpenXml.Vml.Group? openXmlElement)
   {
     return openXmlElement?.UserDrawn?.Value;
   }
-  
+
   public static void SetUserDrawn(DocumentFormat.OpenXml.Vml.Group? openXmlElement, Boolean? value)
   {
     if (openXmlElement != null)
@@ -437,65 +457,65 @@ public static class GroupConverter
       else
         openXmlElement.UserDrawn = null;
   }
-  
+
   /// <summary>
-  /// dgmlayout
+  ///   dgmlayout
   /// </summary>
   public static Int64? GetDiagramLayout(DocumentFormat.OpenXml.Vml.Group? openXmlElement)
   {
     return openXmlElement?.DiagramLayout?.Value;
   }
-  
+
   public static void SetDiagramLayout(DocumentFormat.OpenXml.Vml.Group? openXmlElement, Int64? value)
   {
     if (openXmlElement != null)
       openXmlElement.DiagramLayout = value;
   }
-  
+
   /// <summary>
-  /// dgmnodekind
+  ///   dgmnodekind
   /// </summary>
   public static Int64? GetDiagramNodeKind(DocumentFormat.OpenXml.Vml.Group? openXmlElement)
   {
     return openXmlElement?.DiagramNodeKind?.Value;
   }
-  
+
   public static void SetDiagramNodeKind(DocumentFormat.OpenXml.Vml.Group? openXmlElement, Int64? value)
   {
     if (openXmlElement != null)
       openXmlElement.DiagramNodeKind = value;
   }
-  
+
   /// <summary>
-  /// dgmlayoutmru
+  ///   dgmlayoutmru
   /// </summary>
   public static Int64? GetDiagramLayoutMostRecentUsed(DocumentFormat.OpenXml.Vml.Group? openXmlElement)
   {
     return openXmlElement?.DiagramLayoutMostRecentUsed?.Value;
   }
-  
+
   public static void SetDiagramLayoutMostRecentUsed(DocumentFormat.OpenXml.Vml.Group? openXmlElement, Int64? value)
   {
     if (openXmlElement != null)
       openXmlElement.DiagramLayoutMostRecentUsed = value;
   }
-  
+
   /// <summary>
-  /// insetmode
+  ///   insetmode
   /// </summary>
-  public static DocumentModel.Vml.InsetMarginKind? GetInsetMode(DocumentFormat.OpenXml.Vml.Group? openXmlElement)
+  public static InsetMarginKind? GetInsetMode(DocumentFormat.OpenXml.Vml.Group? openXmlElement)
   {
-    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Vml.Office.InsetMarginValues, DocumentModel.Vml.InsetMarginKind>(openXmlElement?.InsetMode?.Value);
+    return EnumValueConverter.GetValue<InsetMarginValues, InsetMarginKind>(openXmlElement?.InsetMode?.Value);
   }
-  
-  public static void SetInsetMode(DocumentFormat.OpenXml.Vml.Group? openXmlElement, DocumentModel.Vml.InsetMarginKind? value)
+
+  public static void SetInsetMode(DocumentFormat.OpenXml.Vml.Group? openXmlElement, InsetMarginKind? value)
   {
     if (openXmlElement != null)
-      openXmlElement.InsetMode = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Vml.Office.InsetMarginValues, DocumentModel.Vml.InsetMarginKind>(value);
+      openXmlElement.InsetMode = EnumValueConverter.CreateEnumValue<InsetMarginValues, InsetMarginKind>(value);
   }
-  
+
   /// <summary>
-  /// Encoded Package
+  ///   Encoded Package
   /// </summary>
   public static Byte[]? GetGfxdata(DocumentFormat.OpenXml.Vml.Group? openXmlElement)
   {
@@ -503,7 +523,7 @@ public static class GroupConverter
       return Convert.FromBase64String(openXmlElement.Gfxdata.Value);
     return null;
   }
-  
+
   public static void SetGfxdata(DocumentFormat.OpenXml.Vml.Group? openXmlElement, Byte[]? value)
   {
     if (openXmlElement != null)
@@ -514,29 +534,29 @@ public static class GroupConverter
         openXmlElement.Gfxdata = null;
     }
   }
-  
+
   /// <summary>
-  /// Group Diagram Type
+  ///   Group Diagram Type
   /// </summary>
-  public static DocumentModel.Vml.EditAsKind? GetEditAs(DocumentFormat.OpenXml.Vml.Group? openXmlElement)
+  public static EditAsKind? GetEditAs(DocumentFormat.OpenXml.Vml.Group? openXmlElement)
   {
-    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Vml.EditAsValues, DocumentModel.Vml.EditAsKind>(openXmlElement?.EditAs?.Value);
+    return EnumValueConverter.GetValue<EditAsValues, EditAsKind>(openXmlElement?.EditAs?.Value);
   }
-  
-  public static void SetEditAs(DocumentFormat.OpenXml.Vml.Group? openXmlElement, DocumentModel.Vml.EditAsKind? value)
+
+  public static void SetEditAs(DocumentFormat.OpenXml.Vml.Group? openXmlElement, EditAsKind? value)
   {
     if (openXmlElement != null)
-      openXmlElement.EditAs = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Vml.EditAsValues, DocumentModel.Vml.EditAsKind>(value);
+      openXmlElement.EditAs = EnumValueConverter.CreateEnumValue<EditAsValues, EditAsKind>(value);
   }
-  
+
   /// <summary>
-  /// Table Properties
+  ///   Table Properties
   /// </summary>
   public static String? GetTableProperties(DocumentFormat.OpenXml.Vml.Group? openXmlElement)
   {
     return openXmlElement?.TableProperties?.Value;
   }
-  
+
   public static void SetTableProperties(DocumentFormat.OpenXml.Vml.Group? openXmlElement, String? value)
   {
     if (openXmlElement != null)
@@ -545,15 +565,15 @@ public static class GroupConverter
       else
         openXmlElement.TableProperties = null;
   }
-  
+
   /// <summary>
-  /// Table Row Height Limits
+  ///   Table Row Height Limits
   /// </summary>
   public static String? GetTableLimits(DocumentFormat.OpenXml.Vml.Group? openXmlElement)
   {
     return openXmlElement?.TableLimits?.Value;
   }
-  
+
   public static void SetTableLimits(DocumentFormat.OpenXml.Vml.Group? openXmlElement, String? value)
   {
     if (openXmlElement != null)
@@ -562,15 +582,15 @@ public static class GroupConverter
       else
         openXmlElement.TableLimits = null;
   }
-  
+
   public static DocumentModel.Vml.Group? GetChildGroup(DocumentFormat.OpenXml.Vml.Group? openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Vml.Group>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Vml.GroupConverter.CreateModelElement(itemElement);
+      return CreateModelElement(itemElement);
     return null;
   }
-  
+
   public static void SetChildGroup(DocumentFormat.OpenXml.Vml.Group? openXmlElement, DocumentModel.Vml.Group? value)
   {
     if (openXmlElement != null)
@@ -580,22 +600,22 @@ public static class GroupConverter
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Vml.GroupConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Vml.Group>(value);
+        itemElement = CreateOpenXmlElement<DocumentFormat.OpenXml.Vml.Group>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static DocumentModel.Vml.Shape? GetShape(DocumentFormat.OpenXml.Vml.Group? openXmlElement)
+
+  public static Shape? GetShape(DocumentFormat.OpenXml.Vml.Group? openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Vml.Shape>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Vml.ShapeConverter.CreateModelElement(itemElement);
+      return ShapeConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetShape(DocumentFormat.OpenXml.Vml.Group? openXmlElement, DocumentModel.Vml.Shape? value)
+
+  public static void SetShape(DocumentFormat.OpenXml.Vml.Group? openXmlElement, Shape? value)
   {
     if (openXmlElement != null)
     {
@@ -604,22 +624,22 @@ public static class GroupConverter
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Vml.ShapeConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Vml.Shape>(value);
+        itemElement = ShapeConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Vml.Shape>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static DocumentModel.Vml.Shapetype? GetShapetype(DocumentFormat.OpenXml.Vml.Group? openXmlElement)
+
+  public static Shapetype? GetShapetype(DocumentFormat.OpenXml.Vml.Group? openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Vml.Shapetype>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Vml.ShapetypeConverter.CreateModelElement(itemElement);
+      return ShapetypeConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetShapetype(DocumentFormat.OpenXml.Vml.Group? openXmlElement, DocumentModel.Vml.Shapetype? value)
+
+  public static void SetShapetype(DocumentFormat.OpenXml.Vml.Group? openXmlElement, Shapetype? value)
   {
     if (openXmlElement != null)
     {
@@ -628,22 +648,22 @@ public static class GroupConverter
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Vml.ShapetypeConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Vml.Shapetype>(value);
+        itemElement = ShapetypeConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Vml.Shapetype>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static DocumentModel.Vml.Arc? GetArc(DocumentFormat.OpenXml.Vml.Group? openXmlElement)
+
+  public static Arc? GetArc(DocumentFormat.OpenXml.Vml.Group? openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Vml.Arc>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Vml.ArcConverter.CreateModelElement(itemElement);
+      return ArcConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetArc(DocumentFormat.OpenXml.Vml.Group? openXmlElement, DocumentModel.Vml.Arc? value)
+
+  public static void SetArc(DocumentFormat.OpenXml.Vml.Group? openXmlElement, Arc? value)
   {
     if (openXmlElement != null)
     {
@@ -652,22 +672,22 @@ public static class GroupConverter
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Vml.ArcConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Vml.Arc>(value);
+        itemElement = ArcConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Vml.Arc>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static DocumentModel.Vml.Curve? GetCurve(DocumentFormat.OpenXml.Vml.Group? openXmlElement)
+
+  public static Curve? GetCurve(DocumentFormat.OpenXml.Vml.Group? openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Vml.Curve>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Vml.CurveConverter.CreateModelElement(itemElement);
+      return CurveConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetCurve(DocumentFormat.OpenXml.Vml.Group? openXmlElement, DocumentModel.Vml.Curve? value)
+
+  public static void SetCurve(DocumentFormat.OpenXml.Vml.Group? openXmlElement, Curve? value)
   {
     if (openXmlElement != null)
     {
@@ -676,22 +696,22 @@ public static class GroupConverter
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Vml.CurveConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Vml.Curve>(value);
+        itemElement = CurveConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Vml.Curve>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static DocumentModel.Vml.ImageFile? GetImageFile(DocumentFormat.OpenXml.Vml.Group? openXmlElement)
+
+  public static ImageFile? GetImageFile(DocumentFormat.OpenXml.Vml.Group? openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Vml.ImageFile>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Vml.ImageFileConverter.CreateModelElement(itemElement);
+      return ImageFileConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetImageFile(DocumentFormat.OpenXml.Vml.Group? openXmlElement, DocumentModel.Vml.ImageFile? value)
+
+  public static void SetImageFile(DocumentFormat.OpenXml.Vml.Group? openXmlElement, ImageFile? value)
   {
     if (openXmlElement != null)
     {
@@ -700,22 +720,22 @@ public static class GroupConverter
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Vml.ImageFileConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Vml.ImageFile>(value);
+        itemElement = ImageFileConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Vml.ImageFile>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static DocumentModel.Vml.Line? GetLine(DocumentFormat.OpenXml.Vml.Group? openXmlElement)
+
+  public static Line? GetLine(DocumentFormat.OpenXml.Vml.Group? openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Vml.Line>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Vml.LineConverter.CreateModelElement(itemElement);
+      return LineConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetLine(DocumentFormat.OpenXml.Vml.Group? openXmlElement, DocumentModel.Vml.Line? value)
+
+  public static void SetLine(DocumentFormat.OpenXml.Vml.Group? openXmlElement, Line? value)
   {
     if (openXmlElement != null)
     {
@@ -724,22 +744,22 @@ public static class GroupConverter
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Vml.LineConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Vml.Line>(value);
+        itemElement = LineConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Vml.Line>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static DocumentModel.Vml.Oval? GetOval(DocumentFormat.OpenXml.Vml.Group? openXmlElement)
+
+  public static Oval? GetOval(DocumentFormat.OpenXml.Vml.Group? openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Vml.Oval>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Vml.OvalConverter.CreateModelElement(itemElement);
+      return OvalConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetOval(DocumentFormat.OpenXml.Vml.Group? openXmlElement, DocumentModel.Vml.Oval? value)
+
+  public static void SetOval(DocumentFormat.OpenXml.Vml.Group? openXmlElement, Oval? value)
   {
     if (openXmlElement != null)
     {
@@ -748,22 +768,22 @@ public static class GroupConverter
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Vml.OvalConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Vml.Oval>(value);
+        itemElement = OvalConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Vml.Oval>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static DocumentModel.Vml.PolyLine? GetPolyLine(DocumentFormat.OpenXml.Vml.Group? openXmlElement)
+
+  public static PolyLine? GetPolyLine(DocumentFormat.OpenXml.Vml.Group? openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Vml.PolyLine>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Vml.PolyLineConverter.CreateModelElement(itemElement);
+      return PolyLineConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetPolyLine(DocumentFormat.OpenXml.Vml.Group? openXmlElement, DocumentModel.Vml.PolyLine? value)
+
+  public static void SetPolyLine(DocumentFormat.OpenXml.Vml.Group? openXmlElement, PolyLine? value)
   {
     if (openXmlElement != null)
     {
@@ -772,22 +792,22 @@ public static class GroupConverter
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Vml.PolyLineConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Vml.PolyLine>(value);
+        itemElement = PolyLineConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Vml.PolyLine>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static DocumentModel.Vml.Rectangle? GetRectangle(DocumentFormat.OpenXml.Vml.Group? openXmlElement)
+
+  public static Rectangle? GetRectangle(DocumentFormat.OpenXml.Vml.Group? openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Vml.Rectangle>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Vml.RectangleConverter.CreateModelElement(itemElement);
+      return RectangleConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetRectangle(DocumentFormat.OpenXml.Vml.Group? openXmlElement, DocumentModel.Vml.Rectangle? value)
+
+  public static void SetRectangle(DocumentFormat.OpenXml.Vml.Group? openXmlElement, Rectangle? value)
   {
     if (openXmlElement != null)
     {
@@ -796,22 +816,22 @@ public static class GroupConverter
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Vml.RectangleConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Vml.Rectangle>(value);
+        itemElement = RectangleConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Vml.Rectangle>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static DocumentModel.Vml.RoundRectangle? GetRoundRectangle(DocumentFormat.OpenXml.Vml.Group? openXmlElement)
+
+  public static RoundRectangle? GetRoundRectangle(DocumentFormat.OpenXml.Vml.Group? openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Vml.RoundRectangle>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Vml.RoundRectangleConverter.CreateModelElement(itemElement);
+      return RoundRectangleConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetRoundRectangle(DocumentFormat.OpenXml.Vml.Group? openXmlElement, DocumentModel.Vml.RoundRectangle? value)
+
+  public static void SetRoundRectangle(DocumentFormat.OpenXml.Vml.Group? openXmlElement, RoundRectangle? value)
   {
     if (openXmlElement != null)
     {
@@ -820,22 +840,22 @@ public static class GroupConverter
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Vml.RoundRectangleConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Vml.RoundRectangle>(value);
+        itemElement = RoundRectangleConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Vml.RoundRectangle>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static DocumentModel.Vml.Diagram? GetDiagram(DocumentFormat.OpenXml.Vml.Group? openXmlElement)
+
+  public static Diagram? GetDiagram(DocumentFormat.OpenXml.Vml.Group? openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Vml.Office.Diagram>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Vml.DiagramConverter.CreateModelElement(itemElement);
+      return DiagramConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetDiagram(DocumentFormat.OpenXml.Vml.Group? openXmlElement, DocumentModel.Vml.Diagram? value)
+
+  public static void SetDiagram(DocumentFormat.OpenXml.Vml.Group? openXmlElement, Diagram? value)
   {
     if (openXmlElement != null)
     {
@@ -844,22 +864,22 @@ public static class GroupConverter
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Vml.DiagramConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Vml.Office.Diagram>(value);
+        itemElement = DiagramConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Vml.Office.Diagram>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static DocumentModel.Vml.Lock? GetLock(DocumentFormat.OpenXml.Vml.Group? openXmlElement)
+
+  public static Lock? GetLock(DocumentFormat.OpenXml.Vml.Group? openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Vml.Office.Lock>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Vml.LockConverter.CreateModelElement(itemElement);
+      return LockConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetLock(DocumentFormat.OpenXml.Vml.Group? openXmlElement, DocumentModel.Vml.Lock? value)
+
+  public static void SetLock(DocumentFormat.OpenXml.Vml.Group? openXmlElement, Lock? value)
   {
     if (openXmlElement != null)
     {
@@ -868,22 +888,22 @@ public static class GroupConverter
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Vml.LockConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Vml.Office.Lock>(value);
+        itemElement = LockConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Vml.Office.Lock>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static DocumentModel.Vml.ClipPath? GetClipPath(DocumentFormat.OpenXml.Vml.Group? openXmlElement)
+
+  public static ClipPath? GetClipPath(DocumentFormat.OpenXml.Vml.Group? openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Vml.Office.ClipPath>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Vml.ClipPathConverter.CreateModelElement(itemElement);
+      return ClipPathConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetClipPath(DocumentFormat.OpenXml.Vml.Group? openXmlElement, DocumentModel.Vml.ClipPath? value)
+
+  public static void SetClipPath(DocumentFormat.OpenXml.Vml.Group? openXmlElement, ClipPath? value)
   {
     if (openXmlElement != null)
     {
@@ -892,22 +912,22 @@ public static class GroupConverter
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Vml.ClipPathConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Vml.Office.ClipPath>(value);
+        itemElement = ClipPathConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Vml.Office.ClipPath>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static DocumentModel.Wordprocessing.Vml.TextWrap? GetTextWrap(DocumentFormat.OpenXml.Vml.Group? openXmlElement)
+
+  public static TextWrap? GetTextWrap(DocumentFormat.OpenXml.Vml.Group? openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Vml.Wordprocessing.TextWrap>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Wordprocessing.Vml.TextWrapConverter.CreateModelElement(itemElement);
+      return TextWrapConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetTextWrap(DocumentFormat.OpenXml.Vml.Group? openXmlElement, DocumentModel.Wordprocessing.Vml.TextWrap? value)
+
+  public static void SetTextWrap(DocumentFormat.OpenXml.Vml.Group? openXmlElement, TextWrap? value)
   {
     if (openXmlElement != null)
     {
@@ -916,41 +936,41 @@ public static class GroupConverter
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Wordprocessing.Vml.TextWrapConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Vml.Wordprocessing.TextWrap>(value);
+        itemElement = TextWrapConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Vml.Wordprocessing.TextWrap>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
+
   public static Boolean? GetAnchorLock(DocumentFormat.OpenXml.Vml.Group? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Vml.Wordprocessing.AnchorLock>();
+      var itemElement = openXmlElement.GetFirstChild<AnchorLock>();
       return itemElement != null;
     }
     return null;
   }
-  
+
   public static void SetAnchorLock(DocumentFormat.OpenXml.Vml.Group? openXmlElement, Boolean? value)
   {
     if (openXmlElement != null)
     {
       if (value == false)
       {
-        var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Vml.Wordprocessing.AnchorLock>();
+        var itemElement = openXmlElement.GetFirstChild<AnchorLock>();
         if (itemElement != null)
           itemElement.Remove();
       }
       if (value == true)
       {
-        var itemElement = new DocumentFormat.OpenXml.Vml.Wordprocessing.AnchorLock();
+        var itemElement = new AnchorLock();
         openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
+
   public static DocumentModel.Vml.Group? CreateModelElement(DocumentFormat.OpenXml.Vml.Group? openXmlElement)
   {
     if (openXmlElement != null)
@@ -1010,9 +1030,9 @@ public static class GroupConverter
     }
     return null;
   }
-  
+
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Vml.Group? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Vml.Group, new()
+    where OpenXmlElementType : DocumentFormat.OpenXml.Vml.Group, new()
   {
     if (value != null)
     {

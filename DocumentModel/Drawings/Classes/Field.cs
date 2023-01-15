@@ -1,33 +1,32 @@
 namespace DocumentModel.Drawings;
 
 /// <summary>
-/// Text Field.
+///   Text Field.
 /// </summary>
-public partial class Field
+public class Field
 {
   /// <summary>
-  /// Field ID
+  ///   Field ID
   /// </summary>
   public String? Id { get; set; }
-  
+
   /// <summary>
-  /// Field Type
+  ///   Field Type
   /// </summary>
   public String? Type { get; set; }
-  
+
   /// <summary>
-  /// Text Character Properties.
+  ///   Text Character Properties.
   /// </summary>
-  public DocumentModel.Drawings.RunProperties? RunProperties { get; set; }
-  
+  public RunProperties? RunProperties { get; set; }
+
   /// <summary>
-  /// Text Paragraph Properties.
+  ///   Text Paragraph Properties.
   /// </summary>
-  public DocumentModel.Drawings.ParagraphProperties? ParagraphProperties { get; set; }
-  
+  public ParagraphProperties? ParagraphProperties { get; set; }
+
   /// <summary>
-  /// Text.
+  ///   Text.
   /// </summary>
   public String? Text { get; set; }
-  
 }

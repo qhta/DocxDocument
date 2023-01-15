@@ -1,29 +1,28 @@
 namespace DocumentModel.Drawings;
 
 /// <summary>
-/// Defines the GradientFill Class.
+///   Defines the GradientFill Class.
 /// </summary>
-public partial class GradientFill
+public class GradientFill
 {
   /// <summary>
-  /// Tile Flip
+  ///   Tile Flip
   /// </summary>
-  public DocumentModel.Drawings.TileFlipKind? Flip { get; set; }
-  
+  public TileFlipKind? Flip { get; set; }
+
   /// <summary>
-  /// Rotate With Shape
+  ///   Rotate With Shape
   /// </summary>
   public Boolean? RotateWithShape { get; set; }
-  
+
   /// <summary>
-  /// Gradient Stop List.
+  ///   Gradient Stop List.
   /// </summary>
-  public DocumentModel.Drawings.GradientStopList? GradientStopList { get; set; }
-  
-  public DocumentModel.Drawings.LinearGradientFill? LinearGradientFill { get; set; }
-  
-  public DocumentModel.Drawings.PathGradientFill? PathGradientFill { get; set; }
-  
-  public DocumentModel.Drawings.RelativeRectangleType? TileRectangle { get; set; }
-  
+  public GradientStopList? GradientStopList { get; set; }
+
+  public LinearGradientFill? LinearGradientFill { get; set; }
+
+  public PathGradientFill? PathGradientFill { get; set; }
+
+  public RelativeRectangleType? TileRectangle { get; set; }
 }

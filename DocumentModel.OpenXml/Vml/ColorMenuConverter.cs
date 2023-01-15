@@ -1,33 +1,37 @@
+using DocumentFormat.OpenXml.Vml;
+using DocumentModel.Vml;
+using ColorMenu = DocumentFormat.OpenXml.Vml.Office.ColorMenu;
+
 namespace DocumentModel.OpenXml.Vml;
 
 /// <summary>
-/// UI Default Colors.
+///   UI Default Colors.
 /// </summary>
 public static class ColorMenuConverter
 {
   /// <summary>
-  /// VML Extension Handling Behavior
+  ///   VML Extension Handling Behavior
   /// </summary>
-  public static DocumentModel.Vml.ExtensionHandlingBehaviorKind? GetExtension(DocumentFormat.OpenXml.Vml.Office.ColorMenu? openXmlElement)
+  public static ExtensionHandlingBehaviorKind? GetExtension(ColorMenu? openXmlElement)
   {
-    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Vml.ExtensionHandlingBehaviorValues, DocumentModel.Vml.ExtensionHandlingBehaviorKind>(openXmlElement?.Extension?.Value);
+    return EnumValueConverter.GetValue<ExtensionHandlingBehaviorValues, ExtensionHandlingBehaviorKind>(openXmlElement?.Extension?.Value);
   }
-  
-  public static void SetExtension(DocumentFormat.OpenXml.Vml.Office.ColorMenu? openXmlElement, DocumentModel.Vml.ExtensionHandlingBehaviorKind? value)
+
+  public static void SetExtension(ColorMenu? openXmlElement, ExtensionHandlingBehaviorKind? value)
   {
     if (openXmlElement != null)
-      openXmlElement.Extension = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Vml.ExtensionHandlingBehaviorValues, DocumentModel.Vml.ExtensionHandlingBehaviorKind>(value);
+      openXmlElement.Extension = EnumValueConverter.CreateEnumValue<ExtensionHandlingBehaviorValues, ExtensionHandlingBehaviorKind>(value);
   }
-  
+
   /// <summary>
-  /// Default stroke color
+  ///   Default stroke color
   /// </summary>
-  public static String? GetStrokeColor(DocumentFormat.OpenXml.Vml.Office.ColorMenu? openXmlElement)
+  public static String? GetStrokeColor(ColorMenu? openXmlElement)
   {
     return openXmlElement?.StrokeColor?.Value;
   }
-  
-  public static void SetStrokeColor(DocumentFormat.OpenXml.Vml.Office.ColorMenu? openXmlElement, String? value)
+
+  public static void SetStrokeColor(ColorMenu? openXmlElement, String? value)
   {
     if (openXmlElement != null)
       if (value != null)
@@ -35,16 +39,16 @@ public static class ColorMenuConverter
       else
         openXmlElement.StrokeColor = null;
   }
-  
+
   /// <summary>
-  /// Default fill color
+  ///   Default fill color
   /// </summary>
-  public static String? GetFillColor(DocumentFormat.OpenXml.Vml.Office.ColorMenu? openXmlElement)
+  public static String? GetFillColor(ColorMenu? openXmlElement)
   {
     return openXmlElement?.FillColor?.Value;
   }
-  
-  public static void SetFillColor(DocumentFormat.OpenXml.Vml.Office.ColorMenu? openXmlElement, String? value)
+
+  public static void SetFillColor(ColorMenu? openXmlElement, String? value)
   {
     if (openXmlElement != null)
       if (value != null)
@@ -52,16 +56,16 @@ public static class ColorMenuConverter
       else
         openXmlElement.FillColor = null;
   }
-  
+
   /// <summary>
-  /// Default shadow color
+  ///   Default shadow color
   /// </summary>
-  public static String? GetShadowColor(DocumentFormat.OpenXml.Vml.Office.ColorMenu? openXmlElement)
+  public static String? GetShadowColor(ColorMenu? openXmlElement)
   {
     return openXmlElement?.ShadowColor?.Value;
   }
-  
-  public static void SetShadowColor(DocumentFormat.OpenXml.Vml.Office.ColorMenu? openXmlElement, String? value)
+
+  public static void SetShadowColor(ColorMenu? openXmlElement, String? value)
   {
     if (openXmlElement != null)
       if (value != null)
@@ -69,16 +73,16 @@ public static class ColorMenuConverter
       else
         openXmlElement.ShadowColor = null;
   }
-  
+
   /// <summary>
-  /// Default extrusion color
+  ///   Default extrusion color
   /// </summary>
-  public static String? GetExtrusionColor(DocumentFormat.OpenXml.Vml.Office.ColorMenu? openXmlElement)
+  public static String? GetExtrusionColor(ColorMenu? openXmlElement)
   {
     return openXmlElement?.ExtrusionColor?.Value;
   }
-  
-  public static void SetExtrusionColor(DocumentFormat.OpenXml.Vml.Office.ColorMenu? openXmlElement, String? value)
+
+  public static void SetExtrusionColor(ColorMenu? openXmlElement, String? value)
   {
     if (openXmlElement != null)
       if (value != null)
@@ -86,8 +90,8 @@ public static class ColorMenuConverter
       else
         openXmlElement.ExtrusionColor = null;
   }
-  
-  public static DocumentModel.Vml.ColorMenu? CreateModelElement(DocumentFormat.OpenXml.Vml.Office.ColorMenu? openXmlElement)
+
+  public static DocumentModel.Vml.ColorMenu? CreateModelElement(ColorMenu? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -101,9 +105,9 @@ public static class ColorMenuConverter
     }
     return null;
   }
-  
+
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Vml.ColorMenu? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Vml.Office.ColorMenu, new()
+    where OpenXmlElementType : ColorMenu, new()
   {
     if (value != null)
     {

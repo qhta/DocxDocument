@@ -1,33 +1,32 @@
 namespace DocumentModel.Drawings.ChartDrawings;
 
 /// <summary>
-/// Defines the Clear Class.
+///   Defines the Clear Class.
 /// </summary>
-public partial class Clear
+public class Clear
 {
   /// <summary>
-  /// GeoLocationQueryResults.
+  ///   GeoLocationQueryResults.
   /// </summary>
-  public DocumentModel.Drawings.ChartDrawings.GeoLocationQueryResults? GeoLocationQueryResults { get; set; }
-  
+  public GeoLocationQueryResults? GeoLocationQueryResults { get; set; }
+
   /// <summary>
-  /// GeoDataEntityQueryResults.
+  ///   GeoDataEntityQueryResults.
   /// </summary>
-  public DocumentModel.Drawings.ChartDrawings.GeoDataEntityQueryResults? GeoDataEntityQueryResults { get; set; }
-  
+  public GeoDataEntityQueryResults? GeoDataEntityQueryResults { get; set; }
+
   /// <summary>
-  /// GeoDataPointToEntityQueryResults.
+  ///   GeoDataPointToEntityQueryResults.
   /// </summary>
-  public DocumentModel.Drawings.ChartDrawings.GeoDataPointToEntityQueryResults? GeoDataPointToEntityQueryResults { get; set; }
-  
+  public GeoDataPointToEntityQueryResults? GeoDataPointToEntityQueryResults { get; set; }
+
   /// <summary>
-  /// GeoChildEntitiesQueryResults.
+  ///   GeoChildEntitiesQueryResults.
   /// </summary>
-  public DocumentModel.Drawings.ChartDrawings.GeoChildEntitiesQueryResults? GeoChildEntitiesQueryResults { get; set; }
-  
+  public GeoChildEntitiesQueryResults? GeoChildEntitiesQueryResults { get; set; }
+
   /// <summary>
-  /// GeoParentEntitiesQueryResults.
+  ///   GeoParentEntitiesQueryResults.
   /// </summary>
-  public DocumentModel.Drawings.ChartDrawings.GeoParentEntitiesQueryResults? GeoParentEntitiesQueryResults { get; set; }
-  
+  public GeoParentEntitiesQueryResults? GeoParentEntitiesQueryResults { get; set; }
 }

@@ -1,15 +1,14 @@
 namespace DocumentModel.Drawings.Charts;
 
 /// <summary>
-/// Defines the CatAxExtension Class.
+///   Defines the CatAxExtension Class.
 /// </summary>
-public partial class CatAxExtension
+public class CatAxExtension
 {
   /// <summary>
-  /// URI
+  ///   URI
   /// </summary>
   public String? Uri { get; set; }
-  
-  public DocumentModel.Drawings.Charts.NumberingFormat3? NumberingFormat { get; set; }
-  
+
+  public NumberingFormat3? NumberingFormat { get; set; }
 }

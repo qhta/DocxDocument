@@ -1,28 +1,27 @@
 namespace DocumentModel.Wordprocessing;
 
 /// <summary>
-/// Previous Paragraph Numbering Properties.
+///   Previous Paragraph Numbering Properties.
 /// </summary>
-public partial class NumberingChange
+public class NumberingChange
 {
   /// <summary>
-  /// original
+  ///   original
   /// </summary>
   public String? Original { get; set; }
-  
+
   /// <summary>
-  /// author
+  ///   author
   /// </summary>
   public String? Author { get; set; }
-  
+
   /// <summary>
-  /// date
+  ///   date
   /// </summary>
   public DateTime? Date { get; set; }
-  
+
   /// <summary>
-  /// Annotation Identifier
+  ///   Annotation Identifier
   /// </summary>
   public String? Id { get; set; }
-  
 }

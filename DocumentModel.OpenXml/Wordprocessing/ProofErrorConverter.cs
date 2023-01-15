@@ -1,25 +1,29 @@
+using DocumentFormat.OpenXml.Wordprocessing;
+using DocumentModel.Wordprocessing;
+using ProofError = DocumentFormat.OpenXml.Wordprocessing.ProofError;
+
 namespace DocumentModel.OpenXml.Wordprocessing;
 
 /// <summary>
-/// Defines the ProofError Class.
+///   Defines the ProofError Class.
 /// </summary>
 public static class ProofErrorConverter
 {
   /// <summary>
-  /// Proofing Error Anchor Type
+  ///   Proofing Error Anchor Type
   /// </summary>
-  public static DocumentModel.Wordprocessing.ProofingErrorKind? GetType(DocumentFormat.OpenXml.Wordprocessing.ProofError? openXmlElement)
+  public static ProofingErrorKind? GetType(ProofError? openXmlElement)
   {
-    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Wordprocessing.ProofingErrorValues, DocumentModel.Wordprocessing.ProofingErrorKind>(openXmlElement?.Type?.Value);
+    return EnumValueConverter.GetValue<ProofingErrorValues, ProofingErrorKind>(openXmlElement?.Type?.Value);
   }
-  
-  public static void SetType(DocumentFormat.OpenXml.Wordprocessing.ProofError? openXmlElement, DocumentModel.Wordprocessing.ProofingErrorKind? value)
+
+  public static void SetType(ProofError? openXmlElement, ProofingErrorKind? value)
   {
     if (openXmlElement != null)
-      openXmlElement.Type = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Wordprocessing.ProofingErrorValues, DocumentModel.Wordprocessing.ProofingErrorKind>(value);
+      openXmlElement.Type = EnumValueConverter.CreateEnumValue<ProofingErrorValues, ProofingErrorKind>(value);
   }
-  
-  public static DocumentModel.Wordprocessing.ProofError? CreateModelElement(DocumentFormat.OpenXml.Wordprocessing.ProofError? openXmlElement)
+
+  public static DocumentModel.Wordprocessing.ProofError? CreateModelElement(ProofError? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -29,9 +33,9 @@ public static class ProofErrorConverter
     }
     return null;
   }
-  
+
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.ProofError? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Wordprocessing.ProofError, new()
+    where OpenXmlElementType : ProofError, new()
   {
     if (value != null)
     {

@@ -1,45 +1,44 @@
 namespace DocumentModel.Drawings.Charts;
 
 /// <summary>
-/// Chart Space.
+///   Chart Space.
 /// </summary>
-public partial class ChartSpace
+public class ChartSpace
 {
   /// <summary>
-  /// Date1904.
+  ///   Date1904.
   /// </summary>
   public Boolean? Date1904 { get; set; }
-  
+
   /// <summary>
-  /// EditingLanguage.
+  ///   EditingLanguage.
   /// </summary>
   public String? EditingLanguage { get; set; }
-  
+
   /// <summary>
-  /// RoundedCorners.
+  ///   RoundedCorners.
   /// </summary>
   public Boolean? RoundedCorners { get; set; }
-  
+
   public Byte? Style { get; set; }
-  
-  public DocumentModel.Drawings.Charts.ColorMapOverride? ColorMapOverride { get; set; }
-  
-  public DocumentModel.Drawings.Charts.PivotSource? PivotSource { get; set; }
-  
-  public DocumentModel.Drawings.Charts.Protection? Protection { get; set; }
-  
-  public DocumentModel.Drawings.Charts.Chart? Chart { get; set; }
-  
-  public DocumentModel.Drawings.Charts.ShapeProperties? ShapeProperties { get; set; }
-  
-  public DocumentModel.Drawings.Charts.TextProperties? TextProperties { get; set; }
-  
-  public DocumentModel.Drawings.Charts.ExternalData? ExternalData { get; set; }
-  
-  public DocumentModel.Drawings.Charts.PrintSettings? PrintSettings { get; set; }
-  
-  public DocumentModel.Drawings.Charts.RelationshipIdType? UserShapesReference { get; set; }
-  
-  public DocumentModel.Drawings.Charts.ChartSpaceExtensionList? ChartSpaceExtensionList { get; set; }
-  
+
+  public ColorMapOverride? ColorMapOverride { get; set; }
+
+  public PivotSource? PivotSource { get; set; }
+
+  public Protection? Protection { get; set; }
+
+  public Chart? Chart { get; set; }
+
+  public ShapeProperties? ShapeProperties { get; set; }
+
+  public TextProperties? TextProperties { get; set; }
+
+  public ExternalData? ExternalData { get; set; }
+
+  public PrintSettings? PrintSettings { get; set; }
+
+  public RelationshipIdType? UserShapesReference { get; set; }
+
+  public ChartSpaceExtensionList? ChartSpaceExtensionList { get; set; }
 }

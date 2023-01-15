@@ -1,48 +1,47 @@
 namespace DocumentModel.Drawings.ChartDrawings;
 
 /// <summary>
-/// Defines the SeriesLayout enumeration.
+///   Defines the SeriesLayout enumeration.
 /// </summary>
 public enum SeriesLayout
 {
   /// <summary>
-  /// boxWhisker.
+  ///   boxWhisker.
   /// </summary>
   BoxWhisker,
-  
+
   /// <summary>
-  /// clusteredColumn.
+  ///   clusteredColumn.
   /// </summary>
   ClusteredColumn,
-  
+
   /// <summary>
-  /// funnel.
+  ///   funnel.
   /// </summary>
   Funnel,
-  
+
   /// <summary>
-  /// paretoLine.
+  ///   paretoLine.
   /// </summary>
   ParetoLine,
-  
+
   /// <summary>
-  /// regionMap.
+  ///   regionMap.
   /// </summary>
   RegionMap,
-  
+
   /// <summary>
-  /// sunburst.
+  ///   sunburst.
   /// </summary>
   Sunburst,
-  
+
   /// <summary>
-  /// treemap.
+  ///   treemap.
   /// </summary>
   Treemap,
-  
+
   /// <summary>
-  /// waterfall.
+  ///   waterfall.
   /// </summary>
-  Waterfall,
-  
+  Waterfall
 }

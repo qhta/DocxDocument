@@ -1,10 +1,9 @@
 namespace DocumentModel.Wordprocessing;
 
 /// <summary>
-/// Defines the People Class.
+///   Defines the People Class.
 /// </summary>
-public partial class People
+public class People
 {
-  public Collection<DocumentModel.Wordprocessing.Person>? Persons { get; set; }
-  
+  public Collection<Person>? Persons { get; set; }
 }

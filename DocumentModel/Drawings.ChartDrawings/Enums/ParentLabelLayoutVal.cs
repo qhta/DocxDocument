@@ -1,23 +1,22 @@
 namespace DocumentModel.Drawings.ChartDrawings;
 
 /// <summary>
-/// Defines the ParentLabelLayoutVal enumeration.
+///   Defines the ParentLabelLayoutVal enumeration.
 /// </summary>
 public enum ParentLabelLayoutVal
 {
   /// <summary>
-  /// none.
+  ///   none.
   /// </summary>
   None,
-  
+
   /// <summary>
-  /// banner.
+  ///   banner.
   /// </summary>
   Banner,
-  
+
   /// <summary>
-  /// overlapping.
+  ///   overlapping.
   /// </summary>
-  Overlapping,
-  
+  Overlapping
 }

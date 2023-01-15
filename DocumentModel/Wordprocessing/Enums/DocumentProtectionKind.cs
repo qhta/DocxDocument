@@ -1,33 +1,32 @@
 namespace DocumentModel.Wordprocessing;
 
 /// <summary>
-/// Defines the DocumentProtectionValues enumeration.
+///   Defines the DocumentProtectionValues enumeration.
 /// </summary>
 public enum DocumentProtectionKind
 {
   /// <summary>
-  /// No Editing Restrictions.
+  ///   No Editing Restrictions.
   /// </summary>
   None,
-  
+
   /// <summary>
-  /// Allow No Editing.
+  ///   Allow No Editing.
   /// </summary>
   ReadOnly,
-  
+
   /// <summary>
-  /// Allow Editing of Comments.
+  ///   Allow Editing of Comments.
   /// </summary>
   Comments,
-  
+
   /// <summary>
-  /// Allow Editing With Revision Tracking.
+  ///   Allow Editing With Revision Tracking.
   /// </summary>
   TrackedChanges,
-  
+
   /// <summary>
-  /// Allow Editing of Form Fields.
+  ///   Allow Editing of Form Fields.
   /// </summary>
-  Forms,
-  
+  Forms
 }

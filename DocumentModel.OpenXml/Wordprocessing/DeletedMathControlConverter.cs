@@ -1,19 +1,22 @@
+using DocumentFormat.OpenXml.Wordprocessing;
+using RunProperties = DocumentModel.Wordprocessing.RunProperties;
+
 namespace DocumentModel.OpenXml.Wordprocessing;
 
 /// <summary>
-/// Defines the DeletedMathControl Class.
+///   Defines the DeletedMathControl Class.
 /// </summary>
 public static class DeletedMathControlConverter
 {
   /// <summary>
-  /// author
+  ///   author
   /// </summary>
-  public static String? GetAuthor(DocumentFormat.OpenXml.Wordprocessing.DeletedMathControl? openXmlElement)
+  public static String? GetAuthor(DeletedMathControl? openXmlElement)
   {
     return openXmlElement?.Author?.Value;
   }
-  
-  public static void SetAuthor(DocumentFormat.OpenXml.Wordprocessing.DeletedMathControl? openXmlElement, String? value)
+
+  public static void SetAuthor(DeletedMathControl? openXmlElement, String? value)
   {
     if (openXmlElement != null)
       if (value != null)
@@ -21,30 +24,30 @@ public static class DeletedMathControlConverter
       else
         openXmlElement.Author = null;
   }
-  
+
   /// <summary>
-  /// date
+  ///   date
   /// </summary>
-  public static DateTime? GetDate(DocumentFormat.OpenXml.Wordprocessing.DeletedMathControl? openXmlElement)
+  public static DateTime? GetDate(DeletedMathControl? openXmlElement)
   {
     return openXmlElement?.Date?.Value;
   }
-  
-  public static void SetDate(DocumentFormat.OpenXml.Wordprocessing.DeletedMathControl? openXmlElement, DateTime? value)
+
+  public static void SetDate(DeletedMathControl? openXmlElement, DateTime? value)
   {
     if (openXmlElement != null)
       openXmlElement.Date = value;
   }
-  
+
   /// <summary>
-  /// Annotation Identifier
+  ///   Annotation Identifier
   /// </summary>
-  public static String? GetId(DocumentFormat.OpenXml.Wordprocessing.DeletedMathControl? openXmlElement)
+  public static String? GetId(DeletedMathControl? openXmlElement)
   {
     return openXmlElement?.Id?.Value;
   }
-  
-  public static void SetId(DocumentFormat.OpenXml.Wordprocessing.DeletedMathControl? openXmlElement, String? value)
+
+  public static void SetId(DeletedMathControl? openXmlElement, String? value)
   {
     if (openXmlElement != null)
       if (value != null)
@@ -52,16 +55,16 @@ public static class DeletedMathControlConverter
       else
         openXmlElement.Id = null;
   }
-  
-  public static DocumentModel.Wordprocessing.RunProperties? GetRunProperties(DocumentFormat.OpenXml.Wordprocessing.DeletedMathControl? openXmlElement)
+
+  public static RunProperties? GetRunProperties(DeletedMathControl? openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.RunProperties>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Wordprocessing.RunPropertiesConverter.CreateModelElement(itemElement);
+      return RunPropertiesConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetRunProperties(DocumentFormat.OpenXml.Wordprocessing.DeletedMathControl? openXmlElement, DocumentModel.Wordprocessing.RunProperties? value)
+
+  public static void SetRunProperties(DeletedMathControl? openXmlElement, RunProperties? value)
   {
     if (openXmlElement != null)
     {
@@ -70,14 +73,14 @@ public static class DeletedMathControlConverter
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Wordprocessing.RunPropertiesConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.RunProperties>(value);
+        itemElement = RunPropertiesConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.RunProperties>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static DocumentModel.Wordprocessing.DeletedMathControl? CreateModelElement(DocumentFormat.OpenXml.Wordprocessing.DeletedMathControl? openXmlElement)
+
+  public static DocumentModel.Wordprocessing.DeletedMathControl? CreateModelElement(DeletedMathControl? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -90,9 +93,9 @@ public static class DeletedMathControlConverter
     }
     return null;
   }
-  
+
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.DeletedMathControl? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Wordprocessing.DeletedMathControl, new()
+    where OpenXmlElementType : DeletedMathControl, new()
   {
     if (value != null)
     {

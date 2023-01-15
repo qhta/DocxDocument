@@ -1,33 +1,37 @@
+using DocumentFormat.OpenXml.Wordprocessing;
+using DocumentModel.Wordprocessing;
+using HeaderFooterReferenceType = DocumentFormat.OpenXml.Wordprocessing.HeaderFooterReferenceType;
+
 namespace DocumentModel.OpenXml.Wordprocessing;
 
 /// <summary>
-/// Defines the HeaderFooterReferenceType Class.
+///   Defines the HeaderFooterReferenceType Class.
 /// </summary>
 public static class HeaderFooterReferenceTypeConverter
 {
   /// <summary>
-  /// type
+  ///   type
   /// </summary>
-  public static DocumentModel.Wordprocessing.HeaderFooterKind? GetType(DocumentFormat.OpenXml.Wordprocessing.HeaderFooterReferenceType? openXmlElement)
+  public static HeaderFooterKind? GetType(HeaderFooterReferenceType? openXmlElement)
   {
-    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Wordprocessing.HeaderFooterValues, DocumentModel.Wordprocessing.HeaderFooterKind>(openXmlElement?.Type?.Value);
+    return EnumValueConverter.GetValue<HeaderFooterValues, HeaderFooterKind>(openXmlElement?.Type?.Value);
   }
-  
-  public static void SetType(DocumentFormat.OpenXml.Wordprocessing.HeaderFooterReferenceType? openXmlElement, DocumentModel.Wordprocessing.HeaderFooterKind? value)
+
+  public static void SetType(HeaderFooterReferenceType? openXmlElement, HeaderFooterKind? value)
   {
     if (openXmlElement != null)
-      openXmlElement.Type = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Wordprocessing.HeaderFooterValues, DocumentModel.Wordprocessing.HeaderFooterKind>(value);
+      openXmlElement.Type = EnumValueConverter.CreateEnumValue<HeaderFooterValues, HeaderFooterKind>(value);
   }
-  
+
   /// <summary>
-  /// Relationship to Part
+  ///   Relationship to Part
   /// </summary>
-  public static String? GetId(DocumentFormat.OpenXml.Wordprocessing.HeaderFooterReferenceType? openXmlElement)
+  public static String? GetId(HeaderFooterReferenceType? openXmlElement)
   {
     return openXmlElement?.Id?.Value;
   }
-  
-  public static void SetId(DocumentFormat.OpenXml.Wordprocessing.HeaderFooterReferenceType? openXmlElement, String? value)
+
+  public static void SetId(HeaderFooterReferenceType? openXmlElement, String? value)
   {
     if (openXmlElement != null)
       if (value != null)
@@ -35,8 +39,8 @@ public static class HeaderFooterReferenceTypeConverter
       else
         openXmlElement.Id = null;
   }
-  
-  public static DocumentModel.Wordprocessing.HeaderFooterReferenceType? CreateModelElement(DocumentFormat.OpenXml.Wordprocessing.HeaderFooterReferenceType? openXmlElement)
+
+  public static DocumentModel.Wordprocessing.HeaderFooterReferenceType? CreateModelElement(HeaderFooterReferenceType? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -47,9 +51,9 @@ public static class HeaderFooterReferenceTypeConverter
     }
     return null;
   }
-  
+
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.HeaderFooterReferenceType? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Wordprocessing.HeaderFooterReferenceType, new()
+    where OpenXmlElementType : HeaderFooterReferenceType, new()
   {
     if (value != null)
     {

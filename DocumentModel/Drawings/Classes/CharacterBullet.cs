@@ -1,13 +1,12 @@
 namespace DocumentModel.Drawings;
 
 /// <summary>
-/// Character Bullet.
+///   Character Bullet.
 /// </summary>
-public partial class CharacterBullet
+public class CharacterBullet
 {
   /// <summary>
-  /// Bullet Character
+  ///   Bullet Character
   /// </summary>
   public String? Char { get; set; }
-  
 }

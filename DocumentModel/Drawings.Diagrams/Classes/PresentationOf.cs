@@ -1,43 +1,42 @@
 namespace DocumentModel.Drawings.Diagrams;
 
 /// <summary>
-/// Presentation Of.
+///   Presentation Of.
 /// </summary>
-public partial class PresentationOf
+public class PresentationOf
 {
   /// <summary>
-  /// Axis
+  ///   Axis
   /// </summary>
-  public DocumentModel.ListOf<DocumentModel.Drawings.Diagrams.AxisKind>? Axis { get; set; }
-  
+  public ListOf<AxisKind>? Axis { get; set; }
+
   /// <summary>
-  /// Data Point Type
+  ///   Data Point Type
   /// </summary>
-  public DocumentModel.ListOf<DocumentModel.Drawings.Diagrams.ElementKind>? PointType { get; set; }
-  
+  public ListOf<ElementKind>? PointType { get; set; }
+
   /// <summary>
-  /// Hide Last Transition
+  ///   Hide Last Transition
   /// </summary>
-  public DocumentModel.ListOf<System.Boolean>? HideLastTrans { get; set; }
-  
+  public ListOf<Boolean>? HideLastTrans { get; set; }
+
   /// <summary>
-  /// Start
+  ///   Start
   /// </summary>
-  public DocumentModel.ListOf<System.Int32>? Start { get; set; }
-  
+  public ListOf<Int32>? Start { get; set; }
+
   /// <summary>
-  /// Count
+  ///   Count
   /// </summary>
-  public DocumentModel.ListOf<System.UInt32>? Count { get; set; }
-  
+  public ListOf<UInt32>? Count { get; set; }
+
   /// <summary>
-  /// Step
+  ///   Step
   /// </summary>
-  public DocumentModel.ListOf<System.Int32>? Step { get; set; }
-  
+  public ListOf<Int32>? Step { get; set; }
+
   /// <summary>
-  /// ExtensionList.
+  ///   ExtensionList.
   /// </summary>
-  public DocumentModel.Drawings.Diagrams.ExtensionList? ExtensionList { get; set; }
-  
+  public ExtensionList? ExtensionList { get; set; }
 }

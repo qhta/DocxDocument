@@ -1,10 +1,9 @@
 namespace DocumentModel.Drawings;
 
 /// <summary>
-/// Future extensions..
+///   Future extensions..
 /// </summary>
-public partial class BlipExtensionList
+public class BlipExtensionList
 {
-  public Collection<DocumentModel.Drawings.BlipExtension>? BlipExtensions { get; set; }
-  
+  public Collection<BlipExtension>? BlipExtensions { get; set; }
 }

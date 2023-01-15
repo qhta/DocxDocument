@@ -1,33 +1,32 @@
 namespace DocumentModel.Drawings.ChartDrawings;
 
 /// <summary>
-/// Defines the Transform2D Class.
+///   Defines the Transform2D Class.
 /// </summary>
-public partial class Transform2D
+public class Transform2D
 {
   /// <summary>
-  /// Rotation
+  ///   Rotation
   /// </summary>
   public Int32? Rotation { get; set; }
-  
+
   /// <summary>
-  /// Horizontal Flip
+  ///   Horizontal Flip
   /// </summary>
   public Boolean? HorizontalFlip { get; set; }
-  
+
   /// <summary>
-  /// Vertical Flip
+  ///   Vertical Flip
   /// </summary>
   public Boolean? VerticalFlip { get; set; }
-  
+
   /// <summary>
-  /// Offset.
+  ///   Offset.
   /// </summary>
-  public DocumentModel.Drawings.Point2DType? Offset { get; set; }
-  
+  public Point2DType? Offset { get; set; }
+
   /// <summary>
-  /// Extents.
+  ///   Extents.
   /// </summary>
-  public DocumentModel.Drawings.PositiveSize2DType? Extents { get; set; }
-  
+  public PositiveSize2DType? Extents { get; set; }
 }

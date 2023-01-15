@@ -1,43 +1,44 @@
+using DocumentFormat.OpenXml.Math;
+using DocumentModel.Math;
+using ParagraphProperties = DocumentFormat.OpenXml.Math.ParagraphProperties;
+
 namespace DocumentModel.OpenXml.Math;
 
 /// <summary>
-/// Office Math Paragraph Properties.
+///   Office Math Paragraph Properties.
 /// </summary>
 public static class ParagraphPropertiesConverter
 {
   /// <summary>
-  /// Justification.
+  ///   Justification.
   /// </summary>
-  public static DocumentModel.Math.JustificationKind? GetJustification(DocumentFormat.OpenXml.Math.ParagraphProperties? openXmlElement)
+  public static JustificationKind? GetJustification(ParagraphProperties? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Math.Justification>();
-      if (itemElement?.Val?.Value != null)
-      {
-        return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Math.JustificationValues, DocumentModel.Math.JustificationKind>(itemElement.Val.Value);
-      }
+      var itemElement = openXmlElement.GetFirstChild<Justification>();
+      if (itemElement?.Val?.Value != null) return EnumValueConverter.GetValue<JustificationValues, JustificationKind>(itemElement.Val.Value);
     }
     return null;
   }
-  
-  public static void SetJustification(DocumentFormat.OpenXml.Math.ParagraphProperties? openXmlElement, DocumentModel.Math.JustificationKind? value)
+
+  public static void SetJustification(ParagraphProperties? openXmlElement, JustificationKind? value)
   {
     if (openXmlElement != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Math.Justification>();
+      var itemElement = openXmlElement.GetFirstChild<Justification>();
       if (itemElement != null)
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = EnumValueConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Math.Justification, DocumentFormat.OpenXml.Math.JustificationValues, DocumentModel.Math.JustificationKind>(value);
+        itemElement = EnumValueConverter.CreateOpenXmlElement<Justification, JustificationValues, JustificationKind>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static DocumentModel.Math.ParagraphProperties? CreateModelElement(DocumentFormat.OpenXml.Math.ParagraphProperties? openXmlElement)
+
+  public static DocumentModel.Math.ParagraphProperties? CreateModelElement(ParagraphProperties? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -47,9 +48,9 @@ public static class ParagraphPropertiesConverter
     }
     return null;
   }
-  
+
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Math.ParagraphProperties? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Math.ParagraphProperties, new()
+    where OpenXmlElementType : ParagraphProperties, new()
   {
     if (value != null)
     {

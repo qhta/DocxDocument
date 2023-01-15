@@ -1,22 +1,25 @@
+using DocumentModel.Drawings;
+using Graphic = DocumentFormat.OpenXml.Drawing.Graphic;
+
 namespace DocumentModel.OpenXml.Drawings;
 
 /// <summary>
-/// Graphic Object.
+///   Graphic Object.
 /// </summary>
 public static class GraphicConverter
 {
   /// <summary>
-  /// Graphic Object Data.
+  ///   Graphic Object Data.
   /// </summary>
-  public static DocumentModel.Drawings.GraphicData? GetGraphicData(DocumentFormat.OpenXml.Drawing.Graphic? openXmlElement)
+  public static GraphicData? GetGraphicData(Graphic? openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.GraphicData>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.GraphicDataConverter.CreateModelElement(itemElement);
+      return GraphicDataConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetGraphicData(DocumentFormat.OpenXml.Drawing.Graphic? openXmlElement, DocumentModel.Drawings.GraphicData? value)
+
+  public static void SetGraphicData(Graphic? openXmlElement, GraphicData? value)
   {
     if (openXmlElement != null)
     {
@@ -25,14 +28,14 @@ public static class GraphicConverter
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Drawings.GraphicDataConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.GraphicData>(value);
+        itemElement = GraphicDataConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.GraphicData>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static DocumentModel.Drawings.Graphic? CreateModelElement(DocumentFormat.OpenXml.Drawing.Graphic? openXmlElement)
+
+  public static DocumentModel.Drawings.Graphic? CreateModelElement(Graphic? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -42,9 +45,9 @@ public static class GraphicConverter
     }
     return null;
   }
-  
+
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.Graphic? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.Graphic, new()
+    where OpenXmlElementType : Graphic, new()
   {
     if (value != null)
     {

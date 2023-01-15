@@ -1,13 +1,12 @@
 namespace DocumentModel.Wordprocessing;
 
 /// <summary>
-/// Defines the SdtContentText Class.
+///   Defines the SdtContentText Class.
 /// </summary>
-public partial class SdtContentText
+public class SdtContentText
 {
   /// <summary>
-  /// Allow Soft Line Breaks
+  ///   Allow Soft Line Breaks
   /// </summary>
   public Boolean? MultiLine { get; set; }
-  
 }

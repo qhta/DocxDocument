@@ -1,12 +1,11 @@
 namespace DocumentModel.Wordprocessing;
 
 /// <summary>
-/// Defines the ContourColor Class.
+///   Defines the ContourColor Class.
 /// </summary>
-public partial class ContourColor
+public class ContourColor
 {
-  public DocumentModel.Wordprocessing.RgbColorModelHex? RgbColorModelHex { get; set; }
-  
-  public DocumentModel.Wordprocessing.SchemeColor? SchemeColor { get; set; }
-  
+  public RgbColorModelHex? RgbColorModelHex { get; set; }
+
+  public SchemeColor? SchemeColor { get; set; }
 }

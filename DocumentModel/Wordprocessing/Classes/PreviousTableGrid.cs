@@ -1,10 +1,9 @@
 namespace DocumentModel.Wordprocessing;
 
 /// <summary>
-/// Previous Table Grid.
+///   Previous Table Grid.
 /// </summary>
-public partial class PreviousTableGrid
+public class PreviousTableGrid
 {
-  public Collection<DocumentModel.Wordprocessing.GridColumn>? GridColumns { get; set; }
-  
+  public Collection<GridColumn>? GridColumns { get; set; }
 }

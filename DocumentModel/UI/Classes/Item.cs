@@ -1,38 +1,37 @@
 namespace DocumentModel.UI;
 
 /// <summary>
-/// Defines the Item Class.
+///   Defines the Item Class.
 /// </summary>
-public partial class Item
+public class Item
 {
   /// <summary>
-  /// id
+  ///   id
   /// </summary>
   public String? Id { get; set; }
-  
+
   /// <summary>
-  /// label
+  ///   label
   /// </summary>
   public String? Label { get; set; }
-  
+
   /// <summary>
-  /// image
+  ///   image
   /// </summary>
   public String? Image { get; set; }
-  
+
   /// <summary>
-  /// imageMso
+  ///   imageMso
   /// </summary>
   public String? ImageMso { get; set; }
-  
+
   /// <summary>
-  /// screentip
+  ///   screentip
   /// </summary>
   public String? Screentip { get; set; }
-  
+
   /// <summary>
-  /// supertip
+  ///   supertip
   /// </summary>
   public String? Supertip { get; set; }
-  
 }

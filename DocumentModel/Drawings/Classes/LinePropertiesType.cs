@@ -1,28 +1,27 @@
 namespace DocumentModel.Drawings;
 
 /// <summary>
-/// Defines the LinePropertiesType Class.
+///   Defines the LinePropertiesType Class.
 /// </summary>
-public partial class LinePropertiesType
+public class LinePropertiesType
 {
   /// <summary>
-  /// line width
+  ///   line width
   /// </summary>
   public Int32? Width { get; set; }
-  
+
   /// <summary>
-  /// line cap
+  ///   line cap
   /// </summary>
-  public DocumentModel.Drawings.LineCapKind? CapType { get; set; }
-  
+  public LineCapKind? CapType { get; set; }
+
   /// <summary>
-  /// compound line type
+  ///   compound line type
   /// </summary>
-  public DocumentModel.Drawings.CompoundLineKind? CompoundLineType { get; set; }
-  
+  public CompoundLineKind? CompoundLineType { get; set; }
+
   /// <summary>
-  /// pen alignment
+  ///   pen alignment
   /// </summary>
-  public DocumentModel.Drawings.PenAlignmentKind? Alignment { get; set; }
-  
+  public PenAlignmentKind? Alignment { get; set; }
 }

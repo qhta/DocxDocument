@@ -1,28 +1,27 @@
 namespace DocumentModel.Wordprocessing;
 
 /// <summary>
-/// Defines the FootnoteProperties Class.
+///   Defines the FootnoteProperties Class.
 /// </summary>
-public partial class FootnoteProperties
+public class FootnoteProperties
 {
   /// <summary>
-  /// Footnote Placement.
+  ///   Footnote Placement.
   /// </summary>
-  public DocumentModel.Wordprocessing.FootnotePositionKind? FootnotePosition { get; set; }
-  
+  public FootnotePositionKind? FootnotePosition { get; set; }
+
   /// <summary>
-  /// Footnote Numbering Format.
+  ///   Footnote Numbering Format.
   /// </summary>
-  public DocumentModel.Wordprocessing.NumberingFormat? NumberingFormat { get; set; }
-  
+  public NumberingFormat? NumberingFormat { get; set; }
+
   /// <summary>
-  /// Footnote and Endnote Numbering Starting Value.
+  ///   Footnote and Endnote Numbering Starting Value.
   /// </summary>
   public UInt16? NumberingStart { get; set; }
-  
+
   /// <summary>
-  /// Footnote and Endnote Numbering Restart Location.
+  ///   Footnote and Endnote Numbering Restart Location.
   /// </summary>
-  public DocumentModel.Wordprocessing.RestartNumberKind? NumberingRestart { get; set; }
-  
+  public RestartNumberKind? NumberingRestart { get; set; }
 }

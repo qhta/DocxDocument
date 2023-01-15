@@ -1,50 +1,55 @@
+using DocumentFormat.OpenXml.Office2010.Word;
+using DocumentModel.Wordprocessing;
+using LightRig = DocumentFormat.OpenXml.Office2010.Word.LightRig;
+using SphereCoordinates = DocumentModel.Wordprocessing.SphereCoordinates;
+
 namespace DocumentModel.OpenXml.Wordprocessing;
 
 /// <summary>
-/// Defines the LightRig Class.
+///   Defines the LightRig Class.
 /// </summary>
 public static class LightRigConverter
 {
   /// <summary>
-  /// rig, this property is only available in Office 2010 and later.
+  ///   rig, this property is only available in Office 2010 and later.
   /// </summary>
-  public static DocumentModel.Wordprocessing.LightRigKind? GetLightRigType(DocumentFormat.OpenXml.Office2010.Word.LightRig? openXmlElement)
+  public static LightRigKind? GetLightRigType(LightRig? openXmlElement)
   {
-    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Office2010.Word.LightRigTypeValues, DocumentModel.Wordprocessing.LightRigKind>(openXmlElement?.LightRigType?.Value);
+    return EnumValueConverter.GetValue<LightRigTypeValues, LightRigKind>(openXmlElement?.LightRigType?.Value);
   }
-  
-  public static void SetLightRigType(DocumentFormat.OpenXml.Office2010.Word.LightRig? openXmlElement, DocumentModel.Wordprocessing.LightRigKind? value)
+
+  public static void SetLightRigType(LightRig? openXmlElement, LightRigKind? value)
   {
     if (openXmlElement != null)
-      openXmlElement.LightRigType = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Office2010.Word.LightRigTypeValues, DocumentModel.Wordprocessing.LightRigKind>(value);
+      openXmlElement.LightRigType = EnumValueConverter.CreateEnumValue<LightRigTypeValues, LightRigKind>(value);
   }
-  
+
   /// <summary>
-  /// dir, this property is only available in Office 2010 and later.
+  ///   dir, this property is only available in Office 2010 and later.
   /// </summary>
-  public static DocumentModel.Wordprocessing.LightRigDirectionKind? GetLightDirectionType(DocumentFormat.OpenXml.Office2010.Word.LightRig? openXmlElement)
+  public static LightRigDirectionKind? GetLightDirectionType(LightRig? openXmlElement)
   {
-    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Office2010.Word.LightRigDirectionValues, DocumentModel.Wordprocessing.LightRigDirectionKind>(openXmlElement?.LightDirectionType?.Value);
+    return EnumValueConverter.GetValue<LightRigDirectionValues, LightRigDirectionKind>(openXmlElement?.LightDirectionType?.Value);
   }
-  
-  public static void SetLightDirectionType(DocumentFormat.OpenXml.Office2010.Word.LightRig? openXmlElement, DocumentModel.Wordprocessing.LightRigDirectionKind? value)
+
+  public static void SetLightDirectionType(LightRig? openXmlElement, LightRigDirectionKind? value)
   {
     if (openXmlElement != null)
-      openXmlElement.LightDirectionType = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Office2010.Word.LightRigDirectionValues, DocumentModel.Wordprocessing.LightRigDirectionKind>(value);
+      openXmlElement.LightDirectionType = EnumValueConverter.CreateEnumValue<LightRigDirectionValues, LightRigDirectionKind>(value);
   }
-  
+
   /// <summary>
-  /// SphereCoordinates.
+  ///   SphereCoordinates.
   /// </summary>
-  public static DocumentModel.Wordprocessing.SphereCoordinates? GetSphereCoordinates(DocumentFormat.OpenXml.Office2010.Word.LightRig? openXmlElement)
+  public static SphereCoordinates? GetSphereCoordinates(LightRig? openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office2010.Word.SphereCoordinates>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Wordprocessing.SphereCoordinatesConverter.CreateModelElement(itemElement);
+      return SphereCoordinatesConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetSphereCoordinates(DocumentFormat.OpenXml.Office2010.Word.LightRig? openXmlElement, DocumentModel.Wordprocessing.SphereCoordinates? value)
+
+  public static void SetSphereCoordinates(LightRig? openXmlElement, SphereCoordinates? value)
   {
     if (openXmlElement != null)
     {
@@ -53,14 +58,14 @@ public static class LightRigConverter
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Wordprocessing.SphereCoordinatesConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2010.Word.SphereCoordinates>(value);
+        itemElement = SphereCoordinatesConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2010.Word.SphereCoordinates>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static DocumentModel.Wordprocessing.LightRig? CreateModelElement(DocumentFormat.OpenXml.Office2010.Word.LightRig? openXmlElement)
+
+  public static DocumentModel.Wordprocessing.LightRig? CreateModelElement(LightRig? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -72,9 +77,9 @@ public static class LightRigConverter
     }
     return null;
   }
-  
+
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.LightRig? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Office2010.Word.LightRig, new()
+    where OpenXmlElementType : LightRig, new()
   {
     if (value != null)
     {
