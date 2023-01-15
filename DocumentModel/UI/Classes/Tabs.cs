@@ -1,10 +1,9 @@
 namespace DocumentModel.UI;
 
 /// <summary>
-/// Defines the Tabs Class.
+///   Defines the Tabs Class.
 /// </summary>
-public partial class Tabs
+public class Tabs
 {
-  public Collection<DocumentModel.UI.Tab>? Items { get; set; }
-  
+  public Collection<Tab>? Items { get; set; }
 }

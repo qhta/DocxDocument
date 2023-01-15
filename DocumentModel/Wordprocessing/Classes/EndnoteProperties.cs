@@ -1,28 +1,27 @@
 namespace DocumentModel.Wordprocessing;
 
 /// <summary>
-/// Defines the EndnoteProperties Class.
+///   Defines the EndnoteProperties Class.
 /// </summary>
-public partial class EndnoteProperties
+public class EndnoteProperties
 {
   /// <summary>
-  /// Endnote Placement.
+  ///   Endnote Placement.
   /// </summary>
-  public DocumentModel.Wordprocessing.EndnotePositionKind? EndnotePosition { get; set; }
-  
+  public EndnotePositionKind? EndnotePosition { get; set; }
+
   /// <summary>
-  /// Endnote Numbering Format.
+  ///   Endnote Numbering Format.
   /// </summary>
-  public DocumentModel.Wordprocessing.NumberingFormat? NumberingFormat { get; set; }
-  
+  public NumberingFormat? NumberingFormat { get; set; }
+
   /// <summary>
-  /// Footnote and Endnote Numbering Starting Value.
+  ///   Footnote and Endnote Numbering Starting Value.
   /// </summary>
   public UInt16? NumberingStart { get; set; }
-  
+
   /// <summary>
-  /// Footnote and Endnote Numbering Restart Location.
+  ///   Footnote and Endnote Numbering Restart Location.
   /// </summary>
-  public DocumentModel.Wordprocessing.RestartNumberKind? NumberingRestart { get; set; }
-  
+  public RestartNumberKind? NumberingRestart { get; set; }
 }

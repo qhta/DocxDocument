@@ -1,21 +1,23 @@
+using DocumentFormat.OpenXml.Packaging;
+
 namespace DocumentModel.OpenXml.Packaging;
 
 /// <summary>
-/// Defines WordprocessingDocument - an OpenXmlPackage represents a Word document.
+///   Defines WordprocessingDocument - an OpenXmlPackage represents a Word document.
 /// </summary>
 public static class WordprocessingDocumentConverter
 {
   /// <summary>
-  /// Gets the type of the WordprocessingDocument.
+  ///   Gets the type of the WordprocessingDocument.
   /// </summary>
-  public static DocumentModel.WordprocessingDocumentType? GetDocumentType(DocumentFormat.OpenXml.Packaging.WordprocessingDocument? openXmlElement)
+  public static WordprocessingDocumentType? GetDocumentType(WordprocessingDocument? openXmlElement)
   {
     if (openXmlElement?.DocumentType != null)
-      return EnumValueConverter.GetValue<DocumentFormat.OpenXml.WordprocessingDocumentType, DocumentModel.WordprocessingDocumentType>(openXmlElement.DocumentType);
+      return EnumValueConverter.GetValue<DocumentFormat.OpenXml.WordprocessingDocumentType, WordprocessingDocumentType>(openXmlElement.DocumentType);
     return null;
   }
-  
-  public static DocumentModel.Packaging.WordprocessingDocument? CreateModelElement(DocumentFormat.OpenXml.Packaging.WordprocessingDocument? openXmlElement)
+
+  public static DocumentModel.Packaging.WordprocessingDocument? CreateModelElement(WordprocessingDocument? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -25,9 +27,9 @@ public static class WordprocessingDocumentConverter
     }
     return null;
   }
-  
+
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Packaging.WordprocessingDocument? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Packaging.WordprocessingDocument, new()
+    where OpenXmlElementType : WordprocessingDocument, new()
   {
     if (value != null)
     {

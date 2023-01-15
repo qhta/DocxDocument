@@ -1,10 +1,9 @@
 namespace DocumentModel.Drawings.Charts;
 
 /// <summary>
-/// Defines the ExtensionList Class.
+///   Defines the ExtensionList Class.
 /// </summary>
-public partial class ExtensionList
+public class ExtensionList
 {
-  public Collection<DocumentModel.Drawings.Charts.Extension>? Extensions { get; set; }
-  
+  public Collection<Extension>? Extensions { get; set; }
 }

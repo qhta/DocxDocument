@@ -1,23 +1,22 @@
 namespace DocumentModel.Wordprocessing;
 
 /// <summary>
-/// Defines the NumberFormValues enumeration.
+///   Defines the NumberFormValues enumeration.
 /// </summary>
 public enum NumberFormKind
 {
   /// <summary>
-  /// default.
+  ///   default.
   /// </summary>
   Default,
-  
+
   /// <summary>
-  /// lining.
+  ///   lining.
   /// </summary>
   Lining,
-  
+
   /// <summary>
-  /// oldStyle.
+  ///   oldStyle.
   /// </summary>
-  OldStyle,
-  
+  OldStyle
 }

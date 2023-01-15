@@ -1,23 +1,22 @@
 namespace DocumentModel.Drawings.Charts;
 
 /// <summary>
-/// Time Unit
+///   Time Unit
 /// </summary>
 public enum TimeUnitKind
 {
   /// <summary>
-  /// Days.
+  ///   Days.
   /// </summary>
   Days,
-  
+
   /// <summary>
-  /// Months.
+  ///   Months.
   /// </summary>
   Months,
-  
+
   /// <summary>
-  /// Years.
+  ///   Years.
   /// </summary>
-  Years,
-  
+  Years
 }

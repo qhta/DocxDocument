@@ -1,7 +1,6 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <OutputType>Exe</OutputType>
     <TargetFramework>net6.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <LangVersion>latest</LangVersion>
@@ -40,9 +39,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Reference Include="DocumentModel">
-      <HintPath>..\..\DocumentModel\bin\Debug\net6.0\DocumentModel.dll</HintPath>
-    </Reference>
     <Reference Include="DocumentModel.OpenXml">
       <HintPath>..\..\DocumentModel.OpenXml\bin\Debug\net6.0\DocumentModel.OpenXml.dll</HintPath>
     </Reference>

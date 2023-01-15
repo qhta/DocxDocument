@@ -1,10 +1,9 @@
 namespace DocumentModel;
 
 /// <summary>
-/// Defines the TaskHistory Class.
+///   Defines the TaskHistory Class.
 /// </summary>
-public partial class TaskHistory
+public class TaskHistory
 {
-  public Collection<DocumentModel.TaskHistoryEvent>? TaskHistoryEvents { get; set; }
-  
+  public Collection<TaskHistoryEvent>? TaskHistoryEvents { get; set; }
 }

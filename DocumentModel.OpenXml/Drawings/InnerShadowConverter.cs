@@ -1,64 +1,72 @@
+using DocumentFormat.OpenXml.Drawing;
+using HslColor = DocumentModel.Drawings.HslColor;
+using PresetColor = DocumentModel.Drawings.PresetColor;
+using RgbColorModelHex = DocumentModel.Drawings.RgbColorModelHex;
+using RgbColorModelPercentage = DocumentModel.Drawings.RgbColorModelPercentage;
+using SchemeColor = DocumentModel.Drawings.SchemeColor;
+using SystemColor = DocumentModel.Drawings.SystemColor;
+
 namespace DocumentModel.OpenXml.Drawings;
 
 /// <summary>
-/// Inner Shadow Effect.
+///   Inner Shadow Effect.
 /// </summary>
 public static class InnerShadowConverter
 {
   /// <summary>
-  /// Blur Radius
+  ///   Blur Radius
   /// </summary>
-  public static Int64? GetBlurRadius(DocumentFormat.OpenXml.Drawing.InnerShadow? openXmlElement)
+  public static Int64? GetBlurRadius(InnerShadow? openXmlElement)
   {
     return openXmlElement?.BlurRadius?.Value;
   }
-  
-  public static void SetBlurRadius(DocumentFormat.OpenXml.Drawing.InnerShadow? openXmlElement, Int64? value)
+
+  public static void SetBlurRadius(InnerShadow? openXmlElement, Int64? value)
   {
     if (openXmlElement != null)
       openXmlElement.BlurRadius = value;
   }
-  
+
   /// <summary>
-  /// Distance
+  ///   Distance
   /// </summary>
-  public static Int64? GetDistance(DocumentFormat.OpenXml.Drawing.InnerShadow? openXmlElement)
+  public static Int64? GetDistance(InnerShadow? openXmlElement)
   {
     return openXmlElement?.Distance?.Value;
   }
-  
-  public static void SetDistance(DocumentFormat.OpenXml.Drawing.InnerShadow? openXmlElement, Int64? value)
+
+  public static void SetDistance(InnerShadow? openXmlElement, Int64? value)
   {
     if (openXmlElement != null)
       openXmlElement.Distance = value;
   }
-  
+
   /// <summary>
-  /// Direction
+  ///   Direction
   /// </summary>
-  public static Int32? GetDirection(DocumentFormat.OpenXml.Drawing.InnerShadow? openXmlElement)
+  public static Int32? GetDirection(InnerShadow? openXmlElement)
   {
     return openXmlElement?.Direction?.Value;
   }
-  
-  public static void SetDirection(DocumentFormat.OpenXml.Drawing.InnerShadow? openXmlElement, Int32? value)
+
+  public static void SetDirection(InnerShadow? openXmlElement, Int32? value)
   {
     if (openXmlElement != null)
       openXmlElement.Direction = value;
   }
-  
+
   /// <summary>
-  /// RGB Color Model - Percentage Variant.
+  ///   RGB Color Model - Percentage Variant.
   /// </summary>
-  public static DocumentModel.Drawings.RgbColorModelPercentage? GetRgbColorModelPercentage(DocumentFormat.OpenXml.Drawing.InnerShadow? openXmlElement)
+  public static RgbColorModelPercentage? GetRgbColorModelPercentage(InnerShadow? openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.RgbColorModelPercentage>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.RgbColorModelPercentageConverter.CreateModelElement(itemElement);
+      return RgbColorModelPercentageConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetRgbColorModelPercentage(DocumentFormat.OpenXml.Drawing.InnerShadow? openXmlElement, DocumentModel.Drawings.RgbColorModelPercentage? value)
+
+  public static void SetRgbColorModelPercentage(InnerShadow? openXmlElement, RgbColorModelPercentage? value)
   {
     if (openXmlElement != null)
     {
@@ -67,25 +75,25 @@ public static class InnerShadowConverter
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Drawings.RgbColorModelPercentageConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.RgbColorModelPercentage>(value);
+        itemElement = RgbColorModelPercentageConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.RgbColorModelPercentage>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
+
   /// <summary>
-  /// RGB Color Model - Hex Variant.
+  ///   RGB Color Model - Hex Variant.
   /// </summary>
-  public static DocumentModel.Drawings.RgbColorModelHex? GetRgbColorModelHex(DocumentFormat.OpenXml.Drawing.InnerShadow? openXmlElement)
+  public static RgbColorModelHex? GetRgbColorModelHex(InnerShadow? openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.RgbColorModelHex>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.RgbColorModelHexConverter.CreateModelElement(itemElement);
+      return RgbColorModelHexConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetRgbColorModelHex(DocumentFormat.OpenXml.Drawing.InnerShadow? openXmlElement, DocumentModel.Drawings.RgbColorModelHex? value)
+
+  public static void SetRgbColorModelHex(InnerShadow? openXmlElement, RgbColorModelHex? value)
   {
     if (openXmlElement != null)
     {
@@ -94,25 +102,25 @@ public static class InnerShadowConverter
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Drawings.RgbColorModelHexConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.RgbColorModelHex>(value);
+        itemElement = RgbColorModelHexConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.RgbColorModelHex>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
+
   /// <summary>
-  /// Hue, Saturation, Luminance Color Model.
+  ///   Hue, Saturation, Luminance Color Model.
   /// </summary>
-  public static DocumentModel.Drawings.HslColor? GetHslColor(DocumentFormat.OpenXml.Drawing.InnerShadow? openXmlElement)
+  public static HslColor? GetHslColor(InnerShadow? openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.HslColor>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.HslColorConverter.CreateModelElement(itemElement);
+      return HslColorConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetHslColor(DocumentFormat.OpenXml.Drawing.InnerShadow? openXmlElement, DocumentModel.Drawings.HslColor? value)
+
+  public static void SetHslColor(InnerShadow? openXmlElement, HslColor? value)
   {
     if (openXmlElement != null)
     {
@@ -121,25 +129,25 @@ public static class InnerShadowConverter
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Drawings.HslColorConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.HslColor>(value);
+        itemElement = HslColorConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.HslColor>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
+
   /// <summary>
-  /// System Color.
+  ///   System Color.
   /// </summary>
-  public static DocumentModel.Drawings.SystemColor? GetSystemColor(DocumentFormat.OpenXml.Drawing.InnerShadow? openXmlElement)
+  public static SystemColor? GetSystemColor(InnerShadow? openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.SystemColor>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.SystemColorConverter.CreateModelElement(itemElement);
+      return SystemColorConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetSystemColor(DocumentFormat.OpenXml.Drawing.InnerShadow? openXmlElement, DocumentModel.Drawings.SystemColor? value)
+
+  public static void SetSystemColor(InnerShadow? openXmlElement, SystemColor? value)
   {
     if (openXmlElement != null)
     {
@@ -148,25 +156,25 @@ public static class InnerShadowConverter
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Drawings.SystemColorConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.SystemColor>(value);
+        itemElement = SystemColorConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.SystemColor>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
+
   /// <summary>
-  /// Scheme Color.
+  ///   Scheme Color.
   /// </summary>
-  public static DocumentModel.Drawings.SchemeColor? GetSchemeColor(DocumentFormat.OpenXml.Drawing.InnerShadow? openXmlElement)
+  public static SchemeColor? GetSchemeColor(InnerShadow? openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.SchemeColor>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.SchemeColorConverter.CreateModelElement(itemElement);
+      return SchemeColorConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetSchemeColor(DocumentFormat.OpenXml.Drawing.InnerShadow? openXmlElement, DocumentModel.Drawings.SchemeColor? value)
+
+  public static void SetSchemeColor(InnerShadow? openXmlElement, SchemeColor? value)
   {
     if (openXmlElement != null)
     {
@@ -175,25 +183,25 @@ public static class InnerShadowConverter
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Drawings.SchemeColorConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.SchemeColor>(value);
+        itemElement = SchemeColorConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.SchemeColor>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
+
   /// <summary>
-  /// Preset Color.
+  ///   Preset Color.
   /// </summary>
-  public static DocumentModel.Drawings.PresetColor? GetPresetColor(DocumentFormat.OpenXml.Drawing.InnerShadow? openXmlElement)
+  public static PresetColor? GetPresetColor(InnerShadow? openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.PresetColor>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.PresetColorConverter.CreateModelElement(itemElement);
+      return PresetColorConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetPresetColor(DocumentFormat.OpenXml.Drawing.InnerShadow? openXmlElement, DocumentModel.Drawings.PresetColor? value)
+
+  public static void SetPresetColor(InnerShadow? openXmlElement, PresetColor? value)
   {
     if (openXmlElement != null)
     {
@@ -202,14 +210,14 @@ public static class InnerShadowConverter
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Drawings.PresetColorConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.PresetColor>(value);
+        itemElement = PresetColorConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.PresetColor>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static DocumentModel.Drawings.InnerShadow? CreateModelElement(DocumentFormat.OpenXml.Drawing.InnerShadow? openXmlElement)
+
+  public static DocumentModel.Drawings.InnerShadow? CreateModelElement(InnerShadow? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -227,9 +235,9 @@ public static class InnerShadowConverter
     }
     return null;
   }
-  
+
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.InnerShadow? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.InnerShadow, new()
+    where OpenXmlElementType : InnerShadow, new()
   {
     if (value != null)
     {

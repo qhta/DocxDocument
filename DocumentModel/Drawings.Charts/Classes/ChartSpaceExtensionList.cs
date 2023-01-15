@@ -1,10 +1,9 @@
 namespace DocumentModel.Drawings.Charts;
 
 /// <summary>
-/// Defines the ChartSpaceExtensionList Class.
+///   Defines the ChartSpaceExtensionList Class.
 /// </summary>
-public partial class ChartSpaceExtensionList
+public class ChartSpaceExtensionList
 {
-  public Collection<DocumentModel.Drawings.Charts.ChartSpaceExtension>? ChartSpaceExtensions { get; set; }
-  
+  public Collection<ChartSpaceExtension>? ChartSpaceExtensions { get; set; }
 }

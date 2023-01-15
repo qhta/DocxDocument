@@ -1,18 +1,20 @@
+using DocumentModel.UI;
+
 namespace DocumentModel.OpenXml.UI;
 
 /// <summary>
-/// Defines the ButtonGroup Class.
+///   Defines the ButtonGroup Class.
 /// </summary>
 public static class ButtonGroupConverter
 {
   /// <summary>
-  /// id
+  ///   id
   /// </summary>
   public static String? GetId(DocumentFormat.OpenXml.Office.CustomUI.ButtonGroup? openXmlElement)
   {
     return openXmlElement?.Id?.Value;
   }
-  
+
   public static void SetId(DocumentFormat.OpenXml.Office.CustomUI.ButtonGroup? openXmlElement, String? value)
   {
     if (openXmlElement != null)
@@ -21,15 +23,15 @@ public static class ButtonGroupConverter
       else
         openXmlElement.Id = null;
   }
-  
+
   /// <summary>
-  /// idQ
+  ///   idQ
   /// </summary>
   public static String? GetIdQ(DocumentFormat.OpenXml.Office.CustomUI.ButtonGroup? openXmlElement)
   {
     return openXmlElement?.IdQ?.Value;
   }
-  
+
   public static void SetIdQ(DocumentFormat.OpenXml.Office.CustomUI.ButtonGroup? openXmlElement, String? value)
   {
     if (openXmlElement != null)
@@ -38,15 +40,15 @@ public static class ButtonGroupConverter
       else
         openXmlElement.IdQ = null;
   }
-  
+
   /// <summary>
-  /// visible
+  ///   visible
   /// </summary>
   public static Boolean? GetVisible(DocumentFormat.OpenXml.Office.CustomUI.ButtonGroup? openXmlElement)
   {
     return openXmlElement?.Visible?.Value;
   }
-  
+
   public static void SetVisible(DocumentFormat.OpenXml.Office.CustomUI.ButtonGroup? openXmlElement, Boolean? value)
   {
     if (openXmlElement != null)
@@ -55,15 +57,15 @@ public static class ButtonGroupConverter
       else
         openXmlElement.Visible = null;
   }
-  
+
   /// <summary>
-  /// getVisible
+  ///   getVisible
   /// </summary>
   public static String? GetGetVisible(DocumentFormat.OpenXml.Office.CustomUI.ButtonGroup? openXmlElement)
   {
     return openXmlElement?.GetVisible?.Value;
   }
-  
+
   public static void SetGetVisible(DocumentFormat.OpenXml.Office.CustomUI.ButtonGroup? openXmlElement, String? value)
   {
     if (openXmlElement != null)
@@ -72,15 +74,15 @@ public static class ButtonGroupConverter
       else
         openXmlElement.GetVisible = null;
   }
-  
+
   /// <summary>
-  /// insertAfterMso
+  ///   insertAfterMso
   /// </summary>
   public static String? GetInsertAfterMso(DocumentFormat.OpenXml.Office.CustomUI.ButtonGroup? openXmlElement)
   {
     return openXmlElement?.InsertAfterMso?.Value;
   }
-  
+
   public static void SetInsertAfterMso(DocumentFormat.OpenXml.Office.CustomUI.ButtonGroup? openXmlElement, String? value)
   {
     if (openXmlElement != null)
@@ -89,15 +91,15 @@ public static class ButtonGroupConverter
       else
         openXmlElement.InsertAfterMso = null;
   }
-  
+
   /// <summary>
-  /// insertBeforeMso
+  ///   insertBeforeMso
   /// </summary>
   public static String? GetInsertBeforeMso(DocumentFormat.OpenXml.Office.CustomUI.ButtonGroup? openXmlElement)
   {
     return openXmlElement?.InsertBeforeMso?.Value;
   }
-  
+
   public static void SetInsertBeforeMso(DocumentFormat.OpenXml.Office.CustomUI.ButtonGroup? openXmlElement, String? value)
   {
     if (openXmlElement != null)
@@ -106,15 +108,15 @@ public static class ButtonGroupConverter
       else
         openXmlElement.InsertBeforeMso = null;
   }
-  
+
   /// <summary>
-  /// insertAfterQ
+  ///   insertAfterQ
   /// </summary>
   public static String? GetInsertAfterQ(DocumentFormat.OpenXml.Office.CustomUI.ButtonGroup? openXmlElement)
   {
     return openXmlElement?.InsertAfterQ?.Value;
   }
-  
+
   public static void SetInsertAfterQ(DocumentFormat.OpenXml.Office.CustomUI.ButtonGroup? openXmlElement, String? value)
   {
     if (openXmlElement != null)
@@ -123,15 +125,15 @@ public static class ButtonGroupConverter
       else
         openXmlElement.InsertAfterQ = null;
   }
-  
+
   /// <summary>
-  /// insertBeforeQ
+  ///   insertBeforeQ
   /// </summary>
   public static String? GetInsertBeforeQ(DocumentFormat.OpenXml.Office.CustomUI.ButtonGroup? openXmlElement)
   {
     return openXmlElement?.InsertBeforeQ?.Value;
   }
-  
+
   public static void SetInsertBeforeQ(DocumentFormat.OpenXml.Office.CustomUI.ButtonGroup? openXmlElement, String? value)
   {
     if (openXmlElement != null)
@@ -140,16 +142,16 @@ public static class ButtonGroupConverter
       else
         openXmlElement.InsertBeforeQ = null;
   }
-  
-  public static DocumentModel.UI.UnsizedControlClone? GetUnsizedControlClone(DocumentFormat.OpenXml.Office.CustomUI.ButtonGroup? openXmlElement)
+
+  public static UnsizedControlClone? GetUnsizedControlClone(DocumentFormat.OpenXml.Office.CustomUI.ButtonGroup? openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office.CustomUI.UnsizedControlClone>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.UI.UnsizedControlCloneConverter.CreateModelElement(itemElement);
+      return UnsizedControlCloneConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetUnsizedControlClone(DocumentFormat.OpenXml.Office.CustomUI.ButtonGroup? openXmlElement, DocumentModel.UI.UnsizedControlClone? value)
+
+  public static void SetUnsizedControlClone(DocumentFormat.OpenXml.Office.CustomUI.ButtonGroup? openXmlElement, UnsizedControlClone? value)
   {
     if (openXmlElement != null)
     {
@@ -158,22 +160,22 @@ public static class ButtonGroupConverter
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.UI.UnsizedControlCloneConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office.CustomUI.UnsizedControlClone>(value);
+        itemElement = UnsizedControlCloneConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office.CustomUI.UnsizedControlClone>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static DocumentModel.UI.UnsizedButton? GetUnsizedButton(DocumentFormat.OpenXml.Office.CustomUI.ButtonGroup? openXmlElement)
+
+  public static UnsizedButton? GetUnsizedButton(DocumentFormat.OpenXml.Office.CustomUI.ButtonGroup? openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office.CustomUI.UnsizedButton>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.UI.UnsizedButtonConverter.CreateModelElement(itemElement);
+      return UnsizedButtonConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetUnsizedButton(DocumentFormat.OpenXml.Office.CustomUI.ButtonGroup? openXmlElement, DocumentModel.UI.UnsizedButton? value)
+
+  public static void SetUnsizedButton(DocumentFormat.OpenXml.Office.CustomUI.ButtonGroup? openXmlElement, UnsizedButton? value)
   {
     if (openXmlElement != null)
     {
@@ -182,22 +184,22 @@ public static class ButtonGroupConverter
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.UI.UnsizedButtonConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office.CustomUI.UnsizedButton>(value);
+        itemElement = UnsizedButtonConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office.CustomUI.UnsizedButton>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static DocumentModel.UI.UnsizedToggleButton? GetUnsizedToggleButton(DocumentFormat.OpenXml.Office.CustomUI.ButtonGroup? openXmlElement)
+
+  public static UnsizedToggleButton? GetUnsizedToggleButton(DocumentFormat.OpenXml.Office.CustomUI.ButtonGroup? openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office.CustomUI.UnsizedToggleButton>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.UI.UnsizedToggleButtonConverter.CreateModelElement(itemElement);
+      return UnsizedToggleButtonConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetUnsizedToggleButton(DocumentFormat.OpenXml.Office.CustomUI.ButtonGroup? openXmlElement, DocumentModel.UI.UnsizedToggleButton? value)
+
+  public static void SetUnsizedToggleButton(DocumentFormat.OpenXml.Office.CustomUI.ButtonGroup? openXmlElement, UnsizedToggleButton? value)
   {
     if (openXmlElement != null)
     {
@@ -206,22 +208,22 @@ public static class ButtonGroupConverter
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.UI.UnsizedToggleButtonConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office.CustomUI.UnsizedToggleButton>(value);
+        itemElement = UnsizedToggleButtonConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office.CustomUI.UnsizedToggleButton>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static DocumentModel.UI.UnsizedGallery? GetUnsizedGallery(DocumentFormat.OpenXml.Office.CustomUI.ButtonGroup? openXmlElement)
+
+  public static UnsizedGallery? GetUnsizedGallery(DocumentFormat.OpenXml.Office.CustomUI.ButtonGroup? openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office.CustomUI.UnsizedGallery>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.UI.UnsizedGalleryConverter.CreateModelElement(itemElement);
+      return UnsizedGalleryConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetUnsizedGallery(DocumentFormat.OpenXml.Office.CustomUI.ButtonGroup? openXmlElement, DocumentModel.UI.UnsizedGallery? value)
+
+  public static void SetUnsizedGallery(DocumentFormat.OpenXml.Office.CustomUI.ButtonGroup? openXmlElement, UnsizedGallery? value)
   {
     if (openXmlElement != null)
     {
@@ -230,22 +232,22 @@ public static class ButtonGroupConverter
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.UI.UnsizedGalleryConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office.CustomUI.UnsizedGallery>(value);
+        itemElement = UnsizedGalleryConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office.CustomUI.UnsizedGallery>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static DocumentModel.UI.UnsizedMenu? GetUnsizedMenu(DocumentFormat.OpenXml.Office.CustomUI.ButtonGroup? openXmlElement)
+
+  public static UnsizedMenu? GetUnsizedMenu(DocumentFormat.OpenXml.Office.CustomUI.ButtonGroup? openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office.CustomUI.UnsizedMenu>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.UI.UnsizedMenuConverter.CreateModelElement(itemElement);
+      return UnsizedMenuConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetUnsizedMenu(DocumentFormat.OpenXml.Office.CustomUI.ButtonGroup? openXmlElement, DocumentModel.UI.UnsizedMenu? value)
+
+  public static void SetUnsizedMenu(DocumentFormat.OpenXml.Office.CustomUI.ButtonGroup? openXmlElement, UnsizedMenu? value)
   {
     if (openXmlElement != null)
     {
@@ -254,22 +256,22 @@ public static class ButtonGroupConverter
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.UI.UnsizedMenuConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office.CustomUI.UnsizedMenu>(value);
+        itemElement = UnsizedMenuConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office.CustomUI.UnsizedMenu>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static DocumentModel.UI.UnsizedDynamicMenu? GetUnsizedDynamicMenu(DocumentFormat.OpenXml.Office.CustomUI.ButtonGroup? openXmlElement)
+
+  public static UnsizedDynamicMenu? GetUnsizedDynamicMenu(DocumentFormat.OpenXml.Office.CustomUI.ButtonGroup? openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office.CustomUI.UnsizedDynamicMenu>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.UI.UnsizedDynamicMenuConverter.CreateModelElement(itemElement);
+      return UnsizedDynamicMenuConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetUnsizedDynamicMenu(DocumentFormat.OpenXml.Office.CustomUI.ButtonGroup? openXmlElement, DocumentModel.UI.UnsizedDynamicMenu? value)
+
+  public static void SetUnsizedDynamicMenu(DocumentFormat.OpenXml.Office.CustomUI.ButtonGroup? openXmlElement, UnsizedDynamicMenu? value)
   {
     if (openXmlElement != null)
     {
@@ -278,22 +280,22 @@ public static class ButtonGroupConverter
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.UI.UnsizedDynamicMenuConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office.CustomUI.UnsizedDynamicMenu>(value);
+        itemElement = UnsizedDynamicMenuConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office.CustomUI.UnsizedDynamicMenu>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static DocumentModel.UI.UnsizedSplitButton? GetUnsizedSplitButton(DocumentFormat.OpenXml.Office.CustomUI.ButtonGroup? openXmlElement)
+
+  public static UnsizedSplitButton? GetUnsizedSplitButton(DocumentFormat.OpenXml.Office.CustomUI.ButtonGroup? openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office.CustomUI.UnsizedSplitButton>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.UI.UnsizedSplitButtonConverter.CreateModelElement(itemElement);
+      return UnsizedSplitButtonConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetUnsizedSplitButton(DocumentFormat.OpenXml.Office.CustomUI.ButtonGroup? openXmlElement, DocumentModel.UI.UnsizedSplitButton? value)
+
+  public static void SetUnsizedSplitButton(DocumentFormat.OpenXml.Office.CustomUI.ButtonGroup? openXmlElement, UnsizedSplitButton? value)
   {
     if (openXmlElement != null)
     {
@@ -302,13 +304,13 @@ public static class ButtonGroupConverter
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.UI.UnsizedSplitButtonConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office.CustomUI.UnsizedSplitButton>(value);
+        itemElement = UnsizedSplitButtonConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office.CustomUI.UnsizedSplitButton>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
+
   public static DocumentModel.UI.ButtonGroup? CreateModelElement(DocumentFormat.OpenXml.Office.CustomUI.ButtonGroup? openXmlElement)
   {
     if (openXmlElement != null)
@@ -333,9 +335,9 @@ public static class ButtonGroupConverter
     }
     return null;
   }
-  
+
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.UI.ButtonGroup? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Office.CustomUI.ButtonGroup, new()
+    where OpenXmlElementType : DocumentFormat.OpenXml.Office.CustomUI.ButtonGroup, new()
   {
     if (value != null)
     {

@@ -1,183 +1,185 @@
+using DocumentFormat.OpenXml.Drawing.Charts;
+
 namespace DocumentModel.OpenXml.Drawings.Charts;
 
 /// <summary>
-/// 3D view settings.
+///   3D view settings.
 /// </summary>
 public static class View3DConverter
 {
   /// <summary>
-  /// X Rotation.
+  ///   X Rotation.
   /// </summary>
-  public static SByte? GetRotateX(DocumentFormat.OpenXml.Drawing.Charts.View3D? openXmlElement)
+  public static SByte? GetRotateX(View3D? openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.RotateX>();
+    var itemElement = openXmlElement?.GetFirstChild<RotateX>();
     if (itemElement != null)
       return itemElement.Val?.Value;
     return null;
   }
-  
-  public static void SetRotateX(DocumentFormat.OpenXml.Drawing.Charts.View3D? openXmlElement, SByte? value)
+
+  public static void SetRotateX(View3D? openXmlElement, SByte? value)
   {
     if (openXmlElement != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.RotateX>();
+      var itemElement = openXmlElement.GetFirstChild<RotateX>();
       if (itemElement != null)
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = new DocumentFormat.OpenXml.Drawing.Charts.RotateX{ Val = value };
+        itemElement = new RotateX { Val = value };
         openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
+
   /// <summary>
-  /// Height Percent.
+  ///   Height Percent.
   /// </summary>
-  public static UInt16? GetHeightPercent(DocumentFormat.OpenXml.Drawing.Charts.View3D? openXmlElement)
+  public static UInt16? GetHeightPercent(View3D? openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.HeightPercent>();
+    var itemElement = openXmlElement?.GetFirstChild<HeightPercent>();
     if (itemElement != null)
       return itemElement.Val?.Value;
     return null;
   }
-  
-  public static void SetHeightPercent(DocumentFormat.OpenXml.Drawing.Charts.View3D? openXmlElement, UInt16? value)
+
+  public static void SetHeightPercent(View3D? openXmlElement, UInt16? value)
   {
     if (openXmlElement != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.HeightPercent>();
+      var itemElement = openXmlElement.GetFirstChild<HeightPercent>();
       if (itemElement != null)
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = new DocumentFormat.OpenXml.Drawing.Charts.HeightPercent{ Val = value };
+        itemElement = new HeightPercent { Val = value };
         openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
+
   /// <summary>
-  /// Y Rotation.
+  ///   Y Rotation.
   /// </summary>
-  public static UInt16? GetRotateY(DocumentFormat.OpenXml.Drawing.Charts.View3D? openXmlElement)
+  public static UInt16? GetRotateY(View3D? openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.RotateY>();
+    var itemElement = openXmlElement?.GetFirstChild<RotateY>();
     if (itemElement != null)
       return itemElement.Val?.Value;
     return null;
   }
-  
-  public static void SetRotateY(DocumentFormat.OpenXml.Drawing.Charts.View3D? openXmlElement, UInt16? value)
+
+  public static void SetRotateY(View3D? openXmlElement, UInt16? value)
   {
     if (openXmlElement != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.RotateY>();
+      var itemElement = openXmlElement.GetFirstChild<RotateY>();
       if (itemElement != null)
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = new DocumentFormat.OpenXml.Drawing.Charts.RotateY{ Val = value };
+        itemElement = new RotateY { Val = value };
         openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
+
   /// <summary>
-  /// Depth Percent.
+  ///   Depth Percent.
   /// </summary>
-  public static UInt16? GetDepthPercent(DocumentFormat.OpenXml.Drawing.Charts.View3D? openXmlElement)
+  public static UInt16? GetDepthPercent(View3D? openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.DepthPercent>();
+    var itemElement = openXmlElement?.GetFirstChild<DepthPercent>();
     if (itemElement != null)
       return itemElement.Val?.Value;
     return null;
   }
-  
-  public static void SetDepthPercent(DocumentFormat.OpenXml.Drawing.Charts.View3D? openXmlElement, UInt16? value)
+
+  public static void SetDepthPercent(View3D? openXmlElement, UInt16? value)
   {
     if (openXmlElement != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.DepthPercent>();
+      var itemElement = openXmlElement.GetFirstChild<DepthPercent>();
       if (itemElement != null)
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = new DocumentFormat.OpenXml.Drawing.Charts.DepthPercent{ Val = value };
+        itemElement = new DepthPercent { Val = value };
         openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
+
   /// <summary>
-  /// Right Angle Axes.
+  ///   Right Angle Axes.
   /// </summary>
-  public static Boolean? GetRightAngleAxes(DocumentFormat.OpenXml.Drawing.Charts.View3D? openXmlElement)
+  public static Boolean? GetRightAngleAxes(View3D? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.RightAngleAxes>();
+      var itemElement = openXmlElement.GetFirstChild<RightAngleAxes>();
       return itemElement != null;
     }
     return null;
   }
-  
-  public static void SetRightAngleAxes(DocumentFormat.OpenXml.Drawing.Charts.View3D? openXmlElement, Boolean? value)
+
+  public static void SetRightAngleAxes(View3D? openXmlElement, Boolean? value)
   {
     if (openXmlElement != null)
     {
       if (value == false)
       {
-        var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.RightAngleAxes>();
+        var itemElement = openXmlElement.GetFirstChild<RightAngleAxes>();
         if (itemElement != null)
           itemElement.Remove();
       }
       if (value == true)
       {
-        var itemElement = new DocumentFormat.OpenXml.Drawing.Charts.RightAngleAxes();
+        var itemElement = new RightAngleAxes();
         openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
+
   /// <summary>
-  /// Perspective.
+  ///   Perspective.
   /// </summary>
-  public static Byte? GetPerspective(DocumentFormat.OpenXml.Drawing.Charts.View3D? openXmlElement)
+  public static Byte? GetPerspective(View3D? openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.Perspective>();
+    var itemElement = openXmlElement?.GetFirstChild<Perspective>();
     if (itemElement != null)
       return itemElement.Val?.Value;
     return null;
   }
-  
-  public static void SetPerspective(DocumentFormat.OpenXml.Drawing.Charts.View3D? openXmlElement, Byte? value)
+
+  public static void SetPerspective(View3D? openXmlElement, Byte? value)
   {
     if (openXmlElement != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.Perspective>();
+      var itemElement = openXmlElement.GetFirstChild<Perspective>();
       if (itemElement != null)
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = new DocumentFormat.OpenXml.Drawing.Charts.Perspective{ Val = value };
+        itemElement = new Perspective { Val = value };
         openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
+
   /// <summary>
-  /// Chart Extensibility.
+  ///   Chart Extensibility.
   /// </summary>
-  public static DocumentModel.Drawings.Charts.ExtensionList? GetExtensionList(DocumentFormat.OpenXml.Drawing.Charts.View3D? openXmlElement)
+  public static DocumentModel.Drawings.Charts.ExtensionList? GetExtensionList(View3D? openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.ExtensionList>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.Charts.ExtensionListConverter.CreateModelElement(itemElement);
+      return ExtensionListConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetExtensionList(DocumentFormat.OpenXml.Drawing.Charts.View3D? openXmlElement, DocumentModel.Drawings.Charts.ExtensionList? value)
+
+  public static void SetExtensionList(View3D? openXmlElement, DocumentModel.Drawings.Charts.ExtensionList? value)
   {
     if (openXmlElement != null)
     {
@@ -186,14 +188,14 @@ public static class View3DConverter
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Drawings.Charts.ExtensionListConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Charts.ExtensionList>(value);
+        itemElement = ExtensionListConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Charts.ExtensionList>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static DocumentModel.Drawings.Charts.View3D? CreateModelElement(DocumentFormat.OpenXml.Drawing.Charts.View3D? openXmlElement)
+
+  public static DocumentModel.Drawings.Charts.View3D? CreateModelElement(View3D? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -209,9 +211,9 @@ public static class View3DConverter
     }
     return null;
   }
-  
+
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.Charts.View3D? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.Charts.View3D, new()
+    where OpenXmlElementType : View3D, new()
   {
     if (value != null)
     {

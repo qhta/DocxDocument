@@ -1,18 +1,17 @@
 namespace DocumentModel.Vml;
 
 /// <summary>
-/// Regroup Entry.
+///   Regroup Entry.
 /// </summary>
-public partial class Entry
+public class Entry
 {
   /// <summary>
-  /// New Group ID
+  ///   New Group ID
   /// </summary>
   public Int32? New { get; set; }
-  
+
   /// <summary>
-  /// Old Group ID
+  ///   Old Group ID
   /// </summary>
   public Int32? Old { get; set; }
-  
 }

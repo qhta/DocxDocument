@@ -1,38 +1,37 @@
 namespace DocumentModel.Wordprocessing;
 
 /// <summary>
-/// Complex Field Character.
+///   Complex Field Character.
 /// </summary>
-public partial class FieldChar
+public class FieldChar
 {
   /// <summary>
-  /// Field Character Type
+  ///   Field Character Type
   /// </summary>
-  public DocumentModel.Wordprocessing.FieldCharKind? FieldCharType { get; set; }
-  
+  public FieldCharKind? FieldCharType { get; set; }
+
   /// <summary>
-  /// Field Should Not Be Recalculated
+  ///   Field Should Not Be Recalculated
   /// </summary>
   public Boolean? FieldLock { get; set; }
-  
+
   /// <summary>
-  /// Field Result Invalidated
+  ///   Field Result Invalidated
   /// </summary>
   public Boolean? Dirty { get; set; }
-  
+
   /// <summary>
-  /// Custom Field Data.
+  ///   Custom Field Data.
   /// </summary>
   public String? FieldData { get; set; }
-  
+
   /// <summary>
-  /// Form Field Properties.
+  ///   Form Field Properties.
   /// </summary>
-  public DocumentModel.Wordprocessing.FormFieldData? FormFieldData { get; set; }
-  
+  public FormFieldData? FormFieldData { get; set; }
+
   /// <summary>
-  /// Previous Numbering Field Properties.
+  ///   Previous Numbering Field Properties.
   /// </summary>
-  public DocumentModel.Wordprocessing.NumberingChange? NumberingChange { get; set; }
-  
+  public NumberingChange? NumberingChange { get; set; }
 }

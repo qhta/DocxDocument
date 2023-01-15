@@ -1,18 +1,17 @@
 namespace DocumentModel.Math;
 
 /// <summary>
-/// Matrix Column Properties.
+///   Matrix Column Properties.
 /// </summary>
-public partial class MatrixColumnProperties
+public class MatrixColumnProperties
 {
   /// <summary>
-  /// Matrix Column Count.
+  ///   Matrix Column Count.
   /// </summary>
   public Int64? MatrixColumnCount { get; set; }
-  
+
   /// <summary>
-  /// Matrix Column Justification.
+  ///   Matrix Column Justification.
   /// </summary>
-  public DocumentModel.Math.HorizontalAlignmentKind? MatrixColumnJustification { get; set; }
-  
+  public HorizontalAlignmentKind? MatrixColumnJustification { get; set; }
 }

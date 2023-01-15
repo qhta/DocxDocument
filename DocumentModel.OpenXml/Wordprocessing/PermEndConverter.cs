@@ -1,39 +1,43 @@
+using DocumentFormat.OpenXml.Wordprocessing;
+using DocumentModel.Wordprocessing;
+using PermEnd = DocumentFormat.OpenXml.Wordprocessing.PermEnd;
+
 namespace DocumentModel.OpenXml.Wordprocessing;
 
 /// <summary>
-/// Defines the PermEnd Class.
+///   Defines the PermEnd Class.
 /// </summary>
 public static class PermEndConverter
 {
   /// <summary>
-  /// Annotation ID
+  ///   Annotation ID
   /// </summary>
-  public static Int32? GetId(DocumentFormat.OpenXml.Wordprocessing.PermEnd? openXmlElement)
+  public static Int32? GetId(PermEnd? openXmlElement)
   {
     return openXmlElement?.Id?.Value;
   }
-  
-  public static void SetId(DocumentFormat.OpenXml.Wordprocessing.PermEnd? openXmlElement, Int32? value)
+
+  public static void SetId(PermEnd? openXmlElement, Int32? value)
   {
     if (openXmlElement != null)
       openXmlElement.Id = value;
   }
-  
+
   /// <summary>
-  /// Annotation Displaced By Custom XML Markup
+  ///   Annotation Displaced By Custom XML Markup
   /// </summary>
-  public static DocumentModel.Wordprocessing.DisplacedByCustomXmlKind? GetDisplacedByCustomXml(DocumentFormat.OpenXml.Wordprocessing.PermEnd? openXmlElement)
+  public static DisplacedByCustomXmlKind? GetDisplacedByCustomXml(PermEnd? openXmlElement)
   {
-    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Wordprocessing.DisplacedByCustomXmlValues, DocumentModel.Wordprocessing.DisplacedByCustomXmlKind>(openXmlElement?.DisplacedByCustomXml?.Value);
+    return EnumValueConverter.GetValue<DisplacedByCustomXmlValues, DisplacedByCustomXmlKind>(openXmlElement?.DisplacedByCustomXml?.Value);
   }
-  
-  public static void SetDisplacedByCustomXml(DocumentFormat.OpenXml.Wordprocessing.PermEnd? openXmlElement, DocumentModel.Wordprocessing.DisplacedByCustomXmlKind? value)
+
+  public static void SetDisplacedByCustomXml(PermEnd? openXmlElement, DisplacedByCustomXmlKind? value)
   {
     if (openXmlElement != null)
-      openXmlElement.DisplacedByCustomXml = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Wordprocessing.DisplacedByCustomXmlValues, DocumentModel.Wordprocessing.DisplacedByCustomXmlKind>(value);
+      openXmlElement.DisplacedByCustomXml = EnumValueConverter.CreateEnumValue<DisplacedByCustomXmlValues, DisplacedByCustomXmlKind>(value);
   }
-  
-  public static DocumentModel.Wordprocessing.PermEnd? CreateModelElement(DocumentFormat.OpenXml.Wordprocessing.PermEnd? openXmlElement)
+
+  public static DocumentModel.Wordprocessing.PermEnd? CreateModelElement(PermEnd? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -44,9 +48,9 @@ public static class PermEndConverter
     }
     return null;
   }
-  
+
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.PermEnd? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Wordprocessing.PermEnd, new()
+    where OpenXmlElementType : PermEnd, new()
   {
     if (value != null)
     {

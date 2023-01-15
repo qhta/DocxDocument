@@ -1,41 +1,50 @@
+using DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle;
+using EffectReference = DocumentModel.Drawings.ChartsStyle.EffectReference;
+using FillReference = DocumentModel.Drawings.ChartsStyle.FillReference;
+using FontReference = DocumentModel.Drawings.ChartsStyle.FontReference;
+using LineReference = DocumentModel.Drawings.ChartsStyle.LineReference;
+using ShapeProperties = DocumentModel.Drawings.ChartsStyle.ShapeProperties;
+using TextBodyProperties = DocumentModel.Drawings.ChartsStyle.TextBodyProperties;
+using TextCharacterPropertiesType = DocumentModel.Drawings.ChartsStyle.TextCharacterPropertiesType;
+
 namespace DocumentModel.OpenXml.Drawings.ChartsStyle;
 
 /// <summary>
-/// Defines the StyleEntry Class.
+///   Defines the StyleEntry Class.
 /// </summary>
 public static class StyleEntryConverter
 {
   /// <summary>
-  /// mods, this property is only available in Office 2013 and later.
+  ///   mods, this property is only available in Office 2013 and later.
   /// </summary>
-  public static DocumentModel.ListOf<String>? GetModifiers(DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.StyleEntry? openXmlElement)
+  public static ListOf<String>? GetModifiers(StyleEntry? openXmlElement)
   {
     return ListValueConverter.GetValue(openXmlElement?.Modifiers);
   }
-  
-  public static void SetModifiers(DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.StyleEntry? openXmlElement, DocumentModel.ListOf<String>? value)
+
+  public static void SetModifiers(StyleEntry? openXmlElement, ListOf<String>? value)
   {
     if (openXmlElement != null)
     {
       if (value != null)
-        openXmlElement.Modifiers = ListValueConverter.CreateListValue<DocumentFormat.OpenXml.StringValue>(value);
+        openXmlElement.Modifiers = ListValueConverter.CreateListValue<StringValue>(value);
       else
         openXmlElement.Modifiers = null;
     }
   }
-  
+
   /// <summary>
-  /// LineReference.
+  ///   LineReference.
   /// </summary>
-  public static DocumentModel.Drawings.ChartsStyle.LineReference? GetLineReference(DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.StyleEntry? openXmlElement)
+  public static LineReference? GetLineReference(StyleEntry? openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.LineReference>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.ChartsStyle.LineReferenceConverter.CreateModelElement(itemElement);
+      return LineReferenceConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetLineReference(DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.StyleEntry? openXmlElement, DocumentModel.Drawings.ChartsStyle.LineReference? value)
+
+  public static void SetLineReference(StyleEntry? openXmlElement, LineReference? value)
   {
     if (openXmlElement != null)
     {
@@ -44,51 +53,51 @@ public static class StyleEntryConverter
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Drawings.ChartsStyle.LineReferenceConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.LineReference>(value);
+        itemElement = LineReferenceConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.LineReference>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
+
   /// <summary>
-  /// LineWidthScale.
+  ///   LineWidthScale.
   /// </summary>
-  public static String? GetLineWidthScale(DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.StyleEntry? openXmlElement)
+  public static String? GetLineWidthScale(StyleEntry? openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.LineWidthScale>();
+    var itemElement = openXmlElement?.GetFirstChild<LineWidthScale>();
     if (itemElement != null)
       return itemElement.Text;
     return null;
   }
-  
-  public static void SetLineWidthScale(DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.StyleEntry? openXmlElement, String? value)
+
+  public static void SetLineWidthScale(StyleEntry? openXmlElement, String? value)
   {
     if (openXmlElement != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.LineWidthScale>();
+      var itemElement = openXmlElement.GetFirstChild<LineWidthScale>();
       if (itemElement != null)
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = new DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.LineWidthScale { Text = value };
+        itemElement = new LineWidthScale { Text = value };
         openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
+
   /// <summary>
-  /// FillReference.
+  ///   FillReference.
   /// </summary>
-  public static DocumentModel.Drawings.ChartsStyle.FillReference? GetFillReference(DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.StyleEntry? openXmlElement)
+  public static FillReference? GetFillReference(StyleEntry? openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.FillReference>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.ChartsStyle.FillReferenceConverter.CreateModelElement(itemElement);
+      return FillReferenceConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetFillReference(DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.StyleEntry? openXmlElement, DocumentModel.Drawings.ChartsStyle.FillReference? value)
+
+  public static void SetFillReference(StyleEntry? openXmlElement, FillReference? value)
   {
     if (openXmlElement != null)
     {
@@ -97,25 +106,25 @@ public static class StyleEntryConverter
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Drawings.ChartsStyle.FillReferenceConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.FillReference>(value);
+        itemElement = FillReferenceConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.FillReference>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
+
   /// <summary>
-  /// EffectReference.
+  ///   EffectReference.
   /// </summary>
-  public static DocumentModel.Drawings.ChartsStyle.EffectReference? GetEffectReference(DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.StyleEntry? openXmlElement)
+  public static EffectReference? GetEffectReference(StyleEntry? openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.EffectReference>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.ChartsStyle.EffectReferenceConverter.CreateModelElement(itemElement);
+      return EffectReferenceConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetEffectReference(DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.StyleEntry? openXmlElement, DocumentModel.Drawings.ChartsStyle.EffectReference? value)
+
+  public static void SetEffectReference(StyleEntry? openXmlElement, EffectReference? value)
   {
     if (openXmlElement != null)
     {
@@ -124,25 +133,25 @@ public static class StyleEntryConverter
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Drawings.ChartsStyle.EffectReferenceConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.EffectReference>(value);
+        itemElement = EffectReferenceConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.EffectReference>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
+
   /// <summary>
-  /// FontReference.
+  ///   FontReference.
   /// </summary>
-  public static DocumentModel.Drawings.ChartsStyle.FontReference? GetFontReference(DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.StyleEntry? openXmlElement)
+  public static FontReference? GetFontReference(StyleEntry? openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.FontReference>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.ChartsStyle.FontReferenceConverter.CreateModelElement(itemElement);
+      return FontReferenceConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetFontReference(DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.StyleEntry? openXmlElement, DocumentModel.Drawings.ChartsStyle.FontReference? value)
+
+  public static void SetFontReference(StyleEntry? openXmlElement, FontReference? value)
   {
     if (openXmlElement != null)
     {
@@ -151,25 +160,25 @@ public static class StyleEntryConverter
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Drawings.ChartsStyle.FontReferenceConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.FontReference>(value);
+        itemElement = FontReferenceConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.FontReference>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
+
   /// <summary>
-  /// ShapeProperties.
+  ///   ShapeProperties.
   /// </summary>
-  public static DocumentModel.Drawings.ChartsStyle.ShapeProperties? GetShapeProperties(DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.StyleEntry? openXmlElement)
+  public static ShapeProperties? GetShapeProperties(StyleEntry? openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.ShapeProperties>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.ChartsStyle.ShapePropertiesConverter.CreateModelElement(itemElement);
+      return ShapePropertiesConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetShapeProperties(DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.StyleEntry? openXmlElement, DocumentModel.Drawings.ChartsStyle.ShapeProperties? value)
+
+  public static void SetShapeProperties(StyleEntry? openXmlElement, ShapeProperties? value)
   {
     if (openXmlElement != null)
     {
@@ -178,25 +187,25 @@ public static class StyleEntryConverter
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Drawings.ChartsStyle.ShapePropertiesConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.ShapeProperties>(value);
+        itemElement = ShapePropertiesConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.ShapeProperties>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
+
   /// <summary>
-  /// TextCharacterPropertiesType.
+  ///   TextCharacterPropertiesType.
   /// </summary>
-  public static DocumentModel.Drawings.ChartsStyle.TextCharacterPropertiesType? GetTextCharacterPropertiesType(DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.StyleEntry? openXmlElement)
+  public static TextCharacterPropertiesType? GetTextCharacterPropertiesType(StyleEntry? openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.TextCharacterPropertiesType>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.ChartsStyle.TextCharacterPropertiesTypeConverter.CreateModelElement(itemElement);
+      return TextCharacterPropertiesTypeConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetTextCharacterPropertiesType(DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.StyleEntry? openXmlElement, DocumentModel.Drawings.ChartsStyle.TextCharacterPropertiesType? value)
+
+  public static void SetTextCharacterPropertiesType(StyleEntry? openXmlElement, TextCharacterPropertiesType? value)
   {
     if (openXmlElement != null)
     {
@@ -205,25 +214,25 @@ public static class StyleEntryConverter
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Drawings.ChartsStyle.TextCharacterPropertiesTypeConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.TextCharacterPropertiesType>(value);
+        itemElement = TextCharacterPropertiesTypeConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.TextCharacterPropertiesType>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
+
   /// <summary>
-  /// TextBodyProperties.
+  ///   TextBodyProperties.
   /// </summary>
-  public static DocumentModel.Drawings.ChartsStyle.TextBodyProperties? GetTextBodyProperties(DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.StyleEntry? openXmlElement)
+  public static TextBodyProperties? GetTextBodyProperties(StyleEntry? openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.TextBodyProperties>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.ChartsStyle.TextBodyPropertiesConverter.CreateModelElement(itemElement);
+      return TextBodyPropertiesConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetTextBodyProperties(DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.StyleEntry? openXmlElement, DocumentModel.Drawings.ChartsStyle.TextBodyProperties? value)
+
+  public static void SetTextBodyProperties(StyleEntry? openXmlElement, TextBodyProperties? value)
   {
     if (openXmlElement != null)
     {
@@ -232,25 +241,25 @@ public static class StyleEntryConverter
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Drawings.ChartsStyle.TextBodyPropertiesConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.TextBodyProperties>(value);
+        itemElement = TextBodyPropertiesConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.TextBodyProperties>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
+
   /// <summary>
-  /// OfficeArtExtensionList.
+  ///   OfficeArtExtensionList.
   /// </summary>
-  public static DocumentModel.Drawings.ChartsStyle.OfficeArtExtensionList? GetOfficeArtExtensionList(DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.StyleEntry? openXmlElement)
+  public static DocumentModel.Drawings.ChartsStyle.OfficeArtExtensionList? GetOfficeArtExtensionList(StyleEntry? openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.OfficeArtExtensionList>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.ChartsStyle.OfficeArtExtensionListConverter.CreateModelElement(itemElement);
+      return OfficeArtExtensionListConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetOfficeArtExtensionList(DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.StyleEntry? openXmlElement, DocumentModel.Drawings.ChartsStyle.OfficeArtExtensionList? value)
+
+  public static void SetOfficeArtExtensionList(StyleEntry? openXmlElement, DocumentModel.Drawings.ChartsStyle.OfficeArtExtensionList? value)
   {
     if (openXmlElement != null)
     {
@@ -259,14 +268,14 @@ public static class StyleEntryConverter
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Drawings.ChartsStyle.OfficeArtExtensionListConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.OfficeArtExtensionList>(value);
+        itemElement = OfficeArtExtensionListConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.OfficeArtExtensionList>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static DocumentModel.Drawings.ChartsStyle.StyleEntry? CreateModelElement(DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.StyleEntry? openXmlElement)
+
+  public static DocumentModel.Drawings.ChartsStyle.StyleEntry? CreateModelElement(StyleEntry? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -285,9 +294,9 @@ public static class StyleEntryConverter
     }
     return null;
   }
-  
+
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.ChartsStyle.StyleEntry? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.StyleEntry, new()
+    where OpenXmlElementType : StyleEntry, new()
   {
     if (value != null)
     {

@@ -1,13 +1,12 @@
 namespace DocumentModel.Drawings.ChartDrawings;
 
 /// <summary>
-/// Defines the ParentLabelLayout Class.
+///   Defines the ParentLabelLayout Class.
 /// </summary>
-public partial class ParentLabelLayout
+public class ParentLabelLayout
 {
   /// <summary>
-  /// val, this property is only available in Office 2016 and later.
+  ///   val, this property is only available in Office 2016 and later.
   /// </summary>
-  public DocumentModel.Drawings.ChartDrawings.ParentLabelLayoutVal? ParentLabelLayoutVal { get; set; }
-  
+  public ParentLabelLayoutVal? ParentLabelLayoutVal { get; set; }
 }

@@ -1,23 +1,22 @@
 namespace DocumentModel.Vml;
 
 /// <summary>
-/// Stroke End Cap Type
+///   Stroke End Cap Type
 /// </summary>
 public enum StrokeEndCapKind
 {
   /// <summary>
-  /// Flat End.
+  ///   Flat End.
   /// </summary>
   Flat,
-  
+
   /// <summary>
-  /// Square End.
+  ///   Square End.
   /// </summary>
   Square,
-  
+
   /// <summary>
-  /// Round End.
+  ///   Round End.
   /// </summary>
-  Round,
-  
+  Round
 }

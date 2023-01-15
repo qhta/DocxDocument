@@ -1,128 +1,127 @@
 namespace DocumentModel.Wordprocessing;
 
 /// <summary>
-/// Previous Section Properties.
+///   Previous Section Properties.
 /// </summary>
-public partial class PreviousSectionProperties
+public class PreviousSectionProperties
 {
   /// <summary>
-  /// Physical Section Mark Character Revision ID
+  ///   Physical Section Mark Character Revision ID
   /// </summary>
   public Byte[]? RsidRPr { get; set; }
-  
+
   /// <summary>
-  /// Section Deletion Revision ID
+  ///   Section Deletion Revision ID
   /// </summary>
   public Byte[]? RsidDel { get; set; }
-  
+
   /// <summary>
-  /// Section Addition Revision ID
+  ///   Section Addition Revision ID
   /// </summary>
   public Byte[]? RsidR { get; set; }
-  
+
   /// <summary>
-  /// Section Properties Revision ID
+  ///   Section Properties Revision ID
   /// </summary>
   public Byte[]? RsidSect { get; set; }
-  
+
   /// <summary>
-  /// FootnoteProperties.
+  ///   FootnoteProperties.
   /// </summary>
-  public DocumentModel.Wordprocessing.FootnoteProperties? FootnoteProperties { get; set; }
-  
+  public FootnoteProperties? FootnoteProperties { get; set; }
+
   /// <summary>
-  /// EndnoteProperties.
+  ///   EndnoteProperties.
   /// </summary>
-  public DocumentModel.Wordprocessing.EndnoteProperties? EndnoteProperties { get; set; }
-  
+  public EndnoteProperties? EndnoteProperties { get; set; }
+
   /// <summary>
-  /// SectionType.
+  ///   SectionType.
   /// </summary>
-  public DocumentModel.Wordprocessing.SectionMarkKind? SectionType { get; set; }
-  
+  public SectionMarkKind? SectionType { get; set; }
+
   /// <summary>
-  /// PageSize.
+  ///   PageSize.
   /// </summary>
-  public DocumentModel.Wordprocessing.PageSize? PageSize { get; set; }
-  
+  public PageSize? PageSize { get; set; }
+
   /// <summary>
-  /// PageMargin.
+  ///   PageMargin.
   /// </summary>
-  public DocumentModel.Wordprocessing.PageMargin? PageMargin { get; set; }
-  
+  public PageMargin? PageMargin { get; set; }
+
   /// <summary>
-  /// PaperSource.
+  ///   PaperSource.
   /// </summary>
-  public DocumentModel.Wordprocessing.PaperSource? PaperSource { get; set; }
-  
+  public PaperSource? PaperSource { get; set; }
+
   /// <summary>
-  /// PageBorders.
+  ///   PageBorders.
   /// </summary>
-  public DocumentModel.Wordprocessing.PageBorders? PageBorders { get; set; }
-  
+  public PageBorders? PageBorders { get; set; }
+
   /// <summary>
-  /// LineNumberType.
+  ///   LineNumberType.
   /// </summary>
-  public DocumentModel.Wordprocessing.LineNumberType? LineNumberType { get; set; }
-  
+  public LineNumberType? LineNumberType { get; set; }
+
   /// <summary>
-  /// PageNumberType.
+  ///   PageNumberType.
   /// </summary>
-  public DocumentModel.Wordprocessing.PageNumberType? PageNumberType { get; set; }
-  
+  public PageNumberType? PageNumberType { get; set; }
+
   /// <summary>
-  /// Columns.
+  ///   Columns.
   /// </summary>
-  public DocumentModel.Wordprocessing.Columns? Columns { get; set; }
-  
+  public Columns? Columns { get; set; }
+
   /// <summary>
-  /// FormProtection.
+  ///   FormProtection.
   /// </summary>
   public Boolean? FormProtection { get; set; }
-  
+
   /// <summary>
-  /// VerticalTextAlignmentOnPage.
+  ///   VerticalTextAlignmentOnPage.
   /// </summary>
-  public DocumentModel.Wordprocessing.VerticalJustificationKind? VerticalTextAlignmentOnPage { get; set; }
-  
+  public VerticalJustificationKind? VerticalTextAlignmentOnPage { get; set; }
+
   /// <summary>
-  /// NoEndnote.
+  ///   NoEndnote.
   /// </summary>
   public Boolean? NoEndnote { get; set; }
-  
+
   /// <summary>
-  /// TitlePage.
+  ///   TitlePage.
   /// </summary>
   public Boolean? TitlePage { get; set; }
-  
+
   /// <summary>
-  /// TextDirection.
+  ///   TextDirection.
   /// </summary>
-  public DocumentModel.Wordprocessing.TextDirectionKind? TextDirection { get; set; }
-  
+  public TextDirectionKind? TextDirection { get; set; }
+
   /// <summary>
-  /// BiDi.
+  ///   BiDi.
   /// </summary>
   public Boolean? BiDi { get; set; }
-  
+
   /// <summary>
-  /// GutterOnRight.
+  ///   GutterOnRight.
   /// </summary>
   public Boolean? GutterOnRight { get; set; }
-  
+
   /// <summary>
-  /// DocGrid.
+  ///   DocGrid.
   /// </summary>
-  public DocumentModel.Wordprocessing.DocGrid? DocGrid { get; set; }
-  
+  public DocGrid? DocGrid { get; set; }
+
   /// <summary>
-  /// PrinterSettingsReference.
+  ///   PrinterSettingsReference.
   /// </summary>
-  public DocumentModel.Wordprocessing.RelationshipType? PrinterSettingsReference { get; set; }
-  
+  public RelationshipType? PrinterSettingsReference { get; set; }
+
   /// <summary>
-  /// FootnoteColumns, this property is only available in Office 2013 and later..
+  ///   FootnoteColumns, this property is only available in Office 2013 and later..
   /// </summary>
   public Int32? FootnoteColumns { get; set; }
-  
 }

@@ -1,23 +1,22 @@
 namespace DocumentModel.Vml;
 
 /// <summary>
-/// Extrusion Rendering Types
+///   Extrusion Rendering Types
 /// </summary>
 public enum ExtrusionRenderKind
 {
   /// <summary>
-  /// Solid.
+  ///   Solid.
   /// </summary>
   Solid,
-  
+
   /// <summary>
-  /// Wireframe.
+  ///   Wireframe.
   /// </summary>
   WireFrame,
-  
+
   /// <summary>
-  /// Bounding Cube.
+  ///   Bounding Cube.
   /// </summary>
-  BoundingCube,
-  
+  BoundingCube
 }

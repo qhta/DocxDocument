@@ -1,38 +1,37 @@
 namespace DocumentModel.Drawings.Charts;
 
 /// <summary>
-/// Title.
+///   Title.
 /// </summary>
-public partial class Title
+public class Title
 {
   /// <summary>
-  /// Chart Text.
+  ///   Chart Text.
   /// </summary>
-  public DocumentModel.Drawings.Charts.ChartText? ChartText { get; set; }
-  
+  public ChartText? ChartText { get; set; }
+
   /// <summary>
-  /// Layout.
+  ///   Layout.
   /// </summary>
-  public DocumentModel.Drawings.Charts.Layout? Layout { get; set; }
-  
+  public Layout? Layout { get; set; }
+
   /// <summary>
-  /// Overlay.
+  ///   Overlay.
   /// </summary>
   public Boolean? Overlay { get; set; }
-  
+
   /// <summary>
-  /// ChartShapeProperties.
+  ///   ChartShapeProperties.
   /// </summary>
-  public DocumentModel.Drawings.Charts.ChartShapeProperties? ChartShapeProperties { get; set; }
-  
+  public ChartShapeProperties? ChartShapeProperties { get; set; }
+
   /// <summary>
-  /// TextProperties.
+  ///   TextProperties.
   /// </summary>
-  public DocumentModel.Drawings.Charts.TextProperties? TextProperties { get; set; }
-  
+  public TextProperties? TextProperties { get; set; }
+
   /// <summary>
-  /// Chart Extensibility.
+  ///   Chart Extensibility.
   /// </summary>
-  public DocumentModel.Drawings.Charts.ExtensionList? ExtensionList { get; set; }
-  
+  public ExtensionList? ExtensionList { get; set; }
 }

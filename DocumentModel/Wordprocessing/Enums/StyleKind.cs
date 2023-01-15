@@ -1,28 +1,27 @@
 namespace DocumentModel.Wordprocessing;
 
 /// <summary>
-/// Defines the StyleValues enumeration.
+///   Defines the StyleValues enumeration.
 /// </summary>
 public enum StyleKind
 {
   /// <summary>
-  /// Paragraph Style.
+  ///   Paragraph Style.
   /// </summary>
   Paragraph,
-  
+
   /// <summary>
-  /// Character Style.
+  ///   Character Style.
   /// </summary>
   Character,
-  
+
   /// <summary>
-  /// Table Style.
+  ///   Table Style.
   /// </summary>
   Table,
-  
+
   /// <summary>
-  /// Numbering Style.
+  ///   Numbering Style.
   /// </summary>
-  Numbering,
-  
+  Numbering
 }

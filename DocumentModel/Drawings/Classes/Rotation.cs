@@ -1,23 +1,22 @@
 namespace DocumentModel.Drawings;
 
 /// <summary>
-/// Rotation.
+///   Rotation.
 /// </summary>
-public partial class Rotation
+public class Rotation
 {
   /// <summary>
-  /// Latitude
+  ///   Latitude
   /// </summary>
   public Int32? Latitude { get; set; }
-  
+
   /// <summary>
-  /// Longitude
+  ///   Longitude
   /// </summary>
   public Int32? Longitude { get; set; }
-  
+
   /// <summary>
-  /// Revolution
+  ///   Revolution
   /// </summary>
   public Int32? Revolution { get; set; }
-  
 }

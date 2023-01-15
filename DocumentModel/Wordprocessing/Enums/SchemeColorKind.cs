@@ -1,93 +1,92 @@
 namespace DocumentModel.Wordprocessing;
 
 /// <summary>
-/// Defines the SchemeColorValues enumeration.
+///   Defines the SchemeColorValues enumeration.
 /// </summary>
 public enum SchemeColorKind
 {
   /// <summary>
-  /// bg1.
+  ///   bg1.
   /// </summary>
   BackgroundColor,
-  
+
   /// <summary>
-  /// tx1.
+  ///   tx1.
   /// </summary>
   TextColor,
-  
+
   /// <summary>
-  /// bg2.
+  ///   bg2.
   /// </summary>
   AdditionalBackgroundColor,
-  
+
   /// <summary>
-  /// tx2.
+  ///   tx2.
   /// </summary>
   AdditionalTextColor,
-  
+
   /// <summary>
-  /// accent1.
+  ///   accent1.
   /// </summary>
   ExtraSchemeColor1,
-  
+
   /// <summary>
-  /// accent2.
+  ///   accent2.
   /// </summary>
   ExtraSchemeColor2,
-  
+
   /// <summary>
-  /// accent3.
+  ///   accent3.
   /// </summary>
   ExtraSchemeColor3,
-  
+
   /// <summary>
-  /// accent4.
+  ///   accent4.
   /// </summary>
   ExtraSchemeColor4,
-  
+
   /// <summary>
-  /// accent5.
+  ///   accent5.
   /// </summary>
   ExtraSchemeColor5,
-  
+
   /// <summary>
-  /// accent6.
+  ///   accent6.
   /// </summary>
   ExtraSchemeColor6,
-  
+
   /// <summary>
-  /// hlink.
+  ///   hlink.
   /// </summary>
   HyperlinkColor,
-  
+
   /// <summary>
-  /// folHlink.
+  ///   folHlink.
   /// </summary>
   FollowedHyperlinkColor,
-  
+
   /// <summary>
-  /// dk1.
+  ///   dk1.
   /// </summary>
   MainDarkColor1,
-  
+
   /// <summary>
-  /// lt1.
+  ///   lt1.
   /// </summary>
   MainLightColor1,
-  
+
   /// <summary>
-  /// dk2.
+  ///   dk2.
   /// </summary>
   MainDarkColor2,
-  
+
   /// <summary>
-  /// lt2.
+  ///   lt2.
   /// </summary>
   MainLightColor2,
-  
+
   /// <summary>
-  /// phClr.
+  ///   phClr.
   /// </summary>
-  AutoColor,
-  
+  AutoColor
 }

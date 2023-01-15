@@ -1,32 +1,36 @@
+using DocumentFormat.OpenXml.Vml;
+using DocumentModel.Vml;
+using Rules = DocumentFormat.OpenXml.Vml.Office.Rules;
+
 namespace DocumentModel.OpenXml.Vml;
 
 /// <summary>
-/// Rule Set.
+///   Rule Set.
 /// </summary>
 public static class RulesConverter
 {
   /// <summary>
-  /// VML Extension Handling Behavior
+  ///   VML Extension Handling Behavior
   /// </summary>
-  public static DocumentModel.Vml.ExtensionHandlingBehaviorKind? GetExtension(DocumentFormat.OpenXml.Vml.Office.Rules? openXmlElement)
+  public static ExtensionHandlingBehaviorKind? GetExtension(Rules? openXmlElement)
   {
-    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Vml.ExtensionHandlingBehaviorValues, DocumentModel.Vml.ExtensionHandlingBehaviorKind>(openXmlElement?.Extension?.Value);
+    return EnumValueConverter.GetValue<ExtensionHandlingBehaviorValues, ExtensionHandlingBehaviorKind>(openXmlElement?.Extension?.Value);
   }
-  
-  public static void SetExtension(DocumentFormat.OpenXml.Vml.Office.Rules? openXmlElement, DocumentModel.Vml.ExtensionHandlingBehaviorKind? value)
+
+  public static void SetExtension(Rules? openXmlElement, ExtensionHandlingBehaviorKind? value)
   {
     if (openXmlElement != null)
-      openXmlElement.Extension = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Vml.ExtensionHandlingBehaviorValues, DocumentModel.Vml.ExtensionHandlingBehaviorKind>(value);
+      openXmlElement.Extension = EnumValueConverter.CreateEnumValue<ExtensionHandlingBehaviorValues, ExtensionHandlingBehaviorKind>(value);
   }
-  
-  public static System.Collections.ObjectModel.Collection<DocumentModel.Vml.Rule>? GetItems(DocumentFormat.OpenXml.Vml.Office.Rules? openXmlElement)
+
+  public static Collection<Rule>? GetItems(Rules? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var collection = new System.Collections.ObjectModel.Collection<DocumentModel.Vml.Rule>();
+      var collection = new Collection<Rule>();
       foreach (var item in openXmlElement.Elements<DocumentFormat.OpenXml.Vml.Office.Rule>())
       {
-        var newItem = DocumentModel.OpenXml.Vml.RuleConverter.CreateModelElement(item);
+        var newItem = RuleConverter.CreateModelElement(item);
         if (newItem != null)
           collection.Add(newItem);
       }
@@ -34,25 +38,23 @@ public static class RulesConverter
     }
     return null;
   }
-  
-  public static void SetItems(DocumentFormat.OpenXml.Vml.Office.Rules? openXmlElement, System.Collections.ObjectModel.Collection<DocumentModel.Vml.Rule>? value)
+
+  public static void SetItems(Rules? openXmlElement, Collection<Rule>? value)
   {
     if (openXmlElement != null)
     {
       openXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Vml.Office.Rule>();
       if (value != null)
-      {
         foreach (var item in value)
         {
-          var newItem = DocumentModel.OpenXml.Vml.RuleConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Vml.Office.Rule>(item);
+          var newItem = RuleConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Vml.Office.Rule>(item);
           if (newItem != null)
             openXmlElement.AddChild(newItem);
         }
-      }
     }
   }
-  
-  public static DocumentModel.Vml.Rules? CreateModelElement(DocumentFormat.OpenXml.Vml.Office.Rules? openXmlElement)
+
+  public static DocumentModel.Vml.Rules? CreateModelElement(Rules? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -63,9 +65,9 @@ public static class RulesConverter
     }
     return null;
   }
-  
+
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Vml.Rules? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Vml.Office.Rules, new()
+    where OpenXmlElementType : Rules, new()
   {
     if (value != null)
     {

@@ -1,28 +1,27 @@
 namespace DocumentModel.Drawings.ChartDrawings;
 
 /// <summary>
-/// Defines the Chart Class.
+///   Defines the Chart Class.
 /// </summary>
-public partial class Chart
+public class Chart
 {
   /// <summary>
-  /// ChartTitle.
+  ///   ChartTitle.
   /// </summary>
-  public DocumentModel.Drawings.ChartDrawings.ChartTitle? ChartTitle { get; set; }
-  
+  public ChartTitle? ChartTitle { get; set; }
+
   /// <summary>
-  /// PlotArea.
+  ///   PlotArea.
   /// </summary>
-  public DocumentModel.Drawings.ChartDrawings.PlotArea? PlotArea { get; set; }
-  
+  public PlotArea? PlotArea { get; set; }
+
   /// <summary>
-  /// Legend.
+  ///   Legend.
   /// </summary>
-  public DocumentModel.Drawings.ChartDrawings.Legend? Legend { get; set; }
-  
+  public Legend? Legend { get; set; }
+
   /// <summary>
-  /// ExtensionList.
+  ///   ExtensionList.
   /// </summary>
-  public DocumentModel.Drawings.ChartDrawings.ExtensionList? ExtensionList { get; set; }
-  
+  public ExtensionList? ExtensionList { get; set; }
 }

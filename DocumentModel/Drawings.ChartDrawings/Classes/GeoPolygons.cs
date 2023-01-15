@@ -1,10 +1,9 @@
 namespace DocumentModel.Drawings.ChartDrawings;
 
 /// <summary>
-/// Defines the GeoPolygons Class.
+///   Defines the GeoPolygons Class.
 /// </summary>
-public partial class GeoPolygons
+public class GeoPolygons
 {
-  public Collection<DocumentModel.Drawings.ChartDrawings.GeoPolygon>? Items { get; set; }
-  
+  public Collection<GeoPolygon>? Items { get; set; }
 }

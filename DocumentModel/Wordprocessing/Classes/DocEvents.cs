@@ -1,73 +1,72 @@
 namespace DocumentModel.Wordprocessing;
 
 /// <summary>
-/// Defines the DocEvents Class.
+///   Defines the DocEvents Class.
 /// </summary>
-public partial class DocEvents
+public class DocEvents
 {
   /// <summary>
-  /// EventDocNewXsdString.
+  ///   EventDocNewXsdString.
   /// </summary>
   public String? EventDocNewXsdString { get; set; }
-  
+
   /// <summary>
-  /// EventDocOpenXsdString.
+  ///   EventDocOpenXsdString.
   /// </summary>
   public String? EventDocOpenXsdString { get; set; }
-  
+
   /// <summary>
-  /// EventDocCloseXsdString.
+  ///   EventDocCloseXsdString.
   /// </summary>
   public String? EventDocCloseXsdString { get; set; }
-  
+
   /// <summary>
-  /// EventDocSyncXsdString.
+  ///   EventDocSyncXsdString.
   /// </summary>
   public String? EventDocSyncXsdString { get; set; }
-  
+
   /// <summary>
-  /// EventDocXmlAfterInsertXsdString.
+  ///   EventDocXmlAfterInsertXsdString.
   /// </summary>
   public String? EventDocXmlAfterInsertXsdString { get; set; }
-  
+
   /// <summary>
-  /// EventDocXmlBeforeDeleteXsdString.
+  ///   EventDocXmlBeforeDeleteXsdString.
   /// </summary>
   public String? EventDocXmlBeforeDeleteXsdString { get; set; }
-  
+
   /// <summary>
-  /// EventDocContentControlAfterInsertXsdString.
+  ///   EventDocContentControlAfterInsertXsdString.
   /// </summary>
   public String? EventDocContentControlAfterInsertXsdString { get; set; }
-  
+
   /// <summary>
-  /// EventDocContentControlBeforeDeleteXsdString.
+  ///   EventDocContentControlBeforeDeleteXsdString.
   /// </summary>
   public String? EventDocContentControlBeforeDeleteXsdString { get; set; }
-  
+
   /// <summary>
-  /// EventDocContentControlOnExistXsdString.
+  ///   EventDocContentControlOnExistXsdString.
   /// </summary>
   public String? EventDocContentControlOnExistXsdString { get; set; }
-  
+
   /// <summary>
-  /// EventDocContentControlOnEnterXsdString.
+  ///   EventDocContentControlOnEnterXsdString.
   /// </summary>
   public String? EventDocContentControlOnEnterXsdString { get; set; }
-  
+
   /// <summary>
-  /// EventDocStoreUpdateXsdString.
+  ///   EventDocStoreUpdateXsdString.
   /// </summary>
   public String? EventDocStoreUpdateXsdString { get; set; }
-  
+
   /// <summary>
-  /// EventDocContentControlUpdateXsdString.
+  ///   EventDocContentControlUpdateXsdString.
   /// </summary>
   public String? EventDocContentControlUpdateXsdString { get; set; }
-  
+
   /// <summary>
-  /// EventDocBuildingBlockAfterInsertXsdString.
+  ///   EventDocBuildingBlockAfterInsertXsdString.
   /// </summary>
   public String? EventDocBuildingBlockAfterInsertXsdString { get; set; }
-  
 }

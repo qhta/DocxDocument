@@ -1,38 +1,37 @@
 namespace DocumentModel.Math;
 
 /// <summary>
-/// Defines the BooleanValues enumeration.
+///   Defines the BooleanValues enumeration.
 /// </summary>
 public enum BooleanKind
 {
   /// <summary>
-  /// true.
+  ///   true.
   /// </summary>
   True,
-  
+
   /// <summary>
-  /// false.
+  ///   false.
   /// </summary>
   False,
-  
+
   /// <summary>
-  /// On.
+  ///   On.
   /// </summary>
   On,
-  
+
   /// <summary>
-  /// Off.
+  ///   Off.
   /// </summary>
   Off,
-  
+
   /// <summary>
-  /// 0.
+  ///   0.
   /// </summary>
   Zero,
-  
+
   /// <summary>
-  /// 1.
+  ///   1.
   /// </summary>
-  One,
-  
+  One
 }

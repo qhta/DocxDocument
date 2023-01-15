@@ -40,4 +40,9 @@
     <ProjectReference Include="..\DocumentModel\DocumentModel.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Reference Include="Qhta.TypeUtils">
+      <HintPath>..\..\MyLib\bin\Debug\net6.0\Qhta.TypeUtils.dll</HintPath>
+    </Reference>
+  </ItemGroup>
 </Project>

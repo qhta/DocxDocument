@@ -1,48 +1,47 @@
 namespace DocumentModel.Drawings;
 
 /// <summary>
-/// Light Rig Direction
+///   Light Rig Direction
 /// </summary>
 public enum LightRigDirectionKind
 {
   /// <summary>
-  /// Top Left.
+  ///   Top Left.
   /// </summary>
   TopLeft,
-  
+
   /// <summary>
-  /// Top.
+  ///   Top.
   /// </summary>
   Top,
-  
+
   /// <summary>
-  /// Top Right.
+  ///   Top Right.
   /// </summary>
   TopRight,
-  
+
   /// <summary>
-  /// Left.
+  ///   Left.
   /// </summary>
   Left,
-  
+
   /// <summary>
-  /// Right.
+  ///   Right.
   /// </summary>
   Right,
-  
+
   /// <summary>
-  /// Bottom Left.
+  ///   Bottom Left.
   /// </summary>
   BottomLeft,
-  
+
   /// <summary>
-  /// Bottom.
+  ///   Bottom.
   /// </summary>
   Bottom,
-  
+
   /// <summary>
-  /// Bottom Right.
+  ///   Bottom Right.
   /// </summary>
-  BottomRight,
-  
+  BottomRight
 }

@@ -1,22 +1,24 @@
+using DocumentFormat.OpenXml.Office2021.Drawing.Livefeed;
+
 namespace DocumentModel.OpenXml.Drawings;
 
 /// <summary>
-/// Defines the BackgroundRemovedProperties Class.
+///   Defines the BackgroundRemovedProperties Class.
 /// </summary>
 public static class BackgroundRemovedPropertiesConverter
 {
   /// <summary>
-  /// OfficeArtExtensionList.
+  ///   OfficeArtExtensionList.
   /// </summary>
-  public static DocumentModel.Drawings.OfficeArtExtensionList? GetOfficeArtExtensionList(DocumentFormat.OpenXml.Office2021.Drawing.Livefeed.BackgroundRemovedProperties? openXmlElement)
+  public static DocumentModel.Drawings.OfficeArtExtensionList? GetOfficeArtExtensionList(BackgroundRemovedProperties? openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office2021.Drawing.Livefeed.OfficeArtExtensionList>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.OfficeArtExtensionListConverter.CreateModelElement(itemElement);
+      return OfficeArtExtensionListConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetOfficeArtExtensionList(DocumentFormat.OpenXml.Office2021.Drawing.Livefeed.BackgroundRemovedProperties? openXmlElement, DocumentModel.Drawings.OfficeArtExtensionList? value)
+
+  public static void SetOfficeArtExtensionList(BackgroundRemovedProperties? openXmlElement, DocumentModel.Drawings.OfficeArtExtensionList? value)
   {
     if (openXmlElement != null)
     {
@@ -25,14 +27,14 @@ public static class BackgroundRemovedPropertiesConverter
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Drawings.OfficeArtExtensionListConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2021.Drawing.Livefeed.OfficeArtExtensionList>(value);
+        itemElement = OfficeArtExtensionListConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2021.Drawing.Livefeed.OfficeArtExtensionList>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static DocumentModel.Drawings.BackgroundRemovedProperties? CreateModelElement(DocumentFormat.OpenXml.Office2021.Drawing.Livefeed.BackgroundRemovedProperties? openXmlElement)
+
+  public static DocumentModel.Drawings.BackgroundRemovedProperties? CreateModelElement(BackgroundRemovedProperties? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -42,9 +44,9 @@ public static class BackgroundRemovedPropertiesConverter
     }
     return null;
   }
-  
+
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.BackgroundRemovedProperties? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Office2021.Drawing.Livefeed.BackgroundRemovedProperties, new()
+    where OpenXmlElementType : BackgroundRemovedProperties, new()
   {
     if (value != null)
     {

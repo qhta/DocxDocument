@@ -1,13 +1,12 @@
 namespace DocumentModel.Math;
 
 /// <summary>
-/// Upper Limit Properties.
+///   Upper Limit Properties.
 /// </summary>
-public partial class LimitUpperProperties
+public class LimitUpperProperties
 {
   /// <summary>
-  /// ControlProperties.
+  ///   ControlProperties.
   /// </summary>
-  public DocumentModel.Math.ControlProperties? ControlProperties { get; set; }
-  
+  public ControlProperties? ControlProperties { get; set; }
 }

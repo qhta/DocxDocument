@@ -1,18 +1,17 @@
 namespace DocumentModel.Wordprocessing;
 
 /// <summary>
-/// Defines the HeaderFooterReferenceType Class.
+///   Defines the HeaderFooterReferenceType Class.
 /// </summary>
-public partial class HeaderFooterReferenceType
+public class HeaderFooterReferenceType
 {
   /// <summary>
-  /// type
+  ///   type
   /// </summary>
-  public DocumentModel.Wordprocessing.HeaderFooterKind? Type { get; set; }
-  
+  public HeaderFooterKind? Type { get; set; }
+
   /// <summary>
-  /// Relationship to Part
+  ///   Relationship to Part
   /// </summary>
   public String? Id { get; set; }
-  
 }

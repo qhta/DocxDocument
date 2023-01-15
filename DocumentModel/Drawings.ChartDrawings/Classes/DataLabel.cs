@@ -1,48 +1,47 @@
 namespace DocumentModel.Drawings.ChartDrawings;
 
 /// <summary>
-/// Defines the DataLabel Class.
+///   Defines the DataLabel Class.
 /// </summary>
-public partial class DataLabel
+public class DataLabel
 {
   /// <summary>
-  /// idx, this property is only available in Office 2016 and later.
+  ///   idx, this property is only available in Office 2016 and later.
   /// </summary>
   public UInt32? Idx { get; set; }
-  
+
   /// <summary>
-  /// pos, this property is only available in Office 2016 and later.
+  ///   pos, this property is only available in Office 2016 and later.
   /// </summary>
-  public DocumentModel.Drawings.ChartDrawings.DataLabelPos? Pos { get; set; }
-  
+  public DataLabelPos? Pos { get; set; }
+
   /// <summary>
-  /// NumberFormat.
+  ///   NumberFormat.
   /// </summary>
-  public DocumentModel.Drawings.ChartDrawings.NumberFormat? NumberFormat { get; set; }
-  
+  public NumberFormat? NumberFormat { get; set; }
+
   /// <summary>
-  /// ShapeProperties.
+  ///   ShapeProperties.
   /// </summary>
-  public DocumentModel.Drawings.ChartDrawings.ShapeProperties? ShapeProperties { get; set; }
-  
+  public ShapeProperties? ShapeProperties { get; set; }
+
   /// <summary>
-  /// TxPrTextBody.
+  ///   TxPrTextBody.
   /// </summary>
-  public DocumentModel.Drawings.ChartDrawings.TxPrTextBody? TxPrTextBody { get; set; }
-  
+  public TxPrTextBody? TxPrTextBody { get; set; }
+
   /// <summary>
-  /// DataLabelVisibilities.
+  ///   DataLabelVisibilities.
   /// </summary>
-  public DocumentModel.Drawings.ChartDrawings.DataLabelVisibilities? DataLabelVisibilities { get; set; }
-  
+  public DataLabelVisibilities? DataLabelVisibilities { get; set; }
+
   /// <summary>
-  /// SeparatorXsdstring.
+  ///   SeparatorXsdstring.
   /// </summary>
   public String? SeparatorXsdstring { get; set; }
-  
+
   /// <summary>
-  /// ExtensionList.
+  ///   ExtensionList.
   /// </summary>
-  public DocumentModel.Drawings.ChartDrawings.ExtensionList? ExtensionList { get; set; }
-  
+  public ExtensionList? ExtensionList { get; set; }
 }

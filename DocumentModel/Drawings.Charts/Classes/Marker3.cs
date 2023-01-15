@@ -1,28 +1,27 @@
 namespace DocumentModel.Drawings.Charts;
 
 /// <summary>
-/// Defines the Marker Class.
+///   Defines the Marker Class.
 /// </summary>
-public partial class Marker3
+public class Marker3
 {
   /// <summary>
-  /// Symbol.
+  ///   Symbol.
   /// </summary>
-  public DocumentModel.Drawings.Charts.MarkerStyleKind? Symbol { get; set; }
-  
+  public MarkerStyleKind? Symbol { get; set; }
+
   /// <summary>
-  /// Size.
+  ///   Size.
   /// </summary>
   public Byte? Size { get; set; }
-  
+
   /// <summary>
-  /// ChartShapeProperties.
+  ///   ChartShapeProperties.
   /// </summary>
-  public DocumentModel.Drawings.Charts.ChartShapeProperties? ChartShapeProperties { get; set; }
-  
+  public ChartShapeProperties? ChartShapeProperties { get; set; }
+
   /// <summary>
-  /// Chart Extensibility.
+  ///   Chart Extensibility.
   /// </summary>
-  public DocumentModel.Drawings.Charts.ExtensionList? ExtensionList { get; set; }
-  
+  public ExtensionList? ExtensionList { get; set; }
 }

@@ -1,13 +1,12 @@
 namespace DocumentModel.Packaging;
 
 /// <summary>
-/// Represents a (RelationshipId, OpenXmlPart) pair.
+///   Represents a (RelationshipId, OpenXmlPart) pair.
 /// </summary>
-public partial class IdPartPair
+public class IdPartPair
 {
   /// <summary>
-  /// Gets or sets the relationship ID in the pair.
+  ///   Gets or sets the relationship ID in the pair.
   /// </summary>
   public String? RelationshipId { get; set; }
-  
 }

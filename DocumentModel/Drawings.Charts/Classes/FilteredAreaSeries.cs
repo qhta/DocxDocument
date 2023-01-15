@@ -1,13 +1,12 @@
 namespace DocumentModel.Drawings.Charts;
 
 /// <summary>
-/// Defines the FilteredAreaSeries Class.
+///   Defines the FilteredAreaSeries Class.
 /// </summary>
-public partial class FilteredAreaSeries
+public class FilteredAreaSeries
 {
   /// <summary>
-  /// AreaChartSeries.
+  ///   AreaChartSeries.
   /// </summary>
-  public DocumentModel.Drawings.Charts.AreaChartSeries3? AreaChartSeries { get; set; }
-  
+  public AreaChartSeries3? AreaChartSeries { get; set; }
 }

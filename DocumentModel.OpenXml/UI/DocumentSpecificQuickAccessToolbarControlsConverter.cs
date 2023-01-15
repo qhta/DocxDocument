@@ -1,19 +1,22 @@
+using DocumentModel.UI;
+using DocumentSpecificQuickAccessToolbarControls = DocumentFormat.OpenXml.Office.CustomUI.DocumentSpecificQuickAccessToolbarControls;
+
 namespace DocumentModel.OpenXml.UI;
 
 /// <summary>
-/// Defines the DocumentSpecificQuickAccessToolbarControls Class.
+///   Defines the DocumentSpecificQuickAccessToolbarControls Class.
 /// </summary>
 public static class DocumentSpecificQuickAccessToolbarControlsConverter
 {
-  public static DocumentModel.UI.QuickAccessToolbarControlClone? GetQuickAccessToolbarControlClone(DocumentFormat.OpenXml.Office.CustomUI.DocumentSpecificQuickAccessToolbarControls? openXmlElement)
+  public static QuickAccessToolbarControlClone? GetQuickAccessToolbarControlClone(DocumentSpecificQuickAccessToolbarControls? openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office.CustomUI.QuickAccessToolbarControlClone>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.UI.QuickAccessToolbarControlCloneConverter.CreateModelElement(itemElement);
+      return QuickAccessToolbarControlCloneConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetQuickAccessToolbarControlClone(DocumentFormat.OpenXml.Office.CustomUI.DocumentSpecificQuickAccessToolbarControls? openXmlElement, DocumentModel.UI.QuickAccessToolbarControlClone? value)
+
+  public static void SetQuickAccessToolbarControlClone(DocumentSpecificQuickAccessToolbarControls? openXmlElement, QuickAccessToolbarControlClone? value)
   {
     if (openXmlElement != null)
     {
@@ -22,22 +25,22 @@ public static class DocumentSpecificQuickAccessToolbarControlsConverter
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.UI.QuickAccessToolbarControlCloneConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office.CustomUI.QuickAccessToolbarControlClone>(value);
+        itemElement = QuickAccessToolbarControlCloneConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office.CustomUI.QuickAccessToolbarControlClone>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static DocumentModel.UI.UnsizedButton? GetUnsizedButton(DocumentFormat.OpenXml.Office.CustomUI.DocumentSpecificQuickAccessToolbarControls? openXmlElement)
+
+  public static UnsizedButton? GetUnsizedButton(DocumentSpecificQuickAccessToolbarControls? openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office.CustomUI.UnsizedButton>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.UI.UnsizedButtonConverter.CreateModelElement(itemElement);
+      return UnsizedButtonConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetUnsizedButton(DocumentFormat.OpenXml.Office.CustomUI.DocumentSpecificQuickAccessToolbarControls? openXmlElement, DocumentModel.UI.UnsizedButton? value)
+
+  public static void SetUnsizedButton(DocumentSpecificQuickAccessToolbarControls? openXmlElement, UnsizedButton? value)
   {
     if (openXmlElement != null)
     {
@@ -46,22 +49,22 @@ public static class DocumentSpecificQuickAccessToolbarControlsConverter
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.UI.UnsizedButtonConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office.CustomUI.UnsizedButton>(value);
+        itemElement = UnsizedButtonConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office.CustomUI.UnsizedButton>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static DocumentModel.UI.VerticalSeparator? GetVerticalSeparator(DocumentFormat.OpenXml.Office.CustomUI.DocumentSpecificQuickAccessToolbarControls? openXmlElement)
+
+  public static VerticalSeparator? GetVerticalSeparator(DocumentSpecificQuickAccessToolbarControls? openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office.CustomUI.VerticalSeparator>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.UI.VerticalSeparatorConverter.CreateModelElement(itemElement);
+      return VerticalSeparatorConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetVerticalSeparator(DocumentFormat.OpenXml.Office.CustomUI.DocumentSpecificQuickAccessToolbarControls? openXmlElement, DocumentModel.UI.VerticalSeparator? value)
+
+  public static void SetVerticalSeparator(DocumentSpecificQuickAccessToolbarControls? openXmlElement, VerticalSeparator? value)
   {
     if (openXmlElement != null)
     {
@@ -70,14 +73,14 @@ public static class DocumentSpecificQuickAccessToolbarControlsConverter
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.UI.VerticalSeparatorConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office.CustomUI.VerticalSeparator>(value);
+        itemElement = VerticalSeparatorConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office.CustomUI.VerticalSeparator>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static DocumentModel.UI.DocumentSpecificQuickAccessToolbarControls? CreateModelElement(DocumentFormat.OpenXml.Office.CustomUI.DocumentSpecificQuickAccessToolbarControls? openXmlElement)
+
+  public static DocumentModel.UI.DocumentSpecificQuickAccessToolbarControls? CreateModelElement(DocumentSpecificQuickAccessToolbarControls? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -89,9 +92,9 @@ public static class DocumentSpecificQuickAccessToolbarControlsConverter
     }
     return null;
   }
-  
+
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.UI.DocumentSpecificQuickAccessToolbarControls? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Office.CustomUI.DocumentSpecificQuickAccessToolbarControls, new()
+    where OpenXmlElementType : DocumentSpecificQuickAccessToolbarControls, new()
   {
     if (value != null)
     {

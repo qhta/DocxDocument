@@ -1,42 +1,44 @@
+using DocumentFormat.OpenXml.Packaging;
+
 namespace DocumentModel.OpenXml.Packaging;
 
 /// <summary>
-/// Defines the LabelInfoPart
+///   Defines the LabelInfoPart
 /// </summary>
 public static class LabelInfoPartConverter
 {
   /// <summary>
-  /// Gets or sets the root element of this part.
+  ///   Gets or sets the root element of this part.
   /// </summary>
-  public static DocumentModel.ClassificationLabelList? GetClassificationLabelList(DocumentFormat.OpenXml.Packaging.LabelInfoPart? openXmlElement)
+  public static ClassificationLabelList? GetClassificationLabelList(LabelInfoPart? openXmlElement)
   {
     if (openXmlElement?.RootElement is DocumentFormat.OpenXml.Office2021.MipLabelMetaData.ClassificationLabelList rootElement)
-      return DocumentModel.OpenXml.ClassificationLabelListConverter.CreateModelElement(rootElement);
+      return ClassificationLabelListConverter.CreateModelElement(rootElement);
     return null;
   }
-  
-  public static void SetClassificationLabelList(DocumentFormat.OpenXml.Packaging.LabelInfoPart? openXmlElement, DocumentModel.ClassificationLabelList? value)
+
+  public static void SetClassificationLabelList(LabelInfoPart? openXmlElement, ClassificationLabelList? value)
   {
     if (openXmlElement != null)
       if (value != null)
       {
-         var rootElement = DocumentModel.OpenXml.ClassificationLabelListConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2021.MipLabelMetaData.ClassificationLabelList>(value);
-         if (rootElement != null)
-           openXmlElement.ClassificationLabelList = rootElement;
+        var rootElement = ClassificationLabelListConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2021.MipLabelMetaData.ClassificationLabelList>(value);
+        if (rootElement != null)
+          openXmlElement.ClassificationLabelList = rootElement;
       }
   }
-  
-  public static String? GetContentType(DocumentFormat.OpenXml.Packaging.LabelInfoPart? openXmlElement)
+
+  public static String? GetContentType(LabelInfoPart? openXmlElement)
   {
     return openXmlElement?.ContentType;
   }
-  
-  public static String? GetRelationshipType(DocumentFormat.OpenXml.Packaging.LabelInfoPart? openXmlElement)
+
+  public static String? GetRelationshipType(LabelInfoPart? openXmlElement)
   {
     return openXmlElement?.RelationshipType;
   }
-  
-  public static DocumentModel.Packaging.LabelInfoPart? CreateModelElement(DocumentFormat.OpenXml.Packaging.LabelInfoPart? openXmlElement)
+
+  public static DocumentModel.Packaging.LabelInfoPart? CreateModelElement(LabelInfoPart? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -48,9 +50,9 @@ public static class LabelInfoPartConverter
     }
     return null;
   }
-  
+
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Packaging.LabelInfoPart? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Packaging.LabelInfoPart, new()
+    where OpenXmlElementType : LabelInfoPart, new()
   {
     if (value != null)
     {

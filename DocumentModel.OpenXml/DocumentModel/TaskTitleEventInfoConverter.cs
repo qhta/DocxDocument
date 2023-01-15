@@ -1,18 +1,18 @@
 namespace DocumentModel.OpenXml;
 
 /// <summary>
-/// Defines the TaskTitleEventInfo Class.
+///   Defines the TaskTitleEventInfo Class.
 /// </summary>
 public static class TaskTitleEventInfoConverter
 {
   /// <summary>
-  /// title, this property is only available in Office 2021 and later.
+  ///   title, this property is only available in Office 2021 and later.
   /// </summary>
   public static String? GetTitle(DocumentFormat.OpenXml.Office2021.DocumentTasks.TaskTitleEventInfo? openXmlElement)
   {
     return openXmlElement?.Title?.Value;
   }
-  
+
   public static void SetTitle(DocumentFormat.OpenXml.Office2021.DocumentTasks.TaskTitleEventInfo? openXmlElement, String? value)
   {
     if (openXmlElement != null)
@@ -21,20 +21,20 @@ public static class TaskTitleEventInfoConverter
       else
         openXmlElement.Title = null;
   }
-  
-  public static DocumentModel.TaskTitleEventInfo? CreateModelElement(DocumentFormat.OpenXml.Office2021.DocumentTasks.TaskTitleEventInfo? openXmlElement)
+
+  public static TaskTitleEventInfo? CreateModelElement(DocumentFormat.OpenXml.Office2021.DocumentTasks.TaskTitleEventInfo? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.TaskTitleEventInfo();
+      var value = new TaskTitleEventInfo();
       value.Title = GetTitle(openXmlElement);
       return value;
     }
     return null;
   }
-  
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.TaskTitleEventInfo? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Office2021.DocumentTasks.TaskTitleEventInfo, new()
+
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(TaskTitleEventInfo? value)
+    where OpenXmlElementType : DocumentFormat.OpenXml.Office2021.DocumentTasks.TaskTitleEventInfo, new()
   {
     if (value != null)
     {

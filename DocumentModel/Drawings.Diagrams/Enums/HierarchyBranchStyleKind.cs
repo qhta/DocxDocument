@@ -1,33 +1,32 @@
 namespace DocumentModel.Drawings.Diagrams;
 
 /// <summary>
-/// Hierarchy Branch Style Definition
+///   Hierarchy Branch Style Definition
 /// </summary>
 public enum HierarchyBranchStyleKind
 {
   /// <summary>
-  /// Left.
+  ///   Left.
   /// </summary>
   Left,
-  
+
   /// <summary>
-  /// Right.
+  ///   Right.
   /// </summary>
   Right,
-  
+
   /// <summary>
-  /// Hanging.
+  ///   Hanging.
   /// </summary>
   Hanging,
-  
+
   /// <summary>
-  /// Standard.
+  ///   Standard.
   /// </summary>
   Standard,
-  
+
   /// <summary>
-  /// Initial.
+  ///   Initial.
   /// </summary>
-  Initial,
-  
+  Initial
 }

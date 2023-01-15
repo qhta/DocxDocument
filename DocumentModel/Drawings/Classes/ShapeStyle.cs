@@ -1,28 +1,27 @@
 namespace DocumentModel.Drawings;
 
 /// <summary>
-/// Style.
+///   Style.
 /// </summary>
-public partial class ShapeStyle
+public class ShapeStyle
 {
   /// <summary>
-  /// LineReference.
+  ///   LineReference.
   /// </summary>
-  public DocumentModel.Drawings.LineReference? LineReference { get; set; }
-  
+  public LineReference? LineReference { get; set; }
+
   /// <summary>
-  /// FillReference.
+  ///   FillReference.
   /// </summary>
-  public DocumentModel.Drawings.FillReference? FillReference { get; set; }
-  
+  public FillReference? FillReference { get; set; }
+
   /// <summary>
-  /// EffectReference.
+  ///   EffectReference.
   /// </summary>
-  public DocumentModel.Drawings.EffectReference? EffectReference { get; set; }
-  
+  public EffectReference? EffectReference { get; set; }
+
   /// <summary>
-  /// Font Reference.
+  ///   Font Reference.
   /// </summary>
-  public DocumentModel.Drawings.FontReference? FontReference { get; set; }
-  
+  public FontReference? FontReference { get; set; }
 }

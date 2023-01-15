@@ -1,10 +1,9 @@
 namespace DocumentModel.Wordprocessing;
 
 /// <summary>
-/// Structured Document Tag End Character Properties.
+///   Structured Document Tag End Character Properties.
 /// </summary>
-public partial class SdtEndCharProperties
+public class SdtEndCharProperties
 {
-  public DocumentModel.Wordprocessing.RunProperties? RunProperties { get; set; }
-  
+  public RunProperties? RunProperties { get; set; }
 }

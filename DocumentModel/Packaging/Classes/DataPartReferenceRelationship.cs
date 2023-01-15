@@ -1,8 +1,8 @@
 namespace DocumentModel.Packaging;
 
 /// <summary>
-/// Represents an internal reference relationship to a DataPart element.
+///   Represents an internal reference relationship to a DataPart element.
 /// </summary>
-public partial class DataPartReferenceRelationship
+public class DataPartReferenceRelationship
 {
 }

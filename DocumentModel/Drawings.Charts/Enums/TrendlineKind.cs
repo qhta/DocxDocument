@@ -1,38 +1,37 @@
 namespace DocumentModel.Drawings.Charts;
 
 /// <summary>
-/// Trendline Type
+///   Trendline Type
 /// </summary>
 public enum TrendlineKind
 {
   /// <summary>
-  /// Exponential.
+  ///   Exponential.
   /// </summary>
   Exponential,
-  
+
   /// <summary>
-  /// Linear.
+  ///   Linear.
   /// </summary>
   Linear,
-  
+
   /// <summary>
-  /// Logarithmic.
+  ///   Logarithmic.
   /// </summary>
   Logarithmic,
-  
+
   /// <summary>
-  /// Moving Average.
+  ///   Moving Average.
   /// </summary>
   MovingAverage,
-  
+
   /// <summary>
-  /// Polynomial.
+  ///   Polynomial.
   /// </summary>
   Polynomial,
-  
+
   /// <summary>
-  /// Power.
+  ///   Power.
   /// </summary>
-  Power,
-  
+  Power
 }

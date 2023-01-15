@@ -1,43 +1,42 @@
 namespace DocumentModel.Drawings.Office;
 
 /// <summary>
-/// Defines the Shape Class.
+///   Defines the Shape Class.
 /// </summary>
-public partial class Shape
+public class Shape
 {
   /// <summary>
-  /// modelId, this property is only available in Office 2010 and later.
+  ///   modelId, this property is only available in Office 2010 and later.
   /// </summary>
   public String? ModelId { get; set; }
-  
+
   /// <summary>
-  /// ShapeNonVisualProperties.
+  ///   ShapeNonVisualProperties.
   /// </summary>
-  public DocumentModel.Drawings.Office.ShapeNonVisualProperties? ShapeNonVisualProperties { get; set; }
-  
+  public ShapeNonVisualProperties? ShapeNonVisualProperties { get; set; }
+
   /// <summary>
-  /// ShapeProperties.
+  ///   ShapeProperties.
   /// </summary>
-  public DocumentModel.Drawings.Office.ShapeProperties? ShapeProperties { get; set; }
-  
+  public ShapeProperties? ShapeProperties { get; set; }
+
   /// <summary>
-  /// ShapeStyle.
+  ///   ShapeStyle.
   /// </summary>
-  public DocumentModel.Drawings.Office.ShapeStyle? ShapeStyle { get; set; }
-  
+  public ShapeStyle? ShapeStyle { get; set; }
+
   /// <summary>
-  /// TextBody.
+  ///   TextBody.
   /// </summary>
-  public DocumentModel.Drawings.Office.TextBody? TextBody { get; set; }
-  
+  public TextBody? TextBody { get; set; }
+
   /// <summary>
-  /// Transform2D.
+  ///   Transform2D.
   /// </summary>
-  public DocumentModel.Drawings.Office.Transform2D? Transform2D { get; set; }
-  
+  public Transform2D? Transform2D { get; set; }
+
   /// <summary>
-  /// OfficeArtExtensionList.
+  ///   OfficeArtExtensionList.
   /// </summary>
-  public DocumentModel.Drawings.Office.OfficeArtExtensionList? OfficeArtExtensionList { get; set; }
-  
+  public OfficeArtExtensionList? OfficeArtExtensionList { get; set; }
 }

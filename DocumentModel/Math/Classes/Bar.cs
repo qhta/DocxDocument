@@ -1,18 +1,17 @@
 namespace DocumentModel.Math;
 
 /// <summary>
-/// Bar.
+///   Bar.
 /// </summary>
-public partial class Bar
+public class Bar
 {
   /// <summary>
-  /// Bar Properties.
+  ///   Bar Properties.
   /// </summary>
-  public DocumentModel.Math.BarProperties? BarProperties { get; set; }
-  
+  public BarProperties? BarProperties { get; set; }
+
   /// <summary>
-  /// Base.
+  ///   Base.
   /// </summary>
-  public DocumentModel.Math.Base? Base { get; set; }
-  
+  public Base? Base { get; set; }
 }

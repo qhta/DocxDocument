@@ -1,23 +1,22 @@
 namespace DocumentModel.Drawings.ChartDrawings;
 
 /// <summary>
-/// Defines the PageOrientation enumeration.
+///   Defines the PageOrientation enumeration.
 /// </summary>
 public enum PageOrientation
 {
   /// <summary>
-  /// default.
+  ///   default.
   /// </summary>
   Default,
-  
+
   /// <summary>
-  /// portrait.
+  ///   portrait.
   /// </summary>
   Portrait,
-  
+
   /// <summary>
-  /// landscape.
+  ///   landscape.
   /// </summary>
-  Landscape,
-  
+  Landscape
 }

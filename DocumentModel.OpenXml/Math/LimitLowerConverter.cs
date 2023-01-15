@@ -1,22 +1,25 @@
+using DocumentModel.Math;
+using LimitLower = DocumentFormat.OpenXml.Math.LimitLower;
+
 namespace DocumentModel.OpenXml.Math;
 
 /// <summary>
-/// Lower-Limit Function.
+///   Lower-Limit Function.
 /// </summary>
 public static class LimitLowerConverter
 {
   /// <summary>
-  /// Lower Limit Properties.
+  ///   Lower Limit Properties.
   /// </summary>
-  public static DocumentModel.Math.LimitLowerProperties? GetLimitLowerProperties(DocumentFormat.OpenXml.Math.LimitLower? openXmlElement)
+  public static LimitLowerProperties? GetLimitLowerProperties(LimitLower? openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Math.LimitLowerProperties>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Math.LimitLowerPropertiesConverter.CreateModelElement(itemElement);
+      return LimitLowerPropertiesConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetLimitLowerProperties(DocumentFormat.OpenXml.Math.LimitLower? openXmlElement, DocumentModel.Math.LimitLowerProperties? value)
+
+  public static void SetLimitLowerProperties(LimitLower? openXmlElement, LimitLowerProperties? value)
   {
     if (openXmlElement != null)
     {
@@ -25,25 +28,25 @@ public static class LimitLowerConverter
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Math.LimitLowerPropertiesConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Math.LimitLowerProperties>(value);
+        itemElement = LimitLowerPropertiesConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Math.LimitLowerProperties>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
+
   /// <summary>
-  /// Base.
+  ///   Base.
   /// </summary>
-  public static DocumentModel.Math.Base? GetBase(DocumentFormat.OpenXml.Math.LimitLower? openXmlElement)
+  public static Base? GetBase(LimitLower? openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Math.Base>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Math.BaseConverter.CreateModelElement(itemElement);
+      return BaseConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetBase(DocumentFormat.OpenXml.Math.LimitLower? openXmlElement, DocumentModel.Math.Base? value)
+
+  public static void SetBase(LimitLower? openXmlElement, Base? value)
   {
     if (openXmlElement != null)
     {
@@ -52,25 +55,25 @@ public static class LimitLowerConverter
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Math.BaseConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Math.Base>(value);
+        itemElement = BaseConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Math.Base>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
+
   /// <summary>
-  /// Limit (Lower).
+  ///   Limit (Lower).
   /// </summary>
-  public static DocumentModel.Math.Limit? GetLimit(DocumentFormat.OpenXml.Math.LimitLower? openXmlElement)
+  public static Limit? GetLimit(LimitLower? openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Math.Limit>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Math.LimitConverter.CreateModelElement(itemElement);
+      return LimitConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetLimit(DocumentFormat.OpenXml.Math.LimitLower? openXmlElement, DocumentModel.Math.Limit? value)
+
+  public static void SetLimit(LimitLower? openXmlElement, Limit? value)
   {
     if (openXmlElement != null)
     {
@@ -79,14 +82,14 @@ public static class LimitLowerConverter
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Math.LimitConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Math.Limit>(value);
+        itemElement = LimitConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Math.Limit>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static DocumentModel.Math.LimitLower? CreateModelElement(DocumentFormat.OpenXml.Math.LimitLower? openXmlElement)
+
+  public static DocumentModel.Math.LimitLower? CreateModelElement(LimitLower? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -98,9 +101,9 @@ public static class LimitLowerConverter
     }
     return null;
   }
-  
+
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Math.LimitLower? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Math.LimitLower, new()
+    where OpenXmlElementType : LimitLower, new()
   {
     if (value != null)
     {

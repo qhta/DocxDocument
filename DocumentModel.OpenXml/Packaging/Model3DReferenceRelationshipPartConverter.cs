@@ -1,21 +1,23 @@
+using DocumentFormat.OpenXml.Packaging;
+
 namespace DocumentModel.OpenXml.Packaging;
 
 /// <summary>
-/// Defines the Model3DReferenceRelationshipPart
+///   Defines the Model3DReferenceRelationshipPart
 /// </summary>
 public static class Model3DReferenceRelationshipPartConverter
 {
-  public static String? GetContentType(DocumentFormat.OpenXml.Packaging.Model3DReferenceRelationshipPart? openXmlElement)
+  public static String? GetContentType(Model3DReferenceRelationshipPart? openXmlElement)
   {
     return openXmlElement?.ContentType;
   }
-  
-  public static String? GetRelationshipType(DocumentFormat.OpenXml.Packaging.Model3DReferenceRelationshipPart? openXmlElement)
+
+  public static String? GetRelationshipType(Model3DReferenceRelationshipPart? openXmlElement)
   {
     return openXmlElement?.RelationshipType;
   }
-  
-  public static DocumentModel.Packaging.Model3DReferenceRelationshipPart? CreateModelElement(DocumentFormat.OpenXml.Packaging.Model3DReferenceRelationshipPart? openXmlElement)
+
+  public static DocumentModel.Packaging.Model3DReferenceRelationshipPart? CreateModelElement(Model3DReferenceRelationshipPart? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -26,9 +28,9 @@ public static class Model3DReferenceRelationshipPartConverter
     }
     return null;
   }
-  
+
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Packaging.Model3DReferenceRelationshipPart? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Packaging.Model3DReferenceRelationshipPart, new()
+    where OpenXmlElementType : Model3DReferenceRelationshipPart, new()
   {
     if (value != null)
     {

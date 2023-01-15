@@ -1,28 +1,27 @@
 namespace DocumentModel.Drawings.Wordprocessing;
 
 /// <summary>
-/// Vertical Positioning.
+///   Vertical Positioning.
 /// </summary>
-public partial class VerticalPosition
+public class VerticalPosition
 {
   /// <summary>
-  /// Vertical Position Relative Base
+  ///   Vertical Position Relative Base
   /// </summary>
-  public DocumentModel.Drawings.Wordprocessing.VerticalRelativePositionKind? RelativeFrom { get; set; }
-  
+  public VerticalRelativePositionKind? RelativeFrom { get; set; }
+
   /// <summary>
-  /// Relative Vertical Alignment.
+  ///   Relative Vertical Alignment.
   /// </summary>
   public String? VerticalAlignment { get; set; }
-  
+
   /// <summary>
-  /// PositionOffset.
+  ///   PositionOffset.
   /// </summary>
   public String? PositionOffset { get; set; }
-  
+
   /// <summary>
-  /// PercentagePositionVerticalOffset, this property is only available in Office 2010 and later..
+  ///   PercentagePositionVerticalOffset, this property is only available in Office 2010 and later..
   /// </summary>
   public String? PercentagePositionVerticalOffset { get; set; }
-  
 }

@@ -1,19 +1,22 @@
+using DocumentFormat.OpenXml.Wordprocessing;
+using ParagraphPropertiesExtended = DocumentModel.Wordprocessing.ParagraphPropertiesExtended;
+
 namespace DocumentModel.OpenXml.Wordprocessing;
 
 /// <summary>
-/// Defines the ParagraphPropertiesChange Class.
+///   Defines the ParagraphPropertiesChange Class.
 /// </summary>
 public static class ParagraphPropertiesChangeConverter
 {
   /// <summary>
-  /// author
+  ///   author
   /// </summary>
-  public static String? GetAuthor(DocumentFormat.OpenXml.Wordprocessing.ParagraphPropertiesChange? openXmlElement)
+  public static String? GetAuthor(ParagraphPropertiesChange? openXmlElement)
   {
     return openXmlElement?.Author?.Value;
   }
-  
-  public static void SetAuthor(DocumentFormat.OpenXml.Wordprocessing.ParagraphPropertiesChange? openXmlElement, String? value)
+
+  public static void SetAuthor(ParagraphPropertiesChange? openXmlElement, String? value)
   {
     if (openXmlElement != null)
       if (value != null)
@@ -21,30 +24,30 @@ public static class ParagraphPropertiesChangeConverter
       else
         openXmlElement.Author = null;
   }
-  
+
   /// <summary>
-  /// date
+  ///   date
   /// </summary>
-  public static DateTime? GetDate(DocumentFormat.OpenXml.Wordprocessing.ParagraphPropertiesChange? openXmlElement)
+  public static DateTime? GetDate(ParagraphPropertiesChange? openXmlElement)
   {
     return openXmlElement?.Date?.Value;
   }
-  
-  public static void SetDate(DocumentFormat.OpenXml.Wordprocessing.ParagraphPropertiesChange? openXmlElement, DateTime? value)
+
+  public static void SetDate(ParagraphPropertiesChange? openXmlElement, DateTime? value)
   {
     if (openXmlElement != null)
       openXmlElement.Date = value;
   }
-  
+
   /// <summary>
-  /// Annotation Identifier
+  ///   Annotation Identifier
   /// </summary>
-  public static String? GetId(DocumentFormat.OpenXml.Wordprocessing.ParagraphPropertiesChange? openXmlElement)
+  public static String? GetId(ParagraphPropertiesChange? openXmlElement)
   {
     return openXmlElement?.Id?.Value;
   }
-  
-  public static void SetId(DocumentFormat.OpenXml.Wordprocessing.ParagraphPropertiesChange? openXmlElement, String? value)
+
+  public static void SetId(ParagraphPropertiesChange? openXmlElement, String? value)
   {
     if (openXmlElement != null)
       if (value != null)
@@ -52,19 +55,19 @@ public static class ParagraphPropertiesChangeConverter
       else
         openXmlElement.Id = null;
   }
-  
+
   /// <summary>
-  /// Previous Paragraph Properties.
+  ///   Previous Paragraph Properties.
   /// </summary>
-  public static DocumentModel.Wordprocessing.ParagraphPropertiesExtended? GetParagraphPropertiesExtended(DocumentFormat.OpenXml.Wordprocessing.ParagraphPropertiesChange? openXmlElement)
+  public static ParagraphPropertiesExtended? GetParagraphPropertiesExtended(ParagraphPropertiesChange? openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.ParagraphPropertiesExtended>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Wordprocessing.ParagraphPropertiesExtendedConverter.CreateModelElement(itemElement);
+      return ParagraphPropertiesExtendedConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetParagraphPropertiesExtended(DocumentFormat.OpenXml.Wordprocessing.ParagraphPropertiesChange? openXmlElement, DocumentModel.Wordprocessing.ParagraphPropertiesExtended? value)
+
+  public static void SetParagraphPropertiesExtended(ParagraphPropertiesChange? openXmlElement, ParagraphPropertiesExtended? value)
   {
     if (openXmlElement != null)
     {
@@ -73,14 +76,14 @@ public static class ParagraphPropertiesChangeConverter
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Wordprocessing.ParagraphPropertiesExtendedConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.ParagraphPropertiesExtended>(value);
+        itemElement = ParagraphPropertiesExtendedConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.ParagraphPropertiesExtended>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static DocumentModel.Wordprocessing.ParagraphPropertiesChange? CreateModelElement(DocumentFormat.OpenXml.Wordprocessing.ParagraphPropertiesChange? openXmlElement)
+
+  public static DocumentModel.Wordprocessing.ParagraphPropertiesChange? CreateModelElement(ParagraphPropertiesChange? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -93,9 +96,9 @@ public static class ParagraphPropertiesChangeConverter
     }
     return null;
   }
-  
+
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.ParagraphPropertiesChange? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Wordprocessing.ParagraphPropertiesChange, new()
+    where OpenXmlElementType : ParagraphPropertiesChange, new()
   {
     if (value != null)
     {

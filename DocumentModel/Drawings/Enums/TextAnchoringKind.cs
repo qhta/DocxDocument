@@ -1,23 +1,22 @@
 namespace DocumentModel.Drawings;
 
 /// <summary>
-/// Text Anchoring Types
+///   Text Anchoring Types
 /// </summary>
 public enum TextAnchoringKind
 {
   /// <summary>
-  /// Text Anchoring Type Enum ( Top ).
+  ///   Text Anchoring Type Enum ( Top ).
   /// </summary>
   Top,
-  
+
   /// <summary>
-  /// Text Anchor Enum ( Center ).
+  ///   Text Anchor Enum ( Center ).
   /// </summary>
   Center,
-  
+
   /// <summary>
-  /// Text Anchor Enum ( Bottom ).
+  ///   Text Anchor Enum ( Bottom ).
   /// </summary>
-  Bottom,
-  
+  Bottom
 }

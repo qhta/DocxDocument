@@ -1,10 +1,9 @@
 namespace DocumentModel.UI;
 
 /// <summary>
-/// Defines the RepurposedCommands Class.
+///   Defines the RepurposedCommands Class.
 /// </summary>
-public partial class RepurposedCommands
+public class RepurposedCommands
 {
-  public Collection<DocumentModel.UI.RepurposedCommand>? Items { get; set; }
-  
+  public Collection<RepurposedCommand>? Items { get; set; }
 }

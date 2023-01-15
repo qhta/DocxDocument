@@ -1,19 +1,21 @@
+using DocumentFormat.OpenXml.Office.Word;
+
 namespace DocumentModel.OpenXml.Wordprocessing;
 
 /// <summary>
-/// Defines the ToolbarData Class.
+///   Defines the ToolbarData Class.
 /// </summary>
 public static class ToolbarDataConverter
 {
   /// <summary>
-  /// id
+  ///   id
   /// </summary>
-  public static String? GetId(DocumentFormat.OpenXml.Office.Word.ToolbarData? openXmlElement)
+  public static String? GetId(ToolbarData? openXmlElement)
   {
     return openXmlElement?.Id?.Value;
   }
-  
-  public static void SetId(DocumentFormat.OpenXml.Office.Word.ToolbarData? openXmlElement, String? value)
+
+  public static void SetId(ToolbarData? openXmlElement, String? value)
   {
     if (openXmlElement != null)
       if (value != null)
@@ -21,8 +23,8 @@ public static class ToolbarDataConverter
       else
         openXmlElement.Id = null;
   }
-  
-  public static DocumentModel.Wordprocessing.ToolbarData? CreateModelElement(DocumentFormat.OpenXml.Office.Word.ToolbarData? openXmlElement)
+
+  public static DocumentModel.Wordprocessing.ToolbarData? CreateModelElement(ToolbarData? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -32,9 +34,9 @@ public static class ToolbarDataConverter
     }
     return null;
   }
-  
+
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.ToolbarData? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Office.Word.ToolbarData, new()
+    where OpenXmlElementType : ToolbarData, new()
   {
     if (value != null)
     {

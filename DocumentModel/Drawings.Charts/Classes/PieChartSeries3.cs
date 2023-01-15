@@ -1,48 +1,47 @@
 namespace DocumentModel.Drawings.Charts;
 
 /// <summary>
-/// Defines the PieChartSeries Class.
+///   Defines the PieChartSeries Class.
 /// </summary>
-public partial class PieChartSeries3
+public class PieChartSeries3
 {
   /// <summary>
-  /// Index.
+  ///   Index.
   /// </summary>
   public UInt32? Index { get; set; }
-  
+
   /// <summary>
-  /// Order.
+  ///   Order.
   /// </summary>
   public UInt32? Order { get; set; }
-  
+
   /// <summary>
-  /// Series Text.
+  ///   Series Text.
   /// </summary>
-  public DocumentModel.Drawings.Charts.SeriesText? SeriesText { get; set; }
-  
+  public SeriesText? SeriesText { get; set; }
+
   /// <summary>
-  /// ChartShapeProperties.
+  ///   ChartShapeProperties.
   /// </summary>
-  public DocumentModel.Drawings.Charts.ChartShapeProperties? ChartShapeProperties { get; set; }
-  
+  public ChartShapeProperties? ChartShapeProperties { get; set; }
+
   /// <summary>
-  /// PictureOptions.
+  ///   PictureOptions.
   /// </summary>
-  public DocumentModel.Drawings.Charts.PictureOptions? PictureOptions { get; set; }
-  
+  public PictureOptions? PictureOptions { get; set; }
+
   /// <summary>
-  /// Explosion.
+  ///   Explosion.
   /// </summary>
   public UInt32? Explosion { get; set; }
-  
-  public Collection<DocumentModel.Drawings.Charts.DataPoint>? DataPoints { get; set; }
-  
-  public DocumentModel.Drawings.Charts.DataLabels? DataLabels { get; set; }
-  
-  public DocumentModel.Drawings.Charts.CategoryAxisData? CategoryAxisData { get; set; }
-  
-  public DocumentModel.Drawings.Charts.Values? Values { get; set; }
-  
-  public DocumentModel.Drawings.Charts.PieSerExtensionList? PieSerExtensionList { get; set; }
-  
+
+  public Collection<DataPoint>? DataPoints { get; set; }
+
+  public DataLabels? DataLabels { get; set; }
+
+  public CategoryAxisData? CategoryAxisData { get; set; }
+
+  public Values? Values { get; set; }
+
+  public PieSerExtensionList? PieSerExtensionList { get; set; }
 }

@@ -1,28 +1,27 @@
 namespace DocumentModel.Wordprocessing.Vml;
 
 /// <summary>
-/// Text Wrapping.
+///   Text Wrapping.
 /// </summary>
-public partial class TextWrap
+public class TextWrap
 {
   /// <summary>
-  /// Wrapping type
+  ///   Wrapping type
   /// </summary>
-  public DocumentModel.Wordprocessing.Vml.WrapKind? Type { get; set; }
-  
+  public WrapKind? Type { get; set; }
+
   /// <summary>
-  /// Wrapping side
+  ///   Wrapping side
   /// </summary>
-  public DocumentModel.Wordprocessing.Vml.WrapSideKind? Side { get; set; }
-  
+  public WrapSideKind? Side { get; set; }
+
   /// <summary>
-  /// Horizontal Positioning Base
+  ///   Horizontal Positioning Base
   /// </summary>
-  public DocumentModel.Wordprocessing.Vml.HorizontalAnchorKind? AnchorX { get; set; }
-  
+  public HorizontalAnchorKind? AnchorX { get; set; }
+
   /// <summary>
-  /// Vertical Positioning Base
+  ///   Vertical Positioning Base
   /// </summary>
-  public DocumentModel.Wordprocessing.Vml.VerticalAnchorKind? AnchorY { get; set; }
-  
+  public VerticalAnchorKind? AnchorY { get; set; }
 }

@@ -1,10 +1,9 @@
 namespace DocumentModel.Wordprocessing;
 
 /// <summary>
-/// Defines the MismatchedKeyMapCustomization Class.
+///   Defines the MismatchedKeyMapCustomization Class.
 /// </summary>
-public partial class MismatchedKeyMapCustomization
+public class MismatchedKeyMapCustomization
 {
-  public Collection<DocumentModel.Wordprocessing.KeyMapEntry>? KeyMapEntries { get; set; }
-  
+  public Collection<KeyMapEntry>? KeyMapEntries { get; set; }
 }

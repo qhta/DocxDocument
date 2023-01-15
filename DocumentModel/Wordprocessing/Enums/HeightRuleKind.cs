@@ -1,23 +1,22 @@
 namespace DocumentModel.Wordprocessing;
 
 /// <summary>
-/// Defines the HeightRuleValues enumeration.
+///   Defines the HeightRuleValues enumeration.
 /// </summary>
 public enum HeightRuleKind
 {
   /// <summary>
-  /// Determine Height Based On Contents.
+  ///   Determine Height Based On Contents.
   /// </summary>
   Auto,
-  
+
   /// <summary>
-  /// Exact Height.
+  ///   Exact Height.
   /// </summary>
   Exact,
-  
+
   /// <summary>
-  /// Minimum Height.
+  ///   Minimum Height.
   /// </summary>
-  AtLeast,
-  
+  AtLeast
 }

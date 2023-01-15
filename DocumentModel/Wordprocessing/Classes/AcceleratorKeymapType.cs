@@ -1,13 +1,12 @@
 namespace DocumentModel.Wordprocessing;
 
 /// <summary>
-/// Defines the AcceleratorKeymapType Class.
+///   Defines the AcceleratorKeymapType Class.
 /// </summary>
-public partial class AcceleratorKeymapType
+public class AcceleratorKeymapType
 {
   /// <summary>
-  /// acdName
+  ///   acdName
   /// </summary>
   public String? AcceleratorName { get; set; }
-  
 }

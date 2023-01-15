@@ -1,36 +1,41 @@
+using DocumentFormat.OpenXml.Drawing;
+using DocumentModel.Drawings;
+using Blend = DocumentFormat.OpenXml.Drawing.Blend;
+using EffectContainer = DocumentModel.Drawings.EffectContainer;
+
 namespace DocumentModel.OpenXml.Drawings;
 
 /// <summary>
-/// Blend Effect.
+///   Blend Effect.
 /// </summary>
 public static class BlendConverter
 {
   /// <summary>
-  /// Blend Mode
+  ///   Blend Mode
   /// </summary>
-  public static DocumentModel.Drawings.BlendMode? GetBlendMode(DocumentFormat.OpenXml.Drawing.Blend? openXmlElement)
+  public static BlendMode? GetBlendMode(Blend? openXmlElement)
   {
-    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Drawing.BlendModeValues, DocumentModel.Drawings.BlendMode>(openXmlElement?.BlendMode?.Value);
+    return EnumValueConverter.GetValue<BlendModeValues, BlendMode>(openXmlElement?.BlendMode?.Value);
   }
-  
-  public static void SetBlendMode(DocumentFormat.OpenXml.Drawing.Blend? openXmlElement, DocumentModel.Drawings.BlendMode? value)
+
+  public static void SetBlendMode(Blend? openXmlElement, BlendMode? value)
   {
     if (openXmlElement != null)
-      openXmlElement.BlendMode = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Drawing.BlendModeValues, DocumentModel.Drawings.BlendMode>(value);
+      openXmlElement.BlendMode = EnumValueConverter.CreateEnumValue<BlendModeValues, BlendMode>(value);
   }
-  
+
   /// <summary>
-  /// Effect to blend.
+  ///   Effect to blend.
   /// </summary>
-  public static DocumentModel.Drawings.EffectContainer? GetEffectContainer(DocumentFormat.OpenXml.Drawing.Blend? openXmlElement)
+  public static EffectContainer? GetEffectContainer(Blend? openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.EffectContainer>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.EffectContainerConverter.CreateModelElement(itemElement);
+      return EffectContainerConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetEffectContainer(DocumentFormat.OpenXml.Drawing.Blend? openXmlElement, DocumentModel.Drawings.EffectContainer? value)
+
+  public static void SetEffectContainer(Blend? openXmlElement, EffectContainer? value)
   {
     if (openXmlElement != null)
     {
@@ -39,14 +44,14 @@ public static class BlendConverter
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Drawings.EffectContainerConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.EffectContainer>(value);
+        itemElement = EffectContainerConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.EffectContainer>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static DocumentModel.Drawings.Blend? CreateModelElement(DocumentFormat.OpenXml.Drawing.Blend? openXmlElement)
+
+  public static DocumentModel.Drawings.Blend? CreateModelElement(Blend? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -57,9 +62,9 @@ public static class BlendConverter
     }
     return null;
   }
-  
+
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.Blend? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.Blend, new()
+    where OpenXmlElementType : Blend, new()
   {
     if (value != null)
     {

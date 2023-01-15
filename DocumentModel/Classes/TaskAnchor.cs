@@ -1,18 +1,17 @@
 namespace DocumentModel;
 
 /// <summary>
-/// Defines the TaskAnchor Class.
+///   Defines the TaskAnchor Class.
 /// </summary>
-public partial class TaskAnchor
+public class TaskAnchor
 {
   /// <summary>
-  /// CommentAnchor.
+  ///   CommentAnchor.
   /// </summary>
-  public DocumentModel.CommentAnchor? CommentAnchor { get; set; }
-  
+  public CommentAnchor? CommentAnchor { get; set; }
+
   /// <summary>
-  /// ExtensionList.
+  ///   ExtensionList.
   /// </summary>
-  public DocumentModel.ExtensionList? ExtensionList { get; set; }
-  
+  public ExtensionList? ExtensionList { get; set; }
 }

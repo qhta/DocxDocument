@@ -3,36 +3,19 @@ using DocumentModel.BaseTypes;
 
 namespace DocumentModel;
 
-[TypeConverter(typeof(HexWordTypeConverter))]
-public record HexWord: IConvertible
+[TypeConverter(typeof(NumIdTypeConverter))]
+public record NumId : IConvertible
 {
-  private ushort Value;
+  private readonly int Value;
 
-  public static implicit operator HexWord(string val) => new HexWord (ushort.Parse(val, NumberStyles.HexNumber));
-
-  //public static implicit operator HexWord?(string? val) =>
-  //  (val is not null) ? new HexWord (ushort.Parse(val, NumberStyles.HexNumber)) : (HexWord?)null;
-
-  public static implicit operator string(HexWord val) => val.Value.ToString("X4");
-  //public static implicit operator string?(HexWord? val) => val?.Value.ToString("X4");
-
-  public static implicit operator ushort(HexWord val) => val.Value;
-
-  public static implicit operator HexWord(ushort val) => new HexWord (val);
-
-  public HexWord(string val)
+  public NumId(string val)
   {
-    Value = ushort.Parse(val, NumberStyles.HexNumber);
+    Value = int.Parse(val, NumberStyles.HexNumber);
   }
 
-  public HexWord(ushort value)
+  public NumId(int value)
   {
     Value = value;
-  }
-
-  public override string ToString()
-  {
-    return Value.ToString("X4");
   }
 
   public TypeCode GetTypeCode()
@@ -102,17 +85,17 @@ public record HexWord: IConvertible
 
   public ushort ToUInt16(IFormatProvider? provider)
   {
-    return Value;
+    return (ushort)Value;
   }
 
   public uint ToUInt32(IFormatProvider? provider)
   {
-    return Value;
+    return (uint)Value;
   }
 
   public ulong ToUInt64(IFormatProvider? provider)
   {
-    return Value;
+    return (ulong)Value;
   }
 
   public object ToType(Type targetType, IFormatProvider? provider)
@@ -139,12 +122,57 @@ public record HexWord: IConvertible
       return Value;
     if (targetType == typeof(Decimal))
       return Value;
-    if (targetType == typeof(string))
-      return Value.ToString("X4");
-    if (targetType == typeof(HexWord))
-      return new HexWord(Value);
+    if (targetType == typeof(String))
+      return ToString();
+    if (targetType == typeof(NumId))
+      return new NumId(Value);
     return ((IConvertible)Value).ToType(targetType, provider);
   }
 
+  public static implicit operator NumId(string val)
+  {
+    return new NumId(val);
+  }
 
+  public static implicit operator string?(NumId? val)
+  {
+    return val?.ToString();
+  }
+
+  public static implicit operator ushort(NumId val)
+  {
+    return (ushort)val.Value;
+  }
+
+  public static implicit operator uint(NumId val)
+  {
+    return (uint)val.Value;
+  }
+
+  public static implicit operator ulong(NumId val)
+  {
+    return (ulong)val.Value;
+  }
+
+  public static implicit operator NumId(ushort val)
+  {
+    return new NumId((ulong)val);
+  }
+
+  public static implicit operator NumId(uint val)
+  {
+    return new NumId((ulong)val);
+  }
+
+  public static implicit operator NumId(ulong val)
+  {
+    return new NumId(val);
+  }
+
+  public override string ToString()
+  {
+    //if (Value > uint.MaxValue)
+    //  return Value.ToString("X16");
+    return Value.ToString("X8");
+  }
 }

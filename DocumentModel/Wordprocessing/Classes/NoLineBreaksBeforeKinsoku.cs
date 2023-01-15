@@ -1,18 +1,17 @@
 namespace DocumentModel.Wordprocessing;
 
 /// <summary>
-/// Custom Set Of Characters Which Cannot Begin A Line.
+///   Custom Set Of Characters Which Cannot Begin A Line.
 /// </summary>
-public partial class NoLineBreaksBeforeKinsoku
+public class NoLineBreaksBeforeKinsoku
 {
   /// <summary>
-  /// lang
+  ///   lang
   /// </summary>
   public String? Language { get; set; }
-  
+
   /// <summary>
-  /// val
+  ///   val
   /// </summary>
   public String? Val { get; set; }
-  
 }

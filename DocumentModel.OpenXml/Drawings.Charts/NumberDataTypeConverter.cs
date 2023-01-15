@@ -1,63 +1,65 @@
+using DocumentFormat.OpenXml.Drawing.Charts;
+
 namespace DocumentModel.OpenXml.Drawings.Charts;
 
 /// <summary>
-/// Defines the NumberDataType Class.
+///   Defines the NumberDataType Class.
 /// </summary>
 public static class NumberDataTypeConverter
 {
   /// <summary>
-  /// Format Code.
+  ///   Format Code.
   /// </summary>
-  public static String? GetFormatCode(DocumentFormat.OpenXml.Drawing.Charts.NumberDataType? openXmlElement)
+  public static String? GetFormatCode(NumberDataType? openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.FormatCode>();
+    var itemElement = openXmlElement?.GetFirstChild<FormatCode>();
     if (itemElement != null)
       return itemElement.Text;
     return null;
   }
-  
-  public static void SetFormatCode(DocumentFormat.OpenXml.Drawing.Charts.NumberDataType? openXmlElement, String? value)
+
+  public static void SetFormatCode(NumberDataType? openXmlElement, String? value)
   {
     if (openXmlElement != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.FormatCode>();
+      var itemElement = openXmlElement.GetFirstChild<FormatCode>();
       if (itemElement != null)
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = new DocumentFormat.OpenXml.Drawing.Charts.FormatCode { Text = value };
+        itemElement = new FormatCode { Text = value };
         openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
+
   /// <summary>
-  /// Point Count.
+  ///   Point Count.
   /// </summary>
-  public static UInt32? GetPointCount(DocumentFormat.OpenXml.Drawing.Charts.NumberDataType? openXmlElement)
+  public static UInt32? GetPointCount(NumberDataType? openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.PointCount>();
+    var itemElement = openXmlElement?.GetFirstChild<PointCount>();
     if (itemElement != null)
       return itemElement.Val?.Value;
     return null;
   }
-  
-  public static void SetPointCount(DocumentFormat.OpenXml.Drawing.Charts.NumberDataType? openXmlElement, UInt32? value)
+
+  public static void SetPointCount(NumberDataType? openXmlElement, UInt32? value)
   {
     if (openXmlElement != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.PointCount>();
+      var itemElement = openXmlElement.GetFirstChild<PointCount>();
       if (itemElement != null)
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = new DocumentFormat.OpenXml.Drawing.Charts.PointCount{ Val = value };
+        itemElement = new PointCount { Val = value };
         openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static DocumentModel.Drawings.Charts.NumberDataType? CreateModelElement(DocumentFormat.OpenXml.Drawing.Charts.NumberDataType? openXmlElement)
+
+  public static DocumentModel.Drawings.Charts.NumberDataType? CreateModelElement(NumberDataType? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -68,9 +70,9 @@ public static class NumberDataTypeConverter
     }
     return null;
   }
-  
+
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.Charts.NumberDataType? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.Charts.NumberDataType, new()
+    where OpenXmlElementType : NumberDataType, new()
   {
     if (value != null)
     {

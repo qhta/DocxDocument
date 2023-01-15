@@ -1,18 +1,17 @@
 namespace DocumentModel.Drawings.ChartDrawings;
 
 /// <summary>
-/// Defines the GeoEntity Class.
+///   Defines the GeoEntity Class.
 /// </summary>
-public partial class GeoEntity
+public class GeoEntity
 {
   /// <summary>
-  /// entityName, this property is only available in Office 2016 and later.
+  ///   entityName, this property is only available in Office 2016 and later.
   /// </summary>
   public String? EntityName { get; set; }
-  
+
   /// <summary>
-  /// entityType, this property is only available in Office 2016 and later.
+  ///   entityType, this property is only available in Office 2016 and later.
   /// </summary>
-  public DocumentModel.Drawings.ChartDrawings.EntityTypeEnum? EntityType { get; set; }
-  
+  public EntityTypeEnum? EntityType { get; set; }
 }

@@ -1,18 +1,17 @@
 namespace DocumentModel.Drawings;
 
 /// <summary>
-/// Build Chart.
+///   Build Chart.
 /// </summary>
-public partial class BuildChart
+public class BuildChart
 {
   /// <summary>
-  /// Build
+  ///   Build
   /// </summary>
   public String? Build { get; set; }
-  
+
   /// <summary>
-  /// Animate Background
+  ///   Animate Background
   /// </summary>
   public Boolean? AnimateBackground { get; set; }
-  
 }

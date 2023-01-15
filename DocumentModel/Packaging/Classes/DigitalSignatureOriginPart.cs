@@ -1,17 +1,16 @@
 namespace DocumentModel.Packaging;
 
 /// <summary>
-/// Defines the DigitalSignatureOriginPart
+///   Defines the DigitalSignatureOriginPart
 /// </summary>
-public partial class DigitalSignatureOriginPart
+public class DigitalSignatureOriginPart
 {
   public String? ContentType { get; set; }
-  
+
   public String? RelationshipType { get; set; }
-  
+
   /// <summary>
-  /// Gets the XmlSignatureParts of the DigitalSignatureOriginPart
+  ///   Gets the XmlSignatureParts of the DigitalSignatureOriginPart
   /// </summary>
-  public Collection<DocumentModel.Packaging.XmlSignaturePart>? XmlSignatureParts { get; set; }
-  
+  public Collection<XmlSignaturePart>? XmlSignatureParts { get; set; }
 }

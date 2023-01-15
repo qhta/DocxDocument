@@ -1,63 +1,62 @@
 namespace DocumentModel.Vml;
 
 /// <summary>
-/// Defines the Shadow Class.
+///   Defines the Shadow Class.
 /// </summary>
-public partial class Shadow
+public class Shadow
 {
   /// <summary>
-  /// Unique Identifier
+  ///   Unique Identifier
   /// </summary>
   public String? Id { get; set; }
-  
+
   /// <summary>
-  /// Shadow Toggle
+  ///   Shadow Toggle
   /// </summary>
   public Boolean? On { get; set; }
-  
+
   /// <summary>
-  /// Shadow Type
+  ///   Shadow Type
   /// </summary>
-  public DocumentModel.Vml.ShadowKind? Type { get; set; }
-  
+  public ShadowKind? Type { get; set; }
+
   /// <summary>
-  /// Shadow Transparency
+  ///   Shadow Transparency
   /// </summary>
   public Boolean? Obscured { get; set; }
-  
+
   /// <summary>
-  /// Shadow Primary Color
+  ///   Shadow Primary Color
   /// </summary>
   public String? Color { get; set; }
-  
+
   /// <summary>
-  /// Shadow Opacity
+  ///   Shadow Opacity
   /// </summary>
   public String? Opacity { get; set; }
-  
+
   /// <summary>
-  /// Shadow Primary Offset
+  ///   Shadow Primary Offset
   /// </summary>
   public String? Offset { get; set; }
-  
+
   /// <summary>
-  /// Shadow Secondary Color
+  ///   Shadow Secondary Color
   /// </summary>
   public String? Color2 { get; set; }
-  
+
   /// <summary>
-  /// Shadow Secondary Offset
+  ///   Shadow Secondary Offset
   /// </summary>
   public String? Offset2 { get; set; }
-  
+
   /// <summary>
-  /// Shadow Origin
+  ///   Shadow Origin
   /// </summary>
   public String? Origin { get; set; }
-  
+
   /// <summary>
-  /// Shadow Perspective Matrix
+  ///   Shadow Perspective Matrix
   /// </summary>
   public String? Matrix { get; set; }
-  
 }

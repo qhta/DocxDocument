@@ -1,17 +1,16 @@
 namespace DocumentModel.Drawings.Charts;
 
 /// <summary>
-/// Defines the MultiLevelStringCache Class.
+///   Defines the MultiLevelStringCache Class.
 /// </summary>
-public partial class MultiLevelStringCache
+public class MultiLevelStringCache
 {
   /// <summary>
-  /// PointCount.
+  ///   PointCount.
   /// </summary>
   public UInt32? PointCount { get; set; }
-  
-  public Collection<DocumentModel.Drawings.Charts.Level>? Levels { get; set; }
-  
-  public DocumentModel.Drawings.Charts.ExtensionList? ExtensionList { get; set; }
-  
+
+  public Collection<Level>? Levels { get; set; }
+
+  public ExtensionList? ExtensionList { get; set; }
 }

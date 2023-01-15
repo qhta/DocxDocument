@@ -1,23 +1,22 @@
 namespace DocumentModel.Drawings;
 
 /// <summary>
-/// Theme Override.
+///   Theme Override.
 /// </summary>
-public partial class ThemeOverride
+public class ThemeOverride
 {
   /// <summary>
-  /// Color Scheme.
+  ///   Color Scheme.
   /// </summary>
-  public DocumentModel.Drawings.ColorScheme? ColorScheme { get; set; }
-  
+  public ColorScheme? ColorScheme { get; set; }
+
   /// <summary>
-  /// FontScheme.
+  ///   FontScheme.
   /// </summary>
-  public DocumentModel.Drawings.FontScheme? FontScheme { get; set; }
-  
+  public FontScheme? FontScheme { get; set; }
+
   /// <summary>
-  /// FormatScheme.
+  ///   FormatScheme.
   /// </summary>
-  public DocumentModel.Drawings.FormatScheme? FormatScheme { get; set; }
-  
+  public FormatScheme? FormatScheme { get; set; }
 }

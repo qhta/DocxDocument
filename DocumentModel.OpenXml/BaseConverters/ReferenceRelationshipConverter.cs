@@ -1,44 +1,45 @@
+using DocumentFormat.OpenXml.Packaging;
+
 namespace DocumentModel.OpenXml.Packaging;
 
 /// <summary>
-/// Defines a reference relationship. A reference relationship can be internal or external.
+///   Defines a reference relationship. A reference relationship can be internal or external.
 /// </summary>
 public static class ReferenceRelationshipConverter
 {
   /// <summary>
-  /// Gets the relationship type.
+  ///   Gets the relationship type.
   /// </summary>
-  public static String? GetRelationshipType(DocumentFormat.OpenXml.Packaging.ReferenceRelationship? openXmlElement)
+  public static String? GetRelationshipType(ReferenceRelationship? openXmlElement)
   {
     return openXmlElement?.RelationshipType;
   }
-  
+
   /// <summary>
-  /// Gets a value indicating whether the target of the relationship is Internal or External to the .
+  ///   Gets a value indicating whether the target of the relationship is Internal or External to the .
   /// </summary>
-  public static Boolean? GetIsExternal(DocumentFormat.OpenXml.Packaging.ReferenceRelationship? openXmlElement)
+  public static Boolean? GetIsExternal(ReferenceRelationship? openXmlElement)
   {
     return openXmlElement?.IsExternal;
   }
-  
+
   /// <summary>
-  /// Gets the relationship ID.
+  ///   Gets the relationship ID.
   /// </summary>
-  public static String? GetId(DocumentFormat.OpenXml.Packaging.ReferenceRelationship? openXmlElement)
+  public static String? GetId(ReferenceRelationship? openXmlElement)
   {
     return openXmlElement?.Id;
   }
-  
-  
+
   /// <summary>
-  /// Gets the target URI of the relationship.
+  ///   Gets the target URI of the relationship.
   /// </summary>
-  public static Uri? GetUri(DocumentFormat.OpenXml.Packaging.ReferenceRelationship? openXmlElement)
+  public static Uri? GetUri(ReferenceRelationship? openXmlElement)
   {
     return openXmlElement?.Uri;
   }
-  
-  public static DocumentModel.Packaging.ReferenceRelationship? CreateModelElement(DocumentFormat.OpenXml.Packaging.ReferenceRelationship? openXmlElement)
+
+  public static DocumentModel.Packaging.ReferenceRelationship? CreateModelElement(ReferenceRelationship? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -51,9 +52,9 @@ public static class ReferenceRelationshipConverter
     }
     return null;
   }
-  
+
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Packaging.ReferenceRelationship? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Packaging.ReferenceRelationship, new()
+    where OpenXmlElementType : ReferenceRelationship, new()
   {
     if (value != null)
     {

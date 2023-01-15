@@ -1,130 +1,143 @@
+using DocumentFormat.OpenXml.Drawing.Charts;
+using Chart = DocumentModel.Drawings.Charts.Chart;
+using ChartSpaceExtensionList = DocumentModel.Drawings.Charts.ChartSpaceExtensionList;
+using ColorMapOverride = DocumentModel.Drawings.Charts.ColorMapOverride;
+using ExternalData = DocumentModel.Drawings.Charts.ExternalData;
+using PivotSource = DocumentModel.Drawings.Charts.PivotSource;
+using PrintSettings = DocumentModel.Drawings.Charts.PrintSettings;
+using Protection = DocumentModel.Drawings.Charts.Protection;
+using RelationshipIdType = DocumentModel.Drawings.Charts.RelationshipIdType;
+using ShapeProperties = DocumentModel.Drawings.Charts.ShapeProperties;
+using Style = DocumentFormat.OpenXml.Office2010.Drawing.Charts.Style;
+using TextProperties = DocumentModel.Drawings.Charts.TextProperties;
+
 namespace DocumentModel.OpenXml.Drawings.Charts;
 
 /// <summary>
-/// Chart Space.
+///   Chart Space.
 /// </summary>
 public static class ChartSpaceConverter
 {
   /// <summary>
-  /// Date1904.
+  ///   Date1904.
   /// </summary>
-  public static Boolean? GetDate1904(DocumentFormat.OpenXml.Drawing.Charts.ChartSpace? openXmlElement)
+  public static Boolean? GetDate1904(ChartSpace? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.Date1904>();
+      var itemElement = openXmlElement.GetFirstChild<Date1904>();
       return itemElement != null;
     }
     return null;
   }
-  
-  public static void SetDate1904(DocumentFormat.OpenXml.Drawing.Charts.ChartSpace? openXmlElement, Boolean? value)
+
+  public static void SetDate1904(ChartSpace? openXmlElement, Boolean? value)
   {
     if (openXmlElement != null)
     {
       if (value == false)
       {
-        var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.Date1904>();
+        var itemElement = openXmlElement.GetFirstChild<Date1904>();
         if (itemElement != null)
           itemElement.Remove();
       }
       if (value == true)
       {
-        var itemElement = new DocumentFormat.OpenXml.Drawing.Charts.Date1904();
+        var itemElement = new Date1904();
         openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
+
   /// <summary>
-  /// EditingLanguage.
+  ///   EditingLanguage.
   /// </summary>
-  public static String? GetEditingLanguage(DocumentFormat.OpenXml.Drawing.Charts.ChartSpace? openXmlElement)
+  public static String? GetEditingLanguage(ChartSpace? openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.EditingLanguage>();
+    var itemElement = openXmlElement?.GetFirstChild<EditingLanguage>();
     if (itemElement != null)
       return itemElement.Val?.Value;
     return null;
   }
-  
-  public static void SetEditingLanguage(DocumentFormat.OpenXml.Drawing.Charts.ChartSpace? openXmlElement, String? value)
+
+  public static void SetEditingLanguage(ChartSpace? openXmlElement, String? value)
   {
     if (openXmlElement != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.EditingLanguage>();
+      var itemElement = openXmlElement.GetFirstChild<EditingLanguage>();
       if (itemElement != null)
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = new DocumentFormat.OpenXml.Drawing.Charts.EditingLanguage { Val = value };
+        itemElement = new EditingLanguage { Val = value };
         openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
+
   /// <summary>
-  /// RoundedCorners.
+  ///   RoundedCorners.
   /// </summary>
-  public static Boolean? GetRoundedCorners(DocumentFormat.OpenXml.Drawing.Charts.ChartSpace? openXmlElement)
+  public static Boolean? GetRoundedCorners(ChartSpace? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.RoundedCorners>();
+      var itemElement = openXmlElement.GetFirstChild<RoundedCorners>();
       return itemElement != null;
     }
     return null;
   }
-  
-  public static void SetRoundedCorners(DocumentFormat.OpenXml.Drawing.Charts.ChartSpace? openXmlElement, Boolean? value)
+
+  public static void SetRoundedCorners(ChartSpace? openXmlElement, Boolean? value)
   {
     if (openXmlElement != null)
     {
       if (value == false)
       {
-        var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.RoundedCorners>();
+        var itemElement = openXmlElement.GetFirstChild<RoundedCorners>();
         if (itemElement != null)
           itemElement.Remove();
       }
       if (value == true)
       {
-        var itemElement = new DocumentFormat.OpenXml.Drawing.Charts.RoundedCorners();
+        var itemElement = new RoundedCorners();
         openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static Byte? GetStyle(DocumentFormat.OpenXml.Drawing.Charts.ChartSpace? openXmlElement)
+
+  public static Byte? GetStyle(ChartSpace? openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office2010.Drawing.Charts.Style>();
+    var itemElement = openXmlElement?.GetFirstChild<Style>();
     if (itemElement != null)
       return itemElement.Val?.Value;
     return null;
   }
-  
-  public static void SetStyle(DocumentFormat.OpenXml.Drawing.Charts.ChartSpace? openXmlElement, Byte? value)
+
+  public static void SetStyle(ChartSpace? openXmlElement, Byte? value)
   {
     if (openXmlElement != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2010.Drawing.Charts.Style>();
+      var itemElement = openXmlElement.GetFirstChild<Style>();
       if (itemElement != null)
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = new DocumentFormat.OpenXml.Office2010.Drawing.Charts.Style{ Val = value };
+        itemElement = new Style { Val = value };
         openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static DocumentModel.Drawings.Charts.ColorMapOverride? GetColorMapOverride(DocumentFormat.OpenXml.Drawing.Charts.ChartSpace? openXmlElement)
+
+  public static ColorMapOverride? GetColorMapOverride(ChartSpace? openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.ColorMapOverride>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.Charts.ColorMapOverrideConverter.CreateModelElement(itemElement);
+      return ColorMapOverrideConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetColorMapOverride(DocumentFormat.OpenXml.Drawing.Charts.ChartSpace? openXmlElement, DocumentModel.Drawings.Charts.ColorMapOverride? value)
+
+  public static void SetColorMapOverride(ChartSpace? openXmlElement, ColorMapOverride? value)
   {
     if (openXmlElement != null)
     {
@@ -133,22 +146,22 @@ public static class ChartSpaceConverter
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Drawings.Charts.ColorMapOverrideConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Charts.ColorMapOverride>(value);
+        itemElement = ColorMapOverrideConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Charts.ColorMapOverride>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static DocumentModel.Drawings.Charts.PivotSource? GetPivotSource(DocumentFormat.OpenXml.Drawing.Charts.ChartSpace? openXmlElement)
+
+  public static PivotSource? GetPivotSource(ChartSpace? openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.PivotSource>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.Charts.PivotSourceConverter.CreateModelElement(itemElement);
+      return PivotSourceConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetPivotSource(DocumentFormat.OpenXml.Drawing.Charts.ChartSpace? openXmlElement, DocumentModel.Drawings.Charts.PivotSource? value)
+
+  public static void SetPivotSource(ChartSpace? openXmlElement, PivotSource? value)
   {
     if (openXmlElement != null)
     {
@@ -157,22 +170,22 @@ public static class ChartSpaceConverter
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Drawings.Charts.PivotSourceConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Charts.PivotSource>(value);
+        itemElement = PivotSourceConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Charts.PivotSource>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static DocumentModel.Drawings.Charts.Protection? GetProtection(DocumentFormat.OpenXml.Drawing.Charts.ChartSpace? openXmlElement)
+
+  public static Protection? GetProtection(ChartSpace? openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.Protection>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.Charts.ProtectionConverter.CreateModelElement(itemElement);
+      return ProtectionConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetProtection(DocumentFormat.OpenXml.Drawing.Charts.ChartSpace? openXmlElement, DocumentModel.Drawings.Charts.Protection? value)
+
+  public static void SetProtection(ChartSpace? openXmlElement, Protection? value)
   {
     if (openXmlElement != null)
     {
@@ -181,22 +194,22 @@ public static class ChartSpaceConverter
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Drawings.Charts.ProtectionConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Charts.Protection>(value);
+        itemElement = ProtectionConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Charts.Protection>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static DocumentModel.Drawings.Charts.Chart? GetChart(DocumentFormat.OpenXml.Drawing.Charts.ChartSpace? openXmlElement)
+
+  public static Chart? GetChart(ChartSpace? openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.Chart>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.Charts.ChartConverter.CreateModelElement(itemElement);
+      return ChartConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetChart(DocumentFormat.OpenXml.Drawing.Charts.ChartSpace? openXmlElement, DocumentModel.Drawings.Charts.Chart? value)
+
+  public static void SetChart(ChartSpace? openXmlElement, Chart? value)
   {
     if (openXmlElement != null)
     {
@@ -205,22 +218,22 @@ public static class ChartSpaceConverter
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Drawings.Charts.ChartConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Charts.Chart>(value);
+        itemElement = ChartConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Charts.Chart>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static DocumentModel.Drawings.Charts.ShapeProperties? GetShapeProperties(DocumentFormat.OpenXml.Drawing.Charts.ChartSpace? openXmlElement)
+
+  public static ShapeProperties? GetShapeProperties(ChartSpace? openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.ShapeProperties>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.Charts.ShapePropertiesConverter.CreateModelElement(itemElement);
+      return ShapePropertiesConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetShapeProperties(DocumentFormat.OpenXml.Drawing.Charts.ChartSpace? openXmlElement, DocumentModel.Drawings.Charts.ShapeProperties? value)
+
+  public static void SetShapeProperties(ChartSpace? openXmlElement, ShapeProperties? value)
   {
     if (openXmlElement != null)
     {
@@ -229,22 +242,22 @@ public static class ChartSpaceConverter
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Drawings.Charts.ShapePropertiesConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Charts.ShapeProperties>(value);
+        itemElement = ShapePropertiesConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Charts.ShapeProperties>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static DocumentModel.Drawings.Charts.TextProperties? GetTextProperties(DocumentFormat.OpenXml.Drawing.Charts.ChartSpace? openXmlElement)
+
+  public static TextProperties? GetTextProperties(ChartSpace? openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.TextProperties>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.Charts.TextPropertiesConverter.CreateModelElement(itemElement);
+      return TextPropertiesConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetTextProperties(DocumentFormat.OpenXml.Drawing.Charts.ChartSpace? openXmlElement, DocumentModel.Drawings.Charts.TextProperties? value)
+
+  public static void SetTextProperties(ChartSpace? openXmlElement, TextProperties? value)
   {
     if (openXmlElement != null)
     {
@@ -253,22 +266,22 @@ public static class ChartSpaceConverter
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Drawings.Charts.TextPropertiesConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Charts.TextProperties>(value);
+        itemElement = TextPropertiesConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Charts.TextProperties>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static DocumentModel.Drawings.Charts.ExternalData? GetExternalData(DocumentFormat.OpenXml.Drawing.Charts.ChartSpace? openXmlElement)
+
+  public static ExternalData? GetExternalData(ChartSpace? openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.ExternalData>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.Charts.ExternalDataConverter.CreateModelElement(itemElement);
+      return ExternalDataConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetExternalData(DocumentFormat.OpenXml.Drawing.Charts.ChartSpace? openXmlElement, DocumentModel.Drawings.Charts.ExternalData? value)
+
+  public static void SetExternalData(ChartSpace? openXmlElement, ExternalData? value)
   {
     if (openXmlElement != null)
     {
@@ -277,22 +290,22 @@ public static class ChartSpaceConverter
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Drawings.Charts.ExternalDataConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Charts.ExternalData>(value);
+        itemElement = ExternalDataConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Charts.ExternalData>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static DocumentModel.Drawings.Charts.PrintSettings? GetPrintSettings(DocumentFormat.OpenXml.Drawing.Charts.ChartSpace? openXmlElement)
+
+  public static PrintSettings? GetPrintSettings(ChartSpace? openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.PrintSettings>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.Charts.PrintSettingsConverter.CreateModelElement(itemElement);
+      return PrintSettingsConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetPrintSettings(DocumentFormat.OpenXml.Drawing.Charts.ChartSpace? openXmlElement, DocumentModel.Drawings.Charts.PrintSettings? value)
+
+  public static void SetPrintSettings(ChartSpace? openXmlElement, PrintSettings? value)
   {
     if (openXmlElement != null)
     {
@@ -301,46 +314,46 @@ public static class ChartSpaceConverter
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Drawings.Charts.PrintSettingsConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Charts.PrintSettings>(value);
+        itemElement = PrintSettingsConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Charts.PrintSettings>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static DocumentModel.Drawings.Charts.RelationshipIdType? GetUserShapesReference(DocumentFormat.OpenXml.Drawing.Charts.ChartSpace? openXmlElement)
+
+  public static RelationshipIdType? GetUserShapesReference(ChartSpace? openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.UserShapesReference>();
+    var itemElement = openXmlElement?.GetFirstChild<UserShapesReference>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.Charts.RelationshipIdTypeConverter.CreateModelElement(itemElement);
+      return RelationshipIdTypeConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetUserShapesReference(DocumentFormat.OpenXml.Drawing.Charts.ChartSpace? openXmlElement, DocumentModel.Drawings.Charts.RelationshipIdType? value)
+
+  public static void SetUserShapesReference(ChartSpace? openXmlElement, RelationshipIdType? value)
   {
     if (openXmlElement != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.UserShapesReference>();
+      var itemElement = openXmlElement.GetFirstChild<UserShapesReference>();
       if (itemElement != null)
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Drawings.Charts.RelationshipIdTypeConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Charts.UserShapesReference>(value);
+        itemElement = RelationshipIdTypeConverter.CreateOpenXmlElement<UserShapesReference>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static DocumentModel.Drawings.Charts.ChartSpaceExtensionList? GetChartSpaceExtensionList(DocumentFormat.OpenXml.Drawing.Charts.ChartSpace? openXmlElement)
+
+  public static ChartSpaceExtensionList? GetChartSpaceExtensionList(ChartSpace? openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.ChartSpaceExtensionList>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.Charts.ChartSpaceExtensionListConverter.CreateModelElement(itemElement);
+      return ChartSpaceExtensionListConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetChartSpaceExtensionList(DocumentFormat.OpenXml.Drawing.Charts.ChartSpace? openXmlElement, DocumentModel.Drawings.Charts.ChartSpaceExtensionList? value)
+
+  public static void SetChartSpaceExtensionList(ChartSpace? openXmlElement, ChartSpaceExtensionList? value)
   {
     if (openXmlElement != null)
     {
@@ -349,14 +362,14 @@ public static class ChartSpaceConverter
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Drawings.Charts.ChartSpaceExtensionListConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Charts.ChartSpaceExtensionList>(value);
+        itemElement = ChartSpaceExtensionListConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Charts.ChartSpaceExtensionList>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static DocumentModel.Drawings.Charts.ChartSpace? CreateModelElement(DocumentFormat.OpenXml.Drawing.Charts.ChartSpace? openXmlElement)
+
+  public static DocumentModel.Drawings.Charts.ChartSpace? CreateModelElement(ChartSpace? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -379,9 +392,9 @@ public static class ChartSpaceConverter
     }
     return null;
   }
-  
+
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.Charts.ChartSpace? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.Charts.ChartSpace, new()
+    where OpenXmlElementType : ChartSpace, new()
   {
     if (value != null)
     {

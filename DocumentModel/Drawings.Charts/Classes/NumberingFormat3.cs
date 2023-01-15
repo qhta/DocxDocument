@@ -1,18 +1,17 @@
 namespace DocumentModel.Drawings.Charts;
 
 /// <summary>
-/// Defines the NumberingFormat Class.
+///   Defines the NumberingFormat Class.
 /// </summary>
-public partial class NumberingFormat3
+public class NumberingFormat3
 {
   /// <summary>
-  /// Number Format Code
+  ///   Number Format Code
   /// </summary>
   public String? FormatCode { get; set; }
-  
+
   /// <summary>
-  /// Linked to Source
+  ///   Linked to Source
   /// </summary>
   public Boolean? SourceLinked { get; set; }
-  
 }

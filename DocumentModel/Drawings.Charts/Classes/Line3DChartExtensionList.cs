@@ -1,10 +1,9 @@
 namespace DocumentModel.Drawings.Charts;
 
 /// <summary>
-/// Defines the Line3DChartExtensionList Class.
+///   Defines the Line3DChartExtensionList Class.
 /// </summary>
-public partial class Line3DChartExtensionList
+public class Line3DChartExtensionList
 {
-  public Collection<DocumentModel.Drawings.Charts.Line3DChartExtension>? Line3DChartExtensions { get; set; }
-  
+  public Collection<Line3DChartExtension>? Line3DChartExtensions { get; set; }
 }

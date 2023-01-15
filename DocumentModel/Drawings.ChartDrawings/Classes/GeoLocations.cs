@@ -1,13 +1,12 @@
 namespace DocumentModel.Drawings.ChartDrawings;
 
 /// <summary>
-/// Defines the GeoLocations Class.
+///   Defines the GeoLocations Class.
 /// </summary>
-public partial class GeoLocations
+public class GeoLocations
 {
   /// <summary>
-  /// GeoLocation.
+  ///   GeoLocation.
   /// </summary>
-  public DocumentModel.Drawings.ChartDrawings.GeoLocation? GeoLocation { get; set; }
-  
+  public GeoLocation? GeoLocation { get; set; }
 }

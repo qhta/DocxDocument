@@ -1,19 +1,25 @@
+using DocumentFormat.OpenXml.Drawing;
+using BackgroundFillStyleList = DocumentModel.Drawings.BackgroundFillStyleList;
+using EffectStyleList = DocumentModel.Drawings.EffectStyleList;
+using FillStyleList = DocumentModel.Drawings.FillStyleList;
+using LineStyleList = DocumentModel.Drawings.LineStyleList;
+
 namespace DocumentModel.OpenXml.Drawings;
 
 /// <summary>
-/// Format Scheme.
+///   Format Scheme.
 /// </summary>
 public static class FormatSchemeConverter
 {
   /// <summary>
-  /// Name
+  ///   Name
   /// </summary>
-  public static String? GetName(DocumentFormat.OpenXml.Drawing.FormatScheme? openXmlElement)
+  public static String? GetName(FormatScheme? openXmlElement)
   {
     return openXmlElement?.Name?.Value;
   }
-  
-  public static void SetName(DocumentFormat.OpenXml.Drawing.FormatScheme? openXmlElement, String? value)
+
+  public static void SetName(FormatScheme? openXmlElement, String? value)
   {
     if (openXmlElement != null)
       if (value != null)
@@ -21,19 +27,19 @@ public static class FormatSchemeConverter
       else
         openXmlElement.Name = null;
   }
-  
+
   /// <summary>
-  /// Fill Style List.
+  ///   Fill Style List.
   /// </summary>
-  public static DocumentModel.Drawings.FillStyleList? GetFillStyleList(DocumentFormat.OpenXml.Drawing.FormatScheme? openXmlElement)
+  public static FillStyleList? GetFillStyleList(FormatScheme? openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.FillStyleList>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.FillStyleListConverter.CreateModelElement(itemElement);
+      return FillStyleListConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetFillStyleList(DocumentFormat.OpenXml.Drawing.FormatScheme? openXmlElement, DocumentModel.Drawings.FillStyleList? value)
+
+  public static void SetFillStyleList(FormatScheme? openXmlElement, FillStyleList? value)
   {
     if (openXmlElement != null)
     {
@@ -42,25 +48,25 @@ public static class FormatSchemeConverter
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Drawings.FillStyleListConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.FillStyleList>(value);
+        itemElement = FillStyleListConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.FillStyleList>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
+
   /// <summary>
-  /// Line Style List.
+  ///   Line Style List.
   /// </summary>
-  public static DocumentModel.Drawings.LineStyleList? GetLineStyleList(DocumentFormat.OpenXml.Drawing.FormatScheme? openXmlElement)
+  public static LineStyleList? GetLineStyleList(FormatScheme? openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.LineStyleList>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.LineStyleListConverter.CreateModelElement(itemElement);
+      return LineStyleListConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetLineStyleList(DocumentFormat.OpenXml.Drawing.FormatScheme? openXmlElement, DocumentModel.Drawings.LineStyleList? value)
+
+  public static void SetLineStyleList(FormatScheme? openXmlElement, LineStyleList? value)
   {
     if (openXmlElement != null)
     {
@@ -69,25 +75,25 @@ public static class FormatSchemeConverter
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Drawings.LineStyleListConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.LineStyleList>(value);
+        itemElement = LineStyleListConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.LineStyleList>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
+
   /// <summary>
-  /// Effect Style List.
+  ///   Effect Style List.
   /// </summary>
-  public static DocumentModel.Drawings.EffectStyleList? GetEffectStyleList(DocumentFormat.OpenXml.Drawing.FormatScheme? openXmlElement)
+  public static EffectStyleList? GetEffectStyleList(FormatScheme? openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.EffectStyleList>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.EffectStyleListConverter.CreateModelElement(itemElement);
+      return EffectStyleListConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetEffectStyleList(DocumentFormat.OpenXml.Drawing.FormatScheme? openXmlElement, DocumentModel.Drawings.EffectStyleList? value)
+
+  public static void SetEffectStyleList(FormatScheme? openXmlElement, EffectStyleList? value)
   {
     if (openXmlElement != null)
     {
@@ -96,25 +102,25 @@ public static class FormatSchemeConverter
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Drawings.EffectStyleListConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.EffectStyleList>(value);
+        itemElement = EffectStyleListConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.EffectStyleList>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
+
   /// <summary>
-  /// Background Fill Style List.
+  ///   Background Fill Style List.
   /// </summary>
-  public static DocumentModel.Drawings.BackgroundFillStyleList? GetBackgroundFillStyleList(DocumentFormat.OpenXml.Drawing.FormatScheme? openXmlElement)
+  public static BackgroundFillStyleList? GetBackgroundFillStyleList(FormatScheme? openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.BackgroundFillStyleList>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.BackgroundFillStyleListConverter.CreateModelElement(itemElement);
+      return BackgroundFillStyleListConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetBackgroundFillStyleList(DocumentFormat.OpenXml.Drawing.FormatScheme? openXmlElement, DocumentModel.Drawings.BackgroundFillStyleList? value)
+
+  public static void SetBackgroundFillStyleList(FormatScheme? openXmlElement, BackgroundFillStyleList? value)
   {
     if (openXmlElement != null)
     {
@@ -123,14 +129,14 @@ public static class FormatSchemeConverter
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Drawings.BackgroundFillStyleListConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.BackgroundFillStyleList>(value);
+        itemElement = BackgroundFillStyleListConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.BackgroundFillStyleList>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static DocumentModel.Drawings.FormatScheme? CreateModelElement(DocumentFormat.OpenXml.Drawing.FormatScheme? openXmlElement)
+
+  public static DocumentModel.Drawings.FormatScheme? CreateModelElement(FormatScheme? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -144,9 +150,9 @@ public static class FormatSchemeConverter
     }
     return null;
   }
-  
+
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.FormatScheme? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.FormatScheme, new()
+    where OpenXmlElementType : FormatScheme, new()
   {
     if (value != null)
     {

@@ -1,15 +1,14 @@
 namespace DocumentModel.Drawings.Charts;
 
 /// <summary>
-/// Defines the LineChartExtension Class.
+///   Defines the LineChartExtension Class.
 /// </summary>
-public partial class LineChartExtension
+public class LineChartExtension
 {
   /// <summary>
-  /// URI
+  ///   URI
   /// </summary>
   public String? Uri { get; set; }
-  
-  public DocumentModel.Drawings.Charts.FilteredLineSeriesExtension? FilteredLineSeriesExtension { get; set; }
-  
+
+  public FilteredLineSeriesExtension? FilteredLineSeriesExtension { get; set; }
 }

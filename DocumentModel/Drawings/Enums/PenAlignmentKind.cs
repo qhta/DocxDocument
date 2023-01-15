@@ -1,18 +1,17 @@
 namespace DocumentModel.Drawings;
 
 /// <summary>
-/// Alignment Type
+///   Alignment Type
 /// </summary>
 public enum PenAlignmentKind
 {
   /// <summary>
-  /// Center Alignment.
+  ///   Center Alignment.
   /// </summary>
   Center,
-  
+
   /// <summary>
-  /// Inset Alignment.
+  ///   Inset Alignment.
   /// </summary>
-  Insert,
-  
+  Insert
 }

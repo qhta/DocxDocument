@@ -1,19 +1,21 @@
+using DocumentFormat.OpenXml.Drawing;
+
 namespace DocumentModel.OpenXml.Drawings;
 
 /// <summary>
-/// Draw Arc To.
+///   Draw Arc To.
 /// </summary>
 public static class ArcToConverter
 {
   /// <summary>
-  /// Shape Arc Width Radius
+  ///   Shape Arc Width Radius
   /// </summary>
-  public static String? GetWidthRadius(DocumentFormat.OpenXml.Drawing.ArcTo? openXmlElement)
+  public static String? GetWidthRadius(ArcTo? openXmlElement)
   {
     return openXmlElement?.WidthRadius?.Value;
   }
-  
-  public static void SetWidthRadius(DocumentFormat.OpenXml.Drawing.ArcTo? openXmlElement, String? value)
+
+  public static void SetWidthRadius(ArcTo? openXmlElement, String? value)
   {
     if (openXmlElement != null)
       if (value != null)
@@ -21,16 +23,16 @@ public static class ArcToConverter
       else
         openXmlElement.WidthRadius = null;
   }
-  
+
   /// <summary>
-  /// Shape Arc Height Radius
+  ///   Shape Arc Height Radius
   /// </summary>
-  public static String? GetHeightRadius(DocumentFormat.OpenXml.Drawing.ArcTo? openXmlElement)
+  public static String? GetHeightRadius(ArcTo? openXmlElement)
   {
     return openXmlElement?.HeightRadius?.Value;
   }
-  
-  public static void SetHeightRadius(DocumentFormat.OpenXml.Drawing.ArcTo? openXmlElement, String? value)
+
+  public static void SetHeightRadius(ArcTo? openXmlElement, String? value)
   {
     if (openXmlElement != null)
       if (value != null)
@@ -38,16 +40,16 @@ public static class ArcToConverter
       else
         openXmlElement.HeightRadius = null;
   }
-  
+
   /// <summary>
-  /// Shape Arc Start Angle
+  ///   Shape Arc Start Angle
   /// </summary>
-  public static String? GetStartAngle(DocumentFormat.OpenXml.Drawing.ArcTo? openXmlElement)
+  public static String? GetStartAngle(ArcTo? openXmlElement)
   {
     return openXmlElement?.StartAngle?.Value;
   }
-  
-  public static void SetStartAngle(DocumentFormat.OpenXml.Drawing.ArcTo? openXmlElement, String? value)
+
+  public static void SetStartAngle(ArcTo? openXmlElement, String? value)
   {
     if (openXmlElement != null)
       if (value != null)
@@ -55,16 +57,16 @@ public static class ArcToConverter
       else
         openXmlElement.StartAngle = null;
   }
-  
+
   /// <summary>
-  /// Shape Arc Swing Angle
+  ///   Shape Arc Swing Angle
   /// </summary>
-  public static String? GetSwingAngle(DocumentFormat.OpenXml.Drawing.ArcTo? openXmlElement)
+  public static String? GetSwingAngle(ArcTo? openXmlElement)
   {
     return openXmlElement?.SwingAngle?.Value;
   }
-  
-  public static void SetSwingAngle(DocumentFormat.OpenXml.Drawing.ArcTo? openXmlElement, String? value)
+
+  public static void SetSwingAngle(ArcTo? openXmlElement, String? value)
   {
     if (openXmlElement != null)
       if (value != null)
@@ -72,8 +74,8 @@ public static class ArcToConverter
       else
         openXmlElement.SwingAngle = null;
   }
-  
-  public static DocumentModel.Drawings.ArcTo? CreateModelElement(DocumentFormat.OpenXml.Drawing.ArcTo? openXmlElement)
+
+  public static DocumentModel.Drawings.ArcTo? CreateModelElement(ArcTo? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -86,9 +88,9 @@ public static class ArcToConverter
     }
     return null;
   }
-  
+
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.ArcTo? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.ArcTo, new()
+    where OpenXmlElementType : ArcTo, new()
   {
     if (value != null)
     {

@@ -1,27 +1,26 @@
 namespace DocumentModel.Wordprocessing;
 
 /// <summary>
-/// Defines the InsertedMathControl Class.
+///   Defines the InsertedMathControl Class.
 /// </summary>
-public partial class InsertedMathControl
+public class InsertedMathControl
 {
   /// <summary>
-  /// author
+  ///   author
   /// </summary>
   public String? Author { get; set; }
-  
+
   /// <summary>
-  /// date
+  ///   date
   /// </summary>
   public DateTime? Date { get; set; }
-  
+
   /// <summary>
-  /// Annotation Identifier
+  ///   Annotation Identifier
   /// </summary>
   public String? Id { get; set; }
-  
-  public DocumentModel.Wordprocessing.RunProperties? RunProperties { get; set; }
-  
-  public DocumentModel.Wordprocessing.DeletedMathControl? DeletedMathControl { get; set; }
-  
+
+  public RunProperties? RunProperties { get; set; }
+
+  public DeletedMathControl? DeletedMathControl { get; set; }
 }

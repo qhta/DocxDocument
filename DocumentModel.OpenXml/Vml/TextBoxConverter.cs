@@ -1,19 +1,23 @@
+using DocumentFormat.OpenXml.Vml;
+using DocumentModel.OpenXml.Wordprocessing;
+using DocumentModel.Wordprocessing;
+
 namespace DocumentModel.OpenXml.Vml;
 
 /// <summary>
-/// Defines the TextBox Class.
+///   Defines the TextBox Class.
 /// </summary>
 public static class TextBoxConverter
 {
   /// <summary>
-  /// Unique Identifier
+  ///   Unique Identifier
   /// </summary>
-  public static String? GetId(DocumentFormat.OpenXml.Vml.TextBox? openXmlElement)
+  public static String? GetId(TextBox? openXmlElement)
   {
     return openXmlElement?.Id?.Value;
   }
-  
-  public static void SetId(DocumentFormat.OpenXml.Vml.TextBox? openXmlElement, String? value)
+
+  public static void SetId(TextBox? openXmlElement, String? value)
   {
     if (openXmlElement != null)
       if (value != null)
@@ -21,16 +25,16 @@ public static class TextBoxConverter
       else
         openXmlElement.Id = null;
   }
-  
+
   /// <summary>
-  /// Shape Styling Properties
+  ///   Shape Styling Properties
   /// </summary>
-  public static String? GetStyle(DocumentFormat.OpenXml.Vml.TextBox? openXmlElement)
+  public static String? GetStyle(TextBox? openXmlElement)
   {
     return openXmlElement?.Style?.Value;
   }
-  
-  public static void SetStyle(DocumentFormat.OpenXml.Vml.TextBox? openXmlElement, String? value)
+
+  public static void SetStyle(TextBox? openXmlElement, String? value)
   {
     if (openXmlElement != null)
       if (value != null)
@@ -38,16 +42,16 @@ public static class TextBoxConverter
       else
         openXmlElement.Style = null;
   }
-  
+
   /// <summary>
-  /// Text Box Inset
+  ///   Text Box Inset
   /// </summary>
-  public static String? GetInset(DocumentFormat.OpenXml.Vml.TextBox? openXmlElement)
+  public static String? GetInset(TextBox? openXmlElement)
   {
     return openXmlElement?.Inset?.Value;
   }
-  
-  public static void SetInset(DocumentFormat.OpenXml.Vml.TextBox? openXmlElement, String? value)
+
+  public static void SetInset(TextBox? openXmlElement, String? value)
   {
     if (openXmlElement != null)
       if (value != null)
@@ -55,16 +59,16 @@ public static class TextBoxConverter
       else
         openXmlElement.Inset = null;
   }
-  
+
   /// <summary>
-  /// Text Box Single-Click Selection Toggle
+  ///   Text Box Single-Click Selection Toggle
   /// </summary>
-  public static Boolean? GetSingleClick(DocumentFormat.OpenXml.Vml.TextBox? openXmlElement)
+  public static Boolean? GetSingleClick(TextBox? openXmlElement)
   {
     return openXmlElement?.SingleClick?.Value;
   }
-  
-  public static void SetSingleClick(DocumentFormat.OpenXml.Vml.TextBox? openXmlElement, Boolean? value)
+
+  public static void SetSingleClick(TextBox? openXmlElement, Boolean? value)
   {
     if (openXmlElement != null)
       if (value != null)
@@ -72,16 +76,16 @@ public static class TextBoxConverter
       else
         openXmlElement.SingleClick = null;
   }
-  
-  public static DocumentModel.Wordprocessing.TextBoxContent? GetTextBoxContent(DocumentFormat.OpenXml.Vml.TextBox? openXmlElement)
+
+  public static TextBoxContent? GetTextBoxContent(TextBox? openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.TextBoxContent>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Wordprocessing.TextBoxContentConverter.CreateModelElement(itemElement);
+      return TextBoxContentConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetTextBoxContent(DocumentFormat.OpenXml.Vml.TextBox? openXmlElement, DocumentModel.Wordprocessing.TextBoxContent? value)
+
+  public static void SetTextBoxContent(TextBox? openXmlElement, TextBoxContent? value)
   {
     if (openXmlElement != null)
     {
@@ -90,14 +94,14 @@ public static class TextBoxConverter
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Wordprocessing.TextBoxContentConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.TextBoxContent>(value);
+        itemElement = TextBoxContentConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.TextBoxContent>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static DocumentModel.Vml.TextBox? CreateModelElement(DocumentFormat.OpenXml.Vml.TextBox? openXmlElement)
+
+  public static DocumentModel.Vml.TextBox? CreateModelElement(TextBox? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -111,9 +115,9 @@ public static class TextBoxConverter
     }
     return null;
   }
-  
+
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Vml.TextBox? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Vml.TextBox, new()
+    where OpenXmlElementType : TextBox, new()
   {
     if (value != null)
     {

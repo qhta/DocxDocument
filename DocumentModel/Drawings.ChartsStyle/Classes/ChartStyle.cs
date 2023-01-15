@@ -1,173 +1,172 @@
 namespace DocumentModel.Drawings.ChartsStyle;
 
 /// <summary>
-/// Defines the ChartStyle Class.
+///   Defines the ChartStyle Class.
 /// </summary>
-public partial class ChartStyle
+public class ChartStyle
 {
   /// <summary>
-  /// id, this property is only available in Office 2013 and later.
+  ///   id, this property is only available in Office 2013 and later.
   /// </summary>
   public UInt32? Id { get; set; }
-  
+
   /// <summary>
-  /// AxisTitle.
+  ///   AxisTitle.
   /// </summary>
-  public DocumentModel.Drawings.ChartsStyle.AxisTitle? AxisTitle { get; set; }
-  
+  public AxisTitle? AxisTitle { get; set; }
+
   /// <summary>
-  /// CategoryAxis.
+  ///   CategoryAxis.
   /// </summary>
-  public DocumentModel.Drawings.ChartsStyle.CategoryAxis? CategoryAxis { get; set; }
-  
+  public CategoryAxis? CategoryAxis { get; set; }
+
   /// <summary>
-  /// ChartArea.
+  ///   ChartArea.
   /// </summary>
-  public DocumentModel.Drawings.ChartsStyle.ChartArea? ChartArea { get; set; }
-  
+  public ChartArea? ChartArea { get; set; }
+
   /// <summary>
-  /// DataLabel.
+  ///   DataLabel.
   /// </summary>
-  public DocumentModel.Drawings.ChartsStyle.DataLabel? DataLabel { get; set; }
-  
+  public DataLabel? DataLabel { get; set; }
+
   /// <summary>
-  /// DataLabelCallout.
+  ///   DataLabelCallout.
   /// </summary>
-  public DocumentModel.Drawings.ChartsStyle.DataLabelCallout? DataLabelCallout { get; set; }
-  
+  public DataLabelCallout? DataLabelCallout { get; set; }
+
   /// <summary>
-  /// DataPoint.
+  ///   DataPoint.
   /// </summary>
-  public DocumentModel.Drawings.ChartsStyle.DataPoint? DataPoint { get; set; }
-  
+  public DataPoint? DataPoint { get; set; }
+
   /// <summary>
-  /// DataPoint3D.
+  ///   DataPoint3D.
   /// </summary>
-  public DocumentModel.Drawings.ChartsStyle.DataPoint3D? DataPoint3D { get; set; }
-  
+  public DataPoint3D? DataPoint3D { get; set; }
+
   /// <summary>
-  /// DataPointLine.
+  ///   DataPointLine.
   /// </summary>
-  public DocumentModel.Drawings.ChartsStyle.DataPointLine? DataPointLine { get; set; }
-  
+  public DataPointLine? DataPointLine { get; set; }
+
   /// <summary>
-  /// DataPointMarker.
+  ///   DataPointMarker.
   /// </summary>
-  public DocumentModel.Drawings.ChartsStyle.DataPointMarker? DataPointMarker { get; set; }
-  
+  public DataPointMarker? DataPointMarker { get; set; }
+
   /// <summary>
-  /// MarkerLayoutProperties.
+  ///   MarkerLayoutProperties.
   /// </summary>
-  public DocumentModel.Drawings.ChartsStyle.MarkerLayoutProperties? MarkerLayoutProperties { get; set; }
-  
+  public MarkerLayoutProperties? MarkerLayoutProperties { get; set; }
+
   /// <summary>
-  /// DataPointWireframe.
+  ///   DataPointWireframe.
   /// </summary>
-  public DocumentModel.Drawings.ChartsStyle.DataPointWireframe? DataPointWireframe { get; set; }
-  
+  public DataPointWireframe? DataPointWireframe { get; set; }
+
   /// <summary>
-  /// DataTableStyle.
+  ///   DataTableStyle.
   /// </summary>
-  public DocumentModel.Drawings.ChartsStyle.DataTableStyle? DataTableStyle { get; set; }
-  
+  public DataTableStyle? DataTableStyle { get; set; }
+
   /// <summary>
-  /// DownBar.
+  ///   DownBar.
   /// </summary>
-  public DocumentModel.Drawings.ChartsStyle.DownBar? DownBar { get; set; }
-  
+  public DownBar? DownBar { get; set; }
+
   /// <summary>
-  /// DropLine.
+  ///   DropLine.
   /// </summary>
-  public DocumentModel.Drawings.ChartsStyle.DropLine? DropLine { get; set; }
-  
+  public DropLine? DropLine { get; set; }
+
   /// <summary>
-  /// ErrorBar.
+  ///   ErrorBar.
   /// </summary>
-  public DocumentModel.Drawings.ChartsStyle.ErrorBar? ErrorBar { get; set; }
-  
+  public ErrorBar? ErrorBar { get; set; }
+
   /// <summary>
-  /// Floor.
+  ///   Floor.
   /// </summary>
-  public DocumentModel.Drawings.ChartsStyle.Floor? Floor { get; set; }
-  
+  public Floor? Floor { get; set; }
+
   /// <summary>
-  /// GridlineMajor.
+  ///   GridlineMajor.
   /// </summary>
-  public DocumentModel.Drawings.ChartsStyle.GridlineMajor? GridlineMajor { get; set; }
-  
+  public GridlineMajor? GridlineMajor { get; set; }
+
   /// <summary>
-  /// GridlineMinor.
+  ///   GridlineMinor.
   /// </summary>
-  public DocumentModel.Drawings.ChartsStyle.GridlineMinor? GridlineMinor { get; set; }
-  
+  public GridlineMinor? GridlineMinor { get; set; }
+
   /// <summary>
-  /// HiLoLine.
+  ///   HiLoLine.
   /// </summary>
-  public DocumentModel.Drawings.ChartsStyle.HiLoLine? HiLoLine { get; set; }
-  
+  public HiLoLine? HiLoLine { get; set; }
+
   /// <summary>
-  /// LeaderLine.
+  ///   LeaderLine.
   /// </summary>
-  public DocumentModel.Drawings.ChartsStyle.LeaderLine? LeaderLine { get; set; }
-  
+  public LeaderLine? LeaderLine { get; set; }
+
   /// <summary>
-  /// LegendStyle.
+  ///   LegendStyle.
   /// </summary>
-  public DocumentModel.Drawings.ChartsStyle.LegendStyle? LegendStyle { get; set; }
-  
+  public LegendStyle? LegendStyle { get; set; }
+
   /// <summary>
-  /// PlotArea.
+  ///   PlotArea.
   /// </summary>
-  public DocumentModel.Drawings.ChartsStyle.PlotArea? PlotArea { get; set; }
-  
+  public PlotArea? PlotArea { get; set; }
+
   /// <summary>
-  /// PlotArea3D.
+  ///   PlotArea3D.
   /// </summary>
-  public DocumentModel.Drawings.ChartsStyle.PlotArea3D? PlotArea3D { get; set; }
-  
+  public PlotArea3D? PlotArea3D { get; set; }
+
   /// <summary>
-  /// SeriesAxis.
+  ///   SeriesAxis.
   /// </summary>
-  public DocumentModel.Drawings.ChartsStyle.SeriesAxis? SeriesAxis { get; set; }
-  
+  public SeriesAxis? SeriesAxis { get; set; }
+
   /// <summary>
-  /// SeriesLine.
+  ///   SeriesLine.
   /// </summary>
-  public DocumentModel.Drawings.ChartsStyle.SeriesLine? SeriesLine { get; set; }
-  
+  public SeriesLine? SeriesLine { get; set; }
+
   /// <summary>
-  /// TitleStyle.
+  ///   TitleStyle.
   /// </summary>
-  public DocumentModel.Drawings.ChartsStyle.TitleStyle? TitleStyle { get; set; }
-  
+  public TitleStyle? TitleStyle { get; set; }
+
   /// <summary>
-  /// TrendlineStyle.
+  ///   TrendlineStyle.
   /// </summary>
-  public DocumentModel.Drawings.ChartsStyle.TrendlineStyle? TrendlineStyle { get; set; }
-  
+  public TrendlineStyle? TrendlineStyle { get; set; }
+
   /// <summary>
-  /// TrendlineLabel.
+  ///   TrendlineLabel.
   /// </summary>
-  public DocumentModel.Drawings.ChartsStyle.TrendlineLabel? TrendlineLabel { get; set; }
-  
+  public TrendlineLabel? TrendlineLabel { get; set; }
+
   /// <summary>
-  /// UpBar.
+  ///   UpBar.
   /// </summary>
-  public DocumentModel.Drawings.ChartsStyle.UpBar? UpBar { get; set; }
-  
+  public UpBar? UpBar { get; set; }
+
   /// <summary>
-  /// ValueAxis.
+  ///   ValueAxis.
   /// </summary>
-  public DocumentModel.Drawings.ChartsStyle.ValueAxis? ValueAxis { get; set; }
-  
+  public ValueAxis? ValueAxis { get; set; }
+
   /// <summary>
-  /// Wall.
+  ///   Wall.
   /// </summary>
-  public DocumentModel.Drawings.ChartsStyle.Wall? Wall { get; set; }
-  
+  public Wall? Wall { get; set; }
+
   /// <summary>
-  /// OfficeArtExtensionList.
+  ///   OfficeArtExtensionList.
   /// </summary>
-  public DocumentModel.Drawings.ChartsStyle.OfficeArtExtensionList? OfficeArtExtensionList { get; set; }
-  
+  public OfficeArtExtensionList? OfficeArtExtensionList { get; set; }
 }

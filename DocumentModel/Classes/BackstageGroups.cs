@@ -1,14 +1,13 @@
 namespace DocumentModel;
 
 /// <summary>
-/// Defines the BackstageGroups Class.
+///   Defines the BackstageGroups Class.
 /// </summary>
-public partial class BackstageGroups
+public class BackstageGroups
 {
-  public DocumentModel.TaskFormGroup? TaskFormGroup { get; set; }
-  
-  public DocumentModel.BackstageGroup? BackstageGroup { get; set; }
-  
-  public DocumentModel.TaskGroup? TaskGroup { get; set; }
-  
+  public TaskFormGroup? TaskFormGroup { get; set; }
+
+  public BackstageGroup? BackstageGroup { get; set; }
+
+  public TaskGroup? TaskGroup { get; set; }
 }

@@ -1,23 +1,22 @@
 namespace DocumentModel.Drawings.Charts;
 
 /// <summary>
-/// Display Blanks As
+///   Display Blanks As
 /// </summary>
 public enum DisplayBlanksAsKind
 {
   /// <summary>
-  /// Span.
+  ///   Span.
   /// </summary>
   Span,
-  
+
   /// <summary>
-  /// Gap.
+  ///   Gap.
   /// </summary>
   Gap,
-  
+
   /// <summary>
-  /// Zero.
+  ///   Zero.
   /// </summary>
-  Zero,
-  
+  Zero
 }

@@ -1,15 +1,14 @@
 namespace DocumentModel.Drawings;
 
 /// <summary>
-/// Defines the OfficeStyleSheetExtension Class.
+///   Defines the OfficeStyleSheetExtension Class.
 /// </summary>
-public partial class OfficeStyleSheetExtension
+public class OfficeStyleSheetExtension
 {
   /// <summary>
-  /// URI
+  ///   URI
   /// </summary>
   public String? Uri { get; set; }
-  
-  public DocumentModel.ThemeFamily? ThemeFamily { get; set; }
-  
+
+  public ThemeFamily? ThemeFamily { get; set; }
 }

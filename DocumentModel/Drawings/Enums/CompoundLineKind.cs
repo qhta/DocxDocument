@@ -1,33 +1,32 @@
 namespace DocumentModel.Drawings;
 
 /// <summary>
-/// Compound Line Type
+///   Compound Line Type
 /// </summary>
 public enum CompoundLineKind
 {
   /// <summary>
-  /// Single Line.
+  ///   Single Line.
   /// </summary>
   Single,
-  
+
   /// <summary>
-  /// Double Lines.
+  ///   Double Lines.
   /// </summary>
   Double,
-  
+
   /// <summary>
-  /// Thick Thin Double Lines.
+  ///   Thick Thin Double Lines.
   /// </summary>
   ThickThin,
-  
+
   /// <summary>
-  /// Thin Thick Double Lines.
+  ///   Thin Thick Double Lines.
   /// </summary>
   ThinThick,
-  
+
   /// <summary>
-  /// Thin Thick Thin Triple Lines.
+  ///   Thin Thick Thin Triple Lines.
   /// </summary>
-  Triple,
-  
+  Triple
 }

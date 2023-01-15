@@ -1,19 +1,21 @@
+using DocumentFormat.OpenXml.Wordprocessing;
+
 namespace DocumentModel.OpenXml.Wordprocessing;
 
 /// <summary>
-/// Defines the RelationshipType Class.
+///   Defines the RelationshipType Class.
 /// </summary>
 public static class RelationshipTypeConverter
 {
   /// <summary>
-  /// Relationship to Part
+  ///   Relationship to Part
   /// </summary>
-  public static String? GetId(DocumentFormat.OpenXml.Wordprocessing.RelationshipType? openXmlElement)
+  public static String? GetId(RelationshipType? openXmlElement)
   {
     return openXmlElement?.Id?.Value;
   }
-  
-  public static void SetId(DocumentFormat.OpenXml.Wordprocessing.RelationshipType? openXmlElement, String? value)
+
+  public static void SetId(RelationshipType? openXmlElement, String? value)
   {
     if (openXmlElement != null)
       if (value != null)
@@ -21,8 +23,8 @@ public static class RelationshipTypeConverter
       else
         openXmlElement.Id = null;
   }
-  
-  public static DocumentModel.Wordprocessing.RelationshipType? CreateModelElement(DocumentFormat.OpenXml.Wordprocessing.RelationshipType? openXmlElement)
+
+  public static DocumentModel.Wordprocessing.RelationshipType? CreateModelElement(RelationshipType? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -32,9 +34,9 @@ public static class RelationshipTypeConverter
     }
     return null;
   }
-  
+
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.RelationshipType? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Wordprocessing.RelationshipType, new()
+    where OpenXmlElementType : RelationshipType, new()
   {
     if (value != null)
     {

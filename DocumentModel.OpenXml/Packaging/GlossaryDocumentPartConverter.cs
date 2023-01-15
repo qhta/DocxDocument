@@ -1,21 +1,26 @@
+using DocumentModel.OpenXml.Wordprocessing;
+using DocumentModel.Packaging;
+using DocumentModel.Wordprocessing;
+using GlossaryDocumentPart = DocumentFormat.OpenXml.Packaging.GlossaryDocumentPart;
+
 namespace DocumentModel.OpenXml.Packaging;
 
 /// <summary>
-/// Defines the GlossaryDocumentPart
+///   Defines the GlossaryDocumentPart
 /// </summary>
 public static class GlossaryDocumentPartConverter
 {
   /// <summary>
-  /// Gets the AlternativeFormatImportParts of the GlossaryDocumentPart
+  ///   Gets the AlternativeFormatImportParts of the GlossaryDocumentPart
   /// </summary>
-  public static System.Collections.ObjectModel.Collection<DocumentModel.Packaging.AlternativeFormatImportPart>? GetAlternativeFormatImportParts(DocumentFormat.OpenXml.Packaging.GlossaryDocumentPart? openXmlElement)
+  public static Collection<AlternativeFormatImportPart>? GetAlternativeFormatImportParts(GlossaryDocumentPart? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var collection = new System.Collections.ObjectModel.Collection<DocumentModel.Packaging.AlternativeFormatImportPart>();
+      var collection = new Collection<AlternativeFormatImportPart>();
       foreach (var item in openXmlElement.GetPartsOfType<DocumentFormat.OpenXml.Packaging.AlternativeFormatImportPart>())
       {
-        var newItem = DocumentModel.OpenXml.Packaging.AlternativeFormatImportPartConverter.CreateModelElement(item);
+        var newItem = AlternativeFormatImportPartConverter.CreateModelElement(item);
         if (newItem != null)
           collection.Add(newItem);
       }
@@ -23,18 +28,18 @@ public static class GlossaryDocumentPartConverter
     }
     return null;
   }
-  
+
   /// <summary>
-  /// Gets the ChartParts of the GlossaryDocumentPart
+  ///   Gets the ChartParts of the GlossaryDocumentPart
   /// </summary>
-  public static System.Collections.ObjectModel.Collection<DocumentModel.Packaging.ChartPart>? GetChartParts(DocumentFormat.OpenXml.Packaging.GlossaryDocumentPart? openXmlElement)
+  public static Collection<ChartPart>? GetChartParts(GlossaryDocumentPart? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var collection = new System.Collections.ObjectModel.Collection<DocumentModel.Packaging.ChartPart>();
+      var collection = new Collection<ChartPart>();
       foreach (var item in openXmlElement.GetPartsOfType<DocumentFormat.OpenXml.Packaging.ChartPart>())
       {
-        var newItem = DocumentModel.OpenXml.Packaging.ChartPartConverter.CreateModelElement(item);
+        var newItem = ChartPartConverter.CreateModelElement(item);
         if (newItem != null)
           collection.Add(newItem);
       }
@@ -42,23 +47,23 @@ public static class GlossaryDocumentPartConverter
     }
     return null;
   }
-  
-  public static String? GetContentType(DocumentFormat.OpenXml.Packaging.GlossaryDocumentPart? openXmlElement)
+
+  public static String? GetContentType(GlossaryDocumentPart? openXmlElement)
   {
     return openXmlElement?.ContentType;
   }
-  
+
   /// <summary>
-  /// Gets the DiagramColorsParts of the GlossaryDocumentPart
+  ///   Gets the DiagramColorsParts of the GlossaryDocumentPart
   /// </summary>
-  public static System.Collections.ObjectModel.Collection<DocumentModel.Packaging.DiagramColorsPart>? GetDiagramColorsParts(DocumentFormat.OpenXml.Packaging.GlossaryDocumentPart? openXmlElement)
+  public static Collection<DiagramColorsPart>? GetDiagramColorsParts(GlossaryDocumentPart? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var collection = new System.Collections.ObjectModel.Collection<DocumentModel.Packaging.DiagramColorsPart>();
+      var collection = new Collection<DiagramColorsPart>();
       foreach (var item in openXmlElement.GetPartsOfType<DocumentFormat.OpenXml.Packaging.DiagramColorsPart>())
       {
-        var newItem = DocumentModel.OpenXml.Packaging.DiagramColorsPartConverter.CreateModelElement(item);
+        var newItem = DiagramColorsPartConverter.CreateModelElement(item);
         if (newItem != null)
           collection.Add(newItem);
       }
@@ -66,18 +71,18 @@ public static class GlossaryDocumentPartConverter
     }
     return null;
   }
-  
+
   /// <summary>
-  /// Gets the DiagramDataParts of the GlossaryDocumentPart
+  ///   Gets the DiagramDataParts of the GlossaryDocumentPart
   /// </summary>
-  public static System.Collections.ObjectModel.Collection<DocumentModel.Packaging.DiagramDataPart>? GetDiagramDataParts(DocumentFormat.OpenXml.Packaging.GlossaryDocumentPart? openXmlElement)
+  public static Collection<DiagramDataPart>? GetDiagramDataParts(GlossaryDocumentPart? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var collection = new System.Collections.ObjectModel.Collection<DocumentModel.Packaging.DiagramDataPart>();
+      var collection = new Collection<DiagramDataPart>();
       foreach (var item in openXmlElement.GetPartsOfType<DocumentFormat.OpenXml.Packaging.DiagramDataPart>())
       {
-        var newItem = DocumentModel.OpenXml.Packaging.DiagramDataPartConverter.CreateModelElement(item);
+        var newItem = DiagramDataPartConverter.CreateModelElement(item);
         if (newItem != null)
           collection.Add(newItem);
       }
@@ -85,18 +90,18 @@ public static class GlossaryDocumentPartConverter
     }
     return null;
   }
-  
+
   /// <summary>
-  /// Gets the DiagramLayoutDefinitionParts of the GlossaryDocumentPart
+  ///   Gets the DiagramLayoutDefinitionParts of the GlossaryDocumentPart
   /// </summary>
-  public static System.Collections.ObjectModel.Collection<DocumentModel.Packaging.DiagramLayoutDefinitionPart>? GetDiagramLayoutDefinitionParts(DocumentFormat.OpenXml.Packaging.GlossaryDocumentPart? openXmlElement)
+  public static Collection<DiagramLayoutDefinitionPart>? GetDiagramLayoutDefinitionParts(GlossaryDocumentPart? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var collection = new System.Collections.ObjectModel.Collection<DocumentModel.Packaging.DiagramLayoutDefinitionPart>();
+      var collection = new Collection<DiagramLayoutDefinitionPart>();
       foreach (var item in openXmlElement.GetPartsOfType<DocumentFormat.OpenXml.Packaging.DiagramLayoutDefinitionPart>())
       {
-        var newItem = DocumentModel.OpenXml.Packaging.DiagramLayoutDefinitionPartConverter.CreateModelElement(item);
+        var newItem = DiagramLayoutDefinitionPartConverter.CreateModelElement(item);
         if (newItem != null)
           collection.Add(newItem);
       }
@@ -104,18 +109,18 @@ public static class GlossaryDocumentPartConverter
     }
     return null;
   }
-  
+
   /// <summary>
-  /// Gets the DiagramPersistLayoutParts of the GlossaryDocumentPart
+  ///   Gets the DiagramPersistLayoutParts of the GlossaryDocumentPart
   /// </summary>
-  public static System.Collections.ObjectModel.Collection<DocumentModel.Packaging.DiagramPersistLayoutPart>? GetDiagramPersistLayoutParts(DocumentFormat.OpenXml.Packaging.GlossaryDocumentPart? openXmlElement)
+  public static Collection<DiagramPersistLayoutPart>? GetDiagramPersistLayoutParts(GlossaryDocumentPart? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var collection = new System.Collections.ObjectModel.Collection<DocumentModel.Packaging.DiagramPersistLayoutPart>();
+      var collection = new Collection<DiagramPersistLayoutPart>();
       foreach (var item in openXmlElement.GetPartsOfType<DocumentFormat.OpenXml.Packaging.DiagramPersistLayoutPart>())
       {
-        var newItem = DocumentModel.OpenXml.Packaging.DiagramPersistLayoutPartConverter.CreateModelElement(item);
+        var newItem = DiagramPersistLayoutPartConverter.CreateModelElement(item);
         if (newItem != null)
           collection.Add(newItem);
       }
@@ -123,18 +128,18 @@ public static class GlossaryDocumentPartConverter
     }
     return null;
   }
-  
+
   /// <summary>
-  /// Gets the DiagramStyleParts of the GlossaryDocumentPart
+  ///   Gets the DiagramStyleParts of the GlossaryDocumentPart
   /// </summary>
-  public static System.Collections.ObjectModel.Collection<DocumentModel.Packaging.DiagramStylePart>? GetDiagramStyleParts(DocumentFormat.OpenXml.Packaging.GlossaryDocumentPart? openXmlElement)
+  public static Collection<DiagramStylePart>? GetDiagramStyleParts(GlossaryDocumentPart? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var collection = new System.Collections.ObjectModel.Collection<DocumentModel.Packaging.DiagramStylePart>();
+      var collection = new Collection<DiagramStylePart>();
       foreach (var item in openXmlElement.GetPartsOfType<DocumentFormat.OpenXml.Packaging.DiagramStylePart>())
       {
-        var newItem = DocumentModel.OpenXml.Packaging.DiagramStylePartConverter.CreateModelElement(item);
+        var newItem = DiagramStylePartConverter.CreateModelElement(item);
         if (newItem != null)
           collection.Add(newItem);
       }
@@ -142,18 +147,18 @@ public static class GlossaryDocumentPartConverter
     }
     return null;
   }
-  
+
   /// <summary>
-  /// Gets the EmbeddedControlPersistenceParts of the GlossaryDocumentPart
+  ///   Gets the EmbeddedControlPersistenceParts of the GlossaryDocumentPart
   /// </summary>
-  public static System.Collections.ObjectModel.Collection<DocumentModel.Packaging.EmbeddedControlPersistencePart>? GetEmbeddedControlPersistenceParts(DocumentFormat.OpenXml.Packaging.GlossaryDocumentPart? openXmlElement)
+  public static Collection<EmbeddedControlPersistencePart>? GetEmbeddedControlPersistenceParts(GlossaryDocumentPart? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var collection = new System.Collections.ObjectModel.Collection<DocumentModel.Packaging.EmbeddedControlPersistencePart>();
+      var collection = new Collection<EmbeddedControlPersistencePart>();
       foreach (var item in openXmlElement.GetPartsOfType<DocumentFormat.OpenXml.Packaging.EmbeddedControlPersistencePart>())
       {
-        var newItem = DocumentModel.OpenXml.Packaging.EmbeddedControlPersistencePartConverter.CreateModelElement(item);
+        var newItem = EmbeddedControlPersistencePartConverter.CreateModelElement(item);
         if (newItem != null)
           collection.Add(newItem);
       }
@@ -161,18 +166,18 @@ public static class GlossaryDocumentPartConverter
     }
     return null;
   }
-  
+
   /// <summary>
-  /// Gets the EmbeddedObjectParts of the GlossaryDocumentPart
+  ///   Gets the EmbeddedObjectParts of the GlossaryDocumentPart
   /// </summary>
-  public static System.Collections.ObjectModel.Collection<DocumentModel.Packaging.EmbeddedObjectPart>? GetEmbeddedObjectParts(DocumentFormat.OpenXml.Packaging.GlossaryDocumentPart? openXmlElement)
+  public static Collection<EmbeddedObjectPart>? GetEmbeddedObjectParts(GlossaryDocumentPart? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var collection = new System.Collections.ObjectModel.Collection<DocumentModel.Packaging.EmbeddedObjectPart>();
+      var collection = new Collection<EmbeddedObjectPart>();
       foreach (var item in openXmlElement.GetPartsOfType<DocumentFormat.OpenXml.Packaging.EmbeddedObjectPart>())
       {
-        var newItem = DocumentModel.OpenXml.Packaging.EmbeddedObjectPartConverter.CreateModelElement(item);
+        var newItem = EmbeddedObjectPartConverter.CreateModelElement(item);
         if (newItem != null)
           collection.Add(newItem);
       }
@@ -180,18 +185,18 @@ public static class GlossaryDocumentPartConverter
     }
     return null;
   }
-  
+
   /// <summary>
-  /// Gets the EmbeddedPackageParts of the GlossaryDocumentPart
+  ///   Gets the EmbeddedPackageParts of the GlossaryDocumentPart
   /// </summary>
-  public static System.Collections.ObjectModel.Collection<DocumentModel.Packaging.EmbeddedPackagePart>? GetEmbeddedPackageParts(DocumentFormat.OpenXml.Packaging.GlossaryDocumentPart? openXmlElement)
+  public static Collection<EmbeddedPackagePart>? GetEmbeddedPackageParts(GlossaryDocumentPart? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var collection = new System.Collections.ObjectModel.Collection<DocumentModel.Packaging.EmbeddedPackagePart>();
+      var collection = new Collection<EmbeddedPackagePart>();
       foreach (var item in openXmlElement.GetPartsOfType<DocumentFormat.OpenXml.Packaging.EmbeddedPackagePart>())
       {
-        var newItem = DocumentModel.OpenXml.Packaging.EmbeddedPackagePartConverter.CreateModelElement(item);
+        var newItem = EmbeddedPackagePartConverter.CreateModelElement(item);
         if (newItem != null)
           collection.Add(newItem);
       }
@@ -199,18 +204,18 @@ public static class GlossaryDocumentPartConverter
     }
     return null;
   }
-  
+
   /// <summary>
-  /// Gets the ExtendedChartParts of the GlossaryDocumentPart
+  ///   Gets the ExtendedChartParts of the GlossaryDocumentPart
   /// </summary>
-  public static System.Collections.ObjectModel.Collection<DocumentModel.Packaging.ExtendedChartPart>? GetExtendedChartParts(DocumentFormat.OpenXml.Packaging.GlossaryDocumentPart? openXmlElement)
+  public static Collection<ExtendedChartPart>? GetExtendedChartParts(GlossaryDocumentPart? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var collection = new System.Collections.ObjectModel.Collection<DocumentModel.Packaging.ExtendedChartPart>();
+      var collection = new Collection<ExtendedChartPart>();
       foreach (var item in openXmlElement.GetPartsOfType<DocumentFormat.OpenXml.Packaging.ExtendedChartPart>())
       {
-        var newItem = DocumentModel.OpenXml.Packaging.ExtendedChartPartConverter.CreateModelElement(item);
+        var newItem = ExtendedChartPartConverter.CreateModelElement(item);
         if (newItem != null)
           collection.Add(newItem);
       }
@@ -218,18 +223,18 @@ public static class GlossaryDocumentPartConverter
     }
     return null;
   }
-  
+
   /// <summary>
-  /// Gets the FooterParts of the GlossaryDocumentPart
+  ///   Gets the FooterParts of the GlossaryDocumentPart
   /// </summary>
-  public static System.Collections.ObjectModel.Collection<DocumentModel.Packaging.FooterPart>? GetFooterParts(DocumentFormat.OpenXml.Packaging.GlossaryDocumentPart? openXmlElement)
+  public static Collection<FooterPart>? GetFooterParts(GlossaryDocumentPart? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var collection = new System.Collections.ObjectModel.Collection<DocumentModel.Packaging.FooterPart>();
+      var collection = new Collection<FooterPart>();
       foreach (var item in openXmlElement.GetPartsOfType<DocumentFormat.OpenXml.Packaging.FooterPart>())
       {
-        var newItem = DocumentModel.OpenXml.Packaging.FooterPartConverter.CreateModelElement(item);
+        var newItem = FooterPartConverter.CreateModelElement(item);
         if (newItem != null)
           collection.Add(newItem);
       }
@@ -237,39 +242,39 @@ public static class GlossaryDocumentPartConverter
     }
     return null;
   }
-  
+
   /// <summary>
-  /// Gets or sets the root element of this part.
+  ///   Gets or sets the root element of this part.
   /// </summary>
-  public static DocumentModel.Wordprocessing.GlossaryDocument? GetGlossaryDocument(DocumentFormat.OpenXml.Packaging.GlossaryDocumentPart? openXmlElement)
+  public static GlossaryDocument? GetGlossaryDocument(GlossaryDocumentPart? openXmlElement)
   {
     if (openXmlElement?.RootElement is DocumentFormat.OpenXml.Wordprocessing.GlossaryDocument rootElement)
-      return DocumentModel.OpenXml.Wordprocessing.GlossaryDocumentConverter.CreateModelElement(rootElement);
+      return GlossaryDocumentConverter.CreateModelElement(rootElement);
     return null;
   }
-  
-  public static void SetGlossaryDocument(DocumentFormat.OpenXml.Packaging.GlossaryDocumentPart? openXmlElement, DocumentModel.Wordprocessing.GlossaryDocument? value)
+
+  public static void SetGlossaryDocument(GlossaryDocumentPart? openXmlElement, GlossaryDocument? value)
   {
     if (openXmlElement != null)
       if (value != null)
       {
-         var rootElement = DocumentModel.OpenXml.Wordprocessing.GlossaryDocumentConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.GlossaryDocument>(value);
-         if (rootElement != null)
-           openXmlElement.GlossaryDocument = rootElement;
+        var rootElement = GlossaryDocumentConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.GlossaryDocument>(value);
+        if (rootElement != null)
+          openXmlElement.GlossaryDocument = rootElement;
       }
   }
-  
+
   /// <summary>
-  /// Gets the HeaderParts of the GlossaryDocumentPart
+  ///   Gets the HeaderParts of the GlossaryDocumentPart
   /// </summary>
-  public static System.Collections.ObjectModel.Collection<DocumentModel.Packaging.HeaderPart>? GetHeaderParts(DocumentFormat.OpenXml.Packaging.GlossaryDocumentPart? openXmlElement)
+  public static Collection<HeaderPart>? GetHeaderParts(GlossaryDocumentPart? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var collection = new System.Collections.ObjectModel.Collection<DocumentModel.Packaging.HeaderPart>();
+      var collection = new Collection<HeaderPart>();
       foreach (var item in openXmlElement.GetPartsOfType<DocumentFormat.OpenXml.Packaging.HeaderPart>())
       {
-        var newItem = DocumentModel.OpenXml.Packaging.HeaderPartConverter.CreateModelElement(item);
+        var newItem = HeaderPartConverter.CreateModelElement(item);
         if (newItem != null)
           collection.Add(newItem);
       }
@@ -277,18 +282,18 @@ public static class GlossaryDocumentPartConverter
     }
     return null;
   }
-  
+
   /// <summary>
-  /// Gets the ImageParts of the GlossaryDocumentPart
+  ///   Gets the ImageParts of the GlossaryDocumentPart
   /// </summary>
-  public static System.Collections.ObjectModel.Collection<DocumentModel.Packaging.ImagePart>? GetImageParts(DocumentFormat.OpenXml.Packaging.GlossaryDocumentPart? openXmlElement)
+  public static Collection<ImagePart>? GetImageParts(GlossaryDocumentPart? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var collection = new System.Collections.ObjectModel.Collection<DocumentModel.Packaging.ImagePart>();
+      var collection = new Collection<ImagePart>();
       foreach (var item in openXmlElement.GetPartsOfType<DocumentFormat.OpenXml.Packaging.ImagePart>())
       {
-        var newItem = DocumentModel.OpenXml.Packaging.ImagePartConverter.CreateModelElement(item);
+        var newItem = ImagePartConverter.CreateModelElement(item);
         if (newItem != null)
           collection.Add(newItem);
       }
@@ -296,18 +301,18 @@ public static class GlossaryDocumentPartConverter
     }
     return null;
   }
-  
+
   /// <summary>
-  /// Gets the Model3DReferenceRelationshipParts of the GlossaryDocumentPart
+  ///   Gets the Model3DReferenceRelationshipParts of the GlossaryDocumentPart
   /// </summary>
-  public static System.Collections.ObjectModel.Collection<DocumentModel.Packaging.Model3DReferenceRelationshipPart>? GetModel3DReferenceRelationshipParts(DocumentFormat.OpenXml.Packaging.GlossaryDocumentPart? openXmlElement)
+  public static Collection<Model3DReferenceRelationshipPart>? GetModel3DReferenceRelationshipParts(GlossaryDocumentPart? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var collection = new System.Collections.ObjectModel.Collection<DocumentModel.Packaging.Model3DReferenceRelationshipPart>();
+      var collection = new Collection<Model3DReferenceRelationshipPart>();
       foreach (var item in openXmlElement.GetPartsOfType<DocumentFormat.OpenXml.Packaging.Model3DReferenceRelationshipPart>())
       {
-        var newItem = DocumentModel.OpenXml.Packaging.Model3DReferenceRelationshipPartConverter.CreateModelElement(item);
+        var newItem = Model3DReferenceRelationshipPartConverter.CreateModelElement(item);
         if (newItem != null)
           collection.Add(newItem);
       }
@@ -315,23 +320,23 @@ public static class GlossaryDocumentPartConverter
     }
     return null;
   }
-  
-  public static String? GetRelationshipType(DocumentFormat.OpenXml.Packaging.GlossaryDocumentPart? openXmlElement)
+
+  public static String? GetRelationshipType(GlossaryDocumentPart? openXmlElement)
   {
     return openXmlElement?.RelationshipType;
   }
-  
+
   /// <summary>
-  /// Gets the WordprocessingPrinterSettingsParts of the GlossaryDocumentPart
+  ///   Gets the WordprocessingPrinterSettingsParts of the GlossaryDocumentPart
   /// </summary>
-  public static System.Collections.ObjectModel.Collection<DocumentModel.Packaging.WordprocessingPrinterSettingsPart>? GetWordprocessingPrinterSettingsParts(DocumentFormat.OpenXml.Packaging.GlossaryDocumentPart? openXmlElement)
+  public static Collection<WordprocessingPrinterSettingsPart>? GetWordprocessingPrinterSettingsParts(GlossaryDocumentPart? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var collection = new System.Collections.ObjectModel.Collection<DocumentModel.Packaging.WordprocessingPrinterSettingsPart>();
+      var collection = new Collection<WordprocessingPrinterSettingsPart>();
       foreach (var item in openXmlElement.GetPartsOfType<DocumentFormat.OpenXml.Packaging.WordprocessingPrinterSettingsPart>())
       {
-        var newItem = DocumentModel.OpenXml.Packaging.WordprocessingPrinterSettingsPartConverter.CreateModelElement(item);
+        var newItem = WordprocessingPrinterSettingsPartConverter.CreateModelElement(item);
         if (newItem != null)
           collection.Add(newItem);
       }
@@ -339,8 +344,8 @@ public static class GlossaryDocumentPartConverter
     }
     return null;
   }
-  
-  public static DocumentModel.Packaging.GlossaryDocumentPart? CreateModelElement(DocumentFormat.OpenXml.Packaging.GlossaryDocumentPart? openXmlElement)
+
+  public static DocumentModel.Packaging.GlossaryDocumentPart? CreateModelElement(GlossaryDocumentPart? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -368,9 +373,9 @@ public static class GlossaryDocumentPartConverter
     }
     return null;
   }
-  
+
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Packaging.GlossaryDocumentPart? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Packaging.GlossaryDocumentPart, new()
+    where OpenXmlElementType : GlossaryDocumentPart, new()
   {
     if (value != null)
     {

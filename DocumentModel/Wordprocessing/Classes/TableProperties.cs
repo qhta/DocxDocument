@@ -1,88 +1,87 @@
 namespace DocumentModel.Wordprocessing;
 
 /// <summary>
-/// Table Properties.
+///   Table Properties.
 /// </summary>
-public partial class TableProperties
+public class TableProperties
 {
   /// <summary>
-  /// TableStyle.
+  ///   TableStyle.
   /// </summary>
   public String? TableStyle { get; set; }
-  
+
   /// <summary>
-  /// TablePositionProperties.
+  ///   TablePositionProperties.
   /// </summary>
-  public DocumentModel.Wordprocessing.TablePositionProperties? TablePositionProperties { get; set; }
-  
+  public TablePositionProperties? TablePositionProperties { get; set; }
+
   /// <summary>
-  /// TableOverlap.
+  ///   TableOverlap.
   /// </summary>
-  public DocumentModel.Wordprocessing.TableOverlapKind? TableOverlap { get; set; }
-  
+  public TableOverlapKind? TableOverlap { get; set; }
+
   /// <summary>
-  /// BiDiVisual.
+  ///   BiDiVisual.
   /// </summary>
-  public DocumentModel.Wordprocessing.OnOffOnlyKind? BiDiVisual { get; set; }
-  
+  public OnOffOnlyKind? BiDiVisual { get; set; }
+
   /// <summary>
-  /// TableWidth.
+  ///   TableWidth.
   /// </summary>
-  public DocumentModel.Wordprocessing.TableWidthType? TableWidth { get; set; }
-  
+  public TableWidthType? TableWidth { get; set; }
+
   /// <summary>
-  /// TableJustification.
+  ///   TableJustification.
   /// </summary>
-  public DocumentModel.Wordprocessing.TableRowAlignmentKind? TableJustification { get; set; }
-  
+  public TableRowAlignmentKind? TableJustification { get; set; }
+
   /// <summary>
-  /// TableCellSpacing.
+  ///   TableCellSpacing.
   /// </summary>
-  public DocumentModel.Wordprocessing.TableWidthType? TableCellSpacing { get; set; }
-  
+  public TableWidthType? TableCellSpacing { get; set; }
+
   /// <summary>
-  /// TableIndentation.
+  ///   TableIndentation.
   /// </summary>
-  public DocumentModel.Wordprocessing.TableIndentation? TableIndentation { get; set; }
-  
+  public TableIndentation? TableIndentation { get; set; }
+
   /// <summary>
-  /// TableBorders.
+  ///   TableBorders.
   /// </summary>
-  public DocumentModel.Wordprocessing.TableBorders? TableBorders { get; set; }
-  
+  public TableBorders? TableBorders { get; set; }
+
   /// <summary>
-  /// Shading.
+  ///   Shading.
   /// </summary>
-  public DocumentModel.Wordprocessing.Shading? Shading { get; set; }
-  
+  public Shading? Shading { get; set; }
+
   /// <summary>
-  /// TableLayout.
+  ///   TableLayout.
   /// </summary>
-  public DocumentModel.Wordprocessing.TableLayout? TableLayout { get; set; }
-  
+  public TableLayout? TableLayout { get; set; }
+
   /// <summary>
-  /// TableCellMarginDefault.
+  ///   TableCellMarginDefault.
   /// </summary>
-  public DocumentModel.Wordprocessing.TableCellMarginDefault? TableCellMarginDefault { get; set; }
-  
+  public TableCellMarginDefault? TableCellMarginDefault { get; set; }
+
   /// <summary>
-  /// TableLook.
+  ///   TableLook.
   /// </summary>
-  public DocumentModel.Wordprocessing.TableLook? TableLook { get; set; }
-  
+  public TableLook? TableLook { get; set; }
+
   /// <summary>
-  /// TableCaption, this property is only available in Office 2010 and later..
+  ///   TableCaption, this property is only available in Office 2010 and later..
   /// </summary>
   public String? TableCaption { get; set; }
-  
+
   /// <summary>
-  /// TableDescription, this property is only available in Office 2010 and later..
+  ///   TableDescription, this property is only available in Office 2010 and later..
   /// </summary>
   public String? TableDescription { get; set; }
-  
+
   /// <summary>
-  /// Revision Information for Table Properties.
+  ///   Revision Information for Table Properties.
   /// </summary>
-  public DocumentModel.Wordprocessing.TablePropertiesChange? TablePropertiesChange { get; set; }
-  
+  public TablePropertiesChange? TablePropertiesChange { get; set; }
 }

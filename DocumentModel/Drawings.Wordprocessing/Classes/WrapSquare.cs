@@ -1,38 +1,37 @@
 namespace DocumentModel.Drawings.Wordprocessing;
 
 /// <summary>
-/// Square Wrapping.
+///   Square Wrapping.
 /// </summary>
-public partial class WrapSquare
+public class WrapSquare
 {
   /// <summary>
-  /// Text Wrapping Location
+  ///   Text Wrapping Location
   /// </summary>
-  public DocumentModel.Drawings.Wordprocessing.WrapTextKind? WrapText { get; set; }
-  
+  public WrapTextKind? WrapText { get; set; }
+
   /// <summary>
-  /// Distance From Text (Top)
+  ///   Distance From Text (Top)
   /// </summary>
   public UInt32? DistanceFromTop { get; set; }
-  
+
   /// <summary>
-  /// Distance From Text on Bottom Edge
+  ///   Distance From Text on Bottom Edge
   /// </summary>
   public UInt32? DistanceFromBottom { get; set; }
-  
+
   /// <summary>
-  /// Distance From Text on Left Edge
+  ///   Distance From Text on Left Edge
   /// </summary>
   public UInt32? DistanceFromLeft { get; set; }
-  
+
   /// <summary>
-  /// Distance From Text on Right Edge
+  ///   Distance From Text on Right Edge
   /// </summary>
   public UInt32? DistanceFromRight { get; set; }
-  
+
   /// <summary>
-  /// Object Extents Including Effects.
+  ///   Object Extents Including Effects.
   /// </summary>
-  public DocumentModel.Drawings.Wordprocessing.EffectExtent? EffectExtent { get; set; }
-  
+  public EffectExtent? EffectExtent { get; set; }
 }

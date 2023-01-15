@@ -1,15 +1,14 @@
 namespace DocumentModel.Drawings;
 
 /// <summary>
-/// Defines the HyperlinkExtension Class.
+///   Defines the HyperlinkExtension Class.
 /// </summary>
-public partial class HyperlinkExtension
+public class HyperlinkExtension
 {
   /// <summary>
-  /// URI
+  ///   URI
   /// </summary>
   public String? Uri { get; set; }
-  
-  public DocumentModel.Drawings.HyperlinkColorEnum? HyperlinkColor { get; set; }
-  
+
+  public HyperlinkColorEnum? HyperlinkColor { get; set; }
 }

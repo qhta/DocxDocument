@@ -1,48 +1,47 @@
 namespace DocumentModel.Drawings;
 
 /// <summary>
-/// Effect Container.
+///   Effect Container.
 /// </summary>
-public partial class EffectList
+public class EffectList
 {
   /// <summary>
-  /// Blur Effect.
+  ///   Blur Effect.
   /// </summary>
-  public DocumentModel.Drawings.Blur? Blur { get; set; }
-  
+  public Blur? Blur { get; set; }
+
   /// <summary>
-  /// FillOverlay.
+  ///   FillOverlay.
   /// </summary>
-  public DocumentModel.Drawings.FillOverlay? FillOverlay { get; set; }
-  
+  public FillOverlay? FillOverlay { get; set; }
+
   /// <summary>
-  /// Glow.
+  ///   Glow.
   /// </summary>
-  public DocumentModel.Drawings.Glow? Glow { get; set; }
-  
+  public Glow? Glow { get; set; }
+
   /// <summary>
-  /// InnerShadow.
+  ///   InnerShadow.
   /// </summary>
-  public DocumentModel.Drawings.InnerShadow? InnerShadow { get; set; }
-  
+  public InnerShadow? InnerShadow { get; set; }
+
   /// <summary>
-  /// OuterShadow.
+  ///   OuterShadow.
   /// </summary>
-  public DocumentModel.Drawings.OuterShadow? OuterShadow { get; set; }
-  
+  public OuterShadow? OuterShadow { get; set; }
+
   /// <summary>
-  /// PresetShadow.
+  ///   PresetShadow.
   /// </summary>
-  public DocumentModel.Drawings.PresetShadow? PresetShadow { get; set; }
-  
+  public PresetShadow? PresetShadow { get; set; }
+
   /// <summary>
-  /// Reflection.
+  ///   Reflection.
   /// </summary>
-  public DocumentModel.Drawings.Reflection? Reflection { get; set; }
-  
+  public Reflection? Reflection { get; set; }
+
   /// <summary>
-  /// SoftEdge.
+  ///   SoftEdge.
   /// </summary>
-  public DocumentModel.Drawings.SoftEdge? SoftEdge { get; set; }
-  
+  public SoftEdge? SoftEdge { get; set; }
 }

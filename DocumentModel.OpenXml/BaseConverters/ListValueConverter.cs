@@ -2,21 +2,18 @@
 
 public static class ListValueConverter
 {
-  public static ListOf<String>? GetValue(DocumentFormat.OpenXml.ListValue<StringValue>? element)
+  public static ListOf<String>? GetValue(ListValue<StringValue>? element)
   {
     if (element != null)
     {
       var result = new ListOf<String>();
-      foreach (var item in element)
-      {
-        result.Add(StringValueConverter.GetValue(item));
-      }
+      foreach (var item in element) result.Add(StringValueConverter.GetValue(item));
     }
     return null;
   }
 
-  public static ListOf<EnumKind>? GetValue<EnumType, EnumKind>(DocumentFormat.OpenXml.ListValue<EnumValue<EnumType>>? element)
-    where EnumType: struct, IConvertible
+  public static ListOf<EnumKind>? GetValue<EnumType, EnumKind>(ListValue<EnumValue<EnumType>>? element)
+    where EnumType : struct, IConvertible
     where EnumKind : struct, IConvertible
   {
     if (element != null)
@@ -32,45 +29,37 @@ public static class ListValueConverter
     return null;
   }
 
-  public static ListOf<Boolean>? GetValue(DocumentFormat.OpenXml.ListValue<BooleanValue>? element)
+  public static ListOf<Boolean>? GetValue(ListValue<BooleanValue>? element)
   {
     if (element != null)
     {
       var result = new ListOf<Boolean>();
-      foreach (var item in element)
-      {
-        result.Add(item);
-      }
+      foreach (var item in element) result.Add(item);
     }
     return null;
   }
 
-  public static ListOf<Int32>? GetValue(DocumentFormat.OpenXml.ListValue<Int32Value>? element)
+  public static ListOf<Int32>? GetValue(ListValue<Int32Value>? element)
   {
     if (element != null)
     {
       var result = new ListOf<Int32>();
-      foreach (var item in element)
-      {
-        result.Add(item);
-      }
+      foreach (var item in element) result.Add(item);
     }
     return null;
   }
 
-  public static ListOf<UInt32>? GetValue(DocumentFormat.OpenXml.ListValue<UInt32Value>? element)
+  public static ListOf<UInt32>? GetValue(ListValue<UInt32Value>? element)
   {
     if (element != null)
     {
       var result = new ListOf<UInt32>();
-      foreach (var item in element)
-      {
-        result.Add(item);
-      }
+      foreach (var item in element) result.Add(item);
     }
     return null;
   }
-  public static DocumentFormat.OpenXml.ListValue<StringValue>? CreateListValue<OpenXmlElementType>(ListOf<String> value)
+
+  public static ListValue<StringValue>? CreateListValue<OpenXmlElementType>(ListOf<String> value)
   {
     var resultList = new List<StringValue>();
     foreach (var item in value)
@@ -78,12 +67,12 @@ public static class ListValueConverter
       var itemObject = new StringValue(item);
       resultList.Add(itemObject);
     }
-    var element = new DocumentFormat.OpenXml.ListValue<StringValue>(resultList);
+    var element = new ListValue<StringValue>(resultList);
     return element;
   }
 
-  public static DocumentFormat.OpenXml.ListValue<EnumValue<EnumType>>? CreateListValue<EnumType, EnumKind>(ListOf<EnumKind> value)
-    where EnumType: struct, IConvertible
+  public static ListValue<EnumValue<EnumType>>? CreateListValue<EnumType, EnumKind>(ListOf<EnumKind> value)
+    where EnumType : struct, IConvertible
     where EnumKind : struct, IConvertible
   {
     var resultList = new List<EnumValue<EnumType>>();
@@ -93,11 +82,11 @@ public static class ListValueConverter
       if (itemObject != null)
         resultList.Add(itemObject);
     }
-    var element = new DocumentFormat.OpenXml.ListValue<EnumValue<EnumType>>(resultList);
+    var element = new ListValue<EnumValue<EnumType>>(resultList);
     return element;
   }
 
-  public static DocumentFormat.OpenXml.ListValue<BooleanValue>? CreateListValue<OpenXmlElementType>(ListOf<Boolean> value)
+  public static ListValue<BooleanValue>? CreateListValue<OpenXmlElementType>(ListOf<Boolean> value)
   {
     var resultList = new List<BooleanValue>();
     foreach (var item in value)
@@ -105,11 +94,11 @@ public static class ListValueConverter
       var itemObject = new BooleanValue(item);
       resultList.Add(itemObject);
     }
-    var element = new DocumentFormat.OpenXml.ListValue<BooleanValue>(resultList);
+    var element = new ListValue<BooleanValue>(resultList);
     return element;
   }
 
-  public static DocumentFormat.OpenXml.ListValue<Int32Value>? CreateListValue<OpenXmlElementType>(ListOf<Int32> value)
+  public static ListValue<Int32Value>? CreateListValue<OpenXmlElementType>(ListOf<Int32> value)
   {
     var resultList = new List<Int32Value>();
     foreach (var item in value)
@@ -117,11 +106,11 @@ public static class ListValueConverter
       var itemObject = new Int32Value(item);
       resultList.Add(itemObject);
     }
-    var element = new DocumentFormat.OpenXml.ListValue<Int32Value>(resultList);
+    var element = new ListValue<Int32Value>(resultList);
     return element;
   }
 
-  public static DocumentFormat.OpenXml.ListValue<UInt32Value>? CreateListValue<OpenXmlElementType>(ListOf<UInt32> value)
+  public static ListValue<UInt32Value>? CreateListValue<OpenXmlElementType>(ListOf<UInt32> value)
   {
     var resultList = new List<UInt32Value>();
     foreach (var item in value)
@@ -129,7 +118,7 @@ public static class ListValueConverter
       var itemObject = new UInt32Value(item);
       resultList.Add(itemObject);
     }
-    var element = new DocumentFormat.OpenXml.ListValue<UInt32Value>(resultList);
+    var element = new ListValue<UInt32Value>(resultList);
     return element;
   }
 }

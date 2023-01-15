@@ -1,63 +1,62 @@
 namespace DocumentModel.Vml;
 
 /// <summary>
-/// Black And White Modes
+///   Black And White Modes
 /// </summary>
 public enum BlackAndWhiteMode
 {
   /// <summary>
-  /// Color.
+  ///   Color.
   /// </summary>
   Color,
-  
+
   /// <summary>
-  /// Automatic.
+  ///   Automatic.
   /// </summary>
   Auto,
-  
+
   /// <summary>
-  /// Grayscale.
+  ///   Grayscale.
   /// </summary>
   GrayScale,
-  
+
   /// <summary>
-  /// Light grayscale.
+  ///   Light grayscale.
   /// </summary>
   LightGrayScale,
-  
+
   /// <summary>
-  /// Inverse Grayscale.
+  ///   Inverse Grayscale.
   /// </summary>
   InverseGray,
-  
+
   /// <summary>
-  /// Gray Outlines.
+  ///   Gray Outlines.
   /// </summary>
   GrayOutline,
-  
+
   /// <summary>
-  /// Black And White.
+  ///   Black And White.
   /// </summary>
   HighContrast,
-  
+
   /// <summary>
-  /// Black.
+  ///   Black.
   /// </summary>
   Black,
-  
+
   /// <summary>
-  /// White.
+  ///   White.
   /// </summary>
   White,
-  
+
   /// <summary>
-  /// Do Not Show.
+  ///   Do Not Show.
   /// </summary>
   Undrawn,
-  
+
   /// <summary>
-  /// Black Text And Lines.
+  ///   Black Text And Lines.
   /// </summary>
-  BlackTextAndLines,
-  
+  BlackTextAndLines
 }

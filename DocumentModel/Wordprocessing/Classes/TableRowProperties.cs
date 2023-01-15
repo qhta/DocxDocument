@@ -1,42 +1,41 @@
 namespace DocumentModel.Wordprocessing;
 
 /// <summary>
-/// Table Row Properties.
+///   Table Row Properties.
 /// </summary>
-public partial class TableRowProperties
+public class TableRowProperties
 {
-  public DocumentModel.Wordprocessing.ConditionalFormatStyle? ConditionalFormatStyle { get; set; }
-  
+  public ConditionalFormatStyle? ConditionalFormatStyle { get; set; }
+
   public String? DivId { get; set; }
-  
+
   public Int32? GridBefore { get; set; }
-  
+
   public Int32? GridAfter { get; set; }
-  
-  public DocumentModel.Wordprocessing.TableWidthType? WidthBeforeTableRow { get; set; }
-  
-  public DocumentModel.Wordprocessing.TableWidthType? WidthAfterTableRow { get; set; }
-  
-  public DocumentModel.Wordprocessing.TableRowHeight? TableRowHeight { get; set; }
-  
+
+  public TableWidthType? WidthBeforeTableRow { get; set; }
+
+  public TableWidthType? WidthAfterTableRow { get; set; }
+
+  public TableRowHeight? TableRowHeight { get; set; }
+
   public Boolean? Hidden { get; set; }
-  
-  public DocumentModel.Wordprocessing.OnOffOnlyKind? CantSplit { get; set; }
-  
-  public DocumentModel.Wordprocessing.OnOffOnlyKind? TableHeader { get; set; }
-  
-  public DocumentModel.Wordprocessing.TableWidthType? TableCellSpacing { get; set; }
-  
-  public DocumentModel.Wordprocessing.TableRowAlignmentKind? TableJustification { get; set; }
-  
-  public DocumentModel.Wordprocessing.TrackChangeType? Inserted { get; set; }
-  
-  public DocumentModel.Wordprocessing.TrackChangeType? Deleted { get; set; }
-  
-  public DocumentModel.Wordprocessing.TableRowPropertiesChange? TableRowPropertiesChange { get; set; }
-  
-  public DocumentModel.Wordprocessing.TrackChangeType2? ConflictInsertion { get; set; }
-  
-  public DocumentModel.Wordprocessing.TrackChangeType2? ConflictDeletion { get; set; }
-  
+
+  public OnOffOnlyKind? CantSplit { get; set; }
+
+  public OnOffOnlyKind? TableHeader { get; set; }
+
+  public TableWidthType? TableCellSpacing { get; set; }
+
+  public TableRowAlignmentKind? TableJustification { get; set; }
+
+  public TrackChangeType? Inserted { get; set; }
+
+  public TrackChangeType? Deleted { get; set; }
+
+  public TableRowPropertiesChange? TableRowPropertiesChange { get; set; }
+
+  public TrackChangeType2? ConflictInsertion { get; set; }
+
+  public TrackChangeType2? ConflictDeletion { get; set; }
 }

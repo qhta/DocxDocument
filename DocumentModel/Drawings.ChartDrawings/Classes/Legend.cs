@@ -1,38 +1,37 @@
 namespace DocumentModel.Drawings.ChartDrawings;
 
 /// <summary>
-/// Defines the Legend Class.
+///   Defines the Legend Class.
 /// </summary>
-public partial class Legend
+public class Legend
 {
   /// <summary>
-  /// pos, this property is only available in Office 2016 and later.
+  ///   pos, this property is only available in Office 2016 and later.
   /// </summary>
-  public DocumentModel.Drawings.ChartDrawings.SidePos? Pos { get; set; }
-  
+  public SidePos? Pos { get; set; }
+
   /// <summary>
-  /// align, this property is only available in Office 2016 and later.
+  ///   align, this property is only available in Office 2016 and later.
   /// </summary>
-  public DocumentModel.Drawings.ChartDrawings.PosAlign? Align { get; set; }
-  
+  public PosAlign? Align { get; set; }
+
   /// <summary>
-  /// overlay, this property is only available in Office 2016 and later.
+  ///   overlay, this property is only available in Office 2016 and later.
   /// </summary>
   public Boolean? Overlay { get; set; }
-  
+
   /// <summary>
-  /// ShapeProperties.
+  ///   ShapeProperties.
   /// </summary>
-  public DocumentModel.Drawings.ChartDrawings.ShapeProperties? ShapeProperties { get; set; }
-  
+  public ShapeProperties? ShapeProperties { get; set; }
+
   /// <summary>
-  /// TxPrTextBody.
+  ///   TxPrTextBody.
   /// </summary>
-  public DocumentModel.Drawings.ChartDrawings.TxPrTextBody? TxPrTextBody { get; set; }
-  
+  public TxPrTextBody? TxPrTextBody { get; set; }
+
   /// <summary>
-  /// ExtensionList.
+  ///   ExtensionList.
   /// </summary>
-  public DocumentModel.Drawings.ChartDrawings.ExtensionList? ExtensionList { get; set; }
-  
+  public ExtensionList? ExtensionList { get; set; }
 }

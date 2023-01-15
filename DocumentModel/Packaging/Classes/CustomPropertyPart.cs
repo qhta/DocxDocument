@@ -1,10 +1,9 @@
 namespace DocumentModel.Packaging;
 
 /// <summary>
-/// Defines the CustomPropertyPart
+///   Defines the CustomPropertyPart
 /// </summary>
-public partial class CustomPropertyPart
+public class CustomPropertyPart
 {
   public String? RelationshipType { get; set; }
-  
 }

@@ -1,28 +1,27 @@
 namespace DocumentModel.Drawings.Charts;
 
 /// <summary>
-/// Display Units Label.
+///   Display Units Label.
 /// </summary>
-public partial class DisplayUnitsLabel
+public class DisplayUnitsLabel
 {
   /// <summary>
-  /// Layout.
+  ///   Layout.
   /// </summary>
-  public DocumentModel.Drawings.Charts.Layout? Layout { get; set; }
-  
+  public Layout? Layout { get; set; }
+
   /// <summary>
-  /// ChartText.
+  ///   ChartText.
   /// </summary>
-  public DocumentModel.Drawings.Charts.ChartText? ChartText { get; set; }
-  
+  public ChartText? ChartText { get; set; }
+
   /// <summary>
-  /// ChartShapeProperties.
+  ///   ChartShapeProperties.
   /// </summary>
-  public DocumentModel.Drawings.Charts.ChartShapeProperties? ChartShapeProperties { get; set; }
-  
+  public ChartShapeProperties? ChartShapeProperties { get; set; }
+
   /// <summary>
-  /// TextProperties.
+  ///   TextProperties.
   /// </summary>
-  public DocumentModel.Drawings.Charts.TextProperties? TextProperties { get; set; }
-  
+  public TextProperties? TextProperties { get; set; }
 }

@@ -1,23 +1,22 @@
 namespace DocumentModel.Wordprocessing;
 
 /// <summary>
-/// Defines the TableRowAlignmentValues enumeration.
+///   Defines the TableRowAlignmentValues enumeration.
 /// </summary>
 public enum TableRowAlignmentKind
 {
   /// <summary>
-  /// left.
+  ///   left.
   /// </summary>
   Left,
-  
+
   /// <summary>
-  /// center.
+  ///   center.
   /// </summary>
   Center,
-  
+
   /// <summary>
-  /// right.
+  ///   right.
   /// </summary>
-  Right,
-  
+  Right
 }

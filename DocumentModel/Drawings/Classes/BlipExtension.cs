@@ -1,27 +1,31 @@
+using DocumentModel.Drawings.Office.OEmbed;
+using DocumentModel.Drawings.SVG;
+using DocumentModel.Drawings.Wordprocessing;
+using DocumentModel.Wordprocessing.OEmbed;
+
 namespace DocumentModel.Drawings;
 
 /// <summary>
-/// Defines the BlipExtension Class.
+///   Defines the BlipExtension Class.
 /// </summary>
-public partial class BlipExtension
+public class BlipExtension
 {
   /// <summary>
-  /// URI
+  ///   URI
   /// </summary>
   public String? Uri { get; set; }
-  
-  public DocumentModel.Drawings.ImageProperties? ImageProperties { get; set; }
-  
+
+  public ImageProperties? ImageProperties { get; set; }
+
   public Boolean? UseLocalDpi { get; set; }
-  
-  public DocumentModel.Drawings.Wordprocessing.WebVideoProperty? WebVideoProperty { get; set; }
-  
-  public DocumentModel.Drawings.SVG.SVGBlip? SVGBlip { get; set; }
-  
-  public DocumentModel.Drawings.PictureAttributionSourceURL? PictureAttributionSourceURL { get; set; }
-  
-  public DocumentModel.Wordprocessing.OEmbed.OEmbed? OEmbed { get; set; }
-  
-  public DocumentModel.Drawings.Office.OEmbed.OEmbedShared? OEmbedShared { get; set; }
-  
+
+  public WebVideoProperty? WebVideoProperty { get; set; }
+
+  public SVGBlip? SVGBlip { get; set; }
+
+  public PictureAttributionSourceURL? PictureAttributionSourceURL { get; set; }
+
+  public OEmbed? OEmbed { get; set; }
+
+  public OEmbedShared? OEmbedShared { get; set; }
 }

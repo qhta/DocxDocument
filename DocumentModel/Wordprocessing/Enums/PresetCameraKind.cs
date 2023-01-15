@@ -1,318 +1,317 @@
 namespace DocumentModel.Wordprocessing;
 
 /// <summary>
-/// Defines the PresetCameraTypeValues enumeration.
+///   Defines the PresetCameraTypeValues enumeration.
 /// </summary>
 public enum PresetCameraKind
 {
   /// <summary>
-  /// legacyObliqueTopLeft.
+  ///   legacyObliqueTopLeft.
   /// </summary>
   LegacyObliqueTopLeft,
-  
+
   /// <summary>
-  /// legacyObliqueTop.
+  ///   legacyObliqueTop.
   /// </summary>
   LegacyObliqueTop,
-  
+
   /// <summary>
-  /// legacyObliqueTopRight.
+  ///   legacyObliqueTopRight.
   /// </summary>
   LegacyObliqueTopRight,
-  
+
   /// <summary>
-  /// legacyObliqueLeft.
+  ///   legacyObliqueLeft.
   /// </summary>
   LegacyObliqueLeft,
-  
+
   /// <summary>
-  /// legacyObliqueFront.
+  ///   legacyObliqueFront.
   /// </summary>
   LegacyObliqueFront,
-  
+
   /// <summary>
-  /// legacyObliqueRight.
+  ///   legacyObliqueRight.
   /// </summary>
   LegacyObliqueRight,
-  
+
   /// <summary>
-  /// legacyObliqueBottomLeft.
+  ///   legacyObliqueBottomLeft.
   /// </summary>
   LegacyObliqueBottomLeft,
-  
+
   /// <summary>
-  /// legacyObliqueBottom.
+  ///   legacyObliqueBottom.
   /// </summary>
   LegacyObliqueBottom,
-  
+
   /// <summary>
-  /// legacyObliqueBottomRight.
+  ///   legacyObliqueBottomRight.
   /// </summary>
   LegacyObliqueBottomRight,
-  
+
   /// <summary>
-  /// legacyPerspectiveTopLeft.
+  ///   legacyPerspectiveTopLeft.
   /// </summary>
   LegacyPerspectiveTopLeft,
-  
+
   /// <summary>
-  /// legacyPerspectiveTop.
+  ///   legacyPerspectiveTop.
   /// </summary>
   LegacyPerspectiveTop,
-  
+
   /// <summary>
-  /// legacyPerspectiveTopRight.
+  ///   legacyPerspectiveTopRight.
   /// </summary>
   LegacyPerspectiveTopRight,
-  
+
   /// <summary>
-  /// legacyPerspectiveLeft.
+  ///   legacyPerspectiveLeft.
   /// </summary>
   LegacyPerspectiveLeft,
-  
+
   /// <summary>
-  /// legacyPerspectiveFront.
+  ///   legacyPerspectiveFront.
   /// </summary>
   LegacyPerspectiveFront,
-  
+
   /// <summary>
-  /// legacyPerspectiveRight.
+  ///   legacyPerspectiveRight.
   /// </summary>
   LegacyPerspectiveRight,
-  
+
   /// <summary>
-  /// legacyPerspectiveBottomLeft.
+  ///   legacyPerspectiveBottomLeft.
   /// </summary>
   LegacyPerspectiveBottomLeft,
-  
+
   /// <summary>
-  /// legacyPerspectiveBottom.
+  ///   legacyPerspectiveBottom.
   /// </summary>
   LegacyPerspectiveBottom,
-  
+
   /// <summary>
-  /// legacyPerspectiveBottomRight.
+  ///   legacyPerspectiveBottomRight.
   /// </summary>
   LegacyPerspectiveBottomRight,
-  
+
   /// <summary>
-  /// orthographicFront.
+  ///   orthographicFront.
   /// </summary>
   OrthographicFront,
-  
+
   /// <summary>
-  /// isometricTopUp.
+  ///   isometricTopUp.
   /// </summary>
   IsometricTopUp,
-  
+
   /// <summary>
-  /// isometricTopDown.
+  ///   isometricTopDown.
   /// </summary>
   IsometricTopDown,
-  
+
   /// <summary>
-  /// isometricBottomUp.
+  ///   isometricBottomUp.
   /// </summary>
   IsometricBottomUp,
-  
+
   /// <summary>
-  /// isometricBottomDown.
+  ///   isometricBottomDown.
   /// </summary>
   IsometricBottomDown,
-  
+
   /// <summary>
-  /// isometricLeftUp.
+  ///   isometricLeftUp.
   /// </summary>
   IsometricLeftUp,
-  
+
   /// <summary>
-  /// isometricLeftDown.
+  ///   isometricLeftDown.
   /// </summary>
   IsometricLeftDown,
-  
+
   /// <summary>
-  /// isometricRightUp.
+  ///   isometricRightUp.
   /// </summary>
   IsometricRightUp,
-  
+
   /// <summary>
-  /// isometricRightDown.
+  ///   isometricRightDown.
   /// </summary>
   IsometricRightDown,
-  
+
   /// <summary>
-  /// isometricOffAxis1Left.
+  ///   isometricOffAxis1Left.
   /// </summary>
   IsometricOffAxis1Left,
-  
+
   /// <summary>
-  /// isometricOffAxis1Right.
+  ///   isometricOffAxis1Right.
   /// </summary>
   IsometricOffAxis1Right,
-  
+
   /// <summary>
-  /// isometricOffAxis1Top.
+  ///   isometricOffAxis1Top.
   /// </summary>
   IsometricOffAxis1Top,
-  
+
   /// <summary>
-  /// isometricOffAxis2Left.
+  ///   isometricOffAxis2Left.
   /// </summary>
   IsometricOffAxis2Left,
-  
+
   /// <summary>
-  /// isometricOffAxis2Right.
+  ///   isometricOffAxis2Right.
   /// </summary>
   IsometricOffAxis2Right,
-  
+
   /// <summary>
-  /// isometricOffAxis2Top.
+  ///   isometricOffAxis2Top.
   /// </summary>
   IsometricOffAxis2Top,
-  
+
   /// <summary>
-  /// isometricOffAxis3Left.
+  ///   isometricOffAxis3Left.
   /// </summary>
   IsometricOffAxis3Left,
-  
+
   /// <summary>
-  /// isometricOffAxis3Right.
+  ///   isometricOffAxis3Right.
   /// </summary>
   IsometricOffAxis3Right,
-  
+
   /// <summary>
-  /// isometricOffAxis3Bottom.
+  ///   isometricOffAxis3Bottom.
   /// </summary>
   IsometricOffAxis3Bottom,
-  
+
   /// <summary>
-  /// isometricOffAxis4Left.
+  ///   isometricOffAxis4Left.
   /// </summary>
   IsometricOffAxis4Left,
-  
+
   /// <summary>
-  /// isometricOffAxis4Right.
+  ///   isometricOffAxis4Right.
   /// </summary>
   IsometricOffAxis4Right,
-  
+
   /// <summary>
-  /// isometricOffAxis4Bottom.
+  ///   isometricOffAxis4Bottom.
   /// </summary>
   IsometricOffAxis4Bottom,
-  
+
   /// <summary>
-  /// obliqueTopLeft.
+  ///   obliqueTopLeft.
   /// </summary>
   ObliqueTopLeft,
-  
+
   /// <summary>
-  /// obliqueTop.
+  ///   obliqueTop.
   /// </summary>
   ObliqueTop,
-  
+
   /// <summary>
-  /// obliqueTopRight.
+  ///   obliqueTopRight.
   /// </summary>
   ObliqueTopRight,
-  
+
   /// <summary>
-  /// obliqueLeft.
+  ///   obliqueLeft.
   /// </summary>
   ObliqueLeft,
-  
+
   /// <summary>
-  /// obliqueRight.
+  ///   obliqueRight.
   /// </summary>
   ObliqueRight,
-  
+
   /// <summary>
-  /// obliqueBottomLeft.
+  ///   obliqueBottomLeft.
   /// </summary>
   ObliqueBottomLeft,
-  
+
   /// <summary>
-  /// obliqueBottom.
+  ///   obliqueBottom.
   /// </summary>
   ObliqueBottom,
-  
+
   /// <summary>
-  /// obliqueBottomRight.
+  ///   obliqueBottomRight.
   /// </summary>
   ObliqueBottomRight,
-  
+
   /// <summary>
-  /// perspectiveFront.
+  ///   perspectiveFront.
   /// </summary>
   PerspectiveFront,
-  
+
   /// <summary>
-  /// perspectiveLeft.
+  ///   perspectiveLeft.
   /// </summary>
   PerspectiveLeft,
-  
+
   /// <summary>
-  /// perspectiveRight.
+  ///   perspectiveRight.
   /// </summary>
   PerspectiveRight,
-  
+
   /// <summary>
-  /// perspectiveAbove.
+  ///   perspectiveAbove.
   /// </summary>
   PerspectiveAbove,
-  
+
   /// <summary>
-  /// perspectiveBelow.
+  ///   perspectiveBelow.
   /// </summary>
   PerspectiveBelow,
-  
+
   /// <summary>
-  /// perspectiveAboveLeftFacing.
+  ///   perspectiveAboveLeftFacing.
   /// </summary>
   PerspectiveAboveLeftFacing,
-  
+
   /// <summary>
-  /// perspectiveAboveRightFacing.
+  ///   perspectiveAboveRightFacing.
   /// </summary>
   PerspectiveAboveRightFacing,
-  
+
   /// <summary>
-  /// perspectiveContrastingLeftFacing.
+  ///   perspectiveContrastingLeftFacing.
   /// </summary>
   PerspectiveContrastingLeftFacing,
-  
+
   /// <summary>
-  /// perspectiveContrastingRightFacing.
+  ///   perspectiveContrastingRightFacing.
   /// </summary>
   PerspectiveContrastingRightFacing,
-  
+
   /// <summary>
-  /// perspectiveHeroicLeftFacing.
+  ///   perspectiveHeroicLeftFacing.
   /// </summary>
   PerspectiveHeroicLeftFacing,
-  
+
   /// <summary>
-  /// perspectiveHeroicRightFacing.
+  ///   perspectiveHeroicRightFacing.
   /// </summary>
   PerspectiveHeroicRightFacing,
-  
+
   /// <summary>
-  /// perspectiveHeroicExtremeLeftFacing.
+  ///   perspectiveHeroicExtremeLeftFacing.
   /// </summary>
   PerspectiveHeroicExtremeLeftFacing,
-  
+
   /// <summary>
-  /// perspectiveHeroicExtremeRightFacing.
+  ///   perspectiveHeroicExtremeRightFacing.
   /// </summary>
   PerspectiveHeroicExtremeRightFacing,
-  
+
   /// <summary>
-  /// perspectiveRelaxed.
+  ///   perspectiveRelaxed.
   /// </summary>
   PerspectiveRelaxed,
-  
+
   /// <summary>
-  /// perspectiveRelaxedModerately.
+  ///   perspectiveRelaxedModerately.
   /// </summary>
-  PerspectiveRelaxedModerately,
-  
+  PerspectiveRelaxedModerately
 }

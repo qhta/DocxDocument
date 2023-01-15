@@ -1,48 +1,51 @@
+using DocumentFormat.OpenXml.Office2013.Drawing.Chart;
+using DataLabelsRangeChache = DocumentModel.Drawings.Charts.DataLabelsRangeChache;
+
 namespace DocumentModel.OpenXml.Drawings.Charts;
 
 /// <summary>
-/// Defines the DataLabelsRange Class.
+///   Defines the DataLabelsRange Class.
 /// </summary>
 public static class DataLabelsRangeConverter
 {
   /// <summary>
-  /// Formula.
+  ///   Formula.
   /// </summary>
-  public static String? GetFormula(DocumentFormat.OpenXml.Office2013.Drawing.Chart.DataLabelsRange? openXmlElement)
+  public static String? GetFormula(DataLabelsRange? openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office2013.Drawing.Chart.Formula>();
+    var itemElement = openXmlElement?.GetFirstChild<Formula>();
     if (itemElement != null)
       return itemElement.Text;
     return null;
   }
-  
-  public static void SetFormula(DocumentFormat.OpenXml.Office2013.Drawing.Chart.DataLabelsRange? openXmlElement, String? value)
+
+  public static void SetFormula(DataLabelsRange? openXmlElement, String? value)
   {
     if (openXmlElement != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2013.Drawing.Chart.Formula>();
+      var itemElement = openXmlElement.GetFirstChild<Formula>();
       if (itemElement != null)
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = new DocumentFormat.OpenXml.Office2013.Drawing.Chart.Formula { Text = value };
+        itemElement = new Formula { Text = value };
         openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
+
   /// <summary>
-  /// DataLabelsRangeChache.
+  ///   DataLabelsRangeChache.
   /// </summary>
-  public static DocumentModel.Drawings.Charts.DataLabelsRangeChache? GetDataLabelsRangeChache(DocumentFormat.OpenXml.Office2013.Drawing.Chart.DataLabelsRange? openXmlElement)
+  public static DataLabelsRangeChache? GetDataLabelsRangeChache(DataLabelsRange? openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office2013.Drawing.Chart.DataLabelsRangeChache>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.Charts.DataLabelsRangeChacheConverter.CreateModelElement(itemElement);
+      return DataLabelsRangeChacheConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetDataLabelsRangeChache(DocumentFormat.OpenXml.Office2013.Drawing.Chart.DataLabelsRange? openXmlElement, DocumentModel.Drawings.Charts.DataLabelsRangeChache? value)
+
+  public static void SetDataLabelsRangeChache(DataLabelsRange? openXmlElement, DataLabelsRangeChache? value)
   {
     if (openXmlElement != null)
     {
@@ -51,14 +54,14 @@ public static class DataLabelsRangeConverter
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Drawings.Charts.DataLabelsRangeChacheConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2013.Drawing.Chart.DataLabelsRangeChache>(value);
+        itemElement = DataLabelsRangeChacheConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2013.Drawing.Chart.DataLabelsRangeChache>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static DocumentModel.Drawings.Charts.DataLabelsRange? CreateModelElement(DocumentFormat.OpenXml.Office2013.Drawing.Chart.DataLabelsRange? openXmlElement)
+
+  public static DocumentModel.Drawings.Charts.DataLabelsRange? CreateModelElement(DataLabelsRange? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -69,9 +72,9 @@ public static class DataLabelsRangeConverter
     }
     return null;
   }
-  
+
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.Charts.DataLabelsRange? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Office2013.Drawing.Chart.DataLabelsRange, new()
+    where OpenXmlElementType : DataLabelsRange, new()
   {
     if (value != null)
     {

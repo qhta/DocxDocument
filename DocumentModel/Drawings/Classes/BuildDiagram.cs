@@ -1,18 +1,17 @@
 namespace DocumentModel.Drawings;
 
 /// <summary>
-/// Build Diagram.
+///   Build Diagram.
 /// </summary>
-public partial class BuildDiagram
+public class BuildDiagram
 {
   /// <summary>
-  /// Build
+  ///   Build
   /// </summary>
   public String? Build { get; set; }
-  
+
   /// <summary>
-  /// Reverse Animation
+  ///   Reverse Animation
   /// </summary>
   public Boolean? ReverseAnimation { get; set; }
-  
 }

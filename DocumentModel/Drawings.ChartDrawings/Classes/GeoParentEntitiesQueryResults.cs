@@ -1,10 +1,9 @@
 namespace DocumentModel.Drawings.ChartDrawings;
 
 /// <summary>
-/// Defines the GeoParentEntitiesQueryResults Class.
+///   Defines the GeoParentEntitiesQueryResults Class.
 /// </summary>
-public partial class GeoParentEntitiesQueryResults
+public class GeoParentEntitiesQueryResults
 {
-  public Collection<DocumentModel.Drawings.ChartDrawings.GeoParentEntitiesQueryResult>? Items { get; set; }
-  
+  public Collection<GeoParentEntitiesQueryResult>? Items { get; set; }
 }

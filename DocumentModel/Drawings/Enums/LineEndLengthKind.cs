@@ -1,23 +1,22 @@
 namespace DocumentModel.Drawings;
 
 /// <summary>
-/// Line End Length
+///   Line End Length
 /// </summary>
 public enum LineEndLengthKind
 {
   /// <summary>
-  /// Small.
+  ///   Small.
   /// </summary>
   Small,
-  
+
   /// <summary>
-  /// Medium.
+  ///   Medium.
   /// </summary>
   Medium,
-  
+
   /// <summary>
-  /// Large.
+  ///   Large.
   /// </summary>
-  Large,
-  
+  Large
 }

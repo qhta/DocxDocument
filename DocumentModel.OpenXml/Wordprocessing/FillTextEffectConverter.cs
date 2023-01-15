@@ -1,53 +1,57 @@
+using DocumentFormat.OpenXml.Office2010.Word;
+using GradientFillProperties = DocumentModel.Wordprocessing.GradientFillProperties;
+using SolidColorFillProperties = DocumentModel.Wordprocessing.SolidColorFillProperties;
+
 namespace DocumentModel.OpenXml.Wordprocessing;
 
 /// <summary>
-/// Defines the FillTextEffect Class.
+///   Defines the FillTextEffect Class.
 /// </summary>
 public static class FillTextEffectConverter
 {
   /// <summary>
-  /// NoFillEmpty.
+  ///   NoFillEmpty.
   /// </summary>
-  public static Boolean? GetNoFillEmpty(DocumentFormat.OpenXml.Office2010.Word.FillTextEffect? openXmlElement)
+  public static Boolean? GetNoFillEmpty(FillTextEffect? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2010.Word.NoFillEmpty>();
+      var itemElement = openXmlElement.GetFirstChild<NoFillEmpty>();
       return itemElement != null;
     }
     return null;
   }
-  
-  public static void SetNoFillEmpty(DocumentFormat.OpenXml.Office2010.Word.FillTextEffect? openXmlElement, Boolean? value)
+
+  public static void SetNoFillEmpty(FillTextEffect? openXmlElement, Boolean? value)
   {
     if (openXmlElement != null)
     {
       if (value == false)
       {
-        var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2010.Word.NoFillEmpty>();
+        var itemElement = openXmlElement.GetFirstChild<NoFillEmpty>();
         if (itemElement != null)
           itemElement.Remove();
       }
       if (value == true)
       {
-        var itemElement = new DocumentFormat.OpenXml.Office2010.Word.NoFillEmpty();
+        var itemElement = new NoFillEmpty();
         openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
+
   /// <summary>
-  /// SolidColorFillProperties.
+  ///   SolidColorFillProperties.
   /// </summary>
-  public static DocumentModel.Wordprocessing.SolidColorFillProperties? GetSolidColorFillProperties(DocumentFormat.OpenXml.Office2010.Word.FillTextEffect? openXmlElement)
+  public static SolidColorFillProperties? GetSolidColorFillProperties(FillTextEffect? openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office2010.Word.SolidColorFillProperties>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Wordprocessing.SolidColorFillPropertiesConverter.CreateModelElement(itemElement);
+      return SolidColorFillPropertiesConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetSolidColorFillProperties(DocumentFormat.OpenXml.Office2010.Word.FillTextEffect? openXmlElement, DocumentModel.Wordprocessing.SolidColorFillProperties? value)
+
+  public static void SetSolidColorFillProperties(FillTextEffect? openXmlElement, SolidColorFillProperties? value)
   {
     if (openXmlElement != null)
     {
@@ -56,25 +60,25 @@ public static class FillTextEffectConverter
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Wordprocessing.SolidColorFillPropertiesConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2010.Word.SolidColorFillProperties>(value);
+        itemElement = SolidColorFillPropertiesConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2010.Word.SolidColorFillProperties>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
+
   /// <summary>
-  /// GradientFillProperties.
+  ///   GradientFillProperties.
   /// </summary>
-  public static DocumentModel.Wordprocessing.GradientFillProperties? GetGradientFillProperties(DocumentFormat.OpenXml.Office2010.Word.FillTextEffect? openXmlElement)
+  public static GradientFillProperties? GetGradientFillProperties(FillTextEffect? openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office2010.Word.GradientFillProperties>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Wordprocessing.GradientFillPropertiesConverter.CreateModelElement(itemElement);
+      return GradientFillPropertiesConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetGradientFillProperties(DocumentFormat.OpenXml.Office2010.Word.FillTextEffect? openXmlElement, DocumentModel.Wordprocessing.GradientFillProperties? value)
+
+  public static void SetGradientFillProperties(FillTextEffect? openXmlElement, GradientFillProperties? value)
   {
     if (openXmlElement != null)
     {
@@ -83,14 +87,14 @@ public static class FillTextEffectConverter
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Wordprocessing.GradientFillPropertiesConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2010.Word.GradientFillProperties>(value);
+        itemElement = GradientFillPropertiesConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2010.Word.GradientFillProperties>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static DocumentModel.Wordprocessing.FillTextEffect? CreateModelElement(DocumentFormat.OpenXml.Office2010.Word.FillTextEffect? openXmlElement)
+
+  public static DocumentModel.Wordprocessing.FillTextEffect? CreateModelElement(FillTextEffect? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -102,9 +106,9 @@ public static class FillTextEffectConverter
     }
     return null;
   }
-  
+
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.FillTextEffect? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Office2010.Word.FillTextEffect, new()
+    where OpenXmlElementType : FillTextEffect, new()
   {
     if (value != null)
     {

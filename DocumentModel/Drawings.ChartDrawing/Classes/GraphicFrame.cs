@@ -1,33 +1,32 @@
 namespace DocumentModel.Drawings.ChartDrawing;
 
 /// <summary>
-/// Graphic Frame.
+///   Graphic Frame.
 /// </summary>
-public partial class GraphicFrame
+public class GraphicFrame
 {
   /// <summary>
-  /// Reference to Custom Function
+  ///   Reference to Custom Function
   /// </summary>
   public String? Macro { get; set; }
-  
+
   /// <summary>
-  /// Publish To Server
+  ///   Publish To Server
   /// </summary>
   public Boolean? Published { get; set; }
-  
+
   /// <summary>
-  /// Non-Visual Graphic Frame Properties.
+  ///   Non-Visual Graphic Frame Properties.
   /// </summary>
-  public DocumentModel.Drawings.ChartDrawing.NonVisualGraphicFrameProperties? NonVisualGraphicFrameProperties { get; set; }
-  
+  public NonVisualGraphicFrameProperties? NonVisualGraphicFrameProperties { get; set; }
+
   /// <summary>
-  /// Graphic Frame Transform.
+  ///   Graphic Frame Transform.
   /// </summary>
-  public DocumentModel.Drawings.ChartDrawing.Transform? Transform { get; set; }
-  
+  public Transform? Transform { get; set; }
+
   /// <summary>
-  /// Graphical Object.
+  ///   Graphical Object.
   /// </summary>
-  public DocumentModel.Drawings.Graphic? Graphic { get; set; }
-  
+  public Graphic? Graphic { get; set; }
 }

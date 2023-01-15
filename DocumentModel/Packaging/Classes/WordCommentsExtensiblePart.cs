@@ -1,17 +1,18 @@
+using DocumentModel.Wordprocessing;
+
 namespace DocumentModel.Packaging;
 
 /// <summary>
-/// Defines the WordCommentsExtensiblePart
+///   Defines the WordCommentsExtensiblePart
 /// </summary>
-public partial class WordCommentsExtensiblePart
+public class WordCommentsExtensiblePart
 {
   /// <summary>
-  /// Gets or sets the root element of this part.
+  ///   Gets or sets the root element of this part.
   /// </summary>
-  public DocumentModel.Wordprocessing.CommentsExtensible? CommentsExtensible { get; set; }
-  
+  public CommentsExtensible? CommentsExtensible { get; set; }
+
   public String? ContentType { get; set; }
-  
+
   public String? RelationshipType { get; set; }
-  
 }

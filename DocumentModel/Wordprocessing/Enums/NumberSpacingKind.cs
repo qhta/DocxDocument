@@ -1,23 +1,22 @@
 namespace DocumentModel.Wordprocessing;
 
 /// <summary>
-/// Defines the NumberSpacingValues enumeration.
+///   Defines the NumberSpacingValues enumeration.
 /// </summary>
 public enum NumberSpacingKind
 {
   /// <summary>
-  /// default.
+  ///   default.
   /// </summary>
   Default,
-  
+
   /// <summary>
-  /// proportional.
+  ///   proportional.
   /// </summary>
   Proportional,
-  
+
   /// <summary>
-  /// tabular.
+  ///   tabular.
   /// </summary>
-  Tabular,
-  
+  Tabular
 }

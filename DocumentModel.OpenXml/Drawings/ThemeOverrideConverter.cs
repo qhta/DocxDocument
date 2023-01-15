@@ -1,22 +1,25 @@
+using DocumentModel.Drawings;
+using ThemeOverride = DocumentFormat.OpenXml.Drawing.ThemeOverride;
+
 namespace DocumentModel.OpenXml.Drawings;
 
 /// <summary>
-/// Theme Override.
+///   Theme Override.
 /// </summary>
 public static class ThemeOverrideConverter
 {
   /// <summary>
-  /// Color Scheme.
+  ///   Color Scheme.
   /// </summary>
-  public static DocumentModel.Drawings.ColorScheme? GetColorScheme(DocumentFormat.OpenXml.Drawing.ThemeOverride? openXmlElement)
+  public static ColorScheme? GetColorScheme(ThemeOverride? openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.ColorScheme>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.ColorSchemeConverter.CreateModelElement(itemElement);
+      return ColorSchemeConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetColorScheme(DocumentFormat.OpenXml.Drawing.ThemeOverride? openXmlElement, DocumentModel.Drawings.ColorScheme? value)
+
+  public static void SetColorScheme(ThemeOverride? openXmlElement, ColorScheme? value)
   {
     if (openXmlElement != null)
     {
@@ -25,25 +28,25 @@ public static class ThemeOverrideConverter
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Drawings.ColorSchemeConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.ColorScheme>(value);
+        itemElement = ColorSchemeConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.ColorScheme>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
+
   /// <summary>
-  /// FontScheme.
+  ///   FontScheme.
   /// </summary>
-  public static DocumentModel.Drawings.FontScheme? GetFontScheme(DocumentFormat.OpenXml.Drawing.ThemeOverride? openXmlElement)
+  public static FontScheme? GetFontScheme(ThemeOverride? openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.FontScheme>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.FontSchemeConverter.CreateModelElement(itemElement);
+      return FontSchemeConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetFontScheme(DocumentFormat.OpenXml.Drawing.ThemeOverride? openXmlElement, DocumentModel.Drawings.FontScheme? value)
+
+  public static void SetFontScheme(ThemeOverride? openXmlElement, FontScheme? value)
   {
     if (openXmlElement != null)
     {
@@ -52,25 +55,25 @@ public static class ThemeOverrideConverter
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Drawings.FontSchemeConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.FontScheme>(value);
+        itemElement = FontSchemeConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.FontScheme>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
+
   /// <summary>
-  /// FormatScheme.
+  ///   FormatScheme.
   /// </summary>
-  public static DocumentModel.Drawings.FormatScheme? GetFormatScheme(DocumentFormat.OpenXml.Drawing.ThemeOverride? openXmlElement)
+  public static FormatScheme? GetFormatScheme(ThemeOverride? openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.FormatScheme>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.FormatSchemeConverter.CreateModelElement(itemElement);
+      return FormatSchemeConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetFormatScheme(DocumentFormat.OpenXml.Drawing.ThemeOverride? openXmlElement, DocumentModel.Drawings.FormatScheme? value)
+
+  public static void SetFormatScheme(ThemeOverride? openXmlElement, FormatScheme? value)
   {
     if (openXmlElement != null)
     {
@@ -79,14 +82,14 @@ public static class ThemeOverrideConverter
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Drawings.FormatSchemeConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.FormatScheme>(value);
+        itemElement = FormatSchemeConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.FormatScheme>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static DocumentModel.Drawings.ThemeOverride? CreateModelElement(DocumentFormat.OpenXml.Drawing.ThemeOverride? openXmlElement)
+
+  public static DocumentModel.Drawings.ThemeOverride? CreateModelElement(ThemeOverride? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -98,9 +101,9 @@ public static class ThemeOverrideConverter
     }
     return null;
   }
-  
+
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.ThemeOverride? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.ThemeOverride, new()
+    where OpenXmlElementType : ThemeOverride, new()
   {
     if (value != null)
     {

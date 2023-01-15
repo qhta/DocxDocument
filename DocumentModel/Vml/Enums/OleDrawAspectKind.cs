@@ -1,18 +1,17 @@
 namespace DocumentModel.Vml;
 
 /// <summary>
-/// OLE Object Representations
+///   OLE Object Representations
 /// </summary>
 public enum OleDrawAspectKind
 {
   /// <summary>
-  /// Snapshot.
+  ///   Snapshot.
   /// </summary>
   Content,
-  
+
   /// <summary>
-  /// Icon.
+  ///   Icon.
   /// </summary>
-  Icon,
-  
+  Icon
 }

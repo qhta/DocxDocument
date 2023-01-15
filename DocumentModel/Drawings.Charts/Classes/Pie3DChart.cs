@@ -1,19 +1,18 @@
 namespace DocumentModel.Drawings.Charts;
 
 /// <summary>
-/// 3D Pie Charts.
+///   3D Pie Charts.
 /// </summary>
-public partial class Pie3DChart
+public class Pie3DChart
 {
   /// <summary>
-  /// VaryColors.
+  ///   VaryColors.
   /// </summary>
   public Boolean? VaryColors { get; set; }
-  
-  public Collection<DocumentModel.Drawings.Charts.PieChartSeries>? PieChartSerieses { get; set; }
-  
-  public DocumentModel.Drawings.Charts.DataLabels? DataLabels { get; set; }
-  
-  public DocumentModel.Drawings.Charts.Pie3DChartExtensionList? Pie3DChartExtensionList { get; set; }
-  
+
+  public Collection<PieChartSeries>? PieChartSerieses { get; set; }
+
+  public DataLabels? DataLabels { get; set; }
+
+  public Pie3DChartExtensionList? Pie3DChartExtensionList { get; set; }
 }

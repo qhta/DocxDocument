@@ -1,53 +1,52 @@
 namespace DocumentModel.Vml;
 
 /// <summary>
-/// Shape Fill Type
+///   Shape Fill Type
 /// </summary>
 public enum FillKind
 {
   /// <summary>
-  /// Centered Radial Gradient.
+  ///   Centered Radial Gradient.
   /// </summary>
   GradientCenter,
-  
+
   /// <summary>
-  /// Solid Fill.
+  ///   Solid Fill.
   /// </summary>
   Solid,
-  
+
   /// <summary>
-  /// Image Pattern.
+  ///   Image Pattern.
   /// </summary>
   Pattern,
-  
+
   /// <summary>
-  /// Tiled Image.
+  ///   Tiled Image.
   /// </summary>
   Tile,
-  
+
   /// <summary>
-  /// Stretch Image to Fit.
+  ///   Stretch Image to Fit.
   /// </summary>
   Frame,
-  
+
   /// <summary>
-  /// Unscaled Gradient.
+  ///   Unscaled Gradient.
   /// </summary>
   GradientUnscaled,
-  
+
   /// <summary>
-  /// Radial Gradient.
+  ///   Radial Gradient.
   /// </summary>
   GradientRadial,
-  
+
   /// <summary>
-  /// Linear Gradient.
+  ///   Linear Gradient.
   /// </summary>
   Gradient,
-  
+
   /// <summary>
-  /// Use Background Fill.
+  ///   Use Background Fill.
   /// </summary>
-  Background,
-  
+  Background
 }

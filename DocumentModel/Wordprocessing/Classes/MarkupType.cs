@@ -1,13 +1,12 @@
 namespace DocumentModel.Wordprocessing;
 
 /// <summary>
-/// Defines the MarkupType Class.
+///   Defines the MarkupType Class.
 /// </summary>
-public partial class MarkupType
+public class MarkupType
 {
   /// <summary>
-  /// Annotation Identifier
+  ///   Annotation Identifier
   /// </summary>
   public String? Id { get; set; }
-  
 }

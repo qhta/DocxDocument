@@ -1,10 +1,9 @@
 namespace DocumentModel.Drawings.Charts;
 
 /// <summary>
-/// Defines the SerAxExtensionList Class.
+///   Defines the SerAxExtensionList Class.
 /// </summary>
-public partial class SerAxExtensionList
+public class SerAxExtensionList
 {
-  public Collection<DocumentModel.Drawings.Charts.SerAxExtension>? SerAxExtensions { get; set; }
-  
+  public Collection<SerAxExtension>? SerAxExtensions { get; set; }
 }

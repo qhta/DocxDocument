@@ -1,33 +1,32 @@
 namespace DocumentModel.Wordprocessing;
 
 /// <summary>
-/// Defines the AbsolutePositionTabLeaderCharValues enumeration.
+///   Defines the AbsolutePositionTabLeaderCharValues enumeration.
 /// </summary>
 public enum AbsolutePositionTabLeaderCharKind
 {
   /// <summary>
-  /// No Leader Character.
+  ///   No Leader Character.
   /// </summary>
   None,
-  
+
   /// <summary>
-  /// Dot Leader Character.
+  ///   Dot Leader Character.
   /// </summary>
   Dot,
-  
+
   /// <summary>
-  /// Hyphen Leader Character.
+  ///   Hyphen Leader Character.
   /// </summary>
   Hyphen,
-  
+
   /// <summary>
-  /// Underscore Leader Character.
+  ///   Underscore Leader Character.
   /// </summary>
   Underscore,
-  
+
   /// <summary>
-  /// Centered Dot Leader Character.
+  ///   Centered Dot Leader Character.
   /// </summary>
-  MiddleDot,
-  
+  MiddleDot
 }

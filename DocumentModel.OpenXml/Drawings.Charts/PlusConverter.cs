@@ -1,19 +1,22 @@
+using DocumentModel.Drawings.Charts;
+using Plus = DocumentFormat.OpenXml.Drawing.Charts.Plus;
+
 namespace DocumentModel.OpenXml.Drawings.Charts;
 
 /// <summary>
-/// Plus.
+///   Plus.
 /// </summary>
 public static class PlusConverter
 {
-  public static DocumentModel.Drawings.Charts.NumberReference? GetNumberReference(DocumentFormat.OpenXml.Drawing.Charts.Plus? openXmlElement)
+  public static NumberReference? GetNumberReference(Plus? openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.NumberReference>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.Charts.NumberReferenceConverter.CreateModelElement(itemElement);
+      return NumberReferenceConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetNumberReference(DocumentFormat.OpenXml.Drawing.Charts.Plus? openXmlElement, DocumentModel.Drawings.Charts.NumberReference? value)
+
+  public static void SetNumberReference(Plus? openXmlElement, NumberReference? value)
   {
     if (openXmlElement != null)
     {
@@ -22,22 +25,22 @@ public static class PlusConverter
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Drawings.Charts.NumberReferenceConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Charts.NumberReference>(value);
+        itemElement = NumberReferenceConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Charts.NumberReference>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static DocumentModel.Drawings.Charts.NumberLiteral? GetNumberLiteral(DocumentFormat.OpenXml.Drawing.Charts.Plus? openXmlElement)
+
+  public static NumberLiteral? GetNumberLiteral(Plus? openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.NumberLiteral>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.Charts.NumberLiteralConverter.CreateModelElement(itemElement);
+      return NumberLiteralConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetNumberLiteral(DocumentFormat.OpenXml.Drawing.Charts.Plus? openXmlElement, DocumentModel.Drawings.Charts.NumberLiteral? value)
+
+  public static void SetNumberLiteral(Plus? openXmlElement, NumberLiteral? value)
   {
     if (openXmlElement != null)
     {
@@ -46,14 +49,14 @@ public static class PlusConverter
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Drawings.Charts.NumberLiteralConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Charts.NumberLiteral>(value);
+        itemElement = NumberLiteralConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Charts.NumberLiteral>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static DocumentModel.Drawings.Charts.Plus? CreateModelElement(DocumentFormat.OpenXml.Drawing.Charts.Plus? openXmlElement)
+
+  public static DocumentModel.Drawings.Charts.Plus? CreateModelElement(Plus? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -64,9 +67,9 @@ public static class PlusConverter
     }
     return null;
   }
-  
+
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.Charts.Plus? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.Charts.Plus, new()
+    where OpenXmlElementType : Plus, new()
   {
     if (value != null)
     {

@@ -1,18 +1,17 @@
 namespace DocumentModel.Drawings.Charts;
 
 /// <summary>
-/// Bar Direction
+///   Bar Direction
 /// </summary>
 public enum BarDirectionKind
 {
   /// <summary>
-  /// Bar.
+  ///   Bar.
   /// </summary>
   Bar,
-  
+
   /// <summary>
-  /// Column.
+  ///   Column.
   /// </summary>
-  Column,
-  
+  Column
 }

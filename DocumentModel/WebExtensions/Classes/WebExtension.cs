@@ -1,53 +1,52 @@
 namespace DocumentModel.WebExtensions;
 
 /// <summary>
-/// Defines the WebExtension Class.
+///   Defines the WebExtension Class.
 /// </summary>
-public partial class WebExtension
+public class WebExtension
 {
   /// <summary>
-  /// Gets or sets the  value. It is only available for backwards compatibility
+  ///   Gets or sets the  value. It is only available for backwards compatibility
   /// </summary>
   public Boolean? Fronzen { get; set; }
-  
+
   /// <summary>
-  /// id, this property is only available in Office 2013 and later.
+  ///   id, this property is only available in Office 2013 and later.
   /// </summary>
   public String? Id { get; set; }
-  
+
   /// <summary>
-  /// frozen, this property is only available in Office 2013 and later.
+  ///   frozen, this property is only available in Office 2013 and later.
   /// </summary>
   public Boolean? Frozen { get; set; }
-  
+
   /// <summary>
-  /// WebExtensionStoreReference.
+  ///   WebExtensionStoreReference.
   /// </summary>
-  public DocumentModel.WebExtensions.WebExtensionStoreReference? WebExtensionStoreReference { get; set; }
-  
+  public WebExtensionStoreReference? WebExtensionStoreReference { get; set; }
+
   /// <summary>
-  /// WebExtensionReferenceList.
+  ///   WebExtensionReferenceList.
   /// </summary>
-  public DocumentModel.WebExtensions.WebExtensionReferenceList? WebExtensionReferenceList { get; set; }
-  
+  public WebExtensionReferenceList? WebExtensionReferenceList { get; set; }
+
   /// <summary>
-  /// WebExtensionPropertyBag.
+  ///   WebExtensionPropertyBag.
   /// </summary>
-  public DocumentModel.WebExtensions.WebExtensionPropertyBag? WebExtensionPropertyBag { get; set; }
-  
+  public WebExtensionPropertyBag? WebExtensionPropertyBag { get; set; }
+
   /// <summary>
-  /// WebExtensionBindingList.
+  ///   WebExtensionBindingList.
   /// </summary>
-  public DocumentModel.WebExtensions.WebExtensionBindingList? WebExtensionBindingList { get; set; }
-  
+  public WebExtensionBindingList? WebExtensionBindingList { get; set; }
+
   /// <summary>
-  /// Snapshot.
+  ///   Snapshot.
   /// </summary>
-  public DocumentModel.WebExtensions.Snapshot? Snapshot { get; set; }
-  
+  public Snapshot? Snapshot { get; set; }
+
   /// <summary>
-  /// OfficeArtExtensionList.
+  ///   OfficeArtExtensionList.
   /// </summary>
-  public DocumentModel.WebExtensions.OfficeArtExtensionList? OfficeArtExtensionList { get; set; }
-  
+  public OfficeArtExtensionList? OfficeArtExtensionList { get; set; }
 }

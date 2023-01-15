@@ -1,19 +1,22 @@
+using DocumentFormat.OpenXml.Office2013.WebExtentionPane;
+using WebExtensionPartReference = DocumentModel.WebExtensions.UI.WebExtensionPartReference;
+
 namespace DocumentModel.OpenXml.WebExtensions.UI;
 
 /// <summary>
-/// Defines the WebExtensionTaskpane Class.
+///   Defines the WebExtensionTaskpane Class.
 /// </summary>
 public static class WebExtensionTaskpaneConverter
 {
   /// <summary>
-  /// dockstate, this property is only available in Office 2013 and later.
+  ///   dockstate, this property is only available in Office 2013 and later.
   /// </summary>
-  public static String? GetDockState(DocumentFormat.OpenXml.Office2013.WebExtentionPane.WebExtensionTaskpane? openXmlElement)
+  public static String? GetDockState(WebExtensionTaskpane? openXmlElement)
   {
     return openXmlElement?.DockState?.Value;
   }
-  
-  public static void SetDockState(DocumentFormat.OpenXml.Office2013.WebExtentionPane.WebExtensionTaskpane? openXmlElement, String? value)
+
+  public static void SetDockState(WebExtensionTaskpane? openXmlElement, String? value)
   {
     if (openXmlElement != null)
       if (value != null)
@@ -21,16 +24,16 @@ public static class WebExtensionTaskpaneConverter
       else
         openXmlElement.DockState = null;
   }
-  
+
   /// <summary>
-  /// visibility, this property is only available in Office 2013 and later.
+  ///   visibility, this property is only available in Office 2013 and later.
   /// </summary>
-  public static Boolean? GetVisibility(DocumentFormat.OpenXml.Office2013.WebExtentionPane.WebExtensionTaskpane? openXmlElement)
+  public static Boolean? GetVisibility(WebExtensionTaskpane? openXmlElement)
   {
     return openXmlElement?.Visibility?.Value;
   }
-  
-  public static void SetVisibility(DocumentFormat.OpenXml.Office2013.WebExtentionPane.WebExtensionTaskpane? openXmlElement, Boolean? value)
+
+  public static void SetVisibility(WebExtensionTaskpane? openXmlElement, Boolean? value)
   {
     if (openXmlElement != null)
       if (value != null)
@@ -38,44 +41,44 @@ public static class WebExtensionTaskpaneConverter
       else
         openXmlElement.Visibility = null;
   }
-  
+
   /// <summary>
-  /// width, this property is only available in Office 2013 and later.
+  ///   width, this property is only available in Office 2013 and later.
   /// </summary>
-  public static Double? GetWidth(DocumentFormat.OpenXml.Office2013.WebExtentionPane.WebExtensionTaskpane? openXmlElement)
+  public static Double? GetWidth(WebExtensionTaskpane? openXmlElement)
   {
     return openXmlElement?.Width?.Value;
   }
-  
-  public static void SetWidth(DocumentFormat.OpenXml.Office2013.WebExtentionPane.WebExtensionTaskpane? openXmlElement, Double? value)
+
+  public static void SetWidth(WebExtensionTaskpane? openXmlElement, Double? value)
   {
     if (openXmlElement != null)
       openXmlElement.Width = value;
   }
-  
+
   /// <summary>
-  /// row, this property is only available in Office 2013 and later.
+  ///   row, this property is only available in Office 2013 and later.
   /// </summary>
-  public static UInt32? GetRow(DocumentFormat.OpenXml.Office2013.WebExtentionPane.WebExtensionTaskpane? openXmlElement)
+  public static UInt32? GetRow(WebExtensionTaskpane? openXmlElement)
   {
     return openXmlElement?.Row?.Value;
   }
-  
-  public static void SetRow(DocumentFormat.OpenXml.Office2013.WebExtentionPane.WebExtensionTaskpane? openXmlElement, UInt32? value)
+
+  public static void SetRow(WebExtensionTaskpane? openXmlElement, UInt32? value)
   {
     if (openXmlElement != null)
       openXmlElement.Row = value;
   }
-  
+
   /// <summary>
-  /// locked, this property is only available in Office 2013 and later.
+  ///   locked, this property is only available in Office 2013 and later.
   /// </summary>
-  public static Boolean? GetLocked(DocumentFormat.OpenXml.Office2013.WebExtentionPane.WebExtensionTaskpane? openXmlElement)
+  public static Boolean? GetLocked(WebExtensionTaskpane? openXmlElement)
   {
     return openXmlElement?.Locked?.Value;
   }
-  
-  public static void SetLocked(DocumentFormat.OpenXml.Office2013.WebExtentionPane.WebExtensionTaskpane? openXmlElement, Boolean? value)
+
+  public static void SetLocked(WebExtensionTaskpane? openXmlElement, Boolean? value)
   {
     if (openXmlElement != null)
       if (value != null)
@@ -83,19 +86,19 @@ public static class WebExtensionTaskpaneConverter
       else
         openXmlElement.Locked = null;
   }
-  
+
   /// <summary>
-  /// WebExtensionPartReference.
+  ///   WebExtensionPartReference.
   /// </summary>
-  public static DocumentModel.WebExtensions.UI.WebExtensionPartReference? GetWebExtensionPartReference(DocumentFormat.OpenXml.Office2013.WebExtentionPane.WebExtensionTaskpane? openXmlElement)
+  public static WebExtensionPartReference? GetWebExtensionPartReference(WebExtensionTaskpane? openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office2013.WebExtentionPane.WebExtensionPartReference>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.WebExtensions.UI.WebExtensionPartReferenceConverter.CreateModelElement(itemElement);
+      return WebExtensionPartReferenceConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetWebExtensionPartReference(DocumentFormat.OpenXml.Office2013.WebExtentionPane.WebExtensionTaskpane? openXmlElement, DocumentModel.WebExtensions.UI.WebExtensionPartReference? value)
+
+  public static void SetWebExtensionPartReference(WebExtensionTaskpane? openXmlElement, WebExtensionPartReference? value)
   {
     if (openXmlElement != null)
     {
@@ -104,25 +107,25 @@ public static class WebExtensionTaskpaneConverter
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.WebExtensions.UI.WebExtensionPartReferenceConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2013.WebExtentionPane.WebExtensionPartReference>(value);
+        itemElement = WebExtensionPartReferenceConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2013.WebExtentionPane.WebExtensionPartReference>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
+
   /// <summary>
-  /// OfficeArtExtensionList.
+  ///   OfficeArtExtensionList.
   /// </summary>
-  public static DocumentModel.WebExtensions.UI.OfficeArtExtensionList? GetOfficeArtExtensionList(DocumentFormat.OpenXml.Office2013.WebExtentionPane.WebExtensionTaskpane? openXmlElement)
+  public static DocumentModel.WebExtensions.UI.OfficeArtExtensionList? GetOfficeArtExtensionList(WebExtensionTaskpane? openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office2013.WebExtentionPane.OfficeArtExtensionList>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.WebExtensions.UI.OfficeArtExtensionListConverter.CreateModelElement(itemElement);
+      return OfficeArtExtensionListConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetOfficeArtExtensionList(DocumentFormat.OpenXml.Office2013.WebExtentionPane.WebExtensionTaskpane? openXmlElement, DocumentModel.WebExtensions.UI.OfficeArtExtensionList? value)
+
+  public static void SetOfficeArtExtensionList(WebExtensionTaskpane? openXmlElement, DocumentModel.WebExtensions.UI.OfficeArtExtensionList? value)
   {
     if (openXmlElement != null)
     {
@@ -131,14 +134,14 @@ public static class WebExtensionTaskpaneConverter
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.WebExtensions.UI.OfficeArtExtensionListConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2013.WebExtentionPane.OfficeArtExtensionList>(value);
+        itemElement = OfficeArtExtensionListConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2013.WebExtentionPane.OfficeArtExtensionList>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static DocumentModel.WebExtensions.UI.WebExtensionTaskpane? CreateModelElement(DocumentFormat.OpenXml.Office2013.WebExtentionPane.WebExtensionTaskpane? openXmlElement)
+
+  public static DocumentModel.WebExtensions.UI.WebExtensionTaskpane? CreateModelElement(WebExtensionTaskpane? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -154,9 +157,9 @@ public static class WebExtensionTaskpaneConverter
     }
     return null;
   }
-  
+
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.WebExtensions.UI.WebExtensionTaskpane? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Office2013.WebExtentionPane.WebExtensionTaskpane, new()
+    where OpenXmlElementType : WebExtensionTaskpane, new()
   {
     if (value != null)
     {

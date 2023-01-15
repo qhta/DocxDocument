@@ -1,22 +1,25 @@
+using DocumentModel.Drawings.Charts;
+using AxisDataSourceType = DocumentFormat.OpenXml.Office2013.Drawing.Chart.AxisDataSourceType;
+
 namespace DocumentModel.OpenXml.Drawings.Charts;
 
 /// <summary>
-/// Defines the AxisDataSourceType Class.
+///   Defines the AxisDataSourceType Class.
 /// </summary>
 public static class AxisDataSourceType3Converter
 {
   /// <summary>
-  /// Multi Level String Reference.
+  ///   Multi Level String Reference.
   /// </summary>
-  public static DocumentModel.Drawings.Charts.MultiLevelStringReference? GetMultiLevelStringReference(DocumentFormat.OpenXml.Office2013.Drawing.Chart.AxisDataSourceType? openXmlElement)
+  public static MultiLevelStringReference? GetMultiLevelStringReference(AxisDataSourceType? openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.MultiLevelStringReference>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.Charts.MultiLevelStringReferenceConverter.CreateModelElement(itemElement);
+      return MultiLevelStringReferenceConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetMultiLevelStringReference(DocumentFormat.OpenXml.Office2013.Drawing.Chart.AxisDataSourceType? openXmlElement, DocumentModel.Drawings.Charts.MultiLevelStringReference? value)
+
+  public static void SetMultiLevelStringReference(AxisDataSourceType? openXmlElement, MultiLevelStringReference? value)
   {
     if (openXmlElement != null)
     {
@@ -25,25 +28,25 @@ public static class AxisDataSourceType3Converter
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Drawings.Charts.MultiLevelStringReferenceConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Charts.MultiLevelStringReference>(value);
+        itemElement = MultiLevelStringReferenceConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Charts.MultiLevelStringReference>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
+
   /// <summary>
-  /// Number Reference.
+  ///   Number Reference.
   /// </summary>
-  public static DocumentModel.Drawings.Charts.NumberReference? GetNumberReference(DocumentFormat.OpenXml.Office2013.Drawing.Chart.AxisDataSourceType? openXmlElement)
+  public static NumberReference? GetNumberReference(AxisDataSourceType? openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.NumberReference>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.Charts.NumberReferenceConverter.CreateModelElement(itemElement);
+      return NumberReferenceConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetNumberReference(DocumentFormat.OpenXml.Office2013.Drawing.Chart.AxisDataSourceType? openXmlElement, DocumentModel.Drawings.Charts.NumberReference? value)
+
+  public static void SetNumberReference(AxisDataSourceType? openXmlElement, NumberReference? value)
   {
     if (openXmlElement != null)
     {
@@ -52,25 +55,25 @@ public static class AxisDataSourceType3Converter
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Drawings.Charts.NumberReferenceConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Charts.NumberReference>(value);
+        itemElement = NumberReferenceConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Charts.NumberReference>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
+
   /// <summary>
-  /// Number Literal.
+  ///   Number Literal.
   /// </summary>
-  public static DocumentModel.Drawings.Charts.NumberLiteral? GetNumberLiteral(DocumentFormat.OpenXml.Office2013.Drawing.Chart.AxisDataSourceType? openXmlElement)
+  public static NumberLiteral? GetNumberLiteral(AxisDataSourceType? openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.NumberLiteral>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.Charts.NumberLiteralConverter.CreateModelElement(itemElement);
+      return NumberLiteralConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetNumberLiteral(DocumentFormat.OpenXml.Office2013.Drawing.Chart.AxisDataSourceType? openXmlElement, DocumentModel.Drawings.Charts.NumberLiteral? value)
+
+  public static void SetNumberLiteral(AxisDataSourceType? openXmlElement, NumberLiteral? value)
   {
     if (openXmlElement != null)
     {
@@ -79,25 +82,25 @@ public static class AxisDataSourceType3Converter
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Drawings.Charts.NumberLiteralConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Charts.NumberLiteral>(value);
+        itemElement = NumberLiteralConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Charts.NumberLiteral>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
+
   /// <summary>
-  /// StringReference.
+  ///   StringReference.
   /// </summary>
-  public static DocumentModel.Drawings.Charts.StringReference? GetStringReference(DocumentFormat.OpenXml.Office2013.Drawing.Chart.AxisDataSourceType? openXmlElement)
+  public static StringReference? GetStringReference(AxisDataSourceType? openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.StringReference>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.Charts.StringReferenceConverter.CreateModelElement(itemElement);
+      return StringReferenceConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetStringReference(DocumentFormat.OpenXml.Office2013.Drawing.Chart.AxisDataSourceType? openXmlElement, DocumentModel.Drawings.Charts.StringReference? value)
+
+  public static void SetStringReference(AxisDataSourceType? openXmlElement, StringReference? value)
   {
     if (openXmlElement != null)
     {
@@ -106,25 +109,25 @@ public static class AxisDataSourceType3Converter
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Drawings.Charts.StringReferenceConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Charts.StringReference>(value);
+        itemElement = StringReferenceConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Charts.StringReference>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
+
   /// <summary>
-  /// String Literal.
+  ///   String Literal.
   /// </summary>
-  public static DocumentModel.Drawings.Charts.StringLiteral? GetStringLiteral(DocumentFormat.OpenXml.Office2013.Drawing.Chart.AxisDataSourceType? openXmlElement)
+  public static StringLiteral? GetStringLiteral(AxisDataSourceType? openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.StringLiteral>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.Charts.StringLiteralConverter.CreateModelElement(itemElement);
+      return StringLiteralConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetStringLiteral(DocumentFormat.OpenXml.Office2013.Drawing.Chart.AxisDataSourceType? openXmlElement, DocumentModel.Drawings.Charts.StringLiteral? value)
+
+  public static void SetStringLiteral(AxisDataSourceType? openXmlElement, StringLiteral? value)
   {
     if (openXmlElement != null)
     {
@@ -133,18 +136,18 @@ public static class AxisDataSourceType3Converter
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Drawings.Charts.StringLiteralConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Charts.StringLiteral>(value);
+        itemElement = StringLiteralConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Charts.StringLiteral>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static DocumentModel.Drawings.Charts.AxisDataSourceType3? CreateModelElement(DocumentFormat.OpenXml.Office2013.Drawing.Chart.AxisDataSourceType? openXmlElement)
+
+  public static AxisDataSourceType3? CreateModelElement(AxisDataSourceType? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.Charts.AxisDataSourceType3();
+      var value = new AxisDataSourceType3();
       value.MultiLevelStringReference = GetMultiLevelStringReference(openXmlElement);
       value.NumberReference = GetNumberReference(openXmlElement);
       value.NumberLiteral = GetNumberLiteral(openXmlElement);
@@ -154,9 +157,9 @@ public static class AxisDataSourceType3Converter
     }
     return null;
   }
-  
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.Charts.AxisDataSourceType3? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Office2013.Drawing.Chart.AxisDataSourceType, new()
+
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(AxisDataSourceType3? value)
+    where OpenXmlElementType : AxisDataSourceType, new()
   {
     if (value != null)
     {

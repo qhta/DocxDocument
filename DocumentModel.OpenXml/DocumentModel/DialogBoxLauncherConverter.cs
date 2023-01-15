@@ -1,22 +1,22 @@
 namespace DocumentModel.OpenXml;
 
 /// <summary>
-/// Defines the DialogBoxLauncher Class.
+///   Defines the DialogBoxLauncher Class.
 /// </summary>
 public static class DialogBoxLauncherConverter
 {
   /// <summary>
-  /// ButtonRegular.
+  ///   ButtonRegular.
   /// </summary>
-  public static DocumentModel.ButtonRegular? GetButtonRegular(DocumentFormat.OpenXml.Office2010.CustomUI.DialogBoxLauncher? openXmlElement)
+  public static ButtonRegular? GetButtonRegular(DocumentFormat.OpenXml.Office2010.CustomUI.DialogBoxLauncher? openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office2010.CustomUI.ButtonRegular>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.ButtonRegularConverter.CreateModelElement(itemElement);
+      return ButtonRegularConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetButtonRegular(DocumentFormat.OpenXml.Office2010.CustomUI.DialogBoxLauncher? openXmlElement, DocumentModel.ButtonRegular? value)
+
+  public static void SetButtonRegular(DocumentFormat.OpenXml.Office2010.CustomUI.DialogBoxLauncher? openXmlElement, ButtonRegular? value)
   {
     if (openXmlElement != null)
     {
@@ -25,26 +25,26 @@ public static class DialogBoxLauncherConverter
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.ButtonRegularConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2010.CustomUI.ButtonRegular>(value);
+        itemElement = ButtonRegularConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2010.CustomUI.ButtonRegular>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static DocumentModel.DialogBoxLauncher? CreateModelElement(DocumentFormat.OpenXml.Office2010.CustomUI.DialogBoxLauncher? openXmlElement)
+
+  public static DialogBoxLauncher? CreateModelElement(DocumentFormat.OpenXml.Office2010.CustomUI.DialogBoxLauncher? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.DialogBoxLauncher();
+      var value = new DialogBoxLauncher();
       value.ButtonRegular = GetButtonRegular(openXmlElement);
       return value;
     }
     return null;
   }
-  
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.DialogBoxLauncher? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Office2010.CustomUI.DialogBoxLauncher, new()
+
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DialogBoxLauncher? value)
+    where OpenXmlElementType : DocumentFormat.OpenXml.Office2010.CustomUI.DialogBoxLauncher, new()
   {
     if (value != null)
     {

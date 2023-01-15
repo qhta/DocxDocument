@@ -1,18 +1,17 @@
 namespace DocumentModel.Wordprocessing;
 
 /// <summary>
-/// Custom Set of Characters Which Cannot End a Line.
+///   Custom Set of Characters Which Cannot End a Line.
 /// </summary>
-public partial class NoLineBreaksAfterKinsoku
+public class NoLineBreaksAfterKinsoku
 {
   /// <summary>
-  /// lang
+  ///   lang
   /// </summary>
   public String? Language { get; set; }
-  
+
   /// <summary>
-  /// val
+  ///   val
   /// </summary>
   public String? Val { get; set; }
-  
 }

@@ -1,19 +1,21 @@
+using DocumentFormat.OpenXml.Drawing;
+
 namespace DocumentModel.OpenXml.Drawings;
 
 /// <summary>
-/// Build Chart.
+///   Build Chart.
 /// </summary>
 public static class BuildChartConverter
 {
   /// <summary>
-  /// Build
+  ///   Build
   /// </summary>
-  public static String? GetBuild(DocumentFormat.OpenXml.Drawing.BuildChart? openXmlElement)
+  public static String? GetBuild(BuildChart? openXmlElement)
   {
     return openXmlElement?.Build?.Value;
   }
-  
-  public static void SetBuild(DocumentFormat.OpenXml.Drawing.BuildChart? openXmlElement, String? value)
+
+  public static void SetBuild(BuildChart? openXmlElement, String? value)
   {
     if (openXmlElement != null)
       if (value != null)
@@ -21,16 +23,16 @@ public static class BuildChartConverter
       else
         openXmlElement.Build = null;
   }
-  
+
   /// <summary>
-  /// Animate Background
+  ///   Animate Background
   /// </summary>
-  public static Boolean? GetAnimateBackground(DocumentFormat.OpenXml.Drawing.BuildChart? openXmlElement)
+  public static Boolean? GetAnimateBackground(BuildChart? openXmlElement)
   {
     return openXmlElement?.AnimateBackground?.Value;
   }
-  
-  public static void SetAnimateBackground(DocumentFormat.OpenXml.Drawing.BuildChart? openXmlElement, Boolean? value)
+
+  public static void SetAnimateBackground(BuildChart? openXmlElement, Boolean? value)
   {
     if (openXmlElement != null)
       if (value != null)
@@ -38,8 +40,8 @@ public static class BuildChartConverter
       else
         openXmlElement.AnimateBackground = null;
   }
-  
-  public static DocumentModel.Drawings.BuildChart? CreateModelElement(DocumentFormat.OpenXml.Drawing.BuildChart? openXmlElement)
+
+  public static DocumentModel.Drawings.BuildChart? CreateModelElement(BuildChart? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -50,9 +52,9 @@ public static class BuildChartConverter
     }
     return null;
   }
-  
+
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.BuildChart? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.BuildChart, new()
+    where OpenXmlElementType : BuildChart, new()
   {
     if (value != null)
     {

@@ -1,13 +1,12 @@
 namespace DocumentModel.Drawings.Charts;
 
 /// <summary>
-/// Defines the FilteredSeriesTitle Class.
+///   Defines the FilteredSeriesTitle Class.
 /// </summary>
-public partial class FilteredSeriesTitle
+public class FilteredSeriesTitle
 {
   /// <summary>
-  /// ChartText.
+  ///   ChartText.
   /// </summary>
-  public DocumentModel.Drawings.Charts.ChartText3? ChartText { get; set; }
-  
+  public ChartText3? ChartText { get; set; }
 }

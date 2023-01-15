@@ -1,15 +1,14 @@
 namespace DocumentModel.Drawings;
 
 /// <summary>
-/// Defines the ConnectorLockingExtension Class.
+///   Defines the ConnectorLockingExtension Class.
 /// </summary>
-public partial class ConnectorLockingExtension
+public class ConnectorLockingExtension
 {
   /// <summary>
-  /// URI
+  ///   URI
   /// </summary>
   public String? Uri { get; set; }
-  
-  public DocumentModel.Drawings.Graphic? Graphic { get; set; }
-  
+
+  public Graphic? Graphic { get; set; }
 }

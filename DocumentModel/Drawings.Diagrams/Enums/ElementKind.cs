@@ -1,58 +1,57 @@
 namespace DocumentModel.Drawings.Diagrams;
 
 /// <summary>
-/// Element Type
+///   Element Type
 /// </summary>
 public enum ElementKind
 {
   /// <summary>
-  /// All.
+  ///   All.
   /// </summary>
   All,
-  
+
   /// <summary>
-  /// Document.
+  ///   Document.
   /// </summary>
   Document,
-  
+
   /// <summary>
-  /// Node.
+  ///   Node.
   /// </summary>
   Node,
-  
+
   /// <summary>
-  /// Normal.
+  ///   Normal.
   /// </summary>
   Normal,
-  
+
   /// <summary>
-  /// Non Normal.
+  ///   Non Normal.
   /// </summary>
   NonNormal,
-  
+
   /// <summary>
-  /// Assistant.
+  ///   Assistant.
   /// </summary>
   Assistant,
-  
+
   /// <summary>
-  /// Non Assistant.
+  ///   Non Assistant.
   /// </summary>
   NonAssistant,
-  
+
   /// <summary>
-  /// Parent Transition.
+  ///   Parent Transition.
   /// </summary>
   ParentTransition,
-  
+
   /// <summary>
-  /// Presentation.
+  ///   Presentation.
   /// </summary>
   Presentation,
-  
+
   /// <summary>
-  /// Sibling Transition.
+  ///   Sibling Transition.
   /// </summary>
-  SiblingTransition,
-  
+  SiblingTransition
 }

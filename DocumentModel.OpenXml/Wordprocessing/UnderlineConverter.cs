@@ -1,33 +1,37 @@
+using DocumentFormat.OpenXml.Wordprocessing;
+using DocumentModel.Wordprocessing;
+using Underline = DocumentFormat.OpenXml.Wordprocessing.Underline;
+
 namespace DocumentModel.OpenXml.Wordprocessing;
 
 /// <summary>
-/// Defines the Underline Class.
+///   Defines the Underline Class.
 /// </summary>
 public static class UnderlineConverter
 {
   /// <summary>
-  /// Underline Style
+  ///   Underline Style
   /// </summary>
-  public static DocumentModel.Wordprocessing.UnderlineKind? GetVal(DocumentFormat.OpenXml.Wordprocessing.Underline? openXmlElement)
+  public static UnderlineKind? GetVal(Underline? openXmlElement)
   {
-    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Wordprocessing.UnderlineValues, DocumentModel.Wordprocessing.UnderlineKind>(openXmlElement?.Val?.Value);
+    return EnumValueConverter.GetValue<UnderlineValues, UnderlineKind>(openXmlElement?.Val?.Value);
   }
-  
-  public static void SetVal(DocumentFormat.OpenXml.Wordprocessing.Underline? openXmlElement, DocumentModel.Wordprocessing.UnderlineKind? value)
+
+  public static void SetVal(Underline? openXmlElement, UnderlineKind? value)
   {
     if (openXmlElement != null)
-      openXmlElement.Val = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Wordprocessing.UnderlineValues, DocumentModel.Wordprocessing.UnderlineKind>(value);
+      openXmlElement.Val = EnumValueConverter.CreateEnumValue<UnderlineValues, UnderlineKind>(value);
   }
-  
+
   /// <summary>
-  /// Underline Color
+  ///   Underline Color
   /// </summary>
-  public static String? GetColor(DocumentFormat.OpenXml.Wordprocessing.Underline? openXmlElement)
+  public static String? GetColor(Underline? openXmlElement)
   {
     return openXmlElement?.Color?.Value;
   }
-  
-  public static void SetColor(DocumentFormat.OpenXml.Wordprocessing.Underline? openXmlElement, String? value)
+
+  public static void SetColor(Underline? openXmlElement, String? value)
   {
     if (openXmlElement != null)
       if (value != null)
@@ -35,30 +39,30 @@ public static class UnderlineConverter
       else
         openXmlElement.Color = null;
   }
-  
+
   /// <summary>
-  /// Underline Theme Color
+  ///   Underline Theme Color
   /// </summary>
-  public static DocumentModel.Wordprocessing.ThemeColorKind? GetThemeColor(DocumentFormat.OpenXml.Wordprocessing.Underline? openXmlElement)
+  public static ThemeColorKind? GetThemeColor(Underline? openXmlElement)
   {
-    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Wordprocessing.ThemeColorValues, DocumentModel.Wordprocessing.ThemeColorKind>(openXmlElement?.ThemeColor?.Value);
+    return EnumValueConverter.GetValue<ThemeColorValues, ThemeColorKind>(openXmlElement?.ThemeColor?.Value);
   }
-  
-  public static void SetThemeColor(DocumentFormat.OpenXml.Wordprocessing.Underline? openXmlElement, DocumentModel.Wordprocessing.ThemeColorKind? value)
+
+  public static void SetThemeColor(Underline? openXmlElement, ThemeColorKind? value)
   {
     if (openXmlElement != null)
-      openXmlElement.ThemeColor = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Wordprocessing.ThemeColorValues, DocumentModel.Wordprocessing.ThemeColorKind>(value);
+      openXmlElement.ThemeColor = EnumValueConverter.CreateEnumValue<ThemeColorValues, ThemeColorKind>(value);
   }
-  
+
   /// <summary>
-  /// Underline Theme Color Tint
+  ///   Underline Theme Color Tint
   /// </summary>
-  public static String? GetThemeTint(DocumentFormat.OpenXml.Wordprocessing.Underline? openXmlElement)
+  public static String? GetThemeTint(Underline? openXmlElement)
   {
     return openXmlElement?.ThemeTint?.Value;
   }
-  
-  public static void SetThemeTint(DocumentFormat.OpenXml.Wordprocessing.Underline? openXmlElement, String? value)
+
+  public static void SetThemeTint(Underline? openXmlElement, String? value)
   {
     if (openXmlElement != null)
       if (value != null)
@@ -66,16 +70,16 @@ public static class UnderlineConverter
       else
         openXmlElement.ThemeTint = null;
   }
-  
+
   /// <summary>
-  /// Underline Theme Color Shade
+  ///   Underline Theme Color Shade
   /// </summary>
-  public static String? GetThemeShade(DocumentFormat.OpenXml.Wordprocessing.Underline? openXmlElement)
+  public static String? GetThemeShade(Underline? openXmlElement)
   {
     return openXmlElement?.ThemeShade?.Value;
   }
-  
-  public static void SetThemeShade(DocumentFormat.OpenXml.Wordprocessing.Underline? openXmlElement, String? value)
+
+  public static void SetThemeShade(Underline? openXmlElement, String? value)
   {
     if (openXmlElement != null)
       if (value != null)
@@ -83,8 +87,8 @@ public static class UnderlineConverter
       else
         openXmlElement.ThemeShade = null;
   }
-  
-  public static DocumentModel.Wordprocessing.Underline? CreateModelElement(DocumentFormat.OpenXml.Wordprocessing.Underline? openXmlElement)
+
+  public static DocumentModel.Wordprocessing.Underline? CreateModelElement(Underline? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -98,9 +102,9 @@ public static class UnderlineConverter
     }
     return null;
   }
-  
+
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.Underline? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Wordprocessing.Underline, new()
+    where OpenXmlElementType : Underline, new()
   {
     if (value != null)
     {

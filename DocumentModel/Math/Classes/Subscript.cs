@@ -1,23 +1,22 @@
 namespace DocumentModel.Math;
 
 /// <summary>
-/// Subscript Function.
+///   Subscript Function.
 /// </summary>
-public partial class Subscript
+public class Subscript
 {
   /// <summary>
-  /// Subscript Properties.
+  ///   Subscript Properties.
   /// </summary>
-  public DocumentModel.Math.SubscriptProperties? SubscriptProperties { get; set; }
-  
+  public SubscriptProperties? SubscriptProperties { get; set; }
+
   /// <summary>
-  /// Base.
+  ///   Base.
   /// </summary>
-  public DocumentModel.Math.Base? Base { get; set; }
-  
+  public Base? Base { get; set; }
+
   /// <summary>
-  /// Subscript (Subscript function).
+  ///   Subscript (Subscript function).
   /// </summary>
-  public DocumentModel.Math.SubArgument? SubArgument { get; set; }
-  
+  public SubArgument? SubArgument { get; set; }
 }

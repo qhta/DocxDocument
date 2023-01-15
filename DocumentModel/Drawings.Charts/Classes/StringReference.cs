@@ -1,23 +1,22 @@
 namespace DocumentModel.Drawings.Charts;
 
 /// <summary>
-/// Defines the StringReference Class.
+///   Defines the StringReference Class.
 /// </summary>
-public partial class StringReference
+public class StringReference
 {
   /// <summary>
-  /// Formula.
+  ///   Formula.
   /// </summary>
   public String? Formula { get; set; }
-  
+
   /// <summary>
-  /// StringCache.
+  ///   StringCache.
   /// </summary>
-  public DocumentModel.Drawings.Charts.StringCache? StringCache { get; set; }
-  
+  public StringCache? StringCache { get; set; }
+
   /// <summary>
-  /// StrRefExtensionList.
+  ///   StrRefExtensionList.
   /// </summary>
-  public DocumentModel.Drawings.Charts.StrRefExtensionList? StrRefExtensionList { get; set; }
-  
+  public StrRefExtensionList? StrRefExtensionList { get; set; }
 }

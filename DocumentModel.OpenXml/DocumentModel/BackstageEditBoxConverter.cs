@@ -1,18 +1,20 @@
+using DocumentFormat.OpenXml.Office2010.CustomUI;
+
 namespace DocumentModel.OpenXml;
 
 /// <summary>
-/// Defines the BackstageEditBox Class.
+///   Defines the BackstageEditBox Class.
 /// </summary>
 public static class BackstageEditBoxConverter
 {
   /// <summary>
-  /// id, this property is only available in Office 2010 and later.
+  ///   id, this property is only available in Office 2010 and later.
   /// </summary>
   public static String? GetId(DocumentFormat.OpenXml.Office2010.CustomUI.BackstageEditBox? openXmlElement)
   {
     return openXmlElement?.Id?.Value;
   }
-  
+
   public static void SetId(DocumentFormat.OpenXml.Office2010.CustomUI.BackstageEditBox? openXmlElement, String? value)
   {
     if (openXmlElement != null)
@@ -21,15 +23,15 @@ public static class BackstageEditBoxConverter
       else
         openXmlElement.Id = null;
   }
-  
+
   /// <summary>
-  /// idQ, this property is only available in Office 2010 and later.
+  ///   idQ, this property is only available in Office 2010 and later.
   /// </summary>
   public static String? GetQualifiedId(DocumentFormat.OpenXml.Office2010.CustomUI.BackstageEditBox? openXmlElement)
   {
     return openXmlElement?.QualifiedId?.Value;
   }
-  
+
   public static void SetQualifiedId(DocumentFormat.OpenXml.Office2010.CustomUI.BackstageEditBox? openXmlElement, String? value)
   {
     if (openXmlElement != null)
@@ -38,15 +40,15 @@ public static class BackstageEditBoxConverter
       else
         openXmlElement.QualifiedId = null;
   }
-  
+
   /// <summary>
-  /// tag, this property is only available in Office 2010 and later.
+  ///   tag, this property is only available in Office 2010 and later.
   /// </summary>
   public static String? GetTag(DocumentFormat.OpenXml.Office2010.CustomUI.BackstageEditBox? openXmlElement)
   {
     return openXmlElement?.Tag?.Value;
   }
-  
+
   public static void SetTag(DocumentFormat.OpenXml.Office2010.CustomUI.BackstageEditBox? openXmlElement, String? value)
   {
     if (openXmlElement != null)
@@ -55,43 +57,43 @@ public static class BackstageEditBoxConverter
       else
         openXmlElement.Tag = null;
   }
-  
+
   /// <summary>
-  /// alignLabel, this property is only available in Office 2010 and later.
+  ///   alignLabel, this property is only available in Office 2010 and later.
   /// </summary>
-  public static DocumentModel.ExpandKind? GetAlignLabel(DocumentFormat.OpenXml.Office2010.CustomUI.BackstageEditBox? openXmlElement)
+  public static ExpandKind? GetAlignLabel(DocumentFormat.OpenXml.Office2010.CustomUI.BackstageEditBox? openXmlElement)
   {
-    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Office2010.CustomUI.ExpandValues, DocumentModel.ExpandKind>(openXmlElement?.AlignLabel?.Value);
+    return EnumValueConverter.GetValue<ExpandValues, ExpandKind>(openXmlElement?.AlignLabel?.Value);
   }
-  
-  public static void SetAlignLabel(DocumentFormat.OpenXml.Office2010.CustomUI.BackstageEditBox? openXmlElement, DocumentModel.ExpandKind? value)
+
+  public static void SetAlignLabel(DocumentFormat.OpenXml.Office2010.CustomUI.BackstageEditBox? openXmlElement, ExpandKind? value)
   {
     if (openXmlElement != null)
-      openXmlElement.AlignLabel = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Office2010.CustomUI.ExpandValues, DocumentModel.ExpandKind>(value);
+      openXmlElement.AlignLabel = EnumValueConverter.CreateEnumValue<ExpandValues, ExpandKind>(value);
   }
-  
+
   /// <summary>
-  /// expand, this property is only available in Office 2010 and later.
+  ///   expand, this property is only available in Office 2010 and later.
   /// </summary>
-  public static DocumentModel.ExpandKind? GetExpand(DocumentFormat.OpenXml.Office2010.CustomUI.BackstageEditBox? openXmlElement)
+  public static ExpandKind? GetExpand(DocumentFormat.OpenXml.Office2010.CustomUI.BackstageEditBox? openXmlElement)
   {
-    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Office2010.CustomUI.ExpandValues, DocumentModel.ExpandKind>(openXmlElement?.Expand?.Value);
+    return EnumValueConverter.GetValue<ExpandValues, ExpandKind>(openXmlElement?.Expand?.Value);
   }
-  
-  public static void SetExpand(DocumentFormat.OpenXml.Office2010.CustomUI.BackstageEditBox? openXmlElement, DocumentModel.ExpandKind? value)
+
+  public static void SetExpand(DocumentFormat.OpenXml.Office2010.CustomUI.BackstageEditBox? openXmlElement, ExpandKind? value)
   {
     if (openXmlElement != null)
-      openXmlElement.Expand = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Office2010.CustomUI.ExpandValues, DocumentModel.ExpandKind>(value);
+      openXmlElement.Expand = EnumValueConverter.CreateEnumValue<ExpandValues, ExpandKind>(value);
   }
-  
+
   /// <summary>
-  /// enabled, this property is only available in Office 2010 and later.
+  ///   enabled, this property is only available in Office 2010 and later.
   /// </summary>
   public static Boolean? GetEnabled(DocumentFormat.OpenXml.Office2010.CustomUI.BackstageEditBox? openXmlElement)
   {
     return openXmlElement?.Enabled?.Value;
   }
-  
+
   public static void SetEnabled(DocumentFormat.OpenXml.Office2010.CustomUI.BackstageEditBox? openXmlElement, Boolean? value)
   {
     if (openXmlElement != null)
@@ -100,15 +102,15 @@ public static class BackstageEditBoxConverter
       else
         openXmlElement.Enabled = null;
   }
-  
+
   /// <summary>
-  /// getEnabled, this property is only available in Office 2010 and later.
+  ///   getEnabled, this property is only available in Office 2010 and later.
   /// </summary>
   public static String? GetGetEnabled(DocumentFormat.OpenXml.Office2010.CustomUI.BackstageEditBox? openXmlElement)
   {
     return openXmlElement?.GetEnabled?.Value;
   }
-  
+
   public static void SetGetEnabled(DocumentFormat.OpenXml.Office2010.CustomUI.BackstageEditBox? openXmlElement, String? value)
   {
     if (openXmlElement != null)
@@ -117,15 +119,15 @@ public static class BackstageEditBoxConverter
       else
         openXmlElement.GetEnabled = null;
   }
-  
+
   /// <summary>
-  /// label, this property is only available in Office 2010 and later.
+  ///   label, this property is only available in Office 2010 and later.
   /// </summary>
   public static String? GetLabel(DocumentFormat.OpenXml.Office2010.CustomUI.BackstageEditBox? openXmlElement)
   {
     return openXmlElement?.Label?.Value;
   }
-  
+
   public static void SetLabel(DocumentFormat.OpenXml.Office2010.CustomUI.BackstageEditBox? openXmlElement, String? value)
   {
     if (openXmlElement != null)
@@ -134,15 +136,15 @@ public static class BackstageEditBoxConverter
       else
         openXmlElement.Label = null;
   }
-  
+
   /// <summary>
-  /// getLabel, this property is only available in Office 2010 and later.
+  ///   getLabel, this property is only available in Office 2010 and later.
   /// </summary>
   public static String? GetGetLabel(DocumentFormat.OpenXml.Office2010.CustomUI.BackstageEditBox? openXmlElement)
   {
     return openXmlElement?.GetLabel?.Value;
   }
-  
+
   public static void SetGetLabel(DocumentFormat.OpenXml.Office2010.CustomUI.BackstageEditBox? openXmlElement, String? value)
   {
     if (openXmlElement != null)
@@ -151,15 +153,15 @@ public static class BackstageEditBoxConverter
       else
         openXmlElement.GetLabel = null;
   }
-  
+
   /// <summary>
-  /// visible, this property is only available in Office 2010 and later.
+  ///   visible, this property is only available in Office 2010 and later.
   /// </summary>
   public static Boolean? GetVisible(DocumentFormat.OpenXml.Office2010.CustomUI.BackstageEditBox? openXmlElement)
   {
     return openXmlElement?.Visible?.Value;
   }
-  
+
   public static void SetVisible(DocumentFormat.OpenXml.Office2010.CustomUI.BackstageEditBox? openXmlElement, Boolean? value)
   {
     if (openXmlElement != null)
@@ -168,15 +170,15 @@ public static class BackstageEditBoxConverter
       else
         openXmlElement.Visible = null;
   }
-  
+
   /// <summary>
-  /// getVisible, this property is only available in Office 2010 and later.
+  ///   getVisible, this property is only available in Office 2010 and later.
   /// </summary>
   public static String? GetGetVisible(DocumentFormat.OpenXml.Office2010.CustomUI.BackstageEditBox? openXmlElement)
   {
     return openXmlElement?.GetVisible?.Value;
   }
-  
+
   public static void SetGetVisible(DocumentFormat.OpenXml.Office2010.CustomUI.BackstageEditBox? openXmlElement, String? value)
   {
     if (openXmlElement != null)
@@ -185,15 +187,15 @@ public static class BackstageEditBoxConverter
       else
         openXmlElement.GetVisible = null;
   }
-  
+
   /// <summary>
-  /// keytip, this property is only available in Office 2010 and later.
+  ///   keytip, this property is only available in Office 2010 and later.
   /// </summary>
   public static String? GetKeytip(DocumentFormat.OpenXml.Office2010.CustomUI.BackstageEditBox? openXmlElement)
   {
     return openXmlElement?.Keytip?.Value;
   }
-  
+
   public static void SetKeytip(DocumentFormat.OpenXml.Office2010.CustomUI.BackstageEditBox? openXmlElement, String? value)
   {
     if (openXmlElement != null)
@@ -202,15 +204,15 @@ public static class BackstageEditBoxConverter
       else
         openXmlElement.Keytip = null;
   }
-  
+
   /// <summary>
-  /// getKeytip, this property is only available in Office 2010 and later.
+  ///   getKeytip, this property is only available in Office 2010 and later.
   /// </summary>
   public static String? GetGetKeytip(DocumentFormat.OpenXml.Office2010.CustomUI.BackstageEditBox? openXmlElement)
   {
     return openXmlElement?.GetKeytip?.Value;
   }
-  
+
   public static void SetGetKeytip(DocumentFormat.OpenXml.Office2010.CustomUI.BackstageEditBox? openXmlElement, String? value)
   {
     if (openXmlElement != null)
@@ -219,15 +221,15 @@ public static class BackstageEditBoxConverter
       else
         openXmlElement.GetKeytip = null;
   }
-  
+
   /// <summary>
-  /// getText, this property is only available in Office 2010 and later.
+  ///   getText, this property is only available in Office 2010 and later.
   /// </summary>
   public static String? GetGetText(DocumentFormat.OpenXml.Office2010.CustomUI.BackstageEditBox? openXmlElement)
   {
     return openXmlElement?.GetText?.Value;
   }
-  
+
   public static void SetGetText(DocumentFormat.OpenXml.Office2010.CustomUI.BackstageEditBox? openXmlElement, String? value)
   {
     if (openXmlElement != null)
@@ -236,15 +238,15 @@ public static class BackstageEditBoxConverter
       else
         openXmlElement.GetText = null;
   }
-  
+
   /// <summary>
-  /// onChange, this property is only available in Office 2010 and later.
+  ///   onChange, this property is only available in Office 2010 and later.
   /// </summary>
   public static String? GetOnChange(DocumentFormat.OpenXml.Office2010.CustomUI.BackstageEditBox? openXmlElement)
   {
     return openXmlElement?.OnChange?.Value;
   }
-  
+
   public static void SetOnChange(DocumentFormat.OpenXml.Office2010.CustomUI.BackstageEditBox? openXmlElement, String? value)
   {
     if (openXmlElement != null)
@@ -253,29 +255,29 @@ public static class BackstageEditBoxConverter
       else
         openXmlElement.OnChange = null;
   }
-  
+
   /// <summary>
-  /// maxLength, this property is only available in Office 2010 and later.
+  ///   maxLength, this property is only available in Office 2010 and later.
   /// </summary>
   public static Int64? GetMaxLength(DocumentFormat.OpenXml.Office2010.CustomUI.BackstageEditBox? openXmlElement)
   {
     return openXmlElement?.MaxLength?.Value;
   }
-  
+
   public static void SetMaxLength(DocumentFormat.OpenXml.Office2010.CustomUI.BackstageEditBox? openXmlElement, Int64? value)
   {
     if (openXmlElement != null)
       openXmlElement.MaxLength = value;
   }
-  
+
   /// <summary>
-  /// sizeString, this property is only available in Office 2010 and later.
+  ///   sizeString, this property is only available in Office 2010 and later.
   /// </summary>
   public static String? GetSizeString(DocumentFormat.OpenXml.Office2010.CustomUI.BackstageEditBox? openXmlElement)
   {
     return openXmlElement?.SizeString?.Value;
   }
-  
+
   public static void SetSizeString(DocumentFormat.OpenXml.Office2010.CustomUI.BackstageEditBox? openXmlElement, String? value)
   {
     if (openXmlElement != null)
@@ -284,12 +286,12 @@ public static class BackstageEditBoxConverter
       else
         openXmlElement.SizeString = null;
   }
-  
-  public static DocumentModel.BackstageEditBox? CreateModelElement(DocumentFormat.OpenXml.Office2010.CustomUI.BackstageEditBox? openXmlElement)
+
+  public static BackstageEditBox? CreateModelElement(DocumentFormat.OpenXml.Office2010.CustomUI.BackstageEditBox? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.BackstageEditBox();
+      var value = new BackstageEditBox();
       value.Id = GetId(openXmlElement);
       value.QualifiedId = GetQualifiedId(openXmlElement);
       value.Tag = GetTag(openXmlElement);
@@ -311,9 +313,9 @@ public static class BackstageEditBoxConverter
     }
     return null;
   }
-  
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.BackstageEditBox? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Office2010.CustomUI.BackstageEditBox, new()
+
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(BackstageEditBox? value)
+    where OpenXmlElementType : DocumentFormat.OpenXml.Office2010.CustomUI.BackstageEditBox, new()
   {
     if (value != null)
     {

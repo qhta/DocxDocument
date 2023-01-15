@@ -1,10 +1,9 @@
 namespace DocumentModel.Packaging;
 
 /// <summary>
-/// Defines the CustomXmlPart
+///   Defines the CustomXmlPart
 /// </summary>
-public partial class CustomXmlPart
+public class CustomXmlPart
 {
   public String? RelationshipType { get; set; }
-  
 }

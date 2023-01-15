@@ -1,12 +1,11 @@
 namespace DocumentModel.Wordprocessing;
 
 /// <summary>
-/// Defines the ExtrusionColor Class.
+///   Defines the ExtrusionColor Class.
 /// </summary>
-public partial class ExtrusionColor
+public class ExtrusionColor
 {
-  public DocumentModel.Wordprocessing.RgbColorModelHex? RgbColorModelHex { get; set; }
-  
-  public DocumentModel.Wordprocessing.SchemeColor? SchemeColor { get; set; }
-  
+  public RgbColorModelHex? RgbColorModelHex { get; set; }
+
+  public SchemeColor? SchemeColor { get; set; }
 }

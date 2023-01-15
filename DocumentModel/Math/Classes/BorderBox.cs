@@ -1,18 +1,17 @@
 namespace DocumentModel.Math;
 
 /// <summary>
-/// Border-Box Function.
+///   Border-Box Function.
 /// </summary>
-public partial class BorderBox
+public class BorderBox
 {
   /// <summary>
-  /// Border Box Properties.
+  ///   Border Box Properties.
   /// </summary>
-  public DocumentModel.Math.BorderBoxProperties? BorderBoxProperties { get; set; }
-  
+  public BorderBoxProperties? BorderBoxProperties { get; set; }
+
   /// <summary>
-  /// Base.
+  ///   Base.
   /// </summary>
-  public DocumentModel.Math.Base? Base { get; set; }
-  
+  public Base? Base { get; set; }
 }

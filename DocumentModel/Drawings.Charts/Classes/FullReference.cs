@@ -1,13 +1,12 @@
 namespace DocumentModel.Drawings.Charts;
 
 /// <summary>
-/// Defines the FullReference Class.
+///   Defines the FullReference Class.
 /// </summary>
-public partial class FullReference
+public class FullReference
 {
   /// <summary>
-  /// SequenceOfReferences.
+  ///   SequenceOfReferences.
   /// </summary>
   public String? SequenceOfReferences { get; set; }
-  
 }

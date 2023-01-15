@@ -1,28 +1,27 @@
 namespace DocumentModel.Math;
 
 /// <summary>
-/// n-ary Operator Function.
+///   n-ary Operator Function.
 /// </summary>
-public partial class Nary
+public class Nary
 {
   /// <summary>
-  /// n-ary Properties.
+  ///   n-ary Properties.
   /// </summary>
-  public DocumentModel.Math.NaryProperties? NaryProperties { get; set; }
-  
+  public NaryProperties? NaryProperties { get; set; }
+
   /// <summary>
-  /// Lower limit (n-ary) .
+  ///   Lower limit (n-ary) .
   /// </summary>
-  public DocumentModel.Math.SubArgument? SubArgument { get; set; }
-  
+  public SubArgument? SubArgument { get; set; }
+
   /// <summary>
-  /// Upper limit (n-ary).
+  ///   Upper limit (n-ary).
   /// </summary>
-  public DocumentModel.Math.SuperArgument? SuperArgument { get; set; }
-  
+  public SuperArgument? SuperArgument { get; set; }
+
   /// <summary>
-  /// Base (Argument).
+  ///   Base (Argument).
   /// </summary>
-  public DocumentModel.Math.Base? Base { get; set; }
-  
+  public Base? Base { get; set; }
 }

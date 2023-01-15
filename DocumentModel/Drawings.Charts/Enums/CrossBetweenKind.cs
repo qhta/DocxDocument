@@ -1,18 +1,17 @@
 namespace DocumentModel.Drawings.Charts;
 
 /// <summary>
-/// Cross Between
+///   Cross Between
 /// </summary>
 public enum CrossBetweenKind
 {
   /// <summary>
-  /// Between.
+  ///   Between.
   /// </summary>
   Between,
-  
+
   /// <summary>
-  /// Midpoint of Category.
+  ///   Midpoint of Category.
   /// </summary>
-  MidpointCategory,
-  
+  MidpointCategory
 }

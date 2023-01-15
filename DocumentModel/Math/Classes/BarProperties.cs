@@ -1,18 +1,17 @@
 namespace DocumentModel.Math;
 
 /// <summary>
-/// Bar Properties.
+///   Bar Properties.
 /// </summary>
-public partial class BarProperties
+public class BarProperties
 {
   /// <summary>
-  /// Position (Bar).
+  ///   Position (Bar).
   /// </summary>
-  public DocumentModel.Math.VerticalJustificationKind? Position { get; set; }
-  
+  public VerticalJustificationKind? Position { get; set; }
+
   /// <summary>
-  /// ControlProperties.
+  ///   ControlProperties.
   /// </summary>
-  public DocumentModel.Math.ControlProperties? ControlProperties { get; set; }
-  
+  public ControlProperties? ControlProperties { get; set; }
 }

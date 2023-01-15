@@ -1,18 +1,18 @@
 namespace DocumentModel.OpenXml;
 
 /// <summary>
-/// Defines the BackstageSubMenu Class.
+///   Defines the BackstageSubMenu Class.
 /// </summary>
 public static class BackstageSubMenuConverter
 {
   /// <summary>
-  /// description, this property is only available in Office 2010 and later.
+  ///   description, this property is only available in Office 2010 and later.
   /// </summary>
   public static String? GetDescription(DocumentFormat.OpenXml.Office2010.CustomUI.BackstageSubMenu? openXmlElement)
   {
     return openXmlElement?.Description?.Value;
   }
-  
+
   public static void SetDescription(DocumentFormat.OpenXml.Office2010.CustomUI.BackstageSubMenu? openXmlElement, String? value)
   {
     if (openXmlElement != null)
@@ -21,15 +21,15 @@ public static class BackstageSubMenuConverter
       else
         openXmlElement.Description = null;
   }
-  
+
   /// <summary>
-  /// getDescription, this property is only available in Office 2010 and later.
+  ///   getDescription, this property is only available in Office 2010 and later.
   /// </summary>
   public static String? GetGetDescription(DocumentFormat.OpenXml.Office2010.CustomUI.BackstageSubMenu? openXmlElement)
   {
     return openXmlElement?.GetDescription?.Value;
   }
-  
+
   public static void SetGetDescription(DocumentFormat.OpenXml.Office2010.CustomUI.BackstageSubMenu? openXmlElement, String? value)
   {
     if (openXmlElement != null)
@@ -38,15 +38,15 @@ public static class BackstageSubMenuConverter
       else
         openXmlElement.GetDescription = null;
   }
-  
+
   /// <summary>
-  /// id, this property is only available in Office 2010 and later.
+  ///   id, this property is only available in Office 2010 and later.
   /// </summary>
   public static String? GetId(DocumentFormat.OpenXml.Office2010.CustomUI.BackstageSubMenu? openXmlElement)
   {
     return openXmlElement?.Id?.Value;
   }
-  
+
   public static void SetId(DocumentFormat.OpenXml.Office2010.CustomUI.BackstageSubMenu? openXmlElement, String? value)
   {
     if (openXmlElement != null)
@@ -55,15 +55,15 @@ public static class BackstageSubMenuConverter
       else
         openXmlElement.Id = null;
   }
-  
+
   /// <summary>
-  /// idQ, this property is only available in Office 2010 and later.
+  ///   idQ, this property is only available in Office 2010 and later.
   /// </summary>
   public static String? GetQualifiedId(DocumentFormat.OpenXml.Office2010.CustomUI.BackstageSubMenu? openXmlElement)
   {
     return openXmlElement?.QualifiedId?.Value;
   }
-  
+
   public static void SetQualifiedId(DocumentFormat.OpenXml.Office2010.CustomUI.BackstageSubMenu? openXmlElement, String? value)
   {
     if (openXmlElement != null)
@@ -72,15 +72,15 @@ public static class BackstageSubMenuConverter
       else
         openXmlElement.QualifiedId = null;
   }
-  
+
   /// <summary>
-  /// tag, this property is only available in Office 2010 and later.
+  ///   tag, this property is only available in Office 2010 and later.
   /// </summary>
   public static String? GetTag(DocumentFormat.OpenXml.Office2010.CustomUI.BackstageSubMenu? openXmlElement)
   {
     return openXmlElement?.Tag?.Value;
   }
-  
+
   public static void SetTag(DocumentFormat.OpenXml.Office2010.CustomUI.BackstageSubMenu? openXmlElement, String? value)
   {
     if (openXmlElement != null)
@@ -89,15 +89,15 @@ public static class BackstageSubMenuConverter
       else
         openXmlElement.Tag = null;
   }
-  
+
   /// <summary>
-  /// enabled, this property is only available in Office 2010 and later.
+  ///   enabled, this property is only available in Office 2010 and later.
   /// </summary>
   public static Boolean? GetEnabled(DocumentFormat.OpenXml.Office2010.CustomUI.BackstageSubMenu? openXmlElement)
   {
     return openXmlElement?.Enabled?.Value;
   }
-  
+
   public static void SetEnabled(DocumentFormat.OpenXml.Office2010.CustomUI.BackstageSubMenu? openXmlElement, Boolean? value)
   {
     if (openXmlElement != null)
@@ -106,15 +106,15 @@ public static class BackstageSubMenuConverter
       else
         openXmlElement.Enabled = null;
   }
-  
+
   /// <summary>
-  /// getEnabled, this property is only available in Office 2010 and later.
+  ///   getEnabled, this property is only available in Office 2010 and later.
   /// </summary>
   public static String? GetGetEnabled(DocumentFormat.OpenXml.Office2010.CustomUI.BackstageSubMenu? openXmlElement)
   {
     return openXmlElement?.GetEnabled?.Value;
   }
-  
+
   public static void SetGetEnabled(DocumentFormat.OpenXml.Office2010.CustomUI.BackstageSubMenu? openXmlElement, String? value)
   {
     if (openXmlElement != null)
@@ -123,15 +123,15 @@ public static class BackstageSubMenuConverter
       else
         openXmlElement.GetEnabled = null;
   }
-  
+
   /// <summary>
-  /// label, this property is only available in Office 2010 and later.
+  ///   label, this property is only available in Office 2010 and later.
   /// </summary>
   public static String? GetLabel(DocumentFormat.OpenXml.Office2010.CustomUI.BackstageSubMenu? openXmlElement)
   {
     return openXmlElement?.Label?.Value;
   }
-  
+
   public static void SetLabel(DocumentFormat.OpenXml.Office2010.CustomUI.BackstageSubMenu? openXmlElement, String? value)
   {
     if (openXmlElement != null)
@@ -140,15 +140,15 @@ public static class BackstageSubMenuConverter
       else
         openXmlElement.Label = null;
   }
-  
+
   /// <summary>
-  /// getLabel, this property is only available in Office 2010 and later.
+  ///   getLabel, this property is only available in Office 2010 and later.
   /// </summary>
   public static String? GetGetLabel(DocumentFormat.OpenXml.Office2010.CustomUI.BackstageSubMenu? openXmlElement)
   {
     return openXmlElement?.GetLabel?.Value;
   }
-  
+
   public static void SetGetLabel(DocumentFormat.OpenXml.Office2010.CustomUI.BackstageSubMenu? openXmlElement, String? value)
   {
     if (openXmlElement != null)
@@ -157,15 +157,15 @@ public static class BackstageSubMenuConverter
       else
         openXmlElement.GetLabel = null;
   }
-  
+
   /// <summary>
-  /// visible, this property is only available in Office 2010 and later.
+  ///   visible, this property is only available in Office 2010 and later.
   /// </summary>
   public static Boolean? GetVisible(DocumentFormat.OpenXml.Office2010.CustomUI.BackstageSubMenu? openXmlElement)
   {
     return openXmlElement?.Visible?.Value;
   }
-  
+
   public static void SetVisible(DocumentFormat.OpenXml.Office2010.CustomUI.BackstageSubMenu? openXmlElement, Boolean? value)
   {
     if (openXmlElement != null)
@@ -174,15 +174,15 @@ public static class BackstageSubMenuConverter
       else
         openXmlElement.Visible = null;
   }
-  
+
   /// <summary>
-  /// getVisible, this property is only available in Office 2010 and later.
+  ///   getVisible, this property is only available in Office 2010 and later.
   /// </summary>
   public static String? GetGetVisible(DocumentFormat.OpenXml.Office2010.CustomUI.BackstageSubMenu? openXmlElement)
   {
     return openXmlElement?.GetVisible?.Value;
   }
-  
+
   public static void SetGetVisible(DocumentFormat.OpenXml.Office2010.CustomUI.BackstageSubMenu? openXmlElement, String? value)
   {
     if (openXmlElement != null)
@@ -191,15 +191,15 @@ public static class BackstageSubMenuConverter
       else
         openXmlElement.GetVisible = null;
   }
-  
+
   /// <summary>
-  /// image, this property is only available in Office 2010 and later.
+  ///   image, this property is only available in Office 2010 and later.
   /// </summary>
   public static String? GetImage(DocumentFormat.OpenXml.Office2010.CustomUI.BackstageSubMenu? openXmlElement)
   {
     return openXmlElement?.Image?.Value;
   }
-  
+
   public static void SetImage(DocumentFormat.OpenXml.Office2010.CustomUI.BackstageSubMenu? openXmlElement, String? value)
   {
     if (openXmlElement != null)
@@ -208,15 +208,15 @@ public static class BackstageSubMenuConverter
       else
         openXmlElement.Image = null;
   }
-  
+
   /// <summary>
-  /// imageMso, this property is only available in Office 2010 and later.
+  ///   imageMso, this property is only available in Office 2010 and later.
   /// </summary>
   public static String? GetImageMso(DocumentFormat.OpenXml.Office2010.CustomUI.BackstageSubMenu? openXmlElement)
   {
     return openXmlElement?.ImageMso?.Value;
   }
-  
+
   public static void SetImageMso(DocumentFormat.OpenXml.Office2010.CustomUI.BackstageSubMenu? openXmlElement, String? value)
   {
     if (openXmlElement != null)
@@ -225,15 +225,15 @@ public static class BackstageSubMenuConverter
       else
         openXmlElement.ImageMso = null;
   }
-  
+
   /// <summary>
-  /// getImage, this property is only available in Office 2010 and later.
+  ///   getImage, this property is only available in Office 2010 and later.
   /// </summary>
   public static String? GetGetImage(DocumentFormat.OpenXml.Office2010.CustomUI.BackstageSubMenu? openXmlElement)
   {
     return openXmlElement?.GetImage?.Value;
   }
-  
+
   public static void SetGetImage(DocumentFormat.OpenXml.Office2010.CustomUI.BackstageSubMenu? openXmlElement, String? value)
   {
     if (openXmlElement != null)
@@ -242,15 +242,15 @@ public static class BackstageSubMenuConverter
       else
         openXmlElement.GetImage = null;
   }
-  
+
   /// <summary>
-  /// keytip, this property is only available in Office 2010 and later.
+  ///   keytip, this property is only available in Office 2010 and later.
   /// </summary>
   public static String? GetKeytip(DocumentFormat.OpenXml.Office2010.CustomUI.BackstageSubMenu? openXmlElement)
   {
     return openXmlElement?.Keytip?.Value;
   }
-  
+
   public static void SetKeytip(DocumentFormat.OpenXml.Office2010.CustomUI.BackstageSubMenu? openXmlElement, String? value)
   {
     if (openXmlElement != null)
@@ -259,15 +259,15 @@ public static class BackstageSubMenuConverter
       else
         openXmlElement.Keytip = null;
   }
-  
+
   /// <summary>
-  /// getKeytip, this property is only available in Office 2010 and later.
+  ///   getKeytip, this property is only available in Office 2010 and later.
   /// </summary>
   public static String? GetGetKeytip(DocumentFormat.OpenXml.Office2010.CustomUI.BackstageSubMenu? openXmlElement)
   {
     return openXmlElement?.GetKeytip?.Value;
   }
-  
+
   public static void SetGetKeytip(DocumentFormat.OpenXml.Office2010.CustomUI.BackstageSubMenu? openXmlElement, String? value)
   {
     if (openXmlElement != null)
@@ -276,16 +276,16 @@ public static class BackstageSubMenuConverter
       else
         openXmlElement.GetKeytip = null;
   }
-  
-  public static DocumentModel.BackstageMenuGroup? GetBackstageMenuGroup(DocumentFormat.OpenXml.Office2010.CustomUI.BackstageSubMenu? openXmlElement)
+
+  public static BackstageMenuGroup? GetBackstageMenuGroup(DocumentFormat.OpenXml.Office2010.CustomUI.BackstageSubMenu? openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office2010.CustomUI.BackstageMenuGroup>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.BackstageMenuGroupConverter.CreateModelElement(itemElement);
+      return BackstageMenuGroupConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetBackstageMenuGroup(DocumentFormat.OpenXml.Office2010.CustomUI.BackstageSubMenu? openXmlElement, DocumentModel.BackstageMenuGroup? value)
+
+  public static void SetBackstageMenuGroup(DocumentFormat.OpenXml.Office2010.CustomUI.BackstageSubMenu? openXmlElement, BackstageMenuGroup? value)
   {
     if (openXmlElement != null)
     {
@@ -294,18 +294,18 @@ public static class BackstageSubMenuConverter
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.BackstageMenuGroupConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2010.CustomUI.BackstageMenuGroup>(value);
+        itemElement = BackstageMenuGroupConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2010.CustomUI.BackstageMenuGroup>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static DocumentModel.BackstageSubMenu? CreateModelElement(DocumentFormat.OpenXml.Office2010.CustomUI.BackstageSubMenu? openXmlElement)
+
+  public static BackstageSubMenu? CreateModelElement(DocumentFormat.OpenXml.Office2010.CustomUI.BackstageSubMenu? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.BackstageSubMenu();
+      var value = new BackstageSubMenu();
       value.Description = GetDescription(openXmlElement);
       value.GetDescription = GetGetDescription(openXmlElement);
       value.Id = GetId(openXmlElement);
@@ -327,9 +327,9 @@ public static class BackstageSubMenuConverter
     }
     return null;
   }
-  
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.BackstageSubMenu? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Office2010.CustomUI.BackstageSubMenu, new()
+
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(BackstageSubMenu? value)
+    where OpenXmlElementType : DocumentFormat.OpenXml.Office2010.CustomUI.BackstageSubMenu, new()
   {
     if (value != null)
     {

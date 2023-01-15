@@ -1,18 +1,17 @@
 namespace DocumentModel.Drawings;
 
 /// <summary>
-/// Effect Container Type
+///   Effect Container Type
 /// </summary>
 public enum EffectContainerKind
 {
   /// <summary>
-  /// Sibling.
+  ///   Sibling.
   /// </summary>
   Sibling,
-  
+
   /// <summary>
-  /// Tree.
+  ///   Tree.
   /// </summary>
-  Tree,
-  
+  Tree
 }

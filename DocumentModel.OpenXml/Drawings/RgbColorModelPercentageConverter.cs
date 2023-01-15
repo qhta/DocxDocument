@@ -1,722 +1,724 @@
+using DocumentFormat.OpenXml.Drawing;
+
 namespace DocumentModel.OpenXml.Drawings;
 
 /// <summary>
-/// RGB Color Model - Percentage Variant.
+///   RGB Color Model - Percentage Variant.
 /// </summary>
 public static class RgbColorModelPercentageConverter
 {
   /// <summary>
-  /// Red
+  ///   Red
   /// </summary>
-  public static Int32? GetRedPortion(DocumentFormat.OpenXml.Drawing.RgbColorModelPercentage? openXmlElement)
+  public static Int32? GetRedPortion(RgbColorModelPercentage? openXmlElement)
   {
     return openXmlElement?.RedPortion?.Value;
   }
-  
-  public static void SetRedPortion(DocumentFormat.OpenXml.Drawing.RgbColorModelPercentage? openXmlElement, Int32? value)
+
+  public static void SetRedPortion(RgbColorModelPercentage? openXmlElement, Int32? value)
   {
     if (openXmlElement != null)
       openXmlElement.RedPortion = value;
   }
-  
+
   /// <summary>
-  /// Green
+  ///   Green
   /// </summary>
-  public static Int32? GetGreenPortion(DocumentFormat.OpenXml.Drawing.RgbColorModelPercentage? openXmlElement)
+  public static Int32? GetGreenPortion(RgbColorModelPercentage? openXmlElement)
   {
     return openXmlElement?.GreenPortion?.Value;
   }
-  
-  public static void SetGreenPortion(DocumentFormat.OpenXml.Drawing.RgbColorModelPercentage? openXmlElement, Int32? value)
+
+  public static void SetGreenPortion(RgbColorModelPercentage? openXmlElement, Int32? value)
   {
     if (openXmlElement != null)
       openXmlElement.GreenPortion = value;
   }
-  
+
   /// <summary>
-  /// Blue
+  ///   Blue
   /// </summary>
-  public static Int32? GetBluePortion(DocumentFormat.OpenXml.Drawing.RgbColorModelPercentage? openXmlElement)
+  public static Int32? GetBluePortion(RgbColorModelPercentage? openXmlElement)
   {
     return openXmlElement?.BluePortion?.Value;
   }
-  
-  public static void SetBluePortion(DocumentFormat.OpenXml.Drawing.RgbColorModelPercentage? openXmlElement, Int32? value)
+
+  public static void SetBluePortion(RgbColorModelPercentage? openXmlElement, Int32? value)
   {
     if (openXmlElement != null)
       openXmlElement.BluePortion = value;
   }
-  
-  public static Int32? GetTint(DocumentFormat.OpenXml.Drawing.RgbColorModelPercentage? openXmlElement)
+
+  public static Int32? GetTint(RgbColorModelPercentage? openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.Tint>();
+    var itemElement = openXmlElement?.GetFirstChild<Tint>();
     if (itemElement != null)
       return itemElement.Val?.Value;
     return null;
   }
-  
-  public static void SetTint(DocumentFormat.OpenXml.Drawing.RgbColorModelPercentage? openXmlElement, Int32? value)
+
+  public static void SetTint(RgbColorModelPercentage? openXmlElement, Int32? value)
   {
     if (openXmlElement != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Tint>();
+      var itemElement = openXmlElement.GetFirstChild<Tint>();
       if (itemElement != null)
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = new DocumentFormat.OpenXml.Drawing.Tint{ Val = value };
+        itemElement = new Tint { Val = value };
         openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static Int32? GetShade(DocumentFormat.OpenXml.Drawing.RgbColorModelPercentage? openXmlElement)
+
+  public static Int32? GetShade(RgbColorModelPercentage? openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.Shade>();
+    var itemElement = openXmlElement?.GetFirstChild<Shade>();
     if (itemElement != null)
       return itemElement.Val?.Value;
     return null;
   }
-  
-  public static void SetShade(DocumentFormat.OpenXml.Drawing.RgbColorModelPercentage? openXmlElement, Int32? value)
+
+  public static void SetShade(RgbColorModelPercentage? openXmlElement, Int32? value)
   {
     if (openXmlElement != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Shade>();
+      var itemElement = openXmlElement.GetFirstChild<Shade>();
       if (itemElement != null)
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = new DocumentFormat.OpenXml.Drawing.Shade{ Val = value };
+        itemElement = new Shade { Val = value };
         openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static Boolean? GetComplement(DocumentFormat.OpenXml.Drawing.RgbColorModelPercentage? openXmlElement)
+
+  public static Boolean? GetComplement(RgbColorModelPercentage? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Complement>();
+      var itemElement = openXmlElement.GetFirstChild<Complement>();
       return itemElement != null;
     }
     return null;
   }
-  
-  public static void SetComplement(DocumentFormat.OpenXml.Drawing.RgbColorModelPercentage? openXmlElement, Boolean? value)
+
+  public static void SetComplement(RgbColorModelPercentage? openXmlElement, Boolean? value)
   {
     if (openXmlElement != null)
     {
       if (value == false)
       {
-        var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Complement>();
+        var itemElement = openXmlElement.GetFirstChild<Complement>();
         if (itemElement != null)
           itemElement.Remove();
       }
       if (value == true)
       {
-        var itemElement = new DocumentFormat.OpenXml.Drawing.Complement();
+        var itemElement = new Complement();
         openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static Boolean? GetInverse(DocumentFormat.OpenXml.Drawing.RgbColorModelPercentage? openXmlElement)
+
+  public static Boolean? GetInverse(RgbColorModelPercentage? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Inverse>();
+      var itemElement = openXmlElement.GetFirstChild<Inverse>();
       return itemElement != null;
     }
     return null;
   }
-  
-  public static void SetInverse(DocumentFormat.OpenXml.Drawing.RgbColorModelPercentage? openXmlElement, Boolean? value)
+
+  public static void SetInverse(RgbColorModelPercentage? openXmlElement, Boolean? value)
   {
     if (openXmlElement != null)
     {
       if (value == false)
       {
-        var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Inverse>();
+        var itemElement = openXmlElement.GetFirstChild<Inverse>();
         if (itemElement != null)
           itemElement.Remove();
       }
       if (value == true)
       {
-        var itemElement = new DocumentFormat.OpenXml.Drawing.Inverse();
+        var itemElement = new Inverse();
         openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static Boolean? GetGray(DocumentFormat.OpenXml.Drawing.RgbColorModelPercentage? openXmlElement)
+
+  public static Boolean? GetGray(RgbColorModelPercentage? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Gray>();
+      var itemElement = openXmlElement.GetFirstChild<Gray>();
       return itemElement != null;
     }
     return null;
   }
-  
-  public static void SetGray(DocumentFormat.OpenXml.Drawing.RgbColorModelPercentage? openXmlElement, Boolean? value)
+
+  public static void SetGray(RgbColorModelPercentage? openXmlElement, Boolean? value)
   {
     if (openXmlElement != null)
     {
       if (value == false)
       {
-        var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Gray>();
+        var itemElement = openXmlElement.GetFirstChild<Gray>();
         if (itemElement != null)
           itemElement.Remove();
       }
       if (value == true)
       {
-        var itemElement = new DocumentFormat.OpenXml.Drawing.Gray();
+        var itemElement = new Gray();
         openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static Int32? GetAlpha(DocumentFormat.OpenXml.Drawing.RgbColorModelPercentage? openXmlElement)
+
+  public static Int32? GetAlpha(RgbColorModelPercentage? openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.Alpha>();
+    var itemElement = openXmlElement?.GetFirstChild<Alpha>();
     if (itemElement != null)
       return itemElement.Val?.Value;
     return null;
   }
-  
-  public static void SetAlpha(DocumentFormat.OpenXml.Drawing.RgbColorModelPercentage? openXmlElement, Int32? value)
+
+  public static void SetAlpha(RgbColorModelPercentage? openXmlElement, Int32? value)
   {
     if (openXmlElement != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Alpha>();
+      var itemElement = openXmlElement.GetFirstChild<Alpha>();
       if (itemElement != null)
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = new DocumentFormat.OpenXml.Drawing.Alpha{ Val = value };
+        itemElement = new Alpha { Val = value };
         openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static Int32? GetAlphaOffset(DocumentFormat.OpenXml.Drawing.RgbColorModelPercentage? openXmlElement)
+
+  public static Int32? GetAlphaOffset(RgbColorModelPercentage? openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.AlphaOffset>();
+    var itemElement = openXmlElement?.GetFirstChild<AlphaOffset>();
     if (itemElement != null)
       return itemElement.Val?.Value;
     return null;
   }
-  
-  public static void SetAlphaOffset(DocumentFormat.OpenXml.Drawing.RgbColorModelPercentage? openXmlElement, Int32? value)
+
+  public static void SetAlphaOffset(RgbColorModelPercentage? openXmlElement, Int32? value)
   {
     if (openXmlElement != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.AlphaOffset>();
+      var itemElement = openXmlElement.GetFirstChild<AlphaOffset>();
       if (itemElement != null)
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = new DocumentFormat.OpenXml.Drawing.AlphaOffset{ Val = value };
+        itemElement = new AlphaOffset { Val = value };
         openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static Int32? GetAlphaModulation(DocumentFormat.OpenXml.Drawing.RgbColorModelPercentage? openXmlElement)
+
+  public static Int32? GetAlphaModulation(RgbColorModelPercentage? openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.AlphaModulation>();
+    var itemElement = openXmlElement?.GetFirstChild<AlphaModulation>();
     if (itemElement != null)
       return itemElement.Val?.Value;
     return null;
   }
-  
-  public static void SetAlphaModulation(DocumentFormat.OpenXml.Drawing.RgbColorModelPercentage? openXmlElement, Int32? value)
+
+  public static void SetAlphaModulation(RgbColorModelPercentage? openXmlElement, Int32? value)
   {
     if (openXmlElement != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.AlphaModulation>();
+      var itemElement = openXmlElement.GetFirstChild<AlphaModulation>();
       if (itemElement != null)
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = new DocumentFormat.OpenXml.Drawing.AlphaModulation{ Val = value };
+        itemElement = new AlphaModulation { Val = value };
         openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static Int32? GetHue(DocumentFormat.OpenXml.Drawing.RgbColorModelPercentage? openXmlElement)
+
+  public static Int32? GetHue(RgbColorModelPercentage? openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.Hue>();
+    var itemElement = openXmlElement?.GetFirstChild<Hue>();
     if (itemElement != null)
       return itemElement.Val?.Value;
     return null;
   }
-  
-  public static void SetHue(DocumentFormat.OpenXml.Drawing.RgbColorModelPercentage? openXmlElement, Int32? value)
+
+  public static void SetHue(RgbColorModelPercentage? openXmlElement, Int32? value)
   {
     if (openXmlElement != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Hue>();
+      var itemElement = openXmlElement.GetFirstChild<Hue>();
       if (itemElement != null)
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = new DocumentFormat.OpenXml.Drawing.Hue{ Val = value };
+        itemElement = new Hue { Val = value };
         openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static Int32? GetHueOffset(DocumentFormat.OpenXml.Drawing.RgbColorModelPercentage? openXmlElement)
+
+  public static Int32? GetHueOffset(RgbColorModelPercentage? openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.HueOffset>();
+    var itemElement = openXmlElement?.GetFirstChild<HueOffset>();
     if (itemElement != null)
       return itemElement.Val?.Value;
     return null;
   }
-  
-  public static void SetHueOffset(DocumentFormat.OpenXml.Drawing.RgbColorModelPercentage? openXmlElement, Int32? value)
+
+  public static void SetHueOffset(RgbColorModelPercentage? openXmlElement, Int32? value)
   {
     if (openXmlElement != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.HueOffset>();
+      var itemElement = openXmlElement.GetFirstChild<HueOffset>();
       if (itemElement != null)
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = new DocumentFormat.OpenXml.Drawing.HueOffset{ Val = value };
+        itemElement = new HueOffset { Val = value };
         openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static Int32? GetHueModulation(DocumentFormat.OpenXml.Drawing.RgbColorModelPercentage? openXmlElement)
+
+  public static Int32? GetHueModulation(RgbColorModelPercentage? openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.HueModulation>();
+    var itemElement = openXmlElement?.GetFirstChild<HueModulation>();
     if (itemElement != null)
       return itemElement.Val?.Value;
     return null;
   }
-  
-  public static void SetHueModulation(DocumentFormat.OpenXml.Drawing.RgbColorModelPercentage? openXmlElement, Int32? value)
+
+  public static void SetHueModulation(RgbColorModelPercentage? openXmlElement, Int32? value)
   {
     if (openXmlElement != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.HueModulation>();
+      var itemElement = openXmlElement.GetFirstChild<HueModulation>();
       if (itemElement != null)
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = new DocumentFormat.OpenXml.Drawing.HueModulation{ Val = value };
+        itemElement = new HueModulation { Val = value };
         openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static Int32? GetSaturation(DocumentFormat.OpenXml.Drawing.RgbColorModelPercentage? openXmlElement)
+
+  public static Int32? GetSaturation(RgbColorModelPercentage? openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.Saturation>();
+    var itemElement = openXmlElement?.GetFirstChild<Saturation>();
     if (itemElement != null)
       return itemElement.Val?.Value;
     return null;
   }
-  
-  public static void SetSaturation(DocumentFormat.OpenXml.Drawing.RgbColorModelPercentage? openXmlElement, Int32? value)
+
+  public static void SetSaturation(RgbColorModelPercentage? openXmlElement, Int32? value)
   {
     if (openXmlElement != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Saturation>();
+      var itemElement = openXmlElement.GetFirstChild<Saturation>();
       if (itemElement != null)
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = new DocumentFormat.OpenXml.Drawing.Saturation{ Val = value };
+        itemElement = new Saturation { Val = value };
         openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static Int32? GetSaturationOffset(DocumentFormat.OpenXml.Drawing.RgbColorModelPercentage? openXmlElement)
+
+  public static Int32? GetSaturationOffset(RgbColorModelPercentage? openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.SaturationOffset>();
+    var itemElement = openXmlElement?.GetFirstChild<SaturationOffset>();
     if (itemElement != null)
       return itemElement.Val?.Value;
     return null;
   }
-  
-  public static void SetSaturationOffset(DocumentFormat.OpenXml.Drawing.RgbColorModelPercentage? openXmlElement, Int32? value)
+
+  public static void SetSaturationOffset(RgbColorModelPercentage? openXmlElement, Int32? value)
   {
     if (openXmlElement != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.SaturationOffset>();
+      var itemElement = openXmlElement.GetFirstChild<SaturationOffset>();
       if (itemElement != null)
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = new DocumentFormat.OpenXml.Drawing.SaturationOffset{ Val = value };
+        itemElement = new SaturationOffset { Val = value };
         openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static Int32? GetSaturationModulation(DocumentFormat.OpenXml.Drawing.RgbColorModelPercentage? openXmlElement)
+
+  public static Int32? GetSaturationModulation(RgbColorModelPercentage? openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.SaturationModulation>();
+    var itemElement = openXmlElement?.GetFirstChild<SaturationModulation>();
     if (itemElement != null)
       return itemElement.Val?.Value;
     return null;
   }
-  
-  public static void SetSaturationModulation(DocumentFormat.OpenXml.Drawing.RgbColorModelPercentage? openXmlElement, Int32? value)
+
+  public static void SetSaturationModulation(RgbColorModelPercentage? openXmlElement, Int32? value)
   {
     if (openXmlElement != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.SaturationModulation>();
+      var itemElement = openXmlElement.GetFirstChild<SaturationModulation>();
       if (itemElement != null)
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = new DocumentFormat.OpenXml.Drawing.SaturationModulation{ Val = value };
+        itemElement = new SaturationModulation { Val = value };
         openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static Int32? GetLuminance(DocumentFormat.OpenXml.Drawing.RgbColorModelPercentage? openXmlElement)
+
+  public static Int32? GetLuminance(RgbColorModelPercentage? openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.Luminance>();
+    var itemElement = openXmlElement?.GetFirstChild<Luminance>();
     if (itemElement != null)
       return itemElement.Val?.Value;
     return null;
   }
-  
-  public static void SetLuminance(DocumentFormat.OpenXml.Drawing.RgbColorModelPercentage? openXmlElement, Int32? value)
+
+  public static void SetLuminance(RgbColorModelPercentage? openXmlElement, Int32? value)
   {
     if (openXmlElement != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Luminance>();
+      var itemElement = openXmlElement.GetFirstChild<Luminance>();
       if (itemElement != null)
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = new DocumentFormat.OpenXml.Drawing.Luminance{ Val = value };
+        itemElement = new Luminance { Val = value };
         openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static Int32? GetLuminanceOffset(DocumentFormat.OpenXml.Drawing.RgbColorModelPercentage? openXmlElement)
+
+  public static Int32? GetLuminanceOffset(RgbColorModelPercentage? openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.LuminanceOffset>();
+    var itemElement = openXmlElement?.GetFirstChild<LuminanceOffset>();
     if (itemElement != null)
       return itemElement.Val?.Value;
     return null;
   }
-  
-  public static void SetLuminanceOffset(DocumentFormat.OpenXml.Drawing.RgbColorModelPercentage? openXmlElement, Int32? value)
+
+  public static void SetLuminanceOffset(RgbColorModelPercentage? openXmlElement, Int32? value)
   {
     if (openXmlElement != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.LuminanceOffset>();
+      var itemElement = openXmlElement.GetFirstChild<LuminanceOffset>();
       if (itemElement != null)
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = new DocumentFormat.OpenXml.Drawing.LuminanceOffset{ Val = value };
+        itemElement = new LuminanceOffset { Val = value };
         openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static Int32? GetLuminanceModulation(DocumentFormat.OpenXml.Drawing.RgbColorModelPercentage? openXmlElement)
+
+  public static Int32? GetLuminanceModulation(RgbColorModelPercentage? openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.LuminanceModulation>();
+    var itemElement = openXmlElement?.GetFirstChild<LuminanceModulation>();
     if (itemElement != null)
       return itemElement.Val?.Value;
     return null;
   }
-  
-  public static void SetLuminanceModulation(DocumentFormat.OpenXml.Drawing.RgbColorModelPercentage? openXmlElement, Int32? value)
+
+  public static void SetLuminanceModulation(RgbColorModelPercentage? openXmlElement, Int32? value)
   {
     if (openXmlElement != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.LuminanceModulation>();
+      var itemElement = openXmlElement.GetFirstChild<LuminanceModulation>();
       if (itemElement != null)
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = new DocumentFormat.OpenXml.Drawing.LuminanceModulation{ Val = value };
+        itemElement = new LuminanceModulation { Val = value };
         openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static Int32? GetRed(DocumentFormat.OpenXml.Drawing.RgbColorModelPercentage? openXmlElement)
+
+  public static Int32? GetRed(RgbColorModelPercentage? openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.Red>();
+    var itemElement = openXmlElement?.GetFirstChild<Red>();
     if (itemElement != null)
       return itemElement.Val?.Value;
     return null;
   }
-  
-  public static void SetRed(DocumentFormat.OpenXml.Drawing.RgbColorModelPercentage? openXmlElement, Int32? value)
+
+  public static void SetRed(RgbColorModelPercentage? openXmlElement, Int32? value)
   {
     if (openXmlElement != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Red>();
+      var itemElement = openXmlElement.GetFirstChild<Red>();
       if (itemElement != null)
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = new DocumentFormat.OpenXml.Drawing.Red{ Val = value };
+        itemElement = new Red { Val = value };
         openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static Int32? GetRedOffset(DocumentFormat.OpenXml.Drawing.RgbColorModelPercentage? openXmlElement)
+
+  public static Int32? GetRedOffset(RgbColorModelPercentage? openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.RedOffset>();
+    var itemElement = openXmlElement?.GetFirstChild<RedOffset>();
     if (itemElement != null)
       return itemElement.Val?.Value;
     return null;
   }
-  
-  public static void SetRedOffset(DocumentFormat.OpenXml.Drawing.RgbColorModelPercentage? openXmlElement, Int32? value)
+
+  public static void SetRedOffset(RgbColorModelPercentage? openXmlElement, Int32? value)
   {
     if (openXmlElement != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.RedOffset>();
+      var itemElement = openXmlElement.GetFirstChild<RedOffset>();
       if (itemElement != null)
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = new DocumentFormat.OpenXml.Drawing.RedOffset{ Val = value };
+        itemElement = new RedOffset { Val = value };
         openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static Int32? GetRedModulation(DocumentFormat.OpenXml.Drawing.RgbColorModelPercentage? openXmlElement)
+
+  public static Int32? GetRedModulation(RgbColorModelPercentage? openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.RedModulation>();
+    var itemElement = openXmlElement?.GetFirstChild<RedModulation>();
     if (itemElement != null)
       return itemElement.Val?.Value;
     return null;
   }
-  
-  public static void SetRedModulation(DocumentFormat.OpenXml.Drawing.RgbColorModelPercentage? openXmlElement, Int32? value)
+
+  public static void SetRedModulation(RgbColorModelPercentage? openXmlElement, Int32? value)
   {
     if (openXmlElement != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.RedModulation>();
+      var itemElement = openXmlElement.GetFirstChild<RedModulation>();
       if (itemElement != null)
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = new DocumentFormat.OpenXml.Drawing.RedModulation{ Val = value };
+        itemElement = new RedModulation { Val = value };
         openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static Int32? GetGreen(DocumentFormat.OpenXml.Drawing.RgbColorModelPercentage? openXmlElement)
+
+  public static Int32? GetGreen(RgbColorModelPercentage? openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.Green>();
+    var itemElement = openXmlElement?.GetFirstChild<Green>();
     if (itemElement != null)
       return itemElement.Val?.Value;
     return null;
   }
-  
-  public static void SetGreen(DocumentFormat.OpenXml.Drawing.RgbColorModelPercentage? openXmlElement, Int32? value)
+
+  public static void SetGreen(RgbColorModelPercentage? openXmlElement, Int32? value)
   {
     if (openXmlElement != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Green>();
+      var itemElement = openXmlElement.GetFirstChild<Green>();
       if (itemElement != null)
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = new DocumentFormat.OpenXml.Drawing.Green{ Val = value };
+        itemElement = new Green { Val = value };
         openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static Int32? GetGreenOffset(DocumentFormat.OpenXml.Drawing.RgbColorModelPercentage? openXmlElement)
+
+  public static Int32? GetGreenOffset(RgbColorModelPercentage? openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.GreenOffset>();
+    var itemElement = openXmlElement?.GetFirstChild<GreenOffset>();
     if (itemElement != null)
       return itemElement.Val?.Value;
     return null;
   }
-  
-  public static void SetGreenOffset(DocumentFormat.OpenXml.Drawing.RgbColorModelPercentage? openXmlElement, Int32? value)
+
+  public static void SetGreenOffset(RgbColorModelPercentage? openXmlElement, Int32? value)
   {
     if (openXmlElement != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.GreenOffset>();
+      var itemElement = openXmlElement.GetFirstChild<GreenOffset>();
       if (itemElement != null)
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = new DocumentFormat.OpenXml.Drawing.GreenOffset{ Val = value };
+        itemElement = new GreenOffset { Val = value };
         openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static Int32? GetGreenModulation(DocumentFormat.OpenXml.Drawing.RgbColorModelPercentage? openXmlElement)
+
+  public static Int32? GetGreenModulation(RgbColorModelPercentage? openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.GreenModulation>();
+    var itemElement = openXmlElement?.GetFirstChild<GreenModulation>();
     if (itemElement != null)
       return itemElement.Val?.Value;
     return null;
   }
-  
-  public static void SetGreenModulation(DocumentFormat.OpenXml.Drawing.RgbColorModelPercentage? openXmlElement, Int32? value)
+
+  public static void SetGreenModulation(RgbColorModelPercentage? openXmlElement, Int32? value)
   {
     if (openXmlElement != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.GreenModulation>();
+      var itemElement = openXmlElement.GetFirstChild<GreenModulation>();
       if (itemElement != null)
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = new DocumentFormat.OpenXml.Drawing.GreenModulation{ Val = value };
+        itemElement = new GreenModulation { Val = value };
         openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static Int32? GetBlue(DocumentFormat.OpenXml.Drawing.RgbColorModelPercentage? openXmlElement)
+
+  public static Int32? GetBlue(RgbColorModelPercentage? openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.Blue>();
+    var itemElement = openXmlElement?.GetFirstChild<Blue>();
     if (itemElement != null)
       return itemElement.Val?.Value;
     return null;
   }
-  
-  public static void SetBlue(DocumentFormat.OpenXml.Drawing.RgbColorModelPercentage? openXmlElement, Int32? value)
+
+  public static void SetBlue(RgbColorModelPercentage? openXmlElement, Int32? value)
   {
     if (openXmlElement != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Blue>();
+      var itemElement = openXmlElement.GetFirstChild<Blue>();
       if (itemElement != null)
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = new DocumentFormat.OpenXml.Drawing.Blue{ Val = value };
+        itemElement = new Blue { Val = value };
         openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static Int32? GetBlueOffset(DocumentFormat.OpenXml.Drawing.RgbColorModelPercentage? openXmlElement)
+
+  public static Int32? GetBlueOffset(RgbColorModelPercentage? openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.BlueOffset>();
+    var itemElement = openXmlElement?.GetFirstChild<BlueOffset>();
     if (itemElement != null)
       return itemElement.Val?.Value;
     return null;
   }
-  
-  public static void SetBlueOffset(DocumentFormat.OpenXml.Drawing.RgbColorModelPercentage? openXmlElement, Int32? value)
+
+  public static void SetBlueOffset(RgbColorModelPercentage? openXmlElement, Int32? value)
   {
     if (openXmlElement != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.BlueOffset>();
+      var itemElement = openXmlElement.GetFirstChild<BlueOffset>();
       if (itemElement != null)
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = new DocumentFormat.OpenXml.Drawing.BlueOffset{ Val = value };
+        itemElement = new BlueOffset { Val = value };
         openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static Int32? GetBlueModulation(DocumentFormat.OpenXml.Drawing.RgbColorModelPercentage? openXmlElement)
+
+  public static Int32? GetBlueModulation(RgbColorModelPercentage? openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.BlueModulation>();
+    var itemElement = openXmlElement?.GetFirstChild<BlueModulation>();
     if (itemElement != null)
       return itemElement.Val?.Value;
     return null;
   }
-  
-  public static void SetBlueModulation(DocumentFormat.OpenXml.Drawing.RgbColorModelPercentage? openXmlElement, Int32? value)
+
+  public static void SetBlueModulation(RgbColorModelPercentage? openXmlElement, Int32? value)
   {
     if (openXmlElement != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.BlueModulation>();
+      var itemElement = openXmlElement.GetFirstChild<BlueModulation>();
       if (itemElement != null)
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = new DocumentFormat.OpenXml.Drawing.BlueModulation{ Val = value };
+        itemElement = new BlueModulation { Val = value };
         openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static Boolean? GetGamma(DocumentFormat.OpenXml.Drawing.RgbColorModelPercentage? openXmlElement)
+
+  public static Boolean? GetGamma(RgbColorModelPercentage? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Gamma>();
+      var itemElement = openXmlElement.GetFirstChild<Gamma>();
       return itemElement != null;
     }
     return null;
   }
-  
-  public static void SetGamma(DocumentFormat.OpenXml.Drawing.RgbColorModelPercentage? openXmlElement, Boolean? value)
+
+  public static void SetGamma(RgbColorModelPercentage? openXmlElement, Boolean? value)
   {
     if (openXmlElement != null)
     {
       if (value == false)
       {
-        var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Gamma>();
+        var itemElement = openXmlElement.GetFirstChild<Gamma>();
         if (itemElement != null)
           itemElement.Remove();
       }
       if (value == true)
       {
-        var itemElement = new DocumentFormat.OpenXml.Drawing.Gamma();
+        var itemElement = new Gamma();
         openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static Boolean? GetInverseGamma(DocumentFormat.OpenXml.Drawing.RgbColorModelPercentage? openXmlElement)
+
+  public static Boolean? GetInverseGamma(RgbColorModelPercentage? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.InverseGamma>();
+      var itemElement = openXmlElement.GetFirstChild<InverseGamma>();
       return itemElement != null;
     }
     return null;
   }
-  
-  public static void SetInverseGamma(DocumentFormat.OpenXml.Drawing.RgbColorModelPercentage? openXmlElement, Boolean? value)
+
+  public static void SetInverseGamma(RgbColorModelPercentage? openXmlElement, Boolean? value)
   {
     if (openXmlElement != null)
     {
       if (value == false)
       {
-        var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.InverseGamma>();
+        var itemElement = openXmlElement.GetFirstChild<InverseGamma>();
         if (itemElement != null)
           itemElement.Remove();
       }
       if (value == true)
       {
-        var itemElement = new DocumentFormat.OpenXml.Drawing.InverseGamma();
+        var itemElement = new InverseGamma();
         openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static DocumentModel.Drawings.RgbColorModelPercentage? CreateModelElement(DocumentFormat.OpenXml.Drawing.RgbColorModelPercentage? openXmlElement)
+
+  public static DocumentModel.Drawings.RgbColorModelPercentage? CreateModelElement(RgbColorModelPercentage? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -756,9 +758,9 @@ public static class RgbColorModelPercentageConverter
     }
     return null;
   }
-  
+
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.RgbColorModelPercentage? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.RgbColorModelPercentage, new()
+    where OpenXmlElementType : RgbColorModelPercentage, new()
   {
     if (value != null)
     {

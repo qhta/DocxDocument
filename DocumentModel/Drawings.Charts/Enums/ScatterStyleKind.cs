@@ -1,33 +1,32 @@
 namespace DocumentModel.Drawings.Charts;
 
 /// <summary>
-/// Scatter Style
+///   Scatter Style
 /// </summary>
 public enum ScatterStyleKind
 {
   /// <summary>
-  /// Line.
+  ///   Line.
   /// </summary>
   Line,
-  
+
   /// <summary>
-  /// Line with Markers.
+  ///   Line with Markers.
   /// </summary>
   LineMarker,
-  
+
   /// <summary>
-  /// Marker.
+  ///   Marker.
   /// </summary>
   Marker,
-  
+
   /// <summary>
-  /// Smooth.
+  ///   Smooth.
   /// </summary>
   Smooth,
-  
+
   /// <summary>
-  /// Smooth with Markers.
+  ///   Smooth with Markers.
   /// </summary>
-  SmoothMarker,
-  
+  SmoothMarker
 }

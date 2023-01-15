@@ -1,13 +1,12 @@
 namespace DocumentModel.Packaging;
 
 /// <summary>
-/// Represents a hyperlink relationship.
+///   Represents a hyperlink relationship.
 /// </summary>
-public partial class HyperlinkRelationship
+public class HyperlinkRelationship
 {
   /// <summary>
-  /// Gets the relationship type.
+  ///   Gets the relationship type.
   /// </summary>
   public String? RelationshipType { get; set; }
-  
 }

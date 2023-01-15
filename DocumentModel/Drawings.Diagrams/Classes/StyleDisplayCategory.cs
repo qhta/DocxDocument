@@ -1,18 +1,17 @@
 namespace DocumentModel.Drawings.Diagrams;
 
 /// <summary>
-/// Category.
+///   Category.
 /// </summary>
-public partial class StyleDisplayCategory
+public class StyleDisplayCategory
 {
   /// <summary>
-  /// Category Type
+  ///   Category Type
   /// </summary>
   public String? Type { get; set; }
-  
+
   /// <summary>
-  /// Priority
+  ///   Priority
   /// </summary>
   public UInt32? Priority { get; set; }
-  
 }

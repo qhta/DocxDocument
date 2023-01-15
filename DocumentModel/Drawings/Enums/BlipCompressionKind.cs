@@ -1,33 +1,32 @@
 namespace DocumentModel.Drawings;
 
 /// <summary>
-/// Blip Compression Type
+///   Blip Compression Type
 /// </summary>
 public enum BlipCompressionKind
 {
   /// <summary>
-  /// Email Compression.
+  ///   Email Compression.
   /// </summary>
   Email,
-  
+
   /// <summary>
-  /// Screen Viewing Compression.
+  ///   Screen Viewing Compression.
   /// </summary>
   Screen,
-  
+
   /// <summary>
-  /// Printing Compression.
+  ///   Printing Compression.
   /// </summary>
   Print,
-  
+
   /// <summary>
-  /// High Quality Printing Compression.
+  ///   High Quality Printing Compression.
   /// </summary>
   HighQualityPrint,
-  
+
   /// <summary>
-  /// No Compression.
+  ///   No Compression.
   /// </summary>
-  None,
-  
+  None
 }

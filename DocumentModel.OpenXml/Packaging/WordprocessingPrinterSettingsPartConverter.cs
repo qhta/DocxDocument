@@ -1,21 +1,23 @@
+using DocumentFormat.OpenXml.Packaging;
+
 namespace DocumentModel.OpenXml.Packaging;
 
 /// <summary>
-/// Defines the WordprocessingPrinterSettingsPart
+///   Defines the WordprocessingPrinterSettingsPart
 /// </summary>
 public static class WordprocessingPrinterSettingsPartConverter
 {
-  public static String? GetContentType(DocumentFormat.OpenXml.Packaging.WordprocessingPrinterSettingsPart? openXmlElement)
+  public static String? GetContentType(WordprocessingPrinterSettingsPart? openXmlElement)
   {
     return openXmlElement?.ContentType;
   }
-  
-  public static String? GetRelationshipType(DocumentFormat.OpenXml.Packaging.WordprocessingPrinterSettingsPart? openXmlElement)
+
+  public static String? GetRelationshipType(WordprocessingPrinterSettingsPart? openXmlElement)
   {
     return openXmlElement?.RelationshipType;
   }
-  
-  public static DocumentModel.Packaging.WordprocessingPrinterSettingsPart? CreateModelElement(DocumentFormat.OpenXml.Packaging.WordprocessingPrinterSettingsPart? openXmlElement)
+
+  public static DocumentModel.Packaging.WordprocessingPrinterSettingsPart? CreateModelElement(WordprocessingPrinterSettingsPart? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -26,9 +28,9 @@ public static class WordprocessingPrinterSettingsPartConverter
     }
     return null;
   }
-  
+
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Packaging.WordprocessingPrinterSettingsPart? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Packaging.WordprocessingPrinterSettingsPart, new()
+    where OpenXmlElementType : WordprocessingPrinterSettingsPart, new()
   {
     if (value != null)
     {

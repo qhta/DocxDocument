@@ -1,15 +1,16 @@
+using DocumentModel.Drawings.Diagrams;
+
 namespace DocumentModel.Drawings;
 
 /// <summary>
-/// Defines the PtExtension Class.
+///   Defines the PtExtension Class.
 /// </summary>
-public partial class PtExtension
+public class PtExtension
 {
   /// <summary>
-  /// URI
+  ///   URI
   /// </summary>
   public String? Uri { get; set; }
-  
-  public DocumentModel.Drawings.Diagrams.NonVisualDrawingProperties? NonVisualDrawingProperties { get; set; }
-  
+
+  public NonVisualDrawingProperties? NonVisualDrawingProperties { get; set; }
 }

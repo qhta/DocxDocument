@@ -1,18 +1,17 @@
 namespace DocumentModel.Math;
 
 /// <summary>
-/// Box Function.
+///   Box Function.
 /// </summary>
-public partial class Box
+public class Box
 {
   /// <summary>
-  /// Box Properties.
+  ///   Box Properties.
   /// </summary>
-  public DocumentModel.Math.BoxProperties? BoxProperties { get; set; }
-  
+  public BoxProperties? BoxProperties { get; set; }
+
   /// <summary>
-  /// Base.
+  ///   Base.
   /// </summary>
-  public DocumentModel.Math.Base? Base { get; set; }
-  
+  public Base? Base { get; set; }
 }

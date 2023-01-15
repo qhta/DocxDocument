@@ -1,42 +1,46 @@
+using DocumentFormat.OpenXml.Packaging;
+using DocumentModel.OpenXml.Properties;
+using DocumentModel.Properties;
+
 namespace DocumentModel.OpenXml.Packaging;
 
 /// <summary>
-/// Defines the ExtendedFilePropertiesPart
+///   Defines the ExtendedFilePropertiesPart
 /// </summary>
 public static class ExtendedFilePropertiesPartConverter
 {
-  public static String? GetContentType(DocumentFormat.OpenXml.Packaging.ExtendedFilePropertiesPart? openXmlElement)
+  public static String? GetContentType(ExtendedFilePropertiesPart? openXmlElement)
   {
     return openXmlElement?.ContentType;
   }
-  
+
   /// <summary>
-  /// Gets or sets the root element of this part.
+  ///   Gets or sets the root element of this part.
   /// </summary>
-  public static DocumentModel.Properties.ExtendedProperties? GetProperties(DocumentFormat.OpenXml.Packaging.ExtendedFilePropertiesPart? openXmlElement)
+  public static ExtendedProperties? GetProperties(ExtendedFilePropertiesPart? openXmlElement)
   {
     if (openXmlElement?.RootElement is DocumentFormat.OpenXml.ExtendedProperties.Properties rootElement)
-      return DocumentModel.OpenXml.Properties.ExtendedPropertiesConverter.CreateModelElement(rootElement);
+      return ExtendedPropertiesConverter.CreateModelElement(rootElement);
     return null;
   }
-  
-  public static void SetProperties(DocumentFormat.OpenXml.Packaging.ExtendedFilePropertiesPart? openXmlElement, DocumentModel.Properties.ExtendedProperties? value)
+
+  public static void SetProperties(ExtendedFilePropertiesPart? openXmlElement, ExtendedProperties? value)
   {
     if (openXmlElement != null)
       if (value != null)
       {
-         var rootElement = DocumentModel.OpenXml.Properties.ExtendedPropertiesConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.ExtendedProperties.Properties>(value);
-         if (rootElement != null)
-           openXmlElement.Properties = rootElement;
+        var rootElement = ExtendedPropertiesConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.ExtendedProperties.Properties>(value);
+        if (rootElement != null)
+          openXmlElement.Properties = rootElement;
       }
   }
-  
-  public static String? GetRelationshipType(DocumentFormat.OpenXml.Packaging.ExtendedFilePropertiesPart? openXmlElement)
+
+  public static String? GetRelationshipType(ExtendedFilePropertiesPart? openXmlElement)
   {
     return openXmlElement?.RelationshipType;
   }
-  
-  public static DocumentModel.Packaging.ExtendedFilePropertiesPart? CreateModelElement(DocumentFormat.OpenXml.Packaging.ExtendedFilePropertiesPart? openXmlElement)
+
+  public static DocumentModel.Packaging.ExtendedFilePropertiesPart? CreateModelElement(ExtendedFilePropertiesPart? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -48,9 +52,9 @@ public static class ExtendedFilePropertiesPartConverter
     }
     return null;
   }
-  
+
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Packaging.ExtendedFilePropertiesPart? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Packaging.ExtendedFilePropertiesPart, new()
+    where OpenXmlElementType : ExtendedFilePropertiesPart, new()
   {
     if (value != null)
     {

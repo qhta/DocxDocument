@@ -1,8 +1,10 @@
-﻿namespace DocumentModel.OpenXml;
+﻿using DocumentFormat.OpenXml.Drawing.Charts;
+
+namespace DocumentModel.OpenXml;
 
 public static class UInt32ValueConverter
 {
-  public static UInt32? GetValue(DocumentFormat.OpenXml.Drawing.Charts.UnsignedIntegerType element)
+  public static UInt32? GetValue(UnsignedIntegerType element)
   {
     return element.Val?.Value;
   }
@@ -18,7 +20,7 @@ public static class UInt32ValueConverter
   }
 
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(UInt32 value)
-    where OpenXmlElementType : DocumentFormat.OpenXml.OpenXmlElement, new()
+    where OpenXmlElementType : OpenXmlElement, new()
   {
     var element = new OpenXmlElementType();
     var valProperty = typeof(OpenXmlElementType).GetProperty("Val");
@@ -26,5 +28,4 @@ public static class UInt32ValueConverter
       valProperty.SetValue(element, value);
     return element;
   }
-
 }

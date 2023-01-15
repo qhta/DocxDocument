@@ -1,18 +1,17 @@
 namespace DocumentModel.Drawings;
 
 /// <summary>
-/// Defines the TextSpacingType Class.
+///   Defines the TextSpacingType Class.
 /// </summary>
-public partial class TextSpacingType
+public class TextSpacingType
 {
   /// <summary>
-  /// Spacing Percent.
+  ///   Spacing Percent.
   /// </summary>
   public Int32? SpacingPercent { get; set; }
-  
+
   /// <summary>
-  /// Spacing Points.
+  ///   Spacing Points.
   /// </summary>
   public Int32? SpacingPoints { get; set; }
-  
 }

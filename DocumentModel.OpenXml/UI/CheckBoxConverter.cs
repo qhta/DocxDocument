@@ -1,18 +1,18 @@
 namespace DocumentModel.OpenXml.UI;
 
 /// <summary>
-/// Defines the CheckBox Class.
+///   Defines the CheckBox Class.
 /// </summary>
 public static class CheckBoxConverter
 {
   /// <summary>
-  /// getPressed
+  ///   getPressed
   /// </summary>
   public static String? GetGetPressed(DocumentFormat.OpenXml.Office.CustomUI.CheckBox? openXmlElement)
   {
     return openXmlElement?.GetPressed?.Value;
   }
-  
+
   public static void SetGetPressed(DocumentFormat.OpenXml.Office.CustomUI.CheckBox? openXmlElement, String? value)
   {
     if (openXmlElement != null)
@@ -21,15 +21,15 @@ public static class CheckBoxConverter
       else
         openXmlElement.GetPressed = null;
   }
-  
+
   /// <summary>
-  /// onAction
+  ///   onAction
   /// </summary>
   public static String? GetOnAction(DocumentFormat.OpenXml.Office.CustomUI.CheckBox? openXmlElement)
   {
     return openXmlElement?.OnAction?.Value;
   }
-  
+
   public static void SetOnAction(DocumentFormat.OpenXml.Office.CustomUI.CheckBox? openXmlElement, String? value)
   {
     if (openXmlElement != null)
@@ -38,15 +38,15 @@ public static class CheckBoxConverter
       else
         openXmlElement.OnAction = null;
   }
-  
+
   /// <summary>
-  /// enabled
+  ///   enabled
   /// </summary>
   public static Boolean? GetEnabled(DocumentFormat.OpenXml.Office.CustomUI.CheckBox? openXmlElement)
   {
     return openXmlElement?.Enabled?.Value;
   }
-  
+
   public static void SetEnabled(DocumentFormat.OpenXml.Office.CustomUI.CheckBox? openXmlElement, Boolean? value)
   {
     if (openXmlElement != null)
@@ -55,15 +55,15 @@ public static class CheckBoxConverter
       else
         openXmlElement.Enabled = null;
   }
-  
+
   /// <summary>
-  /// getEnabled
+  ///   getEnabled
   /// </summary>
   public static String? GetGetEnabled(DocumentFormat.OpenXml.Office.CustomUI.CheckBox? openXmlElement)
   {
     return openXmlElement?.GetEnabled?.Value;
   }
-  
+
   public static void SetGetEnabled(DocumentFormat.OpenXml.Office.CustomUI.CheckBox? openXmlElement, String? value)
   {
     if (openXmlElement != null)
@@ -72,15 +72,15 @@ public static class CheckBoxConverter
       else
         openXmlElement.GetEnabled = null;
   }
-  
+
   /// <summary>
-  /// description
+  ///   description
   /// </summary>
   public static String? GetDescription(DocumentFormat.OpenXml.Office.CustomUI.CheckBox? openXmlElement)
   {
     return openXmlElement?.Description?.Value;
   }
-  
+
   public static void SetDescription(DocumentFormat.OpenXml.Office.CustomUI.CheckBox? openXmlElement, String? value)
   {
     if (openXmlElement != null)
@@ -89,15 +89,15 @@ public static class CheckBoxConverter
       else
         openXmlElement.Description = null;
   }
-  
+
   /// <summary>
-  /// getDescription
+  ///   getDescription
   /// </summary>
   public static String? GetGetDescription(DocumentFormat.OpenXml.Office.CustomUI.CheckBox? openXmlElement)
   {
     return openXmlElement?.GetDescription?.Value;
   }
-  
+
   public static void SetGetDescription(DocumentFormat.OpenXml.Office.CustomUI.CheckBox? openXmlElement, String? value)
   {
     if (openXmlElement != null)
@@ -106,15 +106,15 @@ public static class CheckBoxConverter
       else
         openXmlElement.GetDescription = null;
   }
-  
+
   /// <summary>
-  /// id
+  ///   id
   /// </summary>
   public static String? GetId(DocumentFormat.OpenXml.Office.CustomUI.CheckBox? openXmlElement)
   {
     return openXmlElement?.Id?.Value;
   }
-  
+
   public static void SetId(DocumentFormat.OpenXml.Office.CustomUI.CheckBox? openXmlElement, String? value)
   {
     if (openXmlElement != null)
@@ -123,15 +123,15 @@ public static class CheckBoxConverter
       else
         openXmlElement.Id = null;
   }
-  
+
   /// <summary>
-  /// idQ
+  ///   idQ
   /// </summary>
   public static String? GetIdQ(DocumentFormat.OpenXml.Office.CustomUI.CheckBox? openXmlElement)
   {
     return openXmlElement?.IdQ?.Value;
   }
-  
+
   public static void SetIdQ(DocumentFormat.OpenXml.Office.CustomUI.CheckBox? openXmlElement, String? value)
   {
     if (openXmlElement != null)
@@ -140,15 +140,15 @@ public static class CheckBoxConverter
       else
         openXmlElement.IdQ = null;
   }
-  
+
   /// <summary>
-  /// idMso
+  ///   idMso
   /// </summary>
   public static String? GetIdMso(DocumentFormat.OpenXml.Office.CustomUI.CheckBox? openXmlElement)
   {
     return openXmlElement?.IdMso?.Value;
   }
-  
+
   public static void SetIdMso(DocumentFormat.OpenXml.Office.CustomUI.CheckBox? openXmlElement, String? value)
   {
     if (openXmlElement != null)
@@ -157,15 +157,15 @@ public static class CheckBoxConverter
       else
         openXmlElement.IdMso = null;
   }
-  
+
   /// <summary>
-  /// tag
+  ///   tag
   /// </summary>
   public static String? GetTag(DocumentFormat.OpenXml.Office.CustomUI.CheckBox? openXmlElement)
   {
     return openXmlElement?.Tag?.Value;
   }
-  
+
   public static void SetTag(DocumentFormat.OpenXml.Office.CustomUI.CheckBox? openXmlElement, String? value)
   {
     if (openXmlElement != null)
@@ -174,15 +174,15 @@ public static class CheckBoxConverter
       else
         openXmlElement.Tag = null;
   }
-  
+
   /// <summary>
-  /// screentip
+  ///   screentip
   /// </summary>
   public static String? GetScreentip(DocumentFormat.OpenXml.Office.CustomUI.CheckBox? openXmlElement)
   {
     return openXmlElement?.Screentip?.Value;
   }
-  
+
   public static void SetScreentip(DocumentFormat.OpenXml.Office.CustomUI.CheckBox? openXmlElement, String? value)
   {
     if (openXmlElement != null)
@@ -191,15 +191,15 @@ public static class CheckBoxConverter
       else
         openXmlElement.Screentip = null;
   }
-  
+
   /// <summary>
-  /// getScreentip
+  ///   getScreentip
   /// </summary>
   public static String? GetGetScreentip(DocumentFormat.OpenXml.Office.CustomUI.CheckBox? openXmlElement)
   {
     return openXmlElement?.GetScreentip?.Value;
   }
-  
+
   public static void SetGetScreentip(DocumentFormat.OpenXml.Office.CustomUI.CheckBox? openXmlElement, String? value)
   {
     if (openXmlElement != null)
@@ -208,15 +208,15 @@ public static class CheckBoxConverter
       else
         openXmlElement.GetScreentip = null;
   }
-  
+
   /// <summary>
-  /// supertip
+  ///   supertip
   /// </summary>
   public static String? GetSupertip(DocumentFormat.OpenXml.Office.CustomUI.CheckBox? openXmlElement)
   {
     return openXmlElement?.Supertip?.Value;
   }
-  
+
   public static void SetSupertip(DocumentFormat.OpenXml.Office.CustomUI.CheckBox? openXmlElement, String? value)
   {
     if (openXmlElement != null)
@@ -225,15 +225,15 @@ public static class CheckBoxConverter
       else
         openXmlElement.Supertip = null;
   }
-  
+
   /// <summary>
-  /// getSupertip
+  ///   getSupertip
   /// </summary>
   public static String? GetGetSupertip(DocumentFormat.OpenXml.Office.CustomUI.CheckBox? openXmlElement)
   {
     return openXmlElement?.GetSupertip?.Value;
   }
-  
+
   public static void SetGetSupertip(DocumentFormat.OpenXml.Office.CustomUI.CheckBox? openXmlElement, String? value)
   {
     if (openXmlElement != null)
@@ -242,15 +242,15 @@ public static class CheckBoxConverter
       else
         openXmlElement.GetSupertip = null;
   }
-  
+
   /// <summary>
-  /// label
+  ///   label
   /// </summary>
   public static String? GetLabel(DocumentFormat.OpenXml.Office.CustomUI.CheckBox? openXmlElement)
   {
     return openXmlElement?.Label?.Value;
   }
-  
+
   public static void SetLabel(DocumentFormat.OpenXml.Office.CustomUI.CheckBox? openXmlElement, String? value)
   {
     if (openXmlElement != null)
@@ -259,15 +259,15 @@ public static class CheckBoxConverter
       else
         openXmlElement.Label = null;
   }
-  
+
   /// <summary>
-  /// getLabel
+  ///   getLabel
   /// </summary>
   public static String? GetGetLabel(DocumentFormat.OpenXml.Office.CustomUI.CheckBox? openXmlElement)
   {
     return openXmlElement?.GetLabel?.Value;
   }
-  
+
   public static void SetGetLabel(DocumentFormat.OpenXml.Office.CustomUI.CheckBox? openXmlElement, String? value)
   {
     if (openXmlElement != null)
@@ -276,15 +276,15 @@ public static class CheckBoxConverter
       else
         openXmlElement.GetLabel = null;
   }
-  
+
   /// <summary>
-  /// insertAfterMso
+  ///   insertAfterMso
   /// </summary>
   public static String? GetInsertAfterMso(DocumentFormat.OpenXml.Office.CustomUI.CheckBox? openXmlElement)
   {
     return openXmlElement?.InsertAfterMso?.Value;
   }
-  
+
   public static void SetInsertAfterMso(DocumentFormat.OpenXml.Office.CustomUI.CheckBox? openXmlElement, String? value)
   {
     if (openXmlElement != null)
@@ -293,15 +293,15 @@ public static class CheckBoxConverter
       else
         openXmlElement.InsertAfterMso = null;
   }
-  
+
   /// <summary>
-  /// insertBeforeMso
+  ///   insertBeforeMso
   /// </summary>
   public static String? GetInsertBeforeMso(DocumentFormat.OpenXml.Office.CustomUI.CheckBox? openXmlElement)
   {
     return openXmlElement?.InsertBeforeMso?.Value;
   }
-  
+
   public static void SetInsertBeforeMso(DocumentFormat.OpenXml.Office.CustomUI.CheckBox? openXmlElement, String? value)
   {
     if (openXmlElement != null)
@@ -310,15 +310,15 @@ public static class CheckBoxConverter
       else
         openXmlElement.InsertBeforeMso = null;
   }
-  
+
   /// <summary>
-  /// insertAfterQ
+  ///   insertAfterQ
   /// </summary>
   public static String? GetInsertAfterQ(DocumentFormat.OpenXml.Office.CustomUI.CheckBox? openXmlElement)
   {
     return openXmlElement?.InsertAfterQ?.Value;
   }
-  
+
   public static void SetInsertAfterQ(DocumentFormat.OpenXml.Office.CustomUI.CheckBox? openXmlElement, String? value)
   {
     if (openXmlElement != null)
@@ -327,15 +327,15 @@ public static class CheckBoxConverter
       else
         openXmlElement.InsertAfterQ = null;
   }
-  
+
   /// <summary>
-  /// insertBeforeQ
+  ///   insertBeforeQ
   /// </summary>
   public static String? GetInsertBeforeQ(DocumentFormat.OpenXml.Office.CustomUI.CheckBox? openXmlElement)
   {
     return openXmlElement?.InsertBeforeQ?.Value;
   }
-  
+
   public static void SetInsertBeforeQ(DocumentFormat.OpenXml.Office.CustomUI.CheckBox? openXmlElement, String? value)
   {
     if (openXmlElement != null)
@@ -344,15 +344,15 @@ public static class CheckBoxConverter
       else
         openXmlElement.InsertBeforeQ = null;
   }
-  
+
   /// <summary>
-  /// visible
+  ///   visible
   /// </summary>
   public static Boolean? GetVisible(DocumentFormat.OpenXml.Office.CustomUI.CheckBox? openXmlElement)
   {
     return openXmlElement?.Visible?.Value;
   }
-  
+
   public static void SetVisible(DocumentFormat.OpenXml.Office.CustomUI.CheckBox? openXmlElement, Boolean? value)
   {
     if (openXmlElement != null)
@@ -361,15 +361,15 @@ public static class CheckBoxConverter
       else
         openXmlElement.Visible = null;
   }
-  
+
   /// <summary>
-  /// getVisible
+  ///   getVisible
   /// </summary>
   public static String? GetGetVisible(DocumentFormat.OpenXml.Office.CustomUI.CheckBox? openXmlElement)
   {
     return openXmlElement?.GetVisible?.Value;
   }
-  
+
   public static void SetGetVisible(DocumentFormat.OpenXml.Office.CustomUI.CheckBox? openXmlElement, String? value)
   {
     if (openXmlElement != null)
@@ -378,15 +378,15 @@ public static class CheckBoxConverter
       else
         openXmlElement.GetVisible = null;
   }
-  
+
   /// <summary>
-  /// keytip
+  ///   keytip
   /// </summary>
   public static String? GetKeytip(DocumentFormat.OpenXml.Office.CustomUI.CheckBox? openXmlElement)
   {
     return openXmlElement?.Keytip?.Value;
   }
-  
+
   public static void SetKeytip(DocumentFormat.OpenXml.Office.CustomUI.CheckBox? openXmlElement, String? value)
   {
     if (openXmlElement != null)
@@ -395,15 +395,15 @@ public static class CheckBoxConverter
       else
         openXmlElement.Keytip = null;
   }
-  
+
   /// <summary>
-  /// getKeytip
+  ///   getKeytip
   /// </summary>
   public static String? GetGetKeytip(DocumentFormat.OpenXml.Office.CustomUI.CheckBox? openXmlElement)
   {
     return openXmlElement?.GetKeytip?.Value;
   }
-  
+
   public static void SetGetKeytip(DocumentFormat.OpenXml.Office.CustomUI.CheckBox? openXmlElement, String? value)
   {
     if (openXmlElement != null)
@@ -412,7 +412,7 @@ public static class CheckBoxConverter
       else
         openXmlElement.GetKeytip = null;
   }
-  
+
   public static DocumentModel.UI.CheckBox? CreateModelElement(DocumentFormat.OpenXml.Office.CustomUI.CheckBox? openXmlElement)
   {
     if (openXmlElement != null)
@@ -446,9 +446,9 @@ public static class CheckBoxConverter
     }
     return null;
   }
-  
+
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.UI.CheckBox? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Office.CustomUI.CheckBox, new()
+    where OpenXmlElementType : DocumentFormat.OpenXml.Office.CustomUI.CheckBox, new()
   {
     if (value != null)
     {

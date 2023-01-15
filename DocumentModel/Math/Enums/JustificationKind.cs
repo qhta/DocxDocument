@@ -1,28 +1,27 @@
 namespace DocumentModel.Math;
 
 /// <summary>
-/// Defines the JustificationValues enumeration.
+///   Defines the JustificationValues enumeration.
 /// </summary>
 public enum JustificationKind
 {
   /// <summary>
-  /// Left Justification.
+  ///   Left Justification.
   /// </summary>
   Left,
-  
+
   /// <summary>
-  /// Right.
+  ///   Right.
   /// </summary>
   Right,
-  
+
   /// <summary>
-  /// Center (Equation).
+  ///   Center (Equation).
   /// </summary>
   Center,
-  
+
   /// <summary>
-  /// Centered as Group (Equations).
+  ///   Centered as Group (Equations).
   /// </summary>
-  CenterGroup,
-  
+  CenterGroup
 }

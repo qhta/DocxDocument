@@ -1,18 +1,18 @@
 namespace DocumentModel.OpenXml;
 
 /// <summary>
-/// Defines the ContextMenu Class.
+///   Defines the ContextMenu Class.
 /// </summary>
 public static class ContextMenuConverter
 {
   /// <summary>
-  /// idMso, this property is only available in Office 2010 and later.
+  ///   idMso, this property is only available in Office 2010 and later.
   /// </summary>
   public static String? GetIdMso(DocumentFormat.OpenXml.Office2010.CustomUI.ContextMenu? openXmlElement)
   {
     return openXmlElement?.IdMso?.Value;
   }
-  
+
   public static void SetIdMso(DocumentFormat.OpenXml.Office2010.CustomUI.ContextMenu? openXmlElement, String? value)
   {
     if (openXmlElement != null)
@@ -21,16 +21,16 @@ public static class ContextMenuConverter
       else
         openXmlElement.IdMso = null;
   }
-  
-  public static DocumentModel.ControlCloneRegular? GetControlCloneRegular(DocumentFormat.OpenXml.Office2010.CustomUI.ContextMenu? openXmlElement)
+
+  public static ControlCloneRegular? GetControlCloneRegular(DocumentFormat.OpenXml.Office2010.CustomUI.ContextMenu? openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office2010.CustomUI.ControlCloneRegular>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.ControlCloneRegularConverter.CreateModelElement(itemElement);
+      return ControlCloneRegularConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetControlCloneRegular(DocumentFormat.OpenXml.Office2010.CustomUI.ContextMenu? openXmlElement, DocumentModel.ControlCloneRegular? value)
+
+  public static void SetControlCloneRegular(DocumentFormat.OpenXml.Office2010.CustomUI.ContextMenu? openXmlElement, ControlCloneRegular? value)
   {
     if (openXmlElement != null)
     {
@@ -39,22 +39,22 @@ public static class ContextMenuConverter
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.ControlCloneRegularConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2010.CustomUI.ControlCloneRegular>(value);
+        itemElement = ControlCloneRegularConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2010.CustomUI.ControlCloneRegular>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static DocumentModel.ButtonRegular? GetButtonRegular(DocumentFormat.OpenXml.Office2010.CustomUI.ContextMenu? openXmlElement)
+
+  public static ButtonRegular? GetButtonRegular(DocumentFormat.OpenXml.Office2010.CustomUI.ContextMenu? openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office2010.CustomUI.ButtonRegular>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.ButtonRegularConverter.CreateModelElement(itemElement);
+      return ButtonRegularConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetButtonRegular(DocumentFormat.OpenXml.Office2010.CustomUI.ContextMenu? openXmlElement, DocumentModel.ButtonRegular? value)
+
+  public static void SetButtonRegular(DocumentFormat.OpenXml.Office2010.CustomUI.ContextMenu? openXmlElement, ButtonRegular? value)
   {
     if (openXmlElement != null)
     {
@@ -63,22 +63,22 @@ public static class ContextMenuConverter
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.ButtonRegularConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2010.CustomUI.ButtonRegular>(value);
+        itemElement = ButtonRegularConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2010.CustomUI.ButtonRegular>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static DocumentModel.CheckBox? GetCheckBox(DocumentFormat.OpenXml.Office2010.CustomUI.ContextMenu? openXmlElement)
+
+  public static CheckBox? GetCheckBox(DocumentFormat.OpenXml.Office2010.CustomUI.ContextMenu? openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office2010.CustomUI.CheckBox>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.CheckBoxConverter.CreateModelElement(itemElement);
+      return CheckBoxConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetCheckBox(DocumentFormat.OpenXml.Office2010.CustomUI.ContextMenu? openXmlElement, DocumentModel.CheckBox? value)
+
+  public static void SetCheckBox(DocumentFormat.OpenXml.Office2010.CustomUI.ContextMenu? openXmlElement, CheckBox? value)
   {
     if (openXmlElement != null)
     {
@@ -87,22 +87,22 @@ public static class ContextMenuConverter
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.CheckBoxConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2010.CustomUI.CheckBox>(value);
+        itemElement = CheckBoxConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2010.CustomUI.CheckBox>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static DocumentModel.GalleryRegular? GetGalleryRegular(DocumentFormat.OpenXml.Office2010.CustomUI.ContextMenu? openXmlElement)
+
+  public static GalleryRegular? GetGalleryRegular(DocumentFormat.OpenXml.Office2010.CustomUI.ContextMenu? openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office2010.CustomUI.GalleryRegular>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.GalleryRegularConverter.CreateModelElement(itemElement);
+      return GalleryRegularConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetGalleryRegular(DocumentFormat.OpenXml.Office2010.CustomUI.ContextMenu? openXmlElement, DocumentModel.GalleryRegular? value)
+
+  public static void SetGalleryRegular(DocumentFormat.OpenXml.Office2010.CustomUI.ContextMenu? openXmlElement, GalleryRegular? value)
   {
     if (openXmlElement != null)
     {
@@ -111,22 +111,22 @@ public static class ContextMenuConverter
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.GalleryRegularConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2010.CustomUI.GalleryRegular>(value);
+        itemElement = GalleryRegularConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2010.CustomUI.GalleryRegular>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static DocumentModel.ToggleButtonRegular? GetToggleButtonRegular(DocumentFormat.OpenXml.Office2010.CustomUI.ContextMenu? openXmlElement)
+
+  public static ToggleButtonRegular? GetToggleButtonRegular(DocumentFormat.OpenXml.Office2010.CustomUI.ContextMenu? openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office2010.CustomUI.ToggleButtonRegular>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.ToggleButtonRegularConverter.CreateModelElement(itemElement);
+      return ToggleButtonRegularConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetToggleButtonRegular(DocumentFormat.OpenXml.Office2010.CustomUI.ContextMenu? openXmlElement, DocumentModel.ToggleButtonRegular? value)
+
+  public static void SetToggleButtonRegular(DocumentFormat.OpenXml.Office2010.CustomUI.ContextMenu? openXmlElement, ToggleButtonRegular? value)
   {
     if (openXmlElement != null)
     {
@@ -135,22 +135,22 @@ public static class ContextMenuConverter
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.ToggleButtonRegularConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2010.CustomUI.ToggleButtonRegular>(value);
+        itemElement = ToggleButtonRegularConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2010.CustomUI.ToggleButtonRegular>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static DocumentModel.SplitButtonRegular? GetSplitButtonRegular(DocumentFormat.OpenXml.Office2010.CustomUI.ContextMenu? openXmlElement)
+
+  public static SplitButtonRegular? GetSplitButtonRegular(DocumentFormat.OpenXml.Office2010.CustomUI.ContextMenu? openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office2010.CustomUI.SplitButtonRegular>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.SplitButtonRegularConverter.CreateModelElement(itemElement);
+      return SplitButtonRegularConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetSplitButtonRegular(DocumentFormat.OpenXml.Office2010.CustomUI.ContextMenu? openXmlElement, DocumentModel.SplitButtonRegular? value)
+
+  public static void SetSplitButtonRegular(DocumentFormat.OpenXml.Office2010.CustomUI.ContextMenu? openXmlElement, SplitButtonRegular? value)
   {
     if (openXmlElement != null)
     {
@@ -159,22 +159,22 @@ public static class ContextMenuConverter
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.SplitButtonRegularConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2010.CustomUI.SplitButtonRegular>(value);
+        itemElement = SplitButtonRegularConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2010.CustomUI.SplitButtonRegular>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static DocumentModel.MenuRegular? GetMenuRegular(DocumentFormat.OpenXml.Office2010.CustomUI.ContextMenu? openXmlElement)
+
+  public static MenuRegular? GetMenuRegular(DocumentFormat.OpenXml.Office2010.CustomUI.ContextMenu? openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office2010.CustomUI.MenuRegular>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.MenuRegularConverter.CreateModelElement(itemElement);
+      return MenuRegularConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetMenuRegular(DocumentFormat.OpenXml.Office2010.CustomUI.ContextMenu? openXmlElement, DocumentModel.MenuRegular? value)
+
+  public static void SetMenuRegular(DocumentFormat.OpenXml.Office2010.CustomUI.ContextMenu? openXmlElement, MenuRegular? value)
   {
     if (openXmlElement != null)
     {
@@ -183,22 +183,22 @@ public static class ContextMenuConverter
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.MenuRegularConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2010.CustomUI.MenuRegular>(value);
+        itemElement = MenuRegularConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2010.CustomUI.MenuRegular>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static DocumentModel.DynamicMenuRegular? GetDynamicMenuRegular(DocumentFormat.OpenXml.Office2010.CustomUI.ContextMenu? openXmlElement)
+
+  public static DynamicMenuRegular? GetDynamicMenuRegular(DocumentFormat.OpenXml.Office2010.CustomUI.ContextMenu? openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office2010.CustomUI.DynamicMenuRegular>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.DynamicMenuRegularConverter.CreateModelElement(itemElement);
+      return DynamicMenuRegularConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetDynamicMenuRegular(DocumentFormat.OpenXml.Office2010.CustomUI.ContextMenu? openXmlElement, DocumentModel.DynamicMenuRegular? value)
+
+  public static void SetDynamicMenuRegular(DocumentFormat.OpenXml.Office2010.CustomUI.ContextMenu? openXmlElement, DynamicMenuRegular? value)
   {
     if (openXmlElement != null)
     {
@@ -207,22 +207,22 @@ public static class ContextMenuConverter
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.DynamicMenuRegularConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2010.CustomUI.DynamicMenuRegular>(value);
+        itemElement = DynamicMenuRegularConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2010.CustomUI.DynamicMenuRegular>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static DocumentModel.MenuSeparatorNoTitle? GetMenuSeparatorNoTitle(DocumentFormat.OpenXml.Office2010.CustomUI.ContextMenu? openXmlElement)
+
+  public static MenuSeparatorNoTitle? GetMenuSeparatorNoTitle(DocumentFormat.OpenXml.Office2010.CustomUI.ContextMenu? openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office2010.CustomUI.MenuSeparatorNoTitle>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.MenuSeparatorNoTitleConverter.CreateModelElement(itemElement);
+      return MenuSeparatorNoTitleConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetMenuSeparatorNoTitle(DocumentFormat.OpenXml.Office2010.CustomUI.ContextMenu? openXmlElement, DocumentModel.MenuSeparatorNoTitle? value)
+
+  public static void SetMenuSeparatorNoTitle(DocumentFormat.OpenXml.Office2010.CustomUI.ContextMenu? openXmlElement, MenuSeparatorNoTitle? value)
   {
     if (openXmlElement != null)
     {
@@ -231,18 +231,18 @@ public static class ContextMenuConverter
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.MenuSeparatorNoTitleConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2010.CustomUI.MenuSeparatorNoTitle>(value);
+        itemElement = MenuSeparatorNoTitleConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2010.CustomUI.MenuSeparatorNoTitle>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static DocumentModel.ContextMenu? CreateModelElement(DocumentFormat.OpenXml.Office2010.CustomUI.ContextMenu? openXmlElement)
+
+  public static ContextMenu? CreateModelElement(DocumentFormat.OpenXml.Office2010.CustomUI.ContextMenu? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.ContextMenu();
+      var value = new ContextMenu();
       value.IdMso = GetIdMso(openXmlElement);
       value.ControlCloneRegular = GetControlCloneRegular(openXmlElement);
       value.ButtonRegular = GetButtonRegular(openXmlElement);
@@ -257,9 +257,9 @@ public static class ContextMenuConverter
     }
     return null;
   }
-  
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.ContextMenu? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Office2010.CustomUI.ContextMenu, new()
+
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(ContextMenu? value)
+    where OpenXmlElementType : DocumentFormat.OpenXml.Office2010.CustomUI.ContextMenu, new()
   {
     if (value != null)
     {

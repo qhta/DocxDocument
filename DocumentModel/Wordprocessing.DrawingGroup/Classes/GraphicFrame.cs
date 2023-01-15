@@ -1,33 +1,34 @@
+using DocumentModel.Drawings;
+
 namespace DocumentModel.Wordprocessing.DrawingGroup;
 
 /// <summary>
-/// Defines the GraphicFrame Class.
+///   Defines the GraphicFrame Class.
 /// </summary>
-public partial class GraphicFrame
+public class GraphicFrame
 {
   /// <summary>
-  /// NonVisualDrawingProperties.
+  ///   NonVisualDrawingProperties.
   /// </summary>
-  public DocumentModel.Wordprocessing.DrawingGroup.NonVisualDrawingProperties? NonVisualDrawingProperties { get; set; }
-  
+  public NonVisualDrawingProperties? NonVisualDrawingProperties { get; set; }
+
   /// <summary>
-  /// NonVisualGraphicFrameProperties.
+  ///   NonVisualGraphicFrameProperties.
   /// </summary>
-  public DocumentModel.Wordprocessing.DrawingGroup.NonVisualGraphicFrameProperties? NonVisualGraphicFrameProperties { get; set; }
-  
+  public NonVisualGraphicFrameProperties? NonVisualGraphicFrameProperties { get; set; }
+
   /// <summary>
-  /// Transform2D.
+  ///   Transform2D.
   /// </summary>
-  public DocumentModel.Wordprocessing.DrawingGroup.Transform2D? Transform2D { get; set; }
-  
+  public Transform2D? Transform2D { get; set; }
+
   /// <summary>
-  /// Graphic.
+  ///   Graphic.
   /// </summary>
-  public DocumentModel.Drawings.Graphic? Graphic { get; set; }
-  
+  public Graphic? Graphic { get; set; }
+
   /// <summary>
-  /// OfficeArtExtensionList.
+  ///   OfficeArtExtensionList.
   /// </summary>
-  public DocumentModel.Wordprocessing.DrawingGroup.OfficeArtExtensionList? OfficeArtExtensionList { get; set; }
-  
+  public OfficeArtExtensionList? OfficeArtExtensionList { get; set; }
 }

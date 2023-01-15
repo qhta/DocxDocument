@@ -1,13 +1,12 @@
 namespace DocumentModel.Drawings;
 
 /// <summary>
-/// Defines the CreationId Class.
+///   Defines the CreationId Class.
 /// </summary>
-public partial class CreationId
+public class CreationId
 {
   /// <summary>
-  /// id, this property is only available in Office 2016 and later.
+  ///   id, this property is only available in Office 2016 and later.
   /// </summary>
   public String? Id { get; set; }
-  
 }

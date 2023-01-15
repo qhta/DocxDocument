@@ -1,23 +1,22 @@
 namespace DocumentModel.Wordprocessing;
 
 /// <summary>
-/// Defines the FontPitchValues enumeration.
+///   Defines the FontPitchValues enumeration.
 /// </summary>
 public enum FontPitchKind
 {
   /// <summary>
-  /// Fixed Width.
+  ///   Fixed Width.
   /// </summary>
   Fixed,
-  
+
   /// <summary>
-  /// Proportional Width.
+  ///   Proportional Width.
   /// </summary>
   Variable,
-  
+
   /// <summary>
-  /// Default.
+  ///   Default.
   /// </summary>
-  Default,
-  
+  Default
 }

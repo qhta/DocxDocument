@@ -1,12 +1,11 @@
 namespace DocumentModel.Drawings.ChartDrawings;
 
 /// <summary>
-/// Defines the MinorGridlinesGridlines Class.
+///   Defines the MinorGridlinesGridlines Class.
 /// </summary>
-public partial class MinorGridlinesGridlines
+public class MinorGridlinesGridlines
 {
-  public DocumentModel.Drawings.ChartDrawings.ShapeProperties? ShapeProperties { get; set; }
-  
-  public DocumentModel.Drawings.ChartDrawings.ExtensionList? ExtensionList { get; set; }
-  
+  public ShapeProperties? ShapeProperties { get; set; }
+
+  public ExtensionList? ExtensionList { get; set; }
 }

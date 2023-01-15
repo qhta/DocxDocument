@@ -1,33 +1,35 @@
+using DocumentFormat.OpenXml.Drawing.Charts;
+
 namespace DocumentModel.OpenXml.Drawings.Charts;
 
 /// <summary>
-/// Numeric Point.
+///   Numeric Point.
 /// </summary>
 public static class NumericPointConverter
 {
   /// <summary>
-  /// Index
+  ///   Index
   /// </summary>
-  public static UInt32? GetIndex(DocumentFormat.OpenXml.Drawing.Charts.NumericPoint? openXmlElement)
+  public static UInt32? GetIndex(NumericPoint? openXmlElement)
   {
     return openXmlElement?.Index?.Value;
   }
-  
-  public static void SetIndex(DocumentFormat.OpenXml.Drawing.Charts.NumericPoint? openXmlElement, UInt32? value)
+
+  public static void SetIndex(NumericPoint? openXmlElement, UInt32? value)
   {
     if (openXmlElement != null)
       openXmlElement.Index = value;
   }
-  
+
   /// <summary>
-  /// Number Format
+  ///   Number Format
   /// </summary>
-  public static String? GetFormatCode(DocumentFormat.OpenXml.Drawing.Charts.NumericPoint? openXmlElement)
+  public static String? GetFormatCode(NumericPoint? openXmlElement)
   {
     return openXmlElement?.FormatCode?.Value;
   }
-  
-  public static void SetFormatCode(DocumentFormat.OpenXml.Drawing.Charts.NumericPoint? openXmlElement, String? value)
+
+  public static void SetFormatCode(NumericPoint? openXmlElement, String? value)
   {
     if (openXmlElement != null)
       if (value != null)
@@ -35,34 +37,34 @@ public static class NumericPointConverter
       else
         openXmlElement.FormatCode = null;
   }
-  
+
   /// <summary>
-  /// Numeric Value.
+  ///   Numeric Value.
   /// </summary>
-  public static String? GetNumericValue(DocumentFormat.OpenXml.Drawing.Charts.NumericPoint? openXmlElement)
+  public static String? GetNumericValue(NumericPoint? openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.NumericValue>();
+    var itemElement = openXmlElement?.GetFirstChild<NumericValue>();
     if (itemElement != null)
       return itemElement.Text;
     return null;
   }
-  
-  public static void SetNumericValue(DocumentFormat.OpenXml.Drawing.Charts.NumericPoint? openXmlElement, String? value)
+
+  public static void SetNumericValue(NumericPoint? openXmlElement, String? value)
   {
     if (openXmlElement != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.NumericValue>();
+      var itemElement = openXmlElement.GetFirstChild<NumericValue>();
       if (itemElement != null)
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = new DocumentFormat.OpenXml.Drawing.Charts.NumericValue { Text = value };
+        itemElement = new NumericValue { Text = value };
         openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static DocumentModel.Drawings.Charts.NumericPoint? CreateModelElement(DocumentFormat.OpenXml.Drawing.Charts.NumericPoint? openXmlElement)
+
+  public static DocumentModel.Drawings.Charts.NumericPoint? CreateModelElement(NumericPoint? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -74,9 +76,9 @@ public static class NumericPointConverter
     }
     return null;
   }
-  
+
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.Charts.NumericPoint? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.Charts.NumericPoint, new()
+    where OpenXmlElementType : NumericPoint, new()
   {
     if (value != null)
     {

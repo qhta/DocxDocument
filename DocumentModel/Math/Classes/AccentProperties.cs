@@ -1,18 +1,17 @@
 namespace DocumentModel.Math;
 
 /// <summary>
-/// Accent Properties.
+///   Accent Properties.
 /// </summary>
-public partial class AccentProperties
+public class AccentProperties
 {
   /// <summary>
-  /// Accent Character.
+  ///   Accent Character.
   /// </summary>
   public String? AccentChar { get; set; }
-  
+
   /// <summary>
-  /// Control Properties.
+  ///   Control Properties.
   /// </summary>
-  public DocumentModel.Math.ControlProperties? ControlProperties { get; set; }
-  
+  public ControlProperties? ControlProperties { get; set; }
 }

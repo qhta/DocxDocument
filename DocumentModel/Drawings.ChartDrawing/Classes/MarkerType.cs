@@ -1,18 +1,17 @@
 namespace DocumentModel.Drawings.ChartDrawing;
 
 /// <summary>
-/// Defines the MarkerType Class.
+///   Defines the MarkerType Class.
 /// </summary>
-public partial class MarkerType
+public class MarkerType
 {
   /// <summary>
-  /// Relative X Coordinate.
+  ///   Relative X Coordinate.
   /// </summary>
   public String? XPosition { get; set; }
-  
+
   /// <summary>
-  /// Relative Y Coordinate.
+  ///   Relative Y Coordinate.
   /// </summary>
   public String? YPosition { get; set; }
-  
 }

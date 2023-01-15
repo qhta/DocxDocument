@@ -1,323 +1,322 @@
 namespace DocumentModel.Wordprocessing;
 
 /// <summary>
-/// Defines the NumberFormatValues enumeration.
+///   Defines the NumberFormatValues enumeration.
 /// </summary>
 public enum NumberFormatKind
 {
   /// <summary>
-  /// Decimal Numbers.
+  ///   Decimal Numbers.
   /// </summary>
   Decimal,
-  
+
   /// <summary>
-  /// Uppercase Roman Numerals.
+  ///   Uppercase Roman Numerals.
   /// </summary>
   UpperRoman,
-  
+
   /// <summary>
-  /// Lowercase Roman Numerals.
+  ///   Lowercase Roman Numerals.
   /// </summary>
   LowerRoman,
-  
+
   /// <summary>
-  /// Uppercase Latin Alphabet.
+  ///   Uppercase Latin Alphabet.
   /// </summary>
   UpperLetter,
-  
+
   /// <summary>
-  /// Lowercase Latin Alphabet.
+  ///   Lowercase Latin Alphabet.
   /// </summary>
   LowerLetter,
-  
+
   /// <summary>
-  /// Ordinal.
+  ///   Ordinal.
   /// </summary>
   Ordinal,
-  
+
   /// <summary>
-  /// Cardinal Text.
+  ///   Cardinal Text.
   /// </summary>
   CardinalText,
-  
+
   /// <summary>
-  /// Ordinal Text.
+  ///   Ordinal Text.
   /// </summary>
   OrdinalText,
-  
+
   /// <summary>
-  /// Hexadecimal Numbering.
+  ///   Hexadecimal Numbering.
   /// </summary>
   Hex,
-  
+
   /// <summary>
-  /// Chicago Manual of Style.
+  ///   Chicago Manual of Style.
   /// </summary>
   Chicago,
-  
+
   /// <summary>
-  /// Ideographs.
+  ///   Ideographs.
   /// </summary>
   IdeographDigital,
-  
+
   /// <summary>
-  /// Japanese Counting System.
+  ///   Japanese Counting System.
   /// </summary>
   JapaneseCounting,
-  
+
   /// <summary>
-  /// AIUEO Order Hiragana.
+  ///   AIUEO Order Hiragana.
   /// </summary>
   Aiueo,
-  
+
   /// <summary>
-  /// Iroha Ordered Katakana.
+  ///   Iroha Ordered Katakana.
   /// </summary>
   Iroha,
-  
+
   /// <summary>
-  /// Double Byte Arabic Numerals.
+  ///   Double Byte Arabic Numerals.
   /// </summary>
   DecimalFullWidth,
-  
+
   /// <summary>
-  /// Single Byte Arabic Numerals.
+  ///   Single Byte Arabic Numerals.
   /// </summary>
   DecimalHalfWidth,
-  
+
   /// <summary>
-  /// Japanese Legal Numbering.
+  ///   Japanese Legal Numbering.
   /// </summary>
   JapaneseLegal,
-  
+
   /// <summary>
-  /// Japanese Digital Ten Thousand Counting System.
+  ///   Japanese Digital Ten Thousand Counting System.
   /// </summary>
   JapaneseDigitalTenThousand,
-  
+
   /// <summary>
-  /// Decimal Numbers Enclosed in a Circle.
+  ///   Decimal Numbers Enclosed in a Circle.
   /// </summary>
   DecimalEnclosedCircle,
-  
+
   /// <summary>
-  /// Double Byte Arabic Numerals Alternate.
+  ///   Double Byte Arabic Numerals Alternate.
   /// </summary>
   DecimalFullWidth2,
-  
+
   /// <summary>
-  /// Full-Width AIUEO Order Hiragana.
+  ///   Full-Width AIUEO Order Hiragana.
   /// </summary>
   AiueoFullWidth,
-  
+
   /// <summary>
-  /// Full-Width Iroha Ordered Katakana.
+  ///   Full-Width Iroha Ordered Katakana.
   /// </summary>
   IrohaFullWidth,
-  
+
   /// <summary>
-  /// Initial Zero Arabic Numerals.
+  ///   Initial Zero Arabic Numerals.
   /// </summary>
   DecimalZero,
-  
+
   /// <summary>
-  /// Bullet.
+  ///   Bullet.
   /// </summary>
   Bullet,
-  
+
   /// <summary>
-  /// Korean Ganada Numbering.
+  ///   Korean Ganada Numbering.
   /// </summary>
   Ganada,
-  
+
   /// <summary>
-  /// Korean Chosung Numbering.
+  ///   Korean Chosung Numbering.
   /// </summary>
   Chosung,
-  
+
   /// <summary>
-  /// Decimal Numbers Followed by a Period.
+  ///   Decimal Numbers Followed by a Period.
   /// </summary>
   DecimalEnclosedFullstop,
-  
+
   /// <summary>
-  /// Decimal Numbers Enclosed in Parenthesis.
+  ///   Decimal Numbers Enclosed in Parenthesis.
   /// </summary>
   DecimalEnclosedParen,
-  
+
   /// <summary>
-  /// Decimal Numbers Enclosed in a Circle.
+  ///   Decimal Numbers Enclosed in a Circle.
   /// </summary>
   DecimalEnclosedCircleChinese,
-  
+
   /// <summary>
-  /// Ideographs Enclosed in a Circle.
+  ///   Ideographs Enclosed in a Circle.
   /// </summary>
   IdeographEnclosedCircle,
-  
+
   /// <summary>
-  /// Traditional Ideograph Format.
+  ///   Traditional Ideograph Format.
   /// </summary>
   IdeographTraditional,
-  
+
   /// <summary>
-  /// Zodiac Ideograph Format.
+  ///   Zodiac Ideograph Format.
   /// </summary>
   IdeographZodiac,
-  
+
   /// <summary>
-  /// Traditional Zodiac Ideograph Format.
+  ///   Traditional Zodiac Ideograph Format.
   /// </summary>
   IdeographZodiacTraditional,
-  
+
   /// <summary>
-  /// Taiwanese Counting System.
+  ///   Taiwanese Counting System.
   /// </summary>
   TaiwaneseCounting,
-  
+
   /// <summary>
-  /// Traditional Legal Ideograph Format.
+  ///   Traditional Legal Ideograph Format.
   /// </summary>
   IdeographLegalTraditional,
-  
+
   /// <summary>
-  /// Taiwanese Counting Thousand System.
+  ///   Taiwanese Counting Thousand System.
   /// </summary>
   TaiwaneseCountingThousand,
-  
+
   /// <summary>
-  /// Taiwanese Digital Counting System.
+  ///   Taiwanese Digital Counting System.
   /// </summary>
   TaiwaneseDigital,
-  
+
   /// <summary>
-  /// Chinese Counting System.
+  ///   Chinese Counting System.
   /// </summary>
   ChineseCounting,
-  
+
   /// <summary>
-  /// Chinese Legal Simplified Format.
+  ///   Chinese Legal Simplified Format.
   /// </summary>
   ChineseLegalSimplified,
-  
+
   /// <summary>
-  /// Chinese Counting Thousand System.
+  ///   Chinese Counting Thousand System.
   /// </summary>
   ChineseCountingThousand,
-  
+
   /// <summary>
-  /// Korean Digital Counting System.
+  ///   Korean Digital Counting System.
   /// </summary>
   KoreanDigital,
-  
+
   /// <summary>
-  /// Korean Counting System.
+  ///   Korean Counting System.
   /// </summary>
   KoreanCounting,
-  
+
   /// <summary>
-  /// Korean Legal Numbering.
+  ///   Korean Legal Numbering.
   /// </summary>
   KoreanLegal,
-  
+
   /// <summary>
-  /// Korean Digital Counting System Alternate.
+  ///   Korean Digital Counting System Alternate.
   /// </summary>
   KoreanDigital2,
-  
+
   /// <summary>
-  /// Vietnamese Numerals.
+  ///   Vietnamese Numerals.
   /// </summary>
   VietnameseCounting,
-  
+
   /// <summary>
-  /// Lowercase Russian Alphabet.
+  ///   Lowercase Russian Alphabet.
   /// </summary>
   RussianLower,
-  
+
   /// <summary>
-  /// Uppercase Russian Alphabet.
+  ///   Uppercase Russian Alphabet.
   /// </summary>
   RussianUpper,
-  
+
   /// <summary>
-  /// No Numbering.
+  ///   No Numbering.
   /// </summary>
   None,
-  
+
   /// <summary>
-  /// Number With Dashes.
+  ///   Number With Dashes.
   /// </summary>
   NumberInDash,
-  
+
   /// <summary>
-  /// Hebrew Numerals.
+  ///   Hebrew Numerals.
   /// </summary>
   Hebrew1,
-  
+
   /// <summary>
-  /// Hebrew Alphabet.
+  ///   Hebrew Alphabet.
   /// </summary>
   Hebrew2,
-  
+
   /// <summary>
-  /// Arabic Alphabet.
+  ///   Arabic Alphabet.
   /// </summary>
   ArabicAlpha,
-  
+
   /// <summary>
-  /// Arabic Abjad Numerals.
+  ///   Arabic Abjad Numerals.
   /// </summary>
   ArabicAbjad,
-  
+
   /// <summary>
-  /// Hindi Vowels.
+  ///   Hindi Vowels.
   /// </summary>
   HindiVowels,
-  
+
   /// <summary>
-  /// Hindi Consonants.
+  ///   Hindi Consonants.
   /// </summary>
   HindiConsonants,
-  
+
   /// <summary>
-  /// Hindi Numbers.
+  ///   Hindi Numbers.
   /// </summary>
   HindiNumbers,
-  
+
   /// <summary>
-  /// Hindi Counting System.
+  ///   Hindi Counting System.
   /// </summary>
   HindiCounting,
-  
+
   /// <summary>
-  /// Thai Letters.
+  ///   Thai Letters.
   /// </summary>
   ThaiLetters,
-  
+
   /// <summary>
-  /// Thai Numerals.
+  ///   Thai Numerals.
   /// </summary>
   ThaiNumbers,
-  
+
   /// <summary>
-  /// Thai Counting System.
+  ///   Thai Counting System.
   /// </summary>
   ThaiCounting,
-  
+
   /// <summary>
-  /// bahtText.
+  ///   bahtText.
   /// </summary>
   BahtText,
-  
+
   /// <summary>
-  /// dollarText.
+  ///   dollarText.
   /// </summary>
   DollarText,
-  
+
   /// <summary>
-  /// custom.
+  ///   custom.
   /// </summary>
-  Custom,
-  
+  Custom
 }

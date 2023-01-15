@@ -1,28 +1,27 @@
 namespace DocumentModel.Math;
 
 /// <summary>
-/// Pre-Sub-Superscript Function.
+///   Pre-Sub-Superscript Function.
 /// </summary>
-public partial class PreSubSuper
+public class PreSubSuper
 {
   /// <summary>
-  /// Pre-Sub-Superscript Properties.
+  ///   Pre-Sub-Superscript Properties.
   /// </summary>
-  public DocumentModel.Math.PreSubSuperProperties? PreSubSuperProperties { get; set; }
-  
+  public PreSubSuperProperties? PreSubSuperProperties { get; set; }
+
   /// <summary>
-  /// Subscript (Pre-Sub-Superscript).
+  ///   Subscript (Pre-Sub-Superscript).
   /// </summary>
-  public DocumentModel.Math.SubArgument? SubArgument { get; set; }
-  
+  public SubArgument? SubArgument { get; set; }
+
   /// <summary>
-  /// Superscript(Pre-Sub-Superscript function).
+  ///   Superscript(Pre-Sub-Superscript function).
   /// </summary>
-  public DocumentModel.Math.SuperArgument? SuperArgument { get; set; }
-  
+  public SuperArgument? SuperArgument { get; set; }
+
   /// <summary>
-  /// Base.
+  ///   Base.
   /// </summary>
-  public DocumentModel.Math.Base? Base { get; set; }
-  
+  public Base? Base { get; set; }
 }

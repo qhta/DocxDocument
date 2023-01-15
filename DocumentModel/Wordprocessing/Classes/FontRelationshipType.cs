@@ -1,23 +1,22 @@
 namespace DocumentModel.Wordprocessing;
 
 /// <summary>
-/// Defines the FontRelationshipType Class.
+///   Defines the FontRelationshipType Class.
 /// </summary>
-public partial class FontRelationshipType
+public class FontRelationshipType
 {
   /// <summary>
-  /// fontKey
+  ///   fontKey
   /// </summary>
   public String? FontKey { get; set; }
-  
+
   /// <summary>
-  /// subsetted
+  ///   subsetted
   /// </summary>
   public Boolean? Subsetted { get; set; }
-  
+
   /// <summary>
-  /// Relationship to Part
+  ///   Relationship to Part
   /// </summary>
   public String? Id { get; set; }
-  
 }

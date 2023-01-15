@@ -1,33 +1,32 @@
 namespace DocumentModel.Wordprocessing;
 
 /// <summary>
-/// Visibility of Annotation Types.
+///   Visibility of Annotation Types.
 /// </summary>
-public partial class RevisionView
+public class RevisionView
 {
   /// <summary>
-  /// Display Visual Indicator Of Markup Area
+  ///   Display Visual Indicator Of Markup Area
   /// </summary>
   public Boolean? Markup { get; set; }
-  
+
   /// <summary>
-  /// Display Comments
+  ///   Display Comments
   /// </summary>
   public Boolean? Comments { get; set; }
-  
+
   /// <summary>
-  /// Display Content Revisions
+  ///   Display Content Revisions
   /// </summary>
   public Boolean? DisplayRevision { get; set; }
-  
+
   /// <summary>
-  /// Display Formatting Revisions
+  ///   Display Formatting Revisions
   /// </summary>
   public Boolean? Formatting { get; set; }
-  
+
   /// <summary>
-  /// Display Ink Annotations
+  ///   Display Ink Annotations
   /// </summary>
   public Boolean? InkAnnotations { get; set; }
-  
 }

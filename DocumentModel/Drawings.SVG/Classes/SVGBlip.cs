@@ -1,18 +1,17 @@
 namespace DocumentModel.Drawings.SVG;
 
 /// <summary>
-/// Defines the SVGBlip Class.
+///   Defines the SVGBlip Class.
 /// </summary>
-public partial class SVGBlip
+public class SVGBlip
 {
   /// <summary>
-  /// Embedded Picture Reference
+  ///   Embedded Picture Reference
   /// </summary>
   public String? Embed { get; set; }
-  
+
   /// <summary>
-  /// Linked Picture Reference
+  ///   Linked Picture Reference
   /// </summary>
   public String? Link { get; set; }
-  
 }

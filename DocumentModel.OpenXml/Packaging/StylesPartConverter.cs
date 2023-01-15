@@ -1,32 +1,36 @@
+using DocumentFormat.OpenXml.Packaging;
+using DocumentModel.OpenXml.Wordprocessing;
+using DocumentModel.Wordprocessing;
+
 namespace DocumentModel.OpenXml.Packaging;
 
 /// <summary>
-/// Defines StylesPart. The StylesPart served as the base class of StylesWithEffectsPart and StyleDefinitionsPart.
+///   Defines StylesPart. The StylesPart served as the base class of StylesWithEffectsPart and StyleDefinitionsPart.
 /// </summary>
 public static class StylesPartConverter
 {
   /// <summary>
-  /// Gets or sets the root element of this part.
+  ///   Gets or sets the root element of this part.
   /// </summary>
-  public static DocumentModel.Wordprocessing.Styles? GetStyles(DocumentFormat.OpenXml.Packaging.StylesPart? openXmlElement)
+  public static Styles? GetStyles(StylesPart? openXmlElement)
   {
     if (openXmlElement?.RootElement is DocumentFormat.OpenXml.Wordprocessing.Styles rootElement)
-      return DocumentModel.OpenXml.Wordprocessing.StylesConverter.CreateModelElement(rootElement);
+      return StylesConverter.CreateModelElement(rootElement);
     return null;
   }
-  
-  public static void SetStyles(DocumentFormat.OpenXml.Packaging.StylesPart? openXmlElement, DocumentModel.Wordprocessing.Styles? value)
+
+  public static void SetStyles(StylesPart? openXmlElement, Styles? value)
   {
     if (openXmlElement != null)
       if (value != null)
       {
-         var rootElement = DocumentModel.OpenXml.Wordprocessing.StylesConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.Styles>(value);
-         if (rootElement != null)
-           openXmlElement.Styles = rootElement;
+        var rootElement = StylesConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.Styles>(value);
+        if (rootElement != null)
+          openXmlElement.Styles = rootElement;
       }
   }
-  
-  public static DocumentModel.Packaging.StylesPart? CreateModelElement(DocumentFormat.OpenXml.Packaging.StylesPart? openXmlElement)
+
+  public static DocumentModel.Packaging.StylesPart? CreateModelElement(StylesPart? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -36,9 +40,9 @@ public static class StylesPartConverter
     }
     return null;
   }
-  
+
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Packaging.StylesPart? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Packaging.StylesPart, new()
+    where OpenXmlElementType : StylesPart, new()
   {
     if (value != null)
     {

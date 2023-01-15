@@ -1,28 +1,27 @@
 namespace DocumentModel.Drawings.Charts;
 
 /// <summary>
-/// Split Type
+///   Split Type
 /// </summary>
 public enum SplitKind
 {
   /// <summary>
-  /// Custom Split.
+  ///   Custom Split.
   /// </summary>
   Custom,
-  
+
   /// <summary>
-  /// Split by Percentage.
+  ///   Split by Percentage.
   /// </summary>
   Percent,
-  
+
   /// <summary>
-  /// Split by Position.
+  ///   Split by Position.
   /// </summary>
   Position,
-  
+
   /// <summary>
-  /// Split by Value.
+  ///   Split by Value.
   /// </summary>
-  Value,
-  
+  Value
 }

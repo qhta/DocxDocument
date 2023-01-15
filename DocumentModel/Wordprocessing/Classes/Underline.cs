@@ -1,33 +1,32 @@
 namespace DocumentModel.Wordprocessing;
 
 /// <summary>
-/// Defines the Underline Class.
+///   Defines the Underline Class.
 /// </summary>
-public partial class Underline
+public class Underline
 {
   /// <summary>
-  /// Underline Style
+  ///   Underline Style
   /// </summary>
-  public DocumentModel.Wordprocessing.UnderlineKind? Val { get; set; }
-  
+  public UnderlineKind? Val { get; set; }
+
   /// <summary>
-  /// Underline Color
+  ///   Underline Color
   /// </summary>
   public String? Color { get; set; }
-  
+
   /// <summary>
-  /// Underline Theme Color
+  ///   Underline Theme Color
   /// </summary>
-  public DocumentModel.Wordprocessing.ThemeColorKind? ThemeColor { get; set; }
-  
+  public ThemeColorKind? ThemeColor { get; set; }
+
   /// <summary>
-  /// Underline Theme Color Tint
+  ///   Underline Theme Color Tint
   /// </summary>
   public String? ThemeTint { get; set; }
-  
+
   /// <summary>
-  /// Underline Theme Color Shade
+  ///   Underline Theme Color Shade
   /// </summary>
   public String? ThemeShade { get; set; }
-  
 }

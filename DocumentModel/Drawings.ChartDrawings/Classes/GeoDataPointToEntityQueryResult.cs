@@ -1,18 +1,17 @@
 namespace DocumentModel.Drawings.ChartDrawings;
 
 /// <summary>
-/// Defines the GeoDataPointToEntityQueryResult Class.
+///   Defines the GeoDataPointToEntityQueryResult Class.
 /// </summary>
-public partial class GeoDataPointToEntityQueryResult
+public class GeoDataPointToEntityQueryResult
 {
   /// <summary>
-  /// GeoDataPointQuery.
+  ///   GeoDataPointQuery.
   /// </summary>
-  public DocumentModel.Drawings.ChartDrawings.GeoDataPointQuery? GeoDataPointQuery { get; set; }
-  
+  public GeoDataPointQuery? GeoDataPointQuery { get; set; }
+
   /// <summary>
-  /// GeoDataPointToEntityQuery.
+  ///   GeoDataPointToEntityQuery.
   /// </summary>
-  public DocumentModel.Drawings.ChartDrawings.GeoDataPointToEntityQuery? GeoDataPointToEntityQuery { get; set; }
-  
+  public GeoDataPointToEntityQuery? GeoDataPointToEntityQuery { get; set; }
 }

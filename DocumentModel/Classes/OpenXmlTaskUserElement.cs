@@ -1,23 +1,22 @@
 namespace DocumentModel;
 
 /// <summary>
-/// Defines the OpenXmlTaskUserElement Class.
+///   Defines the OpenXmlTaskUserElement Class.
 /// </summary>
-public partial class OpenXmlTaskUserElement
+public class OpenXmlTaskUserElement
 {
   /// <summary>
-  /// userId, this property is only available in Office 2021 and later.
+  ///   userId, this property is only available in Office 2021 and later.
   /// </summary>
   public String? UserId { get; set; }
-  
+
   /// <summary>
-  /// userName, this property is only available in Office 2021 and later.
+  ///   userName, this property is only available in Office 2021 and later.
   /// </summary>
   public String? UserName { get; set; }
-  
+
   /// <summary>
-  /// userProvider, this property is only available in Office 2021 and later.
+  ///   userProvider, this property is only available in Office 2021 and later.
   /// </summary>
   public String? UserProvider { get; set; }
-  
 }

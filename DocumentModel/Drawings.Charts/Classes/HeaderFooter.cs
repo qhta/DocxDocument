@@ -1,53 +1,52 @@
 namespace DocumentModel.Drawings.Charts;
 
 /// <summary>
-/// Header and Footer.
+///   Header and Footer.
 /// </summary>
-public partial class HeaderFooter
+public class HeaderFooter
 {
   /// <summary>
-  /// Align With Margins
+  ///   Align With Margins
   /// </summary>
   public Boolean? AlignWithMargins { get; set; }
-  
+
   /// <summary>
-  /// Different Odd Even
+  ///   Different Odd Even
   /// </summary>
   public Boolean? DifferentOddEven { get; set; }
-  
+
   /// <summary>
-  /// Different First
+  ///   Different First
   /// </summary>
   public Boolean? DifferentFirst { get; set; }
-  
+
   /// <summary>
-  /// Odd Header.
+  ///   Odd Header.
   /// </summary>
   public String? OddHeader { get; set; }
-  
+
   /// <summary>
-  /// Odd Footer.
+  ///   Odd Footer.
   /// </summary>
   public String? OddFooter { get; set; }
-  
+
   /// <summary>
-  /// Even Header.
+  ///   Even Header.
   /// </summary>
   public String? EvenHeader { get; set; }
-  
+
   /// <summary>
-  /// Even Footer.
+  ///   Even Footer.
   /// </summary>
   public String? EvenFooter { get; set; }
-  
+
   /// <summary>
-  /// First Header.
+  ///   First Header.
   /// </summary>
   public String? FirstHeader { get; set; }
-  
+
   /// <summary>
-  /// First Footer.
+  ///   First Footer.
   /// </summary>
   public String? FirstFooter { get; set; }
-  
 }

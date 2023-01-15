@@ -1,18 +1,17 @@
 namespace DocumentModel.Wordprocessing;
 
 /// <summary>
-/// Defines the AltChunk Class.
+///   Defines the AltChunk Class.
 /// </summary>
-public partial class AltChunk
+public class AltChunk
 {
   /// <summary>
-  /// Relationship to Part
+  ///   Relationship to Part
   /// </summary>
   public String? Id { get; set; }
-  
+
   /// <summary>
-  /// External Content Import Properties.
+  ///   External Content Import Properties.
   /// </summary>
-  public DocumentModel.Wordprocessing.AltChunkProperties? AltChunkProperties { get; set; }
-  
+  public AltChunkProperties? AltChunkProperties { get; set; }
 }

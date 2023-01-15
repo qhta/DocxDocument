@@ -1,19 +1,21 @@
+using DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing;
+
 namespace DocumentModel.OpenXml.Drawings.ChartDrawings;
 
 /// <summary>
-/// Defines the GeoPolygon Class.
+///   Defines the GeoPolygon Class.
 /// </summary>
 public static class GeoPolygonConverter
 {
   /// <summary>
-  /// polygonId, this property is only available in Office 2016 and later.
+  ///   polygonId, this property is only available in Office 2016 and later.
   /// </summary>
-  public static String? GetPolygonId(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.GeoPolygon? openXmlElement)
+  public static String? GetPolygonId(GeoPolygon? openXmlElement)
   {
     return openXmlElement?.PolygonId?.Value;
   }
-  
-  public static void SetPolygonId(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.GeoPolygon? openXmlElement, String? value)
+
+  public static void SetPolygonId(GeoPolygon? openXmlElement, String? value)
   {
     if (openXmlElement != null)
       if (value != null)
@@ -21,30 +23,30 @@ public static class GeoPolygonConverter
       else
         openXmlElement.PolygonId = null;
   }
-  
+
   /// <summary>
-  /// numPoints, this property is only available in Office 2016 and later.
+  ///   numPoints, this property is only available in Office 2016 and later.
   /// </summary>
-  public static Int64? GetNumPoints(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.GeoPolygon? openXmlElement)
+  public static Int64? GetNumPoints(GeoPolygon? openXmlElement)
   {
     return openXmlElement?.NumPoints?.Value;
   }
-  
-  public static void SetNumPoints(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.GeoPolygon? openXmlElement, Int64? value)
+
+  public static void SetNumPoints(GeoPolygon? openXmlElement, Int64? value)
   {
     if (openXmlElement != null)
       openXmlElement.NumPoints = value;
   }
-  
+
   /// <summary>
-  /// pcaRings, this property is only available in Office 2016 and later.
+  ///   pcaRings, this property is only available in Office 2016 and later.
   /// </summary>
-  public static String? GetPcaRings(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.GeoPolygon? openXmlElement)
+  public static String? GetPcaRings(GeoPolygon? openXmlElement)
   {
     return openXmlElement?.PcaRings?.Value;
   }
-  
-  public static void SetPcaRings(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.GeoPolygon? openXmlElement, String? value)
+
+  public static void SetPcaRings(GeoPolygon? openXmlElement, String? value)
   {
     if (openXmlElement != null)
       if (value != null)
@@ -52,8 +54,8 @@ public static class GeoPolygonConverter
       else
         openXmlElement.PcaRings = null;
   }
-  
-  public static DocumentModel.Drawings.ChartDrawings.GeoPolygon? CreateModelElement(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.GeoPolygon? openXmlElement)
+
+  public static DocumentModel.Drawings.ChartDrawings.GeoPolygon? CreateModelElement(GeoPolygon? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -65,9 +67,9 @@ public static class GeoPolygonConverter
     }
     return null;
   }
-  
+
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.ChartDrawings.GeoPolygon? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.GeoPolygon, new()
+    where OpenXmlElementType : GeoPolygon, new()
   {
     if (value != null)
     {

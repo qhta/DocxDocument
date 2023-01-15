@@ -1,143 +1,142 @@
 namespace DocumentModel.Drawings;
 
 /// <summary>
-/// Light Rig Type
+///   Light Rig Type
 /// </summary>
 public enum LightRigKind
 {
   /// <summary>
-  /// Legacy Flat 1.
+  ///   Legacy Flat 1.
   /// </summary>
   LegacyFlat1,
-  
+
   /// <summary>
-  /// Legacy Flat 2.
+  ///   Legacy Flat 2.
   /// </summary>
   LegacyFlat2,
-  
+
   /// <summary>
-  /// Legacy Flat 3.
+  ///   Legacy Flat 3.
   /// </summary>
   LegacyFlat3,
-  
+
   /// <summary>
-  /// Legacy Flat 4.
+  ///   Legacy Flat 4.
   /// </summary>
   LegacyFlat4,
-  
+
   /// <summary>
-  /// Legacy Normal 1.
+  ///   Legacy Normal 1.
   /// </summary>
   LegacyNormal1,
-  
+
   /// <summary>
-  /// Legacy Normal 2.
+  ///   Legacy Normal 2.
   /// </summary>
   LegacyNormal2,
-  
+
   /// <summary>
-  /// Legacy Normal 3.
+  ///   Legacy Normal 3.
   /// </summary>
   LegacyNormal3,
-  
+
   /// <summary>
-  /// Legacy Normal 4.
+  ///   Legacy Normal 4.
   /// </summary>
   LegacyNormal4,
-  
+
   /// <summary>
-  /// Legacy Harsh 1.
+  ///   Legacy Harsh 1.
   /// </summary>
   LegacyHarsh1,
-  
+
   /// <summary>
-  /// Legacy Harsh 2.
+  ///   Legacy Harsh 2.
   /// </summary>
   LegacyHarsh2,
-  
+
   /// <summary>
-  /// Legacy Harsh 3.
+  ///   Legacy Harsh 3.
   /// </summary>
   LegacyHarsh3,
-  
+
   /// <summary>
-  /// Legacy Harsh 4.
+  ///   Legacy Harsh 4.
   /// </summary>
   LegacyHarsh4,
-  
+
   /// <summary>
-  /// Three Point.
+  ///   Three Point.
   /// </summary>
   ThreePoints,
-  
+
   /// <summary>
-  /// Light Rig Enum ( Balanced ).
+  ///   Light Rig Enum ( Balanced ).
   /// </summary>
   Balanced,
-  
+
   /// <summary>
-  /// Soft.
+  ///   Soft.
   /// </summary>
   Soft,
-  
+
   /// <summary>
-  /// Harsh.
+  ///   Harsh.
   /// </summary>
   Harsh,
-  
+
   /// <summary>
-  /// Flood.
+  ///   Flood.
   /// </summary>
   Flood,
-  
+
   /// <summary>
-  /// Contrasting.
+  ///   Contrasting.
   /// </summary>
   Contrasting,
-  
+
   /// <summary>
-  /// Morning.
+  ///   Morning.
   /// </summary>
   Morning,
-  
+
   /// <summary>
-  /// Sunrise.
+  ///   Sunrise.
   /// </summary>
   Sunrise,
-  
+
   /// <summary>
-  /// Sunset.
+  ///   Sunset.
   /// </summary>
   Sunset,
-  
+
   /// <summary>
-  /// Chilly.
+  ///   Chilly.
   /// </summary>
   Chilly,
-  
+
   /// <summary>
-  /// Freezing.
+  ///   Freezing.
   /// </summary>
   Freezing,
-  
+
   /// <summary>
-  /// Flat.
+  ///   Flat.
   /// </summary>
   Flat,
-  
+
   /// <summary>
-  /// Two Point.
+  ///   Two Point.
   /// </summary>
   TwoPoints,
-  
+
   /// <summary>
-  /// Glow.
+  ///   Glow.
   /// </summary>
   Glow,
-  
+
   /// <summary>
-  /// Bright Room.
+  ///   Bright Room.
   /// </summary>
-  BrightRoom,
-  
+  BrightRoom
 }

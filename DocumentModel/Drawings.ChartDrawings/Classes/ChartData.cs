@@ -1,17 +1,16 @@
 namespace DocumentModel.Drawings.ChartDrawings;
 
 /// <summary>
-/// Defines the ChartData Class.
+///   Defines the ChartData Class.
 /// </summary>
-public partial class ChartData
+public class ChartData
 {
   /// <summary>
-  /// ExternalData.
+  ///   ExternalData.
   /// </summary>
-  public DocumentModel.Drawings.ChartDrawings.ExternalData? ExternalData { get; set; }
-  
-  public DocumentModel.Drawings.ChartDrawings.Data? Data { get; set; }
-  
-  public DocumentModel.Drawings.ChartDrawings.ExtensionList? ExtensionList { get; set; }
-  
+  public ExternalData? ExternalData { get; set; }
+
+  public Data? Data { get; set; }
+
+  public ExtensionList? ExtensionList { get; set; }
 }

@@ -1,19 +1,22 @@
+using DocumentModel.Wordprocessing;
+using DivsChild = DocumentFormat.OpenXml.Wordprocessing.DivsChild;
+
 namespace DocumentModel.OpenXml.Wordprocessing;
 
 /// <summary>
-/// Child div Elements Contained within Current div.
+///   Child div Elements Contained within Current div.
 /// </summary>
 public static class DivsChildConverter
 {
-  public static DocumentModel.Wordprocessing.Div? GetDiv(DocumentFormat.OpenXml.Wordprocessing.DivsChild? openXmlElement)
+  public static Div? GetDiv(DivsChild? openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.Div>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Wordprocessing.DivConverter.CreateModelElement(itemElement);
+      return DivConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetDiv(DocumentFormat.OpenXml.Wordprocessing.DivsChild? openXmlElement, DocumentModel.Wordprocessing.Div? value)
+
+  public static void SetDiv(DivsChild? openXmlElement, Div? value)
   {
     if (openXmlElement != null)
     {
@@ -22,14 +25,14 @@ public static class DivsChildConverter
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Wordprocessing.DivConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.Div>(value);
+        itemElement = DivConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.Div>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static DocumentModel.Wordprocessing.DivsChild? CreateModelElement(DocumentFormat.OpenXml.Wordprocessing.DivsChild? openXmlElement)
+
+  public static DocumentModel.Wordprocessing.DivsChild? CreateModelElement(DivsChild? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -39,9 +42,9 @@ public static class DivsChildConverter
     }
     return null;
   }
-  
+
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.DivsChild? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Wordprocessing.DivsChild, new()
+    where OpenXmlElementType : DivsChild, new()
   {
     if (value != null)
     {

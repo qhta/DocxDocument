@@ -1,23 +1,22 @@
 namespace DocumentModel.Vml;
 
 /// <summary>
-/// Alignment Type
+///   Alignment Type
 /// </summary>
 public enum HorizontalRuleAlignmentKind
 {
   /// <summary>
-  /// Left Alignment.
+  ///   Left Alignment.
   /// </summary>
   Left,
-  
+
   /// <summary>
-  /// Right Alignment.
+  ///   Right Alignment.
   /// </summary>
   Right,
-  
+
   /// <summary>
-  /// Center Alignment.
+  ///   Center Alignment.
   /// </summary>
-  Center,
-  
+  Center
 }

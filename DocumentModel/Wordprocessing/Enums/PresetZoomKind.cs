@@ -1,28 +1,27 @@
 namespace DocumentModel.Wordprocessing;
 
 /// <summary>
-/// Defines the PresetZoomValues enumeration.
+///   Defines the PresetZoomValues enumeration.
 /// </summary>
 public enum PresetZoomKind
 {
   /// <summary>
-  /// No Preset Magnification.
+  ///   No Preset Magnification.
   /// </summary>
   None,
-  
+
   /// <summary>
-  /// Display One Full Page.
+  ///   Display One Full Page.
   /// </summary>
   FullPage,
-  
+
   /// <summary>
-  /// Display Page Width.
+  ///   Display Page Width.
   /// </summary>
   BestFit,
-  
+
   /// <summary>
-  /// Display Text Width.
+  ///   Display Text Width.
   /// </summary>
-  TextFit,
-  
+  TextFit
 }

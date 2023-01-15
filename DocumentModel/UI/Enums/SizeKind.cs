@@ -1,18 +1,17 @@
 namespace DocumentModel.UI;
 
 /// <summary>
-/// Defines the SizeValues enumeration.
+///   Defines the SizeValues enumeration.
 /// </summary>
 public enum SizeKind
 {
   /// <summary>
-  /// normal.
+  ///   normal.
   /// </summary>
   Normal,
-  
+
   /// <summary>
-  /// large.
+  ///   large.
   /// </summary>
-  Large,
-  
+  Large
 }

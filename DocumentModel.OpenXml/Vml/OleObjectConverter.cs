@@ -1,33 +1,37 @@
+using DocumentFormat.OpenXml.Vml.Office;
+using DocumentModel.Vml;
+using OleObject = DocumentFormat.OpenXml.Vml.Office.OleObject;
+
 namespace DocumentModel.OpenXml.Vml;
 
 /// <summary>
-/// Embedded OLE Object.
+///   Embedded OLE Object.
 /// </summary>
 public static class OleObjectConverter
 {
   /// <summary>
-  /// OLE Object Type
+  ///   OLE Object Type
   /// </summary>
-  public static DocumentModel.Vml.OleKind? GetType(DocumentFormat.OpenXml.Vml.Office.OleObject? openXmlElement)
+  public static OleKind? GetType(OleObject? openXmlElement)
   {
-    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Vml.Office.OleValues, DocumentModel.Vml.OleKind>(openXmlElement?.Type?.Value);
+    return EnumValueConverter.GetValue<OleValues, OleKind>(openXmlElement?.Type?.Value);
   }
-  
-  public static void SetType(DocumentFormat.OpenXml.Vml.Office.OleObject? openXmlElement, DocumentModel.Vml.OleKind? value)
+
+  public static void SetType(OleObject? openXmlElement, OleKind? value)
   {
     if (openXmlElement != null)
-      openXmlElement.Type = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Vml.Office.OleValues, DocumentModel.Vml.OleKind>(value);
+      openXmlElement.Type = EnumValueConverter.CreateEnumValue<OleValues, OleKind>(value);
   }
-  
+
   /// <summary>
-  /// OLE Object Application
+  ///   OLE Object Application
   /// </summary>
-  public static String? GetProgId(DocumentFormat.OpenXml.Vml.Office.OleObject? openXmlElement)
+  public static String? GetProgId(OleObject? openXmlElement)
   {
     return openXmlElement?.ProgId?.Value;
   }
-  
-  public static void SetProgId(DocumentFormat.OpenXml.Vml.Office.OleObject? openXmlElement, String? value)
+
+  public static void SetProgId(OleObject? openXmlElement, String? value)
   {
     if (openXmlElement != null)
       if (value != null)
@@ -35,16 +39,16 @@ public static class OleObjectConverter
       else
         openXmlElement.ProgId = null;
   }
-  
+
   /// <summary>
-  /// OLE Object Shape
+  ///   OLE Object Shape
   /// </summary>
-  public static String? GetShapeId(DocumentFormat.OpenXml.Vml.Office.OleObject? openXmlElement)
+  public static String? GetShapeId(OleObject? openXmlElement)
   {
     return openXmlElement?.ShapeId?.Value;
   }
-  
-  public static void SetShapeId(DocumentFormat.OpenXml.Vml.Office.OleObject? openXmlElement, String? value)
+
+  public static void SetShapeId(OleObject? openXmlElement, String? value)
   {
     if (openXmlElement != null)
       if (value != null)
@@ -52,30 +56,30 @@ public static class OleObjectConverter
       else
         openXmlElement.ShapeId = null;
   }
-  
+
   /// <summary>
-  /// OLE Object Representation
+  ///   OLE Object Representation
   /// </summary>
-  public static DocumentModel.Vml.OleDrawAspectKind? GetDrawAspect(DocumentFormat.OpenXml.Vml.Office.OleObject? openXmlElement)
+  public static OleDrawAspectKind? GetDrawAspect(OleObject? openXmlElement)
   {
-    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Vml.Office.OleDrawAspectValues, DocumentModel.Vml.OleDrawAspectKind>(openXmlElement?.DrawAspect?.Value);
+    return EnumValueConverter.GetValue<OleDrawAspectValues, OleDrawAspectKind>(openXmlElement?.DrawAspect?.Value);
   }
-  
-  public static void SetDrawAspect(DocumentFormat.OpenXml.Vml.Office.OleObject? openXmlElement, DocumentModel.Vml.OleDrawAspectKind? value)
+
+  public static void SetDrawAspect(OleObject? openXmlElement, OleDrawAspectKind? value)
   {
     if (openXmlElement != null)
-      openXmlElement.DrawAspect = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Vml.Office.OleDrawAspectValues, DocumentModel.Vml.OleDrawAspectKind>(value);
+      openXmlElement.DrawAspect = EnumValueConverter.CreateEnumValue<OleDrawAspectValues, OleDrawAspectKind>(value);
   }
-  
+
   /// <summary>
-  /// OLE Object Unique ID
+  ///   OLE Object Unique ID
   /// </summary>
-  public static String? GetObjectId(DocumentFormat.OpenXml.Vml.Office.OleObject? openXmlElement)
+  public static String? GetObjectId(OleObject? openXmlElement)
   {
     return openXmlElement?.ObjectId?.Value;
   }
-  
-  public static void SetObjectId(DocumentFormat.OpenXml.Vml.Office.OleObject? openXmlElement, String? value)
+
+  public static void SetObjectId(OleObject? openXmlElement, String? value)
   {
     if (openXmlElement != null)
       if (value != null)
@@ -83,16 +87,16 @@ public static class OleObjectConverter
       else
         openXmlElement.ObjectId = null;
   }
-  
+
   /// <summary>
-  /// Relationship
+  ///   Relationship
   /// </summary>
-  public static String? GetId(DocumentFormat.OpenXml.Vml.Office.OleObject? openXmlElement)
+  public static String? GetId(OleObject? openXmlElement)
   {
     return openXmlElement?.Id?.Value;
   }
-  
-  public static void SetId(DocumentFormat.OpenXml.Vml.Office.OleObject? openXmlElement, String? value)
+
+  public static void SetId(OleObject? openXmlElement, String? value)
   {
     if (openXmlElement != null)
       if (value != null)
@@ -100,100 +104,100 @@ public static class OleObjectConverter
       else
         openXmlElement.Id = null;
   }
-  
+
   /// <summary>
-  /// OLE Update Mode
+  ///   OLE Update Mode
   /// </summary>
-  public static DocumentModel.Vml.OleUpdateMode? GetUpdateMode(DocumentFormat.OpenXml.Vml.Office.OleObject? openXmlElement)
+  public static OleUpdateMode? GetUpdateMode(OleObject? openXmlElement)
   {
-    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Vml.Office.OleUpdateModeValues, DocumentModel.Vml.OleUpdateMode>(openXmlElement?.UpdateMode?.Value);
+    return EnumValueConverter.GetValue<OleUpdateModeValues, OleUpdateMode>(openXmlElement?.UpdateMode?.Value);
   }
-  
-  public static void SetUpdateMode(DocumentFormat.OpenXml.Vml.Office.OleObject? openXmlElement, DocumentModel.Vml.OleUpdateMode? value)
+
+  public static void SetUpdateMode(OleObject? openXmlElement, OleUpdateMode? value)
   {
     if (openXmlElement != null)
-      openXmlElement.UpdateMode = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Vml.Office.OleUpdateModeValues, DocumentModel.Vml.OleUpdateMode>(value);
+      openXmlElement.UpdateMode = EnumValueConverter.CreateEnumValue<OleUpdateModeValues, OleUpdateMode>(value);
   }
-  
+
   /// <summary>
-  /// Embedded Object Alternate Image Request.
+  ///   Embedded Object Alternate Image Request.
   /// </summary>
-  public static String? GetLinkType(DocumentFormat.OpenXml.Vml.Office.OleObject? openXmlElement)
+  public static String? GetLinkType(OleObject? openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Vml.Office.LinkType>();
+    var itemElement = openXmlElement?.GetFirstChild<LinkType>();
     if (itemElement != null)
       return itemElement.Text;
     return null;
   }
-  
-  public static void SetLinkType(DocumentFormat.OpenXml.Vml.Office.OleObject? openXmlElement, String? value)
+
+  public static void SetLinkType(OleObject? openXmlElement, String? value)
   {
     if (openXmlElement != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Vml.Office.LinkType>();
+      var itemElement = openXmlElement.GetFirstChild<LinkType>();
       if (itemElement != null)
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = new DocumentFormat.OpenXml.Vml.Office.LinkType { Text = value };
+        itemElement = new LinkType { Text = value };
         openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
+
   /// <summary>
-  /// Embedded Object Cannot Be Refreshed.
+  ///   Embedded Object Cannot Be Refreshed.
   /// </summary>
-  public static String? GetLockedField(DocumentFormat.OpenXml.Vml.Office.OleObject? openXmlElement)
+  public static String? GetLockedField(OleObject? openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Vml.Office.LockedField>();
+    var itemElement = openXmlElement?.GetFirstChild<LockedField>();
     if (itemElement != null)
       return itemElement.Text;
     return null;
   }
-  
-  public static void SetLockedField(DocumentFormat.OpenXml.Vml.Office.OleObject? openXmlElement, String? value)
+
+  public static void SetLockedField(OleObject? openXmlElement, String? value)
   {
     if (openXmlElement != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Vml.Office.LockedField>();
+      var itemElement = openXmlElement.GetFirstChild<LockedField>();
       if (itemElement != null)
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = new DocumentFormat.OpenXml.Vml.Office.LockedField { Text = value };
+        itemElement = new LockedField { Text = value };
         openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
+
   /// <summary>
-  /// WordprocessingML Field Switches.
+  ///   WordprocessingML Field Switches.
   /// </summary>
-  public static String? GetFieldCodes(DocumentFormat.OpenXml.Vml.Office.OleObject? openXmlElement)
+  public static String? GetFieldCodes(OleObject? openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Vml.Office.FieldCodes>();
+    var itemElement = openXmlElement?.GetFirstChild<FieldCodes>();
     if (itemElement != null)
       return itemElement.Text;
     return null;
   }
-  
-  public static void SetFieldCodes(DocumentFormat.OpenXml.Vml.Office.OleObject? openXmlElement, String? value)
+
+  public static void SetFieldCodes(OleObject? openXmlElement, String? value)
   {
     if (openXmlElement != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Vml.Office.FieldCodes>();
+      var itemElement = openXmlElement.GetFirstChild<FieldCodes>();
       if (itemElement != null)
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = new DocumentFormat.OpenXml.Vml.Office.FieldCodes { Text = value };
+        itemElement = new FieldCodes { Text = value };
         openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static DocumentModel.Vml.OleObject? CreateModelElement(DocumentFormat.OpenXml.Vml.Office.OleObject? openXmlElement)
+
+  public static DocumentModel.Vml.OleObject? CreateModelElement(OleObject? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -212,9 +216,9 @@ public static class OleObjectConverter
     }
     return null;
   }
-  
+
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Vml.OleObject? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Vml.Office.OleObject, new()
+    where OpenXmlElementType : OleObject, new()
   {
     if (value != null)
     {

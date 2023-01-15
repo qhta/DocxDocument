@@ -1,28 +1,27 @@
 namespace DocumentModel.Math;
 
 /// <summary>
-/// Defines the StyleValues enumeration.
+///   Defines the StyleValues enumeration.
 /// </summary>
 public enum StyleKind
 {
   /// <summary>
-  /// Plain.
+  ///   Plain.
   /// </summary>
   Plain,
-  
+
   /// <summary>
-  /// Bold.
+  ///   Bold.
   /// </summary>
   Bold,
-  
+
   /// <summary>
-  /// Italic.
+  ///   Italic.
   /// </summary>
   Italic,
-  
+
   /// <summary>
-  /// Bold-Italic.
+  ///   Bold-Italic.
   /// </summary>
-  BoldItalic,
-  
+  BoldItalic
 }

@@ -1,15 +1,14 @@
 namespace DocumentModel.Math;
 
 /// <summary>
-/// Delimiter Function.
+///   Delimiter Function.
 /// </summary>
-public partial class Delimiter
+public class Delimiter
 {
   /// <summary>
-  /// Delimiter Properties.
+  ///   Delimiter Properties.
   /// </summary>
-  public DocumentModel.Math.DelimiterProperties? DelimiterProperties { get; set; }
-  
-  public Collection<DocumentModel.Math.Base>? Bases { get; set; }
-  
+  public DelimiterProperties? DelimiterProperties { get; set; }
+
+  public Collection<Base>? Bases { get; set; }
 }

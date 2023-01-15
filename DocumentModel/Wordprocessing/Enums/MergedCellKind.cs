@@ -1,18 +1,17 @@
 namespace DocumentModel.Wordprocessing;
 
 /// <summary>
-/// Defines the MergedCellValues enumeration.
+///   Defines the MergedCellValues enumeration.
 /// </summary>
 public enum MergedCellKind
 {
   /// <summary>
-  /// Continue Merged Region.
+  ///   Continue Merged Region.
   /// </summary>
   Continue,
-  
+
   /// <summary>
-  /// Start/Restart Merged Region.
+  ///   Start/Restart Merged Region.
   /// </summary>
-  Restart,
-  
+  Restart
 }

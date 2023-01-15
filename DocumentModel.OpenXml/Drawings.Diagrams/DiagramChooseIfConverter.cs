@@ -1,19 +1,31 @@
+using DocumentFormat.OpenXml.Drawing.Diagrams;
+using DocumentModel.Drawings.Diagrams;
+using Algorithm = DocumentModel.Drawings.Diagrams.Algorithm;
+using Choose = DocumentModel.Drawings.Diagrams.Choose;
+using Constraints = DocumentModel.Drawings.Diagrams.Constraints;
+using DiagramChooseIf = DocumentFormat.OpenXml.Drawing.Diagrams.DiagramChooseIf;
+using ForEach = DocumentModel.Drawings.Diagrams.ForEach;
+using LayoutNode = DocumentModel.Drawings.Diagrams.LayoutNode;
+using PresentationOf = DocumentModel.Drawings.Diagrams.PresentationOf;
+using RuleList = DocumentModel.Drawings.Diagrams.RuleList;
+using Shape = DocumentModel.Drawings.Diagrams.Shape;
+
 namespace DocumentModel.OpenXml.Drawings.Diagrams;
 
 /// <summary>
-/// If.
+///   If.
 /// </summary>
 public static class DiagramChooseIfConverter
 {
   /// <summary>
-  /// Name
+  ///   Name
   /// </summary>
-  public static String? GetName(DocumentFormat.OpenXml.Drawing.Diagrams.DiagramChooseIf? openXmlElement)
+  public static String? GetName(DiagramChooseIf? openXmlElement)
   {
     return openXmlElement?.Name?.Value;
   }
-  
-  public static void SetName(DocumentFormat.OpenXml.Drawing.Diagrams.DiagramChooseIf? openXmlElement, String? value)
+
+  public static void SetName(DiagramChooseIf? openXmlElement, String? value)
   {
     if (openXmlElement != null)
       if (value != null)
@@ -21,144 +33,144 @@ public static class DiagramChooseIfConverter
       else
         openXmlElement.Name = null;
   }
-  
+
   /// <summary>
-  /// Axis
+  ///   Axis
   /// </summary>
-  public static DocumentModel.ListOf<DocumentModel.Drawings.Diagrams.AxisKind>? GetAxis(DocumentFormat.OpenXml.Drawing.Diagrams.DiagramChooseIf? openXmlElement)
+  public static ListOf<AxisKind>? GetAxis(DiagramChooseIf? openXmlElement)
   {
-    return ListValueConverter.GetValue<DocumentFormat.OpenXml.Drawing.Diagrams.AxisValues, DocumentModel.Drawings.Diagrams.AxisKind>(openXmlElement?.Axis);
+    return ListValueConverter.GetValue<AxisValues, AxisKind>(openXmlElement?.Axis);
   }
-  
-  public static void SetAxis(DocumentFormat.OpenXml.Drawing.Diagrams.DiagramChooseIf? openXmlElement, DocumentModel.ListOf<DocumentModel.Drawings.Diagrams.AxisKind>? value)
+
+  public static void SetAxis(DiagramChooseIf? openXmlElement, ListOf<AxisKind>? value)
   {
     if (openXmlElement != null)
     {
       if (value != null)
-        openXmlElement.Axis = ListValueConverter.CreateListValue<DocumentFormat.OpenXml.Drawing.Diagrams.AxisValues, DocumentModel.Drawings.Diagrams.AxisKind>(value);
+        openXmlElement.Axis = ListValueConverter.CreateListValue<AxisValues, AxisKind>(value);
       else
         openXmlElement.Axis = null;
     }
   }
-  
+
   /// <summary>
-  /// Data Point Type
+  ///   Data Point Type
   /// </summary>
-  public static DocumentModel.ListOf<DocumentModel.Drawings.Diagrams.ElementKind>? GetPointType(DocumentFormat.OpenXml.Drawing.Diagrams.DiagramChooseIf? openXmlElement)
+  public static ListOf<ElementKind>? GetPointType(DiagramChooseIf? openXmlElement)
   {
-    return ListValueConverter.GetValue<DocumentFormat.OpenXml.Drawing.Diagrams.ElementValues, DocumentModel.Drawings.Diagrams.ElementKind>(openXmlElement?.PointType);
+    return ListValueConverter.GetValue<ElementValues, ElementKind>(openXmlElement?.PointType);
   }
-  
-  public static void SetPointType(DocumentFormat.OpenXml.Drawing.Diagrams.DiagramChooseIf? openXmlElement, DocumentModel.ListOf<DocumentModel.Drawings.Diagrams.ElementKind>? value)
+
+  public static void SetPointType(DiagramChooseIf? openXmlElement, ListOf<ElementKind>? value)
   {
     if (openXmlElement != null)
     {
       if (value != null)
-        openXmlElement.PointType = ListValueConverter.CreateListValue<DocumentFormat.OpenXml.Drawing.Diagrams.ElementValues, DocumentModel.Drawings.Diagrams.ElementKind>(value);
+        openXmlElement.PointType = ListValueConverter.CreateListValue<ElementValues, ElementKind>(value);
       else
         openXmlElement.PointType = null;
     }
   }
-  
+
   /// <summary>
-  /// Hide Last Transition
+  ///   Hide Last Transition
   /// </summary>
-  public static DocumentModel.ListOf<Boolean>? GetHideLastTrans(DocumentFormat.OpenXml.Drawing.Diagrams.DiagramChooseIf? openXmlElement)
+  public static ListOf<Boolean>? GetHideLastTrans(DiagramChooseIf? openXmlElement)
   {
     return ListValueConverter.GetValue(openXmlElement?.HideLastTrans);
   }
-  
-  public static void SetHideLastTrans(DocumentFormat.OpenXml.Drawing.Diagrams.DiagramChooseIf? openXmlElement, DocumentModel.ListOf<Boolean>? value)
+
+  public static void SetHideLastTrans(DiagramChooseIf? openXmlElement, ListOf<Boolean>? value)
   {
     if (openXmlElement != null)
     {
       if (value != null)
-        openXmlElement.HideLastTrans = ListValueConverter.CreateListValue<DocumentFormat.OpenXml.BooleanValue>(value);
+        openXmlElement.HideLastTrans = ListValueConverter.CreateListValue<BooleanValue>(value);
       else
         openXmlElement.HideLastTrans = null;
     }
   }
-  
+
   /// <summary>
-  /// Start
+  ///   Start
   /// </summary>
-  public static DocumentModel.ListOf<Int32>? GetStart(DocumentFormat.OpenXml.Drawing.Diagrams.DiagramChooseIf? openXmlElement)
+  public static ListOf<Int32>? GetStart(DiagramChooseIf? openXmlElement)
   {
     return ListValueConverter.GetValue(openXmlElement?.Start);
   }
-  
-  public static void SetStart(DocumentFormat.OpenXml.Drawing.Diagrams.DiagramChooseIf? openXmlElement, DocumentModel.ListOf<Int32>? value)
+
+  public static void SetStart(DiagramChooseIf? openXmlElement, ListOf<Int32>? value)
   {
     if (openXmlElement != null)
     {
       if (value != null)
-        openXmlElement.Start = ListValueConverter.CreateListValue<DocumentFormat.OpenXml.Int32Value>(value);
+        openXmlElement.Start = ListValueConverter.CreateListValue<Int32Value>(value);
       else
         openXmlElement.Start = null;
     }
   }
-  
+
   /// <summary>
-  /// Count
+  ///   Count
   /// </summary>
-  public static DocumentModel.ListOf<UInt32>? GetCount(DocumentFormat.OpenXml.Drawing.Diagrams.DiagramChooseIf? openXmlElement)
+  public static ListOf<UInt32>? GetCount(DiagramChooseIf? openXmlElement)
   {
     return ListValueConverter.GetValue(openXmlElement?.Count);
   }
-  
-  public static void SetCount(DocumentFormat.OpenXml.Drawing.Diagrams.DiagramChooseIf? openXmlElement, DocumentModel.ListOf<UInt32>? value)
+
+  public static void SetCount(DiagramChooseIf? openXmlElement, ListOf<UInt32>? value)
   {
     if (openXmlElement != null)
     {
       if (value != null)
-        openXmlElement.Count = ListValueConverter.CreateListValue<DocumentFormat.OpenXml.UInt32Value>(value);
+        openXmlElement.Count = ListValueConverter.CreateListValue<UInt32Value>(value);
       else
         openXmlElement.Count = null;
     }
   }
-  
+
   /// <summary>
-  /// Step
+  ///   Step
   /// </summary>
-  public static DocumentModel.ListOf<Int32>? GetStep(DocumentFormat.OpenXml.Drawing.Diagrams.DiagramChooseIf? openXmlElement)
+  public static ListOf<Int32>? GetStep(DiagramChooseIf? openXmlElement)
   {
     return ListValueConverter.GetValue(openXmlElement?.Step);
   }
-  
-  public static void SetStep(DocumentFormat.OpenXml.Drawing.Diagrams.DiagramChooseIf? openXmlElement, DocumentModel.ListOf<Int32>? value)
+
+  public static void SetStep(DiagramChooseIf? openXmlElement, ListOf<Int32>? value)
   {
     if (openXmlElement != null)
     {
       if (value != null)
-        openXmlElement.Step = ListValueConverter.CreateListValue<DocumentFormat.OpenXml.Int32Value>(value);
+        openXmlElement.Step = ListValueConverter.CreateListValue<Int32Value>(value);
       else
         openXmlElement.Step = null;
     }
   }
-  
+
   /// <summary>
-  /// Function
+  ///   Function
   /// </summary>
-  public static DocumentModel.Drawings.Diagrams.FunctionKind? GetFunction(DocumentFormat.OpenXml.Drawing.Diagrams.DiagramChooseIf? openXmlElement)
+  public static FunctionKind? GetFunction(DiagramChooseIf? openXmlElement)
   {
-    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Drawing.Diagrams.FunctionValues, DocumentModel.Drawings.Diagrams.FunctionKind>(openXmlElement?.Function?.Value);
+    return EnumValueConverter.GetValue<FunctionValues, FunctionKind>(openXmlElement?.Function?.Value);
   }
-  
-  public static void SetFunction(DocumentFormat.OpenXml.Drawing.Diagrams.DiagramChooseIf? openXmlElement, DocumentModel.Drawings.Diagrams.FunctionKind? value)
+
+  public static void SetFunction(DiagramChooseIf? openXmlElement, FunctionKind? value)
   {
     if (openXmlElement != null)
-      openXmlElement.Function = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Drawing.Diagrams.FunctionValues, DocumentModel.Drawings.Diagrams.FunctionKind>(value);
+      openXmlElement.Function = EnumValueConverter.CreateEnumValue<FunctionValues, FunctionKind>(value);
   }
-  
+
   /// <summary>
-  /// Argument
+  ///   Argument
   /// </summary>
-  public static String? GetArgument(DocumentFormat.OpenXml.Drawing.Diagrams.DiagramChooseIf? openXmlElement)
+  public static String? GetArgument(DiagramChooseIf? openXmlElement)
   {
     return openXmlElement?.Argument?.Value;
   }
-  
-  public static void SetArgument(DocumentFormat.OpenXml.Drawing.Diagrams.DiagramChooseIf? openXmlElement, String? value)
+
+  public static void SetArgument(DiagramChooseIf? openXmlElement, String? value)
   {
     if (openXmlElement != null)
       if (value != null)
@@ -166,30 +178,30 @@ public static class DiagramChooseIfConverter
       else
         openXmlElement.Argument = null;
   }
-  
+
   /// <summary>
-  /// Operator
+  ///   Operator
   /// </summary>
-  public static DocumentModel.Drawings.Diagrams.FunctionOperatorKind? GetOperator(DocumentFormat.OpenXml.Drawing.Diagrams.DiagramChooseIf? openXmlElement)
+  public static FunctionOperatorKind? GetOperator(DiagramChooseIf? openXmlElement)
   {
-    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Drawing.Diagrams.FunctionOperatorValues, DocumentModel.Drawings.Diagrams.FunctionOperatorKind>(openXmlElement?.Operator?.Value);
+    return EnumValueConverter.GetValue<FunctionOperatorValues, FunctionOperatorKind>(openXmlElement?.Operator?.Value);
   }
-  
-  public static void SetOperator(DocumentFormat.OpenXml.Drawing.Diagrams.DiagramChooseIf? openXmlElement, DocumentModel.Drawings.Diagrams.FunctionOperatorKind? value)
+
+  public static void SetOperator(DiagramChooseIf? openXmlElement, FunctionOperatorKind? value)
   {
     if (openXmlElement != null)
-      openXmlElement.Operator = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Drawing.Diagrams.FunctionOperatorValues, DocumentModel.Drawings.Diagrams.FunctionOperatorKind>(value);
+      openXmlElement.Operator = EnumValueConverter.CreateEnumValue<FunctionOperatorValues, FunctionOperatorKind>(value);
   }
-  
+
   /// <summary>
-  /// Value
+  ///   Value
   /// </summary>
-  public static String? GetVal(DocumentFormat.OpenXml.Drawing.Diagrams.DiagramChooseIf? openXmlElement)
+  public static String? GetVal(DiagramChooseIf? openXmlElement)
   {
     return openXmlElement?.Val?.Value;
   }
-  
-  public static void SetVal(DocumentFormat.OpenXml.Drawing.Diagrams.DiagramChooseIf? openXmlElement, String? value)
+
+  public static void SetVal(DiagramChooseIf? openXmlElement, String? value)
   {
     if (openXmlElement != null)
       if (value != null)
@@ -197,16 +209,16 @@ public static class DiagramChooseIfConverter
       else
         openXmlElement.Val = null;
   }
-  
-  public static DocumentModel.Drawings.Diagrams.Algorithm? GetAlgorithm(DocumentFormat.OpenXml.Drawing.Diagrams.DiagramChooseIf? openXmlElement)
+
+  public static Algorithm? GetAlgorithm(DiagramChooseIf? openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.Diagrams.Algorithm>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.Diagrams.AlgorithmConverter.CreateModelElement(itemElement);
+      return AlgorithmConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetAlgorithm(DocumentFormat.OpenXml.Drawing.Diagrams.DiagramChooseIf? openXmlElement, DocumentModel.Drawings.Diagrams.Algorithm? value)
+
+  public static void SetAlgorithm(DiagramChooseIf? openXmlElement, Algorithm? value)
   {
     if (openXmlElement != null)
     {
@@ -215,22 +227,22 @@ public static class DiagramChooseIfConverter
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Drawings.Diagrams.AlgorithmConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Diagrams.Algorithm>(value);
+        itemElement = AlgorithmConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Diagrams.Algorithm>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static DocumentModel.Drawings.Diagrams.Shape? GetShape(DocumentFormat.OpenXml.Drawing.Diagrams.DiagramChooseIf? openXmlElement)
+
+  public static Shape? GetShape(DiagramChooseIf? openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.Diagrams.Shape>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.Diagrams.ShapeConverter.CreateModelElement(itemElement);
+      return ShapeConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetShape(DocumentFormat.OpenXml.Drawing.Diagrams.DiagramChooseIf? openXmlElement, DocumentModel.Drawings.Diagrams.Shape? value)
+
+  public static void SetShape(DiagramChooseIf? openXmlElement, Shape? value)
   {
     if (openXmlElement != null)
     {
@@ -239,22 +251,22 @@ public static class DiagramChooseIfConverter
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Drawings.Diagrams.ShapeConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Diagrams.Shape>(value);
+        itemElement = ShapeConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Diagrams.Shape>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static DocumentModel.Drawings.Diagrams.PresentationOf? GetPresentationOf(DocumentFormat.OpenXml.Drawing.Diagrams.DiagramChooseIf? openXmlElement)
+
+  public static PresentationOf? GetPresentationOf(DiagramChooseIf? openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.Diagrams.PresentationOf>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.Diagrams.PresentationOfConverter.CreateModelElement(itemElement);
+      return PresentationOfConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetPresentationOf(DocumentFormat.OpenXml.Drawing.Diagrams.DiagramChooseIf? openXmlElement, DocumentModel.Drawings.Diagrams.PresentationOf? value)
+
+  public static void SetPresentationOf(DiagramChooseIf? openXmlElement, PresentationOf? value)
   {
     if (openXmlElement != null)
     {
@@ -263,22 +275,22 @@ public static class DiagramChooseIfConverter
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Drawings.Diagrams.PresentationOfConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Diagrams.PresentationOf>(value);
+        itemElement = PresentationOfConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Diagrams.PresentationOf>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static DocumentModel.Drawings.Diagrams.Constraints? GetConstraints(DocumentFormat.OpenXml.Drawing.Diagrams.DiagramChooseIf? openXmlElement)
+
+  public static Constraints? GetConstraints(DiagramChooseIf? openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.Diagrams.Constraints>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.Diagrams.ConstraintsConverter.CreateModelElement(itemElement);
+      return ConstraintsConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetConstraints(DocumentFormat.OpenXml.Drawing.Diagrams.DiagramChooseIf? openXmlElement, DocumentModel.Drawings.Diagrams.Constraints? value)
+
+  public static void SetConstraints(DiagramChooseIf? openXmlElement, Constraints? value)
   {
     if (openXmlElement != null)
     {
@@ -287,22 +299,22 @@ public static class DiagramChooseIfConverter
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Drawings.Diagrams.ConstraintsConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Diagrams.Constraints>(value);
+        itemElement = ConstraintsConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Diagrams.Constraints>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static DocumentModel.Drawings.Diagrams.RuleList? GetRuleList(DocumentFormat.OpenXml.Drawing.Diagrams.DiagramChooseIf? openXmlElement)
+
+  public static RuleList? GetRuleList(DiagramChooseIf? openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.Diagrams.RuleList>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.Diagrams.RuleListConverter.CreateModelElement(itemElement);
+      return RuleListConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetRuleList(DocumentFormat.OpenXml.Drawing.Diagrams.DiagramChooseIf? openXmlElement, DocumentModel.Drawings.Diagrams.RuleList? value)
+
+  public static void SetRuleList(DiagramChooseIf? openXmlElement, RuleList? value)
   {
     if (openXmlElement != null)
     {
@@ -311,22 +323,22 @@ public static class DiagramChooseIfConverter
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Drawings.Diagrams.RuleListConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Diagrams.RuleList>(value);
+        itemElement = RuleListConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Diagrams.RuleList>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static DocumentModel.Drawings.Diagrams.ForEach? GetForEach(DocumentFormat.OpenXml.Drawing.Diagrams.DiagramChooseIf? openXmlElement)
+
+  public static ForEach? GetForEach(DiagramChooseIf? openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.Diagrams.ForEach>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.Diagrams.ForEachConverter.CreateModelElement(itemElement);
+      return ForEachConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetForEach(DocumentFormat.OpenXml.Drawing.Diagrams.DiagramChooseIf? openXmlElement, DocumentModel.Drawings.Diagrams.ForEach? value)
+
+  public static void SetForEach(DiagramChooseIf? openXmlElement, ForEach? value)
   {
     if (openXmlElement != null)
     {
@@ -335,22 +347,22 @@ public static class DiagramChooseIfConverter
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Drawings.Diagrams.ForEachConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Diagrams.ForEach>(value);
+        itemElement = ForEachConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Diagrams.ForEach>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static DocumentModel.Drawings.Diagrams.LayoutNode? GetLayoutNode(DocumentFormat.OpenXml.Drawing.Diagrams.DiagramChooseIf? openXmlElement)
+
+  public static LayoutNode? GetLayoutNode(DiagramChooseIf? openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.Diagrams.LayoutNode>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.Diagrams.LayoutNodeConverter.CreateModelElement(itemElement);
+      return LayoutNodeConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetLayoutNode(DocumentFormat.OpenXml.Drawing.Diagrams.DiagramChooseIf? openXmlElement, DocumentModel.Drawings.Diagrams.LayoutNode? value)
+
+  public static void SetLayoutNode(DiagramChooseIf? openXmlElement, LayoutNode? value)
   {
     if (openXmlElement != null)
     {
@@ -359,22 +371,22 @@ public static class DiagramChooseIfConverter
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Drawings.Diagrams.LayoutNodeConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Diagrams.LayoutNode>(value);
+        itemElement = LayoutNodeConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Diagrams.LayoutNode>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static DocumentModel.Drawings.Diagrams.Choose? GetChoose(DocumentFormat.OpenXml.Drawing.Diagrams.DiagramChooseIf? openXmlElement)
+
+  public static Choose? GetChoose(DiagramChooseIf? openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.Diagrams.Choose>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.Diagrams.ChooseConverter.CreateModelElement(itemElement);
+      return ChooseConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetChoose(DocumentFormat.OpenXml.Drawing.Diagrams.DiagramChooseIf? openXmlElement, DocumentModel.Drawings.Diagrams.Choose? value)
+
+  public static void SetChoose(DiagramChooseIf? openXmlElement, Choose? value)
   {
     if (openXmlElement != null)
     {
@@ -383,22 +395,22 @@ public static class DiagramChooseIfConverter
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Drawings.Diagrams.ChooseConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Diagrams.Choose>(value);
+        itemElement = ChooseConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Diagrams.Choose>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static DocumentModel.Drawings.Diagrams.ExtensionList? GetExtensionList(DocumentFormat.OpenXml.Drawing.Diagrams.DiagramChooseIf? openXmlElement)
+
+  public static DocumentModel.Drawings.Diagrams.ExtensionList? GetExtensionList(DiagramChooseIf? openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.Diagrams.ExtensionList>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.Diagrams.ExtensionListConverter.CreateModelElement(itemElement);
+      return ExtensionListConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetExtensionList(DocumentFormat.OpenXml.Drawing.Diagrams.DiagramChooseIf? openXmlElement, DocumentModel.Drawings.Diagrams.ExtensionList? value)
+
+  public static void SetExtensionList(DiagramChooseIf? openXmlElement, DocumentModel.Drawings.Diagrams.ExtensionList? value)
   {
     if (openXmlElement != null)
     {
@@ -407,14 +419,14 @@ public static class DiagramChooseIfConverter
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Drawings.Diagrams.ExtensionListConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Diagrams.ExtensionList>(value);
+        itemElement = ExtensionListConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Diagrams.ExtensionList>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static DocumentModel.Drawings.Diagrams.DiagramChooseIf? CreateModelElement(DocumentFormat.OpenXml.Drawing.Diagrams.DiagramChooseIf? openXmlElement)
+
+  public static DocumentModel.Drawings.Diagrams.DiagramChooseIf? CreateModelElement(DiagramChooseIf? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -443,9 +455,9 @@ public static class DiagramChooseIfConverter
     }
     return null;
   }
-  
+
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.Diagrams.DiagramChooseIf? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.Diagrams.DiagramChooseIf, new()
+    where OpenXmlElementType : DiagramChooseIf, new()
   {
     if (value != null)
     {

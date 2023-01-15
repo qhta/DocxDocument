@@ -1,23 +1,22 @@
 namespace DocumentModel.Vml;
 
 /// <summary>
-/// Line Join Type
+///   Line Join Type
 /// </summary>
 public enum StrokeJoinStyleKind
 {
   /// <summary>
-  /// Round Joint.
+  ///   Round Joint.
   /// </summary>
   Round,
-  
+
   /// <summary>
-  /// Bevel Joint.
+  ///   Bevel Joint.
   /// </summary>
   Bevel,
-  
+
   /// <summary>
-  /// Miter Joint.
+  ///   Miter Joint.
   /// </summary>
-  Miter,
-  
+  Miter
 }

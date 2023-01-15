@@ -1,10 +1,9 @@
 namespace DocumentModel.Drawings.Diagram1;
 
 /// <summary>
-/// Defines the NumberDiagramInfoList Class.
+///   Defines the NumberDiagramInfoList Class.
 /// </summary>
-public partial class NumberDiagramInfoList
+public class NumberDiagramInfoList
 {
-  public Collection<DocumentModel.Drawings.Diagram1.NumberDiagramInfo>? NumberDiagramInfos { get; set; }
-  
+  public Collection<NumberDiagramInfo>? NumberDiagramInfos { get; set; }
 }

@@ -1,53 +1,55 @@
+using DocumentFormat.OpenXml.Drawing;
+
 namespace DocumentModel.OpenXml.Drawings;
 
 /// <summary>
-/// Rotation.
+///   Rotation.
 /// </summary>
 public static class RotationConverter
 {
   /// <summary>
-  /// Latitude
+  ///   Latitude
   /// </summary>
-  public static Int32? GetLatitude(DocumentFormat.OpenXml.Drawing.Rotation? openXmlElement)
+  public static Int32? GetLatitude(Rotation? openXmlElement)
   {
     return openXmlElement?.Latitude?.Value;
   }
-  
-  public static void SetLatitude(DocumentFormat.OpenXml.Drawing.Rotation? openXmlElement, Int32? value)
+
+  public static void SetLatitude(Rotation? openXmlElement, Int32? value)
   {
     if (openXmlElement != null)
       openXmlElement.Latitude = value;
   }
-  
+
   /// <summary>
-  /// Longitude
+  ///   Longitude
   /// </summary>
-  public static Int32? GetLongitude(DocumentFormat.OpenXml.Drawing.Rotation? openXmlElement)
+  public static Int32? GetLongitude(Rotation? openXmlElement)
   {
     return openXmlElement?.Longitude?.Value;
   }
-  
-  public static void SetLongitude(DocumentFormat.OpenXml.Drawing.Rotation? openXmlElement, Int32? value)
+
+  public static void SetLongitude(Rotation? openXmlElement, Int32? value)
   {
     if (openXmlElement != null)
       openXmlElement.Longitude = value;
   }
-  
+
   /// <summary>
-  /// Revolution
+  ///   Revolution
   /// </summary>
-  public static Int32? GetRevolution(DocumentFormat.OpenXml.Drawing.Rotation? openXmlElement)
+  public static Int32? GetRevolution(Rotation? openXmlElement)
   {
     return openXmlElement?.Revolution?.Value;
   }
-  
-  public static void SetRevolution(DocumentFormat.OpenXml.Drawing.Rotation? openXmlElement, Int32? value)
+
+  public static void SetRevolution(Rotation? openXmlElement, Int32? value)
   {
     if (openXmlElement != null)
       openXmlElement.Revolution = value;
   }
-  
-  public static DocumentModel.Drawings.Rotation? CreateModelElement(DocumentFormat.OpenXml.Drawing.Rotation? openXmlElement)
+
+  public static DocumentModel.Drawings.Rotation? CreateModelElement(Rotation? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -59,9 +61,9 @@ public static class RotationConverter
     }
     return null;
   }
-  
+
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.Rotation? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.Rotation, new()
+    where OpenXmlElementType : Rotation, new()
   {
     if (value != null)
     {

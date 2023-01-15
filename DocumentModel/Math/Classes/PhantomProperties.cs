@@ -1,38 +1,37 @@
 namespace DocumentModel.Math;
 
 /// <summary>
-/// Phantom Properties.
+///   Phantom Properties.
 /// </summary>
-public partial class PhantomProperties
+public class PhantomProperties
 {
   /// <summary>
-  /// Phantom Show.
+  ///   Phantom Show.
   /// </summary>
-  public DocumentModel.Math.BooleanKind? ShowPhantom { get; set; }
-  
+  public BooleanKind? ShowPhantom { get; set; }
+
   /// <summary>
-  /// Phantom Zero Width.
+  ///   Phantom Zero Width.
   /// </summary>
-  public DocumentModel.Math.BooleanKind? ZeroWidth { get; set; }
-  
+  public BooleanKind? ZeroWidth { get; set; }
+
   /// <summary>
-  /// Phantom Zero Ascent.
+  ///   Phantom Zero Ascent.
   /// </summary>
-  public DocumentModel.Math.BooleanKind? ZeroAscent { get; set; }
-  
+  public BooleanKind? ZeroAscent { get; set; }
+
   /// <summary>
-  /// Phantom Zero Descent.
+  ///   Phantom Zero Descent.
   /// </summary>
-  public DocumentModel.Math.BooleanKind? ZeroDescent { get; set; }
-  
+  public BooleanKind? ZeroDescent { get; set; }
+
   /// <summary>
-  /// Transparent (Phantom).
+  ///   Transparent (Phantom).
   /// </summary>
-  public DocumentModel.Math.BooleanKind? Transparent { get; set; }
-  
+  public BooleanKind? Transparent { get; set; }
+
   /// <summary>
-  /// ControlProperties.
+  ///   ControlProperties.
   /// </summary>
-  public DocumentModel.Math.ControlProperties? ControlProperties { get; set; }
-  
+  public ControlProperties? ControlProperties { get; set; }
 }

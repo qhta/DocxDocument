@@ -1,164 +1,163 @@
+using DocumentFormat.OpenXml.Math;
+using DocumentModel.Math;
+using ControlProperties = DocumentModel.Math.ControlProperties;
+using DelimiterProperties = DocumentFormat.OpenXml.Math.DelimiterProperties;
+
 namespace DocumentModel.OpenXml.Math;
 
 /// <summary>
-/// Delimiter Properties.
+///   Delimiter Properties.
 /// </summary>
 public static class DelimiterPropertiesConverter
 {
   /// <summary>
-  /// Delimiter Beginning Character.
+  ///   Delimiter Beginning Character.
   /// </summary>
-  public static String? GetBeginChar(DocumentFormat.OpenXml.Math.DelimiterProperties? openXmlElement)
+  public static String? GetBeginChar(DelimiterProperties? openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Math.BeginChar>();
+    var itemElement = openXmlElement?.GetFirstChild<BeginChar>();
     if (itemElement != null)
       return itemElement.Val?.Value;
     return null;
   }
-  
-  public static void SetBeginChar(DocumentFormat.OpenXml.Math.DelimiterProperties? openXmlElement, String? value)
+
+  public static void SetBeginChar(DelimiterProperties? openXmlElement, String? value)
   {
     if (openXmlElement != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Math.BeginChar>();
+      var itemElement = openXmlElement.GetFirstChild<BeginChar>();
       if (itemElement != null)
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = new DocumentFormat.OpenXml.Math.BeginChar { Val = value };
+        itemElement = new BeginChar { Val = value };
         openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
+
   /// <summary>
-  /// Delimiter Separator Character.
+  ///   Delimiter Separator Character.
   /// </summary>
-  public static String? GetSeparatorChar(DocumentFormat.OpenXml.Math.DelimiterProperties? openXmlElement)
+  public static String? GetSeparatorChar(DelimiterProperties? openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Math.SeparatorChar>();
+    var itemElement = openXmlElement?.GetFirstChild<SeparatorChar>();
     if (itemElement != null)
       return itemElement.Val?.Value;
     return null;
   }
-  
-  public static void SetSeparatorChar(DocumentFormat.OpenXml.Math.DelimiterProperties? openXmlElement, String? value)
+
+  public static void SetSeparatorChar(DelimiterProperties? openXmlElement, String? value)
   {
     if (openXmlElement != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Math.SeparatorChar>();
+      var itemElement = openXmlElement.GetFirstChild<SeparatorChar>();
       if (itemElement != null)
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = new DocumentFormat.OpenXml.Math.SeparatorChar { Val = value };
+        itemElement = new SeparatorChar { Val = value };
         openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
+
   /// <summary>
-  /// Delimiter Ending Character.
+  ///   Delimiter Ending Character.
   /// </summary>
-  public static String? GetEndChar(DocumentFormat.OpenXml.Math.DelimiterProperties? openXmlElement)
+  public static String? GetEndChar(DelimiterProperties? openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Math.EndChar>();
+    var itemElement = openXmlElement?.GetFirstChild<EndChar>();
     if (itemElement != null)
       return itemElement.Val?.Value;
     return null;
   }
-  
-  public static void SetEndChar(DocumentFormat.OpenXml.Math.DelimiterProperties? openXmlElement, String? value)
+
+  public static void SetEndChar(DelimiterProperties? openXmlElement, String? value)
   {
     if (openXmlElement != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Math.EndChar>();
+      var itemElement = openXmlElement.GetFirstChild<EndChar>();
       if (itemElement != null)
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = new DocumentFormat.OpenXml.Math.EndChar { Val = value };
+        itemElement = new EndChar { Val = value };
         openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
+
   /// <summary>
-  /// Delimiter Grow.
+  ///   Delimiter Grow.
   /// </summary>
-  public static DocumentModel.Math.BooleanKind? GetGrowOperators(DocumentFormat.OpenXml.Math.DelimiterProperties? openXmlElement)
+  public static BooleanKind? GetGrowOperators(DelimiterProperties? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Math.GrowOperators>();
-      if (itemElement?.Val?.Value != null)
-      {
-        return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Math.BooleanValues, DocumentModel.Math.BooleanKind>(itemElement.Val.Value);
-      }
+      var itemElement = openXmlElement.GetFirstChild<GrowOperators>();
+      if (itemElement?.Val?.Value != null) return EnumValueConverter.GetValue<BooleanValues, BooleanKind>(itemElement.Val.Value);
     }
     return null;
   }
-  
-  public static void SetGrowOperators(DocumentFormat.OpenXml.Math.DelimiterProperties? openXmlElement, DocumentModel.Math.BooleanKind? value)
+
+  public static void SetGrowOperators(DelimiterProperties? openXmlElement, BooleanKind? value)
   {
     if (openXmlElement != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Math.GrowOperators>();
+      var itemElement = openXmlElement.GetFirstChild<GrowOperators>();
       if (itemElement != null)
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = EnumValueConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Math.GrowOperators, DocumentFormat.OpenXml.Math.BooleanValues, DocumentModel.Math.BooleanKind>(value);
+        itemElement = EnumValueConverter.CreateOpenXmlElement<GrowOperators, BooleanValues, BooleanKind>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
+
   /// <summary>
-  /// Shape (Delimiters).
+  ///   Shape (Delimiters).
   /// </summary>
-  public static DocumentModel.Math.ShapeDelimiterKind? GetShape(DocumentFormat.OpenXml.Math.DelimiterProperties? openXmlElement)
+  public static ShapeDelimiterKind? GetShape(DelimiterProperties? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Math.Shape>();
-      if (itemElement?.Val?.Value != null)
-      {
-        return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Math.ShapeDelimiterValues, DocumentModel.Math.ShapeDelimiterKind>(itemElement.Val.Value);
-      }
+      var itemElement = openXmlElement.GetFirstChild<Shape>();
+      if (itemElement?.Val?.Value != null) return EnumValueConverter.GetValue<ShapeDelimiterValues, ShapeDelimiterKind>(itemElement.Val.Value);
     }
     return null;
   }
-  
-  public static void SetShape(DocumentFormat.OpenXml.Math.DelimiterProperties? openXmlElement, DocumentModel.Math.ShapeDelimiterKind? value)
+
+  public static void SetShape(DelimiterProperties? openXmlElement, ShapeDelimiterKind? value)
   {
     if (openXmlElement != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Math.Shape>();
+      var itemElement = openXmlElement.GetFirstChild<Shape>();
       if (itemElement != null)
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = EnumValueConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Math.Shape, DocumentFormat.OpenXml.Math.ShapeDelimiterValues, DocumentModel.Math.ShapeDelimiterKind>(value);
+        itemElement = EnumValueConverter.CreateOpenXmlElement<Shape, ShapeDelimiterValues, ShapeDelimiterKind>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
+
   /// <summary>
-  /// ControlProperties.
+  ///   ControlProperties.
   /// </summary>
-  public static DocumentModel.Math.ControlProperties? GetControlProperties(DocumentFormat.OpenXml.Math.DelimiterProperties? openXmlElement)
+  public static ControlProperties? GetControlProperties(DelimiterProperties? openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Math.ControlProperties>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Math.ControlPropertiesConverter.CreateModelElement(itemElement);
+      return ControlPropertiesConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetControlProperties(DocumentFormat.OpenXml.Math.DelimiterProperties? openXmlElement, DocumentModel.Math.ControlProperties? value)
+
+  public static void SetControlProperties(DelimiterProperties? openXmlElement, ControlProperties? value)
   {
     if (openXmlElement != null)
     {
@@ -167,14 +166,14 @@ public static class DelimiterPropertiesConverter
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Math.ControlPropertiesConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Math.ControlProperties>(value);
+        itemElement = ControlPropertiesConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Math.ControlProperties>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static DocumentModel.Math.DelimiterProperties? CreateModelElement(DocumentFormat.OpenXml.Math.DelimiterProperties? openXmlElement)
+
+  public static DocumentModel.Math.DelimiterProperties? CreateModelElement(DelimiterProperties? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -189,9 +188,9 @@ public static class DelimiterPropertiesConverter
     }
     return null;
   }
-  
+
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Math.DelimiterProperties? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Math.DelimiterProperties, new()
+    where OpenXmlElementType : DelimiterProperties, new()
   {
     if (value != null)
     {

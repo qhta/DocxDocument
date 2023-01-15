@@ -1,18 +1,17 @@
 namespace DocumentModel.Drawings.Charts;
 
 /// <summary>
-/// String Point.
+///   String Point.
 /// </summary>
-public partial class StringPoint
+public class StringPoint
 {
   /// <summary>
-  /// Index
+  ///   Index
   /// </summary>
   public UInt32? Index { get; set; }
-  
+
   /// <summary>
-  /// Text Value.
+  ///   Text Value.
   /// </summary>
   public String? NumericValue { get; set; }
-  
 }

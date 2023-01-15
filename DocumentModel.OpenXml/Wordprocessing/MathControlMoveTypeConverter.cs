@@ -1,19 +1,21 @@
+using DocumentFormat.OpenXml.Wordprocessing;
+
 namespace DocumentModel.OpenXml.Wordprocessing;
 
 /// <summary>
-/// Defines the MathControlMoveType Class.
+///   Defines the MathControlMoveType Class.
 /// </summary>
 public static class MathControlMoveTypeConverter
 {
   /// <summary>
-  /// author
+  ///   author
   /// </summary>
-  public static String? GetAuthor(DocumentFormat.OpenXml.Wordprocessing.MathControlMoveType? openXmlElement)
+  public static String? GetAuthor(MathControlMoveType? openXmlElement)
   {
     return openXmlElement?.Author?.Value;
   }
-  
-  public static void SetAuthor(DocumentFormat.OpenXml.Wordprocessing.MathControlMoveType? openXmlElement, String? value)
+
+  public static void SetAuthor(MathControlMoveType? openXmlElement, String? value)
   {
     if (openXmlElement != null)
       if (value != null)
@@ -21,30 +23,30 @@ public static class MathControlMoveTypeConverter
       else
         openXmlElement.Author = null;
   }
-  
+
   /// <summary>
-  /// date
+  ///   date
   /// </summary>
-  public static DateTime? GetDate(DocumentFormat.OpenXml.Wordprocessing.MathControlMoveType? openXmlElement)
+  public static DateTime? GetDate(MathControlMoveType? openXmlElement)
   {
     return openXmlElement?.Date?.Value;
   }
-  
-  public static void SetDate(DocumentFormat.OpenXml.Wordprocessing.MathControlMoveType? openXmlElement, DateTime? value)
+
+  public static void SetDate(MathControlMoveType? openXmlElement, DateTime? value)
   {
     if (openXmlElement != null)
       openXmlElement.Date = value;
   }
-  
+
   /// <summary>
-  /// Annotation Identifier
+  ///   Annotation Identifier
   /// </summary>
-  public static String? GetId(DocumentFormat.OpenXml.Wordprocessing.MathControlMoveType? openXmlElement)
+  public static String? GetId(MathControlMoveType? openXmlElement)
   {
     return openXmlElement?.Id?.Value;
   }
-  
-  public static void SetId(DocumentFormat.OpenXml.Wordprocessing.MathControlMoveType? openXmlElement, String? value)
+
+  public static void SetId(MathControlMoveType? openXmlElement, String? value)
   {
     if (openXmlElement != null)
       if (value != null)
@@ -52,8 +54,8 @@ public static class MathControlMoveTypeConverter
       else
         openXmlElement.Id = null;
   }
-  
-  public static DocumentModel.Wordprocessing.MathControlMoveType? CreateModelElement(DocumentFormat.OpenXml.Wordprocessing.MathControlMoveType? openXmlElement)
+
+  public static DocumentModel.Wordprocessing.MathControlMoveType? CreateModelElement(MathControlMoveType? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -65,9 +67,9 @@ public static class MathControlMoveTypeConverter
     }
     return null;
   }
-  
+
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.MathControlMoveType? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Wordprocessing.MathControlMoveType, new()
+    where OpenXmlElementType : MathControlMoveType, new()
   {
     if (value != null)
     {

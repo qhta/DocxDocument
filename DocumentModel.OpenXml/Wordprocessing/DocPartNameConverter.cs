@@ -1,19 +1,21 @@
+using DocumentFormat.OpenXml.Wordprocessing;
+
 namespace DocumentModel.OpenXml.Wordprocessing;
 
 /// <summary>
-/// Entry Name.
+///   Entry Name.
 /// </summary>
 public static class DocPartNameConverter
 {
   /// <summary>
-  /// Name Value
+  ///   Name Value
   /// </summary>
-  public static String? GetVal(DocumentFormat.OpenXml.Wordprocessing.DocPartName? openXmlElement)
+  public static String? GetVal(DocPartName? openXmlElement)
   {
     return openXmlElement?.Val?.Value;
   }
-  
-  public static void SetVal(DocumentFormat.OpenXml.Wordprocessing.DocPartName? openXmlElement, String? value)
+
+  public static void SetVal(DocPartName? openXmlElement, String? value)
   {
     if (openXmlElement != null)
       if (value != null)
@@ -21,16 +23,16 @@ public static class DocPartNameConverter
       else
         openXmlElement.Val = null;
   }
-  
+
   /// <summary>
-  /// Built-In Entry
+  ///   Built-In Entry
   /// </summary>
-  public static Boolean? GetDecorated(DocumentFormat.OpenXml.Wordprocessing.DocPartName? openXmlElement)
+  public static Boolean? GetDecorated(DocPartName? openXmlElement)
   {
     return openXmlElement?.Decorated?.Value;
   }
-  
-  public static void SetDecorated(DocumentFormat.OpenXml.Wordprocessing.DocPartName? openXmlElement, Boolean? value)
+
+  public static void SetDecorated(DocPartName? openXmlElement, Boolean? value)
   {
     if (openXmlElement != null)
       if (value != null)
@@ -38,8 +40,8 @@ public static class DocPartNameConverter
       else
         openXmlElement.Decorated = null;
   }
-  
-  public static DocumentModel.Wordprocessing.DocPartName? CreateModelElement(DocumentFormat.OpenXml.Wordprocessing.DocPartName? openXmlElement)
+
+  public static DocumentModel.Wordprocessing.DocPartName? CreateModelElement(DocPartName? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -50,9 +52,9 @@ public static class DocPartNameConverter
     }
     return null;
   }
-  
+
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.DocPartName? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Wordprocessing.DocPartName, new()
+    where OpenXmlElementType : DocPartName, new()
   {
     if (value != null)
     {

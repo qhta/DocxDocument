@@ -1,18 +1,17 @@
 namespace DocumentModel.Drawings;
 
 /// <summary>
-/// Defines the HyperlinkColorEnum enumeration.
+///   Defines the HyperlinkColorEnum enumeration.
 /// </summary>
 public enum HyperlinkColorEnum
 {
   /// <summary>
-  /// hlink.
+  ///   hlink.
   /// </summary>
   HLink,
-  
+
   /// <summary>
-  /// tx.
+  ///   tx.
   /// </summary>
-  Tx,
-  
+  Tx
 }

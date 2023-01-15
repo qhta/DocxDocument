@@ -1,23 +1,22 @@
 namespace DocumentModel.Drawings;
 
 /// <summary>
-/// Chart to Animate.
+///   Chart to Animate.
 /// </summary>
-public partial class Chart
+public class Chart
 {
   /// <summary>
-  /// Series Index
+  ///   Series Index
   /// </summary>
   public Int32? SeriesIndex { get; set; }
-  
+
   /// <summary>
-  /// Category Index
+  ///   Category Index
   /// </summary>
   public Int32? CategoryIndex { get; set; }
-  
+
   /// <summary>
-  /// Animation Build Step
+  ///   Animation Build Step
   /// </summary>
-  public DocumentModel.Drawings.ChartBuildStepKind? BuildStep { get; set; }
-  
+  public ChartBuildStepKind? BuildStep { get; set; }
 }

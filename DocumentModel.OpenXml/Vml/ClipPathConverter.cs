@@ -1,19 +1,21 @@
+using DocumentFormat.OpenXml.Vml.Office;
+
 namespace DocumentModel.OpenXml.Vml;
 
 /// <summary>
-/// Shape Clipping Path.
+///   Shape Clipping Path.
 /// </summary>
 public static class ClipPathConverter
 {
   /// <summary>
-  /// Path Definition
+  ///   Path Definition
   /// </summary>
-  public static String? GetValue(DocumentFormat.OpenXml.Vml.Office.ClipPath? openXmlElement)
+  public static String? GetValue(ClipPath? openXmlElement)
   {
     return openXmlElement?.Value?.Value;
   }
-  
-  public static void SetValue(DocumentFormat.OpenXml.Vml.Office.ClipPath? openXmlElement, String? value)
+
+  public static void SetValue(ClipPath? openXmlElement, String? value)
   {
     if (openXmlElement != null)
       if (value != null)
@@ -21,8 +23,8 @@ public static class ClipPathConverter
       else
         openXmlElement.Value = null;
   }
-  
-  public static DocumentModel.Vml.ClipPath? CreateModelElement(DocumentFormat.OpenXml.Vml.Office.ClipPath? openXmlElement)
+
+  public static DocumentModel.Vml.ClipPath? CreateModelElement(ClipPath? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -32,9 +34,9 @@ public static class ClipPathConverter
     }
     return null;
   }
-  
+
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Vml.ClipPath? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Vml.Office.ClipPath, new()
+    where OpenXmlElementType : ClipPath, new()
   {
     if (value != null)
     {

@@ -1,32 +1,34 @@
+using DocumentFormat.OpenXml.Office2010.CustomUI;
+
 namespace DocumentModel.OpenXml;
 
 /// <summary>
-/// Defines the BackstageCheckBox Class.
+///   Defines the BackstageCheckBox Class.
 /// </summary>
 public static class BackstageCheckBoxConverter
 {
   /// <summary>
-  /// expand, this property is only available in Office 2010 and later.
+  ///   expand, this property is only available in Office 2010 and later.
   /// </summary>
-  public static DocumentModel.ExpandKind? GetExpand(DocumentFormat.OpenXml.Office2010.CustomUI.BackstageCheckBox? openXmlElement)
+  public static ExpandKind? GetExpand(DocumentFormat.OpenXml.Office2010.CustomUI.BackstageCheckBox? openXmlElement)
   {
-    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Office2010.CustomUI.ExpandValues, DocumentModel.ExpandKind>(openXmlElement?.Expand?.Value);
+    return EnumValueConverter.GetValue<ExpandValues, ExpandKind>(openXmlElement?.Expand?.Value);
   }
-  
-  public static void SetExpand(DocumentFormat.OpenXml.Office2010.CustomUI.BackstageCheckBox? openXmlElement, DocumentModel.ExpandKind? value)
+
+  public static void SetExpand(DocumentFormat.OpenXml.Office2010.CustomUI.BackstageCheckBox? openXmlElement, ExpandKind? value)
   {
     if (openXmlElement != null)
-      openXmlElement.Expand = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Office2010.CustomUI.ExpandValues, DocumentModel.ExpandKind>(value);
+      openXmlElement.Expand = EnumValueConverter.CreateEnumValue<ExpandValues, ExpandKind>(value);
   }
-  
+
   /// <summary>
-  /// description, this property is only available in Office 2010 and later.
+  ///   description, this property is only available in Office 2010 and later.
   /// </summary>
   public static String? GetDescription(DocumentFormat.OpenXml.Office2010.CustomUI.BackstageCheckBox? openXmlElement)
   {
     return openXmlElement?.Description?.Value;
   }
-  
+
   public static void SetDescription(DocumentFormat.OpenXml.Office2010.CustomUI.BackstageCheckBox? openXmlElement, String? value)
   {
     if (openXmlElement != null)
@@ -35,15 +37,15 @@ public static class BackstageCheckBoxConverter
       else
         openXmlElement.Description = null;
   }
-  
+
   /// <summary>
-  /// getDescription, this property is only available in Office 2010 and later.
+  ///   getDescription, this property is only available in Office 2010 and later.
   /// </summary>
   public static String? GetGetDescription(DocumentFormat.OpenXml.Office2010.CustomUI.BackstageCheckBox? openXmlElement)
   {
     return openXmlElement?.GetDescription?.Value;
   }
-  
+
   public static void SetGetDescription(DocumentFormat.OpenXml.Office2010.CustomUI.BackstageCheckBox? openXmlElement, String? value)
   {
     if (openXmlElement != null)
@@ -52,15 +54,15 @@ public static class BackstageCheckBoxConverter
       else
         openXmlElement.GetDescription = null;
   }
-  
+
   /// <summary>
-  /// screentip, this property is only available in Office 2010 and later.
+  ///   screentip, this property is only available in Office 2010 and later.
   /// </summary>
   public static String? GetScreentip(DocumentFormat.OpenXml.Office2010.CustomUI.BackstageCheckBox? openXmlElement)
   {
     return openXmlElement?.Screentip?.Value;
   }
-  
+
   public static void SetScreentip(DocumentFormat.OpenXml.Office2010.CustomUI.BackstageCheckBox? openXmlElement, String? value)
   {
     if (openXmlElement != null)
@@ -69,15 +71,15 @@ public static class BackstageCheckBoxConverter
       else
         openXmlElement.Screentip = null;
   }
-  
+
   /// <summary>
-  /// getScreentip, this property is only available in Office 2010 and later.
+  ///   getScreentip, this property is only available in Office 2010 and later.
   /// </summary>
   public static String? GetGetScreentip(DocumentFormat.OpenXml.Office2010.CustomUI.BackstageCheckBox? openXmlElement)
   {
     return openXmlElement?.GetScreentip?.Value;
   }
-  
+
   public static void SetGetScreentip(DocumentFormat.OpenXml.Office2010.CustomUI.BackstageCheckBox? openXmlElement, String? value)
   {
     if (openXmlElement != null)
@@ -86,15 +88,15 @@ public static class BackstageCheckBoxConverter
       else
         openXmlElement.GetScreentip = null;
   }
-  
+
   /// <summary>
-  /// supertip, this property is only available in Office 2010 and later.
+  ///   supertip, this property is only available in Office 2010 and later.
   /// </summary>
   public static String? GetSupertip(DocumentFormat.OpenXml.Office2010.CustomUI.BackstageCheckBox? openXmlElement)
   {
     return openXmlElement?.Supertip?.Value;
   }
-  
+
   public static void SetSupertip(DocumentFormat.OpenXml.Office2010.CustomUI.BackstageCheckBox? openXmlElement, String? value)
   {
     if (openXmlElement != null)
@@ -103,15 +105,15 @@ public static class BackstageCheckBoxConverter
       else
         openXmlElement.Supertip = null;
   }
-  
+
   /// <summary>
-  /// getSupertip, this property is only available in Office 2010 and later.
+  ///   getSupertip, this property is only available in Office 2010 and later.
   /// </summary>
   public static String? GetGetSupertip(DocumentFormat.OpenXml.Office2010.CustomUI.BackstageCheckBox? openXmlElement)
   {
     return openXmlElement?.GetSupertip?.Value;
   }
-  
+
   public static void SetGetSupertip(DocumentFormat.OpenXml.Office2010.CustomUI.BackstageCheckBox? openXmlElement, String? value)
   {
     if (openXmlElement != null)
@@ -120,15 +122,15 @@ public static class BackstageCheckBoxConverter
       else
         openXmlElement.GetSupertip = null;
   }
-  
+
   /// <summary>
-  /// id, this property is only available in Office 2010 and later.
+  ///   id, this property is only available in Office 2010 and later.
   /// </summary>
   public static String? GetId(DocumentFormat.OpenXml.Office2010.CustomUI.BackstageCheckBox? openXmlElement)
   {
     return openXmlElement?.Id?.Value;
   }
-  
+
   public static void SetId(DocumentFormat.OpenXml.Office2010.CustomUI.BackstageCheckBox? openXmlElement, String? value)
   {
     if (openXmlElement != null)
@@ -137,15 +139,15 @@ public static class BackstageCheckBoxConverter
       else
         openXmlElement.Id = null;
   }
-  
+
   /// <summary>
-  /// idQ, this property is only available in Office 2010 and later.
+  ///   idQ, this property is only available in Office 2010 and later.
   /// </summary>
   public static String? GetQualifiedId(DocumentFormat.OpenXml.Office2010.CustomUI.BackstageCheckBox? openXmlElement)
   {
     return openXmlElement?.QualifiedId?.Value;
   }
-  
+
   public static void SetQualifiedId(DocumentFormat.OpenXml.Office2010.CustomUI.BackstageCheckBox? openXmlElement, String? value)
   {
     if (openXmlElement != null)
@@ -154,15 +156,15 @@ public static class BackstageCheckBoxConverter
       else
         openXmlElement.QualifiedId = null;
   }
-  
+
   /// <summary>
-  /// tag, this property is only available in Office 2010 and later.
+  ///   tag, this property is only available in Office 2010 and later.
   /// </summary>
   public static String? GetTag(DocumentFormat.OpenXml.Office2010.CustomUI.BackstageCheckBox? openXmlElement)
   {
     return openXmlElement?.Tag?.Value;
   }
-  
+
   public static void SetTag(DocumentFormat.OpenXml.Office2010.CustomUI.BackstageCheckBox? openXmlElement, String? value)
   {
     if (openXmlElement != null)
@@ -171,15 +173,15 @@ public static class BackstageCheckBoxConverter
       else
         openXmlElement.Tag = null;
   }
-  
+
   /// <summary>
-  /// onAction, this property is only available in Office 2010 and later.
+  ///   onAction, this property is only available in Office 2010 and later.
   /// </summary>
   public static String? GetOnAction(DocumentFormat.OpenXml.Office2010.CustomUI.BackstageCheckBox? openXmlElement)
   {
     return openXmlElement?.OnAction?.Value;
   }
-  
+
   public static void SetOnAction(DocumentFormat.OpenXml.Office2010.CustomUI.BackstageCheckBox? openXmlElement, String? value)
   {
     if (openXmlElement != null)
@@ -188,15 +190,15 @@ public static class BackstageCheckBoxConverter
       else
         openXmlElement.OnAction = null;
   }
-  
+
   /// <summary>
-  /// getPressed, this property is only available in Office 2010 and later.
+  ///   getPressed, this property is only available in Office 2010 and later.
   /// </summary>
   public static String? GetGetPressed(DocumentFormat.OpenXml.Office2010.CustomUI.BackstageCheckBox? openXmlElement)
   {
     return openXmlElement?.GetPressed?.Value;
   }
-  
+
   public static void SetGetPressed(DocumentFormat.OpenXml.Office2010.CustomUI.BackstageCheckBox? openXmlElement, String? value)
   {
     if (openXmlElement != null)
@@ -205,15 +207,15 @@ public static class BackstageCheckBoxConverter
       else
         openXmlElement.GetPressed = null;
   }
-  
+
   /// <summary>
-  /// enabled, this property is only available in Office 2010 and later.
+  ///   enabled, this property is only available in Office 2010 and later.
   /// </summary>
   public static Boolean? GetEnabled(DocumentFormat.OpenXml.Office2010.CustomUI.BackstageCheckBox? openXmlElement)
   {
     return openXmlElement?.Enabled?.Value;
   }
-  
+
   public static void SetEnabled(DocumentFormat.OpenXml.Office2010.CustomUI.BackstageCheckBox? openXmlElement, Boolean? value)
   {
     if (openXmlElement != null)
@@ -222,15 +224,15 @@ public static class BackstageCheckBoxConverter
       else
         openXmlElement.Enabled = null;
   }
-  
+
   /// <summary>
-  /// getEnabled, this property is only available in Office 2010 and later.
+  ///   getEnabled, this property is only available in Office 2010 and later.
   /// </summary>
   public static String? GetGetEnabled(DocumentFormat.OpenXml.Office2010.CustomUI.BackstageCheckBox? openXmlElement)
   {
     return openXmlElement?.GetEnabled?.Value;
   }
-  
+
   public static void SetGetEnabled(DocumentFormat.OpenXml.Office2010.CustomUI.BackstageCheckBox? openXmlElement, String? value)
   {
     if (openXmlElement != null)
@@ -239,15 +241,15 @@ public static class BackstageCheckBoxConverter
       else
         openXmlElement.GetEnabled = null;
   }
-  
+
   /// <summary>
-  /// label, this property is only available in Office 2010 and later.
+  ///   label, this property is only available in Office 2010 and later.
   /// </summary>
   public static String? GetLabel(DocumentFormat.OpenXml.Office2010.CustomUI.BackstageCheckBox? openXmlElement)
   {
     return openXmlElement?.Label?.Value;
   }
-  
+
   public static void SetLabel(DocumentFormat.OpenXml.Office2010.CustomUI.BackstageCheckBox? openXmlElement, String? value)
   {
     if (openXmlElement != null)
@@ -256,15 +258,15 @@ public static class BackstageCheckBoxConverter
       else
         openXmlElement.Label = null;
   }
-  
+
   /// <summary>
-  /// getLabel, this property is only available in Office 2010 and later.
+  ///   getLabel, this property is only available in Office 2010 and later.
   /// </summary>
   public static String? GetGetLabel(DocumentFormat.OpenXml.Office2010.CustomUI.BackstageCheckBox? openXmlElement)
   {
     return openXmlElement?.GetLabel?.Value;
   }
-  
+
   public static void SetGetLabel(DocumentFormat.OpenXml.Office2010.CustomUI.BackstageCheckBox? openXmlElement, String? value)
   {
     if (openXmlElement != null)
@@ -273,15 +275,15 @@ public static class BackstageCheckBoxConverter
       else
         openXmlElement.GetLabel = null;
   }
-  
+
   /// <summary>
-  /// visible, this property is only available in Office 2010 and later.
+  ///   visible, this property is only available in Office 2010 and later.
   /// </summary>
   public static Boolean? GetVisible(DocumentFormat.OpenXml.Office2010.CustomUI.BackstageCheckBox? openXmlElement)
   {
     return openXmlElement?.Visible?.Value;
   }
-  
+
   public static void SetVisible(DocumentFormat.OpenXml.Office2010.CustomUI.BackstageCheckBox? openXmlElement, Boolean? value)
   {
     if (openXmlElement != null)
@@ -290,15 +292,15 @@ public static class BackstageCheckBoxConverter
       else
         openXmlElement.Visible = null;
   }
-  
+
   /// <summary>
-  /// getVisible, this property is only available in Office 2010 and later.
+  ///   getVisible, this property is only available in Office 2010 and later.
   /// </summary>
   public static String? GetGetVisible(DocumentFormat.OpenXml.Office2010.CustomUI.BackstageCheckBox? openXmlElement)
   {
     return openXmlElement?.GetVisible?.Value;
   }
-  
+
   public static void SetGetVisible(DocumentFormat.OpenXml.Office2010.CustomUI.BackstageCheckBox? openXmlElement, String? value)
   {
     if (openXmlElement != null)
@@ -307,15 +309,15 @@ public static class BackstageCheckBoxConverter
       else
         openXmlElement.GetVisible = null;
   }
-  
+
   /// <summary>
-  /// keytip, this property is only available in Office 2010 and later.
+  ///   keytip, this property is only available in Office 2010 and later.
   /// </summary>
   public static String? GetKeytip(DocumentFormat.OpenXml.Office2010.CustomUI.BackstageCheckBox? openXmlElement)
   {
     return openXmlElement?.Keytip?.Value;
   }
-  
+
   public static void SetKeytip(DocumentFormat.OpenXml.Office2010.CustomUI.BackstageCheckBox? openXmlElement, String? value)
   {
     if (openXmlElement != null)
@@ -324,15 +326,15 @@ public static class BackstageCheckBoxConverter
       else
         openXmlElement.Keytip = null;
   }
-  
+
   /// <summary>
-  /// getKeytip, this property is only available in Office 2010 and later.
+  ///   getKeytip, this property is only available in Office 2010 and later.
   /// </summary>
   public static String? GetGetKeytip(DocumentFormat.OpenXml.Office2010.CustomUI.BackstageCheckBox? openXmlElement)
   {
     return openXmlElement?.GetKeytip?.Value;
   }
-  
+
   public static void SetGetKeytip(DocumentFormat.OpenXml.Office2010.CustomUI.BackstageCheckBox? openXmlElement, String? value)
   {
     if (openXmlElement != null)
@@ -341,12 +343,12 @@ public static class BackstageCheckBoxConverter
       else
         openXmlElement.GetKeytip = null;
   }
-  
-  public static DocumentModel.BackstageCheckBox? CreateModelElement(DocumentFormat.OpenXml.Office2010.CustomUI.BackstageCheckBox? openXmlElement)
+
+  public static BackstageCheckBox? CreateModelElement(DocumentFormat.OpenXml.Office2010.CustomUI.BackstageCheckBox? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.BackstageCheckBox();
+      var value = new BackstageCheckBox();
       value.Expand = GetExpand(openXmlElement);
       value.Description = GetDescription(openXmlElement);
       value.GetDescription = GetGetDescription(openXmlElement);
@@ -371,9 +373,9 @@ public static class BackstageCheckBoxConverter
     }
     return null;
   }
-  
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.BackstageCheckBox? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Office2010.CustomUI.BackstageCheckBox, new()
+
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(BackstageCheckBox? value)
+    where OpenXmlElementType : DocumentFormat.OpenXml.Office2010.CustomUI.BackstageCheckBox, new()
   {
     if (value != null)
     {

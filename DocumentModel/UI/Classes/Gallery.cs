@@ -1,262 +1,261 @@
 namespace DocumentModel.UI;
 
 /// <summary>
-/// Defines the Gallery Class.
+///   Defines the Gallery Class.
 /// </summary>
-public partial class Gallery
+public class Gallery
 {
   /// <summary>
-  /// size
+  ///   size
   /// </summary>
-  public DocumentModel.UI.SizeKind? Size { get; set; }
-  
+  public SizeKind? Size { get; set; }
+
   /// <summary>
-  /// getSize
+  ///   getSize
   /// </summary>
   public String? GetSize { get; set; }
-  
+
   /// <summary>
-  /// description
+  ///   description
   /// </summary>
   public String? Description { get; set; }
-  
+
   /// <summary>
-  /// getDescription
+  ///   getDescription
   /// </summary>
   public String? GetDescription { get; set; }
-  
+
   /// <summary>
-  /// invalidateContentOnDrop
+  ///   invalidateContentOnDrop
   /// </summary>
   public Boolean? InvalidateContentOnDrop { get; set; }
-  
+
   /// <summary>
-  /// columns
+  ///   columns
   /// </summary>
   public Int64? Columns { get; set; }
-  
+
   /// <summary>
-  /// rows
+  ///   rows
   /// </summary>
   public Int64? Rows { get; set; }
-  
+
   /// <summary>
-  /// itemWidth
+  ///   itemWidth
   /// </summary>
   public Int64? ItemWidth { get; set; }
-  
+
   /// <summary>
-  /// itemHeight
+  ///   itemHeight
   /// </summary>
   public Int64? ItemHeight { get; set; }
-  
+
   /// <summary>
-  /// getItemWidth
+  ///   getItemWidth
   /// </summary>
   public String? GetItemWidth { get; set; }
-  
+
   /// <summary>
-  /// getItemHeight
+  ///   getItemHeight
   /// </summary>
   public String? GetItemHeight { get; set; }
-  
+
   /// <summary>
-  /// showItemLabel
+  ///   showItemLabel
   /// </summary>
   public Boolean? ShowItemLabel { get; set; }
-  
+
   /// <summary>
-  /// onAction
+  ///   onAction
   /// </summary>
   public String? OnAction { get; set; }
-  
+
   /// <summary>
-  /// enabled
+  ///   enabled
   /// </summary>
   public Boolean? Enabled { get; set; }
-  
+
   /// <summary>
-  /// getEnabled
+  ///   getEnabled
   /// </summary>
   public String? GetEnabled { get; set; }
-  
+
   /// <summary>
-  /// image
+  ///   image
   /// </summary>
   public String? Image { get; set; }
-  
+
   /// <summary>
-  /// imageMso
+  ///   imageMso
   /// </summary>
   public String? ImageMso { get; set; }
-  
+
   /// <summary>
-  /// getImage
+  ///   getImage
   /// </summary>
   public String? GetImage { get; set; }
-  
+
   /// <summary>
-  /// showItemImage
+  ///   showItemImage
   /// </summary>
   public Boolean? ShowItemImage { get; set; }
-  
+
   /// <summary>
-  /// getItemCount
+  ///   getItemCount
   /// </summary>
   public String? GetItemCount { get; set; }
-  
+
   /// <summary>
-  /// getItemLabel
+  ///   getItemLabel
   /// </summary>
   public String? GetItemLabel { get; set; }
-  
+
   /// <summary>
-  /// getItemScreentip
+  ///   getItemScreentip
   /// </summary>
   public String? GetItemScreentip { get; set; }
-  
+
   /// <summary>
-  /// getItemSupertip
+  ///   getItemSupertip
   /// </summary>
   public String? GetItemSupertip { get; set; }
-  
+
   /// <summary>
-  /// getItemImage
+  ///   getItemImage
   /// </summary>
   public String? GetItemImage { get; set; }
-  
+
   /// <summary>
-  /// getItemID
+  ///   getItemID
   /// </summary>
   public String? GetItemID { get; set; }
-  
+
   /// <summary>
-  /// sizeString
+  ///   sizeString
   /// </summary>
   public String? SizeString { get; set; }
-  
+
   /// <summary>
-  /// getSelectedItemID
+  ///   getSelectedItemID
   /// </summary>
   public String? GetSelectedItemID { get; set; }
-  
+
   /// <summary>
-  /// getSelectedItemIndex
+  ///   getSelectedItemIndex
   /// </summary>
   public String? GetSelectedItemIndex { get; set; }
-  
+
   /// <summary>
-  /// id
+  ///   id
   /// </summary>
   public String? Id { get; set; }
-  
+
   /// <summary>
-  /// idQ
+  ///   idQ
   /// </summary>
   public String? IdQ { get; set; }
-  
+
   /// <summary>
-  /// idMso
+  ///   idMso
   /// </summary>
   public String? IdMso { get; set; }
-  
+
   /// <summary>
-  /// tag
+  ///   tag
   /// </summary>
   public String? Tag { get; set; }
-  
+
   /// <summary>
-  /// screentip
+  ///   screentip
   /// </summary>
   public String? Screentip { get; set; }
-  
+
   /// <summary>
-  /// getScreentip
+  ///   getScreentip
   /// </summary>
   public String? GetScreentip { get; set; }
-  
+
   /// <summary>
-  /// supertip
+  ///   supertip
   /// </summary>
   public String? Supertip { get; set; }
-  
+
   /// <summary>
-  /// getSupertip
+  ///   getSupertip
   /// </summary>
   public String? GetSupertip { get; set; }
-  
+
   /// <summary>
-  /// label
+  ///   label
   /// </summary>
   public String? Label { get; set; }
-  
+
   /// <summary>
-  /// getLabel
+  ///   getLabel
   /// </summary>
   public String? GetLabel { get; set; }
-  
+
   /// <summary>
-  /// insertAfterMso
+  ///   insertAfterMso
   /// </summary>
   public String? InsertAfterMso { get; set; }
-  
+
   /// <summary>
-  /// insertBeforeMso
+  ///   insertBeforeMso
   /// </summary>
   public String? InsertBeforeMso { get; set; }
-  
+
   /// <summary>
-  /// insertAfterQ
+  ///   insertAfterQ
   /// </summary>
   public String? InsertAfterQ { get; set; }
-  
+
   /// <summary>
-  /// insertBeforeQ
+  ///   insertBeforeQ
   /// </summary>
   public String? InsertBeforeQ { get; set; }
-  
+
   /// <summary>
-  /// visible
+  ///   visible
   /// </summary>
   public Boolean? Visible { get; set; }
-  
+
   /// <summary>
-  /// getVisible
+  ///   getVisible
   /// </summary>
   public String? GetVisible { get; set; }
-  
+
   /// <summary>
-  /// keytip
+  ///   keytip
   /// </summary>
   public String? Keytip { get; set; }
-  
+
   /// <summary>
-  /// getKeytip
+  ///   getKeytip
   /// </summary>
   public String? GetKeytip { get; set; }
-  
+
   /// <summary>
-  /// showLabel
+  ///   showLabel
   /// </summary>
   public Boolean? ShowLabel { get; set; }
-  
+
   /// <summary>
-  /// getShowLabel
+  ///   getShowLabel
   /// </summary>
   public String? GetShowLabel { get; set; }
-  
+
   /// <summary>
-  /// showImage
+  ///   showImage
   /// </summary>
   public Boolean? ShowImage { get; set; }
-  
+
   /// <summary>
-  /// getShowImage
+  ///   getShowImage
   /// </summary>
   public String? GetShowImage { get; set; }
-  
-  public Collection<DocumentModel.UI.Item>? Items { get; set; }
-  
-  public Collection<DocumentModel.UI.UnsizedButton>? UnsizedButtons { get; set; }
-  
+
+  public Collection<Item>? Items { get; set; }
+
+  public Collection<UnsizedButton>? UnsizedButtons { get; set; }
 }

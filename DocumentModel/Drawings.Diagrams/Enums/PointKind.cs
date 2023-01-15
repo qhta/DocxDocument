@@ -1,38 +1,37 @@
 namespace DocumentModel.Drawings.Diagrams;
 
 /// <summary>
-/// Point Type
+///   Point Type
 /// </summary>
 public enum PointKind
 {
   /// <summary>
-  /// Node.
+  ///   Node.
   /// </summary>
   Node,
-  
+
   /// <summary>
-  /// Assistant Element.
+  ///   Assistant Element.
   /// </summary>
   Assistant,
-  
+
   /// <summary>
-  /// Document.
+  ///   Document.
   /// </summary>
   Document,
-  
+
   /// <summary>
-  /// Presentation.
+  ///   Presentation.
   /// </summary>
   Presentation,
-  
+
   /// <summary>
-  /// Parent Transition.
+  ///   Parent Transition.
   /// </summary>
   ParentTransition,
-  
+
   /// <summary>
-  /// Sibling Transition.
+  ///   Sibling Transition.
   /// </summary>
-  SiblingTransition,
-  
+  SiblingTransition
 }

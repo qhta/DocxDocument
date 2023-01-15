@@ -1,10 +1,9 @@
 namespace DocumentModel.Packaging;
 
 /// <summary>
-/// Defines the FontPart
+///   Defines the FontPart
 /// </summary>
-public partial class FontPart
+public class FontPart
 {
   public String? RelationshipType { get; set; }
-  
 }

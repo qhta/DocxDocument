@@ -1,19 +1,18 @@
 namespace DocumentModel.Drawings.ChartDrawings;
 
 /// <summary>
-/// Defines the Data Class.
+///   Defines the Data Class.
 /// </summary>
-public partial class Data
+public class Data
 {
   /// <summary>
-  /// id, this property is only available in Office 2016 and later.
+  ///   id, this property is only available in Office 2016 and later.
   /// </summary>
   public UInt32? Id { get; set; }
-  
-  public DocumentModel.Drawings.ChartDrawings.NumericDimension? NumericDimension { get; set; }
-  
-  public DocumentModel.Drawings.ChartDrawings.StringDimension? StringDimension { get; set; }
-  
-  public DocumentModel.Drawings.ChartDrawings.ExtensionList? ExtensionList { get; set; }
-  
+
+  public NumericDimension? NumericDimension { get; set; }
+
+  public StringDimension? StringDimension { get; set; }
+
+  public ExtensionList? ExtensionList { get; set; }
 }

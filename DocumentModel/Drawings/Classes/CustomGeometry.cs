@@ -1,38 +1,37 @@
 namespace DocumentModel.Drawings;
 
 /// <summary>
-/// Custom geometry.
+///   Custom geometry.
 /// </summary>
-public partial class CustomGeometry
+public class CustomGeometry
 {
   /// <summary>
-  /// Adjust Value List.
+  ///   Adjust Value List.
   /// </summary>
-  public DocumentModel.Drawings.AdjustValueList? AdjustValueList { get; set; }
-  
+  public AdjustValueList? AdjustValueList { get; set; }
+
   /// <summary>
-  /// List of Shape Guides.
+  ///   List of Shape Guides.
   /// </summary>
-  public DocumentModel.Drawings.ShapeGuideList? ShapeGuideList { get; set; }
-  
+  public ShapeGuideList? ShapeGuideList { get; set; }
+
   /// <summary>
-  /// List of Shape Adjust Handles.
+  ///   List of Shape Adjust Handles.
   /// </summary>
-  public DocumentModel.Drawings.AdjustHandleList? AdjustHandleList { get; set; }
-  
+  public AdjustHandleList? AdjustHandleList { get; set; }
+
   /// <summary>
-  /// List of Shape Connection Sites.
+  ///   List of Shape Connection Sites.
   /// </summary>
-  public DocumentModel.Drawings.ConnectionSiteList? ConnectionSiteList { get; set; }
-  
+  public ConnectionSiteList? ConnectionSiteList { get; set; }
+
   /// <summary>
-  /// Shape Text Rectangle.
+  ///   Shape Text Rectangle.
   /// </summary>
-  public DocumentModel.Drawings.Rectangle? Rectangle { get; set; }
-  
+  public Rectangle? Rectangle { get; set; }
+
   /// <summary>
-  /// List of Shape Paths.
+  ///   List of Shape Paths.
   /// </summary>
-  public DocumentModel.Drawings.PathList? PathList { get; set; }
-  
+  public PathList? PathList { get; set; }
 }

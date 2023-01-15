@@ -1,18 +1,17 @@
 namespace DocumentModel.Vml;
 
 /// <summary>
-/// Most Recently Used Colors.
+///   Most Recently Used Colors.
 /// </summary>
-public partial class ColorMostRecentlyUsed
+public class ColorMostRecentlyUsed
 {
   /// <summary>
-  /// VML Extension Handling Behavior
+  ///   VML Extension Handling Behavior
   /// </summary>
-  public DocumentModel.Vml.ExtensionHandlingBehaviorKind? Extension { get; set; }
-  
+  public ExtensionHandlingBehaviorKind? Extension { get; set; }
+
   /// <summary>
-  /// Recent colors
+  ///   Recent colors
   /// </summary>
   public String? Colors { get; set; }
-  
 }

@@ -1,103 +1,110 @@
+using DocumentFormat.OpenXml.Drawing;
+using DocumentModel.Drawings;
+using LineSpacing = DocumentModel.Drawings.LineSpacing;
+using SpaceAfter = DocumentModel.Drawings.SpaceAfter;
+using SpaceBefore = DocumentModel.Drawings.SpaceBefore;
+using TextParagraphPropertiesType = DocumentFormat.OpenXml.Drawing.TextParagraphPropertiesType;
+
 namespace DocumentModel.OpenXml.Drawings;
 
 /// <summary>
-/// Defines the TextParagraphPropertiesType Class.
+///   Defines the TextParagraphPropertiesType Class.
 /// </summary>
 public static class TextParagraphPropertiesTypeConverter
 {
   /// <summary>
-  /// Left Margin
+  ///   Left Margin
   /// </summary>
-  public static Int32? GetLeftMargin(DocumentFormat.OpenXml.Drawing.TextParagraphPropertiesType? openXmlElement)
+  public static Int32? GetLeftMargin(TextParagraphPropertiesType? openXmlElement)
   {
     return openXmlElement?.LeftMargin?.Value;
   }
-  
-  public static void SetLeftMargin(DocumentFormat.OpenXml.Drawing.TextParagraphPropertiesType? openXmlElement, Int32? value)
+
+  public static void SetLeftMargin(TextParagraphPropertiesType? openXmlElement, Int32? value)
   {
     if (openXmlElement != null)
       openXmlElement.LeftMargin = value;
   }
-  
+
   /// <summary>
-  /// Right Margin
+  ///   Right Margin
   /// </summary>
-  public static Int32? GetRightMargin(DocumentFormat.OpenXml.Drawing.TextParagraphPropertiesType? openXmlElement)
+  public static Int32? GetRightMargin(TextParagraphPropertiesType? openXmlElement)
   {
     return openXmlElement?.RightMargin?.Value;
   }
-  
-  public static void SetRightMargin(DocumentFormat.OpenXml.Drawing.TextParagraphPropertiesType? openXmlElement, Int32? value)
+
+  public static void SetRightMargin(TextParagraphPropertiesType? openXmlElement, Int32? value)
   {
     if (openXmlElement != null)
       openXmlElement.RightMargin = value;
   }
-  
+
   /// <summary>
-  /// Level
+  ///   Level
   /// </summary>
-  public static Int32? GetLevel(DocumentFormat.OpenXml.Drawing.TextParagraphPropertiesType? openXmlElement)
+  public static Int32? GetLevel(TextParagraphPropertiesType? openXmlElement)
   {
     return openXmlElement?.Level?.Value;
   }
-  
-  public static void SetLevel(DocumentFormat.OpenXml.Drawing.TextParagraphPropertiesType? openXmlElement, Int32? value)
+
+  public static void SetLevel(TextParagraphPropertiesType? openXmlElement, Int32? value)
   {
     if (openXmlElement != null)
       openXmlElement.Level = value;
   }
-  
+
   /// <summary>
-  /// Indent
+  ///   Indent
   /// </summary>
-  public static Int32? GetIndent(DocumentFormat.OpenXml.Drawing.TextParagraphPropertiesType? openXmlElement)
+  public static Int32? GetIndent(TextParagraphPropertiesType? openXmlElement)
   {
     return openXmlElement?.Indent?.Value;
   }
-  
-  public static void SetIndent(DocumentFormat.OpenXml.Drawing.TextParagraphPropertiesType? openXmlElement, Int32? value)
+
+  public static void SetIndent(TextParagraphPropertiesType? openXmlElement, Int32? value)
   {
     if (openXmlElement != null)
       openXmlElement.Indent = value;
   }
-  
+
   /// <summary>
-  /// Alignment
+  ///   Alignment
   /// </summary>
-  public static DocumentModel.Drawings.TextAlignmentKind? GetAlignment(DocumentFormat.OpenXml.Drawing.TextParagraphPropertiesType? openXmlElement)
+  public static TextAlignmentKind? GetAlignment(TextParagraphPropertiesType? openXmlElement)
   {
-    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Drawing.TextAlignmentTypeValues, DocumentModel.Drawings.TextAlignmentKind>(openXmlElement?.Alignment?.Value);
+    return EnumValueConverter.GetValue<TextAlignmentTypeValues, TextAlignmentKind>(openXmlElement?.Alignment?.Value);
   }
-  
-  public static void SetAlignment(DocumentFormat.OpenXml.Drawing.TextParagraphPropertiesType? openXmlElement, DocumentModel.Drawings.TextAlignmentKind? value)
+
+  public static void SetAlignment(TextParagraphPropertiesType? openXmlElement, TextAlignmentKind? value)
   {
     if (openXmlElement != null)
-      openXmlElement.Alignment = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Drawing.TextAlignmentTypeValues, DocumentModel.Drawings.TextAlignmentKind>(value);
+      openXmlElement.Alignment = EnumValueConverter.CreateEnumValue<TextAlignmentTypeValues, TextAlignmentKind>(value);
   }
-  
+
   /// <summary>
-  /// Default Tab Size
+  ///   Default Tab Size
   /// </summary>
-  public static Int32? GetDefaultTabSize(DocumentFormat.OpenXml.Drawing.TextParagraphPropertiesType? openXmlElement)
+  public static Int32? GetDefaultTabSize(TextParagraphPropertiesType? openXmlElement)
   {
     return openXmlElement?.DefaultTabSize?.Value;
   }
-  
-  public static void SetDefaultTabSize(DocumentFormat.OpenXml.Drawing.TextParagraphPropertiesType? openXmlElement, Int32? value)
+
+  public static void SetDefaultTabSize(TextParagraphPropertiesType? openXmlElement, Int32? value)
   {
     if (openXmlElement != null)
       openXmlElement.DefaultTabSize = value;
   }
-  
+
   /// <summary>
-  /// Right To Left
+  ///   Right To Left
   /// </summary>
-  public static Boolean? GetRightToLeft(DocumentFormat.OpenXml.Drawing.TextParagraphPropertiesType? openXmlElement)
+  public static Boolean? GetRightToLeft(TextParagraphPropertiesType? openXmlElement)
   {
     return openXmlElement?.RightToLeft?.Value;
   }
-  
-  public static void SetRightToLeft(DocumentFormat.OpenXml.Drawing.TextParagraphPropertiesType? openXmlElement, Boolean? value)
+
+  public static void SetRightToLeft(TextParagraphPropertiesType? openXmlElement, Boolean? value)
   {
     if (openXmlElement != null)
       if (value != null)
@@ -105,16 +112,16 @@ public static class TextParagraphPropertiesTypeConverter
       else
         openXmlElement.RightToLeft = null;
   }
-  
+
   /// <summary>
-  /// East Asian Line Break
+  ///   East Asian Line Break
   /// </summary>
-  public static Boolean? GetEastAsianLineBreak(DocumentFormat.OpenXml.Drawing.TextParagraphPropertiesType? openXmlElement)
+  public static Boolean? GetEastAsianLineBreak(TextParagraphPropertiesType? openXmlElement)
   {
     return openXmlElement?.EastAsianLineBreak?.Value;
   }
-  
-  public static void SetEastAsianLineBreak(DocumentFormat.OpenXml.Drawing.TextParagraphPropertiesType? openXmlElement, Boolean? value)
+
+  public static void SetEastAsianLineBreak(TextParagraphPropertiesType? openXmlElement, Boolean? value)
   {
     if (openXmlElement != null)
       if (value != null)
@@ -122,30 +129,30 @@ public static class TextParagraphPropertiesTypeConverter
       else
         openXmlElement.EastAsianLineBreak = null;
   }
-  
+
   /// <summary>
-  /// Font Alignment
+  ///   Font Alignment
   /// </summary>
-  public static DocumentModel.Drawings.TextFontAlignmentKind? GetFontAlignment(DocumentFormat.OpenXml.Drawing.TextParagraphPropertiesType? openXmlElement)
+  public static TextFontAlignmentKind? GetFontAlignment(TextParagraphPropertiesType? openXmlElement)
   {
-    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Drawing.TextFontAlignmentValues, DocumentModel.Drawings.TextFontAlignmentKind>(openXmlElement?.FontAlignment?.Value);
+    return EnumValueConverter.GetValue<TextFontAlignmentValues, TextFontAlignmentKind>(openXmlElement?.FontAlignment?.Value);
   }
-  
-  public static void SetFontAlignment(DocumentFormat.OpenXml.Drawing.TextParagraphPropertiesType? openXmlElement, DocumentModel.Drawings.TextFontAlignmentKind? value)
+
+  public static void SetFontAlignment(TextParagraphPropertiesType? openXmlElement, TextFontAlignmentKind? value)
   {
     if (openXmlElement != null)
-      openXmlElement.FontAlignment = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Drawing.TextFontAlignmentValues, DocumentModel.Drawings.TextFontAlignmentKind>(value);
+      openXmlElement.FontAlignment = EnumValueConverter.CreateEnumValue<TextFontAlignmentValues, TextFontAlignmentKind>(value);
   }
-  
+
   /// <summary>
-  /// Latin Line Break
+  ///   Latin Line Break
   /// </summary>
-  public static Boolean? GetLatinLineBreak(DocumentFormat.OpenXml.Drawing.TextParagraphPropertiesType? openXmlElement)
+  public static Boolean? GetLatinLineBreak(TextParagraphPropertiesType? openXmlElement)
   {
     return openXmlElement?.LatinLineBreak?.Value;
   }
-  
-  public static void SetLatinLineBreak(DocumentFormat.OpenXml.Drawing.TextParagraphPropertiesType? openXmlElement, Boolean? value)
+
+  public static void SetLatinLineBreak(TextParagraphPropertiesType? openXmlElement, Boolean? value)
   {
     if (openXmlElement != null)
       if (value != null)
@@ -153,16 +160,16 @@ public static class TextParagraphPropertiesTypeConverter
       else
         openXmlElement.LatinLineBreak = null;
   }
-  
+
   /// <summary>
-  /// Hanging Punctuation
+  ///   Hanging Punctuation
   /// </summary>
-  public static Boolean? GetHeight(DocumentFormat.OpenXml.Drawing.TextParagraphPropertiesType? openXmlElement)
+  public static Boolean? GetHeight(TextParagraphPropertiesType? openXmlElement)
   {
     return openXmlElement?.Height?.Value;
   }
-  
-  public static void SetHeight(DocumentFormat.OpenXml.Drawing.TextParagraphPropertiesType? openXmlElement, Boolean? value)
+
+  public static void SetHeight(TextParagraphPropertiesType? openXmlElement, Boolean? value)
   {
     if (openXmlElement != null)
       if (value != null)
@@ -170,19 +177,19 @@ public static class TextParagraphPropertiesTypeConverter
       else
         openXmlElement.Height = null;
   }
-  
+
   /// <summary>
-  /// Line Spacing.
+  ///   Line Spacing.
   /// </summary>
-  public static DocumentModel.Drawings.LineSpacing? GetLineSpacing(DocumentFormat.OpenXml.Drawing.TextParagraphPropertiesType? openXmlElement)
+  public static LineSpacing? GetLineSpacing(TextParagraphPropertiesType? openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.LineSpacing>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.LineSpacingConverter.CreateModelElement(itemElement);
+      return LineSpacingConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetLineSpacing(DocumentFormat.OpenXml.Drawing.TextParagraphPropertiesType? openXmlElement, DocumentModel.Drawings.LineSpacing? value)
+
+  public static void SetLineSpacing(TextParagraphPropertiesType? openXmlElement, LineSpacing? value)
   {
     if (openXmlElement != null)
     {
@@ -191,25 +198,25 @@ public static class TextParagraphPropertiesTypeConverter
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Drawings.LineSpacingConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.LineSpacing>(value);
+        itemElement = LineSpacingConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.LineSpacing>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
+
   /// <summary>
-  /// Space Before.
+  ///   Space Before.
   /// </summary>
-  public static DocumentModel.Drawings.SpaceBefore? GetSpaceBefore(DocumentFormat.OpenXml.Drawing.TextParagraphPropertiesType? openXmlElement)
+  public static SpaceBefore? GetSpaceBefore(TextParagraphPropertiesType? openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.SpaceBefore>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.SpaceBeforeConverter.CreateModelElement(itemElement);
+      return SpaceBeforeConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetSpaceBefore(DocumentFormat.OpenXml.Drawing.TextParagraphPropertiesType? openXmlElement, DocumentModel.Drawings.SpaceBefore? value)
+
+  public static void SetSpaceBefore(TextParagraphPropertiesType? openXmlElement, SpaceBefore? value)
   {
     if (openXmlElement != null)
     {
@@ -218,25 +225,25 @@ public static class TextParagraphPropertiesTypeConverter
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Drawings.SpaceBeforeConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.SpaceBefore>(value);
+        itemElement = SpaceBeforeConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.SpaceBefore>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
+
   /// <summary>
-  /// Space After.
+  ///   Space After.
   /// </summary>
-  public static DocumentModel.Drawings.SpaceAfter? GetSpaceAfter(DocumentFormat.OpenXml.Drawing.TextParagraphPropertiesType? openXmlElement)
+  public static SpaceAfter? GetSpaceAfter(TextParagraphPropertiesType? openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.SpaceAfter>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.SpaceAfterConverter.CreateModelElement(itemElement);
+      return SpaceAfterConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetSpaceAfter(DocumentFormat.OpenXml.Drawing.TextParagraphPropertiesType? openXmlElement, DocumentModel.Drawings.SpaceAfter? value)
+
+  public static void SetSpaceAfter(TextParagraphPropertiesType? openXmlElement, SpaceAfter? value)
   {
     if (openXmlElement != null)
     {
@@ -245,14 +252,14 @@ public static class TextParagraphPropertiesTypeConverter
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Drawings.SpaceAfterConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.SpaceAfter>(value);
+        itemElement = SpaceAfterConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.SpaceAfter>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static DocumentModel.Drawings.TextParagraphPropertiesType? CreateModelElement(DocumentFormat.OpenXml.Drawing.TextParagraphPropertiesType? openXmlElement)
+
+  public static DocumentModel.Drawings.TextParagraphPropertiesType? CreateModelElement(TextParagraphPropertiesType? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -275,9 +282,9 @@ public static class TextParagraphPropertiesTypeConverter
     }
     return null;
   }
-  
+
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.TextParagraphPropertiesType? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.TextParagraphPropertiesType, new()
+    where OpenXmlElementType : TextParagraphPropertiesType, new()
   {
     if (value != null)
     {

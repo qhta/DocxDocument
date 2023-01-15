@@ -1,21 +1,23 @@
+using DocumentFormat.OpenXml.Wordprocessing;
+
 namespace DocumentModel.OpenXml.Wordprocessing;
 
 /// <summary>
-/// Defines the TableLook Class.
+///   Defines the TableLook Class.
 /// </summary>
 public static class TableLookConverter
 {
   /// <summary>
-  /// val
+  ///   val
   /// </summary>
-  public static Byte[]? GetVal(DocumentFormat.OpenXml.Wordprocessing.TableLook? openXmlElement)
+  public static Byte[]? GetVal(TableLook? openXmlElement)
   {
     if (openXmlElement?.Val?.Value != null)
       return Convert.FromHexString(openXmlElement.Val.Value);
     return null;
   }
-  
-  public static void SetVal(DocumentFormat.OpenXml.Wordprocessing.TableLook? openXmlElement, Byte[]? value)
+
+  public static void SetVal(TableLook? openXmlElement, Byte[]? value)
   {
     if (openXmlElement != null)
     {
@@ -25,16 +27,16 @@ public static class TableLookConverter
         openXmlElement.Val = null;
     }
   }
-  
+
   /// <summary>
-  /// firstRow, this property is only available in Office 2010 and later.
+  ///   firstRow, this property is only available in Office 2010 and later.
   /// </summary>
-  public static Boolean? GetFirstRow(DocumentFormat.OpenXml.Wordprocessing.TableLook? openXmlElement)
+  public static Boolean? GetFirstRow(TableLook? openXmlElement)
   {
     return openXmlElement?.FirstRow?.Value;
   }
-  
-  public static void SetFirstRow(DocumentFormat.OpenXml.Wordprocessing.TableLook? openXmlElement, Boolean? value)
+
+  public static void SetFirstRow(TableLook? openXmlElement, Boolean? value)
   {
     if (openXmlElement != null)
       if (value != null)
@@ -42,16 +44,16 @@ public static class TableLookConverter
       else
         openXmlElement.FirstRow = null;
   }
-  
+
   /// <summary>
-  /// lastRow, this property is only available in Office 2010 and later.
+  ///   lastRow, this property is only available in Office 2010 and later.
   /// </summary>
-  public static Boolean? GetLastRow(DocumentFormat.OpenXml.Wordprocessing.TableLook? openXmlElement)
+  public static Boolean? GetLastRow(TableLook? openXmlElement)
   {
     return openXmlElement?.LastRow?.Value;
   }
-  
-  public static void SetLastRow(DocumentFormat.OpenXml.Wordprocessing.TableLook? openXmlElement, Boolean? value)
+
+  public static void SetLastRow(TableLook? openXmlElement, Boolean? value)
   {
     if (openXmlElement != null)
       if (value != null)
@@ -59,16 +61,16 @@ public static class TableLookConverter
       else
         openXmlElement.LastRow = null;
   }
-  
+
   /// <summary>
-  /// firstColumn, this property is only available in Office 2010 and later.
+  ///   firstColumn, this property is only available in Office 2010 and later.
   /// </summary>
-  public static Boolean? GetFirstColumn(DocumentFormat.OpenXml.Wordprocessing.TableLook? openXmlElement)
+  public static Boolean? GetFirstColumn(TableLook? openXmlElement)
   {
     return openXmlElement?.FirstColumn?.Value;
   }
-  
-  public static void SetFirstColumn(DocumentFormat.OpenXml.Wordprocessing.TableLook? openXmlElement, Boolean? value)
+
+  public static void SetFirstColumn(TableLook? openXmlElement, Boolean? value)
   {
     if (openXmlElement != null)
       if (value != null)
@@ -76,16 +78,16 @@ public static class TableLookConverter
       else
         openXmlElement.FirstColumn = null;
   }
-  
+
   /// <summary>
-  /// lastColumn, this property is only available in Office 2010 and later.
+  ///   lastColumn, this property is only available in Office 2010 and later.
   /// </summary>
-  public static Boolean? GetLastColumn(DocumentFormat.OpenXml.Wordprocessing.TableLook? openXmlElement)
+  public static Boolean? GetLastColumn(TableLook? openXmlElement)
   {
     return openXmlElement?.LastColumn?.Value;
   }
-  
-  public static void SetLastColumn(DocumentFormat.OpenXml.Wordprocessing.TableLook? openXmlElement, Boolean? value)
+
+  public static void SetLastColumn(TableLook? openXmlElement, Boolean? value)
   {
     if (openXmlElement != null)
       if (value != null)
@@ -93,16 +95,16 @@ public static class TableLookConverter
       else
         openXmlElement.LastColumn = null;
   }
-  
+
   /// <summary>
-  /// noHBand, this property is only available in Office 2010 and later.
+  ///   noHBand, this property is only available in Office 2010 and later.
   /// </summary>
-  public static Boolean? GetNoHorizontalBand(DocumentFormat.OpenXml.Wordprocessing.TableLook? openXmlElement)
+  public static Boolean? GetNoHorizontalBand(TableLook? openXmlElement)
   {
     return openXmlElement?.NoHorizontalBand?.Value;
   }
-  
-  public static void SetNoHorizontalBand(DocumentFormat.OpenXml.Wordprocessing.TableLook? openXmlElement, Boolean? value)
+
+  public static void SetNoHorizontalBand(TableLook? openXmlElement, Boolean? value)
   {
     if (openXmlElement != null)
       if (value != null)
@@ -110,16 +112,16 @@ public static class TableLookConverter
       else
         openXmlElement.NoHorizontalBand = null;
   }
-  
+
   /// <summary>
-  /// noVBand, this property is only available in Office 2010 and later.
+  ///   noVBand, this property is only available in Office 2010 and later.
   /// </summary>
-  public static Boolean? GetNoVerticalBand(DocumentFormat.OpenXml.Wordprocessing.TableLook? openXmlElement)
+  public static Boolean? GetNoVerticalBand(TableLook? openXmlElement)
   {
     return openXmlElement?.NoVerticalBand?.Value;
   }
-  
-  public static void SetNoVerticalBand(DocumentFormat.OpenXml.Wordprocessing.TableLook? openXmlElement, Boolean? value)
+
+  public static void SetNoVerticalBand(TableLook? openXmlElement, Boolean? value)
   {
     if (openXmlElement != null)
       if (value != null)
@@ -127,8 +129,8 @@ public static class TableLookConverter
       else
         openXmlElement.NoVerticalBand = null;
   }
-  
-  public static DocumentModel.Wordprocessing.TableLook? CreateModelElement(DocumentFormat.OpenXml.Wordprocessing.TableLook? openXmlElement)
+
+  public static DocumentModel.Wordprocessing.TableLook? CreateModelElement(TableLook? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -144,9 +146,9 @@ public static class TableLookConverter
     }
     return null;
   }
-  
+
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.TableLook? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Wordprocessing.TableLook, new()
+    where OpenXmlElementType : TableLook, new()
   {
     if (value != null)
     {

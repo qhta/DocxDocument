@@ -1,18 +1,17 @@
 namespace DocumentModel.Drawings.Diagrams;
 
 /// <summary>
-/// Description.
+///   Description.
 /// </summary>
-public partial class ColorTransformDescription
+public class ColorTransformDescription
 {
   /// <summary>
-  /// Language
+  ///   Language
   /// </summary>
   public String? Language { get; set; }
-  
+
   /// <summary>
-  /// Description Value
+  ///   Description Value
   /// </summary>
   public String? Val { get; set; }
-  
 }

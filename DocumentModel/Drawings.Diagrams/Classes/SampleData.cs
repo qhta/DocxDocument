@@ -1,10 +1,9 @@
 namespace DocumentModel.Drawings.Diagrams;
 
 /// <summary>
-/// Defines the SampleData Class.
+///   Defines the SampleData Class.
 /// </summary>
-public partial class SampleData
+public class SampleData
 {
-  public DocumentModel.Drawings.Diagrams.DataModel? DataModel { get; set; }
-  
+  public DataModel? DataModel { get; set; }
 }

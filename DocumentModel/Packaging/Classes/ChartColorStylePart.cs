@@ -1,17 +1,18 @@
+using DocumentModel.Drawings.ChartsStyle;
+
 namespace DocumentModel.Packaging;
 
 /// <summary>
-/// Defines the ChartColorStylePart
+///   Defines the ChartColorStylePart
 /// </summary>
-public partial class ChartColorStylePart
+public class ChartColorStylePart
 {
   /// <summary>
-  /// Gets or sets the root element of this part.
+  ///   Gets or sets the root element of this part.
   /// </summary>
-  public DocumentModel.Drawings.ChartsStyle.ColorStyle? ColorStyle { get; set; }
-  
+  public ColorStyle? ColorStyle { get; set; }
+
   public String? ContentType { get; set; }
-  
+
   public String? RelationshipType { get; set; }
-  
 }

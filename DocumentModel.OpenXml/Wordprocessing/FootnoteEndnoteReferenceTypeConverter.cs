@@ -1,19 +1,21 @@
+using DocumentFormat.OpenXml.Wordprocessing;
+
 namespace DocumentModel.OpenXml.Wordprocessing;
 
 /// <summary>
-/// Defines the FootnoteEndnoteReferenceType Class.
+///   Defines the FootnoteEndnoteReferenceType Class.
 /// </summary>
 public static class FootnoteEndnoteReferenceTypeConverter
 {
   /// <summary>
-  /// Suppress Footnote/Endnote Reference Mark
+  ///   Suppress Footnote/Endnote Reference Mark
   /// </summary>
-  public static Boolean? GetCustomMarkFollows(DocumentFormat.OpenXml.Wordprocessing.FootnoteEndnoteReferenceType? openXmlElement)
+  public static Boolean? GetCustomMarkFollows(FootnoteEndnoteReferenceType? openXmlElement)
   {
     return openXmlElement?.CustomMarkFollows?.Value;
   }
-  
-  public static void SetCustomMarkFollows(DocumentFormat.OpenXml.Wordprocessing.FootnoteEndnoteReferenceType? openXmlElement, Boolean? value)
+
+  public static void SetCustomMarkFollows(FootnoteEndnoteReferenceType? openXmlElement, Boolean? value)
   {
     if (openXmlElement != null)
       if (value != null)
@@ -21,22 +23,22 @@ public static class FootnoteEndnoteReferenceTypeConverter
       else
         openXmlElement.CustomMarkFollows = null;
   }
-  
+
   /// <summary>
-  /// Footnote/Endnote ID Reference
+  ///   Footnote/Endnote ID Reference
   /// </summary>
-  public static Int64? GetId(DocumentFormat.OpenXml.Wordprocessing.FootnoteEndnoteReferenceType? openXmlElement)
+  public static Int64? GetId(FootnoteEndnoteReferenceType? openXmlElement)
   {
     return openXmlElement?.Id?.Value;
   }
-  
-  public static void SetId(DocumentFormat.OpenXml.Wordprocessing.FootnoteEndnoteReferenceType? openXmlElement, Int64? value)
+
+  public static void SetId(FootnoteEndnoteReferenceType? openXmlElement, Int64? value)
   {
     if (openXmlElement != null)
       openXmlElement.Id = value;
   }
-  
-  public static DocumentModel.Wordprocessing.FootnoteEndnoteReferenceType? CreateModelElement(DocumentFormat.OpenXml.Wordprocessing.FootnoteEndnoteReferenceType? openXmlElement)
+
+  public static DocumentModel.Wordprocessing.FootnoteEndnoteReferenceType? CreateModelElement(FootnoteEndnoteReferenceType? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -47,9 +49,9 @@ public static class FootnoteEndnoteReferenceTypeConverter
     }
     return null;
   }
-  
+
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.FootnoteEndnoteReferenceType? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Wordprocessing.FootnoteEndnoteReferenceType, new()
+    where OpenXmlElementType : FootnoteEndnoteReferenceType, new()
   {
     if (value != null)
     {

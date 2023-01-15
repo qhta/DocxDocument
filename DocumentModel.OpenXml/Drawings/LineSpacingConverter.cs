@@ -1,57 +1,59 @@
+using DocumentFormat.OpenXml.Drawing;
+
 namespace DocumentModel.OpenXml.Drawings;
 
 /// <summary>
-/// Line Spacing.
+///   Line Spacing.
 /// </summary>
 public static class LineSpacingConverter
 {
-  public static Int32? GetSpacingPercent(DocumentFormat.OpenXml.Drawing.LineSpacing? openXmlElement)
+  public static Int32? GetSpacingPercent(LineSpacing? openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.SpacingPercent>();
+    var itemElement = openXmlElement?.GetFirstChild<SpacingPercent>();
     if (itemElement != null)
       return itemElement.Val?.Value;
     return null;
   }
-  
-  public static void SetSpacingPercent(DocumentFormat.OpenXml.Drawing.LineSpacing? openXmlElement, Int32? value)
+
+  public static void SetSpacingPercent(LineSpacing? openXmlElement, Int32? value)
   {
     if (openXmlElement != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.SpacingPercent>();
+      var itemElement = openXmlElement.GetFirstChild<SpacingPercent>();
       if (itemElement != null)
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = new DocumentFormat.OpenXml.Drawing.SpacingPercent{ Val = value };
+        itemElement = new SpacingPercent { Val = value };
         openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static Int32? GetSpacingPoints(DocumentFormat.OpenXml.Drawing.LineSpacing? openXmlElement)
+
+  public static Int32? GetSpacingPoints(LineSpacing? openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.SpacingPoints>();
+    var itemElement = openXmlElement?.GetFirstChild<SpacingPoints>();
     if (itemElement != null)
       return itemElement.Val?.Value;
     return null;
   }
-  
-  public static void SetSpacingPoints(DocumentFormat.OpenXml.Drawing.LineSpacing? openXmlElement, Int32? value)
+
+  public static void SetSpacingPoints(LineSpacing? openXmlElement, Int32? value)
   {
     if (openXmlElement != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.SpacingPoints>();
+      var itemElement = openXmlElement.GetFirstChild<SpacingPoints>();
       if (itemElement != null)
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = new DocumentFormat.OpenXml.Drawing.SpacingPoints{ Val = value };
+        itemElement = new SpacingPoints { Val = value };
         openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static DocumentModel.Drawings.LineSpacing? CreateModelElement(DocumentFormat.OpenXml.Drawing.LineSpacing? openXmlElement)
+
+  public static DocumentModel.Drawings.LineSpacing? CreateModelElement(LineSpacing? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -62,9 +64,9 @@ public static class LineSpacingConverter
     }
     return null;
   }
-  
+
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.LineSpacing? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.LineSpacing, new()
+    where OpenXmlElementType : LineSpacing, new()
   {
     if (value != null)
     {

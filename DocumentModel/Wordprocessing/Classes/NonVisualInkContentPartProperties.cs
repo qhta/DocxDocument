@@ -1,23 +1,24 @@
+using DocumentModel.Drawings;
+
 namespace DocumentModel.Wordprocessing;
 
 /// <summary>
-/// Defines the NonVisualInkContentPartProperties Class.
+///   Defines the NonVisualInkContentPartProperties Class.
 /// </summary>
-public partial class NonVisualInkContentPartProperties
+public class NonVisualInkContentPartProperties
 {
   /// <summary>
-  /// isComment, this property is only available in Office 2010 and later.
+  ///   isComment, this property is only available in Office 2010 and later.
   /// </summary>
   public Boolean? IsComment { get; set; }
-  
+
   /// <summary>
-  /// ContentPartLocks.
+  ///   ContentPartLocks.
   /// </summary>
-  public DocumentModel.Drawings.ContentPartLocks? ContentPartLocks { get; set; }
-  
+  public ContentPartLocks? ContentPartLocks { get; set; }
+
   /// <summary>
-  /// OfficeArtExtensionList.
+  ///   OfficeArtExtensionList.
   /// </summary>
-  public DocumentModel.Drawings.OfficeArtExtensionList2? OfficeArtExtensionList { get; set; }
-  
+  public OfficeArtExtensionList2? OfficeArtExtensionList { get; set; }
 }

@@ -1,59 +1,58 @@
 namespace DocumentModel.Drawings.Charts;
 
 /// <summary>
-/// Plot data and formatting.
+///   Plot data and formatting.
 /// </summary>
-public partial class PlotArea
+public class PlotArea
 {
   /// <summary>
-  /// Layout.
+  ///   Layout.
   /// </summary>
-  public DocumentModel.Drawings.Charts.Layout? Layout { get; set; }
-  
-  public DocumentModel.Drawings.Charts.AreaChart? AreaChart { get; set; }
-  
-  public DocumentModel.Drawings.Charts.Area3DChart? Area3DChart { get; set; }
-  
-  public DocumentModel.Drawings.Charts.LineChart? LineChart { get; set; }
-  
-  public DocumentModel.Drawings.Charts.Line3DChart? Line3DChart { get; set; }
-  
-  public DocumentModel.Drawings.Charts.StockChart? StockChart { get; set; }
-  
-  public DocumentModel.Drawings.Charts.RadarChart? RadarChart { get; set; }
-  
-  public DocumentModel.Drawings.Charts.ScatterChart? ScatterChart { get; set; }
-  
-  public DocumentModel.Drawings.Charts.PieChart? PieChart { get; set; }
-  
-  public DocumentModel.Drawings.Charts.Pie3DChart? Pie3DChart { get; set; }
-  
-  public DocumentModel.Drawings.Charts.DoughnutChart? DoughnutChart { get; set; }
-  
-  public DocumentModel.Drawings.Charts.BarChart? BarChart { get; set; }
-  
-  public DocumentModel.Drawings.Charts.Bar3DChart? Bar3DChart { get; set; }
-  
-  public DocumentModel.Drawings.Charts.OfPieChart? OfPieChart { get; set; }
-  
-  public DocumentModel.Drawings.Charts.SurfaceChart? SurfaceChart { get; set; }
-  
-  public DocumentModel.Drawings.Charts.Surface3DChart? Surface3DChart { get; set; }
-  
-  public DocumentModel.Drawings.Charts.BubbleChart? BubbleChart { get; set; }
-  
-  public DocumentModel.Drawings.Charts.ValueAxis? ValueAxis { get; set; }
-  
-  public DocumentModel.Drawings.Charts.CategoryAxis? CategoryAxis { get; set; }
-  
-  public DocumentModel.Drawings.Charts.DateAxis? DateAxis { get; set; }
-  
-  public DocumentModel.Drawings.Charts.SeriesAxis? SeriesAxis { get; set; }
-  
-  public DocumentModel.Drawings.Charts.DataTable? DataTable { get; set; }
-  
-  public DocumentModel.Drawings.Charts.ShapeProperties? ShapeProperties { get; set; }
-  
-  public DocumentModel.Drawings.Charts.ExtensionList? ExtensionList { get; set; }
-  
+  public Layout? Layout { get; set; }
+
+  public AreaChart? AreaChart { get; set; }
+
+  public Area3DChart? Area3DChart { get; set; }
+
+  public LineChart? LineChart { get; set; }
+
+  public Line3DChart? Line3DChart { get; set; }
+
+  public StockChart? StockChart { get; set; }
+
+  public RadarChart? RadarChart { get; set; }
+
+  public ScatterChart? ScatterChart { get; set; }
+
+  public PieChart? PieChart { get; set; }
+
+  public Pie3DChart? Pie3DChart { get; set; }
+
+  public DoughnutChart? DoughnutChart { get; set; }
+
+  public BarChart? BarChart { get; set; }
+
+  public Bar3DChart? Bar3DChart { get; set; }
+
+  public OfPieChart? OfPieChart { get; set; }
+
+  public SurfaceChart? SurfaceChart { get; set; }
+
+  public Surface3DChart? Surface3DChart { get; set; }
+
+  public BubbleChart? BubbleChart { get; set; }
+
+  public ValueAxis? ValueAxis { get; set; }
+
+  public CategoryAxis? CategoryAxis { get; set; }
+
+  public DateAxis? DateAxis { get; set; }
+
+  public SeriesAxis? SeriesAxis { get; set; }
+
+  public DataTable? DataTable { get; set; }
+
+  public ShapeProperties? ShapeProperties { get; set; }
+
+  public ExtensionList? ExtensionList { get; set; }
 }

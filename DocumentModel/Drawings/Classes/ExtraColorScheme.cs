@@ -1,18 +1,17 @@
 namespace DocumentModel.Drawings;
 
 /// <summary>
-/// Extra Color Scheme.
+///   Extra Color Scheme.
 /// </summary>
-public partial class ExtraColorScheme
+public class ExtraColorScheme
 {
   /// <summary>
-  /// ColorScheme.
+  ///   ColorScheme.
   /// </summary>
-  public DocumentModel.Drawings.ColorScheme? ColorScheme { get; set; }
-  
+  public ColorScheme? ColorScheme { get; set; }
+
   /// <summary>
-  /// ColorMap.
+  ///   ColorMap.
   /// </summary>
-  public DocumentModel.Drawings.ColorMap? ColorMap { get; set; }
-  
+  public ColorMap? ColorMap { get; set; }
 }

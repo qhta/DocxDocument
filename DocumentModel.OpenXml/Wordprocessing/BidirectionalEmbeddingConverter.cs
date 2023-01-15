@@ -1,33 +1,62 @@
+using DocumentFormat.OpenXml.Office2010.Word;
+using DocumentFormat.OpenXml.Wordprocessing;
+using DocumentModel.Math;
+using DocumentModel.OpenXml.Math;
+using DocumentModel.Wordprocessing;
+using BidirectionalEmbedding = DocumentFormat.OpenXml.Wordprocessing.BidirectionalEmbedding;
+using BidirectionalOverride = DocumentModel.Wordprocessing.BidirectionalOverride;
+using BookmarkStart = DocumentModel.Wordprocessing.BookmarkStart;
+using CustomXmlRun = DocumentModel.Wordprocessing.CustomXmlRun;
+using DeletedRun = DocumentModel.Wordprocessing.DeletedRun;
+using InsertedRun = DocumentModel.Wordprocessing.InsertedRun;
+using MarkupRangeType = DocumentModel.Wordprocessing.MarkupRangeType;
+using MarkupType = DocumentModel.Wordprocessing.MarkupType;
+using MoveBookmarkType = DocumentModel.Wordprocessing.MoveBookmarkType;
+using MoveFromRun = DocumentModel.Wordprocessing.MoveFromRun;
+using MoveToRun = DocumentModel.Wordprocessing.MoveToRun;
+using OfficeMath = DocumentModel.Math.OfficeMath;
+using Paragraph = DocumentModel.Math.Paragraph;
+using PermEnd = DocumentModel.Wordprocessing.PermEnd;
+using PermStart = DocumentModel.Wordprocessing.PermStart;
+using ProofError = DocumentModel.Wordprocessing.ProofError;
+using RelationshipType = DocumentModel.Wordprocessing.RelationshipType;
+using Run = DocumentModel.Math.Run;
+using RunConflictDeletion = DocumentModel.Wordprocessing.RunConflictDeletion;
+using RunConflictInsertion = DocumentModel.Wordprocessing.RunConflictInsertion;
+using SdtRun = DocumentModel.Wordprocessing.SdtRun;
+using SimpleField = DocumentModel.Wordprocessing.SimpleField;
+using TrackChangeType = DocumentModel.Wordprocessing.TrackChangeType;
+
 namespace DocumentModel.OpenXml.Wordprocessing;
 
 /// <summary>
-/// Defines the BidirectionalEmbedding Class.
+///   Defines the BidirectionalEmbedding Class.
 /// </summary>
 public static class BidirectionalEmbeddingConverter
 {
   /// <summary>
-  /// val
+  ///   val
   /// </summary>
-  public static DocumentModel.Wordprocessing.DirectionKind? GetVal(DocumentFormat.OpenXml.Wordprocessing.BidirectionalEmbedding? openXmlElement)
+  public static DirectionKind? GetVal(BidirectionalEmbedding? openXmlElement)
   {
-    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Wordprocessing.DirectionValues, DocumentModel.Wordprocessing.DirectionKind>(openXmlElement?.Val?.Value);
+    return EnumValueConverter.GetValue<DirectionValues, DirectionKind>(openXmlElement?.Val?.Value);
   }
-  
-  public static void SetVal(DocumentFormat.OpenXml.Wordprocessing.BidirectionalEmbedding? openXmlElement, DocumentModel.Wordprocessing.DirectionKind? value)
+
+  public static void SetVal(BidirectionalEmbedding? openXmlElement, DirectionKind? value)
   {
     if (openXmlElement != null)
-      openXmlElement.Val = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Wordprocessing.DirectionValues, DocumentModel.Wordprocessing.DirectionKind>(value);
+      openXmlElement.Val = EnumValueConverter.CreateEnumValue<DirectionValues, DirectionKind>(value);
   }
-  
-  public static DocumentModel.Wordprocessing.CustomXmlRun? GetCustomXmlRun(DocumentFormat.OpenXml.Wordprocessing.BidirectionalEmbedding? openXmlElement)
+
+  public static CustomXmlRun? GetCustomXmlRun(BidirectionalEmbedding? openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.CustomXmlRun>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Wordprocessing.CustomXmlRunConverter.CreateModelElement(itemElement);
+      return CustomXmlRunConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetCustomXmlRun(DocumentFormat.OpenXml.Wordprocessing.BidirectionalEmbedding? openXmlElement, DocumentModel.Wordprocessing.CustomXmlRun? value)
+
+  public static void SetCustomXmlRun(BidirectionalEmbedding? openXmlElement, CustomXmlRun? value)
   {
     if (openXmlElement != null)
     {
@@ -36,21 +65,21 @@ public static class BidirectionalEmbeddingConverter
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Wordprocessing.CustomXmlRunConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.CustomXmlRun>(value);
+        itemElement = CustomXmlRunConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.CustomXmlRun>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static System.Collections.ObjectModel.Collection<DocumentModel.Wordprocessing.SimpleField>? GetSimpleFields(DocumentFormat.OpenXml.Wordprocessing.BidirectionalEmbedding? openXmlElement)
+
+  public static Collection<SimpleField>? GetSimpleFields(BidirectionalEmbedding? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var collection = new System.Collections.ObjectModel.Collection<DocumentModel.Wordprocessing.SimpleField>();
+      var collection = new Collection<SimpleField>();
       foreach (var item in openXmlElement.Elements<DocumentFormat.OpenXml.Wordprocessing.SimpleField>())
       {
-        var newItem = DocumentModel.OpenXml.Wordprocessing.SimpleFieldConverter.CreateModelElement(item);
+        var newItem = SimpleFieldConverter.CreateModelElement(item);
         if (newItem != null)
           collection.Add(newItem);
       }
@@ -58,33 +87,31 @@ public static class BidirectionalEmbeddingConverter
     }
     return null;
   }
-  
-  public static void SetSimpleFields(DocumentFormat.OpenXml.Wordprocessing.BidirectionalEmbedding? openXmlElement, System.Collections.ObjectModel.Collection<DocumentModel.Wordprocessing.SimpleField>? value)
+
+  public static void SetSimpleFields(BidirectionalEmbedding? openXmlElement, Collection<SimpleField>? value)
   {
     if (openXmlElement != null)
     {
       openXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Wordprocessing.SimpleField>();
       if (value != null)
-      {
         foreach (var item in value)
         {
-          var newItem = DocumentModel.OpenXml.Wordprocessing.SimpleFieldConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.SimpleField>(item);
+          var newItem = SimpleFieldConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.SimpleField>(item);
           if (newItem != null)
             openXmlElement.AddChild(newItem);
         }
-      }
     }
   }
-  
-  public static DocumentModel.Wordprocessing.Hyperlink? GetHyperlink(DocumentFormat.OpenXml.Wordprocessing.BidirectionalEmbedding? openXmlElement)
+
+  public static DocumentModel.Wordprocessing.Hyperlink? GetHyperlink(BidirectionalEmbedding? openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.Hyperlink>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Wordprocessing.HyperlinkConverter.CreateModelElement(itemElement);
+      return HyperlinkConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetHyperlink(DocumentFormat.OpenXml.Wordprocessing.BidirectionalEmbedding? openXmlElement, DocumentModel.Wordprocessing.Hyperlink? value)
+
+  public static void SetHyperlink(BidirectionalEmbedding? openXmlElement, DocumentModel.Wordprocessing.Hyperlink? value)
   {
     if (openXmlElement != null)
     {
@@ -93,22 +120,22 @@ public static class BidirectionalEmbeddingConverter
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Wordprocessing.HyperlinkConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.Hyperlink>(value);
+        itemElement = HyperlinkConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.Hyperlink>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static DocumentModel.Wordprocessing.SdtRun? GetSdtRun(DocumentFormat.OpenXml.Wordprocessing.BidirectionalEmbedding? openXmlElement)
+
+  public static SdtRun? GetSdtRun(BidirectionalEmbedding? openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.SdtRun>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Wordprocessing.SdtRunConverter.CreateModelElement(itemElement);
+      return SdtRunConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetSdtRun(DocumentFormat.OpenXml.Wordprocessing.BidirectionalEmbedding? openXmlElement, DocumentModel.Wordprocessing.SdtRun? value)
+
+  public static void SetSdtRun(BidirectionalEmbedding? openXmlElement, SdtRun? value)
   {
     if (openXmlElement != null)
     {
@@ -117,22 +144,22 @@ public static class BidirectionalEmbeddingConverter
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Wordprocessing.SdtRunConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.SdtRun>(value);
+        itemElement = SdtRunConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.SdtRun>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static DocumentModel.Wordprocessing.ProofError? GetProofError(DocumentFormat.OpenXml.Wordprocessing.BidirectionalEmbedding? openXmlElement)
+
+  public static ProofError? GetProofError(BidirectionalEmbedding? openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.ProofError>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Wordprocessing.ProofErrorConverter.CreateModelElement(itemElement);
+      return ProofErrorConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetProofError(DocumentFormat.OpenXml.Wordprocessing.BidirectionalEmbedding? openXmlElement, DocumentModel.Wordprocessing.ProofError? value)
+
+  public static void SetProofError(BidirectionalEmbedding? openXmlElement, ProofError? value)
   {
     if (openXmlElement != null)
     {
@@ -141,22 +168,22 @@ public static class BidirectionalEmbeddingConverter
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Wordprocessing.ProofErrorConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.ProofError>(value);
+        itemElement = ProofErrorConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.ProofError>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static DocumentModel.Wordprocessing.PermStart? GetPermStart(DocumentFormat.OpenXml.Wordprocessing.BidirectionalEmbedding? openXmlElement)
+
+  public static PermStart? GetPermStart(BidirectionalEmbedding? openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.PermStart>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Wordprocessing.PermStartConverter.CreateModelElement(itemElement);
+      return PermStartConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetPermStart(DocumentFormat.OpenXml.Wordprocessing.BidirectionalEmbedding? openXmlElement, DocumentModel.Wordprocessing.PermStart? value)
+
+  public static void SetPermStart(BidirectionalEmbedding? openXmlElement, PermStart? value)
   {
     if (openXmlElement != null)
     {
@@ -165,22 +192,22 @@ public static class BidirectionalEmbeddingConverter
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Wordprocessing.PermStartConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.PermStart>(value);
+        itemElement = PermStartConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.PermStart>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static DocumentModel.Wordprocessing.PermEnd? GetPermEnd(DocumentFormat.OpenXml.Wordprocessing.BidirectionalEmbedding? openXmlElement)
+
+  public static PermEnd? GetPermEnd(BidirectionalEmbedding? openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.PermEnd>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Wordprocessing.PermEndConverter.CreateModelElement(itemElement);
+      return PermEndConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetPermEnd(DocumentFormat.OpenXml.Wordprocessing.BidirectionalEmbedding? openXmlElement, DocumentModel.Wordprocessing.PermEnd? value)
+
+  public static void SetPermEnd(BidirectionalEmbedding? openXmlElement, PermEnd? value)
   {
     if (openXmlElement != null)
     {
@@ -189,22 +216,22 @@ public static class BidirectionalEmbeddingConverter
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Wordprocessing.PermEndConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.PermEnd>(value);
+        itemElement = PermEndConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.PermEnd>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static DocumentModel.Wordprocessing.BookmarkStart? GetBookmarkStart(DocumentFormat.OpenXml.Wordprocessing.BidirectionalEmbedding? openXmlElement)
+
+  public static BookmarkStart? GetBookmarkStart(BidirectionalEmbedding? openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.BookmarkStart>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Wordprocessing.BookmarkStartConverter.CreateModelElement(itemElement);
+      return BookmarkStartConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetBookmarkStart(DocumentFormat.OpenXml.Wordprocessing.BidirectionalEmbedding? openXmlElement, DocumentModel.Wordprocessing.BookmarkStart? value)
+
+  public static void SetBookmarkStart(BidirectionalEmbedding? openXmlElement, BookmarkStart? value)
   {
     if (openXmlElement != null)
     {
@@ -213,478 +240,478 @@ public static class BidirectionalEmbeddingConverter
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Wordprocessing.BookmarkStartConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.BookmarkStart>(value);
+        itemElement = BookmarkStartConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.BookmarkStart>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static DocumentModel.Wordprocessing.MarkupRangeType? GetBookmarkEnd(DocumentFormat.OpenXml.Wordprocessing.BidirectionalEmbedding? openXmlElement)
+
+  public static MarkupRangeType? GetBookmarkEnd(BidirectionalEmbedding? openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.BookmarkEnd>();
+    var itemElement = openXmlElement?.GetFirstChild<BookmarkEnd>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Wordprocessing.MarkupRangeTypeConverter.CreateModelElement(itemElement);
+      return MarkupRangeTypeConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetBookmarkEnd(DocumentFormat.OpenXml.Wordprocessing.BidirectionalEmbedding? openXmlElement, DocumentModel.Wordprocessing.MarkupRangeType? value)
+
+  public static void SetBookmarkEnd(BidirectionalEmbedding? openXmlElement, MarkupRangeType? value)
   {
     if (openXmlElement != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.BookmarkEnd>();
+      var itemElement = openXmlElement.GetFirstChild<BookmarkEnd>();
       if (itemElement != null)
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Wordprocessing.MarkupRangeTypeConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.BookmarkEnd>(value);
+        itemElement = MarkupRangeTypeConverter.CreateOpenXmlElement<BookmarkEnd>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static DocumentModel.Wordprocessing.MarkupRangeType? GetCommentRangeStart(DocumentFormat.OpenXml.Wordprocessing.BidirectionalEmbedding? openXmlElement)
+
+  public static MarkupRangeType? GetCommentRangeStart(BidirectionalEmbedding? openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.CommentRangeStart>();
+    var itemElement = openXmlElement?.GetFirstChild<CommentRangeStart>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Wordprocessing.MarkupRangeTypeConverter.CreateModelElement(itemElement);
+      return MarkupRangeTypeConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetCommentRangeStart(DocumentFormat.OpenXml.Wordprocessing.BidirectionalEmbedding? openXmlElement, DocumentModel.Wordprocessing.MarkupRangeType? value)
+
+  public static void SetCommentRangeStart(BidirectionalEmbedding? openXmlElement, MarkupRangeType? value)
   {
     if (openXmlElement != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.CommentRangeStart>();
+      var itemElement = openXmlElement.GetFirstChild<CommentRangeStart>();
       if (itemElement != null)
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Wordprocessing.MarkupRangeTypeConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.CommentRangeStart>(value);
+        itemElement = MarkupRangeTypeConverter.CreateOpenXmlElement<CommentRangeStart>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static DocumentModel.Wordprocessing.MarkupRangeType? GetCommentRangeEnd(DocumentFormat.OpenXml.Wordprocessing.BidirectionalEmbedding? openXmlElement)
+
+  public static MarkupRangeType? GetCommentRangeEnd(BidirectionalEmbedding? openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.CommentRangeEnd>();
+    var itemElement = openXmlElement?.GetFirstChild<CommentRangeEnd>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Wordprocessing.MarkupRangeTypeConverter.CreateModelElement(itemElement);
+      return MarkupRangeTypeConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetCommentRangeEnd(DocumentFormat.OpenXml.Wordprocessing.BidirectionalEmbedding? openXmlElement, DocumentModel.Wordprocessing.MarkupRangeType? value)
+
+  public static void SetCommentRangeEnd(BidirectionalEmbedding? openXmlElement, MarkupRangeType? value)
   {
     if (openXmlElement != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.CommentRangeEnd>();
+      var itemElement = openXmlElement.GetFirstChild<CommentRangeEnd>();
       if (itemElement != null)
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Wordprocessing.MarkupRangeTypeConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.CommentRangeEnd>(value);
+        itemElement = MarkupRangeTypeConverter.CreateOpenXmlElement<CommentRangeEnd>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static DocumentModel.Wordprocessing.MoveBookmarkType? GetMoveFromRangeStart(DocumentFormat.OpenXml.Wordprocessing.BidirectionalEmbedding? openXmlElement)
+
+  public static MoveBookmarkType? GetMoveFromRangeStart(BidirectionalEmbedding? openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.MoveFromRangeStart>();
+    var itemElement = openXmlElement?.GetFirstChild<MoveFromRangeStart>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Wordprocessing.MoveBookmarkTypeConverter.CreateModelElement(itemElement);
+      return MoveBookmarkTypeConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetMoveFromRangeStart(DocumentFormat.OpenXml.Wordprocessing.BidirectionalEmbedding? openXmlElement, DocumentModel.Wordprocessing.MoveBookmarkType? value)
+
+  public static void SetMoveFromRangeStart(BidirectionalEmbedding? openXmlElement, MoveBookmarkType? value)
   {
     if (openXmlElement != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.MoveFromRangeStart>();
+      var itemElement = openXmlElement.GetFirstChild<MoveFromRangeStart>();
       if (itemElement != null)
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Wordprocessing.MoveBookmarkTypeConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.MoveFromRangeStart>(value);
+        itemElement = MoveBookmarkTypeConverter.CreateOpenXmlElement<MoveFromRangeStart>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static DocumentModel.Wordprocessing.MarkupRangeType? GetMoveFromRangeEnd(DocumentFormat.OpenXml.Wordprocessing.BidirectionalEmbedding? openXmlElement)
+
+  public static MarkupRangeType? GetMoveFromRangeEnd(BidirectionalEmbedding? openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.MoveFromRangeEnd>();
+    var itemElement = openXmlElement?.GetFirstChild<MoveFromRangeEnd>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Wordprocessing.MarkupRangeTypeConverter.CreateModelElement(itemElement);
+      return MarkupRangeTypeConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetMoveFromRangeEnd(DocumentFormat.OpenXml.Wordprocessing.BidirectionalEmbedding? openXmlElement, DocumentModel.Wordprocessing.MarkupRangeType? value)
+
+  public static void SetMoveFromRangeEnd(BidirectionalEmbedding? openXmlElement, MarkupRangeType? value)
   {
     if (openXmlElement != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.MoveFromRangeEnd>();
+      var itemElement = openXmlElement.GetFirstChild<MoveFromRangeEnd>();
       if (itemElement != null)
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Wordprocessing.MarkupRangeTypeConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.MoveFromRangeEnd>(value);
+        itemElement = MarkupRangeTypeConverter.CreateOpenXmlElement<MoveFromRangeEnd>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static DocumentModel.Wordprocessing.MoveBookmarkType? GetMoveToRangeStart(DocumentFormat.OpenXml.Wordprocessing.BidirectionalEmbedding? openXmlElement)
+
+  public static MoveBookmarkType? GetMoveToRangeStart(BidirectionalEmbedding? openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.MoveToRangeStart>();
+    var itemElement = openXmlElement?.GetFirstChild<MoveToRangeStart>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Wordprocessing.MoveBookmarkTypeConverter.CreateModelElement(itemElement);
+      return MoveBookmarkTypeConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetMoveToRangeStart(DocumentFormat.OpenXml.Wordprocessing.BidirectionalEmbedding? openXmlElement, DocumentModel.Wordprocessing.MoveBookmarkType? value)
+
+  public static void SetMoveToRangeStart(BidirectionalEmbedding? openXmlElement, MoveBookmarkType? value)
   {
     if (openXmlElement != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.MoveToRangeStart>();
+      var itemElement = openXmlElement.GetFirstChild<MoveToRangeStart>();
       if (itemElement != null)
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Wordprocessing.MoveBookmarkTypeConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.MoveToRangeStart>(value);
+        itemElement = MoveBookmarkTypeConverter.CreateOpenXmlElement<MoveToRangeStart>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static DocumentModel.Wordprocessing.MarkupRangeType? GetMoveToRangeEnd(DocumentFormat.OpenXml.Wordprocessing.BidirectionalEmbedding? openXmlElement)
+
+  public static MarkupRangeType? GetMoveToRangeEnd(BidirectionalEmbedding? openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.MoveToRangeEnd>();
+    var itemElement = openXmlElement?.GetFirstChild<MoveToRangeEnd>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Wordprocessing.MarkupRangeTypeConverter.CreateModelElement(itemElement);
+      return MarkupRangeTypeConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetMoveToRangeEnd(DocumentFormat.OpenXml.Wordprocessing.BidirectionalEmbedding? openXmlElement, DocumentModel.Wordprocessing.MarkupRangeType? value)
+
+  public static void SetMoveToRangeEnd(BidirectionalEmbedding? openXmlElement, MarkupRangeType? value)
   {
     if (openXmlElement != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.MoveToRangeEnd>();
+      var itemElement = openXmlElement.GetFirstChild<MoveToRangeEnd>();
       if (itemElement != null)
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Wordprocessing.MarkupRangeTypeConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.MoveToRangeEnd>(value);
+        itemElement = MarkupRangeTypeConverter.CreateOpenXmlElement<MoveToRangeEnd>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static DocumentModel.Wordprocessing.TrackChangeType? GetCustomXmlInsRangeStart(DocumentFormat.OpenXml.Wordprocessing.BidirectionalEmbedding? openXmlElement)
+
+  public static TrackChangeType? GetCustomXmlInsRangeStart(BidirectionalEmbedding? openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.CustomXmlInsRangeStart>();
+    var itemElement = openXmlElement?.GetFirstChild<CustomXmlInsRangeStart>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Wordprocessing.TrackChangeTypeConverter.CreateModelElement(itemElement);
+      return TrackChangeTypeConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetCustomXmlInsRangeStart(DocumentFormat.OpenXml.Wordprocessing.BidirectionalEmbedding? openXmlElement, DocumentModel.Wordprocessing.TrackChangeType? value)
+
+  public static void SetCustomXmlInsRangeStart(BidirectionalEmbedding? openXmlElement, TrackChangeType? value)
   {
     if (openXmlElement != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.CustomXmlInsRangeStart>();
+      var itemElement = openXmlElement.GetFirstChild<CustomXmlInsRangeStart>();
       if (itemElement != null)
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Wordprocessing.TrackChangeTypeConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.CustomXmlInsRangeStart>(value);
+        itemElement = TrackChangeTypeConverter.CreateOpenXmlElement<CustomXmlInsRangeStart>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static DocumentModel.Wordprocessing.MarkupType? GetCustomXmlInsRangeEnd(DocumentFormat.OpenXml.Wordprocessing.BidirectionalEmbedding? openXmlElement)
+
+  public static MarkupType? GetCustomXmlInsRangeEnd(BidirectionalEmbedding? openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.CustomXmlInsRangeEnd>();
+    var itemElement = openXmlElement?.GetFirstChild<CustomXmlInsRangeEnd>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Wordprocessing.MarkupTypeConverter.CreateModelElement(itemElement);
+      return MarkupTypeConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetCustomXmlInsRangeEnd(DocumentFormat.OpenXml.Wordprocessing.BidirectionalEmbedding? openXmlElement, DocumentModel.Wordprocessing.MarkupType? value)
+
+  public static void SetCustomXmlInsRangeEnd(BidirectionalEmbedding? openXmlElement, MarkupType? value)
   {
     if (openXmlElement != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.CustomXmlInsRangeEnd>();
+      var itemElement = openXmlElement.GetFirstChild<CustomXmlInsRangeEnd>();
       if (itemElement != null)
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Wordprocessing.MarkupTypeConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.CustomXmlInsRangeEnd>(value);
+        itemElement = MarkupTypeConverter.CreateOpenXmlElement<CustomXmlInsRangeEnd>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static DocumentModel.Wordprocessing.TrackChangeType? GetCustomXmlDelRangeStart(DocumentFormat.OpenXml.Wordprocessing.BidirectionalEmbedding? openXmlElement)
+
+  public static TrackChangeType? GetCustomXmlDelRangeStart(BidirectionalEmbedding? openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.CustomXmlDelRangeStart>();
+    var itemElement = openXmlElement?.GetFirstChild<CustomXmlDelRangeStart>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Wordprocessing.TrackChangeTypeConverter.CreateModelElement(itemElement);
+      return TrackChangeTypeConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetCustomXmlDelRangeStart(DocumentFormat.OpenXml.Wordprocessing.BidirectionalEmbedding? openXmlElement, DocumentModel.Wordprocessing.TrackChangeType? value)
+
+  public static void SetCustomXmlDelRangeStart(BidirectionalEmbedding? openXmlElement, TrackChangeType? value)
   {
     if (openXmlElement != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.CustomXmlDelRangeStart>();
+      var itemElement = openXmlElement.GetFirstChild<CustomXmlDelRangeStart>();
       if (itemElement != null)
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Wordprocessing.TrackChangeTypeConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.CustomXmlDelRangeStart>(value);
+        itemElement = TrackChangeTypeConverter.CreateOpenXmlElement<CustomXmlDelRangeStart>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static DocumentModel.Wordprocessing.MarkupType? GetCustomXmlDelRangeEnd(DocumentFormat.OpenXml.Wordprocessing.BidirectionalEmbedding? openXmlElement)
+
+  public static MarkupType? GetCustomXmlDelRangeEnd(BidirectionalEmbedding? openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.CustomXmlDelRangeEnd>();
+    var itemElement = openXmlElement?.GetFirstChild<CustomXmlDelRangeEnd>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Wordprocessing.MarkupTypeConverter.CreateModelElement(itemElement);
+      return MarkupTypeConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetCustomXmlDelRangeEnd(DocumentFormat.OpenXml.Wordprocessing.BidirectionalEmbedding? openXmlElement, DocumentModel.Wordprocessing.MarkupType? value)
+
+  public static void SetCustomXmlDelRangeEnd(BidirectionalEmbedding? openXmlElement, MarkupType? value)
   {
     if (openXmlElement != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.CustomXmlDelRangeEnd>();
+      var itemElement = openXmlElement.GetFirstChild<CustomXmlDelRangeEnd>();
       if (itemElement != null)
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Wordprocessing.MarkupTypeConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.CustomXmlDelRangeEnd>(value);
+        itemElement = MarkupTypeConverter.CreateOpenXmlElement<CustomXmlDelRangeEnd>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static DocumentModel.Wordprocessing.TrackChangeType? GetCustomXmlMoveFromRangeStart(DocumentFormat.OpenXml.Wordprocessing.BidirectionalEmbedding? openXmlElement)
+
+  public static TrackChangeType? GetCustomXmlMoveFromRangeStart(BidirectionalEmbedding? openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.CustomXmlMoveFromRangeStart>();
+    var itemElement = openXmlElement?.GetFirstChild<CustomXmlMoveFromRangeStart>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Wordprocessing.TrackChangeTypeConverter.CreateModelElement(itemElement);
+      return TrackChangeTypeConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetCustomXmlMoveFromRangeStart(DocumentFormat.OpenXml.Wordprocessing.BidirectionalEmbedding? openXmlElement, DocumentModel.Wordprocessing.TrackChangeType? value)
+
+  public static void SetCustomXmlMoveFromRangeStart(BidirectionalEmbedding? openXmlElement, TrackChangeType? value)
   {
     if (openXmlElement != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.CustomXmlMoveFromRangeStart>();
+      var itemElement = openXmlElement.GetFirstChild<CustomXmlMoveFromRangeStart>();
       if (itemElement != null)
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Wordprocessing.TrackChangeTypeConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.CustomXmlMoveFromRangeStart>(value);
+        itemElement = TrackChangeTypeConverter.CreateOpenXmlElement<CustomXmlMoveFromRangeStart>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static DocumentModel.Wordprocessing.MarkupType? GetCustomXmlMoveFromRangeEnd(DocumentFormat.OpenXml.Wordprocessing.BidirectionalEmbedding? openXmlElement)
+
+  public static MarkupType? GetCustomXmlMoveFromRangeEnd(BidirectionalEmbedding? openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.CustomXmlMoveFromRangeEnd>();
+    var itemElement = openXmlElement?.GetFirstChild<CustomXmlMoveFromRangeEnd>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Wordprocessing.MarkupTypeConverter.CreateModelElement(itemElement);
+      return MarkupTypeConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetCustomXmlMoveFromRangeEnd(DocumentFormat.OpenXml.Wordprocessing.BidirectionalEmbedding? openXmlElement, DocumentModel.Wordprocessing.MarkupType? value)
+
+  public static void SetCustomXmlMoveFromRangeEnd(BidirectionalEmbedding? openXmlElement, MarkupType? value)
   {
     if (openXmlElement != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.CustomXmlMoveFromRangeEnd>();
+      var itemElement = openXmlElement.GetFirstChild<CustomXmlMoveFromRangeEnd>();
       if (itemElement != null)
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Wordprocessing.MarkupTypeConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.CustomXmlMoveFromRangeEnd>(value);
+        itemElement = MarkupTypeConverter.CreateOpenXmlElement<CustomXmlMoveFromRangeEnd>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static DocumentModel.Wordprocessing.TrackChangeType? GetCustomXmlMoveToRangeStart(DocumentFormat.OpenXml.Wordprocessing.BidirectionalEmbedding? openXmlElement)
+
+  public static TrackChangeType? GetCustomXmlMoveToRangeStart(BidirectionalEmbedding? openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.CustomXmlMoveToRangeStart>();
+    var itemElement = openXmlElement?.GetFirstChild<CustomXmlMoveToRangeStart>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Wordprocessing.TrackChangeTypeConverter.CreateModelElement(itemElement);
+      return TrackChangeTypeConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetCustomXmlMoveToRangeStart(DocumentFormat.OpenXml.Wordprocessing.BidirectionalEmbedding? openXmlElement, DocumentModel.Wordprocessing.TrackChangeType? value)
+
+  public static void SetCustomXmlMoveToRangeStart(BidirectionalEmbedding? openXmlElement, TrackChangeType? value)
   {
     if (openXmlElement != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.CustomXmlMoveToRangeStart>();
+      var itemElement = openXmlElement.GetFirstChild<CustomXmlMoveToRangeStart>();
       if (itemElement != null)
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Wordprocessing.TrackChangeTypeConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.CustomXmlMoveToRangeStart>(value);
+        itemElement = TrackChangeTypeConverter.CreateOpenXmlElement<CustomXmlMoveToRangeStart>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static DocumentModel.Wordprocessing.MarkupType? GetCustomXmlMoveToRangeEnd(DocumentFormat.OpenXml.Wordprocessing.BidirectionalEmbedding? openXmlElement)
+
+  public static MarkupType? GetCustomXmlMoveToRangeEnd(BidirectionalEmbedding? openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.CustomXmlMoveToRangeEnd>();
+    var itemElement = openXmlElement?.GetFirstChild<CustomXmlMoveToRangeEnd>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Wordprocessing.MarkupTypeConverter.CreateModelElement(itemElement);
+      return MarkupTypeConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetCustomXmlMoveToRangeEnd(DocumentFormat.OpenXml.Wordprocessing.BidirectionalEmbedding? openXmlElement, DocumentModel.Wordprocessing.MarkupType? value)
+
+  public static void SetCustomXmlMoveToRangeEnd(BidirectionalEmbedding? openXmlElement, MarkupType? value)
   {
     if (openXmlElement != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.CustomXmlMoveToRangeEnd>();
+      var itemElement = openXmlElement.GetFirstChild<CustomXmlMoveToRangeEnd>();
       if (itemElement != null)
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Wordprocessing.MarkupTypeConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.CustomXmlMoveToRangeEnd>(value);
+        itemElement = MarkupTypeConverter.CreateOpenXmlElement<CustomXmlMoveToRangeEnd>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static DocumentModel.Wordprocessing.TrackChangeType2? GetCustomXmlConflictInsertionRangeStart(DocumentFormat.OpenXml.Wordprocessing.BidirectionalEmbedding? openXmlElement)
+
+  public static TrackChangeType2? GetCustomXmlConflictInsertionRangeStart(BidirectionalEmbedding? openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office2010.Word.CustomXmlConflictInsertionRangeStart>();
+    var itemElement = openXmlElement?.GetFirstChild<CustomXmlConflictInsertionRangeStart>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Wordprocessing.TrackChangeType2Converter.CreateModelElement(itemElement);
+      return TrackChangeType2Converter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetCustomXmlConflictInsertionRangeStart(DocumentFormat.OpenXml.Wordprocessing.BidirectionalEmbedding? openXmlElement, DocumentModel.Wordprocessing.TrackChangeType2? value)
+
+  public static void SetCustomXmlConflictInsertionRangeStart(BidirectionalEmbedding? openXmlElement, TrackChangeType2? value)
   {
     if (openXmlElement != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2010.Word.CustomXmlConflictInsertionRangeStart>();
+      var itemElement = openXmlElement.GetFirstChild<CustomXmlConflictInsertionRangeStart>();
       if (itemElement != null)
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Wordprocessing.TrackChangeType2Converter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2010.Word.CustomXmlConflictInsertionRangeStart>(value);
+        itemElement = TrackChangeType2Converter.CreateOpenXmlElement<CustomXmlConflictInsertionRangeStart>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static DocumentModel.Wordprocessing.MarkupType2? GetCustomXmlConflictInsertionRangeEnd(DocumentFormat.OpenXml.Wordprocessing.BidirectionalEmbedding? openXmlElement)
+
+  public static MarkupType2? GetCustomXmlConflictInsertionRangeEnd(BidirectionalEmbedding? openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office2010.Word.CustomXmlConflictInsertionRangeEnd>();
+    var itemElement = openXmlElement?.GetFirstChild<CustomXmlConflictInsertionRangeEnd>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Wordprocessing.MarkupType2Converter.CreateModelElement(itemElement);
+      return MarkupType2Converter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetCustomXmlConflictInsertionRangeEnd(DocumentFormat.OpenXml.Wordprocessing.BidirectionalEmbedding? openXmlElement, DocumentModel.Wordprocessing.MarkupType2? value)
+
+  public static void SetCustomXmlConflictInsertionRangeEnd(BidirectionalEmbedding? openXmlElement, MarkupType2? value)
   {
     if (openXmlElement != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2010.Word.CustomXmlConflictInsertionRangeEnd>();
+      var itemElement = openXmlElement.GetFirstChild<CustomXmlConflictInsertionRangeEnd>();
       if (itemElement != null)
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Wordprocessing.MarkupType2Converter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2010.Word.CustomXmlConflictInsertionRangeEnd>(value);
+        itemElement = MarkupType2Converter.CreateOpenXmlElement<CustomXmlConflictInsertionRangeEnd>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static DocumentModel.Wordprocessing.TrackChangeType2? GetCustomXmlConflictDeletionRangeStart(DocumentFormat.OpenXml.Wordprocessing.BidirectionalEmbedding? openXmlElement)
+
+  public static TrackChangeType2? GetCustomXmlConflictDeletionRangeStart(BidirectionalEmbedding? openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office2010.Word.CustomXmlConflictDeletionRangeStart>();
+    var itemElement = openXmlElement?.GetFirstChild<CustomXmlConflictDeletionRangeStart>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Wordprocessing.TrackChangeType2Converter.CreateModelElement(itemElement);
+      return TrackChangeType2Converter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetCustomXmlConflictDeletionRangeStart(DocumentFormat.OpenXml.Wordprocessing.BidirectionalEmbedding? openXmlElement, DocumentModel.Wordprocessing.TrackChangeType2? value)
+
+  public static void SetCustomXmlConflictDeletionRangeStart(BidirectionalEmbedding? openXmlElement, TrackChangeType2? value)
   {
     if (openXmlElement != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2010.Word.CustomXmlConflictDeletionRangeStart>();
+      var itemElement = openXmlElement.GetFirstChild<CustomXmlConflictDeletionRangeStart>();
       if (itemElement != null)
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Wordprocessing.TrackChangeType2Converter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2010.Word.CustomXmlConflictDeletionRangeStart>(value);
+        itemElement = TrackChangeType2Converter.CreateOpenXmlElement<CustomXmlConflictDeletionRangeStart>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static DocumentModel.Wordprocessing.MarkupType2? GetCustomXmlConflictDeletionRangeEnd(DocumentFormat.OpenXml.Wordprocessing.BidirectionalEmbedding? openXmlElement)
+
+  public static MarkupType2? GetCustomXmlConflictDeletionRangeEnd(BidirectionalEmbedding? openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office2010.Word.CustomXmlConflictDeletionRangeEnd>();
+    var itemElement = openXmlElement?.GetFirstChild<CustomXmlConflictDeletionRangeEnd>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Wordprocessing.MarkupType2Converter.CreateModelElement(itemElement);
+      return MarkupType2Converter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetCustomXmlConflictDeletionRangeEnd(DocumentFormat.OpenXml.Wordprocessing.BidirectionalEmbedding? openXmlElement, DocumentModel.Wordprocessing.MarkupType2? value)
+
+  public static void SetCustomXmlConflictDeletionRangeEnd(BidirectionalEmbedding? openXmlElement, MarkupType2? value)
   {
     if (openXmlElement != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2010.Word.CustomXmlConflictDeletionRangeEnd>();
+      var itemElement = openXmlElement.GetFirstChild<CustomXmlConflictDeletionRangeEnd>();
       if (itemElement != null)
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Wordprocessing.MarkupType2Converter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2010.Word.CustomXmlConflictDeletionRangeEnd>(value);
+        itemElement = MarkupType2Converter.CreateOpenXmlElement<CustomXmlConflictDeletionRangeEnd>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static DocumentModel.Wordprocessing.InsertedRun? GetInsertedRun(DocumentFormat.OpenXml.Wordprocessing.BidirectionalEmbedding? openXmlElement)
+
+  public static InsertedRun? GetInsertedRun(BidirectionalEmbedding? openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.InsertedRun>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Wordprocessing.InsertedRunConverter.CreateModelElement(itemElement);
+      return InsertedRunConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetInsertedRun(DocumentFormat.OpenXml.Wordprocessing.BidirectionalEmbedding? openXmlElement, DocumentModel.Wordprocessing.InsertedRun? value)
+
+  public static void SetInsertedRun(BidirectionalEmbedding? openXmlElement, InsertedRun? value)
   {
     if (openXmlElement != null)
     {
@@ -693,22 +720,22 @@ public static class BidirectionalEmbeddingConverter
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Wordprocessing.InsertedRunConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.InsertedRun>(value);
+        itemElement = InsertedRunConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.InsertedRun>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static DocumentModel.Wordprocessing.DeletedRun? GetDeletedRun(DocumentFormat.OpenXml.Wordprocessing.BidirectionalEmbedding? openXmlElement)
+
+  public static DeletedRun? GetDeletedRun(BidirectionalEmbedding? openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.DeletedRun>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Wordprocessing.DeletedRunConverter.CreateModelElement(itemElement);
+      return DeletedRunConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetDeletedRun(DocumentFormat.OpenXml.Wordprocessing.BidirectionalEmbedding? openXmlElement, DocumentModel.Wordprocessing.DeletedRun? value)
+
+  public static void SetDeletedRun(BidirectionalEmbedding? openXmlElement, DeletedRun? value)
   {
     if (openXmlElement != null)
     {
@@ -717,22 +744,22 @@ public static class BidirectionalEmbeddingConverter
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Wordprocessing.DeletedRunConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.DeletedRun>(value);
+        itemElement = DeletedRunConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.DeletedRun>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static DocumentModel.Wordprocessing.MoveFromRun? GetMoveFromRun(DocumentFormat.OpenXml.Wordprocessing.BidirectionalEmbedding? openXmlElement)
+
+  public static MoveFromRun? GetMoveFromRun(BidirectionalEmbedding? openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.MoveFromRun>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Wordprocessing.MoveFromRunConverter.CreateModelElement(itemElement);
+      return MoveFromRunConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetMoveFromRun(DocumentFormat.OpenXml.Wordprocessing.BidirectionalEmbedding? openXmlElement, DocumentModel.Wordprocessing.MoveFromRun? value)
+
+  public static void SetMoveFromRun(BidirectionalEmbedding? openXmlElement, MoveFromRun? value)
   {
     if (openXmlElement != null)
     {
@@ -741,22 +768,22 @@ public static class BidirectionalEmbeddingConverter
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Wordprocessing.MoveFromRunConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.MoveFromRun>(value);
+        itemElement = MoveFromRunConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.MoveFromRun>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static DocumentModel.Wordprocessing.MoveToRun? GetMoveToRun(DocumentFormat.OpenXml.Wordprocessing.BidirectionalEmbedding? openXmlElement)
+
+  public static MoveToRun? GetMoveToRun(BidirectionalEmbedding? openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.MoveToRun>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Wordprocessing.MoveToRunConverter.CreateModelElement(itemElement);
+      return MoveToRunConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetMoveToRun(DocumentFormat.OpenXml.Wordprocessing.BidirectionalEmbedding? openXmlElement, DocumentModel.Wordprocessing.MoveToRun? value)
+
+  public static void SetMoveToRun(BidirectionalEmbedding? openXmlElement, MoveToRun? value)
   {
     if (openXmlElement != null)
     {
@@ -765,22 +792,22 @@ public static class BidirectionalEmbeddingConverter
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Wordprocessing.MoveToRunConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.MoveToRun>(value);
+        itemElement = MoveToRunConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.MoveToRun>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static DocumentModel.Wordprocessing.RunConflictInsertion? GetRunConflictInsertion(DocumentFormat.OpenXml.Wordprocessing.BidirectionalEmbedding? openXmlElement)
+
+  public static RunConflictInsertion? GetRunConflictInsertion(BidirectionalEmbedding? openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office2010.Word.RunConflictInsertion>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Wordprocessing.RunConflictInsertionConverter.CreateModelElement(itemElement);
+      return RunConflictInsertionConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetRunConflictInsertion(DocumentFormat.OpenXml.Wordprocessing.BidirectionalEmbedding? openXmlElement, DocumentModel.Wordprocessing.RunConflictInsertion? value)
+
+  public static void SetRunConflictInsertion(BidirectionalEmbedding? openXmlElement, RunConflictInsertion? value)
   {
     if (openXmlElement != null)
     {
@@ -789,22 +816,22 @@ public static class BidirectionalEmbeddingConverter
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Wordprocessing.RunConflictInsertionConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2010.Word.RunConflictInsertion>(value);
+        itemElement = RunConflictInsertionConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2010.Word.RunConflictInsertion>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static DocumentModel.Wordprocessing.RunConflictDeletion? GetRunConflictDeletion(DocumentFormat.OpenXml.Wordprocessing.BidirectionalEmbedding? openXmlElement)
+
+  public static RunConflictDeletion? GetRunConflictDeletion(BidirectionalEmbedding? openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office2010.Word.RunConflictDeletion>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Wordprocessing.RunConflictDeletionConverter.CreateModelElement(itemElement);
+      return RunConflictDeletionConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetRunConflictDeletion(DocumentFormat.OpenXml.Wordprocessing.BidirectionalEmbedding? openXmlElement, DocumentModel.Wordprocessing.RunConflictDeletion? value)
+
+  public static void SetRunConflictDeletion(BidirectionalEmbedding? openXmlElement, RunConflictDeletion? value)
   {
     if (openXmlElement != null)
     {
@@ -813,22 +840,22 @@ public static class BidirectionalEmbeddingConverter
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Wordprocessing.RunConflictDeletionConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2010.Word.RunConflictDeletion>(value);
+        itemElement = RunConflictDeletionConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2010.Word.RunConflictDeletion>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static DocumentModel.Math.Paragraph? GetParagraph(DocumentFormat.OpenXml.Wordprocessing.BidirectionalEmbedding? openXmlElement)
+
+  public static Paragraph? GetParagraph(BidirectionalEmbedding? openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Math.Paragraph>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Math.ParagraphConverter.CreateModelElement(itemElement);
+      return Math.ParagraphConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetParagraph(DocumentFormat.OpenXml.Wordprocessing.BidirectionalEmbedding? openXmlElement, DocumentModel.Math.Paragraph? value)
+
+  public static void SetParagraph(BidirectionalEmbedding? openXmlElement, Paragraph? value)
   {
     if (openXmlElement != null)
     {
@@ -837,22 +864,22 @@ public static class BidirectionalEmbeddingConverter
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Math.ParagraphConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Math.Paragraph>(value);
+        itemElement = Math.ParagraphConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Math.Paragraph>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static DocumentModel.Math.OfficeMath? GetOfficeMath(DocumentFormat.OpenXml.Wordprocessing.BidirectionalEmbedding? openXmlElement)
+
+  public static OfficeMath? GetOfficeMath(BidirectionalEmbedding? openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Math.OfficeMath>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Math.OfficeMathConverter.CreateModelElement(itemElement);
+      return OfficeMathConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetOfficeMath(DocumentFormat.OpenXml.Wordprocessing.BidirectionalEmbedding? openXmlElement, DocumentModel.Math.OfficeMath? value)
+
+  public static void SetOfficeMath(BidirectionalEmbedding? openXmlElement, OfficeMath? value)
   {
     if (openXmlElement != null)
     {
@@ -861,22 +888,22 @@ public static class BidirectionalEmbeddingConverter
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Math.OfficeMathConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Math.OfficeMath>(value);
+        itemElement = OfficeMathConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Math.OfficeMath>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static DocumentModel.Math.Accent? GetAccent(DocumentFormat.OpenXml.Wordprocessing.BidirectionalEmbedding? openXmlElement)
+
+  public static Accent? GetAccent(BidirectionalEmbedding? openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Math.Accent>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Math.AccentConverter.CreateModelElement(itemElement);
+      return AccentConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetAccent(DocumentFormat.OpenXml.Wordprocessing.BidirectionalEmbedding? openXmlElement, DocumentModel.Math.Accent? value)
+
+  public static void SetAccent(BidirectionalEmbedding? openXmlElement, Accent? value)
   {
     if (openXmlElement != null)
     {
@@ -885,22 +912,22 @@ public static class BidirectionalEmbeddingConverter
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Math.AccentConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Math.Accent>(value);
+        itemElement = AccentConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Math.Accent>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static DocumentModel.Math.Bar? GetBar(DocumentFormat.OpenXml.Wordprocessing.BidirectionalEmbedding? openXmlElement)
+
+  public static Bar? GetBar(BidirectionalEmbedding? openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Math.Bar>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Math.BarConverter.CreateModelElement(itemElement);
+      return BarConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetBar(DocumentFormat.OpenXml.Wordprocessing.BidirectionalEmbedding? openXmlElement, DocumentModel.Math.Bar? value)
+
+  public static void SetBar(BidirectionalEmbedding? openXmlElement, Bar? value)
   {
     if (openXmlElement != null)
     {
@@ -909,22 +936,22 @@ public static class BidirectionalEmbeddingConverter
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Math.BarConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Math.Bar>(value);
+        itemElement = BarConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Math.Bar>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static DocumentModel.Math.Box? GetBox(DocumentFormat.OpenXml.Wordprocessing.BidirectionalEmbedding? openXmlElement)
+
+  public static DocumentModel.Math.Box? GetBox(BidirectionalEmbedding? openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Math.Box>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Math.BoxConverter.CreateModelElement(itemElement);
+      return Math.BoxConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetBox(DocumentFormat.OpenXml.Wordprocessing.BidirectionalEmbedding? openXmlElement, DocumentModel.Math.Box? value)
+
+  public static void SetBox(BidirectionalEmbedding? openXmlElement, DocumentModel.Math.Box? value)
   {
     if (openXmlElement != null)
     {
@@ -933,22 +960,22 @@ public static class BidirectionalEmbeddingConverter
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Math.BoxConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Math.Box>(value);
+        itemElement = Math.BoxConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Math.Box>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static DocumentModel.Math.BorderBox? GetBorderBox(DocumentFormat.OpenXml.Wordprocessing.BidirectionalEmbedding? openXmlElement)
+
+  public static BorderBox? GetBorderBox(BidirectionalEmbedding? openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Math.BorderBox>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Math.BorderBoxConverter.CreateModelElement(itemElement);
+      return BorderBoxConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetBorderBox(DocumentFormat.OpenXml.Wordprocessing.BidirectionalEmbedding? openXmlElement, DocumentModel.Math.BorderBox? value)
+
+  public static void SetBorderBox(BidirectionalEmbedding? openXmlElement, BorderBox? value)
   {
     if (openXmlElement != null)
     {
@@ -957,22 +984,22 @@ public static class BidirectionalEmbeddingConverter
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Math.BorderBoxConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Math.BorderBox>(value);
+        itemElement = BorderBoxConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Math.BorderBox>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static DocumentModel.Math.Delimiter? GetDelimiter(DocumentFormat.OpenXml.Wordprocessing.BidirectionalEmbedding? openXmlElement)
+
+  public static Delimiter? GetDelimiter(BidirectionalEmbedding? openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Math.Delimiter>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Math.DelimiterConverter.CreateModelElement(itemElement);
+      return DelimiterConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetDelimiter(DocumentFormat.OpenXml.Wordprocessing.BidirectionalEmbedding? openXmlElement, DocumentModel.Math.Delimiter? value)
+
+  public static void SetDelimiter(BidirectionalEmbedding? openXmlElement, Delimiter? value)
   {
     if (openXmlElement != null)
     {
@@ -981,22 +1008,22 @@ public static class BidirectionalEmbeddingConverter
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Math.DelimiterConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Math.Delimiter>(value);
+        itemElement = DelimiterConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Math.Delimiter>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static DocumentModel.Math.EquationArray? GetEquationArray(DocumentFormat.OpenXml.Wordprocessing.BidirectionalEmbedding? openXmlElement)
+
+  public static EquationArray? GetEquationArray(BidirectionalEmbedding? openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Math.EquationArray>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Math.EquationArrayConverter.CreateModelElement(itemElement);
+      return EquationArrayConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetEquationArray(DocumentFormat.OpenXml.Wordprocessing.BidirectionalEmbedding? openXmlElement, DocumentModel.Math.EquationArray? value)
+
+  public static void SetEquationArray(BidirectionalEmbedding? openXmlElement, EquationArray? value)
   {
     if (openXmlElement != null)
     {
@@ -1005,22 +1032,22 @@ public static class BidirectionalEmbeddingConverter
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Math.EquationArrayConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Math.EquationArray>(value);
+        itemElement = EquationArrayConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Math.EquationArray>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static DocumentModel.Math.Fraction? GetFraction(DocumentFormat.OpenXml.Wordprocessing.BidirectionalEmbedding? openXmlElement)
+
+  public static Fraction? GetFraction(BidirectionalEmbedding? openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Math.Fraction>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Math.FractionConverter.CreateModelElement(itemElement);
+      return FractionConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetFraction(DocumentFormat.OpenXml.Wordprocessing.BidirectionalEmbedding? openXmlElement, DocumentModel.Math.Fraction? value)
+
+  public static void SetFraction(BidirectionalEmbedding? openXmlElement, Fraction? value)
   {
     if (openXmlElement != null)
     {
@@ -1029,22 +1056,22 @@ public static class BidirectionalEmbeddingConverter
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Math.FractionConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Math.Fraction>(value);
+        itemElement = FractionConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Math.Fraction>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static DocumentModel.Math.MathFunction? GetMathFunction(DocumentFormat.OpenXml.Wordprocessing.BidirectionalEmbedding? openXmlElement)
+
+  public static MathFunction? GetMathFunction(BidirectionalEmbedding? openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Math.MathFunction>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Math.MathFunctionConverter.CreateModelElement(itemElement);
+      return MathFunctionConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetMathFunction(DocumentFormat.OpenXml.Wordprocessing.BidirectionalEmbedding? openXmlElement, DocumentModel.Math.MathFunction? value)
+
+  public static void SetMathFunction(BidirectionalEmbedding? openXmlElement, MathFunction? value)
   {
     if (openXmlElement != null)
     {
@@ -1053,22 +1080,22 @@ public static class BidirectionalEmbeddingConverter
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Math.MathFunctionConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Math.MathFunction>(value);
+        itemElement = MathFunctionConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Math.MathFunction>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static DocumentModel.Math.GroupChar? GetGroupChar(DocumentFormat.OpenXml.Wordprocessing.BidirectionalEmbedding? openXmlElement)
+
+  public static GroupChar? GetGroupChar(BidirectionalEmbedding? openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Math.GroupChar>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Math.GroupCharConverter.CreateModelElement(itemElement);
+      return GroupCharConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetGroupChar(DocumentFormat.OpenXml.Wordprocessing.BidirectionalEmbedding? openXmlElement, DocumentModel.Math.GroupChar? value)
+
+  public static void SetGroupChar(BidirectionalEmbedding? openXmlElement, GroupChar? value)
   {
     if (openXmlElement != null)
     {
@@ -1077,22 +1104,22 @@ public static class BidirectionalEmbeddingConverter
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Math.GroupCharConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Math.GroupChar>(value);
+        itemElement = GroupCharConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Math.GroupChar>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static DocumentModel.Math.LimitLower? GetLimitLower(DocumentFormat.OpenXml.Wordprocessing.BidirectionalEmbedding? openXmlElement)
+
+  public static LimitLower? GetLimitLower(BidirectionalEmbedding? openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Math.LimitLower>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Math.LimitLowerConverter.CreateModelElement(itemElement);
+      return LimitLowerConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetLimitLower(DocumentFormat.OpenXml.Wordprocessing.BidirectionalEmbedding? openXmlElement, DocumentModel.Math.LimitLower? value)
+
+  public static void SetLimitLower(BidirectionalEmbedding? openXmlElement, LimitLower? value)
   {
     if (openXmlElement != null)
     {
@@ -1101,22 +1128,22 @@ public static class BidirectionalEmbeddingConverter
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Math.LimitLowerConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Math.LimitLower>(value);
+        itemElement = LimitLowerConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Math.LimitLower>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static DocumentModel.Math.LimitUpper? GetLimitUpper(DocumentFormat.OpenXml.Wordprocessing.BidirectionalEmbedding? openXmlElement)
+
+  public static LimitUpper? GetLimitUpper(BidirectionalEmbedding? openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Math.LimitUpper>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Math.LimitUpperConverter.CreateModelElement(itemElement);
+      return LimitUpperConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetLimitUpper(DocumentFormat.OpenXml.Wordprocessing.BidirectionalEmbedding? openXmlElement, DocumentModel.Math.LimitUpper? value)
+
+  public static void SetLimitUpper(BidirectionalEmbedding? openXmlElement, LimitUpper? value)
   {
     if (openXmlElement != null)
     {
@@ -1125,22 +1152,22 @@ public static class BidirectionalEmbeddingConverter
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Math.LimitUpperConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Math.LimitUpper>(value);
+        itemElement = LimitUpperConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Math.LimitUpper>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static DocumentModel.Math.Matrix? GetMatrix(DocumentFormat.OpenXml.Wordprocessing.BidirectionalEmbedding? openXmlElement)
+
+  public static Matrix? GetMatrix(BidirectionalEmbedding? openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Math.Matrix>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Math.MatrixConverter.CreateModelElement(itemElement);
+      return MatrixConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetMatrix(DocumentFormat.OpenXml.Wordprocessing.BidirectionalEmbedding? openXmlElement, DocumentModel.Math.Matrix? value)
+
+  public static void SetMatrix(BidirectionalEmbedding? openXmlElement, Matrix? value)
   {
     if (openXmlElement != null)
     {
@@ -1149,22 +1176,22 @@ public static class BidirectionalEmbeddingConverter
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Math.MatrixConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Math.Matrix>(value);
+        itemElement = MatrixConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Math.Matrix>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static DocumentModel.Math.Nary? GetNary(DocumentFormat.OpenXml.Wordprocessing.BidirectionalEmbedding? openXmlElement)
+
+  public static Nary? GetNary(BidirectionalEmbedding? openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Math.Nary>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Math.NaryConverter.CreateModelElement(itemElement);
+      return NaryConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetNary(DocumentFormat.OpenXml.Wordprocessing.BidirectionalEmbedding? openXmlElement, DocumentModel.Math.Nary? value)
+
+  public static void SetNary(BidirectionalEmbedding? openXmlElement, Nary? value)
   {
     if (openXmlElement != null)
     {
@@ -1173,22 +1200,22 @@ public static class BidirectionalEmbeddingConverter
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Math.NaryConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Math.Nary>(value);
+        itemElement = NaryConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Math.Nary>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static DocumentModel.Math.Phantom? GetPhantom(DocumentFormat.OpenXml.Wordprocessing.BidirectionalEmbedding? openXmlElement)
+
+  public static Phantom? GetPhantom(BidirectionalEmbedding? openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Math.Phantom>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Math.PhantomConverter.CreateModelElement(itemElement);
+      return PhantomConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetPhantom(DocumentFormat.OpenXml.Wordprocessing.BidirectionalEmbedding? openXmlElement, DocumentModel.Math.Phantom? value)
+
+  public static void SetPhantom(BidirectionalEmbedding? openXmlElement, Phantom? value)
   {
     if (openXmlElement != null)
     {
@@ -1197,22 +1224,22 @@ public static class BidirectionalEmbeddingConverter
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Math.PhantomConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Math.Phantom>(value);
+        itemElement = PhantomConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Math.Phantom>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static DocumentModel.Math.Radical? GetRadical(DocumentFormat.OpenXml.Wordprocessing.BidirectionalEmbedding? openXmlElement)
+
+  public static Radical? GetRadical(BidirectionalEmbedding? openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Math.Radical>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Math.RadicalConverter.CreateModelElement(itemElement);
+      return RadicalConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetRadical(DocumentFormat.OpenXml.Wordprocessing.BidirectionalEmbedding? openXmlElement, DocumentModel.Math.Radical? value)
+
+  public static void SetRadical(BidirectionalEmbedding? openXmlElement, Radical? value)
   {
     if (openXmlElement != null)
     {
@@ -1221,22 +1248,22 @@ public static class BidirectionalEmbeddingConverter
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Math.RadicalConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Math.Radical>(value);
+        itemElement = RadicalConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Math.Radical>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static DocumentModel.Math.PreSubSuper? GetPreSubSuper(DocumentFormat.OpenXml.Wordprocessing.BidirectionalEmbedding? openXmlElement)
+
+  public static PreSubSuper? GetPreSubSuper(BidirectionalEmbedding? openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Math.PreSubSuper>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Math.PreSubSuperConverter.CreateModelElement(itemElement);
+      return PreSubSuperConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetPreSubSuper(DocumentFormat.OpenXml.Wordprocessing.BidirectionalEmbedding? openXmlElement, DocumentModel.Math.PreSubSuper? value)
+
+  public static void SetPreSubSuper(BidirectionalEmbedding? openXmlElement, PreSubSuper? value)
   {
     if (openXmlElement != null)
     {
@@ -1245,22 +1272,22 @@ public static class BidirectionalEmbeddingConverter
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Math.PreSubSuperConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Math.PreSubSuper>(value);
+        itemElement = PreSubSuperConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Math.PreSubSuper>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static DocumentModel.Math.Subscript? GetSubscript(DocumentFormat.OpenXml.Wordprocessing.BidirectionalEmbedding? openXmlElement)
+
+  public static Subscript? GetSubscript(BidirectionalEmbedding? openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Math.Subscript>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Math.SubscriptConverter.CreateModelElement(itemElement);
+      return SubscriptConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetSubscript(DocumentFormat.OpenXml.Wordprocessing.BidirectionalEmbedding? openXmlElement, DocumentModel.Math.Subscript? value)
+
+  public static void SetSubscript(BidirectionalEmbedding? openXmlElement, Subscript? value)
   {
     if (openXmlElement != null)
     {
@@ -1269,22 +1296,22 @@ public static class BidirectionalEmbeddingConverter
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Math.SubscriptConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Math.Subscript>(value);
+        itemElement = SubscriptConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Math.Subscript>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static DocumentModel.Math.SubSuperscript? GetSubSuperscript(DocumentFormat.OpenXml.Wordprocessing.BidirectionalEmbedding? openXmlElement)
+
+  public static SubSuperscript? GetSubSuperscript(BidirectionalEmbedding? openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Math.SubSuperscript>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Math.SubSuperscriptConverter.CreateModelElement(itemElement);
+      return SubSuperscriptConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetSubSuperscript(DocumentFormat.OpenXml.Wordprocessing.BidirectionalEmbedding? openXmlElement, DocumentModel.Math.SubSuperscript? value)
+
+  public static void SetSubSuperscript(BidirectionalEmbedding? openXmlElement, SubSuperscript? value)
   {
     if (openXmlElement != null)
     {
@@ -1293,22 +1320,22 @@ public static class BidirectionalEmbeddingConverter
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Math.SubSuperscriptConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Math.SubSuperscript>(value);
+        itemElement = SubSuperscriptConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Math.SubSuperscript>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static DocumentModel.Math.Superscript? GetSuperscript(DocumentFormat.OpenXml.Wordprocessing.BidirectionalEmbedding? openXmlElement)
+
+  public static Superscript? GetSuperscript(BidirectionalEmbedding? openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Math.Superscript>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Math.SuperscriptConverter.CreateModelElement(itemElement);
+      return SuperscriptConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetSuperscript(DocumentFormat.OpenXml.Wordprocessing.BidirectionalEmbedding? openXmlElement, DocumentModel.Math.Superscript? value)
+
+  public static void SetSuperscript(BidirectionalEmbedding? openXmlElement, Superscript? value)
   {
     if (openXmlElement != null)
     {
@@ -1317,22 +1344,22 @@ public static class BidirectionalEmbeddingConverter
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Math.SuperscriptConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Math.Superscript>(value);
+        itemElement = SuperscriptConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Math.Superscript>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static DocumentModel.Math.Run? GetRun(DocumentFormat.OpenXml.Wordprocessing.BidirectionalEmbedding? openXmlElement)
+
+  public static Run? GetRun(BidirectionalEmbedding? openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Math.Run>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Math.RunConverter.CreateModelElement(itemElement);
+      return Math.RunConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetRun(DocumentFormat.OpenXml.Wordprocessing.BidirectionalEmbedding? openXmlElement, DocumentModel.Math.Run? value)
+
+  public static void SetRun(BidirectionalEmbedding? openXmlElement, Run? value)
   {
     if (openXmlElement != null)
     {
@@ -1341,22 +1368,22 @@ public static class BidirectionalEmbeddingConverter
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Math.RunConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Math.Run>(value);
+        itemElement = Math.RunConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Math.Run>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static DocumentModel.Wordprocessing.BidirectionalOverride? GetBidirectionalOverride(DocumentFormat.OpenXml.Wordprocessing.BidirectionalEmbedding? openXmlElement)
+
+  public static BidirectionalOverride? GetBidirectionalOverride(BidirectionalEmbedding? openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.BidirectionalOverride>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Wordprocessing.BidirectionalOverrideConverter.CreateModelElement(itemElement);
+      return BidirectionalOverrideConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetBidirectionalOverride(DocumentFormat.OpenXml.Wordprocessing.BidirectionalEmbedding? openXmlElement, DocumentModel.Wordprocessing.BidirectionalOverride? value)
+
+  public static void SetBidirectionalOverride(BidirectionalEmbedding? openXmlElement, BidirectionalOverride? value)
   {
     if (openXmlElement != null)
     {
@@ -1365,62 +1392,62 @@ public static class BidirectionalEmbeddingConverter
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Wordprocessing.BidirectionalOverrideConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.BidirectionalOverride>(value);
+        itemElement = BidirectionalOverrideConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.BidirectionalOverride>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static DocumentModel.Wordprocessing.BidirectionalEmbedding? GetChildBidirectionalEmbedding(DocumentFormat.OpenXml.Wordprocessing.BidirectionalEmbedding? openXmlElement)
+
+  public static DocumentModel.Wordprocessing.BidirectionalEmbedding? GetChildBidirectionalEmbedding(BidirectionalEmbedding? openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.BidirectionalEmbedding>();
+    var itemElement = openXmlElement?.GetFirstChild<BidirectionalEmbedding>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Wordprocessing.BidirectionalEmbeddingConverter.CreateModelElement(itemElement);
+      return CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetChildBidirectionalEmbedding(DocumentFormat.OpenXml.Wordprocessing.BidirectionalEmbedding? openXmlElement, DocumentModel.Wordprocessing.BidirectionalEmbedding? value)
+
+  public static void SetChildBidirectionalEmbedding(BidirectionalEmbedding? openXmlElement, DocumentModel.Wordprocessing.BidirectionalEmbedding? value)
   {
     if (openXmlElement != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.BidirectionalEmbedding>();
+      var itemElement = openXmlElement.GetFirstChild<BidirectionalEmbedding>();
       if (itemElement != null)
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Wordprocessing.BidirectionalEmbeddingConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.BidirectionalEmbedding>(value);
+        itemElement = CreateOpenXmlElement<BidirectionalEmbedding>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static DocumentModel.Wordprocessing.RelationshipType? GetSubDocumentReference(DocumentFormat.OpenXml.Wordprocessing.BidirectionalEmbedding? openXmlElement)
+
+  public static RelationshipType? GetSubDocumentReference(BidirectionalEmbedding? openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.SubDocumentReference>();
+    var itemElement = openXmlElement?.GetFirstChild<SubDocumentReference>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Wordprocessing.RelationshipTypeConverter.CreateModelElement(itemElement);
+      return RelationshipTypeConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetSubDocumentReference(DocumentFormat.OpenXml.Wordprocessing.BidirectionalEmbedding? openXmlElement, DocumentModel.Wordprocessing.RelationshipType? value)
+
+  public static void SetSubDocumentReference(BidirectionalEmbedding? openXmlElement, RelationshipType? value)
   {
     if (openXmlElement != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.SubDocumentReference>();
+      var itemElement = openXmlElement.GetFirstChild<SubDocumentReference>();
       if (itemElement != null)
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Wordprocessing.RelationshipTypeConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.SubDocumentReference>(value);
+        itemElement = RelationshipTypeConverter.CreateOpenXmlElement<SubDocumentReference>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static DocumentModel.Wordprocessing.BidirectionalEmbedding? CreateModelElement(DocumentFormat.OpenXml.Wordprocessing.BidirectionalEmbedding? openXmlElement)
+
+  public static DocumentModel.Wordprocessing.BidirectionalEmbedding? CreateModelElement(BidirectionalEmbedding? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -1488,9 +1515,9 @@ public static class BidirectionalEmbeddingConverter
     }
     return null;
   }
-  
+
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.BidirectionalEmbedding? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Wordprocessing.BidirectionalEmbedding, new()
+    where OpenXmlElementType : BidirectionalEmbedding, new()
   {
     if (value != null)
     {

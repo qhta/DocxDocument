@@ -1,68 +1,67 @@
 namespace DocumentModel.Vml;
 
 /// <summary>
-/// Defines the Lock Class.
+///   Defines the Lock Class.
 /// </summary>
-public partial class Lock
+public class Lock
 {
   /// <summary>
-  /// VML Extension Handling Behavior
+  ///   VML Extension Handling Behavior
   /// </summary>
-  public DocumentModel.Vml.ExtensionHandlingBehaviorKind? Extension { get; set; }
-  
+  public ExtensionHandlingBehaviorKind? Extension { get; set; }
+
   /// <summary>
-  /// Position Lock
+  ///   Position Lock
   /// </summary>
   public Boolean? Position { get; set; }
-  
+
   /// <summary>
-  /// Selection Lock
+  ///   Selection Lock
   /// </summary>
   public Boolean? Selection { get; set; }
-  
+
   /// <summary>
-  /// Grouping Lock
+  ///   Grouping Lock
   /// </summary>
   public Boolean? Grouping { get; set; }
-  
+
   /// <summary>
-  /// Ungrouping Lock
+  ///   Ungrouping Lock
   /// </summary>
   public Boolean? Ungrouping { get; set; }
-  
+
   /// <summary>
-  /// Rotation Lock
+  ///   Rotation Lock
   /// </summary>
   public Boolean? Rotation { get; set; }
-  
+
   /// <summary>
-  /// Cropping Lock
+  ///   Cropping Lock
   /// </summary>
   public Boolean? Cropping { get; set; }
-  
+
   /// <summary>
-  /// Vertices Lock
+  ///   Vertices Lock
   /// </summary>
   public Boolean? Verticies { get; set; }
-  
+
   /// <summary>
-  /// Handles Lock
+  ///   Handles Lock
   /// </summary>
   public Boolean? AdjustHandles { get; set; }
-  
+
   /// <summary>
-  /// Text Lock
+  ///   Text Lock
   /// </summary>
   public Boolean? TextLock { get; set; }
-  
+
   /// <summary>
-  /// Aspect Ratio Lock
+  ///   Aspect Ratio Lock
   /// </summary>
   public Boolean? AspectRatio { get; set; }
-  
+
   /// <summary>
-  /// AutoShape Type Lock
+  ///   AutoShape Type Lock
   /// </summary>
   public Boolean? ShapeType { get; set; }
-  
 }

@@ -1,18 +1,17 @@
 namespace DocumentModel.Drawings;
 
 /// <summary>
-/// Diagram Animation Build Steps
+///   Diagram Animation Build Steps
 /// </summary>
 public enum DiagramBuildStepKind
 {
   /// <summary>
-  /// Shape.
+  ///   Shape.
   /// </summary>
   Shape,
-  
+
   /// <summary>
-  /// Background.
+  ///   Background.
   /// </summary>
-  Background,
-  
+  Background
 }

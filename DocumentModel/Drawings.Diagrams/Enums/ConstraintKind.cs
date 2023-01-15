@@ -1,328 +1,327 @@
 namespace DocumentModel.Drawings.Diagrams;
 
 /// <summary>
-/// Constraint Type
+///   Constraint Type
 /// </summary>
 public enum ConstraintKind
 {
   /// <summary>
-  /// Unknown.
+  ///   Unknown.
   /// </summary>
   None,
-  
+
   /// <summary>
-  /// Alignment Offset.
+  ///   Alignment Offset.
   /// </summary>
   AlignmentOffset,
-  
+
   /// <summary>
-  /// Beginning Margin.
+  ///   Beginning Margin.
   /// </summary>
   BeginningMargin,
-  
+
   /// <summary>
-  /// Bending Distance.
+  ///   Bending Distance.
   /// </summary>
   BendingDistance,
-  
+
   /// <summary>
-  /// Beginning Padding.
+  ///   Beginning Padding.
   /// </summary>
   BeginningPadding,
-  
+
   /// <summary>
-  /// Bottom.
+  ///   Bottom.
   /// </summary>
   Bottom,
-  
+
   /// <summary>
-  /// Bottom Margin.
+  ///   Bottom Margin.
   /// </summary>
   BottomMargin,
-  
+
   /// <summary>
-  /// Bottom Offset.
+  ///   Bottom Offset.
   /// </summary>
   BottomOffset,
-  
+
   /// <summary>
-  /// Center Height.
+  ///   Center Height.
   /// </summary>
   CenterHeight,
-  
+
   /// <summary>
-  /// Center X Offset.
+  ///   Center X Offset.
   /// </summary>
   CenterXOffset,
-  
+
   /// <summary>
-  /// Center Width.
+  ///   Center Width.
   /// </summary>
   CenterWidth,
-  
+
   /// <summary>
-  /// Center Y Offset.
+  ///   Center Y Offset.
   /// </summary>
   CenterYOffset,
-  
+
   /// <summary>
-  /// Connection Distance.
+  ///   Connection Distance.
   /// </summary>
   ConnectionDistance,
-  
+
   /// <summary>
-  /// Diameter.
+  ///   Diameter.
   /// </summary>
   Diameter,
-  
+
   /// <summary>
-  /// End Margin.
+  ///   End Margin.
   /// </summary>
   EndMargin,
-  
+
   /// <summary>
-  /// End Padding.
+  ///   End Padding.
   /// </summary>
   EndPadding,
-  
+
   /// <summary>
-  /// Height.
+  ///   Height.
   /// </summary>
   Height,
-  
+
   /// <summary>
-  /// Arrowhead Height.
+  ///   Arrowhead Height.
   /// </summary>
   ArrowheadHeight,
-  
+
   /// <summary>
-  /// Height Offset.
+  ///   Height Offset.
   /// </summary>
   HeightOffset,
-  
+
   /// <summary>
-  /// Left.
+  ///   Left.
   /// </summary>
   Left,
-  
+
   /// <summary>
-  /// Left Margin.
+  ///   Left Margin.
   /// </summary>
   LeftMargin,
-  
+
   /// <summary>
-  /// Left Offset.
+  ///   Left Offset.
   /// </summary>
   LeftOffset,
-  
+
   /// <summary>
-  /// Right.
+  ///   Right.
   /// </summary>
   Right,
-  
+
   /// <summary>
-  /// Right Margin.
+  ///   Right Margin.
   /// </summary>
   RightMargin,
-  
+
   /// <summary>
-  /// Right Offset.
+  ///   Right Offset.
   /// </summary>
   RightOffset,
-  
+
   /// <summary>
-  /// Primary Font Size.
+  ///   Primary Font Size.
   /// </summary>
   PrimaryFontSize,
-  
+
   /// <summary>
-  /// Pyramid Accent Ratio.
+  ///   Pyramid Accent Ratio.
   /// </summary>
   PyramidAccentRatio,
-  
+
   /// <summary>
-  /// Secondary Font Size.
+  ///   Secondary Font Size.
   /// </summary>
   SecondaryFontSize,
-  
+
   /// <summary>
-  /// Sibling Spacing.
+  ///   Sibling Spacing.
   /// </summary>
   SiblingSpacing,
-  
+
   /// <summary>
-  /// Secondary Sibling Spacing.
+  ///   Secondary Sibling Spacing.
   /// </summary>
   SecondarySiblingSpacing,
-  
+
   /// <summary>
-  /// Spacing.
+  ///   Spacing.
   /// </summary>
   Spacing,
-  
+
   /// <summary>
-  /// Stem Thickness.
+  ///   Stem Thickness.
   /// </summary>
   StemThickness,
-  
+
   /// <summary>
-  /// Top.
+  ///   Top.
   /// </summary>
   Top,
-  
+
   /// <summary>
-  /// Top Margin.
+  ///   Top Margin.
   /// </summary>
   TopMargin,
-  
+
   /// <summary>
-  /// Top Offset.
+  ///   Top Offset.
   /// </summary>
   TopOffset,
-  
+
   /// <summary>
-  /// User Defined A.
+  ///   User Defined A.
   /// </summary>
   UserDefinedA,
-  
+
   /// <summary>
-  /// User Defined B.
+  ///   User Defined B.
   /// </summary>
   UserDefinedB,
-  
+
   /// <summary>
-  /// User Defined C.
+  ///   User Defined C.
   /// </summary>
   UserDefinedC,
-  
+
   /// <summary>
-  /// User Defined D.
+  ///   User Defined D.
   /// </summary>
   UserDefinedD,
-  
+
   /// <summary>
-  /// User Defined E.
+  ///   User Defined E.
   /// </summary>
   UserDefinedE,
-  
+
   /// <summary>
-  /// User Defined F.
+  ///   User Defined F.
   /// </summary>
   UserDefinedF,
-  
+
   /// <summary>
-  /// User Defined G.
+  ///   User Defined G.
   /// </summary>
   UserDefinedG,
-  
+
   /// <summary>
-  /// User Defined H.
+  ///   User Defined H.
   /// </summary>
   UserDefinedH,
-  
+
   /// <summary>
-  /// User Defined I.
+  ///   User Defined I.
   /// </summary>
   UserDefinedI,
-  
+
   /// <summary>
-  /// User Defined J.
+  ///   User Defined J.
   /// </summary>
   UserDefinedJ,
-  
+
   /// <summary>
-  /// User Defined K.
+  ///   User Defined K.
   /// </summary>
   UserDefinedK,
-  
+
   /// <summary>
-  /// User Defined L.
+  ///   User Defined L.
   /// </summary>
   UserDefinedL,
-  
+
   /// <summary>
-  /// User Defined M.
+  ///   User Defined M.
   /// </summary>
   UserDefinedM,
-  
+
   /// <summary>
-  /// User Defined N.
+  ///   User Defined N.
   /// </summary>
   UserDefinedN,
-  
+
   /// <summary>
-  /// User Defined O.
+  ///   User Defined O.
   /// </summary>
   UserDefinedO,
-  
+
   /// <summary>
-  /// User Defined P.
+  ///   User Defined P.
   /// </summary>
   UserDefinedP,
-  
+
   /// <summary>
-  /// User Defined Q.
+  ///   User Defined Q.
   /// </summary>
   UserDefinedQ,
-  
+
   /// <summary>
-  /// User Defined R.
+  ///   User Defined R.
   /// </summary>
   UserDefinedR,
-  
+
   /// <summary>
-  /// User Defined S.
+  ///   User Defined S.
   /// </summary>
   UserDefinedS,
-  
+
   /// <summary>
-  /// User Defined T.
+  ///   User Defined T.
   /// </summary>
   UserDefinedT,
-  
+
   /// <summary>
-  /// User Defined U.
+  ///   User Defined U.
   /// </summary>
   UserDefinedU,
-  
+
   /// <summary>
-  /// User Defined V.
+  ///   User Defined V.
   /// </summary>
   UserDefinedV,
-  
+
   /// <summary>
-  /// User Defined W.
+  ///   User Defined W.
   /// </summary>
   UserDefinedW,
-  
+
   /// <summary>
-  /// User Defined X.
+  ///   User Defined X.
   /// </summary>
   UserDefinedX,
-  
+
   /// <summary>
-  /// User Defined Y.
+  ///   User Defined Y.
   /// </summary>
   UserDefinedY,
-  
+
   /// <summary>
-  /// User Defined Z.
+  ///   User Defined Z.
   /// </summary>
   UserDefinedZ,
-  
+
   /// <summary>
-  /// Width.
+  ///   Width.
   /// </summary>
   Width,
-  
+
   /// <summary>
-  /// Arrowhead Width.
+  ///   Arrowhead Width.
   /// </summary>
   ArrowheadWidth,
-  
+
   /// <summary>
-  /// Width Offset.
+  ///   Width Offset.
   /// </summary>
-  WidthOffset,
-  
+  WidthOffset
 }

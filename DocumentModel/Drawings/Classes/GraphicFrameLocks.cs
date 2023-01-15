@@ -1,43 +1,42 @@
 namespace DocumentModel.Drawings;
 
 /// <summary>
-/// Graphic Frame Locks.
+///   Graphic Frame Locks.
 /// </summary>
-public partial class GraphicFrameLocks
+public class GraphicFrameLocks
 {
   /// <summary>
-  /// Disallow Shape Grouping
+  ///   Disallow Shape Grouping
   /// </summary>
   public Boolean? NoGrouping { get; set; }
-  
+
   /// <summary>
-  /// Disallow Selection of Child Shapes
+  ///   Disallow Selection of Child Shapes
   /// </summary>
   public Boolean? NoDrilldown { get; set; }
-  
+
   /// <summary>
-  /// Disallow Shape Selection
+  ///   Disallow Shape Selection
   /// </summary>
   public Boolean? NoSelection { get; set; }
-  
+
   /// <summary>
-  /// Disallow Aspect Ratio Change
+  ///   Disallow Aspect Ratio Change
   /// </summary>
   public Boolean? NoChangeAspect { get; set; }
-  
+
   /// <summary>
-  /// Disallow Shape Movement
+  ///   Disallow Shape Movement
   /// </summary>
   public Boolean? NoMove { get; set; }
-  
+
   /// <summary>
-  /// Disallow Shape Resize
+  ///   Disallow Shape Resize
   /// </summary>
   public Boolean? NoResize { get; set; }
-  
+
   /// <summary>
-  /// ExtensionList.
+  ///   ExtensionList.
   /// </summary>
-  public DocumentModel.Drawings.ExtensionList? ExtensionList { get; set; }
-  
+  public ExtensionList? ExtensionList { get; set; }
 }

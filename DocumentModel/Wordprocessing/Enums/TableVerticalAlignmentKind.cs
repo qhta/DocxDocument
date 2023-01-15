@@ -1,23 +1,22 @@
 namespace DocumentModel.Wordprocessing;
 
 /// <summary>
-/// Defines the TableVerticalAlignmentValues enumeration.
+///   Defines the TableVerticalAlignmentValues enumeration.
 /// </summary>
 public enum TableVerticalAlignmentKind
 {
   /// <summary>
-  /// top.
+  ///   top.
   /// </summary>
   Top,
-  
+
   /// <summary>
-  /// center.
+  ///   center.
   /// </summary>
   Center,
-  
+
   /// <summary>
-  /// bottom.
+  ///   bottom.
   /// </summary>
-  Bottom,
-  
+  Bottom
 }

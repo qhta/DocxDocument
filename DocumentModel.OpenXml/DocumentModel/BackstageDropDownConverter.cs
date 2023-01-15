@@ -1,18 +1,20 @@
+using DocumentFormat.OpenXml.Office2010.CustomUI;
+
 namespace DocumentModel.OpenXml;
 
 /// <summary>
-/// Defines the BackstageDropDown Class.
+///   Defines the BackstageDropDown Class.
 /// </summary>
 public static class BackstageDropDownConverter
 {
   /// <summary>
-  /// id, this property is only available in Office 2010 and later.
+  ///   id, this property is only available in Office 2010 and later.
   /// </summary>
   public static String? GetId(DocumentFormat.OpenXml.Office2010.CustomUI.BackstageDropDown? openXmlElement)
   {
     return openXmlElement?.Id?.Value;
   }
-  
+
   public static void SetId(DocumentFormat.OpenXml.Office2010.CustomUI.BackstageDropDown? openXmlElement, String? value)
   {
     if (openXmlElement != null)
@@ -21,15 +23,15 @@ public static class BackstageDropDownConverter
       else
         openXmlElement.Id = null;
   }
-  
+
   /// <summary>
-  /// idQ, this property is only available in Office 2010 and later.
+  ///   idQ, this property is only available in Office 2010 and later.
   /// </summary>
   public static String? GetQualifiedId(DocumentFormat.OpenXml.Office2010.CustomUI.BackstageDropDown? openXmlElement)
   {
     return openXmlElement?.QualifiedId?.Value;
   }
-  
+
   public static void SetQualifiedId(DocumentFormat.OpenXml.Office2010.CustomUI.BackstageDropDown? openXmlElement, String? value)
   {
     if (openXmlElement != null)
@@ -38,15 +40,15 @@ public static class BackstageDropDownConverter
       else
         openXmlElement.QualifiedId = null;
   }
-  
+
   /// <summary>
-  /// tag, this property is only available in Office 2010 and later.
+  ///   tag, this property is only available in Office 2010 and later.
   /// </summary>
   public static String? GetTag(DocumentFormat.OpenXml.Office2010.CustomUI.BackstageDropDown? openXmlElement)
   {
     return openXmlElement?.Tag?.Value;
   }
-  
+
   public static void SetTag(DocumentFormat.OpenXml.Office2010.CustomUI.BackstageDropDown? openXmlElement, String? value)
   {
     if (openXmlElement != null)
@@ -55,43 +57,43 @@ public static class BackstageDropDownConverter
       else
         openXmlElement.Tag = null;
   }
-  
+
   /// <summary>
-  /// alignLabel, this property is only available in Office 2010 and later.
+  ///   alignLabel, this property is only available in Office 2010 and later.
   /// </summary>
-  public static DocumentModel.ExpandKind? GetAlignLabel(DocumentFormat.OpenXml.Office2010.CustomUI.BackstageDropDown? openXmlElement)
+  public static ExpandKind? GetAlignLabel(DocumentFormat.OpenXml.Office2010.CustomUI.BackstageDropDown? openXmlElement)
   {
-    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Office2010.CustomUI.ExpandValues, DocumentModel.ExpandKind>(openXmlElement?.AlignLabel?.Value);
+    return EnumValueConverter.GetValue<ExpandValues, ExpandKind>(openXmlElement?.AlignLabel?.Value);
   }
-  
-  public static void SetAlignLabel(DocumentFormat.OpenXml.Office2010.CustomUI.BackstageDropDown? openXmlElement, DocumentModel.ExpandKind? value)
+
+  public static void SetAlignLabel(DocumentFormat.OpenXml.Office2010.CustomUI.BackstageDropDown? openXmlElement, ExpandKind? value)
   {
     if (openXmlElement != null)
-      openXmlElement.AlignLabel = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Office2010.CustomUI.ExpandValues, DocumentModel.ExpandKind>(value);
+      openXmlElement.AlignLabel = EnumValueConverter.CreateEnumValue<ExpandValues, ExpandKind>(value);
   }
-  
+
   /// <summary>
-  /// expand, this property is only available in Office 2010 and later.
+  ///   expand, this property is only available in Office 2010 and later.
   /// </summary>
-  public static DocumentModel.ExpandKind? GetExpand(DocumentFormat.OpenXml.Office2010.CustomUI.BackstageDropDown? openXmlElement)
+  public static ExpandKind? GetExpand(DocumentFormat.OpenXml.Office2010.CustomUI.BackstageDropDown? openXmlElement)
   {
-    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Office2010.CustomUI.ExpandValues, DocumentModel.ExpandKind>(openXmlElement?.Expand?.Value);
+    return EnumValueConverter.GetValue<ExpandValues, ExpandKind>(openXmlElement?.Expand?.Value);
   }
-  
-  public static void SetExpand(DocumentFormat.OpenXml.Office2010.CustomUI.BackstageDropDown? openXmlElement, DocumentModel.ExpandKind? value)
+
+  public static void SetExpand(DocumentFormat.OpenXml.Office2010.CustomUI.BackstageDropDown? openXmlElement, ExpandKind? value)
   {
     if (openXmlElement != null)
-      openXmlElement.Expand = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Office2010.CustomUI.ExpandValues, DocumentModel.ExpandKind>(value);
+      openXmlElement.Expand = EnumValueConverter.CreateEnumValue<ExpandValues, ExpandKind>(value);
   }
-  
+
   /// <summary>
-  /// enabled, this property is only available in Office 2010 and later.
+  ///   enabled, this property is only available in Office 2010 and later.
   /// </summary>
   public static Boolean? GetEnabled(DocumentFormat.OpenXml.Office2010.CustomUI.BackstageDropDown? openXmlElement)
   {
     return openXmlElement?.Enabled?.Value;
   }
-  
+
   public static void SetEnabled(DocumentFormat.OpenXml.Office2010.CustomUI.BackstageDropDown? openXmlElement, Boolean? value)
   {
     if (openXmlElement != null)
@@ -100,15 +102,15 @@ public static class BackstageDropDownConverter
       else
         openXmlElement.Enabled = null;
   }
-  
+
   /// <summary>
-  /// getEnabled, this property is only available in Office 2010 and later.
+  ///   getEnabled, this property is only available in Office 2010 and later.
   /// </summary>
   public static String? GetGetEnabled(DocumentFormat.OpenXml.Office2010.CustomUI.BackstageDropDown? openXmlElement)
   {
     return openXmlElement?.GetEnabled?.Value;
   }
-  
+
   public static void SetGetEnabled(DocumentFormat.OpenXml.Office2010.CustomUI.BackstageDropDown? openXmlElement, String? value)
   {
     if (openXmlElement != null)
@@ -117,15 +119,15 @@ public static class BackstageDropDownConverter
       else
         openXmlElement.GetEnabled = null;
   }
-  
+
   /// <summary>
-  /// label, this property is only available in Office 2010 and later.
+  ///   label, this property is only available in Office 2010 and later.
   /// </summary>
   public static String? GetLabel(DocumentFormat.OpenXml.Office2010.CustomUI.BackstageDropDown? openXmlElement)
   {
     return openXmlElement?.Label?.Value;
   }
-  
+
   public static void SetLabel(DocumentFormat.OpenXml.Office2010.CustomUI.BackstageDropDown? openXmlElement, String? value)
   {
     if (openXmlElement != null)
@@ -134,15 +136,15 @@ public static class BackstageDropDownConverter
       else
         openXmlElement.Label = null;
   }
-  
+
   /// <summary>
-  /// getLabel, this property is only available in Office 2010 and later.
+  ///   getLabel, this property is only available in Office 2010 and later.
   /// </summary>
   public static String? GetGetLabel(DocumentFormat.OpenXml.Office2010.CustomUI.BackstageDropDown? openXmlElement)
   {
     return openXmlElement?.GetLabel?.Value;
   }
-  
+
   public static void SetGetLabel(DocumentFormat.OpenXml.Office2010.CustomUI.BackstageDropDown? openXmlElement, String? value)
   {
     if (openXmlElement != null)
@@ -151,15 +153,15 @@ public static class BackstageDropDownConverter
       else
         openXmlElement.GetLabel = null;
   }
-  
+
   /// <summary>
-  /// visible, this property is only available in Office 2010 and later.
+  ///   visible, this property is only available in Office 2010 and later.
   /// </summary>
   public static Boolean? GetVisible(DocumentFormat.OpenXml.Office2010.CustomUI.BackstageDropDown? openXmlElement)
   {
     return openXmlElement?.Visible?.Value;
   }
-  
+
   public static void SetVisible(DocumentFormat.OpenXml.Office2010.CustomUI.BackstageDropDown? openXmlElement, Boolean? value)
   {
     if (openXmlElement != null)
@@ -168,15 +170,15 @@ public static class BackstageDropDownConverter
       else
         openXmlElement.Visible = null;
   }
-  
+
   /// <summary>
-  /// getVisible, this property is only available in Office 2010 and later.
+  ///   getVisible, this property is only available in Office 2010 and later.
   /// </summary>
   public static String? GetGetVisible(DocumentFormat.OpenXml.Office2010.CustomUI.BackstageDropDown? openXmlElement)
   {
     return openXmlElement?.GetVisible?.Value;
   }
-  
+
   public static void SetGetVisible(DocumentFormat.OpenXml.Office2010.CustomUI.BackstageDropDown? openXmlElement, String? value)
   {
     if (openXmlElement != null)
@@ -185,15 +187,15 @@ public static class BackstageDropDownConverter
       else
         openXmlElement.GetVisible = null;
   }
-  
+
   /// <summary>
-  /// onAction, this property is only available in Office 2010 and later.
+  ///   onAction, this property is only available in Office 2010 and later.
   /// </summary>
   public static String? GetOnAction(DocumentFormat.OpenXml.Office2010.CustomUI.BackstageDropDown? openXmlElement)
   {
     return openXmlElement?.OnAction?.Value;
   }
-  
+
   public static void SetOnAction(DocumentFormat.OpenXml.Office2010.CustomUI.BackstageDropDown? openXmlElement, String? value)
   {
     if (openXmlElement != null)
@@ -202,15 +204,15 @@ public static class BackstageDropDownConverter
       else
         openXmlElement.OnAction = null;
   }
-  
+
   /// <summary>
-  /// screentip, this property is only available in Office 2010 and later.
+  ///   screentip, this property is only available in Office 2010 and later.
   /// </summary>
   public static String? GetScreentip(DocumentFormat.OpenXml.Office2010.CustomUI.BackstageDropDown? openXmlElement)
   {
     return openXmlElement?.Screentip?.Value;
   }
-  
+
   public static void SetScreentip(DocumentFormat.OpenXml.Office2010.CustomUI.BackstageDropDown? openXmlElement, String? value)
   {
     if (openXmlElement != null)
@@ -219,15 +221,15 @@ public static class BackstageDropDownConverter
       else
         openXmlElement.Screentip = null;
   }
-  
+
   /// <summary>
-  /// getScreentip, this property is only available in Office 2010 and later.
+  ///   getScreentip, this property is only available in Office 2010 and later.
   /// </summary>
   public static String? GetGetScreentip(DocumentFormat.OpenXml.Office2010.CustomUI.BackstageDropDown? openXmlElement)
   {
     return openXmlElement?.GetScreentip?.Value;
   }
-  
+
   public static void SetGetScreentip(DocumentFormat.OpenXml.Office2010.CustomUI.BackstageDropDown? openXmlElement, String? value)
   {
     if (openXmlElement != null)
@@ -236,15 +238,15 @@ public static class BackstageDropDownConverter
       else
         openXmlElement.GetScreentip = null;
   }
-  
+
   /// <summary>
-  /// supertip, this property is only available in Office 2010 and later.
+  ///   supertip, this property is only available in Office 2010 and later.
   /// </summary>
   public static String? GetSupertip(DocumentFormat.OpenXml.Office2010.CustomUI.BackstageDropDown? openXmlElement)
   {
     return openXmlElement?.Supertip?.Value;
   }
-  
+
   public static void SetSupertip(DocumentFormat.OpenXml.Office2010.CustomUI.BackstageDropDown? openXmlElement, String? value)
   {
     if (openXmlElement != null)
@@ -253,15 +255,15 @@ public static class BackstageDropDownConverter
       else
         openXmlElement.Supertip = null;
   }
-  
+
   /// <summary>
-  /// getSupertip, this property is only available in Office 2010 and later.
+  ///   getSupertip, this property is only available in Office 2010 and later.
   /// </summary>
   public static String? GetGetSupertip(DocumentFormat.OpenXml.Office2010.CustomUI.BackstageDropDown? openXmlElement)
   {
     return openXmlElement?.GetSupertip?.Value;
   }
-  
+
   public static void SetGetSupertip(DocumentFormat.OpenXml.Office2010.CustomUI.BackstageDropDown? openXmlElement, String? value)
   {
     if (openXmlElement != null)
@@ -270,15 +272,15 @@ public static class BackstageDropDownConverter
       else
         openXmlElement.GetSupertip = null;
   }
-  
+
   /// <summary>
-  /// keytip, this property is only available in Office 2010 and later.
+  ///   keytip, this property is only available in Office 2010 and later.
   /// </summary>
   public static String? GetKeytip(DocumentFormat.OpenXml.Office2010.CustomUI.BackstageDropDown? openXmlElement)
   {
     return openXmlElement?.Keytip?.Value;
   }
-  
+
   public static void SetKeytip(DocumentFormat.OpenXml.Office2010.CustomUI.BackstageDropDown? openXmlElement, String? value)
   {
     if (openXmlElement != null)
@@ -287,15 +289,15 @@ public static class BackstageDropDownConverter
       else
         openXmlElement.Keytip = null;
   }
-  
+
   /// <summary>
-  /// getKeytip, this property is only available in Office 2010 and later.
+  ///   getKeytip, this property is only available in Office 2010 and later.
   /// </summary>
   public static String? GetGetKeytip(DocumentFormat.OpenXml.Office2010.CustomUI.BackstageDropDown? openXmlElement)
   {
     return openXmlElement?.GetKeytip?.Value;
   }
-  
+
   public static void SetGetKeytip(DocumentFormat.OpenXml.Office2010.CustomUI.BackstageDropDown? openXmlElement, String? value)
   {
     if (openXmlElement != null)
@@ -304,15 +306,15 @@ public static class BackstageDropDownConverter
       else
         openXmlElement.GetKeytip = null;
   }
-  
+
   /// <summary>
-  /// getSelectedItemIndex, this property is only available in Office 2010 and later.
+  ///   getSelectedItemIndex, this property is only available in Office 2010 and later.
   /// </summary>
   public static String? GetGetSelectedItemIndex(DocumentFormat.OpenXml.Office2010.CustomUI.BackstageDropDown? openXmlElement)
   {
     return openXmlElement?.GetSelectedItemIndex?.Value;
   }
-  
+
   public static void SetGetSelectedItemIndex(DocumentFormat.OpenXml.Office2010.CustomUI.BackstageDropDown? openXmlElement, String? value)
   {
     if (openXmlElement != null)
@@ -321,15 +323,15 @@ public static class BackstageDropDownConverter
       else
         openXmlElement.GetSelectedItemIndex = null;
   }
-  
+
   /// <summary>
-  /// sizeString, this property is only available in Office 2010 and later.
+  ///   sizeString, this property is only available in Office 2010 and later.
   /// </summary>
   public static String? GetSizeString(DocumentFormat.OpenXml.Office2010.CustomUI.BackstageDropDown? openXmlElement)
   {
     return openXmlElement?.SizeString?.Value;
   }
-  
+
   public static void SetSizeString(DocumentFormat.OpenXml.Office2010.CustomUI.BackstageDropDown? openXmlElement, String? value)
   {
     if (openXmlElement != null)
@@ -338,15 +340,15 @@ public static class BackstageDropDownConverter
       else
         openXmlElement.SizeString = null;
   }
-  
+
   /// <summary>
-  /// getItemCount, this property is only available in Office 2010 and later.
+  ///   getItemCount, this property is only available in Office 2010 and later.
   /// </summary>
   public static String? GetGetItemCount(DocumentFormat.OpenXml.Office2010.CustomUI.BackstageDropDown? openXmlElement)
   {
     return openXmlElement?.GetItemCount?.Value;
   }
-  
+
   public static void SetGetItemCount(DocumentFormat.OpenXml.Office2010.CustomUI.BackstageDropDown? openXmlElement, String? value)
   {
     if (openXmlElement != null)
@@ -355,15 +357,15 @@ public static class BackstageDropDownConverter
       else
         openXmlElement.GetItemCount = null;
   }
-  
+
   /// <summary>
-  /// getItemLabel, this property is only available in Office 2010 and later.
+  ///   getItemLabel, this property is only available in Office 2010 and later.
   /// </summary>
   public static String? GetGetItemLabel(DocumentFormat.OpenXml.Office2010.CustomUI.BackstageDropDown? openXmlElement)
   {
     return openXmlElement?.GetItemLabel?.Value;
   }
-  
+
   public static void SetGetItemLabel(DocumentFormat.OpenXml.Office2010.CustomUI.BackstageDropDown? openXmlElement, String? value)
   {
     if (openXmlElement != null)
@@ -372,15 +374,15 @@ public static class BackstageDropDownConverter
       else
         openXmlElement.GetItemLabel = null;
   }
-  
+
   /// <summary>
-  /// getItemID, this property is only available in Office 2010 and later.
+  ///   getItemID, this property is only available in Office 2010 and later.
   /// </summary>
   public static String? GetGetItemID(DocumentFormat.OpenXml.Office2010.CustomUI.BackstageDropDown? openXmlElement)
   {
     return openXmlElement?.GetItemID?.Value;
   }
-  
+
   public static void SetGetItemID(DocumentFormat.OpenXml.Office2010.CustomUI.BackstageDropDown? openXmlElement, String? value)
   {
     if (openXmlElement != null)
@@ -389,15 +391,15 @@ public static class BackstageDropDownConverter
       else
         openXmlElement.GetItemID = null;
   }
-  
-  public static System.Collections.ObjectModel.Collection<DocumentModel.BackstageItemType>? GetItemBackstageItems(DocumentFormat.OpenXml.Office2010.CustomUI.BackstageDropDown? openXmlElement)
+
+  public static Collection<BackstageItemType>? GetItemBackstageItems(DocumentFormat.OpenXml.Office2010.CustomUI.BackstageDropDown? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var collection = new System.Collections.ObjectModel.Collection<DocumentModel.BackstageItemType>();
-      foreach (var item in openXmlElement.Elements<DocumentFormat.OpenXml.Office2010.CustomUI.ItemBackstageItem>())
+      var collection = new Collection<BackstageItemType>();
+      foreach (var item in openXmlElement.Elements<ItemBackstageItem>())
       {
-        var newItem = DocumentModel.OpenXml.BackstageItemTypeConverter.CreateModelElement(item);
+        var newItem = BackstageItemTypeConverter.CreateModelElement(item);
         if (newItem != null)
           collection.Add(newItem);
       }
@@ -405,29 +407,27 @@ public static class BackstageDropDownConverter
     }
     return null;
   }
-  
-  public static void SetItemBackstageItems(DocumentFormat.OpenXml.Office2010.CustomUI.BackstageDropDown? openXmlElement, System.Collections.ObjectModel.Collection<DocumentModel.BackstageItemType>? value)
+
+  public static void SetItemBackstageItems(DocumentFormat.OpenXml.Office2010.CustomUI.BackstageDropDown? openXmlElement, Collection<BackstageItemType>? value)
   {
     if (openXmlElement != null)
     {
-      openXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Office2010.CustomUI.ItemBackstageItem>();
+      openXmlElement.RemoveAllChildren<ItemBackstageItem>();
       if (value != null)
-      {
         foreach (var item in value)
         {
-          var newItem = DocumentModel.OpenXml.BackstageItemTypeConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2010.CustomUI.ItemBackstageItem>(item);
+          var newItem = BackstageItemTypeConverter.CreateOpenXmlElement<ItemBackstageItem>(item);
           if (newItem != null)
             openXmlElement.AddChild(newItem);
         }
-      }
     }
   }
-  
-  public static DocumentModel.BackstageDropDown? CreateModelElement(DocumentFormat.OpenXml.Office2010.CustomUI.BackstageDropDown? openXmlElement)
+
+  public static BackstageDropDown? CreateModelElement(DocumentFormat.OpenXml.Office2010.CustomUI.BackstageDropDown? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.BackstageDropDown();
+      var value = new BackstageDropDown();
       value.Id = GetId(openXmlElement);
       value.QualifiedId = GetQualifiedId(openXmlElement);
       value.Tag = GetTag(openXmlElement);
@@ -456,9 +456,9 @@ public static class BackstageDropDownConverter
     }
     return null;
   }
-  
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.BackstageDropDown? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Office2010.CustomUI.BackstageDropDown, new()
+
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(BackstageDropDown? value)
+    where OpenXmlElementType : DocumentFormat.OpenXml.Office2010.CustomUI.BackstageDropDown, new()
   {
     if (value != null)
     {

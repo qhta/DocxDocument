@@ -1,68 +1,70 @@
+using DocumentFormat.OpenXml.Office.Word;
+
 namespace DocumentModel.OpenXml.Wordprocessing;
 
 /// <summary>
-/// Defines the SingleDataSourceRecord Class.
+///   Defines the SingleDataSourceRecord Class.
 /// </summary>
 public static class SingleDataSourceRecordConverter
 {
   /// <summary>
-  /// RecordIncluded.
+  ///   RecordIncluded.
   /// </summary>
-  public static Boolean? GetRecordIncluded(DocumentFormat.OpenXml.Office.Word.SingleDataSourceRecord? openXmlElement)
+  public static Boolean? GetRecordIncluded(SingleDataSourceRecord? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office.Word.RecordIncluded>();
+      var itemElement = openXmlElement.GetFirstChild<RecordIncluded>();
       return itemElement != null;
     }
     return null;
   }
-  
-  public static void SetRecordIncluded(DocumentFormat.OpenXml.Office.Word.SingleDataSourceRecord? openXmlElement, Boolean? value)
+
+  public static void SetRecordIncluded(SingleDataSourceRecord? openXmlElement, Boolean? value)
   {
     if (openXmlElement != null)
     {
       if (value == false)
       {
-        var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office.Word.RecordIncluded>();
+        var itemElement = openXmlElement.GetFirstChild<RecordIncluded>();
         if (itemElement != null)
           itemElement.Remove();
       }
       if (value == true)
       {
-        var itemElement = new DocumentFormat.OpenXml.Office.Word.RecordIncluded();
+        var itemElement = new RecordIncluded();
         openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
+
   /// <summary>
-  /// RecordHashCode.
+  ///   RecordHashCode.
   /// </summary>
-  public static Int64? GetRecordHashCode(DocumentFormat.OpenXml.Office.Word.SingleDataSourceRecord? openXmlElement)
+  public static Int64? GetRecordHashCode(SingleDataSourceRecord? openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office.Word.RecordHashCode>();
+    var itemElement = openXmlElement?.GetFirstChild<RecordHashCode>();
     if (itemElement != null)
       return itemElement.Val?.Value;
     return null;
   }
-  
-  public static void SetRecordHashCode(DocumentFormat.OpenXml.Office.Word.SingleDataSourceRecord? openXmlElement, Int64? value)
+
+  public static void SetRecordHashCode(SingleDataSourceRecord? openXmlElement, Int64? value)
   {
     if (openXmlElement != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office.Word.RecordHashCode>();
+      var itemElement = openXmlElement.GetFirstChild<RecordHashCode>();
       if (itemElement != null)
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = new DocumentFormat.OpenXml.Office.Word.RecordHashCode{ Val = value };
+        itemElement = new RecordHashCode { Val = value };
         openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static DocumentModel.Wordprocessing.SingleDataSourceRecord? CreateModelElement(DocumentFormat.OpenXml.Office.Word.SingleDataSourceRecord? openXmlElement)
+
+  public static DocumentModel.Wordprocessing.SingleDataSourceRecord? CreateModelElement(SingleDataSourceRecord? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -73,9 +75,9 @@ public static class SingleDataSourceRecordConverter
     }
     return null;
   }
-  
+
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.SingleDataSourceRecord? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Office.Word.SingleDataSourceRecord, new()
+    where OpenXmlElementType : SingleDataSourceRecord, new()
   {
     if (value != null)
     {

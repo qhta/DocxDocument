@@ -1,21 +1,23 @@
+using DocumentFormat.OpenXml.Packaging;
+
 namespace DocumentModel.OpenXml.Packaging;
 
 /// <summary>
-/// Defines the SlideCommentsPart
+///   Defines the SlideCommentsPart
 /// </summary>
 public static class SlideCommentsPartConverter
 {
-  public static String? GetContentType(DocumentFormat.OpenXml.Packaging.SlideCommentsPart? openXmlElement)
+  public static String? GetContentType(SlideCommentsPart? openXmlElement)
   {
     return openXmlElement?.ContentType;
   }
-  
-  public static String? GetRelationshipType(DocumentFormat.OpenXml.Packaging.SlideCommentsPart? openXmlElement)
+
+  public static String? GetRelationshipType(SlideCommentsPart? openXmlElement)
   {
     return openXmlElement?.RelationshipType;
   }
-  
-  public static DocumentModel.Packaging.SlideCommentsPart? CreateModelElement(DocumentFormat.OpenXml.Packaging.SlideCommentsPart? openXmlElement)
+
+  public static DocumentModel.Packaging.SlideCommentsPart? CreateModelElement(SlideCommentsPart? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -26,9 +28,9 @@ public static class SlideCommentsPartConverter
     }
     return null;
   }
-  
+
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Packaging.SlideCommentsPart? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Packaging.SlideCommentsPart, new()
+    where OpenXmlElementType : SlideCommentsPart, new()
   {
     if (value != null)
     {

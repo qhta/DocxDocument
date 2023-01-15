@@ -1,23 +1,22 @@
 namespace DocumentModel.Wordprocessing;
 
 /// <summary>
-/// Defines the FontTypeHintValues enumeration.
+///   Defines the FontTypeHintValues enumeration.
 /// </summary>
 public enum FontTypeHintKind
 {
   /// <summary>
-  /// High ANSI Font.
+  ///   High ANSI Font.
   /// </summary>
   Default,
-  
+
   /// <summary>
-  /// East Asian Font.
+  ///   East Asian Font.
   /// </summary>
   EastAsia,
-  
+
   /// <summary>
-  /// Complex Script Font.
+  ///   Complex Script Font.
   /// </summary>
-  ComplexScript,
-  
+  ComplexScript
 }

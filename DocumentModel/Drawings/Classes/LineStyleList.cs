@@ -1,10 +1,9 @@
 namespace DocumentModel.Drawings;
 
 /// <summary>
-/// Line Style List.
+///   Line Style List.
 /// </summary>
-public partial class LineStyleList
+public class LineStyleList
 {
-  public DocumentModel.Drawings.Outline? Outline { get; set; }
-  
+  public Outline? Outline { get; set; }
 }

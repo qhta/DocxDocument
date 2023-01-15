@@ -1,48 +1,47 @@
 namespace DocumentModel.Vml;
 
 /// <summary>
-/// Document Background.
+///   Document Background.
 /// </summary>
-public partial class Background
+public class Background
 {
   /// <summary>
-  /// Unique Identifier
+  ///   Unique Identifier
   /// </summary>
   public String? Id { get; set; }
-  
+
   /// <summary>
-  /// Shape Fill Toggle
+  ///   Shape Fill Toggle
   /// </summary>
   public Boolean? Filled { get; set; }
-  
+
   /// <summary>
-  /// Fill Color
+  ///   Fill Color
   /// </summary>
   public String? Fillcolor { get; set; }
-  
+
   /// <summary>
-  /// Black-and-White Mode
+  ///   Black-and-White Mode
   /// </summary>
-  public DocumentModel.Vml.BlackAndWhiteMode? BlackWhiteMode { get; set; }
-  
+  public BlackAndWhiteMode? BlackWhiteMode { get; set; }
+
   /// <summary>
-  /// Pure Black-and-White Mode
+  ///   Pure Black-and-White Mode
   /// </summary>
-  public DocumentModel.Vml.BlackAndWhiteMode? PureBlackWhiteMode { get; set; }
-  
+  public BlackAndWhiteMode? PureBlackWhiteMode { get; set; }
+
   /// <summary>
-  /// Normal Black-and-White Mode
+  ///   Normal Black-and-White Mode
   /// </summary>
-  public DocumentModel.Vml.BlackAndWhiteMode? NormalBlackWhiteMode { get; set; }
-  
+  public BlackAndWhiteMode? NormalBlackWhiteMode { get; set; }
+
   /// <summary>
-  /// Target Screen Size
+  ///   Target Screen Size
   /// </summary>
-  public DocumentModel.Vml.ScreenSizeKind? TargetScreenSize { get; set; }
-  
+  public ScreenSizeKind? TargetScreenSize { get; set; }
+
   /// <summary>
-  /// Fill.
+  ///   Fill.
   /// </summary>
-  public DocumentModel.Vml.Fill? Fill { get; set; }
-  
+  public Fill? Fill { get; set; }
 }

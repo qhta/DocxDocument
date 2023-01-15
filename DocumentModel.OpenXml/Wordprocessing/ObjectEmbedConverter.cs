@@ -1,33 +1,36 @@
+using DocumentModel.Wordprocessing;
+using ObjectEmbed = DocumentFormat.OpenXml.Wordprocessing.ObjectEmbed;
+
 namespace DocumentModel.OpenXml.Wordprocessing;
 
 /// <summary>
-/// Defines the ObjectEmbed Class.
+///   Defines the ObjectEmbed Class.
 /// </summary>
 public static class ObjectEmbedConverter
 {
   /// <summary>
-  /// drawAspect
+  ///   drawAspect
   /// </summary>
-  public static DocumentModel.Wordprocessing.ObjectDrawAspect? GetdrawAspect(DocumentFormat.OpenXml.Wordprocessing.ObjectEmbed? openXmlElement)
+  public static ObjectDrawAspect? GetdrawAspect(ObjectEmbed? openXmlElement)
   {
-    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Wordprocessing.ObjectDrawAspect, DocumentModel.Wordprocessing.ObjectDrawAspect>(openXmlElement?.drawAspect?.Value);
+    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Wordprocessing.ObjectDrawAspect, ObjectDrawAspect>(openXmlElement?.drawAspect?.Value);
   }
-  
-  public static void SetdrawAspect(DocumentFormat.OpenXml.Wordprocessing.ObjectEmbed? openXmlElement, DocumentModel.Wordprocessing.ObjectDrawAspect? value)
+
+  public static void SetdrawAspect(ObjectEmbed? openXmlElement, ObjectDrawAspect? value)
   {
     if (openXmlElement != null)
-      openXmlElement.drawAspect = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Wordprocessing.ObjectDrawAspect, DocumentModel.Wordprocessing.ObjectDrawAspect>(value);
+      openXmlElement.drawAspect = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Wordprocessing.ObjectDrawAspect, ObjectDrawAspect>(value);
   }
-  
+
   /// <summary>
-  /// id
+  ///   id
   /// </summary>
-  public static String? GetId(DocumentFormat.OpenXml.Wordprocessing.ObjectEmbed? openXmlElement)
+  public static String? GetId(ObjectEmbed? openXmlElement)
   {
     return openXmlElement?.Id?.Value;
   }
-  
-  public static void SetId(DocumentFormat.OpenXml.Wordprocessing.ObjectEmbed? openXmlElement, String? value)
+
+  public static void SetId(ObjectEmbed? openXmlElement, String? value)
   {
     if (openXmlElement != null)
       if (value != null)
@@ -35,16 +38,16 @@ public static class ObjectEmbedConverter
       else
         openXmlElement.Id = null;
   }
-  
+
   /// <summary>
-  /// progId
+  ///   progId
   /// </summary>
-  public static String? GetProgId(DocumentFormat.OpenXml.Wordprocessing.ObjectEmbed? openXmlElement)
+  public static String? GetProgId(ObjectEmbed? openXmlElement)
   {
     return openXmlElement?.ProgId?.Value;
   }
-  
-  public static void SetProgId(DocumentFormat.OpenXml.Wordprocessing.ObjectEmbed? openXmlElement, String? value)
+
+  public static void SetProgId(ObjectEmbed? openXmlElement, String? value)
   {
     if (openXmlElement != null)
       if (value != null)
@@ -52,16 +55,16 @@ public static class ObjectEmbedConverter
       else
         openXmlElement.ProgId = null;
   }
-  
+
   /// <summary>
-  /// shapeId
+  ///   shapeId
   /// </summary>
-  public static String? GetShapeId(DocumentFormat.OpenXml.Wordprocessing.ObjectEmbed? openXmlElement)
+  public static String? GetShapeId(ObjectEmbed? openXmlElement)
   {
     return openXmlElement?.ShapeId?.Value;
   }
-  
-  public static void SetShapeId(DocumentFormat.OpenXml.Wordprocessing.ObjectEmbed? openXmlElement, String? value)
+
+  public static void SetShapeId(ObjectEmbed? openXmlElement, String? value)
   {
     if (openXmlElement != null)
       if (value != null)
@@ -69,16 +72,16 @@ public static class ObjectEmbedConverter
       else
         openXmlElement.ShapeId = null;
   }
-  
+
   /// <summary>
-  /// fieldCodes
+  ///   fieldCodes
   /// </summary>
-  public static String? GetFieldCodes(DocumentFormat.OpenXml.Wordprocessing.ObjectEmbed? openXmlElement)
+  public static String? GetFieldCodes(ObjectEmbed? openXmlElement)
   {
     return openXmlElement?.FieldCodes?.Value;
   }
-  
-  public static void SetFieldCodes(DocumentFormat.OpenXml.Wordprocessing.ObjectEmbed? openXmlElement, String? value)
+
+  public static void SetFieldCodes(ObjectEmbed? openXmlElement, String? value)
   {
     if (openXmlElement != null)
       if (value != null)
@@ -86,8 +89,8 @@ public static class ObjectEmbedConverter
       else
         openXmlElement.FieldCodes = null;
   }
-  
-  public static DocumentModel.Wordprocessing.ObjectEmbed? CreateModelElement(DocumentFormat.OpenXml.Wordprocessing.ObjectEmbed? openXmlElement)
+
+  public static DocumentModel.Wordprocessing.ObjectEmbed? CreateModelElement(ObjectEmbed? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -101,9 +104,9 @@ public static class ObjectEmbedConverter
     }
     return null;
   }
-  
+
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.ObjectEmbed? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Wordprocessing.ObjectEmbed, new()
+    where OpenXmlElementType : ObjectEmbed, new()
   {
     if (value != null)
     {

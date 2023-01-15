@@ -1,20 +1,19 @@
 namespace DocumentModel.Drawings.Diagrams;
 
 /// <summary>
-/// Text Fill Color List.
+///   Text Fill Color List.
 /// </summary>
-public partial class TextFillColorList
+public class TextFillColorList
 {
-  public DocumentModel.Drawings.RgbColorModelPercentage? RgbColorModelPercentage { get; set; }
-  
-  public DocumentModel.Drawings.RgbColorModelHex? RgbColorModelHex { get; set; }
-  
-  public DocumentModel.Drawings.HslColor? HslColor { get; set; }
-  
-  public DocumentModel.Drawings.SystemColor? SystemColor { get; set; }
-  
-  public DocumentModel.Drawings.SchemeColor? SchemeColor { get; set; }
-  
-  public DocumentModel.Drawings.PresetColor? PresetColor { get; set; }
-  
+  public RgbColorModelPercentage? RgbColorModelPercentage { get; set; }
+
+  public RgbColorModelHex? RgbColorModelHex { get; set; }
+
+  public HslColor? HslColor { get; set; }
+
+  public SystemColor? SystemColor { get; set; }
+
+  public SchemeColor? SchemeColor { get; set; }
+
+  public PresetColor? PresetColor { get; set; }
 }

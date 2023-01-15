@@ -1,87 +1,86 @@
 namespace DocumentModel.Packaging;
 
 /// <summary>
-/// Defines the NotesMasterPart
+///   Defines the NotesMasterPart
 /// </summary>
-public partial class NotesMasterPart
+public class NotesMasterPart
 {
   /// <summary>
-  /// Gets the ChartParts of the NotesMasterPart
+  ///   Gets the ChartParts of the NotesMasterPart
   /// </summary>
-  public Collection<DocumentModel.Packaging.ChartPart>? ChartParts { get; set; }
-  
+  public Collection<ChartPart>? ChartParts { get; set; }
+
   public String? ContentType { get; set; }
-  
+
   /// <summary>
-  /// Gets the CustomXmlParts of the NotesMasterPart
+  ///   Gets the CustomXmlParts of the NotesMasterPart
   /// </summary>
-  public Collection<DocumentModel.Packaging.CustomXmlPart>? CustomXmlParts { get; set; }
-  
+  public Collection<CustomXmlPart>? CustomXmlParts { get; set; }
+
   /// <summary>
-  /// Gets the DiagramColorsParts of the NotesMasterPart
+  ///   Gets the DiagramColorsParts of the NotesMasterPart
   /// </summary>
-  public Collection<DocumentModel.Packaging.DiagramColorsPart>? DiagramColorsParts { get; set; }
-  
+  public Collection<DiagramColorsPart>? DiagramColorsParts { get; set; }
+
   /// <summary>
-  /// Gets the DiagramDataParts of the NotesMasterPart
+  ///   Gets the DiagramDataParts of the NotesMasterPart
   /// </summary>
-  public Collection<DocumentModel.Packaging.DiagramDataPart>? DiagramDataParts { get; set; }
-  
+  public Collection<DiagramDataPart>? DiagramDataParts { get; set; }
+
   /// <summary>
-  /// Gets the DiagramLayoutDefinitionParts of the NotesMasterPart
+  ///   Gets the DiagramLayoutDefinitionParts of the NotesMasterPart
   /// </summary>
-  public Collection<DocumentModel.Packaging.DiagramLayoutDefinitionPart>? DiagramLayoutDefinitionParts { get; set; }
-  
+  public Collection<DiagramLayoutDefinitionPart>? DiagramLayoutDefinitionParts { get; set; }
+
   /// <summary>
-  /// Gets the DiagramPersistLayoutParts of the NotesMasterPart
+  ///   Gets the DiagramPersistLayoutParts of the NotesMasterPart
   /// </summary>
-  public Collection<DocumentModel.Packaging.DiagramPersistLayoutPart>? DiagramPersistLayoutParts { get; set; }
-  
+  public Collection<DiagramPersistLayoutPart>? DiagramPersistLayoutParts { get; set; }
+
   /// <summary>
-  /// Gets the DiagramStyleParts of the NotesMasterPart
+  ///   Gets the DiagramStyleParts of the NotesMasterPart
   /// </summary>
-  public Collection<DocumentModel.Packaging.DiagramStylePart>? DiagramStyleParts { get; set; }
-  
+  public Collection<DiagramStylePart>? DiagramStyleParts { get; set; }
+
   /// <summary>
-  /// Gets the EmbeddedControlPersistenceBinaryDataParts of the NotesMasterPart
+  ///   Gets the EmbeddedControlPersistenceBinaryDataParts of the NotesMasterPart
   /// </summary>
-  public Collection<DocumentModel.Packaging.EmbeddedControlPersistenceBinaryDataPart>? EmbeddedControlPersistenceBinaryDataParts { get; set; }
-  
+  public Collection<EmbeddedControlPersistenceBinaryDataPart>? EmbeddedControlPersistenceBinaryDataParts { get; set; }
+
   /// <summary>
-  /// Gets the EmbeddedObjectParts of the NotesMasterPart
+  ///   Gets the EmbeddedObjectParts of the NotesMasterPart
   /// </summary>
-  public Collection<DocumentModel.Packaging.EmbeddedObjectPart>? EmbeddedObjectParts { get; set; }
-  
+  public Collection<EmbeddedObjectPart>? EmbeddedObjectParts { get; set; }
+
   /// <summary>
-  /// Gets the EmbeddedPackageParts of the NotesMasterPart
+  ///   Gets the EmbeddedPackageParts of the NotesMasterPart
   /// </summary>
-  public Collection<DocumentModel.Packaging.EmbeddedPackagePart>? EmbeddedPackageParts { get; set; }
-  
+  public Collection<EmbeddedPackagePart>? EmbeddedPackageParts { get; set; }
+
   /// <summary>
-  /// Gets the ExtendedChartParts of the NotesMasterPart
+  ///   Gets the ExtendedChartParts of the NotesMasterPart
   /// </summary>
-  public Collection<DocumentModel.Packaging.ExtendedChartPart>? ExtendedChartParts { get; set; }
-  
+  public Collection<ExtendedChartPart>? ExtendedChartParts { get; set; }
+
   /// <summary>
-  /// Gets the ImageParts of the NotesMasterPart
+  ///   Gets the ImageParts of the NotesMasterPart
   /// </summary>
-  public Collection<DocumentModel.Packaging.ImagePart>? ImageParts { get; set; }
-  
+  public Collection<ImagePart>? ImageParts { get; set; }
+
   /// <summary>
-  /// Gets the Model3DReferenceRelationshipParts of the NotesMasterPart
+  ///   Gets the Model3DReferenceRelationshipParts of the NotesMasterPart
   /// </summary>
-  public Collection<DocumentModel.Packaging.Model3DReferenceRelationshipPart>? Model3DReferenceRelationshipParts { get; set; }
-  
+  public Collection<Model3DReferenceRelationshipPart>? Model3DReferenceRelationshipParts { get; set; }
+
   public String? RelationshipType { get; set; }
-  
+
   /// <summary>
-  /// Gets the UserDefinedTagsParts of the NotesMasterPart
+  ///   Gets the UserDefinedTagsParts of the NotesMasterPart
   /// </summary>
-  public Collection<DocumentModel.Packaging.UserDefinedTagsPart>? UserDefinedTagsParts { get; set; }
-  
+  public Collection<UserDefinedTagsPart>? UserDefinedTagsParts { get; set; }
+
   /// <summary>
-  /// Gets the VmlDrawingParts of the NotesMasterPart
+  ///   Gets the VmlDrawingParts of the NotesMasterPart
   /// </summary>
-  public Collection<DocumentModel.Packaging.VmlDrawingPart>? VmlDrawingParts { get; set; }
-  
+  public Collection<VmlDrawingPart>? VmlDrawingParts { get; set; }
 }

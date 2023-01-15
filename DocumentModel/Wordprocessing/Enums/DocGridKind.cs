@@ -1,28 +1,27 @@
 namespace DocumentModel.Wordprocessing;
 
 /// <summary>
-/// Defines the DocGridValues enumeration.
+///   Defines the DocGridValues enumeration.
 /// </summary>
 public enum DocGridKind
 {
   /// <summary>
-  /// No Document Grid.
+  ///   No Document Grid.
   /// </summary>
   Default,
-  
+
   /// <summary>
-  /// Line Grid Only.
+  ///   Line Grid Only.
   /// </summary>
   Lines,
-  
+
   /// <summary>
-  /// Line and Character Grid.
+  ///   Line and Character Grid.
   /// </summary>
   LinesAndChars,
-  
+
   /// <summary>
-  /// Character Grid Only.
+  ///   Character Grid Only.
   /// </summary>
-  SnapToChars,
-  
+  SnapToChars
 }

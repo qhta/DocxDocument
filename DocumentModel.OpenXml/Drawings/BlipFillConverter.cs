@@ -1,33 +1,39 @@
+using DocumentFormat.OpenXml.Drawing;
+using Blip = DocumentModel.Drawings.Blip;
+using RelativeRectangleType = DocumentModel.Drawings.RelativeRectangleType;
+using Stretch = DocumentModel.Drawings.Stretch;
+using Tile = DocumentModel.Drawings.Tile;
+
 namespace DocumentModel.OpenXml.Drawings;
 
 /// <summary>
-/// Defines the BlipFill Class.
+///   Defines the BlipFill Class.
 /// </summary>
 public static class BlipFillConverter
 {
   /// <summary>
-  /// DPI Setting
+  ///   DPI Setting
   /// </summary>
-  public static UInt32? GetDpi(DocumentFormat.OpenXml.Drawing.BlipFill? openXmlElement)
+  public static UInt32? GetDpi(BlipFill? openXmlElement)
   {
     return openXmlElement?.Dpi?.Value;
   }
-  
-  public static void SetDpi(DocumentFormat.OpenXml.Drawing.BlipFill? openXmlElement, UInt32? value)
+
+  public static void SetDpi(BlipFill? openXmlElement, UInt32? value)
   {
     if (openXmlElement != null)
       openXmlElement.Dpi = value;
   }
-  
+
   /// <summary>
-  /// Rotate With Shape
+  ///   Rotate With Shape
   /// </summary>
-  public static Boolean? GetRotateWithShape(DocumentFormat.OpenXml.Drawing.BlipFill? openXmlElement)
+  public static Boolean? GetRotateWithShape(BlipFill? openXmlElement)
   {
     return openXmlElement?.RotateWithShape?.Value;
   }
-  
-  public static void SetRotateWithShape(DocumentFormat.OpenXml.Drawing.BlipFill? openXmlElement, Boolean? value)
+
+  public static void SetRotateWithShape(BlipFill? openXmlElement, Boolean? value)
   {
     if (openXmlElement != null)
       if (value != null)
@@ -35,19 +41,19 @@ public static class BlipFillConverter
       else
         openXmlElement.RotateWithShape = null;
   }
-  
+
   /// <summary>
-  /// Blip.
+  ///   Blip.
   /// </summary>
-  public static DocumentModel.Drawings.Blip? GetBlip(DocumentFormat.OpenXml.Drawing.BlipFill? openXmlElement)
+  public static Blip? GetBlip(BlipFill? openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.Blip>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.BlipConverter.CreateModelElement(itemElement);
+      return BlipConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetBlip(DocumentFormat.OpenXml.Drawing.BlipFill? openXmlElement, DocumentModel.Drawings.Blip? value)
+
+  public static void SetBlip(BlipFill? openXmlElement, Blip? value)
   {
     if (openXmlElement != null)
     {
@@ -56,49 +62,49 @@ public static class BlipFillConverter
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Drawings.BlipConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Blip>(value);
+        itemElement = BlipConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Blip>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
+
   /// <summary>
-  /// Source Rectangle.
+  ///   Source Rectangle.
   /// </summary>
-  public static DocumentModel.Drawings.RelativeRectangleType? GetSourceRectangle(DocumentFormat.OpenXml.Drawing.BlipFill? openXmlElement)
+  public static RelativeRectangleType? GetSourceRectangle(BlipFill? openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.SourceRectangle>();
+    var itemElement = openXmlElement?.GetFirstChild<SourceRectangle>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.RelativeRectangleTypeConverter.CreateModelElement(itemElement);
+      return RelativeRectangleTypeConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetSourceRectangle(DocumentFormat.OpenXml.Drawing.BlipFill? openXmlElement, DocumentModel.Drawings.RelativeRectangleType? value)
+
+  public static void SetSourceRectangle(BlipFill? openXmlElement, RelativeRectangleType? value)
   {
     if (openXmlElement != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.SourceRectangle>();
+      var itemElement = openXmlElement.GetFirstChild<SourceRectangle>();
       if (itemElement != null)
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Drawings.RelativeRectangleTypeConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.SourceRectangle>(value);
+        itemElement = RelativeRectangleTypeConverter.CreateOpenXmlElement<SourceRectangle>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static DocumentModel.Drawings.Tile? GetTile(DocumentFormat.OpenXml.Drawing.BlipFill? openXmlElement)
+
+  public static Tile? GetTile(BlipFill? openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.Tile>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.TileConverter.CreateModelElement(itemElement);
+      return TileConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetTile(DocumentFormat.OpenXml.Drawing.BlipFill? openXmlElement, DocumentModel.Drawings.Tile? value)
+
+  public static void SetTile(BlipFill? openXmlElement, Tile? value)
   {
     if (openXmlElement != null)
     {
@@ -107,22 +113,22 @@ public static class BlipFillConverter
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Drawings.TileConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Tile>(value);
+        itemElement = TileConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Tile>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static DocumentModel.Drawings.Stretch? GetStretch(DocumentFormat.OpenXml.Drawing.BlipFill? openXmlElement)
+
+  public static Stretch? GetStretch(BlipFill? openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.Stretch>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.StretchConverter.CreateModelElement(itemElement);
+      return StretchConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetStretch(DocumentFormat.OpenXml.Drawing.BlipFill? openXmlElement, DocumentModel.Drawings.Stretch? value)
+
+  public static void SetStretch(BlipFill? openXmlElement, Stretch? value)
   {
     if (openXmlElement != null)
     {
@@ -131,14 +137,14 @@ public static class BlipFillConverter
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Drawings.StretchConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Stretch>(value);
+        itemElement = StretchConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Stretch>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static DocumentModel.Drawings.BlipFill? CreateModelElement(DocumentFormat.OpenXml.Drawing.BlipFill? openXmlElement)
+
+  public static DocumentModel.Drawings.BlipFill? CreateModelElement(BlipFill? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -153,9 +159,9 @@ public static class BlipFillConverter
     }
     return null;
   }
-  
+
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.BlipFill? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.BlipFill, new()
+    where OpenXmlElementType : BlipFill, new()
   {
     if (value != null)
     {

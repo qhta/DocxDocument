@@ -1,18 +1,17 @@
 namespace DocumentModel.Drawings.Diagrams;
 
 /// <summary>
-/// Resize Handle
+///   Resize Handle
 /// </summary>
 public enum ResizeHandlesStringKind
 {
   /// <summary>
-  /// Exact.
+  ///   Exact.
   /// </summary>
   Exact,
-  
+
   /// <summary>
-  /// Relative.
+  ///   Relative.
   /// </summary>
-  Relative,
-  
+  Relative
 }

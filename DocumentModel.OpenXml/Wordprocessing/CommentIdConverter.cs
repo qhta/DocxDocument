@@ -1,21 +1,23 @@
+using DocumentFormat.OpenXml.Office2019.Word.Cid;
+
 namespace DocumentModel.OpenXml.Wordprocessing;
 
 /// <summary>
-/// Defines the CommentId Class.
+///   Defines the CommentId Class.
 /// </summary>
 public static class CommentIdConverter
 {
   /// <summary>
-  /// paraId, this property is only available in Office 2019 and later.
+  ///   paraId, this property is only available in Office 2019 and later.
   /// </summary>
-  public static Byte[]? GetParaId(DocumentFormat.OpenXml.Office2019.Word.Cid.CommentId? openXmlElement)
+  public static Byte[]? GetParaId(CommentId? openXmlElement)
   {
     if (openXmlElement?.ParaId?.Value != null)
       return Convert.FromHexString(openXmlElement.ParaId.Value);
     return null;
   }
-  
-  public static void SetParaId(DocumentFormat.OpenXml.Office2019.Word.Cid.CommentId? openXmlElement, Byte[]? value)
+
+  public static void SetParaId(CommentId? openXmlElement, Byte[]? value)
   {
     if (openXmlElement != null)
     {
@@ -25,18 +27,18 @@ public static class CommentIdConverter
         openXmlElement.ParaId = null;
     }
   }
-  
+
   /// <summary>
-  /// durableId, this property is only available in Office 2019 and later.
+  ///   durableId, this property is only available in Office 2019 and later.
   /// </summary>
-  public static Byte[]? GetDurableId(DocumentFormat.OpenXml.Office2019.Word.Cid.CommentId? openXmlElement)
+  public static Byte[]? GetDurableId(CommentId? openXmlElement)
   {
     if (openXmlElement?.DurableId?.Value != null)
       return Convert.FromHexString(openXmlElement.DurableId.Value);
     return null;
   }
-  
-  public static void SetDurableId(DocumentFormat.OpenXml.Office2019.Word.Cid.CommentId? openXmlElement, Byte[]? value)
+
+  public static void SetDurableId(CommentId? openXmlElement, Byte[]? value)
   {
     if (openXmlElement != null)
     {
@@ -46,8 +48,8 @@ public static class CommentIdConverter
         openXmlElement.DurableId = null;
     }
   }
-  
-  public static DocumentModel.Wordprocessing.CommentId? CreateModelElement(DocumentFormat.OpenXml.Office2019.Word.Cid.CommentId? openXmlElement)
+
+  public static DocumentModel.Wordprocessing.CommentId? CreateModelElement(CommentId? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -58,9 +60,9 @@ public static class CommentIdConverter
     }
     return null;
   }
-  
+
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.CommentId? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Office2019.Word.Cid.CommentId, new()
+    where OpenXmlElementType : CommentId, new()
   {
     if (value != null)
     {

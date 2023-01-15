@@ -1,18 +1,17 @@
 namespace DocumentModel;
 
 /// <summary>
-/// Defines the PrimaryItem Class.
+///   Defines the PrimaryItem Class.
 /// </summary>
-public partial class PrimaryItem
+public class PrimaryItem
 {
   /// <summary>
-  /// BackstageRegularButton.
+  ///   BackstageRegularButton.
   /// </summary>
-  public DocumentModel.BackstageRegularButton? BackstageRegularButton { get; set; }
-  
+  public BackstageRegularButton? BackstageRegularButton { get; set; }
+
   /// <summary>
-  /// BackstagePrimaryMenu.
+  ///   BackstagePrimaryMenu.
   /// </summary>
-  public DocumentModel.BackstagePrimaryMenu? BackstagePrimaryMenu { get; set; }
-  
+  public BackstagePrimaryMenu? BackstagePrimaryMenu { get; set; }
 }

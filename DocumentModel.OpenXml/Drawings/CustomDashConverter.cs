@@ -1,18 +1,21 @@
+using DocumentModel.Drawings;
+using CustomDash = DocumentFormat.OpenXml.Drawing.CustomDash;
+
 namespace DocumentModel.OpenXml.Drawings;
 
 /// <summary>
-/// Custom Dash.
+///   Custom Dash.
 /// </summary>
 public static class CustomDashConverter
 {
-  public static System.Collections.ObjectModel.Collection<DocumentModel.Drawings.DashStop>? GetDashStops(DocumentFormat.OpenXml.Drawing.CustomDash? openXmlElement)
+  public static Collection<DashStop>? GetDashStops(CustomDash? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var collection = new System.Collections.ObjectModel.Collection<DocumentModel.Drawings.DashStop>();
+      var collection = new Collection<DashStop>();
       foreach (var item in openXmlElement.Elements<DocumentFormat.OpenXml.Drawing.DashStop>())
       {
-        var newItem = DocumentModel.OpenXml.Drawings.DashStopConverter.CreateModelElement(item);
+        var newItem = DashStopConverter.CreateModelElement(item);
         if (newItem != null)
           collection.Add(newItem);
       }
@@ -20,25 +23,23 @@ public static class CustomDashConverter
     }
     return null;
   }
-  
-  public static void SetDashStops(DocumentFormat.OpenXml.Drawing.CustomDash? openXmlElement, System.Collections.ObjectModel.Collection<DocumentModel.Drawings.DashStop>? value)
+
+  public static void SetDashStops(CustomDash? openXmlElement, Collection<DashStop>? value)
   {
     if (openXmlElement != null)
     {
       openXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Drawing.DashStop>();
       if (value != null)
-      {
         foreach (var item in value)
         {
-          var newItem = DocumentModel.OpenXml.Drawings.DashStopConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.DashStop>(item);
+          var newItem = DashStopConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.DashStop>(item);
           if (newItem != null)
             openXmlElement.AddChild(newItem);
         }
-      }
     }
   }
-  
-  public static DocumentModel.Drawings.CustomDash? CreateModelElement(DocumentFormat.OpenXml.Drawing.CustomDash? openXmlElement)
+
+  public static DocumentModel.Drawings.CustomDash? CreateModelElement(CustomDash? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -48,9 +49,9 @@ public static class CustomDashConverter
     }
     return null;
   }
-  
+
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.CustomDash? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.CustomDash, new()
+    where OpenXmlElementType : CustomDash, new()
   {
     if (value != null)
     {

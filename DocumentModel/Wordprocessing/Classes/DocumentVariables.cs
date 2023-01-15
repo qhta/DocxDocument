@@ -1,10 +1,9 @@
 namespace DocumentModel.Wordprocessing;
 
 /// <summary>
-/// Document Variables.
+///   Document Variables.
 /// </summary>
-public partial class DocumentVariables
+public class DocumentVariables
 {
-  public Collection<DocumentModel.Wordprocessing.DocumentVariable>? Items { get; set; }
-  
+  public Collection<DocumentVariable>? Items { get; set; }
 }

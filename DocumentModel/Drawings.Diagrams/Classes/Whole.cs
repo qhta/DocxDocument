@@ -1,17 +1,16 @@
 namespace DocumentModel.Drawings.Diagrams;
 
 /// <summary>
-/// Whole E2O Formatting.
+///   Whole E2O Formatting.
 /// </summary>
-public partial class Whole
+public class Whole
 {
   /// <summary>
-  /// Outline.
+  ///   Outline.
   /// </summary>
-  public DocumentModel.Drawings.Outline? Outline { get; set; }
-  
-  public DocumentModel.Drawings.EffectList? EffectList { get; set; }
-  
-  public DocumentModel.Drawings.EffectDag? EffectDag { get; set; }
-  
+  public Outline? Outline { get; set; }
+
+  public EffectList? EffectList { get; set; }
+
+  public EffectDag? EffectDag { get; set; }
 }

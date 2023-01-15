@@ -1,18 +1,17 @@
 namespace DocumentModel.Drawings;
 
 /// <summary>
-/// Normal AutoFit.
+///   Normal AutoFit.
 /// </summary>
-public partial class NormalAutoFit
+public class NormalAutoFit
 {
   /// <summary>
-  /// Font Scale
+  ///   Font Scale
   /// </summary>
   public Int32? FontScale { get; set; }
-  
+
   /// <summary>
-  /// Line Space Reduction
+  ///   Line Space Reduction
   /// </summary>
   public Int32? LineSpaceReduction { get; set; }
-  
 }

@@ -1,12 +1,11 @@
 namespace DocumentModel.Wordprocessing;
 
 /// <summary>
-/// Table Grid.
+///   Table Grid.
 /// </summary>
-public partial class TableGrid
+public class TableGrid
 {
-  public Collection<DocumentModel.Wordprocessing.GridColumn>? GridColumns { get; set; }
-  
-  public DocumentModel.Wordprocessing.TableGridChange? TableGridChange { get; set; }
-  
+  public Collection<GridColumn>? GridColumns { get; set; }
+
+  public TableGridChange? TableGridChange { get; set; }
 }

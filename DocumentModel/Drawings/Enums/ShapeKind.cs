@@ -1,943 +1,942 @@
 namespace DocumentModel.Drawings;
 
 /// <summary>
-/// Preset Shape Types
+///   Preset Shape Types
 /// </summary>
 public enum ShapeKind
 {
   /// <summary>
-  /// Line Shape.
+  ///   Line Shape.
   /// </summary>
   Line,
-  
+
   /// <summary>
-  /// Line Inverse Shape.
+  ///   Line Inverse Shape.
   /// </summary>
   LineInverse,
-  
+
   /// <summary>
-  /// Triangle Shape.
+  ///   Triangle Shape.
   /// </summary>
   Triangle,
-  
+
   /// <summary>
-  /// Right Triangle Shape.
+  ///   Right Triangle Shape.
   /// </summary>
   RightTriangle,
-  
+
   /// <summary>
-  /// Rectangle Shape.
+  ///   Rectangle Shape.
   /// </summary>
   Rectangle,
-  
+
   /// <summary>
-  /// Diamond Shape.
+  ///   Diamond Shape.
   /// </summary>
   Diamond,
-  
+
   /// <summary>
-  /// Parallelogram Shape.
+  ///   Parallelogram Shape.
   /// </summary>
   Parallelogram,
-  
+
   /// <summary>
-  /// Trapezoid Shape.
+  ///   Trapezoid Shape.
   /// </summary>
   Trapezoid,
-  
+
   /// <summary>
-  /// Non-Isosceles Trapezoid Shape.
+  ///   Non-Isosceles Trapezoid Shape.
   /// </summary>
   NonIsoscelesTrapezoid,
-  
+
   /// <summary>
-  /// Pentagon Shape.
+  ///   Pentagon Shape.
   /// </summary>
   Pentagon,
-  
+
   /// <summary>
-  /// Hexagon Shape.
+  ///   Hexagon Shape.
   /// </summary>
   Hexagon,
-  
+
   /// <summary>
-  /// Heptagon Shape.
+  ///   Heptagon Shape.
   /// </summary>
   Heptagon,
-  
+
   /// <summary>
-  /// Octagon Shape.
+  ///   Octagon Shape.
   /// </summary>
   Octagon,
-  
+
   /// <summary>
-  /// Decagon Shape.
+  ///   Decagon Shape.
   /// </summary>
   Decagon,
-  
+
   /// <summary>
-  /// Dodecagon Shape.
+  ///   Dodecagon Shape.
   /// </summary>
   Dodecagon,
-  
+
   /// <summary>
-  /// Four Pointed Star Shape.
+  ///   Four Pointed Star Shape.
   /// </summary>
   Star4,
-  
+
   /// <summary>
-  /// Five Pointed Star Shape.
+  ///   Five Pointed Star Shape.
   /// </summary>
   Star5,
-  
+
   /// <summary>
-  /// Six Pointed Star Shape.
+  ///   Six Pointed Star Shape.
   /// </summary>
   Star6,
-  
+
   /// <summary>
-  /// Seven Pointed Star Shape.
+  ///   Seven Pointed Star Shape.
   /// </summary>
   Star7,
-  
+
   /// <summary>
-  /// Eight Pointed Star Shape.
+  ///   Eight Pointed Star Shape.
   /// </summary>
   Star8,
-  
+
   /// <summary>
-  /// Ten Pointed Star Shape.
+  ///   Ten Pointed Star Shape.
   /// </summary>
   Star10,
-  
+
   /// <summary>
-  /// Twelve Pointed Star Shape.
+  ///   Twelve Pointed Star Shape.
   /// </summary>
   Star12,
-  
+
   /// <summary>
-  /// Sixteen Pointed Star Shape.
+  ///   Sixteen Pointed Star Shape.
   /// </summary>
   Star16,
-  
+
   /// <summary>
-  /// Twenty Four Pointed Star Shape.
+  ///   Twenty Four Pointed Star Shape.
   /// </summary>
   Star24,
-  
+
   /// <summary>
-  /// Thirty Two Pointed Star Shape.
+  ///   Thirty Two Pointed Star Shape.
   /// </summary>
   Star32,
-  
+
   /// <summary>
-  /// Round Corner Rectangle Shape.
+  ///   Round Corner Rectangle Shape.
   /// </summary>
   RoundRectangle,
-  
+
   /// <summary>
-  /// One Round Corner Rectangle Shape.
+  ///   One Round Corner Rectangle Shape.
   /// </summary>
   Round1Rectangle,
-  
+
   /// <summary>
-  /// Two Same-side Round Corner Rectangle Shape.
+  ///   Two Same-side Round Corner Rectangle Shape.
   /// </summary>
   Round2SameRectangle,
-  
+
   /// <summary>
-  /// Two Diagonal Round Corner Rectangle Shape.
+  ///   Two Diagonal Round Corner Rectangle Shape.
   /// </summary>
   Round2DiagonalRectangle,
-  
+
   /// <summary>
-  /// One Snip One Round Corner Rectangle Shape.
+  ///   One Snip One Round Corner Rectangle Shape.
   /// </summary>
   SnipRoundRectangle,
-  
+
   /// <summary>
-  /// One Snip Corner Rectangle Shape.
+  ///   One Snip Corner Rectangle Shape.
   /// </summary>
   Snip1Rectangle,
-  
+
   /// <summary>
-  /// Two Same-side Snip Corner Rectangle Shape.
+  ///   Two Same-side Snip Corner Rectangle Shape.
   /// </summary>
   Snip2SameRectangle,
-  
+
   /// <summary>
-  /// Two Diagonal Snip Corner Rectangle Shape.
+  ///   Two Diagonal Snip Corner Rectangle Shape.
   /// </summary>
   Snip2DiagonalRectangle,
-  
+
   /// <summary>
-  /// Plaque Shape.
+  ///   Plaque Shape.
   /// </summary>
   Plaque,
-  
+
   /// <summary>
-  /// Ellipse Shape.
+  ///   Ellipse Shape.
   /// </summary>
   Ellipse,
-  
+
   /// <summary>
-  /// Teardrop Shape.
+  ///   Teardrop Shape.
   /// </summary>
   Teardrop,
-  
+
   /// <summary>
-  /// Home Plate Shape.
+  ///   Home Plate Shape.
   /// </summary>
   HomePlate,
-  
+
   /// <summary>
-  /// Chevron Shape.
+  ///   Chevron Shape.
   /// </summary>
   Chevron,
-  
+
   /// <summary>
-  /// Pie Wedge Shape.
+  ///   Pie Wedge Shape.
   /// </summary>
   PieWedge,
-  
+
   /// <summary>
-  /// Pie Shape.
+  ///   Pie Shape.
   /// </summary>
   Pie,
-  
+
   /// <summary>
-  /// Block Arc Shape.
+  ///   Block Arc Shape.
   /// </summary>
   BlockArc,
-  
+
   /// <summary>
-  /// Donut Shape.
+  ///   Donut Shape.
   /// </summary>
   Donut,
-  
+
   /// <summary>
-  /// No Smoking Shape.
+  ///   No Smoking Shape.
   /// </summary>
   NoSmoking,
-  
+
   /// <summary>
-  /// Right Arrow Shape.
+  ///   Right Arrow Shape.
   /// </summary>
   RightArrow,
-  
+
   /// <summary>
-  /// Left Arrow Shape.
+  ///   Left Arrow Shape.
   /// </summary>
   LeftArrow,
-  
+
   /// <summary>
-  /// Up Arrow Shape.
+  ///   Up Arrow Shape.
   /// </summary>
   UpArrow,
-  
+
   /// <summary>
-  /// Down Arrow Shape.
+  ///   Down Arrow Shape.
   /// </summary>
   DownArrow,
-  
+
   /// <summary>
-  /// Striped Right Arrow Shape.
+  ///   Striped Right Arrow Shape.
   /// </summary>
   StripedRightArrow,
-  
+
   /// <summary>
-  /// Notched Right Arrow Shape.
+  ///   Notched Right Arrow Shape.
   /// </summary>
   NotchedRightArrow,
-  
+
   /// <summary>
-  /// Bent Up Arrow Shape.
+  ///   Bent Up Arrow Shape.
   /// </summary>
   BentUpArrow,
-  
+
   /// <summary>
-  /// Left Right Arrow Shape.
+  ///   Left Right Arrow Shape.
   /// </summary>
   LeftRightArrow,
-  
+
   /// <summary>
-  /// Up Down Arrow Shape.
+  ///   Up Down Arrow Shape.
   /// </summary>
   UpDownArrow,
-  
+
   /// <summary>
-  /// Left Up Arrow Shape.
+  ///   Left Up Arrow Shape.
   /// </summary>
   LeftUpArrow,
-  
+
   /// <summary>
-  /// Left Right Up Arrow Shape.
+  ///   Left Right Up Arrow Shape.
   /// </summary>
   LeftRightUpArrow,
-  
+
   /// <summary>
-  /// Quad-Arrow Shape.
+  ///   Quad-Arrow Shape.
   /// </summary>
   QuadArrow,
-  
+
   /// <summary>
-  /// Callout Left Arrow Shape.
+  ///   Callout Left Arrow Shape.
   /// </summary>
   LeftArrowCallout,
-  
+
   /// <summary>
-  /// Callout Right Arrow Shape.
+  ///   Callout Right Arrow Shape.
   /// </summary>
   RightArrowCallout,
-  
+
   /// <summary>
-  /// Callout Up Arrow Shape.
+  ///   Callout Up Arrow Shape.
   /// </summary>
   UpArrowCallout,
-  
+
   /// <summary>
-  /// Callout Down Arrow Shape.
+  ///   Callout Down Arrow Shape.
   /// </summary>
   DownArrowCallout,
-  
+
   /// <summary>
-  /// Callout Left Right Arrow Shape.
+  ///   Callout Left Right Arrow Shape.
   /// </summary>
   LeftRightArrowCallout,
-  
+
   /// <summary>
-  /// Callout Up Down Arrow Shape.
+  ///   Callout Up Down Arrow Shape.
   /// </summary>
   UpDownArrowCallout,
-  
+
   /// <summary>
-  /// Callout Quad-Arrow Shape.
+  ///   Callout Quad-Arrow Shape.
   /// </summary>
   QuadArrowCallout,
-  
+
   /// <summary>
-  /// Bent Arrow Shape.
+  ///   Bent Arrow Shape.
   /// </summary>
   BentArrow,
-  
+
   /// <summary>
-  /// U-Turn Arrow Shape.
+  ///   U-Turn Arrow Shape.
   /// </summary>
   UTurnArrow,
-  
+
   /// <summary>
-  /// Circular Arrow Shape.
+  ///   Circular Arrow Shape.
   /// </summary>
   CircularArrow,
-  
+
   /// <summary>
-  /// Left Circular Arrow Shape.
+  ///   Left Circular Arrow Shape.
   /// </summary>
   LeftCircularArrow,
-  
+
   /// <summary>
-  /// Left Right Circular Arrow Shape.
+  ///   Left Right Circular Arrow Shape.
   /// </summary>
   LeftRightCircularArrow,
-  
+
   /// <summary>
-  /// Curved Right Arrow Shape.
+  ///   Curved Right Arrow Shape.
   /// </summary>
   CurvedRightArrow,
-  
+
   /// <summary>
-  /// Curved Left Arrow Shape.
+  ///   Curved Left Arrow Shape.
   /// </summary>
   CurvedLeftArrow,
-  
+
   /// <summary>
-  /// Curved Up Arrow Shape.
+  ///   Curved Up Arrow Shape.
   /// </summary>
   CurvedUpArrow,
-  
+
   /// <summary>
-  /// Curved Down Arrow Shape.
+  ///   Curved Down Arrow Shape.
   /// </summary>
   CurvedDownArrow,
-  
+
   /// <summary>
-  /// Swoosh Arrow Shape.
+  ///   Swoosh Arrow Shape.
   /// </summary>
   SwooshArrow,
-  
+
   /// <summary>
-  /// Cube Shape.
+  ///   Cube Shape.
   /// </summary>
   Cube,
-  
+
   /// <summary>
-  /// Can Shape.
+  ///   Can Shape.
   /// </summary>
   Can,
-  
+
   /// <summary>
-  /// Lightning Bolt Shape.
+  ///   Lightning Bolt Shape.
   /// </summary>
   LightningBolt,
-  
+
   /// <summary>
-  /// Heart Shape.
+  ///   Heart Shape.
   /// </summary>
   Heart,
-  
+
   /// <summary>
-  /// Sun Shape.
+  ///   Sun Shape.
   /// </summary>
   Sun,
-  
+
   /// <summary>
-  /// Moon Shape.
+  ///   Moon Shape.
   /// </summary>
   Moon,
-  
+
   /// <summary>
-  /// Smiley Face Shape.
+  ///   Smiley Face Shape.
   /// </summary>
   SmileyFace,
-  
+
   /// <summary>
-  /// Irregular Seal 1 Shape.
+  ///   Irregular Seal 1 Shape.
   /// </summary>
   IrregularSeal1,
-  
+
   /// <summary>
-  /// Irregular Seal 2 Shape.
+  ///   Irregular Seal 2 Shape.
   /// </summary>
   IrregularSeal2,
-  
+
   /// <summary>
-  /// Folded Corner Shape.
+  ///   Folded Corner Shape.
   /// </summary>
   FoldedCorner,
-  
+
   /// <summary>
-  /// Bevel Shape.
+  ///   Bevel Shape.
   /// </summary>
   Bevel,
-  
+
   /// <summary>
-  /// Frame Shape.
+  ///   Frame Shape.
   /// </summary>
   Frame,
-  
+
   /// <summary>
-  /// Half Frame Shape.
+  ///   Half Frame Shape.
   /// </summary>
   HalfFrame,
-  
+
   /// <summary>
-  /// Corner Shape.
+  ///   Corner Shape.
   /// </summary>
   Corner,
-  
+
   /// <summary>
-  /// Diagonal Stripe Shape.
+  ///   Diagonal Stripe Shape.
   /// </summary>
   DiagonalStripe,
-  
+
   /// <summary>
-  /// Chord Shape.
+  ///   Chord Shape.
   /// </summary>
   Chord,
-  
+
   /// <summary>
-  /// Curved Arc Shape.
+  ///   Curved Arc Shape.
   /// </summary>
   Arc,
-  
+
   /// <summary>
-  /// Left Bracket Shape.
+  ///   Left Bracket Shape.
   /// </summary>
   LeftBracket,
-  
+
   /// <summary>
-  /// Right Bracket Shape.
+  ///   Right Bracket Shape.
   /// </summary>
   RightBracket,
-  
+
   /// <summary>
-  /// Left Brace Shape.
+  ///   Left Brace Shape.
   /// </summary>
   LeftBrace,
-  
+
   /// <summary>
-  /// Right Brace Shape.
+  ///   Right Brace Shape.
   /// </summary>
   RightBrace,
-  
+
   /// <summary>
-  /// Bracket Pair Shape.
+  ///   Bracket Pair Shape.
   /// </summary>
   BracketPair,
-  
+
   /// <summary>
-  /// Brace Pair Shape.
+  ///   Brace Pair Shape.
   /// </summary>
   BracePair,
-  
+
   /// <summary>
-  /// Straight Connector 1 Shape.
+  ///   Straight Connector 1 Shape.
   /// </summary>
   StraightConnector1,
-  
+
   /// <summary>
-  /// Bent Connector 2 Shape.
+  ///   Bent Connector 2 Shape.
   /// </summary>
   BentConnector2,
-  
+
   /// <summary>
-  /// Bent Connector 3 Shape.
+  ///   Bent Connector 3 Shape.
   /// </summary>
   BentConnector3,
-  
+
   /// <summary>
-  /// Bent Connector 4 Shape.
+  ///   Bent Connector 4 Shape.
   /// </summary>
   BentConnector4,
-  
+
   /// <summary>
-  /// Bent Connector 5 Shape.
+  ///   Bent Connector 5 Shape.
   /// </summary>
   BentConnector5,
-  
+
   /// <summary>
-  /// Curved Connector 2 Shape.
+  ///   Curved Connector 2 Shape.
   /// </summary>
   CurvedConnector2,
-  
+
   /// <summary>
-  /// Curved Connector 3 Shape.
+  ///   Curved Connector 3 Shape.
   /// </summary>
   CurvedConnector3,
-  
+
   /// <summary>
-  /// Curved Connector 4 Shape.
+  ///   Curved Connector 4 Shape.
   /// </summary>
   CurvedConnector4,
-  
+
   /// <summary>
-  /// Curved Connector 5 Shape.
+  ///   Curved Connector 5 Shape.
   /// </summary>
   CurvedConnector5,
-  
+
   /// <summary>
-  /// Callout 1 Shape.
+  ///   Callout 1 Shape.
   /// </summary>
   Callout1,
-  
+
   /// <summary>
-  /// Callout 2 Shape.
+  ///   Callout 2 Shape.
   /// </summary>
   Callout2,
-  
+
   /// <summary>
-  /// Callout 3 Shape.
+  ///   Callout 3 Shape.
   /// </summary>
   Callout3,
-  
+
   /// <summary>
-  /// Callout 1 Shape.
+  ///   Callout 1 Shape.
   /// </summary>
   AccentCallout1,
-  
+
   /// <summary>
-  /// Callout 2 Shape.
+  ///   Callout 2 Shape.
   /// </summary>
   AccentCallout2,
-  
+
   /// <summary>
-  /// Callout 3 Shape.
+  ///   Callout 3 Shape.
   /// </summary>
   AccentCallout3,
-  
+
   /// <summary>
-  /// Callout 1 with Border Shape.
+  ///   Callout 1 with Border Shape.
   /// </summary>
   BorderCallout1,
-  
+
   /// <summary>
-  /// Callout 2 with Border Shape.
+  ///   Callout 2 with Border Shape.
   /// </summary>
   BorderCallout2,
-  
+
   /// <summary>
-  /// Callout 3 with Border Shape.
+  ///   Callout 3 with Border Shape.
   /// </summary>
   BorderCallout3,
-  
+
   /// <summary>
-  /// Callout 1 with Border and Accent Shape.
+  ///   Callout 1 with Border and Accent Shape.
   /// </summary>
   AccentBorderCallout1,
-  
+
   /// <summary>
-  /// Callout 2 with Border and Accent Shape.
+  ///   Callout 2 with Border and Accent Shape.
   /// </summary>
   AccentBorderCallout2,
-  
+
   /// <summary>
-  /// Callout 3 with Border and Accent Shape.
+  ///   Callout 3 with Border and Accent Shape.
   /// </summary>
   AccentBorderCallout3,
-  
+
   /// <summary>
-  /// Callout Wedge Rectangle Shape.
+  ///   Callout Wedge Rectangle Shape.
   /// </summary>
   WedgeRectangleCallout,
-  
+
   /// <summary>
-  /// Callout Wedge Round Rectangle Shape.
+  ///   Callout Wedge Round Rectangle Shape.
   /// </summary>
   WedgeRoundRectangleCallout,
-  
+
   /// <summary>
-  /// Callout Wedge Ellipse Shape.
+  ///   Callout Wedge Ellipse Shape.
   /// </summary>
   WedgeEllipseCallout,
-  
+
   /// <summary>
-  /// Callout Cloud Shape.
+  ///   Callout Cloud Shape.
   /// </summary>
   CloudCallout,
-  
+
   /// <summary>
-  /// Cloud Shape.
+  ///   Cloud Shape.
   /// </summary>
   Cloud,
-  
+
   /// <summary>
-  /// Ribbon Shape.
+  ///   Ribbon Shape.
   /// </summary>
   Ribbon,
-  
+
   /// <summary>
-  /// Ribbon 2 Shape.
+  ///   Ribbon 2 Shape.
   /// </summary>
   Ribbon2,
-  
+
   /// <summary>
-  /// Ellipse Ribbon Shape.
+  ///   Ellipse Ribbon Shape.
   /// </summary>
   EllipseRibbon,
-  
+
   /// <summary>
-  /// Ellipse Ribbon 2 Shape.
+  ///   Ellipse Ribbon 2 Shape.
   /// </summary>
   EllipseRibbon2,
-  
+
   /// <summary>
-  /// Left Right Ribbon Shape.
+  ///   Left Right Ribbon Shape.
   /// </summary>
   LeftRightRibbon,
-  
+
   /// <summary>
-  /// Vertical Scroll Shape.
+  ///   Vertical Scroll Shape.
   /// </summary>
   VerticalScroll,
-  
+
   /// <summary>
-  /// Horizontal Scroll Shape.
+  ///   Horizontal Scroll Shape.
   /// </summary>
   HorizontalScroll,
-  
+
   /// <summary>
-  /// Wave Shape.
+  ///   Wave Shape.
   /// </summary>
   Wave,
-  
+
   /// <summary>
-  /// Double Wave Shape.
+  ///   Double Wave Shape.
   /// </summary>
   DoubleWave,
-  
+
   /// <summary>
-  /// Plus Shape.
+  ///   Plus Shape.
   /// </summary>
   Plus,
-  
+
   /// <summary>
-  /// Process Flow Shape.
+  ///   Process Flow Shape.
   /// </summary>
   FlowChartProcess,
-  
+
   /// <summary>
-  /// Decision Flow Shape.
+  ///   Decision Flow Shape.
   /// </summary>
   FlowChartDecision,
-  
+
   /// <summary>
-  /// Input Output Flow Shape.
+  ///   Input Output Flow Shape.
   /// </summary>
   FlowChartInputOutput,
-  
+
   /// <summary>
-  /// Predefined Process Flow Shape.
+  ///   Predefined Process Flow Shape.
   /// </summary>
   FlowChartPredefinedProcess,
-  
+
   /// <summary>
-  /// Internal Storage Flow Shape.
+  ///   Internal Storage Flow Shape.
   /// </summary>
   FlowChartInternalStorage,
-  
+
   /// <summary>
-  /// Document Flow Shape.
+  ///   Document Flow Shape.
   /// </summary>
   FlowChartDocument,
-  
+
   /// <summary>
-  /// Multi-Document Flow Shape.
+  ///   Multi-Document Flow Shape.
   /// </summary>
   FlowChartMultidocument,
-  
+
   /// <summary>
-  /// Terminator Flow Shape.
+  ///   Terminator Flow Shape.
   /// </summary>
   FlowChartTerminator,
-  
+
   /// <summary>
-  /// Preparation Flow Shape.
+  ///   Preparation Flow Shape.
   /// </summary>
   FlowChartPreparation,
-  
+
   /// <summary>
-  /// Manual Input Flow Shape.
+  ///   Manual Input Flow Shape.
   /// </summary>
   FlowChartManualInput,
-  
+
   /// <summary>
-  /// Manual Operation Flow Shape.
+  ///   Manual Operation Flow Shape.
   /// </summary>
   FlowChartManualOperation,
-  
+
   /// <summary>
-  /// Connector Flow Shape.
+  ///   Connector Flow Shape.
   /// </summary>
   FlowChartConnector,
-  
+
   /// <summary>
-  /// Punched Card Flow Shape.
+  ///   Punched Card Flow Shape.
   /// </summary>
   FlowChartPunchedCard,
-  
+
   /// <summary>
-  /// Punched Tape Flow Shape.
+  ///   Punched Tape Flow Shape.
   /// </summary>
   FlowChartPunchedTape,
-  
+
   /// <summary>
-  /// Summing Junction Flow Shape.
+  ///   Summing Junction Flow Shape.
   /// </summary>
   FlowChartSummingJunction,
-  
+
   /// <summary>
-  /// Or Flow Shape.
+  ///   Or Flow Shape.
   /// </summary>
   FlowChartOr,
-  
+
   /// <summary>
-  /// Collate Flow Shape.
+  ///   Collate Flow Shape.
   /// </summary>
   FlowChartCollate,
-  
+
   /// <summary>
-  /// Sort Flow Shape.
+  ///   Sort Flow Shape.
   /// </summary>
   FlowChartSort,
-  
+
   /// <summary>
-  /// Extract Flow Shape.
+  ///   Extract Flow Shape.
   /// </summary>
   FlowChartExtract,
-  
+
   /// <summary>
-  /// Merge Flow Shape.
+  ///   Merge Flow Shape.
   /// </summary>
   FlowChartMerge,
-  
+
   /// <summary>
-  /// Offline Storage Flow Shape.
+  ///   Offline Storage Flow Shape.
   /// </summary>
   FlowChartOfflineStorage,
-  
+
   /// <summary>
-  /// Online Storage Flow Shape.
+  ///   Online Storage Flow Shape.
   /// </summary>
   FlowChartOnlineStorage,
-  
+
   /// <summary>
-  /// Magnetic Tape Flow Shape.
+  ///   Magnetic Tape Flow Shape.
   /// </summary>
   FlowChartMagneticTape,
-  
+
   /// <summary>
-  /// Magnetic Disk Flow Shape.
+  ///   Magnetic Disk Flow Shape.
   /// </summary>
   FlowChartMagneticDisk,
-  
+
   /// <summary>
-  /// Magnetic Drum Flow Shape.
+  ///   Magnetic Drum Flow Shape.
   /// </summary>
   FlowChartMagneticDrum,
-  
+
   /// <summary>
-  /// Display Flow Shape.
+  ///   Display Flow Shape.
   /// </summary>
   FlowChartDisplay,
-  
+
   /// <summary>
-  /// Delay Flow Shape.
+  ///   Delay Flow Shape.
   /// </summary>
   FlowChartDelay,
-  
+
   /// <summary>
-  /// Alternate Process Flow Shape.
+  ///   Alternate Process Flow Shape.
   /// </summary>
   FlowChartAlternateProcess,
-  
+
   /// <summary>
-  /// Off-Page Connector Flow Shape.
+  ///   Off-Page Connector Flow Shape.
   /// </summary>
   FlowChartOffpageConnector,
-  
+
   /// <summary>
-  /// Blank Button Shape.
+  ///   Blank Button Shape.
   /// </summary>
   ActionButtonBlank,
-  
+
   /// <summary>
-  /// Home Button Shape.
+  ///   Home Button Shape.
   /// </summary>
   ActionButtonHome,
-  
+
   /// <summary>
-  /// Help Button Shape.
+  ///   Help Button Shape.
   /// </summary>
   ActionButtonHelp,
-  
+
   /// <summary>
-  /// Information Button Shape.
+  ///   Information Button Shape.
   /// </summary>
   ActionButtonInformation,
-  
+
   /// <summary>
-  /// Forward or Next Button Shape.
+  ///   Forward or Next Button Shape.
   /// </summary>
   ActionButtonForwardNext,
-  
+
   /// <summary>
-  /// Back or Previous Button Shape.
+  ///   Back or Previous Button Shape.
   /// </summary>
   ActionButtonBackPrevious,
-  
+
   /// <summary>
-  /// End Button Shape.
+  ///   End Button Shape.
   /// </summary>
   ActionButtonEnd,
-  
+
   /// <summary>
-  /// Beginning Button Shape.
+  ///   Beginning Button Shape.
   /// </summary>
   ActionButtonBeginning,
-  
+
   /// <summary>
-  /// Return Button Shape.
+  ///   Return Button Shape.
   /// </summary>
   ActionButtonReturn,
-  
+
   /// <summary>
-  /// Document Button Shape.
+  ///   Document Button Shape.
   /// </summary>
   ActionButtonDocument,
-  
+
   /// <summary>
-  /// Sound Button Shape.
+  ///   Sound Button Shape.
   /// </summary>
   ActionButtonSound,
-  
+
   /// <summary>
-  /// Movie Button Shape.
+  ///   Movie Button Shape.
   /// </summary>
   ActionButtonMovie,
-  
+
   /// <summary>
-  /// Gear 6 Shape.
+  ///   Gear 6 Shape.
   /// </summary>
   Gear6,
-  
+
   /// <summary>
-  /// Gear 9 Shape.
+  ///   Gear 9 Shape.
   /// </summary>
   Gear9,
-  
+
   /// <summary>
-  /// Funnel Shape.
+  ///   Funnel Shape.
   /// </summary>
   Funnel,
-  
+
   /// <summary>
-  /// Plus Math Shape.
+  ///   Plus Math Shape.
   /// </summary>
   MathPlus,
-  
+
   /// <summary>
-  /// Minus Math Shape.
+  ///   Minus Math Shape.
   /// </summary>
   MathMinus,
-  
+
   /// <summary>
-  /// Multiply Math Shape.
+  ///   Multiply Math Shape.
   /// </summary>
   MathMultiply,
-  
+
   /// <summary>
-  /// Divide Math Shape.
+  ///   Divide Math Shape.
   /// </summary>
   MathDivide,
-  
+
   /// <summary>
-  /// Equal Math Shape.
+  ///   Equal Math Shape.
   /// </summary>
   MathEqual,
-  
+
   /// <summary>
-  /// Not Equal Math Shape.
+  ///   Not Equal Math Shape.
   /// </summary>
   MathNotEqual,
-  
+
   /// <summary>
-  /// Corner Tabs Shape.
+  ///   Corner Tabs Shape.
   /// </summary>
   CornerTabs,
-  
+
   /// <summary>
-  /// Square Tabs Shape.
+  ///   Square Tabs Shape.
   /// </summary>
   SquareTabs,
-  
+
   /// <summary>
-  /// Plaque Tabs Shape.
+  ///   Plaque Tabs Shape.
   /// </summary>
   PlaqueTabs,
-  
+
   /// <summary>
-  /// Chart X Shape.
+  ///   Chart X Shape.
   /// </summary>
   ChartX,
-  
+
   /// <summary>
-  /// Chart Star Shape.
+  ///   Chart Star Shape.
   /// </summary>
   ChartStar,
-  
+
   /// <summary>
-  /// Chart Plus Shape.
+  ///   Chart Plus Shape.
   /// </summary>
-  ChartPlus,
-  
+  ChartPlus
 }

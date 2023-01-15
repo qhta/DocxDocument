@@ -1,19 +1,21 @@
+using DocumentFormat.OpenXml.Office2013.Word;
+
 namespace DocumentModel.OpenXml.Wordprocessing;
 
 /// <summary>
-/// Defines the PresenceInfo Class.
+///   Defines the PresenceInfo Class.
 /// </summary>
 public static class PresenceInfoConverter
 {
   /// <summary>
-  /// providerId, this property is only available in Office 2013 and later.
+  ///   providerId, this property is only available in Office 2013 and later.
   /// </summary>
-  public static String? GetProviderId(DocumentFormat.OpenXml.Office2013.Word.PresenceInfo? openXmlElement)
+  public static String? GetProviderId(PresenceInfo? openXmlElement)
   {
     return openXmlElement?.ProviderId?.Value;
   }
-  
-  public static void SetProviderId(DocumentFormat.OpenXml.Office2013.Word.PresenceInfo? openXmlElement, String? value)
+
+  public static void SetProviderId(PresenceInfo? openXmlElement, String? value)
   {
     if (openXmlElement != null)
       if (value != null)
@@ -21,16 +23,16 @@ public static class PresenceInfoConverter
       else
         openXmlElement.ProviderId = null;
   }
-  
+
   /// <summary>
-  /// userId, this property is only available in Office 2013 and later.
+  ///   userId, this property is only available in Office 2013 and later.
   /// </summary>
-  public static String? GetUserId(DocumentFormat.OpenXml.Office2013.Word.PresenceInfo? openXmlElement)
+  public static String? GetUserId(PresenceInfo? openXmlElement)
   {
     return openXmlElement?.UserId?.Value;
   }
-  
-  public static void SetUserId(DocumentFormat.OpenXml.Office2013.Word.PresenceInfo? openXmlElement, String? value)
+
+  public static void SetUserId(PresenceInfo? openXmlElement, String? value)
   {
     if (openXmlElement != null)
       if (value != null)
@@ -38,8 +40,8 @@ public static class PresenceInfoConverter
       else
         openXmlElement.UserId = null;
   }
-  
-  public static DocumentModel.Wordprocessing.PresenceInfo? CreateModelElement(DocumentFormat.OpenXml.Office2013.Word.PresenceInfo? openXmlElement)
+
+  public static DocumentModel.Wordprocessing.PresenceInfo? CreateModelElement(PresenceInfo? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -50,9 +52,9 @@ public static class PresenceInfoConverter
     }
     return null;
   }
-  
+
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.PresenceInfo? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Office2013.Word.PresenceInfo, new()
+    where OpenXmlElementType : PresenceInfo, new()
   {
     if (value != null)
     {

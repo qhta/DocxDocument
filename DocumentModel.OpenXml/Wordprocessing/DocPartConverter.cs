@@ -1,22 +1,25 @@
+using DocumentModel.Wordprocessing;
+using DocPart = DocumentFormat.OpenXml.Wordprocessing.DocPart;
+
 namespace DocumentModel.OpenXml.Wordprocessing;
 
 /// <summary>
-/// Glossary Document Entry.
+///   Glossary Document Entry.
 /// </summary>
 public static class DocPartConverter
 {
   /// <summary>
-  /// Glossary Document Entry Properties.
+  ///   Glossary Document Entry Properties.
   /// </summary>
-  public static DocumentModel.Wordprocessing.DocPartProperties? GetDocPartProperties(DocumentFormat.OpenXml.Wordprocessing.DocPart? openXmlElement)
+  public static DocPartProperties? GetDocPartProperties(DocPart? openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.DocPartProperties>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Wordprocessing.DocPartPropertiesConverter.CreateModelElement(itemElement);
+      return DocPartPropertiesConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetDocPartProperties(DocumentFormat.OpenXml.Wordprocessing.DocPart? openXmlElement, DocumentModel.Wordprocessing.DocPartProperties? value)
+
+  public static void SetDocPartProperties(DocPart? openXmlElement, DocPartProperties? value)
   {
     if (openXmlElement != null)
     {
@@ -25,25 +28,25 @@ public static class DocPartConverter
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Wordprocessing.DocPartPropertiesConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.DocPartProperties>(value);
+        itemElement = DocPartPropertiesConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.DocPartProperties>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
+
   /// <summary>
-  /// Contents of Glossary Document Entry.
+  ///   Contents of Glossary Document Entry.
   /// </summary>
-  public static DocumentModel.Wordprocessing.DocPartBody? GetDocPartBody(DocumentFormat.OpenXml.Wordprocessing.DocPart? openXmlElement)
+  public static DocPartBody? GetDocPartBody(DocPart? openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.DocPartBody>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Wordprocessing.DocPartBodyConverter.CreateModelElement(itemElement);
+      return DocPartBodyConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetDocPartBody(DocumentFormat.OpenXml.Wordprocessing.DocPart? openXmlElement, DocumentModel.Wordprocessing.DocPartBody? value)
+
+  public static void SetDocPartBody(DocPart? openXmlElement, DocPartBody? value)
   {
     if (openXmlElement != null)
     {
@@ -52,14 +55,14 @@ public static class DocPartConverter
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Wordprocessing.DocPartBodyConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.DocPartBody>(value);
+        itemElement = DocPartBodyConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.DocPartBody>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static DocumentModel.Wordprocessing.DocPart? CreateModelElement(DocumentFormat.OpenXml.Wordprocessing.DocPart? openXmlElement)
+
+  public static DocumentModel.Wordprocessing.DocPart? CreateModelElement(DocPart? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -70,9 +73,9 @@ public static class DocPartConverter
     }
     return null;
   }
-  
+
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.DocPart? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Wordprocessing.DocPart, new()
+    where OpenXmlElementType : DocPart, new()
   {
     if (value != null)
     {

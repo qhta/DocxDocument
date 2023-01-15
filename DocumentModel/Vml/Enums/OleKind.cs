@@ -1,18 +1,17 @@
 namespace DocumentModel.Vml;
 
 /// <summary>
-/// OLE Connection Type
+///   OLE Connection Type
 /// </summary>
 public enum OleKind
 {
   /// <summary>
-  /// Embedded Object.
+  ///   Embedded Object.
   /// </summary>
   Embed,
-  
+
   /// <summary>
-  /// Linked Object.
+  ///   Linked Object.
   /// </summary>
-  Link,
-  
+  Link
 }

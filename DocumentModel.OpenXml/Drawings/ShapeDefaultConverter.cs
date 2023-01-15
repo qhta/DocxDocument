@@ -1,19 +1,22 @@
+using DocumentModel.Drawings;
+using ShapeDefault = DocumentFormat.OpenXml.Drawing.ShapeDefault;
+
 namespace DocumentModel.OpenXml.Drawings;
 
 /// <summary>
-/// Shape Default.
+///   Shape Default.
 /// </summary>
 public static class ShapeDefaultConverter
 {
-  public static DocumentModel.Drawings.ShapeProperties? GetShapeProperties(DocumentFormat.OpenXml.Drawing.ShapeDefault? openXmlElement)
+  public static ShapeProperties? GetShapeProperties(ShapeDefault? openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.ShapeProperties>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.ShapePropertiesConverter.CreateModelElement(itemElement);
+      return ShapePropertiesConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetShapeProperties(DocumentFormat.OpenXml.Drawing.ShapeDefault? openXmlElement, DocumentModel.Drawings.ShapeProperties? value)
+
+  public static void SetShapeProperties(ShapeDefault? openXmlElement, ShapeProperties? value)
   {
     if (openXmlElement != null)
     {
@@ -22,22 +25,22 @@ public static class ShapeDefaultConverter
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Drawings.ShapePropertiesConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.ShapeProperties>(value);
+        itemElement = ShapePropertiesConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.ShapeProperties>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static DocumentModel.Drawings.BodyProperties? GetBodyProperties(DocumentFormat.OpenXml.Drawing.ShapeDefault? openXmlElement)
+
+  public static BodyProperties? GetBodyProperties(ShapeDefault? openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.BodyProperties>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.BodyPropertiesConverter.CreateModelElement(itemElement);
+      return BodyPropertiesConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetBodyProperties(DocumentFormat.OpenXml.Drawing.ShapeDefault? openXmlElement, DocumentModel.Drawings.BodyProperties? value)
+
+  public static void SetBodyProperties(ShapeDefault? openXmlElement, BodyProperties? value)
   {
     if (openXmlElement != null)
     {
@@ -46,22 +49,22 @@ public static class ShapeDefaultConverter
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Drawings.BodyPropertiesConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.BodyProperties>(value);
+        itemElement = BodyPropertiesConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.BodyProperties>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static DocumentModel.Drawings.ListStyle? GetListStyle(DocumentFormat.OpenXml.Drawing.ShapeDefault? openXmlElement)
+
+  public static ListStyle? GetListStyle(ShapeDefault? openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.ListStyle>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.ListStyleConverter.CreateModelElement(itemElement);
+      return ListStyleConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetListStyle(DocumentFormat.OpenXml.Drawing.ShapeDefault? openXmlElement, DocumentModel.Drawings.ListStyle? value)
+
+  public static void SetListStyle(ShapeDefault? openXmlElement, ListStyle? value)
   {
     if (openXmlElement != null)
     {
@@ -70,22 +73,22 @@ public static class ShapeDefaultConverter
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Drawings.ListStyleConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.ListStyle>(value);
+        itemElement = ListStyleConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.ListStyle>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static DocumentModel.Drawings.ShapeStyle? GetShapeStyle(DocumentFormat.OpenXml.Drawing.ShapeDefault? openXmlElement)
+
+  public static ShapeStyle? GetShapeStyle(ShapeDefault? openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.ShapeStyle>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.ShapeStyleConverter.CreateModelElement(itemElement);
+      return ShapeStyleConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetShapeStyle(DocumentFormat.OpenXml.Drawing.ShapeDefault? openXmlElement, DocumentModel.Drawings.ShapeStyle? value)
+
+  public static void SetShapeStyle(ShapeDefault? openXmlElement, ShapeStyle? value)
   {
     if (openXmlElement != null)
     {
@@ -94,22 +97,22 @@ public static class ShapeDefaultConverter
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Drawings.ShapeStyleConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.ShapeStyle>(value);
+        itemElement = ShapeStyleConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.ShapeStyle>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static DocumentModel.Drawings.ExtensionList? GetExtensionList(DocumentFormat.OpenXml.Drawing.ShapeDefault? openXmlElement)
+
+  public static DocumentModel.Drawings.ExtensionList? GetExtensionList(ShapeDefault? openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.ExtensionList>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.ExtensionListConverter.CreateModelElement(itemElement);
+      return ExtensionListConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetExtensionList(DocumentFormat.OpenXml.Drawing.ShapeDefault? openXmlElement, DocumentModel.Drawings.ExtensionList? value)
+
+  public static void SetExtensionList(ShapeDefault? openXmlElement, DocumentModel.Drawings.ExtensionList? value)
   {
     if (openXmlElement != null)
     {
@@ -118,14 +121,14 @@ public static class ShapeDefaultConverter
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Drawings.ExtensionListConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.ExtensionList>(value);
+        itemElement = ExtensionListConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.ExtensionList>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static DocumentModel.Drawings.ShapeDefault? CreateModelElement(DocumentFormat.OpenXml.Drawing.ShapeDefault? openXmlElement)
+
+  public static DocumentModel.Drawings.ShapeDefault? CreateModelElement(ShapeDefault? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -139,9 +142,9 @@ public static class ShapeDefaultConverter
     }
     return null;
   }
-  
+
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.ShapeDefault? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.ShapeDefault, new()
+    where OpenXmlElementType : ShapeDefault, new()
   {
     if (value != null)
     {

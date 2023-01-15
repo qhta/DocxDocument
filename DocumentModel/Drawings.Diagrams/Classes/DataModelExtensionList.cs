@@ -1,10 +1,9 @@
 namespace DocumentModel.Drawings.Diagrams;
 
 /// <summary>
-/// Defines the DataModelExtensionList Class.
+///   Defines the DataModelExtensionList Class.
 /// </summary>
-public partial class DataModelExtensionList
+public class DataModelExtensionList
 {
-  public Collection<DocumentModel.Drawings.DataModelExtension>? DataModelExtensions { get; set; }
-  
+  public Collection<DataModelExtension>? DataModelExtensions { get; set; }
 }

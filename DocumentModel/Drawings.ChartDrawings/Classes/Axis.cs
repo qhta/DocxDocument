@@ -1,44 +1,43 @@
 namespace DocumentModel.Drawings.ChartDrawings;
 
 /// <summary>
-/// Defines the Axis Class.
+///   Defines the Axis Class.
 /// </summary>
-public partial class Axis
+public class Axis
 {
   /// <summary>
-  /// id, this property is only available in Office 2016 and later.
+  ///   id, this property is only available in Office 2016 and later.
   /// </summary>
   public UInt32? Id { get; set; }
-  
+
   /// <summary>
-  /// hidden, this property is only available in Office 2016 and later.
+  ///   hidden, this property is only available in Office 2016 and later.
   /// </summary>
   public Boolean? Hidden { get; set; }
-  
-  public DocumentModel.Drawings.ChartDrawings.CategoryAxisScaling? CategoryAxisScaling { get; set; }
-  
-  public DocumentModel.Drawings.ChartDrawings.ValueAxisScaling? ValueAxisScaling { get; set; }
-  
-  public DocumentModel.Drawings.ChartDrawings.AxisTitle? AxisTitle { get; set; }
-  
-  public DocumentModel.Drawings.ChartDrawings.AxisUnits? AxisUnits { get; set; }
-  
-  public DocumentModel.Drawings.ChartDrawings.MajorGridlinesGridlines? MajorGridlinesGridlines { get; set; }
-  
-  public DocumentModel.Drawings.ChartDrawings.MinorGridlinesGridlines? MinorGridlinesGridlines { get; set; }
-  
-  public DocumentModel.Drawings.ChartDrawings.MajorTickMarksTickMarks? MajorTickMarksTickMarks { get; set; }
-  
-  public DocumentModel.Drawings.ChartDrawings.MinorTickMarksTickMarks? MinorTickMarksTickMarks { get; set; }
-  
-  public DocumentModel.Drawings.ChartDrawings.TickLabels? TickLabels { get; set; }
-  
-  public DocumentModel.Drawings.ChartDrawings.NumberFormat? NumberFormat { get; set; }
-  
-  public DocumentModel.Drawings.ChartDrawings.ShapeProperties? ShapeProperties { get; set; }
-  
-  public DocumentModel.Drawings.ChartDrawings.TxPrTextBody? TxPrTextBody { get; set; }
-  
-  public DocumentModel.Drawings.ChartDrawings.ExtensionList? ExtensionList { get; set; }
-  
+
+  public CategoryAxisScaling? CategoryAxisScaling { get; set; }
+
+  public ValueAxisScaling? ValueAxisScaling { get; set; }
+
+  public AxisTitle? AxisTitle { get; set; }
+
+  public AxisUnits? AxisUnits { get; set; }
+
+  public MajorGridlinesGridlines? MajorGridlinesGridlines { get; set; }
+
+  public MinorGridlinesGridlines? MinorGridlinesGridlines { get; set; }
+
+  public MajorTickMarksTickMarks? MajorTickMarksTickMarks { get; set; }
+
+  public MinorTickMarksTickMarks? MinorTickMarksTickMarks { get; set; }
+
+  public TickLabels? TickLabels { get; set; }
+
+  public NumberFormat? NumberFormat { get; set; }
+
+  public ShapeProperties? ShapeProperties { get; set; }
+
+  public TxPrTextBody? TxPrTextBody { get; set; }
+
+  public ExtensionList? ExtensionList { get; set; }
 }

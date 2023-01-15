@@ -1,39 +1,42 @@
+using DocumentModel.Drawings.ChartsStyle;
+using MarkerLayoutProperties = DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.MarkerLayoutProperties;
+
 namespace DocumentModel.OpenXml.Drawings.ChartsStyle;
 
 /// <summary>
-/// Defines the MarkerLayoutProperties Class.
+///   Defines the MarkerLayoutProperties Class.
 /// </summary>
 public static class MarkerLayoutPropertiesConverter
 {
   /// <summary>
-  /// symbol, this property is only available in Office 2013 and later.
+  ///   symbol, this property is only available in Office 2013 and later.
   /// </summary>
-  public static DocumentModel.Drawings.ChartsStyle.MarkerStyle? GetSymbol(DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.MarkerLayoutProperties? openXmlElement)
+  public static MarkerStyle? GetSymbol(MarkerLayoutProperties? openXmlElement)
   {
-    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.MarkerStyle, DocumentModel.Drawings.ChartsStyle.MarkerStyle>(openXmlElement?.Symbol?.Value);
+    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.MarkerStyle, MarkerStyle>(openXmlElement?.Symbol?.Value);
   }
-  
-  public static void SetSymbol(DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.MarkerLayoutProperties? openXmlElement, DocumentModel.Drawings.ChartsStyle.MarkerStyle? value)
+
+  public static void SetSymbol(MarkerLayoutProperties? openXmlElement, MarkerStyle? value)
   {
     if (openXmlElement != null)
-      openXmlElement.Symbol = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.MarkerStyle, DocumentModel.Drawings.ChartsStyle.MarkerStyle>(value);
+      openXmlElement.Symbol = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.MarkerStyle, MarkerStyle>(value);
   }
-  
+
   /// <summary>
-  /// size, this property is only available in Office 2013 and later.
+  ///   size, this property is only available in Office 2013 and later.
   /// </summary>
-  public static Byte? GetSize(DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.MarkerLayoutProperties? openXmlElement)
+  public static Byte? GetSize(MarkerLayoutProperties? openXmlElement)
   {
     return openXmlElement?.Size?.Value;
   }
-  
-  public static void SetSize(DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.MarkerLayoutProperties? openXmlElement, Byte? value)
+
+  public static void SetSize(MarkerLayoutProperties? openXmlElement, Byte? value)
   {
     if (openXmlElement != null)
       openXmlElement.Size = value;
   }
-  
-  public static DocumentModel.Drawings.ChartsStyle.MarkerLayoutProperties? CreateModelElement(DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.MarkerLayoutProperties? openXmlElement)
+
+  public static DocumentModel.Drawings.ChartsStyle.MarkerLayoutProperties? CreateModelElement(MarkerLayoutProperties? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -44,9 +47,9 @@ public static class MarkerLayoutPropertiesConverter
     }
     return null;
   }
-  
+
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.ChartsStyle.MarkerLayoutProperties? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.MarkerLayoutProperties, new()
+    where OpenXmlElementType : MarkerLayoutProperties, new()
   {
     if (value != null)
     {

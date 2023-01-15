@@ -1,81 +1,87 @@
+using DocumentFormat.OpenXml.Wordprocessing;
+using DocumentModel.Wordprocessing;
+using Shading = DocumentModel.Wordprocessing.Shading;
+using TableBorders = DocumentModel.Wordprocessing.TableBorders;
+using TableCellMarginDefault = DocumentModel.Wordprocessing.TableCellMarginDefault;
+using TableIndentation = DocumentModel.Wordprocessing.TableIndentation;
+using TableStyleConditionalFormattingTableProperties = DocumentFormat.OpenXml.Wordprocessing.TableStyleConditionalFormattingTableProperties;
+using TableWidthType = DocumentModel.Wordprocessing.TableWidthType;
+
 namespace DocumentModel.OpenXml.Wordprocessing;
 
 /// <summary>
-/// Table Style Conditional Formatting Table Properties.
+///   Table Style Conditional Formatting Table Properties.
 /// </summary>
 public static class TableStyleConditionalFormattingTablePropertiesConverter
 {
   /// <summary>
-  /// TableJustification.
+  ///   TableJustification.
   /// </summary>
-  public static DocumentModel.Wordprocessing.TableRowAlignmentKind? GetTableJustification(DocumentFormat.OpenXml.Wordprocessing.TableStyleConditionalFormattingTableProperties? openXmlElement)
+  public static TableRowAlignmentKind? GetTableJustification(TableStyleConditionalFormattingTableProperties? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.TableJustification>();
-      if (itemElement?.Val?.Value != null)
-      {
-        return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Wordprocessing.TableRowAlignmentValues, DocumentModel.Wordprocessing.TableRowAlignmentKind>(itemElement.Val.Value);
-      }
+      var itemElement = openXmlElement.GetFirstChild<TableJustification>();
+      if (itemElement?.Val?.Value != null) return EnumValueConverter.GetValue<TableRowAlignmentValues, TableRowAlignmentKind>(itemElement.Val.Value);
     }
     return null;
   }
-  
-  public static void SetTableJustification(DocumentFormat.OpenXml.Wordprocessing.TableStyleConditionalFormattingTableProperties? openXmlElement, DocumentModel.Wordprocessing.TableRowAlignmentKind? value)
+
+  public static void SetTableJustification(TableStyleConditionalFormattingTableProperties? openXmlElement, TableRowAlignmentKind? value)
   {
     if (openXmlElement != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.TableJustification>();
+      var itemElement = openXmlElement.GetFirstChild<TableJustification>();
       if (itemElement != null)
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = EnumValueConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.TableJustification, DocumentFormat.OpenXml.Wordprocessing.TableRowAlignmentValues, DocumentModel.Wordprocessing.TableRowAlignmentKind>(value);
+        itemElement = EnumValueConverter.CreateOpenXmlElement<TableJustification, TableRowAlignmentValues, TableRowAlignmentKind>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
+
   /// <summary>
-  /// TableCellSpacing.
+  ///   TableCellSpacing.
   /// </summary>
-  public static DocumentModel.Wordprocessing.TableWidthType? GetTableCellSpacing(DocumentFormat.OpenXml.Wordprocessing.TableStyleConditionalFormattingTableProperties? openXmlElement)
+  public static TableWidthType? GetTableCellSpacing(TableStyleConditionalFormattingTableProperties? openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.TableCellSpacing>();
+    var itemElement = openXmlElement?.GetFirstChild<TableCellSpacing>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Wordprocessing.TableWidthTypeConverter.CreateModelElement(itemElement);
+      return TableWidthTypeConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetTableCellSpacing(DocumentFormat.OpenXml.Wordprocessing.TableStyleConditionalFormattingTableProperties? openXmlElement, DocumentModel.Wordprocessing.TableWidthType? value)
+
+  public static void SetTableCellSpacing(TableStyleConditionalFormattingTableProperties? openXmlElement, TableWidthType? value)
   {
     if (openXmlElement != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.TableCellSpacing>();
+      var itemElement = openXmlElement.GetFirstChild<TableCellSpacing>();
       if (itemElement != null)
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Wordprocessing.TableWidthTypeConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.TableCellSpacing>(value);
+        itemElement = TableWidthTypeConverter.CreateOpenXmlElement<TableCellSpacing>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
+
   /// <summary>
-  /// TableIndentation.
+  ///   TableIndentation.
   /// </summary>
-  public static DocumentModel.Wordprocessing.TableIndentation? GetTableIndentation(DocumentFormat.OpenXml.Wordprocessing.TableStyleConditionalFormattingTableProperties? openXmlElement)
+  public static TableIndentation? GetTableIndentation(TableStyleConditionalFormattingTableProperties? openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.TableIndentation>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Wordprocessing.TableIndentationConverter.CreateModelElement(itemElement);
+      return TableIndentationConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetTableIndentation(DocumentFormat.OpenXml.Wordprocessing.TableStyleConditionalFormattingTableProperties? openXmlElement, DocumentModel.Wordprocessing.TableIndentation? value)
+
+  public static void SetTableIndentation(TableStyleConditionalFormattingTableProperties? openXmlElement, TableIndentation? value)
   {
     if (openXmlElement != null)
     {
@@ -84,25 +90,25 @@ public static class TableStyleConditionalFormattingTablePropertiesConverter
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Wordprocessing.TableIndentationConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.TableIndentation>(value);
+        itemElement = TableIndentationConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.TableIndentation>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
+
   /// <summary>
-  /// TableBorders.
+  ///   TableBorders.
   /// </summary>
-  public static DocumentModel.Wordprocessing.TableBorders? GetTableBorders(DocumentFormat.OpenXml.Wordprocessing.TableStyleConditionalFormattingTableProperties? openXmlElement)
+  public static TableBorders? GetTableBorders(TableStyleConditionalFormattingTableProperties? openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.TableBorders>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Wordprocessing.TableBordersConverter.CreateModelElement(itemElement);
+      return TableBordersConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetTableBorders(DocumentFormat.OpenXml.Wordprocessing.TableStyleConditionalFormattingTableProperties? openXmlElement, DocumentModel.Wordprocessing.TableBorders? value)
+
+  public static void SetTableBorders(TableStyleConditionalFormattingTableProperties? openXmlElement, TableBorders? value)
   {
     if (openXmlElement != null)
     {
@@ -111,25 +117,25 @@ public static class TableStyleConditionalFormattingTablePropertiesConverter
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Wordprocessing.TableBordersConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.TableBorders>(value);
+        itemElement = TableBordersConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.TableBorders>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
+
   /// <summary>
-  /// Shading.
+  ///   Shading.
   /// </summary>
-  public static DocumentModel.Wordprocessing.Shading? GetShading(DocumentFormat.OpenXml.Wordprocessing.TableStyleConditionalFormattingTableProperties? openXmlElement)
+  public static Shading? GetShading(TableStyleConditionalFormattingTableProperties? openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.Shading>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Wordprocessing.ShadingConverter.CreateModelElement(itemElement);
+      return ShadingConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetShading(DocumentFormat.OpenXml.Wordprocessing.TableStyleConditionalFormattingTableProperties? openXmlElement, DocumentModel.Wordprocessing.Shading? value)
+
+  public static void SetShading(TableStyleConditionalFormattingTableProperties? openXmlElement, Shading? value)
   {
     if (openXmlElement != null)
     {
@@ -138,25 +144,25 @@ public static class TableStyleConditionalFormattingTablePropertiesConverter
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Wordprocessing.ShadingConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.Shading>(value);
+        itemElement = ShadingConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.Shading>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
+
   /// <summary>
-  /// TableCellMarginDefault.
+  ///   TableCellMarginDefault.
   /// </summary>
-  public static DocumentModel.Wordprocessing.TableCellMarginDefault? GetTableCellMarginDefault(DocumentFormat.OpenXml.Wordprocessing.TableStyleConditionalFormattingTableProperties? openXmlElement)
+  public static TableCellMarginDefault? GetTableCellMarginDefault(TableStyleConditionalFormattingTableProperties? openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.TableCellMarginDefault>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Wordprocessing.TableCellMarginDefaultConverter.CreateModelElement(itemElement);
+      return TableCellMarginDefaultConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetTableCellMarginDefault(DocumentFormat.OpenXml.Wordprocessing.TableStyleConditionalFormattingTableProperties? openXmlElement, DocumentModel.Wordprocessing.TableCellMarginDefault? value)
+
+  public static void SetTableCellMarginDefault(TableStyleConditionalFormattingTableProperties? openXmlElement, TableCellMarginDefault? value)
   {
     if (openXmlElement != null)
     {
@@ -165,14 +171,14 @@ public static class TableStyleConditionalFormattingTablePropertiesConverter
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Wordprocessing.TableCellMarginDefaultConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.TableCellMarginDefault>(value);
+        itemElement = TableCellMarginDefaultConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.TableCellMarginDefault>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static DocumentModel.Wordprocessing.TableStyleConditionalFormattingTableProperties? CreateModelElement(DocumentFormat.OpenXml.Wordprocessing.TableStyleConditionalFormattingTableProperties? openXmlElement)
+
+  public static DocumentModel.Wordprocessing.TableStyleConditionalFormattingTableProperties? CreateModelElement(TableStyleConditionalFormattingTableProperties? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -187,9 +193,9 @@ public static class TableStyleConditionalFormattingTablePropertiesConverter
     }
     return null;
   }
-  
+
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.TableStyleConditionalFormattingTableProperties? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Wordprocessing.TableStyleConditionalFormattingTableProperties, new()
+    where OpenXmlElementType : TableStyleConditionalFormattingTableProperties, new()
   {
     if (value != null)
     {

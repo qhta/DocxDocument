@@ -1,19 +1,22 @@
+using DocumentFormat.OpenXml.Office.CustomUI;
+using UnsizedButton = DocumentModel.UI.UnsizedButton;
+
 namespace DocumentModel.OpenXml.UI;
 
 /// <summary>
-/// Defines the DropDown Class.
+///   Defines the DropDown Class.
 /// </summary>
 public static class DropDownConverter
 {
   /// <summary>
-  /// onAction
+  ///   onAction
   /// </summary>
-  public static String? GetOnAction(DocumentFormat.OpenXml.Office.CustomUI.DropDown? openXmlElement)
+  public static String? GetOnAction(DropDown? openXmlElement)
   {
     return openXmlElement?.OnAction?.Value;
   }
-  
-  public static void SetOnAction(DocumentFormat.OpenXml.Office.CustomUI.DropDown? openXmlElement, String? value)
+
+  public static void SetOnAction(DropDown? openXmlElement, String? value)
   {
     if (openXmlElement != null)
       if (value != null)
@@ -21,16 +24,16 @@ public static class DropDownConverter
       else
         openXmlElement.OnAction = null;
   }
-  
+
   /// <summary>
-  /// enabled
+  ///   enabled
   /// </summary>
-  public static Boolean? GetEnabled(DocumentFormat.OpenXml.Office.CustomUI.DropDown? openXmlElement)
+  public static Boolean? GetEnabled(DropDown? openXmlElement)
   {
     return openXmlElement?.Enabled?.Value;
   }
-  
-  public static void SetEnabled(DocumentFormat.OpenXml.Office.CustomUI.DropDown? openXmlElement, Boolean? value)
+
+  public static void SetEnabled(DropDown? openXmlElement, Boolean? value)
   {
     if (openXmlElement != null)
       if (value != null)
@@ -38,16 +41,16 @@ public static class DropDownConverter
       else
         openXmlElement.Enabled = null;
   }
-  
+
   /// <summary>
-  /// getEnabled
+  ///   getEnabled
   /// </summary>
-  public static String? GetGetEnabled(DocumentFormat.OpenXml.Office.CustomUI.DropDown? openXmlElement)
+  public static String? GetGetEnabled(DropDown? openXmlElement)
   {
     return openXmlElement?.GetEnabled?.Value;
   }
-  
-  public static void SetGetEnabled(DocumentFormat.OpenXml.Office.CustomUI.DropDown? openXmlElement, String? value)
+
+  public static void SetGetEnabled(DropDown? openXmlElement, String? value)
   {
     if (openXmlElement != null)
       if (value != null)
@@ -55,16 +58,16 @@ public static class DropDownConverter
       else
         openXmlElement.GetEnabled = null;
   }
-  
+
   /// <summary>
-  /// image
+  ///   image
   /// </summary>
-  public static String? GetImage(DocumentFormat.OpenXml.Office.CustomUI.DropDown? openXmlElement)
+  public static String? GetImage(DropDown? openXmlElement)
   {
     return openXmlElement?.Image?.Value;
   }
-  
-  public static void SetImage(DocumentFormat.OpenXml.Office.CustomUI.DropDown? openXmlElement, String? value)
+
+  public static void SetImage(DropDown? openXmlElement, String? value)
   {
     if (openXmlElement != null)
       if (value != null)
@@ -72,16 +75,16 @@ public static class DropDownConverter
       else
         openXmlElement.Image = null;
   }
-  
+
   /// <summary>
-  /// imageMso
+  ///   imageMso
   /// </summary>
-  public static String? GetImageMso(DocumentFormat.OpenXml.Office.CustomUI.DropDown? openXmlElement)
+  public static String? GetImageMso(DropDown? openXmlElement)
   {
     return openXmlElement?.ImageMso?.Value;
   }
-  
-  public static void SetImageMso(DocumentFormat.OpenXml.Office.CustomUI.DropDown? openXmlElement, String? value)
+
+  public static void SetImageMso(DropDown? openXmlElement, String? value)
   {
     if (openXmlElement != null)
       if (value != null)
@@ -89,16 +92,16 @@ public static class DropDownConverter
       else
         openXmlElement.ImageMso = null;
   }
-  
+
   /// <summary>
-  /// getImage
+  ///   getImage
   /// </summary>
-  public static String? GetGetImage(DocumentFormat.OpenXml.Office.CustomUI.DropDown? openXmlElement)
+  public static String? GetGetImage(DropDown? openXmlElement)
   {
     return openXmlElement?.GetImage?.Value;
   }
-  
-  public static void SetGetImage(DocumentFormat.OpenXml.Office.CustomUI.DropDown? openXmlElement, String? value)
+
+  public static void SetGetImage(DropDown? openXmlElement, String? value)
   {
     if (openXmlElement != null)
       if (value != null)
@@ -106,16 +109,16 @@ public static class DropDownConverter
       else
         openXmlElement.GetImage = null;
   }
-  
+
   /// <summary>
-  /// showItemImage
+  ///   showItemImage
   /// </summary>
-  public static Boolean? GetShowItemImage(DocumentFormat.OpenXml.Office.CustomUI.DropDown? openXmlElement)
+  public static Boolean? GetShowItemImage(DropDown? openXmlElement)
   {
     return openXmlElement?.ShowItemImage?.Value;
   }
-  
-  public static void SetShowItemImage(DocumentFormat.OpenXml.Office.CustomUI.DropDown? openXmlElement, Boolean? value)
+
+  public static void SetShowItemImage(DropDown? openXmlElement, Boolean? value)
   {
     if (openXmlElement != null)
       if (value != null)
@@ -123,16 +126,16 @@ public static class DropDownConverter
       else
         openXmlElement.ShowItemImage = null;
   }
-  
+
   /// <summary>
-  /// getItemCount
+  ///   getItemCount
   /// </summary>
-  public static String? GetGetItemCount(DocumentFormat.OpenXml.Office.CustomUI.DropDown? openXmlElement)
+  public static String? GetGetItemCount(DropDown? openXmlElement)
   {
     return openXmlElement?.GetItemCount?.Value;
   }
-  
-  public static void SetGetItemCount(DocumentFormat.OpenXml.Office.CustomUI.DropDown? openXmlElement, String? value)
+
+  public static void SetGetItemCount(DropDown? openXmlElement, String? value)
   {
     if (openXmlElement != null)
       if (value != null)
@@ -140,16 +143,16 @@ public static class DropDownConverter
       else
         openXmlElement.GetItemCount = null;
   }
-  
+
   /// <summary>
-  /// getItemLabel
+  ///   getItemLabel
   /// </summary>
-  public static String? GetGetItemLabel(DocumentFormat.OpenXml.Office.CustomUI.DropDown? openXmlElement)
+  public static String? GetGetItemLabel(DropDown? openXmlElement)
   {
     return openXmlElement?.GetItemLabel?.Value;
   }
-  
-  public static void SetGetItemLabel(DocumentFormat.OpenXml.Office.CustomUI.DropDown? openXmlElement, String? value)
+
+  public static void SetGetItemLabel(DropDown? openXmlElement, String? value)
   {
     if (openXmlElement != null)
       if (value != null)
@@ -157,16 +160,16 @@ public static class DropDownConverter
       else
         openXmlElement.GetItemLabel = null;
   }
-  
+
   /// <summary>
-  /// getItemScreentip
+  ///   getItemScreentip
   /// </summary>
-  public static String? GetGetItemScreentip(DocumentFormat.OpenXml.Office.CustomUI.DropDown? openXmlElement)
+  public static String? GetGetItemScreentip(DropDown? openXmlElement)
   {
     return openXmlElement?.GetItemScreentip?.Value;
   }
-  
-  public static void SetGetItemScreentip(DocumentFormat.OpenXml.Office.CustomUI.DropDown? openXmlElement, String? value)
+
+  public static void SetGetItemScreentip(DropDown? openXmlElement, String? value)
   {
     if (openXmlElement != null)
       if (value != null)
@@ -174,16 +177,16 @@ public static class DropDownConverter
       else
         openXmlElement.GetItemScreentip = null;
   }
-  
+
   /// <summary>
-  /// getItemSupertip
+  ///   getItemSupertip
   /// </summary>
-  public static String? GetGetItemSupertip(DocumentFormat.OpenXml.Office.CustomUI.DropDown? openXmlElement)
+  public static String? GetGetItemSupertip(DropDown? openXmlElement)
   {
     return openXmlElement?.GetItemSupertip?.Value;
   }
-  
-  public static void SetGetItemSupertip(DocumentFormat.OpenXml.Office.CustomUI.DropDown? openXmlElement, String? value)
+
+  public static void SetGetItemSupertip(DropDown? openXmlElement, String? value)
   {
     if (openXmlElement != null)
       if (value != null)
@@ -191,16 +194,16 @@ public static class DropDownConverter
       else
         openXmlElement.GetItemSupertip = null;
   }
-  
+
   /// <summary>
-  /// getItemImage
+  ///   getItemImage
   /// </summary>
-  public static String? GetGetItemImage(DocumentFormat.OpenXml.Office.CustomUI.DropDown? openXmlElement)
+  public static String? GetGetItemImage(DropDown? openXmlElement)
   {
     return openXmlElement?.GetItemImage?.Value;
   }
-  
-  public static void SetGetItemImage(DocumentFormat.OpenXml.Office.CustomUI.DropDown? openXmlElement, String? value)
+
+  public static void SetGetItemImage(DropDown? openXmlElement, String? value)
   {
     if (openXmlElement != null)
       if (value != null)
@@ -208,16 +211,16 @@ public static class DropDownConverter
       else
         openXmlElement.GetItemImage = null;
   }
-  
+
   /// <summary>
-  /// getItemID
+  ///   getItemID
   /// </summary>
-  public static String? GetGetItemID(DocumentFormat.OpenXml.Office.CustomUI.DropDown? openXmlElement)
+  public static String? GetGetItemID(DropDown? openXmlElement)
   {
     return openXmlElement?.GetItemID?.Value;
   }
-  
-  public static void SetGetItemID(DocumentFormat.OpenXml.Office.CustomUI.DropDown? openXmlElement, String? value)
+
+  public static void SetGetItemID(DropDown? openXmlElement, String? value)
   {
     if (openXmlElement != null)
       if (value != null)
@@ -225,16 +228,16 @@ public static class DropDownConverter
       else
         openXmlElement.GetItemID = null;
   }
-  
+
   /// <summary>
-  /// sizeString
+  ///   sizeString
   /// </summary>
-  public static String? GetSizeString(DocumentFormat.OpenXml.Office.CustomUI.DropDown? openXmlElement)
+  public static String? GetSizeString(DropDown? openXmlElement)
   {
     return openXmlElement?.SizeString?.Value;
   }
-  
-  public static void SetSizeString(DocumentFormat.OpenXml.Office.CustomUI.DropDown? openXmlElement, String? value)
+
+  public static void SetSizeString(DropDown? openXmlElement, String? value)
   {
     if (openXmlElement != null)
       if (value != null)
@@ -242,16 +245,16 @@ public static class DropDownConverter
       else
         openXmlElement.SizeString = null;
   }
-  
+
   /// <summary>
-  /// getSelectedItemID
+  ///   getSelectedItemID
   /// </summary>
-  public static String? GetGetSelectedItemID(DocumentFormat.OpenXml.Office.CustomUI.DropDown? openXmlElement)
+  public static String? GetGetSelectedItemID(DropDown? openXmlElement)
   {
     return openXmlElement?.GetSelectedItemID?.Value;
   }
-  
-  public static void SetGetSelectedItemID(DocumentFormat.OpenXml.Office.CustomUI.DropDown? openXmlElement, String? value)
+
+  public static void SetGetSelectedItemID(DropDown? openXmlElement, String? value)
   {
     if (openXmlElement != null)
       if (value != null)
@@ -259,16 +262,16 @@ public static class DropDownConverter
       else
         openXmlElement.GetSelectedItemID = null;
   }
-  
+
   /// <summary>
-  /// getSelectedItemIndex
+  ///   getSelectedItemIndex
   /// </summary>
-  public static String? GetGetSelectedItemIndex(DocumentFormat.OpenXml.Office.CustomUI.DropDown? openXmlElement)
+  public static String? GetGetSelectedItemIndex(DropDown? openXmlElement)
   {
     return openXmlElement?.GetSelectedItemIndex?.Value;
   }
-  
-  public static void SetGetSelectedItemIndex(DocumentFormat.OpenXml.Office.CustomUI.DropDown? openXmlElement, String? value)
+
+  public static void SetGetSelectedItemIndex(DropDown? openXmlElement, String? value)
   {
     if (openXmlElement != null)
       if (value != null)
@@ -276,16 +279,16 @@ public static class DropDownConverter
       else
         openXmlElement.GetSelectedItemIndex = null;
   }
-  
+
   /// <summary>
-  /// showItemLabel
+  ///   showItemLabel
   /// </summary>
-  public static Boolean? GetShowItemLabel(DocumentFormat.OpenXml.Office.CustomUI.DropDown? openXmlElement)
+  public static Boolean? GetShowItemLabel(DropDown? openXmlElement)
   {
     return openXmlElement?.ShowItemLabel?.Value;
   }
-  
-  public static void SetShowItemLabel(DocumentFormat.OpenXml.Office.CustomUI.DropDown? openXmlElement, Boolean? value)
+
+  public static void SetShowItemLabel(DropDown? openXmlElement, Boolean? value)
   {
     if (openXmlElement != null)
       if (value != null)
@@ -293,16 +296,16 @@ public static class DropDownConverter
       else
         openXmlElement.ShowItemLabel = null;
   }
-  
+
   /// <summary>
-  /// id
+  ///   id
   /// </summary>
-  public static String? GetId(DocumentFormat.OpenXml.Office.CustomUI.DropDown? openXmlElement)
+  public static String? GetId(DropDown? openXmlElement)
   {
     return openXmlElement?.Id?.Value;
   }
-  
-  public static void SetId(DocumentFormat.OpenXml.Office.CustomUI.DropDown? openXmlElement, String? value)
+
+  public static void SetId(DropDown? openXmlElement, String? value)
   {
     if (openXmlElement != null)
       if (value != null)
@@ -310,16 +313,16 @@ public static class DropDownConverter
       else
         openXmlElement.Id = null;
   }
-  
+
   /// <summary>
-  /// idQ
+  ///   idQ
   /// </summary>
-  public static String? GetIdQ(DocumentFormat.OpenXml.Office.CustomUI.DropDown? openXmlElement)
+  public static String? GetIdQ(DropDown? openXmlElement)
   {
     return openXmlElement?.IdQ?.Value;
   }
-  
-  public static void SetIdQ(DocumentFormat.OpenXml.Office.CustomUI.DropDown? openXmlElement, String? value)
+
+  public static void SetIdQ(DropDown? openXmlElement, String? value)
   {
     if (openXmlElement != null)
       if (value != null)
@@ -327,16 +330,16 @@ public static class DropDownConverter
       else
         openXmlElement.IdQ = null;
   }
-  
+
   /// <summary>
-  /// idMso
+  ///   idMso
   /// </summary>
-  public static String? GetIdMso(DocumentFormat.OpenXml.Office.CustomUI.DropDown? openXmlElement)
+  public static String? GetIdMso(DropDown? openXmlElement)
   {
     return openXmlElement?.IdMso?.Value;
   }
-  
-  public static void SetIdMso(DocumentFormat.OpenXml.Office.CustomUI.DropDown? openXmlElement, String? value)
+
+  public static void SetIdMso(DropDown? openXmlElement, String? value)
   {
     if (openXmlElement != null)
       if (value != null)
@@ -344,16 +347,16 @@ public static class DropDownConverter
       else
         openXmlElement.IdMso = null;
   }
-  
+
   /// <summary>
-  /// tag
+  ///   tag
   /// </summary>
-  public static String? GetTag(DocumentFormat.OpenXml.Office.CustomUI.DropDown? openXmlElement)
+  public static String? GetTag(DropDown? openXmlElement)
   {
     return openXmlElement?.Tag?.Value;
   }
-  
-  public static void SetTag(DocumentFormat.OpenXml.Office.CustomUI.DropDown? openXmlElement, String? value)
+
+  public static void SetTag(DropDown? openXmlElement, String? value)
   {
     if (openXmlElement != null)
       if (value != null)
@@ -361,16 +364,16 @@ public static class DropDownConverter
       else
         openXmlElement.Tag = null;
   }
-  
+
   /// <summary>
-  /// screentip
+  ///   screentip
   /// </summary>
-  public static String? GetScreentip(DocumentFormat.OpenXml.Office.CustomUI.DropDown? openXmlElement)
+  public static String? GetScreentip(DropDown? openXmlElement)
   {
     return openXmlElement?.Screentip?.Value;
   }
-  
-  public static void SetScreentip(DocumentFormat.OpenXml.Office.CustomUI.DropDown? openXmlElement, String? value)
+
+  public static void SetScreentip(DropDown? openXmlElement, String? value)
   {
     if (openXmlElement != null)
       if (value != null)
@@ -378,16 +381,16 @@ public static class DropDownConverter
       else
         openXmlElement.Screentip = null;
   }
-  
+
   /// <summary>
-  /// getScreentip
+  ///   getScreentip
   /// </summary>
-  public static String? GetGetScreentip(DocumentFormat.OpenXml.Office.CustomUI.DropDown? openXmlElement)
+  public static String? GetGetScreentip(DropDown? openXmlElement)
   {
     return openXmlElement?.GetScreentip?.Value;
   }
-  
-  public static void SetGetScreentip(DocumentFormat.OpenXml.Office.CustomUI.DropDown? openXmlElement, String? value)
+
+  public static void SetGetScreentip(DropDown? openXmlElement, String? value)
   {
     if (openXmlElement != null)
       if (value != null)
@@ -395,16 +398,16 @@ public static class DropDownConverter
       else
         openXmlElement.GetScreentip = null;
   }
-  
+
   /// <summary>
-  /// supertip
+  ///   supertip
   /// </summary>
-  public static String? GetSupertip(DocumentFormat.OpenXml.Office.CustomUI.DropDown? openXmlElement)
+  public static String? GetSupertip(DropDown? openXmlElement)
   {
     return openXmlElement?.Supertip?.Value;
   }
-  
-  public static void SetSupertip(DocumentFormat.OpenXml.Office.CustomUI.DropDown? openXmlElement, String? value)
+
+  public static void SetSupertip(DropDown? openXmlElement, String? value)
   {
     if (openXmlElement != null)
       if (value != null)
@@ -412,16 +415,16 @@ public static class DropDownConverter
       else
         openXmlElement.Supertip = null;
   }
-  
+
   /// <summary>
-  /// getSupertip
+  ///   getSupertip
   /// </summary>
-  public static String? GetGetSupertip(DocumentFormat.OpenXml.Office.CustomUI.DropDown? openXmlElement)
+  public static String? GetGetSupertip(DropDown? openXmlElement)
   {
     return openXmlElement?.GetSupertip?.Value;
   }
-  
-  public static void SetGetSupertip(DocumentFormat.OpenXml.Office.CustomUI.DropDown? openXmlElement, String? value)
+
+  public static void SetGetSupertip(DropDown? openXmlElement, String? value)
   {
     if (openXmlElement != null)
       if (value != null)
@@ -429,16 +432,16 @@ public static class DropDownConverter
       else
         openXmlElement.GetSupertip = null;
   }
-  
+
   /// <summary>
-  /// label
+  ///   label
   /// </summary>
-  public static String? GetLabel(DocumentFormat.OpenXml.Office.CustomUI.DropDown? openXmlElement)
+  public static String? GetLabel(DropDown? openXmlElement)
   {
     return openXmlElement?.Label?.Value;
   }
-  
-  public static void SetLabel(DocumentFormat.OpenXml.Office.CustomUI.DropDown? openXmlElement, String? value)
+
+  public static void SetLabel(DropDown? openXmlElement, String? value)
   {
     if (openXmlElement != null)
       if (value != null)
@@ -446,16 +449,16 @@ public static class DropDownConverter
       else
         openXmlElement.Label = null;
   }
-  
+
   /// <summary>
-  /// getLabel
+  ///   getLabel
   /// </summary>
-  public static String? GetGetLabel(DocumentFormat.OpenXml.Office.CustomUI.DropDown? openXmlElement)
+  public static String? GetGetLabel(DropDown? openXmlElement)
   {
     return openXmlElement?.GetLabel?.Value;
   }
-  
-  public static void SetGetLabel(DocumentFormat.OpenXml.Office.CustomUI.DropDown? openXmlElement, String? value)
+
+  public static void SetGetLabel(DropDown? openXmlElement, String? value)
   {
     if (openXmlElement != null)
       if (value != null)
@@ -463,16 +466,16 @@ public static class DropDownConverter
       else
         openXmlElement.GetLabel = null;
   }
-  
+
   /// <summary>
-  /// insertAfterMso
+  ///   insertAfterMso
   /// </summary>
-  public static String? GetInsertAfterMso(DocumentFormat.OpenXml.Office.CustomUI.DropDown? openXmlElement)
+  public static String? GetInsertAfterMso(DropDown? openXmlElement)
   {
     return openXmlElement?.InsertAfterMso?.Value;
   }
-  
-  public static void SetInsertAfterMso(DocumentFormat.OpenXml.Office.CustomUI.DropDown? openXmlElement, String? value)
+
+  public static void SetInsertAfterMso(DropDown? openXmlElement, String? value)
   {
     if (openXmlElement != null)
       if (value != null)
@@ -480,16 +483,16 @@ public static class DropDownConverter
       else
         openXmlElement.InsertAfterMso = null;
   }
-  
+
   /// <summary>
-  /// insertBeforeMso
+  ///   insertBeforeMso
   /// </summary>
-  public static String? GetInsertBeforeMso(DocumentFormat.OpenXml.Office.CustomUI.DropDown? openXmlElement)
+  public static String? GetInsertBeforeMso(DropDown? openXmlElement)
   {
     return openXmlElement?.InsertBeforeMso?.Value;
   }
-  
-  public static void SetInsertBeforeMso(DocumentFormat.OpenXml.Office.CustomUI.DropDown? openXmlElement, String? value)
+
+  public static void SetInsertBeforeMso(DropDown? openXmlElement, String? value)
   {
     if (openXmlElement != null)
       if (value != null)
@@ -497,16 +500,16 @@ public static class DropDownConverter
       else
         openXmlElement.InsertBeforeMso = null;
   }
-  
+
   /// <summary>
-  /// insertAfterQ
+  ///   insertAfterQ
   /// </summary>
-  public static String? GetInsertAfterQ(DocumentFormat.OpenXml.Office.CustomUI.DropDown? openXmlElement)
+  public static String? GetInsertAfterQ(DropDown? openXmlElement)
   {
     return openXmlElement?.InsertAfterQ?.Value;
   }
-  
-  public static void SetInsertAfterQ(DocumentFormat.OpenXml.Office.CustomUI.DropDown? openXmlElement, String? value)
+
+  public static void SetInsertAfterQ(DropDown? openXmlElement, String? value)
   {
     if (openXmlElement != null)
       if (value != null)
@@ -514,16 +517,16 @@ public static class DropDownConverter
       else
         openXmlElement.InsertAfterQ = null;
   }
-  
+
   /// <summary>
-  /// insertBeforeQ
+  ///   insertBeforeQ
   /// </summary>
-  public static String? GetInsertBeforeQ(DocumentFormat.OpenXml.Office.CustomUI.DropDown? openXmlElement)
+  public static String? GetInsertBeforeQ(DropDown? openXmlElement)
   {
     return openXmlElement?.InsertBeforeQ?.Value;
   }
-  
-  public static void SetInsertBeforeQ(DocumentFormat.OpenXml.Office.CustomUI.DropDown? openXmlElement, String? value)
+
+  public static void SetInsertBeforeQ(DropDown? openXmlElement, String? value)
   {
     if (openXmlElement != null)
       if (value != null)
@@ -531,16 +534,16 @@ public static class DropDownConverter
       else
         openXmlElement.InsertBeforeQ = null;
   }
-  
+
   /// <summary>
-  /// visible
+  ///   visible
   /// </summary>
-  public static Boolean? GetVisible(DocumentFormat.OpenXml.Office.CustomUI.DropDown? openXmlElement)
+  public static Boolean? GetVisible(DropDown? openXmlElement)
   {
     return openXmlElement?.Visible?.Value;
   }
-  
-  public static void SetVisible(DocumentFormat.OpenXml.Office.CustomUI.DropDown? openXmlElement, Boolean? value)
+
+  public static void SetVisible(DropDown? openXmlElement, Boolean? value)
   {
     if (openXmlElement != null)
       if (value != null)
@@ -548,16 +551,16 @@ public static class DropDownConverter
       else
         openXmlElement.Visible = null;
   }
-  
+
   /// <summary>
-  /// getVisible
+  ///   getVisible
   /// </summary>
-  public static String? GetGetVisible(DocumentFormat.OpenXml.Office.CustomUI.DropDown? openXmlElement)
+  public static String? GetGetVisible(DropDown? openXmlElement)
   {
     return openXmlElement?.GetVisible?.Value;
   }
-  
-  public static void SetGetVisible(DocumentFormat.OpenXml.Office.CustomUI.DropDown? openXmlElement, String? value)
+
+  public static void SetGetVisible(DropDown? openXmlElement, String? value)
   {
     if (openXmlElement != null)
       if (value != null)
@@ -565,16 +568,16 @@ public static class DropDownConverter
       else
         openXmlElement.GetVisible = null;
   }
-  
+
   /// <summary>
-  /// keytip
+  ///   keytip
   /// </summary>
-  public static String? GetKeytip(DocumentFormat.OpenXml.Office.CustomUI.DropDown? openXmlElement)
+  public static String? GetKeytip(DropDown? openXmlElement)
   {
     return openXmlElement?.Keytip?.Value;
   }
-  
-  public static void SetKeytip(DocumentFormat.OpenXml.Office.CustomUI.DropDown? openXmlElement, String? value)
+
+  public static void SetKeytip(DropDown? openXmlElement, String? value)
   {
     if (openXmlElement != null)
       if (value != null)
@@ -582,16 +585,16 @@ public static class DropDownConverter
       else
         openXmlElement.Keytip = null;
   }
-  
+
   /// <summary>
-  /// getKeytip
+  ///   getKeytip
   /// </summary>
-  public static String? GetGetKeytip(DocumentFormat.OpenXml.Office.CustomUI.DropDown? openXmlElement)
+  public static String? GetGetKeytip(DropDown? openXmlElement)
   {
     return openXmlElement?.GetKeytip?.Value;
   }
-  
-  public static void SetGetKeytip(DocumentFormat.OpenXml.Office.CustomUI.DropDown? openXmlElement, String? value)
+
+  public static void SetGetKeytip(DropDown? openXmlElement, String? value)
   {
     if (openXmlElement != null)
       if (value != null)
@@ -599,16 +602,16 @@ public static class DropDownConverter
       else
         openXmlElement.GetKeytip = null;
   }
-  
+
   /// <summary>
-  /// showLabel
+  ///   showLabel
   /// </summary>
-  public static Boolean? GetShowLabel(DocumentFormat.OpenXml.Office.CustomUI.DropDown? openXmlElement)
+  public static Boolean? GetShowLabel(DropDown? openXmlElement)
   {
     return openXmlElement?.ShowLabel?.Value;
   }
-  
-  public static void SetShowLabel(DocumentFormat.OpenXml.Office.CustomUI.DropDown? openXmlElement, Boolean? value)
+
+  public static void SetShowLabel(DropDown? openXmlElement, Boolean? value)
   {
     if (openXmlElement != null)
       if (value != null)
@@ -616,16 +619,16 @@ public static class DropDownConverter
       else
         openXmlElement.ShowLabel = null;
   }
-  
+
   /// <summary>
-  /// getShowLabel
+  ///   getShowLabel
   /// </summary>
-  public static String? GetGetShowLabel(DocumentFormat.OpenXml.Office.CustomUI.DropDown? openXmlElement)
+  public static String? GetGetShowLabel(DropDown? openXmlElement)
   {
     return openXmlElement?.GetShowLabel?.Value;
   }
-  
-  public static void SetGetShowLabel(DocumentFormat.OpenXml.Office.CustomUI.DropDown? openXmlElement, String? value)
+
+  public static void SetGetShowLabel(DropDown? openXmlElement, String? value)
   {
     if (openXmlElement != null)
       if (value != null)
@@ -633,16 +636,16 @@ public static class DropDownConverter
       else
         openXmlElement.GetShowLabel = null;
   }
-  
+
   /// <summary>
-  /// showImage
+  ///   showImage
   /// </summary>
-  public static Boolean? GetShowImage(DocumentFormat.OpenXml.Office.CustomUI.DropDown? openXmlElement)
+  public static Boolean? GetShowImage(DropDown? openXmlElement)
   {
     return openXmlElement?.ShowImage?.Value;
   }
-  
-  public static void SetShowImage(DocumentFormat.OpenXml.Office.CustomUI.DropDown? openXmlElement, Boolean? value)
+
+  public static void SetShowImage(DropDown? openXmlElement, Boolean? value)
   {
     if (openXmlElement != null)
       if (value != null)
@@ -650,16 +653,16 @@ public static class DropDownConverter
       else
         openXmlElement.ShowImage = null;
   }
-  
+
   /// <summary>
-  /// getShowImage
+  ///   getShowImage
   /// </summary>
-  public static String? GetGetShowImage(DocumentFormat.OpenXml.Office.CustomUI.DropDown? openXmlElement)
+  public static String? GetGetShowImage(DropDown? openXmlElement)
   {
     return openXmlElement?.GetShowImage?.Value;
   }
-  
-  public static void SetGetShowImage(DocumentFormat.OpenXml.Office.CustomUI.DropDown? openXmlElement, String? value)
+
+  public static void SetGetShowImage(DropDown? openXmlElement, String? value)
   {
     if (openXmlElement != null)
       if (value != null)
@@ -667,15 +670,15 @@ public static class DropDownConverter
       else
         openXmlElement.GetShowImage = null;
   }
-  
-  public static System.Collections.ObjectModel.Collection<DocumentModel.UI.Item>? GetItems(DocumentFormat.OpenXml.Office.CustomUI.DropDown? openXmlElement)
+
+  public static Collection<DocumentModel.UI.Item>? GetItems(DropDown? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var collection = new System.Collections.ObjectModel.Collection<DocumentModel.UI.Item>();
+      var collection = new Collection<DocumentModel.UI.Item>();
       foreach (var item in openXmlElement.Elements<DocumentFormat.OpenXml.Office.CustomUI.Item>())
       {
-        var newItem = DocumentModel.OpenXml.UI.ItemConverter.CreateModelElement(item);
+        var newItem = ItemConverter.CreateModelElement(item);
         if (newItem != null)
           collection.Add(newItem);
       }
@@ -683,32 +686,30 @@ public static class DropDownConverter
     }
     return null;
   }
-  
-  public static void SetItems(DocumentFormat.OpenXml.Office.CustomUI.DropDown? openXmlElement, System.Collections.ObjectModel.Collection<DocumentModel.UI.Item>? value)
+
+  public static void SetItems(DropDown? openXmlElement, Collection<DocumentModel.UI.Item>? value)
   {
     if (openXmlElement != null)
     {
       openXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Office.CustomUI.Item>();
       if (value != null)
-      {
         foreach (var item in value)
         {
-          var newItem = DocumentModel.OpenXml.UI.ItemConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office.CustomUI.Item>(item);
+          var newItem = ItemConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office.CustomUI.Item>(item);
           if (newItem != null)
             openXmlElement.AddChild(newItem);
         }
-      }
     }
   }
-  
-  public static System.Collections.ObjectModel.Collection<DocumentModel.UI.UnsizedButton>? GetUnsizedButtons(DocumentFormat.OpenXml.Office.CustomUI.DropDown? openXmlElement)
+
+  public static Collection<UnsizedButton>? GetUnsizedButtons(DropDown? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var collection = new System.Collections.ObjectModel.Collection<DocumentModel.UI.UnsizedButton>();
+      var collection = new Collection<UnsizedButton>();
       foreach (var item in openXmlElement.Elements<DocumentFormat.OpenXml.Office.CustomUI.UnsizedButton>())
       {
-        var newItem = DocumentModel.OpenXml.UI.UnsizedButtonConverter.CreateModelElement(item);
+        var newItem = UnsizedButtonConverter.CreateModelElement(item);
         if (newItem != null)
           collection.Add(newItem);
       }
@@ -716,25 +717,23 @@ public static class DropDownConverter
     }
     return null;
   }
-  
-  public static void SetUnsizedButtons(DocumentFormat.OpenXml.Office.CustomUI.DropDown? openXmlElement, System.Collections.ObjectModel.Collection<DocumentModel.UI.UnsizedButton>? value)
+
+  public static void SetUnsizedButtons(DropDown? openXmlElement, Collection<UnsizedButton>? value)
   {
     if (openXmlElement != null)
     {
       openXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Office.CustomUI.UnsizedButton>();
       if (value != null)
-      {
         foreach (var item in value)
         {
-          var newItem = DocumentModel.OpenXml.UI.UnsizedButtonConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office.CustomUI.UnsizedButton>(item);
+          var newItem = UnsizedButtonConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office.CustomUI.UnsizedButton>(item);
           if (newItem != null)
             openXmlElement.AddChild(newItem);
         }
-      }
     }
   }
-  
-  public static DocumentModel.UI.DropDown? CreateModelElement(DocumentFormat.OpenXml.Office.CustomUI.DropDown? openXmlElement)
+
+  public static DocumentModel.UI.DropDown? CreateModelElement(DropDown? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -784,9 +783,9 @@ public static class DropDownConverter
     }
     return null;
   }
-  
+
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.UI.DropDown? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Office.CustomUI.DropDown, new()
+    where OpenXmlElementType : DropDown, new()
   {
     if (value != null)
     {

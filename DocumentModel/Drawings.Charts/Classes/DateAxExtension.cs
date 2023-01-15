@@ -1,15 +1,14 @@
 namespace DocumentModel.Drawings.Charts;
 
 /// <summary>
-/// Defines the DateAxExtension Class.
+///   Defines the DateAxExtension Class.
 /// </summary>
-public partial class DateAxExtension
+public class DateAxExtension
 {
   /// <summary>
-  /// URI
+  ///   URI
   /// </summary>
   public String? Uri { get; set; }
-  
-  public DocumentModel.Drawings.Charts.NumberingFormat3? NumberingFormat { get; set; }
-  
+
+  public NumberingFormat3? NumberingFormat { get; set; }
 }

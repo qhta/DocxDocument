@@ -1,18 +1,17 @@
 namespace DocumentModel.Vml;
 
 /// <summary>
-/// Inset Margin Type
+///   Inset Margin Type
 /// </summary>
 public enum InsetMarginKind
 {
   /// <summary>
-  /// Automatic Margins.
+  ///   Automatic Margins.
   /// </summary>
   Auto,
-  
+
   /// <summary>
-  /// Custom Margins.
+  ///   Custom Margins.
   /// </summary>
-  Custom,
-  
+  Custom
 }

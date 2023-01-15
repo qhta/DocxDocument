@@ -1,93 +1,92 @@
 namespace DocumentModel.Wordprocessing;
 
 /// <summary>
-/// Defines the ThemeColorValues enumeration.
+///   Defines the ThemeColorValues enumeration.
 /// </summary>
 public enum ThemeColorKind
 {
   /// <summary>
-  /// Dark 1 Theme Color.
+  ///   Dark 1 Theme Color.
   /// </summary>
   Dark1,
-  
+
   /// <summary>
-  /// Light 1 Theme Color.
+  ///   Light 1 Theme Color.
   /// </summary>
   Light1,
-  
+
   /// <summary>
-  /// Dark 2 Theme Color.
+  ///   Dark 2 Theme Color.
   /// </summary>
   Dark2,
-  
+
   /// <summary>
-  /// Light 2 Theme Color.
+  ///   Light 2 Theme Color.
   /// </summary>
   Light2,
-  
+
   /// <summary>
-  /// Accent 1 Theme Color.
+  ///   Accent 1 Theme Color.
   /// </summary>
   Accent1,
-  
+
   /// <summary>
-  /// Accent 2 Theme Color.
+  ///   Accent 2 Theme Color.
   /// </summary>
   Accent2,
-  
+
   /// <summary>
-  /// Accent 3 Theme Color.
+  ///   Accent 3 Theme Color.
   /// </summary>
   Accent3,
-  
+
   /// <summary>
-  /// Accent 4 Theme Color.
+  ///   Accent 4 Theme Color.
   /// </summary>
   Accent4,
-  
+
   /// <summary>
-  /// Accent 5 Theme Color.
+  ///   Accent 5 Theme Color.
   /// </summary>
   Accent5,
-  
+
   /// <summary>
-  /// Accent 6 Theme Color.
+  ///   Accent 6 Theme Color.
   /// </summary>
   Accent6,
-  
+
   /// <summary>
-  /// Hyperlink Theme Color.
+  ///   Hyperlink Theme Color.
   /// </summary>
   Hyperlink,
-  
+
   /// <summary>
-  /// Followed Hyperlink Theme Color.
+  ///   Followed Hyperlink Theme Color.
   /// </summary>
   FollowedHyperlink,
-  
+
   /// <summary>
-  /// No Theme Color.
+  ///   No Theme Color.
   /// </summary>
   None,
-  
+
   /// <summary>
-  /// Background 1 Theme Color.
+  ///   Background 1 Theme Color.
   /// </summary>
   Background1,
-  
+
   /// <summary>
-  /// Text 1 Theme Color.
+  ///   Text 1 Theme Color.
   /// </summary>
   Text1,
-  
+
   /// <summary>
-  /// Background 2 Theme Color.
+  ///   Background 2 Theme Color.
   /// </summary>
   Background2,
-  
+
   /// <summary>
-  /// Text 2 Theme Color.
+  ///   Text 2 Theme Color.
   /// </summary>
-  Text2,
-  
+  Text2
 }

@@ -1,23 +1,22 @@
 namespace DocumentModel.Drawings.Charts;
 
 /// <summary>
-/// Picture Format
+///   Picture Format
 /// </summary>
 public enum PictureFormatKind
 {
   /// <summary>
-  /// Stretch.
+  ///   Stretch.
   /// </summary>
   Stretch,
-  
+
   /// <summary>
-  /// Stack.
+  ///   Stack.
   /// </summary>
   Stack,
-  
+
   /// <summary>
-  /// Stack and Scale.
+  ///   Stack and Scale.
   /// </summary>
-  StackScale,
-  
+  StackScale
 }

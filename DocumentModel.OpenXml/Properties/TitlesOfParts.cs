@@ -1,34 +1,36 @@
 namespace DocumentModel.OpenXml.Properties;
 
 /// <summary>
-/// Part Titles.
+///   Part Titles.
 /// </summary>
-public partial class TitlesOfParts: ModelElementImpl
+public class TitlesOfParts : ModelElementImpl
 {
+  public TitlesOfParts()
+  {
+  }
+
+  public TitlesOfParts(DocumentFormat.OpenXml.ExtendedProperties.TitlesOfParts openXmlElement) : base(openXmlElement)
+  {
+    OpenXmlElement = openXmlElement;
+  }
+
   [XmlIgnore]
   public DocumentFormat.OpenXml.ExtendedProperties.TitlesOfParts? OpenXmlElement
   {
     get => (DocumentFormat.OpenXml.ExtendedProperties.TitlesOfParts?)_OpenXmlElement;
     protected set => _OpenXmlElement = value;
   }
-  
-  public TitlesOfParts(): base() {}
-  
-  public TitlesOfParts(DocumentFormat.OpenXml.ExtendedProperties.TitlesOfParts openXmlElement): base(openXmlElement)
-  {
-    OpenXmlElement = openXmlElement;
-  }
-  
+
   /// <summary>
-  /// Vector.
+  ///   Vector.
   /// </summary>
-  public DocumentModel.VectorVariant? VTVector
+  public VectorVariant? VTVector
   {
     get
     {
       if (OpenXmlElement != null)
       {
-        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.VariantTypes.VTVector>();
+        var item = OpenXmlElement.GetFirstChild<VTVector>();
         if (item != null)
           return VTVectorConverter.CreateModelElement(item);
       }
@@ -38,7 +40,7 @@ public partial class TitlesOfParts: ModelElementImpl
     {
       if (OpenXmlElement != null)
       {
-        var item = OpenXmlElement.GetFirstChild<DocumentFormat.OpenXml.VariantTypes.VTVector>();
+        var item = OpenXmlElement.GetFirstChild<VTVector>();
         if (item != null)
           item.Remove();
         if (value != null)
@@ -50,5 +52,4 @@ public partial class TitlesOfParts: ModelElementImpl
       }
     }
   }
-  
 }

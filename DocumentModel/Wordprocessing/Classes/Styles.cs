@@ -1,20 +1,22 @@
 namespace DocumentModel.Wordprocessing;
 
 /// <summary>
-/// Defines Styles.
+///   Defines Styles.
 /// </summary>
 public partial class Styles
 {
   /// <summary>
-  /// Document Default Paragraph and Run Properties.
+  ///   Document Default Paragraph and Run Properties.
   /// </summary>
-  public DocumentModel.Wordprocessing.DocDefaults? DocDefaults { get; set; }
-  
+  public DocDefaults? DocDefaults { get; set; }
+
   /// <summary>
-  /// Latent Style Information.
+  ///   Latent Style Information.
   /// </summary>
-  public DocumentModel.Wordprocessing.LatentStyles? LatentStyles { get; set; }
-  
-  public Collection<DocumentModel.Wordprocessing.Style>? Items { get; set; }
-  
+  public LatentStyles? LatentStyles { get; set; }
+
+  ///// <summary>
+  ///// Defines Styles.
+  ///// </summary>
+  //public Collection<DocumentModel.Wordprocessing.Style>? Items { get; set; }
 }

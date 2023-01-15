@@ -1,43 +1,42 @@
 namespace DocumentModel.Wordprocessing;
 
 /// <summary>
-/// Single Caption Type Definition.
+///   Single Caption Type Definition.
 /// </summary>
-public partial class Caption
+public class Caption
 {
   /// <summary>
-  /// Caption Type Name
+  ///   Caption Type Name
   /// </summary>
   public String? Name { get; set; }
-  
+
   /// <summary>
-  /// Automatic Caption Placement
+  ///   Automatic Caption Placement
   /// </summary>
-  public DocumentModel.Wordprocessing.CaptionPositionKind? Position { get; set; }
-  
+  public CaptionPositionKind? Position { get; set; }
+
   /// <summary>
-  /// Include Chapter Number in Field for Caption
+  ///   Include Chapter Number in Field for Caption
   /// </summary>
   public Boolean? ChapterNumber { get; set; }
-  
+
   /// <summary>
-  /// Style for Chapter Headings
+  ///   Style for Chapter Headings
   /// </summary>
   public Int32? Heading { get; set; }
-  
+
   /// <summary>
-  /// Do Not Include Name In Caption
+  ///   Do Not Include Name In Caption
   /// </summary>
   public Boolean? NoLabel { get; set; }
-  
+
   /// <summary>
-  /// Caption Numbering Format
+  ///   Caption Numbering Format
   /// </summary>
-  public DocumentModel.Wordprocessing.NumberFormatKind? NumberFormat { get; set; }
-  
+  public NumberFormatKind? NumberFormat { get; set; }
+
   /// <summary>
-  /// Chapter Number/Item Index Separator
+  ///   Chapter Number/Item Index Separator
   /// </summary>
-  public DocumentModel.Wordprocessing.ChapterSeparatorKind? Separator { get; set; }
-  
+  public ChapterSeparatorKind? Separator { get; set; }
 }

@@ -1,10 +1,9 @@
 namespace DocumentModel.Wordprocessing;
 
 /// <summary>
-/// Defines the AllocatedCommandManifest Class.
+///   Defines the AllocatedCommandManifest Class.
 /// </summary>
-public partial class AllocatedCommandManifest
+public class AllocatedCommandManifest
 {
-  public Collection<DocumentModel.Wordprocessing.AcceleratorKeymapType>? AllocatedCommandManifestEntries { get; set; }
-  
+  public Collection<AcceleratorKeymapType>? AllocatedCommandManifestEntries { get; set; }
 }

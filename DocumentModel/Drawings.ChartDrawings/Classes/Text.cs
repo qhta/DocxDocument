@@ -1,18 +1,17 @@
 namespace DocumentModel.Drawings.ChartDrawings;
 
 /// <summary>
-/// Defines the Text Class.
+///   Defines the Text Class.
 /// </summary>
-public partial class Text
+public class Text
 {
   /// <summary>
-  /// TextData.
+  ///   TextData.
   /// </summary>
-  public DocumentModel.Drawings.ChartDrawings.TextData? TextData { get; set; }
-  
+  public TextData? TextData { get; set; }
+
   /// <summary>
-  /// RichTextBody.
+  ///   RichTextBody.
   /// </summary>
-  public DocumentModel.Drawings.ChartDrawings.RichTextBody? RichTextBody { get; set; }
-  
+  public RichTextBody? RichTextBody { get; set; }
 }

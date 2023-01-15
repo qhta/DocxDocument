@@ -1,44 +1,43 @@
 namespace DocumentModel.Drawings.ChartDrawings;
 
 /// <summary>
-/// Defines the DataLabels Class.
+///   Defines the DataLabels Class.
 /// </summary>
-public partial class DataLabels
+public class DataLabels
 {
   /// <summary>
-  /// pos, this property is only available in Office 2016 and later.
+  ///   pos, this property is only available in Office 2016 and later.
   /// </summary>
-  public DocumentModel.Drawings.ChartDrawings.DataLabelPos? Pos { get; set; }
-  
+  public DataLabelPos? Pos { get; set; }
+
   /// <summary>
-  /// NumberFormat.
+  ///   NumberFormat.
   /// </summary>
-  public DocumentModel.Drawings.ChartDrawings.NumberFormat? NumberFormat { get; set; }
-  
+  public NumberFormat? NumberFormat { get; set; }
+
   /// <summary>
-  /// ShapeProperties.
+  ///   ShapeProperties.
   /// </summary>
-  public DocumentModel.Drawings.ChartDrawings.ShapeProperties? ShapeProperties { get; set; }
-  
+  public ShapeProperties? ShapeProperties { get; set; }
+
   /// <summary>
-  /// TxPrTextBody.
+  ///   TxPrTextBody.
   /// </summary>
-  public DocumentModel.Drawings.ChartDrawings.TxPrTextBody? TxPrTextBody { get; set; }
-  
+  public TxPrTextBody? TxPrTextBody { get; set; }
+
   /// <summary>
-  /// DataLabelVisibilities.
+  ///   DataLabelVisibilities.
   /// </summary>
-  public DocumentModel.Drawings.ChartDrawings.DataLabelVisibilities? DataLabelVisibilities { get; set; }
-  
+  public DataLabelVisibilities? DataLabelVisibilities { get; set; }
+
   /// <summary>
-  /// SeparatorXsdstring.
+  ///   SeparatorXsdstring.
   /// </summary>
   public String? SeparatorXsdstring { get; set; }
-  
-  public Collection<DocumentModel.Drawings.ChartDrawings.DataLabel>? Items { get; set; }
-  
-  public Collection<DocumentModel.Drawings.ChartDrawings.DataLabelHidden>? DataLabelHiddens { get; set; }
-  
-  public DocumentModel.Drawings.ChartDrawings.ExtensionList? ExtensionList { get; set; }
-  
+
+  public Collection<DataLabel>? Items { get; set; }
+
+  public Collection<DataLabelHidden>? DataLabelHiddens { get; set; }
+
+  public ExtensionList? ExtensionList { get; set; }
 }

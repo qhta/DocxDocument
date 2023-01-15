@@ -1,23 +1,22 @@
 namespace DocumentModel.Vml;
 
 /// <summary>
-/// Stroke Arrowhead Length
+///   Stroke Arrowhead Length
 /// </summary>
 public enum StrokeArrowLengthKind
 {
   /// <summary>
-  /// Short Arrowhead.
+  ///   Short Arrowhead.
   /// </summary>
   Short,
-  
+
   /// <summary>
-  /// Medium Arrowhead.
+  ///   Medium Arrowhead.
   /// </summary>
   Medium,
-  
+
   /// <summary>
-  /// Long Arrowhead.
+  ///   Long Arrowhead.
   /// </summary>
-  Long,
-  
+  Long
 }

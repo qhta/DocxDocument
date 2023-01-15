@@ -1,18 +1,19 @@
+using DocumentModel.Drawings;
+
 namespace DocumentModel.Wordprocessing.DrawingGroup;
 
 /// <summary>
-/// Defines the NonVisualGraphicFrameProperties Class.
+///   Defines the NonVisualGraphicFrameProperties Class.
 /// </summary>
-public partial class NonVisualGraphicFrameProperties
+public class NonVisualGraphicFrameProperties
 {
   /// <summary>
-  /// Graphic Frame Locks.
+  ///   Graphic Frame Locks.
   /// </summary>
-  public DocumentModel.Drawings.GraphicFrameLocks? GraphicFrameLocks { get; set; }
-  
+  public GraphicFrameLocks? GraphicFrameLocks { get; set; }
+
   /// <summary>
-  /// ExtensionList.
+  ///   ExtensionList.
   /// </summary>
   public DocumentModel.Drawings.ExtensionList? ExtensionList { get; set; }
-  
 }

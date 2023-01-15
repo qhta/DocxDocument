@@ -1,10 +1,9 @@
 namespace DocumentModel.Drawings.Charts;
 
 /// <summary>
-/// Minor Gridlines.
+///   Minor Gridlines.
 /// </summary>
-public partial class MinorGridlines
+public class MinorGridlines
 {
-  public DocumentModel.Drawings.Charts.ChartShapeProperties? ChartShapeProperties { get; set; }
-  
+  public ChartShapeProperties? ChartShapeProperties { get; set; }
 }

@@ -1,33 +1,38 @@
+using DocumentFormat.OpenXml.Office2021.Drawing.SketchyShapes;
+using DocumentModel.Drawings;
+using LineSketchStyleProperties = DocumentFormat.OpenXml.Office2021.Drawing.SketchyShapes.LineSketchStyleProperties;
+using LineSketchTypeProperties = DocumentModel.Drawings.LineSketchTypeProperties;
+
 namespace DocumentModel.OpenXml.Drawings;
 
 /// <summary>
-/// Defines the LineSketchStyleProperties Class.
+///   Defines the LineSketchStyleProperties Class.
 /// </summary>
 public static class LineSketchStylePropertiesConverter
 {
   /// <summary>
-  /// sd, this property is only available in Office 2021 and later.
+  ///   sd, this property is only available in Office 2021 and later.
   /// </summary>
-  public static UInt32? GetSd(DocumentFormat.OpenXml.Office2021.Drawing.SketchyShapes.LineSketchStyleProperties? openXmlElement)
+  public static UInt32? GetSd(LineSketchStyleProperties? openXmlElement)
   {
     return openXmlElement?.Sd?.Value;
   }
-  
-  public static void SetSd(DocumentFormat.OpenXml.Office2021.Drawing.SketchyShapes.LineSketchStyleProperties? openXmlElement, UInt32? value)
+
+  public static void SetSd(LineSketchStyleProperties? openXmlElement, UInt32? value)
   {
     if (openXmlElement != null)
       openXmlElement.Sd = value;
   }
-  
-  public static DocumentModel.Drawings.CustomGeometry? GetCustomGeometry(DocumentFormat.OpenXml.Office2021.Drawing.SketchyShapes.LineSketchStyleProperties? openXmlElement)
+
+  public static CustomGeometry? GetCustomGeometry(LineSketchStyleProperties? openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.CustomGeometry>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.CustomGeometryConverter.CreateModelElement(itemElement);
+      return CustomGeometryConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetCustomGeometry(DocumentFormat.OpenXml.Office2021.Drawing.SketchyShapes.LineSketchStyleProperties? openXmlElement, DocumentModel.Drawings.CustomGeometry? value)
+
+  public static void SetCustomGeometry(LineSketchStyleProperties? openXmlElement, CustomGeometry? value)
   {
     if (openXmlElement != null)
     {
@@ -36,22 +41,22 @@ public static class LineSketchStylePropertiesConverter
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Drawings.CustomGeometryConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.CustomGeometry>(value);
+        itemElement = CustomGeometryConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.CustomGeometry>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static DocumentModel.Drawings.PresetGeometry? GetPresetGeometry(DocumentFormat.OpenXml.Office2021.Drawing.SketchyShapes.LineSketchStyleProperties? openXmlElement)
+
+  public static PresetGeometry? GetPresetGeometry(LineSketchStyleProperties? openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.PresetGeometry>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.PresetGeometryConverter.CreateModelElement(itemElement);
+      return PresetGeometryConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetPresetGeometry(DocumentFormat.OpenXml.Office2021.Drawing.SketchyShapes.LineSketchStyleProperties? openXmlElement, DocumentModel.Drawings.PresetGeometry? value)
+
+  public static void SetPresetGeometry(LineSketchStyleProperties? openXmlElement, PresetGeometry? value)
   {
     if (openXmlElement != null)
     {
@@ -60,22 +65,22 @@ public static class LineSketchStylePropertiesConverter
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Drawings.PresetGeometryConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.PresetGeometry>(value);
+        itemElement = PresetGeometryConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.PresetGeometry>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static DocumentModel.Drawings.LineSketchTypeProperties? GetLineSketchTypeProperties(DocumentFormat.OpenXml.Office2021.Drawing.SketchyShapes.LineSketchStyleProperties? openXmlElement)
+
+  public static LineSketchTypeProperties? GetLineSketchTypeProperties(LineSketchStyleProperties? openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office2021.Drawing.SketchyShapes.LineSketchTypeProperties>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.LineSketchTypePropertiesConverter.CreateModelElement(itemElement);
+      return LineSketchTypePropertiesConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetLineSketchTypeProperties(DocumentFormat.OpenXml.Office2021.Drawing.SketchyShapes.LineSketchStyleProperties? openXmlElement, DocumentModel.Drawings.LineSketchTypeProperties? value)
+
+  public static void SetLineSketchTypeProperties(LineSketchStyleProperties? openXmlElement, LineSketchTypeProperties? value)
   {
     if (openXmlElement != null)
     {
@@ -84,45 +89,45 @@ public static class LineSketchStylePropertiesConverter
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Drawings.LineSketchTypePropertiesConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2021.Drawing.SketchyShapes.LineSketchTypeProperties>(value);
+        itemElement = LineSketchTypePropertiesConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2021.Drawing.SketchyShapes.LineSketchTypeProperties>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static String? GetLineSketchSeed(DocumentFormat.OpenXml.Office2021.Drawing.SketchyShapes.LineSketchStyleProperties? openXmlElement)
+
+  public static String? GetLineSketchSeed(LineSketchStyleProperties? openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office2021.Drawing.SketchyShapes.LineSketchSeed>();
+    var itemElement = openXmlElement?.GetFirstChild<LineSketchSeed>();
     if (itemElement != null)
       return itemElement.Text;
     return null;
   }
-  
-  public static void SetLineSketchSeed(DocumentFormat.OpenXml.Office2021.Drawing.SketchyShapes.LineSketchStyleProperties? openXmlElement, String? value)
+
+  public static void SetLineSketchSeed(LineSketchStyleProperties? openXmlElement, String? value)
   {
     if (openXmlElement != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2021.Drawing.SketchyShapes.LineSketchSeed>();
+      var itemElement = openXmlElement.GetFirstChild<LineSketchSeed>();
       if (itemElement != null)
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = new DocumentFormat.OpenXml.Office2021.Drawing.SketchyShapes.LineSketchSeed { Text = value };
+        itemElement = new LineSketchSeed { Text = value };
         openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static DocumentModel.Drawings.OfficeArtExtensionList6? GetOfficeArtExtensionList(DocumentFormat.OpenXml.Office2021.Drawing.SketchyShapes.LineSketchStyleProperties? openXmlElement)
+
+  public static OfficeArtExtensionList6? GetOfficeArtExtensionList(LineSketchStyleProperties? openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office2021.Drawing.SketchyShapes.OfficeArtExtensionList>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.OfficeArtExtensionList6Converter.CreateModelElement(itemElement);
+      return OfficeArtExtensionList6Converter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetOfficeArtExtensionList(DocumentFormat.OpenXml.Office2021.Drawing.SketchyShapes.LineSketchStyleProperties? openXmlElement, DocumentModel.Drawings.OfficeArtExtensionList6? value)
+
+  public static void SetOfficeArtExtensionList(LineSketchStyleProperties? openXmlElement, OfficeArtExtensionList6? value)
   {
     if (openXmlElement != null)
     {
@@ -131,14 +136,14 @@ public static class LineSketchStylePropertiesConverter
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Drawings.OfficeArtExtensionList6Converter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2021.Drawing.SketchyShapes.OfficeArtExtensionList>(value);
+        itemElement = OfficeArtExtensionList6Converter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2021.Drawing.SketchyShapes.OfficeArtExtensionList>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static DocumentModel.Drawings.LineSketchStyleProperties? CreateModelElement(DocumentFormat.OpenXml.Office2021.Drawing.SketchyShapes.LineSketchStyleProperties? openXmlElement)
+
+  public static DocumentModel.Drawings.LineSketchStyleProperties? CreateModelElement(LineSketchStyleProperties? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -153,9 +158,9 @@ public static class LineSketchStylePropertiesConverter
     }
     return null;
   }
-  
+
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.LineSketchStyleProperties? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Office2021.Drawing.SketchyShapes.LineSketchStyleProperties, new()
+    where OpenXmlElementType : LineSketchStyleProperties, new()
   {
     if (value != null)
     {

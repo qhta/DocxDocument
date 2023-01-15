@@ -1,36 +1,44 @@
+using DocumentFormat.OpenXml.Drawing;
+using HslColor = DocumentModel.Drawings.HslColor;
+using PresetColor = DocumentModel.Drawings.PresetColor;
+using RgbColorModelHex = DocumentModel.Drawings.RgbColorModelHex;
+using RgbColorModelPercentage = DocumentModel.Drawings.RgbColorModelPercentage;
+using SchemeColor = DocumentModel.Drawings.SchemeColor;
+using SystemColor = DocumentModel.Drawings.SystemColor;
+
 namespace DocumentModel.OpenXml.Drawings;
 
 /// <summary>
-/// Gradient stops.
+///   Gradient stops.
 /// </summary>
 public static class GradientStopConverter
 {
   /// <summary>
-  /// Position
+  ///   Position
   /// </summary>
-  public static Int32? GetPosition(DocumentFormat.OpenXml.Drawing.GradientStop? openXmlElement)
+  public static Int32? GetPosition(GradientStop? openXmlElement)
   {
     return openXmlElement?.Position?.Value;
   }
-  
-  public static void SetPosition(DocumentFormat.OpenXml.Drawing.GradientStop? openXmlElement, Int32? value)
+
+  public static void SetPosition(GradientStop? openXmlElement, Int32? value)
   {
     if (openXmlElement != null)
       openXmlElement.Position = value;
   }
-  
+
   /// <summary>
-  /// RGB Color Model - Percentage Variant.
+  ///   RGB Color Model - Percentage Variant.
   /// </summary>
-  public static DocumentModel.Drawings.RgbColorModelPercentage? GetRgbColorModelPercentage(DocumentFormat.OpenXml.Drawing.GradientStop? openXmlElement)
+  public static RgbColorModelPercentage? GetRgbColorModelPercentage(GradientStop? openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.RgbColorModelPercentage>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.RgbColorModelPercentageConverter.CreateModelElement(itemElement);
+      return RgbColorModelPercentageConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetRgbColorModelPercentage(DocumentFormat.OpenXml.Drawing.GradientStop? openXmlElement, DocumentModel.Drawings.RgbColorModelPercentage? value)
+
+  public static void SetRgbColorModelPercentage(GradientStop? openXmlElement, RgbColorModelPercentage? value)
   {
     if (openXmlElement != null)
     {
@@ -39,25 +47,25 @@ public static class GradientStopConverter
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Drawings.RgbColorModelPercentageConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.RgbColorModelPercentage>(value);
+        itemElement = RgbColorModelPercentageConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.RgbColorModelPercentage>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
+
   /// <summary>
-  /// RGB Color Model - Hex Variant.
+  ///   RGB Color Model - Hex Variant.
   /// </summary>
-  public static DocumentModel.Drawings.RgbColorModelHex? GetRgbColorModelHex(DocumentFormat.OpenXml.Drawing.GradientStop? openXmlElement)
+  public static RgbColorModelHex? GetRgbColorModelHex(GradientStop? openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.RgbColorModelHex>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.RgbColorModelHexConverter.CreateModelElement(itemElement);
+      return RgbColorModelHexConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetRgbColorModelHex(DocumentFormat.OpenXml.Drawing.GradientStop? openXmlElement, DocumentModel.Drawings.RgbColorModelHex? value)
+
+  public static void SetRgbColorModelHex(GradientStop? openXmlElement, RgbColorModelHex? value)
   {
     if (openXmlElement != null)
     {
@@ -66,25 +74,25 @@ public static class GradientStopConverter
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Drawings.RgbColorModelHexConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.RgbColorModelHex>(value);
+        itemElement = RgbColorModelHexConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.RgbColorModelHex>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
+
   /// <summary>
-  /// Hue, Saturation, Luminance Color Model.
+  ///   Hue, Saturation, Luminance Color Model.
   /// </summary>
-  public static DocumentModel.Drawings.HslColor? GetHslColor(DocumentFormat.OpenXml.Drawing.GradientStop? openXmlElement)
+  public static HslColor? GetHslColor(GradientStop? openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.HslColor>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.HslColorConverter.CreateModelElement(itemElement);
+      return HslColorConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetHslColor(DocumentFormat.OpenXml.Drawing.GradientStop? openXmlElement, DocumentModel.Drawings.HslColor? value)
+
+  public static void SetHslColor(GradientStop? openXmlElement, HslColor? value)
   {
     if (openXmlElement != null)
     {
@@ -93,25 +101,25 @@ public static class GradientStopConverter
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Drawings.HslColorConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.HslColor>(value);
+        itemElement = HslColorConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.HslColor>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
+
   /// <summary>
-  /// System Color.
+  ///   System Color.
   /// </summary>
-  public static DocumentModel.Drawings.SystemColor? GetSystemColor(DocumentFormat.OpenXml.Drawing.GradientStop? openXmlElement)
+  public static SystemColor? GetSystemColor(GradientStop? openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.SystemColor>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.SystemColorConverter.CreateModelElement(itemElement);
+      return SystemColorConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetSystemColor(DocumentFormat.OpenXml.Drawing.GradientStop? openXmlElement, DocumentModel.Drawings.SystemColor? value)
+
+  public static void SetSystemColor(GradientStop? openXmlElement, SystemColor? value)
   {
     if (openXmlElement != null)
     {
@@ -120,25 +128,25 @@ public static class GradientStopConverter
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Drawings.SystemColorConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.SystemColor>(value);
+        itemElement = SystemColorConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.SystemColor>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
+
   /// <summary>
-  /// Scheme Color.
+  ///   Scheme Color.
   /// </summary>
-  public static DocumentModel.Drawings.SchemeColor? GetSchemeColor(DocumentFormat.OpenXml.Drawing.GradientStop? openXmlElement)
+  public static SchemeColor? GetSchemeColor(GradientStop? openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.SchemeColor>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.SchemeColorConverter.CreateModelElement(itemElement);
+      return SchemeColorConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetSchemeColor(DocumentFormat.OpenXml.Drawing.GradientStop? openXmlElement, DocumentModel.Drawings.SchemeColor? value)
+
+  public static void SetSchemeColor(GradientStop? openXmlElement, SchemeColor? value)
   {
     if (openXmlElement != null)
     {
@@ -147,25 +155,25 @@ public static class GradientStopConverter
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Drawings.SchemeColorConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.SchemeColor>(value);
+        itemElement = SchemeColorConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.SchemeColor>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
+
   /// <summary>
-  /// Preset Color.
+  ///   Preset Color.
   /// </summary>
-  public static DocumentModel.Drawings.PresetColor? GetPresetColor(DocumentFormat.OpenXml.Drawing.GradientStop? openXmlElement)
+  public static PresetColor? GetPresetColor(GradientStop? openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.PresetColor>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.PresetColorConverter.CreateModelElement(itemElement);
+      return PresetColorConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetPresetColor(DocumentFormat.OpenXml.Drawing.GradientStop? openXmlElement, DocumentModel.Drawings.PresetColor? value)
+
+  public static void SetPresetColor(GradientStop? openXmlElement, PresetColor? value)
   {
     if (openXmlElement != null)
     {
@@ -174,14 +182,14 @@ public static class GradientStopConverter
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Drawings.PresetColorConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.PresetColor>(value);
+        itemElement = PresetColorConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.PresetColor>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static DocumentModel.Drawings.GradientStop? CreateModelElement(DocumentFormat.OpenXml.Drawing.GradientStop? openXmlElement)
+
+  public static DocumentModel.Drawings.GradientStop? CreateModelElement(GradientStop? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -197,9 +205,9 @@ public static class GradientStopConverter
     }
     return null;
   }
-  
+
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.GradientStop? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.GradientStop, new()
+    where OpenXmlElementType : GradientStop, new()
   {
     if (value != null)
     {

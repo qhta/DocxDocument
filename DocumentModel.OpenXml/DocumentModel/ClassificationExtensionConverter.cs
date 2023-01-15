@@ -1,18 +1,18 @@
 namespace DocumentModel.OpenXml;
 
 /// <summary>
-/// Defines the ClassificationExtension Class.
+///   Defines the ClassificationExtension Class.
 /// </summary>
 public static class ClassificationExtensionConverter
 {
   /// <summary>
-  /// uri, this property is only available in Office 2021 and later.
+  ///   uri, this property is only available in Office 2021 and later.
   /// </summary>
   public static String? GetUri(DocumentFormat.OpenXml.Office2021.MipLabelMetaData.ClassificationExtension? openXmlElement)
   {
     return openXmlElement?.Uri?.Value;
   }
-  
+
   public static void SetUri(DocumentFormat.OpenXml.Office2021.MipLabelMetaData.ClassificationExtension? openXmlElement, String? value)
   {
     if (openXmlElement != null)
@@ -21,20 +21,20 @@ public static class ClassificationExtensionConverter
       else
         openXmlElement.Uri = null;
   }
-  
-  public static DocumentModel.ClassificationExtension? CreateModelElement(DocumentFormat.OpenXml.Office2021.MipLabelMetaData.ClassificationExtension? openXmlElement)
+
+  public static ClassificationExtension? CreateModelElement(DocumentFormat.OpenXml.Office2021.MipLabelMetaData.ClassificationExtension? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.ClassificationExtension();
+      var value = new ClassificationExtension();
       value.Uri = GetUri(openXmlElement);
       return value;
     }
     return null;
   }
-  
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.ClassificationExtension? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Office2021.MipLabelMetaData.ClassificationExtension, new()
+
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(ClassificationExtension? value)
+    where OpenXmlElementType : DocumentFormat.OpenXml.Office2021.MipLabelMetaData.ClassificationExtension, new()
   {
     if (value != null)
     {

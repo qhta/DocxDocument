@@ -1,18 +1,17 @@
 namespace DocumentModel.Math;
 
 /// <summary>
-/// Defines the VerticalJustificationValues enumeration.
+///   Defines the VerticalJustificationValues enumeration.
 /// </summary>
 public enum VerticalJustificationKind
 {
   /// <summary>
-  /// Top.
+  ///   Top.
   /// </summary>
   Top,
-  
+
   /// <summary>
-  /// Bottom Alignment.
+  ///   Bottom Alignment.
   /// </summary>
-  Bottom,
-  
+  Bottom
 }

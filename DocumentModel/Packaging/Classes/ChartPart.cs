@@ -1,32 +1,33 @@
+using DocumentModel.Drawings.Charts;
+
 namespace DocumentModel.Packaging;
 
 /// <summary>
-/// Defines the ChartPart
+///   Defines the ChartPart
 /// </summary>
-public partial class ChartPart
+public class ChartPart
 {
   /// <summary>
-  /// Gets the ChartColorStyleParts of the ChartPart
+  ///   Gets the ChartColorStyleParts of the ChartPart
   /// </summary>
-  public Collection<DocumentModel.Packaging.ChartColorStylePart>? ChartColorStyleParts { get; set; }
-  
+  public Collection<ChartColorStylePart>? ChartColorStyleParts { get; set; }
+
   /// <summary>
-  /// Gets or sets the root element of this part.
+  ///   Gets or sets the root element of this part.
   /// </summary>
-  public DocumentModel.Drawings.Charts.ChartSpace? ChartSpace { get; set; }
-  
+  public ChartSpace? ChartSpace { get; set; }
+
   /// <summary>
-  /// Gets the ChartStyleParts of the ChartPart
+  ///   Gets the ChartStyleParts of the ChartPart
   /// </summary>
-  public Collection<DocumentModel.Packaging.ChartStylePart>? ChartStyleParts { get; set; }
-  
+  public Collection<ChartStylePart>? ChartStyleParts { get; set; }
+
   public String? ContentType { get; set; }
-  
+
   /// <summary>
-  /// Gets the ImageParts of the ChartPart
+  ///   Gets the ImageParts of the ChartPart
   /// </summary>
-  public Collection<DocumentModel.Packaging.ImagePart>? ImageParts { get; set; }
-  
+  public Collection<ImagePart>? ImageParts { get; set; }
+
   public String? RelationshipType { get; set; }
-  
 }

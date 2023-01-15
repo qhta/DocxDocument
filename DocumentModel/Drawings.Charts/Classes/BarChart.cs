@@ -1,37 +1,36 @@
 namespace DocumentModel.Drawings.Charts;
 
 /// <summary>
-/// Bar Charts.
+///   Bar Charts.
 /// </summary>
-public partial class BarChart
+public class BarChart
 {
   /// <summary>
-  /// Bar Direction.
+  ///   Bar Direction.
   /// </summary>
-  public DocumentModel.Drawings.Charts.BarDirectionKind? BarDirection { get; set; }
-  
+  public BarDirectionKind? BarDirection { get; set; }
+
   /// <summary>
-  /// Bar Grouping.
+  ///   Bar Grouping.
   /// </summary>
-  public DocumentModel.Drawings.Charts.BarGroupingKind? BarGrouping { get; set; }
-  
+  public BarGroupingKind? BarGrouping { get; set; }
+
   /// <summary>
-  /// VaryColors.
+  ///   VaryColors.
   /// </summary>
   public Boolean? VaryColors { get; set; }
-  
-  public Collection<DocumentModel.Drawings.Charts.BarChartSeries>? BarChartSerieses { get; set; }
-  
-  public DocumentModel.Drawings.Charts.DataLabels? DataLabels { get; set; }
-  
+
+  public Collection<BarChartSeries>? BarChartSerieses { get; set; }
+
+  public DataLabels? DataLabels { get; set; }
+
   public UInt16? GapWidth { get; set; }
-  
+
   public SByte? Overlap { get; set; }
-  
-  public Collection<DocumentModel.Drawings.Charts.SeriesLines>? SeriesLineses { get; set; }
-  
-  public Collection<System.UInt32>? AxisIds { get; set; }
-  
-  public DocumentModel.Drawings.Charts.BarChartExtensionList? BarChartExtensionList { get; set; }
-  
+
+  public Collection<SeriesLines>? SeriesLineses { get; set; }
+
+  public Collection<UInt32>? AxisIds { get; set; }
+
+  public BarChartExtensionList? BarChartExtensionList { get; set; }
 }

@@ -1,18 +1,17 @@
 namespace DocumentModel.Vml;
 
 /// <summary>
-/// Shape Fill Extended Properties.
+///   Shape Fill Extended Properties.
 /// </summary>
-public partial class FillExtendedProperties
+public class FillExtendedProperties
 {
   /// <summary>
-  /// VML Extension Handling Behavior
+  ///   VML Extension Handling Behavior
   /// </summary>
-  public DocumentModel.Vml.ExtensionHandlingBehaviorKind? Extension { get; set; }
-  
+  public ExtensionHandlingBehaviorKind? Extension { get; set; }
+
   /// <summary>
-  /// Fill Type
+  ///   Fill Type
   /// </summary>
-  public DocumentModel.Vml.FillKind? Type { get; set; }
-  
+  public FillKind? Type { get; set; }
 }

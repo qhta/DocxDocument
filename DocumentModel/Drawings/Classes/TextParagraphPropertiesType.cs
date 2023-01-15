@@ -1,78 +1,77 @@
 namespace DocumentModel.Drawings;
 
 /// <summary>
-/// Defines the TextParagraphPropertiesType Class.
+///   Defines the TextParagraphPropertiesType Class.
 /// </summary>
-public partial class TextParagraphPropertiesType
+public class TextParagraphPropertiesType
 {
   /// <summary>
-  /// Left Margin
+  ///   Left Margin
   /// </summary>
   public Int32? LeftMargin { get; set; }
-  
+
   /// <summary>
-  /// Right Margin
+  ///   Right Margin
   /// </summary>
   public Int32? RightMargin { get; set; }
-  
+
   /// <summary>
-  /// Level
+  ///   Level
   /// </summary>
   public Int32? Level { get; set; }
-  
+
   /// <summary>
-  /// Indent
+  ///   Indent
   /// </summary>
   public Int32? Indent { get; set; }
-  
+
   /// <summary>
-  /// Alignment
+  ///   Alignment
   /// </summary>
-  public DocumentModel.Drawings.TextAlignmentKind? Alignment { get; set; }
-  
+  public TextAlignmentKind? Alignment { get; set; }
+
   /// <summary>
-  /// Default Tab Size
+  ///   Default Tab Size
   /// </summary>
   public Int32? DefaultTabSize { get; set; }
-  
+
   /// <summary>
-  /// Right To Left
+  ///   Right To Left
   /// </summary>
   public Boolean? RightToLeft { get; set; }
-  
+
   /// <summary>
-  /// East Asian Line Break
+  ///   East Asian Line Break
   /// </summary>
   public Boolean? EastAsianLineBreak { get; set; }
-  
+
   /// <summary>
-  /// Font Alignment
+  ///   Font Alignment
   /// </summary>
-  public DocumentModel.Drawings.TextFontAlignmentKind? FontAlignment { get; set; }
-  
+  public TextFontAlignmentKind? FontAlignment { get; set; }
+
   /// <summary>
-  /// Latin Line Break
+  ///   Latin Line Break
   /// </summary>
   public Boolean? LatinLineBreak { get; set; }
-  
+
   /// <summary>
-  /// Hanging Punctuation
+  ///   Hanging Punctuation
   /// </summary>
   public Boolean? Height { get; set; }
-  
+
   /// <summary>
-  /// Line Spacing.
+  ///   Line Spacing.
   /// </summary>
-  public DocumentModel.Drawings.LineSpacing? LineSpacing { get; set; }
-  
+  public LineSpacing? LineSpacing { get; set; }
+
   /// <summary>
-  /// Space Before.
+  ///   Space Before.
   /// </summary>
-  public DocumentModel.Drawings.SpaceBefore? SpaceBefore { get; set; }
-  
+  public SpaceBefore? SpaceBefore { get; set; }
+
   /// <summary>
-  /// Space After.
+  ///   Space After.
   /// </summary>
-  public DocumentModel.Drawings.SpaceAfter? SpaceAfter { get; set; }
-  
+  public SpaceAfter? SpaceAfter { get; set; }
 }

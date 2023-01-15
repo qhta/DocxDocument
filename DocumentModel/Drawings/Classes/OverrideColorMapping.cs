@@ -1,10 +1,9 @@
 namespace DocumentModel.Drawings;
 
 /// <summary>
-/// Override Color Mapping.
+///   Override Color Mapping.
 /// </summary>
-public partial class OverrideColorMapping
+public class OverrideColorMapping
 {
-  public DocumentModel.Drawings.ExtensionList? ExtensionList { get; set; }
-  
+  public ExtensionList? ExtensionList { get; set; }
 }

@@ -1,28 +1,27 @@
 namespace DocumentModel.Drawings.ChartDrawings;
 
 /// <summary>
-/// Defines the TickMarksType enumeration.
+///   Defines the TickMarksType enumeration.
 /// </summary>
 public enum TickMarksType
 {
   /// <summary>
-  /// in.
+  ///   in.
   /// </summary>
   In,
-  
+
   /// <summary>
-  /// out.
+  ///   out.
   /// </summary>
   Out,
-  
+
   /// <summary>
-  /// cross.
+  ///   cross.
   /// </summary>
   Cross,
-  
+
   /// <summary>
-  /// none.
+  ///   none.
   /// </summary>
-  None,
-  
+  None
 }

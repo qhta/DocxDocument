@@ -1,33 +1,7 @@
-﻿using DocumentModel.UI;
-
-namespace DocumentModel.Properties;
-
+﻿namespace DocumentModel.Properties;
 
 public partial class DocumentProperties : ICollection<DocumentProperty>
 {
-  public int Count()
-  {
-    int count = 0;
-    if (CoreProperties != null)
-      count += CoreProperties.Count();
-    if (ExtendedProperties != null)
-      count += ExtendedProperties.Count();
-    if (CustomProperties != null)
-      count += CustomProperties.Count();
-
-    return count;
-  }
-
-  public object? Get(string propName)
-  {
-    var result = CoreProperties?.Get(propName);
-    if (result != null) return result;
-    result = ExtendedProperties?.Get(propName);
-    if (result != null) return result;
-    result = CustomProperties?.Get(propName);
-    return result;
-  }
-
   public IEnumerator<DocumentProperty> GetEnumerator()
   {
     if (CoreProperties != null)
@@ -46,13 +20,6 @@ public partial class DocumentProperties : ICollection<DocumentProperty>
     return GetEnumerator();
   }
 
-  public void Add(object item)
-  {
-    if (item is DocumentProperty documentProperty)
-      Add(documentProperty);
-  }
-
-
   public void Add(DocumentProperty item)
   {
     if (item.Name != null)
@@ -60,8 +27,10 @@ public partial class DocumentProperties : ICollection<DocumentProperty>
       if (CoreProperties == null)
         CoreProperties = new CoreProperties();
       if (CoreProperties.GetPropNames().Contains(item.Name))
+      {
         CoreProperties.Set(item.Name, item.Value);
-      else if (ExtendedProperties.GetPropNames().Contains((item.Name)))
+      }
+      else if (ExtendedProperties.GetPropNames().Contains(item.Name))
       {
         if (ExtendedProperties == null)
           ExtendedProperties = new ExtendedProperties();
@@ -124,11 +93,40 @@ public partial class DocumentProperties : ICollection<DocumentProperty>
         return true;
     if (CustomProperties != null && item is CustomDocumentProperty customItem)
       if (CustomProperties.Remove(customItem))
-        return true; 
+        return true;
     return false;
   }
 
   int ICollection<DocumentProperty>.Count => Count();
 
   bool ICollection<DocumentProperty>.IsReadOnly => false;
+
+  public int Count()
+  {
+    var count = 0;
+    if (CoreProperties != null)
+      count += CoreProperties.Count();
+    if (ExtendedProperties != null)
+      count += ExtendedProperties.Count();
+    if (CustomProperties != null)
+      count += CustomProperties.Count();
+
+    return count;
+  }
+
+  public object? Get(string propName)
+  {
+    var result = CoreProperties?.Get(propName);
+    if (result != null) return result;
+    result = ExtendedProperties?.Get(propName);
+    if (result != null) return result;
+    result = CustomProperties?.Get(propName);
+    return result;
+  }
+
+  public void Add(object item)
+  {
+    if (item is DocumentProperty documentProperty)
+      Add(documentProperty);
+  }
 }

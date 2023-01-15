@@ -1,12 +1,11 @@
 namespace DocumentModel;
 
 /// <summary>
-/// Defines the Tasks Class.
+///   Defines the Tasks Class.
 /// </summary>
-public partial class Tasks
+public class Tasks
 {
-  public Collection<DocumentModel.Task>? Items { get; set; }
-  
-  public DocumentModel.ExtensionList? ExtensionList { get; set; }
-  
+  public Collection<Task>? Items { get; set; }
+
+  public ExtensionList? ExtensionList { get; set; }
 }

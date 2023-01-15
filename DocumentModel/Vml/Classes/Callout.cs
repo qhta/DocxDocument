@@ -1,78 +1,77 @@
 namespace DocumentModel.Vml;
 
 /// <summary>
-/// Defines the Callout Class.
+///   Defines the Callout Class.
 /// </summary>
-public partial class Callout
+public class Callout
 {
   /// <summary>
-  /// VML Extension Handling Behavior
+  ///   VML Extension Handling Behavior
   /// </summary>
-  public DocumentModel.Vml.ExtensionHandlingBehaviorKind? Extension { get; set; }
-  
+  public ExtensionHandlingBehaviorKind? Extension { get; set; }
+
   /// <summary>
-  /// Callout toggle
+  ///   Callout toggle
   /// </summary>
   public Boolean? On { get; set; }
-  
+
   /// <summary>
-  /// Callout type
+  ///   Callout type
   /// </summary>
   public String? Type { get; set; }
-  
+
   /// <summary>
-  /// Callout gap
+  ///   Callout gap
   /// </summary>
   public String? Gap { get; set; }
-  
+
   /// <summary>
-  /// Callout angle
+  ///   Callout angle
   /// </summary>
-  public DocumentModel.Vml.AngleKind? Angle { get; set; }
-  
+  public AngleKind? Angle { get; set; }
+
   /// <summary>
-  /// Callout automatic drop toggle
+  ///   Callout automatic drop toggle
   /// </summary>
   public Boolean? DropAuto { get; set; }
-  
+
   /// <summary>
-  /// Callout drop position
+  ///   Callout drop position
   /// </summary>
   public String? Drop { get; set; }
-  
+
   /// <summary>
-  /// Callout drop distance
+  ///   Callout drop distance
   /// </summary>
   public String? Distance { get; set; }
-  
+
   /// <summary>
-  /// Callout length toggle
+  ///   Callout length toggle
   /// </summary>
   public Boolean? LengthSpecified { get; set; }
-  
+
   /// <summary>
-  /// Callout length
+  ///   Callout length
   /// </summary>
   public String? Length { get; set; }
-  
+
   /// <summary>
-  /// Callout accent bar toggle
+  ///   Callout accent bar toggle
   /// </summary>
   public Boolean? AccentBar { get; set; }
-  
+
   /// <summary>
-  /// Callout text border toggle
+  ///   Callout text border toggle
   /// </summary>
   public Boolean? TextBorder { get; set; }
-  
+
   /// <summary>
-  /// Callout flip x
+  ///   Callout flip x
   /// </summary>
   public Boolean? MinusX { get; set; }
-  
+
   /// <summary>
-  /// Callout flip y
+  ///   Callout flip y
   /// </summary>
   public Boolean? MinusY { get; set; }
-  
 }

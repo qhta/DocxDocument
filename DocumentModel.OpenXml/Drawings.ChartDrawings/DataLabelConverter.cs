@@ -1,50 +1,57 @@
+using DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing;
+using DataLabelPos = DocumentModel.Drawings.ChartDrawings.DataLabelPos;
+using DataLabelVisibilities = DocumentModel.Drawings.ChartDrawings.DataLabelVisibilities;
+using NumberFormat = DocumentModel.Drawings.ChartDrawings.NumberFormat;
+using ShapeProperties = DocumentModel.Drawings.ChartDrawings.ShapeProperties;
+using TxPrTextBody = DocumentModel.Drawings.ChartDrawings.TxPrTextBody;
+
 namespace DocumentModel.OpenXml.Drawings.ChartDrawings;
 
 /// <summary>
-/// Defines the DataLabel Class.
+///   Defines the DataLabel Class.
 /// </summary>
 public static class DataLabelConverter
 {
   /// <summary>
-  /// idx, this property is only available in Office 2016 and later.
+  ///   idx, this property is only available in Office 2016 and later.
   /// </summary>
-  public static UInt32? GetIdx(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.DataLabel? openXmlElement)
+  public static UInt32? GetIdx(DataLabel? openXmlElement)
   {
     return openXmlElement?.Idx?.Value;
   }
-  
-  public static void SetIdx(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.DataLabel? openXmlElement, UInt32? value)
+
+  public static void SetIdx(DataLabel? openXmlElement, UInt32? value)
   {
     if (openXmlElement != null)
       openXmlElement.Idx = value;
   }
-  
+
   /// <summary>
-  /// pos, this property is only available in Office 2016 and later.
+  ///   pos, this property is only available in Office 2016 and later.
   /// </summary>
-  public static DocumentModel.Drawings.ChartDrawings.DataLabelPos? GetPos(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.DataLabel? openXmlElement)
+  public static DataLabelPos? GetPos(DataLabel? openXmlElement)
   {
-    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.DataLabelPos, DocumentModel.Drawings.ChartDrawings.DataLabelPos>(openXmlElement?.Pos?.Value);
+    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.DataLabelPos, DataLabelPos>(openXmlElement?.Pos?.Value);
   }
-  
-  public static void SetPos(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.DataLabel? openXmlElement, DocumentModel.Drawings.ChartDrawings.DataLabelPos? value)
+
+  public static void SetPos(DataLabel? openXmlElement, DataLabelPos? value)
   {
     if (openXmlElement != null)
-      openXmlElement.Pos = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.DataLabelPos, DocumentModel.Drawings.ChartDrawings.DataLabelPos>(value);
+      openXmlElement.Pos = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.DataLabelPos, DataLabelPos>(value);
   }
-  
+
   /// <summary>
-  /// NumberFormat.
+  ///   NumberFormat.
   /// </summary>
-  public static DocumentModel.Drawings.ChartDrawings.NumberFormat? GetNumberFormat(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.DataLabel? openXmlElement)
+  public static NumberFormat? GetNumberFormat(DataLabel? openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.NumberFormat>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.ChartDrawings.NumberFormatConverter.CreateModelElement(itemElement);
+      return NumberFormatConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetNumberFormat(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.DataLabel? openXmlElement, DocumentModel.Drawings.ChartDrawings.NumberFormat? value)
+
+  public static void SetNumberFormat(DataLabel? openXmlElement, NumberFormat? value)
   {
     if (openXmlElement != null)
     {
@@ -53,25 +60,25 @@ public static class DataLabelConverter
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Drawings.ChartDrawings.NumberFormatConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.NumberFormat>(value);
+        itemElement = NumberFormatConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.NumberFormat>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
+
   /// <summary>
-  /// ShapeProperties.
+  ///   ShapeProperties.
   /// </summary>
-  public static DocumentModel.Drawings.ChartDrawings.ShapeProperties? GetShapeProperties(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.DataLabel? openXmlElement)
+  public static ShapeProperties? GetShapeProperties(DataLabel? openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.ShapeProperties>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.ChartDrawings.ShapePropertiesConverter.CreateModelElement(itemElement);
+      return ShapePropertiesConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetShapeProperties(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.DataLabel? openXmlElement, DocumentModel.Drawings.ChartDrawings.ShapeProperties? value)
+
+  public static void SetShapeProperties(DataLabel? openXmlElement, ShapeProperties? value)
   {
     if (openXmlElement != null)
     {
@@ -80,25 +87,25 @@ public static class DataLabelConverter
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Drawings.ChartDrawings.ShapePropertiesConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.ShapeProperties>(value);
+        itemElement = ShapePropertiesConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.ShapeProperties>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
+
   /// <summary>
-  /// TxPrTextBody.
+  ///   TxPrTextBody.
   /// </summary>
-  public static DocumentModel.Drawings.ChartDrawings.TxPrTextBody? GetTxPrTextBody(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.DataLabel? openXmlElement)
+  public static TxPrTextBody? GetTxPrTextBody(DataLabel? openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.TxPrTextBody>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.ChartDrawings.TxPrTextBodyConverter.CreateModelElement(itemElement);
+      return TxPrTextBodyConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetTxPrTextBody(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.DataLabel? openXmlElement, DocumentModel.Drawings.ChartDrawings.TxPrTextBody? value)
+
+  public static void SetTxPrTextBody(DataLabel? openXmlElement, TxPrTextBody? value)
   {
     if (openXmlElement != null)
     {
@@ -107,25 +114,25 @@ public static class DataLabelConverter
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Drawings.ChartDrawings.TxPrTextBodyConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.TxPrTextBody>(value);
+        itemElement = TxPrTextBodyConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.TxPrTextBody>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
+
   /// <summary>
-  /// DataLabelVisibilities.
+  ///   DataLabelVisibilities.
   /// </summary>
-  public static DocumentModel.Drawings.ChartDrawings.DataLabelVisibilities? GetDataLabelVisibilities(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.DataLabel? openXmlElement)
+  public static DataLabelVisibilities? GetDataLabelVisibilities(DataLabel? openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.DataLabelVisibilities>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.ChartDrawings.DataLabelVisibilitiesConverter.CreateModelElement(itemElement);
+      return DataLabelVisibilitiesConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetDataLabelVisibilities(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.DataLabel? openXmlElement, DocumentModel.Drawings.ChartDrawings.DataLabelVisibilities? value)
+
+  public static void SetDataLabelVisibilities(DataLabel? openXmlElement, DataLabelVisibilities? value)
   {
     if (openXmlElement != null)
     {
@@ -134,51 +141,51 @@ public static class DataLabelConverter
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Drawings.ChartDrawings.DataLabelVisibilitiesConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.DataLabelVisibilities>(value);
+        itemElement = DataLabelVisibilitiesConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.DataLabelVisibilities>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
+
   /// <summary>
-  /// SeparatorXsdstring.
+  ///   SeparatorXsdstring.
   /// </summary>
-  public static String? GetSeparatorXsdstring(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.DataLabel? openXmlElement)
+  public static String? GetSeparatorXsdstring(DataLabel? openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.SeparatorXsdstring>();
+    var itemElement = openXmlElement?.GetFirstChild<SeparatorXsdstring>();
     if (itemElement != null)
       return itemElement.Text;
     return null;
   }
-  
-  public static void SetSeparatorXsdstring(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.DataLabel? openXmlElement, String? value)
+
+  public static void SetSeparatorXsdstring(DataLabel? openXmlElement, String? value)
   {
     if (openXmlElement != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.SeparatorXsdstring>();
+      var itemElement = openXmlElement.GetFirstChild<SeparatorXsdstring>();
       if (itemElement != null)
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = new DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.SeparatorXsdstring { Text = value };
+        itemElement = new SeparatorXsdstring { Text = value };
         openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
+
   /// <summary>
-  /// ExtensionList.
+  ///   ExtensionList.
   /// </summary>
-  public static DocumentModel.Drawings.ChartDrawings.ExtensionList? GetExtensionList(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.DataLabel? openXmlElement)
+  public static DocumentModel.Drawings.ChartDrawings.ExtensionList? GetExtensionList(DataLabel? openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.ExtensionList>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.ChartDrawings.ExtensionListConverter.CreateModelElement(itemElement);
+      return ExtensionListConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetExtensionList(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.DataLabel? openXmlElement, DocumentModel.Drawings.ChartDrawings.ExtensionList? value)
+
+  public static void SetExtensionList(DataLabel? openXmlElement, DocumentModel.Drawings.ChartDrawings.ExtensionList? value)
   {
     if (openXmlElement != null)
     {
@@ -187,14 +194,14 @@ public static class DataLabelConverter
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Drawings.ChartDrawings.ExtensionListConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.ExtensionList>(value);
+        itemElement = ExtensionListConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.ExtensionList>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static DocumentModel.Drawings.ChartDrawings.DataLabel? CreateModelElement(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.DataLabel? openXmlElement)
+
+  public static DocumentModel.Drawings.ChartDrawings.DataLabel? CreateModelElement(DataLabel? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -211,9 +218,9 @@ public static class DataLabelConverter
     }
     return null;
   }
-  
+
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.ChartDrawings.DataLabel? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.DataLabel, new()
+    where OpenXmlElementType : DataLabel, new()
   {
     if (value != null)
     {

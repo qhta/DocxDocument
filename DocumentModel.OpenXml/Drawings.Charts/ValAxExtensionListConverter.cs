@@ -1,18 +1,21 @@
+using DocumentModel.Drawings.Charts;
+using ValAxExtensionList = DocumentFormat.OpenXml.Drawing.Charts.ValAxExtensionList;
+
 namespace DocumentModel.OpenXml.Drawings.Charts;
 
 /// <summary>
-/// Defines the ValAxExtensionList Class.
+///   Defines the ValAxExtensionList Class.
 /// </summary>
 public static class ValAxExtensionListConverter
 {
-  public static System.Collections.ObjectModel.Collection<DocumentModel.Drawings.Charts.ValAxExtension>? GetValAxExtensions(DocumentFormat.OpenXml.Drawing.Charts.ValAxExtensionList? openXmlElement)
+  public static Collection<ValAxExtension>? GetValAxExtensions(ValAxExtensionList? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var collection = new System.Collections.ObjectModel.Collection<DocumentModel.Drawings.Charts.ValAxExtension>();
+      var collection = new Collection<ValAxExtension>();
       foreach (var item in openXmlElement.Elements<DocumentFormat.OpenXml.Drawing.Charts.ValAxExtension>())
       {
-        var newItem = DocumentModel.OpenXml.Drawings.Charts.ValAxExtensionConverter.CreateModelElement(item);
+        var newItem = ValAxExtensionConverter.CreateModelElement(item);
         if (newItem != null)
           collection.Add(newItem);
       }
@@ -20,25 +23,23 @@ public static class ValAxExtensionListConverter
     }
     return null;
   }
-  
-  public static void SetValAxExtensions(DocumentFormat.OpenXml.Drawing.Charts.ValAxExtensionList? openXmlElement, System.Collections.ObjectModel.Collection<DocumentModel.Drawings.Charts.ValAxExtension>? value)
+
+  public static void SetValAxExtensions(ValAxExtensionList? openXmlElement, Collection<ValAxExtension>? value)
   {
     if (openXmlElement != null)
     {
       openXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Drawing.Charts.ValAxExtension>();
       if (value != null)
-      {
         foreach (var item in value)
         {
-          var newItem = DocumentModel.OpenXml.Drawings.Charts.ValAxExtensionConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Charts.ValAxExtension>(item);
+          var newItem = ValAxExtensionConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Charts.ValAxExtension>(item);
           if (newItem != null)
             openXmlElement.AddChild(newItem);
         }
-      }
     }
   }
-  
-  public static DocumentModel.Drawings.Charts.ValAxExtensionList? CreateModelElement(DocumentFormat.OpenXml.Drawing.Charts.ValAxExtensionList? openXmlElement)
+
+  public static DocumentModel.Drawings.Charts.ValAxExtensionList? CreateModelElement(ValAxExtensionList? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -48,9 +49,9 @@ public static class ValAxExtensionListConverter
     }
     return null;
   }
-  
+
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.Charts.ValAxExtensionList? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.Charts.ValAxExtensionList, new()
+    where OpenXmlElementType : ValAxExtensionList, new()
   {
     if (value != null)
     {

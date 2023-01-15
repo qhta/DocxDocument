@@ -1,8 +1,8 @@
 namespace DocumentModel.Properties;
 
 /// <summary>
-/// Heading Pairs.
+///   Heading Pairs.
 /// </summary>
-public partial class HeadingPairs: Collection<StringNum>
+public class HeadingPairs : Collection<StringNum>
 {
 }

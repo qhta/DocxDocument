@@ -1,36 +1,39 @@
+using DocumentModel.Wordprocessing;
+using Document = DocumentFormat.OpenXml.Wordprocessing.Document;
+
 namespace DocumentModel.OpenXml.Wordprocessing;
 
 /// <summary>
-/// Document.
+///   Document.
 /// </summary>
 public static class DocumentConverter
 {
   /// <summary>
-  /// conformance
+  ///   conformance
   /// </summary>
-  public static DocumentModel.Wordprocessing.DocumentConformance? GetConformance(DocumentFormat.OpenXml.Wordprocessing.Document? openXmlElement)
+  public static DocumentConformance? GetConformance(Document? openXmlElement)
   {
-    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Wordprocessing.DocumentConformance, DocumentModel.Wordprocessing.DocumentConformance>(openXmlElement?.Conformance?.Value);
+    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Wordprocessing.DocumentConformance, DocumentConformance>(openXmlElement?.Conformance?.Value);
   }
-  
-  public static void SetConformance(DocumentFormat.OpenXml.Wordprocessing.Document? openXmlElement, DocumentModel.Wordprocessing.DocumentConformance? value)
+
+  public static void SetConformance(Document? openXmlElement, DocumentConformance? value)
   {
     if (openXmlElement != null)
-      openXmlElement.Conformance = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Wordprocessing.DocumentConformance, DocumentModel.Wordprocessing.DocumentConformance>(value);
+      openXmlElement.Conformance = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Wordprocessing.DocumentConformance, DocumentConformance>(value);
   }
-  
+
   /// <summary>
-  /// Document Background.
+  ///   Document Background.
   /// </summary>
-  public static DocumentModel.Wordprocessing.DocumentBackground? GetDocumentBackground(DocumentFormat.OpenXml.Wordprocessing.Document? openXmlElement)
+  public static DocumentBackground? GetDocumentBackground(Document? openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.DocumentBackground>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Wordprocessing.DocumentBackgroundConverter.CreateModelElement(itemElement);
+      return DocumentBackgroundConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetDocumentBackground(DocumentFormat.OpenXml.Wordprocessing.Document? openXmlElement, DocumentModel.Wordprocessing.DocumentBackground? value)
+
+  public static void SetDocumentBackground(Document? openXmlElement, DocumentBackground? value)
   {
     if (openXmlElement != null)
     {
@@ -39,25 +42,25 @@ public static class DocumentConverter
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Wordprocessing.DocumentBackgroundConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.DocumentBackground>(value);
+        itemElement = DocumentBackgroundConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.DocumentBackground>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
+
   /// <summary>
-  /// Body.
+  ///   Body.
   /// </summary>
-  public static DocumentModel.Wordprocessing.Body? GetBody(DocumentFormat.OpenXml.Wordprocessing.Document? openXmlElement)
+  public static Body? GetBody(Document? openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.Body>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Wordprocessing.BodyConverter.CreateModelElement(itemElement);
+      return BodyConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetBody(DocumentFormat.OpenXml.Wordprocessing.Document? openXmlElement, DocumentModel.Wordprocessing.Body? value)
+
+  public static void SetBody(Document? openXmlElement, Body? value)
   {
     if (openXmlElement != null)
     {
@@ -66,14 +69,14 @@ public static class DocumentConverter
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Wordprocessing.BodyConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.Body>(value);
+        itemElement = BodyConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.Body>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static DocumentModel.Wordprocessing.Document? CreateModelElement(DocumentFormat.OpenXml.Wordprocessing.Document? openXmlElement)
+
+  public static DocumentModel.Wordprocessing.Document? CreateModelElement(Document? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -85,9 +88,9 @@ public static class DocumentConverter
     }
     return null;
   }
-  
+
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.Document? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Wordprocessing.Document, new()
+    where OpenXmlElementType : Document, new()
   {
     if (value != null)
     {

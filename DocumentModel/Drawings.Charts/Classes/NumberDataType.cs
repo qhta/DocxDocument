@@ -1,18 +1,17 @@
 namespace DocumentModel.Drawings.Charts;
 
 /// <summary>
-/// Defines the NumberDataType Class.
+///   Defines the NumberDataType Class.
 /// </summary>
-public partial class NumberDataType
+public class NumberDataType
 {
   /// <summary>
-  /// Format Code.
+  ///   Format Code.
   /// </summary>
   public String? FormatCode { get; set; }
-  
+
   /// <summary>
-  /// Point Count.
+  ///   Point Count.
   /// </summary>
   public UInt32? PointCount { get; set; }
-  
 }

@@ -1,24 +1,25 @@
+using DocumentModel.Drawings;
+
 namespace DocumentModel.Wordprocessing.DrawingCanvas;
 
 /// <summary>
-/// Defines the BackgroundFormatting Class.
+///   Defines the BackgroundFormatting Class.
 /// </summary>
-public partial class BackgroundFormatting
+public class BackgroundFormatting
 {
   public Boolean? NoFill { get; set; }
-  
-  public DocumentModel.Drawings.SolidFill? SolidFill { get; set; }
-  
-  public DocumentModel.Drawings.GradientFill? GradientFill { get; set; }
-  
-  public DocumentModel.Drawings.BlipFill? BlipFill { get; set; }
-  
-  public DocumentModel.Drawings.PatternFill? PatternFill { get; set; }
-  
+
+  public SolidFill? SolidFill { get; set; }
+
+  public GradientFill? GradientFill { get; set; }
+
+  public BlipFill? BlipFill { get; set; }
+
+  public PatternFill? PatternFill { get; set; }
+
   public Boolean? GroupFill { get; set; }
-  
-  public DocumentModel.Drawings.EffectList? EffectList { get; set; }
-  
-  public DocumentModel.Drawings.EffectDag? EffectDag { get; set; }
-  
+
+  public EffectList? EffectList { get; set; }
+
+  public EffectDag? EffectDag { get; set; }
 }

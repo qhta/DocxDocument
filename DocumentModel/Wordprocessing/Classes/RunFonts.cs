@@ -1,53 +1,52 @@
 namespace DocumentModel.Wordprocessing;
 
 /// <summary>
-/// Defines the RunFonts Class.
+///   Defines the RunFonts Class.
 /// </summary>
-public partial class RunFonts
+public class RunFonts
 {
   /// <summary>
-  /// Font Content Type
+  ///   Font Content Type
   /// </summary>
-  public DocumentModel.Wordprocessing.FontTypeHintKind? Hint { get; set; }
-  
+  public FontTypeHintKind? Hint { get; set; }
+
   /// <summary>
-  /// ASCII Font
+  ///   ASCII Font
   /// </summary>
   public String? Ascii { get; set; }
-  
+
   /// <summary>
-  /// High ANSI Font
+  ///   High ANSI Font
   /// </summary>
   public String? HighAnsi { get; set; }
-  
+
   /// <summary>
-  /// East Asian Font
+  ///   East Asian Font
   /// </summary>
   public String? EastAsia { get; set; }
-  
+
   /// <summary>
-  /// Complex Script Font
+  ///   Complex Script Font
   /// </summary>
   public String? ComplexScript { get; set; }
-  
+
   /// <summary>
-  /// ASCII Theme Font
+  ///   ASCII Theme Font
   /// </summary>
-  public DocumentModel.Wordprocessing.ThemeFontKind? AsciiTheme { get; set; }
-  
+  public ThemeFontKind? AsciiTheme { get; set; }
+
   /// <summary>
-  /// High ANSI Theme Font
+  ///   High ANSI Theme Font
   /// </summary>
-  public DocumentModel.Wordprocessing.ThemeFontKind? HighAnsiTheme { get; set; }
-  
+  public ThemeFontKind? HighAnsiTheme { get; set; }
+
   /// <summary>
-  /// East Asian Theme Font
+  ///   East Asian Theme Font
   /// </summary>
-  public DocumentModel.Wordprocessing.ThemeFontKind? EastAsiaTheme { get; set; }
-  
+  public ThemeFontKind? EastAsiaTheme { get; set; }
+
   /// <summary>
-  /// Complex Script Theme Font
+  ///   Complex Script Theme Font
   /// </summary>
-  public DocumentModel.Wordprocessing.ThemeFontKind? ComplexScriptTheme { get; set; }
-  
+  public ThemeFontKind? ComplexScriptTheme { get; set; }
 }

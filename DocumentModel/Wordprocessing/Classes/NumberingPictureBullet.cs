@@ -1,23 +1,22 @@
 namespace DocumentModel.Wordprocessing;
 
 /// <summary>
-/// Picture Numbering Symbol Definition.
+///   Picture Numbering Symbol Definition.
 /// </summary>
-public partial class NumberingPictureBullet
+public class NumberingPictureBullet
 {
   /// <summary>
-  /// numPicBulletId
+  ///   numPicBulletId
   /// </summary>
   public Int32? NumberingPictureBulletId { get; set; }
-  
+
   /// <summary>
-  /// PictureBulletBase.
+  ///   PictureBulletBase.
   /// </summary>
-  public DocumentModel.Wordprocessing.PictureBulletBase? PictureBulletBase { get; set; }
-  
+  public PictureBulletBase? PictureBulletBase { get; set; }
+
   /// <summary>
-  /// Drawing.
+  ///   Drawing.
   /// </summary>
-  public DocumentModel.Wordprocessing.Drawing? Drawing { get; set; }
-  
+  public Drawing? Drawing { get; set; }
 }

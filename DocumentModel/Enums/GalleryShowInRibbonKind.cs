@@ -1,18 +1,17 @@
 namespace DocumentModel;
 
 /// <summary>
-/// Defines the GalleryShowInRibbonValues enumeration.
+///   Defines the GalleryShowInRibbonValues enumeration.
 /// </summary>
 public enum GalleryShowInRibbonKind
 {
   /// <summary>
-  /// false.
+  ///   false.
   /// </summary>
   False,
-  
+
   /// <summary>
-  /// 0.
+  ///   0.
   /// </summary>
-  Zero,
-  
+  Zero
 }

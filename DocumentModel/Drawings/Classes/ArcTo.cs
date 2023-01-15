@@ -1,28 +1,27 @@
 namespace DocumentModel.Drawings;
 
 /// <summary>
-/// Draw Arc To.
+///   Draw Arc To.
 /// </summary>
-public partial class ArcTo
+public class ArcTo
 {
   /// <summary>
-  /// Shape Arc Width Radius
+  ///   Shape Arc Width Radius
   /// </summary>
   public String? WidthRadius { get; set; }
-  
+
   /// <summary>
-  /// Shape Arc Height Radius
+  ///   Shape Arc Height Radius
   /// </summary>
   public String? HeightRadius { get; set; }
-  
+
   /// <summary>
-  /// Shape Arc Start Angle
+  ///   Shape Arc Start Angle
   /// </summary>
   public String? StartAngle { get; set; }
-  
+
   /// <summary>
-  /// Shape Arc Swing Angle
+  ///   Shape Arc Swing Angle
   /// </summary>
   public String? SwingAngle { get; set; }
-  
 }

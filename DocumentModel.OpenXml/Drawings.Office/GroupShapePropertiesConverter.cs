@@ -1,36 +1,48 @@
+using DocumentFormat.OpenXml.Drawing;
+using DocumentFormat.OpenXml.Office.Drawing;
+using DocumentModel.Drawings;
+using BlipFill = DocumentModel.Drawings.BlipFill;
+using EffectDag = DocumentModel.Drawings.EffectDag;
+using EffectList = DocumentModel.Drawings.EffectList;
+using GradientFill = DocumentModel.Drawings.GradientFill;
+using PatternFill = DocumentModel.Drawings.PatternFill;
+using Scene3DType = DocumentModel.Drawings.Scene3DType;
+using SolidFill = DocumentModel.Drawings.SolidFill;
+using TransformGroup = DocumentModel.Drawings.TransformGroup;
+
 namespace DocumentModel.OpenXml.Drawings.Office;
 
 /// <summary>
-/// Defines the GroupShapeProperties Class.
+///   Defines the GroupShapeProperties Class.
 /// </summary>
 public static class GroupShapePropertiesConverter
 {
   /// <summary>
-  /// Black and White Mode
+  ///   Black and White Mode
   /// </summary>
-  public static DocumentModel.Drawings.BlackWhiteMode? GetBlackWhiteMode(DocumentFormat.OpenXml.Office.Drawing.GroupShapeProperties? openXmlElement)
+  public static BlackWhiteMode? GetBlackWhiteMode(GroupShapeProperties? openXmlElement)
   {
-    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Drawing.BlackWhiteModeValues, DocumentModel.Drawings.BlackWhiteMode>(openXmlElement?.BlackWhiteMode?.Value);
+    return EnumValueConverter.GetValue<BlackWhiteModeValues, BlackWhiteMode>(openXmlElement?.BlackWhiteMode?.Value);
   }
-  
-  public static void SetBlackWhiteMode(DocumentFormat.OpenXml.Office.Drawing.GroupShapeProperties? openXmlElement, DocumentModel.Drawings.BlackWhiteMode? value)
+
+  public static void SetBlackWhiteMode(GroupShapeProperties? openXmlElement, BlackWhiteMode? value)
   {
     if (openXmlElement != null)
-      openXmlElement.BlackWhiteMode = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Drawing.BlackWhiteModeValues, DocumentModel.Drawings.BlackWhiteMode>(value);
+      openXmlElement.BlackWhiteMode = EnumValueConverter.CreateEnumValue<BlackWhiteModeValues, BlackWhiteMode>(value);
   }
-  
+
   /// <summary>
-  /// 2D Transform for Grouped Objects.
+  ///   2D Transform for Grouped Objects.
   /// </summary>
-  public static DocumentModel.Drawings.TransformGroup? GetTransformGroup(DocumentFormat.OpenXml.Office.Drawing.GroupShapeProperties? openXmlElement)
+  public static TransformGroup? GetTransformGroup(GroupShapeProperties? openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.TransformGroup>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.TransformGroupConverter.CreateModelElement(itemElement);
+      return TransformGroupConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetTransformGroup(DocumentFormat.OpenXml.Office.Drawing.GroupShapeProperties? openXmlElement, DocumentModel.Drawings.TransformGroup? value)
+
+  public static void SetTransformGroup(GroupShapeProperties? openXmlElement, TransformGroup? value)
   {
     if (openXmlElement != null)
     {
@@ -39,50 +51,50 @@ public static class GroupShapePropertiesConverter
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Drawings.TransformGroupConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.TransformGroup>(value);
+        itemElement = TransformGroupConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.TransformGroup>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static Boolean? GetNoFill(DocumentFormat.OpenXml.Office.Drawing.GroupShapeProperties? openXmlElement)
+
+  public static Boolean? GetNoFill(GroupShapeProperties? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.NoFill>();
+      var itemElement = openXmlElement.GetFirstChild<NoFill>();
       return itemElement != null;
     }
     return null;
   }
-  
-  public static void SetNoFill(DocumentFormat.OpenXml.Office.Drawing.GroupShapeProperties? openXmlElement, Boolean? value)
+
+  public static void SetNoFill(GroupShapeProperties? openXmlElement, Boolean? value)
   {
     if (openXmlElement != null)
     {
       if (value == false)
       {
-        var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.NoFill>();
+        var itemElement = openXmlElement.GetFirstChild<NoFill>();
         if (itemElement != null)
           itemElement.Remove();
       }
       if (value == true)
       {
-        var itemElement = new DocumentFormat.OpenXml.Drawing.NoFill();
+        var itemElement = new NoFill();
         openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static DocumentModel.Drawings.SolidFill? GetSolidFill(DocumentFormat.OpenXml.Office.Drawing.GroupShapeProperties? openXmlElement)
+
+  public static SolidFill? GetSolidFill(GroupShapeProperties? openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.SolidFill>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.SolidFillConverter.CreateModelElement(itemElement);
+      return SolidFillConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetSolidFill(DocumentFormat.OpenXml.Office.Drawing.GroupShapeProperties? openXmlElement, DocumentModel.Drawings.SolidFill? value)
+
+  public static void SetSolidFill(GroupShapeProperties? openXmlElement, SolidFill? value)
   {
     if (openXmlElement != null)
     {
@@ -91,22 +103,22 @@ public static class GroupShapePropertiesConverter
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Drawings.SolidFillConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.SolidFill>(value);
+        itemElement = SolidFillConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.SolidFill>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static DocumentModel.Drawings.GradientFill? GetGradientFill(DocumentFormat.OpenXml.Office.Drawing.GroupShapeProperties? openXmlElement)
+
+  public static GradientFill? GetGradientFill(GroupShapeProperties? openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.GradientFill>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.GradientFillConverter.CreateModelElement(itemElement);
+      return GradientFillConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetGradientFill(DocumentFormat.OpenXml.Office.Drawing.GroupShapeProperties? openXmlElement, DocumentModel.Drawings.GradientFill? value)
+
+  public static void SetGradientFill(GroupShapeProperties? openXmlElement, GradientFill? value)
   {
     if (openXmlElement != null)
     {
@@ -115,22 +127,22 @@ public static class GroupShapePropertiesConverter
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Drawings.GradientFillConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.GradientFill>(value);
+        itemElement = GradientFillConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.GradientFill>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static DocumentModel.Drawings.BlipFill? GetBlipFill(DocumentFormat.OpenXml.Office.Drawing.GroupShapeProperties? openXmlElement)
+
+  public static BlipFill? GetBlipFill(GroupShapeProperties? openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.BlipFill>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.BlipFillConverter.CreateModelElement(itemElement);
+      return BlipFillConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetBlipFill(DocumentFormat.OpenXml.Office.Drawing.GroupShapeProperties? openXmlElement, DocumentModel.Drawings.BlipFill? value)
+
+  public static void SetBlipFill(GroupShapeProperties? openXmlElement, BlipFill? value)
   {
     if (openXmlElement != null)
     {
@@ -139,22 +151,22 @@ public static class GroupShapePropertiesConverter
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Drawings.BlipFillConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.BlipFill>(value);
+        itemElement = BlipFillConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.BlipFill>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static DocumentModel.Drawings.PatternFill? GetPatternFill(DocumentFormat.OpenXml.Office.Drawing.GroupShapeProperties? openXmlElement)
+
+  public static PatternFill? GetPatternFill(GroupShapeProperties? openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.PatternFill>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.PatternFillConverter.CreateModelElement(itemElement);
+      return PatternFillConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetPatternFill(DocumentFormat.OpenXml.Office.Drawing.GroupShapeProperties? openXmlElement, DocumentModel.Drawings.PatternFill? value)
+
+  public static void SetPatternFill(GroupShapeProperties? openXmlElement, PatternFill? value)
   {
     if (openXmlElement != null)
     {
@@ -163,50 +175,50 @@ public static class GroupShapePropertiesConverter
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Drawings.PatternFillConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.PatternFill>(value);
+        itemElement = PatternFillConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.PatternFill>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static Boolean? GetGroupFill(DocumentFormat.OpenXml.Office.Drawing.GroupShapeProperties? openXmlElement)
+
+  public static Boolean? GetGroupFill(GroupShapeProperties? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.GroupFill>();
+      var itemElement = openXmlElement.GetFirstChild<GroupFill>();
       return itemElement != null;
     }
     return null;
   }
-  
-  public static void SetGroupFill(DocumentFormat.OpenXml.Office.Drawing.GroupShapeProperties? openXmlElement, Boolean? value)
+
+  public static void SetGroupFill(GroupShapeProperties? openXmlElement, Boolean? value)
   {
     if (openXmlElement != null)
     {
       if (value == false)
       {
-        var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.GroupFill>();
+        var itemElement = openXmlElement.GetFirstChild<GroupFill>();
         if (itemElement != null)
           itemElement.Remove();
       }
       if (value == true)
       {
-        var itemElement = new DocumentFormat.OpenXml.Drawing.GroupFill();
+        var itemElement = new GroupFill();
         openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static DocumentModel.Drawings.EffectList? GetEffectList(DocumentFormat.OpenXml.Office.Drawing.GroupShapeProperties? openXmlElement)
+
+  public static EffectList? GetEffectList(GroupShapeProperties? openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.EffectList>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.EffectListConverter.CreateModelElement(itemElement);
+      return EffectListConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetEffectList(DocumentFormat.OpenXml.Office.Drawing.GroupShapeProperties? openXmlElement, DocumentModel.Drawings.EffectList? value)
+
+  public static void SetEffectList(GroupShapeProperties? openXmlElement, EffectList? value)
   {
     if (openXmlElement != null)
     {
@@ -215,22 +227,22 @@ public static class GroupShapePropertiesConverter
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Drawings.EffectListConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.EffectList>(value);
+        itemElement = EffectListConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.EffectList>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static DocumentModel.Drawings.EffectDag? GetEffectDag(DocumentFormat.OpenXml.Office.Drawing.GroupShapeProperties? openXmlElement)
+
+  public static EffectDag? GetEffectDag(GroupShapeProperties? openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.EffectDag>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.EffectDagConverter.CreateModelElement(itemElement);
+      return EffectDagConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetEffectDag(DocumentFormat.OpenXml.Office.Drawing.GroupShapeProperties? openXmlElement, DocumentModel.Drawings.EffectDag? value)
+
+  public static void SetEffectDag(GroupShapeProperties? openXmlElement, EffectDag? value)
   {
     if (openXmlElement != null)
     {
@@ -239,22 +251,22 @@ public static class GroupShapePropertiesConverter
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Drawings.EffectDagConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.EffectDag>(value);
+        itemElement = EffectDagConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.EffectDag>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static DocumentModel.Drawings.Scene3DType? GetScene3DType(DocumentFormat.OpenXml.Office.Drawing.GroupShapeProperties? openXmlElement)
+
+  public static Scene3DType? GetScene3DType(GroupShapeProperties? openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.Scene3DType>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.Scene3DTypeConverter.CreateModelElement(itemElement);
+      return Scene3DTypeConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetScene3DType(DocumentFormat.OpenXml.Office.Drawing.GroupShapeProperties? openXmlElement, DocumentModel.Drawings.Scene3DType? value)
+
+  public static void SetScene3DType(GroupShapeProperties? openXmlElement, Scene3DType? value)
   {
     if (openXmlElement != null)
     {
@@ -263,22 +275,22 @@ public static class GroupShapePropertiesConverter
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Drawings.Scene3DTypeConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Scene3DType>(value);
+        itemElement = Scene3DTypeConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Scene3DType>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static DocumentModel.Drawings.ExtensionList? GetExtensionList(DocumentFormat.OpenXml.Office.Drawing.GroupShapeProperties? openXmlElement)
+
+  public static DocumentModel.Drawings.ExtensionList? GetExtensionList(GroupShapeProperties? openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.ExtensionList>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.ExtensionListConverter.CreateModelElement(itemElement);
+      return ExtensionListConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetExtensionList(DocumentFormat.OpenXml.Office.Drawing.GroupShapeProperties? openXmlElement, DocumentModel.Drawings.ExtensionList? value)
+
+  public static void SetExtensionList(GroupShapeProperties? openXmlElement, DocumentModel.Drawings.ExtensionList? value)
   {
     if (openXmlElement != null)
     {
@@ -287,14 +299,14 @@ public static class GroupShapePropertiesConverter
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Drawings.ExtensionListConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.ExtensionList>(value);
+        itemElement = ExtensionListConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.ExtensionList>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static DocumentModel.Drawings.Office.GroupShapeProperties? CreateModelElement(DocumentFormat.OpenXml.Office.Drawing.GroupShapeProperties? openXmlElement)
+
+  public static DocumentModel.Drawings.Office.GroupShapeProperties? CreateModelElement(GroupShapeProperties? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -315,9 +327,9 @@ public static class GroupShapePropertiesConverter
     }
     return null;
   }
-  
+
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.Office.GroupShapeProperties? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Office.Drawing.GroupShapeProperties, new()
+    where OpenXmlElementType : GroupShapeProperties, new()
   {
     if (value != null)
     {

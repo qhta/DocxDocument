@@ -1,13 +1,12 @@
 namespace DocumentModel.Wordprocessing;
 
 /// <summary>
-/// Defines the ContentPart Class.
+///   Defines the ContentPart Class.
 /// </summary>
-public partial class ContentPart
+public class ContentPart
 {
   /// <summary>
-  /// id
+  ///   id
   /// </summary>
   public String? Id { get; set; }
-  
 }

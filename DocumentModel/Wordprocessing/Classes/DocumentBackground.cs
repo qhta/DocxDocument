@@ -1,33 +1,34 @@
+using DocumentModel.Vml;
+
 namespace DocumentModel.Wordprocessing;
 
 /// <summary>
-/// Document Background.
+///   Document Background.
 /// </summary>
-public partial class DocumentBackground
+public class DocumentBackground
 {
   /// <summary>
-  /// color
+  ///   color
   /// </summary>
   public String? Color { get; set; }
-  
+
   /// <summary>
-  /// themeColor
+  ///   themeColor
   /// </summary>
-  public DocumentModel.Wordprocessing.ThemeColorKind? ThemeColor { get; set; }
-  
+  public ThemeColorKind? ThemeColor { get; set; }
+
   /// <summary>
-  /// themeTint
+  ///   themeTint
   /// </summary>
   public String? ThemeTint { get; set; }
-  
+
   /// <summary>
-  /// themeShade
+  ///   themeShade
   /// </summary>
   public String? ThemeShade { get; set; }
-  
+
   /// <summary>
-  /// Background.
+  ///   Background.
   /// </summary>
-  public DocumentModel.Vml.Background? Background { get; set; }
-  
+  public Background? Background { get; set; }
 }

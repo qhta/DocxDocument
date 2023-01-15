@@ -39,13 +39,15 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\MyLib\Qhta.TypeUtils\Qhta.TypeUtils.csproj" />
     <ProjectReference Include="..\DocumentModel\DocumentModel.csproj" />
   </ItemGroup>
 
   <ItemGroup>
     <Reference Include="Qhta.Collections">
       <HintPath>..\..\MyLib\Qhta.Collections\obj\Debug\Qhta.Collections.dll</HintPath>
+    </Reference>
+    <Reference Include="Qhta.TypeUtils">
+      <HintPath>..\..\MyLib\bin\Debug\net6.0\Qhta.TypeUtils.dll</HintPath>
     </Reference>
   </ItemGroup>
 

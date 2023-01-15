@@ -1,19 +1,18 @@
 namespace DocumentModel.Drawings.ChartDrawings;
 
 /// <summary>
-/// Defines the PlotArea Class.
+///   Defines the PlotArea Class.
 /// </summary>
-public partial class PlotArea
+public class PlotArea
 {
   /// <summary>
-  /// PlotAreaRegion.
+  ///   PlotAreaRegion.
   /// </summary>
-  public DocumentModel.Drawings.ChartDrawings.PlotAreaRegion? PlotAreaRegion { get; set; }
-  
-  public Collection<DocumentModel.Drawings.ChartDrawings.Axis>? Axises { get; set; }
-  
-  public DocumentModel.Drawings.ChartDrawings.ShapeProperties? ShapeProperties { get; set; }
-  
-  public DocumentModel.Drawings.ChartDrawings.ExtensionList? ExtensionList { get; set; }
-  
+  public PlotAreaRegion? PlotAreaRegion { get; set; }
+
+  public Collection<Axis>? Axises { get; set; }
+
+  public ShapeProperties? ShapeProperties { get; set; }
+
+  public ExtensionList? ExtensionList { get; set; }
 }

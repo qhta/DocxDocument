@@ -1,18 +1,17 @@
 namespace DocumentModel.Wordprocessing;
 
 /// <summary>
-/// Defines the DocumentConformance enumeration.
+///   Defines the DocumentConformance enumeration.
 /// </summary>
 public enum DocumentConformance
 {
   /// <summary>
-  /// transitional.
+  ///   transitional.
   /// </summary>
   transitional,
-  
+
   /// <summary>
-  /// strict.
+  ///   strict.
   /// </summary>
-  strict,
-  
+  strict
 }

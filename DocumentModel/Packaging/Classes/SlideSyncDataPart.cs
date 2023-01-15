@@ -1,12 +1,11 @@
 namespace DocumentModel.Packaging;
 
 /// <summary>
-/// Defines the SlideSyncDataPart
+///   Defines the SlideSyncDataPart
 /// </summary>
-public partial class SlideSyncDataPart
+public class SlideSyncDataPart
 {
   public String? ContentType { get; set; }
-  
+
   public String? RelationshipType { get; set; }
-  
 }

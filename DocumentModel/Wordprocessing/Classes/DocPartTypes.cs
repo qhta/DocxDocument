@@ -1,15 +1,14 @@
 namespace DocumentModel.Wordprocessing;
 
 /// <summary>
-/// Entry Types.
+///   Entry Types.
 /// </summary>
-public partial class DocPartTypes
+public class DocPartTypes
 {
   /// <summary>
-  /// Entry Is Of All Types
+  ///   Entry Is Of All Types
   /// </summary>
   public Boolean? All { get; set; }
-  
-  public DocumentModel.Wordprocessing.DocPartKind? DocPartType { get; set; }
-  
+
+  public DocPartKind? DocPartType { get; set; }
 }

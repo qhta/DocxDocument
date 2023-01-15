@@ -1,28 +1,27 @@
 namespace DocumentModel.Drawings;
 
 /// <summary>
-/// Font Scheme.
+///   Font Scheme.
 /// </summary>
-public partial class FontScheme
+public class FontScheme
 {
   /// <summary>
-  /// Name
+  ///   Name
   /// </summary>
   public String? Name { get; set; }
-  
+
   /// <summary>
-  /// Major Font.
+  ///   Major Font.
   /// </summary>
-  public DocumentModel.Drawings.MajorFont? MajorFont { get; set; }
-  
+  public MajorFont? MajorFont { get; set; }
+
   /// <summary>
-  /// Minor fonts.
+  ///   Minor fonts.
   /// </summary>
-  public DocumentModel.Drawings.MinorFont? MinorFont { get; set; }
-  
+  public MinorFont? MinorFont { get; set; }
+
   /// <summary>
-  /// ExtensionList.
+  ///   ExtensionList.
   /// </summary>
-  public DocumentModel.Drawings.ExtensionList? ExtensionList { get; set; }
-  
+  public ExtensionList? ExtensionList { get; set; }
 }

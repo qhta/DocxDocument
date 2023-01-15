@@ -1,13 +1,12 @@
 namespace DocumentModel.Drawings.Charts;
 
 /// <summary>
-/// Defines the FilteredBarSeries Class.
+///   Defines the FilteredBarSeries Class.
 /// </summary>
-public partial class FilteredBarSeries
+public class FilteredBarSeries
 {
   /// <summary>
-  /// BarChartSeries.
+  ///   BarChartSeries.
   /// </summary>
-  public DocumentModel.Drawings.Charts.BarChartSeries3? BarChartSeries { get; set; }
-  
+  public BarChartSeries3? BarChartSeries { get; set; }
 }

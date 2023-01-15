@@ -1,18 +1,17 @@
 namespace DocumentModel.Drawings.Office;
 
 /// <summary>
-/// Defines the ShapeNonVisualProperties Class.
+///   Defines the ShapeNonVisualProperties Class.
 /// </summary>
-public partial class ShapeNonVisualProperties
+public class ShapeNonVisualProperties
 {
   /// <summary>
-  /// NonVisualDrawingProperties.
+  ///   NonVisualDrawingProperties.
   /// </summary>
-  public DocumentModel.Drawings.Office.NonVisualDrawingProperties? NonVisualDrawingProperties { get; set; }
-  
+  public NonVisualDrawingProperties? NonVisualDrawingProperties { get; set; }
+
   /// <summary>
-  /// NonVisualDrawingShapeProperties.
+  ///   NonVisualDrawingShapeProperties.
   /// </summary>
-  public DocumentModel.Drawings.Office.NonVisualDrawingShapeProperties? NonVisualDrawingShapeProperties { get; set; }
-  
+  public NonVisualDrawingShapeProperties? NonVisualDrawingShapeProperties { get; set; }
 }

@@ -1,28 +1,27 @@
 namespace DocumentModel.Drawings.Charts;
 
 /// <summary>
-/// Axis Position
+///   Axis Position
 /// </summary>
 public enum AxisPositionKind
 {
   /// <summary>
-  /// Bottom.
+  ///   Bottom.
   /// </summary>
   Bottom,
-  
+
   /// <summary>
-  /// Left.
+  ///   Left.
   /// </summary>
   Left,
-  
+
   /// <summary>
-  /// Right.
+  ///   Right.
   /// </summary>
   Right,
-  
+
   /// <summary>
-  /// Top.
+  ///   Top.
   /// </summary>
-  Top,
-  
+  Top
 }

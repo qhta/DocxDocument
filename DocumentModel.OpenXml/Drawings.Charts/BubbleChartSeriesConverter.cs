@@ -1,74 +1,88 @@
+using DocumentFormat.OpenXml.Drawing.Charts;
+using BubbleSerExtensionList = DocumentModel.Drawings.Charts.BubbleSerExtensionList;
+using BubbleSize = DocumentModel.Drawings.Charts.BubbleSize;
+using ChartShapeProperties = DocumentModel.Drawings.Charts.ChartShapeProperties;
+using DataLabels = DocumentModel.Drawings.Charts.DataLabels;
+using DataPoint = DocumentModel.Drawings.Charts.DataPoint;
+using ErrorBars = DocumentModel.Drawings.Charts.ErrorBars;
+using Index = DocumentFormat.OpenXml.Drawing.Charts.Index;
+using PictureOptions = DocumentModel.Drawings.Charts.PictureOptions;
+using SeriesText = DocumentModel.Drawings.Charts.SeriesText;
+using Trendline = DocumentModel.Drawings.Charts.Trendline;
+using XValues = DocumentModel.Drawings.Charts.XValues;
+using YValues = DocumentModel.Drawings.Charts.YValues;
+
 namespace DocumentModel.OpenXml.Drawings.Charts;
 
 /// <summary>
-/// Defines the BubbleChartSeries Class.
+///   Defines the BubbleChartSeries Class.
 /// </summary>
 public static class BubbleChartSeriesConverter
 {
   /// <summary>
-  /// Index.
+  ///   Index.
   /// </summary>
-  public static UInt32? GetIndex(DocumentFormat.OpenXml.Drawing.Charts.BubbleChartSeries? openXmlElement)
+  public static UInt32? GetIndex(BubbleChartSeries? openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.Index>();
+    var itemElement = openXmlElement?.GetFirstChild<Index>();
     if (itemElement != null)
       return itemElement.Val?.Value;
     return null;
   }
-  
-  public static void SetIndex(DocumentFormat.OpenXml.Drawing.Charts.BubbleChartSeries? openXmlElement, UInt32? value)
+
+  public static void SetIndex(BubbleChartSeries? openXmlElement, UInt32? value)
   {
     if (openXmlElement != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.Index>();
+      var itemElement = openXmlElement.GetFirstChild<Index>();
       if (itemElement != null)
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = new DocumentFormat.OpenXml.Drawing.Charts.Index{ Val = value };
+        itemElement = new Index { Val = value };
         openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
+
   /// <summary>
-  /// Order.
+  ///   Order.
   /// </summary>
-  public static UInt32? GetOrder(DocumentFormat.OpenXml.Drawing.Charts.BubbleChartSeries? openXmlElement)
+  public static UInt32? GetOrder(BubbleChartSeries? openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.Order>();
+    var itemElement = openXmlElement?.GetFirstChild<Order>();
     if (itemElement != null)
       return itemElement.Val?.Value;
     return null;
   }
-  
-  public static void SetOrder(DocumentFormat.OpenXml.Drawing.Charts.BubbleChartSeries? openXmlElement, UInt32? value)
+
+  public static void SetOrder(BubbleChartSeries? openXmlElement, UInt32? value)
   {
     if (openXmlElement != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.Order>();
+      var itemElement = openXmlElement.GetFirstChild<Order>();
       if (itemElement != null)
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = new DocumentFormat.OpenXml.Drawing.Charts.Order{ Val = value };
+        itemElement = new Order { Val = value };
         openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
+
   /// <summary>
-  /// Series Text.
+  ///   Series Text.
   /// </summary>
-  public static DocumentModel.Drawings.Charts.SeriesText? GetSeriesText(DocumentFormat.OpenXml.Drawing.Charts.BubbleChartSeries? openXmlElement)
+  public static SeriesText? GetSeriesText(BubbleChartSeries? openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.SeriesText>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.Charts.SeriesTextConverter.CreateModelElement(itemElement);
+      return SeriesTextConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetSeriesText(DocumentFormat.OpenXml.Drawing.Charts.BubbleChartSeries? openXmlElement, DocumentModel.Drawings.Charts.SeriesText? value)
+
+  public static void SetSeriesText(BubbleChartSeries? openXmlElement, SeriesText? value)
   {
     if (openXmlElement != null)
     {
@@ -77,25 +91,25 @@ public static class BubbleChartSeriesConverter
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Drawings.Charts.SeriesTextConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Charts.SeriesText>(value);
+        itemElement = SeriesTextConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Charts.SeriesText>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
+
   /// <summary>
-  /// ChartShapeProperties.
+  ///   ChartShapeProperties.
   /// </summary>
-  public static DocumentModel.Drawings.Charts.ChartShapeProperties? GetChartShapeProperties(DocumentFormat.OpenXml.Drawing.Charts.BubbleChartSeries? openXmlElement)
+  public static ChartShapeProperties? GetChartShapeProperties(BubbleChartSeries? openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.ChartShapeProperties>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.Charts.ChartShapePropertiesConverter.CreateModelElement(itemElement);
+      return ChartShapePropertiesConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetChartShapeProperties(DocumentFormat.OpenXml.Drawing.Charts.BubbleChartSeries? openXmlElement, DocumentModel.Drawings.Charts.ChartShapeProperties? value)
+
+  public static void SetChartShapeProperties(BubbleChartSeries? openXmlElement, ChartShapeProperties? value)
   {
     if (openXmlElement != null)
     {
@@ -104,25 +118,25 @@ public static class BubbleChartSeriesConverter
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Drawings.Charts.ChartShapePropertiesConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Charts.ChartShapeProperties>(value);
+        itemElement = ChartShapePropertiesConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Charts.ChartShapeProperties>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
+
   /// <summary>
-  /// PictureOptions.
+  ///   PictureOptions.
   /// </summary>
-  public static DocumentModel.Drawings.Charts.PictureOptions? GetPictureOptions(DocumentFormat.OpenXml.Drawing.Charts.BubbleChartSeries? openXmlElement)
+  public static PictureOptions? GetPictureOptions(BubbleChartSeries? openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.PictureOptions>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.Charts.PictureOptionsConverter.CreateModelElement(itemElement);
+      return PictureOptionsConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetPictureOptions(DocumentFormat.OpenXml.Drawing.Charts.BubbleChartSeries? openXmlElement, DocumentModel.Drawings.Charts.PictureOptions? value)
+
+  public static void SetPictureOptions(BubbleChartSeries? openXmlElement, PictureOptions? value)
   {
     if (openXmlElement != null)
     {
@@ -131,52 +145,52 @@ public static class BubbleChartSeriesConverter
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Drawings.Charts.PictureOptionsConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Charts.PictureOptions>(value);
+        itemElement = PictureOptionsConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Charts.PictureOptions>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
+
   /// <summary>
-  /// InvertIfNegative.
+  ///   InvertIfNegative.
   /// </summary>
-  public static Boolean? GetInvertIfNegative(DocumentFormat.OpenXml.Drawing.Charts.BubbleChartSeries? openXmlElement)
+  public static Boolean? GetInvertIfNegative(BubbleChartSeries? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.InvertIfNegative>();
+      var itemElement = openXmlElement.GetFirstChild<InvertIfNegative>();
       return itemElement != null;
     }
     return null;
   }
-  
-  public static void SetInvertIfNegative(DocumentFormat.OpenXml.Drawing.Charts.BubbleChartSeries? openXmlElement, Boolean? value)
+
+  public static void SetInvertIfNegative(BubbleChartSeries? openXmlElement, Boolean? value)
   {
     if (openXmlElement != null)
     {
       if (value == false)
       {
-        var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.InvertIfNegative>();
+        var itemElement = openXmlElement.GetFirstChild<InvertIfNegative>();
         if (itemElement != null)
           itemElement.Remove();
       }
       if (value == true)
       {
-        var itemElement = new DocumentFormat.OpenXml.Drawing.Charts.InvertIfNegative();
+        var itemElement = new InvertIfNegative();
         openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static System.Collections.ObjectModel.Collection<DocumentModel.Drawings.Charts.DataPoint>? GetDataPoints(DocumentFormat.OpenXml.Drawing.Charts.BubbleChartSeries? openXmlElement)
+
+  public static Collection<DataPoint>? GetDataPoints(BubbleChartSeries? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var collection = new System.Collections.ObjectModel.Collection<DocumentModel.Drawings.Charts.DataPoint>();
+      var collection = new Collection<DataPoint>();
       foreach (var item in openXmlElement.Elements<DocumentFormat.OpenXml.Drawing.Charts.DataPoint>())
       {
-        var newItem = DocumentModel.OpenXml.Drawings.Charts.DataPointConverter.CreateModelElement(item);
+        var newItem = DataPointConverter.CreateModelElement(item);
         if (newItem != null)
           collection.Add(newItem);
       }
@@ -184,33 +198,31 @@ public static class BubbleChartSeriesConverter
     }
     return null;
   }
-  
-  public static void SetDataPoints(DocumentFormat.OpenXml.Drawing.Charts.BubbleChartSeries? openXmlElement, System.Collections.ObjectModel.Collection<DocumentModel.Drawings.Charts.DataPoint>? value)
+
+  public static void SetDataPoints(BubbleChartSeries? openXmlElement, Collection<DataPoint>? value)
   {
     if (openXmlElement != null)
     {
       openXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Drawing.Charts.DataPoint>();
       if (value != null)
-      {
         foreach (var item in value)
         {
-          var newItem = DocumentModel.OpenXml.Drawings.Charts.DataPointConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Charts.DataPoint>(item);
+          var newItem = DataPointConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Charts.DataPoint>(item);
           if (newItem != null)
             openXmlElement.AddChild(newItem);
         }
-      }
     }
   }
-  
-  public static DocumentModel.Drawings.Charts.DataLabels? GetDataLabels(DocumentFormat.OpenXml.Drawing.Charts.BubbleChartSeries? openXmlElement)
+
+  public static DataLabels? GetDataLabels(BubbleChartSeries? openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.DataLabels>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.Charts.DataLabelsConverter.CreateModelElement(itemElement);
+      return DataLabelsConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetDataLabels(DocumentFormat.OpenXml.Drawing.Charts.BubbleChartSeries? openXmlElement, DocumentModel.Drawings.Charts.DataLabels? value)
+
+  public static void SetDataLabels(BubbleChartSeries? openXmlElement, DataLabels? value)
   {
     if (openXmlElement != null)
     {
@@ -219,21 +231,21 @@ public static class BubbleChartSeriesConverter
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Drawings.Charts.DataLabelsConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Charts.DataLabels>(value);
+        itemElement = DataLabelsConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Charts.DataLabels>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static System.Collections.ObjectModel.Collection<DocumentModel.Drawings.Charts.Trendline>? GetTrendlines(DocumentFormat.OpenXml.Drawing.Charts.BubbleChartSeries? openXmlElement)
+
+  public static Collection<Trendline>? GetTrendlines(BubbleChartSeries? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var collection = new System.Collections.ObjectModel.Collection<DocumentModel.Drawings.Charts.Trendline>();
+      var collection = new Collection<Trendline>();
       foreach (var item in openXmlElement.Elements<DocumentFormat.OpenXml.Drawing.Charts.Trendline>())
       {
-        var newItem = DocumentModel.OpenXml.Drawings.Charts.TrendlineConverter.CreateModelElement(item);
+        var newItem = TrendlineConverter.CreateModelElement(item);
         if (newItem != null)
           collection.Add(newItem);
       }
@@ -241,32 +253,30 @@ public static class BubbleChartSeriesConverter
     }
     return null;
   }
-  
-  public static void SetTrendlines(DocumentFormat.OpenXml.Drawing.Charts.BubbleChartSeries? openXmlElement, System.Collections.ObjectModel.Collection<DocumentModel.Drawings.Charts.Trendline>? value)
+
+  public static void SetTrendlines(BubbleChartSeries? openXmlElement, Collection<Trendline>? value)
   {
     if (openXmlElement != null)
     {
       openXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Drawing.Charts.Trendline>();
       if (value != null)
-      {
         foreach (var item in value)
         {
-          var newItem = DocumentModel.OpenXml.Drawings.Charts.TrendlineConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Charts.Trendline>(item);
+          var newItem = TrendlineConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Charts.Trendline>(item);
           if (newItem != null)
             openXmlElement.AddChild(newItem);
         }
-      }
     }
   }
-  
-  public static System.Collections.ObjectModel.Collection<DocumentModel.Drawings.Charts.ErrorBars>? GetErrorBarses(DocumentFormat.OpenXml.Drawing.Charts.BubbleChartSeries? openXmlElement)
+
+  public static Collection<ErrorBars>? GetErrorBarses(BubbleChartSeries? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var collection = new System.Collections.ObjectModel.Collection<DocumentModel.Drawings.Charts.ErrorBars>();
+      var collection = new Collection<ErrorBars>();
       foreach (var item in openXmlElement.Elements<DocumentFormat.OpenXml.Drawing.Charts.ErrorBars>())
       {
-        var newItem = DocumentModel.OpenXml.Drawings.Charts.ErrorBarsConverter.CreateModelElement(item);
+        var newItem = ErrorBarsConverter.CreateModelElement(item);
         if (newItem != null)
           collection.Add(newItem);
       }
@@ -274,33 +284,31 @@ public static class BubbleChartSeriesConverter
     }
     return null;
   }
-  
-  public static void SetErrorBarses(DocumentFormat.OpenXml.Drawing.Charts.BubbleChartSeries? openXmlElement, System.Collections.ObjectModel.Collection<DocumentModel.Drawings.Charts.ErrorBars>? value)
+
+  public static void SetErrorBarses(BubbleChartSeries? openXmlElement, Collection<ErrorBars>? value)
   {
     if (openXmlElement != null)
     {
       openXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Drawing.Charts.ErrorBars>();
       if (value != null)
-      {
         foreach (var item in value)
         {
-          var newItem = DocumentModel.OpenXml.Drawings.Charts.ErrorBarsConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Charts.ErrorBars>(item);
+          var newItem = ErrorBarsConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Charts.ErrorBars>(item);
           if (newItem != null)
             openXmlElement.AddChild(newItem);
         }
-      }
     }
   }
-  
-  public static DocumentModel.Drawings.Charts.XValues? GetXValues(DocumentFormat.OpenXml.Drawing.Charts.BubbleChartSeries? openXmlElement)
+
+  public static XValues? GetXValues(BubbleChartSeries? openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.XValues>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.Charts.XValuesConverter.CreateModelElement(itemElement);
+      return XValuesConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetXValues(DocumentFormat.OpenXml.Drawing.Charts.BubbleChartSeries? openXmlElement, DocumentModel.Drawings.Charts.XValues? value)
+
+  public static void SetXValues(BubbleChartSeries? openXmlElement, XValues? value)
   {
     if (openXmlElement != null)
     {
@@ -309,22 +317,22 @@ public static class BubbleChartSeriesConverter
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Drawings.Charts.XValuesConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Charts.XValues>(value);
+        itemElement = XValuesConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Charts.XValues>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static DocumentModel.Drawings.Charts.YValues? GetYValues(DocumentFormat.OpenXml.Drawing.Charts.BubbleChartSeries? openXmlElement)
+
+  public static YValues? GetYValues(BubbleChartSeries? openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.YValues>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.Charts.YValuesConverter.CreateModelElement(itemElement);
+      return YValuesConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetYValues(DocumentFormat.OpenXml.Drawing.Charts.BubbleChartSeries? openXmlElement, DocumentModel.Drawings.Charts.YValues? value)
+
+  public static void SetYValues(BubbleChartSeries? openXmlElement, YValues? value)
   {
     if (openXmlElement != null)
     {
@@ -333,22 +341,22 @@ public static class BubbleChartSeriesConverter
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Drawings.Charts.YValuesConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Charts.YValues>(value);
+        itemElement = YValuesConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Charts.YValues>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static DocumentModel.Drawings.Charts.BubbleSize? GetBubbleSize(DocumentFormat.OpenXml.Drawing.Charts.BubbleChartSeries? openXmlElement)
+
+  public static BubbleSize? GetBubbleSize(BubbleChartSeries? openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.BubbleSize>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.Charts.BubbleSizeConverter.CreateModelElement(itemElement);
+      return BubbleSizeConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetBubbleSize(DocumentFormat.OpenXml.Drawing.Charts.BubbleChartSeries? openXmlElement, DocumentModel.Drawings.Charts.BubbleSize? value)
+
+  public static void SetBubbleSize(BubbleChartSeries? openXmlElement, BubbleSize? value)
   {
     if (openXmlElement != null)
     {
@@ -357,50 +365,50 @@ public static class BubbleChartSeriesConverter
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Drawings.Charts.BubbleSizeConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Charts.BubbleSize>(value);
+        itemElement = BubbleSizeConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Charts.BubbleSize>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static Boolean? GetBubble3D(DocumentFormat.OpenXml.Drawing.Charts.BubbleChartSeries? openXmlElement)
+
+  public static Boolean? GetBubble3D(BubbleChartSeries? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.Bubble3D>();
+      var itemElement = openXmlElement.GetFirstChild<Bubble3D>();
       return itemElement != null;
     }
     return null;
   }
-  
-  public static void SetBubble3D(DocumentFormat.OpenXml.Drawing.Charts.BubbleChartSeries? openXmlElement, Boolean? value)
+
+  public static void SetBubble3D(BubbleChartSeries? openXmlElement, Boolean? value)
   {
     if (openXmlElement != null)
     {
       if (value == false)
       {
-        var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.Bubble3D>();
+        var itemElement = openXmlElement.GetFirstChild<Bubble3D>();
         if (itemElement != null)
           itemElement.Remove();
       }
       if (value == true)
       {
-        var itemElement = new DocumentFormat.OpenXml.Drawing.Charts.Bubble3D();
+        var itemElement = new Bubble3D();
         openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static DocumentModel.Drawings.Charts.BubbleSerExtensionList? GetBubbleSerExtensionList(DocumentFormat.OpenXml.Drawing.Charts.BubbleChartSeries? openXmlElement)
+
+  public static BubbleSerExtensionList? GetBubbleSerExtensionList(BubbleChartSeries? openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.BubbleSerExtensionList>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.Charts.BubbleSerExtensionListConverter.CreateModelElement(itemElement);
+      return BubbleSerExtensionListConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetBubbleSerExtensionList(DocumentFormat.OpenXml.Drawing.Charts.BubbleChartSeries? openXmlElement, DocumentModel.Drawings.Charts.BubbleSerExtensionList? value)
+
+  public static void SetBubbleSerExtensionList(BubbleChartSeries? openXmlElement, BubbleSerExtensionList? value)
   {
     if (openXmlElement != null)
     {
@@ -409,14 +417,14 @@ public static class BubbleChartSeriesConverter
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.Drawings.Charts.BubbleSerExtensionListConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Charts.BubbleSerExtensionList>(value);
+        itemElement = BubbleSerExtensionListConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Charts.BubbleSerExtensionList>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static DocumentModel.Drawings.Charts.BubbleChartSeries? CreateModelElement(DocumentFormat.OpenXml.Drawing.Charts.BubbleChartSeries? openXmlElement)
+
+  public static DocumentModel.Drawings.Charts.BubbleChartSeries? CreateModelElement(BubbleChartSeries? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -440,9 +448,9 @@ public static class BubbleChartSeriesConverter
     }
     return null;
   }
-  
+
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.Charts.BubbleChartSeries? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.Charts.BubbleChartSeries, new()
+    where OpenXmlElementType : BubbleChartSeries, new()
   {
     if (value != null)
     {

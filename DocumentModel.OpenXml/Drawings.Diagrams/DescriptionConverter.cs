@@ -1,19 +1,21 @@
+using DocumentFormat.OpenXml.Drawing.Diagrams;
+
 namespace DocumentModel.OpenXml.Drawings.Diagrams;
 
 /// <summary>
-/// Description.
+///   Description.
 /// </summary>
 public static class DescriptionConverter
 {
   /// <summary>
-  /// Language
+  ///   Language
   /// </summary>
-  public static String? GetLanguage(DocumentFormat.OpenXml.Drawing.Diagrams.Description? openXmlElement)
+  public static String? GetLanguage(Description? openXmlElement)
   {
     return openXmlElement?.Language?.Value;
   }
-  
-  public static void SetLanguage(DocumentFormat.OpenXml.Drawing.Diagrams.Description? openXmlElement, String? value)
+
+  public static void SetLanguage(Description? openXmlElement, String? value)
   {
     if (openXmlElement != null)
       if (value != null)
@@ -21,16 +23,16 @@ public static class DescriptionConverter
       else
         openXmlElement.Language = null;
   }
-  
+
   /// <summary>
-  /// Value
+  ///   Value
   /// </summary>
-  public static String? GetVal(DocumentFormat.OpenXml.Drawing.Diagrams.Description? openXmlElement)
+  public static String? GetVal(Description? openXmlElement)
   {
     return openXmlElement?.Val?.Value;
   }
-  
-  public static void SetVal(DocumentFormat.OpenXml.Drawing.Diagrams.Description? openXmlElement, String? value)
+
+  public static void SetVal(Description? openXmlElement, String? value)
   {
     if (openXmlElement != null)
       if (value != null)
@@ -38,8 +40,8 @@ public static class DescriptionConverter
       else
         openXmlElement.Val = null;
   }
-  
-  public static DocumentModel.Drawings.Diagrams.Description? CreateModelElement(DocumentFormat.OpenXml.Drawing.Diagrams.Description? openXmlElement)
+
+  public static DocumentModel.Drawings.Diagrams.Description? CreateModelElement(Description? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -50,9 +52,9 @@ public static class DescriptionConverter
     }
     return null;
   }
-  
+
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.Diagrams.Description? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.Diagrams.Description, new()
+    where OpenXmlElementType : Description, new()
   {
     if (value != null)
     {

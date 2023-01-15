@@ -1,43 +1,42 @@
 namespace DocumentModel.Drawings.Charts;
 
 /// <summary>
-/// 3D view settings.
+///   3D view settings.
 /// </summary>
-public partial class View3D
+public class View3D
 {
   /// <summary>
-  /// X Rotation.
+  ///   X Rotation.
   /// </summary>
   public SByte? RotateX { get; set; }
-  
+
   /// <summary>
-  /// Height Percent.
+  ///   Height Percent.
   /// </summary>
   public UInt16? HeightPercent { get; set; }
-  
+
   /// <summary>
-  /// Y Rotation.
+  ///   Y Rotation.
   /// </summary>
   public UInt16? RotateY { get; set; }
-  
+
   /// <summary>
-  /// Depth Percent.
+  ///   Depth Percent.
   /// </summary>
   public UInt16? DepthPercent { get; set; }
-  
+
   /// <summary>
-  /// Right Angle Axes.
+  ///   Right Angle Axes.
   /// </summary>
   public Boolean? RightAngleAxes { get; set; }
-  
+
   /// <summary>
-  /// Perspective.
+  ///   Perspective.
   /// </summary>
   public Byte? Perspective { get; set; }
-  
+
   /// <summary>
-  /// Chart Extensibility.
+  ///   Chart Extensibility.
   /// </summary>
-  public DocumentModel.Drawings.Charts.ExtensionList? ExtensionList { get; set; }
-  
+  public ExtensionList? ExtensionList { get; set; }
 }

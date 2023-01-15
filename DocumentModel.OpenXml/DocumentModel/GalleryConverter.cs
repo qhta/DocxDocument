@@ -1,32 +1,34 @@
+using DocumentFormat.OpenXml.Office2010.CustomUI;
+
 namespace DocumentModel.OpenXml;
 
 /// <summary>
-/// Defines the Gallery Class.
+///   Defines the Gallery Class.
 /// </summary>
 public static class GalleryConverter
 {
   /// <summary>
-  /// size, this property is only available in Office 2010 and later.
+  ///   size, this property is only available in Office 2010 and later.
   /// </summary>
-  public static DocumentModel.SizeKind? GetSize(DocumentFormat.OpenXml.Office2010.CustomUI.Gallery? openXmlElement)
+  public static SizeKind? GetSize(DocumentFormat.OpenXml.Office2010.CustomUI.Gallery? openXmlElement)
   {
-    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Office2010.CustomUI.SizeValues, DocumentModel.SizeKind>(openXmlElement?.Size?.Value);
+    return EnumValueConverter.GetValue<SizeValues, SizeKind>(openXmlElement?.Size?.Value);
   }
-  
-  public static void SetSize(DocumentFormat.OpenXml.Office2010.CustomUI.Gallery? openXmlElement, DocumentModel.SizeKind? value)
+
+  public static void SetSize(DocumentFormat.OpenXml.Office2010.CustomUI.Gallery? openXmlElement, SizeKind? value)
   {
     if (openXmlElement != null)
-      openXmlElement.Size = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Office2010.CustomUI.SizeValues, DocumentModel.SizeKind>(value);
+      openXmlElement.Size = EnumValueConverter.CreateEnumValue<SizeValues, SizeKind>(value);
   }
-  
+
   /// <summary>
-  /// getSize, this property is only available in Office 2010 and later.
+  ///   getSize, this property is only available in Office 2010 and later.
   /// </summary>
   public static String? GetGetSize(DocumentFormat.OpenXml.Office2010.CustomUI.Gallery? openXmlElement)
   {
     return openXmlElement?.GetSize?.Value;
   }
-  
+
   public static void SetGetSize(DocumentFormat.OpenXml.Office2010.CustomUI.Gallery? openXmlElement, String? value)
   {
     if (openXmlElement != null)
@@ -35,15 +37,15 @@ public static class GalleryConverter
       else
         openXmlElement.GetSize = null;
   }
-  
+
   /// <summary>
-  /// description, this property is only available in Office 2010 and later.
+  ///   description, this property is only available in Office 2010 and later.
   /// </summary>
   public static String? GetDescription(DocumentFormat.OpenXml.Office2010.CustomUI.Gallery? openXmlElement)
   {
     return openXmlElement?.Description?.Value;
   }
-  
+
   public static void SetDescription(DocumentFormat.OpenXml.Office2010.CustomUI.Gallery? openXmlElement, String? value)
   {
     if (openXmlElement != null)
@@ -52,15 +54,15 @@ public static class GalleryConverter
       else
         openXmlElement.Description = null;
   }
-  
+
   /// <summary>
-  /// getDescription, this property is only available in Office 2010 and later.
+  ///   getDescription, this property is only available in Office 2010 and later.
   /// </summary>
   public static String? GetGetDescription(DocumentFormat.OpenXml.Office2010.CustomUI.Gallery? openXmlElement)
   {
     return openXmlElement?.GetDescription?.Value;
   }
-  
+
   public static void SetGetDescription(DocumentFormat.OpenXml.Office2010.CustomUI.Gallery? openXmlElement, String? value)
   {
     if (openXmlElement != null)
@@ -69,15 +71,15 @@ public static class GalleryConverter
       else
         openXmlElement.GetDescription = null;
   }
-  
+
   /// <summary>
-  /// invalidateContentOnDrop, this property is only available in Office 2010 and later.
+  ///   invalidateContentOnDrop, this property is only available in Office 2010 and later.
   /// </summary>
   public static Boolean? GetInvalidateContentOnDrop(DocumentFormat.OpenXml.Office2010.CustomUI.Gallery? openXmlElement)
   {
     return openXmlElement?.InvalidateContentOnDrop?.Value;
   }
-  
+
   public static void SetInvalidateContentOnDrop(DocumentFormat.OpenXml.Office2010.CustomUI.Gallery? openXmlElement, Boolean? value)
   {
     if (openXmlElement != null)
@@ -86,71 +88,71 @@ public static class GalleryConverter
       else
         openXmlElement.InvalidateContentOnDrop = null;
   }
-  
+
   /// <summary>
-  /// columns, this property is only available in Office 2010 and later.
+  ///   columns, this property is only available in Office 2010 and later.
   /// </summary>
   public static Int64? GetColumns(DocumentFormat.OpenXml.Office2010.CustomUI.Gallery? openXmlElement)
   {
     return openXmlElement?.Columns?.Value;
   }
-  
+
   public static void SetColumns(DocumentFormat.OpenXml.Office2010.CustomUI.Gallery? openXmlElement, Int64? value)
   {
     if (openXmlElement != null)
       openXmlElement.Columns = value;
   }
-  
+
   /// <summary>
-  /// rows, this property is only available in Office 2010 and later.
+  ///   rows, this property is only available in Office 2010 and later.
   /// </summary>
   public static Int64? GetRows(DocumentFormat.OpenXml.Office2010.CustomUI.Gallery? openXmlElement)
   {
     return openXmlElement?.Rows?.Value;
   }
-  
+
   public static void SetRows(DocumentFormat.OpenXml.Office2010.CustomUI.Gallery? openXmlElement, Int64? value)
   {
     if (openXmlElement != null)
       openXmlElement.Rows = value;
   }
-  
+
   /// <summary>
-  /// itemWidth, this property is only available in Office 2010 and later.
+  ///   itemWidth, this property is only available in Office 2010 and later.
   /// </summary>
   public static Int64? GetItemWidth(DocumentFormat.OpenXml.Office2010.CustomUI.Gallery? openXmlElement)
   {
     return openXmlElement?.ItemWidth?.Value;
   }
-  
+
   public static void SetItemWidth(DocumentFormat.OpenXml.Office2010.CustomUI.Gallery? openXmlElement, Int64? value)
   {
     if (openXmlElement != null)
       openXmlElement.ItemWidth = value;
   }
-  
+
   /// <summary>
-  /// itemHeight, this property is only available in Office 2010 and later.
+  ///   itemHeight, this property is only available in Office 2010 and later.
   /// </summary>
   public static Int64? GetItemHeight(DocumentFormat.OpenXml.Office2010.CustomUI.Gallery? openXmlElement)
   {
     return openXmlElement?.ItemHeight?.Value;
   }
-  
+
   public static void SetItemHeight(DocumentFormat.OpenXml.Office2010.CustomUI.Gallery? openXmlElement, Int64? value)
   {
     if (openXmlElement != null)
       openXmlElement.ItemHeight = value;
   }
-  
+
   /// <summary>
-  /// getItemWidth, this property is only available in Office 2010 and later.
+  ///   getItemWidth, this property is only available in Office 2010 and later.
   /// </summary>
   public static String? GetGetItemWidth(DocumentFormat.OpenXml.Office2010.CustomUI.Gallery? openXmlElement)
   {
     return openXmlElement?.GetItemWidth?.Value;
   }
-  
+
   public static void SetGetItemWidth(DocumentFormat.OpenXml.Office2010.CustomUI.Gallery? openXmlElement, String? value)
   {
     if (openXmlElement != null)
@@ -159,15 +161,15 @@ public static class GalleryConverter
       else
         openXmlElement.GetItemWidth = null;
   }
-  
+
   /// <summary>
-  /// getItemHeight, this property is only available in Office 2010 and later.
+  ///   getItemHeight, this property is only available in Office 2010 and later.
   /// </summary>
   public static String? GetGetItemHeight(DocumentFormat.OpenXml.Office2010.CustomUI.Gallery? openXmlElement)
   {
     return openXmlElement?.GetItemHeight?.Value;
   }
-  
+
   public static void SetGetItemHeight(DocumentFormat.OpenXml.Office2010.CustomUI.Gallery? openXmlElement, String? value)
   {
     if (openXmlElement != null)
@@ -176,15 +178,15 @@ public static class GalleryConverter
       else
         openXmlElement.GetItemHeight = null;
   }
-  
+
   /// <summary>
-  /// showItemLabel, this property is only available in Office 2010 and later.
+  ///   showItemLabel, this property is only available in Office 2010 and later.
   /// </summary>
   public static Boolean? GetShowItemLabel(DocumentFormat.OpenXml.Office2010.CustomUI.Gallery? openXmlElement)
   {
     return openXmlElement?.ShowItemLabel?.Value;
   }
-  
+
   public static void SetShowItemLabel(DocumentFormat.OpenXml.Office2010.CustomUI.Gallery? openXmlElement, Boolean? value)
   {
     if (openXmlElement != null)
@@ -193,29 +195,29 @@ public static class GalleryConverter
       else
         openXmlElement.ShowItemLabel = null;
   }
-  
+
   /// <summary>
-  /// showInRibbon, this property is only available in Office 2010 and later.
+  ///   showInRibbon, this property is only available in Office 2010 and later.
   /// </summary>
-  public static DocumentModel.GalleryShowInRibbonKind? GetShowInRibbon(DocumentFormat.OpenXml.Office2010.CustomUI.Gallery? openXmlElement)
+  public static GalleryShowInRibbonKind? GetShowInRibbon(DocumentFormat.OpenXml.Office2010.CustomUI.Gallery? openXmlElement)
   {
-    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Office2010.CustomUI.GalleryShowInRibbonValues, DocumentModel.GalleryShowInRibbonKind>(openXmlElement?.ShowInRibbon?.Value);
+    return EnumValueConverter.GetValue<GalleryShowInRibbonValues, GalleryShowInRibbonKind>(openXmlElement?.ShowInRibbon?.Value);
   }
-  
-  public static void SetShowInRibbon(DocumentFormat.OpenXml.Office2010.CustomUI.Gallery? openXmlElement, DocumentModel.GalleryShowInRibbonKind? value)
+
+  public static void SetShowInRibbon(DocumentFormat.OpenXml.Office2010.CustomUI.Gallery? openXmlElement, GalleryShowInRibbonKind? value)
   {
     if (openXmlElement != null)
-      openXmlElement.ShowInRibbon = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Office2010.CustomUI.GalleryShowInRibbonValues, DocumentModel.GalleryShowInRibbonKind>(value);
+      openXmlElement.ShowInRibbon = EnumValueConverter.CreateEnumValue<GalleryShowInRibbonValues, GalleryShowInRibbonKind>(value);
   }
-  
+
   /// <summary>
-  /// onAction, this property is only available in Office 2010 and later.
+  ///   onAction, this property is only available in Office 2010 and later.
   /// </summary>
   public static String? GetOnAction(DocumentFormat.OpenXml.Office2010.CustomUI.Gallery? openXmlElement)
   {
     return openXmlElement?.OnAction?.Value;
   }
-  
+
   public static void SetOnAction(DocumentFormat.OpenXml.Office2010.CustomUI.Gallery? openXmlElement, String? value)
   {
     if (openXmlElement != null)
@@ -224,15 +226,15 @@ public static class GalleryConverter
       else
         openXmlElement.OnAction = null;
   }
-  
+
   /// <summary>
-  /// enabled, this property is only available in Office 2010 and later.
+  ///   enabled, this property is only available in Office 2010 and later.
   /// </summary>
   public static Boolean? GetEnabled(DocumentFormat.OpenXml.Office2010.CustomUI.Gallery? openXmlElement)
   {
     return openXmlElement?.Enabled?.Value;
   }
-  
+
   public static void SetEnabled(DocumentFormat.OpenXml.Office2010.CustomUI.Gallery? openXmlElement, Boolean? value)
   {
     if (openXmlElement != null)
@@ -241,15 +243,15 @@ public static class GalleryConverter
       else
         openXmlElement.Enabled = null;
   }
-  
+
   /// <summary>
-  /// getEnabled, this property is only available in Office 2010 and later.
+  ///   getEnabled, this property is only available in Office 2010 and later.
   /// </summary>
   public static String? GetGetEnabled(DocumentFormat.OpenXml.Office2010.CustomUI.Gallery? openXmlElement)
   {
     return openXmlElement?.GetEnabled?.Value;
   }
-  
+
   public static void SetGetEnabled(DocumentFormat.OpenXml.Office2010.CustomUI.Gallery? openXmlElement, String? value)
   {
     if (openXmlElement != null)
@@ -258,15 +260,15 @@ public static class GalleryConverter
       else
         openXmlElement.GetEnabled = null;
   }
-  
+
   /// <summary>
-  /// image, this property is only available in Office 2010 and later.
+  ///   image, this property is only available in Office 2010 and later.
   /// </summary>
   public static String? GetImage(DocumentFormat.OpenXml.Office2010.CustomUI.Gallery? openXmlElement)
   {
     return openXmlElement?.Image?.Value;
   }
-  
+
   public static void SetImage(DocumentFormat.OpenXml.Office2010.CustomUI.Gallery? openXmlElement, String? value)
   {
     if (openXmlElement != null)
@@ -275,15 +277,15 @@ public static class GalleryConverter
       else
         openXmlElement.Image = null;
   }
-  
+
   /// <summary>
-  /// imageMso, this property is only available in Office 2010 and later.
+  ///   imageMso, this property is only available in Office 2010 and later.
   /// </summary>
   public static String? GetImageMso(DocumentFormat.OpenXml.Office2010.CustomUI.Gallery? openXmlElement)
   {
     return openXmlElement?.ImageMso?.Value;
   }
-  
+
   public static void SetImageMso(DocumentFormat.OpenXml.Office2010.CustomUI.Gallery? openXmlElement, String? value)
   {
     if (openXmlElement != null)
@@ -292,15 +294,15 @@ public static class GalleryConverter
       else
         openXmlElement.ImageMso = null;
   }
-  
+
   /// <summary>
-  /// getImage, this property is only available in Office 2010 and later.
+  ///   getImage, this property is only available in Office 2010 and later.
   /// </summary>
   public static String? GetGetImage(DocumentFormat.OpenXml.Office2010.CustomUI.Gallery? openXmlElement)
   {
     return openXmlElement?.GetImage?.Value;
   }
-  
+
   public static void SetGetImage(DocumentFormat.OpenXml.Office2010.CustomUI.Gallery? openXmlElement, String? value)
   {
     if (openXmlElement != null)
@@ -309,15 +311,15 @@ public static class GalleryConverter
       else
         openXmlElement.GetImage = null;
   }
-  
+
   /// <summary>
-  /// showItemImage, this property is only available in Office 2010 and later.
+  ///   showItemImage, this property is only available in Office 2010 and later.
   /// </summary>
   public static Boolean? GetShowItemImage(DocumentFormat.OpenXml.Office2010.CustomUI.Gallery? openXmlElement)
   {
     return openXmlElement?.ShowItemImage?.Value;
   }
-  
+
   public static void SetShowItemImage(DocumentFormat.OpenXml.Office2010.CustomUI.Gallery? openXmlElement, Boolean? value)
   {
     if (openXmlElement != null)
@@ -326,15 +328,15 @@ public static class GalleryConverter
       else
         openXmlElement.ShowItemImage = null;
   }
-  
+
   /// <summary>
-  /// getItemCount, this property is only available in Office 2010 and later.
+  ///   getItemCount, this property is only available in Office 2010 and later.
   /// </summary>
   public static String? GetGetItemCount(DocumentFormat.OpenXml.Office2010.CustomUI.Gallery? openXmlElement)
   {
     return openXmlElement?.GetItemCount?.Value;
   }
-  
+
   public static void SetGetItemCount(DocumentFormat.OpenXml.Office2010.CustomUI.Gallery? openXmlElement, String? value)
   {
     if (openXmlElement != null)
@@ -343,15 +345,15 @@ public static class GalleryConverter
       else
         openXmlElement.GetItemCount = null;
   }
-  
+
   /// <summary>
-  /// getItemLabel, this property is only available in Office 2010 and later.
+  ///   getItemLabel, this property is only available in Office 2010 and later.
   /// </summary>
   public static String? GetGetItemLabel(DocumentFormat.OpenXml.Office2010.CustomUI.Gallery? openXmlElement)
   {
     return openXmlElement?.GetItemLabel?.Value;
   }
-  
+
   public static void SetGetItemLabel(DocumentFormat.OpenXml.Office2010.CustomUI.Gallery? openXmlElement, String? value)
   {
     if (openXmlElement != null)
@@ -360,15 +362,15 @@ public static class GalleryConverter
       else
         openXmlElement.GetItemLabel = null;
   }
-  
+
   /// <summary>
-  /// getItemScreentip, this property is only available in Office 2010 and later.
+  ///   getItemScreentip, this property is only available in Office 2010 and later.
   /// </summary>
   public static String? GetGetItemScreentip(DocumentFormat.OpenXml.Office2010.CustomUI.Gallery? openXmlElement)
   {
     return openXmlElement?.GetItemScreentip?.Value;
   }
-  
+
   public static void SetGetItemScreentip(DocumentFormat.OpenXml.Office2010.CustomUI.Gallery? openXmlElement, String? value)
   {
     if (openXmlElement != null)
@@ -377,15 +379,15 @@ public static class GalleryConverter
       else
         openXmlElement.GetItemScreentip = null;
   }
-  
+
   /// <summary>
-  /// getItemSupertip, this property is only available in Office 2010 and later.
+  ///   getItemSupertip, this property is only available in Office 2010 and later.
   /// </summary>
   public static String? GetGetItemSupertip(DocumentFormat.OpenXml.Office2010.CustomUI.Gallery? openXmlElement)
   {
     return openXmlElement?.GetItemSupertip?.Value;
   }
-  
+
   public static void SetGetItemSupertip(DocumentFormat.OpenXml.Office2010.CustomUI.Gallery? openXmlElement, String? value)
   {
     if (openXmlElement != null)
@@ -394,15 +396,15 @@ public static class GalleryConverter
       else
         openXmlElement.GetItemSupertip = null;
   }
-  
+
   /// <summary>
-  /// getItemImage, this property is only available in Office 2010 and later.
+  ///   getItemImage, this property is only available in Office 2010 and later.
   /// </summary>
   public static String? GetGetItemImage(DocumentFormat.OpenXml.Office2010.CustomUI.Gallery? openXmlElement)
   {
     return openXmlElement?.GetItemImage?.Value;
   }
-  
+
   public static void SetGetItemImage(DocumentFormat.OpenXml.Office2010.CustomUI.Gallery? openXmlElement, String? value)
   {
     if (openXmlElement != null)
@@ -411,15 +413,15 @@ public static class GalleryConverter
       else
         openXmlElement.GetItemImage = null;
   }
-  
+
   /// <summary>
-  /// getItemID, this property is only available in Office 2010 and later.
+  ///   getItemID, this property is only available in Office 2010 and later.
   /// </summary>
   public static String? GetGetItemID(DocumentFormat.OpenXml.Office2010.CustomUI.Gallery? openXmlElement)
   {
     return openXmlElement?.GetItemID?.Value;
   }
-  
+
   public static void SetGetItemID(DocumentFormat.OpenXml.Office2010.CustomUI.Gallery? openXmlElement, String? value)
   {
     if (openXmlElement != null)
@@ -428,15 +430,15 @@ public static class GalleryConverter
       else
         openXmlElement.GetItemID = null;
   }
-  
+
   /// <summary>
-  /// sizeString, this property is only available in Office 2010 and later.
+  ///   sizeString, this property is only available in Office 2010 and later.
   /// </summary>
   public static String? GetSizeString(DocumentFormat.OpenXml.Office2010.CustomUI.Gallery? openXmlElement)
   {
     return openXmlElement?.SizeString?.Value;
   }
-  
+
   public static void SetSizeString(DocumentFormat.OpenXml.Office2010.CustomUI.Gallery? openXmlElement, String? value)
   {
     if (openXmlElement != null)
@@ -445,15 +447,15 @@ public static class GalleryConverter
       else
         openXmlElement.SizeString = null;
   }
-  
+
   /// <summary>
-  /// getSelectedItemID, this property is only available in Office 2010 and later.
+  ///   getSelectedItemID, this property is only available in Office 2010 and later.
   /// </summary>
   public static String? GetGetSelectedItemID(DocumentFormat.OpenXml.Office2010.CustomUI.Gallery? openXmlElement)
   {
     return openXmlElement?.GetSelectedItemID?.Value;
   }
-  
+
   public static void SetGetSelectedItemID(DocumentFormat.OpenXml.Office2010.CustomUI.Gallery? openXmlElement, String? value)
   {
     if (openXmlElement != null)
@@ -462,15 +464,15 @@ public static class GalleryConverter
       else
         openXmlElement.GetSelectedItemID = null;
   }
-  
+
   /// <summary>
-  /// getSelectedItemIndex, this property is only available in Office 2010 and later.
+  ///   getSelectedItemIndex, this property is only available in Office 2010 and later.
   /// </summary>
   public static String? GetGetSelectedItemIndex(DocumentFormat.OpenXml.Office2010.CustomUI.Gallery? openXmlElement)
   {
     return openXmlElement?.GetSelectedItemIndex?.Value;
   }
-  
+
   public static void SetGetSelectedItemIndex(DocumentFormat.OpenXml.Office2010.CustomUI.Gallery? openXmlElement, String? value)
   {
     if (openXmlElement != null)
@@ -479,15 +481,15 @@ public static class GalleryConverter
       else
         openXmlElement.GetSelectedItemIndex = null;
   }
-  
+
   /// <summary>
-  /// id, this property is only available in Office 2010 and later.
+  ///   id, this property is only available in Office 2010 and later.
   /// </summary>
   public static String? GetId(DocumentFormat.OpenXml.Office2010.CustomUI.Gallery? openXmlElement)
   {
     return openXmlElement?.Id?.Value;
   }
-  
+
   public static void SetId(DocumentFormat.OpenXml.Office2010.CustomUI.Gallery? openXmlElement, String? value)
   {
     if (openXmlElement != null)
@@ -496,15 +498,15 @@ public static class GalleryConverter
       else
         openXmlElement.Id = null;
   }
-  
+
   /// <summary>
-  /// idQ, this property is only available in Office 2010 and later.
+  ///   idQ, this property is only available in Office 2010 and later.
   /// </summary>
   public static String? GetQualifiedId(DocumentFormat.OpenXml.Office2010.CustomUI.Gallery? openXmlElement)
   {
     return openXmlElement?.QualifiedId?.Value;
   }
-  
+
   public static void SetQualifiedId(DocumentFormat.OpenXml.Office2010.CustomUI.Gallery? openXmlElement, String? value)
   {
     if (openXmlElement != null)
@@ -513,15 +515,15 @@ public static class GalleryConverter
       else
         openXmlElement.QualifiedId = null;
   }
-  
+
   /// <summary>
-  /// tag, this property is only available in Office 2010 and later.
+  ///   tag, this property is only available in Office 2010 and later.
   /// </summary>
   public static String? GetTag(DocumentFormat.OpenXml.Office2010.CustomUI.Gallery? openXmlElement)
   {
     return openXmlElement?.Tag?.Value;
   }
-  
+
   public static void SetTag(DocumentFormat.OpenXml.Office2010.CustomUI.Gallery? openXmlElement, String? value)
   {
     if (openXmlElement != null)
@@ -530,15 +532,15 @@ public static class GalleryConverter
       else
         openXmlElement.Tag = null;
   }
-  
+
   /// <summary>
-  /// idMso, this property is only available in Office 2010 and later.
+  ///   idMso, this property is only available in Office 2010 and later.
   /// </summary>
   public static String? GetIdMso(DocumentFormat.OpenXml.Office2010.CustomUI.Gallery? openXmlElement)
   {
     return openXmlElement?.IdMso?.Value;
   }
-  
+
   public static void SetIdMso(DocumentFormat.OpenXml.Office2010.CustomUI.Gallery? openXmlElement, String? value)
   {
     if (openXmlElement != null)
@@ -547,15 +549,15 @@ public static class GalleryConverter
       else
         openXmlElement.IdMso = null;
   }
-  
+
   /// <summary>
-  /// screentip, this property is only available in Office 2010 and later.
+  ///   screentip, this property is only available in Office 2010 and later.
   /// </summary>
   public static String? GetScreentip(DocumentFormat.OpenXml.Office2010.CustomUI.Gallery? openXmlElement)
   {
     return openXmlElement?.Screentip?.Value;
   }
-  
+
   public static void SetScreentip(DocumentFormat.OpenXml.Office2010.CustomUI.Gallery? openXmlElement, String? value)
   {
     if (openXmlElement != null)
@@ -564,15 +566,15 @@ public static class GalleryConverter
       else
         openXmlElement.Screentip = null;
   }
-  
+
   /// <summary>
-  /// getScreentip, this property is only available in Office 2010 and later.
+  ///   getScreentip, this property is only available in Office 2010 and later.
   /// </summary>
   public static String? GetGetScreentip(DocumentFormat.OpenXml.Office2010.CustomUI.Gallery? openXmlElement)
   {
     return openXmlElement?.GetScreentip?.Value;
   }
-  
+
   public static void SetGetScreentip(DocumentFormat.OpenXml.Office2010.CustomUI.Gallery? openXmlElement, String? value)
   {
     if (openXmlElement != null)
@@ -581,15 +583,15 @@ public static class GalleryConverter
       else
         openXmlElement.GetScreentip = null;
   }
-  
+
   /// <summary>
-  /// supertip, this property is only available in Office 2010 and later.
+  ///   supertip, this property is only available in Office 2010 and later.
   /// </summary>
   public static String? GetSupertip(DocumentFormat.OpenXml.Office2010.CustomUI.Gallery? openXmlElement)
   {
     return openXmlElement?.Supertip?.Value;
   }
-  
+
   public static void SetSupertip(DocumentFormat.OpenXml.Office2010.CustomUI.Gallery? openXmlElement, String? value)
   {
     if (openXmlElement != null)
@@ -598,15 +600,15 @@ public static class GalleryConverter
       else
         openXmlElement.Supertip = null;
   }
-  
+
   /// <summary>
-  /// getSupertip, this property is only available in Office 2010 and later.
+  ///   getSupertip, this property is only available in Office 2010 and later.
   /// </summary>
   public static String? GetGetSupertip(DocumentFormat.OpenXml.Office2010.CustomUI.Gallery? openXmlElement)
   {
     return openXmlElement?.GetSupertip?.Value;
   }
-  
+
   public static void SetGetSupertip(DocumentFormat.OpenXml.Office2010.CustomUI.Gallery? openXmlElement, String? value)
   {
     if (openXmlElement != null)
@@ -615,15 +617,15 @@ public static class GalleryConverter
       else
         openXmlElement.GetSupertip = null;
   }
-  
+
   /// <summary>
-  /// label, this property is only available in Office 2010 and later.
+  ///   label, this property is only available in Office 2010 and later.
   /// </summary>
   public static String? GetLabel(DocumentFormat.OpenXml.Office2010.CustomUI.Gallery? openXmlElement)
   {
     return openXmlElement?.Label?.Value;
   }
-  
+
   public static void SetLabel(DocumentFormat.OpenXml.Office2010.CustomUI.Gallery? openXmlElement, String? value)
   {
     if (openXmlElement != null)
@@ -632,15 +634,15 @@ public static class GalleryConverter
       else
         openXmlElement.Label = null;
   }
-  
+
   /// <summary>
-  /// getLabel, this property is only available in Office 2010 and later.
+  ///   getLabel, this property is only available in Office 2010 and later.
   /// </summary>
   public static String? GetGetLabel(DocumentFormat.OpenXml.Office2010.CustomUI.Gallery? openXmlElement)
   {
     return openXmlElement?.GetLabel?.Value;
   }
-  
+
   public static void SetGetLabel(DocumentFormat.OpenXml.Office2010.CustomUI.Gallery? openXmlElement, String? value)
   {
     if (openXmlElement != null)
@@ -649,15 +651,15 @@ public static class GalleryConverter
       else
         openXmlElement.GetLabel = null;
   }
-  
+
   /// <summary>
-  /// insertAfterMso, this property is only available in Office 2010 and later.
+  ///   insertAfterMso, this property is only available in Office 2010 and later.
   /// </summary>
   public static String? GetInsertAfterMso(DocumentFormat.OpenXml.Office2010.CustomUI.Gallery? openXmlElement)
   {
     return openXmlElement?.InsertAfterMso?.Value;
   }
-  
+
   public static void SetInsertAfterMso(DocumentFormat.OpenXml.Office2010.CustomUI.Gallery? openXmlElement, String? value)
   {
     if (openXmlElement != null)
@@ -666,15 +668,15 @@ public static class GalleryConverter
       else
         openXmlElement.InsertAfterMso = null;
   }
-  
+
   /// <summary>
-  /// insertBeforeMso, this property is only available in Office 2010 and later.
+  ///   insertBeforeMso, this property is only available in Office 2010 and later.
   /// </summary>
   public static String? GetInsertBeforeMso(DocumentFormat.OpenXml.Office2010.CustomUI.Gallery? openXmlElement)
   {
     return openXmlElement?.InsertBeforeMso?.Value;
   }
-  
+
   public static void SetInsertBeforeMso(DocumentFormat.OpenXml.Office2010.CustomUI.Gallery? openXmlElement, String? value)
   {
     if (openXmlElement != null)
@@ -683,15 +685,15 @@ public static class GalleryConverter
       else
         openXmlElement.InsertBeforeMso = null;
   }
-  
+
   /// <summary>
-  /// insertAfterQ, this property is only available in Office 2010 and later.
+  ///   insertAfterQ, this property is only available in Office 2010 and later.
   /// </summary>
   public static String? GetInsertAfterQulifiedId(DocumentFormat.OpenXml.Office2010.CustomUI.Gallery? openXmlElement)
   {
     return openXmlElement?.InsertAfterQulifiedId?.Value;
   }
-  
+
   public static void SetInsertAfterQulifiedId(DocumentFormat.OpenXml.Office2010.CustomUI.Gallery? openXmlElement, String? value)
   {
     if (openXmlElement != null)
@@ -700,15 +702,15 @@ public static class GalleryConverter
       else
         openXmlElement.InsertAfterQulifiedId = null;
   }
-  
+
   /// <summary>
-  /// insertBeforeQ, this property is only available in Office 2010 and later.
+  ///   insertBeforeQ, this property is only available in Office 2010 and later.
   /// </summary>
   public static String? GetInsertBeforeQulifiedId(DocumentFormat.OpenXml.Office2010.CustomUI.Gallery? openXmlElement)
   {
     return openXmlElement?.InsertBeforeQulifiedId?.Value;
   }
-  
+
   public static void SetInsertBeforeQulifiedId(DocumentFormat.OpenXml.Office2010.CustomUI.Gallery? openXmlElement, String? value)
   {
     if (openXmlElement != null)
@@ -717,15 +719,15 @@ public static class GalleryConverter
       else
         openXmlElement.InsertBeforeQulifiedId = null;
   }
-  
+
   /// <summary>
-  /// visible, this property is only available in Office 2010 and later.
+  ///   visible, this property is only available in Office 2010 and later.
   /// </summary>
   public static Boolean? GetVisible(DocumentFormat.OpenXml.Office2010.CustomUI.Gallery? openXmlElement)
   {
     return openXmlElement?.Visible?.Value;
   }
-  
+
   public static void SetVisible(DocumentFormat.OpenXml.Office2010.CustomUI.Gallery? openXmlElement, Boolean? value)
   {
     if (openXmlElement != null)
@@ -734,15 +736,15 @@ public static class GalleryConverter
       else
         openXmlElement.Visible = null;
   }
-  
+
   /// <summary>
-  /// getVisible, this property is only available in Office 2010 and later.
+  ///   getVisible, this property is only available in Office 2010 and later.
   /// </summary>
   public static String? GetGetVisible(DocumentFormat.OpenXml.Office2010.CustomUI.Gallery? openXmlElement)
   {
     return openXmlElement?.GetVisible?.Value;
   }
-  
+
   public static void SetGetVisible(DocumentFormat.OpenXml.Office2010.CustomUI.Gallery? openXmlElement, String? value)
   {
     if (openXmlElement != null)
@@ -751,15 +753,15 @@ public static class GalleryConverter
       else
         openXmlElement.GetVisible = null;
   }
-  
+
   /// <summary>
-  /// keytip, this property is only available in Office 2010 and later.
+  ///   keytip, this property is only available in Office 2010 and later.
   /// </summary>
   public static String? GetKeytip(DocumentFormat.OpenXml.Office2010.CustomUI.Gallery? openXmlElement)
   {
     return openXmlElement?.Keytip?.Value;
   }
-  
+
   public static void SetKeytip(DocumentFormat.OpenXml.Office2010.CustomUI.Gallery? openXmlElement, String? value)
   {
     if (openXmlElement != null)
@@ -768,15 +770,15 @@ public static class GalleryConverter
       else
         openXmlElement.Keytip = null;
   }
-  
+
   /// <summary>
-  /// getKeytip, this property is only available in Office 2010 and later.
+  ///   getKeytip, this property is only available in Office 2010 and later.
   /// </summary>
   public static String? GetGetKeytip(DocumentFormat.OpenXml.Office2010.CustomUI.Gallery? openXmlElement)
   {
     return openXmlElement?.GetKeytip?.Value;
   }
-  
+
   public static void SetGetKeytip(DocumentFormat.OpenXml.Office2010.CustomUI.Gallery? openXmlElement, String? value)
   {
     if (openXmlElement != null)
@@ -785,15 +787,15 @@ public static class GalleryConverter
       else
         openXmlElement.GetKeytip = null;
   }
-  
+
   /// <summary>
-  /// showLabel, this property is only available in Office 2010 and later.
+  ///   showLabel, this property is only available in Office 2010 and later.
   /// </summary>
   public static Boolean? GetShowLabel(DocumentFormat.OpenXml.Office2010.CustomUI.Gallery? openXmlElement)
   {
     return openXmlElement?.ShowLabel?.Value;
   }
-  
+
   public static void SetShowLabel(DocumentFormat.OpenXml.Office2010.CustomUI.Gallery? openXmlElement, Boolean? value)
   {
     if (openXmlElement != null)
@@ -802,15 +804,15 @@ public static class GalleryConverter
       else
         openXmlElement.ShowLabel = null;
   }
-  
+
   /// <summary>
-  /// getShowLabel, this property is only available in Office 2010 and later.
+  ///   getShowLabel, this property is only available in Office 2010 and later.
   /// </summary>
   public static String? GetGetShowLabel(DocumentFormat.OpenXml.Office2010.CustomUI.Gallery? openXmlElement)
   {
     return openXmlElement?.GetShowLabel?.Value;
   }
-  
+
   public static void SetGetShowLabel(DocumentFormat.OpenXml.Office2010.CustomUI.Gallery? openXmlElement, String? value)
   {
     if (openXmlElement != null)
@@ -819,15 +821,15 @@ public static class GalleryConverter
       else
         openXmlElement.GetShowLabel = null;
   }
-  
+
   /// <summary>
-  /// showImage, this property is only available in Office 2010 and later.
+  ///   showImage, this property is only available in Office 2010 and later.
   /// </summary>
   public static Boolean? GetShowImage(DocumentFormat.OpenXml.Office2010.CustomUI.Gallery? openXmlElement)
   {
     return openXmlElement?.ShowImage?.Value;
   }
-  
+
   public static void SetShowImage(DocumentFormat.OpenXml.Office2010.CustomUI.Gallery? openXmlElement, Boolean? value)
   {
     if (openXmlElement != null)
@@ -836,15 +838,15 @@ public static class GalleryConverter
       else
         openXmlElement.ShowImage = null;
   }
-  
+
   /// <summary>
-  /// getShowImage, this property is only available in Office 2010 and later.
+  ///   getShowImage, this property is only available in Office 2010 and later.
   /// </summary>
   public static String? GetGetShowImage(DocumentFormat.OpenXml.Office2010.CustomUI.Gallery? openXmlElement)
   {
     return openXmlElement?.GetShowImage?.Value;
   }
-  
+
   public static void SetGetShowImage(DocumentFormat.OpenXml.Office2010.CustomUI.Gallery? openXmlElement, String? value)
   {
     if (openXmlElement != null)
@@ -853,15 +855,15 @@ public static class GalleryConverter
       else
         openXmlElement.GetShowImage = null;
   }
-  
-  public static System.Collections.ObjectModel.Collection<DocumentModel.Item>? GetItems(DocumentFormat.OpenXml.Office2010.CustomUI.Gallery? openXmlElement)
+
+  public static Collection<Item>? GetItems(DocumentFormat.OpenXml.Office2010.CustomUI.Gallery? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var collection = new System.Collections.ObjectModel.Collection<DocumentModel.Item>();
+      var collection = new Collection<Item>();
       foreach (var item in openXmlElement.Elements<DocumentFormat.OpenXml.Office2010.CustomUI.Item>())
       {
-        var newItem = DocumentModel.OpenXml.ItemConverter.CreateModelElement(item);
+        var newItem = ItemConverter.CreateModelElement(item);
         if (newItem != null)
           collection.Add(newItem);
       }
@@ -869,32 +871,30 @@ public static class GalleryConverter
     }
     return null;
   }
-  
-  public static void SetItems(DocumentFormat.OpenXml.Office2010.CustomUI.Gallery? openXmlElement, System.Collections.ObjectModel.Collection<DocumentModel.Item>? value)
+
+  public static void SetItems(DocumentFormat.OpenXml.Office2010.CustomUI.Gallery? openXmlElement, Collection<Item>? value)
   {
     if (openXmlElement != null)
     {
       openXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Office2010.CustomUI.Item>();
       if (value != null)
-      {
         foreach (var item in value)
         {
-          var newItem = DocumentModel.OpenXml.ItemConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2010.CustomUI.Item>(item);
+          var newItem = ItemConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2010.CustomUI.Item>(item);
           if (newItem != null)
             openXmlElement.AddChild(newItem);
         }
-      }
     }
   }
-  
-  public static System.Collections.ObjectModel.Collection<DocumentModel.ButtonRegular>? GetButtonRegulars(DocumentFormat.OpenXml.Office2010.CustomUI.Gallery? openXmlElement)
+
+  public static Collection<ButtonRegular>? GetButtonRegulars(DocumentFormat.OpenXml.Office2010.CustomUI.Gallery? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var collection = new System.Collections.ObjectModel.Collection<DocumentModel.ButtonRegular>();
+      var collection = new Collection<ButtonRegular>();
       foreach (var item in openXmlElement.Elements<DocumentFormat.OpenXml.Office2010.CustomUI.ButtonRegular>())
       {
-        var newItem = DocumentModel.OpenXml.ButtonRegularConverter.CreateModelElement(item);
+        var newItem = ButtonRegularConverter.CreateModelElement(item);
         if (newItem != null)
           collection.Add(newItem);
       }
@@ -902,29 +902,27 @@ public static class GalleryConverter
     }
     return null;
   }
-  
-  public static void SetButtonRegulars(DocumentFormat.OpenXml.Office2010.CustomUI.Gallery? openXmlElement, System.Collections.ObjectModel.Collection<DocumentModel.ButtonRegular>? value)
+
+  public static void SetButtonRegulars(DocumentFormat.OpenXml.Office2010.CustomUI.Gallery? openXmlElement, Collection<ButtonRegular>? value)
   {
     if (openXmlElement != null)
     {
       openXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Office2010.CustomUI.ButtonRegular>();
       if (value != null)
-      {
         foreach (var item in value)
         {
-          var newItem = DocumentModel.OpenXml.ButtonRegularConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2010.CustomUI.ButtonRegular>(item);
+          var newItem = ButtonRegularConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2010.CustomUI.ButtonRegular>(item);
           if (newItem != null)
             openXmlElement.AddChild(newItem);
         }
-      }
     }
   }
-  
-  public static DocumentModel.Gallery? CreateModelElement(DocumentFormat.OpenXml.Office2010.CustomUI.Gallery? openXmlElement)
+
+  public static Gallery? CreateModelElement(DocumentFormat.OpenXml.Office2010.CustomUI.Gallery? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Gallery();
+      var value = new Gallery();
       value.Size = GetSize(openXmlElement);
       value.GetSize = GetGetSize(openXmlElement);
       value.Description = GetDescription(openXmlElement);
@@ -982,9 +980,9 @@ public static class GalleryConverter
     }
     return null;
   }
-  
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Gallery? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Office2010.CustomUI.Gallery, new()
+
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(Gallery? value)
+    where OpenXmlElementType : DocumentFormat.OpenXml.Office2010.CustomUI.Gallery, new()
   {
     if (value != null)
     {

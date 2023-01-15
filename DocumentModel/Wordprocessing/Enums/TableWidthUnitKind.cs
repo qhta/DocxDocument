@@ -1,28 +1,27 @@
 namespace DocumentModel.Wordprocessing;
 
 /// <summary>
-/// Defines the TableWidthUnitValues enumeration.
+///   Defines the TableWidthUnitValues enumeration.
 /// </summary>
 public enum TableWidthUnitKind
 {
   /// <summary>
-  /// No Width.
+  ///   No Width.
   /// </summary>
   Nil,
-  
+
   /// <summary>
-  /// Width in Fiftieths of a Percent.
+  ///   Width in Fiftieths of a Percent.
   /// </summary>
   Pct,
-  
+
   /// <summary>
-  /// Width in Twentieths of a Point.
+  ///   Width in Twentieths of a Point.
   /// </summary>
   Dxa,
-  
+
   /// <summary>
-  /// Automatically Determined Width.
+  ///   Automatically Determined Width.
   /// </summary>
-  Auto,
-  
+  Auto
 }

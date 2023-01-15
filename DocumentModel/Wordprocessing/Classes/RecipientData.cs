@@ -1,23 +1,22 @@
 namespace DocumentModel.Wordprocessing;
 
 /// <summary>
-/// Data About Single Data Source Record.
+///   Data About Single Data Source Record.
 /// </summary>
-public partial class RecipientData
+public class RecipientData
 {
   /// <summary>
-  /// Record Is Included in Mail Merge.
+  ///   Record Is Included in Mail Merge.
   /// </summary>
   public Boolean? Active { get; set; }
-  
+
   /// <summary>
-  /// Index of Column Containing Unique Values for Record.
+  ///   Index of Column Containing Unique Values for Record.
   /// </summary>
   public UInt32? ColumnIndex { get; set; }
-  
+
   /// <summary>
-  /// Unique Value for Record.
+  ///   Unique Value for Record.
   /// </summary>
   public Byte[]? UniqueTag { get; set; }
-  
 }

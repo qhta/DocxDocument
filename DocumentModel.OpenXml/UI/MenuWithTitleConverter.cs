@@ -1,19 +1,27 @@
+using DocumentFormat.OpenXml.Office.CustomUI;
+using SplitButtonWithTitle = DocumentModel.UI.SplitButtonWithTitle;
+using UnsizedButton = DocumentModel.UI.UnsizedButton;
+using UnsizedControlClone = DocumentModel.UI.UnsizedControlClone;
+using UnsizedDynamicMenu = DocumentModel.UI.UnsizedDynamicMenu;
+using UnsizedGallery = DocumentModel.UI.UnsizedGallery;
+using UnsizedToggleButton = DocumentModel.UI.UnsizedToggleButton;
+
 namespace DocumentModel.OpenXml.UI;
 
 /// <summary>
-/// Defines the MenuWithTitle Class.
+///   Defines the MenuWithTitle Class.
 /// </summary>
 public static class MenuWithTitleConverter
 {
   /// <summary>
-  /// id
+  ///   id
   /// </summary>
-  public static String? GetId(DocumentFormat.OpenXml.Office.CustomUI.MenuWithTitle? openXmlElement)
+  public static String? GetId(MenuWithTitle? openXmlElement)
   {
     return openXmlElement?.Id?.Value;
   }
-  
-  public static void SetId(DocumentFormat.OpenXml.Office.CustomUI.MenuWithTitle? openXmlElement, String? value)
+
+  public static void SetId(MenuWithTitle? openXmlElement, String? value)
   {
     if (openXmlElement != null)
       if (value != null)
@@ -21,16 +29,16 @@ public static class MenuWithTitleConverter
       else
         openXmlElement.Id = null;
   }
-  
+
   /// <summary>
-  /// idQ
+  ///   idQ
   /// </summary>
-  public static String? GetIdQ(DocumentFormat.OpenXml.Office.CustomUI.MenuWithTitle? openXmlElement)
+  public static String? GetIdQ(MenuWithTitle? openXmlElement)
   {
     return openXmlElement?.IdQ?.Value;
   }
-  
-  public static void SetIdQ(DocumentFormat.OpenXml.Office.CustomUI.MenuWithTitle? openXmlElement, String? value)
+
+  public static void SetIdQ(MenuWithTitle? openXmlElement, String? value)
   {
     if (openXmlElement != null)
       if (value != null)
@@ -38,16 +46,16 @@ public static class MenuWithTitleConverter
       else
         openXmlElement.IdQ = null;
   }
-  
+
   /// <summary>
-  /// idMso
+  ///   idMso
   /// </summary>
-  public static String? GetIdMso(DocumentFormat.OpenXml.Office.CustomUI.MenuWithTitle? openXmlElement)
+  public static String? GetIdMso(MenuWithTitle? openXmlElement)
   {
     return openXmlElement?.IdMso?.Value;
   }
-  
-  public static void SetIdMso(DocumentFormat.OpenXml.Office.CustomUI.MenuWithTitle? openXmlElement, String? value)
+
+  public static void SetIdMso(MenuWithTitle? openXmlElement, String? value)
   {
     if (openXmlElement != null)
       if (value != null)
@@ -55,16 +63,16 @@ public static class MenuWithTitleConverter
       else
         openXmlElement.IdMso = null;
   }
-  
+
   /// <summary>
-  /// tag
+  ///   tag
   /// </summary>
-  public static String? GetTag(DocumentFormat.OpenXml.Office.CustomUI.MenuWithTitle? openXmlElement)
+  public static String? GetTag(MenuWithTitle? openXmlElement)
   {
     return openXmlElement?.Tag?.Value;
   }
-  
-  public static void SetTag(DocumentFormat.OpenXml.Office.CustomUI.MenuWithTitle? openXmlElement, String? value)
+
+  public static void SetTag(MenuWithTitle? openXmlElement, String? value)
   {
     if (openXmlElement != null)
       if (value != null)
@@ -72,30 +80,30 @@ public static class MenuWithTitleConverter
       else
         openXmlElement.Tag = null;
   }
-  
+
   /// <summary>
-  /// itemSize
+  ///   itemSize
   /// </summary>
-  public static DocumentModel.UI.ItemSizeKind? GetItemSize(DocumentFormat.OpenXml.Office.CustomUI.MenuWithTitle? openXmlElement)
+  public static DocumentModel.UI.ItemSizeKind? GetItemSize(MenuWithTitle? openXmlElement)
   {
-    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Office.CustomUI.ItemSizeValues, DocumentModel.UI.ItemSizeKind>(openXmlElement?.ItemSize?.Value);
+    return EnumValueConverter.GetValue<ItemSizeValues, DocumentModel.UI.ItemSizeKind>(openXmlElement?.ItemSize?.Value);
   }
-  
-  public static void SetItemSize(DocumentFormat.OpenXml.Office.CustomUI.MenuWithTitle? openXmlElement, DocumentModel.UI.ItemSizeKind? value)
+
+  public static void SetItemSize(MenuWithTitle? openXmlElement, DocumentModel.UI.ItemSizeKind? value)
   {
     if (openXmlElement != null)
-      openXmlElement.ItemSize = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Office.CustomUI.ItemSizeValues, DocumentModel.UI.ItemSizeKind>(value);
+      openXmlElement.ItemSize = EnumValueConverter.CreateEnumValue<ItemSizeValues, DocumentModel.UI.ItemSizeKind>(value);
   }
-  
+
   /// <summary>
-  /// title
+  ///   title
   /// </summary>
-  public static String? GetTitle(DocumentFormat.OpenXml.Office.CustomUI.MenuWithTitle? openXmlElement)
+  public static String? GetTitle(MenuWithTitle? openXmlElement)
   {
     return openXmlElement?.Title?.Value;
   }
-  
-  public static void SetTitle(DocumentFormat.OpenXml.Office.CustomUI.MenuWithTitle? openXmlElement, String? value)
+
+  public static void SetTitle(MenuWithTitle? openXmlElement, String? value)
   {
     if (openXmlElement != null)
       if (value != null)
@@ -103,16 +111,16 @@ public static class MenuWithTitleConverter
       else
         openXmlElement.Title = null;
   }
-  
+
   /// <summary>
-  /// getTitle
+  ///   getTitle
   /// </summary>
-  public static String? GetGetTitle(DocumentFormat.OpenXml.Office.CustomUI.MenuWithTitle? openXmlElement)
+  public static String? GetGetTitle(MenuWithTitle? openXmlElement)
   {
     return openXmlElement?.GetTitle?.Value;
   }
-  
-  public static void SetGetTitle(DocumentFormat.OpenXml.Office.CustomUI.MenuWithTitle? openXmlElement, String? value)
+
+  public static void SetGetTitle(MenuWithTitle? openXmlElement, String? value)
   {
     if (openXmlElement != null)
       if (value != null)
@@ -120,16 +128,16 @@ public static class MenuWithTitleConverter
       else
         openXmlElement.GetTitle = null;
   }
-  
+
   /// <summary>
-  /// image
+  ///   image
   /// </summary>
-  public static String? GetImage(DocumentFormat.OpenXml.Office.CustomUI.MenuWithTitle? openXmlElement)
+  public static String? GetImage(MenuWithTitle? openXmlElement)
   {
     return openXmlElement?.Image?.Value;
   }
-  
-  public static void SetImage(DocumentFormat.OpenXml.Office.CustomUI.MenuWithTitle? openXmlElement, String? value)
+
+  public static void SetImage(MenuWithTitle? openXmlElement, String? value)
   {
     if (openXmlElement != null)
       if (value != null)
@@ -137,16 +145,16 @@ public static class MenuWithTitleConverter
       else
         openXmlElement.Image = null;
   }
-  
+
   /// <summary>
-  /// imageMso
+  ///   imageMso
   /// </summary>
-  public static String? GetImageMso(DocumentFormat.OpenXml.Office.CustomUI.MenuWithTitle? openXmlElement)
+  public static String? GetImageMso(MenuWithTitle? openXmlElement)
   {
     return openXmlElement?.ImageMso?.Value;
   }
-  
-  public static void SetImageMso(DocumentFormat.OpenXml.Office.CustomUI.MenuWithTitle? openXmlElement, String? value)
+
+  public static void SetImageMso(MenuWithTitle? openXmlElement, String? value)
   {
     if (openXmlElement != null)
       if (value != null)
@@ -154,16 +162,16 @@ public static class MenuWithTitleConverter
       else
         openXmlElement.ImageMso = null;
   }
-  
+
   /// <summary>
-  /// getImage
+  ///   getImage
   /// </summary>
-  public static String? GetGetImage(DocumentFormat.OpenXml.Office.CustomUI.MenuWithTitle? openXmlElement)
+  public static String? GetGetImage(MenuWithTitle? openXmlElement)
   {
     return openXmlElement?.GetImage?.Value;
   }
-  
-  public static void SetGetImage(DocumentFormat.OpenXml.Office.CustomUI.MenuWithTitle? openXmlElement, String? value)
+
+  public static void SetGetImage(MenuWithTitle? openXmlElement, String? value)
   {
     if (openXmlElement != null)
       if (value != null)
@@ -171,16 +179,16 @@ public static class MenuWithTitleConverter
       else
         openXmlElement.GetImage = null;
   }
-  
+
   /// <summary>
-  /// screentip
+  ///   screentip
   /// </summary>
-  public static String? GetScreentip(DocumentFormat.OpenXml.Office.CustomUI.MenuWithTitle? openXmlElement)
+  public static String? GetScreentip(MenuWithTitle? openXmlElement)
   {
     return openXmlElement?.Screentip?.Value;
   }
-  
-  public static void SetScreentip(DocumentFormat.OpenXml.Office.CustomUI.MenuWithTitle? openXmlElement, String? value)
+
+  public static void SetScreentip(MenuWithTitle? openXmlElement, String? value)
   {
     if (openXmlElement != null)
       if (value != null)
@@ -188,16 +196,16 @@ public static class MenuWithTitleConverter
       else
         openXmlElement.Screentip = null;
   }
-  
+
   /// <summary>
-  /// getScreentip
+  ///   getScreentip
   /// </summary>
-  public static String? GetGetScreentip(DocumentFormat.OpenXml.Office.CustomUI.MenuWithTitle? openXmlElement)
+  public static String? GetGetScreentip(MenuWithTitle? openXmlElement)
   {
     return openXmlElement?.GetScreentip?.Value;
   }
-  
-  public static void SetGetScreentip(DocumentFormat.OpenXml.Office.CustomUI.MenuWithTitle? openXmlElement, String? value)
+
+  public static void SetGetScreentip(MenuWithTitle? openXmlElement, String? value)
   {
     if (openXmlElement != null)
       if (value != null)
@@ -205,16 +213,16 @@ public static class MenuWithTitleConverter
       else
         openXmlElement.GetScreentip = null;
   }
-  
+
   /// <summary>
-  /// supertip
+  ///   supertip
   /// </summary>
-  public static String? GetSupertip(DocumentFormat.OpenXml.Office.CustomUI.MenuWithTitle? openXmlElement)
+  public static String? GetSupertip(MenuWithTitle? openXmlElement)
   {
     return openXmlElement?.Supertip?.Value;
   }
-  
-  public static void SetSupertip(DocumentFormat.OpenXml.Office.CustomUI.MenuWithTitle? openXmlElement, String? value)
+
+  public static void SetSupertip(MenuWithTitle? openXmlElement, String? value)
   {
     if (openXmlElement != null)
       if (value != null)
@@ -222,16 +230,16 @@ public static class MenuWithTitleConverter
       else
         openXmlElement.Supertip = null;
   }
-  
+
   /// <summary>
-  /// getSupertip
+  ///   getSupertip
   /// </summary>
-  public static String? GetGetSupertip(DocumentFormat.OpenXml.Office.CustomUI.MenuWithTitle? openXmlElement)
+  public static String? GetGetSupertip(MenuWithTitle? openXmlElement)
   {
     return openXmlElement?.GetSupertip?.Value;
   }
-  
-  public static void SetGetSupertip(DocumentFormat.OpenXml.Office.CustomUI.MenuWithTitle? openXmlElement, String? value)
+
+  public static void SetGetSupertip(MenuWithTitle? openXmlElement, String? value)
   {
     if (openXmlElement != null)
       if (value != null)
@@ -239,16 +247,16 @@ public static class MenuWithTitleConverter
       else
         openXmlElement.GetSupertip = null;
   }
-  
+
   /// <summary>
-  /// enabled
+  ///   enabled
   /// </summary>
-  public static Boolean? GetEnabled(DocumentFormat.OpenXml.Office.CustomUI.MenuWithTitle? openXmlElement)
+  public static Boolean? GetEnabled(MenuWithTitle? openXmlElement)
   {
     return openXmlElement?.Enabled?.Value;
   }
-  
-  public static void SetEnabled(DocumentFormat.OpenXml.Office.CustomUI.MenuWithTitle? openXmlElement, Boolean? value)
+
+  public static void SetEnabled(MenuWithTitle? openXmlElement, Boolean? value)
   {
     if (openXmlElement != null)
       if (value != null)
@@ -256,16 +264,16 @@ public static class MenuWithTitleConverter
       else
         openXmlElement.Enabled = null;
   }
-  
+
   /// <summary>
-  /// getEnabled
+  ///   getEnabled
   /// </summary>
-  public static String? GetGetEnabled(DocumentFormat.OpenXml.Office.CustomUI.MenuWithTitle? openXmlElement)
+  public static String? GetGetEnabled(MenuWithTitle? openXmlElement)
   {
     return openXmlElement?.GetEnabled?.Value;
   }
-  
-  public static void SetGetEnabled(DocumentFormat.OpenXml.Office.CustomUI.MenuWithTitle? openXmlElement, String? value)
+
+  public static void SetGetEnabled(MenuWithTitle? openXmlElement, String? value)
   {
     if (openXmlElement != null)
       if (value != null)
@@ -273,16 +281,16 @@ public static class MenuWithTitleConverter
       else
         openXmlElement.GetEnabled = null;
   }
-  
+
   /// <summary>
-  /// label
+  ///   label
   /// </summary>
-  public static String? GetLabel(DocumentFormat.OpenXml.Office.CustomUI.MenuWithTitle? openXmlElement)
+  public static String? GetLabel(MenuWithTitle? openXmlElement)
   {
     return openXmlElement?.Label?.Value;
   }
-  
-  public static void SetLabel(DocumentFormat.OpenXml.Office.CustomUI.MenuWithTitle? openXmlElement, String? value)
+
+  public static void SetLabel(MenuWithTitle? openXmlElement, String? value)
   {
     if (openXmlElement != null)
       if (value != null)
@@ -290,16 +298,16 @@ public static class MenuWithTitleConverter
       else
         openXmlElement.Label = null;
   }
-  
+
   /// <summary>
-  /// getLabel
+  ///   getLabel
   /// </summary>
-  public static String? GetGetLabel(DocumentFormat.OpenXml.Office.CustomUI.MenuWithTitle? openXmlElement)
+  public static String? GetGetLabel(MenuWithTitle? openXmlElement)
   {
     return openXmlElement?.GetLabel?.Value;
   }
-  
-  public static void SetGetLabel(DocumentFormat.OpenXml.Office.CustomUI.MenuWithTitle? openXmlElement, String? value)
+
+  public static void SetGetLabel(MenuWithTitle? openXmlElement, String? value)
   {
     if (openXmlElement != null)
       if (value != null)
@@ -307,16 +315,16 @@ public static class MenuWithTitleConverter
       else
         openXmlElement.GetLabel = null;
   }
-  
+
   /// <summary>
-  /// insertAfterMso
+  ///   insertAfterMso
   /// </summary>
-  public static String? GetInsertAfterMso(DocumentFormat.OpenXml.Office.CustomUI.MenuWithTitle? openXmlElement)
+  public static String? GetInsertAfterMso(MenuWithTitle? openXmlElement)
   {
     return openXmlElement?.InsertAfterMso?.Value;
   }
-  
-  public static void SetInsertAfterMso(DocumentFormat.OpenXml.Office.CustomUI.MenuWithTitle? openXmlElement, String? value)
+
+  public static void SetInsertAfterMso(MenuWithTitle? openXmlElement, String? value)
   {
     if (openXmlElement != null)
       if (value != null)
@@ -324,16 +332,16 @@ public static class MenuWithTitleConverter
       else
         openXmlElement.InsertAfterMso = null;
   }
-  
+
   /// <summary>
-  /// insertBeforeMso
+  ///   insertBeforeMso
   /// </summary>
-  public static String? GetInsertBeforeMso(DocumentFormat.OpenXml.Office.CustomUI.MenuWithTitle? openXmlElement)
+  public static String? GetInsertBeforeMso(MenuWithTitle? openXmlElement)
   {
     return openXmlElement?.InsertBeforeMso?.Value;
   }
-  
-  public static void SetInsertBeforeMso(DocumentFormat.OpenXml.Office.CustomUI.MenuWithTitle? openXmlElement, String? value)
+
+  public static void SetInsertBeforeMso(MenuWithTitle? openXmlElement, String? value)
   {
     if (openXmlElement != null)
       if (value != null)
@@ -341,16 +349,16 @@ public static class MenuWithTitleConverter
       else
         openXmlElement.InsertBeforeMso = null;
   }
-  
+
   /// <summary>
-  /// insertAfterQ
+  ///   insertAfterQ
   /// </summary>
-  public static String? GetInsertAfterQ(DocumentFormat.OpenXml.Office.CustomUI.MenuWithTitle? openXmlElement)
+  public static String? GetInsertAfterQ(MenuWithTitle? openXmlElement)
   {
     return openXmlElement?.InsertAfterQ?.Value;
   }
-  
-  public static void SetInsertAfterQ(DocumentFormat.OpenXml.Office.CustomUI.MenuWithTitle? openXmlElement, String? value)
+
+  public static void SetInsertAfterQ(MenuWithTitle? openXmlElement, String? value)
   {
     if (openXmlElement != null)
       if (value != null)
@@ -358,16 +366,16 @@ public static class MenuWithTitleConverter
       else
         openXmlElement.InsertAfterQ = null;
   }
-  
+
   /// <summary>
-  /// insertBeforeQ
+  ///   insertBeforeQ
   /// </summary>
-  public static String? GetInsertBeforeQ(DocumentFormat.OpenXml.Office.CustomUI.MenuWithTitle? openXmlElement)
+  public static String? GetInsertBeforeQ(MenuWithTitle? openXmlElement)
   {
     return openXmlElement?.InsertBeforeQ?.Value;
   }
-  
-  public static void SetInsertBeforeQ(DocumentFormat.OpenXml.Office.CustomUI.MenuWithTitle? openXmlElement, String? value)
+
+  public static void SetInsertBeforeQ(MenuWithTitle? openXmlElement, String? value)
   {
     if (openXmlElement != null)
       if (value != null)
@@ -375,16 +383,16 @@ public static class MenuWithTitleConverter
       else
         openXmlElement.InsertBeforeQ = null;
   }
-  
+
   /// <summary>
-  /// visible
+  ///   visible
   /// </summary>
-  public static Boolean? GetVisible(DocumentFormat.OpenXml.Office.CustomUI.MenuWithTitle? openXmlElement)
+  public static Boolean? GetVisible(MenuWithTitle? openXmlElement)
   {
     return openXmlElement?.Visible?.Value;
   }
-  
-  public static void SetVisible(DocumentFormat.OpenXml.Office.CustomUI.MenuWithTitle? openXmlElement, Boolean? value)
+
+  public static void SetVisible(MenuWithTitle? openXmlElement, Boolean? value)
   {
     if (openXmlElement != null)
       if (value != null)
@@ -392,16 +400,16 @@ public static class MenuWithTitleConverter
       else
         openXmlElement.Visible = null;
   }
-  
+
   /// <summary>
-  /// getVisible
+  ///   getVisible
   /// </summary>
-  public static String? GetGetVisible(DocumentFormat.OpenXml.Office.CustomUI.MenuWithTitle? openXmlElement)
+  public static String? GetGetVisible(MenuWithTitle? openXmlElement)
   {
     return openXmlElement?.GetVisible?.Value;
   }
-  
-  public static void SetGetVisible(DocumentFormat.OpenXml.Office.CustomUI.MenuWithTitle? openXmlElement, String? value)
+
+  public static void SetGetVisible(MenuWithTitle? openXmlElement, String? value)
   {
     if (openXmlElement != null)
       if (value != null)
@@ -409,16 +417,16 @@ public static class MenuWithTitleConverter
       else
         openXmlElement.GetVisible = null;
   }
-  
+
   /// <summary>
-  /// keytip
+  ///   keytip
   /// </summary>
-  public static String? GetKeytip(DocumentFormat.OpenXml.Office.CustomUI.MenuWithTitle? openXmlElement)
+  public static String? GetKeytip(MenuWithTitle? openXmlElement)
   {
     return openXmlElement?.Keytip?.Value;
   }
-  
-  public static void SetKeytip(DocumentFormat.OpenXml.Office.CustomUI.MenuWithTitle? openXmlElement, String? value)
+
+  public static void SetKeytip(MenuWithTitle? openXmlElement, String? value)
   {
     if (openXmlElement != null)
       if (value != null)
@@ -426,16 +434,16 @@ public static class MenuWithTitleConverter
       else
         openXmlElement.Keytip = null;
   }
-  
+
   /// <summary>
-  /// getKeytip
+  ///   getKeytip
   /// </summary>
-  public static String? GetGetKeytip(DocumentFormat.OpenXml.Office.CustomUI.MenuWithTitle? openXmlElement)
+  public static String? GetGetKeytip(MenuWithTitle? openXmlElement)
   {
     return openXmlElement?.GetKeytip?.Value;
   }
-  
-  public static void SetGetKeytip(DocumentFormat.OpenXml.Office.CustomUI.MenuWithTitle? openXmlElement, String? value)
+
+  public static void SetGetKeytip(MenuWithTitle? openXmlElement, String? value)
   {
     if (openXmlElement != null)
       if (value != null)
@@ -443,16 +451,16 @@ public static class MenuWithTitleConverter
       else
         openXmlElement.GetKeytip = null;
   }
-  
+
   /// <summary>
-  /// showLabel
+  ///   showLabel
   /// </summary>
-  public static Boolean? GetShowLabel(DocumentFormat.OpenXml.Office.CustomUI.MenuWithTitle? openXmlElement)
+  public static Boolean? GetShowLabel(MenuWithTitle? openXmlElement)
   {
     return openXmlElement?.ShowLabel?.Value;
   }
-  
-  public static void SetShowLabel(DocumentFormat.OpenXml.Office.CustomUI.MenuWithTitle? openXmlElement, Boolean? value)
+
+  public static void SetShowLabel(MenuWithTitle? openXmlElement, Boolean? value)
   {
     if (openXmlElement != null)
       if (value != null)
@@ -460,16 +468,16 @@ public static class MenuWithTitleConverter
       else
         openXmlElement.ShowLabel = null;
   }
-  
+
   /// <summary>
-  /// getShowLabel
+  ///   getShowLabel
   /// </summary>
-  public static String? GetGetShowLabel(DocumentFormat.OpenXml.Office.CustomUI.MenuWithTitle? openXmlElement)
+  public static String? GetGetShowLabel(MenuWithTitle? openXmlElement)
   {
     return openXmlElement?.GetShowLabel?.Value;
   }
-  
-  public static void SetGetShowLabel(DocumentFormat.OpenXml.Office.CustomUI.MenuWithTitle? openXmlElement, String? value)
+
+  public static void SetGetShowLabel(MenuWithTitle? openXmlElement, String? value)
   {
     if (openXmlElement != null)
       if (value != null)
@@ -477,16 +485,16 @@ public static class MenuWithTitleConverter
       else
         openXmlElement.GetShowLabel = null;
   }
-  
+
   /// <summary>
-  /// showImage
+  ///   showImage
   /// </summary>
-  public static Boolean? GetShowImage(DocumentFormat.OpenXml.Office.CustomUI.MenuWithTitle? openXmlElement)
+  public static Boolean? GetShowImage(MenuWithTitle? openXmlElement)
   {
     return openXmlElement?.ShowImage?.Value;
   }
-  
-  public static void SetShowImage(DocumentFormat.OpenXml.Office.CustomUI.MenuWithTitle? openXmlElement, Boolean? value)
+
+  public static void SetShowImage(MenuWithTitle? openXmlElement, Boolean? value)
   {
     if (openXmlElement != null)
       if (value != null)
@@ -494,16 +502,16 @@ public static class MenuWithTitleConverter
       else
         openXmlElement.ShowImage = null;
   }
-  
+
   /// <summary>
-  /// getShowImage
+  ///   getShowImage
   /// </summary>
-  public static String? GetGetShowImage(DocumentFormat.OpenXml.Office.CustomUI.MenuWithTitle? openXmlElement)
+  public static String? GetGetShowImage(MenuWithTitle? openXmlElement)
   {
     return openXmlElement?.GetShowImage?.Value;
   }
-  
-  public static void SetGetShowImage(DocumentFormat.OpenXml.Office.CustomUI.MenuWithTitle? openXmlElement, String? value)
+
+  public static void SetGetShowImage(MenuWithTitle? openXmlElement, String? value)
   {
     if (openXmlElement != null)
       if (value != null)
@@ -511,16 +519,16 @@ public static class MenuWithTitleConverter
       else
         openXmlElement.GetShowImage = null;
   }
-  
-  public static DocumentModel.UI.UnsizedControlClone? GetUnsizedControlClone(DocumentFormat.OpenXml.Office.CustomUI.MenuWithTitle? openXmlElement)
+
+  public static UnsizedControlClone? GetUnsizedControlClone(MenuWithTitle? openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office.CustomUI.UnsizedControlClone>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.UI.UnsizedControlCloneConverter.CreateModelElement(itemElement);
+      return UnsizedControlCloneConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetUnsizedControlClone(DocumentFormat.OpenXml.Office.CustomUI.MenuWithTitle? openXmlElement, DocumentModel.UI.UnsizedControlClone? value)
+
+  public static void SetUnsizedControlClone(MenuWithTitle? openXmlElement, UnsizedControlClone? value)
   {
     if (openXmlElement != null)
     {
@@ -529,22 +537,22 @@ public static class MenuWithTitleConverter
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.UI.UnsizedControlCloneConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office.CustomUI.UnsizedControlClone>(value);
+        itemElement = UnsizedControlCloneConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office.CustomUI.UnsizedControlClone>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static DocumentModel.UI.UnsizedButton? GetUnsizedButton(DocumentFormat.OpenXml.Office.CustomUI.MenuWithTitle? openXmlElement)
+
+  public static UnsizedButton? GetUnsizedButton(MenuWithTitle? openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office.CustomUI.UnsizedButton>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.UI.UnsizedButtonConverter.CreateModelElement(itemElement);
+      return UnsizedButtonConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetUnsizedButton(DocumentFormat.OpenXml.Office.CustomUI.MenuWithTitle? openXmlElement, DocumentModel.UI.UnsizedButton? value)
+
+  public static void SetUnsizedButton(MenuWithTitle? openXmlElement, UnsizedButton? value)
   {
     if (openXmlElement != null)
     {
@@ -553,22 +561,22 @@ public static class MenuWithTitleConverter
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.UI.UnsizedButtonConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office.CustomUI.UnsizedButton>(value);
+        itemElement = UnsizedButtonConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office.CustomUI.UnsizedButton>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static DocumentModel.UI.CheckBox? GetCheckBox(DocumentFormat.OpenXml.Office.CustomUI.MenuWithTitle? openXmlElement)
+
+  public static DocumentModel.UI.CheckBox? GetCheckBox(MenuWithTitle? openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office.CustomUI.CheckBox>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.UI.CheckBoxConverter.CreateModelElement(itemElement);
+      return CheckBoxConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetCheckBox(DocumentFormat.OpenXml.Office.CustomUI.MenuWithTitle? openXmlElement, DocumentModel.UI.CheckBox? value)
+
+  public static void SetCheckBox(MenuWithTitle? openXmlElement, DocumentModel.UI.CheckBox? value)
   {
     if (openXmlElement != null)
     {
@@ -577,22 +585,22 @@ public static class MenuWithTitleConverter
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.UI.CheckBoxConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office.CustomUI.CheckBox>(value);
+        itemElement = CheckBoxConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office.CustomUI.CheckBox>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static DocumentModel.UI.UnsizedGallery? GetUnsizedGallery(DocumentFormat.OpenXml.Office.CustomUI.MenuWithTitle? openXmlElement)
+
+  public static UnsizedGallery? GetUnsizedGallery(MenuWithTitle? openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office.CustomUI.UnsizedGallery>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.UI.UnsizedGalleryConverter.CreateModelElement(itemElement);
+      return UnsizedGalleryConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetUnsizedGallery(DocumentFormat.OpenXml.Office.CustomUI.MenuWithTitle? openXmlElement, DocumentModel.UI.UnsizedGallery? value)
+
+  public static void SetUnsizedGallery(MenuWithTitle? openXmlElement, UnsizedGallery? value)
   {
     if (openXmlElement != null)
     {
@@ -601,22 +609,22 @@ public static class MenuWithTitleConverter
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.UI.UnsizedGalleryConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office.CustomUI.UnsizedGallery>(value);
+        itemElement = UnsizedGalleryConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office.CustomUI.UnsizedGallery>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static DocumentModel.UI.UnsizedToggleButton? GetUnsizedToggleButton(DocumentFormat.OpenXml.Office.CustomUI.MenuWithTitle? openXmlElement)
+
+  public static UnsizedToggleButton? GetUnsizedToggleButton(MenuWithTitle? openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office.CustomUI.UnsizedToggleButton>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.UI.UnsizedToggleButtonConverter.CreateModelElement(itemElement);
+      return UnsizedToggleButtonConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetUnsizedToggleButton(DocumentFormat.OpenXml.Office.CustomUI.MenuWithTitle? openXmlElement, DocumentModel.UI.UnsizedToggleButton? value)
+
+  public static void SetUnsizedToggleButton(MenuWithTitle? openXmlElement, UnsizedToggleButton? value)
   {
     if (openXmlElement != null)
     {
@@ -625,22 +633,22 @@ public static class MenuWithTitleConverter
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.UI.UnsizedToggleButtonConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office.CustomUI.UnsizedToggleButton>(value);
+        itemElement = UnsizedToggleButtonConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office.CustomUI.UnsizedToggleButton>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static DocumentModel.UI.MenuSeparator? GetMenuSeparator(DocumentFormat.OpenXml.Office.CustomUI.MenuWithTitle? openXmlElement)
+
+  public static DocumentModel.UI.MenuSeparator? GetMenuSeparator(MenuWithTitle? openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office.CustomUI.MenuSeparator>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.UI.MenuSeparatorConverter.CreateModelElement(itemElement);
+      return MenuSeparatorConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetMenuSeparator(DocumentFormat.OpenXml.Office.CustomUI.MenuWithTitle? openXmlElement, DocumentModel.UI.MenuSeparator? value)
+
+  public static void SetMenuSeparator(MenuWithTitle? openXmlElement, DocumentModel.UI.MenuSeparator? value)
   {
     if (openXmlElement != null)
     {
@@ -649,22 +657,22 @@ public static class MenuWithTitleConverter
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.UI.MenuSeparatorConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office.CustomUI.MenuSeparator>(value);
+        itemElement = MenuSeparatorConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office.CustomUI.MenuSeparator>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static DocumentModel.UI.SplitButtonWithTitle? GetSplitButtonWithTitle(DocumentFormat.OpenXml.Office.CustomUI.MenuWithTitle? openXmlElement)
+
+  public static SplitButtonWithTitle? GetSplitButtonWithTitle(MenuWithTitle? openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office.CustomUI.SplitButtonWithTitle>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.UI.SplitButtonWithTitleConverter.CreateModelElement(itemElement);
+      return SplitButtonWithTitleConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetSplitButtonWithTitle(DocumentFormat.OpenXml.Office.CustomUI.MenuWithTitle? openXmlElement, DocumentModel.UI.SplitButtonWithTitle? value)
+
+  public static void SetSplitButtonWithTitle(MenuWithTitle? openXmlElement, SplitButtonWithTitle? value)
   {
     if (openXmlElement != null)
     {
@@ -673,46 +681,46 @@ public static class MenuWithTitleConverter
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.UI.SplitButtonWithTitleConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office.CustomUI.SplitButtonWithTitle>(value);
+        itemElement = SplitButtonWithTitleConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office.CustomUI.SplitButtonWithTitle>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static DocumentModel.UI.MenuWithTitle? GetChildMenuWithTitle(DocumentFormat.OpenXml.Office.CustomUI.MenuWithTitle? openXmlElement)
+
+  public static DocumentModel.UI.MenuWithTitle? GetChildMenuWithTitle(MenuWithTitle? openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office.CustomUI.MenuWithTitle>();
+    var itemElement = openXmlElement?.GetFirstChild<MenuWithTitle>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.UI.MenuWithTitleConverter.CreateModelElement(itemElement);
+      return CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetChildMenuWithTitle(DocumentFormat.OpenXml.Office.CustomUI.MenuWithTitle? openXmlElement, DocumentModel.UI.MenuWithTitle? value)
+
+  public static void SetChildMenuWithTitle(MenuWithTitle? openXmlElement, DocumentModel.UI.MenuWithTitle? value)
   {
     if (openXmlElement != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office.CustomUI.MenuWithTitle>();
+      var itemElement = openXmlElement.GetFirstChild<MenuWithTitle>();
       if (itemElement != null)
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.UI.MenuWithTitleConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office.CustomUI.MenuWithTitle>(value);
+        itemElement = CreateOpenXmlElement<MenuWithTitle>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static DocumentModel.UI.UnsizedDynamicMenu? GetUnsizedDynamicMenu(DocumentFormat.OpenXml.Office.CustomUI.MenuWithTitle? openXmlElement)
+
+  public static UnsizedDynamicMenu? GetUnsizedDynamicMenu(MenuWithTitle? openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office.CustomUI.UnsizedDynamicMenu>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.UI.UnsizedDynamicMenuConverter.CreateModelElement(itemElement);
+      return UnsizedDynamicMenuConverter.CreateModelElement(itemElement);
     return null;
   }
-  
-  public static void SetUnsizedDynamicMenu(DocumentFormat.OpenXml.Office.CustomUI.MenuWithTitle? openXmlElement, DocumentModel.UI.UnsizedDynamicMenu? value)
+
+  public static void SetUnsizedDynamicMenu(MenuWithTitle? openXmlElement, UnsizedDynamicMenu? value)
   {
     if (openXmlElement != null)
     {
@@ -721,14 +729,14 @@ public static class MenuWithTitleConverter
         itemElement.Remove();
       if (value != null)
       {
-        itemElement = DocumentModel.OpenXml.UI.UnsizedDynamicMenuConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office.CustomUI.UnsizedDynamicMenu>(value);
+        itemElement = UnsizedDynamicMenuConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office.CustomUI.UnsizedDynamicMenu>(value);
         if (itemElement != null)
           openXmlElement.AddChild(itemElement);
       }
     }
   }
-  
-  public static DocumentModel.UI.MenuWithTitle? CreateModelElement(DocumentFormat.OpenXml.Office.CustomUI.MenuWithTitle? openXmlElement)
+
+  public static DocumentModel.UI.MenuWithTitle? CreateModelElement(MenuWithTitle? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -776,9 +784,9 @@ public static class MenuWithTitleConverter
     }
     return null;
   }
-  
+
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.UI.MenuWithTitle? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Office.CustomUI.MenuWithTitle, new()
+    where OpenXmlElementType : MenuWithTitle, new()
   {
     if (value != null)
     {

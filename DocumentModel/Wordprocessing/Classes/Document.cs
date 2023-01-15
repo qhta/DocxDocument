@@ -1,23 +1,22 @@
 namespace DocumentModel.Wordprocessing;
 
 /// <summary>
-/// Document.
+///   Document.
 /// </summary>
 public partial class Document
 {
   /// <summary>
-  /// conformance
+  ///   conformance
   /// </summary>
-  public DocumentModel.Wordprocessing.DocumentConformance? Conformance { get; set; }
-  
+  public DocumentConformance? Conformance { get; set; }
+
   /// <summary>
-  /// Document Background.
+  ///   Document Background.
   /// </summary>
-  public DocumentModel.Wordprocessing.DocumentBackground? DocumentBackground { get; set; }
-  
+  public DocumentBackground? DocumentBackground { get; set; }
+
   /// <summary>
-  /// Body.
+  ///   Body.
   /// </summary>
-  public DocumentModel.Wordprocessing.Body? Body { get; set; }
-  
+  public Body? Body { get; set; }
 }

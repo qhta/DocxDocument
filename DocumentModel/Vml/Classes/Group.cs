@@ -1,210 +1,211 @@
+using DocumentModel.Wordprocessing.Vml;
+
 namespace DocumentModel.Vml;
 
 /// <summary>
-/// Shape Group.
+///   Shape Group.
 /// </summary>
-public partial class Group
+public class Group
 {
   /// <summary>
-  /// Unique Identifier
+  ///   Unique Identifier
   /// </summary>
   public String? Id { get; set; }
-  
+
   /// <summary>
-  /// Shape Styling Properties
+  ///   Shape Styling Properties
   /// </summary>
   public String? Style { get; set; }
-  
+
   /// <summary>
-  /// Hyperlink Target
+  ///   Hyperlink Target
   /// </summary>
   public String? Href { get; set; }
-  
+
   /// <summary>
-  /// Hyperlink Display Target
+  ///   Hyperlink Display Target
   /// </summary>
   public String? Target { get; set; }
-  
+
   /// <summary>
-  /// CSS Reference
+  ///   CSS Reference
   /// </summary>
   public String? Class { get; set; }
-  
+
   /// <summary>
-  /// Shape Title
+  ///   Shape Title
   /// </summary>
   public String? Title { get; set; }
-  
+
   /// <summary>
-  /// Alternate Text
+  ///   Alternate Text
   /// </summary>
   public String? Alternate { get; set; }
-  
+
   /// <summary>
-  /// Coordinate Space Size
+  ///   Coordinate Space Size
   /// </summary>
   public String? CoordinateSize { get; set; }
-  
+
   /// <summary>
-  /// Coordinate Space Origin
+  ///   Coordinate Space Origin
   /// </summary>
   public String? CoordinateOrigin { get; set; }
-  
+
   /// <summary>
-  /// Shape Bounding Polygon
+  ///   Shape Bounding Polygon
   /// </summary>
   public String? WrapCoordinates { get; set; }
-  
+
   /// <summary>
-  /// Print Toggle
+  ///   Print Toggle
   /// </summary>
   public Boolean? Print { get; set; }
-  
+
   /// <summary>
-  /// spid
+  ///   spid
   /// </summary>
   public String? OptionalString { get; set; }
-  
+
   /// <summary>
-  /// oned
+  ///   oned
   /// </summary>
   public Boolean? Oned { get; set; }
-  
+
   /// <summary>
-  /// regroupid
+  ///   regroupid
   /// </summary>
   public Int64? RegroupId { get; set; }
-  
+
   /// <summary>
-  /// doubleclicknotify
+  ///   doubleclicknotify
   /// </summary>
   public Boolean? DoubleClickNotify { get; set; }
-  
+
   /// <summary>
-  /// button
+  ///   button
   /// </summary>
   public Boolean? Button { get; set; }
-  
+
   /// <summary>
-  /// userhidden
+  ///   userhidden
   /// </summary>
   public Boolean? UserHidden { get; set; }
-  
+
   /// <summary>
-  /// bullet
+  ///   bullet
   /// </summary>
   public Boolean? Bullet { get; set; }
-  
+
   /// <summary>
-  /// hr
+  ///   hr
   /// </summary>
   public Boolean? Horizontal { get; set; }
-  
+
   /// <summary>
-  /// hrstd
+  ///   hrstd
   /// </summary>
   public Boolean? HorizontalStandard { get; set; }
-  
+
   /// <summary>
-  /// hrnoshade
+  ///   hrnoshade
   /// </summary>
   public Boolean? HorizontalNoShade { get; set; }
-  
+
   /// <summary>
-  /// hrpct
+  ///   hrpct
   /// </summary>
   public Single? HorizontalPercentage { get; set; }
-  
+
   /// <summary>
-  /// hralign
+  ///   hralign
   /// </summary>
-  public DocumentModel.Vml.HorizontalRuleAlignmentKind? HorizontalAlignment { get; set; }
-  
+  public HorizontalRuleAlignmentKind? HorizontalAlignment { get; set; }
+
   /// <summary>
-  /// allowincell
+  ///   allowincell
   /// </summary>
   public Boolean? AllowInCell { get; set; }
-  
+
   /// <summary>
-  /// allowoverlap
+  ///   allowoverlap
   /// </summary>
   public Boolean? AllowOverlap { get; set; }
-  
+
   /// <summary>
-  /// userdrawn
+  ///   userdrawn
   /// </summary>
   public Boolean? UserDrawn { get; set; }
-  
+
   /// <summary>
-  /// dgmlayout
+  ///   dgmlayout
   /// </summary>
   public Int64? DiagramLayout { get; set; }
-  
+
   /// <summary>
-  /// dgmnodekind
+  ///   dgmnodekind
   /// </summary>
   public Int64? DiagramNodeKind { get; set; }
-  
+
   /// <summary>
-  /// dgmlayoutmru
+  ///   dgmlayoutmru
   /// </summary>
   public Int64? DiagramLayoutMostRecentUsed { get; set; }
-  
+
   /// <summary>
-  /// insetmode
+  ///   insetmode
   /// </summary>
-  public DocumentModel.Vml.InsetMarginKind? InsetMode { get; set; }
-  
+  public InsetMarginKind? InsetMode { get; set; }
+
   /// <summary>
-  /// Encoded Package
+  ///   Encoded Package
   /// </summary>
   public Byte[]? Gfxdata { get; set; }
-  
+
   /// <summary>
-  /// Group Diagram Type
+  ///   Group Diagram Type
   /// </summary>
-  public DocumentModel.Vml.EditAsKind? EditAs { get; set; }
-  
+  public EditAsKind? EditAs { get; set; }
+
   /// <summary>
-  /// Table Properties
+  ///   Table Properties
   /// </summary>
   public String? TableProperties { get; set; }
-  
+
   /// <summary>
-  /// Table Row Height Limits
+  ///   Table Row Height Limits
   /// </summary>
   public String? TableLimits { get; set; }
-  
-  public DocumentModel.Vml.Group? ChildGroup { get; set; }
-  
-  public DocumentModel.Vml.Shape? Shape { get; set; }
-  
-  public DocumentModel.Vml.Shapetype? Shapetype { get; set; }
-  
-  public DocumentModel.Vml.Arc? Arc { get; set; }
-  
-  public DocumentModel.Vml.Curve? Curve { get; set; }
-  
-  public DocumentModel.Vml.ImageFile? ImageFile { get; set; }
-  
-  public DocumentModel.Vml.Line? Line { get; set; }
-  
-  public DocumentModel.Vml.Oval? Oval { get; set; }
-  
-  public DocumentModel.Vml.PolyLine? PolyLine { get; set; }
-  
-  public DocumentModel.Vml.Rectangle? Rectangle { get; set; }
-  
-  public DocumentModel.Vml.RoundRectangle? RoundRectangle { get; set; }
-  
-  public DocumentModel.Vml.Diagram? Diagram { get; set; }
-  
-  public DocumentModel.Vml.Lock? Lock { get; set; }
-  
-  public DocumentModel.Vml.ClipPath? ClipPath { get; set; }
-  
-  public DocumentModel.Wordprocessing.Vml.TextWrap? TextWrap { get; set; }
-  
+
+  public Group? ChildGroup { get; set; }
+
+  public Shape? Shape { get; set; }
+
+  public Shapetype? Shapetype { get; set; }
+
+  public Arc? Arc { get; set; }
+
+  public Curve? Curve { get; set; }
+
+  public ImageFile? ImageFile { get; set; }
+
+  public Line? Line { get; set; }
+
+  public Oval? Oval { get; set; }
+
+  public PolyLine? PolyLine { get; set; }
+
+  public Rectangle? Rectangle { get; set; }
+
+  public RoundRectangle? RoundRectangle { get; set; }
+
+  public Diagram? Diagram { get; set; }
+
+  public Lock? Lock { get; set; }
+
+  public ClipPath? ClipPath { get; set; }
+
+  public TextWrap? TextWrap { get; set; }
+
   public Boolean? AnchorLock { get; set; }
-  
 }

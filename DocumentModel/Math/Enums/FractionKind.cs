@@ -1,28 +1,27 @@
 namespace DocumentModel.Math;
 
 /// <summary>
-/// Defines the FractionTypeValues enumeration.
+///   Defines the FractionTypeValues enumeration.
 /// </summary>
 public enum FractionKind
 {
   /// <summary>
-  /// Bar Fraction.
+  ///   Bar Fraction.
   /// </summary>
   Bar,
-  
+
   /// <summary>
-  /// Skewed.
+  ///   Skewed.
   /// </summary>
   Skewed,
-  
+
   /// <summary>
-  /// Linear Fraction.
+  ///   Linear Fraction.
   /// </summary>
   Linear,
-  
+
   /// <summary>
-  /// No-Bar Fraction (Stack).
+  ///   No-Bar Fraction (Stack).
   /// </summary>
-  NoBar,
-  
+  NoBar
 }

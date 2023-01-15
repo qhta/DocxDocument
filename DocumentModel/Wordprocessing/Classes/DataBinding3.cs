@@ -1,23 +1,22 @@
 namespace DocumentModel.Wordprocessing;
 
 /// <summary>
-/// Defines the DataBinding Class.
+///   Defines the DataBinding Class.
 /// </summary>
-public partial class DataBinding3
+public class DataBinding3
 {
   /// <summary>
-  /// XML Namespace Prefix Mappings
+  ///   XML Namespace Prefix Mappings
   /// </summary>
   public String? PrefixMappings { get; set; }
-  
+
   /// <summary>
-  /// XPath
+  ///   XPath
   /// </summary>
   public String? XPath { get; set; }
-  
+
   /// <summary>
-  /// Custom XML Data Storage ID
+  ///   Custom XML Data Storage ID
   /// </summary>
   public String? StoreItemId { get; set; }
-  
 }

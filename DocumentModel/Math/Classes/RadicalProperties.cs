@@ -1,18 +1,17 @@
 namespace DocumentModel.Math;
 
 /// <summary>
-/// Radical Properties.
+///   Radical Properties.
 /// </summary>
-public partial class RadicalProperties
+public class RadicalProperties
 {
   /// <summary>
-  /// Hide Degree.
+  ///   Hide Degree.
   /// </summary>
-  public DocumentModel.Math.BooleanKind? HideDegree { get; set; }
-  
+  public BooleanKind? HideDegree { get; set; }
+
   /// <summary>
-  /// ControlProperties.
+  ///   ControlProperties.
   /// </summary>
-  public DocumentModel.Math.ControlProperties? ControlProperties { get; set; }
-  
+  public ControlProperties? ControlProperties { get; set; }
 }

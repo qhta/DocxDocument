@@ -1,13 +1,12 @@
 namespace DocumentModel.Math;
 
 /// <summary>
-/// Function Properties.
+///   Function Properties.
 /// </summary>
-public partial class FunctionProperties
+public class FunctionProperties
 {
   /// <summary>
-  /// ControlProperties.
+  ///   ControlProperties.
   /// </summary>
-  public DocumentModel.Math.ControlProperties? ControlProperties { get; set; }
-  
+  public ControlProperties? ControlProperties { get; set; }
 }

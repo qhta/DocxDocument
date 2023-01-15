@@ -1,38 +1,37 @@
 namespace DocumentModel.Drawings;
 
 /// <summary>
-/// Line End Type
+///   Line End Type
 /// </summary>
 public enum LineEndKind
 {
   /// <summary>
-  /// None.
+  ///   None.
   /// </summary>
   None,
-  
+
   /// <summary>
-  /// Triangle Arrow Head.
+  ///   Triangle Arrow Head.
   /// </summary>
   Triangle,
-  
+
   /// <summary>
-  /// Stealth Arrow.
+  ///   Stealth Arrow.
   /// </summary>
   Stealth,
-  
+
   /// <summary>
-  /// Diamond.
+  ///   Diamond.
   /// </summary>
   Diamond,
-  
+
   /// <summary>
-  /// Oval.
+  ///   Oval.
   /// </summary>
   Oval,
-  
+
   /// <summary>
-  /// Arrow Head.
+  ///   Arrow Head.
   /// </summary>
-  Arrow,
-  
+  Arrow
 }

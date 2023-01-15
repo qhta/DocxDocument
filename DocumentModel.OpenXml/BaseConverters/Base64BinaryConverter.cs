@@ -2,12 +2,12 @@
 
 public static class Base64BinaryConverter
 {
-  public static byte[] GetValue(DocumentFormat.OpenXml.TypedOpenXmlLeafElement element)
+  public static byte[] GetValue(TypedOpenXmlLeafElement element)
   {
     var valProperty = element.GetType().GetProperty("Val");
     if (valProperty != null)
     {
-      string? value = (string?)valProperty.GetValue(element);
+      var value = (string?)valProperty.GetValue(element);
       if (value != null)
         return Convert.FromBase64String(value);
     }
@@ -15,7 +15,7 @@ public static class Base64BinaryConverter
   }
 
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(byte[] value)
-    where OpenXmlElementType : DocumentFormat.OpenXml.OpenXmlElement, new()
+    where OpenXmlElementType : OpenXmlElement, new()
   {
     var element = new OpenXmlElementType();
     var valProperty = typeof(OpenXmlElementType).GetProperty("Val");
@@ -23,5 +23,4 @@ public static class Base64BinaryConverter
       valProperty.SetValue(element, Convert.ToBase64String(value));
     return element;
   }
-
 }
