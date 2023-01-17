@@ -1,47 +1,43 @@
-using DocumentFormat.OpenXml.Wordprocessing;
-
 namespace DocumentModel.OpenXml.Wordprocessing;
 
 /// <summary>
-///   Single Column Definition.
+/// Single Column Definition.
 /// </summary>
 public static class ColumnConverter
 {
   /// <summary>
-  ///   Column Width
+  /// Column Width
   /// </summary>
-  public static String? GetWidth(Column? openXmlElement)
+  private static String? GetWidth(DocumentFormat.OpenXml.Wordprocessing.Column openXmlElement)
   {
     return openXmlElement?.Width?.Value;
   }
-
-  public static void SetWidth(Column? openXmlElement, String? value)
+  
+  private static void SetWidth(DocumentFormat.OpenXml.Wordprocessing.Column openXmlElement, String? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.Width = new StringValue { Value = value };
-      else
-        openXmlElement.Width = null;
+    if (value != null)
+      openXmlElement.Width = new StringValue { Value = value };
+    else
+      openXmlElement.Width = null;
   }
-
+  
   /// <summary>
-  ///   Space Before Following Column
+  /// Space Before Following Column
   /// </summary>
-  public static String? GetSpace(Column? openXmlElement)
+  private static String? GetSpace(DocumentFormat.OpenXml.Wordprocessing.Column openXmlElement)
   {
     return openXmlElement?.Space?.Value;
   }
-
-  public static void SetSpace(Column? openXmlElement, String? value)
+  
+  private static void SetSpace(DocumentFormat.OpenXml.Wordprocessing.Column openXmlElement, String? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.Space = new StringValue { Value = value };
-      else
-        openXmlElement.Space = null;
+    if (value != null)
+      openXmlElement.Space = new StringValue { Value = value };
+    else
+      openXmlElement.Space = null;
   }
-
-  public static DocumentModel.Wordprocessing.Column? CreateModelElement(Column? openXmlElement)
+  
+  public static DocumentModel.Wordprocessing.Column? CreateModelElement(DocumentFormat.OpenXml.Wordprocessing.Column? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -52,9 +48,9 @@ public static class ColumnConverter
     }
     return null;
   }
-
+  
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.Column? value)
-    where OpenXmlElementType : Column, new()
+    where OpenXmlElementType: DocumentFormat.OpenXml.Wordprocessing.Column, new()
   {
     if (value != null)
     {

@@ -1,122 +1,107 @@
-using DocumentModel.Drawings.ChartDrawings;
-using AxisUnitsLabel = DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.AxisUnitsLabel;
-
 namespace DocumentModel.OpenXml.Drawings.ChartDrawings;
 
 /// <summary>
-///   Defines the AxisUnitsLabel Class.
+/// Defines the AxisUnitsLabel Class.
 /// </summary>
 public static class AxisUnitsLabelConverter
 {
   /// <summary>
-  ///   Text.
+  /// Text.
   /// </summary>
-  public static Text? GetText(AxisUnitsLabel? openXmlElement)
+  private static DocumentModel.Drawings.ChartDrawings.Text? GetText(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.AxisUnitsLabel openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.Text>();
     if (itemElement != null)
-      return TextConverter.CreateModelElement(itemElement);
+      return DocumentModel.OpenXml.Drawings.ChartDrawings.TextConverter.CreateModelElement(itemElement);
     return null;
   }
-
-  public static void SetText(AxisUnitsLabel? openXmlElement, Text? value)
+  
+  private static void SetText(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.AxisUnitsLabel openXmlElement, DocumentModel.Drawings.ChartDrawings.Text? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.Text>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.Text>();
+      itemElement = DocumentModel.OpenXml.Drawings.ChartDrawings.TextConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.Text>(value);
       if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = TextConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.Text>(value);
-        if (itemElement != null)
-          openXmlElement.AddChild(itemElement);
-      }
+        openXmlElement.AddChild(itemElement);
     }
   }
-
+  
   /// <summary>
-  ///   ShapeProperties.
+  /// ShapeProperties.
   /// </summary>
-  public static ShapeProperties? GetShapeProperties(AxisUnitsLabel? openXmlElement)
+  private static DocumentModel.Drawings.ChartDrawings.ShapeProperties? GetShapeProperties(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.AxisUnitsLabel openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.ShapeProperties>();
     if (itemElement != null)
-      return ShapePropertiesConverter.CreateModelElement(itemElement);
+      return DocumentModel.OpenXml.Drawings.ChartDrawings.ShapePropertiesConverter.CreateModelElement(itemElement);
     return null;
   }
-
-  public static void SetShapeProperties(AxisUnitsLabel? openXmlElement, ShapeProperties? value)
+  
+  private static void SetShapeProperties(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.AxisUnitsLabel openXmlElement, DocumentModel.Drawings.ChartDrawings.ShapeProperties? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.ShapeProperties>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.ShapeProperties>();
+      itemElement = DocumentModel.OpenXml.Drawings.ChartDrawings.ShapePropertiesConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.ShapeProperties>(value);
       if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = ShapePropertiesConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.ShapeProperties>(value);
-        if (itemElement != null)
-          openXmlElement.AddChild(itemElement);
-      }
+        openXmlElement.AddChild(itemElement);
     }
   }
-
+  
   /// <summary>
-  ///   TxPrTextBody.
+  /// TxPrTextBody.
   /// </summary>
-  public static TxPrTextBody? GetTxPrTextBody(AxisUnitsLabel? openXmlElement)
+  private static DocumentModel.Drawings.ChartDrawings.TxPrTextBody? GetTxPrTextBody(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.AxisUnitsLabel openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.TxPrTextBody>();
     if (itemElement != null)
-      return TxPrTextBodyConverter.CreateModelElement(itemElement);
+      return DocumentModel.OpenXml.Drawings.ChartDrawings.TxPrTextBodyConverter.CreateModelElement(itemElement);
     return null;
   }
-
-  public static void SetTxPrTextBody(AxisUnitsLabel? openXmlElement, TxPrTextBody? value)
+  
+  private static void SetTxPrTextBody(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.AxisUnitsLabel openXmlElement, DocumentModel.Drawings.ChartDrawings.TxPrTextBody? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.TxPrTextBody>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.TxPrTextBody>();
+      itemElement = DocumentModel.OpenXml.Drawings.ChartDrawings.TxPrTextBodyConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.TxPrTextBody>(value);
       if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = TxPrTextBodyConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.TxPrTextBody>(value);
-        if (itemElement != null)
-          openXmlElement.AddChild(itemElement);
-      }
+        openXmlElement.AddChild(itemElement);
     }
   }
-
+  
   /// <summary>
-  ///   ExtensionList.
+  /// ExtensionList.
   /// </summary>
-  public static DocumentModel.Drawings.ChartDrawings.ExtensionList? GetExtensionList(AxisUnitsLabel? openXmlElement)
+  private static DocumentModel.Drawings.ChartDrawings.ExtensionList? GetExtensionList(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.AxisUnitsLabel openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.ExtensionList>();
     if (itemElement != null)
-      return ExtensionListConverter.CreateModelElement(itemElement);
+      return DocumentModel.OpenXml.Drawings.ChartDrawings.ExtensionListConverter.CreateModelElement(itemElement);
     return null;
   }
-
-  public static void SetExtensionList(AxisUnitsLabel? openXmlElement, DocumentModel.Drawings.ChartDrawings.ExtensionList? value)
+  
+  private static void SetExtensionList(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.AxisUnitsLabel openXmlElement, DocumentModel.Drawings.ChartDrawings.ExtensionList? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.ExtensionList>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.ExtensionList>();
+      itemElement = DocumentModel.OpenXml.Drawings.ChartDrawings.ExtensionListConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.ExtensionList>(value);
       if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = ExtensionListConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.ExtensionList>(value);
-        if (itemElement != null)
-          openXmlElement.AddChild(itemElement);
-      }
+        openXmlElement.AddChild(itemElement);
     }
   }
-
-  public static DocumentModel.Drawings.ChartDrawings.AxisUnitsLabel? CreateModelElement(AxisUnitsLabel? openXmlElement)
+  
+  public static DocumentModel.Drawings.ChartDrawings.AxisUnitsLabel? CreateModelElement(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.AxisUnitsLabel? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -129,9 +114,9 @@ public static class AxisUnitsLabelConverter
     }
     return null;
   }
-
+  
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.ChartDrawings.AxisUnitsLabel? value)
-    where OpenXmlElementType : AxisUnitsLabel, new()
+    where OpenXmlElementType: DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.AxisUnitsLabel, new()
   {
     if (value != null)
     {

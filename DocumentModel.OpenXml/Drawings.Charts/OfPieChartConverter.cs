@@ -1,308 +1,255 @@
-using DocumentFormat.OpenXml.Drawing.Charts;
-using DocumentModel.Drawings.Charts;
-using CustomSplit = DocumentModel.Drawings.Charts.CustomSplit;
-using DataLabels = DocumentModel.Drawings.Charts.DataLabels;
-using OfPieChart = DocumentFormat.OpenXml.Drawing.Charts.OfPieChart;
-using PieChartSeries = DocumentModel.Drawings.Charts.PieChartSeries;
-using SeriesLines = DocumentModel.Drawings.Charts.SeriesLines;
-
 namespace DocumentModel.OpenXml.Drawings.Charts;
 
 /// <summary>
-///   Pie of Pie or Bar of Pie Charts.
+/// Pie of Pie or Bar of Pie Charts.
 /// </summary>
 public static class OfPieChartConverter
 {
   /// <summary>
-  ///   Pie of Pie or Bar of Pie Type.
+  /// Pie of Pie or Bar of Pie Type.
   /// </summary>
-  public static OfPieKind? GetOfPieType(OfPieChart? openXmlElement)
+  private static DocumentModel.Drawings.Charts.OfPieKind? GetOfPieType(DocumentFormat.OpenXml.Drawing.Charts.OfPieChart openXmlElement)
   {
-    if (openXmlElement != null)
-    {
-      var itemElement = openXmlElement.GetFirstChild<OfPieType>();
-      if (itemElement?.Val?.Value != null) return EnumValueConverter.GetValue<OfPieValues, OfPieKind>(itemElement.Val.Value);
-    }
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.OfPieType>();
+    if (itemElement?.Val?.Value != null)
+      return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Drawing.Charts.OfPieValues, DocumentModel.Drawings.Charts.OfPieKind>(itemElement.Val.Value);
     return null;
   }
-
-  public static void SetOfPieType(OfPieChart? openXmlElement, OfPieKind? value)
+  
+  private static void SetOfPieType(DocumentFormat.OpenXml.Drawing.Charts.OfPieChart openXmlElement, DocumentModel.Drawings.Charts.OfPieKind? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.OfPieType>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<OfPieType>();
+      itemElement = EnumValueConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Charts.OfPieType, DocumentFormat.OpenXml.Drawing.Charts.OfPieValues, DocumentModel.Drawings.Charts.OfPieKind>(value);
+      if (itemElement != null)
+        openXmlElement.AddChild(itemElement);
+    }
+  }
+  
+  /// <summary>
+  /// VaryColors.
+  /// </summary>
+  private static Boolean? GetVaryColors(DocumentFormat.OpenXml.Drawing.Charts.OfPieChart openXmlElement)
+  {
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.VaryColors>();
+    return itemElement != null;
+  }
+  
+  private static void SetVaryColors(DocumentFormat.OpenXml.Drawing.Charts.OfPieChart openXmlElement, Boolean? value)
+  {
+    if (value == false)
+    {
+      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.VaryColors>();
       if (itemElement != null)
         itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = EnumValueConverter.CreateOpenXmlElement<OfPieType, OfPieValues, OfPieKind>(value);
-        if (itemElement != null)
-          openXmlElement.AddChild(itemElement);
-      }
+    }
+    if (value == true)
+    {
+      var itemElement = new DocumentFormat.OpenXml.Drawing.Charts.VaryColors();
+      openXmlElement.AddChild(itemElement);
     }
   }
-
-  /// <summary>
-  ///   VaryColors.
-  /// </summary>
-  public static Boolean? GetVaryColors(OfPieChart? openXmlElement)
+  
+  private static System.Collections.ObjectModel.Collection<DocumentModel.Drawings.Charts.PieChartSeries> GetPieChartSerieses(DocumentFormat.OpenXml.Drawing.Charts.OfPieChart openXmlElement)
   {
-    if (openXmlElement != null)
+    var collection = new System.Collections.ObjectModel.Collection<DocumentModel.Drawings.Charts.PieChartSeries>();
+    foreach (var item in openXmlElement.Elements<DocumentFormat.OpenXml.Drawing.Charts.PieChartSeries>())
     {
-      var itemElement = openXmlElement.GetFirstChild<VaryColors>();
-      return itemElement != null;
+      var newItem = DocumentModel.OpenXml.Drawings.Charts.PieChartSeriesConverter.CreateModelElement(item);
+      if (newItem != null)
+        collection.Add(newItem);
     }
-    return null;
+    return collection;
   }
-
-  public static void SetVaryColors(OfPieChart? openXmlElement, Boolean? value)
+  
+  private static void SetPieChartSerieses(DocumentFormat.OpenXml.Drawing.Charts.OfPieChart openXmlElement, System.Collections.ObjectModel.Collection<DocumentModel.Drawings.Charts.PieChartSeries>? value)
   {
-    if (openXmlElement != null)
+    openXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Drawing.Charts.PieChartSeries>();
+    if (value != null)
     {
-      if (value == false)
+      foreach (var item in value)
       {
-        var itemElement = openXmlElement.GetFirstChild<VaryColors>();
-        if (itemElement != null)
-          itemElement.Remove();
-      }
-      if (value == true)
-      {
-        var itemElement = new VaryColors();
-        openXmlElement.AddChild(itemElement);
-      }
-    }
-  }
-
-  public static Collection<PieChartSeries>? GetPieChartSerieses(OfPieChart? openXmlElement)
-  {
-    if (openXmlElement != null)
-    {
-      var collection = new Collection<PieChartSeries>();
-      foreach (var item in openXmlElement.Elements<DocumentFormat.OpenXml.Drawing.Charts.PieChartSeries>())
-      {
-        var newItem = PieChartSeriesConverter.CreateModelElement(item);
+        var newItem = DocumentModel.OpenXml.Drawings.Charts.PieChartSeriesConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Charts.PieChartSeries>(item);
         if (newItem != null)
-          collection.Add(newItem);
+          openXmlElement.AddChild(newItem);
       }
-      return collection;
-    }
-    return null;
-  }
-
-  public static void SetPieChartSerieses(OfPieChart? openXmlElement, Collection<PieChartSeries>? value)
-  {
-    if (openXmlElement != null)
-    {
-      openXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Drawing.Charts.PieChartSeries>();
-      if (value != null)
-        foreach (var item in value)
-        {
-          var newItem = PieChartSeriesConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Charts.PieChartSeries>(item);
-          if (newItem != null)
-            openXmlElement.AddChild(newItem);
-        }
     }
   }
-
-  public static DataLabels? GetDataLabels(OfPieChart? openXmlElement)
+  
+  private static DocumentModel.Drawings.Charts.DataLabels? GetDataLabels(DocumentFormat.OpenXml.Drawing.Charts.OfPieChart openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.DataLabels>();
     if (itemElement != null)
-      return DataLabelsConverter.CreateModelElement(itemElement);
+      return DocumentModel.OpenXml.Drawings.Charts.DataLabelsConverter.CreateModelElement(itemElement);
     return null;
   }
-
-  public static void SetDataLabels(OfPieChart? openXmlElement, DataLabels? value)
+  
+  private static void SetDataLabels(DocumentFormat.OpenXml.Drawing.Charts.OfPieChart openXmlElement, DocumentModel.Drawings.Charts.DataLabels? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.DataLabels>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.DataLabels>();
+      itemElement = DocumentModel.OpenXml.Drawings.Charts.DataLabelsConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Charts.DataLabels>(value);
       if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = DataLabelsConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Charts.DataLabels>(value);
-        if (itemElement != null)
-          openXmlElement.AddChild(itemElement);
-      }
+        openXmlElement.AddChild(itemElement);
     }
   }
-
-  public static UInt16? GetGapWidth(OfPieChart? openXmlElement)
+  
+  private static UInt16? GetGapWidth(DocumentFormat.OpenXml.Drawing.Charts.OfPieChart openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<GapWidth>();
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.GapWidth>();
     if (itemElement != null)
       return itemElement.Val?.Value;
     return null;
   }
-
-  public static void SetGapWidth(OfPieChart? openXmlElement, UInt16? value)
+  
+  private static void SetGapWidth(DocumentFormat.OpenXml.Drawing.Charts.OfPieChart openXmlElement, UInt16? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.GapWidth>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<GapWidth>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = new GapWidth { Val = value };
-        openXmlElement.AddChild(itemElement);
-      }
+      itemElement = new DocumentFormat.OpenXml.Drawing.Charts.GapWidth{ Val = value };
+      openXmlElement.AddChild(itemElement);
     }
   }
-
-  public static SplitKind? GetSplitType(OfPieChart? openXmlElement)
+  
+  private static DocumentModel.Drawings.Charts.SplitKind? GetSplitType(DocumentFormat.OpenXml.Drawing.Charts.OfPieChart openXmlElement)
   {
-    if (openXmlElement != null)
-    {
-      var itemElement = openXmlElement.GetFirstChild<SplitType>();
-      if (itemElement?.Val?.Value != null) return EnumValueConverter.GetValue<SplitValues, SplitKind>(itemElement.Val.Value);
-    }
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.SplitType>();
+    if (itemElement?.Val?.Value != null)
+      return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Drawing.Charts.SplitValues, DocumentModel.Drawings.Charts.SplitKind>(itemElement.Val.Value);
     return null;
   }
-
-  public static void SetSplitType(OfPieChart? openXmlElement, SplitKind? value)
+  
+  private static void SetSplitType(DocumentFormat.OpenXml.Drawing.Charts.OfPieChart openXmlElement, DocumentModel.Drawings.Charts.SplitKind? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.SplitType>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<SplitType>();
+      itemElement = EnumValueConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Charts.SplitType, DocumentFormat.OpenXml.Drawing.Charts.SplitValues, DocumentModel.Drawings.Charts.SplitKind>(value);
       if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = EnumValueConverter.CreateOpenXmlElement<SplitType, SplitValues, SplitKind>(value);
-        if (itemElement != null)
-          openXmlElement.AddChild(itemElement);
-      }
+        openXmlElement.AddChild(itemElement);
     }
   }
-
-  public static Double? GetSplitPosition(OfPieChart? openXmlElement)
+  
+  private static Double? GetSplitPosition(DocumentFormat.OpenXml.Drawing.Charts.OfPieChart openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<SplitPosition>();
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.SplitPosition>();
     if (itemElement != null)
       return itemElement.Val?.Value;
     return null;
   }
-
-  public static void SetSplitPosition(OfPieChart? openXmlElement, Double? value)
+  
+  private static void SetSplitPosition(DocumentFormat.OpenXml.Drawing.Charts.OfPieChart openXmlElement, Double? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.SplitPosition>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<SplitPosition>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = new SplitPosition { Val = value };
-        openXmlElement.AddChild(itemElement);
-      }
+      itemElement = new DocumentFormat.OpenXml.Drawing.Charts.SplitPosition{ Val = value };
+      openXmlElement.AddChild(itemElement);
     }
   }
-
-  public static CustomSplit? GetCustomSplit(OfPieChart? openXmlElement)
+  
+  private static DocumentModel.Drawings.Charts.CustomSplit? GetCustomSplit(DocumentFormat.OpenXml.Drawing.Charts.OfPieChart openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.CustomSplit>();
     if (itemElement != null)
-      return CustomSplitConverter.CreateModelElement(itemElement);
+      return DocumentModel.OpenXml.Drawings.Charts.CustomSplitConverter.CreateModelElement(itemElement);
     return null;
   }
-
-  public static void SetCustomSplit(OfPieChart? openXmlElement, CustomSplit? value)
+  
+  private static void SetCustomSplit(DocumentFormat.OpenXml.Drawing.Charts.OfPieChart openXmlElement, DocumentModel.Drawings.Charts.CustomSplit? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.CustomSplit>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.CustomSplit>();
+      itemElement = DocumentModel.OpenXml.Drawings.Charts.CustomSplitConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Charts.CustomSplit>(value);
       if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = CustomSplitConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Charts.CustomSplit>(value);
-        if (itemElement != null)
-          openXmlElement.AddChild(itemElement);
-      }
+        openXmlElement.AddChild(itemElement);
     }
   }
-
-  public static UInt16? GetSecondPieSize(OfPieChart? openXmlElement)
+  
+  private static UInt16? GetSecondPieSize(DocumentFormat.OpenXml.Drawing.Charts.OfPieChart openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<SecondPieSize>();
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.SecondPieSize>();
     if (itemElement != null)
       return itemElement.Val?.Value;
     return null;
   }
-
-  public static void SetSecondPieSize(OfPieChart? openXmlElement, UInt16? value)
+  
+  private static void SetSecondPieSize(DocumentFormat.OpenXml.Drawing.Charts.OfPieChart openXmlElement, UInt16? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.SecondPieSize>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<SecondPieSize>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = new SecondPieSize { Val = value };
-        openXmlElement.AddChild(itemElement);
-      }
+      itemElement = new DocumentFormat.OpenXml.Drawing.Charts.SecondPieSize{ Val = value };
+      openXmlElement.AddChild(itemElement);
     }
   }
-
-  public static Collection<SeriesLines>? GetSeriesLineses(OfPieChart? openXmlElement)
+  
+  private static System.Collections.ObjectModel.Collection<DocumentModel.Drawings.Charts.SeriesLines> GetSeriesLineses(DocumentFormat.OpenXml.Drawing.Charts.OfPieChart openXmlElement)
   {
-    if (openXmlElement != null)
+    var collection = new System.Collections.ObjectModel.Collection<DocumentModel.Drawings.Charts.SeriesLines>();
+    foreach (var item in openXmlElement.Elements<DocumentFormat.OpenXml.Drawing.Charts.SeriesLines>())
     {
-      var collection = new Collection<SeriesLines>();
-      foreach (var item in openXmlElement.Elements<DocumentFormat.OpenXml.Drawing.Charts.SeriesLines>())
+      var newItem = DocumentModel.OpenXml.Drawings.Charts.SeriesLinesConverter.CreateModelElement(item);
+      if (newItem != null)
+        collection.Add(newItem);
+    }
+    return collection;
+  }
+  
+  private static void SetSeriesLineses(DocumentFormat.OpenXml.Drawing.Charts.OfPieChart openXmlElement, System.Collections.ObjectModel.Collection<DocumentModel.Drawings.Charts.SeriesLines>? value)
+  {
+    openXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Drawing.Charts.SeriesLines>();
+    if (value != null)
+    {
+      foreach (var item in value)
       {
-        var newItem = SeriesLinesConverter.CreateModelElement(item);
+        var newItem = DocumentModel.OpenXml.Drawings.Charts.SeriesLinesConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Charts.SeriesLines>(item);
         if (newItem != null)
-          collection.Add(newItem);
+          openXmlElement.AddChild(newItem);
       }
-      return collection;
-    }
-    return null;
-  }
-
-  public static void SetSeriesLineses(OfPieChart? openXmlElement, Collection<SeriesLines>? value)
-  {
-    if (openXmlElement != null)
-    {
-      openXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Drawing.Charts.SeriesLines>();
-      if (value != null)
-        foreach (var item in value)
-        {
-          var newItem = SeriesLinesConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Charts.SeriesLines>(item);
-          if (newItem != null)
-            openXmlElement.AddChild(newItem);
-        }
     }
   }
-
-  public static DocumentModel.Drawings.Charts.ExtensionList? GetExtensionList(OfPieChart? openXmlElement)
+  
+  private static DocumentModel.Drawings.Charts.ExtensionList? GetExtensionList(DocumentFormat.OpenXml.Drawing.Charts.OfPieChart openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.ExtensionList>();
     if (itemElement != null)
-      return ExtensionListConverter.CreateModelElement(itemElement);
+      return DocumentModel.OpenXml.Drawings.Charts.ExtensionListConverter.CreateModelElement(itemElement);
     return null;
   }
-
-  public static void SetExtensionList(OfPieChart? openXmlElement, DocumentModel.Drawings.Charts.ExtensionList? value)
+  
+  private static void SetExtensionList(DocumentFormat.OpenXml.Drawing.Charts.OfPieChart openXmlElement, DocumentModel.Drawings.Charts.ExtensionList? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.ExtensionList>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.ExtensionList>();
+      itemElement = DocumentModel.OpenXml.Drawings.Charts.ExtensionListConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Charts.ExtensionList>(value);
       if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = ExtensionListConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Charts.ExtensionList>(value);
-        if (itemElement != null)
-          openXmlElement.AddChild(itemElement);
-      }
+        openXmlElement.AddChild(itemElement);
     }
   }
-
-  public static DocumentModel.Drawings.Charts.OfPieChart? CreateModelElement(OfPieChart? openXmlElement)
+  
+  public static DocumentModel.Drawings.Charts.OfPieChart? CreateModelElement(DocumentFormat.OpenXml.Drawing.Charts.OfPieChart? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -322,9 +269,9 @@ public static class OfPieChartConverter
     }
     return null;
   }
-
+  
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.Charts.OfPieChart? value)
-    where OpenXmlElementType : OfPieChart, new()
+    where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.Charts.OfPieChart, new()
   {
     if (value != null)
     {

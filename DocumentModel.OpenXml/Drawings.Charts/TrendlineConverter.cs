@@ -1,345 +1,293 @@
-using DocumentFormat.OpenXml.Drawing.Charts;
-using DocumentModel.Drawings.Charts;
-using ChartShapeProperties = DocumentModel.Drawings.Charts.ChartShapeProperties;
-using Trendline = DocumentFormat.OpenXml.Drawing.Charts.Trendline;
-using TrendlineLabel = DocumentModel.Drawings.Charts.TrendlineLabel;
-
 namespace DocumentModel.OpenXml.Drawings.Charts;
 
 /// <summary>
-///   Defines the Trendline Class.
+/// Defines the Trendline Class.
 /// </summary>
 public static class TrendlineConverter
 {
   /// <summary>
-  ///   Trendline Name.
+  /// Trendline Name.
   /// </summary>
-  public static String? GetTrendlineName(Trendline? openXmlElement)
+  private static String? GetTrendlineName(DocumentFormat.OpenXml.Drawing.Charts.Trendline openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<TrendlineName>();
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.TrendlineName>();
     if (itemElement != null)
       return itemElement.Text;
     return null;
   }
-
-  public static void SetTrendlineName(Trendline? openXmlElement, String? value)
+  
+  private static void SetTrendlineName(DocumentFormat.OpenXml.Drawing.Charts.Trendline openXmlElement, String? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.TrendlineName>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<TrendlineName>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = new TrendlineName { Text = value };
-        openXmlElement.AddChild(itemElement);
-      }
+      itemElement = new DocumentFormat.OpenXml.Drawing.Charts.TrendlineName { Text = value };
+      openXmlElement.AddChild(itemElement);
     }
   }
-
+  
   /// <summary>
-  ///   ChartShapeProperties.
+  /// ChartShapeProperties.
   /// </summary>
-  public static ChartShapeProperties? GetChartShapeProperties(Trendline? openXmlElement)
+  private static DocumentModel.Drawings.Charts.ChartShapeProperties? GetChartShapeProperties(DocumentFormat.OpenXml.Drawing.Charts.Trendline openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.ChartShapeProperties>();
     if (itemElement != null)
-      return ChartShapePropertiesConverter.CreateModelElement(itemElement);
+      return DocumentModel.OpenXml.Drawings.Charts.ChartShapePropertiesConverter.CreateModelElement(itemElement);
     return null;
   }
-
-  public static void SetChartShapeProperties(Trendline? openXmlElement, ChartShapeProperties? value)
+  
+  private static void SetChartShapeProperties(DocumentFormat.OpenXml.Drawing.Charts.Trendline openXmlElement, DocumentModel.Drawings.Charts.ChartShapeProperties? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.ChartShapeProperties>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.ChartShapeProperties>();
+      itemElement = DocumentModel.OpenXml.Drawings.Charts.ChartShapePropertiesConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Charts.ChartShapeProperties>(value);
       if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = ChartShapePropertiesConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Charts.ChartShapeProperties>(value);
-        if (itemElement != null)
-          openXmlElement.AddChild(itemElement);
-      }
+        openXmlElement.AddChild(itemElement);
     }
   }
-
+  
   /// <summary>
-  ///   Trendline Type.
+  /// Trendline Type.
   /// </summary>
-  public static TrendlineKind? GetTrendlineType(Trendline? openXmlElement)
+  private static DocumentModel.Drawings.Charts.TrendlineKind? GetTrendlineType(DocumentFormat.OpenXml.Drawing.Charts.Trendline openXmlElement)
   {
-    if (openXmlElement != null)
-    {
-      var itemElement = openXmlElement.GetFirstChild<TrendlineType>();
-      if (itemElement?.Val?.Value != null) return EnumValueConverter.GetValue<TrendlineValues, TrendlineKind>(itemElement.Val.Value);
-    }
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.TrendlineType>();
+    if (itemElement?.Val?.Value != null)
+      return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Drawing.Charts.TrendlineValues, DocumentModel.Drawings.Charts.TrendlineKind>(itemElement.Val.Value);
     return null;
   }
-
-  public static void SetTrendlineType(Trendline? openXmlElement, TrendlineKind? value)
+  
+  private static void SetTrendlineType(DocumentFormat.OpenXml.Drawing.Charts.Trendline openXmlElement, DocumentModel.Drawings.Charts.TrendlineKind? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.TrendlineType>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<TrendlineType>();
+      itemElement = EnumValueConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Charts.TrendlineType, DocumentFormat.OpenXml.Drawing.Charts.TrendlineValues, DocumentModel.Drawings.Charts.TrendlineKind>(value);
       if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = EnumValueConverter.CreateOpenXmlElement<TrendlineType, TrendlineValues, TrendlineKind>(value);
-        if (itemElement != null)
-          openXmlElement.AddChild(itemElement);
-      }
+        openXmlElement.AddChild(itemElement);
     }
   }
-
+  
   /// <summary>
-  ///   Polynomial Trendline Order.
+  /// Polynomial Trendline Order.
   /// </summary>
-  public static Byte? GetPolynomialOrder(Trendline? openXmlElement)
+  private static Byte? GetPolynomialOrder(DocumentFormat.OpenXml.Drawing.Charts.Trendline openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<PolynomialOrder>();
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.PolynomialOrder>();
     if (itemElement != null)
       return itemElement.Val?.Value;
     return null;
   }
-
-  public static void SetPolynomialOrder(Trendline? openXmlElement, Byte? value)
+  
+  private static void SetPolynomialOrder(DocumentFormat.OpenXml.Drawing.Charts.Trendline openXmlElement, Byte? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.PolynomialOrder>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<PolynomialOrder>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = new PolynomialOrder { Val = value };
-        openXmlElement.AddChild(itemElement);
-      }
+      itemElement = new DocumentFormat.OpenXml.Drawing.Charts.PolynomialOrder{ Val = value };
+      openXmlElement.AddChild(itemElement);
     }
   }
-
+  
   /// <summary>
-  ///   Period.
+  /// Period.
   /// </summary>
-  public static UInt32? GetPeriod(Trendline? openXmlElement)
+  private static UInt32? GetPeriod(DocumentFormat.OpenXml.Drawing.Charts.Trendline openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<Period>();
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.Period>();
     if (itemElement != null)
       return itemElement.Val?.Value;
     return null;
   }
-
-  public static void SetPeriod(Trendline? openXmlElement, UInt32? value)
+  
+  private static void SetPeriod(DocumentFormat.OpenXml.Drawing.Charts.Trendline openXmlElement, UInt32? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.Period>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<Period>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = new Period { Val = value };
-        openXmlElement.AddChild(itemElement);
-      }
+      itemElement = new DocumentFormat.OpenXml.Drawing.Charts.Period{ Val = value };
+      openXmlElement.AddChild(itemElement);
     }
   }
-
+  
   /// <summary>
-  ///   Forward.
+  /// Forward.
   /// </summary>
-  public static Double? GetForward(Trendline? openXmlElement)
+  private static Double? GetForward(DocumentFormat.OpenXml.Drawing.Charts.Trendline openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<Forward>();
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.Forward>();
     if (itemElement != null)
       return itemElement.Val?.Value;
     return null;
   }
-
-  public static void SetForward(Trendline? openXmlElement, Double? value)
+  
+  private static void SetForward(DocumentFormat.OpenXml.Drawing.Charts.Trendline openXmlElement, Double? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.Forward>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<Forward>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = new Forward { Val = value };
-        openXmlElement.AddChild(itemElement);
-      }
+      itemElement = new DocumentFormat.OpenXml.Drawing.Charts.Forward{ Val = value };
+      openXmlElement.AddChild(itemElement);
     }
   }
-
+  
   /// <summary>
-  ///   Backward.
+  /// Backward.
   /// </summary>
-  public static Double? GetBackward(Trendline? openXmlElement)
+  private static Double? GetBackward(DocumentFormat.OpenXml.Drawing.Charts.Trendline openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<Backward>();
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.Backward>();
     if (itemElement != null)
       return itemElement.Val?.Value;
     return null;
   }
-
-  public static void SetBackward(Trendline? openXmlElement, Double? value)
+  
+  private static void SetBackward(DocumentFormat.OpenXml.Drawing.Charts.Trendline openXmlElement, Double? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.Backward>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<Backward>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = new Backward { Val = value };
-        openXmlElement.AddChild(itemElement);
-      }
+      itemElement = new DocumentFormat.OpenXml.Drawing.Charts.Backward{ Val = value };
+      openXmlElement.AddChild(itemElement);
     }
   }
-
+  
   /// <summary>
-  ///   Intercept.
+  /// Intercept.
   /// </summary>
-  public static Double? GetIntercept(Trendline? openXmlElement)
+  private static Double? GetIntercept(DocumentFormat.OpenXml.Drawing.Charts.Trendline openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<Intercept>();
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.Intercept>();
     if (itemElement != null)
       return itemElement.Val?.Value;
     return null;
   }
-
-  public static void SetIntercept(Trendline? openXmlElement, Double? value)
+  
+  private static void SetIntercept(DocumentFormat.OpenXml.Drawing.Charts.Trendline openXmlElement, Double? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.Intercept>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<Intercept>();
+      itemElement = new DocumentFormat.OpenXml.Drawing.Charts.Intercept{ Val = value };
+      openXmlElement.AddChild(itemElement);
+    }
+  }
+  
+  /// <summary>
+  /// Display R Squared Value.
+  /// </summary>
+  private static Boolean? GetDisplayRSquaredValue(DocumentFormat.OpenXml.Drawing.Charts.Trendline openXmlElement)
+  {
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.DisplayRSquaredValue>();
+    return itemElement != null;
+  }
+  
+  private static void SetDisplayRSquaredValue(DocumentFormat.OpenXml.Drawing.Charts.Trendline openXmlElement, Boolean? value)
+  {
+    if (value == false)
+    {
+      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.DisplayRSquaredValue>();
       if (itemElement != null)
         itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = new Intercept { Val = value };
-        openXmlElement.AddChild(itemElement);
-      }
+    }
+    if (value == true)
+    {
+      var itemElement = new DocumentFormat.OpenXml.Drawing.Charts.DisplayRSquaredValue();
+      openXmlElement.AddChild(itemElement);
     }
   }
-
+  
   /// <summary>
-  ///   Display R Squared Value.
+  /// Display Equation.
   /// </summary>
-  public static Boolean? GetDisplayRSquaredValue(Trendline? openXmlElement)
+  private static Boolean? GetDisplayEquation(DocumentFormat.OpenXml.Drawing.Charts.Trendline openXmlElement)
   {
-    if (openXmlElement != null)
-    {
-      var itemElement = openXmlElement.GetFirstChild<DisplayRSquaredValue>();
-      return itemElement != null;
-    }
-    return null;
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.DisplayEquation>();
+    return itemElement != null;
   }
-
-  public static void SetDisplayRSquaredValue(Trendline? openXmlElement, Boolean? value)
+  
+  private static void SetDisplayEquation(DocumentFormat.OpenXml.Drawing.Charts.Trendline openXmlElement, Boolean? value)
   {
-    if (openXmlElement != null)
+    if (value == false)
     {
-      if (value == false)
-      {
-        var itemElement = openXmlElement.GetFirstChild<DisplayRSquaredValue>();
-        if (itemElement != null)
-          itemElement.Remove();
-      }
-      if (value == true)
-      {
-        var itemElement = new DisplayRSquaredValue();
-        openXmlElement.AddChild(itemElement);
-      }
+      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.DisplayEquation>();
+      if (itemElement != null)
+        itemElement.Remove();
+    }
+    if (value == true)
+    {
+      var itemElement = new DocumentFormat.OpenXml.Drawing.Charts.DisplayEquation();
+      openXmlElement.AddChild(itemElement);
     }
   }
-
+  
   /// <summary>
-  ///   Display Equation.
+  /// Trendline Label.
   /// </summary>
-  public static Boolean? GetDisplayEquation(Trendline? openXmlElement)
-  {
-    if (openXmlElement != null)
-    {
-      var itemElement = openXmlElement.GetFirstChild<DisplayEquation>();
-      return itemElement != null;
-    }
-    return null;
-  }
-
-  public static void SetDisplayEquation(Trendline? openXmlElement, Boolean? value)
-  {
-    if (openXmlElement != null)
-    {
-      if (value == false)
-      {
-        var itemElement = openXmlElement.GetFirstChild<DisplayEquation>();
-        if (itemElement != null)
-          itemElement.Remove();
-      }
-      if (value == true)
-      {
-        var itemElement = new DisplayEquation();
-        openXmlElement.AddChild(itemElement);
-      }
-    }
-  }
-
-  /// <summary>
-  ///   Trendline Label.
-  /// </summary>
-  public static TrendlineLabel? GetTrendlineLabel(Trendline? openXmlElement)
+  private static DocumentModel.Drawings.Charts.TrendlineLabel? GetTrendlineLabel(DocumentFormat.OpenXml.Drawing.Charts.Trendline openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.TrendlineLabel>();
     if (itemElement != null)
-      return TrendlineLabelConverter.CreateModelElement(itemElement);
+      return DocumentModel.OpenXml.Drawings.Charts.TrendlineLabelConverter.CreateModelElement(itemElement);
     return null;
   }
-
-  public static void SetTrendlineLabel(Trendline? openXmlElement, TrendlineLabel? value)
+  
+  private static void SetTrendlineLabel(DocumentFormat.OpenXml.Drawing.Charts.Trendline openXmlElement, DocumentModel.Drawings.Charts.TrendlineLabel? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.TrendlineLabel>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.TrendlineLabel>();
+      itemElement = DocumentModel.OpenXml.Drawings.Charts.TrendlineLabelConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Charts.TrendlineLabel>(value);
       if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = TrendlineLabelConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Charts.TrendlineLabel>(value);
-        if (itemElement != null)
-          openXmlElement.AddChild(itemElement);
-      }
+        openXmlElement.AddChild(itemElement);
     }
   }
-
+  
   /// <summary>
-  ///   Chart Extensibility.
+  /// Chart Extensibility.
   /// </summary>
-  public static DocumentModel.Drawings.Charts.ExtensionList? GetExtensionList(Trendline? openXmlElement)
+  private static DocumentModel.Drawings.Charts.ExtensionList? GetExtensionList(DocumentFormat.OpenXml.Drawing.Charts.Trendline openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.ExtensionList>();
     if (itemElement != null)
-      return ExtensionListConverter.CreateModelElement(itemElement);
+      return DocumentModel.OpenXml.Drawings.Charts.ExtensionListConverter.CreateModelElement(itemElement);
     return null;
   }
-
-  public static void SetExtensionList(Trendline? openXmlElement, DocumentModel.Drawings.Charts.ExtensionList? value)
+  
+  private static void SetExtensionList(DocumentFormat.OpenXml.Drawing.Charts.Trendline openXmlElement, DocumentModel.Drawings.Charts.ExtensionList? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.ExtensionList>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.ExtensionList>();
+      itemElement = DocumentModel.OpenXml.Drawings.Charts.ExtensionListConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Charts.ExtensionList>(value);
       if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = ExtensionListConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Charts.ExtensionList>(value);
-        if (itemElement != null)
-          openXmlElement.AddChild(itemElement);
-      }
+        openXmlElement.AddChild(itemElement);
     }
   }
-
-  public static DocumentModel.Drawings.Charts.Trendline? CreateModelElement(Trendline? openXmlElement)
+  
+  public static DocumentModel.Drawings.Charts.Trendline? CreateModelElement(DocumentFormat.OpenXml.Drawing.Charts.Trendline? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -360,9 +308,9 @@ public static class TrendlineConverter
     }
     return null;
   }
-
+  
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.Charts.Trendline? value)
-    where OpenXmlElementType : Trendline, new()
+    where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.Charts.Trendline, new()
   {
     if (value != null)
     {

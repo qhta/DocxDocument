@@ -1,775 +1,617 @@
-using DocumentFormat.OpenXml.Office2010.Word;
-using DocumentFormat.OpenXml.Office2013.Word;
-using DocumentFormat.OpenXml.Wordprocessing;
-using DocumentModel.Wordprocessing;
-using Color = DocumentFormat.OpenXml.Office2013.Word.Color;
-using DataBinding = DocumentModel.Wordprocessing.DataBinding;
-using RunProperties = DocumentModel.Wordprocessing.RunProperties;
-using SdtAppearance = DocumentModel.Wordprocessing.SdtAppearance;
-using SdtContentCheckBox = DocumentModel.Wordprocessing.SdtContentCheckBox;
-using SdtContentComboBox = DocumentModel.Wordprocessing.SdtContentComboBox;
-using SdtContentDate = DocumentModel.Wordprocessing.SdtContentDate;
-using SdtContentDocPartList = DocumentModel.Wordprocessing.SdtContentDocPartList;
-using SdtContentDocPartObject = DocumentModel.Wordprocessing.SdtContentDocPartObject;
-using SdtContentDropDownList = DocumentModel.Wordprocessing.SdtContentDropDownList;
-using SdtContentText = DocumentModel.Wordprocessing.SdtContentText;
-using SdtPlaceholder = DocumentModel.Wordprocessing.SdtPlaceholder;
-using SdtProperties = DocumentFormat.OpenXml.Wordprocessing.SdtProperties;
-using SdtRepeatedSection = DocumentModel.Wordprocessing.SdtRepeatedSection;
-
 namespace DocumentModel.OpenXml.Wordprocessing;
 
 /// <summary>
-///   Structured Document Tag Properties.
+/// Structured Document Tag Properties.
 /// </summary>
 public static class SdtPropertiesConverter
 {
-  public static RunProperties? GetRunProperties(SdtProperties? openXmlElement)
+  private static DocumentModel.Wordprocessing.RunProperties? GetRunProperties(DocumentFormat.OpenXml.Wordprocessing.SdtProperties openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.RunProperties>();
     if (itemElement != null)
-      return RunPropertiesConverter.CreateModelElement(itemElement);
+      return DocumentModel.OpenXml.Wordprocessing.RunPropertiesConverter.CreateModelElement(itemElement);
     return null;
   }
-
-  public static void SetRunProperties(SdtProperties? openXmlElement, RunProperties? value)
+  
+  private static void SetRunProperties(DocumentFormat.OpenXml.Wordprocessing.SdtProperties openXmlElement, DocumentModel.Wordprocessing.RunProperties? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.RunProperties>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.RunProperties>();
+      itemElement = DocumentModel.OpenXml.Wordprocessing.RunPropertiesConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.RunProperties>(value);
       if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = RunPropertiesConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.RunProperties>(value);
-        if (itemElement != null)
-          openXmlElement.AddChild(itemElement);
-      }
+        openXmlElement.AddChild(itemElement);
     }
   }
-
-  public static String? GetSdtAlias(SdtProperties? openXmlElement)
+  
+  private static String? GetSdtAlias(DocumentFormat.OpenXml.Wordprocessing.SdtProperties openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<SdtAlias>();
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.SdtAlias>();
     if (itemElement != null)
       return itemElement.Val?.Value;
     return null;
   }
-
-  public static void SetSdtAlias(SdtProperties? openXmlElement, String? value)
+  
+  private static void SetSdtAlias(DocumentFormat.OpenXml.Wordprocessing.SdtProperties openXmlElement, String? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.SdtAlias>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<SdtAlias>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = new SdtAlias { Val = value };
-        openXmlElement.AddChild(itemElement);
-      }
+      itemElement = new DocumentFormat.OpenXml.Wordprocessing.SdtAlias { Val = value };
+      openXmlElement.AddChild(itemElement);
     }
   }
-
-  public static LockingKind? GetLock(SdtProperties? openXmlElement)
+  
+  private static DocumentModel.Wordprocessing.LockingKind? GetLock(DocumentFormat.OpenXml.Wordprocessing.SdtProperties openXmlElement)
   {
-    if (openXmlElement != null)
-    {
-      var itemElement = openXmlElement.GetFirstChild<Lock>();
-      if (itemElement?.Val?.Value != null) return EnumValueConverter.GetValue<LockingValues, LockingKind>(itemElement.Val.Value);
-    }
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.Lock>();
+    if (itemElement?.Val?.Value != null)
+      return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Wordprocessing.LockingValues, DocumentModel.Wordprocessing.LockingKind>(itemElement.Val.Value);
     return null;
   }
-
-  public static void SetLock(SdtProperties? openXmlElement, LockingKind? value)
+  
+  private static void SetLock(DocumentFormat.OpenXml.Wordprocessing.SdtProperties openXmlElement, DocumentModel.Wordprocessing.LockingKind? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.Lock>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<Lock>();
+      itemElement = EnumValueConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.Lock, DocumentFormat.OpenXml.Wordprocessing.LockingValues, DocumentModel.Wordprocessing.LockingKind>(value);
       if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = EnumValueConverter.CreateOpenXmlElement<Lock, LockingValues, LockingKind>(value);
-        if (itemElement != null)
-          openXmlElement.AddChild(itemElement);
-      }
+        openXmlElement.AddChild(itemElement);
     }
   }
-
-  public static SdtPlaceholder? GetSdtPlaceholder(SdtProperties? openXmlElement)
+  
+  private static DocumentModel.Wordprocessing.SdtPlaceholder? GetSdtPlaceholder(DocumentFormat.OpenXml.Wordprocessing.SdtProperties openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.SdtPlaceholder>();
     if (itemElement != null)
-      return SdtPlaceholderConverter.CreateModelElement(itemElement);
+      return DocumentModel.OpenXml.Wordprocessing.SdtPlaceholderConverter.CreateModelElement(itemElement);
     return null;
   }
-
-  public static void SetSdtPlaceholder(SdtProperties? openXmlElement, SdtPlaceholder? value)
+  
+  private static void SetSdtPlaceholder(DocumentFormat.OpenXml.Wordprocessing.SdtProperties openXmlElement, DocumentModel.Wordprocessing.SdtPlaceholder? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.SdtPlaceholder>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.SdtPlaceholder>();
+      itemElement = DocumentModel.OpenXml.Wordprocessing.SdtPlaceholderConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.SdtPlaceholder>(value);
+      if (itemElement != null)
+        openXmlElement.AddChild(itemElement);
+    }
+  }
+  
+  private static Boolean? GetShowingPlaceholder(DocumentFormat.OpenXml.Wordprocessing.SdtProperties openXmlElement)
+  {
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.ShowingPlaceholder>();
+    return itemElement != null;
+  }
+  
+  private static void SetShowingPlaceholder(DocumentFormat.OpenXml.Wordprocessing.SdtProperties openXmlElement, Boolean? value)
+  {
+    if (value == false)
+    {
+      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.ShowingPlaceholder>();
       if (itemElement != null)
         itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = SdtPlaceholderConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.SdtPlaceholder>(value);
-        if (itemElement != null)
-          openXmlElement.AddChild(itemElement);
-      }
     }
-  }
-
-  public static Boolean? GetShowingPlaceholder(SdtProperties? openXmlElement)
-  {
-    if (openXmlElement != null)
+    if (value == true)
     {
-      var itemElement = openXmlElement.GetFirstChild<ShowingPlaceholder>();
-      return itemElement != null;
-    }
-    return null;
-  }
-
-  public static void SetShowingPlaceholder(SdtProperties? openXmlElement, Boolean? value)
-  {
-    if (openXmlElement != null)
-    {
-      if (value == false)
-      {
-        var itemElement = openXmlElement.GetFirstChild<ShowingPlaceholder>();
-        if (itemElement != null)
-          itemElement.Remove();
-      }
-      if (value == true)
-      {
-        var itemElement = new ShowingPlaceholder();
-        openXmlElement.AddChild(itemElement);
-      }
+      var itemElement = new DocumentFormat.OpenXml.Wordprocessing.ShowingPlaceholder();
+      openXmlElement.AddChild(itemElement);
     }
   }
-
-  public static DataBinding? GetDataBinding(SdtProperties? openXmlElement)
+  
+  private static DocumentModel.Wordprocessing.DataBinding? GetDataBinding(DocumentFormat.OpenXml.Wordprocessing.SdtProperties openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.DataBinding>();
     if (itemElement != null)
-      return DataBindingConverter.CreateModelElement(itemElement);
+      return DocumentModel.OpenXml.Wordprocessing.DataBindingConverter.CreateModelElement(itemElement);
     return null;
   }
-
-  public static void SetDataBinding(SdtProperties? openXmlElement, DataBinding? value)
+  
+  private static void SetDataBinding(DocumentFormat.OpenXml.Wordprocessing.SdtProperties openXmlElement, DocumentModel.Wordprocessing.DataBinding? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.DataBinding>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.DataBinding>();
+      itemElement = DocumentModel.OpenXml.Wordprocessing.DataBindingConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.DataBinding>(value);
+      if (itemElement != null)
+        openXmlElement.AddChild(itemElement);
+    }
+  }
+  
+  private static Boolean? GetTemporarySdt(DocumentFormat.OpenXml.Wordprocessing.SdtProperties openXmlElement)
+  {
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.TemporarySdt>();
+    return itemElement != null;
+  }
+  
+  private static void SetTemporarySdt(DocumentFormat.OpenXml.Wordprocessing.SdtProperties openXmlElement, Boolean? value)
+  {
+    if (value == false)
+    {
+      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.TemporarySdt>();
       if (itemElement != null)
         itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = DataBindingConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.DataBinding>(value);
-        if (itemElement != null)
-          openXmlElement.AddChild(itemElement);
-      }
     }
-  }
-
-  public static Boolean? GetTemporarySdt(SdtProperties? openXmlElement)
-  {
-    if (openXmlElement != null)
+    if (value == true)
     {
-      var itemElement = openXmlElement.GetFirstChild<TemporarySdt>();
-      return itemElement != null;
-    }
-    return null;
-  }
-
-  public static void SetTemporarySdt(SdtProperties? openXmlElement, Boolean? value)
-  {
-    if (openXmlElement != null)
-    {
-      if (value == false)
-      {
-        var itemElement = openXmlElement.GetFirstChild<TemporarySdt>();
-        if (itemElement != null)
-          itemElement.Remove();
-      }
-      if (value == true)
-      {
-        var itemElement = new TemporarySdt();
-        openXmlElement.AddChild(itemElement);
-      }
+      var itemElement = new DocumentFormat.OpenXml.Wordprocessing.TemporarySdt();
+      openXmlElement.AddChild(itemElement);
     }
   }
-
-  public static Int32? GetSdtId(SdtProperties? openXmlElement)
+  
+  private static Int32? GetSdtId(DocumentFormat.OpenXml.Wordprocessing.SdtProperties openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<SdtId>();
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.SdtId>();
     if (itemElement != null)
       return itemElement.Val?.Value;
     return null;
   }
-
-  public static void SetSdtId(SdtProperties? openXmlElement, Int32? value)
+  
+  private static void SetSdtId(DocumentFormat.OpenXml.Wordprocessing.SdtProperties openXmlElement, Int32? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.SdtId>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<SdtId>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = new SdtId { Val = value };
-        openXmlElement.AddChild(itemElement);
-      }
+      itemElement = new DocumentFormat.OpenXml.Wordprocessing.SdtId{ Val = value };
+      openXmlElement.AddChild(itemElement);
     }
   }
-
-  public static String? GetTag(SdtProperties? openXmlElement)
+  
+  private static String? GetTag(DocumentFormat.OpenXml.Wordprocessing.SdtProperties openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<Tag>();
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.Tag>();
     if (itemElement != null)
       return itemElement.Val?.Value;
     return null;
   }
-
-  public static void SetTag(SdtProperties? openXmlElement, String? value)
+  
+  private static void SetTag(DocumentFormat.OpenXml.Wordprocessing.SdtProperties openXmlElement, String? value)
   {
-    if (openXmlElement != null)
-    {
-      var itemElement = openXmlElement.GetFirstChild<Tag>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = new Tag { Val = value };
-        openXmlElement.AddChild(itemElement);
-      }
-    }
-  }
-
-  public static Color3? GetColor(SdtProperties? openXmlElement)
-  {
-    var itemElement = openXmlElement?.GetFirstChild<Color>();
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.Tag>();
     if (itemElement != null)
-      return Color3Converter.CreateModelElement(itemElement);
+      itemElement.Remove();
+    if (value != null)
+    {
+      itemElement = new DocumentFormat.OpenXml.Wordprocessing.Tag { Val = value };
+      openXmlElement.AddChild(itemElement);
+    }
+  }
+  
+  private static DocumentModel.Wordprocessing.Color3? GetColor(DocumentFormat.OpenXml.Wordprocessing.SdtProperties openXmlElement)
+  {
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office2013.Word.Color>();
+    if (itemElement != null)
+      return DocumentModel.OpenXml.Wordprocessing.Color3Converter.CreateModelElement(itemElement);
     return null;
   }
-
-  public static void SetColor(SdtProperties? openXmlElement, Color3? value)
+  
+  private static void SetColor(DocumentFormat.OpenXml.Wordprocessing.SdtProperties openXmlElement, DocumentModel.Wordprocessing.Color3? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2013.Word.Color>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<Color>();
+      itemElement = DocumentModel.OpenXml.Wordprocessing.Color3Converter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2013.Word.Color>(value);
+      if (itemElement != null)
+        openXmlElement.AddChild(itemElement);
+    }
+  }
+  
+  private static DocumentModel.Wordprocessing.SdtAppearance? GetAppearance(DocumentFormat.OpenXml.Wordprocessing.SdtProperties openXmlElement)
+  {
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2013.Word.Appearance>();
+    if (itemElement?.Val?.Value != null)
+      return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Office2013.Word.SdtAppearance, DocumentModel.Wordprocessing.SdtAppearance>(itemElement.Val.Value);
+    return null;
+  }
+  
+  private static void SetAppearance(DocumentFormat.OpenXml.Wordprocessing.SdtProperties openXmlElement, DocumentModel.Wordprocessing.SdtAppearance? value)
+  {
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2013.Word.Appearance>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
+    {
+      itemElement = EnumValueConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2013.Word.Appearance, DocumentFormat.OpenXml.Office2013.Word.SdtAppearance, DocumentModel.Wordprocessing.SdtAppearance>(value);
+      if (itemElement != null)
+        openXmlElement.AddChild(itemElement);
+    }
+  }
+  
+  private static Boolean? GetWebExtensionLinked(DocumentFormat.OpenXml.Wordprocessing.SdtProperties openXmlElement)
+  {
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2013.Word.WebExtensionLinked>();
+    return itemElement != null;
+  }
+  
+  private static void SetWebExtensionLinked(DocumentFormat.OpenXml.Wordprocessing.SdtProperties openXmlElement, Boolean? value)
+  {
+    if (value == false)
+    {
+      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2013.Word.WebExtensionLinked>();
       if (itemElement != null)
         itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = Color3Converter.CreateOpenXmlElement<Color>(value);
-        if (itemElement != null)
-          openXmlElement.AddChild(itemElement);
-      }
+    }
+    if (value == true)
+    {
+      var itemElement = new DocumentFormat.OpenXml.Office2013.Word.WebExtensionLinked();
+      openXmlElement.AddChild(itemElement);
     }
   }
-
-  public static SdtAppearance? GetAppearance(SdtProperties? openXmlElement)
+  
+  private static Boolean? GetWebExtensionCreated(DocumentFormat.OpenXml.Wordprocessing.SdtProperties openXmlElement)
   {
-    if (openXmlElement != null)
-    {
-      var itemElement = openXmlElement.GetFirstChild<Appearance>();
-      if (itemElement?.Val?.Value != null) return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Office2013.Word.SdtAppearance, SdtAppearance>(itemElement.Val.Value);
-    }
-    return null;
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2013.Word.WebExtensionCreated>();
+    return itemElement != null;
   }
-
-  public static void SetAppearance(SdtProperties? openXmlElement, SdtAppearance? value)
+  
+  private static void SetWebExtensionCreated(DocumentFormat.OpenXml.Wordprocessing.SdtProperties openXmlElement, Boolean? value)
   {
-    if (openXmlElement != null)
+    if (value == false)
     {
-      var itemElement = openXmlElement.GetFirstChild<Appearance>();
+      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2013.Word.WebExtensionCreated>();
       if (itemElement != null)
         itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = EnumValueConverter.CreateOpenXmlElement<Appearance, DocumentFormat.OpenXml.Office2013.Word.SdtAppearance, SdtAppearance>(value);
-        if (itemElement != null)
-          openXmlElement.AddChild(itemElement);
-      }
     }
-  }
-
-  public static Boolean? GetWebExtensionLinked(SdtProperties? openXmlElement)
-  {
-    if (openXmlElement != null)
+    if (value == true)
     {
-      var itemElement = openXmlElement.GetFirstChild<WebExtensionLinked>();
-      return itemElement != null;
+      var itemElement = new DocumentFormat.OpenXml.Office2013.Word.WebExtensionCreated();
+      openXmlElement.AddChild(itemElement);
     }
-    return null;
   }
-
-  public static void SetWebExtensionLinked(SdtProperties? openXmlElement, Boolean? value)
+  
+  private static Boolean? GetSdtContentEquation(DocumentFormat.OpenXml.Wordprocessing.SdtProperties openXmlElement)
   {
-    if (openXmlElement != null)
-    {
-      if (value == false)
-      {
-        var itemElement = openXmlElement.GetFirstChild<WebExtensionLinked>();
-        if (itemElement != null)
-          itemElement.Remove();
-      }
-      if (value == true)
-      {
-        var itemElement = new WebExtensionLinked();
-        openXmlElement.AddChild(itemElement);
-      }
-    }
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.SdtContentEquation>();
+    return itemElement != null;
   }
-
-  public static Boolean? GetWebExtensionCreated(SdtProperties? openXmlElement)
+  
+  private static void SetSdtContentEquation(DocumentFormat.OpenXml.Wordprocessing.SdtProperties openXmlElement, Boolean? value)
   {
-    if (openXmlElement != null)
+    if (value == false)
     {
-      var itemElement = openXmlElement.GetFirstChild<WebExtensionCreated>();
-      return itemElement != null;
+      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.SdtContentEquation>();
+      if (itemElement != null)
+        itemElement.Remove();
     }
-    return null;
-  }
-
-  public static void SetWebExtensionCreated(SdtProperties? openXmlElement, Boolean? value)
-  {
-    if (openXmlElement != null)
+    if (value == true)
     {
-      if (value == false)
-      {
-        var itemElement = openXmlElement.GetFirstChild<WebExtensionCreated>();
-        if (itemElement != null)
-          itemElement.Remove();
-      }
-      if (value == true)
-      {
-        var itemElement = new WebExtensionCreated();
-        openXmlElement.AddChild(itemElement);
-      }
+      var itemElement = new DocumentFormat.OpenXml.Wordprocessing.SdtContentEquation();
+      openXmlElement.AddChild(itemElement);
     }
   }
-
-  public static Boolean? GetSdtContentEquation(SdtProperties? openXmlElement)
-  {
-    if (openXmlElement != null)
-    {
-      var itemElement = openXmlElement.GetFirstChild<SdtContentEquation>();
-      return itemElement != null;
-    }
-    return null;
-  }
-
-  public static void SetSdtContentEquation(SdtProperties? openXmlElement, Boolean? value)
-  {
-    if (openXmlElement != null)
-    {
-      if (value == false)
-      {
-        var itemElement = openXmlElement.GetFirstChild<SdtContentEquation>();
-        if (itemElement != null)
-          itemElement.Remove();
-      }
-      if (value == true)
-      {
-        var itemElement = new SdtContentEquation();
-        openXmlElement.AddChild(itemElement);
-      }
-    }
-  }
-
-  public static SdtContentComboBox? GetSdtContentComboBox(SdtProperties? openXmlElement)
+  
+  private static DocumentModel.Wordprocessing.SdtContentComboBox? GetSdtContentComboBox(DocumentFormat.OpenXml.Wordprocessing.SdtProperties openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.SdtContentComboBox>();
     if (itemElement != null)
-      return SdtContentComboBoxConverter.CreateModelElement(itemElement);
+      return DocumentModel.OpenXml.Wordprocessing.SdtContentComboBoxConverter.CreateModelElement(itemElement);
     return null;
   }
-
-  public static void SetSdtContentComboBox(SdtProperties? openXmlElement, SdtContentComboBox? value)
+  
+  private static void SetSdtContentComboBox(DocumentFormat.OpenXml.Wordprocessing.SdtProperties openXmlElement, DocumentModel.Wordprocessing.SdtContentComboBox? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.SdtContentComboBox>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.SdtContentComboBox>();
+      itemElement = DocumentModel.OpenXml.Wordprocessing.SdtContentComboBoxConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.SdtContentComboBox>(value);
       if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = SdtContentComboBoxConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.SdtContentComboBox>(value);
-        if (itemElement != null)
-          openXmlElement.AddChild(itemElement);
-      }
+        openXmlElement.AddChild(itemElement);
     }
   }
-
-  public static SdtContentDate? GetSdtContentDate(SdtProperties? openXmlElement)
+  
+  private static DocumentModel.Wordprocessing.SdtContentDate? GetSdtContentDate(DocumentFormat.OpenXml.Wordprocessing.SdtProperties openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.SdtContentDate>();
     if (itemElement != null)
-      return SdtContentDateConverter.CreateModelElement(itemElement);
+      return DocumentModel.OpenXml.Wordprocessing.SdtContentDateConverter.CreateModelElement(itemElement);
     return null;
   }
-
-  public static void SetSdtContentDate(SdtProperties? openXmlElement, SdtContentDate? value)
+  
+  private static void SetSdtContentDate(DocumentFormat.OpenXml.Wordprocessing.SdtProperties openXmlElement, DocumentModel.Wordprocessing.SdtContentDate? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.SdtContentDate>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.SdtContentDate>();
+      itemElement = DocumentModel.OpenXml.Wordprocessing.SdtContentDateConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.SdtContentDate>(value);
       if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = SdtContentDateConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.SdtContentDate>(value);
-        if (itemElement != null)
-          openXmlElement.AddChild(itemElement);
-      }
+        openXmlElement.AddChild(itemElement);
     }
   }
-
-  public static SdtContentDocPartObject? GetSdtContentDocPartObject(SdtProperties? openXmlElement)
+  
+  private static DocumentModel.Wordprocessing.SdtContentDocPartObject? GetSdtContentDocPartObject(DocumentFormat.OpenXml.Wordprocessing.SdtProperties openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.SdtContentDocPartObject>();
     if (itemElement != null)
-      return SdtContentDocPartObjectConverter.CreateModelElement(itemElement);
+      return DocumentModel.OpenXml.Wordprocessing.SdtContentDocPartObjectConverter.CreateModelElement(itemElement);
     return null;
   }
-
-  public static void SetSdtContentDocPartObject(SdtProperties? openXmlElement, SdtContentDocPartObject? value)
+  
+  private static void SetSdtContentDocPartObject(DocumentFormat.OpenXml.Wordprocessing.SdtProperties openXmlElement, DocumentModel.Wordprocessing.SdtContentDocPartObject? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.SdtContentDocPartObject>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.SdtContentDocPartObject>();
+      itemElement = DocumentModel.OpenXml.Wordprocessing.SdtContentDocPartObjectConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.SdtContentDocPartObject>(value);
       if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = SdtContentDocPartObjectConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.SdtContentDocPartObject>(value);
-        if (itemElement != null)
-          openXmlElement.AddChild(itemElement);
-      }
+        openXmlElement.AddChild(itemElement);
     }
   }
-
-  public static SdtContentDocPartList? GetSdtContentDocPartList(SdtProperties? openXmlElement)
+  
+  private static DocumentModel.Wordprocessing.SdtContentDocPartList? GetSdtContentDocPartList(DocumentFormat.OpenXml.Wordprocessing.SdtProperties openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.SdtContentDocPartList>();
     if (itemElement != null)
-      return SdtContentDocPartListConverter.CreateModelElement(itemElement);
+      return DocumentModel.OpenXml.Wordprocessing.SdtContentDocPartListConverter.CreateModelElement(itemElement);
     return null;
   }
-
-  public static void SetSdtContentDocPartList(SdtProperties? openXmlElement, SdtContentDocPartList? value)
+  
+  private static void SetSdtContentDocPartList(DocumentFormat.OpenXml.Wordprocessing.SdtProperties openXmlElement, DocumentModel.Wordprocessing.SdtContentDocPartList? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.SdtContentDocPartList>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.SdtContentDocPartList>();
+      itemElement = DocumentModel.OpenXml.Wordprocessing.SdtContentDocPartListConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.SdtContentDocPartList>(value);
       if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = SdtContentDocPartListConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.SdtContentDocPartList>(value);
-        if (itemElement != null)
-          openXmlElement.AddChild(itemElement);
-      }
+        openXmlElement.AddChild(itemElement);
     }
   }
-
-  public static SdtContentDropDownList? GetSdtContentDropDownList(SdtProperties? openXmlElement)
+  
+  private static DocumentModel.Wordprocessing.SdtContentDropDownList? GetSdtContentDropDownList(DocumentFormat.OpenXml.Wordprocessing.SdtProperties openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.SdtContentDropDownList>();
     if (itemElement != null)
-      return SdtContentDropDownListConverter.CreateModelElement(itemElement);
+      return DocumentModel.OpenXml.Wordprocessing.SdtContentDropDownListConverter.CreateModelElement(itemElement);
     return null;
   }
-
-  public static void SetSdtContentDropDownList(SdtProperties? openXmlElement, SdtContentDropDownList? value)
+  
+  private static void SetSdtContentDropDownList(DocumentFormat.OpenXml.Wordprocessing.SdtProperties openXmlElement, DocumentModel.Wordprocessing.SdtContentDropDownList? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.SdtContentDropDownList>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.SdtContentDropDownList>();
+      itemElement = DocumentModel.OpenXml.Wordprocessing.SdtContentDropDownListConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.SdtContentDropDownList>(value);
+      if (itemElement != null)
+        openXmlElement.AddChild(itemElement);
+    }
+  }
+  
+  private static Boolean? GetSdtContentPicture(DocumentFormat.OpenXml.Wordprocessing.SdtProperties openXmlElement)
+  {
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.SdtContentPicture>();
+    return itemElement != null;
+  }
+  
+  private static void SetSdtContentPicture(DocumentFormat.OpenXml.Wordprocessing.SdtProperties openXmlElement, Boolean? value)
+  {
+    if (value == false)
+    {
+      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.SdtContentPicture>();
       if (itemElement != null)
         itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = SdtContentDropDownListConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.SdtContentDropDownList>(value);
-        if (itemElement != null)
-          openXmlElement.AddChild(itemElement);
-      }
     }
-  }
-
-  public static Boolean? GetSdtContentPicture(SdtProperties? openXmlElement)
-  {
-    if (openXmlElement != null)
+    if (value == true)
     {
-      var itemElement = openXmlElement.GetFirstChild<SdtContentPicture>();
-      return itemElement != null;
+      var itemElement = new DocumentFormat.OpenXml.Wordprocessing.SdtContentPicture();
+      openXmlElement.AddChild(itemElement);
     }
-    return null;
   }
-
-  public static void SetSdtContentPicture(SdtProperties? openXmlElement, Boolean? value)
+  
+  private static Boolean? GetSdtContentRichText(DocumentFormat.OpenXml.Wordprocessing.SdtProperties openXmlElement)
   {
-    if (openXmlElement != null)
-    {
-      if (value == false)
-      {
-        var itemElement = openXmlElement.GetFirstChild<SdtContentPicture>();
-        if (itemElement != null)
-          itemElement.Remove();
-      }
-      if (value == true)
-      {
-        var itemElement = new SdtContentPicture();
-        openXmlElement.AddChild(itemElement);
-      }
-    }
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.SdtContentRichText>();
+    return itemElement != null;
   }
-
-  public static Boolean? GetSdtContentRichText(SdtProperties? openXmlElement)
+  
+  private static void SetSdtContentRichText(DocumentFormat.OpenXml.Wordprocessing.SdtProperties openXmlElement, Boolean? value)
   {
-    if (openXmlElement != null)
+    if (value == false)
     {
-      var itemElement = openXmlElement.GetFirstChild<SdtContentRichText>();
-      return itemElement != null;
+      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.SdtContentRichText>();
+      if (itemElement != null)
+        itemElement.Remove();
     }
-    return null;
-  }
-
-  public static void SetSdtContentRichText(SdtProperties? openXmlElement, Boolean? value)
-  {
-    if (openXmlElement != null)
+    if (value == true)
     {
-      if (value == false)
-      {
-        var itemElement = openXmlElement.GetFirstChild<SdtContentRichText>();
-        if (itemElement != null)
-          itemElement.Remove();
-      }
-      if (value == true)
-      {
-        var itemElement = new SdtContentRichText();
-        openXmlElement.AddChild(itemElement);
-      }
+      var itemElement = new DocumentFormat.OpenXml.Wordprocessing.SdtContentRichText();
+      openXmlElement.AddChild(itemElement);
     }
   }
-
-  public static SdtContentText? GetSdtContentText(SdtProperties? openXmlElement)
+  
+  private static DocumentModel.Wordprocessing.SdtContentText? GetSdtContentText(DocumentFormat.OpenXml.Wordprocessing.SdtProperties openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.SdtContentText>();
     if (itemElement != null)
-      return SdtContentTextConverter.CreateModelElement(itemElement);
+      return DocumentModel.OpenXml.Wordprocessing.SdtContentTextConverter.CreateModelElement(itemElement);
     return null;
   }
-
-  public static void SetSdtContentText(SdtProperties? openXmlElement, SdtContentText? value)
+  
+  private static void SetSdtContentText(DocumentFormat.OpenXml.Wordprocessing.SdtProperties openXmlElement, DocumentModel.Wordprocessing.SdtContentText? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.SdtContentText>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.SdtContentText>();
+      itemElement = DocumentModel.OpenXml.Wordprocessing.SdtContentTextConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.SdtContentText>(value);
+      if (itemElement != null)
+        openXmlElement.AddChild(itemElement);
+    }
+  }
+  
+  private static Boolean? GetSdtContentCitation(DocumentFormat.OpenXml.Wordprocessing.SdtProperties openXmlElement)
+  {
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.SdtContentCitation>();
+    return itemElement != null;
+  }
+  
+  private static void SetSdtContentCitation(DocumentFormat.OpenXml.Wordprocessing.SdtProperties openXmlElement, Boolean? value)
+  {
+    if (value == false)
+    {
+      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.SdtContentCitation>();
       if (itemElement != null)
         itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = SdtContentTextConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.SdtContentText>(value);
-        if (itemElement != null)
-          openXmlElement.AddChild(itemElement);
-      }
     }
-  }
-
-  public static Boolean? GetSdtContentCitation(SdtProperties? openXmlElement)
-  {
-    if (openXmlElement != null)
+    if (value == true)
     {
-      var itemElement = openXmlElement.GetFirstChild<SdtContentCitation>();
-      return itemElement != null;
+      var itemElement = new DocumentFormat.OpenXml.Wordprocessing.SdtContentCitation();
+      openXmlElement.AddChild(itemElement);
     }
-    return null;
   }
-
-  public static void SetSdtContentCitation(SdtProperties? openXmlElement, Boolean? value)
+  
+  private static Boolean? GetSdtContentGroup(DocumentFormat.OpenXml.Wordprocessing.SdtProperties openXmlElement)
   {
-    if (openXmlElement != null)
-    {
-      if (value == false)
-      {
-        var itemElement = openXmlElement.GetFirstChild<SdtContentCitation>();
-        if (itemElement != null)
-          itemElement.Remove();
-      }
-      if (value == true)
-      {
-        var itemElement = new SdtContentCitation();
-        openXmlElement.AddChild(itemElement);
-      }
-    }
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.SdtContentGroup>();
+    return itemElement != null;
   }
-
-  public static Boolean? GetSdtContentGroup(SdtProperties? openXmlElement)
+  
+  private static void SetSdtContentGroup(DocumentFormat.OpenXml.Wordprocessing.SdtProperties openXmlElement, Boolean? value)
   {
-    if (openXmlElement != null)
+    if (value == false)
     {
-      var itemElement = openXmlElement.GetFirstChild<SdtContentGroup>();
-      return itemElement != null;
+      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.SdtContentGroup>();
+      if (itemElement != null)
+        itemElement.Remove();
     }
-    return null;
+    if (value == true)
+    {
+      var itemElement = new DocumentFormat.OpenXml.Wordprocessing.SdtContentGroup();
+      openXmlElement.AddChild(itemElement);
+    }
   }
-
-  public static void SetSdtContentGroup(SdtProperties? openXmlElement, Boolean? value)
+  
+  private static Boolean? GetSdtContentBibliography(DocumentFormat.OpenXml.Wordprocessing.SdtProperties openXmlElement)
   {
-    if (openXmlElement != null)
-    {
-      if (value == false)
-      {
-        var itemElement = openXmlElement.GetFirstChild<SdtContentGroup>();
-        if (itemElement != null)
-          itemElement.Remove();
-      }
-      if (value == true)
-      {
-        var itemElement = new SdtContentGroup();
-        openXmlElement.AddChild(itemElement);
-      }
-    }
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.SdtContentBibliography>();
+    return itemElement != null;
   }
-
-  public static Boolean? GetSdtContentBibliography(SdtProperties? openXmlElement)
+  
+  private static void SetSdtContentBibliography(DocumentFormat.OpenXml.Wordprocessing.SdtProperties openXmlElement, Boolean? value)
   {
-    if (openXmlElement != null)
+    if (value == false)
     {
-      var itemElement = openXmlElement.GetFirstChild<SdtContentBibliography>();
-      return itemElement != null;
+      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.SdtContentBibliography>();
+      if (itemElement != null)
+        itemElement.Remove();
     }
-    return null;
+    if (value == true)
+    {
+      var itemElement = new DocumentFormat.OpenXml.Wordprocessing.SdtContentBibliography();
+      openXmlElement.AddChild(itemElement);
+    }
   }
-
-  public static void SetSdtContentBibliography(SdtProperties? openXmlElement, Boolean? value)
+  
+  private static Boolean? GetEntityPickerEmpty(DocumentFormat.OpenXml.Wordprocessing.SdtProperties openXmlElement)
   {
-    if (openXmlElement != null)
-    {
-      if (value == false)
-      {
-        var itemElement = openXmlElement.GetFirstChild<SdtContentBibliography>();
-        if (itemElement != null)
-          itemElement.Remove();
-      }
-      if (value == true)
-      {
-        var itemElement = new SdtContentBibliography();
-        openXmlElement.AddChild(itemElement);
-      }
-    }
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2010.Word.EntityPickerEmpty>();
+    return itemElement != null;
   }
-
-  public static Boolean? GetEntityPickerEmpty(SdtProperties? openXmlElement)
+  
+  private static void SetEntityPickerEmpty(DocumentFormat.OpenXml.Wordprocessing.SdtProperties openXmlElement, Boolean? value)
   {
-    if (openXmlElement != null)
+    if (value == false)
     {
-      var itemElement = openXmlElement.GetFirstChild<EntityPickerEmpty>();
-      return itemElement != null;
+      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2010.Word.EntityPickerEmpty>();
+      if (itemElement != null)
+        itemElement.Remove();
     }
-    return null;
-  }
-
-  public static void SetEntityPickerEmpty(SdtProperties? openXmlElement, Boolean? value)
-  {
-    if (openXmlElement != null)
+    if (value == true)
     {
-      if (value == false)
-      {
-        var itemElement = openXmlElement.GetFirstChild<EntityPickerEmpty>();
-        if (itemElement != null)
-          itemElement.Remove();
-      }
-      if (value == true)
-      {
-        var itemElement = new EntityPickerEmpty();
-        openXmlElement.AddChild(itemElement);
-      }
+      var itemElement = new DocumentFormat.OpenXml.Office2010.Word.EntityPickerEmpty();
+      openXmlElement.AddChild(itemElement);
     }
   }
-
-  public static SdtContentCheckBox? GetSdtContentCheckBox(SdtProperties? openXmlElement)
+  
+  private static DocumentModel.Wordprocessing.SdtContentCheckBox? GetSdtContentCheckBox(DocumentFormat.OpenXml.Wordprocessing.SdtProperties openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office2010.Word.SdtContentCheckBox>();
     if (itemElement != null)
-      return SdtContentCheckBoxConverter.CreateModelElement(itemElement);
+      return DocumentModel.OpenXml.Wordprocessing.SdtContentCheckBoxConverter.CreateModelElement(itemElement);
     return null;
   }
-
-  public static void SetSdtContentCheckBox(SdtProperties? openXmlElement, SdtContentCheckBox? value)
+  
+  private static void SetSdtContentCheckBox(DocumentFormat.OpenXml.Wordprocessing.SdtProperties openXmlElement, DocumentModel.Wordprocessing.SdtContentCheckBox? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2010.Word.SdtContentCheckBox>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2010.Word.SdtContentCheckBox>();
+      itemElement = DocumentModel.OpenXml.Wordprocessing.SdtContentCheckBoxConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2010.Word.SdtContentCheckBox>(value);
       if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = SdtContentCheckBoxConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2010.Word.SdtContentCheckBox>(value);
-        if (itemElement != null)
-          openXmlElement.AddChild(itemElement);
-      }
+        openXmlElement.AddChild(itemElement);
     }
   }
-
-  public static SdtRepeatedSection? GetSdtRepeatedSection(SdtProperties? openXmlElement)
+  
+  private static DocumentModel.Wordprocessing.SdtRepeatedSection? GetSdtRepeatedSection(DocumentFormat.OpenXml.Wordprocessing.SdtProperties openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office2013.Word.SdtRepeatedSection>();
     if (itemElement != null)
-      return SdtRepeatedSectionConverter.CreateModelElement(itemElement);
+      return DocumentModel.OpenXml.Wordprocessing.SdtRepeatedSectionConverter.CreateModelElement(itemElement);
     return null;
   }
-
-  public static void SetSdtRepeatedSection(SdtProperties? openXmlElement, SdtRepeatedSection? value)
+  
+  private static void SetSdtRepeatedSection(DocumentFormat.OpenXml.Wordprocessing.SdtProperties openXmlElement, DocumentModel.Wordprocessing.SdtRepeatedSection? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2013.Word.SdtRepeatedSection>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2013.Word.SdtRepeatedSection>();
+      itemElement = DocumentModel.OpenXml.Wordprocessing.SdtRepeatedSectionConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2013.Word.SdtRepeatedSection>(value);
+      if (itemElement != null)
+        openXmlElement.AddChild(itemElement);
+    }
+  }
+  
+  private static Boolean? GetSdtRepeatedSectionItem(DocumentFormat.OpenXml.Wordprocessing.SdtProperties openXmlElement)
+  {
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2013.Word.SdtRepeatedSectionItem>();
+    return itemElement != null;
+  }
+  
+  private static void SetSdtRepeatedSectionItem(DocumentFormat.OpenXml.Wordprocessing.SdtProperties openXmlElement, Boolean? value)
+  {
+    if (value == false)
+    {
+      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2013.Word.SdtRepeatedSectionItem>();
       if (itemElement != null)
         itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = SdtRepeatedSectionConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2013.Word.SdtRepeatedSection>(value);
-        if (itemElement != null)
-          openXmlElement.AddChild(itemElement);
-      }
     }
-  }
-
-  public static Boolean? GetSdtRepeatedSectionItem(SdtProperties? openXmlElement)
-  {
-    if (openXmlElement != null)
+    if (value == true)
     {
-      var itemElement = openXmlElement.GetFirstChild<SdtRepeatedSectionItem>();
-      return itemElement != null;
-    }
-    return null;
-  }
-
-  public static void SetSdtRepeatedSectionItem(SdtProperties? openXmlElement, Boolean? value)
-  {
-    if (openXmlElement != null)
-    {
-      if (value == false)
-      {
-        var itemElement = openXmlElement.GetFirstChild<SdtRepeatedSectionItem>();
-        if (itemElement != null)
-          itemElement.Remove();
-      }
-      if (value == true)
-      {
-        var itemElement = new SdtRepeatedSectionItem();
-        openXmlElement.AddChild(itemElement);
-      }
+      var itemElement = new DocumentFormat.OpenXml.Office2013.Word.SdtRepeatedSectionItem();
+      openXmlElement.AddChild(itemElement);
     }
   }
-
-  public static DocumentModel.Wordprocessing.SdtProperties? CreateModelElement(SdtProperties? openXmlElement)
+  
+  public static DocumentModel.Wordprocessing.SdtProperties? CreateModelElement(DocumentFormat.OpenXml.Wordprocessing.SdtProperties? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -807,9 +649,9 @@ public static class SdtPropertiesConverter
     }
     return null;
   }
-
+  
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.SdtProperties? value)
-    where OpenXmlElementType : SdtProperties, new()
+    where OpenXmlElementType: DocumentFormat.OpenXml.Wordprocessing.SdtProperties, new()
   {
     if (value != null)
     {

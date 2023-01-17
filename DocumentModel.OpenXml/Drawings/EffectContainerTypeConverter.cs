@@ -1,46 +1,40 @@
-using DocumentFormat.OpenXml.Drawing;
-using DocumentModel.Drawings;
-using EffectContainerType = DocumentFormat.OpenXml.Drawing.EffectContainerType;
-
 namespace DocumentModel.OpenXml.Drawings;
 
 /// <summary>
-///   Defines the EffectContainerType Class.
+/// Defines the EffectContainerType Class.
 /// </summary>
 public static class EffectContainerTypeConverter
 {
   /// <summary>
-  ///   Effect Container Type
+  /// Effect Container Type
   /// </summary>
-  public static EffectContainerKind? GetType(EffectContainerType? openXmlElement)
+  private static DocumentModel.Drawings.EffectContainerKind? GetType(DocumentFormat.OpenXml.Drawing.EffectContainerType openXmlElement)
   {
-    return EnumValueConverter.GetValue<EffectContainerValues, EffectContainerKind>(openXmlElement?.Type?.Value);
+    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Drawing.EffectContainerValues, DocumentModel.Drawings.EffectContainerKind>(openXmlElement?.Type?.Value);
   }
-
-  public static void SetType(EffectContainerType? openXmlElement, EffectContainerKind? value)
+  
+  private static void SetType(DocumentFormat.OpenXml.Drawing.EffectContainerType openXmlElement, DocumentModel.Drawings.EffectContainerKind? value)
   {
-    if (openXmlElement != null)
-      openXmlElement.Type = EnumValueConverter.CreateEnumValue<EffectContainerValues, EffectContainerKind>(value);
+    openXmlElement.Type = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Drawing.EffectContainerValues, DocumentModel.Drawings.EffectContainerKind>(value);
   }
-
+  
   /// <summary>
-  ///   Name
+  /// Name
   /// </summary>
-  public static String? GetName(EffectContainerType? openXmlElement)
+  private static String? GetName(DocumentFormat.OpenXml.Drawing.EffectContainerType openXmlElement)
   {
     return openXmlElement?.Name?.Value;
   }
-
-  public static void SetName(EffectContainerType? openXmlElement, String? value)
+  
+  private static void SetName(DocumentFormat.OpenXml.Drawing.EffectContainerType openXmlElement, String? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.Name = new StringValue { Value = value };
-      else
-        openXmlElement.Name = null;
+    if (value != null)
+      openXmlElement.Name = new StringValue { Value = value };
+    else
+      openXmlElement.Name = null;
   }
-
-  public static DocumentModel.Drawings.EffectContainerType? CreateModelElement(EffectContainerType? openXmlElement)
+  
+  public static DocumentModel.Drawings.EffectContainerType? CreateModelElement(DocumentFormat.OpenXml.Drawing.EffectContainerType? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -51,9 +45,9 @@ public static class EffectContainerTypeConverter
     }
     return null;
   }
-
+  
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.EffectContainerType? value)
-    where OpenXmlElementType : EffectContainerType, new()
+    where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.EffectContainerType, new()
   {
     if (value != null)
     {

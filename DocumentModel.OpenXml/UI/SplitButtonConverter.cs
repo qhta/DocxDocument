@@ -1,388 +1,358 @@
-using DocumentFormat.OpenXml.Office.CustomUI;
-using UnsizedMenu = DocumentModel.UI.UnsizedMenu;
-
 namespace DocumentModel.OpenXml.UI;
 
 /// <summary>
-///   Defines the SplitButton Class.
+/// Defines the SplitButton Class.
 /// </summary>
 public static class SplitButtonConverter
 {
   /// <summary>
-  ///   size
+  /// size
   /// </summary>
-  public static DocumentModel.UI.SizeKind? GetSize(DocumentFormat.OpenXml.Office.CustomUI.SplitButton? openXmlElement)
+  private static DocumentModel.UI.SizeKind? GetSize(DocumentFormat.OpenXml.Office.CustomUI.SplitButton openXmlElement)
   {
-    return EnumValueConverter.GetValue<SizeValues, DocumentModel.UI.SizeKind>(openXmlElement?.Size?.Value);
+    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Office.CustomUI.SizeValues, DocumentModel.UI.SizeKind>(openXmlElement?.Size?.Value);
   }
-
-  public static void SetSize(DocumentFormat.OpenXml.Office.CustomUI.SplitButton? openXmlElement, DocumentModel.UI.SizeKind? value)
+  
+  private static void SetSize(DocumentFormat.OpenXml.Office.CustomUI.SplitButton openXmlElement, DocumentModel.UI.SizeKind? value)
   {
-    if (openXmlElement != null)
-      openXmlElement.Size = EnumValueConverter.CreateEnumValue<SizeValues, DocumentModel.UI.SizeKind>(value);
+    openXmlElement.Size = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Office.CustomUI.SizeValues, DocumentModel.UI.SizeKind>(value);
   }
-
+  
   /// <summary>
-  ///   getSize
+  /// getSize
   /// </summary>
-  public static String? GetGetSize(DocumentFormat.OpenXml.Office.CustomUI.SplitButton? openXmlElement)
+  private static String? GetGetSize(DocumentFormat.OpenXml.Office.CustomUI.SplitButton openXmlElement)
   {
     return openXmlElement?.GetSize?.Value;
   }
-
-  public static void SetGetSize(DocumentFormat.OpenXml.Office.CustomUI.SplitButton? openXmlElement, String? value)
+  
+  private static void SetGetSize(DocumentFormat.OpenXml.Office.CustomUI.SplitButton openXmlElement, String? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.GetSize = new StringValue { Value = value };
-      else
-        openXmlElement.GetSize = null;
+    if (value != null)
+      openXmlElement.GetSize = new StringValue { Value = value };
+    else
+      openXmlElement.GetSize = null;
   }
-
+  
   /// <summary>
-  ///   enabled
+  /// enabled
   /// </summary>
-  public static Boolean? GetEnabled(DocumentFormat.OpenXml.Office.CustomUI.SplitButton? openXmlElement)
+  private static Boolean? GetEnabled(DocumentFormat.OpenXml.Office.CustomUI.SplitButton openXmlElement)
   {
     return openXmlElement?.Enabled?.Value;
   }
-
-  public static void SetEnabled(DocumentFormat.OpenXml.Office.CustomUI.SplitButton? openXmlElement, Boolean? value)
+  
+  private static void SetEnabled(DocumentFormat.OpenXml.Office.CustomUI.SplitButton openXmlElement, Boolean? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.Enabled = new BooleanValue { Value = (Boolean)value };
-      else
-        openXmlElement.Enabled = null;
+    if (value != null)
+      openXmlElement.Enabled = new BooleanValue { Value = (Boolean)value };
+    else
+      openXmlElement.Enabled = null;
   }
-
+  
   /// <summary>
-  ///   getEnabled
+  /// getEnabled
   /// </summary>
-  public static String? GetGetEnabled(DocumentFormat.OpenXml.Office.CustomUI.SplitButton? openXmlElement)
+  private static String? GetGetEnabled(DocumentFormat.OpenXml.Office.CustomUI.SplitButton openXmlElement)
   {
     return openXmlElement?.GetEnabled?.Value;
   }
-
-  public static void SetGetEnabled(DocumentFormat.OpenXml.Office.CustomUI.SplitButton? openXmlElement, String? value)
+  
+  private static void SetGetEnabled(DocumentFormat.OpenXml.Office.CustomUI.SplitButton openXmlElement, String? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.GetEnabled = new StringValue { Value = value };
-      else
-        openXmlElement.GetEnabled = null;
+    if (value != null)
+      openXmlElement.GetEnabled = new StringValue { Value = value };
+    else
+      openXmlElement.GetEnabled = null;
   }
-
+  
   /// <summary>
-  ///   id
+  /// id
   /// </summary>
-  public static String? GetId(DocumentFormat.OpenXml.Office.CustomUI.SplitButton? openXmlElement)
+  private static String? GetId(DocumentFormat.OpenXml.Office.CustomUI.SplitButton openXmlElement)
   {
     return openXmlElement?.Id?.Value;
   }
-
-  public static void SetId(DocumentFormat.OpenXml.Office.CustomUI.SplitButton? openXmlElement, String? value)
+  
+  private static void SetId(DocumentFormat.OpenXml.Office.CustomUI.SplitButton openXmlElement, String? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.Id = new StringValue { Value = value };
-      else
-        openXmlElement.Id = null;
+    if (value != null)
+      openXmlElement.Id = new StringValue { Value = value };
+    else
+      openXmlElement.Id = null;
   }
-
+  
   /// <summary>
-  ///   idQ
+  /// idQ
   /// </summary>
-  public static String? GetIdQ(DocumentFormat.OpenXml.Office.CustomUI.SplitButton? openXmlElement)
+  private static String? GetIdQ(DocumentFormat.OpenXml.Office.CustomUI.SplitButton openXmlElement)
   {
     return openXmlElement?.IdQ?.Value;
   }
-
-  public static void SetIdQ(DocumentFormat.OpenXml.Office.CustomUI.SplitButton? openXmlElement, String? value)
+  
+  private static void SetIdQ(DocumentFormat.OpenXml.Office.CustomUI.SplitButton openXmlElement, String? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.IdQ = new StringValue { Value = value };
-      else
-        openXmlElement.IdQ = null;
+    if (value != null)
+      openXmlElement.IdQ = new StringValue { Value = value };
+    else
+      openXmlElement.IdQ = null;
   }
-
+  
   /// <summary>
-  ///   idMso
+  /// idMso
   /// </summary>
-  public static String? GetIdMso(DocumentFormat.OpenXml.Office.CustomUI.SplitButton? openXmlElement)
+  private static String? GetIdMso(DocumentFormat.OpenXml.Office.CustomUI.SplitButton openXmlElement)
   {
     return openXmlElement?.IdMso?.Value;
   }
-
-  public static void SetIdMso(DocumentFormat.OpenXml.Office.CustomUI.SplitButton? openXmlElement, String? value)
+  
+  private static void SetIdMso(DocumentFormat.OpenXml.Office.CustomUI.SplitButton openXmlElement, String? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.IdMso = new StringValue { Value = value };
-      else
-        openXmlElement.IdMso = null;
+    if (value != null)
+      openXmlElement.IdMso = new StringValue { Value = value };
+    else
+      openXmlElement.IdMso = null;
   }
-
+  
   /// <summary>
-  ///   tag
+  /// tag
   /// </summary>
-  public static String? GetTag(DocumentFormat.OpenXml.Office.CustomUI.SplitButton? openXmlElement)
+  private static String? GetTag(DocumentFormat.OpenXml.Office.CustomUI.SplitButton openXmlElement)
   {
     return openXmlElement?.Tag?.Value;
   }
-
-  public static void SetTag(DocumentFormat.OpenXml.Office.CustomUI.SplitButton? openXmlElement, String? value)
+  
+  private static void SetTag(DocumentFormat.OpenXml.Office.CustomUI.SplitButton openXmlElement, String? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.Tag = new StringValue { Value = value };
-      else
-        openXmlElement.Tag = null;
+    if (value != null)
+      openXmlElement.Tag = new StringValue { Value = value };
+    else
+      openXmlElement.Tag = null;
   }
-
+  
   /// <summary>
-  ///   insertAfterMso
+  /// insertAfterMso
   /// </summary>
-  public static String? GetInsertAfterMso(DocumentFormat.OpenXml.Office.CustomUI.SplitButton? openXmlElement)
+  private static String? GetInsertAfterMso(DocumentFormat.OpenXml.Office.CustomUI.SplitButton openXmlElement)
   {
     return openXmlElement?.InsertAfterMso?.Value;
   }
-
-  public static void SetInsertAfterMso(DocumentFormat.OpenXml.Office.CustomUI.SplitButton? openXmlElement, String? value)
+  
+  private static void SetInsertAfterMso(DocumentFormat.OpenXml.Office.CustomUI.SplitButton openXmlElement, String? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.InsertAfterMso = new StringValue { Value = value };
-      else
-        openXmlElement.InsertAfterMso = null;
+    if (value != null)
+      openXmlElement.InsertAfterMso = new StringValue { Value = value };
+    else
+      openXmlElement.InsertAfterMso = null;
   }
-
+  
   /// <summary>
-  ///   insertBeforeMso
+  /// insertBeforeMso
   /// </summary>
-  public static String? GetInsertBeforeMso(DocumentFormat.OpenXml.Office.CustomUI.SplitButton? openXmlElement)
+  private static String? GetInsertBeforeMso(DocumentFormat.OpenXml.Office.CustomUI.SplitButton openXmlElement)
   {
     return openXmlElement?.InsertBeforeMso?.Value;
   }
-
-  public static void SetInsertBeforeMso(DocumentFormat.OpenXml.Office.CustomUI.SplitButton? openXmlElement, String? value)
+  
+  private static void SetInsertBeforeMso(DocumentFormat.OpenXml.Office.CustomUI.SplitButton openXmlElement, String? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.InsertBeforeMso = new StringValue { Value = value };
-      else
-        openXmlElement.InsertBeforeMso = null;
+    if (value != null)
+      openXmlElement.InsertBeforeMso = new StringValue { Value = value };
+    else
+      openXmlElement.InsertBeforeMso = null;
   }
-
+  
   /// <summary>
-  ///   insertAfterQ
+  /// insertAfterQ
   /// </summary>
-  public static String? GetInsertAfterQ(DocumentFormat.OpenXml.Office.CustomUI.SplitButton? openXmlElement)
+  private static String? GetInsertAfterQ(DocumentFormat.OpenXml.Office.CustomUI.SplitButton openXmlElement)
   {
     return openXmlElement?.InsertAfterQ?.Value;
   }
-
-  public static void SetInsertAfterQ(DocumentFormat.OpenXml.Office.CustomUI.SplitButton? openXmlElement, String? value)
+  
+  private static void SetInsertAfterQ(DocumentFormat.OpenXml.Office.CustomUI.SplitButton openXmlElement, String? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.InsertAfterQ = new StringValue { Value = value };
-      else
-        openXmlElement.InsertAfterQ = null;
+    if (value != null)
+      openXmlElement.InsertAfterQ = new StringValue { Value = value };
+    else
+      openXmlElement.InsertAfterQ = null;
   }
-
+  
   /// <summary>
-  ///   insertBeforeQ
+  /// insertBeforeQ
   /// </summary>
-  public static String? GetInsertBeforeQ(DocumentFormat.OpenXml.Office.CustomUI.SplitButton? openXmlElement)
+  private static String? GetInsertBeforeQ(DocumentFormat.OpenXml.Office.CustomUI.SplitButton openXmlElement)
   {
     return openXmlElement?.InsertBeforeQ?.Value;
   }
-
-  public static void SetInsertBeforeQ(DocumentFormat.OpenXml.Office.CustomUI.SplitButton? openXmlElement, String? value)
+  
+  private static void SetInsertBeforeQ(DocumentFormat.OpenXml.Office.CustomUI.SplitButton openXmlElement, String? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.InsertBeforeQ = new StringValue { Value = value };
-      else
-        openXmlElement.InsertBeforeQ = null;
+    if (value != null)
+      openXmlElement.InsertBeforeQ = new StringValue { Value = value };
+    else
+      openXmlElement.InsertBeforeQ = null;
   }
-
+  
   /// <summary>
-  ///   visible
+  /// visible
   /// </summary>
-  public static Boolean? GetVisible(DocumentFormat.OpenXml.Office.CustomUI.SplitButton? openXmlElement)
+  private static Boolean? GetVisible(DocumentFormat.OpenXml.Office.CustomUI.SplitButton openXmlElement)
   {
     return openXmlElement?.Visible?.Value;
   }
-
-  public static void SetVisible(DocumentFormat.OpenXml.Office.CustomUI.SplitButton? openXmlElement, Boolean? value)
+  
+  private static void SetVisible(DocumentFormat.OpenXml.Office.CustomUI.SplitButton openXmlElement, Boolean? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.Visible = new BooleanValue { Value = (Boolean)value };
-      else
-        openXmlElement.Visible = null;
+    if (value != null)
+      openXmlElement.Visible = new BooleanValue { Value = (Boolean)value };
+    else
+      openXmlElement.Visible = null;
   }
-
+  
   /// <summary>
-  ///   getVisible
+  /// getVisible
   /// </summary>
-  public static String? GetGetVisible(DocumentFormat.OpenXml.Office.CustomUI.SplitButton? openXmlElement)
+  private static String? GetGetVisible(DocumentFormat.OpenXml.Office.CustomUI.SplitButton openXmlElement)
   {
     return openXmlElement?.GetVisible?.Value;
   }
-
-  public static void SetGetVisible(DocumentFormat.OpenXml.Office.CustomUI.SplitButton? openXmlElement, String? value)
+  
+  private static void SetGetVisible(DocumentFormat.OpenXml.Office.CustomUI.SplitButton openXmlElement, String? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.GetVisible = new StringValue { Value = value };
-      else
-        openXmlElement.GetVisible = null;
+    if (value != null)
+      openXmlElement.GetVisible = new StringValue { Value = value };
+    else
+      openXmlElement.GetVisible = null;
   }
-
+  
   /// <summary>
-  ///   keytip
+  /// keytip
   /// </summary>
-  public static String? GetKeytip(DocumentFormat.OpenXml.Office.CustomUI.SplitButton? openXmlElement)
+  private static String? GetKeytip(DocumentFormat.OpenXml.Office.CustomUI.SplitButton openXmlElement)
   {
     return openXmlElement?.Keytip?.Value;
   }
-
-  public static void SetKeytip(DocumentFormat.OpenXml.Office.CustomUI.SplitButton? openXmlElement, String? value)
+  
+  private static void SetKeytip(DocumentFormat.OpenXml.Office.CustomUI.SplitButton openXmlElement, String? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.Keytip = new StringValue { Value = value };
-      else
-        openXmlElement.Keytip = null;
+    if (value != null)
+      openXmlElement.Keytip = new StringValue { Value = value };
+    else
+      openXmlElement.Keytip = null;
   }
-
+  
   /// <summary>
-  ///   getKeytip
+  /// getKeytip
   /// </summary>
-  public static String? GetGetKeytip(DocumentFormat.OpenXml.Office.CustomUI.SplitButton? openXmlElement)
+  private static String? GetGetKeytip(DocumentFormat.OpenXml.Office.CustomUI.SplitButton openXmlElement)
   {
     return openXmlElement?.GetKeytip?.Value;
   }
-
-  public static void SetGetKeytip(DocumentFormat.OpenXml.Office.CustomUI.SplitButton? openXmlElement, String? value)
+  
+  private static void SetGetKeytip(DocumentFormat.OpenXml.Office.CustomUI.SplitButton openXmlElement, String? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.GetKeytip = new StringValue { Value = value };
-      else
-        openXmlElement.GetKeytip = null;
+    if (value != null)
+      openXmlElement.GetKeytip = new StringValue { Value = value };
+    else
+      openXmlElement.GetKeytip = null;
   }
-
+  
   /// <summary>
-  ///   showLabel
+  /// showLabel
   /// </summary>
-  public static Boolean? GetShowLabel(DocumentFormat.OpenXml.Office.CustomUI.SplitButton? openXmlElement)
+  private static Boolean? GetShowLabel(DocumentFormat.OpenXml.Office.CustomUI.SplitButton openXmlElement)
   {
     return openXmlElement?.ShowLabel?.Value;
   }
-
-  public static void SetShowLabel(DocumentFormat.OpenXml.Office.CustomUI.SplitButton? openXmlElement, Boolean? value)
+  
+  private static void SetShowLabel(DocumentFormat.OpenXml.Office.CustomUI.SplitButton openXmlElement, Boolean? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.ShowLabel = new BooleanValue { Value = (Boolean)value };
-      else
-        openXmlElement.ShowLabel = null;
+    if (value != null)
+      openXmlElement.ShowLabel = new BooleanValue { Value = (Boolean)value };
+    else
+      openXmlElement.ShowLabel = null;
   }
-
+  
   /// <summary>
-  ///   getShowLabel
+  /// getShowLabel
   /// </summary>
-  public static String? GetGetShowLabel(DocumentFormat.OpenXml.Office.CustomUI.SplitButton? openXmlElement)
+  private static String? GetGetShowLabel(DocumentFormat.OpenXml.Office.CustomUI.SplitButton openXmlElement)
   {
     return openXmlElement?.GetShowLabel?.Value;
   }
-
-  public static void SetGetShowLabel(DocumentFormat.OpenXml.Office.CustomUI.SplitButton? openXmlElement, String? value)
+  
+  private static void SetGetShowLabel(DocumentFormat.OpenXml.Office.CustomUI.SplitButton openXmlElement, String? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.GetShowLabel = new StringValue { Value = value };
-      else
-        openXmlElement.GetShowLabel = null;
+    if (value != null)
+      openXmlElement.GetShowLabel = new StringValue { Value = value };
+    else
+      openXmlElement.GetShowLabel = null;
   }
-
-  public static DocumentModel.UI.VisibleButton? GetVisibleButton(DocumentFormat.OpenXml.Office.CustomUI.SplitButton? openXmlElement)
+  
+  private static DocumentModel.UI.VisibleButton? GetVisibleButton(DocumentFormat.OpenXml.Office.CustomUI.SplitButton openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office.CustomUI.VisibleButton>();
     if (itemElement != null)
-      return VisibleButtonConverter.CreateModelElement(itemElement);
+      return DocumentModel.OpenXml.UI.VisibleButtonConverter.CreateModelElement(itemElement);
     return null;
   }
-
-  public static void SetVisibleButton(DocumentFormat.OpenXml.Office.CustomUI.SplitButton? openXmlElement, DocumentModel.UI.VisibleButton? value)
+  
+  private static void SetVisibleButton(DocumentFormat.OpenXml.Office.CustomUI.SplitButton openXmlElement, DocumentModel.UI.VisibleButton? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office.CustomUI.VisibleButton>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office.CustomUI.VisibleButton>();
+      itemElement = DocumentModel.OpenXml.UI.VisibleButtonConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office.CustomUI.VisibleButton>(value);
       if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = VisibleButtonConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office.CustomUI.VisibleButton>(value);
-        if (itemElement != null)
-          openXmlElement.AddChild(itemElement);
-      }
+        openXmlElement.AddChild(itemElement);
     }
   }
-
-  public static DocumentModel.UI.VisibleToggleButton? GetVisibleToggleButton(DocumentFormat.OpenXml.Office.CustomUI.SplitButton? openXmlElement)
+  
+  private static DocumentModel.UI.VisibleToggleButton? GetVisibleToggleButton(DocumentFormat.OpenXml.Office.CustomUI.SplitButton openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office.CustomUI.VisibleToggleButton>();
     if (itemElement != null)
-      return VisibleToggleButtonConverter.CreateModelElement(itemElement);
+      return DocumentModel.OpenXml.UI.VisibleToggleButtonConverter.CreateModelElement(itemElement);
     return null;
   }
-
-  public static void SetVisibleToggleButton(DocumentFormat.OpenXml.Office.CustomUI.SplitButton? openXmlElement, DocumentModel.UI.VisibleToggleButton? value)
+  
+  private static void SetVisibleToggleButton(DocumentFormat.OpenXml.Office.CustomUI.SplitButton openXmlElement, DocumentModel.UI.VisibleToggleButton? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office.CustomUI.VisibleToggleButton>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office.CustomUI.VisibleToggleButton>();
+      itemElement = DocumentModel.OpenXml.UI.VisibleToggleButtonConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office.CustomUI.VisibleToggleButton>(value);
       if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = VisibleToggleButtonConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office.CustomUI.VisibleToggleButton>(value);
-        if (itemElement != null)
-          openXmlElement.AddChild(itemElement);
-      }
+        openXmlElement.AddChild(itemElement);
     }
   }
-
-  public static UnsizedMenu? GetUnsizedMenu(DocumentFormat.OpenXml.Office.CustomUI.SplitButton? openXmlElement)
+  
+  private static DocumentModel.UI.UnsizedMenu? GetUnsizedMenu(DocumentFormat.OpenXml.Office.CustomUI.SplitButton openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office.CustomUI.UnsizedMenu>();
     if (itemElement != null)
-      return UnsizedMenuConverter.CreateModelElement(itemElement);
+      return DocumentModel.OpenXml.UI.UnsizedMenuConverter.CreateModelElement(itemElement);
     return null;
   }
-
-  public static void SetUnsizedMenu(DocumentFormat.OpenXml.Office.CustomUI.SplitButton? openXmlElement, UnsizedMenu? value)
+  
+  private static void SetUnsizedMenu(DocumentFormat.OpenXml.Office.CustomUI.SplitButton openXmlElement, DocumentModel.UI.UnsizedMenu? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office.CustomUI.UnsizedMenu>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office.CustomUI.UnsizedMenu>();
+      itemElement = DocumentModel.OpenXml.UI.UnsizedMenuConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office.CustomUI.UnsizedMenu>(value);
       if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = UnsizedMenuConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office.CustomUI.UnsizedMenu>(value);
-        if (itemElement != null)
-          openXmlElement.AddChild(itemElement);
-      }
+        openXmlElement.AddChild(itemElement);
     }
   }
-
+  
   public static DocumentModel.UI.SplitButton? CreateModelElement(DocumentFormat.OpenXml.Office.CustomUI.SplitButton? openXmlElement)
   {
     if (openXmlElement != null)
@@ -413,9 +383,9 @@ public static class SplitButtonConverter
     }
     return null;
   }
-
+  
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.UI.SplitButton? value)
-    where OpenXmlElementType : DocumentFormat.OpenXml.Office.CustomUI.SplitButton, new()
+    where OpenXmlElementType: DocumentFormat.OpenXml.Office.CustomUI.SplitButton, new()
   {
     if (value != null)
     {

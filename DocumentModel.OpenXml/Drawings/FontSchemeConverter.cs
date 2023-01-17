@@ -1,113 +1,99 @@
-using DocumentFormat.OpenXml.Drawing;
-using MajorFont = DocumentModel.Drawings.MajorFont;
-using MinorFont = DocumentModel.Drawings.MinorFont;
-
 namespace DocumentModel.OpenXml.Drawings;
 
 /// <summary>
-///   Font Scheme.
+/// Font Scheme.
 /// </summary>
 public static class FontSchemeConverter
 {
   /// <summary>
-  ///   Name
+  /// Name
   /// </summary>
-  public static String? GetName(FontScheme? openXmlElement)
+  private static String? GetName(DocumentFormat.OpenXml.Drawing.FontScheme openXmlElement)
   {
     return openXmlElement?.Name?.Value;
   }
-
-  public static void SetName(FontScheme? openXmlElement, String? value)
+  
+  private static void SetName(DocumentFormat.OpenXml.Drawing.FontScheme openXmlElement, String? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.Name = new StringValue { Value = value };
-      else
-        openXmlElement.Name = null;
+    if (value != null)
+      openXmlElement.Name = new StringValue { Value = value };
+    else
+      openXmlElement.Name = null;
   }
-
+  
   /// <summary>
-  ///   Major Font.
+  /// Major Font.
   /// </summary>
-  public static MajorFont? GetMajorFont(FontScheme? openXmlElement)
+  private static DocumentModel.Drawings.MajorFont? GetMajorFont(DocumentFormat.OpenXml.Drawing.FontScheme openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.MajorFont>();
     if (itemElement != null)
-      return MajorFontConverter.CreateModelElement(itemElement);
+      return DocumentModel.OpenXml.Drawings.MajorFontConverter.CreateModelElement(itemElement);
     return null;
   }
-
-  public static void SetMajorFont(FontScheme? openXmlElement, MajorFont? value)
+  
+  private static void SetMajorFont(DocumentFormat.OpenXml.Drawing.FontScheme openXmlElement, DocumentModel.Drawings.MajorFont? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.MajorFont>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.MajorFont>();
+      itemElement = DocumentModel.OpenXml.Drawings.MajorFontConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.MajorFont>(value);
       if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = MajorFontConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.MajorFont>(value);
-        if (itemElement != null)
-          openXmlElement.AddChild(itemElement);
-      }
+        openXmlElement.AddChild(itemElement);
     }
   }
-
+  
   /// <summary>
-  ///   Minor fonts.
+  /// Minor fonts.
   /// </summary>
-  public static MinorFont? GetMinorFont(FontScheme? openXmlElement)
+  private static DocumentModel.Drawings.MinorFont? GetMinorFont(DocumentFormat.OpenXml.Drawing.FontScheme openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.MinorFont>();
     if (itemElement != null)
-      return MinorFontConverter.CreateModelElement(itemElement);
+      return DocumentModel.OpenXml.Drawings.MinorFontConverter.CreateModelElement(itemElement);
     return null;
   }
-
-  public static void SetMinorFont(FontScheme? openXmlElement, MinorFont? value)
+  
+  private static void SetMinorFont(DocumentFormat.OpenXml.Drawing.FontScheme openXmlElement, DocumentModel.Drawings.MinorFont? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.MinorFont>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.MinorFont>();
+      itemElement = DocumentModel.OpenXml.Drawings.MinorFontConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.MinorFont>(value);
       if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = MinorFontConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.MinorFont>(value);
-        if (itemElement != null)
-          openXmlElement.AddChild(itemElement);
-      }
+        openXmlElement.AddChild(itemElement);
     }
   }
-
+  
   /// <summary>
-  ///   ExtensionList.
+  /// ExtensionList.
   /// </summary>
-  public static DocumentModel.Drawings.ExtensionList? GetExtensionList(FontScheme? openXmlElement)
+  private static DocumentModel.Drawings.ExtensionList? GetExtensionList(DocumentFormat.OpenXml.Drawing.FontScheme openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.ExtensionList>();
     if (itemElement != null)
-      return ExtensionListConverter.CreateModelElement(itemElement);
+      return DocumentModel.OpenXml.Drawings.ExtensionListConverter.CreateModelElement(itemElement);
     return null;
   }
-
-  public static void SetExtensionList(FontScheme? openXmlElement, DocumentModel.Drawings.ExtensionList? value)
+  
+  private static void SetExtensionList(DocumentFormat.OpenXml.Drawing.FontScheme openXmlElement, DocumentModel.Drawings.ExtensionList? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.ExtensionList>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.ExtensionList>();
+      itemElement = DocumentModel.OpenXml.Drawings.ExtensionListConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.ExtensionList>(value);
       if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = ExtensionListConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.ExtensionList>(value);
-        if (itemElement != null)
-          openXmlElement.AddChild(itemElement);
-      }
+        openXmlElement.AddChild(itemElement);
     }
   }
-
-  public static DocumentModel.Drawings.FontScheme? CreateModelElement(FontScheme? openXmlElement)
+  
+  public static DocumentModel.Drawings.FontScheme? CreateModelElement(DocumentFormat.OpenXml.Drawing.FontScheme? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -120,9 +106,9 @@ public static class FontSchemeConverter
     }
     return null;
   }
-
+  
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.FontScheme? value)
-    where OpenXmlElementType : FontScheme, new()
+    where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.FontScheme, new()
   {
     if (value != null)
     {

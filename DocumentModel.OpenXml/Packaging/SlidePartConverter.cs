@@ -1,385 +1,306 @@
-using DocumentModel.Packaging;
-using SlidePart = DocumentFormat.OpenXml.Packaging.SlidePart;
-
 namespace DocumentModel.OpenXml.Packaging;
 
 /// <summary>
-///   Defines the SlidePart
+/// Defines the SlidePart
 /// </summary>
 public static class SlidePartConverter
 {
   /// <summary>
-  ///   Gets the ChartParts of the SlidePart
+  /// Gets the ChartParts of the SlidePart
   /// </summary>
-  public static Collection<ChartPart>? GetChartParts(SlidePart? openXmlElement)
+  private static System.Collections.ObjectModel.Collection<DocumentModel.Packaging.ChartPart> GetChartParts(DocumentFormat.OpenXml.Packaging.SlidePart openXmlElement)
   {
-    if (openXmlElement != null)
+    var collection = new System.Collections.ObjectModel.Collection<DocumentModel.Packaging.ChartPart>();
+    foreach (var item in openXmlElement.GetPartsOfType<DocumentFormat.OpenXml.Packaging.ChartPart>())
     {
-      var collection = new Collection<ChartPart>();
-      foreach (var item in openXmlElement.GetPartsOfType<DocumentFormat.OpenXml.Packaging.ChartPart>())
-      {
-        var newItem = ChartPartConverter.CreateModelElement(item);
-        if (newItem != null)
-          collection.Add(newItem);
-      }
-      return collection;
+      var newItem = DocumentModel.OpenXml.Packaging.ChartPartConverter.CreateModelElement(item);
+      if (newItem != null)
+        collection.Add(newItem);
     }
-    return null;
+    return collection;
   }
-
+  
   /// <summary>
-  ///   Gets the commentParts of the SlidePart
+  /// Gets the commentParts of the SlidePart
   /// </summary>
-  public static Collection<PowerPointCommentPart>? GetcommentParts(SlidePart? openXmlElement)
+  private static System.Collections.ObjectModel.Collection<DocumentModel.Packaging.PowerPointCommentPart> GetcommentParts(DocumentFormat.OpenXml.Packaging.SlidePart openXmlElement)
   {
-    if (openXmlElement != null)
+    var collection = new System.Collections.ObjectModel.Collection<DocumentModel.Packaging.PowerPointCommentPart>();
+    foreach (var item in openXmlElement.GetPartsOfType<DocumentFormat.OpenXml.Packaging.PowerPointCommentPart>())
     {
-      var collection = new Collection<PowerPointCommentPart>();
-      foreach (var item in openXmlElement.GetPartsOfType<DocumentFormat.OpenXml.Packaging.PowerPointCommentPart>())
-      {
-        var newItem = PowerPointCommentPartConverter.CreateModelElement(item);
-        if (newItem != null)
-          collection.Add(newItem);
-      }
-      return collection;
+      var newItem = DocumentModel.OpenXml.Packaging.PowerPointCommentPartConverter.CreateModelElement(item);
+      if (newItem != null)
+        collection.Add(newItem);
     }
-    return null;
+    return collection;
   }
-
-  public static String? GetContentType(SlidePart? openXmlElement)
+  
+  private static String? GetContentType(DocumentFormat.OpenXml.Packaging.SlidePart openXmlElement)
   {
     return openXmlElement?.ContentType;
   }
-
+  
   /// <summary>
-  ///   Gets the CustomXmlParts of the SlidePart
+  /// Gets the CustomXmlParts of the SlidePart
   /// </summary>
-  public static Collection<CustomXmlPart>? GetCustomXmlParts(SlidePart? openXmlElement)
+  private static System.Collections.ObjectModel.Collection<DocumentModel.Packaging.CustomXmlPart> GetCustomXmlParts(DocumentFormat.OpenXml.Packaging.SlidePart openXmlElement)
   {
-    if (openXmlElement != null)
+    var collection = new System.Collections.ObjectModel.Collection<DocumentModel.Packaging.CustomXmlPart>();
+    foreach (var item in openXmlElement.GetPartsOfType<DocumentFormat.OpenXml.Packaging.CustomXmlPart>())
     {
-      var collection = new Collection<CustomXmlPart>();
-      foreach (var item in openXmlElement.GetPartsOfType<DocumentFormat.OpenXml.Packaging.CustomXmlPart>())
-      {
-        var newItem = CustomXmlPartConverter.CreateModelElement(item);
-        if (newItem != null)
-          collection.Add(newItem);
-      }
-      return collection;
+      var newItem = DocumentModel.OpenXml.Packaging.CustomXmlPartConverter.CreateModelElement(item);
+      if (newItem != null)
+        collection.Add(newItem);
     }
-    return null;
+    return collection;
   }
-
+  
   /// <summary>
-  ///   Gets the DiagramColorsParts of the SlidePart
+  /// Gets the DiagramColorsParts of the SlidePart
   /// </summary>
-  public static Collection<DiagramColorsPart>? GetDiagramColorsParts(SlidePart? openXmlElement)
+  private static System.Collections.ObjectModel.Collection<DocumentModel.Packaging.DiagramColorsPart> GetDiagramColorsParts(DocumentFormat.OpenXml.Packaging.SlidePart openXmlElement)
   {
-    if (openXmlElement != null)
+    var collection = new System.Collections.ObjectModel.Collection<DocumentModel.Packaging.DiagramColorsPart>();
+    foreach (var item in openXmlElement.GetPartsOfType<DocumentFormat.OpenXml.Packaging.DiagramColorsPart>())
     {
-      var collection = new Collection<DiagramColorsPart>();
-      foreach (var item in openXmlElement.GetPartsOfType<DocumentFormat.OpenXml.Packaging.DiagramColorsPart>())
-      {
-        var newItem = DiagramColorsPartConverter.CreateModelElement(item);
-        if (newItem != null)
-          collection.Add(newItem);
-      }
-      return collection;
+      var newItem = DocumentModel.OpenXml.Packaging.DiagramColorsPartConverter.CreateModelElement(item);
+      if (newItem != null)
+        collection.Add(newItem);
     }
-    return null;
+    return collection;
   }
-
+  
   /// <summary>
-  ///   Gets the DiagramDataParts of the SlidePart
+  /// Gets the DiagramDataParts of the SlidePart
   /// </summary>
-  public static Collection<DiagramDataPart>? GetDiagramDataParts(SlidePart? openXmlElement)
+  private static System.Collections.ObjectModel.Collection<DocumentModel.Packaging.DiagramDataPart> GetDiagramDataParts(DocumentFormat.OpenXml.Packaging.SlidePart openXmlElement)
   {
-    if (openXmlElement != null)
+    var collection = new System.Collections.ObjectModel.Collection<DocumentModel.Packaging.DiagramDataPart>();
+    foreach (var item in openXmlElement.GetPartsOfType<DocumentFormat.OpenXml.Packaging.DiagramDataPart>())
     {
-      var collection = new Collection<DiagramDataPart>();
-      foreach (var item in openXmlElement.GetPartsOfType<DocumentFormat.OpenXml.Packaging.DiagramDataPart>())
-      {
-        var newItem = DiagramDataPartConverter.CreateModelElement(item);
-        if (newItem != null)
-          collection.Add(newItem);
-      }
-      return collection;
+      var newItem = DocumentModel.OpenXml.Packaging.DiagramDataPartConverter.CreateModelElement(item);
+      if (newItem != null)
+        collection.Add(newItem);
     }
-    return null;
+    return collection;
   }
-
+  
   /// <summary>
-  ///   Gets the DiagramLayoutDefinitionParts of the SlidePart
+  /// Gets the DiagramLayoutDefinitionParts of the SlidePart
   /// </summary>
-  public static Collection<DiagramLayoutDefinitionPart>? GetDiagramLayoutDefinitionParts(SlidePart? openXmlElement)
+  private static System.Collections.ObjectModel.Collection<DocumentModel.Packaging.DiagramLayoutDefinitionPart> GetDiagramLayoutDefinitionParts(DocumentFormat.OpenXml.Packaging.SlidePart openXmlElement)
   {
-    if (openXmlElement != null)
+    var collection = new System.Collections.ObjectModel.Collection<DocumentModel.Packaging.DiagramLayoutDefinitionPart>();
+    foreach (var item in openXmlElement.GetPartsOfType<DocumentFormat.OpenXml.Packaging.DiagramLayoutDefinitionPart>())
     {
-      var collection = new Collection<DiagramLayoutDefinitionPart>();
-      foreach (var item in openXmlElement.GetPartsOfType<DocumentFormat.OpenXml.Packaging.DiagramLayoutDefinitionPart>())
-      {
-        var newItem = DiagramLayoutDefinitionPartConverter.CreateModelElement(item);
-        if (newItem != null)
-          collection.Add(newItem);
-      }
-      return collection;
+      var newItem = DocumentModel.OpenXml.Packaging.DiagramLayoutDefinitionPartConverter.CreateModelElement(item);
+      if (newItem != null)
+        collection.Add(newItem);
     }
-    return null;
+    return collection;
   }
-
+  
   /// <summary>
-  ///   Gets the DiagramPersistLayoutParts of the SlidePart
+  /// Gets the DiagramPersistLayoutParts of the SlidePart
   /// </summary>
-  public static Collection<DiagramPersistLayoutPart>? GetDiagramPersistLayoutParts(SlidePart? openXmlElement)
+  private static System.Collections.ObjectModel.Collection<DocumentModel.Packaging.DiagramPersistLayoutPart> GetDiagramPersistLayoutParts(DocumentFormat.OpenXml.Packaging.SlidePart openXmlElement)
   {
-    if (openXmlElement != null)
+    var collection = new System.Collections.ObjectModel.Collection<DocumentModel.Packaging.DiagramPersistLayoutPart>();
+    foreach (var item in openXmlElement.GetPartsOfType<DocumentFormat.OpenXml.Packaging.DiagramPersistLayoutPart>())
     {
-      var collection = new Collection<DiagramPersistLayoutPart>();
-      foreach (var item in openXmlElement.GetPartsOfType<DocumentFormat.OpenXml.Packaging.DiagramPersistLayoutPart>())
-      {
-        var newItem = DiagramPersistLayoutPartConverter.CreateModelElement(item);
-        if (newItem != null)
-          collection.Add(newItem);
-      }
-      return collection;
+      var newItem = DocumentModel.OpenXml.Packaging.DiagramPersistLayoutPartConverter.CreateModelElement(item);
+      if (newItem != null)
+        collection.Add(newItem);
     }
-    return null;
+    return collection;
   }
-
+  
   /// <summary>
-  ///   Gets the DiagramStyleParts of the SlidePart
+  /// Gets the DiagramStyleParts of the SlidePart
   /// </summary>
-  public static Collection<DiagramStylePart>? GetDiagramStyleParts(SlidePart? openXmlElement)
+  private static System.Collections.ObjectModel.Collection<DocumentModel.Packaging.DiagramStylePart> GetDiagramStyleParts(DocumentFormat.OpenXml.Packaging.SlidePart openXmlElement)
   {
-    if (openXmlElement != null)
+    var collection = new System.Collections.ObjectModel.Collection<DocumentModel.Packaging.DiagramStylePart>();
+    foreach (var item in openXmlElement.GetPartsOfType<DocumentFormat.OpenXml.Packaging.DiagramStylePart>())
     {
-      var collection = new Collection<DiagramStylePart>();
-      foreach (var item in openXmlElement.GetPartsOfType<DocumentFormat.OpenXml.Packaging.DiagramStylePart>())
-      {
-        var newItem = DiagramStylePartConverter.CreateModelElement(item);
-        if (newItem != null)
-          collection.Add(newItem);
-      }
-      return collection;
+      var newItem = DocumentModel.OpenXml.Packaging.DiagramStylePartConverter.CreateModelElement(item);
+      if (newItem != null)
+        collection.Add(newItem);
     }
-    return null;
+    return collection;
   }
-
+  
   /// <summary>
-  ///   Gets the EmbeddedControlPersistenceBinaryDataParts of the SlidePart
+  /// Gets the EmbeddedControlPersistenceBinaryDataParts of the SlidePart
   /// </summary>
-  public static Collection<EmbeddedControlPersistenceBinaryDataPart>? GetEmbeddedControlPersistenceBinaryDataParts(SlidePart? openXmlElement)
+  private static System.Collections.ObjectModel.Collection<DocumentModel.Packaging.EmbeddedControlPersistenceBinaryDataPart> GetEmbeddedControlPersistenceBinaryDataParts(DocumentFormat.OpenXml.Packaging.SlidePart openXmlElement)
   {
-    if (openXmlElement != null)
+    var collection = new System.Collections.ObjectModel.Collection<DocumentModel.Packaging.EmbeddedControlPersistenceBinaryDataPart>();
+    foreach (var item in openXmlElement.GetPartsOfType<DocumentFormat.OpenXml.Packaging.EmbeddedControlPersistenceBinaryDataPart>())
     {
-      var collection = new Collection<EmbeddedControlPersistenceBinaryDataPart>();
-      foreach (var item in openXmlElement.GetPartsOfType<DocumentFormat.OpenXml.Packaging.EmbeddedControlPersistenceBinaryDataPart>())
-      {
-        var newItem = EmbeddedControlPersistenceBinaryDataPartConverter.CreateModelElement(item);
-        if (newItem != null)
-          collection.Add(newItem);
-      }
-      return collection;
+      var newItem = DocumentModel.OpenXml.Packaging.EmbeddedControlPersistenceBinaryDataPartConverter.CreateModelElement(item);
+      if (newItem != null)
+        collection.Add(newItem);
     }
-    return null;
+    return collection;
   }
-
+  
   /// <summary>
-  ///   Gets the EmbeddedControlPersistenceParts of the SlidePart
+  /// Gets the EmbeddedControlPersistenceParts of the SlidePart
   /// </summary>
-  public static Collection<EmbeddedControlPersistencePart>? GetEmbeddedControlPersistenceParts(SlidePart? openXmlElement)
+  private static System.Collections.ObjectModel.Collection<DocumentModel.Packaging.EmbeddedControlPersistencePart> GetEmbeddedControlPersistenceParts(DocumentFormat.OpenXml.Packaging.SlidePart openXmlElement)
   {
-    if (openXmlElement != null)
+    var collection = new System.Collections.ObjectModel.Collection<DocumentModel.Packaging.EmbeddedControlPersistencePart>();
+    foreach (var item in openXmlElement.GetPartsOfType<DocumentFormat.OpenXml.Packaging.EmbeddedControlPersistencePart>())
     {
-      var collection = new Collection<EmbeddedControlPersistencePart>();
-      foreach (var item in openXmlElement.GetPartsOfType<DocumentFormat.OpenXml.Packaging.EmbeddedControlPersistencePart>())
-      {
-        var newItem = EmbeddedControlPersistencePartConverter.CreateModelElement(item);
-        if (newItem != null)
-          collection.Add(newItem);
-      }
-      return collection;
+      var newItem = DocumentModel.OpenXml.Packaging.EmbeddedControlPersistencePartConverter.CreateModelElement(item);
+      if (newItem != null)
+        collection.Add(newItem);
     }
-    return null;
+    return collection;
   }
-
+  
   /// <summary>
-  ///   Gets the EmbeddedObjectParts of the SlidePart
+  /// Gets the EmbeddedObjectParts of the SlidePart
   /// </summary>
-  public static Collection<EmbeddedObjectPart>? GetEmbeddedObjectParts(SlidePart? openXmlElement)
+  private static System.Collections.ObjectModel.Collection<DocumentModel.Packaging.EmbeddedObjectPart> GetEmbeddedObjectParts(DocumentFormat.OpenXml.Packaging.SlidePart openXmlElement)
   {
-    if (openXmlElement != null)
+    var collection = new System.Collections.ObjectModel.Collection<DocumentModel.Packaging.EmbeddedObjectPart>();
+    foreach (var item in openXmlElement.GetPartsOfType<DocumentFormat.OpenXml.Packaging.EmbeddedObjectPart>())
     {
-      var collection = new Collection<EmbeddedObjectPart>();
-      foreach (var item in openXmlElement.GetPartsOfType<DocumentFormat.OpenXml.Packaging.EmbeddedObjectPart>())
-      {
-        var newItem = EmbeddedObjectPartConverter.CreateModelElement(item);
-        if (newItem != null)
-          collection.Add(newItem);
-      }
-      return collection;
+      var newItem = DocumentModel.OpenXml.Packaging.EmbeddedObjectPartConverter.CreateModelElement(item);
+      if (newItem != null)
+        collection.Add(newItem);
     }
-    return null;
+    return collection;
   }
-
+  
   /// <summary>
-  ///   Gets the EmbeddedPackageParts of the SlidePart
+  /// Gets the EmbeddedPackageParts of the SlidePart
   /// </summary>
-  public static Collection<EmbeddedPackagePart>? GetEmbeddedPackageParts(SlidePart? openXmlElement)
+  private static System.Collections.ObjectModel.Collection<DocumentModel.Packaging.EmbeddedPackagePart> GetEmbeddedPackageParts(DocumentFormat.OpenXml.Packaging.SlidePart openXmlElement)
   {
-    if (openXmlElement != null)
+    var collection = new System.Collections.ObjectModel.Collection<DocumentModel.Packaging.EmbeddedPackagePart>();
+    foreach (var item in openXmlElement.GetPartsOfType<DocumentFormat.OpenXml.Packaging.EmbeddedPackagePart>())
     {
-      var collection = new Collection<EmbeddedPackagePart>();
-      foreach (var item in openXmlElement.GetPartsOfType<DocumentFormat.OpenXml.Packaging.EmbeddedPackagePart>())
-      {
-        var newItem = EmbeddedPackagePartConverter.CreateModelElement(item);
-        if (newItem != null)
-          collection.Add(newItem);
-      }
-      return collection;
+      var newItem = DocumentModel.OpenXml.Packaging.EmbeddedPackagePartConverter.CreateModelElement(item);
+      if (newItem != null)
+        collection.Add(newItem);
     }
-    return null;
+    return collection;
   }
-
+  
   /// <summary>
-  ///   Gets the ExtendedChartParts of the SlidePart
+  /// Gets the ExtendedChartParts of the SlidePart
   /// </summary>
-  public static Collection<ExtendedChartPart>? GetExtendedChartParts(SlidePart? openXmlElement)
+  private static System.Collections.ObjectModel.Collection<DocumentModel.Packaging.ExtendedChartPart> GetExtendedChartParts(DocumentFormat.OpenXml.Packaging.SlidePart openXmlElement)
   {
-    if (openXmlElement != null)
+    var collection = new System.Collections.ObjectModel.Collection<DocumentModel.Packaging.ExtendedChartPart>();
+    foreach (var item in openXmlElement.GetPartsOfType<DocumentFormat.OpenXml.Packaging.ExtendedChartPart>())
     {
-      var collection = new Collection<ExtendedChartPart>();
-      foreach (var item in openXmlElement.GetPartsOfType<DocumentFormat.OpenXml.Packaging.ExtendedChartPart>())
-      {
-        var newItem = ExtendedChartPartConverter.CreateModelElement(item);
-        if (newItem != null)
-          collection.Add(newItem);
-      }
-      return collection;
+      var newItem = DocumentModel.OpenXml.Packaging.ExtendedChartPartConverter.CreateModelElement(item);
+      if (newItem != null)
+        collection.Add(newItem);
     }
-    return null;
+    return collection;
   }
-
+  
   /// <summary>
-  ///   Gets the ImageParts of the SlidePart
+  /// Gets the ImageParts of the SlidePart
   /// </summary>
-  public static Collection<ImagePart>? GetImageParts(SlidePart? openXmlElement)
+  private static System.Collections.ObjectModel.Collection<DocumentModel.Packaging.ImagePart> GetImageParts(DocumentFormat.OpenXml.Packaging.SlidePart openXmlElement)
   {
-    if (openXmlElement != null)
+    var collection = new System.Collections.ObjectModel.Collection<DocumentModel.Packaging.ImagePart>();
+    foreach (var item in openXmlElement.GetPartsOfType<DocumentFormat.OpenXml.Packaging.ImagePart>())
     {
-      var collection = new Collection<ImagePart>();
-      foreach (var item in openXmlElement.GetPartsOfType<DocumentFormat.OpenXml.Packaging.ImagePart>())
-      {
-        var newItem = ImagePartConverter.CreateModelElement(item);
-        if (newItem != null)
-          collection.Add(newItem);
-      }
-      return collection;
+      var newItem = DocumentModel.OpenXml.Packaging.ImagePartConverter.CreateModelElement(item);
+      if (newItem != null)
+        collection.Add(newItem);
     }
-    return null;
+    return collection;
   }
-
+  
   /// <summary>
-  ///   Gets the Model3DReferenceRelationshipParts of the SlidePart
+  /// Gets the Model3DReferenceRelationshipParts of the SlidePart
   /// </summary>
-  public static Collection<Model3DReferenceRelationshipPart>? GetModel3DReferenceRelationshipParts(SlidePart? openXmlElement)
+  private static System.Collections.ObjectModel.Collection<DocumentModel.Packaging.Model3DReferenceRelationshipPart> GetModel3DReferenceRelationshipParts(DocumentFormat.OpenXml.Packaging.SlidePart openXmlElement)
   {
-    if (openXmlElement != null)
+    var collection = new System.Collections.ObjectModel.Collection<DocumentModel.Packaging.Model3DReferenceRelationshipPart>();
+    foreach (var item in openXmlElement.GetPartsOfType<DocumentFormat.OpenXml.Packaging.Model3DReferenceRelationshipPart>())
     {
-      var collection = new Collection<Model3DReferenceRelationshipPart>();
-      foreach (var item in openXmlElement.GetPartsOfType<DocumentFormat.OpenXml.Packaging.Model3DReferenceRelationshipPart>())
-      {
-        var newItem = Model3DReferenceRelationshipPartConverter.CreateModelElement(item);
-        if (newItem != null)
-          collection.Add(newItem);
-      }
-      return collection;
+      var newItem = DocumentModel.OpenXml.Packaging.Model3DReferenceRelationshipPartConverter.CreateModelElement(item);
+      if (newItem != null)
+        collection.Add(newItem);
     }
-    return null;
+    return collection;
   }
-
-  public static String? GetRelationshipType(SlidePart? openXmlElement)
+  
+  private static String? GetRelationshipType(DocumentFormat.OpenXml.Packaging.SlidePart openXmlElement)
   {
     return openXmlElement?.RelationshipType;
   }
-
+  
   /// <summary>
-  ///   Gets the SlideParts of the SlidePart
+  /// Gets the SlideParts of the SlidePart
   /// </summary>
-  public static Collection<DocumentModel.Packaging.SlidePart>? GetSlideParts(SlidePart? openXmlElement)
+  private static System.Collections.ObjectModel.Collection<DocumentModel.Packaging.SlidePart> GetSlideParts(DocumentFormat.OpenXml.Packaging.SlidePart openXmlElement)
   {
-    if (openXmlElement != null)
+    var collection = new System.Collections.ObjectModel.Collection<DocumentModel.Packaging.SlidePart>();
+    foreach (var item in openXmlElement.GetPartsOfType<DocumentFormat.OpenXml.Packaging.SlidePart>())
     {
-      var collection = new Collection<DocumentModel.Packaging.SlidePart>();
-      foreach (var item in openXmlElement.GetPartsOfType<SlidePart>())
-      {
-        var newItem = CreateModelElement(item);
-        if (newItem != null)
-          collection.Add(newItem);
-      }
-      return collection;
+      var newItem = DocumentModel.OpenXml.Packaging.SlidePartConverter.CreateModelElement(item);
+      if (newItem != null)
+        collection.Add(newItem);
     }
-    return null;
+    return collection;
   }
-
+  
   /// <summary>
-  ///   Gets the UserDefinedTagsParts of the SlidePart
+  /// Gets the UserDefinedTagsParts of the SlidePart
   /// </summary>
-  public static Collection<UserDefinedTagsPart>? GetUserDefinedTagsParts(SlidePart? openXmlElement)
+  private static System.Collections.ObjectModel.Collection<DocumentModel.Packaging.UserDefinedTagsPart> GetUserDefinedTagsParts(DocumentFormat.OpenXml.Packaging.SlidePart openXmlElement)
   {
-    if (openXmlElement != null)
+    var collection = new System.Collections.ObjectModel.Collection<DocumentModel.Packaging.UserDefinedTagsPart>();
+    foreach (var item in openXmlElement.GetPartsOfType<DocumentFormat.OpenXml.Packaging.UserDefinedTagsPart>())
     {
-      var collection = new Collection<UserDefinedTagsPart>();
-      foreach (var item in openXmlElement.GetPartsOfType<DocumentFormat.OpenXml.Packaging.UserDefinedTagsPart>())
-      {
-        var newItem = UserDefinedTagsPartConverter.CreateModelElement(item);
-        if (newItem != null)
-          collection.Add(newItem);
-      }
-      return collection;
+      var newItem = DocumentModel.OpenXml.Packaging.UserDefinedTagsPartConverter.CreateModelElement(item);
+      if (newItem != null)
+        collection.Add(newItem);
     }
-    return null;
+    return collection;
   }
-
+  
   /// <summary>
-  ///   Gets the VmlDrawingParts of the SlidePart
+  /// Gets the VmlDrawingParts of the SlidePart
   /// </summary>
-  public static Collection<VmlDrawingPart>? GetVmlDrawingParts(SlidePart? openXmlElement)
+  private static System.Collections.ObjectModel.Collection<DocumentModel.Packaging.VmlDrawingPart> GetVmlDrawingParts(DocumentFormat.OpenXml.Packaging.SlidePart openXmlElement)
   {
-    if (openXmlElement != null)
+    var collection = new System.Collections.ObjectModel.Collection<DocumentModel.Packaging.VmlDrawingPart>();
+    foreach (var item in openXmlElement.GetPartsOfType<DocumentFormat.OpenXml.Packaging.VmlDrawingPart>())
     {
-      var collection = new Collection<VmlDrawingPart>();
-      foreach (var item in openXmlElement.GetPartsOfType<DocumentFormat.OpenXml.Packaging.VmlDrawingPart>())
-      {
-        var newItem = VmlDrawingPartConverter.CreateModelElement(item);
-        if (newItem != null)
-          collection.Add(newItem);
-      }
-      return collection;
+      var newItem = DocumentModel.OpenXml.Packaging.VmlDrawingPartConverter.CreateModelElement(item);
+      if (newItem != null)
+        collection.Add(newItem);
     }
-    return null;
+    return collection;
   }
-
+  
   /// <summary>
-  ///   Gets the WebExtensionParts of the SlidePart
+  /// Gets the WebExtensionParts of the SlidePart
   /// </summary>
-  public static Collection<WebExtensionPart>? GetWebExtensionParts(SlidePart? openXmlElement)
+  private static System.Collections.ObjectModel.Collection<DocumentModel.Packaging.WebExtensionPart> GetWebExtensionParts(DocumentFormat.OpenXml.Packaging.SlidePart openXmlElement)
   {
-    if (openXmlElement != null)
+    var collection = new System.Collections.ObjectModel.Collection<DocumentModel.Packaging.WebExtensionPart>();
+    foreach (var item in openXmlElement.GetPartsOfType<DocumentFormat.OpenXml.Packaging.WebExtensionPart>())
     {
-      var collection = new Collection<WebExtensionPart>();
-      foreach (var item in openXmlElement.GetPartsOfType<DocumentFormat.OpenXml.Packaging.WebExtensionPart>())
-      {
-        var newItem = WebExtensionPartConverter.CreateModelElement(item);
-        if (newItem != null)
-          collection.Add(newItem);
-      }
-      return collection;
+      var newItem = DocumentModel.OpenXml.Packaging.WebExtensionPartConverter.CreateModelElement(item);
+      if (newItem != null)
+        collection.Add(newItem);
     }
-    return null;
+    return collection;
   }
-
-  public static DocumentModel.Packaging.SlidePart? CreateModelElement(SlidePart? openXmlElement)
+  
+  public static DocumentModel.Packaging.SlidePart? CreateModelElement(DocumentFormat.OpenXml.Packaging.SlidePart? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -409,9 +330,9 @@ public static class SlidePartConverter
     }
     return null;
   }
-
+  
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Packaging.SlidePart? value)
-    where OpenXmlElementType : SlidePart, new()
+    where OpenXmlElementType: DocumentFormat.OpenXml.Packaging.SlidePart, new()
   {
     if (value != null)
     {

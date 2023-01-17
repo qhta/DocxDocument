@@ -1,41 +1,35 @@
-using DocumentModel.Math;
-using SubscriptProperties = DocumentFormat.OpenXml.Math.SubscriptProperties;
-
 namespace DocumentModel.OpenXml.Math;
 
 /// <summary>
-///   Subscript Properties.
+/// Subscript Properties.
 /// </summary>
 public static class SubscriptPropertiesConverter
 {
   /// <summary>
-  ///   ControlProperties.
+  /// ControlProperties.
   /// </summary>
-  public static ControlProperties? GetControlProperties(SubscriptProperties? openXmlElement)
+  private static DocumentModel.Math.ControlProperties? GetControlProperties(DocumentFormat.OpenXml.Math.SubscriptProperties openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Math.ControlProperties>();
     if (itemElement != null)
-      return ControlPropertiesConverter.CreateModelElement(itemElement);
+      return DocumentModel.OpenXml.Math.ControlPropertiesConverter.CreateModelElement(itemElement);
     return null;
   }
-
-  public static void SetControlProperties(SubscriptProperties? openXmlElement, ControlProperties? value)
+  
+  private static void SetControlProperties(DocumentFormat.OpenXml.Math.SubscriptProperties openXmlElement, DocumentModel.Math.ControlProperties? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Math.ControlProperties>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Math.ControlProperties>();
+      itemElement = DocumentModel.OpenXml.Math.ControlPropertiesConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Math.ControlProperties>(value);
       if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = ControlPropertiesConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Math.ControlProperties>(value);
-        if (itemElement != null)
-          openXmlElement.AddChild(itemElement);
-      }
+        openXmlElement.AddChild(itemElement);
     }
   }
-
-  public static DocumentModel.Math.SubscriptProperties? CreateModelElement(SubscriptProperties? openXmlElement)
+  
+  public static DocumentModel.Math.SubscriptProperties? CreateModelElement(DocumentFormat.OpenXml.Math.SubscriptProperties? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -45,9 +39,9 @@ public static class SubscriptPropertiesConverter
     }
     return null;
   }
-
+  
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Math.SubscriptProperties? value)
-    where OpenXmlElementType : SubscriptProperties, new()
+    where OpenXmlElementType: DocumentFormat.OpenXml.Math.SubscriptProperties, new()
   {
     if (value != null)
     {

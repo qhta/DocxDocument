@@ -1,45 +1,37 @@
-using DocumentModel.Drawings.Diagrams;
-using PointList = DocumentFormat.OpenXml.Drawing.Diagrams.PointList;
-
 namespace DocumentModel.OpenXml.Drawings.Diagrams;
 
 /// <summary>
-///   Point List.
+/// Point List.
 /// </summary>
 public static class PointListConverter
 {
-  public static Collection<Point>? GetPoints(PointList? openXmlElement)
+  private static System.Collections.ObjectModel.Collection<DocumentModel.Drawings.Diagrams.Point> GetPoints(DocumentFormat.OpenXml.Drawing.Diagrams.PointList openXmlElement)
   {
-    if (openXmlElement != null)
+    var collection = new System.Collections.ObjectModel.Collection<DocumentModel.Drawings.Diagrams.Point>();
+    foreach (var item in openXmlElement.Elements<DocumentFormat.OpenXml.Drawing.Diagrams.Point>())
     {
-      var collection = new Collection<Point>();
-      foreach (var item in openXmlElement.Elements<DocumentFormat.OpenXml.Drawing.Diagrams.Point>())
+      var newItem = DocumentModel.OpenXml.Drawings.Diagrams.PointConverter.CreateModelElement(item);
+      if (newItem != null)
+        collection.Add(newItem);
+    }
+    return collection;
+  }
+  
+  private static void SetPoints(DocumentFormat.OpenXml.Drawing.Diagrams.PointList openXmlElement, System.Collections.ObjectModel.Collection<DocumentModel.Drawings.Diagrams.Point>? value)
+  {
+    openXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Drawing.Diagrams.Point>();
+    if (value != null)
+    {
+      foreach (var item in value)
       {
-        var newItem = PointConverter.CreateModelElement(item);
+        var newItem = DocumentModel.OpenXml.Drawings.Diagrams.PointConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Diagrams.Point>(item);
         if (newItem != null)
-          collection.Add(newItem);
+          openXmlElement.AddChild(newItem);
       }
-      return collection;
-    }
-    return null;
-  }
-
-  public static void SetPoints(PointList? openXmlElement, Collection<Point>? value)
-  {
-    if (openXmlElement != null)
-    {
-      openXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Drawing.Diagrams.Point>();
-      if (value != null)
-        foreach (var item in value)
-        {
-          var newItem = PointConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Diagrams.Point>(item);
-          if (newItem != null)
-            openXmlElement.AddChild(newItem);
-        }
     }
   }
-
-  public static DocumentModel.Drawings.Diagrams.PointList? CreateModelElement(PointList? openXmlElement)
+  
+  public static DocumentModel.Drawings.Diagrams.PointList? CreateModelElement(DocumentFormat.OpenXml.Drawing.Diagrams.PointList? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -49,9 +41,9 @@ public static class PointListConverter
     }
     return null;
   }
-
+  
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.Diagrams.PointList? value)
-    where OpenXmlElementType : PointList, new()
+    where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.Diagrams.PointList, new()
   {
     if (value != null)
     {

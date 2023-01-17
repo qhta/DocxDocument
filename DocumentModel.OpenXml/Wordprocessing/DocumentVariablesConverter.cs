@@ -1,45 +1,37 @@
-using DocumentModel.Wordprocessing;
-using DocumentVariables = DocumentFormat.OpenXml.Wordprocessing.DocumentVariables;
-
 namespace DocumentModel.OpenXml.Wordprocessing;
 
 /// <summary>
-///   Document Variables.
+/// Document Variables.
 /// </summary>
 public static class DocumentVariablesConverter
 {
-  public static Collection<DocumentVariable>? GetItems(DocumentVariables? openXmlElement)
+  private static System.Collections.ObjectModel.Collection<DocumentModel.Wordprocessing.DocumentVariable> GetItems(DocumentFormat.OpenXml.Wordprocessing.DocumentVariables openXmlElement)
   {
-    if (openXmlElement != null)
+    var collection = new System.Collections.ObjectModel.Collection<DocumentModel.Wordprocessing.DocumentVariable>();
+    foreach (var item in openXmlElement.Elements<DocumentFormat.OpenXml.Wordprocessing.DocumentVariable>())
     {
-      var collection = new Collection<DocumentVariable>();
-      foreach (var item in openXmlElement.Elements<DocumentFormat.OpenXml.Wordprocessing.DocumentVariable>())
+      var newItem = DocumentModel.OpenXml.Wordprocessing.DocumentVariableConverter.CreateModelElement(item);
+      if (newItem != null)
+        collection.Add(newItem);
+    }
+    return collection;
+  }
+  
+  private static void SetItems(DocumentFormat.OpenXml.Wordprocessing.DocumentVariables openXmlElement, System.Collections.ObjectModel.Collection<DocumentModel.Wordprocessing.DocumentVariable>? value)
+  {
+    openXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Wordprocessing.DocumentVariable>();
+    if (value != null)
+    {
+      foreach (var item in value)
       {
-        var newItem = DocumentVariableConverter.CreateModelElement(item);
+        var newItem = DocumentModel.OpenXml.Wordprocessing.DocumentVariableConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.DocumentVariable>(item);
         if (newItem != null)
-          collection.Add(newItem);
+          openXmlElement.AddChild(newItem);
       }
-      return collection;
-    }
-    return null;
-  }
-
-  public static void SetItems(DocumentVariables? openXmlElement, Collection<DocumentVariable>? value)
-  {
-    if (openXmlElement != null)
-    {
-      openXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Wordprocessing.DocumentVariable>();
-      if (value != null)
-        foreach (var item in value)
-        {
-          var newItem = DocumentVariableConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.DocumentVariable>(item);
-          if (newItem != null)
-            openXmlElement.AddChild(newItem);
-        }
     }
   }
-
-  public static DocumentModel.Wordprocessing.DocumentVariables? CreateModelElement(DocumentVariables? openXmlElement)
+  
+  public static DocumentModel.Wordprocessing.DocumentVariables? CreateModelElement(DocumentFormat.OpenXml.Wordprocessing.DocumentVariables? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -49,9 +41,9 @@ public static class DocumentVariablesConverter
     }
     return null;
   }
-
+  
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.DocumentVariables? value)
-    where OpenXmlElementType : DocumentVariables, new()
+    where OpenXmlElementType: DocumentFormat.OpenXml.Wordprocessing.DocumentVariables, new()
   {
     if (value != null)
     {

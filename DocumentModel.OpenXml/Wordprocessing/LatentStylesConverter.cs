@@ -1,141 +1,127 @@
-using DocumentFormat.OpenXml.Wordprocessing;
-using LatentStyleExceptionInfo = DocumentModel.Wordprocessing.LatentStyleExceptionInfo;
-
 namespace DocumentModel.OpenXml.Wordprocessing;
 
 /// <summary>
-///   Latent Style Information.
+/// Latent Style Information.
 /// </summary>
 public static class LatentStylesConverter
 {
   /// <summary>
-  ///   Default Style Locking Setting
+  /// Default Style Locking Setting
   /// </summary>
-  public static Boolean? GetDefaultLockedState(LatentStyles? openXmlElement)
+  private static Boolean? GetDefaultLockedState(DocumentFormat.OpenXml.Wordprocessing.LatentStyles openXmlElement)
   {
     return openXmlElement?.DefaultLockedState?.Value;
   }
-
-  public static void SetDefaultLockedState(LatentStyles? openXmlElement, Boolean? value)
+  
+  private static void SetDefaultLockedState(DocumentFormat.OpenXml.Wordprocessing.LatentStyles openXmlElement, Boolean? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.DefaultLockedState = new OnOffValue { Value = (Boolean)value };
-      else
-        openXmlElement.DefaultLockedState = null;
+    if (value != null)
+      openXmlElement.DefaultLockedState = new OnOffValue { Value = (Boolean)value };
+    else
+      openXmlElement.DefaultLockedState = null;
   }
-
+  
   /// <summary>
-  ///   Default User Interface Priority Setting
+  /// Default User Interface Priority Setting
   /// </summary>
-  public static Int32? GetDefaultUiPriority(LatentStyles? openXmlElement)
+  private static Int32? GetDefaultUiPriority(DocumentFormat.OpenXml.Wordprocessing.LatentStyles openXmlElement)
   {
-    return openXmlElement?.DefaultUiPriority?.Value;
+    return openXmlElement.DefaultUiPriority?.Value;
   }
-
-  public static void SetDefaultUiPriority(LatentStyles? openXmlElement, Int32? value)
+  
+  private static void SetDefaultUiPriority(DocumentFormat.OpenXml.Wordprocessing.LatentStyles openXmlElement, Int32? value)
   {
-    if (openXmlElement != null)
-      openXmlElement.DefaultUiPriority = value;
+    openXmlElement.DefaultUiPriority = value;
   }
-
+  
   /// <summary>
-  ///   Default Semi-Hidden Setting
+  /// Default Semi-Hidden Setting
   /// </summary>
-  public static Boolean? GetDefaultSemiHidden(LatentStyles? openXmlElement)
+  private static Boolean? GetDefaultSemiHidden(DocumentFormat.OpenXml.Wordprocessing.LatentStyles openXmlElement)
   {
     return openXmlElement?.DefaultSemiHidden?.Value;
   }
-
-  public static void SetDefaultSemiHidden(LatentStyles? openXmlElement, Boolean? value)
+  
+  private static void SetDefaultSemiHidden(DocumentFormat.OpenXml.Wordprocessing.LatentStyles openXmlElement, Boolean? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.DefaultSemiHidden = new OnOffValue { Value = (Boolean)value };
-      else
-        openXmlElement.DefaultSemiHidden = null;
+    if (value != null)
+      openXmlElement.DefaultSemiHidden = new OnOffValue { Value = (Boolean)value };
+    else
+      openXmlElement.DefaultSemiHidden = null;
   }
-
+  
   /// <summary>
-  ///   Default Hidden Until Used Setting
+  /// Default Hidden Until Used Setting
   /// </summary>
-  public static Boolean? GetDefaultUnhideWhenUsed(LatentStyles? openXmlElement)
+  private static Boolean? GetDefaultUnhideWhenUsed(DocumentFormat.OpenXml.Wordprocessing.LatentStyles openXmlElement)
   {
     return openXmlElement?.DefaultUnhideWhenUsed?.Value;
   }
-
-  public static void SetDefaultUnhideWhenUsed(LatentStyles? openXmlElement, Boolean? value)
+  
+  private static void SetDefaultUnhideWhenUsed(DocumentFormat.OpenXml.Wordprocessing.LatentStyles openXmlElement, Boolean? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.DefaultUnhideWhenUsed = new OnOffValue { Value = (Boolean)value };
-      else
-        openXmlElement.DefaultUnhideWhenUsed = null;
+    if (value != null)
+      openXmlElement.DefaultUnhideWhenUsed = new OnOffValue { Value = (Boolean)value };
+    else
+      openXmlElement.DefaultUnhideWhenUsed = null;
   }
-
+  
   /// <summary>
-  ///   Default Primary Style Setting
+  /// Default Primary Style Setting
   /// </summary>
-  public static Boolean? GetDefaultPrimaryStyle(LatentStyles? openXmlElement)
+  private static Boolean? GetDefaultPrimaryStyle(DocumentFormat.OpenXml.Wordprocessing.LatentStyles openXmlElement)
   {
     return openXmlElement?.DefaultPrimaryStyle?.Value;
   }
-
-  public static void SetDefaultPrimaryStyle(LatentStyles? openXmlElement, Boolean? value)
+  
+  private static void SetDefaultPrimaryStyle(DocumentFormat.OpenXml.Wordprocessing.LatentStyles openXmlElement, Boolean? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.DefaultPrimaryStyle = new OnOffValue { Value = (Boolean)value };
-      else
-        openXmlElement.DefaultPrimaryStyle = null;
+    if (value != null)
+      openXmlElement.DefaultPrimaryStyle = new OnOffValue { Value = (Boolean)value };
+    else
+      openXmlElement.DefaultPrimaryStyle = null;
   }
-
+  
   /// <summary>
-  ///   Latent Style Count
+  /// Latent Style Count
   /// </summary>
-  public static Int32? GetCount(LatentStyles? openXmlElement)
+  private static Int32? GetCount(DocumentFormat.OpenXml.Wordprocessing.LatentStyles openXmlElement)
   {
-    return openXmlElement?.Count?.Value;
+    return openXmlElement.Count?.Value;
   }
-
-  public static void SetCount(LatentStyles? openXmlElement, Int32? value)
+  
+  private static void SetCount(DocumentFormat.OpenXml.Wordprocessing.LatentStyles openXmlElement, Int32? value)
   {
-    if (openXmlElement != null)
-      openXmlElement.Count = value;
+    openXmlElement.Count = value;
   }
-
-  public static Collection<LatentStyleExceptionInfo>? GetLatentStyleExceptionInfos(LatentStyles? openXmlElement)
+  
+  private static System.Collections.ObjectModel.Collection<DocumentModel.Wordprocessing.LatentStyleExceptionInfo> GetLatentStyleExceptionInfos(DocumentFormat.OpenXml.Wordprocessing.LatentStyles openXmlElement)
   {
-    if (openXmlElement != null)
+    var collection = new System.Collections.ObjectModel.Collection<DocumentModel.Wordprocessing.LatentStyleExceptionInfo>();
+    foreach (var item in openXmlElement.Elements<DocumentFormat.OpenXml.Wordprocessing.LatentStyleExceptionInfo>())
     {
-      var collection = new Collection<LatentStyleExceptionInfo>();
-      foreach (var item in openXmlElement.Elements<DocumentFormat.OpenXml.Wordprocessing.LatentStyleExceptionInfo>())
+      var newItem = DocumentModel.OpenXml.Wordprocessing.LatentStyleExceptionInfoConverter.CreateModelElement(item);
+      if (newItem != null)
+        collection.Add(newItem);
+    }
+    return collection;
+  }
+  
+  private static void SetLatentStyleExceptionInfos(DocumentFormat.OpenXml.Wordprocessing.LatentStyles openXmlElement, System.Collections.ObjectModel.Collection<DocumentModel.Wordprocessing.LatentStyleExceptionInfo>? value)
+  {
+    openXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Wordprocessing.LatentStyleExceptionInfo>();
+    if (value != null)
+    {
+      foreach (var item in value)
       {
-        var newItem = LatentStyleExceptionInfoConverter.CreateModelElement(item);
+        var newItem = DocumentModel.OpenXml.Wordprocessing.LatentStyleExceptionInfoConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.LatentStyleExceptionInfo>(item);
         if (newItem != null)
-          collection.Add(newItem);
+          openXmlElement.AddChild(newItem);
       }
-      return collection;
-    }
-    return null;
-  }
-
-  public static void SetLatentStyleExceptionInfos(LatentStyles? openXmlElement, Collection<LatentStyleExceptionInfo>? value)
-  {
-    if (openXmlElement != null)
-    {
-      openXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Wordprocessing.LatentStyleExceptionInfo>();
-      if (value != null)
-        foreach (var item in value)
-        {
-          var newItem = LatentStyleExceptionInfoConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.LatentStyleExceptionInfo>(item);
-          if (newItem != null)
-            openXmlElement.AddChild(newItem);
-        }
     }
   }
-
-  public static DocumentModel.Wordprocessing.LatentStyles? CreateModelElement(LatentStyles? openXmlElement)
+  
+  public static DocumentModel.Wordprocessing.LatentStyles? CreateModelElement(DocumentFormat.OpenXml.Wordprocessing.LatentStyles? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -151,9 +137,9 @@ public static class LatentStylesConverter
     }
     return null;
   }
-
+  
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.LatentStyles? value)
-    where OpenXmlElementType : LatentStyles, new()
+    where OpenXmlElementType: DocumentFormat.OpenXml.Wordprocessing.LatentStyles, new()
   {
     if (value != null)
     {

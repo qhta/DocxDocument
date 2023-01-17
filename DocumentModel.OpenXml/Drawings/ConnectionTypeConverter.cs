@@ -1,41 +1,37 @@
-using DocumentFormat.OpenXml.Drawing;
-
 namespace DocumentModel.OpenXml.Drawings;
 
 /// <summary>
-///   Defines the ConnectionType Class.
+/// Defines the ConnectionType Class.
 /// </summary>
 public static class ConnectionTypeConverter
 {
   /// <summary>
-  ///   Identifier
+  /// Identifier
   /// </summary>
-  public static UInt32? GetId(ConnectionType? openXmlElement)
+  private static UInt32? GetId(DocumentFormat.OpenXml.Drawing.ConnectionType openXmlElement)
   {
-    return openXmlElement?.Id?.Value;
+    return openXmlElement.Id?.Value;
   }
-
-  public static void SetId(ConnectionType? openXmlElement, UInt32? value)
+  
+  private static void SetId(DocumentFormat.OpenXml.Drawing.ConnectionType openXmlElement, UInt32? value)
   {
-    if (openXmlElement != null)
-      openXmlElement.Id = value;
+    openXmlElement.Id = value;
   }
-
+  
   /// <summary>
-  ///   Index
+  /// Index
   /// </summary>
-  public static UInt32? GetIndex(ConnectionType? openXmlElement)
+  private static UInt32? GetIndex(DocumentFormat.OpenXml.Drawing.ConnectionType openXmlElement)
   {
-    return openXmlElement?.Index?.Value;
+    return openXmlElement.Index?.Value;
   }
-
-  public static void SetIndex(ConnectionType? openXmlElement, UInt32? value)
+  
+  private static void SetIndex(DocumentFormat.OpenXml.Drawing.ConnectionType openXmlElement, UInt32? value)
   {
-    if (openXmlElement != null)
-      openXmlElement.Index = value;
+    openXmlElement.Index = value;
   }
-
-  public static DocumentModel.Drawings.ConnectionType? CreateModelElement(ConnectionType? openXmlElement)
+  
+  public static DocumentModel.Drawings.ConnectionType? CreateModelElement(DocumentFormat.OpenXml.Drawing.ConnectionType? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -46,9 +42,9 @@ public static class ConnectionTypeConverter
     }
     return null;
   }
-
+  
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.ConnectionType? value)
-    where OpenXmlElementType : ConnectionType, new()
+    where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.ConnectionType, new()
   {
     if (value != null)
     {

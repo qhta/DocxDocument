@@ -1,64 +1,59 @@
-using DocumentFormat.OpenXml.Wordprocessing;
-
 namespace DocumentModel.OpenXml.Wordprocessing;
 
 /// <summary>
-///   Custom XML Attribute.
+/// Custom XML Attribute.
 /// </summary>
 public static class CustomXmlAttributeConverter
 {
   /// <summary>
-  ///   uri
+  /// uri
   /// </summary>
-  public static String? GetUri(CustomXmlAttribute? openXmlElement)
+  private static String? GetUri(DocumentFormat.OpenXml.Wordprocessing.CustomXmlAttribute openXmlElement)
   {
     return openXmlElement?.Uri?.Value;
   }
-
-  public static void SetUri(CustomXmlAttribute? openXmlElement, String? value)
+  
+  private static void SetUri(DocumentFormat.OpenXml.Wordprocessing.CustomXmlAttribute openXmlElement, String? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.Uri = new StringValue { Value = value };
-      else
-        openXmlElement.Uri = null;
+    if (value != null)
+      openXmlElement.Uri = new StringValue { Value = value };
+    else
+      openXmlElement.Uri = null;
   }
-
+  
   /// <summary>
-  ///   name
+  /// name
   /// </summary>
-  public static String? GetName(CustomXmlAttribute? openXmlElement)
+  private static String? GetName(DocumentFormat.OpenXml.Wordprocessing.CustomXmlAttribute openXmlElement)
   {
     return openXmlElement?.Name?.Value;
   }
-
-  public static void SetName(CustomXmlAttribute? openXmlElement, String? value)
+  
+  private static void SetName(DocumentFormat.OpenXml.Wordprocessing.CustomXmlAttribute openXmlElement, String? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.Name = new StringValue { Value = value };
-      else
-        openXmlElement.Name = null;
+    if (value != null)
+      openXmlElement.Name = new StringValue { Value = value };
+    else
+      openXmlElement.Name = null;
   }
-
+  
   /// <summary>
-  ///   val
+  /// val
   /// </summary>
-  public static String? GetVal(CustomXmlAttribute? openXmlElement)
+  private static String? GetVal(DocumentFormat.OpenXml.Wordprocessing.CustomXmlAttribute openXmlElement)
   {
     return openXmlElement?.Val?.Value;
   }
-
-  public static void SetVal(CustomXmlAttribute? openXmlElement, String? value)
+  
+  private static void SetVal(DocumentFormat.OpenXml.Wordprocessing.CustomXmlAttribute openXmlElement, String? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.Val = new StringValue { Value = value };
-      else
-        openXmlElement.Val = null;
+    if (value != null)
+      openXmlElement.Val = new StringValue { Value = value };
+    else
+      openXmlElement.Val = null;
   }
-
-  public static DocumentModel.Wordprocessing.CustomXmlAttribute? CreateModelElement(CustomXmlAttribute? openXmlElement)
+  
+  public static DocumentModel.Wordprocessing.CustomXmlAttribute? CreateModelElement(DocumentFormat.OpenXml.Wordprocessing.CustomXmlAttribute? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -70,9 +65,9 @@ public static class CustomXmlAttributeConverter
     }
     return null;
   }
-
+  
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.CustomXmlAttribute? value)
-    where OpenXmlElementType : CustomXmlAttribute, new()
+    where OpenXmlElementType: DocumentFormat.OpenXml.Wordprocessing.CustomXmlAttribute, new()
   {
     if (value != null)
     {

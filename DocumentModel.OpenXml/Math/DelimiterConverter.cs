@@ -1,72 +1,61 @@
-using DocumentModel.Math;
-using Delimiter = DocumentFormat.OpenXml.Math.Delimiter;
-
 namespace DocumentModel.OpenXml.Math;
 
 /// <summary>
-///   Delimiter Function.
+/// Delimiter Function.
 /// </summary>
 public static class DelimiterConverter
 {
   /// <summary>
-  ///   Delimiter Properties.
+  /// Delimiter Properties.
   /// </summary>
-  public static DelimiterProperties? GetDelimiterProperties(Delimiter? openXmlElement)
+  private static DocumentModel.Math.DelimiterProperties? GetDelimiterProperties(DocumentFormat.OpenXml.Math.Delimiter openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Math.DelimiterProperties>();
     if (itemElement != null)
-      return DelimiterPropertiesConverter.CreateModelElement(itemElement);
+      return DocumentModel.OpenXml.Math.DelimiterPropertiesConverter.CreateModelElement(itemElement);
     return null;
   }
-
-  public static void SetDelimiterProperties(Delimiter? openXmlElement, DelimiterProperties? value)
+  
+  private static void SetDelimiterProperties(DocumentFormat.OpenXml.Math.Delimiter openXmlElement, DocumentModel.Math.DelimiterProperties? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Math.DelimiterProperties>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Math.DelimiterProperties>();
+      itemElement = DocumentModel.OpenXml.Math.DelimiterPropertiesConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Math.DelimiterProperties>(value);
       if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = DelimiterPropertiesConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Math.DelimiterProperties>(value);
-        if (itemElement != null)
-          openXmlElement.AddChild(itemElement);
-      }
+        openXmlElement.AddChild(itemElement);
     }
   }
-
-  public static Collection<Base>? GetBases(Delimiter? openXmlElement)
+  
+  private static System.Collections.ObjectModel.Collection<DocumentModel.Math.Base> GetBases(DocumentFormat.OpenXml.Math.Delimiter openXmlElement)
   {
-    if (openXmlElement != null)
+    var collection = new System.Collections.ObjectModel.Collection<DocumentModel.Math.Base>();
+    foreach (var item in openXmlElement.Elements<DocumentFormat.OpenXml.Math.Base>())
     {
-      var collection = new Collection<Base>();
-      foreach (var item in openXmlElement.Elements<DocumentFormat.OpenXml.Math.Base>())
+      var newItem = DocumentModel.OpenXml.Math.BaseConverter.CreateModelElement(item);
+      if (newItem != null)
+        collection.Add(newItem);
+    }
+    return collection;
+  }
+  
+  private static void SetBases(DocumentFormat.OpenXml.Math.Delimiter openXmlElement, System.Collections.ObjectModel.Collection<DocumentModel.Math.Base>? value)
+  {
+    openXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Math.Base>();
+    if (value != null)
+    {
+      foreach (var item in value)
       {
-        var newItem = BaseConverter.CreateModelElement(item);
+        var newItem = DocumentModel.OpenXml.Math.BaseConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Math.Base>(item);
         if (newItem != null)
-          collection.Add(newItem);
+          openXmlElement.AddChild(newItem);
       }
-      return collection;
-    }
-    return null;
-  }
-
-  public static void SetBases(Delimiter? openXmlElement, Collection<Base>? value)
-  {
-    if (openXmlElement != null)
-    {
-      openXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Math.Base>();
-      if (value != null)
-        foreach (var item in value)
-        {
-          var newItem = BaseConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Math.Base>(item);
-          if (newItem != null)
-            openXmlElement.AddChild(newItem);
-        }
     }
   }
-
-  public static DocumentModel.Math.Delimiter? CreateModelElement(Delimiter? openXmlElement)
+  
+  public static DocumentModel.Math.Delimiter? CreateModelElement(DocumentFormat.OpenXml.Math.Delimiter? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -77,9 +66,9 @@ public static class DelimiterConverter
     }
     return null;
   }
-
+  
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Math.Delimiter? value)
-    where OpenXmlElementType : Delimiter, new()
+    where OpenXmlElementType: DocumentFormat.OpenXml.Math.Delimiter, new()
   {
     if (value != null)
     {

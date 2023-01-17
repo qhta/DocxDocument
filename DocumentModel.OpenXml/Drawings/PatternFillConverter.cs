@@ -1,85 +1,72 @@
-using DocumentFormat.OpenXml.Drawing;
-using DocumentModel.Drawings;
-using BackgroundColor = DocumentModel.Drawings.BackgroundColor;
-using ForegroundColor = DocumentModel.Drawings.ForegroundColor;
-using PatternFill = DocumentFormat.OpenXml.Drawing.PatternFill;
-
 namespace DocumentModel.OpenXml.Drawings;
 
 /// <summary>
-///   Pattern Fill.
+/// Pattern Fill.
 /// </summary>
 public static class PatternFillConverter
 {
   /// <summary>
-  ///   Preset Pattern
+  /// Preset Pattern
   /// </summary>
-  public static PresetPatternKind? GetPreset(PatternFill? openXmlElement)
+  private static DocumentModel.Drawings.PresetPatternKind? GetPreset(DocumentFormat.OpenXml.Drawing.PatternFill openXmlElement)
   {
-    return EnumValueConverter.GetValue<PresetPatternValues, PresetPatternKind>(openXmlElement?.Preset?.Value);
+    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Drawing.PresetPatternValues, DocumentModel.Drawings.PresetPatternKind>(openXmlElement?.Preset?.Value);
   }
-
-  public static void SetPreset(PatternFill? openXmlElement, PresetPatternKind? value)
+  
+  private static void SetPreset(DocumentFormat.OpenXml.Drawing.PatternFill openXmlElement, DocumentModel.Drawings.PresetPatternKind? value)
   {
-    if (openXmlElement != null)
-      openXmlElement.Preset = EnumValueConverter.CreateEnumValue<PresetPatternValues, PresetPatternKind>(value);
+    openXmlElement.Preset = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Drawing.PresetPatternValues, DocumentModel.Drawings.PresetPatternKind>(value);
   }
-
+  
   /// <summary>
-  ///   Foreground color.
+  /// Foreground color.
   /// </summary>
-  public static ForegroundColor? GetForegroundColor(PatternFill? openXmlElement)
+  private static DocumentModel.Drawings.ForegroundColor? GetForegroundColor(DocumentFormat.OpenXml.Drawing.PatternFill openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.ForegroundColor>();
     if (itemElement != null)
-      return ForegroundColorConverter.CreateModelElement(itemElement);
+      return DocumentModel.OpenXml.Drawings.ForegroundColorConverter.CreateModelElement(itemElement);
     return null;
   }
-
-  public static void SetForegroundColor(PatternFill? openXmlElement, ForegroundColor? value)
+  
+  private static void SetForegroundColor(DocumentFormat.OpenXml.Drawing.PatternFill openXmlElement, DocumentModel.Drawings.ForegroundColor? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.ForegroundColor>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.ForegroundColor>();
+      itemElement = DocumentModel.OpenXml.Drawings.ForegroundColorConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.ForegroundColor>(value);
       if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = ForegroundColorConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.ForegroundColor>(value);
-        if (itemElement != null)
-          openXmlElement.AddChild(itemElement);
-      }
+        openXmlElement.AddChild(itemElement);
     }
   }
-
+  
   /// <summary>
-  ///   Background color.
+  /// Background color.
   /// </summary>
-  public static BackgroundColor? GetBackgroundColor(PatternFill? openXmlElement)
+  private static DocumentModel.Drawings.BackgroundColor? GetBackgroundColor(DocumentFormat.OpenXml.Drawing.PatternFill openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.BackgroundColor>();
     if (itemElement != null)
-      return BackgroundColorConverter.CreateModelElement(itemElement);
+      return DocumentModel.OpenXml.Drawings.BackgroundColorConverter.CreateModelElement(itemElement);
     return null;
   }
-
-  public static void SetBackgroundColor(PatternFill? openXmlElement, BackgroundColor? value)
+  
+  private static void SetBackgroundColor(DocumentFormat.OpenXml.Drawing.PatternFill openXmlElement, DocumentModel.Drawings.BackgroundColor? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.BackgroundColor>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.BackgroundColor>();
+      itemElement = DocumentModel.OpenXml.Drawings.BackgroundColorConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.BackgroundColor>(value);
       if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = BackgroundColorConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.BackgroundColor>(value);
-        if (itemElement != null)
-          openXmlElement.AddChild(itemElement);
-      }
+        openXmlElement.AddChild(itemElement);
     }
   }
-
-  public static DocumentModel.Drawings.PatternFill? CreateModelElement(PatternFill? openXmlElement)
+  
+  public static DocumentModel.Drawings.PatternFill? CreateModelElement(DocumentFormat.OpenXml.Drawing.PatternFill? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -91,9 +78,9 @@ public static class PatternFillConverter
     }
     return null;
   }
-
+  
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.PatternFill? value)
-    where OpenXmlElementType : PatternFill, new()
+    where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.PatternFill, new()
   {
     if (value != null)
     {

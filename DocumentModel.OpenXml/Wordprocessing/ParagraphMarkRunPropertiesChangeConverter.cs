@@ -1,89 +1,80 @@
-using DocumentFormat.OpenXml.Wordprocessing;
-using PreviousParagraphMarkRunProperties = DocumentModel.Wordprocessing.PreviousParagraphMarkRunProperties;
-
 namespace DocumentModel.OpenXml.Wordprocessing;
 
 /// <summary>
-///   Revision Information for Run Properties on the Paragraph Mark.
+/// Revision Information for Run Properties on the Paragraph Mark.
 /// </summary>
 public static class ParagraphMarkRunPropertiesChangeConverter
 {
   /// <summary>
-  ///   author
+  /// author
   /// </summary>
-  public static String? GetAuthor(ParagraphMarkRunPropertiesChange? openXmlElement)
+  private static String? GetAuthor(DocumentFormat.OpenXml.Wordprocessing.ParagraphMarkRunPropertiesChange openXmlElement)
   {
     return openXmlElement?.Author?.Value;
   }
-
-  public static void SetAuthor(ParagraphMarkRunPropertiesChange? openXmlElement, String? value)
+  
+  private static void SetAuthor(DocumentFormat.OpenXml.Wordprocessing.ParagraphMarkRunPropertiesChange openXmlElement, String? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.Author = new StringValue { Value = value };
-      else
-        openXmlElement.Author = null;
+    if (value != null)
+      openXmlElement.Author = new StringValue { Value = value };
+    else
+      openXmlElement.Author = null;
   }
-
+  
   /// <summary>
-  ///   date
+  /// date
   /// </summary>
-  public static DateTime? GetDate(ParagraphMarkRunPropertiesChange? openXmlElement)
+  private static DateTime? GetDate(DocumentFormat.OpenXml.Wordprocessing.ParagraphMarkRunPropertiesChange openXmlElement)
   {
-    return openXmlElement?.Date?.Value;
+    return openXmlElement.Date?.Value;
   }
-
-  public static void SetDate(ParagraphMarkRunPropertiesChange? openXmlElement, DateTime? value)
+  
+  private static void SetDate(DocumentFormat.OpenXml.Wordprocessing.ParagraphMarkRunPropertiesChange openXmlElement, DateTime? value)
   {
-    if (openXmlElement != null)
-      openXmlElement.Date = value;
+    openXmlElement.Date = value;
   }
-
+  
   /// <summary>
-  ///   Annotation Identifier
+  /// Annotation Identifier
   /// </summary>
-  public static String? GetId(ParagraphMarkRunPropertiesChange? openXmlElement)
+  private static String? GetId(DocumentFormat.OpenXml.Wordprocessing.ParagraphMarkRunPropertiesChange openXmlElement)
   {
     return openXmlElement?.Id?.Value;
   }
-
-  public static void SetId(ParagraphMarkRunPropertiesChange? openXmlElement, String? value)
+  
+  private static void SetId(DocumentFormat.OpenXml.Wordprocessing.ParagraphMarkRunPropertiesChange openXmlElement, String? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.Id = new StringValue { Value = value };
-      else
-        openXmlElement.Id = null;
+    if (value != null)
+      openXmlElement.Id = new StringValue { Value = value };
+    else
+      openXmlElement.Id = null;
   }
-
+  
   /// <summary>
-  ///   Previous Run Properties for the Paragraph Mark.
+  /// Previous Run Properties for the Paragraph Mark.
   /// </summary>
-  public static PreviousParagraphMarkRunProperties? GetPreviousParagraphMarkRunProperties(ParagraphMarkRunPropertiesChange? openXmlElement)
+  private static DocumentModel.Wordprocessing.PreviousParagraphMarkRunProperties? GetPreviousParagraphMarkRunProperties(DocumentFormat.OpenXml.Wordprocessing.ParagraphMarkRunPropertiesChange openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.PreviousParagraphMarkRunProperties>();
     if (itemElement != null)
-      return PreviousParagraphMarkRunPropertiesConverter.CreateModelElement(itemElement);
+      return DocumentModel.OpenXml.Wordprocessing.PreviousParagraphMarkRunPropertiesConverter.CreateModelElement(itemElement);
     return null;
   }
-
-  public static void SetPreviousParagraphMarkRunProperties(ParagraphMarkRunPropertiesChange? openXmlElement, PreviousParagraphMarkRunProperties? value)
+  
+  private static void SetPreviousParagraphMarkRunProperties(DocumentFormat.OpenXml.Wordprocessing.ParagraphMarkRunPropertiesChange openXmlElement, DocumentModel.Wordprocessing.PreviousParagraphMarkRunProperties? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.PreviousParagraphMarkRunProperties>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.PreviousParagraphMarkRunProperties>();
+      itemElement = DocumentModel.OpenXml.Wordprocessing.PreviousParagraphMarkRunPropertiesConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.PreviousParagraphMarkRunProperties>(value);
       if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = PreviousParagraphMarkRunPropertiesConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.PreviousParagraphMarkRunProperties>(value);
-        if (itemElement != null)
-          openXmlElement.AddChild(itemElement);
-      }
+        openXmlElement.AddChild(itemElement);
     }
   }
-
-  public static DocumentModel.Wordprocessing.ParagraphMarkRunPropertiesChange? CreateModelElement(ParagraphMarkRunPropertiesChange? openXmlElement)
+  
+  public static DocumentModel.Wordprocessing.ParagraphMarkRunPropertiesChange? CreateModelElement(DocumentFormat.OpenXml.Wordprocessing.ParagraphMarkRunPropertiesChange? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -96,9 +87,9 @@ public static class ParagraphMarkRunPropertiesChangeConverter
     }
     return null;
   }
-
+  
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.ParagraphMarkRunPropertiesChange? value)
-    where OpenXmlElementType : ParagraphMarkRunPropertiesChange, new()
+    where OpenXmlElementType: DocumentFormat.OpenXml.Wordprocessing.ParagraphMarkRunPropertiesChange, new()
   {
     if (value != null)
     {

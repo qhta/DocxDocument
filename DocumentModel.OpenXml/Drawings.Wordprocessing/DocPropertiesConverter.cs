@@ -1,177 +1,160 @@
-using DocumentFormat.OpenXml.Drawing.Wordprocessing;
-using DocumentModel.Drawings;
-
 namespace DocumentModel.OpenXml.Drawings.Wordprocessing;
 
 /// <summary>
-///   Drawing Object Non-Visual Properties.
+/// Drawing Object Non-Visual Properties.
 /// </summary>
 public static class DocPropertiesConverter
 {
   /// <summary>
-  ///   Application defined unique identifier.
+  /// Application defined unique identifier.
   /// </summary>
-  public static UInt32? GetId(DocProperties? openXmlElement)
+  private static UInt32? GetId(DocumentFormat.OpenXml.Drawing.Wordprocessing.DocProperties openXmlElement)
   {
-    return openXmlElement?.Id?.Value;
+    return openXmlElement.Id?.Value;
   }
-
-  public static void SetId(DocProperties? openXmlElement, UInt32? value)
+  
+  private static void SetId(DocumentFormat.OpenXml.Drawing.Wordprocessing.DocProperties openXmlElement, UInt32? value)
   {
-    if (openXmlElement != null)
-      openXmlElement.Id = value;
+    openXmlElement.Id = value;
   }
-
+  
   /// <summary>
-  ///   Name compatible with Object Model (non-unique).
+  /// Name compatible with Object Model (non-unique).
   /// </summary>
-  public static String? GetName(DocProperties? openXmlElement)
+  private static String? GetName(DocumentFormat.OpenXml.Drawing.Wordprocessing.DocProperties openXmlElement)
   {
     return openXmlElement?.Name?.Value;
   }
-
-  public static void SetName(DocProperties? openXmlElement, String? value)
+  
+  private static void SetName(DocumentFormat.OpenXml.Drawing.Wordprocessing.DocProperties openXmlElement, String? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.Name = new StringValue { Value = value };
-      else
-        openXmlElement.Name = null;
+    if (value != null)
+      openXmlElement.Name = new StringValue { Value = value };
+    else
+      openXmlElement.Name = null;
   }
-
+  
   /// <summary>
-  ///   Description of the drawing element.
+  /// Description of the drawing element.
   /// </summary>
-  public static String? GetDescription(DocProperties? openXmlElement)
+  private static String? GetDescription(DocumentFormat.OpenXml.Drawing.Wordprocessing.DocProperties openXmlElement)
   {
     return openXmlElement?.Description?.Value;
   }
-
-  public static void SetDescription(DocProperties? openXmlElement, String? value)
+  
+  private static void SetDescription(DocumentFormat.OpenXml.Drawing.Wordprocessing.DocProperties openXmlElement, String? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.Description = new StringValue { Value = value };
-      else
-        openXmlElement.Description = null;
+    if (value != null)
+      openXmlElement.Description = new StringValue { Value = value };
+    else
+      openXmlElement.Description = null;
   }
-
+  
   /// <summary>
-  ///   Flag determining to show or hide this element.
+  /// Flag determining to show or hide this element.
   /// </summary>
-  public static Boolean? GetHidden(DocProperties? openXmlElement)
+  private static Boolean? GetHidden(DocumentFormat.OpenXml.Drawing.Wordprocessing.DocProperties openXmlElement)
   {
     return openXmlElement?.Hidden?.Value;
   }
-
-  public static void SetHidden(DocProperties? openXmlElement, Boolean? value)
+  
+  private static void SetHidden(DocumentFormat.OpenXml.Drawing.Wordprocessing.DocProperties openXmlElement, Boolean? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.Hidden = new BooleanValue { Value = (Boolean)value };
-      else
-        openXmlElement.Hidden = null;
+    if (value != null)
+      openXmlElement.Hidden = new BooleanValue { Value = (Boolean)value };
+    else
+      openXmlElement.Hidden = null;
   }
-
+  
   /// <summary>
-  ///   Title
+  /// Title
   /// </summary>
-  public static String? GetTitle(DocProperties? openXmlElement)
+  private static String? GetTitle(DocumentFormat.OpenXml.Drawing.Wordprocessing.DocProperties openXmlElement)
   {
     return openXmlElement?.Title?.Value;
   }
-
-  public static void SetTitle(DocProperties? openXmlElement, String? value)
+  
+  private static void SetTitle(DocumentFormat.OpenXml.Drawing.Wordprocessing.DocProperties openXmlElement, String? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.Title = new StringValue { Value = value };
-      else
-        openXmlElement.Title = null;
+    if (value != null)
+      openXmlElement.Title = new StringValue { Value = value };
+    else
+      openXmlElement.Title = null;
   }
-
+  
   /// <summary>
-  ///   Hyperlink associated with clicking or selecting the element..
+  /// Hyperlink associated with clicking or selecting the element..
   /// </summary>
-  public static HyperlinkOnClick? GetHyperlinkOnClick(DocProperties? openXmlElement)
+  private static DocumentModel.Drawings.HyperlinkOnClick? GetHyperlinkOnClick(DocumentFormat.OpenXml.Drawing.Wordprocessing.DocProperties openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.HyperlinkOnClick>();
     if (itemElement != null)
-      return HyperlinkOnClickConverter.CreateModelElement(itemElement);
+      return DocumentModel.OpenXml.Drawings.HyperlinkOnClickConverter.CreateModelElement(itemElement);
     return null;
   }
-
-  public static void SetHyperlinkOnClick(DocProperties? openXmlElement, HyperlinkOnClick? value)
+  
+  private static void SetHyperlinkOnClick(DocumentFormat.OpenXml.Drawing.Wordprocessing.DocProperties openXmlElement, DocumentModel.Drawings.HyperlinkOnClick? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.HyperlinkOnClick>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.HyperlinkOnClick>();
+      itemElement = DocumentModel.OpenXml.Drawings.HyperlinkOnClickConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.HyperlinkOnClick>(value);
       if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = HyperlinkOnClickConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.HyperlinkOnClick>(value);
-        if (itemElement != null)
-          openXmlElement.AddChild(itemElement);
-      }
+        openXmlElement.AddChild(itemElement);
     }
   }
-
+  
   /// <summary>
-  ///   Hyperlink associated with hovering over the element..
+  /// Hyperlink associated with hovering over the element..
   /// </summary>
-  public static HyperlinkOnHover? GetHyperlinkOnHover(DocProperties? openXmlElement)
+  private static DocumentModel.Drawings.HyperlinkOnHover? GetHyperlinkOnHover(DocumentFormat.OpenXml.Drawing.Wordprocessing.DocProperties openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.HyperlinkOnHover>();
     if (itemElement != null)
-      return HyperlinkOnHoverConverter.CreateModelElement(itemElement);
+      return DocumentModel.OpenXml.Drawings.HyperlinkOnHoverConverter.CreateModelElement(itemElement);
     return null;
   }
-
-  public static void SetHyperlinkOnHover(DocProperties? openXmlElement, HyperlinkOnHover? value)
+  
+  private static void SetHyperlinkOnHover(DocumentFormat.OpenXml.Drawing.Wordprocessing.DocProperties openXmlElement, DocumentModel.Drawings.HyperlinkOnHover? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.HyperlinkOnHover>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.HyperlinkOnHover>();
+      itemElement = DocumentModel.OpenXml.Drawings.HyperlinkOnHoverConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.HyperlinkOnHover>(value);
       if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = HyperlinkOnHoverConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.HyperlinkOnHover>(value);
-        if (itemElement != null)
-          openXmlElement.AddChild(itemElement);
-      }
+        openXmlElement.AddChild(itemElement);
     }
   }
-
+  
   /// <summary>
-  ///   Future extension.
+  /// Future extension.
   /// </summary>
-  public static NonVisualDrawingPropertiesExtensionList? GetNonVisualDrawingPropertiesExtensionList(DocProperties? openXmlElement)
+  private static DocumentModel.Drawings.NonVisualDrawingPropertiesExtensionList? GetNonVisualDrawingPropertiesExtensionList(DocumentFormat.OpenXml.Drawing.Wordprocessing.DocProperties openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.NonVisualDrawingPropertiesExtensionList>();
     if (itemElement != null)
-      return NonVisualDrawingPropertiesExtensionListConverter.CreateModelElement(itemElement);
+      return DocumentModel.OpenXml.Drawings.NonVisualDrawingPropertiesExtensionListConverter.CreateModelElement(itemElement);
     return null;
   }
-
-  public static void SetNonVisualDrawingPropertiesExtensionList(DocProperties? openXmlElement, NonVisualDrawingPropertiesExtensionList? value)
+  
+  private static void SetNonVisualDrawingPropertiesExtensionList(DocumentFormat.OpenXml.Drawing.Wordprocessing.DocProperties openXmlElement, DocumentModel.Drawings.NonVisualDrawingPropertiesExtensionList? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.NonVisualDrawingPropertiesExtensionList>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.NonVisualDrawingPropertiesExtensionList>();
+      itemElement = DocumentModel.OpenXml.Drawings.NonVisualDrawingPropertiesExtensionListConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.NonVisualDrawingPropertiesExtensionList>(value);
       if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = NonVisualDrawingPropertiesExtensionListConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.NonVisualDrawingPropertiesExtensionList>(value);
-        if (itemElement != null)
-          openXmlElement.AddChild(itemElement);
-      }
+        openXmlElement.AddChild(itemElement);
     }
   }
-
-  public static DocumentModel.Drawings.Wordprocessing.DocProperties? CreateModelElement(DocProperties? openXmlElement)
+  
+  public static DocumentModel.Drawings.Wordprocessing.DocProperties? CreateModelElement(DocumentFormat.OpenXml.Drawing.Wordprocessing.DocProperties? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -188,9 +171,9 @@ public static class DocPropertiesConverter
     }
     return null;
   }
-
+  
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.Wordprocessing.DocProperties? value)
-    where OpenXmlElementType : DocProperties, new()
+    where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.Wordprocessing.DocProperties, new()
   {
     if (value != null)
     {

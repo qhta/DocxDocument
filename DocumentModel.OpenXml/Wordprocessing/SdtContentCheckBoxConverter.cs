@@ -1,99 +1,83 @@
-using DocumentFormat.OpenXml.Office2010.Word;
-using DocumentModel.Wordprocessing;
-using CheckBoxSymbolType = DocumentModel.Wordprocessing.CheckBoxSymbolType;
-using SdtContentCheckBox = DocumentFormat.OpenXml.Office2010.Word.SdtContentCheckBox;
-
 namespace DocumentModel.OpenXml.Wordprocessing;
 
 /// <summary>
-///   Defines the SdtContentCheckBox Class.
+/// Defines the SdtContentCheckBox Class.
 /// </summary>
 public static class SdtContentCheckBoxConverter
 {
   /// <summary>
-  ///   Checked.
+  /// Checked.
   /// </summary>
-  public static OnOffKind? GetChecked(SdtContentCheckBox? openXmlElement)
+  private static DocumentModel.Wordprocessing.OnOffKind? GetChecked(DocumentFormat.OpenXml.Office2010.Word.SdtContentCheckBox openXmlElement)
   {
-    if (openXmlElement != null)
-    {
-      var itemElement = openXmlElement.GetFirstChild<Checked>();
-      if (itemElement?.Val?.Value != null) return EnumValueConverter.GetValue<OnOffValues, OnOffKind>(itemElement.Val.Value);
-    }
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2010.Word.Checked>();
+    if (itemElement?.Val?.Value != null)
+      return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Office2010.Word.OnOffValues, DocumentModel.Wordprocessing.OnOffKind>(itemElement.Val.Value);
     return null;
   }
-
-  public static void SetChecked(SdtContentCheckBox? openXmlElement, OnOffKind? value)
+  
+  private static void SetChecked(DocumentFormat.OpenXml.Office2010.Word.SdtContentCheckBox openXmlElement, DocumentModel.Wordprocessing.OnOffKind? value)
   {
-    if (openXmlElement != null)
-    {
-      var itemElement = openXmlElement.GetFirstChild<Checked>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = EnumValueConverter.CreateOpenXmlElement<Checked, OnOffValues, OnOffKind>(value);
-        if (itemElement != null)
-          openXmlElement.AddChild(itemElement);
-      }
-    }
-  }
-
-  /// <summary>
-  ///   CheckedState.
-  /// </summary>
-  public static CheckBoxSymbolType? GetCheckedState(SdtContentCheckBox? openXmlElement)
-  {
-    var itemElement = openXmlElement?.GetFirstChild<CheckedState>();
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2010.Word.Checked>();
     if (itemElement != null)
-      return CheckBoxSymbolTypeConverter.CreateModelElement(itemElement);
-    return null;
-  }
-
-  public static void SetCheckedState(SdtContentCheckBox? openXmlElement, CheckBoxSymbolType? value)
-  {
-    if (openXmlElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<CheckedState>();
+      itemElement = EnumValueConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2010.Word.Checked, DocumentFormat.OpenXml.Office2010.Word.OnOffValues, DocumentModel.Wordprocessing.OnOffKind>(value);
       if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = CheckBoxSymbolTypeConverter.CreateOpenXmlElement<CheckedState>(value);
-        if (itemElement != null)
-          openXmlElement.AddChild(itemElement);
-      }
+        openXmlElement.AddChild(itemElement);
     }
   }
-
+  
   /// <summary>
-  ///   UncheckedState.
+  /// CheckedState.
   /// </summary>
-  public static CheckBoxSymbolType? GetUncheckedState(SdtContentCheckBox? openXmlElement)
+  private static DocumentModel.Wordprocessing.CheckBoxSymbolType? GetCheckedState(DocumentFormat.OpenXml.Office2010.Word.SdtContentCheckBox openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<UncheckedState>();
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office2010.Word.CheckedState>();
     if (itemElement != null)
-      return CheckBoxSymbolTypeConverter.CreateModelElement(itemElement);
+      return DocumentModel.OpenXml.Wordprocessing.CheckBoxSymbolTypeConverter.CreateModelElement(itemElement);
     return null;
   }
-
-  public static void SetUncheckedState(SdtContentCheckBox? openXmlElement, CheckBoxSymbolType? value)
+  
+  private static void SetCheckedState(DocumentFormat.OpenXml.Office2010.Word.SdtContentCheckBox openXmlElement, DocumentModel.Wordprocessing.CheckBoxSymbolType? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2010.Word.CheckedState>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<UncheckedState>();
+      itemElement = DocumentModel.OpenXml.Wordprocessing.CheckBoxSymbolTypeConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2010.Word.CheckedState>(value);
       if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = CheckBoxSymbolTypeConverter.CreateOpenXmlElement<UncheckedState>(value);
-        if (itemElement != null)
-          openXmlElement.AddChild(itemElement);
-      }
+        openXmlElement.AddChild(itemElement);
     }
   }
-
-  public static DocumentModel.Wordprocessing.SdtContentCheckBox? CreateModelElement(SdtContentCheckBox? openXmlElement)
+  
+  /// <summary>
+  /// UncheckedState.
+  /// </summary>
+  private static DocumentModel.Wordprocessing.CheckBoxSymbolType? GetUncheckedState(DocumentFormat.OpenXml.Office2010.Word.SdtContentCheckBox openXmlElement)
+  {
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office2010.Word.UncheckedState>();
+    if (itemElement != null)
+      return DocumentModel.OpenXml.Wordprocessing.CheckBoxSymbolTypeConverter.CreateModelElement(itemElement);
+    return null;
+  }
+  
+  private static void SetUncheckedState(DocumentFormat.OpenXml.Office2010.Word.SdtContentCheckBox openXmlElement, DocumentModel.Wordprocessing.CheckBoxSymbolType? value)
+  {
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2010.Word.UncheckedState>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
+    {
+      itemElement = DocumentModel.OpenXml.Wordprocessing.CheckBoxSymbolTypeConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2010.Word.UncheckedState>(value);
+      if (itemElement != null)
+        openXmlElement.AddChild(itemElement);
+    }
+  }
+  
+  public static DocumentModel.Wordprocessing.SdtContentCheckBox? CreateModelElement(DocumentFormat.OpenXml.Office2010.Word.SdtContentCheckBox? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -105,9 +89,9 @@ public static class SdtContentCheckBoxConverter
     }
     return null;
   }
-
+  
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.SdtContentCheckBox? value)
-    where OpenXmlElementType : SdtContentCheckBox, new()
+    where OpenXmlElementType: DocumentFormat.OpenXml.Office2010.Word.SdtContentCheckBox, new()
   {
     if (value != null)
     {

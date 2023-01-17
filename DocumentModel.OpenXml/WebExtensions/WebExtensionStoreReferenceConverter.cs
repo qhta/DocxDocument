@@ -1,108 +1,99 @@
-using DocumentFormat.OpenXml.Office2013.WebExtension;
-
 namespace DocumentModel.OpenXml.WebExtensions;
 
 /// <summary>
-///   Defines the WebExtensionStoreReference Class.
+/// Defines the WebExtensionStoreReference Class.
 /// </summary>
 public static class WebExtensionStoreReferenceConverter
 {
   /// <summary>
-  ///   id, this property is only available in Office 2013 and later.
+  /// id, this property is only available in Office 2013 and later.
   /// </summary>
-  public static String? GetId(WebExtensionStoreReference? openXmlElement)
+  private static String? GetId(DocumentFormat.OpenXml.Office2013.WebExtension.WebExtensionStoreReference openXmlElement)
   {
     return openXmlElement?.Id?.Value;
   }
-
-  public static void SetId(WebExtensionStoreReference? openXmlElement, String? value)
+  
+  private static void SetId(DocumentFormat.OpenXml.Office2013.WebExtension.WebExtensionStoreReference openXmlElement, String? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.Id = new StringValue { Value = value };
-      else
-        openXmlElement.Id = null;
+    if (value != null)
+      openXmlElement.Id = new StringValue { Value = value };
+    else
+      openXmlElement.Id = null;
   }
-
+  
   /// <summary>
-  ///   version, this property is only available in Office 2013 and later.
+  /// version, this property is only available in Office 2013 and later.
   /// </summary>
-  public static String? GetVersion(WebExtensionStoreReference? openXmlElement)
+  private static String? GetVersion(DocumentFormat.OpenXml.Office2013.WebExtension.WebExtensionStoreReference openXmlElement)
   {
     return openXmlElement?.Version?.Value;
   }
-
-  public static void SetVersion(WebExtensionStoreReference? openXmlElement, String? value)
+  
+  private static void SetVersion(DocumentFormat.OpenXml.Office2013.WebExtension.WebExtensionStoreReference openXmlElement, String? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.Version = new StringValue { Value = value };
-      else
-        openXmlElement.Version = null;
+    if (value != null)
+      openXmlElement.Version = new StringValue { Value = value };
+    else
+      openXmlElement.Version = null;
   }
-
+  
   /// <summary>
-  ///   store, this property is only available in Office 2013 and later.
+  /// store, this property is only available in Office 2013 and later.
   /// </summary>
-  public static String? GetStore(WebExtensionStoreReference? openXmlElement)
+  private static String? GetStore(DocumentFormat.OpenXml.Office2013.WebExtension.WebExtensionStoreReference openXmlElement)
   {
     return openXmlElement?.Store?.Value;
   }
-
-  public static void SetStore(WebExtensionStoreReference? openXmlElement, String? value)
+  
+  private static void SetStore(DocumentFormat.OpenXml.Office2013.WebExtension.WebExtensionStoreReference openXmlElement, String? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.Store = new StringValue { Value = value };
-      else
-        openXmlElement.Store = null;
+    if (value != null)
+      openXmlElement.Store = new StringValue { Value = value };
+    else
+      openXmlElement.Store = null;
   }
-
+  
   /// <summary>
-  ///   storeType, this property is only available in Office 2013 and later.
+  /// storeType, this property is only available in Office 2013 and later.
   /// </summary>
-  public static String? GetStoreType(WebExtensionStoreReference? openXmlElement)
+  private static String? GetStoreType(DocumentFormat.OpenXml.Office2013.WebExtension.WebExtensionStoreReference openXmlElement)
   {
     return openXmlElement?.StoreType?.Value;
   }
-
-  public static void SetStoreType(WebExtensionStoreReference? openXmlElement, String? value)
+  
+  private static void SetStoreType(DocumentFormat.OpenXml.Office2013.WebExtension.WebExtensionStoreReference openXmlElement, String? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.StoreType = new StringValue { Value = value };
-      else
-        openXmlElement.StoreType = null;
+    if (value != null)
+      openXmlElement.StoreType = new StringValue { Value = value };
+    else
+      openXmlElement.StoreType = null;
   }
-
+  
   /// <summary>
-  ///   OfficeArtExtensionList.
+  /// OfficeArtExtensionList.
   /// </summary>
-  public static DocumentModel.WebExtensions.OfficeArtExtensionList? GetOfficeArtExtensionList(WebExtensionStoreReference? openXmlElement)
+  private static DocumentModel.WebExtensions.OfficeArtExtensionList? GetOfficeArtExtensionList(DocumentFormat.OpenXml.Office2013.WebExtension.WebExtensionStoreReference openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office2013.WebExtension.OfficeArtExtensionList>();
     if (itemElement != null)
-      return OfficeArtExtensionListConverter.CreateModelElement(itemElement);
+      return DocumentModel.OpenXml.WebExtensions.OfficeArtExtensionListConverter.CreateModelElement(itemElement);
     return null;
   }
-
-  public static void SetOfficeArtExtensionList(WebExtensionStoreReference? openXmlElement, DocumentModel.WebExtensions.OfficeArtExtensionList? value)
+  
+  private static void SetOfficeArtExtensionList(DocumentFormat.OpenXml.Office2013.WebExtension.WebExtensionStoreReference openXmlElement, DocumentModel.WebExtensions.OfficeArtExtensionList? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2013.WebExtension.OfficeArtExtensionList>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2013.WebExtension.OfficeArtExtensionList>();
+      itemElement = DocumentModel.OpenXml.WebExtensions.OfficeArtExtensionListConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2013.WebExtension.OfficeArtExtensionList>(value);
       if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = OfficeArtExtensionListConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2013.WebExtension.OfficeArtExtensionList>(value);
-        if (itemElement != null)
-          openXmlElement.AddChild(itemElement);
-      }
+        openXmlElement.AddChild(itemElement);
     }
   }
-
-  public static DocumentModel.WebExtensions.WebExtensionStoreReference? CreateModelElement(WebExtensionStoreReference? openXmlElement)
+  
+  public static DocumentModel.WebExtensions.WebExtensionStoreReference? CreateModelElement(DocumentFormat.OpenXml.Office2013.WebExtension.WebExtensionStoreReference? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -116,9 +107,9 @@ public static class WebExtensionStoreReferenceConverter
     }
     return null;
   }
-
+  
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.WebExtensions.WebExtensionStoreReference? value)
-    where OpenXmlElementType : WebExtensionStoreReference, new()
+    where OpenXmlElementType: DocumentFormat.OpenXml.Office2013.WebExtension.WebExtensionStoreReference, new()
   {
     if (value != null)
     {

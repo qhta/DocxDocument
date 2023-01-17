@@ -1,46 +1,40 @@
-using DocumentFormat.OpenXml.Wordprocessing;
-using DocumentModel.Wordprocessing;
-using NumberingFormat = DocumentFormat.OpenXml.Wordprocessing.NumberingFormat;
-
 namespace DocumentModel.OpenXml.Wordprocessing;
 
 /// <summary>
-///   Footnote Numbering Format.
+/// Footnote Numbering Format.
 /// </summary>
 public static class NumberingFormatConverter
 {
   /// <summary>
-  ///   Numbering Format Type
+  /// Numbering Format Type
   /// </summary>
-  public static NumberFormatKind? GetVal(NumberingFormat? openXmlElement)
+  private static DocumentModel.Wordprocessing.NumberFormatKind? GetVal(DocumentFormat.OpenXml.Wordprocessing.NumberingFormat openXmlElement)
   {
-    return EnumValueConverter.GetValue<NumberFormatValues, NumberFormatKind>(openXmlElement?.Val?.Value);
+    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Wordprocessing.NumberFormatValues, DocumentModel.Wordprocessing.NumberFormatKind>(openXmlElement?.Val?.Value);
   }
-
-  public static void SetVal(NumberingFormat? openXmlElement, NumberFormatKind? value)
+  
+  private static void SetVal(DocumentFormat.OpenXml.Wordprocessing.NumberingFormat openXmlElement, DocumentModel.Wordprocessing.NumberFormatKind? value)
   {
-    if (openXmlElement != null)
-      openXmlElement.Val = EnumValueConverter.CreateEnumValue<NumberFormatValues, NumberFormatKind>(value);
+    openXmlElement.Val = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Wordprocessing.NumberFormatValues, DocumentModel.Wordprocessing.NumberFormatKind>(value);
   }
-
+  
   /// <summary>
-  ///   format, this property is only available in Office 2010 and later.
+  /// format, this property is only available in Office 2010 and later.
   /// </summary>
-  public static String? GetFormat(NumberingFormat? openXmlElement)
+  private static String? GetFormat(DocumentFormat.OpenXml.Wordprocessing.NumberingFormat openXmlElement)
   {
     return openXmlElement?.Format?.Value;
   }
-
-  public static void SetFormat(NumberingFormat? openXmlElement, String? value)
+  
+  private static void SetFormat(DocumentFormat.OpenXml.Wordprocessing.NumberingFormat openXmlElement, String? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.Format = new StringValue { Value = value };
-      else
-        openXmlElement.Format = null;
+    if (value != null)
+      openXmlElement.Format = new StringValue { Value = value };
+    else
+      openXmlElement.Format = null;
   }
-
-  public static DocumentModel.Wordprocessing.NumberingFormat? CreateModelElement(NumberingFormat? openXmlElement)
+  
+  public static DocumentModel.Wordprocessing.NumberingFormat? CreateModelElement(DocumentFormat.OpenXml.Wordprocessing.NumberingFormat? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -51,9 +45,9 @@ public static class NumberingFormatConverter
     }
     return null;
   }
-
+  
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.NumberingFormat? value)
-    where OpenXmlElementType : NumberingFormat, new()
+    where OpenXmlElementType: DocumentFormat.OpenXml.Wordprocessing.NumberingFormat, new()
   {
     if (value != null)
     {

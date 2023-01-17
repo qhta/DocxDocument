@@ -1,176 +1,155 @@
-using DocumentModel.Drawings.Charts;
-using TrendlineLabel = DocumentFormat.OpenXml.Drawing.Charts.TrendlineLabel;
-
 namespace DocumentModel.OpenXml.Drawings.Charts;
 
 /// <summary>
-///   Trendline Label.
+/// Trendline Label.
 /// </summary>
 public static class TrendlineLabelConverter
 {
   /// <summary>
-  ///   Layout.
+  /// Layout.
   /// </summary>
-  public static Layout? GetLayout(TrendlineLabel? openXmlElement)
+  private static DocumentModel.Drawings.Charts.Layout? GetLayout(DocumentFormat.OpenXml.Drawing.Charts.TrendlineLabel openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.Layout>();
     if (itemElement != null)
-      return LayoutConverter.CreateModelElement(itemElement);
+      return DocumentModel.OpenXml.Drawings.Charts.LayoutConverter.CreateModelElement(itemElement);
     return null;
   }
-
-  public static void SetLayout(TrendlineLabel? openXmlElement, Layout? value)
+  
+  private static void SetLayout(DocumentFormat.OpenXml.Drawing.Charts.TrendlineLabel openXmlElement, DocumentModel.Drawings.Charts.Layout? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.Layout>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.Layout>();
+      itemElement = DocumentModel.OpenXml.Drawings.Charts.LayoutConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Charts.Layout>(value);
       if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = LayoutConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Charts.Layout>(value);
-        if (itemElement != null)
-          openXmlElement.AddChild(itemElement);
-      }
+        openXmlElement.AddChild(itemElement);
     }
   }
-
+  
   /// <summary>
-  ///   ChartText.
+  /// ChartText.
   /// </summary>
-  public static ChartText? GetChartText(TrendlineLabel? openXmlElement)
+  private static DocumentModel.Drawings.Charts.ChartText? GetChartText(DocumentFormat.OpenXml.Drawing.Charts.TrendlineLabel openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.ChartText>();
     if (itemElement != null)
-      return ChartTextConverter.CreateModelElement(itemElement);
+      return DocumentModel.OpenXml.Drawings.Charts.ChartTextConverter.CreateModelElement(itemElement);
     return null;
   }
-
-  public static void SetChartText(TrendlineLabel? openXmlElement, ChartText? value)
+  
+  private static void SetChartText(DocumentFormat.OpenXml.Drawing.Charts.TrendlineLabel openXmlElement, DocumentModel.Drawings.Charts.ChartText? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.ChartText>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.ChartText>();
+      itemElement = DocumentModel.OpenXml.Drawings.Charts.ChartTextConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Charts.ChartText>(value);
       if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = ChartTextConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Charts.ChartText>(value);
-        if (itemElement != null)
-          openXmlElement.AddChild(itemElement);
-      }
+        openXmlElement.AddChild(itemElement);
     }
   }
-
+  
   /// <summary>
-  ///   Number Format.
+  /// Number Format.
   /// </summary>
-  public static NumberingFormat? GetNumberingFormat(TrendlineLabel? openXmlElement)
+  private static DocumentModel.Drawings.Charts.NumberingFormat? GetNumberingFormat(DocumentFormat.OpenXml.Drawing.Charts.TrendlineLabel openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.NumberingFormat>();
     if (itemElement != null)
-      return NumberingFormatConverter.CreateModelElement(itemElement);
+      return DocumentModel.OpenXml.Drawings.Charts.NumberingFormatConverter.CreateModelElement(itemElement);
     return null;
   }
-
-  public static void SetNumberingFormat(TrendlineLabel? openXmlElement, NumberingFormat? value)
+  
+  private static void SetNumberingFormat(DocumentFormat.OpenXml.Drawing.Charts.TrendlineLabel openXmlElement, DocumentModel.Drawings.Charts.NumberingFormat? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.NumberingFormat>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.NumberingFormat>();
+      itemElement = DocumentModel.OpenXml.Drawings.Charts.NumberingFormatConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Charts.NumberingFormat>(value);
       if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = NumberingFormatConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Charts.NumberingFormat>(value);
-        if (itemElement != null)
-          openXmlElement.AddChild(itemElement);
-      }
+        openXmlElement.AddChild(itemElement);
     }
   }
-
+  
   /// <summary>
-  ///   ChartShapeProperties.
+  /// ChartShapeProperties.
   /// </summary>
-  public static ChartShapeProperties? GetChartShapeProperties(TrendlineLabel? openXmlElement)
+  private static DocumentModel.Drawings.Charts.ChartShapeProperties? GetChartShapeProperties(DocumentFormat.OpenXml.Drawing.Charts.TrendlineLabel openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.ChartShapeProperties>();
     if (itemElement != null)
-      return ChartShapePropertiesConverter.CreateModelElement(itemElement);
+      return DocumentModel.OpenXml.Drawings.Charts.ChartShapePropertiesConverter.CreateModelElement(itemElement);
     return null;
   }
-
-  public static void SetChartShapeProperties(TrendlineLabel? openXmlElement, ChartShapeProperties? value)
+  
+  private static void SetChartShapeProperties(DocumentFormat.OpenXml.Drawing.Charts.TrendlineLabel openXmlElement, DocumentModel.Drawings.Charts.ChartShapeProperties? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.ChartShapeProperties>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.ChartShapeProperties>();
+      itemElement = DocumentModel.OpenXml.Drawings.Charts.ChartShapePropertiesConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Charts.ChartShapeProperties>(value);
       if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = ChartShapePropertiesConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Charts.ChartShapeProperties>(value);
-        if (itemElement != null)
-          openXmlElement.AddChild(itemElement);
-      }
+        openXmlElement.AddChild(itemElement);
     }
   }
-
+  
   /// <summary>
-  ///   TextProperties.
+  /// TextProperties.
   /// </summary>
-  public static TextProperties? GetTextProperties(TrendlineLabel? openXmlElement)
+  private static DocumentModel.Drawings.Charts.TextProperties? GetTextProperties(DocumentFormat.OpenXml.Drawing.Charts.TrendlineLabel openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.TextProperties>();
     if (itemElement != null)
-      return TextPropertiesConverter.CreateModelElement(itemElement);
+      return DocumentModel.OpenXml.Drawings.Charts.TextPropertiesConverter.CreateModelElement(itemElement);
     return null;
   }
-
-  public static void SetTextProperties(TrendlineLabel? openXmlElement, TextProperties? value)
+  
+  private static void SetTextProperties(DocumentFormat.OpenXml.Drawing.Charts.TrendlineLabel openXmlElement, DocumentModel.Drawings.Charts.TextProperties? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.TextProperties>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.TextProperties>();
+      itemElement = DocumentModel.OpenXml.Drawings.Charts.TextPropertiesConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Charts.TextProperties>(value);
       if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = TextPropertiesConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Charts.TextProperties>(value);
-        if (itemElement != null)
-          openXmlElement.AddChild(itemElement);
-      }
+        openXmlElement.AddChild(itemElement);
     }
   }
-
+  
   /// <summary>
-  ///   Chart Extensibility.
+  /// Chart Extensibility.
   /// </summary>
-  public static DocumentModel.Drawings.Charts.ExtensionList? GetExtensionList(TrendlineLabel? openXmlElement)
+  private static DocumentModel.Drawings.Charts.ExtensionList? GetExtensionList(DocumentFormat.OpenXml.Drawing.Charts.TrendlineLabel openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.ExtensionList>();
     if (itemElement != null)
-      return ExtensionListConverter.CreateModelElement(itemElement);
+      return DocumentModel.OpenXml.Drawings.Charts.ExtensionListConverter.CreateModelElement(itemElement);
     return null;
   }
-
-  public static void SetExtensionList(TrendlineLabel? openXmlElement, DocumentModel.Drawings.Charts.ExtensionList? value)
+  
+  private static void SetExtensionList(DocumentFormat.OpenXml.Drawing.Charts.TrendlineLabel openXmlElement, DocumentModel.Drawings.Charts.ExtensionList? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.ExtensionList>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.ExtensionList>();
+      itemElement = DocumentModel.OpenXml.Drawings.Charts.ExtensionListConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Charts.ExtensionList>(value);
       if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = ExtensionListConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Charts.ExtensionList>(value);
-        if (itemElement != null)
-          openXmlElement.AddChild(itemElement);
-      }
+        openXmlElement.AddChild(itemElement);
     }
   }
-
-  public static DocumentModel.Drawings.Charts.TrendlineLabel? CreateModelElement(TrendlineLabel? openXmlElement)
+  
+  public static DocumentModel.Drawings.Charts.TrendlineLabel? CreateModelElement(DocumentFormat.OpenXml.Drawing.Charts.TrendlineLabel? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -185,9 +164,9 @@ public static class TrendlineLabelConverter
     }
     return null;
   }
-
+  
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.Charts.TrendlineLabel? value)
-    where OpenXmlElementType : TrendlineLabel, new()
+    where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.Charts.TrendlineLabel, new()
   {
     if (value != null)
     {

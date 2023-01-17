@@ -1,62 +1,53 @@
-using DocumentModel.Wordprocessing;
-using Captions = DocumentFormat.OpenXml.Wordprocessing.Captions;
-
 namespace DocumentModel.OpenXml.Wordprocessing;
 
 /// <summary>
-///   Caption Settings.
+/// Caption Settings.
 /// </summary>
 public static class CaptionsConverter
 {
-  public static Caption? GetCaption(Captions? openXmlElement)
+  private static DocumentModel.Wordprocessing.Caption? GetCaption(DocumentFormat.OpenXml.Wordprocessing.Captions openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.Caption>();
     if (itemElement != null)
-      return CaptionConverter.CreateModelElement(itemElement);
+      return DocumentModel.OpenXml.Wordprocessing.CaptionConverter.CreateModelElement(itemElement);
     return null;
   }
-
-  public static void SetCaption(Captions? openXmlElement, Caption? value)
+  
+  private static void SetCaption(DocumentFormat.OpenXml.Wordprocessing.Captions openXmlElement, DocumentModel.Wordprocessing.Caption? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.Caption>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.Caption>();
+      itemElement = DocumentModel.OpenXml.Wordprocessing.CaptionConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.Caption>(value);
       if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = CaptionConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.Caption>(value);
-        if (itemElement != null)
-          openXmlElement.AddChild(itemElement);
-      }
+        openXmlElement.AddChild(itemElement);
     }
   }
-
-  public static AutoCaptions? GetAutoCaptions(Captions? openXmlElement)
+  
+  private static DocumentModel.Wordprocessing.AutoCaptions? GetAutoCaptions(DocumentFormat.OpenXml.Wordprocessing.Captions openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.AutoCaptions>();
     if (itemElement != null)
-      return AutoCaptionsConverter.CreateModelElement(itemElement);
+      return DocumentModel.OpenXml.Wordprocessing.AutoCaptionsConverter.CreateModelElement(itemElement);
     return null;
   }
-
-  public static void SetAutoCaptions(Captions? openXmlElement, AutoCaptions? value)
+  
+  private static void SetAutoCaptions(DocumentFormat.OpenXml.Wordprocessing.Captions openXmlElement, DocumentModel.Wordprocessing.AutoCaptions? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.AutoCaptions>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.AutoCaptions>();
+      itemElement = DocumentModel.OpenXml.Wordprocessing.AutoCaptionsConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.AutoCaptions>(value);
       if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = AutoCaptionsConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.AutoCaptions>(value);
-        if (itemElement != null)
-          openXmlElement.AddChild(itemElement);
-      }
+        openXmlElement.AddChild(itemElement);
     }
   }
-
-  public static DocumentModel.Wordprocessing.Captions? CreateModelElement(Captions? openXmlElement)
+  
+  public static DocumentModel.Wordprocessing.Captions? CreateModelElement(DocumentFormat.OpenXml.Wordprocessing.Captions? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -67,9 +58,9 @@ public static class CaptionsConverter
     }
     return null;
   }
-
+  
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.Captions? value)
-    where OpenXmlElementType : Captions, new()
+    where OpenXmlElementType: DocumentFormat.OpenXml.Wordprocessing.Captions, new()
   {
     if (value != null)
     {

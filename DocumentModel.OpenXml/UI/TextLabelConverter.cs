@@ -1,353 +1,331 @@
-using DocumentFormat.OpenXml.Office.CustomUI;
-
 namespace DocumentModel.OpenXml.UI;
 
 /// <summary>
-///   Defines the TextLabel Class.
+/// Defines the TextLabel Class.
 /// </summary>
 public static class TextLabelConverter
 {
   /// <summary>
-  ///   id
+  /// id
   /// </summary>
-  public static String? GetId(TextLabel? openXmlElement)
+  private static String? GetId(DocumentFormat.OpenXml.Office.CustomUI.TextLabel openXmlElement)
   {
     return openXmlElement?.Id?.Value;
   }
-
-  public static void SetId(TextLabel? openXmlElement, String? value)
+  
+  private static void SetId(DocumentFormat.OpenXml.Office.CustomUI.TextLabel openXmlElement, String? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.Id = new StringValue { Value = value };
-      else
-        openXmlElement.Id = null;
+    if (value != null)
+      openXmlElement.Id = new StringValue { Value = value };
+    else
+      openXmlElement.Id = null;
   }
-
+  
   /// <summary>
-  ///   idQ
+  /// idQ
   /// </summary>
-  public static String? GetIdQ(TextLabel? openXmlElement)
+  private static String? GetIdQ(DocumentFormat.OpenXml.Office.CustomUI.TextLabel openXmlElement)
   {
     return openXmlElement?.IdQ?.Value;
   }
-
-  public static void SetIdQ(TextLabel? openXmlElement, String? value)
+  
+  private static void SetIdQ(DocumentFormat.OpenXml.Office.CustomUI.TextLabel openXmlElement, String? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.IdQ = new StringValue { Value = value };
-      else
-        openXmlElement.IdQ = null;
+    if (value != null)
+      openXmlElement.IdQ = new StringValue { Value = value };
+    else
+      openXmlElement.IdQ = null;
   }
-
+  
   /// <summary>
-  ///   idMso
+  /// idMso
   /// </summary>
-  public static String? GetIdMso(TextLabel? openXmlElement)
+  private static String? GetIdMso(DocumentFormat.OpenXml.Office.CustomUI.TextLabel openXmlElement)
   {
     return openXmlElement?.IdMso?.Value;
   }
-
-  public static void SetIdMso(TextLabel? openXmlElement, String? value)
+  
+  private static void SetIdMso(DocumentFormat.OpenXml.Office.CustomUI.TextLabel openXmlElement, String? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.IdMso = new StringValue { Value = value };
-      else
-        openXmlElement.IdMso = null;
+    if (value != null)
+      openXmlElement.IdMso = new StringValue { Value = value };
+    else
+      openXmlElement.IdMso = null;
   }
-
+  
   /// <summary>
-  ///   tag
+  /// tag
   /// </summary>
-  public static String? GetTag(TextLabel? openXmlElement)
+  private static String? GetTag(DocumentFormat.OpenXml.Office.CustomUI.TextLabel openXmlElement)
   {
     return openXmlElement?.Tag?.Value;
   }
-
-  public static void SetTag(TextLabel? openXmlElement, String? value)
+  
+  private static void SetTag(DocumentFormat.OpenXml.Office.CustomUI.TextLabel openXmlElement, String? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.Tag = new StringValue { Value = value };
-      else
-        openXmlElement.Tag = null;
+    if (value != null)
+      openXmlElement.Tag = new StringValue { Value = value };
+    else
+      openXmlElement.Tag = null;
   }
-
+  
   /// <summary>
-  ///   screentip
+  /// screentip
   /// </summary>
-  public static String? GetScreentip(TextLabel? openXmlElement)
+  private static String? GetScreentip(DocumentFormat.OpenXml.Office.CustomUI.TextLabel openXmlElement)
   {
     return openXmlElement?.Screentip?.Value;
   }
-
-  public static void SetScreentip(TextLabel? openXmlElement, String? value)
+  
+  private static void SetScreentip(DocumentFormat.OpenXml.Office.CustomUI.TextLabel openXmlElement, String? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.Screentip = new StringValue { Value = value };
-      else
-        openXmlElement.Screentip = null;
+    if (value != null)
+      openXmlElement.Screentip = new StringValue { Value = value };
+    else
+      openXmlElement.Screentip = null;
   }
-
+  
   /// <summary>
-  ///   getScreentip
+  /// getScreentip
   /// </summary>
-  public static String? GetGetScreentip(TextLabel? openXmlElement)
+  private static String? GetGetScreentip(DocumentFormat.OpenXml.Office.CustomUI.TextLabel openXmlElement)
   {
     return openXmlElement?.GetScreentip?.Value;
   }
-
-  public static void SetGetScreentip(TextLabel? openXmlElement, String? value)
+  
+  private static void SetGetScreentip(DocumentFormat.OpenXml.Office.CustomUI.TextLabel openXmlElement, String? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.GetScreentip = new StringValue { Value = value };
-      else
-        openXmlElement.GetScreentip = null;
+    if (value != null)
+      openXmlElement.GetScreentip = new StringValue { Value = value };
+    else
+      openXmlElement.GetScreentip = null;
   }
-
+  
   /// <summary>
-  ///   supertip
+  /// supertip
   /// </summary>
-  public static String? GetSupertip(TextLabel? openXmlElement)
+  private static String? GetSupertip(DocumentFormat.OpenXml.Office.CustomUI.TextLabel openXmlElement)
   {
     return openXmlElement?.Supertip?.Value;
   }
-
-  public static void SetSupertip(TextLabel? openXmlElement, String? value)
+  
+  private static void SetSupertip(DocumentFormat.OpenXml.Office.CustomUI.TextLabel openXmlElement, String? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.Supertip = new StringValue { Value = value };
-      else
-        openXmlElement.Supertip = null;
+    if (value != null)
+      openXmlElement.Supertip = new StringValue { Value = value };
+    else
+      openXmlElement.Supertip = null;
   }
-
+  
   /// <summary>
-  ///   getSupertip
+  /// getSupertip
   /// </summary>
-  public static String? GetGetSupertip(TextLabel? openXmlElement)
+  private static String? GetGetSupertip(DocumentFormat.OpenXml.Office.CustomUI.TextLabel openXmlElement)
   {
     return openXmlElement?.GetSupertip?.Value;
   }
-
-  public static void SetGetSupertip(TextLabel? openXmlElement, String? value)
+  
+  private static void SetGetSupertip(DocumentFormat.OpenXml.Office.CustomUI.TextLabel openXmlElement, String? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.GetSupertip = new StringValue { Value = value };
-      else
-        openXmlElement.GetSupertip = null;
+    if (value != null)
+      openXmlElement.GetSupertip = new StringValue { Value = value };
+    else
+      openXmlElement.GetSupertip = null;
   }
-
+  
   /// <summary>
-  ///   enabled
+  /// enabled
   /// </summary>
-  public static Boolean? GetEnabled(TextLabel? openXmlElement)
+  private static Boolean? GetEnabled(DocumentFormat.OpenXml.Office.CustomUI.TextLabel openXmlElement)
   {
     return openXmlElement?.Enabled?.Value;
   }
-
-  public static void SetEnabled(TextLabel? openXmlElement, Boolean? value)
+  
+  private static void SetEnabled(DocumentFormat.OpenXml.Office.CustomUI.TextLabel openXmlElement, Boolean? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.Enabled = new BooleanValue { Value = (Boolean)value };
-      else
-        openXmlElement.Enabled = null;
+    if (value != null)
+      openXmlElement.Enabled = new BooleanValue { Value = (Boolean)value };
+    else
+      openXmlElement.Enabled = null;
   }
-
+  
   /// <summary>
-  ///   getEnabled
+  /// getEnabled
   /// </summary>
-  public static String? GetGetEnabled(TextLabel? openXmlElement)
+  private static String? GetGetEnabled(DocumentFormat.OpenXml.Office.CustomUI.TextLabel openXmlElement)
   {
     return openXmlElement?.GetEnabled?.Value;
   }
-
-  public static void SetGetEnabled(TextLabel? openXmlElement, String? value)
+  
+  private static void SetGetEnabled(DocumentFormat.OpenXml.Office.CustomUI.TextLabel openXmlElement, String? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.GetEnabled = new StringValue { Value = value };
-      else
-        openXmlElement.GetEnabled = null;
+    if (value != null)
+      openXmlElement.GetEnabled = new StringValue { Value = value };
+    else
+      openXmlElement.GetEnabled = null;
   }
-
+  
   /// <summary>
-  ///   label
+  /// label
   /// </summary>
-  public static String? GetLabel(TextLabel? openXmlElement)
+  private static String? GetLabel(DocumentFormat.OpenXml.Office.CustomUI.TextLabel openXmlElement)
   {
     return openXmlElement?.Label?.Value;
   }
-
-  public static void SetLabel(TextLabel? openXmlElement, String? value)
+  
+  private static void SetLabel(DocumentFormat.OpenXml.Office.CustomUI.TextLabel openXmlElement, String? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.Label = new StringValue { Value = value };
-      else
-        openXmlElement.Label = null;
+    if (value != null)
+      openXmlElement.Label = new StringValue { Value = value };
+    else
+      openXmlElement.Label = null;
   }
-
+  
   /// <summary>
-  ///   getLabel
+  /// getLabel
   /// </summary>
-  public static String? GetGetLabel(TextLabel? openXmlElement)
+  private static String? GetGetLabel(DocumentFormat.OpenXml.Office.CustomUI.TextLabel openXmlElement)
   {
     return openXmlElement?.GetLabel?.Value;
   }
-
-  public static void SetGetLabel(TextLabel? openXmlElement, String? value)
+  
+  private static void SetGetLabel(DocumentFormat.OpenXml.Office.CustomUI.TextLabel openXmlElement, String? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.GetLabel = new StringValue { Value = value };
-      else
-        openXmlElement.GetLabel = null;
+    if (value != null)
+      openXmlElement.GetLabel = new StringValue { Value = value };
+    else
+      openXmlElement.GetLabel = null;
   }
-
+  
   /// <summary>
-  ///   insertAfterMso
+  /// insertAfterMso
   /// </summary>
-  public static String? GetInsertAfterMso(TextLabel? openXmlElement)
+  private static String? GetInsertAfterMso(DocumentFormat.OpenXml.Office.CustomUI.TextLabel openXmlElement)
   {
     return openXmlElement?.InsertAfterMso?.Value;
   }
-
-  public static void SetInsertAfterMso(TextLabel? openXmlElement, String? value)
+  
+  private static void SetInsertAfterMso(DocumentFormat.OpenXml.Office.CustomUI.TextLabel openXmlElement, String? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.InsertAfterMso = new StringValue { Value = value };
-      else
-        openXmlElement.InsertAfterMso = null;
+    if (value != null)
+      openXmlElement.InsertAfterMso = new StringValue { Value = value };
+    else
+      openXmlElement.InsertAfterMso = null;
   }
-
+  
   /// <summary>
-  ///   insertBeforeMso
+  /// insertBeforeMso
   /// </summary>
-  public static String? GetInsertBeforeMso(TextLabel? openXmlElement)
+  private static String? GetInsertBeforeMso(DocumentFormat.OpenXml.Office.CustomUI.TextLabel openXmlElement)
   {
     return openXmlElement?.InsertBeforeMso?.Value;
   }
-
-  public static void SetInsertBeforeMso(TextLabel? openXmlElement, String? value)
+  
+  private static void SetInsertBeforeMso(DocumentFormat.OpenXml.Office.CustomUI.TextLabel openXmlElement, String? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.InsertBeforeMso = new StringValue { Value = value };
-      else
-        openXmlElement.InsertBeforeMso = null;
+    if (value != null)
+      openXmlElement.InsertBeforeMso = new StringValue { Value = value };
+    else
+      openXmlElement.InsertBeforeMso = null;
   }
-
+  
   /// <summary>
-  ///   insertAfterQ
+  /// insertAfterQ
   /// </summary>
-  public static String? GetInsertAfterQ(TextLabel? openXmlElement)
+  private static String? GetInsertAfterQ(DocumentFormat.OpenXml.Office.CustomUI.TextLabel openXmlElement)
   {
     return openXmlElement?.InsertAfterQ?.Value;
   }
-
-  public static void SetInsertAfterQ(TextLabel? openXmlElement, String? value)
+  
+  private static void SetInsertAfterQ(DocumentFormat.OpenXml.Office.CustomUI.TextLabel openXmlElement, String? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.InsertAfterQ = new StringValue { Value = value };
-      else
-        openXmlElement.InsertAfterQ = null;
+    if (value != null)
+      openXmlElement.InsertAfterQ = new StringValue { Value = value };
+    else
+      openXmlElement.InsertAfterQ = null;
   }
-
+  
   /// <summary>
-  ///   insertBeforeQ
+  /// insertBeforeQ
   /// </summary>
-  public static String? GetInsertBeforeQ(TextLabel? openXmlElement)
+  private static String? GetInsertBeforeQ(DocumentFormat.OpenXml.Office.CustomUI.TextLabel openXmlElement)
   {
     return openXmlElement?.InsertBeforeQ?.Value;
   }
-
-  public static void SetInsertBeforeQ(TextLabel? openXmlElement, String? value)
+  
+  private static void SetInsertBeforeQ(DocumentFormat.OpenXml.Office.CustomUI.TextLabel openXmlElement, String? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.InsertBeforeQ = new StringValue { Value = value };
-      else
-        openXmlElement.InsertBeforeQ = null;
+    if (value != null)
+      openXmlElement.InsertBeforeQ = new StringValue { Value = value };
+    else
+      openXmlElement.InsertBeforeQ = null;
   }
-
+  
   /// <summary>
-  ///   visible
+  /// visible
   /// </summary>
-  public static Boolean? GetVisible(TextLabel? openXmlElement)
+  private static Boolean? GetVisible(DocumentFormat.OpenXml.Office.CustomUI.TextLabel openXmlElement)
   {
     return openXmlElement?.Visible?.Value;
   }
-
-  public static void SetVisible(TextLabel? openXmlElement, Boolean? value)
+  
+  private static void SetVisible(DocumentFormat.OpenXml.Office.CustomUI.TextLabel openXmlElement, Boolean? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.Visible = new BooleanValue { Value = (Boolean)value };
-      else
-        openXmlElement.Visible = null;
+    if (value != null)
+      openXmlElement.Visible = new BooleanValue { Value = (Boolean)value };
+    else
+      openXmlElement.Visible = null;
   }
-
+  
   /// <summary>
-  ///   getVisible
+  /// getVisible
   /// </summary>
-  public static String? GetGetVisible(TextLabel? openXmlElement)
+  private static String? GetGetVisible(DocumentFormat.OpenXml.Office.CustomUI.TextLabel openXmlElement)
   {
     return openXmlElement?.GetVisible?.Value;
   }
-
-  public static void SetGetVisible(TextLabel? openXmlElement, String? value)
+  
+  private static void SetGetVisible(DocumentFormat.OpenXml.Office.CustomUI.TextLabel openXmlElement, String? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.GetVisible = new StringValue { Value = value };
-      else
-        openXmlElement.GetVisible = null;
+    if (value != null)
+      openXmlElement.GetVisible = new StringValue { Value = value };
+    else
+      openXmlElement.GetVisible = null;
   }
-
+  
   /// <summary>
-  ///   showLabel
+  /// showLabel
   /// </summary>
-  public static Boolean? GetShowLabel(TextLabel? openXmlElement)
+  private static Boolean? GetShowLabel(DocumentFormat.OpenXml.Office.CustomUI.TextLabel openXmlElement)
   {
     return openXmlElement?.ShowLabel?.Value;
   }
-
-  public static void SetShowLabel(TextLabel? openXmlElement, Boolean? value)
+  
+  private static void SetShowLabel(DocumentFormat.OpenXml.Office.CustomUI.TextLabel openXmlElement, Boolean? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.ShowLabel = new BooleanValue { Value = (Boolean)value };
-      else
-        openXmlElement.ShowLabel = null;
+    if (value != null)
+      openXmlElement.ShowLabel = new BooleanValue { Value = (Boolean)value };
+    else
+      openXmlElement.ShowLabel = null;
   }
-
+  
   /// <summary>
-  ///   getShowLabel
+  /// getShowLabel
   /// </summary>
-  public static String? GetGetShowLabel(TextLabel? openXmlElement)
+  private static String? GetGetShowLabel(DocumentFormat.OpenXml.Office.CustomUI.TextLabel openXmlElement)
   {
     return openXmlElement?.GetShowLabel?.Value;
   }
-
-  public static void SetGetShowLabel(TextLabel? openXmlElement, String? value)
+  
+  private static void SetGetShowLabel(DocumentFormat.OpenXml.Office.CustomUI.TextLabel openXmlElement, String? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.GetShowLabel = new StringValue { Value = value };
-      else
-        openXmlElement.GetShowLabel = null;
+    if (value != null)
+      openXmlElement.GetShowLabel = new StringValue { Value = value };
+    else
+      openXmlElement.GetShowLabel = null;
   }
-
-  public static DocumentModel.UI.TextLabel? CreateModelElement(TextLabel? openXmlElement)
+  
+  public static DocumentModel.UI.TextLabel? CreateModelElement(DocumentFormat.OpenXml.Office.CustomUI.TextLabel? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -376,9 +354,9 @@ public static class TextLabelConverter
     }
     return null;
   }
-
+  
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.UI.TextLabel? value)
-    where OpenXmlElementType : TextLabel, new()
+    where OpenXmlElementType: DocumentFormat.OpenXml.Office.CustomUI.TextLabel, new()
   {
     if (value != null)
     {

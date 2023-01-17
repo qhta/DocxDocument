@@ -22,7 +22,9 @@
 
   <ItemGroup>
     <Compile Remove="ModelGenerator - Copy.cs" />
+    <Compile Remove="MyParticleConstraint.cs" />
     <Compile Remove="PropKind.cs" />
+    <Compile Remove="SchemaGenerator.cs" />
   </ItemGroup>
 
   <ItemGroup>

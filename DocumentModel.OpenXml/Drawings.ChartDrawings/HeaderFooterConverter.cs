@@ -1,220 +1,197 @@
-using DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing;
-
 namespace DocumentModel.OpenXml.Drawings.ChartDrawings;
 
 /// <summary>
-///   Defines the HeaderFooter Class.
+/// Defines the HeaderFooter Class.
 /// </summary>
 public static class HeaderFooterConverter
 {
   /// <summary>
-  ///   alignWithMargins, this property is only available in Office 2016 and later.
+  /// alignWithMargins, this property is only available in Office 2016 and later.
   /// </summary>
-  public static Boolean? GetAlignWithMargins(HeaderFooter? openXmlElement)
+  private static Boolean? GetAlignWithMargins(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.HeaderFooter openXmlElement)
   {
     return openXmlElement?.AlignWithMargins?.Value;
   }
-
-  public static void SetAlignWithMargins(HeaderFooter? openXmlElement, Boolean? value)
+  
+  private static void SetAlignWithMargins(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.HeaderFooter openXmlElement, Boolean? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.AlignWithMargins = new BooleanValue { Value = (Boolean)value };
-      else
-        openXmlElement.AlignWithMargins = null;
+    if (value != null)
+      openXmlElement.AlignWithMargins = new BooleanValue { Value = (Boolean)value };
+    else
+      openXmlElement.AlignWithMargins = null;
   }
-
+  
   /// <summary>
-  ///   differentOddEven, this property is only available in Office 2016 and later.
+  /// differentOddEven, this property is only available in Office 2016 and later.
   /// </summary>
-  public static Boolean? GetDifferentOddEven(HeaderFooter? openXmlElement)
+  private static Boolean? GetDifferentOddEven(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.HeaderFooter openXmlElement)
   {
     return openXmlElement?.DifferentOddEven?.Value;
   }
-
-  public static void SetDifferentOddEven(HeaderFooter? openXmlElement, Boolean? value)
+  
+  private static void SetDifferentOddEven(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.HeaderFooter openXmlElement, Boolean? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.DifferentOddEven = new BooleanValue { Value = (Boolean)value };
-      else
-        openXmlElement.DifferentOddEven = null;
+    if (value != null)
+      openXmlElement.DifferentOddEven = new BooleanValue { Value = (Boolean)value };
+    else
+      openXmlElement.DifferentOddEven = null;
   }
-
+  
   /// <summary>
-  ///   differentFirst, this property is only available in Office 2016 and later.
+  /// differentFirst, this property is only available in Office 2016 and later.
   /// </summary>
-  public static Boolean? GetDifferentFirst(HeaderFooter? openXmlElement)
+  private static Boolean? GetDifferentFirst(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.HeaderFooter openXmlElement)
   {
     return openXmlElement?.DifferentFirst?.Value;
   }
-
-  public static void SetDifferentFirst(HeaderFooter? openXmlElement, Boolean? value)
+  
+  private static void SetDifferentFirst(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.HeaderFooter openXmlElement, Boolean? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.DifferentFirst = new BooleanValue { Value = (Boolean)value };
-      else
-        openXmlElement.DifferentFirst = null;
+    if (value != null)
+      openXmlElement.DifferentFirst = new BooleanValue { Value = (Boolean)value };
+    else
+      openXmlElement.DifferentFirst = null;
   }
-
+  
   /// <summary>
-  ///   OddHeaderXsdstring.
+  /// OddHeaderXsdstring.
   /// </summary>
-  public static String? GetOddHeaderXsdstring(HeaderFooter? openXmlElement)
+  private static String? GetOddHeaderXsdstring(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.HeaderFooter openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<OddHeaderXsdstring>();
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.OddHeaderXsdstring>();
     if (itemElement != null)
       return itemElement.Text;
     return null;
   }
-
-  public static void SetOddHeaderXsdstring(HeaderFooter? openXmlElement, String? value)
+  
+  private static void SetOddHeaderXsdstring(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.HeaderFooter openXmlElement, String? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.OddHeaderXsdstring>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<OddHeaderXsdstring>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = new OddHeaderXsdstring { Text = value };
-        openXmlElement.AddChild(itemElement);
-      }
+      itemElement = new DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.OddHeaderXsdstring { Text = value };
+      openXmlElement.AddChild(itemElement);
     }
   }
-
+  
   /// <summary>
-  ///   OddFooterXsdstring.
+  /// OddFooterXsdstring.
   /// </summary>
-  public static String? GetOddFooterXsdstring(HeaderFooter? openXmlElement)
+  private static String? GetOddFooterXsdstring(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.HeaderFooter openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<OddFooterXsdstring>();
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.OddFooterXsdstring>();
     if (itemElement != null)
       return itemElement.Text;
     return null;
   }
-
-  public static void SetOddFooterXsdstring(HeaderFooter? openXmlElement, String? value)
+  
+  private static void SetOddFooterXsdstring(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.HeaderFooter openXmlElement, String? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.OddFooterXsdstring>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<OddFooterXsdstring>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = new OddFooterXsdstring { Text = value };
-        openXmlElement.AddChild(itemElement);
-      }
+      itemElement = new DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.OddFooterXsdstring { Text = value };
+      openXmlElement.AddChild(itemElement);
     }
   }
-
+  
   /// <summary>
-  ///   EvenHeaderXsdstring.
+  /// EvenHeaderXsdstring.
   /// </summary>
-  public static String? GetEvenHeaderXsdstring(HeaderFooter? openXmlElement)
+  private static String? GetEvenHeaderXsdstring(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.HeaderFooter openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<EvenHeaderXsdstring>();
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.EvenHeaderXsdstring>();
     if (itemElement != null)
       return itemElement.Text;
     return null;
   }
-
-  public static void SetEvenHeaderXsdstring(HeaderFooter? openXmlElement, String? value)
+  
+  private static void SetEvenHeaderXsdstring(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.HeaderFooter openXmlElement, String? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.EvenHeaderXsdstring>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<EvenHeaderXsdstring>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = new EvenHeaderXsdstring { Text = value };
-        openXmlElement.AddChild(itemElement);
-      }
+      itemElement = new DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.EvenHeaderXsdstring { Text = value };
+      openXmlElement.AddChild(itemElement);
     }
   }
-
+  
   /// <summary>
-  ///   EvenFooterXsdstring.
+  /// EvenFooterXsdstring.
   /// </summary>
-  public static String? GetEvenFooterXsdstring(HeaderFooter? openXmlElement)
+  private static String? GetEvenFooterXsdstring(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.HeaderFooter openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<EvenFooterXsdstring>();
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.EvenFooterXsdstring>();
     if (itemElement != null)
       return itemElement.Text;
     return null;
   }
-
-  public static void SetEvenFooterXsdstring(HeaderFooter? openXmlElement, String? value)
+  
+  private static void SetEvenFooterXsdstring(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.HeaderFooter openXmlElement, String? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.EvenFooterXsdstring>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<EvenFooterXsdstring>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = new EvenFooterXsdstring { Text = value };
-        openXmlElement.AddChild(itemElement);
-      }
+      itemElement = new DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.EvenFooterXsdstring { Text = value };
+      openXmlElement.AddChild(itemElement);
     }
   }
-
+  
   /// <summary>
-  ///   FirstHeaderXsdstring.
+  /// FirstHeaderXsdstring.
   /// </summary>
-  public static String? GetFirstHeaderXsdstring(HeaderFooter? openXmlElement)
+  private static String? GetFirstHeaderXsdstring(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.HeaderFooter openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<FirstHeaderXsdstring>();
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.FirstHeaderXsdstring>();
     if (itemElement != null)
       return itemElement.Text;
     return null;
   }
-
-  public static void SetFirstHeaderXsdstring(HeaderFooter? openXmlElement, String? value)
+  
+  private static void SetFirstHeaderXsdstring(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.HeaderFooter openXmlElement, String? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.FirstHeaderXsdstring>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<FirstHeaderXsdstring>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = new FirstHeaderXsdstring { Text = value };
-        openXmlElement.AddChild(itemElement);
-      }
+      itemElement = new DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.FirstHeaderXsdstring { Text = value };
+      openXmlElement.AddChild(itemElement);
     }
   }
-
+  
   /// <summary>
-  ///   FirstFooterXsdstring.
+  /// FirstFooterXsdstring.
   /// </summary>
-  public static String? GetFirstFooterXsdstring(HeaderFooter? openXmlElement)
+  private static String? GetFirstFooterXsdstring(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.HeaderFooter openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<FirstFooterXsdstring>();
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.FirstFooterXsdstring>();
     if (itemElement != null)
       return itemElement.Text;
     return null;
   }
-
-  public static void SetFirstFooterXsdstring(HeaderFooter? openXmlElement, String? value)
+  
+  private static void SetFirstFooterXsdstring(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.HeaderFooter openXmlElement, String? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.FirstFooterXsdstring>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<FirstFooterXsdstring>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = new FirstFooterXsdstring { Text = value };
-        openXmlElement.AddChild(itemElement);
-      }
+      itemElement = new DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.FirstFooterXsdstring { Text = value };
+      openXmlElement.AddChild(itemElement);
     }
   }
-
-  public static DocumentModel.Drawings.ChartDrawings.HeaderFooter? CreateModelElement(HeaderFooter? openXmlElement)
+  
+  public static DocumentModel.Drawings.ChartDrawings.HeaderFooter? CreateModelElement(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.HeaderFooter? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -232,9 +209,9 @@ public static class HeaderFooterConverter
     }
     return null;
   }
-
+  
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.ChartDrawings.HeaderFooter? value)
-    where OpenXmlElementType : HeaderFooter, new()
+    where OpenXmlElementType: DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.HeaderFooter, new()
   {
     if (value != null)
     {

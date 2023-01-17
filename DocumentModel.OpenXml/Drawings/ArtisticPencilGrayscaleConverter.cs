@@ -1,41 +1,37 @@
-using DocumentFormat.OpenXml.Office2010.Drawing;
-
 namespace DocumentModel.OpenXml.Drawings;
 
 /// <summary>
-///   Defines the ArtisticPencilGrayscale Class.
+/// Defines the ArtisticPencilGrayscale Class.
 /// </summary>
 public static class ArtisticPencilGrayscaleConverter
 {
   /// <summary>
-  ///   trans, this property is only available in Office 2010 and later.
+  /// trans, this property is only available in Office 2010 and later.
   /// </summary>
-  public static Int32? GetTransparancy(ArtisticPencilGrayscale? openXmlElement)
+  private static Int32? GetTransparancy(DocumentFormat.OpenXml.Office2010.Drawing.ArtisticPencilGrayscale openXmlElement)
   {
-    return openXmlElement?.Transparancy?.Value;
+    return openXmlElement.Transparancy?.Value;
   }
-
-  public static void SetTransparancy(ArtisticPencilGrayscale? openXmlElement, Int32? value)
+  
+  private static void SetTransparancy(DocumentFormat.OpenXml.Office2010.Drawing.ArtisticPencilGrayscale openXmlElement, Int32? value)
   {
-    if (openXmlElement != null)
-      openXmlElement.Transparancy = value;
+    openXmlElement.Transparancy = value;
   }
-
+  
   /// <summary>
-  ///   pencilSize, this property is only available in Office 2010 and later.
+  /// pencilSize, this property is only available in Office 2010 and later.
   /// </summary>
-  public static Int32? GetBrushSize(ArtisticPencilGrayscale? openXmlElement)
+  private static Int32? GetBrushSize(DocumentFormat.OpenXml.Office2010.Drawing.ArtisticPencilGrayscale openXmlElement)
   {
-    return openXmlElement?.BrushSize?.Value;
+    return openXmlElement.BrushSize?.Value;
   }
-
-  public static void SetBrushSize(ArtisticPencilGrayscale? openXmlElement, Int32? value)
+  
+  private static void SetBrushSize(DocumentFormat.OpenXml.Office2010.Drawing.ArtisticPencilGrayscale openXmlElement, Int32? value)
   {
-    if (openXmlElement != null)
-      openXmlElement.BrushSize = value;
+    openXmlElement.BrushSize = value;
   }
-
-  public static DocumentModel.Drawings.ArtisticPencilGrayscale? CreateModelElement(ArtisticPencilGrayscale? openXmlElement)
+  
+  public static DocumentModel.Drawings.ArtisticPencilGrayscale? CreateModelElement(DocumentFormat.OpenXml.Office2010.Drawing.ArtisticPencilGrayscale? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -46,9 +42,9 @@ public static class ArtisticPencilGrayscaleConverter
     }
     return null;
   }
-
+  
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.ArtisticPencilGrayscale? value)
-    where OpenXmlElementType : ArtisticPencilGrayscale, new()
+    where OpenXmlElementType: DocumentFormat.OpenXml.Office2010.Drawing.ArtisticPencilGrayscale, new()
   {
     if (value != null)
     {

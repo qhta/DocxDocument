@@ -1,42 +1,35 @@
-using DocumentModel.Drawings.Charts;
-using ChartText = DocumentFormat.OpenXml.Office2013.Drawing.Chart.ChartText;
-using FilteredSeriesTitle = DocumentFormat.OpenXml.Office2013.Drawing.Chart.FilteredSeriesTitle;
-
 namespace DocumentModel.OpenXml.Drawings.Charts;
 
 /// <summary>
-///   Defines the FilteredSeriesTitle Class.
+/// Defines the FilteredSeriesTitle Class.
 /// </summary>
 public static class FilteredSeriesTitleConverter
 {
   /// <summary>
-  ///   ChartText.
+  /// ChartText.
   /// </summary>
-  public static ChartText3? GetChartText(FilteredSeriesTitle? openXmlElement)
+  private static DocumentModel.Drawings.Charts.ChartText3? GetChartText(DocumentFormat.OpenXml.Office2013.Drawing.Chart.FilteredSeriesTitle openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<ChartText>();
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office2013.Drawing.Chart.ChartText>();
     if (itemElement != null)
-      return ChartText3Converter.CreateModelElement(itemElement);
+      return DocumentModel.OpenXml.Drawings.Charts.ChartText3Converter.CreateModelElement(itemElement);
     return null;
   }
-
-  public static void SetChartText(FilteredSeriesTitle? openXmlElement, ChartText3? value)
+  
+  private static void SetChartText(DocumentFormat.OpenXml.Office2013.Drawing.Chart.FilteredSeriesTitle openXmlElement, DocumentModel.Drawings.Charts.ChartText3? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2013.Drawing.Chart.ChartText>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<ChartText>();
+      itemElement = DocumentModel.OpenXml.Drawings.Charts.ChartText3Converter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2013.Drawing.Chart.ChartText>(value);
       if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = ChartText3Converter.CreateOpenXmlElement<ChartText>(value);
-        if (itemElement != null)
-          openXmlElement.AddChild(itemElement);
-      }
+        openXmlElement.AddChild(itemElement);
     }
   }
-
-  public static DocumentModel.Drawings.Charts.FilteredSeriesTitle? CreateModelElement(FilteredSeriesTitle? openXmlElement)
+  
+  public static DocumentModel.Drawings.Charts.FilteredSeriesTitle? CreateModelElement(DocumentFormat.OpenXml.Office2013.Drawing.Chart.FilteredSeriesTitle? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -46,9 +39,9 @@ public static class FilteredSeriesTitleConverter
     }
     return null;
   }
-
+  
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.Charts.FilteredSeriesTitle? value)
-    where OpenXmlElementType : FilteredSeriesTitle, new()
+    where OpenXmlElementType: DocumentFormat.OpenXml.Office2013.Drawing.Chart.FilteredSeriesTitle, new()
   {
     if (value != null)
     {

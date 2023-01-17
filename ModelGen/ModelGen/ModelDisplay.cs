@@ -118,7 +118,7 @@ public static class ModelDisplay
     if (!typeInfo.IsReflected)
       typeInfo.WaitForReflection();
     var str = $"{typeInfo.TypeKind.ToString().ToLower()} {typeInfo.GetFullName(options.OriginalNames)}";
-    var changedToType = ModelManager.GetConversionTarget(typeInfo, false);
+    var changedToType = ModelManager.GetConversionTarget(typeInfo);
     if (changedToType != null)
       str += $" => {changedToType.GetFullName(options.OriginalNames)}";
     //else if (typeInfo.IsAccepted != null)
@@ -130,7 +130,7 @@ public static class ModelDisplay
     if (options.BaseTypes && typeInfo.BaseTypeInfo != null)
     {
       str = $"based on: {typeInfo.BaseTypeInfo.GetFullName(options.OriginalNames)}";
-      changedToType = ModelManager.GetConversionTarget(typeInfo.BaseTypeInfo, false);
+      changedToType = ModelManager.GetConversionTarget(typeInfo.BaseTypeInfo);
       if (changedToType != null)
         str += $" => {changedToType.GetFullName(options.OriginalNames)}";
       //else if (typeInfo.BaseTypeInfo.IsAccepted != null)
@@ -286,7 +286,7 @@ public static class ModelDisplay
           continue;
         Writer.Indent++;
         var str = $"{property.Name}: {property.PropertyType.GetFullName(options.OriginalNames)}";
-        var changedToType = ModelManager.GetConversionTarget(property.PropertyType, false);
+        var changedToType = ModelManager.GetConversionTarget(property.PropertyType);
         if (changedToType != null)
           str += $" => {changedToType.GetFullName(options.OriginalNames)}";
         //else if (property.PropertyType.IsAccepted != null)
@@ -312,7 +312,7 @@ public static class ModelDisplay
   {
     if (type.IsConverted)
     {
-      var convTarget = ModelManager.GetConversionTarget(type, true);
+      var convTarget = ModelManager.GetConversionTarget(type);
       if (convTarget != null)
       {
         Writer.WriteLine($"{type} => {convTarget}");

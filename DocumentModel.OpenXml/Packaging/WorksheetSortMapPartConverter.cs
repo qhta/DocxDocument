@@ -1,23 +1,21 @@
-using DocumentFormat.OpenXml.Packaging;
-
 namespace DocumentModel.OpenXml.Packaging;
 
 /// <summary>
-///   Defines the WorksheetSortMapPart
+/// Defines the WorksheetSortMapPart
 /// </summary>
 public static class WorksheetSortMapPartConverter
 {
-  public static String? GetContentType(WorksheetSortMapPart? openXmlElement)
+  private static String? GetContentType(DocumentFormat.OpenXml.Packaging.WorksheetSortMapPart openXmlElement)
   {
     return openXmlElement?.ContentType;
   }
-
-  public static String? GetRelationshipType(WorksheetSortMapPart? openXmlElement)
+  
+  private static String? GetRelationshipType(DocumentFormat.OpenXml.Packaging.WorksheetSortMapPart openXmlElement)
   {
     return openXmlElement?.RelationshipType;
   }
-
-  public static DocumentModel.Packaging.WorksheetSortMapPart? CreateModelElement(WorksheetSortMapPart? openXmlElement)
+  
+  public static DocumentModel.Packaging.WorksheetSortMapPart? CreateModelElement(DocumentFormat.OpenXml.Packaging.WorksheetSortMapPart? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -28,9 +26,9 @@ public static class WorksheetSortMapPartConverter
     }
     return null;
   }
-
+  
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Packaging.WorksheetSortMapPart? value)
-    where OpenXmlElementType : WorksheetSortMapPart, new()
+    where OpenXmlElementType: DocumentFormat.OpenXml.Packaging.WorksheetSortMapPart, new()
   {
     if (value != null)
     {

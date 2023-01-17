@@ -1,158 +1,137 @@
-using DocumentModel.Drawings;
-using Highlight = DocumentFormat.OpenXml.Drawing.Highlight;
-
 namespace DocumentModel.OpenXml.Drawings;
 
 /// <summary>
-///   Defines the Highlight Class.
+/// Defines the Highlight Class.
 /// </summary>
 public static class HighlightConverter
 {
-  public static RgbColorModelPercentage? GetRgbColorModelPercentage(Highlight? openXmlElement)
+  private static DocumentModel.Drawings.RgbColorModelPercentage? GetRgbColorModelPercentage(DocumentFormat.OpenXml.Drawing.Highlight openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.RgbColorModelPercentage>();
     if (itemElement != null)
-      return RgbColorModelPercentageConverter.CreateModelElement(itemElement);
+      return DocumentModel.OpenXml.Drawings.RgbColorModelPercentageConverter.CreateModelElement(itemElement);
     return null;
   }
-
-  public static void SetRgbColorModelPercentage(Highlight? openXmlElement, RgbColorModelPercentage? value)
+  
+  private static void SetRgbColorModelPercentage(DocumentFormat.OpenXml.Drawing.Highlight openXmlElement, DocumentModel.Drawings.RgbColorModelPercentage? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.RgbColorModelPercentage>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.RgbColorModelPercentage>();
+      itemElement = DocumentModel.OpenXml.Drawings.RgbColorModelPercentageConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.RgbColorModelPercentage>(value);
       if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = RgbColorModelPercentageConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.RgbColorModelPercentage>(value);
-        if (itemElement != null)
-          openXmlElement.AddChild(itemElement);
-      }
+        openXmlElement.AddChild(itemElement);
     }
   }
-
-  public static RgbColorModelHex? GetRgbColorModelHex(Highlight? openXmlElement)
+  
+  private static DocumentModel.Drawings.RgbColorModelHex? GetRgbColorModelHex(DocumentFormat.OpenXml.Drawing.Highlight openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.RgbColorModelHex>();
     if (itemElement != null)
-      return RgbColorModelHexConverter.CreateModelElement(itemElement);
+      return DocumentModel.OpenXml.Drawings.RgbColorModelHexConverter.CreateModelElement(itemElement);
     return null;
   }
-
-  public static void SetRgbColorModelHex(Highlight? openXmlElement, RgbColorModelHex? value)
+  
+  private static void SetRgbColorModelHex(DocumentFormat.OpenXml.Drawing.Highlight openXmlElement, DocumentModel.Drawings.RgbColorModelHex? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.RgbColorModelHex>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.RgbColorModelHex>();
+      itemElement = DocumentModel.OpenXml.Drawings.RgbColorModelHexConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.RgbColorModelHex>(value);
       if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = RgbColorModelHexConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.RgbColorModelHex>(value);
-        if (itemElement != null)
-          openXmlElement.AddChild(itemElement);
-      }
+        openXmlElement.AddChild(itemElement);
     }
   }
-
-  public static HslColor? GetHslColor(Highlight? openXmlElement)
+  
+  private static DocumentModel.Drawings.HslColor? GetHslColor(DocumentFormat.OpenXml.Drawing.Highlight openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.HslColor>();
     if (itemElement != null)
-      return HslColorConverter.CreateModelElement(itemElement);
+      return DocumentModel.OpenXml.Drawings.HslColorConverter.CreateModelElement(itemElement);
     return null;
   }
-
-  public static void SetHslColor(Highlight? openXmlElement, HslColor? value)
+  
+  private static void SetHslColor(DocumentFormat.OpenXml.Drawing.Highlight openXmlElement, DocumentModel.Drawings.HslColor? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.HslColor>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.HslColor>();
+      itemElement = DocumentModel.OpenXml.Drawings.HslColorConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.HslColor>(value);
       if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = HslColorConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.HslColor>(value);
-        if (itemElement != null)
-          openXmlElement.AddChild(itemElement);
-      }
+        openXmlElement.AddChild(itemElement);
     }
   }
-
-  public static SystemColor? GetSystemColor(Highlight? openXmlElement)
+  
+  private static DocumentModel.Drawings.SystemColor? GetSystemColor(DocumentFormat.OpenXml.Drawing.Highlight openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.SystemColor>();
     if (itemElement != null)
-      return SystemColorConverter.CreateModelElement(itemElement);
+      return DocumentModel.OpenXml.Drawings.SystemColorConverter.CreateModelElement(itemElement);
     return null;
   }
-
-  public static void SetSystemColor(Highlight? openXmlElement, SystemColor? value)
+  
+  private static void SetSystemColor(DocumentFormat.OpenXml.Drawing.Highlight openXmlElement, DocumentModel.Drawings.SystemColor? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.SystemColor>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.SystemColor>();
+      itemElement = DocumentModel.OpenXml.Drawings.SystemColorConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.SystemColor>(value);
       if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = SystemColorConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.SystemColor>(value);
-        if (itemElement != null)
-          openXmlElement.AddChild(itemElement);
-      }
+        openXmlElement.AddChild(itemElement);
     }
   }
-
-  public static SchemeColor? GetSchemeColor(Highlight? openXmlElement)
+  
+  private static DocumentModel.Drawings.SchemeColor? GetSchemeColor(DocumentFormat.OpenXml.Drawing.Highlight openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.SchemeColor>();
     if (itemElement != null)
-      return SchemeColorConverter.CreateModelElement(itemElement);
+      return DocumentModel.OpenXml.Drawings.SchemeColorConverter.CreateModelElement(itemElement);
     return null;
   }
-
-  public static void SetSchemeColor(Highlight? openXmlElement, SchemeColor? value)
+  
+  private static void SetSchemeColor(DocumentFormat.OpenXml.Drawing.Highlight openXmlElement, DocumentModel.Drawings.SchemeColor? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.SchemeColor>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.SchemeColor>();
+      itemElement = DocumentModel.OpenXml.Drawings.SchemeColorConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.SchemeColor>(value);
       if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = SchemeColorConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.SchemeColor>(value);
-        if (itemElement != null)
-          openXmlElement.AddChild(itemElement);
-      }
+        openXmlElement.AddChild(itemElement);
     }
   }
-
-  public static PresetColor? GetPresetColor(Highlight? openXmlElement)
+  
+  private static DocumentModel.Drawings.PresetColor? GetPresetColor(DocumentFormat.OpenXml.Drawing.Highlight openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.PresetColor>();
     if (itemElement != null)
-      return PresetColorConverter.CreateModelElement(itemElement);
+      return DocumentModel.OpenXml.Drawings.PresetColorConverter.CreateModelElement(itemElement);
     return null;
   }
-
-  public static void SetPresetColor(Highlight? openXmlElement, PresetColor? value)
+  
+  private static void SetPresetColor(DocumentFormat.OpenXml.Drawing.Highlight openXmlElement, DocumentModel.Drawings.PresetColor? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.PresetColor>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.PresetColor>();
+      itemElement = DocumentModel.OpenXml.Drawings.PresetColorConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.PresetColor>(value);
       if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = PresetColorConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.PresetColor>(value);
-        if (itemElement != null)
-          openXmlElement.AddChild(itemElement);
-      }
+        openXmlElement.AddChild(itemElement);
     }
   }
-
-  public static DocumentModel.Drawings.Highlight? CreateModelElement(Highlight? openXmlElement)
+  
+  public static DocumentModel.Drawings.Highlight? CreateModelElement(DocumentFormat.OpenXml.Drawing.Highlight? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -167,9 +146,9 @@ public static class HighlightConverter
     }
     return null;
   }
-
+  
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.Highlight? value)
-    where OpenXmlElementType : Highlight, new()
+    where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.Highlight, new()
   {
     if (value != null)
     {

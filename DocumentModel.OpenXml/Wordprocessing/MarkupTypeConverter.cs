@@ -1,30 +1,27 @@
-using DocumentFormat.OpenXml.Wordprocessing;
-
 namespace DocumentModel.OpenXml.Wordprocessing;
 
 /// <summary>
-///   Defines the MarkupType Class.
+/// Defines the MarkupType Class.
 /// </summary>
 public static class MarkupTypeConverter
 {
   /// <summary>
-  ///   Annotation Identifier
+  /// Annotation Identifier
   /// </summary>
-  public static String? GetId(MarkupType? openXmlElement)
+  private static String? GetId(DocumentFormat.OpenXml.Wordprocessing.MarkupType openXmlElement)
   {
     return openXmlElement?.Id?.Value;
   }
-
-  public static void SetId(MarkupType? openXmlElement, String? value)
+  
+  private static void SetId(DocumentFormat.OpenXml.Wordprocessing.MarkupType openXmlElement, String? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.Id = new StringValue { Value = value };
-      else
-        openXmlElement.Id = null;
+    if (value != null)
+      openXmlElement.Id = new StringValue { Value = value };
+    else
+      openXmlElement.Id = null;
   }
-
-  public static DocumentModel.Wordprocessing.MarkupType? CreateModelElement(MarkupType? openXmlElement)
+  
+  public static DocumentModel.Wordprocessing.MarkupType? CreateModelElement(DocumentFormat.OpenXml.Wordprocessing.MarkupType? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -34,9 +31,9 @@ public static class MarkupTypeConverter
     }
     return null;
   }
-
+  
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.MarkupType? value)
-    where OpenXmlElementType : MarkupType, new()
+    where OpenXmlElementType: DocumentFormat.OpenXml.Wordprocessing.MarkupType, new()
   {
     if (value != null)
     {

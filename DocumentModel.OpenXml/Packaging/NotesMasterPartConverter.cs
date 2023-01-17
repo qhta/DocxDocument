@@ -1,309 +1,246 @@
-using DocumentModel.Packaging;
-using NotesMasterPart = DocumentFormat.OpenXml.Packaging.NotesMasterPart;
-
 namespace DocumentModel.OpenXml.Packaging;
 
 /// <summary>
-///   Defines the NotesMasterPart
+/// Defines the NotesMasterPart
 /// </summary>
 public static class NotesMasterPartConverter
 {
   /// <summary>
-  ///   Gets the ChartParts of the NotesMasterPart
+  /// Gets the ChartParts of the NotesMasterPart
   /// </summary>
-  public static Collection<ChartPart>? GetChartParts(NotesMasterPart? openXmlElement)
+  private static System.Collections.ObjectModel.Collection<DocumentModel.Packaging.ChartPart> GetChartParts(DocumentFormat.OpenXml.Packaging.NotesMasterPart openXmlElement)
   {
-    if (openXmlElement != null)
+    var collection = new System.Collections.ObjectModel.Collection<DocumentModel.Packaging.ChartPart>();
+    foreach (var item in openXmlElement.GetPartsOfType<DocumentFormat.OpenXml.Packaging.ChartPart>())
     {
-      var collection = new Collection<ChartPart>();
-      foreach (var item in openXmlElement.GetPartsOfType<DocumentFormat.OpenXml.Packaging.ChartPart>())
-      {
-        var newItem = ChartPartConverter.CreateModelElement(item);
-        if (newItem != null)
-          collection.Add(newItem);
-      }
-      return collection;
+      var newItem = DocumentModel.OpenXml.Packaging.ChartPartConverter.CreateModelElement(item);
+      if (newItem != null)
+        collection.Add(newItem);
     }
-    return null;
+    return collection;
   }
-
-  public static String? GetContentType(NotesMasterPart? openXmlElement)
+  
+  private static String? GetContentType(DocumentFormat.OpenXml.Packaging.NotesMasterPart openXmlElement)
   {
     return openXmlElement?.ContentType;
   }
-
+  
   /// <summary>
-  ///   Gets the CustomXmlParts of the NotesMasterPart
+  /// Gets the CustomXmlParts of the NotesMasterPart
   /// </summary>
-  public static Collection<CustomXmlPart>? GetCustomXmlParts(NotesMasterPart? openXmlElement)
+  private static System.Collections.ObjectModel.Collection<DocumentModel.Packaging.CustomXmlPart> GetCustomXmlParts(DocumentFormat.OpenXml.Packaging.NotesMasterPart openXmlElement)
   {
-    if (openXmlElement != null)
+    var collection = new System.Collections.ObjectModel.Collection<DocumentModel.Packaging.CustomXmlPart>();
+    foreach (var item in openXmlElement.GetPartsOfType<DocumentFormat.OpenXml.Packaging.CustomXmlPart>())
     {
-      var collection = new Collection<CustomXmlPart>();
-      foreach (var item in openXmlElement.GetPartsOfType<DocumentFormat.OpenXml.Packaging.CustomXmlPart>())
-      {
-        var newItem = CustomXmlPartConverter.CreateModelElement(item);
-        if (newItem != null)
-          collection.Add(newItem);
-      }
-      return collection;
+      var newItem = DocumentModel.OpenXml.Packaging.CustomXmlPartConverter.CreateModelElement(item);
+      if (newItem != null)
+        collection.Add(newItem);
     }
-    return null;
+    return collection;
   }
-
+  
   /// <summary>
-  ///   Gets the DiagramColorsParts of the NotesMasterPart
+  /// Gets the DiagramColorsParts of the NotesMasterPart
   /// </summary>
-  public static Collection<DiagramColorsPart>? GetDiagramColorsParts(NotesMasterPart? openXmlElement)
+  private static System.Collections.ObjectModel.Collection<DocumentModel.Packaging.DiagramColorsPart> GetDiagramColorsParts(DocumentFormat.OpenXml.Packaging.NotesMasterPart openXmlElement)
   {
-    if (openXmlElement != null)
+    var collection = new System.Collections.ObjectModel.Collection<DocumentModel.Packaging.DiagramColorsPart>();
+    foreach (var item in openXmlElement.GetPartsOfType<DocumentFormat.OpenXml.Packaging.DiagramColorsPart>())
     {
-      var collection = new Collection<DiagramColorsPart>();
-      foreach (var item in openXmlElement.GetPartsOfType<DocumentFormat.OpenXml.Packaging.DiagramColorsPart>())
-      {
-        var newItem = DiagramColorsPartConverter.CreateModelElement(item);
-        if (newItem != null)
-          collection.Add(newItem);
-      }
-      return collection;
+      var newItem = DocumentModel.OpenXml.Packaging.DiagramColorsPartConverter.CreateModelElement(item);
+      if (newItem != null)
+        collection.Add(newItem);
     }
-    return null;
+    return collection;
   }
-
+  
   /// <summary>
-  ///   Gets the DiagramDataParts of the NotesMasterPart
+  /// Gets the DiagramDataParts of the NotesMasterPart
   /// </summary>
-  public static Collection<DiagramDataPart>? GetDiagramDataParts(NotesMasterPart? openXmlElement)
+  private static System.Collections.ObjectModel.Collection<DocumentModel.Packaging.DiagramDataPart> GetDiagramDataParts(DocumentFormat.OpenXml.Packaging.NotesMasterPart openXmlElement)
   {
-    if (openXmlElement != null)
+    var collection = new System.Collections.ObjectModel.Collection<DocumentModel.Packaging.DiagramDataPart>();
+    foreach (var item in openXmlElement.GetPartsOfType<DocumentFormat.OpenXml.Packaging.DiagramDataPart>())
     {
-      var collection = new Collection<DiagramDataPart>();
-      foreach (var item in openXmlElement.GetPartsOfType<DocumentFormat.OpenXml.Packaging.DiagramDataPart>())
-      {
-        var newItem = DiagramDataPartConverter.CreateModelElement(item);
-        if (newItem != null)
-          collection.Add(newItem);
-      }
-      return collection;
+      var newItem = DocumentModel.OpenXml.Packaging.DiagramDataPartConverter.CreateModelElement(item);
+      if (newItem != null)
+        collection.Add(newItem);
     }
-    return null;
+    return collection;
   }
-
+  
   /// <summary>
-  ///   Gets the DiagramLayoutDefinitionParts of the NotesMasterPart
+  /// Gets the DiagramLayoutDefinitionParts of the NotesMasterPart
   /// </summary>
-  public static Collection<DiagramLayoutDefinitionPart>? GetDiagramLayoutDefinitionParts(NotesMasterPart? openXmlElement)
+  private static System.Collections.ObjectModel.Collection<DocumentModel.Packaging.DiagramLayoutDefinitionPart> GetDiagramLayoutDefinitionParts(DocumentFormat.OpenXml.Packaging.NotesMasterPart openXmlElement)
   {
-    if (openXmlElement != null)
+    var collection = new System.Collections.ObjectModel.Collection<DocumentModel.Packaging.DiagramLayoutDefinitionPart>();
+    foreach (var item in openXmlElement.GetPartsOfType<DocumentFormat.OpenXml.Packaging.DiagramLayoutDefinitionPart>())
     {
-      var collection = new Collection<DiagramLayoutDefinitionPart>();
-      foreach (var item in openXmlElement.GetPartsOfType<DocumentFormat.OpenXml.Packaging.DiagramLayoutDefinitionPart>())
-      {
-        var newItem = DiagramLayoutDefinitionPartConverter.CreateModelElement(item);
-        if (newItem != null)
-          collection.Add(newItem);
-      }
-      return collection;
+      var newItem = DocumentModel.OpenXml.Packaging.DiagramLayoutDefinitionPartConverter.CreateModelElement(item);
+      if (newItem != null)
+        collection.Add(newItem);
     }
-    return null;
+    return collection;
   }
-
+  
   /// <summary>
-  ///   Gets the DiagramPersistLayoutParts of the NotesMasterPart
+  /// Gets the DiagramPersistLayoutParts of the NotesMasterPart
   /// </summary>
-  public static Collection<DiagramPersistLayoutPart>? GetDiagramPersistLayoutParts(NotesMasterPart? openXmlElement)
+  private static System.Collections.ObjectModel.Collection<DocumentModel.Packaging.DiagramPersistLayoutPart> GetDiagramPersistLayoutParts(DocumentFormat.OpenXml.Packaging.NotesMasterPart openXmlElement)
   {
-    if (openXmlElement != null)
+    var collection = new System.Collections.ObjectModel.Collection<DocumentModel.Packaging.DiagramPersistLayoutPart>();
+    foreach (var item in openXmlElement.GetPartsOfType<DocumentFormat.OpenXml.Packaging.DiagramPersistLayoutPart>())
     {
-      var collection = new Collection<DiagramPersistLayoutPart>();
-      foreach (var item in openXmlElement.GetPartsOfType<DocumentFormat.OpenXml.Packaging.DiagramPersistLayoutPart>())
-      {
-        var newItem = DiagramPersistLayoutPartConverter.CreateModelElement(item);
-        if (newItem != null)
-          collection.Add(newItem);
-      }
-      return collection;
+      var newItem = DocumentModel.OpenXml.Packaging.DiagramPersistLayoutPartConverter.CreateModelElement(item);
+      if (newItem != null)
+        collection.Add(newItem);
     }
-    return null;
+    return collection;
   }
-
+  
   /// <summary>
-  ///   Gets the DiagramStyleParts of the NotesMasterPart
+  /// Gets the DiagramStyleParts of the NotesMasterPart
   /// </summary>
-  public static Collection<DiagramStylePart>? GetDiagramStyleParts(NotesMasterPart? openXmlElement)
+  private static System.Collections.ObjectModel.Collection<DocumentModel.Packaging.DiagramStylePart> GetDiagramStyleParts(DocumentFormat.OpenXml.Packaging.NotesMasterPart openXmlElement)
   {
-    if (openXmlElement != null)
+    var collection = new System.Collections.ObjectModel.Collection<DocumentModel.Packaging.DiagramStylePart>();
+    foreach (var item in openXmlElement.GetPartsOfType<DocumentFormat.OpenXml.Packaging.DiagramStylePart>())
     {
-      var collection = new Collection<DiagramStylePart>();
-      foreach (var item in openXmlElement.GetPartsOfType<DocumentFormat.OpenXml.Packaging.DiagramStylePart>())
-      {
-        var newItem = DiagramStylePartConverter.CreateModelElement(item);
-        if (newItem != null)
-          collection.Add(newItem);
-      }
-      return collection;
+      var newItem = DocumentModel.OpenXml.Packaging.DiagramStylePartConverter.CreateModelElement(item);
+      if (newItem != null)
+        collection.Add(newItem);
     }
-    return null;
+    return collection;
   }
-
+  
   /// <summary>
-  ///   Gets the EmbeddedControlPersistenceBinaryDataParts of the NotesMasterPart
+  /// Gets the EmbeddedControlPersistenceBinaryDataParts of the NotesMasterPart
   /// </summary>
-  public static Collection<EmbeddedControlPersistenceBinaryDataPart>? GetEmbeddedControlPersistenceBinaryDataParts(NotesMasterPart? openXmlElement)
+  private static System.Collections.ObjectModel.Collection<DocumentModel.Packaging.EmbeddedControlPersistenceBinaryDataPart> GetEmbeddedControlPersistenceBinaryDataParts(DocumentFormat.OpenXml.Packaging.NotesMasterPart openXmlElement)
   {
-    if (openXmlElement != null)
+    var collection = new System.Collections.ObjectModel.Collection<DocumentModel.Packaging.EmbeddedControlPersistenceBinaryDataPart>();
+    foreach (var item in openXmlElement.GetPartsOfType<DocumentFormat.OpenXml.Packaging.EmbeddedControlPersistenceBinaryDataPart>())
     {
-      var collection = new Collection<EmbeddedControlPersistenceBinaryDataPart>();
-      foreach (var item in openXmlElement.GetPartsOfType<DocumentFormat.OpenXml.Packaging.EmbeddedControlPersistenceBinaryDataPart>())
-      {
-        var newItem = EmbeddedControlPersistenceBinaryDataPartConverter.CreateModelElement(item);
-        if (newItem != null)
-          collection.Add(newItem);
-      }
-      return collection;
+      var newItem = DocumentModel.OpenXml.Packaging.EmbeddedControlPersistenceBinaryDataPartConverter.CreateModelElement(item);
+      if (newItem != null)
+        collection.Add(newItem);
     }
-    return null;
+    return collection;
   }
-
+  
   /// <summary>
-  ///   Gets the EmbeddedObjectParts of the NotesMasterPart
+  /// Gets the EmbeddedObjectParts of the NotesMasterPart
   /// </summary>
-  public static Collection<EmbeddedObjectPart>? GetEmbeddedObjectParts(NotesMasterPart? openXmlElement)
+  private static System.Collections.ObjectModel.Collection<DocumentModel.Packaging.EmbeddedObjectPart> GetEmbeddedObjectParts(DocumentFormat.OpenXml.Packaging.NotesMasterPart openXmlElement)
   {
-    if (openXmlElement != null)
+    var collection = new System.Collections.ObjectModel.Collection<DocumentModel.Packaging.EmbeddedObjectPart>();
+    foreach (var item in openXmlElement.GetPartsOfType<DocumentFormat.OpenXml.Packaging.EmbeddedObjectPart>())
     {
-      var collection = new Collection<EmbeddedObjectPart>();
-      foreach (var item in openXmlElement.GetPartsOfType<DocumentFormat.OpenXml.Packaging.EmbeddedObjectPart>())
-      {
-        var newItem = EmbeddedObjectPartConverter.CreateModelElement(item);
-        if (newItem != null)
-          collection.Add(newItem);
-      }
-      return collection;
+      var newItem = DocumentModel.OpenXml.Packaging.EmbeddedObjectPartConverter.CreateModelElement(item);
+      if (newItem != null)
+        collection.Add(newItem);
     }
-    return null;
+    return collection;
   }
-
+  
   /// <summary>
-  ///   Gets the EmbeddedPackageParts of the NotesMasterPart
+  /// Gets the EmbeddedPackageParts of the NotesMasterPart
   /// </summary>
-  public static Collection<EmbeddedPackagePart>? GetEmbeddedPackageParts(NotesMasterPart? openXmlElement)
+  private static System.Collections.ObjectModel.Collection<DocumentModel.Packaging.EmbeddedPackagePart> GetEmbeddedPackageParts(DocumentFormat.OpenXml.Packaging.NotesMasterPart openXmlElement)
   {
-    if (openXmlElement != null)
+    var collection = new System.Collections.ObjectModel.Collection<DocumentModel.Packaging.EmbeddedPackagePart>();
+    foreach (var item in openXmlElement.GetPartsOfType<DocumentFormat.OpenXml.Packaging.EmbeddedPackagePart>())
     {
-      var collection = new Collection<EmbeddedPackagePart>();
-      foreach (var item in openXmlElement.GetPartsOfType<DocumentFormat.OpenXml.Packaging.EmbeddedPackagePart>())
-      {
-        var newItem = EmbeddedPackagePartConverter.CreateModelElement(item);
-        if (newItem != null)
-          collection.Add(newItem);
-      }
-      return collection;
+      var newItem = DocumentModel.OpenXml.Packaging.EmbeddedPackagePartConverter.CreateModelElement(item);
+      if (newItem != null)
+        collection.Add(newItem);
     }
-    return null;
+    return collection;
   }
-
+  
   /// <summary>
-  ///   Gets the ExtendedChartParts of the NotesMasterPart
+  /// Gets the ExtendedChartParts of the NotesMasterPart
   /// </summary>
-  public static Collection<ExtendedChartPart>? GetExtendedChartParts(NotesMasterPart? openXmlElement)
+  private static System.Collections.ObjectModel.Collection<DocumentModel.Packaging.ExtendedChartPart> GetExtendedChartParts(DocumentFormat.OpenXml.Packaging.NotesMasterPart openXmlElement)
   {
-    if (openXmlElement != null)
+    var collection = new System.Collections.ObjectModel.Collection<DocumentModel.Packaging.ExtendedChartPart>();
+    foreach (var item in openXmlElement.GetPartsOfType<DocumentFormat.OpenXml.Packaging.ExtendedChartPart>())
     {
-      var collection = new Collection<ExtendedChartPart>();
-      foreach (var item in openXmlElement.GetPartsOfType<DocumentFormat.OpenXml.Packaging.ExtendedChartPart>())
-      {
-        var newItem = ExtendedChartPartConverter.CreateModelElement(item);
-        if (newItem != null)
-          collection.Add(newItem);
-      }
-      return collection;
+      var newItem = DocumentModel.OpenXml.Packaging.ExtendedChartPartConverter.CreateModelElement(item);
+      if (newItem != null)
+        collection.Add(newItem);
     }
-    return null;
+    return collection;
   }
-
+  
   /// <summary>
-  ///   Gets the ImageParts of the NotesMasterPart
+  /// Gets the ImageParts of the NotesMasterPart
   /// </summary>
-  public static Collection<ImagePart>? GetImageParts(NotesMasterPart? openXmlElement)
+  private static System.Collections.ObjectModel.Collection<DocumentModel.Packaging.ImagePart> GetImageParts(DocumentFormat.OpenXml.Packaging.NotesMasterPart openXmlElement)
   {
-    if (openXmlElement != null)
+    var collection = new System.Collections.ObjectModel.Collection<DocumentModel.Packaging.ImagePart>();
+    foreach (var item in openXmlElement.GetPartsOfType<DocumentFormat.OpenXml.Packaging.ImagePart>())
     {
-      var collection = new Collection<ImagePart>();
-      foreach (var item in openXmlElement.GetPartsOfType<DocumentFormat.OpenXml.Packaging.ImagePart>())
-      {
-        var newItem = ImagePartConverter.CreateModelElement(item);
-        if (newItem != null)
-          collection.Add(newItem);
-      }
-      return collection;
+      var newItem = DocumentModel.OpenXml.Packaging.ImagePartConverter.CreateModelElement(item);
+      if (newItem != null)
+        collection.Add(newItem);
     }
-    return null;
+    return collection;
   }
-
+  
   /// <summary>
-  ///   Gets the Model3DReferenceRelationshipParts of the NotesMasterPart
+  /// Gets the Model3DReferenceRelationshipParts of the NotesMasterPart
   /// </summary>
-  public static Collection<Model3DReferenceRelationshipPart>? GetModel3DReferenceRelationshipParts(NotesMasterPart? openXmlElement)
+  private static System.Collections.ObjectModel.Collection<DocumentModel.Packaging.Model3DReferenceRelationshipPart> GetModel3DReferenceRelationshipParts(DocumentFormat.OpenXml.Packaging.NotesMasterPart openXmlElement)
   {
-    if (openXmlElement != null)
+    var collection = new System.Collections.ObjectModel.Collection<DocumentModel.Packaging.Model3DReferenceRelationshipPart>();
+    foreach (var item in openXmlElement.GetPartsOfType<DocumentFormat.OpenXml.Packaging.Model3DReferenceRelationshipPart>())
     {
-      var collection = new Collection<Model3DReferenceRelationshipPart>();
-      foreach (var item in openXmlElement.GetPartsOfType<DocumentFormat.OpenXml.Packaging.Model3DReferenceRelationshipPart>())
-      {
-        var newItem = Model3DReferenceRelationshipPartConverter.CreateModelElement(item);
-        if (newItem != null)
-          collection.Add(newItem);
-      }
-      return collection;
+      var newItem = DocumentModel.OpenXml.Packaging.Model3DReferenceRelationshipPartConverter.CreateModelElement(item);
+      if (newItem != null)
+        collection.Add(newItem);
     }
-    return null;
+    return collection;
   }
-
-  public static String? GetRelationshipType(NotesMasterPart? openXmlElement)
+  
+  private static String? GetRelationshipType(DocumentFormat.OpenXml.Packaging.NotesMasterPart openXmlElement)
   {
     return openXmlElement?.RelationshipType;
   }
-
+  
   /// <summary>
-  ///   Gets the UserDefinedTagsParts of the NotesMasterPart
+  /// Gets the UserDefinedTagsParts of the NotesMasterPart
   /// </summary>
-  public static Collection<UserDefinedTagsPart>? GetUserDefinedTagsParts(NotesMasterPart? openXmlElement)
+  private static System.Collections.ObjectModel.Collection<DocumentModel.Packaging.UserDefinedTagsPart> GetUserDefinedTagsParts(DocumentFormat.OpenXml.Packaging.NotesMasterPart openXmlElement)
   {
-    if (openXmlElement != null)
+    var collection = new System.Collections.ObjectModel.Collection<DocumentModel.Packaging.UserDefinedTagsPart>();
+    foreach (var item in openXmlElement.GetPartsOfType<DocumentFormat.OpenXml.Packaging.UserDefinedTagsPart>())
     {
-      var collection = new Collection<UserDefinedTagsPart>();
-      foreach (var item in openXmlElement.GetPartsOfType<DocumentFormat.OpenXml.Packaging.UserDefinedTagsPart>())
-      {
-        var newItem = UserDefinedTagsPartConverter.CreateModelElement(item);
-        if (newItem != null)
-          collection.Add(newItem);
-      }
-      return collection;
+      var newItem = DocumentModel.OpenXml.Packaging.UserDefinedTagsPartConverter.CreateModelElement(item);
+      if (newItem != null)
+        collection.Add(newItem);
     }
-    return null;
+    return collection;
   }
-
+  
   /// <summary>
-  ///   Gets the VmlDrawingParts of the NotesMasterPart
+  /// Gets the VmlDrawingParts of the NotesMasterPart
   /// </summary>
-  public static Collection<VmlDrawingPart>? GetVmlDrawingParts(NotesMasterPart? openXmlElement)
+  private static System.Collections.ObjectModel.Collection<DocumentModel.Packaging.VmlDrawingPart> GetVmlDrawingParts(DocumentFormat.OpenXml.Packaging.NotesMasterPart openXmlElement)
   {
-    if (openXmlElement != null)
+    var collection = new System.Collections.ObjectModel.Collection<DocumentModel.Packaging.VmlDrawingPart>();
+    foreach (var item in openXmlElement.GetPartsOfType<DocumentFormat.OpenXml.Packaging.VmlDrawingPart>())
     {
-      var collection = new Collection<VmlDrawingPart>();
-      foreach (var item in openXmlElement.GetPartsOfType<DocumentFormat.OpenXml.Packaging.VmlDrawingPart>())
-      {
-        var newItem = VmlDrawingPartConverter.CreateModelElement(item);
-        if (newItem != null)
-          collection.Add(newItem);
-      }
-      return collection;
+      var newItem = DocumentModel.OpenXml.Packaging.VmlDrawingPartConverter.CreateModelElement(item);
+      if (newItem != null)
+        collection.Add(newItem);
     }
-    return null;
+    return collection;
   }
-
-  public static DocumentModel.Packaging.NotesMasterPart? CreateModelElement(NotesMasterPart? openXmlElement)
+  
+  public static DocumentModel.Packaging.NotesMasterPart? CreateModelElement(DocumentFormat.OpenXml.Packaging.NotesMasterPart? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -329,9 +266,9 @@ public static class NotesMasterPartConverter
     }
     return null;
   }
-
+  
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Packaging.NotesMasterPart? value)
-    where OpenXmlElementType : NotesMasterPart, new()
+    where OpenXmlElementType: DocumentFormat.OpenXml.Packaging.NotesMasterPart, new()
   {
     if (value != null)
     {

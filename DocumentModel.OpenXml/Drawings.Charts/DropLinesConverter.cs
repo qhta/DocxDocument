@@ -1,38 +1,32 @@
-using DocumentModel.Drawings.Charts;
-using DropLines = DocumentFormat.OpenXml.Drawing.Charts.DropLines;
-
 namespace DocumentModel.OpenXml.Drawings.Charts;
 
 /// <summary>
-///   Drop Lines.
+/// Drop Lines.
 /// </summary>
 public static class DropLinesConverter
 {
-  public static ChartShapeProperties? GetChartShapeProperties(DropLines? openXmlElement)
+  private static DocumentModel.Drawings.Charts.ChartShapeProperties? GetChartShapeProperties(DocumentFormat.OpenXml.Drawing.Charts.DropLines openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.ChartShapeProperties>();
     if (itemElement != null)
-      return ChartShapePropertiesConverter.CreateModelElement(itemElement);
+      return DocumentModel.OpenXml.Drawings.Charts.ChartShapePropertiesConverter.CreateModelElement(itemElement);
     return null;
   }
-
-  public static void SetChartShapeProperties(DropLines? openXmlElement, ChartShapeProperties? value)
+  
+  private static void SetChartShapeProperties(DocumentFormat.OpenXml.Drawing.Charts.DropLines openXmlElement, DocumentModel.Drawings.Charts.ChartShapeProperties? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.ChartShapeProperties>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.ChartShapeProperties>();
+      itemElement = DocumentModel.OpenXml.Drawings.Charts.ChartShapePropertiesConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Charts.ChartShapeProperties>(value);
       if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = ChartShapePropertiesConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Charts.ChartShapeProperties>(value);
-        if (itemElement != null)
-          openXmlElement.AddChild(itemElement);
-      }
+        openXmlElement.AddChild(itemElement);
     }
   }
-
-  public static DocumentModel.Drawings.Charts.DropLines? CreateModelElement(DropLines? openXmlElement)
+  
+  public static DocumentModel.Drawings.Charts.DropLines? CreateModelElement(DocumentFormat.OpenXml.Drawing.Charts.DropLines? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -42,9 +36,9 @@ public static class DropLinesConverter
     }
     return null;
   }
-
+  
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.Charts.DropLines? value)
-    where OpenXmlElementType : DropLines, new()
+    where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.Charts.DropLines, new()
   {
     if (value != null)
     {

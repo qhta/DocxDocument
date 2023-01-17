@@ -1,44 +1,37 @@
-using DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing;
-
 namespace DocumentModel.OpenXml.Drawings.ChartDrawings;
 
 /// <summary>
-///   Defines the GeoChildTypes Class.
+/// Defines the GeoChildTypes Class.
 /// </summary>
 public static class GeoChildTypesConverter
 {
-  public static Collection<String>? GetEntityTypes(GeoChildTypes? openXmlElement)
+  private static System.Collections.ObjectModel.Collection<String> GetEntityTypes(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.GeoChildTypes openXmlElement)
   {
-    if (openXmlElement != null)
+    var collection = new System.Collections.ObjectModel.Collection<String>();
+    foreach (var item in openXmlElement.Elements<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.EntityType>())
     {
-      var collection = new Collection<String>();
-      foreach (var item in openXmlElement.Elements<EntityType>())
+      var newItem = StringValueConverter.GetValue(item);
+      if (newItem != null)
+        collection.Add((string)newItem);
+    }
+    return collection;
+  }
+  
+  private static void SetEntityTypes(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.GeoChildTypes openXmlElement, System.Collections.ObjectModel.Collection<String>? value)
+  {
+    openXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.EntityType>();
+    if (value != null)
+    {
+      foreach (var item in value)
       {
-        var newItem = StringValueConverter.GetValue(item);
+        var newItem = StringValueConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.EntityType>(item);
         if (newItem != null)
-          collection.Add((string)newItem);
+          openXmlElement.AddChild(newItem);
       }
-      return collection;
-    }
-    return null;
-  }
-
-  public static void SetEntityTypes(GeoChildTypes? openXmlElement, Collection<String>? value)
-  {
-    if (openXmlElement != null)
-    {
-      openXmlElement.RemoveAllChildren<EntityType>();
-      if (value != null)
-        foreach (var item in value)
-        {
-          var newItem = StringValueConverter.CreateOpenXmlElement<EntityType>(item);
-          if (newItem != null)
-            openXmlElement.AddChild(newItem);
-        }
     }
   }
-
-  public static DocumentModel.Drawings.ChartDrawings.GeoChildTypes? CreateModelElement(GeoChildTypes? openXmlElement)
+  
+  public static DocumentModel.Drawings.ChartDrawings.GeoChildTypes? CreateModelElement(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.GeoChildTypes? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -48,9 +41,9 @@ public static class GeoChildTypesConverter
     }
     return null;
   }
-
+  
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.ChartDrawings.GeoChildTypes? value)
-    where OpenXmlElementType : GeoChildTypes, new()
+    where OpenXmlElementType: DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.GeoChildTypes, new()
   {
     if (value != null)
     {

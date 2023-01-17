@@ -1,93 +1,82 @@
-using DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing;
-using NumericValue = DocumentModel.Drawings.ChartDrawings.NumericValue;
-
 namespace DocumentModel.OpenXml.Drawings.ChartDrawings;
 
 /// <summary>
-///   Defines the NumericLevel Class.
+/// Defines the NumericLevel Class.
 /// </summary>
 public static class NumericLevelConverter
 {
   /// <summary>
-  ///   ptCount, this property is only available in Office 2016 and later.
+  /// ptCount, this property is only available in Office 2016 and later.
   /// </summary>
-  public static UInt32? GetPtCount(NumericLevel? openXmlElement)
+  private static UInt32? GetPtCount(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.NumericLevel openXmlElement)
   {
-    return openXmlElement?.PtCount?.Value;
+    return openXmlElement.PtCount?.Value;
   }
-
-  public static void SetPtCount(NumericLevel? openXmlElement, UInt32? value)
+  
+  private static void SetPtCount(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.NumericLevel openXmlElement, UInt32? value)
   {
-    if (openXmlElement != null)
-      openXmlElement.PtCount = value;
+    openXmlElement.PtCount = value;
   }
-
+  
   /// <summary>
-  ///   formatCode, this property is only available in Office 2016 and later.
+  /// formatCode, this property is only available in Office 2016 and later.
   /// </summary>
-  public static String? GetFormatCode(NumericLevel? openXmlElement)
+  private static String? GetFormatCode(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.NumericLevel openXmlElement)
   {
     return openXmlElement?.FormatCode?.Value;
   }
-
-  public static void SetFormatCode(NumericLevel? openXmlElement, String? value)
+  
+  private static void SetFormatCode(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.NumericLevel openXmlElement, String? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.FormatCode = new StringValue { Value = value };
-      else
-        openXmlElement.FormatCode = null;
+    if (value != null)
+      openXmlElement.FormatCode = new StringValue { Value = value };
+    else
+      openXmlElement.FormatCode = null;
   }
-
+  
   /// <summary>
-  ///   name, this property is only available in Office 2016 and later.
+  /// name, this property is only available in Office 2016 and later.
   /// </summary>
-  public static String? GetName(NumericLevel? openXmlElement)
+  private static String? GetName(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.NumericLevel openXmlElement)
   {
     return openXmlElement?.Name?.Value;
   }
-
-  public static void SetName(NumericLevel? openXmlElement, String? value)
+  
+  private static void SetName(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.NumericLevel openXmlElement, String? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.Name = new StringValue { Value = value };
-      else
-        openXmlElement.Name = null;
+    if (value != null)
+      openXmlElement.Name = new StringValue { Value = value };
+    else
+      openXmlElement.Name = null;
   }
-
-  public static Collection<NumericValue>? GetNumericValues(NumericLevel? openXmlElement)
+  
+  private static System.Collections.ObjectModel.Collection<DocumentModel.Drawings.ChartDrawings.NumericValue> GetNumericValues(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.NumericLevel openXmlElement)
   {
-    if (openXmlElement != null)
+    var collection = new System.Collections.ObjectModel.Collection<DocumentModel.Drawings.ChartDrawings.NumericValue>();
+    foreach (var item in openXmlElement.Elements<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.NumericValue>())
     {
-      var collection = new Collection<NumericValue>();
-      foreach (var item in openXmlElement.Elements<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.NumericValue>())
+      var newItem = DocumentModel.OpenXml.Drawings.ChartDrawings.NumericValueConverter.CreateModelElement(item);
+      if (newItem != null)
+        collection.Add(newItem);
+    }
+    return collection;
+  }
+  
+  private static void SetNumericValues(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.NumericLevel openXmlElement, System.Collections.ObjectModel.Collection<DocumentModel.Drawings.ChartDrawings.NumericValue>? value)
+  {
+    openXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.NumericValue>();
+    if (value != null)
+    {
+      foreach (var item in value)
       {
-        var newItem = NumericValueConverter.CreateModelElement(item);
+        var newItem = DocumentModel.OpenXml.Drawings.ChartDrawings.NumericValueConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.NumericValue>(item);
         if (newItem != null)
-          collection.Add(newItem);
+          openXmlElement.AddChild(newItem);
       }
-      return collection;
-    }
-    return null;
-  }
-
-  public static void SetNumericValues(NumericLevel? openXmlElement, Collection<NumericValue>? value)
-  {
-    if (openXmlElement != null)
-    {
-      openXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.NumericValue>();
-      if (value != null)
-        foreach (var item in value)
-        {
-          var newItem = NumericValueConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.NumericValue>(item);
-          if (newItem != null)
-            openXmlElement.AddChild(newItem);
-        }
     }
   }
-
-  public static DocumentModel.Drawings.ChartDrawings.NumericLevel? CreateModelElement(NumericLevel? openXmlElement)
+  
+  public static DocumentModel.Drawings.ChartDrawings.NumericLevel? CreateModelElement(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.NumericLevel? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -100,9 +89,9 @@ public static class NumericLevelConverter
     }
     return null;
   }
-
+  
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.ChartDrawings.NumericLevel? value)
-    where OpenXmlElementType : NumericLevel, new()
+    where OpenXmlElementType: DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.NumericLevel, new()
   {
     if (value != null)
     {

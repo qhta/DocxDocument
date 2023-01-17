@@ -1,43 +1,37 @@
-using DocumentFormat.OpenXml.Drawing;
-using DocumentModel.Drawings;
-using TabStop = DocumentFormat.OpenXml.Drawing.TabStop;
-
 namespace DocumentModel.OpenXml.Drawings;
 
 /// <summary>
-///   Tab Stop.
+/// Tab Stop.
 /// </summary>
 public static class TabStopConverter
 {
   /// <summary>
-  ///   Tab Position
+  /// Tab Position
   /// </summary>
-  public static Int32? GetPosition(TabStop? openXmlElement)
+  private static Int32? GetPosition(DocumentFormat.OpenXml.Drawing.TabStop openXmlElement)
   {
-    return openXmlElement?.Position?.Value;
+    return openXmlElement.Position?.Value;
   }
-
-  public static void SetPosition(TabStop? openXmlElement, Int32? value)
+  
+  private static void SetPosition(DocumentFormat.OpenXml.Drawing.TabStop openXmlElement, Int32? value)
   {
-    if (openXmlElement != null)
-      openXmlElement.Position = value;
+    openXmlElement.Position = value;
   }
-
+  
   /// <summary>
-  ///   Tab Alignment
+  /// Tab Alignment
   /// </summary>
-  public static TextTabAlignmentKind? GetAlignment(TabStop? openXmlElement)
+  private static DocumentModel.Drawings.TextTabAlignmentKind? GetAlignment(DocumentFormat.OpenXml.Drawing.TabStop openXmlElement)
   {
-    return EnumValueConverter.GetValue<TextTabAlignmentValues, TextTabAlignmentKind>(openXmlElement?.Alignment?.Value);
+    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Drawing.TextTabAlignmentValues, DocumentModel.Drawings.TextTabAlignmentKind>(openXmlElement?.Alignment?.Value);
   }
-
-  public static void SetAlignment(TabStop? openXmlElement, TextTabAlignmentKind? value)
+  
+  private static void SetAlignment(DocumentFormat.OpenXml.Drawing.TabStop openXmlElement, DocumentModel.Drawings.TextTabAlignmentKind? value)
   {
-    if (openXmlElement != null)
-      openXmlElement.Alignment = EnumValueConverter.CreateEnumValue<TextTabAlignmentValues, TextTabAlignmentKind>(value);
+    openXmlElement.Alignment = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Drawing.TextTabAlignmentValues, DocumentModel.Drawings.TextTabAlignmentKind>(value);
   }
-
-  public static DocumentModel.Drawings.TabStop? CreateModelElement(TabStop? openXmlElement)
+  
+  public static DocumentModel.Drawings.TabStop? CreateModelElement(DocumentFormat.OpenXml.Drawing.TabStop? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -48,9 +42,9 @@ public static class TabStopConverter
     }
     return null;
   }
-
+  
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.TabStop? value)
-    where OpenXmlElementType : TabStop, new()
+    where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.TabStop, new()
   {
     if (value != null)
     {

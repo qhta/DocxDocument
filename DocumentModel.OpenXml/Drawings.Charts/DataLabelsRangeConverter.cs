@@ -1,67 +1,58 @@
-using DocumentFormat.OpenXml.Office2013.Drawing.Chart;
-using DataLabelsRangeChache = DocumentModel.Drawings.Charts.DataLabelsRangeChache;
-
 namespace DocumentModel.OpenXml.Drawings.Charts;
 
 /// <summary>
-///   Defines the DataLabelsRange Class.
+/// Defines the DataLabelsRange Class.
 /// </summary>
 public static class DataLabelsRangeConverter
 {
   /// <summary>
-  ///   Formula.
+  /// Formula.
   /// </summary>
-  public static String? GetFormula(DataLabelsRange? openXmlElement)
+  private static String? GetFormula(DocumentFormat.OpenXml.Office2013.Drawing.Chart.DataLabelsRange openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<Formula>();
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office2013.Drawing.Chart.Formula>();
     if (itemElement != null)
       return itemElement.Text;
     return null;
   }
-
-  public static void SetFormula(DataLabelsRange? openXmlElement, String? value)
+  
+  private static void SetFormula(DocumentFormat.OpenXml.Office2013.Drawing.Chart.DataLabelsRange openXmlElement, String? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2013.Drawing.Chart.Formula>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<Formula>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = new Formula { Text = value };
-        openXmlElement.AddChild(itemElement);
-      }
+      itemElement = new DocumentFormat.OpenXml.Office2013.Drawing.Chart.Formula { Text = value };
+      openXmlElement.AddChild(itemElement);
     }
   }
-
+  
   /// <summary>
-  ///   DataLabelsRangeChache.
+  /// DataLabelsRangeChache.
   /// </summary>
-  public static DataLabelsRangeChache? GetDataLabelsRangeChache(DataLabelsRange? openXmlElement)
+  private static DocumentModel.Drawings.Charts.DataLabelsRangeChache? GetDataLabelsRangeChache(DocumentFormat.OpenXml.Office2013.Drawing.Chart.DataLabelsRange openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office2013.Drawing.Chart.DataLabelsRangeChache>();
     if (itemElement != null)
-      return DataLabelsRangeChacheConverter.CreateModelElement(itemElement);
+      return DocumentModel.OpenXml.Drawings.Charts.DataLabelsRangeChacheConverter.CreateModelElement(itemElement);
     return null;
   }
-
-  public static void SetDataLabelsRangeChache(DataLabelsRange? openXmlElement, DataLabelsRangeChache? value)
+  
+  private static void SetDataLabelsRangeChache(DocumentFormat.OpenXml.Office2013.Drawing.Chart.DataLabelsRange openXmlElement, DocumentModel.Drawings.Charts.DataLabelsRangeChache? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2013.Drawing.Chart.DataLabelsRangeChache>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2013.Drawing.Chart.DataLabelsRangeChache>();
+      itemElement = DocumentModel.OpenXml.Drawings.Charts.DataLabelsRangeChacheConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2013.Drawing.Chart.DataLabelsRangeChache>(value);
       if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = DataLabelsRangeChacheConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2013.Drawing.Chart.DataLabelsRangeChache>(value);
-        if (itemElement != null)
-          openXmlElement.AddChild(itemElement);
-      }
+        openXmlElement.AddChild(itemElement);
     }
   }
-
-  public static DocumentModel.Drawings.Charts.DataLabelsRange? CreateModelElement(DataLabelsRange? openXmlElement)
+  
+  public static DocumentModel.Drawings.Charts.DataLabelsRange? CreateModelElement(DocumentFormat.OpenXml.Office2013.Drawing.Chart.DataLabelsRange? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -72,9 +63,9 @@ public static class DataLabelsRangeConverter
     }
     return null;
   }
-
+  
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.Charts.DataLabelsRange? value)
-    where OpenXmlElementType : DataLabelsRange, new()
+    where OpenXmlElementType: DocumentFormat.OpenXml.Office2013.Drawing.Chart.DataLabelsRange, new()
   {
     if (value != null)
     {

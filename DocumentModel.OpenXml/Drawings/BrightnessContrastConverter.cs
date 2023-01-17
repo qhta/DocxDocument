@@ -1,41 +1,37 @@
-using DocumentFormat.OpenXml.Office2010.Drawing;
-
 namespace DocumentModel.OpenXml.Drawings;
 
 /// <summary>
-///   Defines the BrightnessContrast Class.
+/// Defines the BrightnessContrast Class.
 /// </summary>
 public static class BrightnessContrastConverter
 {
   /// <summary>
-  ///   bright, this property is only available in Office 2010 and later.
+  /// bright, this property is only available in Office 2010 and later.
   /// </summary>
-  public static Int32? GetBright(BrightnessContrast? openXmlElement)
+  private static Int32? GetBright(DocumentFormat.OpenXml.Office2010.Drawing.BrightnessContrast openXmlElement)
   {
-    return openXmlElement?.Bright?.Value;
+    return openXmlElement.Bright?.Value;
   }
-
-  public static void SetBright(BrightnessContrast? openXmlElement, Int32? value)
+  
+  private static void SetBright(DocumentFormat.OpenXml.Office2010.Drawing.BrightnessContrast openXmlElement, Int32? value)
   {
-    if (openXmlElement != null)
-      openXmlElement.Bright = value;
+    openXmlElement.Bright = value;
   }
-
+  
   /// <summary>
-  ///   contrast, this property is only available in Office 2010 and later.
+  /// contrast, this property is only available in Office 2010 and later.
   /// </summary>
-  public static Int32? GetContrast(BrightnessContrast? openXmlElement)
+  private static Int32? GetContrast(DocumentFormat.OpenXml.Office2010.Drawing.BrightnessContrast openXmlElement)
   {
-    return openXmlElement?.Contrast?.Value;
+    return openXmlElement.Contrast?.Value;
   }
-
-  public static void SetContrast(BrightnessContrast? openXmlElement, Int32? value)
+  
+  private static void SetContrast(DocumentFormat.OpenXml.Office2010.Drawing.BrightnessContrast openXmlElement, Int32? value)
   {
-    if (openXmlElement != null)
-      openXmlElement.Contrast = value;
+    openXmlElement.Contrast = value;
   }
-
-  public static DocumentModel.Drawings.BrightnessContrast? CreateModelElement(BrightnessContrast? openXmlElement)
+  
+  public static DocumentModel.Drawings.BrightnessContrast? CreateModelElement(DocumentFormat.OpenXml.Office2010.Drawing.BrightnessContrast? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -46,9 +42,9 @@ public static class BrightnessContrastConverter
     }
     return null;
   }
-
+  
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.BrightnessContrast? value)
-    where OpenXmlElementType : BrightnessContrast, new()
+    where OpenXmlElementType: DocumentFormat.OpenXml.Office2010.Drawing.BrightnessContrast, new()
   {
     if (value != null)
     {

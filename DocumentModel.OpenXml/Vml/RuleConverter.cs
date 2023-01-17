@@ -1,109 +1,95 @@
-using DocumentFormat.OpenXml.Vml.Office;
-using DocumentModel.Vml;
-using Proxy = DocumentModel.Vml.Proxy;
-using Rule = DocumentFormat.OpenXml.Vml.Office.Rule;
-
 namespace DocumentModel.OpenXml.Vml;
 
 /// <summary>
-///   Rule.
+/// Rule.
 /// </summary>
 public static class RuleConverter
 {
   /// <summary>
-  ///   Rule ID
+  /// Rule ID
   /// </summary>
-  public static String? GetId(Rule? openXmlElement)
+  private static String? GetId(DocumentFormat.OpenXml.Vml.Office.Rule openXmlElement)
   {
     return openXmlElement?.Id?.Value;
   }
-
-  public static void SetId(Rule? openXmlElement, String? value)
+  
+  private static void SetId(DocumentFormat.OpenXml.Vml.Office.Rule openXmlElement, String? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.Id = new StringValue { Value = value };
-      else
-        openXmlElement.Id = null;
+    if (value != null)
+      openXmlElement.Id = new StringValue { Value = value };
+    else
+      openXmlElement.Id = null;
   }
-
+  
   /// <summary>
-  ///   Rule Type
+  /// Rule Type
   /// </summary>
-  public static RuleKind? GetType(Rule? openXmlElement)
+  private static DocumentModel.Vml.RuleKind? GetType(DocumentFormat.OpenXml.Vml.Office.Rule openXmlElement)
   {
-    return EnumValueConverter.GetValue<RuleValues, RuleKind>(openXmlElement?.Type?.Value);
+    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Vml.Office.RuleValues, DocumentModel.Vml.RuleKind>(openXmlElement?.Type?.Value);
   }
-
-  public static void SetType(Rule? openXmlElement, RuleKind? value)
+  
+  private static void SetType(DocumentFormat.OpenXml.Vml.Office.Rule openXmlElement, DocumentModel.Vml.RuleKind? value)
   {
-    if (openXmlElement != null)
-      openXmlElement.Type = EnumValueConverter.CreateEnumValue<RuleValues, RuleKind>(value);
+    openXmlElement.Type = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Vml.Office.RuleValues, DocumentModel.Vml.RuleKind>(value);
   }
-
+  
   /// <summary>
-  ///   Alignment Rule Type
+  /// Alignment Rule Type
   /// </summary>
-  public static AlignmentKind? GetHow(Rule? openXmlElement)
+  private static DocumentModel.Vml.AlignmentKind? GetHow(DocumentFormat.OpenXml.Vml.Office.Rule openXmlElement)
   {
-    return EnumValueConverter.GetValue<AlignmentValues, AlignmentKind>(openXmlElement?.How?.Value);
+    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Vml.Office.AlignmentValues, DocumentModel.Vml.AlignmentKind>(openXmlElement?.How?.Value);
   }
-
-  public static void SetHow(Rule? openXmlElement, AlignmentKind? value)
+  
+  private static void SetHow(DocumentFormat.OpenXml.Vml.Office.Rule openXmlElement, DocumentModel.Vml.AlignmentKind? value)
   {
-    if (openXmlElement != null)
-      openXmlElement.How = EnumValueConverter.CreateEnumValue<AlignmentValues, AlignmentKind>(value);
+    openXmlElement.How = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Vml.Office.AlignmentValues, DocumentModel.Vml.AlignmentKind>(value);
   }
-
+  
   /// <summary>
-  ///   Rule Shape Reference
+  /// Rule Shape Reference
   /// </summary>
-  public static String? GetShapeReference(Rule? openXmlElement)
+  private static String? GetShapeReference(DocumentFormat.OpenXml.Vml.Office.Rule openXmlElement)
   {
     return openXmlElement?.ShapeReference?.Value;
   }
-
-  public static void SetShapeReference(Rule? openXmlElement, String? value)
+  
+  private static void SetShapeReference(DocumentFormat.OpenXml.Vml.Office.Rule openXmlElement, String? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.ShapeReference = new StringValue { Value = value };
-      else
-        openXmlElement.ShapeReference = null;
+    if (value != null)
+      openXmlElement.ShapeReference = new StringValue { Value = value };
+    else
+      openXmlElement.ShapeReference = null;
   }
-
-  public static Collection<Proxy>? GetProxies(Rule? openXmlElement)
+  
+  private static System.Collections.ObjectModel.Collection<DocumentModel.Vml.Proxy> GetProxies(DocumentFormat.OpenXml.Vml.Office.Rule openXmlElement)
   {
-    if (openXmlElement != null)
+    var collection = new System.Collections.ObjectModel.Collection<DocumentModel.Vml.Proxy>();
+    foreach (var item in openXmlElement.Elements<DocumentFormat.OpenXml.Vml.Office.Proxy>())
     {
-      var collection = new Collection<Proxy>();
-      foreach (var item in openXmlElement.Elements<DocumentFormat.OpenXml.Vml.Office.Proxy>())
+      var newItem = DocumentModel.OpenXml.Vml.ProxyConverter.CreateModelElement(item);
+      if (newItem != null)
+        collection.Add(newItem);
+    }
+    return collection;
+  }
+  
+  private static void SetProxies(DocumentFormat.OpenXml.Vml.Office.Rule openXmlElement, System.Collections.ObjectModel.Collection<DocumentModel.Vml.Proxy>? value)
+  {
+    openXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Vml.Office.Proxy>();
+    if (value != null)
+    {
+      foreach (var item in value)
       {
-        var newItem = ProxyConverter.CreateModelElement(item);
+        var newItem = DocumentModel.OpenXml.Vml.ProxyConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Vml.Office.Proxy>(item);
         if (newItem != null)
-          collection.Add(newItem);
+          openXmlElement.AddChild(newItem);
       }
-      return collection;
-    }
-    return null;
-  }
-
-  public static void SetProxies(Rule? openXmlElement, Collection<Proxy>? value)
-  {
-    if (openXmlElement != null)
-    {
-      openXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Vml.Office.Proxy>();
-      if (value != null)
-        foreach (var item in value)
-        {
-          var newItem = ProxyConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Vml.Office.Proxy>(item);
-          if (newItem != null)
-            openXmlElement.AddChild(newItem);
-        }
     }
   }
-
-  public static DocumentModel.Vml.Rule? CreateModelElement(Rule? openXmlElement)
+  
+  public static DocumentModel.Vml.Rule? CreateModelElement(DocumentFormat.OpenXml.Vml.Office.Rule? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -117,9 +103,9 @@ public static class RuleConverter
     }
     return null;
   }
-
+  
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Vml.Rule? value)
-    where OpenXmlElementType : Rule, new()
+    where OpenXmlElementType: DocumentFormat.OpenXml.Vml.Office.Rule, new()
   {
     if (value != null)
     {

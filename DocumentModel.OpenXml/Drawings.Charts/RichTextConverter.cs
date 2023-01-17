@@ -1,86 +1,74 @@
-using DocumentFormat.OpenXml.Drawing.Charts;
-using DocumentModel.Drawings;
-
 namespace DocumentModel.OpenXml.Drawings.Charts;
 
 /// <summary>
-///   Rich Text.
+/// Rich Text.
 /// </summary>
 public static class RichTextConverter
 {
-  public static BodyProperties? GetBodyProperties(RichText? openXmlElement)
+  private static DocumentModel.Drawings.BodyProperties? GetBodyProperties(DocumentFormat.OpenXml.Drawing.Charts.RichText openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.BodyProperties>();
     if (itemElement != null)
-      return BodyPropertiesConverter.CreateModelElement(itemElement);
+      return DocumentModel.OpenXml.Drawings.BodyPropertiesConverter.CreateModelElement(itemElement);
     return null;
   }
-
-  public static void SetBodyProperties(RichText? openXmlElement, BodyProperties? value)
+  
+  private static void SetBodyProperties(DocumentFormat.OpenXml.Drawing.Charts.RichText openXmlElement, DocumentModel.Drawings.BodyProperties? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.BodyProperties>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.BodyProperties>();
+      itemElement = DocumentModel.OpenXml.Drawings.BodyPropertiesConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.BodyProperties>(value);
       if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = BodyPropertiesConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.BodyProperties>(value);
-        if (itemElement != null)
-          openXmlElement.AddChild(itemElement);
-      }
+        openXmlElement.AddChild(itemElement);
     }
   }
-
-  public static ListStyle? GetListStyle(RichText? openXmlElement)
+  
+  private static DocumentModel.Drawings.ListStyle? GetListStyle(DocumentFormat.OpenXml.Drawing.Charts.RichText openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.ListStyle>();
     if (itemElement != null)
-      return ListStyleConverter.CreateModelElement(itemElement);
+      return DocumentModel.OpenXml.Drawings.ListStyleConverter.CreateModelElement(itemElement);
     return null;
   }
-
-  public static void SetListStyle(RichText? openXmlElement, ListStyle? value)
+  
+  private static void SetListStyle(DocumentFormat.OpenXml.Drawing.Charts.RichText openXmlElement, DocumentModel.Drawings.ListStyle? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.ListStyle>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.ListStyle>();
+      itemElement = DocumentModel.OpenXml.Drawings.ListStyleConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.ListStyle>(value);
       if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = ListStyleConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.ListStyle>(value);
-        if (itemElement != null)
-          openXmlElement.AddChild(itemElement);
-      }
+        openXmlElement.AddChild(itemElement);
     }
   }
-
-  public static Paragraph? GetParagraph(RichText? openXmlElement)
+  
+  private static DocumentModel.Drawings.Paragraph? GetParagraph(DocumentFormat.OpenXml.Drawing.Charts.RichText openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.Paragraph>();
     if (itemElement != null)
-      return ParagraphConverter.CreateModelElement(itemElement);
+      return DocumentModel.OpenXml.Drawings.ParagraphConverter.CreateModelElement(itemElement);
     return null;
   }
-
-  public static void SetParagraph(RichText? openXmlElement, Paragraph? value)
+  
+  private static void SetParagraph(DocumentFormat.OpenXml.Drawing.Charts.RichText openXmlElement, DocumentModel.Drawings.Paragraph? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Paragraph>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Paragraph>();
+      itemElement = DocumentModel.OpenXml.Drawings.ParagraphConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Paragraph>(value);
       if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = ParagraphConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Paragraph>(value);
-        if (itemElement != null)
-          openXmlElement.AddChild(itemElement);
-      }
+        openXmlElement.AddChild(itemElement);
     }
   }
-
-  public static DocumentModel.Drawings.Charts.RichText? CreateModelElement(RichText? openXmlElement)
+  
+  public static DocumentModel.Drawings.Charts.RichText? CreateModelElement(DocumentFormat.OpenXml.Drawing.Charts.RichText? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -92,9 +80,9 @@ public static class RichTextConverter
     }
     return null;
   }
-
+  
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.Charts.RichText? value)
-    where OpenXmlElementType : RichText, new()
+    where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.Charts.RichText, new()
   {
     if (value != null)
     {

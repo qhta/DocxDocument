@@ -1,30 +1,27 @@
-using DocumentFormat.OpenXml.Wordprocessing;
-
 namespace DocumentModel.OpenXml.Wordprocessing;
 
 /// <summary>
-///   Defines the ContentPart Class.
+/// Defines the ContentPart Class.
 /// </summary>
 public static class ContentPartConverter
 {
   /// <summary>
-  ///   id
+  /// id
   /// </summary>
-  public static String? GetId(ContentPart? openXmlElement)
+  private static String? GetId(DocumentFormat.OpenXml.Wordprocessing.ContentPart openXmlElement)
   {
     return openXmlElement?.Id?.Value;
   }
-
-  public static void SetId(ContentPart? openXmlElement, String? value)
+  
+  private static void SetId(DocumentFormat.OpenXml.Wordprocessing.ContentPart openXmlElement, String? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.Id = new StringValue { Value = value };
-      else
-        openXmlElement.Id = null;
+    if (value != null)
+      openXmlElement.Id = new StringValue { Value = value };
+    else
+      openXmlElement.Id = null;
   }
-
-  public static DocumentModel.Wordprocessing.ContentPart? CreateModelElement(ContentPart? openXmlElement)
+  
+  public static DocumentModel.Wordprocessing.ContentPart? CreateModelElement(DocumentFormat.OpenXml.Wordprocessing.ContentPart? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -34,9 +31,9 @@ public static class ContentPartConverter
     }
     return null;
   }
-
+  
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.ContentPart? value)
-    where OpenXmlElementType : ContentPart, new()
+    where OpenXmlElementType: DocumentFormat.OpenXml.Wordprocessing.ContentPart, new()
   {
     if (value != null)
     {

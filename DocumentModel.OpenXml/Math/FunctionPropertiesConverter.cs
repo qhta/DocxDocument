@@ -1,41 +1,35 @@
-using DocumentModel.Math;
-using FunctionProperties = DocumentFormat.OpenXml.Math.FunctionProperties;
-
 namespace DocumentModel.OpenXml.Math;
 
 /// <summary>
-///   Function Properties.
+/// Function Properties.
 /// </summary>
 public static class FunctionPropertiesConverter
 {
   /// <summary>
-  ///   ControlProperties.
+  /// ControlProperties.
   /// </summary>
-  public static ControlProperties? GetControlProperties(FunctionProperties? openXmlElement)
+  private static DocumentModel.Math.ControlProperties? GetControlProperties(DocumentFormat.OpenXml.Math.FunctionProperties openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Math.ControlProperties>();
     if (itemElement != null)
-      return ControlPropertiesConverter.CreateModelElement(itemElement);
+      return DocumentModel.OpenXml.Math.ControlPropertiesConverter.CreateModelElement(itemElement);
     return null;
   }
-
-  public static void SetControlProperties(FunctionProperties? openXmlElement, ControlProperties? value)
+  
+  private static void SetControlProperties(DocumentFormat.OpenXml.Math.FunctionProperties openXmlElement, DocumentModel.Math.ControlProperties? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Math.ControlProperties>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Math.ControlProperties>();
+      itemElement = DocumentModel.OpenXml.Math.ControlPropertiesConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Math.ControlProperties>(value);
       if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = ControlPropertiesConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Math.ControlProperties>(value);
-        if (itemElement != null)
-          openXmlElement.AddChild(itemElement);
-      }
+        openXmlElement.AddChild(itemElement);
     }
   }
-
-  public static DocumentModel.Math.FunctionProperties? CreateModelElement(FunctionProperties? openXmlElement)
+  
+  public static DocumentModel.Math.FunctionProperties? CreateModelElement(DocumentFormat.OpenXml.Math.FunctionProperties? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -45,9 +39,9 @@ public static class FunctionPropertiesConverter
     }
     return null;
   }
-
+  
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Math.FunctionProperties? value)
-    where OpenXmlElementType : FunctionProperties, new()
+    where OpenXmlElementType: DocumentFormat.OpenXml.Math.FunctionProperties, new()
   {
     if (value != null)
     {

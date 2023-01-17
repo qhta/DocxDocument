@@ -1,111 +1,96 @@
-using DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing;
-using MaxValueColorEndPosition = DocumentModel.Drawings.ChartDrawings.MaxValueColorEndPosition;
-using MinValueColorEndPosition = DocumentModel.Drawings.ChartDrawings.MinValueColorEndPosition;
-using ValueColorMiddlePosition = DocumentModel.Drawings.ChartDrawings.ValueColorMiddlePosition;
-
 namespace DocumentModel.OpenXml.Drawings.ChartDrawings;
 
 /// <summary>
-///   Defines the ValueColorPositions Class.
+/// Defines the ValueColorPositions Class.
 /// </summary>
 public static class ValueColorPositionsConverter
 {
   /// <summary>
-  ///   count, this property is only available in Office 2016 and later.
+  /// count, this property is only available in Office 2016 and later.
   /// </summary>
-  public static Int32? GetCount(ValueColorPositions? openXmlElement)
+  private static Int32? GetCount(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.ValueColorPositions openXmlElement)
   {
-    return openXmlElement?.Count?.Value;
+    return openXmlElement.Count?.Value;
   }
-
-  public static void SetCount(ValueColorPositions? openXmlElement, Int32? value)
+  
+  private static void SetCount(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.ValueColorPositions openXmlElement, Int32? value)
   {
-    if (openXmlElement != null)
-      openXmlElement.Count = value;
+    openXmlElement.Count = value;
   }
-
+  
   /// <summary>
-  ///   MinValueColorEndPosition.
+  /// MinValueColorEndPosition.
   /// </summary>
-  public static MinValueColorEndPosition? GetMinValueColorEndPosition(ValueColorPositions? openXmlElement)
+  private static DocumentModel.Drawings.ChartDrawings.MinValueColorEndPosition? GetMinValueColorEndPosition(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.ValueColorPositions openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.MinValueColorEndPosition>();
     if (itemElement != null)
-      return MinValueColorEndPositionConverter.CreateModelElement(itemElement);
+      return DocumentModel.OpenXml.Drawings.ChartDrawings.MinValueColorEndPositionConverter.CreateModelElement(itemElement);
     return null;
   }
-
-  public static void SetMinValueColorEndPosition(ValueColorPositions? openXmlElement, MinValueColorEndPosition? value)
+  
+  private static void SetMinValueColorEndPosition(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.ValueColorPositions openXmlElement, DocumentModel.Drawings.ChartDrawings.MinValueColorEndPosition? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.MinValueColorEndPosition>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.MinValueColorEndPosition>();
+      itemElement = DocumentModel.OpenXml.Drawings.ChartDrawings.MinValueColorEndPositionConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.MinValueColorEndPosition>(value);
       if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = MinValueColorEndPositionConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.MinValueColorEndPosition>(value);
-        if (itemElement != null)
-          openXmlElement.AddChild(itemElement);
-      }
+        openXmlElement.AddChild(itemElement);
     }
   }
-
+  
   /// <summary>
-  ///   ValueColorMiddlePosition.
+  /// ValueColorMiddlePosition.
   /// </summary>
-  public static ValueColorMiddlePosition? GetValueColorMiddlePosition(ValueColorPositions? openXmlElement)
+  private static DocumentModel.Drawings.ChartDrawings.ValueColorMiddlePosition? GetValueColorMiddlePosition(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.ValueColorPositions openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.ValueColorMiddlePosition>();
     if (itemElement != null)
-      return ValueColorMiddlePositionConverter.CreateModelElement(itemElement);
+      return DocumentModel.OpenXml.Drawings.ChartDrawings.ValueColorMiddlePositionConverter.CreateModelElement(itemElement);
     return null;
   }
-
-  public static void SetValueColorMiddlePosition(ValueColorPositions? openXmlElement, ValueColorMiddlePosition? value)
+  
+  private static void SetValueColorMiddlePosition(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.ValueColorPositions openXmlElement, DocumentModel.Drawings.ChartDrawings.ValueColorMiddlePosition? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.ValueColorMiddlePosition>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.ValueColorMiddlePosition>();
+      itemElement = DocumentModel.OpenXml.Drawings.ChartDrawings.ValueColorMiddlePositionConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.ValueColorMiddlePosition>(value);
       if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = ValueColorMiddlePositionConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.ValueColorMiddlePosition>(value);
-        if (itemElement != null)
-          openXmlElement.AddChild(itemElement);
-      }
+        openXmlElement.AddChild(itemElement);
     }
   }
-
+  
   /// <summary>
-  ///   MaxValueColorEndPosition.
+  /// MaxValueColorEndPosition.
   /// </summary>
-  public static MaxValueColorEndPosition? GetMaxValueColorEndPosition(ValueColorPositions? openXmlElement)
+  private static DocumentModel.Drawings.ChartDrawings.MaxValueColorEndPosition? GetMaxValueColorEndPosition(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.ValueColorPositions openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.MaxValueColorEndPosition>();
     if (itemElement != null)
-      return MaxValueColorEndPositionConverter.CreateModelElement(itemElement);
+      return DocumentModel.OpenXml.Drawings.ChartDrawings.MaxValueColorEndPositionConverter.CreateModelElement(itemElement);
     return null;
   }
-
-  public static void SetMaxValueColorEndPosition(ValueColorPositions? openXmlElement, MaxValueColorEndPosition? value)
+  
+  private static void SetMaxValueColorEndPosition(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.ValueColorPositions openXmlElement, DocumentModel.Drawings.ChartDrawings.MaxValueColorEndPosition? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.MaxValueColorEndPosition>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.MaxValueColorEndPosition>();
+      itemElement = DocumentModel.OpenXml.Drawings.ChartDrawings.MaxValueColorEndPositionConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.MaxValueColorEndPosition>(value);
       if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = MaxValueColorEndPositionConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.MaxValueColorEndPosition>(value);
-        if (itemElement != null)
-          openXmlElement.AddChild(itemElement);
-      }
+        openXmlElement.AddChild(itemElement);
     }
   }
-
-  public static DocumentModel.Drawings.ChartDrawings.ValueColorPositions? CreateModelElement(ValueColorPositions? openXmlElement)
+  
+  public static DocumentModel.Drawings.ChartDrawings.ValueColorPositions? CreateModelElement(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.ValueColorPositions? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -118,9 +103,9 @@ public static class ValueColorPositionsConverter
     }
     return null;
   }
-
+  
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.ChartDrawings.ValueColorPositions? value)
-    where OpenXmlElementType : ValueColorPositions, new()
+    where OpenXmlElementType: DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.ValueColorPositions, new()
   {
     if (value != null)
     {

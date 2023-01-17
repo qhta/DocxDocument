@@ -1,62 +1,53 @@
-using DocumentModel.Wordprocessing;
-using ContourColor = DocumentFormat.OpenXml.Office2010.Word.ContourColor;
-
 namespace DocumentModel.OpenXml.Wordprocessing;
 
 /// <summary>
-///   Defines the ContourColor Class.
+/// Defines the ContourColor Class.
 /// </summary>
 public static class ContourColorConverter
 {
-  public static RgbColorModelHex? GetRgbColorModelHex(ContourColor? openXmlElement)
+  private static DocumentModel.Wordprocessing.RgbColorModelHex? GetRgbColorModelHex(DocumentFormat.OpenXml.Office2010.Word.ContourColor openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office2010.Word.RgbColorModelHex>();
     if (itemElement != null)
-      return RgbColorModelHexConverter.CreateModelElement(itemElement);
+      return DocumentModel.OpenXml.Wordprocessing.RgbColorModelHexConverter.CreateModelElement(itemElement);
     return null;
   }
-
-  public static void SetRgbColorModelHex(ContourColor? openXmlElement, RgbColorModelHex? value)
+  
+  private static void SetRgbColorModelHex(DocumentFormat.OpenXml.Office2010.Word.ContourColor openXmlElement, DocumentModel.Wordprocessing.RgbColorModelHex? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2010.Word.RgbColorModelHex>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2010.Word.RgbColorModelHex>();
+      itemElement = DocumentModel.OpenXml.Wordprocessing.RgbColorModelHexConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2010.Word.RgbColorModelHex>(value);
       if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = RgbColorModelHexConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2010.Word.RgbColorModelHex>(value);
-        if (itemElement != null)
-          openXmlElement.AddChild(itemElement);
-      }
+        openXmlElement.AddChild(itemElement);
     }
   }
-
-  public static SchemeColor? GetSchemeColor(ContourColor? openXmlElement)
+  
+  private static DocumentModel.Wordprocessing.SchemeColor? GetSchemeColor(DocumentFormat.OpenXml.Office2010.Word.ContourColor openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office2010.Word.SchemeColor>();
     if (itemElement != null)
-      return SchemeColorConverter.CreateModelElement(itemElement);
+      return DocumentModel.OpenXml.Wordprocessing.SchemeColorConverter.CreateModelElement(itemElement);
     return null;
   }
-
-  public static void SetSchemeColor(ContourColor? openXmlElement, SchemeColor? value)
+  
+  private static void SetSchemeColor(DocumentFormat.OpenXml.Office2010.Word.ContourColor openXmlElement, DocumentModel.Wordprocessing.SchemeColor? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2010.Word.SchemeColor>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2010.Word.SchemeColor>();
+      itemElement = DocumentModel.OpenXml.Wordprocessing.SchemeColorConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2010.Word.SchemeColor>(value);
       if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = SchemeColorConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2010.Word.SchemeColor>(value);
-        if (itemElement != null)
-          openXmlElement.AddChild(itemElement);
-      }
+        openXmlElement.AddChild(itemElement);
     }
   }
-
-  public static DocumentModel.Wordprocessing.ContourColor? CreateModelElement(ContourColor? openXmlElement)
+  
+  public static DocumentModel.Wordprocessing.ContourColor? CreateModelElement(DocumentFormat.OpenXml.Office2010.Word.ContourColor? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -67,9 +58,9 @@ public static class ContourColorConverter
     }
     return null;
   }
-
+  
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.ContourColor? value)
-    where OpenXmlElementType : ContourColor, new()
+    where OpenXmlElementType: DocumentFormat.OpenXml.Office2010.Word.ContourColor, new()
   {
     if (value != null)
     {

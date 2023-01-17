@@ -1,67 +1,58 @@
-using DocumentFormat.OpenXml.Math;
-using ControlProperties = DocumentModel.Math.ControlProperties;
-
 namespace DocumentModel.OpenXml.Math;
 
 /// <summary>
-///   Accent Properties.
+/// Accent Properties.
 /// </summary>
 public static class AccentPropertiesConverter
 {
   /// <summary>
-  ///   Accent Character.
+  /// Accent Character.
   /// </summary>
-  public static String? GetAccentChar(AccentProperties? openXmlElement)
+  private static String? GetAccentChar(DocumentFormat.OpenXml.Math.AccentProperties openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<AccentChar>();
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Math.AccentChar>();
     if (itemElement != null)
       return itemElement.Val?.Value;
     return null;
   }
-
-  public static void SetAccentChar(AccentProperties? openXmlElement, String? value)
+  
+  private static void SetAccentChar(DocumentFormat.OpenXml.Math.AccentProperties openXmlElement, String? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Math.AccentChar>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<AccentChar>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = new AccentChar { Val = value };
-        openXmlElement.AddChild(itemElement);
-      }
+      itemElement = new DocumentFormat.OpenXml.Math.AccentChar { Val = value };
+      openXmlElement.AddChild(itemElement);
     }
   }
-
+  
   /// <summary>
-  ///   Control Properties.
+  /// Control Properties.
   /// </summary>
-  public static ControlProperties? GetControlProperties(AccentProperties? openXmlElement)
+  private static DocumentModel.Math.ControlProperties? GetControlProperties(DocumentFormat.OpenXml.Math.AccentProperties openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Math.ControlProperties>();
     if (itemElement != null)
-      return ControlPropertiesConverter.CreateModelElement(itemElement);
+      return DocumentModel.OpenXml.Math.ControlPropertiesConverter.CreateModelElement(itemElement);
     return null;
   }
-
-  public static void SetControlProperties(AccentProperties? openXmlElement, ControlProperties? value)
+  
+  private static void SetControlProperties(DocumentFormat.OpenXml.Math.AccentProperties openXmlElement, DocumentModel.Math.ControlProperties? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Math.ControlProperties>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Math.ControlProperties>();
+      itemElement = DocumentModel.OpenXml.Math.ControlPropertiesConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Math.ControlProperties>(value);
       if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = ControlPropertiesConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Math.ControlProperties>(value);
-        if (itemElement != null)
-          openXmlElement.AddChild(itemElement);
-      }
+        openXmlElement.AddChild(itemElement);
     }
   }
-
-  public static DocumentModel.Math.AccentProperties? CreateModelElement(AccentProperties? openXmlElement)
+  
+  public static DocumentModel.Math.AccentProperties? CreateModelElement(DocumentFormat.OpenXml.Math.AccentProperties? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -72,9 +63,9 @@ public static class AccentPropertiesConverter
     }
     return null;
   }
-
+  
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Math.AccentProperties? value)
-    where OpenXmlElementType : AccentProperties, new()
+    where OpenXmlElementType: DocumentFormat.OpenXml.Math.AccentProperties, new()
   {
     if (value != null)
     {

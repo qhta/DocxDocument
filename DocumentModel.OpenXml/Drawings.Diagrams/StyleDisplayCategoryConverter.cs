@@ -1,44 +1,40 @@
-using DocumentFormat.OpenXml.Drawing.Diagrams;
-
 namespace DocumentModel.OpenXml.Drawings.Diagrams;
 
 /// <summary>
-///   Category.
+/// Category.
 /// </summary>
 public static class StyleDisplayCategoryConverter
 {
   /// <summary>
-  ///   Category Type
+  /// Category Type
   /// </summary>
-  public static String? GetType(StyleDisplayCategory? openXmlElement)
+  private static String? GetType(DocumentFormat.OpenXml.Drawing.Diagrams.StyleDisplayCategory openXmlElement)
   {
     return openXmlElement?.Type?.Value;
   }
-
-  public static void SetType(StyleDisplayCategory? openXmlElement, String? value)
+  
+  private static void SetType(DocumentFormat.OpenXml.Drawing.Diagrams.StyleDisplayCategory openXmlElement, String? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.Type = new StringValue { Value = value };
-      else
-        openXmlElement.Type = null;
+    if (value != null)
+      openXmlElement.Type = new StringValue { Value = value };
+    else
+      openXmlElement.Type = null;
   }
-
+  
   /// <summary>
-  ///   Priority
+  /// Priority
   /// </summary>
-  public static UInt32? GetPriority(StyleDisplayCategory? openXmlElement)
+  private static UInt32? GetPriority(DocumentFormat.OpenXml.Drawing.Diagrams.StyleDisplayCategory openXmlElement)
   {
-    return openXmlElement?.Priority?.Value;
+    return openXmlElement.Priority?.Value;
   }
-
-  public static void SetPriority(StyleDisplayCategory? openXmlElement, UInt32? value)
+  
+  private static void SetPriority(DocumentFormat.OpenXml.Drawing.Diagrams.StyleDisplayCategory openXmlElement, UInt32? value)
   {
-    if (openXmlElement != null)
-      openXmlElement.Priority = value;
+    openXmlElement.Priority = value;
   }
-
-  public static DocumentModel.Drawings.Diagrams.StyleDisplayCategory? CreateModelElement(StyleDisplayCategory? openXmlElement)
+  
+  public static DocumentModel.Drawings.Diagrams.StyleDisplayCategory? CreateModelElement(DocumentFormat.OpenXml.Drawing.Diagrams.StyleDisplayCategory? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -49,9 +45,9 @@ public static class StyleDisplayCategoryConverter
     }
     return null;
   }
-
+  
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.Diagrams.StyleDisplayCategory? value)
-    where OpenXmlElementType : StyleDisplayCategory, new()
+    where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.Diagrams.StyleDisplayCategory, new()
   {
     if (value != null)
     {

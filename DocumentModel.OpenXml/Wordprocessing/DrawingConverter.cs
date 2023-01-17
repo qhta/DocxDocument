@@ -1,69 +1,59 @@
-using DocumentFormat.OpenXml.Wordprocessing;
-using DocumentModel.Drawings.Wordprocessing;
-using DocumentModel.OpenXml.Drawings.Wordprocessing;
-
 namespace DocumentModel.OpenXml.Wordprocessing;
 
 /// <summary>
-///   DrawingML Object.
+/// DrawingML Object.
 /// </summary>
 public static class DrawingConverter
 {
   /// <summary>
-  ///   Drawing Element Anchor.
+  /// Drawing Element Anchor.
   /// </summary>
-  public static Anchor? GetAnchor(Drawing? openXmlElement)
+  private static DocumentModel.Drawings.Wordprocessing.Anchor? GetAnchor(DocumentFormat.OpenXml.Wordprocessing.Drawing openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.Wordprocessing.Anchor>();
     if (itemElement != null)
-      return AnchorConverter.CreateModelElement(itemElement);
+      return DocumentModel.OpenXml.Drawings.Wordprocessing.AnchorConverter.CreateModelElement(itemElement);
     return null;
   }
-
-  public static void SetAnchor(Drawing? openXmlElement, Anchor? value)
+  
+  private static void SetAnchor(DocumentFormat.OpenXml.Wordprocessing.Drawing openXmlElement, DocumentModel.Drawings.Wordprocessing.Anchor? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Wordprocessing.Anchor>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Wordprocessing.Anchor>();
+      itemElement = DocumentModel.OpenXml.Drawings.Wordprocessing.AnchorConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Wordprocessing.Anchor>(value);
       if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = AnchorConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Wordprocessing.Anchor>(value);
-        if (itemElement != null)
-          openXmlElement.AddChild(itemElement);
-      }
+        openXmlElement.AddChild(itemElement);
     }
   }
-
+  
   /// <summary>
-  ///   Inline Drawing Object.
+  /// Inline Drawing Object.
   /// </summary>
-  public static Inline? GetInline(Drawing? openXmlElement)
+  private static DocumentModel.Drawings.Wordprocessing.Inline? GetInline(DocumentFormat.OpenXml.Wordprocessing.Drawing openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.Wordprocessing.Inline>();
     if (itemElement != null)
-      return InlineConverter.CreateModelElement(itemElement);
+      return DocumentModel.OpenXml.Drawings.Wordprocessing.InlineConverter.CreateModelElement(itemElement);
     return null;
   }
-
-  public static void SetInline(Drawing? openXmlElement, Inline? value)
+  
+  private static void SetInline(DocumentFormat.OpenXml.Wordprocessing.Drawing openXmlElement, DocumentModel.Drawings.Wordprocessing.Inline? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Wordprocessing.Inline>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Wordprocessing.Inline>();
+      itemElement = DocumentModel.OpenXml.Drawings.Wordprocessing.InlineConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Wordprocessing.Inline>(value);
       if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = InlineConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Wordprocessing.Inline>(value);
-        if (itemElement != null)
-          openXmlElement.AddChild(itemElement);
-      }
+        openXmlElement.AddChild(itemElement);
     }
   }
-
-  public static DocumentModel.Wordprocessing.Drawing? CreateModelElement(Drawing? openXmlElement)
+  
+  public static DocumentModel.Wordprocessing.Drawing? CreateModelElement(DocumentFormat.OpenXml.Wordprocessing.Drawing? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -74,9 +64,9 @@ public static class DrawingConverter
     }
     return null;
   }
-
+  
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.Drawing? value)
-    where OpenXmlElementType : Drawing, new()
+    where OpenXmlElementType: DocumentFormat.OpenXml.Wordprocessing.Drawing, new()
   {
     if (value != null)
     {

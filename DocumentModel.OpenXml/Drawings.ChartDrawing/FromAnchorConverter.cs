@@ -1,59 +1,51 @@
-using DocumentFormat.OpenXml.Drawing.ChartDrawing;
-
 namespace DocumentModel.OpenXml.Drawings.ChartDrawing;
 
 /// <summary>
-///   Starting Anchor Point.
+/// Starting Anchor Point.
 /// </summary>
 public static class FromAnchorConverter
 {
-  public static String? GetXPosition(FromAnchor? openXmlElement)
+  private static String? GetXPosition(DocumentFormat.OpenXml.Drawing.ChartDrawing.FromAnchor openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<XPosition>();
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.ChartDrawing.XPosition>();
     if (itemElement != null)
       return itemElement.Text;
     return null;
   }
-
-  public static void SetXPosition(FromAnchor? openXmlElement, String? value)
+  
+  private static void SetXPosition(DocumentFormat.OpenXml.Drawing.ChartDrawing.FromAnchor openXmlElement, String? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.ChartDrawing.XPosition>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<XPosition>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = new XPosition { Text = value };
-        openXmlElement.AddChild(itemElement);
-      }
+      itemElement = new DocumentFormat.OpenXml.Drawing.ChartDrawing.XPosition { Text = value };
+      openXmlElement.AddChild(itemElement);
     }
   }
-
-  public static String? GetYPosition(FromAnchor? openXmlElement)
+  
+  private static String? GetYPosition(DocumentFormat.OpenXml.Drawing.ChartDrawing.FromAnchor openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<YPosition>();
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.ChartDrawing.YPosition>();
     if (itemElement != null)
       return itemElement.Text;
     return null;
   }
-
-  public static void SetYPosition(FromAnchor? openXmlElement, String? value)
+  
+  private static void SetYPosition(DocumentFormat.OpenXml.Drawing.ChartDrawing.FromAnchor openXmlElement, String? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.ChartDrawing.YPosition>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<YPosition>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = new YPosition { Text = value };
-        openXmlElement.AddChild(itemElement);
-      }
+      itemElement = new DocumentFormat.OpenXml.Drawing.ChartDrawing.YPosition { Text = value };
+      openXmlElement.AddChild(itemElement);
     }
   }
-
-  public static DocumentModel.Drawings.ChartDrawing.FromAnchor? CreateModelElement(FromAnchor? openXmlElement)
+  
+  public static DocumentModel.Drawings.ChartDrawing.FromAnchor? CreateModelElement(DocumentFormat.OpenXml.Drawing.ChartDrawing.FromAnchor? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -64,9 +56,9 @@ public static class FromAnchorConverter
     }
     return null;
   }
-
+  
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.ChartDrawing.FromAnchor? value)
-    where OpenXmlElementType : FromAnchor, new()
+    where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.ChartDrawing.FromAnchor, new()
   {
     if (value != null)
     {

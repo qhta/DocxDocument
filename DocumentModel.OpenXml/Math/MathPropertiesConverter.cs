@@ -1,443 +1,375 @@
-using DocumentFormat.OpenXml.Math;
-using DocumentModel.Math;
-using MathProperties = DocumentFormat.OpenXml.Math.MathProperties;
-
 namespace DocumentModel.OpenXml.Math;
 
 /// <summary>
-///   Math Properties.
+/// Math Properties.
 /// </summary>
 public static class MathPropertiesConverter
 {
   /// <summary>
-  ///   Math Font.
+  /// Math Font.
   /// </summary>
-  public static String? GetMathFont(MathProperties? openXmlElement)
+  private static String? GetMathFont(DocumentFormat.OpenXml.Math.MathProperties openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<MathFont>();
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Math.MathFont>();
     if (itemElement != null)
       return itemElement.Val?.Value;
     return null;
   }
-
-  public static void SetMathFont(MathProperties? openXmlElement, String? value)
+  
+  private static void SetMathFont(DocumentFormat.OpenXml.Math.MathProperties openXmlElement, String? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Math.MathFont>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<MathFont>();
+      itemElement = new DocumentFormat.OpenXml.Math.MathFont { Val = value };
+      openXmlElement.AddChild(itemElement);
+    }
+  }
+  
+  /// <summary>
+  /// Break on Binary Operators.
+  /// </summary>
+  private static DocumentModel.Math.BreakBinaryOperatorKind? GetBreakBinary(DocumentFormat.OpenXml.Math.MathProperties openXmlElement)
+  {
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Math.BreakBinary>();
+    if (itemElement?.Val?.Value != null)
+      return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Math.BreakBinaryOperatorValues, DocumentModel.Math.BreakBinaryOperatorKind>(itemElement.Val.Value);
+    return null;
+  }
+  
+  private static void SetBreakBinary(DocumentFormat.OpenXml.Math.MathProperties openXmlElement, DocumentModel.Math.BreakBinaryOperatorKind? value)
+  {
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Math.BreakBinary>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
+    {
+      itemElement = EnumValueConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Math.BreakBinary, DocumentFormat.OpenXml.Math.BreakBinaryOperatorValues, DocumentModel.Math.BreakBinaryOperatorKind>(value);
       if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = new MathFont { Val = value };
         openXmlElement.AddChild(itemElement);
-      }
     }
   }
-
+  
   /// <summary>
-  ///   Break on Binary Operators.
+  /// Break on Binary Subtraction.
   /// </summary>
-  public static BreakBinaryOperatorKind? GetBreakBinary(MathProperties? openXmlElement)
+  private static DocumentModel.Math.BreakBinarySubtractionKind? GetBreakBinarySubtraction(DocumentFormat.OpenXml.Math.MathProperties openXmlElement)
   {
-    if (openXmlElement != null)
-    {
-      var itemElement = openXmlElement.GetFirstChild<BreakBinary>();
-      if (itemElement?.Val?.Value != null) return EnumValueConverter.GetValue<BreakBinaryOperatorValues, BreakBinaryOperatorKind>(itemElement.Val.Value);
-    }
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Math.BreakBinarySubtraction>();
+    if (itemElement?.Val?.Value != null)
+      return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Math.BreakBinarySubtractionValues, DocumentModel.Math.BreakBinarySubtractionKind>(itemElement.Val.Value);
     return null;
   }
-
-  public static void SetBreakBinary(MathProperties? openXmlElement, BreakBinaryOperatorKind? value)
+  
+  private static void SetBreakBinarySubtraction(DocumentFormat.OpenXml.Math.MathProperties openXmlElement, DocumentModel.Math.BreakBinarySubtractionKind? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Math.BreakBinarySubtraction>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<BreakBinary>();
+      itemElement = EnumValueConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Math.BreakBinarySubtraction, DocumentFormat.OpenXml.Math.BreakBinarySubtractionValues, DocumentModel.Math.BreakBinarySubtractionKind>(value);
       if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = EnumValueConverter.CreateOpenXmlElement<BreakBinary, BreakBinaryOperatorValues, BreakBinaryOperatorKind>(value);
-        if (itemElement != null)
-          openXmlElement.AddChild(itemElement);
-      }
+        openXmlElement.AddChild(itemElement);
     }
   }
-
+  
   /// <summary>
-  ///   Break on Binary Subtraction.
+  /// Small Fraction.
   /// </summary>
-  public static BreakBinarySubtractionKind? GetBreakBinarySubtraction(MathProperties? openXmlElement)
+  private static DocumentModel.Math.BooleanKind? GetSmallFraction(DocumentFormat.OpenXml.Math.MathProperties openXmlElement)
   {
-    if (openXmlElement != null)
-    {
-      var itemElement = openXmlElement.GetFirstChild<BreakBinarySubtraction>();
-      if (itemElement?.Val?.Value != null) return EnumValueConverter.GetValue<BreakBinarySubtractionValues, BreakBinarySubtractionKind>(itemElement.Val.Value);
-    }
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Math.SmallFraction>();
+    if (itemElement?.Val?.Value != null)
+      return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Math.BooleanValues, DocumentModel.Math.BooleanKind>(itemElement.Val.Value);
     return null;
   }
-
-  public static void SetBreakBinarySubtraction(MathProperties? openXmlElement, BreakBinarySubtractionKind? value)
+  
+  private static void SetSmallFraction(DocumentFormat.OpenXml.Math.MathProperties openXmlElement, DocumentModel.Math.BooleanKind? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Math.SmallFraction>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<BreakBinarySubtraction>();
+      itemElement = EnumValueConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Math.SmallFraction, DocumentFormat.OpenXml.Math.BooleanValues, DocumentModel.Math.BooleanKind>(value);
       if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = EnumValueConverter.CreateOpenXmlElement<BreakBinarySubtraction, BreakBinarySubtractionValues, BreakBinarySubtractionKind>(value);
-        if (itemElement != null)
-          openXmlElement.AddChild(itemElement);
-      }
+        openXmlElement.AddChild(itemElement);
     }
   }
-
+  
   /// <summary>
-  ///   Small Fraction.
+  /// Use Display Math Defaults.
   /// </summary>
-  public static BooleanKind? GetSmallFraction(MathProperties? openXmlElement)
+  private static DocumentModel.Math.BooleanKind? GetDisplayDefaults(DocumentFormat.OpenXml.Math.MathProperties openXmlElement)
   {
-    if (openXmlElement != null)
-    {
-      var itemElement = openXmlElement.GetFirstChild<SmallFraction>();
-      if (itemElement?.Val?.Value != null) return EnumValueConverter.GetValue<BooleanValues, BooleanKind>(itemElement.Val.Value);
-    }
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Math.DisplayDefaults>();
+    if (itemElement?.Val?.Value != null)
+      return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Math.BooleanValues, DocumentModel.Math.BooleanKind>(itemElement.Val.Value);
     return null;
   }
-
-  public static void SetSmallFraction(MathProperties? openXmlElement, BooleanKind? value)
+  
+  private static void SetDisplayDefaults(DocumentFormat.OpenXml.Math.MathProperties openXmlElement, DocumentModel.Math.BooleanKind? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Math.DisplayDefaults>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<SmallFraction>();
+      itemElement = EnumValueConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Math.DisplayDefaults, DocumentFormat.OpenXml.Math.BooleanValues, DocumentModel.Math.BooleanKind>(value);
       if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = EnumValueConverter.CreateOpenXmlElement<SmallFraction, BooleanValues, BooleanKind>(value);
-        if (itemElement != null)
-          openXmlElement.AddChild(itemElement);
-      }
+        openXmlElement.AddChild(itemElement);
     }
   }
-
+  
   /// <summary>
-  ///   Use Display Math Defaults.
+  /// Left Margin.
   /// </summary>
-  public static BooleanKind? GetDisplayDefaults(MathProperties? openXmlElement)
+  private static UInt32? GetLeftMargin(DocumentFormat.OpenXml.Math.MathProperties openXmlElement)
   {
-    if (openXmlElement != null)
-    {
-      var itemElement = openXmlElement.GetFirstChild<DisplayDefaults>();
-      if (itemElement?.Val?.Value != null) return EnumValueConverter.GetValue<BooleanValues, BooleanKind>(itemElement.Val.Value);
-    }
-    return null;
-  }
-
-  public static void SetDisplayDefaults(MathProperties? openXmlElement, BooleanKind? value)
-  {
-    if (openXmlElement != null)
-    {
-      var itemElement = openXmlElement.GetFirstChild<DisplayDefaults>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = EnumValueConverter.CreateOpenXmlElement<DisplayDefaults, BooleanValues, BooleanKind>(value);
-        if (itemElement != null)
-          openXmlElement.AddChild(itemElement);
-      }
-    }
-  }
-
-  /// <summary>
-  ///   Left Margin.
-  /// </summary>
-  public static UInt32? GetLeftMargin(MathProperties? openXmlElement)
-  {
-    var itemElement = openXmlElement?.GetFirstChild<LeftMargin>();
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Math.LeftMargin>();
     if (itemElement != null)
       return itemElement.Val?.Value;
     return null;
   }
-
-  public static void SetLeftMargin(MathProperties? openXmlElement, UInt32? value)
+  
+  private static void SetLeftMargin(DocumentFormat.OpenXml.Math.MathProperties openXmlElement, UInt32? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Math.LeftMargin>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<LeftMargin>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = new LeftMargin { Val = value };
-        openXmlElement.AddChild(itemElement);
-      }
+      itemElement = new DocumentFormat.OpenXml.Math.LeftMargin{ Val = value };
+      openXmlElement.AddChild(itemElement);
     }
   }
-
+  
   /// <summary>
-  ///   Right Margin.
+  /// Right Margin.
   /// </summary>
-  public static UInt32? GetRightMargin(MathProperties? openXmlElement)
+  private static UInt32? GetRightMargin(DocumentFormat.OpenXml.Math.MathProperties openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<RightMargin>();
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Math.RightMargin>();
     if (itemElement != null)
       return itemElement.Val?.Value;
     return null;
   }
-
-  public static void SetRightMargin(MathProperties? openXmlElement, UInt32? value)
+  
+  private static void SetRightMargin(DocumentFormat.OpenXml.Math.MathProperties openXmlElement, UInt32? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Math.RightMargin>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<RightMargin>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = new RightMargin { Val = value };
-        openXmlElement.AddChild(itemElement);
-      }
+      itemElement = new DocumentFormat.OpenXml.Math.RightMargin{ Val = value };
+      openXmlElement.AddChild(itemElement);
     }
   }
-
+  
   /// <summary>
-  ///   Default Justification.
+  /// Default Justification.
   /// </summary>
-  public static JustificationKind? GetDefaultJustification(MathProperties? openXmlElement)
+  private static DocumentModel.Math.JustificationKind? GetDefaultJustification(DocumentFormat.OpenXml.Math.MathProperties openXmlElement)
   {
-    if (openXmlElement != null)
-    {
-      var itemElement = openXmlElement.GetFirstChild<DefaultJustification>();
-      if (itemElement?.Val?.Value != null) return EnumValueConverter.GetValue<JustificationValues, JustificationKind>(itemElement.Val.Value);
-    }
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Math.DefaultJustification>();
+    if (itemElement?.Val?.Value != null)
+      return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Math.JustificationValues, DocumentModel.Math.JustificationKind>(itemElement.Val.Value);
     return null;
   }
-
-  public static void SetDefaultJustification(MathProperties? openXmlElement, JustificationKind? value)
+  
+  private static void SetDefaultJustification(DocumentFormat.OpenXml.Math.MathProperties openXmlElement, DocumentModel.Math.JustificationKind? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Math.DefaultJustification>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DefaultJustification>();
+      itemElement = EnumValueConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Math.DefaultJustification, DocumentFormat.OpenXml.Math.JustificationValues, DocumentModel.Math.JustificationKind>(value);
       if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = EnumValueConverter.CreateOpenXmlElement<DefaultJustification, JustificationValues, JustificationKind>(value);
-        if (itemElement != null)
-          openXmlElement.AddChild(itemElement);
-      }
+        openXmlElement.AddChild(itemElement);
     }
   }
-
+  
   /// <summary>
-  ///   Pre-Equation Spacing.
+  /// Pre-Equation Spacing.
   /// </summary>
-  public static UInt32? GetPreSpacing(MathProperties? openXmlElement)
+  private static UInt32? GetPreSpacing(DocumentFormat.OpenXml.Math.MathProperties openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<PreSpacing>();
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Math.PreSpacing>();
     if (itemElement != null)
       return itemElement.Val?.Value;
     return null;
   }
-
-  public static void SetPreSpacing(MathProperties? openXmlElement, UInt32? value)
+  
+  private static void SetPreSpacing(DocumentFormat.OpenXml.Math.MathProperties openXmlElement, UInt32? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Math.PreSpacing>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<PreSpacing>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = new PreSpacing { Val = value };
-        openXmlElement.AddChild(itemElement);
-      }
+      itemElement = new DocumentFormat.OpenXml.Math.PreSpacing{ Val = value };
+      openXmlElement.AddChild(itemElement);
     }
   }
-
+  
   /// <summary>
-  ///   Post-Equation Spacing.
+  /// Post-Equation Spacing.
   /// </summary>
-  public static UInt32? GetPostSpacing(MathProperties? openXmlElement)
+  private static UInt32? GetPostSpacing(DocumentFormat.OpenXml.Math.MathProperties openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<PostSpacing>();
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Math.PostSpacing>();
     if (itemElement != null)
       return itemElement.Val?.Value;
     return null;
   }
-
-  public static void SetPostSpacing(MathProperties? openXmlElement, UInt32? value)
+  
+  private static void SetPostSpacing(DocumentFormat.OpenXml.Math.MathProperties openXmlElement, UInt32? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Math.PostSpacing>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<PostSpacing>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = new PostSpacing { Val = value };
-        openXmlElement.AddChild(itemElement);
-      }
+      itemElement = new DocumentFormat.OpenXml.Math.PostSpacing{ Val = value };
+      openXmlElement.AddChild(itemElement);
     }
   }
-
+  
   /// <summary>
-  ///   Inter-Equation Spacing.
+  /// Inter-Equation Spacing.
   /// </summary>
-  public static UInt32? GetInterSpacing(MathProperties? openXmlElement)
+  private static UInt32? GetInterSpacing(DocumentFormat.OpenXml.Math.MathProperties openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<InterSpacing>();
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Math.InterSpacing>();
     if (itemElement != null)
       return itemElement.Val?.Value;
     return null;
   }
-
-  public static void SetInterSpacing(MathProperties? openXmlElement, UInt32? value)
+  
+  private static void SetInterSpacing(DocumentFormat.OpenXml.Math.MathProperties openXmlElement, UInt32? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Math.InterSpacing>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<InterSpacing>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = new InterSpacing { Val = value };
-        openXmlElement.AddChild(itemElement);
-      }
+      itemElement = new DocumentFormat.OpenXml.Math.InterSpacing{ Val = value };
+      openXmlElement.AddChild(itemElement);
     }
   }
-
+  
   /// <summary>
-  ///   Intra-Equation Spacing.
+  /// Intra-Equation Spacing.
   /// </summary>
-  public static UInt32? GetIntraSpacing(MathProperties? openXmlElement)
+  private static UInt32? GetIntraSpacing(DocumentFormat.OpenXml.Math.MathProperties openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<IntraSpacing>();
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Math.IntraSpacing>();
     if (itemElement != null)
       return itemElement.Val?.Value;
     return null;
   }
-
-  public static void SetIntraSpacing(MathProperties? openXmlElement, UInt32? value)
+  
+  private static void SetIntraSpacing(DocumentFormat.OpenXml.Math.MathProperties openXmlElement, UInt32? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Math.IntraSpacing>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<IntraSpacing>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = new IntraSpacing { Val = value };
-        openXmlElement.AddChild(itemElement);
-      }
+      itemElement = new DocumentFormat.OpenXml.Math.IntraSpacing{ Val = value };
+      openXmlElement.AddChild(itemElement);
     }
   }
-
-  public static UInt32? GetWrapIndent(MathProperties? openXmlElement)
+  
+  private static UInt32? GetWrapIndent(DocumentFormat.OpenXml.Math.MathProperties openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<WrapIndent>();
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Math.WrapIndent>();
     if (itemElement != null)
       return itemElement.Val?.Value;
     return null;
   }
-
-  public static void SetWrapIndent(MathProperties? openXmlElement, UInt32? value)
+  
+  private static void SetWrapIndent(DocumentFormat.OpenXml.Math.MathProperties openXmlElement, UInt32? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Math.WrapIndent>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<WrapIndent>();
+      itemElement = new DocumentFormat.OpenXml.Math.WrapIndent{ Val = value };
+      openXmlElement.AddChild(itemElement);
+    }
+  }
+  
+  private static DocumentModel.Math.BooleanKind? GetWrapRight(DocumentFormat.OpenXml.Math.MathProperties openXmlElement)
+  {
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Math.WrapRight>();
+    if (itemElement?.Val?.Value != null)
+      return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Math.BooleanValues, DocumentModel.Math.BooleanKind>(itemElement.Val.Value);
+    return null;
+  }
+  
+  private static void SetWrapRight(DocumentFormat.OpenXml.Math.MathProperties openXmlElement, DocumentModel.Math.BooleanKind? value)
+  {
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Math.WrapRight>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
+    {
+      itemElement = EnumValueConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Math.WrapRight, DocumentFormat.OpenXml.Math.BooleanValues, DocumentModel.Math.BooleanKind>(value);
       if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = new WrapIndent { Val = value };
         openXmlElement.AddChild(itemElement);
-      }
     }
   }
-
-  public static BooleanKind? GetWrapRight(MathProperties? openXmlElement)
+  
+  private static DocumentModel.Math.LimitLocationKind? GetIntegralLimitLocation(DocumentFormat.OpenXml.Math.MathProperties openXmlElement)
   {
-    if (openXmlElement != null)
-    {
-      var itemElement = openXmlElement.GetFirstChild<WrapRight>();
-      if (itemElement?.Val?.Value != null) return EnumValueConverter.GetValue<BooleanValues, BooleanKind>(itemElement.Val.Value);
-    }
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Math.IntegralLimitLocation>();
+    if (itemElement?.Val?.Value != null)
+      return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Math.LimitLocationValues, DocumentModel.Math.LimitLocationKind>(itemElement.Val.Value);
     return null;
   }
-
-  public static void SetWrapRight(MathProperties? openXmlElement, BooleanKind? value)
+  
+  private static void SetIntegralLimitLocation(DocumentFormat.OpenXml.Math.MathProperties openXmlElement, DocumentModel.Math.LimitLocationKind? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Math.IntegralLimitLocation>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<WrapRight>();
+      itemElement = EnumValueConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Math.IntegralLimitLocation, DocumentFormat.OpenXml.Math.LimitLocationValues, DocumentModel.Math.LimitLocationKind>(value);
       if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = EnumValueConverter.CreateOpenXmlElement<WrapRight, BooleanValues, BooleanKind>(value);
-        if (itemElement != null)
-          openXmlElement.AddChild(itemElement);
-      }
+        openXmlElement.AddChild(itemElement);
     }
   }
-
-  public static LimitLocationKind? GetIntegralLimitLocation(MathProperties? openXmlElement)
+  
+  private static DocumentModel.Math.LimitLocationKind? GetNaryLimitLocation(DocumentFormat.OpenXml.Math.MathProperties openXmlElement)
   {
-    if (openXmlElement != null)
-    {
-      var itemElement = openXmlElement.GetFirstChild<IntegralLimitLocation>();
-      if (itemElement?.Val?.Value != null) return EnumValueConverter.GetValue<LimitLocationValues, LimitLocationKind>(itemElement.Val.Value);
-    }
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Math.NaryLimitLocation>();
+    if (itemElement?.Val?.Value != null)
+      return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Math.LimitLocationValues, DocumentModel.Math.LimitLocationKind>(itemElement.Val.Value);
     return null;
   }
-
-  public static void SetIntegralLimitLocation(MathProperties? openXmlElement, LimitLocationKind? value)
+  
+  private static void SetNaryLimitLocation(DocumentFormat.OpenXml.Math.MathProperties openXmlElement, DocumentModel.Math.LimitLocationKind? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Math.NaryLimitLocation>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<IntegralLimitLocation>();
+      itemElement = EnumValueConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Math.NaryLimitLocation, DocumentFormat.OpenXml.Math.LimitLocationValues, DocumentModel.Math.LimitLocationKind>(value);
       if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = EnumValueConverter.CreateOpenXmlElement<IntegralLimitLocation, LimitLocationValues, LimitLocationKind>(value);
-        if (itemElement != null)
-          openXmlElement.AddChild(itemElement);
-      }
+        openXmlElement.AddChild(itemElement);
     }
   }
-
-  public static LimitLocationKind? GetNaryLimitLocation(MathProperties? openXmlElement)
-  {
-    if (openXmlElement != null)
-    {
-      var itemElement = openXmlElement.GetFirstChild<NaryLimitLocation>();
-      if (itemElement?.Val?.Value != null) return EnumValueConverter.GetValue<LimitLocationValues, LimitLocationKind>(itemElement.Val.Value);
-    }
-    return null;
-  }
-
-  public static void SetNaryLimitLocation(MathProperties? openXmlElement, LimitLocationKind? value)
-  {
-    if (openXmlElement != null)
-    {
-      var itemElement = openXmlElement.GetFirstChild<NaryLimitLocation>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = EnumValueConverter.CreateOpenXmlElement<NaryLimitLocation, LimitLocationValues, LimitLocationKind>(value);
-        if (itemElement != null)
-          openXmlElement.AddChild(itemElement);
-      }
-    }
-  }
-
-  public static DocumentModel.Math.MathProperties? CreateModelElement(MathProperties? openXmlElement)
+  
+  public static DocumentModel.Math.MathProperties? CreateModelElement(DocumentFormat.OpenXml.Math.MathProperties? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -462,9 +394,9 @@ public static class MathPropertiesConverter
     }
     return null;
   }
-
+  
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Math.MathProperties? value)
-    where OpenXmlElementType : MathProperties, new()
+    where OpenXmlElementType: DocumentFormat.OpenXml.Math.MathProperties, new()
   {
     if (value != null)
     {

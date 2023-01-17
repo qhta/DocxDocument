@@ -1,47 +1,43 @@
-using DocumentFormat.OpenXml.Office2013.WebExtension;
-
 namespace DocumentModel.OpenXml.WebExtensions;
 
 /// <summary>
-///   Defines the WebExtensionProperty Class.
+/// Defines the WebExtensionProperty Class.
 /// </summary>
 public static class WebExtensionPropertyConverter
 {
   /// <summary>
-  ///   name, this property is only available in Office 2013 and later.
+  /// name, this property is only available in Office 2013 and later.
   /// </summary>
-  public static String? GetName(WebExtensionProperty? openXmlElement)
+  private static String? GetName(DocumentFormat.OpenXml.Office2013.WebExtension.WebExtensionProperty openXmlElement)
   {
     return openXmlElement?.Name?.Value;
   }
-
-  public static void SetName(WebExtensionProperty? openXmlElement, String? value)
+  
+  private static void SetName(DocumentFormat.OpenXml.Office2013.WebExtension.WebExtensionProperty openXmlElement, String? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.Name = new StringValue { Value = value };
-      else
-        openXmlElement.Name = null;
+    if (value != null)
+      openXmlElement.Name = new StringValue { Value = value };
+    else
+      openXmlElement.Name = null;
   }
-
+  
   /// <summary>
-  ///   value, this property is only available in Office 2013 and later.
+  /// value, this property is only available in Office 2013 and later.
   /// </summary>
-  public static String? GetValue(WebExtensionProperty? openXmlElement)
+  private static String? GetValue(DocumentFormat.OpenXml.Office2013.WebExtension.WebExtensionProperty openXmlElement)
   {
     return openXmlElement?.Value?.Value;
   }
-
-  public static void SetValue(WebExtensionProperty? openXmlElement, String? value)
+  
+  private static void SetValue(DocumentFormat.OpenXml.Office2013.WebExtension.WebExtensionProperty openXmlElement, String? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.Value = new StringValue { Value = value };
-      else
-        openXmlElement.Value = null;
+    if (value != null)
+      openXmlElement.Value = new StringValue { Value = value };
+    else
+      openXmlElement.Value = null;
   }
-
-  public static DocumentModel.WebExtensions.WebExtensionProperty? CreateModelElement(WebExtensionProperty? openXmlElement)
+  
+  public static DocumentModel.WebExtensions.WebExtensionProperty? CreateModelElement(DocumentFormat.OpenXml.Office2013.WebExtension.WebExtensionProperty? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -52,9 +48,9 @@ public static class WebExtensionPropertyConverter
     }
     return null;
   }
-
+  
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.WebExtensions.WebExtensionProperty? value)
-    where OpenXmlElementType : WebExtensionProperty, new()
+    where OpenXmlElementType: DocumentFormat.OpenXml.Office2013.WebExtension.WebExtensionProperty, new()
   {
     if (value != null)
     {

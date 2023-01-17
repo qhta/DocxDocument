@@ -1,29 +1,27 @@
-using DocumentFormat.OpenXml.Packaging;
-
 namespace DocumentModel.OpenXml.Packaging;
 
 /// <summary>
-///   Represents the type of part referenced by a .
+/// Represents the type of part referenced by a .
 /// </summary>
 public static class DataPartConverter
 {
   /// <summary>
-  ///   Gets the internal part path in the package.
+  /// Gets the internal part path in the package.
   /// </summary>
-  public static Uri? GetUri(DataPart? openXmlElement)
+  private static Uri? GetUri(DocumentFormat.OpenXml.Packaging.DataPart openXmlElement)
   {
     return openXmlElement?.Uri;
   }
-
+  
   /// <summary>
-  ///   Gets the content type (MIME type) of the data in the part.
+  /// Gets the content type (MIME type) of the data in the part.
   /// </summary>
-  public static String? GetContentType(DataPart? openXmlElement)
+  private static String? GetContentType(DocumentFormat.OpenXml.Packaging.DataPart openXmlElement)
   {
     return openXmlElement?.ContentType;
   }
-
-  public static DocumentModel.Packaging.DataPart? CreateModelElement(DataPart? openXmlElement)
+  
+  public static DocumentModel.Packaging.DataPart? CreateModelElement(DocumentFormat.OpenXml.Packaging.DataPart? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -34,9 +32,9 @@ public static class DataPartConverter
     }
     return null;
   }
-
+  
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Packaging.DataPart? value)
-    where OpenXmlElementType : DataPart, new()
+    where OpenXmlElementType: DocumentFormat.OpenXml.Packaging.DataPart, new()
   {
     if (value != null)
     {

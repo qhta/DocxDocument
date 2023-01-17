@@ -1,41 +1,37 @@
-using DocumentFormat.OpenXml.Drawing;
-
 namespace DocumentModel.OpenXml.Drawings;
 
 /// <summary>
-///   Defines the TintEffect Class.
+/// Defines the TintEffect Class.
 /// </summary>
 public static class TintEffectConverter
 {
   /// <summary>
-  ///   Hue
+  /// Hue
   /// </summary>
-  public static Int32? GetHue(TintEffect? openXmlElement)
+  private static Int32? GetHue(DocumentFormat.OpenXml.Drawing.TintEffect openXmlElement)
   {
-    return openXmlElement?.Hue?.Value;
+    return openXmlElement.Hue?.Value;
   }
-
-  public static void SetHue(TintEffect? openXmlElement, Int32? value)
+  
+  private static void SetHue(DocumentFormat.OpenXml.Drawing.TintEffect openXmlElement, Int32? value)
   {
-    if (openXmlElement != null)
-      openXmlElement.Hue = value;
+    openXmlElement.Hue = value;
   }
-
+  
   /// <summary>
-  ///   Amount
+  /// Amount
   /// </summary>
-  public static Int32? GetAmount(TintEffect? openXmlElement)
+  private static Int32? GetAmount(DocumentFormat.OpenXml.Drawing.TintEffect openXmlElement)
   {
-    return openXmlElement?.Amount?.Value;
+    return openXmlElement.Amount?.Value;
   }
-
-  public static void SetAmount(TintEffect? openXmlElement, Int32? value)
+  
+  private static void SetAmount(DocumentFormat.OpenXml.Drawing.TintEffect openXmlElement, Int32? value)
   {
-    if (openXmlElement != null)
-      openXmlElement.Amount = value;
+    openXmlElement.Amount = value;
   }
-
-  public static DocumentModel.Drawings.TintEffect? CreateModelElement(TintEffect? openXmlElement)
+  
+  public static DocumentModel.Drawings.TintEffect? CreateModelElement(DocumentFormat.OpenXml.Drawing.TintEffect? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -46,9 +42,9 @@ public static class TintEffectConverter
     }
     return null;
   }
-
+  
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.TintEffect? value)
-    where OpenXmlElementType : TintEffect, new()
+    where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.TintEffect, new()
   {
     if (value != null)
     {

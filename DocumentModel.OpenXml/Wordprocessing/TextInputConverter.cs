@@ -1,122 +1,104 @@
-using DocumentFormat.OpenXml.Wordprocessing;
-using DocumentModel.Wordprocessing;
-using TextInput = DocumentFormat.OpenXml.Wordprocessing.TextInput;
-
 namespace DocumentModel.OpenXml.Wordprocessing;
 
 /// <summary>
-///   Text Box Form Field Properties.
+/// Text Box Form Field Properties.
 /// </summary>
 public static class TextInputConverter
 {
   /// <summary>
-  ///   Text Box Form Field Type.
+  /// Text Box Form Field Type.
   /// </summary>
-  public static TextBoxFormFieldKind? GetTextBoxFormFieldType(TextInput? openXmlElement)
+  private static DocumentModel.Wordprocessing.TextBoxFormFieldKind? GetTextBoxFormFieldType(DocumentFormat.OpenXml.Wordprocessing.TextInput openXmlElement)
   {
-    if (openXmlElement != null)
-    {
-      var itemElement = openXmlElement.GetFirstChild<TextBoxFormFieldType>();
-      if (itemElement?.Val?.Value != null) return EnumValueConverter.GetValue<TextBoxFormFieldValues, TextBoxFormFieldKind>(itemElement.Val.Value);
-    }
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.TextBoxFormFieldType>();
+    if (itemElement?.Val?.Value != null)
+      return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Wordprocessing.TextBoxFormFieldValues, DocumentModel.Wordprocessing.TextBoxFormFieldKind>(itemElement.Val.Value);
     return null;
   }
-
-  public static void SetTextBoxFormFieldType(TextInput? openXmlElement, TextBoxFormFieldKind? value)
+  
+  private static void SetTextBoxFormFieldType(DocumentFormat.OpenXml.Wordprocessing.TextInput openXmlElement, DocumentModel.Wordprocessing.TextBoxFormFieldKind? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.TextBoxFormFieldType>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<TextBoxFormFieldType>();
+      itemElement = EnumValueConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.TextBoxFormFieldType, DocumentFormat.OpenXml.Wordprocessing.TextBoxFormFieldValues, DocumentModel.Wordprocessing.TextBoxFormFieldKind>(value);
       if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = EnumValueConverter.CreateOpenXmlElement<TextBoxFormFieldType, TextBoxFormFieldValues, TextBoxFormFieldKind>(value);
-        if (itemElement != null)
-          openXmlElement.AddChild(itemElement);
-      }
+        openXmlElement.AddChild(itemElement);
     }
   }
-
+  
   /// <summary>
-  ///   Default Text Box Form Field String.
+  /// Default Text Box Form Field String.
   /// </summary>
-  public static String? GetDefaultTextBoxFormFieldString(TextInput? openXmlElement)
+  private static String? GetDefaultTextBoxFormFieldString(DocumentFormat.OpenXml.Wordprocessing.TextInput openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DefaultTextBoxFormFieldString>();
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.DefaultTextBoxFormFieldString>();
     if (itemElement != null)
       return itemElement.Val?.Value;
     return null;
   }
-
-  public static void SetDefaultTextBoxFormFieldString(TextInput? openXmlElement, String? value)
+  
+  private static void SetDefaultTextBoxFormFieldString(DocumentFormat.OpenXml.Wordprocessing.TextInput openXmlElement, String? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.DefaultTextBoxFormFieldString>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DefaultTextBoxFormFieldString>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = new DefaultTextBoxFormFieldString { Val = value };
-        openXmlElement.AddChild(itemElement);
-      }
+      itemElement = new DocumentFormat.OpenXml.Wordprocessing.DefaultTextBoxFormFieldString { Val = value };
+      openXmlElement.AddChild(itemElement);
     }
   }
-
+  
   /// <summary>
-  ///   Text Box Form Field Maximum Length.
+  /// Text Box Form Field Maximum Length.
   /// </summary>
-  public static Int16? GetMaxLength(TextInput? openXmlElement)
+  private static Int16? GetMaxLength(DocumentFormat.OpenXml.Wordprocessing.TextInput openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<MaxLength>();
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.MaxLength>();
     if (itemElement != null)
       return itemElement.Val?.Value;
     return null;
   }
-
-  public static void SetMaxLength(TextInput? openXmlElement, Int16? value)
+  
+  private static void SetMaxLength(DocumentFormat.OpenXml.Wordprocessing.TextInput openXmlElement, Int16? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.MaxLength>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<MaxLength>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = new MaxLength { Val = value };
-        openXmlElement.AddChild(itemElement);
-      }
+      itemElement = new DocumentFormat.OpenXml.Wordprocessing.MaxLength{ Val = value };
+      openXmlElement.AddChild(itemElement);
     }
   }
-
+  
   /// <summary>
-  ///   Text Box Form Field Formatting.
+  /// Text Box Form Field Formatting.
   /// </summary>
-  public static String? GetFormat(TextInput? openXmlElement)
+  private static String? GetFormat(DocumentFormat.OpenXml.Wordprocessing.TextInput openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<Format>();
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.Format>();
     if (itemElement != null)
       return itemElement.Val?.Value;
     return null;
   }
-
-  public static void SetFormat(TextInput? openXmlElement, String? value)
+  
+  private static void SetFormat(DocumentFormat.OpenXml.Wordprocessing.TextInput openXmlElement, String? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.Format>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<Format>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = new Format { Val = value };
-        openXmlElement.AddChild(itemElement);
-      }
+      itemElement = new DocumentFormat.OpenXml.Wordprocessing.Format { Val = value };
+      openXmlElement.AddChild(itemElement);
     }
   }
-
-  public static DocumentModel.Wordprocessing.TextInput? CreateModelElement(TextInput? openXmlElement)
+  
+  public static DocumentModel.Wordprocessing.TextInput? CreateModelElement(DocumentFormat.OpenXml.Wordprocessing.TextInput? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -129,9 +111,9 @@ public static class TextInputConverter
     }
     return null;
   }
-
+  
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.TextInput? value)
-    where OpenXmlElementType : TextInput, new()
+    where OpenXmlElementType: DocumentFormat.OpenXml.Wordprocessing.TextInput, new()
   {
     if (value != null)
     {

@@ -1,57 +1,50 @@
-using DocumentFormat.OpenXml.Office2010.Word;
-using DocumentModel.Wordprocessing;
-using BevelType = DocumentFormat.OpenXml.Office2010.Word.BevelType;
-
 namespace DocumentModel.OpenXml.Wordprocessing;
 
 /// <summary>
-///   Defines the BevelType Class.
+/// Defines the BevelType Class.
 /// </summary>
 public static class BevelTypeConverter
 {
   /// <summary>
-  ///   w, this property is only available in Office 2010 and later.
+  /// w, this property is only available in Office 2010 and later.
   /// </summary>
-  public static Int64? GetWidth(BevelType? openXmlElement)
+  private static Int64? GetWidth(DocumentFormat.OpenXml.Office2010.Word.BevelType openXmlElement)
   {
-    return openXmlElement?.Width?.Value;
+    return openXmlElement.Width?.Value;
   }
-
-  public static void SetWidth(BevelType? openXmlElement, Int64? value)
+  
+  private static void SetWidth(DocumentFormat.OpenXml.Office2010.Word.BevelType openXmlElement, Int64? value)
   {
-    if (openXmlElement != null)
-      openXmlElement.Width = value;
+    openXmlElement.Width = value;
   }
-
+  
   /// <summary>
-  ///   h, this property is only available in Office 2010 and later.
+  /// h, this property is only available in Office 2010 and later.
   /// </summary>
-  public static Int64? GetHeight(BevelType? openXmlElement)
+  private static Int64? GetHeight(DocumentFormat.OpenXml.Office2010.Word.BevelType openXmlElement)
   {
-    return openXmlElement?.Height?.Value;
+    return openXmlElement.Height?.Value;
   }
-
-  public static void SetHeight(BevelType? openXmlElement, Int64? value)
+  
+  private static void SetHeight(DocumentFormat.OpenXml.Office2010.Word.BevelType openXmlElement, Int64? value)
   {
-    if (openXmlElement != null)
-      openXmlElement.Height = value;
+    openXmlElement.Height = value;
   }
-
+  
   /// <summary>
-  ///   prst, this property is only available in Office 2010 and later.
+  /// prst, this property is only available in Office 2010 and later.
   /// </summary>
-  public static BevelPresetKind? GetPresetProfileType(BevelType? openXmlElement)
+  private static DocumentModel.Wordprocessing.BevelPresetKind? GetPresetProfileType(DocumentFormat.OpenXml.Office2010.Word.BevelType openXmlElement)
   {
-    return EnumValueConverter.GetValue<BevelPresetTypeValues, BevelPresetKind>(openXmlElement?.PresetProfileType?.Value);
+    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Office2010.Word.BevelPresetTypeValues, DocumentModel.Wordprocessing.BevelPresetKind>(openXmlElement?.PresetProfileType?.Value);
   }
-
-  public static void SetPresetProfileType(BevelType? openXmlElement, BevelPresetKind? value)
+  
+  private static void SetPresetProfileType(DocumentFormat.OpenXml.Office2010.Word.BevelType openXmlElement, DocumentModel.Wordprocessing.BevelPresetKind? value)
   {
-    if (openXmlElement != null)
-      openXmlElement.PresetProfileType = EnumValueConverter.CreateEnumValue<BevelPresetTypeValues, BevelPresetKind>(value);
+    openXmlElement.PresetProfileType = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Office2010.Word.BevelPresetTypeValues, DocumentModel.Wordprocessing.BevelPresetKind>(value);
   }
-
-  public static DocumentModel.Wordprocessing.BevelType? CreateModelElement(BevelType? openXmlElement)
+  
+  public static DocumentModel.Wordprocessing.BevelType? CreateModelElement(DocumentFormat.OpenXml.Office2010.Word.BevelType? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -63,9 +56,9 @@ public static class BevelTypeConverter
     }
     return null;
   }
-
+  
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.BevelType? value)
-    where OpenXmlElementType : BevelType, new()
+    where OpenXmlElementType: DocumentFormat.OpenXml.Office2010.Word.BevelType, new()
   {
     if (value != null)
     {

@@ -1,27 +1,24 @@
-using DocumentFormat.OpenXml.Drawing;
-
 namespace DocumentModel.OpenXml.Drawings;
 
 /// <summary>
-///   Defines the BiLevel Class.
+/// Defines the BiLevel Class.
 /// </summary>
 public static class BiLevelConverter
 {
   /// <summary>
-  ///   Threshold
+  /// Threshold
   /// </summary>
-  public static Int32? GetThreshold(BiLevel? openXmlElement)
+  private static Int32? GetThreshold(DocumentFormat.OpenXml.Drawing.BiLevel openXmlElement)
   {
-    return openXmlElement?.Threshold?.Value;
+    return openXmlElement.Threshold?.Value;
   }
-
-  public static void SetThreshold(BiLevel? openXmlElement, Int32? value)
+  
+  private static void SetThreshold(DocumentFormat.OpenXml.Drawing.BiLevel openXmlElement, Int32? value)
   {
-    if (openXmlElement != null)
-      openXmlElement.Threshold = value;
+    openXmlElement.Threshold = value;
   }
-
-  public static DocumentModel.Drawings.BiLevel? CreateModelElement(BiLevel? openXmlElement)
+  
+  public static DocumentModel.Drawings.BiLevel? CreateModelElement(DocumentFormat.OpenXml.Drawing.BiLevel? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -31,9 +28,9 @@ public static class BiLevelConverter
     }
     return null;
   }
-
+  
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.BiLevel? value)
-    where OpenXmlElementType : BiLevel, new()
+    where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.BiLevel, new()
   {
     if (value != null)
     {

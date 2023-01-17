@@ -1,89 +1,80 @@
-using DocumentFormat.OpenXml.Wordprocessing;
-using PreviousRunProperties = DocumentModel.Wordprocessing.PreviousRunProperties;
-
 namespace DocumentModel.OpenXml.Wordprocessing;
 
 /// <summary>
-///   Defines the RunPropertiesChange Class.
+/// Defines the RunPropertiesChange Class.
 /// </summary>
 public static class RunPropertiesChangeConverter
 {
   /// <summary>
-  ///   author
+  /// author
   /// </summary>
-  public static String? GetAuthor(RunPropertiesChange? openXmlElement)
+  private static String? GetAuthor(DocumentFormat.OpenXml.Wordprocessing.RunPropertiesChange openXmlElement)
   {
     return openXmlElement?.Author?.Value;
   }
-
-  public static void SetAuthor(RunPropertiesChange? openXmlElement, String? value)
+  
+  private static void SetAuthor(DocumentFormat.OpenXml.Wordprocessing.RunPropertiesChange openXmlElement, String? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.Author = new StringValue { Value = value };
-      else
-        openXmlElement.Author = null;
+    if (value != null)
+      openXmlElement.Author = new StringValue { Value = value };
+    else
+      openXmlElement.Author = null;
   }
-
+  
   /// <summary>
-  ///   date
+  /// date
   /// </summary>
-  public static DateTime? GetDate(RunPropertiesChange? openXmlElement)
+  private static DateTime? GetDate(DocumentFormat.OpenXml.Wordprocessing.RunPropertiesChange openXmlElement)
   {
-    return openXmlElement?.Date?.Value;
+    return openXmlElement.Date?.Value;
   }
-
-  public static void SetDate(RunPropertiesChange? openXmlElement, DateTime? value)
+  
+  private static void SetDate(DocumentFormat.OpenXml.Wordprocessing.RunPropertiesChange openXmlElement, DateTime? value)
   {
-    if (openXmlElement != null)
-      openXmlElement.Date = value;
+    openXmlElement.Date = value;
   }
-
+  
   /// <summary>
-  ///   Annotation Identifier
+  /// Annotation Identifier
   /// </summary>
-  public static String? GetId(RunPropertiesChange? openXmlElement)
+  private static String? GetId(DocumentFormat.OpenXml.Wordprocessing.RunPropertiesChange openXmlElement)
   {
     return openXmlElement?.Id?.Value;
   }
-
-  public static void SetId(RunPropertiesChange? openXmlElement, String? value)
+  
+  private static void SetId(DocumentFormat.OpenXml.Wordprocessing.RunPropertiesChange openXmlElement, String? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.Id = new StringValue { Value = value };
-      else
-        openXmlElement.Id = null;
+    if (value != null)
+      openXmlElement.Id = new StringValue { Value = value };
+    else
+      openXmlElement.Id = null;
   }
-
+  
   /// <summary>
-  ///   Previous Run Properties.
+  /// Previous Run Properties.
   /// </summary>
-  public static PreviousRunProperties? GetPreviousRunProperties(RunPropertiesChange? openXmlElement)
+  private static DocumentModel.Wordprocessing.PreviousRunProperties? GetPreviousRunProperties(DocumentFormat.OpenXml.Wordprocessing.RunPropertiesChange openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.PreviousRunProperties>();
     if (itemElement != null)
-      return PreviousRunPropertiesConverter.CreateModelElement(itemElement);
+      return DocumentModel.OpenXml.Wordprocessing.PreviousRunPropertiesConverter.CreateModelElement(itemElement);
     return null;
   }
-
-  public static void SetPreviousRunProperties(RunPropertiesChange? openXmlElement, PreviousRunProperties? value)
+  
+  private static void SetPreviousRunProperties(DocumentFormat.OpenXml.Wordprocessing.RunPropertiesChange openXmlElement, DocumentModel.Wordprocessing.PreviousRunProperties? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.PreviousRunProperties>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.PreviousRunProperties>();
+      itemElement = DocumentModel.OpenXml.Wordprocessing.PreviousRunPropertiesConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.PreviousRunProperties>(value);
       if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = PreviousRunPropertiesConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.PreviousRunProperties>(value);
-        if (itemElement != null)
-          openXmlElement.AddChild(itemElement);
-      }
+        openXmlElement.AddChild(itemElement);
     }
   }
-
-  public static DocumentModel.Wordprocessing.RunPropertiesChange? CreateModelElement(RunPropertiesChange? openXmlElement)
+  
+  public static DocumentModel.Wordprocessing.RunPropertiesChange? CreateModelElement(DocumentFormat.OpenXml.Wordprocessing.RunPropertiesChange? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -96,9 +87,9 @@ public static class RunPropertiesChangeConverter
     }
     return null;
   }
-
+  
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.RunPropertiesChange? value)
-    where OpenXmlElementType : RunPropertiesChange, new()
+    where OpenXmlElementType: DocumentFormat.OpenXml.Wordprocessing.RunPropertiesChange, new()
   {
     if (value != null)
     {

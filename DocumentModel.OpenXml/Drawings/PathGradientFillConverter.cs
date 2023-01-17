@@ -1,57 +1,48 @@
-using DocumentFormat.OpenXml.Drawing;
-using DocumentModel.Drawings;
-using PathGradientFill = DocumentFormat.OpenXml.Drawing.PathGradientFill;
-using RelativeRectangleType = DocumentModel.Drawings.RelativeRectangleType;
-
 namespace DocumentModel.OpenXml.Drawings;
 
 /// <summary>
-///   Path Gradient.
+/// Path Gradient.
 /// </summary>
 public static class PathGradientFillConverter
 {
   /// <summary>
-  ///   Gradient Fill Path
+  /// Gradient Fill Path
   /// </summary>
-  public static PathShadeKind? GetPath(PathGradientFill? openXmlElement)
+  private static DocumentModel.Drawings.PathShadeKind? GetPath(DocumentFormat.OpenXml.Drawing.PathGradientFill openXmlElement)
   {
-    return EnumValueConverter.GetValue<PathShadeValues, PathShadeKind>(openXmlElement?.Path?.Value);
+    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Drawing.PathShadeValues, DocumentModel.Drawings.PathShadeKind>(openXmlElement?.Path?.Value);
   }
-
-  public static void SetPath(PathGradientFill? openXmlElement, PathShadeKind? value)
+  
+  private static void SetPath(DocumentFormat.OpenXml.Drawing.PathGradientFill openXmlElement, DocumentModel.Drawings.PathShadeKind? value)
   {
-    if (openXmlElement != null)
-      openXmlElement.Path = EnumValueConverter.CreateEnumValue<PathShadeValues, PathShadeKind>(value);
+    openXmlElement.Path = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Drawing.PathShadeValues, DocumentModel.Drawings.PathShadeKind>(value);
   }
-
+  
   /// <summary>
-  ///   Fill To Rectangle.
+  /// Fill To Rectangle.
   /// </summary>
-  public static RelativeRectangleType? GetFillToRectangle(PathGradientFill? openXmlElement)
+  private static DocumentModel.Drawings.RelativeRectangleType? GetFillToRectangle(DocumentFormat.OpenXml.Drawing.PathGradientFill openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<FillToRectangle>();
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.FillToRectangle>();
     if (itemElement != null)
-      return RelativeRectangleTypeConverter.CreateModelElement(itemElement);
+      return DocumentModel.OpenXml.Drawings.RelativeRectangleTypeConverter.CreateModelElement(itemElement);
     return null;
   }
-
-  public static void SetFillToRectangle(PathGradientFill? openXmlElement, RelativeRectangleType? value)
+  
+  private static void SetFillToRectangle(DocumentFormat.OpenXml.Drawing.PathGradientFill openXmlElement, DocumentModel.Drawings.RelativeRectangleType? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.FillToRectangle>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<FillToRectangle>();
+      itemElement = DocumentModel.OpenXml.Drawings.RelativeRectangleTypeConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.FillToRectangle>(value);
       if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = RelativeRectangleTypeConverter.CreateOpenXmlElement<FillToRectangle>(value);
-        if (itemElement != null)
-          openXmlElement.AddChild(itemElement);
-      }
+        openXmlElement.AddChild(itemElement);
     }
   }
-
-  public static DocumentModel.Drawings.PathGradientFill? CreateModelElement(PathGradientFill? openXmlElement)
+  
+  public static DocumentModel.Drawings.PathGradientFill? CreateModelElement(DocumentFormat.OpenXml.Drawing.PathGradientFill? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -62,9 +53,9 @@ public static class PathGradientFillConverter
     }
     return null;
   }
-
+  
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.PathGradientFill? value)
-    where OpenXmlElementType : PathGradientFill, new()
+    where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.PathGradientFill, new()
   {
     if (value != null)
     {

@@ -1,45 +1,37 @@
-using DocumentModel.Wordprocessing;
-using CommentsIds = DocumentFormat.OpenXml.Office2019.Word.Cid.CommentsIds;
-
 namespace DocumentModel.OpenXml.Wordprocessing;
 
 /// <summary>
-///   Defines the CommentsIds Class.
+/// Defines the CommentsIds Class.
 /// </summary>
 public static class CommentsIdsConverter
 {
-  public static Collection<CommentId>? GetCommentIds(CommentsIds? openXmlElement)
+  private static System.Collections.ObjectModel.Collection<DocumentModel.Wordprocessing.CommentId> GetCommentIds(DocumentFormat.OpenXml.Office2019.Word.Cid.CommentsIds openXmlElement)
   {
-    if (openXmlElement != null)
+    var collection = new System.Collections.ObjectModel.Collection<DocumentModel.Wordprocessing.CommentId>();
+    foreach (var item in openXmlElement.Elements<DocumentFormat.OpenXml.Office2019.Word.Cid.CommentId>())
     {
-      var collection = new Collection<CommentId>();
-      foreach (var item in openXmlElement.Elements<DocumentFormat.OpenXml.Office2019.Word.Cid.CommentId>())
+      var newItem = DocumentModel.OpenXml.Wordprocessing.CommentIdConverter.CreateModelElement(item);
+      if (newItem != null)
+        collection.Add(newItem);
+    }
+    return collection;
+  }
+  
+  private static void SetCommentIds(DocumentFormat.OpenXml.Office2019.Word.Cid.CommentsIds openXmlElement, System.Collections.ObjectModel.Collection<DocumentModel.Wordprocessing.CommentId>? value)
+  {
+    openXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Office2019.Word.Cid.CommentId>();
+    if (value != null)
+    {
+      foreach (var item in value)
       {
-        var newItem = CommentIdConverter.CreateModelElement(item);
+        var newItem = DocumentModel.OpenXml.Wordprocessing.CommentIdConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2019.Word.Cid.CommentId>(item);
         if (newItem != null)
-          collection.Add(newItem);
+          openXmlElement.AddChild(newItem);
       }
-      return collection;
-    }
-    return null;
-  }
-
-  public static void SetCommentIds(CommentsIds? openXmlElement, Collection<CommentId>? value)
-  {
-    if (openXmlElement != null)
-    {
-      openXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Office2019.Word.Cid.CommentId>();
-      if (value != null)
-        foreach (var item in value)
-        {
-          var newItem = CommentIdConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2019.Word.Cid.CommentId>(item);
-          if (newItem != null)
-            openXmlElement.AddChild(newItem);
-        }
     }
   }
-
-  public static DocumentModel.Wordprocessing.CommentsIds? CreateModelElement(CommentsIds? openXmlElement)
+  
+  public static DocumentModel.Wordprocessing.CommentsIds? CreateModelElement(DocumentFormat.OpenXml.Office2019.Word.Cid.CommentsIds? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -49,9 +41,9 @@ public static class CommentsIdsConverter
     }
     return null;
   }
-
+  
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.CommentsIds? value)
-    where OpenXmlElementType : CommentsIds, new()
+    where OpenXmlElementType: DocumentFormat.OpenXml.Office2019.Word.Cid.CommentsIds, new()
   {
     if (value != null)
     {

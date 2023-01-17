@@ -1,86 +1,75 @@
-using DocumentFormat.OpenXml.Drawing;
-using ColorFrom = DocumentModel.Drawings.ColorFrom;
-using ColorTo = DocumentModel.Drawings.ColorTo;
-
 namespace DocumentModel.OpenXml.Drawings;
 
 /// <summary>
-///   Color Change Effect.
+/// Color Change Effect.
 /// </summary>
 public static class ColorChangeConverter
 {
   /// <summary>
-  ///   Consider Alpha Values
+  /// Consider Alpha Values
   /// </summary>
-  public static Boolean? GetUseAlpha(ColorChange? openXmlElement)
+  private static Boolean? GetUseAlpha(DocumentFormat.OpenXml.Drawing.ColorChange openXmlElement)
   {
     return openXmlElement?.UseAlpha?.Value;
   }
-
-  public static void SetUseAlpha(ColorChange? openXmlElement, Boolean? value)
+  
+  private static void SetUseAlpha(DocumentFormat.OpenXml.Drawing.ColorChange openXmlElement, Boolean? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.UseAlpha = new BooleanValue { Value = (Boolean)value };
-      else
-        openXmlElement.UseAlpha = null;
+    if (value != null)
+      openXmlElement.UseAlpha = new BooleanValue { Value = (Boolean)value };
+    else
+      openXmlElement.UseAlpha = null;
   }
-
+  
   /// <summary>
-  ///   Change Color From.
+  /// Change Color From.
   /// </summary>
-  public static ColorFrom? GetColorFrom(ColorChange? openXmlElement)
+  private static DocumentModel.Drawings.ColorFrom? GetColorFrom(DocumentFormat.OpenXml.Drawing.ColorChange openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.ColorFrom>();
     if (itemElement != null)
-      return ColorFromConverter.CreateModelElement(itemElement);
+      return DocumentModel.OpenXml.Drawings.ColorFromConverter.CreateModelElement(itemElement);
     return null;
   }
-
-  public static void SetColorFrom(ColorChange? openXmlElement, ColorFrom? value)
+  
+  private static void SetColorFrom(DocumentFormat.OpenXml.Drawing.ColorChange openXmlElement, DocumentModel.Drawings.ColorFrom? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.ColorFrom>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.ColorFrom>();
+      itemElement = DocumentModel.OpenXml.Drawings.ColorFromConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.ColorFrom>(value);
       if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = ColorFromConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.ColorFrom>(value);
-        if (itemElement != null)
-          openXmlElement.AddChild(itemElement);
-      }
+        openXmlElement.AddChild(itemElement);
     }
   }
-
+  
   /// <summary>
-  ///   Change Color To.
+  /// Change Color To.
   /// </summary>
-  public static ColorTo? GetColorTo(ColorChange? openXmlElement)
+  private static DocumentModel.Drawings.ColorTo? GetColorTo(DocumentFormat.OpenXml.Drawing.ColorChange openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.ColorTo>();
     if (itemElement != null)
-      return ColorToConverter.CreateModelElement(itemElement);
+      return DocumentModel.OpenXml.Drawings.ColorToConverter.CreateModelElement(itemElement);
     return null;
   }
-
-  public static void SetColorTo(ColorChange? openXmlElement, ColorTo? value)
+  
+  private static void SetColorTo(DocumentFormat.OpenXml.Drawing.ColorChange openXmlElement, DocumentModel.Drawings.ColorTo? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.ColorTo>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.ColorTo>();
+      itemElement = DocumentModel.OpenXml.Drawings.ColorToConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.ColorTo>(value);
       if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = ColorToConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.ColorTo>(value);
-        if (itemElement != null)
-          openXmlElement.AddChild(itemElement);
-      }
+        openXmlElement.AddChild(itemElement);
     }
   }
-
-  public static DocumentModel.Drawings.ColorChange? CreateModelElement(ColorChange? openXmlElement)
+  
+  public static DocumentModel.Drawings.ColorChange? CreateModelElement(DocumentFormat.OpenXml.Drawing.ColorChange? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -92,9 +81,9 @@ public static class ColorChangeConverter
     }
     return null;
   }
-
+  
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.ColorChange? value)
-    where OpenXmlElementType : ColorChange, new()
+    where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.ColorChange, new()
   {
     if (value != null)
     {

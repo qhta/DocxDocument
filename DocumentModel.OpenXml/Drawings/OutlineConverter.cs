@@ -1,324 +1,263 @@
-using DocumentFormat.OpenXml.Drawing;
-using DocumentModel.Drawings;
-using CustomDash = DocumentModel.Drawings.CustomDash;
-using GradientFill = DocumentModel.Drawings.GradientFill;
-using LineEndPropertiesType = DocumentModel.Drawings.LineEndPropertiesType;
-using LinePropertiesExtensionList = DocumentModel.Drawings.LinePropertiesExtensionList;
-using Miter = DocumentModel.Drawings.Miter;
-using Outline = DocumentFormat.OpenXml.Drawing.Outline;
-using PatternFill = DocumentModel.Drawings.PatternFill;
-using SolidFill = DocumentModel.Drawings.SolidFill;
-
 namespace DocumentModel.OpenXml.Drawings;
 
 /// <summary>
-///   Defines the Outline Class.
+/// Defines the Outline Class.
 /// </summary>
 public static class OutlineConverter
 {
-  public static Boolean? GetNoFill(Outline? openXmlElement)
+  private static Boolean? GetNoFill(DocumentFormat.OpenXml.Drawing.Outline openXmlElement)
   {
-    if (openXmlElement != null)
-    {
-      var itemElement = openXmlElement.GetFirstChild<NoFill>();
-      return itemElement != null;
-    }
-    return null;
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.NoFill>();
+    return itemElement != null;
   }
-
-  public static void SetNoFill(Outline? openXmlElement, Boolean? value)
+  
+  private static void SetNoFill(DocumentFormat.OpenXml.Drawing.Outline openXmlElement, Boolean? value)
   {
-    if (openXmlElement != null)
+    if (value == false)
     {
-      if (value == false)
-      {
-        var itemElement = openXmlElement.GetFirstChild<NoFill>();
-        if (itemElement != null)
-          itemElement.Remove();
-      }
-      if (value == true)
-      {
-        var itemElement = new NoFill();
-        openXmlElement.AddChild(itemElement);
-      }
+      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.NoFill>();
+      if (itemElement != null)
+        itemElement.Remove();
+    }
+    if (value == true)
+    {
+      var itemElement = new DocumentFormat.OpenXml.Drawing.NoFill();
+      openXmlElement.AddChild(itemElement);
     }
   }
-
-  public static SolidFill? GetSolidFill(Outline? openXmlElement)
+  
+  private static DocumentModel.Drawings.SolidFill? GetSolidFill(DocumentFormat.OpenXml.Drawing.Outline openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.SolidFill>();
     if (itemElement != null)
-      return SolidFillConverter.CreateModelElement(itemElement);
+      return DocumentModel.OpenXml.Drawings.SolidFillConverter.CreateModelElement(itemElement);
     return null;
   }
-
-  public static void SetSolidFill(Outline? openXmlElement, SolidFill? value)
+  
+  private static void SetSolidFill(DocumentFormat.OpenXml.Drawing.Outline openXmlElement, DocumentModel.Drawings.SolidFill? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.SolidFill>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.SolidFill>();
+      itemElement = DocumentModel.OpenXml.Drawings.SolidFillConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.SolidFill>(value);
       if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = SolidFillConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.SolidFill>(value);
-        if (itemElement != null)
-          openXmlElement.AddChild(itemElement);
-      }
+        openXmlElement.AddChild(itemElement);
     }
   }
-
-  public static GradientFill? GetGradientFill(Outline? openXmlElement)
+  
+  private static DocumentModel.Drawings.GradientFill? GetGradientFill(DocumentFormat.OpenXml.Drawing.Outline openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.GradientFill>();
     if (itemElement != null)
-      return GradientFillConverter.CreateModelElement(itemElement);
+      return DocumentModel.OpenXml.Drawings.GradientFillConverter.CreateModelElement(itemElement);
     return null;
   }
-
-  public static void SetGradientFill(Outline? openXmlElement, GradientFill? value)
+  
+  private static void SetGradientFill(DocumentFormat.OpenXml.Drawing.Outline openXmlElement, DocumentModel.Drawings.GradientFill? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.GradientFill>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.GradientFill>();
+      itemElement = DocumentModel.OpenXml.Drawings.GradientFillConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.GradientFill>(value);
       if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = GradientFillConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.GradientFill>(value);
-        if (itemElement != null)
-          openXmlElement.AddChild(itemElement);
-      }
+        openXmlElement.AddChild(itemElement);
     }
   }
-
-  public static PatternFill? GetPatternFill(Outline? openXmlElement)
+  
+  private static DocumentModel.Drawings.PatternFill? GetPatternFill(DocumentFormat.OpenXml.Drawing.Outline openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.PatternFill>();
     if (itemElement != null)
-      return PatternFillConverter.CreateModelElement(itemElement);
+      return DocumentModel.OpenXml.Drawings.PatternFillConverter.CreateModelElement(itemElement);
     return null;
   }
-
-  public static void SetPatternFill(Outline? openXmlElement, PatternFill? value)
+  
+  private static void SetPatternFill(DocumentFormat.OpenXml.Drawing.Outline openXmlElement, DocumentModel.Drawings.PatternFill? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.PatternFill>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.PatternFill>();
+      itemElement = DocumentModel.OpenXml.Drawings.PatternFillConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.PatternFill>(value);
       if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = PatternFillConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.PatternFill>(value);
-        if (itemElement != null)
-          openXmlElement.AddChild(itemElement);
-      }
+        openXmlElement.AddChild(itemElement);
     }
   }
-
-  public static PresetLineDashKind? GetPresetDash(Outline? openXmlElement)
+  
+  private static DocumentModel.Drawings.PresetLineDashKind? GetPresetDash(DocumentFormat.OpenXml.Drawing.Outline openXmlElement)
   {
-    if (openXmlElement != null)
-    {
-      var itemElement = openXmlElement.GetFirstChild<PresetDash>();
-      if (itemElement?.Val?.Value != null) return EnumValueConverter.GetValue<PresetLineDashValues, PresetLineDashKind>(itemElement.Val.Value);
-    }
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.PresetDash>();
+    if (itemElement?.Val?.Value != null)
+      return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Drawing.PresetLineDashValues, DocumentModel.Drawings.PresetLineDashKind>(itemElement.Val.Value);
     return null;
   }
-
-  public static void SetPresetDash(Outline? openXmlElement, PresetLineDashKind? value)
+  
+  private static void SetPresetDash(DocumentFormat.OpenXml.Drawing.Outline openXmlElement, DocumentModel.Drawings.PresetLineDashKind? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.PresetDash>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<PresetDash>();
+      itemElement = EnumValueConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.PresetDash, DocumentFormat.OpenXml.Drawing.PresetLineDashValues, DocumentModel.Drawings.PresetLineDashKind>(value);
       if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = EnumValueConverter.CreateOpenXmlElement<PresetDash, PresetLineDashValues, PresetLineDashKind>(value);
-        if (itemElement != null)
-          openXmlElement.AddChild(itemElement);
-      }
+        openXmlElement.AddChild(itemElement);
     }
   }
-
-  public static CustomDash? GetCustomDash(Outline? openXmlElement)
+  
+  private static DocumentModel.Drawings.CustomDash? GetCustomDash(DocumentFormat.OpenXml.Drawing.Outline openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.CustomDash>();
     if (itemElement != null)
-      return CustomDashConverter.CreateModelElement(itemElement);
+      return DocumentModel.OpenXml.Drawings.CustomDashConverter.CreateModelElement(itemElement);
     return null;
   }
-
-  public static void SetCustomDash(Outline? openXmlElement, CustomDash? value)
+  
+  private static void SetCustomDash(DocumentFormat.OpenXml.Drawing.Outline openXmlElement, DocumentModel.Drawings.CustomDash? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.CustomDash>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.CustomDash>();
+      itemElement = DocumentModel.OpenXml.Drawings.CustomDashConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.CustomDash>(value);
+      if (itemElement != null)
+        openXmlElement.AddChild(itemElement);
+    }
+  }
+  
+  private static Boolean? GetRound(DocumentFormat.OpenXml.Drawing.Outline openXmlElement)
+  {
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Round>();
+    return itemElement != null;
+  }
+  
+  private static void SetRound(DocumentFormat.OpenXml.Drawing.Outline openXmlElement, Boolean? value)
+  {
+    if (value == false)
+    {
+      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Round>();
       if (itemElement != null)
         itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = CustomDashConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.CustomDash>(value);
-        if (itemElement != null)
-          openXmlElement.AddChild(itemElement);
-      }
     }
-  }
-
-  public static Boolean? GetRound(Outline? openXmlElement)
-  {
-    if (openXmlElement != null)
+    if (value == true)
     {
-      var itemElement = openXmlElement.GetFirstChild<Round>();
-      return itemElement != null;
+      var itemElement = new DocumentFormat.OpenXml.Drawing.Round();
+      openXmlElement.AddChild(itemElement);
     }
-    return null;
   }
-
-  public static void SetRound(Outline? openXmlElement, Boolean? value)
+  
+  private static Boolean? GetLineJoinBevel(DocumentFormat.OpenXml.Drawing.Outline openXmlElement)
   {
-    if (openXmlElement != null)
-    {
-      if (value == false)
-      {
-        var itemElement = openXmlElement.GetFirstChild<Round>();
-        if (itemElement != null)
-          itemElement.Remove();
-      }
-      if (value == true)
-      {
-        var itemElement = new Round();
-        openXmlElement.AddChild(itemElement);
-      }
-    }
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.LineJoinBevel>();
+    return itemElement != null;
   }
-
-  public static Boolean? GetLineJoinBevel(Outline? openXmlElement)
+  
+  private static void SetLineJoinBevel(DocumentFormat.OpenXml.Drawing.Outline openXmlElement, Boolean? value)
   {
-    if (openXmlElement != null)
+    if (value == false)
     {
-      var itemElement = openXmlElement.GetFirstChild<LineJoinBevel>();
-      return itemElement != null;
+      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.LineJoinBevel>();
+      if (itemElement != null)
+        itemElement.Remove();
     }
-    return null;
-  }
-
-  public static void SetLineJoinBevel(Outline? openXmlElement, Boolean? value)
-  {
-    if (openXmlElement != null)
+    if (value == true)
     {
-      if (value == false)
-      {
-        var itemElement = openXmlElement.GetFirstChild<LineJoinBevel>();
-        if (itemElement != null)
-          itemElement.Remove();
-      }
-      if (value == true)
-      {
-        var itemElement = new LineJoinBevel();
-        openXmlElement.AddChild(itemElement);
-      }
+      var itemElement = new DocumentFormat.OpenXml.Drawing.LineJoinBevel();
+      openXmlElement.AddChild(itemElement);
     }
   }
-
-  public static Miter? GetMiter(Outline? openXmlElement)
+  
+  private static DocumentModel.Drawings.Miter? GetMiter(DocumentFormat.OpenXml.Drawing.Outline openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.Miter>();
     if (itemElement != null)
-      return MiterConverter.CreateModelElement(itemElement);
+      return DocumentModel.OpenXml.Drawings.MiterConverter.CreateModelElement(itemElement);
     return null;
   }
-
-  public static void SetMiter(Outline? openXmlElement, Miter? value)
+  
+  private static void SetMiter(DocumentFormat.OpenXml.Drawing.Outline openXmlElement, DocumentModel.Drawings.Miter? value)
   {
-    if (openXmlElement != null)
-    {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Miter>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = MiterConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Miter>(value);
-        if (itemElement != null)
-          openXmlElement.AddChild(itemElement);
-      }
-    }
-  }
-
-  public static LineEndPropertiesType? GetHeadEnd(Outline? openXmlElement)
-  {
-    var itemElement = openXmlElement?.GetFirstChild<HeadEnd>();
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Miter>();
     if (itemElement != null)
-      return LineEndPropertiesTypeConverter.CreateModelElement(itemElement);
-    return null;
-  }
-
-  public static void SetHeadEnd(Outline? openXmlElement, LineEndPropertiesType? value)
-  {
-    if (openXmlElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<HeadEnd>();
+      itemElement = DocumentModel.OpenXml.Drawings.MiterConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Miter>(value);
       if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = LineEndPropertiesTypeConverter.CreateOpenXmlElement<HeadEnd>(value);
-        if (itemElement != null)
-          openXmlElement.AddChild(itemElement);
-      }
+        openXmlElement.AddChild(itemElement);
     }
   }
-
-  public static LineEndPropertiesType? GetTailEnd(Outline? openXmlElement)
+  
+  private static DocumentModel.Drawings.LineEndPropertiesType? GetHeadEnd(DocumentFormat.OpenXml.Drawing.Outline openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<TailEnd>();
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.HeadEnd>();
     if (itemElement != null)
-      return LineEndPropertiesTypeConverter.CreateModelElement(itemElement);
+      return DocumentModel.OpenXml.Drawings.LineEndPropertiesTypeConverter.CreateModelElement(itemElement);
     return null;
   }
-
-  public static void SetTailEnd(Outline? openXmlElement, LineEndPropertiesType? value)
+  
+  private static void SetHeadEnd(DocumentFormat.OpenXml.Drawing.Outline openXmlElement, DocumentModel.Drawings.LineEndPropertiesType? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.HeadEnd>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<TailEnd>();
+      itemElement = DocumentModel.OpenXml.Drawings.LineEndPropertiesTypeConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.HeadEnd>(value);
       if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = LineEndPropertiesTypeConverter.CreateOpenXmlElement<TailEnd>(value);
-        if (itemElement != null)
-          openXmlElement.AddChild(itemElement);
-      }
+        openXmlElement.AddChild(itemElement);
     }
   }
-
-  public static LinePropertiesExtensionList? GetLinePropertiesExtensionList(Outline? openXmlElement)
+  
+  private static DocumentModel.Drawings.LineEndPropertiesType? GetTailEnd(DocumentFormat.OpenXml.Drawing.Outline openXmlElement)
+  {
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.TailEnd>();
+    if (itemElement != null)
+      return DocumentModel.OpenXml.Drawings.LineEndPropertiesTypeConverter.CreateModelElement(itemElement);
+    return null;
+  }
+  
+  private static void SetTailEnd(DocumentFormat.OpenXml.Drawing.Outline openXmlElement, DocumentModel.Drawings.LineEndPropertiesType? value)
+  {
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.TailEnd>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
+    {
+      itemElement = DocumentModel.OpenXml.Drawings.LineEndPropertiesTypeConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.TailEnd>(value);
+      if (itemElement != null)
+        openXmlElement.AddChild(itemElement);
+    }
+  }
+  
+  private static DocumentModel.Drawings.LinePropertiesExtensionList? GetLinePropertiesExtensionList(DocumentFormat.OpenXml.Drawing.Outline openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.LinePropertiesExtensionList>();
     if (itemElement != null)
-      return LinePropertiesExtensionListConverter.CreateModelElement(itemElement);
+      return DocumentModel.OpenXml.Drawings.LinePropertiesExtensionListConverter.CreateModelElement(itemElement);
     return null;
   }
-
-  public static void SetLinePropertiesExtensionList(Outline? openXmlElement, LinePropertiesExtensionList? value)
+  
+  private static void SetLinePropertiesExtensionList(DocumentFormat.OpenXml.Drawing.Outline openXmlElement, DocumentModel.Drawings.LinePropertiesExtensionList? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.LinePropertiesExtensionList>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.LinePropertiesExtensionList>();
+      itemElement = DocumentModel.OpenXml.Drawings.LinePropertiesExtensionListConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.LinePropertiesExtensionList>(value);
       if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = LinePropertiesExtensionListConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.LinePropertiesExtensionList>(value);
-        if (itemElement != null)
-          openXmlElement.AddChild(itemElement);
-      }
+        openXmlElement.AddChild(itemElement);
     }
   }
-
-  public static DocumentModel.Drawings.Outline? CreateModelElement(Outline? openXmlElement)
+  
+  public static DocumentModel.Drawings.Outline? CreateModelElement(DocumentFormat.OpenXml.Drawing.Outline? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -339,9 +278,9 @@ public static class OutlineConverter
     }
     return null;
   }
-
+  
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.Outline? value)
-    where OpenXmlElementType : Outline, new()
+    where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.Outline, new()
   {
     if (value != null)
     {

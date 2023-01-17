@@ -1,45 +1,40 @@
-using DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing;
-using EntityTypeEnum = DocumentModel.Drawings.ChartDrawings.EntityTypeEnum;
-
 namespace DocumentModel.OpenXml.Drawings.ChartDrawings;
 
 /// <summary>
-///   Defines the GeoEntity Class.
+/// Defines the GeoEntity Class.
 /// </summary>
 public static class GeoEntityConverter
 {
   /// <summary>
-  ///   entityName, this property is only available in Office 2016 and later.
+  /// entityName, this property is only available in Office 2016 and later.
   /// </summary>
-  public static String? GetEntityName(GeoEntity? openXmlElement)
+  private static String? GetEntityName(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.GeoEntity openXmlElement)
   {
     return openXmlElement?.EntityName?.Value;
   }
-
-  public static void SetEntityName(GeoEntity? openXmlElement, String? value)
+  
+  private static void SetEntityName(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.GeoEntity openXmlElement, String? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.EntityName = new StringValue { Value = value };
-      else
-        openXmlElement.EntityName = null;
+    if (value != null)
+      openXmlElement.EntityName = new StringValue { Value = value };
+    else
+      openXmlElement.EntityName = null;
   }
-
+  
   /// <summary>
-  ///   entityType, this property is only available in Office 2016 and later.
+  /// entityType, this property is only available in Office 2016 and later.
   /// </summary>
-  public static EntityTypeEnum? GetEntityType(GeoEntity? openXmlElement)
+  private static DocumentModel.Drawings.ChartDrawings.EntityTypeEnum? GetEntityType(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.GeoEntity openXmlElement)
   {
-    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.EntityTypeEnum, EntityTypeEnum>(openXmlElement?.EntityType?.Value);
+    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.EntityTypeEnum, DocumentModel.Drawings.ChartDrawings.EntityTypeEnum>(openXmlElement?.EntityType?.Value);
   }
-
-  public static void SetEntityType(GeoEntity? openXmlElement, EntityTypeEnum? value)
+  
+  private static void SetEntityType(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.GeoEntity openXmlElement, DocumentModel.Drawings.ChartDrawings.EntityTypeEnum? value)
   {
-    if (openXmlElement != null)
-      openXmlElement.EntityType = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.EntityTypeEnum, EntityTypeEnum>(value);
+    openXmlElement.EntityType = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.EntityTypeEnum, DocumentModel.Drawings.ChartDrawings.EntityTypeEnum>(value);
   }
-
-  public static DocumentModel.Drawings.ChartDrawings.GeoEntity? CreateModelElement(GeoEntity? openXmlElement)
+  
+  public static DocumentModel.Drawings.ChartDrawings.GeoEntity? CreateModelElement(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.GeoEntity? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -50,9 +45,9 @@ public static class GeoEntityConverter
     }
     return null;
   }
-
+  
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.ChartDrawings.GeoEntity? value)
-    where OpenXmlElementType : GeoEntity, new()
+    where OpenXmlElementType: DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.GeoEntity, new()
   {
     if (value != null)
     {

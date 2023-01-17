@@ -1,45 +1,37 @@
-using DocumentModel.Drawings;
-using LinePropertiesExtensionList = DocumentFormat.OpenXml.Drawing.LinePropertiesExtensionList;
-
 namespace DocumentModel.OpenXml.Drawings;
 
 /// <summary>
-///   Future extensions..
+/// Future extensions..
 /// </summary>
 public static class LinePropertiesExtensionListConverter
 {
-  public static Collection<LinePropertiesExtension>? GetLinePropertiesExtensions(LinePropertiesExtensionList? openXmlElement)
+  private static System.Collections.ObjectModel.Collection<DocumentModel.Drawings.LinePropertiesExtension> GetLinePropertiesExtensions(DocumentFormat.OpenXml.Drawing.LinePropertiesExtensionList openXmlElement)
   {
-    if (openXmlElement != null)
+    var collection = new System.Collections.ObjectModel.Collection<DocumentModel.Drawings.LinePropertiesExtension>();
+    foreach (var item in openXmlElement.Elements<DocumentFormat.OpenXml.Drawing.LinePropertiesExtension>())
     {
-      var collection = new Collection<LinePropertiesExtension>();
-      foreach (var item in openXmlElement.Elements<DocumentFormat.OpenXml.Drawing.LinePropertiesExtension>())
+      var newItem = DocumentModel.OpenXml.Drawings.LinePropertiesExtensionConverter.CreateModelElement(item);
+      if (newItem != null)
+        collection.Add(newItem);
+    }
+    return collection;
+  }
+  
+  private static void SetLinePropertiesExtensions(DocumentFormat.OpenXml.Drawing.LinePropertiesExtensionList openXmlElement, System.Collections.ObjectModel.Collection<DocumentModel.Drawings.LinePropertiesExtension>? value)
+  {
+    openXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Drawing.LinePropertiesExtension>();
+    if (value != null)
+    {
+      foreach (var item in value)
       {
-        var newItem = LinePropertiesExtensionConverter.CreateModelElement(item);
+        var newItem = DocumentModel.OpenXml.Drawings.LinePropertiesExtensionConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.LinePropertiesExtension>(item);
         if (newItem != null)
-          collection.Add(newItem);
+          openXmlElement.AddChild(newItem);
       }
-      return collection;
-    }
-    return null;
-  }
-
-  public static void SetLinePropertiesExtensions(LinePropertiesExtensionList? openXmlElement, Collection<LinePropertiesExtension>? value)
-  {
-    if (openXmlElement != null)
-    {
-      openXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Drawing.LinePropertiesExtension>();
-      if (value != null)
-        foreach (var item in value)
-        {
-          var newItem = LinePropertiesExtensionConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.LinePropertiesExtension>(item);
-          if (newItem != null)
-            openXmlElement.AddChild(newItem);
-        }
     }
   }
-
-  public static DocumentModel.Drawings.LinePropertiesExtensionList? CreateModelElement(LinePropertiesExtensionList? openXmlElement)
+  
+  public static DocumentModel.Drawings.LinePropertiesExtensionList? CreateModelElement(DocumentFormat.OpenXml.Drawing.LinePropertiesExtensionList? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -49,9 +41,9 @@ public static class LinePropertiesExtensionListConverter
     }
     return null;
   }
-
+  
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.LinePropertiesExtensionList? value)
-    where OpenXmlElementType : LinePropertiesExtensionList, new()
+    where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.LinePropertiesExtensionList, new()
   {
     if (value != null)
     {

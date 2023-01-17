@@ -8,7 +8,7 @@ public class StylePaneFormatFilter
   /// <summary>
   ///   val
   /// </summary>
-  public Byte[]? Val { get; set; }
+  public UInt16? Val { get; set; }
 
   /// <summary>
   ///   allStyles, this property is only available in Office 2010 and later.

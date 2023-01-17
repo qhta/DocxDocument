@@ -1,23 +1,21 @@
-using DocumentFormat.OpenXml.Packaging;
-
 namespace DocumentModel.OpenXml.Packaging;
 
 /// <summary>
-///   Defines the WordAttachedToolbarsPart
+/// Defines the WordAttachedToolbarsPart
 /// </summary>
 public static class WordAttachedToolbarsPartConverter
 {
-  public static String? GetContentType(WordAttachedToolbarsPart? openXmlElement)
+  private static String? GetContentType(DocumentFormat.OpenXml.Packaging.WordAttachedToolbarsPart openXmlElement)
   {
     return openXmlElement?.ContentType;
   }
-
-  public static String? GetRelationshipType(WordAttachedToolbarsPart? openXmlElement)
+  
+  private static String? GetRelationshipType(DocumentFormat.OpenXml.Packaging.WordAttachedToolbarsPart openXmlElement)
   {
     return openXmlElement?.RelationshipType;
   }
-
-  public static DocumentModel.Packaging.WordAttachedToolbarsPart? CreateModelElement(WordAttachedToolbarsPart? openXmlElement)
+  
+  public static DocumentModel.Packaging.WordAttachedToolbarsPart? CreateModelElement(DocumentFormat.OpenXml.Packaging.WordAttachedToolbarsPart? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -28,9 +26,9 @@ public static class WordAttachedToolbarsPartConverter
     }
     return null;
   }
-
+  
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Packaging.WordAttachedToolbarsPart? value)
-    where OpenXmlElementType : WordAttachedToolbarsPart, new()
+    where OpenXmlElementType: DocumentFormat.OpenXml.Packaging.WordAttachedToolbarsPart, new()
   {
     if (value != null)
     {

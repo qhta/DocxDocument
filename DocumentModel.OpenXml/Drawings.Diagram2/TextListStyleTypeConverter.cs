@@ -1,311 +1,275 @@
-using DocumentFormat.OpenXml.Office2019.Drawing.Diagram12;
-using DocumentModel.Drawings;
-
 namespace DocumentModel.OpenXml.Drawings.Diagram2;
 
 /// <summary>
-///   Defines the TextListStyleType Class.
+/// Defines the TextListStyleType Class.
 /// </summary>
 public static class TextListStyleTypeConverter
 {
   /// <summary>
-  ///   Default Paragraph Style.
+  /// Default Paragraph Style.
   /// </summary>
-  public static DefaultParagraphProperties? GetDefaultParagraphProperties(TextListStyleType? openXmlElement)
+  private static DocumentModel.Drawings.DefaultParagraphProperties? GetDefaultParagraphProperties(DocumentFormat.OpenXml.Office2019.Drawing.Diagram12.TextListStyleType openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.DefaultParagraphProperties>();
     if (itemElement != null)
-      return DefaultParagraphPropertiesConverter.CreateModelElement(itemElement);
+      return DocumentModel.OpenXml.Drawings.DefaultParagraphPropertiesConverter.CreateModelElement(itemElement);
     return null;
   }
-
-  public static void SetDefaultParagraphProperties(TextListStyleType? openXmlElement, DefaultParagraphProperties? value)
+  
+  private static void SetDefaultParagraphProperties(DocumentFormat.OpenXml.Office2019.Drawing.Diagram12.TextListStyleType openXmlElement, DocumentModel.Drawings.DefaultParagraphProperties? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.DefaultParagraphProperties>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.DefaultParagraphProperties>();
+      itemElement = DocumentModel.OpenXml.Drawings.DefaultParagraphPropertiesConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.DefaultParagraphProperties>(value);
       if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = DefaultParagraphPropertiesConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.DefaultParagraphProperties>(value);
-        if (itemElement != null)
-          openXmlElement.AddChild(itemElement);
-      }
+        openXmlElement.AddChild(itemElement);
     }
   }
-
+  
   /// <summary>
-  ///   List Level 1 Text Style.
+  /// List Level 1 Text Style.
   /// </summary>
-  public static Level1ParagraphProperties? GetLevel1ParagraphProperties(TextListStyleType? openXmlElement)
+  private static DocumentModel.Drawings.Level1ParagraphProperties? GetLevel1ParagraphProperties(DocumentFormat.OpenXml.Office2019.Drawing.Diagram12.TextListStyleType openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.Level1ParagraphProperties>();
     if (itemElement != null)
-      return Level1ParagraphPropertiesConverter.CreateModelElement(itemElement);
+      return DocumentModel.OpenXml.Drawings.Level1ParagraphPropertiesConverter.CreateModelElement(itemElement);
     return null;
   }
-
-  public static void SetLevel1ParagraphProperties(TextListStyleType? openXmlElement, Level1ParagraphProperties? value)
+  
+  private static void SetLevel1ParagraphProperties(DocumentFormat.OpenXml.Office2019.Drawing.Diagram12.TextListStyleType openXmlElement, DocumentModel.Drawings.Level1ParagraphProperties? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Level1ParagraphProperties>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Level1ParagraphProperties>();
+      itemElement = DocumentModel.OpenXml.Drawings.Level1ParagraphPropertiesConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Level1ParagraphProperties>(value);
       if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = Level1ParagraphPropertiesConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Level1ParagraphProperties>(value);
-        if (itemElement != null)
-          openXmlElement.AddChild(itemElement);
-      }
+        openXmlElement.AddChild(itemElement);
     }
   }
-
+  
   /// <summary>
-  ///   List Level 2 Text Style.
+  /// List Level 2 Text Style.
   /// </summary>
-  public static Level2ParagraphProperties? GetLevel2ParagraphProperties(TextListStyleType? openXmlElement)
+  private static DocumentModel.Drawings.Level2ParagraphProperties? GetLevel2ParagraphProperties(DocumentFormat.OpenXml.Office2019.Drawing.Diagram12.TextListStyleType openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.Level2ParagraphProperties>();
     if (itemElement != null)
-      return Level2ParagraphPropertiesConverter.CreateModelElement(itemElement);
+      return DocumentModel.OpenXml.Drawings.Level2ParagraphPropertiesConverter.CreateModelElement(itemElement);
     return null;
   }
-
-  public static void SetLevel2ParagraphProperties(TextListStyleType? openXmlElement, Level2ParagraphProperties? value)
+  
+  private static void SetLevel2ParagraphProperties(DocumentFormat.OpenXml.Office2019.Drawing.Diagram12.TextListStyleType openXmlElement, DocumentModel.Drawings.Level2ParagraphProperties? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Level2ParagraphProperties>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Level2ParagraphProperties>();
+      itemElement = DocumentModel.OpenXml.Drawings.Level2ParagraphPropertiesConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Level2ParagraphProperties>(value);
       if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = Level2ParagraphPropertiesConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Level2ParagraphProperties>(value);
-        if (itemElement != null)
-          openXmlElement.AddChild(itemElement);
-      }
+        openXmlElement.AddChild(itemElement);
     }
   }
-
+  
   /// <summary>
-  ///   List Level 3 Text Style.
+  /// List Level 3 Text Style.
   /// </summary>
-  public static Level3ParagraphProperties? GetLevel3ParagraphProperties(TextListStyleType? openXmlElement)
+  private static DocumentModel.Drawings.Level3ParagraphProperties? GetLevel3ParagraphProperties(DocumentFormat.OpenXml.Office2019.Drawing.Diagram12.TextListStyleType openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.Level3ParagraphProperties>();
     if (itemElement != null)
-      return Level3ParagraphPropertiesConverter.CreateModelElement(itemElement);
+      return DocumentModel.OpenXml.Drawings.Level3ParagraphPropertiesConverter.CreateModelElement(itemElement);
     return null;
   }
-
-  public static void SetLevel3ParagraphProperties(TextListStyleType? openXmlElement, Level3ParagraphProperties? value)
+  
+  private static void SetLevel3ParagraphProperties(DocumentFormat.OpenXml.Office2019.Drawing.Diagram12.TextListStyleType openXmlElement, DocumentModel.Drawings.Level3ParagraphProperties? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Level3ParagraphProperties>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Level3ParagraphProperties>();
+      itemElement = DocumentModel.OpenXml.Drawings.Level3ParagraphPropertiesConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Level3ParagraphProperties>(value);
       if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = Level3ParagraphPropertiesConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Level3ParagraphProperties>(value);
-        if (itemElement != null)
-          openXmlElement.AddChild(itemElement);
-      }
+        openXmlElement.AddChild(itemElement);
     }
   }
-
+  
   /// <summary>
-  ///   List Level 4 Text Style.
+  /// List Level 4 Text Style.
   /// </summary>
-  public static Level4ParagraphProperties? GetLevel4ParagraphProperties(TextListStyleType? openXmlElement)
+  private static DocumentModel.Drawings.Level4ParagraphProperties? GetLevel4ParagraphProperties(DocumentFormat.OpenXml.Office2019.Drawing.Diagram12.TextListStyleType openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.Level4ParagraphProperties>();
     if (itemElement != null)
-      return Level4ParagraphPropertiesConverter.CreateModelElement(itemElement);
+      return DocumentModel.OpenXml.Drawings.Level4ParagraphPropertiesConverter.CreateModelElement(itemElement);
     return null;
   }
-
-  public static void SetLevel4ParagraphProperties(TextListStyleType? openXmlElement, Level4ParagraphProperties? value)
+  
+  private static void SetLevel4ParagraphProperties(DocumentFormat.OpenXml.Office2019.Drawing.Diagram12.TextListStyleType openXmlElement, DocumentModel.Drawings.Level4ParagraphProperties? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Level4ParagraphProperties>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Level4ParagraphProperties>();
+      itemElement = DocumentModel.OpenXml.Drawings.Level4ParagraphPropertiesConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Level4ParagraphProperties>(value);
       if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = Level4ParagraphPropertiesConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Level4ParagraphProperties>(value);
-        if (itemElement != null)
-          openXmlElement.AddChild(itemElement);
-      }
+        openXmlElement.AddChild(itemElement);
     }
   }
-
+  
   /// <summary>
-  ///   List Level 5 Text Style.
+  /// List Level 5 Text Style.
   /// </summary>
-  public static Level5ParagraphProperties? GetLevel5ParagraphProperties(TextListStyleType? openXmlElement)
+  private static DocumentModel.Drawings.Level5ParagraphProperties? GetLevel5ParagraphProperties(DocumentFormat.OpenXml.Office2019.Drawing.Diagram12.TextListStyleType openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.Level5ParagraphProperties>();
     if (itemElement != null)
-      return Level5ParagraphPropertiesConverter.CreateModelElement(itemElement);
+      return DocumentModel.OpenXml.Drawings.Level5ParagraphPropertiesConverter.CreateModelElement(itemElement);
     return null;
   }
-
-  public static void SetLevel5ParagraphProperties(TextListStyleType? openXmlElement, Level5ParagraphProperties? value)
+  
+  private static void SetLevel5ParagraphProperties(DocumentFormat.OpenXml.Office2019.Drawing.Diagram12.TextListStyleType openXmlElement, DocumentModel.Drawings.Level5ParagraphProperties? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Level5ParagraphProperties>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Level5ParagraphProperties>();
+      itemElement = DocumentModel.OpenXml.Drawings.Level5ParagraphPropertiesConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Level5ParagraphProperties>(value);
       if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = Level5ParagraphPropertiesConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Level5ParagraphProperties>(value);
-        if (itemElement != null)
-          openXmlElement.AddChild(itemElement);
-      }
+        openXmlElement.AddChild(itemElement);
     }
   }
-
+  
   /// <summary>
-  ///   List Level 6 Text Style.
+  /// List Level 6 Text Style.
   /// </summary>
-  public static Level6ParagraphProperties? GetLevel6ParagraphProperties(TextListStyleType? openXmlElement)
+  private static DocumentModel.Drawings.Level6ParagraphProperties? GetLevel6ParagraphProperties(DocumentFormat.OpenXml.Office2019.Drawing.Diagram12.TextListStyleType openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.Level6ParagraphProperties>();
     if (itemElement != null)
-      return Level6ParagraphPropertiesConverter.CreateModelElement(itemElement);
+      return DocumentModel.OpenXml.Drawings.Level6ParagraphPropertiesConverter.CreateModelElement(itemElement);
     return null;
   }
-
-  public static void SetLevel6ParagraphProperties(TextListStyleType? openXmlElement, Level6ParagraphProperties? value)
+  
+  private static void SetLevel6ParagraphProperties(DocumentFormat.OpenXml.Office2019.Drawing.Diagram12.TextListStyleType openXmlElement, DocumentModel.Drawings.Level6ParagraphProperties? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Level6ParagraphProperties>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Level6ParagraphProperties>();
+      itemElement = DocumentModel.OpenXml.Drawings.Level6ParagraphPropertiesConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Level6ParagraphProperties>(value);
       if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = Level6ParagraphPropertiesConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Level6ParagraphProperties>(value);
-        if (itemElement != null)
-          openXmlElement.AddChild(itemElement);
-      }
+        openXmlElement.AddChild(itemElement);
     }
   }
-
+  
   /// <summary>
-  ///   List Level 7 Text Style.
+  /// List Level 7 Text Style.
   /// </summary>
-  public static Level7ParagraphProperties? GetLevel7ParagraphProperties(TextListStyleType? openXmlElement)
+  private static DocumentModel.Drawings.Level7ParagraphProperties? GetLevel7ParagraphProperties(DocumentFormat.OpenXml.Office2019.Drawing.Diagram12.TextListStyleType openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.Level7ParagraphProperties>();
     if (itemElement != null)
-      return Level7ParagraphPropertiesConverter.CreateModelElement(itemElement);
+      return DocumentModel.OpenXml.Drawings.Level7ParagraphPropertiesConverter.CreateModelElement(itemElement);
     return null;
   }
-
-  public static void SetLevel7ParagraphProperties(TextListStyleType? openXmlElement, Level7ParagraphProperties? value)
+  
+  private static void SetLevel7ParagraphProperties(DocumentFormat.OpenXml.Office2019.Drawing.Diagram12.TextListStyleType openXmlElement, DocumentModel.Drawings.Level7ParagraphProperties? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Level7ParagraphProperties>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Level7ParagraphProperties>();
+      itemElement = DocumentModel.OpenXml.Drawings.Level7ParagraphPropertiesConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Level7ParagraphProperties>(value);
       if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = Level7ParagraphPropertiesConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Level7ParagraphProperties>(value);
-        if (itemElement != null)
-          openXmlElement.AddChild(itemElement);
-      }
+        openXmlElement.AddChild(itemElement);
     }
   }
-
+  
   /// <summary>
-  ///   List Level 8 Text Style.
+  /// List Level 8 Text Style.
   /// </summary>
-  public static Level8ParagraphProperties? GetLevel8ParagraphProperties(TextListStyleType? openXmlElement)
+  private static DocumentModel.Drawings.Level8ParagraphProperties? GetLevel8ParagraphProperties(DocumentFormat.OpenXml.Office2019.Drawing.Diagram12.TextListStyleType openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.Level8ParagraphProperties>();
     if (itemElement != null)
-      return Level8ParagraphPropertiesConverter.CreateModelElement(itemElement);
+      return DocumentModel.OpenXml.Drawings.Level8ParagraphPropertiesConverter.CreateModelElement(itemElement);
     return null;
   }
-
-  public static void SetLevel8ParagraphProperties(TextListStyleType? openXmlElement, Level8ParagraphProperties? value)
+  
+  private static void SetLevel8ParagraphProperties(DocumentFormat.OpenXml.Office2019.Drawing.Diagram12.TextListStyleType openXmlElement, DocumentModel.Drawings.Level8ParagraphProperties? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Level8ParagraphProperties>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Level8ParagraphProperties>();
+      itemElement = DocumentModel.OpenXml.Drawings.Level8ParagraphPropertiesConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Level8ParagraphProperties>(value);
       if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = Level8ParagraphPropertiesConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Level8ParagraphProperties>(value);
-        if (itemElement != null)
-          openXmlElement.AddChild(itemElement);
-      }
+        openXmlElement.AddChild(itemElement);
     }
   }
-
+  
   /// <summary>
-  ///   List Level 9 Text Style.
+  /// List Level 9 Text Style.
   /// </summary>
-  public static Level9ParagraphProperties? GetLevel9ParagraphProperties(TextListStyleType? openXmlElement)
+  private static DocumentModel.Drawings.Level9ParagraphProperties? GetLevel9ParagraphProperties(DocumentFormat.OpenXml.Office2019.Drawing.Diagram12.TextListStyleType openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.Level9ParagraphProperties>();
     if (itemElement != null)
-      return Level9ParagraphPropertiesConverter.CreateModelElement(itemElement);
+      return DocumentModel.OpenXml.Drawings.Level9ParagraphPropertiesConverter.CreateModelElement(itemElement);
     return null;
   }
-
-  public static void SetLevel9ParagraphProperties(TextListStyleType? openXmlElement, Level9ParagraphProperties? value)
+  
+  private static void SetLevel9ParagraphProperties(DocumentFormat.OpenXml.Office2019.Drawing.Diagram12.TextListStyleType openXmlElement, DocumentModel.Drawings.Level9ParagraphProperties? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Level9ParagraphProperties>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Level9ParagraphProperties>();
+      itemElement = DocumentModel.OpenXml.Drawings.Level9ParagraphPropertiesConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Level9ParagraphProperties>(value);
       if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = Level9ParagraphPropertiesConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Level9ParagraphProperties>(value);
-        if (itemElement != null)
-          openXmlElement.AddChild(itemElement);
-      }
+        openXmlElement.AddChild(itemElement);
     }
   }
-
+  
   /// <summary>
-  ///   ExtensionList.
+  /// ExtensionList.
   /// </summary>
-  public static DocumentModel.Drawings.ExtensionList? GetExtensionList(TextListStyleType? openXmlElement)
+  private static DocumentModel.Drawings.ExtensionList? GetExtensionList(DocumentFormat.OpenXml.Office2019.Drawing.Diagram12.TextListStyleType openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.ExtensionList>();
     if (itemElement != null)
-      return ExtensionListConverter.CreateModelElement(itemElement);
+      return DocumentModel.OpenXml.Drawings.ExtensionListConverter.CreateModelElement(itemElement);
     return null;
   }
-
-  public static void SetExtensionList(TextListStyleType? openXmlElement, DocumentModel.Drawings.ExtensionList? value)
+  
+  private static void SetExtensionList(DocumentFormat.OpenXml.Office2019.Drawing.Diagram12.TextListStyleType openXmlElement, DocumentModel.Drawings.ExtensionList? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.ExtensionList>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.ExtensionList>();
+      itemElement = DocumentModel.OpenXml.Drawings.ExtensionListConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.ExtensionList>(value);
       if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = ExtensionListConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.ExtensionList>(value);
-        if (itemElement != null)
-          openXmlElement.AddChild(itemElement);
-      }
+        openXmlElement.AddChild(itemElement);
     }
   }
-
-  public static DocumentModel.Drawings.Diagram2.TextListStyleType? CreateModelElement(TextListStyleType? openXmlElement)
+  
+  public static DocumentModel.Drawings.Diagram2.TextListStyleType? CreateModelElement(DocumentFormat.OpenXml.Office2019.Drawing.Diagram12.TextListStyleType? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -325,9 +289,9 @@ public static class TextListStyleTypeConverter
     }
     return null;
   }
-
+  
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.Diagram2.TextListStyleType? value)
-    where OpenXmlElementType : TextListStyleType, new()
+    where OpenXmlElementType: DocumentFormat.OpenXml.Office2019.Drawing.Diagram12.TextListStyleType, new()
   {
     if (value != null)
     {

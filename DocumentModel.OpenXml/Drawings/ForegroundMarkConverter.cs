@@ -1,69 +1,63 @@
-using DocumentFormat.OpenXml.Office2010.Drawing;
-
 namespace DocumentModel.OpenXml.Drawings;
 
 /// <summary>
-///   Defines the ForegroundMark Class.
+/// Defines the ForegroundMark Class.
 /// </summary>
 public static class ForegroundMarkConverter
 {
   /// <summary>
-  ///   x1, this property is only available in Office 2010 and later.
+  /// x1, this property is only available in Office 2010 and later.
   /// </summary>
-  public static Int32? GetFirstXCoordinate(ForegroundMark? openXmlElement)
+  private static Int32? GetFirstXCoordinate(DocumentFormat.OpenXml.Office2010.Drawing.ForegroundMark openXmlElement)
   {
-    return openXmlElement?.FirstXCoordinate?.Value;
+    return openXmlElement.FirstXCoordinate?.Value;
   }
-
-  public static void SetFirstXCoordinate(ForegroundMark? openXmlElement, Int32? value)
+  
+  private static void SetFirstXCoordinate(DocumentFormat.OpenXml.Office2010.Drawing.ForegroundMark openXmlElement, Int32? value)
   {
-    if (openXmlElement != null)
-      openXmlElement.FirstXCoordinate = value;
+    openXmlElement.FirstXCoordinate = value;
   }
-
+  
   /// <summary>
-  ///   y1, this property is only available in Office 2010 and later.
+  /// y1, this property is only available in Office 2010 and later.
   /// </summary>
-  public static Int32? GetFirstYCoordinate(ForegroundMark? openXmlElement)
+  private static Int32? GetFirstYCoordinate(DocumentFormat.OpenXml.Office2010.Drawing.ForegroundMark openXmlElement)
   {
-    return openXmlElement?.FirstYCoordinate?.Value;
+    return openXmlElement.FirstYCoordinate?.Value;
   }
-
-  public static void SetFirstYCoordinate(ForegroundMark? openXmlElement, Int32? value)
+  
+  private static void SetFirstYCoordinate(DocumentFormat.OpenXml.Office2010.Drawing.ForegroundMark openXmlElement, Int32? value)
   {
-    if (openXmlElement != null)
-      openXmlElement.FirstYCoordinate = value;
+    openXmlElement.FirstYCoordinate = value;
   }
-
+  
   /// <summary>
-  ///   x2, this property is only available in Office 2010 and later.
+  /// x2, this property is only available in Office 2010 and later.
   /// </summary>
-  public static Int32? GetSecondXCoordinate(ForegroundMark? openXmlElement)
+  private static Int32? GetSecondXCoordinate(DocumentFormat.OpenXml.Office2010.Drawing.ForegroundMark openXmlElement)
   {
-    return openXmlElement?.SecondXCoordinate?.Value;
+    return openXmlElement.SecondXCoordinate?.Value;
   }
-
-  public static void SetSecondXCoordinate(ForegroundMark? openXmlElement, Int32? value)
+  
+  private static void SetSecondXCoordinate(DocumentFormat.OpenXml.Office2010.Drawing.ForegroundMark openXmlElement, Int32? value)
   {
-    if (openXmlElement != null)
-      openXmlElement.SecondXCoordinate = value;
+    openXmlElement.SecondXCoordinate = value;
   }
-
+  
   /// <summary>
-  ///   y2, this property is only available in Office 2010 and later.
+  /// y2, this property is only available in Office 2010 and later.
   /// </summary>
-  public static Int32? GetSecondYCoordinate(ForegroundMark? openXmlElement)
+  private static Int32? GetSecondYCoordinate(DocumentFormat.OpenXml.Office2010.Drawing.ForegroundMark openXmlElement)
   {
-    return openXmlElement?.SecondYCoordinate?.Value;
+    return openXmlElement.SecondYCoordinate?.Value;
   }
-
-  public static void SetSecondYCoordinate(ForegroundMark? openXmlElement, Int32? value)
+  
+  private static void SetSecondYCoordinate(DocumentFormat.OpenXml.Office2010.Drawing.ForegroundMark openXmlElement, Int32? value)
   {
-    if (openXmlElement != null)
-      openXmlElement.SecondYCoordinate = value;
+    openXmlElement.SecondYCoordinate = value;
   }
-
-  public static DocumentModel.Drawings.ForegroundMark? CreateModelElement(ForegroundMark? openXmlElement)
+  
+  public static DocumentModel.Drawings.ForegroundMark? CreateModelElement(DocumentFormat.OpenXml.Office2010.Drawing.ForegroundMark? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -76,9 +70,9 @@ public static class ForegroundMarkConverter
     }
     return null;
   }
-
+  
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.ForegroundMark? value)
-    where OpenXmlElementType : ForegroundMark, new()
+    where OpenXmlElementType: DocumentFormat.OpenXml.Office2010.Drawing.ForegroundMark, new()
   {
     if (value != null)
     {

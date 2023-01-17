@@ -1,55 +1,47 @@
-using DocumentFormat.OpenXml.Office2010.Word.Drawing;
-using DocumentModel.Wordprocessing.Drawings;
-using RelativeWidth = DocumentFormat.OpenXml.Office2010.Word.Drawing.RelativeWidth;
-
 namespace DocumentModel.OpenXml.Wordprocessing.Drawings;
 
 /// <summary>
-///   Defines the RelativeWidth Class.
+/// Defines the RelativeWidth Class.
 /// </summary>
 public static class RelativeWidthConverter
 {
   /// <summary>
-  ///   relativeFrom, this property is only available in Office 2010 and later.
+  /// relativeFrom, this property is only available in Office 2010 and later.
   /// </summary>
-  public static SizeRelativeHorizontallyKind? GetObjectId(RelativeWidth? openXmlElement)
+  private static DocumentModel.Wordprocessing.Drawings.SizeRelativeHorizontallyKind? GetObjectId(DocumentFormat.OpenXml.Office2010.Word.Drawing.RelativeWidth openXmlElement)
   {
-    return EnumValueConverter.GetValue<SizeRelativeHorizontallyValues, SizeRelativeHorizontallyKind>(openXmlElement?.ObjectId?.Value);
+    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Office2010.Word.Drawing.SizeRelativeHorizontallyValues, DocumentModel.Wordprocessing.Drawings.SizeRelativeHorizontallyKind>(openXmlElement?.ObjectId?.Value);
   }
-
-  public static void SetObjectId(RelativeWidth? openXmlElement, SizeRelativeHorizontallyKind? value)
+  
+  private static void SetObjectId(DocumentFormat.OpenXml.Office2010.Word.Drawing.RelativeWidth openXmlElement, DocumentModel.Wordprocessing.Drawings.SizeRelativeHorizontallyKind? value)
   {
-    if (openXmlElement != null)
-      openXmlElement.ObjectId = EnumValueConverter.CreateEnumValue<SizeRelativeHorizontallyValues, SizeRelativeHorizontallyKind>(value);
+    openXmlElement.ObjectId = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Office2010.Word.Drawing.SizeRelativeHorizontallyValues, DocumentModel.Wordprocessing.Drawings.SizeRelativeHorizontallyKind>(value);
   }
-
+  
   /// <summary>
-  ///   PercentageWidth.
+  /// PercentageWidth.
   /// </summary>
-  public static String? GetPercentageWidth(RelativeWidth? openXmlElement)
+  private static String? GetPercentageWidth(DocumentFormat.OpenXml.Office2010.Word.Drawing.RelativeWidth openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<PercentageWidth>();
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office2010.Word.Drawing.PercentageWidth>();
     if (itemElement != null)
       return itemElement.Text;
     return null;
   }
-
-  public static void SetPercentageWidth(RelativeWidth? openXmlElement, String? value)
+  
+  private static void SetPercentageWidth(DocumentFormat.OpenXml.Office2010.Word.Drawing.RelativeWidth openXmlElement, String? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2010.Word.Drawing.PercentageWidth>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<PercentageWidth>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = new PercentageWidth { Text = value };
-        openXmlElement.AddChild(itemElement);
-      }
+      itemElement = new DocumentFormat.OpenXml.Office2010.Word.Drawing.PercentageWidth { Text = value };
+      openXmlElement.AddChild(itemElement);
     }
   }
-
-  public static DocumentModel.Wordprocessing.Drawings.RelativeWidth? CreateModelElement(RelativeWidth? openXmlElement)
+  
+  public static DocumentModel.Wordprocessing.Drawings.RelativeWidth? CreateModelElement(DocumentFormat.OpenXml.Office2010.Word.Drawing.RelativeWidth? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -60,9 +52,9 @@ public static class RelativeWidthConverter
     }
     return null;
   }
-
+  
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.Drawings.RelativeWidth? value)
-    where OpenXmlElementType : RelativeWidth, new()
+    where OpenXmlElementType: DocumentFormat.OpenXml.Office2010.Word.Drawing.RelativeWidth, new()
   {
     if (value != null)
     {

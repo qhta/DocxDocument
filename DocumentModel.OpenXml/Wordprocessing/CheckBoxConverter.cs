@@ -1,119 +1,93 @@
-using DocumentFormat.OpenXml.Wordprocessing;
-
 namespace DocumentModel.OpenXml.Wordprocessing;
 
 /// <summary>
-///   Checkbox Form Field Properties.
+/// Checkbox Form Field Properties.
 /// </summary>
 public static class CheckBoxConverter
 {
-  public static String? GetFormFieldSize(DocumentFormat.OpenXml.Wordprocessing.CheckBox? openXmlElement)
+  private static String? GetFormFieldSize(DocumentFormat.OpenXml.Wordprocessing.CheckBox openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<FormFieldSize>();
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.FormFieldSize>();
     if (itemElement != null)
       return itemElement.Val?.Value;
     return null;
   }
-
-  public static void SetFormFieldSize(DocumentFormat.OpenXml.Wordprocessing.CheckBox? openXmlElement, String? value)
+  
+  private static void SetFormFieldSize(DocumentFormat.OpenXml.Wordprocessing.CheckBox openXmlElement, String? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.FormFieldSize>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<FormFieldSize>();
+      itemElement = new DocumentFormat.OpenXml.Wordprocessing.FormFieldSize { Val = value };
+      openXmlElement.AddChild(itemElement);
+    }
+  }
+  
+  private static Boolean? GetAutomaticallySizeFormField(DocumentFormat.OpenXml.Wordprocessing.CheckBox openXmlElement)
+  {
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.AutomaticallySizeFormField>();
+    return itemElement != null;
+  }
+  
+  private static void SetAutomaticallySizeFormField(DocumentFormat.OpenXml.Wordprocessing.CheckBox openXmlElement, Boolean? value)
+  {
+    if (value == false)
+    {
+      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.AutomaticallySizeFormField>();
       if (itemElement != null)
         itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = new FormFieldSize { Val = value };
-        openXmlElement.AddChild(itemElement);
-      }
     }
-  }
-
-  public static Boolean? GetAutomaticallySizeFormField(DocumentFormat.OpenXml.Wordprocessing.CheckBox? openXmlElement)
-  {
-    if (openXmlElement != null)
+    if (value == true)
     {
-      var itemElement = openXmlElement.GetFirstChild<AutomaticallySizeFormField>();
-      return itemElement != null;
+      var itemElement = new DocumentFormat.OpenXml.Wordprocessing.AutomaticallySizeFormField();
+      openXmlElement.AddChild(itemElement);
     }
-    return null;
   }
-
-  public static void SetAutomaticallySizeFormField(DocumentFormat.OpenXml.Wordprocessing.CheckBox? openXmlElement, Boolean? value)
+  
+  private static Boolean? GetDefaultCheckBoxFormFieldState(DocumentFormat.OpenXml.Wordprocessing.CheckBox openXmlElement)
   {
-    if (openXmlElement != null)
-    {
-      if (value == false)
-      {
-        var itemElement = openXmlElement.GetFirstChild<AutomaticallySizeFormField>();
-        if (itemElement != null)
-          itemElement.Remove();
-      }
-      if (value == true)
-      {
-        var itemElement = new AutomaticallySizeFormField();
-        openXmlElement.AddChild(itemElement);
-      }
-    }
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.DefaultCheckBoxFormFieldState>();
+    return itemElement != null;
   }
-
-  public static Boolean? GetDefaultCheckBoxFormFieldState(DocumentFormat.OpenXml.Wordprocessing.CheckBox? openXmlElement)
+  
+  private static void SetDefaultCheckBoxFormFieldState(DocumentFormat.OpenXml.Wordprocessing.CheckBox openXmlElement, Boolean? value)
   {
-    if (openXmlElement != null)
+    if (value == false)
     {
-      var itemElement = openXmlElement.GetFirstChild<DefaultCheckBoxFormFieldState>();
-      return itemElement != null;
+      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.DefaultCheckBoxFormFieldState>();
+      if (itemElement != null)
+        itemElement.Remove();
     }
-    return null;
+    if (value == true)
+    {
+      var itemElement = new DocumentFormat.OpenXml.Wordprocessing.DefaultCheckBoxFormFieldState();
+      openXmlElement.AddChild(itemElement);
+    }
   }
-
-  public static void SetDefaultCheckBoxFormFieldState(DocumentFormat.OpenXml.Wordprocessing.CheckBox? openXmlElement, Boolean? value)
+  
+  private static Boolean? GetChecked(DocumentFormat.OpenXml.Wordprocessing.CheckBox openXmlElement)
   {
-    if (openXmlElement != null)
-    {
-      if (value == false)
-      {
-        var itemElement = openXmlElement.GetFirstChild<DefaultCheckBoxFormFieldState>();
-        if (itemElement != null)
-          itemElement.Remove();
-      }
-      if (value == true)
-      {
-        var itemElement = new DefaultCheckBoxFormFieldState();
-        openXmlElement.AddChild(itemElement);
-      }
-    }
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.Checked>();
+    return itemElement != null;
   }
-
-  public static Boolean? GetChecked(DocumentFormat.OpenXml.Wordprocessing.CheckBox? openXmlElement)
+  
+  private static void SetChecked(DocumentFormat.OpenXml.Wordprocessing.CheckBox openXmlElement, Boolean? value)
   {
-    if (openXmlElement != null)
+    if (value == false)
     {
-      var itemElement = openXmlElement.GetFirstChild<Checked>();
-      return itemElement != null;
+      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.Checked>();
+      if (itemElement != null)
+        itemElement.Remove();
     }
-    return null;
-  }
-
-  public static void SetChecked(DocumentFormat.OpenXml.Wordprocessing.CheckBox? openXmlElement, Boolean? value)
-  {
-    if (openXmlElement != null)
+    if (value == true)
     {
-      if (value == false)
-      {
-        var itemElement = openXmlElement.GetFirstChild<Checked>();
-        if (itemElement != null)
-          itemElement.Remove();
-      }
-      if (value == true)
-      {
-        var itemElement = new Checked();
-        openXmlElement.AddChild(itemElement);
-      }
+      var itemElement = new DocumentFormat.OpenXml.Wordprocessing.Checked();
+      openXmlElement.AddChild(itemElement);
     }
   }
-
+  
   public static DocumentModel.Wordprocessing.CheckBox? CreateModelElement(DocumentFormat.OpenXml.Wordprocessing.CheckBox? openXmlElement)
   {
     if (openXmlElement != null)
@@ -127,9 +101,9 @@ public static class CheckBoxConverter
     }
     return null;
   }
-
+  
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.CheckBox? value)
-    where OpenXmlElementType : DocumentFormat.OpenXml.Wordprocessing.CheckBox, new()
+    where OpenXmlElementType: DocumentFormat.OpenXml.Wordprocessing.CheckBox, new()
   {
     if (value != null)
     {

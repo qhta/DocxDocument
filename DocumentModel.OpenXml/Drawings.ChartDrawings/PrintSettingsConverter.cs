@@ -1,95 +1,83 @@
-using DocumentModel.Drawings.ChartDrawings;
-using PrintSettings = DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.PrintSettings;
-
 namespace DocumentModel.OpenXml.Drawings.ChartDrawings;
 
 /// <summary>
-///   Defines the PrintSettings Class.
+/// Defines the PrintSettings Class.
 /// </summary>
 public static class PrintSettingsConverter
 {
   /// <summary>
-  ///   HeaderFooter.
+  /// HeaderFooter.
   /// </summary>
-  public static HeaderFooter? GetHeaderFooter(PrintSettings? openXmlElement)
+  private static DocumentModel.Drawings.ChartDrawings.HeaderFooter? GetHeaderFooter(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.PrintSettings openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.HeaderFooter>();
     if (itemElement != null)
-      return HeaderFooterConverter.CreateModelElement(itemElement);
+      return DocumentModel.OpenXml.Drawings.ChartDrawings.HeaderFooterConverter.CreateModelElement(itemElement);
     return null;
   }
-
-  public static void SetHeaderFooter(PrintSettings? openXmlElement, HeaderFooter? value)
+  
+  private static void SetHeaderFooter(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.PrintSettings openXmlElement, DocumentModel.Drawings.ChartDrawings.HeaderFooter? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.HeaderFooter>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.HeaderFooter>();
+      itemElement = DocumentModel.OpenXml.Drawings.ChartDrawings.HeaderFooterConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.HeaderFooter>(value);
       if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = HeaderFooterConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.HeaderFooter>(value);
-        if (itemElement != null)
-          openXmlElement.AddChild(itemElement);
-      }
+        openXmlElement.AddChild(itemElement);
     }
   }
-
+  
   /// <summary>
-  ///   PageMargins.
+  /// PageMargins.
   /// </summary>
-  public static PageMargins? GetPageMargins(PrintSettings? openXmlElement)
+  private static DocumentModel.Drawings.ChartDrawings.PageMargins? GetPageMargins(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.PrintSettings openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.PageMargins>();
     if (itemElement != null)
-      return PageMarginsConverter.CreateModelElement(itemElement);
+      return DocumentModel.OpenXml.Drawings.ChartDrawings.PageMarginsConverter.CreateModelElement(itemElement);
     return null;
   }
-
-  public static void SetPageMargins(PrintSettings? openXmlElement, PageMargins? value)
+  
+  private static void SetPageMargins(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.PrintSettings openXmlElement, DocumentModel.Drawings.ChartDrawings.PageMargins? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.PageMargins>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.PageMargins>();
+      itemElement = DocumentModel.OpenXml.Drawings.ChartDrawings.PageMarginsConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.PageMargins>(value);
       if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = PageMarginsConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.PageMargins>(value);
-        if (itemElement != null)
-          openXmlElement.AddChild(itemElement);
-      }
+        openXmlElement.AddChild(itemElement);
     }
   }
-
+  
   /// <summary>
-  ///   PageSetup.
+  /// PageSetup.
   /// </summary>
-  public static PageSetup? GetPageSetup(PrintSettings? openXmlElement)
+  private static DocumentModel.Drawings.ChartDrawings.PageSetup? GetPageSetup(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.PrintSettings openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.PageSetup>();
     if (itemElement != null)
-      return PageSetupConverter.CreateModelElement(itemElement);
+      return DocumentModel.OpenXml.Drawings.ChartDrawings.PageSetupConverter.CreateModelElement(itemElement);
     return null;
   }
-
-  public static void SetPageSetup(PrintSettings? openXmlElement, PageSetup? value)
+  
+  private static void SetPageSetup(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.PrintSettings openXmlElement, DocumentModel.Drawings.ChartDrawings.PageSetup? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.PageSetup>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.PageSetup>();
+      itemElement = DocumentModel.OpenXml.Drawings.ChartDrawings.PageSetupConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.PageSetup>(value);
       if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = PageSetupConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.PageSetup>(value);
-        if (itemElement != null)
-          openXmlElement.AddChild(itemElement);
-      }
+        openXmlElement.AddChild(itemElement);
     }
   }
-
-  public static DocumentModel.Drawings.ChartDrawings.PrintSettings? CreateModelElement(PrintSettings? openXmlElement)
+  
+  public static DocumentModel.Drawings.ChartDrawings.PrintSettings? CreateModelElement(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.PrintSettings? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -101,9 +89,9 @@ public static class PrintSettingsConverter
     }
     return null;
   }
-
+  
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.ChartDrawings.PrintSettings? value)
-    where OpenXmlElementType : PrintSettings, new()
+    where OpenXmlElementType: DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.PrintSettings, new()
   {
     if (value != null)
     {

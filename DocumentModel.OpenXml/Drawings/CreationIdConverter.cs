@@ -1,30 +1,27 @@
-using DocumentFormat.OpenXml.Office2016.Drawing;
-
 namespace DocumentModel.OpenXml.Drawings;
 
 /// <summary>
-///   Defines the CreationId Class.
+/// Defines the CreationId Class.
 /// </summary>
 public static class CreationIdConverter
 {
   /// <summary>
-  ///   id, this property is only available in Office 2016 and later.
+  /// id, this property is only available in Office 2016 and later.
   /// </summary>
-  public static String? GetId(CreationId? openXmlElement)
+  private static String? GetId(DocumentFormat.OpenXml.Office2016.Drawing.CreationId openXmlElement)
   {
     return openXmlElement?.Id?.Value;
   }
-
-  public static void SetId(CreationId? openXmlElement, String? value)
+  
+  private static void SetId(DocumentFormat.OpenXml.Office2016.Drawing.CreationId openXmlElement, String? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.Id = new StringValue { Value = value };
-      else
-        openXmlElement.Id = null;
+    if (value != null)
+      openXmlElement.Id = new StringValue { Value = value };
+    else
+      openXmlElement.Id = null;
   }
-
-  public static DocumentModel.Drawings.CreationId? CreateModelElement(CreationId? openXmlElement)
+  
+  public static DocumentModel.Drawings.CreationId? CreateModelElement(DocumentFormat.OpenXml.Office2016.Drawing.CreationId? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -34,9 +31,9 @@ public static class CreationIdConverter
     }
     return null;
   }
-
+  
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.CreationId? value)
-    where OpenXmlElementType : CreationId, new()
+    where OpenXmlElementType: DocumentFormat.OpenXml.Office2016.Drawing.CreationId, new()
   {
     if (value != null)
     {

@@ -1,264 +1,229 @@
-using DocumentFormat.OpenXml.Office2010.Word;
-
 namespace DocumentModel.OpenXml.Wordprocessing;
 
 /// <summary>
-///   Defines the RgbColorModelHex Class.
+/// Defines the RgbColorModelHex Class.
 /// </summary>
 public static class RgbColorModelHexConverter
 {
   /// <summary>
-  ///   val, this property is only available in Office 2010 and later.
+  /// val, this property is only available in Office 2010 and later.
   /// </summary>
-  public static Byte[]? GetVal(RgbColorModelHex? openXmlElement)
+  private static DocumentModel.RGB? GetVal(DocumentFormat.OpenXml.Office2010.Word.RgbColorModelHex openXmlElement)
   {
-    if (openXmlElement?.Val?.Value != null)
-      return Convert.FromHexString(openXmlElement.Val.Value);
+    if (openXmlElement.Val?.Value != null)
+      return (DocumentModel.RGB)UInt32.Parse(openXmlElement.Val.Value, NumberStyles.HexNumber);
     return null;
   }
-
-  public static void SetVal(RgbColorModelHex? openXmlElement, Byte[]? value)
+  
+  private static void SetVal(DocumentFormat.OpenXml.Office2010.Word.RgbColorModelHex openXmlElement, DocumentModel.RGB? value)
   {
-    if (openXmlElement != null)
-    {
       if (value != null)
-        openXmlElement.Val = Convert.ToHexString(value);
+        openXmlElement.Val = ((UInt32)value).ToString("X6");
       else
         openXmlElement.Val = null;
-    }
   }
-
-  public static Int32? GetTint(RgbColorModelHex? openXmlElement)
+  
+  private static Int32? GetTint(DocumentFormat.OpenXml.Office2010.Word.RgbColorModelHex openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<Tint>();
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office2010.Word.Tint>();
     if (itemElement != null)
       return itemElement.Val?.Value;
     return null;
   }
-
-  public static void SetTint(RgbColorModelHex? openXmlElement, Int32? value)
+  
+  private static void SetTint(DocumentFormat.OpenXml.Office2010.Word.RgbColorModelHex openXmlElement, Int32? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2010.Word.Tint>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<Tint>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = new Tint { Val = value };
-        openXmlElement.AddChild(itemElement);
-      }
+      itemElement = new DocumentFormat.OpenXml.Office2010.Word.Tint{ Val = value };
+      openXmlElement.AddChild(itemElement);
     }
   }
-
-  public static Int32? GetShade(RgbColorModelHex? openXmlElement)
+  
+  private static Int32? GetShade(DocumentFormat.OpenXml.Office2010.Word.RgbColorModelHex openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<Shade>();
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office2010.Word.Shade>();
     if (itemElement != null)
       return itemElement.Val?.Value;
     return null;
   }
-
-  public static void SetShade(RgbColorModelHex? openXmlElement, Int32? value)
+  
+  private static void SetShade(DocumentFormat.OpenXml.Office2010.Word.RgbColorModelHex openXmlElement, Int32? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2010.Word.Shade>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<Shade>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = new Shade { Val = value };
-        openXmlElement.AddChild(itemElement);
-      }
+      itemElement = new DocumentFormat.OpenXml.Office2010.Word.Shade{ Val = value };
+      openXmlElement.AddChild(itemElement);
     }
   }
-
-  public static Int32? GetAlpha(RgbColorModelHex? openXmlElement)
+  
+  private static Int32? GetAlpha(DocumentFormat.OpenXml.Office2010.Word.RgbColorModelHex openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<Alpha>();
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office2010.Word.Alpha>();
     if (itemElement != null)
       return itemElement.Val?.Value;
     return null;
   }
-
-  public static void SetAlpha(RgbColorModelHex? openXmlElement, Int32? value)
+  
+  private static void SetAlpha(DocumentFormat.OpenXml.Office2010.Word.RgbColorModelHex openXmlElement, Int32? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2010.Word.Alpha>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<Alpha>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = new Alpha { Val = value };
-        openXmlElement.AddChild(itemElement);
-      }
+      itemElement = new DocumentFormat.OpenXml.Office2010.Word.Alpha{ Val = value };
+      openXmlElement.AddChild(itemElement);
     }
   }
-
-  public static Int32? GetHueModulation(RgbColorModelHex? openXmlElement)
+  
+  private static Int32? GetHueModulation(DocumentFormat.OpenXml.Office2010.Word.RgbColorModelHex openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<HueModulation>();
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office2010.Word.HueModulation>();
     if (itemElement != null)
       return itemElement.Val?.Value;
     return null;
   }
-
-  public static void SetHueModulation(RgbColorModelHex? openXmlElement, Int32? value)
+  
+  private static void SetHueModulation(DocumentFormat.OpenXml.Office2010.Word.RgbColorModelHex openXmlElement, Int32? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2010.Word.HueModulation>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<HueModulation>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = new HueModulation { Val = value };
-        openXmlElement.AddChild(itemElement);
-      }
+      itemElement = new DocumentFormat.OpenXml.Office2010.Word.HueModulation{ Val = value };
+      openXmlElement.AddChild(itemElement);
     }
   }
-
-  public static Int32? GetSaturation(RgbColorModelHex? openXmlElement)
+  
+  private static Int32? GetSaturation(DocumentFormat.OpenXml.Office2010.Word.RgbColorModelHex openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<Saturation>();
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office2010.Word.Saturation>();
     if (itemElement != null)
       return itemElement.Val?.Value;
     return null;
   }
-
-  public static void SetSaturation(RgbColorModelHex? openXmlElement, Int32? value)
+  
+  private static void SetSaturation(DocumentFormat.OpenXml.Office2010.Word.RgbColorModelHex openXmlElement, Int32? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2010.Word.Saturation>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<Saturation>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = new Saturation { Val = value };
-        openXmlElement.AddChild(itemElement);
-      }
+      itemElement = new DocumentFormat.OpenXml.Office2010.Word.Saturation{ Val = value };
+      openXmlElement.AddChild(itemElement);
     }
   }
-
-  public static Int32? GetSaturationOffset(RgbColorModelHex? openXmlElement)
+  
+  private static Int32? GetSaturationOffset(DocumentFormat.OpenXml.Office2010.Word.RgbColorModelHex openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<SaturationOffset>();
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office2010.Word.SaturationOffset>();
     if (itemElement != null)
       return itemElement.Val?.Value;
     return null;
   }
-
-  public static void SetSaturationOffset(RgbColorModelHex? openXmlElement, Int32? value)
+  
+  private static void SetSaturationOffset(DocumentFormat.OpenXml.Office2010.Word.RgbColorModelHex openXmlElement, Int32? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2010.Word.SaturationOffset>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<SaturationOffset>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = new SaturationOffset { Val = value };
-        openXmlElement.AddChild(itemElement);
-      }
+      itemElement = new DocumentFormat.OpenXml.Office2010.Word.SaturationOffset{ Val = value };
+      openXmlElement.AddChild(itemElement);
     }
   }
-
-  public static Int32? GetSaturationModulation(RgbColorModelHex? openXmlElement)
+  
+  private static Int32? GetSaturationModulation(DocumentFormat.OpenXml.Office2010.Word.RgbColorModelHex openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<SaturationModulation>();
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office2010.Word.SaturationModulation>();
     if (itemElement != null)
       return itemElement.Val?.Value;
     return null;
   }
-
-  public static void SetSaturationModulation(RgbColorModelHex? openXmlElement, Int32? value)
+  
+  private static void SetSaturationModulation(DocumentFormat.OpenXml.Office2010.Word.RgbColorModelHex openXmlElement, Int32? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2010.Word.SaturationModulation>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<SaturationModulation>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = new SaturationModulation { Val = value };
-        openXmlElement.AddChild(itemElement);
-      }
+      itemElement = new DocumentFormat.OpenXml.Office2010.Word.SaturationModulation{ Val = value };
+      openXmlElement.AddChild(itemElement);
     }
   }
-
-  public static Int32? GetLuminance(RgbColorModelHex? openXmlElement)
+  
+  private static Int32? GetLuminance(DocumentFormat.OpenXml.Office2010.Word.RgbColorModelHex openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<Luminance>();
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office2010.Word.Luminance>();
     if (itemElement != null)
       return itemElement.Val?.Value;
     return null;
   }
-
-  public static void SetLuminance(RgbColorModelHex? openXmlElement, Int32? value)
+  
+  private static void SetLuminance(DocumentFormat.OpenXml.Office2010.Word.RgbColorModelHex openXmlElement, Int32? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2010.Word.Luminance>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<Luminance>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = new Luminance { Val = value };
-        openXmlElement.AddChild(itemElement);
-      }
+      itemElement = new DocumentFormat.OpenXml.Office2010.Word.Luminance{ Val = value };
+      openXmlElement.AddChild(itemElement);
     }
   }
-
-  public static Int32? GetLuminanceOffset(RgbColorModelHex? openXmlElement)
+  
+  private static Int32? GetLuminanceOffset(DocumentFormat.OpenXml.Office2010.Word.RgbColorModelHex openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<LuminanceOffset>();
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office2010.Word.LuminanceOffset>();
     if (itemElement != null)
       return itemElement.Val?.Value;
     return null;
   }
-
-  public static void SetLuminanceOffset(RgbColorModelHex? openXmlElement, Int32? value)
+  
+  private static void SetLuminanceOffset(DocumentFormat.OpenXml.Office2010.Word.RgbColorModelHex openXmlElement, Int32? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2010.Word.LuminanceOffset>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<LuminanceOffset>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = new LuminanceOffset { Val = value };
-        openXmlElement.AddChild(itemElement);
-      }
+      itemElement = new DocumentFormat.OpenXml.Office2010.Word.LuminanceOffset{ Val = value };
+      openXmlElement.AddChild(itemElement);
     }
   }
-
-  public static Int32? GetLuminanceModulation(RgbColorModelHex? openXmlElement)
+  
+  private static Int32? GetLuminanceModulation(DocumentFormat.OpenXml.Office2010.Word.RgbColorModelHex openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<LuminanceModulation>();
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office2010.Word.LuminanceModulation>();
     if (itemElement != null)
       return itemElement.Val?.Value;
     return null;
   }
-
-  public static void SetLuminanceModulation(RgbColorModelHex? openXmlElement, Int32? value)
+  
+  private static void SetLuminanceModulation(DocumentFormat.OpenXml.Office2010.Word.RgbColorModelHex openXmlElement, Int32? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2010.Word.LuminanceModulation>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<LuminanceModulation>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = new LuminanceModulation { Val = value };
-        openXmlElement.AddChild(itemElement);
-      }
+      itemElement = new DocumentFormat.OpenXml.Office2010.Word.LuminanceModulation{ Val = value };
+      openXmlElement.AddChild(itemElement);
     }
   }
-
-  public static DocumentModel.Wordprocessing.RgbColorModelHex? CreateModelElement(RgbColorModelHex? openXmlElement)
+  
+  public static DocumentModel.Wordprocessing.RgbColorModelHex? CreateModelElement(DocumentFormat.OpenXml.Office2010.Word.RgbColorModelHex? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -278,9 +243,9 @@ public static class RgbColorModelHexConverter
     }
     return null;
   }
-
+  
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.RgbColorModelHex? value)
-    where OpenXmlElementType : RgbColorModelHex, new()
+    where OpenXmlElementType: DocumentFormat.OpenXml.Office2010.Word.RgbColorModelHex, new()
   {
     if (value != null)
     {

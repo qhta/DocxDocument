@@ -1,45 +1,37 @@
-using DocumentModel.Drawings;
-using HyperlinkExtensionList = DocumentFormat.OpenXml.Drawing.HyperlinkExtensionList;
-
 namespace DocumentModel.OpenXml.Drawings;
 
 /// <summary>
-///   Future extensions..
+/// Future extensions..
 /// </summary>
 public static class HyperlinkExtensionListConverter
 {
-  public static Collection<HyperlinkExtension>? GetHyperlinkExtensions(HyperlinkExtensionList? openXmlElement)
+  private static System.Collections.ObjectModel.Collection<DocumentModel.Drawings.HyperlinkExtension> GetHyperlinkExtensions(DocumentFormat.OpenXml.Drawing.HyperlinkExtensionList openXmlElement)
   {
-    if (openXmlElement != null)
+    var collection = new System.Collections.ObjectModel.Collection<DocumentModel.Drawings.HyperlinkExtension>();
+    foreach (var item in openXmlElement.Elements<DocumentFormat.OpenXml.Drawing.HyperlinkExtension>())
     {
-      var collection = new Collection<HyperlinkExtension>();
-      foreach (var item in openXmlElement.Elements<DocumentFormat.OpenXml.Drawing.HyperlinkExtension>())
+      var newItem = DocumentModel.OpenXml.Drawings.HyperlinkExtensionConverter.CreateModelElement(item);
+      if (newItem != null)
+        collection.Add(newItem);
+    }
+    return collection;
+  }
+  
+  private static void SetHyperlinkExtensions(DocumentFormat.OpenXml.Drawing.HyperlinkExtensionList openXmlElement, System.Collections.ObjectModel.Collection<DocumentModel.Drawings.HyperlinkExtension>? value)
+  {
+    openXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Drawing.HyperlinkExtension>();
+    if (value != null)
+    {
+      foreach (var item in value)
       {
-        var newItem = HyperlinkExtensionConverter.CreateModelElement(item);
+        var newItem = DocumentModel.OpenXml.Drawings.HyperlinkExtensionConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.HyperlinkExtension>(item);
         if (newItem != null)
-          collection.Add(newItem);
+          openXmlElement.AddChild(newItem);
       }
-      return collection;
-    }
-    return null;
-  }
-
-  public static void SetHyperlinkExtensions(HyperlinkExtensionList? openXmlElement, Collection<HyperlinkExtension>? value)
-  {
-    if (openXmlElement != null)
-    {
-      openXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Drawing.HyperlinkExtension>();
-      if (value != null)
-        foreach (var item in value)
-        {
-          var newItem = HyperlinkExtensionConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.HyperlinkExtension>(item);
-          if (newItem != null)
-            openXmlElement.AddChild(newItem);
-        }
     }
   }
-
-  public static DocumentModel.Drawings.HyperlinkExtensionList? CreateModelElement(HyperlinkExtensionList? openXmlElement)
+  
+  public static DocumentModel.Drawings.HyperlinkExtensionList? CreateModelElement(DocumentFormat.OpenXml.Drawing.HyperlinkExtensionList? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -49,9 +41,9 @@ public static class HyperlinkExtensionListConverter
     }
     return null;
   }
-
+  
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.HyperlinkExtensionList? value)
-    where OpenXmlElementType : HyperlinkExtensionList, new()
+    where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.HyperlinkExtensionList, new()
   {
     if (value != null)
     {

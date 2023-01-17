@@ -1,45 +1,37 @@
-using DocumentModel.Drawings.Charts;
-using RadarSerExtensionList = DocumentFormat.OpenXml.Drawing.Charts.RadarSerExtensionList;
-
 namespace DocumentModel.OpenXml.Drawings.Charts;
 
 /// <summary>
-///   Defines the RadarSerExtensionList Class.
+/// Defines the RadarSerExtensionList Class.
 /// </summary>
 public static class RadarSerExtensionListConverter
 {
-  public static Collection<RadarSerExtension>? GetRadarSerExtensions(RadarSerExtensionList? openXmlElement)
+  private static System.Collections.ObjectModel.Collection<DocumentModel.Drawings.Charts.RadarSerExtension> GetRadarSerExtensions(DocumentFormat.OpenXml.Drawing.Charts.RadarSerExtensionList openXmlElement)
   {
-    if (openXmlElement != null)
+    var collection = new System.Collections.ObjectModel.Collection<DocumentModel.Drawings.Charts.RadarSerExtension>();
+    foreach (var item in openXmlElement.Elements<DocumentFormat.OpenXml.Drawing.Charts.RadarSerExtension>())
     {
-      var collection = new Collection<RadarSerExtension>();
-      foreach (var item in openXmlElement.Elements<DocumentFormat.OpenXml.Drawing.Charts.RadarSerExtension>())
+      var newItem = DocumentModel.OpenXml.Drawings.Charts.RadarSerExtensionConverter.CreateModelElement(item);
+      if (newItem != null)
+        collection.Add(newItem);
+    }
+    return collection;
+  }
+  
+  private static void SetRadarSerExtensions(DocumentFormat.OpenXml.Drawing.Charts.RadarSerExtensionList openXmlElement, System.Collections.ObjectModel.Collection<DocumentModel.Drawings.Charts.RadarSerExtension>? value)
+  {
+    openXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Drawing.Charts.RadarSerExtension>();
+    if (value != null)
+    {
+      foreach (var item in value)
       {
-        var newItem = RadarSerExtensionConverter.CreateModelElement(item);
+        var newItem = DocumentModel.OpenXml.Drawings.Charts.RadarSerExtensionConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Charts.RadarSerExtension>(item);
         if (newItem != null)
-          collection.Add(newItem);
+          openXmlElement.AddChild(newItem);
       }
-      return collection;
-    }
-    return null;
-  }
-
-  public static void SetRadarSerExtensions(RadarSerExtensionList? openXmlElement, Collection<RadarSerExtension>? value)
-  {
-    if (openXmlElement != null)
-    {
-      openXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Drawing.Charts.RadarSerExtension>();
-      if (value != null)
-        foreach (var item in value)
-        {
-          var newItem = RadarSerExtensionConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Charts.RadarSerExtension>(item);
-          if (newItem != null)
-            openXmlElement.AddChild(newItem);
-        }
     }
   }
-
-  public static DocumentModel.Drawings.Charts.RadarSerExtensionList? CreateModelElement(RadarSerExtensionList? openXmlElement)
+  
+  public static DocumentModel.Drawings.Charts.RadarSerExtensionList? CreateModelElement(DocumentFormat.OpenXml.Drawing.Charts.RadarSerExtensionList? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -49,9 +41,9 @@ public static class RadarSerExtensionListConverter
     }
     return null;
   }
-
+  
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.Charts.RadarSerExtensionList? value)
-    where OpenXmlElementType : RadarSerExtensionList, new()
+    where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.Charts.RadarSerExtensionList, new()
   {
     if (value != null)
     {

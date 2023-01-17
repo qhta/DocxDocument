@@ -1,55 +1,50 @@
-using DocumentFormat.OpenXml.Drawing;
-
 namespace DocumentModel.OpenXml.Drawings;
 
 /// <summary>
-///   Anchor Point.
+/// Anchor Point.
 /// </summary>
 public static class AnchorConverter
 {
   /// <summary>
-  ///   X-Coordinate in 3D
+  /// X-Coordinate in 3D
   /// </summary>
-  public static Int64? GetX(Anchor? openXmlElement)
+  private static Int64? GetX(DocumentFormat.OpenXml.Drawing.Anchor openXmlElement)
   {
-    return openXmlElement?.X?.Value;
+    return openXmlElement.X?.Value;
   }
-
-  public static void SetX(Anchor? openXmlElement, Int64? value)
+  
+  private static void SetX(DocumentFormat.OpenXml.Drawing.Anchor openXmlElement, Int64? value)
   {
-    if (openXmlElement != null)
-      openXmlElement.X = value;
+    openXmlElement.X = value;
   }
-
+  
   /// <summary>
-  ///   Y-Coordinate in 3D
+  /// Y-Coordinate in 3D
   /// </summary>
-  public static Int64? GetY(Anchor? openXmlElement)
+  private static Int64? GetY(DocumentFormat.OpenXml.Drawing.Anchor openXmlElement)
   {
-    return openXmlElement?.Y?.Value;
+    return openXmlElement.Y?.Value;
   }
-
-  public static void SetY(Anchor? openXmlElement, Int64? value)
+  
+  private static void SetY(DocumentFormat.OpenXml.Drawing.Anchor openXmlElement, Int64? value)
   {
-    if (openXmlElement != null)
-      openXmlElement.Y = value;
+    openXmlElement.Y = value;
   }
-
+  
   /// <summary>
-  ///   Z-Coordinate in 3D
+  /// Z-Coordinate in 3D
   /// </summary>
-  public static Int64? GetZ(Anchor? openXmlElement)
+  private static Int64? GetZ(DocumentFormat.OpenXml.Drawing.Anchor openXmlElement)
   {
-    return openXmlElement?.Z?.Value;
+    return openXmlElement.Z?.Value;
   }
-
-  public static void SetZ(Anchor? openXmlElement, Int64? value)
+  
+  private static void SetZ(DocumentFormat.OpenXml.Drawing.Anchor openXmlElement, Int64? value)
   {
-    if (openXmlElement != null)
-      openXmlElement.Z = value;
+    openXmlElement.Z = value;
   }
-
-  public static DocumentModel.Drawings.Anchor? CreateModelElement(Anchor? openXmlElement)
+  
+  public static DocumentModel.Drawings.Anchor? CreateModelElement(DocumentFormat.OpenXml.Drawing.Anchor? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -61,9 +56,9 @@ public static class AnchorConverter
     }
     return null;
   }
-
+  
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.Anchor? value)
-    where OpenXmlElementType : Anchor, new()
+    where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.Anchor, new()
   {
     if (value != null)
     {

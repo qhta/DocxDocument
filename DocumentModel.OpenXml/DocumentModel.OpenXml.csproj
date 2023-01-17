@@ -16,6 +16,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="BaseConverters\UInt16ValueConverter.cs" />
     <Compile Remove="BaseTypes\VariantImpl.cs" />
     <Compile Remove="BaseTypes\VariantReader.cs" />
     <Compile Remove="BaseTypes\VariantWriter.cs" />
@@ -32,6 +33,8 @@
     <Compile Remove="Properties\CustomPropertiesConverter - Copy.cs" />
     <Compile Remove="Properties\ExtendedProperties.cs" />
     <Compile Remove="Wordprocessing\CategoryConverter - Copy.cs" />
+    <Compile Remove="Wordprocessing\FontSignatureConverter.new.cs" />
+    <Compile Remove="Wordprocessing\ParagraphConverter - Copy.cs" />
   </ItemGroup>
 
   <ItemGroup>

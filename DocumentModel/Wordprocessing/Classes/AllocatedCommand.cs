@@ -18,7 +18,7 @@ public class AllocatedCommand
   /// <summary>
   ///   fciIndexBasedOn
   /// </summary>
-  public Byte[]? CommandIndexBasedOn { get; set; }
+  public UInt16? CommandIndexBasedOn { get; set; }
 
   /// <summary>
   ///   acdName

@@ -1,182 +1,153 @@
-using DocumentFormat.OpenXml.Math;
-using DocumentModel.Math;
-using ControlProperties = DocumentModel.Math.ControlProperties;
-using EquationArrayProperties = DocumentFormat.OpenXml.Math.EquationArrayProperties;
-
 namespace DocumentModel.OpenXml.Math;
 
 /// <summary>
-///   Equation Array Properties.
+/// Equation Array Properties.
 /// </summary>
 public static class EquationArrayPropertiesConverter
 {
   /// <summary>
-  ///   Equation Array Base Justification.
+  /// Equation Array Base Justification.
   /// </summary>
-  public static VerticalAlignmentKind? GetBaseJustification(EquationArrayProperties? openXmlElement)
+  private static DocumentModel.Math.VerticalAlignmentKind? GetBaseJustification(DocumentFormat.OpenXml.Math.EquationArrayProperties openXmlElement)
   {
-    if (openXmlElement != null)
-    {
-      var itemElement = openXmlElement.GetFirstChild<BaseJustification>();
-      if (itemElement?.Val?.Value != null) return EnumValueConverter.GetValue<VerticalAlignmentValues, VerticalAlignmentKind>(itemElement.Val.Value);
-    }
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Math.BaseJustification>();
+    if (itemElement?.Val?.Value != null)
+      return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Math.VerticalAlignmentValues, DocumentModel.Math.VerticalAlignmentKind>(itemElement.Val.Value);
     return null;
   }
-
-  public static void SetBaseJustification(EquationArrayProperties? openXmlElement, VerticalAlignmentKind? value)
+  
+  private static void SetBaseJustification(DocumentFormat.OpenXml.Math.EquationArrayProperties openXmlElement, DocumentModel.Math.VerticalAlignmentKind? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Math.BaseJustification>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<BaseJustification>();
+      itemElement = EnumValueConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Math.BaseJustification, DocumentFormat.OpenXml.Math.VerticalAlignmentValues, DocumentModel.Math.VerticalAlignmentKind>(value);
       if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = EnumValueConverter.CreateOpenXmlElement<BaseJustification, VerticalAlignmentValues, VerticalAlignmentKind>(value);
-        if (itemElement != null)
-          openXmlElement.AddChild(itemElement);
-      }
+        openXmlElement.AddChild(itemElement);
     }
   }
-
+  
   /// <summary>
-  ///   Maximum Distribution.
+  /// Maximum Distribution.
   /// </summary>
-  public static BooleanKind? GetMaxDistribution(EquationArrayProperties? openXmlElement)
+  private static DocumentModel.Math.BooleanKind? GetMaxDistribution(DocumentFormat.OpenXml.Math.EquationArrayProperties openXmlElement)
   {
-    if (openXmlElement != null)
-    {
-      var itemElement = openXmlElement.GetFirstChild<MaxDistribution>();
-      if (itemElement?.Val?.Value != null) return EnumValueConverter.GetValue<BooleanValues, BooleanKind>(itemElement.Val.Value);
-    }
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Math.MaxDistribution>();
+    if (itemElement?.Val?.Value != null)
+      return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Math.BooleanValues, DocumentModel.Math.BooleanKind>(itemElement.Val.Value);
     return null;
   }
-
-  public static void SetMaxDistribution(EquationArrayProperties? openXmlElement, BooleanKind? value)
+  
+  private static void SetMaxDistribution(DocumentFormat.OpenXml.Math.EquationArrayProperties openXmlElement, DocumentModel.Math.BooleanKind? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Math.MaxDistribution>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<MaxDistribution>();
+      itemElement = EnumValueConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Math.MaxDistribution, DocumentFormat.OpenXml.Math.BooleanValues, DocumentModel.Math.BooleanKind>(value);
       if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = EnumValueConverter.CreateOpenXmlElement<MaxDistribution, BooleanValues, BooleanKind>(value);
-        if (itemElement != null)
-          openXmlElement.AddChild(itemElement);
-      }
+        openXmlElement.AddChild(itemElement);
     }
   }
-
+  
   /// <summary>
-  ///   Object Distribution.
+  /// Object Distribution.
   /// </summary>
-  public static BooleanKind? GetObjectDistribution(EquationArrayProperties? openXmlElement)
+  private static DocumentModel.Math.BooleanKind? GetObjectDistribution(DocumentFormat.OpenXml.Math.EquationArrayProperties openXmlElement)
   {
-    if (openXmlElement != null)
-    {
-      var itemElement = openXmlElement.GetFirstChild<ObjectDistribution>();
-      if (itemElement?.Val?.Value != null) return EnumValueConverter.GetValue<BooleanValues, BooleanKind>(itemElement.Val.Value);
-    }
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Math.ObjectDistribution>();
+    if (itemElement?.Val?.Value != null)
+      return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Math.BooleanValues, DocumentModel.Math.BooleanKind>(itemElement.Val.Value);
     return null;
   }
-
-  public static void SetObjectDistribution(EquationArrayProperties? openXmlElement, BooleanKind? value)
+  
+  private static void SetObjectDistribution(DocumentFormat.OpenXml.Math.EquationArrayProperties openXmlElement, DocumentModel.Math.BooleanKind? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Math.ObjectDistribution>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<ObjectDistribution>();
+      itemElement = EnumValueConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Math.ObjectDistribution, DocumentFormat.OpenXml.Math.BooleanValues, DocumentModel.Math.BooleanKind>(value);
       if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = EnumValueConverter.CreateOpenXmlElement<ObjectDistribution, BooleanValues, BooleanKind>(value);
-        if (itemElement != null)
-          openXmlElement.AddChild(itemElement);
-      }
+        openXmlElement.AddChild(itemElement);
     }
   }
-
+  
   /// <summary>
-  ///   Row Spacing Rule.
+  /// Row Spacing Rule.
   /// </summary>
-  public static Int64? GetRowSpacingRule(EquationArrayProperties? openXmlElement)
+  private static Int64? GetRowSpacingRule(DocumentFormat.OpenXml.Math.EquationArrayProperties openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<RowSpacingRule>();
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Math.RowSpacingRule>();
     if (itemElement != null)
       return itemElement.Val?.Value;
     return null;
   }
-
-  public static void SetRowSpacingRule(EquationArrayProperties? openXmlElement, Int64? value)
+  
+  private static void SetRowSpacingRule(DocumentFormat.OpenXml.Math.EquationArrayProperties openXmlElement, Int64? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Math.RowSpacingRule>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<RowSpacingRule>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = new RowSpacingRule { Val = value };
-        openXmlElement.AddChild(itemElement);
-      }
+      itemElement = new DocumentFormat.OpenXml.Math.RowSpacingRule{ Val = value };
+      openXmlElement.AddChild(itemElement);
     }
   }
-
+  
   /// <summary>
-  ///   Row Spacing (Equation Array).
+  /// Row Spacing (Equation Array).
   /// </summary>
-  public static UInt16? GetRowSpacing(EquationArrayProperties? openXmlElement)
+  private static UInt16? GetRowSpacing(DocumentFormat.OpenXml.Math.EquationArrayProperties openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<RowSpacing>();
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Math.RowSpacing>();
     if (itemElement != null)
       return itemElement.Val?.Value;
     return null;
   }
-
-  public static void SetRowSpacing(EquationArrayProperties? openXmlElement, UInt16? value)
+  
+  private static void SetRowSpacing(DocumentFormat.OpenXml.Math.EquationArrayProperties openXmlElement, UInt16? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Math.RowSpacing>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<RowSpacing>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = new RowSpacing { Val = value };
-        openXmlElement.AddChild(itemElement);
-      }
+      itemElement = new DocumentFormat.OpenXml.Math.RowSpacing{ Val = value };
+      openXmlElement.AddChild(itemElement);
     }
   }
-
+  
   /// <summary>
-  ///   ControlProperties.
+  /// ControlProperties.
   /// </summary>
-  public static ControlProperties? GetControlProperties(EquationArrayProperties? openXmlElement)
+  private static DocumentModel.Math.ControlProperties? GetControlProperties(DocumentFormat.OpenXml.Math.EquationArrayProperties openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Math.ControlProperties>();
     if (itemElement != null)
-      return ControlPropertiesConverter.CreateModelElement(itemElement);
+      return DocumentModel.OpenXml.Math.ControlPropertiesConverter.CreateModelElement(itemElement);
     return null;
   }
-
-  public static void SetControlProperties(EquationArrayProperties? openXmlElement, ControlProperties? value)
+  
+  private static void SetControlProperties(DocumentFormat.OpenXml.Math.EquationArrayProperties openXmlElement, DocumentModel.Math.ControlProperties? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Math.ControlProperties>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Math.ControlProperties>();
+      itemElement = DocumentModel.OpenXml.Math.ControlPropertiesConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Math.ControlProperties>(value);
       if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = ControlPropertiesConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Math.ControlProperties>(value);
-        if (itemElement != null)
-          openXmlElement.AddChild(itemElement);
-      }
+        openXmlElement.AddChild(itemElement);
     }
   }
-
-  public static DocumentModel.Math.EquationArrayProperties? CreateModelElement(EquationArrayProperties? openXmlElement)
+  
+  public static DocumentModel.Math.EquationArrayProperties? CreateModelElement(DocumentFormat.OpenXml.Math.EquationArrayProperties? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -191,9 +162,9 @@ public static class EquationArrayPropertiesConverter
     }
     return null;
   }
-
+  
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Math.EquationArrayProperties? value)
-    where OpenXmlElementType : EquationArrayProperties, new()
+    where OpenXmlElementType: DocumentFormat.OpenXml.Math.EquationArrayProperties, new()
   {
     if (value != null)
     {

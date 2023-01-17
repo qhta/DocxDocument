@@ -1,938 +1,754 @@
-using DocumentFormat.OpenXml.Wordprocessing;
-using DocumentModel.Wordprocessing;
-using FrameProperties = DocumentModel.Wordprocessing.FrameProperties;
-using Indentation = DocumentModel.Wordprocessing.Indentation;
-using NumberingProperties = DocumentModel.Wordprocessing.NumberingProperties;
-using ParagraphBorders = DocumentModel.Wordprocessing.ParagraphBorders;
-using ParagraphPropertiesChange = DocumentModel.Wordprocessing.ParagraphPropertiesChange;
-using Shading = DocumentModel.Wordprocessing.Shading;
-using SpacingBetweenLines = DocumentModel.Wordprocessing.SpacingBetweenLines;
-using StyleParagraphProperties = DocumentFormat.OpenXml.Wordprocessing.StyleParagraphProperties;
-
 namespace DocumentModel.OpenXml.Wordprocessing;
 
 /// <summary>
-///   Table Style Conditional Formatting Paragraph Properties.
+/// Table Style Conditional Formatting Paragraph Properties.
 /// </summary>
 public static class StyleParagraphPropertiesConverter
 {
   /// <summary>
-  ///   KeepNext.
+  /// KeepNext.
   /// </summary>
-  public static Boolean? GetKeepNext(StyleParagraphProperties? openXmlElement)
+  private static Boolean? GetKeepNext(DocumentFormat.OpenXml.Wordprocessing.StyleParagraphProperties openXmlElement)
   {
-    if (openXmlElement != null)
-    {
-      var itemElement = openXmlElement.GetFirstChild<KeepNext>();
-      return itemElement != null;
-    }
-    return null;
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.KeepNext>();
+    return itemElement != null;
   }
-
-  public static void SetKeepNext(StyleParagraphProperties? openXmlElement, Boolean? value)
+  
+  private static void SetKeepNext(DocumentFormat.OpenXml.Wordprocessing.StyleParagraphProperties openXmlElement, Boolean? value)
   {
-    if (openXmlElement != null)
+    if (value == false)
     {
-      if (value == false)
-      {
-        var itemElement = openXmlElement.GetFirstChild<KeepNext>();
-        if (itemElement != null)
-          itemElement.Remove();
-      }
-      if (value == true)
-      {
-        var itemElement = new KeepNext();
-        openXmlElement.AddChild(itemElement);
-      }
+      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.KeepNext>();
+      if (itemElement != null)
+        itemElement.Remove();
+    }
+    if (value == true)
+    {
+      var itemElement = new DocumentFormat.OpenXml.Wordprocessing.KeepNext();
+      openXmlElement.AddChild(itemElement);
     }
   }
-
+  
   /// <summary>
-  ///   KeepLines.
+  /// KeepLines.
   /// </summary>
-  public static Boolean? GetKeepLines(StyleParagraphProperties? openXmlElement)
+  private static Boolean? GetKeepLines(DocumentFormat.OpenXml.Wordprocessing.StyleParagraphProperties openXmlElement)
   {
-    if (openXmlElement != null)
-    {
-      var itemElement = openXmlElement.GetFirstChild<KeepLines>();
-      return itemElement != null;
-    }
-    return null;
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.KeepLines>();
+    return itemElement != null;
   }
-
-  public static void SetKeepLines(StyleParagraphProperties? openXmlElement, Boolean? value)
+  
+  private static void SetKeepLines(DocumentFormat.OpenXml.Wordprocessing.StyleParagraphProperties openXmlElement, Boolean? value)
   {
-    if (openXmlElement != null)
+    if (value == false)
     {
-      if (value == false)
-      {
-        var itemElement = openXmlElement.GetFirstChild<KeepLines>();
-        if (itemElement != null)
-          itemElement.Remove();
-      }
-      if (value == true)
-      {
-        var itemElement = new KeepLines();
-        openXmlElement.AddChild(itemElement);
-      }
+      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.KeepLines>();
+      if (itemElement != null)
+        itemElement.Remove();
+    }
+    if (value == true)
+    {
+      var itemElement = new DocumentFormat.OpenXml.Wordprocessing.KeepLines();
+      openXmlElement.AddChild(itemElement);
     }
   }
-
+  
   /// <summary>
-  ///   PageBreakBefore.
+  /// PageBreakBefore.
   /// </summary>
-  public static Boolean? GetPageBreakBefore(StyleParagraphProperties? openXmlElement)
+  private static Boolean? GetPageBreakBefore(DocumentFormat.OpenXml.Wordprocessing.StyleParagraphProperties openXmlElement)
   {
-    if (openXmlElement != null)
-    {
-      var itemElement = openXmlElement.GetFirstChild<PageBreakBefore>();
-      return itemElement != null;
-    }
-    return null;
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.PageBreakBefore>();
+    return itemElement != null;
   }
-
-  public static void SetPageBreakBefore(StyleParagraphProperties? openXmlElement, Boolean? value)
+  
+  private static void SetPageBreakBefore(DocumentFormat.OpenXml.Wordprocessing.StyleParagraphProperties openXmlElement, Boolean? value)
   {
-    if (openXmlElement != null)
+    if (value == false)
     {
-      if (value == false)
-      {
-        var itemElement = openXmlElement.GetFirstChild<PageBreakBefore>();
-        if (itemElement != null)
-          itemElement.Remove();
-      }
-      if (value == true)
-      {
-        var itemElement = new PageBreakBefore();
-        openXmlElement.AddChild(itemElement);
-      }
+      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.PageBreakBefore>();
+      if (itemElement != null)
+        itemElement.Remove();
+    }
+    if (value == true)
+    {
+      var itemElement = new DocumentFormat.OpenXml.Wordprocessing.PageBreakBefore();
+      openXmlElement.AddChild(itemElement);
     }
   }
-
+  
   /// <summary>
-  ///   FrameProperties.
+  /// FrameProperties.
   /// </summary>
-  public static FrameProperties? GetFrameProperties(StyleParagraphProperties? openXmlElement)
+  private static DocumentModel.Wordprocessing.FrameProperties? GetFrameProperties(DocumentFormat.OpenXml.Wordprocessing.StyleParagraphProperties openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.FrameProperties>();
     if (itemElement != null)
-      return FramePropertiesConverter.CreateModelElement(itemElement);
+      return DocumentModel.OpenXml.Wordprocessing.FramePropertiesConverter.CreateModelElement(itemElement);
     return null;
   }
-
-  public static void SetFrameProperties(StyleParagraphProperties? openXmlElement, FrameProperties? value)
+  
+  private static void SetFrameProperties(DocumentFormat.OpenXml.Wordprocessing.StyleParagraphProperties openXmlElement, DocumentModel.Wordprocessing.FrameProperties? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.FrameProperties>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.FrameProperties>();
+      itemElement = DocumentModel.OpenXml.Wordprocessing.FramePropertiesConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.FrameProperties>(value);
+      if (itemElement != null)
+        openXmlElement.AddChild(itemElement);
+    }
+  }
+  
+  /// <summary>
+  /// WidowControl.
+  /// </summary>
+  private static Boolean? GetWidowControl(DocumentFormat.OpenXml.Wordprocessing.StyleParagraphProperties openXmlElement)
+  {
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.WidowControl>();
+    return itemElement != null;
+  }
+  
+  private static void SetWidowControl(DocumentFormat.OpenXml.Wordprocessing.StyleParagraphProperties openXmlElement, Boolean? value)
+  {
+    if (value == false)
+    {
+      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.WidowControl>();
       if (itemElement != null)
         itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = FramePropertiesConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.FrameProperties>(value);
-        if (itemElement != null)
-          openXmlElement.AddChild(itemElement);
-      }
     }
-  }
-
-  /// <summary>
-  ///   WidowControl.
-  /// </summary>
-  public static Boolean? GetWidowControl(StyleParagraphProperties? openXmlElement)
-  {
-    if (openXmlElement != null)
+    if (value == true)
     {
-      var itemElement = openXmlElement.GetFirstChild<WidowControl>();
-      return itemElement != null;
-    }
-    return null;
-  }
-
-  public static void SetWidowControl(StyleParagraphProperties? openXmlElement, Boolean? value)
-  {
-    if (openXmlElement != null)
-    {
-      if (value == false)
-      {
-        var itemElement = openXmlElement.GetFirstChild<WidowControl>();
-        if (itemElement != null)
-          itemElement.Remove();
-      }
-      if (value == true)
-      {
-        var itemElement = new WidowControl();
-        openXmlElement.AddChild(itemElement);
-      }
+      var itemElement = new DocumentFormat.OpenXml.Wordprocessing.WidowControl();
+      openXmlElement.AddChild(itemElement);
     }
   }
-
+  
   /// <summary>
-  ///   NumberingProperties.
+  /// NumberingProperties.
   /// </summary>
-  public static NumberingProperties? GetNumberingProperties(StyleParagraphProperties? openXmlElement)
+  private static DocumentModel.Wordprocessing.NumberingProperties? GetNumberingProperties(DocumentFormat.OpenXml.Wordprocessing.StyleParagraphProperties openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.NumberingProperties>();
     if (itemElement != null)
-      return NumberingPropertiesConverter.CreateModelElement(itemElement);
+      return DocumentModel.OpenXml.Wordprocessing.NumberingPropertiesConverter.CreateModelElement(itemElement);
     return null;
   }
-
-  public static void SetNumberingProperties(StyleParagraphProperties? openXmlElement, NumberingProperties? value)
+  
+  private static void SetNumberingProperties(DocumentFormat.OpenXml.Wordprocessing.StyleParagraphProperties openXmlElement, DocumentModel.Wordprocessing.NumberingProperties? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.NumberingProperties>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.NumberingProperties>();
+      itemElement = DocumentModel.OpenXml.Wordprocessing.NumberingPropertiesConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.NumberingProperties>(value);
+      if (itemElement != null)
+        openXmlElement.AddChild(itemElement);
+    }
+  }
+  
+  /// <summary>
+  /// SuppressLineNumbers.
+  /// </summary>
+  private static Boolean? GetSuppressLineNumbers(DocumentFormat.OpenXml.Wordprocessing.StyleParagraphProperties openXmlElement)
+  {
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.SuppressLineNumbers>();
+    return itemElement != null;
+  }
+  
+  private static void SetSuppressLineNumbers(DocumentFormat.OpenXml.Wordprocessing.StyleParagraphProperties openXmlElement, Boolean? value)
+  {
+    if (value == false)
+    {
+      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.SuppressLineNumbers>();
       if (itemElement != null)
         itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = NumberingPropertiesConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.NumberingProperties>(value);
-        if (itemElement != null)
-          openXmlElement.AddChild(itemElement);
-      }
     }
-  }
-
-  /// <summary>
-  ///   SuppressLineNumbers.
-  /// </summary>
-  public static Boolean? GetSuppressLineNumbers(StyleParagraphProperties? openXmlElement)
-  {
-    if (openXmlElement != null)
+    if (value == true)
     {
-      var itemElement = openXmlElement.GetFirstChild<SuppressLineNumbers>();
-      return itemElement != null;
-    }
-    return null;
-  }
-
-  public static void SetSuppressLineNumbers(StyleParagraphProperties? openXmlElement, Boolean? value)
-  {
-    if (openXmlElement != null)
-    {
-      if (value == false)
-      {
-        var itemElement = openXmlElement.GetFirstChild<SuppressLineNumbers>();
-        if (itemElement != null)
-          itemElement.Remove();
-      }
-      if (value == true)
-      {
-        var itemElement = new SuppressLineNumbers();
-        openXmlElement.AddChild(itemElement);
-      }
+      var itemElement = new DocumentFormat.OpenXml.Wordprocessing.SuppressLineNumbers();
+      openXmlElement.AddChild(itemElement);
     }
   }
-
+  
   /// <summary>
-  ///   ParagraphBorders.
+  /// ParagraphBorders.
   /// </summary>
-  public static ParagraphBorders? GetParagraphBorders(StyleParagraphProperties? openXmlElement)
+  private static DocumentModel.Wordprocessing.ParagraphBorders? GetParagraphBorders(DocumentFormat.OpenXml.Wordprocessing.StyleParagraphProperties openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.ParagraphBorders>();
     if (itemElement != null)
-      return ParagraphBordersConverter.CreateModelElement(itemElement);
+      return DocumentModel.OpenXml.Wordprocessing.ParagraphBordersConverter.CreateModelElement(itemElement);
     return null;
   }
-
-  public static void SetParagraphBorders(StyleParagraphProperties? openXmlElement, ParagraphBorders? value)
+  
+  private static void SetParagraphBorders(DocumentFormat.OpenXml.Wordprocessing.StyleParagraphProperties openXmlElement, DocumentModel.Wordprocessing.ParagraphBorders? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.ParagraphBorders>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.ParagraphBorders>();
+      itemElement = DocumentModel.OpenXml.Wordprocessing.ParagraphBordersConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.ParagraphBorders>(value);
       if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = ParagraphBordersConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.ParagraphBorders>(value);
-        if (itemElement != null)
-          openXmlElement.AddChild(itemElement);
-      }
+        openXmlElement.AddChild(itemElement);
     }
   }
-
+  
   /// <summary>
-  ///   Shading.
+  /// Shading.
   /// </summary>
-  public static Shading? GetShading(StyleParagraphProperties? openXmlElement)
+  private static DocumentModel.Wordprocessing.Shading? GetShading(DocumentFormat.OpenXml.Wordprocessing.StyleParagraphProperties openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.Shading>();
     if (itemElement != null)
-      return ShadingConverter.CreateModelElement(itemElement);
+      return DocumentModel.OpenXml.Wordprocessing.ShadingConverter.CreateModelElement(itemElement);
     return null;
   }
-
-  public static void SetShading(StyleParagraphProperties? openXmlElement, Shading? value)
+  
+  private static void SetShading(DocumentFormat.OpenXml.Wordprocessing.StyleParagraphProperties openXmlElement, DocumentModel.Wordprocessing.Shading? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.Shading>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.Shading>();
+      itemElement = DocumentModel.OpenXml.Wordprocessing.ShadingConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.Shading>(value);
       if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = ShadingConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.Shading>(value);
-        if (itemElement != null)
-          openXmlElement.AddChild(itemElement);
-      }
+        openXmlElement.AddChild(itemElement);
     }
   }
-
+  
   /// <summary>
-  ///   Tabs.
+  /// Tabs.
   /// </summary>
-  public static DocumentModel.Wordprocessing.Tabs? GetTabs(StyleParagraphProperties? openXmlElement)
+  private static DocumentModel.Wordprocessing.Tabs? GetTabs(DocumentFormat.OpenXml.Wordprocessing.StyleParagraphProperties openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.Tabs>();
     if (itemElement != null)
-      return TabsConverter.CreateModelElement(itemElement);
+      return DocumentModel.OpenXml.Wordprocessing.TabsConverter.CreateModelElement(itemElement);
     return null;
   }
-
-  public static void SetTabs(StyleParagraphProperties? openXmlElement, DocumentModel.Wordprocessing.Tabs? value)
+  
+  private static void SetTabs(DocumentFormat.OpenXml.Wordprocessing.StyleParagraphProperties openXmlElement, DocumentModel.Wordprocessing.Tabs? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.Tabs>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.Tabs>();
+      itemElement = DocumentModel.OpenXml.Wordprocessing.TabsConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.Tabs>(value);
+      if (itemElement != null)
+        openXmlElement.AddChild(itemElement);
+    }
+  }
+  
+  /// <summary>
+  /// SuppressAutoHyphens.
+  /// </summary>
+  private static Boolean? GetSuppressAutoHyphens(DocumentFormat.OpenXml.Wordprocessing.StyleParagraphProperties openXmlElement)
+  {
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.SuppressAutoHyphens>();
+    return itemElement != null;
+  }
+  
+  private static void SetSuppressAutoHyphens(DocumentFormat.OpenXml.Wordprocessing.StyleParagraphProperties openXmlElement, Boolean? value)
+  {
+    if (value == false)
+    {
+      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.SuppressAutoHyphens>();
       if (itemElement != null)
         itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = TabsConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.Tabs>(value);
-        if (itemElement != null)
-          openXmlElement.AddChild(itemElement);
-      }
+    }
+    if (value == true)
+    {
+      var itemElement = new DocumentFormat.OpenXml.Wordprocessing.SuppressAutoHyphens();
+      openXmlElement.AddChild(itemElement);
     }
   }
-
+  
   /// <summary>
-  ///   SuppressAutoHyphens.
+  /// Kinsoku.
   /// </summary>
-  public static Boolean? GetSuppressAutoHyphens(StyleParagraphProperties? openXmlElement)
+  private static Boolean? GetKinsoku(DocumentFormat.OpenXml.Wordprocessing.StyleParagraphProperties openXmlElement)
   {
-    if (openXmlElement != null)
-    {
-      var itemElement = openXmlElement.GetFirstChild<SuppressAutoHyphens>();
-      return itemElement != null;
-    }
-    return null;
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.Kinsoku>();
+    return itemElement != null;
   }
-
-  public static void SetSuppressAutoHyphens(StyleParagraphProperties? openXmlElement, Boolean? value)
+  
+  private static void SetKinsoku(DocumentFormat.OpenXml.Wordprocessing.StyleParagraphProperties openXmlElement, Boolean? value)
   {
-    if (openXmlElement != null)
+    if (value == false)
     {
-      if (value == false)
-      {
-        var itemElement = openXmlElement.GetFirstChild<SuppressAutoHyphens>();
-        if (itemElement != null)
-          itemElement.Remove();
-      }
-      if (value == true)
-      {
-        var itemElement = new SuppressAutoHyphens();
-        openXmlElement.AddChild(itemElement);
-      }
+      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.Kinsoku>();
+      if (itemElement != null)
+        itemElement.Remove();
+    }
+    if (value == true)
+    {
+      var itemElement = new DocumentFormat.OpenXml.Wordprocessing.Kinsoku();
+      openXmlElement.AddChild(itemElement);
     }
   }
-
+  
   /// <summary>
-  ///   Kinsoku.
+  /// WordWrap.
   /// </summary>
-  public static Boolean? GetKinsoku(StyleParagraphProperties? openXmlElement)
+  private static Boolean? GetWordWrap(DocumentFormat.OpenXml.Wordprocessing.StyleParagraphProperties openXmlElement)
   {
-    if (openXmlElement != null)
-    {
-      var itemElement = openXmlElement.GetFirstChild<Kinsoku>();
-      return itemElement != null;
-    }
-    return null;
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.WordWrap>();
+    return itemElement != null;
   }
-
-  public static void SetKinsoku(StyleParagraphProperties? openXmlElement, Boolean? value)
+  
+  private static void SetWordWrap(DocumentFormat.OpenXml.Wordprocessing.StyleParagraphProperties openXmlElement, Boolean? value)
   {
-    if (openXmlElement != null)
+    if (value == false)
     {
-      if (value == false)
-      {
-        var itemElement = openXmlElement.GetFirstChild<Kinsoku>();
-        if (itemElement != null)
-          itemElement.Remove();
-      }
-      if (value == true)
-      {
-        var itemElement = new Kinsoku();
-        openXmlElement.AddChild(itemElement);
-      }
+      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.WordWrap>();
+      if (itemElement != null)
+        itemElement.Remove();
+    }
+    if (value == true)
+    {
+      var itemElement = new DocumentFormat.OpenXml.Wordprocessing.WordWrap();
+      openXmlElement.AddChild(itemElement);
     }
   }
-
+  
   /// <summary>
-  ///   WordWrap.
+  /// OverflowPunctuation.
   /// </summary>
-  public static Boolean? GetWordWrap(StyleParagraphProperties? openXmlElement)
+  private static Boolean? GetOverflowPunctuation(DocumentFormat.OpenXml.Wordprocessing.StyleParagraphProperties openXmlElement)
   {
-    if (openXmlElement != null)
-    {
-      var itemElement = openXmlElement.GetFirstChild<WordWrap>();
-      return itemElement != null;
-    }
-    return null;
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.OverflowPunctuation>();
+    return itemElement != null;
   }
-
-  public static void SetWordWrap(StyleParagraphProperties? openXmlElement, Boolean? value)
+  
+  private static void SetOverflowPunctuation(DocumentFormat.OpenXml.Wordprocessing.StyleParagraphProperties openXmlElement, Boolean? value)
   {
-    if (openXmlElement != null)
+    if (value == false)
     {
-      if (value == false)
-      {
-        var itemElement = openXmlElement.GetFirstChild<WordWrap>();
-        if (itemElement != null)
-          itemElement.Remove();
-      }
-      if (value == true)
-      {
-        var itemElement = new WordWrap();
-        openXmlElement.AddChild(itemElement);
-      }
+      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.OverflowPunctuation>();
+      if (itemElement != null)
+        itemElement.Remove();
+    }
+    if (value == true)
+    {
+      var itemElement = new DocumentFormat.OpenXml.Wordprocessing.OverflowPunctuation();
+      openXmlElement.AddChild(itemElement);
     }
   }
-
+  
   /// <summary>
-  ///   OverflowPunctuation.
+  /// TopLinePunctuation.
   /// </summary>
-  public static Boolean? GetOverflowPunctuation(StyleParagraphProperties? openXmlElement)
+  private static Boolean? GetTopLinePunctuation(DocumentFormat.OpenXml.Wordprocessing.StyleParagraphProperties openXmlElement)
   {
-    if (openXmlElement != null)
-    {
-      var itemElement = openXmlElement.GetFirstChild<OverflowPunctuation>();
-      return itemElement != null;
-    }
-    return null;
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.TopLinePunctuation>();
+    return itemElement != null;
   }
-
-  public static void SetOverflowPunctuation(StyleParagraphProperties? openXmlElement, Boolean? value)
+  
+  private static void SetTopLinePunctuation(DocumentFormat.OpenXml.Wordprocessing.StyleParagraphProperties openXmlElement, Boolean? value)
   {
-    if (openXmlElement != null)
+    if (value == false)
     {
-      if (value == false)
-      {
-        var itemElement = openXmlElement.GetFirstChild<OverflowPunctuation>();
-        if (itemElement != null)
-          itemElement.Remove();
-      }
-      if (value == true)
-      {
-        var itemElement = new OverflowPunctuation();
-        openXmlElement.AddChild(itemElement);
-      }
+      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.TopLinePunctuation>();
+      if (itemElement != null)
+        itemElement.Remove();
+    }
+    if (value == true)
+    {
+      var itemElement = new DocumentFormat.OpenXml.Wordprocessing.TopLinePunctuation();
+      openXmlElement.AddChild(itemElement);
     }
   }
-
+  
   /// <summary>
-  ///   TopLinePunctuation.
+  /// AutoSpaceDE.
   /// </summary>
-  public static Boolean? GetTopLinePunctuation(StyleParagraphProperties? openXmlElement)
+  private static Boolean? GetAutoSpaceDE(DocumentFormat.OpenXml.Wordprocessing.StyleParagraphProperties openXmlElement)
   {
-    if (openXmlElement != null)
-    {
-      var itemElement = openXmlElement.GetFirstChild<TopLinePunctuation>();
-      return itemElement != null;
-    }
-    return null;
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.AutoSpaceDE>();
+    return itemElement != null;
   }
-
-  public static void SetTopLinePunctuation(StyleParagraphProperties? openXmlElement, Boolean? value)
+  
+  private static void SetAutoSpaceDE(DocumentFormat.OpenXml.Wordprocessing.StyleParagraphProperties openXmlElement, Boolean? value)
   {
-    if (openXmlElement != null)
+    if (value == false)
     {
-      if (value == false)
-      {
-        var itemElement = openXmlElement.GetFirstChild<TopLinePunctuation>();
-        if (itemElement != null)
-          itemElement.Remove();
-      }
-      if (value == true)
-      {
-        var itemElement = new TopLinePunctuation();
-        openXmlElement.AddChild(itemElement);
-      }
+      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.AutoSpaceDE>();
+      if (itemElement != null)
+        itemElement.Remove();
+    }
+    if (value == true)
+    {
+      var itemElement = new DocumentFormat.OpenXml.Wordprocessing.AutoSpaceDE();
+      openXmlElement.AddChild(itemElement);
     }
   }
-
+  
   /// <summary>
-  ///   AutoSpaceDE.
+  /// AutoSpaceDN.
   /// </summary>
-  public static Boolean? GetAutoSpaceDE(StyleParagraphProperties? openXmlElement)
+  private static Boolean? GetAutoSpaceDN(DocumentFormat.OpenXml.Wordprocessing.StyleParagraphProperties openXmlElement)
   {
-    if (openXmlElement != null)
-    {
-      var itemElement = openXmlElement.GetFirstChild<AutoSpaceDE>();
-      return itemElement != null;
-    }
-    return null;
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.AutoSpaceDN>();
+    return itemElement != null;
   }
-
-  public static void SetAutoSpaceDE(StyleParagraphProperties? openXmlElement, Boolean? value)
+  
+  private static void SetAutoSpaceDN(DocumentFormat.OpenXml.Wordprocessing.StyleParagraphProperties openXmlElement, Boolean? value)
   {
-    if (openXmlElement != null)
+    if (value == false)
     {
-      if (value == false)
-      {
-        var itemElement = openXmlElement.GetFirstChild<AutoSpaceDE>();
-        if (itemElement != null)
-          itemElement.Remove();
-      }
-      if (value == true)
-      {
-        var itemElement = new AutoSpaceDE();
-        openXmlElement.AddChild(itemElement);
-      }
+      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.AutoSpaceDN>();
+      if (itemElement != null)
+        itemElement.Remove();
+    }
+    if (value == true)
+    {
+      var itemElement = new DocumentFormat.OpenXml.Wordprocessing.AutoSpaceDN();
+      openXmlElement.AddChild(itemElement);
     }
   }
-
+  
   /// <summary>
-  ///   AutoSpaceDN.
+  /// BiDi.
   /// </summary>
-  public static Boolean? GetAutoSpaceDN(StyleParagraphProperties? openXmlElement)
+  private static Boolean? GetBiDi(DocumentFormat.OpenXml.Wordprocessing.StyleParagraphProperties openXmlElement)
   {
-    if (openXmlElement != null)
-    {
-      var itemElement = openXmlElement.GetFirstChild<AutoSpaceDN>();
-      return itemElement != null;
-    }
-    return null;
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.BiDi>();
+    return itemElement != null;
   }
-
-  public static void SetAutoSpaceDN(StyleParagraphProperties? openXmlElement, Boolean? value)
+  
+  private static void SetBiDi(DocumentFormat.OpenXml.Wordprocessing.StyleParagraphProperties openXmlElement, Boolean? value)
   {
-    if (openXmlElement != null)
+    if (value == false)
     {
-      if (value == false)
-      {
-        var itemElement = openXmlElement.GetFirstChild<AutoSpaceDN>();
-        if (itemElement != null)
-          itemElement.Remove();
-      }
-      if (value == true)
-      {
-        var itemElement = new AutoSpaceDN();
-        openXmlElement.AddChild(itemElement);
-      }
+      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.BiDi>();
+      if (itemElement != null)
+        itemElement.Remove();
+    }
+    if (value == true)
+    {
+      var itemElement = new DocumentFormat.OpenXml.Wordprocessing.BiDi();
+      openXmlElement.AddChild(itemElement);
     }
   }
-
+  
   /// <summary>
-  ///   BiDi.
+  /// AdjustRightIndent.
   /// </summary>
-  public static Boolean? GetBiDi(StyleParagraphProperties? openXmlElement)
+  private static Boolean? GetAdjustRightIndent(DocumentFormat.OpenXml.Wordprocessing.StyleParagraphProperties openXmlElement)
   {
-    if (openXmlElement != null)
-    {
-      var itemElement = openXmlElement.GetFirstChild<BiDi>();
-      return itemElement != null;
-    }
-    return null;
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.AdjustRightIndent>();
+    return itemElement != null;
   }
-
-  public static void SetBiDi(StyleParagraphProperties? openXmlElement, Boolean? value)
+  
+  private static void SetAdjustRightIndent(DocumentFormat.OpenXml.Wordprocessing.StyleParagraphProperties openXmlElement, Boolean? value)
   {
-    if (openXmlElement != null)
+    if (value == false)
     {
-      if (value == false)
-      {
-        var itemElement = openXmlElement.GetFirstChild<BiDi>();
-        if (itemElement != null)
-          itemElement.Remove();
-      }
-      if (value == true)
-      {
-        var itemElement = new BiDi();
-        openXmlElement.AddChild(itemElement);
-      }
+      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.AdjustRightIndent>();
+      if (itemElement != null)
+        itemElement.Remove();
+    }
+    if (value == true)
+    {
+      var itemElement = new DocumentFormat.OpenXml.Wordprocessing.AdjustRightIndent();
+      openXmlElement.AddChild(itemElement);
     }
   }
-
+  
   /// <summary>
-  ///   AdjustRightIndent.
+  /// SnapToGrid.
   /// </summary>
-  public static Boolean? GetAdjustRightIndent(StyleParagraphProperties? openXmlElement)
+  private static Boolean? GetSnapToGrid(DocumentFormat.OpenXml.Wordprocessing.StyleParagraphProperties openXmlElement)
   {
-    if (openXmlElement != null)
-    {
-      var itemElement = openXmlElement.GetFirstChild<AdjustRightIndent>();
-      return itemElement != null;
-    }
-    return null;
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.SnapToGrid>();
+    return itemElement != null;
   }
-
-  public static void SetAdjustRightIndent(StyleParagraphProperties? openXmlElement, Boolean? value)
+  
+  private static void SetSnapToGrid(DocumentFormat.OpenXml.Wordprocessing.StyleParagraphProperties openXmlElement, Boolean? value)
   {
-    if (openXmlElement != null)
+    if (value == false)
     {
-      if (value == false)
-      {
-        var itemElement = openXmlElement.GetFirstChild<AdjustRightIndent>();
-        if (itemElement != null)
-          itemElement.Remove();
-      }
-      if (value == true)
-      {
-        var itemElement = new AdjustRightIndent();
-        openXmlElement.AddChild(itemElement);
-      }
+      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.SnapToGrid>();
+      if (itemElement != null)
+        itemElement.Remove();
+    }
+    if (value == true)
+    {
+      var itemElement = new DocumentFormat.OpenXml.Wordprocessing.SnapToGrid();
+      openXmlElement.AddChild(itemElement);
     }
   }
-
+  
   /// <summary>
-  ///   SnapToGrid.
+  /// SpacingBetweenLines.
   /// </summary>
-  public static Boolean? GetSnapToGrid(StyleParagraphProperties? openXmlElement)
-  {
-    if (openXmlElement != null)
-    {
-      var itemElement = openXmlElement.GetFirstChild<SnapToGrid>();
-      return itemElement != null;
-    }
-    return null;
-  }
-
-  public static void SetSnapToGrid(StyleParagraphProperties? openXmlElement, Boolean? value)
-  {
-    if (openXmlElement != null)
-    {
-      if (value == false)
-      {
-        var itemElement = openXmlElement.GetFirstChild<SnapToGrid>();
-        if (itemElement != null)
-          itemElement.Remove();
-      }
-      if (value == true)
-      {
-        var itemElement = new SnapToGrid();
-        openXmlElement.AddChild(itemElement);
-      }
-    }
-  }
-
-  /// <summary>
-  ///   SpacingBetweenLines.
-  /// </summary>
-  public static SpacingBetweenLines? GetSpacingBetweenLines(StyleParagraphProperties? openXmlElement)
+  private static DocumentModel.Wordprocessing.SpacingBetweenLines? GetSpacingBetweenLines(DocumentFormat.OpenXml.Wordprocessing.StyleParagraphProperties openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.SpacingBetweenLines>();
     if (itemElement != null)
-      return SpacingBetweenLinesConverter.CreateModelElement(itemElement);
+      return DocumentModel.OpenXml.Wordprocessing.SpacingBetweenLinesConverter.CreateModelElement(itemElement);
     return null;
   }
-
-  public static void SetSpacingBetweenLines(StyleParagraphProperties? openXmlElement, SpacingBetweenLines? value)
+  
+  private static void SetSpacingBetweenLines(DocumentFormat.OpenXml.Wordprocessing.StyleParagraphProperties openXmlElement, DocumentModel.Wordprocessing.SpacingBetweenLines? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.SpacingBetweenLines>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.SpacingBetweenLines>();
+      itemElement = DocumentModel.OpenXml.Wordprocessing.SpacingBetweenLinesConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.SpacingBetweenLines>(value);
       if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = SpacingBetweenLinesConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.SpacingBetweenLines>(value);
-        if (itemElement != null)
-          openXmlElement.AddChild(itemElement);
-      }
+        openXmlElement.AddChild(itemElement);
     }
   }
-
+  
   /// <summary>
-  ///   Indentation.
+  /// Indentation.
   /// </summary>
-  public static Indentation? GetIndentation(StyleParagraphProperties? openXmlElement)
+  private static DocumentModel.Wordprocessing.Indentation? GetIndentation(DocumentFormat.OpenXml.Wordprocessing.StyleParagraphProperties openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.Indentation>();
     if (itemElement != null)
-      return IndentationConverter.CreateModelElement(itemElement);
+      return DocumentModel.OpenXml.Wordprocessing.IndentationConverter.CreateModelElement(itemElement);
     return null;
   }
-
-  public static void SetIndentation(StyleParagraphProperties? openXmlElement, Indentation? value)
+  
+  private static void SetIndentation(DocumentFormat.OpenXml.Wordprocessing.StyleParagraphProperties openXmlElement, DocumentModel.Wordprocessing.Indentation? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.Indentation>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.Indentation>();
+      itemElement = DocumentModel.OpenXml.Wordprocessing.IndentationConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.Indentation>(value);
       if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = IndentationConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.Indentation>(value);
-        if (itemElement != null)
-          openXmlElement.AddChild(itemElement);
-      }
-    }
-  }
-
-  /// <summary>
-  ///   ContextualSpacing.
-  /// </summary>
-  public static Boolean? GetContextualSpacing(StyleParagraphProperties? openXmlElement)
-  {
-    if (openXmlElement != null)
-    {
-      var itemElement = openXmlElement.GetFirstChild<ContextualSpacing>();
-      return itemElement != null;
-    }
-    return null;
-  }
-
-  public static void SetContextualSpacing(StyleParagraphProperties? openXmlElement, Boolean? value)
-  {
-    if (openXmlElement != null)
-    {
-      if (value == false)
-      {
-        var itemElement = openXmlElement.GetFirstChild<ContextualSpacing>();
-        if (itemElement != null)
-          itemElement.Remove();
-      }
-      if (value == true)
-      {
-        var itemElement = new ContextualSpacing();
         openXmlElement.AddChild(itemElement);
-      }
     }
   }
-
+  
   /// <summary>
-  ///   MirrorIndents.
+  /// ContextualSpacing.
   /// </summary>
-  public static Boolean? GetMirrorIndents(StyleParagraphProperties? openXmlElement)
+  private static Boolean? GetContextualSpacing(DocumentFormat.OpenXml.Wordprocessing.StyleParagraphProperties openXmlElement)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.ContextualSpacing>();
+    return itemElement != null;
+  }
+  
+  private static void SetContextualSpacing(DocumentFormat.OpenXml.Wordprocessing.StyleParagraphProperties openXmlElement, Boolean? value)
+  {
+    if (value == false)
     {
-      var itemElement = openXmlElement.GetFirstChild<MirrorIndents>();
-      return itemElement != null;
+      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.ContextualSpacing>();
+      if (itemElement != null)
+        itemElement.Remove();
     }
+    if (value == true)
+    {
+      var itemElement = new DocumentFormat.OpenXml.Wordprocessing.ContextualSpacing();
+      openXmlElement.AddChild(itemElement);
+    }
+  }
+  
+  /// <summary>
+  /// MirrorIndents.
+  /// </summary>
+  private static Boolean? GetMirrorIndents(DocumentFormat.OpenXml.Wordprocessing.StyleParagraphProperties openXmlElement)
+  {
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.MirrorIndents>();
+    return itemElement != null;
+  }
+  
+  private static void SetMirrorIndents(DocumentFormat.OpenXml.Wordprocessing.StyleParagraphProperties openXmlElement, Boolean? value)
+  {
+    if (value == false)
+    {
+      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.MirrorIndents>();
+      if (itemElement != null)
+        itemElement.Remove();
+    }
+    if (value == true)
+    {
+      var itemElement = new DocumentFormat.OpenXml.Wordprocessing.MirrorIndents();
+      openXmlElement.AddChild(itemElement);
+    }
+  }
+  
+  /// <summary>
+  /// SuppressOverlap.
+  /// </summary>
+  private static Boolean? GetSuppressOverlap(DocumentFormat.OpenXml.Wordprocessing.StyleParagraphProperties openXmlElement)
+  {
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.SuppressOverlap>();
+    return itemElement != null;
+  }
+  
+  private static void SetSuppressOverlap(DocumentFormat.OpenXml.Wordprocessing.StyleParagraphProperties openXmlElement, Boolean? value)
+  {
+    if (value == false)
+    {
+      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.SuppressOverlap>();
+      if (itemElement != null)
+        itemElement.Remove();
+    }
+    if (value == true)
+    {
+      var itemElement = new DocumentFormat.OpenXml.Wordprocessing.SuppressOverlap();
+      openXmlElement.AddChild(itemElement);
+    }
+  }
+  
+  /// <summary>
+  /// Justification.
+  /// </summary>
+  private static DocumentModel.Wordprocessing.JustificationKind? GetJustification(DocumentFormat.OpenXml.Wordprocessing.StyleParagraphProperties openXmlElement)
+  {
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.Justification>();
+    if (itemElement?.Val?.Value != null)
+      return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Wordprocessing.JustificationValues, DocumentModel.Wordprocessing.JustificationKind>(itemElement.Val.Value);
     return null;
   }
-
-  public static void SetMirrorIndents(StyleParagraphProperties? openXmlElement, Boolean? value)
+  
+  private static void SetJustification(DocumentFormat.OpenXml.Wordprocessing.StyleParagraphProperties openXmlElement, DocumentModel.Wordprocessing.JustificationKind? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.Justification>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      if (value == false)
-      {
-        var itemElement = openXmlElement.GetFirstChild<MirrorIndents>();
-        if (itemElement != null)
-          itemElement.Remove();
-      }
-      if (value == true)
-      {
-        var itemElement = new MirrorIndents();
+      itemElement = EnumValueConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.Justification, DocumentFormat.OpenXml.Wordprocessing.JustificationValues, DocumentModel.Wordprocessing.JustificationKind>(value);
+      if (itemElement != null)
         openXmlElement.AddChild(itemElement);
-      }
     }
   }
-
+  
   /// <summary>
-  ///   SuppressOverlap.
+  /// TextDirection.
   /// </summary>
-  public static Boolean? GetSuppressOverlap(StyleParagraphProperties? openXmlElement)
+  private static DocumentModel.Wordprocessing.TextDirectionKind? GetTextDirection(DocumentFormat.OpenXml.Wordprocessing.StyleParagraphProperties openXmlElement)
   {
-    if (openXmlElement != null)
-    {
-      var itemElement = openXmlElement.GetFirstChild<SuppressOverlap>();
-      return itemElement != null;
-    }
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.TextDirection>();
+    if (itemElement?.Val?.Value != null)
+      return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Wordprocessing.TextDirectionValues, DocumentModel.Wordprocessing.TextDirectionKind>(itemElement.Val.Value);
     return null;
   }
-
-  public static void SetSuppressOverlap(StyleParagraphProperties? openXmlElement, Boolean? value)
+  
+  private static void SetTextDirection(DocumentFormat.OpenXml.Wordprocessing.StyleParagraphProperties openXmlElement, DocumentModel.Wordprocessing.TextDirectionKind? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.TextDirection>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      if (value == false)
-      {
-        var itemElement = openXmlElement.GetFirstChild<SuppressOverlap>();
-        if (itemElement != null)
-          itemElement.Remove();
-      }
-      if (value == true)
-      {
-        var itemElement = new SuppressOverlap();
+      itemElement = EnumValueConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.TextDirection, DocumentFormat.OpenXml.Wordprocessing.TextDirectionValues, DocumentModel.Wordprocessing.TextDirectionKind>(value);
+      if (itemElement != null)
         openXmlElement.AddChild(itemElement);
-      }
     }
   }
-
+  
   /// <summary>
-  ///   Justification.
+  /// TextAlignment.
   /// </summary>
-  public static JustificationKind? GetJustification(StyleParagraphProperties? openXmlElement)
+  private static DocumentModel.Wordprocessing.VerticalTextAlignmentKind? GetTextAlignment(DocumentFormat.OpenXml.Wordprocessing.StyleParagraphProperties openXmlElement)
   {
-    if (openXmlElement != null)
-    {
-      var itemElement = openXmlElement.GetFirstChild<Justification>();
-      if (itemElement?.Val?.Value != null) return EnumValueConverter.GetValue<JustificationValues, JustificationKind>(itemElement.Val.Value);
-    }
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.TextAlignment>();
+    if (itemElement?.Val?.Value != null)
+      return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Wordprocessing.VerticalTextAlignmentValues, DocumentModel.Wordprocessing.VerticalTextAlignmentKind>(itemElement.Val.Value);
     return null;
   }
-
-  public static void SetJustification(StyleParagraphProperties? openXmlElement, JustificationKind? value)
+  
+  private static void SetTextAlignment(DocumentFormat.OpenXml.Wordprocessing.StyleParagraphProperties openXmlElement, DocumentModel.Wordprocessing.VerticalTextAlignmentKind? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.TextAlignment>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<Justification>();
+      itemElement = EnumValueConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.TextAlignment, DocumentFormat.OpenXml.Wordprocessing.VerticalTextAlignmentValues, DocumentModel.Wordprocessing.VerticalTextAlignmentKind>(value);
       if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = EnumValueConverter.CreateOpenXmlElement<Justification, JustificationValues, JustificationKind>(value);
-        if (itemElement != null)
-          openXmlElement.AddChild(itemElement);
-      }
+        openXmlElement.AddChild(itemElement);
     }
   }
-
+  
   /// <summary>
-  ///   TextDirection.
+  /// TextBoxTightWrap.
   /// </summary>
-  public static TextDirectionKind? GetTextDirection(StyleParagraphProperties? openXmlElement)
+  private static DocumentModel.Wordprocessing.TextBoxTightWrapKind? GetTextBoxTightWrap(DocumentFormat.OpenXml.Wordprocessing.StyleParagraphProperties openXmlElement)
   {
-    if (openXmlElement != null)
-    {
-      var itemElement = openXmlElement.GetFirstChild<TextDirection>();
-      if (itemElement?.Val?.Value != null) return EnumValueConverter.GetValue<TextDirectionValues, TextDirectionKind>(itemElement.Val.Value);
-    }
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.TextBoxTightWrap>();
+    if (itemElement?.Val?.Value != null)
+      return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Wordprocessing.TextBoxTightWrapValues, DocumentModel.Wordprocessing.TextBoxTightWrapKind>(itemElement.Val.Value);
     return null;
   }
-
-  public static void SetTextDirection(StyleParagraphProperties? openXmlElement, TextDirectionKind? value)
+  
+  private static void SetTextBoxTightWrap(DocumentFormat.OpenXml.Wordprocessing.StyleParagraphProperties openXmlElement, DocumentModel.Wordprocessing.TextBoxTightWrapKind? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.TextBoxTightWrap>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<TextDirection>();
+      itemElement = EnumValueConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.TextBoxTightWrap, DocumentFormat.OpenXml.Wordprocessing.TextBoxTightWrapValues, DocumentModel.Wordprocessing.TextBoxTightWrapKind>(value);
       if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = EnumValueConverter.CreateOpenXmlElement<TextDirection, TextDirectionValues, TextDirectionKind>(value);
-        if (itemElement != null)
-          openXmlElement.AddChild(itemElement);
-      }
+        openXmlElement.AddChild(itemElement);
     }
   }
-
+  
   /// <summary>
-  ///   TextAlignment.
+  /// OutlineLevel.
   /// </summary>
-  public static VerticalTextAlignmentKind? GetTextAlignment(StyleParagraphProperties? openXmlElement)
+  private static Int32? GetOutlineLevel(DocumentFormat.OpenXml.Wordprocessing.StyleParagraphProperties openXmlElement)
   {
-    if (openXmlElement != null)
-    {
-      var itemElement = openXmlElement.GetFirstChild<TextAlignment>();
-      if (itemElement?.Val?.Value != null) return EnumValueConverter.GetValue<VerticalTextAlignmentValues, VerticalTextAlignmentKind>(itemElement.Val.Value);
-    }
-    return null;
-  }
-
-  public static void SetTextAlignment(StyleParagraphProperties? openXmlElement, VerticalTextAlignmentKind? value)
-  {
-    if (openXmlElement != null)
-    {
-      var itemElement = openXmlElement.GetFirstChild<TextAlignment>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = EnumValueConverter.CreateOpenXmlElement<TextAlignment, VerticalTextAlignmentValues, VerticalTextAlignmentKind>(value);
-        if (itemElement != null)
-          openXmlElement.AddChild(itemElement);
-      }
-    }
-  }
-
-  /// <summary>
-  ///   TextBoxTightWrap.
-  /// </summary>
-  public static TextBoxTightWrapKind? GetTextBoxTightWrap(StyleParagraphProperties? openXmlElement)
-  {
-    if (openXmlElement != null)
-    {
-      var itemElement = openXmlElement.GetFirstChild<TextBoxTightWrap>();
-      if (itemElement?.Val?.Value != null) return EnumValueConverter.GetValue<TextBoxTightWrapValues, TextBoxTightWrapKind>(itemElement.Val.Value);
-    }
-    return null;
-  }
-
-  public static void SetTextBoxTightWrap(StyleParagraphProperties? openXmlElement, TextBoxTightWrapKind? value)
-  {
-    if (openXmlElement != null)
-    {
-      var itemElement = openXmlElement.GetFirstChild<TextBoxTightWrap>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = EnumValueConverter.CreateOpenXmlElement<TextBoxTightWrap, TextBoxTightWrapValues, TextBoxTightWrapKind>(value);
-        if (itemElement != null)
-          openXmlElement.AddChild(itemElement);
-      }
-    }
-  }
-
-  /// <summary>
-  ///   OutlineLevel.
-  /// </summary>
-  public static Int32? GetOutlineLevel(StyleParagraphProperties? openXmlElement)
-  {
-    var itemElement = openXmlElement?.GetFirstChild<OutlineLevel>();
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.OutlineLevel>();
     if (itemElement != null)
       return itemElement.Val?.Value;
     return null;
   }
-
-  public static void SetOutlineLevel(StyleParagraphProperties? openXmlElement, Int32? value)
+  
+  private static void SetOutlineLevel(DocumentFormat.OpenXml.Wordprocessing.StyleParagraphProperties openXmlElement, Int32? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.OutlineLevel>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<OutlineLevel>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = new OutlineLevel { Val = value };
-        openXmlElement.AddChild(itemElement);
-      }
+      itemElement = new DocumentFormat.OpenXml.Wordprocessing.OutlineLevel{ Val = value };
+      openXmlElement.AddChild(itemElement);
     }
   }
-
+  
   /// <summary>
-  ///   ParagraphPropertiesChange.
+  /// ParagraphPropertiesChange.
   /// </summary>
-  public static ParagraphPropertiesChange? GetParagraphPropertiesChange(StyleParagraphProperties? openXmlElement)
+  private static DocumentModel.Wordprocessing.ParagraphPropertiesChange? GetParagraphPropertiesChange(DocumentFormat.OpenXml.Wordprocessing.StyleParagraphProperties openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.ParagraphPropertiesChange>();
     if (itemElement != null)
-      return ParagraphPropertiesChangeConverter.CreateModelElement(itemElement);
+      return DocumentModel.OpenXml.Wordprocessing.ParagraphPropertiesChangeConverter.CreateModelElement(itemElement);
     return null;
   }
-
-  public static void SetParagraphPropertiesChange(StyleParagraphProperties? openXmlElement, ParagraphPropertiesChange? value)
+  
+  private static void SetParagraphPropertiesChange(DocumentFormat.OpenXml.Wordprocessing.StyleParagraphProperties openXmlElement, DocumentModel.Wordprocessing.ParagraphPropertiesChange? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.ParagraphPropertiesChange>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.ParagraphPropertiesChange>();
+      itemElement = DocumentModel.OpenXml.Wordprocessing.ParagraphPropertiesChangeConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.ParagraphPropertiesChange>(value);
       if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = ParagraphPropertiesChangeConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.ParagraphPropertiesChange>(value);
-        if (itemElement != null)
-          openXmlElement.AddChild(itemElement);
-      }
+        openXmlElement.AddChild(itemElement);
     }
   }
-
-  public static DocumentModel.Wordprocessing.StyleParagraphProperties? CreateModelElement(StyleParagraphProperties? openXmlElement)
+  
+  public static DocumentModel.Wordprocessing.StyleParagraphProperties? CreateModelElement(DocumentFormat.OpenXml.Wordprocessing.StyleParagraphProperties? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -972,9 +788,9 @@ public static class StyleParagraphPropertiesConverter
     }
     return null;
   }
-
+  
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.StyleParagraphProperties? value)
-    where OpenXmlElementType : StyleParagraphProperties, new()
+    where OpenXmlElementType: DocumentFormat.OpenXml.Wordprocessing.StyleParagraphProperties, new()
   {
     if (value != null)
     {

@@ -1,47 +1,43 @@
-using DocumentFormat.OpenXml.Wordprocessing;
-
 namespace DocumentModel.OpenXml.Wordprocessing;
 
 /// <summary>
-///   Numbering Level Text.
+/// Numbering Level Text.
 /// </summary>
 public static class LevelTextConverter
 {
   /// <summary>
-  ///   Level Text
+  /// Level Text
   /// </summary>
-  public static String? GetVal(LevelText? openXmlElement)
+  private static String? GetVal(DocumentFormat.OpenXml.Wordprocessing.LevelText openXmlElement)
   {
     return openXmlElement?.Val?.Value;
   }
-
-  public static void SetVal(LevelText? openXmlElement, String? value)
+  
+  private static void SetVal(DocumentFormat.OpenXml.Wordprocessing.LevelText openXmlElement, String? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.Val = new StringValue { Value = value };
-      else
-        openXmlElement.Val = null;
+    if (value != null)
+      openXmlElement.Val = new StringValue { Value = value };
+    else
+      openXmlElement.Val = null;
   }
-
+  
   /// <summary>
-  ///   Level Text Is Null Character
+  /// Level Text Is Null Character
   /// </summary>
-  public static Boolean? GetNull(LevelText? openXmlElement)
+  private static Boolean? GetNull(DocumentFormat.OpenXml.Wordprocessing.LevelText openXmlElement)
   {
     return openXmlElement?.Null?.Value;
   }
-
-  public static void SetNull(LevelText? openXmlElement, Boolean? value)
+  
+  private static void SetNull(DocumentFormat.OpenXml.Wordprocessing.LevelText openXmlElement, Boolean? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.Null = new OnOffValue { Value = (Boolean)value };
-      else
-        openXmlElement.Null = null;
+    if (value != null)
+      openXmlElement.Null = new OnOffValue { Value = (Boolean)value };
+    else
+      openXmlElement.Null = null;
   }
-
-  public static DocumentModel.Wordprocessing.LevelText? CreateModelElement(LevelText? openXmlElement)
+  
+  public static DocumentModel.Wordprocessing.LevelText? CreateModelElement(DocumentFormat.OpenXml.Wordprocessing.LevelText? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -52,9 +48,9 @@ public static class LevelTextConverter
     }
     return null;
   }
-
+  
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.LevelText? value)
-    where OpenXmlElementType : LevelText, new()
+    where OpenXmlElementType: DocumentFormat.OpenXml.Wordprocessing.LevelText, new()
   {
     if (value != null)
     {

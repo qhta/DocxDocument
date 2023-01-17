@@ -1,179 +1,151 @@
-using DocumentFormat.OpenXml.Wordprocessing;
-using DocumentModel.Wordprocessing;
-using RubyProperties = DocumentFormat.OpenXml.Wordprocessing.RubyProperties;
-
 namespace DocumentModel.OpenXml.Wordprocessing;
 
 /// <summary>
-///   Phonetic Guide Properties.
+/// Phonetic Guide Properties.
 /// </summary>
 public static class RubyPropertiesConverter
 {
   /// <summary>
-  ///   Phonetic Guide Text Alignment.
+  /// Phonetic Guide Text Alignment.
   /// </summary>
-  public static RubyAlignKind? GetRubyAlign(RubyProperties? openXmlElement)
+  private static DocumentModel.Wordprocessing.RubyAlignKind? GetRubyAlign(DocumentFormat.OpenXml.Wordprocessing.RubyProperties openXmlElement)
   {
-    if (openXmlElement != null)
-    {
-      var itemElement = openXmlElement.GetFirstChild<RubyAlign>();
-      if (itemElement?.Val?.Value != null) return EnumValueConverter.GetValue<RubyAlignValues, RubyAlignKind>(itemElement.Val.Value);
-    }
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.RubyAlign>();
+    if (itemElement?.Val?.Value != null)
+      return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Wordprocessing.RubyAlignValues, DocumentModel.Wordprocessing.RubyAlignKind>(itemElement.Val.Value);
     return null;
   }
-
-  public static void SetRubyAlign(RubyProperties? openXmlElement, RubyAlignKind? value)
+  
+  private static void SetRubyAlign(DocumentFormat.OpenXml.Wordprocessing.RubyProperties openXmlElement, DocumentModel.Wordprocessing.RubyAlignKind? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.RubyAlign>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<RubyAlign>();
+      itemElement = EnumValueConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.RubyAlign, DocumentFormat.OpenXml.Wordprocessing.RubyAlignValues, DocumentModel.Wordprocessing.RubyAlignKind>(value);
       if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = EnumValueConverter.CreateOpenXmlElement<RubyAlign, RubyAlignValues, RubyAlignKind>(value);
-        if (itemElement != null)
-          openXmlElement.AddChild(itemElement);
-      }
+        openXmlElement.AddChild(itemElement);
     }
   }
-
+  
   /// <summary>
-  ///   Phonetic Guide Text Font Size.
+  /// Phonetic Guide Text Font Size.
   /// </summary>
-  public static String? GetPhoneticGuideTextFontSize(RubyProperties? openXmlElement)
+  private static String? GetPhoneticGuideTextFontSize(DocumentFormat.OpenXml.Wordprocessing.RubyProperties openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<PhoneticGuideTextFontSize>();
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.PhoneticGuideTextFontSize>();
     if (itemElement != null)
       return itemElement.Val?.Value;
     return null;
   }
-
-  public static void SetPhoneticGuideTextFontSize(RubyProperties? openXmlElement, String? value)
+  
+  private static void SetPhoneticGuideTextFontSize(DocumentFormat.OpenXml.Wordprocessing.RubyProperties openXmlElement, String? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.PhoneticGuideTextFontSize>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<PhoneticGuideTextFontSize>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = new PhoneticGuideTextFontSize { Val = value };
-        openXmlElement.AddChild(itemElement);
-      }
+      itemElement = new DocumentFormat.OpenXml.Wordprocessing.PhoneticGuideTextFontSize { Val = value };
+      openXmlElement.AddChild(itemElement);
     }
   }
-
+  
   /// <summary>
-  ///   Distance Between Phonetic Guide Text and Phonetic Guide Base Text.
+  /// Distance Between Phonetic Guide Text and Phonetic Guide Base Text.
   /// </summary>
-  public static Int16? GetPhoneticGuideRaise(RubyProperties? openXmlElement)
+  private static Int16? GetPhoneticGuideRaise(DocumentFormat.OpenXml.Wordprocessing.RubyProperties openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<PhoneticGuideRaise>();
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.PhoneticGuideRaise>();
     if (itemElement != null)
       return itemElement.Val?.Value;
     return null;
   }
-
-  public static void SetPhoneticGuideRaise(RubyProperties? openXmlElement, Int16? value)
+  
+  private static void SetPhoneticGuideRaise(DocumentFormat.OpenXml.Wordprocessing.RubyProperties openXmlElement, Int16? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.PhoneticGuideRaise>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<PhoneticGuideRaise>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = new PhoneticGuideRaise { Val = value };
-        openXmlElement.AddChild(itemElement);
-      }
+      itemElement = new DocumentFormat.OpenXml.Wordprocessing.PhoneticGuideRaise{ Val = value };
+      openXmlElement.AddChild(itemElement);
     }
   }
-
+  
   /// <summary>
-  ///   Phonetic Guide Base Text Font Size.
+  /// Phonetic Guide Base Text Font Size.
   /// </summary>
-  public static String? GetPhoneticGuideBaseTextSize(RubyProperties? openXmlElement)
+  private static String? GetPhoneticGuideBaseTextSize(DocumentFormat.OpenXml.Wordprocessing.RubyProperties openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<PhoneticGuideBaseTextSize>();
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.PhoneticGuideBaseTextSize>();
     if (itemElement != null)
       return itemElement.Val?.Value;
     return null;
   }
-
-  public static void SetPhoneticGuideBaseTextSize(RubyProperties? openXmlElement, String? value)
+  
+  private static void SetPhoneticGuideBaseTextSize(DocumentFormat.OpenXml.Wordprocessing.RubyProperties openXmlElement, String? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.PhoneticGuideBaseTextSize>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<PhoneticGuideBaseTextSize>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = new PhoneticGuideBaseTextSize { Val = value };
-        openXmlElement.AddChild(itemElement);
-      }
+      itemElement = new DocumentFormat.OpenXml.Wordprocessing.PhoneticGuideBaseTextSize { Val = value };
+      openXmlElement.AddChild(itemElement);
     }
   }
-
+  
   /// <summary>
-  ///   Language ID for Phonetic Guide.
+  /// Language ID for Phonetic Guide.
   /// </summary>
-  public static String? GetLanguageId(RubyProperties? openXmlElement)
+  private static String? GetLanguageId(DocumentFormat.OpenXml.Wordprocessing.RubyProperties openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<LanguageId>();
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.LanguageId>();
     if (itemElement != null)
       return itemElement.Val?.Value;
     return null;
   }
-
-  public static void SetLanguageId(RubyProperties? openXmlElement, String? value)
+  
+  private static void SetLanguageId(DocumentFormat.OpenXml.Wordprocessing.RubyProperties openXmlElement, String? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.LanguageId>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<LanguageId>();
+      itemElement = new DocumentFormat.OpenXml.Wordprocessing.LanguageId { Val = value };
+      openXmlElement.AddChild(itemElement);
+    }
+  }
+  
+  /// <summary>
+  /// Invalidated Field Cache.
+  /// </summary>
+  private static Boolean? GetDirty(DocumentFormat.OpenXml.Wordprocessing.RubyProperties openXmlElement)
+  {
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.Dirty>();
+    return itemElement != null;
+  }
+  
+  private static void SetDirty(DocumentFormat.OpenXml.Wordprocessing.RubyProperties openXmlElement, Boolean? value)
+  {
+    if (value == false)
+    {
+      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.Dirty>();
       if (itemElement != null)
         itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = new LanguageId { Val = value };
-        openXmlElement.AddChild(itemElement);
-      }
     }
-  }
-
-  /// <summary>
-  ///   Invalidated Field Cache.
-  /// </summary>
-  public static Boolean? GetDirty(RubyProperties? openXmlElement)
-  {
-    if (openXmlElement != null)
+    if (value == true)
     {
-      var itemElement = openXmlElement.GetFirstChild<Dirty>();
-      return itemElement != null;
-    }
-    return null;
-  }
-
-  public static void SetDirty(RubyProperties? openXmlElement, Boolean? value)
-  {
-    if (openXmlElement != null)
-    {
-      if (value == false)
-      {
-        var itemElement = openXmlElement.GetFirstChild<Dirty>();
-        if (itemElement != null)
-          itemElement.Remove();
-      }
-      if (value == true)
-      {
-        var itemElement = new Dirty();
-        openXmlElement.AddChild(itemElement);
-      }
+      var itemElement = new DocumentFormat.OpenXml.Wordprocessing.Dirty();
+      openXmlElement.AddChild(itemElement);
     }
   }
-
-  public static DocumentModel.Wordprocessing.RubyProperties? CreateModelElement(RubyProperties? openXmlElement)
+  
+  public static DocumentModel.Wordprocessing.RubyProperties? CreateModelElement(DocumentFormat.OpenXml.Wordprocessing.RubyProperties? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -188,9 +160,9 @@ public static class RubyPropertiesConverter
     }
     return null;
   }
-
+  
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.RubyProperties? value)
-    where OpenXmlElementType : RubyProperties, new()
+    where OpenXmlElementType: DocumentFormat.OpenXml.Wordprocessing.RubyProperties, new()
   {
     if (value != null)
     {

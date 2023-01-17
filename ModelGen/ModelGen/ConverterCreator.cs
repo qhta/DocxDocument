@@ -232,7 +232,8 @@ public class ConverterCreator
     ModelDisplay.WriteLine("Checking type usage");
     DateTime t1 = DateTime.Now;
     var checkCount = 0;
-    foreach (var type in TypeManager.AcceptedTypes.ToArray())
+    var acceptedTypes = TypeManager.AcceptedTypes.ToArray();
+    foreach (var type in acceptedTypes)
     {
       ModelManager.CheckTypeUsage(type,
         (item) => { ModelDisplay.WriteSameLine($"Checked {++checkCount} types. {item.GetFullName()}"); });

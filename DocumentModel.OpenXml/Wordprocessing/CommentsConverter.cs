@@ -1,45 +1,37 @@
-using DocumentModel.Wordprocessing;
-using Comments = DocumentFormat.OpenXml.Wordprocessing.Comments;
-
 namespace DocumentModel.OpenXml.Wordprocessing;
 
 /// <summary>
-///   Comments Collection.
+/// Comments Collection.
 /// </summary>
 public static class CommentsConverter
 {
-  public static Collection<Comment>? GetItems(Comments? openXmlElement)
+  private static System.Collections.ObjectModel.Collection<DocumentModel.Wordprocessing.Comment> GetItems(DocumentFormat.OpenXml.Wordprocessing.Comments openXmlElement)
   {
-    if (openXmlElement != null)
+    var collection = new System.Collections.ObjectModel.Collection<DocumentModel.Wordprocessing.Comment>();
+    foreach (var item in openXmlElement.Elements<DocumentFormat.OpenXml.Wordprocessing.Comment>())
     {
-      var collection = new Collection<Comment>();
-      foreach (var item in openXmlElement.Elements<DocumentFormat.OpenXml.Wordprocessing.Comment>())
+      var newItem = DocumentModel.OpenXml.Wordprocessing.CommentConverter.CreateModelElement(item);
+      if (newItem != null)
+        collection.Add(newItem);
+    }
+    return collection;
+  }
+  
+  private static void SetItems(DocumentFormat.OpenXml.Wordprocessing.Comments openXmlElement, System.Collections.ObjectModel.Collection<DocumentModel.Wordprocessing.Comment>? value)
+  {
+    openXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Wordprocessing.Comment>();
+    if (value != null)
+    {
+      foreach (var item in value)
       {
-        var newItem = CommentConverter.CreateModelElement(item);
+        var newItem = DocumentModel.OpenXml.Wordprocessing.CommentConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.Comment>(item);
         if (newItem != null)
-          collection.Add(newItem);
+          openXmlElement.AddChild(newItem);
       }
-      return collection;
-    }
-    return null;
-  }
-
-  public static void SetItems(Comments? openXmlElement, Collection<Comment>? value)
-  {
-    if (openXmlElement != null)
-    {
-      openXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Wordprocessing.Comment>();
-      if (value != null)
-        foreach (var item in value)
-        {
-          var newItem = CommentConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.Comment>(item);
-          if (newItem != null)
-            openXmlElement.AddChild(newItem);
-        }
     }
   }
-
-  public static DocumentModel.Wordprocessing.Comments? CreateModelElement(Comments? openXmlElement)
+  
+  public static DocumentModel.Wordprocessing.Comments? CreateModelElement(DocumentFormat.OpenXml.Wordprocessing.Comments? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -49,9 +41,9 @@ public static class CommentsConverter
     }
     return null;
   }
-
+  
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.Comments? value)
-    where OpenXmlElementType : Comments, new()
+    where OpenXmlElementType: DocumentFormat.OpenXml.Wordprocessing.Comments, new()
   {
     if (value != null)
     {

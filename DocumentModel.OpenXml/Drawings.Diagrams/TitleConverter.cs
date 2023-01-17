@@ -1,47 +1,43 @@
-using DocumentFormat.OpenXml.Drawing.Diagrams;
-
 namespace DocumentModel.OpenXml.Drawings.Diagrams;
 
 /// <summary>
-///   Title.
+/// Title.
 /// </summary>
 public static class TitleConverter
 {
   /// <summary>
-  ///   Language
+  /// Language
   /// </summary>
-  public static String? GetLanguage(Title? openXmlElement)
+  private static String? GetLanguage(DocumentFormat.OpenXml.Drawing.Diagrams.Title openXmlElement)
   {
     return openXmlElement?.Language?.Value;
   }
-
-  public static void SetLanguage(Title? openXmlElement, String? value)
+  
+  private static void SetLanguage(DocumentFormat.OpenXml.Drawing.Diagrams.Title openXmlElement, String? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.Language = new StringValue { Value = value };
-      else
-        openXmlElement.Language = null;
+    if (value != null)
+      openXmlElement.Language = new StringValue { Value = value };
+    else
+      openXmlElement.Language = null;
   }
-
+  
   /// <summary>
-  ///   Value
+  /// Value
   /// </summary>
-  public static String? GetVal(Title? openXmlElement)
+  private static String? GetVal(DocumentFormat.OpenXml.Drawing.Diagrams.Title openXmlElement)
   {
     return openXmlElement?.Val?.Value;
   }
-
-  public static void SetVal(Title? openXmlElement, String? value)
+  
+  private static void SetVal(DocumentFormat.OpenXml.Drawing.Diagrams.Title openXmlElement, String? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.Val = new StringValue { Value = value };
-      else
-        openXmlElement.Val = null;
+    if (value != null)
+      openXmlElement.Val = new StringValue { Value = value };
+    else
+      openXmlElement.Val = null;
   }
-
-  public static DocumentModel.Drawings.Diagrams.Title? CreateModelElement(Title? openXmlElement)
+  
+  public static DocumentModel.Drawings.Diagrams.Title? CreateModelElement(DocumentFormat.OpenXml.Drawing.Diagrams.Title? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -52,9 +48,9 @@ public static class TitleConverter
     }
     return null;
   }
-
+  
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.Diagrams.Title? value)
-    where OpenXmlElementType : Title, new()
+    where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.Diagrams.Title, new()
   {
     if (value != null)
     {

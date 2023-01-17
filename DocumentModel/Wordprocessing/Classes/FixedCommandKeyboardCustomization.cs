@@ -13,10 +13,10 @@ public class FixedCommandKeyboardCustomization
   /// <summary>
   ///   fciIndex
   /// </summary>
-  public Byte[]? CommandIndex { get; set; }
+  public UInt16? CommandIndex { get; set; }
 
   /// <summary>
   ///   swArg
   /// </summary>
-  public Byte[]? Argument { get; set; }
+  public UInt16? Argument { get; set; }
 }

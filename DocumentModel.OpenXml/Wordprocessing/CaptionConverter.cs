@@ -1,122 +1,111 @@
-using DocumentFormat.OpenXml.Wordprocessing;
-using DocumentModel.Wordprocessing;
-using Caption = DocumentFormat.OpenXml.Wordprocessing.Caption;
-
 namespace DocumentModel.OpenXml.Wordprocessing;
 
 /// <summary>
-///   Single Caption Type Definition.
+/// Single Caption Type Definition.
 /// </summary>
 public static class CaptionConverter
 {
   /// <summary>
-  ///   Caption Type Name
+  /// Caption Type Name
   /// </summary>
-  public static String? GetName(Caption? openXmlElement)
+  private static String? GetName(DocumentFormat.OpenXml.Wordprocessing.Caption openXmlElement)
   {
     return openXmlElement?.Name?.Value;
   }
-
-  public static void SetName(Caption? openXmlElement, String? value)
+  
+  private static void SetName(DocumentFormat.OpenXml.Wordprocessing.Caption openXmlElement, String? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.Name = new StringValue { Value = value };
-      else
-        openXmlElement.Name = null;
+    if (value != null)
+      openXmlElement.Name = new StringValue { Value = value };
+    else
+      openXmlElement.Name = null;
   }
-
+  
   /// <summary>
-  ///   Automatic Caption Placement
+  /// Automatic Caption Placement
   /// </summary>
-  public static CaptionPositionKind? GetPosition(Caption? openXmlElement)
+  private static DocumentModel.Wordprocessing.CaptionPositionKind? GetPosition(DocumentFormat.OpenXml.Wordprocessing.Caption openXmlElement)
   {
-    return EnumValueConverter.GetValue<CaptionPositionValues, CaptionPositionKind>(openXmlElement?.Position?.Value);
+    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Wordprocessing.CaptionPositionValues, DocumentModel.Wordprocessing.CaptionPositionKind>(openXmlElement?.Position?.Value);
   }
-
-  public static void SetPosition(Caption? openXmlElement, CaptionPositionKind? value)
+  
+  private static void SetPosition(DocumentFormat.OpenXml.Wordprocessing.Caption openXmlElement, DocumentModel.Wordprocessing.CaptionPositionKind? value)
   {
-    if (openXmlElement != null)
-      openXmlElement.Position = EnumValueConverter.CreateEnumValue<CaptionPositionValues, CaptionPositionKind>(value);
+    openXmlElement.Position = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Wordprocessing.CaptionPositionValues, DocumentModel.Wordprocessing.CaptionPositionKind>(value);
   }
-
+  
   /// <summary>
-  ///   Include Chapter Number in Field for Caption
+  /// Include Chapter Number in Field for Caption
   /// </summary>
-  public static Boolean? GetChapterNumber(Caption? openXmlElement)
+  private static Boolean? GetChapterNumber(DocumentFormat.OpenXml.Wordprocessing.Caption openXmlElement)
   {
     return openXmlElement?.ChapterNumber?.Value;
   }
-
-  public static void SetChapterNumber(Caption? openXmlElement, Boolean? value)
+  
+  private static void SetChapterNumber(DocumentFormat.OpenXml.Wordprocessing.Caption openXmlElement, Boolean? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.ChapterNumber = new OnOffValue { Value = (Boolean)value };
-      else
-        openXmlElement.ChapterNumber = null;
+    if (value != null)
+      openXmlElement.ChapterNumber = new OnOffValue { Value = (Boolean)value };
+    else
+      openXmlElement.ChapterNumber = null;
   }
-
+  
   /// <summary>
-  ///   Style for Chapter Headings
+  /// Style for Chapter Headings
   /// </summary>
-  public static Int32? GetHeading(Caption? openXmlElement)
+  private static Int32? GetHeading(DocumentFormat.OpenXml.Wordprocessing.Caption openXmlElement)
   {
-    return openXmlElement?.Heading?.Value;
+    return openXmlElement.Heading?.Value;
   }
-
-  public static void SetHeading(Caption? openXmlElement, Int32? value)
+  
+  private static void SetHeading(DocumentFormat.OpenXml.Wordprocessing.Caption openXmlElement, Int32? value)
   {
-    if (openXmlElement != null)
-      openXmlElement.Heading = value;
+    openXmlElement.Heading = value;
   }
-
+  
   /// <summary>
-  ///   Do Not Include Name In Caption
+  /// Do Not Include Name In Caption
   /// </summary>
-  public static Boolean? GetNoLabel(Caption? openXmlElement)
+  private static Boolean? GetNoLabel(DocumentFormat.OpenXml.Wordprocessing.Caption openXmlElement)
   {
     return openXmlElement?.NoLabel?.Value;
   }
-
-  public static void SetNoLabel(Caption? openXmlElement, Boolean? value)
+  
+  private static void SetNoLabel(DocumentFormat.OpenXml.Wordprocessing.Caption openXmlElement, Boolean? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.NoLabel = new OnOffValue { Value = (Boolean)value };
-      else
-        openXmlElement.NoLabel = null;
+    if (value != null)
+      openXmlElement.NoLabel = new OnOffValue { Value = (Boolean)value };
+    else
+      openXmlElement.NoLabel = null;
   }
-
+  
   /// <summary>
-  ///   Caption Numbering Format
+  /// Caption Numbering Format
   /// </summary>
-  public static NumberFormatKind? GetNumberFormat(Caption? openXmlElement)
+  private static DocumentModel.Wordprocessing.NumberFormatKind? GetNumberFormat(DocumentFormat.OpenXml.Wordprocessing.Caption openXmlElement)
   {
-    return EnumValueConverter.GetValue<NumberFormatValues, NumberFormatKind>(openXmlElement?.NumberFormat?.Value);
+    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Wordprocessing.NumberFormatValues, DocumentModel.Wordprocessing.NumberFormatKind>(openXmlElement?.NumberFormat?.Value);
   }
-
-  public static void SetNumberFormat(Caption? openXmlElement, NumberFormatKind? value)
+  
+  private static void SetNumberFormat(DocumentFormat.OpenXml.Wordprocessing.Caption openXmlElement, DocumentModel.Wordprocessing.NumberFormatKind? value)
   {
-    if (openXmlElement != null)
-      openXmlElement.NumberFormat = EnumValueConverter.CreateEnumValue<NumberFormatValues, NumberFormatKind>(value);
+    openXmlElement.NumberFormat = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Wordprocessing.NumberFormatValues, DocumentModel.Wordprocessing.NumberFormatKind>(value);
   }
-
+  
   /// <summary>
-  ///   Chapter Number/Item Index Separator
+  /// Chapter Number/Item Index Separator
   /// </summary>
-  public static ChapterSeparatorKind? GetSeparator(Caption? openXmlElement)
+  private static DocumentModel.Wordprocessing.ChapterSeparatorKind? GetSeparator(DocumentFormat.OpenXml.Wordprocessing.Caption openXmlElement)
   {
-    return EnumValueConverter.GetValue<ChapterSeparatorValues, ChapterSeparatorKind>(openXmlElement?.Separator?.Value);
+    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Wordprocessing.ChapterSeparatorValues, DocumentModel.Wordprocessing.ChapterSeparatorKind>(openXmlElement?.Separator?.Value);
   }
-
-  public static void SetSeparator(Caption? openXmlElement, ChapterSeparatorKind? value)
+  
+  private static void SetSeparator(DocumentFormat.OpenXml.Wordprocessing.Caption openXmlElement, DocumentModel.Wordprocessing.ChapterSeparatorKind? value)
   {
-    if (openXmlElement != null)
-      openXmlElement.Separator = EnumValueConverter.CreateEnumValue<ChapterSeparatorValues, ChapterSeparatorKind>(value);
+    openXmlElement.Separator = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Wordprocessing.ChapterSeparatorValues, DocumentModel.Wordprocessing.ChapterSeparatorKind>(value);
   }
-
-  public static DocumentModel.Wordprocessing.Caption? CreateModelElement(Caption? openXmlElement)
+  
+  public static DocumentModel.Wordprocessing.Caption? CreateModelElement(DocumentFormat.OpenXml.Wordprocessing.Caption? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -132,9 +121,9 @@ public static class CaptionConverter
     }
     return null;
   }
-
+  
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.Caption? value)
-    where OpenXmlElementType : Caption, new()
+    where OpenXmlElementType: DocumentFormat.OpenXml.Wordprocessing.Caption, new()
   {
     if (value != null)
     {

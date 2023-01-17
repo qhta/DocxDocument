@@ -1,123 +1,107 @@
-using DocumentFormat.OpenXml.Wordprocessing;
-using BorderType = DocumentModel.Wordprocessing.BorderType;
-using DivBorder = DocumentFormat.OpenXml.Wordprocessing.DivBorder;
-
 namespace DocumentModel.OpenXml.Wordprocessing;
 
 /// <summary>
-///   Set of Borders for HTML div.
+/// Set of Borders for HTML div.
 /// </summary>
 public static class DivBorderConverter
 {
   /// <summary>
-  ///   Top Border for HTML div.
+  /// Top Border for HTML div.
   /// </summary>
-  public static BorderType? GetTopBorder(DivBorder? openXmlElement)
+  private static DocumentModel.Wordprocessing.BorderType? GetTopBorder(DocumentFormat.OpenXml.Wordprocessing.DivBorder openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<TopBorder>();
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.TopBorder>();
     if (itemElement != null)
-      return BorderTypeConverter.CreateModelElement(itemElement);
+      return DocumentModel.OpenXml.Wordprocessing.BorderTypeConverter.CreateModelElement(itemElement);
     return null;
   }
-
-  public static void SetTopBorder(DivBorder? openXmlElement, BorderType? value)
+  
+  private static void SetTopBorder(DocumentFormat.OpenXml.Wordprocessing.DivBorder openXmlElement, DocumentModel.Wordprocessing.BorderType? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.TopBorder>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<TopBorder>();
+      itemElement = DocumentModel.OpenXml.Wordprocessing.BorderTypeConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.TopBorder>(value);
       if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = BorderTypeConverter.CreateOpenXmlElement<TopBorder>(value);
-        if (itemElement != null)
-          openXmlElement.AddChild(itemElement);
-      }
+        openXmlElement.AddChild(itemElement);
     }
   }
-
+  
   /// <summary>
-  ///   Left Border for HTML div.
+  /// Left Border for HTML div.
   /// </summary>
-  public static BorderType? GetLeftBorder(DivBorder? openXmlElement)
+  private static DocumentModel.Wordprocessing.BorderType? GetLeftBorder(DocumentFormat.OpenXml.Wordprocessing.DivBorder openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<LeftBorder>();
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.LeftBorder>();
     if (itemElement != null)
-      return BorderTypeConverter.CreateModelElement(itemElement);
+      return DocumentModel.OpenXml.Wordprocessing.BorderTypeConverter.CreateModelElement(itemElement);
     return null;
   }
-
-  public static void SetLeftBorder(DivBorder? openXmlElement, BorderType? value)
+  
+  private static void SetLeftBorder(DocumentFormat.OpenXml.Wordprocessing.DivBorder openXmlElement, DocumentModel.Wordprocessing.BorderType? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.LeftBorder>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<LeftBorder>();
+      itemElement = DocumentModel.OpenXml.Wordprocessing.BorderTypeConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.LeftBorder>(value);
       if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = BorderTypeConverter.CreateOpenXmlElement<LeftBorder>(value);
-        if (itemElement != null)
-          openXmlElement.AddChild(itemElement);
-      }
+        openXmlElement.AddChild(itemElement);
     }
   }
-
+  
   /// <summary>
-  ///   Bottom Border for HTML div.
+  /// Bottom Border for HTML div.
   /// </summary>
-  public static BorderType? GetBottomBorder(DivBorder? openXmlElement)
+  private static DocumentModel.Wordprocessing.BorderType? GetBottomBorder(DocumentFormat.OpenXml.Wordprocessing.DivBorder openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<BottomBorder>();
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.BottomBorder>();
     if (itemElement != null)
-      return BorderTypeConverter.CreateModelElement(itemElement);
+      return DocumentModel.OpenXml.Wordprocessing.BorderTypeConverter.CreateModelElement(itemElement);
     return null;
   }
-
-  public static void SetBottomBorder(DivBorder? openXmlElement, BorderType? value)
+  
+  private static void SetBottomBorder(DocumentFormat.OpenXml.Wordprocessing.DivBorder openXmlElement, DocumentModel.Wordprocessing.BorderType? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.BottomBorder>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<BottomBorder>();
+      itemElement = DocumentModel.OpenXml.Wordprocessing.BorderTypeConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.BottomBorder>(value);
       if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = BorderTypeConverter.CreateOpenXmlElement<BottomBorder>(value);
-        if (itemElement != null)
-          openXmlElement.AddChild(itemElement);
-      }
+        openXmlElement.AddChild(itemElement);
     }
   }
-
+  
   /// <summary>
-  ///   Right Border for HTML div.
+  /// Right Border for HTML div.
   /// </summary>
-  public static BorderType? GetRightBorder(DivBorder? openXmlElement)
+  private static DocumentModel.Wordprocessing.BorderType? GetRightBorder(DocumentFormat.OpenXml.Wordprocessing.DivBorder openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<RightBorder>();
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.RightBorder>();
     if (itemElement != null)
-      return BorderTypeConverter.CreateModelElement(itemElement);
+      return DocumentModel.OpenXml.Wordprocessing.BorderTypeConverter.CreateModelElement(itemElement);
     return null;
   }
-
-  public static void SetRightBorder(DivBorder? openXmlElement, BorderType? value)
+  
+  private static void SetRightBorder(DocumentFormat.OpenXml.Wordprocessing.DivBorder openXmlElement, DocumentModel.Wordprocessing.BorderType? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.RightBorder>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<RightBorder>();
+      itemElement = DocumentModel.OpenXml.Wordprocessing.BorderTypeConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.RightBorder>(value);
       if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = BorderTypeConverter.CreateOpenXmlElement<RightBorder>(value);
-        if (itemElement != null)
-          openXmlElement.AddChild(itemElement);
-      }
+        openXmlElement.AddChild(itemElement);
     }
   }
-
-  public static DocumentModel.Wordprocessing.DivBorder? CreateModelElement(DivBorder? openXmlElement)
+  
+  public static DocumentModel.Wordprocessing.DivBorder? CreateModelElement(DocumentFormat.OpenXml.Wordprocessing.DivBorder? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -130,9 +114,9 @@ public static class DivBorderConverter
     }
     return null;
   }
-
+  
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.DivBorder? value)
-    where OpenXmlElementType : DivBorder, new()
+    where OpenXmlElementType: DocumentFormat.OpenXml.Wordprocessing.DivBorder, new()
   {
     if (value != null)
     {

@@ -1,44 +1,37 @@
-using DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing;
-
 namespace DocumentModel.OpenXml.Drawings.ChartDrawings;
 
 /// <summary>
-///   Defines the Copyrights Class.
+/// Defines the Copyrights Class.
 /// </summary>
 public static class CopyrightsConverter
 {
-  public static Collection<String>? GetCopyrightXsdstrings(Copyrights? openXmlElement)
+  private static System.Collections.ObjectModel.Collection<String> GetCopyrightXsdstrings(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.Copyrights openXmlElement)
   {
-    if (openXmlElement != null)
+    var collection = new System.Collections.ObjectModel.Collection<String>();
+    foreach (var item in openXmlElement.Elements<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.CopyrightXsdstring>())
     {
-      var collection = new Collection<String>();
-      foreach (var item in openXmlElement.Elements<CopyrightXsdstring>())
+      var newItem = StringValueConverter.GetValue(item);
+      if (newItem != null)
+        collection.Add((string)newItem);
+    }
+    return collection;
+  }
+  
+  private static void SetCopyrightXsdstrings(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.Copyrights openXmlElement, System.Collections.ObjectModel.Collection<String>? value)
+  {
+    openXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.CopyrightXsdstring>();
+    if (value != null)
+    {
+      foreach (var item in value)
       {
-        var newItem = StringValueConverter.GetValue(item);
+        var newItem = StringValueConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.CopyrightXsdstring>(item);
         if (newItem != null)
-          collection.Add((string)newItem);
+          openXmlElement.AddChild(newItem);
       }
-      return collection;
-    }
-    return null;
-  }
-
-  public static void SetCopyrightXsdstrings(Copyrights? openXmlElement, Collection<String>? value)
-  {
-    if (openXmlElement != null)
-    {
-      openXmlElement.RemoveAllChildren<CopyrightXsdstring>();
-      if (value != null)
-        foreach (var item in value)
-        {
-          var newItem = StringValueConverter.CreateOpenXmlElement<CopyrightXsdstring>(item);
-          if (newItem != null)
-            openXmlElement.AddChild(newItem);
-        }
     }
   }
-
-  public static DocumentModel.Drawings.ChartDrawings.Copyrights? CreateModelElement(Copyrights? openXmlElement)
+  
+  public static DocumentModel.Drawings.ChartDrawings.Copyrights? CreateModelElement(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.Copyrights? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -48,9 +41,9 @@ public static class CopyrightsConverter
     }
     return null;
   }
-
+  
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.ChartDrawings.Copyrights? value)
-    where OpenXmlElementType : Copyrights, new()
+    where OpenXmlElementType: DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.Copyrights, new()
   {
     if (value != null)
     {

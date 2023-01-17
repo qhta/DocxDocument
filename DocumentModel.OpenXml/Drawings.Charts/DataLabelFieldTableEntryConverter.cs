@@ -1,93 +1,81 @@
-using DocumentFormat.OpenXml.Office2013.Drawing.Chart;
-using DataLabelFieldTableCache = DocumentModel.Drawings.Charts.DataLabelFieldTableCache;
-
 namespace DocumentModel.OpenXml.Drawings.Charts;
 
 /// <summary>
-///   Defines the DataLabelFieldTableEntry Class.
+/// Defines the DataLabelFieldTableEntry Class.
 /// </summary>
 public static class DataLabelFieldTableEntryConverter
 {
   /// <summary>
-  ///   TextFieldGuid.
+  /// TextFieldGuid.
   /// </summary>
-  public static String? GetTextFieldGuid(DataLabelFieldTableEntry? openXmlElement)
+  private static String? GetTextFieldGuid(DocumentFormat.OpenXml.Office2013.Drawing.Chart.DataLabelFieldTableEntry openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<TextFieldGuid>();
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office2013.Drawing.Chart.TextFieldGuid>();
     if (itemElement != null)
       return itemElement.Text;
     return null;
   }
-
-  public static void SetTextFieldGuid(DataLabelFieldTableEntry? openXmlElement, String? value)
+  
+  private static void SetTextFieldGuid(DocumentFormat.OpenXml.Office2013.Drawing.Chart.DataLabelFieldTableEntry openXmlElement, String? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2013.Drawing.Chart.TextFieldGuid>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<TextFieldGuid>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = new TextFieldGuid { Text = value };
-        openXmlElement.AddChild(itemElement);
-      }
+      itemElement = new DocumentFormat.OpenXml.Office2013.Drawing.Chart.TextFieldGuid { Text = value };
+      openXmlElement.AddChild(itemElement);
     }
   }
-
+  
   /// <summary>
-  ///   Formula.
+  /// Formula.
   /// </summary>
-  public static String? GetFormula(DataLabelFieldTableEntry? openXmlElement)
+  private static String? GetFormula(DocumentFormat.OpenXml.Office2013.Drawing.Chart.DataLabelFieldTableEntry openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<Formula>();
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office2013.Drawing.Chart.Formula>();
     if (itemElement != null)
       return itemElement.Text;
     return null;
   }
-
-  public static void SetFormula(DataLabelFieldTableEntry? openXmlElement, String? value)
+  
+  private static void SetFormula(DocumentFormat.OpenXml.Office2013.Drawing.Chart.DataLabelFieldTableEntry openXmlElement, String? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2013.Drawing.Chart.Formula>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<Formula>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = new Formula { Text = value };
-        openXmlElement.AddChild(itemElement);
-      }
+      itemElement = new DocumentFormat.OpenXml.Office2013.Drawing.Chart.Formula { Text = value };
+      openXmlElement.AddChild(itemElement);
     }
   }
-
+  
   /// <summary>
-  ///   DataLabelFieldTableCache.
+  /// DataLabelFieldTableCache.
   /// </summary>
-  public static DataLabelFieldTableCache? GetDataLabelFieldTableCache(DataLabelFieldTableEntry? openXmlElement)
+  private static DocumentModel.Drawings.Charts.DataLabelFieldTableCache? GetDataLabelFieldTableCache(DocumentFormat.OpenXml.Office2013.Drawing.Chart.DataLabelFieldTableEntry openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office2013.Drawing.Chart.DataLabelFieldTableCache>();
     if (itemElement != null)
-      return DataLabelFieldTableCacheConverter.CreateModelElement(itemElement);
+      return DocumentModel.OpenXml.Drawings.Charts.DataLabelFieldTableCacheConverter.CreateModelElement(itemElement);
     return null;
   }
-
-  public static void SetDataLabelFieldTableCache(DataLabelFieldTableEntry? openXmlElement, DataLabelFieldTableCache? value)
+  
+  private static void SetDataLabelFieldTableCache(DocumentFormat.OpenXml.Office2013.Drawing.Chart.DataLabelFieldTableEntry openXmlElement, DocumentModel.Drawings.Charts.DataLabelFieldTableCache? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2013.Drawing.Chart.DataLabelFieldTableCache>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2013.Drawing.Chart.DataLabelFieldTableCache>();
+      itemElement = DocumentModel.OpenXml.Drawings.Charts.DataLabelFieldTableCacheConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2013.Drawing.Chart.DataLabelFieldTableCache>(value);
       if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = DataLabelFieldTableCacheConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2013.Drawing.Chart.DataLabelFieldTableCache>(value);
-        if (itemElement != null)
-          openXmlElement.AddChild(itemElement);
-      }
+        openXmlElement.AddChild(itemElement);
     }
   }
-
-  public static DocumentModel.Drawings.Charts.DataLabelFieldTableEntry? CreateModelElement(DataLabelFieldTableEntry? openXmlElement)
+  
+  public static DocumentModel.Drawings.Charts.DataLabelFieldTableEntry? CreateModelElement(DocumentFormat.OpenXml.Office2013.Drawing.Chart.DataLabelFieldTableEntry? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -99,9 +87,9 @@ public static class DataLabelFieldTableEntryConverter
     }
     return null;
   }
-
+  
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.Charts.DataLabelFieldTableEntry? value)
-    where OpenXmlElementType : DataLabelFieldTableEntry, new()
+    where OpenXmlElementType: DocumentFormat.OpenXml.Office2013.Drawing.Chart.DataLabelFieldTableEntry, new()
   {
     if (value != null)
     {

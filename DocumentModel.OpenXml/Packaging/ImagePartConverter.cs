@@ -1,18 +1,16 @@
-using DocumentFormat.OpenXml.Packaging;
-
 namespace DocumentModel.OpenXml.Packaging;
 
 /// <summary>
-///   Defines the ImagePart
+/// Defines the ImagePart
 /// </summary>
 public static class ImagePartConverter
 {
-  public static String? GetRelationshipType(ImagePart? openXmlElement)
+  private static String? GetRelationshipType(DocumentFormat.OpenXml.Packaging.ImagePart openXmlElement)
   {
     return openXmlElement?.RelationshipType;
   }
-
-  public static DocumentModel.Packaging.ImagePart? CreateModelElement(ImagePart? openXmlElement)
+  
+  public static DocumentModel.Packaging.ImagePart? CreateModelElement(DocumentFormat.OpenXml.Packaging.ImagePart? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -22,9 +20,9 @@ public static class ImagePartConverter
     }
     return null;
   }
-
+  
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Packaging.ImagePart? value)
-    where OpenXmlElementType : ImagePart, new()
+    where OpenXmlElementType: DocumentFormat.OpenXml.Packaging.ImagePart, new()
   {
     if (value != null)
     {

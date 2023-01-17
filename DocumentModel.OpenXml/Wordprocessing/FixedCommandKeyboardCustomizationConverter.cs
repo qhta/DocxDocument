@@ -1,72 +1,63 @@
-using DocumentFormat.OpenXml.Office.Word;
-
 namespace DocumentModel.OpenXml.Wordprocessing;
 
 /// <summary>
-///   Defines the FixedCommandKeyboardCustomization Class.
+/// Defines the FixedCommandKeyboardCustomization Class.
 /// </summary>
 public static class FixedCommandKeyboardCustomizationConverter
 {
   /// <summary>
-  ///   fciName
+  /// fciName
   /// </summary>
-  public static String? GetCommandName(FixedCommandKeyboardCustomization? openXmlElement)
+  private static String? GetCommandName(DocumentFormat.OpenXml.Office.Word.FixedCommandKeyboardCustomization openXmlElement)
   {
     return openXmlElement?.CommandName?.Value;
   }
-
-  public static void SetCommandName(FixedCommandKeyboardCustomization? openXmlElement, String? value)
+  
+  private static void SetCommandName(DocumentFormat.OpenXml.Office.Word.FixedCommandKeyboardCustomization openXmlElement, String? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.CommandName = new StringValue { Value = value };
-      else
-        openXmlElement.CommandName = null;
+    if (value != null)
+      openXmlElement.CommandName = new StringValue { Value = value };
+    else
+      openXmlElement.CommandName = null;
   }
-
+  
   /// <summary>
-  ///   fciIndex
+  /// fciIndex
   /// </summary>
-  public static Byte[]? GetCommandIndex(FixedCommandKeyboardCustomization? openXmlElement)
+  private static UInt16? GetCommandIndex(DocumentFormat.OpenXml.Office.Word.FixedCommandKeyboardCustomization openXmlElement)
   {
-    if (openXmlElement?.CommandIndex?.Value != null)
-      return Convert.FromHexString(openXmlElement.CommandIndex.Value);
+    if (openXmlElement.CommandIndex?.Value != null)
+      return UInt16.Parse(openXmlElement.CommandIndex.Value, NumberStyles.HexNumber);
     return null;
   }
-
-  public static void SetCommandIndex(FixedCommandKeyboardCustomization? openXmlElement, Byte[]? value)
+  
+  private static void SetCommandIndex(DocumentFormat.OpenXml.Office.Word.FixedCommandKeyboardCustomization openXmlElement, UInt16? value)
   {
-    if (openXmlElement != null)
-    {
       if (value != null)
-        openXmlElement.CommandIndex = Convert.ToHexString(value);
+        openXmlElement.CommandIndex = ((UInt16)value).ToString("X4");
       else
         openXmlElement.CommandIndex = null;
-    }
   }
-
+  
   /// <summary>
-  ///   swArg
+  /// swArg
   /// </summary>
-  public static Byte[]? GetArgument(FixedCommandKeyboardCustomization? openXmlElement)
+  private static UInt16? GetArgument(DocumentFormat.OpenXml.Office.Word.FixedCommandKeyboardCustomization openXmlElement)
   {
-    if (openXmlElement?.Argument?.Value != null)
-      return Convert.FromHexString(openXmlElement.Argument.Value);
+    if (openXmlElement.Argument?.Value != null)
+      return UInt16.Parse(openXmlElement.Argument.Value, NumberStyles.HexNumber);
     return null;
   }
-
-  public static void SetArgument(FixedCommandKeyboardCustomization? openXmlElement, Byte[]? value)
+  
+  private static void SetArgument(DocumentFormat.OpenXml.Office.Word.FixedCommandKeyboardCustomization openXmlElement, UInt16? value)
   {
-    if (openXmlElement != null)
-    {
       if (value != null)
-        openXmlElement.Argument = Convert.ToHexString(value);
+        openXmlElement.Argument = ((UInt16)value).ToString("X4");
       else
         openXmlElement.Argument = null;
-    }
   }
-
-  public static DocumentModel.Wordprocessing.FixedCommandKeyboardCustomization? CreateModelElement(FixedCommandKeyboardCustomization? openXmlElement)
+  
+  public static DocumentModel.Wordprocessing.FixedCommandKeyboardCustomization? CreateModelElement(DocumentFormat.OpenXml.Office.Word.FixedCommandKeyboardCustomization? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -78,9 +69,9 @@ public static class FixedCommandKeyboardCustomizationConverter
     }
     return null;
   }
-
+  
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.FixedCommandKeyboardCustomization? value)
-    where OpenXmlElementType : FixedCommandKeyboardCustomization, new()
+    where OpenXmlElementType: DocumentFormat.OpenXml.Office.Word.FixedCommandKeyboardCustomization, new()
   {
     if (value != null)
     {

@@ -1,23 +1,21 @@
-using DocumentFormat.OpenXml.Packaging;
-
 namespace DocumentModel.OpenXml.Packaging;
 
 /// <summary>
-///   Defines the QueryTablePart
+/// Defines the QueryTablePart
 /// </summary>
 public static class QueryTablePartConverter
 {
-  public static String? GetContentType(QueryTablePart? openXmlElement)
+  private static String? GetContentType(DocumentFormat.OpenXml.Packaging.QueryTablePart openXmlElement)
   {
     return openXmlElement?.ContentType;
   }
-
-  public static String? GetRelationshipType(QueryTablePart? openXmlElement)
+  
+  private static String? GetRelationshipType(DocumentFormat.OpenXml.Packaging.QueryTablePart openXmlElement)
   {
     return openXmlElement?.RelationshipType;
   }
-
-  public static DocumentModel.Packaging.QueryTablePart? CreateModelElement(QueryTablePart? openXmlElement)
+  
+  public static DocumentModel.Packaging.QueryTablePart? CreateModelElement(DocumentFormat.OpenXml.Packaging.QueryTablePart? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -28,9 +26,9 @@ public static class QueryTablePartConverter
     }
     return null;
   }
-
+  
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Packaging.QueryTablePart? value)
-    where OpenXmlElementType : QueryTablePart, new()
+    where OpenXmlElementType: DocumentFormat.OpenXml.Packaging.QueryTablePart, new()
   {
     if (value != null)
     {

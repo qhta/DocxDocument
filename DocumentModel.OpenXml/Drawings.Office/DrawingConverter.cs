@@ -1,41 +1,35 @@
-using DocumentModel.Drawings.Office;
-using Drawing = DocumentFormat.OpenXml.Office.Drawing.Drawing;
-
 namespace DocumentModel.OpenXml.Drawings.Office;
 
 /// <summary>
-///   Defines the Drawing Class.
+/// Defines the Drawing Class.
 /// </summary>
 public static class DrawingConverter
 {
   /// <summary>
-  ///   ShapeTree.
+  /// ShapeTree.
   /// </summary>
-  public static ShapeTree? GetShapeTree(Drawing? openXmlElement)
+  private static DocumentModel.Drawings.Office.ShapeTree? GetShapeTree(DocumentFormat.OpenXml.Office.Drawing.Drawing openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office.Drawing.ShapeTree>();
     if (itemElement != null)
-      return ShapeTreeConverter.CreateModelElement(itemElement);
+      return DocumentModel.OpenXml.Drawings.Office.ShapeTreeConverter.CreateModelElement(itemElement);
     return null;
   }
-
-  public static void SetShapeTree(Drawing? openXmlElement, ShapeTree? value)
+  
+  private static void SetShapeTree(DocumentFormat.OpenXml.Office.Drawing.Drawing openXmlElement, DocumentModel.Drawings.Office.ShapeTree? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office.Drawing.ShapeTree>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office.Drawing.ShapeTree>();
+      itemElement = DocumentModel.OpenXml.Drawings.Office.ShapeTreeConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office.Drawing.ShapeTree>(value);
       if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = ShapeTreeConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office.Drawing.ShapeTree>(value);
-        if (itemElement != null)
-          openXmlElement.AddChild(itemElement);
-      }
+        openXmlElement.AddChild(itemElement);
     }
   }
-
-  public static DocumentModel.Drawings.Office.Drawing? CreateModelElement(Drawing? openXmlElement)
+  
+  public static DocumentModel.Drawings.Office.Drawing? CreateModelElement(DocumentFormat.OpenXml.Office.Drawing.Drawing? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -45,9 +39,9 @@ public static class DrawingConverter
     }
     return null;
   }
-
+  
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.Office.Drawing? value)
-    where OpenXmlElementType : Drawing, new()
+    where OpenXmlElementType: DocumentFormat.OpenXml.Office.Drawing.Drawing, new()
   {
     if (value != null)
     {

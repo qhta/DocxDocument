@@ -1,23 +1,21 @@
-using DocumentFormat.OpenXml.Packaging;
-
 namespace DocumentModel.OpenXml.Packaging;
 
 /// <summary>
-///   Defines the UserDefinedTagsPart
+/// Defines the UserDefinedTagsPart
 /// </summary>
 public static class UserDefinedTagsPartConverter
 {
-  public static String? GetContentType(UserDefinedTagsPart? openXmlElement)
+  private static String? GetContentType(DocumentFormat.OpenXml.Packaging.UserDefinedTagsPart openXmlElement)
   {
     return openXmlElement?.ContentType;
   }
-
-  public static String? GetRelationshipType(UserDefinedTagsPart? openXmlElement)
+  
+  private static String? GetRelationshipType(DocumentFormat.OpenXml.Packaging.UserDefinedTagsPart openXmlElement)
   {
     return openXmlElement?.RelationshipType;
   }
-
-  public static DocumentModel.Packaging.UserDefinedTagsPart? CreateModelElement(UserDefinedTagsPart? openXmlElement)
+  
+  public static DocumentModel.Packaging.UserDefinedTagsPart? CreateModelElement(DocumentFormat.OpenXml.Packaging.UserDefinedTagsPart? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -28,9 +26,9 @@ public static class UserDefinedTagsPartConverter
     }
     return null;
   }
-
+  
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Packaging.UserDefinedTagsPart? value)
-    where OpenXmlElementType : UserDefinedTagsPart, new()
+    where OpenXmlElementType: DocumentFormat.OpenXml.Packaging.UserDefinedTagsPart, new()
   {
     if (value != null)
     {

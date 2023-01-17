@@ -1,64 +1,59 @@
-using DocumentFormat.OpenXml.Office2013.Drawing;
-
 namespace DocumentModel.OpenXml.Drawings;
 
 /// <summary>
-///   Defines the ObjectProperties Class.
+/// Defines the ObjectProperties Class.
 /// </summary>
 public static class ObjectPropertiesConverter
 {
   /// <summary>
-  ///   objectId, this property is only available in Office 2013 and later.
+  /// objectId, this property is only available in Office 2013 and later.
   /// </summary>
-  public static String? GetId(ObjectProperties? openXmlElement)
+  private static String? GetId(DocumentFormat.OpenXml.Office2013.Drawing.ObjectProperties openXmlElement)
   {
     return openXmlElement?.Id?.Value;
   }
-
-  public static void SetId(ObjectProperties? openXmlElement, String? value)
+  
+  private static void SetId(DocumentFormat.OpenXml.Office2013.Drawing.ObjectProperties openXmlElement, String? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.Id = new StringValue { Value = value };
-      else
-        openXmlElement.Id = null;
+    if (value != null)
+      openXmlElement.Id = new StringValue { Value = value };
+    else
+      openXmlElement.Id = null;
   }
-
+  
   /// <summary>
-  ///   isActiveX, this property is only available in Office 2013 and later.
+  /// isActiveX, this property is only available in Office 2013 and later.
   /// </summary>
-  public static Boolean? GetIsActiveX(ObjectProperties? openXmlElement)
+  private static Boolean? GetIsActiveX(DocumentFormat.OpenXml.Office2013.Drawing.ObjectProperties openXmlElement)
   {
     return openXmlElement?.IsActiveX?.Value;
   }
-
-  public static void SetIsActiveX(ObjectProperties? openXmlElement, Boolean? value)
+  
+  private static void SetIsActiveX(DocumentFormat.OpenXml.Office2013.Drawing.ObjectProperties openXmlElement, Boolean? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.IsActiveX = new BooleanValue { Value = (Boolean)value };
-      else
-        openXmlElement.IsActiveX = null;
+    if (value != null)
+      openXmlElement.IsActiveX = new BooleanValue { Value = (Boolean)value };
+    else
+      openXmlElement.IsActiveX = null;
   }
-
+  
   /// <summary>
-  ///   linkType, this property is only available in Office 2013 and later.
+  /// linkType, this property is only available in Office 2013 and later.
   /// </summary>
-  public static String? GetLinkType(ObjectProperties? openXmlElement)
+  private static String? GetLinkType(DocumentFormat.OpenXml.Office2013.Drawing.ObjectProperties openXmlElement)
   {
     return openXmlElement?.LinkType?.Value;
   }
-
-  public static void SetLinkType(ObjectProperties? openXmlElement, String? value)
+  
+  private static void SetLinkType(DocumentFormat.OpenXml.Office2013.Drawing.ObjectProperties openXmlElement, String? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.LinkType = new StringValue { Value = value };
-      else
-        openXmlElement.LinkType = null;
+    if (value != null)
+      openXmlElement.LinkType = new StringValue { Value = value };
+    else
+      openXmlElement.LinkType = null;
   }
-
-  public static DocumentModel.Drawings.ObjectProperties? CreateModelElement(ObjectProperties? openXmlElement)
+  
+  public static DocumentModel.Drawings.ObjectProperties? CreateModelElement(DocumentFormat.OpenXml.Office2013.Drawing.ObjectProperties? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -70,9 +65,9 @@ public static class ObjectPropertiesConverter
     }
     return null;
   }
-
+  
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.ObjectProperties? value)
-    where OpenXmlElementType : ObjectProperties, new()
+    where OpenXmlElementType: DocumentFormat.OpenXml.Office2013.Drawing.ObjectProperties, new()
   {
     if (value != null)
     {

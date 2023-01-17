@@ -1,95 +1,83 @@
-using DocumentModel.Math;
-using Radical = DocumentFormat.OpenXml.Math.Radical;
-
 namespace DocumentModel.OpenXml.Math;
 
 /// <summary>
-///   Radical Function.
+/// Radical Function.
 /// </summary>
 public static class RadicalConverter
 {
   /// <summary>
-  ///   Radical Properties.
+  /// Radical Properties.
   /// </summary>
-  public static RadicalProperties? GetRadicalProperties(Radical? openXmlElement)
+  private static DocumentModel.Math.RadicalProperties? GetRadicalProperties(DocumentFormat.OpenXml.Math.Radical openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Math.RadicalProperties>();
     if (itemElement != null)
-      return RadicalPropertiesConverter.CreateModelElement(itemElement);
+      return DocumentModel.OpenXml.Math.RadicalPropertiesConverter.CreateModelElement(itemElement);
     return null;
   }
-
-  public static void SetRadicalProperties(Radical? openXmlElement, RadicalProperties? value)
+  
+  private static void SetRadicalProperties(DocumentFormat.OpenXml.Math.Radical openXmlElement, DocumentModel.Math.RadicalProperties? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Math.RadicalProperties>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Math.RadicalProperties>();
+      itemElement = DocumentModel.OpenXml.Math.RadicalPropertiesConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Math.RadicalProperties>(value);
       if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = RadicalPropertiesConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Math.RadicalProperties>(value);
-        if (itemElement != null)
-          openXmlElement.AddChild(itemElement);
-      }
+        openXmlElement.AddChild(itemElement);
     }
   }
-
+  
   /// <summary>
-  ///   Degree.
+  /// Degree.
   /// </summary>
-  public static Degree? GetDegree(Radical? openXmlElement)
+  private static DocumentModel.Math.Degree? GetDegree(DocumentFormat.OpenXml.Math.Radical openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Math.Degree>();
     if (itemElement != null)
-      return DegreeConverter.CreateModelElement(itemElement);
+      return DocumentModel.OpenXml.Math.DegreeConverter.CreateModelElement(itemElement);
     return null;
   }
-
-  public static void SetDegree(Radical? openXmlElement, Degree? value)
+  
+  private static void SetDegree(DocumentFormat.OpenXml.Math.Radical openXmlElement, DocumentModel.Math.Degree? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Math.Degree>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Math.Degree>();
+      itemElement = DocumentModel.OpenXml.Math.DegreeConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Math.Degree>(value);
       if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = DegreeConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Math.Degree>(value);
-        if (itemElement != null)
-          openXmlElement.AddChild(itemElement);
-      }
+        openXmlElement.AddChild(itemElement);
     }
   }
-
+  
   /// <summary>
-  ///   Base.
+  /// Base.
   /// </summary>
-  public static Base? GetBase(Radical? openXmlElement)
+  private static DocumentModel.Math.Base? GetBase(DocumentFormat.OpenXml.Math.Radical openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Math.Base>();
     if (itemElement != null)
-      return BaseConverter.CreateModelElement(itemElement);
+      return DocumentModel.OpenXml.Math.BaseConverter.CreateModelElement(itemElement);
     return null;
   }
-
-  public static void SetBase(Radical? openXmlElement, Base? value)
+  
+  private static void SetBase(DocumentFormat.OpenXml.Math.Radical openXmlElement, DocumentModel.Math.Base? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Math.Base>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Math.Base>();
+      itemElement = DocumentModel.OpenXml.Math.BaseConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Math.Base>(value);
       if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = BaseConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Math.Base>(value);
-        if (itemElement != null)
-          openXmlElement.AddChild(itemElement);
-      }
+        openXmlElement.AddChild(itemElement);
     }
   }
-
-  public static DocumentModel.Math.Radical? CreateModelElement(Radical? openXmlElement)
+  
+  public static DocumentModel.Math.Radical? CreateModelElement(DocumentFormat.OpenXml.Math.Radical? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -101,9 +89,9 @@ public static class RadicalConverter
     }
     return null;
   }
-
+  
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Math.Radical? value)
-    where OpenXmlElementType : Radical, new()
+    where OpenXmlElementType: DocumentFormat.OpenXml.Math.Radical, new()
   {
     if (value != null)
     {

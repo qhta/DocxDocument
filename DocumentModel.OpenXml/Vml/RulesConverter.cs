@@ -1,60 +1,50 @@
-using DocumentFormat.OpenXml.Vml;
-using DocumentModel.Vml;
-using Rules = DocumentFormat.OpenXml.Vml.Office.Rules;
-
 namespace DocumentModel.OpenXml.Vml;
 
 /// <summary>
-///   Rule Set.
+/// Rule Set.
 /// </summary>
 public static class RulesConverter
 {
   /// <summary>
-  ///   VML Extension Handling Behavior
+  /// VML Extension Handling Behavior
   /// </summary>
-  public static ExtensionHandlingBehaviorKind? GetExtension(Rules? openXmlElement)
+  private static DocumentModel.Vml.ExtensionHandlingBehaviorKind? GetExtension(DocumentFormat.OpenXml.Vml.Office.Rules openXmlElement)
   {
-    return EnumValueConverter.GetValue<ExtensionHandlingBehaviorValues, ExtensionHandlingBehaviorKind>(openXmlElement?.Extension?.Value);
+    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Vml.ExtensionHandlingBehaviorValues, DocumentModel.Vml.ExtensionHandlingBehaviorKind>(openXmlElement?.Extension?.Value);
   }
-
-  public static void SetExtension(Rules? openXmlElement, ExtensionHandlingBehaviorKind? value)
+  
+  private static void SetExtension(DocumentFormat.OpenXml.Vml.Office.Rules openXmlElement, DocumentModel.Vml.ExtensionHandlingBehaviorKind? value)
   {
-    if (openXmlElement != null)
-      openXmlElement.Extension = EnumValueConverter.CreateEnumValue<ExtensionHandlingBehaviorValues, ExtensionHandlingBehaviorKind>(value);
+    openXmlElement.Extension = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Vml.ExtensionHandlingBehaviorValues, DocumentModel.Vml.ExtensionHandlingBehaviorKind>(value);
   }
-
-  public static Collection<Rule>? GetItems(Rules? openXmlElement)
+  
+  private static System.Collections.ObjectModel.Collection<DocumentModel.Vml.Rule> GetItems(DocumentFormat.OpenXml.Vml.Office.Rules openXmlElement)
   {
-    if (openXmlElement != null)
+    var collection = new System.Collections.ObjectModel.Collection<DocumentModel.Vml.Rule>();
+    foreach (var item in openXmlElement.Elements<DocumentFormat.OpenXml.Vml.Office.Rule>())
     {
-      var collection = new Collection<Rule>();
-      foreach (var item in openXmlElement.Elements<DocumentFormat.OpenXml.Vml.Office.Rule>())
+      var newItem = DocumentModel.OpenXml.Vml.RuleConverter.CreateModelElement(item);
+      if (newItem != null)
+        collection.Add(newItem);
+    }
+    return collection;
+  }
+  
+  private static void SetItems(DocumentFormat.OpenXml.Vml.Office.Rules openXmlElement, System.Collections.ObjectModel.Collection<DocumentModel.Vml.Rule>? value)
+  {
+    openXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Vml.Office.Rule>();
+    if (value != null)
+    {
+      foreach (var item in value)
       {
-        var newItem = RuleConverter.CreateModelElement(item);
+        var newItem = DocumentModel.OpenXml.Vml.RuleConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Vml.Office.Rule>(item);
         if (newItem != null)
-          collection.Add(newItem);
+          openXmlElement.AddChild(newItem);
       }
-      return collection;
-    }
-    return null;
-  }
-
-  public static void SetItems(Rules? openXmlElement, Collection<Rule>? value)
-  {
-    if (openXmlElement != null)
-    {
-      openXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Vml.Office.Rule>();
-      if (value != null)
-        foreach (var item in value)
-        {
-          var newItem = RuleConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Vml.Office.Rule>(item);
-          if (newItem != null)
-            openXmlElement.AddChild(newItem);
-        }
     }
   }
-
-  public static DocumentModel.Vml.Rules? CreateModelElement(Rules? openXmlElement)
+  
+  public static DocumentModel.Vml.Rules? CreateModelElement(DocumentFormat.OpenXml.Vml.Office.Rules? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -65,9 +55,9 @@ public static class RulesConverter
     }
     return null;
   }
-
+  
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Vml.Rules? value)
-    where OpenXmlElementType : Rules, new()
+    where OpenXmlElementType: DocumentFormat.OpenXml.Vml.Office.Rules, new()
   {
     if (value != null)
     {

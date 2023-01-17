@@ -1,194 +1,177 @@
-using DocumentFormat.OpenXml.Vml;
-using DocumentModel.Vml;
-using Diagram = DocumentFormat.OpenXml.Vml.Office.Diagram;
-
 namespace DocumentModel.OpenXml.Vml;
 
 /// <summary>
-///   VML Diagram.
+/// VML Diagram.
 /// </summary>
 public static class DiagramConverter
 {
   /// <summary>
-  ///   VML Extension Handling Behavior
+  /// VML Extension Handling Behavior
   /// </summary>
-  public static ExtensionHandlingBehaviorKind? GetExtension(Diagram? openXmlElement)
+  private static DocumentModel.Vml.ExtensionHandlingBehaviorKind? GetExtension(DocumentFormat.OpenXml.Vml.Office.Diagram openXmlElement)
   {
-    return EnumValueConverter.GetValue<ExtensionHandlingBehaviorValues, ExtensionHandlingBehaviorKind>(openXmlElement?.Extension?.Value);
+    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Vml.ExtensionHandlingBehaviorValues, DocumentModel.Vml.ExtensionHandlingBehaviorKind>(openXmlElement?.Extension?.Value);
   }
-
-  public static void SetExtension(Diagram? openXmlElement, ExtensionHandlingBehaviorKind? value)
+  
+  private static void SetExtension(DocumentFormat.OpenXml.Vml.Office.Diagram openXmlElement, DocumentModel.Vml.ExtensionHandlingBehaviorKind? value)
   {
-    if (openXmlElement != null)
-      openXmlElement.Extension = EnumValueConverter.CreateEnumValue<ExtensionHandlingBehaviorValues, ExtensionHandlingBehaviorKind>(value);
+    openXmlElement.Extension = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Vml.ExtensionHandlingBehaviorValues, DocumentModel.Vml.ExtensionHandlingBehaviorKind>(value);
   }
-
+  
   /// <summary>
-  ///   Diagram Style Options
+  /// Diagram Style Options
   /// </summary>
-  public static Int64? GetStyle(Diagram? openXmlElement)
+  private static Int64? GetStyle(DocumentFormat.OpenXml.Vml.Office.Diagram openXmlElement)
   {
-    return openXmlElement?.Style?.Value;
+    return openXmlElement.Style?.Value;
   }
-
-  public static void SetStyle(Diagram? openXmlElement, Int64? value)
+  
+  private static void SetStyle(DocumentFormat.OpenXml.Vml.Office.Diagram openXmlElement, Int64? value)
   {
-    if (openXmlElement != null)
-      openXmlElement.Style = value;
+    openXmlElement.Style = value;
   }
-
+  
   /// <summary>
-  ///   Diagram Automatic Format
+  /// Diagram Automatic Format
   /// </summary>
-  public static Boolean? GetAutoFormat(Diagram? openXmlElement)
+  private static Boolean? GetAutoFormat(DocumentFormat.OpenXml.Vml.Office.Diagram openXmlElement)
   {
     return openXmlElement?.AutoFormat?.Value;
   }
-
-  public static void SetAutoFormat(Diagram? openXmlElement, Boolean? value)
+  
+  private static void SetAutoFormat(DocumentFormat.OpenXml.Vml.Office.Diagram openXmlElement, Boolean? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.AutoFormat = value;
-      else
-        openXmlElement.AutoFormat = null;
+    if (value != null)
+      openXmlElement.AutoFormat = value;
+    else
+      openXmlElement.AutoFormat = null;
   }
-
+  
   /// <summary>
-  ///   Diagram Reverse Direction
+  /// Diagram Reverse Direction
   /// </summary>
-  public static Boolean? GetReverse(Diagram? openXmlElement)
+  private static Boolean? GetReverse(DocumentFormat.OpenXml.Vml.Office.Diagram openXmlElement)
   {
     return openXmlElement?.Reverse?.Value;
   }
-
-  public static void SetReverse(Diagram? openXmlElement, Boolean? value)
+  
+  private static void SetReverse(DocumentFormat.OpenXml.Vml.Office.Diagram openXmlElement, Boolean? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.Reverse = value;
-      else
-        openXmlElement.Reverse = null;
+    if (value != null)
+      openXmlElement.Reverse = value;
+    else
+      openXmlElement.Reverse = null;
   }
-
+  
   /// <summary>
-  ///   Diagram Automatic Layout
+  /// Diagram Automatic Layout
   /// </summary>
-  public static Boolean? GetAutoLayout(Diagram? openXmlElement)
+  private static Boolean? GetAutoLayout(DocumentFormat.OpenXml.Vml.Office.Diagram openXmlElement)
   {
     return openXmlElement?.AutoLayout?.Value;
   }
-
-  public static void SetAutoLayout(Diagram? openXmlElement, Boolean? value)
+  
+  private static void SetAutoLayout(DocumentFormat.OpenXml.Vml.Office.Diagram openXmlElement, Boolean? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.AutoLayout = value;
-      else
-        openXmlElement.AutoLayout = null;
+    if (value != null)
+      openXmlElement.AutoLayout = value;
+    else
+      openXmlElement.AutoLayout = null;
   }
-
+  
   /// <summary>
-  ///   Diagram Layout X Scale
+  /// Diagram Layout X Scale
   /// </summary>
-  public static Int64? GetScaleX(Diagram? openXmlElement)
+  private static Int64? GetScaleX(DocumentFormat.OpenXml.Vml.Office.Diagram openXmlElement)
   {
-    return openXmlElement?.ScaleX?.Value;
+    return openXmlElement.ScaleX?.Value;
   }
-
-  public static void SetScaleX(Diagram? openXmlElement, Int64? value)
+  
+  private static void SetScaleX(DocumentFormat.OpenXml.Vml.Office.Diagram openXmlElement, Int64? value)
   {
-    if (openXmlElement != null)
-      openXmlElement.ScaleX = value;
+    openXmlElement.ScaleX = value;
   }
-
+  
   /// <summary>
-  ///   Diagram Layout Y Scale
+  /// Diagram Layout Y Scale
   /// </summary>
-  public static Int64? GetScaleY(Diagram? openXmlElement)
+  private static Int64? GetScaleY(DocumentFormat.OpenXml.Vml.Office.Diagram openXmlElement)
   {
-    return openXmlElement?.ScaleY?.Value;
+    return openXmlElement.ScaleY?.Value;
   }
-
-  public static void SetScaleY(Diagram? openXmlElement, Int64? value)
+  
+  private static void SetScaleY(DocumentFormat.OpenXml.Vml.Office.Diagram openXmlElement, Int64? value)
   {
-    if (openXmlElement != null)
-      openXmlElement.ScaleY = value;
+    openXmlElement.ScaleY = value;
   }
-
+  
   /// <summary>
-  ///   Diagram Font Size
+  /// Diagram Font Size
   /// </summary>
-  public static Int64? GetFontSize(Diagram? openXmlElement)
+  private static Int64? GetFontSize(DocumentFormat.OpenXml.Vml.Office.Diagram openXmlElement)
   {
-    return openXmlElement?.FontSize?.Value;
+    return openXmlElement.FontSize?.Value;
   }
-
-  public static void SetFontSize(Diagram? openXmlElement, Int64? value)
+  
+  private static void SetFontSize(DocumentFormat.OpenXml.Vml.Office.Diagram openXmlElement, Int64? value)
   {
-    if (openXmlElement != null)
-      openXmlElement.FontSize = value;
+    openXmlElement.FontSize = value;
   }
-
+  
   /// <summary>
-  ///   Diagram Layout Extents
+  /// Diagram Layout Extents
   /// </summary>
-  public static String? GetConstrainBounds(Diagram? openXmlElement)
+  private static String? GetConstrainBounds(DocumentFormat.OpenXml.Vml.Office.Diagram openXmlElement)
   {
     return openXmlElement?.ConstrainBounds?.Value;
   }
-
-  public static void SetConstrainBounds(Diagram? openXmlElement, String? value)
+  
+  private static void SetConstrainBounds(DocumentFormat.OpenXml.Vml.Office.Diagram openXmlElement, String? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.ConstrainBounds = new StringValue { Value = value };
-      else
-        openXmlElement.ConstrainBounds = null;
+    if (value != null)
+      openXmlElement.ConstrainBounds = new StringValue { Value = value };
+    else
+      openXmlElement.ConstrainBounds = null;
   }
-
+  
   /// <summary>
-  ///   Diagram Base Font Size
+  /// Diagram Base Font Size
   /// </summary>
-  public static Int64? GetBaseTextScale(Diagram? openXmlElement)
+  private static Int64? GetBaseTextScale(DocumentFormat.OpenXml.Vml.Office.Diagram openXmlElement)
   {
-    return openXmlElement?.BaseTextScale?.Value;
+    return openXmlElement.BaseTextScale?.Value;
   }
-
-  public static void SetBaseTextScale(Diagram? openXmlElement, Int64? value)
+  
+  private static void SetBaseTextScale(DocumentFormat.OpenXml.Vml.Office.Diagram openXmlElement, Int64? value)
   {
-    if (openXmlElement != null)
-      openXmlElement.BaseTextScale = value;
+    openXmlElement.BaseTextScale = value;
   }
-
+  
   /// <summary>
-  ///   Diagram Relationship Table.
+  /// Diagram Relationship Table.
   /// </summary>
-  public static RelationTable? GetRelationTable(Diagram? openXmlElement)
+  private static DocumentModel.Vml.RelationTable? GetRelationTable(DocumentFormat.OpenXml.Vml.Office.Diagram openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Vml.Office.RelationTable>();
     if (itemElement != null)
-      return RelationTableConverter.CreateModelElement(itemElement);
+      return DocumentModel.OpenXml.Vml.RelationTableConverter.CreateModelElement(itemElement);
     return null;
   }
-
-  public static void SetRelationTable(Diagram? openXmlElement, RelationTable? value)
+  
+  private static void SetRelationTable(DocumentFormat.OpenXml.Vml.Office.Diagram openXmlElement, DocumentModel.Vml.RelationTable? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Vml.Office.RelationTable>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Vml.Office.RelationTable>();
+      itemElement = DocumentModel.OpenXml.Vml.RelationTableConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Vml.Office.RelationTable>(value);
       if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = RelationTableConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Vml.Office.RelationTable>(value);
-        if (itemElement != null)
-          openXmlElement.AddChild(itemElement);
-      }
+        openXmlElement.AddChild(itemElement);
     }
   }
-
-  public static DocumentModel.Vml.Diagram? CreateModelElement(Diagram? openXmlElement)
+  
+  public static DocumentModel.Vml.Diagram? CreateModelElement(DocumentFormat.OpenXml.Vml.Office.Diagram? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -208,9 +191,9 @@ public static class DiagramConverter
     }
     return null;
   }
-
+  
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Vml.Diagram? value)
-    where OpenXmlElementType : Diagram, new()
+    where OpenXmlElementType: DocumentFormat.OpenXml.Vml.Office.Diagram, new()
   {
     if (value != null)
     {

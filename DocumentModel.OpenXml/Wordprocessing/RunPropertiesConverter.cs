@@ -1,1496 +1,1228 @@
-using DocumentFormat.OpenXml.Office2010.Word;
-using DocumentFormat.OpenXml.Wordprocessing;
-using DocumentModel.Wordprocessing;
-using BorderType = DocumentModel.Wordprocessing.BorderType;
-using Color = DocumentModel.Wordprocessing.Color;
-using EastAsianLayout = DocumentModel.Wordprocessing.EastAsianLayout;
-using FillTextEffect = DocumentModel.Wordprocessing.FillTextEffect;
-using FitText = DocumentModel.Wordprocessing.FitText;
-using Glow = DocumentModel.Wordprocessing.Glow;
-using LanguageType = DocumentModel.Wordprocessing.LanguageType;
-using NumberingFormat = DocumentFormat.OpenXml.Office2010.Word.NumberingFormat;
-using Properties3D = DocumentModel.Wordprocessing.Properties3D;
-using Reflection = DocumentModel.Wordprocessing.Reflection;
-using RunFonts = DocumentModel.Wordprocessing.RunFonts;
-using RunProperties = DocumentFormat.OpenXml.Wordprocessing.RunProperties;
-using RunPropertiesChange = DocumentModel.Wordprocessing.RunPropertiesChange;
-using Scene3D = DocumentModel.Wordprocessing.Scene3D;
-using Shading = DocumentModel.Wordprocessing.Shading;
-using Shadow = DocumentFormat.OpenXml.Wordprocessing.Shadow;
-using StylisticSets = DocumentModel.Wordprocessing.StylisticSets;
-using TextOutlineEffect = DocumentModel.Wordprocessing.TextOutlineEffect;
-using Underline = DocumentModel.Wordprocessing.Underline;
-
 namespace DocumentModel.OpenXml.Wordprocessing;
 
 /// <summary>
-///   Run Properties.
+/// Run Properties.
 /// </summary>
 public static class RunPropertiesConverter
 {
   /// <summary>
-  ///   RunStyle.
+  /// RunStyle.
   /// </summary>
-  public static String? GetRunStyle(RunProperties? openXmlElement)
+  private static String? GetRunStyle(DocumentFormat.OpenXml.Wordprocessing.RunProperties openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<RunStyle>();
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.RunStyle>();
     if (itemElement != null)
       return itemElement.Val?.Value;
     return null;
   }
-
-  public static void SetRunStyle(RunProperties? openXmlElement, String? value)
+  
+  private static void SetRunStyle(DocumentFormat.OpenXml.Wordprocessing.RunProperties openXmlElement, String? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.RunStyle>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<RunStyle>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = new RunStyle { Val = value };
-        openXmlElement.AddChild(itemElement);
-      }
+      itemElement = new DocumentFormat.OpenXml.Wordprocessing.RunStyle { Val = value };
+      openXmlElement.AddChild(itemElement);
     }
   }
-
+  
   /// <summary>
-  ///   RunFonts.
+  /// RunFonts.
   /// </summary>
-  public static RunFonts? GetRunFonts(RunProperties? openXmlElement)
+  private static DocumentModel.Wordprocessing.RunFonts? GetRunFonts(DocumentFormat.OpenXml.Wordprocessing.RunProperties openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.RunFonts>();
     if (itemElement != null)
-      return RunFontsConverter.CreateModelElement(itemElement);
+      return DocumentModel.OpenXml.Wordprocessing.RunFontsConverter.CreateModelElement(itemElement);
     return null;
   }
-
-  public static void SetRunFonts(RunProperties? openXmlElement, RunFonts? value)
+  
+  private static void SetRunFonts(DocumentFormat.OpenXml.Wordprocessing.RunProperties openXmlElement, DocumentModel.Wordprocessing.RunFonts? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.RunFonts>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.RunFonts>();
+      itemElement = DocumentModel.OpenXml.Wordprocessing.RunFontsConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.RunFonts>(value);
+      if (itemElement != null)
+        openXmlElement.AddChild(itemElement);
+    }
+  }
+  
+  /// <summary>
+  /// Bold.
+  /// </summary>
+  private static Boolean? GetBold(DocumentFormat.OpenXml.Wordprocessing.RunProperties openXmlElement)
+  {
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.Bold>();
+    return itemElement != null;
+  }
+  
+  private static void SetBold(DocumentFormat.OpenXml.Wordprocessing.RunProperties openXmlElement, Boolean? value)
+  {
+    if (value == false)
+    {
+      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.Bold>();
       if (itemElement != null)
         itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = RunFontsConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.RunFonts>(value);
-        if (itemElement != null)
-          openXmlElement.AddChild(itemElement);
-      }
+    }
+    if (value == true)
+    {
+      var itemElement = new DocumentFormat.OpenXml.Wordprocessing.Bold();
+      openXmlElement.AddChild(itemElement);
     }
   }
-
+  
   /// <summary>
-  ///   Bold.
+  /// BoldComplexScript.
   /// </summary>
-  public static Boolean? GetBold(RunProperties? openXmlElement)
+  private static Boolean? GetBoldComplexScript(DocumentFormat.OpenXml.Wordprocessing.RunProperties openXmlElement)
   {
-    if (openXmlElement != null)
-    {
-      var itemElement = openXmlElement.GetFirstChild<Bold>();
-      return itemElement != null;
-    }
-    return null;
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.BoldComplexScript>();
+    return itemElement != null;
   }
-
-  public static void SetBold(RunProperties? openXmlElement, Boolean? value)
+  
+  private static void SetBoldComplexScript(DocumentFormat.OpenXml.Wordprocessing.RunProperties openXmlElement, Boolean? value)
   {
-    if (openXmlElement != null)
+    if (value == false)
     {
-      if (value == false)
-      {
-        var itemElement = openXmlElement.GetFirstChild<Bold>();
-        if (itemElement != null)
-          itemElement.Remove();
-      }
-      if (value == true)
-      {
-        var itemElement = new Bold();
-        openXmlElement.AddChild(itemElement);
-      }
+      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.BoldComplexScript>();
+      if (itemElement != null)
+        itemElement.Remove();
+    }
+    if (value == true)
+    {
+      var itemElement = new DocumentFormat.OpenXml.Wordprocessing.BoldComplexScript();
+      openXmlElement.AddChild(itemElement);
     }
   }
-
+  
   /// <summary>
-  ///   BoldComplexScript.
+  /// Italic.
   /// </summary>
-  public static Boolean? GetBoldComplexScript(RunProperties? openXmlElement)
+  private static Boolean? GetItalic(DocumentFormat.OpenXml.Wordprocessing.RunProperties openXmlElement)
   {
-    if (openXmlElement != null)
-    {
-      var itemElement = openXmlElement.GetFirstChild<BoldComplexScript>();
-      return itemElement != null;
-    }
-    return null;
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.Italic>();
+    return itemElement != null;
   }
-
-  public static void SetBoldComplexScript(RunProperties? openXmlElement, Boolean? value)
+  
+  private static void SetItalic(DocumentFormat.OpenXml.Wordprocessing.RunProperties openXmlElement, Boolean? value)
   {
-    if (openXmlElement != null)
+    if (value == false)
     {
-      if (value == false)
-      {
-        var itemElement = openXmlElement.GetFirstChild<BoldComplexScript>();
-        if (itemElement != null)
-          itemElement.Remove();
-      }
-      if (value == true)
-      {
-        var itemElement = new BoldComplexScript();
-        openXmlElement.AddChild(itemElement);
-      }
+      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.Italic>();
+      if (itemElement != null)
+        itemElement.Remove();
+    }
+    if (value == true)
+    {
+      var itemElement = new DocumentFormat.OpenXml.Wordprocessing.Italic();
+      openXmlElement.AddChild(itemElement);
     }
   }
-
+  
   /// <summary>
-  ///   Italic.
+  /// ItalicComplexScript.
   /// </summary>
-  public static Boolean? GetItalic(RunProperties? openXmlElement)
+  private static Boolean? GetItalicComplexScript(DocumentFormat.OpenXml.Wordprocessing.RunProperties openXmlElement)
   {
-    if (openXmlElement != null)
-    {
-      var itemElement = openXmlElement.GetFirstChild<Italic>();
-      return itemElement != null;
-    }
-    return null;
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.ItalicComplexScript>();
+    return itemElement != null;
   }
-
-  public static void SetItalic(RunProperties? openXmlElement, Boolean? value)
+  
+  private static void SetItalicComplexScript(DocumentFormat.OpenXml.Wordprocessing.RunProperties openXmlElement, Boolean? value)
   {
-    if (openXmlElement != null)
+    if (value == false)
     {
-      if (value == false)
-      {
-        var itemElement = openXmlElement.GetFirstChild<Italic>();
-        if (itemElement != null)
-          itemElement.Remove();
-      }
-      if (value == true)
-      {
-        var itemElement = new Italic();
-        openXmlElement.AddChild(itemElement);
-      }
+      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.ItalicComplexScript>();
+      if (itemElement != null)
+        itemElement.Remove();
+    }
+    if (value == true)
+    {
+      var itemElement = new DocumentFormat.OpenXml.Wordprocessing.ItalicComplexScript();
+      openXmlElement.AddChild(itemElement);
     }
   }
-
+  
   /// <summary>
-  ///   ItalicComplexScript.
+  /// Caps.
   /// </summary>
-  public static Boolean? GetItalicComplexScript(RunProperties? openXmlElement)
+  private static Boolean? GetCaps(DocumentFormat.OpenXml.Wordprocessing.RunProperties openXmlElement)
   {
-    if (openXmlElement != null)
-    {
-      var itemElement = openXmlElement.GetFirstChild<ItalicComplexScript>();
-      return itemElement != null;
-    }
-    return null;
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.Caps>();
+    return itemElement != null;
   }
-
-  public static void SetItalicComplexScript(RunProperties? openXmlElement, Boolean? value)
+  
+  private static void SetCaps(DocumentFormat.OpenXml.Wordprocessing.RunProperties openXmlElement, Boolean? value)
   {
-    if (openXmlElement != null)
+    if (value == false)
     {
-      if (value == false)
-      {
-        var itemElement = openXmlElement.GetFirstChild<ItalicComplexScript>();
-        if (itemElement != null)
-          itemElement.Remove();
-      }
-      if (value == true)
-      {
-        var itemElement = new ItalicComplexScript();
-        openXmlElement.AddChild(itemElement);
-      }
+      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.Caps>();
+      if (itemElement != null)
+        itemElement.Remove();
+    }
+    if (value == true)
+    {
+      var itemElement = new DocumentFormat.OpenXml.Wordprocessing.Caps();
+      openXmlElement.AddChild(itemElement);
     }
   }
-
+  
   /// <summary>
-  ///   Caps.
+  /// SmallCaps.
   /// </summary>
-  public static Boolean? GetCaps(RunProperties? openXmlElement)
+  private static Boolean? GetSmallCaps(DocumentFormat.OpenXml.Wordprocessing.RunProperties openXmlElement)
   {
-    if (openXmlElement != null)
-    {
-      var itemElement = openXmlElement.GetFirstChild<Caps>();
-      return itemElement != null;
-    }
-    return null;
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.SmallCaps>();
+    return itemElement != null;
   }
-
-  public static void SetCaps(RunProperties? openXmlElement, Boolean? value)
+  
+  private static void SetSmallCaps(DocumentFormat.OpenXml.Wordprocessing.RunProperties openXmlElement, Boolean? value)
   {
-    if (openXmlElement != null)
+    if (value == false)
     {
-      if (value == false)
-      {
-        var itemElement = openXmlElement.GetFirstChild<Caps>();
-        if (itemElement != null)
-          itemElement.Remove();
-      }
-      if (value == true)
-      {
-        var itemElement = new Caps();
-        openXmlElement.AddChild(itemElement);
-      }
+      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.SmallCaps>();
+      if (itemElement != null)
+        itemElement.Remove();
+    }
+    if (value == true)
+    {
+      var itemElement = new DocumentFormat.OpenXml.Wordprocessing.SmallCaps();
+      openXmlElement.AddChild(itemElement);
     }
   }
-
+  
   /// <summary>
-  ///   SmallCaps.
+  /// Strike.
   /// </summary>
-  public static Boolean? GetSmallCaps(RunProperties? openXmlElement)
+  private static Boolean? GetStrike(DocumentFormat.OpenXml.Wordprocessing.RunProperties openXmlElement)
   {
-    if (openXmlElement != null)
-    {
-      var itemElement = openXmlElement.GetFirstChild<SmallCaps>();
-      return itemElement != null;
-    }
-    return null;
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.Strike>();
+    return itemElement != null;
   }
-
-  public static void SetSmallCaps(RunProperties? openXmlElement, Boolean? value)
+  
+  private static void SetStrike(DocumentFormat.OpenXml.Wordprocessing.RunProperties openXmlElement, Boolean? value)
   {
-    if (openXmlElement != null)
+    if (value == false)
     {
-      if (value == false)
-      {
-        var itemElement = openXmlElement.GetFirstChild<SmallCaps>();
-        if (itemElement != null)
-          itemElement.Remove();
-      }
-      if (value == true)
-      {
-        var itemElement = new SmallCaps();
-        openXmlElement.AddChild(itemElement);
-      }
+      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.Strike>();
+      if (itemElement != null)
+        itemElement.Remove();
+    }
+    if (value == true)
+    {
+      var itemElement = new DocumentFormat.OpenXml.Wordprocessing.Strike();
+      openXmlElement.AddChild(itemElement);
     }
   }
-
+  
   /// <summary>
-  ///   Strike.
+  /// DoubleStrike.
   /// </summary>
-  public static Boolean? GetStrike(RunProperties? openXmlElement)
+  private static Boolean? GetDoubleStrike(DocumentFormat.OpenXml.Wordprocessing.RunProperties openXmlElement)
   {
-    if (openXmlElement != null)
-    {
-      var itemElement = openXmlElement.GetFirstChild<Strike>();
-      return itemElement != null;
-    }
-    return null;
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.DoubleStrike>();
+    return itemElement != null;
   }
-
-  public static void SetStrike(RunProperties? openXmlElement, Boolean? value)
+  
+  private static void SetDoubleStrike(DocumentFormat.OpenXml.Wordprocessing.RunProperties openXmlElement, Boolean? value)
   {
-    if (openXmlElement != null)
+    if (value == false)
     {
-      if (value == false)
-      {
-        var itemElement = openXmlElement.GetFirstChild<Strike>();
-        if (itemElement != null)
-          itemElement.Remove();
-      }
-      if (value == true)
-      {
-        var itemElement = new Strike();
-        openXmlElement.AddChild(itemElement);
-      }
+      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.DoubleStrike>();
+      if (itemElement != null)
+        itemElement.Remove();
+    }
+    if (value == true)
+    {
+      var itemElement = new DocumentFormat.OpenXml.Wordprocessing.DoubleStrike();
+      openXmlElement.AddChild(itemElement);
     }
   }
-
+  
   /// <summary>
-  ///   DoubleStrike.
+  /// Outline.
   /// </summary>
-  public static Boolean? GetDoubleStrike(RunProperties? openXmlElement)
+  private static Boolean? GetOutline(DocumentFormat.OpenXml.Wordprocessing.RunProperties openXmlElement)
   {
-    if (openXmlElement != null)
-    {
-      var itemElement = openXmlElement.GetFirstChild<DoubleStrike>();
-      return itemElement != null;
-    }
-    return null;
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.Outline>();
+    return itemElement != null;
   }
-
-  public static void SetDoubleStrike(RunProperties? openXmlElement, Boolean? value)
+  
+  private static void SetOutline(DocumentFormat.OpenXml.Wordprocessing.RunProperties openXmlElement, Boolean? value)
   {
-    if (openXmlElement != null)
+    if (value == false)
     {
-      if (value == false)
-      {
-        var itemElement = openXmlElement.GetFirstChild<DoubleStrike>();
-        if (itemElement != null)
-          itemElement.Remove();
-      }
-      if (value == true)
-      {
-        var itemElement = new DoubleStrike();
-        openXmlElement.AddChild(itemElement);
-      }
+      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.Outline>();
+      if (itemElement != null)
+        itemElement.Remove();
+    }
+    if (value == true)
+    {
+      var itemElement = new DocumentFormat.OpenXml.Wordprocessing.Outline();
+      openXmlElement.AddChild(itemElement);
     }
   }
-
+  
   /// <summary>
-  ///   Outline.
+  /// Shadow.
   /// </summary>
-  public static Boolean? GetOutline(RunProperties? openXmlElement)
+  private static Boolean? GetShadow(DocumentFormat.OpenXml.Wordprocessing.RunProperties openXmlElement)
   {
-    if (openXmlElement != null)
-    {
-      var itemElement = openXmlElement.GetFirstChild<Outline>();
-      return itemElement != null;
-    }
-    return null;
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.Shadow>();
+    return itemElement != null;
   }
-
-  public static void SetOutline(RunProperties? openXmlElement, Boolean? value)
+  
+  private static void SetShadow(DocumentFormat.OpenXml.Wordprocessing.RunProperties openXmlElement, Boolean? value)
   {
-    if (openXmlElement != null)
+    if (value == false)
     {
-      if (value == false)
-      {
-        var itemElement = openXmlElement.GetFirstChild<Outline>();
-        if (itemElement != null)
-          itemElement.Remove();
-      }
-      if (value == true)
-      {
-        var itemElement = new Outline();
-        openXmlElement.AddChild(itemElement);
-      }
+      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.Shadow>();
+      if (itemElement != null)
+        itemElement.Remove();
+    }
+    if (value == true)
+    {
+      var itemElement = new DocumentFormat.OpenXml.Wordprocessing.Shadow();
+      openXmlElement.AddChild(itemElement);
     }
   }
-
+  
   /// <summary>
-  ///   Shadow.
+  /// Emboss.
   /// </summary>
-  public static Boolean? GetShadow(RunProperties? openXmlElement)
+  private static Boolean? GetEmboss(DocumentFormat.OpenXml.Wordprocessing.RunProperties openXmlElement)
   {
-    if (openXmlElement != null)
-    {
-      var itemElement = openXmlElement.GetFirstChild<Shadow>();
-      return itemElement != null;
-    }
-    return null;
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.Emboss>();
+    return itemElement != null;
   }
-
-  public static void SetShadow(RunProperties? openXmlElement, Boolean? value)
+  
+  private static void SetEmboss(DocumentFormat.OpenXml.Wordprocessing.RunProperties openXmlElement, Boolean? value)
   {
-    if (openXmlElement != null)
+    if (value == false)
     {
-      if (value == false)
-      {
-        var itemElement = openXmlElement.GetFirstChild<Shadow>();
-        if (itemElement != null)
-          itemElement.Remove();
-      }
-      if (value == true)
-      {
-        var itemElement = new Shadow();
-        openXmlElement.AddChild(itemElement);
-      }
+      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.Emboss>();
+      if (itemElement != null)
+        itemElement.Remove();
+    }
+    if (value == true)
+    {
+      var itemElement = new DocumentFormat.OpenXml.Wordprocessing.Emboss();
+      openXmlElement.AddChild(itemElement);
     }
   }
-
+  
   /// <summary>
-  ///   Emboss.
+  /// Imprint.
   /// </summary>
-  public static Boolean? GetEmboss(RunProperties? openXmlElement)
+  private static Boolean? GetImprint(DocumentFormat.OpenXml.Wordprocessing.RunProperties openXmlElement)
   {
-    if (openXmlElement != null)
-    {
-      var itemElement = openXmlElement.GetFirstChild<Emboss>();
-      return itemElement != null;
-    }
-    return null;
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.Imprint>();
+    return itemElement != null;
   }
-
-  public static void SetEmboss(RunProperties? openXmlElement, Boolean? value)
+  
+  private static void SetImprint(DocumentFormat.OpenXml.Wordprocessing.RunProperties openXmlElement, Boolean? value)
   {
-    if (openXmlElement != null)
+    if (value == false)
     {
-      if (value == false)
-      {
-        var itemElement = openXmlElement.GetFirstChild<Emboss>();
-        if (itemElement != null)
-          itemElement.Remove();
-      }
-      if (value == true)
-      {
-        var itemElement = new Emboss();
-        openXmlElement.AddChild(itemElement);
-      }
+      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.Imprint>();
+      if (itemElement != null)
+        itemElement.Remove();
+    }
+    if (value == true)
+    {
+      var itemElement = new DocumentFormat.OpenXml.Wordprocessing.Imprint();
+      openXmlElement.AddChild(itemElement);
     }
   }
-
+  
   /// <summary>
-  ///   Imprint.
+  /// NoProof.
   /// </summary>
-  public static Boolean? GetImprint(RunProperties? openXmlElement)
+  private static Boolean? GetNoProof(DocumentFormat.OpenXml.Wordprocessing.RunProperties openXmlElement)
   {
-    if (openXmlElement != null)
-    {
-      var itemElement = openXmlElement.GetFirstChild<Imprint>();
-      return itemElement != null;
-    }
-    return null;
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.NoProof>();
+    return itemElement != null;
   }
-
-  public static void SetImprint(RunProperties? openXmlElement, Boolean? value)
+  
+  private static void SetNoProof(DocumentFormat.OpenXml.Wordprocessing.RunProperties openXmlElement, Boolean? value)
   {
-    if (openXmlElement != null)
+    if (value == false)
     {
-      if (value == false)
-      {
-        var itemElement = openXmlElement.GetFirstChild<Imprint>();
-        if (itemElement != null)
-          itemElement.Remove();
-      }
-      if (value == true)
-      {
-        var itemElement = new Imprint();
-        openXmlElement.AddChild(itemElement);
-      }
+      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.NoProof>();
+      if (itemElement != null)
+        itemElement.Remove();
+    }
+    if (value == true)
+    {
+      var itemElement = new DocumentFormat.OpenXml.Wordprocessing.NoProof();
+      openXmlElement.AddChild(itemElement);
     }
   }
-
+  
   /// <summary>
-  ///   NoProof.
+  /// SnapToGrid.
   /// </summary>
-  public static Boolean? GetNoProof(RunProperties? openXmlElement)
+  private static Boolean? GetSnapToGrid(DocumentFormat.OpenXml.Wordprocessing.RunProperties openXmlElement)
   {
-    if (openXmlElement != null)
-    {
-      var itemElement = openXmlElement.GetFirstChild<NoProof>();
-      return itemElement != null;
-    }
-    return null;
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.SnapToGrid>();
+    return itemElement != null;
   }
-
-  public static void SetNoProof(RunProperties? openXmlElement, Boolean? value)
+  
+  private static void SetSnapToGrid(DocumentFormat.OpenXml.Wordprocessing.RunProperties openXmlElement, Boolean? value)
   {
-    if (openXmlElement != null)
+    if (value == false)
     {
-      if (value == false)
-      {
-        var itemElement = openXmlElement.GetFirstChild<NoProof>();
-        if (itemElement != null)
-          itemElement.Remove();
-      }
-      if (value == true)
-      {
-        var itemElement = new NoProof();
-        openXmlElement.AddChild(itemElement);
-      }
+      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.SnapToGrid>();
+      if (itemElement != null)
+        itemElement.Remove();
+    }
+    if (value == true)
+    {
+      var itemElement = new DocumentFormat.OpenXml.Wordprocessing.SnapToGrid();
+      openXmlElement.AddChild(itemElement);
     }
   }
-
+  
   /// <summary>
-  ///   SnapToGrid.
+  /// Vanish.
   /// </summary>
-  public static Boolean? GetSnapToGrid(RunProperties? openXmlElement)
+  private static Boolean? GetVanish(DocumentFormat.OpenXml.Wordprocessing.RunProperties openXmlElement)
   {
-    if (openXmlElement != null)
-    {
-      var itemElement = openXmlElement.GetFirstChild<SnapToGrid>();
-      return itemElement != null;
-    }
-    return null;
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.Vanish>();
+    return itemElement != null;
   }
-
-  public static void SetSnapToGrid(RunProperties? openXmlElement, Boolean? value)
+  
+  private static void SetVanish(DocumentFormat.OpenXml.Wordprocessing.RunProperties openXmlElement, Boolean? value)
   {
-    if (openXmlElement != null)
+    if (value == false)
     {
-      if (value == false)
-      {
-        var itemElement = openXmlElement.GetFirstChild<SnapToGrid>();
-        if (itemElement != null)
-          itemElement.Remove();
-      }
-      if (value == true)
-      {
-        var itemElement = new SnapToGrid();
-        openXmlElement.AddChild(itemElement);
-      }
+      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.Vanish>();
+      if (itemElement != null)
+        itemElement.Remove();
+    }
+    if (value == true)
+    {
+      var itemElement = new DocumentFormat.OpenXml.Wordprocessing.Vanish();
+      openXmlElement.AddChild(itemElement);
     }
   }
-
+  
   /// <summary>
-  ///   Vanish.
+  /// WebHidden.
   /// </summary>
-  public static Boolean? GetVanish(RunProperties? openXmlElement)
+  private static Boolean? GetWebHidden(DocumentFormat.OpenXml.Wordprocessing.RunProperties openXmlElement)
   {
-    if (openXmlElement != null)
-    {
-      var itemElement = openXmlElement.GetFirstChild<Vanish>();
-      return itemElement != null;
-    }
-    return null;
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.WebHidden>();
+    return itemElement != null;
   }
-
-  public static void SetVanish(RunProperties? openXmlElement, Boolean? value)
+  
+  private static void SetWebHidden(DocumentFormat.OpenXml.Wordprocessing.RunProperties openXmlElement, Boolean? value)
   {
-    if (openXmlElement != null)
+    if (value == false)
     {
-      if (value == false)
-      {
-        var itemElement = openXmlElement.GetFirstChild<Vanish>();
-        if (itemElement != null)
-          itemElement.Remove();
-      }
-      if (value == true)
-      {
-        var itemElement = new Vanish();
-        openXmlElement.AddChild(itemElement);
-      }
+      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.WebHidden>();
+      if (itemElement != null)
+        itemElement.Remove();
+    }
+    if (value == true)
+    {
+      var itemElement = new DocumentFormat.OpenXml.Wordprocessing.WebHidden();
+      openXmlElement.AddChild(itemElement);
     }
   }
-
+  
   /// <summary>
-  ///   WebHidden.
+  /// Color.
   /// </summary>
-  public static Boolean? GetWebHidden(RunProperties? openXmlElement)
-  {
-    if (openXmlElement != null)
-    {
-      var itemElement = openXmlElement.GetFirstChild<WebHidden>();
-      return itemElement != null;
-    }
-    return null;
-  }
-
-  public static void SetWebHidden(RunProperties? openXmlElement, Boolean? value)
-  {
-    if (openXmlElement != null)
-    {
-      if (value == false)
-      {
-        var itemElement = openXmlElement.GetFirstChild<WebHidden>();
-        if (itemElement != null)
-          itemElement.Remove();
-      }
-      if (value == true)
-      {
-        var itemElement = new WebHidden();
-        openXmlElement.AddChild(itemElement);
-      }
-    }
-  }
-
-  /// <summary>
-  ///   Color.
-  /// </summary>
-  public static Color? GetColor(RunProperties? openXmlElement)
+  private static DocumentModel.Wordprocessing.Color? GetColor(DocumentFormat.OpenXml.Wordprocessing.RunProperties openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.Color>();
     if (itemElement != null)
-      return ColorConverter.CreateModelElement(itemElement);
+      return DocumentModel.OpenXml.Wordprocessing.ColorConverter.CreateModelElement(itemElement);
     return null;
   }
-
-  public static void SetColor(RunProperties? openXmlElement, Color? value)
+  
+  private static void SetColor(DocumentFormat.OpenXml.Wordprocessing.RunProperties openXmlElement, DocumentModel.Wordprocessing.Color? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.Color>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.Color>();
+      itemElement = DocumentModel.OpenXml.Wordprocessing.ColorConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.Color>(value);
       if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = ColorConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.Color>(value);
-        if (itemElement != null)
-          openXmlElement.AddChild(itemElement);
-      }
+        openXmlElement.AddChild(itemElement);
     }
   }
-
+  
   /// <summary>
-  ///   Spacing.
+  /// Spacing.
   /// </summary>
-  public static Int32? GetSpacing(RunProperties? openXmlElement)
+  private static Int32? GetSpacing(DocumentFormat.OpenXml.Wordprocessing.RunProperties openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<Spacing>();
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.Spacing>();
     if (itemElement != null)
       return itemElement.Val?.Value;
     return null;
   }
-
-  public static void SetSpacing(RunProperties? openXmlElement, Int32? value)
+  
+  private static void SetSpacing(DocumentFormat.OpenXml.Wordprocessing.RunProperties openXmlElement, Int32? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.Spacing>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<Spacing>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = new Spacing { Val = value };
-        openXmlElement.AddChild(itemElement);
-      }
+      itemElement = new DocumentFormat.OpenXml.Wordprocessing.Spacing{ Val = value };
+      openXmlElement.AddChild(itemElement);
     }
   }
-
+  
   /// <summary>
-  ///   CharacterScale.
+  /// CharacterScale.
   /// </summary>
-  public static Int64? GetCharacterScale(RunProperties? openXmlElement)
+  private static Int64? GetCharacterScale(DocumentFormat.OpenXml.Wordprocessing.RunProperties openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<CharacterScale>();
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.CharacterScale>();
     if (itemElement != null)
       return itemElement.Val?.Value;
     return null;
   }
-
-  public static void SetCharacterScale(RunProperties? openXmlElement, Int64? value)
+  
+  private static void SetCharacterScale(DocumentFormat.OpenXml.Wordprocessing.RunProperties openXmlElement, Int64? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.CharacterScale>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<CharacterScale>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = new CharacterScale { Val = value };
-        openXmlElement.AddChild(itemElement);
-      }
+      itemElement = new DocumentFormat.OpenXml.Wordprocessing.CharacterScale{ Val = value };
+      openXmlElement.AddChild(itemElement);
     }
   }
-
+  
   /// <summary>
-  ///   Kern.
+  /// Kern.
   /// </summary>
-  public static UInt32? GetKern(RunProperties? openXmlElement)
+  private static UInt32? GetKern(DocumentFormat.OpenXml.Wordprocessing.RunProperties openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<Kern>();
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.Kern>();
     if (itemElement != null)
       return itemElement.Val?.Value;
     return null;
   }
-
-  public static void SetKern(RunProperties? openXmlElement, UInt32? value)
+  
+  private static void SetKern(DocumentFormat.OpenXml.Wordprocessing.RunProperties openXmlElement, UInt32? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.Kern>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<Kern>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = new Kern { Val = value };
-        openXmlElement.AddChild(itemElement);
-      }
+      itemElement = new DocumentFormat.OpenXml.Wordprocessing.Kern{ Val = value };
+      openXmlElement.AddChild(itemElement);
     }
   }
-
+  
   /// <summary>
-  ///   Position.
+  /// Position.
   /// </summary>
-  public static String? GetPosition(RunProperties? openXmlElement)
+  private static String? GetPosition(DocumentFormat.OpenXml.Wordprocessing.RunProperties openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<Position>();
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.Position>();
     if (itemElement != null)
       return itemElement.Val?.Value;
     return null;
   }
-
-  public static void SetPosition(RunProperties? openXmlElement, String? value)
+  
+  private static void SetPosition(DocumentFormat.OpenXml.Wordprocessing.RunProperties openXmlElement, String? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.Position>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<Position>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = new Position { Val = value };
-        openXmlElement.AddChild(itemElement);
-      }
+      itemElement = new DocumentFormat.OpenXml.Wordprocessing.Position { Val = value };
+      openXmlElement.AddChild(itemElement);
     }
   }
-
+  
   /// <summary>
-  ///   FontSize.
+  /// FontSize.
   /// </summary>
-  public static String? GetFontSize(RunProperties? openXmlElement)
+  private static String? GetFontSize(DocumentFormat.OpenXml.Wordprocessing.RunProperties openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<FontSize>();
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.FontSize>();
     if (itemElement != null)
       return itemElement.Val?.Value;
     return null;
   }
-
-  public static void SetFontSize(RunProperties? openXmlElement, String? value)
+  
+  private static void SetFontSize(DocumentFormat.OpenXml.Wordprocessing.RunProperties openXmlElement, String? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.FontSize>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<FontSize>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = new FontSize { Val = value };
-        openXmlElement.AddChild(itemElement);
-      }
+      itemElement = new DocumentFormat.OpenXml.Wordprocessing.FontSize { Val = value };
+      openXmlElement.AddChild(itemElement);
     }
   }
-
+  
   /// <summary>
-  ///   FontSizeComplexScript.
+  /// FontSizeComplexScript.
   /// </summary>
-  public static String? GetFontSizeComplexScript(RunProperties? openXmlElement)
+  private static String? GetFontSizeComplexScript(DocumentFormat.OpenXml.Wordprocessing.RunProperties openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<FontSizeComplexScript>();
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.FontSizeComplexScript>();
     if (itemElement != null)
       return itemElement.Val?.Value;
     return null;
   }
-
-  public static void SetFontSizeComplexScript(RunProperties? openXmlElement, String? value)
+  
+  private static void SetFontSizeComplexScript(DocumentFormat.OpenXml.Wordprocessing.RunProperties openXmlElement, String? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.FontSizeComplexScript>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<FontSizeComplexScript>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = new FontSizeComplexScript { Val = value };
-        openXmlElement.AddChild(itemElement);
-      }
+      itemElement = new DocumentFormat.OpenXml.Wordprocessing.FontSizeComplexScript { Val = value };
+      openXmlElement.AddChild(itemElement);
     }
   }
-
+  
   /// <summary>
-  ///   Highlight.
+  /// Highlight.
   /// </summary>
-  public static HighlightColorKind? GetHighlight(RunProperties? openXmlElement)
+  private static DocumentModel.Wordprocessing.HighlightColorKind? GetHighlight(DocumentFormat.OpenXml.Wordprocessing.RunProperties openXmlElement)
   {
-    if (openXmlElement != null)
-    {
-      var itemElement = openXmlElement.GetFirstChild<Highlight>();
-      if (itemElement?.Val?.Value != null) return EnumValueConverter.GetValue<HighlightColorValues, HighlightColorKind>(itemElement.Val.Value);
-    }
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.Highlight>();
+    if (itemElement?.Val?.Value != null)
+      return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Wordprocessing.HighlightColorValues, DocumentModel.Wordprocessing.HighlightColorKind>(itemElement.Val.Value);
     return null;
   }
-
-  public static void SetHighlight(RunProperties? openXmlElement, HighlightColorKind? value)
+  
+  private static void SetHighlight(DocumentFormat.OpenXml.Wordprocessing.RunProperties openXmlElement, DocumentModel.Wordprocessing.HighlightColorKind? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.Highlight>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<Highlight>();
+      itemElement = EnumValueConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.Highlight, DocumentFormat.OpenXml.Wordprocessing.HighlightColorValues, DocumentModel.Wordprocessing.HighlightColorKind>(value);
       if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = EnumValueConverter.CreateOpenXmlElement<Highlight, HighlightColorValues, HighlightColorKind>(value);
-        if (itemElement != null)
-          openXmlElement.AddChild(itemElement);
-      }
+        openXmlElement.AddChild(itemElement);
     }
   }
-
+  
   /// <summary>
-  ///   Underline.
+  /// Underline.
   /// </summary>
-  public static Underline? GetUnderline(RunProperties? openXmlElement)
+  private static DocumentModel.Wordprocessing.Underline? GetUnderline(DocumentFormat.OpenXml.Wordprocessing.RunProperties openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.Underline>();
     if (itemElement != null)
-      return UnderlineConverter.CreateModelElement(itemElement);
+      return DocumentModel.OpenXml.Wordprocessing.UnderlineConverter.CreateModelElement(itemElement);
     return null;
   }
-
-  public static void SetUnderline(RunProperties? openXmlElement, Underline? value)
+  
+  private static void SetUnderline(DocumentFormat.OpenXml.Wordprocessing.RunProperties openXmlElement, DocumentModel.Wordprocessing.Underline? value)
   {
-    if (openXmlElement != null)
-    {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.Underline>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = UnderlineConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.Underline>(value);
-        if (itemElement != null)
-          openXmlElement.AddChild(itemElement);
-      }
-    }
-  }
-
-  /// <summary>
-  ///   TextEffect.
-  /// </summary>
-  public static TextEffectKind? GetTextEffect(RunProperties? openXmlElement)
-  {
-    if (openXmlElement != null)
-    {
-      var itemElement = openXmlElement.GetFirstChild<TextEffect>();
-      if (itemElement?.Val?.Value != null) return EnumValueConverter.GetValue<TextEffectValues, TextEffectKind>(itemElement.Val.Value);
-    }
-    return null;
-  }
-
-  public static void SetTextEffect(RunProperties? openXmlElement, TextEffectKind? value)
-  {
-    if (openXmlElement != null)
-    {
-      var itemElement = openXmlElement.GetFirstChild<TextEffect>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = EnumValueConverter.CreateOpenXmlElement<TextEffect, TextEffectValues, TextEffectKind>(value);
-        if (itemElement != null)
-          openXmlElement.AddChild(itemElement);
-      }
-    }
-  }
-
-  /// <summary>
-  ///   Border.
-  /// </summary>
-  public static BorderType? GetBorder(RunProperties? openXmlElement)
-  {
-    var itemElement = openXmlElement?.GetFirstChild<Border>();
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.Underline>();
     if (itemElement != null)
-      return BorderTypeConverter.CreateModelElement(itemElement);
-    return null;
-  }
-
-  public static void SetBorder(RunProperties? openXmlElement, BorderType? value)
-  {
-    if (openXmlElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<Border>();
+      itemElement = DocumentModel.OpenXml.Wordprocessing.UnderlineConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.Underline>(value);
       if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = BorderTypeConverter.CreateOpenXmlElement<Border>(value);
-        if (itemElement != null)
-          openXmlElement.AddChild(itemElement);
-      }
+        openXmlElement.AddChild(itemElement);
     }
   }
-
+  
   /// <summary>
-  ///   Shading.
+  /// TextEffect.
   /// </summary>
-  public static Shading? GetShading(RunProperties? openXmlElement)
+  private static DocumentModel.Wordprocessing.TextEffectKind? GetTextEffect(DocumentFormat.OpenXml.Wordprocessing.RunProperties openXmlElement)
+  {
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.TextEffect>();
+    if (itemElement?.Val?.Value != null)
+      return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Wordprocessing.TextEffectValues, DocumentModel.Wordprocessing.TextEffectKind>(itemElement.Val.Value);
+    return null;
+  }
+  
+  private static void SetTextEffect(DocumentFormat.OpenXml.Wordprocessing.RunProperties openXmlElement, DocumentModel.Wordprocessing.TextEffectKind? value)
+  {
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.TextEffect>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
+    {
+      itemElement = EnumValueConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.TextEffect, DocumentFormat.OpenXml.Wordprocessing.TextEffectValues, DocumentModel.Wordprocessing.TextEffectKind>(value);
+      if (itemElement != null)
+        openXmlElement.AddChild(itemElement);
+    }
+  }
+  
+  /// <summary>
+  /// Border.
+  /// </summary>
+  private static DocumentModel.Wordprocessing.BorderType? GetBorder(DocumentFormat.OpenXml.Wordprocessing.RunProperties openXmlElement)
+  {
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.Border>();
+    if (itemElement != null)
+      return DocumentModel.OpenXml.Wordprocessing.BorderTypeConverter.CreateModelElement(itemElement);
+    return null;
+  }
+  
+  private static void SetBorder(DocumentFormat.OpenXml.Wordprocessing.RunProperties openXmlElement, DocumentModel.Wordprocessing.BorderType? value)
+  {
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.Border>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
+    {
+      itemElement = DocumentModel.OpenXml.Wordprocessing.BorderTypeConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.Border>(value);
+      if (itemElement != null)
+        openXmlElement.AddChild(itemElement);
+    }
+  }
+  
+  /// <summary>
+  /// Shading.
+  /// </summary>
+  private static DocumentModel.Wordprocessing.Shading? GetShading(DocumentFormat.OpenXml.Wordprocessing.RunProperties openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.Shading>();
     if (itemElement != null)
-      return ShadingConverter.CreateModelElement(itemElement);
+      return DocumentModel.OpenXml.Wordprocessing.ShadingConverter.CreateModelElement(itemElement);
     return null;
   }
-
-  public static void SetShading(RunProperties? openXmlElement, Shading? value)
+  
+  private static void SetShading(DocumentFormat.OpenXml.Wordprocessing.RunProperties openXmlElement, DocumentModel.Wordprocessing.Shading? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.Shading>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.Shading>();
+      itemElement = DocumentModel.OpenXml.Wordprocessing.ShadingConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.Shading>(value);
       if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = ShadingConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.Shading>(value);
-        if (itemElement != null)
-          openXmlElement.AddChild(itemElement);
-      }
+        openXmlElement.AddChild(itemElement);
     }
   }
-
+  
   /// <summary>
-  ///   FitText.
+  /// FitText.
   /// </summary>
-  public static FitText? GetFitText(RunProperties? openXmlElement)
+  private static DocumentModel.Wordprocessing.FitText? GetFitText(DocumentFormat.OpenXml.Wordprocessing.RunProperties openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.FitText>();
     if (itemElement != null)
-      return FitTextConverter.CreateModelElement(itemElement);
+      return DocumentModel.OpenXml.Wordprocessing.FitTextConverter.CreateModelElement(itemElement);
     return null;
   }
-
-  public static void SetFitText(RunProperties? openXmlElement, FitText? value)
+  
+  private static void SetFitText(DocumentFormat.OpenXml.Wordprocessing.RunProperties openXmlElement, DocumentModel.Wordprocessing.FitText? value)
   {
-    if (openXmlElement != null)
-    {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.FitText>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = FitTextConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.FitText>(value);
-        if (itemElement != null)
-          openXmlElement.AddChild(itemElement);
-      }
-    }
-  }
-
-  /// <summary>
-  ///   VerticalTextAlignment.
-  /// </summary>
-  public static VerticalPositionKind? GetVerticalTextAlignment(RunProperties? openXmlElement)
-  {
-    if (openXmlElement != null)
-    {
-      var itemElement = openXmlElement.GetFirstChild<VerticalTextAlignment>();
-      if (itemElement?.Val?.Value != null) return EnumValueConverter.GetValue<VerticalPositionValues, VerticalPositionKind>(itemElement.Val.Value);
-    }
-    return null;
-  }
-
-  public static void SetVerticalTextAlignment(RunProperties? openXmlElement, VerticalPositionKind? value)
-  {
-    if (openXmlElement != null)
-    {
-      var itemElement = openXmlElement.GetFirstChild<VerticalTextAlignment>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = EnumValueConverter.CreateOpenXmlElement<VerticalTextAlignment, VerticalPositionValues, VerticalPositionKind>(value);
-        if (itemElement != null)
-          openXmlElement.AddChild(itemElement);
-      }
-    }
-  }
-
-  /// <summary>
-  ///   RightToLeftText.
-  /// </summary>
-  public static Boolean? GetRightToLeftText(RunProperties? openXmlElement)
-  {
-    if (openXmlElement != null)
-    {
-      var itemElement = openXmlElement.GetFirstChild<RightToLeftText>();
-      return itemElement != null;
-    }
-    return null;
-  }
-
-  public static void SetRightToLeftText(RunProperties? openXmlElement, Boolean? value)
-  {
-    if (openXmlElement != null)
-    {
-      if (value == false)
-      {
-        var itemElement = openXmlElement.GetFirstChild<RightToLeftText>();
-        if (itemElement != null)
-          itemElement.Remove();
-      }
-      if (value == true)
-      {
-        var itemElement = new RightToLeftText();
-        openXmlElement.AddChild(itemElement);
-      }
-    }
-  }
-
-  /// <summary>
-  ///   ComplexScript.
-  /// </summary>
-  public static Boolean? GetComplexScript(RunProperties? openXmlElement)
-  {
-    if (openXmlElement != null)
-    {
-      var itemElement = openXmlElement.GetFirstChild<ComplexScript>();
-      return itemElement != null;
-    }
-    return null;
-  }
-
-  public static void SetComplexScript(RunProperties? openXmlElement, Boolean? value)
-  {
-    if (openXmlElement != null)
-    {
-      if (value == false)
-      {
-        var itemElement = openXmlElement.GetFirstChild<ComplexScript>();
-        if (itemElement != null)
-          itemElement.Remove();
-      }
-      if (value == true)
-      {
-        var itemElement = new ComplexScript();
-        openXmlElement.AddChild(itemElement);
-      }
-    }
-  }
-
-  /// <summary>
-  ///   Emphasis.
-  /// </summary>
-  public static EmphasisMarkKind? GetEmphasis(RunProperties? openXmlElement)
-  {
-    if (openXmlElement != null)
-    {
-      var itemElement = openXmlElement.GetFirstChild<Emphasis>();
-      if (itemElement?.Val?.Value != null) return EnumValueConverter.GetValue<EmphasisMarkValues, EmphasisMarkKind>(itemElement.Val.Value);
-    }
-    return null;
-  }
-
-  public static void SetEmphasis(RunProperties? openXmlElement, EmphasisMarkKind? value)
-  {
-    if (openXmlElement != null)
-    {
-      var itemElement = openXmlElement.GetFirstChild<Emphasis>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = EnumValueConverter.CreateOpenXmlElement<Emphasis, EmphasisMarkValues, EmphasisMarkKind>(value);
-        if (itemElement != null)
-          openXmlElement.AddChild(itemElement);
-      }
-    }
-  }
-
-  /// <summary>
-  ///   Languages.
-  /// </summary>
-  public static LanguageType? GetLanguages(RunProperties? openXmlElement)
-  {
-    var itemElement = openXmlElement?.GetFirstChild<Languages>();
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.FitText>();
     if (itemElement != null)
-      return LanguageTypeConverter.CreateModelElement(itemElement);
-    return null;
-  }
-
-  public static void SetLanguages(RunProperties? openXmlElement, LanguageType? value)
-  {
-    if (openXmlElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<Languages>();
+      itemElement = DocumentModel.OpenXml.Wordprocessing.FitTextConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.FitText>(value);
       if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = LanguageTypeConverter.CreateOpenXmlElement<Languages>(value);
-        if (itemElement != null)
-          openXmlElement.AddChild(itemElement);
-      }
+        openXmlElement.AddChild(itemElement);
     }
   }
-
+  
   /// <summary>
-  ///   EastAsianLayout.
+  /// VerticalTextAlignment.
   /// </summary>
-  public static EastAsianLayout? GetEastAsianLayout(RunProperties? openXmlElement)
+  private static DocumentModel.Wordprocessing.VerticalPositionKind? GetVerticalTextAlignment(DocumentFormat.OpenXml.Wordprocessing.RunProperties openXmlElement)
+  {
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.VerticalTextAlignment>();
+    if (itemElement?.Val?.Value != null)
+      return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Wordprocessing.VerticalPositionValues, DocumentModel.Wordprocessing.VerticalPositionKind>(itemElement.Val.Value);
+    return null;
+  }
+  
+  private static void SetVerticalTextAlignment(DocumentFormat.OpenXml.Wordprocessing.RunProperties openXmlElement, DocumentModel.Wordprocessing.VerticalPositionKind? value)
+  {
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.VerticalTextAlignment>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
+    {
+      itemElement = EnumValueConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.VerticalTextAlignment, DocumentFormat.OpenXml.Wordprocessing.VerticalPositionValues, DocumentModel.Wordprocessing.VerticalPositionKind>(value);
+      if (itemElement != null)
+        openXmlElement.AddChild(itemElement);
+    }
+  }
+  
+  /// <summary>
+  /// RightToLeftText.
+  /// </summary>
+  private static Boolean? GetRightToLeftText(DocumentFormat.OpenXml.Wordprocessing.RunProperties openXmlElement)
+  {
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.RightToLeftText>();
+    return itemElement != null;
+  }
+  
+  private static void SetRightToLeftText(DocumentFormat.OpenXml.Wordprocessing.RunProperties openXmlElement, Boolean? value)
+  {
+    if (value == false)
+    {
+      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.RightToLeftText>();
+      if (itemElement != null)
+        itemElement.Remove();
+    }
+    if (value == true)
+    {
+      var itemElement = new DocumentFormat.OpenXml.Wordprocessing.RightToLeftText();
+      openXmlElement.AddChild(itemElement);
+    }
+  }
+  
+  /// <summary>
+  /// ComplexScript.
+  /// </summary>
+  private static Boolean? GetComplexScript(DocumentFormat.OpenXml.Wordprocessing.RunProperties openXmlElement)
+  {
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.ComplexScript>();
+    return itemElement != null;
+  }
+  
+  private static void SetComplexScript(DocumentFormat.OpenXml.Wordprocessing.RunProperties openXmlElement, Boolean? value)
+  {
+    if (value == false)
+    {
+      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.ComplexScript>();
+      if (itemElement != null)
+        itemElement.Remove();
+    }
+    if (value == true)
+    {
+      var itemElement = new DocumentFormat.OpenXml.Wordprocessing.ComplexScript();
+      openXmlElement.AddChild(itemElement);
+    }
+  }
+  
+  /// <summary>
+  /// Emphasis.
+  /// </summary>
+  private static DocumentModel.Wordprocessing.EmphasisMarkKind? GetEmphasis(DocumentFormat.OpenXml.Wordprocessing.RunProperties openXmlElement)
+  {
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.Emphasis>();
+    if (itemElement?.Val?.Value != null)
+      return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Wordprocessing.EmphasisMarkValues, DocumentModel.Wordprocessing.EmphasisMarkKind>(itemElement.Val.Value);
+    return null;
+  }
+  
+  private static void SetEmphasis(DocumentFormat.OpenXml.Wordprocessing.RunProperties openXmlElement, DocumentModel.Wordprocessing.EmphasisMarkKind? value)
+  {
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.Emphasis>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
+    {
+      itemElement = EnumValueConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.Emphasis, DocumentFormat.OpenXml.Wordprocessing.EmphasisMarkValues, DocumentModel.Wordprocessing.EmphasisMarkKind>(value);
+      if (itemElement != null)
+        openXmlElement.AddChild(itemElement);
+    }
+  }
+  
+  /// <summary>
+  /// Languages.
+  /// </summary>
+  private static DocumentModel.Wordprocessing.LanguageType? GetLanguages(DocumentFormat.OpenXml.Wordprocessing.RunProperties openXmlElement)
+  {
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.Languages>();
+    if (itemElement != null)
+      return DocumentModel.OpenXml.Wordprocessing.LanguageTypeConverter.CreateModelElement(itemElement);
+    return null;
+  }
+  
+  private static void SetLanguages(DocumentFormat.OpenXml.Wordprocessing.RunProperties openXmlElement, DocumentModel.Wordprocessing.LanguageType? value)
+  {
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.Languages>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
+    {
+      itemElement = DocumentModel.OpenXml.Wordprocessing.LanguageTypeConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.Languages>(value);
+      if (itemElement != null)
+        openXmlElement.AddChild(itemElement);
+    }
+  }
+  
+  /// <summary>
+  /// EastAsianLayout.
+  /// </summary>
+  private static DocumentModel.Wordprocessing.EastAsianLayout? GetEastAsianLayout(DocumentFormat.OpenXml.Wordprocessing.RunProperties openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.EastAsianLayout>();
     if (itemElement != null)
-      return EastAsianLayoutConverter.CreateModelElement(itemElement);
+      return DocumentModel.OpenXml.Wordprocessing.EastAsianLayoutConverter.CreateModelElement(itemElement);
     return null;
   }
-
-  public static void SetEastAsianLayout(RunProperties? openXmlElement, EastAsianLayout? value)
+  
+  private static void SetEastAsianLayout(DocumentFormat.OpenXml.Wordprocessing.RunProperties openXmlElement, DocumentModel.Wordprocessing.EastAsianLayout? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.EastAsianLayout>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.EastAsianLayout>();
+      itemElement = DocumentModel.OpenXml.Wordprocessing.EastAsianLayoutConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.EastAsianLayout>(value);
+      if (itemElement != null)
+        openXmlElement.AddChild(itemElement);
+    }
+  }
+  
+  /// <summary>
+  /// SpecVanish.
+  /// </summary>
+  private static Boolean? GetSpecVanish(DocumentFormat.OpenXml.Wordprocessing.RunProperties openXmlElement)
+  {
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.SpecVanish>();
+    return itemElement != null;
+  }
+  
+  private static void SetSpecVanish(DocumentFormat.OpenXml.Wordprocessing.RunProperties openXmlElement, Boolean? value)
+  {
+    if (value == false)
+    {
+      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.SpecVanish>();
       if (itemElement != null)
         itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = EastAsianLayoutConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.EastAsianLayout>(value);
-        if (itemElement != null)
-          openXmlElement.AddChild(itemElement);
-      }
     }
-  }
-
-  /// <summary>
-  ///   SpecVanish.
-  /// </summary>
-  public static Boolean? GetSpecVanish(RunProperties? openXmlElement)
-  {
-    if (openXmlElement != null)
+    if (value == true)
     {
-      var itemElement = openXmlElement.GetFirstChild<SpecVanish>();
-      return itemElement != null;
-    }
-    return null;
-  }
-
-  public static void SetSpecVanish(RunProperties? openXmlElement, Boolean? value)
-  {
-    if (openXmlElement != null)
-    {
-      if (value == false)
-      {
-        var itemElement = openXmlElement.GetFirstChild<SpecVanish>();
-        if (itemElement != null)
-          itemElement.Remove();
-      }
-      if (value == true)
-      {
-        var itemElement = new SpecVanish();
-        openXmlElement.AddChild(itemElement);
-      }
+      var itemElement = new DocumentFormat.OpenXml.Wordprocessing.SpecVanish();
+      openXmlElement.AddChild(itemElement);
     }
   }
-
+  
   /// <summary>
-  ///   Glow, this property is only available in Office 2010 and later..
+  /// Glow, this property is only available in Office 2010 and later..
   /// </summary>
-  public static Glow? GetGlow(RunProperties? openXmlElement)
+  private static DocumentModel.Wordprocessing.Glow? GetGlow(DocumentFormat.OpenXml.Wordprocessing.RunProperties openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office2010.Word.Glow>();
     if (itemElement != null)
-      return GlowConverter.CreateModelElement(itemElement);
+      return DocumentModel.OpenXml.Wordprocessing.GlowConverter.CreateModelElement(itemElement);
     return null;
   }
-
-  public static void SetGlow(RunProperties? openXmlElement, Glow? value)
+  
+  private static void SetGlow(DocumentFormat.OpenXml.Wordprocessing.RunProperties openXmlElement, DocumentModel.Wordprocessing.Glow? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2010.Word.Glow>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2010.Word.Glow>();
+      itemElement = DocumentModel.OpenXml.Wordprocessing.GlowConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2010.Word.Glow>(value);
       if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = GlowConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2010.Word.Glow>(value);
-        if (itemElement != null)
-          openXmlElement.AddChild(itemElement);
-      }
+        openXmlElement.AddChild(itemElement);
     }
   }
-
+  
   /// <summary>
-  ///   Shadow14, this property is only available in Office 2010 and later..
+  /// Shadow14, this property is only available in Office 2010 and later..
   /// </summary>
-  public static Shadow2? GetShadow14(RunProperties? openXmlElement)
+  private static DocumentModel.Wordprocessing.Shadow2? GetShadow14(DocumentFormat.OpenXml.Wordprocessing.RunProperties openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office2010.Word.Shadow>();
     if (itemElement != null)
-      return Shadow2Converter.CreateModelElement(itemElement);
+      return DocumentModel.OpenXml.Wordprocessing.Shadow2Converter.CreateModelElement(itemElement);
     return null;
   }
-
-  public static void SetShadow14(RunProperties? openXmlElement, Shadow2? value)
+  
+  private static void SetShadow14(DocumentFormat.OpenXml.Wordprocessing.RunProperties openXmlElement, DocumentModel.Wordprocessing.Shadow2? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2010.Word.Shadow>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2010.Word.Shadow>();
+      itemElement = DocumentModel.OpenXml.Wordprocessing.Shadow2Converter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2010.Word.Shadow>(value);
       if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = Shadow2Converter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2010.Word.Shadow>(value);
-        if (itemElement != null)
-          openXmlElement.AddChild(itemElement);
-      }
+        openXmlElement.AddChild(itemElement);
     }
   }
-
+  
   /// <summary>
-  ///   Reflection, this property is only available in Office 2010 and later..
+  /// Reflection, this property is only available in Office 2010 and later..
   /// </summary>
-  public static Reflection? GetReflection(RunProperties? openXmlElement)
+  private static DocumentModel.Wordprocessing.Reflection? GetReflection(DocumentFormat.OpenXml.Wordprocessing.RunProperties openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office2010.Word.Reflection>();
     if (itemElement != null)
-      return ReflectionConverter.CreateModelElement(itemElement);
+      return DocumentModel.OpenXml.Wordprocessing.ReflectionConverter.CreateModelElement(itemElement);
     return null;
   }
-
-  public static void SetReflection(RunProperties? openXmlElement, Reflection? value)
+  
+  private static void SetReflection(DocumentFormat.OpenXml.Wordprocessing.RunProperties openXmlElement, DocumentModel.Wordprocessing.Reflection? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2010.Word.Reflection>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2010.Word.Reflection>();
+      itemElement = DocumentModel.OpenXml.Wordprocessing.ReflectionConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2010.Word.Reflection>(value);
       if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = ReflectionConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2010.Word.Reflection>(value);
-        if (itemElement != null)
-          openXmlElement.AddChild(itemElement);
-      }
+        openXmlElement.AddChild(itemElement);
     }
   }
-
+  
   /// <summary>
-  ///   TextOutlineEffect, this property is only available in Office 2010 and later..
+  /// TextOutlineEffect, this property is only available in Office 2010 and later..
   /// </summary>
-  public static TextOutlineEffect? GetTextOutlineEffect(RunProperties? openXmlElement)
+  private static DocumentModel.Wordprocessing.TextOutlineEffect? GetTextOutlineEffect(DocumentFormat.OpenXml.Wordprocessing.RunProperties openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office2010.Word.TextOutlineEffect>();
     if (itemElement != null)
-      return TextOutlineEffectConverter.CreateModelElement(itemElement);
+      return DocumentModel.OpenXml.Wordprocessing.TextOutlineEffectConverter.CreateModelElement(itemElement);
     return null;
   }
-
-  public static void SetTextOutlineEffect(RunProperties? openXmlElement, TextOutlineEffect? value)
+  
+  private static void SetTextOutlineEffect(DocumentFormat.OpenXml.Wordprocessing.RunProperties openXmlElement, DocumentModel.Wordprocessing.TextOutlineEffect? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2010.Word.TextOutlineEffect>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2010.Word.TextOutlineEffect>();
+      itemElement = DocumentModel.OpenXml.Wordprocessing.TextOutlineEffectConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2010.Word.TextOutlineEffect>(value);
       if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = TextOutlineEffectConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2010.Word.TextOutlineEffect>(value);
-        if (itemElement != null)
-          openXmlElement.AddChild(itemElement);
-      }
+        openXmlElement.AddChild(itemElement);
     }
   }
-
+  
   /// <summary>
-  ///   FillTextEffect, this property is only available in Office 2010 and later..
+  /// FillTextEffect, this property is only available in Office 2010 and later..
   /// </summary>
-  public static FillTextEffect? GetFillTextEffect(RunProperties? openXmlElement)
+  private static DocumentModel.Wordprocessing.FillTextEffect? GetFillTextEffect(DocumentFormat.OpenXml.Wordprocessing.RunProperties openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office2010.Word.FillTextEffect>();
     if (itemElement != null)
-      return FillTextEffectConverter.CreateModelElement(itemElement);
+      return DocumentModel.OpenXml.Wordprocessing.FillTextEffectConverter.CreateModelElement(itemElement);
     return null;
   }
-
-  public static void SetFillTextEffect(RunProperties? openXmlElement, FillTextEffect? value)
+  
+  private static void SetFillTextEffect(DocumentFormat.OpenXml.Wordprocessing.RunProperties openXmlElement, DocumentModel.Wordprocessing.FillTextEffect? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2010.Word.FillTextEffect>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2010.Word.FillTextEffect>();
+      itemElement = DocumentModel.OpenXml.Wordprocessing.FillTextEffectConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2010.Word.FillTextEffect>(value);
       if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = FillTextEffectConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2010.Word.FillTextEffect>(value);
-        if (itemElement != null)
-          openXmlElement.AddChild(itemElement);
-      }
+        openXmlElement.AddChild(itemElement);
     }
   }
-
+  
   /// <summary>
-  ///   Scene3D, this property is only available in Office 2010 and later..
+  /// Scene3D, this property is only available in Office 2010 and later..
   /// </summary>
-  public static Scene3D? GetScene3D(RunProperties? openXmlElement)
+  private static DocumentModel.Wordprocessing.Scene3D? GetScene3D(DocumentFormat.OpenXml.Wordprocessing.RunProperties openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office2010.Word.Scene3D>();
     if (itemElement != null)
-      return Scene3DConverter.CreateModelElement(itemElement);
+      return DocumentModel.OpenXml.Wordprocessing.Scene3DConverter.CreateModelElement(itemElement);
     return null;
   }
-
-  public static void SetScene3D(RunProperties? openXmlElement, Scene3D? value)
+  
+  private static void SetScene3D(DocumentFormat.OpenXml.Wordprocessing.RunProperties openXmlElement, DocumentModel.Wordprocessing.Scene3D? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2010.Word.Scene3D>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2010.Word.Scene3D>();
+      itemElement = DocumentModel.OpenXml.Wordprocessing.Scene3DConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2010.Word.Scene3D>(value);
       if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = Scene3DConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2010.Word.Scene3D>(value);
-        if (itemElement != null)
-          openXmlElement.AddChild(itemElement);
-      }
+        openXmlElement.AddChild(itemElement);
     }
   }
-
+  
   /// <summary>
-  ///   Properties3D, this property is only available in Office 2010 and later..
+  /// Properties3D, this property is only available in Office 2010 and later..
   /// </summary>
-  public static Properties3D? GetProperties3D(RunProperties? openXmlElement)
+  private static DocumentModel.Wordprocessing.Properties3D? GetProperties3D(DocumentFormat.OpenXml.Wordprocessing.RunProperties openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office2010.Word.Properties3D>();
     if (itemElement != null)
-      return Properties3DConverter.CreateModelElement(itemElement);
+      return DocumentModel.OpenXml.Wordprocessing.Properties3DConverter.CreateModelElement(itemElement);
     return null;
   }
-
-  public static void SetProperties3D(RunProperties? openXmlElement, Properties3D? value)
+  
+  private static void SetProperties3D(DocumentFormat.OpenXml.Wordprocessing.RunProperties openXmlElement, DocumentModel.Wordprocessing.Properties3D? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2010.Word.Properties3D>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2010.Word.Properties3D>();
+      itemElement = DocumentModel.OpenXml.Wordprocessing.Properties3DConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2010.Word.Properties3D>(value);
       if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = Properties3DConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2010.Word.Properties3D>(value);
-        if (itemElement != null)
-          openXmlElement.AddChild(itemElement);
-      }
+        openXmlElement.AddChild(itemElement);
     }
   }
-
+  
   /// <summary>
-  ///   Ligatures, this property is only available in Office 2010 and later..
+  /// Ligatures, this property is only available in Office 2010 and later..
   /// </summary>
-  public static LigaturesKind? GetLigatures(RunProperties? openXmlElement)
+  private static DocumentModel.Wordprocessing.LigaturesKind? GetLigatures(DocumentFormat.OpenXml.Wordprocessing.RunProperties openXmlElement)
   {
-    if (openXmlElement != null)
-    {
-      var itemElement = openXmlElement.GetFirstChild<Ligatures>();
-      if (itemElement?.Val?.Value != null) return EnumValueConverter.GetValue<LigaturesValues, LigaturesKind>(itemElement.Val.Value);
-    }
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2010.Word.Ligatures>();
+    if (itemElement?.Val?.Value != null)
+      return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Office2010.Word.LigaturesValues, DocumentModel.Wordprocessing.LigaturesKind>(itemElement.Val.Value);
     return null;
   }
-
-  public static void SetLigatures(RunProperties? openXmlElement, LigaturesKind? value)
+  
+  private static void SetLigatures(DocumentFormat.OpenXml.Wordprocessing.RunProperties openXmlElement, DocumentModel.Wordprocessing.LigaturesKind? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2010.Word.Ligatures>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<Ligatures>();
+      itemElement = EnumValueConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2010.Word.Ligatures, DocumentFormat.OpenXml.Office2010.Word.LigaturesValues, DocumentModel.Wordprocessing.LigaturesKind>(value);
       if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = EnumValueConverter.CreateOpenXmlElement<Ligatures, LigaturesValues, LigaturesKind>(value);
-        if (itemElement != null)
-          openXmlElement.AddChild(itemElement);
-      }
+        openXmlElement.AddChild(itemElement);
     }
   }
-
+  
   /// <summary>
-  ///   NumberingFormat, this property is only available in Office 2010 and later..
+  /// NumberingFormat, this property is only available in Office 2010 and later..
   /// </summary>
-  public static NumberFormKind? GetNumberingFormat(RunProperties? openXmlElement)
+  private static DocumentModel.Wordprocessing.NumberFormKind? GetNumberingFormat(DocumentFormat.OpenXml.Wordprocessing.RunProperties openXmlElement)
   {
-    if (openXmlElement != null)
-    {
-      var itemElement = openXmlElement.GetFirstChild<NumberingFormat>();
-      if (itemElement?.Val?.Value != null) return EnumValueConverter.GetValue<NumberFormValues, NumberFormKind>(itemElement.Val.Value);
-    }
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2010.Word.NumberingFormat>();
+    if (itemElement?.Val?.Value != null)
+      return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Office2010.Word.NumberFormValues, DocumentModel.Wordprocessing.NumberFormKind>(itemElement.Val.Value);
     return null;
   }
-
-  public static void SetNumberingFormat(RunProperties? openXmlElement, NumberFormKind? value)
+  
+  private static void SetNumberingFormat(DocumentFormat.OpenXml.Wordprocessing.RunProperties openXmlElement, DocumentModel.Wordprocessing.NumberFormKind? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2010.Word.NumberingFormat>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<NumberingFormat>();
+      itemElement = EnumValueConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2010.Word.NumberingFormat, DocumentFormat.OpenXml.Office2010.Word.NumberFormValues, DocumentModel.Wordprocessing.NumberFormKind>(value);
       if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = EnumValueConverter.CreateOpenXmlElement<NumberingFormat, NumberFormValues, NumberFormKind>(value);
-        if (itemElement != null)
-          openXmlElement.AddChild(itemElement);
-      }
+        openXmlElement.AddChild(itemElement);
     }
   }
-
+  
   /// <summary>
-  ///   NumberSpacing, this property is only available in Office 2010 and later..
+  /// NumberSpacing, this property is only available in Office 2010 and later..
   /// </summary>
-  public static NumberSpacingKind? GetNumberSpacing(RunProperties? openXmlElement)
+  private static DocumentModel.Wordprocessing.NumberSpacingKind? GetNumberSpacing(DocumentFormat.OpenXml.Wordprocessing.RunProperties openXmlElement)
   {
-    if (openXmlElement != null)
-    {
-      var itemElement = openXmlElement.GetFirstChild<NumberSpacing>();
-      if (itemElement?.Val?.Value != null) return EnumValueConverter.GetValue<NumberSpacingValues, NumberSpacingKind>(itemElement.Val.Value);
-    }
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2010.Word.NumberSpacing>();
+    if (itemElement?.Val?.Value != null)
+      return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Office2010.Word.NumberSpacingValues, DocumentModel.Wordprocessing.NumberSpacingKind>(itemElement.Val.Value);
     return null;
   }
-
-  public static void SetNumberSpacing(RunProperties? openXmlElement, NumberSpacingKind? value)
+  
+  private static void SetNumberSpacing(DocumentFormat.OpenXml.Wordprocessing.RunProperties openXmlElement, DocumentModel.Wordprocessing.NumberSpacingKind? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2010.Word.NumberSpacing>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<NumberSpacing>();
+      itemElement = EnumValueConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2010.Word.NumberSpacing, DocumentFormat.OpenXml.Office2010.Word.NumberSpacingValues, DocumentModel.Wordprocessing.NumberSpacingKind>(value);
       if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = EnumValueConverter.CreateOpenXmlElement<NumberSpacing, NumberSpacingValues, NumberSpacingKind>(value);
-        if (itemElement != null)
-          openXmlElement.AddChild(itemElement);
-      }
+        openXmlElement.AddChild(itemElement);
     }
   }
-
+  
   /// <summary>
-  ///   StylisticSets, this property is only available in Office 2010 and later..
+  /// StylisticSets, this property is only available in Office 2010 and later..
   /// </summary>
-  public static StylisticSets? GetStylisticSets(RunProperties? openXmlElement)
+  private static DocumentModel.Wordprocessing.StylisticSets? GetStylisticSets(DocumentFormat.OpenXml.Wordprocessing.RunProperties openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office2010.Word.StylisticSets>();
     if (itemElement != null)
-      return StylisticSetsConverter.CreateModelElement(itemElement);
+      return DocumentModel.OpenXml.Wordprocessing.StylisticSetsConverter.CreateModelElement(itemElement);
     return null;
   }
-
-  public static void SetStylisticSets(RunProperties? openXmlElement, StylisticSets? value)
+  
+  private static void SetStylisticSets(DocumentFormat.OpenXml.Wordprocessing.RunProperties openXmlElement, DocumentModel.Wordprocessing.StylisticSets? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2010.Word.StylisticSets>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2010.Word.StylisticSets>();
+      itemElement = DocumentModel.OpenXml.Wordprocessing.StylisticSetsConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2010.Word.StylisticSets>(value);
       if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = StylisticSetsConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2010.Word.StylisticSets>(value);
-        if (itemElement != null)
-          openXmlElement.AddChild(itemElement);
-      }
+        openXmlElement.AddChild(itemElement);
     }
   }
-
+  
   /// <summary>
-  ///   ContextualAlternatives, this property is only available in Office 2010 and later..
+  /// ContextualAlternatives, this property is only available in Office 2010 and later..
   /// </summary>
-  public static OnOffKind? GetContextualAlternatives(RunProperties? openXmlElement)
+  private static DocumentModel.Wordprocessing.OnOffKind? GetContextualAlternatives(DocumentFormat.OpenXml.Wordprocessing.RunProperties openXmlElement)
   {
-    if (openXmlElement != null)
-    {
-      var itemElement = openXmlElement.GetFirstChild<ContextualAlternatives>();
-      if (itemElement?.Val?.Value != null) return EnumValueConverter.GetValue<OnOffValues, OnOffKind>(itemElement.Val.Value);
-    }
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2010.Word.ContextualAlternatives>();
+    if (itemElement?.Val?.Value != null)
+      return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Office2010.Word.OnOffValues, DocumentModel.Wordprocessing.OnOffKind>(itemElement.Val.Value);
     return null;
   }
-
-  public static void SetContextualAlternatives(RunProperties? openXmlElement, OnOffKind? value)
+  
+  private static void SetContextualAlternatives(DocumentFormat.OpenXml.Wordprocessing.RunProperties openXmlElement, DocumentModel.Wordprocessing.OnOffKind? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2010.Word.ContextualAlternatives>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<ContextualAlternatives>();
+      itemElement = EnumValueConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2010.Word.ContextualAlternatives, DocumentFormat.OpenXml.Office2010.Word.OnOffValues, DocumentModel.Wordprocessing.OnOffKind>(value);
       if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = EnumValueConverter.CreateOpenXmlElement<ContextualAlternatives, OnOffValues, OnOffKind>(value);
-        if (itemElement != null)
-          openXmlElement.AddChild(itemElement);
-      }
+        openXmlElement.AddChild(itemElement);
     }
   }
-
+  
   /// <summary>
-  ///   RunPropertiesChange.
+  /// RunPropertiesChange.
   /// </summary>
-  public static RunPropertiesChange? GetRunPropertiesChange(RunProperties? openXmlElement)
+  private static DocumentModel.Wordprocessing.RunPropertiesChange? GetRunPropertiesChange(DocumentFormat.OpenXml.Wordprocessing.RunProperties openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.RunPropertiesChange>();
     if (itemElement != null)
-      return RunPropertiesChangeConverter.CreateModelElement(itemElement);
+      return DocumentModel.OpenXml.Wordprocessing.RunPropertiesChangeConverter.CreateModelElement(itemElement);
     return null;
   }
-
-  public static void SetRunPropertiesChange(RunProperties? openXmlElement, RunPropertiesChange? value)
+  
+  private static void SetRunPropertiesChange(DocumentFormat.OpenXml.Wordprocessing.RunProperties openXmlElement, DocumentModel.Wordprocessing.RunPropertiesChange? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.RunPropertiesChange>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.RunPropertiesChange>();
+      itemElement = DocumentModel.OpenXml.Wordprocessing.RunPropertiesChangeConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.RunPropertiesChange>(value);
       if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = RunPropertiesChangeConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.RunPropertiesChange>(value);
-        if (itemElement != null)
-          openXmlElement.AddChild(itemElement);
-      }
+        openXmlElement.AddChild(itemElement);
     }
   }
-
-  public static DocumentModel.Wordprocessing.RunProperties? CreateModelElement(RunProperties? openXmlElement)
+  
+  public static DocumentModel.Wordprocessing.RunProperties? CreateModelElement(DocumentFormat.OpenXml.Wordprocessing.RunProperties? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -1550,9 +1282,9 @@ public static class RunPropertiesConverter
     }
     return null;
   }
-
+  
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.RunProperties? value)
-    where OpenXmlElementType : RunProperties, new()
+    where OpenXmlElementType: DocumentFormat.OpenXml.Wordprocessing.RunProperties, new()
   {
     if (value != null)
     {

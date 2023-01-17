@@ -1,47 +1,43 @@
-using DocumentFormat.OpenXml.Drawing;
-
 namespace DocumentModel.OpenXml.Drawings;
 
 /// <summary>
-///   Defines the AdjustPoint2DType Class.
+/// Defines the AdjustPoint2DType Class.
 /// </summary>
 public static class AdjustPoint2DTypeConverter
 {
   /// <summary>
-  ///   X-Coordinate
+  /// X-Coordinate
   /// </summary>
-  public static String? GetX(AdjustPoint2DType? openXmlElement)
+  private static String? GetX(DocumentFormat.OpenXml.Drawing.AdjustPoint2DType openXmlElement)
   {
     return openXmlElement?.X?.Value;
   }
-
-  public static void SetX(AdjustPoint2DType? openXmlElement, String? value)
+  
+  private static void SetX(DocumentFormat.OpenXml.Drawing.AdjustPoint2DType openXmlElement, String? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.X = new StringValue { Value = value };
-      else
-        openXmlElement.X = null;
+    if (value != null)
+      openXmlElement.X = new StringValue { Value = value };
+    else
+      openXmlElement.X = null;
   }
-
+  
   /// <summary>
-  ///   Y-Coordinate
+  /// Y-Coordinate
   /// </summary>
-  public static String? GetY(AdjustPoint2DType? openXmlElement)
+  private static String? GetY(DocumentFormat.OpenXml.Drawing.AdjustPoint2DType openXmlElement)
   {
     return openXmlElement?.Y?.Value;
   }
-
-  public static void SetY(AdjustPoint2DType? openXmlElement, String? value)
+  
+  private static void SetY(DocumentFormat.OpenXml.Drawing.AdjustPoint2DType openXmlElement, String? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.Y = new StringValue { Value = value };
-      else
-        openXmlElement.Y = null;
+    if (value != null)
+      openXmlElement.Y = new StringValue { Value = value };
+    else
+      openXmlElement.Y = null;
   }
-
-  public static DocumentModel.Drawings.AdjustPoint2DType? CreateModelElement(AdjustPoint2DType? openXmlElement)
+  
+  public static DocumentModel.Drawings.AdjustPoint2DType? CreateModelElement(DocumentFormat.OpenXml.Drawing.AdjustPoint2DType? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -52,9 +48,9 @@ public static class AdjustPoint2DTypeConverter
     }
     return null;
   }
-
+  
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.AdjustPoint2DType? value)
-    where OpenXmlElementType : AdjustPoint2DType, new()
+    where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.AdjustPoint2DType, new()
   {
     if (value != null)
     {

@@ -1,39 +1,34 @@
-using DocumentFormat.OpenXml.Wordprocessing;
-
 namespace DocumentModel.OpenXml.Wordprocessing;
 
 /// <summary>
-///   Defines the SdtPlaceholder Class.
+/// Defines the SdtPlaceholder Class.
 /// </summary>
 public static class SdtPlaceholderConverter
 {
   /// <summary>
-  ///   Document Part Reference.
+  /// Document Part Reference.
   /// </summary>
-  public static String? GetDocPartReference(SdtPlaceholder? openXmlElement)
+  private static String? GetDocPartReference(DocumentFormat.OpenXml.Wordprocessing.SdtPlaceholder openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocPartReference>();
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.DocPartReference>();
     if (itemElement != null)
       return itemElement.Val?.Value;
     return null;
   }
-
-  public static void SetDocPartReference(SdtPlaceholder? openXmlElement, String? value)
+  
+  private static void SetDocPartReference(DocumentFormat.OpenXml.Wordprocessing.SdtPlaceholder openXmlElement, String? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.DocPartReference>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocPartReference>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = new DocPartReference { Val = value };
-        openXmlElement.AddChild(itemElement);
-      }
+      itemElement = new DocumentFormat.OpenXml.Wordprocessing.DocPartReference { Val = value };
+      openXmlElement.AddChild(itemElement);
     }
   }
-
-  public static DocumentModel.Wordprocessing.SdtPlaceholder? CreateModelElement(SdtPlaceholder? openXmlElement)
+  
+  public static DocumentModel.Wordprocessing.SdtPlaceholder? CreateModelElement(DocumentFormat.OpenXml.Wordprocessing.SdtPlaceholder? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -43,9 +38,9 @@ public static class SdtPlaceholderConverter
     }
     return null;
   }
-
+  
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.SdtPlaceholder? value)
-    where OpenXmlElementType : SdtPlaceholder, new()
+    where OpenXmlElementType: DocumentFormat.OpenXml.Wordprocessing.SdtPlaceholder, new()
   {
     if (value != null)
     {

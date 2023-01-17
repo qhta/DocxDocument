@@ -1,203 +1,166 @@
-using DocumentFormat.OpenXml.Drawing.Charts;
-using DocumentModel.Drawings.Charts;
-using ChartShapeProperties = DocumentModel.Drawings.Charts.ChartShapeProperties;
-using Layout = DocumentModel.Drawings.Charts.Layout;
-using Legend = DocumentFormat.OpenXml.Drawing.Charts.Legend;
-using LegendEntry = DocumentModel.Drawings.Charts.LegendEntry;
-using TextProperties = DocumentModel.Drawings.Charts.TextProperties;
-
 namespace DocumentModel.OpenXml.Drawings.Charts;
 
 /// <summary>
-///   Legend data and formatting.
+/// Legend data and formatting.
 /// </summary>
 public static class LegendConverter
 {
   /// <summary>
-  ///   Legend Position.
+  /// Legend Position.
   /// </summary>
-  public static LegendPositionKind? GetLegendPosition(Legend? openXmlElement)
+  private static DocumentModel.Drawings.Charts.LegendPositionKind? GetLegendPosition(DocumentFormat.OpenXml.Drawing.Charts.Legend openXmlElement)
   {
-    if (openXmlElement != null)
-    {
-      var itemElement = openXmlElement.GetFirstChild<LegendPosition>();
-      if (itemElement?.Val?.Value != null) return EnumValueConverter.GetValue<LegendPositionValues, LegendPositionKind>(itemElement.Val.Value);
-    }
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.LegendPosition>();
+    if (itemElement?.Val?.Value != null)
+      return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Drawing.Charts.LegendPositionValues, DocumentModel.Drawings.Charts.LegendPositionKind>(itemElement.Val.Value);
     return null;
   }
-
-  public static void SetLegendPosition(Legend? openXmlElement, LegendPositionKind? value)
+  
+  private static void SetLegendPosition(DocumentFormat.OpenXml.Drawing.Charts.Legend openXmlElement, DocumentModel.Drawings.Charts.LegendPositionKind? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.LegendPosition>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<LegendPosition>();
+      itemElement = EnumValueConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Charts.LegendPosition, DocumentFormat.OpenXml.Drawing.Charts.LegendPositionValues, DocumentModel.Drawings.Charts.LegendPositionKind>(value);
       if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = EnumValueConverter.CreateOpenXmlElement<LegendPosition, LegendPositionValues, LegendPositionKind>(value);
-        if (itemElement != null)
-          openXmlElement.AddChild(itemElement);
-      }
+        openXmlElement.AddChild(itemElement);
     }
   }
-
-  public static Collection<LegendEntry>? GetLegendEntries(Legend? openXmlElement)
+  
+  private static System.Collections.ObjectModel.Collection<DocumentModel.Drawings.Charts.LegendEntry> GetLegendEntries(DocumentFormat.OpenXml.Drawing.Charts.Legend openXmlElement)
   {
-    if (openXmlElement != null)
+    var collection = new System.Collections.ObjectModel.Collection<DocumentModel.Drawings.Charts.LegendEntry>();
+    foreach (var item in openXmlElement.Elements<DocumentFormat.OpenXml.Drawing.Charts.LegendEntry>())
     {
-      var collection = new Collection<LegendEntry>();
-      foreach (var item in openXmlElement.Elements<DocumentFormat.OpenXml.Drawing.Charts.LegendEntry>())
+      var newItem = DocumentModel.OpenXml.Drawings.Charts.LegendEntryConverter.CreateModelElement(item);
+      if (newItem != null)
+        collection.Add(newItem);
+    }
+    return collection;
+  }
+  
+  private static void SetLegendEntries(DocumentFormat.OpenXml.Drawing.Charts.Legend openXmlElement, System.Collections.ObjectModel.Collection<DocumentModel.Drawings.Charts.LegendEntry>? value)
+  {
+    openXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Drawing.Charts.LegendEntry>();
+    if (value != null)
+    {
+      foreach (var item in value)
       {
-        var newItem = LegendEntryConverter.CreateModelElement(item);
+        var newItem = DocumentModel.OpenXml.Drawings.Charts.LegendEntryConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Charts.LegendEntry>(item);
         if (newItem != null)
-          collection.Add(newItem);
+          openXmlElement.AddChild(newItem);
       }
-      return collection;
-    }
-    return null;
-  }
-
-  public static void SetLegendEntries(Legend? openXmlElement, Collection<LegendEntry>? value)
-  {
-    if (openXmlElement != null)
-    {
-      openXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Drawing.Charts.LegendEntry>();
-      if (value != null)
-        foreach (var item in value)
-        {
-          var newItem = LegendEntryConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Charts.LegendEntry>(item);
-          if (newItem != null)
-            openXmlElement.AddChild(newItem);
-        }
     }
   }
-
-  public static Layout? GetLayout(Legend? openXmlElement)
+  
+  private static DocumentModel.Drawings.Charts.Layout? GetLayout(DocumentFormat.OpenXml.Drawing.Charts.Legend openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.Layout>();
     if (itemElement != null)
-      return LayoutConverter.CreateModelElement(itemElement);
+      return DocumentModel.OpenXml.Drawings.Charts.LayoutConverter.CreateModelElement(itemElement);
     return null;
   }
-
-  public static void SetLayout(Legend? openXmlElement, Layout? value)
+  
+  private static void SetLayout(DocumentFormat.OpenXml.Drawing.Charts.Legend openXmlElement, DocumentModel.Drawings.Charts.Layout? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.Layout>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.Layout>();
+      itemElement = DocumentModel.OpenXml.Drawings.Charts.LayoutConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Charts.Layout>(value);
+      if (itemElement != null)
+        openXmlElement.AddChild(itemElement);
+    }
+  }
+  
+  private static Boolean? GetOverlay(DocumentFormat.OpenXml.Drawing.Charts.Legend openXmlElement)
+  {
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.Overlay>();
+    return itemElement != null;
+  }
+  
+  private static void SetOverlay(DocumentFormat.OpenXml.Drawing.Charts.Legend openXmlElement, Boolean? value)
+  {
+    if (value == false)
+    {
+      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.Overlay>();
       if (itemElement != null)
         itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = LayoutConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Charts.Layout>(value);
-        if (itemElement != null)
-          openXmlElement.AddChild(itemElement);
-      }
     }
-  }
-
-  public static Boolean? GetOverlay(Legend? openXmlElement)
-  {
-    if (openXmlElement != null)
+    if (value == true)
     {
-      var itemElement = openXmlElement.GetFirstChild<Overlay>();
-      return itemElement != null;
-    }
-    return null;
-  }
-
-  public static void SetOverlay(Legend? openXmlElement, Boolean? value)
-  {
-    if (openXmlElement != null)
-    {
-      if (value == false)
-      {
-        var itemElement = openXmlElement.GetFirstChild<Overlay>();
-        if (itemElement != null)
-          itemElement.Remove();
-      }
-      if (value == true)
-      {
-        var itemElement = new Overlay();
-        openXmlElement.AddChild(itemElement);
-      }
+      var itemElement = new DocumentFormat.OpenXml.Drawing.Charts.Overlay();
+      openXmlElement.AddChild(itemElement);
     }
   }
-
-  public static ChartShapeProperties? GetChartShapeProperties(Legend? openXmlElement)
+  
+  private static DocumentModel.Drawings.Charts.ChartShapeProperties? GetChartShapeProperties(DocumentFormat.OpenXml.Drawing.Charts.Legend openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.ChartShapeProperties>();
     if (itemElement != null)
-      return ChartShapePropertiesConverter.CreateModelElement(itemElement);
+      return DocumentModel.OpenXml.Drawings.Charts.ChartShapePropertiesConverter.CreateModelElement(itemElement);
     return null;
   }
-
-  public static void SetChartShapeProperties(Legend? openXmlElement, ChartShapeProperties? value)
+  
+  private static void SetChartShapeProperties(DocumentFormat.OpenXml.Drawing.Charts.Legend openXmlElement, DocumentModel.Drawings.Charts.ChartShapeProperties? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.ChartShapeProperties>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.ChartShapeProperties>();
+      itemElement = DocumentModel.OpenXml.Drawings.Charts.ChartShapePropertiesConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Charts.ChartShapeProperties>(value);
       if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = ChartShapePropertiesConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Charts.ChartShapeProperties>(value);
-        if (itemElement != null)
-          openXmlElement.AddChild(itemElement);
-      }
+        openXmlElement.AddChild(itemElement);
     }
   }
-
-  public static TextProperties? GetTextProperties(Legend? openXmlElement)
+  
+  private static DocumentModel.Drawings.Charts.TextProperties? GetTextProperties(DocumentFormat.OpenXml.Drawing.Charts.Legend openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.TextProperties>();
     if (itemElement != null)
-      return TextPropertiesConverter.CreateModelElement(itemElement);
+      return DocumentModel.OpenXml.Drawings.Charts.TextPropertiesConverter.CreateModelElement(itemElement);
     return null;
   }
-
-  public static void SetTextProperties(Legend? openXmlElement, TextProperties? value)
+  
+  private static void SetTextProperties(DocumentFormat.OpenXml.Drawing.Charts.Legend openXmlElement, DocumentModel.Drawings.Charts.TextProperties? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.TextProperties>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.TextProperties>();
+      itemElement = DocumentModel.OpenXml.Drawings.Charts.TextPropertiesConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Charts.TextProperties>(value);
       if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = TextPropertiesConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Charts.TextProperties>(value);
-        if (itemElement != null)
-          openXmlElement.AddChild(itemElement);
-      }
+        openXmlElement.AddChild(itemElement);
     }
   }
-
-  public static DocumentModel.Drawings.Charts.ExtensionList? GetExtensionList(Legend? openXmlElement)
+  
+  private static DocumentModel.Drawings.Charts.ExtensionList? GetExtensionList(DocumentFormat.OpenXml.Drawing.Charts.Legend openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.ExtensionList>();
     if (itemElement != null)
-      return ExtensionListConverter.CreateModelElement(itemElement);
+      return DocumentModel.OpenXml.Drawings.Charts.ExtensionListConverter.CreateModelElement(itemElement);
     return null;
   }
-
-  public static void SetExtensionList(Legend? openXmlElement, DocumentModel.Drawings.Charts.ExtensionList? value)
+  
+  private static void SetExtensionList(DocumentFormat.OpenXml.Drawing.Charts.Legend openXmlElement, DocumentModel.Drawings.Charts.ExtensionList? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.ExtensionList>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.ExtensionList>();
+      itemElement = DocumentModel.OpenXml.Drawings.Charts.ExtensionListConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Charts.ExtensionList>(value);
       if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = ExtensionListConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Charts.ExtensionList>(value);
-        if (itemElement != null)
-          openXmlElement.AddChild(itemElement);
-      }
+        openXmlElement.AddChild(itemElement);
     }
   }
-
-  public static DocumentModel.Drawings.Charts.Legend? CreateModelElement(Legend? openXmlElement)
+  
+  public static DocumentModel.Drawings.Charts.Legend? CreateModelElement(DocumentFormat.OpenXml.Drawing.Charts.Legend? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -213,9 +176,9 @@ public static class LegendConverter
     }
     return null;
   }
-
+  
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.Charts.Legend? value)
-    where OpenXmlElementType : Legend, new()
+    where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.Charts.Legend, new()
   {
     if (value != null)
     {

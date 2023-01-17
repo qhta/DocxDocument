@@ -1,472 +1,439 @@
-using DocumentFormat.OpenXml.Vml;
-using DocumentModel.Vml;
-using Fill = DocumentFormat.OpenXml.Vml.Fill;
-
 namespace DocumentModel.OpenXml.Vml;
 
 /// <summary>
-///   Defines the Fill Class.
+/// Defines the Fill Class.
 /// </summary>
 public static class FillConverter
 {
   /// <summary>
-  ///   Unique Identifier
+  /// Unique Identifier
   /// </summary>
-  public static String? GetId(Fill? openXmlElement)
+  private static String? GetId(DocumentFormat.OpenXml.Vml.Fill openXmlElement)
   {
     return openXmlElement?.Id?.Value;
   }
-
-  public static void SetId(Fill? openXmlElement, String? value)
+  
+  private static void SetId(DocumentFormat.OpenXml.Vml.Fill openXmlElement, String? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.Id = new StringValue { Value = value };
-      else
-        openXmlElement.Id = null;
+    if (value != null)
+      openXmlElement.Id = new StringValue { Value = value };
+    else
+      openXmlElement.Id = null;
   }
-
+  
   /// <summary>
-  ///   Fill Type
+  /// Fill Type
   /// </summary>
-  public static FillKind? GetType(Fill? openXmlElement)
+  private static DocumentModel.Vml.FillKind? GetType(DocumentFormat.OpenXml.Vml.Fill openXmlElement)
   {
-    return EnumValueConverter.GetValue<FillTypeValues, FillKind>(openXmlElement?.Type?.Value);
+    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Vml.FillTypeValues, DocumentModel.Vml.FillKind>(openXmlElement?.Type?.Value);
   }
-
-  public static void SetType(Fill? openXmlElement, FillKind? value)
+  
+  private static void SetType(DocumentFormat.OpenXml.Vml.Fill openXmlElement, DocumentModel.Vml.FillKind? value)
   {
-    if (openXmlElement != null)
-      openXmlElement.Type = EnumValueConverter.CreateEnumValue<FillTypeValues, FillKind>(value);
+    openXmlElement.Type = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Vml.FillTypeValues, DocumentModel.Vml.FillKind>(value);
   }
-
+  
   /// <summary>
-  ///   Fill Toggle
+  /// Fill Toggle
   /// </summary>
-  public static Boolean? GetOn(Fill? openXmlElement)
+  private static Boolean? GetOn(DocumentFormat.OpenXml.Vml.Fill openXmlElement)
   {
     return openXmlElement?.On?.Value;
   }
-
-  public static void SetOn(Fill? openXmlElement, Boolean? value)
+  
+  private static void SetOn(DocumentFormat.OpenXml.Vml.Fill openXmlElement, Boolean? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.On = value;
-      else
-        openXmlElement.On = null;
+    if (value != null)
+      openXmlElement.On = value;
+    else
+      openXmlElement.On = null;
   }
-
+  
   /// <summary>
-  ///   Primary Color
+  /// Primary Color
   /// </summary>
-  public static String? GetColor(Fill? openXmlElement)
+  private static String? GetColor(DocumentFormat.OpenXml.Vml.Fill openXmlElement)
   {
     return openXmlElement?.Color?.Value;
   }
-
-  public static void SetColor(Fill? openXmlElement, String? value)
+  
+  private static void SetColor(DocumentFormat.OpenXml.Vml.Fill openXmlElement, String? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.Color = new StringValue { Value = value };
-      else
-        openXmlElement.Color = null;
+    if (value != null)
+      openXmlElement.Color = new StringValue { Value = value };
+    else
+      openXmlElement.Color = null;
   }
-
+  
   /// <summary>
-  ///   Primary Color Opacity
+  /// Primary Color Opacity
   /// </summary>
-  public static String? GetOpacity(Fill? openXmlElement)
+  private static String? GetOpacity(DocumentFormat.OpenXml.Vml.Fill openXmlElement)
   {
     return openXmlElement?.Opacity?.Value;
   }
-
-  public static void SetOpacity(Fill? openXmlElement, String? value)
+  
+  private static void SetOpacity(DocumentFormat.OpenXml.Vml.Fill openXmlElement, String? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.Opacity = new StringValue { Value = value };
-      else
-        openXmlElement.Opacity = null;
+    if (value != null)
+      openXmlElement.Opacity = new StringValue { Value = value };
+    else
+      openXmlElement.Opacity = null;
   }
-
+  
   /// <summary>
-  ///   Secondary Color
+  /// Secondary Color
   /// </summary>
-  public static String? GetColor2(Fill? openXmlElement)
+  private static String? GetColor2(DocumentFormat.OpenXml.Vml.Fill openXmlElement)
   {
     return openXmlElement?.Color2?.Value;
   }
-
-  public static void SetColor2(Fill? openXmlElement, String? value)
+  
+  private static void SetColor2(DocumentFormat.OpenXml.Vml.Fill openXmlElement, String? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.Color2 = new StringValue { Value = value };
-      else
-        openXmlElement.Color2 = null;
+    if (value != null)
+      openXmlElement.Color2 = new StringValue { Value = value };
+    else
+      openXmlElement.Color2 = null;
   }
-
+  
   /// <summary>
-  ///   Fill Image Source
+  /// Fill Image Source
   /// </summary>
-  public static String? GetSource(Fill? openXmlElement)
+  private static String? GetSource(DocumentFormat.OpenXml.Vml.Fill openXmlElement)
   {
     return openXmlElement?.Source?.Value;
   }
-
-  public static void SetSource(Fill? openXmlElement, String? value)
+  
+  private static void SetSource(DocumentFormat.OpenXml.Vml.Fill openXmlElement, String? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.Source = new StringValue { Value = value };
-      else
-        openXmlElement.Source = null;
+    if (value != null)
+      openXmlElement.Source = new StringValue { Value = value };
+    else
+      openXmlElement.Source = null;
   }
-
+  
   /// <summary>
-  ///   Hyperlink Target
+  /// Hyperlink Target
   /// </summary>
-  public static String? GetHref(Fill? openXmlElement)
+  private static String? GetHref(DocumentFormat.OpenXml.Vml.Fill openXmlElement)
   {
     return openXmlElement?.Href?.Value;
   }
-
-  public static void SetHref(Fill? openXmlElement, String? value)
+  
+  private static void SetHref(DocumentFormat.OpenXml.Vml.Fill openXmlElement, String? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.Href = new StringValue { Value = value };
-      else
-        openXmlElement.Href = null;
+    if (value != null)
+      openXmlElement.Href = new StringValue { Value = value };
+    else
+      openXmlElement.Href = null;
   }
-
+  
   /// <summary>
-  ///   Alternate Image Reference Location
+  /// Alternate Image Reference Location
   /// </summary>
-  public static String? GetAlternateImageReference(Fill? openXmlElement)
+  private static String? GetAlternateImageReference(DocumentFormat.OpenXml.Vml.Fill openXmlElement)
   {
     return openXmlElement?.AlternateImageReference?.Value;
   }
-
-  public static void SetAlternateImageReference(Fill? openXmlElement, String? value)
+  
+  private static void SetAlternateImageReference(DocumentFormat.OpenXml.Vml.Fill openXmlElement, String? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.AlternateImageReference = new StringValue { Value = value };
-      else
-        openXmlElement.AlternateImageReference = null;
+    if (value != null)
+      openXmlElement.AlternateImageReference = new StringValue { Value = value };
+    else
+      openXmlElement.AlternateImageReference = null;
   }
-
+  
   /// <summary>
-  ///   Fill Image Size
+  /// Fill Image Size
   /// </summary>
-  public static String? GetSize(Fill? openXmlElement)
+  private static String? GetSize(DocumentFormat.OpenXml.Vml.Fill openXmlElement)
   {
     return openXmlElement?.Size?.Value;
   }
-
-  public static void SetSize(Fill? openXmlElement, String? value)
+  
+  private static void SetSize(DocumentFormat.OpenXml.Vml.Fill openXmlElement, String? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.Size = new StringValue { Value = value };
-      else
-        openXmlElement.Size = null;
+    if (value != null)
+      openXmlElement.Size = new StringValue { Value = value };
+    else
+      openXmlElement.Size = null;
   }
-
+  
   /// <summary>
-  ///   Fill Image Origin
+  /// Fill Image Origin
   /// </summary>
-  public static String? GetOrigin(Fill? openXmlElement)
+  private static String? GetOrigin(DocumentFormat.OpenXml.Vml.Fill openXmlElement)
   {
     return openXmlElement?.Origin?.Value;
   }
-
-  public static void SetOrigin(Fill? openXmlElement, String? value)
+  
+  private static void SetOrigin(DocumentFormat.OpenXml.Vml.Fill openXmlElement, String? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.Origin = new StringValue { Value = value };
-      else
-        openXmlElement.Origin = null;
+    if (value != null)
+      openXmlElement.Origin = new StringValue { Value = value };
+    else
+      openXmlElement.Origin = null;
   }
-
+  
   /// <summary>
-  ///   Fill Image Position
+  /// Fill Image Position
   /// </summary>
-  public static String? GetPosition(Fill? openXmlElement)
+  private static String? GetPosition(DocumentFormat.OpenXml.Vml.Fill openXmlElement)
   {
     return openXmlElement?.Position?.Value;
   }
-
-  public static void SetPosition(Fill? openXmlElement, String? value)
+  
+  private static void SetPosition(DocumentFormat.OpenXml.Vml.Fill openXmlElement, String? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.Position = new StringValue { Value = value };
-      else
-        openXmlElement.Position = null;
+    if (value != null)
+      openXmlElement.Position = new StringValue { Value = value };
+    else
+      openXmlElement.Position = null;
   }
-
+  
   /// <summary>
-  ///   Image Aspect Ratio
+  /// Image Aspect Ratio
   /// </summary>
-  public static ImageAspectKind? GetAspect(Fill? openXmlElement)
+  private static DocumentModel.Vml.ImageAspectKind? GetAspect(DocumentFormat.OpenXml.Vml.Fill openXmlElement)
   {
-    return EnumValueConverter.GetValue<ImageAspectValues, ImageAspectKind>(openXmlElement?.Aspect?.Value);
+    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Vml.ImageAspectValues, DocumentModel.Vml.ImageAspectKind>(openXmlElement?.Aspect?.Value);
   }
-
-  public static void SetAspect(Fill? openXmlElement, ImageAspectKind? value)
+  
+  private static void SetAspect(DocumentFormat.OpenXml.Vml.Fill openXmlElement, DocumentModel.Vml.ImageAspectKind? value)
   {
-    if (openXmlElement != null)
-      openXmlElement.Aspect = EnumValueConverter.CreateEnumValue<ImageAspectValues, ImageAspectKind>(value);
+    openXmlElement.Aspect = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Vml.ImageAspectValues, DocumentModel.Vml.ImageAspectKind>(value);
   }
-
+  
   /// <summary>
-  ///   Intermediate Colors
+  /// Intermediate Colors
   /// </summary>
-  public static String? GetColors(Fill? openXmlElement)
+  private static String? GetColors(DocumentFormat.OpenXml.Vml.Fill openXmlElement)
   {
     return openXmlElement?.Colors?.Value;
   }
-
-  public static void SetColors(Fill? openXmlElement, String? value)
+  
+  private static void SetColors(DocumentFormat.OpenXml.Vml.Fill openXmlElement, String? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.Colors = new StringValue { Value = value };
-      else
-        openXmlElement.Colors = null;
+    if (value != null)
+      openXmlElement.Colors = new StringValue { Value = value };
+    else
+      openXmlElement.Colors = null;
   }
-
+  
   /// <summary>
-  ///   Gradient Angle
+  /// Gradient Angle
   /// </summary>
-  public static Decimal? GetAngle(Fill? openXmlElement)
+  private static Decimal? GetAngle(DocumentFormat.OpenXml.Vml.Fill openXmlElement)
   {
-    return openXmlElement?.Angle?.Value;
+    return openXmlElement.Angle?.Value;
   }
-
-  public static void SetAngle(Fill? openXmlElement, Decimal? value)
+  
+  private static void SetAngle(DocumentFormat.OpenXml.Vml.Fill openXmlElement, Decimal? value)
   {
-    if (openXmlElement != null)
-      openXmlElement.Angle = value;
+    openXmlElement.Angle = value;
   }
-
+  
   /// <summary>
-  ///   Align Image With Shape
+  /// Align Image With Shape
   /// </summary>
-  public static Boolean? GetAlignShape(Fill? openXmlElement)
+  private static Boolean? GetAlignShape(DocumentFormat.OpenXml.Vml.Fill openXmlElement)
   {
     return openXmlElement?.AlignShape?.Value;
   }
-
-  public static void SetAlignShape(Fill? openXmlElement, Boolean? value)
+  
+  private static void SetAlignShape(DocumentFormat.OpenXml.Vml.Fill openXmlElement, Boolean? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.AlignShape = value;
-      else
-        openXmlElement.AlignShape = null;
+    if (value != null)
+      openXmlElement.AlignShape = value;
+    else
+      openXmlElement.AlignShape = null;
   }
-
+  
   /// <summary>
-  ///   Gradient Center
+  /// Gradient Center
   /// </summary>
-  public static String? GetFocus(Fill? openXmlElement)
+  private static String? GetFocus(DocumentFormat.OpenXml.Vml.Fill openXmlElement)
   {
     return openXmlElement?.Focus?.Value;
   }
-
-  public static void SetFocus(Fill? openXmlElement, String? value)
+  
+  private static void SetFocus(DocumentFormat.OpenXml.Vml.Fill openXmlElement, String? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.Focus = new StringValue { Value = value };
-      else
-        openXmlElement.Focus = null;
+    if (value != null)
+      openXmlElement.Focus = new StringValue { Value = value };
+    else
+      openXmlElement.Focus = null;
   }
-
+  
   /// <summary>
-  ///   Radial Gradient Size
+  /// Radial Gradient Size
   /// </summary>
-  public static String? GetFocusSize(Fill? openXmlElement)
+  private static String? GetFocusSize(DocumentFormat.OpenXml.Vml.Fill openXmlElement)
   {
     return openXmlElement?.FocusSize?.Value;
   }
-
-  public static void SetFocusSize(Fill? openXmlElement, String? value)
+  
+  private static void SetFocusSize(DocumentFormat.OpenXml.Vml.Fill openXmlElement, String? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.FocusSize = new StringValue { Value = value };
-      else
-        openXmlElement.FocusSize = null;
+    if (value != null)
+      openXmlElement.FocusSize = new StringValue { Value = value };
+    else
+      openXmlElement.FocusSize = null;
   }
-
+  
   /// <summary>
-  ///   Radial Gradient Center
+  /// Radial Gradient Center
   /// </summary>
-  public static String? GetFocusPosition(Fill? openXmlElement)
+  private static String? GetFocusPosition(DocumentFormat.OpenXml.Vml.Fill openXmlElement)
   {
     return openXmlElement?.FocusPosition?.Value;
   }
-
-  public static void SetFocusPosition(Fill? openXmlElement, String? value)
+  
+  private static void SetFocusPosition(DocumentFormat.OpenXml.Vml.Fill openXmlElement, String? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.FocusPosition = new StringValue { Value = value };
-      else
-        openXmlElement.FocusPosition = null;
+    if (value != null)
+      openXmlElement.FocusPosition = new StringValue { Value = value };
+    else
+      openXmlElement.FocusPosition = null;
   }
-
+  
   /// <summary>
-  ///   Gradient Fill Method
+  /// Gradient Fill Method
   /// </summary>
-  public static FillMethodKind? GetMethod(Fill? openXmlElement)
+  private static DocumentModel.Vml.FillMethodKind? GetMethod(DocumentFormat.OpenXml.Vml.Fill openXmlElement)
   {
-    return EnumValueConverter.GetValue<FillMethodValues, FillMethodKind>(openXmlElement?.Method?.Value);
+    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Vml.FillMethodValues, DocumentModel.Vml.FillMethodKind>(openXmlElement?.Method?.Value);
   }
-
-  public static void SetMethod(Fill? openXmlElement, FillMethodKind? value)
+  
+  private static void SetMethod(DocumentFormat.OpenXml.Vml.Fill openXmlElement, DocumentModel.Vml.FillMethodKind? value)
   {
-    if (openXmlElement != null)
-      openXmlElement.Method = EnumValueConverter.CreateEnumValue<FillMethodValues, FillMethodKind>(value);
+    openXmlElement.Method = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Vml.FillMethodValues, DocumentModel.Vml.FillMethodKind>(value);
   }
-
+  
   /// <summary>
-  ///   Detect Mouse Click
+  /// Detect Mouse Click
   /// </summary>
-  public static Boolean? GetDetectMouseClick(Fill? openXmlElement)
+  private static Boolean? GetDetectMouseClick(DocumentFormat.OpenXml.Vml.Fill openXmlElement)
   {
     return openXmlElement?.DetectMouseClick?.Value;
   }
-
-  public static void SetDetectMouseClick(Fill? openXmlElement, Boolean? value)
+  
+  private static void SetDetectMouseClick(DocumentFormat.OpenXml.Vml.Fill openXmlElement, Boolean? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.DetectMouseClick = value;
-      else
-        openXmlElement.DetectMouseClick = null;
+    if (value != null)
+      openXmlElement.DetectMouseClick = value;
+    else
+      openXmlElement.DetectMouseClick = null;
   }
-
+  
   /// <summary>
-  ///   Title
+  /// Title
   /// </summary>
-  public static String? GetTitle(Fill? openXmlElement)
+  private static String? GetTitle(DocumentFormat.OpenXml.Vml.Fill openXmlElement)
   {
     return openXmlElement?.Title?.Value;
   }
-
-  public static void SetTitle(Fill? openXmlElement, String? value)
+  
+  private static void SetTitle(DocumentFormat.OpenXml.Vml.Fill openXmlElement, String? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.Title = new StringValue { Value = value };
-      else
-        openXmlElement.Title = null;
+    if (value != null)
+      openXmlElement.Title = new StringValue { Value = value };
+    else
+      openXmlElement.Title = null;
   }
-
+  
   /// <summary>
-  ///   Secondary Color Opacity
+  /// Secondary Color Opacity
   /// </summary>
-  public static String? GetOpacity2(Fill? openXmlElement)
+  private static String? GetOpacity2(DocumentFormat.OpenXml.Vml.Fill openXmlElement)
   {
     return openXmlElement?.Opacity2?.Value;
   }
-
-  public static void SetOpacity2(Fill? openXmlElement, String? value)
+  
+  private static void SetOpacity2(DocumentFormat.OpenXml.Vml.Fill openXmlElement, String? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.Opacity2 = new StringValue { Value = value };
-      else
-        openXmlElement.Opacity2 = null;
+    if (value != null)
+      openXmlElement.Opacity2 = new StringValue { Value = value };
+    else
+      openXmlElement.Opacity2 = null;
   }
-
+  
   /// <summary>
-  ///   Recolor Fill as Picture
+  /// Recolor Fill as Picture
   /// </summary>
-  public static Boolean? GetRecolor(Fill? openXmlElement)
+  private static Boolean? GetRecolor(DocumentFormat.OpenXml.Vml.Fill openXmlElement)
   {
     return openXmlElement?.Recolor?.Value;
   }
-
-  public static void SetRecolor(Fill? openXmlElement, Boolean? value)
+  
+  private static void SetRecolor(DocumentFormat.OpenXml.Vml.Fill openXmlElement, Boolean? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.Recolor = value;
-      else
-        openXmlElement.Recolor = null;
+    if (value != null)
+      openXmlElement.Recolor = value;
+    else
+      openXmlElement.Recolor = null;
   }
-
+  
   /// <summary>
-  ///   Rotate Fill with Shape
+  /// Rotate Fill with Shape
   /// </summary>
-  public static Boolean? GetRotate(Fill? openXmlElement)
+  private static Boolean? GetRotate(DocumentFormat.OpenXml.Vml.Fill openXmlElement)
   {
     return openXmlElement?.Rotate?.Value;
   }
-
-  public static void SetRotate(Fill? openXmlElement, Boolean? value)
+  
+  private static void SetRotate(DocumentFormat.OpenXml.Vml.Fill openXmlElement, Boolean? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.Rotate = value;
-      else
-        openXmlElement.Rotate = null;
+    if (value != null)
+      openXmlElement.Rotate = value;
+    else
+      openXmlElement.Rotate = null;
   }
-
+  
   /// <summary>
-  ///   Relationship to Part
+  /// Relationship to Part
   /// </summary>
-  public static String? GetRelationshipId(Fill? openXmlElement)
+  private static String? GetRelationshipId(DocumentFormat.OpenXml.Vml.Fill openXmlElement)
   {
     return openXmlElement?.RelationshipId?.Value;
   }
-
-  public static void SetRelationshipId(Fill? openXmlElement, String? value)
+  
+  private static void SetRelationshipId(DocumentFormat.OpenXml.Vml.Fill openXmlElement, String? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.RelationshipId = new StringValue { Value = value };
-      else
-        openXmlElement.RelationshipId = null;
+    if (value != null)
+      openXmlElement.RelationshipId = new StringValue { Value = value };
+    else
+      openXmlElement.RelationshipId = null;
   }
-
+  
   /// <summary>
-  ///   FillExtendedProperties.
+  /// FillExtendedProperties.
   /// </summary>
-  public static FillExtendedProperties? GetFillExtendedProperties(Fill? openXmlElement)
+  private static DocumentModel.Vml.FillExtendedProperties? GetFillExtendedProperties(DocumentFormat.OpenXml.Vml.Fill openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Vml.Office.FillExtendedProperties>();
     if (itemElement != null)
-      return FillExtendedPropertiesConverter.CreateModelElement(itemElement);
+      return DocumentModel.OpenXml.Vml.FillExtendedPropertiesConverter.CreateModelElement(itemElement);
     return null;
   }
-
-  public static void SetFillExtendedProperties(Fill? openXmlElement, FillExtendedProperties? value)
+  
+  private static void SetFillExtendedProperties(DocumentFormat.OpenXml.Vml.Fill openXmlElement, DocumentModel.Vml.FillExtendedProperties? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Vml.Office.FillExtendedProperties>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Vml.Office.FillExtendedProperties>();
+      itemElement = DocumentModel.OpenXml.Vml.FillExtendedPropertiesConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Vml.Office.FillExtendedProperties>(value);
       if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = FillExtendedPropertiesConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Vml.Office.FillExtendedProperties>(value);
-        if (itemElement != null)
-          openXmlElement.AddChild(itemElement);
-      }
+        openXmlElement.AddChild(itemElement);
     }
   }
-
-  public static DocumentModel.Vml.Fill? CreateModelElement(Fill? openXmlElement)
+  
+  public static DocumentModel.Vml.Fill? CreateModelElement(DocumentFormat.OpenXml.Vml.Fill? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -502,9 +469,9 @@ public static class FillConverter
     }
     return null;
   }
-
+  
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Vml.Fill? value)
-    where OpenXmlElementType : Fill, new()
+    where OpenXmlElementType: DocumentFormat.OpenXml.Vml.Fill, new()
   {
     if (value != null)
     {

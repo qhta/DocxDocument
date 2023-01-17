@@ -175,7 +175,7 @@ public class SchemaGenerator
     return null;
   }
 
-  private XmlSchemaParticle? GenerateParticle(ParticleConstraint? particle)
+  private XmlSchemaParticle? GenerateParticle(MyParticleConstraint? particle)
   {
     if (particle == null)
       return null;
@@ -198,7 +198,7 @@ public class SchemaGenerator
     return null;
   }
 
-  private XmlSchemaParticle? GenerateElementParticle(ParticleConstraint? particle)
+  private XmlSchemaParticle? GenerateElementParticle(MyParticleConstraint? particle)
   {
     if (particle is ElementParticle elementParticle)
     {
@@ -215,7 +215,7 @@ public class SchemaGenerator
     return null;
   }
 
-  private XmlSchemaParticle? GenerateChoiceParticle(ParticleConstraint? particle)
+  private XmlSchemaParticle? GenerateChoiceParticle(MyParticleConstraint? particle)
   {
     if (particle != null)
     {
@@ -237,7 +237,7 @@ public class SchemaGenerator
     return null;
   }
 
-  private XmlSchemaParticle? GenerateSequenceParticle(ParticleConstraint? particle)
+  private XmlSchemaParticle? GenerateSequenceParticle(MyParticleConstraint? particle)
   {
     if (particle != null)
     {
@@ -258,7 +258,7 @@ public class SchemaGenerator
     }
     return null;
   }
-  private XmlSchemaParticle? GenerateAllParticle(ParticleConstraint? particle)
+  private XmlSchemaParticle? GenerateAllParticle(MyParticleConstraint? particle)
   {
     if (particle != null)
     {

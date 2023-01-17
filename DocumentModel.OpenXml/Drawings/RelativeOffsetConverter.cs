@@ -1,41 +1,37 @@
-using DocumentFormat.OpenXml.Drawing;
-
 namespace DocumentModel.OpenXml.Drawings;
 
 /// <summary>
-///   Relative Offset Effect.
+/// Relative Offset Effect.
 /// </summary>
 public static class RelativeOffsetConverter
 {
   /// <summary>
-  ///   Offset X
+  /// Offset X
   /// </summary>
-  public static Int32? GetOffsetX(RelativeOffset? openXmlElement)
+  private static Int32? GetOffsetX(DocumentFormat.OpenXml.Drawing.RelativeOffset openXmlElement)
   {
-    return openXmlElement?.OffsetX?.Value;
+    return openXmlElement.OffsetX?.Value;
   }
-
-  public static void SetOffsetX(RelativeOffset? openXmlElement, Int32? value)
+  
+  private static void SetOffsetX(DocumentFormat.OpenXml.Drawing.RelativeOffset openXmlElement, Int32? value)
   {
-    if (openXmlElement != null)
-      openXmlElement.OffsetX = value;
+    openXmlElement.OffsetX = value;
   }
-
+  
   /// <summary>
-  ///   Offset Y
+  /// Offset Y
   /// </summary>
-  public static Int32? GetOffsetY(RelativeOffset? openXmlElement)
+  private static Int32? GetOffsetY(DocumentFormat.OpenXml.Drawing.RelativeOffset openXmlElement)
   {
-    return openXmlElement?.OffsetY?.Value;
+    return openXmlElement.OffsetY?.Value;
   }
-
-  public static void SetOffsetY(RelativeOffset? openXmlElement, Int32? value)
+  
+  private static void SetOffsetY(DocumentFormat.OpenXml.Drawing.RelativeOffset openXmlElement, Int32? value)
   {
-    if (openXmlElement != null)
-      openXmlElement.OffsetY = value;
+    openXmlElement.OffsetY = value;
   }
-
-  public static DocumentModel.Drawings.RelativeOffset? CreateModelElement(RelativeOffset? openXmlElement)
+  
+  public static DocumentModel.Drawings.RelativeOffset? CreateModelElement(DocumentFormat.OpenXml.Drawing.RelativeOffset? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -46,9 +42,9 @@ public static class RelativeOffsetConverter
     }
     return null;
   }
-
+  
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.RelativeOffset? value)
-    where OpenXmlElementType : RelativeOffset, new()
+    where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.RelativeOffset, new()
   {
     if (value != null)
     {

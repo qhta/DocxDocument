@@ -1,57 +1,48 @@
-using DocumentFormat.OpenXml.Drawing;
-using DocumentModel.Drawings;
-using AdjustValueList = DocumentModel.Drawings.AdjustValueList;
-using PresetGeometry = DocumentFormat.OpenXml.Drawing.PresetGeometry;
-
 namespace DocumentModel.OpenXml.Drawings;
 
 /// <summary>
-///   Preset geometry.
+/// Preset geometry.
 /// </summary>
 public static class PresetGeometryConverter
 {
   /// <summary>
-  ///   Preset Shape
+  /// Preset Shape
   /// </summary>
-  public static ShapeKind? GetPreset(PresetGeometry? openXmlElement)
+  private static DocumentModel.Drawings.ShapeKind? GetPreset(DocumentFormat.OpenXml.Drawing.PresetGeometry openXmlElement)
   {
-    return EnumValueConverter.GetValue<ShapeTypeValues, ShapeKind>(openXmlElement?.Preset?.Value);
+    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Drawing.ShapeTypeValues, DocumentModel.Drawings.ShapeKind>(openXmlElement?.Preset?.Value);
   }
-
-  public static void SetPreset(PresetGeometry? openXmlElement, ShapeKind? value)
+  
+  private static void SetPreset(DocumentFormat.OpenXml.Drawing.PresetGeometry openXmlElement, DocumentModel.Drawings.ShapeKind? value)
   {
-    if (openXmlElement != null)
-      openXmlElement.Preset = EnumValueConverter.CreateEnumValue<ShapeTypeValues, ShapeKind>(value);
+    openXmlElement.Preset = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Drawing.ShapeTypeValues, DocumentModel.Drawings.ShapeKind>(value);
   }
-
+  
   /// <summary>
-  ///   List of Shape Adjust Values.
+  /// List of Shape Adjust Values.
   /// </summary>
-  public static AdjustValueList? GetAdjustValueList(PresetGeometry? openXmlElement)
+  private static DocumentModel.Drawings.AdjustValueList? GetAdjustValueList(DocumentFormat.OpenXml.Drawing.PresetGeometry openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.AdjustValueList>();
     if (itemElement != null)
-      return AdjustValueListConverter.CreateModelElement(itemElement);
+      return DocumentModel.OpenXml.Drawings.AdjustValueListConverter.CreateModelElement(itemElement);
     return null;
   }
-
-  public static void SetAdjustValueList(PresetGeometry? openXmlElement, AdjustValueList? value)
+  
+  private static void SetAdjustValueList(DocumentFormat.OpenXml.Drawing.PresetGeometry openXmlElement, DocumentModel.Drawings.AdjustValueList? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.AdjustValueList>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.AdjustValueList>();
+      itemElement = DocumentModel.OpenXml.Drawings.AdjustValueListConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.AdjustValueList>(value);
       if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = AdjustValueListConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.AdjustValueList>(value);
-        if (itemElement != null)
-          openXmlElement.AddChild(itemElement);
-      }
+        openXmlElement.AddChild(itemElement);
     }
   }
-
-  public static DocumentModel.Drawings.PresetGeometry? CreateModelElement(PresetGeometry? openXmlElement)
+  
+  public static DocumentModel.Drawings.PresetGeometry? CreateModelElement(DocumentFormat.OpenXml.Drawing.PresetGeometry? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -62,9 +53,9 @@ public static class PresetGeometryConverter
     }
     return null;
   }
-
+  
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.PresetGeometry? value)
-    where OpenXmlElementType : PresetGeometry, new()
+    where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.PresetGeometry, new()
   {
     if (value != null)
     {

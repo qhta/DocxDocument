@@ -1,47 +1,43 @@
-using DocumentFormat.OpenXml.Drawing;
-
 namespace DocumentModel.OpenXml.Drawings;
 
 /// <summary>
-///   Build Chart.
+/// Build Chart.
 /// </summary>
 public static class BuildChartConverter
 {
   /// <summary>
-  ///   Build
+  /// Build
   /// </summary>
-  public static String? GetBuild(BuildChart? openXmlElement)
+  private static String? GetBuild(DocumentFormat.OpenXml.Drawing.BuildChart openXmlElement)
   {
     return openXmlElement?.Build?.Value;
   }
-
-  public static void SetBuild(BuildChart? openXmlElement, String? value)
+  
+  private static void SetBuild(DocumentFormat.OpenXml.Drawing.BuildChart openXmlElement, String? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.Build = new StringValue { Value = value };
-      else
-        openXmlElement.Build = null;
+    if (value != null)
+      openXmlElement.Build = new StringValue { Value = value };
+    else
+      openXmlElement.Build = null;
   }
-
+  
   /// <summary>
-  ///   Animate Background
+  /// Animate Background
   /// </summary>
-  public static Boolean? GetAnimateBackground(BuildChart? openXmlElement)
+  private static Boolean? GetAnimateBackground(DocumentFormat.OpenXml.Drawing.BuildChart openXmlElement)
   {
     return openXmlElement?.AnimateBackground?.Value;
   }
-
-  public static void SetAnimateBackground(BuildChart? openXmlElement, Boolean? value)
+  
+  private static void SetAnimateBackground(DocumentFormat.OpenXml.Drawing.BuildChart openXmlElement, Boolean? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.AnimateBackground = new BooleanValue { Value = (Boolean)value };
-      else
-        openXmlElement.AnimateBackground = null;
+    if (value != null)
+      openXmlElement.AnimateBackground = new BooleanValue { Value = (Boolean)value };
+    else
+      openXmlElement.AnimateBackground = null;
   }
-
-  public static DocumentModel.Drawings.BuildChart? CreateModelElement(BuildChart? openXmlElement)
+  
+  public static DocumentModel.Drawings.BuildChart? CreateModelElement(DocumentFormat.OpenXml.Drawing.BuildChart? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -52,9 +48,9 @@ public static class BuildChartConverter
     }
     return null;
   }
-
+  
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.BuildChart? value)
-    where OpenXmlElementType : BuildChart, new()
+    where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.BuildChart, new()
   {
     if (value != null)
     {

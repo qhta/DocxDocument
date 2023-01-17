@@ -1,143 +1,131 @@
-using DocumentFormat.OpenXml.Drawing;
-using AdjustPoint2DType = DocumentModel.Drawings.AdjustPoint2DType;
-
 namespace DocumentModel.OpenXml.Drawings;
 
 /// <summary>
-///   XY Adjust Handle.
+/// XY Adjust Handle.
 /// </summary>
 public static class AdjustHandleXYConverter
 {
   /// <summary>
-  ///   Horizontal Adjustment Guide
+  /// Horizontal Adjustment Guide
   /// </summary>
-  public static String? GetXAdjustmentGuide(AdjustHandleXY? openXmlElement)
+  private static String? GetXAdjustmentGuide(DocumentFormat.OpenXml.Drawing.AdjustHandleXY openXmlElement)
   {
     return openXmlElement?.XAdjustmentGuide?.Value;
   }
-
-  public static void SetXAdjustmentGuide(AdjustHandleXY? openXmlElement, String? value)
+  
+  private static void SetXAdjustmentGuide(DocumentFormat.OpenXml.Drawing.AdjustHandleXY openXmlElement, String? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.XAdjustmentGuide = new StringValue { Value = value };
-      else
-        openXmlElement.XAdjustmentGuide = null;
+    if (value != null)
+      openXmlElement.XAdjustmentGuide = new StringValue { Value = value };
+    else
+      openXmlElement.XAdjustmentGuide = null;
   }
-
+  
   /// <summary>
-  ///   Minimum Horizontal Adjustment
+  /// Minimum Horizontal Adjustment
   /// </summary>
-  public static String? GetMinX(AdjustHandleXY? openXmlElement)
+  private static String? GetMinX(DocumentFormat.OpenXml.Drawing.AdjustHandleXY openXmlElement)
   {
     return openXmlElement?.MinX?.Value;
   }
-
-  public static void SetMinX(AdjustHandleXY? openXmlElement, String? value)
+  
+  private static void SetMinX(DocumentFormat.OpenXml.Drawing.AdjustHandleXY openXmlElement, String? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.MinX = new StringValue { Value = value };
-      else
-        openXmlElement.MinX = null;
+    if (value != null)
+      openXmlElement.MinX = new StringValue { Value = value };
+    else
+      openXmlElement.MinX = null;
   }
-
+  
   /// <summary>
-  ///   Maximum Horizontal Adjustment
+  /// Maximum Horizontal Adjustment
   /// </summary>
-  public static String? GetMaxX(AdjustHandleXY? openXmlElement)
+  private static String? GetMaxX(DocumentFormat.OpenXml.Drawing.AdjustHandleXY openXmlElement)
   {
     return openXmlElement?.MaxX?.Value;
   }
-
-  public static void SetMaxX(AdjustHandleXY? openXmlElement, String? value)
+  
+  private static void SetMaxX(DocumentFormat.OpenXml.Drawing.AdjustHandleXY openXmlElement, String? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.MaxX = new StringValue { Value = value };
-      else
-        openXmlElement.MaxX = null;
+    if (value != null)
+      openXmlElement.MaxX = new StringValue { Value = value };
+    else
+      openXmlElement.MaxX = null;
   }
-
+  
   /// <summary>
-  ///   Vertical Adjustment Guide
+  /// Vertical Adjustment Guide
   /// </summary>
-  public static String? GetYAdjustmentGuide(AdjustHandleXY? openXmlElement)
+  private static String? GetYAdjustmentGuide(DocumentFormat.OpenXml.Drawing.AdjustHandleXY openXmlElement)
   {
     return openXmlElement?.YAdjustmentGuide?.Value;
   }
-
-  public static void SetYAdjustmentGuide(AdjustHandleXY? openXmlElement, String? value)
+  
+  private static void SetYAdjustmentGuide(DocumentFormat.OpenXml.Drawing.AdjustHandleXY openXmlElement, String? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.YAdjustmentGuide = new StringValue { Value = value };
-      else
-        openXmlElement.YAdjustmentGuide = null;
+    if (value != null)
+      openXmlElement.YAdjustmentGuide = new StringValue { Value = value };
+    else
+      openXmlElement.YAdjustmentGuide = null;
   }
-
+  
   /// <summary>
-  ///   Minimum Vertical Adjustment
+  /// Minimum Vertical Adjustment
   /// </summary>
-  public static String? GetMinY(AdjustHandleXY? openXmlElement)
+  private static String? GetMinY(DocumentFormat.OpenXml.Drawing.AdjustHandleXY openXmlElement)
   {
     return openXmlElement?.MinY?.Value;
   }
-
-  public static void SetMinY(AdjustHandleXY? openXmlElement, String? value)
+  
+  private static void SetMinY(DocumentFormat.OpenXml.Drawing.AdjustHandleXY openXmlElement, String? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.MinY = new StringValue { Value = value };
-      else
-        openXmlElement.MinY = null;
+    if (value != null)
+      openXmlElement.MinY = new StringValue { Value = value };
+    else
+      openXmlElement.MinY = null;
   }
-
+  
   /// <summary>
-  ///   Maximum Vertical Adjustment
+  /// Maximum Vertical Adjustment
   /// </summary>
-  public static String? GetMaxY(AdjustHandleXY? openXmlElement)
+  private static String? GetMaxY(DocumentFormat.OpenXml.Drawing.AdjustHandleXY openXmlElement)
   {
     return openXmlElement?.MaxY?.Value;
   }
-
-  public static void SetMaxY(AdjustHandleXY? openXmlElement, String? value)
+  
+  private static void SetMaxY(DocumentFormat.OpenXml.Drawing.AdjustHandleXY openXmlElement, String? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.MaxY = new StringValue { Value = value };
-      else
-        openXmlElement.MaxY = null;
+    if (value != null)
+      openXmlElement.MaxY = new StringValue { Value = value };
+    else
+      openXmlElement.MaxY = null;
   }
-
+  
   /// <summary>
-  ///   Position.
+  /// Position.
   /// </summary>
-  public static AdjustPoint2DType? GetPosition(AdjustHandleXY? openXmlElement)
+  private static DocumentModel.Drawings.AdjustPoint2DType? GetPosition(DocumentFormat.OpenXml.Drawing.AdjustHandleXY openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<Position>();
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.Position>();
     if (itemElement != null)
-      return AdjustPoint2DTypeConverter.CreateModelElement(itemElement);
+      return DocumentModel.OpenXml.Drawings.AdjustPoint2DTypeConverter.CreateModelElement(itemElement);
     return null;
   }
-
-  public static void SetPosition(AdjustHandleXY? openXmlElement, AdjustPoint2DType? value)
+  
+  private static void SetPosition(DocumentFormat.OpenXml.Drawing.AdjustHandleXY openXmlElement, DocumentModel.Drawings.AdjustPoint2DType? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Position>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<Position>();
+      itemElement = DocumentModel.OpenXml.Drawings.AdjustPoint2DTypeConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Position>(value);
       if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = AdjustPoint2DTypeConverter.CreateOpenXmlElement<Position>(value);
-        if (itemElement != null)
-          openXmlElement.AddChild(itemElement);
-      }
+        openXmlElement.AddChild(itemElement);
     }
   }
-
-  public static DocumentModel.Drawings.AdjustHandleXY? CreateModelElement(AdjustHandleXY? openXmlElement)
+  
+  public static DocumentModel.Drawings.AdjustHandleXY? CreateModelElement(DocumentFormat.OpenXml.Drawing.AdjustHandleXY? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -153,9 +141,9 @@ public static class AdjustHandleXYConverter
     }
     return null;
   }
-
+  
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.AdjustHandleXY? value)
-    where OpenXmlElementType : AdjustHandleXY, new()
+    where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.AdjustHandleXY, new()
   {
     if (value != null)
     {

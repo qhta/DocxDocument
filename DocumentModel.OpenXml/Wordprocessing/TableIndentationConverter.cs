@@ -1,43 +1,37 @@
-using DocumentFormat.OpenXml.Wordprocessing;
-using DocumentModel.Wordprocessing;
-using TableIndentation = DocumentFormat.OpenXml.Wordprocessing.TableIndentation;
-
 namespace DocumentModel.OpenXml.Wordprocessing;
 
 /// <summary>
-///   Defines the TableIndentation Class.
+/// Defines the TableIndentation Class.
 /// </summary>
 public static class TableIndentationConverter
 {
   /// <summary>
-  ///   w
+  /// w
   /// </summary>
-  public static Int32? GetWidth(TableIndentation? openXmlElement)
+  private static Int32? GetWidth(DocumentFormat.OpenXml.Wordprocessing.TableIndentation openXmlElement)
   {
-    return openXmlElement?.Width?.Value;
+    return openXmlElement.Width?.Value;
   }
-
-  public static void SetWidth(TableIndentation? openXmlElement, Int32? value)
+  
+  private static void SetWidth(DocumentFormat.OpenXml.Wordprocessing.TableIndentation openXmlElement, Int32? value)
   {
-    if (openXmlElement != null)
-      openXmlElement.Width = value;
+    openXmlElement.Width = value;
   }
-
+  
   /// <summary>
-  ///   type
+  /// type
   /// </summary>
-  public static TableWidthUnitKind? GetType(TableIndentation? openXmlElement)
+  private static DocumentModel.Wordprocessing.TableWidthUnitKind? GetType(DocumentFormat.OpenXml.Wordprocessing.TableIndentation openXmlElement)
   {
-    return EnumValueConverter.GetValue<TableWidthUnitValues, TableWidthUnitKind>(openXmlElement?.Type?.Value);
+    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Wordprocessing.TableWidthUnitValues, DocumentModel.Wordprocessing.TableWidthUnitKind>(openXmlElement?.Type?.Value);
   }
-
-  public static void SetType(TableIndentation? openXmlElement, TableWidthUnitKind? value)
+  
+  private static void SetType(DocumentFormat.OpenXml.Wordprocessing.TableIndentation openXmlElement, DocumentModel.Wordprocessing.TableWidthUnitKind? value)
   {
-    if (openXmlElement != null)
-      openXmlElement.Type = EnumValueConverter.CreateEnumValue<TableWidthUnitValues, TableWidthUnitKind>(value);
+    openXmlElement.Type = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Wordprocessing.TableWidthUnitValues, DocumentModel.Wordprocessing.TableWidthUnitKind>(value);
   }
-
-  public static DocumentModel.Wordprocessing.TableIndentation? CreateModelElement(TableIndentation? openXmlElement)
+  
+  public static DocumentModel.Wordprocessing.TableIndentation? CreateModelElement(DocumentFormat.OpenXml.Wordprocessing.TableIndentation? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -48,9 +42,9 @@ public static class TableIndentationConverter
     }
     return null;
   }
-
+  
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.TableIndentation? value)
-    where OpenXmlElementType : TableIndentation, new()
+    where OpenXmlElementType: DocumentFormat.OpenXml.Wordprocessing.TableIndentation, new()
   {
     if (value != null)
     {

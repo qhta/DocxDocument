@@ -1,575 +1,473 @@
-using DocumentFormat.OpenXml.Drawing;
-using BlipFill = DocumentModel.Drawings.BlipFill;
-using EffectDag = DocumentModel.Drawings.EffectDag;
-using EffectList = DocumentModel.Drawings.EffectList;
-using EndParagraphRunProperties = DocumentFormat.OpenXml.Drawing.EndParagraphRunProperties;
-using GradientFill = DocumentModel.Drawings.GradientFill;
-using Highlight = DocumentModel.Drawings.Highlight;
-using HyperlinkOnClick = DocumentModel.Drawings.HyperlinkOnClick;
-using HyperlinkOnMouseOver = DocumentModel.Drawings.HyperlinkOnMouseOver;
-using Outline = DocumentModel.Drawings.Outline;
-using PatternFill = DocumentModel.Drawings.PatternFill;
-using SolidFill = DocumentModel.Drawings.SolidFill;
-using TextFontType = DocumentModel.Drawings.TextFontType;
-using Underline = DocumentModel.Drawings.Underline;
-using UnderlineFill = DocumentModel.Drawings.UnderlineFill;
-
 namespace DocumentModel.OpenXml.Drawings;
 
 /// <summary>
-///   End Paragraph Run Properties.
+/// End Paragraph Run Properties.
 /// </summary>
 public static class EndParagraphRunPropertiesConverter
 {
-  public static Outline? GetOutline(EndParagraphRunProperties? openXmlElement)
+  private static DocumentModel.Drawings.Outline? GetOutline(DocumentFormat.OpenXml.Drawing.EndParagraphRunProperties openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.Outline>();
     if (itemElement != null)
-      return OutlineConverter.CreateModelElement(itemElement);
+      return DocumentModel.OpenXml.Drawings.OutlineConverter.CreateModelElement(itemElement);
     return null;
   }
-
-  public static void SetOutline(EndParagraphRunProperties? openXmlElement, Outline? value)
+  
+  private static void SetOutline(DocumentFormat.OpenXml.Drawing.EndParagraphRunProperties openXmlElement, DocumentModel.Drawings.Outline? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Outline>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Outline>();
+      itemElement = DocumentModel.OpenXml.Drawings.OutlineConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Outline>(value);
+      if (itemElement != null)
+        openXmlElement.AddChild(itemElement);
+    }
+  }
+  
+  private static Boolean? GetNoFill(DocumentFormat.OpenXml.Drawing.EndParagraphRunProperties openXmlElement)
+  {
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.NoFill>();
+    return itemElement != null;
+  }
+  
+  private static void SetNoFill(DocumentFormat.OpenXml.Drawing.EndParagraphRunProperties openXmlElement, Boolean? value)
+  {
+    if (value == false)
+    {
+      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.NoFill>();
       if (itemElement != null)
         itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = OutlineConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Outline>(value);
-        if (itemElement != null)
-          openXmlElement.AddChild(itemElement);
-      }
     }
-  }
-
-  public static Boolean? GetNoFill(EndParagraphRunProperties? openXmlElement)
-  {
-    if (openXmlElement != null)
+    if (value == true)
     {
-      var itemElement = openXmlElement.GetFirstChild<NoFill>();
-      return itemElement != null;
-    }
-    return null;
-  }
-
-  public static void SetNoFill(EndParagraphRunProperties? openXmlElement, Boolean? value)
-  {
-    if (openXmlElement != null)
-    {
-      if (value == false)
-      {
-        var itemElement = openXmlElement.GetFirstChild<NoFill>();
-        if (itemElement != null)
-          itemElement.Remove();
-      }
-      if (value == true)
-      {
-        var itemElement = new NoFill();
-        openXmlElement.AddChild(itemElement);
-      }
+      var itemElement = new DocumentFormat.OpenXml.Drawing.NoFill();
+      openXmlElement.AddChild(itemElement);
     }
   }
-
-  public static SolidFill? GetSolidFill(EndParagraphRunProperties? openXmlElement)
+  
+  private static DocumentModel.Drawings.SolidFill? GetSolidFill(DocumentFormat.OpenXml.Drawing.EndParagraphRunProperties openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.SolidFill>();
     if (itemElement != null)
-      return SolidFillConverter.CreateModelElement(itemElement);
+      return DocumentModel.OpenXml.Drawings.SolidFillConverter.CreateModelElement(itemElement);
     return null;
   }
-
-  public static void SetSolidFill(EndParagraphRunProperties? openXmlElement, SolidFill? value)
+  
+  private static void SetSolidFill(DocumentFormat.OpenXml.Drawing.EndParagraphRunProperties openXmlElement, DocumentModel.Drawings.SolidFill? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.SolidFill>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.SolidFill>();
+      itemElement = DocumentModel.OpenXml.Drawings.SolidFillConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.SolidFill>(value);
       if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = SolidFillConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.SolidFill>(value);
-        if (itemElement != null)
-          openXmlElement.AddChild(itemElement);
-      }
+        openXmlElement.AddChild(itemElement);
     }
   }
-
-  public static GradientFill? GetGradientFill(EndParagraphRunProperties? openXmlElement)
+  
+  private static DocumentModel.Drawings.GradientFill? GetGradientFill(DocumentFormat.OpenXml.Drawing.EndParagraphRunProperties openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.GradientFill>();
     if (itemElement != null)
-      return GradientFillConverter.CreateModelElement(itemElement);
+      return DocumentModel.OpenXml.Drawings.GradientFillConverter.CreateModelElement(itemElement);
     return null;
   }
-
-  public static void SetGradientFill(EndParagraphRunProperties? openXmlElement, GradientFill? value)
+  
+  private static void SetGradientFill(DocumentFormat.OpenXml.Drawing.EndParagraphRunProperties openXmlElement, DocumentModel.Drawings.GradientFill? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.GradientFill>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.GradientFill>();
+      itemElement = DocumentModel.OpenXml.Drawings.GradientFillConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.GradientFill>(value);
       if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = GradientFillConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.GradientFill>(value);
-        if (itemElement != null)
-          openXmlElement.AddChild(itemElement);
-      }
+        openXmlElement.AddChild(itemElement);
     }
   }
-
-  public static BlipFill? GetBlipFill(EndParagraphRunProperties? openXmlElement)
+  
+  private static DocumentModel.Drawings.BlipFill? GetBlipFill(DocumentFormat.OpenXml.Drawing.EndParagraphRunProperties openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.BlipFill>();
     if (itemElement != null)
-      return BlipFillConverter.CreateModelElement(itemElement);
+      return DocumentModel.OpenXml.Drawings.BlipFillConverter.CreateModelElement(itemElement);
     return null;
   }
-
-  public static void SetBlipFill(EndParagraphRunProperties? openXmlElement, BlipFill? value)
+  
+  private static void SetBlipFill(DocumentFormat.OpenXml.Drawing.EndParagraphRunProperties openXmlElement, DocumentModel.Drawings.BlipFill? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.BlipFill>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.BlipFill>();
+      itemElement = DocumentModel.OpenXml.Drawings.BlipFillConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.BlipFill>(value);
       if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = BlipFillConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.BlipFill>(value);
-        if (itemElement != null)
-          openXmlElement.AddChild(itemElement);
-      }
+        openXmlElement.AddChild(itemElement);
     }
   }
-
-  public static PatternFill? GetPatternFill(EndParagraphRunProperties? openXmlElement)
+  
+  private static DocumentModel.Drawings.PatternFill? GetPatternFill(DocumentFormat.OpenXml.Drawing.EndParagraphRunProperties openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.PatternFill>();
     if (itemElement != null)
-      return PatternFillConverter.CreateModelElement(itemElement);
+      return DocumentModel.OpenXml.Drawings.PatternFillConverter.CreateModelElement(itemElement);
     return null;
   }
-
-  public static void SetPatternFill(EndParagraphRunProperties? openXmlElement, PatternFill? value)
+  
+  private static void SetPatternFill(DocumentFormat.OpenXml.Drawing.EndParagraphRunProperties openXmlElement, DocumentModel.Drawings.PatternFill? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.PatternFill>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.PatternFill>();
+      itemElement = DocumentModel.OpenXml.Drawings.PatternFillConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.PatternFill>(value);
+      if (itemElement != null)
+        openXmlElement.AddChild(itemElement);
+    }
+  }
+  
+  private static Boolean? GetGroupFill(DocumentFormat.OpenXml.Drawing.EndParagraphRunProperties openXmlElement)
+  {
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.GroupFill>();
+    return itemElement != null;
+  }
+  
+  private static void SetGroupFill(DocumentFormat.OpenXml.Drawing.EndParagraphRunProperties openXmlElement, Boolean? value)
+  {
+    if (value == false)
+    {
+      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.GroupFill>();
       if (itemElement != null)
         itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = PatternFillConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.PatternFill>(value);
-        if (itemElement != null)
-          openXmlElement.AddChild(itemElement);
-      }
     }
-  }
-
-  public static Boolean? GetGroupFill(EndParagraphRunProperties? openXmlElement)
-  {
-    if (openXmlElement != null)
+    if (value == true)
     {
-      var itemElement = openXmlElement.GetFirstChild<GroupFill>();
-      return itemElement != null;
-    }
-    return null;
-  }
-
-  public static void SetGroupFill(EndParagraphRunProperties? openXmlElement, Boolean? value)
-  {
-    if (openXmlElement != null)
-    {
-      if (value == false)
-      {
-        var itemElement = openXmlElement.GetFirstChild<GroupFill>();
-        if (itemElement != null)
-          itemElement.Remove();
-      }
-      if (value == true)
-      {
-        var itemElement = new GroupFill();
-        openXmlElement.AddChild(itemElement);
-      }
+      var itemElement = new DocumentFormat.OpenXml.Drawing.GroupFill();
+      openXmlElement.AddChild(itemElement);
     }
   }
-
-  public static EffectList? GetEffectList(EndParagraphRunProperties? openXmlElement)
+  
+  private static DocumentModel.Drawings.EffectList? GetEffectList(DocumentFormat.OpenXml.Drawing.EndParagraphRunProperties openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.EffectList>();
     if (itemElement != null)
-      return EffectListConverter.CreateModelElement(itemElement);
+      return DocumentModel.OpenXml.Drawings.EffectListConverter.CreateModelElement(itemElement);
     return null;
   }
-
-  public static void SetEffectList(EndParagraphRunProperties? openXmlElement, EffectList? value)
+  
+  private static void SetEffectList(DocumentFormat.OpenXml.Drawing.EndParagraphRunProperties openXmlElement, DocumentModel.Drawings.EffectList? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.EffectList>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.EffectList>();
+      itemElement = DocumentModel.OpenXml.Drawings.EffectListConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.EffectList>(value);
       if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = EffectListConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.EffectList>(value);
-        if (itemElement != null)
-          openXmlElement.AddChild(itemElement);
-      }
+        openXmlElement.AddChild(itemElement);
     }
   }
-
-  public static EffectDag? GetEffectDag(EndParagraphRunProperties? openXmlElement)
+  
+  private static DocumentModel.Drawings.EffectDag? GetEffectDag(DocumentFormat.OpenXml.Drawing.EndParagraphRunProperties openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.EffectDag>();
     if (itemElement != null)
-      return EffectDagConverter.CreateModelElement(itemElement);
+      return DocumentModel.OpenXml.Drawings.EffectDagConverter.CreateModelElement(itemElement);
     return null;
   }
-
-  public static void SetEffectDag(EndParagraphRunProperties? openXmlElement, EffectDag? value)
+  
+  private static void SetEffectDag(DocumentFormat.OpenXml.Drawing.EndParagraphRunProperties openXmlElement, DocumentModel.Drawings.EffectDag? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.EffectDag>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.EffectDag>();
+      itemElement = DocumentModel.OpenXml.Drawings.EffectDagConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.EffectDag>(value);
       if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = EffectDagConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.EffectDag>(value);
-        if (itemElement != null)
-          openXmlElement.AddChild(itemElement);
-      }
+        openXmlElement.AddChild(itemElement);
     }
   }
-
-  public static Highlight? GetHighlight(EndParagraphRunProperties? openXmlElement)
+  
+  private static DocumentModel.Drawings.Highlight? GetHighlight(DocumentFormat.OpenXml.Drawing.EndParagraphRunProperties openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.Highlight>();
     if (itemElement != null)
-      return HighlightConverter.CreateModelElement(itemElement);
+      return DocumentModel.OpenXml.Drawings.HighlightConverter.CreateModelElement(itemElement);
     return null;
   }
-
-  public static void SetHighlight(EndParagraphRunProperties? openXmlElement, Highlight? value)
+  
+  private static void SetHighlight(DocumentFormat.OpenXml.Drawing.EndParagraphRunProperties openXmlElement, DocumentModel.Drawings.Highlight? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Highlight>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Highlight>();
+      itemElement = DocumentModel.OpenXml.Drawings.HighlightConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Highlight>(value);
+      if (itemElement != null)
+        openXmlElement.AddChild(itemElement);
+    }
+  }
+  
+  private static Boolean? GetUnderlineFollowsText(DocumentFormat.OpenXml.Drawing.EndParagraphRunProperties openXmlElement)
+  {
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.UnderlineFollowsText>();
+    return itemElement != null;
+  }
+  
+  private static void SetUnderlineFollowsText(DocumentFormat.OpenXml.Drawing.EndParagraphRunProperties openXmlElement, Boolean? value)
+  {
+    if (value == false)
+    {
+      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.UnderlineFollowsText>();
       if (itemElement != null)
         itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = HighlightConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Highlight>(value);
-        if (itemElement != null)
-          openXmlElement.AddChild(itemElement);
-      }
     }
-  }
-
-  public static Boolean? GetUnderlineFollowsText(EndParagraphRunProperties? openXmlElement)
-  {
-    if (openXmlElement != null)
+    if (value == true)
     {
-      var itemElement = openXmlElement.GetFirstChild<UnderlineFollowsText>();
-      return itemElement != null;
-    }
-    return null;
-  }
-
-  public static void SetUnderlineFollowsText(EndParagraphRunProperties? openXmlElement, Boolean? value)
-  {
-    if (openXmlElement != null)
-    {
-      if (value == false)
-      {
-        var itemElement = openXmlElement.GetFirstChild<UnderlineFollowsText>();
-        if (itemElement != null)
-          itemElement.Remove();
-      }
-      if (value == true)
-      {
-        var itemElement = new UnderlineFollowsText();
-        openXmlElement.AddChild(itemElement);
-      }
+      var itemElement = new DocumentFormat.OpenXml.Drawing.UnderlineFollowsText();
+      openXmlElement.AddChild(itemElement);
     }
   }
-
-  public static Underline? GetUnderline(EndParagraphRunProperties? openXmlElement)
+  
+  private static DocumentModel.Drawings.Underline? GetUnderline(DocumentFormat.OpenXml.Drawing.EndParagraphRunProperties openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.Underline>();
     if (itemElement != null)
-      return UnderlineConverter.CreateModelElement(itemElement);
+      return DocumentModel.OpenXml.Drawings.UnderlineConverter.CreateModelElement(itemElement);
     return null;
   }
-
-  public static void SetUnderline(EndParagraphRunProperties? openXmlElement, Underline? value)
+  
+  private static void SetUnderline(DocumentFormat.OpenXml.Drawing.EndParagraphRunProperties openXmlElement, DocumentModel.Drawings.Underline? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Underline>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Underline>();
+      itemElement = DocumentModel.OpenXml.Drawings.UnderlineConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Underline>(value);
+      if (itemElement != null)
+        openXmlElement.AddChild(itemElement);
+    }
+  }
+  
+  private static Boolean? GetUnderlineFillText(DocumentFormat.OpenXml.Drawing.EndParagraphRunProperties openXmlElement)
+  {
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.UnderlineFillText>();
+    return itemElement != null;
+  }
+  
+  private static void SetUnderlineFillText(DocumentFormat.OpenXml.Drawing.EndParagraphRunProperties openXmlElement, Boolean? value)
+  {
+    if (value == false)
+    {
+      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.UnderlineFillText>();
       if (itemElement != null)
         itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = UnderlineConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Underline>(value);
-        if (itemElement != null)
-          openXmlElement.AddChild(itemElement);
-      }
     }
-  }
-
-  public static Boolean? GetUnderlineFillText(EndParagraphRunProperties? openXmlElement)
-  {
-    if (openXmlElement != null)
+    if (value == true)
     {
-      var itemElement = openXmlElement.GetFirstChild<UnderlineFillText>();
-      return itemElement != null;
-    }
-    return null;
-  }
-
-  public static void SetUnderlineFillText(EndParagraphRunProperties? openXmlElement, Boolean? value)
-  {
-    if (openXmlElement != null)
-    {
-      if (value == false)
-      {
-        var itemElement = openXmlElement.GetFirstChild<UnderlineFillText>();
-        if (itemElement != null)
-          itemElement.Remove();
-      }
-      if (value == true)
-      {
-        var itemElement = new UnderlineFillText();
-        openXmlElement.AddChild(itemElement);
-      }
+      var itemElement = new DocumentFormat.OpenXml.Drawing.UnderlineFillText();
+      openXmlElement.AddChild(itemElement);
     }
   }
-
-  public static UnderlineFill? GetUnderlineFill(EndParagraphRunProperties? openXmlElement)
+  
+  private static DocumentModel.Drawings.UnderlineFill? GetUnderlineFill(DocumentFormat.OpenXml.Drawing.EndParagraphRunProperties openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.UnderlineFill>();
     if (itemElement != null)
-      return UnderlineFillConverter.CreateModelElement(itemElement);
+      return DocumentModel.OpenXml.Drawings.UnderlineFillConverter.CreateModelElement(itemElement);
     return null;
   }
-
-  public static void SetUnderlineFill(EndParagraphRunProperties? openXmlElement, UnderlineFill? value)
+  
+  private static void SetUnderlineFill(DocumentFormat.OpenXml.Drawing.EndParagraphRunProperties openXmlElement, DocumentModel.Drawings.UnderlineFill? value)
   {
-    if (openXmlElement != null)
-    {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.UnderlineFill>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = UnderlineFillConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.UnderlineFill>(value);
-        if (itemElement != null)
-          openXmlElement.AddChild(itemElement);
-      }
-    }
-  }
-
-  public static TextFontType? GetLatinFont(EndParagraphRunProperties? openXmlElement)
-  {
-    var itemElement = openXmlElement?.GetFirstChild<LatinFont>();
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.UnderlineFill>();
     if (itemElement != null)
-      return TextFontTypeConverter.CreateModelElement(itemElement);
-    return null;
-  }
-
-  public static void SetLatinFont(EndParagraphRunProperties? openXmlElement, TextFontType? value)
-  {
-    if (openXmlElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<LatinFont>();
+      itemElement = DocumentModel.OpenXml.Drawings.UnderlineFillConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.UnderlineFill>(value);
       if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = TextFontTypeConverter.CreateOpenXmlElement<LatinFont>(value);
-        if (itemElement != null)
-          openXmlElement.AddChild(itemElement);
-      }
+        openXmlElement.AddChild(itemElement);
     }
   }
-
-  public static TextFontType? GetEastAsianFont(EndParagraphRunProperties? openXmlElement)
+  
+  private static DocumentModel.Drawings.TextFontType? GetLatinFont(DocumentFormat.OpenXml.Drawing.EndParagraphRunProperties openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<EastAsianFont>();
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.LatinFont>();
     if (itemElement != null)
-      return TextFontTypeConverter.CreateModelElement(itemElement);
+      return DocumentModel.OpenXml.Drawings.TextFontTypeConverter.CreateModelElement(itemElement);
     return null;
   }
-
-  public static void SetEastAsianFont(EndParagraphRunProperties? openXmlElement, TextFontType? value)
+  
+  private static void SetLatinFont(DocumentFormat.OpenXml.Drawing.EndParagraphRunProperties openXmlElement, DocumentModel.Drawings.TextFontType? value)
   {
-    if (openXmlElement != null)
-    {
-      var itemElement = openXmlElement.GetFirstChild<EastAsianFont>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = TextFontTypeConverter.CreateOpenXmlElement<EastAsianFont>(value);
-        if (itemElement != null)
-          openXmlElement.AddChild(itemElement);
-      }
-    }
-  }
-
-  public static TextFontType? GetComplexScriptFont(EndParagraphRunProperties? openXmlElement)
-  {
-    var itemElement = openXmlElement?.GetFirstChild<ComplexScriptFont>();
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.LatinFont>();
     if (itemElement != null)
-      return TextFontTypeConverter.CreateModelElement(itemElement);
-    return null;
-  }
-
-  public static void SetComplexScriptFont(EndParagraphRunProperties? openXmlElement, TextFontType? value)
-  {
-    if (openXmlElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<ComplexScriptFont>();
+      itemElement = DocumentModel.OpenXml.Drawings.TextFontTypeConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.LatinFont>(value);
       if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = TextFontTypeConverter.CreateOpenXmlElement<ComplexScriptFont>(value);
-        if (itemElement != null)
-          openXmlElement.AddChild(itemElement);
-      }
+        openXmlElement.AddChild(itemElement);
     }
   }
-
-  public static TextFontType? GetSymbolFont(EndParagraphRunProperties? openXmlElement)
+  
+  private static DocumentModel.Drawings.TextFontType? GetEastAsianFont(DocumentFormat.OpenXml.Drawing.EndParagraphRunProperties openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<SymbolFont>();
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.EastAsianFont>();
     if (itemElement != null)
-      return TextFontTypeConverter.CreateModelElement(itemElement);
+      return DocumentModel.OpenXml.Drawings.TextFontTypeConverter.CreateModelElement(itemElement);
     return null;
   }
-
-  public static void SetSymbolFont(EndParagraphRunProperties? openXmlElement, TextFontType? value)
+  
+  private static void SetEastAsianFont(DocumentFormat.OpenXml.Drawing.EndParagraphRunProperties openXmlElement, DocumentModel.Drawings.TextFontType? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.EastAsianFont>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<SymbolFont>();
+      itemElement = DocumentModel.OpenXml.Drawings.TextFontTypeConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.EastAsianFont>(value);
       if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = TextFontTypeConverter.CreateOpenXmlElement<SymbolFont>(value);
-        if (itemElement != null)
-          openXmlElement.AddChild(itemElement);
-      }
+        openXmlElement.AddChild(itemElement);
     }
   }
-
-  public static HyperlinkOnClick? GetHyperlinkOnClick(EndParagraphRunProperties? openXmlElement)
+  
+  private static DocumentModel.Drawings.TextFontType? GetComplexScriptFont(DocumentFormat.OpenXml.Drawing.EndParagraphRunProperties openXmlElement)
+  {
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.ComplexScriptFont>();
+    if (itemElement != null)
+      return DocumentModel.OpenXml.Drawings.TextFontTypeConverter.CreateModelElement(itemElement);
+    return null;
+  }
+  
+  private static void SetComplexScriptFont(DocumentFormat.OpenXml.Drawing.EndParagraphRunProperties openXmlElement, DocumentModel.Drawings.TextFontType? value)
+  {
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.ComplexScriptFont>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
+    {
+      itemElement = DocumentModel.OpenXml.Drawings.TextFontTypeConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.ComplexScriptFont>(value);
+      if (itemElement != null)
+        openXmlElement.AddChild(itemElement);
+    }
+  }
+  
+  private static DocumentModel.Drawings.TextFontType? GetSymbolFont(DocumentFormat.OpenXml.Drawing.EndParagraphRunProperties openXmlElement)
+  {
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.SymbolFont>();
+    if (itemElement != null)
+      return DocumentModel.OpenXml.Drawings.TextFontTypeConverter.CreateModelElement(itemElement);
+    return null;
+  }
+  
+  private static void SetSymbolFont(DocumentFormat.OpenXml.Drawing.EndParagraphRunProperties openXmlElement, DocumentModel.Drawings.TextFontType? value)
+  {
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.SymbolFont>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
+    {
+      itemElement = DocumentModel.OpenXml.Drawings.TextFontTypeConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.SymbolFont>(value);
+      if (itemElement != null)
+        openXmlElement.AddChild(itemElement);
+    }
+  }
+  
+  private static DocumentModel.Drawings.HyperlinkOnClick? GetHyperlinkOnClick(DocumentFormat.OpenXml.Drawing.EndParagraphRunProperties openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.HyperlinkOnClick>();
     if (itemElement != null)
-      return HyperlinkOnClickConverter.CreateModelElement(itemElement);
+      return DocumentModel.OpenXml.Drawings.HyperlinkOnClickConverter.CreateModelElement(itemElement);
     return null;
   }
-
-  public static void SetHyperlinkOnClick(EndParagraphRunProperties? openXmlElement, HyperlinkOnClick? value)
+  
+  private static void SetHyperlinkOnClick(DocumentFormat.OpenXml.Drawing.EndParagraphRunProperties openXmlElement, DocumentModel.Drawings.HyperlinkOnClick? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.HyperlinkOnClick>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.HyperlinkOnClick>();
+      itemElement = DocumentModel.OpenXml.Drawings.HyperlinkOnClickConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.HyperlinkOnClick>(value);
       if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = HyperlinkOnClickConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.HyperlinkOnClick>(value);
-        if (itemElement != null)
-          openXmlElement.AddChild(itemElement);
-      }
+        openXmlElement.AddChild(itemElement);
     }
   }
-
-  public static HyperlinkOnMouseOver? GetHyperlinkOnMouseOver(EndParagraphRunProperties? openXmlElement)
+  
+  private static DocumentModel.Drawings.HyperlinkOnMouseOver? GetHyperlinkOnMouseOver(DocumentFormat.OpenXml.Drawing.EndParagraphRunProperties openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.HyperlinkOnMouseOver>();
     if (itemElement != null)
-      return HyperlinkOnMouseOverConverter.CreateModelElement(itemElement);
+      return DocumentModel.OpenXml.Drawings.HyperlinkOnMouseOverConverter.CreateModelElement(itemElement);
     return null;
   }
-
-  public static void SetHyperlinkOnMouseOver(EndParagraphRunProperties? openXmlElement, HyperlinkOnMouseOver? value)
+  
+  private static void SetHyperlinkOnMouseOver(DocumentFormat.OpenXml.Drawing.EndParagraphRunProperties openXmlElement, DocumentModel.Drawings.HyperlinkOnMouseOver? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.HyperlinkOnMouseOver>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.HyperlinkOnMouseOver>();
+      itemElement = DocumentModel.OpenXml.Drawings.HyperlinkOnMouseOverConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.HyperlinkOnMouseOver>(value);
+      if (itemElement != null)
+        openXmlElement.AddChild(itemElement);
+    }
+  }
+  
+  private static Boolean? GetRightToLeft(DocumentFormat.OpenXml.Drawing.EndParagraphRunProperties openXmlElement)
+  {
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.RightToLeft>();
+    return itemElement != null;
+  }
+  
+  private static void SetRightToLeft(DocumentFormat.OpenXml.Drawing.EndParagraphRunProperties openXmlElement, Boolean? value)
+  {
+    if (value == false)
+    {
+      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.RightToLeft>();
       if (itemElement != null)
         itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = HyperlinkOnMouseOverConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.HyperlinkOnMouseOver>(value);
-        if (itemElement != null)
-          openXmlElement.AddChild(itemElement);
-      }
     }
-  }
-
-  public static Boolean? GetRightToLeft(EndParagraphRunProperties? openXmlElement)
-  {
-    if (openXmlElement != null)
+    if (value == true)
     {
-      var itemElement = openXmlElement.GetFirstChild<RightToLeft>();
-      return itemElement != null;
-    }
-    return null;
-  }
-
-  public static void SetRightToLeft(EndParagraphRunProperties? openXmlElement, Boolean? value)
-  {
-    if (openXmlElement != null)
-    {
-      if (value == false)
-      {
-        var itemElement = openXmlElement.GetFirstChild<RightToLeft>();
-        if (itemElement != null)
-          itemElement.Remove();
-      }
-      if (value == true)
-      {
-        var itemElement = new RightToLeft();
-        openXmlElement.AddChild(itemElement);
-      }
+      var itemElement = new DocumentFormat.OpenXml.Drawing.RightToLeft();
+      openXmlElement.AddChild(itemElement);
     }
   }
-
-  public static DocumentModel.Drawings.ExtensionList? GetExtensionList(EndParagraphRunProperties? openXmlElement)
+  
+  private static DocumentModel.Drawings.ExtensionList? GetExtensionList(DocumentFormat.OpenXml.Drawing.EndParagraphRunProperties openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.ExtensionList>();
     if (itemElement != null)
-      return ExtensionListConverter.CreateModelElement(itemElement);
+      return DocumentModel.OpenXml.Drawings.ExtensionListConverter.CreateModelElement(itemElement);
     return null;
   }
-
-  public static void SetExtensionList(EndParagraphRunProperties? openXmlElement, DocumentModel.Drawings.ExtensionList? value)
+  
+  private static void SetExtensionList(DocumentFormat.OpenXml.Drawing.EndParagraphRunProperties openXmlElement, DocumentModel.Drawings.ExtensionList? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.ExtensionList>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.ExtensionList>();
+      itemElement = DocumentModel.OpenXml.Drawings.ExtensionListConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.ExtensionList>(value);
       if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = ExtensionListConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.ExtensionList>(value);
-        if (itemElement != null)
-          openXmlElement.AddChild(itemElement);
-      }
+        openXmlElement.AddChild(itemElement);
     }
   }
-
-  public static DocumentModel.Drawings.EndParagraphRunProperties? CreateModelElement(EndParagraphRunProperties? openXmlElement)
+  
+  public static DocumentModel.Drawings.EndParagraphRunProperties? CreateModelElement(DocumentFormat.OpenXml.Drawing.EndParagraphRunProperties? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -600,9 +498,9 @@ public static class EndParagraphRunPropertiesConverter
     }
     return null;
   }
-
+  
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.EndParagraphRunProperties? value)
-    where OpenXmlElementType : EndParagraphRunProperties, new()
+    where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.EndParagraphRunProperties, new()
   {
     if (value != null)
     {

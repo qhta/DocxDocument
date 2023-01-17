@@ -1,85 +1,74 @@
-using DocumentFormat.OpenXml.Drawing;
-using DocumentModel.Drawings;
-using Camera = DocumentFormat.OpenXml.Drawing.Camera;
-using Rotation = DocumentModel.Drawings.Rotation;
-
 namespace DocumentModel.OpenXml.Drawings;
 
 /// <summary>
-///   Camera.
+/// Camera.
 /// </summary>
 public static class CameraConverter
 {
   /// <summary>
-  ///   Preset Camera Type
+  /// Preset Camera Type
   /// </summary>
-  public static PresetCameraKind? GetPreset(Camera? openXmlElement)
+  private static DocumentModel.Drawings.PresetCameraKind? GetPreset(DocumentFormat.OpenXml.Drawing.Camera openXmlElement)
   {
-    return EnumValueConverter.GetValue<PresetCameraValues, PresetCameraKind>(openXmlElement?.Preset?.Value);
+    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Drawing.PresetCameraValues, DocumentModel.Drawings.PresetCameraKind>(openXmlElement?.Preset?.Value);
   }
-
-  public static void SetPreset(Camera? openXmlElement, PresetCameraKind? value)
+  
+  private static void SetPreset(DocumentFormat.OpenXml.Drawing.Camera openXmlElement, DocumentModel.Drawings.PresetCameraKind? value)
   {
-    if (openXmlElement != null)
-      openXmlElement.Preset = EnumValueConverter.CreateEnumValue<PresetCameraValues, PresetCameraKind>(value);
+    openXmlElement.Preset = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Drawing.PresetCameraValues, DocumentModel.Drawings.PresetCameraKind>(value);
   }
-
+  
   /// <summary>
-  ///   Field of View
+  /// Field of View
   /// </summary>
-  public static Int32? GetFieldOfView(Camera? openXmlElement)
+  private static Int32? GetFieldOfView(DocumentFormat.OpenXml.Drawing.Camera openXmlElement)
   {
-    return openXmlElement?.FieldOfView?.Value;
+    return openXmlElement.FieldOfView?.Value;
   }
-
-  public static void SetFieldOfView(Camera? openXmlElement, Int32? value)
+  
+  private static void SetFieldOfView(DocumentFormat.OpenXml.Drawing.Camera openXmlElement, Int32? value)
   {
-    if (openXmlElement != null)
-      openXmlElement.FieldOfView = value;
+    openXmlElement.FieldOfView = value;
   }
-
+  
   /// <summary>
-  ///   Zoom
+  /// Zoom
   /// </summary>
-  public static Int32? GetZoom(Camera? openXmlElement)
+  private static Int32? GetZoom(DocumentFormat.OpenXml.Drawing.Camera openXmlElement)
   {
-    return openXmlElement?.Zoom?.Value;
+    return openXmlElement.Zoom?.Value;
   }
-
-  public static void SetZoom(Camera? openXmlElement, Int32? value)
+  
+  private static void SetZoom(DocumentFormat.OpenXml.Drawing.Camera openXmlElement, Int32? value)
   {
-    if (openXmlElement != null)
-      openXmlElement.Zoom = value;
+    openXmlElement.Zoom = value;
   }
-
+  
   /// <summary>
-  ///   Rotation.
+  /// Rotation.
   /// </summary>
-  public static Rotation? GetRotation(Camera? openXmlElement)
+  private static DocumentModel.Drawings.Rotation? GetRotation(DocumentFormat.OpenXml.Drawing.Camera openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.Rotation>();
     if (itemElement != null)
-      return RotationConverter.CreateModelElement(itemElement);
+      return DocumentModel.OpenXml.Drawings.RotationConverter.CreateModelElement(itemElement);
     return null;
   }
-
-  public static void SetRotation(Camera? openXmlElement, Rotation? value)
+  
+  private static void SetRotation(DocumentFormat.OpenXml.Drawing.Camera openXmlElement, DocumentModel.Drawings.Rotation? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Rotation>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Rotation>();
+      itemElement = DocumentModel.OpenXml.Drawings.RotationConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Rotation>(value);
       if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = RotationConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Rotation>(value);
-        if (itemElement != null)
-          openXmlElement.AddChild(itemElement);
-      }
+        openXmlElement.AddChild(itemElement);
     }
   }
-
-  public static DocumentModel.Drawings.Camera? CreateModelElement(Camera? openXmlElement)
+  
+  public static DocumentModel.Drawings.Camera? CreateModelElement(DocumentFormat.OpenXml.Drawing.Camera? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -92,9 +81,9 @@ public static class CameraConverter
     }
     return null;
   }
-
+  
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.Camera? value)
-    where OpenXmlElementType : Camera, new()
+    where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.Camera, new()
   {
     if (value != null)
     {

@@ -1,336 +1,315 @@
-using DocumentFormat.OpenXml.Vml;
-
 namespace DocumentModel.OpenXml.Vml;
 
 /// <summary>
-///   Defines the ImageData Class.
+/// Defines the ImageData Class.
 /// </summary>
 public static class ImageDataConverter
 {
   /// <summary>
-  ///   Unique Identifier
+  /// Unique Identifier
   /// </summary>
-  public static String? GetId(ImageData? openXmlElement)
+  private static String? GetId(DocumentFormat.OpenXml.Vml.ImageData openXmlElement)
   {
     return openXmlElement?.Id?.Value;
   }
-
-  public static void SetId(ImageData? openXmlElement, String? value)
+  
+  private static void SetId(DocumentFormat.OpenXml.Vml.ImageData openXmlElement, String? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.Id = new StringValue { Value = value };
-      else
-        openXmlElement.Id = null;
+    if (value != null)
+      openXmlElement.Id = new StringValue { Value = value };
+    else
+      openXmlElement.Id = null;
   }
-
+  
   /// <summary>
-  ///   Image Transparency Color
+  /// Image Transparency Color
   /// </summary>
-  public static String? GetChromAKey(ImageData? openXmlElement)
+  private static String? GetChromAKey(DocumentFormat.OpenXml.Vml.ImageData openXmlElement)
   {
     return openXmlElement?.ChromAKey?.Value;
   }
-
-  public static void SetChromAKey(ImageData? openXmlElement, String? value)
+  
+  private static void SetChromAKey(DocumentFormat.OpenXml.Vml.ImageData openXmlElement, String? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.ChromAKey = new StringValue { Value = value };
-      else
-        openXmlElement.ChromAKey = null;
+    if (value != null)
+      openXmlElement.ChromAKey = new StringValue { Value = value };
+    else
+      openXmlElement.ChromAKey = null;
   }
-
+  
   /// <summary>
-  ///   Image Left Crop
+  /// Image Left Crop
   /// </summary>
-  public static String? GetCropLeft(ImageData? openXmlElement)
+  private static String? GetCropLeft(DocumentFormat.OpenXml.Vml.ImageData openXmlElement)
   {
     return openXmlElement?.CropLeft?.Value;
   }
-
-  public static void SetCropLeft(ImageData? openXmlElement, String? value)
+  
+  private static void SetCropLeft(DocumentFormat.OpenXml.Vml.ImageData openXmlElement, String? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.CropLeft = new StringValue { Value = value };
-      else
-        openXmlElement.CropLeft = null;
+    if (value != null)
+      openXmlElement.CropLeft = new StringValue { Value = value };
+    else
+      openXmlElement.CropLeft = null;
   }
-
+  
   /// <summary>
-  ///   Image Top Crop
+  /// Image Top Crop
   /// </summary>
-  public static String? GetCropTop(ImageData? openXmlElement)
+  private static String? GetCropTop(DocumentFormat.OpenXml.Vml.ImageData openXmlElement)
   {
     return openXmlElement?.CropTop?.Value;
   }
-
-  public static void SetCropTop(ImageData? openXmlElement, String? value)
+  
+  private static void SetCropTop(DocumentFormat.OpenXml.Vml.ImageData openXmlElement, String? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.CropTop = new StringValue { Value = value };
-      else
-        openXmlElement.CropTop = null;
+    if (value != null)
+      openXmlElement.CropTop = new StringValue { Value = value };
+    else
+      openXmlElement.CropTop = null;
   }
-
+  
   /// <summary>
-  ///   Image Right Crop
+  /// Image Right Crop
   /// </summary>
-  public static String? GetCropRight(ImageData? openXmlElement)
+  private static String? GetCropRight(DocumentFormat.OpenXml.Vml.ImageData openXmlElement)
   {
     return openXmlElement?.CropRight?.Value;
   }
-
-  public static void SetCropRight(ImageData? openXmlElement, String? value)
+  
+  private static void SetCropRight(DocumentFormat.OpenXml.Vml.ImageData openXmlElement, String? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.CropRight = new StringValue { Value = value };
-      else
-        openXmlElement.CropRight = null;
+    if (value != null)
+      openXmlElement.CropRight = new StringValue { Value = value };
+    else
+      openXmlElement.CropRight = null;
   }
-
+  
   /// <summary>
-  ///   Image Bottom Crop
+  /// Image Bottom Crop
   /// </summary>
-  public static String? GetCropBottom(ImageData? openXmlElement)
+  private static String? GetCropBottom(DocumentFormat.OpenXml.Vml.ImageData openXmlElement)
   {
     return openXmlElement?.CropBottom?.Value;
   }
-
-  public static void SetCropBottom(ImageData? openXmlElement, String? value)
+  
+  private static void SetCropBottom(DocumentFormat.OpenXml.Vml.ImageData openXmlElement, String? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.CropBottom = new StringValue { Value = value };
-      else
-        openXmlElement.CropBottom = null;
+    if (value != null)
+      openXmlElement.CropBottom = new StringValue { Value = value };
+    else
+      openXmlElement.CropBottom = null;
   }
-
+  
   /// <summary>
-  ///   Image Intensity
+  /// Image Intensity
   /// </summary>
-  public static String? GetGain(ImageData? openXmlElement)
+  private static String? GetGain(DocumentFormat.OpenXml.Vml.ImageData openXmlElement)
   {
     return openXmlElement?.Gain?.Value;
   }
-
-  public static void SetGain(ImageData? openXmlElement, String? value)
+  
+  private static void SetGain(DocumentFormat.OpenXml.Vml.ImageData openXmlElement, String? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.Gain = new StringValue { Value = value };
-      else
-        openXmlElement.Gain = null;
+    if (value != null)
+      openXmlElement.Gain = new StringValue { Value = value };
+    else
+      openXmlElement.Gain = null;
   }
-
+  
   /// <summary>
-  ///   Image Brightness
+  /// Image Brightness
   /// </summary>
-  public static String? GetBlackLevel(ImageData? openXmlElement)
+  private static String? GetBlackLevel(DocumentFormat.OpenXml.Vml.ImageData openXmlElement)
   {
     return openXmlElement?.BlackLevel?.Value;
   }
-
-  public static void SetBlackLevel(ImageData? openXmlElement, String? value)
+  
+  private static void SetBlackLevel(DocumentFormat.OpenXml.Vml.ImageData openXmlElement, String? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.BlackLevel = new StringValue { Value = value };
-      else
-        openXmlElement.BlackLevel = null;
+    if (value != null)
+      openXmlElement.BlackLevel = new StringValue { Value = value };
+    else
+      openXmlElement.BlackLevel = null;
   }
-
+  
   /// <summary>
-  ///   Image Gamma Correction
+  /// Image Gamma Correction
   /// </summary>
-  public static String? GetGamma(ImageData? openXmlElement)
+  private static String? GetGamma(DocumentFormat.OpenXml.Vml.ImageData openXmlElement)
   {
     return openXmlElement?.Gamma?.Value;
   }
-
-  public static void SetGamma(ImageData? openXmlElement, String? value)
+  
+  private static void SetGamma(DocumentFormat.OpenXml.Vml.ImageData openXmlElement, String? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.Gamma = new StringValue { Value = value };
-      else
-        openXmlElement.Gamma = null;
+    if (value != null)
+      openXmlElement.Gamma = new StringValue { Value = value };
+    else
+      openXmlElement.Gamma = null;
   }
-
+  
   /// <summary>
-  ///   Image Grayscale Toggle
+  /// Image Grayscale Toggle
   /// </summary>
-  public static Boolean? GetGrayscale(ImageData? openXmlElement)
+  private static Boolean? GetGrayscale(DocumentFormat.OpenXml.Vml.ImageData openXmlElement)
   {
     return openXmlElement?.Grayscale?.Value;
   }
-
-  public static void SetGrayscale(ImageData? openXmlElement, Boolean? value)
+  
+  private static void SetGrayscale(DocumentFormat.OpenXml.Vml.ImageData openXmlElement, Boolean? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.Grayscale = value;
-      else
-        openXmlElement.Grayscale = null;
+    if (value != null)
+      openXmlElement.Grayscale = value;
+    else
+      openXmlElement.Grayscale = null;
   }
-
+  
   /// <summary>
-  ///   Image Bilevel Toggle
+  /// Image Bilevel Toggle
   /// </summary>
-  public static Boolean? GetBiLevel(ImageData? openXmlElement)
+  private static Boolean? GetBiLevel(DocumentFormat.OpenXml.Vml.ImageData openXmlElement)
   {
     return openXmlElement?.BiLevel?.Value;
   }
-
-  public static void SetBiLevel(ImageData? openXmlElement, Boolean? value)
+  
+  private static void SetBiLevel(DocumentFormat.OpenXml.Vml.ImageData openXmlElement, Boolean? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.BiLevel = value;
-      else
-        openXmlElement.BiLevel = null;
+    if (value != null)
+      openXmlElement.BiLevel = value;
+    else
+      openXmlElement.BiLevel = null;
   }
-
+  
   /// <summary>
-  ///   Embossed Color
+  /// Embossed Color
   /// </summary>
-  public static String? GetEmbossColor(ImageData? openXmlElement)
+  private static String? GetEmbossColor(DocumentFormat.OpenXml.Vml.ImageData openXmlElement)
   {
     return openXmlElement?.EmbossColor?.Value;
   }
-
-  public static void SetEmbossColor(ImageData? openXmlElement, String? value)
+  
+  private static void SetEmbossColor(DocumentFormat.OpenXml.Vml.ImageData openXmlElement, String? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.EmbossColor = new StringValue { Value = value };
-      else
-        openXmlElement.EmbossColor = null;
+    if (value != null)
+      openXmlElement.EmbossColor = new StringValue { Value = value };
+    else
+      openXmlElement.EmbossColor = null;
   }
-
+  
   /// <summary>
-  ///   Black Recoloring Color
+  /// Black Recoloring Color
   /// </summary>
-  public static String? GetRecolorTarget(ImageData? openXmlElement)
+  private static String? GetRecolorTarget(DocumentFormat.OpenXml.Vml.ImageData openXmlElement)
   {
     return openXmlElement?.RecolorTarget?.Value;
   }
-
-  public static void SetRecolorTarget(ImageData? openXmlElement, String? value)
+  
+  private static void SetRecolorTarget(DocumentFormat.OpenXml.Vml.ImageData openXmlElement, String? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.RecolorTarget = new StringValue { Value = value };
-      else
-        openXmlElement.RecolorTarget = null;
+    if (value != null)
+      openXmlElement.RecolorTarget = new StringValue { Value = value };
+    else
+      openXmlElement.RecolorTarget = null;
   }
-
+  
   /// <summary>
-  ///   Image Data Title
+  /// Image Data Title
   /// </summary>
-  public static String? GetTitle(ImageData? openXmlElement)
+  private static String? GetTitle(DocumentFormat.OpenXml.Vml.ImageData openXmlElement)
   {
     return openXmlElement?.Title?.Value;
   }
-
-  public static void SetTitle(ImageData? openXmlElement, String? value)
+  
+  private static void SetTitle(DocumentFormat.OpenXml.Vml.ImageData openXmlElement, String? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.Title = new StringValue { Value = value };
-      else
-        openXmlElement.Title = null;
+    if (value != null)
+      openXmlElement.Title = new StringValue { Value = value };
+    else
+      openXmlElement.Title = null;
   }
-
+  
   /// <summary>
-  ///   Detect Mouse Click
+  /// Detect Mouse Click
   /// </summary>
-  public static Boolean? GetDetectMouseClick(ImageData? openXmlElement)
+  private static Boolean? GetDetectMouseClick(DocumentFormat.OpenXml.Vml.ImageData openXmlElement)
   {
     return openXmlElement?.DetectMouseClick?.Value;
   }
-
-  public static void SetDetectMouseClick(ImageData? openXmlElement, Boolean? value)
+  
+  private static void SetDetectMouseClick(DocumentFormat.OpenXml.Vml.ImageData openXmlElement, Boolean? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.DetectMouseClick = value;
-      else
-        openXmlElement.DetectMouseClick = null;
+    if (value != null)
+      openXmlElement.DetectMouseClick = value;
+    else
+      openXmlElement.DetectMouseClick = null;
   }
-
+  
   /// <summary>
-  ///   Relationship to Part
+  /// Relationship to Part
   /// </summary>
-  public static String? GetRelId(ImageData? openXmlElement)
+  private static String? GetRelId(DocumentFormat.OpenXml.Vml.ImageData openXmlElement)
   {
     return openXmlElement?.RelId?.Value;
   }
-
-  public static void SetRelId(ImageData? openXmlElement, String? value)
+  
+  private static void SetRelId(DocumentFormat.OpenXml.Vml.ImageData openXmlElement, String? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.RelId = new StringValue { Value = value };
-      else
-        openXmlElement.RelId = null;
+    if (value != null)
+      openXmlElement.RelId = new StringValue { Value = value };
+    else
+      openXmlElement.RelId = null;
   }
-
+  
   /// <summary>
-  ///   Explicit Relationship to Image Data
+  /// Explicit Relationship to Image Data
   /// </summary>
-  public static String? GetRelationshipId(ImageData? openXmlElement)
+  private static String? GetRelationshipId(DocumentFormat.OpenXml.Vml.ImageData openXmlElement)
   {
     return openXmlElement?.RelationshipId?.Value;
   }
-
-  public static void SetRelationshipId(ImageData? openXmlElement, String? value)
+  
+  private static void SetRelationshipId(DocumentFormat.OpenXml.Vml.ImageData openXmlElement, String? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.RelationshipId = new StringValue { Value = value };
-      else
-        openXmlElement.RelationshipId = null;
+    if (value != null)
+      openXmlElement.RelationshipId = new StringValue { Value = value };
+    else
+      openXmlElement.RelationshipId = null;
   }
-
+  
   /// <summary>
-  ///   Explicit Relationship to Alternate Image Data
+  /// Explicit Relationship to Alternate Image Data
   /// </summary>
-  public static String? GetPicture(ImageData? openXmlElement)
+  private static String? GetPicture(DocumentFormat.OpenXml.Vml.ImageData openXmlElement)
   {
     return openXmlElement?.Picture?.Value;
   }
-
-  public static void SetPicture(ImageData? openXmlElement, String? value)
+  
+  private static void SetPicture(DocumentFormat.OpenXml.Vml.ImageData openXmlElement, String? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.Picture = new StringValue { Value = value };
-      else
-        openXmlElement.Picture = null;
+    if (value != null)
+      openXmlElement.Picture = new StringValue { Value = value };
+    else
+      openXmlElement.Picture = null;
   }
-
+  
   /// <summary>
-  ///   Explicit Relationship to Hyperlink Target
+  /// Explicit Relationship to Hyperlink Target
   /// </summary>
-  public static String? GetRelHref(ImageData? openXmlElement)
+  private static String? GetRelHref(DocumentFormat.OpenXml.Vml.ImageData openXmlElement)
   {
     return openXmlElement?.RelHref?.Value;
   }
-
-  public static void SetRelHref(ImageData? openXmlElement, String? value)
+  
+  private static void SetRelHref(DocumentFormat.OpenXml.Vml.ImageData openXmlElement, String? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.RelHref = new StringValue { Value = value };
-      else
-        openXmlElement.RelHref = null;
+    if (value != null)
+      openXmlElement.RelHref = new StringValue { Value = value };
+    else
+      openXmlElement.RelHref = null;
   }
-
-  public static DocumentModel.Vml.ImageData? CreateModelElement(ImageData? openXmlElement)
+  
+  public static DocumentModel.Vml.ImageData? CreateModelElement(DocumentFormat.OpenXml.Vml.ImageData? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -358,9 +337,9 @@ public static class ImageDataConverter
     }
     return null;
   }
-
+  
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Vml.ImageData? value)
-    where OpenXmlElementType : ImageData, new()
+    where OpenXmlElementType: DocumentFormat.OpenXml.Vml.ImageData, new()
   {
     if (value != null)
     {

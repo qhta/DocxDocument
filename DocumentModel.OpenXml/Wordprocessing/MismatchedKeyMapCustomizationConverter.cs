@@ -1,45 +1,37 @@
-using DocumentModel.Wordprocessing;
-using MismatchedKeyMapCustomization = DocumentFormat.OpenXml.Office.Word.MismatchedKeyMapCustomization;
-
 namespace DocumentModel.OpenXml.Wordprocessing;
 
 /// <summary>
-///   Defines the MismatchedKeyMapCustomization Class.
+/// Defines the MismatchedKeyMapCustomization Class.
 /// </summary>
 public static class MismatchedKeyMapCustomizationConverter
 {
-  public static Collection<KeyMapEntry>? GetKeyMapEntries(MismatchedKeyMapCustomization? openXmlElement)
+  private static System.Collections.ObjectModel.Collection<DocumentModel.Wordprocessing.KeyMapEntry> GetKeyMapEntries(DocumentFormat.OpenXml.Office.Word.MismatchedKeyMapCustomization openXmlElement)
   {
-    if (openXmlElement != null)
+    var collection = new System.Collections.ObjectModel.Collection<DocumentModel.Wordprocessing.KeyMapEntry>();
+    foreach (var item in openXmlElement.Elements<DocumentFormat.OpenXml.Office.Word.KeyMapEntry>())
     {
-      var collection = new Collection<KeyMapEntry>();
-      foreach (var item in openXmlElement.Elements<DocumentFormat.OpenXml.Office.Word.KeyMapEntry>())
+      var newItem = DocumentModel.OpenXml.Wordprocessing.KeyMapEntryConverter.CreateModelElement(item);
+      if (newItem != null)
+        collection.Add(newItem);
+    }
+    return collection;
+  }
+  
+  private static void SetKeyMapEntries(DocumentFormat.OpenXml.Office.Word.MismatchedKeyMapCustomization openXmlElement, System.Collections.ObjectModel.Collection<DocumentModel.Wordprocessing.KeyMapEntry>? value)
+  {
+    openXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Office.Word.KeyMapEntry>();
+    if (value != null)
+    {
+      foreach (var item in value)
       {
-        var newItem = KeyMapEntryConverter.CreateModelElement(item);
+        var newItem = DocumentModel.OpenXml.Wordprocessing.KeyMapEntryConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office.Word.KeyMapEntry>(item);
         if (newItem != null)
-          collection.Add(newItem);
+          openXmlElement.AddChild(newItem);
       }
-      return collection;
-    }
-    return null;
-  }
-
-  public static void SetKeyMapEntries(MismatchedKeyMapCustomization? openXmlElement, Collection<KeyMapEntry>? value)
-  {
-    if (openXmlElement != null)
-    {
-      openXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Office.Word.KeyMapEntry>();
-      if (value != null)
-        foreach (var item in value)
-        {
-          var newItem = KeyMapEntryConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office.Word.KeyMapEntry>(item);
-          if (newItem != null)
-            openXmlElement.AddChild(newItem);
-        }
     }
   }
-
-  public static DocumentModel.Wordprocessing.MismatchedKeyMapCustomization? CreateModelElement(MismatchedKeyMapCustomization? openXmlElement)
+  
+  public static DocumentModel.Wordprocessing.MismatchedKeyMapCustomization? CreateModelElement(DocumentFormat.OpenXml.Office.Word.MismatchedKeyMapCustomization? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -49,9 +41,9 @@ public static class MismatchedKeyMapCustomizationConverter
     }
     return null;
   }
-
+  
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.MismatchedKeyMapCustomization? value)
-    where OpenXmlElementType : MismatchedKeyMapCustomization, new()
+    where OpenXmlElementType: DocumentFormat.OpenXml.Office.Word.MismatchedKeyMapCustomization, new()
   {
     if (value != null)
     {

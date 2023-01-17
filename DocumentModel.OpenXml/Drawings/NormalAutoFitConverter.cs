@@ -1,41 +1,37 @@
-using DocumentFormat.OpenXml.Drawing;
-
 namespace DocumentModel.OpenXml.Drawings;
 
 /// <summary>
-///   Normal AutoFit.
+/// Normal AutoFit.
 /// </summary>
 public static class NormalAutoFitConverter
 {
   /// <summary>
-  ///   Font Scale
+  /// Font Scale
   /// </summary>
-  public static Int32? GetFontScale(NormalAutoFit? openXmlElement)
+  private static Int32? GetFontScale(DocumentFormat.OpenXml.Drawing.NormalAutoFit openXmlElement)
   {
-    return openXmlElement?.FontScale?.Value;
+    return openXmlElement.FontScale?.Value;
   }
-
-  public static void SetFontScale(NormalAutoFit? openXmlElement, Int32? value)
+  
+  private static void SetFontScale(DocumentFormat.OpenXml.Drawing.NormalAutoFit openXmlElement, Int32? value)
   {
-    if (openXmlElement != null)
-      openXmlElement.FontScale = value;
+    openXmlElement.FontScale = value;
   }
-
+  
   /// <summary>
-  ///   Line Space Reduction
+  /// Line Space Reduction
   /// </summary>
-  public static Int32? GetLineSpaceReduction(NormalAutoFit? openXmlElement)
+  private static Int32? GetLineSpaceReduction(DocumentFormat.OpenXml.Drawing.NormalAutoFit openXmlElement)
   {
-    return openXmlElement?.LineSpaceReduction?.Value;
+    return openXmlElement.LineSpaceReduction?.Value;
   }
-
-  public static void SetLineSpaceReduction(NormalAutoFit? openXmlElement, Int32? value)
+  
+  private static void SetLineSpaceReduction(DocumentFormat.OpenXml.Drawing.NormalAutoFit openXmlElement, Int32? value)
   {
-    if (openXmlElement != null)
-      openXmlElement.LineSpaceReduction = value;
+    openXmlElement.LineSpaceReduction = value;
   }
-
-  public static DocumentModel.Drawings.NormalAutoFit? CreateModelElement(NormalAutoFit? openXmlElement)
+  
+  public static DocumentModel.Drawings.NormalAutoFit? CreateModelElement(DocumentFormat.OpenXml.Drawing.NormalAutoFit? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -46,9 +42,9 @@ public static class NormalAutoFitConverter
     }
     return null;
   }
-
+  
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.NormalAutoFit? value)
-    where OpenXmlElementType : NormalAutoFit, new()
+    where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.NormalAutoFit, new()
   {
     if (value != null)
     {

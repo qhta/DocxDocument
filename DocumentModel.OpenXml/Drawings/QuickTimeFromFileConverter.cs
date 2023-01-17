@@ -1,57 +1,51 @@
-using DocumentFormat.OpenXml.Drawing;
-
 namespace DocumentModel.OpenXml.Drawings;
 
 /// <summary>
-///   QuickTime from File.
+/// QuickTime from File.
 /// </summary>
 public static class QuickTimeFromFileConverter
 {
   /// <summary>
-  ///   Linked Relationship ID
+  /// Linked Relationship ID
   /// </summary>
-  public static String? GetLink(QuickTimeFromFile? openXmlElement)
+  private static String? GetLink(DocumentFormat.OpenXml.Drawing.QuickTimeFromFile openXmlElement)
   {
     return openXmlElement?.Link?.Value;
   }
-
-  public static void SetLink(QuickTimeFromFile? openXmlElement, String? value)
+  
+  private static void SetLink(DocumentFormat.OpenXml.Drawing.QuickTimeFromFile openXmlElement, String? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.Link = new StringValue { Value = value };
-      else
-        openXmlElement.Link = null;
+    if (value != null)
+      openXmlElement.Link = new StringValue { Value = value };
+    else
+      openXmlElement.Link = null;
   }
-
+  
   /// <summary>
-  ///   ExtensionList.
+  /// ExtensionList.
   /// </summary>
-  public static DocumentModel.Drawings.ExtensionList? GetExtensionList(QuickTimeFromFile? openXmlElement)
+  private static DocumentModel.Drawings.ExtensionList? GetExtensionList(DocumentFormat.OpenXml.Drawing.QuickTimeFromFile openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.ExtensionList>();
     if (itemElement != null)
-      return ExtensionListConverter.CreateModelElement(itemElement);
+      return DocumentModel.OpenXml.Drawings.ExtensionListConverter.CreateModelElement(itemElement);
     return null;
   }
-
-  public static void SetExtensionList(QuickTimeFromFile? openXmlElement, DocumentModel.Drawings.ExtensionList? value)
+  
+  private static void SetExtensionList(DocumentFormat.OpenXml.Drawing.QuickTimeFromFile openXmlElement, DocumentModel.Drawings.ExtensionList? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.ExtensionList>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.ExtensionList>();
+      itemElement = DocumentModel.OpenXml.Drawings.ExtensionListConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.ExtensionList>(value);
       if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = ExtensionListConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.ExtensionList>(value);
-        if (itemElement != null)
-          openXmlElement.AddChild(itemElement);
-      }
+        openXmlElement.AddChild(itemElement);
     }
   }
-
-  public static DocumentModel.Drawings.QuickTimeFromFile? CreateModelElement(QuickTimeFromFile? openXmlElement)
+  
+  public static DocumentModel.Drawings.QuickTimeFromFile? CreateModelElement(DocumentFormat.OpenXml.Drawing.QuickTimeFromFile? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -62,9 +56,9 @@ public static class QuickTimeFromFileConverter
     }
     return null;
   }
-
+  
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.QuickTimeFromFile? value)
-    where OpenXmlElementType : QuickTimeFromFile, new()
+    where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.QuickTimeFromFile, new()
   {
     if (value != null)
     {

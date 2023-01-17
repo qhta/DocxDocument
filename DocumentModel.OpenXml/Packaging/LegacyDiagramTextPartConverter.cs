@@ -1,23 +1,21 @@
-using DocumentFormat.OpenXml.Packaging;
-
 namespace DocumentModel.OpenXml.Packaging;
 
 /// <summary>
-///   Defines the LegacyDiagramTextPart
+/// Defines the LegacyDiagramTextPart
 /// </summary>
 public static class LegacyDiagramTextPartConverter
 {
-  public static String? GetContentType(LegacyDiagramTextPart? openXmlElement)
+  private static String? GetContentType(DocumentFormat.OpenXml.Packaging.LegacyDiagramTextPart openXmlElement)
   {
     return openXmlElement?.ContentType;
   }
-
-  public static String? GetRelationshipType(LegacyDiagramTextPart? openXmlElement)
+  
+  private static String? GetRelationshipType(DocumentFormat.OpenXml.Packaging.LegacyDiagramTextPart openXmlElement)
   {
     return openXmlElement?.RelationshipType;
   }
-
-  public static DocumentModel.Packaging.LegacyDiagramTextPart? CreateModelElement(LegacyDiagramTextPart? openXmlElement)
+  
+  public static DocumentModel.Packaging.LegacyDiagramTextPart? CreateModelElement(DocumentFormat.OpenXml.Packaging.LegacyDiagramTextPart? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -28,9 +26,9 @@ public static class LegacyDiagramTextPartConverter
     }
     return null;
   }
-
+  
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Packaging.LegacyDiagramTextPart? value)
-    where OpenXmlElementType : LegacyDiagramTextPart, new()
+    where OpenXmlElementType: DocumentFormat.OpenXml.Packaging.LegacyDiagramTextPart, new()
   {
     if (value != null)
     {

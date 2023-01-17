@@ -1,18 +1,16 @@
-using DocumentFormat.OpenXml.Packaging;
-
 namespace DocumentModel.OpenXml.Packaging;
 
 /// <summary>
-///   Defines the CustomPropertyPart
+/// Defines the CustomPropertyPart
 /// </summary>
 public static class CustomPropertyPartConverter
 {
-  public static String? GetRelationshipType(CustomPropertyPart? openXmlElement)
+  private static String? GetRelationshipType(DocumentFormat.OpenXml.Packaging.CustomPropertyPart openXmlElement)
   {
     return openXmlElement?.RelationshipType;
   }
-
-  public static DocumentModel.Packaging.CustomPropertyPart? CreateModelElement(CustomPropertyPart? openXmlElement)
+  
+  public static DocumentModel.Packaging.CustomPropertyPart? CreateModelElement(DocumentFormat.OpenXml.Packaging.CustomPropertyPart? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -22,9 +20,9 @@ public static class CustomPropertyPartConverter
     }
     return null;
   }
-
+  
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Packaging.CustomPropertyPart? value)
-    where OpenXmlElementType : CustomPropertyPart, new()
+    where OpenXmlElementType: DocumentFormat.OpenXml.Packaging.CustomPropertyPart, new()
   {
     if (value != null)
     {

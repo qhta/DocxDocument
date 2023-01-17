@@ -1,39 +1,34 @@
-using DocumentFormat.OpenXml.Math;
-
 namespace DocumentModel.OpenXml.Math;
 
 /// <summary>
-///   Argument Properties.
+/// Argument Properties.
 /// </summary>
 public static class ArgumentPropertiesConverter
 {
   /// <summary>
-  ///   Argument Size.
+  /// Argument Size.
   /// </summary>
-  public static Int64? GetArgumentSize(ArgumentProperties? openXmlElement)
+  private static Int64? GetArgumentSize(DocumentFormat.OpenXml.Math.ArgumentProperties openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<ArgumentSize>();
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Math.ArgumentSize>();
     if (itemElement != null)
       return itemElement.Val?.Value;
     return null;
   }
-
-  public static void SetArgumentSize(ArgumentProperties? openXmlElement, Int64? value)
+  
+  private static void SetArgumentSize(DocumentFormat.OpenXml.Math.ArgumentProperties openXmlElement, Int64? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Math.ArgumentSize>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<ArgumentSize>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = new ArgumentSize { Val = value };
-        openXmlElement.AddChild(itemElement);
-      }
+      itemElement = new DocumentFormat.OpenXml.Math.ArgumentSize{ Val = value };
+      openXmlElement.AddChild(itemElement);
     }
   }
-
-  public static DocumentModel.Math.ArgumentProperties? CreateModelElement(ArgumentProperties? openXmlElement)
+  
+  public static DocumentModel.Math.ArgumentProperties? CreateModelElement(DocumentFormat.OpenXml.Math.ArgumentProperties? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -43,9 +38,9 @@ public static class ArgumentPropertiesConverter
     }
     return null;
   }
-
+  
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Math.ArgumentProperties? value)
-    where OpenXmlElementType : ArgumentProperties, new()
+    where OpenXmlElementType: DocumentFormat.OpenXml.Math.ArgumentProperties, new()
   {
     if (value != null)
     {

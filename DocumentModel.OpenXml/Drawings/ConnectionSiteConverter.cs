@@ -1,58 +1,51 @@
-using DocumentFormat.OpenXml.Drawing;
-using AdjustPoint2DType = DocumentModel.Drawings.AdjustPoint2DType;
-
 namespace DocumentModel.OpenXml.Drawings;
 
 /// <summary>
-///   Shape Connection Site.
+/// Shape Connection Site.
 /// </summary>
 public static class ConnectionSiteConverter
 {
   /// <summary>
-  ///   Connection Site Angle
+  /// Connection Site Angle
   /// </summary>
-  public static String? GetAngle(ConnectionSite? openXmlElement)
+  private static String? GetAngle(DocumentFormat.OpenXml.Drawing.ConnectionSite openXmlElement)
   {
     return openXmlElement?.Angle?.Value;
   }
-
-  public static void SetAngle(ConnectionSite? openXmlElement, String? value)
+  
+  private static void SetAngle(DocumentFormat.OpenXml.Drawing.ConnectionSite openXmlElement, String? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.Angle = new StringValue { Value = value };
-      else
-        openXmlElement.Angle = null;
+    if (value != null)
+      openXmlElement.Angle = new StringValue { Value = value };
+    else
+      openXmlElement.Angle = null;
   }
-
+  
   /// <summary>
-  ///   Position.
+  /// Position.
   /// </summary>
-  public static AdjustPoint2DType? GetPosition(ConnectionSite? openXmlElement)
+  private static DocumentModel.Drawings.AdjustPoint2DType? GetPosition(DocumentFormat.OpenXml.Drawing.ConnectionSite openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<Position>();
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.Position>();
     if (itemElement != null)
-      return AdjustPoint2DTypeConverter.CreateModelElement(itemElement);
+      return DocumentModel.OpenXml.Drawings.AdjustPoint2DTypeConverter.CreateModelElement(itemElement);
     return null;
   }
-
-  public static void SetPosition(ConnectionSite? openXmlElement, AdjustPoint2DType? value)
+  
+  private static void SetPosition(DocumentFormat.OpenXml.Drawing.ConnectionSite openXmlElement, DocumentModel.Drawings.AdjustPoint2DType? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Position>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<Position>();
+      itemElement = DocumentModel.OpenXml.Drawings.AdjustPoint2DTypeConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Position>(value);
       if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = AdjustPoint2DTypeConverter.CreateOpenXmlElement<Position>(value);
-        if (itemElement != null)
-          openXmlElement.AddChild(itemElement);
-      }
+        openXmlElement.AddChild(itemElement);
     }
   }
-
-  public static DocumentModel.Drawings.ConnectionSite? CreateModelElement(ConnectionSite? openXmlElement)
+  
+  public static DocumentModel.Drawings.ConnectionSite? CreateModelElement(DocumentFormat.OpenXml.Drawing.ConnectionSite? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -63,9 +56,9 @@ public static class ConnectionSiteConverter
     }
     return null;
   }
-
+  
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.ConnectionSite? value)
-    where OpenXmlElementType : ConnectionSite, new()
+    where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.ConnectionSite, new()
   {
     if (value != null)
     {

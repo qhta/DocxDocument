@@ -65,7 +65,7 @@ public class TypeInfo : ModelElement
 
   public bool IsSimple()
   {
-    return Type.IsSimple() || Type == typeof(Byte[]) || Type == typeof(NumId) || Type == typeof(Uri);
+    return Type.IsSimple() || Type == typeof(Uri) || Type == typeof(NumId) /*|| Type == typeof(Byte[])*/;
   }
 
   public bool IsEnumValue([NotNullWhen(true)] out TypeInfo? enumType)

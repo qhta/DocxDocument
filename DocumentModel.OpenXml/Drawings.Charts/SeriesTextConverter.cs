@@ -1,68 +1,58 @@
-using DocumentFormat.OpenXml.Drawing.Charts;
-using SeriesText = DocumentFormat.OpenXml.Drawing.Charts.SeriesText;
-using StringReference = DocumentModel.Drawings.Charts.StringReference;
-
 namespace DocumentModel.OpenXml.Drawings.Charts;
 
 /// <summary>
-///   Series Text.
+/// Series Text.
 /// </summary>
 public static class SeriesTextConverter
 {
   /// <summary>
-  ///   StringReference.
+  /// StringReference.
   /// </summary>
-  public static StringReference? GetStringReference(SeriesText? openXmlElement)
+  private static DocumentModel.Drawings.Charts.StringReference? GetStringReference(DocumentFormat.OpenXml.Drawing.Charts.SeriesText openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.StringReference>();
     if (itemElement != null)
-      return StringReferenceConverter.CreateModelElement(itemElement);
+      return DocumentModel.OpenXml.Drawings.Charts.StringReferenceConverter.CreateModelElement(itemElement);
     return null;
   }
-
-  public static void SetStringReference(SeriesText? openXmlElement, StringReference? value)
+  
+  private static void SetStringReference(DocumentFormat.OpenXml.Drawing.Charts.SeriesText openXmlElement, DocumentModel.Drawings.Charts.StringReference? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.StringReference>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.StringReference>();
+      itemElement = DocumentModel.OpenXml.Drawings.Charts.StringReferenceConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Charts.StringReference>(value);
       if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = StringReferenceConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Charts.StringReference>(value);
-        if (itemElement != null)
-          openXmlElement.AddChild(itemElement);
-      }
+        openXmlElement.AddChild(itemElement);
     }
   }
-
+  
   /// <summary>
-  ///   NumericValue.
+  /// NumericValue.
   /// </summary>
-  public static String? GetNumericValue(SeriesText? openXmlElement)
+  private static String? GetNumericValue(DocumentFormat.OpenXml.Drawing.Charts.SeriesText openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<NumericValue>();
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.NumericValue>();
     if (itemElement != null)
       return itemElement.Text;
     return null;
   }
-
-  public static void SetNumericValue(SeriesText? openXmlElement, String? value)
+  
+  private static void SetNumericValue(DocumentFormat.OpenXml.Drawing.Charts.SeriesText openXmlElement, String? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.NumericValue>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<NumericValue>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = new NumericValue { Text = value };
-        openXmlElement.AddChild(itemElement);
-      }
+      itemElement = new DocumentFormat.OpenXml.Drawing.Charts.NumericValue { Text = value };
+      openXmlElement.AddChild(itemElement);
     }
   }
-
-  public static DocumentModel.Drawings.Charts.SeriesText? CreateModelElement(SeriesText? openXmlElement)
+  
+  public static DocumentModel.Drawings.Charts.SeriesText? CreateModelElement(DocumentFormat.OpenXml.Drawing.Charts.SeriesText? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -73,9 +63,9 @@ public static class SeriesTextConverter
     }
     return null;
   }
-
+  
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.Charts.SeriesText? value)
-    where OpenXmlElementType : SeriesText, new()
+    where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.Charts.SeriesText, new()
   {
     if (value != null)
     {

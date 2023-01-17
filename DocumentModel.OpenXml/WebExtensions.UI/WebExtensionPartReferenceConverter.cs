@@ -1,30 +1,27 @@
-using DocumentFormat.OpenXml.Office2013.WebExtentionPane;
-
 namespace DocumentModel.OpenXml.WebExtensions.UI;
 
 /// <summary>
-///   Defines the WebExtensionPartReference Class.
+/// Defines the WebExtensionPartReference Class.
 /// </summary>
 public static class WebExtensionPartReferenceConverter
 {
   /// <summary>
-  ///   id, this property is only available in Office 2013 and later.
+  /// id, this property is only available in Office 2013 and later.
   /// </summary>
-  public static String? GetId(WebExtensionPartReference? openXmlElement)
+  private static String? GetId(DocumentFormat.OpenXml.Office2013.WebExtentionPane.WebExtensionPartReference openXmlElement)
   {
     return openXmlElement?.Id?.Value;
   }
-
-  public static void SetId(WebExtensionPartReference? openXmlElement, String? value)
+  
+  private static void SetId(DocumentFormat.OpenXml.Office2013.WebExtentionPane.WebExtensionPartReference openXmlElement, String? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.Id = new StringValue { Value = value };
-      else
-        openXmlElement.Id = null;
+    if (value != null)
+      openXmlElement.Id = new StringValue { Value = value };
+    else
+      openXmlElement.Id = null;
   }
-
-  public static DocumentModel.WebExtensions.UI.WebExtensionPartReference? CreateModelElement(WebExtensionPartReference? openXmlElement)
+  
+  public static DocumentModel.WebExtensions.UI.WebExtensionPartReference? CreateModelElement(DocumentFormat.OpenXml.Office2013.WebExtentionPane.WebExtensionPartReference? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -34,9 +31,9 @@ public static class WebExtensionPartReferenceConverter
     }
     return null;
   }
-
+  
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.WebExtensions.UI.WebExtensionPartReference? value)
-    where OpenXmlElementType : WebExtensionPartReference, new()
+    where OpenXmlElementType: DocumentFormat.OpenXml.Office2013.WebExtentionPane.WebExtensionPartReference, new()
   {
     if (value != null)
     {

@@ -1,68 +1,58 @@
-using DocumentFormat.OpenXml.Drawing.Charts;
-using ChartShapeProperties = DocumentModel.Drawings.Charts.ChartShapeProperties;
-using Index = DocumentFormat.OpenXml.Drawing.Charts.Index;
-
 namespace DocumentModel.OpenXml.Drawings.Charts;
 
 /// <summary>
-///   Band Format.
+/// Band Format.
 /// </summary>
 public static class BandFormatConverter
 {
   /// <summary>
-  ///   Index.
+  /// Index.
   /// </summary>
-  public static UInt32? GetIndex(BandFormat? openXmlElement)
+  private static UInt32? GetIndex(DocumentFormat.OpenXml.Drawing.Charts.BandFormat openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<Index>();
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.Index>();
     if (itemElement != null)
       return itemElement.Val?.Value;
     return null;
   }
-
-  public static void SetIndex(BandFormat? openXmlElement, UInt32? value)
+  
+  private static void SetIndex(DocumentFormat.OpenXml.Drawing.Charts.BandFormat openXmlElement, UInt32? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.Index>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<Index>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = new Index { Val = value };
-        openXmlElement.AddChild(itemElement);
-      }
+      itemElement = new DocumentFormat.OpenXml.Drawing.Charts.Index{ Val = value };
+      openXmlElement.AddChild(itemElement);
     }
   }
-
+  
   /// <summary>
-  ///   ChartShapeProperties.
+  /// ChartShapeProperties.
   /// </summary>
-  public static ChartShapeProperties? GetChartShapeProperties(BandFormat? openXmlElement)
+  private static DocumentModel.Drawings.Charts.ChartShapeProperties? GetChartShapeProperties(DocumentFormat.OpenXml.Drawing.Charts.BandFormat openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.ChartShapeProperties>();
     if (itemElement != null)
-      return ChartShapePropertiesConverter.CreateModelElement(itemElement);
+      return DocumentModel.OpenXml.Drawings.Charts.ChartShapePropertiesConverter.CreateModelElement(itemElement);
     return null;
   }
-
-  public static void SetChartShapeProperties(BandFormat? openXmlElement, ChartShapeProperties? value)
+  
+  private static void SetChartShapeProperties(DocumentFormat.OpenXml.Drawing.Charts.BandFormat openXmlElement, DocumentModel.Drawings.Charts.ChartShapeProperties? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.ChartShapeProperties>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.ChartShapeProperties>();
+      itemElement = DocumentModel.OpenXml.Drawings.Charts.ChartShapePropertiesConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Charts.ChartShapeProperties>(value);
       if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = ChartShapePropertiesConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Charts.ChartShapeProperties>(value);
-        if (itemElement != null)
-          openXmlElement.AddChild(itemElement);
-      }
+        openXmlElement.AddChild(itemElement);
     }
   }
-
-  public static DocumentModel.Drawings.Charts.BandFormat? CreateModelElement(BandFormat? openXmlElement)
+  
+  public static DocumentModel.Drawings.Charts.BandFormat? CreateModelElement(DocumentFormat.OpenXml.Drawing.Charts.BandFormat? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -73,9 +63,9 @@ public static class BandFormatConverter
     }
     return null;
   }
-
+  
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.Charts.BandFormat? value)
-    where OpenXmlElementType : BandFormat, new()
+    where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.Charts.BandFormat, new()
   {
     if (value != null)
     {

@@ -1,45 +1,37 @@
-using DocumentModel.Drawings.Diagrams;
-using AdjustList = DocumentFormat.OpenXml.Drawing.Diagrams.AdjustList;
-
 namespace DocumentModel.OpenXml.Drawings.Diagrams;
 
 /// <summary>
-///   Shape Adjust List.
+/// Shape Adjust List.
 /// </summary>
 public static class AdjustListConverter
 {
-  public static Collection<Adjust>? GetAdjusts(AdjustList? openXmlElement)
+  private static System.Collections.ObjectModel.Collection<DocumentModel.Drawings.Diagrams.Adjust> GetAdjusts(DocumentFormat.OpenXml.Drawing.Diagrams.AdjustList openXmlElement)
   {
-    if (openXmlElement != null)
+    var collection = new System.Collections.ObjectModel.Collection<DocumentModel.Drawings.Diagrams.Adjust>();
+    foreach (var item in openXmlElement.Elements<DocumentFormat.OpenXml.Drawing.Diagrams.Adjust>())
     {
-      var collection = new Collection<Adjust>();
-      foreach (var item in openXmlElement.Elements<DocumentFormat.OpenXml.Drawing.Diagrams.Adjust>())
+      var newItem = DocumentModel.OpenXml.Drawings.Diagrams.AdjustConverter.CreateModelElement(item);
+      if (newItem != null)
+        collection.Add(newItem);
+    }
+    return collection;
+  }
+  
+  private static void SetAdjusts(DocumentFormat.OpenXml.Drawing.Diagrams.AdjustList openXmlElement, System.Collections.ObjectModel.Collection<DocumentModel.Drawings.Diagrams.Adjust>? value)
+  {
+    openXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Drawing.Diagrams.Adjust>();
+    if (value != null)
+    {
+      foreach (var item in value)
       {
-        var newItem = AdjustConverter.CreateModelElement(item);
+        var newItem = DocumentModel.OpenXml.Drawings.Diagrams.AdjustConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Diagrams.Adjust>(item);
         if (newItem != null)
-          collection.Add(newItem);
+          openXmlElement.AddChild(newItem);
       }
-      return collection;
-    }
-    return null;
-  }
-
-  public static void SetAdjusts(AdjustList? openXmlElement, Collection<Adjust>? value)
-  {
-    if (openXmlElement != null)
-    {
-      openXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Drawing.Diagrams.Adjust>();
-      if (value != null)
-        foreach (var item in value)
-        {
-          var newItem = AdjustConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Diagrams.Adjust>(item);
-          if (newItem != null)
-            openXmlElement.AddChild(newItem);
-        }
     }
   }
-
-  public static DocumentModel.Drawings.Diagrams.AdjustList? CreateModelElement(AdjustList? openXmlElement)
+  
+  public static DocumentModel.Drawings.Diagrams.AdjustList? CreateModelElement(DocumentFormat.OpenXml.Drawing.Diagrams.AdjustList? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -49,9 +41,9 @@ public static class AdjustListConverter
     }
     return null;
   }
-
+  
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.Diagrams.AdjustList? value)
-    where OpenXmlElementType : AdjustList, new()
+    where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.Diagrams.AdjustList, new()
   {
     if (value != null)
     {

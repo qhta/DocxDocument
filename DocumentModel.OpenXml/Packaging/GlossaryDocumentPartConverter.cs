@@ -1,351 +1,281 @@
-using DocumentModel.OpenXml.Wordprocessing;
-using DocumentModel.Packaging;
-using DocumentModel.Wordprocessing;
-using GlossaryDocumentPart = DocumentFormat.OpenXml.Packaging.GlossaryDocumentPart;
-
 namespace DocumentModel.OpenXml.Packaging;
 
 /// <summary>
-///   Defines the GlossaryDocumentPart
+/// Defines the GlossaryDocumentPart
 /// </summary>
 public static class GlossaryDocumentPartConverter
 {
   /// <summary>
-  ///   Gets the AlternativeFormatImportParts of the GlossaryDocumentPart
+  /// Gets the AlternativeFormatImportParts of the GlossaryDocumentPart
   /// </summary>
-  public static Collection<AlternativeFormatImportPart>? GetAlternativeFormatImportParts(GlossaryDocumentPart? openXmlElement)
+  private static System.Collections.ObjectModel.Collection<DocumentModel.Packaging.AlternativeFormatImportPart> GetAlternativeFormatImportParts(DocumentFormat.OpenXml.Packaging.GlossaryDocumentPart openXmlElement)
   {
-    if (openXmlElement != null)
+    var collection = new System.Collections.ObjectModel.Collection<DocumentModel.Packaging.AlternativeFormatImportPart>();
+    foreach (var item in openXmlElement.GetPartsOfType<DocumentFormat.OpenXml.Packaging.AlternativeFormatImportPart>())
     {
-      var collection = new Collection<AlternativeFormatImportPart>();
-      foreach (var item in openXmlElement.GetPartsOfType<DocumentFormat.OpenXml.Packaging.AlternativeFormatImportPart>())
-      {
-        var newItem = AlternativeFormatImportPartConverter.CreateModelElement(item);
-        if (newItem != null)
-          collection.Add(newItem);
-      }
-      return collection;
+      var newItem = DocumentModel.OpenXml.Packaging.AlternativeFormatImportPartConverter.CreateModelElement(item);
+      if (newItem != null)
+        collection.Add(newItem);
     }
-    return null;
+    return collection;
   }
-
+  
   /// <summary>
-  ///   Gets the ChartParts of the GlossaryDocumentPart
+  /// Gets the ChartParts of the GlossaryDocumentPart
   /// </summary>
-  public static Collection<ChartPart>? GetChartParts(GlossaryDocumentPart? openXmlElement)
+  private static System.Collections.ObjectModel.Collection<DocumentModel.Packaging.ChartPart> GetChartParts(DocumentFormat.OpenXml.Packaging.GlossaryDocumentPart openXmlElement)
   {
-    if (openXmlElement != null)
+    var collection = new System.Collections.ObjectModel.Collection<DocumentModel.Packaging.ChartPart>();
+    foreach (var item in openXmlElement.GetPartsOfType<DocumentFormat.OpenXml.Packaging.ChartPart>())
     {
-      var collection = new Collection<ChartPart>();
-      foreach (var item in openXmlElement.GetPartsOfType<DocumentFormat.OpenXml.Packaging.ChartPart>())
-      {
-        var newItem = ChartPartConverter.CreateModelElement(item);
-        if (newItem != null)
-          collection.Add(newItem);
-      }
-      return collection;
+      var newItem = DocumentModel.OpenXml.Packaging.ChartPartConverter.CreateModelElement(item);
+      if (newItem != null)
+        collection.Add(newItem);
     }
-    return null;
+    return collection;
   }
-
-  public static String? GetContentType(GlossaryDocumentPart? openXmlElement)
+  
+  private static String? GetContentType(DocumentFormat.OpenXml.Packaging.GlossaryDocumentPart openXmlElement)
   {
     return openXmlElement?.ContentType;
   }
-
+  
   /// <summary>
-  ///   Gets the DiagramColorsParts of the GlossaryDocumentPart
+  /// Gets the DiagramColorsParts of the GlossaryDocumentPart
   /// </summary>
-  public static Collection<DiagramColorsPart>? GetDiagramColorsParts(GlossaryDocumentPart? openXmlElement)
+  private static System.Collections.ObjectModel.Collection<DocumentModel.Packaging.DiagramColorsPart> GetDiagramColorsParts(DocumentFormat.OpenXml.Packaging.GlossaryDocumentPart openXmlElement)
   {
-    if (openXmlElement != null)
+    var collection = new System.Collections.ObjectModel.Collection<DocumentModel.Packaging.DiagramColorsPart>();
+    foreach (var item in openXmlElement.GetPartsOfType<DocumentFormat.OpenXml.Packaging.DiagramColorsPart>())
     {
-      var collection = new Collection<DiagramColorsPart>();
-      foreach (var item in openXmlElement.GetPartsOfType<DocumentFormat.OpenXml.Packaging.DiagramColorsPart>())
-      {
-        var newItem = DiagramColorsPartConverter.CreateModelElement(item);
-        if (newItem != null)
-          collection.Add(newItem);
-      }
-      return collection;
+      var newItem = DocumentModel.OpenXml.Packaging.DiagramColorsPartConverter.CreateModelElement(item);
+      if (newItem != null)
+        collection.Add(newItem);
     }
-    return null;
+    return collection;
   }
-
+  
   /// <summary>
-  ///   Gets the DiagramDataParts of the GlossaryDocumentPart
+  /// Gets the DiagramDataParts of the GlossaryDocumentPart
   /// </summary>
-  public static Collection<DiagramDataPart>? GetDiagramDataParts(GlossaryDocumentPart? openXmlElement)
+  private static System.Collections.ObjectModel.Collection<DocumentModel.Packaging.DiagramDataPart> GetDiagramDataParts(DocumentFormat.OpenXml.Packaging.GlossaryDocumentPart openXmlElement)
   {
-    if (openXmlElement != null)
+    var collection = new System.Collections.ObjectModel.Collection<DocumentModel.Packaging.DiagramDataPart>();
+    foreach (var item in openXmlElement.GetPartsOfType<DocumentFormat.OpenXml.Packaging.DiagramDataPart>())
     {
-      var collection = new Collection<DiagramDataPart>();
-      foreach (var item in openXmlElement.GetPartsOfType<DocumentFormat.OpenXml.Packaging.DiagramDataPart>())
-      {
-        var newItem = DiagramDataPartConverter.CreateModelElement(item);
-        if (newItem != null)
-          collection.Add(newItem);
-      }
-      return collection;
+      var newItem = DocumentModel.OpenXml.Packaging.DiagramDataPartConverter.CreateModelElement(item);
+      if (newItem != null)
+        collection.Add(newItem);
     }
-    return null;
+    return collection;
   }
-
+  
   /// <summary>
-  ///   Gets the DiagramLayoutDefinitionParts of the GlossaryDocumentPart
+  /// Gets the DiagramLayoutDefinitionParts of the GlossaryDocumentPart
   /// </summary>
-  public static Collection<DiagramLayoutDefinitionPart>? GetDiagramLayoutDefinitionParts(GlossaryDocumentPart? openXmlElement)
+  private static System.Collections.ObjectModel.Collection<DocumentModel.Packaging.DiagramLayoutDefinitionPart> GetDiagramLayoutDefinitionParts(DocumentFormat.OpenXml.Packaging.GlossaryDocumentPart openXmlElement)
   {
-    if (openXmlElement != null)
+    var collection = new System.Collections.ObjectModel.Collection<DocumentModel.Packaging.DiagramLayoutDefinitionPart>();
+    foreach (var item in openXmlElement.GetPartsOfType<DocumentFormat.OpenXml.Packaging.DiagramLayoutDefinitionPart>())
     {
-      var collection = new Collection<DiagramLayoutDefinitionPart>();
-      foreach (var item in openXmlElement.GetPartsOfType<DocumentFormat.OpenXml.Packaging.DiagramLayoutDefinitionPart>())
-      {
-        var newItem = DiagramLayoutDefinitionPartConverter.CreateModelElement(item);
-        if (newItem != null)
-          collection.Add(newItem);
-      }
-      return collection;
+      var newItem = DocumentModel.OpenXml.Packaging.DiagramLayoutDefinitionPartConverter.CreateModelElement(item);
+      if (newItem != null)
+        collection.Add(newItem);
     }
-    return null;
+    return collection;
   }
-
+  
   /// <summary>
-  ///   Gets the DiagramPersistLayoutParts of the GlossaryDocumentPart
+  /// Gets the DiagramPersistLayoutParts of the GlossaryDocumentPart
   /// </summary>
-  public static Collection<DiagramPersistLayoutPart>? GetDiagramPersistLayoutParts(GlossaryDocumentPart? openXmlElement)
+  private static System.Collections.ObjectModel.Collection<DocumentModel.Packaging.DiagramPersistLayoutPart> GetDiagramPersistLayoutParts(DocumentFormat.OpenXml.Packaging.GlossaryDocumentPart openXmlElement)
   {
-    if (openXmlElement != null)
+    var collection = new System.Collections.ObjectModel.Collection<DocumentModel.Packaging.DiagramPersistLayoutPart>();
+    foreach (var item in openXmlElement.GetPartsOfType<DocumentFormat.OpenXml.Packaging.DiagramPersistLayoutPart>())
     {
-      var collection = new Collection<DiagramPersistLayoutPart>();
-      foreach (var item in openXmlElement.GetPartsOfType<DocumentFormat.OpenXml.Packaging.DiagramPersistLayoutPart>())
-      {
-        var newItem = DiagramPersistLayoutPartConverter.CreateModelElement(item);
-        if (newItem != null)
-          collection.Add(newItem);
-      }
-      return collection;
+      var newItem = DocumentModel.OpenXml.Packaging.DiagramPersistLayoutPartConverter.CreateModelElement(item);
+      if (newItem != null)
+        collection.Add(newItem);
     }
-    return null;
+    return collection;
   }
-
+  
   /// <summary>
-  ///   Gets the DiagramStyleParts of the GlossaryDocumentPart
+  /// Gets the DiagramStyleParts of the GlossaryDocumentPart
   /// </summary>
-  public static Collection<DiagramStylePart>? GetDiagramStyleParts(GlossaryDocumentPart? openXmlElement)
+  private static System.Collections.ObjectModel.Collection<DocumentModel.Packaging.DiagramStylePart> GetDiagramStyleParts(DocumentFormat.OpenXml.Packaging.GlossaryDocumentPart openXmlElement)
   {
-    if (openXmlElement != null)
+    var collection = new System.Collections.ObjectModel.Collection<DocumentModel.Packaging.DiagramStylePart>();
+    foreach (var item in openXmlElement.GetPartsOfType<DocumentFormat.OpenXml.Packaging.DiagramStylePart>())
     {
-      var collection = new Collection<DiagramStylePart>();
-      foreach (var item in openXmlElement.GetPartsOfType<DocumentFormat.OpenXml.Packaging.DiagramStylePart>())
-      {
-        var newItem = DiagramStylePartConverter.CreateModelElement(item);
-        if (newItem != null)
-          collection.Add(newItem);
-      }
-      return collection;
+      var newItem = DocumentModel.OpenXml.Packaging.DiagramStylePartConverter.CreateModelElement(item);
+      if (newItem != null)
+        collection.Add(newItem);
     }
-    return null;
+    return collection;
   }
-
+  
   /// <summary>
-  ///   Gets the EmbeddedControlPersistenceParts of the GlossaryDocumentPart
+  /// Gets the EmbeddedControlPersistenceParts of the GlossaryDocumentPart
   /// </summary>
-  public static Collection<EmbeddedControlPersistencePart>? GetEmbeddedControlPersistenceParts(GlossaryDocumentPart? openXmlElement)
+  private static System.Collections.ObjectModel.Collection<DocumentModel.Packaging.EmbeddedControlPersistencePart> GetEmbeddedControlPersistenceParts(DocumentFormat.OpenXml.Packaging.GlossaryDocumentPart openXmlElement)
   {
-    if (openXmlElement != null)
+    var collection = new System.Collections.ObjectModel.Collection<DocumentModel.Packaging.EmbeddedControlPersistencePart>();
+    foreach (var item in openXmlElement.GetPartsOfType<DocumentFormat.OpenXml.Packaging.EmbeddedControlPersistencePart>())
     {
-      var collection = new Collection<EmbeddedControlPersistencePart>();
-      foreach (var item in openXmlElement.GetPartsOfType<DocumentFormat.OpenXml.Packaging.EmbeddedControlPersistencePart>())
-      {
-        var newItem = EmbeddedControlPersistencePartConverter.CreateModelElement(item);
-        if (newItem != null)
-          collection.Add(newItem);
-      }
-      return collection;
+      var newItem = DocumentModel.OpenXml.Packaging.EmbeddedControlPersistencePartConverter.CreateModelElement(item);
+      if (newItem != null)
+        collection.Add(newItem);
     }
-    return null;
+    return collection;
   }
-
+  
   /// <summary>
-  ///   Gets the EmbeddedObjectParts of the GlossaryDocumentPart
+  /// Gets the EmbeddedObjectParts of the GlossaryDocumentPart
   /// </summary>
-  public static Collection<EmbeddedObjectPart>? GetEmbeddedObjectParts(GlossaryDocumentPart? openXmlElement)
+  private static System.Collections.ObjectModel.Collection<DocumentModel.Packaging.EmbeddedObjectPart> GetEmbeddedObjectParts(DocumentFormat.OpenXml.Packaging.GlossaryDocumentPart openXmlElement)
   {
-    if (openXmlElement != null)
+    var collection = new System.Collections.ObjectModel.Collection<DocumentModel.Packaging.EmbeddedObjectPart>();
+    foreach (var item in openXmlElement.GetPartsOfType<DocumentFormat.OpenXml.Packaging.EmbeddedObjectPart>())
     {
-      var collection = new Collection<EmbeddedObjectPart>();
-      foreach (var item in openXmlElement.GetPartsOfType<DocumentFormat.OpenXml.Packaging.EmbeddedObjectPart>())
-      {
-        var newItem = EmbeddedObjectPartConverter.CreateModelElement(item);
-        if (newItem != null)
-          collection.Add(newItem);
-      }
-      return collection;
+      var newItem = DocumentModel.OpenXml.Packaging.EmbeddedObjectPartConverter.CreateModelElement(item);
+      if (newItem != null)
+        collection.Add(newItem);
     }
-    return null;
+    return collection;
   }
-
+  
   /// <summary>
-  ///   Gets the EmbeddedPackageParts of the GlossaryDocumentPart
+  /// Gets the EmbeddedPackageParts of the GlossaryDocumentPart
   /// </summary>
-  public static Collection<EmbeddedPackagePart>? GetEmbeddedPackageParts(GlossaryDocumentPart? openXmlElement)
+  private static System.Collections.ObjectModel.Collection<DocumentModel.Packaging.EmbeddedPackagePart> GetEmbeddedPackageParts(DocumentFormat.OpenXml.Packaging.GlossaryDocumentPart openXmlElement)
   {
-    if (openXmlElement != null)
+    var collection = new System.Collections.ObjectModel.Collection<DocumentModel.Packaging.EmbeddedPackagePart>();
+    foreach (var item in openXmlElement.GetPartsOfType<DocumentFormat.OpenXml.Packaging.EmbeddedPackagePart>())
     {
-      var collection = new Collection<EmbeddedPackagePart>();
-      foreach (var item in openXmlElement.GetPartsOfType<DocumentFormat.OpenXml.Packaging.EmbeddedPackagePart>())
-      {
-        var newItem = EmbeddedPackagePartConverter.CreateModelElement(item);
-        if (newItem != null)
-          collection.Add(newItem);
-      }
-      return collection;
+      var newItem = DocumentModel.OpenXml.Packaging.EmbeddedPackagePartConverter.CreateModelElement(item);
+      if (newItem != null)
+        collection.Add(newItem);
     }
-    return null;
+    return collection;
   }
-
+  
   /// <summary>
-  ///   Gets the ExtendedChartParts of the GlossaryDocumentPart
+  /// Gets the ExtendedChartParts of the GlossaryDocumentPart
   /// </summary>
-  public static Collection<ExtendedChartPart>? GetExtendedChartParts(GlossaryDocumentPart? openXmlElement)
+  private static System.Collections.ObjectModel.Collection<DocumentModel.Packaging.ExtendedChartPart> GetExtendedChartParts(DocumentFormat.OpenXml.Packaging.GlossaryDocumentPart openXmlElement)
   {
-    if (openXmlElement != null)
+    var collection = new System.Collections.ObjectModel.Collection<DocumentModel.Packaging.ExtendedChartPart>();
+    foreach (var item in openXmlElement.GetPartsOfType<DocumentFormat.OpenXml.Packaging.ExtendedChartPart>())
     {
-      var collection = new Collection<ExtendedChartPart>();
-      foreach (var item in openXmlElement.GetPartsOfType<DocumentFormat.OpenXml.Packaging.ExtendedChartPart>())
-      {
-        var newItem = ExtendedChartPartConverter.CreateModelElement(item);
-        if (newItem != null)
-          collection.Add(newItem);
-      }
-      return collection;
+      var newItem = DocumentModel.OpenXml.Packaging.ExtendedChartPartConverter.CreateModelElement(item);
+      if (newItem != null)
+        collection.Add(newItem);
     }
-    return null;
+    return collection;
   }
-
+  
   /// <summary>
-  ///   Gets the FooterParts of the GlossaryDocumentPart
+  /// Gets the FooterParts of the GlossaryDocumentPart
   /// </summary>
-  public static Collection<FooterPart>? GetFooterParts(GlossaryDocumentPart? openXmlElement)
+  private static System.Collections.ObjectModel.Collection<DocumentModel.Packaging.FooterPart> GetFooterParts(DocumentFormat.OpenXml.Packaging.GlossaryDocumentPart openXmlElement)
   {
-    if (openXmlElement != null)
+    var collection = new System.Collections.ObjectModel.Collection<DocumentModel.Packaging.FooterPart>();
+    foreach (var item in openXmlElement.GetPartsOfType<DocumentFormat.OpenXml.Packaging.FooterPart>())
     {
-      var collection = new Collection<FooterPart>();
-      foreach (var item in openXmlElement.GetPartsOfType<DocumentFormat.OpenXml.Packaging.FooterPart>())
-      {
-        var newItem = FooterPartConverter.CreateModelElement(item);
-        if (newItem != null)
-          collection.Add(newItem);
-      }
-      return collection;
+      var newItem = DocumentModel.OpenXml.Packaging.FooterPartConverter.CreateModelElement(item);
+      if (newItem != null)
+        collection.Add(newItem);
     }
-    return null;
+    return collection;
   }
-
+  
   /// <summary>
-  ///   Gets or sets the root element of this part.
+  /// Gets or sets the root element of this part.
   /// </summary>
-  public static GlossaryDocument? GetGlossaryDocument(GlossaryDocumentPart? openXmlElement)
+  private static DocumentModel.Wordprocessing.GlossaryDocument? GetGlossaryDocument(DocumentFormat.OpenXml.Packaging.GlossaryDocumentPart openXmlElement)
   {
     if (openXmlElement?.RootElement is DocumentFormat.OpenXml.Wordprocessing.GlossaryDocument rootElement)
-      return GlossaryDocumentConverter.CreateModelElement(rootElement);
+      return DocumentModel.OpenXml.Wordprocessing.GlossaryDocumentConverter.CreateModelElement(rootElement);
     return null;
   }
-
-  public static void SetGlossaryDocument(GlossaryDocumentPart? openXmlElement, GlossaryDocument? value)
+  
+  private static void SetGlossaryDocument(DocumentFormat.OpenXml.Packaging.GlossaryDocumentPart openXmlElement, DocumentModel.Wordprocessing.GlossaryDocument? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-      {
-        var rootElement = GlossaryDocumentConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.GlossaryDocument>(value);
-        if (rootElement != null)
-          openXmlElement.GlossaryDocument = rootElement;
-      }
-  }
-
-  /// <summary>
-  ///   Gets the HeaderParts of the GlossaryDocumentPart
-  /// </summary>
-  public static Collection<HeaderPart>? GetHeaderParts(GlossaryDocumentPart? openXmlElement)
-  {
-    if (openXmlElement != null)
+    if (value != null)
     {
-      var collection = new Collection<HeaderPart>();
-      foreach (var item in openXmlElement.GetPartsOfType<DocumentFormat.OpenXml.Packaging.HeaderPart>())
-      {
-        var newItem = HeaderPartConverter.CreateModelElement(item);
-        if (newItem != null)
-          collection.Add(newItem);
-      }
-      return collection;
+       var rootElement = DocumentModel.OpenXml.Wordprocessing.GlossaryDocumentConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.GlossaryDocument>(value);
+       if (rootElement != null)
+         openXmlElement.GlossaryDocument = rootElement;
     }
-    return null;
   }
-
+  
   /// <summary>
-  ///   Gets the ImageParts of the GlossaryDocumentPart
+  /// Gets the HeaderParts of the GlossaryDocumentPart
   /// </summary>
-  public static Collection<ImagePart>? GetImageParts(GlossaryDocumentPart? openXmlElement)
+  private static System.Collections.ObjectModel.Collection<DocumentModel.Packaging.HeaderPart> GetHeaderParts(DocumentFormat.OpenXml.Packaging.GlossaryDocumentPart openXmlElement)
   {
-    if (openXmlElement != null)
+    var collection = new System.Collections.ObjectModel.Collection<DocumentModel.Packaging.HeaderPart>();
+    foreach (var item in openXmlElement.GetPartsOfType<DocumentFormat.OpenXml.Packaging.HeaderPart>())
     {
-      var collection = new Collection<ImagePart>();
-      foreach (var item in openXmlElement.GetPartsOfType<DocumentFormat.OpenXml.Packaging.ImagePart>())
-      {
-        var newItem = ImagePartConverter.CreateModelElement(item);
-        if (newItem != null)
-          collection.Add(newItem);
-      }
-      return collection;
+      var newItem = DocumentModel.OpenXml.Packaging.HeaderPartConverter.CreateModelElement(item);
+      if (newItem != null)
+        collection.Add(newItem);
     }
-    return null;
+    return collection;
   }
-
+  
   /// <summary>
-  ///   Gets the Model3DReferenceRelationshipParts of the GlossaryDocumentPart
+  /// Gets the ImageParts of the GlossaryDocumentPart
   /// </summary>
-  public static Collection<Model3DReferenceRelationshipPart>? GetModel3DReferenceRelationshipParts(GlossaryDocumentPart? openXmlElement)
+  private static System.Collections.ObjectModel.Collection<DocumentModel.Packaging.ImagePart> GetImageParts(DocumentFormat.OpenXml.Packaging.GlossaryDocumentPart openXmlElement)
   {
-    if (openXmlElement != null)
+    var collection = new System.Collections.ObjectModel.Collection<DocumentModel.Packaging.ImagePart>();
+    foreach (var item in openXmlElement.GetPartsOfType<DocumentFormat.OpenXml.Packaging.ImagePart>())
     {
-      var collection = new Collection<Model3DReferenceRelationshipPart>();
-      foreach (var item in openXmlElement.GetPartsOfType<DocumentFormat.OpenXml.Packaging.Model3DReferenceRelationshipPart>())
-      {
-        var newItem = Model3DReferenceRelationshipPartConverter.CreateModelElement(item);
-        if (newItem != null)
-          collection.Add(newItem);
-      }
-      return collection;
+      var newItem = DocumentModel.OpenXml.Packaging.ImagePartConverter.CreateModelElement(item);
+      if (newItem != null)
+        collection.Add(newItem);
     }
-    return null;
+    return collection;
   }
-
-  public static String? GetRelationshipType(GlossaryDocumentPart? openXmlElement)
+  
+  /// <summary>
+  /// Gets the Model3DReferenceRelationshipParts of the GlossaryDocumentPart
+  /// </summary>
+  private static System.Collections.ObjectModel.Collection<DocumentModel.Packaging.Model3DReferenceRelationshipPart> GetModel3DReferenceRelationshipParts(DocumentFormat.OpenXml.Packaging.GlossaryDocumentPart openXmlElement)
+  {
+    var collection = new System.Collections.ObjectModel.Collection<DocumentModel.Packaging.Model3DReferenceRelationshipPart>();
+    foreach (var item in openXmlElement.GetPartsOfType<DocumentFormat.OpenXml.Packaging.Model3DReferenceRelationshipPart>())
+    {
+      var newItem = DocumentModel.OpenXml.Packaging.Model3DReferenceRelationshipPartConverter.CreateModelElement(item);
+      if (newItem != null)
+        collection.Add(newItem);
+    }
+    return collection;
+  }
+  
+  private static String? GetRelationshipType(DocumentFormat.OpenXml.Packaging.GlossaryDocumentPart openXmlElement)
   {
     return openXmlElement?.RelationshipType;
   }
-
+  
   /// <summary>
-  ///   Gets the WordprocessingPrinterSettingsParts of the GlossaryDocumentPart
+  /// Gets the WordprocessingPrinterSettingsParts of the GlossaryDocumentPart
   /// </summary>
-  public static Collection<WordprocessingPrinterSettingsPart>? GetWordprocessingPrinterSettingsParts(GlossaryDocumentPart? openXmlElement)
+  private static System.Collections.ObjectModel.Collection<DocumentModel.Packaging.WordprocessingPrinterSettingsPart> GetWordprocessingPrinterSettingsParts(DocumentFormat.OpenXml.Packaging.GlossaryDocumentPart openXmlElement)
   {
-    if (openXmlElement != null)
+    var collection = new System.Collections.ObjectModel.Collection<DocumentModel.Packaging.WordprocessingPrinterSettingsPart>();
+    foreach (var item in openXmlElement.GetPartsOfType<DocumentFormat.OpenXml.Packaging.WordprocessingPrinterSettingsPart>())
     {
-      var collection = new Collection<WordprocessingPrinterSettingsPart>();
-      foreach (var item in openXmlElement.GetPartsOfType<DocumentFormat.OpenXml.Packaging.WordprocessingPrinterSettingsPart>())
-      {
-        var newItem = WordprocessingPrinterSettingsPartConverter.CreateModelElement(item);
-        if (newItem != null)
-          collection.Add(newItem);
-      }
-      return collection;
+      var newItem = DocumentModel.OpenXml.Packaging.WordprocessingPrinterSettingsPartConverter.CreateModelElement(item);
+      if (newItem != null)
+        collection.Add(newItem);
     }
-    return null;
+    return collection;
   }
-
-  public static DocumentModel.Packaging.GlossaryDocumentPart? CreateModelElement(GlossaryDocumentPart? openXmlElement)
+  
+  public static DocumentModel.Packaging.GlossaryDocumentPart? CreateModelElement(DocumentFormat.OpenXml.Packaging.GlossaryDocumentPart? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -373,9 +303,9 @@ public static class GlossaryDocumentPartConverter
     }
     return null;
   }
-
+  
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Packaging.GlossaryDocumentPart? value)
-    where OpenXmlElementType : GlossaryDocumentPart, new()
+    where OpenXmlElementType: DocumentFormat.OpenXml.Packaging.GlossaryDocumentPart, new()
   {
     if (value != null)
     {

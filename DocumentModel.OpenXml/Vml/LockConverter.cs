@@ -1,216 +1,200 @@
-using DocumentFormat.OpenXml.Vml;
-using DocumentModel.Vml;
-using Lock = DocumentFormat.OpenXml.Vml.Office.Lock;
-
 namespace DocumentModel.OpenXml.Vml;
 
 /// <summary>
-///   Defines the Lock Class.
+/// Defines the Lock Class.
 /// </summary>
 public static class LockConverter
 {
   /// <summary>
-  ///   VML Extension Handling Behavior
+  /// VML Extension Handling Behavior
   /// </summary>
-  public static ExtensionHandlingBehaviorKind? GetExtension(Lock? openXmlElement)
+  private static DocumentModel.Vml.ExtensionHandlingBehaviorKind? GetExtension(DocumentFormat.OpenXml.Vml.Office.Lock openXmlElement)
   {
-    return EnumValueConverter.GetValue<ExtensionHandlingBehaviorValues, ExtensionHandlingBehaviorKind>(openXmlElement?.Extension?.Value);
+    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Vml.ExtensionHandlingBehaviorValues, DocumentModel.Vml.ExtensionHandlingBehaviorKind>(openXmlElement?.Extension?.Value);
   }
-
-  public static void SetExtension(Lock? openXmlElement, ExtensionHandlingBehaviorKind? value)
+  
+  private static void SetExtension(DocumentFormat.OpenXml.Vml.Office.Lock openXmlElement, DocumentModel.Vml.ExtensionHandlingBehaviorKind? value)
   {
-    if (openXmlElement != null)
-      openXmlElement.Extension = EnumValueConverter.CreateEnumValue<ExtensionHandlingBehaviorValues, ExtensionHandlingBehaviorKind>(value);
+    openXmlElement.Extension = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Vml.ExtensionHandlingBehaviorValues, DocumentModel.Vml.ExtensionHandlingBehaviorKind>(value);
   }
-
+  
   /// <summary>
-  ///   Position Lock
+  /// Position Lock
   /// </summary>
-  public static Boolean? GetPosition(Lock? openXmlElement)
+  private static Boolean? GetPosition(DocumentFormat.OpenXml.Vml.Office.Lock openXmlElement)
   {
     return openXmlElement?.Position?.Value;
   }
-
-  public static void SetPosition(Lock? openXmlElement, Boolean? value)
+  
+  private static void SetPosition(DocumentFormat.OpenXml.Vml.Office.Lock openXmlElement, Boolean? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.Position = value;
-      else
-        openXmlElement.Position = null;
+    if (value != null)
+      openXmlElement.Position = value;
+    else
+      openXmlElement.Position = null;
   }
-
+  
   /// <summary>
-  ///   Selection Lock
+  /// Selection Lock
   /// </summary>
-  public static Boolean? GetSelection(Lock? openXmlElement)
+  private static Boolean? GetSelection(DocumentFormat.OpenXml.Vml.Office.Lock openXmlElement)
   {
     return openXmlElement?.Selection?.Value;
   }
-
-  public static void SetSelection(Lock? openXmlElement, Boolean? value)
+  
+  private static void SetSelection(DocumentFormat.OpenXml.Vml.Office.Lock openXmlElement, Boolean? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.Selection = value;
-      else
-        openXmlElement.Selection = null;
+    if (value != null)
+      openXmlElement.Selection = value;
+    else
+      openXmlElement.Selection = null;
   }
-
+  
   /// <summary>
-  ///   Grouping Lock
+  /// Grouping Lock
   /// </summary>
-  public static Boolean? GetGrouping(Lock? openXmlElement)
+  private static Boolean? GetGrouping(DocumentFormat.OpenXml.Vml.Office.Lock openXmlElement)
   {
     return openXmlElement?.Grouping?.Value;
   }
-
-  public static void SetGrouping(Lock? openXmlElement, Boolean? value)
+  
+  private static void SetGrouping(DocumentFormat.OpenXml.Vml.Office.Lock openXmlElement, Boolean? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.Grouping = value;
-      else
-        openXmlElement.Grouping = null;
+    if (value != null)
+      openXmlElement.Grouping = value;
+    else
+      openXmlElement.Grouping = null;
   }
-
+  
   /// <summary>
-  ///   Ungrouping Lock
+  /// Ungrouping Lock
   /// </summary>
-  public static Boolean? GetUngrouping(Lock? openXmlElement)
+  private static Boolean? GetUngrouping(DocumentFormat.OpenXml.Vml.Office.Lock openXmlElement)
   {
     return openXmlElement?.Ungrouping?.Value;
   }
-
-  public static void SetUngrouping(Lock? openXmlElement, Boolean? value)
+  
+  private static void SetUngrouping(DocumentFormat.OpenXml.Vml.Office.Lock openXmlElement, Boolean? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.Ungrouping = value;
-      else
-        openXmlElement.Ungrouping = null;
+    if (value != null)
+      openXmlElement.Ungrouping = value;
+    else
+      openXmlElement.Ungrouping = null;
   }
-
+  
   /// <summary>
-  ///   Rotation Lock
+  /// Rotation Lock
   /// </summary>
-  public static Boolean? GetRotation(Lock? openXmlElement)
+  private static Boolean? GetRotation(DocumentFormat.OpenXml.Vml.Office.Lock openXmlElement)
   {
     return openXmlElement?.Rotation?.Value;
   }
-
-  public static void SetRotation(Lock? openXmlElement, Boolean? value)
+  
+  private static void SetRotation(DocumentFormat.OpenXml.Vml.Office.Lock openXmlElement, Boolean? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.Rotation = value;
-      else
-        openXmlElement.Rotation = null;
+    if (value != null)
+      openXmlElement.Rotation = value;
+    else
+      openXmlElement.Rotation = null;
   }
-
+  
   /// <summary>
-  ///   Cropping Lock
+  /// Cropping Lock
   /// </summary>
-  public static Boolean? GetCropping(Lock? openXmlElement)
+  private static Boolean? GetCropping(DocumentFormat.OpenXml.Vml.Office.Lock openXmlElement)
   {
     return openXmlElement?.Cropping?.Value;
   }
-
-  public static void SetCropping(Lock? openXmlElement, Boolean? value)
+  
+  private static void SetCropping(DocumentFormat.OpenXml.Vml.Office.Lock openXmlElement, Boolean? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.Cropping = value;
-      else
-        openXmlElement.Cropping = null;
+    if (value != null)
+      openXmlElement.Cropping = value;
+    else
+      openXmlElement.Cropping = null;
   }
-
+  
   /// <summary>
-  ///   Vertices Lock
+  /// Vertices Lock
   /// </summary>
-  public static Boolean? GetVerticies(Lock? openXmlElement)
+  private static Boolean? GetVerticies(DocumentFormat.OpenXml.Vml.Office.Lock openXmlElement)
   {
     return openXmlElement?.Verticies?.Value;
   }
-
-  public static void SetVerticies(Lock? openXmlElement, Boolean? value)
+  
+  private static void SetVerticies(DocumentFormat.OpenXml.Vml.Office.Lock openXmlElement, Boolean? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.Verticies = value;
-      else
-        openXmlElement.Verticies = null;
+    if (value != null)
+      openXmlElement.Verticies = value;
+    else
+      openXmlElement.Verticies = null;
   }
-
+  
   /// <summary>
-  ///   Handles Lock
+  /// Handles Lock
   /// </summary>
-  public static Boolean? GetAdjustHandles(Lock? openXmlElement)
+  private static Boolean? GetAdjustHandles(DocumentFormat.OpenXml.Vml.Office.Lock openXmlElement)
   {
     return openXmlElement?.AdjustHandles?.Value;
   }
-
-  public static void SetAdjustHandles(Lock? openXmlElement, Boolean? value)
+  
+  private static void SetAdjustHandles(DocumentFormat.OpenXml.Vml.Office.Lock openXmlElement, Boolean? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.AdjustHandles = value;
-      else
-        openXmlElement.AdjustHandles = null;
+    if (value != null)
+      openXmlElement.AdjustHandles = value;
+    else
+      openXmlElement.AdjustHandles = null;
   }
-
+  
   /// <summary>
-  ///   Text Lock
+  /// Text Lock
   /// </summary>
-  public static Boolean? GetTextLock(Lock? openXmlElement)
+  private static Boolean? GetTextLock(DocumentFormat.OpenXml.Vml.Office.Lock openXmlElement)
   {
     return openXmlElement?.TextLock?.Value;
   }
-
-  public static void SetTextLock(Lock? openXmlElement, Boolean? value)
+  
+  private static void SetTextLock(DocumentFormat.OpenXml.Vml.Office.Lock openXmlElement, Boolean? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.TextLock = value;
-      else
-        openXmlElement.TextLock = null;
+    if (value != null)
+      openXmlElement.TextLock = value;
+    else
+      openXmlElement.TextLock = null;
   }
-
+  
   /// <summary>
-  ///   Aspect Ratio Lock
+  /// Aspect Ratio Lock
   /// </summary>
-  public static Boolean? GetAspectRatio(Lock? openXmlElement)
+  private static Boolean? GetAspectRatio(DocumentFormat.OpenXml.Vml.Office.Lock openXmlElement)
   {
     return openXmlElement?.AspectRatio?.Value;
   }
-
-  public static void SetAspectRatio(Lock? openXmlElement, Boolean? value)
+  
+  private static void SetAspectRatio(DocumentFormat.OpenXml.Vml.Office.Lock openXmlElement, Boolean? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.AspectRatio = value;
-      else
-        openXmlElement.AspectRatio = null;
+    if (value != null)
+      openXmlElement.AspectRatio = value;
+    else
+      openXmlElement.AspectRatio = null;
   }
-
+  
   /// <summary>
-  ///   AutoShape Type Lock
+  /// AutoShape Type Lock
   /// </summary>
-  public static Boolean? GetShapeType(Lock? openXmlElement)
+  private static Boolean? GetShapeType(DocumentFormat.OpenXml.Vml.Office.Lock openXmlElement)
   {
     return openXmlElement?.ShapeType?.Value;
   }
-
-  public static void SetShapeType(Lock? openXmlElement, Boolean? value)
+  
+  private static void SetShapeType(DocumentFormat.OpenXml.Vml.Office.Lock openXmlElement, Boolean? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.ShapeType = value;
-      else
-        openXmlElement.ShapeType = null;
+    if (value != null)
+      openXmlElement.ShapeType = value;
+    else
+      openXmlElement.ShapeType = null;
   }
-
-  public static DocumentModel.Vml.Lock? CreateModelElement(Lock? openXmlElement)
+  
+  public static DocumentModel.Vml.Lock? CreateModelElement(DocumentFormat.OpenXml.Vml.Office.Lock? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -231,9 +215,9 @@ public static class LockConverter
     }
     return null;
   }
-
+  
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Vml.Lock? value)
-    where OpenXmlElementType : Lock, new()
+    where OpenXmlElementType: DocumentFormat.OpenXml.Vml.Office.Lock, new()
   {
     if (value != null)
     {

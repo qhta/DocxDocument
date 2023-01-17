@@ -1,18 +1,16 @@
-using DocumentFormat.OpenXml.Packaging;
-
 namespace DocumentModel.OpenXml.Packaging;
 
 /// <summary>
-///   Defines the FontPart
+/// Defines the FontPart
 /// </summary>
 public static class FontPartConverter
 {
-  public static String? GetRelationshipType(FontPart? openXmlElement)
+  private static String? GetRelationshipType(DocumentFormat.OpenXml.Packaging.FontPart openXmlElement)
   {
     return openXmlElement?.RelationshipType;
   }
-
-  public static DocumentModel.Packaging.FontPart? CreateModelElement(FontPart? openXmlElement)
+  
+  public static DocumentModel.Packaging.FontPart? CreateModelElement(DocumentFormat.OpenXml.Packaging.FontPart? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -22,9 +20,9 @@ public static class FontPartConverter
     }
     return null;
   }
-
+  
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Packaging.FontPart? value)
-    where OpenXmlElementType : FontPart, new()
+    where OpenXmlElementType: DocumentFormat.OpenXml.Packaging.FontPart, new()
   {
     if (value != null)
     {

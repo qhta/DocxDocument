@@ -1,45 +1,37 @@
-using DocumentModel.Drawings.Charts;
-using DLblsExtensionList = DocumentFormat.OpenXml.Drawing.Charts.DLblsExtensionList;
-
 namespace DocumentModel.OpenXml.Drawings.Charts;
 
 /// <summary>
-///   Defines the DLblsExtensionList Class.
+/// Defines the DLblsExtensionList Class.
 /// </summary>
 public static class DLblsExtensionListConverter
 {
-  public static Collection<DLblsExtension>? GetDLblsExtensions(DLblsExtensionList? openXmlElement)
+  private static System.Collections.ObjectModel.Collection<DocumentModel.Drawings.Charts.DLblsExtension> GetDLblsExtensions(DocumentFormat.OpenXml.Drawing.Charts.DLblsExtensionList openXmlElement)
   {
-    if (openXmlElement != null)
+    var collection = new System.Collections.ObjectModel.Collection<DocumentModel.Drawings.Charts.DLblsExtension>();
+    foreach (var item in openXmlElement.Elements<DocumentFormat.OpenXml.Drawing.Charts.DLblsExtension>())
     {
-      var collection = new Collection<DLblsExtension>();
-      foreach (var item in openXmlElement.Elements<DocumentFormat.OpenXml.Drawing.Charts.DLblsExtension>())
+      var newItem = DocumentModel.OpenXml.Drawings.Charts.DLblsExtensionConverter.CreateModelElement(item);
+      if (newItem != null)
+        collection.Add(newItem);
+    }
+    return collection;
+  }
+  
+  private static void SetDLblsExtensions(DocumentFormat.OpenXml.Drawing.Charts.DLblsExtensionList openXmlElement, System.Collections.ObjectModel.Collection<DocumentModel.Drawings.Charts.DLblsExtension>? value)
+  {
+    openXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Drawing.Charts.DLblsExtension>();
+    if (value != null)
+    {
+      foreach (var item in value)
       {
-        var newItem = DLblsExtensionConverter.CreateModelElement(item);
+        var newItem = DocumentModel.OpenXml.Drawings.Charts.DLblsExtensionConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Charts.DLblsExtension>(item);
         if (newItem != null)
-          collection.Add(newItem);
+          openXmlElement.AddChild(newItem);
       }
-      return collection;
-    }
-    return null;
-  }
-
-  public static void SetDLblsExtensions(DLblsExtensionList? openXmlElement, Collection<DLblsExtension>? value)
-  {
-    if (openXmlElement != null)
-    {
-      openXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Drawing.Charts.DLblsExtension>();
-      if (value != null)
-        foreach (var item in value)
-        {
-          var newItem = DLblsExtensionConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Charts.DLblsExtension>(item);
-          if (newItem != null)
-            openXmlElement.AddChild(newItem);
-        }
     }
   }
-
-  public static DocumentModel.Drawings.Charts.DLblsExtensionList? CreateModelElement(DLblsExtensionList? openXmlElement)
+  
+  public static DocumentModel.Drawings.Charts.DLblsExtensionList? CreateModelElement(DocumentFormat.OpenXml.Drawing.Charts.DLblsExtensionList? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -49,9 +41,9 @@ public static class DLblsExtensionListConverter
     }
     return null;
   }
-
+  
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.Charts.DLblsExtensionList? value)
-    where OpenXmlElementType : DLblsExtensionList, new()
+    where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.Charts.DLblsExtensionList, new()
   {
     if (value != null)
     {

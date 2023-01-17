@@ -13,5 +13,5 @@ public class SymbolChar
   /// <summary>
   ///   Symbol Character Code
   /// </summary>
-  public Byte[]? Char { get; set; }
+  public UInt16? Char { get; set; }
 }

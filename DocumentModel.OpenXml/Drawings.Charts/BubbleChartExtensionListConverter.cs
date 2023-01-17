@@ -1,45 +1,37 @@
-using DocumentModel.Drawings.Charts;
-using BubbleChartExtensionList = DocumentFormat.OpenXml.Drawing.Charts.BubbleChartExtensionList;
-
 namespace DocumentModel.OpenXml.Drawings.Charts;
 
 /// <summary>
-///   Defines the BubbleChartExtensionList Class.
+/// Defines the BubbleChartExtensionList Class.
 /// </summary>
 public static class BubbleChartExtensionListConverter
 {
-  public static Collection<BubbleChartExtension>? GetBubbleChartExtensions(BubbleChartExtensionList? openXmlElement)
+  private static System.Collections.ObjectModel.Collection<DocumentModel.Drawings.Charts.BubbleChartExtension> GetBubbleChartExtensions(DocumentFormat.OpenXml.Drawing.Charts.BubbleChartExtensionList openXmlElement)
   {
-    if (openXmlElement != null)
+    var collection = new System.Collections.ObjectModel.Collection<DocumentModel.Drawings.Charts.BubbleChartExtension>();
+    foreach (var item in openXmlElement.Elements<DocumentFormat.OpenXml.Drawing.Charts.BubbleChartExtension>())
     {
-      var collection = new Collection<BubbleChartExtension>();
-      foreach (var item in openXmlElement.Elements<DocumentFormat.OpenXml.Drawing.Charts.BubbleChartExtension>())
+      var newItem = DocumentModel.OpenXml.Drawings.Charts.BubbleChartExtensionConverter.CreateModelElement(item);
+      if (newItem != null)
+        collection.Add(newItem);
+    }
+    return collection;
+  }
+  
+  private static void SetBubbleChartExtensions(DocumentFormat.OpenXml.Drawing.Charts.BubbleChartExtensionList openXmlElement, System.Collections.ObjectModel.Collection<DocumentModel.Drawings.Charts.BubbleChartExtension>? value)
+  {
+    openXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Drawing.Charts.BubbleChartExtension>();
+    if (value != null)
+    {
+      foreach (var item in value)
       {
-        var newItem = BubbleChartExtensionConverter.CreateModelElement(item);
+        var newItem = DocumentModel.OpenXml.Drawings.Charts.BubbleChartExtensionConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Charts.BubbleChartExtension>(item);
         if (newItem != null)
-          collection.Add(newItem);
+          openXmlElement.AddChild(newItem);
       }
-      return collection;
-    }
-    return null;
-  }
-
-  public static void SetBubbleChartExtensions(BubbleChartExtensionList? openXmlElement, Collection<BubbleChartExtension>? value)
-  {
-    if (openXmlElement != null)
-    {
-      openXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Drawing.Charts.BubbleChartExtension>();
-      if (value != null)
-        foreach (var item in value)
-        {
-          var newItem = BubbleChartExtensionConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Charts.BubbleChartExtension>(item);
-          if (newItem != null)
-            openXmlElement.AddChild(newItem);
-        }
     }
   }
-
-  public static DocumentModel.Drawings.Charts.BubbleChartExtensionList? CreateModelElement(BubbleChartExtensionList? openXmlElement)
+  
+  public static DocumentModel.Drawings.Charts.BubbleChartExtensionList? CreateModelElement(DocumentFormat.OpenXml.Drawing.Charts.BubbleChartExtensionList? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -49,9 +41,9 @@ public static class BubbleChartExtensionListConverter
     }
     return null;
   }
-
+  
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.Charts.BubbleChartExtensionList? value)
-    where OpenXmlElementType : BubbleChartExtensionList, new()
+    where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.Charts.BubbleChartExtensionList, new()
   {
     if (value != null)
     {

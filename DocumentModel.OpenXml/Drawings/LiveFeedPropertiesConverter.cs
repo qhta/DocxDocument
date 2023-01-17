@@ -1,68 +1,59 @@
-using DocumentModel.Drawings;
-using LiveFeedProperties = DocumentFormat.OpenXml.Office2021.Drawing.Livefeed.LiveFeedProperties;
-
 namespace DocumentModel.OpenXml.Drawings;
 
 /// <summary>
-///   Defines the LiveFeedProperties Class.
+/// Defines the LiveFeedProperties Class.
 /// </summary>
 public static class LiveFeedPropertiesConverter
 {
   /// <summary>
-  ///   LiveFeedBackgroundProperties.
+  /// LiveFeedBackgroundProperties.
   /// </summary>
-  public static LiveFeedBackgroundProperties? GetLiveFeedBackgroundProperties(LiveFeedProperties? openXmlElement)
+  private static DocumentModel.Drawings.LiveFeedBackgroundProperties? GetLiveFeedBackgroundProperties(DocumentFormat.OpenXml.Office2021.Drawing.Livefeed.LiveFeedProperties openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office2021.Drawing.Livefeed.LiveFeedBackgroundProperties>();
     if (itemElement != null)
-      return LiveFeedBackgroundPropertiesConverter.CreateModelElement(itemElement);
+      return DocumentModel.OpenXml.Drawings.LiveFeedBackgroundPropertiesConverter.CreateModelElement(itemElement);
     return null;
   }
-
-  public static void SetLiveFeedBackgroundProperties(LiveFeedProperties? openXmlElement, LiveFeedBackgroundProperties? value)
+  
+  private static void SetLiveFeedBackgroundProperties(DocumentFormat.OpenXml.Office2021.Drawing.Livefeed.LiveFeedProperties openXmlElement, DocumentModel.Drawings.LiveFeedBackgroundProperties? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2021.Drawing.Livefeed.LiveFeedBackgroundProperties>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2021.Drawing.Livefeed.LiveFeedBackgroundProperties>();
+      itemElement = DocumentModel.OpenXml.Drawings.LiveFeedBackgroundPropertiesConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2021.Drawing.Livefeed.LiveFeedBackgroundProperties>(value);
       if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = LiveFeedBackgroundPropertiesConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2021.Drawing.Livefeed.LiveFeedBackgroundProperties>(value);
-        if (itemElement != null)
-          openXmlElement.AddChild(itemElement);
-      }
+        openXmlElement.AddChild(itemElement);
     }
   }
-
+  
   /// <summary>
-  ///   OfficeArtExtensionList.
+  /// OfficeArtExtensionList.
   /// </summary>
-  public static DocumentModel.Drawings.OfficeArtExtensionList? GetOfficeArtExtensionList(LiveFeedProperties? openXmlElement)
+  private static DocumentModel.Drawings.OfficeArtExtensionList? GetOfficeArtExtensionList(DocumentFormat.OpenXml.Office2021.Drawing.Livefeed.LiveFeedProperties openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office2021.Drawing.Livefeed.OfficeArtExtensionList>();
     if (itemElement != null)
-      return OfficeArtExtensionListConverter.CreateModelElement(itemElement);
+      return DocumentModel.OpenXml.Drawings.OfficeArtExtensionListConverter.CreateModelElement(itemElement);
     return null;
   }
-
-  public static void SetOfficeArtExtensionList(LiveFeedProperties? openXmlElement, DocumentModel.Drawings.OfficeArtExtensionList? value)
+  
+  private static void SetOfficeArtExtensionList(DocumentFormat.OpenXml.Office2021.Drawing.Livefeed.LiveFeedProperties openXmlElement, DocumentModel.Drawings.OfficeArtExtensionList? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2021.Drawing.Livefeed.OfficeArtExtensionList>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2021.Drawing.Livefeed.OfficeArtExtensionList>();
+      itemElement = DocumentModel.OpenXml.Drawings.OfficeArtExtensionListConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2021.Drawing.Livefeed.OfficeArtExtensionList>(value);
       if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = OfficeArtExtensionListConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2021.Drawing.Livefeed.OfficeArtExtensionList>(value);
-        if (itemElement != null)
-          openXmlElement.AddChild(itemElement);
-      }
+        openXmlElement.AddChild(itemElement);
     }
   }
-
-  public static DocumentModel.Drawings.LiveFeedProperties? CreateModelElement(LiveFeedProperties? openXmlElement)
+  
+  public static DocumentModel.Drawings.LiveFeedProperties? CreateModelElement(DocumentFormat.OpenXml.Office2021.Drawing.Livefeed.LiveFeedProperties? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -73,9 +64,9 @@ public static class LiveFeedPropertiesConverter
     }
     return null;
   }
-
+  
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.LiveFeedProperties? value)
-    where OpenXmlElementType : LiveFeedProperties, new()
+    where OpenXmlElementType: DocumentFormat.OpenXml.Office2021.Drawing.Livefeed.LiveFeedProperties, new()
   {
     if (value != null)
     {

@@ -1,68 +1,59 @@
-using DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing;
-using DocumentModel.Drawings;
-
 namespace DocumentModel.OpenXml.Drawings.ChartDrawings;
 
 /// <summary>
-///   Defines the TextBodyType Class.
+/// Defines the TextBodyType Class.
 /// </summary>
 public static class TextBodyTypeConverter
 {
   /// <summary>
-  ///   Body Properties.
+  /// Body Properties.
   /// </summary>
-  public static BodyProperties? GetBodyProperties(TextBodyType? openXmlElement)
+  private static DocumentModel.Drawings.BodyProperties? GetBodyProperties(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.TextBodyType openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.BodyProperties>();
     if (itemElement != null)
-      return BodyPropertiesConverter.CreateModelElement(itemElement);
+      return DocumentModel.OpenXml.Drawings.BodyPropertiesConverter.CreateModelElement(itemElement);
     return null;
   }
-
-  public static void SetBodyProperties(TextBodyType? openXmlElement, BodyProperties? value)
+  
+  private static void SetBodyProperties(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.TextBodyType openXmlElement, DocumentModel.Drawings.BodyProperties? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.BodyProperties>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.BodyProperties>();
+      itemElement = DocumentModel.OpenXml.Drawings.BodyPropertiesConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.BodyProperties>(value);
       if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = BodyPropertiesConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.BodyProperties>(value);
-        if (itemElement != null)
-          openXmlElement.AddChild(itemElement);
-      }
+        openXmlElement.AddChild(itemElement);
     }
   }
-
+  
   /// <summary>
-  ///   Text List Styles.
+  /// Text List Styles.
   /// </summary>
-  public static ListStyle? GetListStyle(TextBodyType? openXmlElement)
+  private static DocumentModel.Drawings.ListStyle? GetListStyle(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.TextBodyType openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.ListStyle>();
     if (itemElement != null)
-      return ListStyleConverter.CreateModelElement(itemElement);
+      return DocumentModel.OpenXml.Drawings.ListStyleConverter.CreateModelElement(itemElement);
     return null;
   }
-
-  public static void SetListStyle(TextBodyType? openXmlElement, ListStyle? value)
+  
+  private static void SetListStyle(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.TextBodyType openXmlElement, DocumentModel.Drawings.ListStyle? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.ListStyle>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.ListStyle>();
+      itemElement = DocumentModel.OpenXml.Drawings.ListStyleConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.ListStyle>(value);
       if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = ListStyleConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.ListStyle>(value);
-        if (itemElement != null)
-          openXmlElement.AddChild(itemElement);
-      }
+        openXmlElement.AddChild(itemElement);
     }
   }
-
-  public static DocumentModel.Drawings.ChartDrawings.TextBodyType? CreateModelElement(TextBodyType? openXmlElement)
+  
+  public static DocumentModel.Drawings.ChartDrawings.TextBodyType? CreateModelElement(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.TextBodyType? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -73,9 +64,9 @@ public static class TextBodyTypeConverter
     }
     return null;
   }
-
+  
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.ChartDrawings.TextBodyType? value)
-    where OpenXmlElementType : TextBodyType, new()
+    where OpenXmlElementType: DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.TextBodyType, new()
   {
     if (value != null)
     {

@@ -1,60 +1,50 @@
-using DocumentFormat.OpenXml.Vml;
-using DocumentModel.Vml;
-using RegroupTable = DocumentFormat.OpenXml.Vml.Office.RegroupTable;
-
 namespace DocumentModel.OpenXml.Vml;
 
 /// <summary>
-///   Shape Grouping History.
+/// Shape Grouping History.
 /// </summary>
 public static class RegroupTableConverter
 {
   /// <summary>
-  ///   VML Extension Handling Behavior
+  /// VML Extension Handling Behavior
   /// </summary>
-  public static ExtensionHandlingBehaviorKind? GetExtension(RegroupTable? openXmlElement)
+  private static DocumentModel.Vml.ExtensionHandlingBehaviorKind? GetExtension(DocumentFormat.OpenXml.Vml.Office.RegroupTable openXmlElement)
   {
-    return EnumValueConverter.GetValue<ExtensionHandlingBehaviorValues, ExtensionHandlingBehaviorKind>(openXmlElement?.Extension?.Value);
+    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Vml.ExtensionHandlingBehaviorValues, DocumentModel.Vml.ExtensionHandlingBehaviorKind>(openXmlElement?.Extension?.Value);
   }
-
-  public static void SetExtension(RegroupTable? openXmlElement, ExtensionHandlingBehaviorKind? value)
+  
+  private static void SetExtension(DocumentFormat.OpenXml.Vml.Office.RegroupTable openXmlElement, DocumentModel.Vml.ExtensionHandlingBehaviorKind? value)
   {
-    if (openXmlElement != null)
-      openXmlElement.Extension = EnumValueConverter.CreateEnumValue<ExtensionHandlingBehaviorValues, ExtensionHandlingBehaviorKind>(value);
+    openXmlElement.Extension = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Vml.ExtensionHandlingBehaviorValues, DocumentModel.Vml.ExtensionHandlingBehaviorKind>(value);
   }
-
-  public static Collection<Entry>? GetEntries(RegroupTable? openXmlElement)
+  
+  private static System.Collections.ObjectModel.Collection<DocumentModel.Vml.Entry> GetEntries(DocumentFormat.OpenXml.Vml.Office.RegroupTable openXmlElement)
   {
-    if (openXmlElement != null)
+    var collection = new System.Collections.ObjectModel.Collection<DocumentModel.Vml.Entry>();
+    foreach (var item in openXmlElement.Elements<DocumentFormat.OpenXml.Vml.Office.Entry>())
     {
-      var collection = new Collection<Entry>();
-      foreach (var item in openXmlElement.Elements<DocumentFormat.OpenXml.Vml.Office.Entry>())
+      var newItem = DocumentModel.OpenXml.Vml.EntryConverter.CreateModelElement(item);
+      if (newItem != null)
+        collection.Add(newItem);
+    }
+    return collection;
+  }
+  
+  private static void SetEntries(DocumentFormat.OpenXml.Vml.Office.RegroupTable openXmlElement, System.Collections.ObjectModel.Collection<DocumentModel.Vml.Entry>? value)
+  {
+    openXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Vml.Office.Entry>();
+    if (value != null)
+    {
+      foreach (var item in value)
       {
-        var newItem = EntryConverter.CreateModelElement(item);
+        var newItem = DocumentModel.OpenXml.Vml.EntryConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Vml.Office.Entry>(item);
         if (newItem != null)
-          collection.Add(newItem);
+          openXmlElement.AddChild(newItem);
       }
-      return collection;
-    }
-    return null;
-  }
-
-  public static void SetEntries(RegroupTable? openXmlElement, Collection<Entry>? value)
-  {
-    if (openXmlElement != null)
-    {
-      openXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Vml.Office.Entry>();
-      if (value != null)
-        foreach (var item in value)
-        {
-          var newItem = EntryConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Vml.Office.Entry>(item);
-          if (newItem != null)
-            openXmlElement.AddChild(newItem);
-        }
     }
   }
-
-  public static DocumentModel.Vml.RegroupTable? CreateModelElement(RegroupTable? openXmlElement)
+  
+  public static DocumentModel.Vml.RegroupTable? CreateModelElement(DocumentFormat.OpenXml.Vml.Office.RegroupTable? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -65,9 +55,9 @@ public static class RegroupTableConverter
     }
     return null;
   }
-
+  
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Vml.RegroupTable? value)
-    where OpenXmlElementType : RegroupTable, new()
+    where OpenXmlElementType: DocumentFormat.OpenXml.Vml.Office.RegroupTable, new()
   {
     if (value != null)
     {

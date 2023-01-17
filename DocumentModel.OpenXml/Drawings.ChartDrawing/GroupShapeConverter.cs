@@ -1,188 +1,164 @@
-using DocumentModel.Drawings.ChartDrawing;
-using GroupShape = DocumentFormat.OpenXml.Drawing.ChartDrawing.GroupShape;
-
 namespace DocumentModel.OpenXml.Drawings.ChartDrawing;
 
 /// <summary>
-///   Group Shape.
+/// Group Shape.
 /// </summary>
 public static class GroupShapeConverter
 {
   /// <summary>
-  ///   Non-Visual Group Shape Properties.
+  /// Non-Visual Group Shape Properties.
   /// </summary>
-  public static NonVisualGroupShapeProperties? GetNonVisualGroupShapeProperties(GroupShape? openXmlElement)
+  private static DocumentModel.Drawings.ChartDrawing.NonVisualGroupShapeProperties? GetNonVisualGroupShapeProperties(DocumentFormat.OpenXml.Drawing.ChartDrawing.GroupShape openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.ChartDrawing.NonVisualGroupShapeProperties>();
     if (itemElement != null)
-      return NonVisualGroupShapePropertiesConverter.CreateModelElement(itemElement);
+      return DocumentModel.OpenXml.Drawings.ChartDrawing.NonVisualGroupShapePropertiesConverter.CreateModelElement(itemElement);
     return null;
   }
-
-  public static void SetNonVisualGroupShapeProperties(GroupShape? openXmlElement, NonVisualGroupShapeProperties? value)
+  
+  private static void SetNonVisualGroupShapeProperties(DocumentFormat.OpenXml.Drawing.ChartDrawing.GroupShape openXmlElement, DocumentModel.Drawings.ChartDrawing.NonVisualGroupShapeProperties? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.ChartDrawing.NonVisualGroupShapeProperties>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.ChartDrawing.NonVisualGroupShapeProperties>();
+      itemElement = DocumentModel.OpenXml.Drawings.ChartDrawing.NonVisualGroupShapePropertiesConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.ChartDrawing.NonVisualGroupShapeProperties>(value);
       if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = NonVisualGroupShapePropertiesConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.ChartDrawing.NonVisualGroupShapeProperties>(value);
-        if (itemElement != null)
-          openXmlElement.AddChild(itemElement);
-      }
+        openXmlElement.AddChild(itemElement);
     }
   }
-
+  
   /// <summary>
-  ///   Group Shape Properties.
+  /// Group Shape Properties.
   /// </summary>
-  public static GroupShapeProperties? GetGroupShapeProperties(GroupShape? openXmlElement)
+  private static DocumentModel.Drawings.ChartDrawing.GroupShapeProperties? GetGroupShapeProperties(DocumentFormat.OpenXml.Drawing.ChartDrawing.GroupShape openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.ChartDrawing.GroupShapeProperties>();
     if (itemElement != null)
-      return GroupShapePropertiesConverter.CreateModelElement(itemElement);
+      return DocumentModel.OpenXml.Drawings.ChartDrawing.GroupShapePropertiesConverter.CreateModelElement(itemElement);
     return null;
   }
-
-  public static void SetGroupShapeProperties(GroupShape? openXmlElement, GroupShapeProperties? value)
+  
+  private static void SetGroupShapeProperties(DocumentFormat.OpenXml.Drawing.ChartDrawing.GroupShape openXmlElement, DocumentModel.Drawings.ChartDrawing.GroupShapeProperties? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.ChartDrawing.GroupShapeProperties>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.ChartDrawing.GroupShapeProperties>();
+      itemElement = DocumentModel.OpenXml.Drawings.ChartDrawing.GroupShapePropertiesConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.ChartDrawing.GroupShapeProperties>(value);
       if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = GroupShapePropertiesConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.ChartDrawing.GroupShapeProperties>(value);
-        if (itemElement != null)
-          openXmlElement.AddChild(itemElement);
-      }
+        openXmlElement.AddChild(itemElement);
     }
   }
-
-  public static Shape? GetShape(GroupShape? openXmlElement)
+  
+  private static DocumentModel.Drawings.ChartDrawing.Shape? GetShape(DocumentFormat.OpenXml.Drawing.ChartDrawing.GroupShape openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.ChartDrawing.Shape>();
     if (itemElement != null)
-      return ShapeConverter.CreateModelElement(itemElement);
+      return DocumentModel.OpenXml.Drawings.ChartDrawing.ShapeConverter.CreateModelElement(itemElement);
     return null;
   }
-
-  public static void SetShape(GroupShape? openXmlElement, Shape? value)
+  
+  private static void SetShape(DocumentFormat.OpenXml.Drawing.ChartDrawing.GroupShape openXmlElement, DocumentModel.Drawings.ChartDrawing.Shape? value)
   {
-    if (openXmlElement != null)
-    {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.ChartDrawing.Shape>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = ShapeConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.ChartDrawing.Shape>(value);
-        if (itemElement != null)
-          openXmlElement.AddChild(itemElement);
-      }
-    }
-  }
-
-  public static DocumentModel.Drawings.ChartDrawing.GroupShape? GetChildGroupShape(GroupShape? openXmlElement)
-  {
-    var itemElement = openXmlElement?.GetFirstChild<GroupShape>();
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.ChartDrawing.Shape>();
     if (itemElement != null)
-      return CreateModelElement(itemElement);
-    return null;
-  }
-
-  public static void SetChildGroupShape(GroupShape? openXmlElement, DocumentModel.Drawings.ChartDrawing.GroupShape? value)
-  {
-    if (openXmlElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<GroupShape>();
+      itemElement = DocumentModel.OpenXml.Drawings.ChartDrawing.ShapeConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.ChartDrawing.Shape>(value);
       if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = CreateOpenXmlElement<GroupShape>(value);
-        if (itemElement != null)
-          openXmlElement.AddChild(itemElement);
-      }
+        openXmlElement.AddChild(itemElement);
     }
   }
-
-  public static GraphicFrame? GetGraphicFrame(GroupShape? openXmlElement)
+  
+  private static DocumentModel.Drawings.ChartDrawing.GroupShape? GetChildGroupShape(DocumentFormat.OpenXml.Drawing.ChartDrawing.GroupShape openXmlElement)
+  {
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.ChartDrawing.GroupShape>();
+    if (itemElement != null)
+      return DocumentModel.OpenXml.Drawings.ChartDrawing.GroupShapeConverter.CreateModelElement(itemElement);
+    return null;
+  }
+  
+  private static void SetChildGroupShape(DocumentFormat.OpenXml.Drawing.ChartDrawing.GroupShape openXmlElement, DocumentModel.Drawings.ChartDrawing.GroupShape? value)
+  {
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.ChartDrawing.GroupShape>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
+    {
+      itemElement = DocumentModel.OpenXml.Drawings.ChartDrawing.GroupShapeConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.ChartDrawing.GroupShape>(value);
+      if (itemElement != null)
+        openXmlElement.AddChild(itemElement);
+    }
+  }
+  
+  private static DocumentModel.Drawings.ChartDrawing.GraphicFrame? GetGraphicFrame(DocumentFormat.OpenXml.Drawing.ChartDrawing.GroupShape openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.ChartDrawing.GraphicFrame>();
     if (itemElement != null)
-      return GraphicFrameConverter.CreateModelElement(itemElement);
+      return DocumentModel.OpenXml.Drawings.ChartDrawing.GraphicFrameConverter.CreateModelElement(itemElement);
     return null;
   }
-
-  public static void SetGraphicFrame(GroupShape? openXmlElement, GraphicFrame? value)
+  
+  private static void SetGraphicFrame(DocumentFormat.OpenXml.Drawing.ChartDrawing.GroupShape openXmlElement, DocumentModel.Drawings.ChartDrawing.GraphicFrame? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.ChartDrawing.GraphicFrame>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.ChartDrawing.GraphicFrame>();
+      itemElement = DocumentModel.OpenXml.Drawings.ChartDrawing.GraphicFrameConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.ChartDrawing.GraphicFrame>(value);
       if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = GraphicFrameConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.ChartDrawing.GraphicFrame>(value);
-        if (itemElement != null)
-          openXmlElement.AddChild(itemElement);
-      }
+        openXmlElement.AddChild(itemElement);
     }
   }
-
-  public static ConnectionShape? GetConnectionShape(GroupShape? openXmlElement)
+  
+  private static DocumentModel.Drawings.ChartDrawing.ConnectionShape? GetConnectionShape(DocumentFormat.OpenXml.Drawing.ChartDrawing.GroupShape openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.ChartDrawing.ConnectionShape>();
     if (itemElement != null)
-      return ConnectionShapeConverter.CreateModelElement(itemElement);
+      return DocumentModel.OpenXml.Drawings.ChartDrawing.ConnectionShapeConverter.CreateModelElement(itemElement);
     return null;
   }
-
-  public static void SetConnectionShape(GroupShape? openXmlElement, ConnectionShape? value)
+  
+  private static void SetConnectionShape(DocumentFormat.OpenXml.Drawing.ChartDrawing.GroupShape openXmlElement, DocumentModel.Drawings.ChartDrawing.ConnectionShape? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.ChartDrawing.ConnectionShape>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.ChartDrawing.ConnectionShape>();
+      itemElement = DocumentModel.OpenXml.Drawings.ChartDrawing.ConnectionShapeConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.ChartDrawing.ConnectionShape>(value);
       if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = ConnectionShapeConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.ChartDrawing.ConnectionShape>(value);
-        if (itemElement != null)
-          openXmlElement.AddChild(itemElement);
-      }
+        openXmlElement.AddChild(itemElement);
     }
   }
-
-  public static Picture? GetPicture(GroupShape? openXmlElement)
+  
+  private static DocumentModel.Drawings.ChartDrawing.Picture? GetPicture(DocumentFormat.OpenXml.Drawing.ChartDrawing.GroupShape openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.ChartDrawing.Picture>();
     if (itemElement != null)
-      return PictureConverter.CreateModelElement(itemElement);
+      return DocumentModel.OpenXml.Drawings.ChartDrawing.PictureConverter.CreateModelElement(itemElement);
     return null;
   }
-
-  public static void SetPicture(GroupShape? openXmlElement, Picture? value)
+  
+  private static void SetPicture(DocumentFormat.OpenXml.Drawing.ChartDrawing.GroupShape openXmlElement, DocumentModel.Drawings.ChartDrawing.Picture? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.ChartDrawing.Picture>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.ChartDrawing.Picture>();
+      itemElement = DocumentModel.OpenXml.Drawings.ChartDrawing.PictureConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.ChartDrawing.Picture>(value);
       if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = PictureConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.ChartDrawing.Picture>(value);
-        if (itemElement != null)
-          openXmlElement.AddChild(itemElement);
-      }
+        openXmlElement.AddChild(itemElement);
     }
   }
-
-  public static DocumentModel.Drawings.ChartDrawing.GroupShape? CreateModelElement(GroupShape? openXmlElement)
+  
+  public static DocumentModel.Drawings.ChartDrawing.GroupShape? CreateModelElement(DocumentFormat.OpenXml.Drawing.ChartDrawing.GroupShape? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -198,9 +174,9 @@ public static class GroupShapeConverter
     }
     return null;
   }
-
+  
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.ChartDrawing.GroupShape? value)
-    where OpenXmlElementType : GroupShape, new()
+    where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.ChartDrawing.GroupShape, new()
   {
     if (value != null)
     {

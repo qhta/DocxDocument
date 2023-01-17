@@ -1,41 +1,35 @@
-using DocumentModel.Drawings;
-using AlphaModulationEffect = DocumentFormat.OpenXml.Drawing.AlphaModulationEffect;
-
 namespace DocumentModel.OpenXml.Drawings;
 
 /// <summary>
-///   Alpha Modulate Effect.
+/// Alpha Modulate Effect.
 /// </summary>
 public static class AlphaModulationEffectConverter
 {
   /// <summary>
-  ///   EffectContainer.
+  /// EffectContainer.
   /// </summary>
-  public static EffectContainer? GetEffectContainer(AlphaModulationEffect? openXmlElement)
+  private static DocumentModel.Drawings.EffectContainer? GetEffectContainer(DocumentFormat.OpenXml.Drawing.AlphaModulationEffect openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.EffectContainer>();
     if (itemElement != null)
-      return EffectContainerConverter.CreateModelElement(itemElement);
+      return DocumentModel.OpenXml.Drawings.EffectContainerConverter.CreateModelElement(itemElement);
     return null;
   }
-
-  public static void SetEffectContainer(AlphaModulationEffect? openXmlElement, EffectContainer? value)
+  
+  private static void SetEffectContainer(DocumentFormat.OpenXml.Drawing.AlphaModulationEffect openXmlElement, DocumentModel.Drawings.EffectContainer? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.EffectContainer>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.EffectContainer>();
+      itemElement = DocumentModel.OpenXml.Drawings.EffectContainerConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.EffectContainer>(value);
       if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = EffectContainerConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.EffectContainer>(value);
-        if (itemElement != null)
-          openXmlElement.AddChild(itemElement);
-      }
+        openXmlElement.AddChild(itemElement);
     }
   }
-
-  public static DocumentModel.Drawings.AlphaModulationEffect? CreateModelElement(AlphaModulationEffect? openXmlElement)
+  
+  public static DocumentModel.Drawings.AlphaModulationEffect? CreateModelElement(DocumentFormat.OpenXml.Drawing.AlphaModulationEffect? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -45,9 +39,9 @@ public static class AlphaModulationEffectConverter
     }
     return null;
   }
-
+  
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.AlphaModulationEffect? value)
-    where OpenXmlElementType : AlphaModulationEffect, new()
+    where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.AlphaModulationEffect, new()
   {
     if (value != null)
     {

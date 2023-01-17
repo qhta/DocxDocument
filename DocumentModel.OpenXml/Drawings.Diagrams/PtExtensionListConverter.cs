@@ -1,45 +1,37 @@
-using DocumentFormat.OpenXml.Drawing.Diagrams;
-using DocumentModel.Drawings;
-
 namespace DocumentModel.OpenXml.Drawings.Diagrams;
 
 /// <summary>
-///   Defines the PtExtensionList Class.
+/// Defines the PtExtensionList Class.
 /// </summary>
 public static class PtExtensionListConverter
 {
-  public static Collection<PtExtension>? GetPtExtensions(PtExtensionList? openXmlElement)
+  private static System.Collections.ObjectModel.Collection<DocumentModel.Drawings.PtExtension> GetPtExtensions(DocumentFormat.OpenXml.Drawing.Diagrams.PtExtensionList openXmlElement)
   {
-    if (openXmlElement != null)
+    var collection = new System.Collections.ObjectModel.Collection<DocumentModel.Drawings.PtExtension>();
+    foreach (var item in openXmlElement.Elements<DocumentFormat.OpenXml.Drawing.PtExtension>())
     {
-      var collection = new Collection<PtExtension>();
-      foreach (var item in openXmlElement.Elements<DocumentFormat.OpenXml.Drawing.PtExtension>())
+      var newItem = DocumentModel.OpenXml.Drawings.PtExtensionConverter.CreateModelElement(item);
+      if (newItem != null)
+        collection.Add(newItem);
+    }
+    return collection;
+  }
+  
+  private static void SetPtExtensions(DocumentFormat.OpenXml.Drawing.Diagrams.PtExtensionList openXmlElement, System.Collections.ObjectModel.Collection<DocumentModel.Drawings.PtExtension>? value)
+  {
+    openXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Drawing.PtExtension>();
+    if (value != null)
+    {
+      foreach (var item in value)
       {
-        var newItem = PtExtensionConverter.CreateModelElement(item);
+        var newItem = DocumentModel.OpenXml.Drawings.PtExtensionConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.PtExtension>(item);
         if (newItem != null)
-          collection.Add(newItem);
+          openXmlElement.AddChild(newItem);
       }
-      return collection;
-    }
-    return null;
-  }
-
-  public static void SetPtExtensions(PtExtensionList? openXmlElement, Collection<PtExtension>? value)
-  {
-    if (openXmlElement != null)
-    {
-      openXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Drawing.PtExtension>();
-      if (value != null)
-        foreach (var item in value)
-        {
-          var newItem = PtExtensionConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.PtExtension>(item);
-          if (newItem != null)
-            openXmlElement.AddChild(newItem);
-        }
     }
   }
-
-  public static DocumentModel.Drawings.Diagrams.PtExtensionList? CreateModelElement(PtExtensionList? openXmlElement)
+  
+  public static DocumentModel.Drawings.Diagrams.PtExtensionList? CreateModelElement(DocumentFormat.OpenXml.Drawing.Diagrams.PtExtensionList? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -49,9 +41,9 @@ public static class PtExtensionListConverter
     }
     return null;
   }
-
+  
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.Diagrams.PtExtensionList? value)
-    where OpenXmlElementType : PtExtensionList, new()
+    where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.Diagrams.PtExtensionList, new()
   {
     if (value != null)
     {

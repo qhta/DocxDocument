@@ -1,64 +1,59 @@
-using DocumentFormat.OpenXml.Wordprocessing;
-
 namespace DocumentModel.OpenXml.Wordprocessing;
 
 /// <summary>
-///   Defines the Control Class.
+/// Defines the Control Class.
 /// </summary>
 public static class ControlConverter
 {
   /// <summary>
-  ///   Unique Name for Embedded Control
+  /// Unique Name for Embedded Control
   /// </summary>
-  public static String? GetName(Control? openXmlElement)
+  private static String? GetName(DocumentFormat.OpenXml.Wordprocessing.Control openXmlElement)
   {
     return openXmlElement?.Name?.Value;
   }
-
-  public static void SetName(Control? openXmlElement, String? value)
+  
+  private static void SetName(DocumentFormat.OpenXml.Wordprocessing.Control openXmlElement, String? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.Name = new StringValue { Value = value };
-      else
-        openXmlElement.Name = null;
+    if (value != null)
+      openXmlElement.Name = new StringValue { Value = value };
+    else
+      openXmlElement.Name = null;
   }
-
+  
   /// <summary>
-  ///   Associated VML Data Reference
+  /// Associated VML Data Reference
   /// </summary>
-  public static String? GetShapeId(Control? openXmlElement)
+  private static String? GetShapeId(DocumentFormat.OpenXml.Wordprocessing.Control openXmlElement)
   {
     return openXmlElement?.ShapeId?.Value;
   }
-
-  public static void SetShapeId(Control? openXmlElement, String? value)
+  
+  private static void SetShapeId(DocumentFormat.OpenXml.Wordprocessing.Control openXmlElement, String? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.ShapeId = new StringValue { Value = value };
-      else
-        openXmlElement.ShapeId = null;
+    if (value != null)
+      openXmlElement.ShapeId = new StringValue { Value = value };
+    else
+      openXmlElement.ShapeId = null;
   }
-
+  
   /// <summary>
-  ///   Embedded Control Properties Relationship Reference
+  /// Embedded Control Properties Relationship Reference
   /// </summary>
-  public static String? GetId(Control? openXmlElement)
+  private static String? GetId(DocumentFormat.OpenXml.Wordprocessing.Control openXmlElement)
   {
     return openXmlElement?.Id?.Value;
   }
-
-  public static void SetId(Control? openXmlElement, String? value)
+  
+  private static void SetId(DocumentFormat.OpenXml.Wordprocessing.Control openXmlElement, String? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.Id = new StringValue { Value = value };
-      else
-        openXmlElement.Id = null;
+    if (value != null)
+      openXmlElement.Id = new StringValue { Value = value };
+    else
+      openXmlElement.Id = null;
   }
-
-  public static DocumentModel.Wordprocessing.Control? CreateModelElement(Control? openXmlElement)
+  
+  public static DocumentModel.Wordprocessing.Control? CreateModelElement(DocumentFormat.OpenXml.Wordprocessing.Control? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -70,9 +65,9 @@ public static class ControlConverter
     }
     return null;
   }
-
+  
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.Control? value)
-    where OpenXmlElementType : Control, new()
+    where OpenXmlElementType: DocumentFormat.OpenXml.Wordprocessing.Control, new()
   {
     if (value != null)
     {

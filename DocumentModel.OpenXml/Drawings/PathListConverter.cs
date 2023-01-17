@@ -1,45 +1,37 @@
-using DocumentFormat.OpenXml.Drawing;
-using Path = DocumentModel.Drawings.Path;
-
 namespace DocumentModel.OpenXml.Drawings;
 
 /// <summary>
-///   List of Shape Paths.
+/// List of Shape Paths.
 /// </summary>
 public static class PathListConverter
 {
-  public static Collection<Path>? GetPaths(PathList? openXmlElement)
+  private static System.Collections.ObjectModel.Collection<DocumentModel.Drawings.Path> GetPaths(DocumentFormat.OpenXml.Drawing.PathList openXmlElement)
   {
-    if (openXmlElement != null)
+    var collection = new System.Collections.ObjectModel.Collection<DocumentModel.Drawings.Path>();
+    foreach (var item in openXmlElement.Elements<DocumentFormat.OpenXml.Drawing.Path>())
     {
-      var collection = new Collection<Path>();
-      foreach (var item in openXmlElement.Elements<DocumentFormat.OpenXml.Drawing.Path>())
+      var newItem = DocumentModel.OpenXml.Drawings.PathConverter.CreateModelElement(item);
+      if (newItem != null)
+        collection.Add(newItem);
+    }
+    return collection;
+  }
+  
+  private static void SetPaths(DocumentFormat.OpenXml.Drawing.PathList openXmlElement, System.Collections.ObjectModel.Collection<DocumentModel.Drawings.Path>? value)
+  {
+    openXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Drawing.Path>();
+    if (value != null)
+    {
+      foreach (var item in value)
       {
-        var newItem = PathConverter.CreateModelElement(item);
+        var newItem = DocumentModel.OpenXml.Drawings.PathConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Path>(item);
         if (newItem != null)
-          collection.Add(newItem);
+          openXmlElement.AddChild(newItem);
       }
-      return collection;
-    }
-    return null;
-  }
-
-  public static void SetPaths(PathList? openXmlElement, Collection<Path>? value)
-  {
-    if (openXmlElement != null)
-    {
-      openXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Drawing.Path>();
-      if (value != null)
-        foreach (var item in value)
-        {
-          var newItem = PathConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Path>(item);
-          if (newItem != null)
-            openXmlElement.AddChild(newItem);
-        }
     }
   }
-
-  public static DocumentModel.Drawings.PathList? CreateModelElement(PathList? openXmlElement)
+  
+  public static DocumentModel.Drawings.PathList? CreateModelElement(DocumentFormat.OpenXml.Drawing.PathList? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -49,9 +41,9 @@ public static class PathListConverter
     }
     return null;
   }
-
+  
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.PathList? value)
-    where OpenXmlElementType : PathList, new()
+    where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.PathList, new()
   {
     if (value != null)
     {

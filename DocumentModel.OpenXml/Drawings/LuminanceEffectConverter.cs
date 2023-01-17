@@ -1,41 +1,37 @@
-using DocumentFormat.OpenXml.Drawing;
-
 namespace DocumentModel.OpenXml.Drawings;
 
 /// <summary>
-///   Luminance.
+/// Luminance.
 /// </summary>
 public static class LuminanceEffectConverter
 {
   /// <summary>
-  ///   Brightness
+  /// Brightness
   /// </summary>
-  public static Int32? GetBrightness(LuminanceEffect? openXmlElement)
+  private static Int32? GetBrightness(DocumentFormat.OpenXml.Drawing.LuminanceEffect openXmlElement)
   {
-    return openXmlElement?.Brightness?.Value;
+    return openXmlElement.Brightness?.Value;
   }
-
-  public static void SetBrightness(LuminanceEffect? openXmlElement, Int32? value)
+  
+  private static void SetBrightness(DocumentFormat.OpenXml.Drawing.LuminanceEffect openXmlElement, Int32? value)
   {
-    if (openXmlElement != null)
-      openXmlElement.Brightness = value;
+    openXmlElement.Brightness = value;
   }
-
+  
   /// <summary>
-  ///   Contrast
+  /// Contrast
   /// </summary>
-  public static Int32? GetContrast(LuminanceEffect? openXmlElement)
+  private static Int32? GetContrast(DocumentFormat.OpenXml.Drawing.LuminanceEffect openXmlElement)
   {
-    return openXmlElement?.Contrast?.Value;
+    return openXmlElement.Contrast?.Value;
   }
-
-  public static void SetContrast(LuminanceEffect? openXmlElement, Int32? value)
+  
+  private static void SetContrast(DocumentFormat.OpenXml.Drawing.LuminanceEffect openXmlElement, Int32? value)
   {
-    if (openXmlElement != null)
-      openXmlElement.Contrast = value;
+    openXmlElement.Contrast = value;
   }
-
-  public static DocumentModel.Drawings.LuminanceEffect? CreateModelElement(LuminanceEffect? openXmlElement)
+  
+  public static DocumentModel.Drawings.LuminanceEffect? CreateModelElement(DocumentFormat.OpenXml.Drawing.LuminanceEffect? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -46,9 +42,9 @@ public static class LuminanceEffectConverter
     }
     return null;
   }
-
+  
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.LuminanceEffect? value)
-    where OpenXmlElementType : LuminanceEffect, new()
+    where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.LuminanceEffect, new()
   {
     if (value != null)
     {

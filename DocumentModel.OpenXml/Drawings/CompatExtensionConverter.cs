@@ -1,30 +1,27 @@
-using DocumentFormat.OpenXml.Office2010.Drawing;
-
 namespace DocumentModel.OpenXml.Drawings;
 
 /// <summary>
-///   Defines the CompatExtension Class.
+/// Defines the CompatExtension Class.
 /// </summary>
 public static class CompatExtensionConverter
 {
   /// <summary>
-  ///   spid, this property is only available in Office 2010 and later.
+  /// spid, this property is only available in Office 2010 and later.
   /// </summary>
-  public static String? GetShapeId(CompatExtension? openXmlElement)
+  private static String? GetShapeId(DocumentFormat.OpenXml.Office2010.Drawing.CompatExtension openXmlElement)
   {
     return openXmlElement?.ShapeId?.Value;
   }
-
-  public static void SetShapeId(CompatExtension? openXmlElement, String? value)
+  
+  private static void SetShapeId(DocumentFormat.OpenXml.Office2010.Drawing.CompatExtension openXmlElement, String? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.ShapeId = new StringValue { Value = value };
-      else
-        openXmlElement.ShapeId = null;
+    if (value != null)
+      openXmlElement.ShapeId = new StringValue { Value = value };
+    else
+      openXmlElement.ShapeId = null;
   }
-
-  public static DocumentModel.Drawings.CompatExtension? CreateModelElement(CompatExtension? openXmlElement)
+  
+  public static DocumentModel.Drawings.CompatExtension? CreateModelElement(DocumentFormat.OpenXml.Office2010.Drawing.CompatExtension? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -34,9 +31,9 @@ public static class CompatExtensionConverter
     }
     return null;
   }
-
+  
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.CompatExtension? value)
-    where OpenXmlElementType : CompatExtension, new()
+    where OpenXmlElementType: DocumentFormat.OpenXml.Office2010.Drawing.CompatExtension, new()
   {
     if (value != null)
     {

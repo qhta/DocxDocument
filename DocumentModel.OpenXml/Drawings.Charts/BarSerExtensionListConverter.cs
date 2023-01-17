@@ -1,45 +1,37 @@
-using DocumentModel.Drawings.Charts;
-using BarSerExtensionList = DocumentFormat.OpenXml.Drawing.Charts.BarSerExtensionList;
-
 namespace DocumentModel.OpenXml.Drawings.Charts;
 
 /// <summary>
-///   Defines the BarSerExtensionList Class.
+/// Defines the BarSerExtensionList Class.
 /// </summary>
 public static class BarSerExtensionListConverter
 {
-  public static Collection<BarSerExtension>? GetBarSerExtensions(BarSerExtensionList? openXmlElement)
+  private static System.Collections.ObjectModel.Collection<DocumentModel.Drawings.Charts.BarSerExtension> GetBarSerExtensions(DocumentFormat.OpenXml.Drawing.Charts.BarSerExtensionList openXmlElement)
   {
-    if (openXmlElement != null)
+    var collection = new System.Collections.ObjectModel.Collection<DocumentModel.Drawings.Charts.BarSerExtension>();
+    foreach (var item in openXmlElement.Elements<DocumentFormat.OpenXml.Drawing.Charts.BarSerExtension>())
     {
-      var collection = new Collection<BarSerExtension>();
-      foreach (var item in openXmlElement.Elements<DocumentFormat.OpenXml.Drawing.Charts.BarSerExtension>())
+      var newItem = DocumentModel.OpenXml.Drawings.Charts.BarSerExtensionConverter.CreateModelElement(item);
+      if (newItem != null)
+        collection.Add(newItem);
+    }
+    return collection;
+  }
+  
+  private static void SetBarSerExtensions(DocumentFormat.OpenXml.Drawing.Charts.BarSerExtensionList openXmlElement, System.Collections.ObjectModel.Collection<DocumentModel.Drawings.Charts.BarSerExtension>? value)
+  {
+    openXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Drawing.Charts.BarSerExtension>();
+    if (value != null)
+    {
+      foreach (var item in value)
       {
-        var newItem = BarSerExtensionConverter.CreateModelElement(item);
+        var newItem = DocumentModel.OpenXml.Drawings.Charts.BarSerExtensionConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Charts.BarSerExtension>(item);
         if (newItem != null)
-          collection.Add(newItem);
+          openXmlElement.AddChild(newItem);
       }
-      return collection;
-    }
-    return null;
-  }
-
-  public static void SetBarSerExtensions(BarSerExtensionList? openXmlElement, Collection<BarSerExtension>? value)
-  {
-    if (openXmlElement != null)
-    {
-      openXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Drawing.Charts.BarSerExtension>();
-      if (value != null)
-        foreach (var item in value)
-        {
-          var newItem = BarSerExtensionConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Charts.BarSerExtension>(item);
-          if (newItem != null)
-            openXmlElement.AddChild(newItem);
-        }
     }
   }
-
-  public static DocumentModel.Drawings.Charts.BarSerExtensionList? CreateModelElement(BarSerExtensionList? openXmlElement)
+  
+  public static DocumentModel.Drawings.Charts.BarSerExtensionList? CreateModelElement(DocumentFormat.OpenXml.Drawing.Charts.BarSerExtensionList? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -49,9 +41,9 @@ public static class BarSerExtensionListConverter
     }
     return null;
   }
-
+  
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.Charts.BarSerExtensionList? value)
-    where OpenXmlElementType : BarSerExtensionList, new()
+    where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.Charts.BarSerExtensionList, new()
   {
     if (value != null)
     {

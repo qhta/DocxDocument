@@ -1,58 +1,51 @@
-using DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing;
-using GeoChildTypes = DocumentModel.Drawings.ChartDrawings.GeoChildTypes;
-
 namespace DocumentModel.OpenXml.Drawings.ChartDrawings;
 
 /// <summary>
-///   Defines the GeoChildEntitiesQuery Class.
+/// Defines the GeoChildEntitiesQuery Class.
 /// </summary>
 public static class GeoChildEntitiesQueryConverter
 {
   /// <summary>
-  ///   entityId, this property is only available in Office 2016 and later.
+  /// entityId, this property is only available in Office 2016 and later.
   /// </summary>
-  public static String? GetEntityId(GeoChildEntitiesQuery? openXmlElement)
+  private static String? GetEntityId(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.GeoChildEntitiesQuery openXmlElement)
   {
     return openXmlElement?.EntityId?.Value;
   }
-
-  public static void SetEntityId(GeoChildEntitiesQuery? openXmlElement, String? value)
+  
+  private static void SetEntityId(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.GeoChildEntitiesQuery openXmlElement, String? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.EntityId = new StringValue { Value = value };
-      else
-        openXmlElement.EntityId = null;
+    if (value != null)
+      openXmlElement.EntityId = new StringValue { Value = value };
+    else
+      openXmlElement.EntityId = null;
   }
-
+  
   /// <summary>
-  ///   GeoChildTypes.
+  /// GeoChildTypes.
   /// </summary>
-  public static GeoChildTypes? GetGeoChildTypes(GeoChildEntitiesQuery? openXmlElement)
+  private static DocumentModel.Drawings.ChartDrawings.GeoChildTypes? GetGeoChildTypes(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.GeoChildEntitiesQuery openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.GeoChildTypes>();
     if (itemElement != null)
-      return GeoChildTypesConverter.CreateModelElement(itemElement);
+      return DocumentModel.OpenXml.Drawings.ChartDrawings.GeoChildTypesConverter.CreateModelElement(itemElement);
     return null;
   }
-
-  public static void SetGeoChildTypes(GeoChildEntitiesQuery? openXmlElement, GeoChildTypes? value)
+  
+  private static void SetGeoChildTypes(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.GeoChildEntitiesQuery openXmlElement, DocumentModel.Drawings.ChartDrawings.GeoChildTypes? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.GeoChildTypes>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.GeoChildTypes>();
+      itemElement = DocumentModel.OpenXml.Drawings.ChartDrawings.GeoChildTypesConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.GeoChildTypes>(value);
       if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = GeoChildTypesConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.GeoChildTypes>(value);
-        if (itemElement != null)
-          openXmlElement.AddChild(itemElement);
-      }
+        openXmlElement.AddChild(itemElement);
     }
   }
-
-  public static DocumentModel.Drawings.ChartDrawings.GeoChildEntitiesQuery? CreateModelElement(GeoChildEntitiesQuery? openXmlElement)
+  
+  public static DocumentModel.Drawings.ChartDrawings.GeoChildEntitiesQuery? CreateModelElement(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.GeoChildEntitiesQuery? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -63,9 +56,9 @@ public static class GeoChildEntitiesQueryConverter
     }
     return null;
   }
-
+  
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.ChartDrawings.GeoChildEntitiesQuery? value)
-    where OpenXmlElementType : GeoChildEntitiesQuery, new()
+    where OpenXmlElementType: DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.GeoChildEntitiesQuery, new()
   {
     if (value != null)
     {

@@ -1,153 +1,140 @@
-using DocumentFormat.OpenXml.Wordprocessing;
-using DocumentModel.Wordprocessing;
-using RunFonts = DocumentFormat.OpenXml.Wordprocessing.RunFonts;
-
 namespace DocumentModel.OpenXml.Wordprocessing;
 
 /// <summary>
-///   Defines the RunFonts Class.
+/// Defines the RunFonts Class.
 /// </summary>
 public static class RunFontsConverter
 {
   /// <summary>
-  ///   Font Content Type
+  /// Font Content Type
   /// </summary>
-  public static FontTypeHintKind? GetHint(RunFonts? openXmlElement)
+  private static DocumentModel.Wordprocessing.FontTypeHintKind? GetHint(DocumentFormat.OpenXml.Wordprocessing.RunFonts openXmlElement)
   {
-    return EnumValueConverter.GetValue<FontTypeHintValues, FontTypeHintKind>(openXmlElement?.Hint?.Value);
+    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Wordprocessing.FontTypeHintValues, DocumentModel.Wordprocessing.FontTypeHintKind>(openXmlElement?.Hint?.Value);
   }
-
-  public static void SetHint(RunFonts? openXmlElement, FontTypeHintKind? value)
+  
+  private static void SetHint(DocumentFormat.OpenXml.Wordprocessing.RunFonts openXmlElement, DocumentModel.Wordprocessing.FontTypeHintKind? value)
   {
-    if (openXmlElement != null)
-      openXmlElement.Hint = EnumValueConverter.CreateEnumValue<FontTypeHintValues, FontTypeHintKind>(value);
+    openXmlElement.Hint = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Wordprocessing.FontTypeHintValues, DocumentModel.Wordprocessing.FontTypeHintKind>(value);
   }
-
+  
   /// <summary>
-  ///   ASCII Font
+  /// ASCII Font
   /// </summary>
-  public static String? GetAscii(RunFonts? openXmlElement)
+  private static String? GetAscii(DocumentFormat.OpenXml.Wordprocessing.RunFonts openXmlElement)
   {
     return openXmlElement?.Ascii?.Value;
   }
-
-  public static void SetAscii(RunFonts? openXmlElement, String? value)
+  
+  private static void SetAscii(DocumentFormat.OpenXml.Wordprocessing.RunFonts openXmlElement, String? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.Ascii = new StringValue { Value = value };
-      else
-        openXmlElement.Ascii = null;
+    if (value != null)
+      openXmlElement.Ascii = new StringValue { Value = value };
+    else
+      openXmlElement.Ascii = null;
   }
-
+  
   /// <summary>
-  ///   High ANSI Font
+  /// High ANSI Font
   /// </summary>
-  public static String? GetHighAnsi(RunFonts? openXmlElement)
+  private static String? GetHighAnsi(DocumentFormat.OpenXml.Wordprocessing.RunFonts openXmlElement)
   {
     return openXmlElement?.HighAnsi?.Value;
   }
-
-  public static void SetHighAnsi(RunFonts? openXmlElement, String? value)
+  
+  private static void SetHighAnsi(DocumentFormat.OpenXml.Wordprocessing.RunFonts openXmlElement, String? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.HighAnsi = new StringValue { Value = value };
-      else
-        openXmlElement.HighAnsi = null;
+    if (value != null)
+      openXmlElement.HighAnsi = new StringValue { Value = value };
+    else
+      openXmlElement.HighAnsi = null;
   }
-
+  
   /// <summary>
-  ///   East Asian Font
+  /// East Asian Font
   /// </summary>
-  public static String? GetEastAsia(RunFonts? openXmlElement)
+  private static String? GetEastAsia(DocumentFormat.OpenXml.Wordprocessing.RunFonts openXmlElement)
   {
     return openXmlElement?.EastAsia?.Value;
   }
-
-  public static void SetEastAsia(RunFonts? openXmlElement, String? value)
+  
+  private static void SetEastAsia(DocumentFormat.OpenXml.Wordprocessing.RunFonts openXmlElement, String? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.EastAsia = new StringValue { Value = value };
-      else
-        openXmlElement.EastAsia = null;
+    if (value != null)
+      openXmlElement.EastAsia = new StringValue { Value = value };
+    else
+      openXmlElement.EastAsia = null;
   }
-
+  
   /// <summary>
-  ///   Complex Script Font
+  /// Complex Script Font
   /// </summary>
-  public static String? GetComplexScript(RunFonts? openXmlElement)
+  private static String? GetComplexScript(DocumentFormat.OpenXml.Wordprocessing.RunFonts openXmlElement)
   {
     return openXmlElement?.ComplexScript?.Value;
   }
-
-  public static void SetComplexScript(RunFonts? openXmlElement, String? value)
+  
+  private static void SetComplexScript(DocumentFormat.OpenXml.Wordprocessing.RunFonts openXmlElement, String? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.ComplexScript = new StringValue { Value = value };
-      else
-        openXmlElement.ComplexScript = null;
+    if (value != null)
+      openXmlElement.ComplexScript = new StringValue { Value = value };
+    else
+      openXmlElement.ComplexScript = null;
   }
-
+  
   /// <summary>
-  ///   ASCII Theme Font
+  /// ASCII Theme Font
   /// </summary>
-  public static ThemeFontKind? GetAsciiTheme(RunFonts? openXmlElement)
+  private static DocumentModel.Wordprocessing.ThemeFontKind? GetAsciiTheme(DocumentFormat.OpenXml.Wordprocessing.RunFonts openXmlElement)
   {
-    return EnumValueConverter.GetValue<ThemeFontValues, ThemeFontKind>(openXmlElement?.AsciiTheme?.Value);
+    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Wordprocessing.ThemeFontValues, DocumentModel.Wordprocessing.ThemeFontKind>(openXmlElement?.AsciiTheme?.Value);
   }
-
-  public static void SetAsciiTheme(RunFonts? openXmlElement, ThemeFontKind? value)
+  
+  private static void SetAsciiTheme(DocumentFormat.OpenXml.Wordprocessing.RunFonts openXmlElement, DocumentModel.Wordprocessing.ThemeFontKind? value)
   {
-    if (openXmlElement != null)
-      openXmlElement.AsciiTheme = EnumValueConverter.CreateEnumValue<ThemeFontValues, ThemeFontKind>(value);
+    openXmlElement.AsciiTheme = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Wordprocessing.ThemeFontValues, DocumentModel.Wordprocessing.ThemeFontKind>(value);
   }
-
+  
   /// <summary>
-  ///   High ANSI Theme Font
+  /// High ANSI Theme Font
   /// </summary>
-  public static ThemeFontKind? GetHighAnsiTheme(RunFonts? openXmlElement)
+  private static DocumentModel.Wordprocessing.ThemeFontKind? GetHighAnsiTheme(DocumentFormat.OpenXml.Wordprocessing.RunFonts openXmlElement)
   {
-    return EnumValueConverter.GetValue<ThemeFontValues, ThemeFontKind>(openXmlElement?.HighAnsiTheme?.Value);
+    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Wordprocessing.ThemeFontValues, DocumentModel.Wordprocessing.ThemeFontKind>(openXmlElement?.HighAnsiTheme?.Value);
   }
-
-  public static void SetHighAnsiTheme(RunFonts? openXmlElement, ThemeFontKind? value)
+  
+  private static void SetHighAnsiTheme(DocumentFormat.OpenXml.Wordprocessing.RunFonts openXmlElement, DocumentModel.Wordprocessing.ThemeFontKind? value)
   {
-    if (openXmlElement != null)
-      openXmlElement.HighAnsiTheme = EnumValueConverter.CreateEnumValue<ThemeFontValues, ThemeFontKind>(value);
+    openXmlElement.HighAnsiTheme = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Wordprocessing.ThemeFontValues, DocumentModel.Wordprocessing.ThemeFontKind>(value);
   }
-
+  
   /// <summary>
-  ///   East Asian Theme Font
+  /// East Asian Theme Font
   /// </summary>
-  public static ThemeFontKind? GetEastAsiaTheme(RunFonts? openXmlElement)
+  private static DocumentModel.Wordprocessing.ThemeFontKind? GetEastAsiaTheme(DocumentFormat.OpenXml.Wordprocessing.RunFonts openXmlElement)
   {
-    return EnumValueConverter.GetValue<ThemeFontValues, ThemeFontKind>(openXmlElement?.EastAsiaTheme?.Value);
+    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Wordprocessing.ThemeFontValues, DocumentModel.Wordprocessing.ThemeFontKind>(openXmlElement?.EastAsiaTheme?.Value);
   }
-
-  public static void SetEastAsiaTheme(RunFonts? openXmlElement, ThemeFontKind? value)
+  
+  private static void SetEastAsiaTheme(DocumentFormat.OpenXml.Wordprocessing.RunFonts openXmlElement, DocumentModel.Wordprocessing.ThemeFontKind? value)
   {
-    if (openXmlElement != null)
-      openXmlElement.EastAsiaTheme = EnumValueConverter.CreateEnumValue<ThemeFontValues, ThemeFontKind>(value);
+    openXmlElement.EastAsiaTheme = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Wordprocessing.ThemeFontValues, DocumentModel.Wordprocessing.ThemeFontKind>(value);
   }
-
+  
   /// <summary>
-  ///   Complex Script Theme Font
+  /// Complex Script Theme Font
   /// </summary>
-  public static ThemeFontKind? GetComplexScriptTheme(RunFonts? openXmlElement)
+  private static DocumentModel.Wordprocessing.ThemeFontKind? GetComplexScriptTheme(DocumentFormat.OpenXml.Wordprocessing.RunFonts openXmlElement)
   {
-    return EnumValueConverter.GetValue<ThemeFontValues, ThemeFontKind>(openXmlElement?.ComplexScriptTheme?.Value);
+    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Wordprocessing.ThemeFontValues, DocumentModel.Wordprocessing.ThemeFontKind>(openXmlElement?.ComplexScriptTheme?.Value);
   }
-
-  public static void SetComplexScriptTheme(RunFonts? openXmlElement, ThemeFontKind? value)
+  
+  private static void SetComplexScriptTheme(DocumentFormat.OpenXml.Wordprocessing.RunFonts openXmlElement, DocumentModel.Wordprocessing.ThemeFontKind? value)
   {
-    if (openXmlElement != null)
-      openXmlElement.ComplexScriptTheme = EnumValueConverter.CreateEnumValue<ThemeFontValues, ThemeFontKind>(value);
+    openXmlElement.ComplexScriptTheme = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Wordprocessing.ThemeFontValues, DocumentModel.Wordprocessing.ThemeFontKind>(value);
   }
-
-  public static DocumentModel.Wordprocessing.RunFonts? CreateModelElement(RunFonts? openXmlElement)
+  
+  public static DocumentModel.Wordprocessing.RunFonts? CreateModelElement(DocumentFormat.OpenXml.Wordprocessing.RunFonts? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -165,9 +152,9 @@ public static class RunFontsConverter
     }
     return null;
   }
-
+  
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.RunFonts? value)
-    where OpenXmlElementType : RunFonts, new()
+    where OpenXmlElementType: DocumentFormat.OpenXml.Wordprocessing.RunFonts, new()
   {
     if (value != null)
     {

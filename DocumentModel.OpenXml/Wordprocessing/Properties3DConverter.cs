@@ -1,168 +1,146 @@
-using DocumentFormat.OpenXml.Office2010.Word;
-using DocumentModel.Wordprocessing;
-using BevelType = DocumentModel.Wordprocessing.BevelType;
-using ContourColor = DocumentModel.Wordprocessing.ContourColor;
-using ExtrusionColor = DocumentModel.Wordprocessing.ExtrusionColor;
-using Properties3D = DocumentFormat.OpenXml.Office2010.Word.Properties3D;
-
 namespace DocumentModel.OpenXml.Wordprocessing;
 
 /// <summary>
-///   Defines the Properties3D Class.
+/// Defines the Properties3D Class.
 /// </summary>
 public static class Properties3DConverter
 {
   /// <summary>
-  ///   extrusionH, this property is only available in Office 2010 and later.
+  /// extrusionH, this property is only available in Office 2010 and later.
   /// </summary>
-  public static Int64? GetExtrusionHeight(Properties3D? openXmlElement)
+  private static Int64? GetExtrusionHeight(DocumentFormat.OpenXml.Office2010.Word.Properties3D openXmlElement)
   {
-    return openXmlElement?.ExtrusionHeight?.Value;
+    return openXmlElement.ExtrusionHeight?.Value;
   }
-
-  public static void SetExtrusionHeight(Properties3D? openXmlElement, Int64? value)
+  
+  private static void SetExtrusionHeight(DocumentFormat.OpenXml.Office2010.Word.Properties3D openXmlElement, Int64? value)
   {
-    if (openXmlElement != null)
-      openXmlElement.ExtrusionHeight = value;
+    openXmlElement.ExtrusionHeight = value;
   }
-
+  
   /// <summary>
-  ///   contourW, this property is only available in Office 2010 and later.
+  /// contourW, this property is only available in Office 2010 and later.
   /// </summary>
-  public static Int64? GetContourWidth(Properties3D? openXmlElement)
+  private static Int64? GetContourWidth(DocumentFormat.OpenXml.Office2010.Word.Properties3D openXmlElement)
   {
-    return openXmlElement?.ContourWidth?.Value;
+    return openXmlElement.ContourWidth?.Value;
   }
-
-  public static void SetContourWidth(Properties3D? openXmlElement, Int64? value)
+  
+  private static void SetContourWidth(DocumentFormat.OpenXml.Office2010.Word.Properties3D openXmlElement, Int64? value)
   {
-    if (openXmlElement != null)
-      openXmlElement.ContourWidth = value;
+    openXmlElement.ContourWidth = value;
   }
-
+  
   /// <summary>
-  ///   prstMaterial, this property is only available in Office 2010 and later.
+  /// prstMaterial, this property is only available in Office 2010 and later.
   /// </summary>
-  public static PresetMaterialKind? GetPresetMaterialType(Properties3D? openXmlElement)
+  private static DocumentModel.Wordprocessing.PresetMaterialKind? GetPresetMaterialType(DocumentFormat.OpenXml.Office2010.Word.Properties3D openXmlElement)
   {
-    return EnumValueConverter.GetValue<PresetMaterialTypeValues, PresetMaterialKind>(openXmlElement?.PresetMaterialType?.Value);
+    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Office2010.Word.PresetMaterialTypeValues, DocumentModel.Wordprocessing.PresetMaterialKind>(openXmlElement?.PresetMaterialType?.Value);
   }
-
-  public static void SetPresetMaterialType(Properties3D? openXmlElement, PresetMaterialKind? value)
+  
+  private static void SetPresetMaterialType(DocumentFormat.OpenXml.Office2010.Word.Properties3D openXmlElement, DocumentModel.Wordprocessing.PresetMaterialKind? value)
   {
-    if (openXmlElement != null)
-      openXmlElement.PresetMaterialType = EnumValueConverter.CreateEnumValue<PresetMaterialTypeValues, PresetMaterialKind>(value);
+    openXmlElement.PresetMaterialType = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Office2010.Word.PresetMaterialTypeValues, DocumentModel.Wordprocessing.PresetMaterialKind>(value);
   }
-
+  
   /// <summary>
-  ///   BevelTop.
+  /// BevelTop.
   /// </summary>
-  public static BevelType? GetBevelTop(Properties3D? openXmlElement)
+  private static DocumentModel.Wordprocessing.BevelType? GetBevelTop(DocumentFormat.OpenXml.Office2010.Word.Properties3D openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<BevelTop>();
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office2010.Word.BevelTop>();
     if (itemElement != null)
-      return BevelTypeConverter.CreateModelElement(itemElement);
+      return DocumentModel.OpenXml.Wordprocessing.BevelTypeConverter.CreateModelElement(itemElement);
     return null;
   }
-
-  public static void SetBevelTop(Properties3D? openXmlElement, BevelType? value)
+  
+  private static void SetBevelTop(DocumentFormat.OpenXml.Office2010.Word.Properties3D openXmlElement, DocumentModel.Wordprocessing.BevelType? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2010.Word.BevelTop>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<BevelTop>();
+      itemElement = DocumentModel.OpenXml.Wordprocessing.BevelTypeConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2010.Word.BevelTop>(value);
       if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = BevelTypeConverter.CreateOpenXmlElement<BevelTop>(value);
-        if (itemElement != null)
-          openXmlElement.AddChild(itemElement);
-      }
+        openXmlElement.AddChild(itemElement);
     }
   }
-
+  
   /// <summary>
-  ///   BevelBottom.
+  /// BevelBottom.
   /// </summary>
-  public static BevelType? GetBevelBottom(Properties3D? openXmlElement)
+  private static DocumentModel.Wordprocessing.BevelType? GetBevelBottom(DocumentFormat.OpenXml.Office2010.Word.Properties3D openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<BevelBottom>();
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office2010.Word.BevelBottom>();
     if (itemElement != null)
-      return BevelTypeConverter.CreateModelElement(itemElement);
+      return DocumentModel.OpenXml.Wordprocessing.BevelTypeConverter.CreateModelElement(itemElement);
     return null;
   }
-
-  public static void SetBevelBottom(Properties3D? openXmlElement, BevelType? value)
+  
+  private static void SetBevelBottom(DocumentFormat.OpenXml.Office2010.Word.Properties3D openXmlElement, DocumentModel.Wordprocessing.BevelType? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2010.Word.BevelBottom>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<BevelBottom>();
+      itemElement = DocumentModel.OpenXml.Wordprocessing.BevelTypeConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2010.Word.BevelBottom>(value);
       if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = BevelTypeConverter.CreateOpenXmlElement<BevelBottom>(value);
-        if (itemElement != null)
-          openXmlElement.AddChild(itemElement);
-      }
+        openXmlElement.AddChild(itemElement);
     }
   }
-
+  
   /// <summary>
-  ///   ExtrusionColor.
+  /// ExtrusionColor.
   /// </summary>
-  public static ExtrusionColor? GetExtrusionColor(Properties3D? openXmlElement)
+  private static DocumentModel.Wordprocessing.ExtrusionColor? GetExtrusionColor(DocumentFormat.OpenXml.Office2010.Word.Properties3D openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office2010.Word.ExtrusionColor>();
     if (itemElement != null)
-      return ExtrusionColorConverter.CreateModelElement(itemElement);
+      return DocumentModel.OpenXml.Wordprocessing.ExtrusionColorConverter.CreateModelElement(itemElement);
     return null;
   }
-
-  public static void SetExtrusionColor(Properties3D? openXmlElement, ExtrusionColor? value)
+  
+  private static void SetExtrusionColor(DocumentFormat.OpenXml.Office2010.Word.Properties3D openXmlElement, DocumentModel.Wordprocessing.ExtrusionColor? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2010.Word.ExtrusionColor>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2010.Word.ExtrusionColor>();
+      itemElement = DocumentModel.OpenXml.Wordprocessing.ExtrusionColorConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2010.Word.ExtrusionColor>(value);
       if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = ExtrusionColorConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2010.Word.ExtrusionColor>(value);
-        if (itemElement != null)
-          openXmlElement.AddChild(itemElement);
-      }
+        openXmlElement.AddChild(itemElement);
     }
   }
-
+  
   /// <summary>
-  ///   ContourColor.
+  /// ContourColor.
   /// </summary>
-  public static ContourColor? GetContourColor(Properties3D? openXmlElement)
+  private static DocumentModel.Wordprocessing.ContourColor? GetContourColor(DocumentFormat.OpenXml.Office2010.Word.Properties3D openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office2010.Word.ContourColor>();
     if (itemElement != null)
-      return ContourColorConverter.CreateModelElement(itemElement);
+      return DocumentModel.OpenXml.Wordprocessing.ContourColorConverter.CreateModelElement(itemElement);
     return null;
   }
-
-  public static void SetContourColor(Properties3D? openXmlElement, ContourColor? value)
+  
+  private static void SetContourColor(DocumentFormat.OpenXml.Office2010.Word.Properties3D openXmlElement, DocumentModel.Wordprocessing.ContourColor? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2010.Word.ContourColor>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2010.Word.ContourColor>();
+      itemElement = DocumentModel.OpenXml.Wordprocessing.ContourColorConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2010.Word.ContourColor>(value);
       if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = ContourColorConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2010.Word.ContourColor>(value);
-        if (itemElement != null)
-          openXmlElement.AddChild(itemElement);
-      }
+        openXmlElement.AddChild(itemElement);
     }
   }
-
-  public static DocumentModel.Wordprocessing.Properties3D? CreateModelElement(Properties3D? openXmlElement)
+  
+  public static DocumentModel.Wordprocessing.Properties3D? CreateModelElement(DocumentFormat.OpenXml.Office2010.Word.Properties3D? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -178,9 +156,9 @@ public static class Properties3DConverter
     }
     return null;
   }
-
+  
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.Properties3D? value)
-    where OpenXmlElementType : Properties3D, new()
+    where OpenXmlElementType: DocumentFormat.OpenXml.Office2010.Word.Properties3D, new()
   {
     if (value != null)
     {

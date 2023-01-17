@@ -1,47 +1,43 @@
-using DocumentFormat.OpenXml.Drawing;
-
 namespace DocumentModel.OpenXml.Drawings;
 
 /// <summary>
-///   Shape Guide.
+/// Shape Guide.
 /// </summary>
 public static class ShapeGuideConverter
 {
   /// <summary>
-  ///   Shape Guide Name
+  /// Shape Guide Name
   /// </summary>
-  public static String? GetName(ShapeGuide? openXmlElement)
+  private static String? GetName(DocumentFormat.OpenXml.Drawing.ShapeGuide openXmlElement)
   {
     return openXmlElement?.Name?.Value;
   }
-
-  public static void SetName(ShapeGuide? openXmlElement, String? value)
+  
+  private static void SetName(DocumentFormat.OpenXml.Drawing.ShapeGuide openXmlElement, String? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.Name = new StringValue { Value = value };
-      else
-        openXmlElement.Name = null;
+    if (value != null)
+      openXmlElement.Name = new StringValue { Value = value };
+    else
+      openXmlElement.Name = null;
   }
-
+  
   /// <summary>
-  ///   Shape Guide Formula
+  /// Shape Guide Formula
   /// </summary>
-  public static String? GetFormula(ShapeGuide? openXmlElement)
+  private static String? GetFormula(DocumentFormat.OpenXml.Drawing.ShapeGuide openXmlElement)
   {
     return openXmlElement?.Formula?.Value;
   }
-
-  public static void SetFormula(ShapeGuide? openXmlElement, String? value)
+  
+  private static void SetFormula(DocumentFormat.OpenXml.Drawing.ShapeGuide openXmlElement, String? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.Formula = new StringValue { Value = value };
-      else
-        openXmlElement.Formula = null;
+    if (value != null)
+      openXmlElement.Formula = new StringValue { Value = value };
+    else
+      openXmlElement.Formula = null;
   }
-
-  public static DocumentModel.Drawings.ShapeGuide? CreateModelElement(ShapeGuide? openXmlElement)
+  
+  public static DocumentModel.Drawings.ShapeGuide? CreateModelElement(DocumentFormat.OpenXml.Drawing.ShapeGuide? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -52,9 +48,9 @@ public static class ShapeGuideConverter
     }
     return null;
   }
-
+  
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.ShapeGuide? value)
-    where OpenXmlElementType : ShapeGuide, new()
+    where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.ShapeGuide, new()
   {
     if (value != null)
     {

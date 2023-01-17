@@ -1,18 +1,16 @@
-using DocumentFormat.OpenXml.Packaging;
-
 namespace DocumentModel.OpenXml.Packaging;
 
 /// <summary>
-///   Defines the CustomXmlPart
+/// Defines the CustomXmlPart
 /// </summary>
 public static class CustomXmlPartConverter
 {
-  public static String? GetRelationshipType(CustomXmlPart? openXmlElement)
+  private static String? GetRelationshipType(DocumentFormat.OpenXml.Packaging.CustomXmlPart openXmlElement)
   {
     return openXmlElement?.RelationshipType;
   }
-
-  public static DocumentModel.Packaging.CustomXmlPart? CreateModelElement(CustomXmlPart? openXmlElement)
+  
+  public static DocumentModel.Packaging.CustomXmlPart? CreateModelElement(DocumentFormat.OpenXml.Packaging.CustomXmlPart? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -22,9 +20,9 @@ public static class CustomXmlPartConverter
     }
     return null;
   }
-
+  
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Packaging.CustomXmlPart? value)
-    where OpenXmlElementType : CustomXmlPart, new()
+    where OpenXmlElementType: DocumentFormat.OpenXml.Packaging.CustomXmlPart, new()
   {
     if (value != null)
     {

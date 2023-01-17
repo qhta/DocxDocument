@@ -1,96 +1,83 @@
-using DocumentFormat.OpenXml.Drawing;
-using AudioCDTimeType = DocumentModel.Drawings.AudioCDTimeType;
-using AudioFromCD = DocumentFormat.OpenXml.Drawing.AudioFromCD;
-
 namespace DocumentModel.OpenXml.Drawings;
 
 /// <summary>
-///   Audio from CD.
+/// Audio from CD.
 /// </summary>
 public static class AudioFromCDConverter
 {
   /// <summary>
-  ///   Audio Start Time.
+  /// Audio Start Time.
   /// </summary>
-  public static AudioCDTimeType? GetStartTime(AudioFromCD? openXmlElement)
+  private static DocumentModel.Drawings.AudioCDTimeType? GetStartTime(DocumentFormat.OpenXml.Drawing.AudioFromCD openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<StartTime>();
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.StartTime>();
     if (itemElement != null)
-      return AudioCDTimeTypeConverter.CreateModelElement(itemElement);
+      return DocumentModel.OpenXml.Drawings.AudioCDTimeTypeConverter.CreateModelElement(itemElement);
     return null;
   }
-
-  public static void SetStartTime(AudioFromCD? openXmlElement, AudioCDTimeType? value)
+  
+  private static void SetStartTime(DocumentFormat.OpenXml.Drawing.AudioFromCD openXmlElement, DocumentModel.Drawings.AudioCDTimeType? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.StartTime>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<StartTime>();
+      itemElement = DocumentModel.OpenXml.Drawings.AudioCDTimeTypeConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.StartTime>(value);
       if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = AudioCDTimeTypeConverter.CreateOpenXmlElement<StartTime>(value);
-        if (itemElement != null)
-          openXmlElement.AddChild(itemElement);
-      }
+        openXmlElement.AddChild(itemElement);
     }
   }
-
+  
   /// <summary>
-  ///   Audio End Time.
+  /// Audio End Time.
   /// </summary>
-  public static AudioCDTimeType? GetEndTime(AudioFromCD? openXmlElement)
+  private static DocumentModel.Drawings.AudioCDTimeType? GetEndTime(DocumentFormat.OpenXml.Drawing.AudioFromCD openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<EndTime>();
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.EndTime>();
     if (itemElement != null)
-      return AudioCDTimeTypeConverter.CreateModelElement(itemElement);
+      return DocumentModel.OpenXml.Drawings.AudioCDTimeTypeConverter.CreateModelElement(itemElement);
     return null;
   }
-
-  public static void SetEndTime(AudioFromCD? openXmlElement, AudioCDTimeType? value)
+  
+  private static void SetEndTime(DocumentFormat.OpenXml.Drawing.AudioFromCD openXmlElement, DocumentModel.Drawings.AudioCDTimeType? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.EndTime>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<EndTime>();
+      itemElement = DocumentModel.OpenXml.Drawings.AudioCDTimeTypeConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.EndTime>(value);
       if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = AudioCDTimeTypeConverter.CreateOpenXmlElement<EndTime>(value);
-        if (itemElement != null)
-          openXmlElement.AddChild(itemElement);
-      }
+        openXmlElement.AddChild(itemElement);
     }
   }
-
+  
   /// <summary>
-  ///   ExtensionList.
+  /// ExtensionList.
   /// </summary>
-  public static DocumentModel.Drawings.ExtensionList? GetExtensionList(AudioFromCD? openXmlElement)
+  private static DocumentModel.Drawings.ExtensionList? GetExtensionList(DocumentFormat.OpenXml.Drawing.AudioFromCD openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.ExtensionList>();
     if (itemElement != null)
-      return ExtensionListConverter.CreateModelElement(itemElement);
+      return DocumentModel.OpenXml.Drawings.ExtensionListConverter.CreateModelElement(itemElement);
     return null;
   }
-
-  public static void SetExtensionList(AudioFromCD? openXmlElement, DocumentModel.Drawings.ExtensionList? value)
+  
+  private static void SetExtensionList(DocumentFormat.OpenXml.Drawing.AudioFromCD openXmlElement, DocumentModel.Drawings.ExtensionList? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.ExtensionList>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.ExtensionList>();
+      itemElement = DocumentModel.OpenXml.Drawings.ExtensionListConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.ExtensionList>(value);
       if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = ExtensionListConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.ExtensionList>(value);
-        if (itemElement != null)
-          openXmlElement.AddChild(itemElement);
-      }
+        openXmlElement.AddChild(itemElement);
     }
   }
-
-  public static DocumentModel.Drawings.AudioFromCD? CreateModelElement(AudioFromCD? openXmlElement)
+  
+  public static DocumentModel.Drawings.AudioFromCD? CreateModelElement(DocumentFormat.OpenXml.Drawing.AudioFromCD? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -102,9 +89,9 @@ public static class AudioFromCDConverter
     }
     return null;
   }
-
+  
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.AudioFromCD? value)
-    where OpenXmlElementType : AudioFromCD, new()
+    where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.AudioFromCD, new()
   {
     if (value != null)
     {

@@ -8,22 +8,22 @@ public class PreviousSectionProperties
   /// <summary>
   ///   Physical Section Mark Character Revision ID
   /// </summary>
-  public Byte[]? RsidRPr { get; set; }
+  public NumId? RsidRPr { get; set; }
 
   /// <summary>
   ///   Section Deletion Revision ID
   /// </summary>
-  public Byte[]? RsidDel { get; set; }
+  public NumId? RsidDel { get; set; }
 
   /// <summary>
   ///   Section Addition Revision ID
   /// </summary>
-  public Byte[]? RsidR { get; set; }
+  public NumId? RsidR { get; set; }
 
   /// <summary>
   ///   Section Properties Revision ID
   /// </summary>
-  public Byte[]? RsidSect { get; set; }
+  public NumId? RsidSect { get; set; }
 
   /// <summary>
   ///   FootnoteProperties.

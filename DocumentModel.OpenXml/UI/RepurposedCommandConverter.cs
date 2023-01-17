@@ -1,81 +1,75 @@
-using DocumentFormat.OpenXml.Office.CustomUI;
-
 namespace DocumentModel.OpenXml.UI;
 
 /// <summary>
-///   Defines the RepurposedCommand Class.
+/// Defines the RepurposedCommand Class.
 /// </summary>
 public static class RepurposedCommandConverter
 {
   /// <summary>
-  ///   onAction
+  /// onAction
   /// </summary>
-  public static String? GetOnAction(RepurposedCommand? openXmlElement)
+  private static String? GetOnAction(DocumentFormat.OpenXml.Office.CustomUI.RepurposedCommand openXmlElement)
   {
     return openXmlElement?.OnAction?.Value;
   }
-
-  public static void SetOnAction(RepurposedCommand? openXmlElement, String? value)
+  
+  private static void SetOnAction(DocumentFormat.OpenXml.Office.CustomUI.RepurposedCommand openXmlElement, String? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.OnAction = new StringValue { Value = value };
-      else
-        openXmlElement.OnAction = null;
+    if (value != null)
+      openXmlElement.OnAction = new StringValue { Value = value };
+    else
+      openXmlElement.OnAction = null;
   }
-
+  
   /// <summary>
-  ///   enabled
+  /// enabled
   /// </summary>
-  public static Boolean? GetEnabled(RepurposedCommand? openXmlElement)
+  private static Boolean? GetEnabled(DocumentFormat.OpenXml.Office.CustomUI.RepurposedCommand openXmlElement)
   {
     return openXmlElement?.Enabled?.Value;
   }
-
-  public static void SetEnabled(RepurposedCommand? openXmlElement, Boolean? value)
+  
+  private static void SetEnabled(DocumentFormat.OpenXml.Office.CustomUI.RepurposedCommand openXmlElement, Boolean? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.Enabled = new BooleanValue { Value = (Boolean)value };
-      else
-        openXmlElement.Enabled = null;
+    if (value != null)
+      openXmlElement.Enabled = new BooleanValue { Value = (Boolean)value };
+    else
+      openXmlElement.Enabled = null;
   }
-
+  
   /// <summary>
-  ///   getEnabled
+  /// getEnabled
   /// </summary>
-  public static String? GetGetEnabled(RepurposedCommand? openXmlElement)
+  private static String? GetGetEnabled(DocumentFormat.OpenXml.Office.CustomUI.RepurposedCommand openXmlElement)
   {
     return openXmlElement?.GetEnabled?.Value;
   }
-
-  public static void SetGetEnabled(RepurposedCommand? openXmlElement, String? value)
+  
+  private static void SetGetEnabled(DocumentFormat.OpenXml.Office.CustomUI.RepurposedCommand openXmlElement, String? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.GetEnabled = new StringValue { Value = value };
-      else
-        openXmlElement.GetEnabled = null;
+    if (value != null)
+      openXmlElement.GetEnabled = new StringValue { Value = value };
+    else
+      openXmlElement.GetEnabled = null;
   }
-
+  
   /// <summary>
-  ///   idMso
+  /// idMso
   /// </summary>
-  public static String? GetIdMso(RepurposedCommand? openXmlElement)
+  private static String? GetIdMso(DocumentFormat.OpenXml.Office.CustomUI.RepurposedCommand openXmlElement)
   {
     return openXmlElement?.IdMso?.Value;
   }
-
-  public static void SetIdMso(RepurposedCommand? openXmlElement, String? value)
+  
+  private static void SetIdMso(DocumentFormat.OpenXml.Office.CustomUI.RepurposedCommand openXmlElement, String? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.IdMso = new StringValue { Value = value };
-      else
-        openXmlElement.IdMso = null;
+    if (value != null)
+      openXmlElement.IdMso = new StringValue { Value = value };
+    else
+      openXmlElement.IdMso = null;
   }
-
-  public static DocumentModel.UI.RepurposedCommand? CreateModelElement(RepurposedCommand? openXmlElement)
+  
+  public static DocumentModel.UI.RepurposedCommand? CreateModelElement(DocumentFormat.OpenXml.Office.CustomUI.RepurposedCommand? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -88,9 +82,9 @@ public static class RepurposedCommandConverter
     }
     return null;
   }
-
+  
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.UI.RepurposedCommand? value)
-    where OpenXmlElementType : RepurposedCommand, new()
+    where OpenXmlElementType: DocumentFormat.OpenXml.Office.CustomUI.RepurposedCommand, new()
   {
     if (value != null)
     {

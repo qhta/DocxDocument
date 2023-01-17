@@ -1,38 +1,31 @@
-using DocumentModel.Packaging;
-using EmbeddedControlPersistencePart = DocumentFormat.OpenXml.Packaging.EmbeddedControlPersistencePart;
-
 namespace DocumentModel.OpenXml.Packaging;
 
 /// <summary>
-///   Defines the EmbeddedControlPersistencePart
+/// Defines the EmbeddedControlPersistencePart
 /// </summary>
 public static class EmbeddedControlPersistencePartConverter
 {
   /// <summary>
-  ///   Gets the EmbeddedControlPersistenceBinaryDataParts of the EmbeddedControlPersistencePart
+  /// Gets the EmbeddedControlPersistenceBinaryDataParts of the EmbeddedControlPersistencePart
   /// </summary>
-  public static Collection<EmbeddedControlPersistenceBinaryDataPart>? GetEmbeddedControlPersistenceBinaryDataParts(EmbeddedControlPersistencePart? openXmlElement)
+  private static System.Collections.ObjectModel.Collection<DocumentModel.Packaging.EmbeddedControlPersistenceBinaryDataPart> GetEmbeddedControlPersistenceBinaryDataParts(DocumentFormat.OpenXml.Packaging.EmbeddedControlPersistencePart openXmlElement)
   {
-    if (openXmlElement != null)
+    var collection = new System.Collections.ObjectModel.Collection<DocumentModel.Packaging.EmbeddedControlPersistenceBinaryDataPart>();
+    foreach (var item in openXmlElement.GetPartsOfType<DocumentFormat.OpenXml.Packaging.EmbeddedControlPersistenceBinaryDataPart>())
     {
-      var collection = new Collection<EmbeddedControlPersistenceBinaryDataPart>();
-      foreach (var item in openXmlElement.GetPartsOfType<DocumentFormat.OpenXml.Packaging.EmbeddedControlPersistenceBinaryDataPart>())
-      {
-        var newItem = EmbeddedControlPersistenceBinaryDataPartConverter.CreateModelElement(item);
-        if (newItem != null)
-          collection.Add(newItem);
-      }
-      return collection;
+      var newItem = DocumentModel.OpenXml.Packaging.EmbeddedControlPersistenceBinaryDataPartConverter.CreateModelElement(item);
+      if (newItem != null)
+        collection.Add(newItem);
     }
-    return null;
+    return collection;
   }
-
-  public static String? GetRelationshipType(EmbeddedControlPersistencePart? openXmlElement)
+  
+  private static String? GetRelationshipType(DocumentFormat.OpenXml.Packaging.EmbeddedControlPersistencePart openXmlElement)
   {
     return openXmlElement?.RelationshipType;
   }
-
-  public static DocumentModel.Packaging.EmbeddedControlPersistencePart? CreateModelElement(EmbeddedControlPersistencePart? openXmlElement)
+  
+  public static DocumentModel.Packaging.EmbeddedControlPersistencePart? CreateModelElement(DocumentFormat.OpenXml.Packaging.EmbeddedControlPersistencePart? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -43,9 +36,9 @@ public static class EmbeddedControlPersistencePartConverter
     }
     return null;
   }
-
+  
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Packaging.EmbeddedControlPersistencePart? value)
-    where OpenXmlElementType : EmbeddedControlPersistencePart, new()
+    where OpenXmlElementType: DocumentFormat.OpenXml.Packaging.EmbeddedControlPersistencePart, new()
   {
     if (value != null)
     {

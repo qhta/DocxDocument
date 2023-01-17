@@ -1,55 +1,48 @@
-using DocumentModel.Drawings.Charts;
-using LineChartExtension = DocumentFormat.OpenXml.Drawing.Charts.LineChartExtension;
-
 namespace DocumentModel.OpenXml.Drawings.Charts;
 
 /// <summary>
-///   Defines the LineChartExtension Class.
+/// Defines the LineChartExtension Class.
 /// </summary>
 public static class LineChartExtensionConverter
 {
   /// <summary>
-  ///   URI
+  /// URI
   /// </summary>
-  public static String? GetUri(LineChartExtension? openXmlElement)
+  private static String? GetUri(DocumentFormat.OpenXml.Drawing.Charts.LineChartExtension openXmlElement)
   {
     return openXmlElement?.Uri?.Value;
   }
-
-  public static void SetUri(LineChartExtension? openXmlElement, String? value)
+  
+  private static void SetUri(DocumentFormat.OpenXml.Drawing.Charts.LineChartExtension openXmlElement, String? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.Uri = new StringValue { Value = value };
-      else
-        openXmlElement.Uri = null;
+    if (value != null)
+      openXmlElement.Uri = new StringValue { Value = value };
+    else
+      openXmlElement.Uri = null;
   }
-
-  public static FilteredLineSeriesExtension? GetFilteredLineSeriesExtension(LineChartExtension? openXmlElement)
+  
+  private static DocumentModel.Drawings.Charts.FilteredLineSeriesExtension? GetFilteredLineSeriesExtension(DocumentFormat.OpenXml.Drawing.Charts.LineChartExtension openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office2013.Drawing.Chart.FilteredLineSeriesExtension>();
     if (itemElement != null)
-      return FilteredLineSeriesExtensionConverter.CreateModelElement(itemElement);
+      return DocumentModel.OpenXml.Drawings.Charts.FilteredLineSeriesExtensionConverter.CreateModelElement(itemElement);
     return null;
   }
-
-  public static void SetFilteredLineSeriesExtension(LineChartExtension? openXmlElement, FilteredLineSeriesExtension? value)
+  
+  private static void SetFilteredLineSeriesExtension(DocumentFormat.OpenXml.Drawing.Charts.LineChartExtension openXmlElement, DocumentModel.Drawings.Charts.FilteredLineSeriesExtension? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2013.Drawing.Chart.FilteredLineSeriesExtension>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2013.Drawing.Chart.FilteredLineSeriesExtension>();
+      itemElement = DocumentModel.OpenXml.Drawings.Charts.FilteredLineSeriesExtensionConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2013.Drawing.Chart.FilteredLineSeriesExtension>(value);
       if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = FilteredLineSeriesExtensionConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2013.Drawing.Chart.FilteredLineSeriesExtension>(value);
-        if (itemElement != null)
-          openXmlElement.AddChild(itemElement);
-      }
+        openXmlElement.AddChild(itemElement);
     }
   }
-
-  public static DocumentModel.Drawings.Charts.LineChartExtension? CreateModelElement(LineChartExtension? openXmlElement)
+  
+  public static DocumentModel.Drawings.Charts.LineChartExtension? CreateModelElement(DocumentFormat.OpenXml.Drawing.Charts.LineChartExtension? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -60,9 +53,9 @@ public static class LineChartExtensionConverter
     }
     return null;
   }
-
+  
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.Charts.LineChartExtension? value)
-    where OpenXmlElementType : LineChartExtension, new()
+    where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.Charts.LineChartExtension, new()
   {
     if (value != null)
     {

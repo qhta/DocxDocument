@@ -1,351 +1,310 @@
-using DocumentFormat.OpenXml.Office.Word;
-
 namespace DocumentModel.OpenXml.Wordprocessing;
 
 /// <summary>
-///   Defines the DocEvents Class.
+/// Defines the DocEvents Class.
 /// </summary>
 public static class DocEventsConverter
 {
   /// <summary>
-  ///   EventDocNewXsdString.
+  /// EventDocNewXsdString.
   /// </summary>
-  public static String? GetEventDocNewXsdString(DocEvents? openXmlElement)
+  private static String? GetEventDocNewXsdString(DocumentFormat.OpenXml.Office.Word.DocEvents openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<EventDocNewXsdString>();
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office.Word.EventDocNewXsdString>();
     if (itemElement != null)
       return itemElement.Text;
     return null;
   }
-
-  public static void SetEventDocNewXsdString(DocEvents? openXmlElement, String? value)
+  
+  private static void SetEventDocNewXsdString(DocumentFormat.OpenXml.Office.Word.DocEvents openXmlElement, String? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office.Word.EventDocNewXsdString>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<EventDocNewXsdString>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = new EventDocNewXsdString { Text = value };
-        openXmlElement.AddChild(itemElement);
-      }
+      itemElement = new DocumentFormat.OpenXml.Office.Word.EventDocNewXsdString { Text = value };
+      openXmlElement.AddChild(itemElement);
     }
   }
-
+  
   /// <summary>
-  ///   EventDocOpenXsdString.
+  /// EventDocOpenXsdString.
   /// </summary>
-  public static String? GetEventDocOpenXsdString(DocEvents? openXmlElement)
+  private static String? GetEventDocOpenXsdString(DocumentFormat.OpenXml.Office.Word.DocEvents openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<EventDocOpenXsdString>();
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office.Word.EventDocOpenXsdString>();
     if (itemElement != null)
       return itemElement.Text;
     return null;
   }
-
-  public static void SetEventDocOpenXsdString(DocEvents? openXmlElement, String? value)
+  
+  private static void SetEventDocOpenXsdString(DocumentFormat.OpenXml.Office.Word.DocEvents openXmlElement, String? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office.Word.EventDocOpenXsdString>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<EventDocOpenXsdString>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = new EventDocOpenXsdString { Text = value };
-        openXmlElement.AddChild(itemElement);
-      }
+      itemElement = new DocumentFormat.OpenXml.Office.Word.EventDocOpenXsdString { Text = value };
+      openXmlElement.AddChild(itemElement);
     }
   }
-
+  
   /// <summary>
-  ///   EventDocCloseXsdString.
+  /// EventDocCloseXsdString.
   /// </summary>
-  public static String? GetEventDocCloseXsdString(DocEvents? openXmlElement)
+  private static String? GetEventDocCloseXsdString(DocumentFormat.OpenXml.Office.Word.DocEvents openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<EventDocCloseXsdString>();
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office.Word.EventDocCloseXsdString>();
     if (itemElement != null)
       return itemElement.Text;
     return null;
   }
-
-  public static void SetEventDocCloseXsdString(DocEvents? openXmlElement, String? value)
+  
+  private static void SetEventDocCloseXsdString(DocumentFormat.OpenXml.Office.Word.DocEvents openXmlElement, String? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office.Word.EventDocCloseXsdString>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<EventDocCloseXsdString>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = new EventDocCloseXsdString { Text = value };
-        openXmlElement.AddChild(itemElement);
-      }
+      itemElement = new DocumentFormat.OpenXml.Office.Word.EventDocCloseXsdString { Text = value };
+      openXmlElement.AddChild(itemElement);
     }
   }
-
+  
   /// <summary>
-  ///   EventDocSyncXsdString.
+  /// EventDocSyncXsdString.
   /// </summary>
-  public static String? GetEventDocSyncXsdString(DocEvents? openXmlElement)
+  private static String? GetEventDocSyncXsdString(DocumentFormat.OpenXml.Office.Word.DocEvents openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<EventDocSyncXsdString>();
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office.Word.EventDocSyncXsdString>();
     if (itemElement != null)
       return itemElement.Text;
     return null;
   }
-
-  public static void SetEventDocSyncXsdString(DocEvents? openXmlElement, String? value)
+  
+  private static void SetEventDocSyncXsdString(DocumentFormat.OpenXml.Office.Word.DocEvents openXmlElement, String? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office.Word.EventDocSyncXsdString>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<EventDocSyncXsdString>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = new EventDocSyncXsdString { Text = value };
-        openXmlElement.AddChild(itemElement);
-      }
+      itemElement = new DocumentFormat.OpenXml.Office.Word.EventDocSyncXsdString { Text = value };
+      openXmlElement.AddChild(itemElement);
     }
   }
-
+  
   /// <summary>
-  ///   EventDocXmlAfterInsertXsdString.
+  /// EventDocXmlAfterInsertXsdString.
   /// </summary>
-  public static String? GetEventDocXmlAfterInsertXsdString(DocEvents? openXmlElement)
+  private static String? GetEventDocXmlAfterInsertXsdString(DocumentFormat.OpenXml.Office.Word.DocEvents openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<EventDocXmlAfterInsertXsdString>();
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office.Word.EventDocXmlAfterInsertXsdString>();
     if (itemElement != null)
       return itemElement.Text;
     return null;
   }
-
-  public static void SetEventDocXmlAfterInsertXsdString(DocEvents? openXmlElement, String? value)
+  
+  private static void SetEventDocXmlAfterInsertXsdString(DocumentFormat.OpenXml.Office.Word.DocEvents openXmlElement, String? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office.Word.EventDocXmlAfterInsertXsdString>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<EventDocXmlAfterInsertXsdString>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = new EventDocXmlAfterInsertXsdString { Text = value };
-        openXmlElement.AddChild(itemElement);
-      }
+      itemElement = new DocumentFormat.OpenXml.Office.Word.EventDocXmlAfterInsertXsdString { Text = value };
+      openXmlElement.AddChild(itemElement);
     }
   }
-
+  
   /// <summary>
-  ///   EventDocXmlBeforeDeleteXsdString.
+  /// EventDocXmlBeforeDeleteXsdString.
   /// </summary>
-  public static String? GetEventDocXmlBeforeDeleteXsdString(DocEvents? openXmlElement)
+  private static String? GetEventDocXmlBeforeDeleteXsdString(DocumentFormat.OpenXml.Office.Word.DocEvents openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<EventDocXmlBeforeDeleteXsdString>();
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office.Word.EventDocXmlBeforeDeleteXsdString>();
     if (itemElement != null)
       return itemElement.Text;
     return null;
   }
-
-  public static void SetEventDocXmlBeforeDeleteXsdString(DocEvents? openXmlElement, String? value)
+  
+  private static void SetEventDocXmlBeforeDeleteXsdString(DocumentFormat.OpenXml.Office.Word.DocEvents openXmlElement, String? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office.Word.EventDocXmlBeforeDeleteXsdString>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<EventDocXmlBeforeDeleteXsdString>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = new EventDocXmlBeforeDeleteXsdString { Text = value };
-        openXmlElement.AddChild(itemElement);
-      }
+      itemElement = new DocumentFormat.OpenXml.Office.Word.EventDocXmlBeforeDeleteXsdString { Text = value };
+      openXmlElement.AddChild(itemElement);
     }
   }
-
+  
   /// <summary>
-  ///   EventDocContentControlAfterInsertXsdString.
+  /// EventDocContentControlAfterInsertXsdString.
   /// </summary>
-  public static String? GetEventDocContentControlAfterInsertXsdString(DocEvents? openXmlElement)
+  private static String? GetEventDocContentControlAfterInsertXsdString(DocumentFormat.OpenXml.Office.Word.DocEvents openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<EventDocContentControlAfterInsertXsdString>();
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office.Word.EventDocContentControlAfterInsertXsdString>();
     if (itemElement != null)
       return itemElement.Text;
     return null;
   }
-
-  public static void SetEventDocContentControlAfterInsertXsdString(DocEvents? openXmlElement, String? value)
+  
+  private static void SetEventDocContentControlAfterInsertXsdString(DocumentFormat.OpenXml.Office.Word.DocEvents openXmlElement, String? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office.Word.EventDocContentControlAfterInsertXsdString>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<EventDocContentControlAfterInsertXsdString>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = new EventDocContentControlAfterInsertXsdString { Text = value };
-        openXmlElement.AddChild(itemElement);
-      }
+      itemElement = new DocumentFormat.OpenXml.Office.Word.EventDocContentControlAfterInsertXsdString { Text = value };
+      openXmlElement.AddChild(itemElement);
     }
   }
-
+  
   /// <summary>
-  ///   EventDocContentControlBeforeDeleteXsdString.
+  /// EventDocContentControlBeforeDeleteXsdString.
   /// </summary>
-  public static String? GetEventDocContentControlBeforeDeleteXsdString(DocEvents? openXmlElement)
+  private static String? GetEventDocContentControlBeforeDeleteXsdString(DocumentFormat.OpenXml.Office.Word.DocEvents openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<EventDocContentControlBeforeDeleteXsdString>();
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office.Word.EventDocContentControlBeforeDeleteXsdString>();
     if (itemElement != null)
       return itemElement.Text;
     return null;
   }
-
-  public static void SetEventDocContentControlBeforeDeleteXsdString(DocEvents? openXmlElement, String? value)
+  
+  private static void SetEventDocContentControlBeforeDeleteXsdString(DocumentFormat.OpenXml.Office.Word.DocEvents openXmlElement, String? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office.Word.EventDocContentControlBeforeDeleteXsdString>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<EventDocContentControlBeforeDeleteXsdString>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = new EventDocContentControlBeforeDeleteXsdString { Text = value };
-        openXmlElement.AddChild(itemElement);
-      }
+      itemElement = new DocumentFormat.OpenXml.Office.Word.EventDocContentControlBeforeDeleteXsdString { Text = value };
+      openXmlElement.AddChild(itemElement);
     }
   }
-
+  
   /// <summary>
-  ///   EventDocContentControlOnExistXsdString.
+  /// EventDocContentControlOnExistXsdString.
   /// </summary>
-  public static String? GetEventDocContentControlOnExistXsdString(DocEvents? openXmlElement)
+  private static String? GetEventDocContentControlOnExistXsdString(DocumentFormat.OpenXml.Office.Word.DocEvents openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<EventDocContentControlOnExistXsdString>();
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office.Word.EventDocContentControlOnExistXsdString>();
     if (itemElement != null)
       return itemElement.Text;
     return null;
   }
-
-  public static void SetEventDocContentControlOnExistXsdString(DocEvents? openXmlElement, String? value)
+  
+  private static void SetEventDocContentControlOnExistXsdString(DocumentFormat.OpenXml.Office.Word.DocEvents openXmlElement, String? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office.Word.EventDocContentControlOnExistXsdString>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<EventDocContentControlOnExistXsdString>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = new EventDocContentControlOnExistXsdString { Text = value };
-        openXmlElement.AddChild(itemElement);
-      }
+      itemElement = new DocumentFormat.OpenXml.Office.Word.EventDocContentControlOnExistXsdString { Text = value };
+      openXmlElement.AddChild(itemElement);
     }
   }
-
+  
   /// <summary>
-  ///   EventDocContentControlOnEnterXsdString.
+  /// EventDocContentControlOnEnterXsdString.
   /// </summary>
-  public static String? GetEventDocContentControlOnEnterXsdString(DocEvents? openXmlElement)
+  private static String? GetEventDocContentControlOnEnterXsdString(DocumentFormat.OpenXml.Office.Word.DocEvents openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<EventDocContentControlOnEnterXsdString>();
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office.Word.EventDocContentControlOnEnterXsdString>();
     if (itemElement != null)
       return itemElement.Text;
     return null;
   }
-
-  public static void SetEventDocContentControlOnEnterXsdString(DocEvents? openXmlElement, String? value)
+  
+  private static void SetEventDocContentControlOnEnterXsdString(DocumentFormat.OpenXml.Office.Word.DocEvents openXmlElement, String? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office.Word.EventDocContentControlOnEnterXsdString>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<EventDocContentControlOnEnterXsdString>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = new EventDocContentControlOnEnterXsdString { Text = value };
-        openXmlElement.AddChild(itemElement);
-      }
+      itemElement = new DocumentFormat.OpenXml.Office.Word.EventDocContentControlOnEnterXsdString { Text = value };
+      openXmlElement.AddChild(itemElement);
     }
   }
-
+  
   /// <summary>
-  ///   EventDocStoreUpdateXsdString.
+  /// EventDocStoreUpdateXsdString.
   /// </summary>
-  public static String? GetEventDocStoreUpdateXsdString(DocEvents? openXmlElement)
+  private static String? GetEventDocStoreUpdateXsdString(DocumentFormat.OpenXml.Office.Word.DocEvents openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<EventDocStoreUpdateXsdString>();
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office.Word.EventDocStoreUpdateXsdString>();
     if (itemElement != null)
       return itemElement.Text;
     return null;
   }
-
-  public static void SetEventDocStoreUpdateXsdString(DocEvents? openXmlElement, String? value)
+  
+  private static void SetEventDocStoreUpdateXsdString(DocumentFormat.OpenXml.Office.Word.DocEvents openXmlElement, String? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office.Word.EventDocStoreUpdateXsdString>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<EventDocStoreUpdateXsdString>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = new EventDocStoreUpdateXsdString { Text = value };
-        openXmlElement.AddChild(itemElement);
-      }
+      itemElement = new DocumentFormat.OpenXml.Office.Word.EventDocStoreUpdateXsdString { Text = value };
+      openXmlElement.AddChild(itemElement);
     }
   }
-
+  
   /// <summary>
-  ///   EventDocContentControlUpdateXsdString.
+  /// EventDocContentControlUpdateXsdString.
   /// </summary>
-  public static String? GetEventDocContentControlUpdateXsdString(DocEvents? openXmlElement)
+  private static String? GetEventDocContentControlUpdateXsdString(DocumentFormat.OpenXml.Office.Word.DocEvents openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<EventDocContentControlUpdateXsdString>();
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office.Word.EventDocContentControlUpdateXsdString>();
     if (itemElement != null)
       return itemElement.Text;
     return null;
   }
-
-  public static void SetEventDocContentControlUpdateXsdString(DocEvents? openXmlElement, String? value)
+  
+  private static void SetEventDocContentControlUpdateXsdString(DocumentFormat.OpenXml.Office.Word.DocEvents openXmlElement, String? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office.Word.EventDocContentControlUpdateXsdString>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<EventDocContentControlUpdateXsdString>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = new EventDocContentControlUpdateXsdString { Text = value };
-        openXmlElement.AddChild(itemElement);
-      }
+      itemElement = new DocumentFormat.OpenXml.Office.Word.EventDocContentControlUpdateXsdString { Text = value };
+      openXmlElement.AddChild(itemElement);
     }
   }
-
+  
   /// <summary>
-  ///   EventDocBuildingBlockAfterInsertXsdString.
+  /// EventDocBuildingBlockAfterInsertXsdString.
   /// </summary>
-  public static String? GetEventDocBuildingBlockAfterInsertXsdString(DocEvents? openXmlElement)
+  private static String? GetEventDocBuildingBlockAfterInsertXsdString(DocumentFormat.OpenXml.Office.Word.DocEvents openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<EventDocBuildingBlockAfterInsertXsdString>();
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office.Word.EventDocBuildingBlockAfterInsertXsdString>();
     if (itemElement != null)
       return itemElement.Text;
     return null;
   }
-
-  public static void SetEventDocBuildingBlockAfterInsertXsdString(DocEvents? openXmlElement, String? value)
+  
+  private static void SetEventDocBuildingBlockAfterInsertXsdString(DocumentFormat.OpenXml.Office.Word.DocEvents openXmlElement, String? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office.Word.EventDocBuildingBlockAfterInsertXsdString>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<EventDocBuildingBlockAfterInsertXsdString>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = new EventDocBuildingBlockAfterInsertXsdString { Text = value };
-        openXmlElement.AddChild(itemElement);
-      }
+      itemElement = new DocumentFormat.OpenXml.Office.Word.EventDocBuildingBlockAfterInsertXsdString { Text = value };
+      openXmlElement.AddChild(itemElement);
     }
   }
-
-  public static DocumentModel.Wordprocessing.DocEvents? CreateModelElement(DocEvents? openXmlElement)
+  
+  public static DocumentModel.Wordprocessing.DocEvents? CreateModelElement(DocumentFormat.OpenXml.Office.Word.DocEvents? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -367,9 +326,9 @@ public static class DocEventsConverter
     }
     return null;
   }
-
+  
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.DocEvents? value)
-    where OpenXmlElementType : DocEvents, new()
+    where OpenXmlElementType: DocumentFormat.OpenXml.Office.Word.DocEvents, new()
   {
     if (value != null)
     {

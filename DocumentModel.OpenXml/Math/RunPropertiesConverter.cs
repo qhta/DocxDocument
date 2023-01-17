@@ -1,173 +1,140 @@
-using DocumentFormat.OpenXml.Math;
-using DocumentModel.Math;
-using Break = DocumentModel.Math.Break;
-using RunProperties = DocumentFormat.OpenXml.Math.RunProperties;
-
 namespace DocumentModel.OpenXml.Math;
 
 /// <summary>
-///   Run Properties.
+/// Run Properties.
 /// </summary>
 public static class RunPropertiesConverter
 {
   /// <summary>
-  ///   Literal.
+  /// Literal.
   /// </summary>
-  public static BooleanKind? GetLiteral(RunProperties? openXmlElement)
+  private static DocumentModel.Math.BooleanKind? GetLiteral(DocumentFormat.OpenXml.Math.RunProperties openXmlElement)
   {
-    if (openXmlElement != null)
-    {
-      var itemElement = openXmlElement.GetFirstChild<Literal>();
-      if (itemElement?.Val?.Value != null) return EnumValueConverter.GetValue<BooleanValues, BooleanKind>(itemElement.Val.Value);
-    }
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Math.Literal>();
+    if (itemElement?.Val?.Value != null)
+      return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Math.BooleanValues, DocumentModel.Math.BooleanKind>(itemElement.Val.Value);
     return null;
   }
-
-  public static void SetLiteral(RunProperties? openXmlElement, BooleanKind? value)
+  
+  private static void SetLiteral(DocumentFormat.OpenXml.Math.RunProperties openXmlElement, DocumentModel.Math.BooleanKind? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Math.Literal>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<Literal>();
+      itemElement = EnumValueConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Math.Literal, DocumentFormat.OpenXml.Math.BooleanValues, DocumentModel.Math.BooleanKind>(value);
       if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = EnumValueConverter.CreateOpenXmlElement<Literal, BooleanValues, BooleanKind>(value);
-        if (itemElement != null)
-          openXmlElement.AddChild(itemElement);
-      }
+        openXmlElement.AddChild(itemElement);
     }
   }
-
-  public static BooleanKind? GetNormalText(RunProperties? openXmlElement)
+  
+  private static DocumentModel.Math.BooleanKind? GetNormalText(DocumentFormat.OpenXml.Math.RunProperties openXmlElement)
   {
-    if (openXmlElement != null)
-    {
-      var itemElement = openXmlElement.GetFirstChild<NormalText>();
-      if (itemElement?.Val?.Value != null) return EnumValueConverter.GetValue<BooleanValues, BooleanKind>(itemElement.Val.Value);
-    }
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Math.NormalText>();
+    if (itemElement?.Val?.Value != null)
+      return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Math.BooleanValues, DocumentModel.Math.BooleanKind>(itemElement.Val.Value);
     return null;
   }
-
-  public static void SetNormalText(RunProperties? openXmlElement, BooleanKind? value)
+  
+  private static void SetNormalText(DocumentFormat.OpenXml.Math.RunProperties openXmlElement, DocumentModel.Math.BooleanKind? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Math.NormalText>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<NormalText>();
+      itemElement = EnumValueConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Math.NormalText, DocumentFormat.OpenXml.Math.BooleanValues, DocumentModel.Math.BooleanKind>(value);
       if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = EnumValueConverter.CreateOpenXmlElement<NormalText, BooleanValues, BooleanKind>(value);
-        if (itemElement != null)
-          openXmlElement.AddChild(itemElement);
-      }
+        openXmlElement.AddChild(itemElement);
     }
   }
-
-  public static ScriptKind? GetScript(RunProperties? openXmlElement)
+  
+  private static DocumentModel.Math.ScriptKind? GetScript(DocumentFormat.OpenXml.Math.RunProperties openXmlElement)
   {
-    if (openXmlElement != null)
-    {
-      var itemElement = openXmlElement.GetFirstChild<Script>();
-      if (itemElement?.Val?.Value != null) return EnumValueConverter.GetValue<ScriptValues, ScriptKind>(itemElement.Val.Value);
-    }
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Math.Script>();
+    if (itemElement?.Val?.Value != null)
+      return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Math.ScriptValues, DocumentModel.Math.ScriptKind>(itemElement.Val.Value);
     return null;
   }
-
-  public static void SetScript(RunProperties? openXmlElement, ScriptKind? value)
+  
+  private static void SetScript(DocumentFormat.OpenXml.Math.RunProperties openXmlElement, DocumentModel.Math.ScriptKind? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Math.Script>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<Script>();
+      itemElement = EnumValueConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Math.Script, DocumentFormat.OpenXml.Math.ScriptValues, DocumentModel.Math.ScriptKind>(value);
       if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = EnumValueConverter.CreateOpenXmlElement<Script, ScriptValues, ScriptKind>(value);
-        if (itemElement != null)
-          openXmlElement.AddChild(itemElement);
-      }
+        openXmlElement.AddChild(itemElement);
     }
   }
-
-  public static DocumentModel.Math.StyleKind? GetStyle(RunProperties? openXmlElement)
+  
+  private static DocumentModel.Math.StyleKind? GetStyle(DocumentFormat.OpenXml.Math.RunProperties openXmlElement)
   {
-    if (openXmlElement != null)
-    {
-      var itemElement = openXmlElement.GetFirstChild<Style>();
-      if (itemElement?.Val?.Value != null) return EnumValueConverter.GetValue<StyleValues, DocumentModel.Math.StyleKind>(itemElement.Val.Value);
-    }
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Math.Style>();
+    if (itemElement?.Val?.Value != null)
+      return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Math.StyleValues, DocumentModel.Math.StyleKind>(itemElement.Val.Value);
     return null;
   }
-
-  public static void SetStyle(RunProperties? openXmlElement, DocumentModel.Math.StyleKind? value)
+  
+  private static void SetStyle(DocumentFormat.OpenXml.Math.RunProperties openXmlElement, DocumentModel.Math.StyleKind? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Math.Style>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<Style>();
+      itemElement = EnumValueConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Math.Style, DocumentFormat.OpenXml.Math.StyleValues, DocumentModel.Math.StyleKind>(value);
       if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = EnumValueConverter.CreateOpenXmlElement<Style, StyleValues, DocumentModel.Math.StyleKind>(value);
-        if (itemElement != null)
-          openXmlElement.AddChild(itemElement);
-      }
+        openXmlElement.AddChild(itemElement);
     }
   }
-
-  public static Break? GetBreak(RunProperties? openXmlElement)
+  
+  private static DocumentModel.Math.Break? GetBreak(DocumentFormat.OpenXml.Math.RunProperties openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Math.Break>();
     if (itemElement != null)
-      return BreakConverter.CreateModelElement(itemElement);
+      return DocumentModel.OpenXml.Math.BreakConverter.CreateModelElement(itemElement);
     return null;
   }
-
-  public static void SetBreak(RunProperties? openXmlElement, Break? value)
+  
+  private static void SetBreak(DocumentFormat.OpenXml.Math.RunProperties openXmlElement, DocumentModel.Math.Break? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Math.Break>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Math.Break>();
+      itemElement = DocumentModel.OpenXml.Math.BreakConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Math.Break>(value);
       if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = BreakConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Math.Break>(value);
-        if (itemElement != null)
-          openXmlElement.AddChild(itemElement);
-      }
+        openXmlElement.AddChild(itemElement);
     }
   }
-
-  public static BooleanKind? GetAlignment(RunProperties? openXmlElement)
+  
+  private static DocumentModel.Math.BooleanKind? GetAlignment(DocumentFormat.OpenXml.Math.RunProperties openXmlElement)
   {
-    if (openXmlElement != null)
-    {
-      var itemElement = openXmlElement.GetFirstChild<Alignment>();
-      if (itemElement?.Val?.Value != null) return EnumValueConverter.GetValue<BooleanValues, BooleanKind>(itemElement.Val.Value);
-    }
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Math.Alignment>();
+    if (itemElement?.Val?.Value != null)
+      return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Math.BooleanValues, DocumentModel.Math.BooleanKind>(itemElement.Val.Value);
     return null;
   }
-
-  public static void SetAlignment(RunProperties? openXmlElement, BooleanKind? value)
+  
+  private static void SetAlignment(DocumentFormat.OpenXml.Math.RunProperties openXmlElement, DocumentModel.Math.BooleanKind? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Math.Alignment>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<Alignment>();
+      itemElement = EnumValueConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Math.Alignment, DocumentFormat.OpenXml.Math.BooleanValues, DocumentModel.Math.BooleanKind>(value);
       if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = EnumValueConverter.CreateOpenXmlElement<Alignment, BooleanValues, BooleanKind>(value);
-        if (itemElement != null)
-          openXmlElement.AddChild(itemElement);
-      }
+        openXmlElement.AddChild(itemElement);
     }
   }
-
-  public static DocumentModel.Math.RunProperties? CreateModelElement(RunProperties? openXmlElement)
+  
+  public static DocumentModel.Math.RunProperties? CreateModelElement(DocumentFormat.OpenXml.Math.RunProperties? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -182,9 +149,9 @@ public static class RunPropertiesConverter
     }
     return null;
   }
-
+  
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Math.RunProperties? value)
-    where OpenXmlElementType : RunProperties, new()
+    where OpenXmlElementType: DocumentFormat.OpenXml.Math.RunProperties, new()
   {
     if (value != null)
     {

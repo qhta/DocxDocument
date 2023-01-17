@@ -1,100 +1,90 @@
-using DocumentModel.UI;
-
 namespace DocumentModel.OpenXml.UI;
 
 /// <summary>
-///   Defines CustomUI.
+/// Defines CustomUI.
 /// </summary>
 public static class CustomUIConverter
 {
   /// <summary>
-  ///   onLoad
+  /// onLoad
   /// </summary>
-  public static String? GetOnLoad(DocumentFormat.OpenXml.Office.CustomUI.CustomUI? openXmlElement)
+  private static String? GetOnLoad(DocumentFormat.OpenXml.Office.CustomUI.CustomUI openXmlElement)
   {
     return openXmlElement?.OnLoad?.Value;
   }
-
-  public static void SetOnLoad(DocumentFormat.OpenXml.Office.CustomUI.CustomUI? openXmlElement, String? value)
+  
+  private static void SetOnLoad(DocumentFormat.OpenXml.Office.CustomUI.CustomUI openXmlElement, String? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.OnLoad = new StringValue { Value = value };
-      else
-        openXmlElement.OnLoad = null;
+    if (value != null)
+      openXmlElement.OnLoad = new StringValue { Value = value };
+    else
+      openXmlElement.OnLoad = null;
   }
-
+  
   /// <summary>
-  ///   loadImage
+  /// loadImage
   /// </summary>
-  public static String? GetLoadImage(DocumentFormat.OpenXml.Office.CustomUI.CustomUI? openXmlElement)
+  private static String? GetLoadImage(DocumentFormat.OpenXml.Office.CustomUI.CustomUI openXmlElement)
   {
     return openXmlElement?.LoadImage?.Value;
   }
-
-  public static void SetLoadImage(DocumentFormat.OpenXml.Office.CustomUI.CustomUI? openXmlElement, String? value)
+  
+  private static void SetLoadImage(DocumentFormat.OpenXml.Office.CustomUI.CustomUI openXmlElement, String? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.LoadImage = new StringValue { Value = value };
-      else
-        openXmlElement.LoadImage = null;
+    if (value != null)
+      openXmlElement.LoadImage = new StringValue { Value = value };
+    else
+      openXmlElement.LoadImage = null;
   }
-
+  
   /// <summary>
-  ///   RepurposedCommands.
+  /// RepurposedCommands.
   /// </summary>
-  public static RepurposedCommands? GetRepurposedCommands(DocumentFormat.OpenXml.Office.CustomUI.CustomUI? openXmlElement)
+  private static DocumentModel.UI.RepurposedCommands? GetRepurposedCommands(DocumentFormat.OpenXml.Office.CustomUI.CustomUI openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office.CustomUI.RepurposedCommands>();
     if (itemElement != null)
-      return RepurposedCommandsConverter.CreateModelElement(itemElement);
+      return DocumentModel.OpenXml.UI.RepurposedCommandsConverter.CreateModelElement(itemElement);
     return null;
   }
-
-  public static void SetRepurposedCommands(DocumentFormat.OpenXml.Office.CustomUI.CustomUI? openXmlElement, RepurposedCommands? value)
+  
+  private static void SetRepurposedCommands(DocumentFormat.OpenXml.Office.CustomUI.CustomUI openXmlElement, DocumentModel.UI.RepurposedCommands? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office.CustomUI.RepurposedCommands>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office.CustomUI.RepurposedCommands>();
+      itemElement = DocumentModel.OpenXml.UI.RepurposedCommandsConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office.CustomUI.RepurposedCommands>(value);
       if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = RepurposedCommandsConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office.CustomUI.RepurposedCommands>(value);
-        if (itemElement != null)
-          openXmlElement.AddChild(itemElement);
-      }
+        openXmlElement.AddChild(itemElement);
     }
   }
-
+  
   /// <summary>
-  ///   Ribbon.
+  /// Ribbon.
   /// </summary>
-  public static DocumentModel.UI.Ribbon? GetRibbon(DocumentFormat.OpenXml.Office.CustomUI.CustomUI? openXmlElement)
+  private static DocumentModel.UI.Ribbon? GetRibbon(DocumentFormat.OpenXml.Office.CustomUI.CustomUI openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office.CustomUI.Ribbon>();
     if (itemElement != null)
-      return RibbonConverter.CreateModelElement(itemElement);
+      return DocumentModel.OpenXml.UI.RibbonConverter.CreateModelElement(itemElement);
     return null;
   }
-
-  public static void SetRibbon(DocumentFormat.OpenXml.Office.CustomUI.CustomUI? openXmlElement, DocumentModel.UI.Ribbon? value)
+  
+  private static void SetRibbon(DocumentFormat.OpenXml.Office.CustomUI.CustomUI openXmlElement, DocumentModel.UI.Ribbon? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office.CustomUI.Ribbon>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office.CustomUI.Ribbon>();
+      itemElement = DocumentModel.OpenXml.UI.RibbonConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office.CustomUI.Ribbon>(value);
       if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = RibbonConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office.CustomUI.Ribbon>(value);
-        if (itemElement != null)
-          openXmlElement.AddChild(itemElement);
-      }
+        openXmlElement.AddChild(itemElement);
     }
   }
-
+  
   public static DocumentModel.UI.CustomUI? CreateModelElement(DocumentFormat.OpenXml.Office.CustomUI.CustomUI? openXmlElement)
   {
     if (openXmlElement != null)
@@ -108,9 +98,9 @@ public static class CustomUIConverter
     }
     return null;
   }
-
+  
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.UI.CustomUI? value)
-    where OpenXmlElementType : DocumentFormat.OpenXml.Office.CustomUI.CustomUI, new()
+    where OpenXmlElementType: DocumentFormat.OpenXml.Office.CustomUI.CustomUI, new()
   {
     if (value != null)
     {

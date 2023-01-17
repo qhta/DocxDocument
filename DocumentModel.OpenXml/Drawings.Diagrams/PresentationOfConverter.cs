@@ -1,156 +1,131 @@
-using DocumentFormat.OpenXml.Drawing.Diagrams;
-using DocumentModel.Drawings.Diagrams;
-using PresentationOf = DocumentFormat.OpenXml.Drawing.Diagrams.PresentationOf;
-
 namespace DocumentModel.OpenXml.Drawings.Diagrams;
 
 /// <summary>
-///   Presentation Of.
+/// Presentation Of.
 /// </summary>
 public static class PresentationOfConverter
 {
   /// <summary>
-  ///   Axis
+  /// Axis
   /// </summary>
-  public static ListOf<AxisKind>? GetAxis(PresentationOf? openXmlElement)
+  private static DocumentModel.ListOf<DocumentModel.Drawings.Diagrams.AxisKind>? GetAxis(DocumentFormat.OpenXml.Drawing.Diagrams.PresentationOf openXmlElement)
   {
-    return ListValueConverter.GetValue<AxisValues, AxisKind>(openXmlElement?.Axis);
+    return ListValueConverter.GetValue<DocumentFormat.OpenXml.Drawing.Diagrams.AxisValues, DocumentModel.Drawings.Diagrams.AxisKind>(openXmlElement?.Axis);
   }
-
-  public static void SetAxis(PresentationOf? openXmlElement, ListOf<AxisKind>? value)
+  
+  private static void SetAxis(DocumentFormat.OpenXml.Drawing.Diagrams.PresentationOf openXmlElement, DocumentModel.ListOf<DocumentModel.Drawings.Diagrams.AxisKind>? value)
   {
-    if (openXmlElement != null)
-    {
-      if (value != null)
-        openXmlElement.Axis = ListValueConverter.CreateListValue<AxisValues, AxisKind>(value);
-      else
-        openXmlElement.Axis = null;
-    }
+    if (value != null)
+      openXmlElement.Axis = ListValueConverter.CreateListValue<DocumentFormat.OpenXml.Drawing.Diagrams.AxisValues, DocumentModel.Drawings.Diagrams.AxisKind>(value);
+    else
+      openXmlElement.Axis = null;
   }
-
+  
   /// <summary>
-  ///   Data Point Type
+  /// Data Point Type
   /// </summary>
-  public static ListOf<ElementKind>? GetPointType(PresentationOf? openXmlElement)
+  private static DocumentModel.ListOf<DocumentModel.Drawings.Diagrams.ElementKind>? GetPointType(DocumentFormat.OpenXml.Drawing.Diagrams.PresentationOf openXmlElement)
   {
-    return ListValueConverter.GetValue<ElementValues, ElementKind>(openXmlElement?.PointType);
+    return ListValueConverter.GetValue<DocumentFormat.OpenXml.Drawing.Diagrams.ElementValues, DocumentModel.Drawings.Diagrams.ElementKind>(openXmlElement?.PointType);
   }
-
-  public static void SetPointType(PresentationOf? openXmlElement, ListOf<ElementKind>? value)
+  
+  private static void SetPointType(DocumentFormat.OpenXml.Drawing.Diagrams.PresentationOf openXmlElement, DocumentModel.ListOf<DocumentModel.Drawings.Diagrams.ElementKind>? value)
   {
-    if (openXmlElement != null)
-    {
-      if (value != null)
-        openXmlElement.PointType = ListValueConverter.CreateListValue<ElementValues, ElementKind>(value);
-      else
-        openXmlElement.PointType = null;
-    }
+    if (value != null)
+      openXmlElement.PointType = ListValueConverter.CreateListValue<DocumentFormat.OpenXml.Drawing.Diagrams.ElementValues, DocumentModel.Drawings.Diagrams.ElementKind>(value);
+    else
+      openXmlElement.PointType = null;
   }
-
+  
   /// <summary>
-  ///   Hide Last Transition
+  /// Hide Last Transition
   /// </summary>
-  public static ListOf<Boolean>? GetHideLastTrans(PresentationOf? openXmlElement)
+  private static DocumentModel.ListOf<Boolean>? GetHideLastTrans(DocumentFormat.OpenXml.Drawing.Diagrams.PresentationOf openXmlElement)
   {
     return ListValueConverter.GetValue(openXmlElement?.HideLastTrans);
   }
-
-  public static void SetHideLastTrans(PresentationOf? openXmlElement, ListOf<Boolean>? value)
+  
+  private static void SetHideLastTrans(DocumentFormat.OpenXml.Drawing.Diagrams.PresentationOf openXmlElement, DocumentModel.ListOf<Boolean>? value)
   {
-    if (openXmlElement != null)
-    {
-      if (value != null)
-        openXmlElement.HideLastTrans = ListValueConverter.CreateListValue<BooleanValue>(value);
-      else
-        openXmlElement.HideLastTrans = null;
-    }
+    if (value != null)
+      openXmlElement.HideLastTrans = ListValueConverter.CreateListValue<DocumentFormat.OpenXml.BooleanValue>(value);
+    else
+      openXmlElement.HideLastTrans = null;
   }
-
+  
   /// <summary>
-  ///   Start
+  /// Start
   /// </summary>
-  public static ListOf<Int32>? GetStart(PresentationOf? openXmlElement)
+  private static DocumentModel.ListOf<Int32>? GetStart(DocumentFormat.OpenXml.Drawing.Diagrams.PresentationOf openXmlElement)
   {
     return ListValueConverter.GetValue(openXmlElement?.Start);
   }
-
-  public static void SetStart(PresentationOf? openXmlElement, ListOf<Int32>? value)
+  
+  private static void SetStart(DocumentFormat.OpenXml.Drawing.Diagrams.PresentationOf openXmlElement, DocumentModel.ListOf<Int32>? value)
   {
-    if (openXmlElement != null)
-    {
-      if (value != null)
-        openXmlElement.Start = ListValueConverter.CreateListValue<Int32Value>(value);
-      else
-        openXmlElement.Start = null;
-    }
+    if (value != null)
+      openXmlElement.Start = ListValueConverter.CreateListValue<DocumentFormat.OpenXml.Int32Value>(value);
+    else
+      openXmlElement.Start = null;
   }
-
+  
   /// <summary>
-  ///   Count
+  /// Count
   /// </summary>
-  public static ListOf<UInt32>? GetCount(PresentationOf? openXmlElement)
+  private static DocumentModel.ListOf<UInt32>? GetCount(DocumentFormat.OpenXml.Drawing.Diagrams.PresentationOf openXmlElement)
   {
     return ListValueConverter.GetValue(openXmlElement?.Count);
   }
-
-  public static void SetCount(PresentationOf? openXmlElement, ListOf<UInt32>? value)
+  
+  private static void SetCount(DocumentFormat.OpenXml.Drawing.Diagrams.PresentationOf openXmlElement, DocumentModel.ListOf<UInt32>? value)
   {
-    if (openXmlElement != null)
-    {
-      if (value != null)
-        openXmlElement.Count = ListValueConverter.CreateListValue<UInt32Value>(value);
-      else
-        openXmlElement.Count = null;
-    }
+    if (value != null)
+      openXmlElement.Count = ListValueConverter.CreateListValue<DocumentFormat.OpenXml.UInt32Value>(value);
+    else
+      openXmlElement.Count = null;
   }
-
+  
   /// <summary>
-  ///   Step
+  /// Step
   /// </summary>
-  public static ListOf<Int32>? GetStep(PresentationOf? openXmlElement)
+  private static DocumentModel.ListOf<Int32>? GetStep(DocumentFormat.OpenXml.Drawing.Diagrams.PresentationOf openXmlElement)
   {
     return ListValueConverter.GetValue(openXmlElement?.Step);
   }
-
-  public static void SetStep(PresentationOf? openXmlElement, ListOf<Int32>? value)
+  
+  private static void SetStep(DocumentFormat.OpenXml.Drawing.Diagrams.PresentationOf openXmlElement, DocumentModel.ListOf<Int32>? value)
   {
-    if (openXmlElement != null)
-    {
-      if (value != null)
-        openXmlElement.Step = ListValueConverter.CreateListValue<Int32Value>(value);
-      else
-        openXmlElement.Step = null;
-    }
+    if (value != null)
+      openXmlElement.Step = ListValueConverter.CreateListValue<DocumentFormat.OpenXml.Int32Value>(value);
+    else
+      openXmlElement.Step = null;
   }
-
+  
   /// <summary>
-  ///   ExtensionList.
+  /// ExtensionList.
   /// </summary>
-  public static DocumentModel.Drawings.Diagrams.ExtensionList? GetExtensionList(PresentationOf? openXmlElement)
+  private static DocumentModel.Drawings.Diagrams.ExtensionList? GetExtensionList(DocumentFormat.OpenXml.Drawing.Diagrams.PresentationOf openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.Diagrams.ExtensionList>();
     if (itemElement != null)
-      return ExtensionListConverter.CreateModelElement(itemElement);
+      return DocumentModel.OpenXml.Drawings.Diagrams.ExtensionListConverter.CreateModelElement(itemElement);
     return null;
   }
-
-  public static void SetExtensionList(PresentationOf? openXmlElement, DocumentModel.Drawings.Diagrams.ExtensionList? value)
+  
+  private static void SetExtensionList(DocumentFormat.OpenXml.Drawing.Diagrams.PresentationOf openXmlElement, DocumentModel.Drawings.Diagrams.ExtensionList? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Diagrams.ExtensionList>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Diagrams.ExtensionList>();
+      itemElement = DocumentModel.OpenXml.Drawings.Diagrams.ExtensionListConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Diagrams.ExtensionList>(value);
       if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = ExtensionListConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Diagrams.ExtensionList>(value);
-        if (itemElement != null)
-          openXmlElement.AddChild(itemElement);
-      }
+        openXmlElement.AddChild(itemElement);
     }
   }
-
-  public static DocumentModel.Drawings.Diagrams.PresentationOf? CreateModelElement(PresentationOf? openXmlElement)
+  
+  public static DocumentModel.Drawings.Diagrams.PresentationOf? CreateModelElement(DocumentFormat.OpenXml.Drawing.Diagrams.PresentationOf? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -166,9 +141,9 @@ public static class PresentationOfConverter
     }
     return null;
   }
-
+  
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.Diagrams.PresentationOf? value)
-    where OpenXmlElementType : PresentationOf, new()
+    where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.Diagrams.PresentationOf, new()
   {
     if (value != null)
     {

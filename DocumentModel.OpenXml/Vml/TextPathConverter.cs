@@ -1,149 +1,139 @@
-using DocumentFormat.OpenXml.Vml;
-
 namespace DocumentModel.OpenXml.Vml;
 
 /// <summary>
-///   Defines the TextPath Class.
+/// Defines the TextPath Class.
 /// </summary>
 public static class TextPathConverter
 {
   /// <summary>
-  ///   Unique Identifier
+  /// Unique Identifier
   /// </summary>
-  public static String? GetId(TextPath? openXmlElement)
+  private static String? GetId(DocumentFormat.OpenXml.Vml.TextPath openXmlElement)
   {
     return openXmlElement?.Id?.Value;
   }
-
-  public static void SetId(TextPath? openXmlElement, String? value)
+  
+  private static void SetId(DocumentFormat.OpenXml.Vml.TextPath openXmlElement, String? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.Id = new StringValue { Value = value };
-      else
-        openXmlElement.Id = null;
+    if (value != null)
+      openXmlElement.Id = new StringValue { Value = value };
+    else
+      openXmlElement.Id = null;
   }
-
+  
   /// <summary>
-  ///   Shape Styling Properties
+  /// Shape Styling Properties
   /// </summary>
-  public static String? GetStyle(TextPath? openXmlElement)
+  private static String? GetStyle(DocumentFormat.OpenXml.Vml.TextPath openXmlElement)
   {
     return openXmlElement?.Style?.Value;
   }
-
-  public static void SetStyle(TextPath? openXmlElement, String? value)
+  
+  private static void SetStyle(DocumentFormat.OpenXml.Vml.TextPath openXmlElement, String? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.Style = new StringValue { Value = value };
-      else
-        openXmlElement.Style = null;
+    if (value != null)
+      openXmlElement.Style = new StringValue { Value = value };
+    else
+      openXmlElement.Style = null;
   }
-
+  
   /// <summary>
-  ///   Text Path Toggle
+  /// Text Path Toggle
   /// </summary>
-  public static Boolean? GetOn(TextPath? openXmlElement)
+  private static Boolean? GetOn(DocumentFormat.OpenXml.Vml.TextPath openXmlElement)
   {
     return openXmlElement?.On?.Value;
   }
-
-  public static void SetOn(TextPath? openXmlElement, Boolean? value)
+  
+  private static void SetOn(DocumentFormat.OpenXml.Vml.TextPath openXmlElement, Boolean? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.On = value;
-      else
-        openXmlElement.On = null;
+    if (value != null)
+      openXmlElement.On = value;
+    else
+      openXmlElement.On = null;
   }
-
+  
   /// <summary>
-  ///   Shape Fit Toggle
+  /// Shape Fit Toggle
   /// </summary>
-  public static Boolean? GetFitShape(TextPath? openXmlElement)
+  private static Boolean? GetFitShape(DocumentFormat.OpenXml.Vml.TextPath openXmlElement)
   {
     return openXmlElement?.FitShape?.Value;
   }
-
-  public static void SetFitShape(TextPath? openXmlElement, Boolean? value)
+  
+  private static void SetFitShape(DocumentFormat.OpenXml.Vml.TextPath openXmlElement, Boolean? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.FitShape = value;
-      else
-        openXmlElement.FitShape = null;
+    if (value != null)
+      openXmlElement.FitShape = value;
+    else
+      openXmlElement.FitShape = null;
   }
-
+  
   /// <summary>
-  ///   Path Fit Toggle
+  /// Path Fit Toggle
   /// </summary>
-  public static Boolean? GetFitPath(TextPath? openXmlElement)
+  private static Boolean? GetFitPath(DocumentFormat.OpenXml.Vml.TextPath openXmlElement)
   {
     return openXmlElement?.FitPath?.Value;
   }
-
-  public static void SetFitPath(TextPath? openXmlElement, Boolean? value)
+  
+  private static void SetFitPath(DocumentFormat.OpenXml.Vml.TextPath openXmlElement, Boolean? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.FitPath = value;
-      else
-        openXmlElement.FitPath = null;
+    if (value != null)
+      openXmlElement.FitPath = value;
+    else
+      openXmlElement.FitPath = null;
   }
-
+  
   /// <summary>
-  ///   Text Path Trim Toggle
+  /// Text Path Trim Toggle
   /// </summary>
-  public static Boolean? GetTrim(TextPath? openXmlElement)
+  private static Boolean? GetTrim(DocumentFormat.OpenXml.Vml.TextPath openXmlElement)
   {
     return openXmlElement?.Trim?.Value;
   }
-
-  public static void SetTrim(TextPath? openXmlElement, Boolean? value)
+  
+  private static void SetTrim(DocumentFormat.OpenXml.Vml.TextPath openXmlElement, Boolean? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.Trim = value;
-      else
-        openXmlElement.Trim = null;
+    if (value != null)
+      openXmlElement.Trim = value;
+    else
+      openXmlElement.Trim = null;
   }
-
+  
   /// <summary>
-  ///   Text X-Scaling
+  /// Text X-Scaling
   /// </summary>
-  public static Boolean? GetXScale(TextPath? openXmlElement)
+  private static Boolean? GetXScale(DocumentFormat.OpenXml.Vml.TextPath openXmlElement)
   {
     return openXmlElement?.XScale?.Value;
   }
-
-  public static void SetXScale(TextPath? openXmlElement, Boolean? value)
+  
+  private static void SetXScale(DocumentFormat.OpenXml.Vml.TextPath openXmlElement, Boolean? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.XScale = value;
-      else
-        openXmlElement.XScale = null;
+    if (value != null)
+      openXmlElement.XScale = value;
+    else
+      openXmlElement.XScale = null;
   }
-
+  
   /// <summary>
-  ///   Text Path Text
+  /// Text Path Text
   /// </summary>
-  public static String? GetString(TextPath? openXmlElement)
+  private static String? GetString(DocumentFormat.OpenXml.Vml.TextPath openXmlElement)
   {
     return openXmlElement?.String?.Value;
   }
-
-  public static void SetString(TextPath? openXmlElement, String? value)
+  
+  private static void SetString(DocumentFormat.OpenXml.Vml.TextPath openXmlElement, String? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.String = new StringValue { Value = value };
-      else
-        openXmlElement.String = null;
+    if (value != null)
+      openXmlElement.String = new StringValue { Value = value };
+    else
+      openXmlElement.String = null;
   }
-
-  public static DocumentModel.Vml.TextPath? CreateModelElement(TextPath? openXmlElement)
+  
+  public static DocumentModel.Vml.TextPath? CreateModelElement(DocumentFormat.OpenXml.Vml.TextPath? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -160,9 +150,9 @@ public static class TextPathConverter
     }
     return null;
   }
-
+  
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Vml.TextPath? value)
-    where OpenXmlElementType : TextPath, new()
+    where OpenXmlElementType: DocumentFormat.OpenXml.Vml.TextPath, new()
   {
     if (value != null)
     {

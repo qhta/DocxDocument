@@ -1,66 +1,56 @@
-using DocumentFormat.OpenXml.Packaging;
-using DocumentModel.Drawings;
-using DocumentModel.OpenXml.Drawings;
-using ImagePart = DocumentModel.Packaging.ImagePart;
-
 namespace DocumentModel.OpenXml.Packaging;
 
 /// <summary>
-///   Defines the ThemePart
+/// Defines the ThemePart
 /// </summary>
 public static class ThemePartConverter
 {
-  public static String? GetContentType(ThemePart? openXmlElement)
+  private static String? GetContentType(DocumentFormat.OpenXml.Packaging.ThemePart openXmlElement)
   {
     return openXmlElement?.ContentType;
   }
-
+  
   /// <summary>
-  ///   Gets the ImageParts of the ThemePart
+  /// Gets the ImageParts of the ThemePart
   /// </summary>
-  public static Collection<ImagePart>? GetImageParts(ThemePart? openXmlElement)
+  private static System.Collections.ObjectModel.Collection<DocumentModel.Packaging.ImagePart> GetImageParts(DocumentFormat.OpenXml.Packaging.ThemePart openXmlElement)
   {
-    if (openXmlElement != null)
+    var collection = new System.Collections.ObjectModel.Collection<DocumentModel.Packaging.ImagePart>();
+    foreach (var item in openXmlElement.GetPartsOfType<DocumentFormat.OpenXml.Packaging.ImagePart>())
     {
-      var collection = new Collection<ImagePart>();
-      foreach (var item in openXmlElement.GetPartsOfType<DocumentFormat.OpenXml.Packaging.ImagePart>())
-      {
-        var newItem = ImagePartConverter.CreateModelElement(item);
-        if (newItem != null)
-          collection.Add(newItem);
-      }
-      return collection;
+      var newItem = DocumentModel.OpenXml.Packaging.ImagePartConverter.CreateModelElement(item);
+      if (newItem != null)
+        collection.Add(newItem);
     }
-    return null;
+    return collection;
   }
-
-  public static String? GetRelationshipType(ThemePart? openXmlElement)
+  
+  private static String? GetRelationshipType(DocumentFormat.OpenXml.Packaging.ThemePart openXmlElement)
   {
     return openXmlElement?.RelationshipType;
   }
-
+  
   /// <summary>
-  ///   Gets or sets the root element of this part.
+  /// Gets or sets the root element of this part.
   /// </summary>
-  public static Theme? GetTheme(ThemePart? openXmlElement)
+  private static DocumentModel.Drawings.Theme? GetTheme(DocumentFormat.OpenXml.Packaging.ThemePart openXmlElement)
   {
     if (openXmlElement?.RootElement is DocumentFormat.OpenXml.Drawing.Theme rootElement)
-      return ThemeConverter.CreateModelElement(rootElement);
+      return DocumentModel.OpenXml.Drawings.ThemeConverter.CreateModelElement(rootElement);
     return null;
   }
-
-  public static void SetTheme(ThemePart? openXmlElement, Theme? value)
+  
+  private static void SetTheme(DocumentFormat.OpenXml.Packaging.ThemePart openXmlElement, DocumentModel.Drawings.Theme? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-      {
-        var rootElement = ThemeConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Theme>(value);
-        if (rootElement != null)
-          openXmlElement.Theme = rootElement;
-      }
+    if (value != null)
+    {
+       var rootElement = DocumentModel.OpenXml.Drawings.ThemeConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Theme>(value);
+       if (rootElement != null)
+         openXmlElement.Theme = rootElement;
+    }
   }
-
-  public static DocumentModel.Packaging.ThemePart? CreateModelElement(ThemePart? openXmlElement)
+  
+  public static DocumentModel.Packaging.ThemePart? CreateModelElement(DocumentFormat.OpenXml.Packaging.ThemePart? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -73,9 +63,9 @@ public static class ThemePartConverter
     }
     return null;
   }
-
+  
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Packaging.ThemePart? value)
-    where OpenXmlElementType : ThemePart, new()
+    where OpenXmlElementType: DocumentFormat.OpenXml.Packaging.ThemePart, new()
   {
     if (value != null)
     {

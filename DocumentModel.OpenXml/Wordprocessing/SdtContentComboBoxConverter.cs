@@ -1,62 +1,53 @@
-using DocumentFormat.OpenXml.Wordprocessing;
-using ListItem = DocumentModel.Wordprocessing.ListItem;
-
 namespace DocumentModel.OpenXml.Wordprocessing;
 
 /// <summary>
-///   Defines the SdtContentComboBox Class.
+/// Defines the SdtContentComboBox Class.
 /// </summary>
 public static class SdtContentComboBoxConverter
 {
   /// <summary>
-  ///   Combo Box Last Saved Value
+  /// Combo Box Last Saved Value
   /// </summary>
-  public static String? GetLastValue(SdtContentComboBox? openXmlElement)
+  private static String? GetLastValue(DocumentFormat.OpenXml.Wordprocessing.SdtContentComboBox openXmlElement)
   {
     return openXmlElement?.LastValue?.Value;
   }
-
-  public static void SetLastValue(SdtContentComboBox? openXmlElement, String? value)
+  
+  private static void SetLastValue(DocumentFormat.OpenXml.Wordprocessing.SdtContentComboBox openXmlElement, String? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.LastValue = new StringValue { Value = value };
-      else
-        openXmlElement.LastValue = null;
+    if (value != null)
+      openXmlElement.LastValue = new StringValue { Value = value };
+    else
+      openXmlElement.LastValue = null;
   }
-
-  public static Collection<ListItem>? GetListItems(SdtContentComboBox? openXmlElement)
+  
+  private static System.Collections.ObjectModel.Collection<DocumentModel.Wordprocessing.ListItem> GetListItems(DocumentFormat.OpenXml.Wordprocessing.SdtContentComboBox openXmlElement)
   {
-    if (openXmlElement != null)
+    var collection = new System.Collections.ObjectModel.Collection<DocumentModel.Wordprocessing.ListItem>();
+    foreach (var item in openXmlElement.Elements<DocumentFormat.OpenXml.Wordprocessing.ListItem>())
     {
-      var collection = new Collection<ListItem>();
-      foreach (var item in openXmlElement.Elements<DocumentFormat.OpenXml.Wordprocessing.ListItem>())
+      var newItem = DocumentModel.OpenXml.Wordprocessing.ListItemConverter.CreateModelElement(item);
+      if (newItem != null)
+        collection.Add(newItem);
+    }
+    return collection;
+  }
+  
+  private static void SetListItems(DocumentFormat.OpenXml.Wordprocessing.SdtContentComboBox openXmlElement, System.Collections.ObjectModel.Collection<DocumentModel.Wordprocessing.ListItem>? value)
+  {
+    openXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Wordprocessing.ListItem>();
+    if (value != null)
+    {
+      foreach (var item in value)
       {
-        var newItem = ListItemConverter.CreateModelElement(item);
+        var newItem = DocumentModel.OpenXml.Wordprocessing.ListItemConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.ListItem>(item);
         if (newItem != null)
-          collection.Add(newItem);
+          openXmlElement.AddChild(newItem);
       }
-      return collection;
-    }
-    return null;
-  }
-
-  public static void SetListItems(SdtContentComboBox? openXmlElement, Collection<ListItem>? value)
-  {
-    if (openXmlElement != null)
-    {
-      openXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Wordprocessing.ListItem>();
-      if (value != null)
-        foreach (var item in value)
-        {
-          var newItem = ListItemConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.ListItem>(item);
-          if (newItem != null)
-            openXmlElement.AddChild(newItem);
-        }
     }
   }
-
-  public static DocumentModel.Wordprocessing.SdtContentComboBox? CreateModelElement(SdtContentComboBox? openXmlElement)
+  
+  public static DocumentModel.Wordprocessing.SdtContentComboBox? CreateModelElement(DocumentFormat.OpenXml.Wordprocessing.SdtContentComboBox? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -67,9 +58,9 @@ public static class SdtContentComboBoxConverter
     }
     return null;
   }
-
+  
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.SdtContentComboBox? value)
-    where OpenXmlElementType : SdtContentComboBox, new()
+    where OpenXmlElementType: DocumentFormat.OpenXml.Wordprocessing.SdtContentComboBox, new()
   {
     if (value != null)
     {

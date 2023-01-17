@@ -1,23 +1,21 @@
-using DocumentFormat.OpenXml.Packaging;
-
 namespace DocumentModel.OpenXml.Packaging;
 
 /// <summary>
-///   Defines the SpreadsheetPrinterSettingsPart
+/// Defines the SpreadsheetPrinterSettingsPart
 /// </summary>
 public static class SpreadsheetPrinterSettingsPartConverter
 {
-  public static String? GetContentType(SpreadsheetPrinterSettingsPart? openXmlElement)
+  private static String? GetContentType(DocumentFormat.OpenXml.Packaging.SpreadsheetPrinterSettingsPart openXmlElement)
   {
     return openXmlElement?.ContentType;
   }
-
-  public static String? GetRelationshipType(SpreadsheetPrinterSettingsPart? openXmlElement)
+  
+  private static String? GetRelationshipType(DocumentFormat.OpenXml.Packaging.SpreadsheetPrinterSettingsPart openXmlElement)
   {
     return openXmlElement?.RelationshipType;
   }
-
-  public static DocumentModel.Packaging.SpreadsheetPrinterSettingsPart? CreateModelElement(SpreadsheetPrinterSettingsPart? openXmlElement)
+  
+  public static DocumentModel.Packaging.SpreadsheetPrinterSettingsPart? CreateModelElement(DocumentFormat.OpenXml.Packaging.SpreadsheetPrinterSettingsPart? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -28,9 +26,9 @@ public static class SpreadsheetPrinterSettingsPartConverter
     }
     return null;
   }
-
+  
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Packaging.SpreadsheetPrinterSettingsPart? value)
-    where OpenXmlElementType : SpreadsheetPrinterSettingsPart, new()
+    where OpenXmlElementType: DocumentFormat.OpenXml.Packaging.SpreadsheetPrinterSettingsPart, new()
   {
     if (value != null)
     {

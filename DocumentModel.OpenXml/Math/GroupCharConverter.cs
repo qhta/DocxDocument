@@ -1,68 +1,59 @@
-using DocumentModel.Math;
-using GroupChar = DocumentFormat.OpenXml.Math.GroupChar;
-
 namespace DocumentModel.OpenXml.Math;
 
 /// <summary>
-///   Group-Character Function.
+/// Group-Character Function.
 /// </summary>
 public static class GroupCharConverter
 {
   /// <summary>
-  ///   Group-Character Properties.
+  /// Group-Character Properties.
   /// </summary>
-  public static GroupCharProperties? GetGroupCharProperties(GroupChar? openXmlElement)
+  private static DocumentModel.Math.GroupCharProperties? GetGroupCharProperties(DocumentFormat.OpenXml.Math.GroupChar openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Math.GroupCharProperties>();
     if (itemElement != null)
-      return GroupCharPropertiesConverter.CreateModelElement(itemElement);
+      return DocumentModel.OpenXml.Math.GroupCharPropertiesConverter.CreateModelElement(itemElement);
     return null;
   }
-
-  public static void SetGroupCharProperties(GroupChar? openXmlElement, GroupCharProperties? value)
+  
+  private static void SetGroupCharProperties(DocumentFormat.OpenXml.Math.GroupChar openXmlElement, DocumentModel.Math.GroupCharProperties? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Math.GroupCharProperties>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Math.GroupCharProperties>();
+      itemElement = DocumentModel.OpenXml.Math.GroupCharPropertiesConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Math.GroupCharProperties>(value);
       if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = GroupCharPropertiesConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Math.GroupCharProperties>(value);
-        if (itemElement != null)
-          openXmlElement.AddChild(itemElement);
-      }
+        openXmlElement.AddChild(itemElement);
     }
   }
-
+  
   /// <summary>
-  ///   Base.
+  /// Base.
   /// </summary>
-  public static Base? GetBase(GroupChar? openXmlElement)
+  private static DocumentModel.Math.Base? GetBase(DocumentFormat.OpenXml.Math.GroupChar openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Math.Base>();
     if (itemElement != null)
-      return BaseConverter.CreateModelElement(itemElement);
+      return DocumentModel.OpenXml.Math.BaseConverter.CreateModelElement(itemElement);
     return null;
   }
-
-  public static void SetBase(GroupChar? openXmlElement, Base? value)
+  
+  private static void SetBase(DocumentFormat.OpenXml.Math.GroupChar openXmlElement, DocumentModel.Math.Base? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Math.Base>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Math.Base>();
+      itemElement = DocumentModel.OpenXml.Math.BaseConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Math.Base>(value);
       if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = BaseConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Math.Base>(value);
-        if (itemElement != null)
-          openXmlElement.AddChild(itemElement);
-      }
+        openXmlElement.AddChild(itemElement);
     }
   }
-
-  public static DocumentModel.Math.GroupChar? CreateModelElement(GroupChar? openXmlElement)
+  
+  public static DocumentModel.Math.GroupChar? CreateModelElement(DocumentFormat.OpenXml.Math.GroupChar? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -73,9 +64,9 @@ public static class GroupCharConverter
     }
     return null;
   }
-
+  
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Math.GroupChar? value)
-    where OpenXmlElementType : GroupChar, new()
+    where OpenXmlElementType: DocumentFormat.OpenXml.Math.GroupChar, new()
   {
     if (value != null)
     {

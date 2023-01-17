@@ -1,27 +1,24 @@
-using DocumentFormat.OpenXml.Wordprocessing;
-
 namespace DocumentModel.OpenXml.Wordprocessing;
 
 /// <summary>
-///   Defines the FootnoteEndnoteSeparatorReferenceType Class.
+/// Defines the FootnoteEndnoteSeparatorReferenceType Class.
 /// </summary>
 public static class FootnoteEndnoteSeparatorReferenceTypeConverter
 {
   /// <summary>
-  ///   Footnote/Endnote ID
+  /// Footnote/Endnote ID
   /// </summary>
-  public static Int64? GetId(FootnoteEndnoteSeparatorReferenceType? openXmlElement)
+  private static Int64? GetId(DocumentFormat.OpenXml.Wordprocessing.FootnoteEndnoteSeparatorReferenceType openXmlElement)
   {
-    return openXmlElement?.Id?.Value;
+    return openXmlElement.Id?.Value;
   }
-
-  public static void SetId(FootnoteEndnoteSeparatorReferenceType? openXmlElement, Int64? value)
+  
+  private static void SetId(DocumentFormat.OpenXml.Wordprocessing.FootnoteEndnoteSeparatorReferenceType openXmlElement, Int64? value)
   {
-    if (openXmlElement != null)
-      openXmlElement.Id = value;
+    openXmlElement.Id = value;
   }
-
-  public static DocumentModel.Wordprocessing.FootnoteEndnoteSeparatorReferenceType? CreateModelElement(FootnoteEndnoteSeparatorReferenceType? openXmlElement)
+  
+  public static DocumentModel.Wordprocessing.FootnoteEndnoteSeparatorReferenceType? CreateModelElement(DocumentFormat.OpenXml.Wordprocessing.FootnoteEndnoteSeparatorReferenceType? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -31,9 +28,9 @@ public static class FootnoteEndnoteSeparatorReferenceTypeConverter
     }
     return null;
   }
-
+  
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.FootnoteEndnoteSeparatorReferenceType? value)
-    where OpenXmlElementType : FootnoteEndnoteSeparatorReferenceType, new()
+    where OpenXmlElementType: DocumentFormat.OpenXml.Wordprocessing.FootnoteEndnoteSeparatorReferenceType, new()
   {
     if (value != null)
     {

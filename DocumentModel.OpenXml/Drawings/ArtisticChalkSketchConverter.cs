@@ -1,41 +1,37 @@
-using DocumentFormat.OpenXml.Office2010.Drawing;
-
 namespace DocumentModel.OpenXml.Drawings;
 
 /// <summary>
-///   Defines the ArtisticChalkSketch Class.
+/// Defines the ArtisticChalkSketch Class.
 /// </summary>
 public static class ArtisticChalkSketchConverter
 {
   /// <summary>
-  ///   trans, this property is only available in Office 2010 and later.
+  /// trans, this property is only available in Office 2010 and later.
   /// </summary>
-  public static Int32? GetTransparancy(ArtisticChalkSketch? openXmlElement)
+  private static Int32? GetTransparancy(DocumentFormat.OpenXml.Office2010.Drawing.ArtisticChalkSketch openXmlElement)
   {
-    return openXmlElement?.Transparancy?.Value;
+    return openXmlElement.Transparancy?.Value;
   }
-
-  public static void SetTransparancy(ArtisticChalkSketch? openXmlElement, Int32? value)
+  
+  private static void SetTransparancy(DocumentFormat.OpenXml.Office2010.Drawing.ArtisticChalkSketch openXmlElement, Int32? value)
   {
-    if (openXmlElement != null)
-      openXmlElement.Transparancy = value;
+    openXmlElement.Transparancy = value;
   }
-
+  
   /// <summary>
-  ///   pressure, this property is only available in Office 2010 and later.
+  /// pressure, this property is only available in Office 2010 and later.
   /// </summary>
-  public static Int32? GetPressure(ArtisticChalkSketch? openXmlElement)
+  private static Int32? GetPressure(DocumentFormat.OpenXml.Office2010.Drawing.ArtisticChalkSketch openXmlElement)
   {
-    return openXmlElement?.Pressure?.Value;
+    return openXmlElement.Pressure?.Value;
   }
-
-  public static void SetPressure(ArtisticChalkSketch? openXmlElement, Int32? value)
+  
+  private static void SetPressure(DocumentFormat.OpenXml.Office2010.Drawing.ArtisticChalkSketch openXmlElement, Int32? value)
   {
-    if (openXmlElement != null)
-      openXmlElement.Pressure = value;
+    openXmlElement.Pressure = value;
   }
-
-  public static DocumentModel.Drawings.ArtisticChalkSketch? CreateModelElement(ArtisticChalkSketch? openXmlElement)
+  
+  public static DocumentModel.Drawings.ArtisticChalkSketch? CreateModelElement(DocumentFormat.OpenXml.Office2010.Drawing.ArtisticChalkSketch? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -46,9 +42,9 @@ public static class ArtisticChalkSketchConverter
     }
     return null;
   }
-
+  
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.ArtisticChalkSketch? value)
-    where OpenXmlElementType : ArtisticChalkSketch, new()
+    where OpenXmlElementType: DocumentFormat.OpenXml.Office2010.Drawing.ArtisticChalkSketch, new()
   {
     if (value != null)
     {

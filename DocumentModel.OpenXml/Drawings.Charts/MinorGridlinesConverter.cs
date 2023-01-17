@@ -1,38 +1,32 @@
-using DocumentModel.Drawings.Charts;
-using MinorGridlines = DocumentFormat.OpenXml.Drawing.Charts.MinorGridlines;
-
 namespace DocumentModel.OpenXml.Drawings.Charts;
 
 /// <summary>
-///   Minor Gridlines.
+/// Minor Gridlines.
 /// </summary>
 public static class MinorGridlinesConverter
 {
-  public static ChartShapeProperties? GetChartShapeProperties(MinorGridlines? openXmlElement)
+  private static DocumentModel.Drawings.Charts.ChartShapeProperties? GetChartShapeProperties(DocumentFormat.OpenXml.Drawing.Charts.MinorGridlines openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.ChartShapeProperties>();
     if (itemElement != null)
-      return ChartShapePropertiesConverter.CreateModelElement(itemElement);
+      return DocumentModel.OpenXml.Drawings.Charts.ChartShapePropertiesConverter.CreateModelElement(itemElement);
     return null;
   }
-
-  public static void SetChartShapeProperties(MinorGridlines? openXmlElement, ChartShapeProperties? value)
+  
+  private static void SetChartShapeProperties(DocumentFormat.OpenXml.Drawing.Charts.MinorGridlines openXmlElement, DocumentModel.Drawings.Charts.ChartShapeProperties? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.ChartShapeProperties>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.ChartShapeProperties>();
+      itemElement = DocumentModel.OpenXml.Drawings.Charts.ChartShapePropertiesConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Charts.ChartShapeProperties>(value);
       if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = ChartShapePropertiesConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Charts.ChartShapeProperties>(value);
-        if (itemElement != null)
-          openXmlElement.AddChild(itemElement);
-      }
+        openXmlElement.AddChild(itemElement);
     }
   }
-
-  public static DocumentModel.Drawings.Charts.MinorGridlines? CreateModelElement(MinorGridlines? openXmlElement)
+  
+  public static DocumentModel.Drawings.Charts.MinorGridlines? CreateModelElement(DocumentFormat.OpenXml.Drawing.Charts.MinorGridlines? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -42,9 +36,9 @@ public static class MinorGridlinesConverter
     }
     return null;
   }
-
+  
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.Charts.MinorGridlines? value)
-    where OpenXmlElementType : MinorGridlines, new()
+    where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.Charts.MinorGridlines, new()
   {
     if (value != null)
     {

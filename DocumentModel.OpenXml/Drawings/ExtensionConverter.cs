@@ -1,27 +1,26 @@
 namespace DocumentModel.OpenXml.Drawings;
 
 /// <summary>
-///   Extension.
+/// Extension.
 /// </summary>
 public static class ExtensionConverter
 {
   /// <summary>
-  ///   URI
+  /// URI
   /// </summary>
-  public static String? GetUri(DocumentFormat.OpenXml.Drawing.Extension? openXmlElement)
+  private static String? GetUri(DocumentFormat.OpenXml.Drawing.Extension openXmlElement)
   {
     return openXmlElement?.Uri?.Value;
   }
-
-  public static void SetUri(DocumentFormat.OpenXml.Drawing.Extension? openXmlElement, String? value)
+  
+  private static void SetUri(DocumentFormat.OpenXml.Drawing.Extension openXmlElement, String? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.Uri = new StringValue { Value = value };
-      else
-        openXmlElement.Uri = null;
+    if (value != null)
+      openXmlElement.Uri = new StringValue { Value = value };
+    else
+      openXmlElement.Uri = null;
   }
-
+  
   public static DocumentModel.Drawings.Extension? CreateModelElement(DocumentFormat.OpenXml.Drawing.Extension? openXmlElement)
   {
     if (openXmlElement != null)
@@ -32,9 +31,9 @@ public static class ExtensionConverter
     }
     return null;
   }
-
+  
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.Extension? value)
-    where OpenXmlElementType : DocumentFormat.OpenXml.Drawing.Extension, new()
+    where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.Extension, new()
   {
     if (value != null)
     {

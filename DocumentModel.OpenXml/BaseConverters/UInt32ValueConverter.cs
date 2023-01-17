@@ -1,4 +1,5 @@
-﻿using DocumentFormat.OpenXml.Drawing.Charts;
+﻿using System.Globalization;
+using DocumentFormat.OpenXml.Drawing.Charts;
 
 namespace DocumentModel.OpenXml;
 
@@ -17,6 +18,13 @@ public static class UInt32ValueConverter
   public static UInt32? GetValue(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.UnsignedIntegerType element)
   {
     return element.Val?.Value;
+  }
+
+  public static UInt32? GetValue(DocumentFormat.OpenXml.Wordprocessing.LongHexNumberType element)
+  {
+    if (element.Val?.Value != null)
+      return UInt32.Parse(element.Val.Value, NumberStyles.HexNumber);
+    return null;
   }
 
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(UInt32 value)

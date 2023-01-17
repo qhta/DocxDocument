@@ -1,210 +1,179 @@
-using DocumentFormat.OpenXml.Drawing.Diagrams;
-using Scene3D = DocumentModel.Drawings.Diagrams.Scene3D;
-using StyleDefinitionTitle = DocumentModel.Drawings.Diagrams.StyleDefinitionTitle;
-using StyleDisplayCategories = DocumentModel.Drawings.Diagrams.StyleDisplayCategories;
-using StyleLabel = DocumentModel.Drawings.Diagrams.StyleLabel;
-using StyleLabelDescription = DocumentModel.Drawings.Diagrams.StyleLabelDescription;
-
 namespace DocumentModel.OpenXml.Drawings.Diagrams;
 
 /// <summary>
-///   Style Definition.
+/// Style Definition.
 /// </summary>
 public static class StyleDefinitionConverter
 {
   /// <summary>
-  ///   Unique Style ID
+  /// Unique Style ID
   /// </summary>
-  public static String? GetUniqueId(StyleDefinition? openXmlElement)
+  private static String? GetUniqueId(DocumentFormat.OpenXml.Drawing.Diagrams.StyleDefinition openXmlElement)
   {
     return openXmlElement?.UniqueId?.Value;
   }
-
-  public static void SetUniqueId(StyleDefinition? openXmlElement, String? value)
+  
+  private static void SetUniqueId(DocumentFormat.OpenXml.Drawing.Diagrams.StyleDefinition openXmlElement, String? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.UniqueId = new StringValue { Value = value };
-      else
-        openXmlElement.UniqueId = null;
+    if (value != null)
+      openXmlElement.UniqueId = new StringValue { Value = value };
+    else
+      openXmlElement.UniqueId = null;
   }
-
+  
   /// <summary>
-  ///   Minimum Version
+  /// Minimum Version
   /// </summary>
-  public static String? GetMinVersion(StyleDefinition? openXmlElement)
+  private static String? GetMinVersion(DocumentFormat.OpenXml.Drawing.Diagrams.StyleDefinition openXmlElement)
   {
     return openXmlElement?.MinVersion?.Value;
   }
-
-  public static void SetMinVersion(StyleDefinition? openXmlElement, String? value)
+  
+  private static void SetMinVersion(DocumentFormat.OpenXml.Drawing.Diagrams.StyleDefinition openXmlElement, String? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.MinVersion = new StringValue { Value = value };
-      else
-        openXmlElement.MinVersion = null;
+    if (value != null)
+      openXmlElement.MinVersion = new StringValue { Value = value };
+    else
+      openXmlElement.MinVersion = null;
   }
-
-  public static Collection<StyleDefinitionTitle>? GetStyleDefinitionTitles(StyleDefinition? openXmlElement)
+  
+  private static System.Collections.ObjectModel.Collection<DocumentModel.Drawings.Diagrams.StyleDefinitionTitle> GetStyleDefinitionTitles(DocumentFormat.OpenXml.Drawing.Diagrams.StyleDefinition openXmlElement)
   {
-    if (openXmlElement != null)
+    var collection = new System.Collections.ObjectModel.Collection<DocumentModel.Drawings.Diagrams.StyleDefinitionTitle>();
+    foreach (var item in openXmlElement.Elements<DocumentFormat.OpenXml.Drawing.Diagrams.StyleDefinitionTitle>())
     {
-      var collection = new Collection<StyleDefinitionTitle>();
-      foreach (var item in openXmlElement.Elements<DocumentFormat.OpenXml.Drawing.Diagrams.StyleDefinitionTitle>())
+      var newItem = DocumentModel.OpenXml.Drawings.Diagrams.StyleDefinitionTitleConverter.CreateModelElement(item);
+      if (newItem != null)
+        collection.Add(newItem);
+    }
+    return collection;
+  }
+  
+  private static void SetStyleDefinitionTitles(DocumentFormat.OpenXml.Drawing.Diagrams.StyleDefinition openXmlElement, System.Collections.ObjectModel.Collection<DocumentModel.Drawings.Diagrams.StyleDefinitionTitle>? value)
+  {
+    openXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Drawing.Diagrams.StyleDefinitionTitle>();
+    if (value != null)
+    {
+      foreach (var item in value)
       {
-        var newItem = StyleDefinitionTitleConverter.CreateModelElement(item);
+        var newItem = DocumentModel.OpenXml.Drawings.Diagrams.StyleDefinitionTitleConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Diagrams.StyleDefinitionTitle>(item);
         if (newItem != null)
-          collection.Add(newItem);
+          openXmlElement.AddChild(newItem);
       }
-      return collection;
-    }
-    return null;
-  }
-
-  public static void SetStyleDefinitionTitles(StyleDefinition? openXmlElement, Collection<StyleDefinitionTitle>? value)
-  {
-    if (openXmlElement != null)
-    {
-      openXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Drawing.Diagrams.StyleDefinitionTitle>();
-      if (value != null)
-        foreach (var item in value)
-        {
-          var newItem = StyleDefinitionTitleConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Diagrams.StyleDefinitionTitle>(item);
-          if (newItem != null)
-            openXmlElement.AddChild(newItem);
-        }
     }
   }
-
-  public static Collection<StyleLabelDescription>? GetStyleLabelDescriptions(StyleDefinition? openXmlElement)
+  
+  private static System.Collections.ObjectModel.Collection<DocumentModel.Drawings.Diagrams.StyleLabelDescription> GetStyleLabelDescriptions(DocumentFormat.OpenXml.Drawing.Diagrams.StyleDefinition openXmlElement)
   {
-    if (openXmlElement != null)
+    var collection = new System.Collections.ObjectModel.Collection<DocumentModel.Drawings.Diagrams.StyleLabelDescription>();
+    foreach (var item in openXmlElement.Elements<DocumentFormat.OpenXml.Drawing.Diagrams.StyleLabelDescription>())
     {
-      var collection = new Collection<StyleLabelDescription>();
-      foreach (var item in openXmlElement.Elements<DocumentFormat.OpenXml.Drawing.Diagrams.StyleLabelDescription>())
+      var newItem = DocumentModel.OpenXml.Drawings.Diagrams.StyleLabelDescriptionConverter.CreateModelElement(item);
+      if (newItem != null)
+        collection.Add(newItem);
+    }
+    return collection;
+  }
+  
+  private static void SetStyleLabelDescriptions(DocumentFormat.OpenXml.Drawing.Diagrams.StyleDefinition openXmlElement, System.Collections.ObjectModel.Collection<DocumentModel.Drawings.Diagrams.StyleLabelDescription>? value)
+  {
+    openXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Drawing.Diagrams.StyleLabelDescription>();
+    if (value != null)
+    {
+      foreach (var item in value)
       {
-        var newItem = StyleLabelDescriptionConverter.CreateModelElement(item);
+        var newItem = DocumentModel.OpenXml.Drawings.Diagrams.StyleLabelDescriptionConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Diagrams.StyleLabelDescription>(item);
         if (newItem != null)
-          collection.Add(newItem);
+          openXmlElement.AddChild(newItem);
       }
-      return collection;
-    }
-    return null;
-  }
-
-  public static void SetStyleLabelDescriptions(StyleDefinition? openXmlElement, Collection<StyleLabelDescription>? value)
-  {
-    if (openXmlElement != null)
-    {
-      openXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Drawing.Diagrams.StyleLabelDescription>();
-      if (value != null)
-        foreach (var item in value)
-        {
-          var newItem = StyleLabelDescriptionConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Diagrams.StyleLabelDescription>(item);
-          if (newItem != null)
-            openXmlElement.AddChild(newItem);
-        }
     }
   }
-
-  public static StyleDisplayCategories? GetStyleDisplayCategories(StyleDefinition? openXmlElement)
+  
+  private static DocumentModel.Drawings.Diagrams.StyleDisplayCategories? GetStyleDisplayCategories(DocumentFormat.OpenXml.Drawing.Diagrams.StyleDefinition openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.Diagrams.StyleDisplayCategories>();
     if (itemElement != null)
-      return StyleDisplayCategoriesConverter.CreateModelElement(itemElement);
+      return DocumentModel.OpenXml.Drawings.Diagrams.StyleDisplayCategoriesConverter.CreateModelElement(itemElement);
     return null;
   }
-
-  public static void SetStyleDisplayCategories(StyleDefinition? openXmlElement, StyleDisplayCategories? value)
+  
+  private static void SetStyleDisplayCategories(DocumentFormat.OpenXml.Drawing.Diagrams.StyleDefinition openXmlElement, DocumentModel.Drawings.Diagrams.StyleDisplayCategories? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Diagrams.StyleDisplayCategories>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Diagrams.StyleDisplayCategories>();
+      itemElement = DocumentModel.OpenXml.Drawings.Diagrams.StyleDisplayCategoriesConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Diagrams.StyleDisplayCategories>(value);
       if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = StyleDisplayCategoriesConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Diagrams.StyleDisplayCategories>(value);
-        if (itemElement != null)
-          openXmlElement.AddChild(itemElement);
-      }
+        openXmlElement.AddChild(itemElement);
     }
   }
-
-  public static Scene3D? GetScene3D(StyleDefinition? openXmlElement)
+  
+  private static DocumentModel.Drawings.Diagrams.Scene3D? GetScene3D(DocumentFormat.OpenXml.Drawing.Diagrams.StyleDefinition openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.Diagrams.Scene3D>();
     if (itemElement != null)
-      return Scene3DConverter.CreateModelElement(itemElement);
+      return DocumentModel.OpenXml.Drawings.Diagrams.Scene3DConverter.CreateModelElement(itemElement);
     return null;
   }
-
-  public static void SetScene3D(StyleDefinition? openXmlElement, Scene3D? value)
+  
+  private static void SetScene3D(DocumentFormat.OpenXml.Drawing.Diagrams.StyleDefinition openXmlElement, DocumentModel.Drawings.Diagrams.Scene3D? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Diagrams.Scene3D>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Diagrams.Scene3D>();
+      itemElement = DocumentModel.OpenXml.Drawings.Diagrams.Scene3DConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Diagrams.Scene3D>(value);
       if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = Scene3DConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Diagrams.Scene3D>(value);
-        if (itemElement != null)
-          openXmlElement.AddChild(itemElement);
-      }
+        openXmlElement.AddChild(itemElement);
     }
   }
-
-  public static StyleLabel? GetStyleLabel(StyleDefinition? openXmlElement)
+  
+  private static DocumentModel.Drawings.Diagrams.StyleLabel? GetStyleLabel(DocumentFormat.OpenXml.Drawing.Diagrams.StyleDefinition openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.Diagrams.StyleLabel>();
     if (itemElement != null)
-      return StyleLabelConverter.CreateModelElement(itemElement);
+      return DocumentModel.OpenXml.Drawings.Diagrams.StyleLabelConverter.CreateModelElement(itemElement);
     return null;
   }
-
-  public static void SetStyleLabel(StyleDefinition? openXmlElement, StyleLabel? value)
+  
+  private static void SetStyleLabel(DocumentFormat.OpenXml.Drawing.Diagrams.StyleDefinition openXmlElement, DocumentModel.Drawings.Diagrams.StyleLabel? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Diagrams.StyleLabel>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Diagrams.StyleLabel>();
+      itemElement = DocumentModel.OpenXml.Drawings.Diagrams.StyleLabelConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Diagrams.StyleLabel>(value);
       if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = StyleLabelConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Diagrams.StyleLabel>(value);
-        if (itemElement != null)
-          openXmlElement.AddChild(itemElement);
-      }
+        openXmlElement.AddChild(itemElement);
     }
   }
-
-  public static DocumentModel.Drawings.Diagrams.ExtensionList? GetExtensionList(StyleDefinition? openXmlElement)
+  
+  private static DocumentModel.Drawings.Diagrams.ExtensionList? GetExtensionList(DocumentFormat.OpenXml.Drawing.Diagrams.StyleDefinition openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.Diagrams.ExtensionList>();
     if (itemElement != null)
-      return ExtensionListConverter.CreateModelElement(itemElement);
+      return DocumentModel.OpenXml.Drawings.Diagrams.ExtensionListConverter.CreateModelElement(itemElement);
     return null;
   }
-
-  public static void SetExtensionList(StyleDefinition? openXmlElement, DocumentModel.Drawings.Diagrams.ExtensionList? value)
+  
+  private static void SetExtensionList(DocumentFormat.OpenXml.Drawing.Diagrams.StyleDefinition openXmlElement, DocumentModel.Drawings.Diagrams.ExtensionList? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Diagrams.ExtensionList>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Diagrams.ExtensionList>();
+      itemElement = DocumentModel.OpenXml.Drawings.Diagrams.ExtensionListConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Diagrams.ExtensionList>(value);
       if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = ExtensionListConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Diagrams.ExtensionList>(value);
-        if (itemElement != null)
-          openXmlElement.AddChild(itemElement);
-      }
+        openXmlElement.AddChild(itemElement);
     }
   }
-
-  public static DocumentModel.Drawings.Diagrams.StyleDefinition? CreateModelElement(StyleDefinition? openXmlElement)
+  
+  public static DocumentModel.Drawings.Diagrams.StyleDefinition? CreateModelElement(DocumentFormat.OpenXml.Drawing.Diagrams.StyleDefinition? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -221,9 +190,9 @@ public static class StyleDefinitionConverter
     }
     return null;
   }
-
+  
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.Diagrams.StyleDefinition? value)
-    where OpenXmlElementType : StyleDefinition, new()
+    where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.Diagrams.StyleDefinition, new()
   {
     if (value != null)
     {

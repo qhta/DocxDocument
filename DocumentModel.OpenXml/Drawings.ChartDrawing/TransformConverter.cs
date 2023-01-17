@@ -1,118 +1,104 @@
-using DocumentFormat.OpenXml.Drawing;
-using DocumentFormat.OpenXml.Drawing.ChartDrawing;
-using Point2DType = DocumentModel.Drawings.Point2DType;
-using PositiveSize2DType = DocumentModel.Drawings.PositiveSize2DType;
-
 namespace DocumentModel.OpenXml.Drawings.ChartDrawing;
 
 /// <summary>
-///   Graphic Frame Transform.
+/// Graphic Frame Transform.
 /// </summary>
 public static class TransformConverter
 {
   /// <summary>
-  ///   Rotation
+  /// Rotation
   /// </summary>
-  public static Int32? GetRotation(Transform? openXmlElement)
+  private static Int32? GetRotation(DocumentFormat.OpenXml.Drawing.ChartDrawing.Transform openXmlElement)
   {
-    return openXmlElement?.Rotation?.Value;
+    return openXmlElement.Rotation?.Value;
   }
-
-  public static void SetRotation(Transform? openXmlElement, Int32? value)
+  
+  private static void SetRotation(DocumentFormat.OpenXml.Drawing.ChartDrawing.Transform openXmlElement, Int32? value)
   {
-    if (openXmlElement != null)
-      openXmlElement.Rotation = value;
+    openXmlElement.Rotation = value;
   }
-
+  
   /// <summary>
-  ///   Horizontal Flip
+  /// Horizontal Flip
   /// </summary>
-  public static Boolean? GetHorizontalFlip(Transform? openXmlElement)
+  private static Boolean? GetHorizontalFlip(DocumentFormat.OpenXml.Drawing.ChartDrawing.Transform openXmlElement)
   {
     return openXmlElement?.HorizontalFlip?.Value;
   }
-
-  public static void SetHorizontalFlip(Transform? openXmlElement, Boolean? value)
+  
+  private static void SetHorizontalFlip(DocumentFormat.OpenXml.Drawing.ChartDrawing.Transform openXmlElement, Boolean? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.HorizontalFlip = new BooleanValue { Value = (Boolean)value };
-      else
-        openXmlElement.HorizontalFlip = null;
+    if (value != null)
+      openXmlElement.HorizontalFlip = new BooleanValue { Value = (Boolean)value };
+    else
+      openXmlElement.HorizontalFlip = null;
   }
-
+  
   /// <summary>
-  ///   Vertical Flip
+  /// Vertical Flip
   /// </summary>
-  public static Boolean? GetVerticalFlip(Transform? openXmlElement)
+  private static Boolean? GetVerticalFlip(DocumentFormat.OpenXml.Drawing.ChartDrawing.Transform openXmlElement)
   {
     return openXmlElement?.VerticalFlip?.Value;
   }
-
-  public static void SetVerticalFlip(Transform? openXmlElement, Boolean? value)
+  
+  private static void SetVerticalFlip(DocumentFormat.OpenXml.Drawing.ChartDrawing.Transform openXmlElement, Boolean? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.VerticalFlip = new BooleanValue { Value = (Boolean)value };
-      else
-        openXmlElement.VerticalFlip = null;
+    if (value != null)
+      openXmlElement.VerticalFlip = new BooleanValue { Value = (Boolean)value };
+    else
+      openXmlElement.VerticalFlip = null;
   }
-
+  
   /// <summary>
-  ///   Offset.
+  /// Offset.
   /// </summary>
-  public static Point2DType? GetOffset(Transform? openXmlElement)
+  private static DocumentModel.Drawings.Point2DType? GetOffset(DocumentFormat.OpenXml.Drawing.ChartDrawing.Transform openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<Offset>();
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.Offset>();
     if (itemElement != null)
-      return Point2DTypeConverter.CreateModelElement(itemElement);
+      return DocumentModel.OpenXml.Drawings.Point2DTypeConverter.CreateModelElement(itemElement);
     return null;
   }
-
-  public static void SetOffset(Transform? openXmlElement, Point2DType? value)
+  
+  private static void SetOffset(DocumentFormat.OpenXml.Drawing.ChartDrawing.Transform openXmlElement, DocumentModel.Drawings.Point2DType? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Offset>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<Offset>();
+      itemElement = DocumentModel.OpenXml.Drawings.Point2DTypeConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Offset>(value);
       if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = Point2DTypeConverter.CreateOpenXmlElement<Offset>(value);
-        if (itemElement != null)
-          openXmlElement.AddChild(itemElement);
-      }
+        openXmlElement.AddChild(itemElement);
     }
   }
-
+  
   /// <summary>
-  ///   Extents.
+  /// Extents.
   /// </summary>
-  public static PositiveSize2DType? GetExtents(Transform? openXmlElement)
+  private static DocumentModel.Drawings.PositiveSize2DType? GetExtents(DocumentFormat.OpenXml.Drawing.ChartDrawing.Transform openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<Extents>();
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.Extents>();
     if (itemElement != null)
-      return PositiveSize2DTypeConverter.CreateModelElement(itemElement);
+      return DocumentModel.OpenXml.Drawings.PositiveSize2DTypeConverter.CreateModelElement(itemElement);
     return null;
   }
-
-  public static void SetExtents(Transform? openXmlElement, PositiveSize2DType? value)
+  
+  private static void SetExtents(DocumentFormat.OpenXml.Drawing.ChartDrawing.Transform openXmlElement, DocumentModel.Drawings.PositiveSize2DType? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Extents>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<Extents>();
+      itemElement = DocumentModel.OpenXml.Drawings.PositiveSize2DTypeConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Extents>(value);
       if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = PositiveSize2DTypeConverter.CreateOpenXmlElement<Extents>(value);
-        if (itemElement != null)
-          openXmlElement.AddChild(itemElement);
-      }
+        openXmlElement.AddChild(itemElement);
     }
   }
-
-  public static DocumentModel.Drawings.ChartDrawing.Transform? CreateModelElement(Transform? openXmlElement)
+  
+  public static DocumentModel.Drawings.ChartDrawing.Transform? CreateModelElement(DocumentFormat.OpenXml.Drawing.ChartDrawing.Transform? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -126,9 +112,9 @@ public static class TransformConverter
     }
     return null;
   }
-
+  
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.ChartDrawing.Transform? value)
-    where OpenXmlElementType : Transform, new()
+    where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.ChartDrawing.Transform, new()
   {
     if (value != null)
     {

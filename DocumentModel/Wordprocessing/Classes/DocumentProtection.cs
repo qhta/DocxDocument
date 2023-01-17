@@ -53,7 +53,7 @@ public class DocumentProtection
   /// <summary>
   ///   Cryptographic Algorithm Extensibility
   /// </summary>
-  public Byte[]? AlgorithmIdExtensibility { get; set; }
+  public NumId? AlgorithmIdExtensibility { get; set; }
 
   /// <summary>
   ///   Algorithm Extensibility Source
@@ -63,7 +63,7 @@ public class DocumentProtection
   /// <summary>
   ///   Cryptographic Provider Type Extensibility
   /// </summary>
-  public Byte[]? CryptographicProviderTypeExtensibility { get; set; }
+  public NumId? CryptographicProviderTypeExtensibility { get; set; }
 
   /// <summary>
   ///   Provider Type Extensibility Source

@@ -8,7 +8,7 @@ public class RgbColorModelHex
   /// <summary>
   ///   Value
   /// </summary>
-  public Byte[]? Val { get; set; }
+  public RGB? Val { get; set; }
 
   /// <summary>
   ///   legacySpreadsheetColorIndex, this property is only available in Office 2010 and later.

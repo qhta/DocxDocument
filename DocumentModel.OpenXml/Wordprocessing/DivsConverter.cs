@@ -1,38 +1,32 @@
-using DocumentModel.Wordprocessing;
-using Divs = DocumentFormat.OpenXml.Wordprocessing.Divs;
-
 namespace DocumentModel.OpenXml.Wordprocessing;
 
 /// <summary>
-///   Defines the Divs Class.
+/// Defines the Divs Class.
 /// </summary>
 public static class DivsConverter
 {
-  public static Div? GetDiv(Divs? openXmlElement)
+  private static DocumentModel.Wordprocessing.Div? GetDiv(DocumentFormat.OpenXml.Wordprocessing.Divs openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.Div>();
     if (itemElement != null)
-      return DivConverter.CreateModelElement(itemElement);
+      return DocumentModel.OpenXml.Wordprocessing.DivConverter.CreateModelElement(itemElement);
     return null;
   }
-
-  public static void SetDiv(Divs? openXmlElement, Div? value)
+  
+  private static void SetDiv(DocumentFormat.OpenXml.Wordprocessing.Divs openXmlElement, DocumentModel.Wordprocessing.Div? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.Div>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.Div>();
+      itemElement = DocumentModel.OpenXml.Wordprocessing.DivConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.Div>(value);
       if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = DivConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.Div>(value);
-        if (itemElement != null)
-          openXmlElement.AddChild(itemElement);
-      }
+        openXmlElement.AddChild(itemElement);
     }
   }
-
-  public static DocumentModel.Wordprocessing.Divs? CreateModelElement(Divs? openXmlElement)
+  
+  public static DocumentModel.Wordprocessing.Divs? CreateModelElement(DocumentFormat.OpenXml.Wordprocessing.Divs? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -42,9 +36,9 @@ public static class DivsConverter
     }
     return null;
   }
-
+  
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.Divs? value)
-    where OpenXmlElementType : Divs, new()
+    where OpenXmlElementType: DocumentFormat.OpenXml.Wordprocessing.Divs, new()
   {
     if (value != null)
     {

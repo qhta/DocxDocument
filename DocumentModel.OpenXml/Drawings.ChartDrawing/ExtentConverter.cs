@@ -1,41 +1,37 @@
-using DocumentFormat.OpenXml.Drawing.ChartDrawing;
-
 namespace DocumentModel.OpenXml.Drawings.ChartDrawing;
 
 /// <summary>
-///   Shape Extent.
+/// Shape Extent.
 /// </summary>
 public static class ExtentConverter
 {
   /// <summary>
-  ///   Extent Length
+  /// Extent Length
   /// </summary>
-  public static Int64? GetCx(Extent? openXmlElement)
+  private static Int64? GetCx(DocumentFormat.OpenXml.Drawing.ChartDrawing.Extent openXmlElement)
   {
-    return openXmlElement?.Cx?.Value;
+    return openXmlElement.Cx?.Value;
   }
-
-  public static void SetCx(Extent? openXmlElement, Int64? value)
+  
+  private static void SetCx(DocumentFormat.OpenXml.Drawing.ChartDrawing.Extent openXmlElement, Int64? value)
   {
-    if (openXmlElement != null)
-      openXmlElement.Cx = value;
+    openXmlElement.Cx = value;
   }
-
+  
   /// <summary>
-  ///   Extent Width
+  /// Extent Width
   /// </summary>
-  public static Int64? GetCy(Extent? openXmlElement)
+  private static Int64? GetCy(DocumentFormat.OpenXml.Drawing.ChartDrawing.Extent openXmlElement)
   {
-    return openXmlElement?.Cy?.Value;
+    return openXmlElement.Cy?.Value;
   }
-
-  public static void SetCy(Extent? openXmlElement, Int64? value)
+  
+  private static void SetCy(DocumentFormat.OpenXml.Drawing.ChartDrawing.Extent openXmlElement, Int64? value)
   {
-    if (openXmlElement != null)
-      openXmlElement.Cy = value;
+    openXmlElement.Cy = value;
   }
-
-  public static DocumentModel.Drawings.ChartDrawing.Extent? CreateModelElement(Extent? openXmlElement)
+  
+  public static DocumentModel.Drawings.ChartDrawing.Extent? CreateModelElement(DocumentFormat.OpenXml.Drawing.ChartDrawing.Extent? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -46,9 +42,9 @@ public static class ExtentConverter
     }
     return null;
   }
-
+  
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.ChartDrawing.Extent? value)
-    where OpenXmlElementType : Extent, new()
+    where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.ChartDrawing.Extent, new()
   {
     if (value != null)
     {

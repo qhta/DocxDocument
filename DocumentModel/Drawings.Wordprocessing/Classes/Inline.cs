@@ -28,12 +28,12 @@ public class Inline
   /// <summary>
   ///   anchorId, this property is only available in Office 2010 and later.
   /// </summary>
-  public Byte[]? AnchorId { get; set; }
+  public NumId? AnchorId { get; set; }
 
   /// <summary>
   ///   editId, this property is only available in Office 2010 and later.
   /// </summary>
-  public Byte[]? EditId { get; set; }
+  public NumId? EditId { get; set; }
 
   /// <summary>
   ///   Drawing Object Size.

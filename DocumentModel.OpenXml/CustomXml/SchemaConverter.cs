@@ -1,64 +1,59 @@
-using DocumentFormat.OpenXml.CustomXmlSchemaReferences;
-
 namespace DocumentModel.OpenXml.CustomXml;
 
 /// <summary>
-///   Custom XML Schema Reference.
+/// Custom XML Schema Reference.
 /// </summary>
 public static class SchemaConverter
 {
   /// <summary>
-  ///   Custom XML Schema Namespace
+  /// Custom XML Schema Namespace
   /// </summary>
-  public static String? GetUri(Schema? openXmlElement)
+  private static String? GetUri(DocumentFormat.OpenXml.CustomXmlSchemaReferences.Schema openXmlElement)
   {
     return openXmlElement?.Uri?.Value;
   }
-
-  public static void SetUri(Schema? openXmlElement, String? value)
+  
+  private static void SetUri(DocumentFormat.OpenXml.CustomXmlSchemaReferences.Schema openXmlElement, String? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.Uri = new StringValue { Value = value };
-      else
-        openXmlElement.Uri = null;
+    if (value != null)
+      openXmlElement.Uri = new StringValue { Value = value };
+    else
+      openXmlElement.Uri = null;
   }
-
+  
   /// <summary>
-  ///   Resource File Location
+  /// Resource File Location
   /// </summary>
-  public static String? GetManifestLocation(Schema? openXmlElement)
+  private static String? GetManifestLocation(DocumentFormat.OpenXml.CustomXmlSchemaReferences.Schema openXmlElement)
   {
     return openXmlElement?.ManifestLocation?.Value;
   }
-
-  public static void SetManifestLocation(Schema? openXmlElement, String? value)
+  
+  private static void SetManifestLocation(DocumentFormat.OpenXml.CustomXmlSchemaReferences.Schema openXmlElement, String? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.ManifestLocation = new StringValue { Value = value };
-      else
-        openXmlElement.ManifestLocation = null;
+    if (value != null)
+      openXmlElement.ManifestLocation = new StringValue { Value = value };
+    else
+      openXmlElement.ManifestLocation = null;
   }
-
+  
   /// <summary>
-  ///   Custom XML Schema Location
+  /// Custom XML Schema Location
   /// </summary>
-  public static String? GetSchemaLocation(Schema? openXmlElement)
+  private static String? GetSchemaLocation(DocumentFormat.OpenXml.CustomXmlSchemaReferences.Schema openXmlElement)
   {
     return openXmlElement?.SchemaLocation?.Value;
   }
-
-  public static void SetSchemaLocation(Schema? openXmlElement, String? value)
+  
+  private static void SetSchemaLocation(DocumentFormat.OpenXml.CustomXmlSchemaReferences.Schema openXmlElement, String? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.SchemaLocation = new StringValue { Value = value };
-      else
-        openXmlElement.SchemaLocation = null;
+    if (value != null)
+      openXmlElement.SchemaLocation = new StringValue { Value = value };
+    else
+      openXmlElement.SchemaLocation = null;
   }
-
-  public static DocumentModel.CustomXml.Schema? CreateModelElement(Schema? openXmlElement)
+  
+  public static DocumentModel.CustomXml.Schema? CreateModelElement(DocumentFormat.OpenXml.CustomXmlSchemaReferences.Schema? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -70,9 +65,9 @@ public static class SchemaConverter
     }
     return null;
   }
-
+  
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.CustomXml.Schema? value)
-    where OpenXmlElementType : Schema, new()
+    where OpenXmlElementType: DocumentFormat.OpenXml.CustomXmlSchemaReferences.Schema, new()
   {
     if (value != null)
     {

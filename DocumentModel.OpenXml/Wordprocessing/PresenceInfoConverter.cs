@@ -1,47 +1,43 @@
-using DocumentFormat.OpenXml.Office2013.Word;
-
 namespace DocumentModel.OpenXml.Wordprocessing;
 
 /// <summary>
-///   Defines the PresenceInfo Class.
+/// Defines the PresenceInfo Class.
 /// </summary>
 public static class PresenceInfoConverter
 {
   /// <summary>
-  ///   providerId, this property is only available in Office 2013 and later.
+  /// providerId, this property is only available in Office 2013 and later.
   /// </summary>
-  public static String? GetProviderId(PresenceInfo? openXmlElement)
+  private static String? GetProviderId(DocumentFormat.OpenXml.Office2013.Word.PresenceInfo openXmlElement)
   {
     return openXmlElement?.ProviderId?.Value;
   }
-
-  public static void SetProviderId(PresenceInfo? openXmlElement, String? value)
+  
+  private static void SetProviderId(DocumentFormat.OpenXml.Office2013.Word.PresenceInfo openXmlElement, String? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.ProviderId = new StringValue { Value = value };
-      else
-        openXmlElement.ProviderId = null;
+    if (value != null)
+      openXmlElement.ProviderId = new StringValue { Value = value };
+    else
+      openXmlElement.ProviderId = null;
   }
-
+  
   /// <summary>
-  ///   userId, this property is only available in Office 2013 and later.
+  /// userId, this property is only available in Office 2013 and later.
   /// </summary>
-  public static String? GetUserId(PresenceInfo? openXmlElement)
+  private static String? GetUserId(DocumentFormat.OpenXml.Office2013.Word.PresenceInfo openXmlElement)
   {
     return openXmlElement?.UserId?.Value;
   }
-
-  public static void SetUserId(PresenceInfo? openXmlElement, String? value)
+  
+  private static void SetUserId(DocumentFormat.OpenXml.Office2013.Word.PresenceInfo openXmlElement, String? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.UserId = new StringValue { Value = value };
-      else
-        openXmlElement.UserId = null;
+    if (value != null)
+      openXmlElement.UserId = new StringValue { Value = value };
+    else
+      openXmlElement.UserId = null;
   }
-
-  public static DocumentModel.Wordprocessing.PresenceInfo? CreateModelElement(PresenceInfo? openXmlElement)
+  
+  public static DocumentModel.Wordprocessing.PresenceInfo? CreateModelElement(DocumentFormat.OpenXml.Office2013.Word.PresenceInfo? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -52,9 +48,9 @@ public static class PresenceInfoConverter
     }
     return null;
   }
-
+  
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.PresenceInfo? value)
-    where OpenXmlElementType : PresenceInfo, new()
+    where OpenXmlElementType: DocumentFormat.OpenXml.Office2013.Word.PresenceInfo, new()
   {
     if (value != null)
     {

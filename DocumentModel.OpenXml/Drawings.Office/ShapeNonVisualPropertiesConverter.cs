@@ -1,68 +1,59 @@
-using DocumentModel.Drawings.Office;
-using ShapeNonVisualProperties = DocumentFormat.OpenXml.Office.Drawing.ShapeNonVisualProperties;
-
 namespace DocumentModel.OpenXml.Drawings.Office;
 
 /// <summary>
-///   Defines the ShapeNonVisualProperties Class.
+/// Defines the ShapeNonVisualProperties Class.
 /// </summary>
 public static class ShapeNonVisualPropertiesConverter
 {
   /// <summary>
-  ///   NonVisualDrawingProperties.
+  /// NonVisualDrawingProperties.
   /// </summary>
-  public static NonVisualDrawingProperties? GetNonVisualDrawingProperties(ShapeNonVisualProperties? openXmlElement)
+  private static DocumentModel.Drawings.Office.NonVisualDrawingProperties? GetNonVisualDrawingProperties(DocumentFormat.OpenXml.Office.Drawing.ShapeNonVisualProperties openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office.Drawing.NonVisualDrawingProperties>();
     if (itemElement != null)
-      return NonVisualDrawingPropertiesConverter.CreateModelElement(itemElement);
+      return DocumentModel.OpenXml.Drawings.Office.NonVisualDrawingPropertiesConverter.CreateModelElement(itemElement);
     return null;
   }
-
-  public static void SetNonVisualDrawingProperties(ShapeNonVisualProperties? openXmlElement, NonVisualDrawingProperties? value)
+  
+  private static void SetNonVisualDrawingProperties(DocumentFormat.OpenXml.Office.Drawing.ShapeNonVisualProperties openXmlElement, DocumentModel.Drawings.Office.NonVisualDrawingProperties? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office.Drawing.NonVisualDrawingProperties>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office.Drawing.NonVisualDrawingProperties>();
+      itemElement = DocumentModel.OpenXml.Drawings.Office.NonVisualDrawingPropertiesConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office.Drawing.NonVisualDrawingProperties>(value);
       if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = NonVisualDrawingPropertiesConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office.Drawing.NonVisualDrawingProperties>(value);
-        if (itemElement != null)
-          openXmlElement.AddChild(itemElement);
-      }
+        openXmlElement.AddChild(itemElement);
     }
   }
-
+  
   /// <summary>
-  ///   NonVisualDrawingShapeProperties.
+  /// NonVisualDrawingShapeProperties.
   /// </summary>
-  public static NonVisualDrawingShapeProperties? GetNonVisualDrawingShapeProperties(ShapeNonVisualProperties? openXmlElement)
+  private static DocumentModel.Drawings.Office.NonVisualDrawingShapeProperties? GetNonVisualDrawingShapeProperties(DocumentFormat.OpenXml.Office.Drawing.ShapeNonVisualProperties openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office.Drawing.NonVisualDrawingShapeProperties>();
     if (itemElement != null)
-      return NonVisualDrawingShapePropertiesConverter.CreateModelElement(itemElement);
+      return DocumentModel.OpenXml.Drawings.Office.NonVisualDrawingShapePropertiesConverter.CreateModelElement(itemElement);
     return null;
   }
-
-  public static void SetNonVisualDrawingShapeProperties(ShapeNonVisualProperties? openXmlElement, NonVisualDrawingShapeProperties? value)
+  
+  private static void SetNonVisualDrawingShapeProperties(DocumentFormat.OpenXml.Office.Drawing.ShapeNonVisualProperties openXmlElement, DocumentModel.Drawings.Office.NonVisualDrawingShapeProperties? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office.Drawing.NonVisualDrawingShapeProperties>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office.Drawing.NonVisualDrawingShapeProperties>();
+      itemElement = DocumentModel.OpenXml.Drawings.Office.NonVisualDrawingShapePropertiesConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office.Drawing.NonVisualDrawingShapeProperties>(value);
       if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = NonVisualDrawingShapePropertiesConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office.Drawing.NonVisualDrawingShapeProperties>(value);
-        if (itemElement != null)
-          openXmlElement.AddChild(itemElement);
-      }
+        openXmlElement.AddChild(itemElement);
     }
   }
-
-  public static DocumentModel.Drawings.Office.ShapeNonVisualProperties? CreateModelElement(ShapeNonVisualProperties? openXmlElement)
+  
+  public static DocumentModel.Drawings.Office.ShapeNonVisualProperties? CreateModelElement(DocumentFormat.OpenXml.Office.Drawing.ShapeNonVisualProperties? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -73,9 +64,9 @@ public static class ShapeNonVisualPropertiesConverter
     }
     return null;
   }
-
+  
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.Office.ShapeNonVisualProperties? value)
-    where OpenXmlElementType : ShapeNonVisualProperties, new()
+    where OpenXmlElementType: DocumentFormat.OpenXml.Office.Drawing.ShapeNonVisualProperties, new()
   {
     if (value != null)
     {

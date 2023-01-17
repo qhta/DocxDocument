@@ -1,110 +1,98 @@
-using DocumentFormat.OpenXml.Wordprocessing;
-using Column = DocumentModel.Wordprocessing.Column;
-
 namespace DocumentModel.OpenXml.Wordprocessing;
 
 /// <summary>
-///   Defines the Columns Class.
+/// Defines the Columns Class.
 /// </summary>
 public static class ColumnsConverter
 {
   /// <summary>
-  ///   Equal Column Widths
+  /// Equal Column Widths
   /// </summary>
-  public static Boolean? GetEqualWidth(Columns? openXmlElement)
+  private static Boolean? GetEqualWidth(DocumentFormat.OpenXml.Wordprocessing.Columns openXmlElement)
   {
     return openXmlElement?.EqualWidth?.Value;
   }
-
-  public static void SetEqualWidth(Columns? openXmlElement, Boolean? value)
+  
+  private static void SetEqualWidth(DocumentFormat.OpenXml.Wordprocessing.Columns openXmlElement, Boolean? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.EqualWidth = new OnOffValue { Value = (Boolean)value };
-      else
-        openXmlElement.EqualWidth = null;
+    if (value != null)
+      openXmlElement.EqualWidth = new OnOffValue { Value = (Boolean)value };
+    else
+      openXmlElement.EqualWidth = null;
   }
-
+  
   /// <summary>
-  ///   Spacing Between Equal Width Columns
+  /// Spacing Between Equal Width Columns
   /// </summary>
-  public static String? GetSpace(Columns? openXmlElement)
+  private static String? GetSpace(DocumentFormat.OpenXml.Wordprocessing.Columns openXmlElement)
   {
     return openXmlElement?.Space?.Value;
   }
-
-  public static void SetSpace(Columns? openXmlElement, String? value)
+  
+  private static void SetSpace(DocumentFormat.OpenXml.Wordprocessing.Columns openXmlElement, String? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.Space = new StringValue { Value = value };
-      else
-        openXmlElement.Space = null;
+    if (value != null)
+      openXmlElement.Space = new StringValue { Value = value };
+    else
+      openXmlElement.Space = null;
   }
-
+  
   /// <summary>
-  ///   Number of Equal Width Columns
+  /// Number of Equal Width Columns
   /// </summary>
-  public static Int16? GetColumnCount(Columns? openXmlElement)
+  private static Int16? GetColumnCount(DocumentFormat.OpenXml.Wordprocessing.Columns openXmlElement)
   {
-    return openXmlElement?.ColumnCount?.Value;
+    return openXmlElement.ColumnCount?.Value;
   }
-
-  public static void SetColumnCount(Columns? openXmlElement, Int16? value)
+  
+  private static void SetColumnCount(DocumentFormat.OpenXml.Wordprocessing.Columns openXmlElement, Int16? value)
   {
-    if (openXmlElement != null)
-      openXmlElement.ColumnCount = value;
+    openXmlElement.ColumnCount = value;
   }
-
+  
   /// <summary>
-  ///   Draw Line Between Columns
+  /// Draw Line Between Columns
   /// </summary>
-  public static Boolean? GetSeparator(Columns? openXmlElement)
+  private static Boolean? GetSeparator(DocumentFormat.OpenXml.Wordprocessing.Columns openXmlElement)
   {
     return openXmlElement?.Separator?.Value;
   }
-
-  public static void SetSeparator(Columns? openXmlElement, Boolean? value)
+  
+  private static void SetSeparator(DocumentFormat.OpenXml.Wordprocessing.Columns openXmlElement, Boolean? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.Separator = new OnOffValue { Value = (Boolean)value };
-      else
-        openXmlElement.Separator = null;
+    if (value != null)
+      openXmlElement.Separator = new OnOffValue { Value = (Boolean)value };
+    else
+      openXmlElement.Separator = null;
   }
-
-  public static Collection<Column>? GetItems(Columns? openXmlElement)
+  
+  private static System.Collections.ObjectModel.Collection<DocumentModel.Wordprocessing.Column> GetItems(DocumentFormat.OpenXml.Wordprocessing.Columns openXmlElement)
   {
-    if (openXmlElement != null)
+    var collection = new System.Collections.ObjectModel.Collection<DocumentModel.Wordprocessing.Column>();
+    foreach (var item in openXmlElement.Elements<DocumentFormat.OpenXml.Wordprocessing.Column>())
     {
-      var collection = new Collection<Column>();
-      foreach (var item in openXmlElement.Elements<DocumentFormat.OpenXml.Wordprocessing.Column>())
+      var newItem = DocumentModel.OpenXml.Wordprocessing.ColumnConverter.CreateModelElement(item);
+      if (newItem != null)
+        collection.Add(newItem);
+    }
+    return collection;
+  }
+  
+  private static void SetItems(DocumentFormat.OpenXml.Wordprocessing.Columns openXmlElement, System.Collections.ObjectModel.Collection<DocumentModel.Wordprocessing.Column>? value)
+  {
+    openXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Wordprocessing.Column>();
+    if (value != null)
+    {
+      foreach (var item in value)
       {
-        var newItem = ColumnConverter.CreateModelElement(item);
+        var newItem = DocumentModel.OpenXml.Wordprocessing.ColumnConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.Column>(item);
         if (newItem != null)
-          collection.Add(newItem);
+          openXmlElement.AddChild(newItem);
       }
-      return collection;
-    }
-    return null;
-  }
-
-  public static void SetItems(Columns? openXmlElement, Collection<Column>? value)
-  {
-    if (openXmlElement != null)
-    {
-      openXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Wordprocessing.Column>();
-      if (value != null)
-        foreach (var item in value)
-        {
-          var newItem = ColumnConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.Column>(item);
-          if (newItem != null)
-            openXmlElement.AddChild(newItem);
-        }
     }
   }
-
-  public static DocumentModel.Wordprocessing.Columns? CreateModelElement(Columns? openXmlElement)
+  
+  public static DocumentModel.Wordprocessing.Columns? CreateModelElement(DocumentFormat.OpenXml.Wordprocessing.Columns? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -118,9 +106,9 @@ public static class ColumnsConverter
     }
     return null;
   }
-
+  
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.Columns? value)
-    where OpenXmlElementType : Columns, new()
+    where OpenXmlElementType: DocumentFormat.OpenXml.Wordprocessing.Columns, new()
   {
     if (value != null)
     {
