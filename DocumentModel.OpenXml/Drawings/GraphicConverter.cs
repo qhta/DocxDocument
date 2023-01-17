@@ -1,41 +1,35 @@
-using DocumentModel.Drawings;
-using Graphic = DocumentFormat.OpenXml.Drawing.Graphic;
-
 namespace DocumentModel.OpenXml.Drawings;
 
 /// <summary>
-///   Graphic Object.
+/// Graphic Object.
 /// </summary>
 public static class GraphicConverter
 {
   /// <summary>
-  ///   Graphic Object Data.
+  /// Graphic Object Data.
   /// </summary>
-  public static GraphicData? GetGraphicData(Graphic? openXmlElement)
+  private static DocumentModel.Drawings.GraphicData? GetGraphicData(DocumentFormat.OpenXml.Drawing.Graphic openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.GraphicData>();
     if (itemElement != null)
-      return GraphicDataConverter.CreateModelElement(itemElement);
+      return DocumentModel.OpenXml.Drawings.GraphicDataConverter.CreateModelElement(itemElement);
     return null;
   }
-
-  public static void SetGraphicData(Graphic? openXmlElement, GraphicData? value)
+  
+  private static void SetGraphicData(DocumentFormat.OpenXml.Drawing.Graphic openXmlElement, DocumentModel.Drawings.GraphicData? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.GraphicData>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.GraphicData>();
+      itemElement = DocumentModel.OpenXml.Drawings.GraphicDataConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.GraphicData>(value);
       if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = GraphicDataConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.GraphicData>(value);
-        if (itemElement != null)
-          openXmlElement.AddChild(itemElement);
-      }
+        openXmlElement.AddChild(itemElement);
     }
   }
-
-  public static DocumentModel.Drawings.Graphic? CreateModelElement(Graphic? openXmlElement)
+  
+  public static DocumentModel.Drawings.Graphic? CreateModelElement(DocumentFormat.OpenXml.Drawing.Graphic? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -45,9 +39,9 @@ public static class GraphicConverter
     }
     return null;
   }
-
+  
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.Graphic? value)
-    where OpenXmlElementType : Graphic, new()
+    where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.Graphic, new()
   {
     if (value != null)
     {

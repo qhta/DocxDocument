@@ -1,145 +1,127 @@
-using DocumentFormat.OpenXml.Wordprocessing;
-using DocumentModel.Wordprocessing;
-using FieldChar = DocumentFormat.OpenXml.Wordprocessing.FieldChar;
-using FormFieldData = DocumentModel.Wordprocessing.FormFieldData;
-using NumberingChange = DocumentModel.Wordprocessing.NumberingChange;
-
 namespace DocumentModel.OpenXml.Wordprocessing;
 
 /// <summary>
-///   Complex Field Character.
+/// Complex Field Character.
 /// </summary>
 public static class FieldCharConverter
 {
   /// <summary>
-  ///   Field Character Type
+  /// Field Character Type
   /// </summary>
-  public static FieldCharKind? GetFieldCharType(FieldChar? openXmlElement)
+  private static DocumentModel.Wordprocessing.FieldCharKind? GetFieldCharType(DocumentFormat.OpenXml.Wordprocessing.FieldChar openXmlElement)
   {
-    return EnumValueConverter.GetValue<FieldCharValues, FieldCharKind>(openXmlElement?.FieldCharType?.Value);
+    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Wordprocessing.FieldCharValues, DocumentModel.Wordprocessing.FieldCharKind>(openXmlElement?.FieldCharType?.Value);
   }
-
-  public static void SetFieldCharType(FieldChar? openXmlElement, FieldCharKind? value)
+  
+  private static void SetFieldCharType(DocumentFormat.OpenXml.Wordprocessing.FieldChar openXmlElement, DocumentModel.Wordprocessing.FieldCharKind? value)
   {
-    if (openXmlElement != null)
-      openXmlElement.FieldCharType = EnumValueConverter.CreateEnumValue<FieldCharValues, FieldCharKind>(value);
+    openXmlElement.FieldCharType = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Wordprocessing.FieldCharValues, DocumentModel.Wordprocessing.FieldCharKind>(value);
   }
-
+  
   /// <summary>
-  ///   Field Should Not Be Recalculated
+  /// Field Should Not Be Recalculated
   /// </summary>
-  public static Boolean? GetFieldLock(FieldChar? openXmlElement)
+  private static Boolean? GetFieldLock(DocumentFormat.OpenXml.Wordprocessing.FieldChar openXmlElement)
   {
     return openXmlElement?.FieldLock?.Value;
   }
-
-  public static void SetFieldLock(FieldChar? openXmlElement, Boolean? value)
+  
+  private static void SetFieldLock(DocumentFormat.OpenXml.Wordprocessing.FieldChar openXmlElement, Boolean? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.FieldLock = new OnOffValue { Value = (Boolean)value };
-      else
-        openXmlElement.FieldLock = null;
+    if (value != null)
+      openXmlElement.FieldLock = new OnOffValue { Value = (Boolean)value };
+    else
+      openXmlElement.FieldLock = null;
   }
-
+  
   /// <summary>
-  ///   Field Result Invalidated
+  /// Field Result Invalidated
   /// </summary>
-  public static Boolean? GetDirty(FieldChar? openXmlElement)
+  private static Boolean? GetDirty(DocumentFormat.OpenXml.Wordprocessing.FieldChar openXmlElement)
   {
     return openXmlElement?.Dirty?.Value;
   }
-
-  public static void SetDirty(FieldChar? openXmlElement, Boolean? value)
+  
+  private static void SetDirty(DocumentFormat.OpenXml.Wordprocessing.FieldChar openXmlElement, Boolean? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.Dirty = new OnOffValue { Value = (Boolean)value };
-      else
-        openXmlElement.Dirty = null;
+    if (value != null)
+      openXmlElement.Dirty = new OnOffValue { Value = (Boolean)value };
+    else
+      openXmlElement.Dirty = null;
   }
-
+  
   /// <summary>
-  ///   Custom Field Data.
+  /// Custom Field Data.
   /// </summary>
-  public static String? GetFieldData(FieldChar? openXmlElement)
+  private static String? GetFieldData(DocumentFormat.OpenXml.Wordprocessing.FieldChar openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<FieldData>();
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.FieldData>();
     if (itemElement != null)
       return itemElement.Text;
     return null;
   }
-
-  public static void SetFieldData(FieldChar? openXmlElement, String? value)
+  
+  private static void SetFieldData(DocumentFormat.OpenXml.Wordprocessing.FieldChar openXmlElement, String? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.FieldData>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<FieldData>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = new FieldData { Text = value };
-        openXmlElement.AddChild(itemElement);
-      }
+      itemElement = new DocumentFormat.OpenXml.Wordprocessing.FieldData { Text = value };
+      openXmlElement.AddChild(itemElement);
     }
   }
-
+  
   /// <summary>
-  ///   Form Field Properties.
+  /// Form Field Properties.
   /// </summary>
-  public static FormFieldData? GetFormFieldData(FieldChar? openXmlElement)
+  private static DocumentModel.Wordprocessing.FormFieldData? GetFormFieldData(DocumentFormat.OpenXml.Wordprocessing.FieldChar openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.FormFieldData>();
     if (itemElement != null)
-      return FormFieldDataConverter.CreateModelElement(itemElement);
+      return DocumentModel.OpenXml.Wordprocessing.FormFieldDataConverter.CreateModelElement(itemElement);
     return null;
   }
-
-  public static void SetFormFieldData(FieldChar? openXmlElement, FormFieldData? value)
+  
+  private static void SetFormFieldData(DocumentFormat.OpenXml.Wordprocessing.FieldChar openXmlElement, DocumentModel.Wordprocessing.FormFieldData? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.FormFieldData>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.FormFieldData>();
+      itemElement = DocumentModel.OpenXml.Wordprocessing.FormFieldDataConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.FormFieldData>(value);
       if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = FormFieldDataConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.FormFieldData>(value);
-        if (itemElement != null)
-          openXmlElement.AddChild(itemElement);
-      }
+        openXmlElement.AddChild(itemElement);
     }
   }
-
+  
   /// <summary>
-  ///   Previous Numbering Field Properties.
+  /// Previous Numbering Field Properties.
   /// </summary>
-  public static NumberingChange? GetNumberingChange(FieldChar? openXmlElement)
+  private static DocumentModel.Wordprocessing.NumberingChange? GetNumberingChange(DocumentFormat.OpenXml.Wordprocessing.FieldChar openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.NumberingChange>();
     if (itemElement != null)
-      return NumberingChangeConverter.CreateModelElement(itemElement);
+      return DocumentModel.OpenXml.Wordprocessing.NumberingChangeConverter.CreateModelElement(itemElement);
     return null;
   }
-
-  public static void SetNumberingChange(FieldChar? openXmlElement, NumberingChange? value)
+  
+  private static void SetNumberingChange(DocumentFormat.OpenXml.Wordprocessing.FieldChar openXmlElement, DocumentModel.Wordprocessing.NumberingChange? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.NumberingChange>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.NumberingChange>();
+      itemElement = DocumentModel.OpenXml.Wordprocessing.NumberingChangeConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.NumberingChange>(value);
       if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = NumberingChangeConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.NumberingChange>(value);
-        if (itemElement != null)
-          openXmlElement.AddChild(itemElement);
-      }
+        openXmlElement.AddChild(itemElement);
     }
   }
-
-  public static DocumentModel.Wordprocessing.FieldChar? CreateModelElement(FieldChar? openXmlElement)
+  
+  public static DocumentModel.Wordprocessing.FieldChar? CreateModelElement(DocumentFormat.OpenXml.Wordprocessing.FieldChar? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -154,9 +136,9 @@ public static class FieldCharConverter
     }
     return null;
   }
-
+  
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.FieldChar? value)
-    where OpenXmlElementType : FieldChar, new()
+    where OpenXmlElementType: DocumentFormat.OpenXml.Wordprocessing.FieldChar, new()
   {
     if (value != null)
     {

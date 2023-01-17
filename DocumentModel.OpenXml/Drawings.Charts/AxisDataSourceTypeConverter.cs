@@ -1,149 +1,131 @@
-using DocumentModel.Drawings.Charts;
-using AxisDataSourceType = DocumentFormat.OpenXml.Drawing.Charts.AxisDataSourceType;
-
 namespace DocumentModel.OpenXml.Drawings.Charts;
 
 /// <summary>
-///   Defines the AxisDataSourceType Class.
+/// Defines the AxisDataSourceType Class.
 /// </summary>
 public static class AxisDataSourceTypeConverter
 {
   /// <summary>
-  ///   Multi Level String Reference.
+  /// Multi Level String Reference.
   /// </summary>
-  public static MultiLevelStringReference? GetMultiLevelStringReference(AxisDataSourceType? openXmlElement)
+  private static DocumentModel.Drawings.Charts.MultiLevelStringReference? GetMultiLevelStringReference(DocumentFormat.OpenXml.Drawing.Charts.AxisDataSourceType openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.MultiLevelStringReference>();
     if (itemElement != null)
-      return MultiLevelStringReferenceConverter.CreateModelElement(itemElement);
+      return DocumentModel.OpenXml.Drawings.Charts.MultiLevelStringReferenceConverter.CreateModelElement(itemElement);
     return null;
   }
-
-  public static void SetMultiLevelStringReference(AxisDataSourceType? openXmlElement, MultiLevelStringReference? value)
+  
+  private static void SetMultiLevelStringReference(DocumentFormat.OpenXml.Drawing.Charts.AxisDataSourceType openXmlElement, DocumentModel.Drawings.Charts.MultiLevelStringReference? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.MultiLevelStringReference>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.MultiLevelStringReference>();
+      itemElement = DocumentModel.OpenXml.Drawings.Charts.MultiLevelStringReferenceConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Charts.MultiLevelStringReference>(value);
       if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = MultiLevelStringReferenceConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Charts.MultiLevelStringReference>(value);
-        if (itemElement != null)
-          openXmlElement.AddChild(itemElement);
-      }
+        openXmlElement.AddChild(itemElement);
     }
   }
-
+  
   /// <summary>
-  ///   Number Reference.
+  /// Number Reference.
   /// </summary>
-  public static NumberReference? GetNumberReference(AxisDataSourceType? openXmlElement)
+  private static DocumentModel.Drawings.Charts.NumberReference? GetNumberReference(DocumentFormat.OpenXml.Drawing.Charts.AxisDataSourceType openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.NumberReference>();
     if (itemElement != null)
-      return NumberReferenceConverter.CreateModelElement(itemElement);
+      return DocumentModel.OpenXml.Drawings.Charts.NumberReferenceConverter.CreateModelElement(itemElement);
     return null;
   }
-
-  public static void SetNumberReference(AxisDataSourceType? openXmlElement, NumberReference? value)
+  
+  private static void SetNumberReference(DocumentFormat.OpenXml.Drawing.Charts.AxisDataSourceType openXmlElement, DocumentModel.Drawings.Charts.NumberReference? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.NumberReference>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.NumberReference>();
+      itemElement = DocumentModel.OpenXml.Drawings.Charts.NumberReferenceConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Charts.NumberReference>(value);
       if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = NumberReferenceConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Charts.NumberReference>(value);
-        if (itemElement != null)
-          openXmlElement.AddChild(itemElement);
-      }
+        openXmlElement.AddChild(itemElement);
     }
   }
-
+  
   /// <summary>
-  ///   Number Literal.
+  /// Number Literal.
   /// </summary>
-  public static NumberLiteral? GetNumberLiteral(AxisDataSourceType? openXmlElement)
+  private static DocumentModel.Drawings.Charts.NumberLiteral? GetNumberLiteral(DocumentFormat.OpenXml.Drawing.Charts.AxisDataSourceType openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.NumberLiteral>();
     if (itemElement != null)
-      return NumberLiteralConverter.CreateModelElement(itemElement);
+      return DocumentModel.OpenXml.Drawings.Charts.NumberLiteralConverter.CreateModelElement(itemElement);
     return null;
   }
-
-  public static void SetNumberLiteral(AxisDataSourceType? openXmlElement, NumberLiteral? value)
+  
+  private static void SetNumberLiteral(DocumentFormat.OpenXml.Drawing.Charts.AxisDataSourceType openXmlElement, DocumentModel.Drawings.Charts.NumberLiteral? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.NumberLiteral>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.NumberLiteral>();
+      itemElement = DocumentModel.OpenXml.Drawings.Charts.NumberLiteralConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Charts.NumberLiteral>(value);
       if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = NumberLiteralConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Charts.NumberLiteral>(value);
-        if (itemElement != null)
-          openXmlElement.AddChild(itemElement);
-      }
+        openXmlElement.AddChild(itemElement);
     }
   }
-
+  
   /// <summary>
-  ///   StringReference.
+  /// StringReference.
   /// </summary>
-  public static StringReference? GetStringReference(AxisDataSourceType? openXmlElement)
+  private static DocumentModel.Drawings.Charts.StringReference? GetStringReference(DocumentFormat.OpenXml.Drawing.Charts.AxisDataSourceType openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.StringReference>();
     if (itemElement != null)
-      return StringReferenceConverter.CreateModelElement(itemElement);
+      return DocumentModel.OpenXml.Drawings.Charts.StringReferenceConverter.CreateModelElement(itemElement);
     return null;
   }
-
-  public static void SetStringReference(AxisDataSourceType? openXmlElement, StringReference? value)
+  
+  private static void SetStringReference(DocumentFormat.OpenXml.Drawing.Charts.AxisDataSourceType openXmlElement, DocumentModel.Drawings.Charts.StringReference? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.StringReference>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.StringReference>();
+      itemElement = DocumentModel.OpenXml.Drawings.Charts.StringReferenceConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Charts.StringReference>(value);
       if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = StringReferenceConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Charts.StringReference>(value);
-        if (itemElement != null)
-          openXmlElement.AddChild(itemElement);
-      }
+        openXmlElement.AddChild(itemElement);
     }
   }
-
+  
   /// <summary>
-  ///   String Literal.
+  /// String Literal.
   /// </summary>
-  public static StringLiteral? GetStringLiteral(AxisDataSourceType? openXmlElement)
+  private static DocumentModel.Drawings.Charts.StringLiteral? GetStringLiteral(DocumentFormat.OpenXml.Drawing.Charts.AxisDataSourceType openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.StringLiteral>();
     if (itemElement != null)
-      return StringLiteralConverter.CreateModelElement(itemElement);
+      return DocumentModel.OpenXml.Drawings.Charts.StringLiteralConverter.CreateModelElement(itemElement);
     return null;
   }
-
-  public static void SetStringLiteral(AxisDataSourceType? openXmlElement, StringLiteral? value)
+  
+  private static void SetStringLiteral(DocumentFormat.OpenXml.Drawing.Charts.AxisDataSourceType openXmlElement, DocumentModel.Drawings.Charts.StringLiteral? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.StringLiteral>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.StringLiteral>();
+      itemElement = DocumentModel.OpenXml.Drawings.Charts.StringLiteralConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Charts.StringLiteral>(value);
       if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = StringLiteralConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Charts.StringLiteral>(value);
-        if (itemElement != null)
-          openXmlElement.AddChild(itemElement);
-      }
+        openXmlElement.AddChild(itemElement);
     }
   }
-
-  public static DocumentModel.Drawings.Charts.AxisDataSourceType? CreateModelElement(AxisDataSourceType? openXmlElement)
+  
+  public static DocumentModel.Drawings.Charts.AxisDataSourceType? CreateModelElement(DocumentFormat.OpenXml.Drawing.Charts.AxisDataSourceType? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -157,9 +139,9 @@ public static class AxisDataSourceTypeConverter
     }
     return null;
   }
-
+  
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.Charts.AxisDataSourceType? value)
-    where OpenXmlElementType : AxisDataSourceType, new()
+    where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.Charts.AxisDataSourceType, new()
   {
     if (value != null)
     {

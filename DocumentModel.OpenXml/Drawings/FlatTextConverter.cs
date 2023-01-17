@@ -1,27 +1,24 @@
-using DocumentFormat.OpenXml.Drawing;
-
 namespace DocumentModel.OpenXml.Drawings;
 
 /// <summary>
-///   No text in 3D scene.
+/// No text in 3D scene.
 /// </summary>
 public static class FlatTextConverter
 {
   /// <summary>
-  ///   Z Coordinate
+  /// Z Coordinate
   /// </summary>
-  public static Int64? GetZ(FlatText? openXmlElement)
+  private static Int64? GetZ(DocumentFormat.OpenXml.Drawing.FlatText openXmlElement)
   {
-    return openXmlElement?.Z?.Value;
+    return openXmlElement.Z?.Value;
   }
-
-  public static void SetZ(FlatText? openXmlElement, Int64? value)
+  
+  private static void SetZ(DocumentFormat.OpenXml.Drawing.FlatText openXmlElement, Int64? value)
   {
-    if (openXmlElement != null)
-      openXmlElement.Z = value;
+    openXmlElement.Z = value;
   }
-
-  public static DocumentModel.Drawings.FlatText? CreateModelElement(FlatText? openXmlElement)
+  
+  public static DocumentModel.Drawings.FlatText? CreateModelElement(DocumentFormat.OpenXml.Drawing.FlatText? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -31,9 +28,9 @@ public static class FlatTextConverter
     }
     return null;
   }
-
+  
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.FlatText? value)
-    where OpenXmlElementType : FlatText, new()
+    where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.FlatText, new()
   {
     if (value != null)
     {

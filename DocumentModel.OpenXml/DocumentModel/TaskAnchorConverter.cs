@@ -1,78 +1,72 @@
 namespace DocumentModel.OpenXml;
 
 /// <summary>
-///   Defines the TaskAnchor Class.
+/// Defines the TaskAnchor Class.
 /// </summary>
 public static class TaskAnchorConverter
 {
   /// <summary>
-  ///   CommentAnchor.
+  /// CommentAnchor.
   /// </summary>
-  public static CommentAnchor? GetCommentAnchor(DocumentFormat.OpenXml.Office2021.DocumentTasks.TaskAnchor? openXmlElement)
+  private static DocumentModel.CommentAnchor? GetCommentAnchor(DocumentFormat.OpenXml.Office2021.DocumentTasks.TaskAnchor openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office2021.DocumentTasks.CommentAnchor>();
     if (itemElement != null)
-      return CommentAnchorConverter.CreateModelElement(itemElement);
+      return DocumentModel.OpenXml.CommentAnchorConverter.CreateModelElement(itemElement);
     return null;
   }
-
-  public static void SetCommentAnchor(DocumentFormat.OpenXml.Office2021.DocumentTasks.TaskAnchor? openXmlElement, CommentAnchor? value)
+  
+  private static void SetCommentAnchor(DocumentFormat.OpenXml.Office2021.DocumentTasks.TaskAnchor openXmlElement, DocumentModel.CommentAnchor? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2021.DocumentTasks.CommentAnchor>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2021.DocumentTasks.CommentAnchor>();
+      itemElement = DocumentModel.OpenXml.CommentAnchorConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2021.DocumentTasks.CommentAnchor>(value);
       if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = CommentAnchorConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2021.DocumentTasks.CommentAnchor>(value);
-        if (itemElement != null)
-          openXmlElement.AddChild(itemElement);
-      }
+        openXmlElement.AddChild(itemElement);
     }
   }
-
+  
   /// <summary>
-  ///   ExtensionList.
+  /// ExtensionList.
   /// </summary>
-  public static ExtensionList? GetExtensionList(DocumentFormat.OpenXml.Office2021.DocumentTasks.TaskAnchor? openXmlElement)
+  private static DocumentModel.ExtensionList? GetExtensionList(DocumentFormat.OpenXml.Office2021.DocumentTasks.TaskAnchor openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office2021.DocumentTasks.ExtensionList>();
     if (itemElement != null)
-      return ExtensionListConverter.CreateModelElement(itemElement);
+      return DocumentModel.OpenXml.ExtensionListConverter.CreateModelElement(itemElement);
     return null;
   }
-
-  public static void SetExtensionList(DocumentFormat.OpenXml.Office2021.DocumentTasks.TaskAnchor? openXmlElement, ExtensionList? value)
+  
+  private static void SetExtensionList(DocumentFormat.OpenXml.Office2021.DocumentTasks.TaskAnchor openXmlElement, DocumentModel.ExtensionList? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2021.DocumentTasks.ExtensionList>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2021.DocumentTasks.ExtensionList>();
+      itemElement = DocumentModel.OpenXml.ExtensionListConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2021.DocumentTasks.ExtensionList>(value);
       if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = ExtensionListConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2021.DocumentTasks.ExtensionList>(value);
-        if (itemElement != null)
-          openXmlElement.AddChild(itemElement);
-      }
+        openXmlElement.AddChild(itemElement);
     }
   }
-
-  public static TaskAnchor? CreateModelElement(DocumentFormat.OpenXml.Office2021.DocumentTasks.TaskAnchor? openXmlElement)
+  
+  public static DocumentModel.TaskAnchor? CreateModelElement(DocumentFormat.OpenXml.Office2021.DocumentTasks.TaskAnchor? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new TaskAnchor();
+      var value = new DocumentModel.TaskAnchor();
       value.CommentAnchor = GetCommentAnchor(openXmlElement);
       value.ExtensionList = GetExtensionList(openXmlElement);
       return value;
     }
     return null;
   }
-
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(TaskAnchor? value)
-    where OpenXmlElementType : DocumentFormat.OpenXml.Office2021.DocumentTasks.TaskAnchor, new()
+  
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.TaskAnchor? value)
+    where OpenXmlElementType: DocumentFormat.OpenXml.Office2021.DocumentTasks.TaskAnchor, new()
   {
     if (value != null)
     {

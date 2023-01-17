@@ -1,234 +1,219 @@
-using DocumentFormat.OpenXml.Wordprocessing;
-
 namespace DocumentModel.OpenXml.Wordprocessing;
 
 /// <summary>
-///   Defines the ConditionalFormatStyle Class.
+/// Defines the ConditionalFormatStyle Class.
 /// </summary>
 public static class ConditionalFormatStyleConverter
 {
   /// <summary>
-  ///   Conditional Formatting Bit Mask
+  /// Conditional Formatting Bit Mask
   /// </summary>
-  public static String? GetVal(ConditionalFormatStyle? openXmlElement)
+  private static String? GetVal(DocumentFormat.OpenXml.Wordprocessing.ConditionalFormatStyle openXmlElement)
   {
     return openXmlElement?.Val?.Value;
   }
-
-  public static void SetVal(ConditionalFormatStyle? openXmlElement, String? value)
+  
+  private static void SetVal(DocumentFormat.OpenXml.Wordprocessing.ConditionalFormatStyle openXmlElement, String? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.Val = new StringValue { Value = value };
-      else
-        openXmlElement.Val = null;
+    if (value != null)
+      openXmlElement.Val = new StringValue { Value = value };
+    else
+      openXmlElement.Val = null;
   }
-
+  
   /// <summary>
-  ///   firstRow, this property is only available in Office 2010 and later.
+  /// firstRow, this property is only available in Office 2010 and later.
   /// </summary>
-  public static Boolean? GetFirstRow(ConditionalFormatStyle? openXmlElement)
+  private static Boolean? GetFirstRow(DocumentFormat.OpenXml.Wordprocessing.ConditionalFormatStyle openXmlElement)
   {
     return openXmlElement?.FirstRow?.Value;
   }
-
-  public static void SetFirstRow(ConditionalFormatStyle? openXmlElement, Boolean? value)
+  
+  private static void SetFirstRow(DocumentFormat.OpenXml.Wordprocessing.ConditionalFormatStyle openXmlElement, Boolean? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.FirstRow = new OnOffValue { Value = (Boolean)value };
-      else
-        openXmlElement.FirstRow = null;
+    if (value != null)
+      openXmlElement.FirstRow = new OnOffValue { Value = (Boolean)value };
+    else
+      openXmlElement.FirstRow = null;
   }
-
+  
   /// <summary>
-  ///   lastRow, this property is only available in Office 2010 and later.
+  /// lastRow, this property is only available in Office 2010 and later.
   /// </summary>
-  public static Boolean? GetLastRow(ConditionalFormatStyle? openXmlElement)
+  private static Boolean? GetLastRow(DocumentFormat.OpenXml.Wordprocessing.ConditionalFormatStyle openXmlElement)
   {
     return openXmlElement?.LastRow?.Value;
   }
-
-  public static void SetLastRow(ConditionalFormatStyle? openXmlElement, Boolean? value)
+  
+  private static void SetLastRow(DocumentFormat.OpenXml.Wordprocessing.ConditionalFormatStyle openXmlElement, Boolean? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.LastRow = new OnOffValue { Value = (Boolean)value };
-      else
-        openXmlElement.LastRow = null;
+    if (value != null)
+      openXmlElement.LastRow = new OnOffValue { Value = (Boolean)value };
+    else
+      openXmlElement.LastRow = null;
   }
-
+  
   /// <summary>
-  ///   firstColumn, this property is only available in Office 2010 and later.
+  /// firstColumn, this property is only available in Office 2010 and later.
   /// </summary>
-  public static Boolean? GetFirstColumn(ConditionalFormatStyle? openXmlElement)
+  private static Boolean? GetFirstColumn(DocumentFormat.OpenXml.Wordprocessing.ConditionalFormatStyle openXmlElement)
   {
     return openXmlElement?.FirstColumn?.Value;
   }
-
-  public static void SetFirstColumn(ConditionalFormatStyle? openXmlElement, Boolean? value)
+  
+  private static void SetFirstColumn(DocumentFormat.OpenXml.Wordprocessing.ConditionalFormatStyle openXmlElement, Boolean? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.FirstColumn = new OnOffValue { Value = (Boolean)value };
-      else
-        openXmlElement.FirstColumn = null;
+    if (value != null)
+      openXmlElement.FirstColumn = new OnOffValue { Value = (Boolean)value };
+    else
+      openXmlElement.FirstColumn = null;
   }
-
+  
   /// <summary>
-  ///   lastColumn, this property is only available in Office 2010 and later.
+  /// lastColumn, this property is only available in Office 2010 and later.
   /// </summary>
-  public static Boolean? GetLastColumn(ConditionalFormatStyle? openXmlElement)
+  private static Boolean? GetLastColumn(DocumentFormat.OpenXml.Wordprocessing.ConditionalFormatStyle openXmlElement)
   {
     return openXmlElement?.LastColumn?.Value;
   }
-
-  public static void SetLastColumn(ConditionalFormatStyle? openXmlElement, Boolean? value)
+  
+  private static void SetLastColumn(DocumentFormat.OpenXml.Wordprocessing.ConditionalFormatStyle openXmlElement, Boolean? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.LastColumn = new OnOffValue { Value = (Boolean)value };
-      else
-        openXmlElement.LastColumn = null;
+    if (value != null)
+      openXmlElement.LastColumn = new OnOffValue { Value = (Boolean)value };
+    else
+      openXmlElement.LastColumn = null;
   }
-
+  
   /// <summary>
-  ///   oddVBand, this property is only available in Office 2010 and later.
+  /// oddVBand, this property is only available in Office 2010 and later.
   /// </summary>
-  public static Boolean? GetOddVerticalBand(ConditionalFormatStyle? openXmlElement)
+  private static Boolean? GetOddVerticalBand(DocumentFormat.OpenXml.Wordprocessing.ConditionalFormatStyle openXmlElement)
   {
     return openXmlElement?.OddVerticalBand?.Value;
   }
-
-  public static void SetOddVerticalBand(ConditionalFormatStyle? openXmlElement, Boolean? value)
+  
+  private static void SetOddVerticalBand(DocumentFormat.OpenXml.Wordprocessing.ConditionalFormatStyle openXmlElement, Boolean? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.OddVerticalBand = new OnOffValue { Value = (Boolean)value };
-      else
-        openXmlElement.OddVerticalBand = null;
+    if (value != null)
+      openXmlElement.OddVerticalBand = new OnOffValue { Value = (Boolean)value };
+    else
+      openXmlElement.OddVerticalBand = null;
   }
-
+  
   /// <summary>
-  ///   evenVBand, this property is only available in Office 2010 and later.
+  /// evenVBand, this property is only available in Office 2010 and later.
   /// </summary>
-  public static Boolean? GetEvenVerticalBand(ConditionalFormatStyle? openXmlElement)
+  private static Boolean? GetEvenVerticalBand(DocumentFormat.OpenXml.Wordprocessing.ConditionalFormatStyle openXmlElement)
   {
     return openXmlElement?.EvenVerticalBand?.Value;
   }
-
-  public static void SetEvenVerticalBand(ConditionalFormatStyle? openXmlElement, Boolean? value)
+  
+  private static void SetEvenVerticalBand(DocumentFormat.OpenXml.Wordprocessing.ConditionalFormatStyle openXmlElement, Boolean? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.EvenVerticalBand = new OnOffValue { Value = (Boolean)value };
-      else
-        openXmlElement.EvenVerticalBand = null;
+    if (value != null)
+      openXmlElement.EvenVerticalBand = new OnOffValue { Value = (Boolean)value };
+    else
+      openXmlElement.EvenVerticalBand = null;
   }
-
+  
   /// <summary>
-  ///   oddHBand, this property is only available in Office 2010 and later.
+  /// oddHBand, this property is only available in Office 2010 and later.
   /// </summary>
-  public static Boolean? GetOddHorizontalBand(ConditionalFormatStyle? openXmlElement)
+  private static Boolean? GetOddHorizontalBand(DocumentFormat.OpenXml.Wordprocessing.ConditionalFormatStyle openXmlElement)
   {
     return openXmlElement?.OddHorizontalBand?.Value;
   }
-
-  public static void SetOddHorizontalBand(ConditionalFormatStyle? openXmlElement, Boolean? value)
+  
+  private static void SetOddHorizontalBand(DocumentFormat.OpenXml.Wordprocessing.ConditionalFormatStyle openXmlElement, Boolean? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.OddHorizontalBand = new OnOffValue { Value = (Boolean)value };
-      else
-        openXmlElement.OddHorizontalBand = null;
+    if (value != null)
+      openXmlElement.OddHorizontalBand = new OnOffValue { Value = (Boolean)value };
+    else
+      openXmlElement.OddHorizontalBand = null;
   }
-
+  
   /// <summary>
-  ///   evenHBand, this property is only available in Office 2010 and later.
+  /// evenHBand, this property is only available in Office 2010 and later.
   /// </summary>
-  public static Boolean? GetEvenHorizontalBand(ConditionalFormatStyle? openXmlElement)
+  private static Boolean? GetEvenHorizontalBand(DocumentFormat.OpenXml.Wordprocessing.ConditionalFormatStyle openXmlElement)
   {
     return openXmlElement?.EvenHorizontalBand?.Value;
   }
-
-  public static void SetEvenHorizontalBand(ConditionalFormatStyle? openXmlElement, Boolean? value)
+  
+  private static void SetEvenHorizontalBand(DocumentFormat.OpenXml.Wordprocessing.ConditionalFormatStyle openXmlElement, Boolean? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.EvenHorizontalBand = new OnOffValue { Value = (Boolean)value };
-      else
-        openXmlElement.EvenHorizontalBand = null;
+    if (value != null)
+      openXmlElement.EvenHorizontalBand = new OnOffValue { Value = (Boolean)value };
+    else
+      openXmlElement.EvenHorizontalBand = null;
   }
-
+  
   /// <summary>
-  ///   firstRowFirstColumn, this property is only available in Office 2010 and later.
+  /// firstRowFirstColumn, this property is only available in Office 2010 and later.
   /// </summary>
-  public static Boolean? GetFirstRowFirstColumn(ConditionalFormatStyle? openXmlElement)
+  private static Boolean? GetFirstRowFirstColumn(DocumentFormat.OpenXml.Wordprocessing.ConditionalFormatStyle openXmlElement)
   {
     return openXmlElement?.FirstRowFirstColumn?.Value;
   }
-
-  public static void SetFirstRowFirstColumn(ConditionalFormatStyle? openXmlElement, Boolean? value)
+  
+  private static void SetFirstRowFirstColumn(DocumentFormat.OpenXml.Wordprocessing.ConditionalFormatStyle openXmlElement, Boolean? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.FirstRowFirstColumn = new OnOffValue { Value = (Boolean)value };
-      else
-        openXmlElement.FirstRowFirstColumn = null;
+    if (value != null)
+      openXmlElement.FirstRowFirstColumn = new OnOffValue { Value = (Boolean)value };
+    else
+      openXmlElement.FirstRowFirstColumn = null;
   }
-
+  
   /// <summary>
-  ///   firstRowLastColumn, this property is only available in Office 2010 and later.
+  /// firstRowLastColumn, this property is only available in Office 2010 and later.
   /// </summary>
-  public static Boolean? GetFirstRowLastColumn(ConditionalFormatStyle? openXmlElement)
+  private static Boolean? GetFirstRowLastColumn(DocumentFormat.OpenXml.Wordprocessing.ConditionalFormatStyle openXmlElement)
   {
     return openXmlElement?.FirstRowLastColumn?.Value;
   }
-
-  public static void SetFirstRowLastColumn(ConditionalFormatStyle? openXmlElement, Boolean? value)
+  
+  private static void SetFirstRowLastColumn(DocumentFormat.OpenXml.Wordprocessing.ConditionalFormatStyle openXmlElement, Boolean? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.FirstRowLastColumn = new OnOffValue { Value = (Boolean)value };
-      else
-        openXmlElement.FirstRowLastColumn = null;
+    if (value != null)
+      openXmlElement.FirstRowLastColumn = new OnOffValue { Value = (Boolean)value };
+    else
+      openXmlElement.FirstRowLastColumn = null;
   }
-
+  
   /// <summary>
-  ///   lastRowFirstColumn, this property is only available in Office 2010 and later.
+  /// lastRowFirstColumn, this property is only available in Office 2010 and later.
   /// </summary>
-  public static Boolean? GetLastRowFirstColumn(ConditionalFormatStyle? openXmlElement)
+  private static Boolean? GetLastRowFirstColumn(DocumentFormat.OpenXml.Wordprocessing.ConditionalFormatStyle openXmlElement)
   {
     return openXmlElement?.LastRowFirstColumn?.Value;
   }
-
-  public static void SetLastRowFirstColumn(ConditionalFormatStyle? openXmlElement, Boolean? value)
+  
+  private static void SetLastRowFirstColumn(DocumentFormat.OpenXml.Wordprocessing.ConditionalFormatStyle openXmlElement, Boolean? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.LastRowFirstColumn = new OnOffValue { Value = (Boolean)value };
-      else
-        openXmlElement.LastRowFirstColumn = null;
+    if (value != null)
+      openXmlElement.LastRowFirstColumn = new OnOffValue { Value = (Boolean)value };
+    else
+      openXmlElement.LastRowFirstColumn = null;
   }
-
+  
   /// <summary>
-  ///   lastRowLastColumn, this property is only available in Office 2010 and later.
+  /// lastRowLastColumn, this property is only available in Office 2010 and later.
   /// </summary>
-  public static Boolean? GetLastRowLastColumn(ConditionalFormatStyle? openXmlElement)
+  private static Boolean? GetLastRowLastColumn(DocumentFormat.OpenXml.Wordprocessing.ConditionalFormatStyle openXmlElement)
   {
     return openXmlElement?.LastRowLastColumn?.Value;
   }
-
-  public static void SetLastRowLastColumn(ConditionalFormatStyle? openXmlElement, Boolean? value)
+  
+  private static void SetLastRowLastColumn(DocumentFormat.OpenXml.Wordprocessing.ConditionalFormatStyle openXmlElement, Boolean? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.LastRowLastColumn = new OnOffValue { Value = (Boolean)value };
-      else
-        openXmlElement.LastRowLastColumn = null;
+    if (value != null)
+      openXmlElement.LastRowLastColumn = new OnOffValue { Value = (Boolean)value };
+    else
+      openXmlElement.LastRowLastColumn = null;
   }
-
-  public static DocumentModel.Wordprocessing.ConditionalFormatStyle? CreateModelElement(ConditionalFormatStyle? openXmlElement)
+  
+  public static DocumentModel.Wordprocessing.ConditionalFormatStyle? CreateModelElement(DocumentFormat.OpenXml.Wordprocessing.ConditionalFormatStyle? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -250,9 +235,9 @@ public static class ConditionalFormatStyleConverter
     }
     return null;
   }
-
+  
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.ConditionalFormatStyle? value)
-    where OpenXmlElementType : ConditionalFormatStyle, new()
+    where OpenXmlElementType: DocumentFormat.OpenXml.Wordprocessing.ConditionalFormatStyle, new()
   {
     if (value != null)
     {

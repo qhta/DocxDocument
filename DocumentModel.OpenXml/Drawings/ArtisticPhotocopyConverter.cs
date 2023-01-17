@@ -1,41 +1,37 @@
-using DocumentFormat.OpenXml.Office2010.Drawing;
-
 namespace DocumentModel.OpenXml.Drawings;
 
 /// <summary>
-///   Defines the ArtisticPhotocopy Class.
+/// Defines the ArtisticPhotocopy Class.
 /// </summary>
 public static class ArtisticPhotocopyConverter
 {
   /// <summary>
-  ///   trans, this property is only available in Office 2010 and later.
+  /// trans, this property is only available in Office 2010 and later.
   /// </summary>
-  public static Int32? GetTransparancy(ArtisticPhotocopy? openXmlElement)
+  private static Int32? GetTransparancy(DocumentFormat.OpenXml.Office2010.Drawing.ArtisticPhotocopy openXmlElement)
   {
-    return openXmlElement?.Transparancy?.Value;
+    return openXmlElement.Transparancy?.Value;
   }
-
-  public static void SetTransparancy(ArtisticPhotocopy? openXmlElement, Int32? value)
+  
+  private static void SetTransparancy(DocumentFormat.OpenXml.Office2010.Drawing.ArtisticPhotocopy openXmlElement, Int32? value)
   {
-    if (openXmlElement != null)
-      openXmlElement.Transparancy = value;
+    openXmlElement.Transparancy = value;
   }
-
+  
   /// <summary>
-  ///   detail, this property is only available in Office 2010 and later.
+  /// detail, this property is only available in Office 2010 and later.
   /// </summary>
-  public static Int32? GetDetail(ArtisticPhotocopy? openXmlElement)
+  private static Int32? GetDetail(DocumentFormat.OpenXml.Office2010.Drawing.ArtisticPhotocopy openXmlElement)
   {
-    return openXmlElement?.Detail?.Value;
+    return openXmlElement.Detail?.Value;
   }
-
-  public static void SetDetail(ArtisticPhotocopy? openXmlElement, Int32? value)
+  
+  private static void SetDetail(DocumentFormat.OpenXml.Office2010.Drawing.ArtisticPhotocopy openXmlElement, Int32? value)
   {
-    if (openXmlElement != null)
-      openXmlElement.Detail = value;
+    openXmlElement.Detail = value;
   }
-
-  public static DocumentModel.Drawings.ArtisticPhotocopy? CreateModelElement(ArtisticPhotocopy? openXmlElement)
+  
+  public static DocumentModel.Drawings.ArtisticPhotocopy? CreateModelElement(DocumentFormat.OpenXml.Office2010.Drawing.ArtisticPhotocopy? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -46,9 +42,9 @@ public static class ArtisticPhotocopyConverter
     }
     return null;
   }
-
+  
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.ArtisticPhotocopy? value)
-    where OpenXmlElementType : ArtisticPhotocopy, new()
+    where OpenXmlElementType: DocumentFormat.OpenXml.Office2010.Drawing.ArtisticPhotocopy, new()
   {
     if (value != null)
     {

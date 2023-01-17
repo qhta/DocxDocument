@@ -8,7 +8,7 @@ public class RgbColorModelHex
   /// <summary>
   ///   val, this property is only available in Office 2010 and later.
   /// </summary>
-  public Byte[]? Val { get; set; }
+  public RGB? Val { get; set; }
 
   public Int32? Tint { get; set; }
 

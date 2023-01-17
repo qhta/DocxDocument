@@ -1,386 +1,328 @@
-using DocumentFormat.OpenXml.Drawing.Diagrams;
-using DocumentModel.Drawings.Diagrams;
-using Algorithm = DocumentModel.Drawings.Diagrams.Algorithm;
-using Choose = DocumentModel.Drawings.Diagrams.Choose;
-using Constraints = DocumentModel.Drawings.Diagrams.Constraints;
-using ForEach = DocumentFormat.OpenXml.Drawing.Diagrams.ForEach;
-using LayoutNode = DocumentModel.Drawings.Diagrams.LayoutNode;
-using PresentationOf = DocumentModel.Drawings.Diagrams.PresentationOf;
-using RuleList = DocumentModel.Drawings.Diagrams.RuleList;
-using Shape = DocumentModel.Drawings.Diagrams.Shape;
-
 namespace DocumentModel.OpenXml.Drawings.Diagrams;
 
 /// <summary>
-///   For Each.
+/// For Each.
 /// </summary>
 public static class ForEachConverter
 {
   /// <summary>
-  ///   Name
+  /// Name
   /// </summary>
-  public static String? GetName(ForEach? openXmlElement)
+  private static String? GetName(DocumentFormat.OpenXml.Drawing.Diagrams.ForEach openXmlElement)
   {
     return openXmlElement?.Name?.Value;
   }
-
-  public static void SetName(ForEach? openXmlElement, String? value)
+  
+  private static void SetName(DocumentFormat.OpenXml.Drawing.Diagrams.ForEach openXmlElement, String? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.Name = new StringValue { Value = value };
-      else
-        openXmlElement.Name = null;
+    if (value != null)
+      openXmlElement.Name = new StringValue { Value = value };
+    else
+      openXmlElement.Name = null;
   }
-
+  
   /// <summary>
-  ///   Reference
+  /// Reference
   /// </summary>
-  public static String? GetReference(ForEach? openXmlElement)
+  private static String? GetReference(DocumentFormat.OpenXml.Drawing.Diagrams.ForEach openXmlElement)
   {
     return openXmlElement?.Reference?.Value;
   }
-
-  public static void SetReference(ForEach? openXmlElement, String? value)
+  
+  private static void SetReference(DocumentFormat.OpenXml.Drawing.Diagrams.ForEach openXmlElement, String? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.Reference = new StringValue { Value = value };
-      else
-        openXmlElement.Reference = null;
+    if (value != null)
+      openXmlElement.Reference = new StringValue { Value = value };
+    else
+      openXmlElement.Reference = null;
   }
-
+  
   /// <summary>
-  ///   Axis
+  /// Axis
   /// </summary>
-  public static ListOf<AxisKind>? GetAxis(ForEach? openXmlElement)
+  private static DocumentModel.ListOf<DocumentModel.Drawings.Diagrams.AxisKind>? GetAxis(DocumentFormat.OpenXml.Drawing.Diagrams.ForEach openXmlElement)
   {
-    return ListValueConverter.GetValue<AxisValues, AxisKind>(openXmlElement?.Axis);
+    return ListValueConverter.GetValue<DocumentFormat.OpenXml.Drawing.Diagrams.AxisValues, DocumentModel.Drawings.Diagrams.AxisKind>(openXmlElement?.Axis);
   }
-
-  public static void SetAxis(ForEach? openXmlElement, ListOf<AxisKind>? value)
+  
+  private static void SetAxis(DocumentFormat.OpenXml.Drawing.Diagrams.ForEach openXmlElement, DocumentModel.ListOf<DocumentModel.Drawings.Diagrams.AxisKind>? value)
   {
-    if (openXmlElement != null)
-    {
-      if (value != null)
-        openXmlElement.Axis = ListValueConverter.CreateListValue<AxisValues, AxisKind>(value);
-      else
-        openXmlElement.Axis = null;
-    }
+    if (value != null)
+      openXmlElement.Axis = ListValueConverter.CreateListValue<DocumentFormat.OpenXml.Drawing.Diagrams.AxisValues, DocumentModel.Drawings.Diagrams.AxisKind>(value);
+    else
+      openXmlElement.Axis = null;
   }
-
+  
   /// <summary>
-  ///   Data Point Type
+  /// Data Point Type
   /// </summary>
-  public static ListOf<ElementKind>? GetPointType(ForEach? openXmlElement)
+  private static DocumentModel.ListOf<DocumentModel.Drawings.Diagrams.ElementKind>? GetPointType(DocumentFormat.OpenXml.Drawing.Diagrams.ForEach openXmlElement)
   {
-    return ListValueConverter.GetValue<ElementValues, ElementKind>(openXmlElement?.PointType);
+    return ListValueConverter.GetValue<DocumentFormat.OpenXml.Drawing.Diagrams.ElementValues, DocumentModel.Drawings.Diagrams.ElementKind>(openXmlElement?.PointType);
   }
-
-  public static void SetPointType(ForEach? openXmlElement, ListOf<ElementKind>? value)
+  
+  private static void SetPointType(DocumentFormat.OpenXml.Drawing.Diagrams.ForEach openXmlElement, DocumentModel.ListOf<DocumentModel.Drawings.Diagrams.ElementKind>? value)
   {
-    if (openXmlElement != null)
-    {
-      if (value != null)
-        openXmlElement.PointType = ListValueConverter.CreateListValue<ElementValues, ElementKind>(value);
-      else
-        openXmlElement.PointType = null;
-    }
+    if (value != null)
+      openXmlElement.PointType = ListValueConverter.CreateListValue<DocumentFormat.OpenXml.Drawing.Diagrams.ElementValues, DocumentModel.Drawings.Diagrams.ElementKind>(value);
+    else
+      openXmlElement.PointType = null;
   }
-
+  
   /// <summary>
-  ///   Hide Last Transition
+  /// Hide Last Transition
   /// </summary>
-  public static ListOf<Boolean>? GetHideLastTrans(ForEach? openXmlElement)
+  private static DocumentModel.ListOf<Boolean>? GetHideLastTrans(DocumentFormat.OpenXml.Drawing.Diagrams.ForEach openXmlElement)
   {
     return ListValueConverter.GetValue(openXmlElement?.HideLastTrans);
   }
-
-  public static void SetHideLastTrans(ForEach? openXmlElement, ListOf<Boolean>? value)
+  
+  private static void SetHideLastTrans(DocumentFormat.OpenXml.Drawing.Diagrams.ForEach openXmlElement, DocumentModel.ListOf<Boolean>? value)
   {
-    if (openXmlElement != null)
-    {
-      if (value != null)
-        openXmlElement.HideLastTrans = ListValueConverter.CreateListValue<BooleanValue>(value);
-      else
-        openXmlElement.HideLastTrans = null;
-    }
+    if (value != null)
+      openXmlElement.HideLastTrans = ListValueConverter.CreateListValue<DocumentFormat.OpenXml.BooleanValue>(value);
+    else
+      openXmlElement.HideLastTrans = null;
   }
-
+  
   /// <summary>
-  ///   Start
+  /// Start
   /// </summary>
-  public static ListOf<Int32>? GetStart(ForEach? openXmlElement)
+  private static DocumentModel.ListOf<Int32>? GetStart(DocumentFormat.OpenXml.Drawing.Diagrams.ForEach openXmlElement)
   {
     return ListValueConverter.GetValue(openXmlElement?.Start);
   }
-
-  public static void SetStart(ForEach? openXmlElement, ListOf<Int32>? value)
+  
+  private static void SetStart(DocumentFormat.OpenXml.Drawing.Diagrams.ForEach openXmlElement, DocumentModel.ListOf<Int32>? value)
   {
-    if (openXmlElement != null)
-    {
-      if (value != null)
-        openXmlElement.Start = ListValueConverter.CreateListValue<Int32Value>(value);
-      else
-        openXmlElement.Start = null;
-    }
+    if (value != null)
+      openXmlElement.Start = ListValueConverter.CreateListValue<DocumentFormat.OpenXml.Int32Value>(value);
+    else
+      openXmlElement.Start = null;
   }
-
+  
   /// <summary>
-  ///   Count
+  /// Count
   /// </summary>
-  public static ListOf<UInt32>? GetCount(ForEach? openXmlElement)
+  private static DocumentModel.ListOf<UInt32>? GetCount(DocumentFormat.OpenXml.Drawing.Diagrams.ForEach openXmlElement)
   {
     return ListValueConverter.GetValue(openXmlElement?.Count);
   }
-
-  public static void SetCount(ForEach? openXmlElement, ListOf<UInt32>? value)
+  
+  private static void SetCount(DocumentFormat.OpenXml.Drawing.Diagrams.ForEach openXmlElement, DocumentModel.ListOf<UInt32>? value)
   {
-    if (openXmlElement != null)
-    {
-      if (value != null)
-        openXmlElement.Count = ListValueConverter.CreateListValue<UInt32Value>(value);
-      else
-        openXmlElement.Count = null;
-    }
+    if (value != null)
+      openXmlElement.Count = ListValueConverter.CreateListValue<DocumentFormat.OpenXml.UInt32Value>(value);
+    else
+      openXmlElement.Count = null;
   }
-
+  
   /// <summary>
-  ///   Step
+  /// Step
   /// </summary>
-  public static ListOf<Int32>? GetStep(ForEach? openXmlElement)
+  private static DocumentModel.ListOf<Int32>? GetStep(DocumentFormat.OpenXml.Drawing.Diagrams.ForEach openXmlElement)
   {
     return ListValueConverter.GetValue(openXmlElement?.Step);
   }
-
-  public static void SetStep(ForEach? openXmlElement, ListOf<Int32>? value)
+  
+  private static void SetStep(DocumentFormat.OpenXml.Drawing.Diagrams.ForEach openXmlElement, DocumentModel.ListOf<Int32>? value)
   {
-    if (openXmlElement != null)
-    {
-      if (value != null)
-        openXmlElement.Step = ListValueConverter.CreateListValue<Int32Value>(value);
-      else
-        openXmlElement.Step = null;
-    }
+    if (value != null)
+      openXmlElement.Step = ListValueConverter.CreateListValue<DocumentFormat.OpenXml.Int32Value>(value);
+    else
+      openXmlElement.Step = null;
   }
-
-  public static Algorithm? GetAlgorithm(ForEach? openXmlElement)
+  
+  private static DocumentModel.Drawings.Diagrams.Algorithm? GetAlgorithm(DocumentFormat.OpenXml.Drawing.Diagrams.ForEach openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.Diagrams.Algorithm>();
     if (itemElement != null)
-      return AlgorithmConverter.CreateModelElement(itemElement);
+      return DocumentModel.OpenXml.Drawings.Diagrams.AlgorithmConverter.CreateModelElement(itemElement);
     return null;
   }
-
-  public static void SetAlgorithm(ForEach? openXmlElement, Algorithm? value)
+  
+  private static void SetAlgorithm(DocumentFormat.OpenXml.Drawing.Diagrams.ForEach openXmlElement, DocumentModel.Drawings.Diagrams.Algorithm? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Diagrams.Algorithm>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Diagrams.Algorithm>();
+      itemElement = DocumentModel.OpenXml.Drawings.Diagrams.AlgorithmConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Diagrams.Algorithm>(value);
       if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = AlgorithmConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Diagrams.Algorithm>(value);
-        if (itemElement != null)
-          openXmlElement.AddChild(itemElement);
-      }
+        openXmlElement.AddChild(itemElement);
     }
   }
-
-  public static Shape? GetShape(ForEach? openXmlElement)
+  
+  private static DocumentModel.Drawings.Diagrams.Shape? GetShape(DocumentFormat.OpenXml.Drawing.Diagrams.ForEach openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.Diagrams.Shape>();
     if (itemElement != null)
-      return ShapeConverter.CreateModelElement(itemElement);
+      return DocumentModel.OpenXml.Drawings.Diagrams.ShapeConverter.CreateModelElement(itemElement);
     return null;
   }
-
-  public static void SetShape(ForEach? openXmlElement, Shape? value)
+  
+  private static void SetShape(DocumentFormat.OpenXml.Drawing.Diagrams.ForEach openXmlElement, DocumentModel.Drawings.Diagrams.Shape? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Diagrams.Shape>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Diagrams.Shape>();
+      itemElement = DocumentModel.OpenXml.Drawings.Diagrams.ShapeConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Diagrams.Shape>(value);
       if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = ShapeConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Diagrams.Shape>(value);
-        if (itemElement != null)
-          openXmlElement.AddChild(itemElement);
-      }
+        openXmlElement.AddChild(itemElement);
     }
   }
-
-  public static PresentationOf? GetPresentationOf(ForEach? openXmlElement)
+  
+  private static DocumentModel.Drawings.Diagrams.PresentationOf? GetPresentationOf(DocumentFormat.OpenXml.Drawing.Diagrams.ForEach openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.Diagrams.PresentationOf>();
     if (itemElement != null)
-      return PresentationOfConverter.CreateModelElement(itemElement);
+      return DocumentModel.OpenXml.Drawings.Diagrams.PresentationOfConverter.CreateModelElement(itemElement);
     return null;
   }
-
-  public static void SetPresentationOf(ForEach? openXmlElement, PresentationOf? value)
+  
+  private static void SetPresentationOf(DocumentFormat.OpenXml.Drawing.Diagrams.ForEach openXmlElement, DocumentModel.Drawings.Diagrams.PresentationOf? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Diagrams.PresentationOf>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Diagrams.PresentationOf>();
+      itemElement = DocumentModel.OpenXml.Drawings.Diagrams.PresentationOfConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Diagrams.PresentationOf>(value);
       if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = PresentationOfConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Diagrams.PresentationOf>(value);
-        if (itemElement != null)
-          openXmlElement.AddChild(itemElement);
-      }
+        openXmlElement.AddChild(itemElement);
     }
   }
-
-  public static Constraints? GetConstraints(ForEach? openXmlElement)
+  
+  private static DocumentModel.Drawings.Diagrams.Constraints? GetConstraints(DocumentFormat.OpenXml.Drawing.Diagrams.ForEach openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.Diagrams.Constraints>();
     if (itemElement != null)
-      return ConstraintsConverter.CreateModelElement(itemElement);
+      return DocumentModel.OpenXml.Drawings.Diagrams.ConstraintsConverter.CreateModelElement(itemElement);
     return null;
   }
-
-  public static void SetConstraints(ForEach? openXmlElement, Constraints? value)
+  
+  private static void SetConstraints(DocumentFormat.OpenXml.Drawing.Diagrams.ForEach openXmlElement, DocumentModel.Drawings.Diagrams.Constraints? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Diagrams.Constraints>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Diagrams.Constraints>();
+      itemElement = DocumentModel.OpenXml.Drawings.Diagrams.ConstraintsConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Diagrams.Constraints>(value);
       if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = ConstraintsConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Diagrams.Constraints>(value);
-        if (itemElement != null)
-          openXmlElement.AddChild(itemElement);
-      }
+        openXmlElement.AddChild(itemElement);
     }
   }
-
-  public static RuleList? GetRuleList(ForEach? openXmlElement)
+  
+  private static DocumentModel.Drawings.Diagrams.RuleList? GetRuleList(DocumentFormat.OpenXml.Drawing.Diagrams.ForEach openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.Diagrams.RuleList>();
     if (itemElement != null)
-      return RuleListConverter.CreateModelElement(itemElement);
+      return DocumentModel.OpenXml.Drawings.Diagrams.RuleListConverter.CreateModelElement(itemElement);
     return null;
   }
-
-  public static void SetRuleList(ForEach? openXmlElement, RuleList? value)
+  
+  private static void SetRuleList(DocumentFormat.OpenXml.Drawing.Diagrams.ForEach openXmlElement, DocumentModel.Drawings.Diagrams.RuleList? value)
   {
-    if (openXmlElement != null)
-    {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Diagrams.RuleList>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = RuleListConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Diagrams.RuleList>(value);
-        if (itemElement != null)
-          openXmlElement.AddChild(itemElement);
-      }
-    }
-  }
-
-  public static DocumentModel.Drawings.Diagrams.ForEach? GetChildForEach(ForEach? openXmlElement)
-  {
-    var itemElement = openXmlElement?.GetFirstChild<ForEach>();
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Diagrams.RuleList>();
     if (itemElement != null)
-      return CreateModelElement(itemElement);
-    return null;
-  }
-
-  public static void SetChildForEach(ForEach? openXmlElement, DocumentModel.Drawings.Diagrams.ForEach? value)
-  {
-    if (openXmlElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<ForEach>();
+      itemElement = DocumentModel.OpenXml.Drawings.Diagrams.RuleListConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Diagrams.RuleList>(value);
       if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = CreateOpenXmlElement<ForEach>(value);
-        if (itemElement != null)
-          openXmlElement.AddChild(itemElement);
-      }
+        openXmlElement.AddChild(itemElement);
     }
   }
-
-  public static LayoutNode? GetLayoutNode(ForEach? openXmlElement)
+  
+  private static DocumentModel.Drawings.Diagrams.ForEach? GetChildForEach(DocumentFormat.OpenXml.Drawing.Diagrams.ForEach openXmlElement)
+  {
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.Diagrams.ForEach>();
+    if (itemElement != null)
+      return DocumentModel.OpenXml.Drawings.Diagrams.ForEachConverter.CreateModelElement(itemElement);
+    return null;
+  }
+  
+  private static void SetChildForEach(DocumentFormat.OpenXml.Drawing.Diagrams.ForEach openXmlElement, DocumentModel.Drawings.Diagrams.ForEach? value)
+  {
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Diagrams.ForEach>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
+    {
+      itemElement = DocumentModel.OpenXml.Drawings.Diagrams.ForEachConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Diagrams.ForEach>(value);
+      if (itemElement != null)
+        openXmlElement.AddChild(itemElement);
+    }
+  }
+  
+  private static DocumentModel.Drawings.Diagrams.LayoutNode? GetLayoutNode(DocumentFormat.OpenXml.Drawing.Diagrams.ForEach openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.Diagrams.LayoutNode>();
     if (itemElement != null)
-      return LayoutNodeConverter.CreateModelElement(itemElement);
+      return DocumentModel.OpenXml.Drawings.Diagrams.LayoutNodeConverter.CreateModelElement(itemElement);
     return null;
   }
-
-  public static void SetLayoutNode(ForEach? openXmlElement, LayoutNode? value)
+  
+  private static void SetLayoutNode(DocumentFormat.OpenXml.Drawing.Diagrams.ForEach openXmlElement, DocumentModel.Drawings.Diagrams.LayoutNode? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Diagrams.LayoutNode>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Diagrams.LayoutNode>();
+      itemElement = DocumentModel.OpenXml.Drawings.Diagrams.LayoutNodeConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Diagrams.LayoutNode>(value);
       if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = LayoutNodeConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Diagrams.LayoutNode>(value);
-        if (itemElement != null)
-          openXmlElement.AddChild(itemElement);
-      }
+        openXmlElement.AddChild(itemElement);
     }
   }
-
-  public static Choose? GetChoose(ForEach? openXmlElement)
+  
+  private static DocumentModel.Drawings.Diagrams.Choose? GetChoose(DocumentFormat.OpenXml.Drawing.Diagrams.ForEach openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.Diagrams.Choose>();
     if (itemElement != null)
-      return ChooseConverter.CreateModelElement(itemElement);
+      return DocumentModel.OpenXml.Drawings.Diagrams.ChooseConverter.CreateModelElement(itemElement);
     return null;
   }
-
-  public static void SetChoose(ForEach? openXmlElement, Choose? value)
+  
+  private static void SetChoose(DocumentFormat.OpenXml.Drawing.Diagrams.ForEach openXmlElement, DocumentModel.Drawings.Diagrams.Choose? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Diagrams.Choose>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Diagrams.Choose>();
+      itemElement = DocumentModel.OpenXml.Drawings.Diagrams.ChooseConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Diagrams.Choose>(value);
       if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = ChooseConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Diagrams.Choose>(value);
-        if (itemElement != null)
-          openXmlElement.AddChild(itemElement);
-      }
+        openXmlElement.AddChild(itemElement);
     }
   }
-
-  public static DocumentModel.Drawings.Diagrams.ExtensionList? GetExtensionList(ForEach? openXmlElement)
+  
+  private static DocumentModel.Drawings.Diagrams.ExtensionList? GetExtensionList(DocumentFormat.OpenXml.Drawing.Diagrams.ForEach openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.Diagrams.ExtensionList>();
     if (itemElement != null)
-      return ExtensionListConverter.CreateModelElement(itemElement);
+      return DocumentModel.OpenXml.Drawings.Diagrams.ExtensionListConverter.CreateModelElement(itemElement);
     return null;
   }
-
-  public static void SetExtensionList(ForEach? openXmlElement, DocumentModel.Drawings.Diagrams.ExtensionList? value)
+  
+  private static void SetExtensionList(DocumentFormat.OpenXml.Drawing.Diagrams.ForEach openXmlElement, DocumentModel.Drawings.Diagrams.ExtensionList? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Diagrams.ExtensionList>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Diagrams.ExtensionList>();
+      itemElement = DocumentModel.OpenXml.Drawings.Diagrams.ExtensionListConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Diagrams.ExtensionList>(value);
       if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = ExtensionListConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Diagrams.ExtensionList>(value);
-        if (itemElement != null)
-          openXmlElement.AddChild(itemElement);
-      }
+        openXmlElement.AddChild(itemElement);
     }
   }
-
-  public static DocumentModel.Drawings.Diagrams.ForEach? CreateModelElement(ForEach? openXmlElement)
+  
+  public static DocumentModel.Drawings.Diagrams.ForEach? CreateModelElement(DocumentFormat.OpenXml.Drawing.Diagrams.ForEach? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -406,9 +348,9 @@ public static class ForEachConverter
     }
     return null;
   }
-
+  
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.Diagrams.ForEach? value)
-    where OpenXmlElementType : ForEach, new()
+    where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.Diagrams.ForEach, new()
   {
     if (value != null)
     {

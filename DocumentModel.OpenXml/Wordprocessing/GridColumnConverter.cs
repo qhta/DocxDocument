@@ -1,30 +1,27 @@
-using DocumentFormat.OpenXml.Wordprocessing;
-
 namespace DocumentModel.OpenXml.Wordprocessing;
 
 /// <summary>
-///   Grid Column Definition.
+/// Grid Column Definition.
 /// </summary>
 public static class GridColumnConverter
 {
   /// <summary>
-  ///   Grid Column Width
+  /// Grid Column Width
   /// </summary>
-  public static String? GetWidth(GridColumn? openXmlElement)
+  private static String? GetWidth(DocumentFormat.OpenXml.Wordprocessing.GridColumn openXmlElement)
   {
     return openXmlElement?.Width?.Value;
   }
-
-  public static void SetWidth(GridColumn? openXmlElement, String? value)
+  
+  private static void SetWidth(DocumentFormat.OpenXml.Wordprocessing.GridColumn openXmlElement, String? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.Width = new StringValue { Value = value };
-      else
-        openXmlElement.Width = null;
+    if (value != null)
+      openXmlElement.Width = new StringValue { Value = value };
+    else
+      openXmlElement.Width = null;
   }
-
-  public static DocumentModel.Wordprocessing.GridColumn? CreateModelElement(GridColumn? openXmlElement)
+  
+  public static DocumentModel.Wordprocessing.GridColumn? CreateModelElement(DocumentFormat.OpenXml.Wordprocessing.GridColumn? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -34,9 +31,9 @@ public static class GridColumnConverter
     }
     return null;
   }
-
+  
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.GridColumn? value)
-    where OpenXmlElementType : GridColumn, new()
+    where OpenXmlElementType: DocumentFormat.OpenXml.Wordprocessing.GridColumn, new()
   {
     if (value != null)
     {

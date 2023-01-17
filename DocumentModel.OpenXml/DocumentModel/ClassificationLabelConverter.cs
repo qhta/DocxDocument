@@ -1,165 +1,156 @@
 namespace DocumentModel.OpenXml;
 
 /// <summary>
-///   Defines the ClassificationLabel Class.
+/// Defines the ClassificationLabel Class.
 /// </summary>
 public static class ClassificationLabelConverter
 {
   /// <summary>
-  ///   id, this property is only available in Office 2021 and later.
+  /// id, this property is only available in Office 2021 and later.
   /// </summary>
-  public static String? GetId(DocumentFormat.OpenXml.Office2021.MipLabelMetaData.ClassificationLabel? openXmlElement)
+  private static String? GetId(DocumentFormat.OpenXml.Office2021.MipLabelMetaData.ClassificationLabel openXmlElement)
   {
     return openXmlElement?.Id?.Value;
   }
-
-  public static void SetId(DocumentFormat.OpenXml.Office2021.MipLabelMetaData.ClassificationLabel? openXmlElement, String? value)
+  
+  private static void SetId(DocumentFormat.OpenXml.Office2021.MipLabelMetaData.ClassificationLabel openXmlElement, String? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.Id = new StringValue { Value = value };
-      else
-        openXmlElement.Id = null;
+    if (value != null)
+      openXmlElement.Id = new StringValue { Value = value };
+    else
+      openXmlElement.Id = null;
   }
-
+  
   /// <summary>
-  ///   enabled, this property is only available in Office 2021 and later.
+  /// enabled, this property is only available in Office 2021 and later.
   /// </summary>
-  public static Boolean? GetEnabled(DocumentFormat.OpenXml.Office2021.MipLabelMetaData.ClassificationLabel? openXmlElement)
+  private static Boolean? GetEnabled(DocumentFormat.OpenXml.Office2021.MipLabelMetaData.ClassificationLabel openXmlElement)
   {
     return openXmlElement?.Enabled?.Value;
   }
-
-  public static void SetEnabled(DocumentFormat.OpenXml.Office2021.MipLabelMetaData.ClassificationLabel? openXmlElement, Boolean? value)
+  
+  private static void SetEnabled(DocumentFormat.OpenXml.Office2021.MipLabelMetaData.ClassificationLabel openXmlElement, Boolean? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.Enabled = new BooleanValue { Value = (Boolean)value };
-      else
-        openXmlElement.Enabled = null;
+    if (value != null)
+      openXmlElement.Enabled = new BooleanValue { Value = (Boolean)value };
+    else
+      openXmlElement.Enabled = null;
   }
-
+  
   /// <summary>
-  ///   setDate, this property is only available in Office 2021 and later.
+  /// setDate, this property is only available in Office 2021 and later.
   /// </summary>
-  public static String? GetSetDate(DocumentFormat.OpenXml.Office2021.MipLabelMetaData.ClassificationLabel? openXmlElement)
+  private static String? GetSetDate(DocumentFormat.OpenXml.Office2021.MipLabelMetaData.ClassificationLabel openXmlElement)
   {
     return openXmlElement?.SetDate?.Value;
   }
-
-  public static void SetSetDate(DocumentFormat.OpenXml.Office2021.MipLabelMetaData.ClassificationLabel? openXmlElement, String? value)
+  
+  private static void SetSetDate(DocumentFormat.OpenXml.Office2021.MipLabelMetaData.ClassificationLabel openXmlElement, String? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.SetDate = new StringValue { Value = value };
-      else
-        openXmlElement.SetDate = null;
+    if (value != null)
+      openXmlElement.SetDate = new StringValue { Value = value };
+    else
+      openXmlElement.SetDate = null;
   }
-
+  
   /// <summary>
-  ///   method, this property is only available in Office 2021 and later.
+  /// method, this property is only available in Office 2021 and later.
   /// </summary>
-  public static String? GetMethod(DocumentFormat.OpenXml.Office2021.MipLabelMetaData.ClassificationLabel? openXmlElement)
+  private static String? GetMethod(DocumentFormat.OpenXml.Office2021.MipLabelMetaData.ClassificationLabel openXmlElement)
   {
     return openXmlElement?.Method?.Value;
   }
-
-  public static void SetMethod(DocumentFormat.OpenXml.Office2021.MipLabelMetaData.ClassificationLabel? openXmlElement, String? value)
+  
+  private static void SetMethod(DocumentFormat.OpenXml.Office2021.MipLabelMetaData.ClassificationLabel openXmlElement, String? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.Method = new StringValue { Value = value };
-      else
-        openXmlElement.Method = null;
+    if (value != null)
+      openXmlElement.Method = new StringValue { Value = value };
+    else
+      openXmlElement.Method = null;
   }
-
+  
   /// <summary>
-  ///   name, this property is only available in Office 2021 and later.
+  /// name, this property is only available in Office 2021 and later.
   /// </summary>
-  public static String? GetName(DocumentFormat.OpenXml.Office2021.MipLabelMetaData.ClassificationLabel? openXmlElement)
+  private static String? GetName(DocumentFormat.OpenXml.Office2021.MipLabelMetaData.ClassificationLabel openXmlElement)
   {
     return openXmlElement?.Name?.Value;
   }
-
-  public static void SetName(DocumentFormat.OpenXml.Office2021.MipLabelMetaData.ClassificationLabel? openXmlElement, String? value)
+  
+  private static void SetName(DocumentFormat.OpenXml.Office2021.MipLabelMetaData.ClassificationLabel openXmlElement, String? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.Name = new StringValue { Value = value };
-      else
-        openXmlElement.Name = null;
+    if (value != null)
+      openXmlElement.Name = new StringValue { Value = value };
+    else
+      openXmlElement.Name = null;
   }
-
+  
   /// <summary>
-  ///   siteId, this property is only available in Office 2021 and later.
+  /// siteId, this property is only available in Office 2021 and later.
   /// </summary>
-  public static String? GetSiteId(DocumentFormat.OpenXml.Office2021.MipLabelMetaData.ClassificationLabel? openXmlElement)
+  private static String? GetSiteId(DocumentFormat.OpenXml.Office2021.MipLabelMetaData.ClassificationLabel openXmlElement)
   {
     return openXmlElement?.SiteId?.Value;
   }
-
-  public static void SetSiteId(DocumentFormat.OpenXml.Office2021.MipLabelMetaData.ClassificationLabel? openXmlElement, String? value)
+  
+  private static void SetSiteId(DocumentFormat.OpenXml.Office2021.MipLabelMetaData.ClassificationLabel openXmlElement, String? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.SiteId = new StringValue { Value = value };
-      else
-        openXmlElement.SiteId = null;
+    if (value != null)
+      openXmlElement.SiteId = new StringValue { Value = value };
+    else
+      openXmlElement.SiteId = null;
   }
-
+  
   /// <summary>
-  ///   actionId, this property is only available in Office 2021 and later.
+  /// actionId, this property is only available in Office 2021 and later.
   /// </summary>
-  public static String? GetActionId(DocumentFormat.OpenXml.Office2021.MipLabelMetaData.ClassificationLabel? openXmlElement)
+  private static String? GetActionId(DocumentFormat.OpenXml.Office2021.MipLabelMetaData.ClassificationLabel openXmlElement)
   {
     return openXmlElement?.ActionId?.Value;
   }
-
-  public static void SetActionId(DocumentFormat.OpenXml.Office2021.MipLabelMetaData.ClassificationLabel? openXmlElement, String? value)
+  
+  private static void SetActionId(DocumentFormat.OpenXml.Office2021.MipLabelMetaData.ClassificationLabel openXmlElement, String? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.ActionId = new StringValue { Value = value };
-      else
-        openXmlElement.ActionId = null;
+    if (value != null)
+      openXmlElement.ActionId = new StringValue { Value = value };
+    else
+      openXmlElement.ActionId = null;
   }
-
+  
   /// <summary>
-  ///   contentBits, this property is only available in Office 2021 and later.
+  /// contentBits, this property is only available in Office 2021 and later.
   /// </summary>
-  public static UInt32? GetContentBits(DocumentFormat.OpenXml.Office2021.MipLabelMetaData.ClassificationLabel? openXmlElement)
+  private static UInt32? GetContentBits(DocumentFormat.OpenXml.Office2021.MipLabelMetaData.ClassificationLabel openXmlElement)
   {
-    return openXmlElement?.ContentBits?.Value;
+    return openXmlElement.ContentBits?.Value;
   }
-
-  public static void SetContentBits(DocumentFormat.OpenXml.Office2021.MipLabelMetaData.ClassificationLabel? openXmlElement, UInt32? value)
+  
+  private static void SetContentBits(DocumentFormat.OpenXml.Office2021.MipLabelMetaData.ClassificationLabel openXmlElement, UInt32? value)
   {
-    if (openXmlElement != null)
-      openXmlElement.ContentBits = value;
+    openXmlElement.ContentBits = value;
   }
-
+  
   /// <summary>
-  ///   removed, this property is only available in Office 2021 and later.
+  /// removed, this property is only available in Office 2021 and later.
   /// </summary>
-  public static Boolean? GetRemoved(DocumentFormat.OpenXml.Office2021.MipLabelMetaData.ClassificationLabel? openXmlElement)
+  private static Boolean? GetRemoved(DocumentFormat.OpenXml.Office2021.MipLabelMetaData.ClassificationLabel openXmlElement)
   {
     return openXmlElement?.Removed?.Value;
   }
-
-  public static void SetRemoved(DocumentFormat.OpenXml.Office2021.MipLabelMetaData.ClassificationLabel? openXmlElement, Boolean? value)
+  
+  private static void SetRemoved(DocumentFormat.OpenXml.Office2021.MipLabelMetaData.ClassificationLabel openXmlElement, Boolean? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.Removed = new BooleanValue { Value = (Boolean)value };
-      else
-        openXmlElement.Removed = null;
+    if (value != null)
+      openXmlElement.Removed = new BooleanValue { Value = (Boolean)value };
+    else
+      openXmlElement.Removed = null;
   }
-
-  public static ClassificationLabel? CreateModelElement(DocumentFormat.OpenXml.Office2021.MipLabelMetaData.ClassificationLabel? openXmlElement)
+  
+  public static DocumentModel.ClassificationLabel? CreateModelElement(DocumentFormat.OpenXml.Office2021.MipLabelMetaData.ClassificationLabel? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new ClassificationLabel();
+      var value = new DocumentModel.ClassificationLabel();
       value.Id = GetId(openXmlElement);
       value.Enabled = GetEnabled(openXmlElement);
       value.SetDate = GetSetDate(openXmlElement);
@@ -173,9 +164,9 @@ public static class ClassificationLabelConverter
     }
     return null;
   }
-
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(ClassificationLabel? value)
-    where OpenXmlElementType : DocumentFormat.OpenXml.Office2021.MipLabelMetaData.ClassificationLabel, new()
+  
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.ClassificationLabel? value)
+    where OpenXmlElementType: DocumentFormat.OpenXml.Office2021.MipLabelMetaData.ClassificationLabel, new()
   {
     if (value != null)
     {

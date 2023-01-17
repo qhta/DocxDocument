@@ -8,7 +8,7 @@ public class CommentExtensible
   /// <summary>
   ///   durableId, this property is only available in Office 2021 and later.
   /// </summary>
-  public Byte[]? DurableId { get; set; }
+  public NumId? DurableId { get; set; }
 
   /// <summary>
   ///   dateUtc, this property is only available in Office 2021 and later.

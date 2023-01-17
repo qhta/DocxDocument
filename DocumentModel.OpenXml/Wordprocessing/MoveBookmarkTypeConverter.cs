@@ -1,122 +1,111 @@
-using DocumentFormat.OpenXml.Wordprocessing;
-using DocumentModel.Wordprocessing;
-using MoveBookmarkType = DocumentFormat.OpenXml.Wordprocessing.MoveBookmarkType;
-
 namespace DocumentModel.OpenXml.Wordprocessing;
 
 /// <summary>
-///   Defines the MoveBookmarkType Class.
+/// Defines the MoveBookmarkType Class.
 /// </summary>
 public static class MoveBookmarkTypeConverter
 {
   /// <summary>
-  ///   author
+  /// author
   /// </summary>
-  public static String? GetAuthor(MoveBookmarkType? openXmlElement)
+  private static String? GetAuthor(DocumentFormat.OpenXml.Wordprocessing.MoveBookmarkType openXmlElement)
   {
     return openXmlElement?.Author?.Value;
   }
-
-  public static void SetAuthor(MoveBookmarkType? openXmlElement, String? value)
+  
+  private static void SetAuthor(DocumentFormat.OpenXml.Wordprocessing.MoveBookmarkType openXmlElement, String? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.Author = new StringValue { Value = value };
-      else
-        openXmlElement.Author = null;
+    if (value != null)
+      openXmlElement.Author = new StringValue { Value = value };
+    else
+      openXmlElement.Author = null;
   }
-
+  
   /// <summary>
-  ///   date
+  /// date
   /// </summary>
-  public static DateTime? GetDate(MoveBookmarkType? openXmlElement)
+  private static DateTime? GetDate(DocumentFormat.OpenXml.Wordprocessing.MoveBookmarkType openXmlElement)
   {
-    return openXmlElement?.Date?.Value;
+    return openXmlElement.Date?.Value;
   }
-
-  public static void SetDate(MoveBookmarkType? openXmlElement, DateTime? value)
+  
+  private static void SetDate(DocumentFormat.OpenXml.Wordprocessing.MoveBookmarkType openXmlElement, DateTime? value)
   {
-    if (openXmlElement != null)
-      openXmlElement.Date = value;
+    openXmlElement.Date = value;
   }
-
+  
   /// <summary>
-  ///   name
+  /// name
   /// </summary>
-  public static String? GetName(MoveBookmarkType? openXmlElement)
+  private static String? GetName(DocumentFormat.OpenXml.Wordprocessing.MoveBookmarkType openXmlElement)
   {
     return openXmlElement?.Name?.Value;
   }
-
-  public static void SetName(MoveBookmarkType? openXmlElement, String? value)
+  
+  private static void SetName(DocumentFormat.OpenXml.Wordprocessing.MoveBookmarkType openXmlElement, String? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.Name = new StringValue { Value = value };
-      else
-        openXmlElement.Name = null;
+    if (value != null)
+      openXmlElement.Name = new StringValue { Value = value };
+    else
+      openXmlElement.Name = null;
   }
-
+  
   /// <summary>
-  ///   colFirst
+  /// colFirst
   /// </summary>
-  public static Int32? GetColumnFirst(MoveBookmarkType? openXmlElement)
+  private static Int32? GetColumnFirst(DocumentFormat.OpenXml.Wordprocessing.MoveBookmarkType openXmlElement)
   {
-    return openXmlElement?.ColumnFirst?.Value;
+    return openXmlElement.ColumnFirst?.Value;
   }
-
-  public static void SetColumnFirst(MoveBookmarkType? openXmlElement, Int32? value)
+  
+  private static void SetColumnFirst(DocumentFormat.OpenXml.Wordprocessing.MoveBookmarkType openXmlElement, Int32? value)
   {
-    if (openXmlElement != null)
-      openXmlElement.ColumnFirst = value;
+    openXmlElement.ColumnFirst = value;
   }
-
+  
   /// <summary>
-  ///   colLast
+  /// colLast
   /// </summary>
-  public static Int32? GetColumnLast(MoveBookmarkType? openXmlElement)
+  private static Int32? GetColumnLast(DocumentFormat.OpenXml.Wordprocessing.MoveBookmarkType openXmlElement)
   {
-    return openXmlElement?.ColumnLast?.Value;
+    return openXmlElement.ColumnLast?.Value;
   }
-
-  public static void SetColumnLast(MoveBookmarkType? openXmlElement, Int32? value)
+  
+  private static void SetColumnLast(DocumentFormat.OpenXml.Wordprocessing.MoveBookmarkType openXmlElement, Int32? value)
   {
-    if (openXmlElement != null)
-      openXmlElement.ColumnLast = value;
+    openXmlElement.ColumnLast = value;
   }
-
+  
   /// <summary>
-  ///   displacedByCustomXml
+  /// displacedByCustomXml
   /// </summary>
-  public static DisplacedByCustomXmlKind? GetDisplacedByCustomXml(MoveBookmarkType? openXmlElement)
+  private static DocumentModel.Wordprocessing.DisplacedByCustomXmlKind? GetDisplacedByCustomXml(DocumentFormat.OpenXml.Wordprocessing.MoveBookmarkType openXmlElement)
   {
-    return EnumValueConverter.GetValue<DisplacedByCustomXmlValues, DisplacedByCustomXmlKind>(openXmlElement?.DisplacedByCustomXml?.Value);
+    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Wordprocessing.DisplacedByCustomXmlValues, DocumentModel.Wordprocessing.DisplacedByCustomXmlKind>(openXmlElement?.DisplacedByCustomXml?.Value);
   }
-
-  public static void SetDisplacedByCustomXml(MoveBookmarkType? openXmlElement, DisplacedByCustomXmlKind? value)
+  
+  private static void SetDisplacedByCustomXml(DocumentFormat.OpenXml.Wordprocessing.MoveBookmarkType openXmlElement, DocumentModel.Wordprocessing.DisplacedByCustomXmlKind? value)
   {
-    if (openXmlElement != null)
-      openXmlElement.DisplacedByCustomXml = EnumValueConverter.CreateEnumValue<DisplacedByCustomXmlValues, DisplacedByCustomXmlKind>(value);
+    openXmlElement.DisplacedByCustomXml = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Wordprocessing.DisplacedByCustomXmlValues, DocumentModel.Wordprocessing.DisplacedByCustomXmlKind>(value);
   }
-
+  
   /// <summary>
-  ///   Annotation Identifier
+  /// Annotation Identifier
   /// </summary>
-  public static String? GetId(MoveBookmarkType? openXmlElement)
+  private static String? GetId(DocumentFormat.OpenXml.Wordprocessing.MoveBookmarkType openXmlElement)
   {
     return openXmlElement?.Id?.Value;
   }
-
-  public static void SetId(MoveBookmarkType? openXmlElement, String? value)
+  
+  private static void SetId(DocumentFormat.OpenXml.Wordprocessing.MoveBookmarkType openXmlElement, String? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.Id = new StringValue { Value = value };
-      else
-        openXmlElement.Id = null;
+    if (value != null)
+      openXmlElement.Id = new StringValue { Value = value };
+    else
+      openXmlElement.Id = null;
   }
-
-  public static DocumentModel.Wordprocessing.MoveBookmarkType? CreateModelElement(MoveBookmarkType? openXmlElement)
+  
+  public static DocumentModel.Wordprocessing.MoveBookmarkType? CreateModelElement(DocumentFormat.OpenXml.Wordprocessing.MoveBookmarkType? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -132,9 +121,9 @@ public static class MoveBookmarkTypeConverter
     }
     return null;
   }
-
+  
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.MoveBookmarkType? value)
-    where OpenXmlElementType : MoveBookmarkType, new()
+    where OpenXmlElementType: DocumentFormat.OpenXml.Wordprocessing.MoveBookmarkType, new()
   {
     if (value != null)
     {

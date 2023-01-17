@@ -1,47 +1,43 @@
-using DocumentFormat.OpenXml.Office.Drawing;
-
 namespace DocumentModel.OpenXml.Drawings.Office;
 
 /// <summary>
-///   Defines the DataModelExtensionBlock Class.
+/// Defines the DataModelExtensionBlock Class.
 /// </summary>
 public static class DataModelExtensionBlockConverter
 {
   /// <summary>
-  ///   relId, this property is only available in Office 2010 and later.
+  /// relId, this property is only available in Office 2010 and later.
   /// </summary>
-  public static String? GetRelId(DataModelExtensionBlock? openXmlElement)
+  private static String? GetRelId(DocumentFormat.OpenXml.Office.Drawing.DataModelExtensionBlock openXmlElement)
   {
     return openXmlElement?.RelId?.Value;
   }
-
-  public static void SetRelId(DataModelExtensionBlock? openXmlElement, String? value)
+  
+  private static void SetRelId(DocumentFormat.OpenXml.Office.Drawing.DataModelExtensionBlock openXmlElement, String? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.RelId = new StringValue { Value = value };
-      else
-        openXmlElement.RelId = null;
+    if (value != null)
+      openXmlElement.RelId = new StringValue { Value = value };
+    else
+      openXmlElement.RelId = null;
   }
-
+  
   /// <summary>
-  ///   minVer, this property is only available in Office 2010 and later.
+  /// minVer, this property is only available in Office 2010 and later.
   /// </summary>
-  public static String? GetMinVer(DataModelExtensionBlock? openXmlElement)
+  private static String? GetMinVer(DocumentFormat.OpenXml.Office.Drawing.DataModelExtensionBlock openXmlElement)
   {
     return openXmlElement?.MinVer?.Value;
   }
-
-  public static void SetMinVer(DataModelExtensionBlock? openXmlElement, String? value)
+  
+  private static void SetMinVer(DocumentFormat.OpenXml.Office.Drawing.DataModelExtensionBlock openXmlElement, String? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.MinVer = new StringValue { Value = value };
-      else
-        openXmlElement.MinVer = null;
+    if (value != null)
+      openXmlElement.MinVer = new StringValue { Value = value };
+    else
+      openXmlElement.MinVer = null;
   }
-
-  public static DocumentModel.Drawings.Office.DataModelExtensionBlock? CreateModelElement(DataModelExtensionBlock? openXmlElement)
+  
+  public static DocumentModel.Drawings.Office.DataModelExtensionBlock? CreateModelElement(DocumentFormat.OpenXml.Office.Drawing.DataModelExtensionBlock? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -52,9 +48,9 @@ public static class DataModelExtensionBlockConverter
     }
     return null;
   }
-
+  
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.Office.DataModelExtensionBlock? value)
-    where OpenXmlElementType : DataModelExtensionBlock, new()
+    where OpenXmlElementType: DocumentFormat.OpenXml.Office.Drawing.DataModelExtensionBlock, new()
   {
     if (value != null)
     {

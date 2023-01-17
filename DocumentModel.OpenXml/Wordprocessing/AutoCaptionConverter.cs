@@ -1,47 +1,43 @@
-using DocumentFormat.OpenXml.Wordprocessing;
-
 namespace DocumentModel.OpenXml.Wordprocessing;
 
 /// <summary>
-///   Single Automatic Captioning Setting.
+/// Single Automatic Captioning Setting.
 /// </summary>
 public static class AutoCaptionConverter
 {
   /// <summary>
-  ///   Identifier of Object to be Automatically Captioned
+  /// Identifier of Object to be Automatically Captioned
   /// </summary>
-  public static String? GetName(AutoCaption? openXmlElement)
+  private static String? GetName(DocumentFormat.OpenXml.Wordprocessing.AutoCaption openXmlElement)
   {
     return openXmlElement?.Name?.Value;
   }
-
-  public static void SetName(AutoCaption? openXmlElement, String? value)
+  
+  private static void SetName(DocumentFormat.OpenXml.Wordprocessing.AutoCaption openXmlElement, String? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.Name = new StringValue { Value = value };
-      else
-        openXmlElement.Name = null;
+    if (value != null)
+      openXmlElement.Name = new StringValue { Value = value };
+    else
+      openXmlElement.Name = null;
   }
-
+  
   /// <summary>
-  ///   Caption Used for Automatic Captioning
+  /// Caption Used for Automatic Captioning
   /// </summary>
-  public static String? GetCaption(AutoCaption? openXmlElement)
+  private static String? GetCaption(DocumentFormat.OpenXml.Wordprocessing.AutoCaption openXmlElement)
   {
     return openXmlElement?.Caption?.Value;
   }
-
-  public static void SetCaption(AutoCaption? openXmlElement, String? value)
+  
+  private static void SetCaption(DocumentFormat.OpenXml.Wordprocessing.AutoCaption openXmlElement, String? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.Caption = new StringValue { Value = value };
-      else
-        openXmlElement.Caption = null;
+    if (value != null)
+      openXmlElement.Caption = new StringValue { Value = value };
+    else
+      openXmlElement.Caption = null;
   }
-
-  public static DocumentModel.Wordprocessing.AutoCaption? CreateModelElement(AutoCaption? openXmlElement)
+  
+  public static DocumentModel.Wordprocessing.AutoCaption? CreateModelElement(DocumentFormat.OpenXml.Wordprocessing.AutoCaption? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -52,9 +48,9 @@ public static class AutoCaptionConverter
     }
     return null;
   }
-
+  
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.AutoCaption? value)
-    where OpenXmlElementType : AutoCaption, new()
+    where OpenXmlElementType: DocumentFormat.OpenXml.Wordprocessing.AutoCaption, new()
   {
     if (value != null)
     {

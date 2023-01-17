@@ -1,41 +1,37 @@
-using DocumentFormat.OpenXml.Office2010.Drawing;
-
 namespace DocumentModel.OpenXml.Drawings;
 
 /// <summary>
-///   Defines the ArtisticFilmGrain Class.
+/// Defines the ArtisticFilmGrain Class.
 /// </summary>
 public static class ArtisticFilmGrainConverter
 {
   /// <summary>
-  ///   trans, this property is only available in Office 2010 and later.
+  /// trans, this property is only available in Office 2010 and later.
   /// </summary>
-  public static Int32? GetTransparancy(ArtisticFilmGrain? openXmlElement)
+  private static Int32? GetTransparancy(DocumentFormat.OpenXml.Office2010.Drawing.ArtisticFilmGrain openXmlElement)
   {
-    return openXmlElement?.Transparancy?.Value;
+    return openXmlElement.Transparancy?.Value;
   }
-
-  public static void SetTransparancy(ArtisticFilmGrain? openXmlElement, Int32? value)
+  
+  private static void SetTransparancy(DocumentFormat.OpenXml.Office2010.Drawing.ArtisticFilmGrain openXmlElement, Int32? value)
   {
-    if (openXmlElement != null)
-      openXmlElement.Transparancy = value;
+    openXmlElement.Transparancy = value;
   }
-
+  
   /// <summary>
-  ///   grainSize, this property is only available in Office 2010 and later.
+  /// grainSize, this property is only available in Office 2010 and later.
   /// </summary>
-  public static Int32? GetGrainSize(ArtisticFilmGrain? openXmlElement)
+  private static Int32? GetGrainSize(DocumentFormat.OpenXml.Office2010.Drawing.ArtisticFilmGrain openXmlElement)
   {
-    return openXmlElement?.GrainSize?.Value;
+    return openXmlElement.GrainSize?.Value;
   }
-
-  public static void SetGrainSize(ArtisticFilmGrain? openXmlElement, Int32? value)
+  
+  private static void SetGrainSize(DocumentFormat.OpenXml.Office2010.Drawing.ArtisticFilmGrain openXmlElement, Int32? value)
   {
-    if (openXmlElement != null)
-      openXmlElement.GrainSize = value;
+    openXmlElement.GrainSize = value;
   }
-
-  public static DocumentModel.Drawings.ArtisticFilmGrain? CreateModelElement(ArtisticFilmGrain? openXmlElement)
+  
+  public static DocumentModel.Drawings.ArtisticFilmGrain? CreateModelElement(DocumentFormat.OpenXml.Office2010.Drawing.ArtisticFilmGrain? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -46,9 +42,9 @@ public static class ArtisticFilmGrainConverter
     }
     return null;
   }
-
+  
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.ArtisticFilmGrain? value)
-    where OpenXmlElementType : ArtisticFilmGrain, new()
+    where OpenXmlElementType: DocumentFormat.OpenXml.Office2010.Drawing.ArtisticFilmGrain, new()
   {
     if (value != null)
     {

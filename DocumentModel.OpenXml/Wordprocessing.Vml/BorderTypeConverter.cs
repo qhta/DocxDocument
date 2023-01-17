@@ -1,60 +1,53 @@
-using DocumentFormat.OpenXml.Vml.Wordprocessing;
-using DocumentModel.Wordprocessing.Vml;
-using BorderType = DocumentFormat.OpenXml.Vml.Wordprocessing.BorderType;
-
 namespace DocumentModel.OpenXml.Wordprocessing.Vml;
 
 /// <summary>
-///   Defines the BorderType Class.
+/// Defines the BorderType Class.
 /// </summary>
 public static class BorderTypeConverter
 {
   /// <summary>
-  ///   Border Style
+  /// Border Style
   /// </summary>
-  public static BorderKind? GetType(BorderType? openXmlElement)
+  private static DocumentModel.Wordprocessing.Vml.BorderKind? GetType(DocumentFormat.OpenXml.Vml.Wordprocessing.BorderType openXmlElement)
   {
-    return EnumValueConverter.GetValue<BorderValues, BorderKind>(openXmlElement?.Type?.Value);
+    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Vml.Wordprocessing.BorderValues, DocumentModel.Wordprocessing.Vml.BorderKind>(openXmlElement?.Type?.Value);
   }
-
-  public static void SetType(BorderType? openXmlElement, BorderKind? value)
+  
+  private static void SetType(DocumentFormat.OpenXml.Vml.Wordprocessing.BorderType openXmlElement, DocumentModel.Wordprocessing.Vml.BorderKind? value)
   {
-    if (openXmlElement != null)
-      openXmlElement.Type = EnumValueConverter.CreateEnumValue<BorderValues, BorderKind>(value);
+    openXmlElement.Type = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Vml.Wordprocessing.BorderValues, DocumentModel.Wordprocessing.Vml.BorderKind>(value);
   }
-
+  
   /// <summary>
-  ///   Border Width
+  /// Border Width
   /// </summary>
-  public static Int64? GetWidth(BorderType? openXmlElement)
+  private static Int64? GetWidth(DocumentFormat.OpenXml.Vml.Wordprocessing.BorderType openXmlElement)
   {
-    return openXmlElement?.Width?.Value;
+    return openXmlElement.Width?.Value;
   }
-
-  public static void SetWidth(BorderType? openXmlElement, Int64? value)
+  
+  private static void SetWidth(DocumentFormat.OpenXml.Vml.Wordprocessing.BorderType openXmlElement, Int64? value)
   {
-    if (openXmlElement != null)
-      openXmlElement.Width = value;
+    openXmlElement.Width = value;
   }
-
+  
   /// <summary>
-  ///   Border shadow
+  /// Border shadow
   /// </summary>
-  public static Boolean? GetShadow(BorderType? openXmlElement)
+  private static Boolean? GetShadow(DocumentFormat.OpenXml.Vml.Wordprocessing.BorderType openXmlElement)
   {
     return openXmlElement?.Shadow?.Value;
   }
-
-  public static void SetShadow(BorderType? openXmlElement, Boolean? value)
+  
+  private static void SetShadow(DocumentFormat.OpenXml.Vml.Wordprocessing.BorderType openXmlElement, Boolean? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.Shadow = value;
-      else
-        openXmlElement.Shadow = null;
+    if (value != null)
+      openXmlElement.Shadow = value;
+    else
+      openXmlElement.Shadow = null;
   }
-
-  public static DocumentModel.Wordprocessing.Vml.BorderType? CreateModelElement(BorderType? openXmlElement)
+  
+  public static DocumentModel.Wordprocessing.Vml.BorderType? CreateModelElement(DocumentFormat.OpenXml.Vml.Wordprocessing.BorderType? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -66,9 +59,9 @@ public static class BorderTypeConverter
     }
     return null;
   }
-
+  
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.Vml.BorderType? value)
-    where OpenXmlElementType : BorderType, new()
+    where OpenXmlElementType: DocumentFormat.OpenXml.Vml.Wordprocessing.BorderType, new()
   {
     if (value != null)
     {

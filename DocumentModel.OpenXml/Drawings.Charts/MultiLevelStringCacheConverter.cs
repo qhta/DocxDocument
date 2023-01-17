@@ -1,95 +1,81 @@
-using DocumentFormat.OpenXml.Drawing.Charts;
-using Level = DocumentModel.Drawings.Charts.Level;
-
 namespace DocumentModel.OpenXml.Drawings.Charts;
 
 /// <summary>
-///   Defines the MultiLevelStringCache Class.
+/// Defines the MultiLevelStringCache Class.
 /// </summary>
 public static class MultiLevelStringCacheConverter
 {
   /// <summary>
-  ///   PointCount.
+  /// PointCount.
   /// </summary>
-  public static UInt32? GetPointCount(MultiLevelStringCache? openXmlElement)
+  private static UInt32? GetPointCount(DocumentFormat.OpenXml.Drawing.Charts.MultiLevelStringCache openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<PointCount>();
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.PointCount>();
     if (itemElement != null)
       return itemElement.Val?.Value;
     return null;
   }
-
-  public static void SetPointCount(MultiLevelStringCache? openXmlElement, UInt32? value)
+  
+  private static void SetPointCount(DocumentFormat.OpenXml.Drawing.Charts.MultiLevelStringCache openXmlElement, UInt32? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.PointCount>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<PointCount>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = new PointCount { Val = value };
-        openXmlElement.AddChild(itemElement);
-      }
+      itemElement = new DocumentFormat.OpenXml.Drawing.Charts.PointCount{ Val = value };
+      openXmlElement.AddChild(itemElement);
     }
   }
-
-  public static Collection<Level>? GetLevels(MultiLevelStringCache? openXmlElement)
+  
+  private static System.Collections.ObjectModel.Collection<DocumentModel.Drawings.Charts.Level> GetLevels(DocumentFormat.OpenXml.Drawing.Charts.MultiLevelStringCache openXmlElement)
   {
-    if (openXmlElement != null)
+    var collection = new System.Collections.ObjectModel.Collection<DocumentModel.Drawings.Charts.Level>();
+    foreach (var item in openXmlElement.Elements<DocumentFormat.OpenXml.Drawing.Charts.Level>())
     {
-      var collection = new Collection<Level>();
-      foreach (var item in openXmlElement.Elements<DocumentFormat.OpenXml.Drawing.Charts.Level>())
+      var newItem = DocumentModel.OpenXml.Drawings.Charts.LevelConverter.CreateModelElement(item);
+      if (newItem != null)
+        collection.Add(newItem);
+    }
+    return collection;
+  }
+  
+  private static void SetLevels(DocumentFormat.OpenXml.Drawing.Charts.MultiLevelStringCache openXmlElement, System.Collections.ObjectModel.Collection<DocumentModel.Drawings.Charts.Level>? value)
+  {
+    openXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Drawing.Charts.Level>();
+    if (value != null)
+    {
+      foreach (var item in value)
       {
-        var newItem = LevelConverter.CreateModelElement(item);
+        var newItem = DocumentModel.OpenXml.Drawings.Charts.LevelConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Charts.Level>(item);
         if (newItem != null)
-          collection.Add(newItem);
+          openXmlElement.AddChild(newItem);
       }
-      return collection;
-    }
-    return null;
-  }
-
-  public static void SetLevels(MultiLevelStringCache? openXmlElement, Collection<Level>? value)
-  {
-    if (openXmlElement != null)
-    {
-      openXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Drawing.Charts.Level>();
-      if (value != null)
-        foreach (var item in value)
-        {
-          var newItem = LevelConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Charts.Level>(item);
-          if (newItem != null)
-            openXmlElement.AddChild(newItem);
-        }
     }
   }
-
-  public static DocumentModel.Drawings.Charts.ExtensionList? GetExtensionList(MultiLevelStringCache? openXmlElement)
+  
+  private static DocumentModel.Drawings.Charts.ExtensionList? GetExtensionList(DocumentFormat.OpenXml.Drawing.Charts.MultiLevelStringCache openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.ExtensionList>();
     if (itemElement != null)
-      return ExtensionListConverter.CreateModelElement(itemElement);
+      return DocumentModel.OpenXml.Drawings.Charts.ExtensionListConverter.CreateModelElement(itemElement);
     return null;
   }
-
-  public static void SetExtensionList(MultiLevelStringCache? openXmlElement, DocumentModel.Drawings.Charts.ExtensionList? value)
+  
+  private static void SetExtensionList(DocumentFormat.OpenXml.Drawing.Charts.MultiLevelStringCache openXmlElement, DocumentModel.Drawings.Charts.ExtensionList? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.ExtensionList>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.ExtensionList>();
+      itemElement = DocumentModel.OpenXml.Drawings.Charts.ExtensionListConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Charts.ExtensionList>(value);
       if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = ExtensionListConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Charts.ExtensionList>(value);
-        if (itemElement != null)
-          openXmlElement.AddChild(itemElement);
-      }
+        openXmlElement.AddChild(itemElement);
     }
   }
-
-  public static DocumentModel.Drawings.Charts.MultiLevelStringCache? CreateModelElement(MultiLevelStringCache? openXmlElement)
+  
+  public static DocumentModel.Drawings.Charts.MultiLevelStringCache? CreateModelElement(DocumentFormat.OpenXml.Drawing.Charts.MultiLevelStringCache? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -101,9 +87,9 @@ public static class MultiLevelStringCacheConverter
     }
     return null;
   }
-
+  
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.Charts.MultiLevelStringCache? value)
-    where OpenXmlElementType : MultiLevelStringCache, new()
+    where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.Charts.MultiLevelStringCache, new()
   {
     if (value != null)
     {

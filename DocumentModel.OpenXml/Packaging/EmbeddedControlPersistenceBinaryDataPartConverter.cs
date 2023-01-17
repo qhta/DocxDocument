@@ -1,18 +1,16 @@
-using DocumentFormat.OpenXml.Packaging;
-
 namespace DocumentModel.OpenXml.Packaging;
 
 /// <summary>
-///   Defines the EmbeddedControlPersistenceBinaryDataPart
+/// Defines the EmbeddedControlPersistenceBinaryDataPart
 /// </summary>
 public static class EmbeddedControlPersistenceBinaryDataPartConverter
 {
-  public static String? GetRelationshipType(EmbeddedControlPersistenceBinaryDataPart? openXmlElement)
+  private static String? GetRelationshipType(DocumentFormat.OpenXml.Packaging.EmbeddedControlPersistenceBinaryDataPart openXmlElement)
   {
     return openXmlElement?.RelationshipType;
   }
-
-  public static DocumentModel.Packaging.EmbeddedControlPersistenceBinaryDataPart? CreateModelElement(EmbeddedControlPersistenceBinaryDataPart? openXmlElement)
+  
+  public static DocumentModel.Packaging.EmbeddedControlPersistenceBinaryDataPart? CreateModelElement(DocumentFormat.OpenXml.Packaging.EmbeddedControlPersistenceBinaryDataPart? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -22,9 +20,9 @@ public static class EmbeddedControlPersistenceBinaryDataPartConverter
     }
     return null;
   }
-
+  
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Packaging.EmbeddedControlPersistenceBinaryDataPart? value)
-    where OpenXmlElementType : EmbeddedControlPersistenceBinaryDataPart, new()
+    where OpenXmlElementType: DocumentFormat.OpenXml.Packaging.EmbeddedControlPersistenceBinaryDataPart, new()
   {
     if (value != null)
     {

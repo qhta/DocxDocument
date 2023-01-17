@@ -1,106 +1,95 @@
-using DocumentFormat.OpenXml.Office.Word;
-
 namespace DocumentModel.OpenXml.Wordprocessing;
 
 /// <summary>
-///   Defines the Mcd Class.
+/// Defines the Mcd Class.
 /// </summary>
 public static class McdConverter
 {
   /// <summary>
-  ///   macroName
+  /// macroName
   /// </summary>
-  public static String? GetMacroName(Mcd? openXmlElement)
+  private static String? GetMacroName(DocumentFormat.OpenXml.Office.Word.Mcd openXmlElement)
   {
     return openXmlElement?.MacroName?.Value;
   }
-
-  public static void SetMacroName(Mcd? openXmlElement, String? value)
+  
+  private static void SetMacroName(DocumentFormat.OpenXml.Office.Word.Mcd openXmlElement, String? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.MacroName = new StringValue { Value = value };
-      else
-        openXmlElement.MacroName = null;
+    if (value != null)
+      openXmlElement.MacroName = new StringValue { Value = value };
+    else
+      openXmlElement.MacroName = null;
   }
-
+  
   /// <summary>
-  ///   name
+  /// name
   /// </summary>
-  public static String? GetName(Mcd? openXmlElement)
+  private static String? GetName(DocumentFormat.OpenXml.Office.Word.Mcd openXmlElement)
   {
     return openXmlElement?.Name?.Value;
   }
-
-  public static void SetName(Mcd? openXmlElement, String? value)
+  
+  private static void SetName(DocumentFormat.OpenXml.Office.Word.Mcd openXmlElement, String? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.Name = new StringValue { Value = value };
-      else
-        openXmlElement.Name = null;
+    if (value != null)
+      openXmlElement.Name = new StringValue { Value = value };
+    else
+      openXmlElement.Name = null;
   }
-
+  
   /// <summary>
-  ///   menuHelp
+  /// menuHelp
   /// </summary>
-  public static String? GetMenuHelp(Mcd? openXmlElement)
+  private static String? GetMenuHelp(DocumentFormat.OpenXml.Office.Word.Mcd openXmlElement)
   {
     return openXmlElement?.MenuHelp?.Value;
   }
-
-  public static void SetMenuHelp(Mcd? openXmlElement, String? value)
+  
+  private static void SetMenuHelp(DocumentFormat.OpenXml.Office.Word.Mcd openXmlElement, String? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.MenuHelp = new StringValue { Value = value };
-      else
-        openXmlElement.MenuHelp = null;
+    if (value != null)
+      openXmlElement.MenuHelp = new StringValue { Value = value };
+    else
+      openXmlElement.MenuHelp = null;
   }
-
+  
   /// <summary>
-  ///   bEncrypt
+  /// bEncrypt
   /// </summary>
-  public static Byte[]? GetBEncrypt(Mcd? openXmlElement)
+  private static Byte? GetBEncrypt(DocumentFormat.OpenXml.Office.Word.Mcd openXmlElement)
   {
-    if (openXmlElement?.BEncrypt?.Value != null)
-      return Convert.FromHexString(openXmlElement.BEncrypt.Value);
+    if (openXmlElement.BEncrypt?.Value != null)
+      return Byte.Parse(openXmlElement.BEncrypt.Value, NumberStyles.HexNumber);
     return null;
   }
-
-  public static void SetBEncrypt(Mcd? openXmlElement, Byte[]? value)
+  
+  private static void SetBEncrypt(DocumentFormat.OpenXml.Office.Word.Mcd openXmlElement, Byte? value)
   {
-    if (openXmlElement != null)
-    {
       if (value != null)
-        openXmlElement.BEncrypt = Convert.ToHexString(value);
+        openXmlElement.BEncrypt = ((UInt16)value).ToString("X2");
       else
         openXmlElement.BEncrypt = null;
-    }
   }
-
+  
   /// <summary>
-  ///   cmg
+  /// cmg
   /// </summary>
-  public static Byte[]? GetCmg(Mcd? openXmlElement)
+  private static Byte? GetCmg(DocumentFormat.OpenXml.Office.Word.Mcd openXmlElement)
   {
-    if (openXmlElement?.Cmg?.Value != null)
-      return Convert.FromHexString(openXmlElement.Cmg.Value);
+    if (openXmlElement.Cmg?.Value != null)
+      return Byte.Parse(openXmlElement.Cmg.Value, NumberStyles.HexNumber);
     return null;
   }
-
-  public static void SetCmg(Mcd? openXmlElement, Byte[]? value)
+  
+  private static void SetCmg(DocumentFormat.OpenXml.Office.Word.Mcd openXmlElement, Byte? value)
   {
-    if (openXmlElement != null)
-    {
       if (value != null)
-        openXmlElement.Cmg = Convert.ToHexString(value);
+        openXmlElement.Cmg = ((UInt16)value).ToString("X2");
       else
         openXmlElement.Cmg = null;
-    }
   }
-
-  public static DocumentModel.Wordprocessing.Mcd? CreateModelElement(Mcd? openXmlElement)
+  
+  public static DocumentModel.Wordprocessing.Mcd? CreateModelElement(DocumentFormat.OpenXml.Office.Word.Mcd? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -114,9 +103,9 @@ public static class McdConverter
     }
     return null;
   }
-
+  
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.Mcd? value)
-    where OpenXmlElementType : Mcd, new()
+    where OpenXmlElementType: DocumentFormat.OpenXml.Office.Word.Mcd, new()
   {
     if (value != null)
     {

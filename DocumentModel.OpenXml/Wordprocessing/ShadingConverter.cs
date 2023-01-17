@@ -1,159 +1,146 @@
-using DocumentFormat.OpenXml.Wordprocessing;
-using DocumentModel.Wordprocessing;
-using Shading = DocumentFormat.OpenXml.Wordprocessing.Shading;
-
 namespace DocumentModel.OpenXml.Wordprocessing;
 
 /// <summary>
-///   Defines the Shading Class.
+/// Defines the Shading Class.
 /// </summary>
 public static class ShadingConverter
 {
   /// <summary>
-  ///   Shading Pattern
+  /// Shading Pattern
   /// </summary>
-  public static ShadingPatternKind? GetVal(Shading? openXmlElement)
+  private static DocumentModel.Wordprocessing.ShadingPatternKind? GetVal(DocumentFormat.OpenXml.Wordprocessing.Shading openXmlElement)
   {
-    return EnumValueConverter.GetValue<ShadingPatternValues, ShadingPatternKind>(openXmlElement?.Val?.Value);
+    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Wordprocessing.ShadingPatternValues, DocumentModel.Wordprocessing.ShadingPatternKind>(openXmlElement?.Val?.Value);
   }
-
-  public static void SetVal(Shading? openXmlElement, ShadingPatternKind? value)
+  
+  private static void SetVal(DocumentFormat.OpenXml.Wordprocessing.Shading openXmlElement, DocumentModel.Wordprocessing.ShadingPatternKind? value)
   {
-    if (openXmlElement != null)
-      openXmlElement.Val = EnumValueConverter.CreateEnumValue<ShadingPatternValues, ShadingPatternKind>(value);
+    openXmlElement.Val = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Wordprocessing.ShadingPatternValues, DocumentModel.Wordprocessing.ShadingPatternKind>(value);
   }
-
+  
   /// <summary>
-  ///   Shading Pattern Color
+  /// Shading Pattern Color
   /// </summary>
-  public static String? GetColor(Shading? openXmlElement)
+  private static String? GetColor(DocumentFormat.OpenXml.Wordprocessing.Shading openXmlElement)
   {
     return openXmlElement?.Color?.Value;
   }
-
-  public static void SetColor(Shading? openXmlElement, String? value)
+  
+  private static void SetColor(DocumentFormat.OpenXml.Wordprocessing.Shading openXmlElement, String? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.Color = new StringValue { Value = value };
-      else
-        openXmlElement.Color = null;
+    if (value != null)
+      openXmlElement.Color = new StringValue { Value = value };
+    else
+      openXmlElement.Color = null;
   }
-
+  
   /// <summary>
-  ///   Shading Pattern Theme Color
+  /// Shading Pattern Theme Color
   /// </summary>
-  public static ThemeColorKind? GetThemeColor(Shading? openXmlElement)
+  private static DocumentModel.Wordprocessing.ThemeColorKind? GetThemeColor(DocumentFormat.OpenXml.Wordprocessing.Shading openXmlElement)
   {
-    return EnumValueConverter.GetValue<ThemeColorValues, ThemeColorKind>(openXmlElement?.ThemeColor?.Value);
+    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Wordprocessing.ThemeColorValues, DocumentModel.Wordprocessing.ThemeColorKind>(openXmlElement?.ThemeColor?.Value);
   }
-
-  public static void SetThemeColor(Shading? openXmlElement, ThemeColorKind? value)
+  
+  private static void SetThemeColor(DocumentFormat.OpenXml.Wordprocessing.Shading openXmlElement, DocumentModel.Wordprocessing.ThemeColorKind? value)
   {
-    if (openXmlElement != null)
-      openXmlElement.ThemeColor = EnumValueConverter.CreateEnumValue<ThemeColorValues, ThemeColorKind>(value);
+    openXmlElement.ThemeColor = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Wordprocessing.ThemeColorValues, DocumentModel.Wordprocessing.ThemeColorKind>(value);
   }
-
+  
   /// <summary>
-  ///   Shading Pattern Theme Color Tint
+  /// Shading Pattern Theme Color Tint
   /// </summary>
-  public static String? GetThemeTint(Shading? openXmlElement)
+  private static String? GetThemeTint(DocumentFormat.OpenXml.Wordprocessing.Shading openXmlElement)
   {
     return openXmlElement?.ThemeTint?.Value;
   }
-
-  public static void SetThemeTint(Shading? openXmlElement, String? value)
+  
+  private static void SetThemeTint(DocumentFormat.OpenXml.Wordprocessing.Shading openXmlElement, String? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.ThemeTint = new StringValue { Value = value };
-      else
-        openXmlElement.ThemeTint = null;
+    if (value != null)
+      openXmlElement.ThemeTint = new StringValue { Value = value };
+    else
+      openXmlElement.ThemeTint = null;
   }
-
+  
   /// <summary>
-  ///   Shading Pattern Theme Color Shade
+  /// Shading Pattern Theme Color Shade
   /// </summary>
-  public static String? GetThemeShade(Shading? openXmlElement)
+  private static String? GetThemeShade(DocumentFormat.OpenXml.Wordprocessing.Shading openXmlElement)
   {
     return openXmlElement?.ThemeShade?.Value;
   }
-
-  public static void SetThemeShade(Shading? openXmlElement, String? value)
+  
+  private static void SetThemeShade(DocumentFormat.OpenXml.Wordprocessing.Shading openXmlElement, String? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.ThemeShade = new StringValue { Value = value };
-      else
-        openXmlElement.ThemeShade = null;
+    if (value != null)
+      openXmlElement.ThemeShade = new StringValue { Value = value };
+    else
+      openXmlElement.ThemeShade = null;
   }
-
+  
   /// <summary>
-  ///   Shading Background Color
+  /// Shading Background Color
   /// </summary>
-  public static String? GetFill(Shading? openXmlElement)
+  private static String? GetFill(DocumentFormat.OpenXml.Wordprocessing.Shading openXmlElement)
   {
     return openXmlElement?.Fill?.Value;
   }
-
-  public static void SetFill(Shading? openXmlElement, String? value)
+  
+  private static void SetFill(DocumentFormat.OpenXml.Wordprocessing.Shading openXmlElement, String? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.Fill = new StringValue { Value = value };
-      else
-        openXmlElement.Fill = null;
+    if (value != null)
+      openXmlElement.Fill = new StringValue { Value = value };
+    else
+      openXmlElement.Fill = null;
   }
-
+  
   /// <summary>
-  ///   Shading Background Theme Color
+  /// Shading Background Theme Color
   /// </summary>
-  public static ThemeColorKind? GetThemeFill(Shading? openXmlElement)
+  private static DocumentModel.Wordprocessing.ThemeColorKind? GetThemeFill(DocumentFormat.OpenXml.Wordprocessing.Shading openXmlElement)
   {
-    return EnumValueConverter.GetValue<ThemeColorValues, ThemeColorKind>(openXmlElement?.ThemeFill?.Value);
+    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Wordprocessing.ThemeColorValues, DocumentModel.Wordprocessing.ThemeColorKind>(openXmlElement?.ThemeFill?.Value);
   }
-
-  public static void SetThemeFill(Shading? openXmlElement, ThemeColorKind? value)
+  
+  private static void SetThemeFill(DocumentFormat.OpenXml.Wordprocessing.Shading openXmlElement, DocumentModel.Wordprocessing.ThemeColorKind? value)
   {
-    if (openXmlElement != null)
-      openXmlElement.ThemeFill = EnumValueConverter.CreateEnumValue<ThemeColorValues, ThemeColorKind>(value);
+    openXmlElement.ThemeFill = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Wordprocessing.ThemeColorValues, DocumentModel.Wordprocessing.ThemeColorKind>(value);
   }
-
+  
   /// <summary>
-  ///   Shading Background Theme Color Tint
+  /// Shading Background Theme Color Tint
   /// </summary>
-  public static String? GetThemeFillTint(Shading? openXmlElement)
+  private static String? GetThemeFillTint(DocumentFormat.OpenXml.Wordprocessing.Shading openXmlElement)
   {
     return openXmlElement?.ThemeFillTint?.Value;
   }
-
-  public static void SetThemeFillTint(Shading? openXmlElement, String? value)
+  
+  private static void SetThemeFillTint(DocumentFormat.OpenXml.Wordprocessing.Shading openXmlElement, String? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.ThemeFillTint = new StringValue { Value = value };
-      else
-        openXmlElement.ThemeFillTint = null;
+    if (value != null)
+      openXmlElement.ThemeFillTint = new StringValue { Value = value };
+    else
+      openXmlElement.ThemeFillTint = null;
   }
-
+  
   /// <summary>
-  ///   Shading Background Theme Color Shade
+  /// Shading Background Theme Color Shade
   /// </summary>
-  public static String? GetThemeFillShade(Shading? openXmlElement)
+  private static String? GetThemeFillShade(DocumentFormat.OpenXml.Wordprocessing.Shading openXmlElement)
   {
     return openXmlElement?.ThemeFillShade?.Value;
   }
-
-  public static void SetThemeFillShade(Shading? openXmlElement, String? value)
+  
+  private static void SetThemeFillShade(DocumentFormat.OpenXml.Wordprocessing.Shading openXmlElement, String? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.ThemeFillShade = new StringValue { Value = value };
-      else
-        openXmlElement.ThemeFillShade = null;
+    if (value != null)
+      openXmlElement.ThemeFillShade = new StringValue { Value = value };
+    else
+      openXmlElement.ThemeFillShade = null;
   }
-
-  public static DocumentModel.Wordprocessing.Shading? CreateModelElement(Shading? openXmlElement)
+  
+  public static DocumentModel.Wordprocessing.Shading? CreateModelElement(DocumentFormat.OpenXml.Wordprocessing.Shading? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -171,9 +158,9 @@ public static class ShadingConverter
     }
     return null;
   }
-
+  
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.Shading? value)
-    where OpenXmlElementType : Shading, new()
+    where OpenXmlElementType: DocumentFormat.OpenXml.Wordprocessing.Shading, new()
   {
     if (value != null)
     {

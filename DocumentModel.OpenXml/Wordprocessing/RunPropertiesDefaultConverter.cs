@@ -1,41 +1,35 @@
-using DocumentModel.Wordprocessing;
-using RunPropertiesDefault = DocumentFormat.OpenXml.Wordprocessing.RunPropertiesDefault;
-
 namespace DocumentModel.OpenXml.Wordprocessing;
 
 /// <summary>
-///   Default Run Properties.
+/// Default Run Properties.
 /// </summary>
 public static class RunPropertiesDefaultConverter
 {
   /// <summary>
-  ///   Run Properties.
+  /// Run Properties.
   /// </summary>
-  public static RunPropertiesBaseStyle? GetRunPropertiesBaseStyle(RunPropertiesDefault? openXmlElement)
+  private static DocumentModel.Wordprocessing.RunPropertiesBaseStyle? GetRunPropertiesBaseStyle(DocumentFormat.OpenXml.Wordprocessing.RunPropertiesDefault openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.RunPropertiesBaseStyle>();
     if (itemElement != null)
-      return RunPropertiesBaseStyleConverter.CreateModelElement(itemElement);
+      return DocumentModel.OpenXml.Wordprocessing.RunPropertiesBaseStyleConverter.CreateModelElement(itemElement);
     return null;
   }
-
-  public static void SetRunPropertiesBaseStyle(RunPropertiesDefault? openXmlElement, RunPropertiesBaseStyle? value)
+  
+  private static void SetRunPropertiesBaseStyle(DocumentFormat.OpenXml.Wordprocessing.RunPropertiesDefault openXmlElement, DocumentModel.Wordprocessing.RunPropertiesBaseStyle? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.RunPropertiesBaseStyle>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.RunPropertiesBaseStyle>();
+      itemElement = DocumentModel.OpenXml.Wordprocessing.RunPropertiesBaseStyleConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.RunPropertiesBaseStyle>(value);
       if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = RunPropertiesBaseStyleConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.RunPropertiesBaseStyle>(value);
-        if (itemElement != null)
-          openXmlElement.AddChild(itemElement);
-      }
+        openXmlElement.AddChild(itemElement);
     }
   }
-
-  public static DocumentModel.Wordprocessing.RunPropertiesDefault? CreateModelElement(RunPropertiesDefault? openXmlElement)
+  
+  public static DocumentModel.Wordprocessing.RunPropertiesDefault? CreateModelElement(DocumentFormat.OpenXml.Wordprocessing.RunPropertiesDefault? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -45,9 +39,9 @@ public static class RunPropertiesDefaultConverter
     }
     return null;
   }
-
+  
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.RunPropertiesDefault? value)
-    where OpenXmlElementType : RunPropertiesDefault, new()
+    where OpenXmlElementType: DocumentFormat.OpenXml.Wordprocessing.RunPropertiesDefault, new()
   {
     if (value != null)
     {

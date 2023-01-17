@@ -1,89 +1,80 @@
-using DocumentFormat.OpenXml.Wordprocessing;
-using PreviousSectionProperties = DocumentModel.Wordprocessing.PreviousSectionProperties;
-
 namespace DocumentModel.OpenXml.Wordprocessing;
 
 /// <summary>
-///   Revision Information for Section Properties.
+/// Revision Information for Section Properties.
 /// </summary>
 public static class SectionPropertiesChangeConverter
 {
   /// <summary>
-  ///   author
+  /// author
   /// </summary>
-  public static String? GetAuthor(SectionPropertiesChange? openXmlElement)
+  private static String? GetAuthor(DocumentFormat.OpenXml.Wordprocessing.SectionPropertiesChange openXmlElement)
   {
     return openXmlElement?.Author?.Value;
   }
-
-  public static void SetAuthor(SectionPropertiesChange? openXmlElement, String? value)
+  
+  private static void SetAuthor(DocumentFormat.OpenXml.Wordprocessing.SectionPropertiesChange openXmlElement, String? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.Author = new StringValue { Value = value };
-      else
-        openXmlElement.Author = null;
+    if (value != null)
+      openXmlElement.Author = new StringValue { Value = value };
+    else
+      openXmlElement.Author = null;
   }
-
+  
   /// <summary>
-  ///   date
+  /// date
   /// </summary>
-  public static DateTime? GetDate(SectionPropertiesChange? openXmlElement)
+  private static DateTime? GetDate(DocumentFormat.OpenXml.Wordprocessing.SectionPropertiesChange openXmlElement)
   {
-    return openXmlElement?.Date?.Value;
+    return openXmlElement.Date?.Value;
   }
-
-  public static void SetDate(SectionPropertiesChange? openXmlElement, DateTime? value)
+  
+  private static void SetDate(DocumentFormat.OpenXml.Wordprocessing.SectionPropertiesChange openXmlElement, DateTime? value)
   {
-    if (openXmlElement != null)
-      openXmlElement.Date = value;
+    openXmlElement.Date = value;
   }
-
+  
   /// <summary>
-  ///   Annotation Identifier
+  /// Annotation Identifier
   /// </summary>
-  public static String? GetId(SectionPropertiesChange? openXmlElement)
+  private static String? GetId(DocumentFormat.OpenXml.Wordprocessing.SectionPropertiesChange openXmlElement)
   {
     return openXmlElement?.Id?.Value;
   }
-
-  public static void SetId(SectionPropertiesChange? openXmlElement, String? value)
+  
+  private static void SetId(DocumentFormat.OpenXml.Wordprocessing.SectionPropertiesChange openXmlElement, String? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.Id = new StringValue { Value = value };
-      else
-        openXmlElement.Id = null;
+    if (value != null)
+      openXmlElement.Id = new StringValue { Value = value };
+    else
+      openXmlElement.Id = null;
   }
-
+  
   /// <summary>
-  ///   Previous Section Properties.
+  /// Previous Section Properties.
   /// </summary>
-  public static PreviousSectionProperties? GetPreviousSectionProperties(SectionPropertiesChange? openXmlElement)
+  private static DocumentModel.Wordprocessing.PreviousSectionProperties? GetPreviousSectionProperties(DocumentFormat.OpenXml.Wordprocessing.SectionPropertiesChange openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.PreviousSectionProperties>();
     if (itemElement != null)
-      return PreviousSectionPropertiesConverter.CreateModelElement(itemElement);
+      return DocumentModel.OpenXml.Wordprocessing.PreviousSectionPropertiesConverter.CreateModelElement(itemElement);
     return null;
   }
-
-  public static void SetPreviousSectionProperties(SectionPropertiesChange? openXmlElement, PreviousSectionProperties? value)
+  
+  private static void SetPreviousSectionProperties(DocumentFormat.OpenXml.Wordprocessing.SectionPropertiesChange openXmlElement, DocumentModel.Wordprocessing.PreviousSectionProperties? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.PreviousSectionProperties>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.PreviousSectionProperties>();
+      itemElement = DocumentModel.OpenXml.Wordprocessing.PreviousSectionPropertiesConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.PreviousSectionProperties>(value);
       if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = PreviousSectionPropertiesConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.PreviousSectionProperties>(value);
-        if (itemElement != null)
-          openXmlElement.AddChild(itemElement);
-      }
+        openXmlElement.AddChild(itemElement);
     }
   }
-
-  public static DocumentModel.Wordprocessing.SectionPropertiesChange? CreateModelElement(SectionPropertiesChange? openXmlElement)
+  
+  public static DocumentModel.Wordprocessing.SectionPropertiesChange? CreateModelElement(DocumentFormat.OpenXml.Wordprocessing.SectionPropertiesChange? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -96,9 +87,9 @@ public static class SectionPropertiesChangeConverter
     }
     return null;
   }
-
+  
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.SectionPropertiesChange? value)
-    where OpenXmlElementType : SectionPropertiesChange, new()
+    where OpenXmlElementType: DocumentFormat.OpenXml.Wordprocessing.SectionPropertiesChange, new()
   {
     if (value != null)
     {

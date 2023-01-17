@@ -1,27 +1,24 @@
-using DocumentFormat.OpenXml.Drawing;
-
 namespace DocumentModel.OpenXml.Drawings;
 
 /// <summary>
-///   Miter Line Join.
+/// Miter Line Join.
 /// </summary>
 public static class MiterConverter
 {
   /// <summary>
-  ///   Miter Join Limit
+  /// Miter Join Limit
   /// </summary>
-  public static Int32? GetLimit(Miter? openXmlElement)
+  private static Int32? GetLimit(DocumentFormat.OpenXml.Drawing.Miter openXmlElement)
   {
-    return openXmlElement?.Limit?.Value;
+    return openXmlElement.Limit?.Value;
   }
-
-  public static void SetLimit(Miter? openXmlElement, Int32? value)
+  
+  private static void SetLimit(DocumentFormat.OpenXml.Drawing.Miter openXmlElement, Int32? value)
   {
-    if (openXmlElement != null)
-      openXmlElement.Limit = value;
+    openXmlElement.Limit = value;
   }
-
-  public static DocumentModel.Drawings.Miter? CreateModelElement(Miter? openXmlElement)
+  
+  public static DocumentModel.Drawings.Miter? CreateModelElement(DocumentFormat.OpenXml.Drawing.Miter? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -31,9 +28,9 @@ public static class MiterConverter
     }
     return null;
   }
-
+  
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.Miter? value)
-    where OpenXmlElementType : Miter, new()
+    where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.Miter, new()
   {
     if (value != null)
     {

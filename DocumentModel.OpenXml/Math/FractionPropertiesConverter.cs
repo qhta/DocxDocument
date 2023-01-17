@@ -1,72 +1,59 @@
-using DocumentFormat.OpenXml.Math;
-using DocumentModel.Math;
-using ControlProperties = DocumentModel.Math.ControlProperties;
-using FractionProperties = DocumentFormat.OpenXml.Math.FractionProperties;
-
 namespace DocumentModel.OpenXml.Math;
 
 /// <summary>
-///   Fraction Properties.
+/// Fraction Properties.
 /// </summary>
 public static class FractionPropertiesConverter
 {
   /// <summary>
-  ///   Fraction type.
+  /// Fraction type.
   /// </summary>
-  public static FractionKind? GetFractionType(FractionProperties? openXmlElement)
+  private static DocumentModel.Math.FractionKind? GetFractionType(DocumentFormat.OpenXml.Math.FractionProperties openXmlElement)
   {
-    if (openXmlElement != null)
-    {
-      var itemElement = openXmlElement.GetFirstChild<FractionType>();
-      if (itemElement?.Val?.Value != null) return EnumValueConverter.GetValue<FractionTypeValues, FractionKind>(itemElement.Val.Value);
-    }
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Math.FractionType>();
+    if (itemElement?.Val?.Value != null)
+      return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Math.FractionTypeValues, DocumentModel.Math.FractionKind>(itemElement.Val.Value);
     return null;
   }
-
-  public static void SetFractionType(FractionProperties? openXmlElement, FractionKind? value)
+  
+  private static void SetFractionType(DocumentFormat.OpenXml.Math.FractionProperties openXmlElement, DocumentModel.Math.FractionKind? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Math.FractionType>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<FractionType>();
+      itemElement = EnumValueConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Math.FractionType, DocumentFormat.OpenXml.Math.FractionTypeValues, DocumentModel.Math.FractionKind>(value);
       if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = EnumValueConverter.CreateOpenXmlElement<FractionType, FractionTypeValues, FractionKind>(value);
-        if (itemElement != null)
-          openXmlElement.AddChild(itemElement);
-      }
+        openXmlElement.AddChild(itemElement);
     }
   }
-
+  
   /// <summary>
-  ///   ControlProperties.
+  /// ControlProperties.
   /// </summary>
-  public static ControlProperties? GetControlProperties(FractionProperties? openXmlElement)
+  private static DocumentModel.Math.ControlProperties? GetControlProperties(DocumentFormat.OpenXml.Math.FractionProperties openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Math.ControlProperties>();
     if (itemElement != null)
-      return ControlPropertiesConverter.CreateModelElement(itemElement);
+      return DocumentModel.OpenXml.Math.ControlPropertiesConverter.CreateModelElement(itemElement);
     return null;
   }
-
-  public static void SetControlProperties(FractionProperties? openXmlElement, ControlProperties? value)
+  
+  private static void SetControlProperties(DocumentFormat.OpenXml.Math.FractionProperties openXmlElement, DocumentModel.Math.ControlProperties? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Math.ControlProperties>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Math.ControlProperties>();
+      itemElement = DocumentModel.OpenXml.Math.ControlPropertiesConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Math.ControlProperties>(value);
       if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = ControlPropertiesConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Math.ControlProperties>(value);
-        if (itemElement != null)
-          openXmlElement.AddChild(itemElement);
-      }
+        openXmlElement.AddChild(itemElement);
     }
   }
-
-  public static DocumentModel.Math.FractionProperties? CreateModelElement(FractionProperties? openXmlElement)
+  
+  public static DocumentModel.Math.FractionProperties? CreateModelElement(DocumentFormat.OpenXml.Math.FractionProperties? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -77,9 +64,9 @@ public static class FractionPropertiesConverter
     }
     return null;
   }
-
+  
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Math.FractionProperties? value)
-    where OpenXmlElementType : FractionProperties, new()
+    where OpenXmlElementType: DocumentFormat.OpenXml.Math.FractionProperties, new()
   {
     if (value != null)
     {

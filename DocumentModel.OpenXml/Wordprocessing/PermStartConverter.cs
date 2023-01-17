@@ -1,102 +1,92 @@
-using DocumentFormat.OpenXml.Wordprocessing;
-using DocumentModel.Wordprocessing;
-using PermStart = DocumentFormat.OpenXml.Wordprocessing.PermStart;
-
 namespace DocumentModel.OpenXml.Wordprocessing;
 
 /// <summary>
-///   Defines the PermStart Class.
+/// Defines the PermStart Class.
 /// </summary>
 public static class PermStartConverter
 {
   /// <summary>
-  ///   edGrp
+  /// edGrp
   /// </summary>
-  public static RangePermissionEditingGroupKind? GetEditorGroup(PermStart? openXmlElement)
+  private static DocumentModel.Wordprocessing.RangePermissionEditingGroupKind? GetEditorGroup(DocumentFormat.OpenXml.Wordprocessing.PermStart openXmlElement)
   {
-    return EnumValueConverter.GetValue<RangePermissionEditingGroupValues, RangePermissionEditingGroupKind>(openXmlElement?.EditorGroup?.Value);
+    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Wordprocessing.RangePermissionEditingGroupValues, DocumentModel.Wordprocessing.RangePermissionEditingGroupKind>(openXmlElement?.EditorGroup?.Value);
   }
-
-  public static void SetEditorGroup(PermStart? openXmlElement, RangePermissionEditingGroupKind? value)
+  
+  private static void SetEditorGroup(DocumentFormat.OpenXml.Wordprocessing.PermStart openXmlElement, DocumentModel.Wordprocessing.RangePermissionEditingGroupKind? value)
   {
-    if (openXmlElement != null)
-      openXmlElement.EditorGroup = EnumValueConverter.CreateEnumValue<RangePermissionEditingGroupValues, RangePermissionEditingGroupKind>(value);
+    openXmlElement.EditorGroup = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Wordprocessing.RangePermissionEditingGroupValues, DocumentModel.Wordprocessing.RangePermissionEditingGroupKind>(value);
   }
-
+  
   /// <summary>
-  ///   ed
+  /// ed
   /// </summary>
-  public static String? GetEd(PermStart? openXmlElement)
+  private static String? GetEd(DocumentFormat.OpenXml.Wordprocessing.PermStart openXmlElement)
   {
     return openXmlElement?.Ed?.Value;
   }
-
-  public static void SetEd(PermStart? openXmlElement, String? value)
+  
+  private static void SetEd(DocumentFormat.OpenXml.Wordprocessing.PermStart openXmlElement, String? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.Ed = new StringValue { Value = value };
-      else
-        openXmlElement.Ed = null;
+    if (value != null)
+      openXmlElement.Ed = new StringValue { Value = value };
+    else
+      openXmlElement.Ed = null;
   }
-
+  
   /// <summary>
-  ///   colFirst
+  /// colFirst
   /// </summary>
-  public static Int32? GetColumnFirst(PermStart? openXmlElement)
+  private static Int32? GetColumnFirst(DocumentFormat.OpenXml.Wordprocessing.PermStart openXmlElement)
   {
-    return openXmlElement?.ColumnFirst?.Value;
+    return openXmlElement.ColumnFirst?.Value;
   }
-
-  public static void SetColumnFirst(PermStart? openXmlElement, Int32? value)
+  
+  private static void SetColumnFirst(DocumentFormat.OpenXml.Wordprocessing.PermStart openXmlElement, Int32? value)
   {
-    if (openXmlElement != null)
-      openXmlElement.ColumnFirst = value;
+    openXmlElement.ColumnFirst = value;
   }
-
+  
   /// <summary>
-  ///   colLast
+  /// colLast
   /// </summary>
-  public static Int32? GetColumnLast(PermStart? openXmlElement)
+  private static Int32? GetColumnLast(DocumentFormat.OpenXml.Wordprocessing.PermStart openXmlElement)
   {
-    return openXmlElement?.ColumnLast?.Value;
+    return openXmlElement.ColumnLast?.Value;
   }
-
-  public static void SetColumnLast(PermStart? openXmlElement, Int32? value)
+  
+  private static void SetColumnLast(DocumentFormat.OpenXml.Wordprocessing.PermStart openXmlElement, Int32? value)
   {
-    if (openXmlElement != null)
-      openXmlElement.ColumnLast = value;
+    openXmlElement.ColumnLast = value;
   }
-
+  
   /// <summary>
-  ///   Annotation ID
+  /// Annotation ID
   /// </summary>
-  public static Int32? GetId(PermStart? openXmlElement)
+  private static Int32? GetId(DocumentFormat.OpenXml.Wordprocessing.PermStart openXmlElement)
   {
-    return openXmlElement?.Id?.Value;
+    return openXmlElement.Id?.Value;
   }
-
-  public static void SetId(PermStart? openXmlElement, Int32? value)
+  
+  private static void SetId(DocumentFormat.OpenXml.Wordprocessing.PermStart openXmlElement, Int32? value)
   {
-    if (openXmlElement != null)
-      openXmlElement.Id = value;
+    openXmlElement.Id = value;
   }
-
+  
   /// <summary>
-  ///   Annotation Displaced By Custom XML Markup
+  /// Annotation Displaced By Custom XML Markup
   /// </summary>
-  public static DisplacedByCustomXmlKind? GetDisplacedByCustomXml(PermStart? openXmlElement)
+  private static DocumentModel.Wordprocessing.DisplacedByCustomXmlKind? GetDisplacedByCustomXml(DocumentFormat.OpenXml.Wordprocessing.PermStart openXmlElement)
   {
-    return EnumValueConverter.GetValue<DisplacedByCustomXmlValues, DisplacedByCustomXmlKind>(openXmlElement?.DisplacedByCustomXml?.Value);
+    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Wordprocessing.DisplacedByCustomXmlValues, DocumentModel.Wordprocessing.DisplacedByCustomXmlKind>(openXmlElement?.DisplacedByCustomXml?.Value);
   }
-
-  public static void SetDisplacedByCustomXml(PermStart? openXmlElement, DisplacedByCustomXmlKind? value)
+  
+  private static void SetDisplacedByCustomXml(DocumentFormat.OpenXml.Wordprocessing.PermStart openXmlElement, DocumentModel.Wordprocessing.DisplacedByCustomXmlKind? value)
   {
-    if (openXmlElement != null)
-      openXmlElement.DisplacedByCustomXml = EnumValueConverter.CreateEnumValue<DisplacedByCustomXmlValues, DisplacedByCustomXmlKind>(value);
+    openXmlElement.DisplacedByCustomXml = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Wordprocessing.DisplacedByCustomXmlValues, DocumentModel.Wordprocessing.DisplacedByCustomXmlKind>(value);
   }
-
-  public static DocumentModel.Wordprocessing.PermStart? CreateModelElement(PermStart? openXmlElement)
+  
+  public static DocumentModel.Wordprocessing.PermStart? CreateModelElement(DocumentFormat.OpenXml.Wordprocessing.PermStart? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -111,9 +101,9 @@ public static class PermStartConverter
     }
     return null;
   }
-
+  
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.PermStart? value)
-    where OpenXmlElementType : PermStart, new()
+    where OpenXmlElementType: DocumentFormat.OpenXml.Wordprocessing.PermStart, new()
   {
     if (value != null)
     {

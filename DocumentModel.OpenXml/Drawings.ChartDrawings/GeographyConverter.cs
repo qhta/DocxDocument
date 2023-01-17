@@ -1,120 +1,109 @@
-using DocumentModel.Drawings.ChartDrawings;
-using Geography = DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.Geography;
-
 namespace DocumentModel.OpenXml.Drawings.ChartDrawings;
 
 /// <summary>
-///   Defines the Geography Class.
+/// Defines the Geography Class.
 /// </summary>
 public static class GeographyConverter
 {
   /// <summary>
-  ///   projectionType, this property is only available in Office 2016 and later.
+  /// projectionType, this property is only available in Office 2016 and later.
   /// </summary>
-  public static GeoProjectionType? GetProjectionType(Geography? openXmlElement)
+  private static DocumentModel.Drawings.ChartDrawings.GeoProjectionType? GetProjectionType(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.Geography openXmlElement)
   {
-    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.GeoProjectionType, GeoProjectionType>(openXmlElement?.ProjectionType?.Value);
+    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.GeoProjectionType, DocumentModel.Drawings.ChartDrawings.GeoProjectionType>(openXmlElement?.ProjectionType?.Value);
   }
-
-  public static void SetProjectionType(Geography? openXmlElement, GeoProjectionType? value)
+  
+  private static void SetProjectionType(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.Geography openXmlElement, DocumentModel.Drawings.ChartDrawings.GeoProjectionType? value)
   {
-    if (openXmlElement != null)
-      openXmlElement.ProjectionType = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.GeoProjectionType, GeoProjectionType>(value);
+    openXmlElement.ProjectionType = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.GeoProjectionType, DocumentModel.Drawings.ChartDrawings.GeoProjectionType>(value);
   }
-
+  
   /// <summary>
-  ///   viewedRegionType, this property is only available in Office 2016 and later.
+  /// viewedRegionType, this property is only available in Office 2016 and later.
   /// </summary>
-  public static GeoMappingLevel? GetViewedRegionType(Geography? openXmlElement)
+  private static DocumentModel.Drawings.ChartDrawings.GeoMappingLevel? GetViewedRegionType(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.Geography openXmlElement)
   {
-    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.GeoMappingLevel, GeoMappingLevel>(openXmlElement?.ViewedRegionType?.Value);
+    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.GeoMappingLevel, DocumentModel.Drawings.ChartDrawings.GeoMappingLevel>(openXmlElement?.ViewedRegionType?.Value);
   }
-
-  public static void SetViewedRegionType(Geography? openXmlElement, GeoMappingLevel? value)
+  
+  private static void SetViewedRegionType(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.Geography openXmlElement, DocumentModel.Drawings.ChartDrawings.GeoMappingLevel? value)
   {
-    if (openXmlElement != null)
-      openXmlElement.ViewedRegionType = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.GeoMappingLevel, GeoMappingLevel>(value);
+    openXmlElement.ViewedRegionType = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.GeoMappingLevel, DocumentModel.Drawings.ChartDrawings.GeoMappingLevel>(value);
   }
-
+  
   /// <summary>
-  ///   cultureLanguage, this property is only available in Office 2016 and later.
+  /// cultureLanguage, this property is only available in Office 2016 and later.
   /// </summary>
-  public static String? GetCultureLanguage(Geography? openXmlElement)
+  private static String? GetCultureLanguage(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.Geography openXmlElement)
   {
     return openXmlElement?.CultureLanguage?.Value;
   }
-
-  public static void SetCultureLanguage(Geography? openXmlElement, String? value)
+  
+  private static void SetCultureLanguage(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.Geography openXmlElement, String? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.CultureLanguage = new StringValue { Value = value };
-      else
-        openXmlElement.CultureLanguage = null;
+    if (value != null)
+      openXmlElement.CultureLanguage = new StringValue { Value = value };
+    else
+      openXmlElement.CultureLanguage = null;
   }
-
+  
   /// <summary>
-  ///   cultureRegion, this property is only available in Office 2016 and later.
+  /// cultureRegion, this property is only available in Office 2016 and later.
   /// </summary>
-  public static String? GetCultureRegion(Geography? openXmlElement)
+  private static String? GetCultureRegion(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.Geography openXmlElement)
   {
     return openXmlElement?.CultureRegion?.Value;
   }
-
-  public static void SetCultureRegion(Geography? openXmlElement, String? value)
+  
+  private static void SetCultureRegion(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.Geography openXmlElement, String? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.CultureRegion = new StringValue { Value = value };
-      else
-        openXmlElement.CultureRegion = null;
+    if (value != null)
+      openXmlElement.CultureRegion = new StringValue { Value = value };
+    else
+      openXmlElement.CultureRegion = null;
   }
-
+  
   /// <summary>
-  ///   attribution, this property is only available in Office 2016 and later.
+  /// attribution, this property is only available in Office 2016 and later.
   /// </summary>
-  public static String? GetAttribution(Geography? openXmlElement)
+  private static String? GetAttribution(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.Geography openXmlElement)
   {
     return openXmlElement?.Attribution?.Value;
   }
-
-  public static void SetAttribution(Geography? openXmlElement, String? value)
+  
+  private static void SetAttribution(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.Geography openXmlElement, String? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.Attribution = new StringValue { Value = value };
-      else
-        openXmlElement.Attribution = null;
+    if (value != null)
+      openXmlElement.Attribution = new StringValue { Value = value };
+    else
+      openXmlElement.Attribution = null;
   }
-
+  
   /// <summary>
-  ///   GeoCache.
+  /// GeoCache.
   /// </summary>
-  public static GeoCache? GetGeoCache(Geography? openXmlElement)
+  private static DocumentModel.Drawings.ChartDrawings.GeoCache? GetGeoCache(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.Geography openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.GeoCache>();
     if (itemElement != null)
-      return GeoCacheConverter.CreateModelElement(itemElement);
+      return DocumentModel.OpenXml.Drawings.ChartDrawings.GeoCacheConverter.CreateModelElement(itemElement);
     return null;
   }
-
-  public static void SetGeoCache(Geography? openXmlElement, GeoCache? value)
+  
+  private static void SetGeoCache(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.Geography openXmlElement, DocumentModel.Drawings.ChartDrawings.GeoCache? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.GeoCache>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.GeoCache>();
+      itemElement = DocumentModel.OpenXml.Drawings.ChartDrawings.GeoCacheConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.GeoCache>(value);
       if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = GeoCacheConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.GeoCache>(value);
-        if (itemElement != null)
-          openXmlElement.AddChild(itemElement);
-      }
+        openXmlElement.AddChild(itemElement);
     }
   }
-
-  public static DocumentModel.Drawings.ChartDrawings.Geography? CreateModelElement(Geography? openXmlElement)
+  
+  public static DocumentModel.Drawings.ChartDrawings.Geography? CreateModelElement(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.Geography? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -129,9 +118,9 @@ public static class GeographyConverter
     }
     return null;
   }
-
+  
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.ChartDrawings.Geography? value)
-    where OpenXmlElementType : Geography, new()
+    where OpenXmlElementType: DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.Geography, new()
   {
     if (value != null)
     {

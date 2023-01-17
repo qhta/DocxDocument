@@ -1,57 +1,50 @@
-using DocumentFormat.OpenXml.Wordprocessing;
-using DocumentModel.Wordprocessing;
-using DocGrid = DocumentFormat.OpenXml.Wordprocessing.DocGrid;
-
 namespace DocumentModel.OpenXml.Wordprocessing;
 
 /// <summary>
-///   Defines the DocGrid Class.
+/// Defines the DocGrid Class.
 /// </summary>
 public static class DocGridConverter
 {
   /// <summary>
-  ///   Document Grid Type
+  /// Document Grid Type
   /// </summary>
-  public static DocGridKind? GetType(DocGrid? openXmlElement)
+  private static DocumentModel.Wordprocessing.DocGridKind? GetType(DocumentFormat.OpenXml.Wordprocessing.DocGrid openXmlElement)
   {
-    return EnumValueConverter.GetValue<DocGridValues, DocGridKind>(openXmlElement?.Type?.Value);
+    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Wordprocessing.DocGridValues, DocumentModel.Wordprocessing.DocGridKind>(openXmlElement?.Type?.Value);
   }
-
-  public static void SetType(DocGrid? openXmlElement, DocGridKind? value)
+  
+  private static void SetType(DocumentFormat.OpenXml.Wordprocessing.DocGrid openXmlElement, DocumentModel.Wordprocessing.DocGridKind? value)
   {
-    if (openXmlElement != null)
-      openXmlElement.Type = EnumValueConverter.CreateEnumValue<DocGridValues, DocGridKind>(value);
+    openXmlElement.Type = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Wordprocessing.DocGridValues, DocumentModel.Wordprocessing.DocGridKind>(value);
   }
-
+  
   /// <summary>
-  ///   Document Grid Line Pitch
+  /// Document Grid Line Pitch
   /// </summary>
-  public static Int32? GetLinePitch(DocGrid? openXmlElement)
+  private static Int32? GetLinePitch(DocumentFormat.OpenXml.Wordprocessing.DocGrid openXmlElement)
   {
-    return openXmlElement?.LinePitch?.Value;
+    return openXmlElement.LinePitch?.Value;
   }
-
-  public static void SetLinePitch(DocGrid? openXmlElement, Int32? value)
+  
+  private static void SetLinePitch(DocumentFormat.OpenXml.Wordprocessing.DocGrid openXmlElement, Int32? value)
   {
-    if (openXmlElement != null)
-      openXmlElement.LinePitch = value;
+    openXmlElement.LinePitch = value;
   }
-
+  
   /// <summary>
-  ///   Document Grid Character Pitch
+  /// Document Grid Character Pitch
   /// </summary>
-  public static Int32? GetCharacterSpace(DocGrid? openXmlElement)
+  private static Int32? GetCharacterSpace(DocumentFormat.OpenXml.Wordprocessing.DocGrid openXmlElement)
   {
-    return openXmlElement?.CharacterSpace?.Value;
+    return openXmlElement.CharacterSpace?.Value;
   }
-
-  public static void SetCharacterSpace(DocGrid? openXmlElement, Int32? value)
+  
+  private static void SetCharacterSpace(DocumentFormat.OpenXml.Wordprocessing.DocGrid openXmlElement, Int32? value)
   {
-    if (openXmlElement != null)
-      openXmlElement.CharacterSpace = value;
+    openXmlElement.CharacterSpace = value;
   }
-
-  public static DocumentModel.Wordprocessing.DocGrid? CreateModelElement(DocGrid? openXmlElement)
+  
+  public static DocumentModel.Wordprocessing.DocGrid? CreateModelElement(DocumentFormat.OpenXml.Wordprocessing.DocGrid? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -63,9 +56,9 @@ public static class DocGridConverter
     }
     return null;
   }
-
+  
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.DocGrid? value)
-    where OpenXmlElementType : DocGrid, new()
+    where OpenXmlElementType: DocumentFormat.OpenXml.Wordprocessing.DocGrid, new()
   {
     if (value != null)
     {

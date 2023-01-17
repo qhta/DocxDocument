@@ -1,41 +1,35 @@
-using DocumentModel.Drawings;
-using ImageProperties = DocumentFormat.OpenXml.Office2010.Drawing.ImageProperties;
-
 namespace DocumentModel.OpenXml.Drawings;
 
 /// <summary>
-///   Defines the ImageProperties Class.
+/// Defines the ImageProperties Class.
 /// </summary>
 public static class ImagePropertiesConverter
 {
   /// <summary>
-  ///   ImageLayer.
+  /// ImageLayer.
   /// </summary>
-  public static ImageLayer? GetImageLayer(ImageProperties? openXmlElement)
+  private static DocumentModel.Drawings.ImageLayer? GetImageLayer(DocumentFormat.OpenXml.Office2010.Drawing.ImageProperties openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office2010.Drawing.ImageLayer>();
     if (itemElement != null)
-      return ImageLayerConverter.CreateModelElement(itemElement);
+      return DocumentModel.OpenXml.Drawings.ImageLayerConverter.CreateModelElement(itemElement);
     return null;
   }
-
-  public static void SetImageLayer(ImageProperties? openXmlElement, ImageLayer? value)
+  
+  private static void SetImageLayer(DocumentFormat.OpenXml.Office2010.Drawing.ImageProperties openXmlElement, DocumentModel.Drawings.ImageLayer? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2010.Drawing.ImageLayer>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2010.Drawing.ImageLayer>();
+      itemElement = DocumentModel.OpenXml.Drawings.ImageLayerConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2010.Drawing.ImageLayer>(value);
       if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = ImageLayerConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2010.Drawing.ImageLayer>(value);
-        if (itemElement != null)
-          openXmlElement.AddChild(itemElement);
-      }
+        openXmlElement.AddChild(itemElement);
     }
   }
-
-  public static DocumentModel.Drawings.ImageProperties? CreateModelElement(ImageProperties? openXmlElement)
+  
+  public static DocumentModel.Drawings.ImageProperties? CreateModelElement(DocumentFormat.OpenXml.Office2010.Drawing.ImageProperties? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -45,9 +39,9 @@ public static class ImagePropertiesConverter
     }
     return null;
   }
-
+  
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.ImageProperties? value)
-    where OpenXmlElementType : ImageProperties, new()
+    where OpenXmlElementType: DocumentFormat.OpenXml.Office2010.Drawing.ImageProperties, new()
   {
     if (value != null)
     {

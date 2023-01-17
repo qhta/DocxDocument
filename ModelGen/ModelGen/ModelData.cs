@@ -391,7 +391,7 @@ public static class ModelData
     { typeof(DocumentFormat.OpenXml.OpenXmlElement), typeof(DocumentModel.ModelElement)},
     { typeof(DocumentFormat.OpenXml.OpenXmlLeafElement), typeof(System.Boolean)},
     { typeof(DocumentFormat.OpenXml.OpenXmlLeafTextElement), typeof(System.String)},
-    { typeof(DocumentFormat.OpenXml.Wordprocessing.LongHexNumberType), typeof(DocumentModel.NumId)},
+    { typeof(DocumentFormat.OpenXml.Wordprocessing.LongHexNumberType), typeof(UInt32)},
     { typeof(DocumentFormat.OpenXml.EnumStringAttribute), typeof(System.Xml.Serialization.XmlEnumAttribute) },
     //{ typeof(DocumentFormat.OpenXml.ThreadSafeAttribute), typeof(DocumentModel.Attributes.ThreadSafeAttribute) },
     { typeof(DocumentFormat.OpenXml.OfficeAvailabilityAttribute), typeof(DocumentModel.Attributes.OfficeAvailabilityAttribute) },

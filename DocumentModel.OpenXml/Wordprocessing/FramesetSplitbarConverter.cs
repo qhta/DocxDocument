@@ -1,127 +1,106 @@
-using DocumentFormat.OpenXml.Wordprocessing;
-using DocumentModel.Wordprocessing;
-using Color = DocumentModel.Wordprocessing.Color;
-using FramesetSplitbar = DocumentFormat.OpenXml.Wordprocessing.FramesetSplitbar;
-
 namespace DocumentModel.OpenXml.Wordprocessing;
 
 /// <summary>
-///   Frameset Splitter Properties.
+/// Frameset Splitter Properties.
 /// </summary>
 public static class FramesetSplitbarConverter
 {
   /// <summary>
-  ///   Frameset Splitter Width.
+  /// Frameset Splitter Width.
   /// </summary>
-  public static String? GetWidth(FramesetSplitbar? openXmlElement)
+  private static String? GetWidth(DocumentFormat.OpenXml.Wordprocessing.FramesetSplitbar openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<Width>();
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.Width>();
     if (itemElement != null)
       return itemElement.Val?.Value;
     return null;
   }
-
-  public static void SetWidth(FramesetSplitbar? openXmlElement, String? value)
+  
+  private static void SetWidth(DocumentFormat.OpenXml.Wordprocessing.FramesetSplitbar openXmlElement, String? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.Width>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<Width>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = new Width { Val = value };
-        openXmlElement.AddChild(itemElement);
-      }
+      itemElement = new DocumentFormat.OpenXml.Wordprocessing.Width { Val = value };
+      openXmlElement.AddChild(itemElement);
     }
   }
-
+  
   /// <summary>
-  ///   Frameset Splitter Color.
+  /// Frameset Splitter Color.
   /// </summary>
-  public static Color? GetColor(FramesetSplitbar? openXmlElement)
+  private static DocumentModel.Wordprocessing.Color? GetColor(DocumentFormat.OpenXml.Wordprocessing.FramesetSplitbar openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.Color>();
     if (itemElement != null)
-      return ColorConverter.CreateModelElement(itemElement);
+      return DocumentModel.OpenXml.Wordprocessing.ColorConverter.CreateModelElement(itemElement);
     return null;
   }
-
-  public static void SetColor(FramesetSplitbar? openXmlElement, Color? value)
+  
+  private static void SetColor(DocumentFormat.OpenXml.Wordprocessing.FramesetSplitbar openXmlElement, DocumentModel.Wordprocessing.Color? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.Color>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.Color>();
+      itemElement = DocumentModel.OpenXml.Wordprocessing.ColorConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.Color>(value);
       if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = ColorConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.Color>(value);
-        if (itemElement != null)
-          openXmlElement.AddChild(itemElement);
-      }
+        openXmlElement.AddChild(itemElement);
     }
   }
-
+  
   /// <summary>
-  ///   Do Not Display Frameset Splitters.
+  /// Do Not Display Frameset Splitters.
   /// </summary>
-  public static OnOffOnlyKind? GetNoBorder(FramesetSplitbar? openXmlElement)
+  private static DocumentModel.Wordprocessing.OnOffOnlyKind? GetNoBorder(DocumentFormat.OpenXml.Wordprocessing.FramesetSplitbar openXmlElement)
   {
-    if (openXmlElement != null)
-    {
-      var itemElement = openXmlElement.GetFirstChild<NoBorder>();
-      if (itemElement?.Val?.Value != null) return EnumValueConverter.GetValue<OnOffOnlyValues, OnOffOnlyKind>(itemElement.Val.Value);
-    }
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.NoBorder>();
+    if (itemElement?.Val?.Value != null)
+      return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Wordprocessing.OnOffOnlyValues, DocumentModel.Wordprocessing.OnOffOnlyKind>(itemElement.Val.Value);
     return null;
   }
-
-  public static void SetNoBorder(FramesetSplitbar? openXmlElement, OnOffOnlyKind? value)
+  
+  private static void SetNoBorder(DocumentFormat.OpenXml.Wordprocessing.FramesetSplitbar openXmlElement, DocumentModel.Wordprocessing.OnOffOnlyKind? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.NoBorder>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<NoBorder>();
+      itemElement = EnumValueConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.NoBorder, DocumentFormat.OpenXml.Wordprocessing.OnOffOnlyValues, DocumentModel.Wordprocessing.OnOffOnlyKind>(value);
       if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = EnumValueConverter.CreateOpenXmlElement<NoBorder, OnOffOnlyValues, OnOffOnlyKind>(value);
-        if (itemElement != null)
-          openXmlElement.AddChild(itemElement);
-      }
+        openXmlElement.AddChild(itemElement);
     }
   }
-
+  
   /// <summary>
-  ///   Frameset Splitter Border Style.
+  /// Frameset Splitter Border Style.
   /// </summary>
-  public static OnOffOnlyKind? GetFlatBorders(FramesetSplitbar? openXmlElement)
+  private static DocumentModel.Wordprocessing.OnOffOnlyKind? GetFlatBorders(DocumentFormat.OpenXml.Wordprocessing.FramesetSplitbar openXmlElement)
   {
-    if (openXmlElement != null)
-    {
-      var itemElement = openXmlElement.GetFirstChild<FlatBorders>();
-      if (itemElement?.Val?.Value != null) return EnumValueConverter.GetValue<OnOffOnlyValues, OnOffOnlyKind>(itemElement.Val.Value);
-    }
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.FlatBorders>();
+    if (itemElement?.Val?.Value != null)
+      return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Wordprocessing.OnOffOnlyValues, DocumentModel.Wordprocessing.OnOffOnlyKind>(itemElement.Val.Value);
     return null;
   }
-
-  public static void SetFlatBorders(FramesetSplitbar? openXmlElement, OnOffOnlyKind? value)
+  
+  private static void SetFlatBorders(DocumentFormat.OpenXml.Wordprocessing.FramesetSplitbar openXmlElement, DocumentModel.Wordprocessing.OnOffOnlyKind? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.FlatBorders>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<FlatBorders>();
+      itemElement = EnumValueConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.FlatBorders, DocumentFormat.OpenXml.Wordprocessing.OnOffOnlyValues, DocumentModel.Wordprocessing.OnOffOnlyKind>(value);
       if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = EnumValueConverter.CreateOpenXmlElement<FlatBorders, OnOffOnlyValues, OnOffOnlyKind>(value);
-        if (itemElement != null)
-          openXmlElement.AddChild(itemElement);
-      }
+        openXmlElement.AddChild(itemElement);
     }
   }
-
-  public static DocumentModel.Wordprocessing.FramesetSplitbar? CreateModelElement(FramesetSplitbar? openXmlElement)
+  
+  public static DocumentModel.Wordprocessing.FramesetSplitbar? CreateModelElement(DocumentFormat.OpenXml.Wordprocessing.FramesetSplitbar? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -134,9 +113,9 @@ public static class FramesetSplitbarConverter
     }
     return null;
   }
-
+  
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.FramesetSplitbar? value)
-    where OpenXmlElementType : FramesetSplitbar, new()
+    where OpenXmlElementType: DocumentFormat.OpenXml.Wordprocessing.FramesetSplitbar, new()
   {
     if (value != null)
     {

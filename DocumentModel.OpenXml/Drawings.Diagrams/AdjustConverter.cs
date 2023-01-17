@@ -1,41 +1,37 @@
-using DocumentFormat.OpenXml.Drawing.Diagrams;
-
 namespace DocumentModel.OpenXml.Drawings.Diagrams;
 
 /// <summary>
-///   Shape Adjust.
+/// Shape Adjust.
 /// </summary>
 public static class AdjustConverter
 {
   /// <summary>
-  ///   Adjust Handle Index
+  /// Adjust Handle Index
   /// </summary>
-  public static UInt32? GetIndex(Adjust? openXmlElement)
+  private static UInt32? GetIndex(DocumentFormat.OpenXml.Drawing.Diagrams.Adjust openXmlElement)
   {
-    return openXmlElement?.Index?.Value;
+    return openXmlElement.Index?.Value;
   }
-
-  public static void SetIndex(Adjust? openXmlElement, UInt32? value)
+  
+  private static void SetIndex(DocumentFormat.OpenXml.Drawing.Diagrams.Adjust openXmlElement, UInt32? value)
   {
-    if (openXmlElement != null)
-      openXmlElement.Index = value;
+    openXmlElement.Index = value;
   }
-
+  
   /// <summary>
-  ///   Value
+  /// Value
   /// </summary>
-  public static Double? GetVal(Adjust? openXmlElement)
+  private static Double? GetVal(DocumentFormat.OpenXml.Drawing.Diagrams.Adjust openXmlElement)
   {
-    return openXmlElement?.Val?.Value;
+    return openXmlElement.Val?.Value;
   }
-
-  public static void SetVal(Adjust? openXmlElement, Double? value)
+  
+  private static void SetVal(DocumentFormat.OpenXml.Drawing.Diagrams.Adjust openXmlElement, Double? value)
   {
-    if (openXmlElement != null)
-      openXmlElement.Val = value;
+    openXmlElement.Val = value;
   }
-
-  public static DocumentModel.Drawings.Diagrams.Adjust? CreateModelElement(Adjust? openXmlElement)
+  
+  public static DocumentModel.Drawings.Diagrams.Adjust? CreateModelElement(DocumentFormat.OpenXml.Drawing.Diagrams.Adjust? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -46,9 +42,9 @@ public static class AdjustConverter
     }
     return null;
   }
-
+  
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.Diagrams.Adjust? value)
-    where OpenXmlElementType : Adjust, new()
+    where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.Diagrams.Adjust, new()
   {
     if (value != null)
     {

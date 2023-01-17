@@ -1,47 +1,43 @@
-using DocumentFormat.OpenXml.Office2010.Drawing.ChartDrawing;
-
 namespace DocumentModel.OpenXml.Drawings.ChartDrawings;
 
 /// <summary>
-///   Defines the ApplicationNonVisualDrawingProperties Class.
+/// Defines the ApplicationNonVisualDrawingProperties Class.
 /// </summary>
 public static class ApplicationNonVisualDrawingPropertiesConverter
 {
   /// <summary>
-  ///   macro, this property is only available in Office 2010 and later.
+  /// macro, this property is only available in Office 2010 and later.
   /// </summary>
-  public static String? GetMacro(ApplicationNonVisualDrawingProperties? openXmlElement)
+  private static String? GetMacro(DocumentFormat.OpenXml.Office2010.Drawing.ChartDrawing.ApplicationNonVisualDrawingProperties openXmlElement)
   {
     return openXmlElement?.Macro?.Value;
   }
-
-  public static void SetMacro(ApplicationNonVisualDrawingProperties? openXmlElement, String? value)
+  
+  private static void SetMacro(DocumentFormat.OpenXml.Office2010.Drawing.ChartDrawing.ApplicationNonVisualDrawingProperties openXmlElement, String? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.Macro = new StringValue { Value = value };
-      else
-        openXmlElement.Macro = null;
+    if (value != null)
+      openXmlElement.Macro = new StringValue { Value = value };
+    else
+      openXmlElement.Macro = null;
   }
-
+  
   /// <summary>
-  ///   fPublished, this property is only available in Office 2010 and later.
+  /// fPublished, this property is only available in Office 2010 and later.
   /// </summary>
-  public static Boolean? GetPublished(ApplicationNonVisualDrawingProperties? openXmlElement)
+  private static Boolean? GetPublished(DocumentFormat.OpenXml.Office2010.Drawing.ChartDrawing.ApplicationNonVisualDrawingProperties openXmlElement)
   {
     return openXmlElement?.Published?.Value;
   }
-
-  public static void SetPublished(ApplicationNonVisualDrawingProperties? openXmlElement, Boolean? value)
+  
+  private static void SetPublished(DocumentFormat.OpenXml.Office2010.Drawing.ChartDrawing.ApplicationNonVisualDrawingProperties openXmlElement, Boolean? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.Published = new BooleanValue { Value = (Boolean)value };
-      else
-        openXmlElement.Published = null;
+    if (value != null)
+      openXmlElement.Published = new BooleanValue { Value = (Boolean)value };
+    else
+      openXmlElement.Published = null;
   }
-
-  public static DocumentModel.Drawings.ChartDrawings.ApplicationNonVisualDrawingProperties? CreateModelElement(ApplicationNonVisualDrawingProperties? openXmlElement)
+  
+  public static DocumentModel.Drawings.ChartDrawings.ApplicationNonVisualDrawingProperties? CreateModelElement(DocumentFormat.OpenXml.Office2010.Drawing.ChartDrawing.ApplicationNonVisualDrawingProperties? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -52,9 +48,9 @@ public static class ApplicationNonVisualDrawingPropertiesConverter
     }
     return null;
   }
-
+  
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.ChartDrawings.ApplicationNonVisualDrawingProperties? value)
-    where OpenXmlElementType : ApplicationNonVisualDrawingProperties, new()
+    where OpenXmlElementType: DocumentFormat.OpenXml.Office2010.Drawing.ChartDrawing.ApplicationNonVisualDrawingProperties, new()
   {
     if (value != null)
     {

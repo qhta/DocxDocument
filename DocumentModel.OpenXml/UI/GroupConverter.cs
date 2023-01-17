@@ -1,753 +1,682 @@
-using DocumentModel.UI;
-
 namespace DocumentModel.OpenXml.UI;
 
 /// <summary>
-///   Defines the Group Class.
+/// Defines the Group Class.
 /// </summary>
 public static class GroupConverter
 {
   /// <summary>
-  ///   id
+  /// id
   /// </summary>
-  public static String? GetId(DocumentFormat.OpenXml.Office.CustomUI.Group? openXmlElement)
+  private static String? GetId(DocumentFormat.OpenXml.Office.CustomUI.Group openXmlElement)
   {
     return openXmlElement?.Id?.Value;
   }
-
-  public static void SetId(DocumentFormat.OpenXml.Office.CustomUI.Group? openXmlElement, String? value)
+  
+  private static void SetId(DocumentFormat.OpenXml.Office.CustomUI.Group openXmlElement, String? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.Id = new StringValue { Value = value };
-      else
-        openXmlElement.Id = null;
+    if (value != null)
+      openXmlElement.Id = new StringValue { Value = value };
+    else
+      openXmlElement.Id = null;
   }
-
+  
   /// <summary>
-  ///   idQ
+  /// idQ
   /// </summary>
-  public static String? GetIdQ(DocumentFormat.OpenXml.Office.CustomUI.Group? openXmlElement)
+  private static String? GetIdQ(DocumentFormat.OpenXml.Office.CustomUI.Group openXmlElement)
   {
     return openXmlElement?.IdQ?.Value;
   }
-
-  public static void SetIdQ(DocumentFormat.OpenXml.Office.CustomUI.Group? openXmlElement, String? value)
+  
+  private static void SetIdQ(DocumentFormat.OpenXml.Office.CustomUI.Group openXmlElement, String? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.IdQ = new StringValue { Value = value };
-      else
-        openXmlElement.IdQ = null;
+    if (value != null)
+      openXmlElement.IdQ = new StringValue { Value = value };
+    else
+      openXmlElement.IdQ = null;
   }
-
+  
   /// <summary>
-  ///   idMso
+  /// idMso
   /// </summary>
-  public static String? GetIdMso(DocumentFormat.OpenXml.Office.CustomUI.Group? openXmlElement)
+  private static String? GetIdMso(DocumentFormat.OpenXml.Office.CustomUI.Group openXmlElement)
   {
     return openXmlElement?.IdMso?.Value;
   }
-
-  public static void SetIdMso(DocumentFormat.OpenXml.Office.CustomUI.Group? openXmlElement, String? value)
+  
+  private static void SetIdMso(DocumentFormat.OpenXml.Office.CustomUI.Group openXmlElement, String? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.IdMso = new StringValue { Value = value };
-      else
-        openXmlElement.IdMso = null;
+    if (value != null)
+      openXmlElement.IdMso = new StringValue { Value = value };
+    else
+      openXmlElement.IdMso = null;
   }
-
+  
   /// <summary>
-  ///   tag
+  /// tag
   /// </summary>
-  public static String? GetTag(DocumentFormat.OpenXml.Office.CustomUI.Group? openXmlElement)
+  private static String? GetTag(DocumentFormat.OpenXml.Office.CustomUI.Group openXmlElement)
   {
     return openXmlElement?.Tag?.Value;
   }
-
-  public static void SetTag(DocumentFormat.OpenXml.Office.CustomUI.Group? openXmlElement, String? value)
+  
+  private static void SetTag(DocumentFormat.OpenXml.Office.CustomUI.Group openXmlElement, String? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.Tag = new StringValue { Value = value };
-      else
-        openXmlElement.Tag = null;
+    if (value != null)
+      openXmlElement.Tag = new StringValue { Value = value };
+    else
+      openXmlElement.Tag = null;
   }
-
+  
   /// <summary>
-  ///   label
+  /// label
   /// </summary>
-  public static String? GetLabel(DocumentFormat.OpenXml.Office.CustomUI.Group? openXmlElement)
+  private static String? GetLabel(DocumentFormat.OpenXml.Office.CustomUI.Group openXmlElement)
   {
     return openXmlElement?.Label?.Value;
   }
-
-  public static void SetLabel(DocumentFormat.OpenXml.Office.CustomUI.Group? openXmlElement, String? value)
+  
+  private static void SetLabel(DocumentFormat.OpenXml.Office.CustomUI.Group openXmlElement, String? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.Label = new StringValue { Value = value };
-      else
-        openXmlElement.Label = null;
+    if (value != null)
+      openXmlElement.Label = new StringValue { Value = value };
+    else
+      openXmlElement.Label = null;
   }
-
+  
   /// <summary>
-  ///   getLabel
+  /// getLabel
   /// </summary>
-  public static String? GetGetLabel(DocumentFormat.OpenXml.Office.CustomUI.Group? openXmlElement)
+  private static String? GetGetLabel(DocumentFormat.OpenXml.Office.CustomUI.Group openXmlElement)
   {
     return openXmlElement?.GetLabel?.Value;
   }
-
-  public static void SetGetLabel(DocumentFormat.OpenXml.Office.CustomUI.Group? openXmlElement, String? value)
+  
+  private static void SetGetLabel(DocumentFormat.OpenXml.Office.CustomUI.Group openXmlElement, String? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.GetLabel = new StringValue { Value = value };
-      else
-        openXmlElement.GetLabel = null;
+    if (value != null)
+      openXmlElement.GetLabel = new StringValue { Value = value };
+    else
+      openXmlElement.GetLabel = null;
   }
-
+  
   /// <summary>
-  ///   image
+  /// image
   /// </summary>
-  public static String? GetImage(DocumentFormat.OpenXml.Office.CustomUI.Group? openXmlElement)
+  private static String? GetImage(DocumentFormat.OpenXml.Office.CustomUI.Group openXmlElement)
   {
     return openXmlElement?.Image?.Value;
   }
-
-  public static void SetImage(DocumentFormat.OpenXml.Office.CustomUI.Group? openXmlElement, String? value)
+  
+  private static void SetImage(DocumentFormat.OpenXml.Office.CustomUI.Group openXmlElement, String? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.Image = new StringValue { Value = value };
-      else
-        openXmlElement.Image = null;
+    if (value != null)
+      openXmlElement.Image = new StringValue { Value = value };
+    else
+      openXmlElement.Image = null;
   }
-
+  
   /// <summary>
-  ///   imageMso
+  /// imageMso
   /// </summary>
-  public static String? GetImageMso(DocumentFormat.OpenXml.Office.CustomUI.Group? openXmlElement)
+  private static String? GetImageMso(DocumentFormat.OpenXml.Office.CustomUI.Group openXmlElement)
   {
     return openXmlElement?.ImageMso?.Value;
   }
-
-  public static void SetImageMso(DocumentFormat.OpenXml.Office.CustomUI.Group? openXmlElement, String? value)
+  
+  private static void SetImageMso(DocumentFormat.OpenXml.Office.CustomUI.Group openXmlElement, String? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.ImageMso = new StringValue { Value = value };
-      else
-        openXmlElement.ImageMso = null;
+    if (value != null)
+      openXmlElement.ImageMso = new StringValue { Value = value };
+    else
+      openXmlElement.ImageMso = null;
   }
-
+  
   /// <summary>
-  ///   getImage
+  /// getImage
   /// </summary>
-  public static String? GetGetImage(DocumentFormat.OpenXml.Office.CustomUI.Group? openXmlElement)
+  private static String? GetGetImage(DocumentFormat.OpenXml.Office.CustomUI.Group openXmlElement)
   {
     return openXmlElement?.GetImage?.Value;
   }
-
-  public static void SetGetImage(DocumentFormat.OpenXml.Office.CustomUI.Group? openXmlElement, String? value)
+  
+  private static void SetGetImage(DocumentFormat.OpenXml.Office.CustomUI.Group openXmlElement, String? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.GetImage = new StringValue { Value = value };
-      else
-        openXmlElement.GetImage = null;
+    if (value != null)
+      openXmlElement.GetImage = new StringValue { Value = value };
+    else
+      openXmlElement.GetImage = null;
   }
-
+  
   /// <summary>
-  ///   insertAfterMso
+  /// insertAfterMso
   /// </summary>
-  public static String? GetInsertAfterMso(DocumentFormat.OpenXml.Office.CustomUI.Group? openXmlElement)
+  private static String? GetInsertAfterMso(DocumentFormat.OpenXml.Office.CustomUI.Group openXmlElement)
   {
     return openXmlElement?.InsertAfterMso?.Value;
   }
-
-  public static void SetInsertAfterMso(DocumentFormat.OpenXml.Office.CustomUI.Group? openXmlElement, String? value)
+  
+  private static void SetInsertAfterMso(DocumentFormat.OpenXml.Office.CustomUI.Group openXmlElement, String? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.InsertAfterMso = new StringValue { Value = value };
-      else
-        openXmlElement.InsertAfterMso = null;
+    if (value != null)
+      openXmlElement.InsertAfterMso = new StringValue { Value = value };
+    else
+      openXmlElement.InsertAfterMso = null;
   }
-
+  
   /// <summary>
-  ///   insertBeforeMso
+  /// insertBeforeMso
   /// </summary>
-  public static String? GetInsertBeforeMso(DocumentFormat.OpenXml.Office.CustomUI.Group? openXmlElement)
+  private static String? GetInsertBeforeMso(DocumentFormat.OpenXml.Office.CustomUI.Group openXmlElement)
   {
     return openXmlElement?.InsertBeforeMso?.Value;
   }
-
-  public static void SetInsertBeforeMso(DocumentFormat.OpenXml.Office.CustomUI.Group? openXmlElement, String? value)
+  
+  private static void SetInsertBeforeMso(DocumentFormat.OpenXml.Office.CustomUI.Group openXmlElement, String? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.InsertBeforeMso = new StringValue { Value = value };
-      else
-        openXmlElement.InsertBeforeMso = null;
+    if (value != null)
+      openXmlElement.InsertBeforeMso = new StringValue { Value = value };
+    else
+      openXmlElement.InsertBeforeMso = null;
   }
-
+  
   /// <summary>
-  ///   insertAfterQ
+  /// insertAfterQ
   /// </summary>
-  public static String? GetInsertAfterQ(DocumentFormat.OpenXml.Office.CustomUI.Group? openXmlElement)
+  private static String? GetInsertAfterQ(DocumentFormat.OpenXml.Office.CustomUI.Group openXmlElement)
   {
     return openXmlElement?.InsertAfterQ?.Value;
   }
-
-  public static void SetInsertAfterQ(DocumentFormat.OpenXml.Office.CustomUI.Group? openXmlElement, String? value)
+  
+  private static void SetInsertAfterQ(DocumentFormat.OpenXml.Office.CustomUI.Group openXmlElement, String? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.InsertAfterQ = new StringValue { Value = value };
-      else
-        openXmlElement.InsertAfterQ = null;
+    if (value != null)
+      openXmlElement.InsertAfterQ = new StringValue { Value = value };
+    else
+      openXmlElement.InsertAfterQ = null;
   }
-
+  
   /// <summary>
-  ///   insertBeforeQ
+  /// insertBeforeQ
   /// </summary>
-  public static String? GetInsertBeforeQ(DocumentFormat.OpenXml.Office.CustomUI.Group? openXmlElement)
+  private static String? GetInsertBeforeQ(DocumentFormat.OpenXml.Office.CustomUI.Group openXmlElement)
   {
     return openXmlElement?.InsertBeforeQ?.Value;
   }
-
-  public static void SetInsertBeforeQ(DocumentFormat.OpenXml.Office.CustomUI.Group? openXmlElement, String? value)
+  
+  private static void SetInsertBeforeQ(DocumentFormat.OpenXml.Office.CustomUI.Group openXmlElement, String? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.InsertBeforeQ = new StringValue { Value = value };
-      else
-        openXmlElement.InsertBeforeQ = null;
+    if (value != null)
+      openXmlElement.InsertBeforeQ = new StringValue { Value = value };
+    else
+      openXmlElement.InsertBeforeQ = null;
   }
-
+  
   /// <summary>
-  ///   screentip
+  /// screentip
   /// </summary>
-  public static String? GetScreentip(DocumentFormat.OpenXml.Office.CustomUI.Group? openXmlElement)
+  private static String? GetScreentip(DocumentFormat.OpenXml.Office.CustomUI.Group openXmlElement)
   {
     return openXmlElement?.Screentip?.Value;
   }
-
-  public static void SetScreentip(DocumentFormat.OpenXml.Office.CustomUI.Group? openXmlElement, String? value)
+  
+  private static void SetScreentip(DocumentFormat.OpenXml.Office.CustomUI.Group openXmlElement, String? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.Screentip = new StringValue { Value = value };
-      else
-        openXmlElement.Screentip = null;
+    if (value != null)
+      openXmlElement.Screentip = new StringValue { Value = value };
+    else
+      openXmlElement.Screentip = null;
   }
-
+  
   /// <summary>
-  ///   getScreentip
+  /// getScreentip
   /// </summary>
-  public static String? GetGetScreentip(DocumentFormat.OpenXml.Office.CustomUI.Group? openXmlElement)
+  private static String? GetGetScreentip(DocumentFormat.OpenXml.Office.CustomUI.Group openXmlElement)
   {
     return openXmlElement?.GetScreentip?.Value;
   }
-
-  public static void SetGetScreentip(DocumentFormat.OpenXml.Office.CustomUI.Group? openXmlElement, String? value)
+  
+  private static void SetGetScreentip(DocumentFormat.OpenXml.Office.CustomUI.Group openXmlElement, String? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.GetScreentip = new StringValue { Value = value };
-      else
-        openXmlElement.GetScreentip = null;
+    if (value != null)
+      openXmlElement.GetScreentip = new StringValue { Value = value };
+    else
+      openXmlElement.GetScreentip = null;
   }
-
+  
   /// <summary>
-  ///   supertip
+  /// supertip
   /// </summary>
-  public static String? GetSupertip(DocumentFormat.OpenXml.Office.CustomUI.Group? openXmlElement)
+  private static String? GetSupertip(DocumentFormat.OpenXml.Office.CustomUI.Group openXmlElement)
   {
     return openXmlElement?.Supertip?.Value;
   }
-
-  public static void SetSupertip(DocumentFormat.OpenXml.Office.CustomUI.Group? openXmlElement, String? value)
+  
+  private static void SetSupertip(DocumentFormat.OpenXml.Office.CustomUI.Group openXmlElement, String? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.Supertip = new StringValue { Value = value };
-      else
-        openXmlElement.Supertip = null;
+    if (value != null)
+      openXmlElement.Supertip = new StringValue { Value = value };
+    else
+      openXmlElement.Supertip = null;
   }
-
+  
   /// <summary>
-  ///   getSupertip
+  /// getSupertip
   /// </summary>
-  public static String? GetGetSupertip(DocumentFormat.OpenXml.Office.CustomUI.Group? openXmlElement)
+  private static String? GetGetSupertip(DocumentFormat.OpenXml.Office.CustomUI.Group openXmlElement)
   {
     return openXmlElement?.GetSupertip?.Value;
   }
-
-  public static void SetGetSupertip(DocumentFormat.OpenXml.Office.CustomUI.Group? openXmlElement, String? value)
+  
+  private static void SetGetSupertip(DocumentFormat.OpenXml.Office.CustomUI.Group openXmlElement, String? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.GetSupertip = new StringValue { Value = value };
-      else
-        openXmlElement.GetSupertip = null;
+    if (value != null)
+      openXmlElement.GetSupertip = new StringValue { Value = value };
+    else
+      openXmlElement.GetSupertip = null;
   }
-
+  
   /// <summary>
-  ///   visible
+  /// visible
   /// </summary>
-  public static Boolean? GetVisible(DocumentFormat.OpenXml.Office.CustomUI.Group? openXmlElement)
+  private static Boolean? GetVisible(DocumentFormat.OpenXml.Office.CustomUI.Group openXmlElement)
   {
     return openXmlElement?.Visible?.Value;
   }
-
-  public static void SetVisible(DocumentFormat.OpenXml.Office.CustomUI.Group? openXmlElement, Boolean? value)
+  
+  private static void SetVisible(DocumentFormat.OpenXml.Office.CustomUI.Group openXmlElement, Boolean? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.Visible = new BooleanValue { Value = (Boolean)value };
-      else
-        openXmlElement.Visible = null;
+    if (value != null)
+      openXmlElement.Visible = new BooleanValue { Value = (Boolean)value };
+    else
+      openXmlElement.Visible = null;
   }
-
+  
   /// <summary>
-  ///   getVisible
+  /// getVisible
   /// </summary>
-  public static String? GetGetVisible(DocumentFormat.OpenXml.Office.CustomUI.Group? openXmlElement)
+  private static String? GetGetVisible(DocumentFormat.OpenXml.Office.CustomUI.Group openXmlElement)
   {
     return openXmlElement?.GetVisible?.Value;
   }
-
-  public static void SetGetVisible(DocumentFormat.OpenXml.Office.CustomUI.Group? openXmlElement, String? value)
+  
+  private static void SetGetVisible(DocumentFormat.OpenXml.Office.CustomUI.Group openXmlElement, String? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.GetVisible = new StringValue { Value = value };
-      else
-        openXmlElement.GetVisible = null;
+    if (value != null)
+      openXmlElement.GetVisible = new StringValue { Value = value };
+    else
+      openXmlElement.GetVisible = null;
   }
-
+  
   /// <summary>
-  ///   keytip
+  /// keytip
   /// </summary>
-  public static String? GetKeytip(DocumentFormat.OpenXml.Office.CustomUI.Group? openXmlElement)
+  private static String? GetKeytip(DocumentFormat.OpenXml.Office.CustomUI.Group openXmlElement)
   {
     return openXmlElement?.Keytip?.Value;
   }
-
-  public static void SetKeytip(DocumentFormat.OpenXml.Office.CustomUI.Group? openXmlElement, String? value)
+  
+  private static void SetKeytip(DocumentFormat.OpenXml.Office.CustomUI.Group openXmlElement, String? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.Keytip = new StringValue { Value = value };
-      else
-        openXmlElement.Keytip = null;
+    if (value != null)
+      openXmlElement.Keytip = new StringValue { Value = value };
+    else
+      openXmlElement.Keytip = null;
   }
-
+  
   /// <summary>
-  ///   getKeytip
+  /// getKeytip
   /// </summary>
-  public static String? GetGetKeytip(DocumentFormat.OpenXml.Office.CustomUI.Group? openXmlElement)
+  private static String? GetGetKeytip(DocumentFormat.OpenXml.Office.CustomUI.Group openXmlElement)
   {
     return openXmlElement?.GetKeytip?.Value;
   }
-
-  public static void SetGetKeytip(DocumentFormat.OpenXml.Office.CustomUI.Group? openXmlElement, String? value)
+  
+  private static void SetGetKeytip(DocumentFormat.OpenXml.Office.CustomUI.Group openXmlElement, String? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.GetKeytip = new StringValue { Value = value };
-      else
-        openXmlElement.GetKeytip = null;
+    if (value != null)
+      openXmlElement.GetKeytip = new StringValue { Value = value };
+    else
+      openXmlElement.GetKeytip = null;
   }
-
-  public static DocumentModel.UI.ControlClone? GetControlClone(DocumentFormat.OpenXml.Office.CustomUI.Group? openXmlElement)
+  
+  private static DocumentModel.UI.ControlClone? GetControlClone(DocumentFormat.OpenXml.Office.CustomUI.Group openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office.CustomUI.ControlClone>();
     if (itemElement != null)
-      return ControlCloneConverter.CreateModelElement(itemElement);
+      return DocumentModel.OpenXml.UI.ControlCloneConverter.CreateModelElement(itemElement);
     return null;
   }
-
-  public static void SetControlClone(DocumentFormat.OpenXml.Office.CustomUI.Group? openXmlElement, DocumentModel.UI.ControlClone? value)
+  
+  private static void SetControlClone(DocumentFormat.OpenXml.Office.CustomUI.Group openXmlElement, DocumentModel.UI.ControlClone? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office.CustomUI.ControlClone>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office.CustomUI.ControlClone>();
+      itemElement = DocumentModel.OpenXml.UI.ControlCloneConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office.CustomUI.ControlClone>(value);
       if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = ControlCloneConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office.CustomUI.ControlClone>(value);
-        if (itemElement != null)
-          openXmlElement.AddChild(itemElement);
-      }
+        openXmlElement.AddChild(itemElement);
     }
   }
-
-  public static TextLabel? GetTextLabel(DocumentFormat.OpenXml.Office.CustomUI.Group? openXmlElement)
+  
+  private static DocumentModel.UI.TextLabel? GetTextLabel(DocumentFormat.OpenXml.Office.CustomUI.Group openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office.CustomUI.TextLabel>();
     if (itemElement != null)
-      return TextLabelConverter.CreateModelElement(itemElement);
+      return DocumentModel.OpenXml.UI.TextLabelConverter.CreateModelElement(itemElement);
     return null;
   }
-
-  public static void SetTextLabel(DocumentFormat.OpenXml.Office.CustomUI.Group? openXmlElement, TextLabel? value)
+  
+  private static void SetTextLabel(DocumentFormat.OpenXml.Office.CustomUI.Group openXmlElement, DocumentModel.UI.TextLabel? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office.CustomUI.TextLabel>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office.CustomUI.TextLabel>();
+      itemElement = DocumentModel.OpenXml.UI.TextLabelConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office.CustomUI.TextLabel>(value);
       if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = TextLabelConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office.CustomUI.TextLabel>(value);
-        if (itemElement != null)
-          openXmlElement.AddChild(itemElement);
-      }
+        openXmlElement.AddChild(itemElement);
     }
   }
-
-  public static DocumentModel.UI.Button? GetButton(DocumentFormat.OpenXml.Office.CustomUI.Group? openXmlElement)
+  
+  private static DocumentModel.UI.Button? GetButton(DocumentFormat.OpenXml.Office.CustomUI.Group openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office.CustomUI.Button>();
     if (itemElement != null)
-      return ButtonConverter.CreateModelElement(itemElement);
+      return DocumentModel.OpenXml.UI.ButtonConverter.CreateModelElement(itemElement);
     return null;
   }
-
-  public static void SetButton(DocumentFormat.OpenXml.Office.CustomUI.Group? openXmlElement, DocumentModel.UI.Button? value)
+  
+  private static void SetButton(DocumentFormat.OpenXml.Office.CustomUI.Group openXmlElement, DocumentModel.UI.Button? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office.CustomUI.Button>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office.CustomUI.Button>();
+      itemElement = DocumentModel.OpenXml.UI.ButtonConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office.CustomUI.Button>(value);
       if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = ButtonConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office.CustomUI.Button>(value);
-        if (itemElement != null)
-          openXmlElement.AddChild(itemElement);
-      }
+        openXmlElement.AddChild(itemElement);
     }
   }
-
-  public static DocumentModel.UI.ToggleButton? GetToggleButton(DocumentFormat.OpenXml.Office.CustomUI.Group? openXmlElement)
+  
+  private static DocumentModel.UI.ToggleButton? GetToggleButton(DocumentFormat.OpenXml.Office.CustomUI.Group openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office.CustomUI.ToggleButton>();
     if (itemElement != null)
-      return ToggleButtonConverter.CreateModelElement(itemElement);
+      return DocumentModel.OpenXml.UI.ToggleButtonConverter.CreateModelElement(itemElement);
     return null;
   }
-
-  public static void SetToggleButton(DocumentFormat.OpenXml.Office.CustomUI.Group? openXmlElement, DocumentModel.UI.ToggleButton? value)
+  
+  private static void SetToggleButton(DocumentFormat.OpenXml.Office.CustomUI.Group openXmlElement, DocumentModel.UI.ToggleButton? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office.CustomUI.ToggleButton>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office.CustomUI.ToggleButton>();
+      itemElement = DocumentModel.OpenXml.UI.ToggleButtonConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office.CustomUI.ToggleButton>(value);
       if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = ToggleButtonConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office.CustomUI.ToggleButton>(value);
-        if (itemElement != null)
-          openXmlElement.AddChild(itemElement);
-      }
+        openXmlElement.AddChild(itemElement);
     }
   }
-
-  public static DocumentModel.UI.CheckBox? GetCheckBox(DocumentFormat.OpenXml.Office.CustomUI.Group? openXmlElement)
+  
+  private static DocumentModel.UI.CheckBox? GetCheckBox(DocumentFormat.OpenXml.Office.CustomUI.Group openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office.CustomUI.CheckBox>();
     if (itemElement != null)
-      return CheckBoxConverter.CreateModelElement(itemElement);
+      return DocumentModel.OpenXml.UI.CheckBoxConverter.CreateModelElement(itemElement);
     return null;
   }
-
-  public static void SetCheckBox(DocumentFormat.OpenXml.Office.CustomUI.Group? openXmlElement, DocumentModel.UI.CheckBox? value)
+  
+  private static void SetCheckBox(DocumentFormat.OpenXml.Office.CustomUI.Group openXmlElement, DocumentModel.UI.CheckBox? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office.CustomUI.CheckBox>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office.CustomUI.CheckBox>();
+      itemElement = DocumentModel.OpenXml.UI.CheckBoxConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office.CustomUI.CheckBox>(value);
       if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = CheckBoxConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office.CustomUI.CheckBox>(value);
-        if (itemElement != null)
-          openXmlElement.AddChild(itemElement);
-      }
+        openXmlElement.AddChild(itemElement);
     }
   }
-
-  public static DocumentModel.UI.EditBox? GetEditBox(DocumentFormat.OpenXml.Office.CustomUI.Group? openXmlElement)
+  
+  private static DocumentModel.UI.EditBox? GetEditBox(DocumentFormat.OpenXml.Office.CustomUI.Group openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office.CustomUI.EditBox>();
     if (itemElement != null)
-      return EditBoxConverter.CreateModelElement(itemElement);
+      return DocumentModel.OpenXml.UI.EditBoxConverter.CreateModelElement(itemElement);
     return null;
   }
-
-  public static void SetEditBox(DocumentFormat.OpenXml.Office.CustomUI.Group? openXmlElement, DocumentModel.UI.EditBox? value)
+  
+  private static void SetEditBox(DocumentFormat.OpenXml.Office.CustomUI.Group openXmlElement, DocumentModel.UI.EditBox? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office.CustomUI.EditBox>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office.CustomUI.EditBox>();
+      itemElement = DocumentModel.OpenXml.UI.EditBoxConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office.CustomUI.EditBox>(value);
       if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = EditBoxConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office.CustomUI.EditBox>(value);
-        if (itemElement != null)
-          openXmlElement.AddChild(itemElement);
-      }
+        openXmlElement.AddChild(itemElement);
     }
   }
-
-  public static DocumentModel.UI.ComboBox? GetComboBox(DocumentFormat.OpenXml.Office.CustomUI.Group? openXmlElement)
+  
+  private static DocumentModel.UI.ComboBox? GetComboBox(DocumentFormat.OpenXml.Office.CustomUI.Group openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office.CustomUI.ComboBox>();
     if (itemElement != null)
-      return ComboBoxConverter.CreateModelElement(itemElement);
+      return DocumentModel.OpenXml.UI.ComboBoxConverter.CreateModelElement(itemElement);
     return null;
   }
-
-  public static void SetComboBox(DocumentFormat.OpenXml.Office.CustomUI.Group? openXmlElement, DocumentModel.UI.ComboBox? value)
+  
+  private static void SetComboBox(DocumentFormat.OpenXml.Office.CustomUI.Group openXmlElement, DocumentModel.UI.ComboBox? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office.CustomUI.ComboBox>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office.CustomUI.ComboBox>();
+      itemElement = DocumentModel.OpenXml.UI.ComboBoxConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office.CustomUI.ComboBox>(value);
       if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = ComboBoxConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office.CustomUI.ComboBox>(value);
-        if (itemElement != null)
-          openXmlElement.AddChild(itemElement);
-      }
+        openXmlElement.AddChild(itemElement);
     }
   }
-
-  public static DropDown? GetDropDown(DocumentFormat.OpenXml.Office.CustomUI.Group? openXmlElement)
+  
+  private static DocumentModel.UI.DropDown? GetDropDown(DocumentFormat.OpenXml.Office.CustomUI.Group openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office.CustomUI.DropDown>();
     if (itemElement != null)
-      return DropDownConverter.CreateModelElement(itemElement);
+      return DocumentModel.OpenXml.UI.DropDownConverter.CreateModelElement(itemElement);
     return null;
   }
-
-  public static void SetDropDown(DocumentFormat.OpenXml.Office.CustomUI.Group? openXmlElement, DropDown? value)
+  
+  private static void SetDropDown(DocumentFormat.OpenXml.Office.CustomUI.Group openXmlElement, DocumentModel.UI.DropDown? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office.CustomUI.DropDown>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office.CustomUI.DropDown>();
+      itemElement = DocumentModel.OpenXml.UI.DropDownConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office.CustomUI.DropDown>(value);
       if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = DropDownConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office.CustomUI.DropDown>(value);
-        if (itemElement != null)
-          openXmlElement.AddChild(itemElement);
-      }
+        openXmlElement.AddChild(itemElement);
     }
   }
-
-  public static DocumentModel.UI.Gallery? GetGallery(DocumentFormat.OpenXml.Office.CustomUI.Group? openXmlElement)
+  
+  private static DocumentModel.UI.Gallery? GetGallery(DocumentFormat.OpenXml.Office.CustomUI.Group openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office.CustomUI.Gallery>();
     if (itemElement != null)
-      return GalleryConverter.CreateModelElement(itemElement);
+      return DocumentModel.OpenXml.UI.GalleryConverter.CreateModelElement(itemElement);
     return null;
   }
-
-  public static void SetGallery(DocumentFormat.OpenXml.Office.CustomUI.Group? openXmlElement, DocumentModel.UI.Gallery? value)
+  
+  private static void SetGallery(DocumentFormat.OpenXml.Office.CustomUI.Group openXmlElement, DocumentModel.UI.Gallery? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office.CustomUI.Gallery>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office.CustomUI.Gallery>();
+      itemElement = DocumentModel.OpenXml.UI.GalleryConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office.CustomUI.Gallery>(value);
       if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = GalleryConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office.CustomUI.Gallery>(value);
-        if (itemElement != null)
-          openXmlElement.AddChild(itemElement);
-      }
+        openXmlElement.AddChild(itemElement);
     }
   }
-
-  public static DocumentModel.UI.Menu? GetMenu(DocumentFormat.OpenXml.Office.CustomUI.Group? openXmlElement)
+  
+  private static DocumentModel.UI.Menu? GetMenu(DocumentFormat.OpenXml.Office.CustomUI.Group openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office.CustomUI.Menu>();
     if (itemElement != null)
-      return MenuConverter.CreateModelElement(itemElement);
+      return DocumentModel.OpenXml.UI.MenuConverter.CreateModelElement(itemElement);
     return null;
   }
-
-  public static void SetMenu(DocumentFormat.OpenXml.Office.CustomUI.Group? openXmlElement, DocumentModel.UI.Menu? value)
+  
+  private static void SetMenu(DocumentFormat.OpenXml.Office.CustomUI.Group openXmlElement, DocumentModel.UI.Menu? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office.CustomUI.Menu>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office.CustomUI.Menu>();
+      itemElement = DocumentModel.OpenXml.UI.MenuConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office.CustomUI.Menu>(value);
       if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = MenuConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office.CustomUI.Menu>(value);
-        if (itemElement != null)
-          openXmlElement.AddChild(itemElement);
-      }
+        openXmlElement.AddChild(itemElement);
     }
   }
-
-  public static DocumentModel.UI.DynamicMenu? GetDynamicMenu(DocumentFormat.OpenXml.Office.CustomUI.Group? openXmlElement)
+  
+  private static DocumentModel.UI.DynamicMenu? GetDynamicMenu(DocumentFormat.OpenXml.Office.CustomUI.Group openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office.CustomUI.DynamicMenu>();
     if (itemElement != null)
-      return DynamicMenuConverter.CreateModelElement(itemElement);
+      return DocumentModel.OpenXml.UI.DynamicMenuConverter.CreateModelElement(itemElement);
     return null;
   }
-
-  public static void SetDynamicMenu(DocumentFormat.OpenXml.Office.CustomUI.Group? openXmlElement, DocumentModel.UI.DynamicMenu? value)
+  
+  private static void SetDynamicMenu(DocumentFormat.OpenXml.Office.CustomUI.Group openXmlElement, DocumentModel.UI.DynamicMenu? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office.CustomUI.DynamicMenu>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office.CustomUI.DynamicMenu>();
+      itemElement = DocumentModel.OpenXml.UI.DynamicMenuConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office.CustomUI.DynamicMenu>(value);
       if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = DynamicMenuConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office.CustomUI.DynamicMenu>(value);
-        if (itemElement != null)
-          openXmlElement.AddChild(itemElement);
-      }
+        openXmlElement.AddChild(itemElement);
     }
   }
-
-  public static DocumentModel.UI.SplitButton? GetSplitButton(DocumentFormat.OpenXml.Office.CustomUI.Group? openXmlElement)
+  
+  private static DocumentModel.UI.SplitButton? GetSplitButton(DocumentFormat.OpenXml.Office.CustomUI.Group openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office.CustomUI.SplitButton>();
     if (itemElement != null)
-      return SplitButtonConverter.CreateModelElement(itemElement);
+      return DocumentModel.OpenXml.UI.SplitButtonConverter.CreateModelElement(itemElement);
     return null;
   }
-
-  public static void SetSplitButton(DocumentFormat.OpenXml.Office.CustomUI.Group? openXmlElement, DocumentModel.UI.SplitButton? value)
+  
+  private static void SetSplitButton(DocumentFormat.OpenXml.Office.CustomUI.Group openXmlElement, DocumentModel.UI.SplitButton? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office.CustomUI.SplitButton>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office.CustomUI.SplitButton>();
+      itemElement = DocumentModel.OpenXml.UI.SplitButtonConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office.CustomUI.SplitButton>(value);
       if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = SplitButtonConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office.CustomUI.SplitButton>(value);
-        if (itemElement != null)
-          openXmlElement.AddChild(itemElement);
-      }
+        openXmlElement.AddChild(itemElement);
     }
   }
-
-  public static DocumentModel.UI.Box? GetBox(DocumentFormat.OpenXml.Office.CustomUI.Group? openXmlElement)
+  
+  private static DocumentModel.UI.Box? GetBox(DocumentFormat.OpenXml.Office.CustomUI.Group openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office.CustomUI.Box>();
     if (itemElement != null)
-      return BoxConverter.CreateModelElement(itemElement);
+      return DocumentModel.OpenXml.UI.BoxConverter.CreateModelElement(itemElement);
     return null;
   }
-
-  public static void SetBox(DocumentFormat.OpenXml.Office.CustomUI.Group? openXmlElement, DocumentModel.UI.Box? value)
+  
+  private static void SetBox(DocumentFormat.OpenXml.Office.CustomUI.Group openXmlElement, DocumentModel.UI.Box? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office.CustomUI.Box>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office.CustomUI.Box>();
+      itemElement = DocumentModel.OpenXml.UI.BoxConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office.CustomUI.Box>(value);
       if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = BoxConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office.CustomUI.Box>(value);
-        if (itemElement != null)
-          openXmlElement.AddChild(itemElement);
-      }
+        openXmlElement.AddChild(itemElement);
     }
   }
-
-  public static DocumentModel.UI.ButtonGroup? GetButtonGroup(DocumentFormat.OpenXml.Office.CustomUI.Group? openXmlElement)
+  
+  private static DocumentModel.UI.ButtonGroup? GetButtonGroup(DocumentFormat.OpenXml.Office.CustomUI.Group openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office.CustomUI.ButtonGroup>();
     if (itemElement != null)
-      return ButtonGroupConverter.CreateModelElement(itemElement);
+      return DocumentModel.OpenXml.UI.ButtonGroupConverter.CreateModelElement(itemElement);
     return null;
   }
-
-  public static void SetButtonGroup(DocumentFormat.OpenXml.Office.CustomUI.Group? openXmlElement, DocumentModel.UI.ButtonGroup? value)
+  
+  private static void SetButtonGroup(DocumentFormat.OpenXml.Office.CustomUI.Group openXmlElement, DocumentModel.UI.ButtonGroup? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office.CustomUI.ButtonGroup>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office.CustomUI.ButtonGroup>();
+      itemElement = DocumentModel.OpenXml.UI.ButtonGroupConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office.CustomUI.ButtonGroup>(value);
       if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = ButtonGroupConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office.CustomUI.ButtonGroup>(value);
-        if (itemElement != null)
-          openXmlElement.AddChild(itemElement);
-      }
+        openXmlElement.AddChild(itemElement);
     }
   }
-
-  public static VerticalSeparator? GetVerticalSeparator(DocumentFormat.OpenXml.Office.CustomUI.Group? openXmlElement)
+  
+  private static DocumentModel.UI.VerticalSeparator? GetVerticalSeparator(DocumentFormat.OpenXml.Office.CustomUI.Group openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office.CustomUI.VerticalSeparator>();
     if (itemElement != null)
-      return VerticalSeparatorConverter.CreateModelElement(itemElement);
+      return DocumentModel.OpenXml.UI.VerticalSeparatorConverter.CreateModelElement(itemElement);
     return null;
   }
-
-  public static void SetVerticalSeparator(DocumentFormat.OpenXml.Office.CustomUI.Group? openXmlElement, VerticalSeparator? value)
+  
+  private static void SetVerticalSeparator(DocumentFormat.OpenXml.Office.CustomUI.Group openXmlElement, DocumentModel.UI.VerticalSeparator? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office.CustomUI.VerticalSeparator>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office.CustomUI.VerticalSeparator>();
+      itemElement = DocumentModel.OpenXml.UI.VerticalSeparatorConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office.CustomUI.VerticalSeparator>(value);
       if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = VerticalSeparatorConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office.CustomUI.VerticalSeparator>(value);
-        if (itemElement != null)
-          openXmlElement.AddChild(itemElement);
-      }
+        openXmlElement.AddChild(itemElement);
     }
   }
-
-  public static DocumentModel.UI.DialogBoxLauncher? GetDialogBoxLauncher(DocumentFormat.OpenXml.Office.CustomUI.Group? openXmlElement)
+  
+  private static DocumentModel.UI.DialogBoxLauncher? GetDialogBoxLauncher(DocumentFormat.OpenXml.Office.CustomUI.Group openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office.CustomUI.DialogBoxLauncher>();
     if (itemElement != null)
-      return DialogBoxLauncherConverter.CreateModelElement(itemElement);
+      return DocumentModel.OpenXml.UI.DialogBoxLauncherConverter.CreateModelElement(itemElement);
     return null;
   }
-
-  public static void SetDialogBoxLauncher(DocumentFormat.OpenXml.Office.CustomUI.Group? openXmlElement, DocumentModel.UI.DialogBoxLauncher? value)
+  
+  private static void SetDialogBoxLauncher(DocumentFormat.OpenXml.Office.CustomUI.Group openXmlElement, DocumentModel.UI.DialogBoxLauncher? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office.CustomUI.DialogBoxLauncher>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office.CustomUI.DialogBoxLauncher>();
+      itemElement = DocumentModel.OpenXml.UI.DialogBoxLauncherConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office.CustomUI.DialogBoxLauncher>(value);
       if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = DialogBoxLauncherConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office.CustomUI.DialogBoxLauncher>(value);
-        if (itemElement != null)
-          openXmlElement.AddChild(itemElement);
-      }
+        openXmlElement.AddChild(itemElement);
     }
   }
-
+  
   public static DocumentModel.UI.Group? CreateModelElement(DocumentFormat.OpenXml.Office.CustomUI.Group? openXmlElement)
   {
     if (openXmlElement != null)
@@ -794,9 +723,9 @@ public static class GroupConverter
     }
     return null;
   }
-
+  
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.UI.Group? value)
-    where OpenXmlElementType : DocumentFormat.OpenXml.Office.CustomUI.Group, new()
+    where OpenXmlElementType: DocumentFormat.OpenXml.Office.CustomUI.Group, new()
   {
     if (value != null)
     {

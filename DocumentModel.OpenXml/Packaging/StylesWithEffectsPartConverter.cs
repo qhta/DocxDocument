@@ -1,23 +1,21 @@
-using DocumentFormat.OpenXml.Packaging;
-
 namespace DocumentModel.OpenXml.Packaging;
 
 /// <summary>
-///   Defines the StylesWithEffectsPart
+/// Defines the StylesWithEffectsPart
 /// </summary>
 public static class StylesWithEffectsPartConverter
 {
-  public static String? GetContentType(StylesWithEffectsPart? openXmlElement)
+  private static String? GetContentType(DocumentFormat.OpenXml.Packaging.StylesWithEffectsPart openXmlElement)
   {
     return openXmlElement?.ContentType;
   }
-
-  public static String? GetRelationshipType(StylesWithEffectsPart? openXmlElement)
+  
+  private static String? GetRelationshipType(DocumentFormat.OpenXml.Packaging.StylesWithEffectsPart openXmlElement)
   {
     return openXmlElement?.RelationshipType;
   }
-
-  public static DocumentModel.Packaging.StylesWithEffectsPart? CreateModelElement(StylesWithEffectsPart? openXmlElement)
+  
+  public static DocumentModel.Packaging.StylesWithEffectsPart? CreateModelElement(DocumentFormat.OpenXml.Packaging.StylesWithEffectsPart? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -28,9 +26,9 @@ public static class StylesWithEffectsPartConverter
     }
     return null;
   }
-
+  
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Packaging.StylesWithEffectsPart? value)
-    where OpenXmlElementType : StylesWithEffectsPart, new()
+    where OpenXmlElementType: DocumentFormat.OpenXml.Packaging.StylesWithEffectsPart, new()
   {
     if (value != null)
     {

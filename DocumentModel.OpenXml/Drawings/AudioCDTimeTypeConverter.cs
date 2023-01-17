@@ -1,41 +1,37 @@
-using DocumentFormat.OpenXml.Drawing;
-
 namespace DocumentModel.OpenXml.Drawings;
 
 /// <summary>
-///   Defines the AudioCDTimeType Class.
+/// Defines the AudioCDTimeType Class.
 /// </summary>
 public static class AudioCDTimeTypeConverter
 {
   /// <summary>
-  ///   Track
+  /// Track
   /// </summary>
-  public static Byte? GetTrack(AudioCDTimeType? openXmlElement)
+  private static Byte? GetTrack(DocumentFormat.OpenXml.Drawing.AudioCDTimeType openXmlElement)
   {
-    return openXmlElement?.Track?.Value;
+    return openXmlElement.Track?.Value;
   }
-
-  public static void SetTrack(AudioCDTimeType? openXmlElement, Byte? value)
+  
+  private static void SetTrack(DocumentFormat.OpenXml.Drawing.AudioCDTimeType openXmlElement, Byte? value)
   {
-    if (openXmlElement != null)
-      openXmlElement.Track = value;
+    openXmlElement.Track = value;
   }
-
+  
   /// <summary>
-  ///   Time
+  /// Time
   /// </summary>
-  public static UInt32? GetTime(AudioCDTimeType? openXmlElement)
+  private static UInt32? GetTime(DocumentFormat.OpenXml.Drawing.AudioCDTimeType openXmlElement)
   {
-    return openXmlElement?.Time?.Value;
+    return openXmlElement.Time?.Value;
   }
-
-  public static void SetTime(AudioCDTimeType? openXmlElement, UInt32? value)
+  
+  private static void SetTime(DocumentFormat.OpenXml.Drawing.AudioCDTimeType openXmlElement, UInt32? value)
   {
-    if (openXmlElement != null)
-      openXmlElement.Time = value;
+    openXmlElement.Time = value;
   }
-
-  public static DocumentModel.Drawings.AudioCDTimeType? CreateModelElement(AudioCDTimeType? openXmlElement)
+  
+  public static DocumentModel.Drawings.AudioCDTimeType? CreateModelElement(DocumentFormat.OpenXml.Drawing.AudioCDTimeType? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -46,9 +42,9 @@ public static class AudioCDTimeTypeConverter
     }
     return null;
   }
-
+  
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.AudioCDTimeType? value)
-    where OpenXmlElementType : AudioCDTimeType, new()
+    where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.AudioCDTimeType, new()
   {
     if (value != null)
     {

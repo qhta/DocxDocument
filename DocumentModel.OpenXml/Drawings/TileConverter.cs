@@ -1,99 +1,89 @@
-using DocumentFormat.OpenXml.Drawing;
-using DocumentModel.Drawings;
-using Tile = DocumentFormat.OpenXml.Drawing.Tile;
-
 namespace DocumentModel.OpenXml.Drawings;
 
 /// <summary>
-///   Tile.
+/// Tile.
 /// </summary>
 public static class TileConverter
 {
   /// <summary>
-  ///   Horizontal Offset
+  /// Horizontal Offset
   /// </summary>
-  public static Int64? GetHorizontalOffset(Tile? openXmlElement)
+  private static Int64? GetHorizontalOffset(DocumentFormat.OpenXml.Drawing.Tile openXmlElement)
   {
-    return openXmlElement?.HorizontalOffset?.Value;
+    return openXmlElement.HorizontalOffset?.Value;
   }
-
-  public static void SetHorizontalOffset(Tile? openXmlElement, Int64? value)
+  
+  private static void SetHorizontalOffset(DocumentFormat.OpenXml.Drawing.Tile openXmlElement, Int64? value)
   {
-    if (openXmlElement != null)
-      openXmlElement.HorizontalOffset = value;
+    openXmlElement.HorizontalOffset = value;
   }
-
+  
   /// <summary>
-  ///   Vertical Offset
+  /// Vertical Offset
   /// </summary>
-  public static Int64? GetVerticalOffset(Tile? openXmlElement)
+  private static Int64? GetVerticalOffset(DocumentFormat.OpenXml.Drawing.Tile openXmlElement)
   {
-    return openXmlElement?.VerticalOffset?.Value;
+    return openXmlElement.VerticalOffset?.Value;
   }
-
-  public static void SetVerticalOffset(Tile? openXmlElement, Int64? value)
+  
+  private static void SetVerticalOffset(DocumentFormat.OpenXml.Drawing.Tile openXmlElement, Int64? value)
   {
-    if (openXmlElement != null)
-      openXmlElement.VerticalOffset = value;
+    openXmlElement.VerticalOffset = value;
   }
-
+  
   /// <summary>
-  ///   Horizontal Ratio
+  /// Horizontal Ratio
   /// </summary>
-  public static Int32? GetHorizontalRatio(Tile? openXmlElement)
+  private static Int32? GetHorizontalRatio(DocumentFormat.OpenXml.Drawing.Tile openXmlElement)
   {
-    return openXmlElement?.HorizontalRatio?.Value;
+    return openXmlElement.HorizontalRatio?.Value;
   }
-
-  public static void SetHorizontalRatio(Tile? openXmlElement, Int32? value)
+  
+  private static void SetHorizontalRatio(DocumentFormat.OpenXml.Drawing.Tile openXmlElement, Int32? value)
   {
-    if (openXmlElement != null)
-      openXmlElement.HorizontalRatio = value;
+    openXmlElement.HorizontalRatio = value;
   }
-
+  
   /// <summary>
-  ///   Vertical Ratio
+  /// Vertical Ratio
   /// </summary>
-  public static Int32? GetVerticalRatio(Tile? openXmlElement)
+  private static Int32? GetVerticalRatio(DocumentFormat.OpenXml.Drawing.Tile openXmlElement)
   {
-    return openXmlElement?.VerticalRatio?.Value;
+    return openXmlElement.VerticalRatio?.Value;
   }
-
-  public static void SetVerticalRatio(Tile? openXmlElement, Int32? value)
+  
+  private static void SetVerticalRatio(DocumentFormat.OpenXml.Drawing.Tile openXmlElement, Int32? value)
   {
-    if (openXmlElement != null)
-      openXmlElement.VerticalRatio = value;
+    openXmlElement.VerticalRatio = value;
   }
-
+  
   /// <summary>
-  ///   Tile Flipping
+  /// Tile Flipping
   /// </summary>
-  public static TileFlipKind? GetFlip(Tile? openXmlElement)
+  private static DocumentModel.Drawings.TileFlipKind? GetFlip(DocumentFormat.OpenXml.Drawing.Tile openXmlElement)
   {
-    return EnumValueConverter.GetValue<TileFlipValues, TileFlipKind>(openXmlElement?.Flip?.Value);
+    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Drawing.TileFlipValues, DocumentModel.Drawings.TileFlipKind>(openXmlElement?.Flip?.Value);
   }
-
-  public static void SetFlip(Tile? openXmlElement, TileFlipKind? value)
+  
+  private static void SetFlip(DocumentFormat.OpenXml.Drawing.Tile openXmlElement, DocumentModel.Drawings.TileFlipKind? value)
   {
-    if (openXmlElement != null)
-      openXmlElement.Flip = EnumValueConverter.CreateEnumValue<TileFlipValues, TileFlipKind>(value);
+    openXmlElement.Flip = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Drawing.TileFlipValues, DocumentModel.Drawings.TileFlipKind>(value);
   }
-
+  
   /// <summary>
-  ///   Alignment
+  /// Alignment
   /// </summary>
-  public static RectangleAlignmentKind? GetAlignment(Tile? openXmlElement)
+  private static DocumentModel.Drawings.RectangleAlignmentKind? GetAlignment(DocumentFormat.OpenXml.Drawing.Tile openXmlElement)
   {
-    return EnumValueConverter.GetValue<RectangleAlignmentValues, RectangleAlignmentKind>(openXmlElement?.Alignment?.Value);
+    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Drawing.RectangleAlignmentValues, DocumentModel.Drawings.RectangleAlignmentKind>(openXmlElement?.Alignment?.Value);
   }
-
-  public static void SetAlignment(Tile? openXmlElement, RectangleAlignmentKind? value)
+  
+  private static void SetAlignment(DocumentFormat.OpenXml.Drawing.Tile openXmlElement, DocumentModel.Drawings.RectangleAlignmentKind? value)
   {
-    if (openXmlElement != null)
-      openXmlElement.Alignment = EnumValueConverter.CreateEnumValue<RectangleAlignmentValues, RectangleAlignmentKind>(value);
+    openXmlElement.Alignment = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Drawing.RectangleAlignmentValues, DocumentModel.Drawings.RectangleAlignmentKind>(value);
   }
-
-  public static DocumentModel.Drawings.Tile? CreateModelElement(Tile? openXmlElement)
+  
+  public static DocumentModel.Drawings.Tile? CreateModelElement(DocumentFormat.OpenXml.Drawing.Tile? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -108,9 +98,9 @@ public static class TileConverter
     }
     return null;
   }
-
+  
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.Tile? value)
-    where OpenXmlElementType : Tile, new()
+    where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.Tile, new()
   {
     if (value != null)
     {

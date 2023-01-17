@@ -1,18 +1,16 @@
-using DocumentFormat.OpenXml.Packaging;
-
 namespace DocumentModel.OpenXml.Packaging;
 
 /// <summary>
-///   Defines the AlternativeFormatImportPart
+/// Defines the AlternativeFormatImportPart
 /// </summary>
 public static class AlternativeFormatImportPartConverter
 {
-  public static String? GetRelationshipType(AlternativeFormatImportPart? openXmlElement)
+  private static String? GetRelationshipType(DocumentFormat.OpenXml.Packaging.AlternativeFormatImportPart openXmlElement)
   {
     return openXmlElement?.RelationshipType;
   }
-
-  public static DocumentModel.Packaging.AlternativeFormatImportPart? CreateModelElement(AlternativeFormatImportPart? openXmlElement)
+  
+  public static DocumentModel.Packaging.AlternativeFormatImportPart? CreateModelElement(DocumentFormat.OpenXml.Packaging.AlternativeFormatImportPart? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -22,9 +20,9 @@ public static class AlternativeFormatImportPartConverter
     }
     return null;
   }
-
+  
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Packaging.AlternativeFormatImportPart? value)
-    where OpenXmlElementType : AlternativeFormatImportPart, new()
+    where OpenXmlElementType: DocumentFormat.OpenXml.Packaging.AlternativeFormatImportPart, new()
   {
     if (value != null)
     {

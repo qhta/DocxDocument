@@ -1,64 +1,59 @@
-using DocumentFormat.OpenXml.Wordprocessing;
-
 namespace DocumentModel.OpenXml.Wordprocessing;
 
 /// <summary>
-///   Defines the LanguageType Class.
+/// Defines the LanguageType Class.
 /// </summary>
 public static class LanguageTypeConverter
 {
   /// <summary>
-  ///   Latin Language
+  /// Latin Language
   /// </summary>
-  public static String? GetVal(LanguageType? openXmlElement)
+  private static String? GetVal(DocumentFormat.OpenXml.Wordprocessing.LanguageType openXmlElement)
   {
     return openXmlElement?.Val?.Value;
   }
-
-  public static void SetVal(LanguageType? openXmlElement, String? value)
+  
+  private static void SetVal(DocumentFormat.OpenXml.Wordprocessing.LanguageType openXmlElement, String? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.Val = new StringValue { Value = value };
-      else
-        openXmlElement.Val = null;
+    if (value != null)
+      openXmlElement.Val = new StringValue { Value = value };
+    else
+      openXmlElement.Val = null;
   }
-
+  
   /// <summary>
-  ///   East Asian Language
+  /// East Asian Language
   /// </summary>
-  public static String? GetEastAsia(LanguageType? openXmlElement)
+  private static String? GetEastAsia(DocumentFormat.OpenXml.Wordprocessing.LanguageType openXmlElement)
   {
     return openXmlElement?.EastAsia?.Value;
   }
-
-  public static void SetEastAsia(LanguageType? openXmlElement, String? value)
+  
+  private static void SetEastAsia(DocumentFormat.OpenXml.Wordprocessing.LanguageType openXmlElement, String? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.EastAsia = new StringValue { Value = value };
-      else
-        openXmlElement.EastAsia = null;
+    if (value != null)
+      openXmlElement.EastAsia = new StringValue { Value = value };
+    else
+      openXmlElement.EastAsia = null;
   }
-
+  
   /// <summary>
-  ///   Complex Script Language
+  /// Complex Script Language
   /// </summary>
-  public static String? GetBidi(LanguageType? openXmlElement)
+  private static String? GetBidi(DocumentFormat.OpenXml.Wordprocessing.LanguageType openXmlElement)
   {
     return openXmlElement?.Bidi?.Value;
   }
-
-  public static void SetBidi(LanguageType? openXmlElement, String? value)
+  
+  private static void SetBidi(DocumentFormat.OpenXml.Wordprocessing.LanguageType openXmlElement, String? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.Bidi = new StringValue { Value = value };
-      else
-        openXmlElement.Bidi = null;
+    if (value != null)
+      openXmlElement.Bidi = new StringValue { Value = value };
+    else
+      openXmlElement.Bidi = null;
   }
-
-  public static DocumentModel.Wordprocessing.LanguageType? CreateModelElement(LanguageType? openXmlElement)
+  
+  public static DocumentModel.Wordprocessing.LanguageType? CreateModelElement(DocumentFormat.OpenXml.Wordprocessing.LanguageType? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -70,9 +65,9 @@ public static class LanguageTypeConverter
     }
     return null;
   }
-
+  
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.LanguageType? value)
-    where OpenXmlElementType : LanguageType, new()
+    where OpenXmlElementType: DocumentFormat.OpenXml.Wordprocessing.LanguageType, new()
   {
     if (value != null)
     {

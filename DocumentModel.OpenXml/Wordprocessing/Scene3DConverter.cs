@@ -1,68 +1,59 @@
-using DocumentModel.Wordprocessing;
-using Scene3D = DocumentFormat.OpenXml.Office2010.Word.Scene3D;
-
 namespace DocumentModel.OpenXml.Wordprocessing;
 
 /// <summary>
-///   Defines the Scene3D Class.
+/// Defines the Scene3D Class.
 /// </summary>
 public static class Scene3DConverter
 {
   /// <summary>
-  ///   Camera.
+  /// Camera.
   /// </summary>
-  public static Camera? GetCamera(Scene3D? openXmlElement)
+  private static DocumentModel.Wordprocessing.Camera? GetCamera(DocumentFormat.OpenXml.Office2010.Word.Scene3D openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office2010.Word.Camera>();
     if (itemElement != null)
-      return CameraConverter.CreateModelElement(itemElement);
+      return DocumentModel.OpenXml.Wordprocessing.CameraConverter.CreateModelElement(itemElement);
     return null;
   }
-
-  public static void SetCamera(Scene3D? openXmlElement, Camera? value)
+  
+  private static void SetCamera(DocumentFormat.OpenXml.Office2010.Word.Scene3D openXmlElement, DocumentModel.Wordprocessing.Camera? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2010.Word.Camera>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2010.Word.Camera>();
+      itemElement = DocumentModel.OpenXml.Wordprocessing.CameraConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2010.Word.Camera>(value);
       if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = CameraConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2010.Word.Camera>(value);
-        if (itemElement != null)
-          openXmlElement.AddChild(itemElement);
-      }
+        openXmlElement.AddChild(itemElement);
     }
   }
-
+  
   /// <summary>
-  ///   LightRig.
+  /// LightRig.
   /// </summary>
-  public static LightRig? GetLightRig(Scene3D? openXmlElement)
+  private static DocumentModel.Wordprocessing.LightRig? GetLightRig(DocumentFormat.OpenXml.Office2010.Word.Scene3D openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office2010.Word.LightRig>();
     if (itemElement != null)
-      return LightRigConverter.CreateModelElement(itemElement);
+      return DocumentModel.OpenXml.Wordprocessing.LightRigConverter.CreateModelElement(itemElement);
     return null;
   }
-
-  public static void SetLightRig(Scene3D? openXmlElement, LightRig? value)
+  
+  private static void SetLightRig(DocumentFormat.OpenXml.Office2010.Word.Scene3D openXmlElement, DocumentModel.Wordprocessing.LightRig? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2010.Word.LightRig>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2010.Word.LightRig>();
+      itemElement = DocumentModel.OpenXml.Wordprocessing.LightRigConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2010.Word.LightRig>(value);
       if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = LightRigConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2010.Word.LightRig>(value);
-        if (itemElement != null)
-          openXmlElement.AddChild(itemElement);
-      }
+        openXmlElement.AddChild(itemElement);
     }
   }
-
-  public static DocumentModel.Wordprocessing.Scene3D? CreateModelElement(Scene3D? openXmlElement)
+  
+  public static DocumentModel.Wordprocessing.Scene3D? CreateModelElement(DocumentFormat.OpenXml.Office2010.Word.Scene3D? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -73,9 +64,9 @@ public static class Scene3DConverter
     }
     return null;
   }
-
+  
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.Scene3D? value)
-    where OpenXmlElementType : Scene3D, new()
+    where OpenXmlElementType: DocumentFormat.OpenXml.Office2010.Word.Scene3D, new()
   {
     if (value != null)
     {

@@ -1,231 +1,200 @@
-using DocumentFormat.OpenXml.Wordprocessing;
-using DocumentModel.OpenXml.Vml;
-using DocumentModel.Vml;
-
 namespace DocumentModel.OpenXml.Wordprocessing;
 
 /// <summary>
-///   Defines the PictureBulletBase Class.
+/// Defines the PictureBulletBase Class.
 /// </summary>
 public static class PictureBulletBaseConverter
 {
-  public static DocumentModel.Vml.Group? GetGroup(PictureBulletBase? openXmlElement)
+  private static DocumentModel.Vml.Group? GetGroup(DocumentFormat.OpenXml.Wordprocessing.PictureBulletBase openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Vml.Group>();
     if (itemElement != null)
-      return OpenXml.Vml.GroupConverter.CreateModelElement(itemElement);
+      return DocumentModel.OpenXml.Vml.GroupConverter.CreateModelElement(itemElement);
     return null;
   }
-
-  public static void SetGroup(PictureBulletBase? openXmlElement, DocumentModel.Vml.Group? value)
+  
+  private static void SetGroup(DocumentFormat.OpenXml.Wordprocessing.PictureBulletBase openXmlElement, DocumentModel.Vml.Group? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Vml.Group>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Vml.Group>();
+      itemElement = DocumentModel.OpenXml.Vml.GroupConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Vml.Group>(value);
       if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = OpenXml.Vml.GroupConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Vml.Group>(value);
-        if (itemElement != null)
-          openXmlElement.AddChild(itemElement);
-      }
+        openXmlElement.AddChild(itemElement);
     }
   }
-
-  public static ImageFile? GetImageFile(PictureBulletBase? openXmlElement)
+  
+  private static DocumentModel.Vml.ImageFile? GetImageFile(DocumentFormat.OpenXml.Wordprocessing.PictureBulletBase openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Vml.ImageFile>();
     if (itemElement != null)
-      return ImageFileConverter.CreateModelElement(itemElement);
+      return DocumentModel.OpenXml.Vml.ImageFileConverter.CreateModelElement(itemElement);
     return null;
   }
-
-  public static void SetImageFile(PictureBulletBase? openXmlElement, ImageFile? value)
+  
+  private static void SetImageFile(DocumentFormat.OpenXml.Wordprocessing.PictureBulletBase openXmlElement, DocumentModel.Vml.ImageFile? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Vml.ImageFile>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Vml.ImageFile>();
+      itemElement = DocumentModel.OpenXml.Vml.ImageFileConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Vml.ImageFile>(value);
       if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = ImageFileConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Vml.ImageFile>(value);
-        if (itemElement != null)
-          openXmlElement.AddChild(itemElement);
-      }
+        openXmlElement.AddChild(itemElement);
     }
   }
-
-  public static Line? GetLine(PictureBulletBase? openXmlElement)
+  
+  private static DocumentModel.Vml.Line? GetLine(DocumentFormat.OpenXml.Wordprocessing.PictureBulletBase openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Vml.Line>();
     if (itemElement != null)
-      return LineConverter.CreateModelElement(itemElement);
+      return DocumentModel.OpenXml.Vml.LineConverter.CreateModelElement(itemElement);
     return null;
   }
-
-  public static void SetLine(PictureBulletBase? openXmlElement, Line? value)
+  
+  private static void SetLine(DocumentFormat.OpenXml.Wordprocessing.PictureBulletBase openXmlElement, DocumentModel.Vml.Line? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Vml.Line>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Vml.Line>();
+      itemElement = DocumentModel.OpenXml.Vml.LineConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Vml.Line>(value);
       if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = LineConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Vml.Line>(value);
-        if (itemElement != null)
-          openXmlElement.AddChild(itemElement);
-      }
+        openXmlElement.AddChild(itemElement);
     }
   }
-
-  public static Oval? GetOval(PictureBulletBase? openXmlElement)
+  
+  private static DocumentModel.Vml.Oval? GetOval(DocumentFormat.OpenXml.Wordprocessing.PictureBulletBase openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Vml.Oval>();
     if (itemElement != null)
-      return OvalConverter.CreateModelElement(itemElement);
+      return DocumentModel.OpenXml.Vml.OvalConverter.CreateModelElement(itemElement);
     return null;
   }
-
-  public static void SetOval(PictureBulletBase? openXmlElement, Oval? value)
+  
+  private static void SetOval(DocumentFormat.OpenXml.Wordprocessing.PictureBulletBase openXmlElement, DocumentModel.Vml.Oval? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Vml.Oval>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Vml.Oval>();
+      itemElement = DocumentModel.OpenXml.Vml.OvalConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Vml.Oval>(value);
       if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = OvalConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Vml.Oval>(value);
-        if (itemElement != null)
-          openXmlElement.AddChild(itemElement);
-      }
+        openXmlElement.AddChild(itemElement);
     }
   }
-
-  public static PolyLine? GetPolyLine(PictureBulletBase? openXmlElement)
+  
+  private static DocumentModel.Vml.PolyLine? GetPolyLine(DocumentFormat.OpenXml.Wordprocessing.PictureBulletBase openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Vml.PolyLine>();
     if (itemElement != null)
-      return PolyLineConverter.CreateModelElement(itemElement);
+      return DocumentModel.OpenXml.Vml.PolyLineConverter.CreateModelElement(itemElement);
     return null;
   }
-
-  public static void SetPolyLine(PictureBulletBase? openXmlElement, PolyLine? value)
+  
+  private static void SetPolyLine(DocumentFormat.OpenXml.Wordprocessing.PictureBulletBase openXmlElement, DocumentModel.Vml.PolyLine? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Vml.PolyLine>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Vml.PolyLine>();
+      itemElement = DocumentModel.OpenXml.Vml.PolyLineConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Vml.PolyLine>(value);
       if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = PolyLineConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Vml.PolyLine>(value);
-        if (itemElement != null)
-          openXmlElement.AddChild(itemElement);
-      }
+        openXmlElement.AddChild(itemElement);
     }
   }
-
-  public static Rectangle? GetRectangle(PictureBulletBase? openXmlElement)
+  
+  private static DocumentModel.Vml.Rectangle? GetRectangle(DocumentFormat.OpenXml.Wordprocessing.PictureBulletBase openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Vml.Rectangle>();
     if (itemElement != null)
-      return RectangleConverter.CreateModelElement(itemElement);
+      return DocumentModel.OpenXml.Vml.RectangleConverter.CreateModelElement(itemElement);
     return null;
   }
-
-  public static void SetRectangle(PictureBulletBase? openXmlElement, Rectangle? value)
+  
+  private static void SetRectangle(DocumentFormat.OpenXml.Wordprocessing.PictureBulletBase openXmlElement, DocumentModel.Vml.Rectangle? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Vml.Rectangle>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Vml.Rectangle>();
+      itemElement = DocumentModel.OpenXml.Vml.RectangleConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Vml.Rectangle>(value);
       if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = RectangleConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Vml.Rectangle>(value);
-        if (itemElement != null)
-          openXmlElement.AddChild(itemElement);
-      }
+        openXmlElement.AddChild(itemElement);
     }
   }
-
-  public static RoundRectangle? GetRoundRectangle(PictureBulletBase? openXmlElement)
+  
+  private static DocumentModel.Vml.RoundRectangle? GetRoundRectangle(DocumentFormat.OpenXml.Wordprocessing.PictureBulletBase openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Vml.RoundRectangle>();
     if (itemElement != null)
-      return RoundRectangleConverter.CreateModelElement(itemElement);
+      return DocumentModel.OpenXml.Vml.RoundRectangleConverter.CreateModelElement(itemElement);
     return null;
   }
-
-  public static void SetRoundRectangle(PictureBulletBase? openXmlElement, RoundRectangle? value)
+  
+  private static void SetRoundRectangle(DocumentFormat.OpenXml.Wordprocessing.PictureBulletBase openXmlElement, DocumentModel.Vml.RoundRectangle? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Vml.RoundRectangle>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Vml.RoundRectangle>();
+      itemElement = DocumentModel.OpenXml.Vml.RoundRectangleConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Vml.RoundRectangle>(value);
       if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = RoundRectangleConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Vml.RoundRectangle>(value);
-        if (itemElement != null)
-          openXmlElement.AddChild(itemElement);
-      }
+        openXmlElement.AddChild(itemElement);
     }
   }
-
-  public static Shape? GetShape(PictureBulletBase? openXmlElement)
+  
+  private static DocumentModel.Vml.Shape? GetShape(DocumentFormat.OpenXml.Wordprocessing.PictureBulletBase openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Vml.Shape>();
     if (itemElement != null)
-      return ShapeConverter.CreateModelElement(itemElement);
+      return DocumentModel.OpenXml.Vml.ShapeConverter.CreateModelElement(itemElement);
     return null;
   }
-
-  public static void SetShape(PictureBulletBase? openXmlElement, Shape? value)
+  
+  private static void SetShape(DocumentFormat.OpenXml.Wordprocessing.PictureBulletBase openXmlElement, DocumentModel.Vml.Shape? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Vml.Shape>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Vml.Shape>();
+      itemElement = DocumentModel.OpenXml.Vml.ShapeConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Vml.Shape>(value);
       if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = ShapeConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Vml.Shape>(value);
-        if (itemElement != null)
-          openXmlElement.AddChild(itemElement);
-      }
+        openXmlElement.AddChild(itemElement);
     }
   }
-
-  public static Shapetype? GetShapetype(PictureBulletBase? openXmlElement)
+  
+  private static DocumentModel.Vml.Shapetype? GetShapetype(DocumentFormat.OpenXml.Wordprocessing.PictureBulletBase openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Vml.Shapetype>();
     if (itemElement != null)
-      return ShapetypeConverter.CreateModelElement(itemElement);
+      return DocumentModel.OpenXml.Vml.ShapetypeConverter.CreateModelElement(itemElement);
     return null;
   }
-
-  public static void SetShapetype(PictureBulletBase? openXmlElement, Shapetype? value)
+  
+  private static void SetShapetype(DocumentFormat.OpenXml.Wordprocessing.PictureBulletBase openXmlElement, DocumentModel.Vml.Shapetype? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Vml.Shapetype>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Vml.Shapetype>();
+      itemElement = DocumentModel.OpenXml.Vml.ShapetypeConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Vml.Shapetype>(value);
       if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = ShapetypeConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Vml.Shapetype>(value);
-        if (itemElement != null)
-          openXmlElement.AddChild(itemElement);
-      }
+        openXmlElement.AddChild(itemElement);
     }
   }
-
-  public static DocumentModel.Wordprocessing.PictureBulletBase? CreateModelElement(PictureBulletBase? openXmlElement)
+  
+  public static DocumentModel.Wordprocessing.PictureBulletBase? CreateModelElement(DocumentFormat.OpenXml.Wordprocessing.PictureBulletBase? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -243,9 +212,9 @@ public static class PictureBulletBaseConverter
     }
     return null;
   }
-
+  
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.PictureBulletBase? value)
-    where OpenXmlElementType : PictureBulletBase, new()
+    where OpenXmlElementType: DocumentFormat.OpenXml.Wordprocessing.PictureBulletBase, new()
   {
     if (value != null)
     {

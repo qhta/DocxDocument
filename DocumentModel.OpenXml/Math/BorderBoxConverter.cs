@@ -1,68 +1,59 @@
-using DocumentModel.Math;
-using BorderBox = DocumentFormat.OpenXml.Math.BorderBox;
-
 namespace DocumentModel.OpenXml.Math;
 
 /// <summary>
-///   Border-Box Function.
+/// Border-Box Function.
 /// </summary>
 public static class BorderBoxConverter
 {
   /// <summary>
-  ///   Border Box Properties.
+  /// Border Box Properties.
   /// </summary>
-  public static BorderBoxProperties? GetBorderBoxProperties(BorderBox? openXmlElement)
+  private static DocumentModel.Math.BorderBoxProperties? GetBorderBoxProperties(DocumentFormat.OpenXml.Math.BorderBox openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Math.BorderBoxProperties>();
     if (itemElement != null)
-      return BorderBoxPropertiesConverter.CreateModelElement(itemElement);
+      return DocumentModel.OpenXml.Math.BorderBoxPropertiesConverter.CreateModelElement(itemElement);
     return null;
   }
-
-  public static void SetBorderBoxProperties(BorderBox? openXmlElement, BorderBoxProperties? value)
+  
+  private static void SetBorderBoxProperties(DocumentFormat.OpenXml.Math.BorderBox openXmlElement, DocumentModel.Math.BorderBoxProperties? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Math.BorderBoxProperties>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Math.BorderBoxProperties>();
+      itemElement = DocumentModel.OpenXml.Math.BorderBoxPropertiesConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Math.BorderBoxProperties>(value);
       if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = BorderBoxPropertiesConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Math.BorderBoxProperties>(value);
-        if (itemElement != null)
-          openXmlElement.AddChild(itemElement);
-      }
+        openXmlElement.AddChild(itemElement);
     }
   }
-
+  
   /// <summary>
-  ///   Base.
+  /// Base.
   /// </summary>
-  public static Base? GetBase(BorderBox? openXmlElement)
+  private static DocumentModel.Math.Base? GetBase(DocumentFormat.OpenXml.Math.BorderBox openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Math.Base>();
     if (itemElement != null)
-      return BaseConverter.CreateModelElement(itemElement);
+      return DocumentModel.OpenXml.Math.BaseConverter.CreateModelElement(itemElement);
     return null;
   }
-
-  public static void SetBase(BorderBox? openXmlElement, Base? value)
+  
+  private static void SetBase(DocumentFormat.OpenXml.Math.BorderBox openXmlElement, DocumentModel.Math.Base? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Math.Base>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Math.Base>();
+      itemElement = DocumentModel.OpenXml.Math.BaseConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Math.Base>(value);
       if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = BaseConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Math.Base>(value);
-        if (itemElement != null)
-          openXmlElement.AddChild(itemElement);
-      }
+        openXmlElement.AddChild(itemElement);
     }
   }
-
-  public static DocumentModel.Math.BorderBox? CreateModelElement(BorderBox? openXmlElement)
+  
+  public static DocumentModel.Math.BorderBox? CreateModelElement(DocumentFormat.OpenXml.Math.BorderBox? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -73,9 +64,9 @@ public static class BorderBoxConverter
     }
     return null;
   }
-
+  
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Math.BorderBox? value)
-    where OpenXmlElementType : BorderBox, new()
+    where OpenXmlElementType: DocumentFormat.OpenXml.Math.BorderBox, new()
   {
     if (value != null)
     {

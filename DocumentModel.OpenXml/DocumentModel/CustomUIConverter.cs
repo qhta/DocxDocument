@@ -1,157 +1,143 @@
 namespace DocumentModel.OpenXml;
 
 /// <summary>
-///   Defines the CustomUI Class.
+/// Defines the CustomUI Class.
 /// </summary>
 public static class CustomUIConverter
 {
   /// <summary>
-  ///   onLoad, this property is only available in Office 2010 and later.
+  /// onLoad, this property is only available in Office 2010 and later.
   /// </summary>
-  public static String? GetOnLoad(DocumentFormat.OpenXml.Office2010.CustomUI.CustomUI? openXmlElement)
+  private static String? GetOnLoad(DocumentFormat.OpenXml.Office2010.CustomUI.CustomUI openXmlElement)
   {
     return openXmlElement?.OnLoad?.Value;
   }
-
-  public static void SetOnLoad(DocumentFormat.OpenXml.Office2010.CustomUI.CustomUI? openXmlElement, String? value)
+  
+  private static void SetOnLoad(DocumentFormat.OpenXml.Office2010.CustomUI.CustomUI openXmlElement, String? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.OnLoad = new StringValue { Value = value };
-      else
-        openXmlElement.OnLoad = null;
+    if (value != null)
+      openXmlElement.OnLoad = new StringValue { Value = value };
+    else
+      openXmlElement.OnLoad = null;
   }
-
+  
   /// <summary>
-  ///   loadImage, this property is only available in Office 2010 and later.
+  /// loadImage, this property is only available in Office 2010 and later.
   /// </summary>
-  public static String? GetLoadImage(DocumentFormat.OpenXml.Office2010.CustomUI.CustomUI? openXmlElement)
+  private static String? GetLoadImage(DocumentFormat.OpenXml.Office2010.CustomUI.CustomUI openXmlElement)
   {
     return openXmlElement?.LoadImage?.Value;
   }
-
-  public static void SetLoadImage(DocumentFormat.OpenXml.Office2010.CustomUI.CustomUI? openXmlElement, String? value)
+  
+  private static void SetLoadImage(DocumentFormat.OpenXml.Office2010.CustomUI.CustomUI openXmlElement, String? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.LoadImage = new StringValue { Value = value };
-      else
-        openXmlElement.LoadImage = null;
+    if (value != null)
+      openXmlElement.LoadImage = new StringValue { Value = value };
+    else
+      openXmlElement.LoadImage = null;
   }
-
+  
   /// <summary>
-  ///   Commands.
+  /// Commands.
   /// </summary>
-  public static Commands? GetCommands(DocumentFormat.OpenXml.Office2010.CustomUI.CustomUI? openXmlElement)
+  private static DocumentModel.Commands? GetCommands(DocumentFormat.OpenXml.Office2010.CustomUI.CustomUI openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office2010.CustomUI.Commands>();
     if (itemElement != null)
-      return CommandsConverter.CreateModelElement(itemElement);
+      return DocumentModel.OpenXml.CommandsConverter.CreateModelElement(itemElement);
     return null;
   }
-
-  public static void SetCommands(DocumentFormat.OpenXml.Office2010.CustomUI.CustomUI? openXmlElement, Commands? value)
+  
+  private static void SetCommands(DocumentFormat.OpenXml.Office2010.CustomUI.CustomUI openXmlElement, DocumentModel.Commands? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2010.CustomUI.Commands>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2010.CustomUI.Commands>();
+      itemElement = DocumentModel.OpenXml.CommandsConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2010.CustomUI.Commands>(value);
       if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = CommandsConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2010.CustomUI.Commands>(value);
-        if (itemElement != null)
-          openXmlElement.AddChild(itemElement);
-      }
+        openXmlElement.AddChild(itemElement);
     }
   }
-
+  
   /// <summary>
-  ///   Ribbon.
+  /// Ribbon.
   /// </summary>
-  public static Ribbon? GetRibbon(DocumentFormat.OpenXml.Office2010.CustomUI.CustomUI? openXmlElement)
+  private static DocumentModel.Ribbon? GetRibbon(DocumentFormat.OpenXml.Office2010.CustomUI.CustomUI openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office2010.CustomUI.Ribbon>();
     if (itemElement != null)
-      return RibbonConverter.CreateModelElement(itemElement);
+      return DocumentModel.OpenXml.RibbonConverter.CreateModelElement(itemElement);
     return null;
   }
-
-  public static void SetRibbon(DocumentFormat.OpenXml.Office2010.CustomUI.CustomUI? openXmlElement, Ribbon? value)
+  
+  private static void SetRibbon(DocumentFormat.OpenXml.Office2010.CustomUI.CustomUI openXmlElement, DocumentModel.Ribbon? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2010.CustomUI.Ribbon>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2010.CustomUI.Ribbon>();
+      itemElement = DocumentModel.OpenXml.RibbonConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2010.CustomUI.Ribbon>(value);
       if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = RibbonConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2010.CustomUI.Ribbon>(value);
-        if (itemElement != null)
-          openXmlElement.AddChild(itemElement);
-      }
+        openXmlElement.AddChild(itemElement);
     }
   }
-
+  
   /// <summary>
-  ///   Backstage.
+  /// Backstage.
   /// </summary>
-  public static Backstage? GetBackstage(DocumentFormat.OpenXml.Office2010.CustomUI.CustomUI? openXmlElement)
+  private static DocumentModel.Backstage? GetBackstage(DocumentFormat.OpenXml.Office2010.CustomUI.CustomUI openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office2010.CustomUI.Backstage>();
     if (itemElement != null)
-      return BackstageConverter.CreateModelElement(itemElement);
+      return DocumentModel.OpenXml.BackstageConverter.CreateModelElement(itemElement);
     return null;
   }
-
-  public static void SetBackstage(DocumentFormat.OpenXml.Office2010.CustomUI.CustomUI? openXmlElement, Backstage? value)
+  
+  private static void SetBackstage(DocumentFormat.OpenXml.Office2010.CustomUI.CustomUI openXmlElement, DocumentModel.Backstage? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2010.CustomUI.Backstage>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2010.CustomUI.Backstage>();
+      itemElement = DocumentModel.OpenXml.BackstageConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2010.CustomUI.Backstage>(value);
       if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = BackstageConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2010.CustomUI.Backstage>(value);
-        if (itemElement != null)
-          openXmlElement.AddChild(itemElement);
-      }
+        openXmlElement.AddChild(itemElement);
     }
   }
-
+  
   /// <summary>
-  ///   ContextMenus.
+  /// ContextMenus.
   /// </summary>
-  public static ContextMenus? GetContextMenus(DocumentFormat.OpenXml.Office2010.CustomUI.CustomUI? openXmlElement)
+  private static DocumentModel.ContextMenus? GetContextMenus(DocumentFormat.OpenXml.Office2010.CustomUI.CustomUI openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office2010.CustomUI.ContextMenus>();
     if (itemElement != null)
-      return ContextMenusConverter.CreateModelElement(itemElement);
+      return DocumentModel.OpenXml.ContextMenusConverter.CreateModelElement(itemElement);
     return null;
   }
-
-  public static void SetContextMenus(DocumentFormat.OpenXml.Office2010.CustomUI.CustomUI? openXmlElement, ContextMenus? value)
+  
+  private static void SetContextMenus(DocumentFormat.OpenXml.Office2010.CustomUI.CustomUI openXmlElement, DocumentModel.ContextMenus? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2010.CustomUI.ContextMenus>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2010.CustomUI.ContextMenus>();
+      itemElement = DocumentModel.OpenXml.ContextMenusConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2010.CustomUI.ContextMenus>(value);
       if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = ContextMenusConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2010.CustomUI.ContextMenus>(value);
-        if (itemElement != null)
-          openXmlElement.AddChild(itemElement);
-      }
+        openXmlElement.AddChild(itemElement);
     }
   }
-
-  public static CustomUI? CreateModelElement(DocumentFormat.OpenXml.Office2010.CustomUI.CustomUI? openXmlElement)
+  
+  public static DocumentModel.CustomUI? CreateModelElement(DocumentFormat.OpenXml.Office2010.CustomUI.CustomUI? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new CustomUI();
+      var value = new DocumentModel.CustomUI();
       value.OnLoad = GetOnLoad(openXmlElement);
       value.LoadImage = GetLoadImage(openXmlElement);
       value.Commands = GetCommands(openXmlElement);
@@ -162,9 +148,9 @@ public static class CustomUIConverter
     }
     return null;
   }
-
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(CustomUI? value)
-    where OpenXmlElementType : DocumentFormat.OpenXml.Office2010.CustomUI.CustomUI, new()
+  
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.CustomUI? value)
+    where OpenXmlElementType: DocumentFormat.OpenXml.Office2010.CustomUI.CustomUI, new()
   {
     if (value != null)
     {

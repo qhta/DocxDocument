@@ -1,68 +1,59 @@
-using DocumentModel.Drawings.ChartDrawings;
-using GeoDataEntityQueryResult = DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.GeoDataEntityQueryResult;
-
 namespace DocumentModel.OpenXml.Drawings.ChartDrawings;
 
 /// <summary>
-///   Defines the GeoDataEntityQueryResult Class.
+/// Defines the GeoDataEntityQueryResult Class.
 /// </summary>
 public static class GeoDataEntityQueryResultConverter
 {
   /// <summary>
-  ///   GeoDataEntityQuery.
+  /// GeoDataEntityQuery.
   /// </summary>
-  public static GeoDataEntityQuery? GetGeoDataEntityQuery(GeoDataEntityQueryResult? openXmlElement)
+  private static DocumentModel.Drawings.ChartDrawings.GeoDataEntityQuery? GetGeoDataEntityQuery(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.GeoDataEntityQueryResult openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.GeoDataEntityQuery>();
     if (itemElement != null)
-      return GeoDataEntityQueryConverter.CreateModelElement(itemElement);
+      return DocumentModel.OpenXml.Drawings.ChartDrawings.GeoDataEntityQueryConverter.CreateModelElement(itemElement);
     return null;
   }
-
-  public static void SetGeoDataEntityQuery(GeoDataEntityQueryResult? openXmlElement, GeoDataEntityQuery? value)
+  
+  private static void SetGeoDataEntityQuery(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.GeoDataEntityQueryResult openXmlElement, DocumentModel.Drawings.ChartDrawings.GeoDataEntityQuery? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.GeoDataEntityQuery>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.GeoDataEntityQuery>();
+      itemElement = DocumentModel.OpenXml.Drawings.ChartDrawings.GeoDataEntityQueryConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.GeoDataEntityQuery>(value);
       if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = GeoDataEntityQueryConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.GeoDataEntityQuery>(value);
-        if (itemElement != null)
-          openXmlElement.AddChild(itemElement);
-      }
+        openXmlElement.AddChild(itemElement);
     }
   }
-
+  
   /// <summary>
-  ///   GeoData.
+  /// GeoData.
   /// </summary>
-  public static GeoData? GetGeoData(GeoDataEntityQueryResult? openXmlElement)
+  private static DocumentModel.Drawings.ChartDrawings.GeoData? GetGeoData(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.GeoDataEntityQueryResult openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.GeoData>();
     if (itemElement != null)
-      return GeoDataConverter.CreateModelElement(itemElement);
+      return DocumentModel.OpenXml.Drawings.ChartDrawings.GeoDataConverter.CreateModelElement(itemElement);
     return null;
   }
-
-  public static void SetGeoData(GeoDataEntityQueryResult? openXmlElement, GeoData? value)
+  
+  private static void SetGeoData(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.GeoDataEntityQueryResult openXmlElement, DocumentModel.Drawings.ChartDrawings.GeoData? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.GeoData>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.GeoData>();
+      itemElement = DocumentModel.OpenXml.Drawings.ChartDrawings.GeoDataConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.GeoData>(value);
       if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = GeoDataConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.GeoData>(value);
-        if (itemElement != null)
-          openXmlElement.AddChild(itemElement);
-      }
+        openXmlElement.AddChild(itemElement);
     }
   }
-
-  public static DocumentModel.Drawings.ChartDrawings.GeoDataEntityQueryResult? CreateModelElement(GeoDataEntityQueryResult? openXmlElement)
+  
+  public static DocumentModel.Drawings.ChartDrawings.GeoDataEntityQueryResult? CreateModelElement(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.GeoDataEntityQueryResult? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -73,9 +64,9 @@ public static class GeoDataEntityQueryResultConverter
     }
     return null;
   }
-
+  
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.ChartDrawings.GeoDataEntityQueryResult? value)
-    where OpenXmlElementType : GeoDataEntityQueryResult, new()
+    where OpenXmlElementType: DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.GeoDataEntityQueryResult, new()
   {
     if (value != null)
     {

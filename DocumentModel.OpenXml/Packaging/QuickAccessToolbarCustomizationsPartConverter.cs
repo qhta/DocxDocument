@@ -1,23 +1,21 @@
-using DocumentFormat.OpenXml.Packaging;
-
 namespace DocumentModel.OpenXml.Packaging;
 
 /// <summary>
-///   Defines the QuickAccessToolbarCustomizationsPart
+/// Defines the QuickAccessToolbarCustomizationsPart
 /// </summary>
 public static class QuickAccessToolbarCustomizationsPartConverter
 {
-  public static String? GetContentType(QuickAccessToolbarCustomizationsPart? openXmlElement)
+  private static String? GetContentType(DocumentFormat.OpenXml.Packaging.QuickAccessToolbarCustomizationsPart openXmlElement)
   {
     return openXmlElement?.ContentType;
   }
-
-  public static String? GetRelationshipType(QuickAccessToolbarCustomizationsPart? openXmlElement)
+  
+  private static String? GetRelationshipType(DocumentFormat.OpenXml.Packaging.QuickAccessToolbarCustomizationsPart openXmlElement)
   {
     return openXmlElement?.RelationshipType;
   }
-
-  public static DocumentModel.Packaging.QuickAccessToolbarCustomizationsPart? CreateModelElement(QuickAccessToolbarCustomizationsPart? openXmlElement)
+  
+  public static DocumentModel.Packaging.QuickAccessToolbarCustomizationsPart? CreateModelElement(DocumentFormat.OpenXml.Packaging.QuickAccessToolbarCustomizationsPart? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -28,9 +26,9 @@ public static class QuickAccessToolbarCustomizationsPartConverter
     }
     return null;
   }
-
+  
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Packaging.QuickAccessToolbarCustomizationsPart? value)
-    where OpenXmlElementType : QuickAccessToolbarCustomizationsPart, new()
+    where OpenXmlElementType: DocumentFormat.OpenXml.Packaging.QuickAccessToolbarCustomizationsPart, new()
   {
     if (value != null)
     {

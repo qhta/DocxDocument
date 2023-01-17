@@ -1,243 +1,224 @@
-using DocumentFormat.OpenXml.Wordprocessing;
-using DocumentModel.Wordprocessing;
-using FrameProperties = DocumentFormat.OpenXml.Wordprocessing.FrameProperties;
-
 namespace DocumentModel.OpenXml.Wordprocessing;
 
 /// <summary>
-///   Defines the FrameProperties Class.
+/// Defines the FrameProperties Class.
 /// </summary>
 public static class FramePropertiesConverter
 {
   /// <summary>
-  ///   Drop Cap Frame
+  /// Drop Cap Frame
   /// </summary>
-  public static DropCapLocationKind? GetDropCap(FrameProperties? openXmlElement)
+  private static DocumentModel.Wordprocessing.DropCapLocationKind? GetDropCap(DocumentFormat.OpenXml.Wordprocessing.FrameProperties openXmlElement)
   {
-    return EnumValueConverter.GetValue<DropCapLocationValues, DropCapLocationKind>(openXmlElement?.DropCap?.Value);
+    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Wordprocessing.DropCapLocationValues, DocumentModel.Wordprocessing.DropCapLocationKind>(openXmlElement?.DropCap?.Value);
   }
-
-  public static void SetDropCap(FrameProperties? openXmlElement, DropCapLocationKind? value)
+  
+  private static void SetDropCap(DocumentFormat.OpenXml.Wordprocessing.FrameProperties openXmlElement, DocumentModel.Wordprocessing.DropCapLocationKind? value)
   {
-    if (openXmlElement != null)
-      openXmlElement.DropCap = EnumValueConverter.CreateEnumValue<DropCapLocationValues, DropCapLocationKind>(value);
+    openXmlElement.DropCap = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Wordprocessing.DropCapLocationValues, DocumentModel.Wordprocessing.DropCapLocationKind>(value);
   }
-
+  
   /// <summary>
-  ///   Drop Cap Vertical Height in Lines
+  /// Drop Cap Vertical Height in Lines
   /// </summary>
-  public static Int32? GetLines(FrameProperties? openXmlElement)
+  private static Int32? GetLines(DocumentFormat.OpenXml.Wordprocessing.FrameProperties openXmlElement)
   {
-    return openXmlElement?.Lines?.Value;
+    return openXmlElement.Lines?.Value;
   }
-
-  public static void SetLines(FrameProperties? openXmlElement, Int32? value)
+  
+  private static void SetLines(DocumentFormat.OpenXml.Wordprocessing.FrameProperties openXmlElement, Int32? value)
   {
-    if (openXmlElement != null)
-      openXmlElement.Lines = value;
+    openXmlElement.Lines = value;
   }
-
+  
   /// <summary>
-  ///   Frame Width
+  /// Frame Width
   /// </summary>
-  public static String? GetWidth(FrameProperties? openXmlElement)
+  private static String? GetWidth(DocumentFormat.OpenXml.Wordprocessing.FrameProperties openXmlElement)
   {
     return openXmlElement?.Width?.Value;
   }
-
-  public static void SetWidth(FrameProperties? openXmlElement, String? value)
+  
+  private static void SetWidth(DocumentFormat.OpenXml.Wordprocessing.FrameProperties openXmlElement, String? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.Width = new StringValue { Value = value };
-      else
-        openXmlElement.Width = null;
+    if (value != null)
+      openXmlElement.Width = new StringValue { Value = value };
+    else
+      openXmlElement.Width = null;
   }
-
+  
   /// <summary>
-  ///   Frame Height
+  /// Frame Height
   /// </summary>
-  public static UInt32? GetHeight(FrameProperties? openXmlElement)
+  private static UInt32? GetHeight(DocumentFormat.OpenXml.Wordprocessing.FrameProperties openXmlElement)
   {
-    return openXmlElement?.Height?.Value;
+    return openXmlElement.Height?.Value;
   }
-
-  public static void SetHeight(FrameProperties? openXmlElement, UInt32? value)
+  
+  private static void SetHeight(DocumentFormat.OpenXml.Wordprocessing.FrameProperties openXmlElement, UInt32? value)
   {
-    if (openXmlElement != null)
-      openXmlElement.Height = value;
+    openXmlElement.Height = value;
   }
-
+  
   /// <summary>
-  ///   Vertical Frame Padding
+  /// Vertical Frame Padding
   /// </summary>
-  public static String? GetVerticalSpace(FrameProperties? openXmlElement)
+  private static String? GetVerticalSpace(DocumentFormat.OpenXml.Wordprocessing.FrameProperties openXmlElement)
   {
     return openXmlElement?.VerticalSpace?.Value;
   }
-
-  public static void SetVerticalSpace(FrameProperties? openXmlElement, String? value)
+  
+  private static void SetVerticalSpace(DocumentFormat.OpenXml.Wordprocessing.FrameProperties openXmlElement, String? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.VerticalSpace = new StringValue { Value = value };
-      else
-        openXmlElement.VerticalSpace = null;
+    if (value != null)
+      openXmlElement.VerticalSpace = new StringValue { Value = value };
+    else
+      openXmlElement.VerticalSpace = null;
   }
-
+  
   /// <summary>
-  ///   Horizontal Frame Padding
+  /// Horizontal Frame Padding
   /// </summary>
-  public static String? GetHorizontalSpace(FrameProperties? openXmlElement)
+  private static String? GetHorizontalSpace(DocumentFormat.OpenXml.Wordprocessing.FrameProperties openXmlElement)
   {
     return openXmlElement?.HorizontalSpace?.Value;
   }
-
-  public static void SetHorizontalSpace(FrameProperties? openXmlElement, String? value)
+  
+  private static void SetHorizontalSpace(DocumentFormat.OpenXml.Wordprocessing.FrameProperties openXmlElement, String? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.HorizontalSpace = new StringValue { Value = value };
-      else
-        openXmlElement.HorizontalSpace = null;
+    if (value != null)
+      openXmlElement.HorizontalSpace = new StringValue { Value = value };
+    else
+      openXmlElement.HorizontalSpace = null;
   }
-
+  
   /// <summary>
-  ///   Text Wrapping Around Frame
+  /// Text Wrapping Around Frame
   /// </summary>
-  public static TextWrappingKind? GetWrap(FrameProperties? openXmlElement)
+  private static DocumentModel.Wordprocessing.TextWrappingKind? GetWrap(DocumentFormat.OpenXml.Wordprocessing.FrameProperties openXmlElement)
   {
-    return EnumValueConverter.GetValue<TextWrappingValues, TextWrappingKind>(openXmlElement?.Wrap?.Value);
+    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Wordprocessing.TextWrappingValues, DocumentModel.Wordprocessing.TextWrappingKind>(openXmlElement?.Wrap?.Value);
   }
-
-  public static void SetWrap(FrameProperties? openXmlElement, TextWrappingKind? value)
+  
+  private static void SetWrap(DocumentFormat.OpenXml.Wordprocessing.FrameProperties openXmlElement, DocumentModel.Wordprocessing.TextWrappingKind? value)
   {
-    if (openXmlElement != null)
-      openXmlElement.Wrap = EnumValueConverter.CreateEnumValue<TextWrappingValues, TextWrappingKind>(value);
+    openXmlElement.Wrap = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Wordprocessing.TextWrappingValues, DocumentModel.Wordprocessing.TextWrappingKind>(value);
   }
-
+  
   /// <summary>
-  ///   Frame Horizontal Positioning Base
+  /// Frame Horizontal Positioning Base
   /// </summary>
-  public static HorizontalAnchorKind? GetHorizontalPosition(FrameProperties? openXmlElement)
+  private static DocumentModel.Wordprocessing.HorizontalAnchorKind? GetHorizontalPosition(DocumentFormat.OpenXml.Wordprocessing.FrameProperties openXmlElement)
   {
-    return EnumValueConverter.GetValue<HorizontalAnchorValues, HorizontalAnchorKind>(openXmlElement?.HorizontalPosition?.Value);
+    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Wordprocessing.HorizontalAnchorValues, DocumentModel.Wordprocessing.HorizontalAnchorKind>(openXmlElement?.HorizontalPosition?.Value);
   }
-
-  public static void SetHorizontalPosition(FrameProperties? openXmlElement, HorizontalAnchorKind? value)
+  
+  private static void SetHorizontalPosition(DocumentFormat.OpenXml.Wordprocessing.FrameProperties openXmlElement, DocumentModel.Wordprocessing.HorizontalAnchorKind? value)
   {
-    if (openXmlElement != null)
-      openXmlElement.HorizontalPosition = EnumValueConverter.CreateEnumValue<HorizontalAnchorValues, HorizontalAnchorKind>(value);
+    openXmlElement.HorizontalPosition = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Wordprocessing.HorizontalAnchorValues, DocumentModel.Wordprocessing.HorizontalAnchorKind>(value);
   }
-
+  
   /// <summary>
-  ///   Frame Vertical Positioning Base
+  /// Frame Vertical Positioning Base
   /// </summary>
-  public static VerticalAnchorKind? GetVerticalPosition(FrameProperties? openXmlElement)
+  private static DocumentModel.Wordprocessing.VerticalAnchorKind? GetVerticalPosition(DocumentFormat.OpenXml.Wordprocessing.FrameProperties openXmlElement)
   {
-    return EnumValueConverter.GetValue<VerticalAnchorValues, VerticalAnchorKind>(openXmlElement?.VerticalPosition?.Value);
+    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Wordprocessing.VerticalAnchorValues, DocumentModel.Wordprocessing.VerticalAnchorKind>(openXmlElement?.VerticalPosition?.Value);
   }
-
-  public static void SetVerticalPosition(FrameProperties? openXmlElement, VerticalAnchorKind? value)
+  
+  private static void SetVerticalPosition(DocumentFormat.OpenXml.Wordprocessing.FrameProperties openXmlElement, DocumentModel.Wordprocessing.VerticalAnchorKind? value)
   {
-    if (openXmlElement != null)
-      openXmlElement.VerticalPosition = EnumValueConverter.CreateEnumValue<VerticalAnchorValues, VerticalAnchorKind>(value);
+    openXmlElement.VerticalPosition = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Wordprocessing.VerticalAnchorValues, DocumentModel.Wordprocessing.VerticalAnchorKind>(value);
   }
-
+  
   /// <summary>
-  ///   Absolute Horizontal Position
+  /// Absolute Horizontal Position
   /// </summary>
-  public static String? GetX(FrameProperties? openXmlElement)
+  private static String? GetX(DocumentFormat.OpenXml.Wordprocessing.FrameProperties openXmlElement)
   {
     return openXmlElement?.X?.Value;
   }
-
-  public static void SetX(FrameProperties? openXmlElement, String? value)
+  
+  private static void SetX(DocumentFormat.OpenXml.Wordprocessing.FrameProperties openXmlElement, String? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.X = new StringValue { Value = value };
-      else
-        openXmlElement.X = null;
+    if (value != null)
+      openXmlElement.X = new StringValue { Value = value };
+    else
+      openXmlElement.X = null;
   }
-
+  
   /// <summary>
-  ///   Relative Horizontal Position
+  /// Relative Horizontal Position
   /// </summary>
-  public static HorizontalAlignmentKind? GetXAlign(FrameProperties? openXmlElement)
+  private static DocumentModel.Wordprocessing.HorizontalAlignmentKind? GetXAlign(DocumentFormat.OpenXml.Wordprocessing.FrameProperties openXmlElement)
   {
-    return EnumValueConverter.GetValue<HorizontalAlignmentValues, HorizontalAlignmentKind>(openXmlElement?.XAlign?.Value);
+    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Wordprocessing.HorizontalAlignmentValues, DocumentModel.Wordprocessing.HorizontalAlignmentKind>(openXmlElement?.XAlign?.Value);
   }
-
-  public static void SetXAlign(FrameProperties? openXmlElement, HorizontalAlignmentKind? value)
+  
+  private static void SetXAlign(DocumentFormat.OpenXml.Wordprocessing.FrameProperties openXmlElement, DocumentModel.Wordprocessing.HorizontalAlignmentKind? value)
   {
-    if (openXmlElement != null)
-      openXmlElement.XAlign = EnumValueConverter.CreateEnumValue<HorizontalAlignmentValues, HorizontalAlignmentKind>(value);
+    openXmlElement.XAlign = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Wordprocessing.HorizontalAlignmentValues, DocumentModel.Wordprocessing.HorizontalAlignmentKind>(value);
   }
-
+  
   /// <summary>
-  ///   Absolute Vertical Position
+  /// Absolute Vertical Position
   /// </summary>
-  public static String? GetY(FrameProperties? openXmlElement)
+  private static String? GetY(DocumentFormat.OpenXml.Wordprocessing.FrameProperties openXmlElement)
   {
     return openXmlElement?.Y?.Value;
   }
-
-  public static void SetY(FrameProperties? openXmlElement, String? value)
+  
+  private static void SetY(DocumentFormat.OpenXml.Wordprocessing.FrameProperties openXmlElement, String? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.Y = new StringValue { Value = value };
-      else
-        openXmlElement.Y = null;
+    if (value != null)
+      openXmlElement.Y = new StringValue { Value = value };
+    else
+      openXmlElement.Y = null;
   }
-
+  
   /// <summary>
-  ///   Relative Vertical Position
+  /// Relative Vertical Position
   /// </summary>
-  public static VerticalAlignmentKind? GetYAlign(FrameProperties? openXmlElement)
+  private static DocumentModel.Wordprocessing.VerticalAlignmentKind? GetYAlign(DocumentFormat.OpenXml.Wordprocessing.FrameProperties openXmlElement)
   {
-    return EnumValueConverter.GetValue<VerticalAlignmentValues, VerticalAlignmentKind>(openXmlElement?.YAlign?.Value);
+    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Wordprocessing.VerticalAlignmentValues, DocumentModel.Wordprocessing.VerticalAlignmentKind>(openXmlElement?.YAlign?.Value);
   }
-
-  public static void SetYAlign(FrameProperties? openXmlElement, VerticalAlignmentKind? value)
+  
+  private static void SetYAlign(DocumentFormat.OpenXml.Wordprocessing.FrameProperties openXmlElement, DocumentModel.Wordprocessing.VerticalAlignmentKind? value)
   {
-    if (openXmlElement != null)
-      openXmlElement.YAlign = EnumValueConverter.CreateEnumValue<VerticalAlignmentValues, VerticalAlignmentKind>(value);
+    openXmlElement.YAlign = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Wordprocessing.VerticalAlignmentValues, DocumentModel.Wordprocessing.VerticalAlignmentKind>(value);
   }
-
+  
   /// <summary>
-  ///   Frame Height Type
+  /// Frame Height Type
   /// </summary>
-  public static HeightRuleKind? GetHeightType(FrameProperties? openXmlElement)
+  private static DocumentModel.Wordprocessing.HeightRuleKind? GetHeightType(DocumentFormat.OpenXml.Wordprocessing.FrameProperties openXmlElement)
   {
-    return EnumValueConverter.GetValue<HeightRuleValues, HeightRuleKind>(openXmlElement?.HeightType?.Value);
+    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Wordprocessing.HeightRuleValues, DocumentModel.Wordprocessing.HeightRuleKind>(openXmlElement?.HeightType?.Value);
   }
-
-  public static void SetHeightType(FrameProperties? openXmlElement, HeightRuleKind? value)
+  
+  private static void SetHeightType(DocumentFormat.OpenXml.Wordprocessing.FrameProperties openXmlElement, DocumentModel.Wordprocessing.HeightRuleKind? value)
   {
-    if (openXmlElement != null)
-      openXmlElement.HeightType = EnumValueConverter.CreateEnumValue<HeightRuleValues, HeightRuleKind>(value);
+    openXmlElement.HeightType = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Wordprocessing.HeightRuleValues, DocumentModel.Wordprocessing.HeightRuleKind>(value);
   }
-
+  
   /// <summary>
-  ///   Lock Frame Anchor to Paragraph
+  /// Lock Frame Anchor to Paragraph
   /// </summary>
-  public static Boolean? GetAnchorLock(FrameProperties? openXmlElement)
+  private static Boolean? GetAnchorLock(DocumentFormat.OpenXml.Wordprocessing.FrameProperties openXmlElement)
   {
     return openXmlElement?.AnchorLock?.Value;
   }
-
-  public static void SetAnchorLock(FrameProperties? openXmlElement, Boolean? value)
+  
+  private static void SetAnchorLock(DocumentFormat.OpenXml.Wordprocessing.FrameProperties openXmlElement, Boolean? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.AnchorLock = new OnOffValue { Value = (Boolean)value };
-      else
-        openXmlElement.AnchorLock = null;
+    if (value != null)
+      openXmlElement.AnchorLock = new OnOffValue { Value = (Boolean)value };
+    else
+      openXmlElement.AnchorLock = null;
   }
-
-  public static DocumentModel.Wordprocessing.FrameProperties? CreateModelElement(FrameProperties? openXmlElement)
+  
+  public static DocumentModel.Wordprocessing.FrameProperties? CreateModelElement(DocumentFormat.OpenXml.Wordprocessing.FrameProperties? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -261,9 +242,9 @@ public static class FramePropertiesConverter
     }
     return null;
   }
-
+  
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.FrameProperties? value)
-    where OpenXmlElementType : FrameProperties, new()
+    where OpenXmlElementType: DocumentFormat.OpenXml.Wordprocessing.FrameProperties, new()
   {
     if (value != null)
     {

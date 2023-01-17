@@ -1,60 +1,50 @@
-using DocumentFormat.OpenXml.Vml;
-using DocumentModel.Vml;
-using RelationTable = DocumentFormat.OpenXml.Vml.Office.RelationTable;
-
 namespace DocumentModel.OpenXml.Vml;
 
 /// <summary>
-///   Diagram Relationship Table.
+/// Diagram Relationship Table.
 /// </summary>
 public static class RelationTableConverter
 {
   /// <summary>
-  ///   VML Extension Handling Behavior
+  /// VML Extension Handling Behavior
   /// </summary>
-  public static ExtensionHandlingBehaviorKind? GetExtension(RelationTable? openXmlElement)
+  private static DocumentModel.Vml.ExtensionHandlingBehaviorKind? GetExtension(DocumentFormat.OpenXml.Vml.Office.RelationTable openXmlElement)
   {
-    return EnumValueConverter.GetValue<ExtensionHandlingBehaviorValues, ExtensionHandlingBehaviorKind>(openXmlElement?.Extension?.Value);
+    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Vml.ExtensionHandlingBehaviorValues, DocumentModel.Vml.ExtensionHandlingBehaviorKind>(openXmlElement?.Extension?.Value);
   }
-
-  public static void SetExtension(RelationTable? openXmlElement, ExtensionHandlingBehaviorKind? value)
+  
+  private static void SetExtension(DocumentFormat.OpenXml.Vml.Office.RelationTable openXmlElement, DocumentModel.Vml.ExtensionHandlingBehaviorKind? value)
   {
-    if (openXmlElement != null)
-      openXmlElement.Extension = EnumValueConverter.CreateEnumValue<ExtensionHandlingBehaviorValues, ExtensionHandlingBehaviorKind>(value);
+    openXmlElement.Extension = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Vml.ExtensionHandlingBehaviorValues, DocumentModel.Vml.ExtensionHandlingBehaviorKind>(value);
   }
-
-  public static Collection<Relation>? GetRelations(RelationTable? openXmlElement)
+  
+  private static System.Collections.ObjectModel.Collection<DocumentModel.Vml.Relation> GetRelations(DocumentFormat.OpenXml.Vml.Office.RelationTable openXmlElement)
   {
-    if (openXmlElement != null)
+    var collection = new System.Collections.ObjectModel.Collection<DocumentModel.Vml.Relation>();
+    foreach (var item in openXmlElement.Elements<DocumentFormat.OpenXml.Vml.Office.Relation>())
     {
-      var collection = new Collection<Relation>();
-      foreach (var item in openXmlElement.Elements<DocumentFormat.OpenXml.Vml.Office.Relation>())
+      var newItem = DocumentModel.OpenXml.Vml.RelationConverter.CreateModelElement(item);
+      if (newItem != null)
+        collection.Add(newItem);
+    }
+    return collection;
+  }
+  
+  private static void SetRelations(DocumentFormat.OpenXml.Vml.Office.RelationTable openXmlElement, System.Collections.ObjectModel.Collection<DocumentModel.Vml.Relation>? value)
+  {
+    openXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Vml.Office.Relation>();
+    if (value != null)
+    {
+      foreach (var item in value)
       {
-        var newItem = RelationConverter.CreateModelElement(item);
+        var newItem = DocumentModel.OpenXml.Vml.RelationConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Vml.Office.Relation>(item);
         if (newItem != null)
-          collection.Add(newItem);
+          openXmlElement.AddChild(newItem);
       }
-      return collection;
-    }
-    return null;
-  }
-
-  public static void SetRelations(RelationTable? openXmlElement, Collection<Relation>? value)
-  {
-    if (openXmlElement != null)
-    {
-      openXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Vml.Office.Relation>();
-      if (value != null)
-        foreach (var item in value)
-        {
-          var newItem = RelationConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Vml.Office.Relation>(item);
-          if (newItem != null)
-            openXmlElement.AddChild(newItem);
-        }
     }
   }
-
-  public static DocumentModel.Vml.RelationTable? CreateModelElement(RelationTable? openXmlElement)
+  
+  public static DocumentModel.Vml.RelationTable? CreateModelElement(DocumentFormat.OpenXml.Vml.Office.RelationTable? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -65,9 +55,9 @@ public static class RelationTableConverter
     }
     return null;
   }
-
+  
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Vml.RelationTable? value)
-    where OpenXmlElementType : RelationTable, new()
+    where OpenXmlElementType: DocumentFormat.OpenXml.Vml.Office.RelationTable, new()
   {
     if (value != null)
     {

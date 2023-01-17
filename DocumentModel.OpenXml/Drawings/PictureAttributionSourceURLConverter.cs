@@ -1,30 +1,27 @@
-using DocumentFormat.OpenXml.Office2019.Drawing;
-
 namespace DocumentModel.OpenXml.Drawings;
 
 /// <summary>
-///   Defines the PictureAttributionSourceURL Class.
+/// Defines the PictureAttributionSourceURL Class.
 /// </summary>
 public static class PictureAttributionSourceURLConverter
 {
   /// <summary>
-  ///   id, this property is only available in Office 2019 and later.
+  /// id, this property is only available in Office 2019 and later.
   /// </summary>
-  public static String? GetId(PictureAttributionSourceURL? openXmlElement)
+  private static String? GetId(DocumentFormat.OpenXml.Office2019.Drawing.PictureAttributionSourceURL openXmlElement)
   {
     return openXmlElement?.Id?.Value;
   }
-
-  public static void SetId(PictureAttributionSourceURL? openXmlElement, String? value)
+  
+  private static void SetId(DocumentFormat.OpenXml.Office2019.Drawing.PictureAttributionSourceURL openXmlElement, String? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.Id = new StringValue { Value = value };
-      else
-        openXmlElement.Id = null;
+    if (value != null)
+      openXmlElement.Id = new StringValue { Value = value };
+    else
+      openXmlElement.Id = null;
   }
-
-  public static DocumentModel.Drawings.PictureAttributionSourceURL? CreateModelElement(PictureAttributionSourceURL? openXmlElement)
+  
+  public static DocumentModel.Drawings.PictureAttributionSourceURL? CreateModelElement(DocumentFormat.OpenXml.Office2019.Drawing.PictureAttributionSourceURL? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -34,9 +31,9 @@ public static class PictureAttributionSourceURLConverter
     }
     return null;
   }
-
+  
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.PictureAttributionSourceURL? value)
-    where OpenXmlElementType : PictureAttributionSourceURL, new()
+    where OpenXmlElementType: DocumentFormat.OpenXml.Office2019.Drawing.PictureAttributionSourceURL, new()
   {
     if (value != null)
     {

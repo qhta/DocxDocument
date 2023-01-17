@@ -1,143 +1,129 @@
-using DocumentFormat.OpenXml.Drawing.Diagrams;
-using DocumentModel.Drawings.Diagrams;
-using Rule = DocumentFormat.OpenXml.Drawing.Diagrams.Rule;
-
 namespace DocumentModel.OpenXml.Drawings.Diagrams;
 
 /// <summary>
-///   Rule.
+/// Rule.
 /// </summary>
 public static class RuleConverter
 {
   /// <summary>
-  ///   Constraint Type
+  /// Constraint Type
   /// </summary>
-  public static ConstraintKind? GetType(Rule? openXmlElement)
+  private static DocumentModel.Drawings.Diagrams.ConstraintKind? GetType(DocumentFormat.OpenXml.Drawing.Diagrams.Rule openXmlElement)
   {
-    return EnumValueConverter.GetValue<ConstraintValues, ConstraintKind>(openXmlElement?.Type?.Value);
+    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Drawing.Diagrams.ConstraintValues, DocumentModel.Drawings.Diagrams.ConstraintKind>(openXmlElement?.Type?.Value);
   }
-
-  public static void SetType(Rule? openXmlElement, ConstraintKind? value)
+  
+  private static void SetType(DocumentFormat.OpenXml.Drawing.Diagrams.Rule openXmlElement, DocumentModel.Drawings.Diagrams.ConstraintKind? value)
   {
-    if (openXmlElement != null)
-      openXmlElement.Type = EnumValueConverter.CreateEnumValue<ConstraintValues, ConstraintKind>(value);
+    openXmlElement.Type = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Drawing.Diagrams.ConstraintValues, DocumentModel.Drawings.Diagrams.ConstraintKind>(value);
   }
-
+  
   /// <summary>
-  ///   For
+  /// For
   /// </summary>
-  public static ConstraintRelationshipKind? GetFor(Rule? openXmlElement)
+  private static DocumentModel.Drawings.Diagrams.ConstraintRelationshipKind? GetFor(DocumentFormat.OpenXml.Drawing.Diagrams.Rule openXmlElement)
   {
-    return EnumValueConverter.GetValue<ConstraintRelationshipValues, ConstraintRelationshipKind>(openXmlElement?.For?.Value);
+    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Drawing.Diagrams.ConstraintRelationshipValues, DocumentModel.Drawings.Diagrams.ConstraintRelationshipKind>(openXmlElement?.For?.Value);
   }
-
-  public static void SetFor(Rule? openXmlElement, ConstraintRelationshipKind? value)
+  
+  private static void SetFor(DocumentFormat.OpenXml.Drawing.Diagrams.Rule openXmlElement, DocumentModel.Drawings.Diagrams.ConstraintRelationshipKind? value)
   {
-    if (openXmlElement != null)
-      openXmlElement.For = EnumValueConverter.CreateEnumValue<ConstraintRelationshipValues, ConstraintRelationshipKind>(value);
+    openXmlElement.For = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Drawing.Diagrams.ConstraintRelationshipValues, DocumentModel.Drawings.Diagrams.ConstraintRelationshipKind>(value);
   }
-
+  
   /// <summary>
-  ///   For Name
+  /// For Name
   /// </summary>
-  public static String? GetForName(Rule? openXmlElement)
+  private static String? GetForName(DocumentFormat.OpenXml.Drawing.Diagrams.Rule openXmlElement)
   {
     return openXmlElement?.ForName?.Value;
   }
-
-  public static void SetForName(Rule? openXmlElement, String? value)
+  
+  private static void SetForName(DocumentFormat.OpenXml.Drawing.Diagrams.Rule openXmlElement, String? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.ForName = new StringValue { Value = value };
-      else
-        openXmlElement.ForName = null;
+    if (value != null)
+      openXmlElement.ForName = new StringValue { Value = value };
+    else
+      openXmlElement.ForName = null;
   }
-
+  
   /// <summary>
-  ///   Data Point Type
+  /// Data Point Type
   /// </summary>
-  public static ElementKind? GetPointType(Rule? openXmlElement)
+  private static DocumentModel.Drawings.Diagrams.ElementKind? GetPointType(DocumentFormat.OpenXml.Drawing.Diagrams.Rule openXmlElement)
   {
-    return EnumValueConverter.GetValue<ElementValues, ElementKind>(openXmlElement?.PointType?.Value);
+    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Drawing.Diagrams.ElementValues, DocumentModel.Drawings.Diagrams.ElementKind>(openXmlElement?.PointType?.Value);
   }
-
-  public static void SetPointType(Rule? openXmlElement, ElementKind? value)
+  
+  private static void SetPointType(DocumentFormat.OpenXml.Drawing.Diagrams.Rule openXmlElement, DocumentModel.Drawings.Diagrams.ElementKind? value)
   {
-    if (openXmlElement != null)
-      openXmlElement.PointType = EnumValueConverter.CreateEnumValue<ElementValues, ElementKind>(value);
+    openXmlElement.PointType = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Drawing.Diagrams.ElementValues, DocumentModel.Drawings.Diagrams.ElementKind>(value);
   }
-
+  
   /// <summary>
-  ///   Value
+  /// Value
   /// </summary>
-  public static Double? GetVal(Rule? openXmlElement)
+  private static Double? GetVal(DocumentFormat.OpenXml.Drawing.Diagrams.Rule openXmlElement)
   {
-    return openXmlElement?.Val?.Value;
+    return openXmlElement.Val?.Value;
   }
-
-  public static void SetVal(Rule? openXmlElement, Double? value)
+  
+  private static void SetVal(DocumentFormat.OpenXml.Drawing.Diagrams.Rule openXmlElement, Double? value)
   {
-    if (openXmlElement != null)
-      openXmlElement.Val = value;
+    openXmlElement.Val = value;
   }
-
+  
   /// <summary>
-  ///   Factor
+  /// Factor
   /// </summary>
-  public static Double? GetFact(Rule? openXmlElement)
+  private static Double? GetFact(DocumentFormat.OpenXml.Drawing.Diagrams.Rule openXmlElement)
   {
-    return openXmlElement?.Fact?.Value;
+    return openXmlElement.Fact?.Value;
   }
-
-  public static void SetFact(Rule? openXmlElement, Double? value)
+  
+  private static void SetFact(DocumentFormat.OpenXml.Drawing.Diagrams.Rule openXmlElement, Double? value)
   {
-    if (openXmlElement != null)
-      openXmlElement.Fact = value;
+    openXmlElement.Fact = value;
   }
-
+  
   /// <summary>
-  ///   Max Value
+  /// Max Value
   /// </summary>
-  public static Double? GetMax(Rule? openXmlElement)
+  private static Double? GetMax(DocumentFormat.OpenXml.Drawing.Diagrams.Rule openXmlElement)
   {
-    return openXmlElement?.Max?.Value;
+    return openXmlElement.Max?.Value;
   }
-
-  public static void SetMax(Rule? openXmlElement, Double? value)
+  
+  private static void SetMax(DocumentFormat.OpenXml.Drawing.Diagrams.Rule openXmlElement, Double? value)
   {
-    if (openXmlElement != null)
-      openXmlElement.Max = value;
+    openXmlElement.Max = value;
   }
-
+  
   /// <summary>
-  ///   ExtensionList.
+  /// ExtensionList.
   /// </summary>
-  public static DocumentModel.Drawings.Diagrams.ExtensionList? GetExtensionList(Rule? openXmlElement)
+  private static DocumentModel.Drawings.Diagrams.ExtensionList? GetExtensionList(DocumentFormat.OpenXml.Drawing.Diagrams.Rule openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.Diagrams.ExtensionList>();
     if (itemElement != null)
-      return ExtensionListConverter.CreateModelElement(itemElement);
+      return DocumentModel.OpenXml.Drawings.Diagrams.ExtensionListConverter.CreateModelElement(itemElement);
     return null;
   }
-
-  public static void SetExtensionList(Rule? openXmlElement, DocumentModel.Drawings.Diagrams.ExtensionList? value)
+  
+  private static void SetExtensionList(DocumentFormat.OpenXml.Drawing.Diagrams.Rule openXmlElement, DocumentModel.Drawings.Diagrams.ExtensionList? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Diagrams.ExtensionList>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Diagrams.ExtensionList>();
+      itemElement = DocumentModel.OpenXml.Drawings.Diagrams.ExtensionListConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Diagrams.ExtensionList>(value);
       if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = ExtensionListConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Diagrams.ExtensionList>(value);
-        if (itemElement != null)
-          openXmlElement.AddChild(itemElement);
-      }
+        openXmlElement.AddChild(itemElement);
     }
   }
-
-  public static DocumentModel.Drawings.Diagrams.Rule? CreateModelElement(Rule? openXmlElement)
+  
+  public static DocumentModel.Drawings.Diagrams.Rule? CreateModelElement(DocumentFormat.OpenXml.Drawing.Diagrams.Rule? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -154,9 +140,9 @@ public static class RuleConverter
     }
     return null;
   }
-
+  
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.Diagrams.Rule? value)
-    where OpenXmlElementType : Rule, new()
+    where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.Diagrams.Rule, new()
   {
     if (value != null)
     {

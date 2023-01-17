@@ -1,880 +1,819 @@
-using DocumentFormat.OpenXml.Office.CustomUI;
-using UnsizedButton = DocumentModel.UI.UnsizedButton;
-
 namespace DocumentModel.OpenXml.UI;
 
 /// <summary>
-///   Defines the UnsizedGallery Class.
+/// Defines the UnsizedGallery Class.
 /// </summary>
 public static class UnsizedGalleryConverter
 {
   /// <summary>
-  ///   description
+  /// description
   /// </summary>
-  public static String? GetDescription(UnsizedGallery? openXmlElement)
+  private static String? GetDescription(DocumentFormat.OpenXml.Office.CustomUI.UnsizedGallery openXmlElement)
   {
     return openXmlElement?.Description?.Value;
   }
-
-  public static void SetDescription(UnsizedGallery? openXmlElement, String? value)
+  
+  private static void SetDescription(DocumentFormat.OpenXml.Office.CustomUI.UnsizedGallery openXmlElement, String? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.Description = new StringValue { Value = value };
-      else
-        openXmlElement.Description = null;
+    if (value != null)
+      openXmlElement.Description = new StringValue { Value = value };
+    else
+      openXmlElement.Description = null;
   }
-
+  
   /// <summary>
-  ///   getDescription
+  /// getDescription
   /// </summary>
-  public static String? GetGetDescription(UnsizedGallery? openXmlElement)
+  private static String? GetGetDescription(DocumentFormat.OpenXml.Office.CustomUI.UnsizedGallery openXmlElement)
   {
     return openXmlElement?.GetDescription?.Value;
   }
-
-  public static void SetGetDescription(UnsizedGallery? openXmlElement, String? value)
+  
+  private static void SetGetDescription(DocumentFormat.OpenXml.Office.CustomUI.UnsizedGallery openXmlElement, String? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.GetDescription = new StringValue { Value = value };
-      else
-        openXmlElement.GetDescription = null;
+    if (value != null)
+      openXmlElement.GetDescription = new StringValue { Value = value };
+    else
+      openXmlElement.GetDescription = null;
   }
-
+  
   /// <summary>
-  ///   invalidateContentOnDrop
+  /// invalidateContentOnDrop
   /// </summary>
-  public static Boolean? GetInvalidateContentOnDrop(UnsizedGallery? openXmlElement)
+  private static Boolean? GetInvalidateContentOnDrop(DocumentFormat.OpenXml.Office.CustomUI.UnsizedGallery openXmlElement)
   {
     return openXmlElement?.InvalidateContentOnDrop?.Value;
   }
-
-  public static void SetInvalidateContentOnDrop(UnsizedGallery? openXmlElement, Boolean? value)
+  
+  private static void SetInvalidateContentOnDrop(DocumentFormat.OpenXml.Office.CustomUI.UnsizedGallery openXmlElement, Boolean? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.InvalidateContentOnDrop = new BooleanValue { Value = (Boolean)value };
-      else
-        openXmlElement.InvalidateContentOnDrop = null;
+    if (value != null)
+      openXmlElement.InvalidateContentOnDrop = new BooleanValue { Value = (Boolean)value };
+    else
+      openXmlElement.InvalidateContentOnDrop = null;
   }
-
+  
   /// <summary>
-  ///   columns
+  /// columns
   /// </summary>
-  public static Int64? GetColumns(UnsizedGallery? openXmlElement)
+  private static Int64? GetColumns(DocumentFormat.OpenXml.Office.CustomUI.UnsizedGallery openXmlElement)
   {
-    return openXmlElement?.Columns?.Value;
+    return openXmlElement.Columns?.Value;
   }
-
-  public static void SetColumns(UnsizedGallery? openXmlElement, Int64? value)
+  
+  private static void SetColumns(DocumentFormat.OpenXml.Office.CustomUI.UnsizedGallery openXmlElement, Int64? value)
   {
-    if (openXmlElement != null)
-      openXmlElement.Columns = value;
+    openXmlElement.Columns = value;
   }
-
+  
   /// <summary>
-  ///   rows
+  /// rows
   /// </summary>
-  public static Int64? GetRows(UnsizedGallery? openXmlElement)
+  private static Int64? GetRows(DocumentFormat.OpenXml.Office.CustomUI.UnsizedGallery openXmlElement)
   {
-    return openXmlElement?.Rows?.Value;
+    return openXmlElement.Rows?.Value;
   }
-
-  public static void SetRows(UnsizedGallery? openXmlElement, Int64? value)
+  
+  private static void SetRows(DocumentFormat.OpenXml.Office.CustomUI.UnsizedGallery openXmlElement, Int64? value)
   {
-    if (openXmlElement != null)
-      openXmlElement.Rows = value;
+    openXmlElement.Rows = value;
   }
-
+  
   /// <summary>
-  ///   itemWidth
+  /// itemWidth
   /// </summary>
-  public static Int64? GetItemWidth(UnsizedGallery? openXmlElement)
+  private static Int64? GetItemWidth(DocumentFormat.OpenXml.Office.CustomUI.UnsizedGallery openXmlElement)
   {
-    return openXmlElement?.ItemWidth?.Value;
+    return openXmlElement.ItemWidth?.Value;
   }
-
-  public static void SetItemWidth(UnsizedGallery? openXmlElement, Int64? value)
+  
+  private static void SetItemWidth(DocumentFormat.OpenXml.Office.CustomUI.UnsizedGallery openXmlElement, Int64? value)
   {
-    if (openXmlElement != null)
-      openXmlElement.ItemWidth = value;
+    openXmlElement.ItemWidth = value;
   }
-
+  
   /// <summary>
-  ///   itemHeight
+  /// itemHeight
   /// </summary>
-  public static Int64? GetItemHeight(UnsizedGallery? openXmlElement)
+  private static Int64? GetItemHeight(DocumentFormat.OpenXml.Office.CustomUI.UnsizedGallery openXmlElement)
   {
-    return openXmlElement?.ItemHeight?.Value;
+    return openXmlElement.ItemHeight?.Value;
   }
-
-  public static void SetItemHeight(UnsizedGallery? openXmlElement, Int64? value)
+  
+  private static void SetItemHeight(DocumentFormat.OpenXml.Office.CustomUI.UnsizedGallery openXmlElement, Int64? value)
   {
-    if (openXmlElement != null)
-      openXmlElement.ItemHeight = value;
+    openXmlElement.ItemHeight = value;
   }
-
+  
   /// <summary>
-  ///   getItemWidth
+  /// getItemWidth
   /// </summary>
-  public static String? GetGetItemWidth(UnsizedGallery? openXmlElement)
+  private static String? GetGetItemWidth(DocumentFormat.OpenXml.Office.CustomUI.UnsizedGallery openXmlElement)
   {
     return openXmlElement?.GetItemWidth?.Value;
   }
-
-  public static void SetGetItemWidth(UnsizedGallery? openXmlElement, String? value)
+  
+  private static void SetGetItemWidth(DocumentFormat.OpenXml.Office.CustomUI.UnsizedGallery openXmlElement, String? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.GetItemWidth = new StringValue { Value = value };
-      else
-        openXmlElement.GetItemWidth = null;
+    if (value != null)
+      openXmlElement.GetItemWidth = new StringValue { Value = value };
+    else
+      openXmlElement.GetItemWidth = null;
   }
-
+  
   /// <summary>
-  ///   getItemHeight
+  /// getItemHeight
   /// </summary>
-  public static String? GetGetItemHeight(UnsizedGallery? openXmlElement)
+  private static String? GetGetItemHeight(DocumentFormat.OpenXml.Office.CustomUI.UnsizedGallery openXmlElement)
   {
     return openXmlElement?.GetItemHeight?.Value;
   }
-
-  public static void SetGetItemHeight(UnsizedGallery? openXmlElement, String? value)
+  
+  private static void SetGetItemHeight(DocumentFormat.OpenXml.Office.CustomUI.UnsizedGallery openXmlElement, String? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.GetItemHeight = new StringValue { Value = value };
-      else
-        openXmlElement.GetItemHeight = null;
+    if (value != null)
+      openXmlElement.GetItemHeight = new StringValue { Value = value };
+    else
+      openXmlElement.GetItemHeight = null;
   }
-
+  
   /// <summary>
-  ///   showItemLabel
+  /// showItemLabel
   /// </summary>
-  public static Boolean? GetShowItemLabel(UnsizedGallery? openXmlElement)
+  private static Boolean? GetShowItemLabel(DocumentFormat.OpenXml.Office.CustomUI.UnsizedGallery openXmlElement)
   {
     return openXmlElement?.ShowItemLabel?.Value;
   }
-
-  public static void SetShowItemLabel(UnsizedGallery? openXmlElement, Boolean? value)
+  
+  private static void SetShowItemLabel(DocumentFormat.OpenXml.Office.CustomUI.UnsizedGallery openXmlElement, Boolean? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.ShowItemLabel = new BooleanValue { Value = (Boolean)value };
-      else
-        openXmlElement.ShowItemLabel = null;
+    if (value != null)
+      openXmlElement.ShowItemLabel = new BooleanValue { Value = (Boolean)value };
+    else
+      openXmlElement.ShowItemLabel = null;
   }
-
+  
   /// <summary>
-  ///   onAction
+  /// onAction
   /// </summary>
-  public static String? GetOnAction(UnsizedGallery? openXmlElement)
+  private static String? GetOnAction(DocumentFormat.OpenXml.Office.CustomUI.UnsizedGallery openXmlElement)
   {
     return openXmlElement?.OnAction?.Value;
   }
-
-  public static void SetOnAction(UnsizedGallery? openXmlElement, String? value)
+  
+  private static void SetOnAction(DocumentFormat.OpenXml.Office.CustomUI.UnsizedGallery openXmlElement, String? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.OnAction = new StringValue { Value = value };
-      else
-        openXmlElement.OnAction = null;
+    if (value != null)
+      openXmlElement.OnAction = new StringValue { Value = value };
+    else
+      openXmlElement.OnAction = null;
   }
-
+  
   /// <summary>
-  ///   enabled
+  /// enabled
   /// </summary>
-  public static Boolean? GetEnabled(UnsizedGallery? openXmlElement)
+  private static Boolean? GetEnabled(DocumentFormat.OpenXml.Office.CustomUI.UnsizedGallery openXmlElement)
   {
     return openXmlElement?.Enabled?.Value;
   }
-
-  public static void SetEnabled(UnsizedGallery? openXmlElement, Boolean? value)
+  
+  private static void SetEnabled(DocumentFormat.OpenXml.Office.CustomUI.UnsizedGallery openXmlElement, Boolean? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.Enabled = new BooleanValue { Value = (Boolean)value };
-      else
-        openXmlElement.Enabled = null;
+    if (value != null)
+      openXmlElement.Enabled = new BooleanValue { Value = (Boolean)value };
+    else
+      openXmlElement.Enabled = null;
   }
-
+  
   /// <summary>
-  ///   getEnabled
+  /// getEnabled
   /// </summary>
-  public static String? GetGetEnabled(UnsizedGallery? openXmlElement)
+  private static String? GetGetEnabled(DocumentFormat.OpenXml.Office.CustomUI.UnsizedGallery openXmlElement)
   {
     return openXmlElement?.GetEnabled?.Value;
   }
-
-  public static void SetGetEnabled(UnsizedGallery? openXmlElement, String? value)
+  
+  private static void SetGetEnabled(DocumentFormat.OpenXml.Office.CustomUI.UnsizedGallery openXmlElement, String? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.GetEnabled = new StringValue { Value = value };
-      else
-        openXmlElement.GetEnabled = null;
+    if (value != null)
+      openXmlElement.GetEnabled = new StringValue { Value = value };
+    else
+      openXmlElement.GetEnabled = null;
   }
-
+  
   /// <summary>
-  ///   image
+  /// image
   /// </summary>
-  public static String? GetImage(UnsizedGallery? openXmlElement)
+  private static String? GetImage(DocumentFormat.OpenXml.Office.CustomUI.UnsizedGallery openXmlElement)
   {
     return openXmlElement?.Image?.Value;
   }
-
-  public static void SetImage(UnsizedGallery? openXmlElement, String? value)
+  
+  private static void SetImage(DocumentFormat.OpenXml.Office.CustomUI.UnsizedGallery openXmlElement, String? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.Image = new StringValue { Value = value };
-      else
-        openXmlElement.Image = null;
+    if (value != null)
+      openXmlElement.Image = new StringValue { Value = value };
+    else
+      openXmlElement.Image = null;
   }
-
+  
   /// <summary>
-  ///   imageMso
+  /// imageMso
   /// </summary>
-  public static String? GetImageMso(UnsizedGallery? openXmlElement)
+  private static String? GetImageMso(DocumentFormat.OpenXml.Office.CustomUI.UnsizedGallery openXmlElement)
   {
     return openXmlElement?.ImageMso?.Value;
   }
-
-  public static void SetImageMso(UnsizedGallery? openXmlElement, String? value)
+  
+  private static void SetImageMso(DocumentFormat.OpenXml.Office.CustomUI.UnsizedGallery openXmlElement, String? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.ImageMso = new StringValue { Value = value };
-      else
-        openXmlElement.ImageMso = null;
+    if (value != null)
+      openXmlElement.ImageMso = new StringValue { Value = value };
+    else
+      openXmlElement.ImageMso = null;
   }
-
+  
   /// <summary>
-  ///   getImage
+  /// getImage
   /// </summary>
-  public static String? GetGetImage(UnsizedGallery? openXmlElement)
+  private static String? GetGetImage(DocumentFormat.OpenXml.Office.CustomUI.UnsizedGallery openXmlElement)
   {
     return openXmlElement?.GetImage?.Value;
   }
-
-  public static void SetGetImage(UnsizedGallery? openXmlElement, String? value)
+  
+  private static void SetGetImage(DocumentFormat.OpenXml.Office.CustomUI.UnsizedGallery openXmlElement, String? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.GetImage = new StringValue { Value = value };
-      else
-        openXmlElement.GetImage = null;
+    if (value != null)
+      openXmlElement.GetImage = new StringValue { Value = value };
+    else
+      openXmlElement.GetImage = null;
   }
-
+  
   /// <summary>
-  ///   showItemImage
+  /// showItemImage
   /// </summary>
-  public static Boolean? GetShowItemImage(UnsizedGallery? openXmlElement)
+  private static Boolean? GetShowItemImage(DocumentFormat.OpenXml.Office.CustomUI.UnsizedGallery openXmlElement)
   {
     return openXmlElement?.ShowItemImage?.Value;
   }
-
-  public static void SetShowItemImage(UnsizedGallery? openXmlElement, Boolean? value)
+  
+  private static void SetShowItemImage(DocumentFormat.OpenXml.Office.CustomUI.UnsizedGallery openXmlElement, Boolean? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.ShowItemImage = new BooleanValue { Value = (Boolean)value };
-      else
-        openXmlElement.ShowItemImage = null;
+    if (value != null)
+      openXmlElement.ShowItemImage = new BooleanValue { Value = (Boolean)value };
+    else
+      openXmlElement.ShowItemImage = null;
   }
-
+  
   /// <summary>
-  ///   getItemCount
+  /// getItemCount
   /// </summary>
-  public static String? GetGetItemCount(UnsizedGallery? openXmlElement)
+  private static String? GetGetItemCount(DocumentFormat.OpenXml.Office.CustomUI.UnsizedGallery openXmlElement)
   {
     return openXmlElement?.GetItemCount?.Value;
   }
-
-  public static void SetGetItemCount(UnsizedGallery? openXmlElement, String? value)
+  
+  private static void SetGetItemCount(DocumentFormat.OpenXml.Office.CustomUI.UnsizedGallery openXmlElement, String? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.GetItemCount = new StringValue { Value = value };
-      else
-        openXmlElement.GetItemCount = null;
+    if (value != null)
+      openXmlElement.GetItemCount = new StringValue { Value = value };
+    else
+      openXmlElement.GetItemCount = null;
   }
-
+  
   /// <summary>
-  ///   getItemLabel
+  /// getItemLabel
   /// </summary>
-  public static String? GetGetItemLabel(UnsizedGallery? openXmlElement)
+  private static String? GetGetItemLabel(DocumentFormat.OpenXml.Office.CustomUI.UnsizedGallery openXmlElement)
   {
     return openXmlElement?.GetItemLabel?.Value;
   }
-
-  public static void SetGetItemLabel(UnsizedGallery? openXmlElement, String? value)
+  
+  private static void SetGetItemLabel(DocumentFormat.OpenXml.Office.CustomUI.UnsizedGallery openXmlElement, String? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.GetItemLabel = new StringValue { Value = value };
-      else
-        openXmlElement.GetItemLabel = null;
+    if (value != null)
+      openXmlElement.GetItemLabel = new StringValue { Value = value };
+    else
+      openXmlElement.GetItemLabel = null;
   }
-
+  
   /// <summary>
-  ///   getItemScreentip
+  /// getItemScreentip
   /// </summary>
-  public static String? GetGetItemScreentip(UnsizedGallery? openXmlElement)
+  private static String? GetGetItemScreentip(DocumentFormat.OpenXml.Office.CustomUI.UnsizedGallery openXmlElement)
   {
     return openXmlElement?.GetItemScreentip?.Value;
   }
-
-  public static void SetGetItemScreentip(UnsizedGallery? openXmlElement, String? value)
+  
+  private static void SetGetItemScreentip(DocumentFormat.OpenXml.Office.CustomUI.UnsizedGallery openXmlElement, String? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.GetItemScreentip = new StringValue { Value = value };
-      else
-        openXmlElement.GetItemScreentip = null;
+    if (value != null)
+      openXmlElement.GetItemScreentip = new StringValue { Value = value };
+    else
+      openXmlElement.GetItemScreentip = null;
   }
-
+  
   /// <summary>
-  ///   getItemSupertip
+  /// getItemSupertip
   /// </summary>
-  public static String? GetGetItemSupertip(UnsizedGallery? openXmlElement)
+  private static String? GetGetItemSupertip(DocumentFormat.OpenXml.Office.CustomUI.UnsizedGallery openXmlElement)
   {
     return openXmlElement?.GetItemSupertip?.Value;
   }
-
-  public static void SetGetItemSupertip(UnsizedGallery? openXmlElement, String? value)
+  
+  private static void SetGetItemSupertip(DocumentFormat.OpenXml.Office.CustomUI.UnsizedGallery openXmlElement, String? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.GetItemSupertip = new StringValue { Value = value };
-      else
-        openXmlElement.GetItemSupertip = null;
+    if (value != null)
+      openXmlElement.GetItemSupertip = new StringValue { Value = value };
+    else
+      openXmlElement.GetItemSupertip = null;
   }
-
+  
   /// <summary>
-  ///   getItemImage
+  /// getItemImage
   /// </summary>
-  public static String? GetGetItemImage(UnsizedGallery? openXmlElement)
+  private static String? GetGetItemImage(DocumentFormat.OpenXml.Office.CustomUI.UnsizedGallery openXmlElement)
   {
     return openXmlElement?.GetItemImage?.Value;
   }
-
-  public static void SetGetItemImage(UnsizedGallery? openXmlElement, String? value)
+  
+  private static void SetGetItemImage(DocumentFormat.OpenXml.Office.CustomUI.UnsizedGallery openXmlElement, String? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.GetItemImage = new StringValue { Value = value };
-      else
-        openXmlElement.GetItemImage = null;
+    if (value != null)
+      openXmlElement.GetItemImage = new StringValue { Value = value };
+    else
+      openXmlElement.GetItemImage = null;
   }
-
+  
   /// <summary>
-  ///   getItemID
+  /// getItemID
   /// </summary>
-  public static String? GetGetItemID(UnsizedGallery? openXmlElement)
+  private static String? GetGetItemID(DocumentFormat.OpenXml.Office.CustomUI.UnsizedGallery openXmlElement)
   {
     return openXmlElement?.GetItemID?.Value;
   }
-
-  public static void SetGetItemID(UnsizedGallery? openXmlElement, String? value)
+  
+  private static void SetGetItemID(DocumentFormat.OpenXml.Office.CustomUI.UnsizedGallery openXmlElement, String? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.GetItemID = new StringValue { Value = value };
-      else
-        openXmlElement.GetItemID = null;
+    if (value != null)
+      openXmlElement.GetItemID = new StringValue { Value = value };
+    else
+      openXmlElement.GetItemID = null;
   }
-
+  
   /// <summary>
-  ///   sizeString
+  /// sizeString
   /// </summary>
-  public static String? GetSizeString(UnsizedGallery? openXmlElement)
+  private static String? GetSizeString(DocumentFormat.OpenXml.Office.CustomUI.UnsizedGallery openXmlElement)
   {
     return openXmlElement?.SizeString?.Value;
   }
-
-  public static void SetSizeString(UnsizedGallery? openXmlElement, String? value)
+  
+  private static void SetSizeString(DocumentFormat.OpenXml.Office.CustomUI.UnsizedGallery openXmlElement, String? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.SizeString = new StringValue { Value = value };
-      else
-        openXmlElement.SizeString = null;
+    if (value != null)
+      openXmlElement.SizeString = new StringValue { Value = value };
+    else
+      openXmlElement.SizeString = null;
   }
-
+  
   /// <summary>
-  ///   getSelectedItemID
+  /// getSelectedItemID
   /// </summary>
-  public static String? GetGetSelectedItemID(UnsizedGallery? openXmlElement)
+  private static String? GetGetSelectedItemID(DocumentFormat.OpenXml.Office.CustomUI.UnsizedGallery openXmlElement)
   {
     return openXmlElement?.GetSelectedItemID?.Value;
   }
-
-  public static void SetGetSelectedItemID(UnsizedGallery? openXmlElement, String? value)
+  
+  private static void SetGetSelectedItemID(DocumentFormat.OpenXml.Office.CustomUI.UnsizedGallery openXmlElement, String? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.GetSelectedItemID = new StringValue { Value = value };
-      else
-        openXmlElement.GetSelectedItemID = null;
+    if (value != null)
+      openXmlElement.GetSelectedItemID = new StringValue { Value = value };
+    else
+      openXmlElement.GetSelectedItemID = null;
   }
-
+  
   /// <summary>
-  ///   getSelectedItemIndex
+  /// getSelectedItemIndex
   /// </summary>
-  public static String? GetGetSelectedItemIndex(UnsizedGallery? openXmlElement)
+  private static String? GetGetSelectedItemIndex(DocumentFormat.OpenXml.Office.CustomUI.UnsizedGallery openXmlElement)
   {
     return openXmlElement?.GetSelectedItemIndex?.Value;
   }
-
-  public static void SetGetSelectedItemIndex(UnsizedGallery? openXmlElement, String? value)
+  
+  private static void SetGetSelectedItemIndex(DocumentFormat.OpenXml.Office.CustomUI.UnsizedGallery openXmlElement, String? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.GetSelectedItemIndex = new StringValue { Value = value };
-      else
-        openXmlElement.GetSelectedItemIndex = null;
+    if (value != null)
+      openXmlElement.GetSelectedItemIndex = new StringValue { Value = value };
+    else
+      openXmlElement.GetSelectedItemIndex = null;
   }
-
+  
   /// <summary>
-  ///   id
+  /// id
   /// </summary>
-  public static String? GetId(UnsizedGallery? openXmlElement)
+  private static String? GetId(DocumentFormat.OpenXml.Office.CustomUI.UnsizedGallery openXmlElement)
   {
     return openXmlElement?.Id?.Value;
   }
-
-  public static void SetId(UnsizedGallery? openXmlElement, String? value)
+  
+  private static void SetId(DocumentFormat.OpenXml.Office.CustomUI.UnsizedGallery openXmlElement, String? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.Id = new StringValue { Value = value };
-      else
-        openXmlElement.Id = null;
+    if (value != null)
+      openXmlElement.Id = new StringValue { Value = value };
+    else
+      openXmlElement.Id = null;
   }
-
+  
   /// <summary>
-  ///   idQ
+  /// idQ
   /// </summary>
-  public static String? GetIdQ(UnsizedGallery? openXmlElement)
+  private static String? GetIdQ(DocumentFormat.OpenXml.Office.CustomUI.UnsizedGallery openXmlElement)
   {
     return openXmlElement?.IdQ?.Value;
   }
-
-  public static void SetIdQ(UnsizedGallery? openXmlElement, String? value)
+  
+  private static void SetIdQ(DocumentFormat.OpenXml.Office.CustomUI.UnsizedGallery openXmlElement, String? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.IdQ = new StringValue { Value = value };
-      else
-        openXmlElement.IdQ = null;
+    if (value != null)
+      openXmlElement.IdQ = new StringValue { Value = value };
+    else
+      openXmlElement.IdQ = null;
   }
-
+  
   /// <summary>
-  ///   idMso
+  /// idMso
   /// </summary>
-  public static String? GetIdMso(UnsizedGallery? openXmlElement)
+  private static String? GetIdMso(DocumentFormat.OpenXml.Office.CustomUI.UnsizedGallery openXmlElement)
   {
     return openXmlElement?.IdMso?.Value;
   }
-
-  public static void SetIdMso(UnsizedGallery? openXmlElement, String? value)
+  
+  private static void SetIdMso(DocumentFormat.OpenXml.Office.CustomUI.UnsizedGallery openXmlElement, String? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.IdMso = new StringValue { Value = value };
-      else
-        openXmlElement.IdMso = null;
+    if (value != null)
+      openXmlElement.IdMso = new StringValue { Value = value };
+    else
+      openXmlElement.IdMso = null;
   }
-
+  
   /// <summary>
-  ///   tag
+  /// tag
   /// </summary>
-  public static String? GetTag(UnsizedGallery? openXmlElement)
+  private static String? GetTag(DocumentFormat.OpenXml.Office.CustomUI.UnsizedGallery openXmlElement)
   {
     return openXmlElement?.Tag?.Value;
   }
-
-  public static void SetTag(UnsizedGallery? openXmlElement, String? value)
+  
+  private static void SetTag(DocumentFormat.OpenXml.Office.CustomUI.UnsizedGallery openXmlElement, String? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.Tag = new StringValue { Value = value };
-      else
-        openXmlElement.Tag = null;
+    if (value != null)
+      openXmlElement.Tag = new StringValue { Value = value };
+    else
+      openXmlElement.Tag = null;
   }
-
+  
   /// <summary>
-  ///   screentip
+  /// screentip
   /// </summary>
-  public static String? GetScreentip(UnsizedGallery? openXmlElement)
+  private static String? GetScreentip(DocumentFormat.OpenXml.Office.CustomUI.UnsizedGallery openXmlElement)
   {
     return openXmlElement?.Screentip?.Value;
   }
-
-  public static void SetScreentip(UnsizedGallery? openXmlElement, String? value)
+  
+  private static void SetScreentip(DocumentFormat.OpenXml.Office.CustomUI.UnsizedGallery openXmlElement, String? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.Screentip = new StringValue { Value = value };
-      else
-        openXmlElement.Screentip = null;
+    if (value != null)
+      openXmlElement.Screentip = new StringValue { Value = value };
+    else
+      openXmlElement.Screentip = null;
   }
-
+  
   /// <summary>
-  ///   getScreentip
+  /// getScreentip
   /// </summary>
-  public static String? GetGetScreentip(UnsizedGallery? openXmlElement)
+  private static String? GetGetScreentip(DocumentFormat.OpenXml.Office.CustomUI.UnsizedGallery openXmlElement)
   {
     return openXmlElement?.GetScreentip?.Value;
   }
-
-  public static void SetGetScreentip(UnsizedGallery? openXmlElement, String? value)
+  
+  private static void SetGetScreentip(DocumentFormat.OpenXml.Office.CustomUI.UnsizedGallery openXmlElement, String? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.GetScreentip = new StringValue { Value = value };
-      else
-        openXmlElement.GetScreentip = null;
+    if (value != null)
+      openXmlElement.GetScreentip = new StringValue { Value = value };
+    else
+      openXmlElement.GetScreentip = null;
   }
-
+  
   /// <summary>
-  ///   supertip
+  /// supertip
   /// </summary>
-  public static String? GetSupertip(UnsizedGallery? openXmlElement)
+  private static String? GetSupertip(DocumentFormat.OpenXml.Office.CustomUI.UnsizedGallery openXmlElement)
   {
     return openXmlElement?.Supertip?.Value;
   }
-
-  public static void SetSupertip(UnsizedGallery? openXmlElement, String? value)
+  
+  private static void SetSupertip(DocumentFormat.OpenXml.Office.CustomUI.UnsizedGallery openXmlElement, String? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.Supertip = new StringValue { Value = value };
-      else
-        openXmlElement.Supertip = null;
+    if (value != null)
+      openXmlElement.Supertip = new StringValue { Value = value };
+    else
+      openXmlElement.Supertip = null;
   }
-
+  
   /// <summary>
-  ///   getSupertip
+  /// getSupertip
   /// </summary>
-  public static String? GetGetSupertip(UnsizedGallery? openXmlElement)
+  private static String? GetGetSupertip(DocumentFormat.OpenXml.Office.CustomUI.UnsizedGallery openXmlElement)
   {
     return openXmlElement?.GetSupertip?.Value;
   }
-
-  public static void SetGetSupertip(UnsizedGallery? openXmlElement, String? value)
+  
+  private static void SetGetSupertip(DocumentFormat.OpenXml.Office.CustomUI.UnsizedGallery openXmlElement, String? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.GetSupertip = new StringValue { Value = value };
-      else
-        openXmlElement.GetSupertip = null;
+    if (value != null)
+      openXmlElement.GetSupertip = new StringValue { Value = value };
+    else
+      openXmlElement.GetSupertip = null;
   }
-
+  
   /// <summary>
-  ///   label
+  /// label
   /// </summary>
-  public static String? GetLabel(UnsizedGallery? openXmlElement)
+  private static String? GetLabel(DocumentFormat.OpenXml.Office.CustomUI.UnsizedGallery openXmlElement)
   {
     return openXmlElement?.Label?.Value;
   }
-
-  public static void SetLabel(UnsizedGallery? openXmlElement, String? value)
+  
+  private static void SetLabel(DocumentFormat.OpenXml.Office.CustomUI.UnsizedGallery openXmlElement, String? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.Label = new StringValue { Value = value };
-      else
-        openXmlElement.Label = null;
+    if (value != null)
+      openXmlElement.Label = new StringValue { Value = value };
+    else
+      openXmlElement.Label = null;
   }
-
+  
   /// <summary>
-  ///   getLabel
+  /// getLabel
   /// </summary>
-  public static String? GetGetLabel(UnsizedGallery? openXmlElement)
+  private static String? GetGetLabel(DocumentFormat.OpenXml.Office.CustomUI.UnsizedGallery openXmlElement)
   {
     return openXmlElement?.GetLabel?.Value;
   }
-
-  public static void SetGetLabel(UnsizedGallery? openXmlElement, String? value)
+  
+  private static void SetGetLabel(DocumentFormat.OpenXml.Office.CustomUI.UnsizedGallery openXmlElement, String? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.GetLabel = new StringValue { Value = value };
-      else
-        openXmlElement.GetLabel = null;
+    if (value != null)
+      openXmlElement.GetLabel = new StringValue { Value = value };
+    else
+      openXmlElement.GetLabel = null;
   }
-
+  
   /// <summary>
-  ///   insertAfterMso
+  /// insertAfterMso
   /// </summary>
-  public static String? GetInsertAfterMso(UnsizedGallery? openXmlElement)
+  private static String? GetInsertAfterMso(DocumentFormat.OpenXml.Office.CustomUI.UnsizedGallery openXmlElement)
   {
     return openXmlElement?.InsertAfterMso?.Value;
   }
-
-  public static void SetInsertAfterMso(UnsizedGallery? openXmlElement, String? value)
+  
+  private static void SetInsertAfterMso(DocumentFormat.OpenXml.Office.CustomUI.UnsizedGallery openXmlElement, String? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.InsertAfterMso = new StringValue { Value = value };
-      else
-        openXmlElement.InsertAfterMso = null;
+    if (value != null)
+      openXmlElement.InsertAfterMso = new StringValue { Value = value };
+    else
+      openXmlElement.InsertAfterMso = null;
   }
-
+  
   /// <summary>
-  ///   insertBeforeMso
+  /// insertBeforeMso
   /// </summary>
-  public static String? GetInsertBeforeMso(UnsizedGallery? openXmlElement)
+  private static String? GetInsertBeforeMso(DocumentFormat.OpenXml.Office.CustomUI.UnsizedGallery openXmlElement)
   {
     return openXmlElement?.InsertBeforeMso?.Value;
   }
-
-  public static void SetInsertBeforeMso(UnsizedGallery? openXmlElement, String? value)
+  
+  private static void SetInsertBeforeMso(DocumentFormat.OpenXml.Office.CustomUI.UnsizedGallery openXmlElement, String? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.InsertBeforeMso = new StringValue { Value = value };
-      else
-        openXmlElement.InsertBeforeMso = null;
+    if (value != null)
+      openXmlElement.InsertBeforeMso = new StringValue { Value = value };
+    else
+      openXmlElement.InsertBeforeMso = null;
   }
-
+  
   /// <summary>
-  ///   insertAfterQ
+  /// insertAfterQ
   /// </summary>
-  public static String? GetInsertAfterQ(UnsizedGallery? openXmlElement)
+  private static String? GetInsertAfterQ(DocumentFormat.OpenXml.Office.CustomUI.UnsizedGallery openXmlElement)
   {
     return openXmlElement?.InsertAfterQ?.Value;
   }
-
-  public static void SetInsertAfterQ(UnsizedGallery? openXmlElement, String? value)
+  
+  private static void SetInsertAfterQ(DocumentFormat.OpenXml.Office.CustomUI.UnsizedGallery openXmlElement, String? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.InsertAfterQ = new StringValue { Value = value };
-      else
-        openXmlElement.InsertAfterQ = null;
+    if (value != null)
+      openXmlElement.InsertAfterQ = new StringValue { Value = value };
+    else
+      openXmlElement.InsertAfterQ = null;
   }
-
+  
   /// <summary>
-  ///   insertBeforeQ
+  /// insertBeforeQ
   /// </summary>
-  public static String? GetInsertBeforeQ(UnsizedGallery? openXmlElement)
+  private static String? GetInsertBeforeQ(DocumentFormat.OpenXml.Office.CustomUI.UnsizedGallery openXmlElement)
   {
     return openXmlElement?.InsertBeforeQ?.Value;
   }
-
-  public static void SetInsertBeforeQ(UnsizedGallery? openXmlElement, String? value)
+  
+  private static void SetInsertBeforeQ(DocumentFormat.OpenXml.Office.CustomUI.UnsizedGallery openXmlElement, String? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.InsertBeforeQ = new StringValue { Value = value };
-      else
-        openXmlElement.InsertBeforeQ = null;
+    if (value != null)
+      openXmlElement.InsertBeforeQ = new StringValue { Value = value };
+    else
+      openXmlElement.InsertBeforeQ = null;
   }
-
+  
   /// <summary>
-  ///   visible
+  /// visible
   /// </summary>
-  public static Boolean? GetVisible(UnsizedGallery? openXmlElement)
+  private static Boolean? GetVisible(DocumentFormat.OpenXml.Office.CustomUI.UnsizedGallery openXmlElement)
   {
     return openXmlElement?.Visible?.Value;
   }
-
-  public static void SetVisible(UnsizedGallery? openXmlElement, Boolean? value)
+  
+  private static void SetVisible(DocumentFormat.OpenXml.Office.CustomUI.UnsizedGallery openXmlElement, Boolean? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.Visible = new BooleanValue { Value = (Boolean)value };
-      else
-        openXmlElement.Visible = null;
+    if (value != null)
+      openXmlElement.Visible = new BooleanValue { Value = (Boolean)value };
+    else
+      openXmlElement.Visible = null;
   }
-
+  
   /// <summary>
-  ///   getVisible
+  /// getVisible
   /// </summary>
-  public static String? GetGetVisible(UnsizedGallery? openXmlElement)
+  private static String? GetGetVisible(DocumentFormat.OpenXml.Office.CustomUI.UnsizedGallery openXmlElement)
   {
     return openXmlElement?.GetVisible?.Value;
   }
-
-  public static void SetGetVisible(UnsizedGallery? openXmlElement, String? value)
+  
+  private static void SetGetVisible(DocumentFormat.OpenXml.Office.CustomUI.UnsizedGallery openXmlElement, String? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.GetVisible = new StringValue { Value = value };
-      else
-        openXmlElement.GetVisible = null;
+    if (value != null)
+      openXmlElement.GetVisible = new StringValue { Value = value };
+    else
+      openXmlElement.GetVisible = null;
   }
-
+  
   /// <summary>
-  ///   keytip
+  /// keytip
   /// </summary>
-  public static String? GetKeytip(UnsizedGallery? openXmlElement)
+  private static String? GetKeytip(DocumentFormat.OpenXml.Office.CustomUI.UnsizedGallery openXmlElement)
   {
     return openXmlElement?.Keytip?.Value;
   }
-
-  public static void SetKeytip(UnsizedGallery? openXmlElement, String? value)
+  
+  private static void SetKeytip(DocumentFormat.OpenXml.Office.CustomUI.UnsizedGallery openXmlElement, String? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.Keytip = new StringValue { Value = value };
-      else
-        openXmlElement.Keytip = null;
+    if (value != null)
+      openXmlElement.Keytip = new StringValue { Value = value };
+    else
+      openXmlElement.Keytip = null;
   }
-
+  
   /// <summary>
-  ///   getKeytip
+  /// getKeytip
   /// </summary>
-  public static String? GetGetKeytip(UnsizedGallery? openXmlElement)
+  private static String? GetGetKeytip(DocumentFormat.OpenXml.Office.CustomUI.UnsizedGallery openXmlElement)
   {
     return openXmlElement?.GetKeytip?.Value;
   }
-
-  public static void SetGetKeytip(UnsizedGallery? openXmlElement, String? value)
+  
+  private static void SetGetKeytip(DocumentFormat.OpenXml.Office.CustomUI.UnsizedGallery openXmlElement, String? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.GetKeytip = new StringValue { Value = value };
-      else
-        openXmlElement.GetKeytip = null;
+    if (value != null)
+      openXmlElement.GetKeytip = new StringValue { Value = value };
+    else
+      openXmlElement.GetKeytip = null;
   }
-
+  
   /// <summary>
-  ///   showLabel
+  /// showLabel
   /// </summary>
-  public static Boolean? GetShowLabel(UnsizedGallery? openXmlElement)
+  private static Boolean? GetShowLabel(DocumentFormat.OpenXml.Office.CustomUI.UnsizedGallery openXmlElement)
   {
     return openXmlElement?.ShowLabel?.Value;
   }
-
-  public static void SetShowLabel(UnsizedGallery? openXmlElement, Boolean? value)
+  
+  private static void SetShowLabel(DocumentFormat.OpenXml.Office.CustomUI.UnsizedGallery openXmlElement, Boolean? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.ShowLabel = new BooleanValue { Value = (Boolean)value };
-      else
-        openXmlElement.ShowLabel = null;
+    if (value != null)
+      openXmlElement.ShowLabel = new BooleanValue { Value = (Boolean)value };
+    else
+      openXmlElement.ShowLabel = null;
   }
-
+  
   /// <summary>
-  ///   getShowLabel
+  /// getShowLabel
   /// </summary>
-  public static String? GetGetShowLabel(UnsizedGallery? openXmlElement)
+  private static String? GetGetShowLabel(DocumentFormat.OpenXml.Office.CustomUI.UnsizedGallery openXmlElement)
   {
     return openXmlElement?.GetShowLabel?.Value;
   }
-
-  public static void SetGetShowLabel(UnsizedGallery? openXmlElement, String? value)
+  
+  private static void SetGetShowLabel(DocumentFormat.OpenXml.Office.CustomUI.UnsizedGallery openXmlElement, String? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.GetShowLabel = new StringValue { Value = value };
-      else
-        openXmlElement.GetShowLabel = null;
+    if (value != null)
+      openXmlElement.GetShowLabel = new StringValue { Value = value };
+    else
+      openXmlElement.GetShowLabel = null;
   }
-
+  
   /// <summary>
-  ///   showImage
+  /// showImage
   /// </summary>
-  public static Boolean? GetShowImage(UnsizedGallery? openXmlElement)
+  private static Boolean? GetShowImage(DocumentFormat.OpenXml.Office.CustomUI.UnsizedGallery openXmlElement)
   {
     return openXmlElement?.ShowImage?.Value;
   }
-
-  public static void SetShowImage(UnsizedGallery? openXmlElement, Boolean? value)
+  
+  private static void SetShowImage(DocumentFormat.OpenXml.Office.CustomUI.UnsizedGallery openXmlElement, Boolean? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.ShowImage = new BooleanValue { Value = (Boolean)value };
-      else
-        openXmlElement.ShowImage = null;
+    if (value != null)
+      openXmlElement.ShowImage = new BooleanValue { Value = (Boolean)value };
+    else
+      openXmlElement.ShowImage = null;
   }
-
+  
   /// <summary>
-  ///   getShowImage
+  /// getShowImage
   /// </summary>
-  public static String? GetGetShowImage(UnsizedGallery? openXmlElement)
+  private static String? GetGetShowImage(DocumentFormat.OpenXml.Office.CustomUI.UnsizedGallery openXmlElement)
   {
     return openXmlElement?.GetShowImage?.Value;
   }
-
-  public static void SetGetShowImage(UnsizedGallery? openXmlElement, String? value)
+  
+  private static void SetGetShowImage(DocumentFormat.OpenXml.Office.CustomUI.UnsizedGallery openXmlElement, String? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.GetShowImage = new StringValue { Value = value };
-      else
-        openXmlElement.GetShowImage = null;
+    if (value != null)
+      openXmlElement.GetShowImage = new StringValue { Value = value };
+    else
+      openXmlElement.GetShowImage = null;
   }
-
-  public static Collection<DocumentModel.UI.Item>? GetItems(UnsizedGallery? openXmlElement)
+  
+  private static System.Collections.ObjectModel.Collection<DocumentModel.UI.Item> GetItems(DocumentFormat.OpenXml.Office.CustomUI.UnsizedGallery openXmlElement)
   {
-    if (openXmlElement != null)
+    var collection = new System.Collections.ObjectModel.Collection<DocumentModel.UI.Item>();
+    foreach (var item in openXmlElement.Elements<DocumentFormat.OpenXml.Office.CustomUI.Item>())
     {
-      var collection = new Collection<DocumentModel.UI.Item>();
-      foreach (var item in openXmlElement.Elements<DocumentFormat.OpenXml.Office.CustomUI.Item>())
+      var newItem = DocumentModel.OpenXml.UI.ItemConverter.CreateModelElement(item);
+      if (newItem != null)
+        collection.Add(newItem);
+    }
+    return collection;
+  }
+  
+  private static void SetItems(DocumentFormat.OpenXml.Office.CustomUI.UnsizedGallery openXmlElement, System.Collections.ObjectModel.Collection<DocumentModel.UI.Item>? value)
+  {
+    openXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Office.CustomUI.Item>();
+    if (value != null)
+    {
+      foreach (var item in value)
       {
-        var newItem = ItemConverter.CreateModelElement(item);
+        var newItem = DocumentModel.OpenXml.UI.ItemConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office.CustomUI.Item>(item);
         if (newItem != null)
-          collection.Add(newItem);
+          openXmlElement.AddChild(newItem);
       }
-      return collection;
-    }
-    return null;
-  }
-
-  public static void SetItems(UnsizedGallery? openXmlElement, Collection<DocumentModel.UI.Item>? value)
-  {
-    if (openXmlElement != null)
-    {
-      openXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Office.CustomUI.Item>();
-      if (value != null)
-        foreach (var item in value)
-        {
-          var newItem = ItemConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office.CustomUI.Item>(item);
-          if (newItem != null)
-            openXmlElement.AddChild(newItem);
-        }
     }
   }
-
-  public static Collection<UnsizedButton>? GetUnsizedButtons(UnsizedGallery? openXmlElement)
+  
+  private static System.Collections.ObjectModel.Collection<DocumentModel.UI.UnsizedButton> GetUnsizedButtons(DocumentFormat.OpenXml.Office.CustomUI.UnsizedGallery openXmlElement)
   {
-    if (openXmlElement != null)
+    var collection = new System.Collections.ObjectModel.Collection<DocumentModel.UI.UnsizedButton>();
+    foreach (var item in openXmlElement.Elements<DocumentFormat.OpenXml.Office.CustomUI.UnsizedButton>())
     {
-      var collection = new Collection<UnsizedButton>();
-      foreach (var item in openXmlElement.Elements<DocumentFormat.OpenXml.Office.CustomUI.UnsizedButton>())
+      var newItem = DocumentModel.OpenXml.UI.UnsizedButtonConverter.CreateModelElement(item);
+      if (newItem != null)
+        collection.Add(newItem);
+    }
+    return collection;
+  }
+  
+  private static void SetUnsizedButtons(DocumentFormat.OpenXml.Office.CustomUI.UnsizedGallery openXmlElement, System.Collections.ObjectModel.Collection<DocumentModel.UI.UnsizedButton>? value)
+  {
+    openXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Office.CustomUI.UnsizedButton>();
+    if (value != null)
+    {
+      foreach (var item in value)
       {
-        var newItem = UnsizedButtonConverter.CreateModelElement(item);
+        var newItem = DocumentModel.OpenXml.UI.UnsizedButtonConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office.CustomUI.UnsizedButton>(item);
         if (newItem != null)
-          collection.Add(newItem);
+          openXmlElement.AddChild(newItem);
       }
-      return collection;
-    }
-    return null;
-  }
-
-  public static void SetUnsizedButtons(UnsizedGallery? openXmlElement, Collection<UnsizedButton>? value)
-  {
-    if (openXmlElement != null)
-    {
-      openXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Office.CustomUI.UnsizedButton>();
-      if (value != null)
-        foreach (var item in value)
-        {
-          var newItem = UnsizedButtonConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office.CustomUI.UnsizedButton>(item);
-          if (newItem != null)
-            openXmlElement.AddChild(newItem);
-        }
     }
   }
-
-  public static DocumentModel.UI.UnsizedGallery? CreateModelElement(UnsizedGallery? openXmlElement)
+  
+  public static DocumentModel.UI.UnsizedGallery? CreateModelElement(DocumentFormat.OpenXml.Office.CustomUI.UnsizedGallery? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -933,9 +872,9 @@ public static class UnsizedGalleryConverter
     }
     return null;
   }
-
+  
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.UI.UnsizedGallery? value)
-    where OpenXmlElementType : UnsizedGallery, new()
+    where OpenXmlElementType: DocumentFormat.OpenXml.Office.CustomUI.UnsizedGallery, new()
   {
     if (value != null)
     {

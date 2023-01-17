@@ -1,46 +1,41 @@
-using DocumentFormat.OpenXml.Packaging;
-using DocumentModel.Drawings.ChartsStyle;
-using DocumentModel.OpenXml.Drawings.ChartsStyle;
-
 namespace DocumentModel.OpenXml.Packaging;
 
 /// <summary>
-///   Defines the ChartStylePart
+/// Defines the ChartStylePart
 /// </summary>
 public static class ChartStylePartConverter
 {
   /// <summary>
-  ///   Gets or sets the root element of this part.
+  /// Gets or sets the root element of this part.
   /// </summary>
-  public static ChartStyle? GetChartStyle(ChartStylePart? openXmlElement)
+  private static DocumentModel.Drawings.ChartsStyle.ChartStyle? GetChartStyle(DocumentFormat.OpenXml.Packaging.ChartStylePart openXmlElement)
   {
     if (openXmlElement?.RootElement is DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.ChartStyle rootElement)
-      return ChartStyleConverter.CreateModelElement(rootElement);
+      return DocumentModel.OpenXml.Drawings.ChartsStyle.ChartStyleConverter.CreateModelElement(rootElement);
     return null;
   }
-
-  public static void SetChartStyle(ChartStylePart? openXmlElement, ChartStyle? value)
+  
+  private static void SetChartStyle(DocumentFormat.OpenXml.Packaging.ChartStylePart openXmlElement, DocumentModel.Drawings.ChartsStyle.ChartStyle? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-      {
-        var rootElement = ChartStyleConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.ChartStyle>(value);
-        if (rootElement != null)
-          openXmlElement.ChartStyle = rootElement;
-      }
+    if (value != null)
+    {
+       var rootElement = DocumentModel.OpenXml.Drawings.ChartsStyle.ChartStyleConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.ChartStyle>(value);
+       if (rootElement != null)
+         openXmlElement.ChartStyle = rootElement;
+    }
   }
-
-  public static String? GetContentType(ChartStylePart? openXmlElement)
+  
+  private static String? GetContentType(DocumentFormat.OpenXml.Packaging.ChartStylePart openXmlElement)
   {
     return openXmlElement?.ContentType;
   }
-
-  public static String? GetRelationshipType(ChartStylePart? openXmlElement)
+  
+  private static String? GetRelationshipType(DocumentFormat.OpenXml.Packaging.ChartStylePart openXmlElement)
   {
     return openXmlElement?.RelationshipType;
   }
-
-  public static DocumentModel.Packaging.ChartStylePart? CreateModelElement(ChartStylePart? openXmlElement)
+  
+  public static DocumentModel.Packaging.ChartStylePart? CreateModelElement(DocumentFormat.OpenXml.Packaging.ChartStylePart? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -52,9 +47,9 @@ public static class ChartStylePartConverter
     }
     return null;
   }
-
+  
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Packaging.ChartStylePart? value)
-    where OpenXmlElementType : ChartStylePart, new()
+    where OpenXmlElementType: DocumentFormat.OpenXml.Packaging.ChartStylePart, new()
   {
     if (value != null)
     {

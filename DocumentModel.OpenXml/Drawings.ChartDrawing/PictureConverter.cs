@@ -1,159 +1,139 @@
-using DocumentFormat.OpenXml.Drawing.ChartDrawing;
-using BlipFill = DocumentModel.Drawings.ChartDrawing.BlipFill;
-using NonVisualPictureProperties = DocumentModel.Drawings.ChartDrawing.NonVisualPictureProperties;
-using ShapeProperties = DocumentModel.Drawings.ChartDrawing.ShapeProperties;
-using Style = DocumentModel.Drawings.ChartDrawing.Style;
-
 namespace DocumentModel.OpenXml.Drawings.ChartDrawing;
 
 /// <summary>
-///   Defines the Picture Class.
+/// Defines the Picture Class.
 /// </summary>
 public static class PictureConverter
 {
   /// <summary>
-  ///   Reference to Custom Function
+  /// Reference to Custom Function
   /// </summary>
-  public static String? GetMacro(Picture? openXmlElement)
+  private static String? GetMacro(DocumentFormat.OpenXml.Drawing.ChartDrawing.Picture openXmlElement)
   {
     return openXmlElement?.Macro?.Value;
   }
-
-  public static void SetMacro(Picture? openXmlElement, String? value)
+  
+  private static void SetMacro(DocumentFormat.OpenXml.Drawing.ChartDrawing.Picture openXmlElement, String? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.Macro = new StringValue { Value = value };
-      else
-        openXmlElement.Macro = null;
+    if (value != null)
+      openXmlElement.Macro = new StringValue { Value = value };
+    else
+      openXmlElement.Macro = null;
   }
-
+  
   /// <summary>
-  ///   Publish to Server
+  /// Publish to Server
   /// </summary>
-  public static Boolean? GetPublished(Picture? openXmlElement)
+  private static Boolean? GetPublished(DocumentFormat.OpenXml.Drawing.ChartDrawing.Picture openXmlElement)
   {
     return openXmlElement?.Published?.Value;
   }
-
-  public static void SetPublished(Picture? openXmlElement, Boolean? value)
+  
+  private static void SetPublished(DocumentFormat.OpenXml.Drawing.ChartDrawing.Picture openXmlElement, Boolean? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.Published = new BooleanValue { Value = (Boolean)value };
-      else
-        openXmlElement.Published = null;
+    if (value != null)
+      openXmlElement.Published = new BooleanValue { Value = (Boolean)value };
+    else
+      openXmlElement.Published = null;
   }
-
+  
   /// <summary>
-  ///   Non-Visual Picture Properties.
+  /// Non-Visual Picture Properties.
   /// </summary>
-  public static NonVisualPictureProperties? GetNonVisualPictureProperties(Picture? openXmlElement)
+  private static DocumentModel.Drawings.ChartDrawing.NonVisualPictureProperties? GetNonVisualPictureProperties(DocumentFormat.OpenXml.Drawing.ChartDrawing.Picture openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.ChartDrawing.NonVisualPictureProperties>();
     if (itemElement != null)
-      return NonVisualPicturePropertiesConverter.CreateModelElement(itemElement);
+      return DocumentModel.OpenXml.Drawings.ChartDrawing.NonVisualPicturePropertiesConverter.CreateModelElement(itemElement);
     return null;
   }
-
-  public static void SetNonVisualPictureProperties(Picture? openXmlElement, NonVisualPictureProperties? value)
+  
+  private static void SetNonVisualPictureProperties(DocumentFormat.OpenXml.Drawing.ChartDrawing.Picture openXmlElement, DocumentModel.Drawings.ChartDrawing.NonVisualPictureProperties? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.ChartDrawing.NonVisualPictureProperties>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.ChartDrawing.NonVisualPictureProperties>();
+      itemElement = DocumentModel.OpenXml.Drawings.ChartDrawing.NonVisualPicturePropertiesConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.ChartDrawing.NonVisualPictureProperties>(value);
       if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = NonVisualPicturePropertiesConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.ChartDrawing.NonVisualPictureProperties>(value);
-        if (itemElement != null)
-          openXmlElement.AddChild(itemElement);
-      }
+        openXmlElement.AddChild(itemElement);
     }
   }
-
+  
   /// <summary>
-  ///   Picture Fill.
+  /// Picture Fill.
   /// </summary>
-  public static BlipFill? GetBlipFill(Picture? openXmlElement)
+  private static DocumentModel.Drawings.ChartDrawing.BlipFill? GetBlipFill(DocumentFormat.OpenXml.Drawing.ChartDrawing.Picture openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.ChartDrawing.BlipFill>();
     if (itemElement != null)
-      return BlipFillConverter.CreateModelElement(itemElement);
+      return DocumentModel.OpenXml.Drawings.ChartDrawing.BlipFillConverter.CreateModelElement(itemElement);
     return null;
   }
-
-  public static void SetBlipFill(Picture? openXmlElement, BlipFill? value)
+  
+  private static void SetBlipFill(DocumentFormat.OpenXml.Drawing.ChartDrawing.Picture openXmlElement, DocumentModel.Drawings.ChartDrawing.BlipFill? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.ChartDrawing.BlipFill>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.ChartDrawing.BlipFill>();
+      itemElement = DocumentModel.OpenXml.Drawings.ChartDrawing.BlipFillConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.ChartDrawing.BlipFill>(value);
       if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = BlipFillConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.ChartDrawing.BlipFill>(value);
-        if (itemElement != null)
-          openXmlElement.AddChild(itemElement);
-      }
+        openXmlElement.AddChild(itemElement);
     }
   }
-
+  
   /// <summary>
-  ///   ShapeProperties.
+  /// ShapeProperties.
   /// </summary>
-  public static ShapeProperties? GetShapeProperties(Picture? openXmlElement)
+  private static DocumentModel.Drawings.ChartDrawing.ShapeProperties? GetShapeProperties(DocumentFormat.OpenXml.Drawing.ChartDrawing.Picture openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.ChartDrawing.ShapeProperties>();
     if (itemElement != null)
-      return ShapePropertiesConverter.CreateModelElement(itemElement);
+      return DocumentModel.OpenXml.Drawings.ChartDrawing.ShapePropertiesConverter.CreateModelElement(itemElement);
     return null;
   }
-
-  public static void SetShapeProperties(Picture? openXmlElement, ShapeProperties? value)
+  
+  private static void SetShapeProperties(DocumentFormat.OpenXml.Drawing.ChartDrawing.Picture openXmlElement, DocumentModel.Drawings.ChartDrawing.ShapeProperties? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.ChartDrawing.ShapeProperties>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.ChartDrawing.ShapeProperties>();
+      itemElement = DocumentModel.OpenXml.Drawings.ChartDrawing.ShapePropertiesConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.ChartDrawing.ShapeProperties>(value);
       if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = ShapePropertiesConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.ChartDrawing.ShapeProperties>(value);
-        if (itemElement != null)
-          openXmlElement.AddChild(itemElement);
-      }
+        openXmlElement.AddChild(itemElement);
     }
   }
-
+  
   /// <summary>
-  ///   Style.
+  /// Style.
   /// </summary>
-  public static Style? GetStyle(Picture? openXmlElement)
+  private static DocumentModel.Drawings.ChartDrawing.Style? GetStyle(DocumentFormat.OpenXml.Drawing.ChartDrawing.Picture openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.ChartDrawing.Style>();
     if (itemElement != null)
-      return StyleConverter.CreateModelElement(itemElement);
+      return DocumentModel.OpenXml.Drawings.ChartDrawing.StyleConverter.CreateModelElement(itemElement);
     return null;
   }
-
-  public static void SetStyle(Picture? openXmlElement, Style? value)
+  
+  private static void SetStyle(DocumentFormat.OpenXml.Drawing.ChartDrawing.Picture openXmlElement, DocumentModel.Drawings.ChartDrawing.Style? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.ChartDrawing.Style>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.ChartDrawing.Style>();
+      itemElement = DocumentModel.OpenXml.Drawings.ChartDrawing.StyleConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.ChartDrawing.Style>(value);
       if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = StyleConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.ChartDrawing.Style>(value);
-        if (itemElement != null)
-          openXmlElement.AddChild(itemElement);
-      }
+        openXmlElement.AddChild(itemElement);
     }
   }
-
-  public static DocumentModel.Drawings.ChartDrawing.Picture? CreateModelElement(Picture? openXmlElement)
+  
+  public static DocumentModel.Drawings.ChartDrawing.Picture? CreateModelElement(DocumentFormat.OpenXml.Drawing.ChartDrawing.Picture? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -168,9 +148,9 @@ public static class PictureConverter
     }
     return null;
   }
-
+  
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.ChartDrawing.Picture? value)
-    where OpenXmlElementType : Picture, new()
+    where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.ChartDrawing.Picture, new()
   {
     if (value != null)
     {

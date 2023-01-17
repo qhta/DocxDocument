@@ -1,233 +1,216 @@
-using DocumentFormat.OpenXml.Vml;
-using DocumentModel.Vml;
-using SignatureLine = DocumentFormat.OpenXml.Vml.Office.SignatureLine;
-
 namespace DocumentModel.OpenXml.Vml;
 
 /// <summary>
-///   Digital Signature Line.
+/// Digital Signature Line.
 /// </summary>
 public static class SignatureLineConverter
 {
   /// <summary>
-  ///   VML Extension Handling Behavior
+  /// VML Extension Handling Behavior
   /// </summary>
-  public static ExtensionHandlingBehaviorKind? GetExtension(SignatureLine? openXmlElement)
+  private static DocumentModel.Vml.ExtensionHandlingBehaviorKind? GetExtension(DocumentFormat.OpenXml.Vml.Office.SignatureLine openXmlElement)
   {
-    return EnumValueConverter.GetValue<ExtensionHandlingBehaviorValues, ExtensionHandlingBehaviorKind>(openXmlElement?.Extension?.Value);
+    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Vml.ExtensionHandlingBehaviorValues, DocumentModel.Vml.ExtensionHandlingBehaviorKind>(openXmlElement?.Extension?.Value);
   }
-
-  public static void SetExtension(SignatureLine? openXmlElement, ExtensionHandlingBehaviorKind? value)
+  
+  private static void SetExtension(DocumentFormat.OpenXml.Vml.Office.SignatureLine openXmlElement, DocumentModel.Vml.ExtensionHandlingBehaviorKind? value)
   {
-    if (openXmlElement != null)
-      openXmlElement.Extension = EnumValueConverter.CreateEnumValue<ExtensionHandlingBehaviorValues, ExtensionHandlingBehaviorKind>(value);
+    openXmlElement.Extension = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Vml.ExtensionHandlingBehaviorValues, DocumentModel.Vml.ExtensionHandlingBehaviorKind>(value);
   }
-
+  
   /// <summary>
-  ///   Signature Line Flag
+  /// Signature Line Flag
   /// </summary>
-  public static Boolean? GetIsSignatureLine(SignatureLine? openXmlElement)
+  private static Boolean? GetIsSignatureLine(DocumentFormat.OpenXml.Vml.Office.SignatureLine openXmlElement)
   {
     return openXmlElement?.IsSignatureLine?.Value;
   }
-
-  public static void SetIsSignatureLine(SignatureLine? openXmlElement, Boolean? value)
+  
+  private static void SetIsSignatureLine(DocumentFormat.OpenXml.Vml.Office.SignatureLine openXmlElement, Boolean? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.IsSignatureLine = value;
-      else
-        openXmlElement.IsSignatureLine = null;
+    if (value != null)
+      openXmlElement.IsSignatureLine = value;
+    else
+      openXmlElement.IsSignatureLine = null;
   }
-
+  
   /// <summary>
-  ///   Unique ID
+  /// Unique ID
   /// </summary>
-  public static String? GetId(SignatureLine? openXmlElement)
+  private static String? GetId(DocumentFormat.OpenXml.Vml.Office.SignatureLine openXmlElement)
   {
     return openXmlElement?.Id?.Value;
   }
-
-  public static void SetId(SignatureLine? openXmlElement, String? value)
+  
+  private static void SetId(DocumentFormat.OpenXml.Vml.Office.SignatureLine openXmlElement, String? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.Id = new StringValue { Value = value };
-      else
-        openXmlElement.Id = null;
+    if (value != null)
+      openXmlElement.Id = new StringValue { Value = value };
+    else
+      openXmlElement.Id = null;
   }
-
+  
   /// <summary>
-  ///   Signature Provider ID
+  /// Signature Provider ID
   /// </summary>
-  public static String? GetProviderId(SignatureLine? openXmlElement)
+  private static String? GetProviderId(DocumentFormat.OpenXml.Vml.Office.SignatureLine openXmlElement)
   {
     return openXmlElement?.ProviderId?.Value;
   }
-
-  public static void SetProviderId(SignatureLine? openXmlElement, String? value)
+  
+  private static void SetProviderId(DocumentFormat.OpenXml.Vml.Office.SignatureLine openXmlElement, String? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.ProviderId = new StringValue { Value = value };
-      else
-        openXmlElement.ProviderId = null;
+    if (value != null)
+      openXmlElement.ProviderId = new StringValue { Value = value };
+    else
+      openXmlElement.ProviderId = null;
   }
-
+  
   /// <summary>
-  ///   Use Signing Instructions Flag
+  /// Use Signing Instructions Flag
   /// </summary>
-  public static Boolean? GetSigningInstructionsSet(SignatureLine? openXmlElement)
+  private static Boolean? GetSigningInstructionsSet(DocumentFormat.OpenXml.Vml.Office.SignatureLine openXmlElement)
   {
     return openXmlElement?.SigningInstructionsSet?.Value;
   }
-
-  public static void SetSigningInstructionsSet(SignatureLine? openXmlElement, Boolean? value)
+  
+  private static void SetSigningInstructionsSet(DocumentFormat.OpenXml.Vml.Office.SignatureLine openXmlElement, Boolean? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.SigningInstructionsSet = value;
-      else
-        openXmlElement.SigningInstructionsSet = null;
+    if (value != null)
+      openXmlElement.SigningInstructionsSet = value;
+    else
+      openXmlElement.SigningInstructionsSet = null;
   }
-
+  
   /// <summary>
-  ///   User-specified Comments Flag
+  /// User-specified Comments Flag
   /// </summary>
-  public static Boolean? GetAllowComments(SignatureLine? openXmlElement)
+  private static Boolean? GetAllowComments(DocumentFormat.OpenXml.Vml.Office.SignatureLine openXmlElement)
   {
     return openXmlElement?.AllowComments?.Value;
   }
-
-  public static void SetAllowComments(SignatureLine? openXmlElement, Boolean? value)
+  
+  private static void SetAllowComments(DocumentFormat.OpenXml.Vml.Office.SignatureLine openXmlElement, Boolean? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.AllowComments = value;
-      else
-        openXmlElement.AllowComments = null;
+    if (value != null)
+      openXmlElement.AllowComments = value;
+    else
+      openXmlElement.AllowComments = null;
   }
-
+  
   /// <summary>
-  ///   Show Signed Date Flag
+  /// Show Signed Date Flag
   /// </summary>
-  public static Boolean? GetShowSignDate(SignatureLine? openXmlElement)
+  private static Boolean? GetShowSignDate(DocumentFormat.OpenXml.Vml.Office.SignatureLine openXmlElement)
   {
     return openXmlElement?.ShowSignDate?.Value;
   }
-
-  public static void SetShowSignDate(SignatureLine? openXmlElement, Boolean? value)
+  
+  private static void SetShowSignDate(DocumentFormat.OpenXml.Vml.Office.SignatureLine openXmlElement, Boolean? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.ShowSignDate = value;
-      else
-        openXmlElement.ShowSignDate = null;
+    if (value != null)
+      openXmlElement.ShowSignDate = value;
+    else
+      openXmlElement.ShowSignDate = null;
   }
-
+  
   /// <summary>
-  ///   Suggested Signer Line 1
+  /// Suggested Signer Line 1
   /// </summary>
-  public static String? GetSuggestedSigner(SignatureLine? openXmlElement)
+  private static String? GetSuggestedSigner(DocumentFormat.OpenXml.Vml.Office.SignatureLine openXmlElement)
   {
     return openXmlElement?.SuggestedSigner?.Value;
   }
-
-  public static void SetSuggestedSigner(SignatureLine? openXmlElement, String? value)
+  
+  private static void SetSuggestedSigner(DocumentFormat.OpenXml.Vml.Office.SignatureLine openXmlElement, String? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.SuggestedSigner = new StringValue { Value = value };
-      else
-        openXmlElement.SuggestedSigner = null;
+    if (value != null)
+      openXmlElement.SuggestedSigner = new StringValue { Value = value };
+    else
+      openXmlElement.SuggestedSigner = null;
   }
-
+  
   /// <summary>
-  ///   Suggested Signer Line 2
+  /// Suggested Signer Line 2
   /// </summary>
-  public static String? GetSuggestedSigner2(SignatureLine? openXmlElement)
+  private static String? GetSuggestedSigner2(DocumentFormat.OpenXml.Vml.Office.SignatureLine openXmlElement)
   {
     return openXmlElement?.SuggestedSigner2?.Value;
   }
-
-  public static void SetSuggestedSigner2(SignatureLine? openXmlElement, String? value)
+  
+  private static void SetSuggestedSigner2(DocumentFormat.OpenXml.Vml.Office.SignatureLine openXmlElement, String? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.SuggestedSigner2 = new StringValue { Value = value };
-      else
-        openXmlElement.SuggestedSigner2 = null;
+    if (value != null)
+      openXmlElement.SuggestedSigner2 = new StringValue { Value = value };
+    else
+      openXmlElement.SuggestedSigner2 = null;
   }
-
+  
   /// <summary>
-  ///   Suggested Signer E-mail Address
+  /// Suggested Signer E-mail Address
   /// </summary>
-  public static String? GetSuggestedSignerEmail(SignatureLine? openXmlElement)
+  private static String? GetSuggestedSignerEmail(DocumentFormat.OpenXml.Vml.Office.SignatureLine openXmlElement)
   {
     return openXmlElement?.SuggestedSignerEmail?.Value;
   }
-
-  public static void SetSuggestedSignerEmail(SignatureLine? openXmlElement, String? value)
+  
+  private static void SetSuggestedSignerEmail(DocumentFormat.OpenXml.Vml.Office.SignatureLine openXmlElement, String? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.SuggestedSignerEmail = new StringValue { Value = value };
-      else
-        openXmlElement.SuggestedSignerEmail = null;
+    if (value != null)
+      openXmlElement.SuggestedSignerEmail = new StringValue { Value = value };
+    else
+      openXmlElement.SuggestedSignerEmail = null;
   }
-
+  
   /// <summary>
-  ///   Instructions for Signing
+  /// Instructions for Signing
   /// </summary>
-  public static String? GetSigningInstructions(SignatureLine? openXmlElement)
+  private static String? GetSigningInstructions(DocumentFormat.OpenXml.Vml.Office.SignatureLine openXmlElement)
   {
     return openXmlElement?.SigningInstructions?.Value;
   }
-
-  public static void SetSigningInstructions(SignatureLine? openXmlElement, String? value)
+  
+  private static void SetSigningInstructions(DocumentFormat.OpenXml.Vml.Office.SignatureLine openXmlElement, String? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.SigningInstructions = new StringValue { Value = value };
-      else
-        openXmlElement.SigningInstructions = null;
+    if (value != null)
+      openXmlElement.SigningInstructions = new StringValue { Value = value };
+    else
+      openXmlElement.SigningInstructions = null;
   }
-
+  
   /// <summary>
-  ///   Additional Signature Information
+  /// Additional Signature Information
   /// </summary>
-  public static String? GetAdditionalXml(SignatureLine? openXmlElement)
+  private static String? GetAdditionalXml(DocumentFormat.OpenXml.Vml.Office.SignatureLine openXmlElement)
   {
     return openXmlElement?.AdditionalXml?.Value;
   }
-
-  public static void SetAdditionalXml(SignatureLine? openXmlElement, String? value)
+  
+  private static void SetAdditionalXml(DocumentFormat.OpenXml.Vml.Office.SignatureLine openXmlElement, String? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.AdditionalXml = new StringValue { Value = value };
-      else
-        openXmlElement.AdditionalXml = null;
+    if (value != null)
+      openXmlElement.AdditionalXml = new StringValue { Value = value };
+    else
+      openXmlElement.AdditionalXml = null;
   }
-
+  
   /// <summary>
-  ///   Signature Provider Download URL
+  /// Signature Provider Download URL
   /// </summary>
-  public static String? GetSignatureProviderUrl(SignatureLine? openXmlElement)
+  private static String? GetSignatureProviderUrl(DocumentFormat.OpenXml.Vml.Office.SignatureLine openXmlElement)
   {
     return openXmlElement?.SignatureProviderUrl?.Value;
   }
-
-  public static void SetSignatureProviderUrl(SignatureLine? openXmlElement, String? value)
+  
+  private static void SetSignatureProviderUrl(DocumentFormat.OpenXml.Vml.Office.SignatureLine openXmlElement, String? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.SignatureProviderUrl = new StringValue { Value = value };
-      else
-        openXmlElement.SignatureProviderUrl = null;
+    if (value != null)
+      openXmlElement.SignatureProviderUrl = new StringValue { Value = value };
+    else
+      openXmlElement.SignatureProviderUrl = null;
   }
-
-  public static DocumentModel.Vml.SignatureLine? CreateModelElement(SignatureLine? openXmlElement)
+  
+  public static DocumentModel.Vml.SignatureLine? CreateModelElement(DocumentFormat.OpenXml.Vml.Office.SignatureLine? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -249,9 +232,9 @@ public static class SignatureLineConverter
     }
     return null;
   }
-
+  
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Vml.SignatureLine? value)
-    where OpenXmlElementType : SignatureLine, new()
+    where OpenXmlElementType: DocumentFormat.OpenXml.Vml.Office.SignatureLine, new()
   {
     if (value != null)
     {

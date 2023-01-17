@@ -1,43 +1,37 @@
-using DocumentFormat.OpenXml.Wordprocessing;
-using DocumentModel.Wordprocessing;
-using Break = DocumentFormat.OpenXml.Wordprocessing.Break;
-
 namespace DocumentModel.OpenXml.Wordprocessing;
 
 /// <summary>
-///   Break.
+/// Break.
 /// </summary>
 public static class BreakConverter
 {
   /// <summary>
-  ///   Break Type
+  /// Break Type
   /// </summary>
-  public static BreakKind? GetType(Break? openXmlElement)
+  private static DocumentModel.Wordprocessing.BreakKind? GetType(DocumentFormat.OpenXml.Wordprocessing.Break openXmlElement)
   {
-    return EnumValueConverter.GetValue<BreakValues, BreakKind>(openXmlElement?.Type?.Value);
+    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Wordprocessing.BreakValues, DocumentModel.Wordprocessing.BreakKind>(openXmlElement?.Type?.Value);
   }
-
-  public static void SetType(Break? openXmlElement, BreakKind? value)
+  
+  private static void SetType(DocumentFormat.OpenXml.Wordprocessing.Break openXmlElement, DocumentModel.Wordprocessing.BreakKind? value)
   {
-    if (openXmlElement != null)
-      openXmlElement.Type = EnumValueConverter.CreateEnumValue<BreakValues, BreakKind>(value);
+    openXmlElement.Type = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Wordprocessing.BreakValues, DocumentModel.Wordprocessing.BreakKind>(value);
   }
-
+  
   /// <summary>
-  ///   Restart Location For Text Wrapping Break
+  /// Restart Location For Text Wrapping Break
   /// </summary>
-  public static BreakTextRestartLocationKind? GetClear(Break? openXmlElement)
+  private static DocumentModel.Wordprocessing.BreakTextRestartLocationKind? GetClear(DocumentFormat.OpenXml.Wordprocessing.Break openXmlElement)
   {
-    return EnumValueConverter.GetValue<BreakTextRestartLocationValues, BreakTextRestartLocationKind>(openXmlElement?.Clear?.Value);
+    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Wordprocessing.BreakTextRestartLocationValues, DocumentModel.Wordprocessing.BreakTextRestartLocationKind>(openXmlElement?.Clear?.Value);
   }
-
-  public static void SetClear(Break? openXmlElement, BreakTextRestartLocationKind? value)
+  
+  private static void SetClear(DocumentFormat.OpenXml.Wordprocessing.Break openXmlElement, DocumentModel.Wordprocessing.BreakTextRestartLocationKind? value)
   {
-    if (openXmlElement != null)
-      openXmlElement.Clear = EnumValueConverter.CreateEnumValue<BreakTextRestartLocationValues, BreakTextRestartLocationKind>(value);
+    openXmlElement.Clear = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Wordprocessing.BreakTextRestartLocationValues, DocumentModel.Wordprocessing.BreakTextRestartLocationKind>(value);
   }
-
-  public static DocumentModel.Wordprocessing.Break? CreateModelElement(Break? openXmlElement)
+  
+  public static DocumentModel.Wordprocessing.Break? CreateModelElement(DocumentFormat.OpenXml.Wordprocessing.Break? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -48,9 +42,9 @@ public static class BreakConverter
     }
     return null;
   }
-
+  
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.Break? value)
-    where OpenXmlElementType : Break, new()
+    where OpenXmlElementType: DocumentFormat.OpenXml.Wordprocessing.Break, new()
   {
     if (value != null)
     {

@@ -1,363 +1,276 @@
-using DocumentFormat.OpenXml.Packaging;
-using ControlPropertiesPart = DocumentModel.Packaging.ControlPropertiesPart;
-using CustomPropertyPart = DocumentModel.Packaging.CustomPropertyPart;
-using EmbeddedControlPersistenceBinaryDataPart = DocumentModel.Packaging.EmbeddedControlPersistenceBinaryDataPart;
-using EmbeddedControlPersistencePart = DocumentModel.Packaging.EmbeddedControlPersistencePart;
-using EmbeddedObjectPart = DocumentModel.Packaging.EmbeddedObjectPart;
-using EmbeddedPackagePart = DocumentModel.Packaging.EmbeddedPackagePart;
-using ImagePart = DocumentModel.Packaging.ImagePart;
-using Model3DReferenceRelationshipPart = DocumentModel.Packaging.Model3DReferenceRelationshipPart;
-using NamedSheetViewsPart = DocumentModel.Packaging.NamedSheetViewsPart;
-using PivotTablePart = DocumentModel.Packaging.PivotTablePart;
-using QueryTablePart = DocumentModel.Packaging.QueryTablePart;
-using SlicersPart = DocumentModel.Packaging.SlicersPart;
-using SpreadsheetPrinterSettingsPart = DocumentModel.Packaging.SpreadsheetPrinterSettingsPart;
-using TableDefinitionPart = DocumentModel.Packaging.TableDefinitionPart;
-using TimeLinePart = DocumentModel.Packaging.TimeLinePart;
-using VmlDrawingPart = DocumentModel.Packaging.VmlDrawingPart;
-using WorksheetThreadedCommentsPart = DocumentModel.Packaging.WorksheetThreadedCommentsPart;
-
 namespace DocumentModel.OpenXml.Packaging;
 
 /// <summary>
-///   Defines the WorksheetPart
+/// Defines the WorksheetPart
 /// </summary>
 public static class WorksheetPartConverter
 {
-  public static String? GetContentType(WorksheetPart? openXmlElement)
+  private static String? GetContentType(DocumentFormat.OpenXml.Packaging.WorksheetPart openXmlElement)
   {
     return openXmlElement?.ContentType;
   }
-
+  
   /// <summary>
-  ///   Gets the ControlPropertiesParts of the WorksheetPart
+  /// Gets the ControlPropertiesParts of the WorksheetPart
   /// </summary>
-  public static Collection<ControlPropertiesPart>? GetControlPropertiesParts(WorksheetPart? openXmlElement)
+  private static System.Collections.ObjectModel.Collection<DocumentModel.Packaging.ControlPropertiesPart> GetControlPropertiesParts(DocumentFormat.OpenXml.Packaging.WorksheetPart openXmlElement)
   {
-    if (openXmlElement != null)
+    var collection = new System.Collections.ObjectModel.Collection<DocumentModel.Packaging.ControlPropertiesPart>();
+    foreach (var item in openXmlElement.GetPartsOfType<DocumentFormat.OpenXml.Packaging.ControlPropertiesPart>())
     {
-      var collection = new Collection<ControlPropertiesPart>();
-      foreach (var item in openXmlElement.GetPartsOfType<DocumentFormat.OpenXml.Packaging.ControlPropertiesPart>())
-      {
-        var newItem = ControlPropertiesPartConverter.CreateModelElement(item);
-        if (newItem != null)
-          collection.Add(newItem);
-      }
-      return collection;
+      var newItem = DocumentModel.OpenXml.Packaging.ControlPropertiesPartConverter.CreateModelElement(item);
+      if (newItem != null)
+        collection.Add(newItem);
     }
-    return null;
+    return collection;
   }
-
+  
   /// <summary>
-  ///   Gets the CustomPropertyParts of the WorksheetPart
+  /// Gets the CustomPropertyParts of the WorksheetPart
   /// </summary>
-  public static Collection<CustomPropertyPart>? GetCustomPropertyParts(WorksheetPart? openXmlElement)
+  private static System.Collections.ObjectModel.Collection<DocumentModel.Packaging.CustomPropertyPart> GetCustomPropertyParts(DocumentFormat.OpenXml.Packaging.WorksheetPart openXmlElement)
   {
-    if (openXmlElement != null)
+    var collection = new System.Collections.ObjectModel.Collection<DocumentModel.Packaging.CustomPropertyPart>();
+    foreach (var item in openXmlElement.GetPartsOfType<DocumentFormat.OpenXml.Packaging.CustomPropertyPart>())
     {
-      var collection = new Collection<CustomPropertyPart>();
-      foreach (var item in openXmlElement.GetPartsOfType<DocumentFormat.OpenXml.Packaging.CustomPropertyPart>())
-      {
-        var newItem = CustomPropertyPartConverter.CreateModelElement(item);
-        if (newItem != null)
-          collection.Add(newItem);
-      }
-      return collection;
+      var newItem = DocumentModel.OpenXml.Packaging.CustomPropertyPartConverter.CreateModelElement(item);
+      if (newItem != null)
+        collection.Add(newItem);
     }
-    return null;
+    return collection;
   }
-
+  
   /// <summary>
-  ///   Gets the EmbeddedControlPersistenceBinaryDataParts of the WorksheetPart
+  /// Gets the EmbeddedControlPersistenceBinaryDataParts of the WorksheetPart
   /// </summary>
-  public static Collection<EmbeddedControlPersistenceBinaryDataPart>? GetEmbeddedControlPersistenceBinaryDataParts(WorksheetPart? openXmlElement)
+  private static System.Collections.ObjectModel.Collection<DocumentModel.Packaging.EmbeddedControlPersistenceBinaryDataPart> GetEmbeddedControlPersistenceBinaryDataParts(DocumentFormat.OpenXml.Packaging.WorksheetPart openXmlElement)
   {
-    if (openXmlElement != null)
+    var collection = new System.Collections.ObjectModel.Collection<DocumentModel.Packaging.EmbeddedControlPersistenceBinaryDataPart>();
+    foreach (var item in openXmlElement.GetPartsOfType<DocumentFormat.OpenXml.Packaging.EmbeddedControlPersistenceBinaryDataPart>())
     {
-      var collection = new Collection<EmbeddedControlPersistenceBinaryDataPart>();
-      foreach (var item in openXmlElement.GetPartsOfType<DocumentFormat.OpenXml.Packaging.EmbeddedControlPersistenceBinaryDataPart>())
-      {
-        var newItem = EmbeddedControlPersistenceBinaryDataPartConverter.CreateModelElement(item);
-        if (newItem != null)
-          collection.Add(newItem);
-      }
-      return collection;
+      var newItem = DocumentModel.OpenXml.Packaging.EmbeddedControlPersistenceBinaryDataPartConverter.CreateModelElement(item);
+      if (newItem != null)
+        collection.Add(newItem);
     }
-    return null;
+    return collection;
   }
-
+  
   /// <summary>
-  ///   Gets the EmbeddedControlPersistenceParts of the WorksheetPart
+  /// Gets the EmbeddedControlPersistenceParts of the WorksheetPart
   /// </summary>
-  public static Collection<EmbeddedControlPersistencePart>? GetEmbeddedControlPersistenceParts(WorksheetPart? openXmlElement)
+  private static System.Collections.ObjectModel.Collection<DocumentModel.Packaging.EmbeddedControlPersistencePart> GetEmbeddedControlPersistenceParts(DocumentFormat.OpenXml.Packaging.WorksheetPart openXmlElement)
   {
-    if (openXmlElement != null)
+    var collection = new System.Collections.ObjectModel.Collection<DocumentModel.Packaging.EmbeddedControlPersistencePart>();
+    foreach (var item in openXmlElement.GetPartsOfType<DocumentFormat.OpenXml.Packaging.EmbeddedControlPersistencePart>())
     {
-      var collection = new Collection<EmbeddedControlPersistencePart>();
-      foreach (var item in openXmlElement.GetPartsOfType<DocumentFormat.OpenXml.Packaging.EmbeddedControlPersistencePart>())
-      {
-        var newItem = EmbeddedControlPersistencePartConverter.CreateModelElement(item);
-        if (newItem != null)
-          collection.Add(newItem);
-      }
-      return collection;
+      var newItem = DocumentModel.OpenXml.Packaging.EmbeddedControlPersistencePartConverter.CreateModelElement(item);
+      if (newItem != null)
+        collection.Add(newItem);
     }
-    return null;
+    return collection;
   }
-
+  
   /// <summary>
-  ///   Gets the EmbeddedObjectParts of the WorksheetPart
+  /// Gets the EmbeddedObjectParts of the WorksheetPart
   /// </summary>
-  public static Collection<EmbeddedObjectPart>? GetEmbeddedObjectParts(WorksheetPart? openXmlElement)
+  private static System.Collections.ObjectModel.Collection<DocumentModel.Packaging.EmbeddedObjectPart> GetEmbeddedObjectParts(DocumentFormat.OpenXml.Packaging.WorksheetPart openXmlElement)
   {
-    if (openXmlElement != null)
+    var collection = new System.Collections.ObjectModel.Collection<DocumentModel.Packaging.EmbeddedObjectPart>();
+    foreach (var item in openXmlElement.GetPartsOfType<DocumentFormat.OpenXml.Packaging.EmbeddedObjectPart>())
     {
-      var collection = new Collection<EmbeddedObjectPart>();
-      foreach (var item in openXmlElement.GetPartsOfType<DocumentFormat.OpenXml.Packaging.EmbeddedObjectPart>())
-      {
-        var newItem = EmbeddedObjectPartConverter.CreateModelElement(item);
-        if (newItem != null)
-          collection.Add(newItem);
-      }
-      return collection;
+      var newItem = DocumentModel.OpenXml.Packaging.EmbeddedObjectPartConverter.CreateModelElement(item);
+      if (newItem != null)
+        collection.Add(newItem);
     }
-    return null;
+    return collection;
   }
-
+  
   /// <summary>
-  ///   Gets the EmbeddedPackageParts of the WorksheetPart
+  /// Gets the EmbeddedPackageParts of the WorksheetPart
   /// </summary>
-  public static Collection<EmbeddedPackagePart>? GetEmbeddedPackageParts(WorksheetPart? openXmlElement)
+  private static System.Collections.ObjectModel.Collection<DocumentModel.Packaging.EmbeddedPackagePart> GetEmbeddedPackageParts(DocumentFormat.OpenXml.Packaging.WorksheetPart openXmlElement)
   {
-    if (openXmlElement != null)
+    var collection = new System.Collections.ObjectModel.Collection<DocumentModel.Packaging.EmbeddedPackagePart>();
+    foreach (var item in openXmlElement.GetPartsOfType<DocumentFormat.OpenXml.Packaging.EmbeddedPackagePart>())
     {
-      var collection = new Collection<EmbeddedPackagePart>();
-      foreach (var item in openXmlElement.GetPartsOfType<DocumentFormat.OpenXml.Packaging.EmbeddedPackagePart>())
-      {
-        var newItem = EmbeddedPackagePartConverter.CreateModelElement(item);
-        if (newItem != null)
-          collection.Add(newItem);
-      }
-      return collection;
+      var newItem = DocumentModel.OpenXml.Packaging.EmbeddedPackagePartConverter.CreateModelElement(item);
+      if (newItem != null)
+        collection.Add(newItem);
     }
-    return null;
+    return collection;
   }
-
+  
   /// <summary>
-  ///   Gets the ImageParts of the WorksheetPart
+  /// Gets the ImageParts of the WorksheetPart
   /// </summary>
-  public static Collection<ImagePart>? GetImageParts(WorksheetPart? openXmlElement)
+  private static System.Collections.ObjectModel.Collection<DocumentModel.Packaging.ImagePart> GetImageParts(DocumentFormat.OpenXml.Packaging.WorksheetPart openXmlElement)
   {
-    if (openXmlElement != null)
+    var collection = new System.Collections.ObjectModel.Collection<DocumentModel.Packaging.ImagePart>();
+    foreach (var item in openXmlElement.GetPartsOfType<DocumentFormat.OpenXml.Packaging.ImagePart>())
     {
-      var collection = new Collection<ImagePart>();
-      foreach (var item in openXmlElement.GetPartsOfType<DocumentFormat.OpenXml.Packaging.ImagePart>())
-      {
-        var newItem = ImagePartConverter.CreateModelElement(item);
-        if (newItem != null)
-          collection.Add(newItem);
-      }
-      return collection;
+      var newItem = DocumentModel.OpenXml.Packaging.ImagePartConverter.CreateModelElement(item);
+      if (newItem != null)
+        collection.Add(newItem);
     }
-    return null;
+    return collection;
   }
-
+  
   /// <summary>
-  ///   Gets the Model3DReferenceRelationshipParts of the WorksheetPart
+  /// Gets the Model3DReferenceRelationshipParts of the WorksheetPart
   /// </summary>
-  public static Collection<Model3DReferenceRelationshipPart>? GetModel3DReferenceRelationshipParts(WorksheetPart? openXmlElement)
+  private static System.Collections.ObjectModel.Collection<DocumentModel.Packaging.Model3DReferenceRelationshipPart> GetModel3DReferenceRelationshipParts(DocumentFormat.OpenXml.Packaging.WorksheetPart openXmlElement)
   {
-    if (openXmlElement != null)
+    var collection = new System.Collections.ObjectModel.Collection<DocumentModel.Packaging.Model3DReferenceRelationshipPart>();
+    foreach (var item in openXmlElement.GetPartsOfType<DocumentFormat.OpenXml.Packaging.Model3DReferenceRelationshipPart>())
     {
-      var collection = new Collection<Model3DReferenceRelationshipPart>();
-      foreach (var item in openXmlElement.GetPartsOfType<DocumentFormat.OpenXml.Packaging.Model3DReferenceRelationshipPart>())
-      {
-        var newItem = Model3DReferenceRelationshipPartConverter.CreateModelElement(item);
-        if (newItem != null)
-          collection.Add(newItem);
-      }
-      return collection;
+      var newItem = DocumentModel.OpenXml.Packaging.Model3DReferenceRelationshipPartConverter.CreateModelElement(item);
+      if (newItem != null)
+        collection.Add(newItem);
     }
-    return null;
+    return collection;
   }
-
+  
   /// <summary>
-  ///   Gets the NamedSheetViewsParts of the WorksheetPart
+  /// Gets the NamedSheetViewsParts of the WorksheetPart
   /// </summary>
-  public static Collection<NamedSheetViewsPart>? GetNamedSheetViewsParts(WorksheetPart? openXmlElement)
+  private static System.Collections.ObjectModel.Collection<DocumentModel.Packaging.NamedSheetViewsPart> GetNamedSheetViewsParts(DocumentFormat.OpenXml.Packaging.WorksheetPart openXmlElement)
   {
-    if (openXmlElement != null)
+    var collection = new System.Collections.ObjectModel.Collection<DocumentModel.Packaging.NamedSheetViewsPart>();
+    foreach (var item in openXmlElement.GetPartsOfType<DocumentFormat.OpenXml.Packaging.NamedSheetViewsPart>())
     {
-      var collection = new Collection<NamedSheetViewsPart>();
-      foreach (var item in openXmlElement.GetPartsOfType<DocumentFormat.OpenXml.Packaging.NamedSheetViewsPart>())
-      {
-        var newItem = NamedSheetViewsPartConverter.CreateModelElement(item);
-        if (newItem != null)
-          collection.Add(newItem);
-      }
-      return collection;
+      var newItem = DocumentModel.OpenXml.Packaging.NamedSheetViewsPartConverter.CreateModelElement(item);
+      if (newItem != null)
+        collection.Add(newItem);
     }
-    return null;
+    return collection;
   }
-
+  
   /// <summary>
-  ///   Gets the PivotTableParts of the WorksheetPart
+  /// Gets the PivotTableParts of the WorksheetPart
   /// </summary>
-  public static Collection<PivotTablePart>? GetPivotTableParts(WorksheetPart? openXmlElement)
+  private static System.Collections.ObjectModel.Collection<DocumentModel.Packaging.PivotTablePart> GetPivotTableParts(DocumentFormat.OpenXml.Packaging.WorksheetPart openXmlElement)
   {
-    if (openXmlElement != null)
+    var collection = new System.Collections.ObjectModel.Collection<DocumentModel.Packaging.PivotTablePart>();
+    foreach (var item in openXmlElement.GetPartsOfType<DocumentFormat.OpenXml.Packaging.PivotTablePart>())
     {
-      var collection = new Collection<PivotTablePart>();
-      foreach (var item in openXmlElement.GetPartsOfType<DocumentFormat.OpenXml.Packaging.PivotTablePart>())
-      {
-        var newItem = PivotTablePartConverter.CreateModelElement(item);
-        if (newItem != null)
-          collection.Add(newItem);
-      }
-      return collection;
+      var newItem = DocumentModel.OpenXml.Packaging.PivotTablePartConverter.CreateModelElement(item);
+      if (newItem != null)
+        collection.Add(newItem);
     }
-    return null;
+    return collection;
   }
-
+  
   /// <summary>
-  ///   Gets the QueryTableParts of the WorksheetPart
+  /// Gets the QueryTableParts of the WorksheetPart
   /// </summary>
-  public static Collection<QueryTablePart>? GetQueryTableParts(WorksheetPart? openXmlElement)
+  private static System.Collections.ObjectModel.Collection<DocumentModel.Packaging.QueryTablePart> GetQueryTableParts(DocumentFormat.OpenXml.Packaging.WorksheetPart openXmlElement)
   {
-    if (openXmlElement != null)
+    var collection = new System.Collections.ObjectModel.Collection<DocumentModel.Packaging.QueryTablePart>();
+    foreach (var item in openXmlElement.GetPartsOfType<DocumentFormat.OpenXml.Packaging.QueryTablePart>())
     {
-      var collection = new Collection<QueryTablePart>();
-      foreach (var item in openXmlElement.GetPartsOfType<DocumentFormat.OpenXml.Packaging.QueryTablePart>())
-      {
-        var newItem = QueryTablePartConverter.CreateModelElement(item);
-        if (newItem != null)
-          collection.Add(newItem);
-      }
-      return collection;
+      var newItem = DocumentModel.OpenXml.Packaging.QueryTablePartConverter.CreateModelElement(item);
+      if (newItem != null)
+        collection.Add(newItem);
     }
-    return null;
+    return collection;
   }
-
-  public static String? GetRelationshipType(WorksheetPart? openXmlElement)
+  
+  private static String? GetRelationshipType(DocumentFormat.OpenXml.Packaging.WorksheetPart openXmlElement)
   {
     return openXmlElement?.RelationshipType;
   }
-
+  
   /// <summary>
-  ///   Gets the SlicersParts of the WorksheetPart
+  /// Gets the SlicersParts of the WorksheetPart
   /// </summary>
-  public static Collection<SlicersPart>? GetSlicersParts(WorksheetPart? openXmlElement)
+  private static System.Collections.ObjectModel.Collection<DocumentModel.Packaging.SlicersPart> GetSlicersParts(DocumentFormat.OpenXml.Packaging.WorksheetPart openXmlElement)
   {
-    if (openXmlElement != null)
+    var collection = new System.Collections.ObjectModel.Collection<DocumentModel.Packaging.SlicersPart>();
+    foreach (var item in openXmlElement.GetPartsOfType<DocumentFormat.OpenXml.Packaging.SlicersPart>())
     {
-      var collection = new Collection<SlicersPart>();
-      foreach (var item in openXmlElement.GetPartsOfType<DocumentFormat.OpenXml.Packaging.SlicersPart>())
-      {
-        var newItem = SlicersPartConverter.CreateModelElement(item);
-        if (newItem != null)
-          collection.Add(newItem);
-      }
-      return collection;
+      var newItem = DocumentModel.OpenXml.Packaging.SlicersPartConverter.CreateModelElement(item);
+      if (newItem != null)
+        collection.Add(newItem);
     }
-    return null;
+    return collection;
   }
-
+  
   /// <summary>
-  ///   Gets the SpreadsheetPrinterSettingsParts of the WorksheetPart
+  /// Gets the SpreadsheetPrinterSettingsParts of the WorksheetPart
   /// </summary>
-  public static Collection<SpreadsheetPrinterSettingsPart>? GetSpreadsheetPrinterSettingsParts(WorksheetPart? openXmlElement)
+  private static System.Collections.ObjectModel.Collection<DocumentModel.Packaging.SpreadsheetPrinterSettingsPart> GetSpreadsheetPrinterSettingsParts(DocumentFormat.OpenXml.Packaging.WorksheetPart openXmlElement)
   {
-    if (openXmlElement != null)
+    var collection = new System.Collections.ObjectModel.Collection<DocumentModel.Packaging.SpreadsheetPrinterSettingsPart>();
+    foreach (var item in openXmlElement.GetPartsOfType<DocumentFormat.OpenXml.Packaging.SpreadsheetPrinterSettingsPart>())
     {
-      var collection = new Collection<SpreadsheetPrinterSettingsPart>();
-      foreach (var item in openXmlElement.GetPartsOfType<DocumentFormat.OpenXml.Packaging.SpreadsheetPrinterSettingsPart>())
-      {
-        var newItem = SpreadsheetPrinterSettingsPartConverter.CreateModelElement(item);
-        if (newItem != null)
-          collection.Add(newItem);
-      }
-      return collection;
+      var newItem = DocumentModel.OpenXml.Packaging.SpreadsheetPrinterSettingsPartConverter.CreateModelElement(item);
+      if (newItem != null)
+        collection.Add(newItem);
     }
-    return null;
+    return collection;
   }
-
+  
   /// <summary>
-  ///   Gets the TableDefinitionParts of the WorksheetPart
+  /// Gets the TableDefinitionParts of the WorksheetPart
   /// </summary>
-  public static Collection<TableDefinitionPart>? GetTableDefinitionParts(WorksheetPart? openXmlElement)
+  private static System.Collections.ObjectModel.Collection<DocumentModel.Packaging.TableDefinitionPart> GetTableDefinitionParts(DocumentFormat.OpenXml.Packaging.WorksheetPart openXmlElement)
   {
-    if (openXmlElement != null)
+    var collection = new System.Collections.ObjectModel.Collection<DocumentModel.Packaging.TableDefinitionPart>();
+    foreach (var item in openXmlElement.GetPartsOfType<DocumentFormat.OpenXml.Packaging.TableDefinitionPart>())
     {
-      var collection = new Collection<TableDefinitionPart>();
-      foreach (var item in openXmlElement.GetPartsOfType<DocumentFormat.OpenXml.Packaging.TableDefinitionPart>())
-      {
-        var newItem = TableDefinitionPartConverter.CreateModelElement(item);
-        if (newItem != null)
-          collection.Add(newItem);
-      }
-      return collection;
+      var newItem = DocumentModel.OpenXml.Packaging.TableDefinitionPartConverter.CreateModelElement(item);
+      if (newItem != null)
+        collection.Add(newItem);
     }
-    return null;
+    return collection;
   }
-
+  
   /// <summary>
-  ///   Gets the TimeLineParts of the WorksheetPart
+  /// Gets the TimeLineParts of the WorksheetPart
   /// </summary>
-  public static Collection<TimeLinePart>? GetTimeLineParts(WorksheetPart? openXmlElement)
+  private static System.Collections.ObjectModel.Collection<DocumentModel.Packaging.TimeLinePart> GetTimeLineParts(DocumentFormat.OpenXml.Packaging.WorksheetPart openXmlElement)
   {
-    if (openXmlElement != null)
+    var collection = new System.Collections.ObjectModel.Collection<DocumentModel.Packaging.TimeLinePart>();
+    foreach (var item in openXmlElement.GetPartsOfType<DocumentFormat.OpenXml.Packaging.TimeLinePart>())
     {
-      var collection = new Collection<TimeLinePart>();
-      foreach (var item in openXmlElement.GetPartsOfType<DocumentFormat.OpenXml.Packaging.TimeLinePart>())
-      {
-        var newItem = TimeLinePartConverter.CreateModelElement(item);
-        if (newItem != null)
-          collection.Add(newItem);
-      }
-      return collection;
+      var newItem = DocumentModel.OpenXml.Packaging.TimeLinePartConverter.CreateModelElement(item);
+      if (newItem != null)
+        collection.Add(newItem);
     }
-    return null;
+    return collection;
   }
-
+  
   /// <summary>
-  ///   Gets the VmlDrawingParts of the WorksheetPart
+  /// Gets the VmlDrawingParts of the WorksheetPart
   /// </summary>
-  public static Collection<VmlDrawingPart>? GetVmlDrawingParts(WorksheetPart? openXmlElement)
+  private static System.Collections.ObjectModel.Collection<DocumentModel.Packaging.VmlDrawingPart> GetVmlDrawingParts(DocumentFormat.OpenXml.Packaging.WorksheetPart openXmlElement)
   {
-    if (openXmlElement != null)
+    var collection = new System.Collections.ObjectModel.Collection<DocumentModel.Packaging.VmlDrawingPart>();
+    foreach (var item in openXmlElement.GetPartsOfType<DocumentFormat.OpenXml.Packaging.VmlDrawingPart>())
     {
-      var collection = new Collection<VmlDrawingPart>();
-      foreach (var item in openXmlElement.GetPartsOfType<DocumentFormat.OpenXml.Packaging.VmlDrawingPart>())
-      {
-        var newItem = VmlDrawingPartConverter.CreateModelElement(item);
-        if (newItem != null)
-          collection.Add(newItem);
-      }
-      return collection;
+      var newItem = DocumentModel.OpenXml.Packaging.VmlDrawingPartConverter.CreateModelElement(item);
+      if (newItem != null)
+        collection.Add(newItem);
     }
-    return null;
+    return collection;
   }
-
+  
   /// <summary>
-  ///   Gets the WorksheetThreadedCommentsParts of the WorksheetPart
+  /// Gets the WorksheetThreadedCommentsParts of the WorksheetPart
   /// </summary>
-  public static Collection<WorksheetThreadedCommentsPart>? GetWorksheetThreadedCommentsParts(WorksheetPart? openXmlElement)
+  private static System.Collections.ObjectModel.Collection<DocumentModel.Packaging.WorksheetThreadedCommentsPart> GetWorksheetThreadedCommentsParts(DocumentFormat.OpenXml.Packaging.WorksheetPart openXmlElement)
   {
-    if (openXmlElement != null)
+    var collection = new System.Collections.ObjectModel.Collection<DocumentModel.Packaging.WorksheetThreadedCommentsPart>();
+    foreach (var item in openXmlElement.GetPartsOfType<DocumentFormat.OpenXml.Packaging.WorksheetThreadedCommentsPart>())
     {
-      var collection = new Collection<WorksheetThreadedCommentsPart>();
-      foreach (var item in openXmlElement.GetPartsOfType<DocumentFormat.OpenXml.Packaging.WorksheetThreadedCommentsPart>())
-      {
-        var newItem = WorksheetThreadedCommentsPartConverter.CreateModelElement(item);
-        if (newItem != null)
-          collection.Add(newItem);
-      }
-      return collection;
+      var newItem = DocumentModel.OpenXml.Packaging.WorksheetThreadedCommentsPartConverter.CreateModelElement(item);
+      if (newItem != null)
+        collection.Add(newItem);
     }
-    return null;
+    return collection;
   }
-
-  public static DocumentModel.Packaging.WorksheetPart? CreateModelElement(WorksheetPart? openXmlElement)
+  
+  public static DocumentModel.Packaging.WorksheetPart? CreateModelElement(DocumentFormat.OpenXml.Packaging.WorksheetPart? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -385,9 +298,9 @@ public static class WorksheetPartConverter
     }
     return null;
   }
-
+  
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Packaging.WorksheetPart? value)
-    where OpenXmlElementType : WorksheetPart, new()
+    where OpenXmlElementType: DocumentFormat.OpenXml.Packaging.WorksheetPart, new()
   {
     if (value != null)
     {

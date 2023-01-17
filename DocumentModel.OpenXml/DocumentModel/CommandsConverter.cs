@@ -1,54 +1,49 @@
 namespace DocumentModel.OpenXml;
 
 /// <summary>
-///   Defines the Commands Class.
+/// Defines the Commands Class.
 /// </summary>
 public static class CommandsConverter
 {
-  public static Collection<Command>? GetItems(DocumentFormat.OpenXml.Office2010.CustomUI.Commands? openXmlElement)
+  private static System.Collections.ObjectModel.Collection<DocumentModel.Command> GetItems(DocumentFormat.OpenXml.Office2010.CustomUI.Commands openXmlElement)
   {
-    if (openXmlElement != null)
+    var collection = new System.Collections.ObjectModel.Collection<DocumentModel.Command>();
+    foreach (var item in openXmlElement.Elements<DocumentFormat.OpenXml.Office2010.CustomUI.Command>())
     {
-      var collection = new Collection<Command>();
-      foreach (var item in openXmlElement.Elements<DocumentFormat.OpenXml.Office2010.CustomUI.Command>())
+      var newItem = DocumentModel.OpenXml.CommandConverter.CreateModelElement(item);
+      if (newItem != null)
+        collection.Add(newItem);
+    }
+    return collection;
+  }
+  
+  private static void SetItems(DocumentFormat.OpenXml.Office2010.CustomUI.Commands openXmlElement, System.Collections.ObjectModel.Collection<DocumentModel.Command>? value)
+  {
+    openXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Office2010.CustomUI.Command>();
+    if (value != null)
+    {
+      foreach (var item in value)
       {
-        var newItem = CommandConverter.CreateModelElement(item);
+        var newItem = DocumentModel.OpenXml.CommandConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2010.CustomUI.Command>(item);
         if (newItem != null)
-          collection.Add(newItem);
+          openXmlElement.AddChild(newItem);
       }
-      return collection;
     }
-    return null;
   }
-
-  public static void SetItems(DocumentFormat.OpenXml.Office2010.CustomUI.Commands? openXmlElement, Collection<Command>? value)
+  
+  public static DocumentModel.Commands? CreateModelElement(DocumentFormat.OpenXml.Office2010.CustomUI.Commands? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      openXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Office2010.CustomUI.Command>();
-      if (value != null)
-        foreach (var item in value)
-        {
-          var newItem = CommandConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2010.CustomUI.Command>(item);
-          if (newItem != null)
-            openXmlElement.AddChild(newItem);
-        }
-    }
-  }
-
-  public static Commands? CreateModelElement(DocumentFormat.OpenXml.Office2010.CustomUI.Commands? openXmlElement)
-  {
-    if (openXmlElement != null)
-    {
-      var value = new Commands();
+      var value = new DocumentModel.Commands();
       value.Items = GetItems(openXmlElement);
       return value;
     }
     return null;
   }
-
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(Commands? value)
-    where OpenXmlElementType : DocumentFormat.OpenXml.Office2010.CustomUI.Commands, new()
+  
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Commands? value)
+    where OpenXmlElementType: DocumentFormat.OpenXml.Office2010.CustomUI.Commands, new()
   {
     if (value != null)
     {

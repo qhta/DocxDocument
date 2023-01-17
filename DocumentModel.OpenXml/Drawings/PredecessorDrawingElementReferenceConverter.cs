@@ -1,30 +1,27 @@
-using DocumentFormat.OpenXml.Office2016.Drawing;
-
 namespace DocumentModel.OpenXml.Drawings;
 
 /// <summary>
-///   Defines the PredecessorDrawingElementReference Class.
+/// Defines the PredecessorDrawingElementReference Class.
 /// </summary>
 public static class PredecessorDrawingElementReferenceConverter
 {
   /// <summary>
-  ///   pred, this property is only available in Office 2016 and later.
+  /// pred, this property is only available in Office 2016 and later.
   /// </summary>
-  public static String? GetPred(PredecessorDrawingElementReference? openXmlElement)
+  private static String? GetPred(DocumentFormat.OpenXml.Office2016.Drawing.PredecessorDrawingElementReference openXmlElement)
   {
     return openXmlElement?.Pred?.Value;
   }
-
-  public static void SetPred(PredecessorDrawingElementReference? openXmlElement, String? value)
+  
+  private static void SetPred(DocumentFormat.OpenXml.Office2016.Drawing.PredecessorDrawingElementReference openXmlElement, String? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.Pred = new StringValue { Value = value };
-      else
-        openXmlElement.Pred = null;
+    if (value != null)
+      openXmlElement.Pred = new StringValue { Value = value };
+    else
+      openXmlElement.Pred = null;
   }
-
-  public static DocumentModel.Drawings.PredecessorDrawingElementReference? CreateModelElement(PredecessorDrawingElementReference? openXmlElement)
+  
+  public static DocumentModel.Drawings.PredecessorDrawingElementReference? CreateModelElement(DocumentFormat.OpenXml.Office2016.Drawing.PredecessorDrawingElementReference? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -34,9 +31,9 @@ public static class PredecessorDrawingElementReferenceConverter
     }
     return null;
   }
-
+  
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.PredecessorDrawingElementReference? value)
-    where OpenXmlElementType : PredecessorDrawingElementReference, new()
+    where OpenXmlElementType: DocumentFormat.OpenXml.Office2016.Drawing.PredecessorDrawingElementReference, new()
   {
     if (value != null)
     {

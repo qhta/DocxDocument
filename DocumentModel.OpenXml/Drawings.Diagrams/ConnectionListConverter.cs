@@ -1,45 +1,37 @@
-using DocumentModel.Drawings.Diagrams;
-using ConnectionList = DocumentFormat.OpenXml.Drawing.Diagrams.ConnectionList;
-
 namespace DocumentModel.OpenXml.Drawings.Diagrams;
 
 /// <summary>
-///   Connection List.
+/// Connection List.
 /// </summary>
 public static class ConnectionListConverter
 {
-  public static Collection<Connection>? GetConnections(ConnectionList? openXmlElement)
+  private static System.Collections.ObjectModel.Collection<DocumentModel.Drawings.Diagrams.Connection> GetConnections(DocumentFormat.OpenXml.Drawing.Diagrams.ConnectionList openXmlElement)
   {
-    if (openXmlElement != null)
+    var collection = new System.Collections.ObjectModel.Collection<DocumentModel.Drawings.Diagrams.Connection>();
+    foreach (var item in openXmlElement.Elements<DocumentFormat.OpenXml.Drawing.Diagrams.Connection>())
     {
-      var collection = new Collection<Connection>();
-      foreach (var item in openXmlElement.Elements<DocumentFormat.OpenXml.Drawing.Diagrams.Connection>())
+      var newItem = DocumentModel.OpenXml.Drawings.Diagrams.ConnectionConverter.CreateModelElement(item);
+      if (newItem != null)
+        collection.Add(newItem);
+    }
+    return collection;
+  }
+  
+  private static void SetConnections(DocumentFormat.OpenXml.Drawing.Diagrams.ConnectionList openXmlElement, System.Collections.ObjectModel.Collection<DocumentModel.Drawings.Diagrams.Connection>? value)
+  {
+    openXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Drawing.Diagrams.Connection>();
+    if (value != null)
+    {
+      foreach (var item in value)
       {
-        var newItem = ConnectionConverter.CreateModelElement(item);
+        var newItem = DocumentModel.OpenXml.Drawings.Diagrams.ConnectionConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Diagrams.Connection>(item);
         if (newItem != null)
-          collection.Add(newItem);
+          openXmlElement.AddChild(newItem);
       }
-      return collection;
-    }
-    return null;
-  }
-
-  public static void SetConnections(ConnectionList? openXmlElement, Collection<Connection>? value)
-  {
-    if (openXmlElement != null)
-    {
-      openXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Drawing.Diagrams.Connection>();
-      if (value != null)
-        foreach (var item in value)
-        {
-          var newItem = ConnectionConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Diagrams.Connection>(item);
-          if (newItem != null)
-            openXmlElement.AddChild(newItem);
-        }
     }
   }
-
-  public static DocumentModel.Drawings.Diagrams.ConnectionList? CreateModelElement(ConnectionList? openXmlElement)
+  
+  public static DocumentModel.Drawings.Diagrams.ConnectionList? CreateModelElement(DocumentFormat.OpenXml.Drawing.Diagrams.ConnectionList? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -49,9 +41,9 @@ public static class ConnectionListConverter
     }
     return null;
   }
-
+  
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.Diagrams.ConnectionList? value)
-    where OpenXmlElementType : ConnectionList, new()
+    where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.Diagrams.ConnectionList, new()
   {
     if (value != null)
     {

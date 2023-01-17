@@ -1,132 +1,123 @@
-using DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing;
-
 namespace DocumentModel.OpenXml.Drawings.ChartDrawings;
 
 /// <summary>
-///   Defines the Address Class.
+/// Defines the Address Class.
 /// </summary>
 public static class AddressConverter
 {
   /// <summary>
-  ///   address1, this property is only available in Office 2016 and later.
+  /// address1, this property is only available in Office 2016 and later.
   /// </summary>
-  public static String? GetAddress1(Address? openXmlElement)
+  private static String? GetAddress1(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.Address openXmlElement)
   {
     return openXmlElement?.Address1?.Value;
   }
-
-  public static void SetAddress1(Address? openXmlElement, String? value)
+  
+  private static void SetAddress1(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.Address openXmlElement, String? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.Address1 = new StringValue { Value = value };
-      else
-        openXmlElement.Address1 = null;
+    if (value != null)
+      openXmlElement.Address1 = new StringValue { Value = value };
+    else
+      openXmlElement.Address1 = null;
   }
-
+  
   /// <summary>
-  ///   countryRegion, this property is only available in Office 2016 and later.
+  /// countryRegion, this property is only available in Office 2016 and later.
   /// </summary>
-  public static String? GetCountryRegion(Address? openXmlElement)
+  private static String? GetCountryRegion(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.Address openXmlElement)
   {
     return openXmlElement?.CountryRegion?.Value;
   }
-
-  public static void SetCountryRegion(Address? openXmlElement, String? value)
+  
+  private static void SetCountryRegion(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.Address openXmlElement, String? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.CountryRegion = new StringValue { Value = value };
-      else
-        openXmlElement.CountryRegion = null;
+    if (value != null)
+      openXmlElement.CountryRegion = new StringValue { Value = value };
+    else
+      openXmlElement.CountryRegion = null;
   }
-
+  
   /// <summary>
-  ///   adminDistrict1, this property is only available in Office 2016 and later.
+  /// adminDistrict1, this property is only available in Office 2016 and later.
   /// </summary>
-  public static String? GetAdminDistrict1(Address? openXmlElement)
+  private static String? GetAdminDistrict1(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.Address openXmlElement)
   {
     return openXmlElement?.AdminDistrict1?.Value;
   }
-
-  public static void SetAdminDistrict1(Address? openXmlElement, String? value)
+  
+  private static void SetAdminDistrict1(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.Address openXmlElement, String? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.AdminDistrict1 = new StringValue { Value = value };
-      else
-        openXmlElement.AdminDistrict1 = null;
+    if (value != null)
+      openXmlElement.AdminDistrict1 = new StringValue { Value = value };
+    else
+      openXmlElement.AdminDistrict1 = null;
   }
-
+  
   /// <summary>
-  ///   adminDistrict2, this property is only available in Office 2016 and later.
+  /// adminDistrict2, this property is only available in Office 2016 and later.
   /// </summary>
-  public static String? GetAdminDistrict2(Address? openXmlElement)
+  private static String? GetAdminDistrict2(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.Address openXmlElement)
   {
     return openXmlElement?.AdminDistrict2?.Value;
   }
-
-  public static void SetAdminDistrict2(Address? openXmlElement, String? value)
+  
+  private static void SetAdminDistrict2(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.Address openXmlElement, String? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.AdminDistrict2 = new StringValue { Value = value };
-      else
-        openXmlElement.AdminDistrict2 = null;
+    if (value != null)
+      openXmlElement.AdminDistrict2 = new StringValue { Value = value };
+    else
+      openXmlElement.AdminDistrict2 = null;
   }
-
+  
   /// <summary>
-  ///   postalCode, this property is only available in Office 2016 and later.
+  /// postalCode, this property is only available in Office 2016 and later.
   /// </summary>
-  public static String? GetPostalCode(Address? openXmlElement)
+  private static String? GetPostalCode(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.Address openXmlElement)
   {
     return openXmlElement?.PostalCode?.Value;
   }
-
-  public static void SetPostalCode(Address? openXmlElement, String? value)
+  
+  private static void SetPostalCode(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.Address openXmlElement, String? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.PostalCode = new StringValue { Value = value };
-      else
-        openXmlElement.PostalCode = null;
+    if (value != null)
+      openXmlElement.PostalCode = new StringValue { Value = value };
+    else
+      openXmlElement.PostalCode = null;
   }
-
+  
   /// <summary>
-  ///   locality, this property is only available in Office 2016 and later.
+  /// locality, this property is only available in Office 2016 and later.
   /// </summary>
-  public static String? GetLocality(Address? openXmlElement)
+  private static String? GetLocality(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.Address openXmlElement)
   {
     return openXmlElement?.Locality?.Value;
   }
-
-  public static void SetLocality(Address? openXmlElement, String? value)
+  
+  private static void SetLocality(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.Address openXmlElement, String? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.Locality = new StringValue { Value = value };
-      else
-        openXmlElement.Locality = null;
+    if (value != null)
+      openXmlElement.Locality = new StringValue { Value = value };
+    else
+      openXmlElement.Locality = null;
   }
-
+  
   /// <summary>
-  ///   isoCountryCode, this property is only available in Office 2016 and later.
+  /// isoCountryCode, this property is only available in Office 2016 and later.
   /// </summary>
-  public static String? GetIsoCountryCode(Address? openXmlElement)
+  private static String? GetIsoCountryCode(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.Address openXmlElement)
   {
     return openXmlElement?.IsoCountryCode?.Value;
   }
-
-  public static void SetIsoCountryCode(Address? openXmlElement, String? value)
+  
+  private static void SetIsoCountryCode(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.Address openXmlElement, String? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.IsoCountryCode = new StringValue { Value = value };
-      else
-        openXmlElement.IsoCountryCode = null;
+    if (value != null)
+      openXmlElement.IsoCountryCode = new StringValue { Value = value };
+    else
+      openXmlElement.IsoCountryCode = null;
   }
-
-  public static DocumentModel.Drawings.ChartDrawings.Address? CreateModelElement(Address? openXmlElement)
+  
+  public static DocumentModel.Drawings.ChartDrawings.Address? CreateModelElement(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.Address? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -142,9 +133,9 @@ public static class AddressConverter
     }
     return null;
   }
-
+  
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.ChartDrawings.Address? value)
-    where OpenXmlElementType : Address, new()
+    where OpenXmlElementType: DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.Address, new()
   {
     if (value != null)
     {

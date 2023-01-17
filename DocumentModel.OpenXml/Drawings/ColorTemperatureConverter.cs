@@ -1,27 +1,24 @@
-using DocumentFormat.OpenXml.Office2010.Drawing;
-
 namespace DocumentModel.OpenXml.Drawings;
 
 /// <summary>
-///   Defines the ColorTemperature Class.
+/// Defines the ColorTemperature Class.
 /// </summary>
 public static class ColorTemperatureConverter
 {
   /// <summary>
-  ///   colorTemp, this property is only available in Office 2010 and later.
+  /// colorTemp, this property is only available in Office 2010 and later.
   /// </summary>
-  public static Int32? GetColorTemperatureValue(ColorTemperature? openXmlElement)
+  private static Int32? GetColorTemperatureValue(DocumentFormat.OpenXml.Office2010.Drawing.ColorTemperature openXmlElement)
   {
-    return openXmlElement?.ColorTemperatureValue?.Value;
+    return openXmlElement.ColorTemperatureValue?.Value;
   }
-
-  public static void SetColorTemperatureValue(ColorTemperature? openXmlElement, Int32? value)
+  
+  private static void SetColorTemperatureValue(DocumentFormat.OpenXml.Office2010.Drawing.ColorTemperature openXmlElement, Int32? value)
   {
-    if (openXmlElement != null)
-      openXmlElement.ColorTemperatureValue = value;
+    openXmlElement.ColorTemperatureValue = value;
   }
-
-  public static DocumentModel.Drawings.ColorTemperature? CreateModelElement(ColorTemperature? openXmlElement)
+  
+  public static DocumentModel.Drawings.ColorTemperature? CreateModelElement(DocumentFormat.OpenXml.Office2010.Drawing.ColorTemperature? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -31,9 +28,9 @@ public static class ColorTemperatureConverter
     }
     return null;
   }
-
+  
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.ColorTemperature? value)
-    where OpenXmlElementType : ColorTemperature, new()
+    where OpenXmlElementType: DocumentFormat.OpenXml.Office2010.Drawing.ColorTemperature, new()
   {
     if (value != null)
     {

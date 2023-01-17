@@ -1,39 +1,34 @@
-using DocumentFormat.OpenXml.Drawing.Charts;
-
 namespace DocumentModel.OpenXml.Drawings.Charts;
 
 /// <summary>
-///   Defines the StringDataType Class.
+/// Defines the StringDataType Class.
 /// </summary>
 public static class StringDataTypeConverter
 {
   /// <summary>
-  ///   PointCount.
+  /// PointCount.
   /// </summary>
-  public static UInt32? GetPointCount(StringDataType? openXmlElement)
+  private static UInt32? GetPointCount(DocumentFormat.OpenXml.Drawing.Charts.StringDataType openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<PointCount>();
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.PointCount>();
     if (itemElement != null)
       return itemElement.Val?.Value;
     return null;
   }
-
-  public static void SetPointCount(StringDataType? openXmlElement, UInt32? value)
+  
+  private static void SetPointCount(DocumentFormat.OpenXml.Drawing.Charts.StringDataType openXmlElement, UInt32? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.PointCount>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<PointCount>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = new PointCount { Val = value };
-        openXmlElement.AddChild(itemElement);
-      }
+      itemElement = new DocumentFormat.OpenXml.Drawing.Charts.PointCount{ Val = value };
+      openXmlElement.AddChild(itemElement);
     }
   }
-
-  public static DocumentModel.Drawings.Charts.StringDataType? CreateModelElement(StringDataType? openXmlElement)
+  
+  public static DocumentModel.Drawings.Charts.StringDataType? CreateModelElement(DocumentFormat.OpenXml.Drawing.Charts.StringDataType? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -43,9 +38,9 @@ public static class StringDataTypeConverter
     }
     return null;
   }
-
+  
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.Charts.StringDataType? value)
-    where OpenXmlElementType : StringDataType, new()
+    where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.Charts.StringDataType, new()
   {
     if (value != null)
     {

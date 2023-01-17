@@ -1,98 +1,85 @@
-using DocumentFormat.OpenXml.Drawing.Charts;
-using DocumentModel.Drawings.Charts;
-using PivotSource = DocumentFormat.OpenXml.Office2013.Drawing.Chart.PivotSource;
-
 namespace DocumentModel.OpenXml.Drawings.Charts;
 
 /// <summary>
-///   Defines the PivotSource Class.
+/// Defines the PivotSource Class.
 /// </summary>
 public static class PivotSource3Converter
 {
   /// <summary>
-  ///   Pivot Name.
+  /// Pivot Name.
   /// </summary>
-  public static String? GetPivotTableName(PivotSource? openXmlElement)
+  private static String? GetPivotTableName(DocumentFormat.OpenXml.Office2013.Drawing.Chart.PivotSource openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<PivotTableName>();
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.PivotTableName>();
     if (itemElement != null)
       return itemElement.Text;
     return null;
   }
-
-  public static void SetPivotTableName(PivotSource? openXmlElement, String? value)
+  
+  private static void SetPivotTableName(DocumentFormat.OpenXml.Office2013.Drawing.Chart.PivotSource openXmlElement, String? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.PivotTableName>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<PivotTableName>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = new PivotTableName { Text = value };
-        openXmlElement.AddChild(itemElement);
-      }
+      itemElement = new DocumentFormat.OpenXml.Drawing.Charts.PivotTableName { Text = value };
+      openXmlElement.AddChild(itemElement);
     }
   }
-
+  
   /// <summary>
-  ///   Format ID.
+  /// Format ID.
   /// </summary>
-  public static UInt32? GetFormatId(PivotSource? openXmlElement)
+  private static UInt32? GetFormatId(DocumentFormat.OpenXml.Office2013.Drawing.Chart.PivotSource openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<FormatId>();
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.FormatId>();
     if (itemElement != null)
       return itemElement.Val?.Value;
     return null;
   }
-
-  public static void SetFormatId(PivotSource? openXmlElement, UInt32? value)
+  
+  private static void SetFormatId(DocumentFormat.OpenXml.Office2013.Drawing.Chart.PivotSource openXmlElement, UInt32? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.FormatId>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<FormatId>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = new FormatId { Val = value };
-        openXmlElement.AddChild(itemElement);
-      }
+      itemElement = new DocumentFormat.OpenXml.Drawing.Charts.FormatId{ Val = value };
+      openXmlElement.AddChild(itemElement);
     }
   }
-
+  
   /// <summary>
-  ///   Chart Extensibility.
+  /// Chart Extensibility.
   /// </summary>
-  public static DocumentModel.Drawings.Charts.ExtensionList? GetExtensionList(PivotSource? openXmlElement)
+  private static DocumentModel.Drawings.Charts.ExtensionList? GetExtensionList(DocumentFormat.OpenXml.Office2013.Drawing.Chart.PivotSource openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.ExtensionList>();
     if (itemElement != null)
-      return ExtensionListConverter.CreateModelElement(itemElement);
+      return DocumentModel.OpenXml.Drawings.Charts.ExtensionListConverter.CreateModelElement(itemElement);
     return null;
   }
-
-  public static void SetExtensionList(PivotSource? openXmlElement, DocumentModel.Drawings.Charts.ExtensionList? value)
+  
+  private static void SetExtensionList(DocumentFormat.OpenXml.Office2013.Drawing.Chart.PivotSource openXmlElement, DocumentModel.Drawings.Charts.ExtensionList? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.ExtensionList>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.ExtensionList>();
+      itemElement = DocumentModel.OpenXml.Drawings.Charts.ExtensionListConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Charts.ExtensionList>(value);
       if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = ExtensionListConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Charts.ExtensionList>(value);
-        if (itemElement != null)
-          openXmlElement.AddChild(itemElement);
-      }
+        openXmlElement.AddChild(itemElement);
     }
   }
-
-  public static PivotSource3? CreateModelElement(PivotSource? openXmlElement)
+  
+  public static DocumentModel.Drawings.Charts.PivotSource3? CreateModelElement(DocumentFormat.OpenXml.Office2013.Drawing.Chart.PivotSource? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new PivotSource3();
+      var value = new DocumentModel.Drawings.Charts.PivotSource3();
       value.PivotTableName = GetPivotTableName(openXmlElement);
       value.FormatId = GetFormatId(openXmlElement);
       value.ExtensionList = GetExtensionList(openXmlElement);
@@ -100,9 +87,9 @@ public static class PivotSource3Converter
     }
     return null;
   }
-
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(PivotSource3? value)
-    where OpenXmlElementType : PivotSource, new()
+  
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.Charts.PivotSource3? value)
+    where OpenXmlElementType: DocumentFormat.OpenXml.Office2013.Drawing.Chart.PivotSource, new()
   {
     if (value != null)
     {

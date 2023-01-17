@@ -1,122 +1,107 @@
-using DocumentModel.Drawings;
-using ObjectDefaults = DocumentFormat.OpenXml.Drawing.ObjectDefaults;
-
 namespace DocumentModel.OpenXml.Drawings;
 
 /// <summary>
-///   Defines the ObjectDefaults Class.
+/// Defines the ObjectDefaults Class.
 /// </summary>
 public static class ObjectDefaultsConverter
 {
   /// <summary>
-  ///   Shape Default.
+  /// Shape Default.
   /// </summary>
-  public static ShapeDefault? GetShapeDefault(ObjectDefaults? openXmlElement)
+  private static DocumentModel.Drawings.ShapeDefault? GetShapeDefault(DocumentFormat.OpenXml.Drawing.ObjectDefaults openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.ShapeDefault>();
     if (itemElement != null)
-      return ShapeDefaultConverter.CreateModelElement(itemElement);
+      return DocumentModel.OpenXml.Drawings.ShapeDefaultConverter.CreateModelElement(itemElement);
     return null;
   }
-
-  public static void SetShapeDefault(ObjectDefaults? openXmlElement, ShapeDefault? value)
+  
+  private static void SetShapeDefault(DocumentFormat.OpenXml.Drawing.ObjectDefaults openXmlElement, DocumentModel.Drawings.ShapeDefault? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.ShapeDefault>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.ShapeDefault>();
+      itemElement = DocumentModel.OpenXml.Drawings.ShapeDefaultConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.ShapeDefault>(value);
       if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = ShapeDefaultConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.ShapeDefault>(value);
-        if (itemElement != null)
-          openXmlElement.AddChild(itemElement);
-      }
+        openXmlElement.AddChild(itemElement);
     }
   }
-
+  
   /// <summary>
-  ///   Line Default.
+  /// Line Default.
   /// </summary>
-  public static LineDefault? GetLineDefault(ObjectDefaults? openXmlElement)
+  private static DocumentModel.Drawings.LineDefault? GetLineDefault(DocumentFormat.OpenXml.Drawing.ObjectDefaults openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.LineDefault>();
     if (itemElement != null)
-      return LineDefaultConverter.CreateModelElement(itemElement);
+      return DocumentModel.OpenXml.Drawings.LineDefaultConverter.CreateModelElement(itemElement);
     return null;
   }
-
-  public static void SetLineDefault(ObjectDefaults? openXmlElement, LineDefault? value)
+  
+  private static void SetLineDefault(DocumentFormat.OpenXml.Drawing.ObjectDefaults openXmlElement, DocumentModel.Drawings.LineDefault? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.LineDefault>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.LineDefault>();
+      itemElement = DocumentModel.OpenXml.Drawings.LineDefaultConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.LineDefault>(value);
       if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = LineDefaultConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.LineDefault>(value);
-        if (itemElement != null)
-          openXmlElement.AddChild(itemElement);
-      }
+        openXmlElement.AddChild(itemElement);
     }
   }
-
+  
   /// <summary>
-  ///   Text Default.
+  /// Text Default.
   /// </summary>
-  public static TextDefault? GetTextDefault(ObjectDefaults? openXmlElement)
+  private static DocumentModel.Drawings.TextDefault? GetTextDefault(DocumentFormat.OpenXml.Drawing.ObjectDefaults openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.TextDefault>();
     if (itemElement != null)
-      return TextDefaultConverter.CreateModelElement(itemElement);
+      return DocumentModel.OpenXml.Drawings.TextDefaultConverter.CreateModelElement(itemElement);
     return null;
   }
-
-  public static void SetTextDefault(ObjectDefaults? openXmlElement, TextDefault? value)
+  
+  private static void SetTextDefault(DocumentFormat.OpenXml.Drawing.ObjectDefaults openXmlElement, DocumentModel.Drawings.TextDefault? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.TextDefault>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.TextDefault>();
+      itemElement = DocumentModel.OpenXml.Drawings.TextDefaultConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.TextDefault>(value);
       if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = TextDefaultConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.TextDefault>(value);
-        if (itemElement != null)
-          openXmlElement.AddChild(itemElement);
-      }
+        openXmlElement.AddChild(itemElement);
     }
   }
-
+  
   /// <summary>
-  ///   ExtensionList.
+  /// ExtensionList.
   /// </summary>
-  public static DocumentModel.Drawings.ExtensionList? GetExtensionList(ObjectDefaults? openXmlElement)
+  private static DocumentModel.Drawings.ExtensionList? GetExtensionList(DocumentFormat.OpenXml.Drawing.ObjectDefaults openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.ExtensionList>();
     if (itemElement != null)
-      return ExtensionListConverter.CreateModelElement(itemElement);
+      return DocumentModel.OpenXml.Drawings.ExtensionListConverter.CreateModelElement(itemElement);
     return null;
   }
-
-  public static void SetExtensionList(ObjectDefaults? openXmlElement, DocumentModel.Drawings.ExtensionList? value)
+  
+  private static void SetExtensionList(DocumentFormat.OpenXml.Drawing.ObjectDefaults openXmlElement, DocumentModel.Drawings.ExtensionList? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.ExtensionList>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.ExtensionList>();
+      itemElement = DocumentModel.OpenXml.Drawings.ExtensionListConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.ExtensionList>(value);
       if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = ExtensionListConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.ExtensionList>(value);
-        if (itemElement != null)
-          openXmlElement.AddChild(itemElement);
-      }
+        openXmlElement.AddChild(itemElement);
     }
   }
-
-  public static DocumentModel.Drawings.ObjectDefaults? CreateModelElement(ObjectDefaults? openXmlElement)
+  
+  public static DocumentModel.Drawings.ObjectDefaults? CreateModelElement(DocumentFormat.OpenXml.Drawing.ObjectDefaults? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -129,9 +114,9 @@ public static class ObjectDefaultsConverter
     }
     return null;
   }
-
+  
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.ObjectDefaults? value)
-    where OpenXmlElementType : ObjectDefaults, new()
+    where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.ObjectDefaults, new()
   {
     if (value != null)
     {

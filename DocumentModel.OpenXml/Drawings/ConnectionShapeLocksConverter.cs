@@ -1,211 +1,195 @@
-using DocumentFormat.OpenXml.Drawing;
-using ConnectorLockingExtensionList = DocumentModel.Drawings.ConnectorLockingExtensionList;
-
 namespace DocumentModel.OpenXml.Drawings;
 
 /// <summary>
-///   Connection Shape Locks.
+/// Connection Shape Locks.
 /// </summary>
 public static class ConnectionShapeLocksConverter
 {
   /// <summary>
-  ///   Disallow Shape Grouping
+  /// Disallow Shape Grouping
   /// </summary>
-  public static Boolean? GetNoGrouping(ConnectionShapeLocks? openXmlElement)
+  private static Boolean? GetNoGrouping(DocumentFormat.OpenXml.Drawing.ConnectionShapeLocks openXmlElement)
   {
     return openXmlElement?.NoGrouping?.Value;
   }
-
-  public static void SetNoGrouping(ConnectionShapeLocks? openXmlElement, Boolean? value)
+  
+  private static void SetNoGrouping(DocumentFormat.OpenXml.Drawing.ConnectionShapeLocks openXmlElement, Boolean? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.NoGrouping = new BooleanValue { Value = (Boolean)value };
-      else
-        openXmlElement.NoGrouping = null;
+    if (value != null)
+      openXmlElement.NoGrouping = new BooleanValue { Value = (Boolean)value };
+    else
+      openXmlElement.NoGrouping = null;
   }
-
+  
   /// <summary>
-  ///   Disallow Shape Selection
+  /// Disallow Shape Selection
   /// </summary>
-  public static Boolean? GetNoSelection(ConnectionShapeLocks? openXmlElement)
+  private static Boolean? GetNoSelection(DocumentFormat.OpenXml.Drawing.ConnectionShapeLocks openXmlElement)
   {
     return openXmlElement?.NoSelection?.Value;
   }
-
-  public static void SetNoSelection(ConnectionShapeLocks? openXmlElement, Boolean? value)
+  
+  private static void SetNoSelection(DocumentFormat.OpenXml.Drawing.ConnectionShapeLocks openXmlElement, Boolean? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.NoSelection = new BooleanValue { Value = (Boolean)value };
-      else
-        openXmlElement.NoSelection = null;
+    if (value != null)
+      openXmlElement.NoSelection = new BooleanValue { Value = (Boolean)value };
+    else
+      openXmlElement.NoSelection = null;
   }
-
+  
   /// <summary>
-  ///   Disallow Shape Rotation
+  /// Disallow Shape Rotation
   /// </summary>
-  public static Boolean? GetNoRotation(ConnectionShapeLocks? openXmlElement)
+  private static Boolean? GetNoRotation(DocumentFormat.OpenXml.Drawing.ConnectionShapeLocks openXmlElement)
   {
     return openXmlElement?.NoRotation?.Value;
   }
-
-  public static void SetNoRotation(ConnectionShapeLocks? openXmlElement, Boolean? value)
+  
+  private static void SetNoRotation(DocumentFormat.OpenXml.Drawing.ConnectionShapeLocks openXmlElement, Boolean? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.NoRotation = new BooleanValue { Value = (Boolean)value };
-      else
-        openXmlElement.NoRotation = null;
+    if (value != null)
+      openXmlElement.NoRotation = new BooleanValue { Value = (Boolean)value };
+    else
+      openXmlElement.NoRotation = null;
   }
-
+  
   /// <summary>
-  ///   Disallow Aspect Ratio Change
+  /// Disallow Aspect Ratio Change
   /// </summary>
-  public static Boolean? GetNoChangeAspect(ConnectionShapeLocks? openXmlElement)
+  private static Boolean? GetNoChangeAspect(DocumentFormat.OpenXml.Drawing.ConnectionShapeLocks openXmlElement)
   {
     return openXmlElement?.NoChangeAspect?.Value;
   }
-
-  public static void SetNoChangeAspect(ConnectionShapeLocks? openXmlElement, Boolean? value)
+  
+  private static void SetNoChangeAspect(DocumentFormat.OpenXml.Drawing.ConnectionShapeLocks openXmlElement, Boolean? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.NoChangeAspect = new BooleanValue { Value = (Boolean)value };
-      else
-        openXmlElement.NoChangeAspect = null;
+    if (value != null)
+      openXmlElement.NoChangeAspect = new BooleanValue { Value = (Boolean)value };
+    else
+      openXmlElement.NoChangeAspect = null;
   }
-
+  
   /// <summary>
-  ///   Disallow Shape Movement
+  /// Disallow Shape Movement
   /// </summary>
-  public static Boolean? GetNoMove(ConnectionShapeLocks? openXmlElement)
+  private static Boolean? GetNoMove(DocumentFormat.OpenXml.Drawing.ConnectionShapeLocks openXmlElement)
   {
     return openXmlElement?.NoMove?.Value;
   }
-
-  public static void SetNoMove(ConnectionShapeLocks? openXmlElement, Boolean? value)
+  
+  private static void SetNoMove(DocumentFormat.OpenXml.Drawing.ConnectionShapeLocks openXmlElement, Boolean? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.NoMove = new BooleanValue { Value = (Boolean)value };
-      else
-        openXmlElement.NoMove = null;
+    if (value != null)
+      openXmlElement.NoMove = new BooleanValue { Value = (Boolean)value };
+    else
+      openXmlElement.NoMove = null;
   }
-
+  
   /// <summary>
-  ///   Disallow Shape Resize
+  /// Disallow Shape Resize
   /// </summary>
-  public static Boolean? GetNoResize(ConnectionShapeLocks? openXmlElement)
+  private static Boolean? GetNoResize(DocumentFormat.OpenXml.Drawing.ConnectionShapeLocks openXmlElement)
   {
     return openXmlElement?.NoResize?.Value;
   }
-
-  public static void SetNoResize(ConnectionShapeLocks? openXmlElement, Boolean? value)
+  
+  private static void SetNoResize(DocumentFormat.OpenXml.Drawing.ConnectionShapeLocks openXmlElement, Boolean? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.NoResize = new BooleanValue { Value = (Boolean)value };
-      else
-        openXmlElement.NoResize = null;
+    if (value != null)
+      openXmlElement.NoResize = new BooleanValue { Value = (Boolean)value };
+    else
+      openXmlElement.NoResize = null;
   }
-
+  
   /// <summary>
-  ///   Disallow Shape Point Editing
+  /// Disallow Shape Point Editing
   /// </summary>
-  public static Boolean? GetNoEditPoints(ConnectionShapeLocks? openXmlElement)
+  private static Boolean? GetNoEditPoints(DocumentFormat.OpenXml.Drawing.ConnectionShapeLocks openXmlElement)
   {
     return openXmlElement?.NoEditPoints?.Value;
   }
-
-  public static void SetNoEditPoints(ConnectionShapeLocks? openXmlElement, Boolean? value)
+  
+  private static void SetNoEditPoints(DocumentFormat.OpenXml.Drawing.ConnectionShapeLocks openXmlElement, Boolean? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.NoEditPoints = new BooleanValue { Value = (Boolean)value };
-      else
-        openXmlElement.NoEditPoints = null;
+    if (value != null)
+      openXmlElement.NoEditPoints = new BooleanValue { Value = (Boolean)value };
+    else
+      openXmlElement.NoEditPoints = null;
   }
-
+  
   /// <summary>
-  ///   Disallow Showing Adjust Handles
+  /// Disallow Showing Adjust Handles
   /// </summary>
-  public static Boolean? GetNoAdjustHandles(ConnectionShapeLocks? openXmlElement)
+  private static Boolean? GetNoAdjustHandles(DocumentFormat.OpenXml.Drawing.ConnectionShapeLocks openXmlElement)
   {
     return openXmlElement?.NoAdjustHandles?.Value;
   }
-
-  public static void SetNoAdjustHandles(ConnectionShapeLocks? openXmlElement, Boolean? value)
+  
+  private static void SetNoAdjustHandles(DocumentFormat.OpenXml.Drawing.ConnectionShapeLocks openXmlElement, Boolean? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.NoAdjustHandles = new BooleanValue { Value = (Boolean)value };
-      else
-        openXmlElement.NoAdjustHandles = null;
+    if (value != null)
+      openXmlElement.NoAdjustHandles = new BooleanValue { Value = (Boolean)value };
+    else
+      openXmlElement.NoAdjustHandles = null;
   }
-
+  
   /// <summary>
-  ///   Disallow Arrowhead Changes
+  /// Disallow Arrowhead Changes
   /// </summary>
-  public static Boolean? GetNoChangeArrowheads(ConnectionShapeLocks? openXmlElement)
+  private static Boolean? GetNoChangeArrowheads(DocumentFormat.OpenXml.Drawing.ConnectionShapeLocks openXmlElement)
   {
     return openXmlElement?.NoChangeArrowheads?.Value;
   }
-
-  public static void SetNoChangeArrowheads(ConnectionShapeLocks? openXmlElement, Boolean? value)
+  
+  private static void SetNoChangeArrowheads(DocumentFormat.OpenXml.Drawing.ConnectionShapeLocks openXmlElement, Boolean? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.NoChangeArrowheads = new BooleanValue { Value = (Boolean)value };
-      else
-        openXmlElement.NoChangeArrowheads = null;
+    if (value != null)
+      openXmlElement.NoChangeArrowheads = new BooleanValue { Value = (Boolean)value };
+    else
+      openXmlElement.NoChangeArrowheads = null;
   }
-
+  
   /// <summary>
-  ///   Disallow Shape Type Change
+  /// Disallow Shape Type Change
   /// </summary>
-  public static Boolean? GetNoChangeShapeType(ConnectionShapeLocks? openXmlElement)
+  private static Boolean? GetNoChangeShapeType(DocumentFormat.OpenXml.Drawing.ConnectionShapeLocks openXmlElement)
   {
     return openXmlElement?.NoChangeShapeType?.Value;
   }
-
-  public static void SetNoChangeShapeType(ConnectionShapeLocks? openXmlElement, Boolean? value)
+  
+  private static void SetNoChangeShapeType(DocumentFormat.OpenXml.Drawing.ConnectionShapeLocks openXmlElement, Boolean? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.NoChangeShapeType = new BooleanValue { Value = (Boolean)value };
-      else
-        openXmlElement.NoChangeShapeType = null;
+    if (value != null)
+      openXmlElement.NoChangeShapeType = new BooleanValue { Value = (Boolean)value };
+    else
+      openXmlElement.NoChangeShapeType = null;
   }
-
+  
   /// <summary>
-  ///   ConnectorLockingExtensionList.
+  /// ConnectorLockingExtensionList.
   /// </summary>
-  public static ConnectorLockingExtensionList? GetConnectorLockingExtensionList(ConnectionShapeLocks? openXmlElement)
+  private static DocumentModel.Drawings.ConnectorLockingExtensionList? GetConnectorLockingExtensionList(DocumentFormat.OpenXml.Drawing.ConnectionShapeLocks openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.ConnectorLockingExtensionList>();
     if (itemElement != null)
-      return ConnectorLockingExtensionListConverter.CreateModelElement(itemElement);
+      return DocumentModel.OpenXml.Drawings.ConnectorLockingExtensionListConverter.CreateModelElement(itemElement);
     return null;
   }
-
-  public static void SetConnectorLockingExtensionList(ConnectionShapeLocks? openXmlElement, ConnectorLockingExtensionList? value)
+  
+  private static void SetConnectorLockingExtensionList(DocumentFormat.OpenXml.Drawing.ConnectionShapeLocks openXmlElement, DocumentModel.Drawings.ConnectorLockingExtensionList? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.ConnectorLockingExtensionList>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.ConnectorLockingExtensionList>();
+      itemElement = DocumentModel.OpenXml.Drawings.ConnectorLockingExtensionListConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.ConnectorLockingExtensionList>(value);
       if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = ConnectorLockingExtensionListConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.ConnectorLockingExtensionList>(value);
-        if (itemElement != null)
-          openXmlElement.AddChild(itemElement);
-      }
+        openXmlElement.AddChild(itemElement);
     }
   }
-
-  public static DocumentModel.Drawings.ConnectionShapeLocks? CreateModelElement(ConnectionShapeLocks? openXmlElement)
+  
+  public static DocumentModel.Drawings.ConnectionShapeLocks? CreateModelElement(DocumentFormat.OpenXml.Drawing.ConnectionShapeLocks? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -225,9 +209,9 @@ public static class ConnectionShapeLocksConverter
     }
     return null;
   }
-
+  
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.ConnectionShapeLocks? value)
-    where OpenXmlElementType : ConnectionShapeLocks, new()
+    where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.ConnectionShapeLocks, new()
   {
     if (value != null)
     {

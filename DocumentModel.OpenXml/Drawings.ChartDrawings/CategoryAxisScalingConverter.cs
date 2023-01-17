@@ -1,30 +1,27 @@
-using DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing;
-
 namespace DocumentModel.OpenXml.Drawings.ChartDrawings;
 
 /// <summary>
-///   Defines the CategoryAxisScaling Class.
+/// Defines the CategoryAxisScaling Class.
 /// </summary>
 public static class CategoryAxisScalingConverter
 {
   /// <summary>
-  ///   gapWidth, this property is only available in Office 2016 and later.
+  /// gapWidth, this property is only available in Office 2016 and later.
   /// </summary>
-  public static String? GetGapWidth(CategoryAxisScaling? openXmlElement)
+  private static String? GetGapWidth(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.CategoryAxisScaling openXmlElement)
   {
     return openXmlElement?.GapWidth?.Value;
   }
-
-  public static void SetGapWidth(CategoryAxisScaling? openXmlElement, String? value)
+  
+  private static void SetGapWidth(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.CategoryAxisScaling openXmlElement, String? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.GapWidth = new StringValue { Value = value };
-      else
-        openXmlElement.GapWidth = null;
+    if (value != null)
+      openXmlElement.GapWidth = new StringValue { Value = value };
+    else
+      openXmlElement.GapWidth = null;
   }
-
-  public static DocumentModel.Drawings.ChartDrawings.CategoryAxisScaling? CreateModelElement(CategoryAxisScaling? openXmlElement)
+  
+  public static DocumentModel.Drawings.ChartDrawings.CategoryAxisScaling? CreateModelElement(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.CategoryAxisScaling? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -34,9 +31,9 @@ public static class CategoryAxisScalingConverter
     }
     return null;
   }
-
+  
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.ChartDrawings.CategoryAxisScaling? value)
-    where OpenXmlElementType : CategoryAxisScaling, new()
+    where OpenXmlElementType: DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.CategoryAxisScaling, new()
   {
     if (value != null)
     {

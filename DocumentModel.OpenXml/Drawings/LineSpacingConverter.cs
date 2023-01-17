@@ -1,59 +1,51 @@
-using DocumentFormat.OpenXml.Drawing;
-
 namespace DocumentModel.OpenXml.Drawings;
 
 /// <summary>
-///   Line Spacing.
+/// Line Spacing.
 /// </summary>
 public static class LineSpacingConverter
 {
-  public static Int32? GetSpacingPercent(LineSpacing? openXmlElement)
+  private static Int32? GetSpacingPercent(DocumentFormat.OpenXml.Drawing.LineSpacing openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<SpacingPercent>();
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.SpacingPercent>();
     if (itemElement != null)
       return itemElement.Val?.Value;
     return null;
   }
-
-  public static void SetSpacingPercent(LineSpacing? openXmlElement, Int32? value)
+  
+  private static void SetSpacingPercent(DocumentFormat.OpenXml.Drawing.LineSpacing openXmlElement, Int32? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.SpacingPercent>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<SpacingPercent>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = new SpacingPercent { Val = value };
-        openXmlElement.AddChild(itemElement);
-      }
+      itemElement = new DocumentFormat.OpenXml.Drawing.SpacingPercent{ Val = value };
+      openXmlElement.AddChild(itemElement);
     }
   }
-
-  public static Int32? GetSpacingPoints(LineSpacing? openXmlElement)
+  
+  private static Int32? GetSpacingPoints(DocumentFormat.OpenXml.Drawing.LineSpacing openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<SpacingPoints>();
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.SpacingPoints>();
     if (itemElement != null)
       return itemElement.Val?.Value;
     return null;
   }
-
-  public static void SetSpacingPoints(LineSpacing? openXmlElement, Int32? value)
+  
+  private static void SetSpacingPoints(DocumentFormat.OpenXml.Drawing.LineSpacing openXmlElement, Int32? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.SpacingPoints>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<SpacingPoints>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = new SpacingPoints { Val = value };
-        openXmlElement.AddChild(itemElement);
-      }
+      itemElement = new DocumentFormat.OpenXml.Drawing.SpacingPoints{ Val = value };
+      openXmlElement.AddChild(itemElement);
     }
   }
-
-  public static DocumentModel.Drawings.LineSpacing? CreateModelElement(LineSpacing? openXmlElement)
+  
+  public static DocumentModel.Drawings.LineSpacing? CreateModelElement(DocumentFormat.OpenXml.Drawing.LineSpacing? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -64,9 +56,9 @@ public static class LineSpacingConverter
     }
     return null;
   }
-
+  
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.LineSpacing? value)
-    where OpenXmlElementType : LineSpacing, new()
+    where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.LineSpacing, new()
   {
     if (value != null)
     {

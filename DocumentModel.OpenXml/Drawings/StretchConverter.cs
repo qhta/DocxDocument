@@ -1,42 +1,35 @@
-using DocumentFormat.OpenXml.Drawing;
-using RelativeRectangleType = DocumentModel.Drawings.RelativeRectangleType;
-using Stretch = DocumentFormat.OpenXml.Drawing.Stretch;
-
 namespace DocumentModel.OpenXml.Drawings;
 
 /// <summary>
-///   Stretch.
+/// Stretch.
 /// </summary>
 public static class StretchConverter
 {
   /// <summary>
-  ///   Fill Rectangle.
+  /// Fill Rectangle.
   /// </summary>
-  public static RelativeRectangleType? GetFillRectangle(Stretch? openXmlElement)
+  private static DocumentModel.Drawings.RelativeRectangleType? GetFillRectangle(DocumentFormat.OpenXml.Drawing.Stretch openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<FillRectangle>();
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.FillRectangle>();
     if (itemElement != null)
-      return RelativeRectangleTypeConverter.CreateModelElement(itemElement);
+      return DocumentModel.OpenXml.Drawings.RelativeRectangleTypeConverter.CreateModelElement(itemElement);
     return null;
   }
-
-  public static void SetFillRectangle(Stretch? openXmlElement, RelativeRectangleType? value)
+  
+  private static void SetFillRectangle(DocumentFormat.OpenXml.Drawing.Stretch openXmlElement, DocumentModel.Drawings.RelativeRectangleType? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.FillRectangle>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<FillRectangle>();
+      itemElement = DocumentModel.OpenXml.Drawings.RelativeRectangleTypeConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.FillRectangle>(value);
       if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = RelativeRectangleTypeConverter.CreateOpenXmlElement<FillRectangle>(value);
-        if (itemElement != null)
-          openXmlElement.AddChild(itemElement);
-      }
+        openXmlElement.AddChild(itemElement);
     }
   }
-
-  public static DocumentModel.Drawings.Stretch? CreateModelElement(Stretch? openXmlElement)
+  
+  public static DocumentModel.Drawings.Stretch? CreateModelElement(DocumentFormat.OpenXml.Drawing.Stretch? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -46,9 +39,9 @@ public static class StretchConverter
     }
     return null;
   }
-
+  
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.Stretch? value)
-    where OpenXmlElementType : Stretch, new()
+    where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.Stretch, new()
   {
     if (value != null)
     {

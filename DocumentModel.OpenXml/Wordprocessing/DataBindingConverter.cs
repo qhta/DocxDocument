@@ -1,64 +1,59 @@
-using DocumentFormat.OpenXml.Wordprocessing;
-
 namespace DocumentModel.OpenXml.Wordprocessing;
 
 /// <summary>
-///   Defines the DataBinding Class.
+/// Defines the DataBinding Class.
 /// </summary>
 public static class DataBindingConverter
 {
   /// <summary>
-  ///   XML Namespace Prefix Mappings
+  /// XML Namespace Prefix Mappings
   /// </summary>
-  public static String? GetPrefixMappings(DataBinding? openXmlElement)
+  private static String? GetPrefixMappings(DocumentFormat.OpenXml.Wordprocessing.DataBinding openXmlElement)
   {
     return openXmlElement?.PrefixMappings?.Value;
   }
-
-  public static void SetPrefixMappings(DataBinding? openXmlElement, String? value)
+  
+  private static void SetPrefixMappings(DocumentFormat.OpenXml.Wordprocessing.DataBinding openXmlElement, String? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.PrefixMappings = new StringValue { Value = value };
-      else
-        openXmlElement.PrefixMappings = null;
+    if (value != null)
+      openXmlElement.PrefixMappings = new StringValue { Value = value };
+    else
+      openXmlElement.PrefixMappings = null;
   }
-
+  
   /// <summary>
-  ///   XPath
+  /// XPath
   /// </summary>
-  public static String? GetXPath(DataBinding? openXmlElement)
+  private static String? GetXPath(DocumentFormat.OpenXml.Wordprocessing.DataBinding openXmlElement)
   {
     return openXmlElement?.XPath?.Value;
   }
-
-  public static void SetXPath(DataBinding? openXmlElement, String? value)
+  
+  private static void SetXPath(DocumentFormat.OpenXml.Wordprocessing.DataBinding openXmlElement, String? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.XPath = new StringValue { Value = value };
-      else
-        openXmlElement.XPath = null;
+    if (value != null)
+      openXmlElement.XPath = new StringValue { Value = value };
+    else
+      openXmlElement.XPath = null;
   }
-
+  
   /// <summary>
-  ///   Custom XML Data Storage ID
+  /// Custom XML Data Storage ID
   /// </summary>
-  public static String? GetStoreItemId(DataBinding? openXmlElement)
+  private static String? GetStoreItemId(DocumentFormat.OpenXml.Wordprocessing.DataBinding openXmlElement)
   {
     return openXmlElement?.StoreItemId?.Value;
   }
-
-  public static void SetStoreItemId(DataBinding? openXmlElement, String? value)
+  
+  private static void SetStoreItemId(DocumentFormat.OpenXml.Wordprocessing.DataBinding openXmlElement, String? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.StoreItemId = new StringValue { Value = value };
-      else
-        openXmlElement.StoreItemId = null;
+    if (value != null)
+      openXmlElement.StoreItemId = new StringValue { Value = value };
+    else
+      openXmlElement.StoreItemId = null;
   }
-
-  public static DocumentModel.Wordprocessing.DataBinding? CreateModelElement(DataBinding? openXmlElement)
+  
+  public static DocumentModel.Wordprocessing.DataBinding? CreateModelElement(DocumentFormat.OpenXml.Wordprocessing.DataBinding? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -70,9 +65,9 @@ public static class DataBindingConverter
     }
     return null;
   }
-
+  
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.DataBinding? value)
-    where OpenXmlElementType : DataBinding, new()
+    where OpenXmlElementType: DocumentFormat.OpenXml.Wordprocessing.DataBinding, new()
   {
     if (value != null)
     {

@@ -1,72 +1,59 @@
-using DocumentFormat.OpenXml.Math;
-using DocumentModel.Math;
-using ControlProperties = DocumentModel.Math.ControlProperties;
-using RadicalProperties = DocumentFormat.OpenXml.Math.RadicalProperties;
-
 namespace DocumentModel.OpenXml.Math;
 
 /// <summary>
-///   Radical Properties.
+/// Radical Properties.
 /// </summary>
 public static class RadicalPropertiesConverter
 {
   /// <summary>
-  ///   Hide Degree.
+  /// Hide Degree.
   /// </summary>
-  public static BooleanKind? GetHideDegree(RadicalProperties? openXmlElement)
+  private static DocumentModel.Math.BooleanKind? GetHideDegree(DocumentFormat.OpenXml.Math.RadicalProperties openXmlElement)
   {
-    if (openXmlElement != null)
-    {
-      var itemElement = openXmlElement.GetFirstChild<HideDegree>();
-      if (itemElement?.Val?.Value != null) return EnumValueConverter.GetValue<BooleanValues, BooleanKind>(itemElement.Val.Value);
-    }
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Math.HideDegree>();
+    if (itemElement?.Val?.Value != null)
+      return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Math.BooleanValues, DocumentModel.Math.BooleanKind>(itemElement.Val.Value);
     return null;
   }
-
-  public static void SetHideDegree(RadicalProperties? openXmlElement, BooleanKind? value)
+  
+  private static void SetHideDegree(DocumentFormat.OpenXml.Math.RadicalProperties openXmlElement, DocumentModel.Math.BooleanKind? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Math.HideDegree>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<HideDegree>();
+      itemElement = EnumValueConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Math.HideDegree, DocumentFormat.OpenXml.Math.BooleanValues, DocumentModel.Math.BooleanKind>(value);
       if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = EnumValueConverter.CreateOpenXmlElement<HideDegree, BooleanValues, BooleanKind>(value);
-        if (itemElement != null)
-          openXmlElement.AddChild(itemElement);
-      }
+        openXmlElement.AddChild(itemElement);
     }
   }
-
+  
   /// <summary>
-  ///   ControlProperties.
+  /// ControlProperties.
   /// </summary>
-  public static ControlProperties? GetControlProperties(RadicalProperties? openXmlElement)
+  private static DocumentModel.Math.ControlProperties? GetControlProperties(DocumentFormat.OpenXml.Math.RadicalProperties openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Math.ControlProperties>();
     if (itemElement != null)
-      return ControlPropertiesConverter.CreateModelElement(itemElement);
+      return DocumentModel.OpenXml.Math.ControlPropertiesConverter.CreateModelElement(itemElement);
     return null;
   }
-
-  public static void SetControlProperties(RadicalProperties? openXmlElement, ControlProperties? value)
+  
+  private static void SetControlProperties(DocumentFormat.OpenXml.Math.RadicalProperties openXmlElement, DocumentModel.Math.ControlProperties? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Math.ControlProperties>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Math.ControlProperties>();
+      itemElement = DocumentModel.OpenXml.Math.ControlPropertiesConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Math.ControlProperties>(value);
       if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = ControlPropertiesConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Math.ControlProperties>(value);
-        if (itemElement != null)
-          openXmlElement.AddChild(itemElement);
-      }
+        openXmlElement.AddChild(itemElement);
     }
   }
-
-  public static DocumentModel.Math.RadicalProperties? CreateModelElement(RadicalProperties? openXmlElement)
+  
+  public static DocumentModel.Math.RadicalProperties? CreateModelElement(DocumentFormat.OpenXml.Math.RadicalProperties? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -77,9 +64,9 @@ public static class RadicalPropertiesConverter
     }
     return null;
   }
-
+  
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Math.RadicalProperties? value)
-    where OpenXmlElementType : RadicalProperties, new()
+    where OpenXmlElementType: DocumentFormat.OpenXml.Math.RadicalProperties, new()
   {
     if (value != null)
     {

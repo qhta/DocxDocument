@@ -1,202 +1,184 @@
-using DocumentFormat.OpenXml.Drawing.Diagrams;
-using DocumentModel.Drawings.Diagrams;
-using Constraint = DocumentFormat.OpenXml.Drawing.Diagrams.Constraint;
-
 namespace DocumentModel.OpenXml.Drawings.Diagrams;
 
 /// <summary>
-///   Constraint.
+/// Constraint.
 /// </summary>
 public static class ConstraintConverter
 {
   /// <summary>
-  ///   Constraint Type
+  /// Constraint Type
   /// </summary>
-  public static ConstraintKind? GetType(Constraint? openXmlElement)
+  private static DocumentModel.Drawings.Diagrams.ConstraintKind? GetType(DocumentFormat.OpenXml.Drawing.Diagrams.Constraint openXmlElement)
   {
-    return EnumValueConverter.GetValue<ConstraintValues, ConstraintKind>(openXmlElement?.Type?.Value);
+    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Drawing.Diagrams.ConstraintValues, DocumentModel.Drawings.Diagrams.ConstraintKind>(openXmlElement?.Type?.Value);
   }
-
-  public static void SetType(Constraint? openXmlElement, ConstraintKind? value)
+  
+  private static void SetType(DocumentFormat.OpenXml.Drawing.Diagrams.Constraint openXmlElement, DocumentModel.Drawings.Diagrams.ConstraintKind? value)
   {
-    if (openXmlElement != null)
-      openXmlElement.Type = EnumValueConverter.CreateEnumValue<ConstraintValues, ConstraintKind>(value);
+    openXmlElement.Type = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Drawing.Diagrams.ConstraintValues, DocumentModel.Drawings.Diagrams.ConstraintKind>(value);
   }
-
+  
   /// <summary>
-  ///   For
+  /// For
   /// </summary>
-  public static ConstraintRelationshipKind? GetFor(Constraint? openXmlElement)
+  private static DocumentModel.Drawings.Diagrams.ConstraintRelationshipKind? GetFor(DocumentFormat.OpenXml.Drawing.Diagrams.Constraint openXmlElement)
   {
-    return EnumValueConverter.GetValue<ConstraintRelationshipValues, ConstraintRelationshipKind>(openXmlElement?.For?.Value);
+    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Drawing.Diagrams.ConstraintRelationshipValues, DocumentModel.Drawings.Diagrams.ConstraintRelationshipKind>(openXmlElement?.For?.Value);
   }
-
-  public static void SetFor(Constraint? openXmlElement, ConstraintRelationshipKind? value)
+  
+  private static void SetFor(DocumentFormat.OpenXml.Drawing.Diagrams.Constraint openXmlElement, DocumentModel.Drawings.Diagrams.ConstraintRelationshipKind? value)
   {
-    if (openXmlElement != null)
-      openXmlElement.For = EnumValueConverter.CreateEnumValue<ConstraintRelationshipValues, ConstraintRelationshipKind>(value);
+    openXmlElement.For = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Drawing.Diagrams.ConstraintRelationshipValues, DocumentModel.Drawings.Diagrams.ConstraintRelationshipKind>(value);
   }
-
+  
   /// <summary>
-  ///   For Name
+  /// For Name
   /// </summary>
-  public static String? GetForName(Constraint? openXmlElement)
+  private static String? GetForName(DocumentFormat.OpenXml.Drawing.Diagrams.Constraint openXmlElement)
   {
     return openXmlElement?.ForName?.Value;
   }
-
-  public static void SetForName(Constraint? openXmlElement, String? value)
+  
+  private static void SetForName(DocumentFormat.OpenXml.Drawing.Diagrams.Constraint openXmlElement, String? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.ForName = new StringValue { Value = value };
-      else
-        openXmlElement.ForName = null;
+    if (value != null)
+      openXmlElement.ForName = new StringValue { Value = value };
+    else
+      openXmlElement.ForName = null;
   }
-
+  
   /// <summary>
-  ///   Data Point Type
+  /// Data Point Type
   /// </summary>
-  public static ElementKind? GetPointType(Constraint? openXmlElement)
+  private static DocumentModel.Drawings.Diagrams.ElementKind? GetPointType(DocumentFormat.OpenXml.Drawing.Diagrams.Constraint openXmlElement)
   {
-    return EnumValueConverter.GetValue<ElementValues, ElementKind>(openXmlElement?.PointType?.Value);
+    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Drawing.Diagrams.ElementValues, DocumentModel.Drawings.Diagrams.ElementKind>(openXmlElement?.PointType?.Value);
   }
-
-  public static void SetPointType(Constraint? openXmlElement, ElementKind? value)
+  
+  private static void SetPointType(DocumentFormat.OpenXml.Drawing.Diagrams.Constraint openXmlElement, DocumentModel.Drawings.Diagrams.ElementKind? value)
   {
-    if (openXmlElement != null)
-      openXmlElement.PointType = EnumValueConverter.CreateEnumValue<ElementValues, ElementKind>(value);
+    openXmlElement.PointType = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Drawing.Diagrams.ElementValues, DocumentModel.Drawings.Diagrams.ElementKind>(value);
   }
-
+  
   /// <summary>
-  ///   Reference Type
+  /// Reference Type
   /// </summary>
-  public static ConstraintKind? GetReferenceType(Constraint? openXmlElement)
+  private static DocumentModel.Drawings.Diagrams.ConstraintKind? GetReferenceType(DocumentFormat.OpenXml.Drawing.Diagrams.Constraint openXmlElement)
   {
-    return EnumValueConverter.GetValue<ConstraintValues, ConstraintKind>(openXmlElement?.ReferenceType?.Value);
+    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Drawing.Diagrams.ConstraintValues, DocumentModel.Drawings.Diagrams.ConstraintKind>(openXmlElement?.ReferenceType?.Value);
   }
-
-  public static void SetReferenceType(Constraint? openXmlElement, ConstraintKind? value)
+  
+  private static void SetReferenceType(DocumentFormat.OpenXml.Drawing.Diagrams.Constraint openXmlElement, DocumentModel.Drawings.Diagrams.ConstraintKind? value)
   {
-    if (openXmlElement != null)
-      openXmlElement.ReferenceType = EnumValueConverter.CreateEnumValue<ConstraintValues, ConstraintKind>(value);
+    openXmlElement.ReferenceType = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Drawing.Diagrams.ConstraintValues, DocumentModel.Drawings.Diagrams.ConstraintKind>(value);
   }
-
+  
   /// <summary>
-  ///   Reference For
+  /// Reference For
   /// </summary>
-  public static ConstraintRelationshipKind? GetReferenceFor(Constraint? openXmlElement)
+  private static DocumentModel.Drawings.Diagrams.ConstraintRelationshipKind? GetReferenceFor(DocumentFormat.OpenXml.Drawing.Diagrams.Constraint openXmlElement)
   {
-    return EnumValueConverter.GetValue<ConstraintRelationshipValues, ConstraintRelationshipKind>(openXmlElement?.ReferenceFor?.Value);
+    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Drawing.Diagrams.ConstraintRelationshipValues, DocumentModel.Drawings.Diagrams.ConstraintRelationshipKind>(openXmlElement?.ReferenceFor?.Value);
   }
-
-  public static void SetReferenceFor(Constraint? openXmlElement, ConstraintRelationshipKind? value)
+  
+  private static void SetReferenceFor(DocumentFormat.OpenXml.Drawing.Diagrams.Constraint openXmlElement, DocumentModel.Drawings.Diagrams.ConstraintRelationshipKind? value)
   {
-    if (openXmlElement != null)
-      openXmlElement.ReferenceFor = EnumValueConverter.CreateEnumValue<ConstraintRelationshipValues, ConstraintRelationshipKind>(value);
+    openXmlElement.ReferenceFor = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Drawing.Diagrams.ConstraintRelationshipValues, DocumentModel.Drawings.Diagrams.ConstraintRelationshipKind>(value);
   }
-
+  
   /// <summary>
-  ///   Reference For Name
+  /// Reference For Name
   /// </summary>
-  public static String? GetReferenceForName(Constraint? openXmlElement)
+  private static String? GetReferenceForName(DocumentFormat.OpenXml.Drawing.Diagrams.Constraint openXmlElement)
   {
     return openXmlElement?.ReferenceForName?.Value;
   }
-
-  public static void SetReferenceForName(Constraint? openXmlElement, String? value)
+  
+  private static void SetReferenceForName(DocumentFormat.OpenXml.Drawing.Diagrams.Constraint openXmlElement, String? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.ReferenceForName = new StringValue { Value = value };
-      else
-        openXmlElement.ReferenceForName = null;
+    if (value != null)
+      openXmlElement.ReferenceForName = new StringValue { Value = value };
+    else
+      openXmlElement.ReferenceForName = null;
   }
-
+  
   /// <summary>
-  ///   Reference Point Type
+  /// Reference Point Type
   /// </summary>
-  public static ElementKind? GetReferencePointType(Constraint? openXmlElement)
+  private static DocumentModel.Drawings.Diagrams.ElementKind? GetReferencePointType(DocumentFormat.OpenXml.Drawing.Diagrams.Constraint openXmlElement)
   {
-    return EnumValueConverter.GetValue<ElementValues, ElementKind>(openXmlElement?.ReferencePointType?.Value);
+    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Drawing.Diagrams.ElementValues, DocumentModel.Drawings.Diagrams.ElementKind>(openXmlElement?.ReferencePointType?.Value);
   }
-
-  public static void SetReferencePointType(Constraint? openXmlElement, ElementKind? value)
+  
+  private static void SetReferencePointType(DocumentFormat.OpenXml.Drawing.Diagrams.Constraint openXmlElement, DocumentModel.Drawings.Diagrams.ElementKind? value)
   {
-    if (openXmlElement != null)
-      openXmlElement.ReferencePointType = EnumValueConverter.CreateEnumValue<ElementValues, ElementKind>(value);
+    openXmlElement.ReferencePointType = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Drawing.Diagrams.ElementValues, DocumentModel.Drawings.Diagrams.ElementKind>(value);
   }
-
+  
   /// <summary>
-  ///   Operator
+  /// Operator
   /// </summary>
-  public static BoolOperatorKind? GetOperator(Constraint? openXmlElement)
+  private static DocumentModel.Drawings.Diagrams.BoolOperatorKind? GetOperator(DocumentFormat.OpenXml.Drawing.Diagrams.Constraint openXmlElement)
   {
-    return EnumValueConverter.GetValue<BoolOperatorValues, BoolOperatorKind>(openXmlElement?.Operator?.Value);
+    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Drawing.Diagrams.BoolOperatorValues, DocumentModel.Drawings.Diagrams.BoolOperatorKind>(openXmlElement?.Operator?.Value);
   }
-
-  public static void SetOperator(Constraint? openXmlElement, BoolOperatorKind? value)
+  
+  private static void SetOperator(DocumentFormat.OpenXml.Drawing.Diagrams.Constraint openXmlElement, DocumentModel.Drawings.Diagrams.BoolOperatorKind? value)
   {
-    if (openXmlElement != null)
-      openXmlElement.Operator = EnumValueConverter.CreateEnumValue<BoolOperatorValues, BoolOperatorKind>(value);
+    openXmlElement.Operator = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Drawing.Diagrams.BoolOperatorValues, DocumentModel.Drawings.Diagrams.BoolOperatorKind>(value);
   }
-
+  
   /// <summary>
-  ///   Value
+  /// Value
   /// </summary>
-  public static Double? GetVal(Constraint? openXmlElement)
+  private static Double? GetVal(DocumentFormat.OpenXml.Drawing.Diagrams.Constraint openXmlElement)
   {
-    return openXmlElement?.Val?.Value;
+    return openXmlElement.Val?.Value;
   }
-
-  public static void SetVal(Constraint? openXmlElement, Double? value)
+  
+  private static void SetVal(DocumentFormat.OpenXml.Drawing.Diagrams.Constraint openXmlElement, Double? value)
   {
-    if (openXmlElement != null)
-      openXmlElement.Val = value;
+    openXmlElement.Val = value;
   }
-
+  
   /// <summary>
-  ///   Factor
+  /// Factor
   /// </summary>
-  public static Double? GetFact(Constraint? openXmlElement)
+  private static Double? GetFact(DocumentFormat.OpenXml.Drawing.Diagrams.Constraint openXmlElement)
   {
-    return openXmlElement?.Fact?.Value;
+    return openXmlElement.Fact?.Value;
   }
-
-  public static void SetFact(Constraint? openXmlElement, Double? value)
+  
+  private static void SetFact(DocumentFormat.OpenXml.Drawing.Diagrams.Constraint openXmlElement, Double? value)
   {
-    if (openXmlElement != null)
-      openXmlElement.Fact = value;
+    openXmlElement.Fact = value;
   }
-
+  
   /// <summary>
-  ///   ExtensionList.
+  /// ExtensionList.
   /// </summary>
-  public static DocumentModel.Drawings.Diagrams.ExtensionList? GetExtensionList(Constraint? openXmlElement)
+  private static DocumentModel.Drawings.Diagrams.ExtensionList? GetExtensionList(DocumentFormat.OpenXml.Drawing.Diagrams.Constraint openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.Diagrams.ExtensionList>();
     if (itemElement != null)
-      return ExtensionListConverter.CreateModelElement(itemElement);
+      return DocumentModel.OpenXml.Drawings.Diagrams.ExtensionListConverter.CreateModelElement(itemElement);
     return null;
   }
-
-  public static void SetExtensionList(Constraint? openXmlElement, DocumentModel.Drawings.Diagrams.ExtensionList? value)
+  
+  private static void SetExtensionList(DocumentFormat.OpenXml.Drawing.Diagrams.Constraint openXmlElement, DocumentModel.Drawings.Diagrams.ExtensionList? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Diagrams.ExtensionList>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Diagrams.ExtensionList>();
+      itemElement = DocumentModel.OpenXml.Drawings.Diagrams.ExtensionListConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Diagrams.ExtensionList>(value);
       if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = ExtensionListConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Diagrams.ExtensionList>(value);
-        if (itemElement != null)
-          openXmlElement.AddChild(itemElement);
-      }
+        openXmlElement.AddChild(itemElement);
     }
   }
-
-  public static DocumentModel.Drawings.Diagrams.Constraint? CreateModelElement(Constraint? openXmlElement)
+  
+  public static DocumentModel.Drawings.Diagrams.Constraint? CreateModelElement(DocumentFormat.OpenXml.Drawing.Diagrams.Constraint? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -217,9 +199,9 @@ public static class ConstraintConverter
     }
     return null;
   }
-
+  
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.Diagrams.Constraint? value)
-    where OpenXmlElementType : Constraint, new()
+    where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.Diagrams.Constraint, new()
   {
     if (value != null)
     {

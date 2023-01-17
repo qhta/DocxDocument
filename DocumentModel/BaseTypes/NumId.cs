@@ -18,6 +18,16 @@ public record NumId : IConvertible
     Value = value;
   }
 
+  public NumId(uint value)
+  {
+    Value = (int)value;
+  }
+
+  public NumId(ulong value)
+  {
+    Value = (int)value;
+  }
+
   public TypeCode GetTypeCode()
   {
     return Value.GetTypeCode();
@@ -147,6 +157,11 @@ public record NumId : IConvertible
   public static implicit operator uint(NumId val)
   {
     return (uint)val.Value;
+  }
+
+  public static implicit operator uint?(NumId? val)
+  {
+    return (val != null) ? (uint)val.Value : null;
   }
 
   public static implicit operator ulong(NumId val)

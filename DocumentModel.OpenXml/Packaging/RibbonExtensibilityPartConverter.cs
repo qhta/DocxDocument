@@ -1,43 +1,36 @@
-using DocumentFormat.OpenXml.Packaging;
-using ImagePart = DocumentModel.Packaging.ImagePart;
-
 namespace DocumentModel.OpenXml.Packaging;
 
 /// <summary>
-///   Defines the RibbonExtensibilityPart
+/// Defines the RibbonExtensibilityPart
 /// </summary>
 public static class RibbonExtensibilityPartConverter
 {
-  public static String? GetContentType(RibbonExtensibilityPart? openXmlElement)
+  private static String? GetContentType(DocumentFormat.OpenXml.Packaging.RibbonExtensibilityPart openXmlElement)
   {
     return openXmlElement?.ContentType;
   }
-
+  
   /// <summary>
-  ///   Gets the ImageParts of the RibbonExtensibilityPart
+  /// Gets the ImageParts of the RibbonExtensibilityPart
   /// </summary>
-  public static Collection<ImagePart>? GetImageParts(RibbonExtensibilityPart? openXmlElement)
+  private static System.Collections.ObjectModel.Collection<DocumentModel.Packaging.ImagePart> GetImageParts(DocumentFormat.OpenXml.Packaging.RibbonExtensibilityPart openXmlElement)
   {
-    if (openXmlElement != null)
+    var collection = new System.Collections.ObjectModel.Collection<DocumentModel.Packaging.ImagePart>();
+    foreach (var item in openXmlElement.GetPartsOfType<DocumentFormat.OpenXml.Packaging.ImagePart>())
     {
-      var collection = new Collection<ImagePart>();
-      foreach (var item in openXmlElement.GetPartsOfType<DocumentFormat.OpenXml.Packaging.ImagePart>())
-      {
-        var newItem = ImagePartConverter.CreateModelElement(item);
-        if (newItem != null)
-          collection.Add(newItem);
-      }
-      return collection;
+      var newItem = DocumentModel.OpenXml.Packaging.ImagePartConverter.CreateModelElement(item);
+      if (newItem != null)
+        collection.Add(newItem);
     }
-    return null;
+    return collection;
   }
-
-  public static String? GetRelationshipType(RibbonExtensibilityPart? openXmlElement)
+  
+  private static String? GetRelationshipType(DocumentFormat.OpenXml.Packaging.RibbonExtensibilityPart openXmlElement)
   {
     return openXmlElement?.RelationshipType;
   }
-
-  public static DocumentModel.Packaging.RibbonExtensibilityPart? CreateModelElement(RibbonExtensibilityPart? openXmlElement)
+  
+  public static DocumentModel.Packaging.RibbonExtensibilityPart? CreateModelElement(DocumentFormat.OpenXml.Packaging.RibbonExtensibilityPart? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -49,9 +42,9 @@ public static class RibbonExtensibilityPartConverter
     }
     return null;
   }
-
+  
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Packaging.RibbonExtensibilityPart? value)
-    where OpenXmlElementType : RibbonExtensibilityPart, new()
+    where OpenXmlElementType: DocumentFormat.OpenXml.Packaging.RibbonExtensibilityPart, new()
   {
     if (value != null)
     {

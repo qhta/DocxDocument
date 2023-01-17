@@ -1,45 +1,37 @@
-using DocumentModel.Drawings.Charts;
-using Level = DocumentFormat.OpenXml.Drawing.Charts.Level;
-
 namespace DocumentModel.OpenXml.Drawings.Charts;
 
 /// <summary>
-///   Level.
+/// Level.
 /// </summary>
 public static class LevelConverter
 {
-  public static Collection<StringPoint>? GetStringPoints(Level? openXmlElement)
+  private static System.Collections.ObjectModel.Collection<DocumentModel.Drawings.Charts.StringPoint> GetStringPoints(DocumentFormat.OpenXml.Drawing.Charts.Level openXmlElement)
   {
-    if (openXmlElement != null)
+    var collection = new System.Collections.ObjectModel.Collection<DocumentModel.Drawings.Charts.StringPoint>();
+    foreach (var item in openXmlElement.Elements<DocumentFormat.OpenXml.Drawing.Charts.StringPoint>())
     {
-      var collection = new Collection<StringPoint>();
-      foreach (var item in openXmlElement.Elements<DocumentFormat.OpenXml.Drawing.Charts.StringPoint>())
+      var newItem = DocumentModel.OpenXml.Drawings.Charts.StringPointConverter.CreateModelElement(item);
+      if (newItem != null)
+        collection.Add(newItem);
+    }
+    return collection;
+  }
+  
+  private static void SetStringPoints(DocumentFormat.OpenXml.Drawing.Charts.Level openXmlElement, System.Collections.ObjectModel.Collection<DocumentModel.Drawings.Charts.StringPoint>? value)
+  {
+    openXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Drawing.Charts.StringPoint>();
+    if (value != null)
+    {
+      foreach (var item in value)
       {
-        var newItem = StringPointConverter.CreateModelElement(item);
+        var newItem = DocumentModel.OpenXml.Drawings.Charts.StringPointConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Charts.StringPoint>(item);
         if (newItem != null)
-          collection.Add(newItem);
+          openXmlElement.AddChild(newItem);
       }
-      return collection;
-    }
-    return null;
-  }
-
-  public static void SetStringPoints(Level? openXmlElement, Collection<StringPoint>? value)
-  {
-    if (openXmlElement != null)
-    {
-      openXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Drawing.Charts.StringPoint>();
-      if (value != null)
-        foreach (var item in value)
-        {
-          var newItem = StringPointConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Charts.StringPoint>(item);
-          if (newItem != null)
-            openXmlElement.AddChild(newItem);
-        }
     }
   }
-
-  public static DocumentModel.Drawings.Charts.Level? CreateModelElement(Level? openXmlElement)
+  
+  public static DocumentModel.Drawings.Charts.Level? CreateModelElement(DocumentFormat.OpenXml.Drawing.Charts.Level? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -49,9 +41,9 @@ public static class LevelConverter
     }
     return null;
   }
-
+  
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.Charts.Level? value)
-    where OpenXmlElementType : Level, new()
+    where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.Charts.Level, new()
   {
     if (value != null)
     {

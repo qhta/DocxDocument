@@ -1,86 +1,74 @@
-using DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing;
-using DocumentModel.Drawings;
-
 namespace DocumentModel.OpenXml.Drawings.ChartDrawings;
 
 /// <summary>
-///   Defines the TxPrTextBody Class.
+/// Defines the TxPrTextBody Class.
 /// </summary>
 public static class TxPrTextBodyConverter
 {
-  public static BodyProperties? GetBodyProperties(TxPrTextBody? openXmlElement)
+  private static DocumentModel.Drawings.BodyProperties? GetBodyProperties(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.TxPrTextBody openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.BodyProperties>();
     if (itemElement != null)
-      return BodyPropertiesConverter.CreateModelElement(itemElement);
+      return DocumentModel.OpenXml.Drawings.BodyPropertiesConverter.CreateModelElement(itemElement);
     return null;
   }
-
-  public static void SetBodyProperties(TxPrTextBody? openXmlElement, BodyProperties? value)
+  
+  private static void SetBodyProperties(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.TxPrTextBody openXmlElement, DocumentModel.Drawings.BodyProperties? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.BodyProperties>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.BodyProperties>();
+      itemElement = DocumentModel.OpenXml.Drawings.BodyPropertiesConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.BodyProperties>(value);
       if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = BodyPropertiesConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.BodyProperties>(value);
-        if (itemElement != null)
-          openXmlElement.AddChild(itemElement);
-      }
+        openXmlElement.AddChild(itemElement);
     }
   }
-
-  public static ListStyle? GetListStyle(TxPrTextBody? openXmlElement)
+  
+  private static DocumentModel.Drawings.ListStyle? GetListStyle(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.TxPrTextBody openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.ListStyle>();
     if (itemElement != null)
-      return ListStyleConverter.CreateModelElement(itemElement);
+      return DocumentModel.OpenXml.Drawings.ListStyleConverter.CreateModelElement(itemElement);
     return null;
   }
-
-  public static void SetListStyle(TxPrTextBody? openXmlElement, ListStyle? value)
+  
+  private static void SetListStyle(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.TxPrTextBody openXmlElement, DocumentModel.Drawings.ListStyle? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.ListStyle>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.ListStyle>();
+      itemElement = DocumentModel.OpenXml.Drawings.ListStyleConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.ListStyle>(value);
       if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = ListStyleConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.ListStyle>(value);
-        if (itemElement != null)
-          openXmlElement.AddChild(itemElement);
-      }
+        openXmlElement.AddChild(itemElement);
     }
   }
-
-  public static Paragraph? GetParagraph(TxPrTextBody? openXmlElement)
+  
+  private static DocumentModel.Drawings.Paragraph? GetParagraph(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.TxPrTextBody openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.Paragraph>();
     if (itemElement != null)
-      return ParagraphConverter.CreateModelElement(itemElement);
+      return DocumentModel.OpenXml.Drawings.ParagraphConverter.CreateModelElement(itemElement);
     return null;
   }
-
-  public static void SetParagraph(TxPrTextBody? openXmlElement, Paragraph? value)
+  
+  private static void SetParagraph(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.TxPrTextBody openXmlElement, DocumentModel.Drawings.Paragraph? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Paragraph>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Paragraph>();
+      itemElement = DocumentModel.OpenXml.Drawings.ParagraphConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Paragraph>(value);
       if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = ParagraphConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Paragraph>(value);
-        if (itemElement != null)
-          openXmlElement.AddChild(itemElement);
-      }
+        openXmlElement.AddChild(itemElement);
     }
   }
-
-  public static DocumentModel.Drawings.ChartDrawings.TxPrTextBody? CreateModelElement(TxPrTextBody? openXmlElement)
+  
+  public static DocumentModel.Drawings.ChartDrawings.TxPrTextBody? CreateModelElement(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.TxPrTextBody? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -92,9 +80,9 @@ public static class TxPrTextBodyConverter
     }
     return null;
   }
-
+  
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.ChartDrawings.TxPrTextBody? value)
-    where OpenXmlElementType : TxPrTextBody, new()
+    where OpenXmlElementType: DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.TxPrTextBody, new()
   {
     if (value != null)
     {

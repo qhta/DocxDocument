@@ -8,7 +8,7 @@ public class Rsids
   /// <summary>
   ///   Original Document Revision Save ID.
   /// </summary>
-  public NumId? RsidRoot { get; set; }
+  public UInt32? RsidRoot { get; set; }
 
-  public Collection<NumId>? Items { get; set; }
+  public Collection<UInt32>? Items { get; set; }
 }

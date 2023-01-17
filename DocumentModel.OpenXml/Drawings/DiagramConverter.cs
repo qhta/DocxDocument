@@ -1,46 +1,40 @@
-using DocumentFormat.OpenXml.Drawing;
-using DocumentModel.Drawings;
-using Diagram = DocumentFormat.OpenXml.Drawing.Diagram;
-
 namespace DocumentModel.OpenXml.Drawings;
 
 /// <summary>
-///   Diagram to Animate.
+/// Diagram to Animate.
 /// </summary>
 public static class DiagramConverter
 {
   /// <summary>
-  ///   Identifier
+  /// Identifier
   /// </summary>
-  public static String? GetId(Diagram? openXmlElement)
+  private static String? GetId(DocumentFormat.OpenXml.Drawing.Diagram openXmlElement)
   {
     return openXmlElement?.Id?.Value;
   }
-
-  public static void SetId(Diagram? openXmlElement, String? value)
+  
+  private static void SetId(DocumentFormat.OpenXml.Drawing.Diagram openXmlElement, String? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.Id = new StringValue { Value = value };
-      else
-        openXmlElement.Id = null;
+    if (value != null)
+      openXmlElement.Id = new StringValue { Value = value };
+    else
+      openXmlElement.Id = null;
   }
-
+  
   /// <summary>
-  ///   Animation Build Step
+  /// Animation Build Step
   /// </summary>
-  public static DiagramBuildStepKind? GetBuildStep(Diagram? openXmlElement)
+  private static DocumentModel.Drawings.DiagramBuildStepKind? GetBuildStep(DocumentFormat.OpenXml.Drawing.Diagram openXmlElement)
   {
-    return EnumValueConverter.GetValue<DiagramBuildStepValues, DiagramBuildStepKind>(openXmlElement?.BuildStep?.Value);
+    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Drawing.DiagramBuildStepValues, DocumentModel.Drawings.DiagramBuildStepKind>(openXmlElement?.BuildStep?.Value);
   }
-
-  public static void SetBuildStep(Diagram? openXmlElement, DiagramBuildStepKind? value)
+  
+  private static void SetBuildStep(DocumentFormat.OpenXml.Drawing.Diagram openXmlElement, DocumentModel.Drawings.DiagramBuildStepKind? value)
   {
-    if (openXmlElement != null)
-      openXmlElement.BuildStep = EnumValueConverter.CreateEnumValue<DiagramBuildStepValues, DiagramBuildStepKind>(value);
+    openXmlElement.BuildStep = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Drawing.DiagramBuildStepValues, DocumentModel.Drawings.DiagramBuildStepKind>(value);
   }
-
-  public static DocumentModel.Drawings.Diagram? CreateModelElement(Diagram? openXmlElement)
+  
+  public static DocumentModel.Drawings.Diagram? CreateModelElement(DocumentFormat.OpenXml.Drawing.Diagram? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -51,9 +45,9 @@ public static class DiagramConverter
     }
     return null;
   }
-
+  
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.Diagram? value)
-    where OpenXmlElementType : Diagram, new()
+    where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.Diagram, new()
   {
     if (value != null)
     {

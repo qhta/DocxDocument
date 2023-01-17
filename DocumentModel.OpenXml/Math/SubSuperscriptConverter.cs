@@ -1,122 +1,107 @@
-using DocumentModel.Math;
-using SubSuperscript = DocumentFormat.OpenXml.Math.SubSuperscript;
-
 namespace DocumentModel.OpenXml.Math;
 
 /// <summary>
-///   Sub-Superscript Function.
+/// Sub-Superscript Function.
 /// </summary>
 public static class SubSuperscriptConverter
 {
   /// <summary>
-  ///   Sub-Superscript Properties.
+  /// Sub-Superscript Properties.
   /// </summary>
-  public static SubSuperscriptProperties? GetSubSuperscriptProperties(SubSuperscript? openXmlElement)
+  private static DocumentModel.Math.SubSuperscriptProperties? GetSubSuperscriptProperties(DocumentFormat.OpenXml.Math.SubSuperscript openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Math.SubSuperscriptProperties>();
     if (itemElement != null)
-      return SubSuperscriptPropertiesConverter.CreateModelElement(itemElement);
+      return DocumentModel.OpenXml.Math.SubSuperscriptPropertiesConverter.CreateModelElement(itemElement);
     return null;
   }
-
-  public static void SetSubSuperscriptProperties(SubSuperscript? openXmlElement, SubSuperscriptProperties? value)
+  
+  private static void SetSubSuperscriptProperties(DocumentFormat.OpenXml.Math.SubSuperscript openXmlElement, DocumentModel.Math.SubSuperscriptProperties? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Math.SubSuperscriptProperties>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Math.SubSuperscriptProperties>();
+      itemElement = DocumentModel.OpenXml.Math.SubSuperscriptPropertiesConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Math.SubSuperscriptProperties>(value);
       if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = SubSuperscriptPropertiesConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Math.SubSuperscriptProperties>(value);
-        if (itemElement != null)
-          openXmlElement.AddChild(itemElement);
-      }
+        openXmlElement.AddChild(itemElement);
     }
   }
-
+  
   /// <summary>
-  ///   Base.
+  /// Base.
   /// </summary>
-  public static Base? GetBase(SubSuperscript? openXmlElement)
+  private static DocumentModel.Math.Base? GetBase(DocumentFormat.OpenXml.Math.SubSuperscript openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Math.Base>();
     if (itemElement != null)
-      return BaseConverter.CreateModelElement(itemElement);
+      return DocumentModel.OpenXml.Math.BaseConverter.CreateModelElement(itemElement);
     return null;
   }
-
-  public static void SetBase(SubSuperscript? openXmlElement, Base? value)
+  
+  private static void SetBase(DocumentFormat.OpenXml.Math.SubSuperscript openXmlElement, DocumentModel.Math.Base? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Math.Base>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Math.Base>();
+      itemElement = DocumentModel.OpenXml.Math.BaseConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Math.Base>(value);
       if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = BaseConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Math.Base>(value);
-        if (itemElement != null)
-          openXmlElement.AddChild(itemElement);
-      }
+        openXmlElement.AddChild(itemElement);
     }
   }
-
+  
   /// <summary>
-  ///   Subscript (Sub-Superscript).
+  /// Subscript (Sub-Superscript).
   /// </summary>
-  public static SubArgument? GetSubArgument(SubSuperscript? openXmlElement)
+  private static DocumentModel.Math.SubArgument? GetSubArgument(DocumentFormat.OpenXml.Math.SubSuperscript openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Math.SubArgument>();
     if (itemElement != null)
-      return SubArgumentConverter.CreateModelElement(itemElement);
+      return DocumentModel.OpenXml.Math.SubArgumentConverter.CreateModelElement(itemElement);
     return null;
   }
-
-  public static void SetSubArgument(SubSuperscript? openXmlElement, SubArgument? value)
+  
+  private static void SetSubArgument(DocumentFormat.OpenXml.Math.SubSuperscript openXmlElement, DocumentModel.Math.SubArgument? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Math.SubArgument>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Math.SubArgument>();
+      itemElement = DocumentModel.OpenXml.Math.SubArgumentConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Math.SubArgument>(value);
       if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = SubArgumentConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Math.SubArgument>(value);
-        if (itemElement != null)
-          openXmlElement.AddChild(itemElement);
-      }
+        openXmlElement.AddChild(itemElement);
     }
   }
-
+  
   /// <summary>
-  ///   Superscript (Sub-Superscript function).
+  /// Superscript (Sub-Superscript function).
   /// </summary>
-  public static SuperArgument? GetSuperArgument(SubSuperscript? openXmlElement)
+  private static DocumentModel.Math.SuperArgument? GetSuperArgument(DocumentFormat.OpenXml.Math.SubSuperscript openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Math.SuperArgument>();
     if (itemElement != null)
-      return SuperArgumentConverter.CreateModelElement(itemElement);
+      return DocumentModel.OpenXml.Math.SuperArgumentConverter.CreateModelElement(itemElement);
     return null;
   }
-
-  public static void SetSuperArgument(SubSuperscript? openXmlElement, SuperArgument? value)
+  
+  private static void SetSuperArgument(DocumentFormat.OpenXml.Math.SubSuperscript openXmlElement, DocumentModel.Math.SuperArgument? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Math.SuperArgument>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Math.SuperArgument>();
+      itemElement = DocumentModel.OpenXml.Math.SuperArgumentConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Math.SuperArgument>(value);
       if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = SuperArgumentConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Math.SuperArgument>(value);
-        if (itemElement != null)
-          openXmlElement.AddChild(itemElement);
-      }
+        openXmlElement.AddChild(itemElement);
     }
   }
-
-  public static DocumentModel.Math.SubSuperscript? CreateModelElement(SubSuperscript? openXmlElement)
+  
+  public static DocumentModel.Math.SubSuperscript? CreateModelElement(DocumentFormat.OpenXml.Math.SubSuperscript? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -129,9 +114,9 @@ public static class SubSuperscriptConverter
     }
     return null;
   }
-
+  
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Math.SubSuperscript? value)
-    where OpenXmlElementType : SubSuperscript, new()
+    where OpenXmlElementType: DocumentFormat.OpenXml.Math.SubSuperscript, new()
   {
     if (value != null)
     {

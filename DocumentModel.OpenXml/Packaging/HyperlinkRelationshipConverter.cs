@@ -1,21 +1,19 @@
-using DocumentFormat.OpenXml.Packaging;
-
 namespace DocumentModel.OpenXml.Packaging;
 
 /// <summary>
-///   Represents a hyperlink relationship.
+/// Represents a hyperlink relationship.
 /// </summary>
 public static class HyperlinkRelationshipConverter
 {
   /// <summary>
-  ///   Gets the relationship type.
+  /// Gets the relationship type.
   /// </summary>
-  public static String? GetRelationshipType(HyperlinkRelationship? openXmlElement)
+  private static String? GetRelationshipType(DocumentFormat.OpenXml.Packaging.HyperlinkRelationship openXmlElement)
   {
     return openXmlElement?.RelationshipType;
   }
-
-  public static DocumentModel.Packaging.HyperlinkRelationship? CreateModelElement(HyperlinkRelationship? openXmlElement)
+  
+  public static DocumentModel.Packaging.HyperlinkRelationship? CreateModelElement(DocumentFormat.OpenXml.Packaging.HyperlinkRelationship? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -25,9 +23,9 @@ public static class HyperlinkRelationshipConverter
     }
     return null;
   }
-
+  
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Packaging.HyperlinkRelationship? value)
-    where OpenXmlElementType : HyperlinkRelationship, new()
+    where OpenXmlElementType: DocumentFormat.OpenXml.Packaging.HyperlinkRelationship, new()
   {
     if (value != null)
     {

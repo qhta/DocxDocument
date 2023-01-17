@@ -1,85 +1,74 @@
-using DocumentFormat.OpenXml.Drawing.Wordprocessing;
-using DocumentModel.Drawings.Wordprocessing;
-using WrapPolygon = DocumentModel.Drawings.Wordprocessing.WrapPolygon;
-using WrapThrough = DocumentFormat.OpenXml.Drawing.Wordprocessing.WrapThrough;
-
 namespace DocumentModel.OpenXml.Drawings.Wordprocessing;
 
 /// <summary>
-///   Through Wrapping.
+/// Through Wrapping.
 /// </summary>
 public static class WrapThroughConverter
 {
   /// <summary>
-  ///   Text Wrapping Location
+  /// Text Wrapping Location
   /// </summary>
-  public static WrapTextKind? GetWrapText(WrapThrough? openXmlElement)
+  private static DocumentModel.Drawings.Wordprocessing.WrapTextKind? GetWrapText(DocumentFormat.OpenXml.Drawing.Wordprocessing.WrapThrough openXmlElement)
   {
-    return EnumValueConverter.GetValue<WrapTextValues, WrapTextKind>(openXmlElement?.WrapText?.Value);
+    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Drawing.Wordprocessing.WrapTextValues, DocumentModel.Drawings.Wordprocessing.WrapTextKind>(openXmlElement?.WrapText?.Value);
   }
-
-  public static void SetWrapText(WrapThrough? openXmlElement, WrapTextKind? value)
+  
+  private static void SetWrapText(DocumentFormat.OpenXml.Drawing.Wordprocessing.WrapThrough openXmlElement, DocumentModel.Drawings.Wordprocessing.WrapTextKind? value)
   {
-    if (openXmlElement != null)
-      openXmlElement.WrapText = EnumValueConverter.CreateEnumValue<WrapTextValues, WrapTextKind>(value);
+    openXmlElement.WrapText = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Drawing.Wordprocessing.WrapTextValues, DocumentModel.Drawings.Wordprocessing.WrapTextKind>(value);
   }
-
+  
   /// <summary>
-  ///   Distance From Text on Left Edge
+  /// Distance From Text on Left Edge
   /// </summary>
-  public static UInt32? GetDistanceFromLeft(WrapThrough? openXmlElement)
+  private static UInt32? GetDistanceFromLeft(DocumentFormat.OpenXml.Drawing.Wordprocessing.WrapThrough openXmlElement)
   {
-    return openXmlElement?.DistanceFromLeft?.Value;
+    return openXmlElement.DistanceFromLeft?.Value;
   }
-
-  public static void SetDistanceFromLeft(WrapThrough? openXmlElement, UInt32? value)
+  
+  private static void SetDistanceFromLeft(DocumentFormat.OpenXml.Drawing.Wordprocessing.WrapThrough openXmlElement, UInt32? value)
   {
-    if (openXmlElement != null)
-      openXmlElement.DistanceFromLeft = value;
+    openXmlElement.DistanceFromLeft = value;
   }
-
+  
   /// <summary>
-  ///   Distance From Text on Right Edge
+  /// Distance From Text on Right Edge
   /// </summary>
-  public static UInt32? GetDistanceFromRight(WrapThrough? openXmlElement)
+  private static UInt32? GetDistanceFromRight(DocumentFormat.OpenXml.Drawing.Wordprocessing.WrapThrough openXmlElement)
   {
-    return openXmlElement?.DistanceFromRight?.Value;
+    return openXmlElement.DistanceFromRight?.Value;
   }
-
-  public static void SetDistanceFromRight(WrapThrough? openXmlElement, UInt32? value)
+  
+  private static void SetDistanceFromRight(DocumentFormat.OpenXml.Drawing.Wordprocessing.WrapThrough openXmlElement, UInt32? value)
   {
-    if (openXmlElement != null)
-      openXmlElement.DistanceFromRight = value;
+    openXmlElement.DistanceFromRight = value;
   }
-
+  
   /// <summary>
-  ///   Wrapping Polygon.
+  /// Wrapping Polygon.
   /// </summary>
-  public static WrapPolygon? GetWrapPolygon(WrapThrough? openXmlElement)
+  private static DocumentModel.Drawings.Wordprocessing.WrapPolygon? GetWrapPolygon(DocumentFormat.OpenXml.Drawing.Wordprocessing.WrapThrough openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.Wordprocessing.WrapPolygon>();
     if (itemElement != null)
-      return WrapPolygonConverter.CreateModelElement(itemElement);
+      return DocumentModel.OpenXml.Drawings.Wordprocessing.WrapPolygonConverter.CreateModelElement(itemElement);
     return null;
   }
-
-  public static void SetWrapPolygon(WrapThrough? openXmlElement, WrapPolygon? value)
+  
+  private static void SetWrapPolygon(DocumentFormat.OpenXml.Drawing.Wordprocessing.WrapThrough openXmlElement, DocumentModel.Drawings.Wordprocessing.WrapPolygon? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Wordprocessing.WrapPolygon>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Wordprocessing.WrapPolygon>();
+      itemElement = DocumentModel.OpenXml.Drawings.Wordprocessing.WrapPolygonConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Wordprocessing.WrapPolygon>(value);
       if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = WrapPolygonConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Wordprocessing.WrapPolygon>(value);
-        if (itemElement != null)
-          openXmlElement.AddChild(itemElement);
-      }
+        openXmlElement.AddChild(itemElement);
     }
   }
-
-  public static DocumentModel.Drawings.Wordprocessing.WrapThrough? CreateModelElement(WrapThrough? openXmlElement)
+  
+  public static DocumentModel.Drawings.Wordprocessing.WrapThrough? CreateModelElement(DocumentFormat.OpenXml.Drawing.Wordprocessing.WrapThrough? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -92,9 +81,9 @@ public static class WrapThroughConverter
     }
     return null;
   }
-
+  
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.Wordprocessing.WrapThrough? value)
-    where OpenXmlElementType : WrapThrough, new()
+    where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.Wordprocessing.WrapThrough, new()
   {
     if (value != null)
     {

@@ -1,95 +1,82 @@
-using DocumentFormat.OpenXml.Drawing.Charts;
-using NumberingCache = DocumentModel.Drawings.Charts.NumberingCache;
-using NumRefExtensionList = DocumentModel.Drawings.Charts.NumRefExtensionList;
-
 namespace DocumentModel.OpenXml.Drawings.Charts;
 
 /// <summary>
-///   Number Reference.
+/// Number Reference.
 /// </summary>
 public static class NumberReferenceConverter
 {
   /// <summary>
-  ///   Formula.
+  /// Formula.
   /// </summary>
-  public static String? GetFormula(NumberReference? openXmlElement)
+  private static String? GetFormula(DocumentFormat.OpenXml.Drawing.Charts.NumberReference openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<Formula>();
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.Formula>();
     if (itemElement != null)
       return itemElement.Text;
     return null;
   }
-
-  public static void SetFormula(NumberReference? openXmlElement, String? value)
+  
+  private static void SetFormula(DocumentFormat.OpenXml.Drawing.Charts.NumberReference openXmlElement, String? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.Formula>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<Formula>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = new Formula { Text = value };
-        openXmlElement.AddChild(itemElement);
-      }
+      itemElement = new DocumentFormat.OpenXml.Drawing.Charts.Formula { Text = value };
+      openXmlElement.AddChild(itemElement);
     }
   }
-
+  
   /// <summary>
-  ///   NumberingCache.
+  /// NumberingCache.
   /// </summary>
-  public static NumberingCache? GetNumberingCache(NumberReference? openXmlElement)
+  private static DocumentModel.Drawings.Charts.NumberingCache? GetNumberingCache(DocumentFormat.OpenXml.Drawing.Charts.NumberReference openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.NumberingCache>();
     if (itemElement != null)
-      return NumberingCacheConverter.CreateModelElement(itemElement);
+      return DocumentModel.OpenXml.Drawings.Charts.NumberingCacheConverter.CreateModelElement(itemElement);
     return null;
   }
-
-  public static void SetNumberingCache(NumberReference? openXmlElement, NumberingCache? value)
+  
+  private static void SetNumberingCache(DocumentFormat.OpenXml.Drawing.Charts.NumberReference openXmlElement, DocumentModel.Drawings.Charts.NumberingCache? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.NumberingCache>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.NumberingCache>();
+      itemElement = DocumentModel.OpenXml.Drawings.Charts.NumberingCacheConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Charts.NumberingCache>(value);
       if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = NumberingCacheConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Charts.NumberingCache>(value);
-        if (itemElement != null)
-          openXmlElement.AddChild(itemElement);
-      }
+        openXmlElement.AddChild(itemElement);
     }
   }
-
+  
   /// <summary>
-  ///   NumRefExtensionList.
+  /// NumRefExtensionList.
   /// </summary>
-  public static NumRefExtensionList? GetNumRefExtensionList(NumberReference? openXmlElement)
+  private static DocumentModel.Drawings.Charts.NumRefExtensionList? GetNumRefExtensionList(DocumentFormat.OpenXml.Drawing.Charts.NumberReference openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.NumRefExtensionList>();
     if (itemElement != null)
-      return NumRefExtensionListConverter.CreateModelElement(itemElement);
+      return DocumentModel.OpenXml.Drawings.Charts.NumRefExtensionListConverter.CreateModelElement(itemElement);
     return null;
   }
-
-  public static void SetNumRefExtensionList(NumberReference? openXmlElement, NumRefExtensionList? value)
+  
+  private static void SetNumRefExtensionList(DocumentFormat.OpenXml.Drawing.Charts.NumberReference openXmlElement, DocumentModel.Drawings.Charts.NumRefExtensionList? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.NumRefExtensionList>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.NumRefExtensionList>();
+      itemElement = DocumentModel.OpenXml.Drawings.Charts.NumRefExtensionListConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Charts.NumRefExtensionList>(value);
       if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = NumRefExtensionListConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Charts.NumRefExtensionList>(value);
-        if (itemElement != null)
-          openXmlElement.AddChild(itemElement);
-      }
+        openXmlElement.AddChild(itemElement);
     }
   }
-
-  public static DocumentModel.Drawings.Charts.NumberReference? CreateModelElement(NumberReference? openXmlElement)
+  
+  public static DocumentModel.Drawings.Charts.NumberReference? CreateModelElement(DocumentFormat.OpenXml.Drawing.Charts.NumberReference? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -101,9 +88,9 @@ public static class NumberReferenceConverter
     }
     return null;
   }
-
+  
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.Charts.NumberReference? value)
-    where OpenXmlElementType : NumberReference, new()
+    where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.Charts.NumberReference, new()
   {
     if (value != null)
     {

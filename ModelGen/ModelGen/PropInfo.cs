@@ -18,7 +18,7 @@ public class PropInfo: ModelElement
 
   public bool IsConstrained { get; set; }
 
-  internal ParticleConstraint? ParticleConstraint { get; set; }
+  public Validators? Validators { get; set; }
 
   public PropInfo(string name, Type type) : base(name)
   {

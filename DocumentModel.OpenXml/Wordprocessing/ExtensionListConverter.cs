@@ -1,41 +1,36 @@
 namespace DocumentModel.OpenXml.Wordprocessing;
 
 /// <summary>
-///   Defines the ExtensionList Class.
+/// Defines the ExtensionList Class.
 /// </summary>
 public static class ExtensionListConverter
 {
-  public static Collection<DocumentModel.Wordprocessing.Extension>? GetExtensions(DocumentFormat.OpenXml.Office2021.Word.CommentsExt.ExtensionList? openXmlElement)
+  private static System.Collections.ObjectModel.Collection<DocumentModel.Wordprocessing.Extension> GetExtensions(DocumentFormat.OpenXml.Office2021.Word.CommentsExt.ExtensionList openXmlElement)
   {
-    if (openXmlElement != null)
+    var collection = new System.Collections.ObjectModel.Collection<DocumentModel.Wordprocessing.Extension>();
+    foreach (var item in openXmlElement.Elements<DocumentFormat.OpenXml.Office2021.Word.ExtensionList.Extension>())
     {
-      var collection = new Collection<DocumentModel.Wordprocessing.Extension>();
-      foreach (var item in openXmlElement.Elements<DocumentFormat.OpenXml.Office2021.Word.ExtensionList.Extension>())
+      var newItem = DocumentModel.OpenXml.Wordprocessing.ExtensionConverter.CreateModelElement(item);
+      if (newItem != null)
+        collection.Add(newItem);
+    }
+    return collection;
+  }
+  
+  private static void SetExtensions(DocumentFormat.OpenXml.Office2021.Word.CommentsExt.ExtensionList openXmlElement, System.Collections.ObjectModel.Collection<DocumentModel.Wordprocessing.Extension>? value)
+  {
+    openXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Office2021.Word.ExtensionList.Extension>();
+    if (value != null)
+    {
+      foreach (var item in value)
       {
-        var newItem = ExtensionConverter.CreateModelElement(item);
+        var newItem = DocumentModel.OpenXml.Wordprocessing.ExtensionConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2021.Word.ExtensionList.Extension>(item);
         if (newItem != null)
-          collection.Add(newItem);
+          openXmlElement.AddChild(newItem);
       }
-      return collection;
-    }
-    return null;
-  }
-
-  public static void SetExtensions(DocumentFormat.OpenXml.Office2021.Word.CommentsExt.ExtensionList? openXmlElement, Collection<DocumentModel.Wordprocessing.Extension>? value)
-  {
-    if (openXmlElement != null)
-    {
-      openXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Office2021.Word.ExtensionList.Extension>();
-      if (value != null)
-        foreach (var item in value)
-        {
-          var newItem = ExtensionConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2021.Word.ExtensionList.Extension>(item);
-          if (newItem != null)
-            openXmlElement.AddChild(newItem);
-        }
     }
   }
-
+  
   public static DocumentModel.Wordprocessing.ExtensionList? CreateModelElement(DocumentFormat.OpenXml.Office2021.Word.CommentsExt.ExtensionList? openXmlElement)
   {
     if (openXmlElement != null)
@@ -46,9 +41,9 @@ public static class ExtensionListConverter
     }
     return null;
   }
-
+  
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.ExtensionList? value)
-    where OpenXmlElementType : DocumentFormat.OpenXml.Office2021.Word.CommentsExt.ExtensionList, new()
+    where OpenXmlElementType: DocumentFormat.OpenXml.Office2021.Word.CommentsExt.ExtensionList, new()
   {
     if (value != null)
     {

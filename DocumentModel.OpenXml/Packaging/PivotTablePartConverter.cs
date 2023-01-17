@@ -1,23 +1,21 @@
-using DocumentFormat.OpenXml.Packaging;
-
 namespace DocumentModel.OpenXml.Packaging;
 
 /// <summary>
-///   Defines the PivotTablePart
+/// Defines the PivotTablePart
 /// </summary>
 public static class PivotTablePartConverter
 {
-  public static String? GetContentType(PivotTablePart? openXmlElement)
+  private static String? GetContentType(DocumentFormat.OpenXml.Packaging.PivotTablePart openXmlElement)
   {
     return openXmlElement?.ContentType;
   }
-
-  public static String? GetRelationshipType(PivotTablePart? openXmlElement)
+  
+  private static String? GetRelationshipType(DocumentFormat.OpenXml.Packaging.PivotTablePart openXmlElement)
   {
     return openXmlElement?.RelationshipType;
   }
-
-  public static DocumentModel.Packaging.PivotTablePart? CreateModelElement(PivotTablePart? openXmlElement)
+  
+  public static DocumentModel.Packaging.PivotTablePart? CreateModelElement(DocumentFormat.OpenXml.Packaging.PivotTablePart? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -28,9 +26,9 @@ public static class PivotTablePartConverter
     }
     return null;
   }
-
+  
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Packaging.PivotTablePart? value)
-    where OpenXmlElementType : PivotTablePart, new()
+    where OpenXmlElementType: DocumentFormat.OpenXml.Packaging.PivotTablePart, new()
   {
     if (value != null)
     {

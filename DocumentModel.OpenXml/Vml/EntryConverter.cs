@@ -1,41 +1,37 @@
-using DocumentFormat.OpenXml.Vml.Office;
-
 namespace DocumentModel.OpenXml.Vml;
 
 /// <summary>
-///   Regroup Entry.
+/// Regroup Entry.
 /// </summary>
 public static class EntryConverter
 {
   /// <summary>
-  ///   New Group ID
+  /// New Group ID
   /// </summary>
-  public static Int32? GetNew(Entry? openXmlElement)
+  private static Int32? GetNew(DocumentFormat.OpenXml.Vml.Office.Entry openXmlElement)
   {
-    return openXmlElement?.New?.Value;
+    return openXmlElement.New?.Value;
   }
-
-  public static void SetNew(Entry? openXmlElement, Int32? value)
+  
+  private static void SetNew(DocumentFormat.OpenXml.Vml.Office.Entry openXmlElement, Int32? value)
   {
-    if (openXmlElement != null)
-      openXmlElement.New = value;
+    openXmlElement.New = value;
   }
-
+  
   /// <summary>
-  ///   Old Group ID
+  /// Old Group ID
   /// </summary>
-  public static Int32? GetOld(Entry? openXmlElement)
+  private static Int32? GetOld(DocumentFormat.OpenXml.Vml.Office.Entry openXmlElement)
   {
-    return openXmlElement?.Old?.Value;
+    return openXmlElement.Old?.Value;
   }
-
-  public static void SetOld(Entry? openXmlElement, Int32? value)
+  
+  private static void SetOld(DocumentFormat.OpenXml.Vml.Office.Entry openXmlElement, Int32? value)
   {
-    if (openXmlElement != null)
-      openXmlElement.Old = value;
+    openXmlElement.Old = value;
   }
-
-  public static DocumentModel.Vml.Entry? CreateModelElement(Entry? openXmlElement)
+  
+  public static DocumentModel.Vml.Entry? CreateModelElement(DocumentFormat.OpenXml.Vml.Office.Entry? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -46,9 +42,9 @@ public static class EntryConverter
     }
     return null;
   }
-
+  
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Vml.Entry? value)
-    where OpenXmlElementType : Entry, new()
+    where OpenXmlElementType: DocumentFormat.OpenXml.Vml.Office.Entry, new()
   {
     if (value != null)
     {

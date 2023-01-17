@@ -1,92 +1,82 @@
-using DocumentFormat.OpenXml.Office2021.Word.CommentsExt;
-
 namespace DocumentModel.OpenXml.Wordprocessing;
 
 /// <summary>
-///   Defines the CommentExtensible Class.
+/// Defines the CommentExtensible Class.
 /// </summary>
 public static class CommentExtensibleConverter
 {
   /// <summary>
-  ///   durableId, this property is only available in Office 2021 and later.
+  /// durableId, this property is only available in Office 2021 and later.
   /// </summary>
-  public static Byte[]? GetDurableId(CommentExtensible? openXmlElement)
+  private static UInt32? GetDurableId(DocumentFormat.OpenXml.Office2021.Word.CommentsExt.CommentExtensible openXmlElement)
   {
-    if (openXmlElement?.DurableId?.Value != null)
-      return Convert.FromHexString(openXmlElement.DurableId.Value);
+    if (openXmlElement.DurableId?.Value != null)
+      return UInt32.Parse(openXmlElement.DurableId.Value, NumberStyles.HexNumber);
     return null;
   }
-
-  public static void SetDurableId(CommentExtensible? openXmlElement, Byte[]? value)
+  
+  private static void SetDurableId(DocumentFormat.OpenXml.Office2021.Word.CommentsExt.CommentExtensible openXmlElement, UInt32? value)
   {
-    if (openXmlElement != null)
-    {
       if (value != null)
-        openXmlElement.DurableId = Convert.ToHexString(value);
+        openXmlElement.DurableId = ((UInt32)value).ToString("X8");
       else
         openXmlElement.DurableId = null;
-    }
   }
-
+  
   /// <summary>
-  ///   dateUtc, this property is only available in Office 2021 and later.
+  /// dateUtc, this property is only available in Office 2021 and later.
   /// </summary>
-  public static DateTime? GetDateUtc(CommentExtensible? openXmlElement)
+  private static DateTime? GetDateUtc(DocumentFormat.OpenXml.Office2021.Word.CommentsExt.CommentExtensible openXmlElement)
   {
-    return openXmlElement?.DateUtc?.Value;
+    return openXmlElement.DateUtc?.Value;
   }
-
-  public static void SetDateUtc(CommentExtensible? openXmlElement, DateTime? value)
+  
+  private static void SetDateUtc(DocumentFormat.OpenXml.Office2021.Word.CommentsExt.CommentExtensible openXmlElement, DateTime? value)
   {
-    if (openXmlElement != null)
-      openXmlElement.DateUtc = value;
+    openXmlElement.DateUtc = value;
   }
-
+  
   /// <summary>
-  ///   intelligentPlaceholder, this property is only available in Office 2021 and later.
+  /// intelligentPlaceholder, this property is only available in Office 2021 and later.
   /// </summary>
-  public static Boolean? GetIntelligentPlaceholder(CommentExtensible? openXmlElement)
+  private static Boolean? GetIntelligentPlaceholder(DocumentFormat.OpenXml.Office2021.Word.CommentsExt.CommentExtensible openXmlElement)
   {
     return openXmlElement?.IntelligentPlaceholder?.Value;
   }
-
-  public static void SetIntelligentPlaceholder(CommentExtensible? openXmlElement, Boolean? value)
+  
+  private static void SetIntelligentPlaceholder(DocumentFormat.OpenXml.Office2021.Word.CommentsExt.CommentExtensible openXmlElement, Boolean? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.IntelligentPlaceholder = new OnOffValue { Value = (Boolean)value };
-      else
-        openXmlElement.IntelligentPlaceholder = null;
+    if (value != null)
+      openXmlElement.IntelligentPlaceholder = new OnOffValue { Value = (Boolean)value };
+    else
+      openXmlElement.IntelligentPlaceholder = null;
   }
-
+  
   /// <summary>
-  ///   ExtensionList.
+  /// ExtensionList.
   /// </summary>
-  public static DocumentModel.Wordprocessing.ExtensionList? GetExtensionList(CommentExtensible? openXmlElement)
+  private static DocumentModel.Wordprocessing.ExtensionList? GetExtensionList(DocumentFormat.OpenXml.Office2021.Word.CommentsExt.CommentExtensible openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office2021.Word.CommentsExt.ExtensionList>();
     if (itemElement != null)
-      return ExtensionListConverter.CreateModelElement(itemElement);
+      return DocumentModel.OpenXml.Wordprocessing.ExtensionListConverter.CreateModelElement(itemElement);
     return null;
   }
-
-  public static void SetExtensionList(CommentExtensible? openXmlElement, DocumentModel.Wordprocessing.ExtensionList? value)
+  
+  private static void SetExtensionList(DocumentFormat.OpenXml.Office2021.Word.CommentsExt.CommentExtensible openXmlElement, DocumentModel.Wordprocessing.ExtensionList? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2021.Word.CommentsExt.ExtensionList>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2021.Word.CommentsExt.ExtensionList>();
+      itemElement = DocumentModel.OpenXml.Wordprocessing.ExtensionListConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2021.Word.CommentsExt.ExtensionList>(value);
       if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = ExtensionListConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2021.Word.CommentsExt.ExtensionList>(value);
-        if (itemElement != null)
-          openXmlElement.AddChild(itemElement);
-      }
+        openXmlElement.AddChild(itemElement);
     }
   }
-
-  public static DocumentModel.Wordprocessing.CommentExtensible? CreateModelElement(CommentExtensible? openXmlElement)
+  
+  public static DocumentModel.Wordprocessing.CommentExtensible? CreateModelElement(DocumentFormat.OpenXml.Office2021.Word.CommentsExt.CommentExtensible? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -99,9 +89,9 @@ public static class CommentExtensibleConverter
     }
     return null;
   }
-
+  
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.CommentExtensible? value)
-    where OpenXmlElementType : CommentExtensible, new()
+    where OpenXmlElementType: DocumentFormat.OpenXml.Office2021.Word.CommentsExt.CommentExtensible, new()
   {
     if (value != null)
     {

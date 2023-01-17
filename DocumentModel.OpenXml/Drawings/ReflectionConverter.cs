@@ -1,214 +1,196 @@
-using DocumentFormat.OpenXml.Drawing;
-using DocumentModel.Drawings;
-using Reflection = DocumentFormat.OpenXml.Drawing.Reflection;
-
 namespace DocumentModel.OpenXml.Drawings;
 
 /// <summary>
-///   Reflection Effect.
+/// Reflection Effect.
 /// </summary>
 public static class ReflectionConverter
 {
   /// <summary>
-  ///   Blur Radius
+  /// Blur Radius
   /// </summary>
-  public static Int64? GetBlurRadius(Reflection? openXmlElement)
+  private static Int64? GetBlurRadius(DocumentFormat.OpenXml.Drawing.Reflection openXmlElement)
   {
-    return openXmlElement?.BlurRadius?.Value;
+    return openXmlElement.BlurRadius?.Value;
   }
-
-  public static void SetBlurRadius(Reflection? openXmlElement, Int64? value)
+  
+  private static void SetBlurRadius(DocumentFormat.OpenXml.Drawing.Reflection openXmlElement, Int64? value)
   {
-    if (openXmlElement != null)
-      openXmlElement.BlurRadius = value;
+    openXmlElement.BlurRadius = value;
   }
-
+  
   /// <summary>
-  ///   Start Opacity
+  /// Start Opacity
   /// </summary>
-  public static Int32? GetStartOpacity(Reflection? openXmlElement)
+  private static Int32? GetStartOpacity(DocumentFormat.OpenXml.Drawing.Reflection openXmlElement)
   {
-    return openXmlElement?.StartOpacity?.Value;
+    return openXmlElement.StartOpacity?.Value;
   }
-
-  public static void SetStartOpacity(Reflection? openXmlElement, Int32? value)
+  
+  private static void SetStartOpacity(DocumentFormat.OpenXml.Drawing.Reflection openXmlElement, Int32? value)
   {
-    if (openXmlElement != null)
-      openXmlElement.StartOpacity = value;
+    openXmlElement.StartOpacity = value;
   }
-
+  
   /// <summary>
-  ///   Start Position
+  /// Start Position
   /// </summary>
-  public static Int32? GetStartPosition(Reflection? openXmlElement)
+  private static Int32? GetStartPosition(DocumentFormat.OpenXml.Drawing.Reflection openXmlElement)
   {
-    return openXmlElement?.StartPosition?.Value;
+    return openXmlElement.StartPosition?.Value;
   }
-
-  public static void SetStartPosition(Reflection? openXmlElement, Int32? value)
+  
+  private static void SetStartPosition(DocumentFormat.OpenXml.Drawing.Reflection openXmlElement, Int32? value)
   {
-    if (openXmlElement != null)
-      openXmlElement.StartPosition = value;
+    openXmlElement.StartPosition = value;
   }
-
+  
   /// <summary>
-  ///   End Alpha
+  /// End Alpha
   /// </summary>
-  public static Int32? GetEndAlpha(Reflection? openXmlElement)
+  private static Int32? GetEndAlpha(DocumentFormat.OpenXml.Drawing.Reflection openXmlElement)
   {
-    return openXmlElement?.EndAlpha?.Value;
+    return openXmlElement.EndAlpha?.Value;
   }
-
-  public static void SetEndAlpha(Reflection? openXmlElement, Int32? value)
+  
+  private static void SetEndAlpha(DocumentFormat.OpenXml.Drawing.Reflection openXmlElement, Int32? value)
   {
-    if (openXmlElement != null)
-      openXmlElement.EndAlpha = value;
+    openXmlElement.EndAlpha = value;
   }
-
+  
   /// <summary>
-  ///   End Position
+  /// End Position
   /// </summary>
-  public static Int32? GetEndPosition(Reflection? openXmlElement)
+  private static Int32? GetEndPosition(DocumentFormat.OpenXml.Drawing.Reflection openXmlElement)
   {
-    return openXmlElement?.EndPosition?.Value;
+    return openXmlElement.EndPosition?.Value;
   }
-
-  public static void SetEndPosition(Reflection? openXmlElement, Int32? value)
+  
+  private static void SetEndPosition(DocumentFormat.OpenXml.Drawing.Reflection openXmlElement, Int32? value)
   {
-    if (openXmlElement != null)
-      openXmlElement.EndPosition = value;
+    openXmlElement.EndPosition = value;
   }
-
+  
   /// <summary>
-  ///   Distance
+  /// Distance
   /// </summary>
-  public static Int64? GetDistance(Reflection? openXmlElement)
+  private static Int64? GetDistance(DocumentFormat.OpenXml.Drawing.Reflection openXmlElement)
   {
-    return openXmlElement?.Distance?.Value;
+    return openXmlElement.Distance?.Value;
   }
-
-  public static void SetDistance(Reflection? openXmlElement, Int64? value)
+  
+  private static void SetDistance(DocumentFormat.OpenXml.Drawing.Reflection openXmlElement, Int64? value)
   {
-    if (openXmlElement != null)
-      openXmlElement.Distance = value;
+    openXmlElement.Distance = value;
   }
-
+  
   /// <summary>
-  ///   Direction
+  /// Direction
   /// </summary>
-  public static Int32? GetDirection(Reflection? openXmlElement)
+  private static Int32? GetDirection(DocumentFormat.OpenXml.Drawing.Reflection openXmlElement)
   {
-    return openXmlElement?.Direction?.Value;
+    return openXmlElement.Direction?.Value;
   }
-
-  public static void SetDirection(Reflection? openXmlElement, Int32? value)
+  
+  private static void SetDirection(DocumentFormat.OpenXml.Drawing.Reflection openXmlElement, Int32? value)
   {
-    if (openXmlElement != null)
-      openXmlElement.Direction = value;
+    openXmlElement.Direction = value;
   }
-
+  
   /// <summary>
-  ///   Fade Direction
+  /// Fade Direction
   /// </summary>
-  public static Int32? GetFadeDirection(Reflection? openXmlElement)
+  private static Int32? GetFadeDirection(DocumentFormat.OpenXml.Drawing.Reflection openXmlElement)
   {
-    return openXmlElement?.FadeDirection?.Value;
+    return openXmlElement.FadeDirection?.Value;
   }
-
-  public static void SetFadeDirection(Reflection? openXmlElement, Int32? value)
+  
+  private static void SetFadeDirection(DocumentFormat.OpenXml.Drawing.Reflection openXmlElement, Int32? value)
   {
-    if (openXmlElement != null)
-      openXmlElement.FadeDirection = value;
+    openXmlElement.FadeDirection = value;
   }
-
+  
   /// <summary>
-  ///   Horizontal Ratio
+  /// Horizontal Ratio
   /// </summary>
-  public static Int32? GetHorizontalRatio(Reflection? openXmlElement)
+  private static Int32? GetHorizontalRatio(DocumentFormat.OpenXml.Drawing.Reflection openXmlElement)
   {
-    return openXmlElement?.HorizontalRatio?.Value;
+    return openXmlElement.HorizontalRatio?.Value;
   }
-
-  public static void SetHorizontalRatio(Reflection? openXmlElement, Int32? value)
+  
+  private static void SetHorizontalRatio(DocumentFormat.OpenXml.Drawing.Reflection openXmlElement, Int32? value)
   {
-    if (openXmlElement != null)
-      openXmlElement.HorizontalRatio = value;
+    openXmlElement.HorizontalRatio = value;
   }
-
+  
   /// <summary>
-  ///   Vertical Ratio
+  /// Vertical Ratio
   /// </summary>
-  public static Int32? GetVerticalRatio(Reflection? openXmlElement)
+  private static Int32? GetVerticalRatio(DocumentFormat.OpenXml.Drawing.Reflection openXmlElement)
   {
-    return openXmlElement?.VerticalRatio?.Value;
+    return openXmlElement.VerticalRatio?.Value;
   }
-
-  public static void SetVerticalRatio(Reflection? openXmlElement, Int32? value)
+  
+  private static void SetVerticalRatio(DocumentFormat.OpenXml.Drawing.Reflection openXmlElement, Int32? value)
   {
-    if (openXmlElement != null)
-      openXmlElement.VerticalRatio = value;
+    openXmlElement.VerticalRatio = value;
   }
-
+  
   /// <summary>
-  ///   Horizontal Skew
+  /// Horizontal Skew
   /// </summary>
-  public static Int32? GetHorizontalSkew(Reflection? openXmlElement)
+  private static Int32? GetHorizontalSkew(DocumentFormat.OpenXml.Drawing.Reflection openXmlElement)
   {
-    return openXmlElement?.HorizontalSkew?.Value;
+    return openXmlElement.HorizontalSkew?.Value;
   }
-
-  public static void SetHorizontalSkew(Reflection? openXmlElement, Int32? value)
+  
+  private static void SetHorizontalSkew(DocumentFormat.OpenXml.Drawing.Reflection openXmlElement, Int32? value)
   {
-    if (openXmlElement != null)
-      openXmlElement.HorizontalSkew = value;
+    openXmlElement.HorizontalSkew = value;
   }
-
+  
   /// <summary>
-  ///   Vertical Skew
+  /// Vertical Skew
   /// </summary>
-  public static Int32? GetVerticalSkew(Reflection? openXmlElement)
+  private static Int32? GetVerticalSkew(DocumentFormat.OpenXml.Drawing.Reflection openXmlElement)
   {
-    return openXmlElement?.VerticalSkew?.Value;
+    return openXmlElement.VerticalSkew?.Value;
   }
-
-  public static void SetVerticalSkew(Reflection? openXmlElement, Int32? value)
+  
+  private static void SetVerticalSkew(DocumentFormat.OpenXml.Drawing.Reflection openXmlElement, Int32? value)
   {
-    if (openXmlElement != null)
-      openXmlElement.VerticalSkew = value;
+    openXmlElement.VerticalSkew = value;
   }
-
+  
   /// <summary>
-  ///   Shadow Alignment
+  /// Shadow Alignment
   /// </summary>
-  public static RectangleAlignmentKind? GetAlignment(Reflection? openXmlElement)
+  private static DocumentModel.Drawings.RectangleAlignmentKind? GetAlignment(DocumentFormat.OpenXml.Drawing.Reflection openXmlElement)
   {
-    return EnumValueConverter.GetValue<RectangleAlignmentValues, RectangleAlignmentKind>(openXmlElement?.Alignment?.Value);
+    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Drawing.RectangleAlignmentValues, DocumentModel.Drawings.RectangleAlignmentKind>(openXmlElement?.Alignment?.Value);
   }
-
-  public static void SetAlignment(Reflection? openXmlElement, RectangleAlignmentKind? value)
+  
+  private static void SetAlignment(DocumentFormat.OpenXml.Drawing.Reflection openXmlElement, DocumentModel.Drawings.RectangleAlignmentKind? value)
   {
-    if (openXmlElement != null)
-      openXmlElement.Alignment = EnumValueConverter.CreateEnumValue<RectangleAlignmentValues, RectangleAlignmentKind>(value);
+    openXmlElement.Alignment = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Drawing.RectangleAlignmentValues, DocumentModel.Drawings.RectangleAlignmentKind>(value);
   }
-
+  
   /// <summary>
-  ///   Rotate With Shape
+  /// Rotate With Shape
   /// </summary>
-  public static Boolean? GetRotateWithShape(Reflection? openXmlElement)
+  private static Boolean? GetRotateWithShape(DocumentFormat.OpenXml.Drawing.Reflection openXmlElement)
   {
     return openXmlElement?.RotateWithShape?.Value;
   }
-
-  public static void SetRotateWithShape(Reflection? openXmlElement, Boolean? value)
+  
+  private static void SetRotateWithShape(DocumentFormat.OpenXml.Drawing.Reflection openXmlElement, Boolean? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.RotateWithShape = new BooleanValue { Value = (Boolean)value };
-      else
-        openXmlElement.RotateWithShape = null;
+    if (value != null)
+      openXmlElement.RotateWithShape = new BooleanValue { Value = (Boolean)value };
+    else
+      openXmlElement.RotateWithShape = null;
   }
-
-  public static DocumentModel.Drawings.Reflection? CreateModelElement(Reflection? openXmlElement)
+  
+  public static DocumentModel.Drawings.Reflection? CreateModelElement(DocumentFormat.OpenXml.Drawing.Reflection? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -231,9 +213,9 @@ public static class ReflectionConverter
     }
     return null;
   }
-
+  
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.Reflection? value)
-    where OpenXmlElementType : Reflection, new()
+    where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.Reflection, new()
   {
     if (value != null)
     {

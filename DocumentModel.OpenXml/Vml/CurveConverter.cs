@@ -1,1454 +1,1314 @@
-using DocumentFormat.OpenXml.Vml.Office;
-using DocumentFormat.OpenXml.Vml.Wordprocessing;
-using DocumentModel.OpenXml.Wordprocessing.Vml;
-using DocumentModel.Vml;
-using BorderType = DocumentModel.Wordprocessing.Vml.BorderType;
-using Callout = DocumentModel.Vml.Callout;
-using ClipPath = DocumentModel.Vml.ClipPath;
-using Curve = DocumentFormat.OpenXml.Vml.Curve;
-using Extrusion = DocumentModel.Vml.Extrusion;
-using Lock = DocumentModel.Vml.Lock;
-using Path = DocumentModel.Vml.Path;
-using SignatureLine = DocumentModel.Vml.SignatureLine;
-using Skew = DocumentModel.Vml.Skew;
-using TextWrap = DocumentModel.Wordprocessing.Vml.TextWrap;
-
 namespace DocumentModel.OpenXml.Vml;
 
 /// <summary>
-///   Bezier Curve.
+/// Bezier Curve.
 /// </summary>
 public static class CurveConverter
 {
   /// <summary>
-  ///   Unique Identifier
+  /// Unique Identifier
   /// </summary>
-  public static String? GetId(Curve? openXmlElement)
+  private static String? GetId(DocumentFormat.OpenXml.Vml.Curve openXmlElement)
   {
     return openXmlElement?.Id?.Value;
   }
-
-  public static void SetId(Curve? openXmlElement, String? value)
+  
+  private static void SetId(DocumentFormat.OpenXml.Vml.Curve openXmlElement, String? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.Id = new StringValue { Value = value };
-      else
-        openXmlElement.Id = null;
+    if (value != null)
+      openXmlElement.Id = new StringValue { Value = value };
+    else
+      openXmlElement.Id = null;
   }
-
+  
   /// <summary>
-  ///   Shape Styling Properties
+  /// Shape Styling Properties
   /// </summary>
-  public static String? GetStyle(Curve? openXmlElement)
+  private static String? GetStyle(DocumentFormat.OpenXml.Vml.Curve openXmlElement)
   {
     return openXmlElement?.Style?.Value;
   }
-
-  public static void SetStyle(Curve? openXmlElement, String? value)
+  
+  private static void SetStyle(DocumentFormat.OpenXml.Vml.Curve openXmlElement, String? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.Style = new StringValue { Value = value };
-      else
-        openXmlElement.Style = null;
+    if (value != null)
+      openXmlElement.Style = new StringValue { Value = value };
+    else
+      openXmlElement.Style = null;
   }
-
+  
   /// <summary>
-  ///   Hyperlink Target
+  /// Hyperlink Target
   /// </summary>
-  public static String? GetHref(Curve? openXmlElement)
+  private static String? GetHref(DocumentFormat.OpenXml.Vml.Curve openXmlElement)
   {
     return openXmlElement?.Href?.Value;
   }
-
-  public static void SetHref(Curve? openXmlElement, String? value)
+  
+  private static void SetHref(DocumentFormat.OpenXml.Vml.Curve openXmlElement, String? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.Href = new StringValue { Value = value };
-      else
-        openXmlElement.Href = null;
+    if (value != null)
+      openXmlElement.Href = new StringValue { Value = value };
+    else
+      openXmlElement.Href = null;
   }
-
+  
   /// <summary>
-  ///   Hyperlink Display Target
+  /// Hyperlink Display Target
   /// </summary>
-  public static String? GetTarget(Curve? openXmlElement)
+  private static String? GetTarget(DocumentFormat.OpenXml.Vml.Curve openXmlElement)
   {
     return openXmlElement?.Target?.Value;
   }
-
-  public static void SetTarget(Curve? openXmlElement, String? value)
+  
+  private static void SetTarget(DocumentFormat.OpenXml.Vml.Curve openXmlElement, String? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.Target = new StringValue { Value = value };
-      else
-        openXmlElement.Target = null;
+    if (value != null)
+      openXmlElement.Target = new StringValue { Value = value };
+    else
+      openXmlElement.Target = null;
   }
-
+  
   /// <summary>
-  ///   CSS Reference
+  /// CSS Reference
   /// </summary>
-  public static String? GetClass(Curve? openXmlElement)
+  private static String? GetClass(DocumentFormat.OpenXml.Vml.Curve openXmlElement)
   {
     return openXmlElement?.Class?.Value;
   }
-
-  public static void SetClass(Curve? openXmlElement, String? value)
+  
+  private static void SetClass(DocumentFormat.OpenXml.Vml.Curve openXmlElement, String? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.Class = new StringValue { Value = value };
-      else
-        openXmlElement.Class = null;
+    if (value != null)
+      openXmlElement.Class = new StringValue { Value = value };
+    else
+      openXmlElement.Class = null;
   }
-
+  
   /// <summary>
-  ///   Shape Title
+  /// Shape Title
   /// </summary>
-  public static String? GetTitle(Curve? openXmlElement)
+  private static String? GetTitle(DocumentFormat.OpenXml.Vml.Curve openXmlElement)
   {
     return openXmlElement?.Title?.Value;
   }
-
-  public static void SetTitle(Curve? openXmlElement, String? value)
+  
+  private static void SetTitle(DocumentFormat.OpenXml.Vml.Curve openXmlElement, String? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.Title = new StringValue { Value = value };
-      else
-        openXmlElement.Title = null;
+    if (value != null)
+      openXmlElement.Title = new StringValue { Value = value };
+    else
+      openXmlElement.Title = null;
   }
-
+  
   /// <summary>
-  ///   Alternate Text
+  /// Alternate Text
   /// </summary>
-  public static String? GetAlternate(Curve? openXmlElement)
+  private static String? GetAlternate(DocumentFormat.OpenXml.Vml.Curve openXmlElement)
   {
     return openXmlElement?.Alternate?.Value;
   }
-
-  public static void SetAlternate(Curve? openXmlElement, String? value)
+  
+  private static void SetAlternate(DocumentFormat.OpenXml.Vml.Curve openXmlElement, String? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.Alternate = new StringValue { Value = value };
-      else
-        openXmlElement.Alternate = null;
+    if (value != null)
+      openXmlElement.Alternate = new StringValue { Value = value };
+    else
+      openXmlElement.Alternate = null;
   }
-
+  
   /// <summary>
-  ///   Coordinate Space Size
+  /// Coordinate Space Size
   /// </summary>
-  public static String? GetCoordinateSize(Curve? openXmlElement)
+  private static String? GetCoordinateSize(DocumentFormat.OpenXml.Vml.Curve openXmlElement)
   {
     return openXmlElement?.CoordinateSize?.Value;
   }
-
-  public static void SetCoordinateSize(Curve? openXmlElement, String? value)
+  
+  private static void SetCoordinateSize(DocumentFormat.OpenXml.Vml.Curve openXmlElement, String? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.CoordinateSize = new StringValue { Value = value };
-      else
-        openXmlElement.CoordinateSize = null;
+    if (value != null)
+      openXmlElement.CoordinateSize = new StringValue { Value = value };
+    else
+      openXmlElement.CoordinateSize = null;
   }
-
+  
   /// <summary>
-  ///   Coordinate Space Origin
+  /// Coordinate Space Origin
   /// </summary>
-  public static String? GetCoordinateOrigin(Curve? openXmlElement)
+  private static String? GetCoordinateOrigin(DocumentFormat.OpenXml.Vml.Curve openXmlElement)
   {
     return openXmlElement?.CoordinateOrigin?.Value;
   }
-
-  public static void SetCoordinateOrigin(Curve? openXmlElement, String? value)
+  
+  private static void SetCoordinateOrigin(DocumentFormat.OpenXml.Vml.Curve openXmlElement, String? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.CoordinateOrigin = new StringValue { Value = value };
-      else
-        openXmlElement.CoordinateOrigin = null;
+    if (value != null)
+      openXmlElement.CoordinateOrigin = new StringValue { Value = value };
+    else
+      openXmlElement.CoordinateOrigin = null;
   }
-
+  
   /// <summary>
-  ///   Shape Bounding Polygon
+  /// Shape Bounding Polygon
   /// </summary>
-  public static String? GetWrapCoordinates(Curve? openXmlElement)
+  private static String? GetWrapCoordinates(DocumentFormat.OpenXml.Vml.Curve openXmlElement)
   {
     return openXmlElement?.WrapCoordinates?.Value;
   }
-
-  public static void SetWrapCoordinates(Curve? openXmlElement, String? value)
+  
+  private static void SetWrapCoordinates(DocumentFormat.OpenXml.Vml.Curve openXmlElement, String? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.WrapCoordinates = new StringValue { Value = value };
-      else
-        openXmlElement.WrapCoordinates = null;
+    if (value != null)
+      openXmlElement.WrapCoordinates = new StringValue { Value = value };
+    else
+      openXmlElement.WrapCoordinates = null;
   }
-
+  
   /// <summary>
-  ///   Print Toggle
+  /// Print Toggle
   /// </summary>
-  public static Boolean? GetPrint(Curve? openXmlElement)
+  private static Boolean? GetPrint(DocumentFormat.OpenXml.Vml.Curve openXmlElement)
   {
     return openXmlElement?.Print?.Value;
   }
-
-  public static void SetPrint(Curve? openXmlElement, Boolean? value)
+  
+  private static void SetPrint(DocumentFormat.OpenXml.Vml.Curve openXmlElement, Boolean? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.Print = value;
-      else
-        openXmlElement.Print = null;
+    if (value != null)
+      openXmlElement.Print = value;
+    else
+      openXmlElement.Print = null;
   }
-
+  
   /// <summary>
-  ///   Optional String
+  /// Optional String
   /// </summary>
-  public static String? GetOptionalString(Curve? openXmlElement)
+  private static String? GetOptionalString(DocumentFormat.OpenXml.Vml.Curve openXmlElement)
   {
     return openXmlElement?.OptionalString?.Value;
   }
-
-  public static void SetOptionalString(Curve? openXmlElement, String? value)
+  
+  private static void SetOptionalString(DocumentFormat.OpenXml.Vml.Curve openXmlElement, String? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.OptionalString = new StringValue { Value = value };
-      else
-        openXmlElement.OptionalString = null;
+    if (value != null)
+      openXmlElement.OptionalString = new StringValue { Value = value };
+    else
+      openXmlElement.OptionalString = null;
   }
-
+  
   /// <summary>
-  ///   Shape Handle Toggle
+  /// Shape Handle Toggle
   /// </summary>
-  public static Boolean? GetOned(Curve? openXmlElement)
+  private static Boolean? GetOned(DocumentFormat.OpenXml.Vml.Curve openXmlElement)
   {
     return openXmlElement?.Oned?.Value;
   }
-
-  public static void SetOned(Curve? openXmlElement, Boolean? value)
+  
+  private static void SetOned(DocumentFormat.OpenXml.Vml.Curve openXmlElement, Boolean? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.Oned = value;
-      else
-        openXmlElement.Oned = null;
+    if (value != null)
+      openXmlElement.Oned = value;
+    else
+      openXmlElement.Oned = null;
   }
-
+  
   /// <summary>
-  ///   Regroup ID
+  /// Regroup ID
   /// </summary>
-  public static Int64? GetRegroupId(Curve? openXmlElement)
+  private static Int64? GetRegroupId(DocumentFormat.OpenXml.Vml.Curve openXmlElement)
   {
-    return openXmlElement?.RegroupId?.Value;
+    return openXmlElement.RegroupId?.Value;
   }
-
-  public static void SetRegroupId(Curve? openXmlElement, Int64? value)
+  
+  private static void SetRegroupId(DocumentFormat.OpenXml.Vml.Curve openXmlElement, Int64? value)
   {
-    if (openXmlElement != null)
-      openXmlElement.RegroupId = value;
+    openXmlElement.RegroupId = value;
   }
-
+  
   /// <summary>
-  ///   Double-click Notification Toggle
+  /// Double-click Notification Toggle
   /// </summary>
-  public static Boolean? GetDoubleClickNotify(Curve? openXmlElement)
+  private static Boolean? GetDoubleClickNotify(DocumentFormat.OpenXml.Vml.Curve openXmlElement)
   {
     return openXmlElement?.DoubleClickNotify?.Value;
   }
-
-  public static void SetDoubleClickNotify(Curve? openXmlElement, Boolean? value)
+  
+  private static void SetDoubleClickNotify(DocumentFormat.OpenXml.Vml.Curve openXmlElement, Boolean? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.DoubleClickNotify = value;
-      else
-        openXmlElement.DoubleClickNotify = null;
+    if (value != null)
+      openXmlElement.DoubleClickNotify = value;
+    else
+      openXmlElement.DoubleClickNotify = null;
   }
-
+  
   /// <summary>
-  ///   Button Behavior Toggle
+  /// Button Behavior Toggle
   /// </summary>
-  public static Boolean? GetButton(Curve? openXmlElement)
+  private static Boolean? GetButton(DocumentFormat.OpenXml.Vml.Curve openXmlElement)
   {
     return openXmlElement?.Button?.Value;
   }
-
-  public static void SetButton(Curve? openXmlElement, Boolean? value)
+  
+  private static void SetButton(DocumentFormat.OpenXml.Vml.Curve openXmlElement, Boolean? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.Button = value;
-      else
-        openXmlElement.Button = null;
+    if (value != null)
+      openXmlElement.Button = value;
+    else
+      openXmlElement.Button = null;
   }
-
+  
   /// <summary>
-  ///   Hide Script Anchors
+  /// Hide Script Anchors
   /// </summary>
-  public static Boolean? GetUserHidden(Curve? openXmlElement)
+  private static Boolean? GetUserHidden(DocumentFormat.OpenXml.Vml.Curve openXmlElement)
   {
     return openXmlElement?.UserHidden?.Value;
   }
-
-  public static void SetUserHidden(Curve? openXmlElement, Boolean? value)
+  
+  private static void SetUserHidden(DocumentFormat.OpenXml.Vml.Curve openXmlElement, Boolean? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.UserHidden = value;
-      else
-        openXmlElement.UserHidden = null;
+    if (value != null)
+      openXmlElement.UserHidden = value;
+    else
+      openXmlElement.UserHidden = null;
   }
-
+  
   /// <summary>
-  ///   Graphical Bullet
+  /// Graphical Bullet
   /// </summary>
-  public static Boolean? GetBullet(Curve? openXmlElement)
+  private static Boolean? GetBullet(DocumentFormat.OpenXml.Vml.Curve openXmlElement)
   {
     return openXmlElement?.Bullet?.Value;
   }
-
-  public static void SetBullet(Curve? openXmlElement, Boolean? value)
+  
+  private static void SetBullet(DocumentFormat.OpenXml.Vml.Curve openXmlElement, Boolean? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.Bullet = value;
-      else
-        openXmlElement.Bullet = null;
+    if (value != null)
+      openXmlElement.Bullet = value;
+    else
+      openXmlElement.Bullet = null;
   }
-
+  
   /// <summary>
-  ///   Horizontal Rule Toggle
+  /// Horizontal Rule Toggle
   /// </summary>
-  public static Boolean? GetHorizontal(Curve? openXmlElement)
+  private static Boolean? GetHorizontal(DocumentFormat.OpenXml.Vml.Curve openXmlElement)
   {
     return openXmlElement?.Horizontal?.Value;
   }
-
-  public static void SetHorizontal(Curve? openXmlElement, Boolean? value)
+  
+  private static void SetHorizontal(DocumentFormat.OpenXml.Vml.Curve openXmlElement, Boolean? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.Horizontal = value;
-      else
-        openXmlElement.Horizontal = null;
+    if (value != null)
+      openXmlElement.Horizontal = value;
+    else
+      openXmlElement.Horizontal = null;
   }
-
+  
   /// <summary>
-  ///   Horizontal Rule Standard Display Toggle
+  /// Horizontal Rule Standard Display Toggle
   /// </summary>
-  public static Boolean? GetHorizontalStandard(Curve? openXmlElement)
+  private static Boolean? GetHorizontalStandard(DocumentFormat.OpenXml.Vml.Curve openXmlElement)
   {
     return openXmlElement?.HorizontalStandard?.Value;
   }
-
-  public static void SetHorizontalStandard(Curve? openXmlElement, Boolean? value)
+  
+  private static void SetHorizontalStandard(DocumentFormat.OpenXml.Vml.Curve openXmlElement, Boolean? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.HorizontalStandard = value;
-      else
-        openXmlElement.HorizontalStandard = null;
+    if (value != null)
+      openXmlElement.HorizontalStandard = value;
+    else
+      openXmlElement.HorizontalStandard = null;
   }
-
+  
   /// <summary>
-  ///   Horizontal Rule 3D Shading Toggle
+  /// Horizontal Rule 3D Shading Toggle
   /// </summary>
-  public static Boolean? GetHorizontalNoShade(Curve? openXmlElement)
+  private static Boolean? GetHorizontalNoShade(DocumentFormat.OpenXml.Vml.Curve openXmlElement)
   {
     return openXmlElement?.HorizontalNoShade?.Value;
   }
-
-  public static void SetHorizontalNoShade(Curve? openXmlElement, Boolean? value)
+  
+  private static void SetHorizontalNoShade(DocumentFormat.OpenXml.Vml.Curve openXmlElement, Boolean? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.HorizontalNoShade = value;
-      else
-        openXmlElement.HorizontalNoShade = null;
+    if (value != null)
+      openXmlElement.HorizontalNoShade = value;
+    else
+      openXmlElement.HorizontalNoShade = null;
   }
-
+  
   /// <summary>
-  ///   Horizontal Rule Length Percentage
+  /// Horizontal Rule Length Percentage
   /// </summary>
-  public static Single? GetHorizontalPercentage(Curve? openXmlElement)
+  private static Single? GetHorizontalPercentage(DocumentFormat.OpenXml.Vml.Curve openXmlElement)
   {
-    return openXmlElement?.HorizontalPercentage?.Value;
+    return openXmlElement.HorizontalPercentage?.Value;
   }
-
-  public static void SetHorizontalPercentage(Curve? openXmlElement, Single? value)
+  
+  private static void SetHorizontalPercentage(DocumentFormat.OpenXml.Vml.Curve openXmlElement, Single? value)
   {
-    if (openXmlElement != null)
-      openXmlElement.HorizontalPercentage = value;
+    openXmlElement.HorizontalPercentage = value;
   }
-
+  
   /// <summary>
-  ///   Horizontal Rule Alignment
+  /// Horizontal Rule Alignment
   /// </summary>
-  public static HorizontalRuleAlignmentKind? GetHorizontalAlignment(Curve? openXmlElement)
+  private static DocumentModel.Vml.HorizontalRuleAlignmentKind? GetHorizontalAlignment(DocumentFormat.OpenXml.Vml.Curve openXmlElement)
   {
-    return EnumValueConverter.GetValue<HorizontalRuleAlignmentValues, HorizontalRuleAlignmentKind>(openXmlElement?.HorizontalAlignment?.Value);
+    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Vml.Office.HorizontalRuleAlignmentValues, DocumentModel.Vml.HorizontalRuleAlignmentKind>(openXmlElement?.HorizontalAlignment?.Value);
   }
-
-  public static void SetHorizontalAlignment(Curve? openXmlElement, HorizontalRuleAlignmentKind? value)
+  
+  private static void SetHorizontalAlignment(DocumentFormat.OpenXml.Vml.Curve openXmlElement, DocumentModel.Vml.HorizontalRuleAlignmentKind? value)
   {
-    if (openXmlElement != null)
-      openXmlElement.HorizontalAlignment = EnumValueConverter.CreateEnumValue<HorizontalRuleAlignmentValues, HorizontalRuleAlignmentKind>(value);
+    openXmlElement.HorizontalAlignment = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Vml.Office.HorizontalRuleAlignmentValues, DocumentModel.Vml.HorizontalRuleAlignmentKind>(value);
   }
-
+  
   /// <summary>
-  ///   Allow in Table Cell
+  /// Allow in Table Cell
   /// </summary>
-  public static Boolean? GetAllowInCell(Curve? openXmlElement)
+  private static Boolean? GetAllowInCell(DocumentFormat.OpenXml.Vml.Curve openXmlElement)
   {
     return openXmlElement?.AllowInCell?.Value;
   }
-
-  public static void SetAllowInCell(Curve? openXmlElement, Boolean? value)
+  
+  private static void SetAllowInCell(DocumentFormat.OpenXml.Vml.Curve openXmlElement, Boolean? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.AllowInCell = value;
-      else
-        openXmlElement.AllowInCell = null;
+    if (value != null)
+      openXmlElement.AllowInCell = value;
+    else
+      openXmlElement.AllowInCell = null;
   }
-
+  
   /// <summary>
-  ///   Allow Shape Overlap
+  /// Allow Shape Overlap
   /// </summary>
-  public static Boolean? GetAllowOverlap(Curve? openXmlElement)
+  private static Boolean? GetAllowOverlap(DocumentFormat.OpenXml.Vml.Curve openXmlElement)
   {
     return openXmlElement?.AllowOverlap?.Value;
   }
-
-  public static void SetAllowOverlap(Curve? openXmlElement, Boolean? value)
+  
+  private static void SetAllowOverlap(DocumentFormat.OpenXml.Vml.Curve openXmlElement, Boolean? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.AllowOverlap = value;
-      else
-        openXmlElement.AllowOverlap = null;
+    if (value != null)
+      openXmlElement.AllowOverlap = value;
+    else
+      openXmlElement.AllowOverlap = null;
   }
-
+  
   /// <summary>
-  ///   Exists In Master Slide
+  /// Exists In Master Slide
   /// </summary>
-  public static Boolean? GetUserDrawn(Curve? openXmlElement)
+  private static Boolean? GetUserDrawn(DocumentFormat.OpenXml.Vml.Curve openXmlElement)
   {
     return openXmlElement?.UserDrawn?.Value;
   }
-
-  public static void SetUserDrawn(Curve? openXmlElement, Boolean? value)
+  
+  private static void SetUserDrawn(DocumentFormat.OpenXml.Vml.Curve openXmlElement, Boolean? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.UserDrawn = value;
-      else
-        openXmlElement.UserDrawn = null;
+    if (value != null)
+      openXmlElement.UserDrawn = value;
+    else
+      openXmlElement.UserDrawn = null;
   }
-
+  
   /// <summary>
-  ///   Border Top Color
+  /// Border Top Color
   /// </summary>
-  public static String? GetBorderTopColor(Curve? openXmlElement)
+  private static String? GetBorderTopColor(DocumentFormat.OpenXml.Vml.Curve openXmlElement)
   {
     return openXmlElement?.BorderTopColor?.Value;
   }
-
-  public static void SetBorderTopColor(Curve? openXmlElement, String? value)
+  
+  private static void SetBorderTopColor(DocumentFormat.OpenXml.Vml.Curve openXmlElement, String? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.BorderTopColor = new StringValue { Value = value };
-      else
-        openXmlElement.BorderTopColor = null;
+    if (value != null)
+      openXmlElement.BorderTopColor = new StringValue { Value = value };
+    else
+      openXmlElement.BorderTopColor = null;
   }
-
+  
   /// <summary>
-  ///   Border Left Color
+  /// Border Left Color
   /// </summary>
-  public static String? GetBorderLeftColor(Curve? openXmlElement)
+  private static String? GetBorderLeftColor(DocumentFormat.OpenXml.Vml.Curve openXmlElement)
   {
     return openXmlElement?.BorderLeftColor?.Value;
   }
-
-  public static void SetBorderLeftColor(Curve? openXmlElement, String? value)
+  
+  private static void SetBorderLeftColor(DocumentFormat.OpenXml.Vml.Curve openXmlElement, String? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.BorderLeftColor = new StringValue { Value = value };
-      else
-        openXmlElement.BorderLeftColor = null;
+    if (value != null)
+      openXmlElement.BorderLeftColor = new StringValue { Value = value };
+    else
+      openXmlElement.BorderLeftColor = null;
   }
-
+  
   /// <summary>
-  ///   Bottom Border Color
+  /// Bottom Border Color
   /// </summary>
-  public static String? GetBorderBottomColor(Curve? openXmlElement)
+  private static String? GetBorderBottomColor(DocumentFormat.OpenXml.Vml.Curve openXmlElement)
   {
     return openXmlElement?.BorderBottomColor?.Value;
   }
-
-  public static void SetBorderBottomColor(Curve? openXmlElement, String? value)
+  
+  private static void SetBorderBottomColor(DocumentFormat.OpenXml.Vml.Curve openXmlElement, String? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.BorderBottomColor = new StringValue { Value = value };
-      else
-        openXmlElement.BorderBottomColor = null;
+    if (value != null)
+      openXmlElement.BorderBottomColor = new StringValue { Value = value };
+    else
+      openXmlElement.BorderBottomColor = null;
   }
-
+  
   /// <summary>
-  ///   Border Right Color
+  /// Border Right Color
   /// </summary>
-  public static String? GetBorderRightColor(Curve? openXmlElement)
+  private static String? GetBorderRightColor(DocumentFormat.OpenXml.Vml.Curve openXmlElement)
   {
     return openXmlElement?.BorderRightColor?.Value;
   }
-
-  public static void SetBorderRightColor(Curve? openXmlElement, String? value)
+  
+  private static void SetBorderRightColor(DocumentFormat.OpenXml.Vml.Curve openXmlElement, String? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.BorderRightColor = new StringValue { Value = value };
-      else
-        openXmlElement.BorderRightColor = null;
+    if (value != null)
+      openXmlElement.BorderRightColor = new StringValue { Value = value };
+    else
+      openXmlElement.BorderRightColor = null;
   }
-
+  
   /// <summary>
-  ///   Diagram Node Layout Identifier
+  /// Diagram Node Layout Identifier
   /// </summary>
-  public static Int64? GetDiagramLayout(Curve? openXmlElement)
+  private static Int64? GetDiagramLayout(DocumentFormat.OpenXml.Vml.Curve openXmlElement)
   {
-    return openXmlElement?.DiagramLayout?.Value;
+    return openXmlElement.DiagramLayout?.Value;
   }
-
-  public static void SetDiagramLayout(Curve? openXmlElement, Int64? value)
+  
+  private static void SetDiagramLayout(DocumentFormat.OpenXml.Vml.Curve openXmlElement, Int64? value)
   {
-    if (openXmlElement != null)
-      openXmlElement.DiagramLayout = value;
+    openXmlElement.DiagramLayout = value;
   }
-
+  
   /// <summary>
-  ///   Diagram Node Identifier
+  /// Diagram Node Identifier
   /// </summary>
-  public static Int64? GetDiagramNodeKind(Curve? openXmlElement)
+  private static Int64? GetDiagramNodeKind(DocumentFormat.OpenXml.Vml.Curve openXmlElement)
   {
-    return openXmlElement?.DiagramNodeKind?.Value;
+    return openXmlElement.DiagramNodeKind?.Value;
   }
-
-  public static void SetDiagramNodeKind(Curve? openXmlElement, Int64? value)
+  
+  private static void SetDiagramNodeKind(DocumentFormat.OpenXml.Vml.Curve openXmlElement, Int64? value)
   {
-    if (openXmlElement != null)
-      openXmlElement.DiagramNodeKind = value;
+    openXmlElement.DiagramNodeKind = value;
   }
-
+  
   /// <summary>
-  ///   Diagram Node Recent Layout Identifier
+  /// Diagram Node Recent Layout Identifier
   /// </summary>
-  public static Int64? GetDiagramLayoutMostRecentUsed(Curve? openXmlElement)
+  private static Int64? GetDiagramLayoutMostRecentUsed(DocumentFormat.OpenXml.Vml.Curve openXmlElement)
   {
-    return openXmlElement?.DiagramLayoutMostRecentUsed?.Value;
+    return openXmlElement.DiagramLayoutMostRecentUsed?.Value;
   }
-
-  public static void SetDiagramLayoutMostRecentUsed(Curve? openXmlElement, Int64? value)
+  
+  private static void SetDiagramLayoutMostRecentUsed(DocumentFormat.OpenXml.Vml.Curve openXmlElement, Int64? value)
   {
-    if (openXmlElement != null)
-      openXmlElement.DiagramLayoutMostRecentUsed = value;
+    openXmlElement.DiagramLayoutMostRecentUsed = value;
   }
-
+  
   /// <summary>
-  ///   Text Inset Mode
+  /// Text Inset Mode
   /// </summary>
-  public static InsetMarginKind? GetInsetMode(Curve? openXmlElement)
+  private static DocumentModel.Vml.InsetMarginKind? GetInsetMode(DocumentFormat.OpenXml.Vml.Curve openXmlElement)
   {
-    return EnumValueConverter.GetValue<InsetMarginValues, InsetMarginKind>(openXmlElement?.InsetMode?.Value);
+    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Vml.Office.InsetMarginValues, DocumentModel.Vml.InsetMarginKind>(openXmlElement?.InsetMode?.Value);
   }
-
-  public static void SetInsetMode(Curve? openXmlElement, InsetMarginKind? value)
+  
+  private static void SetInsetMode(DocumentFormat.OpenXml.Vml.Curve openXmlElement, DocumentModel.Vml.InsetMarginKind? value)
   {
-    if (openXmlElement != null)
-      openXmlElement.InsetMode = EnumValueConverter.CreateEnumValue<InsetMarginValues, InsetMarginKind>(value);
+    openXmlElement.InsetMode = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Vml.Office.InsetMarginValues, DocumentModel.Vml.InsetMarginKind>(value);
   }
-
+  
   /// <summary>
-  ///   Shape Fill Toggle
+  /// Shape Fill Toggle
   /// </summary>
-  public static Boolean? GetFilled(Curve? openXmlElement)
+  private static Boolean? GetFilled(DocumentFormat.OpenXml.Vml.Curve openXmlElement)
   {
     return openXmlElement?.Filled?.Value;
   }
-
-  public static void SetFilled(Curve? openXmlElement, Boolean? value)
+  
+  private static void SetFilled(DocumentFormat.OpenXml.Vml.Curve openXmlElement, Boolean? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.Filled = value;
-      else
-        openXmlElement.Filled = null;
+    if (value != null)
+      openXmlElement.Filled = value;
+    else
+      openXmlElement.Filled = null;
   }
-
+  
   /// <summary>
-  ///   Fill Color
+  /// Fill Color
   /// </summary>
-  public static String? GetFillColor(Curve? openXmlElement)
+  private static String? GetFillColor(DocumentFormat.OpenXml.Vml.Curve openXmlElement)
   {
     return openXmlElement?.FillColor?.Value;
   }
-
-  public static void SetFillColor(Curve? openXmlElement, String? value)
+  
+  private static void SetFillColor(DocumentFormat.OpenXml.Vml.Curve openXmlElement, String? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.FillColor = new StringValue { Value = value };
-      else
-        openXmlElement.FillColor = null;
+    if (value != null)
+      openXmlElement.FillColor = new StringValue { Value = value };
+    else
+      openXmlElement.FillColor = null;
   }
-
+  
   /// <summary>
-  ///   Shape Stroke Toggle
+  /// Shape Stroke Toggle
   /// </summary>
-  public static Boolean? GetStroked(Curve? openXmlElement)
+  private static Boolean? GetStroked(DocumentFormat.OpenXml.Vml.Curve openXmlElement)
   {
     return openXmlElement?.Stroked?.Value;
   }
-
-  public static void SetStroked(Curve? openXmlElement, Boolean? value)
+  
+  private static void SetStroked(DocumentFormat.OpenXml.Vml.Curve openXmlElement, Boolean? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.Stroked = value;
-      else
-        openXmlElement.Stroked = null;
+    if (value != null)
+      openXmlElement.Stroked = value;
+    else
+      openXmlElement.Stroked = null;
   }
-
+  
   /// <summary>
-  ///   Shape Stroke Color
+  /// Shape Stroke Color
   /// </summary>
-  public static String? GetStrokeColor(Curve? openXmlElement)
+  private static String? GetStrokeColor(DocumentFormat.OpenXml.Vml.Curve openXmlElement)
   {
     return openXmlElement?.StrokeColor?.Value;
   }
-
-  public static void SetStrokeColor(Curve? openXmlElement, String? value)
+  
+  private static void SetStrokeColor(DocumentFormat.OpenXml.Vml.Curve openXmlElement, String? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.StrokeColor = new StringValue { Value = value };
-      else
-        openXmlElement.StrokeColor = null;
+    if (value != null)
+      openXmlElement.StrokeColor = new StringValue { Value = value };
+    else
+      openXmlElement.StrokeColor = null;
   }
-
+  
   /// <summary>
-  ///   Shape Stroke Weight
+  /// Shape Stroke Weight
   /// </summary>
-  public static String? GetStrokeWeight(Curve? openXmlElement)
+  private static String? GetStrokeWeight(DocumentFormat.OpenXml.Vml.Curve openXmlElement)
   {
     return openXmlElement?.StrokeWeight?.Value;
   }
-
-  public static void SetStrokeWeight(Curve? openXmlElement, String? value)
+  
+  private static void SetStrokeWeight(DocumentFormat.OpenXml.Vml.Curve openXmlElement, String? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.StrokeWeight = new StringValue { Value = value };
-      else
-        openXmlElement.StrokeWeight = null;
+    if (value != null)
+      openXmlElement.StrokeWeight = new StringValue { Value = value };
+    else
+      openXmlElement.StrokeWeight = null;
   }
-
+  
   /// <summary>
-  ///   Inset Border From Path
+  /// Inset Border From Path
   /// </summary>
-  public static Boolean? GetInsetPen(Curve? openXmlElement)
+  private static Boolean? GetInsetPen(DocumentFormat.OpenXml.Vml.Curve openXmlElement)
   {
     return openXmlElement?.InsetPen?.Value;
   }
-
-  public static void SetInsetPen(Curve? openXmlElement, Boolean? value)
+  
+  private static void SetInsetPen(DocumentFormat.OpenXml.Vml.Curve openXmlElement, Boolean? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.InsetPen = value;
-      else
-        openXmlElement.InsetPen = null;
+    if (value != null)
+      openXmlElement.InsetPen = value;
+    else
+      openXmlElement.InsetPen = null;
   }
-
+  
   /// <summary>
-  ///   Optional Number
+  /// Optional Number
   /// </summary>
-  public static Int32? GetOptionalNumber(Curve? openXmlElement)
+  private static Int32? GetOptionalNumber(DocumentFormat.OpenXml.Vml.Curve openXmlElement)
   {
-    return openXmlElement?.OptionalNumber?.Value;
+    return openXmlElement.OptionalNumber?.Value;
   }
-
-  public static void SetOptionalNumber(Curve? openXmlElement, Int32? value)
+  
+  private static void SetOptionalNumber(DocumentFormat.OpenXml.Vml.Curve openXmlElement, Int32? value)
   {
-    if (openXmlElement != null)
-      openXmlElement.OptionalNumber = value;
+    openXmlElement.OptionalNumber = value;
   }
-
+  
   /// <summary>
-  ///   Shape Connector Type
+  /// Shape Connector Type
   /// </summary>
-  public static ConnectorKind? GetConnectorType(Curve? openXmlElement)
+  private static DocumentModel.Vml.ConnectorKind? GetConnectorType(DocumentFormat.OpenXml.Vml.Curve openXmlElement)
   {
-    return EnumValueConverter.GetValue<ConnectorValues, ConnectorKind>(openXmlElement?.ConnectorType?.Value);
+    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Vml.Office.ConnectorValues, DocumentModel.Vml.ConnectorKind>(openXmlElement?.ConnectorType?.Value);
   }
-
-  public static void SetConnectorType(Curve? openXmlElement, ConnectorKind? value)
+  
+  private static void SetConnectorType(DocumentFormat.OpenXml.Vml.Curve openXmlElement, DocumentModel.Vml.ConnectorKind? value)
   {
-    if (openXmlElement != null)
-      openXmlElement.ConnectorType = EnumValueConverter.CreateEnumValue<ConnectorValues, ConnectorKind>(value);
+    openXmlElement.ConnectorType = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Vml.Office.ConnectorValues, DocumentModel.Vml.ConnectorKind>(value);
   }
-
+  
   /// <summary>
-  ///   Black-and-White Mode
+  /// Black-and-White Mode
   /// </summary>
-  public static BlackAndWhiteMode? GetBlackWhiteMode(Curve? openXmlElement)
+  private static DocumentModel.Vml.BlackAndWhiteMode? GetBlackWhiteMode(DocumentFormat.OpenXml.Vml.Curve openXmlElement)
   {
-    return EnumValueConverter.GetValue<BlackAndWhiteModeValues, BlackAndWhiteMode>(openXmlElement?.BlackWhiteMode?.Value);
+    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Vml.Office.BlackAndWhiteModeValues, DocumentModel.Vml.BlackAndWhiteMode>(openXmlElement?.BlackWhiteMode?.Value);
   }
-
-  public static void SetBlackWhiteMode(Curve? openXmlElement, BlackAndWhiteMode? value)
+  
+  private static void SetBlackWhiteMode(DocumentFormat.OpenXml.Vml.Curve openXmlElement, DocumentModel.Vml.BlackAndWhiteMode? value)
   {
-    if (openXmlElement != null)
-      openXmlElement.BlackWhiteMode = EnumValueConverter.CreateEnumValue<BlackAndWhiteModeValues, BlackAndWhiteMode>(value);
+    openXmlElement.BlackWhiteMode = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Vml.Office.BlackAndWhiteModeValues, DocumentModel.Vml.BlackAndWhiteMode>(value);
   }
-
+  
   /// <summary>
-  ///   Pure Black-and-White Mode
+  /// Pure Black-and-White Mode
   /// </summary>
-  public static BlackAndWhiteMode? GetPureBlackWhiteMode(Curve? openXmlElement)
+  private static DocumentModel.Vml.BlackAndWhiteMode? GetPureBlackWhiteMode(DocumentFormat.OpenXml.Vml.Curve openXmlElement)
   {
-    return EnumValueConverter.GetValue<BlackAndWhiteModeValues, BlackAndWhiteMode>(openXmlElement?.PureBlackWhiteMode?.Value);
+    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Vml.Office.BlackAndWhiteModeValues, DocumentModel.Vml.BlackAndWhiteMode>(openXmlElement?.PureBlackWhiteMode?.Value);
   }
-
-  public static void SetPureBlackWhiteMode(Curve? openXmlElement, BlackAndWhiteMode? value)
+  
+  private static void SetPureBlackWhiteMode(DocumentFormat.OpenXml.Vml.Curve openXmlElement, DocumentModel.Vml.BlackAndWhiteMode? value)
   {
-    if (openXmlElement != null)
-      openXmlElement.PureBlackWhiteMode = EnumValueConverter.CreateEnumValue<BlackAndWhiteModeValues, BlackAndWhiteMode>(value);
+    openXmlElement.PureBlackWhiteMode = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Vml.Office.BlackAndWhiteModeValues, DocumentModel.Vml.BlackAndWhiteMode>(value);
   }
-
+  
   /// <summary>
-  ///   Normal Black-and-White Mode
+  /// Normal Black-and-White Mode
   /// </summary>
-  public static BlackAndWhiteMode? GetNormalBlackWhiteMode(Curve? openXmlElement)
+  private static DocumentModel.Vml.BlackAndWhiteMode? GetNormalBlackWhiteMode(DocumentFormat.OpenXml.Vml.Curve openXmlElement)
   {
-    return EnumValueConverter.GetValue<BlackAndWhiteModeValues, BlackAndWhiteMode>(openXmlElement?.NormalBlackWhiteMode?.Value);
+    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Vml.Office.BlackAndWhiteModeValues, DocumentModel.Vml.BlackAndWhiteMode>(openXmlElement?.NormalBlackWhiteMode?.Value);
   }
-
-  public static void SetNormalBlackWhiteMode(Curve? openXmlElement, BlackAndWhiteMode? value)
+  
+  private static void SetNormalBlackWhiteMode(DocumentFormat.OpenXml.Vml.Curve openXmlElement, DocumentModel.Vml.BlackAndWhiteMode? value)
   {
-    if (openXmlElement != null)
-      openXmlElement.NormalBlackWhiteMode = EnumValueConverter.CreateEnumValue<BlackAndWhiteModeValues, BlackAndWhiteMode>(value);
+    openXmlElement.NormalBlackWhiteMode = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Vml.Office.BlackAndWhiteModeValues, DocumentModel.Vml.BlackAndWhiteMode>(value);
   }
-
+  
   /// <summary>
-  ///   Force Dashed Outline
+  /// Force Dashed Outline
   /// </summary>
-  public static Boolean? GetForceDash(Curve? openXmlElement)
+  private static Boolean? GetForceDash(DocumentFormat.OpenXml.Vml.Curve openXmlElement)
   {
     return openXmlElement?.ForceDash?.Value;
   }
-
-  public static void SetForceDash(Curve? openXmlElement, Boolean? value)
+  
+  private static void SetForceDash(DocumentFormat.OpenXml.Vml.Curve openXmlElement, Boolean? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.ForceDash = value;
-      else
-        openXmlElement.ForceDash = null;
+    if (value != null)
+      openXmlElement.ForceDash = value;
+    else
+      openXmlElement.ForceDash = null;
   }
-
+  
   /// <summary>
-  ///   Embedded Object Icon Toggle
+  /// Embedded Object Icon Toggle
   /// </summary>
-  public static Boolean? GetOleIcon(Curve? openXmlElement)
+  private static Boolean? GetOleIcon(DocumentFormat.OpenXml.Vml.Curve openXmlElement)
   {
     return openXmlElement?.OleIcon?.Value;
   }
-
-  public static void SetOleIcon(Curve? openXmlElement, Boolean? value)
+  
+  private static void SetOleIcon(DocumentFormat.OpenXml.Vml.Curve openXmlElement, Boolean? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.OleIcon = value;
-      else
-        openXmlElement.OleIcon = null;
+    if (value != null)
+      openXmlElement.OleIcon = value;
+    else
+      openXmlElement.OleIcon = null;
   }
-
+  
   /// <summary>
-  ///   Embedded Object Toggle
+  /// Embedded Object Toggle
   /// </summary>
-  public static Boolean? GetOle(Curve? openXmlElement)
+  private static Boolean? GetOle(DocumentFormat.OpenXml.Vml.Curve openXmlElement)
   {
     return openXmlElement?.Ole?.Value;
   }
-
-  public static void SetOle(Curve? openXmlElement, Boolean? value)
+  
+  private static void SetOle(DocumentFormat.OpenXml.Vml.Curve openXmlElement, Boolean? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.Ole = value;
-      else
-        openXmlElement.Ole = null;
+    if (value != null)
+      openXmlElement.Ole = value;
+    else
+      openXmlElement.Ole = null;
   }
-
+  
   /// <summary>
-  ///   Relative Resize Toggle
+  /// Relative Resize Toggle
   /// </summary>
-  public static Boolean? GetPreferRelative(Curve? openXmlElement)
+  private static Boolean? GetPreferRelative(DocumentFormat.OpenXml.Vml.Curve openXmlElement)
   {
     return openXmlElement?.PreferRelative?.Value;
   }
-
-  public static void SetPreferRelative(Curve? openXmlElement, Boolean? value)
+  
+  private static void SetPreferRelative(DocumentFormat.OpenXml.Vml.Curve openXmlElement, Boolean? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.PreferRelative = value;
-      else
-        openXmlElement.PreferRelative = null;
+    if (value != null)
+      openXmlElement.PreferRelative = value;
+    else
+      openXmlElement.PreferRelative = null;
   }
-
+  
   /// <summary>
-  ///   Clip to Wrapping Polygon
+  /// Clip to Wrapping Polygon
   /// </summary>
-  public static Boolean? GetClipToWrap(Curve? openXmlElement)
+  private static Boolean? GetClipToWrap(DocumentFormat.OpenXml.Vml.Curve openXmlElement)
   {
     return openXmlElement?.ClipToWrap?.Value;
   }
-
-  public static void SetClipToWrap(Curve? openXmlElement, Boolean? value)
+  
+  private static void SetClipToWrap(DocumentFormat.OpenXml.Vml.Curve openXmlElement, Boolean? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.ClipToWrap = value;
-      else
-        openXmlElement.ClipToWrap = null;
+    if (value != null)
+      openXmlElement.ClipToWrap = value;
+    else
+      openXmlElement.ClipToWrap = null;
   }
-
+  
   /// <summary>
-  ///   Clipping Toggle
+  /// Clipping Toggle
   /// </summary>
-  public static Boolean? GetClip(Curve? openXmlElement)
+  private static Boolean? GetClip(DocumentFormat.OpenXml.Vml.Curve openXmlElement)
   {
     return openXmlElement?.Clip?.Value;
   }
-
-  public static void SetClip(Curve? openXmlElement, Boolean? value)
+  
+  private static void SetClip(DocumentFormat.OpenXml.Vml.Curve openXmlElement, Boolean? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.Clip = value;
-      else
-        openXmlElement.Clip = null;
+    if (value != null)
+      openXmlElement.Clip = value;
+    else
+      openXmlElement.Clip = null;
   }
-
+  
   /// <summary>
-  ///   Encoded Package
+  /// Encoded Package
   /// </summary>
-  public static Byte[]? GetGfxdata(Curve? openXmlElement)
+  private static Byte[]? GetGfxdata(DocumentFormat.OpenXml.Vml.Curve openXmlElement)
   {
-    if (openXmlElement?.Gfxdata?.Value != null)
+    if (openXmlElement.Gfxdata?.Value != null)
       return Convert.FromBase64String(openXmlElement.Gfxdata.Value);
     return null;
   }
-
-  public static void SetGfxdata(Curve? openXmlElement, Byte[]? value)
+  
+  private static void SetGfxdata(DocumentFormat.OpenXml.Vml.Curve openXmlElement, Byte[]? value)
   {
-    if (openXmlElement != null)
-    {
-      if (value != null)
-        openXmlElement.Gfxdata = Convert.ToBase64String(value);
-      else
-        openXmlElement.Gfxdata = null;
-    }
+    if (value != null)
+      openXmlElement.Gfxdata = Convert.ToBase64String(value);
+    else
+      openXmlElement.Gfxdata = null;
   }
-
+  
   /// <summary>
-  ///   Curve Starting Point
+  /// Curve Starting Point
   /// </summary>
-  public static String? GetFrom(Curve? openXmlElement)
+  private static String? GetFrom(DocumentFormat.OpenXml.Vml.Curve openXmlElement)
   {
     return openXmlElement?.From?.Value;
   }
-
-  public static void SetFrom(Curve? openXmlElement, String? value)
+  
+  private static void SetFrom(DocumentFormat.OpenXml.Vml.Curve openXmlElement, String? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.From = new StringValue { Value = value };
-      else
-        openXmlElement.From = null;
+    if (value != null)
+      openXmlElement.From = new StringValue { Value = value };
+    else
+      openXmlElement.From = null;
   }
-
+  
   /// <summary>
-  ///   First Curve Control Point
+  /// First Curve Control Point
   /// </summary>
-  public static String? GetControl1(Curve? openXmlElement)
+  private static String? GetControl1(DocumentFormat.OpenXml.Vml.Curve openXmlElement)
   {
     return openXmlElement?.Control1?.Value;
   }
-
-  public static void SetControl1(Curve? openXmlElement, String? value)
+  
+  private static void SetControl1(DocumentFormat.OpenXml.Vml.Curve openXmlElement, String? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.Control1 = new StringValue { Value = value };
-      else
-        openXmlElement.Control1 = null;
+    if (value != null)
+      openXmlElement.Control1 = new StringValue { Value = value };
+    else
+      openXmlElement.Control1 = null;
   }
-
+  
   /// <summary>
-  ///   Second Curve Control Point
+  /// Second Curve Control Point
   /// </summary>
-  public static String? GetControl2(Curve? openXmlElement)
+  private static String? GetControl2(DocumentFormat.OpenXml.Vml.Curve openXmlElement)
   {
     return openXmlElement?.Control2?.Value;
   }
-
-  public static void SetControl2(Curve? openXmlElement, String? value)
+  
+  private static void SetControl2(DocumentFormat.OpenXml.Vml.Curve openXmlElement, String? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.Control2 = new StringValue { Value = value };
-      else
-        openXmlElement.Control2 = null;
+    if (value != null)
+      openXmlElement.Control2 = new StringValue { Value = value };
+    else
+      openXmlElement.Control2 = null;
   }
-
+  
   /// <summary>
-  ///   Curve Ending Point
+  /// Curve Ending Point
   /// </summary>
-  public static String? GetTo(Curve? openXmlElement)
+  private static String? GetTo(DocumentFormat.OpenXml.Vml.Curve openXmlElement)
   {
     return openXmlElement?.To?.Value;
   }
-
-  public static void SetTo(Curve? openXmlElement, String? value)
+  
+  private static void SetTo(DocumentFormat.OpenXml.Vml.Curve openXmlElement, String? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.To = new StringValue { Value = value };
-      else
-        openXmlElement.To = null;
+    if (value != null)
+      openXmlElement.To = new StringValue { Value = value };
+    else
+      openXmlElement.To = null;
   }
-
-  public static Path? GetPath(Curve? openXmlElement)
+  
+  private static DocumentModel.Vml.Path? GetPath(DocumentFormat.OpenXml.Vml.Curve openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Vml.Path>();
     if (itemElement != null)
-      return PathConverter.CreateModelElement(itemElement);
+      return DocumentModel.OpenXml.Vml.PathConverter.CreateModelElement(itemElement);
     return null;
   }
-
-  public static void SetPath(Curve? openXmlElement, Path? value)
+  
+  private static void SetPath(DocumentFormat.OpenXml.Vml.Curve openXmlElement, DocumentModel.Vml.Path? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Vml.Path>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Vml.Path>();
+      itemElement = DocumentModel.OpenXml.Vml.PathConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Vml.Path>(value);
       if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = PathConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Vml.Path>(value);
-        if (itemElement != null)
-          openXmlElement.AddChild(itemElement);
-      }
+        openXmlElement.AddChild(itemElement);
     }
   }
-
-  public static Formulas? GetFormulas(Curve? openXmlElement)
+  
+  private static DocumentModel.Vml.Formulas? GetFormulas(DocumentFormat.OpenXml.Vml.Curve openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Vml.Formulas>();
     if (itemElement != null)
-      return FormulasConverter.CreateModelElement(itemElement);
+      return DocumentModel.OpenXml.Vml.FormulasConverter.CreateModelElement(itemElement);
     return null;
   }
-
-  public static void SetFormulas(Curve? openXmlElement, Formulas? value)
+  
+  private static void SetFormulas(DocumentFormat.OpenXml.Vml.Curve openXmlElement, DocumentModel.Vml.Formulas? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Vml.Formulas>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Vml.Formulas>();
+      itemElement = DocumentModel.OpenXml.Vml.FormulasConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Vml.Formulas>(value);
       if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = FormulasConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Vml.Formulas>(value);
-        if (itemElement != null)
-          openXmlElement.AddChild(itemElement);
-      }
+        openXmlElement.AddChild(itemElement);
     }
   }
-
-  public static ShapeHandles? GetShapeHandles(Curve? openXmlElement)
+  
+  private static DocumentModel.Vml.ShapeHandles? GetShapeHandles(DocumentFormat.OpenXml.Vml.Curve openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Vml.ShapeHandles>();
     if (itemElement != null)
-      return ShapeHandlesConverter.CreateModelElement(itemElement);
+      return DocumentModel.OpenXml.Vml.ShapeHandlesConverter.CreateModelElement(itemElement);
     return null;
   }
-
-  public static void SetShapeHandles(Curve? openXmlElement, ShapeHandles? value)
+  
+  private static void SetShapeHandles(DocumentFormat.OpenXml.Vml.Curve openXmlElement, DocumentModel.Vml.ShapeHandles? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Vml.ShapeHandles>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Vml.ShapeHandles>();
+      itemElement = DocumentModel.OpenXml.Vml.ShapeHandlesConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Vml.ShapeHandles>(value);
       if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = ShapeHandlesConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Vml.ShapeHandles>(value);
-        if (itemElement != null)
-          openXmlElement.AddChild(itemElement);
-      }
+        openXmlElement.AddChild(itemElement);
     }
   }
-
-  public static Fill? GetFill(Curve? openXmlElement)
+  
+  private static DocumentModel.Vml.Fill? GetFill(DocumentFormat.OpenXml.Vml.Curve openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Vml.Fill>();
     if (itemElement != null)
-      return FillConverter.CreateModelElement(itemElement);
+      return DocumentModel.OpenXml.Vml.FillConverter.CreateModelElement(itemElement);
     return null;
   }
-
-  public static void SetFill(Curve? openXmlElement, Fill? value)
+  
+  private static void SetFill(DocumentFormat.OpenXml.Vml.Curve openXmlElement, DocumentModel.Vml.Fill? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Vml.Fill>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Vml.Fill>();
+      itemElement = DocumentModel.OpenXml.Vml.FillConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Vml.Fill>(value);
       if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = FillConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Vml.Fill>(value);
-        if (itemElement != null)
-          openXmlElement.AddChild(itemElement);
-      }
+        openXmlElement.AddChild(itemElement);
     }
   }
-
-  public static Stroke? GetStroke(Curve? openXmlElement)
+  
+  private static DocumentModel.Vml.Stroke? GetStroke(DocumentFormat.OpenXml.Vml.Curve openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Vml.Stroke>();
     if (itemElement != null)
-      return StrokeConverter.CreateModelElement(itemElement);
+      return DocumentModel.OpenXml.Vml.StrokeConverter.CreateModelElement(itemElement);
     return null;
   }
-
-  public static void SetStroke(Curve? openXmlElement, Stroke? value)
+  
+  private static void SetStroke(DocumentFormat.OpenXml.Vml.Curve openXmlElement, DocumentModel.Vml.Stroke? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Vml.Stroke>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Vml.Stroke>();
+      itemElement = DocumentModel.OpenXml.Vml.StrokeConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Vml.Stroke>(value);
       if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = StrokeConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Vml.Stroke>(value);
-        if (itemElement != null)
-          openXmlElement.AddChild(itemElement);
-      }
+        openXmlElement.AddChild(itemElement);
     }
   }
-
-  public static Shadow? GetShadow(Curve? openXmlElement)
+  
+  private static DocumentModel.Vml.Shadow? GetShadow(DocumentFormat.OpenXml.Vml.Curve openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Vml.Shadow>();
     if (itemElement != null)
-      return ShadowConverter.CreateModelElement(itemElement);
+      return DocumentModel.OpenXml.Vml.ShadowConverter.CreateModelElement(itemElement);
     return null;
   }
-
-  public static void SetShadow(Curve? openXmlElement, Shadow? value)
+  
+  private static void SetShadow(DocumentFormat.OpenXml.Vml.Curve openXmlElement, DocumentModel.Vml.Shadow? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Vml.Shadow>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Vml.Shadow>();
+      itemElement = DocumentModel.OpenXml.Vml.ShadowConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Vml.Shadow>(value);
       if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = ShadowConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Vml.Shadow>(value);
-        if (itemElement != null)
-          openXmlElement.AddChild(itemElement);
-      }
+        openXmlElement.AddChild(itemElement);
     }
   }
-
-  public static TextBox? GetTextBox(Curve? openXmlElement)
+  
+  private static DocumentModel.Vml.TextBox? GetTextBox(DocumentFormat.OpenXml.Vml.Curve openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Vml.TextBox>();
     if (itemElement != null)
-      return TextBoxConverter.CreateModelElement(itemElement);
+      return DocumentModel.OpenXml.Vml.TextBoxConverter.CreateModelElement(itemElement);
     return null;
   }
-
-  public static void SetTextBox(Curve? openXmlElement, TextBox? value)
+  
+  private static void SetTextBox(DocumentFormat.OpenXml.Vml.Curve openXmlElement, DocumentModel.Vml.TextBox? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Vml.TextBox>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Vml.TextBox>();
+      itemElement = DocumentModel.OpenXml.Vml.TextBoxConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Vml.TextBox>(value);
       if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = TextBoxConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Vml.TextBox>(value);
-        if (itemElement != null)
-          openXmlElement.AddChild(itemElement);
-      }
+        openXmlElement.AddChild(itemElement);
     }
   }
-
-  public static TextPath? GetTextPath(Curve? openXmlElement)
+  
+  private static DocumentModel.Vml.TextPath? GetTextPath(DocumentFormat.OpenXml.Vml.Curve openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Vml.TextPath>();
     if (itemElement != null)
-      return TextPathConverter.CreateModelElement(itemElement);
+      return DocumentModel.OpenXml.Vml.TextPathConverter.CreateModelElement(itemElement);
     return null;
   }
-
-  public static void SetTextPath(Curve? openXmlElement, TextPath? value)
+  
+  private static void SetTextPath(DocumentFormat.OpenXml.Vml.Curve openXmlElement, DocumentModel.Vml.TextPath? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Vml.TextPath>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Vml.TextPath>();
+      itemElement = DocumentModel.OpenXml.Vml.TextPathConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Vml.TextPath>(value);
       if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = TextPathConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Vml.TextPath>(value);
-        if (itemElement != null)
-          openXmlElement.AddChild(itemElement);
-      }
+        openXmlElement.AddChild(itemElement);
     }
   }
-
-  public static ImageData? GetImageData(Curve? openXmlElement)
+  
+  private static DocumentModel.Vml.ImageData? GetImageData(DocumentFormat.OpenXml.Vml.Curve openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Vml.ImageData>();
     if (itemElement != null)
-      return ImageDataConverter.CreateModelElement(itemElement);
+      return DocumentModel.OpenXml.Vml.ImageDataConverter.CreateModelElement(itemElement);
     return null;
   }
-
-  public static void SetImageData(Curve? openXmlElement, ImageData? value)
+  
+  private static void SetImageData(DocumentFormat.OpenXml.Vml.Curve openXmlElement, DocumentModel.Vml.ImageData? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Vml.ImageData>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Vml.ImageData>();
+      itemElement = DocumentModel.OpenXml.Vml.ImageDataConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Vml.ImageData>(value);
       if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = ImageDataConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Vml.ImageData>(value);
-        if (itemElement != null)
-          openXmlElement.AddChild(itemElement);
-      }
+        openXmlElement.AddChild(itemElement);
     }
   }
-
-  public static Skew? GetSkew(Curve? openXmlElement)
+  
+  private static DocumentModel.Vml.Skew? GetSkew(DocumentFormat.OpenXml.Vml.Curve openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Vml.Office.Skew>();
     if (itemElement != null)
-      return SkewConverter.CreateModelElement(itemElement);
+      return DocumentModel.OpenXml.Vml.SkewConverter.CreateModelElement(itemElement);
     return null;
   }
-
-  public static void SetSkew(Curve? openXmlElement, Skew? value)
+  
+  private static void SetSkew(DocumentFormat.OpenXml.Vml.Curve openXmlElement, DocumentModel.Vml.Skew? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Vml.Office.Skew>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Vml.Office.Skew>();
+      itemElement = DocumentModel.OpenXml.Vml.SkewConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Vml.Office.Skew>(value);
       if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = SkewConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Vml.Office.Skew>(value);
-        if (itemElement != null)
-          openXmlElement.AddChild(itemElement);
-      }
+        openXmlElement.AddChild(itemElement);
     }
   }
-
-  public static Extrusion? GetExtrusion(Curve? openXmlElement)
+  
+  private static DocumentModel.Vml.Extrusion? GetExtrusion(DocumentFormat.OpenXml.Vml.Curve openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Vml.Office.Extrusion>();
     if (itemElement != null)
-      return ExtrusionConverter.CreateModelElement(itemElement);
+      return DocumentModel.OpenXml.Vml.ExtrusionConverter.CreateModelElement(itemElement);
     return null;
   }
-
-  public static void SetExtrusion(Curve? openXmlElement, Extrusion? value)
+  
+  private static void SetExtrusion(DocumentFormat.OpenXml.Vml.Curve openXmlElement, DocumentModel.Vml.Extrusion? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Vml.Office.Extrusion>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Vml.Office.Extrusion>();
+      itemElement = DocumentModel.OpenXml.Vml.ExtrusionConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Vml.Office.Extrusion>(value);
       if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = ExtrusionConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Vml.Office.Extrusion>(value);
-        if (itemElement != null)
-          openXmlElement.AddChild(itemElement);
-      }
+        openXmlElement.AddChild(itemElement);
     }
   }
-
-  public static Callout? GetCallout(Curve? openXmlElement)
+  
+  private static DocumentModel.Vml.Callout? GetCallout(DocumentFormat.OpenXml.Vml.Curve openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Vml.Office.Callout>();
     if (itemElement != null)
-      return CalloutConverter.CreateModelElement(itemElement);
+      return DocumentModel.OpenXml.Vml.CalloutConverter.CreateModelElement(itemElement);
     return null;
   }
-
-  public static void SetCallout(Curve? openXmlElement, Callout? value)
+  
+  private static void SetCallout(DocumentFormat.OpenXml.Vml.Curve openXmlElement, DocumentModel.Vml.Callout? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Vml.Office.Callout>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Vml.Office.Callout>();
+      itemElement = DocumentModel.OpenXml.Vml.CalloutConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Vml.Office.Callout>(value);
       if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = CalloutConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Vml.Office.Callout>(value);
-        if (itemElement != null)
-          openXmlElement.AddChild(itemElement);
-      }
+        openXmlElement.AddChild(itemElement);
     }
   }
-
-  public static Lock? GetLock(Curve? openXmlElement)
+  
+  private static DocumentModel.Vml.Lock? GetLock(DocumentFormat.OpenXml.Vml.Curve openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Vml.Office.Lock>();
     if (itemElement != null)
-      return LockConverter.CreateModelElement(itemElement);
+      return DocumentModel.OpenXml.Vml.LockConverter.CreateModelElement(itemElement);
     return null;
   }
-
-  public static void SetLock(Curve? openXmlElement, Lock? value)
+  
+  private static void SetLock(DocumentFormat.OpenXml.Vml.Curve openXmlElement, DocumentModel.Vml.Lock? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Vml.Office.Lock>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Vml.Office.Lock>();
+      itemElement = DocumentModel.OpenXml.Vml.LockConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Vml.Office.Lock>(value);
       if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = LockConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Vml.Office.Lock>(value);
-        if (itemElement != null)
-          openXmlElement.AddChild(itemElement);
-      }
+        openXmlElement.AddChild(itemElement);
     }
   }
-
-  public static ClipPath? GetClipPath(Curve? openXmlElement)
+  
+  private static DocumentModel.Vml.ClipPath? GetClipPath(DocumentFormat.OpenXml.Vml.Curve openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Vml.Office.ClipPath>();
     if (itemElement != null)
-      return ClipPathConverter.CreateModelElement(itemElement);
+      return DocumentModel.OpenXml.Vml.ClipPathConverter.CreateModelElement(itemElement);
     return null;
   }
-
-  public static void SetClipPath(Curve? openXmlElement, ClipPath? value)
+  
+  private static void SetClipPath(DocumentFormat.OpenXml.Vml.Curve openXmlElement, DocumentModel.Vml.ClipPath? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Vml.Office.ClipPath>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Vml.Office.ClipPath>();
+      itemElement = DocumentModel.OpenXml.Vml.ClipPathConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Vml.Office.ClipPath>(value);
       if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = ClipPathConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Vml.Office.ClipPath>(value);
-        if (itemElement != null)
-          openXmlElement.AddChild(itemElement);
-      }
+        openXmlElement.AddChild(itemElement);
     }
   }
-
-  public static SignatureLine? GetSignatureLine(Curve? openXmlElement)
+  
+  private static DocumentModel.Vml.SignatureLine? GetSignatureLine(DocumentFormat.OpenXml.Vml.Curve openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Vml.Office.SignatureLine>();
     if (itemElement != null)
-      return SignatureLineConverter.CreateModelElement(itemElement);
+      return DocumentModel.OpenXml.Vml.SignatureLineConverter.CreateModelElement(itemElement);
     return null;
   }
-
-  public static void SetSignatureLine(Curve? openXmlElement, SignatureLine? value)
+  
+  private static void SetSignatureLine(DocumentFormat.OpenXml.Vml.Curve openXmlElement, DocumentModel.Vml.SignatureLine? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Vml.Office.SignatureLine>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Vml.Office.SignatureLine>();
+      itemElement = DocumentModel.OpenXml.Vml.SignatureLineConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Vml.Office.SignatureLine>(value);
       if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = SignatureLineConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Vml.Office.SignatureLine>(value);
-        if (itemElement != null)
-          openXmlElement.AddChild(itemElement);
-      }
+        openXmlElement.AddChild(itemElement);
     }
   }
-
-  public static TextWrap? GetTextWrap(Curve? openXmlElement)
+  
+  private static DocumentModel.Wordprocessing.Vml.TextWrap? GetTextWrap(DocumentFormat.OpenXml.Vml.Curve openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Vml.Wordprocessing.TextWrap>();
     if (itemElement != null)
-      return TextWrapConverter.CreateModelElement(itemElement);
+      return DocumentModel.OpenXml.Wordprocessing.Vml.TextWrapConverter.CreateModelElement(itemElement);
     return null;
   }
-
-  public static void SetTextWrap(Curve? openXmlElement, TextWrap? value)
+  
+  private static void SetTextWrap(DocumentFormat.OpenXml.Vml.Curve openXmlElement, DocumentModel.Wordprocessing.Vml.TextWrap? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Vml.Wordprocessing.TextWrap>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Vml.Wordprocessing.TextWrap>();
+      itemElement = DocumentModel.OpenXml.Wordprocessing.Vml.TextWrapConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Vml.Wordprocessing.TextWrap>(value);
       if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = TextWrapConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Vml.Wordprocessing.TextWrap>(value);
-        if (itemElement != null)
-          openXmlElement.AddChild(itemElement);
-      }
-    }
-  }
-
-  public static Boolean? GetAnchorLock(Curve? openXmlElement)
-  {
-    if (openXmlElement != null)
-    {
-      var itemElement = openXmlElement.GetFirstChild<AnchorLock>();
-      return itemElement != null;
-    }
-    return null;
-  }
-
-  public static void SetAnchorLock(Curve? openXmlElement, Boolean? value)
-  {
-    if (openXmlElement != null)
-    {
-      if (value == false)
-      {
-        var itemElement = openXmlElement.GetFirstChild<AnchorLock>();
-        if (itemElement != null)
-          itemElement.Remove();
-      }
-      if (value == true)
-      {
-        var itemElement = new AnchorLock();
         openXmlElement.AddChild(itemElement);
-      }
     }
   }
-
-  public static BorderType? GetTopBorder(Curve? openXmlElement)
+  
+  private static Boolean? GetAnchorLock(DocumentFormat.OpenXml.Vml.Curve openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<TopBorder>();
-    if (itemElement != null)
-      return BorderTypeConverter.CreateModelElement(itemElement);
-    return null;
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Vml.Wordprocessing.AnchorLock>();
+    return itemElement != null;
   }
-
-  public static void SetTopBorder(Curve? openXmlElement, BorderType? value)
+  
+  private static void SetAnchorLock(DocumentFormat.OpenXml.Vml.Curve openXmlElement, Boolean? value)
   {
-    if (openXmlElement != null)
+    if (value == false)
     {
-      var itemElement = openXmlElement.GetFirstChild<TopBorder>();
+      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Vml.Wordprocessing.AnchorLock>();
       if (itemElement != null)
         itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = BorderTypeConverter.CreateOpenXmlElement<TopBorder>(value);
-        if (itemElement != null)
-          openXmlElement.AddChild(itemElement);
-      }
+    }
+    if (value == true)
+    {
+      var itemElement = new DocumentFormat.OpenXml.Vml.Wordprocessing.AnchorLock();
+      openXmlElement.AddChild(itemElement);
     }
   }
-
-  public static BorderType? GetBottomBorder(Curve? openXmlElement)
+  
+  private static DocumentModel.Wordprocessing.Vml.BorderType? GetTopBorder(DocumentFormat.OpenXml.Vml.Curve openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<BottomBorder>();
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Vml.Wordprocessing.TopBorder>();
     if (itemElement != null)
-      return BorderTypeConverter.CreateModelElement(itemElement);
+      return DocumentModel.OpenXml.Wordprocessing.Vml.BorderTypeConverter.CreateModelElement(itemElement);
     return null;
   }
-
-  public static void SetBottomBorder(Curve? openXmlElement, BorderType? value)
+  
+  private static void SetTopBorder(DocumentFormat.OpenXml.Vml.Curve openXmlElement, DocumentModel.Wordprocessing.Vml.BorderType? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Vml.Wordprocessing.TopBorder>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<BottomBorder>();
+      itemElement = DocumentModel.OpenXml.Wordprocessing.Vml.BorderTypeConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Vml.Wordprocessing.TopBorder>(value);
       if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = BorderTypeConverter.CreateOpenXmlElement<BottomBorder>(value);
-        if (itemElement != null)
-          openXmlElement.AddChild(itemElement);
-      }
+        openXmlElement.AddChild(itemElement);
     }
   }
-
-  public static BorderType? GetLeftBorder(Curve? openXmlElement)
+  
+  private static DocumentModel.Wordprocessing.Vml.BorderType? GetBottomBorder(DocumentFormat.OpenXml.Vml.Curve openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<LeftBorder>();
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Vml.Wordprocessing.BottomBorder>();
     if (itemElement != null)
-      return BorderTypeConverter.CreateModelElement(itemElement);
+      return DocumentModel.OpenXml.Wordprocessing.Vml.BorderTypeConverter.CreateModelElement(itemElement);
     return null;
   }
-
-  public static void SetLeftBorder(Curve? openXmlElement, BorderType? value)
+  
+  private static void SetBottomBorder(DocumentFormat.OpenXml.Vml.Curve openXmlElement, DocumentModel.Wordprocessing.Vml.BorderType? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Vml.Wordprocessing.BottomBorder>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<LeftBorder>();
+      itemElement = DocumentModel.OpenXml.Wordprocessing.Vml.BorderTypeConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Vml.Wordprocessing.BottomBorder>(value);
       if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = BorderTypeConverter.CreateOpenXmlElement<LeftBorder>(value);
-        if (itemElement != null)
-          openXmlElement.AddChild(itemElement);
-      }
+        openXmlElement.AddChild(itemElement);
     }
   }
-
-  public static BorderType? GetRightBorder(Curve? openXmlElement)
+  
+  private static DocumentModel.Wordprocessing.Vml.BorderType? GetLeftBorder(DocumentFormat.OpenXml.Vml.Curve openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<RightBorder>();
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Vml.Wordprocessing.LeftBorder>();
     if (itemElement != null)
-      return BorderTypeConverter.CreateModelElement(itemElement);
+      return DocumentModel.OpenXml.Wordprocessing.Vml.BorderTypeConverter.CreateModelElement(itemElement);
     return null;
   }
-
-  public static void SetRightBorder(Curve? openXmlElement, BorderType? value)
+  
+  private static void SetLeftBorder(DocumentFormat.OpenXml.Vml.Curve openXmlElement, DocumentModel.Wordprocessing.Vml.BorderType? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Vml.Wordprocessing.LeftBorder>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<RightBorder>();
+      itemElement = DocumentModel.OpenXml.Wordprocessing.Vml.BorderTypeConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Vml.Wordprocessing.LeftBorder>(value);
       if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = BorderTypeConverter.CreateOpenXmlElement<RightBorder>(value);
-        if (itemElement != null)
-          openXmlElement.AddChild(itemElement);
-      }
+        openXmlElement.AddChild(itemElement);
     }
   }
-
-  public static DocumentModel.Vml.Curve? CreateModelElement(Curve? openXmlElement)
+  
+  private static DocumentModel.Wordprocessing.Vml.BorderType? GetRightBorder(DocumentFormat.OpenXml.Vml.Curve openXmlElement)
+  {
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Vml.Wordprocessing.RightBorder>();
+    if (itemElement != null)
+      return DocumentModel.OpenXml.Wordprocessing.Vml.BorderTypeConverter.CreateModelElement(itemElement);
+    return null;
+  }
+  
+  private static void SetRightBorder(DocumentFormat.OpenXml.Vml.Curve openXmlElement, DocumentModel.Wordprocessing.Vml.BorderType? value)
+  {
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Vml.Wordprocessing.RightBorder>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
+    {
+      itemElement = DocumentModel.OpenXml.Wordprocessing.Vml.BorderTypeConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Vml.Wordprocessing.RightBorder>(value);
+      if (itemElement != null)
+        openXmlElement.AddChild(itemElement);
+    }
+  }
+  
+  public static DocumentModel.Vml.Curve? CreateModelElement(DocumentFormat.OpenXml.Vml.Curve? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -1534,9 +1394,9 @@ public static class CurveConverter
     }
     return null;
   }
-
+  
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Vml.Curve? value)
-    where OpenXmlElementType : Curve, new()
+    where OpenXmlElementType: DocumentFormat.OpenXml.Vml.Curve, new()
   {
     if (value != null)
     {

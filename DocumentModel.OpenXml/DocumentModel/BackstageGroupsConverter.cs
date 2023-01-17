@@ -1,87 +1,78 @@
 namespace DocumentModel.OpenXml;
 
 /// <summary>
-///   Defines the BackstageGroups Class.
+/// Defines the BackstageGroups Class.
 /// </summary>
 public static class BackstageGroupsConverter
 {
-  public static TaskFormGroup? GetTaskFormGroup(DocumentFormat.OpenXml.Office2010.CustomUI.BackstageGroups? openXmlElement)
+  private static DocumentModel.TaskFormGroup? GetTaskFormGroup(DocumentFormat.OpenXml.Office2010.CustomUI.BackstageGroups openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office2010.CustomUI.TaskFormGroup>();
     if (itemElement != null)
-      return TaskFormGroupConverter.CreateModelElement(itemElement);
+      return DocumentModel.OpenXml.TaskFormGroupConverter.CreateModelElement(itemElement);
     return null;
   }
-
-  public static void SetTaskFormGroup(DocumentFormat.OpenXml.Office2010.CustomUI.BackstageGroups? openXmlElement, TaskFormGroup? value)
+  
+  private static void SetTaskFormGroup(DocumentFormat.OpenXml.Office2010.CustomUI.BackstageGroups openXmlElement, DocumentModel.TaskFormGroup? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2010.CustomUI.TaskFormGroup>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2010.CustomUI.TaskFormGroup>();
+      itemElement = DocumentModel.OpenXml.TaskFormGroupConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2010.CustomUI.TaskFormGroup>(value);
       if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = TaskFormGroupConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2010.CustomUI.TaskFormGroup>(value);
-        if (itemElement != null)
-          openXmlElement.AddChild(itemElement);
-      }
+        openXmlElement.AddChild(itemElement);
     }
   }
-
-  public static BackstageGroup? GetBackstageGroup(DocumentFormat.OpenXml.Office2010.CustomUI.BackstageGroups? openXmlElement)
+  
+  private static DocumentModel.BackstageGroup? GetBackstageGroup(DocumentFormat.OpenXml.Office2010.CustomUI.BackstageGroups openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office2010.CustomUI.BackstageGroup>();
     if (itemElement != null)
-      return BackstageGroupConverter.CreateModelElement(itemElement);
+      return DocumentModel.OpenXml.BackstageGroupConverter.CreateModelElement(itemElement);
     return null;
   }
-
-  public static void SetBackstageGroup(DocumentFormat.OpenXml.Office2010.CustomUI.BackstageGroups? openXmlElement, BackstageGroup? value)
+  
+  private static void SetBackstageGroup(DocumentFormat.OpenXml.Office2010.CustomUI.BackstageGroups openXmlElement, DocumentModel.BackstageGroup? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2010.CustomUI.BackstageGroup>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2010.CustomUI.BackstageGroup>();
+      itemElement = DocumentModel.OpenXml.BackstageGroupConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2010.CustomUI.BackstageGroup>(value);
       if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = BackstageGroupConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2010.CustomUI.BackstageGroup>(value);
-        if (itemElement != null)
-          openXmlElement.AddChild(itemElement);
-      }
+        openXmlElement.AddChild(itemElement);
     }
   }
-
-  public static TaskGroup? GetTaskGroup(DocumentFormat.OpenXml.Office2010.CustomUI.BackstageGroups? openXmlElement)
+  
+  private static DocumentModel.TaskGroup? GetTaskGroup(DocumentFormat.OpenXml.Office2010.CustomUI.BackstageGroups openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office2010.CustomUI.TaskGroup>();
     if (itemElement != null)
-      return TaskGroupConverter.CreateModelElement(itemElement);
+      return DocumentModel.OpenXml.TaskGroupConverter.CreateModelElement(itemElement);
     return null;
   }
-
-  public static void SetTaskGroup(DocumentFormat.OpenXml.Office2010.CustomUI.BackstageGroups? openXmlElement, TaskGroup? value)
+  
+  private static void SetTaskGroup(DocumentFormat.OpenXml.Office2010.CustomUI.BackstageGroups openXmlElement, DocumentModel.TaskGroup? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2010.CustomUI.TaskGroup>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2010.CustomUI.TaskGroup>();
+      itemElement = DocumentModel.OpenXml.TaskGroupConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2010.CustomUI.TaskGroup>(value);
       if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = TaskGroupConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2010.CustomUI.TaskGroup>(value);
-        if (itemElement != null)
-          openXmlElement.AddChild(itemElement);
-      }
+        openXmlElement.AddChild(itemElement);
     }
   }
-
-  public static BackstageGroups? CreateModelElement(DocumentFormat.OpenXml.Office2010.CustomUI.BackstageGroups? openXmlElement)
+  
+  public static DocumentModel.BackstageGroups? CreateModelElement(DocumentFormat.OpenXml.Office2010.CustomUI.BackstageGroups? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new BackstageGroups();
+      var value = new DocumentModel.BackstageGroups();
       value.TaskFormGroup = GetTaskFormGroup(openXmlElement);
       value.BackstageGroup = GetBackstageGroup(openXmlElement);
       value.TaskGroup = GetTaskGroup(openXmlElement);
@@ -89,9 +80,9 @@ public static class BackstageGroupsConverter
     }
     return null;
   }
-
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(BackstageGroups? value)
-    where OpenXmlElementType : DocumentFormat.OpenXml.Office2010.CustomUI.BackstageGroups, new()
+  
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.BackstageGroups? value)
+    where OpenXmlElementType: DocumentFormat.OpenXml.Office2010.CustomUI.BackstageGroups, new()
   {
     if (value != null)
     {

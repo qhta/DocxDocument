@@ -1,225 +1,195 @@
-using DocumentFormat.OpenXml.Drawing.Diagrams;
-using EffectColorList = DocumentModel.Drawings.Diagrams.EffectColorList;
-using FillColorList = DocumentModel.Drawings.Diagrams.FillColorList;
-using LineColorList = DocumentModel.Drawings.Diagrams.LineColorList;
-using TextEffectColorList = DocumentModel.Drawings.Diagrams.TextEffectColorList;
-using TextFillColorList = DocumentModel.Drawings.Diagrams.TextFillColorList;
-using TextLineColorList = DocumentModel.Drawings.Diagrams.TextLineColorList;
-
 namespace DocumentModel.OpenXml.Drawings.Diagrams;
 
 /// <summary>
-///   Style Label.
+/// Style Label.
 /// </summary>
 public static class ColorTransformStyleLabelConverter
 {
   /// <summary>
-  ///   Name
+  /// Name
   /// </summary>
-  public static String? GetName(ColorTransformStyleLabel? openXmlElement)
+  private static String? GetName(DocumentFormat.OpenXml.Drawing.Diagrams.ColorTransformStyleLabel openXmlElement)
   {
     return openXmlElement?.Name?.Value;
   }
-
-  public static void SetName(ColorTransformStyleLabel? openXmlElement, String? value)
+  
+  private static void SetName(DocumentFormat.OpenXml.Drawing.Diagrams.ColorTransformStyleLabel openXmlElement, String? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.Name = new StringValue { Value = value };
-      else
-        openXmlElement.Name = null;
+    if (value != null)
+      openXmlElement.Name = new StringValue { Value = value };
+    else
+      openXmlElement.Name = null;
   }
-
+  
   /// <summary>
-  ///   Fill Color List.
+  /// Fill Color List.
   /// </summary>
-  public static FillColorList? GetFillColorList(ColorTransformStyleLabel? openXmlElement)
+  private static DocumentModel.Drawings.Diagrams.FillColorList? GetFillColorList(DocumentFormat.OpenXml.Drawing.Diagrams.ColorTransformStyleLabel openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.Diagrams.FillColorList>();
     if (itemElement != null)
-      return FillColorListConverter.CreateModelElement(itemElement);
+      return DocumentModel.OpenXml.Drawings.Diagrams.FillColorListConverter.CreateModelElement(itemElement);
     return null;
   }
-
-  public static void SetFillColorList(ColorTransformStyleLabel? openXmlElement, FillColorList? value)
+  
+  private static void SetFillColorList(DocumentFormat.OpenXml.Drawing.Diagrams.ColorTransformStyleLabel openXmlElement, DocumentModel.Drawings.Diagrams.FillColorList? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Diagrams.FillColorList>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Diagrams.FillColorList>();
+      itemElement = DocumentModel.OpenXml.Drawings.Diagrams.FillColorListConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Diagrams.FillColorList>(value);
       if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = FillColorListConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Diagrams.FillColorList>(value);
-        if (itemElement != null)
-          openXmlElement.AddChild(itemElement);
-      }
+        openXmlElement.AddChild(itemElement);
     }
   }
-
+  
   /// <summary>
-  ///   Line Color List.
+  /// Line Color List.
   /// </summary>
-  public static LineColorList? GetLineColorList(ColorTransformStyleLabel? openXmlElement)
+  private static DocumentModel.Drawings.Diagrams.LineColorList? GetLineColorList(DocumentFormat.OpenXml.Drawing.Diagrams.ColorTransformStyleLabel openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.Diagrams.LineColorList>();
     if (itemElement != null)
-      return LineColorListConverter.CreateModelElement(itemElement);
+      return DocumentModel.OpenXml.Drawings.Diagrams.LineColorListConverter.CreateModelElement(itemElement);
     return null;
   }
-
-  public static void SetLineColorList(ColorTransformStyleLabel? openXmlElement, LineColorList? value)
+  
+  private static void SetLineColorList(DocumentFormat.OpenXml.Drawing.Diagrams.ColorTransformStyleLabel openXmlElement, DocumentModel.Drawings.Diagrams.LineColorList? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Diagrams.LineColorList>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Diagrams.LineColorList>();
+      itemElement = DocumentModel.OpenXml.Drawings.Diagrams.LineColorListConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Diagrams.LineColorList>(value);
       if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = LineColorListConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Diagrams.LineColorList>(value);
-        if (itemElement != null)
-          openXmlElement.AddChild(itemElement);
-      }
+        openXmlElement.AddChild(itemElement);
     }
   }
-
+  
   /// <summary>
-  ///   Effect Color List.
+  /// Effect Color List.
   /// </summary>
-  public static EffectColorList? GetEffectColorList(ColorTransformStyleLabel? openXmlElement)
+  private static DocumentModel.Drawings.Diagrams.EffectColorList? GetEffectColorList(DocumentFormat.OpenXml.Drawing.Diagrams.ColorTransformStyleLabel openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.Diagrams.EffectColorList>();
     if (itemElement != null)
-      return EffectColorListConverter.CreateModelElement(itemElement);
+      return DocumentModel.OpenXml.Drawings.Diagrams.EffectColorListConverter.CreateModelElement(itemElement);
     return null;
   }
-
-  public static void SetEffectColorList(ColorTransformStyleLabel? openXmlElement, EffectColorList? value)
+  
+  private static void SetEffectColorList(DocumentFormat.OpenXml.Drawing.Diagrams.ColorTransformStyleLabel openXmlElement, DocumentModel.Drawings.Diagrams.EffectColorList? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Diagrams.EffectColorList>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Diagrams.EffectColorList>();
+      itemElement = DocumentModel.OpenXml.Drawings.Diagrams.EffectColorListConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Diagrams.EffectColorList>(value);
       if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = EffectColorListConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Diagrams.EffectColorList>(value);
-        if (itemElement != null)
-          openXmlElement.AddChild(itemElement);
-      }
+        openXmlElement.AddChild(itemElement);
     }
   }
-
+  
   /// <summary>
-  ///   Text Line Color List.
+  /// Text Line Color List.
   /// </summary>
-  public static TextLineColorList? GetTextLineColorList(ColorTransformStyleLabel? openXmlElement)
+  private static DocumentModel.Drawings.Diagrams.TextLineColorList? GetTextLineColorList(DocumentFormat.OpenXml.Drawing.Diagrams.ColorTransformStyleLabel openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.Diagrams.TextLineColorList>();
     if (itemElement != null)
-      return TextLineColorListConverter.CreateModelElement(itemElement);
+      return DocumentModel.OpenXml.Drawings.Diagrams.TextLineColorListConverter.CreateModelElement(itemElement);
     return null;
   }
-
-  public static void SetTextLineColorList(ColorTransformStyleLabel? openXmlElement, TextLineColorList? value)
+  
+  private static void SetTextLineColorList(DocumentFormat.OpenXml.Drawing.Diagrams.ColorTransformStyleLabel openXmlElement, DocumentModel.Drawings.Diagrams.TextLineColorList? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Diagrams.TextLineColorList>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Diagrams.TextLineColorList>();
+      itemElement = DocumentModel.OpenXml.Drawings.Diagrams.TextLineColorListConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Diagrams.TextLineColorList>(value);
       if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = TextLineColorListConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Diagrams.TextLineColorList>(value);
-        if (itemElement != null)
-          openXmlElement.AddChild(itemElement);
-      }
+        openXmlElement.AddChild(itemElement);
     }
   }
-
+  
   /// <summary>
-  ///   Text Fill Color List.
+  /// Text Fill Color List.
   /// </summary>
-  public static TextFillColorList? GetTextFillColorList(ColorTransformStyleLabel? openXmlElement)
+  private static DocumentModel.Drawings.Diagrams.TextFillColorList? GetTextFillColorList(DocumentFormat.OpenXml.Drawing.Diagrams.ColorTransformStyleLabel openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.Diagrams.TextFillColorList>();
     if (itemElement != null)
-      return TextFillColorListConverter.CreateModelElement(itemElement);
+      return DocumentModel.OpenXml.Drawings.Diagrams.TextFillColorListConverter.CreateModelElement(itemElement);
     return null;
   }
-
-  public static void SetTextFillColorList(ColorTransformStyleLabel? openXmlElement, TextFillColorList? value)
+  
+  private static void SetTextFillColorList(DocumentFormat.OpenXml.Drawing.Diagrams.ColorTransformStyleLabel openXmlElement, DocumentModel.Drawings.Diagrams.TextFillColorList? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Diagrams.TextFillColorList>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Diagrams.TextFillColorList>();
+      itemElement = DocumentModel.OpenXml.Drawings.Diagrams.TextFillColorListConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Diagrams.TextFillColorList>(value);
       if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = TextFillColorListConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Diagrams.TextFillColorList>(value);
-        if (itemElement != null)
-          openXmlElement.AddChild(itemElement);
-      }
+        openXmlElement.AddChild(itemElement);
     }
   }
-
+  
   /// <summary>
-  ///   Text Effect Color List.
+  /// Text Effect Color List.
   /// </summary>
-  public static TextEffectColorList? GetTextEffectColorList(ColorTransformStyleLabel? openXmlElement)
+  private static DocumentModel.Drawings.Diagrams.TextEffectColorList? GetTextEffectColorList(DocumentFormat.OpenXml.Drawing.Diagrams.ColorTransformStyleLabel openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.Diagrams.TextEffectColorList>();
     if (itemElement != null)
-      return TextEffectColorListConverter.CreateModelElement(itemElement);
+      return DocumentModel.OpenXml.Drawings.Diagrams.TextEffectColorListConverter.CreateModelElement(itemElement);
     return null;
   }
-
-  public static void SetTextEffectColorList(ColorTransformStyleLabel? openXmlElement, TextEffectColorList? value)
+  
+  private static void SetTextEffectColorList(DocumentFormat.OpenXml.Drawing.Diagrams.ColorTransformStyleLabel openXmlElement, DocumentModel.Drawings.Diagrams.TextEffectColorList? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Diagrams.TextEffectColorList>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Diagrams.TextEffectColorList>();
+      itemElement = DocumentModel.OpenXml.Drawings.Diagrams.TextEffectColorListConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Diagrams.TextEffectColorList>(value);
       if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = TextEffectColorListConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Diagrams.TextEffectColorList>(value);
-        if (itemElement != null)
-          openXmlElement.AddChild(itemElement);
-      }
+        openXmlElement.AddChild(itemElement);
     }
   }
-
+  
   /// <summary>
-  ///   ExtensionList.
+  /// ExtensionList.
   /// </summary>
-  public static DocumentModel.Drawings.Diagrams.ExtensionList? GetExtensionList(ColorTransformStyleLabel? openXmlElement)
+  private static DocumentModel.Drawings.Diagrams.ExtensionList? GetExtensionList(DocumentFormat.OpenXml.Drawing.Diagrams.ColorTransformStyleLabel openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.Diagrams.ExtensionList>();
     if (itemElement != null)
-      return ExtensionListConverter.CreateModelElement(itemElement);
+      return DocumentModel.OpenXml.Drawings.Diagrams.ExtensionListConverter.CreateModelElement(itemElement);
     return null;
   }
-
-  public static void SetExtensionList(ColorTransformStyleLabel? openXmlElement, DocumentModel.Drawings.Diagrams.ExtensionList? value)
+  
+  private static void SetExtensionList(DocumentFormat.OpenXml.Drawing.Diagrams.ColorTransformStyleLabel openXmlElement, DocumentModel.Drawings.Diagrams.ExtensionList? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Diagrams.ExtensionList>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Diagrams.ExtensionList>();
+      itemElement = DocumentModel.OpenXml.Drawings.Diagrams.ExtensionListConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Diagrams.ExtensionList>(value);
       if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = ExtensionListConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Diagrams.ExtensionList>(value);
-        if (itemElement != null)
-          openXmlElement.AddChild(itemElement);
-      }
+        openXmlElement.AddChild(itemElement);
     }
   }
-
-  public static DocumentModel.Drawings.Diagrams.ColorTransformStyleLabel? CreateModelElement(ColorTransformStyleLabel? openXmlElement)
+  
+  public static DocumentModel.Drawings.Diagrams.ColorTransformStyleLabel? CreateModelElement(DocumentFormat.OpenXml.Drawing.Diagrams.ColorTransformStyleLabel? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -236,9 +206,9 @@ public static class ColorTransformStyleLabelConverter
     }
     return null;
   }
-
+  
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.Diagrams.ColorTransformStyleLabel? value)
-    where OpenXmlElementType : ColorTransformStyleLabel, new()
+    where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.Diagrams.ColorTransformStyleLabel, new()
   {
     if (value != null)
     {

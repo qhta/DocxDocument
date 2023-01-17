@@ -1,75 +1,69 @@
-using DocumentFormat.OpenXml.Wordprocessing;
-
 namespace DocumentModel.OpenXml.Wordprocessing;
 
 /// <summary>
-///   Freeze Document Layout.
+/// Freeze Document Layout.
 /// </summary>
 public static class ReadModeInkLockDownConverter
 {
   /// <summary>
-  ///   Use Actual Pages, Not Virtual Pages
+  /// Use Actual Pages, Not Virtual Pages
   /// </summary>
-  public static Boolean? GetUseActualPages(ReadModeInkLockDown? openXmlElement)
+  private static Boolean? GetUseActualPages(DocumentFormat.OpenXml.Wordprocessing.ReadModeInkLockDown openXmlElement)
   {
     return openXmlElement?.UseActualPages?.Value;
   }
-
-  public static void SetUseActualPages(ReadModeInkLockDown? openXmlElement, Boolean? value)
+  
+  private static void SetUseActualPages(DocumentFormat.OpenXml.Wordprocessing.ReadModeInkLockDown openXmlElement, Boolean? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.UseActualPages = new OnOffValue { Value = (Boolean)value };
-      else
-        openXmlElement.UseActualPages = null;
+    if (value != null)
+      openXmlElement.UseActualPages = new OnOffValue { Value = (Boolean)value };
+    else
+      openXmlElement.UseActualPages = null;
   }
-
+  
   /// <summary>
-  ///   Virtual Page Width
+  /// Virtual Page Width
   /// </summary>
-  public static UInt32? GetWidth(ReadModeInkLockDown? openXmlElement)
+  private static UInt32? GetWidth(DocumentFormat.OpenXml.Wordprocessing.ReadModeInkLockDown openXmlElement)
   {
-    return openXmlElement?.Width?.Value;
+    return openXmlElement.Width?.Value;
   }
-
-  public static void SetWidth(ReadModeInkLockDown? openXmlElement, UInt32? value)
+  
+  private static void SetWidth(DocumentFormat.OpenXml.Wordprocessing.ReadModeInkLockDown openXmlElement, UInt32? value)
   {
-    if (openXmlElement != null)
-      openXmlElement.Width = value;
+    openXmlElement.Width = value;
   }
-
+  
   /// <summary>
-  ///   Virtual Page Height
+  /// Virtual Page Height
   /// </summary>
-  public static UInt32? GetHeight(ReadModeInkLockDown? openXmlElement)
+  private static UInt32? GetHeight(DocumentFormat.OpenXml.Wordprocessing.ReadModeInkLockDown openXmlElement)
   {
-    return openXmlElement?.Height?.Value;
+    return openXmlElement.Height?.Value;
   }
-
-  public static void SetHeight(ReadModeInkLockDown? openXmlElement, UInt32? value)
+  
+  private static void SetHeight(DocumentFormat.OpenXml.Wordprocessing.ReadModeInkLockDown openXmlElement, UInt32? value)
   {
-    if (openXmlElement != null)
-      openXmlElement.Height = value;
+    openXmlElement.Height = value;
   }
-
+  
   /// <summary>
-  ///   Font Size Scaling
+  /// Font Size Scaling
   /// </summary>
-  public static String? GetFontSize(ReadModeInkLockDown? openXmlElement)
+  private static String? GetFontSize(DocumentFormat.OpenXml.Wordprocessing.ReadModeInkLockDown openXmlElement)
   {
     return openXmlElement?.FontSize?.Value;
   }
-
-  public static void SetFontSize(ReadModeInkLockDown? openXmlElement, String? value)
+  
+  private static void SetFontSize(DocumentFormat.OpenXml.Wordprocessing.ReadModeInkLockDown openXmlElement, String? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.FontSize = new StringValue { Value = value };
-      else
-        openXmlElement.FontSize = null;
+    if (value != null)
+      openXmlElement.FontSize = new StringValue { Value = value };
+    else
+      openXmlElement.FontSize = null;
   }
-
-  public static DocumentModel.Wordprocessing.ReadModeInkLockDown? CreateModelElement(ReadModeInkLockDown? openXmlElement)
+  
+  public static DocumentModel.Wordprocessing.ReadModeInkLockDown? CreateModelElement(DocumentFormat.OpenXml.Wordprocessing.ReadModeInkLockDown? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -82,9 +76,9 @@ public static class ReadModeInkLockDownConverter
     }
     return null;
   }
-
+  
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.ReadModeInkLockDown? value)
-    where OpenXmlElementType : ReadModeInkLockDown, new()
+    where OpenXmlElementType: DocumentFormat.OpenXml.Wordprocessing.ReadModeInkLockDown, new()
   {
     if (value != null)
     {

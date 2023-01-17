@@ -1,392 +1,339 @@
-using DocumentFormat.OpenXml.Drawing;
-using Accent1Color = DocumentModel.Drawings.Accent1Color;
-using Accent2Color = DocumentModel.Drawings.Accent2Color;
-using Accent3Color = DocumentModel.Drawings.Accent3Color;
-using Accent4Color = DocumentModel.Drawings.Accent4Color;
-using Accent5Color = DocumentModel.Drawings.Accent5Color;
-using Accent6Color = DocumentModel.Drawings.Accent6Color;
-using Dark1Color = DocumentModel.Drawings.Dark1Color;
-using Dark2Color = DocumentModel.Drawings.Dark2Color;
-using FollowedHyperlinkColor = DocumentModel.Drawings.FollowedHyperlinkColor;
-using Light1Color = DocumentModel.Drawings.Light1Color;
-using Light2Color = DocumentModel.Drawings.Light2Color;
-
 namespace DocumentModel.OpenXml.Drawings;
 
 /// <summary>
-///   Defines the ColorScheme Class.
+/// Defines the ColorScheme Class.
 /// </summary>
 public static class ColorSchemeConverter
 {
   /// <summary>
-  ///   Name
+  /// Name
   /// </summary>
-  public static String? GetName(ColorScheme? openXmlElement)
+  private static String? GetName(DocumentFormat.OpenXml.Drawing.ColorScheme openXmlElement)
   {
     return openXmlElement?.Name?.Value;
   }
-
-  public static void SetName(ColorScheme? openXmlElement, String? value)
+  
+  private static void SetName(DocumentFormat.OpenXml.Drawing.ColorScheme openXmlElement, String? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.Name = new StringValue { Value = value };
-      else
-        openXmlElement.Name = null;
+    if (value != null)
+      openXmlElement.Name = new StringValue { Value = value };
+    else
+      openXmlElement.Name = null;
   }
-
+  
   /// <summary>
-  ///   Dark 1.
+  /// Dark 1.
   /// </summary>
-  public static Dark1Color? GetDark1Color(ColorScheme? openXmlElement)
+  private static DocumentModel.Drawings.Dark1Color? GetDark1Color(DocumentFormat.OpenXml.Drawing.ColorScheme openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.Dark1Color>();
     if (itemElement != null)
-      return Dark1ColorConverter.CreateModelElement(itemElement);
+      return DocumentModel.OpenXml.Drawings.Dark1ColorConverter.CreateModelElement(itemElement);
     return null;
   }
-
-  public static void SetDark1Color(ColorScheme? openXmlElement, Dark1Color? value)
+  
+  private static void SetDark1Color(DocumentFormat.OpenXml.Drawing.ColorScheme openXmlElement, DocumentModel.Drawings.Dark1Color? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Dark1Color>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Dark1Color>();
+      itemElement = DocumentModel.OpenXml.Drawings.Dark1ColorConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Dark1Color>(value);
       if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = Dark1ColorConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Dark1Color>(value);
-        if (itemElement != null)
-          openXmlElement.AddChild(itemElement);
-      }
+        openXmlElement.AddChild(itemElement);
     }
   }
-
+  
   /// <summary>
-  ///   Light 1.
+  /// Light 1.
   /// </summary>
-  public static Light1Color? GetLight1Color(ColorScheme? openXmlElement)
+  private static DocumentModel.Drawings.Light1Color? GetLight1Color(DocumentFormat.OpenXml.Drawing.ColorScheme openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.Light1Color>();
     if (itemElement != null)
-      return Light1ColorConverter.CreateModelElement(itemElement);
+      return DocumentModel.OpenXml.Drawings.Light1ColorConverter.CreateModelElement(itemElement);
     return null;
   }
-
-  public static void SetLight1Color(ColorScheme? openXmlElement, Light1Color? value)
+  
+  private static void SetLight1Color(DocumentFormat.OpenXml.Drawing.ColorScheme openXmlElement, DocumentModel.Drawings.Light1Color? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Light1Color>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Light1Color>();
+      itemElement = DocumentModel.OpenXml.Drawings.Light1ColorConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Light1Color>(value);
       if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = Light1ColorConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Light1Color>(value);
-        if (itemElement != null)
-          openXmlElement.AddChild(itemElement);
-      }
+        openXmlElement.AddChild(itemElement);
     }
   }
-
+  
   /// <summary>
-  ///   Dark 2.
+  /// Dark 2.
   /// </summary>
-  public static Dark2Color? GetDark2Color(ColorScheme? openXmlElement)
+  private static DocumentModel.Drawings.Dark2Color? GetDark2Color(DocumentFormat.OpenXml.Drawing.ColorScheme openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.Dark2Color>();
     if (itemElement != null)
-      return Dark2ColorConverter.CreateModelElement(itemElement);
+      return DocumentModel.OpenXml.Drawings.Dark2ColorConverter.CreateModelElement(itemElement);
     return null;
   }
-
-  public static void SetDark2Color(ColorScheme? openXmlElement, Dark2Color? value)
+  
+  private static void SetDark2Color(DocumentFormat.OpenXml.Drawing.ColorScheme openXmlElement, DocumentModel.Drawings.Dark2Color? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Dark2Color>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Dark2Color>();
+      itemElement = DocumentModel.OpenXml.Drawings.Dark2ColorConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Dark2Color>(value);
       if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = Dark2ColorConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Dark2Color>(value);
-        if (itemElement != null)
-          openXmlElement.AddChild(itemElement);
-      }
+        openXmlElement.AddChild(itemElement);
     }
   }
-
+  
   /// <summary>
-  ///   Light 2.
+  /// Light 2.
   /// </summary>
-  public static Light2Color? GetLight2Color(ColorScheme? openXmlElement)
+  private static DocumentModel.Drawings.Light2Color? GetLight2Color(DocumentFormat.OpenXml.Drawing.ColorScheme openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.Light2Color>();
     if (itemElement != null)
-      return Light2ColorConverter.CreateModelElement(itemElement);
+      return DocumentModel.OpenXml.Drawings.Light2ColorConverter.CreateModelElement(itemElement);
     return null;
   }
-
-  public static void SetLight2Color(ColorScheme? openXmlElement, Light2Color? value)
+  
+  private static void SetLight2Color(DocumentFormat.OpenXml.Drawing.ColorScheme openXmlElement, DocumentModel.Drawings.Light2Color? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Light2Color>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Light2Color>();
+      itemElement = DocumentModel.OpenXml.Drawings.Light2ColorConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Light2Color>(value);
       if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = Light2ColorConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Light2Color>(value);
-        if (itemElement != null)
-          openXmlElement.AddChild(itemElement);
-      }
+        openXmlElement.AddChild(itemElement);
     }
   }
-
+  
   /// <summary>
-  ///   Accent 1.
+  /// Accent 1.
   /// </summary>
-  public static Accent1Color? GetAccent1Color(ColorScheme? openXmlElement)
+  private static DocumentModel.Drawings.Accent1Color? GetAccent1Color(DocumentFormat.OpenXml.Drawing.ColorScheme openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.Accent1Color>();
     if (itemElement != null)
-      return Accent1ColorConverter.CreateModelElement(itemElement);
+      return DocumentModel.OpenXml.Drawings.Accent1ColorConverter.CreateModelElement(itemElement);
     return null;
   }
-
-  public static void SetAccent1Color(ColorScheme? openXmlElement, Accent1Color? value)
+  
+  private static void SetAccent1Color(DocumentFormat.OpenXml.Drawing.ColorScheme openXmlElement, DocumentModel.Drawings.Accent1Color? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Accent1Color>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Accent1Color>();
+      itemElement = DocumentModel.OpenXml.Drawings.Accent1ColorConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Accent1Color>(value);
       if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = Accent1ColorConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Accent1Color>(value);
-        if (itemElement != null)
-          openXmlElement.AddChild(itemElement);
-      }
+        openXmlElement.AddChild(itemElement);
     }
   }
-
+  
   /// <summary>
-  ///   Accent 2.
+  /// Accent 2.
   /// </summary>
-  public static Accent2Color? GetAccent2Color(ColorScheme? openXmlElement)
+  private static DocumentModel.Drawings.Accent2Color? GetAccent2Color(DocumentFormat.OpenXml.Drawing.ColorScheme openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.Accent2Color>();
     if (itemElement != null)
-      return Accent2ColorConverter.CreateModelElement(itemElement);
+      return DocumentModel.OpenXml.Drawings.Accent2ColorConverter.CreateModelElement(itemElement);
     return null;
   }
-
-  public static void SetAccent2Color(ColorScheme? openXmlElement, Accent2Color? value)
+  
+  private static void SetAccent2Color(DocumentFormat.OpenXml.Drawing.ColorScheme openXmlElement, DocumentModel.Drawings.Accent2Color? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Accent2Color>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Accent2Color>();
+      itemElement = DocumentModel.OpenXml.Drawings.Accent2ColorConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Accent2Color>(value);
       if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = Accent2ColorConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Accent2Color>(value);
-        if (itemElement != null)
-          openXmlElement.AddChild(itemElement);
-      }
+        openXmlElement.AddChild(itemElement);
     }
   }
-
+  
   /// <summary>
-  ///   Accent 3.
+  /// Accent 3.
   /// </summary>
-  public static Accent3Color? GetAccent3Color(ColorScheme? openXmlElement)
+  private static DocumentModel.Drawings.Accent3Color? GetAccent3Color(DocumentFormat.OpenXml.Drawing.ColorScheme openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.Accent3Color>();
     if (itemElement != null)
-      return Accent3ColorConverter.CreateModelElement(itemElement);
+      return DocumentModel.OpenXml.Drawings.Accent3ColorConverter.CreateModelElement(itemElement);
     return null;
   }
-
-  public static void SetAccent3Color(ColorScheme? openXmlElement, Accent3Color? value)
+  
+  private static void SetAccent3Color(DocumentFormat.OpenXml.Drawing.ColorScheme openXmlElement, DocumentModel.Drawings.Accent3Color? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Accent3Color>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Accent3Color>();
+      itemElement = DocumentModel.OpenXml.Drawings.Accent3ColorConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Accent3Color>(value);
       if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = Accent3ColorConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Accent3Color>(value);
-        if (itemElement != null)
-          openXmlElement.AddChild(itemElement);
-      }
+        openXmlElement.AddChild(itemElement);
     }
   }
-
+  
   /// <summary>
-  ///   Accent 4.
+  /// Accent 4.
   /// </summary>
-  public static Accent4Color? GetAccent4Color(ColorScheme? openXmlElement)
+  private static DocumentModel.Drawings.Accent4Color? GetAccent4Color(DocumentFormat.OpenXml.Drawing.ColorScheme openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.Accent4Color>();
     if (itemElement != null)
-      return Accent4ColorConverter.CreateModelElement(itemElement);
+      return DocumentModel.OpenXml.Drawings.Accent4ColorConverter.CreateModelElement(itemElement);
     return null;
   }
-
-  public static void SetAccent4Color(ColorScheme? openXmlElement, Accent4Color? value)
+  
+  private static void SetAccent4Color(DocumentFormat.OpenXml.Drawing.ColorScheme openXmlElement, DocumentModel.Drawings.Accent4Color? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Accent4Color>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Accent4Color>();
+      itemElement = DocumentModel.OpenXml.Drawings.Accent4ColorConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Accent4Color>(value);
       if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = Accent4ColorConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Accent4Color>(value);
-        if (itemElement != null)
-          openXmlElement.AddChild(itemElement);
-      }
+        openXmlElement.AddChild(itemElement);
     }
   }
-
+  
   /// <summary>
-  ///   Accent 5.
+  /// Accent 5.
   /// </summary>
-  public static Accent5Color? GetAccent5Color(ColorScheme? openXmlElement)
+  private static DocumentModel.Drawings.Accent5Color? GetAccent5Color(DocumentFormat.OpenXml.Drawing.ColorScheme openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.Accent5Color>();
     if (itemElement != null)
-      return Accent5ColorConverter.CreateModelElement(itemElement);
+      return DocumentModel.OpenXml.Drawings.Accent5ColorConverter.CreateModelElement(itemElement);
     return null;
   }
-
-  public static void SetAccent5Color(ColorScheme? openXmlElement, Accent5Color? value)
+  
+  private static void SetAccent5Color(DocumentFormat.OpenXml.Drawing.ColorScheme openXmlElement, DocumentModel.Drawings.Accent5Color? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Accent5Color>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Accent5Color>();
+      itemElement = DocumentModel.OpenXml.Drawings.Accent5ColorConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Accent5Color>(value);
       if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = Accent5ColorConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Accent5Color>(value);
-        if (itemElement != null)
-          openXmlElement.AddChild(itemElement);
-      }
+        openXmlElement.AddChild(itemElement);
     }
   }
-
+  
   /// <summary>
-  ///   Accent 6.
+  /// Accent 6.
   /// </summary>
-  public static Accent6Color? GetAccent6Color(ColorScheme? openXmlElement)
+  private static DocumentModel.Drawings.Accent6Color? GetAccent6Color(DocumentFormat.OpenXml.Drawing.ColorScheme openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.Accent6Color>();
     if (itemElement != null)
-      return Accent6ColorConverter.CreateModelElement(itemElement);
+      return DocumentModel.OpenXml.Drawings.Accent6ColorConverter.CreateModelElement(itemElement);
     return null;
   }
-
-  public static void SetAccent6Color(ColorScheme? openXmlElement, Accent6Color? value)
+  
+  private static void SetAccent6Color(DocumentFormat.OpenXml.Drawing.ColorScheme openXmlElement, DocumentModel.Drawings.Accent6Color? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Accent6Color>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Accent6Color>();
+      itemElement = DocumentModel.OpenXml.Drawings.Accent6ColorConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Accent6Color>(value);
       if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = Accent6ColorConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Accent6Color>(value);
-        if (itemElement != null)
-          openXmlElement.AddChild(itemElement);
-      }
+        openXmlElement.AddChild(itemElement);
     }
   }
-
+  
   /// <summary>
-  ///   Hyperlink.
+  /// Hyperlink.
   /// </summary>
-  public static DocumentModel.Drawings.Hyperlink? GetHyperlink(ColorScheme? openXmlElement)
+  private static DocumentModel.Drawings.Hyperlink? GetHyperlink(DocumentFormat.OpenXml.Drawing.ColorScheme openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.Hyperlink>();
     if (itemElement != null)
-      return HyperlinkConverter.CreateModelElement(itemElement);
+      return DocumentModel.OpenXml.Drawings.HyperlinkConverter.CreateModelElement(itemElement);
     return null;
   }
-
-  public static void SetHyperlink(ColorScheme? openXmlElement, DocumentModel.Drawings.Hyperlink? value)
+  
+  private static void SetHyperlink(DocumentFormat.OpenXml.Drawing.ColorScheme openXmlElement, DocumentModel.Drawings.Hyperlink? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Hyperlink>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Hyperlink>();
+      itemElement = DocumentModel.OpenXml.Drawings.HyperlinkConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Hyperlink>(value);
       if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = HyperlinkConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Hyperlink>(value);
-        if (itemElement != null)
-          openXmlElement.AddChild(itemElement);
-      }
+        openXmlElement.AddChild(itemElement);
     }
   }
-
+  
   /// <summary>
-  ///   Followed Hyperlink.
+  /// Followed Hyperlink.
   /// </summary>
-  public static FollowedHyperlinkColor? GetFollowedHyperlinkColor(ColorScheme? openXmlElement)
+  private static DocumentModel.Drawings.FollowedHyperlinkColor? GetFollowedHyperlinkColor(DocumentFormat.OpenXml.Drawing.ColorScheme openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.FollowedHyperlinkColor>();
     if (itemElement != null)
-      return FollowedHyperlinkColorConverter.CreateModelElement(itemElement);
+      return DocumentModel.OpenXml.Drawings.FollowedHyperlinkColorConverter.CreateModelElement(itemElement);
     return null;
   }
-
-  public static void SetFollowedHyperlinkColor(ColorScheme? openXmlElement, FollowedHyperlinkColor? value)
+  
+  private static void SetFollowedHyperlinkColor(DocumentFormat.OpenXml.Drawing.ColorScheme openXmlElement, DocumentModel.Drawings.FollowedHyperlinkColor? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.FollowedHyperlinkColor>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.FollowedHyperlinkColor>();
+      itemElement = DocumentModel.OpenXml.Drawings.FollowedHyperlinkColorConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.FollowedHyperlinkColor>(value);
       if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = FollowedHyperlinkColorConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.FollowedHyperlinkColor>(value);
-        if (itemElement != null)
-          openXmlElement.AddChild(itemElement);
-      }
+        openXmlElement.AddChild(itemElement);
     }
   }
-
+  
   /// <summary>
-  ///   ExtensionList.
+  /// ExtensionList.
   /// </summary>
-  public static DocumentModel.Drawings.ExtensionList? GetExtensionList(ColorScheme? openXmlElement)
+  private static DocumentModel.Drawings.ExtensionList? GetExtensionList(DocumentFormat.OpenXml.Drawing.ColorScheme openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.ExtensionList>();
     if (itemElement != null)
-      return ExtensionListConverter.CreateModelElement(itemElement);
+      return DocumentModel.OpenXml.Drawings.ExtensionListConverter.CreateModelElement(itemElement);
     return null;
   }
-
-  public static void SetExtensionList(ColorScheme? openXmlElement, DocumentModel.Drawings.ExtensionList? value)
+  
+  private static void SetExtensionList(DocumentFormat.OpenXml.Drawing.ColorScheme openXmlElement, DocumentModel.Drawings.ExtensionList? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.ExtensionList>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.ExtensionList>();
+      itemElement = DocumentModel.OpenXml.Drawings.ExtensionListConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.ExtensionList>(value);
       if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = ExtensionListConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.ExtensionList>(value);
-        if (itemElement != null)
-          openXmlElement.AddChild(itemElement);
-      }
+        openXmlElement.AddChild(itemElement);
     }
   }
-
-  public static DocumentModel.Drawings.ColorScheme? CreateModelElement(ColorScheme? openXmlElement)
+  
+  public static DocumentModel.Drawings.ColorScheme? CreateModelElement(DocumentFormat.OpenXml.Drawing.ColorScheme? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -409,9 +356,9 @@ public static class ColorSchemeConverter
     }
     return null;
   }
-
+  
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.ColorScheme? value)
-    where OpenXmlElementType : ColorScheme, new()
+    where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.ColorScheme, new()
   {
     if (value != null)
     {

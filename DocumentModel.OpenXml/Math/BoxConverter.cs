@@ -1,66 +1,58 @@
-using DocumentModel.Math;
-
 namespace DocumentModel.OpenXml.Math;
 
 /// <summary>
-///   Box Function.
+/// Box Function.
 /// </summary>
 public static class BoxConverter
 {
   /// <summary>
-  ///   Box Properties.
+  /// Box Properties.
   /// </summary>
-  public static BoxProperties? GetBoxProperties(DocumentFormat.OpenXml.Math.Box? openXmlElement)
+  private static DocumentModel.Math.BoxProperties? GetBoxProperties(DocumentFormat.OpenXml.Math.Box openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Math.BoxProperties>();
     if (itemElement != null)
-      return BoxPropertiesConverter.CreateModelElement(itemElement);
+      return DocumentModel.OpenXml.Math.BoxPropertiesConverter.CreateModelElement(itemElement);
     return null;
   }
-
-  public static void SetBoxProperties(DocumentFormat.OpenXml.Math.Box? openXmlElement, BoxProperties? value)
+  
+  private static void SetBoxProperties(DocumentFormat.OpenXml.Math.Box openXmlElement, DocumentModel.Math.BoxProperties? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Math.BoxProperties>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Math.BoxProperties>();
+      itemElement = DocumentModel.OpenXml.Math.BoxPropertiesConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Math.BoxProperties>(value);
       if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = BoxPropertiesConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Math.BoxProperties>(value);
-        if (itemElement != null)
-          openXmlElement.AddChild(itemElement);
-      }
+        openXmlElement.AddChild(itemElement);
     }
   }
-
+  
   /// <summary>
-  ///   Base.
+  /// Base.
   /// </summary>
-  public static Base? GetBase(DocumentFormat.OpenXml.Math.Box? openXmlElement)
+  private static DocumentModel.Math.Base? GetBase(DocumentFormat.OpenXml.Math.Box openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Math.Base>();
     if (itemElement != null)
-      return BaseConverter.CreateModelElement(itemElement);
+      return DocumentModel.OpenXml.Math.BaseConverter.CreateModelElement(itemElement);
     return null;
   }
-
-  public static void SetBase(DocumentFormat.OpenXml.Math.Box? openXmlElement, Base? value)
+  
+  private static void SetBase(DocumentFormat.OpenXml.Math.Box openXmlElement, DocumentModel.Math.Base? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Math.Base>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Math.Base>();
+      itemElement = DocumentModel.OpenXml.Math.BaseConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Math.Base>(value);
       if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = BaseConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Math.Base>(value);
-        if (itemElement != null)
-          openXmlElement.AddChild(itemElement);
-      }
+        openXmlElement.AddChild(itemElement);
     }
   }
-
+  
   public static DocumentModel.Math.Box? CreateModelElement(DocumentFormat.OpenXml.Math.Box? openXmlElement)
   {
     if (openXmlElement != null)
@@ -72,9 +64,9 @@ public static class BoxConverter
     }
     return null;
   }
-
+  
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Math.Box? value)
-    where OpenXmlElementType : DocumentFormat.OpenXml.Math.Box, new()
+    where OpenXmlElementType: DocumentFormat.OpenXml.Math.Box, new()
   {
     if (value != null)
     {
