@@ -1,213 +1,174 @@
-using DocumentFormat.OpenXml.Drawing.Charts;
-using DocumentModel.Drawings.Charts;
-using AreaChart = DocumentFormat.OpenXml.Drawing.Charts.AreaChart;
-using AreaChartExtensionList = DocumentModel.Drawings.Charts.AreaChartExtensionList;
-using AreaChartSeries = DocumentModel.Drawings.Charts.AreaChartSeries;
-using DataLabels = DocumentModel.Drawings.Charts.DataLabels;
-using DropLines = DocumentModel.Drawings.Charts.DropLines;
-
 namespace DocumentModel.OpenXml.Drawings.Charts;
 
 /// <summary>
-///   Area Charts.
+/// Area Charts.
 /// </summary>
 public static class AreaChartConverter
 {
   /// <summary>
-  ///   Grouping.
+  /// Grouping.
   /// </summary>
-  public static GroupingKind? GetGrouping(AreaChart? openXmlElement)
+  private static DocumentModel.Drawings.Charts.GroupingKind? GetGrouping(DocumentFormat.OpenXml.Drawing.Charts.AreaChart openXmlElement)
   {
-    if (openXmlElement != null)
-    {
-      var itemElement = openXmlElement.GetFirstChild<Grouping>();
-      if (itemElement?.Val?.Value != null) return EnumValueConverter.GetValue<GroupingValues, GroupingKind>(itemElement.Val.Value);
-    }
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.Grouping>();
+    if (itemElement?.Val?.Value != null)
+      return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Drawing.Charts.GroupingValues, DocumentModel.Drawings.Charts.GroupingKind>(itemElement.Val.Value);
     return null;
   }
-
-  public static void SetGrouping(AreaChart? openXmlElement, GroupingKind? value)
+  
+  private static void SetGrouping(DocumentFormat.OpenXml.Drawing.Charts.AreaChart openXmlElement, DocumentModel.Drawings.Charts.GroupingKind? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.Grouping>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<Grouping>();
+      itemElement = EnumValueConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Charts.Grouping, DocumentFormat.OpenXml.Drawing.Charts.GroupingValues, DocumentModel.Drawings.Charts.GroupingKind>(value);
+      if (itemElement != null)
+        openXmlElement.AddChild(itemElement);
+    }
+  }
+  
+  /// <summary>
+  /// VaryColors.
+  /// </summary>
+  private static Boolean? GetVaryColors(DocumentFormat.OpenXml.Drawing.Charts.AreaChart openXmlElement)
+  {
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.VaryColors>();
+    return itemElement != null;
+  }
+  
+  private static void SetVaryColors(DocumentFormat.OpenXml.Drawing.Charts.AreaChart openXmlElement, Boolean? value)
+  {
+    if (value == false)
+    {
+      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.VaryColors>();
       if (itemElement != null)
         itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = EnumValueConverter.CreateOpenXmlElement<Grouping, GroupingValues, GroupingKind>(value);
-        if (itemElement != null)
-          openXmlElement.AddChild(itemElement);
-      }
+    }
+    if (value == true)
+    {
+      var itemElement = new DocumentFormat.OpenXml.Drawing.Charts.VaryColors();
+      openXmlElement.AddChild(itemElement);
     }
   }
-
-  /// <summary>
-  ///   VaryColors.
-  /// </summary>
-  public static Boolean? GetVaryColors(AreaChart? openXmlElement)
+  
+  private static System.Collections.ObjectModel.Collection<DocumentModel.Drawings.Charts.AreaChartSeries> GetAreaChartSerieses(DocumentFormat.OpenXml.Drawing.Charts.AreaChart openXmlElement)
   {
-    if (openXmlElement != null)
+    var collection = new System.Collections.ObjectModel.Collection<DocumentModel.Drawings.Charts.AreaChartSeries>();
+    foreach (var item in openXmlElement.Elements<DocumentFormat.OpenXml.Drawing.Charts.AreaChartSeries>())
     {
-      var itemElement = openXmlElement.GetFirstChild<VaryColors>();
-      return itemElement != null;
+      var newItem = DocumentModel.OpenXml.Drawings.Charts.AreaChartSeriesConverter.CreateModelElement(item);
+      if (newItem != null)
+        collection.Add(newItem);
     }
-    return null;
+    return collection;
   }
-
-  public static void SetVaryColors(AreaChart? openXmlElement, Boolean? value)
+  
+  private static void SetAreaChartSerieses(DocumentFormat.OpenXml.Drawing.Charts.AreaChart openXmlElement, System.Collections.ObjectModel.Collection<DocumentModel.Drawings.Charts.AreaChartSeries>? value)
   {
-    if (openXmlElement != null)
+    openXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Drawing.Charts.AreaChartSeries>();
+    if (value != null)
     {
-      if (value == false)
+      foreach (var item in value)
       {
-        var itemElement = openXmlElement.GetFirstChild<VaryColors>();
-        if (itemElement != null)
-          itemElement.Remove();
-      }
-      if (value == true)
-      {
-        var itemElement = new VaryColors();
-        openXmlElement.AddChild(itemElement);
-      }
-    }
-  }
-
-  public static Collection<AreaChartSeries>? GetAreaChartSerieses(AreaChart? openXmlElement)
-  {
-    if (openXmlElement != null)
-    {
-      var collection = new Collection<AreaChartSeries>();
-      foreach (var item in openXmlElement.Elements<DocumentFormat.OpenXml.Drawing.Charts.AreaChartSeries>())
-      {
-        var newItem = AreaChartSeriesConverter.CreateModelElement(item);
+        var newItem = DocumentModel.OpenXml.Drawings.Charts.AreaChartSeriesConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Charts.AreaChartSeries>(item);
         if (newItem != null)
-          collection.Add(newItem);
+          openXmlElement.AddChild(newItem);
       }
-      return collection;
-    }
-    return null;
-  }
-
-  public static void SetAreaChartSerieses(AreaChart? openXmlElement, Collection<AreaChartSeries>? value)
-  {
-    if (openXmlElement != null)
-    {
-      openXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Drawing.Charts.AreaChartSeries>();
-      if (value != null)
-        foreach (var item in value)
-        {
-          var newItem = AreaChartSeriesConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Charts.AreaChartSeries>(item);
-          if (newItem != null)
-            openXmlElement.AddChild(newItem);
-        }
     }
   }
-
-  public static DataLabels? GetDataLabels(AreaChart? openXmlElement)
+  
+  private static DocumentModel.Drawings.Charts.DataLabels? GetDataLabels(DocumentFormat.OpenXml.Drawing.Charts.AreaChart openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.DataLabels>();
     if (itemElement != null)
-      return DataLabelsConverter.CreateModelElement(itemElement);
+      return DocumentModel.OpenXml.Drawings.Charts.DataLabelsConverter.CreateModelElement(itemElement);
     return null;
   }
-
-  public static void SetDataLabels(AreaChart? openXmlElement, DataLabels? value)
+  
+  private static void SetDataLabels(DocumentFormat.OpenXml.Drawing.Charts.AreaChart openXmlElement, DocumentModel.Drawings.Charts.DataLabels? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.DataLabels>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.DataLabels>();
+      itemElement = DocumentModel.OpenXml.Drawings.Charts.DataLabelsConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Charts.DataLabels>(value);
       if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = DataLabelsConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Charts.DataLabels>(value);
-        if (itemElement != null)
-          openXmlElement.AddChild(itemElement);
-      }
+        openXmlElement.AddChild(itemElement);
     }
   }
-
-  public static DropLines? GetDropLines(AreaChart? openXmlElement)
+  
+  private static DocumentModel.Drawings.Charts.DropLines? GetDropLines(DocumentFormat.OpenXml.Drawing.Charts.AreaChart openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.DropLines>();
     if (itemElement != null)
-      return DropLinesConverter.CreateModelElement(itemElement);
+      return DocumentModel.OpenXml.Drawings.Charts.DropLinesConverter.CreateModelElement(itemElement);
     return null;
   }
-
-  public static void SetDropLines(AreaChart? openXmlElement, DropLines? value)
+  
+  private static void SetDropLines(DocumentFormat.OpenXml.Drawing.Charts.AreaChart openXmlElement, DocumentModel.Drawings.Charts.DropLines? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.DropLines>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.DropLines>();
+      itemElement = DocumentModel.OpenXml.Drawings.Charts.DropLinesConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Charts.DropLines>(value);
       if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = DropLinesConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Charts.DropLines>(value);
-        if (itemElement != null)
-          openXmlElement.AddChild(itemElement);
-      }
+        openXmlElement.AddChild(itemElement);
     }
   }
-
-  public static Collection<UInt32>? GetAxisIds(AreaChart? openXmlElement)
+  
+  private static System.Collections.ObjectModel.Collection<UInt32> GetAxisIds(DocumentFormat.OpenXml.Drawing.Charts.AreaChart openXmlElement)
   {
-    if (openXmlElement != null)
+    var collection = new System.Collections.ObjectModel.Collection<UInt32>();
+    foreach (var item in openXmlElement.Elements<DocumentFormat.OpenXml.Drawing.Charts.AxisId>())
     {
-      var collection = new Collection<UInt32>();
-      foreach (var item in openXmlElement.Elements<AxisId>())
+      var newItem = UInt32ValueConverter.GetValue(item);
+      if (newItem != null)
+        collection.Add((UInt32)newItem);
+    }
+    return collection;
+  }
+  
+  private static void SetAxisIds(DocumentFormat.OpenXml.Drawing.Charts.AreaChart openXmlElement, System.Collections.ObjectModel.Collection<UInt32>? value)
+  {
+    openXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Drawing.Charts.AxisId>();
+    if (value != null)
+    {
+      foreach (var item in value)
       {
-        var newItem = UInt32ValueConverter.GetValue(item);
+        var newItem = UInt32ValueConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Charts.AxisId>(item);
         if (newItem != null)
-          collection.Add((UInt32)newItem);
+          openXmlElement.AddChild(newItem);
       }
-      return collection;
-    }
-    return null;
-  }
-
-  public static void SetAxisIds(AreaChart? openXmlElement, Collection<UInt32>? value)
-  {
-    if (openXmlElement != null)
-    {
-      openXmlElement.RemoveAllChildren<AxisId>();
-      if (value != null)
-        foreach (var item in value)
-        {
-          var newItem = UInt32ValueConverter.CreateOpenXmlElement<AxisId>(item);
-          if (newItem != null)
-            openXmlElement.AddChild(newItem);
-        }
     }
   }
-
-  public static AreaChartExtensionList? GetAreaChartExtensionList(AreaChart? openXmlElement)
+  
+  private static DocumentModel.Drawings.Charts.AreaChartExtensionList? GetAreaChartExtensionList(DocumentFormat.OpenXml.Drawing.Charts.AreaChart openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.AreaChartExtensionList>();
     if (itemElement != null)
-      return AreaChartExtensionListConverter.CreateModelElement(itemElement);
+      return DocumentModel.OpenXml.Drawings.Charts.AreaChartExtensionListConverter.CreateModelElement(itemElement);
     return null;
   }
-
-  public static void SetAreaChartExtensionList(AreaChart? openXmlElement, AreaChartExtensionList? value)
+  
+  private static void SetAreaChartExtensionList(DocumentFormat.OpenXml.Drawing.Charts.AreaChart openXmlElement, DocumentModel.Drawings.Charts.AreaChartExtensionList? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.AreaChartExtensionList>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.AreaChartExtensionList>();
+      itemElement = DocumentModel.OpenXml.Drawings.Charts.AreaChartExtensionListConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Charts.AreaChartExtensionList>(value);
       if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = AreaChartExtensionListConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Charts.AreaChartExtensionList>(value);
-        if (itemElement != null)
-          openXmlElement.AddChild(itemElement);
-      }
+        openXmlElement.AddChild(itemElement);
     }
   }
-
-  public static DocumentModel.Drawings.Charts.AreaChart? CreateModelElement(AreaChart? openXmlElement)
+  
+  public static DocumentModel.Drawings.Charts.AreaChart? CreateModelElement(DocumentFormat.OpenXml.Drawing.Charts.AreaChart? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -223,9 +184,9 @@ public static class AreaChartConverter
     }
     return null;
   }
-
+  
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.Charts.AreaChart? value)
-    where OpenXmlElementType : AreaChart, new()
+    where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.Charts.AreaChart, new()
   {
     if (value != null)
     {

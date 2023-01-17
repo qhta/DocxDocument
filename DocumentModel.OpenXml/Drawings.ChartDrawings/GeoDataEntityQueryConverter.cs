@@ -1,45 +1,40 @@
-using DocumentModel.Drawings.ChartDrawings;
-using GeoDataEntityQuery = DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.GeoDataEntityQuery;
-
 namespace DocumentModel.OpenXml.Drawings.ChartDrawings;
 
 /// <summary>
-///   Defines the GeoDataEntityQuery Class.
+/// Defines the GeoDataEntityQuery Class.
 /// </summary>
 public static class GeoDataEntityQueryConverter
 {
   /// <summary>
-  ///   entityType, this property is only available in Office 2016 and later.
+  /// entityType, this property is only available in Office 2016 and later.
   /// </summary>
-  public static EntityTypeEnum? GetEntityType(GeoDataEntityQuery? openXmlElement)
+  private static DocumentModel.Drawings.ChartDrawings.EntityTypeEnum? GetEntityType(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.GeoDataEntityQuery openXmlElement)
   {
-    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.EntityTypeEnum, EntityTypeEnum>(openXmlElement?.EntityType?.Value);
+    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.EntityTypeEnum, DocumentModel.Drawings.ChartDrawings.EntityTypeEnum>(openXmlElement?.EntityType?.Value);
   }
-
-  public static void SetEntityType(GeoDataEntityQuery? openXmlElement, EntityTypeEnum? value)
+  
+  private static void SetEntityType(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.GeoDataEntityQuery openXmlElement, DocumentModel.Drawings.ChartDrawings.EntityTypeEnum? value)
   {
-    if (openXmlElement != null)
-      openXmlElement.EntityType = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.EntityTypeEnum, EntityTypeEnum>(value);
+    openXmlElement.EntityType = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.EntityTypeEnum, DocumentModel.Drawings.ChartDrawings.EntityTypeEnum>(value);
   }
-
+  
   /// <summary>
-  ///   entityId, this property is only available in Office 2016 and later.
+  /// entityId, this property is only available in Office 2016 and later.
   /// </summary>
-  public static String? GetEntityId(GeoDataEntityQuery? openXmlElement)
+  private static String? GetEntityId(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.GeoDataEntityQuery openXmlElement)
   {
     return openXmlElement?.EntityId?.Value;
   }
-
-  public static void SetEntityId(GeoDataEntityQuery? openXmlElement, String? value)
+  
+  private static void SetEntityId(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.GeoDataEntityQuery openXmlElement, String? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.EntityId = new StringValue { Value = value };
-      else
-        openXmlElement.EntityId = null;
+    if (value != null)
+      openXmlElement.EntityId = new StringValue { Value = value };
+    else
+      openXmlElement.EntityId = null;
   }
-
-  public static DocumentModel.Drawings.ChartDrawings.GeoDataEntityQuery? CreateModelElement(GeoDataEntityQuery? openXmlElement)
+  
+  public static DocumentModel.Drawings.ChartDrawings.GeoDataEntityQuery? CreateModelElement(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.GeoDataEntityQuery? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -50,9 +45,9 @@ public static class GeoDataEntityQueryConverter
     }
     return null;
   }
-
+  
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.ChartDrawings.GeoDataEntityQuery? value)
-    where OpenXmlElementType : GeoDataEntityQuery, new()
+    where OpenXmlElementType: DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.GeoDataEntityQuery, new()
   {
     if (value != null)
     {

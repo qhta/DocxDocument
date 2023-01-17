@@ -1,95 +1,82 @@
-using DocumentFormat.OpenXml.Drawing.Charts;
-using MultiLevelStringCache = DocumentModel.Drawings.Charts.MultiLevelStringCache;
-using MultiLvlStrRefExtensionList = DocumentModel.Drawings.Charts.MultiLvlStrRefExtensionList;
-
 namespace DocumentModel.OpenXml.Drawings.Charts;
 
 /// <summary>
-///   Multi Level String Reference.
+/// Multi Level String Reference.
 /// </summary>
 public static class MultiLevelStringReferenceConverter
 {
   /// <summary>
-  ///   Formula.
+  /// Formula.
   /// </summary>
-  public static String? GetFormula(MultiLevelStringReference? openXmlElement)
+  private static String? GetFormula(DocumentFormat.OpenXml.Drawing.Charts.MultiLevelStringReference openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<Formula>();
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.Formula>();
     if (itemElement != null)
       return itemElement.Text;
     return null;
   }
-
-  public static void SetFormula(MultiLevelStringReference? openXmlElement, String? value)
+  
+  private static void SetFormula(DocumentFormat.OpenXml.Drawing.Charts.MultiLevelStringReference openXmlElement, String? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.Formula>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<Formula>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = new Formula { Text = value };
-        openXmlElement.AddChild(itemElement);
-      }
+      itemElement = new DocumentFormat.OpenXml.Drawing.Charts.Formula { Text = value };
+      openXmlElement.AddChild(itemElement);
     }
   }
-
+  
   /// <summary>
-  ///   MultiLevelStringCache.
+  /// MultiLevelStringCache.
   /// </summary>
-  public static MultiLevelStringCache? GetMultiLevelStringCache(MultiLevelStringReference? openXmlElement)
+  private static DocumentModel.Drawings.Charts.MultiLevelStringCache? GetMultiLevelStringCache(DocumentFormat.OpenXml.Drawing.Charts.MultiLevelStringReference openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.MultiLevelStringCache>();
     if (itemElement != null)
-      return MultiLevelStringCacheConverter.CreateModelElement(itemElement);
+      return DocumentModel.OpenXml.Drawings.Charts.MultiLevelStringCacheConverter.CreateModelElement(itemElement);
     return null;
   }
-
-  public static void SetMultiLevelStringCache(MultiLevelStringReference? openXmlElement, MultiLevelStringCache? value)
+  
+  private static void SetMultiLevelStringCache(DocumentFormat.OpenXml.Drawing.Charts.MultiLevelStringReference openXmlElement, DocumentModel.Drawings.Charts.MultiLevelStringCache? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.MultiLevelStringCache>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.MultiLevelStringCache>();
+      itemElement = DocumentModel.OpenXml.Drawings.Charts.MultiLevelStringCacheConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Charts.MultiLevelStringCache>(value);
       if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = MultiLevelStringCacheConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Charts.MultiLevelStringCache>(value);
-        if (itemElement != null)
-          openXmlElement.AddChild(itemElement);
-      }
+        openXmlElement.AddChild(itemElement);
     }
   }
-
+  
   /// <summary>
-  ///   MultiLvlStrRefExtensionList.
+  /// MultiLvlStrRefExtensionList.
   /// </summary>
-  public static MultiLvlStrRefExtensionList? GetMultiLvlStrRefExtensionList(MultiLevelStringReference? openXmlElement)
+  private static DocumentModel.Drawings.Charts.MultiLvlStrRefExtensionList? GetMultiLvlStrRefExtensionList(DocumentFormat.OpenXml.Drawing.Charts.MultiLevelStringReference openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.MultiLvlStrRefExtensionList>();
     if (itemElement != null)
-      return MultiLvlStrRefExtensionListConverter.CreateModelElement(itemElement);
+      return DocumentModel.OpenXml.Drawings.Charts.MultiLvlStrRefExtensionListConverter.CreateModelElement(itemElement);
     return null;
   }
-
-  public static void SetMultiLvlStrRefExtensionList(MultiLevelStringReference? openXmlElement, MultiLvlStrRefExtensionList? value)
+  
+  private static void SetMultiLvlStrRefExtensionList(DocumentFormat.OpenXml.Drawing.Charts.MultiLevelStringReference openXmlElement, DocumentModel.Drawings.Charts.MultiLvlStrRefExtensionList? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.MultiLvlStrRefExtensionList>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.MultiLvlStrRefExtensionList>();
+      itemElement = DocumentModel.OpenXml.Drawings.Charts.MultiLvlStrRefExtensionListConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Charts.MultiLvlStrRefExtensionList>(value);
       if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = MultiLvlStrRefExtensionListConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Charts.MultiLvlStrRefExtensionList>(value);
-        if (itemElement != null)
-          openXmlElement.AddChild(itemElement);
-      }
+        openXmlElement.AddChild(itemElement);
     }
   }
-
-  public static DocumentModel.Drawings.Charts.MultiLevelStringReference? CreateModelElement(MultiLevelStringReference? openXmlElement)
+  
+  public static DocumentModel.Drawings.Charts.MultiLevelStringReference? CreateModelElement(DocumentFormat.OpenXml.Drawing.Charts.MultiLevelStringReference? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -101,9 +88,9 @@ public static class MultiLevelStringReferenceConverter
     }
     return null;
   }
-
+  
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.Charts.MultiLevelStringReference? value)
-    where OpenXmlElementType : MultiLevelStringReference, new()
+    where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.Charts.MultiLevelStringReference, new()
   {
     if (value != null)
     {

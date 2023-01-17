@@ -1,78 +1,72 @@
 namespace DocumentModel.OpenXml;
 
 /// <summary>
-///   Defines the QuickAccessToolbar Class.
+/// Defines the QuickAccessToolbar Class.
 /// </summary>
 public static class QuickAccessToolbarConverter
 {
   /// <summary>
-  ///   SharedControlsQatItems.
+  /// SharedControlsQatItems.
   /// </summary>
-  public static SharedControlsQatItems? GetSharedControlsQatItems(DocumentFormat.OpenXml.Office2010.CustomUI.QuickAccessToolbar? openXmlElement)
+  private static DocumentModel.SharedControlsQatItems? GetSharedControlsQatItems(DocumentFormat.OpenXml.Office2010.CustomUI.QuickAccessToolbar openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office2010.CustomUI.SharedControlsQatItems>();
     if (itemElement != null)
-      return SharedControlsQatItemsConverter.CreateModelElement(itemElement);
+      return DocumentModel.OpenXml.SharedControlsQatItemsConverter.CreateModelElement(itemElement);
     return null;
   }
-
-  public static void SetSharedControlsQatItems(DocumentFormat.OpenXml.Office2010.CustomUI.QuickAccessToolbar? openXmlElement, SharedControlsQatItems? value)
+  
+  private static void SetSharedControlsQatItems(DocumentFormat.OpenXml.Office2010.CustomUI.QuickAccessToolbar openXmlElement, DocumentModel.SharedControlsQatItems? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2010.CustomUI.SharedControlsQatItems>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2010.CustomUI.SharedControlsQatItems>();
+      itemElement = DocumentModel.OpenXml.SharedControlsQatItemsConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2010.CustomUI.SharedControlsQatItems>(value);
       if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = SharedControlsQatItemsConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2010.CustomUI.SharedControlsQatItems>(value);
-        if (itemElement != null)
-          openXmlElement.AddChild(itemElement);
-      }
+        openXmlElement.AddChild(itemElement);
     }
   }
-
+  
   /// <summary>
-  ///   DocumentControlsQatItems.
+  /// DocumentControlsQatItems.
   /// </summary>
-  public static DocumentControlsQatItems? GetDocumentControlsQatItems(DocumentFormat.OpenXml.Office2010.CustomUI.QuickAccessToolbar? openXmlElement)
+  private static DocumentModel.DocumentControlsQatItems? GetDocumentControlsQatItems(DocumentFormat.OpenXml.Office2010.CustomUI.QuickAccessToolbar openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office2010.CustomUI.DocumentControlsQatItems>();
     if (itemElement != null)
-      return DocumentControlsQatItemsConverter.CreateModelElement(itemElement);
+      return DocumentModel.OpenXml.DocumentControlsQatItemsConverter.CreateModelElement(itemElement);
     return null;
   }
-
-  public static void SetDocumentControlsQatItems(DocumentFormat.OpenXml.Office2010.CustomUI.QuickAccessToolbar? openXmlElement, DocumentControlsQatItems? value)
+  
+  private static void SetDocumentControlsQatItems(DocumentFormat.OpenXml.Office2010.CustomUI.QuickAccessToolbar openXmlElement, DocumentModel.DocumentControlsQatItems? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2010.CustomUI.DocumentControlsQatItems>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2010.CustomUI.DocumentControlsQatItems>();
+      itemElement = DocumentModel.OpenXml.DocumentControlsQatItemsConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2010.CustomUI.DocumentControlsQatItems>(value);
       if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = DocumentControlsQatItemsConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2010.CustomUI.DocumentControlsQatItems>(value);
-        if (itemElement != null)
-          openXmlElement.AddChild(itemElement);
-      }
+        openXmlElement.AddChild(itemElement);
     }
   }
-
-  public static QuickAccessToolbar? CreateModelElement(DocumentFormat.OpenXml.Office2010.CustomUI.QuickAccessToolbar? openXmlElement)
+  
+  public static DocumentModel.QuickAccessToolbar? CreateModelElement(DocumentFormat.OpenXml.Office2010.CustomUI.QuickAccessToolbar? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new QuickAccessToolbar();
+      var value = new DocumentModel.QuickAccessToolbar();
       value.SharedControlsQatItems = GetSharedControlsQatItems(openXmlElement);
       value.DocumentControlsQatItems = GetDocumentControlsQatItems(openXmlElement);
       return value;
     }
     return null;
   }
-
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(QuickAccessToolbar? value)
-    where OpenXmlElementType : DocumentFormat.OpenXml.Office2010.CustomUI.QuickAccessToolbar, new()
+  
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.QuickAccessToolbar? value)
+    where OpenXmlElementType: DocumentFormat.OpenXml.Office2010.CustomUI.QuickAccessToolbar, new()
   {
     if (value != null)
     {

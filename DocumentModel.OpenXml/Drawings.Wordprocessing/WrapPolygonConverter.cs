@@ -1,82 +1,72 @@
-using DocumentFormat.OpenXml.Drawing.Wordprocessing;
-using Point2DType = DocumentModel.Drawings.Wordprocessing.Point2DType;
-
 namespace DocumentModel.OpenXml.Drawings.Wordprocessing;
 
 /// <summary>
-///   Tight Wrapping Extents Polygon.
+/// Tight Wrapping Extents Polygon.
 /// </summary>
 public static class WrapPolygonConverter
 {
   /// <summary>
-  ///   Wrapping Points Modified
+  /// Wrapping Points Modified
   /// </summary>
-  public static Boolean? GetEdited(WrapPolygon? openXmlElement)
+  private static Boolean? GetEdited(DocumentFormat.OpenXml.Drawing.Wordprocessing.WrapPolygon openXmlElement)
   {
     return openXmlElement?.Edited?.Value;
   }
-
-  public static void SetEdited(WrapPolygon? openXmlElement, Boolean? value)
+  
+  private static void SetEdited(DocumentFormat.OpenXml.Drawing.Wordprocessing.WrapPolygon openXmlElement, Boolean? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.Edited = new BooleanValue { Value = (Boolean)value };
-      else
-        openXmlElement.Edited = null;
+    if (value != null)
+      openXmlElement.Edited = new BooleanValue { Value = (Boolean)value };
+    else
+      openXmlElement.Edited = null;
   }
-
+  
   /// <summary>
-  ///   Wrapping Polygon Start.
+  /// Wrapping Polygon Start.
   /// </summary>
-  public static Point2DType? GetStartPoint(WrapPolygon? openXmlElement)
+  private static DocumentModel.Drawings.Wordprocessing.Point2DType? GetStartPoint(DocumentFormat.OpenXml.Drawing.Wordprocessing.WrapPolygon openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<StartPoint>();
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.Wordprocessing.StartPoint>();
     if (itemElement != null)
-      return Point2DTypeConverter.CreateModelElement(itemElement);
+      return DocumentModel.OpenXml.Drawings.Wordprocessing.Point2DTypeConverter.CreateModelElement(itemElement);
     return null;
   }
-
-  public static void SetStartPoint(WrapPolygon? openXmlElement, Point2DType? value)
+  
+  private static void SetStartPoint(DocumentFormat.OpenXml.Drawing.Wordprocessing.WrapPolygon openXmlElement, DocumentModel.Drawings.Wordprocessing.Point2DType? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Wordprocessing.StartPoint>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<StartPoint>();
+      itemElement = DocumentModel.OpenXml.Drawings.Wordprocessing.Point2DTypeConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Wordprocessing.StartPoint>(value);
       if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = Point2DTypeConverter.CreateOpenXmlElement<StartPoint>(value);
-        if (itemElement != null)
-          openXmlElement.AddChild(itemElement);
-      }
+        openXmlElement.AddChild(itemElement);
     }
   }
-
-  public static Point2DType? GetLineTo(WrapPolygon? openXmlElement)
+  
+  private static DocumentModel.Drawings.Wordprocessing.Point2DType? GetLineTo(DocumentFormat.OpenXml.Drawing.Wordprocessing.WrapPolygon openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<LineTo>();
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.Wordprocessing.LineTo>();
     if (itemElement != null)
-      return Point2DTypeConverter.CreateModelElement(itemElement);
+      return DocumentModel.OpenXml.Drawings.Wordprocessing.Point2DTypeConverter.CreateModelElement(itemElement);
     return null;
   }
-
-  public static void SetLineTo(WrapPolygon? openXmlElement, Point2DType? value)
+  
+  private static void SetLineTo(DocumentFormat.OpenXml.Drawing.Wordprocessing.WrapPolygon openXmlElement, DocumentModel.Drawings.Wordprocessing.Point2DType? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Wordprocessing.LineTo>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<LineTo>();
+      itemElement = DocumentModel.OpenXml.Drawings.Wordprocessing.Point2DTypeConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Wordprocessing.LineTo>(value);
       if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = Point2DTypeConverter.CreateOpenXmlElement<LineTo>(value);
-        if (itemElement != null)
-          openXmlElement.AddChild(itemElement);
-      }
+        openXmlElement.AddChild(itemElement);
     }
   }
-
-  public static DocumentModel.Drawings.Wordprocessing.WrapPolygon? CreateModelElement(WrapPolygon? openXmlElement)
+  
+  public static DocumentModel.Drawings.Wordprocessing.WrapPolygon? CreateModelElement(DocumentFormat.OpenXml.Drawing.Wordprocessing.WrapPolygon? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -88,9 +78,9 @@ public static class WrapPolygonConverter
     }
     return null;
   }
-
+  
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.Wordprocessing.WrapPolygon? value)
-    where OpenXmlElementType : WrapPolygon, new()
+    where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.Wordprocessing.WrapPolygon, new()
   {
     if (value != null)
     {

@@ -1,114 +1,104 @@
-using DocumentFormat.OpenXml.Vml;
-using DocumentModel.Vml;
-using Skew = DocumentFormat.OpenXml.Vml.Office.Skew;
-
 namespace DocumentModel.OpenXml.Vml;
 
 /// <summary>
-///   Skew Transform.
+/// Skew Transform.
 /// </summary>
 public static class SkewConverter
 {
   /// <summary>
-  ///   VML Extension Handling Behavior
+  /// VML Extension Handling Behavior
   /// </summary>
-  public static ExtensionHandlingBehaviorKind? GetExtension(Skew? openXmlElement)
+  private static DocumentModel.Vml.ExtensionHandlingBehaviorKind? GetExtension(DocumentFormat.OpenXml.Vml.Office.Skew openXmlElement)
   {
-    return EnumValueConverter.GetValue<ExtensionHandlingBehaviorValues, ExtensionHandlingBehaviorKind>(openXmlElement?.Extension?.Value);
+    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Vml.ExtensionHandlingBehaviorValues, DocumentModel.Vml.ExtensionHandlingBehaviorKind>(openXmlElement?.Extension?.Value);
   }
-
-  public static void SetExtension(Skew? openXmlElement, ExtensionHandlingBehaviorKind? value)
+  
+  private static void SetExtension(DocumentFormat.OpenXml.Vml.Office.Skew openXmlElement, DocumentModel.Vml.ExtensionHandlingBehaviorKind? value)
   {
-    if (openXmlElement != null)
-      openXmlElement.Extension = EnumValueConverter.CreateEnumValue<ExtensionHandlingBehaviorValues, ExtensionHandlingBehaviorKind>(value);
+    openXmlElement.Extension = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Vml.ExtensionHandlingBehaviorValues, DocumentModel.Vml.ExtensionHandlingBehaviorKind>(value);
   }
-
+  
   /// <summary>
-  ///   Skew ID
+  /// Skew ID
   /// </summary>
-  public static String? GetId(Skew? openXmlElement)
+  private static String? GetId(DocumentFormat.OpenXml.Vml.Office.Skew openXmlElement)
   {
     return openXmlElement?.Id?.Value;
   }
-
-  public static void SetId(Skew? openXmlElement, String? value)
+  
+  private static void SetId(DocumentFormat.OpenXml.Vml.Office.Skew openXmlElement, String? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.Id = new StringValue { Value = value };
-      else
-        openXmlElement.Id = null;
+    if (value != null)
+      openXmlElement.Id = new StringValue { Value = value };
+    else
+      openXmlElement.Id = null;
   }
-
+  
   /// <summary>
-  ///   Skew Toggle
+  /// Skew Toggle
   /// </summary>
-  public static Boolean? GetOn(Skew? openXmlElement)
+  private static Boolean? GetOn(DocumentFormat.OpenXml.Vml.Office.Skew openXmlElement)
   {
     return openXmlElement?.On?.Value;
   }
-
-  public static void SetOn(Skew? openXmlElement, Boolean? value)
+  
+  private static void SetOn(DocumentFormat.OpenXml.Vml.Office.Skew openXmlElement, Boolean? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.On = value;
-      else
-        openXmlElement.On = null;
+    if (value != null)
+      openXmlElement.On = value;
+    else
+      openXmlElement.On = null;
   }
-
+  
   /// <summary>
-  ///   Skew Offset
+  /// Skew Offset
   /// </summary>
-  public static String? GetOffset(Skew? openXmlElement)
+  private static String? GetOffset(DocumentFormat.OpenXml.Vml.Office.Skew openXmlElement)
   {
     return openXmlElement?.Offset?.Value;
   }
-
-  public static void SetOffset(Skew? openXmlElement, String? value)
+  
+  private static void SetOffset(DocumentFormat.OpenXml.Vml.Office.Skew openXmlElement, String? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.Offset = new StringValue { Value = value };
-      else
-        openXmlElement.Offset = null;
+    if (value != null)
+      openXmlElement.Offset = new StringValue { Value = value };
+    else
+      openXmlElement.Offset = null;
   }
-
+  
   /// <summary>
-  ///   Skew Origin
+  /// Skew Origin
   /// </summary>
-  public static String? GetOrigin(Skew? openXmlElement)
+  private static String? GetOrigin(DocumentFormat.OpenXml.Vml.Office.Skew openXmlElement)
   {
     return openXmlElement?.Origin?.Value;
   }
-
-  public static void SetOrigin(Skew? openXmlElement, String? value)
+  
+  private static void SetOrigin(DocumentFormat.OpenXml.Vml.Office.Skew openXmlElement, String? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.Origin = new StringValue { Value = value };
-      else
-        openXmlElement.Origin = null;
+    if (value != null)
+      openXmlElement.Origin = new StringValue { Value = value };
+    else
+      openXmlElement.Origin = null;
   }
-
+  
   /// <summary>
-  ///   Skew Perspective Matrix
+  /// Skew Perspective Matrix
   /// </summary>
-  public static String? GetMatrix(Skew? openXmlElement)
+  private static String? GetMatrix(DocumentFormat.OpenXml.Vml.Office.Skew openXmlElement)
   {
     return openXmlElement?.Matrix?.Value;
   }
-
-  public static void SetMatrix(Skew? openXmlElement, String? value)
+  
+  private static void SetMatrix(DocumentFormat.OpenXml.Vml.Office.Skew openXmlElement, String? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.Matrix = new StringValue { Value = value };
-      else
-        openXmlElement.Matrix = null;
+    if (value != null)
+      openXmlElement.Matrix = new StringValue { Value = value };
+    else
+      openXmlElement.Matrix = null;
   }
-
-  public static DocumentModel.Vml.Skew? CreateModelElement(Skew? openXmlElement)
+  
+  public static DocumentModel.Vml.Skew? CreateModelElement(DocumentFormat.OpenXml.Vml.Office.Skew? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -123,9 +113,9 @@ public static class SkewConverter
     }
     return null;
   }
-
+  
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Vml.Skew? value)
-    where OpenXmlElementType : Skew, new()
+    where OpenXmlElementType: DocumentFormat.OpenXml.Vml.Office.Skew, new()
   {
     if (value != null)
     {

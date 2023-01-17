@@ -1,85 +1,75 @@
-using DocumentFormat.OpenXml.Office2010.Drawing.ChartDrawing;
-using DocumentModel.Drawings;
-
 namespace DocumentModel.OpenXml.Drawings.ChartDrawings;
 
 /// <summary>
-///   Defines the NonVisualInkContentPartProperties Class.
+/// Defines the NonVisualInkContentPartProperties Class.
 /// </summary>
 public static class NonVisualInkContentPartPropertiesConverter
 {
   /// <summary>
-  ///   isComment, this property is only available in Office 2010 and later.
+  /// isComment, this property is only available in Office 2010 and later.
   /// </summary>
-  public static Boolean? GetIsComment(NonVisualInkContentPartProperties? openXmlElement)
+  private static Boolean? GetIsComment(DocumentFormat.OpenXml.Office2010.Drawing.ChartDrawing.NonVisualInkContentPartProperties openXmlElement)
   {
     return openXmlElement?.IsComment?.Value;
   }
-
-  public static void SetIsComment(NonVisualInkContentPartProperties? openXmlElement, Boolean? value)
+  
+  private static void SetIsComment(DocumentFormat.OpenXml.Office2010.Drawing.ChartDrawing.NonVisualInkContentPartProperties openXmlElement, Boolean? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.IsComment = new BooleanValue { Value = (Boolean)value };
-      else
-        openXmlElement.IsComment = null;
+    if (value != null)
+      openXmlElement.IsComment = new BooleanValue { Value = (Boolean)value };
+    else
+      openXmlElement.IsComment = null;
   }
-
+  
   /// <summary>
-  ///   ContentPartLocks.
+  /// ContentPartLocks.
   /// </summary>
-  public static ContentPartLocks? GetContentPartLocks(NonVisualInkContentPartProperties? openXmlElement)
+  private static DocumentModel.Drawings.ContentPartLocks? GetContentPartLocks(DocumentFormat.OpenXml.Office2010.Drawing.ChartDrawing.NonVisualInkContentPartProperties openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office2010.Drawing.ContentPartLocks>();
     if (itemElement != null)
-      return ContentPartLocksConverter.CreateModelElement(itemElement);
+      return DocumentModel.OpenXml.Drawings.ContentPartLocksConverter.CreateModelElement(itemElement);
     return null;
   }
-
-  public static void SetContentPartLocks(NonVisualInkContentPartProperties? openXmlElement, ContentPartLocks? value)
+  
+  private static void SetContentPartLocks(DocumentFormat.OpenXml.Office2010.Drawing.ChartDrawing.NonVisualInkContentPartProperties openXmlElement, DocumentModel.Drawings.ContentPartLocks? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2010.Drawing.ContentPartLocks>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2010.Drawing.ContentPartLocks>();
+      itemElement = DocumentModel.OpenXml.Drawings.ContentPartLocksConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2010.Drawing.ContentPartLocks>(value);
       if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = ContentPartLocksConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2010.Drawing.ContentPartLocks>(value);
-        if (itemElement != null)
-          openXmlElement.AddChild(itemElement);
-      }
+        openXmlElement.AddChild(itemElement);
     }
   }
-
+  
   /// <summary>
-  ///   OfficeArtExtensionList.
+  /// OfficeArtExtensionList.
   /// </summary>
-  public static OfficeArtExtensionList2? GetOfficeArtExtensionList(NonVisualInkContentPartProperties? openXmlElement)
+  private static DocumentModel.Drawings.OfficeArtExtensionList2? GetOfficeArtExtensionList(DocumentFormat.OpenXml.Office2010.Drawing.ChartDrawing.NonVisualInkContentPartProperties openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office2010.Drawing.OfficeArtExtensionList>();
     if (itemElement != null)
-      return OfficeArtExtensionList2Converter.CreateModelElement(itemElement);
+      return DocumentModel.OpenXml.Drawings.OfficeArtExtensionList2Converter.CreateModelElement(itemElement);
     return null;
   }
-
-  public static void SetOfficeArtExtensionList(NonVisualInkContentPartProperties? openXmlElement, OfficeArtExtensionList2? value)
+  
+  private static void SetOfficeArtExtensionList(DocumentFormat.OpenXml.Office2010.Drawing.ChartDrawing.NonVisualInkContentPartProperties openXmlElement, DocumentModel.Drawings.OfficeArtExtensionList2? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2010.Drawing.OfficeArtExtensionList>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2010.Drawing.OfficeArtExtensionList>();
+      itemElement = DocumentModel.OpenXml.Drawings.OfficeArtExtensionList2Converter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2010.Drawing.OfficeArtExtensionList>(value);
       if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = OfficeArtExtensionList2Converter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2010.Drawing.OfficeArtExtensionList>(value);
-        if (itemElement != null)
-          openXmlElement.AddChild(itemElement);
-      }
+        openXmlElement.AddChild(itemElement);
     }
   }
-
-  public static DocumentModel.Drawings.ChartDrawings.NonVisualInkContentPartProperties? CreateModelElement(NonVisualInkContentPartProperties? openXmlElement)
+  
+  public static DocumentModel.Drawings.ChartDrawings.NonVisualInkContentPartProperties? CreateModelElement(DocumentFormat.OpenXml.Office2010.Drawing.ChartDrawing.NonVisualInkContentPartProperties? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -91,9 +81,9 @@ public static class NonVisualInkContentPartPropertiesConverter
     }
     return null;
   }
-
+  
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.ChartDrawings.NonVisualInkContentPartProperties? value)
-    where OpenXmlElementType : NonVisualInkContentPartProperties, new()
+    where OpenXmlElementType: DocumentFormat.OpenXml.Office2010.Drawing.ChartDrawing.NonVisualInkContentPartProperties, new()
   {
     if (value != null)
     {

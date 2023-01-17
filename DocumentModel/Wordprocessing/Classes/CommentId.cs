@@ -8,10 +8,10 @@ public class CommentId
   /// <summary>
   ///   paraId, this property is only available in Office 2019 and later.
   /// </summary>
-  public Byte[]? ParaId { get; set; }
+  public NumId? ParaId { get; set; }
 
   /// <summary>
   ///   durableId, this property is only available in Office 2019 and later.
   /// </summary>
-  public Byte[]? DurableId { get; set; }
+  public NumId? DurableId { get; set; }
 }

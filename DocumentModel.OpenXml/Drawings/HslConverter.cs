@@ -1,55 +1,50 @@
-using DocumentFormat.OpenXml.Drawing;
-
 namespace DocumentModel.OpenXml.Drawings;
 
 /// <summary>
-///   Hue Saturation Luminance Effect.
+/// Hue Saturation Luminance Effect.
 /// </summary>
 public static class HslConverter
 {
   /// <summary>
-  ///   Hue
+  /// Hue
   /// </summary>
-  public static Int32? GetHue(Hsl? openXmlElement)
+  private static Int32? GetHue(DocumentFormat.OpenXml.Drawing.Hsl openXmlElement)
   {
-    return openXmlElement?.Hue?.Value;
+    return openXmlElement.Hue?.Value;
   }
-
-  public static void SetHue(Hsl? openXmlElement, Int32? value)
+  
+  private static void SetHue(DocumentFormat.OpenXml.Drawing.Hsl openXmlElement, Int32? value)
   {
-    if (openXmlElement != null)
-      openXmlElement.Hue = value;
+    openXmlElement.Hue = value;
   }
-
+  
   /// <summary>
-  ///   Saturation
+  /// Saturation
   /// </summary>
-  public static Int32? GetSaturation(Hsl? openXmlElement)
+  private static Int32? GetSaturation(DocumentFormat.OpenXml.Drawing.Hsl openXmlElement)
   {
-    return openXmlElement?.Saturation?.Value;
+    return openXmlElement.Saturation?.Value;
   }
-
-  public static void SetSaturation(Hsl? openXmlElement, Int32? value)
+  
+  private static void SetSaturation(DocumentFormat.OpenXml.Drawing.Hsl openXmlElement, Int32? value)
   {
-    if (openXmlElement != null)
-      openXmlElement.Saturation = value;
+    openXmlElement.Saturation = value;
   }
-
+  
   /// <summary>
-  ///   Luminance
+  /// Luminance
   /// </summary>
-  public static Int32? GetLuminance(Hsl? openXmlElement)
+  private static Int32? GetLuminance(DocumentFormat.OpenXml.Drawing.Hsl openXmlElement)
   {
-    return openXmlElement?.Luminance?.Value;
+    return openXmlElement.Luminance?.Value;
   }
-
-  public static void SetLuminance(Hsl? openXmlElement, Int32? value)
+  
+  private static void SetLuminance(DocumentFormat.OpenXml.Drawing.Hsl openXmlElement, Int32? value)
   {
-    if (openXmlElement != null)
-      openXmlElement.Luminance = value;
+    openXmlElement.Luminance = value;
   }
-
-  public static DocumentModel.Drawings.Hsl? CreateModelElement(Hsl? openXmlElement)
+  
+  public static DocumentModel.Drawings.Hsl? CreateModelElement(DocumentFormat.OpenXml.Drawing.Hsl? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -61,9 +56,9 @@ public static class HslConverter
     }
     return null;
   }
-
+  
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.Hsl? value)
-    where OpenXmlElementType : Hsl, new()
+    where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.Hsl, new()
   {
     if (value != null)
     {

@@ -1,30 +1,27 @@
-using DocumentFormat.OpenXml.Drawing;
-
 namespace DocumentModel.OpenXml.Drawings;
 
 /// <summary>
-///   Character Bullet.
+/// Character Bullet.
 /// </summary>
 public static class CharacterBulletConverter
 {
   /// <summary>
-  ///   Bullet Character
+  /// Bullet Character
   /// </summary>
-  public static String? GetChar(CharacterBullet? openXmlElement)
+  private static String? GetChar(DocumentFormat.OpenXml.Drawing.CharacterBullet openXmlElement)
   {
     return openXmlElement?.Char?.Value;
   }
-
-  public static void SetChar(CharacterBullet? openXmlElement, String? value)
+  
+  private static void SetChar(DocumentFormat.OpenXml.Drawing.CharacterBullet openXmlElement, String? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.Char = new StringValue { Value = value };
-      else
-        openXmlElement.Char = null;
+    if (value != null)
+      openXmlElement.Char = new StringValue { Value = value };
+    else
+      openXmlElement.Char = null;
   }
-
-  public static DocumentModel.Drawings.CharacterBullet? CreateModelElement(CharacterBullet? openXmlElement)
+  
+  public static DocumentModel.Drawings.CharacterBullet? CreateModelElement(DocumentFormat.OpenXml.Drawing.CharacterBullet? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -34,9 +31,9 @@ public static class CharacterBulletConverter
     }
     return null;
   }
-
+  
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.CharacterBullet? value)
-    where OpenXmlElementType : CharacterBullet, new()
+    where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.CharacterBullet, new()
   {
     if (value != null)
     {

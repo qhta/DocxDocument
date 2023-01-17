@@ -1,267 +1,248 @@
-using DocumentFormat.OpenXml.Vml.Office;
-using DocumentModel.Vml;
-using Path = DocumentFormat.OpenXml.Vml.Path;
-
 namespace DocumentModel.OpenXml.Vml;
 
 /// <summary>
-///   Defines the Path Class.
+/// Defines the Path Class.
 /// </summary>
 public static class PathConverter
 {
   /// <summary>
-  ///   Unique Identifier
+  /// Unique Identifier
   /// </summary>
-  public static String? GetId(Path? openXmlElement)
+  private static String? GetId(DocumentFormat.OpenXml.Vml.Path openXmlElement)
   {
     return openXmlElement?.Id?.Value;
   }
-
-  public static void SetId(Path? openXmlElement, String? value)
+  
+  private static void SetId(DocumentFormat.OpenXml.Vml.Path openXmlElement, String? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.Id = new StringValue { Value = value };
-      else
-        openXmlElement.Id = null;
+    if (value != null)
+      openXmlElement.Id = new StringValue { Value = value };
+    else
+      openXmlElement.Id = null;
   }
-
+  
   /// <summary>
-  ///   Path Definition
+  /// Path Definition
   /// </summary>
-  public static String? GetValue(Path? openXmlElement)
+  private static String? GetValue(DocumentFormat.OpenXml.Vml.Path openXmlElement)
   {
     return openXmlElement?.Value?.Value;
   }
-
-  public static void SetValue(Path? openXmlElement, String? value)
+  
+  private static void SetValue(DocumentFormat.OpenXml.Vml.Path openXmlElement, String? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.Value = new StringValue { Value = value };
-      else
-        openXmlElement.Value = null;
+    if (value != null)
+      openXmlElement.Value = new StringValue { Value = value };
+    else
+      openXmlElement.Value = null;
   }
-
+  
   /// <summary>
-  ///   Limo Stretch Point
+  /// Limo Stretch Point
   /// </summary>
-  public static String? GetLimo(Path? openXmlElement)
+  private static String? GetLimo(DocumentFormat.OpenXml.Vml.Path openXmlElement)
   {
     return openXmlElement?.Limo?.Value;
   }
-
-  public static void SetLimo(Path? openXmlElement, String? value)
+  
+  private static void SetLimo(DocumentFormat.OpenXml.Vml.Path openXmlElement, String? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.Limo = new StringValue { Value = value };
-      else
-        openXmlElement.Limo = null;
+    if (value != null)
+      openXmlElement.Limo = new StringValue { Value = value };
+    else
+      openXmlElement.Limo = null;
   }
-
+  
   /// <summary>
-  ///   Text Box Bounding Box
+  /// Text Box Bounding Box
   /// </summary>
-  public static String? GetTextboxRectangle(Path? openXmlElement)
+  private static String? GetTextboxRectangle(DocumentFormat.OpenXml.Vml.Path openXmlElement)
   {
     return openXmlElement?.TextboxRectangle?.Value;
   }
-
-  public static void SetTextboxRectangle(Path? openXmlElement, String? value)
+  
+  private static void SetTextboxRectangle(DocumentFormat.OpenXml.Vml.Path openXmlElement, String? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.TextboxRectangle = new StringValue { Value = value };
-      else
-        openXmlElement.TextboxRectangle = null;
+    if (value != null)
+      openXmlElement.TextboxRectangle = new StringValue { Value = value };
+    else
+      openXmlElement.TextboxRectangle = null;
   }
-
+  
   /// <summary>
-  ///   Shape Fill Toggle
+  /// Shape Fill Toggle
   /// </summary>
-  public static Boolean? GetAllowFill(Path? openXmlElement)
+  private static Boolean? GetAllowFill(DocumentFormat.OpenXml.Vml.Path openXmlElement)
   {
     return openXmlElement?.AllowFill?.Value;
   }
-
-  public static void SetAllowFill(Path? openXmlElement, Boolean? value)
+  
+  private static void SetAllowFill(DocumentFormat.OpenXml.Vml.Path openXmlElement, Boolean? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.AllowFill = value;
-      else
-        openXmlElement.AllowFill = null;
+    if (value != null)
+      openXmlElement.AllowFill = value;
+    else
+      openXmlElement.AllowFill = null;
   }
-
+  
   /// <summary>
-  ///   Stroke Toggle
+  /// Stroke Toggle
   /// </summary>
-  public static Boolean? GetAllowStroke(Path? openXmlElement)
+  private static Boolean? GetAllowStroke(DocumentFormat.OpenXml.Vml.Path openXmlElement)
   {
     return openXmlElement?.AllowStroke?.Value;
   }
-
-  public static void SetAllowStroke(Path? openXmlElement, Boolean? value)
+  
+  private static void SetAllowStroke(DocumentFormat.OpenXml.Vml.Path openXmlElement, Boolean? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.AllowStroke = value;
-      else
-        openXmlElement.AllowStroke = null;
+    if (value != null)
+      openXmlElement.AllowStroke = value;
+    else
+      openXmlElement.AllowStroke = null;
   }
-
+  
   /// <summary>
-  ///   Shadow Toggle
+  /// Shadow Toggle
   /// </summary>
-  public static Boolean? GetAllowShading(Path? openXmlElement)
+  private static Boolean? GetAllowShading(DocumentFormat.OpenXml.Vml.Path openXmlElement)
   {
     return openXmlElement?.AllowShading?.Value;
   }
-
-  public static void SetAllowShading(Path? openXmlElement, Boolean? value)
+  
+  private static void SetAllowShading(DocumentFormat.OpenXml.Vml.Path openXmlElement, Boolean? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.AllowShading = value;
-      else
-        openXmlElement.AllowShading = null;
+    if (value != null)
+      openXmlElement.AllowShading = value;
+    else
+      openXmlElement.AllowShading = null;
   }
-
+  
   /// <summary>
-  ///   Arrowhead Display Toggle
+  /// Arrowhead Display Toggle
   /// </summary>
-  public static Boolean? GetShowArrowhead(Path? openXmlElement)
+  private static Boolean? GetShowArrowhead(DocumentFormat.OpenXml.Vml.Path openXmlElement)
   {
     return openXmlElement?.ShowArrowhead?.Value;
   }
-
-  public static void SetShowArrowhead(Path? openXmlElement, Boolean? value)
+  
+  private static void SetShowArrowhead(DocumentFormat.OpenXml.Vml.Path openXmlElement, Boolean? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.ShowArrowhead = value;
-      else
-        openXmlElement.ShowArrowhead = null;
+    if (value != null)
+      openXmlElement.ShowArrowhead = value;
+    else
+      openXmlElement.ShowArrowhead = null;
   }
-
+  
   /// <summary>
-  ///   Gradient Shape Toggle
+  /// Gradient Shape Toggle
   /// </summary>
-  public static Boolean? GetAllowGradientShape(Path? openXmlElement)
+  private static Boolean? GetAllowGradientShape(DocumentFormat.OpenXml.Vml.Path openXmlElement)
   {
     return openXmlElement?.AllowGradientShape?.Value;
   }
-
-  public static void SetAllowGradientShape(Path? openXmlElement, Boolean? value)
+  
+  private static void SetAllowGradientShape(DocumentFormat.OpenXml.Vml.Path openXmlElement, Boolean? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.AllowGradientShape = value;
-      else
-        openXmlElement.AllowGradientShape = null;
+    if (value != null)
+      openXmlElement.AllowGradientShape = value;
+    else
+      openXmlElement.AllowGradientShape = null;
   }
-
+  
   /// <summary>
-  ///   Text Path Toggle
+  /// Text Path Toggle
   /// </summary>
-  public static Boolean? GetAllowTextPath(Path? openXmlElement)
+  private static Boolean? GetAllowTextPath(DocumentFormat.OpenXml.Vml.Path openXmlElement)
   {
     return openXmlElement?.AllowTextPath?.Value;
   }
-
-  public static void SetAllowTextPath(Path? openXmlElement, Boolean? value)
+  
+  private static void SetAllowTextPath(DocumentFormat.OpenXml.Vml.Path openXmlElement, Boolean? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.AllowTextPath = value;
-      else
-        openXmlElement.AllowTextPath = null;
+    if (value != null)
+      openXmlElement.AllowTextPath = value;
+    else
+      openXmlElement.AllowTextPath = null;
   }
-
+  
   /// <summary>
-  ///   Inset Stroke From Path Flag
+  /// Inset Stroke From Path Flag
   /// </summary>
-  public static Boolean? GetAllowInsetPen(Path? openXmlElement)
+  private static Boolean? GetAllowInsetPen(DocumentFormat.OpenXml.Vml.Path openXmlElement)
   {
     return openXmlElement?.AllowInsetPen?.Value;
   }
-
-  public static void SetAllowInsetPen(Path? openXmlElement, Boolean? value)
+  
+  private static void SetAllowInsetPen(DocumentFormat.OpenXml.Vml.Path openXmlElement, Boolean? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.AllowInsetPen = value;
-      else
-        openXmlElement.AllowInsetPen = null;
+    if (value != null)
+      openXmlElement.AllowInsetPen = value;
+    else
+      openXmlElement.AllowInsetPen = null;
   }
-
+  
   /// <summary>
-  ///   Connection Point Type
+  /// Connection Point Type
   /// </summary>
-  public static ConnectKind? GetConnectionPointType(Path? openXmlElement)
+  private static DocumentModel.Vml.ConnectKind? GetConnectionPointType(DocumentFormat.OpenXml.Vml.Path openXmlElement)
   {
-    return EnumValueConverter.GetValue<ConnectValues, ConnectKind>(openXmlElement?.ConnectionPointType?.Value);
+    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Vml.Office.ConnectValues, DocumentModel.Vml.ConnectKind>(openXmlElement?.ConnectionPointType?.Value);
   }
-
-  public static void SetConnectionPointType(Path? openXmlElement, ConnectKind? value)
+  
+  private static void SetConnectionPointType(DocumentFormat.OpenXml.Vml.Path openXmlElement, DocumentModel.Vml.ConnectKind? value)
   {
-    if (openXmlElement != null)
-      openXmlElement.ConnectionPointType = EnumValueConverter.CreateEnumValue<ConnectValues, ConnectKind>(value);
+    openXmlElement.ConnectionPointType = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Vml.Office.ConnectValues, DocumentModel.Vml.ConnectKind>(value);
   }
-
+  
   /// <summary>
-  ///   Connection Points
+  /// Connection Points
   /// </summary>
-  public static String? GetConnectionPoints(Path? openXmlElement)
+  private static String? GetConnectionPoints(DocumentFormat.OpenXml.Vml.Path openXmlElement)
   {
     return openXmlElement?.ConnectionPoints?.Value;
   }
-
-  public static void SetConnectionPoints(Path? openXmlElement, String? value)
+  
+  private static void SetConnectionPoints(DocumentFormat.OpenXml.Vml.Path openXmlElement, String? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.ConnectionPoints = new StringValue { Value = value };
-      else
-        openXmlElement.ConnectionPoints = null;
+    if (value != null)
+      openXmlElement.ConnectionPoints = new StringValue { Value = value };
+    else
+      openXmlElement.ConnectionPoints = null;
   }
-
+  
   /// <summary>
-  ///   Connection Point Connect Angles
+  /// Connection Point Connect Angles
   /// </summary>
-  public static String? GetConnectAngles(Path? openXmlElement)
+  private static String? GetConnectAngles(DocumentFormat.OpenXml.Vml.Path openXmlElement)
   {
     return openXmlElement?.ConnectAngles?.Value;
   }
-
-  public static void SetConnectAngles(Path? openXmlElement, String? value)
+  
+  private static void SetConnectAngles(DocumentFormat.OpenXml.Vml.Path openXmlElement, String? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.ConnectAngles = new StringValue { Value = value };
-      else
-        openXmlElement.ConnectAngles = null;
+    if (value != null)
+      openXmlElement.ConnectAngles = new StringValue { Value = value };
+    else
+      openXmlElement.ConnectAngles = null;
   }
-
+  
   /// <summary>
-  ///   Extrusion Toggle
+  /// Extrusion Toggle
   /// </summary>
-  public static Boolean? GetAllowExtrusion(Path? openXmlElement)
+  private static Boolean? GetAllowExtrusion(DocumentFormat.OpenXml.Vml.Path openXmlElement)
   {
     return openXmlElement?.AllowExtrusion?.Value;
   }
-
-  public static void SetAllowExtrusion(Path? openXmlElement, Boolean? value)
+  
+  private static void SetAllowExtrusion(DocumentFormat.OpenXml.Vml.Path openXmlElement, Boolean? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.AllowExtrusion = value;
-      else
-        openXmlElement.AllowExtrusion = null;
+    if (value != null)
+      openXmlElement.AllowExtrusion = value;
+    else
+      openXmlElement.AllowExtrusion = null;
   }
-
-  public static DocumentModel.Vml.Path? CreateModelElement(Path? openXmlElement)
+  
+  public static DocumentModel.Vml.Path? CreateModelElement(DocumentFormat.OpenXml.Vml.Path? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -285,9 +266,9 @@ public static class PathConverter
     }
     return null;
   }
-
+  
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Vml.Path? value)
-    where OpenXmlElementType : Path, new()
+    where OpenXmlElementType: DocumentFormat.OpenXml.Vml.Path, new()
   {
     if (value != null)
     {

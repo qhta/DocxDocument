@@ -1,46 +1,40 @@
-using DocumentFormat.OpenXml.Wordprocessing;
-using DocumentModel.Wordprocessing;
-using MarkupRangeType = DocumentFormat.OpenXml.Wordprocessing.MarkupRangeType;
-
 namespace DocumentModel.OpenXml.Wordprocessing;
 
 /// <summary>
-///   Defines the MarkupRangeType Class.
+/// Defines the MarkupRangeType Class.
 /// </summary>
 public static class MarkupRangeTypeConverter
 {
   /// <summary>
-  ///   displacedByCustomXml
+  /// displacedByCustomXml
   /// </summary>
-  public static DisplacedByCustomXmlKind? GetDisplacedByCustomXml(MarkupRangeType? openXmlElement)
+  private static DocumentModel.Wordprocessing.DisplacedByCustomXmlKind? GetDisplacedByCustomXml(DocumentFormat.OpenXml.Wordprocessing.MarkupRangeType openXmlElement)
   {
-    return EnumValueConverter.GetValue<DisplacedByCustomXmlValues, DisplacedByCustomXmlKind>(openXmlElement?.DisplacedByCustomXml?.Value);
+    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Wordprocessing.DisplacedByCustomXmlValues, DocumentModel.Wordprocessing.DisplacedByCustomXmlKind>(openXmlElement?.DisplacedByCustomXml?.Value);
   }
-
-  public static void SetDisplacedByCustomXml(MarkupRangeType? openXmlElement, DisplacedByCustomXmlKind? value)
+  
+  private static void SetDisplacedByCustomXml(DocumentFormat.OpenXml.Wordprocessing.MarkupRangeType openXmlElement, DocumentModel.Wordprocessing.DisplacedByCustomXmlKind? value)
   {
-    if (openXmlElement != null)
-      openXmlElement.DisplacedByCustomXml = EnumValueConverter.CreateEnumValue<DisplacedByCustomXmlValues, DisplacedByCustomXmlKind>(value);
+    openXmlElement.DisplacedByCustomXml = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Wordprocessing.DisplacedByCustomXmlValues, DocumentModel.Wordprocessing.DisplacedByCustomXmlKind>(value);
   }
-
+  
   /// <summary>
-  ///   Annotation Identifier
+  /// Annotation Identifier
   /// </summary>
-  public static String? GetId(MarkupRangeType? openXmlElement)
+  private static String? GetId(DocumentFormat.OpenXml.Wordprocessing.MarkupRangeType openXmlElement)
   {
     return openXmlElement?.Id?.Value;
   }
-
-  public static void SetId(MarkupRangeType? openXmlElement, String? value)
+  
+  private static void SetId(DocumentFormat.OpenXml.Wordprocessing.MarkupRangeType openXmlElement, String? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.Id = new StringValue { Value = value };
-      else
-        openXmlElement.Id = null;
+    if (value != null)
+      openXmlElement.Id = new StringValue { Value = value };
+    else
+      openXmlElement.Id = null;
   }
-
-  public static DocumentModel.Wordprocessing.MarkupRangeType? CreateModelElement(MarkupRangeType? openXmlElement)
+  
+  public static DocumentModel.Wordprocessing.MarkupRangeType? CreateModelElement(DocumentFormat.OpenXml.Wordprocessing.MarkupRangeType? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -51,9 +45,9 @@ public static class MarkupRangeTypeConverter
     }
     return null;
   }
-
+  
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.MarkupRangeType? value)
-    where OpenXmlElementType : MarkupRangeType, new()
+    where OpenXmlElementType: DocumentFormat.OpenXml.Wordprocessing.MarkupRangeType, new()
   {
     if (value != null)
     {

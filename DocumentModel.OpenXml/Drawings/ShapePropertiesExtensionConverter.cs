@@ -1,184 +1,153 @@
-using DocumentFormat.OpenXml.Office2010.Drawing;
-using HiddenEffectsProperties = DocumentModel.Drawings.HiddenEffectsProperties;
-using HiddenFillProperties = DocumentModel.Drawings.HiddenFillProperties;
-using HiddenLineProperties = DocumentModel.Drawings.HiddenLineProperties;
-using HiddenScene3D = DocumentModel.Drawings.HiddenScene3D;
-using HiddenShape3D = DocumentModel.Drawings.HiddenShape3D;
-using ShapePropertiesExtension = DocumentFormat.OpenXml.Drawing.ShapePropertiesExtension;
-
 namespace DocumentModel.OpenXml.Drawings;
 
 /// <summary>
-///   Defines the ShapePropertiesExtension Class.
+/// Defines the ShapePropertiesExtension Class.
 /// </summary>
 public static class ShapePropertiesExtensionConverter
 {
   /// <summary>
-  ///   URI
+  /// URI
   /// </summary>
-  public static String? GetUri(ShapePropertiesExtension? openXmlElement)
+  private static String? GetUri(DocumentFormat.OpenXml.Drawing.ShapePropertiesExtension openXmlElement)
   {
     return openXmlElement?.Uri?.Value;
   }
-
-  public static void SetUri(ShapePropertiesExtension? openXmlElement, String? value)
+  
+  private static void SetUri(DocumentFormat.OpenXml.Drawing.ShapePropertiesExtension openXmlElement, String? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.Uri = new StringValue { Value = value };
-      else
-        openXmlElement.Uri = null;
+    if (value != null)
+      openXmlElement.Uri = new StringValue { Value = value };
+    else
+      openXmlElement.Uri = null;
   }
-
-  public static HiddenFillProperties? GetHiddenFillProperties(ShapePropertiesExtension? openXmlElement)
+  
+  private static DocumentModel.Drawings.HiddenFillProperties? GetHiddenFillProperties(DocumentFormat.OpenXml.Drawing.ShapePropertiesExtension openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office2010.Drawing.HiddenFillProperties>();
     if (itemElement != null)
-      return HiddenFillPropertiesConverter.CreateModelElement(itemElement);
+      return DocumentModel.OpenXml.Drawings.HiddenFillPropertiesConverter.CreateModelElement(itemElement);
     return null;
   }
-
-  public static void SetHiddenFillProperties(ShapePropertiesExtension? openXmlElement, HiddenFillProperties? value)
+  
+  private static void SetHiddenFillProperties(DocumentFormat.OpenXml.Drawing.ShapePropertiesExtension openXmlElement, DocumentModel.Drawings.HiddenFillProperties? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2010.Drawing.HiddenFillProperties>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2010.Drawing.HiddenFillProperties>();
+      itemElement = DocumentModel.OpenXml.Drawings.HiddenFillPropertiesConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2010.Drawing.HiddenFillProperties>(value);
       if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = HiddenFillPropertiesConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2010.Drawing.HiddenFillProperties>(value);
-        if (itemElement != null)
-          openXmlElement.AddChild(itemElement);
-      }
+        openXmlElement.AddChild(itemElement);
     }
   }
-
-  public static HiddenLineProperties? GetHiddenLineProperties(ShapePropertiesExtension? openXmlElement)
+  
+  private static DocumentModel.Drawings.HiddenLineProperties? GetHiddenLineProperties(DocumentFormat.OpenXml.Drawing.ShapePropertiesExtension openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office2010.Drawing.HiddenLineProperties>();
     if (itemElement != null)
-      return HiddenLinePropertiesConverter.CreateModelElement(itemElement);
+      return DocumentModel.OpenXml.Drawings.HiddenLinePropertiesConverter.CreateModelElement(itemElement);
     return null;
   }
-
-  public static void SetHiddenLineProperties(ShapePropertiesExtension? openXmlElement, HiddenLineProperties? value)
+  
+  private static void SetHiddenLineProperties(DocumentFormat.OpenXml.Drawing.ShapePropertiesExtension openXmlElement, DocumentModel.Drawings.HiddenLineProperties? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2010.Drawing.HiddenLineProperties>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2010.Drawing.HiddenLineProperties>();
+      itemElement = DocumentModel.OpenXml.Drawings.HiddenLinePropertiesConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2010.Drawing.HiddenLineProperties>(value);
       if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = HiddenLinePropertiesConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2010.Drawing.HiddenLineProperties>(value);
-        if (itemElement != null)
-          openXmlElement.AddChild(itemElement);
-      }
+        openXmlElement.AddChild(itemElement);
     }
   }
-
-  public static HiddenEffectsProperties? GetHiddenEffectsProperties(ShapePropertiesExtension? openXmlElement)
+  
+  private static DocumentModel.Drawings.HiddenEffectsProperties? GetHiddenEffectsProperties(DocumentFormat.OpenXml.Drawing.ShapePropertiesExtension openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office2010.Drawing.HiddenEffectsProperties>();
     if (itemElement != null)
-      return HiddenEffectsPropertiesConverter.CreateModelElement(itemElement);
+      return DocumentModel.OpenXml.Drawings.HiddenEffectsPropertiesConverter.CreateModelElement(itemElement);
     return null;
   }
-
-  public static void SetHiddenEffectsProperties(ShapePropertiesExtension? openXmlElement, HiddenEffectsProperties? value)
+  
+  private static void SetHiddenEffectsProperties(DocumentFormat.OpenXml.Drawing.ShapePropertiesExtension openXmlElement, DocumentModel.Drawings.HiddenEffectsProperties? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2010.Drawing.HiddenEffectsProperties>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2010.Drawing.HiddenEffectsProperties>();
+      itemElement = DocumentModel.OpenXml.Drawings.HiddenEffectsPropertiesConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2010.Drawing.HiddenEffectsProperties>(value);
       if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = HiddenEffectsPropertiesConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2010.Drawing.HiddenEffectsProperties>(value);
-        if (itemElement != null)
-          openXmlElement.AddChild(itemElement);
-      }
+        openXmlElement.AddChild(itemElement);
     }
   }
-
-  public static HiddenScene3D? GetHiddenScene3D(ShapePropertiesExtension? openXmlElement)
+  
+  private static DocumentModel.Drawings.HiddenScene3D? GetHiddenScene3D(DocumentFormat.OpenXml.Drawing.ShapePropertiesExtension openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office2010.Drawing.HiddenScene3D>();
     if (itemElement != null)
-      return HiddenScene3DConverter.CreateModelElement(itemElement);
+      return DocumentModel.OpenXml.Drawings.HiddenScene3DConverter.CreateModelElement(itemElement);
     return null;
   }
-
-  public static void SetHiddenScene3D(ShapePropertiesExtension? openXmlElement, HiddenScene3D? value)
+  
+  private static void SetHiddenScene3D(DocumentFormat.OpenXml.Drawing.ShapePropertiesExtension openXmlElement, DocumentModel.Drawings.HiddenScene3D? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2010.Drawing.HiddenScene3D>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2010.Drawing.HiddenScene3D>();
+      itemElement = DocumentModel.OpenXml.Drawings.HiddenScene3DConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2010.Drawing.HiddenScene3D>(value);
       if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = HiddenScene3DConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2010.Drawing.HiddenScene3D>(value);
-        if (itemElement != null)
-          openXmlElement.AddChild(itemElement);
-      }
+        openXmlElement.AddChild(itemElement);
     }
   }
-
-  public static HiddenShape3D? GetHiddenShape3D(ShapePropertiesExtension? openXmlElement)
+  
+  private static DocumentModel.Drawings.HiddenShape3D? GetHiddenShape3D(DocumentFormat.OpenXml.Drawing.ShapePropertiesExtension openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office2010.Drawing.HiddenShape3D>();
     if (itemElement != null)
-      return HiddenShape3DConverter.CreateModelElement(itemElement);
+      return DocumentModel.OpenXml.Drawings.HiddenShape3DConverter.CreateModelElement(itemElement);
     return null;
   }
-
-  public static void SetHiddenShape3D(ShapePropertiesExtension? openXmlElement, HiddenShape3D? value)
+  
+  private static void SetHiddenShape3D(DocumentFormat.OpenXml.Drawing.ShapePropertiesExtension openXmlElement, DocumentModel.Drawings.HiddenShape3D? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2010.Drawing.HiddenShape3D>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2010.Drawing.HiddenShape3D>();
+      itemElement = DocumentModel.OpenXml.Drawings.HiddenShape3DConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2010.Drawing.HiddenShape3D>(value);
+      if (itemElement != null)
+        openXmlElement.AddChild(itemElement);
+    }
+  }
+  
+  private static Boolean? GetShadowObscured(DocumentFormat.OpenXml.Drawing.ShapePropertiesExtension openXmlElement)
+  {
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2010.Drawing.ShadowObscured>();
+    return itemElement != null;
+  }
+  
+  private static void SetShadowObscured(DocumentFormat.OpenXml.Drawing.ShapePropertiesExtension openXmlElement, Boolean? value)
+  {
+    if (value == false)
+    {
+      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2010.Drawing.ShadowObscured>();
       if (itemElement != null)
         itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = HiddenShape3DConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2010.Drawing.HiddenShape3D>(value);
-        if (itemElement != null)
-          openXmlElement.AddChild(itemElement);
-      }
     }
-  }
-
-  public static Boolean? GetShadowObscured(ShapePropertiesExtension? openXmlElement)
-  {
-    if (openXmlElement != null)
+    if (value == true)
     {
-      var itemElement = openXmlElement.GetFirstChild<ShadowObscured>();
-      return itemElement != null;
-    }
-    return null;
-  }
-
-  public static void SetShadowObscured(ShapePropertiesExtension? openXmlElement, Boolean? value)
-  {
-    if (openXmlElement != null)
-    {
-      if (value == false)
-      {
-        var itemElement = openXmlElement.GetFirstChild<ShadowObscured>();
-        if (itemElement != null)
-          itemElement.Remove();
-      }
-      if (value == true)
-      {
-        var itemElement = new ShadowObscured();
-        openXmlElement.AddChild(itemElement);
-      }
+      var itemElement = new DocumentFormat.OpenXml.Office2010.Drawing.ShadowObscured();
+      openXmlElement.AddChild(itemElement);
     }
   }
-
-  public static DocumentModel.Drawings.ShapePropertiesExtension? CreateModelElement(ShapePropertiesExtension? openXmlElement)
+  
+  public static DocumentModel.Drawings.ShapePropertiesExtension? CreateModelElement(DocumentFormat.OpenXml.Drawing.ShapePropertiesExtension? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -194,9 +163,9 @@ public static class ShapePropertiesExtensionConverter
     }
     return null;
   }
-
+  
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.ShapePropertiesExtension? value)
-    where OpenXmlElementType : ShapePropertiesExtension, new()
+    where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.ShapePropertiesExtension, new()
   {
     if (value != null)
     {

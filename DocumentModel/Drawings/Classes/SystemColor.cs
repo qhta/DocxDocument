@@ -13,7 +13,7 @@ public class SystemColor
   /// <summary>
   ///   Last Color
   /// </summary>
-  public Byte[]? LastColor { get; set; }
+  public RGB? LastColor { get; set; }
 
   public Int32? Tint { get; set; }
 

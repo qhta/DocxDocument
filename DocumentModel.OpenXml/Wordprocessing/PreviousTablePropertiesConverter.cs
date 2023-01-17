@@ -1,431 +1,368 @@
-using DocumentFormat.OpenXml.Wordprocessing;
-using DocumentModel.Wordprocessing;
-using PreviousTableProperties = DocumentFormat.OpenXml.Wordprocessing.PreviousTableProperties;
-using Shading = DocumentModel.Wordprocessing.Shading;
-using TableBorders = DocumentModel.Wordprocessing.TableBorders;
-using TableCellMarginDefault = DocumentModel.Wordprocessing.TableCellMarginDefault;
-using TableIndentation = DocumentModel.Wordprocessing.TableIndentation;
-using TableLayout = DocumentModel.Wordprocessing.TableLayout;
-using TableLook = DocumentModel.Wordprocessing.TableLook;
-using TablePositionProperties = DocumentModel.Wordprocessing.TablePositionProperties;
-using TableWidthType = DocumentModel.Wordprocessing.TableWidthType;
-
 namespace DocumentModel.OpenXml.Wordprocessing;
 
 /// <summary>
-///   Previous Table Properties.
+/// Previous Table Properties.
 /// </summary>
 public static class PreviousTablePropertiesConverter
 {
   /// <summary>
-  ///   TableStyle.
+  /// TableStyle.
   /// </summary>
-  public static String? GetTableStyle(PreviousTableProperties? openXmlElement)
+  private static String? GetTableStyle(DocumentFormat.OpenXml.Wordprocessing.PreviousTableProperties openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<TableStyle>();
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.TableStyle>();
     if (itemElement != null)
       return itemElement.Val?.Value;
     return null;
   }
-
-  public static void SetTableStyle(PreviousTableProperties? openXmlElement, String? value)
+  
+  private static void SetTableStyle(DocumentFormat.OpenXml.Wordprocessing.PreviousTableProperties openXmlElement, String? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.TableStyle>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<TableStyle>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = new TableStyle { Val = value };
-        openXmlElement.AddChild(itemElement);
-      }
+      itemElement = new DocumentFormat.OpenXml.Wordprocessing.TableStyle { Val = value };
+      openXmlElement.AddChild(itemElement);
     }
   }
-
+  
   /// <summary>
-  ///   TablePositionProperties.
+  /// TablePositionProperties.
   /// </summary>
-  public static TablePositionProperties? GetTablePositionProperties(PreviousTableProperties? openXmlElement)
+  private static DocumentModel.Wordprocessing.TablePositionProperties? GetTablePositionProperties(DocumentFormat.OpenXml.Wordprocessing.PreviousTableProperties openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.TablePositionProperties>();
     if (itemElement != null)
-      return TablePositionPropertiesConverter.CreateModelElement(itemElement);
+      return DocumentModel.OpenXml.Wordprocessing.TablePositionPropertiesConverter.CreateModelElement(itemElement);
     return null;
   }
-
-  public static void SetTablePositionProperties(PreviousTableProperties? openXmlElement, TablePositionProperties? value)
+  
+  private static void SetTablePositionProperties(DocumentFormat.OpenXml.Wordprocessing.PreviousTableProperties openXmlElement, DocumentModel.Wordprocessing.TablePositionProperties? value)
   {
-    if (openXmlElement != null)
-    {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.TablePositionProperties>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = TablePositionPropertiesConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.TablePositionProperties>(value);
-        if (itemElement != null)
-          openXmlElement.AddChild(itemElement);
-      }
-    }
-  }
-
-  /// <summary>
-  ///   TableOverlap.
-  /// </summary>
-  public static TableOverlapKind? GetTableOverlap(PreviousTableProperties? openXmlElement)
-  {
-    if (openXmlElement != null)
-    {
-      var itemElement = openXmlElement.GetFirstChild<TableOverlap>();
-      if (itemElement?.Val?.Value != null) return EnumValueConverter.GetValue<TableOverlapValues, TableOverlapKind>(itemElement.Val.Value);
-    }
-    return null;
-  }
-
-  public static void SetTableOverlap(PreviousTableProperties? openXmlElement, TableOverlapKind? value)
-  {
-    if (openXmlElement != null)
-    {
-      var itemElement = openXmlElement.GetFirstChild<TableOverlap>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = EnumValueConverter.CreateOpenXmlElement<TableOverlap, TableOverlapValues, TableOverlapKind>(value);
-        if (itemElement != null)
-          openXmlElement.AddChild(itemElement);
-      }
-    }
-  }
-
-  /// <summary>
-  ///   BiDiVisual.
-  /// </summary>
-  public static OnOffOnlyKind? GetBiDiVisual(PreviousTableProperties? openXmlElement)
-  {
-    if (openXmlElement != null)
-    {
-      var itemElement = openXmlElement.GetFirstChild<BiDiVisual>();
-      if (itemElement?.Val?.Value != null) return EnumValueConverter.GetValue<OnOffOnlyValues, OnOffOnlyKind>(itemElement.Val.Value);
-    }
-    return null;
-  }
-
-  public static void SetBiDiVisual(PreviousTableProperties? openXmlElement, OnOffOnlyKind? value)
-  {
-    if (openXmlElement != null)
-    {
-      var itemElement = openXmlElement.GetFirstChild<BiDiVisual>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = EnumValueConverter.CreateOpenXmlElement<BiDiVisual, OnOffOnlyValues, OnOffOnlyKind>(value);
-        if (itemElement != null)
-          openXmlElement.AddChild(itemElement);
-      }
-    }
-  }
-
-  /// <summary>
-  ///   TableWidth.
-  /// </summary>
-  public static TableWidthType? GetTableWidth(PreviousTableProperties? openXmlElement)
-  {
-    var itemElement = openXmlElement?.GetFirstChild<TableWidth>();
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.TablePositionProperties>();
     if (itemElement != null)
-      return TableWidthTypeConverter.CreateModelElement(itemElement);
+      itemElement.Remove();
+    if (value != null)
+    {
+      itemElement = DocumentModel.OpenXml.Wordprocessing.TablePositionPropertiesConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.TablePositionProperties>(value);
+      if (itemElement != null)
+        openXmlElement.AddChild(itemElement);
+    }
+  }
+  
+  /// <summary>
+  /// TableOverlap.
+  /// </summary>
+  private static DocumentModel.Wordprocessing.TableOverlapKind? GetTableOverlap(DocumentFormat.OpenXml.Wordprocessing.PreviousTableProperties openXmlElement)
+  {
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.TableOverlap>();
+    if (itemElement?.Val?.Value != null)
+      return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Wordprocessing.TableOverlapValues, DocumentModel.Wordprocessing.TableOverlapKind>(itemElement.Val.Value);
     return null;
   }
-
-  public static void SetTableWidth(PreviousTableProperties? openXmlElement, TableWidthType? value)
+  
+  private static void SetTableOverlap(DocumentFormat.OpenXml.Wordprocessing.PreviousTableProperties openXmlElement, DocumentModel.Wordprocessing.TableOverlapKind? value)
   {
-    if (openXmlElement != null)
-    {
-      var itemElement = openXmlElement.GetFirstChild<TableWidth>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = TableWidthTypeConverter.CreateOpenXmlElement<TableWidth>(value);
-        if (itemElement != null)
-          openXmlElement.AddChild(itemElement);
-      }
-    }
-  }
-
-  /// <summary>
-  ///   TableJustification.
-  /// </summary>
-  public static TableRowAlignmentKind? GetTableJustification(PreviousTableProperties? openXmlElement)
-  {
-    if (openXmlElement != null)
-    {
-      var itemElement = openXmlElement.GetFirstChild<TableJustification>();
-      if (itemElement?.Val?.Value != null) return EnumValueConverter.GetValue<TableRowAlignmentValues, TableRowAlignmentKind>(itemElement.Val.Value);
-    }
-    return null;
-  }
-
-  public static void SetTableJustification(PreviousTableProperties? openXmlElement, TableRowAlignmentKind? value)
-  {
-    if (openXmlElement != null)
-    {
-      var itemElement = openXmlElement.GetFirstChild<TableJustification>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = EnumValueConverter.CreateOpenXmlElement<TableJustification, TableRowAlignmentValues, TableRowAlignmentKind>(value);
-        if (itemElement != null)
-          openXmlElement.AddChild(itemElement);
-      }
-    }
-  }
-
-  /// <summary>
-  ///   TableCellSpacing.
-  /// </summary>
-  public static TableWidthType? GetTableCellSpacing(PreviousTableProperties? openXmlElement)
-  {
-    var itemElement = openXmlElement?.GetFirstChild<TableCellSpacing>();
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.TableOverlap>();
     if (itemElement != null)
-      return TableWidthTypeConverter.CreateModelElement(itemElement);
-    return null;
-  }
-
-  public static void SetTableCellSpacing(PreviousTableProperties? openXmlElement, TableWidthType? value)
-  {
-    if (openXmlElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<TableCellSpacing>();
+      itemElement = EnumValueConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.TableOverlap, DocumentFormat.OpenXml.Wordprocessing.TableOverlapValues, DocumentModel.Wordprocessing.TableOverlapKind>(value);
       if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = TableWidthTypeConverter.CreateOpenXmlElement<TableCellSpacing>(value);
-        if (itemElement != null)
-          openXmlElement.AddChild(itemElement);
-      }
+        openXmlElement.AddChild(itemElement);
     }
   }
-
+  
   /// <summary>
-  ///   TableIndentation.
+  /// BiDiVisual.
   /// </summary>
-  public static TableIndentation? GetTableIndentation(PreviousTableProperties? openXmlElement)
+  private static DocumentModel.Wordprocessing.OnOffOnlyKind? GetBiDiVisual(DocumentFormat.OpenXml.Wordprocessing.PreviousTableProperties openXmlElement)
+  {
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.BiDiVisual>();
+    if (itemElement?.Val?.Value != null)
+      return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Wordprocessing.OnOffOnlyValues, DocumentModel.Wordprocessing.OnOffOnlyKind>(itemElement.Val.Value);
+    return null;
+  }
+  
+  private static void SetBiDiVisual(DocumentFormat.OpenXml.Wordprocessing.PreviousTableProperties openXmlElement, DocumentModel.Wordprocessing.OnOffOnlyKind? value)
+  {
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.BiDiVisual>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
+    {
+      itemElement = EnumValueConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.BiDiVisual, DocumentFormat.OpenXml.Wordprocessing.OnOffOnlyValues, DocumentModel.Wordprocessing.OnOffOnlyKind>(value);
+      if (itemElement != null)
+        openXmlElement.AddChild(itemElement);
+    }
+  }
+  
+  /// <summary>
+  /// TableWidth.
+  /// </summary>
+  private static DocumentModel.Wordprocessing.TableWidthType? GetTableWidth(DocumentFormat.OpenXml.Wordprocessing.PreviousTableProperties openXmlElement)
+  {
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.TableWidth>();
+    if (itemElement != null)
+      return DocumentModel.OpenXml.Wordprocessing.TableWidthTypeConverter.CreateModelElement(itemElement);
+    return null;
+  }
+  
+  private static void SetTableWidth(DocumentFormat.OpenXml.Wordprocessing.PreviousTableProperties openXmlElement, DocumentModel.Wordprocessing.TableWidthType? value)
+  {
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.TableWidth>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
+    {
+      itemElement = DocumentModel.OpenXml.Wordprocessing.TableWidthTypeConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.TableWidth>(value);
+      if (itemElement != null)
+        openXmlElement.AddChild(itemElement);
+    }
+  }
+  
+  /// <summary>
+  /// TableJustification.
+  /// </summary>
+  private static DocumentModel.Wordprocessing.TableRowAlignmentKind? GetTableJustification(DocumentFormat.OpenXml.Wordprocessing.PreviousTableProperties openXmlElement)
+  {
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.TableJustification>();
+    if (itemElement?.Val?.Value != null)
+      return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Wordprocessing.TableRowAlignmentValues, DocumentModel.Wordprocessing.TableRowAlignmentKind>(itemElement.Val.Value);
+    return null;
+  }
+  
+  private static void SetTableJustification(DocumentFormat.OpenXml.Wordprocessing.PreviousTableProperties openXmlElement, DocumentModel.Wordprocessing.TableRowAlignmentKind? value)
+  {
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.TableJustification>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
+    {
+      itemElement = EnumValueConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.TableJustification, DocumentFormat.OpenXml.Wordprocessing.TableRowAlignmentValues, DocumentModel.Wordprocessing.TableRowAlignmentKind>(value);
+      if (itemElement != null)
+        openXmlElement.AddChild(itemElement);
+    }
+  }
+  
+  /// <summary>
+  /// TableCellSpacing.
+  /// </summary>
+  private static DocumentModel.Wordprocessing.TableWidthType? GetTableCellSpacing(DocumentFormat.OpenXml.Wordprocessing.PreviousTableProperties openXmlElement)
+  {
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.TableCellSpacing>();
+    if (itemElement != null)
+      return DocumentModel.OpenXml.Wordprocessing.TableWidthTypeConverter.CreateModelElement(itemElement);
+    return null;
+  }
+  
+  private static void SetTableCellSpacing(DocumentFormat.OpenXml.Wordprocessing.PreviousTableProperties openXmlElement, DocumentModel.Wordprocessing.TableWidthType? value)
+  {
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.TableCellSpacing>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
+    {
+      itemElement = DocumentModel.OpenXml.Wordprocessing.TableWidthTypeConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.TableCellSpacing>(value);
+      if (itemElement != null)
+        openXmlElement.AddChild(itemElement);
+    }
+  }
+  
+  /// <summary>
+  /// TableIndentation.
+  /// </summary>
+  private static DocumentModel.Wordprocessing.TableIndentation? GetTableIndentation(DocumentFormat.OpenXml.Wordprocessing.PreviousTableProperties openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.TableIndentation>();
     if (itemElement != null)
-      return TableIndentationConverter.CreateModelElement(itemElement);
+      return DocumentModel.OpenXml.Wordprocessing.TableIndentationConverter.CreateModelElement(itemElement);
     return null;
   }
-
-  public static void SetTableIndentation(PreviousTableProperties? openXmlElement, TableIndentation? value)
+  
+  private static void SetTableIndentation(DocumentFormat.OpenXml.Wordprocessing.PreviousTableProperties openXmlElement, DocumentModel.Wordprocessing.TableIndentation? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.TableIndentation>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.TableIndentation>();
+      itemElement = DocumentModel.OpenXml.Wordprocessing.TableIndentationConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.TableIndentation>(value);
       if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = TableIndentationConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.TableIndentation>(value);
-        if (itemElement != null)
-          openXmlElement.AddChild(itemElement);
-      }
+        openXmlElement.AddChild(itemElement);
     }
   }
-
+  
   /// <summary>
-  ///   TableBorders.
+  /// TableBorders.
   /// </summary>
-  public static TableBorders? GetTableBorders(PreviousTableProperties? openXmlElement)
+  private static DocumentModel.Wordprocessing.TableBorders? GetTableBorders(DocumentFormat.OpenXml.Wordprocessing.PreviousTableProperties openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.TableBorders>();
     if (itemElement != null)
-      return TableBordersConverter.CreateModelElement(itemElement);
+      return DocumentModel.OpenXml.Wordprocessing.TableBordersConverter.CreateModelElement(itemElement);
     return null;
   }
-
-  public static void SetTableBorders(PreviousTableProperties? openXmlElement, TableBorders? value)
+  
+  private static void SetTableBorders(DocumentFormat.OpenXml.Wordprocessing.PreviousTableProperties openXmlElement, DocumentModel.Wordprocessing.TableBorders? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.TableBorders>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.TableBorders>();
+      itemElement = DocumentModel.OpenXml.Wordprocessing.TableBordersConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.TableBorders>(value);
       if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = TableBordersConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.TableBorders>(value);
-        if (itemElement != null)
-          openXmlElement.AddChild(itemElement);
-      }
+        openXmlElement.AddChild(itemElement);
     }
   }
-
+  
   /// <summary>
-  ///   Shading.
+  /// Shading.
   /// </summary>
-  public static Shading? GetShading(PreviousTableProperties? openXmlElement)
+  private static DocumentModel.Wordprocessing.Shading? GetShading(DocumentFormat.OpenXml.Wordprocessing.PreviousTableProperties openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.Shading>();
     if (itemElement != null)
-      return ShadingConverter.CreateModelElement(itemElement);
+      return DocumentModel.OpenXml.Wordprocessing.ShadingConverter.CreateModelElement(itemElement);
     return null;
   }
-
-  public static void SetShading(PreviousTableProperties? openXmlElement, Shading? value)
+  
+  private static void SetShading(DocumentFormat.OpenXml.Wordprocessing.PreviousTableProperties openXmlElement, DocumentModel.Wordprocessing.Shading? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.Shading>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.Shading>();
+      itemElement = DocumentModel.OpenXml.Wordprocessing.ShadingConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.Shading>(value);
       if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = ShadingConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.Shading>(value);
-        if (itemElement != null)
-          openXmlElement.AddChild(itemElement);
-      }
+        openXmlElement.AddChild(itemElement);
     }
   }
-
+  
   /// <summary>
-  ///   TableLayout.
+  /// TableLayout.
   /// </summary>
-  public static TableLayout? GetTableLayout(PreviousTableProperties? openXmlElement)
+  private static DocumentModel.Wordprocessing.TableLayout? GetTableLayout(DocumentFormat.OpenXml.Wordprocessing.PreviousTableProperties openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.TableLayout>();
     if (itemElement != null)
-      return TableLayoutConverter.CreateModelElement(itemElement);
+      return DocumentModel.OpenXml.Wordprocessing.TableLayoutConverter.CreateModelElement(itemElement);
     return null;
   }
-
-  public static void SetTableLayout(PreviousTableProperties? openXmlElement, TableLayout? value)
+  
+  private static void SetTableLayout(DocumentFormat.OpenXml.Wordprocessing.PreviousTableProperties openXmlElement, DocumentModel.Wordprocessing.TableLayout? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.TableLayout>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.TableLayout>();
+      itemElement = DocumentModel.OpenXml.Wordprocessing.TableLayoutConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.TableLayout>(value);
       if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = TableLayoutConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.TableLayout>(value);
-        if (itemElement != null)
-          openXmlElement.AddChild(itemElement);
-      }
+        openXmlElement.AddChild(itemElement);
     }
   }
-
+  
   /// <summary>
-  ///   TableCellMarginDefault.
+  /// TableCellMarginDefault.
   /// </summary>
-  public static TableCellMarginDefault? GetTableCellMarginDefault(PreviousTableProperties? openXmlElement)
+  private static DocumentModel.Wordprocessing.TableCellMarginDefault? GetTableCellMarginDefault(DocumentFormat.OpenXml.Wordprocessing.PreviousTableProperties openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.TableCellMarginDefault>();
     if (itemElement != null)
-      return TableCellMarginDefaultConverter.CreateModelElement(itemElement);
+      return DocumentModel.OpenXml.Wordprocessing.TableCellMarginDefaultConverter.CreateModelElement(itemElement);
     return null;
   }
-
-  public static void SetTableCellMarginDefault(PreviousTableProperties? openXmlElement, TableCellMarginDefault? value)
+  
+  private static void SetTableCellMarginDefault(DocumentFormat.OpenXml.Wordprocessing.PreviousTableProperties openXmlElement, DocumentModel.Wordprocessing.TableCellMarginDefault? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.TableCellMarginDefault>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.TableCellMarginDefault>();
+      itemElement = DocumentModel.OpenXml.Wordprocessing.TableCellMarginDefaultConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.TableCellMarginDefault>(value);
       if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = TableCellMarginDefaultConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.TableCellMarginDefault>(value);
-        if (itemElement != null)
-          openXmlElement.AddChild(itemElement);
-      }
+        openXmlElement.AddChild(itemElement);
     }
   }
-
+  
   /// <summary>
-  ///   TableLook.
+  /// TableLook.
   /// </summary>
-  public static TableLook? GetTableLook(PreviousTableProperties? openXmlElement)
+  private static DocumentModel.Wordprocessing.TableLook? GetTableLook(DocumentFormat.OpenXml.Wordprocessing.PreviousTableProperties openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.TableLook>();
     if (itemElement != null)
-      return TableLookConverter.CreateModelElement(itemElement);
+      return DocumentModel.OpenXml.Wordprocessing.TableLookConverter.CreateModelElement(itemElement);
     return null;
   }
-
-  public static void SetTableLook(PreviousTableProperties? openXmlElement, TableLook? value)
+  
+  private static void SetTableLook(DocumentFormat.OpenXml.Wordprocessing.PreviousTableProperties openXmlElement, DocumentModel.Wordprocessing.TableLook? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.TableLook>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.TableLook>();
+      itemElement = DocumentModel.OpenXml.Wordprocessing.TableLookConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.TableLook>(value);
       if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = TableLookConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.TableLook>(value);
-        if (itemElement != null)
-          openXmlElement.AddChild(itemElement);
-      }
+        openXmlElement.AddChild(itemElement);
     }
   }
-
+  
   /// <summary>
-  ///   TableCaption, this property is only available in Office 2010 and later..
+  /// TableCaption, this property is only available in Office 2010 and later..
   /// </summary>
-  public static String? GetTableCaption(PreviousTableProperties? openXmlElement)
+  private static String? GetTableCaption(DocumentFormat.OpenXml.Wordprocessing.PreviousTableProperties openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<TableCaption>();
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.TableCaption>();
     if (itemElement != null)
       return itemElement.Val?.Value;
     return null;
   }
-
-  public static void SetTableCaption(PreviousTableProperties? openXmlElement, String? value)
+  
+  private static void SetTableCaption(DocumentFormat.OpenXml.Wordprocessing.PreviousTableProperties openXmlElement, String? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.TableCaption>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<TableCaption>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = new TableCaption { Val = value };
-        openXmlElement.AddChild(itemElement);
-      }
+      itemElement = new DocumentFormat.OpenXml.Wordprocessing.TableCaption { Val = value };
+      openXmlElement.AddChild(itemElement);
     }
   }
-
+  
   /// <summary>
-  ///   TableDescription, this property is only available in Office 2010 and later..
+  /// TableDescription, this property is only available in Office 2010 and later..
   /// </summary>
-  public static String? GetTableDescription(PreviousTableProperties? openXmlElement)
+  private static String? GetTableDescription(DocumentFormat.OpenXml.Wordprocessing.PreviousTableProperties openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<TableDescription>();
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.TableDescription>();
     if (itemElement != null)
       return itemElement.Val?.Value;
     return null;
   }
-
-  public static void SetTableDescription(PreviousTableProperties? openXmlElement, String? value)
+  
+  private static void SetTableDescription(DocumentFormat.OpenXml.Wordprocessing.PreviousTableProperties openXmlElement, String? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.TableDescription>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<TableDescription>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = new TableDescription { Val = value };
-        openXmlElement.AddChild(itemElement);
-      }
+      itemElement = new DocumentFormat.OpenXml.Wordprocessing.TableDescription { Val = value };
+      openXmlElement.AddChild(itemElement);
     }
   }
-
-  public static DocumentModel.Wordprocessing.PreviousTableProperties? CreateModelElement(PreviousTableProperties? openXmlElement)
+  
+  public static DocumentModel.Wordprocessing.PreviousTableProperties? CreateModelElement(DocumentFormat.OpenXml.Wordprocessing.PreviousTableProperties? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -449,9 +386,9 @@ public static class PreviousTablePropertiesConverter
     }
     return null;
   }
-
+  
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.PreviousTableProperties? value)
-    where OpenXmlElementType : PreviousTableProperties, new()
+    where OpenXmlElementType: DocumentFormat.OpenXml.Wordprocessing.PreviousTableProperties, new()
   {
     if (value != null)
     {

@@ -1,149 +1,127 @@
-using DocumentFormat.OpenXml.Drawing;
-using DocumentModel.Drawings;
-using GradientFill = DocumentFormat.OpenXml.Drawing.GradientFill;
-using GradientStopList = DocumentModel.Drawings.GradientStopList;
-using LinearGradientFill = DocumentModel.Drawings.LinearGradientFill;
-using PathGradientFill = DocumentModel.Drawings.PathGradientFill;
-using RelativeRectangleType = DocumentModel.Drawings.RelativeRectangleType;
-
 namespace DocumentModel.OpenXml.Drawings;
 
 /// <summary>
-///   Defines the GradientFill Class.
+/// Defines the GradientFill Class.
 /// </summary>
 public static class GradientFillConverter
 {
   /// <summary>
-  ///   Tile Flip
+  /// Tile Flip
   /// </summary>
-  public static TileFlipKind? GetFlip(GradientFill? openXmlElement)
+  private static DocumentModel.Drawings.TileFlipKind? GetFlip(DocumentFormat.OpenXml.Drawing.GradientFill openXmlElement)
   {
-    return EnumValueConverter.GetValue<TileFlipValues, TileFlipKind>(openXmlElement?.Flip?.Value);
+    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Drawing.TileFlipValues, DocumentModel.Drawings.TileFlipKind>(openXmlElement?.Flip?.Value);
   }
-
-  public static void SetFlip(GradientFill? openXmlElement, TileFlipKind? value)
+  
+  private static void SetFlip(DocumentFormat.OpenXml.Drawing.GradientFill openXmlElement, DocumentModel.Drawings.TileFlipKind? value)
   {
-    if (openXmlElement != null)
-      openXmlElement.Flip = EnumValueConverter.CreateEnumValue<TileFlipValues, TileFlipKind>(value);
+    openXmlElement.Flip = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Drawing.TileFlipValues, DocumentModel.Drawings.TileFlipKind>(value);
   }
-
+  
   /// <summary>
-  ///   Rotate With Shape
+  /// Rotate With Shape
   /// </summary>
-  public static Boolean? GetRotateWithShape(GradientFill? openXmlElement)
+  private static Boolean? GetRotateWithShape(DocumentFormat.OpenXml.Drawing.GradientFill openXmlElement)
   {
     return openXmlElement?.RotateWithShape?.Value;
   }
-
-  public static void SetRotateWithShape(GradientFill? openXmlElement, Boolean? value)
+  
+  private static void SetRotateWithShape(DocumentFormat.OpenXml.Drawing.GradientFill openXmlElement, Boolean? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.RotateWithShape = new BooleanValue { Value = (Boolean)value };
-      else
-        openXmlElement.RotateWithShape = null;
+    if (value != null)
+      openXmlElement.RotateWithShape = new BooleanValue { Value = (Boolean)value };
+    else
+      openXmlElement.RotateWithShape = null;
   }
-
+  
   /// <summary>
-  ///   Gradient Stop List.
+  /// Gradient Stop List.
   /// </summary>
-  public static GradientStopList? GetGradientStopList(GradientFill? openXmlElement)
+  private static DocumentModel.Drawings.GradientStopList? GetGradientStopList(DocumentFormat.OpenXml.Drawing.GradientFill openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.GradientStopList>();
     if (itemElement != null)
-      return GradientStopListConverter.CreateModelElement(itemElement);
+      return DocumentModel.OpenXml.Drawings.GradientStopListConverter.CreateModelElement(itemElement);
     return null;
   }
-
-  public static void SetGradientStopList(GradientFill? openXmlElement, GradientStopList? value)
+  
+  private static void SetGradientStopList(DocumentFormat.OpenXml.Drawing.GradientFill openXmlElement, DocumentModel.Drawings.GradientStopList? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.GradientStopList>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.GradientStopList>();
+      itemElement = DocumentModel.OpenXml.Drawings.GradientStopListConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.GradientStopList>(value);
       if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = GradientStopListConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.GradientStopList>(value);
-        if (itemElement != null)
-          openXmlElement.AddChild(itemElement);
-      }
+        openXmlElement.AddChild(itemElement);
     }
   }
-
-  public static LinearGradientFill? GetLinearGradientFill(GradientFill? openXmlElement)
+  
+  private static DocumentModel.Drawings.LinearGradientFill? GetLinearGradientFill(DocumentFormat.OpenXml.Drawing.GradientFill openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.LinearGradientFill>();
     if (itemElement != null)
-      return LinearGradientFillConverter.CreateModelElement(itemElement);
+      return DocumentModel.OpenXml.Drawings.LinearGradientFillConverter.CreateModelElement(itemElement);
     return null;
   }
-
-  public static void SetLinearGradientFill(GradientFill? openXmlElement, LinearGradientFill? value)
+  
+  private static void SetLinearGradientFill(DocumentFormat.OpenXml.Drawing.GradientFill openXmlElement, DocumentModel.Drawings.LinearGradientFill? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.LinearGradientFill>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.LinearGradientFill>();
+      itemElement = DocumentModel.OpenXml.Drawings.LinearGradientFillConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.LinearGradientFill>(value);
       if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = LinearGradientFillConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.LinearGradientFill>(value);
-        if (itemElement != null)
-          openXmlElement.AddChild(itemElement);
-      }
+        openXmlElement.AddChild(itemElement);
     }
   }
-
-  public static PathGradientFill? GetPathGradientFill(GradientFill? openXmlElement)
+  
+  private static DocumentModel.Drawings.PathGradientFill? GetPathGradientFill(DocumentFormat.OpenXml.Drawing.GradientFill openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.PathGradientFill>();
     if (itemElement != null)
-      return PathGradientFillConverter.CreateModelElement(itemElement);
+      return DocumentModel.OpenXml.Drawings.PathGradientFillConverter.CreateModelElement(itemElement);
     return null;
   }
-
-  public static void SetPathGradientFill(GradientFill? openXmlElement, PathGradientFill? value)
+  
+  private static void SetPathGradientFill(DocumentFormat.OpenXml.Drawing.GradientFill openXmlElement, DocumentModel.Drawings.PathGradientFill? value)
   {
-    if (openXmlElement != null)
-    {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.PathGradientFill>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = PathGradientFillConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.PathGradientFill>(value);
-        if (itemElement != null)
-          openXmlElement.AddChild(itemElement);
-      }
-    }
-  }
-
-  public static RelativeRectangleType? GetTileRectangle(GradientFill? openXmlElement)
-  {
-    var itemElement = openXmlElement?.GetFirstChild<TileRectangle>();
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.PathGradientFill>();
     if (itemElement != null)
-      return RelativeRectangleTypeConverter.CreateModelElement(itemElement);
-    return null;
-  }
-
-  public static void SetTileRectangle(GradientFill? openXmlElement, RelativeRectangleType? value)
-  {
-    if (openXmlElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<TileRectangle>();
+      itemElement = DocumentModel.OpenXml.Drawings.PathGradientFillConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.PathGradientFill>(value);
       if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = RelativeRectangleTypeConverter.CreateOpenXmlElement<TileRectangle>(value);
-        if (itemElement != null)
-          openXmlElement.AddChild(itemElement);
-      }
+        openXmlElement.AddChild(itemElement);
     }
   }
-
-  public static DocumentModel.Drawings.GradientFill? CreateModelElement(GradientFill? openXmlElement)
+  
+  private static DocumentModel.Drawings.RelativeRectangleType? GetTileRectangle(DocumentFormat.OpenXml.Drawing.GradientFill openXmlElement)
+  {
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.TileRectangle>();
+    if (itemElement != null)
+      return DocumentModel.OpenXml.Drawings.RelativeRectangleTypeConverter.CreateModelElement(itemElement);
+    return null;
+  }
+  
+  private static void SetTileRectangle(DocumentFormat.OpenXml.Drawing.GradientFill openXmlElement, DocumentModel.Drawings.RelativeRectangleType? value)
+  {
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.TileRectangle>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
+    {
+      itemElement = DocumentModel.OpenXml.Drawings.RelativeRectangleTypeConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.TileRectangle>(value);
+      if (itemElement != null)
+        openXmlElement.AddChild(itemElement);
+    }
+  }
+  
+  public static DocumentModel.Drawings.GradientFill? CreateModelElement(DocumentFormat.OpenXml.Drawing.GradientFill? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -158,9 +136,9 @@ public static class GradientFillConverter
     }
     return null;
   }
-
+  
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.GradientFill? value)
-    where OpenXmlElementType : GradientFill, new()
+    where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.GradientFill, new()
   {
     if (value != null)
     {

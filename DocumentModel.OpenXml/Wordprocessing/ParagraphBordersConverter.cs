@@ -1,177 +1,155 @@
-using DocumentFormat.OpenXml.Wordprocessing;
-using BorderType = DocumentModel.Wordprocessing.BorderType;
-using ParagraphBorders = DocumentFormat.OpenXml.Wordprocessing.ParagraphBorders;
-
 namespace DocumentModel.OpenXml.Wordprocessing;
 
 /// <summary>
-///   Defines the ParagraphBorders Class.
+/// Defines the ParagraphBorders Class.
 /// </summary>
 public static class ParagraphBordersConverter
 {
   /// <summary>
-  ///   Paragraph Border Above Identical Paragraphs.
+  /// Paragraph Border Above Identical Paragraphs.
   /// </summary>
-  public static BorderType? GetTopBorder(ParagraphBorders? openXmlElement)
+  private static DocumentModel.Wordprocessing.BorderType? GetTopBorder(DocumentFormat.OpenXml.Wordprocessing.ParagraphBorders openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<TopBorder>();
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.TopBorder>();
     if (itemElement != null)
-      return BorderTypeConverter.CreateModelElement(itemElement);
+      return DocumentModel.OpenXml.Wordprocessing.BorderTypeConverter.CreateModelElement(itemElement);
     return null;
   }
-
-  public static void SetTopBorder(ParagraphBorders? openXmlElement, BorderType? value)
+  
+  private static void SetTopBorder(DocumentFormat.OpenXml.Wordprocessing.ParagraphBorders openXmlElement, DocumentModel.Wordprocessing.BorderType? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.TopBorder>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<TopBorder>();
+      itemElement = DocumentModel.OpenXml.Wordprocessing.BorderTypeConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.TopBorder>(value);
       if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = BorderTypeConverter.CreateOpenXmlElement<TopBorder>(value);
-        if (itemElement != null)
-          openXmlElement.AddChild(itemElement);
-      }
+        openXmlElement.AddChild(itemElement);
     }
   }
-
+  
   /// <summary>
-  ///   Left Paragraph Border.
+  /// Left Paragraph Border.
   /// </summary>
-  public static BorderType? GetLeftBorder(ParagraphBorders? openXmlElement)
+  private static DocumentModel.Wordprocessing.BorderType? GetLeftBorder(DocumentFormat.OpenXml.Wordprocessing.ParagraphBorders openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<LeftBorder>();
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.LeftBorder>();
     if (itemElement != null)
-      return BorderTypeConverter.CreateModelElement(itemElement);
+      return DocumentModel.OpenXml.Wordprocessing.BorderTypeConverter.CreateModelElement(itemElement);
     return null;
   }
-
-  public static void SetLeftBorder(ParagraphBorders? openXmlElement, BorderType? value)
+  
+  private static void SetLeftBorder(DocumentFormat.OpenXml.Wordprocessing.ParagraphBorders openXmlElement, DocumentModel.Wordprocessing.BorderType? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.LeftBorder>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<LeftBorder>();
+      itemElement = DocumentModel.OpenXml.Wordprocessing.BorderTypeConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.LeftBorder>(value);
       if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = BorderTypeConverter.CreateOpenXmlElement<LeftBorder>(value);
-        if (itemElement != null)
-          openXmlElement.AddChild(itemElement);
-      }
+        openXmlElement.AddChild(itemElement);
     }
   }
-
+  
   /// <summary>
-  ///   Paragraph Border Between Identical Paragraphs.
+  /// Paragraph Border Between Identical Paragraphs.
   /// </summary>
-  public static BorderType? GetBottomBorder(ParagraphBorders? openXmlElement)
+  private static DocumentModel.Wordprocessing.BorderType? GetBottomBorder(DocumentFormat.OpenXml.Wordprocessing.ParagraphBorders openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<BottomBorder>();
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.BottomBorder>();
     if (itemElement != null)
-      return BorderTypeConverter.CreateModelElement(itemElement);
+      return DocumentModel.OpenXml.Wordprocessing.BorderTypeConverter.CreateModelElement(itemElement);
     return null;
   }
-
-  public static void SetBottomBorder(ParagraphBorders? openXmlElement, BorderType? value)
+  
+  private static void SetBottomBorder(DocumentFormat.OpenXml.Wordprocessing.ParagraphBorders openXmlElement, DocumentModel.Wordprocessing.BorderType? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.BottomBorder>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<BottomBorder>();
+      itemElement = DocumentModel.OpenXml.Wordprocessing.BorderTypeConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.BottomBorder>(value);
       if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = BorderTypeConverter.CreateOpenXmlElement<BottomBorder>(value);
-        if (itemElement != null)
-          openXmlElement.AddChild(itemElement);
-      }
+        openXmlElement.AddChild(itemElement);
     }
   }
-
+  
   /// <summary>
-  ///   Right Paragraph Border.
+  /// Right Paragraph Border.
   /// </summary>
-  public static BorderType? GetRightBorder(ParagraphBorders? openXmlElement)
+  private static DocumentModel.Wordprocessing.BorderType? GetRightBorder(DocumentFormat.OpenXml.Wordprocessing.ParagraphBorders openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<RightBorder>();
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.RightBorder>();
     if (itemElement != null)
-      return BorderTypeConverter.CreateModelElement(itemElement);
+      return DocumentModel.OpenXml.Wordprocessing.BorderTypeConverter.CreateModelElement(itemElement);
     return null;
   }
-
-  public static void SetRightBorder(ParagraphBorders? openXmlElement, BorderType? value)
+  
+  private static void SetRightBorder(DocumentFormat.OpenXml.Wordprocessing.ParagraphBorders openXmlElement, DocumentModel.Wordprocessing.BorderType? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.RightBorder>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<RightBorder>();
+      itemElement = DocumentModel.OpenXml.Wordprocessing.BorderTypeConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.RightBorder>(value);
       if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = BorderTypeConverter.CreateOpenXmlElement<RightBorder>(value);
-        if (itemElement != null)
-          openXmlElement.AddChild(itemElement);
-      }
+        openXmlElement.AddChild(itemElement);
     }
   }
-
+  
   /// <summary>
-  ///   Paragraph Border Between Identical Paragraphs.
+  /// Paragraph Border Between Identical Paragraphs.
   /// </summary>
-  public static BorderType? GetBetweenBorder(ParagraphBorders? openXmlElement)
+  private static DocumentModel.Wordprocessing.BorderType? GetBetweenBorder(DocumentFormat.OpenXml.Wordprocessing.ParagraphBorders openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<BetweenBorder>();
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.BetweenBorder>();
     if (itemElement != null)
-      return BorderTypeConverter.CreateModelElement(itemElement);
+      return DocumentModel.OpenXml.Wordprocessing.BorderTypeConverter.CreateModelElement(itemElement);
     return null;
   }
-
-  public static void SetBetweenBorder(ParagraphBorders? openXmlElement, BorderType? value)
+  
+  private static void SetBetweenBorder(DocumentFormat.OpenXml.Wordprocessing.ParagraphBorders openXmlElement, DocumentModel.Wordprocessing.BorderType? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.BetweenBorder>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<BetweenBorder>();
+      itemElement = DocumentModel.OpenXml.Wordprocessing.BorderTypeConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.BetweenBorder>(value);
       if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = BorderTypeConverter.CreateOpenXmlElement<BetweenBorder>(value);
-        if (itemElement != null)
-          openXmlElement.AddChild(itemElement);
-      }
+        openXmlElement.AddChild(itemElement);
     }
   }
-
+  
   /// <summary>
-  ///   Paragraph Border Between Facing Pages.
+  /// Paragraph Border Between Facing Pages.
   /// </summary>
-  public static BorderType? GetBarBorder(ParagraphBorders? openXmlElement)
+  private static DocumentModel.Wordprocessing.BorderType? GetBarBorder(DocumentFormat.OpenXml.Wordprocessing.ParagraphBorders openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<BarBorder>();
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.BarBorder>();
     if (itemElement != null)
-      return BorderTypeConverter.CreateModelElement(itemElement);
+      return DocumentModel.OpenXml.Wordprocessing.BorderTypeConverter.CreateModelElement(itemElement);
     return null;
   }
-
-  public static void SetBarBorder(ParagraphBorders? openXmlElement, BorderType? value)
+  
+  private static void SetBarBorder(DocumentFormat.OpenXml.Wordprocessing.ParagraphBorders openXmlElement, DocumentModel.Wordprocessing.BorderType? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.BarBorder>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<BarBorder>();
+      itemElement = DocumentModel.OpenXml.Wordprocessing.BorderTypeConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.BarBorder>(value);
       if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = BorderTypeConverter.CreateOpenXmlElement<BarBorder>(value);
-        if (itemElement != null)
-          openXmlElement.AddChild(itemElement);
-      }
+        openXmlElement.AddChild(itemElement);
     }
   }
-
-  public static DocumentModel.Wordprocessing.ParagraphBorders? CreateModelElement(ParagraphBorders? openXmlElement)
+  
+  public static DocumentModel.Wordprocessing.ParagraphBorders? CreateModelElement(DocumentFormat.OpenXml.Wordprocessing.ParagraphBorders? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -186,9 +164,9 @@ public static class ParagraphBordersConverter
     }
     return null;
   }
-
+  
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.ParagraphBorders? value)
-    where OpenXmlElementType : ParagraphBorders, new()
+    where OpenXmlElementType: DocumentFormat.OpenXml.Wordprocessing.ParagraphBorders, new()
   {
     if (value != null)
     {

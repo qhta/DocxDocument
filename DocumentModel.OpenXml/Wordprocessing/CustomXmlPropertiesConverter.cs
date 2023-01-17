@@ -1,71 +1,60 @@
-using DocumentFormat.OpenXml.Wordprocessing;
-using CustomXmlAttribute = DocumentModel.Wordprocessing.CustomXmlAttribute;
-
 namespace DocumentModel.OpenXml.Wordprocessing;
 
 /// <summary>
-///   Custom XML Element Properties.
+/// Custom XML Element Properties.
 /// </summary>
 public static class CustomXmlPropertiesConverter
 {
   /// <summary>
-  ///   Custom XML Element Placeholder Text.
+  /// Custom XML Element Placeholder Text.
   /// </summary>
-  public static String? GetCustomXmlPlaceholder(CustomXmlProperties? openXmlElement)
+  private static String? GetCustomXmlPlaceholder(DocumentFormat.OpenXml.Wordprocessing.CustomXmlProperties openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<CustomXmlPlaceholder>();
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.CustomXmlPlaceholder>();
     if (itemElement != null)
       return itemElement.Val?.Value;
     return null;
   }
-
-  public static void SetCustomXmlPlaceholder(CustomXmlProperties? openXmlElement, String? value)
+  
+  private static void SetCustomXmlPlaceholder(DocumentFormat.OpenXml.Wordprocessing.CustomXmlProperties openXmlElement, String? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.CustomXmlPlaceholder>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<CustomXmlPlaceholder>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = new CustomXmlPlaceholder { Val = value };
-        openXmlElement.AddChild(itemElement);
-      }
+      itemElement = new DocumentFormat.OpenXml.Wordprocessing.CustomXmlPlaceholder { Val = value };
+      openXmlElement.AddChild(itemElement);
     }
   }
-
-  public static Collection<CustomXmlAttribute>? GetCustomXmlAttributes(CustomXmlProperties? openXmlElement)
+  
+  private static System.Collections.ObjectModel.Collection<DocumentModel.Wordprocessing.CustomXmlAttribute> GetCustomXmlAttributes(DocumentFormat.OpenXml.Wordprocessing.CustomXmlProperties openXmlElement)
   {
-    if (openXmlElement != null)
+    var collection = new System.Collections.ObjectModel.Collection<DocumentModel.Wordprocessing.CustomXmlAttribute>();
+    foreach (var item in openXmlElement.Elements<DocumentFormat.OpenXml.Wordprocessing.CustomXmlAttribute>())
     {
-      var collection = new Collection<CustomXmlAttribute>();
-      foreach (var item in openXmlElement.Elements<DocumentFormat.OpenXml.Wordprocessing.CustomXmlAttribute>())
+      var newItem = DocumentModel.OpenXml.Wordprocessing.CustomXmlAttributeConverter.CreateModelElement(item);
+      if (newItem != null)
+        collection.Add(newItem);
+    }
+    return collection;
+  }
+  
+  private static void SetCustomXmlAttributes(DocumentFormat.OpenXml.Wordprocessing.CustomXmlProperties openXmlElement, System.Collections.ObjectModel.Collection<DocumentModel.Wordprocessing.CustomXmlAttribute>? value)
+  {
+    openXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Wordprocessing.CustomXmlAttribute>();
+    if (value != null)
+    {
+      foreach (var item in value)
       {
-        var newItem = CustomXmlAttributeConverter.CreateModelElement(item);
+        var newItem = DocumentModel.OpenXml.Wordprocessing.CustomXmlAttributeConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.CustomXmlAttribute>(item);
         if (newItem != null)
-          collection.Add(newItem);
+          openXmlElement.AddChild(newItem);
       }
-      return collection;
-    }
-    return null;
-  }
-
-  public static void SetCustomXmlAttributes(CustomXmlProperties? openXmlElement, Collection<CustomXmlAttribute>? value)
-  {
-    if (openXmlElement != null)
-    {
-      openXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Wordprocessing.CustomXmlAttribute>();
-      if (value != null)
-        foreach (var item in value)
-        {
-          var newItem = CustomXmlAttributeConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.CustomXmlAttribute>(item);
-          if (newItem != null)
-            openXmlElement.AddChild(newItem);
-        }
     }
   }
-
-  public static DocumentModel.Wordprocessing.CustomXmlProperties? CreateModelElement(CustomXmlProperties? openXmlElement)
+  
+  public static DocumentModel.Wordprocessing.CustomXmlProperties? CreateModelElement(DocumentFormat.OpenXml.Wordprocessing.CustomXmlProperties? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -76,9 +65,9 @@ public static class CustomXmlPropertiesConverter
     }
     return null;
   }
-
+  
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.CustomXmlProperties? value)
-    where OpenXmlElementType : CustomXmlProperties, new()
+    where OpenXmlElementType: DocumentFormat.OpenXml.Wordprocessing.CustomXmlProperties, new()
   {
     if (value != null)
     {

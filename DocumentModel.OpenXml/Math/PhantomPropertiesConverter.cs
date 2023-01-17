@@ -1,188 +1,155 @@
-using DocumentFormat.OpenXml.Math;
-using DocumentModel.Math;
-using ControlProperties = DocumentModel.Math.ControlProperties;
-using PhantomProperties = DocumentFormat.OpenXml.Math.PhantomProperties;
-
 namespace DocumentModel.OpenXml.Math;
 
 /// <summary>
-///   Phantom Properties.
+/// Phantom Properties.
 /// </summary>
 public static class PhantomPropertiesConverter
 {
   /// <summary>
-  ///   Phantom Show.
+  /// Phantom Show.
   /// </summary>
-  public static BooleanKind? GetShowPhantom(PhantomProperties? openXmlElement)
+  private static DocumentModel.Math.BooleanKind? GetShowPhantom(DocumentFormat.OpenXml.Math.PhantomProperties openXmlElement)
   {
-    if (openXmlElement != null)
-    {
-      var itemElement = openXmlElement.GetFirstChild<ShowPhantom>();
-      if (itemElement?.Val?.Value != null) return EnumValueConverter.GetValue<BooleanValues, BooleanKind>(itemElement.Val.Value);
-    }
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Math.ShowPhantom>();
+    if (itemElement?.Val?.Value != null)
+      return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Math.BooleanValues, DocumentModel.Math.BooleanKind>(itemElement.Val.Value);
     return null;
   }
-
-  public static void SetShowPhantom(PhantomProperties? openXmlElement, BooleanKind? value)
+  
+  private static void SetShowPhantom(DocumentFormat.OpenXml.Math.PhantomProperties openXmlElement, DocumentModel.Math.BooleanKind? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Math.ShowPhantom>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<ShowPhantom>();
+      itemElement = EnumValueConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Math.ShowPhantom, DocumentFormat.OpenXml.Math.BooleanValues, DocumentModel.Math.BooleanKind>(value);
       if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = EnumValueConverter.CreateOpenXmlElement<ShowPhantom, BooleanValues, BooleanKind>(value);
-        if (itemElement != null)
-          openXmlElement.AddChild(itemElement);
-      }
+        openXmlElement.AddChild(itemElement);
     }
   }
-
+  
   /// <summary>
-  ///   Phantom Zero Width.
+  /// Phantom Zero Width.
   /// </summary>
-  public static BooleanKind? GetZeroWidth(PhantomProperties? openXmlElement)
+  private static DocumentModel.Math.BooleanKind? GetZeroWidth(DocumentFormat.OpenXml.Math.PhantomProperties openXmlElement)
   {
-    if (openXmlElement != null)
-    {
-      var itemElement = openXmlElement.GetFirstChild<ZeroWidth>();
-      if (itemElement?.Val?.Value != null) return EnumValueConverter.GetValue<BooleanValues, BooleanKind>(itemElement.Val.Value);
-    }
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Math.ZeroWidth>();
+    if (itemElement?.Val?.Value != null)
+      return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Math.BooleanValues, DocumentModel.Math.BooleanKind>(itemElement.Val.Value);
     return null;
   }
-
-  public static void SetZeroWidth(PhantomProperties? openXmlElement, BooleanKind? value)
+  
+  private static void SetZeroWidth(DocumentFormat.OpenXml.Math.PhantomProperties openXmlElement, DocumentModel.Math.BooleanKind? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Math.ZeroWidth>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<ZeroWidth>();
+      itemElement = EnumValueConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Math.ZeroWidth, DocumentFormat.OpenXml.Math.BooleanValues, DocumentModel.Math.BooleanKind>(value);
       if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = EnumValueConverter.CreateOpenXmlElement<ZeroWidth, BooleanValues, BooleanKind>(value);
-        if (itemElement != null)
-          openXmlElement.AddChild(itemElement);
-      }
+        openXmlElement.AddChild(itemElement);
     }
   }
-
+  
   /// <summary>
-  ///   Phantom Zero Ascent.
+  /// Phantom Zero Ascent.
   /// </summary>
-  public static BooleanKind? GetZeroAscent(PhantomProperties? openXmlElement)
+  private static DocumentModel.Math.BooleanKind? GetZeroAscent(DocumentFormat.OpenXml.Math.PhantomProperties openXmlElement)
   {
-    if (openXmlElement != null)
-    {
-      var itemElement = openXmlElement.GetFirstChild<ZeroAscent>();
-      if (itemElement?.Val?.Value != null) return EnumValueConverter.GetValue<BooleanValues, BooleanKind>(itemElement.Val.Value);
-    }
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Math.ZeroAscent>();
+    if (itemElement?.Val?.Value != null)
+      return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Math.BooleanValues, DocumentModel.Math.BooleanKind>(itemElement.Val.Value);
     return null;
   }
-
-  public static void SetZeroAscent(PhantomProperties? openXmlElement, BooleanKind? value)
+  
+  private static void SetZeroAscent(DocumentFormat.OpenXml.Math.PhantomProperties openXmlElement, DocumentModel.Math.BooleanKind? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Math.ZeroAscent>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<ZeroAscent>();
+      itemElement = EnumValueConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Math.ZeroAscent, DocumentFormat.OpenXml.Math.BooleanValues, DocumentModel.Math.BooleanKind>(value);
       if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = EnumValueConverter.CreateOpenXmlElement<ZeroAscent, BooleanValues, BooleanKind>(value);
-        if (itemElement != null)
-          openXmlElement.AddChild(itemElement);
-      }
+        openXmlElement.AddChild(itemElement);
     }
   }
-
+  
   /// <summary>
-  ///   Phantom Zero Descent.
+  /// Phantom Zero Descent.
   /// </summary>
-  public static BooleanKind? GetZeroDescent(PhantomProperties? openXmlElement)
+  private static DocumentModel.Math.BooleanKind? GetZeroDescent(DocumentFormat.OpenXml.Math.PhantomProperties openXmlElement)
   {
-    if (openXmlElement != null)
-    {
-      var itemElement = openXmlElement.GetFirstChild<ZeroDescent>();
-      if (itemElement?.Val?.Value != null) return EnumValueConverter.GetValue<BooleanValues, BooleanKind>(itemElement.Val.Value);
-    }
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Math.ZeroDescent>();
+    if (itemElement?.Val?.Value != null)
+      return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Math.BooleanValues, DocumentModel.Math.BooleanKind>(itemElement.Val.Value);
     return null;
   }
-
-  public static void SetZeroDescent(PhantomProperties? openXmlElement, BooleanKind? value)
+  
+  private static void SetZeroDescent(DocumentFormat.OpenXml.Math.PhantomProperties openXmlElement, DocumentModel.Math.BooleanKind? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Math.ZeroDescent>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<ZeroDescent>();
+      itemElement = EnumValueConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Math.ZeroDescent, DocumentFormat.OpenXml.Math.BooleanValues, DocumentModel.Math.BooleanKind>(value);
       if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = EnumValueConverter.CreateOpenXmlElement<ZeroDescent, BooleanValues, BooleanKind>(value);
-        if (itemElement != null)
-          openXmlElement.AddChild(itemElement);
-      }
+        openXmlElement.AddChild(itemElement);
     }
   }
-
+  
   /// <summary>
-  ///   Transparent (Phantom).
+  /// Transparent (Phantom).
   /// </summary>
-  public static BooleanKind? GetTransparent(PhantomProperties? openXmlElement)
+  private static DocumentModel.Math.BooleanKind? GetTransparent(DocumentFormat.OpenXml.Math.PhantomProperties openXmlElement)
   {
-    if (openXmlElement != null)
-    {
-      var itemElement = openXmlElement.GetFirstChild<Transparent>();
-      if (itemElement?.Val?.Value != null) return EnumValueConverter.GetValue<BooleanValues, BooleanKind>(itemElement.Val.Value);
-    }
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Math.Transparent>();
+    if (itemElement?.Val?.Value != null)
+      return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Math.BooleanValues, DocumentModel.Math.BooleanKind>(itemElement.Val.Value);
     return null;
   }
-
-  public static void SetTransparent(PhantomProperties? openXmlElement, BooleanKind? value)
+  
+  private static void SetTransparent(DocumentFormat.OpenXml.Math.PhantomProperties openXmlElement, DocumentModel.Math.BooleanKind? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Math.Transparent>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<Transparent>();
+      itemElement = EnumValueConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Math.Transparent, DocumentFormat.OpenXml.Math.BooleanValues, DocumentModel.Math.BooleanKind>(value);
       if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = EnumValueConverter.CreateOpenXmlElement<Transparent, BooleanValues, BooleanKind>(value);
-        if (itemElement != null)
-          openXmlElement.AddChild(itemElement);
-      }
+        openXmlElement.AddChild(itemElement);
     }
   }
-
+  
   /// <summary>
-  ///   ControlProperties.
+  /// ControlProperties.
   /// </summary>
-  public static ControlProperties? GetControlProperties(PhantomProperties? openXmlElement)
+  private static DocumentModel.Math.ControlProperties? GetControlProperties(DocumentFormat.OpenXml.Math.PhantomProperties openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Math.ControlProperties>();
     if (itemElement != null)
-      return ControlPropertiesConverter.CreateModelElement(itemElement);
+      return DocumentModel.OpenXml.Math.ControlPropertiesConverter.CreateModelElement(itemElement);
     return null;
   }
-
-  public static void SetControlProperties(PhantomProperties? openXmlElement, ControlProperties? value)
+  
+  private static void SetControlProperties(DocumentFormat.OpenXml.Math.PhantomProperties openXmlElement, DocumentModel.Math.ControlProperties? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Math.ControlProperties>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Math.ControlProperties>();
+      itemElement = DocumentModel.OpenXml.Math.ControlPropertiesConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Math.ControlProperties>(value);
       if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = ControlPropertiesConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Math.ControlProperties>(value);
-        if (itemElement != null)
-          openXmlElement.AddChild(itemElement);
-      }
+        openXmlElement.AddChild(itemElement);
     }
   }
-
-  public static DocumentModel.Math.PhantomProperties? CreateModelElement(PhantomProperties? openXmlElement)
+  
+  public static DocumentModel.Math.PhantomProperties? CreateModelElement(DocumentFormat.OpenXml.Math.PhantomProperties? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -197,9 +164,9 @@ public static class PhantomPropertiesConverter
     }
     return null;
   }
-
+  
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Math.PhantomProperties? value)
-    where OpenXmlElementType : PhantomProperties, new()
+    where OpenXmlElementType: DocumentFormat.OpenXml.Math.PhantomProperties, new()
   {
     if (value != null)
     {

@@ -1,70 +1,58 @@
-using DocumentFormat.OpenXml.Office2013.Word;
-
 namespace DocumentModel.OpenXml.Wordprocessing;
 
 /// <summary>
-///   Defines the SdtRepeatedSection Class.
+/// Defines the SdtRepeatedSection Class.
 /// </summary>
 public static class SdtRepeatedSectionConverter
 {
   /// <summary>
-  ///   SectionTitle.
+  /// SectionTitle.
   /// </summary>
-  public static String? GetSectionTitle(SdtRepeatedSection? openXmlElement)
+  private static String? GetSectionTitle(DocumentFormat.OpenXml.Office2013.Word.SdtRepeatedSection openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<SectionTitle>();
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office2013.Word.SectionTitle>();
     if (itemElement != null)
       return itemElement.Val?.Value;
     return null;
   }
-
-  public static void SetSectionTitle(SdtRepeatedSection? openXmlElement, String? value)
+  
+  private static void SetSectionTitle(DocumentFormat.OpenXml.Office2013.Word.SdtRepeatedSection openXmlElement, String? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2013.Word.SectionTitle>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<SectionTitle>();
+      itemElement = new DocumentFormat.OpenXml.Office2013.Word.SectionTitle { Val = value };
+      openXmlElement.AddChild(itemElement);
+    }
+  }
+  
+  /// <summary>
+  /// DoNotAllowInsertDeleteSection.
+  /// </summary>
+  private static Boolean? GetDoNotAllowInsertDeleteSection(DocumentFormat.OpenXml.Office2013.Word.SdtRepeatedSection openXmlElement)
+  {
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2013.Word.DoNotAllowInsertDeleteSection>();
+    return itemElement != null;
+  }
+  
+  private static void SetDoNotAllowInsertDeleteSection(DocumentFormat.OpenXml.Office2013.Word.SdtRepeatedSection openXmlElement, Boolean? value)
+  {
+    if (value == false)
+    {
+      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2013.Word.DoNotAllowInsertDeleteSection>();
       if (itemElement != null)
         itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = new SectionTitle { Val = value };
-        openXmlElement.AddChild(itemElement);
-      }
     }
-  }
-
-  /// <summary>
-  ///   DoNotAllowInsertDeleteSection.
-  /// </summary>
-  public static Boolean? GetDoNotAllowInsertDeleteSection(SdtRepeatedSection? openXmlElement)
-  {
-    if (openXmlElement != null)
+    if (value == true)
     {
-      var itemElement = openXmlElement.GetFirstChild<DoNotAllowInsertDeleteSection>();
-      return itemElement != null;
-    }
-    return null;
-  }
-
-  public static void SetDoNotAllowInsertDeleteSection(SdtRepeatedSection? openXmlElement, Boolean? value)
-  {
-    if (openXmlElement != null)
-    {
-      if (value == false)
-      {
-        var itemElement = openXmlElement.GetFirstChild<DoNotAllowInsertDeleteSection>();
-        if (itemElement != null)
-          itemElement.Remove();
-      }
-      if (value == true)
-      {
-        var itemElement = new DoNotAllowInsertDeleteSection();
-        openXmlElement.AddChild(itemElement);
-      }
+      var itemElement = new DocumentFormat.OpenXml.Office2013.Word.DoNotAllowInsertDeleteSection();
+      openXmlElement.AddChild(itemElement);
     }
   }
-
-  public static DocumentModel.Wordprocessing.SdtRepeatedSection? CreateModelElement(SdtRepeatedSection? openXmlElement)
+  
+  public static DocumentModel.Wordprocessing.SdtRepeatedSection? CreateModelElement(DocumentFormat.OpenXml.Office2013.Word.SdtRepeatedSection? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -75,9 +63,9 @@ public static class SdtRepeatedSectionConverter
     }
     return null;
   }
-
+  
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.SdtRepeatedSection? value)
-    where OpenXmlElementType : SdtRepeatedSection, new()
+    where OpenXmlElementType: DocumentFormat.OpenXml.Office2013.Word.SdtRepeatedSection, new()
   {
     if (value != null)
     {

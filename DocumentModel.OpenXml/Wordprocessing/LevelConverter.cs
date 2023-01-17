@@ -1,400 +1,342 @@
-using DocumentFormat.OpenXml.Wordprocessing;
-using DocumentModel.Wordprocessing;
-using LegacyNumbering = DocumentModel.Wordprocessing.LegacyNumbering;
-using Level = DocumentFormat.OpenXml.Wordprocessing.Level;
-using LevelText = DocumentModel.Wordprocessing.LevelText;
-using NumberingFormat = DocumentModel.Wordprocessing.NumberingFormat;
-using NumberingSymbolRunProperties = DocumentModel.Wordprocessing.NumberingSymbolRunProperties;
-using PreviousParagraphProperties = DocumentModel.Wordprocessing.PreviousParagraphProperties;
-
 namespace DocumentModel.OpenXml.Wordprocessing;
 
 /// <summary>
-///   Numbering Level Definition.
+/// Numbering Level Definition.
 /// </summary>
 public static class LevelConverter
 {
   /// <summary>
-  ///   Numbering Level
+  /// Numbering Level
   /// </summary>
-  public static Int32? GetLevelIndex(Level? openXmlElement)
+  private static Int32? GetLevelIndex(DocumentFormat.OpenXml.Wordprocessing.Level openXmlElement)
   {
-    return openXmlElement?.LevelIndex?.Value;
+    return openXmlElement.LevelIndex?.Value;
   }
-
-  public static void SetLevelIndex(Level? openXmlElement, Int32? value)
+  
+  private static void SetLevelIndex(DocumentFormat.OpenXml.Wordprocessing.Level openXmlElement, Int32? value)
   {
-    if (openXmlElement != null)
-      openXmlElement.LevelIndex = value;
+    openXmlElement.LevelIndex = value;
   }
-
+  
   /// <summary>
-  ///   Template Code
+  /// Template Code
   /// </summary>
-  public static Byte[]? GetTemplateCode(Level? openXmlElement)
+  private static UInt32? GetTemplateCode(DocumentFormat.OpenXml.Wordprocessing.Level openXmlElement)
   {
-    if (openXmlElement?.TemplateCode?.Value != null)
-      return Convert.FromHexString(openXmlElement.TemplateCode.Value);
+    if (openXmlElement.TemplateCode?.Value != null)
+      return UInt32.Parse(openXmlElement.TemplateCode.Value, NumberStyles.HexNumber);
     return null;
   }
-
-  public static void SetTemplateCode(Level? openXmlElement, Byte[]? value)
+  
+  private static void SetTemplateCode(DocumentFormat.OpenXml.Wordprocessing.Level openXmlElement, UInt32? value)
   {
-    if (openXmlElement != null)
-    {
       if (value != null)
-        openXmlElement.TemplateCode = Convert.ToHexString(value);
+        openXmlElement.TemplateCode = ((UInt32)value).ToString("X8");
       else
         openXmlElement.TemplateCode = null;
-    }
   }
-
+  
   /// <summary>
-  ///   Tentative Numbering
+  /// Tentative Numbering
   /// </summary>
-  public static Boolean? GetTentative(Level? openXmlElement)
+  private static Boolean? GetTentative(DocumentFormat.OpenXml.Wordprocessing.Level openXmlElement)
   {
     return openXmlElement?.Tentative?.Value;
   }
-
-  public static void SetTentative(Level? openXmlElement, Boolean? value)
+  
+  private static void SetTentative(DocumentFormat.OpenXml.Wordprocessing.Level openXmlElement, Boolean? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.Tentative = new OnOffValue { Value = (Boolean)value };
-      else
-        openXmlElement.Tentative = null;
+    if (value != null)
+      openXmlElement.Tentative = new OnOffValue { Value = (Boolean)value };
+    else
+      openXmlElement.Tentative = null;
   }
-
+  
   /// <summary>
-  ///   Starting Value.
+  /// Starting Value.
   /// </summary>
-  public static Int32? GetStartNumberingValue(Level? openXmlElement)
+  private static Int32? GetStartNumberingValue(DocumentFormat.OpenXml.Wordprocessing.Level openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<StartNumberingValue>();
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.StartNumberingValue>();
     if (itemElement != null)
       return itemElement.Val?.Value;
     return null;
   }
-
-  public static void SetStartNumberingValue(Level? openXmlElement, Int32? value)
+  
+  private static void SetStartNumberingValue(DocumentFormat.OpenXml.Wordprocessing.Level openXmlElement, Int32? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.StartNumberingValue>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<StartNumberingValue>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = new StartNumberingValue { Val = value };
-        openXmlElement.AddChild(itemElement);
-      }
+      itemElement = new DocumentFormat.OpenXml.Wordprocessing.StartNumberingValue{ Val = value };
+      openXmlElement.AddChild(itemElement);
     }
   }
-
+  
   /// <summary>
-  ///   Numbering Format.
+  /// Numbering Format.
   /// </summary>
-  public static NumberingFormat? GetNumberingFormat(Level? openXmlElement)
+  private static DocumentModel.Wordprocessing.NumberingFormat? GetNumberingFormat(DocumentFormat.OpenXml.Wordprocessing.Level openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.NumberingFormat>();
     if (itemElement != null)
-      return NumberingFormatConverter.CreateModelElement(itemElement);
+      return DocumentModel.OpenXml.Wordprocessing.NumberingFormatConverter.CreateModelElement(itemElement);
     return null;
   }
-
-  public static void SetNumberingFormat(Level? openXmlElement, NumberingFormat? value)
+  
+  private static void SetNumberingFormat(DocumentFormat.OpenXml.Wordprocessing.Level openXmlElement, DocumentModel.Wordprocessing.NumberingFormat? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.NumberingFormat>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.NumberingFormat>();
+      itemElement = DocumentModel.OpenXml.Wordprocessing.NumberingFormatConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.NumberingFormat>(value);
       if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = NumberingFormatConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.NumberingFormat>(value);
-        if (itemElement != null)
-          openXmlElement.AddChild(itemElement);
-      }
+        openXmlElement.AddChild(itemElement);
     }
   }
-
+  
   /// <summary>
-  ///   Restart Numbering Level Symbol.
+  /// Restart Numbering Level Symbol.
   /// </summary>
-  public static Int32? GetLevelRestart(Level? openXmlElement)
+  private static Int32? GetLevelRestart(DocumentFormat.OpenXml.Wordprocessing.Level openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<LevelRestart>();
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.LevelRestart>();
     if (itemElement != null)
       return itemElement.Val?.Value;
     return null;
   }
-
-  public static void SetLevelRestart(Level? openXmlElement, Int32? value)
+  
+  private static void SetLevelRestart(DocumentFormat.OpenXml.Wordprocessing.Level openXmlElement, Int32? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.LevelRestart>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<LevelRestart>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = new LevelRestart { Val = value };
-        openXmlElement.AddChild(itemElement);
-      }
+      itemElement = new DocumentFormat.OpenXml.Wordprocessing.LevelRestart{ Val = value };
+      openXmlElement.AddChild(itemElement);
     }
   }
-
+  
   /// <summary>
-  ///   Paragraph Style's Associated Numbering Level.
+  /// Paragraph Style's Associated Numbering Level.
   /// </summary>
-  public static String? GetParagraphStyleIdInLevel(Level? openXmlElement)
+  private static String? GetParagraphStyleIdInLevel(DocumentFormat.OpenXml.Wordprocessing.Level openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<ParagraphStyleIdInLevel>();
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.ParagraphStyleIdInLevel>();
     if (itemElement != null)
       return itemElement.Val?.Value;
     return null;
   }
-
-  public static void SetParagraphStyleIdInLevel(Level? openXmlElement, String? value)
+  
+  private static void SetParagraphStyleIdInLevel(DocumentFormat.OpenXml.Wordprocessing.Level openXmlElement, String? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.ParagraphStyleIdInLevel>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<ParagraphStyleIdInLevel>();
+      itemElement = new DocumentFormat.OpenXml.Wordprocessing.ParagraphStyleIdInLevel { Val = value };
+      openXmlElement.AddChild(itemElement);
+    }
+  }
+  
+  /// <summary>
+  /// Display All Levels Using Arabic Numerals.
+  /// </summary>
+  private static Boolean? GetIsLegalNumberingStyle(DocumentFormat.OpenXml.Wordprocessing.Level openXmlElement)
+  {
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.IsLegalNumberingStyle>();
+    return itemElement != null;
+  }
+  
+  private static void SetIsLegalNumberingStyle(DocumentFormat.OpenXml.Wordprocessing.Level openXmlElement, Boolean? value)
+  {
+    if (value == false)
+    {
+      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.IsLegalNumberingStyle>();
       if (itemElement != null)
         itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = new ParagraphStyleIdInLevel { Val = value };
-        openXmlElement.AddChild(itemElement);
-      }
+    }
+    if (value == true)
+    {
+      var itemElement = new DocumentFormat.OpenXml.Wordprocessing.IsLegalNumberingStyle();
+      openXmlElement.AddChild(itemElement);
     }
   }
-
+  
   /// <summary>
-  ///   Display All Levels Using Arabic Numerals.
+  /// Content Between Numbering Symbol and Paragraph Text.
   /// </summary>
-  public static Boolean? GetIsLegalNumberingStyle(Level? openXmlElement)
+  private static DocumentModel.Wordprocessing.LevelSuffixKind? GetLevelSuffix(DocumentFormat.OpenXml.Wordprocessing.Level openXmlElement)
   {
-    if (openXmlElement != null)
-    {
-      var itemElement = openXmlElement.GetFirstChild<IsLegalNumberingStyle>();
-      return itemElement != null;
-    }
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.LevelSuffix>();
+    if (itemElement?.Val?.Value != null)
+      return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Wordprocessing.LevelSuffixValues, DocumentModel.Wordprocessing.LevelSuffixKind>(itemElement.Val.Value);
     return null;
   }
-
-  public static void SetIsLegalNumberingStyle(Level? openXmlElement, Boolean? value)
+  
+  private static void SetLevelSuffix(DocumentFormat.OpenXml.Wordprocessing.Level openXmlElement, DocumentModel.Wordprocessing.LevelSuffixKind? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.LevelSuffix>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      if (value == false)
-      {
-        var itemElement = openXmlElement.GetFirstChild<IsLegalNumberingStyle>();
-        if (itemElement != null)
-          itemElement.Remove();
-      }
-      if (value == true)
-      {
-        var itemElement = new IsLegalNumberingStyle();
-        openXmlElement.AddChild(itemElement);
-      }
-    }
-  }
-
-  /// <summary>
-  ///   Content Between Numbering Symbol and Paragraph Text.
-  /// </summary>
-  public static LevelSuffixKind? GetLevelSuffix(Level? openXmlElement)
-  {
-    if (openXmlElement != null)
-    {
-      var itemElement = openXmlElement.GetFirstChild<LevelSuffix>();
-      if (itemElement?.Val?.Value != null) return EnumValueConverter.GetValue<LevelSuffixValues, LevelSuffixKind>(itemElement.Val.Value);
-    }
-    return null;
-  }
-
-  public static void SetLevelSuffix(Level? openXmlElement, LevelSuffixKind? value)
-  {
-    if (openXmlElement != null)
-    {
-      var itemElement = openXmlElement.GetFirstChild<LevelSuffix>();
+      itemElement = EnumValueConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.LevelSuffix, DocumentFormat.OpenXml.Wordprocessing.LevelSuffixValues, DocumentModel.Wordprocessing.LevelSuffixKind>(value);
       if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = EnumValueConverter.CreateOpenXmlElement<LevelSuffix, LevelSuffixValues, LevelSuffixKind>(value);
-        if (itemElement != null)
-          openXmlElement.AddChild(itemElement);
-      }
+        openXmlElement.AddChild(itemElement);
     }
   }
-
+  
   /// <summary>
-  ///   Numbering Level Text.
+  /// Numbering Level Text.
   /// </summary>
-  public static LevelText? GetLevelText(Level? openXmlElement)
+  private static DocumentModel.Wordprocessing.LevelText? GetLevelText(DocumentFormat.OpenXml.Wordprocessing.Level openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.LevelText>();
     if (itemElement != null)
-      return LevelTextConverter.CreateModelElement(itemElement);
+      return DocumentModel.OpenXml.Wordprocessing.LevelTextConverter.CreateModelElement(itemElement);
     return null;
   }
-
-  public static void SetLevelText(Level? openXmlElement, LevelText? value)
+  
+  private static void SetLevelText(DocumentFormat.OpenXml.Wordprocessing.Level openXmlElement, DocumentModel.Wordprocessing.LevelText? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.LevelText>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.LevelText>();
+      itemElement = DocumentModel.OpenXml.Wordprocessing.LevelTextConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.LevelText>(value);
       if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = LevelTextConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.LevelText>(value);
-        if (itemElement != null)
-          openXmlElement.AddChild(itemElement);
-      }
+        openXmlElement.AddChild(itemElement);
     }
   }
-
+  
   /// <summary>
-  ///   Picture Numbering Symbol Definition Reference.
+  /// Picture Numbering Symbol Definition Reference.
   /// </summary>
-  public static Int32? GetLevelPictureBulletId(Level? openXmlElement)
+  private static Int32? GetLevelPictureBulletId(DocumentFormat.OpenXml.Wordprocessing.Level openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<LevelPictureBulletId>();
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.LevelPictureBulletId>();
     if (itemElement != null)
       return itemElement.Val?.Value;
     return null;
   }
-
-  public static void SetLevelPictureBulletId(Level? openXmlElement, Int32? value)
+  
+  private static void SetLevelPictureBulletId(DocumentFormat.OpenXml.Wordprocessing.Level openXmlElement, Int32? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.LevelPictureBulletId>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<LevelPictureBulletId>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = new LevelPictureBulletId { Val = value };
-        openXmlElement.AddChild(itemElement);
-      }
+      itemElement = new DocumentFormat.OpenXml.Wordprocessing.LevelPictureBulletId{ Val = value };
+      openXmlElement.AddChild(itemElement);
     }
   }
-
+  
   /// <summary>
-  ///   Legacy Numbering Level Properties.
+  /// Legacy Numbering Level Properties.
   /// </summary>
-  public static LegacyNumbering? GetLegacyNumbering(Level? openXmlElement)
+  private static DocumentModel.Wordprocessing.LegacyNumbering? GetLegacyNumbering(DocumentFormat.OpenXml.Wordprocessing.Level openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.LegacyNumbering>();
     if (itemElement != null)
-      return LegacyNumberingConverter.CreateModelElement(itemElement);
+      return DocumentModel.OpenXml.Wordprocessing.LegacyNumberingConverter.CreateModelElement(itemElement);
     return null;
   }
-
-  public static void SetLegacyNumbering(Level? openXmlElement, LegacyNumbering? value)
+  
+  private static void SetLegacyNumbering(DocumentFormat.OpenXml.Wordprocessing.Level openXmlElement, DocumentModel.Wordprocessing.LegacyNumbering? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.LegacyNumbering>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.LegacyNumbering>();
+      itemElement = DocumentModel.OpenXml.Wordprocessing.LegacyNumberingConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.LegacyNumbering>(value);
       if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = LegacyNumberingConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.LegacyNumbering>(value);
-        if (itemElement != null)
-          openXmlElement.AddChild(itemElement);
-      }
+        openXmlElement.AddChild(itemElement);
     }
   }
-
+  
   /// <summary>
-  ///   Justification.
+  /// Justification.
   /// </summary>
-  public static LevelJustificationKind? GetLevelJustification(Level? openXmlElement)
+  private static DocumentModel.Wordprocessing.LevelJustificationKind? GetLevelJustification(DocumentFormat.OpenXml.Wordprocessing.Level openXmlElement)
   {
-    if (openXmlElement != null)
-    {
-      var itemElement = openXmlElement.GetFirstChild<LevelJustification>();
-      if (itemElement?.Val?.Value != null) return EnumValueConverter.GetValue<LevelJustificationValues, LevelJustificationKind>(itemElement.Val.Value);
-    }
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.LevelJustification>();
+    if (itemElement?.Val?.Value != null)
+      return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Wordprocessing.LevelJustificationValues, DocumentModel.Wordprocessing.LevelJustificationKind>(itemElement.Val.Value);
     return null;
   }
-
-  public static void SetLevelJustification(Level? openXmlElement, LevelJustificationKind? value)
+  
+  private static void SetLevelJustification(DocumentFormat.OpenXml.Wordprocessing.Level openXmlElement, DocumentModel.Wordprocessing.LevelJustificationKind? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.LevelJustification>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<LevelJustification>();
+      itemElement = EnumValueConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.LevelJustification, DocumentFormat.OpenXml.Wordprocessing.LevelJustificationValues, DocumentModel.Wordprocessing.LevelJustificationKind>(value);
       if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = EnumValueConverter.CreateOpenXmlElement<LevelJustification, LevelJustificationValues, LevelJustificationKind>(value);
-        if (itemElement != null)
-          openXmlElement.AddChild(itemElement);
-      }
+        openXmlElement.AddChild(itemElement);
     }
   }
-
+  
   /// <summary>
-  ///   Numbering Level Associated Paragraph Properties.
+  /// Numbering Level Associated Paragraph Properties.
   /// </summary>
-  public static PreviousParagraphProperties? GetPreviousParagraphProperties(Level? openXmlElement)
+  private static DocumentModel.Wordprocessing.PreviousParagraphProperties? GetPreviousParagraphProperties(DocumentFormat.OpenXml.Wordprocessing.Level openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.PreviousParagraphProperties>();
     if (itemElement != null)
-      return PreviousParagraphPropertiesConverter.CreateModelElement(itemElement);
+      return DocumentModel.OpenXml.Wordprocessing.PreviousParagraphPropertiesConverter.CreateModelElement(itemElement);
     return null;
   }
-
-  public static void SetPreviousParagraphProperties(Level? openXmlElement, PreviousParagraphProperties? value)
+  
+  private static void SetPreviousParagraphProperties(DocumentFormat.OpenXml.Wordprocessing.Level openXmlElement, DocumentModel.Wordprocessing.PreviousParagraphProperties? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.PreviousParagraphProperties>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.PreviousParagraphProperties>();
+      itemElement = DocumentModel.OpenXml.Wordprocessing.PreviousParagraphPropertiesConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.PreviousParagraphProperties>(value);
       if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = PreviousParagraphPropertiesConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.PreviousParagraphProperties>(value);
-        if (itemElement != null)
-          openXmlElement.AddChild(itemElement);
-      }
+        openXmlElement.AddChild(itemElement);
     }
   }
-
+  
   /// <summary>
-  ///   Numbering Symbol Run Properties.
+  /// Numbering Symbol Run Properties.
   /// </summary>
-  public static NumberingSymbolRunProperties? GetNumberingSymbolRunProperties(Level? openXmlElement)
+  private static DocumentModel.Wordprocessing.NumberingSymbolRunProperties? GetNumberingSymbolRunProperties(DocumentFormat.OpenXml.Wordprocessing.Level openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.NumberingSymbolRunProperties>();
     if (itemElement != null)
-      return NumberingSymbolRunPropertiesConverter.CreateModelElement(itemElement);
+      return DocumentModel.OpenXml.Wordprocessing.NumberingSymbolRunPropertiesConverter.CreateModelElement(itemElement);
     return null;
   }
-
-  public static void SetNumberingSymbolRunProperties(Level? openXmlElement, NumberingSymbolRunProperties? value)
+  
+  private static void SetNumberingSymbolRunProperties(DocumentFormat.OpenXml.Wordprocessing.Level openXmlElement, DocumentModel.Wordprocessing.NumberingSymbolRunProperties? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.NumberingSymbolRunProperties>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.NumberingSymbolRunProperties>();
+      itemElement = DocumentModel.OpenXml.Wordprocessing.NumberingSymbolRunPropertiesConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.NumberingSymbolRunProperties>(value);
       if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = NumberingSymbolRunPropertiesConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.NumberingSymbolRunProperties>(value);
-        if (itemElement != null)
-          openXmlElement.AddChild(itemElement);
-      }
+        openXmlElement.AddChild(itemElement);
     }
   }
-
-  public static DocumentModel.Wordprocessing.Level? CreateModelElement(Level? openXmlElement)
+  
+  public static DocumentModel.Wordprocessing.Level? CreateModelElement(DocumentFormat.OpenXml.Wordprocessing.Level? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -418,9 +360,9 @@ public static class LevelConverter
     }
     return null;
   }
-
+  
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.Level? value)
-    where OpenXmlElementType : Level, new()
+    where OpenXmlElementType: DocumentFormat.OpenXml.Wordprocessing.Level, new()
   {
     if (value != null)
     {

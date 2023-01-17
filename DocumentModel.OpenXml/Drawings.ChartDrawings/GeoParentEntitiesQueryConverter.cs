@@ -1,30 +1,27 @@
-using DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing;
-
 namespace DocumentModel.OpenXml.Drawings.ChartDrawings;
 
 /// <summary>
-///   Defines the GeoParentEntitiesQuery Class.
+/// Defines the GeoParentEntitiesQuery Class.
 /// </summary>
 public static class GeoParentEntitiesQueryConverter
 {
   /// <summary>
-  ///   entityId, this property is only available in Office 2016 and later.
+  /// entityId, this property is only available in Office 2016 and later.
   /// </summary>
-  public static String? GetEntityId(GeoParentEntitiesQuery? openXmlElement)
+  private static String? GetEntityId(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.GeoParentEntitiesQuery openXmlElement)
   {
     return openXmlElement?.EntityId?.Value;
   }
-
-  public static void SetEntityId(GeoParentEntitiesQuery? openXmlElement, String? value)
+  
+  private static void SetEntityId(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.GeoParentEntitiesQuery openXmlElement, String? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.EntityId = new StringValue { Value = value };
-      else
-        openXmlElement.EntityId = null;
+    if (value != null)
+      openXmlElement.EntityId = new StringValue { Value = value };
+    else
+      openXmlElement.EntityId = null;
   }
-
-  public static DocumentModel.Drawings.ChartDrawings.GeoParentEntitiesQuery? CreateModelElement(GeoParentEntitiesQuery? openXmlElement)
+  
+  public static DocumentModel.Drawings.ChartDrawings.GeoParentEntitiesQuery? CreateModelElement(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.GeoParentEntitiesQuery? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -34,9 +31,9 @@ public static class GeoParentEntitiesQueryConverter
     }
     return null;
   }
-
+  
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.ChartDrawings.GeoParentEntitiesQuery? value)
-    where OpenXmlElementType : GeoParentEntitiesQuery, new()
+    where OpenXmlElementType: DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.GeoParentEntitiesQuery, new()
   {
     if (value != null)
     {

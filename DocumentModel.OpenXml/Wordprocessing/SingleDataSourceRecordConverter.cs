@@ -1,70 +1,58 @@
-using DocumentFormat.OpenXml.Office.Word;
-
 namespace DocumentModel.OpenXml.Wordprocessing;
 
 /// <summary>
-///   Defines the SingleDataSourceRecord Class.
+/// Defines the SingleDataSourceRecord Class.
 /// </summary>
 public static class SingleDataSourceRecordConverter
 {
   /// <summary>
-  ///   RecordIncluded.
+  /// RecordIncluded.
   /// </summary>
-  public static Boolean? GetRecordIncluded(SingleDataSourceRecord? openXmlElement)
+  private static Boolean? GetRecordIncluded(DocumentFormat.OpenXml.Office.Word.SingleDataSourceRecord openXmlElement)
   {
-    if (openXmlElement != null)
-    {
-      var itemElement = openXmlElement.GetFirstChild<RecordIncluded>();
-      return itemElement != null;
-    }
-    return null;
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office.Word.RecordIncluded>();
+    return itemElement != null;
   }
-
-  public static void SetRecordIncluded(SingleDataSourceRecord? openXmlElement, Boolean? value)
+  
+  private static void SetRecordIncluded(DocumentFormat.OpenXml.Office.Word.SingleDataSourceRecord openXmlElement, Boolean? value)
   {
-    if (openXmlElement != null)
+    if (value == false)
     {
-      if (value == false)
-      {
-        var itemElement = openXmlElement.GetFirstChild<RecordIncluded>();
-        if (itemElement != null)
-          itemElement.Remove();
-      }
-      if (value == true)
-      {
-        var itemElement = new RecordIncluded();
-        openXmlElement.AddChild(itemElement);
-      }
+      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office.Word.RecordIncluded>();
+      if (itemElement != null)
+        itemElement.Remove();
+    }
+    if (value == true)
+    {
+      var itemElement = new DocumentFormat.OpenXml.Office.Word.RecordIncluded();
+      openXmlElement.AddChild(itemElement);
     }
   }
-
+  
   /// <summary>
-  ///   RecordHashCode.
+  /// RecordHashCode.
   /// </summary>
-  public static Int64? GetRecordHashCode(SingleDataSourceRecord? openXmlElement)
+  private static Int64? GetRecordHashCode(DocumentFormat.OpenXml.Office.Word.SingleDataSourceRecord openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<RecordHashCode>();
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office.Word.RecordHashCode>();
     if (itemElement != null)
       return itemElement.Val?.Value;
     return null;
   }
-
-  public static void SetRecordHashCode(SingleDataSourceRecord? openXmlElement, Int64? value)
+  
+  private static void SetRecordHashCode(DocumentFormat.OpenXml.Office.Word.SingleDataSourceRecord openXmlElement, Int64? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office.Word.RecordHashCode>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<RecordHashCode>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = new RecordHashCode { Val = value };
-        openXmlElement.AddChild(itemElement);
-      }
+      itemElement = new DocumentFormat.OpenXml.Office.Word.RecordHashCode{ Val = value };
+      openXmlElement.AddChild(itemElement);
     }
   }
-
-  public static DocumentModel.Wordprocessing.SingleDataSourceRecord? CreateModelElement(SingleDataSourceRecord? openXmlElement)
+  
+  public static DocumentModel.Wordprocessing.SingleDataSourceRecord? CreateModelElement(DocumentFormat.OpenXml.Office.Word.SingleDataSourceRecord? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -75,9 +63,9 @@ public static class SingleDataSourceRecordConverter
     }
     return null;
   }
-
+  
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.SingleDataSourceRecord? value)
-    where OpenXmlElementType : SingleDataSourceRecord, new()
+    where OpenXmlElementType: DocumentFormat.OpenXml.Office.Word.SingleDataSourceRecord, new()
   {
     if (value != null)
     {

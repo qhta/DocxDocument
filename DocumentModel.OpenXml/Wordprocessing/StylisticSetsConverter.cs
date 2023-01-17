@@ -1,45 +1,37 @@
-using DocumentModel.Wordprocessing;
-using StylisticSets = DocumentFormat.OpenXml.Office2010.Word.StylisticSets;
-
 namespace DocumentModel.OpenXml.Wordprocessing;
 
 /// <summary>
-///   Defines the StylisticSets Class.
+/// Defines the StylisticSets Class.
 /// </summary>
 public static class StylisticSetsConverter
 {
-  public static Collection<StyleSet>? GetStyleSets(StylisticSets? openXmlElement)
+  private static System.Collections.ObjectModel.Collection<DocumentModel.Wordprocessing.StyleSet> GetStyleSets(DocumentFormat.OpenXml.Office2010.Word.StylisticSets openXmlElement)
   {
-    if (openXmlElement != null)
+    var collection = new System.Collections.ObjectModel.Collection<DocumentModel.Wordprocessing.StyleSet>();
+    foreach (var item in openXmlElement.Elements<DocumentFormat.OpenXml.Office2010.Word.StyleSet>())
     {
-      var collection = new Collection<StyleSet>();
-      foreach (var item in openXmlElement.Elements<DocumentFormat.OpenXml.Office2010.Word.StyleSet>())
+      var newItem = DocumentModel.OpenXml.Wordprocessing.StyleSetConverter.CreateModelElement(item);
+      if (newItem != null)
+        collection.Add(newItem);
+    }
+    return collection;
+  }
+  
+  private static void SetStyleSets(DocumentFormat.OpenXml.Office2010.Word.StylisticSets openXmlElement, System.Collections.ObjectModel.Collection<DocumentModel.Wordprocessing.StyleSet>? value)
+  {
+    openXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Office2010.Word.StyleSet>();
+    if (value != null)
+    {
+      foreach (var item in value)
       {
-        var newItem = StyleSetConverter.CreateModelElement(item);
+        var newItem = DocumentModel.OpenXml.Wordprocessing.StyleSetConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2010.Word.StyleSet>(item);
         if (newItem != null)
-          collection.Add(newItem);
+          openXmlElement.AddChild(newItem);
       }
-      return collection;
-    }
-    return null;
-  }
-
-  public static void SetStyleSets(StylisticSets? openXmlElement, Collection<StyleSet>? value)
-  {
-    if (openXmlElement != null)
-    {
-      openXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Office2010.Word.StyleSet>();
-      if (value != null)
-        foreach (var item in value)
-        {
-          var newItem = StyleSetConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2010.Word.StyleSet>(item);
-          if (newItem != null)
-            openXmlElement.AddChild(newItem);
-        }
     }
   }
-
-  public static DocumentModel.Wordprocessing.StylisticSets? CreateModelElement(StylisticSets? openXmlElement)
+  
+  public static DocumentModel.Wordprocessing.StylisticSets? CreateModelElement(DocumentFormat.OpenXml.Office2010.Word.StylisticSets? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -49,9 +41,9 @@ public static class StylisticSetsConverter
     }
     return null;
   }
-
+  
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.StylisticSets? value)
-    where OpenXmlElementType : StylisticSets, new()
+    where OpenXmlElementType: DocumentFormat.OpenXml.Office2010.Word.StylisticSets, new()
   {
     if (value != null)
     {

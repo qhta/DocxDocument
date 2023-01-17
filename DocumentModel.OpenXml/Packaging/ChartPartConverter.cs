@@ -1,104 +1,86 @@
-using DocumentModel.Drawings.Charts;
-using DocumentModel.OpenXml.Drawings.Charts;
-using DocumentModel.Packaging;
-using ChartPart = DocumentFormat.OpenXml.Packaging.ChartPart;
-
 namespace DocumentModel.OpenXml.Packaging;
 
 /// <summary>
-///   Defines the ChartPart
+/// Defines the ChartPart
 /// </summary>
 public static class ChartPartConverter
 {
   /// <summary>
-  ///   Gets the ChartColorStyleParts of the ChartPart
+  /// Gets the ChartColorStyleParts of the ChartPart
   /// </summary>
-  public static Collection<ChartColorStylePart>? GetChartColorStyleParts(ChartPart? openXmlElement)
+  private static System.Collections.ObjectModel.Collection<DocumentModel.Packaging.ChartColorStylePart> GetChartColorStyleParts(DocumentFormat.OpenXml.Packaging.ChartPart openXmlElement)
   {
-    if (openXmlElement != null)
+    var collection = new System.Collections.ObjectModel.Collection<DocumentModel.Packaging.ChartColorStylePart>();
+    foreach (var item in openXmlElement.GetPartsOfType<DocumentFormat.OpenXml.Packaging.ChartColorStylePart>())
     {
-      var collection = new Collection<ChartColorStylePart>();
-      foreach (var item in openXmlElement.GetPartsOfType<DocumentFormat.OpenXml.Packaging.ChartColorStylePart>())
-      {
-        var newItem = ChartColorStylePartConverter.CreateModelElement(item);
-        if (newItem != null)
-          collection.Add(newItem);
-      }
-      return collection;
+      var newItem = DocumentModel.OpenXml.Packaging.ChartColorStylePartConverter.CreateModelElement(item);
+      if (newItem != null)
+        collection.Add(newItem);
     }
-    return null;
+    return collection;
   }
-
+  
   /// <summary>
-  ///   Gets or sets the root element of this part.
+  /// Gets or sets the root element of this part.
   /// </summary>
-  public static ChartSpace? GetChartSpace(ChartPart? openXmlElement)
+  private static DocumentModel.Drawings.Charts.ChartSpace? GetChartSpace(DocumentFormat.OpenXml.Packaging.ChartPart openXmlElement)
   {
     if (openXmlElement?.RootElement is DocumentFormat.OpenXml.Drawing.Charts.ChartSpace rootElement)
-      return ChartSpaceConverter.CreateModelElement(rootElement);
+      return DocumentModel.OpenXml.Drawings.Charts.ChartSpaceConverter.CreateModelElement(rootElement);
     return null;
   }
-
-  public static void SetChartSpace(ChartPart? openXmlElement, ChartSpace? value)
+  
+  private static void SetChartSpace(DocumentFormat.OpenXml.Packaging.ChartPart openXmlElement, DocumentModel.Drawings.Charts.ChartSpace? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-      {
-        var rootElement = ChartSpaceConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Charts.ChartSpace>(value);
-        if (rootElement != null)
-          openXmlElement.ChartSpace = rootElement;
-      }
-  }
-
-  /// <summary>
-  ///   Gets the ChartStyleParts of the ChartPart
-  /// </summary>
-  public static Collection<ChartStylePart>? GetChartStyleParts(ChartPart? openXmlElement)
-  {
-    if (openXmlElement != null)
+    if (value != null)
     {
-      var collection = new Collection<ChartStylePart>();
-      foreach (var item in openXmlElement.GetPartsOfType<DocumentFormat.OpenXml.Packaging.ChartStylePart>())
-      {
-        var newItem = ChartStylePartConverter.CreateModelElement(item);
-        if (newItem != null)
-          collection.Add(newItem);
-      }
-      return collection;
+       var rootElement = DocumentModel.OpenXml.Drawings.Charts.ChartSpaceConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Charts.ChartSpace>(value);
+       if (rootElement != null)
+         openXmlElement.ChartSpace = rootElement;
     }
-    return null;
   }
-
-  public static String? GetContentType(ChartPart? openXmlElement)
+  
+  /// <summary>
+  /// Gets the ChartStyleParts of the ChartPart
+  /// </summary>
+  private static System.Collections.ObjectModel.Collection<DocumentModel.Packaging.ChartStylePart> GetChartStyleParts(DocumentFormat.OpenXml.Packaging.ChartPart openXmlElement)
+  {
+    var collection = new System.Collections.ObjectModel.Collection<DocumentModel.Packaging.ChartStylePart>();
+    foreach (var item in openXmlElement.GetPartsOfType<DocumentFormat.OpenXml.Packaging.ChartStylePart>())
+    {
+      var newItem = DocumentModel.OpenXml.Packaging.ChartStylePartConverter.CreateModelElement(item);
+      if (newItem != null)
+        collection.Add(newItem);
+    }
+    return collection;
+  }
+  
+  private static String? GetContentType(DocumentFormat.OpenXml.Packaging.ChartPart openXmlElement)
   {
     return openXmlElement?.ContentType;
   }
-
+  
   /// <summary>
-  ///   Gets the ImageParts of the ChartPart
+  /// Gets the ImageParts of the ChartPart
   /// </summary>
-  public static Collection<ImagePart>? GetImageParts(ChartPart? openXmlElement)
+  private static System.Collections.ObjectModel.Collection<DocumentModel.Packaging.ImagePart> GetImageParts(DocumentFormat.OpenXml.Packaging.ChartPart openXmlElement)
   {
-    if (openXmlElement != null)
+    var collection = new System.Collections.ObjectModel.Collection<DocumentModel.Packaging.ImagePart>();
+    foreach (var item in openXmlElement.GetPartsOfType<DocumentFormat.OpenXml.Packaging.ImagePart>())
     {
-      var collection = new Collection<ImagePart>();
-      foreach (var item in openXmlElement.GetPartsOfType<DocumentFormat.OpenXml.Packaging.ImagePart>())
-      {
-        var newItem = ImagePartConverter.CreateModelElement(item);
-        if (newItem != null)
-          collection.Add(newItem);
-      }
-      return collection;
+      var newItem = DocumentModel.OpenXml.Packaging.ImagePartConverter.CreateModelElement(item);
+      if (newItem != null)
+        collection.Add(newItem);
     }
-    return null;
+    return collection;
   }
-
-  public static String? GetRelationshipType(ChartPart? openXmlElement)
+  
+  private static String? GetRelationshipType(DocumentFormat.OpenXml.Packaging.ChartPart openXmlElement)
   {
     return openXmlElement?.RelationshipType;
   }
-
-  public static DocumentModel.Packaging.ChartPart? CreateModelElement(ChartPart? openXmlElement)
+  
+  public static DocumentModel.Packaging.ChartPart? CreateModelElement(DocumentFormat.OpenXml.Packaging.ChartPart? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -113,9 +95,9 @@ public static class ChartPartConverter
     }
     return null;
   }
-
+  
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Packaging.ChartPart? value)
-    where OpenXmlElementType : ChartPart, new()
+    where OpenXmlElementType: DocumentFormat.OpenXml.Packaging.ChartPart, new()
   {
     if (value != null)
     {

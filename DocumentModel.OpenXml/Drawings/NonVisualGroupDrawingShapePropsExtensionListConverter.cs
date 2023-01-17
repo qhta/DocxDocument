@@ -1,45 +1,37 @@
-using DocumentModel.Drawings;
-using NonVisualGroupDrawingShapePropsExtensionList = DocumentFormat.OpenXml.Drawing.NonVisualGroupDrawingShapePropsExtensionList;
-
 namespace DocumentModel.OpenXml.Drawings;
 
 /// <summary>
-///   Defines the NonVisualGroupDrawingShapePropsExtensionList Class.
+/// Defines the NonVisualGroupDrawingShapePropsExtensionList Class.
 /// </summary>
 public static class NonVisualGroupDrawingShapePropsExtensionListConverter
 {
-  public static Collection<NonVisualGroupDrawingShapePropsExtension>? GetNonVisualGroupDrawingShapePropsExtensions(NonVisualGroupDrawingShapePropsExtensionList? openXmlElement)
+  private static System.Collections.ObjectModel.Collection<DocumentModel.Drawings.NonVisualGroupDrawingShapePropsExtension> GetNonVisualGroupDrawingShapePropsExtensions(DocumentFormat.OpenXml.Drawing.NonVisualGroupDrawingShapePropsExtensionList openXmlElement)
   {
-    if (openXmlElement != null)
+    var collection = new System.Collections.ObjectModel.Collection<DocumentModel.Drawings.NonVisualGroupDrawingShapePropsExtension>();
+    foreach (var item in openXmlElement.Elements<DocumentFormat.OpenXml.Drawing.NonVisualGroupDrawingShapePropsExtension>())
     {
-      var collection = new Collection<NonVisualGroupDrawingShapePropsExtension>();
-      foreach (var item in openXmlElement.Elements<DocumentFormat.OpenXml.Drawing.NonVisualGroupDrawingShapePropsExtension>())
+      var newItem = DocumentModel.OpenXml.Drawings.NonVisualGroupDrawingShapePropsExtensionConverter.CreateModelElement(item);
+      if (newItem != null)
+        collection.Add(newItem);
+    }
+    return collection;
+  }
+  
+  private static void SetNonVisualGroupDrawingShapePropsExtensions(DocumentFormat.OpenXml.Drawing.NonVisualGroupDrawingShapePropsExtensionList openXmlElement, System.Collections.ObjectModel.Collection<DocumentModel.Drawings.NonVisualGroupDrawingShapePropsExtension>? value)
+  {
+    openXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Drawing.NonVisualGroupDrawingShapePropsExtension>();
+    if (value != null)
+    {
+      foreach (var item in value)
       {
-        var newItem = NonVisualGroupDrawingShapePropsExtensionConverter.CreateModelElement(item);
+        var newItem = DocumentModel.OpenXml.Drawings.NonVisualGroupDrawingShapePropsExtensionConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.NonVisualGroupDrawingShapePropsExtension>(item);
         if (newItem != null)
-          collection.Add(newItem);
+          openXmlElement.AddChild(newItem);
       }
-      return collection;
-    }
-    return null;
-  }
-
-  public static void SetNonVisualGroupDrawingShapePropsExtensions(NonVisualGroupDrawingShapePropsExtensionList? openXmlElement, Collection<NonVisualGroupDrawingShapePropsExtension>? value)
-  {
-    if (openXmlElement != null)
-    {
-      openXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Drawing.NonVisualGroupDrawingShapePropsExtension>();
-      if (value != null)
-        foreach (var item in value)
-        {
-          var newItem = NonVisualGroupDrawingShapePropsExtensionConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.NonVisualGroupDrawingShapePropsExtension>(item);
-          if (newItem != null)
-            openXmlElement.AddChild(newItem);
-        }
     }
   }
-
-  public static DocumentModel.Drawings.NonVisualGroupDrawingShapePropsExtensionList? CreateModelElement(NonVisualGroupDrawingShapePropsExtensionList? openXmlElement)
+  
+  public static DocumentModel.Drawings.NonVisualGroupDrawingShapePropsExtensionList? CreateModelElement(DocumentFormat.OpenXml.Drawing.NonVisualGroupDrawingShapePropsExtensionList? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -49,9 +41,9 @@ public static class NonVisualGroupDrawingShapePropsExtensionListConverter
     }
     return null;
   }
-
+  
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.NonVisualGroupDrawingShapePropsExtensionList? value)
-    where OpenXmlElementType : NonVisualGroupDrawingShapePropsExtensionList, new()
+    where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.NonVisualGroupDrawingShapePropsExtensionList, new()
   {
     if (value != null)
     {

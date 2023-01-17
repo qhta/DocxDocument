@@ -1,55 +1,50 @@
-using DocumentFormat.OpenXml.Office2010.Word;
-
 namespace DocumentModel.OpenXml.Wordprocessing;
 
 /// <summary>
-///   Defines the SphereCoordinates Class.
+/// Defines the SphereCoordinates Class.
 /// </summary>
 public static class SphereCoordinatesConverter
 {
   /// <summary>
-  ///   lat, this property is only available in Office 2010 and later.
+  /// lat, this property is only available in Office 2010 and later.
   /// </summary>
-  public static Int32? GetLattitude(SphereCoordinates? openXmlElement)
+  private static Int32? GetLattitude(DocumentFormat.OpenXml.Office2010.Word.SphereCoordinates openXmlElement)
   {
-    return openXmlElement?.Lattitude?.Value;
+    return openXmlElement.Lattitude?.Value;
   }
-
-  public static void SetLattitude(SphereCoordinates? openXmlElement, Int32? value)
+  
+  private static void SetLattitude(DocumentFormat.OpenXml.Office2010.Word.SphereCoordinates openXmlElement, Int32? value)
   {
-    if (openXmlElement != null)
-      openXmlElement.Lattitude = value;
+    openXmlElement.Lattitude = value;
   }
-
+  
   /// <summary>
-  ///   lon, this property is only available in Office 2010 and later.
+  /// lon, this property is only available in Office 2010 and later.
   /// </summary>
-  public static Int32? GetLongitude(SphereCoordinates? openXmlElement)
+  private static Int32? GetLongitude(DocumentFormat.OpenXml.Office2010.Word.SphereCoordinates openXmlElement)
   {
-    return openXmlElement?.Longitude?.Value;
+    return openXmlElement.Longitude?.Value;
   }
-
-  public static void SetLongitude(SphereCoordinates? openXmlElement, Int32? value)
+  
+  private static void SetLongitude(DocumentFormat.OpenXml.Office2010.Word.SphereCoordinates openXmlElement, Int32? value)
   {
-    if (openXmlElement != null)
-      openXmlElement.Longitude = value;
+    openXmlElement.Longitude = value;
   }
-
+  
   /// <summary>
-  ///   rev, this property is only available in Office 2010 and later.
+  /// rev, this property is only available in Office 2010 and later.
   /// </summary>
-  public static Int32? GetRevolution(SphereCoordinates? openXmlElement)
+  private static Int32? GetRevolution(DocumentFormat.OpenXml.Office2010.Word.SphereCoordinates openXmlElement)
   {
-    return openXmlElement?.Revolution?.Value;
+    return openXmlElement.Revolution?.Value;
   }
-
-  public static void SetRevolution(SphereCoordinates? openXmlElement, Int32? value)
+  
+  private static void SetRevolution(DocumentFormat.OpenXml.Office2010.Word.SphereCoordinates openXmlElement, Int32? value)
   {
-    if (openXmlElement != null)
-      openXmlElement.Revolution = value;
+    openXmlElement.Revolution = value;
   }
-
-  public static DocumentModel.Wordprocessing.SphereCoordinates? CreateModelElement(SphereCoordinates? openXmlElement)
+  
+  public static DocumentModel.Wordprocessing.SphereCoordinates? CreateModelElement(DocumentFormat.OpenXml.Office2010.Word.SphereCoordinates? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -61,9 +56,9 @@ public static class SphereCoordinatesConverter
     }
     return null;
   }
-
+  
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.SphereCoordinates? value)
-    where OpenXmlElementType : SphereCoordinates, new()
+    where OpenXmlElementType: DocumentFormat.OpenXml.Office2010.Word.SphereCoordinates, new()
   {
     if (value != null)
     {

@@ -1,373 +1,344 @@
-using DocumentFormat.OpenXml.Drawing;
-using DocumentModel.Drawings;
-using Outline = DocumentModel.Drawings.Outline;
-using TextCharacterPropertiesType = DocumentFormat.OpenXml.Drawing.TextCharacterPropertiesType;
-
 namespace DocumentModel.OpenXml.Drawings;
 
 /// <summary>
-///   Defines the TextCharacterPropertiesType Class.
+/// Defines the TextCharacterPropertiesType Class.
 /// </summary>
 public static class TextCharacterPropertiesTypeConverter
 {
   /// <summary>
-  ///   Gets or sets the  value. It is only available for backwards compatibility
+  /// Gets or sets the  value. It is only available for backwards compatibility
   /// </summary>
-  public static Boolean? GetSmtClean(TextCharacterPropertiesType? openXmlElement)
+  private static Boolean? GetSmtClean(DocumentFormat.OpenXml.Drawing.TextCharacterPropertiesType openXmlElement)
   {
     return openXmlElement?.SmtClean?.Value;
   }
-
-  public static void SetSmtClean(TextCharacterPropertiesType? openXmlElement, Boolean? value)
+  
+  private static void SetSmtClean(DocumentFormat.OpenXml.Drawing.TextCharacterPropertiesType openXmlElement, Boolean? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.SmtClean = new BooleanValue { Value = (Boolean)value };
-      else
-        openXmlElement.SmtClean = null;
+    if (value != null)
+      openXmlElement.SmtClean = new BooleanValue { Value = (Boolean)value };
+    else
+      openXmlElement.SmtClean = null;
   }
-
+  
   /// <summary>
-  ///   Gets or sets the  value. It is only available for backwards compatibility
+  /// Gets or sets the  value. It is only available for backwards compatibility
   /// </summary>
-  public static UInt32? GetSmtId(TextCharacterPropertiesType? openXmlElement)
+  private static UInt32? GetSmtId(DocumentFormat.OpenXml.Drawing.TextCharacterPropertiesType openXmlElement)
   {
-    return openXmlElement?.SmtId?.Value;
+    return openXmlElement.SmtId?.Value;
   }
-
-  public static void SetSmtId(TextCharacterPropertiesType? openXmlElement, UInt32? value)
+  
+  private static void SetSmtId(DocumentFormat.OpenXml.Drawing.TextCharacterPropertiesType openXmlElement, UInt32? value)
   {
-    if (openXmlElement != null)
-      openXmlElement.SmtId = value;
+    openXmlElement.SmtId = value;
   }
-
+  
   /// <summary>
-  ///   kumimoji
+  /// kumimoji
   /// </summary>
-  public static Boolean? GetKumimoji(TextCharacterPropertiesType? openXmlElement)
+  private static Boolean? GetKumimoji(DocumentFormat.OpenXml.Drawing.TextCharacterPropertiesType openXmlElement)
   {
     return openXmlElement?.Kumimoji?.Value;
   }
-
-  public static void SetKumimoji(TextCharacterPropertiesType? openXmlElement, Boolean? value)
+  
+  private static void SetKumimoji(DocumentFormat.OpenXml.Drawing.TextCharacterPropertiesType openXmlElement, Boolean? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.Kumimoji = new BooleanValue { Value = (Boolean)value };
-      else
-        openXmlElement.Kumimoji = null;
+    if (value != null)
+      openXmlElement.Kumimoji = new BooleanValue { Value = (Boolean)value };
+    else
+      openXmlElement.Kumimoji = null;
   }
-
+  
   /// <summary>
-  ///   lang
+  /// lang
   /// </summary>
-  public static String? GetLanguage(TextCharacterPropertiesType? openXmlElement)
+  private static String? GetLanguage(DocumentFormat.OpenXml.Drawing.TextCharacterPropertiesType openXmlElement)
   {
     return openXmlElement?.Language?.Value;
   }
-
-  public static void SetLanguage(TextCharacterPropertiesType? openXmlElement, String? value)
+  
+  private static void SetLanguage(DocumentFormat.OpenXml.Drawing.TextCharacterPropertiesType openXmlElement, String? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.Language = new StringValue { Value = value };
-      else
-        openXmlElement.Language = null;
+    if (value != null)
+      openXmlElement.Language = new StringValue { Value = value };
+    else
+      openXmlElement.Language = null;
   }
-
+  
   /// <summary>
-  ///   altLang
+  /// altLang
   /// </summary>
-  public static String? GetAlternativeLanguage(TextCharacterPropertiesType? openXmlElement)
+  private static String? GetAlternativeLanguage(DocumentFormat.OpenXml.Drawing.TextCharacterPropertiesType openXmlElement)
   {
     return openXmlElement?.AlternativeLanguage?.Value;
   }
-
-  public static void SetAlternativeLanguage(TextCharacterPropertiesType? openXmlElement, String? value)
+  
+  private static void SetAlternativeLanguage(DocumentFormat.OpenXml.Drawing.TextCharacterPropertiesType openXmlElement, String? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.AlternativeLanguage = new StringValue { Value = value };
-      else
-        openXmlElement.AlternativeLanguage = null;
+    if (value != null)
+      openXmlElement.AlternativeLanguage = new StringValue { Value = value };
+    else
+      openXmlElement.AlternativeLanguage = null;
   }
-
+  
   /// <summary>
-  ///   sz
+  /// sz
   /// </summary>
-  public static Int32? GetFontSize(TextCharacterPropertiesType? openXmlElement)
+  private static Int32? GetFontSize(DocumentFormat.OpenXml.Drawing.TextCharacterPropertiesType openXmlElement)
   {
-    return openXmlElement?.FontSize?.Value;
+    return openXmlElement.FontSize?.Value;
   }
-
-  public static void SetFontSize(TextCharacterPropertiesType? openXmlElement, Int32? value)
+  
+  private static void SetFontSize(DocumentFormat.OpenXml.Drawing.TextCharacterPropertiesType openXmlElement, Int32? value)
   {
-    if (openXmlElement != null)
-      openXmlElement.FontSize = value;
+    openXmlElement.FontSize = value;
   }
-
+  
   /// <summary>
-  ///   b
+  /// b
   /// </summary>
-  public static Boolean? GetBold(TextCharacterPropertiesType? openXmlElement)
+  private static Boolean? GetBold(DocumentFormat.OpenXml.Drawing.TextCharacterPropertiesType openXmlElement)
   {
     return openXmlElement?.Bold?.Value;
   }
-
-  public static void SetBold(TextCharacterPropertiesType? openXmlElement, Boolean? value)
+  
+  private static void SetBold(DocumentFormat.OpenXml.Drawing.TextCharacterPropertiesType openXmlElement, Boolean? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.Bold = new BooleanValue { Value = (Boolean)value };
-      else
-        openXmlElement.Bold = null;
+    if (value != null)
+      openXmlElement.Bold = new BooleanValue { Value = (Boolean)value };
+    else
+      openXmlElement.Bold = null;
   }
-
+  
   /// <summary>
-  ///   i
+  /// i
   /// </summary>
-  public static Boolean? GetItalic(TextCharacterPropertiesType? openXmlElement)
+  private static Boolean? GetItalic(DocumentFormat.OpenXml.Drawing.TextCharacterPropertiesType openXmlElement)
   {
     return openXmlElement?.Italic?.Value;
   }
-
-  public static void SetItalic(TextCharacterPropertiesType? openXmlElement, Boolean? value)
+  
+  private static void SetItalic(DocumentFormat.OpenXml.Drawing.TextCharacterPropertiesType openXmlElement, Boolean? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.Italic = new BooleanValue { Value = (Boolean)value };
-      else
-        openXmlElement.Italic = null;
+    if (value != null)
+      openXmlElement.Italic = new BooleanValue { Value = (Boolean)value };
+    else
+      openXmlElement.Italic = null;
   }
-
+  
   /// <summary>
-  ///   u
+  /// u
   /// </summary>
-  public static TextUnderlineKind? GetUnderline(TextCharacterPropertiesType? openXmlElement)
+  private static DocumentModel.Drawings.TextUnderlineKind? GetUnderline(DocumentFormat.OpenXml.Drawing.TextCharacterPropertiesType openXmlElement)
   {
-    return EnumValueConverter.GetValue<TextUnderlineValues, TextUnderlineKind>(openXmlElement?.Underline?.Value);
+    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Drawing.TextUnderlineValues, DocumentModel.Drawings.TextUnderlineKind>(openXmlElement?.Underline?.Value);
   }
-
-  public static void SetUnderline(TextCharacterPropertiesType? openXmlElement, TextUnderlineKind? value)
+  
+  private static void SetUnderline(DocumentFormat.OpenXml.Drawing.TextCharacterPropertiesType openXmlElement, DocumentModel.Drawings.TextUnderlineKind? value)
   {
-    if (openXmlElement != null)
-      openXmlElement.Underline = EnumValueConverter.CreateEnumValue<TextUnderlineValues, TextUnderlineKind>(value);
+    openXmlElement.Underline = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Drawing.TextUnderlineValues, DocumentModel.Drawings.TextUnderlineKind>(value);
   }
-
+  
   /// <summary>
-  ///   strike
+  /// strike
   /// </summary>
-  public static TextStrikeKind? GetStrike(TextCharacterPropertiesType? openXmlElement)
+  private static DocumentModel.Drawings.TextStrikeKind? GetStrike(DocumentFormat.OpenXml.Drawing.TextCharacterPropertiesType openXmlElement)
   {
-    return EnumValueConverter.GetValue<TextStrikeValues, TextStrikeKind>(openXmlElement?.Strike?.Value);
+    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Drawing.TextStrikeValues, DocumentModel.Drawings.TextStrikeKind>(openXmlElement?.Strike?.Value);
   }
-
-  public static void SetStrike(TextCharacterPropertiesType? openXmlElement, TextStrikeKind? value)
+  
+  private static void SetStrike(DocumentFormat.OpenXml.Drawing.TextCharacterPropertiesType openXmlElement, DocumentModel.Drawings.TextStrikeKind? value)
   {
-    if (openXmlElement != null)
-      openXmlElement.Strike = EnumValueConverter.CreateEnumValue<TextStrikeValues, TextStrikeKind>(value);
+    openXmlElement.Strike = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Drawing.TextStrikeValues, DocumentModel.Drawings.TextStrikeKind>(value);
   }
-
+  
   /// <summary>
-  ///   kern
+  /// kern
   /// </summary>
-  public static Int32? GetKerning(TextCharacterPropertiesType? openXmlElement)
+  private static Int32? GetKerning(DocumentFormat.OpenXml.Drawing.TextCharacterPropertiesType openXmlElement)
   {
-    return openXmlElement?.Kerning?.Value;
+    return openXmlElement.Kerning?.Value;
   }
-
-  public static void SetKerning(TextCharacterPropertiesType? openXmlElement, Int32? value)
+  
+  private static void SetKerning(DocumentFormat.OpenXml.Drawing.TextCharacterPropertiesType openXmlElement, Int32? value)
   {
-    if (openXmlElement != null)
-      openXmlElement.Kerning = value;
+    openXmlElement.Kerning = value;
   }
-
+  
   /// <summary>
-  ///   cap
+  /// cap
   /// </summary>
-  public static TextCapsKind? GetCapital(TextCharacterPropertiesType? openXmlElement)
+  private static DocumentModel.Drawings.TextCapsKind? GetCapital(DocumentFormat.OpenXml.Drawing.TextCharacterPropertiesType openXmlElement)
   {
-    return EnumValueConverter.GetValue<TextCapsValues, TextCapsKind>(openXmlElement?.Capital?.Value);
+    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Drawing.TextCapsValues, DocumentModel.Drawings.TextCapsKind>(openXmlElement?.Capital?.Value);
   }
-
-  public static void SetCapital(TextCharacterPropertiesType? openXmlElement, TextCapsKind? value)
+  
+  private static void SetCapital(DocumentFormat.OpenXml.Drawing.TextCharacterPropertiesType openXmlElement, DocumentModel.Drawings.TextCapsKind? value)
   {
-    if (openXmlElement != null)
-      openXmlElement.Capital = EnumValueConverter.CreateEnumValue<TextCapsValues, TextCapsKind>(value);
+    openXmlElement.Capital = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Drawing.TextCapsValues, DocumentModel.Drawings.TextCapsKind>(value);
   }
-
+  
   /// <summary>
-  ///   spc
+  /// spc
   /// </summary>
-  public static Int32? GetSpacing(TextCharacterPropertiesType? openXmlElement)
+  private static Int32? GetSpacing(DocumentFormat.OpenXml.Drawing.TextCharacterPropertiesType openXmlElement)
   {
-    return openXmlElement?.Spacing?.Value;
+    return openXmlElement.Spacing?.Value;
   }
-
-  public static void SetSpacing(TextCharacterPropertiesType? openXmlElement, Int32? value)
+  
+  private static void SetSpacing(DocumentFormat.OpenXml.Drawing.TextCharacterPropertiesType openXmlElement, Int32? value)
   {
-    if (openXmlElement != null)
-      openXmlElement.Spacing = value;
+    openXmlElement.Spacing = value;
   }
-
+  
   /// <summary>
-  ///   normalizeH
+  /// normalizeH
   /// </summary>
-  public static Boolean? GetNormalizeHeight(TextCharacterPropertiesType? openXmlElement)
+  private static Boolean? GetNormalizeHeight(DocumentFormat.OpenXml.Drawing.TextCharacterPropertiesType openXmlElement)
   {
     return openXmlElement?.NormalizeHeight?.Value;
   }
-
-  public static void SetNormalizeHeight(TextCharacterPropertiesType? openXmlElement, Boolean? value)
+  
+  private static void SetNormalizeHeight(DocumentFormat.OpenXml.Drawing.TextCharacterPropertiesType openXmlElement, Boolean? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.NormalizeHeight = new BooleanValue { Value = (Boolean)value };
-      else
-        openXmlElement.NormalizeHeight = null;
+    if (value != null)
+      openXmlElement.NormalizeHeight = new BooleanValue { Value = (Boolean)value };
+    else
+      openXmlElement.NormalizeHeight = null;
   }
-
+  
   /// <summary>
-  ///   baseline
+  /// baseline
   /// </summary>
-  public static Int32? GetBaseline(TextCharacterPropertiesType? openXmlElement)
+  private static Int32? GetBaseline(DocumentFormat.OpenXml.Drawing.TextCharacterPropertiesType openXmlElement)
   {
-    return openXmlElement?.Baseline?.Value;
+    return openXmlElement.Baseline?.Value;
   }
-
-  public static void SetBaseline(TextCharacterPropertiesType? openXmlElement, Int32? value)
+  
+  private static void SetBaseline(DocumentFormat.OpenXml.Drawing.TextCharacterPropertiesType openXmlElement, Int32? value)
   {
-    if (openXmlElement != null)
-      openXmlElement.Baseline = value;
+    openXmlElement.Baseline = value;
   }
-
+  
   /// <summary>
-  ///   noProof
+  /// noProof
   /// </summary>
-  public static Boolean? GetNoProof(TextCharacterPropertiesType? openXmlElement)
+  private static Boolean? GetNoProof(DocumentFormat.OpenXml.Drawing.TextCharacterPropertiesType openXmlElement)
   {
     return openXmlElement?.NoProof?.Value;
   }
-
-  public static void SetNoProof(TextCharacterPropertiesType? openXmlElement, Boolean? value)
+  
+  private static void SetNoProof(DocumentFormat.OpenXml.Drawing.TextCharacterPropertiesType openXmlElement, Boolean? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.NoProof = new BooleanValue { Value = (Boolean)value };
-      else
-        openXmlElement.NoProof = null;
+    if (value != null)
+      openXmlElement.NoProof = new BooleanValue { Value = (Boolean)value };
+    else
+      openXmlElement.NoProof = null;
   }
-
+  
   /// <summary>
-  ///   dirty
+  /// dirty
   /// </summary>
-  public static Boolean? GetDirty(TextCharacterPropertiesType? openXmlElement)
+  private static Boolean? GetDirty(DocumentFormat.OpenXml.Drawing.TextCharacterPropertiesType openXmlElement)
   {
     return openXmlElement?.Dirty?.Value;
   }
-
-  public static void SetDirty(TextCharacterPropertiesType? openXmlElement, Boolean? value)
+  
+  private static void SetDirty(DocumentFormat.OpenXml.Drawing.TextCharacterPropertiesType openXmlElement, Boolean? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.Dirty = new BooleanValue { Value = (Boolean)value };
-      else
-        openXmlElement.Dirty = null;
+    if (value != null)
+      openXmlElement.Dirty = new BooleanValue { Value = (Boolean)value };
+    else
+      openXmlElement.Dirty = null;
   }
-
+  
   /// <summary>
-  ///   err
+  /// err
   /// </summary>
-  public static Boolean? GetSpellingError(TextCharacterPropertiesType? openXmlElement)
+  private static Boolean? GetSpellingError(DocumentFormat.OpenXml.Drawing.TextCharacterPropertiesType openXmlElement)
   {
     return openXmlElement?.SpellingError?.Value;
   }
-
-  public static void SetSpellingError(TextCharacterPropertiesType? openXmlElement, Boolean? value)
+  
+  private static void SetSpellingError(DocumentFormat.OpenXml.Drawing.TextCharacterPropertiesType openXmlElement, Boolean? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.SpellingError = new BooleanValue { Value = (Boolean)value };
-      else
-        openXmlElement.SpellingError = null;
+    if (value != null)
+      openXmlElement.SpellingError = new BooleanValue { Value = (Boolean)value };
+    else
+      openXmlElement.SpellingError = null;
   }
-
+  
   /// <summary>
-  ///   smtClean
+  /// smtClean
   /// </summary>
-  public static Boolean? GetSmartTagClean(TextCharacterPropertiesType? openXmlElement)
+  private static Boolean? GetSmartTagClean(DocumentFormat.OpenXml.Drawing.TextCharacterPropertiesType openXmlElement)
   {
     return openXmlElement?.SmartTagClean?.Value;
   }
-
-  public static void SetSmartTagClean(TextCharacterPropertiesType? openXmlElement, Boolean? value)
+  
+  private static void SetSmartTagClean(DocumentFormat.OpenXml.Drawing.TextCharacterPropertiesType openXmlElement, Boolean? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.SmartTagClean = new BooleanValue { Value = (Boolean)value };
-      else
-        openXmlElement.SmartTagClean = null;
+    if (value != null)
+      openXmlElement.SmartTagClean = new BooleanValue { Value = (Boolean)value };
+    else
+      openXmlElement.SmartTagClean = null;
   }
-
+  
   /// <summary>
-  ///   smtId
+  /// smtId
   /// </summary>
-  public static UInt32? GetSmartTagId(TextCharacterPropertiesType? openXmlElement)
+  private static UInt32? GetSmartTagId(DocumentFormat.OpenXml.Drawing.TextCharacterPropertiesType openXmlElement)
   {
-    return openXmlElement?.SmartTagId?.Value;
+    return openXmlElement.SmartTagId?.Value;
   }
-
-  public static void SetSmartTagId(TextCharacterPropertiesType? openXmlElement, UInt32? value)
+  
+  private static void SetSmartTagId(DocumentFormat.OpenXml.Drawing.TextCharacterPropertiesType openXmlElement, UInt32? value)
   {
-    if (openXmlElement != null)
-      openXmlElement.SmartTagId = value;
+    openXmlElement.SmartTagId = value;
   }
-
+  
   /// <summary>
-  ///   bmk
+  /// bmk
   /// </summary>
-  public static String? GetBookmark(TextCharacterPropertiesType? openXmlElement)
+  private static String? GetBookmark(DocumentFormat.OpenXml.Drawing.TextCharacterPropertiesType openXmlElement)
   {
     return openXmlElement?.Bookmark?.Value;
   }
-
-  public static void SetBookmark(TextCharacterPropertiesType? openXmlElement, String? value)
+  
+  private static void SetBookmark(DocumentFormat.OpenXml.Drawing.TextCharacterPropertiesType openXmlElement, String? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.Bookmark = new StringValue { Value = value };
-      else
-        openXmlElement.Bookmark = null;
+    if (value != null)
+      openXmlElement.Bookmark = new StringValue { Value = value };
+    else
+      openXmlElement.Bookmark = null;
   }
-
+  
   /// <summary>
-  ///   Outline.
+  /// Outline.
   /// </summary>
-  public static Outline? GetOutline(TextCharacterPropertiesType? openXmlElement)
+  private static DocumentModel.Drawings.Outline? GetOutline(DocumentFormat.OpenXml.Drawing.TextCharacterPropertiesType openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.Outline>();
     if (itemElement != null)
-      return OutlineConverter.CreateModelElement(itemElement);
+      return DocumentModel.OpenXml.Drawings.OutlineConverter.CreateModelElement(itemElement);
     return null;
   }
-
-  public static void SetOutline(TextCharacterPropertiesType? openXmlElement, Outline? value)
+  
+  private static void SetOutline(DocumentFormat.OpenXml.Drawing.TextCharacterPropertiesType openXmlElement, DocumentModel.Drawings.Outline? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Outline>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Outline>();
+      itemElement = DocumentModel.OpenXml.Drawings.OutlineConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Outline>(value);
       if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = OutlineConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Outline>(value);
-        if (itemElement != null)
-          openXmlElement.AddChild(itemElement);
-      }
+        openXmlElement.AddChild(itemElement);
     }
   }
-
-  public static DocumentModel.Drawings.TextCharacterPropertiesType? CreateModelElement(TextCharacterPropertiesType? openXmlElement)
+  
+  public static DocumentModel.Drawings.TextCharacterPropertiesType? CreateModelElement(DocumentFormat.OpenXml.Drawing.TextCharacterPropertiesType? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -398,9 +369,9 @@ public static class TextCharacterPropertiesTypeConverter
     }
     return null;
   }
-
+  
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.TextCharacterPropertiesType? value)
-    where OpenXmlElementType : TextCharacterPropertiesType, new()
+    where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.TextCharacterPropertiesType, new()
   {
     if (value != null)
     {

@@ -1,46 +1,40 @@
-using DocumentFormat.OpenXml.Vml;
-using DocumentModel.Vml;
-using ShapeIdMap = DocumentFormat.OpenXml.Vml.Office.ShapeIdMap;
-
 namespace DocumentModel.OpenXml.Vml;
 
 /// <summary>
-///   Shape ID Map.
+/// Shape ID Map.
 /// </summary>
 public static class ShapeIdMapConverter
 {
   /// <summary>
-  ///   VML Extension Handling Behavior
+  /// VML Extension Handling Behavior
   /// </summary>
-  public static ExtensionHandlingBehaviorKind? GetExtension(ShapeIdMap? openXmlElement)
+  private static DocumentModel.Vml.ExtensionHandlingBehaviorKind? GetExtension(DocumentFormat.OpenXml.Vml.Office.ShapeIdMap openXmlElement)
   {
-    return EnumValueConverter.GetValue<ExtensionHandlingBehaviorValues, ExtensionHandlingBehaviorKind>(openXmlElement?.Extension?.Value);
+    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Vml.ExtensionHandlingBehaviorValues, DocumentModel.Vml.ExtensionHandlingBehaviorKind>(openXmlElement?.Extension?.Value);
   }
-
-  public static void SetExtension(ShapeIdMap? openXmlElement, ExtensionHandlingBehaviorKind? value)
+  
+  private static void SetExtension(DocumentFormat.OpenXml.Vml.Office.ShapeIdMap openXmlElement, DocumentModel.Vml.ExtensionHandlingBehaviorKind? value)
   {
-    if (openXmlElement != null)
-      openXmlElement.Extension = EnumValueConverter.CreateEnumValue<ExtensionHandlingBehaviorValues, ExtensionHandlingBehaviorKind>(value);
+    openXmlElement.Extension = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Vml.ExtensionHandlingBehaviorValues, DocumentModel.Vml.ExtensionHandlingBehaviorKind>(value);
   }
-
+  
   /// <summary>
-  ///   Shape IDs
+  /// Shape IDs
   /// </summary>
-  public static String? GetData(ShapeIdMap? openXmlElement)
+  private static String? GetData(DocumentFormat.OpenXml.Vml.Office.ShapeIdMap openXmlElement)
   {
     return openXmlElement?.Data?.Value;
   }
-
-  public static void SetData(ShapeIdMap? openXmlElement, String? value)
+  
+  private static void SetData(DocumentFormat.OpenXml.Vml.Office.ShapeIdMap openXmlElement, String? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.Data = new StringValue { Value = value };
-      else
-        openXmlElement.Data = null;
+    if (value != null)
+      openXmlElement.Data = new StringValue { Value = value };
+    else
+      openXmlElement.Data = null;
   }
-
-  public static DocumentModel.Vml.ShapeIdMap? CreateModelElement(ShapeIdMap? openXmlElement)
+  
+  public static DocumentModel.Vml.ShapeIdMap? CreateModelElement(DocumentFormat.OpenXml.Vml.Office.ShapeIdMap? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -51,9 +45,9 @@ public static class ShapeIdMapConverter
     }
     return null;
   }
-
+  
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Vml.ShapeIdMap? value)
-    where OpenXmlElementType : ShapeIdMap, new()
+    where OpenXmlElementType: DocumentFormat.OpenXml.Vml.Office.ShapeIdMap, new()
   {
     if (value != null)
     {

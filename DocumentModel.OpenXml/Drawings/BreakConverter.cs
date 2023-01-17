@@ -1,41 +1,35 @@
-using DocumentModel.Drawings;
-using Break = DocumentFormat.OpenXml.Drawing.Break;
-
 namespace DocumentModel.OpenXml.Drawings;
 
 /// <summary>
-///   Text Line Break.
+/// Text Line Break.
 /// </summary>
 public static class BreakConverter
 {
   /// <summary>
-  ///   Text Run Properties.
+  /// Text Run Properties.
   /// </summary>
-  public static RunProperties? GetRunProperties(Break? openXmlElement)
+  private static DocumentModel.Drawings.RunProperties? GetRunProperties(DocumentFormat.OpenXml.Drawing.Break openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.RunProperties>();
     if (itemElement != null)
-      return RunPropertiesConverter.CreateModelElement(itemElement);
+      return DocumentModel.OpenXml.Drawings.RunPropertiesConverter.CreateModelElement(itemElement);
     return null;
   }
-
-  public static void SetRunProperties(Break? openXmlElement, RunProperties? value)
+  
+  private static void SetRunProperties(DocumentFormat.OpenXml.Drawing.Break openXmlElement, DocumentModel.Drawings.RunProperties? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.RunProperties>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.RunProperties>();
+      itemElement = DocumentModel.OpenXml.Drawings.RunPropertiesConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.RunProperties>(value);
       if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = RunPropertiesConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.RunProperties>(value);
-        if (itemElement != null)
-          openXmlElement.AddChild(itemElement);
-      }
+        openXmlElement.AddChild(itemElement);
     }
   }
-
-  public static DocumentModel.Drawings.Break? CreateModelElement(Break? openXmlElement)
+  
+  public static DocumentModel.Drawings.Break? CreateModelElement(DocumentFormat.OpenXml.Drawing.Break? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -45,9 +39,9 @@ public static class BreakConverter
     }
     return null;
   }
-
+  
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.Break? value)
-    where OpenXmlElementType : Break, new()
+    where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.Break, new()
   {
     if (value != null)
     {

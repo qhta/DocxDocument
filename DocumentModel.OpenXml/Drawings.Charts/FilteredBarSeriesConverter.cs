@@ -1,42 +1,35 @@
-using DocumentModel.Drawings.Charts;
-using BarChartSeries = DocumentFormat.OpenXml.Office2013.Drawing.Chart.BarChartSeries;
-using FilteredBarSeries = DocumentFormat.OpenXml.Office2013.Drawing.Chart.FilteredBarSeries;
-
 namespace DocumentModel.OpenXml.Drawings.Charts;
 
 /// <summary>
-///   Defines the FilteredBarSeries Class.
+/// Defines the FilteredBarSeries Class.
 /// </summary>
 public static class FilteredBarSeriesConverter
 {
   /// <summary>
-  ///   BarChartSeries.
+  /// BarChartSeries.
   /// </summary>
-  public static BarChartSeries3? GetBarChartSeries(FilteredBarSeries? openXmlElement)
+  private static DocumentModel.Drawings.Charts.BarChartSeries3? GetBarChartSeries(DocumentFormat.OpenXml.Office2013.Drawing.Chart.FilteredBarSeries openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<BarChartSeries>();
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office2013.Drawing.Chart.BarChartSeries>();
     if (itemElement != null)
-      return BarChartSeries3Converter.CreateModelElement(itemElement);
+      return DocumentModel.OpenXml.Drawings.Charts.BarChartSeries3Converter.CreateModelElement(itemElement);
     return null;
   }
-
-  public static void SetBarChartSeries(FilteredBarSeries? openXmlElement, BarChartSeries3? value)
+  
+  private static void SetBarChartSeries(DocumentFormat.OpenXml.Office2013.Drawing.Chart.FilteredBarSeries openXmlElement, DocumentModel.Drawings.Charts.BarChartSeries3? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2013.Drawing.Chart.BarChartSeries>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<BarChartSeries>();
+      itemElement = DocumentModel.OpenXml.Drawings.Charts.BarChartSeries3Converter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2013.Drawing.Chart.BarChartSeries>(value);
       if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = BarChartSeries3Converter.CreateOpenXmlElement<BarChartSeries>(value);
-        if (itemElement != null)
-          openXmlElement.AddChild(itemElement);
-      }
+        openXmlElement.AddChild(itemElement);
     }
   }
-
-  public static DocumentModel.Drawings.Charts.FilteredBarSeries? CreateModelElement(FilteredBarSeries? openXmlElement)
+  
+  public static DocumentModel.Drawings.Charts.FilteredBarSeries? CreateModelElement(DocumentFormat.OpenXml.Office2013.Drawing.Chart.FilteredBarSeries? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -46,9 +39,9 @@ public static class FilteredBarSeriesConverter
     }
     return null;
   }
-
+  
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.Charts.FilteredBarSeries? value)
-    where OpenXmlElementType : FilteredBarSeries, new()
+    where OpenXmlElementType: DocumentFormat.OpenXml.Office2013.Drawing.Chart.FilteredBarSeries, new()
   {
     if (value != null)
     {

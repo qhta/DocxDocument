@@ -1,64 +1,53 @@
-using DocumentFormat.OpenXml.Drawing;
-using EmbeddedWavAudioFileType = DocumentModel.Drawings.EmbeddedWavAudioFileType;
-using HyperlinkExtensionList = DocumentModel.Drawings.HyperlinkExtensionList;
-using HyperlinkOnMouseOver = DocumentFormat.OpenXml.Drawing.HyperlinkOnMouseOver;
-
 namespace DocumentModel.OpenXml.Drawings;
 
 /// <summary>
-///   Defines the HyperlinkOnMouseOver Class.
+/// Defines the HyperlinkOnMouseOver Class.
 /// </summary>
 public static class HyperlinkOnMouseOverConverter
 {
-  public static EmbeddedWavAudioFileType? GetHyperlinkSound(HyperlinkOnMouseOver? openXmlElement)
+  private static DocumentModel.Drawings.EmbeddedWavAudioFileType? GetHyperlinkSound(DocumentFormat.OpenXml.Drawing.HyperlinkOnMouseOver openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<HyperlinkSound>();
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.HyperlinkSound>();
     if (itemElement != null)
-      return EmbeddedWavAudioFileTypeConverter.CreateModelElement(itemElement);
+      return DocumentModel.OpenXml.Drawings.EmbeddedWavAudioFileTypeConverter.CreateModelElement(itemElement);
     return null;
   }
-
-  public static void SetHyperlinkSound(HyperlinkOnMouseOver? openXmlElement, EmbeddedWavAudioFileType? value)
+  
+  private static void SetHyperlinkSound(DocumentFormat.OpenXml.Drawing.HyperlinkOnMouseOver openXmlElement, DocumentModel.Drawings.EmbeddedWavAudioFileType? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.HyperlinkSound>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<HyperlinkSound>();
+      itemElement = DocumentModel.OpenXml.Drawings.EmbeddedWavAudioFileTypeConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.HyperlinkSound>(value);
       if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = EmbeddedWavAudioFileTypeConverter.CreateOpenXmlElement<HyperlinkSound>(value);
-        if (itemElement != null)
-          openXmlElement.AddChild(itemElement);
-      }
+        openXmlElement.AddChild(itemElement);
     }
   }
-
-  public static HyperlinkExtensionList? GetHyperlinkExtensionList(HyperlinkOnMouseOver? openXmlElement)
+  
+  private static DocumentModel.Drawings.HyperlinkExtensionList? GetHyperlinkExtensionList(DocumentFormat.OpenXml.Drawing.HyperlinkOnMouseOver openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.HyperlinkExtensionList>();
     if (itemElement != null)
-      return HyperlinkExtensionListConverter.CreateModelElement(itemElement);
+      return DocumentModel.OpenXml.Drawings.HyperlinkExtensionListConverter.CreateModelElement(itemElement);
     return null;
   }
-
-  public static void SetHyperlinkExtensionList(HyperlinkOnMouseOver? openXmlElement, HyperlinkExtensionList? value)
+  
+  private static void SetHyperlinkExtensionList(DocumentFormat.OpenXml.Drawing.HyperlinkOnMouseOver openXmlElement, DocumentModel.Drawings.HyperlinkExtensionList? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.HyperlinkExtensionList>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.HyperlinkExtensionList>();
+      itemElement = DocumentModel.OpenXml.Drawings.HyperlinkExtensionListConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.HyperlinkExtensionList>(value);
       if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = HyperlinkExtensionListConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.HyperlinkExtensionList>(value);
-        if (itemElement != null)
-          openXmlElement.AddChild(itemElement);
-      }
+        openXmlElement.AddChild(itemElement);
     }
   }
-
-  public static DocumentModel.Drawings.HyperlinkOnMouseOver? CreateModelElement(HyperlinkOnMouseOver? openXmlElement)
+  
+  public static DocumentModel.Drawings.HyperlinkOnMouseOver? CreateModelElement(DocumentFormat.OpenXml.Drawing.HyperlinkOnMouseOver? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -69,9 +58,9 @@ public static class HyperlinkOnMouseOverConverter
     }
     return null;
   }
-
+  
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.HyperlinkOnMouseOver? value)
-    where OpenXmlElementType : HyperlinkOnMouseOver, new()
+    where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.HyperlinkOnMouseOver, new()
   {
     if (value != null)
     {

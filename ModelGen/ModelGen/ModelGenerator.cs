@@ -158,7 +158,7 @@ public class ModelGenerator : BaseCodeGenerator
 
   private bool GenerateProperty(PropInfo prop, string? inNamespace, TypeKind kind)
   {
-    var targetPropType = prop.PropertyType.GetConversionTarget(true);
+    var targetPropType = prop.PropertyType.GetConversionTarget();
     FullTypeName targetPropTypeName = prop.PropertyType.GetConvertedName(TypeKind.Type);
     TrimNamespace(targetPropTypeName);
     var propTypeName = targetPropTypeName.ToString();

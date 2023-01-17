@@ -1,45 +1,37 @@
-using DocumentModel.Drawings.Diagrams;
-using DiagramDefinitionExtensionList = DocumentFormat.OpenXml.Drawing.Diagrams.DiagramDefinitionExtensionList;
-
 namespace DocumentModel.OpenXml.Drawings.Diagrams;
 
 /// <summary>
-///   List of extensions to the CT_DiagramDefintions type..
+/// List of extensions to the CT_DiagramDefintions type..
 /// </summary>
 public static class DiagramDefinitionExtensionListConverter
 {
-  public static Collection<DiagramDefinitionExtension>? GetDiagramDefinitionExtensions(DiagramDefinitionExtensionList? openXmlElement)
+  private static System.Collections.ObjectModel.Collection<DocumentModel.Drawings.Diagrams.DiagramDefinitionExtension> GetDiagramDefinitionExtensions(DocumentFormat.OpenXml.Drawing.Diagrams.DiagramDefinitionExtensionList openXmlElement)
   {
-    if (openXmlElement != null)
+    var collection = new System.Collections.ObjectModel.Collection<DocumentModel.Drawings.Diagrams.DiagramDefinitionExtension>();
+    foreach (var item in openXmlElement.Elements<DocumentFormat.OpenXml.Drawing.Diagrams.DiagramDefinitionExtension>())
     {
-      var collection = new Collection<DiagramDefinitionExtension>();
-      foreach (var item in openXmlElement.Elements<DocumentFormat.OpenXml.Drawing.Diagrams.DiagramDefinitionExtension>())
+      var newItem = DocumentModel.OpenXml.Drawings.Diagrams.DiagramDefinitionExtensionConverter.CreateModelElement(item);
+      if (newItem != null)
+        collection.Add(newItem);
+    }
+    return collection;
+  }
+  
+  private static void SetDiagramDefinitionExtensions(DocumentFormat.OpenXml.Drawing.Diagrams.DiagramDefinitionExtensionList openXmlElement, System.Collections.ObjectModel.Collection<DocumentModel.Drawings.Diagrams.DiagramDefinitionExtension>? value)
+  {
+    openXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Drawing.Diagrams.DiagramDefinitionExtension>();
+    if (value != null)
+    {
+      foreach (var item in value)
       {
-        var newItem = DiagramDefinitionExtensionConverter.CreateModelElement(item);
+        var newItem = DocumentModel.OpenXml.Drawings.Diagrams.DiagramDefinitionExtensionConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Diagrams.DiagramDefinitionExtension>(item);
         if (newItem != null)
-          collection.Add(newItem);
+          openXmlElement.AddChild(newItem);
       }
-      return collection;
-    }
-    return null;
-  }
-
-  public static void SetDiagramDefinitionExtensions(DiagramDefinitionExtensionList? openXmlElement, Collection<DiagramDefinitionExtension>? value)
-  {
-    if (openXmlElement != null)
-    {
-      openXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Drawing.Diagrams.DiagramDefinitionExtension>();
-      if (value != null)
-        foreach (var item in value)
-        {
-          var newItem = DiagramDefinitionExtensionConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Diagrams.DiagramDefinitionExtension>(item);
-          if (newItem != null)
-            openXmlElement.AddChild(newItem);
-        }
     }
   }
-
-  public static DocumentModel.Drawings.Diagrams.DiagramDefinitionExtensionList? CreateModelElement(DiagramDefinitionExtensionList? openXmlElement)
+  
+  public static DocumentModel.Drawings.Diagrams.DiagramDefinitionExtensionList? CreateModelElement(DocumentFormat.OpenXml.Drawing.Diagrams.DiagramDefinitionExtensionList? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -49,9 +41,9 @@ public static class DiagramDefinitionExtensionListConverter
     }
     return null;
   }
-
+  
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.Diagrams.DiagramDefinitionExtensionList? value)
-    where OpenXmlElementType : DiagramDefinitionExtensionList, new()
+    where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.Diagrams.DiagramDefinitionExtensionList, new()
   {
     if (value != null)
     {

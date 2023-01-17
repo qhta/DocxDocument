@@ -1,43 +1,37 @@
-using DocumentFormat.OpenXml.Wordprocessing;
-using DocumentModel.Wordprocessing;
-using TableRowHeight = DocumentFormat.OpenXml.Wordprocessing.TableRowHeight;
-
 namespace DocumentModel.OpenXml.Wordprocessing;
 
 /// <summary>
-///   Defines the TableRowHeight Class.
+/// Defines the TableRowHeight Class.
 /// </summary>
 public static class TableRowHeightConverter
 {
   /// <summary>
-  ///   Table Row Height
+  /// Table Row Height
   /// </summary>
-  public static UInt32? GetVal(TableRowHeight? openXmlElement)
+  private static UInt32? GetVal(DocumentFormat.OpenXml.Wordprocessing.TableRowHeight openXmlElement)
   {
-    return openXmlElement?.Val?.Value;
+    return openXmlElement.Val?.Value;
   }
-
-  public static void SetVal(TableRowHeight? openXmlElement, UInt32? value)
+  
+  private static void SetVal(DocumentFormat.OpenXml.Wordprocessing.TableRowHeight openXmlElement, UInt32? value)
   {
-    if (openXmlElement != null)
-      openXmlElement.Val = value;
+    openXmlElement.Val = value;
   }
-
+  
   /// <summary>
-  ///   Table Row Height Type
+  /// Table Row Height Type
   /// </summary>
-  public static HeightRuleKind? GetHeightType(TableRowHeight? openXmlElement)
+  private static DocumentModel.Wordprocessing.HeightRuleKind? GetHeightType(DocumentFormat.OpenXml.Wordprocessing.TableRowHeight openXmlElement)
   {
-    return EnumValueConverter.GetValue<HeightRuleValues, HeightRuleKind>(openXmlElement?.HeightType?.Value);
+    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Wordprocessing.HeightRuleValues, DocumentModel.Wordprocessing.HeightRuleKind>(openXmlElement?.HeightType?.Value);
   }
-
-  public static void SetHeightType(TableRowHeight? openXmlElement, HeightRuleKind? value)
+  
+  private static void SetHeightType(DocumentFormat.OpenXml.Wordprocessing.TableRowHeight openXmlElement, DocumentModel.Wordprocessing.HeightRuleKind? value)
   {
-    if (openXmlElement != null)
-      openXmlElement.HeightType = EnumValueConverter.CreateEnumValue<HeightRuleValues, HeightRuleKind>(value);
+    openXmlElement.HeightType = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Wordprocessing.HeightRuleValues, DocumentModel.Wordprocessing.HeightRuleKind>(value);
   }
-
-  public static DocumentModel.Wordprocessing.TableRowHeight? CreateModelElement(TableRowHeight? openXmlElement)
+  
+  public static DocumentModel.Wordprocessing.TableRowHeight? CreateModelElement(DocumentFormat.OpenXml.Wordprocessing.TableRowHeight? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -48,9 +42,9 @@ public static class TableRowHeightConverter
     }
     return null;
   }
-
+  
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.TableRowHeight? value)
-    where OpenXmlElementType : TableRowHeight, new()
+    where OpenXmlElementType: DocumentFormat.OpenXml.Wordprocessing.TableRowHeight, new()
   {
     if (value != null)
     {

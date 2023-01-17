@@ -1,134 +1,113 @@
-using DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing;
-using OpenXmlFormulaElement = DocumentModel.Drawings.ChartDrawings.OpenXmlFormulaElement;
-using StringDimension = DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.StringDimension;
-using StringDimensionType = DocumentModel.Drawings.ChartDrawings.StringDimensionType;
-using StringLevel = DocumentModel.Drawings.ChartDrawings.StringLevel;
-
 namespace DocumentModel.OpenXml.Drawings.ChartDrawings;
 
 /// <summary>
-///   Defines the StringDimension Class.
+/// Defines the StringDimension Class.
 /// </summary>
 public static class StringDimensionConverter
 {
   /// <summary>
-  ///   type, this property is only available in Office 2016 and later.
+  /// type, this property is only available in Office 2016 and later.
   /// </summary>
-  public static StringDimensionType? GetType(StringDimension? openXmlElement)
+  private static DocumentModel.Drawings.ChartDrawings.StringDimensionType? GetType(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.StringDimension openXmlElement)
   {
-    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.StringDimensionType, StringDimensionType>(openXmlElement?.Type?.Value);
+    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.StringDimensionType, DocumentModel.Drawings.ChartDrawings.StringDimensionType>(openXmlElement?.Type?.Value);
   }
-
-  public static void SetType(StringDimension? openXmlElement, StringDimensionType? value)
+  
+  private static void SetType(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.StringDimension openXmlElement, DocumentModel.Drawings.ChartDrawings.StringDimensionType? value)
   {
-    if (openXmlElement != null)
-      openXmlElement.Type = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.StringDimensionType, StringDimensionType>(value);
+    openXmlElement.Type = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.StringDimensionType, DocumentModel.Drawings.ChartDrawings.StringDimensionType>(value);
   }
-
-  public static OpenXmlFormulaElement? GetFormula(StringDimension? openXmlElement)
+  
+  private static DocumentModel.Drawings.ChartDrawings.OpenXmlFormulaElement? GetFormula(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.StringDimension openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<Formula>();
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.Formula>();
     if (itemElement != null)
-      return OpenXmlFormulaElementConverter.CreateModelElement(itemElement);
+      return DocumentModel.OpenXml.Drawings.ChartDrawings.OpenXmlFormulaElementConverter.CreateModelElement(itemElement);
     return null;
   }
-
-  public static void SetFormula(StringDimension? openXmlElement, OpenXmlFormulaElement? value)
+  
+  private static void SetFormula(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.StringDimension openXmlElement, DocumentModel.Drawings.ChartDrawings.OpenXmlFormulaElement? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.Formula>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<Formula>();
+      itemElement = DocumentModel.OpenXml.Drawings.ChartDrawings.OpenXmlFormulaElementConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.Formula>(value);
       if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = OpenXmlFormulaElementConverter.CreateOpenXmlElement<Formula>(value);
-        if (itemElement != null)
-          openXmlElement.AddChild(itemElement);
-      }
+        openXmlElement.AddChild(itemElement);
     }
   }
-
-  public static OpenXmlFormulaElement? GetNfFormula(StringDimension? openXmlElement)
+  
+  private static DocumentModel.Drawings.ChartDrawings.OpenXmlFormulaElement? GetNfFormula(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.StringDimension openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<NfFormula>();
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.NfFormula>();
     if (itemElement != null)
-      return OpenXmlFormulaElementConverter.CreateModelElement(itemElement);
+      return DocumentModel.OpenXml.Drawings.ChartDrawings.OpenXmlFormulaElementConverter.CreateModelElement(itemElement);
     return null;
   }
-
-  public static void SetNfFormula(StringDimension? openXmlElement, OpenXmlFormulaElement? value)
+  
+  private static void SetNfFormula(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.StringDimension openXmlElement, DocumentModel.Drawings.ChartDrawings.OpenXmlFormulaElement? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.NfFormula>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<NfFormula>();
+      itemElement = DocumentModel.OpenXml.Drawings.ChartDrawings.OpenXmlFormulaElementConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.NfFormula>(value);
       if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = OpenXmlFormulaElementConverter.CreateOpenXmlElement<NfFormula>(value);
-        if (itemElement != null)
-          openXmlElement.AddChild(itemElement);
-      }
+        openXmlElement.AddChild(itemElement);
     }
   }
-
-  public static Collection<StringLevel>? GetStringLevels(StringDimension? openXmlElement)
+  
+  private static System.Collections.ObjectModel.Collection<DocumentModel.Drawings.ChartDrawings.StringLevel> GetStringLevels(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.StringDimension openXmlElement)
   {
-    if (openXmlElement != null)
+    var collection = new System.Collections.ObjectModel.Collection<DocumentModel.Drawings.ChartDrawings.StringLevel>();
+    foreach (var item in openXmlElement.Elements<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.StringLevel>())
     {
-      var collection = new Collection<StringLevel>();
-      foreach (var item in openXmlElement.Elements<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.StringLevel>())
+      var newItem = DocumentModel.OpenXml.Drawings.ChartDrawings.StringLevelConverter.CreateModelElement(item);
+      if (newItem != null)
+        collection.Add(newItem);
+    }
+    return collection;
+  }
+  
+  private static void SetStringLevels(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.StringDimension openXmlElement, System.Collections.ObjectModel.Collection<DocumentModel.Drawings.ChartDrawings.StringLevel>? value)
+  {
+    openXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.StringLevel>();
+    if (value != null)
+    {
+      foreach (var item in value)
       {
-        var newItem = StringLevelConverter.CreateModelElement(item);
+        var newItem = DocumentModel.OpenXml.Drawings.ChartDrawings.StringLevelConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.StringLevel>(item);
         if (newItem != null)
-          collection.Add(newItem);
+          openXmlElement.AddChild(newItem);
       }
-      return collection;
-    }
-    return null;
-  }
-
-  public static void SetStringLevels(StringDimension? openXmlElement, Collection<StringLevel>? value)
-  {
-    if (openXmlElement != null)
-    {
-      openXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.StringLevel>();
-      if (value != null)
-        foreach (var item in value)
-        {
-          var newItem = StringLevelConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.StringLevel>(item);
-          if (newItem != null)
-            openXmlElement.AddChild(newItem);
-        }
     }
   }
-
-  public static StringLevel? GetStringLevel(StringDimension? openXmlElement)
+  
+  private static DocumentModel.Drawings.ChartDrawings.StringLevel? GetStringLevel(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.StringDimension openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.StringLevel>();
     if (itemElement != null)
-      return StringLevelConverter.CreateModelElement(itemElement);
+      return DocumentModel.OpenXml.Drawings.ChartDrawings.StringLevelConverter.CreateModelElement(itemElement);
     return null;
   }
-
-  public static void SetStringLevel(StringDimension? openXmlElement, StringLevel? value)
+  
+  private static void SetStringLevel(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.StringDimension openXmlElement, DocumentModel.Drawings.ChartDrawings.StringLevel? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.StringLevel>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.StringLevel>();
+      itemElement = DocumentModel.OpenXml.Drawings.ChartDrawings.StringLevelConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.StringLevel>(value);
       if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = StringLevelConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.StringLevel>(value);
-        if (itemElement != null)
-          openXmlElement.AddChild(itemElement);
-      }
+        openXmlElement.AddChild(itemElement);
     }
   }
-
-  public static DocumentModel.Drawings.ChartDrawings.StringDimension? CreateModelElement(StringDimension? openXmlElement)
+  
+  public static DocumentModel.Drawings.ChartDrawings.StringDimension? CreateModelElement(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.StringDimension? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -142,9 +121,9 @@ public static class StringDimensionConverter
     }
     return null;
   }
-
+  
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.ChartDrawings.StringDimension? value)
-    where OpenXmlElementType : StringDimension, new()
+    where OpenXmlElementType: DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.StringDimension, new()
   {
     if (value != null)
     {

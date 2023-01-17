@@ -1,149 +1,139 @@
-using DocumentFormat.OpenXml.Office.CustomUI;
-
 namespace DocumentModel.OpenXml.UI;
 
 /// <summary>
-///   Defines the VerticalSeparator Class.
+/// Defines the VerticalSeparator Class.
 /// </summary>
 public static class VerticalSeparatorConverter
 {
   /// <summary>
-  ///   id
+  /// id
   /// </summary>
-  public static String? GetId(VerticalSeparator? openXmlElement)
+  private static String? GetId(DocumentFormat.OpenXml.Office.CustomUI.VerticalSeparator openXmlElement)
   {
     return openXmlElement?.Id?.Value;
   }
-
-  public static void SetId(VerticalSeparator? openXmlElement, String? value)
+  
+  private static void SetId(DocumentFormat.OpenXml.Office.CustomUI.VerticalSeparator openXmlElement, String? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.Id = new StringValue { Value = value };
-      else
-        openXmlElement.Id = null;
+    if (value != null)
+      openXmlElement.Id = new StringValue { Value = value };
+    else
+      openXmlElement.Id = null;
   }
-
+  
   /// <summary>
-  ///   idQ
+  /// idQ
   /// </summary>
-  public static String? GetIdQ(VerticalSeparator? openXmlElement)
+  private static String? GetIdQ(DocumentFormat.OpenXml.Office.CustomUI.VerticalSeparator openXmlElement)
   {
     return openXmlElement?.IdQ?.Value;
   }
-
-  public static void SetIdQ(VerticalSeparator? openXmlElement, String? value)
+  
+  private static void SetIdQ(DocumentFormat.OpenXml.Office.CustomUI.VerticalSeparator openXmlElement, String? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.IdQ = new StringValue { Value = value };
-      else
-        openXmlElement.IdQ = null;
+    if (value != null)
+      openXmlElement.IdQ = new StringValue { Value = value };
+    else
+      openXmlElement.IdQ = null;
   }
-
+  
   /// <summary>
-  ///   visible
+  /// visible
   /// </summary>
-  public static Boolean? GetVisible(VerticalSeparator? openXmlElement)
+  private static Boolean? GetVisible(DocumentFormat.OpenXml.Office.CustomUI.VerticalSeparator openXmlElement)
   {
     return openXmlElement?.Visible?.Value;
   }
-
-  public static void SetVisible(VerticalSeparator? openXmlElement, Boolean? value)
+  
+  private static void SetVisible(DocumentFormat.OpenXml.Office.CustomUI.VerticalSeparator openXmlElement, Boolean? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.Visible = new BooleanValue { Value = (Boolean)value };
-      else
-        openXmlElement.Visible = null;
+    if (value != null)
+      openXmlElement.Visible = new BooleanValue { Value = (Boolean)value };
+    else
+      openXmlElement.Visible = null;
   }
-
+  
   /// <summary>
-  ///   getVisible
+  /// getVisible
   /// </summary>
-  public static String? GetGetVisible(VerticalSeparator? openXmlElement)
+  private static String? GetGetVisible(DocumentFormat.OpenXml.Office.CustomUI.VerticalSeparator openXmlElement)
   {
     return openXmlElement?.GetVisible?.Value;
   }
-
-  public static void SetGetVisible(VerticalSeparator? openXmlElement, String? value)
+  
+  private static void SetGetVisible(DocumentFormat.OpenXml.Office.CustomUI.VerticalSeparator openXmlElement, String? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.GetVisible = new StringValue { Value = value };
-      else
-        openXmlElement.GetVisible = null;
+    if (value != null)
+      openXmlElement.GetVisible = new StringValue { Value = value };
+    else
+      openXmlElement.GetVisible = null;
   }
-
+  
   /// <summary>
-  ///   insertAfterMso
+  /// insertAfterMso
   /// </summary>
-  public static String? GetInsertAfterMso(VerticalSeparator? openXmlElement)
+  private static String? GetInsertAfterMso(DocumentFormat.OpenXml.Office.CustomUI.VerticalSeparator openXmlElement)
   {
     return openXmlElement?.InsertAfterMso?.Value;
   }
-
-  public static void SetInsertAfterMso(VerticalSeparator? openXmlElement, String? value)
+  
+  private static void SetInsertAfterMso(DocumentFormat.OpenXml.Office.CustomUI.VerticalSeparator openXmlElement, String? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.InsertAfterMso = new StringValue { Value = value };
-      else
-        openXmlElement.InsertAfterMso = null;
+    if (value != null)
+      openXmlElement.InsertAfterMso = new StringValue { Value = value };
+    else
+      openXmlElement.InsertAfterMso = null;
   }
-
+  
   /// <summary>
-  ///   insertBeforeMso
+  /// insertBeforeMso
   /// </summary>
-  public static String? GetInsertBeforeMso(VerticalSeparator? openXmlElement)
+  private static String? GetInsertBeforeMso(DocumentFormat.OpenXml.Office.CustomUI.VerticalSeparator openXmlElement)
   {
     return openXmlElement?.InsertBeforeMso?.Value;
   }
-
-  public static void SetInsertBeforeMso(VerticalSeparator? openXmlElement, String? value)
+  
+  private static void SetInsertBeforeMso(DocumentFormat.OpenXml.Office.CustomUI.VerticalSeparator openXmlElement, String? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.InsertBeforeMso = new StringValue { Value = value };
-      else
-        openXmlElement.InsertBeforeMso = null;
+    if (value != null)
+      openXmlElement.InsertBeforeMso = new StringValue { Value = value };
+    else
+      openXmlElement.InsertBeforeMso = null;
   }
-
+  
   /// <summary>
-  ///   insertAfterQ
+  /// insertAfterQ
   /// </summary>
-  public static String? GetInsertAfterQ(VerticalSeparator? openXmlElement)
+  private static String? GetInsertAfterQ(DocumentFormat.OpenXml.Office.CustomUI.VerticalSeparator openXmlElement)
   {
     return openXmlElement?.InsertAfterQ?.Value;
   }
-
-  public static void SetInsertAfterQ(VerticalSeparator? openXmlElement, String? value)
+  
+  private static void SetInsertAfterQ(DocumentFormat.OpenXml.Office.CustomUI.VerticalSeparator openXmlElement, String? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.InsertAfterQ = new StringValue { Value = value };
-      else
-        openXmlElement.InsertAfterQ = null;
+    if (value != null)
+      openXmlElement.InsertAfterQ = new StringValue { Value = value };
+    else
+      openXmlElement.InsertAfterQ = null;
   }
-
+  
   /// <summary>
-  ///   insertBeforeQ
+  /// insertBeforeQ
   /// </summary>
-  public static String? GetInsertBeforeQ(VerticalSeparator? openXmlElement)
+  private static String? GetInsertBeforeQ(DocumentFormat.OpenXml.Office.CustomUI.VerticalSeparator openXmlElement)
   {
     return openXmlElement?.InsertBeforeQ?.Value;
   }
-
-  public static void SetInsertBeforeQ(VerticalSeparator? openXmlElement, String? value)
+  
+  private static void SetInsertBeforeQ(DocumentFormat.OpenXml.Office.CustomUI.VerticalSeparator openXmlElement, String? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.InsertBeforeQ = new StringValue { Value = value };
-      else
-        openXmlElement.InsertBeforeQ = null;
+    if (value != null)
+      openXmlElement.InsertBeforeQ = new StringValue { Value = value };
+    else
+      openXmlElement.InsertBeforeQ = null;
   }
-
-  public static DocumentModel.UI.VerticalSeparator? CreateModelElement(VerticalSeparator? openXmlElement)
+  
+  public static DocumentModel.UI.VerticalSeparator? CreateModelElement(DocumentFormat.OpenXml.Office.CustomUI.VerticalSeparator? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -160,9 +150,9 @@ public static class VerticalSeparatorConverter
     }
     return null;
   }
-
+  
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.UI.VerticalSeparator? value)
-    where OpenXmlElementType : VerticalSeparator, new()
+    where OpenXmlElementType: DocumentFormat.OpenXml.Office.CustomUI.VerticalSeparator, new()
   {
     if (value != null)
     {

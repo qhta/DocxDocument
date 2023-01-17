@@ -13,7 +13,7 @@ public class Level
   /// <summary>
   ///   Template Code
   /// </summary>
-  public Byte[]? TemplateCode { get; set; }
+  public NumId? TemplateCode { get; set; }
 
   /// <summary>
   ///   Tentative Numbering

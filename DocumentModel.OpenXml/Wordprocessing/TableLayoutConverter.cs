@@ -1,29 +1,24 @@
-using DocumentFormat.OpenXml.Wordprocessing;
-using DocumentModel.Wordprocessing;
-using TableLayout = DocumentFormat.OpenXml.Wordprocessing.TableLayout;
-
 namespace DocumentModel.OpenXml.Wordprocessing;
 
 /// <summary>
-///   Defines the TableLayout Class.
+/// Defines the TableLayout Class.
 /// </summary>
 public static class TableLayoutConverter
 {
   /// <summary>
-  ///   Table Layout Setting
+  /// Table Layout Setting
   /// </summary>
-  public static TableLayoutKind? GetType(TableLayout? openXmlElement)
+  private static DocumentModel.Wordprocessing.TableLayoutKind? GetType(DocumentFormat.OpenXml.Wordprocessing.TableLayout openXmlElement)
   {
-    return EnumValueConverter.GetValue<TableLayoutValues, TableLayoutKind>(openXmlElement?.Type?.Value);
+    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Wordprocessing.TableLayoutValues, DocumentModel.Wordprocessing.TableLayoutKind>(openXmlElement?.Type?.Value);
   }
-
-  public static void SetType(TableLayout? openXmlElement, TableLayoutKind? value)
+  
+  private static void SetType(DocumentFormat.OpenXml.Wordprocessing.TableLayout openXmlElement, DocumentModel.Wordprocessing.TableLayoutKind? value)
   {
-    if (openXmlElement != null)
-      openXmlElement.Type = EnumValueConverter.CreateEnumValue<TableLayoutValues, TableLayoutKind>(value);
+    openXmlElement.Type = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Wordprocessing.TableLayoutValues, DocumentModel.Wordprocessing.TableLayoutKind>(value);
   }
-
-  public static DocumentModel.Wordprocessing.TableLayout? CreateModelElement(TableLayout? openXmlElement)
+  
+  public static DocumentModel.Wordprocessing.TableLayout? CreateModelElement(DocumentFormat.OpenXml.Wordprocessing.TableLayout? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -33,9 +28,9 @@ public static class TableLayoutConverter
     }
     return null;
   }
-
+  
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.TableLayout? value)
-    where OpenXmlElementType : TableLayout, new()
+    where OpenXmlElementType: DocumentFormat.OpenXml.Wordprocessing.TableLayout, new()
   {
     if (value != null)
     {

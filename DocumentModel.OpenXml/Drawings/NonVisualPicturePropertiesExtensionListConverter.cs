@@ -1,45 +1,37 @@
-using DocumentModel.Drawings;
-using NonVisualPicturePropertiesExtensionList = DocumentFormat.OpenXml.Drawing.NonVisualPicturePropertiesExtensionList;
-
 namespace DocumentModel.OpenXml.Drawings;
 
 /// <summary>
-///   Defines the NonVisualPicturePropertiesExtensionList Class.
+/// Defines the NonVisualPicturePropertiesExtensionList Class.
 /// </summary>
 public static class NonVisualPicturePropertiesExtensionListConverter
 {
-  public static Collection<NonVisualPicturePropertiesExtension>? GetNonVisualPicturePropertiesExtensions(NonVisualPicturePropertiesExtensionList? openXmlElement)
+  private static System.Collections.ObjectModel.Collection<DocumentModel.Drawings.NonVisualPicturePropertiesExtension> GetNonVisualPicturePropertiesExtensions(DocumentFormat.OpenXml.Drawing.NonVisualPicturePropertiesExtensionList openXmlElement)
   {
-    if (openXmlElement != null)
+    var collection = new System.Collections.ObjectModel.Collection<DocumentModel.Drawings.NonVisualPicturePropertiesExtension>();
+    foreach (var item in openXmlElement.Elements<DocumentFormat.OpenXml.Drawing.NonVisualPicturePropertiesExtension>())
     {
-      var collection = new Collection<NonVisualPicturePropertiesExtension>();
-      foreach (var item in openXmlElement.Elements<DocumentFormat.OpenXml.Drawing.NonVisualPicturePropertiesExtension>())
+      var newItem = DocumentModel.OpenXml.Drawings.NonVisualPicturePropertiesExtensionConverter.CreateModelElement(item);
+      if (newItem != null)
+        collection.Add(newItem);
+    }
+    return collection;
+  }
+  
+  private static void SetNonVisualPicturePropertiesExtensions(DocumentFormat.OpenXml.Drawing.NonVisualPicturePropertiesExtensionList openXmlElement, System.Collections.ObjectModel.Collection<DocumentModel.Drawings.NonVisualPicturePropertiesExtension>? value)
+  {
+    openXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Drawing.NonVisualPicturePropertiesExtension>();
+    if (value != null)
+    {
+      foreach (var item in value)
       {
-        var newItem = NonVisualPicturePropertiesExtensionConverter.CreateModelElement(item);
+        var newItem = DocumentModel.OpenXml.Drawings.NonVisualPicturePropertiesExtensionConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.NonVisualPicturePropertiesExtension>(item);
         if (newItem != null)
-          collection.Add(newItem);
+          openXmlElement.AddChild(newItem);
       }
-      return collection;
-    }
-    return null;
-  }
-
-  public static void SetNonVisualPicturePropertiesExtensions(NonVisualPicturePropertiesExtensionList? openXmlElement, Collection<NonVisualPicturePropertiesExtension>? value)
-  {
-    if (openXmlElement != null)
-    {
-      openXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Drawing.NonVisualPicturePropertiesExtension>();
-      if (value != null)
-        foreach (var item in value)
-        {
-          var newItem = NonVisualPicturePropertiesExtensionConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.NonVisualPicturePropertiesExtension>(item);
-          if (newItem != null)
-            openXmlElement.AddChild(newItem);
-        }
     }
   }
-
-  public static DocumentModel.Drawings.NonVisualPicturePropertiesExtensionList? CreateModelElement(NonVisualPicturePropertiesExtensionList? openXmlElement)
+  
+  public static DocumentModel.Drawings.NonVisualPicturePropertiesExtensionList? CreateModelElement(DocumentFormat.OpenXml.Drawing.NonVisualPicturePropertiesExtensionList? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -49,9 +41,9 @@ public static class NonVisualPicturePropertiesExtensionListConverter
     }
     return null;
   }
-
+  
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.NonVisualPicturePropertiesExtensionList? value)
-    where OpenXmlElementType : NonVisualPicturePropertiesExtensionList, new()
+    where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.NonVisualPicturePropertiesExtensionList, new()
   {
     if (value != null)
     {

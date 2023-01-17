@@ -2,21 +2,21 @@
 
 internal class Program
 {
-  //private static void Main(string[] args)
-  //{
-  //  var testInstance = new TestStyles();
-  //  testInstance.Setup();
-  //  testInstance.TestNormalTemplateStyles();
-  //  Console.WriteLine("\nTest passed");
-  //}
-
   private static void Main(string[] args)
   {
-    var testInstance = new TestConverters();
+    var testInstance = new TestStyles();
     testInstance.Setup();
-    testInstance.TestHexBinaryConverter(true);
+    testInstance.TestDocumentStyles ();
     Console.WriteLine("\nTest passed");
   }
+
+  //private static void Main(string[] args)
+  //{
+  //  var testInstance = new TestConverters();
+  //  testInstance.Setup();
+  //  testInstance.TestHexBinaryConverter(true);
+  //  Console.WriteLine("\nTest passed");
+  //}
 
   //private static void Main(string[] args)
   //{

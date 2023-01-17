@@ -1,42 +1,35 @@
-using DocumentFormat.OpenXml.Drawing;
-using AdjustPoint2DType = DocumentModel.Drawings.AdjustPoint2DType;
-using MoveTo = DocumentFormat.OpenXml.Drawing.MoveTo;
-
 namespace DocumentModel.OpenXml.Drawings;
 
 /// <summary>
-///   Move Path To.
+/// Move Path To.
 /// </summary>
 public static class MoveToConverter
 {
   /// <summary>
-  ///   Move end point.
+  /// Move end point.
   /// </summary>
-  public static AdjustPoint2DType? GetPoint(MoveTo? openXmlElement)
+  private static DocumentModel.Drawings.AdjustPoint2DType? GetPoint(DocumentFormat.OpenXml.Drawing.MoveTo openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<Point>();
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.Point>();
     if (itemElement != null)
-      return AdjustPoint2DTypeConverter.CreateModelElement(itemElement);
+      return DocumentModel.OpenXml.Drawings.AdjustPoint2DTypeConverter.CreateModelElement(itemElement);
     return null;
   }
-
-  public static void SetPoint(MoveTo? openXmlElement, AdjustPoint2DType? value)
+  
+  private static void SetPoint(DocumentFormat.OpenXml.Drawing.MoveTo openXmlElement, DocumentModel.Drawings.AdjustPoint2DType? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Point>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<Point>();
+      itemElement = DocumentModel.OpenXml.Drawings.AdjustPoint2DTypeConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Point>(value);
       if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = AdjustPoint2DTypeConverter.CreateOpenXmlElement<Point>(value);
-        if (itemElement != null)
-          openXmlElement.AddChild(itemElement);
-      }
+        openXmlElement.AddChild(itemElement);
     }
   }
-
-  public static DocumentModel.Drawings.MoveTo? CreateModelElement(MoveTo? openXmlElement)
+  
+  public static DocumentModel.Drawings.MoveTo? CreateModelElement(DocumentFormat.OpenXml.Drawing.MoveTo? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -46,9 +39,9 @@ public static class MoveToConverter
     }
     return null;
   }
-
+  
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.MoveTo? value)
-    where OpenXmlElementType : MoveTo, new()
+    where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.MoveTo, new()
   {
     if (value != null)
     {

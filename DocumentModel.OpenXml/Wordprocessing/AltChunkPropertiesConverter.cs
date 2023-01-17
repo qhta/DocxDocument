@@ -1,44 +1,35 @@
-using DocumentFormat.OpenXml.Wordprocessing;
-
 namespace DocumentModel.OpenXml.Wordprocessing;
 
 /// <summary>
-///   External Content Import Properties.
+/// External Content Import Properties.
 /// </summary>
 public static class AltChunkPropertiesConverter
 {
   /// <summary>
-  ///   Keep Source Formatting on Import.
+  /// Keep Source Formatting on Import.
   /// </summary>
-  public static Boolean? GetMatchSource(AltChunkProperties? openXmlElement)
+  private static Boolean? GetMatchSource(DocumentFormat.OpenXml.Wordprocessing.AltChunkProperties openXmlElement)
   {
-    if (openXmlElement != null)
-    {
-      var itemElement = openXmlElement.GetFirstChild<MatchSource>();
-      return itemElement != null;
-    }
-    return null;
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.MatchSource>();
+    return itemElement != null;
   }
-
-  public static void SetMatchSource(AltChunkProperties? openXmlElement, Boolean? value)
+  
+  private static void SetMatchSource(DocumentFormat.OpenXml.Wordprocessing.AltChunkProperties openXmlElement, Boolean? value)
   {
-    if (openXmlElement != null)
+    if (value == false)
     {
-      if (value == false)
-      {
-        var itemElement = openXmlElement.GetFirstChild<MatchSource>();
-        if (itemElement != null)
-          itemElement.Remove();
-      }
-      if (value == true)
-      {
-        var itemElement = new MatchSource();
-        openXmlElement.AddChild(itemElement);
-      }
+      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.MatchSource>();
+      if (itemElement != null)
+        itemElement.Remove();
+    }
+    if (value == true)
+    {
+      var itemElement = new DocumentFormat.OpenXml.Wordprocessing.MatchSource();
+      openXmlElement.AddChild(itemElement);
     }
   }
-
-  public static DocumentModel.Wordprocessing.AltChunkProperties? CreateModelElement(AltChunkProperties? openXmlElement)
+  
+  public static DocumentModel.Wordprocessing.AltChunkProperties? CreateModelElement(DocumentFormat.OpenXml.Wordprocessing.AltChunkProperties? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -48,9 +39,9 @@ public static class AltChunkPropertiesConverter
     }
     return null;
   }
-
+  
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.AltChunkProperties? value)
-    where OpenXmlElementType : AltChunkProperties, new()
+    where OpenXmlElementType: DocumentFormat.OpenXml.Wordprocessing.AltChunkProperties, new()
   {
     if (value != null)
     {

@@ -1,42 +1,35 @@
-using DocumentModel.Drawings.Charts;
-using InvertSolidFillFormat = DocumentFormat.OpenXml.Office2010.Drawing.Charts.InvertSolidFillFormat;
-using ShapeProperties = DocumentFormat.OpenXml.Office2010.Drawing.Charts.ShapeProperties;
-
 namespace DocumentModel.OpenXml.Drawings.Charts;
 
 /// <summary>
-///   Defines the InvertSolidFillFormat Class.
+/// Defines the InvertSolidFillFormat Class.
 /// </summary>
 public static class InvertSolidFillFormatConverter
 {
   /// <summary>
-  ///   ShapeProperties.
+  /// ShapeProperties.
   /// </summary>
-  public static ShapeProperties2? GetShapeProperties(InvertSolidFillFormat? openXmlElement)
+  private static DocumentModel.Drawings.Charts.ShapeProperties2? GetShapeProperties(DocumentFormat.OpenXml.Office2010.Drawing.Charts.InvertSolidFillFormat openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<ShapeProperties>();
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office2010.Drawing.Charts.ShapeProperties>();
     if (itemElement != null)
-      return ShapeProperties2Converter.CreateModelElement(itemElement);
+      return DocumentModel.OpenXml.Drawings.Charts.ShapeProperties2Converter.CreateModelElement(itemElement);
     return null;
   }
-
-  public static void SetShapeProperties(InvertSolidFillFormat? openXmlElement, ShapeProperties2? value)
+  
+  private static void SetShapeProperties(DocumentFormat.OpenXml.Office2010.Drawing.Charts.InvertSolidFillFormat openXmlElement, DocumentModel.Drawings.Charts.ShapeProperties2? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2010.Drawing.Charts.ShapeProperties>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<ShapeProperties>();
+      itemElement = DocumentModel.OpenXml.Drawings.Charts.ShapeProperties2Converter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2010.Drawing.Charts.ShapeProperties>(value);
       if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = ShapeProperties2Converter.CreateOpenXmlElement<ShapeProperties>(value);
-        if (itemElement != null)
-          openXmlElement.AddChild(itemElement);
-      }
+        openXmlElement.AddChild(itemElement);
     }
   }
-
-  public static DocumentModel.Drawings.Charts.InvertSolidFillFormat? CreateModelElement(InvertSolidFillFormat? openXmlElement)
+  
+  public static DocumentModel.Drawings.Charts.InvertSolidFillFormat? CreateModelElement(DocumentFormat.OpenXml.Office2010.Drawing.Charts.InvertSolidFillFormat? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -46,9 +39,9 @@ public static class InvertSolidFillFormatConverter
     }
     return null;
   }
-
+  
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.Charts.InvertSolidFillFormat? value)
-    where OpenXmlElementType : InvertSolidFillFormat, new()
+    where OpenXmlElementType: DocumentFormat.OpenXml.Office2010.Drawing.Charts.InvertSolidFillFormat, new()
   {
     if (value != null)
     {

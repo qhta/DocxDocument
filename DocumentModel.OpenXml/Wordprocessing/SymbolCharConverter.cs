@@ -1,51 +1,45 @@
-using DocumentFormat.OpenXml.Wordprocessing;
-
 namespace DocumentModel.OpenXml.Wordprocessing;
 
 /// <summary>
-///   Symbol Character.
+/// Symbol Character.
 /// </summary>
 public static class SymbolCharConverter
 {
   /// <summary>
-  ///   Symbol Character Font
+  /// Symbol Character Font
   /// </summary>
-  public static String? GetFont(SymbolChar? openXmlElement)
+  private static String? GetFont(DocumentFormat.OpenXml.Wordprocessing.SymbolChar openXmlElement)
   {
     return openXmlElement?.Font?.Value;
   }
-
-  public static void SetFont(SymbolChar? openXmlElement, String? value)
+  
+  private static void SetFont(DocumentFormat.OpenXml.Wordprocessing.SymbolChar openXmlElement, String? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.Font = new StringValue { Value = value };
-      else
-        openXmlElement.Font = null;
+    if (value != null)
+      openXmlElement.Font = new StringValue { Value = value };
+    else
+      openXmlElement.Font = null;
   }
-
+  
   /// <summary>
-  ///   Symbol Character Code
+  /// Symbol Character Code
   /// </summary>
-  public static Byte[]? GetChar(SymbolChar? openXmlElement)
+  private static UInt16? GetChar(DocumentFormat.OpenXml.Wordprocessing.SymbolChar openXmlElement)
   {
-    if (openXmlElement?.Char?.Value != null)
-      return Convert.FromHexString(openXmlElement.Char.Value);
+    if (openXmlElement.Char?.Value != null)
+      return UInt16.Parse(openXmlElement.Char.Value, NumberStyles.HexNumber);
     return null;
   }
-
-  public static void SetChar(SymbolChar? openXmlElement, Byte[]? value)
+  
+  private static void SetChar(DocumentFormat.OpenXml.Wordprocessing.SymbolChar openXmlElement, UInt16? value)
   {
-    if (openXmlElement != null)
-    {
       if (value != null)
-        openXmlElement.Char = Convert.ToHexString(value);
+        openXmlElement.Char = ((UInt16)value).ToString("X4");
       else
         openXmlElement.Char = null;
-    }
   }
-
-  public static DocumentModel.Wordprocessing.SymbolChar? CreateModelElement(SymbolChar? openXmlElement)
+  
+  public static DocumentModel.Wordprocessing.SymbolChar? CreateModelElement(DocumentFormat.OpenXml.Wordprocessing.SymbolChar? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -56,9 +50,9 @@ public static class SymbolCharConverter
     }
     return null;
   }
-
+  
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.SymbolChar? value)
-    where OpenXmlElementType : SymbolChar, new()
+    where OpenXmlElementType: DocumentFormat.OpenXml.Wordprocessing.SymbolChar, new()
   {
     if (value != null)
     {

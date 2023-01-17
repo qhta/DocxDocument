@@ -1,97 +1,82 @@
-using DocumentFormat.OpenXml.Wordprocessing;
-
 namespace DocumentModel.OpenXml.Wordprocessing;
 
 /// <summary>
-///   Data About Single Data Source Record.
+/// Data About Single Data Source Record.
 /// </summary>
 public static class RecipientDataConverter
 {
   /// <summary>
-  ///   Record Is Included in Mail Merge.
+  /// Record Is Included in Mail Merge.
   /// </summary>
-  public static Boolean? GetActive(RecipientData? openXmlElement)
+  private static Boolean? GetActive(DocumentFormat.OpenXml.Wordprocessing.RecipientData openXmlElement)
   {
-    if (openXmlElement != null)
-    {
-      var itemElement = openXmlElement.GetFirstChild<Active>();
-      return itemElement != null;
-    }
-    return null;
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.Active>();
+    return itemElement != null;
   }
-
-  public static void SetActive(RecipientData? openXmlElement, Boolean? value)
+  
+  private static void SetActive(DocumentFormat.OpenXml.Wordprocessing.RecipientData openXmlElement, Boolean? value)
   {
-    if (openXmlElement != null)
+    if (value == false)
     {
-      if (value == false)
-      {
-        var itemElement = openXmlElement.GetFirstChild<Active>();
-        if (itemElement != null)
-          itemElement.Remove();
-      }
-      if (value == true)
-      {
-        var itemElement = new Active();
-        openXmlElement.AddChild(itemElement);
-      }
+      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.Active>();
+      if (itemElement != null)
+        itemElement.Remove();
+    }
+    if (value == true)
+    {
+      var itemElement = new DocumentFormat.OpenXml.Wordprocessing.Active();
+      openXmlElement.AddChild(itemElement);
     }
   }
-
+  
   /// <summary>
-  ///   Index of Column Containing Unique Values for Record.
+  /// Index of Column Containing Unique Values for Record.
   /// </summary>
-  public static UInt32? GetColumnIndex(RecipientData? openXmlElement)
+  private static UInt32? GetColumnIndex(DocumentFormat.OpenXml.Wordprocessing.RecipientData openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<ColumnIndex>();
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.ColumnIndex>();
     if (itemElement != null)
       return itemElement.Val?.Value;
     return null;
   }
-
-  public static void SetColumnIndex(RecipientData? openXmlElement, UInt32? value)
+  
+  private static void SetColumnIndex(DocumentFormat.OpenXml.Wordprocessing.RecipientData openXmlElement, UInt32? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.ColumnIndex>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<ColumnIndex>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = new ColumnIndex { Val = value };
-        openXmlElement.AddChild(itemElement);
-      }
+      itemElement = new DocumentFormat.OpenXml.Wordprocessing.ColumnIndex{ Val = value };
+      openXmlElement.AddChild(itemElement);
     }
   }
-
+  
   /// <summary>
-  ///   Unique Value for Record.
+  /// Unique Value for Record.
   /// </summary>
-  public static Byte[]? GetUniqueTag(RecipientData? openXmlElement)
+  private static Byte[]? GetUniqueTag(DocumentFormat.OpenXml.Wordprocessing.RecipientData openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<UniqueTag>();
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.UniqueTag>();
     if (itemElement != null)
-      return ByteArrayConverter.GetValue(itemElement);
+      return DocumentModel.OpenXml.HexBinaryConverter.GetValue(itemElement);
     return null;
   }
-
-  public static void SetUniqueTag(RecipientData? openXmlElement, Byte[]? value)
+  
+  private static void SetUniqueTag(DocumentFormat.OpenXml.Wordprocessing.RecipientData openXmlElement, Byte[]? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.UniqueTag>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<UniqueTag>();
+      itemElement = DocumentModel.OpenXml.HexBinaryConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.UniqueTag>(value);
       if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = ByteArrayConverter.CreateOpenXmlElement<UniqueTag>(value);
-        if (itemElement != null)
-          openXmlElement.AddChild(itemElement);
-      }
+        openXmlElement.AddChild(itemElement);
     }
   }
-
-  public static DocumentModel.Wordprocessing.RecipientData? CreateModelElement(RecipientData? openXmlElement)
+  
+  public static DocumentModel.Wordprocessing.RecipientData? CreateModelElement(DocumentFormat.OpenXml.Wordprocessing.RecipientData? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -103,9 +88,9 @@ public static class RecipientDataConverter
     }
     return null;
   }
-
+  
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.RecipientData? value)
-    where OpenXmlElementType : RecipientData, new()
+    where OpenXmlElementType: DocumentFormat.OpenXml.Wordprocessing.RecipientData, new()
   {
     if (value != null)
     {

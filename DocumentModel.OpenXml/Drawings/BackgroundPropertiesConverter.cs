@@ -1,71 +1,63 @@
-using DocumentFormat.OpenXml.Drawing;
-using DocumentModel.Drawings;
-using BackgroundProperties = DocumentFormat.OpenXml.Office2013.Drawing.BackgroundProperties;
-
 namespace DocumentModel.OpenXml.Drawings;
 
 /// <summary>
-///   Defines the BackgroundProperties Class.
+/// Defines the BackgroundProperties Class.
 /// </summary>
 public static class BackgroundPropertiesConverter
 {
   /// <summary>
-  ///   bwMode, this property is only available in Office 2013 and later.
+  /// bwMode, this property is only available in Office 2013 and later.
   /// </summary>
-  public static BlackWhiteMode? GetMode(BackgroundProperties? openXmlElement)
+  private static DocumentModel.Drawings.BlackWhiteMode? GetMode(DocumentFormat.OpenXml.Office2013.Drawing.BackgroundProperties openXmlElement)
   {
-    return EnumValueConverter.GetValue<BlackWhiteModeValues, BlackWhiteMode>(openXmlElement?.Mode?.Value);
+    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Drawing.BlackWhiteModeValues, DocumentModel.Drawings.BlackWhiteMode>(openXmlElement?.Mode?.Value);
   }
-
-  public static void SetMode(BackgroundProperties? openXmlElement, BlackWhiteMode? value)
+  
+  private static void SetMode(DocumentFormat.OpenXml.Office2013.Drawing.BackgroundProperties openXmlElement, DocumentModel.Drawings.BlackWhiteMode? value)
   {
-    if (openXmlElement != null)
-      openXmlElement.Mode = EnumValueConverter.CreateEnumValue<BlackWhiteModeValues, BlackWhiteMode>(value);
+    openXmlElement.Mode = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Drawing.BlackWhiteModeValues, DocumentModel.Drawings.BlackWhiteMode>(value);
   }
-
+  
   /// <summary>
-  ///   bwPure, this property is only available in Office 2013 and later.
+  /// bwPure, this property is only available in Office 2013 and later.
   /// </summary>
-  public static BlackWhiteMode? GetPure(BackgroundProperties? openXmlElement)
+  private static DocumentModel.Drawings.BlackWhiteMode? GetPure(DocumentFormat.OpenXml.Office2013.Drawing.BackgroundProperties openXmlElement)
   {
-    return EnumValueConverter.GetValue<BlackWhiteModeValues, BlackWhiteMode>(openXmlElement?.Pure?.Value);
+    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Drawing.BlackWhiteModeValues, DocumentModel.Drawings.BlackWhiteMode>(openXmlElement?.Pure?.Value);
   }
-
-  public static void SetPure(BackgroundProperties? openXmlElement, BlackWhiteMode? value)
+  
+  private static void SetPure(DocumentFormat.OpenXml.Office2013.Drawing.BackgroundProperties openXmlElement, DocumentModel.Drawings.BlackWhiteMode? value)
   {
-    if (openXmlElement != null)
-      openXmlElement.Pure = EnumValueConverter.CreateEnumValue<BlackWhiteModeValues, BlackWhiteMode>(value);
+    openXmlElement.Pure = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Drawing.BlackWhiteModeValues, DocumentModel.Drawings.BlackWhiteMode>(value);
   }
-
+  
   /// <summary>
-  ///   bwNormal, this property is only available in Office 2013 and later.
+  /// bwNormal, this property is only available in Office 2013 and later.
   /// </summary>
-  public static BlackWhiteMode? GetNormal(BackgroundProperties? openXmlElement)
+  private static DocumentModel.Drawings.BlackWhiteMode? GetNormal(DocumentFormat.OpenXml.Office2013.Drawing.BackgroundProperties openXmlElement)
   {
-    return EnumValueConverter.GetValue<BlackWhiteModeValues, BlackWhiteMode>(openXmlElement?.Normal?.Value);
+    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Drawing.BlackWhiteModeValues, DocumentModel.Drawings.BlackWhiteMode>(openXmlElement?.Normal?.Value);
   }
-
-  public static void SetNormal(BackgroundProperties? openXmlElement, BlackWhiteMode? value)
+  
+  private static void SetNormal(DocumentFormat.OpenXml.Office2013.Drawing.BackgroundProperties openXmlElement, DocumentModel.Drawings.BlackWhiteMode? value)
   {
-    if (openXmlElement != null)
-      openXmlElement.Normal = EnumValueConverter.CreateEnumValue<BlackWhiteModeValues, BlackWhiteMode>(value);
+    openXmlElement.Normal = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Drawing.BlackWhiteModeValues, DocumentModel.Drawings.BlackWhiteMode>(value);
   }
-
+  
   /// <summary>
-  ///   targetScreenSize, this property is only available in Office 2013 and later.
+  /// targetScreenSize, this property is only available in Office 2013 and later.
   /// </summary>
-  public static TargetScreenSize? GetTargetScreenSize(BackgroundProperties? openXmlElement)
+  private static DocumentModel.Drawings.TargetScreenSize? GetTargetScreenSize(DocumentFormat.OpenXml.Office2013.Drawing.BackgroundProperties openXmlElement)
   {
-    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Office2013.Drawing.TargetScreenSize, TargetScreenSize>(openXmlElement?.TargetScreenSize?.Value);
+    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Office2013.Drawing.TargetScreenSize, DocumentModel.Drawings.TargetScreenSize>(openXmlElement?.TargetScreenSize?.Value);
   }
-
-  public static void SetTargetScreenSize(BackgroundProperties? openXmlElement, TargetScreenSize? value)
+  
+  private static void SetTargetScreenSize(DocumentFormat.OpenXml.Office2013.Drawing.BackgroundProperties openXmlElement, DocumentModel.Drawings.TargetScreenSize? value)
   {
-    if (openXmlElement != null)
-      openXmlElement.TargetScreenSize = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Office2013.Drawing.TargetScreenSize, TargetScreenSize>(value);
+    openXmlElement.TargetScreenSize = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Office2013.Drawing.TargetScreenSize, DocumentModel.Drawings.TargetScreenSize>(value);
   }
-
-  public static DocumentModel.Drawings.BackgroundProperties? CreateModelElement(BackgroundProperties? openXmlElement)
+  
+  public static DocumentModel.Drawings.BackgroundProperties? CreateModelElement(DocumentFormat.OpenXml.Office2013.Drawing.BackgroundProperties? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -78,9 +70,9 @@ public static class BackgroundPropertiesConverter
     }
     return null;
   }
-
+  
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.BackgroundProperties? value)
-    where OpenXmlElementType : BackgroundProperties, new()
+    where OpenXmlElementType: DocumentFormat.OpenXml.Office2013.Drawing.BackgroundProperties, new()
   {
     if (value != null)
     {

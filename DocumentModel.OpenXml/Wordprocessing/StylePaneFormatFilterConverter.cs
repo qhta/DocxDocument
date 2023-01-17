@@ -1,289 +1,269 @@
-using DocumentFormat.OpenXml.Wordprocessing;
-
 namespace DocumentModel.OpenXml.Wordprocessing;
 
 /// <summary>
-///   Suggested Filtering for List of Document Styles.
+/// Suggested Filtering for List of Document Styles.
 /// </summary>
 public static class StylePaneFormatFilterConverter
 {
   /// <summary>
-  ///   val
+  /// val
   /// </summary>
-  public static Byte[]? GetVal(StylePaneFormatFilter? openXmlElement)
+  private static UInt16? GetVal(DocumentFormat.OpenXml.Wordprocessing.StylePaneFormatFilter openXmlElement)
   {
-    if (openXmlElement?.Val?.Value != null)
-      return Convert.FromHexString(openXmlElement.Val.Value);
+    if (openXmlElement.Val?.Value != null)
+      return UInt16.Parse(openXmlElement.Val.Value, NumberStyles.HexNumber);
     return null;
   }
-
-  public static void SetVal(StylePaneFormatFilter? openXmlElement, Byte[]? value)
+  
+  private static void SetVal(DocumentFormat.OpenXml.Wordprocessing.StylePaneFormatFilter openXmlElement, UInt16? value)
   {
-    if (openXmlElement != null)
-    {
       if (value != null)
-        openXmlElement.Val = Convert.ToHexString(value);
+        openXmlElement.Val = ((UInt16)value).ToString("X4");
       else
         openXmlElement.Val = null;
-    }
   }
-
+  
   /// <summary>
-  ///   allStyles, this property is only available in Office 2010 and later.
+  /// allStyles, this property is only available in Office 2010 and later.
   /// </summary>
-  public static Boolean? GetAllStyles(StylePaneFormatFilter? openXmlElement)
+  private static Boolean? GetAllStyles(DocumentFormat.OpenXml.Wordprocessing.StylePaneFormatFilter openXmlElement)
   {
     return openXmlElement?.AllStyles?.Value;
   }
-
-  public static void SetAllStyles(StylePaneFormatFilter? openXmlElement, Boolean? value)
+  
+  private static void SetAllStyles(DocumentFormat.OpenXml.Wordprocessing.StylePaneFormatFilter openXmlElement, Boolean? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.AllStyles = new OnOffValue { Value = (Boolean)value };
-      else
-        openXmlElement.AllStyles = null;
+    if (value != null)
+      openXmlElement.AllStyles = new OnOffValue { Value = (Boolean)value };
+    else
+      openXmlElement.AllStyles = null;
   }
-
+  
   /// <summary>
-  ///   customStyles, this property is only available in Office 2010 and later.
+  /// customStyles, this property is only available in Office 2010 and later.
   /// </summary>
-  public static Boolean? GetCustomStyles(StylePaneFormatFilter? openXmlElement)
+  private static Boolean? GetCustomStyles(DocumentFormat.OpenXml.Wordprocessing.StylePaneFormatFilter openXmlElement)
   {
     return openXmlElement?.CustomStyles?.Value;
   }
-
-  public static void SetCustomStyles(StylePaneFormatFilter? openXmlElement, Boolean? value)
+  
+  private static void SetCustomStyles(DocumentFormat.OpenXml.Wordprocessing.StylePaneFormatFilter openXmlElement, Boolean? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.CustomStyles = new OnOffValue { Value = (Boolean)value };
-      else
-        openXmlElement.CustomStyles = null;
+    if (value != null)
+      openXmlElement.CustomStyles = new OnOffValue { Value = (Boolean)value };
+    else
+      openXmlElement.CustomStyles = null;
   }
-
+  
   /// <summary>
-  ///   latentStyles, this property is only available in Office 2010 and later.
+  /// latentStyles, this property is only available in Office 2010 and later.
   /// </summary>
-  public static Boolean? GetLatentStyles(StylePaneFormatFilter? openXmlElement)
+  private static Boolean? GetLatentStyles(DocumentFormat.OpenXml.Wordprocessing.StylePaneFormatFilter openXmlElement)
   {
     return openXmlElement?.LatentStyles?.Value;
   }
-
-  public static void SetLatentStyles(StylePaneFormatFilter? openXmlElement, Boolean? value)
+  
+  private static void SetLatentStyles(DocumentFormat.OpenXml.Wordprocessing.StylePaneFormatFilter openXmlElement, Boolean? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.LatentStyles = new OnOffValue { Value = (Boolean)value };
-      else
-        openXmlElement.LatentStyles = null;
+    if (value != null)
+      openXmlElement.LatentStyles = new OnOffValue { Value = (Boolean)value };
+    else
+      openXmlElement.LatentStyles = null;
   }
-
+  
   /// <summary>
-  ///   stylesInUse, this property is only available in Office 2010 and later.
+  /// stylesInUse, this property is only available in Office 2010 and later.
   /// </summary>
-  public static Boolean? GetStylesInUse(StylePaneFormatFilter? openXmlElement)
+  private static Boolean? GetStylesInUse(DocumentFormat.OpenXml.Wordprocessing.StylePaneFormatFilter openXmlElement)
   {
     return openXmlElement?.StylesInUse?.Value;
   }
-
-  public static void SetStylesInUse(StylePaneFormatFilter? openXmlElement, Boolean? value)
+  
+  private static void SetStylesInUse(DocumentFormat.OpenXml.Wordprocessing.StylePaneFormatFilter openXmlElement, Boolean? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.StylesInUse = new OnOffValue { Value = (Boolean)value };
-      else
-        openXmlElement.StylesInUse = null;
+    if (value != null)
+      openXmlElement.StylesInUse = new OnOffValue { Value = (Boolean)value };
+    else
+      openXmlElement.StylesInUse = null;
   }
-
+  
   /// <summary>
-  ///   headingStyles, this property is only available in Office 2010 and later.
+  /// headingStyles, this property is only available in Office 2010 and later.
   /// </summary>
-  public static Boolean? GetHeadingStyles(StylePaneFormatFilter? openXmlElement)
+  private static Boolean? GetHeadingStyles(DocumentFormat.OpenXml.Wordprocessing.StylePaneFormatFilter openXmlElement)
   {
     return openXmlElement?.HeadingStyles?.Value;
   }
-
-  public static void SetHeadingStyles(StylePaneFormatFilter? openXmlElement, Boolean? value)
+  
+  private static void SetHeadingStyles(DocumentFormat.OpenXml.Wordprocessing.StylePaneFormatFilter openXmlElement, Boolean? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.HeadingStyles = new OnOffValue { Value = (Boolean)value };
-      else
-        openXmlElement.HeadingStyles = null;
+    if (value != null)
+      openXmlElement.HeadingStyles = new OnOffValue { Value = (Boolean)value };
+    else
+      openXmlElement.HeadingStyles = null;
   }
-
+  
   /// <summary>
-  ///   numberingStyles, this property is only available in Office 2010 and later.
+  /// numberingStyles, this property is only available in Office 2010 and later.
   /// </summary>
-  public static Boolean? GetNumberingStyles(StylePaneFormatFilter? openXmlElement)
+  private static Boolean? GetNumberingStyles(DocumentFormat.OpenXml.Wordprocessing.StylePaneFormatFilter openXmlElement)
   {
     return openXmlElement?.NumberingStyles?.Value;
   }
-
-  public static void SetNumberingStyles(StylePaneFormatFilter? openXmlElement, Boolean? value)
+  
+  private static void SetNumberingStyles(DocumentFormat.OpenXml.Wordprocessing.StylePaneFormatFilter openXmlElement, Boolean? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.NumberingStyles = new OnOffValue { Value = (Boolean)value };
-      else
-        openXmlElement.NumberingStyles = null;
+    if (value != null)
+      openXmlElement.NumberingStyles = new OnOffValue { Value = (Boolean)value };
+    else
+      openXmlElement.NumberingStyles = null;
   }
-
+  
   /// <summary>
-  ///   tableStyles, this property is only available in Office 2010 and later.
+  /// tableStyles, this property is only available in Office 2010 and later.
   /// </summary>
-  public static Boolean? GetTableStyles(StylePaneFormatFilter? openXmlElement)
+  private static Boolean? GetTableStyles(DocumentFormat.OpenXml.Wordprocessing.StylePaneFormatFilter openXmlElement)
   {
     return openXmlElement?.TableStyles?.Value;
   }
-
-  public static void SetTableStyles(StylePaneFormatFilter? openXmlElement, Boolean? value)
+  
+  private static void SetTableStyles(DocumentFormat.OpenXml.Wordprocessing.StylePaneFormatFilter openXmlElement, Boolean? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.TableStyles = new OnOffValue { Value = (Boolean)value };
-      else
-        openXmlElement.TableStyles = null;
+    if (value != null)
+      openXmlElement.TableStyles = new OnOffValue { Value = (Boolean)value };
+    else
+      openXmlElement.TableStyles = null;
   }
-
+  
   /// <summary>
-  ///   directFormattingOnRuns, this property is only available in Office 2010 and later.
+  /// directFormattingOnRuns, this property is only available in Office 2010 and later.
   /// </summary>
-  public static Boolean? GetDirectFormattingOnRuns(StylePaneFormatFilter? openXmlElement)
+  private static Boolean? GetDirectFormattingOnRuns(DocumentFormat.OpenXml.Wordprocessing.StylePaneFormatFilter openXmlElement)
   {
     return openXmlElement?.DirectFormattingOnRuns?.Value;
   }
-
-  public static void SetDirectFormattingOnRuns(StylePaneFormatFilter? openXmlElement, Boolean? value)
+  
+  private static void SetDirectFormattingOnRuns(DocumentFormat.OpenXml.Wordprocessing.StylePaneFormatFilter openXmlElement, Boolean? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.DirectFormattingOnRuns = new OnOffValue { Value = (Boolean)value };
-      else
-        openXmlElement.DirectFormattingOnRuns = null;
+    if (value != null)
+      openXmlElement.DirectFormattingOnRuns = new OnOffValue { Value = (Boolean)value };
+    else
+      openXmlElement.DirectFormattingOnRuns = null;
   }
-
+  
   /// <summary>
-  ///   directFormattingOnParagraphs, this property is only available in Office 2010 and later.
+  /// directFormattingOnParagraphs, this property is only available in Office 2010 and later.
   /// </summary>
-  public static Boolean? GetDirectFormattingOnParagraphs(StylePaneFormatFilter? openXmlElement)
+  private static Boolean? GetDirectFormattingOnParagraphs(DocumentFormat.OpenXml.Wordprocessing.StylePaneFormatFilter openXmlElement)
   {
     return openXmlElement?.DirectFormattingOnParagraphs?.Value;
   }
-
-  public static void SetDirectFormattingOnParagraphs(StylePaneFormatFilter? openXmlElement, Boolean? value)
+  
+  private static void SetDirectFormattingOnParagraphs(DocumentFormat.OpenXml.Wordprocessing.StylePaneFormatFilter openXmlElement, Boolean? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.DirectFormattingOnParagraphs = new OnOffValue { Value = (Boolean)value };
-      else
-        openXmlElement.DirectFormattingOnParagraphs = null;
+    if (value != null)
+      openXmlElement.DirectFormattingOnParagraphs = new OnOffValue { Value = (Boolean)value };
+    else
+      openXmlElement.DirectFormattingOnParagraphs = null;
   }
-
+  
   /// <summary>
-  ///   directFormattingOnNumbering, this property is only available in Office 2010 and later.
+  /// directFormattingOnNumbering, this property is only available in Office 2010 and later.
   /// </summary>
-  public static Boolean? GetDirectFormattingOnNumbering(StylePaneFormatFilter? openXmlElement)
+  private static Boolean? GetDirectFormattingOnNumbering(DocumentFormat.OpenXml.Wordprocessing.StylePaneFormatFilter openXmlElement)
   {
     return openXmlElement?.DirectFormattingOnNumbering?.Value;
   }
-
-  public static void SetDirectFormattingOnNumbering(StylePaneFormatFilter? openXmlElement, Boolean? value)
+  
+  private static void SetDirectFormattingOnNumbering(DocumentFormat.OpenXml.Wordprocessing.StylePaneFormatFilter openXmlElement, Boolean? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.DirectFormattingOnNumbering = new OnOffValue { Value = (Boolean)value };
-      else
-        openXmlElement.DirectFormattingOnNumbering = null;
+    if (value != null)
+      openXmlElement.DirectFormattingOnNumbering = new OnOffValue { Value = (Boolean)value };
+    else
+      openXmlElement.DirectFormattingOnNumbering = null;
   }
-
+  
   /// <summary>
-  ///   directFormattingOnTables, this property is only available in Office 2010 and later.
+  /// directFormattingOnTables, this property is only available in Office 2010 and later.
   /// </summary>
-  public static Boolean? GetDirectFormattingOnTables(StylePaneFormatFilter? openXmlElement)
+  private static Boolean? GetDirectFormattingOnTables(DocumentFormat.OpenXml.Wordprocessing.StylePaneFormatFilter openXmlElement)
   {
     return openXmlElement?.DirectFormattingOnTables?.Value;
   }
-
-  public static void SetDirectFormattingOnTables(StylePaneFormatFilter? openXmlElement, Boolean? value)
+  
+  private static void SetDirectFormattingOnTables(DocumentFormat.OpenXml.Wordprocessing.StylePaneFormatFilter openXmlElement, Boolean? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.DirectFormattingOnTables = new OnOffValue { Value = (Boolean)value };
-      else
-        openXmlElement.DirectFormattingOnTables = null;
+    if (value != null)
+      openXmlElement.DirectFormattingOnTables = new OnOffValue { Value = (Boolean)value };
+    else
+      openXmlElement.DirectFormattingOnTables = null;
   }
-
+  
   /// <summary>
-  ///   clearFormatting, this property is only available in Office 2010 and later.
+  /// clearFormatting, this property is only available in Office 2010 and later.
   /// </summary>
-  public static Boolean? GetClearFormatting(StylePaneFormatFilter? openXmlElement)
+  private static Boolean? GetClearFormatting(DocumentFormat.OpenXml.Wordprocessing.StylePaneFormatFilter openXmlElement)
   {
     return openXmlElement?.ClearFormatting?.Value;
   }
-
-  public static void SetClearFormatting(StylePaneFormatFilter? openXmlElement, Boolean? value)
+  
+  private static void SetClearFormatting(DocumentFormat.OpenXml.Wordprocessing.StylePaneFormatFilter openXmlElement, Boolean? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.ClearFormatting = new OnOffValue { Value = (Boolean)value };
-      else
-        openXmlElement.ClearFormatting = null;
+    if (value != null)
+      openXmlElement.ClearFormatting = new OnOffValue { Value = (Boolean)value };
+    else
+      openXmlElement.ClearFormatting = null;
   }
-
+  
   /// <summary>
-  ///   top3HeadingStyles, this property is only available in Office 2010 and later.
+  /// top3HeadingStyles, this property is only available in Office 2010 and later.
   /// </summary>
-  public static Boolean? GetTop3HeadingStyles(StylePaneFormatFilter? openXmlElement)
+  private static Boolean? GetTop3HeadingStyles(DocumentFormat.OpenXml.Wordprocessing.StylePaneFormatFilter openXmlElement)
   {
     return openXmlElement?.Top3HeadingStyles?.Value;
   }
-
-  public static void SetTop3HeadingStyles(StylePaneFormatFilter? openXmlElement, Boolean? value)
+  
+  private static void SetTop3HeadingStyles(DocumentFormat.OpenXml.Wordprocessing.StylePaneFormatFilter openXmlElement, Boolean? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.Top3HeadingStyles = new OnOffValue { Value = (Boolean)value };
-      else
-        openXmlElement.Top3HeadingStyles = null;
+    if (value != null)
+      openXmlElement.Top3HeadingStyles = new OnOffValue { Value = (Boolean)value };
+    else
+      openXmlElement.Top3HeadingStyles = null;
   }
-
+  
   /// <summary>
-  ///   visibleStyles, this property is only available in Office 2010 and later.
+  /// visibleStyles, this property is only available in Office 2010 and later.
   /// </summary>
-  public static Boolean? GetVisibleStyles(StylePaneFormatFilter? openXmlElement)
+  private static Boolean? GetVisibleStyles(DocumentFormat.OpenXml.Wordprocessing.StylePaneFormatFilter openXmlElement)
   {
     return openXmlElement?.VisibleStyles?.Value;
   }
-
-  public static void SetVisibleStyles(StylePaneFormatFilter? openXmlElement, Boolean? value)
+  
+  private static void SetVisibleStyles(DocumentFormat.OpenXml.Wordprocessing.StylePaneFormatFilter openXmlElement, Boolean? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.VisibleStyles = new OnOffValue { Value = (Boolean)value };
-      else
-        openXmlElement.VisibleStyles = null;
+    if (value != null)
+      openXmlElement.VisibleStyles = new OnOffValue { Value = (Boolean)value };
+    else
+      openXmlElement.VisibleStyles = null;
   }
-
+  
   /// <summary>
-  ///   alternateStyleNames, this property is only available in Office 2010 and later.
+  /// alternateStyleNames, this property is only available in Office 2010 and later.
   /// </summary>
-  public static Boolean? GetAlternateStyleNames(StylePaneFormatFilter? openXmlElement)
+  private static Boolean? GetAlternateStyleNames(DocumentFormat.OpenXml.Wordprocessing.StylePaneFormatFilter openXmlElement)
   {
     return openXmlElement?.AlternateStyleNames?.Value;
   }
-
-  public static void SetAlternateStyleNames(StylePaneFormatFilter? openXmlElement, Boolean? value)
+  
+  private static void SetAlternateStyleNames(DocumentFormat.OpenXml.Wordprocessing.StylePaneFormatFilter openXmlElement, Boolean? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.AlternateStyleNames = new OnOffValue { Value = (Boolean)value };
-      else
-        openXmlElement.AlternateStyleNames = null;
+    if (value != null)
+      openXmlElement.AlternateStyleNames = new OnOffValue { Value = (Boolean)value };
+    else
+      openXmlElement.AlternateStyleNames = null;
   }
-
-  public static DocumentModel.Wordprocessing.StylePaneFormatFilter? CreateModelElement(StylePaneFormatFilter? openXmlElement)
+  
+  public static DocumentModel.Wordprocessing.StylePaneFormatFilter? CreateModelElement(DocumentFormat.OpenXml.Wordprocessing.StylePaneFormatFilter? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -308,9 +288,9 @@ public static class StylePaneFormatFilterConverter
     }
     return null;
   }
-
+  
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.StylePaneFormatFilter? value)
-    where OpenXmlElementType : StylePaneFormatFilter, new()
+    where OpenXmlElementType: DocumentFormat.OpenXml.Wordprocessing.StylePaneFormatFilter, new()
   {
     if (value != null)
     {

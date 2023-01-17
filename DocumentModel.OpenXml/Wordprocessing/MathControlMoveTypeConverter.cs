@@ -1,61 +1,56 @@
-using DocumentFormat.OpenXml.Wordprocessing;
-
 namespace DocumentModel.OpenXml.Wordprocessing;
 
 /// <summary>
-///   Defines the MathControlMoveType Class.
+/// Defines the MathControlMoveType Class.
 /// </summary>
 public static class MathControlMoveTypeConverter
 {
   /// <summary>
-  ///   author
+  /// author
   /// </summary>
-  public static String? GetAuthor(MathControlMoveType? openXmlElement)
+  private static String? GetAuthor(DocumentFormat.OpenXml.Wordprocessing.MathControlMoveType openXmlElement)
   {
     return openXmlElement?.Author?.Value;
   }
-
-  public static void SetAuthor(MathControlMoveType? openXmlElement, String? value)
+  
+  private static void SetAuthor(DocumentFormat.OpenXml.Wordprocessing.MathControlMoveType openXmlElement, String? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.Author = new StringValue { Value = value };
-      else
-        openXmlElement.Author = null;
+    if (value != null)
+      openXmlElement.Author = new StringValue { Value = value };
+    else
+      openXmlElement.Author = null;
   }
-
+  
   /// <summary>
-  ///   date
+  /// date
   /// </summary>
-  public static DateTime? GetDate(MathControlMoveType? openXmlElement)
+  private static DateTime? GetDate(DocumentFormat.OpenXml.Wordprocessing.MathControlMoveType openXmlElement)
   {
-    return openXmlElement?.Date?.Value;
+    return openXmlElement.Date?.Value;
   }
-
-  public static void SetDate(MathControlMoveType? openXmlElement, DateTime? value)
+  
+  private static void SetDate(DocumentFormat.OpenXml.Wordprocessing.MathControlMoveType openXmlElement, DateTime? value)
   {
-    if (openXmlElement != null)
-      openXmlElement.Date = value;
+    openXmlElement.Date = value;
   }
-
+  
   /// <summary>
-  ///   Annotation Identifier
+  /// Annotation Identifier
   /// </summary>
-  public static String? GetId(MathControlMoveType? openXmlElement)
+  private static String? GetId(DocumentFormat.OpenXml.Wordprocessing.MathControlMoveType openXmlElement)
   {
     return openXmlElement?.Id?.Value;
   }
-
-  public static void SetId(MathControlMoveType? openXmlElement, String? value)
+  
+  private static void SetId(DocumentFormat.OpenXml.Wordprocessing.MathControlMoveType openXmlElement, String? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.Id = new StringValue { Value = value };
-      else
-        openXmlElement.Id = null;
+    if (value != null)
+      openXmlElement.Id = new StringValue { Value = value };
+    else
+      openXmlElement.Id = null;
   }
-
-  public static DocumentModel.Wordprocessing.MathControlMoveType? CreateModelElement(MathControlMoveType? openXmlElement)
+  
+  public static DocumentModel.Wordprocessing.MathControlMoveType? CreateModelElement(DocumentFormat.OpenXml.Wordprocessing.MathControlMoveType? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -67,9 +62,9 @@ public static class MathControlMoveTypeConverter
     }
     return null;
   }
-
+  
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.MathControlMoveType? value)
-    where OpenXmlElementType : MathControlMoveType, new()
+    where OpenXmlElementType: DocumentFormat.OpenXml.Wordprocessing.MathControlMoveType, new()
   {
     if (value != null)
     {

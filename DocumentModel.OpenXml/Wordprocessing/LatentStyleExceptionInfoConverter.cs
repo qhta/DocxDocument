@@ -1,112 +1,104 @@
-using DocumentFormat.OpenXml.Wordprocessing;
-
 namespace DocumentModel.OpenXml.Wordprocessing;
 
 /// <summary>
-///   Latent Style Exception.
+/// Latent Style Exception.
 /// </summary>
 public static class LatentStyleExceptionInfoConverter
 {
   /// <summary>
-  ///   Primary Style Name
+  /// Primary Style Name
   /// </summary>
-  public static String? GetName(LatentStyleExceptionInfo? openXmlElement)
+  private static String? GetName(DocumentFormat.OpenXml.Wordprocessing.LatentStyleExceptionInfo openXmlElement)
   {
     return openXmlElement?.Name?.Value;
   }
-
-  public static void SetName(LatentStyleExceptionInfo? openXmlElement, String? value)
+  
+  private static void SetName(DocumentFormat.OpenXml.Wordprocessing.LatentStyleExceptionInfo openXmlElement, String? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.Name = new StringValue { Value = value };
-      else
-        openXmlElement.Name = null;
+    if (value != null)
+      openXmlElement.Name = new StringValue { Value = value };
+    else
+      openXmlElement.Name = null;
   }
-
+  
   /// <summary>
-  ///   Latent Style Locking Setting
+  /// Latent Style Locking Setting
   /// </summary>
-  public static Boolean? GetLocked(LatentStyleExceptionInfo? openXmlElement)
+  private static Boolean? GetLocked(DocumentFormat.OpenXml.Wordprocessing.LatentStyleExceptionInfo openXmlElement)
   {
     return openXmlElement?.Locked?.Value;
   }
-
-  public static void SetLocked(LatentStyleExceptionInfo? openXmlElement, Boolean? value)
+  
+  private static void SetLocked(DocumentFormat.OpenXml.Wordprocessing.LatentStyleExceptionInfo openXmlElement, Boolean? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.Locked = new OnOffValue { Value = (Boolean)value };
-      else
-        openXmlElement.Locked = null;
+    if (value != null)
+      openXmlElement.Locked = new OnOffValue { Value = (Boolean)value };
+    else
+      openXmlElement.Locked = null;
   }
-
+  
   /// <summary>
-  ///   Override default sorting order
+  /// Override default sorting order
   /// </summary>
-  public static Int32? GetUiPriority(LatentStyleExceptionInfo? openXmlElement)
+  private static Int32? GetUiPriority(DocumentFormat.OpenXml.Wordprocessing.LatentStyleExceptionInfo openXmlElement)
   {
-    return openXmlElement?.UiPriority?.Value;
+    return openXmlElement.UiPriority?.Value;
   }
-
-  public static void SetUiPriority(LatentStyleExceptionInfo? openXmlElement, Int32? value)
+  
+  private static void SetUiPriority(DocumentFormat.OpenXml.Wordprocessing.LatentStyleExceptionInfo openXmlElement, Int32? value)
   {
-    if (openXmlElement != null)
-      openXmlElement.UiPriority = value;
+    openXmlElement.UiPriority = value;
   }
-
+  
   /// <summary>
-  ///   Semi hidden text override
+  /// Semi hidden text override
   /// </summary>
-  public static Boolean? GetSemiHidden(LatentStyleExceptionInfo? openXmlElement)
+  private static Boolean? GetSemiHidden(DocumentFormat.OpenXml.Wordprocessing.LatentStyleExceptionInfo openXmlElement)
   {
     return openXmlElement?.SemiHidden?.Value;
   }
-
-  public static void SetSemiHidden(LatentStyleExceptionInfo? openXmlElement, Boolean? value)
+  
+  private static void SetSemiHidden(DocumentFormat.OpenXml.Wordprocessing.LatentStyleExceptionInfo openXmlElement, Boolean? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.SemiHidden = new OnOffValue { Value = (Boolean)value };
-      else
-        openXmlElement.SemiHidden = null;
+    if (value != null)
+      openXmlElement.SemiHidden = new OnOffValue { Value = (Boolean)value };
+    else
+      openXmlElement.SemiHidden = null;
   }
-
+  
   /// <summary>
-  ///   Unhide when used
+  /// Unhide when used
   /// </summary>
-  public static Boolean? GetUnhideWhenUsed(LatentStyleExceptionInfo? openXmlElement)
+  private static Boolean? GetUnhideWhenUsed(DocumentFormat.OpenXml.Wordprocessing.LatentStyleExceptionInfo openXmlElement)
   {
     return openXmlElement?.UnhideWhenUsed?.Value;
   }
-
-  public static void SetUnhideWhenUsed(LatentStyleExceptionInfo? openXmlElement, Boolean? value)
+  
+  private static void SetUnhideWhenUsed(DocumentFormat.OpenXml.Wordprocessing.LatentStyleExceptionInfo openXmlElement, Boolean? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.UnhideWhenUsed = new OnOffValue { Value = (Boolean)value };
-      else
-        openXmlElement.UnhideWhenUsed = null;
+    if (value != null)
+      openXmlElement.UnhideWhenUsed = new OnOffValue { Value = (Boolean)value };
+    else
+      openXmlElement.UnhideWhenUsed = null;
   }
-
+  
   /// <summary>
-  ///   Latent Style Primary Style Setting
+  /// Latent Style Primary Style Setting
   /// </summary>
-  public static Boolean? GetPrimaryStyle(LatentStyleExceptionInfo? openXmlElement)
+  private static Boolean? GetPrimaryStyle(DocumentFormat.OpenXml.Wordprocessing.LatentStyleExceptionInfo openXmlElement)
   {
     return openXmlElement?.PrimaryStyle?.Value;
   }
-
-  public static void SetPrimaryStyle(LatentStyleExceptionInfo? openXmlElement, Boolean? value)
+  
+  private static void SetPrimaryStyle(DocumentFormat.OpenXml.Wordprocessing.LatentStyleExceptionInfo openXmlElement, Boolean? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.PrimaryStyle = new OnOffValue { Value = (Boolean)value };
-      else
-        openXmlElement.PrimaryStyle = null;
+    if (value != null)
+      openXmlElement.PrimaryStyle = new OnOffValue { Value = (Boolean)value };
+    else
+      openXmlElement.PrimaryStyle = null;
   }
-
-  public static DocumentModel.Wordprocessing.LatentStyleExceptionInfo? CreateModelElement(LatentStyleExceptionInfo? openXmlElement)
+  
+  public static DocumentModel.Wordprocessing.LatentStyleExceptionInfo? CreateModelElement(DocumentFormat.OpenXml.Wordprocessing.LatentStyleExceptionInfo? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -121,9 +113,9 @@ public static class LatentStyleExceptionInfoConverter
     }
     return null;
   }
-
+  
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.LatentStyleExceptionInfo? value)
-    where OpenXmlElementType : LatentStyleExceptionInfo, new()
+    where OpenXmlElementType: DocumentFormat.OpenXml.Wordprocessing.LatentStyleExceptionInfo, new()
   {
     if (value != null)
     {

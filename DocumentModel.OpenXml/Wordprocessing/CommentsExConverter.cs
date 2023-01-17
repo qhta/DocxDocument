@@ -1,45 +1,37 @@
-using DocumentModel.Wordprocessing;
-using CommentsEx = DocumentFormat.OpenXml.Office2013.Word.CommentsEx;
-
 namespace DocumentModel.OpenXml.Wordprocessing;
 
 /// <summary>
-///   Defines the CommentsEx Class.
+/// Defines the CommentsEx Class.
 /// </summary>
 public static class CommentsExConverter
 {
-  public static Collection<CommentEx>? GetCommentExs(CommentsEx? openXmlElement)
+  private static System.Collections.ObjectModel.Collection<DocumentModel.Wordprocessing.CommentEx> GetCommentExs(DocumentFormat.OpenXml.Office2013.Word.CommentsEx openXmlElement)
   {
-    if (openXmlElement != null)
+    var collection = new System.Collections.ObjectModel.Collection<DocumentModel.Wordprocessing.CommentEx>();
+    foreach (var item in openXmlElement.Elements<DocumentFormat.OpenXml.Office2013.Word.CommentEx>())
     {
-      var collection = new Collection<CommentEx>();
-      foreach (var item in openXmlElement.Elements<DocumentFormat.OpenXml.Office2013.Word.CommentEx>())
+      var newItem = DocumentModel.OpenXml.Wordprocessing.CommentExConverter.CreateModelElement(item);
+      if (newItem != null)
+        collection.Add(newItem);
+    }
+    return collection;
+  }
+  
+  private static void SetCommentExs(DocumentFormat.OpenXml.Office2013.Word.CommentsEx openXmlElement, System.Collections.ObjectModel.Collection<DocumentModel.Wordprocessing.CommentEx>? value)
+  {
+    openXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Office2013.Word.CommentEx>();
+    if (value != null)
+    {
+      foreach (var item in value)
       {
-        var newItem = CommentExConverter.CreateModelElement(item);
+        var newItem = DocumentModel.OpenXml.Wordprocessing.CommentExConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2013.Word.CommentEx>(item);
         if (newItem != null)
-          collection.Add(newItem);
+          openXmlElement.AddChild(newItem);
       }
-      return collection;
-    }
-    return null;
-  }
-
-  public static void SetCommentExs(CommentsEx? openXmlElement, Collection<CommentEx>? value)
-  {
-    if (openXmlElement != null)
-    {
-      openXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Office2013.Word.CommentEx>();
-      if (value != null)
-        foreach (var item in value)
-        {
-          var newItem = CommentExConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2013.Word.CommentEx>(item);
-          if (newItem != null)
-            openXmlElement.AddChild(newItem);
-        }
     }
   }
-
-  public static DocumentModel.Wordprocessing.CommentsEx? CreateModelElement(CommentsEx? openXmlElement)
+  
+  public static DocumentModel.Wordprocessing.CommentsEx? CreateModelElement(DocumentFormat.OpenXml.Office2013.Word.CommentsEx? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -49,9 +41,9 @@ public static class CommentsExConverter
     }
     return null;
   }
-
+  
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.CommentsEx? value)
-    where OpenXmlElementType : CommentsEx, new()
+    where OpenXmlElementType: DocumentFormat.OpenXml.Office2013.Word.CommentsEx, new()
   {
     if (value != null)
     {

@@ -1,42 +1,35 @@
-using DocumentFormat.OpenXml.Drawing;
-using AdjustPoint2DType = DocumentModel.Drawings.AdjustPoint2DType;
-using LineTo = DocumentFormat.OpenXml.Drawing.LineTo;
-
 namespace DocumentModel.OpenXml.Drawings;
 
 /// <summary>
-///   Draw Line To.
+/// Draw Line To.
 /// </summary>
 public static class LineToConverter
 {
   /// <summary>
-  ///   Line end point.
+  /// Line end point.
   /// </summary>
-  public static AdjustPoint2DType? GetPoint(LineTo? openXmlElement)
+  private static DocumentModel.Drawings.AdjustPoint2DType? GetPoint(DocumentFormat.OpenXml.Drawing.LineTo openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<Point>();
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.Point>();
     if (itemElement != null)
-      return AdjustPoint2DTypeConverter.CreateModelElement(itemElement);
+      return DocumentModel.OpenXml.Drawings.AdjustPoint2DTypeConverter.CreateModelElement(itemElement);
     return null;
   }
-
-  public static void SetPoint(LineTo? openXmlElement, AdjustPoint2DType? value)
+  
+  private static void SetPoint(DocumentFormat.OpenXml.Drawing.LineTo openXmlElement, DocumentModel.Drawings.AdjustPoint2DType? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Point>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<Point>();
+      itemElement = DocumentModel.OpenXml.Drawings.AdjustPoint2DTypeConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Point>(value);
       if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = AdjustPoint2DTypeConverter.CreateOpenXmlElement<Point>(value);
-        if (itemElement != null)
-          openXmlElement.AddChild(itemElement);
-      }
+        openXmlElement.AddChild(itemElement);
     }
   }
-
-  public static DocumentModel.Drawings.LineTo? CreateModelElement(LineTo? openXmlElement)
+  
+  public static DocumentModel.Drawings.LineTo? CreateModelElement(DocumentFormat.OpenXml.Drawing.LineTo? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -46,9 +39,9 @@ public static class LineToConverter
     }
     return null;
   }
-
+  
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.LineTo? value)
-    where OpenXmlElementType : LineTo, new()
+    where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.LineTo, new()
   {
     if (value != null)
     {

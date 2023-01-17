@@ -1,374 +1,323 @@
-using DocumentFormat.OpenXml.Wordprocessing;
-using DocumentModel.OpenXml.Vml;
-using DocumentModel.Vml;
-using Control = DocumentModel.Wordprocessing.Control;
-using RelationshipType = DocumentModel.Wordprocessing.RelationshipType;
-
 namespace DocumentModel.OpenXml.Wordprocessing;
 
 /// <summary>
-///   VML Object.
+/// VML Object.
 /// </summary>
 public static class PictureConverter
 {
   /// <summary>
-  ///   anchorId, this property is only available in Office 2010 and later.
+  /// anchorId, this property is only available in Office 2010 and later.
   /// </summary>
-  public static Byte[]? GetAnchorId(Picture? openXmlElement)
+  private static UInt32? GetAnchorId(DocumentFormat.OpenXml.Wordprocessing.Picture openXmlElement)
   {
-    if (openXmlElement?.AnchorId?.Value != null)
-      return Convert.FromHexString(openXmlElement.AnchorId.Value);
+    if (openXmlElement.AnchorId?.Value != null)
+      return UInt32.Parse(openXmlElement.AnchorId.Value, NumberStyles.HexNumber);
     return null;
   }
-
-  public static void SetAnchorId(Picture? openXmlElement, Byte[]? value)
+  
+  private static void SetAnchorId(DocumentFormat.OpenXml.Wordprocessing.Picture openXmlElement, UInt32? value)
   {
-    if (openXmlElement != null)
-    {
       if (value != null)
-        openXmlElement.AnchorId = Convert.ToHexString(value);
+        openXmlElement.AnchorId = ((UInt32)value).ToString("X8");
       else
         openXmlElement.AnchorId = null;
-    }
   }
-
-  public static DocumentModel.Vml.Group? GetGroup(Picture? openXmlElement)
+  
+  private static DocumentModel.Vml.Group? GetGroup(DocumentFormat.OpenXml.Wordprocessing.Picture openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Vml.Group>();
     if (itemElement != null)
-      return OpenXml.Vml.GroupConverter.CreateModelElement(itemElement);
+      return DocumentModel.OpenXml.Vml.GroupConverter.CreateModelElement(itemElement);
     return null;
   }
-
-  public static void SetGroup(Picture? openXmlElement, DocumentModel.Vml.Group? value)
+  
+  private static void SetGroup(DocumentFormat.OpenXml.Wordprocessing.Picture openXmlElement, DocumentModel.Vml.Group? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Vml.Group>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Vml.Group>();
+      itemElement = DocumentModel.OpenXml.Vml.GroupConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Vml.Group>(value);
       if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = OpenXml.Vml.GroupConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Vml.Group>(value);
-        if (itemElement != null)
-          openXmlElement.AddChild(itemElement);
-      }
+        openXmlElement.AddChild(itemElement);
     }
   }
-
-  public static ImageFile? GetImageFile(Picture? openXmlElement)
+  
+  private static DocumentModel.Vml.ImageFile? GetImageFile(DocumentFormat.OpenXml.Wordprocessing.Picture openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Vml.ImageFile>();
     if (itemElement != null)
-      return ImageFileConverter.CreateModelElement(itemElement);
+      return DocumentModel.OpenXml.Vml.ImageFileConverter.CreateModelElement(itemElement);
     return null;
   }
-
-  public static void SetImageFile(Picture? openXmlElement, ImageFile? value)
+  
+  private static void SetImageFile(DocumentFormat.OpenXml.Wordprocessing.Picture openXmlElement, DocumentModel.Vml.ImageFile? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Vml.ImageFile>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Vml.ImageFile>();
+      itemElement = DocumentModel.OpenXml.Vml.ImageFileConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Vml.ImageFile>(value);
       if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = ImageFileConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Vml.ImageFile>(value);
-        if (itemElement != null)
-          openXmlElement.AddChild(itemElement);
-      }
+        openXmlElement.AddChild(itemElement);
     }
   }
-
-  public static Line? GetLine(Picture? openXmlElement)
+  
+  private static DocumentModel.Vml.Line? GetLine(DocumentFormat.OpenXml.Wordprocessing.Picture openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Vml.Line>();
     if (itemElement != null)
-      return LineConverter.CreateModelElement(itemElement);
+      return DocumentModel.OpenXml.Vml.LineConverter.CreateModelElement(itemElement);
     return null;
   }
-
-  public static void SetLine(Picture? openXmlElement, Line? value)
+  
+  private static void SetLine(DocumentFormat.OpenXml.Wordprocessing.Picture openXmlElement, DocumentModel.Vml.Line? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Vml.Line>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Vml.Line>();
+      itemElement = DocumentModel.OpenXml.Vml.LineConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Vml.Line>(value);
       if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = LineConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Vml.Line>(value);
-        if (itemElement != null)
-          openXmlElement.AddChild(itemElement);
-      }
+        openXmlElement.AddChild(itemElement);
     }
   }
-
-  public static Oval? GetOval(Picture? openXmlElement)
+  
+  private static DocumentModel.Vml.Oval? GetOval(DocumentFormat.OpenXml.Wordprocessing.Picture openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Vml.Oval>();
     if (itemElement != null)
-      return OvalConverter.CreateModelElement(itemElement);
+      return DocumentModel.OpenXml.Vml.OvalConverter.CreateModelElement(itemElement);
     return null;
   }
-
-  public static void SetOval(Picture? openXmlElement, Oval? value)
+  
+  private static void SetOval(DocumentFormat.OpenXml.Wordprocessing.Picture openXmlElement, DocumentModel.Vml.Oval? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Vml.Oval>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Vml.Oval>();
+      itemElement = DocumentModel.OpenXml.Vml.OvalConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Vml.Oval>(value);
       if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = OvalConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Vml.Oval>(value);
-        if (itemElement != null)
-          openXmlElement.AddChild(itemElement);
-      }
+        openXmlElement.AddChild(itemElement);
     }
   }
-
-  public static PolyLine? GetPolyLine(Picture? openXmlElement)
+  
+  private static DocumentModel.Vml.PolyLine? GetPolyLine(DocumentFormat.OpenXml.Wordprocessing.Picture openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Vml.PolyLine>();
     if (itemElement != null)
-      return PolyLineConverter.CreateModelElement(itemElement);
+      return DocumentModel.OpenXml.Vml.PolyLineConverter.CreateModelElement(itemElement);
     return null;
   }
-
-  public static void SetPolyLine(Picture? openXmlElement, PolyLine? value)
+  
+  private static void SetPolyLine(DocumentFormat.OpenXml.Wordprocessing.Picture openXmlElement, DocumentModel.Vml.PolyLine? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Vml.PolyLine>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Vml.PolyLine>();
+      itemElement = DocumentModel.OpenXml.Vml.PolyLineConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Vml.PolyLine>(value);
       if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = PolyLineConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Vml.PolyLine>(value);
-        if (itemElement != null)
-          openXmlElement.AddChild(itemElement);
-      }
+        openXmlElement.AddChild(itemElement);
     }
   }
-
-  public static Rectangle? GetRectangle(Picture? openXmlElement)
+  
+  private static DocumentModel.Vml.Rectangle? GetRectangle(DocumentFormat.OpenXml.Wordprocessing.Picture openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Vml.Rectangle>();
     if (itemElement != null)
-      return RectangleConverter.CreateModelElement(itemElement);
+      return DocumentModel.OpenXml.Vml.RectangleConverter.CreateModelElement(itemElement);
     return null;
   }
-
-  public static void SetRectangle(Picture? openXmlElement, Rectangle? value)
+  
+  private static void SetRectangle(DocumentFormat.OpenXml.Wordprocessing.Picture openXmlElement, DocumentModel.Vml.Rectangle? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Vml.Rectangle>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Vml.Rectangle>();
+      itemElement = DocumentModel.OpenXml.Vml.RectangleConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Vml.Rectangle>(value);
       if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = RectangleConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Vml.Rectangle>(value);
-        if (itemElement != null)
-          openXmlElement.AddChild(itemElement);
-      }
+        openXmlElement.AddChild(itemElement);
     }
   }
-
-  public static RoundRectangle? GetRoundRectangle(Picture? openXmlElement)
+  
+  private static DocumentModel.Vml.RoundRectangle? GetRoundRectangle(DocumentFormat.OpenXml.Wordprocessing.Picture openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Vml.RoundRectangle>();
     if (itemElement != null)
-      return RoundRectangleConverter.CreateModelElement(itemElement);
+      return DocumentModel.OpenXml.Vml.RoundRectangleConverter.CreateModelElement(itemElement);
     return null;
   }
-
-  public static void SetRoundRectangle(Picture? openXmlElement, RoundRectangle? value)
+  
+  private static void SetRoundRectangle(DocumentFormat.OpenXml.Wordprocessing.Picture openXmlElement, DocumentModel.Vml.RoundRectangle? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Vml.RoundRectangle>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Vml.RoundRectangle>();
+      itemElement = DocumentModel.OpenXml.Vml.RoundRectangleConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Vml.RoundRectangle>(value);
       if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = RoundRectangleConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Vml.RoundRectangle>(value);
-        if (itemElement != null)
-          openXmlElement.AddChild(itemElement);
-      }
+        openXmlElement.AddChild(itemElement);
     }
   }
-
-  public static Shape? GetShape(Picture? openXmlElement)
+  
+  private static DocumentModel.Vml.Shape? GetShape(DocumentFormat.OpenXml.Wordprocessing.Picture openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Vml.Shape>();
     if (itemElement != null)
-      return ShapeConverter.CreateModelElement(itemElement);
+      return DocumentModel.OpenXml.Vml.ShapeConverter.CreateModelElement(itemElement);
     return null;
   }
-
-  public static void SetShape(Picture? openXmlElement, Shape? value)
+  
+  private static void SetShape(DocumentFormat.OpenXml.Wordprocessing.Picture openXmlElement, DocumentModel.Vml.Shape? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Vml.Shape>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Vml.Shape>();
+      itemElement = DocumentModel.OpenXml.Vml.ShapeConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Vml.Shape>(value);
       if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = ShapeConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Vml.Shape>(value);
-        if (itemElement != null)
-          openXmlElement.AddChild(itemElement);
-      }
+        openXmlElement.AddChild(itemElement);
     }
   }
-
-  public static Shapetype? GetShapetype(Picture? openXmlElement)
+  
+  private static DocumentModel.Vml.Shapetype? GetShapetype(DocumentFormat.OpenXml.Wordprocessing.Picture openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Vml.Shapetype>();
     if (itemElement != null)
-      return ShapetypeConverter.CreateModelElement(itemElement);
+      return DocumentModel.OpenXml.Vml.ShapetypeConverter.CreateModelElement(itemElement);
     return null;
   }
-
-  public static void SetShapetype(Picture? openXmlElement, Shapetype? value)
+  
+  private static void SetShapetype(DocumentFormat.OpenXml.Wordprocessing.Picture openXmlElement, DocumentModel.Vml.Shapetype? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Vml.Shapetype>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Vml.Shapetype>();
+      itemElement = DocumentModel.OpenXml.Vml.ShapetypeConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Vml.Shapetype>(value);
       if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = ShapetypeConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Vml.Shapetype>(value);
-        if (itemElement != null)
-          openXmlElement.AddChild(itemElement);
-      }
+        openXmlElement.AddChild(itemElement);
     }
   }
-
-  public static Arc? GetArc(Picture? openXmlElement)
+  
+  private static DocumentModel.Vml.Arc? GetArc(DocumentFormat.OpenXml.Wordprocessing.Picture openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Vml.Arc>();
     if (itemElement != null)
-      return ArcConverter.CreateModelElement(itemElement);
+      return DocumentModel.OpenXml.Vml.ArcConverter.CreateModelElement(itemElement);
     return null;
   }
-
-  public static void SetArc(Picture? openXmlElement, Arc? value)
+  
+  private static void SetArc(DocumentFormat.OpenXml.Wordprocessing.Picture openXmlElement, DocumentModel.Vml.Arc? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Vml.Arc>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Vml.Arc>();
+      itemElement = DocumentModel.OpenXml.Vml.ArcConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Vml.Arc>(value);
       if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = ArcConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Vml.Arc>(value);
-        if (itemElement != null)
-          openXmlElement.AddChild(itemElement);
-      }
+        openXmlElement.AddChild(itemElement);
     }
   }
-
-  public static Curve? GetCurve(Picture? openXmlElement)
+  
+  private static DocumentModel.Vml.Curve? GetCurve(DocumentFormat.OpenXml.Wordprocessing.Picture openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Vml.Curve>();
     if (itemElement != null)
-      return CurveConverter.CreateModelElement(itemElement);
+      return DocumentModel.OpenXml.Vml.CurveConverter.CreateModelElement(itemElement);
     return null;
   }
-
-  public static void SetCurve(Picture? openXmlElement, Curve? value)
+  
+  private static void SetCurve(DocumentFormat.OpenXml.Wordprocessing.Picture openXmlElement, DocumentModel.Vml.Curve? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Vml.Curve>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Vml.Curve>();
+      itemElement = DocumentModel.OpenXml.Vml.CurveConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Vml.Curve>(value);
       if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = CurveConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Vml.Curve>(value);
-        if (itemElement != null)
-          openXmlElement.AddChild(itemElement);
-      }
+        openXmlElement.AddChild(itemElement);
     }
   }
-
-  public static OleObject? GetOleObject(Picture? openXmlElement)
+  
+  private static DocumentModel.Vml.OleObject? GetOleObject(DocumentFormat.OpenXml.Wordprocessing.Picture openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Vml.Office.OleObject>();
     if (itemElement != null)
-      return OleObjectConverter.CreateModelElement(itemElement);
+      return DocumentModel.OpenXml.Vml.OleObjectConverter.CreateModelElement(itemElement);
     return null;
   }
-
-  public static void SetOleObject(Picture? openXmlElement, OleObject? value)
+  
+  private static void SetOleObject(DocumentFormat.OpenXml.Wordprocessing.Picture openXmlElement, DocumentModel.Vml.OleObject? value)
   {
-    if (openXmlElement != null)
-    {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Vml.Office.OleObject>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = OleObjectConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Vml.Office.OleObject>(value);
-        if (itemElement != null)
-          openXmlElement.AddChild(itemElement);
-      }
-    }
-  }
-
-  public static RelationshipType? GetMovieReference(Picture? openXmlElement)
-  {
-    var itemElement = openXmlElement?.GetFirstChild<MovieReference>();
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Vml.Office.OleObject>();
     if (itemElement != null)
-      return RelationshipTypeConverter.CreateModelElement(itemElement);
-    return null;
-  }
-
-  public static void SetMovieReference(Picture? openXmlElement, RelationshipType? value)
-  {
-    if (openXmlElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<MovieReference>();
+      itemElement = DocumentModel.OpenXml.Vml.OleObjectConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Vml.Office.OleObject>(value);
       if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = RelationshipTypeConverter.CreateOpenXmlElement<MovieReference>(value);
-        if (itemElement != null)
-          openXmlElement.AddChild(itemElement);
-      }
+        openXmlElement.AddChild(itemElement);
     }
   }
-
-  public static Control? GetControl(Picture? openXmlElement)
+  
+  private static DocumentModel.Wordprocessing.RelationshipType? GetMovieReference(DocumentFormat.OpenXml.Wordprocessing.Picture openXmlElement)
+  {
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.MovieReference>();
+    if (itemElement != null)
+      return DocumentModel.OpenXml.Wordprocessing.RelationshipTypeConverter.CreateModelElement(itemElement);
+    return null;
+  }
+  
+  private static void SetMovieReference(DocumentFormat.OpenXml.Wordprocessing.Picture openXmlElement, DocumentModel.Wordprocessing.RelationshipType? value)
+  {
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.MovieReference>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
+    {
+      itemElement = DocumentModel.OpenXml.Wordprocessing.RelationshipTypeConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.MovieReference>(value);
+      if (itemElement != null)
+        openXmlElement.AddChild(itemElement);
+    }
+  }
+  
+  private static DocumentModel.Wordprocessing.Control? GetControl(DocumentFormat.OpenXml.Wordprocessing.Picture openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.Control>();
     if (itemElement != null)
-      return ControlConverter.CreateModelElement(itemElement);
+      return DocumentModel.OpenXml.Wordprocessing.ControlConverter.CreateModelElement(itemElement);
     return null;
   }
-
-  public static void SetControl(Picture? openXmlElement, Control? value)
+  
+  private static void SetControl(DocumentFormat.OpenXml.Wordprocessing.Picture openXmlElement, DocumentModel.Wordprocessing.Control? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.Control>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.Control>();
+      itemElement = DocumentModel.OpenXml.Wordprocessing.ControlConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.Control>(value);
       if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = ControlConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.Control>(value);
-        if (itemElement != null)
-          openXmlElement.AddChild(itemElement);
-      }
+        openXmlElement.AddChild(itemElement);
     }
   }
-
-  public static DocumentModel.Wordprocessing.Picture? CreateModelElement(Picture? openXmlElement)
+  
+  public static DocumentModel.Wordprocessing.Picture? CreateModelElement(DocumentFormat.OpenXml.Wordprocessing.Picture? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -392,9 +341,9 @@ public static class PictureConverter
     }
     return null;
   }
-
+  
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.Picture? value)
-    where OpenXmlElementType : Picture, new()
+    where OpenXmlElementType: DocumentFormat.OpenXml.Wordprocessing.Picture, new()
   {
     if (value != null)
     {

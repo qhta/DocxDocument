@@ -1,57 +1,48 @@
-using DocumentFormat.OpenXml.Office2010.Word;
-using DocumentModel.Wordprocessing;
-using FillToRectangle = DocumentModel.Wordprocessing.FillToRectangle;
-using PathShadeProperties = DocumentFormat.OpenXml.Office2010.Word.PathShadeProperties;
-
 namespace DocumentModel.OpenXml.Wordprocessing;
 
 /// <summary>
-///   Defines the PathShadeProperties Class.
+/// Defines the PathShadeProperties Class.
 /// </summary>
 public static class PathShadePropertiesConverter
 {
   /// <summary>
-  ///   path, this property is only available in Office 2010 and later.
+  /// path, this property is only available in Office 2010 and later.
   /// </summary>
-  public static PathShadeKind? GetPath(PathShadeProperties? openXmlElement)
+  private static DocumentModel.Wordprocessing.PathShadeKind? GetPath(DocumentFormat.OpenXml.Office2010.Word.PathShadeProperties openXmlElement)
   {
-    return EnumValueConverter.GetValue<PathShadeTypeValues, PathShadeKind>(openXmlElement?.Path?.Value);
+    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Office2010.Word.PathShadeTypeValues, DocumentModel.Wordprocessing.PathShadeKind>(openXmlElement?.Path?.Value);
   }
-
-  public static void SetPath(PathShadeProperties? openXmlElement, PathShadeKind? value)
+  
+  private static void SetPath(DocumentFormat.OpenXml.Office2010.Word.PathShadeProperties openXmlElement, DocumentModel.Wordprocessing.PathShadeKind? value)
   {
-    if (openXmlElement != null)
-      openXmlElement.Path = EnumValueConverter.CreateEnumValue<PathShadeTypeValues, PathShadeKind>(value);
+    openXmlElement.Path = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Office2010.Word.PathShadeTypeValues, DocumentModel.Wordprocessing.PathShadeKind>(value);
   }
-
+  
   /// <summary>
-  ///   FillToRectangle.
+  /// FillToRectangle.
   /// </summary>
-  public static FillToRectangle? GetFillToRectangle(PathShadeProperties? openXmlElement)
+  private static DocumentModel.Wordprocessing.FillToRectangle? GetFillToRectangle(DocumentFormat.OpenXml.Office2010.Word.PathShadeProperties openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office2010.Word.FillToRectangle>();
     if (itemElement != null)
-      return FillToRectangleConverter.CreateModelElement(itemElement);
+      return DocumentModel.OpenXml.Wordprocessing.FillToRectangleConverter.CreateModelElement(itemElement);
     return null;
   }
-
-  public static void SetFillToRectangle(PathShadeProperties? openXmlElement, FillToRectangle? value)
+  
+  private static void SetFillToRectangle(DocumentFormat.OpenXml.Office2010.Word.PathShadeProperties openXmlElement, DocumentModel.Wordprocessing.FillToRectangle? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2010.Word.FillToRectangle>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2010.Word.FillToRectangle>();
+      itemElement = DocumentModel.OpenXml.Wordprocessing.FillToRectangleConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2010.Word.FillToRectangle>(value);
       if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = FillToRectangleConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2010.Word.FillToRectangle>(value);
-        if (itemElement != null)
-          openXmlElement.AddChild(itemElement);
-      }
+        openXmlElement.AddChild(itemElement);
     }
   }
-
-  public static DocumentModel.Wordprocessing.PathShadeProperties? CreateModelElement(PathShadeProperties? openXmlElement)
+  
+  public static DocumentModel.Wordprocessing.PathShadeProperties? CreateModelElement(DocumentFormat.OpenXml.Office2010.Word.PathShadeProperties? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -62,9 +53,9 @@ public static class PathShadePropertiesConverter
     }
     return null;
   }
-
+  
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.PathShadeProperties? value)
-    where OpenXmlElementType : PathShadeProperties, new()
+    where OpenXmlElementType: DocumentFormat.OpenXml.Office2010.Word.PathShadeProperties, new()
   {
     if (value != null)
     {

@@ -1,177 +1,160 @@
-using DocumentFormat.OpenXml.Office.Drawing;
-using DocumentModel.Drawings;
-
 namespace DocumentModel.OpenXml.Drawings.Office;
 
 /// <summary>
-///   Defines the NonVisualDrawingProperties Class.
+/// Defines the NonVisualDrawingProperties Class.
 /// </summary>
 public static class NonVisualDrawingPropertiesConverter
 {
   /// <summary>
-  ///   Application defined unique identifier.
+  /// Application defined unique identifier.
   /// </summary>
-  public static UInt32? GetId(NonVisualDrawingProperties? openXmlElement)
+  private static UInt32? GetId(DocumentFormat.OpenXml.Office.Drawing.NonVisualDrawingProperties openXmlElement)
   {
-    return openXmlElement?.Id?.Value;
+    return openXmlElement.Id?.Value;
   }
-
-  public static void SetId(NonVisualDrawingProperties? openXmlElement, UInt32? value)
+  
+  private static void SetId(DocumentFormat.OpenXml.Office.Drawing.NonVisualDrawingProperties openXmlElement, UInt32? value)
   {
-    if (openXmlElement != null)
-      openXmlElement.Id = value;
+    openXmlElement.Id = value;
   }
-
+  
   /// <summary>
-  ///   Name compatible with Object Model (non-unique).
+  /// Name compatible with Object Model (non-unique).
   /// </summary>
-  public static String? GetName(NonVisualDrawingProperties? openXmlElement)
+  private static String? GetName(DocumentFormat.OpenXml.Office.Drawing.NonVisualDrawingProperties openXmlElement)
   {
     return openXmlElement?.Name?.Value;
   }
-
-  public static void SetName(NonVisualDrawingProperties? openXmlElement, String? value)
+  
+  private static void SetName(DocumentFormat.OpenXml.Office.Drawing.NonVisualDrawingProperties openXmlElement, String? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.Name = new StringValue { Value = value };
-      else
-        openXmlElement.Name = null;
+    if (value != null)
+      openXmlElement.Name = new StringValue { Value = value };
+    else
+      openXmlElement.Name = null;
   }
-
+  
   /// <summary>
-  ///   Description of the drawing element.
+  /// Description of the drawing element.
   /// </summary>
-  public static String? GetDescription(NonVisualDrawingProperties? openXmlElement)
+  private static String? GetDescription(DocumentFormat.OpenXml.Office.Drawing.NonVisualDrawingProperties openXmlElement)
   {
     return openXmlElement?.Description?.Value;
   }
-
-  public static void SetDescription(NonVisualDrawingProperties? openXmlElement, String? value)
+  
+  private static void SetDescription(DocumentFormat.OpenXml.Office.Drawing.NonVisualDrawingProperties openXmlElement, String? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.Description = new StringValue { Value = value };
-      else
-        openXmlElement.Description = null;
+    if (value != null)
+      openXmlElement.Description = new StringValue { Value = value };
+    else
+      openXmlElement.Description = null;
   }
-
+  
   /// <summary>
-  ///   Flag determining to show or hide this element.
+  /// Flag determining to show or hide this element.
   /// </summary>
-  public static Boolean? GetHidden(NonVisualDrawingProperties? openXmlElement)
+  private static Boolean? GetHidden(DocumentFormat.OpenXml.Office.Drawing.NonVisualDrawingProperties openXmlElement)
   {
     return openXmlElement?.Hidden?.Value;
   }
-
-  public static void SetHidden(NonVisualDrawingProperties? openXmlElement, Boolean? value)
+  
+  private static void SetHidden(DocumentFormat.OpenXml.Office.Drawing.NonVisualDrawingProperties openXmlElement, Boolean? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.Hidden = new BooleanValue { Value = (Boolean)value };
-      else
-        openXmlElement.Hidden = null;
+    if (value != null)
+      openXmlElement.Hidden = new BooleanValue { Value = (Boolean)value };
+    else
+      openXmlElement.Hidden = null;
   }
-
+  
   /// <summary>
-  ///   Title
+  /// Title
   /// </summary>
-  public static String? GetTitle(NonVisualDrawingProperties? openXmlElement)
+  private static String? GetTitle(DocumentFormat.OpenXml.Office.Drawing.NonVisualDrawingProperties openXmlElement)
   {
     return openXmlElement?.Title?.Value;
   }
-
-  public static void SetTitle(NonVisualDrawingProperties? openXmlElement, String? value)
+  
+  private static void SetTitle(DocumentFormat.OpenXml.Office.Drawing.NonVisualDrawingProperties openXmlElement, String? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.Title = new StringValue { Value = value };
-      else
-        openXmlElement.Title = null;
+    if (value != null)
+      openXmlElement.Title = new StringValue { Value = value };
+    else
+      openXmlElement.Title = null;
   }
-
+  
   /// <summary>
-  ///   Hyperlink associated with clicking or selecting the element..
+  /// Hyperlink associated with clicking or selecting the element..
   /// </summary>
-  public static HyperlinkOnClick? GetHyperlinkOnClick(NonVisualDrawingProperties? openXmlElement)
+  private static DocumentModel.Drawings.HyperlinkOnClick? GetHyperlinkOnClick(DocumentFormat.OpenXml.Office.Drawing.NonVisualDrawingProperties openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.HyperlinkOnClick>();
     if (itemElement != null)
-      return HyperlinkOnClickConverter.CreateModelElement(itemElement);
+      return DocumentModel.OpenXml.Drawings.HyperlinkOnClickConverter.CreateModelElement(itemElement);
     return null;
   }
-
-  public static void SetHyperlinkOnClick(NonVisualDrawingProperties? openXmlElement, HyperlinkOnClick? value)
+  
+  private static void SetHyperlinkOnClick(DocumentFormat.OpenXml.Office.Drawing.NonVisualDrawingProperties openXmlElement, DocumentModel.Drawings.HyperlinkOnClick? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.HyperlinkOnClick>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.HyperlinkOnClick>();
+      itemElement = DocumentModel.OpenXml.Drawings.HyperlinkOnClickConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.HyperlinkOnClick>(value);
       if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = HyperlinkOnClickConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.HyperlinkOnClick>(value);
-        if (itemElement != null)
-          openXmlElement.AddChild(itemElement);
-      }
+        openXmlElement.AddChild(itemElement);
     }
   }
-
+  
   /// <summary>
-  ///   Hyperlink associated with hovering over the element..
+  /// Hyperlink associated with hovering over the element..
   /// </summary>
-  public static HyperlinkOnHover? GetHyperlinkOnHover(NonVisualDrawingProperties? openXmlElement)
+  private static DocumentModel.Drawings.HyperlinkOnHover? GetHyperlinkOnHover(DocumentFormat.OpenXml.Office.Drawing.NonVisualDrawingProperties openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.HyperlinkOnHover>();
     if (itemElement != null)
-      return HyperlinkOnHoverConverter.CreateModelElement(itemElement);
+      return DocumentModel.OpenXml.Drawings.HyperlinkOnHoverConverter.CreateModelElement(itemElement);
     return null;
   }
-
-  public static void SetHyperlinkOnHover(NonVisualDrawingProperties? openXmlElement, HyperlinkOnHover? value)
+  
+  private static void SetHyperlinkOnHover(DocumentFormat.OpenXml.Office.Drawing.NonVisualDrawingProperties openXmlElement, DocumentModel.Drawings.HyperlinkOnHover? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.HyperlinkOnHover>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.HyperlinkOnHover>();
+      itemElement = DocumentModel.OpenXml.Drawings.HyperlinkOnHoverConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.HyperlinkOnHover>(value);
       if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = HyperlinkOnHoverConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.HyperlinkOnHover>(value);
-        if (itemElement != null)
-          openXmlElement.AddChild(itemElement);
-      }
+        openXmlElement.AddChild(itemElement);
     }
   }
-
+  
   /// <summary>
-  ///   Future extension.
+  /// Future extension.
   /// </summary>
-  public static NonVisualDrawingPropertiesExtensionList? GetNonVisualDrawingPropertiesExtensionList(NonVisualDrawingProperties? openXmlElement)
+  private static DocumentModel.Drawings.NonVisualDrawingPropertiesExtensionList? GetNonVisualDrawingPropertiesExtensionList(DocumentFormat.OpenXml.Office.Drawing.NonVisualDrawingProperties openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.NonVisualDrawingPropertiesExtensionList>();
     if (itemElement != null)
-      return NonVisualDrawingPropertiesExtensionListConverter.CreateModelElement(itemElement);
+      return DocumentModel.OpenXml.Drawings.NonVisualDrawingPropertiesExtensionListConverter.CreateModelElement(itemElement);
     return null;
   }
-
-  public static void SetNonVisualDrawingPropertiesExtensionList(NonVisualDrawingProperties? openXmlElement, NonVisualDrawingPropertiesExtensionList? value)
+  
+  private static void SetNonVisualDrawingPropertiesExtensionList(DocumentFormat.OpenXml.Office.Drawing.NonVisualDrawingProperties openXmlElement, DocumentModel.Drawings.NonVisualDrawingPropertiesExtensionList? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.NonVisualDrawingPropertiesExtensionList>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.NonVisualDrawingPropertiesExtensionList>();
+      itemElement = DocumentModel.OpenXml.Drawings.NonVisualDrawingPropertiesExtensionListConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.NonVisualDrawingPropertiesExtensionList>(value);
       if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = NonVisualDrawingPropertiesExtensionListConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.NonVisualDrawingPropertiesExtensionList>(value);
-        if (itemElement != null)
-          openXmlElement.AddChild(itemElement);
-      }
+        openXmlElement.AddChild(itemElement);
     }
   }
-
-  public static DocumentModel.Drawings.Office.NonVisualDrawingProperties? CreateModelElement(NonVisualDrawingProperties? openXmlElement)
+  
+  public static DocumentModel.Drawings.Office.NonVisualDrawingProperties? CreateModelElement(DocumentFormat.OpenXml.Office.Drawing.NonVisualDrawingProperties? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -188,9 +171,9 @@ public static class NonVisualDrawingPropertiesConverter
     }
     return null;
   }
-
+  
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.Office.NonVisualDrawingProperties? value)
-    where OpenXmlElementType : NonVisualDrawingProperties, new()
+    where OpenXmlElementType: DocumentFormat.OpenXml.Office.Drawing.NonVisualDrawingProperties, new()
   {
     if (value != null)
     {

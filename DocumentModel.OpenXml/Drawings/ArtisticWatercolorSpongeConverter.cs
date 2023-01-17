@@ -1,41 +1,37 @@
-using DocumentFormat.OpenXml.Office2010.Drawing;
-
 namespace DocumentModel.OpenXml.Drawings;
 
 /// <summary>
-///   Defines the ArtisticWatercolorSponge Class.
+/// Defines the ArtisticWatercolorSponge Class.
 /// </summary>
 public static class ArtisticWatercolorSpongeConverter
 {
   /// <summary>
-  ///   trans, this property is only available in Office 2010 and later.
+  /// trans, this property is only available in Office 2010 and later.
   /// </summary>
-  public static Int32? GetTransparancy(ArtisticWatercolorSponge? openXmlElement)
+  private static Int32? GetTransparancy(DocumentFormat.OpenXml.Office2010.Drawing.ArtisticWatercolorSponge openXmlElement)
   {
-    return openXmlElement?.Transparancy?.Value;
+    return openXmlElement.Transparancy?.Value;
   }
-
-  public static void SetTransparancy(ArtisticWatercolorSponge? openXmlElement, Int32? value)
+  
+  private static void SetTransparancy(DocumentFormat.OpenXml.Office2010.Drawing.ArtisticWatercolorSponge openXmlElement, Int32? value)
   {
-    if (openXmlElement != null)
-      openXmlElement.Transparancy = value;
+    openXmlElement.Transparancy = value;
   }
-
+  
   /// <summary>
-  ///   brushSize, this property is only available in Office 2010 and later.
+  /// brushSize, this property is only available in Office 2010 and later.
   /// </summary>
-  public static Int32? GetBrushSize(ArtisticWatercolorSponge? openXmlElement)
+  private static Int32? GetBrushSize(DocumentFormat.OpenXml.Office2010.Drawing.ArtisticWatercolorSponge openXmlElement)
   {
-    return openXmlElement?.BrushSize?.Value;
+    return openXmlElement.BrushSize?.Value;
   }
-
-  public static void SetBrushSize(ArtisticWatercolorSponge? openXmlElement, Int32? value)
+  
+  private static void SetBrushSize(DocumentFormat.OpenXml.Office2010.Drawing.ArtisticWatercolorSponge openXmlElement, Int32? value)
   {
-    if (openXmlElement != null)
-      openXmlElement.BrushSize = value;
+    openXmlElement.BrushSize = value;
   }
-
-  public static DocumentModel.Drawings.ArtisticWatercolorSponge? CreateModelElement(ArtisticWatercolorSponge? openXmlElement)
+  
+  public static DocumentModel.Drawings.ArtisticWatercolorSponge? CreateModelElement(DocumentFormat.OpenXml.Office2010.Drawing.ArtisticWatercolorSponge? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -46,9 +42,9 @@ public static class ArtisticWatercolorSpongeConverter
     }
     return null;
   }
-
+  
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.ArtisticWatercolorSponge? value)
-    where OpenXmlElementType : ArtisticWatercolorSponge, new()
+    where OpenXmlElementType: DocumentFormat.OpenXml.Office2010.Drawing.ArtisticWatercolorSponge, new()
   {
     if (value != null)
     {

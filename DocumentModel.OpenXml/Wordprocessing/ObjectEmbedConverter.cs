@@ -1,96 +1,88 @@
-using DocumentModel.Wordprocessing;
-using ObjectEmbed = DocumentFormat.OpenXml.Wordprocessing.ObjectEmbed;
-
 namespace DocumentModel.OpenXml.Wordprocessing;
 
 /// <summary>
-///   Defines the ObjectEmbed Class.
+/// Defines the ObjectEmbed Class.
 /// </summary>
 public static class ObjectEmbedConverter
 {
   /// <summary>
-  ///   drawAspect
+  /// drawAspect
   /// </summary>
-  public static ObjectDrawAspect? GetdrawAspect(ObjectEmbed? openXmlElement)
+  private static DocumentModel.Wordprocessing.ObjectDrawAspect? GetdrawAspect(DocumentFormat.OpenXml.Wordprocessing.ObjectEmbed openXmlElement)
   {
-    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Wordprocessing.ObjectDrawAspect, ObjectDrawAspect>(openXmlElement?.drawAspect?.Value);
+    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Wordprocessing.ObjectDrawAspect, DocumentModel.Wordprocessing.ObjectDrawAspect>(openXmlElement?.drawAspect?.Value);
   }
-
-  public static void SetdrawAspect(ObjectEmbed? openXmlElement, ObjectDrawAspect? value)
+  
+  private static void SetdrawAspect(DocumentFormat.OpenXml.Wordprocessing.ObjectEmbed openXmlElement, DocumentModel.Wordprocessing.ObjectDrawAspect? value)
   {
-    if (openXmlElement != null)
-      openXmlElement.drawAspect = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Wordprocessing.ObjectDrawAspect, ObjectDrawAspect>(value);
+    openXmlElement.drawAspect = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Wordprocessing.ObjectDrawAspect, DocumentModel.Wordprocessing.ObjectDrawAspect>(value);
   }
-
+  
   /// <summary>
-  ///   id
+  /// id
   /// </summary>
-  public static String? GetId(ObjectEmbed? openXmlElement)
+  private static String? GetId(DocumentFormat.OpenXml.Wordprocessing.ObjectEmbed openXmlElement)
   {
     return openXmlElement?.Id?.Value;
   }
-
-  public static void SetId(ObjectEmbed? openXmlElement, String? value)
+  
+  private static void SetId(DocumentFormat.OpenXml.Wordprocessing.ObjectEmbed openXmlElement, String? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.Id = new StringValue { Value = value };
-      else
-        openXmlElement.Id = null;
+    if (value != null)
+      openXmlElement.Id = new StringValue { Value = value };
+    else
+      openXmlElement.Id = null;
   }
-
+  
   /// <summary>
-  ///   progId
+  /// progId
   /// </summary>
-  public static String? GetProgId(ObjectEmbed? openXmlElement)
+  private static String? GetProgId(DocumentFormat.OpenXml.Wordprocessing.ObjectEmbed openXmlElement)
   {
     return openXmlElement?.ProgId?.Value;
   }
-
-  public static void SetProgId(ObjectEmbed? openXmlElement, String? value)
+  
+  private static void SetProgId(DocumentFormat.OpenXml.Wordprocessing.ObjectEmbed openXmlElement, String? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.ProgId = new StringValue { Value = value };
-      else
-        openXmlElement.ProgId = null;
+    if (value != null)
+      openXmlElement.ProgId = new StringValue { Value = value };
+    else
+      openXmlElement.ProgId = null;
   }
-
+  
   /// <summary>
-  ///   shapeId
+  /// shapeId
   /// </summary>
-  public static String? GetShapeId(ObjectEmbed? openXmlElement)
+  private static String? GetShapeId(DocumentFormat.OpenXml.Wordprocessing.ObjectEmbed openXmlElement)
   {
     return openXmlElement?.ShapeId?.Value;
   }
-
-  public static void SetShapeId(ObjectEmbed? openXmlElement, String? value)
+  
+  private static void SetShapeId(DocumentFormat.OpenXml.Wordprocessing.ObjectEmbed openXmlElement, String? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.ShapeId = new StringValue { Value = value };
-      else
-        openXmlElement.ShapeId = null;
+    if (value != null)
+      openXmlElement.ShapeId = new StringValue { Value = value };
+    else
+      openXmlElement.ShapeId = null;
   }
-
+  
   /// <summary>
-  ///   fieldCodes
+  /// fieldCodes
   /// </summary>
-  public static String? GetFieldCodes(ObjectEmbed? openXmlElement)
+  private static String? GetFieldCodes(DocumentFormat.OpenXml.Wordprocessing.ObjectEmbed openXmlElement)
   {
     return openXmlElement?.FieldCodes?.Value;
   }
-
-  public static void SetFieldCodes(ObjectEmbed? openXmlElement, String? value)
+  
+  private static void SetFieldCodes(DocumentFormat.OpenXml.Wordprocessing.ObjectEmbed openXmlElement, String? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.FieldCodes = new StringValue { Value = value };
-      else
-        openXmlElement.FieldCodes = null;
+    if (value != null)
+      openXmlElement.FieldCodes = new StringValue { Value = value };
+    else
+      openXmlElement.FieldCodes = null;
   }
-
-  public static DocumentModel.Wordprocessing.ObjectEmbed? CreateModelElement(ObjectEmbed? openXmlElement)
+  
+  public static DocumentModel.Wordprocessing.ObjectEmbed? CreateModelElement(DocumentFormat.OpenXml.Wordprocessing.ObjectEmbed? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -104,9 +96,9 @@ public static class ObjectEmbedConverter
     }
     return null;
   }
-
+  
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.ObjectEmbed? value)
-    where OpenXmlElementType : ObjectEmbed, new()
+    where OpenXmlElementType: DocumentFormat.OpenXml.Wordprocessing.ObjectEmbed, new()
   {
     if (value != null)
     {

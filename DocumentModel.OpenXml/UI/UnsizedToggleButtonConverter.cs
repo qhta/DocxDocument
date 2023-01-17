@@ -1,540 +1,507 @@
-using DocumentFormat.OpenXml.Office.CustomUI;
-
 namespace DocumentModel.OpenXml.UI;
 
 /// <summary>
-///   Defines the UnsizedToggleButton Class.
+/// Defines the UnsizedToggleButton Class.
 /// </summary>
 public static class UnsizedToggleButtonConverter
 {
   /// <summary>
-  ///   getPressed
+  /// getPressed
   /// </summary>
-  public static String? GetGetPressed(UnsizedToggleButton? openXmlElement)
+  private static String? GetGetPressed(DocumentFormat.OpenXml.Office.CustomUI.UnsizedToggleButton openXmlElement)
   {
     return openXmlElement?.GetPressed?.Value;
   }
-
-  public static void SetGetPressed(UnsizedToggleButton? openXmlElement, String? value)
+  
+  private static void SetGetPressed(DocumentFormat.OpenXml.Office.CustomUI.UnsizedToggleButton openXmlElement, String? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.GetPressed = new StringValue { Value = value };
-      else
-        openXmlElement.GetPressed = null;
+    if (value != null)
+      openXmlElement.GetPressed = new StringValue { Value = value };
+    else
+      openXmlElement.GetPressed = null;
   }
-
+  
   /// <summary>
-  ///   onAction
+  /// onAction
   /// </summary>
-  public static String? GetOnAction(UnsizedToggleButton? openXmlElement)
+  private static String? GetOnAction(DocumentFormat.OpenXml.Office.CustomUI.UnsizedToggleButton openXmlElement)
   {
     return openXmlElement?.OnAction?.Value;
   }
-
-  public static void SetOnAction(UnsizedToggleButton? openXmlElement, String? value)
+  
+  private static void SetOnAction(DocumentFormat.OpenXml.Office.CustomUI.UnsizedToggleButton openXmlElement, String? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.OnAction = new StringValue { Value = value };
-      else
-        openXmlElement.OnAction = null;
+    if (value != null)
+      openXmlElement.OnAction = new StringValue { Value = value };
+    else
+      openXmlElement.OnAction = null;
   }
-
+  
   /// <summary>
-  ///   enabled
+  /// enabled
   /// </summary>
-  public static Boolean? GetEnabled(UnsizedToggleButton? openXmlElement)
+  private static Boolean? GetEnabled(DocumentFormat.OpenXml.Office.CustomUI.UnsizedToggleButton openXmlElement)
   {
     return openXmlElement?.Enabled?.Value;
   }
-
-  public static void SetEnabled(UnsizedToggleButton? openXmlElement, Boolean? value)
+  
+  private static void SetEnabled(DocumentFormat.OpenXml.Office.CustomUI.UnsizedToggleButton openXmlElement, Boolean? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.Enabled = new BooleanValue { Value = (Boolean)value };
-      else
-        openXmlElement.Enabled = null;
+    if (value != null)
+      openXmlElement.Enabled = new BooleanValue { Value = (Boolean)value };
+    else
+      openXmlElement.Enabled = null;
   }
-
+  
   /// <summary>
-  ///   getEnabled
+  /// getEnabled
   /// </summary>
-  public static String? GetGetEnabled(UnsizedToggleButton? openXmlElement)
+  private static String? GetGetEnabled(DocumentFormat.OpenXml.Office.CustomUI.UnsizedToggleButton openXmlElement)
   {
     return openXmlElement?.GetEnabled?.Value;
   }
-
-  public static void SetGetEnabled(UnsizedToggleButton? openXmlElement, String? value)
+  
+  private static void SetGetEnabled(DocumentFormat.OpenXml.Office.CustomUI.UnsizedToggleButton openXmlElement, String? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.GetEnabled = new StringValue { Value = value };
-      else
-        openXmlElement.GetEnabled = null;
+    if (value != null)
+      openXmlElement.GetEnabled = new StringValue { Value = value };
+    else
+      openXmlElement.GetEnabled = null;
   }
-
+  
   /// <summary>
-  ///   description
+  /// description
   /// </summary>
-  public static String? GetDescription(UnsizedToggleButton? openXmlElement)
+  private static String? GetDescription(DocumentFormat.OpenXml.Office.CustomUI.UnsizedToggleButton openXmlElement)
   {
     return openXmlElement?.Description?.Value;
   }
-
-  public static void SetDescription(UnsizedToggleButton? openXmlElement, String? value)
+  
+  private static void SetDescription(DocumentFormat.OpenXml.Office.CustomUI.UnsizedToggleButton openXmlElement, String? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.Description = new StringValue { Value = value };
-      else
-        openXmlElement.Description = null;
+    if (value != null)
+      openXmlElement.Description = new StringValue { Value = value };
+    else
+      openXmlElement.Description = null;
   }
-
+  
   /// <summary>
-  ///   getDescription
+  /// getDescription
   /// </summary>
-  public static String? GetGetDescription(UnsizedToggleButton? openXmlElement)
+  private static String? GetGetDescription(DocumentFormat.OpenXml.Office.CustomUI.UnsizedToggleButton openXmlElement)
   {
     return openXmlElement?.GetDescription?.Value;
   }
-
-  public static void SetGetDescription(UnsizedToggleButton? openXmlElement, String? value)
+  
+  private static void SetGetDescription(DocumentFormat.OpenXml.Office.CustomUI.UnsizedToggleButton openXmlElement, String? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.GetDescription = new StringValue { Value = value };
-      else
-        openXmlElement.GetDescription = null;
+    if (value != null)
+      openXmlElement.GetDescription = new StringValue { Value = value };
+    else
+      openXmlElement.GetDescription = null;
   }
-
+  
   /// <summary>
-  ///   image
+  /// image
   /// </summary>
-  public static String? GetImage(UnsizedToggleButton? openXmlElement)
+  private static String? GetImage(DocumentFormat.OpenXml.Office.CustomUI.UnsizedToggleButton openXmlElement)
   {
     return openXmlElement?.Image?.Value;
   }
-
-  public static void SetImage(UnsizedToggleButton? openXmlElement, String? value)
+  
+  private static void SetImage(DocumentFormat.OpenXml.Office.CustomUI.UnsizedToggleButton openXmlElement, String? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.Image = new StringValue { Value = value };
-      else
-        openXmlElement.Image = null;
+    if (value != null)
+      openXmlElement.Image = new StringValue { Value = value };
+    else
+      openXmlElement.Image = null;
   }
-
+  
   /// <summary>
-  ///   imageMso
+  /// imageMso
   /// </summary>
-  public static String? GetImageMso(UnsizedToggleButton? openXmlElement)
+  private static String? GetImageMso(DocumentFormat.OpenXml.Office.CustomUI.UnsizedToggleButton openXmlElement)
   {
     return openXmlElement?.ImageMso?.Value;
   }
-
-  public static void SetImageMso(UnsizedToggleButton? openXmlElement, String? value)
+  
+  private static void SetImageMso(DocumentFormat.OpenXml.Office.CustomUI.UnsizedToggleButton openXmlElement, String? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.ImageMso = new StringValue { Value = value };
-      else
-        openXmlElement.ImageMso = null;
+    if (value != null)
+      openXmlElement.ImageMso = new StringValue { Value = value };
+    else
+      openXmlElement.ImageMso = null;
   }
-
+  
   /// <summary>
-  ///   getImage
+  /// getImage
   /// </summary>
-  public static String? GetGetImage(UnsizedToggleButton? openXmlElement)
+  private static String? GetGetImage(DocumentFormat.OpenXml.Office.CustomUI.UnsizedToggleButton openXmlElement)
   {
     return openXmlElement?.GetImage?.Value;
   }
-
-  public static void SetGetImage(UnsizedToggleButton? openXmlElement, String? value)
+  
+  private static void SetGetImage(DocumentFormat.OpenXml.Office.CustomUI.UnsizedToggleButton openXmlElement, String? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.GetImage = new StringValue { Value = value };
-      else
-        openXmlElement.GetImage = null;
+    if (value != null)
+      openXmlElement.GetImage = new StringValue { Value = value };
+    else
+      openXmlElement.GetImage = null;
   }
-
+  
   /// <summary>
-  ///   id
+  /// id
   /// </summary>
-  public static String? GetId(UnsizedToggleButton? openXmlElement)
+  private static String? GetId(DocumentFormat.OpenXml.Office.CustomUI.UnsizedToggleButton openXmlElement)
   {
     return openXmlElement?.Id?.Value;
   }
-
-  public static void SetId(UnsizedToggleButton? openXmlElement, String? value)
+  
+  private static void SetId(DocumentFormat.OpenXml.Office.CustomUI.UnsizedToggleButton openXmlElement, String? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.Id = new StringValue { Value = value };
-      else
-        openXmlElement.Id = null;
+    if (value != null)
+      openXmlElement.Id = new StringValue { Value = value };
+    else
+      openXmlElement.Id = null;
   }
-
+  
   /// <summary>
-  ///   idQ
+  /// idQ
   /// </summary>
-  public static String? GetIdQ(UnsizedToggleButton? openXmlElement)
+  private static String? GetIdQ(DocumentFormat.OpenXml.Office.CustomUI.UnsizedToggleButton openXmlElement)
   {
     return openXmlElement?.IdQ?.Value;
   }
-
-  public static void SetIdQ(UnsizedToggleButton? openXmlElement, String? value)
+  
+  private static void SetIdQ(DocumentFormat.OpenXml.Office.CustomUI.UnsizedToggleButton openXmlElement, String? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.IdQ = new StringValue { Value = value };
-      else
-        openXmlElement.IdQ = null;
+    if (value != null)
+      openXmlElement.IdQ = new StringValue { Value = value };
+    else
+      openXmlElement.IdQ = null;
   }
-
+  
   /// <summary>
-  ///   idMso
+  /// idMso
   /// </summary>
-  public static String? GetIdMso(UnsizedToggleButton? openXmlElement)
+  private static String? GetIdMso(DocumentFormat.OpenXml.Office.CustomUI.UnsizedToggleButton openXmlElement)
   {
     return openXmlElement?.IdMso?.Value;
   }
-
-  public static void SetIdMso(UnsizedToggleButton? openXmlElement, String? value)
+  
+  private static void SetIdMso(DocumentFormat.OpenXml.Office.CustomUI.UnsizedToggleButton openXmlElement, String? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.IdMso = new StringValue { Value = value };
-      else
-        openXmlElement.IdMso = null;
+    if (value != null)
+      openXmlElement.IdMso = new StringValue { Value = value };
+    else
+      openXmlElement.IdMso = null;
   }
-
+  
   /// <summary>
-  ///   tag
+  /// tag
   /// </summary>
-  public static String? GetTag(UnsizedToggleButton? openXmlElement)
+  private static String? GetTag(DocumentFormat.OpenXml.Office.CustomUI.UnsizedToggleButton openXmlElement)
   {
     return openXmlElement?.Tag?.Value;
   }
-
-  public static void SetTag(UnsizedToggleButton? openXmlElement, String? value)
+  
+  private static void SetTag(DocumentFormat.OpenXml.Office.CustomUI.UnsizedToggleButton openXmlElement, String? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.Tag = new StringValue { Value = value };
-      else
-        openXmlElement.Tag = null;
+    if (value != null)
+      openXmlElement.Tag = new StringValue { Value = value };
+    else
+      openXmlElement.Tag = null;
   }
-
+  
   /// <summary>
-  ///   screentip
+  /// screentip
   /// </summary>
-  public static String? GetScreentip(UnsizedToggleButton? openXmlElement)
+  private static String? GetScreentip(DocumentFormat.OpenXml.Office.CustomUI.UnsizedToggleButton openXmlElement)
   {
     return openXmlElement?.Screentip?.Value;
   }
-
-  public static void SetScreentip(UnsizedToggleButton? openXmlElement, String? value)
+  
+  private static void SetScreentip(DocumentFormat.OpenXml.Office.CustomUI.UnsizedToggleButton openXmlElement, String? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.Screentip = new StringValue { Value = value };
-      else
-        openXmlElement.Screentip = null;
+    if (value != null)
+      openXmlElement.Screentip = new StringValue { Value = value };
+    else
+      openXmlElement.Screentip = null;
   }
-
+  
   /// <summary>
-  ///   getScreentip
+  /// getScreentip
   /// </summary>
-  public static String? GetGetScreentip(UnsizedToggleButton? openXmlElement)
+  private static String? GetGetScreentip(DocumentFormat.OpenXml.Office.CustomUI.UnsizedToggleButton openXmlElement)
   {
     return openXmlElement?.GetScreentip?.Value;
   }
-
-  public static void SetGetScreentip(UnsizedToggleButton? openXmlElement, String? value)
+  
+  private static void SetGetScreentip(DocumentFormat.OpenXml.Office.CustomUI.UnsizedToggleButton openXmlElement, String? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.GetScreentip = new StringValue { Value = value };
-      else
-        openXmlElement.GetScreentip = null;
+    if (value != null)
+      openXmlElement.GetScreentip = new StringValue { Value = value };
+    else
+      openXmlElement.GetScreentip = null;
   }
-
+  
   /// <summary>
-  ///   supertip
+  /// supertip
   /// </summary>
-  public static String? GetSupertip(UnsizedToggleButton? openXmlElement)
+  private static String? GetSupertip(DocumentFormat.OpenXml.Office.CustomUI.UnsizedToggleButton openXmlElement)
   {
     return openXmlElement?.Supertip?.Value;
   }
-
-  public static void SetSupertip(UnsizedToggleButton? openXmlElement, String? value)
+  
+  private static void SetSupertip(DocumentFormat.OpenXml.Office.CustomUI.UnsizedToggleButton openXmlElement, String? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.Supertip = new StringValue { Value = value };
-      else
-        openXmlElement.Supertip = null;
+    if (value != null)
+      openXmlElement.Supertip = new StringValue { Value = value };
+    else
+      openXmlElement.Supertip = null;
   }
-
+  
   /// <summary>
-  ///   getSupertip
+  /// getSupertip
   /// </summary>
-  public static String? GetGetSupertip(UnsizedToggleButton? openXmlElement)
+  private static String? GetGetSupertip(DocumentFormat.OpenXml.Office.CustomUI.UnsizedToggleButton openXmlElement)
   {
     return openXmlElement?.GetSupertip?.Value;
   }
-
-  public static void SetGetSupertip(UnsizedToggleButton? openXmlElement, String? value)
+  
+  private static void SetGetSupertip(DocumentFormat.OpenXml.Office.CustomUI.UnsizedToggleButton openXmlElement, String? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.GetSupertip = new StringValue { Value = value };
-      else
-        openXmlElement.GetSupertip = null;
+    if (value != null)
+      openXmlElement.GetSupertip = new StringValue { Value = value };
+    else
+      openXmlElement.GetSupertip = null;
   }
-
+  
   /// <summary>
-  ///   label
+  /// label
   /// </summary>
-  public static String? GetLabel(UnsizedToggleButton? openXmlElement)
+  private static String? GetLabel(DocumentFormat.OpenXml.Office.CustomUI.UnsizedToggleButton openXmlElement)
   {
     return openXmlElement?.Label?.Value;
   }
-
-  public static void SetLabel(UnsizedToggleButton? openXmlElement, String? value)
+  
+  private static void SetLabel(DocumentFormat.OpenXml.Office.CustomUI.UnsizedToggleButton openXmlElement, String? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.Label = new StringValue { Value = value };
-      else
-        openXmlElement.Label = null;
+    if (value != null)
+      openXmlElement.Label = new StringValue { Value = value };
+    else
+      openXmlElement.Label = null;
   }
-
+  
   /// <summary>
-  ///   getLabel
+  /// getLabel
   /// </summary>
-  public static String? GetGetLabel(UnsizedToggleButton? openXmlElement)
+  private static String? GetGetLabel(DocumentFormat.OpenXml.Office.CustomUI.UnsizedToggleButton openXmlElement)
   {
     return openXmlElement?.GetLabel?.Value;
   }
-
-  public static void SetGetLabel(UnsizedToggleButton? openXmlElement, String? value)
+  
+  private static void SetGetLabel(DocumentFormat.OpenXml.Office.CustomUI.UnsizedToggleButton openXmlElement, String? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.GetLabel = new StringValue { Value = value };
-      else
-        openXmlElement.GetLabel = null;
+    if (value != null)
+      openXmlElement.GetLabel = new StringValue { Value = value };
+    else
+      openXmlElement.GetLabel = null;
   }
-
+  
   /// <summary>
-  ///   insertAfterMso
+  /// insertAfterMso
   /// </summary>
-  public static String? GetInsertAfterMso(UnsizedToggleButton? openXmlElement)
+  private static String? GetInsertAfterMso(DocumentFormat.OpenXml.Office.CustomUI.UnsizedToggleButton openXmlElement)
   {
     return openXmlElement?.InsertAfterMso?.Value;
   }
-
-  public static void SetInsertAfterMso(UnsizedToggleButton? openXmlElement, String? value)
+  
+  private static void SetInsertAfterMso(DocumentFormat.OpenXml.Office.CustomUI.UnsizedToggleButton openXmlElement, String? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.InsertAfterMso = new StringValue { Value = value };
-      else
-        openXmlElement.InsertAfterMso = null;
+    if (value != null)
+      openXmlElement.InsertAfterMso = new StringValue { Value = value };
+    else
+      openXmlElement.InsertAfterMso = null;
   }
-
+  
   /// <summary>
-  ///   insertBeforeMso
+  /// insertBeforeMso
   /// </summary>
-  public static String? GetInsertBeforeMso(UnsizedToggleButton? openXmlElement)
+  private static String? GetInsertBeforeMso(DocumentFormat.OpenXml.Office.CustomUI.UnsizedToggleButton openXmlElement)
   {
     return openXmlElement?.InsertBeforeMso?.Value;
   }
-
-  public static void SetInsertBeforeMso(UnsizedToggleButton? openXmlElement, String? value)
+  
+  private static void SetInsertBeforeMso(DocumentFormat.OpenXml.Office.CustomUI.UnsizedToggleButton openXmlElement, String? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.InsertBeforeMso = new StringValue { Value = value };
-      else
-        openXmlElement.InsertBeforeMso = null;
+    if (value != null)
+      openXmlElement.InsertBeforeMso = new StringValue { Value = value };
+    else
+      openXmlElement.InsertBeforeMso = null;
   }
-
+  
   /// <summary>
-  ///   insertAfterQ
+  /// insertAfterQ
   /// </summary>
-  public static String? GetInsertAfterQ(UnsizedToggleButton? openXmlElement)
+  private static String? GetInsertAfterQ(DocumentFormat.OpenXml.Office.CustomUI.UnsizedToggleButton openXmlElement)
   {
     return openXmlElement?.InsertAfterQ?.Value;
   }
-
-  public static void SetInsertAfterQ(UnsizedToggleButton? openXmlElement, String? value)
+  
+  private static void SetInsertAfterQ(DocumentFormat.OpenXml.Office.CustomUI.UnsizedToggleButton openXmlElement, String? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.InsertAfterQ = new StringValue { Value = value };
-      else
-        openXmlElement.InsertAfterQ = null;
+    if (value != null)
+      openXmlElement.InsertAfterQ = new StringValue { Value = value };
+    else
+      openXmlElement.InsertAfterQ = null;
   }
-
+  
   /// <summary>
-  ///   insertBeforeQ
+  /// insertBeforeQ
   /// </summary>
-  public static String? GetInsertBeforeQ(UnsizedToggleButton? openXmlElement)
+  private static String? GetInsertBeforeQ(DocumentFormat.OpenXml.Office.CustomUI.UnsizedToggleButton openXmlElement)
   {
     return openXmlElement?.InsertBeforeQ?.Value;
   }
-
-  public static void SetInsertBeforeQ(UnsizedToggleButton? openXmlElement, String? value)
+  
+  private static void SetInsertBeforeQ(DocumentFormat.OpenXml.Office.CustomUI.UnsizedToggleButton openXmlElement, String? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.InsertBeforeQ = new StringValue { Value = value };
-      else
-        openXmlElement.InsertBeforeQ = null;
+    if (value != null)
+      openXmlElement.InsertBeforeQ = new StringValue { Value = value };
+    else
+      openXmlElement.InsertBeforeQ = null;
   }
-
+  
   /// <summary>
-  ///   visible
+  /// visible
   /// </summary>
-  public static Boolean? GetVisible(UnsizedToggleButton? openXmlElement)
+  private static Boolean? GetVisible(DocumentFormat.OpenXml.Office.CustomUI.UnsizedToggleButton openXmlElement)
   {
     return openXmlElement?.Visible?.Value;
   }
-
-  public static void SetVisible(UnsizedToggleButton? openXmlElement, Boolean? value)
+  
+  private static void SetVisible(DocumentFormat.OpenXml.Office.CustomUI.UnsizedToggleButton openXmlElement, Boolean? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.Visible = new BooleanValue { Value = (Boolean)value };
-      else
-        openXmlElement.Visible = null;
+    if (value != null)
+      openXmlElement.Visible = new BooleanValue { Value = (Boolean)value };
+    else
+      openXmlElement.Visible = null;
   }
-
+  
   /// <summary>
-  ///   getVisible
+  /// getVisible
   /// </summary>
-  public static String? GetGetVisible(UnsizedToggleButton? openXmlElement)
+  private static String? GetGetVisible(DocumentFormat.OpenXml.Office.CustomUI.UnsizedToggleButton openXmlElement)
   {
     return openXmlElement?.GetVisible?.Value;
   }
-
-  public static void SetGetVisible(UnsizedToggleButton? openXmlElement, String? value)
+  
+  private static void SetGetVisible(DocumentFormat.OpenXml.Office.CustomUI.UnsizedToggleButton openXmlElement, String? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.GetVisible = new StringValue { Value = value };
-      else
-        openXmlElement.GetVisible = null;
+    if (value != null)
+      openXmlElement.GetVisible = new StringValue { Value = value };
+    else
+      openXmlElement.GetVisible = null;
   }
-
+  
   /// <summary>
-  ///   keytip
+  /// keytip
   /// </summary>
-  public static String? GetKeytip(UnsizedToggleButton? openXmlElement)
+  private static String? GetKeytip(DocumentFormat.OpenXml.Office.CustomUI.UnsizedToggleButton openXmlElement)
   {
     return openXmlElement?.Keytip?.Value;
   }
-
-  public static void SetKeytip(UnsizedToggleButton? openXmlElement, String? value)
+  
+  private static void SetKeytip(DocumentFormat.OpenXml.Office.CustomUI.UnsizedToggleButton openXmlElement, String? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.Keytip = new StringValue { Value = value };
-      else
-        openXmlElement.Keytip = null;
+    if (value != null)
+      openXmlElement.Keytip = new StringValue { Value = value };
+    else
+      openXmlElement.Keytip = null;
   }
-
+  
   /// <summary>
-  ///   getKeytip
+  /// getKeytip
   /// </summary>
-  public static String? GetGetKeytip(UnsizedToggleButton? openXmlElement)
+  private static String? GetGetKeytip(DocumentFormat.OpenXml.Office.CustomUI.UnsizedToggleButton openXmlElement)
   {
     return openXmlElement?.GetKeytip?.Value;
   }
-
-  public static void SetGetKeytip(UnsizedToggleButton? openXmlElement, String? value)
+  
+  private static void SetGetKeytip(DocumentFormat.OpenXml.Office.CustomUI.UnsizedToggleButton openXmlElement, String? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.GetKeytip = new StringValue { Value = value };
-      else
-        openXmlElement.GetKeytip = null;
+    if (value != null)
+      openXmlElement.GetKeytip = new StringValue { Value = value };
+    else
+      openXmlElement.GetKeytip = null;
   }
-
+  
   /// <summary>
-  ///   showLabel
+  /// showLabel
   /// </summary>
-  public static Boolean? GetShowLabel(UnsizedToggleButton? openXmlElement)
+  private static Boolean? GetShowLabel(DocumentFormat.OpenXml.Office.CustomUI.UnsizedToggleButton openXmlElement)
   {
     return openXmlElement?.ShowLabel?.Value;
   }
-
-  public static void SetShowLabel(UnsizedToggleButton? openXmlElement, Boolean? value)
+  
+  private static void SetShowLabel(DocumentFormat.OpenXml.Office.CustomUI.UnsizedToggleButton openXmlElement, Boolean? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.ShowLabel = new BooleanValue { Value = (Boolean)value };
-      else
-        openXmlElement.ShowLabel = null;
+    if (value != null)
+      openXmlElement.ShowLabel = new BooleanValue { Value = (Boolean)value };
+    else
+      openXmlElement.ShowLabel = null;
   }
-
+  
   /// <summary>
-  ///   getShowLabel
+  /// getShowLabel
   /// </summary>
-  public static String? GetGetShowLabel(UnsizedToggleButton? openXmlElement)
+  private static String? GetGetShowLabel(DocumentFormat.OpenXml.Office.CustomUI.UnsizedToggleButton openXmlElement)
   {
     return openXmlElement?.GetShowLabel?.Value;
   }
-
-  public static void SetGetShowLabel(UnsizedToggleButton? openXmlElement, String? value)
+  
+  private static void SetGetShowLabel(DocumentFormat.OpenXml.Office.CustomUI.UnsizedToggleButton openXmlElement, String? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.GetShowLabel = new StringValue { Value = value };
-      else
-        openXmlElement.GetShowLabel = null;
+    if (value != null)
+      openXmlElement.GetShowLabel = new StringValue { Value = value };
+    else
+      openXmlElement.GetShowLabel = null;
   }
-
+  
   /// <summary>
-  ///   showImage
+  /// showImage
   /// </summary>
-  public static Boolean? GetShowImage(UnsizedToggleButton? openXmlElement)
+  private static Boolean? GetShowImage(DocumentFormat.OpenXml.Office.CustomUI.UnsizedToggleButton openXmlElement)
   {
     return openXmlElement?.ShowImage?.Value;
   }
-
-  public static void SetShowImage(UnsizedToggleButton? openXmlElement, Boolean? value)
+  
+  private static void SetShowImage(DocumentFormat.OpenXml.Office.CustomUI.UnsizedToggleButton openXmlElement, Boolean? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.ShowImage = new BooleanValue { Value = (Boolean)value };
-      else
-        openXmlElement.ShowImage = null;
+    if (value != null)
+      openXmlElement.ShowImage = new BooleanValue { Value = (Boolean)value };
+    else
+      openXmlElement.ShowImage = null;
   }
-
+  
   /// <summary>
-  ///   getShowImage
+  /// getShowImage
   /// </summary>
-  public static String? GetGetShowImage(UnsizedToggleButton? openXmlElement)
+  private static String? GetGetShowImage(DocumentFormat.OpenXml.Office.CustomUI.UnsizedToggleButton openXmlElement)
   {
     return openXmlElement?.GetShowImage?.Value;
   }
-
-  public static void SetGetShowImage(UnsizedToggleButton? openXmlElement, String? value)
+  
+  private static void SetGetShowImage(DocumentFormat.OpenXml.Office.CustomUI.UnsizedToggleButton openXmlElement, String? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.GetShowImage = new StringValue { Value = value };
-      else
-        openXmlElement.GetShowImage = null;
+    if (value != null)
+      openXmlElement.GetShowImage = new StringValue { Value = value };
+    else
+      openXmlElement.GetShowImage = null;
   }
-
-  public static DocumentModel.UI.UnsizedToggleButton? CreateModelElement(UnsizedToggleButton? openXmlElement)
+  
+  public static DocumentModel.UI.UnsizedToggleButton? CreateModelElement(DocumentFormat.OpenXml.Office.CustomUI.UnsizedToggleButton? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -574,9 +541,9 @@ public static class UnsizedToggleButtonConverter
     }
     return null;
   }
-
+  
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.UI.UnsizedToggleButton? value)
-    where OpenXmlElementType : UnsizedToggleButton, new()
+    where OpenXmlElementType: DocumentFormat.OpenXml.Office.CustomUI.UnsizedToggleButton, new()
   {
     if (value != null)
     {

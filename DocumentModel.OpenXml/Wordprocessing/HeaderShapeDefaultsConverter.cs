@@ -1,64 +1,53 @@
-using DocumentFormat.OpenXml.Wordprocessing;
-using DocumentModel.OpenXml.Vml;
-using DocumentModel.Vml;
-using ShapeDefaults = DocumentModel.Vml.ShapeDefaults;
-
 namespace DocumentModel.OpenXml.Wordprocessing;
 
 /// <summary>
-///   Default Properties for VML Objects in Header and Footer.
+/// Default Properties for VML Objects in Header and Footer.
 /// </summary>
 public static class HeaderShapeDefaultsConverter
 {
-  public static ShapeDefaults? GetShapeDefaults(HeaderShapeDefaults? openXmlElement)
+  private static DocumentModel.Vml.ShapeDefaults? GetShapeDefaults(DocumentFormat.OpenXml.Wordprocessing.HeaderShapeDefaults openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Vml.Office.ShapeDefaults>();
     if (itemElement != null)
-      return OpenXml.Vml.ShapeDefaultsConverter.CreateModelElement(itemElement);
+      return DocumentModel.OpenXml.Vml.ShapeDefaultsConverter.CreateModelElement(itemElement);
     return null;
   }
-
-  public static void SetShapeDefaults(HeaderShapeDefaults? openXmlElement, ShapeDefaults? value)
+  
+  private static void SetShapeDefaults(DocumentFormat.OpenXml.Wordprocessing.HeaderShapeDefaults openXmlElement, DocumentModel.Vml.ShapeDefaults? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Vml.Office.ShapeDefaults>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Vml.Office.ShapeDefaults>();
+      itemElement = DocumentModel.OpenXml.Vml.ShapeDefaultsConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Vml.Office.ShapeDefaults>(value);
       if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = OpenXml.Vml.ShapeDefaultsConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Vml.Office.ShapeDefaults>(value);
-        if (itemElement != null)
-          openXmlElement.AddChild(itemElement);
-      }
+        openXmlElement.AddChild(itemElement);
     }
   }
-
-  public static ShapeLayout? GetShapeLayout(HeaderShapeDefaults? openXmlElement)
+  
+  private static DocumentModel.Vml.ShapeLayout? GetShapeLayout(DocumentFormat.OpenXml.Wordprocessing.HeaderShapeDefaults openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Vml.Office.ShapeLayout>();
     if (itemElement != null)
-      return ShapeLayoutConverter.CreateModelElement(itemElement);
+      return DocumentModel.OpenXml.Vml.ShapeLayoutConverter.CreateModelElement(itemElement);
     return null;
   }
-
-  public static void SetShapeLayout(HeaderShapeDefaults? openXmlElement, ShapeLayout? value)
+  
+  private static void SetShapeLayout(DocumentFormat.OpenXml.Wordprocessing.HeaderShapeDefaults openXmlElement, DocumentModel.Vml.ShapeLayout? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Vml.Office.ShapeLayout>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Vml.Office.ShapeLayout>();
+      itemElement = DocumentModel.OpenXml.Vml.ShapeLayoutConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Vml.Office.ShapeLayout>(value);
       if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = ShapeLayoutConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Vml.Office.ShapeLayout>(value);
-        if (itemElement != null)
-          openXmlElement.AddChild(itemElement);
-      }
+        openXmlElement.AddChild(itemElement);
     }
   }
-
-  public static DocumentModel.Wordprocessing.HeaderShapeDefaults? CreateModelElement(HeaderShapeDefaults? openXmlElement)
+  
+  public static DocumentModel.Wordprocessing.HeaderShapeDefaults? CreateModelElement(DocumentFormat.OpenXml.Wordprocessing.HeaderShapeDefaults? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -69,9 +58,9 @@ public static class HeaderShapeDefaultsConverter
     }
     return null;
   }
-
+  
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.HeaderShapeDefaults? value)
-    where OpenXmlElementType : HeaderShapeDefaults, new()
+    where OpenXmlElementType: DocumentFormat.OpenXml.Wordprocessing.HeaderShapeDefaults, new()
   {
     if (value != null)
     {

@@ -1,15 +1,10 @@
-﻿using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Diagnostics;
-using System.Diagnostics.CodeAnalysis;
-using System.Runtime.InteropServices.ComTypes;
-using System.Security.Cryptography;
+﻿using DocumentFormat.OpenXml;
 
-using DocumentFormat.OpenXml;
+using DocumentModel;
 
-using Namotion.Reflection;
 using Qhta.TypeUtils;
 
+using Task = System.Threading.Tasks.Task;
 namespace ModelGen;
 
 public static class ModelManager
@@ -17,23 +12,26 @@ public static class ModelManager
 
   public static bool TryAddTypeConversion(this TypeInfo typeInfo)
   {
-    if (typeInfo.Name == "AttachedTemplate")
-      Debug.Assert(true);
+    //if (typeInfo.Name == "AttachedTemplate")
+    //  Debug.Assert(true);
     if (typeInfo.IsConverted)
       return false;
-    if (!TryAddTypeTableConversion(typeInfo))
-      if (!TryAddBaseTypeConversion(typeInfo))
-        if (!TryAddValTypeConversion(typeInfo))
-          if (!TryAddValTypeConversion(typeInfo))
-            if (!TryAddGenericTypeConversion(typeInfo))
-              return false;
-    return true;
+
+    if (TryAddTypeTableConversion(typeInfo))
+      return true;
+    if (TryAddBaseTypeConversion(typeInfo))
+      return true;
+    if (TryAddValTypeConversion(typeInfo))
+      return true;
+    if (TryAddValTypeConversion(typeInfo))
+      return true;
+    if (TryAddGenericTypeConversion(typeInfo))
+      return true;
+    return false;
   }
 
   private static bool TryAddTypeTableConversion(TypeInfo typeInfo)
   {
-    if (typeInfo.Name == "HexBinaryValue")
-      Debug.Assert(true);
     if (typeInfo.IsConverted)
       return false;
     if (ModelData.TypeConversionTable.TryGetValue(typeInfo.Type, out var targetType))
@@ -110,14 +108,14 @@ public static class ModelManager
       else
       if (typeInfo.Name == "IEnumerable`1")
       {
-          var sourceArgTypes = typeInfo.Type.GetGenericArguments();
+        var sourceArgTypes = typeInfo.Type.GetGenericArguments();
         var sourceArgType = sourceArgTypes.FirstOrDefault();
         if (sourceArgType != null)
         {
           var genericParamTypeInfo = TypeManager.RegisterType(sourceArgType);
           genericParamTypeInfo.TryAddTypeConversion();
           if (genericParamTypeInfo.IsConverted)
-            sourceArgType = genericParamTypeInfo.GetConversionTarget(true).Type;
+            sourceArgType = genericParamTypeInfo.GetConversionTarget().Type;
           sourceArgType = typeof(Collection<>).MakeGenericType(new Type[] { sourceArgType });
           targetType = TypeManager.RegisterType(sourceArgType, typeInfo, Semantics.TypeChange);
           typeInfo.IsConverted = true;
@@ -135,7 +133,7 @@ public static class ModelManager
           genericParamTypeInfo.TryAddTypeConversion();
           if (genericParamTypeInfo.IsConverted)
           {
-            sourceArgType = genericParamTypeInfo.GetConversionTarget(true).Type;
+            sourceArgType = genericParamTypeInfo.GetConversionTarget().Type;
             sourceArgType = typeof(Collection<>).MakeGenericType(new Type[] { sourceArgType });
             targetType = TypeManager.RegisterType(sourceArgType, typeInfo, Semantics.TypeChange);
             typeInfo.IsConverted = true;
@@ -153,7 +151,7 @@ public static class ModelManager
           var genericParamTypeInfo = TypeManager.RegisterType(sourceArgType);
           genericParamTypeInfo.TryAddTypeConversion();
           if (genericParamTypeInfo.IsConverted)
-            sourceArgType = genericParamTypeInfo.GetConversionTarget(true).Type;
+            sourceArgType = genericParamTypeInfo.GetConversionTarget().Type;
           sourceArgType = typeof(DocumentModel.ListOf<>).MakeGenericType(new Type[] { sourceArgType });
           targetType = TypeManager.RegisterType(sourceArgType, typeInfo, Semantics.TypeChange);
           typeInfo.IsConverted = true;
@@ -188,10 +186,44 @@ public static class ModelManager
     return false;
   }
 
+  public static TypeInfo GetTargetType(this PropInfo propInfo)
+  {
+    var typeInfo = propInfo.PropertyType;
+    if (typeInfo.Name == "HexBinaryValue")
+    {
+      Type targetType = typeof(Byte[]);
+      if (propInfo.Validators != null)
+      {
+        var validator = (DocumentFormat.OpenXml.Framework.StringValidator?)
+          propInfo.Validators.FirstOrDefault(item => item.GetType() == typeof(DocumentFormat.OpenXml.Framework.StringValidator));
+        if (validator != null)
+        {
+          if (validator.Length == 1)
+            targetType = typeof(Byte);
+          else
+          if (validator.Length == 2)
+            targetType = typeof(UInt16);
+          else
+          if (validator.Length == 3)
+            targetType = typeof(RGB);
+          else
+          if (validator.Length == 4)
+            targetType = typeof(UInt32);
+          else
+          if (validator.Length == 8)
+            targetType = typeof(UInt64);
+        }
+      }
+      var targetTypeInfo = TypeManager.RegisterType(targetType, typeInfo, Semantics.TypeChange);
+      return targetTypeInfo;
+    }
+    return GetConversionTarget(typeInfo);
+  }
+
   public static FullTypeName GetConvertedName(this TypeInfo typeInfo, TypeKind kind)
   {
     if (typeInfo.IsConverted)
-      typeInfo = typeInfo.GetConversionTarget(true);
+      typeInfo = typeInfo.GetConversionTarget();
     string aName = typeInfo.Name;
     if (typeInfo.IsGenericTypeParameter)
       return new FullTypeName(aName, null);
@@ -226,7 +258,7 @@ public static class ModelManager
     return result;
   }
 
-  public static TypeInfo GetConversionTarget(this TypeInfo typeInfo, bool finalTarget = true)
+  public static TypeInfo GetConversionTarget(this TypeInfo typeInfo)
   {
     //if (!typeInfo.IsConverted)
     //  return typeInfo;
@@ -234,11 +266,11 @@ public static class ModelManager
     if (result == null && typeInfo.IsConstructedGenericType)
       if (TryAddGenericTypeConversion(typeInfo, out var targetType))
         result = targetType;
-    if (finalTarget && result != null)
+    if (result != null)
     {
       result.TryAddTypeConversion();
       if (result.IsConverted)
-        result = GetConversionTarget(result, finalTarget);
+        result = GetConversionTarget(result);
     }
     return result ?? typeInfo;
   }
@@ -257,6 +289,11 @@ public static class ModelManager
     typeInfo.IsAccepted = true;
     typeInfo.IsUsed = true;
     return true;
+  }
+
+  public static Task CheckTypeUsageAsync(this TypeInfo typeInfo, Action<TypeInfo>? OnStartChecking = null)
+  {
+    return Task.Run(() => CheckTypeUsage(typeInfo, OnStartChecking));
   }
 
   public static bool CheckTypeUsage(this TypeInfo typeInfo, Action<TypeInfo>? OnStartChecking = null)
@@ -279,7 +316,7 @@ public static class ModelManager
 
     if (typeInfo.BaseTypeInfo != null)
     {
-      var baseType = typeInfo.BaseTypeInfo.GetConversionTarget(true);
+      var baseType = typeInfo.BaseTypeInfo.GetConversionTarget();
       CheckTypeUsage(baseType, OnStartChecking);
     }
 
@@ -292,11 +329,10 @@ public static class ModelManager
         {
           if (prop.Name == "NotesMaster")
             Debug.Assert(true);
-          var propType = prop.PropertyType.GetConversionTarget(true);
+          var propType = prop.PropertyType.GetConversionTarget();
           if (propType.HasExcludedNamespace())
             prop.IsAccepted = false;
-          else
-          if (propType.IsAccepted is null or true)
+          else if (propType.IsAccepted is null or true)
           {
             CheckTypeUsage(propType, OnStartChecking);
           }
@@ -404,7 +440,7 @@ public static class ModelManager
   public static List<TypeInfo> GetBaseTypes(this TypeInfo typeInfo)
   {
     var result = new List<TypeInfo>();
-    var baseTypeInfo = typeInfo.BaseTypeInfo?.GetConversionTarget(true);
+    var baseTypeInfo = typeInfo.BaseTypeInfo?.GetConversionTarget();
     if (baseTypeInfo != null)
     {
       result.Add(baseTypeInfo);

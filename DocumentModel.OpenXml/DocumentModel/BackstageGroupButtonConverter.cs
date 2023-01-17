@@ -1,385 +1,361 @@
-using DocumentFormat.OpenXml.Office2010.CustomUI;
-
 namespace DocumentModel.OpenXml;
 
 /// <summary>
-///   Defines the BackstageGroupButton Class.
+/// Defines the BackstageGroupButton Class.
 /// </summary>
 public static class BackstageGroupButtonConverter
 {
   /// <summary>
-  ///   expand, this property is only available in Office 2010 and later.
+  /// expand, this property is only available in Office 2010 and later.
   /// </summary>
-  public static ExpandKind? GetExpand(DocumentFormat.OpenXml.Office2010.CustomUI.BackstageGroupButton? openXmlElement)
+  private static DocumentModel.ExpandKind? GetExpand(DocumentFormat.OpenXml.Office2010.CustomUI.BackstageGroupButton openXmlElement)
   {
-    return EnumValueConverter.GetValue<ExpandValues, ExpandKind>(openXmlElement?.Expand?.Value);
+    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Office2010.CustomUI.ExpandValues, DocumentModel.ExpandKind>(openXmlElement?.Expand?.Value);
   }
-
-  public static void SetExpand(DocumentFormat.OpenXml.Office2010.CustomUI.BackstageGroupButton? openXmlElement, ExpandKind? value)
+  
+  private static void SetExpand(DocumentFormat.OpenXml.Office2010.CustomUI.BackstageGroupButton openXmlElement, DocumentModel.ExpandKind? value)
   {
-    if (openXmlElement != null)
-      openXmlElement.Expand = EnumValueConverter.CreateEnumValue<ExpandValues, ExpandKind>(value);
+    openXmlElement.Expand = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Office2010.CustomUI.ExpandValues, DocumentModel.ExpandKind>(value);
   }
-
+  
   /// <summary>
-  ///   style, this property is only available in Office 2010 and later.
+  /// style, this property is only available in Office 2010 and later.
   /// </summary>
-  public static Style2Kind? GetStyle(DocumentFormat.OpenXml.Office2010.CustomUI.BackstageGroupButton? openXmlElement)
+  private static DocumentModel.Style2Kind? GetStyle(DocumentFormat.OpenXml.Office2010.CustomUI.BackstageGroupButton openXmlElement)
   {
-    return EnumValueConverter.GetValue<Style2Values, Style2Kind>(openXmlElement?.Style?.Value);
+    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Office2010.CustomUI.Style2Values, DocumentModel.Style2Kind>(openXmlElement?.Style?.Value);
   }
-
-  public static void SetStyle(DocumentFormat.OpenXml.Office2010.CustomUI.BackstageGroupButton? openXmlElement, Style2Kind? value)
+  
+  private static void SetStyle(DocumentFormat.OpenXml.Office2010.CustomUI.BackstageGroupButton openXmlElement, DocumentModel.Style2Kind? value)
   {
-    if (openXmlElement != null)
-      openXmlElement.Style = EnumValueConverter.CreateEnumValue<Style2Values, Style2Kind>(value);
+    openXmlElement.Style = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Office2010.CustomUI.Style2Values, DocumentModel.Style2Kind>(value);
   }
-
+  
   /// <summary>
-  ///   screentip, this property is only available in Office 2010 and later.
+  /// screentip, this property is only available in Office 2010 and later.
   /// </summary>
-  public static String? GetScreentip(DocumentFormat.OpenXml.Office2010.CustomUI.BackstageGroupButton? openXmlElement)
+  private static String? GetScreentip(DocumentFormat.OpenXml.Office2010.CustomUI.BackstageGroupButton openXmlElement)
   {
     return openXmlElement?.Screentip?.Value;
   }
-
-  public static void SetScreentip(DocumentFormat.OpenXml.Office2010.CustomUI.BackstageGroupButton? openXmlElement, String? value)
+  
+  private static void SetScreentip(DocumentFormat.OpenXml.Office2010.CustomUI.BackstageGroupButton openXmlElement, String? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.Screentip = new StringValue { Value = value };
-      else
-        openXmlElement.Screentip = null;
+    if (value != null)
+      openXmlElement.Screentip = new StringValue { Value = value };
+    else
+      openXmlElement.Screentip = null;
   }
-
+  
   /// <summary>
-  ///   getScreentip, this property is only available in Office 2010 and later.
+  /// getScreentip, this property is only available in Office 2010 and later.
   /// </summary>
-  public static String? GetGetScreentip(DocumentFormat.OpenXml.Office2010.CustomUI.BackstageGroupButton? openXmlElement)
+  private static String? GetGetScreentip(DocumentFormat.OpenXml.Office2010.CustomUI.BackstageGroupButton openXmlElement)
   {
     return openXmlElement?.GetScreentip?.Value;
   }
-
-  public static void SetGetScreentip(DocumentFormat.OpenXml.Office2010.CustomUI.BackstageGroupButton? openXmlElement, String? value)
+  
+  private static void SetGetScreentip(DocumentFormat.OpenXml.Office2010.CustomUI.BackstageGroupButton openXmlElement, String? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.GetScreentip = new StringValue { Value = value };
-      else
-        openXmlElement.GetScreentip = null;
+    if (value != null)
+      openXmlElement.GetScreentip = new StringValue { Value = value };
+    else
+      openXmlElement.GetScreentip = null;
   }
-
+  
   /// <summary>
-  ///   supertip, this property is only available in Office 2010 and later.
+  /// supertip, this property is only available in Office 2010 and later.
   /// </summary>
-  public static String? GetSupertip(DocumentFormat.OpenXml.Office2010.CustomUI.BackstageGroupButton? openXmlElement)
+  private static String? GetSupertip(DocumentFormat.OpenXml.Office2010.CustomUI.BackstageGroupButton openXmlElement)
   {
     return openXmlElement?.Supertip?.Value;
   }
-
-  public static void SetSupertip(DocumentFormat.OpenXml.Office2010.CustomUI.BackstageGroupButton? openXmlElement, String? value)
+  
+  private static void SetSupertip(DocumentFormat.OpenXml.Office2010.CustomUI.BackstageGroupButton openXmlElement, String? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.Supertip = new StringValue { Value = value };
-      else
-        openXmlElement.Supertip = null;
+    if (value != null)
+      openXmlElement.Supertip = new StringValue { Value = value };
+    else
+      openXmlElement.Supertip = null;
   }
-
+  
   /// <summary>
-  ///   getSupertip, this property is only available in Office 2010 and later.
+  /// getSupertip, this property is only available in Office 2010 and later.
   /// </summary>
-  public static String? GetGetSupertip(DocumentFormat.OpenXml.Office2010.CustomUI.BackstageGroupButton? openXmlElement)
+  private static String? GetGetSupertip(DocumentFormat.OpenXml.Office2010.CustomUI.BackstageGroupButton openXmlElement)
   {
     return openXmlElement?.GetSupertip?.Value;
   }
-
-  public static void SetGetSupertip(DocumentFormat.OpenXml.Office2010.CustomUI.BackstageGroupButton? openXmlElement, String? value)
+  
+  private static void SetGetSupertip(DocumentFormat.OpenXml.Office2010.CustomUI.BackstageGroupButton openXmlElement, String? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.GetSupertip = new StringValue { Value = value };
-      else
-        openXmlElement.GetSupertip = null;
+    if (value != null)
+      openXmlElement.GetSupertip = new StringValue { Value = value };
+    else
+      openXmlElement.GetSupertip = null;
   }
-
+  
   /// <summary>
-  ///   id, this property is only available in Office 2010 and later.
+  /// id, this property is only available in Office 2010 and later.
   /// </summary>
-  public static String? GetId(DocumentFormat.OpenXml.Office2010.CustomUI.BackstageGroupButton? openXmlElement)
+  private static String? GetId(DocumentFormat.OpenXml.Office2010.CustomUI.BackstageGroupButton openXmlElement)
   {
     return openXmlElement?.Id?.Value;
   }
-
-  public static void SetId(DocumentFormat.OpenXml.Office2010.CustomUI.BackstageGroupButton? openXmlElement, String? value)
+  
+  private static void SetId(DocumentFormat.OpenXml.Office2010.CustomUI.BackstageGroupButton openXmlElement, String? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.Id = new StringValue { Value = value };
-      else
-        openXmlElement.Id = null;
+    if (value != null)
+      openXmlElement.Id = new StringValue { Value = value };
+    else
+      openXmlElement.Id = null;
   }
-
+  
   /// <summary>
-  ///   idQ, this property is only available in Office 2010 and later.
+  /// idQ, this property is only available in Office 2010 and later.
   /// </summary>
-  public static String? GetQualifiedId(DocumentFormat.OpenXml.Office2010.CustomUI.BackstageGroupButton? openXmlElement)
+  private static String? GetQualifiedId(DocumentFormat.OpenXml.Office2010.CustomUI.BackstageGroupButton openXmlElement)
   {
     return openXmlElement?.QualifiedId?.Value;
   }
-
-  public static void SetQualifiedId(DocumentFormat.OpenXml.Office2010.CustomUI.BackstageGroupButton? openXmlElement, String? value)
+  
+  private static void SetQualifiedId(DocumentFormat.OpenXml.Office2010.CustomUI.BackstageGroupButton openXmlElement, String? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.QualifiedId = new StringValue { Value = value };
-      else
-        openXmlElement.QualifiedId = null;
+    if (value != null)
+      openXmlElement.QualifiedId = new StringValue { Value = value };
+    else
+      openXmlElement.QualifiedId = null;
   }
-
+  
   /// <summary>
-  ///   tag, this property is only available in Office 2010 and later.
+  /// tag, this property is only available in Office 2010 and later.
   /// </summary>
-  public static String? GetTag(DocumentFormat.OpenXml.Office2010.CustomUI.BackstageGroupButton? openXmlElement)
+  private static String? GetTag(DocumentFormat.OpenXml.Office2010.CustomUI.BackstageGroupButton openXmlElement)
   {
     return openXmlElement?.Tag?.Value;
   }
-
-  public static void SetTag(DocumentFormat.OpenXml.Office2010.CustomUI.BackstageGroupButton? openXmlElement, String? value)
+  
+  private static void SetTag(DocumentFormat.OpenXml.Office2010.CustomUI.BackstageGroupButton openXmlElement, String? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.Tag = new StringValue { Value = value };
-      else
-        openXmlElement.Tag = null;
+    if (value != null)
+      openXmlElement.Tag = new StringValue { Value = value };
+    else
+      openXmlElement.Tag = null;
   }
-
+  
   /// <summary>
-  ///   onAction, this property is only available in Office 2010 and later.
+  /// onAction, this property is only available in Office 2010 and later.
   /// </summary>
-  public static String? GetOnAction(DocumentFormat.OpenXml.Office2010.CustomUI.BackstageGroupButton? openXmlElement)
+  private static String? GetOnAction(DocumentFormat.OpenXml.Office2010.CustomUI.BackstageGroupButton openXmlElement)
   {
     return openXmlElement?.OnAction?.Value;
   }
-
-  public static void SetOnAction(DocumentFormat.OpenXml.Office2010.CustomUI.BackstageGroupButton? openXmlElement, String? value)
+  
+  private static void SetOnAction(DocumentFormat.OpenXml.Office2010.CustomUI.BackstageGroupButton openXmlElement, String? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.OnAction = new StringValue { Value = value };
-      else
-        openXmlElement.OnAction = null;
+    if (value != null)
+      openXmlElement.OnAction = new StringValue { Value = value };
+    else
+      openXmlElement.OnAction = null;
   }
-
+  
   /// <summary>
-  ///   isDefinitive, this property is only available in Office 2010 and later.
+  /// isDefinitive, this property is only available in Office 2010 and later.
   /// </summary>
-  public static Boolean? GetIsDefinitive(DocumentFormat.OpenXml.Office2010.CustomUI.BackstageGroupButton? openXmlElement)
+  private static Boolean? GetIsDefinitive(DocumentFormat.OpenXml.Office2010.CustomUI.BackstageGroupButton openXmlElement)
   {
     return openXmlElement?.IsDefinitive?.Value;
   }
-
-  public static void SetIsDefinitive(DocumentFormat.OpenXml.Office2010.CustomUI.BackstageGroupButton? openXmlElement, Boolean? value)
+  
+  private static void SetIsDefinitive(DocumentFormat.OpenXml.Office2010.CustomUI.BackstageGroupButton openXmlElement, Boolean? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.IsDefinitive = new BooleanValue { Value = (Boolean)value };
-      else
-        openXmlElement.IsDefinitive = null;
+    if (value != null)
+      openXmlElement.IsDefinitive = new BooleanValue { Value = (Boolean)value };
+    else
+      openXmlElement.IsDefinitive = null;
   }
-
+  
   /// <summary>
-  ///   enabled, this property is only available in Office 2010 and later.
+  /// enabled, this property is only available in Office 2010 and later.
   /// </summary>
-  public static Boolean? GetEnabled(DocumentFormat.OpenXml.Office2010.CustomUI.BackstageGroupButton? openXmlElement)
+  private static Boolean? GetEnabled(DocumentFormat.OpenXml.Office2010.CustomUI.BackstageGroupButton openXmlElement)
   {
     return openXmlElement?.Enabled?.Value;
   }
-
-  public static void SetEnabled(DocumentFormat.OpenXml.Office2010.CustomUI.BackstageGroupButton? openXmlElement, Boolean? value)
+  
+  private static void SetEnabled(DocumentFormat.OpenXml.Office2010.CustomUI.BackstageGroupButton openXmlElement, Boolean? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.Enabled = new BooleanValue { Value = (Boolean)value };
-      else
-        openXmlElement.Enabled = null;
+    if (value != null)
+      openXmlElement.Enabled = new BooleanValue { Value = (Boolean)value };
+    else
+      openXmlElement.Enabled = null;
   }
-
+  
   /// <summary>
-  ///   getEnabled, this property is only available in Office 2010 and later.
+  /// getEnabled, this property is only available in Office 2010 and later.
   /// </summary>
-  public static String? GetGetEnabled(DocumentFormat.OpenXml.Office2010.CustomUI.BackstageGroupButton? openXmlElement)
+  private static String? GetGetEnabled(DocumentFormat.OpenXml.Office2010.CustomUI.BackstageGroupButton openXmlElement)
   {
     return openXmlElement?.GetEnabled?.Value;
   }
-
-  public static void SetGetEnabled(DocumentFormat.OpenXml.Office2010.CustomUI.BackstageGroupButton? openXmlElement, String? value)
+  
+  private static void SetGetEnabled(DocumentFormat.OpenXml.Office2010.CustomUI.BackstageGroupButton openXmlElement, String? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.GetEnabled = new StringValue { Value = value };
-      else
-        openXmlElement.GetEnabled = null;
+    if (value != null)
+      openXmlElement.GetEnabled = new StringValue { Value = value };
+    else
+      openXmlElement.GetEnabled = null;
   }
-
+  
   /// <summary>
-  ///   label, this property is only available in Office 2010 and later.
+  /// label, this property is only available in Office 2010 and later.
   /// </summary>
-  public static String? GetLabel(DocumentFormat.OpenXml.Office2010.CustomUI.BackstageGroupButton? openXmlElement)
+  private static String? GetLabel(DocumentFormat.OpenXml.Office2010.CustomUI.BackstageGroupButton openXmlElement)
   {
     return openXmlElement?.Label?.Value;
   }
-
-  public static void SetLabel(DocumentFormat.OpenXml.Office2010.CustomUI.BackstageGroupButton? openXmlElement, String? value)
+  
+  private static void SetLabel(DocumentFormat.OpenXml.Office2010.CustomUI.BackstageGroupButton openXmlElement, String? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.Label = new StringValue { Value = value };
-      else
-        openXmlElement.Label = null;
+    if (value != null)
+      openXmlElement.Label = new StringValue { Value = value };
+    else
+      openXmlElement.Label = null;
   }
-
+  
   /// <summary>
-  ///   getLabel, this property is only available in Office 2010 and later.
+  /// getLabel, this property is only available in Office 2010 and later.
   /// </summary>
-  public static String? GetGetLabel(DocumentFormat.OpenXml.Office2010.CustomUI.BackstageGroupButton? openXmlElement)
+  private static String? GetGetLabel(DocumentFormat.OpenXml.Office2010.CustomUI.BackstageGroupButton openXmlElement)
   {
     return openXmlElement?.GetLabel?.Value;
   }
-
-  public static void SetGetLabel(DocumentFormat.OpenXml.Office2010.CustomUI.BackstageGroupButton? openXmlElement, String? value)
+  
+  private static void SetGetLabel(DocumentFormat.OpenXml.Office2010.CustomUI.BackstageGroupButton openXmlElement, String? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.GetLabel = new StringValue { Value = value };
-      else
-        openXmlElement.GetLabel = null;
+    if (value != null)
+      openXmlElement.GetLabel = new StringValue { Value = value };
+    else
+      openXmlElement.GetLabel = null;
   }
-
+  
   /// <summary>
-  ///   visible, this property is only available in Office 2010 and later.
+  /// visible, this property is only available in Office 2010 and later.
   /// </summary>
-  public static Boolean? GetVisible(DocumentFormat.OpenXml.Office2010.CustomUI.BackstageGroupButton? openXmlElement)
+  private static Boolean? GetVisible(DocumentFormat.OpenXml.Office2010.CustomUI.BackstageGroupButton openXmlElement)
   {
     return openXmlElement?.Visible?.Value;
   }
-
-  public static void SetVisible(DocumentFormat.OpenXml.Office2010.CustomUI.BackstageGroupButton? openXmlElement, Boolean? value)
+  
+  private static void SetVisible(DocumentFormat.OpenXml.Office2010.CustomUI.BackstageGroupButton openXmlElement, Boolean? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.Visible = new BooleanValue { Value = (Boolean)value };
-      else
-        openXmlElement.Visible = null;
+    if (value != null)
+      openXmlElement.Visible = new BooleanValue { Value = (Boolean)value };
+    else
+      openXmlElement.Visible = null;
   }
-
+  
   /// <summary>
-  ///   getVisible, this property is only available in Office 2010 and later.
+  /// getVisible, this property is only available in Office 2010 and later.
   /// </summary>
-  public static String? GetGetVisible(DocumentFormat.OpenXml.Office2010.CustomUI.BackstageGroupButton? openXmlElement)
+  private static String? GetGetVisible(DocumentFormat.OpenXml.Office2010.CustomUI.BackstageGroupButton openXmlElement)
   {
     return openXmlElement?.GetVisible?.Value;
   }
-
-  public static void SetGetVisible(DocumentFormat.OpenXml.Office2010.CustomUI.BackstageGroupButton? openXmlElement, String? value)
+  
+  private static void SetGetVisible(DocumentFormat.OpenXml.Office2010.CustomUI.BackstageGroupButton openXmlElement, String? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.GetVisible = new StringValue { Value = value };
-      else
-        openXmlElement.GetVisible = null;
+    if (value != null)
+      openXmlElement.GetVisible = new StringValue { Value = value };
+    else
+      openXmlElement.GetVisible = null;
   }
-
+  
   /// <summary>
-  ///   keytip, this property is only available in Office 2010 and later.
+  /// keytip, this property is only available in Office 2010 and later.
   /// </summary>
-  public static String? GetKeytip(DocumentFormat.OpenXml.Office2010.CustomUI.BackstageGroupButton? openXmlElement)
+  private static String? GetKeytip(DocumentFormat.OpenXml.Office2010.CustomUI.BackstageGroupButton openXmlElement)
   {
     return openXmlElement?.Keytip?.Value;
   }
-
-  public static void SetKeytip(DocumentFormat.OpenXml.Office2010.CustomUI.BackstageGroupButton? openXmlElement, String? value)
+  
+  private static void SetKeytip(DocumentFormat.OpenXml.Office2010.CustomUI.BackstageGroupButton openXmlElement, String? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.Keytip = new StringValue { Value = value };
-      else
-        openXmlElement.Keytip = null;
+    if (value != null)
+      openXmlElement.Keytip = new StringValue { Value = value };
+    else
+      openXmlElement.Keytip = null;
   }
-
+  
   /// <summary>
-  ///   getKeytip, this property is only available in Office 2010 and later.
+  /// getKeytip, this property is only available in Office 2010 and later.
   /// </summary>
-  public static String? GetGetKeytip(DocumentFormat.OpenXml.Office2010.CustomUI.BackstageGroupButton? openXmlElement)
+  private static String? GetGetKeytip(DocumentFormat.OpenXml.Office2010.CustomUI.BackstageGroupButton openXmlElement)
   {
     return openXmlElement?.GetKeytip?.Value;
   }
-
-  public static void SetGetKeytip(DocumentFormat.OpenXml.Office2010.CustomUI.BackstageGroupButton? openXmlElement, String? value)
+  
+  private static void SetGetKeytip(DocumentFormat.OpenXml.Office2010.CustomUI.BackstageGroupButton openXmlElement, String? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.GetKeytip = new StringValue { Value = value };
-      else
-        openXmlElement.GetKeytip = null;
+    if (value != null)
+      openXmlElement.GetKeytip = new StringValue { Value = value };
+    else
+      openXmlElement.GetKeytip = null;
   }
-
+  
   /// <summary>
-  ///   image, this property is only available in Office 2010 and later.
+  /// image, this property is only available in Office 2010 and later.
   /// </summary>
-  public static String? GetImage(DocumentFormat.OpenXml.Office2010.CustomUI.BackstageGroupButton? openXmlElement)
+  private static String? GetImage(DocumentFormat.OpenXml.Office2010.CustomUI.BackstageGroupButton openXmlElement)
   {
     return openXmlElement?.Image?.Value;
   }
-
-  public static void SetImage(DocumentFormat.OpenXml.Office2010.CustomUI.BackstageGroupButton? openXmlElement, String? value)
+  
+  private static void SetImage(DocumentFormat.OpenXml.Office2010.CustomUI.BackstageGroupButton openXmlElement, String? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.Image = new StringValue { Value = value };
-      else
-        openXmlElement.Image = null;
+    if (value != null)
+      openXmlElement.Image = new StringValue { Value = value };
+    else
+      openXmlElement.Image = null;
   }
-
+  
   /// <summary>
-  ///   imageMso, this property is only available in Office 2010 and later.
+  /// imageMso, this property is only available in Office 2010 and later.
   /// </summary>
-  public static String? GetImageMso(DocumentFormat.OpenXml.Office2010.CustomUI.BackstageGroupButton? openXmlElement)
+  private static String? GetImageMso(DocumentFormat.OpenXml.Office2010.CustomUI.BackstageGroupButton openXmlElement)
   {
     return openXmlElement?.ImageMso?.Value;
   }
-
-  public static void SetImageMso(DocumentFormat.OpenXml.Office2010.CustomUI.BackstageGroupButton? openXmlElement, String? value)
+  
+  private static void SetImageMso(DocumentFormat.OpenXml.Office2010.CustomUI.BackstageGroupButton openXmlElement, String? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.ImageMso = new StringValue { Value = value };
-      else
-        openXmlElement.ImageMso = null;
+    if (value != null)
+      openXmlElement.ImageMso = new StringValue { Value = value };
+    else
+      openXmlElement.ImageMso = null;
   }
-
+  
   /// <summary>
-  ///   getImage, this property is only available in Office 2010 and later.
+  /// getImage, this property is only available in Office 2010 and later.
   /// </summary>
-  public static String? GetGetImage(DocumentFormat.OpenXml.Office2010.CustomUI.BackstageGroupButton? openXmlElement)
+  private static String? GetGetImage(DocumentFormat.OpenXml.Office2010.CustomUI.BackstageGroupButton openXmlElement)
   {
     return openXmlElement?.GetImage?.Value;
   }
-
-  public static void SetGetImage(DocumentFormat.OpenXml.Office2010.CustomUI.BackstageGroupButton? openXmlElement, String? value)
+  
+  private static void SetGetImage(DocumentFormat.OpenXml.Office2010.CustomUI.BackstageGroupButton openXmlElement, String? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.GetImage = new StringValue { Value = value };
-      else
-        openXmlElement.GetImage = null;
+    if (value != null)
+      openXmlElement.GetImage = new StringValue { Value = value };
+    else
+      openXmlElement.GetImage = null;
   }
-
-  public static BackstageGroupButton? CreateModelElement(DocumentFormat.OpenXml.Office2010.CustomUI.BackstageGroupButton? openXmlElement)
+  
+  public static DocumentModel.BackstageGroupButton? CreateModelElement(DocumentFormat.OpenXml.Office2010.CustomUI.BackstageGroupButton? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new BackstageGroupButton();
+      var value = new DocumentModel.BackstageGroupButton();
       value.Expand = GetExpand(openXmlElement);
       value.Style = GetStyle(openXmlElement);
       value.Screentip = GetScreentip(openXmlElement);
@@ -406,9 +382,9 @@ public static class BackstageGroupButtonConverter
     }
     return null;
   }
-
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(BackstageGroupButton? value)
-    where OpenXmlElementType : DocumentFormat.OpenXml.Office2010.CustomUI.BackstageGroupButton, new()
+  
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.BackstageGroupButton? value)
+    where OpenXmlElementType: DocumentFormat.OpenXml.Office2010.CustomUI.BackstageGroupButton, new()
   {
     if (value != null)
     {

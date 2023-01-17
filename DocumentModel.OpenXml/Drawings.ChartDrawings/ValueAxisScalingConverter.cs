@@ -1,81 +1,75 @@
-using DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing;
-
 namespace DocumentModel.OpenXml.Drawings.ChartDrawings;
 
 /// <summary>
-///   Defines the ValueAxisScaling Class.
+/// Defines the ValueAxisScaling Class.
 /// </summary>
 public static class ValueAxisScalingConverter
 {
   /// <summary>
-  ///   max, this property is only available in Office 2016 and later.
+  /// max, this property is only available in Office 2016 and later.
   /// </summary>
-  public static String? GetMax(ValueAxisScaling? openXmlElement)
+  private static String? GetMax(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.ValueAxisScaling openXmlElement)
   {
     return openXmlElement?.Max?.Value;
   }
-
-  public static void SetMax(ValueAxisScaling? openXmlElement, String? value)
+  
+  private static void SetMax(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.ValueAxisScaling openXmlElement, String? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.Max = new StringValue { Value = value };
-      else
-        openXmlElement.Max = null;
+    if (value != null)
+      openXmlElement.Max = new StringValue { Value = value };
+    else
+      openXmlElement.Max = null;
   }
-
+  
   /// <summary>
-  ///   min, this property is only available in Office 2016 and later.
+  /// min, this property is only available in Office 2016 and later.
   /// </summary>
-  public static String? GetMin(ValueAxisScaling? openXmlElement)
+  private static String? GetMin(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.ValueAxisScaling openXmlElement)
   {
     return openXmlElement?.Min?.Value;
   }
-
-  public static void SetMin(ValueAxisScaling? openXmlElement, String? value)
+  
+  private static void SetMin(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.ValueAxisScaling openXmlElement, String? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.Min = new StringValue { Value = value };
-      else
-        openXmlElement.Min = null;
+    if (value != null)
+      openXmlElement.Min = new StringValue { Value = value };
+    else
+      openXmlElement.Min = null;
   }
-
+  
   /// <summary>
-  ///   majorUnit, this property is only available in Office 2016 and later.
+  /// majorUnit, this property is only available in Office 2016 and later.
   /// </summary>
-  public static String? GetMajorUnit(ValueAxisScaling? openXmlElement)
+  private static String? GetMajorUnit(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.ValueAxisScaling openXmlElement)
   {
     return openXmlElement?.MajorUnit?.Value;
   }
-
-  public static void SetMajorUnit(ValueAxisScaling? openXmlElement, String? value)
+  
+  private static void SetMajorUnit(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.ValueAxisScaling openXmlElement, String? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.MajorUnit = new StringValue { Value = value };
-      else
-        openXmlElement.MajorUnit = null;
+    if (value != null)
+      openXmlElement.MajorUnit = new StringValue { Value = value };
+    else
+      openXmlElement.MajorUnit = null;
   }
-
+  
   /// <summary>
-  ///   minorUnit, this property is only available in Office 2016 and later.
+  /// minorUnit, this property is only available in Office 2016 and later.
   /// </summary>
-  public static String? GetMinorUnit(ValueAxisScaling? openXmlElement)
+  private static String? GetMinorUnit(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.ValueAxisScaling openXmlElement)
   {
     return openXmlElement?.MinorUnit?.Value;
   }
-
-  public static void SetMinorUnit(ValueAxisScaling? openXmlElement, String? value)
+  
+  private static void SetMinorUnit(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.ValueAxisScaling openXmlElement, String? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.MinorUnit = new StringValue { Value = value };
-      else
-        openXmlElement.MinorUnit = null;
+    if (value != null)
+      openXmlElement.MinorUnit = new StringValue { Value = value };
+    else
+      openXmlElement.MinorUnit = null;
   }
-
-  public static DocumentModel.Drawings.ChartDrawings.ValueAxisScaling? CreateModelElement(ValueAxisScaling? openXmlElement)
+  
+  public static DocumentModel.Drawings.ChartDrawings.ValueAxisScaling? CreateModelElement(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.ValueAxisScaling? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -88,9 +82,9 @@ public static class ValueAxisScalingConverter
     }
     return null;
   }
-
+  
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.ChartDrawings.ValueAxisScaling? value)
-    where OpenXmlElementType : ValueAxisScaling, new()
+    where OpenXmlElementType: DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.ValueAxisScaling, new()
   {
     if (value != null)
     {

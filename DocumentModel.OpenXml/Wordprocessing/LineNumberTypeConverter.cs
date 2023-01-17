@@ -1,74 +1,66 @@
-using DocumentFormat.OpenXml.Wordprocessing;
-using DocumentModel.Wordprocessing;
-using LineNumberType = DocumentFormat.OpenXml.Wordprocessing.LineNumberType;
-
 namespace DocumentModel.OpenXml.Wordprocessing;
 
 /// <summary>
-///   Defines the LineNumberType Class.
+/// Defines the LineNumberType Class.
 /// </summary>
 public static class LineNumberTypeConverter
 {
   /// <summary>
-  ///   Line Number Increments to Display
+  /// Line Number Increments to Display
   /// </summary>
-  public static Int16? GetCountBy(LineNumberType? openXmlElement)
+  private static Int16? GetCountBy(DocumentFormat.OpenXml.Wordprocessing.LineNumberType openXmlElement)
   {
-    return openXmlElement?.CountBy?.Value;
+    return openXmlElement.CountBy?.Value;
   }
-
-  public static void SetCountBy(LineNumberType? openXmlElement, Int16? value)
+  
+  private static void SetCountBy(DocumentFormat.OpenXml.Wordprocessing.LineNumberType openXmlElement, Int16? value)
   {
-    if (openXmlElement != null)
-      openXmlElement.CountBy = value;
+    openXmlElement.CountBy = value;
   }
-
+  
   /// <summary>
-  ///   Line Numbering Starting Value
+  /// Line Numbering Starting Value
   /// </summary>
-  public static Int16? GetStart(LineNumberType? openXmlElement)
+  private static Int16? GetStart(DocumentFormat.OpenXml.Wordprocessing.LineNumberType openXmlElement)
   {
-    return openXmlElement?.Start?.Value;
+    return openXmlElement.Start?.Value;
   }
-
-  public static void SetStart(LineNumberType? openXmlElement, Int16? value)
+  
+  private static void SetStart(DocumentFormat.OpenXml.Wordprocessing.LineNumberType openXmlElement, Int16? value)
   {
-    if (openXmlElement != null)
-      openXmlElement.Start = value;
+    openXmlElement.Start = value;
   }
-
+  
   /// <summary>
-  ///   Distance Between Text and Line Numbering
+  /// Distance Between Text and Line Numbering
   /// </summary>
-  public static String? GetDistance(LineNumberType? openXmlElement)
+  private static String? GetDistance(DocumentFormat.OpenXml.Wordprocessing.LineNumberType openXmlElement)
   {
     return openXmlElement?.Distance?.Value;
   }
-
-  public static void SetDistance(LineNumberType? openXmlElement, String? value)
+  
+  private static void SetDistance(DocumentFormat.OpenXml.Wordprocessing.LineNumberType openXmlElement, String? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.Distance = new StringValue { Value = value };
-      else
-        openXmlElement.Distance = null;
+    if (value != null)
+      openXmlElement.Distance = new StringValue { Value = value };
+    else
+      openXmlElement.Distance = null;
   }
-
+  
   /// <summary>
-  ///   Line Numbering Restart Setting
+  /// Line Numbering Restart Setting
   /// </summary>
-  public static LineNumberRestartKind? GetRestart(LineNumberType? openXmlElement)
+  private static DocumentModel.Wordprocessing.LineNumberRestartKind? GetRestart(DocumentFormat.OpenXml.Wordprocessing.LineNumberType openXmlElement)
   {
-    return EnumValueConverter.GetValue<LineNumberRestartValues, LineNumberRestartKind>(openXmlElement?.Restart?.Value);
+    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Wordprocessing.LineNumberRestartValues, DocumentModel.Wordprocessing.LineNumberRestartKind>(openXmlElement?.Restart?.Value);
   }
-
-  public static void SetRestart(LineNumberType? openXmlElement, LineNumberRestartKind? value)
+  
+  private static void SetRestart(DocumentFormat.OpenXml.Wordprocessing.LineNumberType openXmlElement, DocumentModel.Wordprocessing.LineNumberRestartKind? value)
   {
-    if (openXmlElement != null)
-      openXmlElement.Restart = EnumValueConverter.CreateEnumValue<LineNumberRestartValues, LineNumberRestartKind>(value);
+    openXmlElement.Restart = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Wordprocessing.LineNumberRestartValues, DocumentModel.Wordprocessing.LineNumberRestartKind>(value);
   }
-
-  public static DocumentModel.Wordprocessing.LineNumberType? CreateModelElement(LineNumberType? openXmlElement)
+  
+  public static DocumentModel.Wordprocessing.LineNumberType? CreateModelElement(DocumentFormat.OpenXml.Wordprocessing.LineNumberType? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -81,9 +73,9 @@ public static class LineNumberTypeConverter
     }
     return null;
   }
-
+  
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.LineNumberType? value)
-    where OpenXmlElementType : LineNumberType, new()
+    where OpenXmlElementType: DocumentFormat.OpenXml.Wordprocessing.LineNumberType, new()
   {
     if (value != null)
     {

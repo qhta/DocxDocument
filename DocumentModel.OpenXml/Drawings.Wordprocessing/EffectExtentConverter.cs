@@ -1,69 +1,63 @@
-using DocumentFormat.OpenXml.Drawing.Wordprocessing;
-
 namespace DocumentModel.OpenXml.Drawings.Wordprocessing;
 
 /// <summary>
-///   Object Extents Including Effects.
+/// Object Extents Including Effects.
 /// </summary>
 public static class EffectExtentConverter
 {
   /// <summary>
-  ///   Additional Extent on Left Edge
+  /// Additional Extent on Left Edge
   /// </summary>
-  public static Int64? GetLeftEdge(EffectExtent? openXmlElement)
+  private static Int64? GetLeftEdge(DocumentFormat.OpenXml.Drawing.Wordprocessing.EffectExtent openXmlElement)
   {
-    return openXmlElement?.LeftEdge?.Value;
+    return openXmlElement.LeftEdge?.Value;
   }
-
-  public static void SetLeftEdge(EffectExtent? openXmlElement, Int64? value)
+  
+  private static void SetLeftEdge(DocumentFormat.OpenXml.Drawing.Wordprocessing.EffectExtent openXmlElement, Int64? value)
   {
-    if (openXmlElement != null)
-      openXmlElement.LeftEdge = value;
+    openXmlElement.LeftEdge = value;
   }
-
+  
   /// <summary>
-  ///   Additional Extent on Top Edge
+  /// Additional Extent on Top Edge
   /// </summary>
-  public static Int64? GetTopEdge(EffectExtent? openXmlElement)
+  private static Int64? GetTopEdge(DocumentFormat.OpenXml.Drawing.Wordprocessing.EffectExtent openXmlElement)
   {
-    return openXmlElement?.TopEdge?.Value;
+    return openXmlElement.TopEdge?.Value;
   }
-
-  public static void SetTopEdge(EffectExtent? openXmlElement, Int64? value)
+  
+  private static void SetTopEdge(DocumentFormat.OpenXml.Drawing.Wordprocessing.EffectExtent openXmlElement, Int64? value)
   {
-    if (openXmlElement != null)
-      openXmlElement.TopEdge = value;
+    openXmlElement.TopEdge = value;
   }
-
+  
   /// <summary>
-  ///   Additional Extent on Right Edge
+  /// Additional Extent on Right Edge
   /// </summary>
-  public static Int64? GetRightEdge(EffectExtent? openXmlElement)
+  private static Int64? GetRightEdge(DocumentFormat.OpenXml.Drawing.Wordprocessing.EffectExtent openXmlElement)
   {
-    return openXmlElement?.RightEdge?.Value;
+    return openXmlElement.RightEdge?.Value;
   }
-
-  public static void SetRightEdge(EffectExtent? openXmlElement, Int64? value)
+  
+  private static void SetRightEdge(DocumentFormat.OpenXml.Drawing.Wordprocessing.EffectExtent openXmlElement, Int64? value)
   {
-    if (openXmlElement != null)
-      openXmlElement.RightEdge = value;
+    openXmlElement.RightEdge = value;
   }
-
+  
   /// <summary>
-  ///   Additional Extent on Bottom Edge
+  /// Additional Extent on Bottom Edge
   /// </summary>
-  public static Int64? GetBottomEdge(EffectExtent? openXmlElement)
+  private static Int64? GetBottomEdge(DocumentFormat.OpenXml.Drawing.Wordprocessing.EffectExtent openXmlElement)
   {
-    return openXmlElement?.BottomEdge?.Value;
+    return openXmlElement.BottomEdge?.Value;
   }
-
-  public static void SetBottomEdge(EffectExtent? openXmlElement, Int64? value)
+  
+  private static void SetBottomEdge(DocumentFormat.OpenXml.Drawing.Wordprocessing.EffectExtent openXmlElement, Int64? value)
   {
-    if (openXmlElement != null)
-      openXmlElement.BottomEdge = value;
+    openXmlElement.BottomEdge = value;
   }
-
-  public static DocumentModel.Drawings.Wordprocessing.EffectExtent? CreateModelElement(EffectExtent? openXmlElement)
+  
+  public static DocumentModel.Drawings.Wordprocessing.EffectExtent? CreateModelElement(DocumentFormat.OpenXml.Drawing.Wordprocessing.EffectExtent? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -76,9 +70,9 @@ public static class EffectExtentConverter
     }
     return null;
   }
-
+  
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.Wordprocessing.EffectExtent? value)
-    where OpenXmlElementType : EffectExtent, new()
+    where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.Wordprocessing.EffectExtent, new()
   {
     if (value != null)
     {

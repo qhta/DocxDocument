@@ -1,690 +1,565 @@
-using DocumentFormat.OpenXml.Office2013.Word;
-using DocumentFormat.OpenXml.Wordprocessing;
-using DocumentModel.Wordprocessing;
-using Columns = DocumentModel.Wordprocessing.Columns;
-using DocGrid = DocumentModel.Wordprocessing.DocGrid;
-using EndnoteProperties = DocumentModel.Wordprocessing.EndnoteProperties;
-using FootnoteProperties = DocumentModel.Wordprocessing.FootnoteProperties;
-using HeaderFooterReferenceType = DocumentModel.Wordprocessing.HeaderFooterReferenceType;
-using LineNumberType = DocumentModel.Wordprocessing.LineNumberType;
-using PageBorders = DocumentModel.Wordprocessing.PageBorders;
-using PageMargin = DocumentModel.Wordprocessing.PageMargin;
-using PageNumberType = DocumentModel.Wordprocessing.PageNumberType;
-using PageSize = DocumentModel.Wordprocessing.PageSize;
-using PaperSource = DocumentModel.Wordprocessing.PaperSource;
-using RelationshipType = DocumentModel.Wordprocessing.RelationshipType;
-using SectionProperties = DocumentFormat.OpenXml.Wordprocessing.SectionProperties;
-using SectionPropertiesChange = DocumentModel.Wordprocessing.SectionPropertiesChange;
-
 namespace DocumentModel.OpenXml.Wordprocessing;
 
 /// <summary>
-///   Section Properties.
+/// Section Properties.
 /// </summary>
 public static class SectionPropertiesConverter
 {
   /// <summary>
-  ///   Physical Section Mark Character Revision ID
+  /// Physical Section Mark Character Revision ID
   /// </summary>
-  public static Byte[]? GetRsidRPr(SectionProperties? openXmlElement)
+  private static UInt32? GetRsidRPr(DocumentFormat.OpenXml.Wordprocessing.SectionProperties openXmlElement)
   {
-    if (openXmlElement?.RsidRPr?.Value != null)
-      return Convert.FromHexString(openXmlElement.RsidRPr.Value);
+    if (openXmlElement.RsidRPr?.Value != null)
+      return UInt32.Parse(openXmlElement.RsidRPr.Value, NumberStyles.HexNumber);
     return null;
   }
-
-  public static void SetRsidRPr(SectionProperties? openXmlElement, Byte[]? value)
+  
+  private static void SetRsidRPr(DocumentFormat.OpenXml.Wordprocessing.SectionProperties openXmlElement, UInt32? value)
   {
-    if (openXmlElement != null)
-    {
       if (value != null)
-        openXmlElement.RsidRPr = Convert.ToHexString(value);
+        openXmlElement.RsidRPr = ((UInt32)value).ToString("X8");
       else
         openXmlElement.RsidRPr = null;
-    }
   }
-
+  
   /// <summary>
-  ///   Section Deletion Revision ID
+  /// Section Deletion Revision ID
   /// </summary>
-  public static Byte[]? GetRsidDel(SectionProperties? openXmlElement)
+  private static UInt32? GetRsidDel(DocumentFormat.OpenXml.Wordprocessing.SectionProperties openXmlElement)
   {
-    if (openXmlElement?.RsidDel?.Value != null)
-      return Convert.FromHexString(openXmlElement.RsidDel.Value);
+    if (openXmlElement.RsidDel?.Value != null)
+      return UInt32.Parse(openXmlElement.RsidDel.Value, NumberStyles.HexNumber);
     return null;
   }
-
-  public static void SetRsidDel(SectionProperties? openXmlElement, Byte[]? value)
+  
+  private static void SetRsidDel(DocumentFormat.OpenXml.Wordprocessing.SectionProperties openXmlElement, UInt32? value)
   {
-    if (openXmlElement != null)
-    {
       if (value != null)
-        openXmlElement.RsidDel = Convert.ToHexString(value);
+        openXmlElement.RsidDel = ((UInt32)value).ToString("X8");
       else
         openXmlElement.RsidDel = null;
-    }
   }
-
+  
   /// <summary>
-  ///   Section Addition Revision ID
+  /// Section Addition Revision ID
   /// </summary>
-  public static Byte[]? GetRsidR(SectionProperties? openXmlElement)
+  private static UInt32? GetRsidR(DocumentFormat.OpenXml.Wordprocessing.SectionProperties openXmlElement)
   {
-    if (openXmlElement?.RsidR?.Value != null)
-      return Convert.FromHexString(openXmlElement.RsidR.Value);
+    if (openXmlElement.RsidR?.Value != null)
+      return UInt32.Parse(openXmlElement.RsidR.Value, NumberStyles.HexNumber);
     return null;
   }
-
-  public static void SetRsidR(SectionProperties? openXmlElement, Byte[]? value)
+  
+  private static void SetRsidR(DocumentFormat.OpenXml.Wordprocessing.SectionProperties openXmlElement, UInt32? value)
   {
-    if (openXmlElement != null)
-    {
       if (value != null)
-        openXmlElement.RsidR = Convert.ToHexString(value);
+        openXmlElement.RsidR = ((UInt32)value).ToString("X8");
       else
         openXmlElement.RsidR = null;
-    }
   }
-
+  
   /// <summary>
-  ///   Section Properties Revision ID
+  /// Section Properties Revision ID
   /// </summary>
-  public static Byte[]? GetRsidSect(SectionProperties? openXmlElement)
+  private static UInt32? GetRsidSect(DocumentFormat.OpenXml.Wordprocessing.SectionProperties openXmlElement)
   {
-    if (openXmlElement?.RsidSect?.Value != null)
-      return Convert.FromHexString(openXmlElement.RsidSect.Value);
+    if (openXmlElement.RsidSect?.Value != null)
+      return UInt32.Parse(openXmlElement.RsidSect.Value, NumberStyles.HexNumber);
     return null;
   }
-
-  public static void SetRsidSect(SectionProperties? openXmlElement, Byte[]? value)
+  
+  private static void SetRsidSect(DocumentFormat.OpenXml.Wordprocessing.SectionProperties openXmlElement, UInt32? value)
   {
-    if (openXmlElement != null)
-    {
       if (value != null)
-        openXmlElement.RsidSect = Convert.ToHexString(value);
+        openXmlElement.RsidSect = ((UInt32)value).ToString("X8");
       else
         openXmlElement.RsidSect = null;
-    }
   }
-
-  public static HeaderFooterReferenceType? GetHeaderReference(SectionProperties? openXmlElement)
+  
+  private static DocumentModel.Wordprocessing.HeaderFooterReferenceType? GetHeaderReference(DocumentFormat.OpenXml.Wordprocessing.SectionProperties openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<HeaderReference>();
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.HeaderReference>();
     if (itemElement != null)
-      return HeaderFooterReferenceTypeConverter.CreateModelElement(itemElement);
+      return DocumentModel.OpenXml.Wordprocessing.HeaderFooterReferenceTypeConverter.CreateModelElement(itemElement);
     return null;
   }
-
-  public static void SetHeaderReference(SectionProperties? openXmlElement, HeaderFooterReferenceType? value)
+  
+  private static void SetHeaderReference(DocumentFormat.OpenXml.Wordprocessing.SectionProperties openXmlElement, DocumentModel.Wordprocessing.HeaderFooterReferenceType? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.HeaderReference>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<HeaderReference>();
+      itemElement = DocumentModel.OpenXml.Wordprocessing.HeaderFooterReferenceTypeConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.HeaderReference>(value);
       if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = HeaderFooterReferenceTypeConverter.CreateOpenXmlElement<HeaderReference>(value);
-        if (itemElement != null)
-          openXmlElement.AddChild(itemElement);
-      }
+        openXmlElement.AddChild(itemElement);
     }
   }
-
-  public static HeaderFooterReferenceType? GetFooterReference(SectionProperties? openXmlElement)
+  
+  private static DocumentModel.Wordprocessing.HeaderFooterReferenceType? GetFooterReference(DocumentFormat.OpenXml.Wordprocessing.SectionProperties openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<FooterReference>();
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.FooterReference>();
     if (itemElement != null)
-      return HeaderFooterReferenceTypeConverter.CreateModelElement(itemElement);
+      return DocumentModel.OpenXml.Wordprocessing.HeaderFooterReferenceTypeConverter.CreateModelElement(itemElement);
     return null;
   }
-
-  public static void SetFooterReference(SectionProperties? openXmlElement, HeaderFooterReferenceType? value)
+  
+  private static void SetFooterReference(DocumentFormat.OpenXml.Wordprocessing.SectionProperties openXmlElement, DocumentModel.Wordprocessing.HeaderFooterReferenceType? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.FooterReference>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<FooterReference>();
+      itemElement = DocumentModel.OpenXml.Wordprocessing.HeaderFooterReferenceTypeConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.FooterReference>(value);
       if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = HeaderFooterReferenceTypeConverter.CreateOpenXmlElement<FooterReference>(value);
-        if (itemElement != null)
-          openXmlElement.AddChild(itemElement);
-      }
+        openXmlElement.AddChild(itemElement);
     }
   }
-
-  public static FootnoteProperties? GetFootnoteProperties(SectionProperties? openXmlElement)
+  
+  private static DocumentModel.Wordprocessing.FootnoteProperties? GetFootnoteProperties(DocumentFormat.OpenXml.Wordprocessing.SectionProperties openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.FootnoteProperties>();
     if (itemElement != null)
-      return FootnotePropertiesConverter.CreateModelElement(itemElement);
+      return DocumentModel.OpenXml.Wordprocessing.FootnotePropertiesConverter.CreateModelElement(itemElement);
     return null;
   }
-
-  public static void SetFootnoteProperties(SectionProperties? openXmlElement, FootnoteProperties? value)
+  
+  private static void SetFootnoteProperties(DocumentFormat.OpenXml.Wordprocessing.SectionProperties openXmlElement, DocumentModel.Wordprocessing.FootnoteProperties? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.FootnoteProperties>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.FootnoteProperties>();
+      itemElement = DocumentModel.OpenXml.Wordprocessing.FootnotePropertiesConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.FootnoteProperties>(value);
       if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = FootnotePropertiesConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.FootnoteProperties>(value);
-        if (itemElement != null)
-          openXmlElement.AddChild(itemElement);
-      }
+        openXmlElement.AddChild(itemElement);
     }
   }
-
-  public static EndnoteProperties? GetEndnoteProperties(SectionProperties? openXmlElement)
+  
+  private static DocumentModel.Wordprocessing.EndnoteProperties? GetEndnoteProperties(DocumentFormat.OpenXml.Wordprocessing.SectionProperties openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.EndnoteProperties>();
     if (itemElement != null)
-      return EndnotePropertiesConverter.CreateModelElement(itemElement);
+      return DocumentModel.OpenXml.Wordprocessing.EndnotePropertiesConverter.CreateModelElement(itemElement);
     return null;
   }
-
-  public static void SetEndnoteProperties(SectionProperties? openXmlElement, EndnoteProperties? value)
+  
+  private static void SetEndnoteProperties(DocumentFormat.OpenXml.Wordprocessing.SectionProperties openXmlElement, DocumentModel.Wordprocessing.EndnoteProperties? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.EndnoteProperties>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.EndnoteProperties>();
+      itemElement = DocumentModel.OpenXml.Wordprocessing.EndnotePropertiesConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.EndnoteProperties>(value);
       if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = EndnotePropertiesConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.EndnoteProperties>(value);
-        if (itemElement != null)
-          openXmlElement.AddChild(itemElement);
-      }
+        openXmlElement.AddChild(itemElement);
     }
   }
-
-  public static SectionMarkKind? GetSectionType(SectionProperties? openXmlElement)
+  
+  private static DocumentModel.Wordprocessing.SectionMarkKind? GetSectionType(DocumentFormat.OpenXml.Wordprocessing.SectionProperties openXmlElement)
   {
-    if (openXmlElement != null)
-    {
-      var itemElement = openXmlElement.GetFirstChild<SectionType>();
-      if (itemElement?.Val?.Value != null) return EnumValueConverter.GetValue<SectionMarkValues, SectionMarkKind>(itemElement.Val.Value);
-    }
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.SectionType>();
+    if (itemElement?.Val?.Value != null)
+      return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Wordprocessing.SectionMarkValues, DocumentModel.Wordprocessing.SectionMarkKind>(itemElement.Val.Value);
     return null;
   }
-
-  public static void SetSectionType(SectionProperties? openXmlElement, SectionMarkKind? value)
+  
+  private static void SetSectionType(DocumentFormat.OpenXml.Wordprocessing.SectionProperties openXmlElement, DocumentModel.Wordprocessing.SectionMarkKind? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.SectionType>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<SectionType>();
+      itemElement = EnumValueConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.SectionType, DocumentFormat.OpenXml.Wordprocessing.SectionMarkValues, DocumentModel.Wordprocessing.SectionMarkKind>(value);
       if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = EnumValueConverter.CreateOpenXmlElement<SectionType, SectionMarkValues, SectionMarkKind>(value);
-        if (itemElement != null)
-          openXmlElement.AddChild(itemElement);
-      }
+        openXmlElement.AddChild(itemElement);
     }
   }
-
-  public static PageSize? GetPageSize(SectionProperties? openXmlElement)
+  
+  private static DocumentModel.Wordprocessing.PageSize? GetPageSize(DocumentFormat.OpenXml.Wordprocessing.SectionProperties openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.PageSize>();
     if (itemElement != null)
-      return PageSizeConverter.CreateModelElement(itemElement);
+      return DocumentModel.OpenXml.Wordprocessing.PageSizeConverter.CreateModelElement(itemElement);
     return null;
   }
-
-  public static void SetPageSize(SectionProperties? openXmlElement, PageSize? value)
+  
+  private static void SetPageSize(DocumentFormat.OpenXml.Wordprocessing.SectionProperties openXmlElement, DocumentModel.Wordprocessing.PageSize? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.PageSize>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.PageSize>();
+      itemElement = DocumentModel.OpenXml.Wordprocessing.PageSizeConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.PageSize>(value);
       if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = PageSizeConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.PageSize>(value);
-        if (itemElement != null)
-          openXmlElement.AddChild(itemElement);
-      }
+        openXmlElement.AddChild(itemElement);
     }
   }
-
-  public static PageMargin? GetPageMargin(SectionProperties? openXmlElement)
+  
+  private static DocumentModel.Wordprocessing.PageMargin? GetPageMargin(DocumentFormat.OpenXml.Wordprocessing.SectionProperties openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.PageMargin>();
     if (itemElement != null)
-      return PageMarginConverter.CreateModelElement(itemElement);
+      return DocumentModel.OpenXml.Wordprocessing.PageMarginConverter.CreateModelElement(itemElement);
     return null;
   }
-
-  public static void SetPageMargin(SectionProperties? openXmlElement, PageMargin? value)
+  
+  private static void SetPageMargin(DocumentFormat.OpenXml.Wordprocessing.SectionProperties openXmlElement, DocumentModel.Wordprocessing.PageMargin? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.PageMargin>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.PageMargin>();
+      itemElement = DocumentModel.OpenXml.Wordprocessing.PageMarginConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.PageMargin>(value);
       if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = PageMarginConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.PageMargin>(value);
-        if (itemElement != null)
-          openXmlElement.AddChild(itemElement);
-      }
+        openXmlElement.AddChild(itemElement);
     }
   }
-
-  public static PaperSource? GetPaperSource(SectionProperties? openXmlElement)
+  
+  private static DocumentModel.Wordprocessing.PaperSource? GetPaperSource(DocumentFormat.OpenXml.Wordprocessing.SectionProperties openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.PaperSource>();
     if (itemElement != null)
-      return PaperSourceConverter.CreateModelElement(itemElement);
+      return DocumentModel.OpenXml.Wordprocessing.PaperSourceConverter.CreateModelElement(itemElement);
     return null;
   }
-
-  public static void SetPaperSource(SectionProperties? openXmlElement, PaperSource? value)
+  
+  private static void SetPaperSource(DocumentFormat.OpenXml.Wordprocessing.SectionProperties openXmlElement, DocumentModel.Wordprocessing.PaperSource? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.PaperSource>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.PaperSource>();
+      itemElement = DocumentModel.OpenXml.Wordprocessing.PaperSourceConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.PaperSource>(value);
       if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = PaperSourceConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.PaperSource>(value);
-        if (itemElement != null)
-          openXmlElement.AddChild(itemElement);
-      }
+        openXmlElement.AddChild(itemElement);
     }
   }
-
-  public static PageBorders? GetPageBorders(SectionProperties? openXmlElement)
+  
+  private static DocumentModel.Wordprocessing.PageBorders? GetPageBorders(DocumentFormat.OpenXml.Wordprocessing.SectionProperties openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.PageBorders>();
     if (itemElement != null)
-      return PageBordersConverter.CreateModelElement(itemElement);
+      return DocumentModel.OpenXml.Wordprocessing.PageBordersConverter.CreateModelElement(itemElement);
     return null;
   }
-
-  public static void SetPageBorders(SectionProperties? openXmlElement, PageBorders? value)
+  
+  private static void SetPageBorders(DocumentFormat.OpenXml.Wordprocessing.SectionProperties openXmlElement, DocumentModel.Wordprocessing.PageBorders? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.PageBorders>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.PageBorders>();
+      itemElement = DocumentModel.OpenXml.Wordprocessing.PageBordersConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.PageBorders>(value);
       if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = PageBordersConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.PageBorders>(value);
-        if (itemElement != null)
-          openXmlElement.AddChild(itemElement);
-      }
+        openXmlElement.AddChild(itemElement);
     }
   }
-
-  public static LineNumberType? GetLineNumberType(SectionProperties? openXmlElement)
+  
+  private static DocumentModel.Wordprocessing.LineNumberType? GetLineNumberType(DocumentFormat.OpenXml.Wordprocessing.SectionProperties openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.LineNumberType>();
     if (itemElement != null)
-      return LineNumberTypeConverter.CreateModelElement(itemElement);
+      return DocumentModel.OpenXml.Wordprocessing.LineNumberTypeConverter.CreateModelElement(itemElement);
     return null;
   }
-
-  public static void SetLineNumberType(SectionProperties? openXmlElement, LineNumberType? value)
+  
+  private static void SetLineNumberType(DocumentFormat.OpenXml.Wordprocessing.SectionProperties openXmlElement, DocumentModel.Wordprocessing.LineNumberType? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.LineNumberType>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.LineNumberType>();
+      itemElement = DocumentModel.OpenXml.Wordprocessing.LineNumberTypeConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.LineNumberType>(value);
       if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = LineNumberTypeConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.LineNumberType>(value);
-        if (itemElement != null)
-          openXmlElement.AddChild(itemElement);
-      }
+        openXmlElement.AddChild(itemElement);
     }
   }
-
-  public static PageNumberType? GetPageNumberType(SectionProperties? openXmlElement)
+  
+  private static DocumentModel.Wordprocessing.PageNumberType? GetPageNumberType(DocumentFormat.OpenXml.Wordprocessing.SectionProperties openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.PageNumberType>();
     if (itemElement != null)
-      return PageNumberTypeConverter.CreateModelElement(itemElement);
+      return DocumentModel.OpenXml.Wordprocessing.PageNumberTypeConverter.CreateModelElement(itemElement);
     return null;
   }
-
-  public static void SetPageNumberType(SectionProperties? openXmlElement, PageNumberType? value)
+  
+  private static void SetPageNumberType(DocumentFormat.OpenXml.Wordprocessing.SectionProperties openXmlElement, DocumentModel.Wordprocessing.PageNumberType? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.PageNumberType>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.PageNumberType>();
+      itemElement = DocumentModel.OpenXml.Wordprocessing.PageNumberTypeConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.PageNumberType>(value);
       if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = PageNumberTypeConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.PageNumberType>(value);
-        if (itemElement != null)
-          openXmlElement.AddChild(itemElement);
-      }
+        openXmlElement.AddChild(itemElement);
     }
   }
-
-  public static Columns? GetColumns(SectionProperties? openXmlElement)
+  
+  private static DocumentModel.Wordprocessing.Columns? GetColumns(DocumentFormat.OpenXml.Wordprocessing.SectionProperties openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.Columns>();
     if (itemElement != null)
-      return ColumnsConverter.CreateModelElement(itemElement);
+      return DocumentModel.OpenXml.Wordprocessing.ColumnsConverter.CreateModelElement(itemElement);
     return null;
   }
-
-  public static void SetColumns(SectionProperties? openXmlElement, Columns? value)
+  
+  private static void SetColumns(DocumentFormat.OpenXml.Wordprocessing.SectionProperties openXmlElement, DocumentModel.Wordprocessing.Columns? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.Columns>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.Columns>();
+      itemElement = DocumentModel.OpenXml.Wordprocessing.ColumnsConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.Columns>(value);
+      if (itemElement != null)
+        openXmlElement.AddChild(itemElement);
+    }
+  }
+  
+  private static Boolean? GetFormProtection(DocumentFormat.OpenXml.Wordprocessing.SectionProperties openXmlElement)
+  {
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.FormProtection>();
+    return itemElement != null;
+  }
+  
+  private static void SetFormProtection(DocumentFormat.OpenXml.Wordprocessing.SectionProperties openXmlElement, Boolean? value)
+  {
+    if (value == false)
+    {
+      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.FormProtection>();
       if (itemElement != null)
         itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = ColumnsConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.Columns>(value);
-        if (itemElement != null)
-          openXmlElement.AddChild(itemElement);
-      }
+    }
+    if (value == true)
+    {
+      var itemElement = new DocumentFormat.OpenXml.Wordprocessing.FormProtection();
+      openXmlElement.AddChild(itemElement);
     }
   }
-
-  public static Boolean? GetFormProtection(SectionProperties? openXmlElement)
+  
+  private static DocumentModel.Wordprocessing.VerticalJustificationKind? GetVerticalTextAlignmentOnPage(DocumentFormat.OpenXml.Wordprocessing.SectionProperties openXmlElement)
   {
-    if (openXmlElement != null)
-    {
-      var itemElement = openXmlElement.GetFirstChild<FormProtection>();
-      return itemElement != null;
-    }
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.VerticalTextAlignmentOnPage>();
+    if (itemElement?.Val?.Value != null)
+      return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Wordprocessing.VerticalJustificationValues, DocumentModel.Wordprocessing.VerticalJustificationKind>(itemElement.Val.Value);
     return null;
   }
-
-  public static void SetFormProtection(SectionProperties? openXmlElement, Boolean? value)
+  
+  private static void SetVerticalTextAlignmentOnPage(DocumentFormat.OpenXml.Wordprocessing.SectionProperties openXmlElement, DocumentModel.Wordprocessing.VerticalJustificationKind? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.VerticalTextAlignmentOnPage>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      if (value == false)
-      {
-        var itemElement = openXmlElement.GetFirstChild<FormProtection>();
-        if (itemElement != null)
-          itemElement.Remove();
-      }
-      if (value == true)
-      {
-        var itemElement = new FormProtection();
+      itemElement = EnumValueConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.VerticalTextAlignmentOnPage, DocumentFormat.OpenXml.Wordprocessing.VerticalJustificationValues, DocumentModel.Wordprocessing.VerticalJustificationKind>(value);
+      if (itemElement != null)
         openXmlElement.AddChild(itemElement);
-      }
     }
   }
-
-  public static VerticalJustificationKind? GetVerticalTextAlignmentOnPage(SectionProperties? openXmlElement)
+  
+  private static Boolean? GetNoEndnote(DocumentFormat.OpenXml.Wordprocessing.SectionProperties openXmlElement)
   {
-    if (openXmlElement != null)
-    {
-      var itemElement = openXmlElement.GetFirstChild<VerticalTextAlignmentOnPage>();
-      if (itemElement?.Val?.Value != null) return EnumValueConverter.GetValue<VerticalJustificationValues, VerticalJustificationKind>(itemElement.Val.Value);
-    }
-    return null;
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.NoEndnote>();
+    return itemElement != null;
   }
-
-  public static void SetVerticalTextAlignmentOnPage(SectionProperties? openXmlElement, VerticalJustificationKind? value)
+  
+  private static void SetNoEndnote(DocumentFormat.OpenXml.Wordprocessing.SectionProperties openXmlElement, Boolean? value)
   {
-    if (openXmlElement != null)
+    if (value == false)
     {
-      var itemElement = openXmlElement.GetFirstChild<VerticalTextAlignmentOnPage>();
+      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.NoEndnote>();
       if (itemElement != null)
         itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = EnumValueConverter.CreateOpenXmlElement<VerticalTextAlignmentOnPage, VerticalJustificationValues, VerticalJustificationKind>(value);
-        if (itemElement != null)
-          openXmlElement.AddChild(itemElement);
-      }
+    }
+    if (value == true)
+    {
+      var itemElement = new DocumentFormat.OpenXml.Wordprocessing.NoEndnote();
+      openXmlElement.AddChild(itemElement);
     }
   }
-
-  public static Boolean? GetNoEndnote(SectionProperties? openXmlElement)
+  
+  private static Boolean? GetTitlePage(DocumentFormat.OpenXml.Wordprocessing.SectionProperties openXmlElement)
   {
-    if (openXmlElement != null)
-    {
-      var itemElement = openXmlElement.GetFirstChild<NoEndnote>();
-      return itemElement != null;
-    }
-    return null;
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.TitlePage>();
+    return itemElement != null;
   }
-
-  public static void SetNoEndnote(SectionProperties? openXmlElement, Boolean? value)
+  
+  private static void SetTitlePage(DocumentFormat.OpenXml.Wordprocessing.SectionProperties openXmlElement, Boolean? value)
   {
-    if (openXmlElement != null)
+    if (value == false)
     {
-      if (value == false)
-      {
-        var itemElement = openXmlElement.GetFirstChild<NoEndnote>();
-        if (itemElement != null)
-          itemElement.Remove();
-      }
-      if (value == true)
-      {
-        var itemElement = new NoEndnote();
-        openXmlElement.AddChild(itemElement);
-      }
-    }
-  }
-
-  public static Boolean? GetTitlePage(SectionProperties? openXmlElement)
-  {
-    if (openXmlElement != null)
-    {
-      var itemElement = openXmlElement.GetFirstChild<TitlePage>();
-      return itemElement != null;
-    }
-    return null;
-  }
-
-  public static void SetTitlePage(SectionProperties? openXmlElement, Boolean? value)
-  {
-    if (openXmlElement != null)
-    {
-      if (value == false)
-      {
-        var itemElement = openXmlElement.GetFirstChild<TitlePage>();
-        if (itemElement != null)
-          itemElement.Remove();
-      }
-      if (value == true)
-      {
-        var itemElement = new TitlePage();
-        openXmlElement.AddChild(itemElement);
-      }
-    }
-  }
-
-  public static TextDirectionKind? GetTextDirection(SectionProperties? openXmlElement)
-  {
-    if (openXmlElement != null)
-    {
-      var itemElement = openXmlElement.GetFirstChild<TextDirection>();
-      if (itemElement?.Val?.Value != null) return EnumValueConverter.GetValue<TextDirectionValues, TextDirectionKind>(itemElement.Val.Value);
-    }
-    return null;
-  }
-
-  public static void SetTextDirection(SectionProperties? openXmlElement, TextDirectionKind? value)
-  {
-    if (openXmlElement != null)
-    {
-      var itemElement = openXmlElement.GetFirstChild<TextDirection>();
+      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.TitlePage>();
       if (itemElement != null)
         itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = EnumValueConverter.CreateOpenXmlElement<TextDirection, TextDirectionValues, TextDirectionKind>(value);
-        if (itemElement != null)
-          openXmlElement.AddChild(itemElement);
-      }
+    }
+    if (value == true)
+    {
+      var itemElement = new DocumentFormat.OpenXml.Wordprocessing.TitlePage();
+      openXmlElement.AddChild(itemElement);
     }
   }
-
-  public static Boolean? GetBiDi(SectionProperties? openXmlElement)
+  
+  private static DocumentModel.Wordprocessing.TextDirectionKind? GetTextDirection(DocumentFormat.OpenXml.Wordprocessing.SectionProperties openXmlElement)
   {
-    if (openXmlElement != null)
-    {
-      var itemElement = openXmlElement.GetFirstChild<BiDi>();
-      return itemElement != null;
-    }
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.TextDirection>();
+    if (itemElement?.Val?.Value != null)
+      return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Wordprocessing.TextDirectionValues, DocumentModel.Wordprocessing.TextDirectionKind>(itemElement.Val.Value);
     return null;
   }
-
-  public static void SetBiDi(SectionProperties? openXmlElement, Boolean? value)
+  
+  private static void SetTextDirection(DocumentFormat.OpenXml.Wordprocessing.SectionProperties openXmlElement, DocumentModel.Wordprocessing.TextDirectionKind? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.TextDirection>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      if (value == false)
-      {
-        var itemElement = openXmlElement.GetFirstChild<BiDi>();
-        if (itemElement != null)
-          itemElement.Remove();
-      }
-      if (value == true)
-      {
-        var itemElement = new BiDi();
+      itemElement = EnumValueConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.TextDirection, DocumentFormat.OpenXml.Wordprocessing.TextDirectionValues, DocumentModel.Wordprocessing.TextDirectionKind>(value);
+      if (itemElement != null)
         openXmlElement.AddChild(itemElement);
-      }
     }
   }
-
-  public static Boolean? GetGutterOnRight(SectionProperties? openXmlElement)
+  
+  private static Boolean? GetBiDi(DocumentFormat.OpenXml.Wordprocessing.SectionProperties openXmlElement)
   {
-    if (openXmlElement != null)
-    {
-      var itemElement = openXmlElement.GetFirstChild<GutterOnRight>();
-      return itemElement != null;
-    }
-    return null;
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.BiDi>();
+    return itemElement != null;
   }
-
-  public static void SetGutterOnRight(SectionProperties? openXmlElement, Boolean? value)
+  
+  private static void SetBiDi(DocumentFormat.OpenXml.Wordprocessing.SectionProperties openXmlElement, Boolean? value)
   {
-    if (openXmlElement != null)
+    if (value == false)
     {
-      if (value == false)
-      {
-        var itemElement = openXmlElement.GetFirstChild<GutterOnRight>();
-        if (itemElement != null)
-          itemElement.Remove();
-      }
-      if (value == true)
-      {
-        var itemElement = new GutterOnRight();
-        openXmlElement.AddChild(itemElement);
-      }
+      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.BiDi>();
+      if (itemElement != null)
+        itemElement.Remove();
+    }
+    if (value == true)
+    {
+      var itemElement = new DocumentFormat.OpenXml.Wordprocessing.BiDi();
+      openXmlElement.AddChild(itemElement);
     }
   }
-
-  public static DocGrid? GetDocGrid(SectionProperties? openXmlElement)
+  
+  private static Boolean? GetGutterOnRight(DocumentFormat.OpenXml.Wordprocessing.SectionProperties openXmlElement)
+  {
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.GutterOnRight>();
+    return itemElement != null;
+  }
+  
+  private static void SetGutterOnRight(DocumentFormat.OpenXml.Wordprocessing.SectionProperties openXmlElement, Boolean? value)
+  {
+    if (value == false)
+    {
+      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.GutterOnRight>();
+      if (itemElement != null)
+        itemElement.Remove();
+    }
+    if (value == true)
+    {
+      var itemElement = new DocumentFormat.OpenXml.Wordprocessing.GutterOnRight();
+      openXmlElement.AddChild(itemElement);
+    }
+  }
+  
+  private static DocumentModel.Wordprocessing.DocGrid? GetDocGrid(DocumentFormat.OpenXml.Wordprocessing.SectionProperties openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.DocGrid>();
     if (itemElement != null)
-      return DocGridConverter.CreateModelElement(itemElement);
+      return DocumentModel.OpenXml.Wordprocessing.DocGridConverter.CreateModelElement(itemElement);
     return null;
   }
-
-  public static void SetDocGrid(SectionProperties? openXmlElement, DocGrid? value)
+  
+  private static void SetDocGrid(DocumentFormat.OpenXml.Wordprocessing.SectionProperties openXmlElement, DocumentModel.Wordprocessing.DocGrid? value)
   {
-    if (openXmlElement != null)
-    {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.DocGrid>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = DocGridConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.DocGrid>(value);
-        if (itemElement != null)
-          openXmlElement.AddChild(itemElement);
-      }
-    }
-  }
-
-  public static RelationshipType? GetPrinterSettingsReference(SectionProperties? openXmlElement)
-  {
-    var itemElement = openXmlElement?.GetFirstChild<PrinterSettingsReference>();
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.DocGrid>();
     if (itemElement != null)
-      return RelationshipTypeConverter.CreateModelElement(itemElement);
-    return null;
-  }
-
-  public static void SetPrinterSettingsReference(SectionProperties? openXmlElement, RelationshipType? value)
-  {
-    if (openXmlElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<PrinterSettingsReference>();
+      itemElement = DocumentModel.OpenXml.Wordprocessing.DocGridConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.DocGrid>(value);
       if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = RelationshipTypeConverter.CreateOpenXmlElement<PrinterSettingsReference>(value);
-        if (itemElement != null)
-          openXmlElement.AddChild(itemElement);
-      }
+        openXmlElement.AddChild(itemElement);
     }
   }
-
-  public static Int32? GetFootnoteColumns(SectionProperties? openXmlElement)
+  
+  private static DocumentModel.Wordprocessing.RelationshipType? GetPrinterSettingsReference(DocumentFormat.OpenXml.Wordprocessing.SectionProperties openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<FootnoteColumns>();
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.PrinterSettingsReference>();
+    if (itemElement != null)
+      return DocumentModel.OpenXml.Wordprocessing.RelationshipTypeConverter.CreateModelElement(itemElement);
+    return null;
+  }
+  
+  private static void SetPrinterSettingsReference(DocumentFormat.OpenXml.Wordprocessing.SectionProperties openXmlElement, DocumentModel.Wordprocessing.RelationshipType? value)
+  {
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.PrinterSettingsReference>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
+    {
+      itemElement = DocumentModel.OpenXml.Wordprocessing.RelationshipTypeConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.PrinterSettingsReference>(value);
+      if (itemElement != null)
+        openXmlElement.AddChild(itemElement);
+    }
+  }
+  
+  private static Int32? GetFootnoteColumns(DocumentFormat.OpenXml.Wordprocessing.SectionProperties openXmlElement)
+  {
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office2013.Word.FootnoteColumns>();
     if (itemElement != null)
       return itemElement.Val?.Value;
     return null;
   }
-
-  public static void SetFootnoteColumns(SectionProperties? openXmlElement, Int32? value)
+  
+  private static void SetFootnoteColumns(DocumentFormat.OpenXml.Wordprocessing.SectionProperties openXmlElement, Int32? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2013.Word.FootnoteColumns>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<FootnoteColumns>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = new FootnoteColumns { Val = value };
-        openXmlElement.AddChild(itemElement);
-      }
+      itemElement = new DocumentFormat.OpenXml.Office2013.Word.FootnoteColumns{ Val = value };
+      openXmlElement.AddChild(itemElement);
     }
   }
-
-  public static SectionPropertiesChange? GetSectionPropertiesChange(SectionProperties? openXmlElement)
+  
+  private static DocumentModel.Wordprocessing.SectionPropertiesChange? GetSectionPropertiesChange(DocumentFormat.OpenXml.Wordprocessing.SectionProperties openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.SectionPropertiesChange>();
     if (itemElement != null)
-      return SectionPropertiesChangeConverter.CreateModelElement(itemElement);
+      return DocumentModel.OpenXml.Wordprocessing.SectionPropertiesChangeConverter.CreateModelElement(itemElement);
     return null;
   }
-
-  public static void SetSectionPropertiesChange(SectionProperties? openXmlElement, SectionPropertiesChange? value)
+  
+  private static void SetSectionPropertiesChange(DocumentFormat.OpenXml.Wordprocessing.SectionProperties openXmlElement, DocumentModel.Wordprocessing.SectionPropertiesChange? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.SectionPropertiesChange>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.SectionPropertiesChange>();
+      itemElement = DocumentModel.OpenXml.Wordprocessing.SectionPropertiesChangeConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.SectionPropertiesChange>(value);
       if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = SectionPropertiesChangeConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.SectionPropertiesChange>(value);
-        if (itemElement != null)
-          openXmlElement.AddChild(itemElement);
-      }
+        openXmlElement.AddChild(itemElement);
     }
   }
-
-  public static DocumentModel.Wordprocessing.SectionProperties? CreateModelElement(SectionProperties? openXmlElement)
+  
+  public static DocumentModel.Wordprocessing.SectionProperties? CreateModelElement(DocumentFormat.OpenXml.Wordprocessing.SectionProperties? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -720,9 +595,9 @@ public static class SectionPropertiesConverter
     }
     return null;
   }
-
+  
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.SectionProperties? value)
-    where OpenXmlElementType : SectionProperties, new()
+    where OpenXmlElementType: DocumentFormat.OpenXml.Wordprocessing.SectionProperties, new()
   {
     if (value != null)
     {

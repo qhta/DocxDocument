@@ -1,58 +1,51 @@
-using DocumentFormat.OpenXml.Drawing.Diagrams;
-using DataModel = DocumentModel.Drawings.Diagrams.DataModel;
-
 namespace DocumentModel.OpenXml.Drawings.Diagrams;
 
 /// <summary>
-///   Defines the SampleDataType Class.
+/// Defines the SampleDataType Class.
 /// </summary>
 public static class SampleDataTypeConverter
 {
   /// <summary>
-  ///   Use Default
+  /// Use Default
   /// </summary>
-  public static Boolean? GetUseDefault(SampleDataType? openXmlElement)
+  private static Boolean? GetUseDefault(DocumentFormat.OpenXml.Drawing.Diagrams.SampleDataType openXmlElement)
   {
     return openXmlElement?.UseDefault?.Value;
   }
-
-  public static void SetUseDefault(SampleDataType? openXmlElement, Boolean? value)
+  
+  private static void SetUseDefault(DocumentFormat.OpenXml.Drawing.Diagrams.SampleDataType openXmlElement, Boolean? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.UseDefault = new BooleanValue { Value = (Boolean)value };
-      else
-        openXmlElement.UseDefault = null;
+    if (value != null)
+      openXmlElement.UseDefault = new BooleanValue { Value = (Boolean)value };
+    else
+      openXmlElement.UseDefault = null;
   }
-
+  
   /// <summary>
-  ///   Data Model.
+  /// Data Model.
   /// </summary>
-  public static DataModel? GetDataModel(SampleDataType? openXmlElement)
+  private static DocumentModel.Drawings.Diagrams.DataModel? GetDataModel(DocumentFormat.OpenXml.Drawing.Diagrams.SampleDataType openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.Diagrams.DataModel>();
     if (itemElement != null)
-      return DataModelConverter.CreateModelElement(itemElement);
+      return DocumentModel.OpenXml.Drawings.Diagrams.DataModelConverter.CreateModelElement(itemElement);
     return null;
   }
-
-  public static void SetDataModel(SampleDataType? openXmlElement, DataModel? value)
+  
+  private static void SetDataModel(DocumentFormat.OpenXml.Drawing.Diagrams.SampleDataType openXmlElement, DocumentModel.Drawings.Diagrams.DataModel? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Diagrams.DataModel>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Diagrams.DataModel>();
+      itemElement = DocumentModel.OpenXml.Drawings.Diagrams.DataModelConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Diagrams.DataModel>(value);
       if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = DataModelConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Diagrams.DataModel>(value);
-        if (itemElement != null)
-          openXmlElement.AddChild(itemElement);
-      }
+        openXmlElement.AddChild(itemElement);
     }
   }
-
-  public static DocumentModel.Drawings.Diagrams.SampleDataType? CreateModelElement(SampleDataType? openXmlElement)
+  
+  public static DocumentModel.Drawings.Diagrams.SampleDataType? CreateModelElement(DocumentFormat.OpenXml.Drawing.Diagrams.SampleDataType? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -63,9 +56,9 @@ public static class SampleDataTypeConverter
     }
     return null;
   }
-
+  
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.Diagrams.SampleDataType? value)
-    where OpenXmlElementType : SampleDataType, new()
+    where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.Diagrams.SampleDataType, new()
   {
     if (value != null)
     {

@@ -1,47 +1,43 @@
-using DocumentFormat.OpenXml.Drawing.Charts;
-
 namespace DocumentModel.OpenXml.Drawings.Charts;
 
 /// <summary>
-///   Number Format.
+/// Number Format.
 /// </summary>
 public static class NumberingFormatConverter
 {
   /// <summary>
-  ///   Number Format Code
+  /// Number Format Code
   /// </summary>
-  public static String? GetFormatCode(NumberingFormat? openXmlElement)
+  private static String? GetFormatCode(DocumentFormat.OpenXml.Drawing.Charts.NumberingFormat openXmlElement)
   {
     return openXmlElement?.FormatCode?.Value;
   }
-
-  public static void SetFormatCode(NumberingFormat? openXmlElement, String? value)
+  
+  private static void SetFormatCode(DocumentFormat.OpenXml.Drawing.Charts.NumberingFormat openXmlElement, String? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.FormatCode = new StringValue { Value = value };
-      else
-        openXmlElement.FormatCode = null;
+    if (value != null)
+      openXmlElement.FormatCode = new StringValue { Value = value };
+    else
+      openXmlElement.FormatCode = null;
   }
-
+  
   /// <summary>
-  ///   Linked to Source
+  /// Linked to Source
   /// </summary>
-  public static Boolean? GetSourceLinked(NumberingFormat? openXmlElement)
+  private static Boolean? GetSourceLinked(DocumentFormat.OpenXml.Drawing.Charts.NumberingFormat openXmlElement)
   {
     return openXmlElement?.SourceLinked?.Value;
   }
-
-  public static void SetSourceLinked(NumberingFormat? openXmlElement, Boolean? value)
+  
+  private static void SetSourceLinked(DocumentFormat.OpenXml.Drawing.Charts.NumberingFormat openXmlElement, Boolean? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.SourceLinked = new BooleanValue { Value = (Boolean)value };
-      else
-        openXmlElement.SourceLinked = null;
+    if (value != null)
+      openXmlElement.SourceLinked = new BooleanValue { Value = (Boolean)value };
+    else
+      openXmlElement.SourceLinked = null;
   }
-
-  public static DocumentModel.Drawings.Charts.NumberingFormat? CreateModelElement(NumberingFormat? openXmlElement)
+  
+  public static DocumentModel.Drawings.Charts.NumberingFormat? CreateModelElement(DocumentFormat.OpenXml.Drawing.Charts.NumberingFormat? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -52,9 +48,9 @@ public static class NumberingFormatConverter
     }
     return null;
   }
-
+  
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.Charts.NumberingFormat? value)
-    where OpenXmlElementType : NumberingFormat, new()
+    where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.Charts.NumberingFormat, new()
   {
     if (value != null)
     {

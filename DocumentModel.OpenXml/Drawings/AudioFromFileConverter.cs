@@ -1,57 +1,51 @@
-using DocumentFormat.OpenXml.Drawing;
-
 namespace DocumentModel.OpenXml.Drawings;
 
 /// <summary>
-///   Audio from File.
+/// Audio from File.
 /// </summary>
 public static class AudioFromFileConverter
 {
   /// <summary>
-  ///   Linked Relationship ID
+  /// Linked Relationship ID
   /// </summary>
-  public static String? GetLink(AudioFromFile? openXmlElement)
+  private static String? GetLink(DocumentFormat.OpenXml.Drawing.AudioFromFile openXmlElement)
   {
     return openXmlElement?.Link?.Value;
   }
-
-  public static void SetLink(AudioFromFile? openXmlElement, String? value)
+  
+  private static void SetLink(DocumentFormat.OpenXml.Drawing.AudioFromFile openXmlElement, String? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.Link = new StringValue { Value = value };
-      else
-        openXmlElement.Link = null;
+    if (value != null)
+      openXmlElement.Link = new StringValue { Value = value };
+    else
+      openXmlElement.Link = null;
   }
-
+  
   /// <summary>
-  ///   ExtensionList.
+  /// ExtensionList.
   /// </summary>
-  public static DocumentModel.Drawings.ExtensionList? GetExtensionList(AudioFromFile? openXmlElement)
+  private static DocumentModel.Drawings.ExtensionList? GetExtensionList(DocumentFormat.OpenXml.Drawing.AudioFromFile openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.ExtensionList>();
     if (itemElement != null)
-      return ExtensionListConverter.CreateModelElement(itemElement);
+      return DocumentModel.OpenXml.Drawings.ExtensionListConverter.CreateModelElement(itemElement);
     return null;
   }
-
-  public static void SetExtensionList(AudioFromFile? openXmlElement, DocumentModel.Drawings.ExtensionList? value)
+  
+  private static void SetExtensionList(DocumentFormat.OpenXml.Drawing.AudioFromFile openXmlElement, DocumentModel.Drawings.ExtensionList? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.ExtensionList>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.ExtensionList>();
+      itemElement = DocumentModel.OpenXml.Drawings.ExtensionListConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.ExtensionList>(value);
       if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = ExtensionListConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.ExtensionList>(value);
-        if (itemElement != null)
-          openXmlElement.AddChild(itemElement);
-      }
+        openXmlElement.AddChild(itemElement);
     }
   }
-
-  public static DocumentModel.Drawings.AudioFromFile? CreateModelElement(AudioFromFile? openXmlElement)
+  
+  public static DocumentModel.Drawings.AudioFromFile? CreateModelElement(DocumentFormat.OpenXml.Drawing.AudioFromFile? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -62,9 +56,9 @@ public static class AudioFromFileConverter
     }
     return null;
   }
-
+  
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.AudioFromFile? value)
-    where OpenXmlElementType : AudioFromFile, new()
+    where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.AudioFromFile, new()
   {
     if (value != null)
     {

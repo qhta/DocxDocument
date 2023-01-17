@@ -1,41 +1,37 @@
-using DocumentFormat.OpenXml.Office2010.Drawing;
-
 namespace DocumentModel.OpenXml.Drawings;
 
 /// <summary>
-///   Defines the ArtisticPencilSketch Class.
+/// Defines the ArtisticPencilSketch Class.
 /// </summary>
 public static class ArtisticPencilSketchConverter
 {
   /// <summary>
-  ///   trans, this property is only available in Office 2010 and later.
+  /// trans, this property is only available in Office 2010 and later.
   /// </summary>
-  public static Int32? GetTransparancy(ArtisticPencilSketch? openXmlElement)
+  private static Int32? GetTransparancy(DocumentFormat.OpenXml.Office2010.Drawing.ArtisticPencilSketch openXmlElement)
   {
-    return openXmlElement?.Transparancy?.Value;
+    return openXmlElement.Transparancy?.Value;
   }
-
-  public static void SetTransparancy(ArtisticPencilSketch? openXmlElement, Int32? value)
+  
+  private static void SetTransparancy(DocumentFormat.OpenXml.Office2010.Drawing.ArtisticPencilSketch openXmlElement, Int32? value)
   {
-    if (openXmlElement != null)
-      openXmlElement.Transparancy = value;
+    openXmlElement.Transparancy = value;
   }
-
+  
   /// <summary>
-  ///   pressure, this property is only available in Office 2010 and later.
+  /// pressure, this property is only available in Office 2010 and later.
   /// </summary>
-  public static Int32? GetPressure(ArtisticPencilSketch? openXmlElement)
+  private static Int32? GetPressure(DocumentFormat.OpenXml.Office2010.Drawing.ArtisticPencilSketch openXmlElement)
   {
-    return openXmlElement?.Pressure?.Value;
+    return openXmlElement.Pressure?.Value;
   }
-
-  public static void SetPressure(ArtisticPencilSketch? openXmlElement, Int32? value)
+  
+  private static void SetPressure(DocumentFormat.OpenXml.Office2010.Drawing.ArtisticPencilSketch openXmlElement, Int32? value)
   {
-    if (openXmlElement != null)
-      openXmlElement.Pressure = value;
+    openXmlElement.Pressure = value;
   }
-
-  public static DocumentModel.Drawings.ArtisticPencilSketch? CreateModelElement(ArtisticPencilSketch? openXmlElement)
+  
+  public static DocumentModel.Drawings.ArtisticPencilSketch? CreateModelElement(DocumentFormat.OpenXml.Office2010.Drawing.ArtisticPencilSketch? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -46,9 +42,9 @@ public static class ArtisticPencilSketchConverter
     }
     return null;
   }
-
+  
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.ArtisticPencilSketch? value)
-    where OpenXmlElementType : ArtisticPencilSketch, new()
+    where OpenXmlElementType: DocumentFormat.OpenXml.Office2010.Drawing.ArtisticPencilSketch, new()
   {
     if (value != null)
     {

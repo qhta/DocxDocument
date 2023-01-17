@@ -1,30 +1,27 @@
-using DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing;
-
 namespace DocumentModel.OpenXml.Drawings.ChartDrawings;
 
 /// <summary>
-///   Defines the GeoParentEntity Class.
+/// Defines the GeoParentEntity Class.
 /// </summary>
 public static class GeoParentEntityConverter
 {
   /// <summary>
-  ///   entityId, this property is only available in Office 2016 and later.
+  /// entityId, this property is only available in Office 2016 and later.
   /// </summary>
-  public static String? GetEntityId(GeoParentEntity? openXmlElement)
+  private static String? GetEntityId(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.GeoParentEntity openXmlElement)
   {
     return openXmlElement?.EntityId?.Value;
   }
-
-  public static void SetEntityId(GeoParentEntity? openXmlElement, String? value)
+  
+  private static void SetEntityId(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.GeoParentEntity openXmlElement, String? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.EntityId = new StringValue { Value = value };
-      else
-        openXmlElement.EntityId = null;
+    if (value != null)
+      openXmlElement.EntityId = new StringValue { Value = value };
+    else
+      openXmlElement.EntityId = null;
   }
-
-  public static DocumentModel.Drawings.ChartDrawings.GeoParentEntity? CreateModelElement(GeoParentEntity? openXmlElement)
+  
+  public static DocumentModel.Drawings.ChartDrawings.GeoParentEntity? CreateModelElement(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.GeoParentEntity? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -34,9 +31,9 @@ public static class GeoParentEntityConverter
     }
     return null;
   }
-
+  
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.ChartDrawings.GeoParentEntity? value)
-    where OpenXmlElementType : GeoParentEntity, new()
+    where OpenXmlElementType: DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.GeoParentEntity, new()
   {
     if (value != null)
     {

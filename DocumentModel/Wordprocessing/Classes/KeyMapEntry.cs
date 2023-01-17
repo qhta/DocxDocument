@@ -8,22 +8,22 @@ public class KeyMapEntry
   /// <summary>
   ///   chmPrimary
   /// </summary>
-  public Byte[]? CharacterMapPrimary { get; set; }
+  public UInt16? CharacterMapPrimary { get; set; }
 
   /// <summary>
   ///   chmSecondary
   /// </summary>
-  public Byte[]? CharacterMapSecondary { get; set; }
+  public UInt16? CharacterMapSecondary { get; set; }
 
   /// <summary>
   ///   kcmPrimary
   /// </summary>
-  public Byte[]? KeyCodePrimary { get; set; }
+  public UInt16? KeyCodePrimary { get; set; }
 
   /// <summary>
   ///   kcmSecondary
   /// </summary>
-  public Byte[]? KeyCodeSecondary { get; set; }
+  public UInt16? KeyCodeSecondary { get; set; }
 
   /// <summary>
   ///   mask

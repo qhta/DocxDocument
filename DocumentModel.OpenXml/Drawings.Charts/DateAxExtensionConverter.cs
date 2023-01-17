@@ -1,56 +1,48 @@
-using DocumentModel.Drawings.Charts;
-using DateAxExtension = DocumentFormat.OpenXml.Drawing.Charts.DateAxExtension;
-using NumberingFormat = DocumentFormat.OpenXml.Office2013.Drawing.Chart.NumberingFormat;
-
 namespace DocumentModel.OpenXml.Drawings.Charts;
 
 /// <summary>
-///   Defines the DateAxExtension Class.
+/// Defines the DateAxExtension Class.
 /// </summary>
 public static class DateAxExtensionConverter
 {
   /// <summary>
-  ///   URI
+  /// URI
   /// </summary>
-  public static String? GetUri(DateAxExtension? openXmlElement)
+  private static String? GetUri(DocumentFormat.OpenXml.Drawing.Charts.DateAxExtension openXmlElement)
   {
     return openXmlElement?.Uri?.Value;
   }
-
-  public static void SetUri(DateAxExtension? openXmlElement, String? value)
+  
+  private static void SetUri(DocumentFormat.OpenXml.Drawing.Charts.DateAxExtension openXmlElement, String? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.Uri = new StringValue { Value = value };
-      else
-        openXmlElement.Uri = null;
+    if (value != null)
+      openXmlElement.Uri = new StringValue { Value = value };
+    else
+      openXmlElement.Uri = null;
   }
-
-  public static NumberingFormat3? GetNumberingFormat(DateAxExtension? openXmlElement)
+  
+  private static DocumentModel.Drawings.Charts.NumberingFormat3? GetNumberingFormat(DocumentFormat.OpenXml.Drawing.Charts.DateAxExtension openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<NumberingFormat>();
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office2013.Drawing.Chart.NumberingFormat>();
     if (itemElement != null)
-      return NumberingFormat3Converter.CreateModelElement(itemElement);
+      return DocumentModel.OpenXml.Drawings.Charts.NumberingFormat3Converter.CreateModelElement(itemElement);
     return null;
   }
-
-  public static void SetNumberingFormat(DateAxExtension? openXmlElement, NumberingFormat3? value)
+  
+  private static void SetNumberingFormat(DocumentFormat.OpenXml.Drawing.Charts.DateAxExtension openXmlElement, DocumentModel.Drawings.Charts.NumberingFormat3? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2013.Drawing.Chart.NumberingFormat>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<NumberingFormat>();
+      itemElement = DocumentModel.OpenXml.Drawings.Charts.NumberingFormat3Converter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2013.Drawing.Chart.NumberingFormat>(value);
       if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = NumberingFormat3Converter.CreateOpenXmlElement<NumberingFormat>(value);
-        if (itemElement != null)
-          openXmlElement.AddChild(itemElement);
-      }
+        openXmlElement.AddChild(itemElement);
     }
   }
-
-  public static DocumentModel.Drawings.Charts.DateAxExtension? CreateModelElement(DateAxExtension? openXmlElement)
+  
+  public static DocumentModel.Drawings.Charts.DateAxExtension? CreateModelElement(DocumentFormat.OpenXml.Drawing.Charts.DateAxExtension? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -61,9 +53,9 @@ public static class DateAxExtensionConverter
     }
     return null;
   }
-
+  
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.Charts.DateAxExtension? value)
-    where OpenXmlElementType : DateAxExtension, new()
+    where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.Charts.DateAxExtension, new()
   {
     if (value != null)
     {

@@ -1,163 +1,130 @@
-using DocumentFormat.OpenXml.Drawing.Charts;
-using DocumentModel.Drawings.Charts;
-using PictureOptions = DocumentFormat.OpenXml.Drawing.Charts.PictureOptions;
-
 namespace DocumentModel.OpenXml.Drawings.Charts;
 
 /// <summary>
-///   Defines the PictureOptions Class.
+/// Defines the PictureOptions Class.
 /// </summary>
 public static class PictureOptionsConverter
 {
   /// <summary>
-  ///   Apply To Front.
+  /// Apply To Front.
   /// </summary>
-  public static Boolean? GetApplyToFront(PictureOptions? openXmlElement)
+  private static Boolean? GetApplyToFront(DocumentFormat.OpenXml.Drawing.Charts.PictureOptions openXmlElement)
   {
-    if (openXmlElement != null)
-    {
-      var itemElement = openXmlElement.GetFirstChild<ApplyToFront>();
-      return itemElement != null;
-    }
-    return null;
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.ApplyToFront>();
+    return itemElement != null;
   }
-
-  public static void SetApplyToFront(PictureOptions? openXmlElement, Boolean? value)
+  
+  private static void SetApplyToFront(DocumentFormat.OpenXml.Drawing.Charts.PictureOptions openXmlElement, Boolean? value)
   {
-    if (openXmlElement != null)
+    if (value == false)
     {
-      if (value == false)
-      {
-        var itemElement = openXmlElement.GetFirstChild<ApplyToFront>();
-        if (itemElement != null)
-          itemElement.Remove();
-      }
-      if (value == true)
-      {
-        var itemElement = new ApplyToFront();
-        openXmlElement.AddChild(itemElement);
-      }
-    }
-  }
-
-  /// <summary>
-  ///   Apply To Sides.
-  /// </summary>
-  public static Boolean? GetApplyToSides(PictureOptions? openXmlElement)
-  {
-    if (openXmlElement != null)
-    {
-      var itemElement = openXmlElement.GetFirstChild<ApplyToSides>();
-      return itemElement != null;
-    }
-    return null;
-  }
-
-  public static void SetApplyToSides(PictureOptions? openXmlElement, Boolean? value)
-  {
-    if (openXmlElement != null)
-    {
-      if (value == false)
-      {
-        var itemElement = openXmlElement.GetFirstChild<ApplyToSides>();
-        if (itemElement != null)
-          itemElement.Remove();
-      }
-      if (value == true)
-      {
-        var itemElement = new ApplyToSides();
-        openXmlElement.AddChild(itemElement);
-      }
-    }
-  }
-
-  /// <summary>
-  ///   Apply to End.
-  /// </summary>
-  public static Boolean? GetApplyToEnd(PictureOptions? openXmlElement)
-  {
-    if (openXmlElement != null)
-    {
-      var itemElement = openXmlElement.GetFirstChild<ApplyToEnd>();
-      return itemElement != null;
-    }
-    return null;
-  }
-
-  public static void SetApplyToEnd(PictureOptions? openXmlElement, Boolean? value)
-  {
-    if (openXmlElement != null)
-    {
-      if (value == false)
-      {
-        var itemElement = openXmlElement.GetFirstChild<ApplyToEnd>();
-        if (itemElement != null)
-          itemElement.Remove();
-      }
-      if (value == true)
-      {
-        var itemElement = new ApplyToEnd();
-        openXmlElement.AddChild(itemElement);
-      }
-    }
-  }
-
-  /// <summary>
-  ///   Picture Format.
-  /// </summary>
-  public static PictureFormatKind? GetPictureFormat(PictureOptions? openXmlElement)
-  {
-    if (openXmlElement != null)
-    {
-      var itemElement = openXmlElement.GetFirstChild<PictureFormat>();
-      if (itemElement?.Val?.Value != null) return EnumValueConverter.GetValue<PictureFormatValues, PictureFormatKind>(itemElement.Val.Value);
-    }
-    return null;
-  }
-
-  public static void SetPictureFormat(PictureOptions? openXmlElement, PictureFormatKind? value)
-  {
-    if (openXmlElement != null)
-    {
-      var itemElement = openXmlElement.GetFirstChild<PictureFormat>();
+      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.ApplyToFront>();
       if (itemElement != null)
         itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = EnumValueConverter.CreateOpenXmlElement<PictureFormat, PictureFormatValues, PictureFormatKind>(value);
-        if (itemElement != null)
-          openXmlElement.AddChild(itemElement);
-      }
+    }
+    if (value == true)
+    {
+      var itemElement = new DocumentFormat.OpenXml.Drawing.Charts.ApplyToFront();
+      openXmlElement.AddChild(itemElement);
     }
   }
-
+  
   /// <summary>
-  ///   Picture Stack Unit.
+  /// Apply To Sides.
   /// </summary>
-  public static Double? GetPictureStackUnit(PictureOptions? openXmlElement)
+  private static Boolean? GetApplyToSides(DocumentFormat.OpenXml.Drawing.Charts.PictureOptions openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<PictureStackUnit>();
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.ApplyToSides>();
+    return itemElement != null;
+  }
+  
+  private static void SetApplyToSides(DocumentFormat.OpenXml.Drawing.Charts.PictureOptions openXmlElement, Boolean? value)
+  {
+    if (value == false)
+    {
+      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.ApplyToSides>();
+      if (itemElement != null)
+        itemElement.Remove();
+    }
+    if (value == true)
+    {
+      var itemElement = new DocumentFormat.OpenXml.Drawing.Charts.ApplyToSides();
+      openXmlElement.AddChild(itemElement);
+    }
+  }
+  
+  /// <summary>
+  /// Apply to End.
+  /// </summary>
+  private static Boolean? GetApplyToEnd(DocumentFormat.OpenXml.Drawing.Charts.PictureOptions openXmlElement)
+  {
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.ApplyToEnd>();
+    return itemElement != null;
+  }
+  
+  private static void SetApplyToEnd(DocumentFormat.OpenXml.Drawing.Charts.PictureOptions openXmlElement, Boolean? value)
+  {
+    if (value == false)
+    {
+      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.ApplyToEnd>();
+      if (itemElement != null)
+        itemElement.Remove();
+    }
+    if (value == true)
+    {
+      var itemElement = new DocumentFormat.OpenXml.Drawing.Charts.ApplyToEnd();
+      openXmlElement.AddChild(itemElement);
+    }
+  }
+  
+  /// <summary>
+  /// Picture Format.
+  /// </summary>
+  private static DocumentModel.Drawings.Charts.PictureFormatKind? GetPictureFormat(DocumentFormat.OpenXml.Drawing.Charts.PictureOptions openXmlElement)
+  {
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.PictureFormat>();
+    if (itemElement?.Val?.Value != null)
+      return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Drawing.Charts.PictureFormatValues, DocumentModel.Drawings.Charts.PictureFormatKind>(itemElement.Val.Value);
+    return null;
+  }
+  
+  private static void SetPictureFormat(DocumentFormat.OpenXml.Drawing.Charts.PictureOptions openXmlElement, DocumentModel.Drawings.Charts.PictureFormatKind? value)
+  {
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.PictureFormat>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
+    {
+      itemElement = EnumValueConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Charts.PictureFormat, DocumentFormat.OpenXml.Drawing.Charts.PictureFormatValues, DocumentModel.Drawings.Charts.PictureFormatKind>(value);
+      if (itemElement != null)
+        openXmlElement.AddChild(itemElement);
+    }
+  }
+  
+  /// <summary>
+  /// Picture Stack Unit.
+  /// </summary>
+  private static Double? GetPictureStackUnit(DocumentFormat.OpenXml.Drawing.Charts.PictureOptions openXmlElement)
+  {
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.PictureStackUnit>();
     if (itemElement != null)
       return itemElement.Val?.Value;
     return null;
   }
-
-  public static void SetPictureStackUnit(PictureOptions? openXmlElement, Double? value)
+  
+  private static void SetPictureStackUnit(DocumentFormat.OpenXml.Drawing.Charts.PictureOptions openXmlElement, Double? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.PictureStackUnit>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<PictureStackUnit>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = new PictureStackUnit { Val = value };
-        openXmlElement.AddChild(itemElement);
-      }
+      itemElement = new DocumentFormat.OpenXml.Drawing.Charts.PictureStackUnit{ Val = value };
+      openXmlElement.AddChild(itemElement);
     }
   }
-
-  public static DocumentModel.Drawings.Charts.PictureOptions? CreateModelElement(PictureOptions? openXmlElement)
+  
+  public static DocumentModel.Drawings.Charts.PictureOptions? CreateModelElement(DocumentFormat.OpenXml.Drawing.Charts.PictureOptions? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -171,9 +138,9 @@ public static class PictureOptionsConverter
     }
     return null;
   }
-
+  
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.Charts.PictureOptions? value)
-    where OpenXmlElementType : PictureOptions, new()
+    where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.Charts.PictureOptions, new()
   {
     if (value != null)
     {

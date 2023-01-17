@@ -1,93 +1,78 @@
-using DocumentFormat.OpenXml.Drawing.Charts;
-using StrDataExtensionList = DocumentModel.Drawings.Charts.StrDataExtensionList;
-using StringPoint = DocumentModel.Drawings.Charts.StringPoint;
-
 namespace DocumentModel.OpenXml.Drawings.Charts;
 
 /// <summary>
-///   Defines the StringCache Class.
+/// Defines the StringCache Class.
 /// </summary>
 public static class StringCacheConverter
 {
-  public static UInt32? GetPointCount(StringCache? openXmlElement)
+  private static UInt32? GetPointCount(DocumentFormat.OpenXml.Drawing.Charts.StringCache openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<PointCount>();
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.PointCount>();
     if (itemElement != null)
       return itemElement.Val?.Value;
     return null;
   }
-
-  public static void SetPointCount(StringCache? openXmlElement, UInt32? value)
+  
+  private static void SetPointCount(DocumentFormat.OpenXml.Drawing.Charts.StringCache openXmlElement, UInt32? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.PointCount>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<PointCount>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = new PointCount { Val = value };
-        openXmlElement.AddChild(itemElement);
-      }
+      itemElement = new DocumentFormat.OpenXml.Drawing.Charts.PointCount{ Val = value };
+      openXmlElement.AddChild(itemElement);
     }
   }
-
-  public static Collection<StringPoint>? GetStringPoints(StringCache? openXmlElement)
+  
+  private static System.Collections.ObjectModel.Collection<DocumentModel.Drawings.Charts.StringPoint> GetStringPoints(DocumentFormat.OpenXml.Drawing.Charts.StringCache openXmlElement)
   {
-    if (openXmlElement != null)
+    var collection = new System.Collections.ObjectModel.Collection<DocumentModel.Drawings.Charts.StringPoint>();
+    foreach (var item in openXmlElement.Elements<DocumentFormat.OpenXml.Drawing.Charts.StringPoint>())
     {
-      var collection = new Collection<StringPoint>();
-      foreach (var item in openXmlElement.Elements<DocumentFormat.OpenXml.Drawing.Charts.StringPoint>())
+      var newItem = DocumentModel.OpenXml.Drawings.Charts.StringPointConverter.CreateModelElement(item);
+      if (newItem != null)
+        collection.Add(newItem);
+    }
+    return collection;
+  }
+  
+  private static void SetStringPoints(DocumentFormat.OpenXml.Drawing.Charts.StringCache openXmlElement, System.Collections.ObjectModel.Collection<DocumentModel.Drawings.Charts.StringPoint>? value)
+  {
+    openXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Drawing.Charts.StringPoint>();
+    if (value != null)
+    {
+      foreach (var item in value)
       {
-        var newItem = StringPointConverter.CreateModelElement(item);
+        var newItem = DocumentModel.OpenXml.Drawings.Charts.StringPointConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Charts.StringPoint>(item);
         if (newItem != null)
-          collection.Add(newItem);
+          openXmlElement.AddChild(newItem);
       }
-      return collection;
-    }
-    return null;
-  }
-
-  public static void SetStringPoints(StringCache? openXmlElement, Collection<StringPoint>? value)
-  {
-    if (openXmlElement != null)
-    {
-      openXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Drawing.Charts.StringPoint>();
-      if (value != null)
-        foreach (var item in value)
-        {
-          var newItem = StringPointConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Charts.StringPoint>(item);
-          if (newItem != null)
-            openXmlElement.AddChild(newItem);
-        }
     }
   }
-
-  public static StrDataExtensionList? GetStrDataExtensionList(StringCache? openXmlElement)
+  
+  private static DocumentModel.Drawings.Charts.StrDataExtensionList? GetStrDataExtensionList(DocumentFormat.OpenXml.Drawing.Charts.StringCache openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.StrDataExtensionList>();
     if (itemElement != null)
-      return StrDataExtensionListConverter.CreateModelElement(itemElement);
+      return DocumentModel.OpenXml.Drawings.Charts.StrDataExtensionListConverter.CreateModelElement(itemElement);
     return null;
   }
-
-  public static void SetStrDataExtensionList(StringCache? openXmlElement, StrDataExtensionList? value)
+  
+  private static void SetStrDataExtensionList(DocumentFormat.OpenXml.Drawing.Charts.StringCache openXmlElement, DocumentModel.Drawings.Charts.StrDataExtensionList? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.StrDataExtensionList>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.StrDataExtensionList>();
+      itemElement = DocumentModel.OpenXml.Drawings.Charts.StrDataExtensionListConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Charts.StrDataExtensionList>(value);
       if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = StrDataExtensionListConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Charts.StrDataExtensionList>(value);
-        if (itemElement != null)
-          openXmlElement.AddChild(itemElement);
-      }
+        openXmlElement.AddChild(itemElement);
     }
   }
-
-  public static DocumentModel.Drawings.Charts.StringCache? CreateModelElement(StringCache? openXmlElement)
+  
+  public static DocumentModel.Drawings.Charts.StringCache? CreateModelElement(DocumentFormat.OpenXml.Drawing.Charts.StringCache? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -99,9 +84,9 @@ public static class StringCacheConverter
     }
     return null;
   }
-
+  
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.Charts.StringCache? value)
-    where OpenXmlElementType : StringCache, new()
+    where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.Charts.StringCache, new()
   {
     if (value != null)
     {

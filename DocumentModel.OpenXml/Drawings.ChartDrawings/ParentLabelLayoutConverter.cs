@@ -1,28 +1,24 @@
-using DocumentModel.Drawings.ChartDrawings;
-using ParentLabelLayout = DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.ParentLabelLayout;
-
 namespace DocumentModel.OpenXml.Drawings.ChartDrawings;
 
 /// <summary>
-///   Defines the ParentLabelLayout Class.
+/// Defines the ParentLabelLayout Class.
 /// </summary>
 public static class ParentLabelLayoutConverter
 {
   /// <summary>
-  ///   val, this property is only available in Office 2016 and later.
+  /// val, this property is only available in Office 2016 and later.
   /// </summary>
-  public static ParentLabelLayoutVal? GetParentLabelLayoutVal(ParentLabelLayout? openXmlElement)
+  private static DocumentModel.Drawings.ChartDrawings.ParentLabelLayoutVal? GetParentLabelLayoutVal(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.ParentLabelLayout openXmlElement)
   {
-    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.ParentLabelLayoutVal, ParentLabelLayoutVal>(openXmlElement?.ParentLabelLayoutVal?.Value);
+    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.ParentLabelLayoutVal, DocumentModel.Drawings.ChartDrawings.ParentLabelLayoutVal>(openXmlElement?.ParentLabelLayoutVal?.Value);
   }
-
-  public static void SetParentLabelLayoutVal(ParentLabelLayout? openXmlElement, ParentLabelLayoutVal? value)
+  
+  private static void SetParentLabelLayoutVal(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.ParentLabelLayout openXmlElement, DocumentModel.Drawings.ChartDrawings.ParentLabelLayoutVal? value)
   {
-    if (openXmlElement != null)
-      openXmlElement.ParentLabelLayoutVal = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.ParentLabelLayoutVal, ParentLabelLayoutVal>(value);
+    openXmlElement.ParentLabelLayoutVal = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.ParentLabelLayoutVal, DocumentModel.Drawings.ChartDrawings.ParentLabelLayoutVal>(value);
   }
-
-  public static DocumentModel.Drawings.ChartDrawings.ParentLabelLayout? CreateModelElement(ParentLabelLayout? openXmlElement)
+  
+  public static DocumentModel.Drawings.ChartDrawings.ParentLabelLayout? CreateModelElement(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.ParentLabelLayout? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -32,9 +28,9 @@ public static class ParentLabelLayoutConverter
     }
     return null;
   }
-
+  
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.ChartDrawings.ParentLabelLayout? value)
-    where OpenXmlElementType : ParentLabelLayout, new()
+    where OpenXmlElementType: DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.ParentLabelLayout, new()
   {
     if (value != null)
     {

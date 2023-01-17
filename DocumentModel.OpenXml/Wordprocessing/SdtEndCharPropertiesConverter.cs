@@ -1,38 +1,32 @@
-using DocumentModel.Wordprocessing;
-using SdtEndCharProperties = DocumentFormat.OpenXml.Wordprocessing.SdtEndCharProperties;
-
 namespace DocumentModel.OpenXml.Wordprocessing;
 
 /// <summary>
-///   Structured Document Tag End Character Properties.
+/// Structured Document Tag End Character Properties.
 /// </summary>
 public static class SdtEndCharPropertiesConverter
 {
-  public static RunProperties? GetRunProperties(SdtEndCharProperties? openXmlElement)
+  private static DocumentModel.Wordprocessing.RunProperties? GetRunProperties(DocumentFormat.OpenXml.Wordprocessing.SdtEndCharProperties openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.RunProperties>();
     if (itemElement != null)
-      return RunPropertiesConverter.CreateModelElement(itemElement);
+      return DocumentModel.OpenXml.Wordprocessing.RunPropertiesConverter.CreateModelElement(itemElement);
     return null;
   }
-
-  public static void SetRunProperties(SdtEndCharProperties? openXmlElement, RunProperties? value)
+  
+  private static void SetRunProperties(DocumentFormat.OpenXml.Wordprocessing.SdtEndCharProperties openXmlElement, DocumentModel.Wordprocessing.RunProperties? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.RunProperties>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.RunProperties>();
+      itemElement = DocumentModel.OpenXml.Wordprocessing.RunPropertiesConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.RunProperties>(value);
       if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = RunPropertiesConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.RunProperties>(value);
-        if (itemElement != null)
-          openXmlElement.AddChild(itemElement);
-      }
+        openXmlElement.AddChild(itemElement);
     }
   }
-
-  public static DocumentModel.Wordprocessing.SdtEndCharProperties? CreateModelElement(SdtEndCharProperties? openXmlElement)
+  
+  public static DocumentModel.Wordprocessing.SdtEndCharProperties? CreateModelElement(DocumentFormat.OpenXml.Wordprocessing.SdtEndCharProperties? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -42,9 +36,9 @@ public static class SdtEndCharPropertiesConverter
     }
     return null;
   }
-
+  
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.SdtEndCharProperties? value)
-    where OpenXmlElementType : SdtEndCharProperties, new()
+    where OpenXmlElementType: DocumentFormat.OpenXml.Wordprocessing.SdtEndCharProperties, new()
   {
     if (value != null)
     {

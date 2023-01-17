@@ -1,285 +1,251 @@
-using DocumentFormat.OpenXml.Wordprocessing;
-using BorderType = DocumentModel.Wordprocessing.BorderType;
-using TableCellBorders = DocumentFormat.OpenXml.Wordprocessing.TableCellBorders;
-
 namespace DocumentModel.OpenXml.Wordprocessing;
 
 /// <summary>
-///   Defines the TableCellBorders Class.
+/// Defines the TableCellBorders Class.
 /// </summary>
 public static class TableCellBordersConverter
 {
   /// <summary>
-  ///   Table Cell Top Border.
+  /// Table Cell Top Border.
   /// </summary>
-  public static BorderType? GetTopBorder(TableCellBorders? openXmlElement)
+  private static DocumentModel.Wordprocessing.BorderType? GetTopBorder(DocumentFormat.OpenXml.Wordprocessing.TableCellBorders openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<TopBorder>();
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.TopBorder>();
     if (itemElement != null)
-      return BorderTypeConverter.CreateModelElement(itemElement);
+      return DocumentModel.OpenXml.Wordprocessing.BorderTypeConverter.CreateModelElement(itemElement);
     return null;
   }
-
-  public static void SetTopBorder(TableCellBorders? openXmlElement, BorderType? value)
+  
+  private static void SetTopBorder(DocumentFormat.OpenXml.Wordprocessing.TableCellBorders openXmlElement, DocumentModel.Wordprocessing.BorderType? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.TopBorder>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<TopBorder>();
+      itemElement = DocumentModel.OpenXml.Wordprocessing.BorderTypeConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.TopBorder>(value);
       if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = BorderTypeConverter.CreateOpenXmlElement<TopBorder>(value);
-        if (itemElement != null)
-          openXmlElement.AddChild(itemElement);
-      }
+        openXmlElement.AddChild(itemElement);
     }
   }
-
+  
   /// <summary>
-  ///   Table Cell Left Border.
+  /// Table Cell Left Border.
   /// </summary>
-  public static BorderType? GetLeftBorder(TableCellBorders? openXmlElement)
+  private static DocumentModel.Wordprocessing.BorderType? GetLeftBorder(DocumentFormat.OpenXml.Wordprocessing.TableCellBorders openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<LeftBorder>();
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.LeftBorder>();
     if (itemElement != null)
-      return BorderTypeConverter.CreateModelElement(itemElement);
+      return DocumentModel.OpenXml.Wordprocessing.BorderTypeConverter.CreateModelElement(itemElement);
     return null;
   }
-
-  public static void SetLeftBorder(TableCellBorders? openXmlElement, BorderType? value)
+  
+  private static void SetLeftBorder(DocumentFormat.OpenXml.Wordprocessing.TableCellBorders openXmlElement, DocumentModel.Wordprocessing.BorderType? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.LeftBorder>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<LeftBorder>();
+      itemElement = DocumentModel.OpenXml.Wordprocessing.BorderTypeConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.LeftBorder>(value);
       if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = BorderTypeConverter.CreateOpenXmlElement<LeftBorder>(value);
-        if (itemElement != null)
-          openXmlElement.AddChild(itemElement);
-      }
+        openXmlElement.AddChild(itemElement);
     }
   }
-
+  
   /// <summary>
-  ///   StartBorder, this property is only available in Office 2010 and later..
+  /// StartBorder, this property is only available in Office 2010 and later..
   /// </summary>
-  public static BorderType? GetStartBorder(TableCellBorders? openXmlElement)
+  private static DocumentModel.Wordprocessing.BorderType? GetStartBorder(DocumentFormat.OpenXml.Wordprocessing.TableCellBorders openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<StartBorder>();
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.StartBorder>();
     if (itemElement != null)
-      return BorderTypeConverter.CreateModelElement(itemElement);
+      return DocumentModel.OpenXml.Wordprocessing.BorderTypeConverter.CreateModelElement(itemElement);
     return null;
   }
-
-  public static void SetStartBorder(TableCellBorders? openXmlElement, BorderType? value)
+  
+  private static void SetStartBorder(DocumentFormat.OpenXml.Wordprocessing.TableCellBorders openXmlElement, DocumentModel.Wordprocessing.BorderType? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.StartBorder>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<StartBorder>();
+      itemElement = DocumentModel.OpenXml.Wordprocessing.BorderTypeConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.StartBorder>(value);
       if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = BorderTypeConverter.CreateOpenXmlElement<StartBorder>(value);
-        if (itemElement != null)
-          openXmlElement.AddChild(itemElement);
-      }
+        openXmlElement.AddChild(itemElement);
     }
   }
-
+  
   /// <summary>
-  ///   Table Cell Bottom Border.
+  /// Table Cell Bottom Border.
   /// </summary>
-  public static BorderType? GetBottomBorder(TableCellBorders? openXmlElement)
+  private static DocumentModel.Wordprocessing.BorderType? GetBottomBorder(DocumentFormat.OpenXml.Wordprocessing.TableCellBorders openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<BottomBorder>();
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.BottomBorder>();
     if (itemElement != null)
-      return BorderTypeConverter.CreateModelElement(itemElement);
+      return DocumentModel.OpenXml.Wordprocessing.BorderTypeConverter.CreateModelElement(itemElement);
     return null;
   }
-
-  public static void SetBottomBorder(TableCellBorders? openXmlElement, BorderType? value)
+  
+  private static void SetBottomBorder(DocumentFormat.OpenXml.Wordprocessing.TableCellBorders openXmlElement, DocumentModel.Wordprocessing.BorderType? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.BottomBorder>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<BottomBorder>();
+      itemElement = DocumentModel.OpenXml.Wordprocessing.BorderTypeConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.BottomBorder>(value);
       if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = BorderTypeConverter.CreateOpenXmlElement<BottomBorder>(value);
-        if (itemElement != null)
-          openXmlElement.AddChild(itemElement);
-      }
+        openXmlElement.AddChild(itemElement);
     }
   }
-
+  
   /// <summary>
-  ///   Table Cell Right Border.
+  /// Table Cell Right Border.
   /// </summary>
-  public static BorderType? GetRightBorder(TableCellBorders? openXmlElement)
+  private static DocumentModel.Wordprocessing.BorderType? GetRightBorder(DocumentFormat.OpenXml.Wordprocessing.TableCellBorders openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<RightBorder>();
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.RightBorder>();
     if (itemElement != null)
-      return BorderTypeConverter.CreateModelElement(itemElement);
+      return DocumentModel.OpenXml.Wordprocessing.BorderTypeConverter.CreateModelElement(itemElement);
     return null;
   }
-
-  public static void SetRightBorder(TableCellBorders? openXmlElement, BorderType? value)
+  
+  private static void SetRightBorder(DocumentFormat.OpenXml.Wordprocessing.TableCellBorders openXmlElement, DocumentModel.Wordprocessing.BorderType? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.RightBorder>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<RightBorder>();
+      itemElement = DocumentModel.OpenXml.Wordprocessing.BorderTypeConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.RightBorder>(value);
       if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = BorderTypeConverter.CreateOpenXmlElement<RightBorder>(value);
-        if (itemElement != null)
-          openXmlElement.AddChild(itemElement);
-      }
+        openXmlElement.AddChild(itemElement);
     }
   }
-
+  
   /// <summary>
-  ///   EndBorder, this property is only available in Office 2010 and later..
+  /// EndBorder, this property is only available in Office 2010 and later..
   /// </summary>
-  public static BorderType? GetEndBorder(TableCellBorders? openXmlElement)
+  private static DocumentModel.Wordprocessing.BorderType? GetEndBorder(DocumentFormat.OpenXml.Wordprocessing.TableCellBorders openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<EndBorder>();
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.EndBorder>();
     if (itemElement != null)
-      return BorderTypeConverter.CreateModelElement(itemElement);
+      return DocumentModel.OpenXml.Wordprocessing.BorderTypeConverter.CreateModelElement(itemElement);
     return null;
   }
-
-  public static void SetEndBorder(TableCellBorders? openXmlElement, BorderType? value)
+  
+  private static void SetEndBorder(DocumentFormat.OpenXml.Wordprocessing.TableCellBorders openXmlElement, DocumentModel.Wordprocessing.BorderType? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.EndBorder>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<EndBorder>();
+      itemElement = DocumentModel.OpenXml.Wordprocessing.BorderTypeConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.EndBorder>(value);
       if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = BorderTypeConverter.CreateOpenXmlElement<EndBorder>(value);
-        if (itemElement != null)
-          openXmlElement.AddChild(itemElement);
-      }
+        openXmlElement.AddChild(itemElement);
     }
   }
-
+  
   /// <summary>
-  ///   Table Cell Inside Horizontal Edges Border.
+  /// Table Cell Inside Horizontal Edges Border.
   /// </summary>
-  public static BorderType? GetInsideHorizontalBorder(TableCellBorders? openXmlElement)
+  private static DocumentModel.Wordprocessing.BorderType? GetInsideHorizontalBorder(DocumentFormat.OpenXml.Wordprocessing.TableCellBorders openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<InsideHorizontalBorder>();
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.InsideHorizontalBorder>();
     if (itemElement != null)
-      return BorderTypeConverter.CreateModelElement(itemElement);
+      return DocumentModel.OpenXml.Wordprocessing.BorderTypeConverter.CreateModelElement(itemElement);
     return null;
   }
-
-  public static void SetInsideHorizontalBorder(TableCellBorders? openXmlElement, BorderType? value)
+  
+  private static void SetInsideHorizontalBorder(DocumentFormat.OpenXml.Wordprocessing.TableCellBorders openXmlElement, DocumentModel.Wordprocessing.BorderType? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.InsideHorizontalBorder>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<InsideHorizontalBorder>();
+      itemElement = DocumentModel.OpenXml.Wordprocessing.BorderTypeConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.InsideHorizontalBorder>(value);
       if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = BorderTypeConverter.CreateOpenXmlElement<InsideHorizontalBorder>(value);
-        if (itemElement != null)
-          openXmlElement.AddChild(itemElement);
-      }
+        openXmlElement.AddChild(itemElement);
     }
   }
-
+  
   /// <summary>
-  ///   Table Cell Inside Vertical Edges Border.
+  /// Table Cell Inside Vertical Edges Border.
   /// </summary>
-  public static BorderType? GetInsideVerticalBorder(TableCellBorders? openXmlElement)
+  private static DocumentModel.Wordprocessing.BorderType? GetInsideVerticalBorder(DocumentFormat.OpenXml.Wordprocessing.TableCellBorders openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<InsideVerticalBorder>();
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.InsideVerticalBorder>();
     if (itemElement != null)
-      return BorderTypeConverter.CreateModelElement(itemElement);
+      return DocumentModel.OpenXml.Wordprocessing.BorderTypeConverter.CreateModelElement(itemElement);
     return null;
   }
-
-  public static void SetInsideVerticalBorder(TableCellBorders? openXmlElement, BorderType? value)
+  
+  private static void SetInsideVerticalBorder(DocumentFormat.OpenXml.Wordprocessing.TableCellBorders openXmlElement, DocumentModel.Wordprocessing.BorderType? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.InsideVerticalBorder>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<InsideVerticalBorder>();
+      itemElement = DocumentModel.OpenXml.Wordprocessing.BorderTypeConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.InsideVerticalBorder>(value);
       if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = BorderTypeConverter.CreateOpenXmlElement<InsideVerticalBorder>(value);
-        if (itemElement != null)
-          openXmlElement.AddChild(itemElement);
-      }
+        openXmlElement.AddChild(itemElement);
     }
   }
-
+  
   /// <summary>
-  ///   Table Cell Top Left to Bottom Right Diagonal Border.
+  /// Table Cell Top Left to Bottom Right Diagonal Border.
   /// </summary>
-  public static BorderType? GetTopLeftToBottomRightCellBorder(TableCellBorders? openXmlElement)
+  private static DocumentModel.Wordprocessing.BorderType? GetTopLeftToBottomRightCellBorder(DocumentFormat.OpenXml.Wordprocessing.TableCellBorders openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<TopLeftToBottomRightCellBorder>();
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.TopLeftToBottomRightCellBorder>();
     if (itemElement != null)
-      return BorderTypeConverter.CreateModelElement(itemElement);
+      return DocumentModel.OpenXml.Wordprocessing.BorderTypeConverter.CreateModelElement(itemElement);
     return null;
   }
-
-  public static void SetTopLeftToBottomRightCellBorder(TableCellBorders? openXmlElement, BorderType? value)
+  
+  private static void SetTopLeftToBottomRightCellBorder(DocumentFormat.OpenXml.Wordprocessing.TableCellBorders openXmlElement, DocumentModel.Wordprocessing.BorderType? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.TopLeftToBottomRightCellBorder>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<TopLeftToBottomRightCellBorder>();
+      itemElement = DocumentModel.OpenXml.Wordprocessing.BorderTypeConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.TopLeftToBottomRightCellBorder>(value);
       if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = BorderTypeConverter.CreateOpenXmlElement<TopLeftToBottomRightCellBorder>(value);
-        if (itemElement != null)
-          openXmlElement.AddChild(itemElement);
-      }
+        openXmlElement.AddChild(itemElement);
     }
   }
-
+  
   /// <summary>
-  ///   Table Cell Top Right to Bottom Left Diagonal Border.
+  /// Table Cell Top Right to Bottom Left Diagonal Border.
   /// </summary>
-  public static BorderType? GetTopRightToBottomLeftCellBorder(TableCellBorders? openXmlElement)
+  private static DocumentModel.Wordprocessing.BorderType? GetTopRightToBottomLeftCellBorder(DocumentFormat.OpenXml.Wordprocessing.TableCellBorders openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<TopRightToBottomLeftCellBorder>();
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.TopRightToBottomLeftCellBorder>();
     if (itemElement != null)
-      return BorderTypeConverter.CreateModelElement(itemElement);
+      return DocumentModel.OpenXml.Wordprocessing.BorderTypeConverter.CreateModelElement(itemElement);
     return null;
   }
-
-  public static void SetTopRightToBottomLeftCellBorder(TableCellBorders? openXmlElement, BorderType? value)
+  
+  private static void SetTopRightToBottomLeftCellBorder(DocumentFormat.OpenXml.Wordprocessing.TableCellBorders openXmlElement, DocumentModel.Wordprocessing.BorderType? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.TopRightToBottomLeftCellBorder>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<TopRightToBottomLeftCellBorder>();
+      itemElement = DocumentModel.OpenXml.Wordprocessing.BorderTypeConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.TopRightToBottomLeftCellBorder>(value);
       if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = BorderTypeConverter.CreateOpenXmlElement<TopRightToBottomLeftCellBorder>(value);
-        if (itemElement != null)
-          openXmlElement.AddChild(itemElement);
-      }
+        openXmlElement.AddChild(itemElement);
     }
   }
-
-  public static DocumentModel.Wordprocessing.TableCellBorders? CreateModelElement(TableCellBorders? openXmlElement)
+  
+  public static DocumentModel.Wordprocessing.TableCellBorders? CreateModelElement(DocumentFormat.OpenXml.Wordprocessing.TableCellBorders? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -298,9 +264,9 @@ public static class TableCellBordersConverter
     }
     return null;
   }
-
+  
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.TableCellBorders? value)
-    where OpenXmlElementType : TableCellBorders, new()
+    where OpenXmlElementType: DocumentFormat.OpenXml.Wordprocessing.TableCellBorders, new()
   {
     if (value != null)
     {

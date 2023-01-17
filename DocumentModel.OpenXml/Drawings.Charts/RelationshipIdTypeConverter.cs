@@ -1,30 +1,27 @@
-using DocumentFormat.OpenXml.Drawing.Charts;
-
 namespace DocumentModel.OpenXml.Drawings.Charts;
 
 /// <summary>
-///   Defines the RelationshipIdType Class.
+/// Defines the RelationshipIdType Class.
 /// </summary>
 public static class RelationshipIdTypeConverter
 {
   /// <summary>
-  ///   Relationship Reference
+  /// Relationship Reference
   /// </summary>
-  public static String? GetId(RelationshipIdType? openXmlElement)
+  private static String? GetId(DocumentFormat.OpenXml.Drawing.Charts.RelationshipIdType openXmlElement)
   {
     return openXmlElement?.Id?.Value;
   }
-
-  public static void SetId(RelationshipIdType? openXmlElement, String? value)
+  
+  private static void SetId(DocumentFormat.OpenXml.Drawing.Charts.RelationshipIdType openXmlElement, String? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.Id = new StringValue { Value = value };
-      else
-        openXmlElement.Id = null;
+    if (value != null)
+      openXmlElement.Id = new StringValue { Value = value };
+    else
+      openXmlElement.Id = null;
   }
-
-  public static DocumentModel.Drawings.Charts.RelationshipIdType? CreateModelElement(RelationshipIdType? openXmlElement)
+  
+  public static DocumentModel.Drawings.Charts.RelationshipIdType? CreateModelElement(DocumentFormat.OpenXml.Drawing.Charts.RelationshipIdType? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -34,9 +31,9 @@ public static class RelationshipIdTypeConverter
     }
     return null;
   }
-
+  
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.Charts.RelationshipIdType? value)
-    where OpenXmlElementType : RelationshipIdType, new()
+    where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.Charts.RelationshipIdType, new()
   {
     if (value != null)
     {

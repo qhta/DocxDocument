@@ -1,78 +1,72 @@
-using DocumentFormat.OpenXml.Wordprocessing;
-
 namespace DocumentModel.OpenXml.Wordprocessing;
 
 /// <summary>
-///   Previous Paragraph Numbering Properties.
+/// Previous Paragraph Numbering Properties.
 /// </summary>
 public static class NumberingChangeConverter
 {
   /// <summary>
-  ///   original
+  /// original
   /// </summary>
-  public static String? GetOriginal(NumberingChange? openXmlElement)
+  private static String? GetOriginal(DocumentFormat.OpenXml.Wordprocessing.NumberingChange openXmlElement)
   {
     return openXmlElement?.Original?.Value;
   }
-
-  public static void SetOriginal(NumberingChange? openXmlElement, String? value)
+  
+  private static void SetOriginal(DocumentFormat.OpenXml.Wordprocessing.NumberingChange openXmlElement, String? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.Original = new StringValue { Value = value };
-      else
-        openXmlElement.Original = null;
+    if (value != null)
+      openXmlElement.Original = new StringValue { Value = value };
+    else
+      openXmlElement.Original = null;
   }
-
+  
   /// <summary>
-  ///   author
+  /// author
   /// </summary>
-  public static String? GetAuthor(NumberingChange? openXmlElement)
+  private static String? GetAuthor(DocumentFormat.OpenXml.Wordprocessing.NumberingChange openXmlElement)
   {
     return openXmlElement?.Author?.Value;
   }
-
-  public static void SetAuthor(NumberingChange? openXmlElement, String? value)
+  
+  private static void SetAuthor(DocumentFormat.OpenXml.Wordprocessing.NumberingChange openXmlElement, String? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.Author = new StringValue { Value = value };
-      else
-        openXmlElement.Author = null;
+    if (value != null)
+      openXmlElement.Author = new StringValue { Value = value };
+    else
+      openXmlElement.Author = null;
   }
-
+  
   /// <summary>
-  ///   date
+  /// date
   /// </summary>
-  public static DateTime? GetDate(NumberingChange? openXmlElement)
+  private static DateTime? GetDate(DocumentFormat.OpenXml.Wordprocessing.NumberingChange openXmlElement)
   {
-    return openXmlElement?.Date?.Value;
+    return openXmlElement.Date?.Value;
   }
-
-  public static void SetDate(NumberingChange? openXmlElement, DateTime? value)
+  
+  private static void SetDate(DocumentFormat.OpenXml.Wordprocessing.NumberingChange openXmlElement, DateTime? value)
   {
-    if (openXmlElement != null)
-      openXmlElement.Date = value;
+    openXmlElement.Date = value;
   }
-
+  
   /// <summary>
-  ///   Annotation Identifier
+  /// Annotation Identifier
   /// </summary>
-  public static String? GetId(NumberingChange? openXmlElement)
+  private static String? GetId(DocumentFormat.OpenXml.Wordprocessing.NumberingChange openXmlElement)
   {
     return openXmlElement?.Id?.Value;
   }
-
-  public static void SetId(NumberingChange? openXmlElement, String? value)
+  
+  private static void SetId(DocumentFormat.OpenXml.Wordprocessing.NumberingChange openXmlElement, String? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.Id = new StringValue { Value = value };
-      else
-        openXmlElement.Id = null;
+    if (value != null)
+      openXmlElement.Id = new StringValue { Value = value };
+    else
+      openXmlElement.Id = null;
   }
-
-  public static DocumentModel.Wordprocessing.NumberingChange? CreateModelElement(NumberingChange? openXmlElement)
+  
+  public static DocumentModel.Wordprocessing.NumberingChange? CreateModelElement(DocumentFormat.OpenXml.Wordprocessing.NumberingChange? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -85,9 +79,9 @@ public static class NumberingChangeConverter
     }
     return null;
   }
-
+  
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.NumberingChange? value)
-    where OpenXmlElementType : NumberingChange, new()
+    where OpenXmlElementType: DocumentFormat.OpenXml.Wordprocessing.NumberingChange, new()
   {
     if (value != null)
     {

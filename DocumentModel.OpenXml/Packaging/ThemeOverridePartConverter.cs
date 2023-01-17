@@ -1,66 +1,56 @@
-using DocumentFormat.OpenXml.Packaging;
-using DocumentModel.Drawings;
-using DocumentModel.OpenXml.Drawings;
-using ImagePart = DocumentModel.Packaging.ImagePart;
-
 namespace DocumentModel.OpenXml.Packaging;
 
 /// <summary>
-///   Defines the ThemeOverridePart
+/// Defines the ThemeOverridePart
 /// </summary>
 public static class ThemeOverridePartConverter
 {
-  public static String? GetContentType(ThemeOverridePart? openXmlElement)
+  private static String? GetContentType(DocumentFormat.OpenXml.Packaging.ThemeOverridePart openXmlElement)
   {
     return openXmlElement?.ContentType;
   }
-
+  
   /// <summary>
-  ///   Gets the ImageParts of the ThemeOverridePart
+  /// Gets the ImageParts of the ThemeOverridePart
   /// </summary>
-  public static Collection<ImagePart>? GetImageParts(ThemeOverridePart? openXmlElement)
+  private static System.Collections.ObjectModel.Collection<DocumentModel.Packaging.ImagePart> GetImageParts(DocumentFormat.OpenXml.Packaging.ThemeOverridePart openXmlElement)
   {
-    if (openXmlElement != null)
+    var collection = new System.Collections.ObjectModel.Collection<DocumentModel.Packaging.ImagePart>();
+    foreach (var item in openXmlElement.GetPartsOfType<DocumentFormat.OpenXml.Packaging.ImagePart>())
     {
-      var collection = new Collection<ImagePart>();
-      foreach (var item in openXmlElement.GetPartsOfType<DocumentFormat.OpenXml.Packaging.ImagePart>())
-      {
-        var newItem = ImagePartConverter.CreateModelElement(item);
-        if (newItem != null)
-          collection.Add(newItem);
-      }
-      return collection;
+      var newItem = DocumentModel.OpenXml.Packaging.ImagePartConverter.CreateModelElement(item);
+      if (newItem != null)
+        collection.Add(newItem);
     }
-    return null;
+    return collection;
   }
-
-  public static String? GetRelationshipType(ThemeOverridePart? openXmlElement)
+  
+  private static String? GetRelationshipType(DocumentFormat.OpenXml.Packaging.ThemeOverridePart openXmlElement)
   {
     return openXmlElement?.RelationshipType;
   }
-
+  
   /// <summary>
-  ///   Gets or sets the root element of this part.
+  /// Gets or sets the root element of this part.
   /// </summary>
-  public static ThemeOverride? GetThemeOverride(ThemeOverridePart? openXmlElement)
+  private static DocumentModel.Drawings.ThemeOverride? GetThemeOverride(DocumentFormat.OpenXml.Packaging.ThemeOverridePart openXmlElement)
   {
     if (openXmlElement?.RootElement is DocumentFormat.OpenXml.Drawing.ThemeOverride rootElement)
-      return ThemeOverrideConverter.CreateModelElement(rootElement);
+      return DocumentModel.OpenXml.Drawings.ThemeOverrideConverter.CreateModelElement(rootElement);
     return null;
   }
-
-  public static void SetThemeOverride(ThemeOverridePart? openXmlElement, ThemeOverride? value)
+  
+  private static void SetThemeOverride(DocumentFormat.OpenXml.Packaging.ThemeOverridePart openXmlElement, DocumentModel.Drawings.ThemeOverride? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-      {
-        var rootElement = ThemeOverrideConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.ThemeOverride>(value);
-        if (rootElement != null)
-          openXmlElement.ThemeOverride = rootElement;
-      }
+    if (value != null)
+    {
+       var rootElement = DocumentModel.OpenXml.Drawings.ThemeOverrideConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.ThemeOverride>(value);
+       if (rootElement != null)
+         openXmlElement.ThemeOverride = rootElement;
+    }
   }
-
-  public static DocumentModel.Packaging.ThemeOverridePart? CreateModelElement(ThemeOverridePart? openXmlElement)
+  
+  public static DocumentModel.Packaging.ThemeOverridePart? CreateModelElement(DocumentFormat.OpenXml.Packaging.ThemeOverridePart? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -73,9 +63,9 @@ public static class ThemeOverridePartConverter
     }
     return null;
   }
-
+  
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Packaging.ThemeOverridePart? value)
-    where OpenXmlElementType : ThemeOverridePart, new()
+    where OpenXmlElementType: DocumentFormat.OpenXml.Packaging.ThemeOverridePart, new()
   {
     if (value != null)
     {

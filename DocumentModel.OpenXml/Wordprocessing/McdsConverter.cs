@@ -1,45 +1,37 @@
-using DocumentModel.Wordprocessing;
-using Mcds = DocumentFormat.OpenXml.Office.Word.Mcds;
-
 namespace DocumentModel.OpenXml.Wordprocessing;
 
 /// <summary>
-///   Defines the Mcds Class.
+/// Defines the Mcds Class.
 /// </summary>
 public static class McdsConverter
 {
-  public static Collection<Mcd>? GetItems(Mcds? openXmlElement)
+  private static System.Collections.ObjectModel.Collection<DocumentModel.Wordprocessing.Mcd> GetItems(DocumentFormat.OpenXml.Office.Word.Mcds openXmlElement)
   {
-    if (openXmlElement != null)
+    var collection = new System.Collections.ObjectModel.Collection<DocumentModel.Wordprocessing.Mcd>();
+    foreach (var item in openXmlElement.Elements<DocumentFormat.OpenXml.Office.Word.Mcd>())
     {
-      var collection = new Collection<Mcd>();
-      foreach (var item in openXmlElement.Elements<DocumentFormat.OpenXml.Office.Word.Mcd>())
+      var newItem = DocumentModel.OpenXml.Wordprocessing.McdConverter.CreateModelElement(item);
+      if (newItem != null)
+        collection.Add(newItem);
+    }
+    return collection;
+  }
+  
+  private static void SetItems(DocumentFormat.OpenXml.Office.Word.Mcds openXmlElement, System.Collections.ObjectModel.Collection<DocumentModel.Wordprocessing.Mcd>? value)
+  {
+    openXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Office.Word.Mcd>();
+    if (value != null)
+    {
+      foreach (var item in value)
       {
-        var newItem = McdConverter.CreateModelElement(item);
+        var newItem = DocumentModel.OpenXml.Wordprocessing.McdConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office.Word.Mcd>(item);
         if (newItem != null)
-          collection.Add(newItem);
+          openXmlElement.AddChild(newItem);
       }
-      return collection;
-    }
-    return null;
-  }
-
-  public static void SetItems(Mcds? openXmlElement, Collection<Mcd>? value)
-  {
-    if (openXmlElement != null)
-    {
-      openXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Office.Word.Mcd>();
-      if (value != null)
-        foreach (var item in value)
-        {
-          var newItem = McdConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office.Word.Mcd>(item);
-          if (newItem != null)
-            openXmlElement.AddChild(newItem);
-        }
     }
   }
-
-  public static DocumentModel.Wordprocessing.Mcds? CreateModelElement(Mcds? openXmlElement)
+  
+  public static DocumentModel.Wordprocessing.Mcds? CreateModelElement(DocumentFormat.OpenXml.Office.Word.Mcds? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -49,9 +41,9 @@ public static class McdsConverter
     }
     return null;
   }
-
+  
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.Mcds? value)
-    where OpenXmlElementType : Mcds, new()
+    where OpenXmlElementType: DocumentFormat.OpenXml.Office.Word.Mcds, new()
   {
     if (value != null)
     {

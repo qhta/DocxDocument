@@ -1,397 +1,339 @@
-using DocumentFormat.OpenXml.Wordprocessing;
-using AltChunk = DocumentModel.Wordprocessing.AltChunk;
-using BookmarkStart = DocumentModel.Wordprocessing.BookmarkStart;
-using CustomXmlBlock = DocumentModel.Wordprocessing.CustomXmlBlock;
-using MarkupRangeType = DocumentModel.Wordprocessing.MarkupRangeType;
-using Paragraph = DocumentModel.Wordprocessing.Paragraph;
-using PermEnd = DocumentModel.Wordprocessing.PermEnd;
-using PermStart = DocumentModel.Wordprocessing.PermStart;
-using ProofError = DocumentModel.Wordprocessing.ProofError;
-using SdtBlock = DocumentModel.Wordprocessing.SdtBlock;
-using Table = DocumentModel.Wordprocessing.Table;
-
 namespace DocumentModel.OpenXml.Wordprocessing;
 
 /// <summary>
-///   Comment Content.
+/// Comment Content.
 /// </summary>
 public static class CommentConverter
 {
   /// <summary>
-  ///   initials
+  /// initials
   /// </summary>
-  public static String? GetInitials(Comment? openXmlElement)
+  private static String? GetInitials(DocumentFormat.OpenXml.Wordprocessing.Comment openXmlElement)
   {
     return openXmlElement?.Initials?.Value;
   }
-
-  public static void SetInitials(Comment? openXmlElement, String? value)
+  
+  private static void SetInitials(DocumentFormat.OpenXml.Wordprocessing.Comment openXmlElement, String? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.Initials = new StringValue { Value = value };
-      else
-        openXmlElement.Initials = null;
+    if (value != null)
+      openXmlElement.Initials = new StringValue { Value = value };
+    else
+      openXmlElement.Initials = null;
   }
-
+  
   /// <summary>
-  ///   author
+  /// author
   /// </summary>
-  public static String? GetAuthor(Comment? openXmlElement)
+  private static String? GetAuthor(DocumentFormat.OpenXml.Wordprocessing.Comment openXmlElement)
   {
     return openXmlElement?.Author?.Value;
   }
-
-  public static void SetAuthor(Comment? openXmlElement, String? value)
+  
+  private static void SetAuthor(DocumentFormat.OpenXml.Wordprocessing.Comment openXmlElement, String? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.Author = new StringValue { Value = value };
-      else
-        openXmlElement.Author = null;
+    if (value != null)
+      openXmlElement.Author = new StringValue { Value = value };
+    else
+      openXmlElement.Author = null;
   }
-
+  
   /// <summary>
-  ///   date
+  /// date
   /// </summary>
-  public static DateTime? GetDate(Comment? openXmlElement)
+  private static DateTime? GetDate(DocumentFormat.OpenXml.Wordprocessing.Comment openXmlElement)
   {
-    return openXmlElement?.Date?.Value;
+    return openXmlElement.Date?.Value;
   }
-
-  public static void SetDate(Comment? openXmlElement, DateTime? value)
+  
+  private static void SetDate(DocumentFormat.OpenXml.Wordprocessing.Comment openXmlElement, DateTime? value)
   {
-    if (openXmlElement != null)
-      openXmlElement.Date = value;
+    openXmlElement.Date = value;
   }
-
+  
   /// <summary>
-  ///   Annotation Identifier
+  /// Annotation Identifier
   /// </summary>
-  public static String? GetId(Comment? openXmlElement)
+  private static String? GetId(DocumentFormat.OpenXml.Wordprocessing.Comment openXmlElement)
   {
     return openXmlElement?.Id?.Value;
   }
-
-  public static void SetId(Comment? openXmlElement, String? value)
+  
+  private static void SetId(DocumentFormat.OpenXml.Wordprocessing.Comment openXmlElement, String? value)
   {
-    if (openXmlElement != null)
-      if (value != null)
-        openXmlElement.Id = new StringValue { Value = value };
-      else
-        openXmlElement.Id = null;
+    if (value != null)
+      openXmlElement.Id = new StringValue { Value = value };
+    else
+      openXmlElement.Id = null;
   }
-
-  public static Collection<AltChunk>? GetAltChunks(Comment? openXmlElement)
+  
+  private static System.Collections.ObjectModel.Collection<DocumentModel.Wordprocessing.AltChunk> GetAltChunks(DocumentFormat.OpenXml.Wordprocessing.Comment openXmlElement)
   {
-    if (openXmlElement != null)
+    var collection = new System.Collections.ObjectModel.Collection<DocumentModel.Wordprocessing.AltChunk>();
+    foreach (var item in openXmlElement.Elements<DocumentFormat.OpenXml.Wordprocessing.AltChunk>())
     {
-      var collection = new Collection<AltChunk>();
-      foreach (var item in openXmlElement.Elements<DocumentFormat.OpenXml.Wordprocessing.AltChunk>())
+      var newItem = DocumentModel.OpenXml.Wordprocessing.AltChunkConverter.CreateModelElement(item);
+      if (newItem != null)
+        collection.Add(newItem);
+    }
+    return collection;
+  }
+  
+  private static void SetAltChunks(DocumentFormat.OpenXml.Wordprocessing.Comment openXmlElement, System.Collections.ObjectModel.Collection<DocumentModel.Wordprocessing.AltChunk>? value)
+  {
+    openXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Wordprocessing.AltChunk>();
+    if (value != null)
+    {
+      foreach (var item in value)
       {
-        var newItem = AltChunkConverter.CreateModelElement(item);
+        var newItem = DocumentModel.OpenXml.Wordprocessing.AltChunkConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.AltChunk>(item);
         if (newItem != null)
-          collection.Add(newItem);
+          openXmlElement.AddChild(newItem);
       }
-      return collection;
-    }
-    return null;
-  }
-
-  public static void SetAltChunks(Comment? openXmlElement, Collection<AltChunk>? value)
-  {
-    if (openXmlElement != null)
-    {
-      openXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Wordprocessing.AltChunk>();
-      if (value != null)
-        foreach (var item in value)
-        {
-          var newItem = AltChunkConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.AltChunk>(item);
-          if (newItem != null)
-            openXmlElement.AddChild(newItem);
-        }
     }
   }
-
-  public static CustomXmlBlock? GetCustomXmlBlock(Comment? openXmlElement)
+  
+  private static DocumentModel.Wordprocessing.CustomXmlBlock? GetCustomXmlBlock(DocumentFormat.OpenXml.Wordprocessing.Comment openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.CustomXmlBlock>();
     if (itemElement != null)
-      return CustomXmlBlockConverter.CreateModelElement(itemElement);
+      return DocumentModel.OpenXml.Wordprocessing.CustomXmlBlockConverter.CreateModelElement(itemElement);
     return null;
   }
-
-  public static void SetCustomXmlBlock(Comment? openXmlElement, CustomXmlBlock? value)
+  
+  private static void SetCustomXmlBlock(DocumentFormat.OpenXml.Wordprocessing.Comment openXmlElement, DocumentModel.Wordprocessing.CustomXmlBlock? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.CustomXmlBlock>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.CustomXmlBlock>();
+      itemElement = DocumentModel.OpenXml.Wordprocessing.CustomXmlBlockConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.CustomXmlBlock>(value);
       if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = CustomXmlBlockConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.CustomXmlBlock>(value);
-        if (itemElement != null)
-          openXmlElement.AddChild(itemElement);
-      }
+        openXmlElement.AddChild(itemElement);
     }
   }
-
-  public static SdtBlock? GetSdtBlock(Comment? openXmlElement)
+  
+  private static DocumentModel.Wordprocessing.SdtBlock? GetSdtBlock(DocumentFormat.OpenXml.Wordprocessing.Comment openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.SdtBlock>();
     if (itemElement != null)
-      return SdtBlockConverter.CreateModelElement(itemElement);
+      return DocumentModel.OpenXml.Wordprocessing.SdtBlockConverter.CreateModelElement(itemElement);
     return null;
   }
-
-  public static void SetSdtBlock(Comment? openXmlElement, SdtBlock? value)
+  
+  private static void SetSdtBlock(DocumentFormat.OpenXml.Wordprocessing.Comment openXmlElement, DocumentModel.Wordprocessing.SdtBlock? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.SdtBlock>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.SdtBlock>();
+      itemElement = DocumentModel.OpenXml.Wordprocessing.SdtBlockConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.SdtBlock>(value);
       if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = SdtBlockConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.SdtBlock>(value);
-        if (itemElement != null)
-          openXmlElement.AddChild(itemElement);
-      }
+        openXmlElement.AddChild(itemElement);
     }
   }
-
-  public static Collection<Paragraph>? GetParagraphs(Comment? openXmlElement)
+  
+  private static System.Collections.ObjectModel.Collection<DocumentModel.Wordprocessing.Paragraph> GetParagraphs(DocumentFormat.OpenXml.Wordprocessing.Comment openXmlElement)
   {
-    if (openXmlElement != null)
+    var collection = new System.Collections.ObjectModel.Collection<DocumentModel.Wordprocessing.Paragraph>();
+    foreach (var item in openXmlElement.Elements<DocumentFormat.OpenXml.Wordprocessing.Paragraph>())
     {
-      var collection = new Collection<Paragraph>();
-      foreach (var item in openXmlElement.Elements<DocumentFormat.OpenXml.Wordprocessing.Paragraph>())
+      var newItem = DocumentModel.OpenXml.Wordprocessing.ParagraphConverter.CreateModelElement(item);
+      if (newItem != null)
+        collection.Add(newItem);
+    }
+    return collection;
+  }
+  
+  private static void SetParagraphs(DocumentFormat.OpenXml.Wordprocessing.Comment openXmlElement, System.Collections.ObjectModel.Collection<DocumentModel.Wordprocessing.Paragraph>? value)
+  {
+    openXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Wordprocessing.Paragraph>();
+    if (value != null)
+    {
+      foreach (var item in value)
       {
-        var newItem = ParagraphConverter.CreateModelElement(item);
+        var newItem = DocumentModel.OpenXml.Wordprocessing.ParagraphConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.Paragraph>(item);
         if (newItem != null)
-          collection.Add(newItem);
+          openXmlElement.AddChild(newItem);
       }
-      return collection;
-    }
-    return null;
-  }
-
-  public static void SetParagraphs(Comment? openXmlElement, Collection<Paragraph>? value)
-  {
-    if (openXmlElement != null)
-    {
-      openXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Wordprocessing.Paragraph>();
-      if (value != null)
-        foreach (var item in value)
-        {
-          var newItem = ParagraphConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.Paragraph>(item);
-          if (newItem != null)
-            openXmlElement.AddChild(newItem);
-        }
     }
   }
-
-  public static Collection<Table>? GetTables(Comment? openXmlElement)
+  
+  private static System.Collections.ObjectModel.Collection<DocumentModel.Wordprocessing.Table> GetTables(DocumentFormat.OpenXml.Wordprocessing.Comment openXmlElement)
   {
-    if (openXmlElement != null)
+    var collection = new System.Collections.ObjectModel.Collection<DocumentModel.Wordprocessing.Table>();
+    foreach (var item in openXmlElement.Elements<DocumentFormat.OpenXml.Wordprocessing.Table>())
     {
-      var collection = new Collection<Table>();
-      foreach (var item in openXmlElement.Elements<DocumentFormat.OpenXml.Wordprocessing.Table>())
+      var newItem = DocumentModel.OpenXml.Wordprocessing.TableConverter.CreateModelElement(item);
+      if (newItem != null)
+        collection.Add(newItem);
+    }
+    return collection;
+  }
+  
+  private static void SetTables(DocumentFormat.OpenXml.Wordprocessing.Comment openXmlElement, System.Collections.ObjectModel.Collection<DocumentModel.Wordprocessing.Table>? value)
+  {
+    openXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Wordprocessing.Table>();
+    if (value != null)
+    {
+      foreach (var item in value)
       {
-        var newItem = TableConverter.CreateModelElement(item);
+        var newItem = DocumentModel.OpenXml.Wordprocessing.TableConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.Table>(item);
         if (newItem != null)
-          collection.Add(newItem);
+          openXmlElement.AddChild(newItem);
       }
-      return collection;
-    }
-    return null;
-  }
-
-  public static void SetTables(Comment? openXmlElement, Collection<Table>? value)
-  {
-    if (openXmlElement != null)
-    {
-      openXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Wordprocessing.Table>();
-      if (value != null)
-        foreach (var item in value)
-        {
-          var newItem = TableConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.Table>(item);
-          if (newItem != null)
-            openXmlElement.AddChild(newItem);
-        }
     }
   }
-
-  public static ProofError? GetProofError(Comment? openXmlElement)
+  
+  private static DocumentModel.Wordprocessing.ProofError? GetProofError(DocumentFormat.OpenXml.Wordprocessing.Comment openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.ProofError>();
     if (itemElement != null)
-      return ProofErrorConverter.CreateModelElement(itemElement);
+      return DocumentModel.OpenXml.Wordprocessing.ProofErrorConverter.CreateModelElement(itemElement);
     return null;
   }
-
-  public static void SetProofError(Comment? openXmlElement, ProofError? value)
+  
+  private static void SetProofError(DocumentFormat.OpenXml.Wordprocessing.Comment openXmlElement, DocumentModel.Wordprocessing.ProofError? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.ProofError>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.ProofError>();
+      itemElement = DocumentModel.OpenXml.Wordprocessing.ProofErrorConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.ProofError>(value);
       if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = ProofErrorConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.ProofError>(value);
-        if (itemElement != null)
-          openXmlElement.AddChild(itemElement);
-      }
+        openXmlElement.AddChild(itemElement);
     }
   }
-
-  public static PermStart? GetPermStart(Comment? openXmlElement)
+  
+  private static DocumentModel.Wordprocessing.PermStart? GetPermStart(DocumentFormat.OpenXml.Wordprocessing.Comment openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.PermStart>();
     if (itemElement != null)
-      return PermStartConverter.CreateModelElement(itemElement);
+      return DocumentModel.OpenXml.Wordprocessing.PermStartConverter.CreateModelElement(itemElement);
     return null;
   }
-
-  public static void SetPermStart(Comment? openXmlElement, PermStart? value)
+  
+  private static void SetPermStart(DocumentFormat.OpenXml.Wordprocessing.Comment openXmlElement, DocumentModel.Wordprocessing.PermStart? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.PermStart>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.PermStart>();
+      itemElement = DocumentModel.OpenXml.Wordprocessing.PermStartConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.PermStart>(value);
       if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = PermStartConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.PermStart>(value);
-        if (itemElement != null)
-          openXmlElement.AddChild(itemElement);
-      }
+        openXmlElement.AddChild(itemElement);
     }
   }
-
-  public static PermEnd? GetPermEnd(Comment? openXmlElement)
+  
+  private static DocumentModel.Wordprocessing.PermEnd? GetPermEnd(DocumentFormat.OpenXml.Wordprocessing.Comment openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.PermEnd>();
     if (itemElement != null)
-      return PermEndConverter.CreateModelElement(itemElement);
+      return DocumentModel.OpenXml.Wordprocessing.PermEndConverter.CreateModelElement(itemElement);
     return null;
   }
-
-  public static void SetPermEnd(Comment? openXmlElement, PermEnd? value)
+  
+  private static void SetPermEnd(DocumentFormat.OpenXml.Wordprocessing.Comment openXmlElement, DocumentModel.Wordprocessing.PermEnd? value)
   {
-    if (openXmlElement != null)
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.PermEnd>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.PermEnd>();
+      itemElement = DocumentModel.OpenXml.Wordprocessing.PermEndConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.PermEnd>(value);
       if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = PermEndConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.PermEnd>(value);
-        if (itemElement != null)
-          openXmlElement.AddChild(itemElement);
-      }
+        openXmlElement.AddChild(itemElement);
     }
   }
-
-  public static BookmarkStart? GetBookmarkStart(Comment? openXmlElement)
+  
+  private static DocumentModel.Wordprocessing.BookmarkStart? GetBookmarkStart(DocumentFormat.OpenXml.Wordprocessing.Comment openXmlElement)
   {
     var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.BookmarkStart>();
     if (itemElement != null)
-      return BookmarkStartConverter.CreateModelElement(itemElement);
+      return DocumentModel.OpenXml.Wordprocessing.BookmarkStartConverter.CreateModelElement(itemElement);
     return null;
   }
-
-  public static void SetBookmarkStart(Comment? openXmlElement, BookmarkStart? value)
+  
+  private static void SetBookmarkStart(DocumentFormat.OpenXml.Wordprocessing.Comment openXmlElement, DocumentModel.Wordprocessing.BookmarkStart? value)
   {
-    if (openXmlElement != null)
-    {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.BookmarkStart>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = BookmarkStartConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.BookmarkStart>(value);
-        if (itemElement != null)
-          openXmlElement.AddChild(itemElement);
-      }
-    }
-  }
-
-  public static MarkupRangeType? GetBookmarkEnd(Comment? openXmlElement)
-  {
-    var itemElement = openXmlElement?.GetFirstChild<BookmarkEnd>();
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.BookmarkStart>();
     if (itemElement != null)
-      return MarkupRangeTypeConverter.CreateModelElement(itemElement);
-    return null;
-  }
-
-  public static void SetBookmarkEnd(Comment? openXmlElement, MarkupRangeType? value)
-  {
-    if (openXmlElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<BookmarkEnd>();
+      itemElement = DocumentModel.OpenXml.Wordprocessing.BookmarkStartConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.BookmarkStart>(value);
       if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = MarkupRangeTypeConverter.CreateOpenXmlElement<BookmarkEnd>(value);
-        if (itemElement != null)
-          openXmlElement.AddChild(itemElement);
-      }
+        openXmlElement.AddChild(itemElement);
     }
   }
-
-  public static MarkupRangeType? GetCommentRangeStart(Comment? openXmlElement)
+  
+  private static DocumentModel.Wordprocessing.MarkupRangeType? GetBookmarkEnd(DocumentFormat.OpenXml.Wordprocessing.Comment openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<CommentRangeStart>();
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.BookmarkEnd>();
     if (itemElement != null)
-      return MarkupRangeTypeConverter.CreateModelElement(itemElement);
+      return DocumentModel.OpenXml.Wordprocessing.MarkupRangeTypeConverter.CreateModelElement(itemElement);
     return null;
   }
-
-  public static void SetCommentRangeStart(Comment? openXmlElement, MarkupRangeType? value)
+  
+  private static void SetBookmarkEnd(DocumentFormat.OpenXml.Wordprocessing.Comment openXmlElement, DocumentModel.Wordprocessing.MarkupRangeType? value)
   {
-    if (openXmlElement != null)
-    {
-      var itemElement = openXmlElement.GetFirstChild<CommentRangeStart>();
-      if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = MarkupRangeTypeConverter.CreateOpenXmlElement<CommentRangeStart>(value);
-        if (itemElement != null)
-          openXmlElement.AddChild(itemElement);
-      }
-    }
-  }
-
-  public static MarkupRangeType? GetCommentRangeEnd(Comment? openXmlElement)
-  {
-    var itemElement = openXmlElement?.GetFirstChild<CommentRangeEnd>();
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.BookmarkEnd>();
     if (itemElement != null)
-      return MarkupRangeTypeConverter.CreateModelElement(itemElement);
-    return null;
-  }
-
-  public static void SetCommentRangeEnd(Comment? openXmlElement, MarkupRangeType? value)
-  {
-    if (openXmlElement != null)
+      itemElement.Remove();
+    if (value != null)
     {
-      var itemElement = openXmlElement.GetFirstChild<CommentRangeEnd>();
+      itemElement = DocumentModel.OpenXml.Wordprocessing.MarkupRangeTypeConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.BookmarkEnd>(value);
       if (itemElement != null)
-        itemElement.Remove();
-      if (value != null)
-      {
-        itemElement = MarkupRangeTypeConverter.CreateOpenXmlElement<CommentRangeEnd>(value);
-        if (itemElement != null)
-          openXmlElement.AddChild(itemElement);
-      }
+        openXmlElement.AddChild(itemElement);
     }
   }
-
-  public static DocumentModel.Wordprocessing.Comment? CreateModelElement(Comment? openXmlElement)
+  
+  private static DocumentModel.Wordprocessing.MarkupRangeType? GetCommentRangeStart(DocumentFormat.OpenXml.Wordprocessing.Comment openXmlElement)
+  {
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.CommentRangeStart>();
+    if (itemElement != null)
+      return DocumentModel.OpenXml.Wordprocessing.MarkupRangeTypeConverter.CreateModelElement(itemElement);
+    return null;
+  }
+  
+  private static void SetCommentRangeStart(DocumentFormat.OpenXml.Wordprocessing.Comment openXmlElement, DocumentModel.Wordprocessing.MarkupRangeType? value)
+  {
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.CommentRangeStart>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
+    {
+      itemElement = DocumentModel.OpenXml.Wordprocessing.MarkupRangeTypeConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.CommentRangeStart>(value);
+      if (itemElement != null)
+        openXmlElement.AddChild(itemElement);
+    }
+  }
+  
+  private static DocumentModel.Wordprocessing.MarkupRangeType? GetCommentRangeEnd(DocumentFormat.OpenXml.Wordprocessing.Comment openXmlElement)
+  {
+    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.CommentRangeEnd>();
+    if (itemElement != null)
+      return DocumentModel.OpenXml.Wordprocessing.MarkupRangeTypeConverter.CreateModelElement(itemElement);
+    return null;
+  }
+  
+  private static void SetCommentRangeEnd(DocumentFormat.OpenXml.Wordprocessing.Comment openXmlElement, DocumentModel.Wordprocessing.MarkupRangeType? value)
+  {
+    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.CommentRangeEnd>();
+    if (itemElement != null)
+      itemElement.Remove();
+    if (value != null)
+    {
+      itemElement = DocumentModel.OpenXml.Wordprocessing.MarkupRangeTypeConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.CommentRangeEnd>(value);
+      if (itemElement != null)
+        openXmlElement.AddChild(itemElement);
+    }
+  }
+  
+  public static DocumentModel.Wordprocessing.Comment? CreateModelElement(DocumentFormat.OpenXml.Wordprocessing.Comment? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -416,9 +358,9 @@ public static class CommentConverter
     }
     return null;
   }
-
+  
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.Comment? value)
-    where OpenXmlElementType : Comment, new()
+    where OpenXmlElementType: DocumentFormat.OpenXml.Wordprocessing.Comment, new()
   {
     if (value != null)
     {
