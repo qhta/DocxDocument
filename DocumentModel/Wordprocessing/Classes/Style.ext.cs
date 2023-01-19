@@ -2,7 +2,7 @@ using System.ComponentModel;
 
 namespace DocumentModel.Wordprocessing;
 
-public partial class Style : INotifyPropertyChanged, INotifyPropertyChanging
+public partial class Style : INotifyPropertyChanged, INotifyPropertyChanging, INamedObject, IAliasedObject
 {
   private ListOf<String>? _Aliases;
 
@@ -11,16 +11,16 @@ public partial class Style : INotifyPropertyChanged, INotifyPropertyChanging
   /// <summary>
   ///   Primary Style Name.
   /// </summary>
-  public String? StyleName
+  public String? Name
   {
     get => _StyleName;
     set
     {
       if (_StyleName != value)
       {
-        NotifyPropertyChanging(nameof(StyleName));
+        NotifyPropertyChanging(nameof(Name));
         _StyleName = value;
-        NotifyPropertyChanged(nameof(StyleName));
+        NotifyPropertyChanged(nameof(Name));
       }
     }
   }
@@ -40,6 +40,22 @@ public partial class Style : INotifyPropertyChanged, INotifyPropertyChanging
         NotifyPropertyChanged(nameof(Aliases));
       }
     }
+  }
+
+  IEnumerable<string>? IAliasedObject.Aliases => Aliases;
+
+  public bool IsDefined =>
+    StyleParagraphProperties != null ||
+    StyleRunProperties != null ||
+    StyleTableProperties != null ||
+    StyleTableCellProperties != null ||
+    TableStyleConditionalFormattingTableRowProperties != null ||
+    TableStylePropertieses != null;
+
+  public bool IsCustom
+  {
+    get => CustomStyle == true;
+    set => CustomStyle = value;
   }
 
   public event PropertyChangedEventHandler? PropertyChanged;

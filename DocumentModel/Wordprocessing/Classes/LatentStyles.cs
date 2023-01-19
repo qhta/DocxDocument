@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Latent Style Information.
 /// </summary>
-public class LatentStyles
+public partial class LatentStyles
 {
   /// <summary>
   ///   Default Style Locking Setting
@@ -33,7 +33,7 @@ public class LatentStyles
   /// <summary>
   ///   Latent Style Count
   /// </summary>
-  public Int32? Count { get; set; }
+  public Int32? TotalCount { get; set; }
 
-  public Collection<LatentStyleExceptionInfo>? LatentStyleExceptionInfos { get; set; }
+  //public Collection<LatentStyleExceptionInfo>? Items { get; set; }
 }

@@ -131,8 +131,8 @@ public static class LatentStylesConverter
       value.DefaultSemiHidden = GetDefaultSemiHidden(openXmlElement);
       value.DefaultUnhideWhenUsed = GetDefaultUnhideWhenUsed(openXmlElement);
       value.DefaultPrimaryStyle = GetDefaultPrimaryStyle(openXmlElement);
-      value.Count = GetCount(openXmlElement);
-      value.LatentStyleExceptionInfos = GetLatentStyleExceptionInfos(openXmlElement);
+      value.TotalCount = GetCount(openXmlElement);
+      value.Items = GetLatentStyleExceptionInfos(openXmlElement);
       return value;
     }
     return null;
@@ -149,8 +149,8 @@ public static class LatentStylesConverter
       SetDefaultSemiHidden(openXmlElement, value?.DefaultSemiHidden);
       SetDefaultUnhideWhenUsed(openXmlElement, value?.DefaultUnhideWhenUsed);
       SetDefaultPrimaryStyle(openXmlElement, value?.DefaultPrimaryStyle);
-      SetCount(openXmlElement, value?.Count);
-      SetLatentStyleExceptionInfos(openXmlElement, value?.LatentStyleExceptionInfos);
+      SetCount(openXmlElement, value?.TotalCount);
+      SetLatentStyleExceptionInfos(openXmlElement, value?.Items);
       return openXmlElement;
     }
     return default;
