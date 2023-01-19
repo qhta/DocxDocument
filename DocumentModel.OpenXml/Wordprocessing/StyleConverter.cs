@@ -593,7 +593,7 @@ public static class StyleConverter
       value.StyleId = GetStyleId(openXmlElement);
       value.Default = GetDefault(openXmlElement);
       value.CustomStyle = GetCustomStyle(openXmlElement);
-      value.StyleName = GetStyleName(openXmlElement);
+      value.Name = GetStyleName(openXmlElement);
       value.Aliases = GetAliases(openXmlElement);
       value.BasedOn = GetBasedOn(openXmlElement);
       value.NextParagraphStyle = GetNextParagraphStyle(openXmlElement);
@@ -630,7 +630,7 @@ public static class StyleConverter
       SetStyleId(openXmlElement, value?.StyleId);
       SetDefault(openXmlElement, value?.Default);
       SetCustomStyle(openXmlElement, value?.CustomStyle);
-      SetStyleName(openXmlElement, value?.StyleName);
+      SetStyleName(openXmlElement, value?.Name);
       SetAliases(openXmlElement, value?.Aliases);
       SetBasedOn(openXmlElement, value?.BasedOn);
       SetNextParagraphStyle(openXmlElement, value?.NextParagraphStyle);

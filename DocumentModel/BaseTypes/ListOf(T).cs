@@ -7,7 +7,7 @@ namespace DocumentModel;
 public class ListOf<T> : ICollection<T>
   where T : IConvertible
 {
-  private const string _listSeparator = " ";
+  private char[] _listSeparators = new char[] {' '};
   private ObservableCollection<T> _list = null!;
   private string? TextValue;
 
@@ -17,6 +17,8 @@ public class ListOf<T> : ICollection<T>
   /// <param name="list">The list of the values.</param>
   public ListOf()
   {
+    if (typeof(T)==typeof(string))
+      _listSeparators = new char [] { ',', ';' };
     _list = new ObservableCollection<T>();
     _list.CollectionChanged += CollectionChanged;
   }
@@ -28,8 +30,6 @@ public class ListOf<T> : ICollection<T>
   /// <param name="list">The list of the values.</param>
   public ListOf(IEnumerable<T> list) : this()
   {
-    _list = new ObservableCollection<T>();
-    _list.CollectionChanged += CollectionChanged;
     foreach (var obj in list)
       _list.Add(obj);
   }
@@ -39,10 +39,8 @@ public class ListOf<T> : ICollection<T>
   ///   supplied <see cref="T:DocumentFormat.OpenXml.ListValue`1" /> class.
   /// </summary>
   /// <param name="list">The source <see cref="T:DocumentFormat.OpenXml.ListValue`1" /> class.</param>
-  public ListOf(ListOf<T> list)
+  public ListOf(ListOf<T> list): this()
   {
-    _list = new ObservableCollection<T>();
-    _list.CollectionChanged += CollectionChanged;
     foreach (var obj in list)
       _list.Add(obj);
   }
@@ -52,8 +50,10 @@ public class ListOf<T> : ICollection<T>
   ///   supplied <see cref="T:DocumentFormat.OpenXml.ListValue`1" /> class.
   /// </summary>
   /// <param name="list">The source <see cref="T:DocumentFormat.OpenXml.ListValue`1" /> class.</param>
-  public ListOf(string? str)
+  public ListOf(string str)
   {
+    if (typeof(T) == typeof(string))
+      _listSeparators = new char[] { ',', ';' };
     TextValue = str;
   }
 
@@ -154,7 +154,7 @@ public class ListOf<T> : ICollection<T>
     _list.CollectionChanged += CollectionChanged;
     if (TextValue == null || TextValue.Length == 0)
       return;
-    foreach (var str in TextValue.Split(new[] { ' ' }, StringSplitOptions.RemoveEmptyEntries))
+    foreach (var str in TextValue.Split(_listSeparators, StringSplitOptions.RemoveEmptyEntries))
     {
       var obj = (T)Convert.ChangeType(str, typeof(T));
       _list.Add(obj);
@@ -167,7 +167,7 @@ public class ListOf<T> : ICollection<T>
   {
     if (TextValue == null || TextValue.Length == 0)
       return false;
-    var strArray = TextValue.Split(new[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
+    var strArray = TextValue.Split(_listSeparators, StringSplitOptions.RemoveEmptyEntries);
     var observableCollection = new ObservableCollection<T>();
     foreach (var str in strArray)
     {
@@ -184,9 +184,11 @@ public class ListOf<T> : ICollection<T>
     TextValue = null;
   }
 
-  public static implicit operator ListOf<T>(string? value)
+  public static implicit operator ListOf<T>?(string? value)
   {
-    return new ListOf<T>(value);
+    if (value != null)
+      return new ListOf<T>(value);
+    return null;
   }
 
   public static implicit operator string?(ListOf<T>? value)

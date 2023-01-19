@@ -1,14 +1,6 @@
-using System.Diagnostics;
-using System.Reflection;
-using System.Text.Json;
-using System.Xml;
-using System.Xml.Serialization;
 using DocumentFormat.OpenXml.Wordprocessing;
-using DocumentModel.Properties;
-using Newtonsoft.Json;
-using Qhta.Xml.Serialization;
-using Formatting = Newtonsoft.Json.Formatting;
-using JsonSerializer = Newtonsoft.Json.JsonSerializer;
+using DocumentModel;
+using DMW = DocumentModel.Wordprocessing;
 
 namespace DocxDocument.Reader.Test
 {
@@ -43,106 +35,57 @@ namespace DocxDocument.Reader.Test
         ReadStyles(filename);
     }
 
-    public virtual DocumentModel.Wordprocessing.Styles ReadStyles(string filename, bool showDetails = false)
+    public virtual DMW.Styles ReadStyles(string filename, bool showDetails = false)
     {
       WriteLine(filename);
       var reader = new DocxReader(filename);
       var document = reader.ReadDocument(Parts.StyleDefinitions);
       Assert.IsNotNull(document, "No document read");
       Assert.IsNotNull(document.Styles, "No document styles read");
-      var modelDefinedStyles = document.Styles;
-      int modelDefinedStylesCount = modelDefinedStyles?.Count ?? 0;
+      var modelDefinedStyles = document.Styles.DefinedStyles;
+      int modelDefinedStylesCount = modelDefinedStyles?.Count() ?? 0;
       var origDefinedStyles = reader.WordprocessingDocument.MainDocumentPart?.StyleDefinitionsPart?.Styles;
       int origDefinedStylesCount = origDefinedStyles?.Elements<Style>().Count() ?? 0;
-      WriteLine($"  Document.Styles: found {modelDefinedStylesCount} expected {origDefinedStylesCount}");
+      WriteLine($"  Document Defined Styles: found {modelDefinedStylesCount}, expected {origDefinedStylesCount}");
+      var modelLatentStyles = document.Styles.LatentStyles;
+      int modelLatentStylesCount = modelLatentStyles?.Count ?? 0;
+      var origLatentStyles = reader.WordprocessingDocument.MainDocumentPart?.StyleDefinitionsPart?.Styles?.LatentStyles;
+      int origLatentStylesCount = origLatentStyles?.Elements<LatentStyleExceptionInfo>().Count() ?? 0;
+      WriteLine($"  Document Lantent Styles: found {modelLatentStylesCount}, expected {origLatentStylesCount}");
 
-      var missingStyles = new List<string>();
-      if (origDefinedStyles != null && modelDefinedStyles != null)
-      {
-        foreach (var origStyleDefinition in origDefinedStyles.Elements<Style>())
-          if (origStyleDefinition != null)
-          {
-            var origStyleName = origStyleDefinition.StyleName?.Val?.Value;
-            if (origStyleName != null)
-            {
-              if (!modelDefinedStyles.TryGetValue(origStyleName, out var modelStyle))
-                missingStyles.Add(origStyleName);
-            }
-            else
-              WriteLine($"Style with no styleName found");
-          }
-
-        if (showDetails)
-          foreach (var style in modelDefinedStyles)
-          {
-            WriteLine($"Style.StyleName={style.StyleName}");
-          }
-      }
-
-      //#region ContentDocumentProperties
-      //ExtendedProperties? contentDocumentProperties = document.Properties.ExtendedProperties;
-      //int contentPropertiesCount = 0;
-      //int origContentPropertiesCount = 0;
-      //if (contentDocumentProperties != null)
-      //{
-      //  var origExtraFilePropertiesCount = reader.WordprocessingDocument.ExtendedFilePropertiesPart?.Properties?.Count() ?? 0;
-      //  var origStatisticPropertiesCount = reader.WordprocessingDocument.ExtendedFilePropertiesPart?.Properties?.Elements()
-      //    ?.Count(item => statisticPropElementsNames.Contains(item.LocalName)) ?? 0;
-      //  var contentProperties = typeof(ExtendedProperties).GetProperties();
-      //  origContentPropertiesCount = origExtraFilePropertiesCount;// - origStatisticPropertiesCount;
-      //  foreach (var prop in contentProperties.Where(item => item.CanWrite))
-      //  {
-      //    if (prop.GetValue(contentDocumentProperties, null) != null)
-      //      contentPropertiesCount++;
-      //  }
-      //  TestContext.Progress.WriteLine(
-      //    $"  ContentProperties: defined {contentProperties.Count()} loaded {contentPropertiesCount} expected {origContentPropertiesCount}");
-      //  if (showDetails)
-      //  {
-      //    foreach (var prop in contentProperties.Where(item => item.CanWrite))
-      //    {
-      //      var value = document.Properties.Get(prop.Name);
-      //      if (value != null)
-      //        TestContext.Progress.WriteLine($"    {prop.Name} = {value}");
-      //    }
-      //  }
-      //}
-
-      //#endregion
-
-      //#region CustomDocumentProperties
-      //CustomProperties? customDocumentProperties = document.Properties.CustomProperties;
-      //int customPropertiesCount = 0;
-      //int origCustomPropertiesCount = 0;
-      //if (customDocumentProperties != null)
-      //{
-      //  customPropertiesCount = customDocumentProperties.Count();
-      //  origCustomPropertiesCount = reader.WordprocessingDocument?.CustomFilePropertiesPart?.Properties.Count() ?? 0;
-      //  TestContext.Progress.WriteLine($"  CustomProperties = {customPropertiesCount}/{origCustomPropertiesCount}");
-      //  if (showDetails)
-      //  {
-      //    foreach (var prop in customDocumentProperties)
-      //    {
-      //      if (prop?.Name != null)
-      //      {
-      //        var value = document.Properties.Get(prop.Name);
-      //        if (value != null)
-      //          TestContext.Progress.WriteLine($"    {prop.Name} = {value}");
-      //      }
-      //    }
-      //  }
-      //}
-      //#endregion
-
-      if (modelDefinedStylesCount != origDefinedStylesCount)
-      {
-        WriteLine("MissingStyles:");
-        foreach (var missingStyle in missingStyles)
-          WriteLine($"  {missingStyle}");
-      }
       Assert.That(modelDefinedStylesCount, Is.EqualTo(origDefinedStylesCount), "Invalid defined styles count");
-      //Assert.That(contentPropertiesCount, Is.EqualTo(origContentPropertiesCount), "Invalid content properties count");
-      //Assert.That(customPropertiesCount, Is.EqualTo(origCustomPropertiesCount), "Invalid custom properties count");
+      Assert.That(modelLatentStylesCount, Is.EqualTo(origLatentStylesCount), "Invalid latent styles count");
+
+      var modelAllStyles = document.Styles.AllStyles;
+      var modelAllStylesCount = modelAllStyles.Count();
+      WriteLine($"  Document All Styles: found {modelAllStylesCount}");
+
+      var modelParaStyles = document.Styles.ParagraphStyles;
+      var modelParaStylesCount = modelParaStyles.Count();
+      var definedParaStylesCount = modelParaStyles.Count(item => item.IsDefined);
+      var customParaStylesCount = modelParaStyles.Count(item => item.IsCustom);
+      WriteLine($"  Document Paragraph Styles: found {modelParaStylesCount}, defined {definedParaStylesCount}, custom {customParaStylesCount}");
+
+      var modelCharStyles = document.Styles.CharacterStyles;
+      var modelCharStylesCount = modelCharStyles.Count();
+      var definedCharStylesCount = modelCharStyles.Count(item => item.IsDefined);
+      var customCharStylesCount = modelCharStyles.Count(item => item.IsCustom);
+      WriteLine($"  Document Character Styles: found {modelCharStylesCount}, defined {definedCharStylesCount}, custom {customCharStylesCount}");
+
+      var modelTableStyles = document.Styles.TableStyles;
+      var modelTableStylesCount = modelTableStyles.Count();
+      var definedTableStylesCount = modelTableStyles.Count(item => item.IsDefined);
+      var customTableStylesCount = modelTableStyles.Count(item => item.IsCustom);
+      WriteLine($"  Document Table Styles: found {modelTableStylesCount}, defined {definedTableStylesCount}, custom {customTableStylesCount}");
+
+      var modelNumStyles = document.Styles.NumberingStyles;
+      var modelNumStylesCount = modelNumStyles.Count();
+      var definedNumStylesCount = modelNumStyles.Count(item => item.IsDefined);
+      var customNumStylesCount = modelNumStyles.Count(item => item.IsCustom);
+      WriteLine($"  Document Numbering Styles: found {modelNumStylesCount}, defined {definedNumStylesCount}, custom {customNumStylesCount}");
+
+      var totalStylesCount = modelParaStylesCount + modelCharStylesCount + modelTableStylesCount + modelNumStylesCount;
+      Assert.That(totalStylesCount, Is.EqualTo(modelAllStylesCount), "Invalid total styles count");
 
       return document.Styles;
     }
