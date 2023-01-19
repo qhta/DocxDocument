@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Latent Style Exception.
 /// </summary>
-public class LatentStyleExceptionInfo
+public partial class LatentStyleExceptionInfo
 {
   /// <summary>
   ///   Primary Style Name
