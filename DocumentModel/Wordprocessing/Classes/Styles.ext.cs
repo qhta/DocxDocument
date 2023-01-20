@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using System.ComponentModel;
 using System.Diagnostics;
 using System.Diagnostics.CodeAnalysis;
@@ -10,11 +11,13 @@ namespace DocumentModel.Wordprocessing;
 public partial class Styles : ICollection<Style>, IDictionary<string, Style>
 {
   private readonly NamedObjectList<Style> _StyleList = null!;
+  private readonly SortedDictionary<string, Style> _StyleIds = null!;
 
   public Styles()
   {
+    _StyleIds = new SortedDictionary<string, Style>();
     _StyleList = new NamedObjectList<Style>(StringComparer.InvariantCultureIgnoreCase);
-    //_StyleList.CollectionChanged += Styles_CollectionChanged;
+    _StyleList.CollectionChanged += Styles_CollectionChanged;
     foreach (var item in BuiltInStyleStubs)
       _StyleList.Add(new Style { Name = item.name, Type = item.kind, Aliases = item.alias });
     Debug.WriteLine($"_AllStylesCount = {AllStyles.Count}");
@@ -31,6 +34,8 @@ public partial class Styles : ICollection<Style>, IDictionary<string, Style>
       }
     }
   }
+
+  public IDictionary<string, Style> StyleIndex => _StyleIds;
 
   public IEnumerable<Style> DefinedStyles => AllStyles.Where(item => item.IsDefined);
   public IEnumerable<Style> ParagraphStyles => AllStyles.Where(item => item.Type==StyleKind.Paragraph);
@@ -79,25 +84,21 @@ public partial class Styles : ICollection<Style>, IDictionary<string, Style>
 
   public void Add(string key, Style value)
   {
-    //((IDictionary<string, Style>)_StyleList).Add(key, value);
     _StyleList.TryAdd(key, value);
   }
 
   public bool ContainsKey(string key)
   {
-    //return ((IDictionary<string, Style>)_StyleList).ContainsKey(key);
     return _StyleList.ContainsKey(key);
   }
 
   public bool Remove(string key)
   {
-    //return ((IDictionary<string, Style>)_StyleList).Remove(key);
     return _StyleList.Remove(key);
   }
 
   public bool TryGetValue(string key, [MaybeNullWhen(false)] out Style value)
   {
-    //return ((IDictionary<string, Style>)_StyleList).TryGetValue(key, out value);
     return _StyleList.TryGetValue(key, out value);
   }
 
@@ -136,14 +137,12 @@ public partial class Styles : ICollection<Style>, IDictionary<string, Style>
     return ((IEnumerable<KeyValuePair<string, Style>>)_StyleList).GetEnumerator();
   }
 
-  private void _StyleListAdd(string name, Style value)
+  private void _StyleIdsAdd(string id, Style value)
   {
-    if (name == "footnote reference")
-      Debug.Assert(true);
-    if (_StyleList.ContainsKey(name))
-      _StyleList[name] = value;
+    if (_StyleIds.ContainsKey(id))
+      _StyleIds[id] = value;
     else
-      _StyleList.Add(name, value);
+      _StyleIds.Add(id, value);
   }
 
   private void Styles_CollectionChanged(object? sender, NotifyCollectionChangedEventArgs args)
@@ -163,12 +162,29 @@ public partial class Styles : ICollection<Style>, IDictionary<string, Style>
         if (args.NewItems != null)
           foreach (var newStyle in args.NewItems.Cast<Style>())
           {
-            var aName = newStyle.Name;
-            if (aName != null)
-              _StyleListAdd(aName, newStyle);
-            if (newStyle.Aliases!=null)
-              foreach (var alias in newStyle.Aliases)
-                _StyleListAdd(alias, newStyle);
+            var id = newStyle.StyleId;
+            if (id != null)
+              _StyleIdsAdd(id, newStyle);
+            newStyle.PropertyChanging += Item_PropertyChanging;
+            newStyle.PropertyChanged += Item_PropertyChanged;
+          }
+        break;
+      case NotifyCollectionChangedAction.Replace:
+        if (args.OldItems != null)
+          foreach (var oldStyle in args.OldItems.Cast<Style>())
+          {
+            var id = oldStyle.StyleId;
+            if (id != null)
+              _StyleIds.Remove(id);
+            oldStyle.PropertyChanging -= Item_PropertyChanging;
+            oldStyle.PropertyChanged -= Item_PropertyChanged;
+          }
+        if (args.NewItems != null)
+          foreach (var newStyle in args.NewItems.Cast<Style>())
+          {
+            var id = newStyle.StyleId;
+            if (id != null)
+              _StyleIdsAdd(id, newStyle);
             newStyle.PropertyChanging += Item_PropertyChanging;
             newStyle.PropertyChanged += Item_PropertyChanged;
           }
@@ -177,10 +193,11 @@ public partial class Styles : ICollection<Style>, IDictionary<string, Style>
         if (args.OldItems != null)
           foreach (var oldStyle in args.OldItems.Cast<Style>())
           {
+            var id = oldStyle.StyleId;
+            if (id != null)
+              _StyleIds.Remove(id);
             oldStyle.PropertyChanging -= Item_PropertyChanging;
             oldStyle.PropertyChanged -= Item_PropertyChanged;
-            if (oldStyle.Name != null)
-              _StyleList.Remove(oldStyle.Name);
           }
         break;
     }
@@ -188,24 +205,24 @@ public partial class Styles : ICollection<Style>, IDictionary<string, Style>
 
   private void Item_PropertyChanging(object? sender, PropertyChangingEventArgs args)
   {
-    if (sender is Style aStyle)
-      if (args.PropertyName == nameof(Style.Name))
-      {
-        var styleName = aStyle.Name;
-        if (styleName != null)
-          _StyleList.Remove(styleName);
-      }
+    //if (sender is Style aStyle)
+    //  if (args.PropertyName == nameof(Style.StyleId))
+    //  {
+    //    var styleName = aStyle.Name;
+    //    if (styleName != null)
+    //      _StyleList.Remove(styleName);
+    //  }
   }
 
   private void Item_PropertyChanged(object? sender, PropertyChangedEventArgs args)
   {
-    if (sender is Style aStyle)
-      if (args.PropertyName == nameof(Style.Name))
-      {
-        var styleName = aStyle.Name;
-        if (styleName != null)
-          _StyleList.Add(styleName, aStyle);
-      }
+    //if (sender is Style aStyle)
+    //  if (args.PropertyName == nameof(Style.Name))
+    //  {
+    //    var styleName = aStyle.Name;
+    //    if (styleName != null)
+    //      _StyleList.Add(styleName, aStyle);
+    //  }
   }
 
   public static List<(string name, StyleKind kind, string? alias)> BuiltInStyleStubs = new()
