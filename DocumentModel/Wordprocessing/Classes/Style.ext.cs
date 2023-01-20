@@ -52,7 +52,8 @@ public partial class Style : INotifyPropertyChanged, INotifyPropertyChanging, IN
     StyleTableProperties != null ||
     StyleTableCellProperties != null ||
     TableStyleConditionalFormattingTableRowProperties != null ||
-    TableStylePropertieses != null;
+    TableStylePropertieses != null ||
+    (this.Type == StyleKind.Numbering) && IsCustom && BasedOn != null;
 
   public bool IsCustom
   {

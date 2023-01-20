@@ -8,12 +8,28 @@ public class NamedObjectList<T> : ICollection<T>, IEnumerable<T>, IDictionary<st
 {
   private readonly SortedDictionary<string, T> _dictionary = null!;
 
-  public NamedObjectList() : this(StringComparer.InvariantCultureIgnoreCase) { }
+  public NamedObjectList()
+  {
+    _dictionary = new SortedDictionary<string, T>();
+  }
 
   public NamedObjectList(IComparer<string> comparer)
   {
     _dictionary = new SortedDictionary<string, T>(comparer);
   }
+
+  public NamedObjectList(Func<string,string> keyFunc)
+  {
+    _dictionary = new SortedDictionary<string, T>();
+    _keyFunc = keyFunc;
+  }
+
+  public NamedObjectList(IComparer<string> comparer, Func<string, string> keyFunc)
+  {
+    _dictionary = new SortedDictionary<string, T>(comparer);
+    _keyFunc = keyFunc;
+  }
+  private Func<string, string>? _keyFunc;
 
   public void Add(T item)
   {
@@ -48,7 +64,9 @@ public class NamedObjectList<T> : ICollection<T>, IEnumerable<T>, IDictionary<st
   {
     if (!TryAdd(name, item))
     {
+      var oldItem = _dictionary[name];
       _dictionary[name] = item;
+      NotifyCollectionChanged(new NotifyCollectionChangedEventArgs(NotifyCollectionChangedAction.Replace, item, oldItem));
       return false;
     }
     return true;
@@ -56,9 +74,12 @@ public class NamedObjectList<T> : ICollection<T>, IEnumerable<T>, IDictionary<st
 
   public bool TryAdd(string name, T item)
   {
+    if (_keyFunc != null)
+      name = _keyFunc(name);
     if (_dictionary.ContainsKey(name))
       return false;
     _dictionary.Add(name, item);
+    NotifyCollectionChanged(new NotifyCollectionChangedEventArgs(NotifyCollectionChangedAction.Add, item));
     return true;
   }
 
@@ -82,10 +103,12 @@ public class NamedObjectList<T> : ICollection<T>, IEnumerable<T>, IDictionary<st
   {
     var name = item.Name;
     var ok = _dictionary.Remove(name);
+    if (ok)
+      NotifyCollectionChanged(new NotifyCollectionChangedEventArgs(NotifyCollectionChangedAction.Remove, null, item));
     var aliasedObject = item as IAliasedObject;
     if (aliasedObject?.Aliases != null)
       foreach (var alias in aliasedObject.Aliases)
-      {
+      { 
         _dictionary.Remove(alias);
       }
     return ok;

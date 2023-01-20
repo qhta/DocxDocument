@@ -123,42 +123,29 @@ namespace DocxDocument.Reader.Test
           WriteLine($"      {++i}. {style.Name}");
         }
       }
+
       var totalStylesCount = modelParaStylesCount + modelCharStylesCount + modelTableStylesCount + modelNumStylesCount;
+      var totalValidStylesCount = validParaStylesCount + validCharStylesCount + validTableStylesCount + validNumStylesCount;
+      var totalDefinedStylesCount = definedParaStylesCount + definedCharStylesCount + definedTableStylesCount + definedNumStylesCount;
+
+      var totalStyleIds = document.Styles.StyleIndex.Count;
+      WriteLine($"  Document Style Ids: found {totalStyleIds}, expected {totalDefinedStylesCount}");
+      if (totalStyleIds != totalDefinedStylesCount)
+      {
+        WriteLine($"    Styles with no Id:");
+        int i = 0;
+        foreach (var style in modelAllStyles.Where(item => item.IsDefined && item.StyleId == null))
+        {
+          WriteLine($"      {++i}. {style.Name}");
+        }
+      }
+
       Assert.That(totalStylesCount, Is.EqualTo(modelAllStylesCount), "Invalid total styles count");
+      Assert.That(totalValidStylesCount, Is.GreaterThanOrEqualTo(totalDefinedStylesCount), "Invalid defined styles found");
+      //Assert.That(totalStyleIds, Is.EqualTo(totalDefinedStylesCount), "Invalid style Ids count");
 
       return document.Styles;
     }
-
-    //[Test]
-    //public void TestPropertiesXmlSerialization()
-    //{
-    //  var extraTypes = Assembly.Load("DocumentModel").GetTypes()
-    //    .Where(item=>item.IsPublic && !item.IsGenericType);
-
-    //  var filename = Path.Combine(TestPath, "CustomProperties.docx");
-    //  var oldProperties = ReadStyles(filename, true);
-    //  var textWriter = new StringWriter();
-    //  var serializer = new QXmlSerializer(typeof(DocumentProperties), extraTypes.ToArray(),
-    //    new SerializationOptions{ AcceptAllProperties = true, });
-    //  serializer.Serialize(textWriter, oldProperties);
-    //  textWriter.Flush();
-    //  string str = textWriter.ToString();
-    //  Debug.WriteLine(str);
-    //  Debug.WriteLine("");
-    //  TestContext.Out.WriteLine(str);
-    //  TestContext.Out.WriteLine();
-
-    //  var textReader = new StringReader(str);
-    //  var newProperties = (DocumentProperties?)serializer.Deserialize(textReader);
-    //  Assert.IsNotNull(newProperties, $"Deserialized properties are null");
-    //  var oldPropertiesCount = oldProperties.Count();
-    //  var newPropertiesCount = newProperties.Count();
-    //  Assert.That(newPropertiesCount, Is.EqualTo(oldPropertiesCount), $"Deserialized properties count different for original");
-    //  var newPropArray = newProperties.ToArray();
-    //  var oldPropArray = newProperties.ToArray();
-    //  for (int i=0; i<oldPropertiesCount; i++)
-    //    Assert.That(newPropArray[i], Is.EqualTo(oldPropArray[i]), $"Deserialized property \"{newPropArray[i].Name}\" different for original");
-    //}
 
   }
 }
