@@ -1,5 +1,7 @@
 using System.ComponentModel;
 
+using DocumentModel.UI;
+
 namespace DocumentModel.Wordprocessing;
 
 public partial class Style : INotifyPropertyChanged, INotifyPropertyChanging, INamedObject, IAliasedObject
@@ -58,7 +60,24 @@ public partial class Style : INotifyPropertyChanged, INotifyPropertyChanging, IN
     set => CustomStyle = value;
   }
 
-  public event PropertyChangedEventHandler? PropertyChanged;
+  public bool IsValid {
+    get
+    {
+      if (IsCustom && BasedOn != null)
+        return true;
+      if (Default == true)
+        return true;
+      return  (this.Type == StyleKind.Paragraph) ? StyleParagraphProperties != null || StyleRunProperties != null :
+              (this.Type == StyleKind.Character) ? StyleRunProperties != null :
+              (this.Type == StyleKind.Table) ? StyleTableProperties != null ||
+                                               StyleTableCellProperties != null ||
+                                               TableStyleConditionalFormattingTableRowProperties != null ||
+                                               TableStylePropertieses != null :
+              (this.Type == StyleKind.Numbering);
+        }
+  }
+
+public event PropertyChangedEventHandler? PropertyChanged;
   public event PropertyChangingEventHandler? PropertyChanging;
 
   public void NotifyPropertyChanging(string propertyName)
@@ -70,4 +89,11 @@ public partial class Style : INotifyPropertyChanged, INotifyPropertyChanging, IN
   {
     PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
   }
+
+
+  public override string ToString()
+  {
+    return $"{Name} ({Type})";
+  }
+
 }
