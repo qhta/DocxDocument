@@ -152,7 +152,9 @@ public static class TableRowPropertiesConverter
   private static Boolean? GetHidden(DocumentFormat.OpenXml.Wordprocessing.TableRowProperties openXmlElement)
   {
     var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.Hidden>();
-    return itemElement != null;
+    if (itemElement?.Val?.Value != null)
+      return itemElement.Val.Value;
+    return null;
   }
   
   private static void SetHidden(DocumentFormat.OpenXml.Wordprocessing.TableRowProperties openXmlElement, Boolean? value)

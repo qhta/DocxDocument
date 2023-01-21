@@ -83,7 +83,9 @@ public static class SettingsConverter
   private static Boolean? GetRemovePersonalInformation(DocumentFormat.OpenXml.Wordprocessing.Settings openXmlElement)
   {
     var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.RemovePersonalInformation>();
-    return itemElement != null;
+    if (itemElement?.Val?.Value != null)
+      return itemElement.Val.Value;
+    return null;
   }
   
   private static void SetRemovePersonalInformation(DocumentFormat.OpenXml.Wordprocessing.Settings openXmlElement, Boolean? value)
@@ -107,7 +109,9 @@ public static class SettingsConverter
   private static Boolean? GetRemoveDateAndTime(DocumentFormat.OpenXml.Wordprocessing.Settings openXmlElement)
   {
     var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.RemoveDateAndTime>();
-    return itemElement != null;
+    if (itemElement?.Val?.Value != null)
+      return itemElement.Val.Value;
+    return null;
   }
   
   private static void SetRemoveDateAndTime(DocumentFormat.OpenXml.Wordprocessing.Settings openXmlElement, Boolean? value)
@@ -131,7 +135,9 @@ public static class SettingsConverter
   private static Boolean? GetDoNotDisplayPageBoundaries(DocumentFormat.OpenXml.Wordprocessing.Settings openXmlElement)
   {
     var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.DoNotDisplayPageBoundaries>();
-    return itemElement != null;
+    if (itemElement?.Val?.Value != null)
+      return itemElement.Val.Value;
+    return null;
   }
   
   private static void SetDoNotDisplayPageBoundaries(DocumentFormat.OpenXml.Wordprocessing.Settings openXmlElement, Boolean? value)
@@ -155,7 +161,9 @@ public static class SettingsConverter
   private static Boolean? GetDisplayBackgroundShape(DocumentFormat.OpenXml.Wordprocessing.Settings openXmlElement)
   {
     var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.DisplayBackgroundShape>();
-    return itemElement != null;
+    if (itemElement?.Val?.Value != null)
+      return itemElement.Val.Value;
+    return null;
   }
   
   private static void SetDisplayBackgroundShape(DocumentFormat.OpenXml.Wordprocessing.Settings openXmlElement, Boolean? value)
@@ -179,7 +187,9 @@ public static class SettingsConverter
   private static Boolean? GetPrintPostScriptOverText(DocumentFormat.OpenXml.Wordprocessing.Settings openXmlElement)
   {
     var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.PrintPostScriptOverText>();
-    return itemElement != null;
+    if (itemElement?.Val?.Value != null)
+      return itemElement.Val.Value;
+    return null;
   }
   
   private static void SetPrintPostScriptOverText(DocumentFormat.OpenXml.Wordprocessing.Settings openXmlElement, Boolean? value)
@@ -203,7 +213,9 @@ public static class SettingsConverter
   private static Boolean? GetPrintFractionalCharacterWidth(DocumentFormat.OpenXml.Wordprocessing.Settings openXmlElement)
   {
     var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.PrintFractionalCharacterWidth>();
-    return itemElement != null;
+    if (itemElement?.Val?.Value != null)
+      return itemElement.Val.Value;
+    return null;
   }
   
   private static void SetPrintFractionalCharacterWidth(DocumentFormat.OpenXml.Wordprocessing.Settings openXmlElement, Boolean? value)
@@ -227,7 +239,9 @@ public static class SettingsConverter
   private static Boolean? GetPrintFormsData(DocumentFormat.OpenXml.Wordprocessing.Settings openXmlElement)
   {
     var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.PrintFormsData>();
-    return itemElement != null;
+    if (itemElement?.Val?.Value != null)
+      return itemElement.Val.Value;
+    return null;
   }
   
   private static void SetPrintFormsData(DocumentFormat.OpenXml.Wordprocessing.Settings openXmlElement, Boolean? value)
@@ -251,7 +265,9 @@ public static class SettingsConverter
   private static Boolean? GetEmbedTrueTypeFonts(DocumentFormat.OpenXml.Wordprocessing.Settings openXmlElement)
   {
     var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.EmbedTrueTypeFonts>();
-    return itemElement != null;
+    if (itemElement?.Val?.Value != null)
+      return itemElement.Val.Value;
+    return null;
   }
   
   private static void SetEmbedTrueTypeFonts(DocumentFormat.OpenXml.Wordprocessing.Settings openXmlElement, Boolean? value)
@@ -275,7 +291,9 @@ public static class SettingsConverter
   private static Boolean? GetEmbedSystemFonts(DocumentFormat.OpenXml.Wordprocessing.Settings openXmlElement)
   {
     var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.EmbedSystemFonts>();
-    return itemElement != null;
+    if (itemElement?.Val?.Value != null)
+      return itemElement.Val.Value;
+    return null;
   }
   
   private static void SetEmbedSystemFonts(DocumentFormat.OpenXml.Wordprocessing.Settings openXmlElement, Boolean? value)
@@ -299,7 +317,9 @@ public static class SettingsConverter
   private static Boolean? GetSaveSubsetFonts(DocumentFormat.OpenXml.Wordprocessing.Settings openXmlElement)
   {
     var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.SaveSubsetFonts>();
-    return itemElement != null;
+    if (itemElement?.Val?.Value != null)
+      return itemElement.Val.Value;
+    return null;
   }
   
   private static void SetSaveSubsetFonts(DocumentFormat.OpenXml.Wordprocessing.Settings openXmlElement, Boolean? value)
@@ -323,7 +343,9 @@ public static class SettingsConverter
   private static Boolean? GetSaveFormsData(DocumentFormat.OpenXml.Wordprocessing.Settings openXmlElement)
   {
     var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.SaveFormsData>();
-    return itemElement != null;
+    if (itemElement?.Val?.Value != null)
+      return itemElement.Val.Value;
+    return null;
   }
   
   private static void SetSaveFormsData(DocumentFormat.OpenXml.Wordprocessing.Settings openXmlElement, Boolean? value)
@@ -347,7 +369,9 @@ public static class SettingsConverter
   private static Boolean? GetMirrorMargins(DocumentFormat.OpenXml.Wordprocessing.Settings openXmlElement)
   {
     var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.MirrorMargins>();
-    return itemElement != null;
+    if (itemElement?.Val?.Value != null)
+      return itemElement.Val.Value;
+    return null;
   }
   
   private static void SetMirrorMargins(DocumentFormat.OpenXml.Wordprocessing.Settings openXmlElement, Boolean? value)
@@ -371,7 +395,9 @@ public static class SettingsConverter
   private static Boolean? GetAlignBorderAndEdges(DocumentFormat.OpenXml.Wordprocessing.Settings openXmlElement)
   {
     var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.AlignBorderAndEdges>();
-    return itemElement != null;
+    if (itemElement?.Val?.Value != null)
+      return itemElement.Val.Value;
+    return null;
   }
   
   private static void SetAlignBorderAndEdges(DocumentFormat.OpenXml.Wordprocessing.Settings openXmlElement, Boolean? value)
@@ -395,7 +421,9 @@ public static class SettingsConverter
   private static Boolean? GetBordersDoNotSurroundHeader(DocumentFormat.OpenXml.Wordprocessing.Settings openXmlElement)
   {
     var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.BordersDoNotSurroundHeader>();
-    return itemElement != null;
+    if (itemElement?.Val?.Value != null)
+      return itemElement.Val.Value;
+    return null;
   }
   
   private static void SetBordersDoNotSurroundHeader(DocumentFormat.OpenXml.Wordprocessing.Settings openXmlElement, Boolean? value)
@@ -419,7 +447,9 @@ public static class SettingsConverter
   private static Boolean? GetBordersDoNotSurroundFooter(DocumentFormat.OpenXml.Wordprocessing.Settings openXmlElement)
   {
     var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.BordersDoNotSurroundFooter>();
-    return itemElement != null;
+    if (itemElement?.Val?.Value != null)
+      return itemElement.Val.Value;
+    return null;
   }
   
   private static void SetBordersDoNotSurroundFooter(DocumentFormat.OpenXml.Wordprocessing.Settings openXmlElement, Boolean? value)
@@ -443,7 +473,9 @@ public static class SettingsConverter
   private static Boolean? GetGutterAtTop(DocumentFormat.OpenXml.Wordprocessing.Settings openXmlElement)
   {
     var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.GutterAtTop>();
-    return itemElement != null;
+    if (itemElement?.Val?.Value != null)
+      return itemElement.Val.Value;
+    return null;
   }
   
   private static void SetGutterAtTop(DocumentFormat.OpenXml.Wordprocessing.Settings openXmlElement, Boolean? value)
@@ -467,7 +499,9 @@ public static class SettingsConverter
   private static Boolean? GetHideSpellingErrors(DocumentFormat.OpenXml.Wordprocessing.Settings openXmlElement)
   {
     var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.HideSpellingErrors>();
-    return itemElement != null;
+    if (itemElement?.Val?.Value != null)
+      return itemElement.Val.Value;
+    return null;
   }
   
   private static void SetHideSpellingErrors(DocumentFormat.OpenXml.Wordprocessing.Settings openXmlElement, Boolean? value)
@@ -491,7 +525,9 @@ public static class SettingsConverter
   private static Boolean? GetHideGrammaticalErrors(DocumentFormat.OpenXml.Wordprocessing.Settings openXmlElement)
   {
     var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.HideGrammaticalErrors>();
-    return itemElement != null;
+    if (itemElement?.Val?.Value != null)
+      return itemElement.Val.Value;
+    return null;
   }
   
   private static void SetHideGrammaticalErrors(DocumentFormat.OpenXml.Wordprocessing.Settings openXmlElement, Boolean? value)
@@ -559,7 +595,9 @@ public static class SettingsConverter
   private static Boolean? GetFormsDesign(DocumentFormat.OpenXml.Wordprocessing.Settings openXmlElement)
   {
     var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.FormsDesign>();
-    return itemElement != null;
+    if (itemElement?.Val?.Value != null)
+      return itemElement.Val.Value;
+    return null;
   }
   
   private static void SetFormsDesign(DocumentFormat.OpenXml.Wordprocessing.Settings openXmlElement, Boolean? value)
@@ -601,7 +639,9 @@ public static class SettingsConverter
   private static Boolean? GetLinkStyles(DocumentFormat.OpenXml.Wordprocessing.Settings openXmlElement)
   {
     var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.LinkStyles>();
-    return itemElement != null;
+    if (itemElement?.Val?.Value != null)
+      return itemElement.Val.Value;
+    return null;
   }
   
   private static void SetLinkStyles(DocumentFormat.OpenXml.Wordprocessing.Settings openXmlElement, Boolean? value)
@@ -726,7 +766,9 @@ public static class SettingsConverter
   private static Boolean? GetTrackRevisions(DocumentFormat.OpenXml.Wordprocessing.Settings openXmlElement)
   {
     var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.TrackRevisions>();
-    return itemElement != null;
+    if (itemElement?.Val?.Value != null)
+      return itemElement.Val.Value;
+    return null;
   }
   
   private static void SetTrackRevisions(DocumentFormat.OpenXml.Wordprocessing.Settings openXmlElement, Boolean? value)
@@ -747,7 +789,9 @@ public static class SettingsConverter
   private static Boolean? GetDoNotTrackMoves(DocumentFormat.OpenXml.Wordprocessing.Settings openXmlElement)
   {
     var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.DoNotTrackMoves>();
-    return itemElement != null;
+    if (itemElement?.Val?.Value != null)
+      return itemElement.Val.Value;
+    return null;
   }
   
   private static void SetDoNotTrackMoves(DocumentFormat.OpenXml.Wordprocessing.Settings openXmlElement, Boolean? value)
@@ -768,7 +812,9 @@ public static class SettingsConverter
   private static Boolean? GetDoNotTrackFormatting(DocumentFormat.OpenXml.Wordprocessing.Settings openXmlElement)
   {
     var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.DoNotTrackFormatting>();
-    return itemElement != null;
+    if (itemElement?.Val?.Value != null)
+      return itemElement.Val.Value;
+    return null;
   }
   
   private static void SetDoNotTrackFormatting(DocumentFormat.OpenXml.Wordprocessing.Settings openXmlElement, Boolean? value)
@@ -810,7 +856,9 @@ public static class SettingsConverter
   private static Boolean? GetAutoFormatOverride(DocumentFormat.OpenXml.Wordprocessing.Settings openXmlElement)
   {
     var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.AutoFormatOverride>();
-    return itemElement != null;
+    if (itemElement?.Val?.Value != null)
+      return itemElement.Val.Value;
+    return null;
   }
   
   private static void SetAutoFormatOverride(DocumentFormat.OpenXml.Wordprocessing.Settings openXmlElement, Boolean? value)
@@ -851,7 +899,9 @@ public static class SettingsConverter
   private static Boolean? GetAutoHyphenation(DocumentFormat.OpenXml.Wordprocessing.Settings openXmlElement)
   {
     var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.AutoHyphenation>();
-    return itemElement != null;
+    if (itemElement?.Val?.Value != null)
+      return itemElement.Val.Value;
+    return null;
   }
   
   private static void SetAutoHyphenation(DocumentFormat.OpenXml.Wordprocessing.Settings openXmlElement, Boolean? value)
@@ -912,7 +962,9 @@ public static class SettingsConverter
   private static Boolean? GetDoNotHyphenateCaps(DocumentFormat.OpenXml.Wordprocessing.Settings openXmlElement)
   {
     var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.DoNotHyphenateCaps>();
-    return itemElement != null;
+    if (itemElement?.Val?.Value != null)
+      return itemElement.Val.Value;
+    return null;
   }
   
   private static void SetDoNotHyphenateCaps(DocumentFormat.OpenXml.Wordprocessing.Settings openXmlElement, Boolean? value)
@@ -933,7 +985,9 @@ public static class SettingsConverter
   private static Boolean? GetShowEnvelope(DocumentFormat.OpenXml.Wordprocessing.Settings openXmlElement)
   {
     var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.ShowEnvelope>();
-    return itemElement != null;
+    if (itemElement?.Val?.Value != null)
+      return itemElement.Val.Value;
+    return null;
   }
   
   private static void SetShowEnvelope(DocumentFormat.OpenXml.Wordprocessing.Settings openXmlElement, Boolean? value)
@@ -1014,7 +1068,9 @@ public static class SettingsConverter
   private static Boolean? GetEvenAndOddHeaders(DocumentFormat.OpenXml.Wordprocessing.Settings openXmlElement)
   {
     var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.EvenAndOddHeaders>();
-    return itemElement != null;
+    if (itemElement?.Val?.Value != null)
+      return itemElement.Val.Value;
+    return null;
   }
   
   private static void SetEvenAndOddHeaders(DocumentFormat.OpenXml.Wordprocessing.Settings openXmlElement, Boolean? value)
@@ -1035,7 +1091,9 @@ public static class SettingsConverter
   private static Boolean? GetBookFoldReversePrinting(DocumentFormat.OpenXml.Wordprocessing.Settings openXmlElement)
   {
     var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.BookFoldReversePrinting>();
-    return itemElement != null;
+    if (itemElement?.Val?.Value != null)
+      return itemElement.Val.Value;
+    return null;
   }
   
   private static void SetBookFoldReversePrinting(DocumentFormat.OpenXml.Wordprocessing.Settings openXmlElement, Boolean? value)
@@ -1056,7 +1114,9 @@ public static class SettingsConverter
   private static Boolean? GetBookFoldPrinting(DocumentFormat.OpenXml.Wordprocessing.Settings openXmlElement)
   {
     var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.BookFoldPrinting>();
-    return itemElement != null;
+    if (itemElement?.Val?.Value != null)
+      return itemElement.Val.Value;
+    return null;
   }
   
   private static void SetBookFoldPrinting(DocumentFormat.OpenXml.Wordprocessing.Settings openXmlElement, Boolean? value)
@@ -1177,7 +1237,9 @@ public static class SettingsConverter
   private static Boolean? GetDoNotUseMarginsForDrawingGridOrigin(DocumentFormat.OpenXml.Wordprocessing.Settings openXmlElement)
   {
     var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.DoNotUseMarginsForDrawingGridOrigin>();
-    return itemElement != null;
+    if (itemElement?.Val?.Value != null)
+      return itemElement.Val.Value;
+    return null;
   }
   
   private static void SetDoNotUseMarginsForDrawingGridOrigin(DocumentFormat.OpenXml.Wordprocessing.Settings openXmlElement, Boolean? value)
@@ -1238,7 +1300,9 @@ public static class SettingsConverter
   private static Boolean? GetDoNotShadeFormData(DocumentFormat.OpenXml.Wordprocessing.Settings openXmlElement)
   {
     var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.DoNotShadeFormData>();
-    return itemElement != null;
+    if (itemElement?.Val?.Value != null)
+      return itemElement.Val.Value;
+    return null;
   }
   
   private static void SetDoNotShadeFormData(DocumentFormat.OpenXml.Wordprocessing.Settings openXmlElement, Boolean? value)
@@ -1259,7 +1323,9 @@ public static class SettingsConverter
   private static Boolean? GetNoPunctuationKerning(DocumentFormat.OpenXml.Wordprocessing.Settings openXmlElement)
   {
     var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.NoPunctuationKerning>();
-    return itemElement != null;
+    if (itemElement?.Val?.Value != null)
+      return itemElement.Val.Value;
+    return null;
   }
   
   private static void SetNoPunctuationKerning(DocumentFormat.OpenXml.Wordprocessing.Settings openXmlElement, Boolean? value)
@@ -1301,7 +1367,9 @@ public static class SettingsConverter
   private static Boolean? GetPrintTwoOnOne(DocumentFormat.OpenXml.Wordprocessing.Settings openXmlElement)
   {
     var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.PrintTwoOnOne>();
-    return itemElement != null;
+    if (itemElement?.Val?.Value != null)
+      return itemElement.Val.Value;
+    return null;
   }
   
   private static void SetPrintTwoOnOne(DocumentFormat.OpenXml.Wordprocessing.Settings openXmlElement, Boolean? value)
@@ -1322,7 +1390,9 @@ public static class SettingsConverter
   private static Boolean? GetStrictFirstAndLastChars(DocumentFormat.OpenXml.Wordprocessing.Settings openXmlElement)
   {
     var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.StrictFirstAndLastChars>();
-    return itemElement != null;
+    if (itemElement?.Val?.Value != null)
+      return itemElement.Val.Value;
+    return null;
   }
   
   private static void SetStrictFirstAndLastChars(DocumentFormat.OpenXml.Wordprocessing.Settings openXmlElement, Boolean? value)
@@ -1385,7 +1455,9 @@ public static class SettingsConverter
   private static Boolean? GetSavePreviewPicture(DocumentFormat.OpenXml.Wordprocessing.Settings openXmlElement)
   {
     var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.SavePreviewPicture>();
-    return itemElement != null;
+    if (itemElement?.Val?.Value != null)
+      return itemElement.Val.Value;
+    return null;
   }
   
   private static void SetSavePreviewPicture(DocumentFormat.OpenXml.Wordprocessing.Settings openXmlElement, Boolean? value)
@@ -1406,7 +1478,9 @@ public static class SettingsConverter
   private static Boolean? GetDoNotValidateAgainstSchema(DocumentFormat.OpenXml.Wordprocessing.Settings openXmlElement)
   {
     var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.DoNotValidateAgainstSchema>();
-    return itemElement != null;
+    if (itemElement?.Val?.Value != null)
+      return itemElement.Val.Value;
+    return null;
   }
   
   private static void SetDoNotValidateAgainstSchema(DocumentFormat.OpenXml.Wordprocessing.Settings openXmlElement, Boolean? value)
@@ -1427,7 +1501,9 @@ public static class SettingsConverter
   private static Boolean? GetSaveInvalidXml(DocumentFormat.OpenXml.Wordprocessing.Settings openXmlElement)
   {
     var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.SaveInvalidXml>();
-    return itemElement != null;
+    if (itemElement?.Val?.Value != null)
+      return itemElement.Val.Value;
+    return null;
   }
   
   private static void SetSaveInvalidXml(DocumentFormat.OpenXml.Wordprocessing.Settings openXmlElement, Boolean? value)
@@ -1448,7 +1524,9 @@ public static class SettingsConverter
   private static Boolean? GetIgnoreMixedContent(DocumentFormat.OpenXml.Wordprocessing.Settings openXmlElement)
   {
     var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.IgnoreMixedContent>();
-    return itemElement != null;
+    if (itemElement?.Val?.Value != null)
+      return itemElement.Val.Value;
+    return null;
   }
   
   private static void SetIgnoreMixedContent(DocumentFormat.OpenXml.Wordprocessing.Settings openXmlElement, Boolean? value)
@@ -1469,7 +1547,9 @@ public static class SettingsConverter
   private static Boolean? GetAlwaysShowPlaceholderText(DocumentFormat.OpenXml.Wordprocessing.Settings openXmlElement)
   {
     var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.AlwaysShowPlaceholderText>();
-    return itemElement != null;
+    if (itemElement?.Val?.Value != null)
+      return itemElement.Val.Value;
+    return null;
   }
   
   private static void SetAlwaysShowPlaceholderText(DocumentFormat.OpenXml.Wordprocessing.Settings openXmlElement, Boolean? value)
@@ -1490,7 +1570,9 @@ public static class SettingsConverter
   private static Boolean? GetDoNotDemarcateInvalidXml(DocumentFormat.OpenXml.Wordprocessing.Settings openXmlElement)
   {
     var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.DoNotDemarcateInvalidXml>();
-    return itemElement != null;
+    if (itemElement?.Val?.Value != null)
+      return itemElement.Val.Value;
+    return null;
   }
   
   private static void SetDoNotDemarcateInvalidXml(DocumentFormat.OpenXml.Wordprocessing.Settings openXmlElement, Boolean? value)
@@ -1511,7 +1593,9 @@ public static class SettingsConverter
   private static Boolean? GetSaveXmlDataOnly(DocumentFormat.OpenXml.Wordprocessing.Settings openXmlElement)
   {
     var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.SaveXmlDataOnly>();
-    return itemElement != null;
+    if (itemElement?.Val?.Value != null)
+      return itemElement.Val.Value;
+    return null;
   }
   
   private static void SetSaveXmlDataOnly(DocumentFormat.OpenXml.Wordprocessing.Settings openXmlElement, Boolean? value)
@@ -1532,7 +1616,9 @@ public static class SettingsConverter
   private static Boolean? GetUseXsltWhenSaving(DocumentFormat.OpenXml.Wordprocessing.Settings openXmlElement)
   {
     var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.UseXsltWhenSaving>();
-    return itemElement != null;
+    if (itemElement?.Val?.Value != null)
+      return itemElement.Val.Value;
+    return null;
   }
   
   private static void SetUseXsltWhenSaving(DocumentFormat.OpenXml.Wordprocessing.Settings openXmlElement, Boolean? value)
@@ -1574,7 +1660,9 @@ public static class SettingsConverter
   private static Boolean? GetShowXmlTags(DocumentFormat.OpenXml.Wordprocessing.Settings openXmlElement)
   {
     var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.ShowXmlTags>();
-    return itemElement != null;
+    if (itemElement?.Val?.Value != null)
+      return itemElement.Val.Value;
+    return null;
   }
   
   private static void SetShowXmlTags(DocumentFormat.OpenXml.Wordprocessing.Settings openXmlElement, Boolean? value)
@@ -1595,7 +1683,9 @@ public static class SettingsConverter
   private static Boolean? GetAlwaysMergeEmptyNamespace(DocumentFormat.OpenXml.Wordprocessing.Settings openXmlElement)
   {
     var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.AlwaysMergeEmptyNamespace>();
-    return itemElement != null;
+    if (itemElement?.Val?.Value != null)
+      return itemElement.Val.Value;
+    return null;
   }
   
   private static void SetAlwaysMergeEmptyNamespace(DocumentFormat.OpenXml.Wordprocessing.Settings openXmlElement, Boolean? value)
@@ -1616,7 +1706,9 @@ public static class SettingsConverter
   private static Boolean? GetUpdateFieldsOnOpen(DocumentFormat.OpenXml.Wordprocessing.Settings openXmlElement)
   {
     var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.UpdateFieldsOnOpen>();
-    return itemElement != null;
+    if (itemElement?.Val?.Value != null)
+      return itemElement.Val.Value;
+    return null;
   }
   
   private static void SetUpdateFieldsOnOpen(DocumentFormat.OpenXml.Wordprocessing.Settings openXmlElement, Boolean? value)
@@ -1784,7 +1876,9 @@ public static class SettingsConverter
   private static Boolean? GetUICompatibleWith97To2003(DocumentFormat.OpenXml.Wordprocessing.Settings openXmlElement)
   {
     var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.UICompatibleWith97To2003>();
-    return itemElement != null;
+    if (itemElement?.Val?.Value != null)
+      return itemElement.Val.Value;
+    return null;
   }
   
   private static void SetUICompatibleWith97To2003(DocumentFormat.OpenXml.Wordprocessing.Settings openXmlElement, Boolean? value)
@@ -1873,7 +1967,9 @@ public static class SettingsConverter
   private static Boolean? GetDoNotIncludeSubdocsInStats(DocumentFormat.OpenXml.Wordprocessing.Settings openXmlElement)
   {
     var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.DoNotIncludeSubdocsInStats>();
-    return itemElement != null;
+    if (itemElement?.Val?.Value != null)
+      return itemElement.Val.Value;
+    return null;
   }
   
   private static void SetDoNotIncludeSubdocsInStats(DocumentFormat.OpenXml.Wordprocessing.Settings openXmlElement, Boolean? value)
@@ -1894,7 +1990,9 @@ public static class SettingsConverter
   private static Boolean? GetDoNotAutoCompressPictures(DocumentFormat.OpenXml.Wordprocessing.Settings openXmlElement)
   {
     var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.DoNotAutoCompressPictures>();
-    return itemElement != null;
+    if (itemElement?.Val?.Value != null)
+      return itemElement.Val.Value;
+    return null;
   }
   
   private static void SetDoNotAutoCompressPictures(DocumentFormat.OpenXml.Wordprocessing.Settings openXmlElement, Boolean? value)

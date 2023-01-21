@@ -152,7 +152,9 @@ public static class PreviousTableRowPropertiesConverter
   private static Boolean? GetHidden(DocumentFormat.OpenXml.Wordprocessing.PreviousTableRowProperties openXmlElement)
   {
     var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.Hidden>();
-    return itemElement != null;
+    if (itemElement?.Val?.Value != null)
+      return itemElement.Val.Value;
+    return null;
   }
   
   private static void SetHidden(DocumentFormat.OpenXml.Wordprocessing.PreviousTableRowProperties openXmlElement, Boolean? value)

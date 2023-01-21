@@ -8,7 +8,9 @@ public static class TableStyleConditionalFormattingTableRowPropertiesConverter
   private static Boolean? GetHidden(DocumentFormat.OpenXml.Wordprocessing.TableStyleConditionalFormattingTableRowProperties openXmlElement)
   {
     var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.Hidden>();
-    return itemElement != null;
+    if (itemElement?.Val?.Value != null)
+      return itemElement.Val.Value;
+    return null;
   }
   
   private static void SetHidden(DocumentFormat.OpenXml.Wordprocessing.TableStyleConditionalFormattingTableRowProperties openXmlElement, Boolean? value)

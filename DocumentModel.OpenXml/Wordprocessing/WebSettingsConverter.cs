@@ -82,7 +82,9 @@ public static class WebSettingsConverter
   private static Boolean? GetOptimizeForBrowser(DocumentFormat.OpenXml.Wordprocessing.WebSettings openXmlElement)
   {
     var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.OptimizeForBrowser>();
-    return itemElement != null;
+    if (itemElement?.Val?.Value != null)
+      return itemElement.Val.Value;
+    return null;
   }
   
   private static void SetOptimizeForBrowser(DocumentFormat.OpenXml.Wordprocessing.WebSettings openXmlElement, Boolean? value)
@@ -106,7 +108,9 @@ public static class WebSettingsConverter
   private static Boolean? GetRelyOnVML(DocumentFormat.OpenXml.Wordprocessing.WebSettings openXmlElement)
   {
     var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.RelyOnVML>();
-    return itemElement != null;
+    if (itemElement?.Val?.Value != null)
+      return itemElement.Val.Value;
+    return null;
   }
   
   private static void SetRelyOnVML(DocumentFormat.OpenXml.Wordprocessing.WebSettings openXmlElement, Boolean? value)
@@ -130,7 +134,9 @@ public static class WebSettingsConverter
   private static Boolean? GetAllowPNG(DocumentFormat.OpenXml.Wordprocessing.WebSettings openXmlElement)
   {
     var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.AllowPNG>();
-    return itemElement != null;
+    if (itemElement?.Val?.Value != null)
+      return itemElement.Val.Value;
+    return null;
   }
   
   private static void SetAllowPNG(DocumentFormat.OpenXml.Wordprocessing.WebSettings openXmlElement, Boolean? value)
@@ -154,7 +160,9 @@ public static class WebSettingsConverter
   private static Boolean? GetDoNotRelyOnCSS(DocumentFormat.OpenXml.Wordprocessing.WebSettings openXmlElement)
   {
     var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.DoNotRelyOnCSS>();
-    return itemElement != null;
+    if (itemElement?.Val?.Value != null)
+      return itemElement.Val.Value;
+    return null;
   }
   
   private static void SetDoNotRelyOnCSS(DocumentFormat.OpenXml.Wordprocessing.WebSettings openXmlElement, Boolean? value)
@@ -178,7 +186,9 @@ public static class WebSettingsConverter
   private static Boolean? GetDoNotSaveAsSingleFile(DocumentFormat.OpenXml.Wordprocessing.WebSettings openXmlElement)
   {
     var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.DoNotSaveAsSingleFile>();
-    return itemElement != null;
+    if (itemElement?.Val?.Value != null)
+      return itemElement.Val.Value;
+    return null;
   }
   
   private static void SetDoNotSaveAsSingleFile(DocumentFormat.OpenXml.Wordprocessing.WebSettings openXmlElement, Boolean? value)
@@ -202,7 +212,9 @@ public static class WebSettingsConverter
   private static Boolean? GetDoNotOrganizeInFolder(DocumentFormat.OpenXml.Wordprocessing.WebSettings openXmlElement)
   {
     var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.DoNotOrganizeInFolder>();
-    return itemElement != null;
+    if (itemElement?.Val?.Value != null)
+      return itemElement.Val.Value;
+    return null;
   }
   
   private static void SetDoNotOrganizeInFolder(DocumentFormat.OpenXml.Wordprocessing.WebSettings openXmlElement, Boolean? value)
@@ -226,7 +238,9 @@ public static class WebSettingsConverter
   private static Boolean? GetDoNotUseLongFileNames(DocumentFormat.OpenXml.Wordprocessing.WebSettings openXmlElement)
   {
     var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.DoNotUseLongFileNames>();
-    return itemElement != null;
+    if (itemElement?.Val?.Value != null)
+      return itemElement.Val.Value;
+    return null;
   }
   
   private static void SetDoNotUseLongFileNames(DocumentFormat.OpenXml.Wordprocessing.WebSettings openXmlElement, Boolean? value)

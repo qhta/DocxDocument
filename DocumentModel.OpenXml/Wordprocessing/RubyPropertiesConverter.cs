@@ -127,7 +127,9 @@ public static class RubyPropertiesConverter
   private static Boolean? GetDirty(DocumentFormat.OpenXml.Wordprocessing.RubyProperties openXmlElement)
   {
     var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.Dirty>();
-    return itemElement != null;
+    if (itemElement?.Val?.Value != null)
+      return itemElement.Val.Value;
+    return null;
   }
   
   private static void SetDirty(DocumentFormat.OpenXml.Wordprocessing.RubyProperties openXmlElement, Boolean? value)

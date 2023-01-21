@@ -48,7 +48,9 @@ public static class SdtContentDocPartObjectConverter
   private static Boolean? GetDocPartUnique(DocumentFormat.OpenXml.Wordprocessing.SdtContentDocPartObject openXmlElement)
   {
     var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.DocPartUnique>();
-    return itemElement != null;
+    if (itemElement?.Val?.Value != null)
+      return itemElement.Val.Value;
+    return null;
   }
   
   private static void SetDocPartUnique(DocumentFormat.OpenXml.Wordprocessing.SdtContentDocPartObject openXmlElement, Boolean? value)

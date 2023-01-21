@@ -300,8 +300,8 @@ public class ConverterGenerator : BaseCodeGenerator
 
   private bool GeneratePropertyGetter(PropInfo prop)
   {
-    //if (prop.Name == "Panose1Number")
-    //  Debug.Assert(true);
+    if (prop.Name == "AdjustRightIndent")
+      Debug.Assert(true);
     var ok = false;
     var origPropName = prop.Name;
     var origTypeName = prop.DeclaringType?.GetFullName(true) ?? "";
@@ -999,6 +999,12 @@ public class ConverterGenerator : BaseCodeGenerator
     if (prop.PropertyType.Type.IsEqualOrSubclassOf(typeof(DocumentFormat.OpenXml.TrueFalseBlankValue)))
       return GenerateBooleanTrueFalseBlankValuePropertyGetCode(prop);
     else
+    if (prop.PropertyType.Type.IsEqualOrSubclassOf(typeof(DocumentFormat.OpenXml.Wordprocessing.OnOffType)))
+      return GenerateBooleanOnOffTypePropertyGetCode(prop);
+    else
+    if (prop.PropertyType.Type.IsEqualOrSubclassOf(typeof(DocumentFormat.OpenXml.Wordprocessing.OnOffOnlyType)))
+      return GenerateBooleanOnOffOnlyTypePropertyGetCode(prop);
+    else
     if (prop.PropertyType.Type.IsEqualOrSubclassOf(typeof(DocumentFormat.OpenXml.TypedOpenXmlLeafElement)))
       return GenerateBooleanTypedOpenXmlLeafElementPropertyGetCode(prop);
 
@@ -1022,6 +1028,12 @@ public class ConverterGenerator : BaseCodeGenerator
     else
     if (prop.PropertyType.Type.IsEqualOrSubclassOf(typeof(DocumentFormat.OpenXml.TrueFalseBlankValue)))
       return GenerateBooleanTrueFalseBlankValuePropertySetCode(prop);
+    else
+    if (prop.PropertyType.Type.IsEqualOrSubclassOf(typeof(DocumentFormat.OpenXml.Wordprocessing.OnOffType)))
+      return GenerateBooleanOnOffTypePropertySetCode(prop);
+    else
+    if (prop.PropertyType.Type.IsEqualOrSubclassOf(typeof(DocumentFormat.OpenXml.Wordprocessing.OnOffOnlyType)))
+      return GenerateBooleanOnOffOnlyTypePropertySetCode(prop);
     else
     if (prop.PropertyType.Type.IsEqualOrSubclassOf(typeof(DocumentFormat.OpenXml.TypedOpenXmlLeafElement)))
       return GenerateBooleanTypedOpenXmlLeafElementPropertySetCode(prop);
@@ -1092,6 +1104,71 @@ public class ConverterGenerator : BaseCodeGenerator
     Writer.WriteLine($"  openXmlElement.{origPropName} = null;");
     return true;
   }
+
+  private bool GenerateBooleanOnOffTypePropertyGetCode(PropInfo prop)
+  {
+    var origPropType = prop.PropertyType;
+    var origPropTypeName = origPropType.GetFullName(true);
+    Writer.WriteLine($"var itemElement = openXmlElement.GetFirstChild<{origPropTypeName}>();");
+    Writer.WriteLine($"if (itemElement?.Val?.Value != null)");
+    Writer.WriteLine($"  return itemElement.Val.Value;");
+    Writer.WriteLine($"return null;");
+    return true;
+  }
+  private bool GenerateBooleanOnOffTypePropertySetCode(PropInfo prop)
+  {
+    //var origPropName = prop.Name;
+    //var origTypeName = prop.DeclaringType?.GetFullName(true) ?? "";
+    var origPropType = prop.PropertyType;
+    var origPropTypeName = origPropType.GetFullName(true);
+    //var targetPropType = prop.PropertyType.GetConversionTarget();
+    //var targetPropTypeName = targetPropType.GetFullName(false);
+    Writer.WriteLine($"if (value == false)");
+    Writer.WriteLine($"{{");
+    Writer.WriteLine($"  var itemElement = openXmlElement.GetFirstChild<{origPropTypeName}>();");
+    Writer.WriteLine($"  if (itemElement != null)");
+    Writer.WriteLine($"    itemElement.Remove();");
+    Writer.WriteLine($"}}");
+    Writer.WriteLine($"if (value == true)");
+    Writer.WriteLine($"{{");
+    Writer.WriteLine($"  var itemElement = new {origPropTypeName}();");
+    Writer.WriteLine($"  openXmlElement.AddChild(itemElement);");
+    Writer.WriteLine($"}}");
+    return true;
+  }
+
+  private bool GenerateBooleanOnOffOnlyTypePropertyGetCode(PropInfo prop)
+  {
+    var origPropType = prop.PropertyType;
+    var origPropTypeName = origPropType.GetFullName(true);
+    Writer.WriteLine($"var itemElement = openXmlElement.GetFirstChild<{origPropTypeName}>();");
+    Writer.WriteLine($"if (itemElement?.Val?.Value != null)");
+    Writer.WriteLine($"  return itemElement.Val.Value;");
+    Writer.WriteLine($"return null;");
+    return true;
+  }
+  private bool GenerateBooleanOnOffOnlyTypePropertySetCode(PropInfo prop)
+  {
+    //var origPropName = prop.Name;
+    //var origTypeName = prop.DeclaringType?.GetFullName(true) ?? "";
+    var origPropType = prop.PropertyType;
+    var origPropTypeName = origPropType.GetFullName(true);
+    //var targetPropType = prop.PropertyType.GetConversionTarget();
+    //var targetPropTypeName = targetPropType.GetFullName(false);
+    Writer.WriteLine($"if (value == false)");
+    Writer.WriteLine($"{{");
+    Writer.WriteLine($"  var itemElement = openXmlElement.GetFirstChild<{origPropTypeName}>();");
+    Writer.WriteLine($"  if (itemElement != null)");
+    Writer.WriteLine($"    itemElement.Remove();");
+    Writer.WriteLine($"}}");
+    Writer.WriteLine($"if (value == true)");
+    Writer.WriteLine($"{{");
+    Writer.WriteLine($"  var itemElement = new {origPropTypeName}();");
+    Writer.WriteLine($"  openXmlElement.AddChild(itemElement);");
+    Writer.WriteLine($"}}");
+    return true;
+  }
+
   private bool GenerateBooleanTypedOpenXmlLeafElementPropertyGetCode(PropInfo prop)
   {
     var origPropType = prop.PropertyType;
@@ -1556,9 +1633,11 @@ public class ConverterGenerator : BaseCodeGenerator
     var filePath = Path.GetDirectoryName(filename) ?? string.Empty;
     if (filePath.EndsWith(@"\Properties"))
       return false;
-    if (File.Exists(Path.ChangeExtension(".cs", ".new.cs")))
+    var newFilename = Path.ChangeExtension(filename, ".new.cs");
+    if (File.Exists(newFilename))
       return false;
-    if (File.Exists(Path.ChangeExtension(".cs", ".ext.cs")))
+    var extFilename = Path.ChangeExtension(filename, ".ext.cs");
+    if (File.Exists(extFilename))
       return false;
     //if (!filename.Contains(@"\Wordprocessing"))
     //  return false;

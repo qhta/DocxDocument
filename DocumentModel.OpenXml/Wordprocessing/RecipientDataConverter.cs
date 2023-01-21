@@ -11,7 +11,9 @@ public static class RecipientDataConverter
   private static Boolean? GetActive(DocumentFormat.OpenXml.Wordprocessing.RecipientData openXmlElement)
   {
     var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.Active>();
-    return itemElement != null;
+    if (itemElement?.Val?.Value != null)
+      return itemElement.Val.Value;
+    return null;
   }
   
   private static void SetActive(DocumentFormat.OpenXml.Wordprocessing.RecipientData openXmlElement, Boolean? value)

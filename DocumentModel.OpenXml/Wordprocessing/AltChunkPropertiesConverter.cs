@@ -11,7 +11,9 @@ public static class AltChunkPropertiesConverter
   private static Boolean? GetMatchSource(DocumentFormat.OpenXml.Wordprocessing.AltChunkProperties openXmlElement)
   {
     var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.MatchSource>();
-    return itemElement != null;
+    if (itemElement?.Val?.Value != null)
+      return itemElement.Val.Value;
+    return null;
   }
   
   private static void SetMatchSource(DocumentFormat.OpenXml.Wordprocessing.AltChunkProperties openXmlElement, Boolean? value)

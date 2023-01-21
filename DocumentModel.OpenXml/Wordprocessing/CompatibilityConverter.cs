@@ -11,7 +11,9 @@ public static class CompatibilityConverter
   private static Boolean? GetUseSingleBorderForContiguousCells(DocumentFormat.OpenXml.Wordprocessing.Compatibility openXmlElement)
   {
     var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.UseSingleBorderForContiguousCells>();
-    return itemElement != null;
+    if (itemElement?.Val?.Value != null)
+      return itemElement.Val.Value;
+    return null;
   }
   
   private static void SetUseSingleBorderForContiguousCells(DocumentFormat.OpenXml.Wordprocessing.Compatibility openXmlElement, Boolean? value)
@@ -35,7 +37,9 @@ public static class CompatibilityConverter
   private static Boolean? GetWordPerfectJustification(DocumentFormat.OpenXml.Wordprocessing.Compatibility openXmlElement)
   {
     var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.WordPerfectJustification>();
-    return itemElement != null;
+    if (itemElement?.Val?.Value != null)
+      return itemElement.Val.Value;
+    return null;
   }
   
   private static void SetWordPerfectJustification(DocumentFormat.OpenXml.Wordprocessing.Compatibility openXmlElement, Boolean? value)
@@ -59,7 +63,9 @@ public static class CompatibilityConverter
   private static Boolean? GetNoTabHangIndent(DocumentFormat.OpenXml.Wordprocessing.Compatibility openXmlElement)
   {
     var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.NoTabHangIndent>();
-    return itemElement != null;
+    if (itemElement?.Val?.Value != null)
+      return itemElement.Val.Value;
+    return null;
   }
   
   private static void SetNoTabHangIndent(DocumentFormat.OpenXml.Wordprocessing.Compatibility openXmlElement, Boolean? value)
@@ -83,7 +89,9 @@ public static class CompatibilityConverter
   private static Boolean? GetNoLeading(DocumentFormat.OpenXml.Wordprocessing.Compatibility openXmlElement)
   {
     var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.NoLeading>();
-    return itemElement != null;
+    if (itemElement?.Val?.Value != null)
+      return itemElement.Val.Value;
+    return null;
   }
   
   private static void SetNoLeading(DocumentFormat.OpenXml.Wordprocessing.Compatibility openXmlElement, Boolean? value)
@@ -107,7 +115,9 @@ public static class CompatibilityConverter
   private static Boolean? GetSpaceForUnderline(DocumentFormat.OpenXml.Wordprocessing.Compatibility openXmlElement)
   {
     var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.SpaceForUnderline>();
-    return itemElement != null;
+    if (itemElement?.Val?.Value != null)
+      return itemElement.Val.Value;
+    return null;
   }
   
   private static void SetSpaceForUnderline(DocumentFormat.OpenXml.Wordprocessing.Compatibility openXmlElement, Boolean? value)
@@ -131,7 +141,9 @@ public static class CompatibilityConverter
   private static Boolean? GetNoColumnBalance(DocumentFormat.OpenXml.Wordprocessing.Compatibility openXmlElement)
   {
     var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.NoColumnBalance>();
-    return itemElement != null;
+    if (itemElement?.Val?.Value != null)
+      return itemElement.Val.Value;
+    return null;
   }
   
   private static void SetNoColumnBalance(DocumentFormat.OpenXml.Wordprocessing.Compatibility openXmlElement, Boolean? value)
@@ -155,7 +167,9 @@ public static class CompatibilityConverter
   private static Boolean? GetBalanceSingleByteDoubleByteWidth(DocumentFormat.OpenXml.Wordprocessing.Compatibility openXmlElement)
   {
     var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.BalanceSingleByteDoubleByteWidth>();
-    return itemElement != null;
+    if (itemElement?.Val?.Value != null)
+      return itemElement.Val.Value;
+    return null;
   }
   
   private static void SetBalanceSingleByteDoubleByteWidth(DocumentFormat.OpenXml.Wordprocessing.Compatibility openXmlElement, Boolean? value)
@@ -179,7 +193,9 @@ public static class CompatibilityConverter
   private static Boolean? GetNoExtraLineSpacing(DocumentFormat.OpenXml.Wordprocessing.Compatibility openXmlElement)
   {
     var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.NoExtraLineSpacing>();
-    return itemElement != null;
+    if (itemElement?.Val?.Value != null)
+      return itemElement.Val.Value;
+    return null;
   }
   
   private static void SetNoExtraLineSpacing(DocumentFormat.OpenXml.Wordprocessing.Compatibility openXmlElement, Boolean? value)
@@ -203,7 +219,9 @@ public static class CompatibilityConverter
   private static Boolean? GetDoNotLeaveBackslashAlone(DocumentFormat.OpenXml.Wordprocessing.Compatibility openXmlElement)
   {
     var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.DoNotLeaveBackslashAlone>();
-    return itemElement != null;
+    if (itemElement?.Val?.Value != null)
+      return itemElement.Val.Value;
+    return null;
   }
   
   private static void SetDoNotLeaveBackslashAlone(DocumentFormat.OpenXml.Wordprocessing.Compatibility openXmlElement, Boolean? value)
@@ -227,7 +245,9 @@ public static class CompatibilityConverter
   private static Boolean? GetUnderlineTrailingSpaces(DocumentFormat.OpenXml.Wordprocessing.Compatibility openXmlElement)
   {
     var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.UnderlineTrailingSpaces>();
-    return itemElement != null;
+    if (itemElement?.Val?.Value != null)
+      return itemElement.Val.Value;
+    return null;
   }
   
   private static void SetUnderlineTrailingSpaces(DocumentFormat.OpenXml.Wordprocessing.Compatibility openXmlElement, Boolean? value)
@@ -251,7 +271,9 @@ public static class CompatibilityConverter
   private static Boolean? GetDoNotExpandShiftReturn(DocumentFormat.OpenXml.Wordprocessing.Compatibility openXmlElement)
   {
     var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.DoNotExpandShiftReturn>();
-    return itemElement != null;
+    if (itemElement?.Val?.Value != null)
+      return itemElement.Val.Value;
+    return null;
   }
   
   private static void SetDoNotExpandShiftReturn(DocumentFormat.OpenXml.Wordprocessing.Compatibility openXmlElement, Boolean? value)
@@ -275,7 +297,9 @@ public static class CompatibilityConverter
   private static Boolean? GetSpacingInWholePoints(DocumentFormat.OpenXml.Wordprocessing.Compatibility openXmlElement)
   {
     var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.SpacingInWholePoints>();
-    return itemElement != null;
+    if (itemElement?.Val?.Value != null)
+      return itemElement.Val.Value;
+    return null;
   }
   
   private static void SetSpacingInWholePoints(DocumentFormat.OpenXml.Wordprocessing.Compatibility openXmlElement, Boolean? value)
@@ -299,7 +323,9 @@ public static class CompatibilityConverter
   private static Boolean? GetLineWrapLikeWord6(DocumentFormat.OpenXml.Wordprocessing.Compatibility openXmlElement)
   {
     var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.LineWrapLikeWord6>();
-    return itemElement != null;
+    if (itemElement?.Val?.Value != null)
+      return itemElement.Val.Value;
+    return null;
   }
   
   private static void SetLineWrapLikeWord6(DocumentFormat.OpenXml.Wordprocessing.Compatibility openXmlElement, Boolean? value)
@@ -323,7 +349,9 @@ public static class CompatibilityConverter
   private static Boolean? GetPrintBodyTextBeforeHeader(DocumentFormat.OpenXml.Wordprocessing.Compatibility openXmlElement)
   {
     var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.PrintBodyTextBeforeHeader>();
-    return itemElement != null;
+    if (itemElement?.Val?.Value != null)
+      return itemElement.Val.Value;
+    return null;
   }
   
   private static void SetPrintBodyTextBeforeHeader(DocumentFormat.OpenXml.Wordprocessing.Compatibility openXmlElement, Boolean? value)
@@ -347,7 +375,9 @@ public static class CompatibilityConverter
   private static Boolean? GetPrintColorBlackWhite(DocumentFormat.OpenXml.Wordprocessing.Compatibility openXmlElement)
   {
     var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.PrintColorBlackWhite>();
-    return itemElement != null;
+    if (itemElement?.Val?.Value != null)
+      return itemElement.Val.Value;
+    return null;
   }
   
   private static void SetPrintColorBlackWhite(DocumentFormat.OpenXml.Wordprocessing.Compatibility openXmlElement, Boolean? value)
@@ -371,7 +401,9 @@ public static class CompatibilityConverter
   private static Boolean? GetWordPerfectSpaceWidth(DocumentFormat.OpenXml.Wordprocessing.Compatibility openXmlElement)
   {
     var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.WordPerfectSpaceWidth>();
-    return itemElement != null;
+    if (itemElement?.Val?.Value != null)
+      return itemElement.Val.Value;
+    return null;
   }
   
   private static void SetWordPerfectSpaceWidth(DocumentFormat.OpenXml.Wordprocessing.Compatibility openXmlElement, Boolean? value)
@@ -395,7 +427,9 @@ public static class CompatibilityConverter
   private static Boolean? GetShowBreaksInFrames(DocumentFormat.OpenXml.Wordprocessing.Compatibility openXmlElement)
   {
     var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.ShowBreaksInFrames>();
-    return itemElement != null;
+    if (itemElement?.Val?.Value != null)
+      return itemElement.Val.Value;
+    return null;
   }
   
   private static void SetShowBreaksInFrames(DocumentFormat.OpenXml.Wordprocessing.Compatibility openXmlElement, Boolean? value)
@@ -419,7 +453,9 @@ public static class CompatibilityConverter
   private static Boolean? GetSubFontBySize(DocumentFormat.OpenXml.Wordprocessing.Compatibility openXmlElement)
   {
     var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.SubFontBySize>();
-    return itemElement != null;
+    if (itemElement?.Val?.Value != null)
+      return itemElement.Val.Value;
+    return null;
   }
   
   private static void SetSubFontBySize(DocumentFormat.OpenXml.Wordprocessing.Compatibility openXmlElement, Boolean? value)
@@ -443,7 +479,9 @@ public static class CompatibilityConverter
   private static Boolean? GetSuppressBottomSpacing(DocumentFormat.OpenXml.Wordprocessing.Compatibility openXmlElement)
   {
     var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.SuppressBottomSpacing>();
-    return itemElement != null;
+    if (itemElement?.Val?.Value != null)
+      return itemElement.Val.Value;
+    return null;
   }
   
   private static void SetSuppressBottomSpacing(DocumentFormat.OpenXml.Wordprocessing.Compatibility openXmlElement, Boolean? value)
@@ -467,7 +505,9 @@ public static class CompatibilityConverter
   private static Boolean? GetSuppressTopSpacing(DocumentFormat.OpenXml.Wordprocessing.Compatibility openXmlElement)
   {
     var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.SuppressTopSpacing>();
-    return itemElement != null;
+    if (itemElement?.Val?.Value != null)
+      return itemElement.Val.Value;
+    return null;
   }
   
   private static void SetSuppressTopSpacing(DocumentFormat.OpenXml.Wordprocessing.Compatibility openXmlElement, Boolean? value)
@@ -491,7 +531,9 @@ public static class CompatibilityConverter
   private static Boolean? GetSuppressSpacingAtTopOfPage(DocumentFormat.OpenXml.Wordprocessing.Compatibility openXmlElement)
   {
     var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.SuppressSpacingAtTopOfPage>();
-    return itemElement != null;
+    if (itemElement?.Val?.Value != null)
+      return itemElement.Val.Value;
+    return null;
   }
   
   private static void SetSuppressSpacingAtTopOfPage(DocumentFormat.OpenXml.Wordprocessing.Compatibility openXmlElement, Boolean? value)
@@ -515,7 +557,9 @@ public static class CompatibilityConverter
   private static Boolean? GetSuppressTopSpacingWordPerfect(DocumentFormat.OpenXml.Wordprocessing.Compatibility openXmlElement)
   {
     var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.SuppressTopSpacingWordPerfect>();
-    return itemElement != null;
+    if (itemElement?.Val?.Value != null)
+      return itemElement.Val.Value;
+    return null;
   }
   
   private static void SetSuppressTopSpacingWordPerfect(DocumentFormat.OpenXml.Wordprocessing.Compatibility openXmlElement, Boolean? value)
@@ -539,7 +583,9 @@ public static class CompatibilityConverter
   private static Boolean? GetSuppressSpacingBeforeAfterPageBreak(DocumentFormat.OpenXml.Wordprocessing.Compatibility openXmlElement)
   {
     var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.SuppressSpacingBeforeAfterPageBreak>();
-    return itemElement != null;
+    if (itemElement?.Val?.Value != null)
+      return itemElement.Val.Value;
+    return null;
   }
   
   private static void SetSuppressSpacingBeforeAfterPageBreak(DocumentFormat.OpenXml.Wordprocessing.Compatibility openXmlElement, Boolean? value)
@@ -563,7 +609,9 @@ public static class CompatibilityConverter
   private static Boolean? GetSwapBordersFacingPages(DocumentFormat.OpenXml.Wordprocessing.Compatibility openXmlElement)
   {
     var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.SwapBordersFacingPages>();
-    return itemElement != null;
+    if (itemElement?.Val?.Value != null)
+      return itemElement.Val.Value;
+    return null;
   }
   
   private static void SetSwapBordersFacingPages(DocumentFormat.OpenXml.Wordprocessing.Compatibility openXmlElement, Boolean? value)
@@ -587,7 +635,9 @@ public static class CompatibilityConverter
   private static Boolean? GetConvertMailMergeEscape(DocumentFormat.OpenXml.Wordprocessing.Compatibility openXmlElement)
   {
     var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.ConvertMailMergeEscape>();
-    return itemElement != null;
+    if (itemElement?.Val?.Value != null)
+      return itemElement.Val.Value;
+    return null;
   }
   
   private static void SetConvertMailMergeEscape(DocumentFormat.OpenXml.Wordprocessing.Compatibility openXmlElement, Boolean? value)
@@ -611,7 +661,9 @@ public static class CompatibilityConverter
   private static Boolean? GetTruncateFontHeightsLikeWordPerfect(DocumentFormat.OpenXml.Wordprocessing.Compatibility openXmlElement)
   {
     var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.TruncateFontHeightsLikeWordPerfect>();
-    return itemElement != null;
+    if (itemElement?.Val?.Value != null)
+      return itemElement.Val.Value;
+    return null;
   }
   
   private static void SetTruncateFontHeightsLikeWordPerfect(DocumentFormat.OpenXml.Wordprocessing.Compatibility openXmlElement, Boolean? value)
@@ -635,7 +687,9 @@ public static class CompatibilityConverter
   private static Boolean? GetMacWordSmallCaps(DocumentFormat.OpenXml.Wordprocessing.Compatibility openXmlElement)
   {
     var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.MacWordSmallCaps>();
-    return itemElement != null;
+    if (itemElement?.Val?.Value != null)
+      return itemElement.Val.Value;
+    return null;
   }
   
   private static void SetMacWordSmallCaps(DocumentFormat.OpenXml.Wordprocessing.Compatibility openXmlElement, Boolean? value)
@@ -659,7 +713,9 @@ public static class CompatibilityConverter
   private static Boolean? GetUsePrinterMetrics(DocumentFormat.OpenXml.Wordprocessing.Compatibility openXmlElement)
   {
     var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.UsePrinterMetrics>();
-    return itemElement != null;
+    if (itemElement?.Val?.Value != null)
+      return itemElement.Val.Value;
+    return null;
   }
   
   private static void SetUsePrinterMetrics(DocumentFormat.OpenXml.Wordprocessing.Compatibility openXmlElement, Boolean? value)
@@ -683,7 +739,9 @@ public static class CompatibilityConverter
   private static Boolean? GetDoNotSuppressParagraphBorders(DocumentFormat.OpenXml.Wordprocessing.Compatibility openXmlElement)
   {
     var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.DoNotSuppressParagraphBorders>();
-    return itemElement != null;
+    if (itemElement?.Val?.Value != null)
+      return itemElement.Val.Value;
+    return null;
   }
   
   private static void SetDoNotSuppressParagraphBorders(DocumentFormat.OpenXml.Wordprocessing.Compatibility openXmlElement, Boolean? value)
@@ -707,7 +765,9 @@ public static class CompatibilityConverter
   private static Boolean? GetWrapTrailSpaces(DocumentFormat.OpenXml.Wordprocessing.Compatibility openXmlElement)
   {
     var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.WrapTrailSpaces>();
-    return itemElement != null;
+    if (itemElement?.Val?.Value != null)
+      return itemElement.Val.Value;
+    return null;
   }
   
   private static void SetWrapTrailSpaces(DocumentFormat.OpenXml.Wordprocessing.Compatibility openXmlElement, Boolean? value)
@@ -731,7 +791,9 @@ public static class CompatibilityConverter
   private static Boolean? GetFootnoteLayoutLikeWord8(DocumentFormat.OpenXml.Wordprocessing.Compatibility openXmlElement)
   {
     var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.FootnoteLayoutLikeWord8>();
-    return itemElement != null;
+    if (itemElement?.Val?.Value != null)
+      return itemElement.Val.Value;
+    return null;
   }
   
   private static void SetFootnoteLayoutLikeWord8(DocumentFormat.OpenXml.Wordprocessing.Compatibility openXmlElement, Boolean? value)
@@ -755,7 +817,9 @@ public static class CompatibilityConverter
   private static Boolean? GetShapeLayoutLikeWord8(DocumentFormat.OpenXml.Wordprocessing.Compatibility openXmlElement)
   {
     var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.ShapeLayoutLikeWord8>();
-    return itemElement != null;
+    if (itemElement?.Val?.Value != null)
+      return itemElement.Val.Value;
+    return null;
   }
   
   private static void SetShapeLayoutLikeWord8(DocumentFormat.OpenXml.Wordprocessing.Compatibility openXmlElement, Boolean? value)
@@ -779,7 +843,9 @@ public static class CompatibilityConverter
   private static Boolean? GetAlignTablesRowByRow(DocumentFormat.OpenXml.Wordprocessing.Compatibility openXmlElement)
   {
     var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.AlignTablesRowByRow>();
-    return itemElement != null;
+    if (itemElement?.Val?.Value != null)
+      return itemElement.Val.Value;
+    return null;
   }
   
   private static void SetAlignTablesRowByRow(DocumentFormat.OpenXml.Wordprocessing.Compatibility openXmlElement, Boolean? value)
@@ -803,7 +869,9 @@ public static class CompatibilityConverter
   private static Boolean? GetForgetLastTabAlignment(DocumentFormat.OpenXml.Wordprocessing.Compatibility openXmlElement)
   {
     var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.ForgetLastTabAlignment>();
-    return itemElement != null;
+    if (itemElement?.Val?.Value != null)
+      return itemElement.Val.Value;
+    return null;
   }
   
   private static void SetForgetLastTabAlignment(DocumentFormat.OpenXml.Wordprocessing.Compatibility openXmlElement, Boolean? value)
@@ -827,7 +895,9 @@ public static class CompatibilityConverter
   private static Boolean? GetAdjustLineHeightInTable(DocumentFormat.OpenXml.Wordprocessing.Compatibility openXmlElement)
   {
     var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.AdjustLineHeightInTable>();
-    return itemElement != null;
+    if (itemElement?.Val?.Value != null)
+      return itemElement.Val.Value;
+    return null;
   }
   
   private static void SetAdjustLineHeightInTable(DocumentFormat.OpenXml.Wordprocessing.Compatibility openXmlElement, Boolean? value)
@@ -851,7 +921,9 @@ public static class CompatibilityConverter
   private static Boolean? GetAutoSpaceLikeWord95(DocumentFormat.OpenXml.Wordprocessing.Compatibility openXmlElement)
   {
     var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.AutoSpaceLikeWord95>();
-    return itemElement != null;
+    if (itemElement?.Val?.Value != null)
+      return itemElement.Val.Value;
+    return null;
   }
   
   private static void SetAutoSpaceLikeWord95(DocumentFormat.OpenXml.Wordprocessing.Compatibility openXmlElement, Boolean? value)
@@ -875,7 +947,9 @@ public static class CompatibilityConverter
   private static Boolean? GetNoSpaceRaiseLower(DocumentFormat.OpenXml.Wordprocessing.Compatibility openXmlElement)
   {
     var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.NoSpaceRaiseLower>();
-    return itemElement != null;
+    if (itemElement?.Val?.Value != null)
+      return itemElement.Val.Value;
+    return null;
   }
   
   private static void SetNoSpaceRaiseLower(DocumentFormat.OpenXml.Wordprocessing.Compatibility openXmlElement, Boolean? value)
@@ -899,7 +973,9 @@ public static class CompatibilityConverter
   private static Boolean? GetDoNotUseHTMLParagraphAutoSpacing(DocumentFormat.OpenXml.Wordprocessing.Compatibility openXmlElement)
   {
     var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.DoNotUseHTMLParagraphAutoSpacing>();
-    return itemElement != null;
+    if (itemElement?.Val?.Value != null)
+      return itemElement.Val.Value;
+    return null;
   }
   
   private static void SetDoNotUseHTMLParagraphAutoSpacing(DocumentFormat.OpenXml.Wordprocessing.Compatibility openXmlElement, Boolean? value)
@@ -923,7 +999,9 @@ public static class CompatibilityConverter
   private static Boolean? GetLayoutRawTableWidth(DocumentFormat.OpenXml.Wordprocessing.Compatibility openXmlElement)
   {
     var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.LayoutRawTableWidth>();
-    return itemElement != null;
+    if (itemElement?.Val?.Value != null)
+      return itemElement.Val.Value;
+    return null;
   }
   
   private static void SetLayoutRawTableWidth(DocumentFormat.OpenXml.Wordprocessing.Compatibility openXmlElement, Boolean? value)
@@ -947,7 +1025,9 @@ public static class CompatibilityConverter
   private static Boolean? GetLayoutTableRowsApart(DocumentFormat.OpenXml.Wordprocessing.Compatibility openXmlElement)
   {
     var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.LayoutTableRowsApart>();
-    return itemElement != null;
+    if (itemElement?.Val?.Value != null)
+      return itemElement.Val.Value;
+    return null;
   }
   
   private static void SetLayoutTableRowsApart(DocumentFormat.OpenXml.Wordprocessing.Compatibility openXmlElement, Boolean? value)
@@ -971,7 +1051,9 @@ public static class CompatibilityConverter
   private static Boolean? GetUseWord97LineBreakRules(DocumentFormat.OpenXml.Wordprocessing.Compatibility openXmlElement)
   {
     var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.UseWord97LineBreakRules>();
-    return itemElement != null;
+    if (itemElement?.Val?.Value != null)
+      return itemElement.Val.Value;
+    return null;
   }
   
   private static void SetUseWord97LineBreakRules(DocumentFormat.OpenXml.Wordprocessing.Compatibility openXmlElement, Boolean? value)
@@ -995,7 +1077,9 @@ public static class CompatibilityConverter
   private static Boolean? GetDoNotBreakWrappedTables(DocumentFormat.OpenXml.Wordprocessing.Compatibility openXmlElement)
   {
     var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.DoNotBreakWrappedTables>();
-    return itemElement != null;
+    if (itemElement?.Val?.Value != null)
+      return itemElement.Val.Value;
+    return null;
   }
   
   private static void SetDoNotBreakWrappedTables(DocumentFormat.OpenXml.Wordprocessing.Compatibility openXmlElement, Boolean? value)
@@ -1019,7 +1103,9 @@ public static class CompatibilityConverter
   private static Boolean? GetDoNotSnapToGridInCell(DocumentFormat.OpenXml.Wordprocessing.Compatibility openXmlElement)
   {
     var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.DoNotSnapToGridInCell>();
-    return itemElement != null;
+    if (itemElement?.Val?.Value != null)
+      return itemElement.Val.Value;
+    return null;
   }
   
   private static void SetDoNotSnapToGridInCell(DocumentFormat.OpenXml.Wordprocessing.Compatibility openXmlElement, Boolean? value)
@@ -1043,7 +1129,9 @@ public static class CompatibilityConverter
   private static Boolean? GetSelectFieldWithFirstOrLastChar(DocumentFormat.OpenXml.Wordprocessing.Compatibility openXmlElement)
   {
     var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.SelectFieldWithFirstOrLastChar>();
-    return itemElement != null;
+    if (itemElement?.Val?.Value != null)
+      return itemElement.Val.Value;
+    return null;
   }
   
   private static void SetSelectFieldWithFirstOrLastChar(DocumentFormat.OpenXml.Wordprocessing.Compatibility openXmlElement, Boolean? value)
@@ -1067,7 +1155,9 @@ public static class CompatibilityConverter
   private static Boolean? GetApplyBreakingRules(DocumentFormat.OpenXml.Wordprocessing.Compatibility openXmlElement)
   {
     var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.ApplyBreakingRules>();
-    return itemElement != null;
+    if (itemElement?.Val?.Value != null)
+      return itemElement.Val.Value;
+    return null;
   }
   
   private static void SetApplyBreakingRules(DocumentFormat.OpenXml.Wordprocessing.Compatibility openXmlElement, Boolean? value)
@@ -1091,7 +1181,9 @@ public static class CompatibilityConverter
   private static Boolean? GetDoNotWrapTextWithPunctuation(DocumentFormat.OpenXml.Wordprocessing.Compatibility openXmlElement)
   {
     var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.DoNotWrapTextWithPunctuation>();
-    return itemElement != null;
+    if (itemElement?.Val?.Value != null)
+      return itemElement.Val.Value;
+    return null;
   }
   
   private static void SetDoNotWrapTextWithPunctuation(DocumentFormat.OpenXml.Wordprocessing.Compatibility openXmlElement, Boolean? value)
@@ -1115,7 +1207,9 @@ public static class CompatibilityConverter
   private static Boolean? GetDoNotUseEastAsianBreakRules(DocumentFormat.OpenXml.Wordprocessing.Compatibility openXmlElement)
   {
     var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.DoNotUseEastAsianBreakRules>();
-    return itemElement != null;
+    if (itemElement?.Val?.Value != null)
+      return itemElement.Val.Value;
+    return null;
   }
   
   private static void SetDoNotUseEastAsianBreakRules(DocumentFormat.OpenXml.Wordprocessing.Compatibility openXmlElement, Boolean? value)
@@ -1139,7 +1233,9 @@ public static class CompatibilityConverter
   private static Boolean? GetUseWord2002TableStyleRules(DocumentFormat.OpenXml.Wordprocessing.Compatibility openXmlElement)
   {
     var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.UseWord2002TableStyleRules>();
-    return itemElement != null;
+    if (itemElement?.Val?.Value != null)
+      return itemElement.Val.Value;
+    return null;
   }
   
   private static void SetUseWord2002TableStyleRules(DocumentFormat.OpenXml.Wordprocessing.Compatibility openXmlElement, Boolean? value)
@@ -1163,7 +1259,9 @@ public static class CompatibilityConverter
   private static Boolean? GetGrowAutofit(DocumentFormat.OpenXml.Wordprocessing.Compatibility openXmlElement)
   {
     var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.GrowAutofit>();
-    return itemElement != null;
+    if (itemElement?.Val?.Value != null)
+      return itemElement.Val.Value;
+    return null;
   }
   
   private static void SetGrowAutofit(DocumentFormat.OpenXml.Wordprocessing.Compatibility openXmlElement, Boolean? value)
@@ -1187,7 +1285,9 @@ public static class CompatibilityConverter
   private static Boolean? GetUseFarEastLayout(DocumentFormat.OpenXml.Wordprocessing.Compatibility openXmlElement)
   {
     var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.UseFarEastLayout>();
-    return itemElement != null;
+    if (itemElement?.Val?.Value != null)
+      return itemElement.Val.Value;
+    return null;
   }
   
   private static void SetUseFarEastLayout(DocumentFormat.OpenXml.Wordprocessing.Compatibility openXmlElement, Boolean? value)
@@ -1211,7 +1311,9 @@ public static class CompatibilityConverter
   private static Boolean? GetUseNormalStyleForList(DocumentFormat.OpenXml.Wordprocessing.Compatibility openXmlElement)
   {
     var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.UseNormalStyleForList>();
-    return itemElement != null;
+    if (itemElement?.Val?.Value != null)
+      return itemElement.Val.Value;
+    return null;
   }
   
   private static void SetUseNormalStyleForList(DocumentFormat.OpenXml.Wordprocessing.Compatibility openXmlElement, Boolean? value)
@@ -1235,7 +1337,9 @@ public static class CompatibilityConverter
   private static Boolean? GetDoNotUseIndentAsNumberingTabStop(DocumentFormat.OpenXml.Wordprocessing.Compatibility openXmlElement)
   {
     var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.DoNotUseIndentAsNumberingTabStop>();
-    return itemElement != null;
+    if (itemElement?.Val?.Value != null)
+      return itemElement.Val.Value;
+    return null;
   }
   
   private static void SetDoNotUseIndentAsNumberingTabStop(DocumentFormat.OpenXml.Wordprocessing.Compatibility openXmlElement, Boolean? value)
@@ -1259,7 +1363,9 @@ public static class CompatibilityConverter
   private static Boolean? GetUseAltKinsokuLineBreakRules(DocumentFormat.OpenXml.Wordprocessing.Compatibility openXmlElement)
   {
     var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.UseAltKinsokuLineBreakRules>();
-    return itemElement != null;
+    if (itemElement?.Val?.Value != null)
+      return itemElement.Val.Value;
+    return null;
   }
   
   private static void SetUseAltKinsokuLineBreakRules(DocumentFormat.OpenXml.Wordprocessing.Compatibility openXmlElement, Boolean? value)
@@ -1283,7 +1389,9 @@ public static class CompatibilityConverter
   private static Boolean? GetAllowSpaceOfSameStyleInTable(DocumentFormat.OpenXml.Wordprocessing.Compatibility openXmlElement)
   {
     var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.AllowSpaceOfSameStyleInTable>();
-    return itemElement != null;
+    if (itemElement?.Val?.Value != null)
+      return itemElement.Val.Value;
+    return null;
   }
   
   private static void SetAllowSpaceOfSameStyleInTable(DocumentFormat.OpenXml.Wordprocessing.Compatibility openXmlElement, Boolean? value)
@@ -1307,7 +1415,9 @@ public static class CompatibilityConverter
   private static Boolean? GetDoNotSuppressIndentation(DocumentFormat.OpenXml.Wordprocessing.Compatibility openXmlElement)
   {
     var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.DoNotSuppressIndentation>();
-    return itemElement != null;
+    if (itemElement?.Val?.Value != null)
+      return itemElement.Val.Value;
+    return null;
   }
   
   private static void SetDoNotSuppressIndentation(DocumentFormat.OpenXml.Wordprocessing.Compatibility openXmlElement, Boolean? value)
@@ -1331,7 +1441,9 @@ public static class CompatibilityConverter
   private static Boolean? GetDoNotAutofitConstrainedTables(DocumentFormat.OpenXml.Wordprocessing.Compatibility openXmlElement)
   {
     var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.DoNotAutofitConstrainedTables>();
-    return itemElement != null;
+    if (itemElement?.Val?.Value != null)
+      return itemElement.Val.Value;
+    return null;
   }
   
   private static void SetDoNotAutofitConstrainedTables(DocumentFormat.OpenXml.Wordprocessing.Compatibility openXmlElement, Boolean? value)
@@ -1355,7 +1467,9 @@ public static class CompatibilityConverter
   private static Boolean? GetAutofitToFirstFixedWidthCell(DocumentFormat.OpenXml.Wordprocessing.Compatibility openXmlElement)
   {
     var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.AutofitToFirstFixedWidthCell>();
-    return itemElement != null;
+    if (itemElement?.Val?.Value != null)
+      return itemElement.Val.Value;
+    return null;
   }
   
   private static void SetAutofitToFirstFixedWidthCell(DocumentFormat.OpenXml.Wordprocessing.Compatibility openXmlElement, Boolean? value)
@@ -1379,7 +1493,9 @@ public static class CompatibilityConverter
   private static Boolean? GetUnderlineTabInNumberingList(DocumentFormat.OpenXml.Wordprocessing.Compatibility openXmlElement)
   {
     var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.UnderlineTabInNumberingList>();
-    return itemElement != null;
+    if (itemElement?.Val?.Value != null)
+      return itemElement.Val.Value;
+    return null;
   }
   
   private static void SetUnderlineTabInNumberingList(DocumentFormat.OpenXml.Wordprocessing.Compatibility openXmlElement, Boolean? value)
@@ -1403,7 +1519,9 @@ public static class CompatibilityConverter
   private static Boolean? GetDisplayHangulFixedWidth(DocumentFormat.OpenXml.Wordprocessing.Compatibility openXmlElement)
   {
     var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.DisplayHangulFixedWidth>();
-    return itemElement != null;
+    if (itemElement?.Val?.Value != null)
+      return itemElement.Val.Value;
+    return null;
   }
   
   private static void SetDisplayHangulFixedWidth(DocumentFormat.OpenXml.Wordprocessing.Compatibility openXmlElement, Boolean? value)
@@ -1427,7 +1545,9 @@ public static class CompatibilityConverter
   private static Boolean? GetSplitPageBreakAndParagraphMark(DocumentFormat.OpenXml.Wordprocessing.Compatibility openXmlElement)
   {
     var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.SplitPageBreakAndParagraphMark>();
-    return itemElement != null;
+    if (itemElement?.Val?.Value != null)
+      return itemElement.Val.Value;
+    return null;
   }
   
   private static void SetSplitPageBreakAndParagraphMark(DocumentFormat.OpenXml.Wordprocessing.Compatibility openXmlElement, Boolean? value)
@@ -1451,7 +1571,9 @@ public static class CompatibilityConverter
   private static Boolean? GetDoNotVerticallyAlignCellWithShape(DocumentFormat.OpenXml.Wordprocessing.Compatibility openXmlElement)
   {
     var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.DoNotVerticallyAlignCellWithShape>();
-    return itemElement != null;
+    if (itemElement?.Val?.Value != null)
+      return itemElement.Val.Value;
+    return null;
   }
   
   private static void SetDoNotVerticallyAlignCellWithShape(DocumentFormat.OpenXml.Wordprocessing.Compatibility openXmlElement, Boolean? value)
@@ -1475,7 +1597,9 @@ public static class CompatibilityConverter
   private static Boolean? GetDoNotBreakConstrainedForcedTable(DocumentFormat.OpenXml.Wordprocessing.Compatibility openXmlElement)
   {
     var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.DoNotBreakConstrainedForcedTable>();
-    return itemElement != null;
+    if (itemElement?.Val?.Value != null)
+      return itemElement.Val.Value;
+    return null;
   }
   
   private static void SetDoNotBreakConstrainedForcedTable(DocumentFormat.OpenXml.Wordprocessing.Compatibility openXmlElement, Boolean? value)
@@ -1499,7 +1623,9 @@ public static class CompatibilityConverter
   private static Boolean? GetDoNotVerticallyAlignInTextBox(DocumentFormat.OpenXml.Wordprocessing.Compatibility openXmlElement)
   {
     var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.DoNotVerticallyAlignInTextBox>();
-    return itemElement != null;
+    if (itemElement?.Val?.Value != null)
+      return itemElement.Val.Value;
+    return null;
   }
   
   private static void SetDoNotVerticallyAlignInTextBox(DocumentFormat.OpenXml.Wordprocessing.Compatibility openXmlElement, Boolean? value)
@@ -1523,7 +1649,9 @@ public static class CompatibilityConverter
   private static Boolean? GetUseAnsiKerningPairs(DocumentFormat.OpenXml.Wordprocessing.Compatibility openXmlElement)
   {
     var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.UseAnsiKerningPairs>();
-    return itemElement != null;
+    if (itemElement?.Val?.Value != null)
+      return itemElement.Val.Value;
+    return null;
   }
   
   private static void SetUseAnsiKerningPairs(DocumentFormat.OpenXml.Wordprocessing.Compatibility openXmlElement, Boolean? value)
@@ -1547,7 +1675,9 @@ public static class CompatibilityConverter
   private static Boolean? GetCachedColumnBalance(DocumentFormat.OpenXml.Wordprocessing.Compatibility openXmlElement)
   {
     var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.CachedColumnBalance>();
-    return itemElement != null;
+    if (itemElement?.Val?.Value != null)
+      return itemElement.Val.Value;
+    return null;
   }
   
   private static void SetCachedColumnBalance(DocumentFormat.OpenXml.Wordprocessing.Compatibility openXmlElement, Boolean? value)
