@@ -8,221 +8,221 @@ public static class SchemeColorConverter
   /// <summary>
   /// val, this property is only available in Office 2010 and later.
   /// </summary>
-  private static DocumentModel.Wordprocessing.SchemeColorKind? GetVal(DocumentFormat.OpenXml.Office2010.Word.SchemeColor openXmlElement)
+  private static DMW.SchemeColorKind? GetVal(DXO2010W.SchemeColor openXmlElement)
   {
-    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Office2010.Word.SchemeColorValues, DocumentModel.Wordprocessing.SchemeColorKind>(openXmlElement?.Val?.Value);
+    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Office2010.Word.SchemeColorValues, DMW.SchemeColorKind>(openXmlElement?.Val?.Value);
   }
   
-  private static void SetVal(DocumentFormat.OpenXml.Office2010.Word.SchemeColor openXmlElement, DocumentModel.Wordprocessing.SchemeColorKind? value)
+  private static void SetVal(DXO2010W.SchemeColor openXmlElement, DMW.SchemeColorKind? value)
   {
-    openXmlElement.Val = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Office2010.Word.SchemeColorValues, DocumentModel.Wordprocessing.SchemeColorKind>(value);
+    openXmlElement.Val = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Office2010.Word.SchemeColorValues, DMW.SchemeColorKind>(value);
   }
   
-  private static Int32? GetTint(DocumentFormat.OpenXml.Office2010.Word.SchemeColor openXmlElement)
+  private static Int32? GetTint(DXO2010W.SchemeColor openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office2010.Word.Tint>();
+    var itemElement = openXmlElement?.GetFirstChild<DXO2010W.Tint>();
     if (itemElement != null)
       return itemElement.Val?.Value;
     return null;
   }
   
-  private static void SetTint(DocumentFormat.OpenXml.Office2010.Word.SchemeColor openXmlElement, Int32? value)
+  private static void SetTint(DXO2010W.SchemeColor openXmlElement, Int32? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2010.Word.Tint>();
+    var itemElement = openXmlElement.GetFirstChild<DXO2010W.Tint>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = new DocumentFormat.OpenXml.Office2010.Word.Tint{ Val = value };
+      itemElement = new DXO2010W.Tint{ Val = value };
       openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static Int32? GetShade(DocumentFormat.OpenXml.Office2010.Word.SchemeColor openXmlElement)
+  private static Int32? GetShade(DXO2010W.SchemeColor openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office2010.Word.Shade>();
+    var itemElement = openXmlElement?.GetFirstChild<DXO2010W.Shade>();
     if (itemElement != null)
       return itemElement.Val?.Value;
     return null;
   }
   
-  private static void SetShade(DocumentFormat.OpenXml.Office2010.Word.SchemeColor openXmlElement, Int32? value)
+  private static void SetShade(DXO2010W.SchemeColor openXmlElement, Int32? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2010.Word.Shade>();
+    var itemElement = openXmlElement.GetFirstChild<DXO2010W.Shade>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = new DocumentFormat.OpenXml.Office2010.Word.Shade{ Val = value };
+      itemElement = new DXO2010W.Shade{ Val = value };
       openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static Int32? GetAlpha(DocumentFormat.OpenXml.Office2010.Word.SchemeColor openXmlElement)
+  private static Int32? GetAlpha(DXO2010W.SchemeColor openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office2010.Word.Alpha>();
+    var itemElement = openXmlElement?.GetFirstChild<DXO2010W.Alpha>();
     if (itemElement != null)
       return itemElement.Val?.Value;
     return null;
   }
   
-  private static void SetAlpha(DocumentFormat.OpenXml.Office2010.Word.SchemeColor openXmlElement, Int32? value)
+  private static void SetAlpha(DXO2010W.SchemeColor openXmlElement, Int32? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2010.Word.Alpha>();
+    var itemElement = openXmlElement.GetFirstChild<DXO2010W.Alpha>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = new DocumentFormat.OpenXml.Office2010.Word.Alpha{ Val = value };
+      itemElement = new DXO2010W.Alpha{ Val = value };
       openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static Int32? GetHueModulation(DocumentFormat.OpenXml.Office2010.Word.SchemeColor openXmlElement)
+  private static Int32? GetHueModulation(DXO2010W.SchemeColor openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office2010.Word.HueModulation>();
+    var itemElement = openXmlElement?.GetFirstChild<DXO2010W.HueModulation>();
     if (itemElement != null)
       return itemElement.Val?.Value;
     return null;
   }
   
-  private static void SetHueModulation(DocumentFormat.OpenXml.Office2010.Word.SchemeColor openXmlElement, Int32? value)
+  private static void SetHueModulation(DXO2010W.SchemeColor openXmlElement, Int32? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2010.Word.HueModulation>();
+    var itemElement = openXmlElement.GetFirstChild<DXO2010W.HueModulation>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = new DocumentFormat.OpenXml.Office2010.Word.HueModulation{ Val = value };
+      itemElement = new DXO2010W.HueModulation{ Val = value };
       openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static Int32? GetSaturation(DocumentFormat.OpenXml.Office2010.Word.SchemeColor openXmlElement)
+  private static Int32? GetSaturation(DXO2010W.SchemeColor openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office2010.Word.Saturation>();
+    var itemElement = openXmlElement?.GetFirstChild<DXO2010W.Saturation>();
     if (itemElement != null)
       return itemElement.Val?.Value;
     return null;
   }
   
-  private static void SetSaturation(DocumentFormat.OpenXml.Office2010.Word.SchemeColor openXmlElement, Int32? value)
+  private static void SetSaturation(DXO2010W.SchemeColor openXmlElement, Int32? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2010.Word.Saturation>();
+    var itemElement = openXmlElement.GetFirstChild<DXO2010W.Saturation>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = new DocumentFormat.OpenXml.Office2010.Word.Saturation{ Val = value };
+      itemElement = new DXO2010W.Saturation{ Val = value };
       openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static Int32? GetSaturationOffset(DocumentFormat.OpenXml.Office2010.Word.SchemeColor openXmlElement)
+  private static Int32? GetSaturationOffset(DXO2010W.SchemeColor openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office2010.Word.SaturationOffset>();
+    var itemElement = openXmlElement?.GetFirstChild<DXO2010W.SaturationOffset>();
     if (itemElement != null)
       return itemElement.Val?.Value;
     return null;
   }
   
-  private static void SetSaturationOffset(DocumentFormat.OpenXml.Office2010.Word.SchemeColor openXmlElement, Int32? value)
+  private static void SetSaturationOffset(DXO2010W.SchemeColor openXmlElement, Int32? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2010.Word.SaturationOffset>();
+    var itemElement = openXmlElement.GetFirstChild<DXO2010W.SaturationOffset>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = new DocumentFormat.OpenXml.Office2010.Word.SaturationOffset{ Val = value };
+      itemElement = new DXO2010W.SaturationOffset{ Val = value };
       openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static Int32? GetSaturationModulation(DocumentFormat.OpenXml.Office2010.Word.SchemeColor openXmlElement)
+  private static Int32? GetSaturationModulation(DXO2010W.SchemeColor openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office2010.Word.SaturationModulation>();
+    var itemElement = openXmlElement?.GetFirstChild<DXO2010W.SaturationModulation>();
     if (itemElement != null)
       return itemElement.Val?.Value;
     return null;
   }
   
-  private static void SetSaturationModulation(DocumentFormat.OpenXml.Office2010.Word.SchemeColor openXmlElement, Int32? value)
+  private static void SetSaturationModulation(DXO2010W.SchemeColor openXmlElement, Int32? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2010.Word.SaturationModulation>();
+    var itemElement = openXmlElement.GetFirstChild<DXO2010W.SaturationModulation>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = new DocumentFormat.OpenXml.Office2010.Word.SaturationModulation{ Val = value };
+      itemElement = new DXO2010W.SaturationModulation{ Val = value };
       openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static Int32? GetLuminance(DocumentFormat.OpenXml.Office2010.Word.SchemeColor openXmlElement)
+  private static Int32? GetLuminance(DXO2010W.SchemeColor openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office2010.Word.Luminance>();
+    var itemElement = openXmlElement?.GetFirstChild<DXO2010W.Luminance>();
     if (itemElement != null)
       return itemElement.Val?.Value;
     return null;
   }
   
-  private static void SetLuminance(DocumentFormat.OpenXml.Office2010.Word.SchemeColor openXmlElement, Int32? value)
+  private static void SetLuminance(DXO2010W.SchemeColor openXmlElement, Int32? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2010.Word.Luminance>();
+    var itemElement = openXmlElement.GetFirstChild<DXO2010W.Luminance>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = new DocumentFormat.OpenXml.Office2010.Word.Luminance{ Val = value };
+      itemElement = new DXO2010W.Luminance{ Val = value };
       openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static Int32? GetLuminanceOffset(DocumentFormat.OpenXml.Office2010.Word.SchemeColor openXmlElement)
+  private static Int32? GetLuminanceOffset(DXO2010W.SchemeColor openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office2010.Word.LuminanceOffset>();
+    var itemElement = openXmlElement?.GetFirstChild<DXO2010W.LuminanceOffset>();
     if (itemElement != null)
       return itemElement.Val?.Value;
     return null;
   }
   
-  private static void SetLuminanceOffset(DocumentFormat.OpenXml.Office2010.Word.SchemeColor openXmlElement, Int32? value)
+  private static void SetLuminanceOffset(DXO2010W.SchemeColor openXmlElement, Int32? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2010.Word.LuminanceOffset>();
+    var itemElement = openXmlElement.GetFirstChild<DXO2010W.LuminanceOffset>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = new DocumentFormat.OpenXml.Office2010.Word.LuminanceOffset{ Val = value };
+      itemElement = new DXO2010W.LuminanceOffset{ Val = value };
       openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static Int32? GetLuminanceModulation(DocumentFormat.OpenXml.Office2010.Word.SchemeColor openXmlElement)
+  private static Int32? GetLuminanceModulation(DXO2010W.SchemeColor openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office2010.Word.LuminanceModulation>();
+    var itemElement = openXmlElement?.GetFirstChild<DXO2010W.LuminanceModulation>();
     if (itemElement != null)
       return itemElement.Val?.Value;
     return null;
   }
   
-  private static void SetLuminanceModulation(DocumentFormat.OpenXml.Office2010.Word.SchemeColor openXmlElement, Int32? value)
+  private static void SetLuminanceModulation(DXO2010W.SchemeColor openXmlElement, Int32? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2010.Word.LuminanceModulation>();
+    var itemElement = openXmlElement.GetFirstChild<DXO2010W.LuminanceModulation>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = new DocumentFormat.OpenXml.Office2010.Word.LuminanceModulation{ Val = value };
+      itemElement = new DXO2010W.LuminanceModulation{ Val = value };
       openXmlElement.AddChild(itemElement);
     }
   }
   
-  public static DocumentModel.Wordprocessing.SchemeColor? CreateModelElement(DocumentFormat.OpenXml.Office2010.Word.SchemeColor? openXmlElement)
+  public static DMW.SchemeColor? CreateModelElement(DXO2010W.SchemeColor? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Wordprocessing.SchemeColor();
+      var value = new DMW.SchemeColor();
       value.Val = GetVal(openXmlElement);
       value.Tint = GetTint(openXmlElement);
       value.Shade = GetShade(openXmlElement);
@@ -239,8 +239,8 @@ public static class SchemeColorConverter
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.SchemeColor? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Office2010.Word.SchemeColor, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMW.SchemeColor? value)
+    where OpenXmlElementType: DXO2010W.SchemeColor, new()
   {
     if (value != null)
     {

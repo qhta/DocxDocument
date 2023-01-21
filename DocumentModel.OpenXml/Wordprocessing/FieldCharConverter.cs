@@ -8,25 +8,25 @@ public static class FieldCharConverter
   /// <summary>
   /// Field Character Type
   /// </summary>
-  private static DocumentModel.Wordprocessing.FieldCharKind? GetFieldCharType(DocumentFormat.OpenXml.Wordprocessing.FieldChar openXmlElement)
+  private static DMW.FieldCharKind? GetFieldCharType(DXW.FieldChar openXmlElement)
   {
-    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Wordprocessing.FieldCharValues, DocumentModel.Wordprocessing.FieldCharKind>(openXmlElement?.FieldCharType?.Value);
+    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Wordprocessing.FieldCharValues, DMW.FieldCharKind>(openXmlElement?.FieldCharType?.Value);
   }
   
-  private static void SetFieldCharType(DocumentFormat.OpenXml.Wordprocessing.FieldChar openXmlElement, DocumentModel.Wordprocessing.FieldCharKind? value)
+  private static void SetFieldCharType(DXW.FieldChar openXmlElement, DMW.FieldCharKind? value)
   {
-    openXmlElement.FieldCharType = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Wordprocessing.FieldCharValues, DocumentModel.Wordprocessing.FieldCharKind>(value);
+    openXmlElement.FieldCharType = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Wordprocessing.FieldCharValues, DMW.FieldCharKind>(value);
   }
   
   /// <summary>
   /// Field Should Not Be Recalculated
   /// </summary>
-  private static Boolean? GetFieldLock(DocumentFormat.OpenXml.Wordprocessing.FieldChar openXmlElement)
+  private static Boolean? GetFieldLock(DXW.FieldChar openXmlElement)
   {
     return openXmlElement?.FieldLock?.Value;
   }
   
-  private static void SetFieldLock(DocumentFormat.OpenXml.Wordprocessing.FieldChar openXmlElement, Boolean? value)
+  private static void SetFieldLock(DXW.FieldChar openXmlElement, Boolean? value)
   {
     if (value != null)
       openXmlElement.FieldLock = new OnOffValue { Value = (Boolean)value };
@@ -37,12 +37,12 @@ public static class FieldCharConverter
   /// <summary>
   /// Field Result Invalidated
   /// </summary>
-  private static Boolean? GetDirty(DocumentFormat.OpenXml.Wordprocessing.FieldChar openXmlElement)
+  private static Boolean? GetDirty(DXW.FieldChar openXmlElement)
   {
     return openXmlElement?.Dirty?.Value;
   }
   
-  private static void SetDirty(DocumentFormat.OpenXml.Wordprocessing.FieldChar openXmlElement, Boolean? value)
+  private static void SetDirty(DXW.FieldChar openXmlElement, Boolean? value)
   {
     if (value != null)
       openXmlElement.Dirty = new OnOffValue { Value = (Boolean)value };
@@ -53,22 +53,22 @@ public static class FieldCharConverter
   /// <summary>
   /// Custom Field Data.
   /// </summary>
-  private static String? GetFieldData(DocumentFormat.OpenXml.Wordprocessing.FieldChar openXmlElement)
+  private static String? GetFieldData(DXW.FieldChar openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.FieldData>();
+    var itemElement = openXmlElement?.GetFirstChild<DXW.FieldData>();
     if (itemElement != null)
       return itemElement.Text;
     return null;
   }
   
-  private static void SetFieldData(DocumentFormat.OpenXml.Wordprocessing.FieldChar openXmlElement, String? value)
+  private static void SetFieldData(DXW.FieldChar openXmlElement, String? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.FieldData>();
+    var itemElement = openXmlElement.GetFirstChild<DXW.FieldData>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = new DocumentFormat.OpenXml.Wordprocessing.FieldData { Text = value };
+      itemElement = new DXW.FieldData { Text = value };
       openXmlElement.AddChild(itemElement);
     }
   }
@@ -76,22 +76,22 @@ public static class FieldCharConverter
   /// <summary>
   /// Form Field Properties.
   /// </summary>
-  private static DocumentModel.Wordprocessing.FormFieldData? GetFormFieldData(DocumentFormat.OpenXml.Wordprocessing.FieldChar openXmlElement)
+  private static DMW.FormFieldData? GetFormFieldData(DXW.FieldChar openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.FormFieldData>();
+    var itemElement = openXmlElement?.GetFirstChild<DXW.FormFieldData>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Wordprocessing.FormFieldDataConverter.CreateModelElement(itemElement);
+      return DMXW.FormFieldDataConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetFormFieldData(DocumentFormat.OpenXml.Wordprocessing.FieldChar openXmlElement, DocumentModel.Wordprocessing.FormFieldData? value)
+  private static void SetFormFieldData(DXW.FieldChar openXmlElement, DMW.FormFieldData? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.FormFieldData>();
+    var itemElement = openXmlElement.GetFirstChild<DXW.FormFieldData>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Wordprocessing.FormFieldDataConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.FormFieldData>(value);
+      itemElement = DMXW.FormFieldDataConverter.CreateOpenXmlElement<DXW.FormFieldData>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
@@ -100,32 +100,32 @@ public static class FieldCharConverter
   /// <summary>
   /// Previous Numbering Field Properties.
   /// </summary>
-  private static DocumentModel.Wordprocessing.NumberingChange? GetNumberingChange(DocumentFormat.OpenXml.Wordprocessing.FieldChar openXmlElement)
+  private static DMW.NumberingChange? GetNumberingChange(DXW.FieldChar openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.NumberingChange>();
+    var itemElement = openXmlElement?.GetFirstChild<DXW.NumberingChange>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Wordprocessing.NumberingChangeConverter.CreateModelElement(itemElement);
+      return DMXW.NumberingChangeConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetNumberingChange(DocumentFormat.OpenXml.Wordprocessing.FieldChar openXmlElement, DocumentModel.Wordprocessing.NumberingChange? value)
+  private static void SetNumberingChange(DXW.FieldChar openXmlElement, DMW.NumberingChange? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.NumberingChange>();
+    var itemElement = openXmlElement.GetFirstChild<DXW.NumberingChange>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Wordprocessing.NumberingChangeConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.NumberingChange>(value);
+      itemElement = DMXW.NumberingChangeConverter.CreateOpenXmlElement<DXW.NumberingChange>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  public static DocumentModel.Wordprocessing.FieldChar? CreateModelElement(DocumentFormat.OpenXml.Wordprocessing.FieldChar? openXmlElement)
+  public static DMW.FieldChar? CreateModelElement(DXW.FieldChar? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Wordprocessing.FieldChar();
+      var value = new DMW.FieldChar();
       value.FieldCharType = GetFieldCharType(openXmlElement);
       value.FieldLock = GetFieldLock(openXmlElement);
       value.Dirty = GetDirty(openXmlElement);
@@ -137,8 +137,8 @@ public static class FieldCharConverter
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.FieldChar? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Wordprocessing.FieldChar, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMW.FieldChar? value)
+    where OpenXmlElementType: DXW.FieldChar, new()
   {
     if (value != null)
     {

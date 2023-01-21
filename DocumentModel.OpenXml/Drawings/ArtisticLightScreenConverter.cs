@@ -8,12 +8,12 @@ public static class ArtisticLightScreenConverter
   /// <summary>
   /// trans, this property is only available in Office 2010 and later.
   /// </summary>
-  private static Int32? GetTransparancy(DocumentFormat.OpenXml.Office2010.Drawing.ArtisticLightScreen openXmlElement)
+  private static Int32? GetTransparancy(DXO2010Draw.ArtisticLightScreen openXmlElement)
   {
     return openXmlElement.Transparancy?.Value;
   }
   
-  private static void SetTransparancy(DocumentFormat.OpenXml.Office2010.Drawing.ArtisticLightScreen openXmlElement, Int32? value)
+  private static void SetTransparancy(DXO2010Draw.ArtisticLightScreen openXmlElement, Int32? value)
   {
     openXmlElement.Transparancy = value;
   }
@@ -21,21 +21,21 @@ public static class ArtisticLightScreenConverter
   /// <summary>
   /// gridSize, this property is only available in Office 2010 and later.
   /// </summary>
-  private static Int32? GetGridSize(DocumentFormat.OpenXml.Office2010.Drawing.ArtisticLightScreen openXmlElement)
+  private static Int32? GetGridSize(DXO2010Draw.ArtisticLightScreen openXmlElement)
   {
     return openXmlElement.GridSize?.Value;
   }
   
-  private static void SetGridSize(DocumentFormat.OpenXml.Office2010.Drawing.ArtisticLightScreen openXmlElement, Int32? value)
+  private static void SetGridSize(DXO2010Draw.ArtisticLightScreen openXmlElement, Int32? value)
   {
     openXmlElement.GridSize = value;
   }
   
-  public static DocumentModel.Drawings.ArtisticLightScreen? CreateModelElement(DocumentFormat.OpenXml.Office2010.Drawing.ArtisticLightScreen? openXmlElement)
+  public static DMDraws.ArtisticLightScreen? CreateModelElement(DXO2010Draw.ArtisticLightScreen? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.ArtisticLightScreen();
+      var value = new DMDraws.ArtisticLightScreen();
       value.Transparancy = GetTransparancy(openXmlElement);
       value.GridSize = GetGridSize(openXmlElement);
       return value;
@@ -43,8 +43,8 @@ public static class ArtisticLightScreenConverter
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.ArtisticLightScreen? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Office2010.Drawing.ArtisticLightScreen, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDraws.ArtisticLightScreen? value)
+    where OpenXmlElementType: DXO2010Draw.ArtisticLightScreen, new()
   {
     if (value != null)
     {

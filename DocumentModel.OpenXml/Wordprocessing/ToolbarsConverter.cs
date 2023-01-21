@@ -5,63 +5,63 @@ namespace DocumentModel.OpenXml.Wordprocessing;
 /// </summary>
 public static class ToolbarsConverter
 {
-  private static System.Collections.ObjectModel.Collection<DocumentModel.Wordprocessing.AllocatedCommandManifest> GetAllocatedCommandManifests(DocumentFormat.OpenXml.Office.Word.Toolbars openXmlElement)
+  private static Collection<DMW.AllocatedCommandManifest> GetAllocatedCommandManifests(DXOW.Toolbars openXmlElement)
   {
-    var collection = new System.Collections.ObjectModel.Collection<DocumentModel.Wordprocessing.AllocatedCommandManifest>();
-    foreach (var item in openXmlElement.Elements<DocumentFormat.OpenXml.Office.Word.AllocatedCommandManifest>())
+    var collection = new Collection<DMW.AllocatedCommandManifest>();
+    foreach (var item in openXmlElement.Elements<DXOW.AllocatedCommandManifest>())
     {
-      var newItem = DocumentModel.OpenXml.Wordprocessing.AllocatedCommandManifestConverter.CreateModelElement(item);
+      var newItem = DMXW.AllocatedCommandManifestConverter.CreateModelElement(item);
       if (newItem != null)
         collection.Add(newItem);
     }
     return collection;
   }
   
-  private static void SetAllocatedCommandManifests(DocumentFormat.OpenXml.Office.Word.Toolbars openXmlElement, System.Collections.ObjectModel.Collection<DocumentModel.Wordprocessing.AllocatedCommandManifest>? value)
+  private static void SetAllocatedCommandManifests(DXOW.Toolbars openXmlElement, Collection<DMW.AllocatedCommandManifest>? value)
   {
-    openXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Office.Word.AllocatedCommandManifest>();
+    openXmlElement.RemoveAllChildren<DXOW.AllocatedCommandManifest>();
     if (value != null)
     {
       foreach (var item in value)
       {
-        var newItem = DocumentModel.OpenXml.Wordprocessing.AllocatedCommandManifestConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office.Word.AllocatedCommandManifest>(item);
+        var newItem = DMXW.AllocatedCommandManifestConverter.CreateOpenXmlElement<DXOW.AllocatedCommandManifest>(item);
         if (newItem != null)
           openXmlElement.AddChild(newItem);
       }
     }
   }
   
-  private static System.Collections.ObjectModel.Collection<DocumentModel.Wordprocessing.ToolbarData> GetToolbarDatas(DocumentFormat.OpenXml.Office.Word.Toolbars openXmlElement)
+  private static Collection<DMW.ToolbarData> GetToolbarDatas(DXOW.Toolbars openXmlElement)
   {
-    var collection = new System.Collections.ObjectModel.Collection<DocumentModel.Wordprocessing.ToolbarData>();
-    foreach (var item in openXmlElement.Elements<DocumentFormat.OpenXml.Office.Word.ToolbarData>())
+    var collection = new Collection<DMW.ToolbarData>();
+    foreach (var item in openXmlElement.Elements<DXOW.ToolbarData>())
     {
-      var newItem = DocumentModel.OpenXml.Wordprocessing.ToolbarDataConverter.CreateModelElement(item);
+      var newItem = DMXW.ToolbarDataConverter.CreateModelElement(item);
       if (newItem != null)
         collection.Add(newItem);
     }
     return collection;
   }
   
-  private static void SetToolbarDatas(DocumentFormat.OpenXml.Office.Word.Toolbars openXmlElement, System.Collections.ObjectModel.Collection<DocumentModel.Wordprocessing.ToolbarData>? value)
+  private static void SetToolbarDatas(DXOW.Toolbars openXmlElement, Collection<DMW.ToolbarData>? value)
   {
-    openXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Office.Word.ToolbarData>();
+    openXmlElement.RemoveAllChildren<DXOW.ToolbarData>();
     if (value != null)
     {
       foreach (var item in value)
       {
-        var newItem = DocumentModel.OpenXml.Wordprocessing.ToolbarDataConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office.Word.ToolbarData>(item);
+        var newItem = DMXW.ToolbarDataConverter.CreateOpenXmlElement<DXOW.ToolbarData>(item);
         if (newItem != null)
           openXmlElement.AddChild(newItem);
       }
     }
   }
   
-  public static DocumentModel.Wordprocessing.Toolbars? CreateModelElement(DocumentFormat.OpenXml.Office.Word.Toolbars? openXmlElement)
+  public static DMW.Toolbars? CreateModelElement(DXOW.Toolbars? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Wordprocessing.Toolbars();
+      var value = new DMW.Toolbars();
       value.AllocatedCommandManifests = GetAllocatedCommandManifests(openXmlElement);
       value.ToolbarDatas = GetToolbarDatas(openXmlElement);
       return value;
@@ -69,8 +69,8 @@ public static class ToolbarsConverter
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.Toolbars? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Office.Word.Toolbars, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMW.Toolbars? value)
+    where OpenXmlElementType: DXOW.Toolbars, new()
   {
     if (value != null)
     {

@@ -8,12 +8,12 @@ public static class AllocatedCommandConverter
   /// <summary>
   /// argValue
   /// </summary>
-  private static String? GetArgumentValue(DocumentFormat.OpenXml.Office.Word.AllocatedCommand openXmlElement)
+  private static String? GetArgumentValue(DXOW.AllocatedCommand openXmlElement)
   {
     return openXmlElement?.ArgumentValue?.Value;
   }
   
-  private static void SetArgumentValue(DocumentFormat.OpenXml.Office.Word.AllocatedCommand openXmlElement, String? value)
+  private static void SetArgumentValue(DXOW.AllocatedCommand openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.ArgumentValue = new StringValue { Value = value };
@@ -24,12 +24,12 @@ public static class AllocatedCommandConverter
   /// <summary>
   /// fciBasedOn
   /// </summary>
-  private static String? GetCommandBasedOn(DocumentFormat.OpenXml.Office.Word.AllocatedCommand openXmlElement)
+  private static String? GetCommandBasedOn(DXOW.AllocatedCommand openXmlElement)
   {
     return openXmlElement?.CommandBasedOn?.Value;
   }
   
-  private static void SetCommandBasedOn(DocumentFormat.OpenXml.Office.Word.AllocatedCommand openXmlElement, String? value)
+  private static void SetCommandBasedOn(DXOW.AllocatedCommand openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.CommandBasedOn = new StringValue { Value = value };
@@ -40,14 +40,14 @@ public static class AllocatedCommandConverter
   /// <summary>
   /// fciIndexBasedOn
   /// </summary>
-  private static UInt16? GetCommandIndexBasedOn(DocumentFormat.OpenXml.Office.Word.AllocatedCommand openXmlElement)
+  private static UInt16? GetCommandIndexBasedOn(DXOW.AllocatedCommand openXmlElement)
   {
     if (openXmlElement.CommandIndexBasedOn?.Value != null)
       return UInt16.Parse(openXmlElement.CommandIndexBasedOn.Value, NumberStyles.HexNumber);
     return null;
   }
   
-  private static void SetCommandIndexBasedOn(DocumentFormat.OpenXml.Office.Word.AllocatedCommand openXmlElement, UInt16? value)
+  private static void SetCommandIndexBasedOn(DXOW.AllocatedCommand openXmlElement, UInt16? value)
   {
       if (value != null)
         openXmlElement.CommandIndexBasedOn = ((UInt16)value).ToString("X4");
@@ -58,12 +58,12 @@ public static class AllocatedCommandConverter
   /// <summary>
   /// acdName
   /// </summary>
-  private static String? GetAcceleratorName(DocumentFormat.OpenXml.Office.Word.AllocatedCommand openXmlElement)
+  private static String? GetAcceleratorName(DXOW.AllocatedCommand openXmlElement)
   {
     return openXmlElement?.AcceleratorName?.Value;
   }
   
-  private static void SetAcceleratorName(DocumentFormat.OpenXml.Office.Word.AllocatedCommand openXmlElement, String? value)
+  private static void SetAcceleratorName(DXOW.AllocatedCommand openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.AcceleratorName = new StringValue { Value = value };
@@ -71,11 +71,11 @@ public static class AllocatedCommandConverter
       openXmlElement.AcceleratorName = null;
   }
   
-  public static DocumentModel.Wordprocessing.AllocatedCommand? CreateModelElement(DocumentFormat.OpenXml.Office.Word.AllocatedCommand? openXmlElement)
+  public static DMW.AllocatedCommand? CreateModelElement(DXOW.AllocatedCommand? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Wordprocessing.AllocatedCommand();
+      var value = new DMW.AllocatedCommand();
       value.ArgumentValue = GetArgumentValue(openXmlElement);
       value.CommandBasedOn = GetCommandBasedOn(openXmlElement);
       value.CommandIndexBasedOn = GetCommandIndexBasedOn(openXmlElement);
@@ -85,8 +85,8 @@ public static class AllocatedCommandConverter
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.AllocatedCommand? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Office.Word.AllocatedCommand, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMW.AllocatedCommand? value)
+    where OpenXmlElementType: DXOW.AllocatedCommand, new()
   {
     if (value != null)
     {

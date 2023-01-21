@@ -8,125 +8,125 @@ public static class LineSketchStylePropertiesConverter
   /// <summary>
   /// sd, this property is only available in Office 2021 and later.
   /// </summary>
-  private static UInt32? GetSd(DocumentFormat.OpenXml.Office2021.Drawing.SketchyShapes.LineSketchStyleProperties openXmlElement)
+  private static UInt32? GetSd(DXO2021DrawSketchyShps.LineSketchStyleProperties openXmlElement)
   {
     return openXmlElement.Sd?.Value;
   }
   
-  private static void SetSd(DocumentFormat.OpenXml.Office2021.Drawing.SketchyShapes.LineSketchStyleProperties openXmlElement, UInt32? value)
+  private static void SetSd(DXO2021DrawSketchyShps.LineSketchStyleProperties openXmlElement, UInt32? value)
   {
     openXmlElement.Sd = value;
   }
   
-  private static DocumentModel.Drawings.CustomGeometry? GetCustomGeometry(DocumentFormat.OpenXml.Office2021.Drawing.SketchyShapes.LineSketchStyleProperties openXmlElement)
+  private static DMDraws.CustomGeometry? GetCustomGeometry(DXO2021DrawSketchyShps.LineSketchStyleProperties openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.CustomGeometry>();
+    var itemElement = openXmlElement?.GetFirstChild<DXDraw.CustomGeometry>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.CustomGeometryConverter.CreateModelElement(itemElement);
+      return DMXDraws.CustomGeometryConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetCustomGeometry(DocumentFormat.OpenXml.Office2021.Drawing.SketchyShapes.LineSketchStyleProperties openXmlElement, DocumentModel.Drawings.CustomGeometry? value)
+  private static void SetCustomGeometry(DXO2021DrawSketchyShps.LineSketchStyleProperties openXmlElement, DMDraws.CustomGeometry? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.CustomGeometry>();
+    var itemElement = openXmlElement.GetFirstChild<DXDraw.CustomGeometry>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Drawings.CustomGeometryConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.CustomGeometry>(value);
+      itemElement = DMXDraws.CustomGeometryConverter.CreateOpenXmlElement<DXDraw.CustomGeometry>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static DocumentModel.Drawings.PresetGeometry? GetPresetGeometry(DocumentFormat.OpenXml.Office2021.Drawing.SketchyShapes.LineSketchStyleProperties openXmlElement)
+  private static DMDraws.PresetGeometry? GetPresetGeometry(DXO2021DrawSketchyShps.LineSketchStyleProperties openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.PresetGeometry>();
+    var itemElement = openXmlElement?.GetFirstChild<DXDraw.PresetGeometry>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.PresetGeometryConverter.CreateModelElement(itemElement);
+      return DMXDraws.PresetGeometryConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetPresetGeometry(DocumentFormat.OpenXml.Office2021.Drawing.SketchyShapes.LineSketchStyleProperties openXmlElement, DocumentModel.Drawings.PresetGeometry? value)
+  private static void SetPresetGeometry(DXO2021DrawSketchyShps.LineSketchStyleProperties openXmlElement, DMDraws.PresetGeometry? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.PresetGeometry>();
+    var itemElement = openXmlElement.GetFirstChild<DXDraw.PresetGeometry>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Drawings.PresetGeometryConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.PresetGeometry>(value);
+      itemElement = DMXDraws.PresetGeometryConverter.CreateOpenXmlElement<DXDraw.PresetGeometry>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static DocumentModel.Drawings.LineSketchTypeProperties? GetLineSketchTypeProperties(DocumentFormat.OpenXml.Office2021.Drawing.SketchyShapes.LineSketchStyleProperties openXmlElement)
+  private static DMDraws.LineSketchTypeProperties? GetLineSketchTypeProperties(DXO2021DrawSketchyShps.LineSketchStyleProperties openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office2021.Drawing.SketchyShapes.LineSketchTypeProperties>();
+    var itemElement = openXmlElement?.GetFirstChild<DXO2021DrawSketchyShps.LineSketchTypeProperties>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.LineSketchTypePropertiesConverter.CreateModelElement(itemElement);
+      return DMXDraws.LineSketchTypePropertiesConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetLineSketchTypeProperties(DocumentFormat.OpenXml.Office2021.Drawing.SketchyShapes.LineSketchStyleProperties openXmlElement, DocumentModel.Drawings.LineSketchTypeProperties? value)
+  private static void SetLineSketchTypeProperties(DXO2021DrawSketchyShps.LineSketchStyleProperties openXmlElement, DMDraws.LineSketchTypeProperties? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2021.Drawing.SketchyShapes.LineSketchTypeProperties>();
+    var itemElement = openXmlElement.GetFirstChild<DXO2021DrawSketchyShps.LineSketchTypeProperties>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Drawings.LineSketchTypePropertiesConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2021.Drawing.SketchyShapes.LineSketchTypeProperties>(value);
+      itemElement = DMXDraws.LineSketchTypePropertiesConverter.CreateOpenXmlElement<DXO2021DrawSketchyShps.LineSketchTypeProperties>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static String? GetLineSketchSeed(DocumentFormat.OpenXml.Office2021.Drawing.SketchyShapes.LineSketchStyleProperties openXmlElement)
+  private static String? GetLineSketchSeed(DXO2021DrawSketchyShps.LineSketchStyleProperties openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office2021.Drawing.SketchyShapes.LineSketchSeed>();
+    var itemElement = openXmlElement?.GetFirstChild<DXO2021DrawSketchyShps.LineSketchSeed>();
     if (itemElement != null)
       return itemElement.Text;
     return null;
   }
   
-  private static void SetLineSketchSeed(DocumentFormat.OpenXml.Office2021.Drawing.SketchyShapes.LineSketchStyleProperties openXmlElement, String? value)
+  private static void SetLineSketchSeed(DXO2021DrawSketchyShps.LineSketchStyleProperties openXmlElement, String? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2021.Drawing.SketchyShapes.LineSketchSeed>();
+    var itemElement = openXmlElement.GetFirstChild<DXO2021DrawSketchyShps.LineSketchSeed>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = new DocumentFormat.OpenXml.Office2021.Drawing.SketchyShapes.LineSketchSeed { Text = value };
+      itemElement = new DXO2021DrawSketchyShps.LineSketchSeed { Text = value };
       openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static DocumentModel.Drawings.OfficeArtExtensionList6? GetOfficeArtExtensionList(DocumentFormat.OpenXml.Office2021.Drawing.SketchyShapes.LineSketchStyleProperties openXmlElement)
+  private static DMDraws.OfficeArtExtensionList6? GetOfficeArtExtensionList(DXO2021DrawSketchyShps.LineSketchStyleProperties openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office2021.Drawing.SketchyShapes.OfficeArtExtensionList>();
+    var itemElement = openXmlElement?.GetFirstChild<DXO2021DrawSketchyShps.OfficeArtExtensionList>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.OfficeArtExtensionList6Converter.CreateModelElement(itemElement);
+      return DMXDraws.OfficeArtExtensionList6Converter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetOfficeArtExtensionList(DocumentFormat.OpenXml.Office2021.Drawing.SketchyShapes.LineSketchStyleProperties openXmlElement, DocumentModel.Drawings.OfficeArtExtensionList6? value)
+  private static void SetOfficeArtExtensionList(DXO2021DrawSketchyShps.LineSketchStyleProperties openXmlElement, DMDraws.OfficeArtExtensionList6? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2021.Drawing.SketchyShapes.OfficeArtExtensionList>();
+    var itemElement = openXmlElement.GetFirstChild<DXO2021DrawSketchyShps.OfficeArtExtensionList>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Drawings.OfficeArtExtensionList6Converter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2021.Drawing.SketchyShapes.OfficeArtExtensionList>(value);
+      itemElement = DMXDraws.OfficeArtExtensionList6Converter.CreateOpenXmlElement<DXO2021DrawSketchyShps.OfficeArtExtensionList>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  public static DocumentModel.Drawings.LineSketchStyleProperties? CreateModelElement(DocumentFormat.OpenXml.Office2021.Drawing.SketchyShapes.LineSketchStyleProperties? openXmlElement)
+  public static DMDraws.LineSketchStyleProperties? CreateModelElement(DXO2021DrawSketchyShps.LineSketchStyleProperties? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.LineSketchStyleProperties();
+      var value = new DMDraws.LineSketchStyleProperties();
       value.Sd = GetSd(openXmlElement);
       value.CustomGeometry = GetCustomGeometry(openXmlElement);
       value.PresetGeometry = GetPresetGeometry(openXmlElement);
@@ -138,8 +138,8 @@ public static class LineSketchStylePropertiesConverter
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.LineSketchStyleProperties? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Office2021.Drawing.SketchyShapes.LineSketchStyleProperties, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDraws.LineSketchStyleProperties? value)
+    where OpenXmlElementType: DXO2021DrawSketchyShps.LineSketchStyleProperties, new()
   {
     if (value != null)
     {

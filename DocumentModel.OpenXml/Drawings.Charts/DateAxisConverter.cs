@@ -8,22 +8,22 @@ public static class DateAxisConverter
   /// <summary>
   /// Axis ID.
   /// </summary>
-  private static UInt32? GetAxisId(DocumentFormat.OpenXml.Drawing.Charts.DateAxis openXmlElement)
+  private static UInt32? GetAxisId(DXDrawCharts.DateAxis openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.AxisId>();
+    var itemElement = openXmlElement?.GetFirstChild<DXDrawCharts.AxisId>();
     if (itemElement != null)
       return itemElement.Val?.Value;
     return null;
   }
   
-  private static void SetAxisId(DocumentFormat.OpenXml.Drawing.Charts.DateAxis openXmlElement, UInt32? value)
+  private static void SetAxisId(DXDrawCharts.DateAxis openXmlElement, UInt32? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.AxisId>();
+    var itemElement = openXmlElement.GetFirstChild<DXDrawCharts.AxisId>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = new DocumentFormat.OpenXml.Drawing.Charts.AxisId{ Val = value };
+      itemElement = new DXDrawCharts.AxisId{ Val = value };
       openXmlElement.AddChild(itemElement);
     }
   }
@@ -31,22 +31,22 @@ public static class DateAxisConverter
   /// <summary>
   /// Scaling.
   /// </summary>
-  private static DocumentModel.Drawings.Charts.Scaling? GetScaling(DocumentFormat.OpenXml.Drawing.Charts.DateAxis openXmlElement)
+  private static DMDrawsCharts.Scaling? GetScaling(DXDrawCharts.DateAxis openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.Scaling>();
+    var itemElement = openXmlElement?.GetFirstChild<DXDrawCharts.Scaling>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.Charts.ScalingConverter.CreateModelElement(itemElement);
+      return DMXDrawsCharts.ScalingConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetScaling(DocumentFormat.OpenXml.Drawing.Charts.DateAxis openXmlElement, DocumentModel.Drawings.Charts.Scaling? value)
+  private static void SetScaling(DXDrawCharts.DateAxis openXmlElement, DMDrawsCharts.Scaling? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.Scaling>();
+    var itemElement = openXmlElement.GetFirstChild<DXDrawCharts.Scaling>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Drawings.Charts.ScalingConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Charts.Scaling>(value);
+      itemElement = DMXDrawsCharts.ScalingConverter.CreateOpenXmlElement<DXDrawCharts.Scaling>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
@@ -55,23 +55,23 @@ public static class DateAxisConverter
   /// <summary>
   /// Delete.
   /// </summary>
-  private static Boolean? GetDelete(DocumentFormat.OpenXml.Drawing.Charts.DateAxis openXmlElement)
+  private static Boolean? GetDelete(DXDrawCharts.DateAxis openXmlElement)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.Delete>();
+    var itemElement = openXmlElement.GetFirstChild<DXDrawCharts.Delete>();
     return itemElement != null;
   }
   
-  private static void SetDelete(DocumentFormat.OpenXml.Drawing.Charts.DateAxis openXmlElement, Boolean? value)
+  private static void SetDelete(DXDrawCharts.DateAxis openXmlElement, Boolean? value)
   {
     if (value == false)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.Delete>();
+      var itemElement = openXmlElement.GetFirstChild<DXDrawCharts.Delete>();
       if (itemElement != null)
         itemElement.Remove();
     }
     if (value == true)
     {
-      var itemElement = new DocumentFormat.OpenXml.Drawing.Charts.Delete();
+      var itemElement = new DXDrawCharts.Delete();
       openXmlElement.AddChild(itemElement);
     }
   }
@@ -79,22 +79,22 @@ public static class DateAxisConverter
   /// <summary>
   /// Axis Position.
   /// </summary>
-  private static DocumentModel.Drawings.Charts.AxisPositionKind? GetAxisPosition(DocumentFormat.OpenXml.Drawing.Charts.DateAxis openXmlElement)
+  private static DMDrawsCharts.AxisPositionKind? GetAxisPosition(DXDrawCharts.DateAxis openXmlElement)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.AxisPosition>();
+    var itemElement = openXmlElement.GetFirstChild<DXDrawCharts.AxisPosition>();
     if (itemElement?.Val?.Value != null)
-      return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Drawing.Charts.AxisPositionValues, DocumentModel.Drawings.Charts.AxisPositionKind>(itemElement.Val.Value);
+      return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Drawing.Charts.AxisPositionValues, DMDrawsCharts.AxisPositionKind>(itemElement.Val.Value);
     return null;
   }
   
-  private static void SetAxisPosition(DocumentFormat.OpenXml.Drawing.Charts.DateAxis openXmlElement, DocumentModel.Drawings.Charts.AxisPositionKind? value)
+  private static void SetAxisPosition(DXDrawCharts.DateAxis openXmlElement, DMDrawsCharts.AxisPositionKind? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.AxisPosition>();
+    var itemElement = openXmlElement.GetFirstChild<DXDrawCharts.AxisPosition>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = EnumValueConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Charts.AxisPosition, DocumentFormat.OpenXml.Drawing.Charts.AxisPositionValues, DocumentModel.Drawings.Charts.AxisPositionKind>(value);
+      itemElement = EnumValueConverter.CreateOpenXmlElement<DXDrawCharts.AxisPosition, DocumentFormat.OpenXml.Drawing.Charts.AxisPositionValues, DMDrawsCharts.AxisPositionKind>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
@@ -103,22 +103,22 @@ public static class DateAxisConverter
   /// <summary>
   /// Major Gridlines.
   /// </summary>
-  private static DocumentModel.Drawings.Charts.MajorGridlines? GetMajorGridlines(DocumentFormat.OpenXml.Drawing.Charts.DateAxis openXmlElement)
+  private static DMDrawsCharts.MajorGridlines? GetMajorGridlines(DXDrawCharts.DateAxis openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.MajorGridlines>();
+    var itemElement = openXmlElement?.GetFirstChild<DXDrawCharts.MajorGridlines>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.Charts.MajorGridlinesConverter.CreateModelElement(itemElement);
+      return DMXDrawsCharts.MajorGridlinesConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetMajorGridlines(DocumentFormat.OpenXml.Drawing.Charts.DateAxis openXmlElement, DocumentModel.Drawings.Charts.MajorGridlines? value)
+  private static void SetMajorGridlines(DXDrawCharts.DateAxis openXmlElement, DMDrawsCharts.MajorGridlines? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.MajorGridlines>();
+    var itemElement = openXmlElement.GetFirstChild<DXDrawCharts.MajorGridlines>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Drawings.Charts.MajorGridlinesConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Charts.MajorGridlines>(value);
+      itemElement = DMXDrawsCharts.MajorGridlinesConverter.CreateOpenXmlElement<DXDrawCharts.MajorGridlines>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
@@ -127,22 +127,22 @@ public static class DateAxisConverter
   /// <summary>
   /// Minor Gridlines.
   /// </summary>
-  private static DocumentModel.Drawings.Charts.MinorGridlines? GetMinorGridlines(DocumentFormat.OpenXml.Drawing.Charts.DateAxis openXmlElement)
+  private static DMDrawsCharts.MinorGridlines? GetMinorGridlines(DXDrawCharts.DateAxis openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.MinorGridlines>();
+    var itemElement = openXmlElement?.GetFirstChild<DXDrawCharts.MinorGridlines>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.Charts.MinorGridlinesConverter.CreateModelElement(itemElement);
+      return DMXDrawsCharts.MinorGridlinesConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetMinorGridlines(DocumentFormat.OpenXml.Drawing.Charts.DateAxis openXmlElement, DocumentModel.Drawings.Charts.MinorGridlines? value)
+  private static void SetMinorGridlines(DXDrawCharts.DateAxis openXmlElement, DMDrawsCharts.MinorGridlines? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.MinorGridlines>();
+    var itemElement = openXmlElement.GetFirstChild<DXDrawCharts.MinorGridlines>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Drawings.Charts.MinorGridlinesConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Charts.MinorGridlines>(value);
+      itemElement = DMXDrawsCharts.MinorGridlinesConverter.CreateOpenXmlElement<DXDrawCharts.MinorGridlines>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
@@ -151,22 +151,22 @@ public static class DateAxisConverter
   /// <summary>
   /// Title.
   /// </summary>
-  private static DocumentModel.Drawings.Charts.Title? GetTitle(DocumentFormat.OpenXml.Drawing.Charts.DateAxis openXmlElement)
+  private static DMDrawsCharts.Title? GetTitle(DXDrawCharts.DateAxis openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.Title>();
+    var itemElement = openXmlElement?.GetFirstChild<DXDrawCharts.Title>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.Charts.TitleConverter.CreateModelElement(itemElement);
+      return DMXDrawsCharts.TitleConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetTitle(DocumentFormat.OpenXml.Drawing.Charts.DateAxis openXmlElement, DocumentModel.Drawings.Charts.Title? value)
+  private static void SetTitle(DXDrawCharts.DateAxis openXmlElement, DMDrawsCharts.Title? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.Title>();
+    var itemElement = openXmlElement.GetFirstChild<DXDrawCharts.Title>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Drawings.Charts.TitleConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Charts.Title>(value);
+      itemElement = DMXDrawsCharts.TitleConverter.CreateOpenXmlElement<DXDrawCharts.Title>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
@@ -175,22 +175,22 @@ public static class DateAxisConverter
   /// <summary>
   /// Number Format.
   /// </summary>
-  private static DocumentModel.Drawings.Charts.NumberingFormat? GetNumberingFormat(DocumentFormat.OpenXml.Drawing.Charts.DateAxis openXmlElement)
+  private static DMDrawsCharts.NumberingFormat? GetNumberingFormat(DXDrawCharts.DateAxis openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.NumberingFormat>();
+    var itemElement = openXmlElement?.GetFirstChild<DXDrawCharts.NumberingFormat>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.Charts.NumberingFormatConverter.CreateModelElement(itemElement);
+      return DMXDrawsCharts.NumberingFormatConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetNumberingFormat(DocumentFormat.OpenXml.Drawing.Charts.DateAxis openXmlElement, DocumentModel.Drawings.Charts.NumberingFormat? value)
+  private static void SetNumberingFormat(DXDrawCharts.DateAxis openXmlElement, DMDrawsCharts.NumberingFormat? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.NumberingFormat>();
+    var itemElement = openXmlElement.GetFirstChild<DXDrawCharts.NumberingFormat>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Drawings.Charts.NumberingFormatConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Charts.NumberingFormat>(value);
+      itemElement = DMXDrawsCharts.NumberingFormatConverter.CreateOpenXmlElement<DXDrawCharts.NumberingFormat>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
@@ -199,22 +199,22 @@ public static class DateAxisConverter
   /// <summary>
   /// Major Tick Mark.
   /// </summary>
-  private static DocumentModel.Drawings.Charts.TickMarkKind? GetMajorTickMark(DocumentFormat.OpenXml.Drawing.Charts.DateAxis openXmlElement)
+  private static DMDrawsCharts.TickMarkKind? GetMajorTickMark(DXDrawCharts.DateAxis openXmlElement)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.MajorTickMark>();
+    var itemElement = openXmlElement.GetFirstChild<DXDrawCharts.MajorTickMark>();
     if (itemElement?.Val?.Value != null)
-      return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Drawing.Charts.TickMarkValues, DocumentModel.Drawings.Charts.TickMarkKind>(itemElement.Val.Value);
+      return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Drawing.Charts.TickMarkValues, DMDrawsCharts.TickMarkKind>(itemElement.Val.Value);
     return null;
   }
   
-  private static void SetMajorTickMark(DocumentFormat.OpenXml.Drawing.Charts.DateAxis openXmlElement, DocumentModel.Drawings.Charts.TickMarkKind? value)
+  private static void SetMajorTickMark(DXDrawCharts.DateAxis openXmlElement, DMDrawsCharts.TickMarkKind? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.MajorTickMark>();
+    var itemElement = openXmlElement.GetFirstChild<DXDrawCharts.MajorTickMark>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = EnumValueConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Charts.MajorTickMark, DocumentFormat.OpenXml.Drawing.Charts.TickMarkValues, DocumentModel.Drawings.Charts.TickMarkKind>(value);
+      itemElement = EnumValueConverter.CreateOpenXmlElement<DXDrawCharts.MajorTickMark, DocumentFormat.OpenXml.Drawing.Charts.TickMarkValues, DMDrawsCharts.TickMarkKind>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
@@ -223,22 +223,22 @@ public static class DateAxisConverter
   /// <summary>
   /// Minor Tick Mark.
   /// </summary>
-  private static DocumentModel.Drawings.Charts.TickMarkKind? GetMinorTickMark(DocumentFormat.OpenXml.Drawing.Charts.DateAxis openXmlElement)
+  private static DMDrawsCharts.TickMarkKind? GetMinorTickMark(DXDrawCharts.DateAxis openXmlElement)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.MinorTickMark>();
+    var itemElement = openXmlElement.GetFirstChild<DXDrawCharts.MinorTickMark>();
     if (itemElement?.Val?.Value != null)
-      return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Drawing.Charts.TickMarkValues, DocumentModel.Drawings.Charts.TickMarkKind>(itemElement.Val.Value);
+      return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Drawing.Charts.TickMarkValues, DMDrawsCharts.TickMarkKind>(itemElement.Val.Value);
     return null;
   }
   
-  private static void SetMinorTickMark(DocumentFormat.OpenXml.Drawing.Charts.DateAxis openXmlElement, DocumentModel.Drawings.Charts.TickMarkKind? value)
+  private static void SetMinorTickMark(DXDrawCharts.DateAxis openXmlElement, DMDrawsCharts.TickMarkKind? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.MinorTickMark>();
+    var itemElement = openXmlElement.GetFirstChild<DXDrawCharts.MinorTickMark>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = EnumValueConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Charts.MinorTickMark, DocumentFormat.OpenXml.Drawing.Charts.TickMarkValues, DocumentModel.Drawings.Charts.TickMarkKind>(value);
+      itemElement = EnumValueConverter.CreateOpenXmlElement<DXDrawCharts.MinorTickMark, DocumentFormat.OpenXml.Drawing.Charts.TickMarkValues, DMDrawsCharts.TickMarkKind>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
@@ -247,22 +247,22 @@ public static class DateAxisConverter
   /// <summary>
   /// Tick Label Position.
   /// </summary>
-  private static DocumentModel.Drawings.Charts.TickLabelPositionKind? GetTickLabelPosition(DocumentFormat.OpenXml.Drawing.Charts.DateAxis openXmlElement)
+  private static DMDrawsCharts.TickLabelPositionKind? GetTickLabelPosition(DXDrawCharts.DateAxis openXmlElement)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.TickLabelPosition>();
+    var itemElement = openXmlElement.GetFirstChild<DXDrawCharts.TickLabelPosition>();
     if (itemElement?.Val?.Value != null)
-      return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Drawing.Charts.TickLabelPositionValues, DocumentModel.Drawings.Charts.TickLabelPositionKind>(itemElement.Val.Value);
+      return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Drawing.Charts.TickLabelPositionValues, DMDrawsCharts.TickLabelPositionKind>(itemElement.Val.Value);
     return null;
   }
   
-  private static void SetTickLabelPosition(DocumentFormat.OpenXml.Drawing.Charts.DateAxis openXmlElement, DocumentModel.Drawings.Charts.TickLabelPositionKind? value)
+  private static void SetTickLabelPosition(DXDrawCharts.DateAxis openXmlElement, DMDrawsCharts.TickLabelPositionKind? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.TickLabelPosition>();
+    var itemElement = openXmlElement.GetFirstChild<DXDrawCharts.TickLabelPosition>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = EnumValueConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Charts.TickLabelPosition, DocumentFormat.OpenXml.Drawing.Charts.TickLabelPositionValues, DocumentModel.Drawings.Charts.TickLabelPositionKind>(value);
+      itemElement = EnumValueConverter.CreateOpenXmlElement<DXDrawCharts.TickLabelPosition, DocumentFormat.OpenXml.Drawing.Charts.TickLabelPositionValues, DMDrawsCharts.TickLabelPositionKind>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
@@ -271,22 +271,22 @@ public static class DateAxisConverter
   /// <summary>
   /// ChartShapeProperties.
   /// </summary>
-  private static DocumentModel.Drawings.Charts.ChartShapeProperties? GetChartShapeProperties(DocumentFormat.OpenXml.Drawing.Charts.DateAxis openXmlElement)
+  private static DMDrawsCharts.ChartShapeProperties? GetChartShapeProperties(DXDrawCharts.DateAxis openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.ChartShapeProperties>();
+    var itemElement = openXmlElement?.GetFirstChild<DXDrawCharts.ChartShapeProperties>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.Charts.ChartShapePropertiesConverter.CreateModelElement(itemElement);
+      return DMXDrawsCharts.ChartShapePropertiesConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetChartShapeProperties(DocumentFormat.OpenXml.Drawing.Charts.DateAxis openXmlElement, DocumentModel.Drawings.Charts.ChartShapeProperties? value)
+  private static void SetChartShapeProperties(DXDrawCharts.DateAxis openXmlElement, DMDrawsCharts.ChartShapeProperties? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.ChartShapeProperties>();
+    var itemElement = openXmlElement.GetFirstChild<DXDrawCharts.ChartShapeProperties>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Drawings.Charts.ChartShapePropertiesConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Charts.ChartShapeProperties>(value);
+      itemElement = DMXDrawsCharts.ChartShapePropertiesConverter.CreateOpenXmlElement<DXDrawCharts.ChartShapeProperties>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
@@ -295,22 +295,22 @@ public static class DateAxisConverter
   /// <summary>
   /// TextProperties.
   /// </summary>
-  private static DocumentModel.Drawings.Charts.TextProperties? GetTextProperties(DocumentFormat.OpenXml.Drawing.Charts.DateAxis openXmlElement)
+  private static DMDrawsCharts.TextProperties? GetTextProperties(DXDrawCharts.DateAxis openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.TextProperties>();
+    var itemElement = openXmlElement?.GetFirstChild<DXDrawCharts.TextProperties>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.Charts.TextPropertiesConverter.CreateModelElement(itemElement);
+      return DMXDrawsCharts.TextPropertiesConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetTextProperties(DocumentFormat.OpenXml.Drawing.Charts.DateAxis openXmlElement, DocumentModel.Drawings.Charts.TextProperties? value)
+  private static void SetTextProperties(DXDrawCharts.DateAxis openXmlElement, DMDrawsCharts.TextProperties? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.TextProperties>();
+    var itemElement = openXmlElement.GetFirstChild<DXDrawCharts.TextProperties>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Drawings.Charts.TextPropertiesConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Charts.TextProperties>(value);
+      itemElement = DMXDrawsCharts.TextPropertiesConverter.CreateOpenXmlElement<DXDrawCharts.TextProperties>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
@@ -319,237 +319,237 @@ public static class DateAxisConverter
   /// <summary>
   /// Crossing Axis ID.
   /// </summary>
-  private static UInt32? GetCrossingAxis(DocumentFormat.OpenXml.Drawing.Charts.DateAxis openXmlElement)
+  private static UInt32? GetCrossingAxis(DXDrawCharts.DateAxis openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.CrossingAxis>();
+    var itemElement = openXmlElement?.GetFirstChild<DXDrawCharts.CrossingAxis>();
     if (itemElement != null)
       return itemElement.Val?.Value;
     return null;
   }
   
-  private static void SetCrossingAxis(DocumentFormat.OpenXml.Drawing.Charts.DateAxis openXmlElement, UInt32? value)
+  private static void SetCrossingAxis(DXDrawCharts.DateAxis openXmlElement, UInt32? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.CrossingAxis>();
+    var itemElement = openXmlElement.GetFirstChild<DXDrawCharts.CrossingAxis>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = new DocumentFormat.OpenXml.Drawing.Charts.CrossingAxis{ Val = value };
+      itemElement = new DXDrawCharts.CrossingAxis{ Val = value };
       openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static DocumentModel.Drawings.Charts.CrossesKind? GetCrosses(DocumentFormat.OpenXml.Drawing.Charts.DateAxis openXmlElement)
+  private static DMDrawsCharts.CrossesKind? GetCrosses(DXDrawCharts.DateAxis openXmlElement)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.Crosses>();
+    var itemElement = openXmlElement.GetFirstChild<DXDrawCharts.Crosses>();
     if (itemElement?.Val?.Value != null)
-      return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Drawing.Charts.CrossesValues, DocumentModel.Drawings.Charts.CrossesKind>(itemElement.Val.Value);
+      return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Drawing.Charts.CrossesValues, DMDrawsCharts.CrossesKind>(itemElement.Val.Value);
     return null;
   }
   
-  private static void SetCrosses(DocumentFormat.OpenXml.Drawing.Charts.DateAxis openXmlElement, DocumentModel.Drawings.Charts.CrossesKind? value)
+  private static void SetCrosses(DXDrawCharts.DateAxis openXmlElement, DMDrawsCharts.CrossesKind? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.Crosses>();
+    var itemElement = openXmlElement.GetFirstChild<DXDrawCharts.Crosses>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = EnumValueConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Charts.Crosses, DocumentFormat.OpenXml.Drawing.Charts.CrossesValues, DocumentModel.Drawings.Charts.CrossesKind>(value);
+      itemElement = EnumValueConverter.CreateOpenXmlElement<DXDrawCharts.Crosses, DocumentFormat.OpenXml.Drawing.Charts.CrossesValues, DMDrawsCharts.CrossesKind>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static Double? GetCrossesAt(DocumentFormat.OpenXml.Drawing.Charts.DateAxis openXmlElement)
+  private static Double? GetCrossesAt(DXDrawCharts.DateAxis openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.CrossesAt>();
+    var itemElement = openXmlElement?.GetFirstChild<DXDrawCharts.CrossesAt>();
     if (itemElement != null)
       return itemElement.Val?.Value;
     return null;
   }
   
-  private static void SetCrossesAt(DocumentFormat.OpenXml.Drawing.Charts.DateAxis openXmlElement, Double? value)
+  private static void SetCrossesAt(DXDrawCharts.DateAxis openXmlElement, Double? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.CrossesAt>();
+    var itemElement = openXmlElement.GetFirstChild<DXDrawCharts.CrossesAt>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = new DocumentFormat.OpenXml.Drawing.Charts.CrossesAt{ Val = value };
+      itemElement = new DXDrawCharts.CrossesAt{ Val = value };
       openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static Boolean? GetAutoLabeled(DocumentFormat.OpenXml.Drawing.Charts.DateAxis openXmlElement)
+  private static Boolean? GetAutoLabeled(DXDrawCharts.DateAxis openXmlElement)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.AutoLabeled>();
+    var itemElement = openXmlElement.GetFirstChild<DXDrawCharts.AutoLabeled>();
     return itemElement != null;
   }
   
-  private static void SetAutoLabeled(DocumentFormat.OpenXml.Drawing.Charts.DateAxis openXmlElement, Boolean? value)
+  private static void SetAutoLabeled(DXDrawCharts.DateAxis openXmlElement, Boolean? value)
   {
     if (value == false)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.AutoLabeled>();
+      var itemElement = openXmlElement.GetFirstChild<DXDrawCharts.AutoLabeled>();
       if (itemElement != null)
         itemElement.Remove();
     }
     if (value == true)
     {
-      var itemElement = new DocumentFormat.OpenXml.Drawing.Charts.AutoLabeled();
+      var itemElement = new DXDrawCharts.AutoLabeled();
       openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static UInt16? GetLabelOffset(DocumentFormat.OpenXml.Drawing.Charts.DateAxis openXmlElement)
+  private static UInt16? GetLabelOffset(DXDrawCharts.DateAxis openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.LabelOffset>();
+    var itemElement = openXmlElement?.GetFirstChild<DXDrawCharts.LabelOffset>();
     if (itemElement != null)
       return itemElement.Val?.Value;
     return null;
   }
   
-  private static void SetLabelOffset(DocumentFormat.OpenXml.Drawing.Charts.DateAxis openXmlElement, UInt16? value)
+  private static void SetLabelOffset(DXDrawCharts.DateAxis openXmlElement, UInt16? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.LabelOffset>();
+    var itemElement = openXmlElement.GetFirstChild<DXDrawCharts.LabelOffset>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = new DocumentFormat.OpenXml.Drawing.Charts.LabelOffset{ Val = value };
+      itemElement = new DXDrawCharts.LabelOffset{ Val = value };
       openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static DocumentModel.Drawings.Charts.TimeUnitKind? GetBaseTimeUnit(DocumentFormat.OpenXml.Drawing.Charts.DateAxis openXmlElement)
+  private static DMDrawsCharts.TimeUnitKind? GetBaseTimeUnit(DXDrawCharts.DateAxis openXmlElement)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.BaseTimeUnit>();
+    var itemElement = openXmlElement.GetFirstChild<DXDrawCharts.BaseTimeUnit>();
     if (itemElement?.Val?.Value != null)
-      return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Drawing.Charts.TimeUnitValues, DocumentModel.Drawings.Charts.TimeUnitKind>(itemElement.Val.Value);
+      return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Drawing.Charts.TimeUnitValues, DMDrawsCharts.TimeUnitKind>(itemElement.Val.Value);
     return null;
   }
   
-  private static void SetBaseTimeUnit(DocumentFormat.OpenXml.Drawing.Charts.DateAxis openXmlElement, DocumentModel.Drawings.Charts.TimeUnitKind? value)
+  private static void SetBaseTimeUnit(DXDrawCharts.DateAxis openXmlElement, DMDrawsCharts.TimeUnitKind? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.BaseTimeUnit>();
+    var itemElement = openXmlElement.GetFirstChild<DXDrawCharts.BaseTimeUnit>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = EnumValueConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Charts.BaseTimeUnit, DocumentFormat.OpenXml.Drawing.Charts.TimeUnitValues, DocumentModel.Drawings.Charts.TimeUnitKind>(value);
+      itemElement = EnumValueConverter.CreateOpenXmlElement<DXDrawCharts.BaseTimeUnit, DocumentFormat.OpenXml.Drawing.Charts.TimeUnitValues, DMDrawsCharts.TimeUnitKind>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static Double? GetMajorUnit(DocumentFormat.OpenXml.Drawing.Charts.DateAxis openXmlElement)
+  private static Double? GetMajorUnit(DXDrawCharts.DateAxis openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.MajorUnit>();
+    var itemElement = openXmlElement?.GetFirstChild<DXDrawCharts.MajorUnit>();
     if (itemElement != null)
       return itemElement.Val?.Value;
     return null;
   }
   
-  private static void SetMajorUnit(DocumentFormat.OpenXml.Drawing.Charts.DateAxis openXmlElement, Double? value)
+  private static void SetMajorUnit(DXDrawCharts.DateAxis openXmlElement, Double? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.MajorUnit>();
+    var itemElement = openXmlElement.GetFirstChild<DXDrawCharts.MajorUnit>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = new DocumentFormat.OpenXml.Drawing.Charts.MajorUnit{ Val = value };
+      itemElement = new DXDrawCharts.MajorUnit{ Val = value };
       openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static DocumentModel.Drawings.Charts.TimeUnitKind? GetMajorTimeUnit(DocumentFormat.OpenXml.Drawing.Charts.DateAxis openXmlElement)
+  private static DMDrawsCharts.TimeUnitKind? GetMajorTimeUnit(DXDrawCharts.DateAxis openXmlElement)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.MajorTimeUnit>();
+    var itemElement = openXmlElement.GetFirstChild<DXDrawCharts.MajorTimeUnit>();
     if (itemElement?.Val?.Value != null)
-      return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Drawing.Charts.TimeUnitValues, DocumentModel.Drawings.Charts.TimeUnitKind>(itemElement.Val.Value);
+      return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Drawing.Charts.TimeUnitValues, DMDrawsCharts.TimeUnitKind>(itemElement.Val.Value);
     return null;
   }
   
-  private static void SetMajorTimeUnit(DocumentFormat.OpenXml.Drawing.Charts.DateAxis openXmlElement, DocumentModel.Drawings.Charts.TimeUnitKind? value)
+  private static void SetMajorTimeUnit(DXDrawCharts.DateAxis openXmlElement, DMDrawsCharts.TimeUnitKind? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.MajorTimeUnit>();
+    var itemElement = openXmlElement.GetFirstChild<DXDrawCharts.MajorTimeUnit>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = EnumValueConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Charts.MajorTimeUnit, DocumentFormat.OpenXml.Drawing.Charts.TimeUnitValues, DocumentModel.Drawings.Charts.TimeUnitKind>(value);
+      itemElement = EnumValueConverter.CreateOpenXmlElement<DXDrawCharts.MajorTimeUnit, DocumentFormat.OpenXml.Drawing.Charts.TimeUnitValues, DMDrawsCharts.TimeUnitKind>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static Double? GetMinorUnit(DocumentFormat.OpenXml.Drawing.Charts.DateAxis openXmlElement)
+  private static Double? GetMinorUnit(DXDrawCharts.DateAxis openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.MinorUnit>();
+    var itemElement = openXmlElement?.GetFirstChild<DXDrawCharts.MinorUnit>();
     if (itemElement != null)
       return itemElement.Val?.Value;
     return null;
   }
   
-  private static void SetMinorUnit(DocumentFormat.OpenXml.Drawing.Charts.DateAxis openXmlElement, Double? value)
+  private static void SetMinorUnit(DXDrawCharts.DateAxis openXmlElement, Double? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.MinorUnit>();
+    var itemElement = openXmlElement.GetFirstChild<DXDrawCharts.MinorUnit>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = new DocumentFormat.OpenXml.Drawing.Charts.MinorUnit{ Val = value };
+      itemElement = new DXDrawCharts.MinorUnit{ Val = value };
       openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static DocumentModel.Drawings.Charts.TimeUnitKind? GetMinorTimeUnit(DocumentFormat.OpenXml.Drawing.Charts.DateAxis openXmlElement)
+  private static DMDrawsCharts.TimeUnitKind? GetMinorTimeUnit(DXDrawCharts.DateAxis openXmlElement)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.MinorTimeUnit>();
+    var itemElement = openXmlElement.GetFirstChild<DXDrawCharts.MinorTimeUnit>();
     if (itemElement?.Val?.Value != null)
-      return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Drawing.Charts.TimeUnitValues, DocumentModel.Drawings.Charts.TimeUnitKind>(itemElement.Val.Value);
+      return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Drawing.Charts.TimeUnitValues, DMDrawsCharts.TimeUnitKind>(itemElement.Val.Value);
     return null;
   }
   
-  private static void SetMinorTimeUnit(DocumentFormat.OpenXml.Drawing.Charts.DateAxis openXmlElement, DocumentModel.Drawings.Charts.TimeUnitKind? value)
+  private static void SetMinorTimeUnit(DXDrawCharts.DateAxis openXmlElement, DMDrawsCharts.TimeUnitKind? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.MinorTimeUnit>();
+    var itemElement = openXmlElement.GetFirstChild<DXDrawCharts.MinorTimeUnit>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = EnumValueConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Charts.MinorTimeUnit, DocumentFormat.OpenXml.Drawing.Charts.TimeUnitValues, DocumentModel.Drawings.Charts.TimeUnitKind>(value);
+      itemElement = EnumValueConverter.CreateOpenXmlElement<DXDrawCharts.MinorTimeUnit, DocumentFormat.OpenXml.Drawing.Charts.TimeUnitValues, DMDrawsCharts.TimeUnitKind>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static DocumentModel.Drawings.Charts.DateAxExtensionList? GetDateAxExtensionList(DocumentFormat.OpenXml.Drawing.Charts.DateAxis openXmlElement)
+  private static DMDrawsCharts.DateAxExtensionList? GetDateAxExtensionList(DXDrawCharts.DateAxis openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.DateAxExtensionList>();
+    var itemElement = openXmlElement?.GetFirstChild<DXDrawCharts.DateAxExtensionList>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.Charts.DateAxExtensionListConverter.CreateModelElement(itemElement);
+      return DMXDrawsCharts.DateAxExtensionListConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetDateAxExtensionList(DocumentFormat.OpenXml.Drawing.Charts.DateAxis openXmlElement, DocumentModel.Drawings.Charts.DateAxExtensionList? value)
+  private static void SetDateAxExtensionList(DXDrawCharts.DateAxis openXmlElement, DMDrawsCharts.DateAxExtensionList? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.DateAxExtensionList>();
+    var itemElement = openXmlElement.GetFirstChild<DXDrawCharts.DateAxExtensionList>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Drawings.Charts.DateAxExtensionListConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Charts.DateAxExtensionList>(value);
+      itemElement = DMXDrawsCharts.DateAxExtensionListConverter.CreateOpenXmlElement<DXDrawCharts.DateAxExtensionList>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  public static DocumentModel.Drawings.Charts.DateAxis? CreateModelElement(DocumentFormat.OpenXml.Drawing.Charts.DateAxis? openXmlElement)
+  public static DMDrawsCharts.DateAxis? CreateModelElement(DXDrawCharts.DateAxis? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.Charts.DateAxis();
+      var value = new DMDrawsCharts.DateAxis();
       value.AxisId = GetAxisId(openXmlElement);
       value.Scaling = GetScaling(openXmlElement);
       value.Delete = GetDelete(openXmlElement);
@@ -579,8 +579,8 @@ public static class DateAxisConverter
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.Charts.DateAxis? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.Charts.DateAxis, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDrawsCharts.DateAxis? value)
+    where OpenXmlElementType: DXDrawCharts.DateAxis, new()
   {
     if (value != null)
     {

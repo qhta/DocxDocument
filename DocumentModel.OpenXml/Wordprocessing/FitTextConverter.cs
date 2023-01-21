@@ -8,12 +8,12 @@ public static class FitTextConverter
   /// <summary>
   /// Value
   /// </summary>
-  private static UInt32? GetVal(DocumentFormat.OpenXml.Wordprocessing.FitText openXmlElement)
+  private static UInt32? GetVal(DXW.FitText openXmlElement)
   {
     return openXmlElement.Val?.Value;
   }
   
-  private static void SetVal(DocumentFormat.OpenXml.Wordprocessing.FitText openXmlElement, UInt32? value)
+  private static void SetVal(DXW.FitText openXmlElement, UInt32? value)
   {
     openXmlElement.Val = value;
   }
@@ -21,21 +21,21 @@ public static class FitTextConverter
   /// <summary>
   /// Fit Text Run ID
   /// </summary>
-  private static Int32? GetId(DocumentFormat.OpenXml.Wordprocessing.FitText openXmlElement)
+  private static Int32? GetId(DXW.FitText openXmlElement)
   {
     return openXmlElement.Id?.Value;
   }
   
-  private static void SetId(DocumentFormat.OpenXml.Wordprocessing.FitText openXmlElement, Int32? value)
+  private static void SetId(DXW.FitText openXmlElement, Int32? value)
   {
     openXmlElement.Id = value;
   }
   
-  public static DocumentModel.Wordprocessing.FitText? CreateModelElement(DocumentFormat.OpenXml.Wordprocessing.FitText? openXmlElement)
+  public static DMW.FitText? CreateModelElement(DXW.FitText? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Wordprocessing.FitText();
+      var value = new DMW.FitText();
       value.Val = GetVal(openXmlElement);
       value.Id = GetId(openXmlElement);
       return value;
@@ -43,8 +43,8 @@ public static class FitTextConverter
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.FitText? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Wordprocessing.FitText, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMW.FitText? value)
+    where OpenXmlElementType: DXW.FitText, new()
   {
     if (value != null)
     {

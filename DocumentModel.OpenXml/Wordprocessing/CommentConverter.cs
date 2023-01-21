@@ -8,12 +8,12 @@ public static class CommentConverter
   /// <summary>
   /// initials
   /// </summary>
-  private static String? GetInitials(DocumentFormat.OpenXml.Wordprocessing.Comment openXmlElement)
+  private static String? GetInitials(DXW.Comment openXmlElement)
   {
     return openXmlElement?.Initials?.Value;
   }
   
-  private static void SetInitials(DocumentFormat.OpenXml.Wordprocessing.Comment openXmlElement, String? value)
+  private static void SetInitials(DXW.Comment openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.Initials = new StringValue { Value = value };
@@ -24,12 +24,12 @@ public static class CommentConverter
   /// <summary>
   /// author
   /// </summary>
-  private static String? GetAuthor(DocumentFormat.OpenXml.Wordprocessing.Comment openXmlElement)
+  private static String? GetAuthor(DXW.Comment openXmlElement)
   {
     return openXmlElement?.Author?.Value;
   }
   
-  private static void SetAuthor(DocumentFormat.OpenXml.Wordprocessing.Comment openXmlElement, String? value)
+  private static void SetAuthor(DXW.Comment openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.Author = new StringValue { Value = value };
@@ -40,12 +40,12 @@ public static class CommentConverter
   /// <summary>
   /// date
   /// </summary>
-  private static DateTime? GetDate(DocumentFormat.OpenXml.Wordprocessing.Comment openXmlElement)
+  private static DateTime? GetDate(DXW.Comment openXmlElement)
   {
     return openXmlElement.Date?.Value;
   }
   
-  private static void SetDate(DocumentFormat.OpenXml.Wordprocessing.Comment openXmlElement, DateTime? value)
+  private static void SetDate(DXW.Comment openXmlElement, DateTime? value)
   {
     openXmlElement.Date = value;
   }
@@ -53,12 +53,12 @@ public static class CommentConverter
   /// <summary>
   /// Annotation Identifier
   /// </summary>
-  private static String? GetId(DocumentFormat.OpenXml.Wordprocessing.Comment openXmlElement)
+  private static String? GetId(DXW.Comment openXmlElement)
   {
     return openXmlElement?.Id?.Value;
   }
   
-  private static void SetId(DocumentFormat.OpenXml.Wordprocessing.Comment openXmlElement, String? value)
+  private static void SetId(DXW.Comment openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.Id = new StringValue { Value = value };
@@ -66,278 +66,278 @@ public static class CommentConverter
       openXmlElement.Id = null;
   }
   
-  private static System.Collections.ObjectModel.Collection<DocumentModel.Wordprocessing.AltChunk> GetAltChunks(DocumentFormat.OpenXml.Wordprocessing.Comment openXmlElement)
+  private static Collection<DMW.AltChunk> GetAltChunks(DXW.Comment openXmlElement)
   {
-    var collection = new System.Collections.ObjectModel.Collection<DocumentModel.Wordprocessing.AltChunk>();
-    foreach (var item in openXmlElement.Elements<DocumentFormat.OpenXml.Wordprocessing.AltChunk>())
+    var collection = new Collection<DMW.AltChunk>();
+    foreach (var item in openXmlElement.Elements<DXW.AltChunk>())
     {
-      var newItem = DocumentModel.OpenXml.Wordprocessing.AltChunkConverter.CreateModelElement(item);
+      var newItem = DMXW.AltChunkConverter.CreateModelElement(item);
       if (newItem != null)
         collection.Add(newItem);
     }
     return collection;
   }
   
-  private static void SetAltChunks(DocumentFormat.OpenXml.Wordprocessing.Comment openXmlElement, System.Collections.ObjectModel.Collection<DocumentModel.Wordprocessing.AltChunk>? value)
+  private static void SetAltChunks(DXW.Comment openXmlElement, Collection<DMW.AltChunk>? value)
   {
-    openXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Wordprocessing.AltChunk>();
+    openXmlElement.RemoveAllChildren<DXW.AltChunk>();
     if (value != null)
     {
       foreach (var item in value)
       {
-        var newItem = DocumentModel.OpenXml.Wordprocessing.AltChunkConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.AltChunk>(item);
+        var newItem = DMXW.AltChunkConverter.CreateOpenXmlElement<DXW.AltChunk>(item);
         if (newItem != null)
           openXmlElement.AddChild(newItem);
       }
     }
   }
   
-  private static DocumentModel.Wordprocessing.CustomXmlBlock? GetCustomXmlBlock(DocumentFormat.OpenXml.Wordprocessing.Comment openXmlElement)
+  private static DMW.CustomXmlBlock? GetCustomXmlBlock(DXW.Comment openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.CustomXmlBlock>();
+    var itemElement = openXmlElement?.GetFirstChild<DXW.CustomXmlBlock>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Wordprocessing.CustomXmlBlockConverter.CreateModelElement(itemElement);
+      return DMXW.CustomXmlBlockConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetCustomXmlBlock(DocumentFormat.OpenXml.Wordprocessing.Comment openXmlElement, DocumentModel.Wordprocessing.CustomXmlBlock? value)
+  private static void SetCustomXmlBlock(DXW.Comment openXmlElement, DMW.CustomXmlBlock? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.CustomXmlBlock>();
+    var itemElement = openXmlElement.GetFirstChild<DXW.CustomXmlBlock>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Wordprocessing.CustomXmlBlockConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.CustomXmlBlock>(value);
+      itemElement = DMXW.CustomXmlBlockConverter.CreateOpenXmlElement<DXW.CustomXmlBlock>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static DocumentModel.Wordprocessing.SdtBlock? GetSdtBlock(DocumentFormat.OpenXml.Wordprocessing.Comment openXmlElement)
+  private static DMW.SdtBlock? GetSdtBlock(DXW.Comment openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.SdtBlock>();
+    var itemElement = openXmlElement?.GetFirstChild<DXW.SdtBlock>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Wordprocessing.SdtBlockConverter.CreateModelElement(itemElement);
+      return DMXW.SdtBlockConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetSdtBlock(DocumentFormat.OpenXml.Wordprocessing.Comment openXmlElement, DocumentModel.Wordprocessing.SdtBlock? value)
+  private static void SetSdtBlock(DXW.Comment openXmlElement, DMW.SdtBlock? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.SdtBlock>();
+    var itemElement = openXmlElement.GetFirstChild<DXW.SdtBlock>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Wordprocessing.SdtBlockConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.SdtBlock>(value);
+      itemElement = DMXW.SdtBlockConverter.CreateOpenXmlElement<DXW.SdtBlock>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static System.Collections.ObjectModel.Collection<DocumentModel.Wordprocessing.Paragraph> GetParagraphs(DocumentFormat.OpenXml.Wordprocessing.Comment openXmlElement)
+  private static Collection<DMW.Paragraph> GetParagraphs(DXW.Comment openXmlElement)
   {
-    var collection = new System.Collections.ObjectModel.Collection<DocumentModel.Wordprocessing.Paragraph>();
-    foreach (var item in openXmlElement.Elements<DocumentFormat.OpenXml.Wordprocessing.Paragraph>())
+    var collection = new Collection<DMW.Paragraph>();
+    foreach (var item in openXmlElement.Elements<DXW.Paragraph>())
     {
-      var newItem = DocumentModel.OpenXml.Wordprocessing.ParagraphConverter.CreateModelElement(item);
+      var newItem = DMXW.ParagraphConverter.CreateModelElement(item);
       if (newItem != null)
         collection.Add(newItem);
     }
     return collection;
   }
   
-  private static void SetParagraphs(DocumentFormat.OpenXml.Wordprocessing.Comment openXmlElement, System.Collections.ObjectModel.Collection<DocumentModel.Wordprocessing.Paragraph>? value)
+  private static void SetParagraphs(DXW.Comment openXmlElement, Collection<DMW.Paragraph>? value)
   {
-    openXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Wordprocessing.Paragraph>();
+    openXmlElement.RemoveAllChildren<DXW.Paragraph>();
     if (value != null)
     {
       foreach (var item in value)
       {
-        var newItem = DocumentModel.OpenXml.Wordprocessing.ParagraphConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.Paragraph>(item);
+        var newItem = DMXW.ParagraphConverter.CreateOpenXmlElement<DXW.Paragraph>(item);
         if (newItem != null)
           openXmlElement.AddChild(newItem);
       }
     }
   }
   
-  private static System.Collections.ObjectModel.Collection<DocumentModel.Wordprocessing.Table> GetTables(DocumentFormat.OpenXml.Wordprocessing.Comment openXmlElement)
+  private static Collection<DMW.Table> GetTables(DXW.Comment openXmlElement)
   {
-    var collection = new System.Collections.ObjectModel.Collection<DocumentModel.Wordprocessing.Table>();
-    foreach (var item in openXmlElement.Elements<DocumentFormat.OpenXml.Wordprocessing.Table>())
+    var collection = new Collection<DMW.Table>();
+    foreach (var item in openXmlElement.Elements<DXW.Table>())
     {
-      var newItem = DocumentModel.OpenXml.Wordprocessing.TableConverter.CreateModelElement(item);
+      var newItem = DMXW.TableConverter.CreateModelElement(item);
       if (newItem != null)
         collection.Add(newItem);
     }
     return collection;
   }
   
-  private static void SetTables(DocumentFormat.OpenXml.Wordprocessing.Comment openXmlElement, System.Collections.ObjectModel.Collection<DocumentModel.Wordprocessing.Table>? value)
+  private static void SetTables(DXW.Comment openXmlElement, Collection<DMW.Table>? value)
   {
-    openXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Wordprocessing.Table>();
+    openXmlElement.RemoveAllChildren<DXW.Table>();
     if (value != null)
     {
       foreach (var item in value)
       {
-        var newItem = DocumentModel.OpenXml.Wordprocessing.TableConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.Table>(item);
+        var newItem = DMXW.TableConverter.CreateOpenXmlElement<DXW.Table>(item);
         if (newItem != null)
           openXmlElement.AddChild(newItem);
       }
     }
   }
   
-  private static DocumentModel.Wordprocessing.ProofError? GetProofError(DocumentFormat.OpenXml.Wordprocessing.Comment openXmlElement)
+  private static DMW.ProofError? GetProofError(DXW.Comment openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.ProofError>();
+    var itemElement = openXmlElement?.GetFirstChild<DXW.ProofError>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Wordprocessing.ProofErrorConverter.CreateModelElement(itemElement);
+      return DMXW.ProofErrorConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetProofError(DocumentFormat.OpenXml.Wordprocessing.Comment openXmlElement, DocumentModel.Wordprocessing.ProofError? value)
+  private static void SetProofError(DXW.Comment openXmlElement, DMW.ProofError? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.ProofError>();
+    var itemElement = openXmlElement.GetFirstChild<DXW.ProofError>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Wordprocessing.ProofErrorConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.ProofError>(value);
+      itemElement = DMXW.ProofErrorConverter.CreateOpenXmlElement<DXW.ProofError>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static DocumentModel.Wordprocessing.PermStart? GetPermStart(DocumentFormat.OpenXml.Wordprocessing.Comment openXmlElement)
+  private static DMW.PermStart? GetPermStart(DXW.Comment openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.PermStart>();
+    var itemElement = openXmlElement?.GetFirstChild<DXW.PermStart>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Wordprocessing.PermStartConverter.CreateModelElement(itemElement);
+      return DMXW.PermStartConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetPermStart(DocumentFormat.OpenXml.Wordprocessing.Comment openXmlElement, DocumentModel.Wordprocessing.PermStart? value)
+  private static void SetPermStart(DXW.Comment openXmlElement, DMW.PermStart? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.PermStart>();
+    var itemElement = openXmlElement.GetFirstChild<DXW.PermStart>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Wordprocessing.PermStartConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.PermStart>(value);
+      itemElement = DMXW.PermStartConverter.CreateOpenXmlElement<DXW.PermStart>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static DocumentModel.Wordprocessing.PermEnd? GetPermEnd(DocumentFormat.OpenXml.Wordprocessing.Comment openXmlElement)
+  private static DMW.PermEnd? GetPermEnd(DXW.Comment openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.PermEnd>();
+    var itemElement = openXmlElement?.GetFirstChild<DXW.PermEnd>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Wordprocessing.PermEndConverter.CreateModelElement(itemElement);
+      return DMXW.PermEndConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetPermEnd(DocumentFormat.OpenXml.Wordprocessing.Comment openXmlElement, DocumentModel.Wordprocessing.PermEnd? value)
+  private static void SetPermEnd(DXW.Comment openXmlElement, DMW.PermEnd? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.PermEnd>();
+    var itemElement = openXmlElement.GetFirstChild<DXW.PermEnd>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Wordprocessing.PermEndConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.PermEnd>(value);
+      itemElement = DMXW.PermEndConverter.CreateOpenXmlElement<DXW.PermEnd>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static DocumentModel.Wordprocessing.BookmarkStart? GetBookmarkStart(DocumentFormat.OpenXml.Wordprocessing.Comment openXmlElement)
+  private static DMW.BookmarkStart? GetBookmarkStart(DXW.Comment openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.BookmarkStart>();
+    var itemElement = openXmlElement?.GetFirstChild<DXW.BookmarkStart>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Wordprocessing.BookmarkStartConverter.CreateModelElement(itemElement);
+      return DMXW.BookmarkStartConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetBookmarkStart(DocumentFormat.OpenXml.Wordprocessing.Comment openXmlElement, DocumentModel.Wordprocessing.BookmarkStart? value)
+  private static void SetBookmarkStart(DXW.Comment openXmlElement, DMW.BookmarkStart? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.BookmarkStart>();
+    var itemElement = openXmlElement.GetFirstChild<DXW.BookmarkStart>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Wordprocessing.BookmarkStartConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.BookmarkStart>(value);
+      itemElement = DMXW.BookmarkStartConverter.CreateOpenXmlElement<DXW.BookmarkStart>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static DocumentModel.Wordprocessing.MarkupRangeType? GetBookmarkEnd(DocumentFormat.OpenXml.Wordprocessing.Comment openXmlElement)
+  private static DMW.MarkupRangeType? GetBookmarkEnd(DXW.Comment openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.BookmarkEnd>();
+    var itemElement = openXmlElement?.GetFirstChild<DXW.BookmarkEnd>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Wordprocessing.MarkupRangeTypeConverter.CreateModelElement(itemElement);
+      return DMXW.MarkupRangeTypeConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetBookmarkEnd(DocumentFormat.OpenXml.Wordprocessing.Comment openXmlElement, DocumentModel.Wordprocessing.MarkupRangeType? value)
+  private static void SetBookmarkEnd(DXW.Comment openXmlElement, DMW.MarkupRangeType? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.BookmarkEnd>();
+    var itemElement = openXmlElement.GetFirstChild<DXW.BookmarkEnd>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Wordprocessing.MarkupRangeTypeConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.BookmarkEnd>(value);
+      itemElement = DMXW.MarkupRangeTypeConverter.CreateOpenXmlElement<DXW.BookmarkEnd>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static DocumentModel.Wordprocessing.MarkupRangeType? GetCommentRangeStart(DocumentFormat.OpenXml.Wordprocessing.Comment openXmlElement)
+  private static DMW.MarkupRangeType? GetCommentRangeStart(DXW.Comment openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.CommentRangeStart>();
+    var itemElement = openXmlElement?.GetFirstChild<DXW.CommentRangeStart>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Wordprocessing.MarkupRangeTypeConverter.CreateModelElement(itemElement);
+      return DMXW.MarkupRangeTypeConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetCommentRangeStart(DocumentFormat.OpenXml.Wordprocessing.Comment openXmlElement, DocumentModel.Wordprocessing.MarkupRangeType? value)
+  private static void SetCommentRangeStart(DXW.Comment openXmlElement, DMW.MarkupRangeType? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.CommentRangeStart>();
+    var itemElement = openXmlElement.GetFirstChild<DXW.CommentRangeStart>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Wordprocessing.MarkupRangeTypeConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.CommentRangeStart>(value);
+      itemElement = DMXW.MarkupRangeTypeConverter.CreateOpenXmlElement<DXW.CommentRangeStart>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static DocumentModel.Wordprocessing.MarkupRangeType? GetCommentRangeEnd(DocumentFormat.OpenXml.Wordprocessing.Comment openXmlElement)
+  private static DMW.MarkupRangeType? GetCommentRangeEnd(DXW.Comment openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.CommentRangeEnd>();
+    var itemElement = openXmlElement?.GetFirstChild<DXW.CommentRangeEnd>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Wordprocessing.MarkupRangeTypeConverter.CreateModelElement(itemElement);
+      return DMXW.MarkupRangeTypeConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetCommentRangeEnd(DocumentFormat.OpenXml.Wordprocessing.Comment openXmlElement, DocumentModel.Wordprocessing.MarkupRangeType? value)
+  private static void SetCommentRangeEnd(DXW.Comment openXmlElement, DMW.MarkupRangeType? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.CommentRangeEnd>();
+    var itemElement = openXmlElement.GetFirstChild<DXW.CommentRangeEnd>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Wordprocessing.MarkupRangeTypeConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.CommentRangeEnd>(value);
+      itemElement = DMXW.MarkupRangeTypeConverter.CreateOpenXmlElement<DXW.CommentRangeEnd>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  public static DocumentModel.Wordprocessing.Comment? CreateModelElement(DocumentFormat.OpenXml.Wordprocessing.Comment? openXmlElement)
+  public static DMW.Comment? CreateModelElement(DXW.Comment? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Wordprocessing.Comment();
+      var value = new DMW.Comment();
       value.Initials = GetInitials(openXmlElement);
       value.Author = GetAuthor(openXmlElement);
       value.Date = GetDate(openXmlElement);
@@ -359,8 +359,8 @@ public static class CommentConverter
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.Comment? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Wordprocessing.Comment, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMW.Comment? value)
+    where OpenXmlElementType: DXW.Comment, new()
   {
     if (value != null)
     {

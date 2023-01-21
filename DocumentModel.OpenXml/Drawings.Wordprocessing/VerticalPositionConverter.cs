@@ -8,35 +8,35 @@ public static class VerticalPositionConverter
   /// <summary>
   /// Vertical Position Relative Base
   /// </summary>
-  private static DocumentModel.Drawings.Wordprocessing.VerticalRelativePositionKind? GetRelativeFrom(DocumentFormat.OpenXml.Drawing.Wordprocessing.VerticalPosition openXmlElement)
+  private static DMDrawsW.VerticalRelativePositionKind? GetRelativeFrom(DXDrawW.VerticalPosition openXmlElement)
   {
-    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Drawing.Wordprocessing.VerticalRelativePositionValues, DocumentModel.Drawings.Wordprocessing.VerticalRelativePositionKind>(openXmlElement?.RelativeFrom?.Value);
+    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Drawing.Wordprocessing.VerticalRelativePositionValues, DMDrawsW.VerticalRelativePositionKind>(openXmlElement?.RelativeFrom?.Value);
   }
   
-  private static void SetRelativeFrom(DocumentFormat.OpenXml.Drawing.Wordprocessing.VerticalPosition openXmlElement, DocumentModel.Drawings.Wordprocessing.VerticalRelativePositionKind? value)
+  private static void SetRelativeFrom(DXDrawW.VerticalPosition openXmlElement, DMDrawsW.VerticalRelativePositionKind? value)
   {
-    openXmlElement.RelativeFrom = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Drawing.Wordprocessing.VerticalRelativePositionValues, DocumentModel.Drawings.Wordprocessing.VerticalRelativePositionKind>(value);
+    openXmlElement.RelativeFrom = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Drawing.Wordprocessing.VerticalRelativePositionValues, DMDrawsW.VerticalRelativePositionKind>(value);
   }
   
   /// <summary>
   /// Relative Vertical Alignment.
   /// </summary>
-  private static String? GetVerticalAlignment(DocumentFormat.OpenXml.Drawing.Wordprocessing.VerticalPosition openXmlElement)
+  private static String? GetVerticalAlignment(DXDrawW.VerticalPosition openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.Wordprocessing.VerticalAlignment>();
+    var itemElement = openXmlElement?.GetFirstChild<DXDrawW.VerticalAlignment>();
     if (itemElement != null)
       return itemElement.Text;
     return null;
   }
   
-  private static void SetVerticalAlignment(DocumentFormat.OpenXml.Drawing.Wordprocessing.VerticalPosition openXmlElement, String? value)
+  private static void SetVerticalAlignment(DXDrawW.VerticalPosition openXmlElement, String? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Wordprocessing.VerticalAlignment>();
+    var itemElement = openXmlElement.GetFirstChild<DXDrawW.VerticalAlignment>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = new DocumentFormat.OpenXml.Drawing.Wordprocessing.VerticalAlignment { Text = value };
+      itemElement = new DXDrawW.VerticalAlignment { Text = value };
       openXmlElement.AddChild(itemElement);
     }
   }
@@ -44,22 +44,22 @@ public static class VerticalPositionConverter
   /// <summary>
   /// PositionOffset.
   /// </summary>
-  private static String? GetPositionOffset(DocumentFormat.OpenXml.Drawing.Wordprocessing.VerticalPosition openXmlElement)
+  private static String? GetPositionOffset(DXDrawW.VerticalPosition openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.Wordprocessing.PositionOffset>();
+    var itemElement = openXmlElement?.GetFirstChild<DXDrawW.PositionOffset>();
     if (itemElement != null)
       return itemElement.Text;
     return null;
   }
   
-  private static void SetPositionOffset(DocumentFormat.OpenXml.Drawing.Wordprocessing.VerticalPosition openXmlElement, String? value)
+  private static void SetPositionOffset(DXDrawW.VerticalPosition openXmlElement, String? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Wordprocessing.PositionOffset>();
+    var itemElement = openXmlElement.GetFirstChild<DXDrawW.PositionOffset>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = new DocumentFormat.OpenXml.Drawing.Wordprocessing.PositionOffset { Text = value };
+      itemElement = new DXDrawW.PositionOffset { Text = value };
       openXmlElement.AddChild(itemElement);
     }
   }
@@ -67,31 +67,31 @@ public static class VerticalPositionConverter
   /// <summary>
   /// PercentagePositionVerticalOffset, this property is only available in Office 2010 and later..
   /// </summary>
-  private static String? GetPercentagePositionVerticalOffset(DocumentFormat.OpenXml.Drawing.Wordprocessing.VerticalPosition openXmlElement)
+  private static String? GetPercentagePositionVerticalOffset(DXDrawW.VerticalPosition openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office2010.Word.Drawing.PercentagePositionVerticalOffset>();
+    var itemElement = openXmlElement?.GetFirstChild<DXO2010WDraw.PercentagePositionVerticalOffset>();
     if (itemElement != null)
       return itemElement.Text;
     return null;
   }
   
-  private static void SetPercentagePositionVerticalOffset(DocumentFormat.OpenXml.Drawing.Wordprocessing.VerticalPosition openXmlElement, String? value)
+  private static void SetPercentagePositionVerticalOffset(DXDrawW.VerticalPosition openXmlElement, String? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2010.Word.Drawing.PercentagePositionVerticalOffset>();
+    var itemElement = openXmlElement.GetFirstChild<DXO2010WDraw.PercentagePositionVerticalOffset>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = new DocumentFormat.OpenXml.Office2010.Word.Drawing.PercentagePositionVerticalOffset { Text = value };
+      itemElement = new DXO2010WDraw.PercentagePositionVerticalOffset { Text = value };
       openXmlElement.AddChild(itemElement);
     }
   }
   
-  public static DocumentModel.Drawings.Wordprocessing.VerticalPosition? CreateModelElement(DocumentFormat.OpenXml.Drawing.Wordprocessing.VerticalPosition? openXmlElement)
+  public static DMDrawsW.VerticalPosition? CreateModelElement(DXDrawW.VerticalPosition? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.Wordprocessing.VerticalPosition();
+      var value = new DMDrawsW.VerticalPosition();
       value.RelativeFrom = GetRelativeFrom(openXmlElement);
       value.VerticalAlignment = GetVerticalAlignment(openXmlElement);
       value.PositionOffset = GetPositionOffset(openXmlElement);
@@ -101,8 +101,8 @@ public static class VerticalPositionConverter
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.Wordprocessing.VerticalPosition? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.Wordprocessing.VerticalPosition, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDrawsW.VerticalPosition? value)
+    where OpenXmlElementType: DXDrawW.VerticalPosition, new()
   {
     if (value != null)
     {

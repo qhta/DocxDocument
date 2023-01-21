@@ -8,40 +8,40 @@ public static class OfficeMathArgumentTypeConverter
   /// <summary>
   /// Argument Properties.
   /// </summary>
-  private static DocumentModel.Math.ArgumentProperties? GetArgumentProperties(DocumentFormat.OpenXml.Math.OfficeMathArgumentType openXmlElement)
+  private static DMMath.ArgumentProperties? GetArgumentProperties(DXMath.OfficeMathArgumentType openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Math.ArgumentProperties>();
+    var itemElement = openXmlElement?.GetFirstChild<DXMath.ArgumentProperties>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Math.ArgumentPropertiesConverter.CreateModelElement(itemElement);
+      return DMXMath.ArgumentPropertiesConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetArgumentProperties(DocumentFormat.OpenXml.Math.OfficeMathArgumentType openXmlElement, DocumentModel.Math.ArgumentProperties? value)
+  private static void SetArgumentProperties(DXMath.OfficeMathArgumentType openXmlElement, DMMath.ArgumentProperties? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Math.ArgumentProperties>();
+    var itemElement = openXmlElement.GetFirstChild<DXMath.ArgumentProperties>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Math.ArgumentPropertiesConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Math.ArgumentProperties>(value);
+      itemElement = DMXMath.ArgumentPropertiesConverter.CreateOpenXmlElement<DXMath.ArgumentProperties>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  public static DocumentModel.Math.OfficeMathArgumentType? CreateModelElement(DocumentFormat.OpenXml.Math.OfficeMathArgumentType? openXmlElement)
+  public static DMMath.OfficeMathArgumentType? CreateModelElement(DXMath.OfficeMathArgumentType? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Math.OfficeMathArgumentType();
+      var value = new DMMath.OfficeMathArgumentType();
       value.ArgumentProperties = GetArgumentProperties(openXmlElement);
       return value;
     }
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Math.OfficeMathArgumentType? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Math.OfficeMathArgumentType, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMMath.OfficeMathArgumentType? value)
+    where OpenXmlElementType: DXMath.OfficeMathArgumentType, new()
   {
     if (value != null)
     {

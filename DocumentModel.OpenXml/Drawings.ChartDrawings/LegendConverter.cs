@@ -8,38 +8,38 @@ public static class LegendConverter
   /// <summary>
   /// pos, this property is only available in Office 2016 and later.
   /// </summary>
-  private static DocumentModel.Drawings.ChartDrawings.SidePos? GetPos(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.Legend openXmlElement)
+  private static DMDrawsChartDraws.SidePos? GetPos(DXO2016DrawChartDraw.Legend openXmlElement)
   {
-    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.SidePos, DocumentModel.Drawings.ChartDrawings.SidePos>(openXmlElement?.Pos?.Value);
+    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.SidePos, DMDrawsChartDraws.SidePos>(openXmlElement?.Pos?.Value);
   }
   
-  private static void SetPos(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.Legend openXmlElement, DocumentModel.Drawings.ChartDrawings.SidePos? value)
+  private static void SetPos(DXO2016DrawChartDraw.Legend openXmlElement, DMDrawsChartDraws.SidePos? value)
   {
-    openXmlElement.Pos = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.SidePos, DocumentModel.Drawings.ChartDrawings.SidePos>(value);
+    openXmlElement.Pos = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.SidePos, DMDrawsChartDraws.SidePos>(value);
   }
   
   /// <summary>
   /// align, this property is only available in Office 2016 and later.
   /// </summary>
-  private static DocumentModel.Drawings.ChartDrawings.PosAlign? GetAlign(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.Legend openXmlElement)
+  private static DMDrawsChartDraws.PosAlign? GetAlign(DXO2016DrawChartDraw.Legend openXmlElement)
   {
-    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.PosAlign, DocumentModel.Drawings.ChartDrawings.PosAlign>(openXmlElement?.Align?.Value);
+    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.PosAlign, DMDrawsChartDraws.PosAlign>(openXmlElement?.Align?.Value);
   }
   
-  private static void SetAlign(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.Legend openXmlElement, DocumentModel.Drawings.ChartDrawings.PosAlign? value)
+  private static void SetAlign(DXO2016DrawChartDraw.Legend openXmlElement, DMDrawsChartDraws.PosAlign? value)
   {
-    openXmlElement.Align = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.PosAlign, DocumentModel.Drawings.ChartDrawings.PosAlign>(value);
+    openXmlElement.Align = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.PosAlign, DMDrawsChartDraws.PosAlign>(value);
   }
   
   /// <summary>
   /// overlay, this property is only available in Office 2016 and later.
   /// </summary>
-  private static Boolean? GetOverlay(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.Legend openXmlElement)
+  private static Boolean? GetOverlay(DXO2016DrawChartDraw.Legend openXmlElement)
   {
     return openXmlElement?.Overlay?.Value;
   }
   
-  private static void SetOverlay(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.Legend openXmlElement, Boolean? value)
+  private static void SetOverlay(DXO2016DrawChartDraw.Legend openXmlElement, Boolean? value)
   {
     if (value != null)
       openXmlElement.Overlay = new BooleanValue { Value = (Boolean)value };
@@ -50,22 +50,22 @@ public static class LegendConverter
   /// <summary>
   /// ShapeProperties.
   /// </summary>
-  private static DocumentModel.Drawings.ChartDrawings.ShapeProperties? GetShapeProperties(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.Legend openXmlElement)
+  private static DMDrawsChartDraws.ShapeProperties? GetShapeProperties(DXO2016DrawChartDraw.Legend openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.ShapeProperties>();
+    var itemElement = openXmlElement?.GetFirstChild<DXO2016DrawChartDraw.ShapeProperties>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.ChartDrawings.ShapePropertiesConverter.CreateModelElement(itemElement);
+      return DMXDrawsChartDraws.ShapePropertiesConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetShapeProperties(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.Legend openXmlElement, DocumentModel.Drawings.ChartDrawings.ShapeProperties? value)
+  private static void SetShapeProperties(DXO2016DrawChartDraw.Legend openXmlElement, DMDrawsChartDraws.ShapeProperties? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.ShapeProperties>();
+    var itemElement = openXmlElement.GetFirstChild<DXO2016DrawChartDraw.ShapeProperties>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Drawings.ChartDrawings.ShapePropertiesConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.ShapeProperties>(value);
+      itemElement = DMXDrawsChartDraws.ShapePropertiesConverter.CreateOpenXmlElement<DXO2016DrawChartDraw.ShapeProperties>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
@@ -74,22 +74,22 @@ public static class LegendConverter
   /// <summary>
   /// TxPrTextBody.
   /// </summary>
-  private static DocumentModel.Drawings.ChartDrawings.TxPrTextBody? GetTxPrTextBody(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.Legend openXmlElement)
+  private static DMDrawsChartDraws.TxPrTextBody? GetTxPrTextBody(DXO2016DrawChartDraw.Legend openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.TxPrTextBody>();
+    var itemElement = openXmlElement?.GetFirstChild<DXO2016DrawChartDraw.TxPrTextBody>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.ChartDrawings.TxPrTextBodyConverter.CreateModelElement(itemElement);
+      return DMXDrawsChartDraws.TxPrTextBodyConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetTxPrTextBody(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.Legend openXmlElement, DocumentModel.Drawings.ChartDrawings.TxPrTextBody? value)
+  private static void SetTxPrTextBody(DXO2016DrawChartDraw.Legend openXmlElement, DMDrawsChartDraws.TxPrTextBody? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.TxPrTextBody>();
+    var itemElement = openXmlElement.GetFirstChild<DXO2016DrawChartDraw.TxPrTextBody>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Drawings.ChartDrawings.TxPrTextBodyConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.TxPrTextBody>(value);
+      itemElement = DMXDrawsChartDraws.TxPrTextBodyConverter.CreateOpenXmlElement<DXO2016DrawChartDraw.TxPrTextBody>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
@@ -98,32 +98,32 @@ public static class LegendConverter
   /// <summary>
   /// ExtensionList.
   /// </summary>
-  private static DocumentModel.Drawings.ChartDrawings.ExtensionList? GetExtensionList(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.Legend openXmlElement)
+  private static DMDrawsChartDraws.ExtensionList? GetExtensionList(DXO2016DrawChartDraw.Legend openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.ExtensionList>();
+    var itemElement = openXmlElement?.GetFirstChild<DXO2016DrawChartDraw.ExtensionList>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.ChartDrawings.ExtensionListConverter.CreateModelElement(itemElement);
+      return DMXDrawsChartDraws.ExtensionListConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetExtensionList(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.Legend openXmlElement, DocumentModel.Drawings.ChartDrawings.ExtensionList? value)
+  private static void SetExtensionList(DXO2016DrawChartDraw.Legend openXmlElement, DMDrawsChartDraws.ExtensionList? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.ExtensionList>();
+    var itemElement = openXmlElement.GetFirstChild<DXO2016DrawChartDraw.ExtensionList>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Drawings.ChartDrawings.ExtensionListConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.ExtensionList>(value);
+      itemElement = DMXDrawsChartDraws.ExtensionListConverter.CreateOpenXmlElement<DXO2016DrawChartDraw.ExtensionList>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  public static DocumentModel.Drawings.ChartDrawings.Legend? CreateModelElement(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.Legend? openXmlElement)
+  public static DMDrawsChartDraws.Legend? CreateModelElement(DXO2016DrawChartDraw.Legend? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.ChartDrawings.Legend();
+      var value = new DMDrawsChartDraws.Legend();
       value.Pos = GetPos(openXmlElement);
       value.Align = GetAlign(openXmlElement);
       value.Overlay = GetOverlay(openXmlElement);
@@ -135,8 +135,8 @@ public static class LegendConverter
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.ChartDrawings.Legend? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.Legend, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDrawsChartDraws.Legend? value)
+    where OpenXmlElementType: DXO2016DrawChartDraw.Legend, new()
   {
     if (value != null)
     {

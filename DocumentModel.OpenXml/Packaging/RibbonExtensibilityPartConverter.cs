@@ -5,7 +5,7 @@ namespace DocumentModel.OpenXml.Packaging;
 /// </summary>
 public static class RibbonExtensibilityPartConverter
 {
-  private static String? GetContentType(DocumentFormat.OpenXml.Packaging.RibbonExtensibilityPart openXmlElement)
+  private static String? GetContentType(DXPack.RibbonExtensibilityPart openXmlElement)
   {
     return openXmlElement?.ContentType;
   }
@@ -13,28 +13,28 @@ public static class RibbonExtensibilityPartConverter
   /// <summary>
   /// Gets the ImageParts of the RibbonExtensibilityPart
   /// </summary>
-  private static System.Collections.ObjectModel.Collection<DocumentModel.Packaging.ImagePart> GetImageParts(DocumentFormat.OpenXml.Packaging.RibbonExtensibilityPart openXmlElement)
+  private static Collection<DMPack.ImagePart> GetImageParts(DXPack.RibbonExtensibilityPart openXmlElement)
   {
-    var collection = new System.Collections.ObjectModel.Collection<DocumentModel.Packaging.ImagePart>();
-    foreach (var item in openXmlElement.GetPartsOfType<DocumentFormat.OpenXml.Packaging.ImagePart>())
+    var collection = new Collection<DMPack.ImagePart>();
+    foreach (var item in openXmlElement.GetPartsOfType<DXPack.ImagePart>())
     {
-      var newItem = DocumentModel.OpenXml.Packaging.ImagePartConverter.CreateModelElement(item);
+      var newItem = DMXPack.ImagePartConverter.CreateModelElement(item);
       if (newItem != null)
         collection.Add(newItem);
     }
     return collection;
   }
   
-  private static String? GetRelationshipType(DocumentFormat.OpenXml.Packaging.RibbonExtensibilityPart openXmlElement)
+  private static String? GetRelationshipType(DXPack.RibbonExtensibilityPart openXmlElement)
   {
     return openXmlElement?.RelationshipType;
   }
   
-  public static DocumentModel.Packaging.RibbonExtensibilityPart? CreateModelElement(DocumentFormat.OpenXml.Packaging.RibbonExtensibilityPart? openXmlElement)
+  public static DMPack.RibbonExtensibilityPart? CreateModelElement(DXPack.RibbonExtensibilityPart? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Packaging.RibbonExtensibilityPart();
+      var value = new DMPack.RibbonExtensibilityPart();
       value.ContentType = GetContentType(openXmlElement);
       value.ImageParts = GetImageParts(openXmlElement);
       value.RelationshipType = GetRelationshipType(openXmlElement);
@@ -43,8 +43,8 @@ public static class RibbonExtensibilityPartConverter
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Packaging.RibbonExtensibilityPart? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Packaging.RibbonExtensibilityPart, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMPack.RibbonExtensibilityPart? value)
+    where OpenXmlElementType: DXPack.RibbonExtensibilityPart, new()
   {
     if (value != null)
     {

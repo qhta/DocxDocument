@@ -8,12 +8,12 @@ public static class GridColumnConverter
   /// <summary>
   /// Grid Column Width
   /// </summary>
-  private static String? GetWidth(DocumentFormat.OpenXml.Wordprocessing.GridColumn openXmlElement)
+  private static String? GetWidth(DXW.GridColumn openXmlElement)
   {
     return openXmlElement?.Width?.Value;
   }
   
-  private static void SetWidth(DocumentFormat.OpenXml.Wordprocessing.GridColumn openXmlElement, String? value)
+  private static void SetWidth(DXW.GridColumn openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.Width = new StringValue { Value = value };
@@ -21,19 +21,19 @@ public static class GridColumnConverter
       openXmlElement.Width = null;
   }
   
-  public static DocumentModel.Wordprocessing.GridColumn? CreateModelElement(DocumentFormat.OpenXml.Wordprocessing.GridColumn? openXmlElement)
+  public static DMW.GridColumn? CreateModelElement(DXW.GridColumn? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Wordprocessing.GridColumn();
+      var value = new DMW.GridColumn();
       value.Width = GetWidth(openXmlElement);
       return value;
     }
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.GridColumn? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Wordprocessing.GridColumn, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMW.GridColumn? value)
+    where OpenXmlElementType: DXW.GridColumn, new()
   {
     if (value != null)
     {

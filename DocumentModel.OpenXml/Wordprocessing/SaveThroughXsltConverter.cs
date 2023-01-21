@@ -8,12 +8,12 @@ public static class SaveThroughXsltConverter
   /// <summary>
   /// XSL Transformation Location
   /// </summary>
-  private static String? GetId(DocumentFormat.OpenXml.Wordprocessing.SaveThroughXslt openXmlElement)
+  private static String? GetId(DXW.SaveThroughXslt openXmlElement)
   {
     return openXmlElement?.Id?.Value;
   }
   
-  private static void SetId(DocumentFormat.OpenXml.Wordprocessing.SaveThroughXslt openXmlElement, String? value)
+  private static void SetId(DXW.SaveThroughXslt openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.Id = new StringValue { Value = value };
@@ -24,12 +24,12 @@ public static class SaveThroughXsltConverter
   /// <summary>
   /// Local Identifier for XSL Transform
   /// </summary>
-  private static String? GetSolutionId(DocumentFormat.OpenXml.Wordprocessing.SaveThroughXslt openXmlElement)
+  private static String? GetSolutionId(DXW.SaveThroughXslt openXmlElement)
   {
     return openXmlElement?.SolutionId?.Value;
   }
   
-  private static void SetSolutionId(DocumentFormat.OpenXml.Wordprocessing.SaveThroughXslt openXmlElement, String? value)
+  private static void SetSolutionId(DXW.SaveThroughXslt openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.SolutionId = new StringValue { Value = value };
@@ -37,11 +37,11 @@ public static class SaveThroughXsltConverter
       openXmlElement.SolutionId = null;
   }
   
-  public static DocumentModel.Wordprocessing.SaveThroughXslt? CreateModelElement(DocumentFormat.OpenXml.Wordprocessing.SaveThroughXslt? openXmlElement)
+  public static DMW.SaveThroughXslt? CreateModelElement(DXW.SaveThroughXslt? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Wordprocessing.SaveThroughXslt();
+      var value = new DMW.SaveThroughXslt();
       value.Id = GetId(openXmlElement);
       value.SolutionId = GetSolutionId(openXmlElement);
       return value;
@@ -49,8 +49,8 @@ public static class SaveThroughXsltConverter
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.SaveThroughXslt? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Wordprocessing.SaveThroughXslt, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMW.SaveThroughXslt? value)
+    where OpenXmlElementType: DXW.SaveThroughXslt, new()
   {
     if (value != null)
     {

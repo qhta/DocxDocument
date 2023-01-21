@@ -5,45 +5,45 @@ namespace DocumentModel.OpenXml.Drawings.ChartDrawings;
 /// </summary>
 public static class FormatOverridesConverter
 {
-  private static System.Collections.ObjectModel.Collection<DocumentModel.Drawings.ChartDrawings.FormatOverride> GetItems(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.FormatOverrides openXmlElement)
+  private static Collection<DMDrawsChartDraws.FormatOverride> GetItems(DXO2016DrawChartDraw.FormatOverrides openXmlElement)
   {
-    var collection = new System.Collections.ObjectModel.Collection<DocumentModel.Drawings.ChartDrawings.FormatOverride>();
-    foreach (var item in openXmlElement.Elements<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.FormatOverride>())
+    var collection = new Collection<DMDrawsChartDraws.FormatOverride>();
+    foreach (var item in openXmlElement.Elements<DXO2016DrawChartDraw.FormatOverride>())
     {
-      var newItem = DocumentModel.OpenXml.Drawings.ChartDrawings.FormatOverrideConverter.CreateModelElement(item);
+      var newItem = DMXDrawsChartDraws.FormatOverrideConverter.CreateModelElement(item);
       if (newItem != null)
         collection.Add(newItem);
     }
     return collection;
   }
   
-  private static void SetItems(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.FormatOverrides openXmlElement, System.Collections.ObjectModel.Collection<DocumentModel.Drawings.ChartDrawings.FormatOverride>? value)
+  private static void SetItems(DXO2016DrawChartDraw.FormatOverrides openXmlElement, Collection<DMDrawsChartDraws.FormatOverride>? value)
   {
-    openXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.FormatOverride>();
+    openXmlElement.RemoveAllChildren<DXO2016DrawChartDraw.FormatOverride>();
     if (value != null)
     {
       foreach (var item in value)
       {
-        var newItem = DocumentModel.OpenXml.Drawings.ChartDrawings.FormatOverrideConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.FormatOverride>(item);
+        var newItem = DMXDrawsChartDraws.FormatOverrideConverter.CreateOpenXmlElement<DXO2016DrawChartDraw.FormatOverride>(item);
         if (newItem != null)
           openXmlElement.AddChild(newItem);
       }
     }
   }
   
-  public static DocumentModel.Drawings.ChartDrawings.FormatOverrides? CreateModelElement(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.FormatOverrides? openXmlElement)
+  public static DMDrawsChartDraws.FormatOverrides? CreateModelElement(DXO2016DrawChartDraw.FormatOverrides? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.ChartDrawings.FormatOverrides();
+      var value = new DMDrawsChartDraws.FormatOverrides();
       value.Items = GetItems(openXmlElement);
       return value;
     }
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.ChartDrawings.FormatOverrides? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.FormatOverrides, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDrawsChartDraws.FormatOverrides? value)
+    where OpenXmlElementType: DXO2016DrawChartDraw.FormatOverrides, new()
   {
     if (value != null)
     {

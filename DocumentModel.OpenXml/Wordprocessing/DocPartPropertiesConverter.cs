@@ -8,22 +8,22 @@ public static class DocPartPropertiesConverter
   /// <summary>
   /// Entry Name.
   /// </summary>
-  private static DocumentModel.Wordprocessing.DocPartName? GetDocPartName(DocumentFormat.OpenXml.Wordprocessing.DocPartProperties openXmlElement)
+  private static DMW.DocPartName? GetDocPartName(DXW.DocPartProperties openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.DocPartName>();
+    var itemElement = openXmlElement?.GetFirstChild<DXW.DocPartName>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Wordprocessing.DocPartNameConverter.CreateModelElement(itemElement);
+      return DMXW.DocPartNameConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetDocPartName(DocumentFormat.OpenXml.Wordprocessing.DocPartProperties openXmlElement, DocumentModel.Wordprocessing.DocPartName? value)
+  private static void SetDocPartName(DXW.DocPartProperties openXmlElement, DMW.DocPartName? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.DocPartName>();
+    var itemElement = openXmlElement.GetFirstChild<DXW.DocPartName>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Wordprocessing.DocPartNameConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.DocPartName>(value);
+      itemElement = DMXW.DocPartNameConverter.CreateOpenXmlElement<DXW.DocPartName>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
@@ -32,22 +32,22 @@ public static class DocPartPropertiesConverter
   /// <summary>
   /// Associated Paragraph Style Name.
   /// </summary>
-  private static String? GetStyleId(DocumentFormat.OpenXml.Wordprocessing.DocPartProperties openXmlElement)
+  private static String? GetStyleId(DXW.DocPartProperties openXmlElement)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.StyleId>();
+    var itemElement = openXmlElement.GetFirstChild<DXW.StyleId>();
     if (itemElement != null)
       return itemElement.Val?.Value;
     return null;
   }
   
-  private static void SetStyleId(DocumentFormat.OpenXml.Wordprocessing.DocPartProperties openXmlElement, String? value)
+  private static void SetStyleId(DXW.DocPartProperties openXmlElement, String? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.StyleId>();
+    var itemElement = openXmlElement.GetFirstChild<DXW.StyleId>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = new DocumentFormat.OpenXml.Wordprocessing.StyleId { Val = value };
+      itemElement = new DXW.StyleId { Val = value };
       openXmlElement.AddChild(itemElement);
     }
   }
@@ -55,22 +55,22 @@ public static class DocPartPropertiesConverter
   /// <summary>
   /// Entry Categorization.
   /// </summary>
-  private static DocumentModel.Wordprocessing.Category? GetCategory(DocumentFormat.OpenXml.Wordprocessing.DocPartProperties openXmlElement)
+  private static DMW.Category? GetCategory(DXW.DocPartProperties openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.Category>();
+    var itemElement = openXmlElement?.GetFirstChild<DXW.Category>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Wordprocessing.CategoryConverter.CreateModelElement(itemElement);
+      return DMXW.CategoryConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetCategory(DocumentFormat.OpenXml.Wordprocessing.DocPartProperties openXmlElement, DocumentModel.Wordprocessing.Category? value)
+  private static void SetCategory(DXW.DocPartProperties openXmlElement, DMW.Category? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.Category>();
+    var itemElement = openXmlElement.GetFirstChild<DXW.Category>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Wordprocessing.CategoryConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.Category>(value);
+      itemElement = DMXW.CategoryConverter.CreateOpenXmlElement<DXW.Category>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
@@ -79,22 +79,22 @@ public static class DocPartPropertiesConverter
   /// <summary>
   /// Entry Types.
   /// </summary>
-  private static DocumentModel.Wordprocessing.DocPartTypes? GetDocPartTypes(DocumentFormat.OpenXml.Wordprocessing.DocPartProperties openXmlElement)
+  private static DMW.DocPartTypes? GetDocPartTypes(DXW.DocPartProperties openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.DocPartTypes>();
+    var itemElement = openXmlElement?.GetFirstChild<DXW.DocPartTypes>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Wordprocessing.DocPartTypesConverter.CreateModelElement(itemElement);
+      return DMXW.DocPartTypesConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetDocPartTypes(DocumentFormat.OpenXml.Wordprocessing.DocPartProperties openXmlElement, DocumentModel.Wordprocessing.DocPartTypes? value)
+  private static void SetDocPartTypes(DXW.DocPartProperties openXmlElement, DMW.DocPartTypes? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.DocPartTypes>();
+    var itemElement = openXmlElement.GetFirstChild<DXW.DocPartTypes>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Wordprocessing.DocPartTypesConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.DocPartTypes>(value);
+      itemElement = DMXW.DocPartTypesConverter.CreateOpenXmlElement<DXW.DocPartTypes>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
@@ -103,22 +103,22 @@ public static class DocPartPropertiesConverter
   /// <summary>
   /// Entry Insertion Behaviors.
   /// </summary>
-  private static DocumentModel.Wordprocessing.Behaviors? GetBehaviors(DocumentFormat.OpenXml.Wordprocessing.DocPartProperties openXmlElement)
+  private static DMW.Behaviors? GetBehaviors(DXW.DocPartProperties openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.Behaviors>();
+    var itemElement = openXmlElement?.GetFirstChild<DXW.Behaviors>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Wordprocessing.BehaviorsConverter.CreateModelElement(itemElement);
+      return DMXW.BehaviorsConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetBehaviors(DocumentFormat.OpenXml.Wordprocessing.DocPartProperties openXmlElement, DocumentModel.Wordprocessing.Behaviors? value)
+  private static void SetBehaviors(DXW.DocPartProperties openXmlElement, DMW.Behaviors? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.Behaviors>();
+    var itemElement = openXmlElement.GetFirstChild<DXW.Behaviors>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Wordprocessing.BehaviorsConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.Behaviors>(value);
+      itemElement = DMXW.BehaviorsConverter.CreateOpenXmlElement<DXW.Behaviors>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
@@ -127,22 +127,22 @@ public static class DocPartPropertiesConverter
   /// <summary>
   /// Description for Entry.
   /// </summary>
-  private static String? GetDescription(DocumentFormat.OpenXml.Wordprocessing.DocPartProperties openXmlElement)
+  private static String? GetDescription(DXW.DocPartProperties openXmlElement)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.Description>();
+    var itemElement = openXmlElement.GetFirstChild<DXW.Description>();
     if (itemElement != null)
       return itemElement.Val?.Value;
     return null;
   }
   
-  private static void SetDescription(DocumentFormat.OpenXml.Wordprocessing.DocPartProperties openXmlElement, String? value)
+  private static void SetDescription(DXW.DocPartProperties openXmlElement, String? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.Description>();
+    var itemElement = openXmlElement.GetFirstChild<DXW.Description>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = new DocumentFormat.OpenXml.Wordprocessing.Description { Val = value };
+      itemElement = new DXW.Description { Val = value };
       openXmlElement.AddChild(itemElement);
     }
   }
@@ -150,31 +150,31 @@ public static class DocPartPropertiesConverter
   /// <summary>
   /// Entry ID.
   /// </summary>
-  private static String? GetDocPartId(DocumentFormat.OpenXml.Wordprocessing.DocPartProperties openXmlElement)
+  private static String? GetDocPartId(DXW.DocPartProperties openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.DocPartId>();
+    var itemElement = openXmlElement?.GetFirstChild<DXW.DocPartId>();
     if (itemElement != null)
       return itemElement.Val?.Value;
     return null;
   }
   
-  private static void SetDocPartId(DocumentFormat.OpenXml.Wordprocessing.DocPartProperties openXmlElement, String? value)
+  private static void SetDocPartId(DXW.DocPartProperties openXmlElement, String? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.DocPartId>();
+    var itemElement = openXmlElement.GetFirstChild<DXW.DocPartId>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = new DocumentFormat.OpenXml.Wordprocessing.DocPartId { Val = value };
+      itemElement = new DXW.DocPartId { Val = value };
       openXmlElement.AddChild(itemElement);
     }
   }
   
-  public static DocumentModel.Wordprocessing.DocPartProperties? CreateModelElement(DocumentFormat.OpenXml.Wordprocessing.DocPartProperties? openXmlElement)
+  public static DMW.DocPartProperties? CreateModelElement(DXW.DocPartProperties? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Wordprocessing.DocPartProperties();
+      var value = new DMW.DocPartProperties();
       value.DocPartName = GetDocPartName(openXmlElement);
       value.StyleId = GetStyleId(openXmlElement);
       value.Category = GetCategory(openXmlElement);
@@ -187,8 +187,8 @@ public static class DocPartPropertiesConverter
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.DocPartProperties? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Wordprocessing.DocPartProperties, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMW.DocPartProperties? value)
+    where OpenXmlElementType: DXW.DocPartProperties, new()
   {
     if (value != null)
     {

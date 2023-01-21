@@ -8,12 +8,12 @@ public static class ArtisticCrisscrossEtchingConverter
   /// <summary>
   /// trans, this property is only available in Office 2010 and later.
   /// </summary>
-  private static Int32? GetTransparancy(DocumentFormat.OpenXml.Office2010.Drawing.ArtisticCrisscrossEtching openXmlElement)
+  private static Int32? GetTransparancy(DXO2010Draw.ArtisticCrisscrossEtching openXmlElement)
   {
     return openXmlElement.Transparancy?.Value;
   }
   
-  private static void SetTransparancy(DocumentFormat.OpenXml.Office2010.Drawing.ArtisticCrisscrossEtching openXmlElement, Int32? value)
+  private static void SetTransparancy(DXO2010Draw.ArtisticCrisscrossEtching openXmlElement, Int32? value)
   {
     openXmlElement.Transparancy = value;
   }
@@ -21,21 +21,21 @@ public static class ArtisticCrisscrossEtchingConverter
   /// <summary>
   /// pressure, this property is only available in Office 2010 and later.
   /// </summary>
-  private static Int32? GetPressure(DocumentFormat.OpenXml.Office2010.Drawing.ArtisticCrisscrossEtching openXmlElement)
+  private static Int32? GetPressure(DXO2010Draw.ArtisticCrisscrossEtching openXmlElement)
   {
     return openXmlElement.Pressure?.Value;
   }
   
-  private static void SetPressure(DocumentFormat.OpenXml.Office2010.Drawing.ArtisticCrisscrossEtching openXmlElement, Int32? value)
+  private static void SetPressure(DXO2010Draw.ArtisticCrisscrossEtching openXmlElement, Int32? value)
   {
     openXmlElement.Pressure = value;
   }
   
-  public static DocumentModel.Drawings.ArtisticCrisscrossEtching? CreateModelElement(DocumentFormat.OpenXml.Office2010.Drawing.ArtisticCrisscrossEtching? openXmlElement)
+  public static DMDraws.ArtisticCrisscrossEtching? CreateModelElement(DXO2010Draw.ArtisticCrisscrossEtching? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.ArtisticCrisscrossEtching();
+      var value = new DMDraws.ArtisticCrisscrossEtching();
       value.Transparancy = GetTransparancy(openXmlElement);
       value.Pressure = GetPressure(openXmlElement);
       return value;
@@ -43,8 +43,8 @@ public static class ArtisticCrisscrossEtchingConverter
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.ArtisticCrisscrossEtching? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Office2010.Drawing.ArtisticCrisscrossEtching, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDraws.ArtisticCrisscrossEtching? value)
+    where OpenXmlElementType: DXO2010Draw.ArtisticCrisscrossEtching, new()
   {
     if (value != null)
     {

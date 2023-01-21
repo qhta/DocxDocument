@@ -8,22 +8,22 @@ public static class GeoLocationQueryResultConverter
   /// <summary>
   /// GeoLocationQuery.
   /// </summary>
-  private static DocumentModel.Drawings.ChartDrawings.GeoLocationQuery? GetGeoLocationQuery(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.GeoLocationQueryResult openXmlElement)
+  private static DMDrawsChartDraws.GeoLocationQuery? GetGeoLocationQuery(DXO2016DrawChartDraw.GeoLocationQueryResult openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.GeoLocationQuery>();
+    var itemElement = openXmlElement?.GetFirstChild<DXO2016DrawChartDraw.GeoLocationQuery>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.ChartDrawings.GeoLocationQueryConverter.CreateModelElement(itemElement);
+      return DMXDrawsChartDraws.GeoLocationQueryConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetGeoLocationQuery(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.GeoLocationQueryResult openXmlElement, DocumentModel.Drawings.ChartDrawings.GeoLocationQuery? value)
+  private static void SetGeoLocationQuery(DXO2016DrawChartDraw.GeoLocationQueryResult openXmlElement, DMDrawsChartDraws.GeoLocationQuery? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.GeoLocationQuery>();
+    var itemElement = openXmlElement.GetFirstChild<DXO2016DrawChartDraw.GeoLocationQuery>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Drawings.ChartDrawings.GeoLocationQueryConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.GeoLocationQuery>(value);
+      itemElement = DMXDrawsChartDraws.GeoLocationQueryConverter.CreateOpenXmlElement<DXO2016DrawChartDraw.GeoLocationQuery>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
@@ -32,32 +32,32 @@ public static class GeoLocationQueryResultConverter
   /// <summary>
   /// GeoLocations.
   /// </summary>
-  private static DocumentModel.Drawings.ChartDrawings.GeoLocations? GetGeoLocations(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.GeoLocationQueryResult openXmlElement)
+  private static DMDrawsChartDraws.GeoLocations? GetGeoLocations(DXO2016DrawChartDraw.GeoLocationQueryResult openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.GeoLocations>();
+    var itemElement = openXmlElement?.GetFirstChild<DXO2016DrawChartDraw.GeoLocations>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.ChartDrawings.GeoLocationsConverter.CreateModelElement(itemElement);
+      return DMXDrawsChartDraws.GeoLocationsConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetGeoLocations(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.GeoLocationQueryResult openXmlElement, DocumentModel.Drawings.ChartDrawings.GeoLocations? value)
+  private static void SetGeoLocations(DXO2016DrawChartDraw.GeoLocationQueryResult openXmlElement, DMDrawsChartDraws.GeoLocations? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.GeoLocations>();
+    var itemElement = openXmlElement.GetFirstChild<DXO2016DrawChartDraw.GeoLocations>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Drawings.ChartDrawings.GeoLocationsConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.GeoLocations>(value);
+      itemElement = DMXDrawsChartDraws.GeoLocationsConverter.CreateOpenXmlElement<DXO2016DrawChartDraw.GeoLocations>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  public static DocumentModel.Drawings.ChartDrawings.GeoLocationQueryResult? CreateModelElement(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.GeoLocationQueryResult? openXmlElement)
+  public static DMDrawsChartDraws.GeoLocationQueryResult? CreateModelElement(DXO2016DrawChartDraw.GeoLocationQueryResult? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.ChartDrawings.GeoLocationQueryResult();
+      var value = new DMDrawsChartDraws.GeoLocationQueryResult();
       value.GeoLocationQuery = GetGeoLocationQuery(openXmlElement);
       value.GeoLocations = GetGeoLocations(openXmlElement);
       return value;
@@ -65,8 +65,8 @@ public static class GeoLocationQueryResultConverter
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.ChartDrawings.GeoLocationQueryResult? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.GeoLocationQueryResult, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDrawsChartDraws.GeoLocationQueryResult? value)
+    where OpenXmlElementType: DXO2016DrawChartDraw.GeoLocationQueryResult, new()
   {
     if (value != null)
     {

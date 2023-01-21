@@ -8,40 +8,40 @@ public static class FilteredSeriesTitleConverter
   /// <summary>
   /// ChartText.
   /// </summary>
-  private static DocumentModel.Drawings.Charts.ChartText3? GetChartText(DocumentFormat.OpenXml.Office2013.Drawing.Chart.FilteredSeriesTitle openXmlElement)
+  private static DMDrawsCharts.ChartText3? GetChartText(DXO2013DrawChart.FilteredSeriesTitle openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office2013.Drawing.Chart.ChartText>();
+    var itemElement = openXmlElement?.GetFirstChild<DXO2013DrawChart.ChartText>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.Charts.ChartText3Converter.CreateModelElement(itemElement);
+      return DMXDrawsCharts.ChartText3Converter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetChartText(DocumentFormat.OpenXml.Office2013.Drawing.Chart.FilteredSeriesTitle openXmlElement, DocumentModel.Drawings.Charts.ChartText3? value)
+  private static void SetChartText(DXO2013DrawChart.FilteredSeriesTitle openXmlElement, DMDrawsCharts.ChartText3? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2013.Drawing.Chart.ChartText>();
+    var itemElement = openXmlElement.GetFirstChild<DXO2013DrawChart.ChartText>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Drawings.Charts.ChartText3Converter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2013.Drawing.Chart.ChartText>(value);
+      itemElement = DMXDrawsCharts.ChartText3Converter.CreateOpenXmlElement<DXO2013DrawChart.ChartText>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  public static DocumentModel.Drawings.Charts.FilteredSeriesTitle? CreateModelElement(DocumentFormat.OpenXml.Office2013.Drawing.Chart.FilteredSeriesTitle? openXmlElement)
+  public static DMDrawsCharts.FilteredSeriesTitle? CreateModelElement(DXO2013DrawChart.FilteredSeriesTitle? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.Charts.FilteredSeriesTitle();
+      var value = new DMDrawsCharts.FilteredSeriesTitle();
       value.ChartText = GetChartText(openXmlElement);
       return value;
     }
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.Charts.FilteredSeriesTitle? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Office2013.Drawing.Chart.FilteredSeriesTitle, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDrawsCharts.FilteredSeriesTitle? value)
+    where OpenXmlElementType: DXO2013DrawChart.FilteredSeriesTitle, new()
   {
     if (value != null)
     {

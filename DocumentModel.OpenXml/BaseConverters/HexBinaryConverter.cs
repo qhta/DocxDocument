@@ -2,7 +2,7 @@
 
 public static class HexBinaryConverter
 {
-  public static byte[]? GetValue(TypedOpenXmlLeafElement? element)
+  public static byte[]? GetValue(DX.TypedOpenXmlLeafElement? element)
   {
     var valProperty = element?.GetType().GetProperty("Val");
     if (valProperty != null)
@@ -22,7 +22,7 @@ public static class HexBinaryConverter
   }
 
   public static HexBinaryType? CreateValue<HexBinaryType>(byte[]? value)
-    where HexBinaryType : HexBinaryValue, new()
+    where HexBinaryType : DX.HexBinaryValue, new()
   {
     if (value != null)
     {
@@ -34,7 +34,7 @@ public static class HexBinaryConverter
   }
 
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(byte[]? value)
-    where OpenXmlElementType : OpenXmlElement, new()
+    where OpenXmlElementType : DX.OpenXmlElement, new()
   {
     if (value != null)
     {
@@ -43,7 +43,7 @@ public static class HexBinaryConverter
       {
         var valProperty = typeof(OpenXmlElementType).GetProperty("Val");
         if (valProperty != null)
-          valProperty.SetValue(element, CreateValue<HexBinaryValue>(value));
+          valProperty.SetValue(element, CreateValue<DX.HexBinaryValue>(value));
       }
       return element;
     }

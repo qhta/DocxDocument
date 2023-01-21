@@ -5,45 +5,45 @@ namespace DocumentModel.OpenXml.UI;
 /// </summary>
 public static class TabsConverter
 {
-  private static System.Collections.ObjectModel.Collection<DocumentModel.UI.Tab> GetItems(DocumentFormat.OpenXml.Office.CustomUI.Tabs openXmlElement)
+  private static Collection<DMUI.Tab> GetItems(DXOCustUI.Tabs openXmlElement)
   {
-    var collection = new System.Collections.ObjectModel.Collection<DocumentModel.UI.Tab>();
-    foreach (var item in openXmlElement.Elements<DocumentFormat.OpenXml.Office.CustomUI.Tab>())
+    var collection = new Collection<DMUI.Tab>();
+    foreach (var item in openXmlElement.Elements<DXOCustUI.Tab>())
     {
-      var newItem = DocumentModel.OpenXml.UI.TabConverter.CreateModelElement(item);
+      var newItem = DMXUI.TabConverter.CreateModelElement(item);
       if (newItem != null)
         collection.Add(newItem);
     }
     return collection;
   }
   
-  private static void SetItems(DocumentFormat.OpenXml.Office.CustomUI.Tabs openXmlElement, System.Collections.ObjectModel.Collection<DocumentModel.UI.Tab>? value)
+  private static void SetItems(DXOCustUI.Tabs openXmlElement, Collection<DMUI.Tab>? value)
   {
-    openXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Office.CustomUI.Tab>();
+    openXmlElement.RemoveAllChildren<DXOCustUI.Tab>();
     if (value != null)
     {
       foreach (var item in value)
       {
-        var newItem = DocumentModel.OpenXml.UI.TabConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office.CustomUI.Tab>(item);
+        var newItem = DMXUI.TabConverter.CreateOpenXmlElement<DXOCustUI.Tab>(item);
         if (newItem != null)
           openXmlElement.AddChild(newItem);
       }
     }
   }
   
-  public static DocumentModel.UI.Tabs? CreateModelElement(DocumentFormat.OpenXml.Office.CustomUI.Tabs? openXmlElement)
+  public static DMUI.Tabs? CreateModelElement(DXOCustUI.Tabs? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.UI.Tabs();
+      var value = new DMUI.Tabs();
       value.Items = GetItems(openXmlElement);
       return value;
     }
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.UI.Tabs? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Office.CustomUI.Tabs, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMUI.Tabs? value)
+    where OpenXmlElementType: DXOCustUI.Tabs, new()
   {
     if (value != null)
     {

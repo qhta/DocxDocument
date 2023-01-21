@@ -8,26 +8,26 @@ public static class WordprocessingDocumentConverter
   /// <summary>
   /// Gets the type of the WordprocessingDocument.
   /// </summary>
-  private static DocumentModel.WordprocessingDocumentType? GetDocumentType(DocumentFormat.OpenXml.Packaging.WordprocessingDocument openXmlElement)
+  private static DM.WordprocessingDocumentType? GetDocumentType(DXPack.WordprocessingDocument openXmlElement)
   {
     if (openXmlElement?.DocumentType != null)
-      return EnumValueConverter.GetValue<DocumentFormat.OpenXml.WordprocessingDocumentType, DocumentModel.WordprocessingDocumentType>(openXmlElement.DocumentType);
+      return EnumValueConverter.GetValue<DX.WordprocessingDocumentType, DM.WordprocessingDocumentType>(openXmlElement.DocumentType);
     return null;
   }
   
-  public static DocumentModel.Packaging.WordprocessingDocument? CreateModelElement(DocumentFormat.OpenXml.Packaging.WordprocessingDocument? openXmlElement)
+  public static DMPack.WordprocessingDocument? CreateModelElement(DXPack.WordprocessingDocument? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Packaging.WordprocessingDocument();
+      var value = new DMPack.WordprocessingDocument();
       value.DocumentType = GetDocumentType(openXmlElement);
       return value;
     }
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Packaging.WordprocessingDocument? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Packaging.WordprocessingDocument, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMPack.WordprocessingDocument? value)
+    where OpenXmlElementType: DXPack.WordprocessingDocument, new()
   {
     if (value != null)
     {

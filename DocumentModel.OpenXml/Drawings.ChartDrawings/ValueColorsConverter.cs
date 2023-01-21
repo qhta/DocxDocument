@@ -8,22 +8,22 @@ public static class ValueColorsConverter
   /// <summary>
   /// MinColorSolidColorFillProperties.
   /// </summary>
-  private static DocumentModel.Drawings.ChartDrawings.MinColorSolidColorFillProperties? GetMinColorSolidColorFillProperties(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.ValueColors openXmlElement)
+  private static DMDrawsChartDraws.MinColorSolidColorFillProperties? GetMinColorSolidColorFillProperties(DXO2016DrawChartDraw.ValueColors openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.MinColorSolidColorFillProperties>();
+    var itemElement = openXmlElement?.GetFirstChild<DXO2016DrawChartDraw.MinColorSolidColorFillProperties>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.ChartDrawings.MinColorSolidColorFillPropertiesConverter.CreateModelElement(itemElement);
+      return DMXDrawsChartDraws.MinColorSolidColorFillPropertiesConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetMinColorSolidColorFillProperties(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.ValueColors openXmlElement, DocumentModel.Drawings.ChartDrawings.MinColorSolidColorFillProperties? value)
+  private static void SetMinColorSolidColorFillProperties(DXO2016DrawChartDraw.ValueColors openXmlElement, DMDrawsChartDraws.MinColorSolidColorFillProperties? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.MinColorSolidColorFillProperties>();
+    var itemElement = openXmlElement.GetFirstChild<DXO2016DrawChartDraw.MinColorSolidColorFillProperties>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Drawings.ChartDrawings.MinColorSolidColorFillPropertiesConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.MinColorSolidColorFillProperties>(value);
+      itemElement = DMXDrawsChartDraws.MinColorSolidColorFillPropertiesConverter.CreateOpenXmlElement<DXO2016DrawChartDraw.MinColorSolidColorFillProperties>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
@@ -32,22 +32,22 @@ public static class ValueColorsConverter
   /// <summary>
   /// MidColorSolidColorFillProperties.
   /// </summary>
-  private static DocumentModel.Drawings.ChartDrawings.MidColorSolidColorFillProperties? GetMidColorSolidColorFillProperties(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.ValueColors openXmlElement)
+  private static DMDrawsChartDraws.MidColorSolidColorFillProperties? GetMidColorSolidColorFillProperties(DXO2016DrawChartDraw.ValueColors openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.MidColorSolidColorFillProperties>();
+    var itemElement = openXmlElement?.GetFirstChild<DXO2016DrawChartDraw.MidColorSolidColorFillProperties>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.ChartDrawings.MidColorSolidColorFillPropertiesConverter.CreateModelElement(itemElement);
+      return DMXDrawsChartDraws.MidColorSolidColorFillPropertiesConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetMidColorSolidColorFillProperties(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.ValueColors openXmlElement, DocumentModel.Drawings.ChartDrawings.MidColorSolidColorFillProperties? value)
+  private static void SetMidColorSolidColorFillProperties(DXO2016DrawChartDraw.ValueColors openXmlElement, DMDrawsChartDraws.MidColorSolidColorFillProperties? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.MidColorSolidColorFillProperties>();
+    var itemElement = openXmlElement.GetFirstChild<DXO2016DrawChartDraw.MidColorSolidColorFillProperties>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Drawings.ChartDrawings.MidColorSolidColorFillPropertiesConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.MidColorSolidColorFillProperties>(value);
+      itemElement = DMXDrawsChartDraws.MidColorSolidColorFillPropertiesConverter.CreateOpenXmlElement<DXO2016DrawChartDraw.MidColorSolidColorFillProperties>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
@@ -56,32 +56,32 @@ public static class ValueColorsConverter
   /// <summary>
   /// MaxColorSolidColorFillProperties.
   /// </summary>
-  private static DocumentModel.Drawings.ChartDrawings.MaxColorSolidColorFillProperties? GetMaxColorSolidColorFillProperties(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.ValueColors openXmlElement)
+  private static DMDrawsChartDraws.MaxColorSolidColorFillProperties? GetMaxColorSolidColorFillProperties(DXO2016DrawChartDraw.ValueColors openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.MaxColorSolidColorFillProperties>();
+    var itemElement = openXmlElement?.GetFirstChild<DXO2016DrawChartDraw.MaxColorSolidColorFillProperties>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.ChartDrawings.MaxColorSolidColorFillPropertiesConverter.CreateModelElement(itemElement);
+      return DMXDrawsChartDraws.MaxColorSolidColorFillPropertiesConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetMaxColorSolidColorFillProperties(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.ValueColors openXmlElement, DocumentModel.Drawings.ChartDrawings.MaxColorSolidColorFillProperties? value)
+  private static void SetMaxColorSolidColorFillProperties(DXO2016DrawChartDraw.ValueColors openXmlElement, DMDrawsChartDraws.MaxColorSolidColorFillProperties? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.MaxColorSolidColorFillProperties>();
+    var itemElement = openXmlElement.GetFirstChild<DXO2016DrawChartDraw.MaxColorSolidColorFillProperties>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Drawings.ChartDrawings.MaxColorSolidColorFillPropertiesConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.MaxColorSolidColorFillProperties>(value);
+      itemElement = DMXDrawsChartDraws.MaxColorSolidColorFillPropertiesConverter.CreateOpenXmlElement<DXO2016DrawChartDraw.MaxColorSolidColorFillProperties>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  public static DocumentModel.Drawings.ChartDrawings.ValueColors? CreateModelElement(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.ValueColors? openXmlElement)
+  public static DMDrawsChartDraws.ValueColors? CreateModelElement(DXO2016DrawChartDraw.ValueColors? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.ChartDrawings.ValueColors();
+      var value = new DMDrawsChartDraws.ValueColors();
       value.MinColorSolidColorFillProperties = GetMinColorSolidColorFillProperties(openXmlElement);
       value.MidColorSolidColorFillProperties = GetMidColorSolidColorFillProperties(openXmlElement);
       value.MaxColorSolidColorFillProperties = GetMaxColorSolidColorFillProperties(openXmlElement);
@@ -90,8 +90,8 @@ public static class ValueColorsConverter
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.ChartDrawings.ValueColors? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.ValueColors, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDrawsChartDraws.ValueColors? value)
+    where OpenXmlElementType: DXO2016DrawChartDraw.ValueColors, new()
   {
     if (value != null)
     {

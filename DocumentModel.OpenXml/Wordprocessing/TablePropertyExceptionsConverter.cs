@@ -8,22 +8,22 @@ public static class TablePropertyExceptionsConverter
   /// <summary>
   /// Preferred Table Width Exception.
   /// </summary>
-  private static DocumentModel.Wordprocessing.TableWidthType? GetTableWidth(DocumentFormat.OpenXml.Wordprocessing.TablePropertyExceptions openXmlElement)
+  private static DMW.TableWidthType? GetTableWidth(DXW.TablePropertyExceptions openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.TableWidth>();
+    var itemElement = openXmlElement?.GetFirstChild<DXW.TableWidth>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Wordprocessing.TableWidthTypeConverter.CreateModelElement(itemElement);
+      return DMXW.TableWidthTypeConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetTableWidth(DocumentFormat.OpenXml.Wordprocessing.TablePropertyExceptions openXmlElement, DocumentModel.Wordprocessing.TableWidthType? value)
+  private static void SetTableWidth(DXW.TablePropertyExceptions openXmlElement, DMW.TableWidthType? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.TableWidth>();
+    var itemElement = openXmlElement.GetFirstChild<DXW.TableWidth>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Wordprocessing.TableWidthTypeConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.TableWidth>(value);
+      itemElement = DMXW.TableWidthTypeConverter.CreateOpenXmlElement<DXW.TableWidth>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
@@ -32,22 +32,22 @@ public static class TablePropertyExceptionsConverter
   /// <summary>
   /// Table Alignment Exception.
   /// </summary>
-  private static DocumentModel.Wordprocessing.TableRowAlignmentKind? GetTableJustification(DocumentFormat.OpenXml.Wordprocessing.TablePropertyExceptions openXmlElement)
+  private static DMW.TableRowAlignmentKind? GetTableJustification(DXW.TablePropertyExceptions openXmlElement)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.TableJustification>();
+    var itemElement = openXmlElement.GetFirstChild<DXW.TableJustification>();
     if (itemElement?.Val?.Value != null)
-      return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Wordprocessing.TableRowAlignmentValues, DocumentModel.Wordprocessing.TableRowAlignmentKind>(itemElement.Val.Value);
+      return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Wordprocessing.TableRowAlignmentValues, DMW.TableRowAlignmentKind>(itemElement.Val.Value);
     return null;
   }
   
-  private static void SetTableJustification(DocumentFormat.OpenXml.Wordprocessing.TablePropertyExceptions openXmlElement, DocumentModel.Wordprocessing.TableRowAlignmentKind? value)
+  private static void SetTableJustification(DXW.TablePropertyExceptions openXmlElement, DMW.TableRowAlignmentKind? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.TableJustification>();
+    var itemElement = openXmlElement.GetFirstChild<DXW.TableJustification>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = EnumValueConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.TableJustification, DocumentFormat.OpenXml.Wordprocessing.TableRowAlignmentValues, DocumentModel.Wordprocessing.TableRowAlignmentKind>(value);
+      itemElement = EnumValueConverter.CreateOpenXmlElement<DXW.TableJustification, DocumentFormat.OpenXml.Wordprocessing.TableRowAlignmentValues, DMW.TableRowAlignmentKind>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
@@ -56,22 +56,22 @@ public static class TablePropertyExceptionsConverter
   /// <summary>
   /// Table Cell Spacing Exception.
   /// </summary>
-  private static DocumentModel.Wordprocessing.TableWidthType? GetTableCellSpacing(DocumentFormat.OpenXml.Wordprocessing.TablePropertyExceptions openXmlElement)
+  private static DMW.TableWidthType? GetTableCellSpacing(DXW.TablePropertyExceptions openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.TableCellSpacing>();
+    var itemElement = openXmlElement?.GetFirstChild<DXW.TableCellSpacing>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Wordprocessing.TableWidthTypeConverter.CreateModelElement(itemElement);
+      return DMXW.TableWidthTypeConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetTableCellSpacing(DocumentFormat.OpenXml.Wordprocessing.TablePropertyExceptions openXmlElement, DocumentModel.Wordprocessing.TableWidthType? value)
+  private static void SetTableCellSpacing(DXW.TablePropertyExceptions openXmlElement, DMW.TableWidthType? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.TableCellSpacing>();
+    var itemElement = openXmlElement.GetFirstChild<DXW.TableCellSpacing>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Wordprocessing.TableWidthTypeConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.TableCellSpacing>(value);
+      itemElement = DMXW.TableWidthTypeConverter.CreateOpenXmlElement<DXW.TableCellSpacing>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
@@ -80,22 +80,22 @@ public static class TablePropertyExceptionsConverter
   /// <summary>
   /// Table Indent from Leading Margin Exception.
   /// </summary>
-  private static DocumentModel.Wordprocessing.TableIndentation? GetTableIndentation(DocumentFormat.OpenXml.Wordprocessing.TablePropertyExceptions openXmlElement)
+  private static DMW.TableIndentation? GetTableIndentation(DXW.TablePropertyExceptions openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.TableIndentation>();
+    var itemElement = openXmlElement?.GetFirstChild<DXW.TableIndentation>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Wordprocessing.TableIndentationConverter.CreateModelElement(itemElement);
+      return DMXW.TableIndentationConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetTableIndentation(DocumentFormat.OpenXml.Wordprocessing.TablePropertyExceptions openXmlElement, DocumentModel.Wordprocessing.TableIndentation? value)
+  private static void SetTableIndentation(DXW.TablePropertyExceptions openXmlElement, DMW.TableIndentation? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.TableIndentation>();
+    var itemElement = openXmlElement.GetFirstChild<DXW.TableIndentation>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Wordprocessing.TableIndentationConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.TableIndentation>(value);
+      itemElement = DMXW.TableIndentationConverter.CreateOpenXmlElement<DXW.TableIndentation>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
@@ -104,22 +104,22 @@ public static class TablePropertyExceptionsConverter
   /// <summary>
   /// Table Borders Exceptions.
   /// </summary>
-  private static DocumentModel.Wordprocessing.TableBorders? GetTableBorders(DocumentFormat.OpenXml.Wordprocessing.TablePropertyExceptions openXmlElement)
+  private static DMW.TableBorders? GetTableBorders(DXW.TablePropertyExceptions openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.TableBorders>();
+    var itemElement = openXmlElement?.GetFirstChild<DXW.TableBorders>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Wordprocessing.TableBordersConverter.CreateModelElement(itemElement);
+      return DMXW.TableBordersConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetTableBorders(DocumentFormat.OpenXml.Wordprocessing.TablePropertyExceptions openXmlElement, DocumentModel.Wordprocessing.TableBorders? value)
+  private static void SetTableBorders(DXW.TablePropertyExceptions openXmlElement, DMW.TableBorders? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.TableBorders>();
+    var itemElement = openXmlElement.GetFirstChild<DXW.TableBorders>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Wordprocessing.TableBordersConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.TableBorders>(value);
+      itemElement = DMXW.TableBordersConverter.CreateOpenXmlElement<DXW.TableBorders>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
@@ -128,22 +128,22 @@ public static class TablePropertyExceptionsConverter
   /// <summary>
   /// Table Shading Exception.
   /// </summary>
-  private static DocumentModel.Wordprocessing.Shading? GetShading(DocumentFormat.OpenXml.Wordprocessing.TablePropertyExceptions openXmlElement)
+  private static DMW.Shading? GetShading(DXW.TablePropertyExceptions openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.Shading>();
+    var itemElement = openXmlElement?.GetFirstChild<DXW.Shading>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Wordprocessing.ShadingConverter.CreateModelElement(itemElement);
+      return DMXW.ShadingConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetShading(DocumentFormat.OpenXml.Wordprocessing.TablePropertyExceptions openXmlElement, DocumentModel.Wordprocessing.Shading? value)
+  private static void SetShading(DXW.TablePropertyExceptions openXmlElement, DMW.Shading? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.Shading>();
+    var itemElement = openXmlElement.GetFirstChild<DXW.Shading>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Wordprocessing.ShadingConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.Shading>(value);
+      itemElement = DMXW.ShadingConverter.CreateOpenXmlElement<DXW.Shading>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
@@ -152,22 +152,22 @@ public static class TablePropertyExceptionsConverter
   /// <summary>
   /// Table Layout Exception.
   /// </summary>
-  private static DocumentModel.Wordprocessing.TableLayout? GetTableLayout(DocumentFormat.OpenXml.Wordprocessing.TablePropertyExceptions openXmlElement)
+  private static DMW.TableLayout? GetTableLayout(DXW.TablePropertyExceptions openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.TableLayout>();
+    var itemElement = openXmlElement?.GetFirstChild<DXW.TableLayout>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Wordprocessing.TableLayoutConverter.CreateModelElement(itemElement);
+      return DMXW.TableLayoutConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetTableLayout(DocumentFormat.OpenXml.Wordprocessing.TablePropertyExceptions openXmlElement, DocumentModel.Wordprocessing.TableLayout? value)
+  private static void SetTableLayout(DXW.TablePropertyExceptions openXmlElement, DMW.TableLayout? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.TableLayout>();
+    var itemElement = openXmlElement.GetFirstChild<DXW.TableLayout>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Wordprocessing.TableLayoutConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.TableLayout>(value);
+      itemElement = DMXW.TableLayoutConverter.CreateOpenXmlElement<DXW.TableLayout>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
@@ -176,22 +176,22 @@ public static class TablePropertyExceptionsConverter
   /// <summary>
   /// Table Cell Margin Exceptions.
   /// </summary>
-  private static DocumentModel.Wordprocessing.TableCellMarginDefault? GetTableCellMarginDefault(DocumentFormat.OpenXml.Wordprocessing.TablePropertyExceptions openXmlElement)
+  private static DMW.TableCellMarginDefault? GetTableCellMarginDefault(DXW.TablePropertyExceptions openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.TableCellMarginDefault>();
+    var itemElement = openXmlElement?.GetFirstChild<DXW.TableCellMarginDefault>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Wordprocessing.TableCellMarginDefaultConverter.CreateModelElement(itemElement);
+      return DMXW.TableCellMarginDefaultConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetTableCellMarginDefault(DocumentFormat.OpenXml.Wordprocessing.TablePropertyExceptions openXmlElement, DocumentModel.Wordprocessing.TableCellMarginDefault? value)
+  private static void SetTableCellMarginDefault(DXW.TablePropertyExceptions openXmlElement, DMW.TableCellMarginDefault? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.TableCellMarginDefault>();
+    var itemElement = openXmlElement.GetFirstChild<DXW.TableCellMarginDefault>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Wordprocessing.TableCellMarginDefaultConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.TableCellMarginDefault>(value);
+      itemElement = DMXW.TableCellMarginDefaultConverter.CreateOpenXmlElement<DXW.TableCellMarginDefault>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
@@ -200,22 +200,22 @@ public static class TablePropertyExceptionsConverter
   /// <summary>
   /// Table Style Conditional Formatting Settings Exception.
   /// </summary>
-  private static DocumentModel.Wordprocessing.TableLook? GetTableLook(DocumentFormat.OpenXml.Wordprocessing.TablePropertyExceptions openXmlElement)
+  private static DMW.TableLook? GetTableLook(DXW.TablePropertyExceptions openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.TableLook>();
+    var itemElement = openXmlElement?.GetFirstChild<DXW.TableLook>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Wordprocessing.TableLookConverter.CreateModelElement(itemElement);
+      return DMXW.TableLookConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetTableLook(DocumentFormat.OpenXml.Wordprocessing.TablePropertyExceptions openXmlElement, DocumentModel.Wordprocessing.TableLook? value)
+  private static void SetTableLook(DXW.TablePropertyExceptions openXmlElement, DMW.TableLook? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.TableLook>();
+    var itemElement = openXmlElement.GetFirstChild<DXW.TableLook>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Wordprocessing.TableLookConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.TableLook>(value);
+      itemElement = DMXW.TableLookConverter.CreateOpenXmlElement<DXW.TableLook>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
@@ -224,32 +224,32 @@ public static class TablePropertyExceptionsConverter
   /// <summary>
   /// Revision Information for Table-Level Property Exceptions.
   /// </summary>
-  private static DocumentModel.Wordprocessing.TablePropertyExceptionsChange? GetTablePropertyExceptionsChange(DocumentFormat.OpenXml.Wordprocessing.TablePropertyExceptions openXmlElement)
+  private static DMW.TablePropertyExceptionsChange? GetTablePropertyExceptionsChange(DXW.TablePropertyExceptions openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.TablePropertyExceptionsChange>();
+    var itemElement = openXmlElement?.GetFirstChild<DXW.TablePropertyExceptionsChange>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Wordprocessing.TablePropertyExceptionsChangeConverter.CreateModelElement(itemElement);
+      return DMXW.TablePropertyExceptionsChangeConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetTablePropertyExceptionsChange(DocumentFormat.OpenXml.Wordprocessing.TablePropertyExceptions openXmlElement, DocumentModel.Wordprocessing.TablePropertyExceptionsChange? value)
+  private static void SetTablePropertyExceptionsChange(DXW.TablePropertyExceptions openXmlElement, DMW.TablePropertyExceptionsChange? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.TablePropertyExceptionsChange>();
+    var itemElement = openXmlElement.GetFirstChild<DXW.TablePropertyExceptionsChange>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Wordprocessing.TablePropertyExceptionsChangeConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.TablePropertyExceptionsChange>(value);
+      itemElement = DMXW.TablePropertyExceptionsChangeConverter.CreateOpenXmlElement<DXW.TablePropertyExceptionsChange>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  public static DocumentModel.Wordprocessing.TablePropertyExceptions? CreateModelElement(DocumentFormat.OpenXml.Wordprocessing.TablePropertyExceptions? openXmlElement)
+  public static DMW.TablePropertyExceptions? CreateModelElement(DXW.TablePropertyExceptions? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Wordprocessing.TablePropertyExceptions();
+      var value = new DMW.TablePropertyExceptions();
       value.TableWidth = GetTableWidth(openXmlElement);
       value.TableJustification = GetTableJustification(openXmlElement);
       value.TableCellSpacing = GetTableCellSpacing(openXmlElement);
@@ -265,8 +265,8 @@ public static class TablePropertyExceptionsConverter
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.TablePropertyExceptions? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Wordprocessing.TablePropertyExceptions, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMW.TablePropertyExceptions? value)
+    where OpenXmlElementType: DXW.TablePropertyExceptions, new()
   {
     if (value != null)
     {

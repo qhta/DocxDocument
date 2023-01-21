@@ -5,45 +5,45 @@ namespace DocumentModel.OpenXml.Drawings;
 /// </summary>
 public static class HyperlinkExtensionListConverter
 {
-  private static System.Collections.ObjectModel.Collection<DocumentModel.Drawings.HyperlinkExtension> GetHyperlinkExtensions(DocumentFormat.OpenXml.Drawing.HyperlinkExtensionList openXmlElement)
+  private static Collection<DMDraws.HyperlinkExtension> GetHyperlinkExtensions(DXDraw.HyperlinkExtensionList openXmlElement)
   {
-    var collection = new System.Collections.ObjectModel.Collection<DocumentModel.Drawings.HyperlinkExtension>();
-    foreach (var item in openXmlElement.Elements<DocumentFormat.OpenXml.Drawing.HyperlinkExtension>())
+    var collection = new Collection<DMDraws.HyperlinkExtension>();
+    foreach (var item in openXmlElement.Elements<DXDraw.HyperlinkExtension>())
     {
-      var newItem = DocumentModel.OpenXml.Drawings.HyperlinkExtensionConverter.CreateModelElement(item);
+      var newItem = DMXDraws.HyperlinkExtensionConverter.CreateModelElement(item);
       if (newItem != null)
         collection.Add(newItem);
     }
     return collection;
   }
   
-  private static void SetHyperlinkExtensions(DocumentFormat.OpenXml.Drawing.HyperlinkExtensionList openXmlElement, System.Collections.ObjectModel.Collection<DocumentModel.Drawings.HyperlinkExtension>? value)
+  private static void SetHyperlinkExtensions(DXDraw.HyperlinkExtensionList openXmlElement, Collection<DMDraws.HyperlinkExtension>? value)
   {
-    openXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Drawing.HyperlinkExtension>();
+    openXmlElement.RemoveAllChildren<DXDraw.HyperlinkExtension>();
     if (value != null)
     {
       foreach (var item in value)
       {
-        var newItem = DocumentModel.OpenXml.Drawings.HyperlinkExtensionConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.HyperlinkExtension>(item);
+        var newItem = DMXDraws.HyperlinkExtensionConverter.CreateOpenXmlElement<DXDraw.HyperlinkExtension>(item);
         if (newItem != null)
           openXmlElement.AddChild(newItem);
       }
     }
   }
   
-  public static DocumentModel.Drawings.HyperlinkExtensionList? CreateModelElement(DocumentFormat.OpenXml.Drawing.HyperlinkExtensionList? openXmlElement)
+  public static DMDraws.HyperlinkExtensionList? CreateModelElement(DXDraw.HyperlinkExtensionList? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.HyperlinkExtensionList();
+      var value = new DMDraws.HyperlinkExtensionList();
       value.HyperlinkExtensions = GetHyperlinkExtensions(openXmlElement);
       return value;
     }
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.HyperlinkExtensionList? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.HyperlinkExtensionList, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDraws.HyperlinkExtensionList? value)
+    where OpenXmlElementType: DXDraw.HyperlinkExtensionList, new()
   {
     if (value != null)
     {

@@ -8,22 +8,22 @@ public static class RunConverter
   /// <summary>
   /// Text Character Properties.
   /// </summary>
-  private static DocumentModel.Drawings.RunProperties? GetRunProperties(DocumentFormat.OpenXml.Drawing.Run openXmlElement)
+  private static DMDraws.RunProperties? GetRunProperties(DXDraw.Run openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.RunProperties>();
+    var itemElement = openXmlElement?.GetFirstChild<DXDraw.RunProperties>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.RunPropertiesConverter.CreateModelElement(itemElement);
+      return DMXDraws.RunPropertiesConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetRunProperties(DocumentFormat.OpenXml.Drawing.Run openXmlElement, DocumentModel.Drawings.RunProperties? value)
+  private static void SetRunProperties(DXDraw.Run openXmlElement, DMDraws.RunProperties? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.RunProperties>();
+    var itemElement = openXmlElement.GetFirstChild<DXDraw.RunProperties>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Drawings.RunPropertiesConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.RunProperties>(value);
+      itemElement = DMXDraws.RunPropertiesConverter.CreateOpenXmlElement<DXDraw.RunProperties>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
@@ -32,24 +32,24 @@ public static class RunConverter
   /// <summary>
   /// Text String.
   /// </summary>
-  private static String? GetText(DocumentFormat.OpenXml.Drawing.Run openXmlElement)
+  private static String? GetText(DXDraw.Run openXmlElement)
   {
     return openXmlElement?.Text?.Text;
   }
   
-  private static void SetText(DocumentFormat.OpenXml.Drawing.Run openXmlElement, String? value)
+  private static void SetText(DXDraw.Run openXmlElement, String? value)
   {
     if (value != null)
-      openXmlElement.Text = new DocumentFormat.OpenXml.Drawing.Text(value);
+      openXmlElement.Text = new DXDraw.Text(value);
     else
       openXmlElement.Text = null;
   }
   
-  public static DocumentModel.Drawings.Run? CreateModelElement(DocumentFormat.OpenXml.Drawing.Run? openXmlElement)
+  public static DMDraws.Run? CreateModelElement(DXDraw.Run? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.Run();
+      var value = new DMDraws.Run();
       value.RunProperties = GetRunProperties(openXmlElement);
       value.Text = GetText(openXmlElement);
       return value;
@@ -57,8 +57,8 @@ public static class RunConverter
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.Run? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.Run, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDraws.Run? value)
+    where OpenXmlElementType: DXDraw.Run, new()
   {
     if (value != null)
     {

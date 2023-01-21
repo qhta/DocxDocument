@@ -5,53 +5,53 @@ namespace DocumentModel.OpenXml;
 /// </summary>
 public static class SimpleGroupsConverter
 {
-  private static DocumentModel.BackstageGroup? GetBackstageGroup(DocumentFormat.OpenXml.Office2010.CustomUI.SimpleGroups openXmlElement)
+  private static DM.BackstageGroup? GetBackstageGroup(DXO2010CustUI.SimpleGroups openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office2010.CustomUI.BackstageGroup>();
+    var itemElement = openXmlElement?.GetFirstChild<DXO2010CustUI.BackstageGroup>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.BackstageGroupConverter.CreateModelElement(itemElement);
+      return DMX.BackstageGroupConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetBackstageGroup(DocumentFormat.OpenXml.Office2010.CustomUI.SimpleGroups openXmlElement, DocumentModel.BackstageGroup? value)
+  private static void SetBackstageGroup(DXO2010CustUI.SimpleGroups openXmlElement, DM.BackstageGroup? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2010.CustomUI.BackstageGroup>();
+    var itemElement = openXmlElement.GetFirstChild<DXO2010CustUI.BackstageGroup>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.BackstageGroupConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2010.CustomUI.BackstageGroup>(value);
+      itemElement = DMX.BackstageGroupConverter.CreateOpenXmlElement<DXO2010CustUI.BackstageGroup>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static DocumentModel.TaskGroup? GetTaskGroup(DocumentFormat.OpenXml.Office2010.CustomUI.SimpleGroups openXmlElement)
+  private static DM.TaskGroup? GetTaskGroup(DXO2010CustUI.SimpleGroups openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office2010.CustomUI.TaskGroup>();
+    var itemElement = openXmlElement?.GetFirstChild<DXO2010CustUI.TaskGroup>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.TaskGroupConverter.CreateModelElement(itemElement);
+      return DMX.TaskGroupConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetTaskGroup(DocumentFormat.OpenXml.Office2010.CustomUI.SimpleGroups openXmlElement, DocumentModel.TaskGroup? value)
+  private static void SetTaskGroup(DXO2010CustUI.SimpleGroups openXmlElement, DM.TaskGroup? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2010.CustomUI.TaskGroup>();
+    var itemElement = openXmlElement.GetFirstChild<DXO2010CustUI.TaskGroup>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.TaskGroupConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2010.CustomUI.TaskGroup>(value);
+      itemElement = DMX.TaskGroupConverter.CreateOpenXmlElement<DXO2010CustUI.TaskGroup>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  public static DocumentModel.SimpleGroups? CreateModelElement(DocumentFormat.OpenXml.Office2010.CustomUI.SimpleGroups? openXmlElement)
+  public static DM.SimpleGroups? CreateModelElement(DXO2010CustUI.SimpleGroups? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.SimpleGroups();
+      var value = new DM.SimpleGroups();
       value.BackstageGroup = GetBackstageGroup(openXmlElement);
       value.TaskGroup = GetTaskGroup(openXmlElement);
       return value;
@@ -59,8 +59,8 @@ public static class SimpleGroupsConverter
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.SimpleGroups? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Office2010.CustomUI.SimpleGroups, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DM.SimpleGroups? value)
+    where OpenXmlElementType: DXO2010CustUI.SimpleGroups, new()
   {
     if (value != null)
     {

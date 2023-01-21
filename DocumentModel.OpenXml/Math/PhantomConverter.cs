@@ -8,22 +8,22 @@ public static class PhantomConverter
   /// <summary>
   /// Phantom Properties.
   /// </summary>
-  private static DocumentModel.Math.PhantomProperties? GetPhantomProperties(DocumentFormat.OpenXml.Math.Phantom openXmlElement)
+  private static DMMath.PhantomProperties? GetPhantomProperties(DXMath.Phantom openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Math.PhantomProperties>();
+    var itemElement = openXmlElement?.GetFirstChild<DXMath.PhantomProperties>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Math.PhantomPropertiesConverter.CreateModelElement(itemElement);
+      return DMXMath.PhantomPropertiesConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetPhantomProperties(DocumentFormat.OpenXml.Math.Phantom openXmlElement, DocumentModel.Math.PhantomProperties? value)
+  private static void SetPhantomProperties(DXMath.Phantom openXmlElement, DMMath.PhantomProperties? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Math.PhantomProperties>();
+    var itemElement = openXmlElement.GetFirstChild<DXMath.PhantomProperties>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Math.PhantomPropertiesConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Math.PhantomProperties>(value);
+      itemElement = DMXMath.PhantomPropertiesConverter.CreateOpenXmlElement<DXMath.PhantomProperties>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
@@ -32,32 +32,32 @@ public static class PhantomConverter
   /// <summary>
   /// Base.
   /// </summary>
-  private static DocumentModel.Math.Base? GetBase(DocumentFormat.OpenXml.Math.Phantom openXmlElement)
+  private static DMMath.Base? GetBase(DXMath.Phantom openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Math.Base>();
+    var itemElement = openXmlElement?.GetFirstChild<DXMath.Base>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Math.BaseConverter.CreateModelElement(itemElement);
+      return DMXMath.BaseConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetBase(DocumentFormat.OpenXml.Math.Phantom openXmlElement, DocumentModel.Math.Base? value)
+  private static void SetBase(DXMath.Phantom openXmlElement, DMMath.Base? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Math.Base>();
+    var itemElement = openXmlElement.GetFirstChild<DXMath.Base>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Math.BaseConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Math.Base>(value);
+      itemElement = DMXMath.BaseConverter.CreateOpenXmlElement<DXMath.Base>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  public static DocumentModel.Math.Phantom? CreateModelElement(DocumentFormat.OpenXml.Math.Phantom? openXmlElement)
+  public static DMMath.Phantom? CreateModelElement(DXMath.Phantom? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Math.Phantom();
+      var value = new DMMath.Phantom();
       value.PhantomProperties = GetPhantomProperties(openXmlElement);
       value.Base = GetBase(openXmlElement);
       return value;
@@ -65,8 +65,8 @@ public static class PhantomConverter
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Math.Phantom? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Math.Phantom, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMMath.Phantom? value)
+    where OpenXmlElementType: DXMath.Phantom, new()
   {
     if (value != null)
     {

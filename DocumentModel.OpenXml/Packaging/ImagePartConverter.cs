@@ -5,24 +5,24 @@ namespace DocumentModel.OpenXml.Packaging;
 /// </summary>
 public static class ImagePartConverter
 {
-  private static String? GetRelationshipType(DocumentFormat.OpenXml.Packaging.ImagePart openXmlElement)
+  private static String? GetRelationshipType(DXPack.ImagePart openXmlElement)
   {
     return openXmlElement?.RelationshipType;
   }
   
-  public static DocumentModel.Packaging.ImagePart? CreateModelElement(DocumentFormat.OpenXml.Packaging.ImagePart? openXmlElement)
+  public static DMPack.ImagePart? CreateModelElement(DXPack.ImagePart? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Packaging.ImagePart();
+      var value = new DMPack.ImagePart();
       value.RelationshipType = GetRelationshipType(openXmlElement);
       return value;
     }
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Packaging.ImagePart? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Packaging.ImagePart, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMPack.ImagePart? value)
+    where OpenXmlElementType: DXPack.ImagePart, new()
   {
     if (value != null)
     {

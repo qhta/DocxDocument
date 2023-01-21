@@ -5,199 +5,199 @@ namespace DocumentModel.OpenXml.Drawings.ChartsStyle;
 /// </summary>
 public static class DataPointWireframeConverter
 {
-  private static DocumentModel.Drawings.ChartsStyle.LineReference? GetLineReference(DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.DataPointWireframe openXmlElement)
+  private static DMDrawsChartsStyle.LineReference? GetLineReference(DXO2013DrawChartStyle.DataPointWireframe openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.LineReference>();
+    var itemElement = openXmlElement?.GetFirstChild<DXO2013DrawChartStyle.LineReference>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.ChartsStyle.LineReferenceConverter.CreateModelElement(itemElement);
+      return DMXDrawsChartsStyle.LineReferenceConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetLineReference(DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.DataPointWireframe openXmlElement, DocumentModel.Drawings.ChartsStyle.LineReference? value)
+  private static void SetLineReference(DXO2013DrawChartStyle.DataPointWireframe openXmlElement, DMDrawsChartsStyle.LineReference? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.LineReference>();
+    var itemElement = openXmlElement.GetFirstChild<DXO2013DrawChartStyle.LineReference>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Drawings.ChartsStyle.LineReferenceConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.LineReference>(value);
+      itemElement = DMXDrawsChartsStyle.LineReferenceConverter.CreateOpenXmlElement<DXO2013DrawChartStyle.LineReference>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static String? GetLineWidthScale(DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.DataPointWireframe openXmlElement)
+  private static String? GetLineWidthScale(DXO2013DrawChartStyle.DataPointWireframe openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.LineWidthScale>();
+    var itemElement = openXmlElement?.GetFirstChild<DXO2013DrawChartStyle.LineWidthScale>();
     if (itemElement != null)
       return itemElement.Text;
     return null;
   }
   
-  private static void SetLineWidthScale(DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.DataPointWireframe openXmlElement, String? value)
+  private static void SetLineWidthScale(DXO2013DrawChartStyle.DataPointWireframe openXmlElement, String? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.LineWidthScale>();
+    var itemElement = openXmlElement.GetFirstChild<DXO2013DrawChartStyle.LineWidthScale>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = new DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.LineWidthScale { Text = value };
+      itemElement = new DXO2013DrawChartStyle.LineWidthScale { Text = value };
       openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static DocumentModel.Drawings.ChartsStyle.FillReference? GetFillReference(DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.DataPointWireframe openXmlElement)
+  private static DMDrawsChartsStyle.FillReference? GetFillReference(DXO2013DrawChartStyle.DataPointWireframe openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.FillReference>();
+    var itemElement = openXmlElement?.GetFirstChild<DXO2013DrawChartStyle.FillReference>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.ChartsStyle.FillReferenceConverter.CreateModelElement(itemElement);
+      return DMXDrawsChartsStyle.FillReferenceConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetFillReference(DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.DataPointWireframe openXmlElement, DocumentModel.Drawings.ChartsStyle.FillReference? value)
+  private static void SetFillReference(DXO2013DrawChartStyle.DataPointWireframe openXmlElement, DMDrawsChartsStyle.FillReference? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.FillReference>();
+    var itemElement = openXmlElement.GetFirstChild<DXO2013DrawChartStyle.FillReference>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Drawings.ChartsStyle.FillReferenceConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.FillReference>(value);
+      itemElement = DMXDrawsChartsStyle.FillReferenceConverter.CreateOpenXmlElement<DXO2013DrawChartStyle.FillReference>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static DocumentModel.Drawings.ChartsStyle.EffectReference? GetEffectReference(DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.DataPointWireframe openXmlElement)
+  private static DMDrawsChartsStyle.EffectReference? GetEffectReference(DXO2013DrawChartStyle.DataPointWireframe openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.EffectReference>();
+    var itemElement = openXmlElement?.GetFirstChild<DXO2013DrawChartStyle.EffectReference>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.ChartsStyle.EffectReferenceConverter.CreateModelElement(itemElement);
+      return DMXDrawsChartsStyle.EffectReferenceConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetEffectReference(DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.DataPointWireframe openXmlElement, DocumentModel.Drawings.ChartsStyle.EffectReference? value)
+  private static void SetEffectReference(DXO2013DrawChartStyle.DataPointWireframe openXmlElement, DMDrawsChartsStyle.EffectReference? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.EffectReference>();
+    var itemElement = openXmlElement.GetFirstChild<DXO2013DrawChartStyle.EffectReference>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Drawings.ChartsStyle.EffectReferenceConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.EffectReference>(value);
+      itemElement = DMXDrawsChartsStyle.EffectReferenceConverter.CreateOpenXmlElement<DXO2013DrawChartStyle.EffectReference>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static DocumentModel.Drawings.ChartsStyle.FontReference? GetFontReference(DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.DataPointWireframe openXmlElement)
+  private static DMDrawsChartsStyle.FontReference? GetFontReference(DXO2013DrawChartStyle.DataPointWireframe openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.FontReference>();
+    var itemElement = openXmlElement?.GetFirstChild<DXO2013DrawChartStyle.FontReference>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.ChartsStyle.FontReferenceConverter.CreateModelElement(itemElement);
+      return DMXDrawsChartsStyle.FontReferenceConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetFontReference(DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.DataPointWireframe openXmlElement, DocumentModel.Drawings.ChartsStyle.FontReference? value)
+  private static void SetFontReference(DXO2013DrawChartStyle.DataPointWireframe openXmlElement, DMDrawsChartsStyle.FontReference? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.FontReference>();
+    var itemElement = openXmlElement.GetFirstChild<DXO2013DrawChartStyle.FontReference>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Drawings.ChartsStyle.FontReferenceConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.FontReference>(value);
+      itemElement = DMXDrawsChartsStyle.FontReferenceConverter.CreateOpenXmlElement<DXO2013DrawChartStyle.FontReference>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static DocumentModel.Drawings.ChartsStyle.ShapeProperties? GetShapeProperties(DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.DataPointWireframe openXmlElement)
+  private static DMDrawsChartsStyle.ShapeProperties? GetShapeProperties(DXO2013DrawChartStyle.DataPointWireframe openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.ShapeProperties>();
+    var itemElement = openXmlElement?.GetFirstChild<DXO2013DrawChartStyle.ShapeProperties>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.ChartsStyle.ShapePropertiesConverter.CreateModelElement(itemElement);
+      return DMXDrawsChartsStyle.ShapePropertiesConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetShapeProperties(DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.DataPointWireframe openXmlElement, DocumentModel.Drawings.ChartsStyle.ShapeProperties? value)
+  private static void SetShapeProperties(DXO2013DrawChartStyle.DataPointWireframe openXmlElement, DMDrawsChartsStyle.ShapeProperties? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.ShapeProperties>();
+    var itemElement = openXmlElement.GetFirstChild<DXO2013DrawChartStyle.ShapeProperties>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Drawings.ChartsStyle.ShapePropertiesConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.ShapeProperties>(value);
+      itemElement = DMXDrawsChartsStyle.ShapePropertiesConverter.CreateOpenXmlElement<DXO2013DrawChartStyle.ShapeProperties>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static DocumentModel.Drawings.ChartsStyle.TextCharacterPropertiesType? GetTextCharacterPropertiesType(DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.DataPointWireframe openXmlElement)
+  private static DMDrawsChartsStyle.TextCharacterPropertiesType? GetTextCharacterPropertiesType(DXO2013DrawChartStyle.DataPointWireframe openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.TextCharacterPropertiesType>();
+    var itemElement = openXmlElement?.GetFirstChild<DXO2013DrawChartStyle.TextCharacterPropertiesType>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.ChartsStyle.TextCharacterPropertiesTypeConverter.CreateModelElement(itemElement);
+      return DMXDrawsChartsStyle.TextCharacterPropertiesTypeConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetTextCharacterPropertiesType(DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.DataPointWireframe openXmlElement, DocumentModel.Drawings.ChartsStyle.TextCharacterPropertiesType? value)
+  private static void SetTextCharacterPropertiesType(DXO2013DrawChartStyle.DataPointWireframe openXmlElement, DMDrawsChartsStyle.TextCharacterPropertiesType? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.TextCharacterPropertiesType>();
+    var itemElement = openXmlElement.GetFirstChild<DXO2013DrawChartStyle.TextCharacterPropertiesType>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Drawings.ChartsStyle.TextCharacterPropertiesTypeConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.TextCharacterPropertiesType>(value);
+      itemElement = DMXDrawsChartsStyle.TextCharacterPropertiesTypeConverter.CreateOpenXmlElement<DXO2013DrawChartStyle.TextCharacterPropertiesType>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static DocumentModel.Drawings.ChartsStyle.TextBodyProperties? GetTextBodyProperties(DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.DataPointWireframe openXmlElement)
+  private static DMDrawsChartsStyle.TextBodyProperties? GetTextBodyProperties(DXO2013DrawChartStyle.DataPointWireframe openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.TextBodyProperties>();
+    var itemElement = openXmlElement?.GetFirstChild<DXO2013DrawChartStyle.TextBodyProperties>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.ChartsStyle.TextBodyPropertiesConverter.CreateModelElement(itemElement);
+      return DMXDrawsChartsStyle.TextBodyPropertiesConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetTextBodyProperties(DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.DataPointWireframe openXmlElement, DocumentModel.Drawings.ChartsStyle.TextBodyProperties? value)
+  private static void SetTextBodyProperties(DXO2013DrawChartStyle.DataPointWireframe openXmlElement, DMDrawsChartsStyle.TextBodyProperties? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.TextBodyProperties>();
+    var itemElement = openXmlElement.GetFirstChild<DXO2013DrawChartStyle.TextBodyProperties>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Drawings.ChartsStyle.TextBodyPropertiesConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.TextBodyProperties>(value);
+      itemElement = DMXDrawsChartsStyle.TextBodyPropertiesConverter.CreateOpenXmlElement<DXO2013DrawChartStyle.TextBodyProperties>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static DocumentModel.Drawings.ChartsStyle.OfficeArtExtensionList? GetOfficeArtExtensionList(DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.DataPointWireframe openXmlElement)
+  private static DMDrawsChartsStyle.OfficeArtExtensionList? GetOfficeArtExtensionList(DXO2013DrawChartStyle.DataPointWireframe openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.OfficeArtExtensionList>();
+    var itemElement = openXmlElement?.GetFirstChild<DXO2013DrawChartStyle.OfficeArtExtensionList>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.ChartsStyle.OfficeArtExtensionListConverter.CreateModelElement(itemElement);
+      return DMXDrawsChartsStyle.OfficeArtExtensionListConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetOfficeArtExtensionList(DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.DataPointWireframe openXmlElement, DocumentModel.Drawings.ChartsStyle.OfficeArtExtensionList? value)
+  private static void SetOfficeArtExtensionList(DXO2013DrawChartStyle.DataPointWireframe openXmlElement, DMDrawsChartsStyle.OfficeArtExtensionList? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.OfficeArtExtensionList>();
+    var itemElement = openXmlElement.GetFirstChild<DXO2013DrawChartStyle.OfficeArtExtensionList>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Drawings.ChartsStyle.OfficeArtExtensionListConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.OfficeArtExtensionList>(value);
+      itemElement = DMXDrawsChartsStyle.OfficeArtExtensionListConverter.CreateOpenXmlElement<DXO2013DrawChartStyle.OfficeArtExtensionList>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  public static DocumentModel.Drawings.ChartsStyle.DataPointWireframe? CreateModelElement(DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.DataPointWireframe? openXmlElement)
+  public static DMDrawsChartsStyle.DataPointWireframe? CreateModelElement(DXO2013DrawChartStyle.DataPointWireframe? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.ChartsStyle.DataPointWireframe();
+      var value = new DMDrawsChartsStyle.DataPointWireframe();
       value.LineReference = GetLineReference(openXmlElement);
       value.LineWidthScale = GetLineWidthScale(openXmlElement);
       value.FillReference = GetFillReference(openXmlElement);
@@ -212,8 +212,8 @@ public static class DataPointWireframeConverter
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.ChartsStyle.DataPointWireframe? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.DataPointWireframe, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDrawsChartsStyle.DataPointWireframe? value)
+    where OpenXmlElementType: DXO2013DrawChartStyle.DataPointWireframe, new()
   {
     if (value != null)
     {

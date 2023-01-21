@@ -8,12 +8,12 @@ public static class PredecessorDrawingElementReferenceConverter
   /// <summary>
   /// pred, this property is only available in Office 2016 and later.
   /// </summary>
-  private static String? GetPred(DocumentFormat.OpenXml.Office2016.Drawing.PredecessorDrawingElementReference openXmlElement)
+  private static String? GetPred(DXO2016Draw.PredecessorDrawingElementReference openXmlElement)
   {
     return openXmlElement?.Pred?.Value;
   }
   
-  private static void SetPred(DocumentFormat.OpenXml.Office2016.Drawing.PredecessorDrawingElementReference openXmlElement, String? value)
+  private static void SetPred(DXO2016Draw.PredecessorDrawingElementReference openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.Pred = new StringValue { Value = value };
@@ -21,19 +21,19 @@ public static class PredecessorDrawingElementReferenceConverter
       openXmlElement.Pred = null;
   }
   
-  public static DocumentModel.Drawings.PredecessorDrawingElementReference? CreateModelElement(DocumentFormat.OpenXml.Office2016.Drawing.PredecessorDrawingElementReference? openXmlElement)
+  public static DMDraws.PredecessorDrawingElementReference? CreateModelElement(DXO2016Draw.PredecessorDrawingElementReference? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.PredecessorDrawingElementReference();
+      var value = new DMDraws.PredecessorDrawingElementReference();
       value.Pred = GetPred(openXmlElement);
       return value;
     }
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.PredecessorDrawingElementReference? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Office2016.Drawing.PredecessorDrawingElementReference, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDraws.PredecessorDrawingElementReference? value)
+    where OpenXmlElementType: DXO2016Draw.PredecessorDrawingElementReference, new()
   {
     if (value != null)
     {

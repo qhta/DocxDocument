@@ -8,12 +8,12 @@ public static class AdjustHandleXYConverter
   /// <summary>
   /// Horizontal Adjustment Guide
   /// </summary>
-  private static String? GetXAdjustmentGuide(DocumentFormat.OpenXml.Drawing.AdjustHandleXY openXmlElement)
+  private static String? GetXAdjustmentGuide(DXDraw.AdjustHandleXY openXmlElement)
   {
     return openXmlElement?.XAdjustmentGuide?.Value;
   }
   
-  private static void SetXAdjustmentGuide(DocumentFormat.OpenXml.Drawing.AdjustHandleXY openXmlElement, String? value)
+  private static void SetXAdjustmentGuide(DXDraw.AdjustHandleXY openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.XAdjustmentGuide = new StringValue { Value = value };
@@ -24,12 +24,12 @@ public static class AdjustHandleXYConverter
   /// <summary>
   /// Minimum Horizontal Adjustment
   /// </summary>
-  private static String? GetMinX(DocumentFormat.OpenXml.Drawing.AdjustHandleXY openXmlElement)
+  private static String? GetMinX(DXDraw.AdjustHandleXY openXmlElement)
   {
     return openXmlElement?.MinX?.Value;
   }
   
-  private static void SetMinX(DocumentFormat.OpenXml.Drawing.AdjustHandleXY openXmlElement, String? value)
+  private static void SetMinX(DXDraw.AdjustHandleXY openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.MinX = new StringValue { Value = value };
@@ -40,12 +40,12 @@ public static class AdjustHandleXYConverter
   /// <summary>
   /// Maximum Horizontal Adjustment
   /// </summary>
-  private static String? GetMaxX(DocumentFormat.OpenXml.Drawing.AdjustHandleXY openXmlElement)
+  private static String? GetMaxX(DXDraw.AdjustHandleXY openXmlElement)
   {
     return openXmlElement?.MaxX?.Value;
   }
   
-  private static void SetMaxX(DocumentFormat.OpenXml.Drawing.AdjustHandleXY openXmlElement, String? value)
+  private static void SetMaxX(DXDraw.AdjustHandleXY openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.MaxX = new StringValue { Value = value };
@@ -56,12 +56,12 @@ public static class AdjustHandleXYConverter
   /// <summary>
   /// Vertical Adjustment Guide
   /// </summary>
-  private static String? GetYAdjustmentGuide(DocumentFormat.OpenXml.Drawing.AdjustHandleXY openXmlElement)
+  private static String? GetYAdjustmentGuide(DXDraw.AdjustHandleXY openXmlElement)
   {
     return openXmlElement?.YAdjustmentGuide?.Value;
   }
   
-  private static void SetYAdjustmentGuide(DocumentFormat.OpenXml.Drawing.AdjustHandleXY openXmlElement, String? value)
+  private static void SetYAdjustmentGuide(DXDraw.AdjustHandleXY openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.YAdjustmentGuide = new StringValue { Value = value };
@@ -72,12 +72,12 @@ public static class AdjustHandleXYConverter
   /// <summary>
   /// Minimum Vertical Adjustment
   /// </summary>
-  private static String? GetMinY(DocumentFormat.OpenXml.Drawing.AdjustHandleXY openXmlElement)
+  private static String? GetMinY(DXDraw.AdjustHandleXY openXmlElement)
   {
     return openXmlElement?.MinY?.Value;
   }
   
-  private static void SetMinY(DocumentFormat.OpenXml.Drawing.AdjustHandleXY openXmlElement, String? value)
+  private static void SetMinY(DXDraw.AdjustHandleXY openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.MinY = new StringValue { Value = value };
@@ -88,12 +88,12 @@ public static class AdjustHandleXYConverter
   /// <summary>
   /// Maximum Vertical Adjustment
   /// </summary>
-  private static String? GetMaxY(DocumentFormat.OpenXml.Drawing.AdjustHandleXY openXmlElement)
+  private static String? GetMaxY(DXDraw.AdjustHandleXY openXmlElement)
   {
     return openXmlElement?.MaxY?.Value;
   }
   
-  private static void SetMaxY(DocumentFormat.OpenXml.Drawing.AdjustHandleXY openXmlElement, String? value)
+  private static void SetMaxY(DXDraw.AdjustHandleXY openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.MaxY = new StringValue { Value = value };
@@ -104,32 +104,32 @@ public static class AdjustHandleXYConverter
   /// <summary>
   /// Position.
   /// </summary>
-  private static DocumentModel.Drawings.AdjustPoint2DType? GetPosition(DocumentFormat.OpenXml.Drawing.AdjustHandleXY openXmlElement)
+  private static DMDraws.AdjustPoint2DType? GetPosition(DXDraw.AdjustHandleXY openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.Position>();
+    var itemElement = openXmlElement?.GetFirstChild<DXDraw.Position>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.AdjustPoint2DTypeConverter.CreateModelElement(itemElement);
+      return DMXDraws.AdjustPoint2DTypeConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetPosition(DocumentFormat.OpenXml.Drawing.AdjustHandleXY openXmlElement, DocumentModel.Drawings.AdjustPoint2DType? value)
+  private static void SetPosition(DXDraw.AdjustHandleXY openXmlElement, DMDraws.AdjustPoint2DType? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Position>();
+    var itemElement = openXmlElement.GetFirstChild<DXDraw.Position>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Drawings.AdjustPoint2DTypeConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Position>(value);
+      itemElement = DMXDraws.AdjustPoint2DTypeConverter.CreateOpenXmlElement<DXDraw.Position>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  public static DocumentModel.Drawings.AdjustHandleXY? CreateModelElement(DocumentFormat.OpenXml.Drawing.AdjustHandleXY? openXmlElement)
+  public static DMDraws.AdjustHandleXY? CreateModelElement(DXDraw.AdjustHandleXY? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.AdjustHandleXY();
+      var value = new DMDraws.AdjustHandleXY();
       value.XAdjustmentGuide = GetXAdjustmentGuide(openXmlElement);
       value.MinX = GetMinX(openXmlElement);
       value.MaxX = GetMaxX(openXmlElement);
@@ -142,8 +142,8 @@ public static class AdjustHandleXYConverter
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.AdjustHandleXY? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.AdjustHandleXY, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDraws.AdjustHandleXY? value)
+    where OpenXmlElementType: DXDraw.AdjustHandleXY, new()
   {
     if (value != null)
     {

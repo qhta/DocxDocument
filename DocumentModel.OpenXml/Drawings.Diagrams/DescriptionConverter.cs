@@ -8,12 +8,12 @@ public static class DescriptionConverter
   /// <summary>
   /// Language
   /// </summary>
-  private static String? GetLanguage(DocumentFormat.OpenXml.Drawing.Diagrams.Description openXmlElement)
+  private static String? GetLanguage(DXDrawDgms.Description openXmlElement)
   {
     return openXmlElement?.Language?.Value;
   }
   
-  private static void SetLanguage(DocumentFormat.OpenXml.Drawing.Diagrams.Description openXmlElement, String? value)
+  private static void SetLanguage(DXDrawDgms.Description openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.Language = new StringValue { Value = value };
@@ -24,12 +24,12 @@ public static class DescriptionConverter
   /// <summary>
   /// Value
   /// </summary>
-  private static String? GetVal(DocumentFormat.OpenXml.Drawing.Diagrams.Description openXmlElement)
+  private static String? GetVal(DXDrawDgms.Description openXmlElement)
   {
     return openXmlElement?.Val?.Value;
   }
   
-  private static void SetVal(DocumentFormat.OpenXml.Drawing.Diagrams.Description openXmlElement, String? value)
+  private static void SetVal(DXDrawDgms.Description openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.Val = new StringValue { Value = value };
@@ -37,11 +37,11 @@ public static class DescriptionConverter
       openXmlElement.Val = null;
   }
   
-  public static DocumentModel.Drawings.Diagrams.Description? CreateModelElement(DocumentFormat.OpenXml.Drawing.Diagrams.Description? openXmlElement)
+  public static DMDrawsDgms.Description? CreateModelElement(DXDrawDgms.Description? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.Diagrams.Description();
+      var value = new DMDrawsDgms.Description();
       value.Language = GetLanguage(openXmlElement);
       value.Val = GetVal(openXmlElement);
       return value;
@@ -49,8 +49,8 @@ public static class DescriptionConverter
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.Diagrams.Description? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.Diagrams.Description, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDrawsDgms.Description? value)
+    where OpenXmlElementType: DXDrawDgms.Description, new()
   {
     if (value != null)
     {

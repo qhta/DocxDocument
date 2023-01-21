@@ -5,7 +5,7 @@ namespace DocumentModel.OpenXml.Packaging;
 /// </summary>
 public static class DiagramDataPartConverter
 {
-  private static String? GetContentType(DocumentFormat.OpenXml.Packaging.DiagramDataPart openXmlElement)
+  private static String? GetContentType(DXPack.DiagramDataPart openXmlElement)
   {
     return openXmlElement?.ContentType;
   }
@@ -13,18 +13,18 @@ public static class DiagramDataPartConverter
   /// <summary>
   /// Gets or sets the root element of this part.
   /// </summary>
-  private static DocumentModel.Drawings.Diagrams.DataModelRoot? GetDataModelRoot(DocumentFormat.OpenXml.Packaging.DiagramDataPart openXmlElement)
+  private static DMDrawsDgms.DataModelRoot? GetDataModelRoot(DXPack.DiagramDataPart openXmlElement)
   {
-    if (openXmlElement?.RootElement is DocumentFormat.OpenXml.Drawing.Diagrams.DataModelRoot rootElement)
-      return DocumentModel.OpenXml.Drawings.Diagrams.DataModelRootConverter.CreateModelElement(rootElement);
+    if (openXmlElement?.RootElement is DXDrawDgms.DataModelRoot rootElement)
+      return DMXDrawsDgms.DataModelRootConverter.CreateModelElement(rootElement);
     return null;
   }
   
-  private static void SetDataModelRoot(DocumentFormat.OpenXml.Packaging.DiagramDataPart openXmlElement, DocumentModel.Drawings.Diagrams.DataModelRoot? value)
+  private static void SetDataModelRoot(DXPack.DiagramDataPart openXmlElement, DMDrawsDgms.DataModelRoot? value)
   {
     if (value != null)
     {
-       var rootElement = DocumentModel.OpenXml.Drawings.Diagrams.DataModelRootConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Diagrams.DataModelRoot>(value);
+       var rootElement = DMXDrawsDgms.DataModelRootConverter.CreateOpenXmlElement<DXDrawDgms.DataModelRoot>(value);
        if (rootElement != null)
          openXmlElement.DataModelRoot = rootElement;
     }
@@ -33,19 +33,19 @@ public static class DiagramDataPartConverter
   /// <summary>
   /// Gets the ImageParts of the DiagramDataPart
   /// </summary>
-  private static System.Collections.ObjectModel.Collection<DocumentModel.Packaging.ImagePart> GetImageParts(DocumentFormat.OpenXml.Packaging.DiagramDataPart openXmlElement)
+  private static Collection<DMPack.ImagePart> GetImageParts(DXPack.DiagramDataPart openXmlElement)
   {
-    var collection = new System.Collections.ObjectModel.Collection<DocumentModel.Packaging.ImagePart>();
-    foreach (var item in openXmlElement.GetPartsOfType<DocumentFormat.OpenXml.Packaging.ImagePart>())
+    var collection = new Collection<DMPack.ImagePart>();
+    foreach (var item in openXmlElement.GetPartsOfType<DXPack.ImagePart>())
     {
-      var newItem = DocumentModel.OpenXml.Packaging.ImagePartConverter.CreateModelElement(item);
+      var newItem = DMXPack.ImagePartConverter.CreateModelElement(item);
       if (newItem != null)
         collection.Add(newItem);
     }
     return collection;
   }
   
-  private static String? GetRelationshipType(DocumentFormat.OpenXml.Packaging.DiagramDataPart openXmlElement)
+  private static String? GetRelationshipType(DXPack.DiagramDataPart openXmlElement)
   {
     return openXmlElement?.RelationshipType;
   }
@@ -53,12 +53,12 @@ public static class DiagramDataPartConverter
   /// <summary>
   /// Gets the SlideParts of the DiagramDataPart
   /// </summary>
-  private static System.Collections.ObjectModel.Collection<DocumentModel.Packaging.SlidePart> GetSlideParts(DocumentFormat.OpenXml.Packaging.DiagramDataPart openXmlElement)
+  private static Collection<DMPack.SlidePart> GetSlideParts(DXPack.DiagramDataPart openXmlElement)
   {
-    var collection = new System.Collections.ObjectModel.Collection<DocumentModel.Packaging.SlidePart>();
-    foreach (var item in openXmlElement.GetPartsOfType<DocumentFormat.OpenXml.Packaging.SlidePart>())
+    var collection = new Collection<DMPack.SlidePart>();
+    foreach (var item in openXmlElement.GetPartsOfType<DXPack.SlidePart>())
     {
-      var newItem = DocumentModel.OpenXml.Packaging.SlidePartConverter.CreateModelElement(item);
+      var newItem = DMXPack.SlidePartConverter.CreateModelElement(item);
       if (newItem != null)
         collection.Add(newItem);
     }
@@ -68,23 +68,23 @@ public static class DiagramDataPartConverter
   /// <summary>
   /// Gets the WorksheetParts of the DiagramDataPart
   /// </summary>
-  private static System.Collections.ObjectModel.Collection<DocumentModel.Packaging.WorksheetPart> GetWorksheetParts(DocumentFormat.OpenXml.Packaging.DiagramDataPart openXmlElement)
+  private static Collection<DMPack.WorksheetPart> GetWorksheetParts(DXPack.DiagramDataPart openXmlElement)
   {
-    var collection = new System.Collections.ObjectModel.Collection<DocumentModel.Packaging.WorksheetPart>();
-    foreach (var item in openXmlElement.GetPartsOfType<DocumentFormat.OpenXml.Packaging.WorksheetPart>())
+    var collection = new Collection<DMPack.WorksheetPart>();
+    foreach (var item in openXmlElement.GetPartsOfType<DXPack.WorksheetPart>())
     {
-      var newItem = DocumentModel.OpenXml.Packaging.WorksheetPartConverter.CreateModelElement(item);
+      var newItem = DMXPack.WorksheetPartConverter.CreateModelElement(item);
       if (newItem != null)
         collection.Add(newItem);
     }
     return collection;
   }
   
-  public static DocumentModel.Packaging.DiagramDataPart? CreateModelElement(DocumentFormat.OpenXml.Packaging.DiagramDataPart? openXmlElement)
+  public static DMPack.DiagramDataPart? CreateModelElement(DXPack.DiagramDataPart? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Packaging.DiagramDataPart();
+      var value = new DMPack.DiagramDataPart();
       value.ContentType = GetContentType(openXmlElement);
       value.DataModelRoot = GetDataModelRoot(openXmlElement);
       value.ImageParts = GetImageParts(openXmlElement);
@@ -96,8 +96,8 @@ public static class DiagramDataPartConverter
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Packaging.DiagramDataPart? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Packaging.DiagramDataPart, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMPack.DiagramDataPart? value)
+    where OpenXmlElementType: DXPack.DiagramDataPart, new()
   {
     if (value != null)
     {

@@ -8,35 +8,35 @@ public static class PatternFillConverter
   /// <summary>
   /// Preset Pattern
   /// </summary>
-  private static DocumentModel.Drawings.PresetPatternKind? GetPreset(DocumentFormat.OpenXml.Drawing.PatternFill openXmlElement)
+  private static DMDraws.PresetPatternKind? GetPreset(DXDraw.PatternFill openXmlElement)
   {
-    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Drawing.PresetPatternValues, DocumentModel.Drawings.PresetPatternKind>(openXmlElement?.Preset?.Value);
+    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Drawing.PresetPatternValues, DMDraws.PresetPatternKind>(openXmlElement?.Preset?.Value);
   }
   
-  private static void SetPreset(DocumentFormat.OpenXml.Drawing.PatternFill openXmlElement, DocumentModel.Drawings.PresetPatternKind? value)
+  private static void SetPreset(DXDraw.PatternFill openXmlElement, DMDraws.PresetPatternKind? value)
   {
-    openXmlElement.Preset = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Drawing.PresetPatternValues, DocumentModel.Drawings.PresetPatternKind>(value);
+    openXmlElement.Preset = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Drawing.PresetPatternValues, DMDraws.PresetPatternKind>(value);
   }
   
   /// <summary>
   /// Foreground color.
   /// </summary>
-  private static DocumentModel.Drawings.ForegroundColor? GetForegroundColor(DocumentFormat.OpenXml.Drawing.PatternFill openXmlElement)
+  private static DMDraws.ForegroundColor? GetForegroundColor(DXDraw.PatternFill openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.ForegroundColor>();
+    var itemElement = openXmlElement?.GetFirstChild<DXDraw.ForegroundColor>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.ForegroundColorConverter.CreateModelElement(itemElement);
+      return DMXDraws.ForegroundColorConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetForegroundColor(DocumentFormat.OpenXml.Drawing.PatternFill openXmlElement, DocumentModel.Drawings.ForegroundColor? value)
+  private static void SetForegroundColor(DXDraw.PatternFill openXmlElement, DMDraws.ForegroundColor? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.ForegroundColor>();
+    var itemElement = openXmlElement.GetFirstChild<DXDraw.ForegroundColor>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Drawings.ForegroundColorConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.ForegroundColor>(value);
+      itemElement = DMXDraws.ForegroundColorConverter.CreateOpenXmlElement<DXDraw.ForegroundColor>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
@@ -45,32 +45,32 @@ public static class PatternFillConverter
   /// <summary>
   /// Background color.
   /// </summary>
-  private static DocumentModel.Drawings.BackgroundColor? GetBackgroundColor(DocumentFormat.OpenXml.Drawing.PatternFill openXmlElement)
+  private static DMDraws.BackgroundColor? GetBackgroundColor(DXDraw.PatternFill openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.BackgroundColor>();
+    var itemElement = openXmlElement?.GetFirstChild<DXDraw.BackgroundColor>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.BackgroundColorConverter.CreateModelElement(itemElement);
+      return DMXDraws.BackgroundColorConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetBackgroundColor(DocumentFormat.OpenXml.Drawing.PatternFill openXmlElement, DocumentModel.Drawings.BackgroundColor? value)
+  private static void SetBackgroundColor(DXDraw.PatternFill openXmlElement, DMDraws.BackgroundColor? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.BackgroundColor>();
+    var itemElement = openXmlElement.GetFirstChild<DXDraw.BackgroundColor>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Drawings.BackgroundColorConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.BackgroundColor>(value);
+      itemElement = DMXDraws.BackgroundColorConverter.CreateOpenXmlElement<DXDraw.BackgroundColor>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  public static DocumentModel.Drawings.PatternFill? CreateModelElement(DocumentFormat.OpenXml.Drawing.PatternFill? openXmlElement)
+  public static DMDraws.PatternFill? CreateModelElement(DXDraw.PatternFill? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.PatternFill();
+      var value = new DMDraws.PatternFill();
       value.Preset = GetPreset(openXmlElement);
       value.ForegroundColor = GetForegroundColor(openXmlElement);
       value.BackgroundColor = GetBackgroundColor(openXmlElement);
@@ -79,8 +79,8 @@ public static class PatternFillConverter
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.PatternFill? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.PatternFill, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDraws.PatternFill? value)
+    where OpenXmlElementType: DXDraw.PatternFill, new()
   {
     if (value != null)
     {

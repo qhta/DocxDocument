@@ -8,12 +8,12 @@ public static class ColorTransformCategoryConverter
   /// <summary>
   /// Category Type
   /// </summary>
-  private static String? GetType(DocumentFormat.OpenXml.Drawing.Diagrams.ColorTransformCategory openXmlElement)
+  private static String? GetType(DXDrawDgms.ColorTransformCategory openXmlElement)
   {
     return openXmlElement?.Type?.Value;
   }
   
-  private static void SetType(DocumentFormat.OpenXml.Drawing.Diagrams.ColorTransformCategory openXmlElement, String? value)
+  private static void SetType(DXDrawDgms.ColorTransformCategory openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.Type = new StringValue { Value = value };
@@ -24,21 +24,21 @@ public static class ColorTransformCategoryConverter
   /// <summary>
   /// Priority
   /// </summary>
-  private static UInt32? GetPriority(DocumentFormat.OpenXml.Drawing.Diagrams.ColorTransformCategory openXmlElement)
+  private static UInt32? GetPriority(DXDrawDgms.ColorTransformCategory openXmlElement)
   {
     return openXmlElement.Priority?.Value;
   }
   
-  private static void SetPriority(DocumentFormat.OpenXml.Drawing.Diagrams.ColorTransformCategory openXmlElement, UInt32? value)
+  private static void SetPriority(DXDrawDgms.ColorTransformCategory openXmlElement, UInt32? value)
   {
     openXmlElement.Priority = value;
   }
   
-  public static DocumentModel.Drawings.Diagrams.ColorTransformCategory? CreateModelElement(DocumentFormat.OpenXml.Drawing.Diagrams.ColorTransformCategory? openXmlElement)
+  public static DMDrawsDgms.ColorTransformCategory? CreateModelElement(DXDrawDgms.ColorTransformCategory? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.Diagrams.ColorTransformCategory();
+      var value = new DMDrawsDgms.ColorTransformCategory();
       value.Type = GetType(openXmlElement);
       value.Priority = GetPriority(openXmlElement);
       return value;
@@ -46,8 +46,8 @@ public static class ColorTransformCategoryConverter
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.Diagrams.ColorTransformCategory? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.Diagrams.ColorTransformCategory, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDrawsDgms.ColorTransformCategory? value)
+    where OpenXmlElementType: DXDrawDgms.ColorTransformCategory, new()
   {
     if (value != null)
     {

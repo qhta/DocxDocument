@@ -8,12 +8,12 @@ public static class BackstageTabConverter
   /// <summary>
   /// id, this property is only available in Office 2010 and later.
   /// </summary>
-  private static String? GetId(DocumentFormat.OpenXml.Office2010.CustomUI.BackstageTab openXmlElement)
+  private static String? GetId(DXO2010CustUI.BackstageTab openXmlElement)
   {
     return openXmlElement?.Id?.Value;
   }
   
-  private static void SetId(DocumentFormat.OpenXml.Office2010.CustomUI.BackstageTab openXmlElement, String? value)
+  private static void SetId(DXO2010CustUI.BackstageTab openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.Id = new StringValue { Value = value };
@@ -24,12 +24,12 @@ public static class BackstageTabConverter
   /// <summary>
   /// idQ, this property is only available in Office 2010 and later.
   /// </summary>
-  private static String? GetQualifiedId(DocumentFormat.OpenXml.Office2010.CustomUI.BackstageTab openXmlElement)
+  private static String? GetQualifiedId(DXO2010CustUI.BackstageTab openXmlElement)
   {
     return openXmlElement?.QualifiedId?.Value;
   }
   
-  private static void SetQualifiedId(DocumentFormat.OpenXml.Office2010.CustomUI.BackstageTab openXmlElement, String? value)
+  private static void SetQualifiedId(DXO2010CustUI.BackstageTab openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.QualifiedId = new StringValue { Value = value };
@@ -40,12 +40,12 @@ public static class BackstageTabConverter
   /// <summary>
   /// tag, this property is only available in Office 2010 and later.
   /// </summary>
-  private static String? GetTag(DocumentFormat.OpenXml.Office2010.CustomUI.BackstageTab openXmlElement)
+  private static String? GetTag(DXO2010CustUI.BackstageTab openXmlElement)
   {
     return openXmlElement?.Tag?.Value;
   }
   
-  private static void SetTag(DocumentFormat.OpenXml.Office2010.CustomUI.BackstageTab openXmlElement, String? value)
+  private static void SetTag(DXO2010CustUI.BackstageTab openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.Tag = new StringValue { Value = value };
@@ -56,12 +56,12 @@ public static class BackstageTabConverter
   /// <summary>
   /// idMso, this property is only available in Office 2010 and later.
   /// </summary>
-  private static String? GetIdMso(DocumentFormat.OpenXml.Office2010.CustomUI.BackstageTab openXmlElement)
+  private static String? GetIdMso(DXO2010CustUI.BackstageTab openXmlElement)
   {
     return openXmlElement?.IdMso?.Value;
   }
   
-  private static void SetIdMso(DocumentFormat.OpenXml.Office2010.CustomUI.BackstageTab openXmlElement, String? value)
+  private static void SetIdMso(DXO2010CustUI.BackstageTab openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.IdMso = new StringValue { Value = value };
@@ -72,12 +72,12 @@ public static class BackstageTabConverter
   /// <summary>
   /// insertAfterMso, this property is only available in Office 2010 and later.
   /// </summary>
-  private static String? GetInsertAfterMso(DocumentFormat.OpenXml.Office2010.CustomUI.BackstageTab openXmlElement)
+  private static String? GetInsertAfterMso(DXO2010CustUI.BackstageTab openXmlElement)
   {
     return openXmlElement?.InsertAfterMso?.Value;
   }
   
-  private static void SetInsertAfterMso(DocumentFormat.OpenXml.Office2010.CustomUI.BackstageTab openXmlElement, String? value)
+  private static void SetInsertAfterMso(DXO2010CustUI.BackstageTab openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.InsertAfterMso = new StringValue { Value = value };
@@ -88,12 +88,12 @@ public static class BackstageTabConverter
   /// <summary>
   /// insertBeforeMso, this property is only available in Office 2010 and later.
   /// </summary>
-  private static String? GetInsertBeforeMso(DocumentFormat.OpenXml.Office2010.CustomUI.BackstageTab openXmlElement)
+  private static String? GetInsertBeforeMso(DXO2010CustUI.BackstageTab openXmlElement)
   {
     return openXmlElement?.InsertBeforeMso?.Value;
   }
   
-  private static void SetInsertBeforeMso(DocumentFormat.OpenXml.Office2010.CustomUI.BackstageTab openXmlElement, String? value)
+  private static void SetInsertBeforeMso(DXO2010CustUI.BackstageTab openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.InsertBeforeMso = new StringValue { Value = value };
@@ -104,12 +104,12 @@ public static class BackstageTabConverter
   /// <summary>
   /// insertAfterQ, this property is only available in Office 2010 and later.
   /// </summary>
-  private static String? GetInsertAfterQulifiedId(DocumentFormat.OpenXml.Office2010.CustomUI.BackstageTab openXmlElement)
+  private static String? GetInsertAfterQulifiedId(DXO2010CustUI.BackstageTab openXmlElement)
   {
     return openXmlElement?.InsertAfterQulifiedId?.Value;
   }
   
-  private static void SetInsertAfterQulifiedId(DocumentFormat.OpenXml.Office2010.CustomUI.BackstageTab openXmlElement, String? value)
+  private static void SetInsertAfterQulifiedId(DXO2010CustUI.BackstageTab openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.InsertAfterQulifiedId = new StringValue { Value = value };
@@ -120,12 +120,12 @@ public static class BackstageTabConverter
   /// <summary>
   /// insertBeforeQ, this property is only available in Office 2010 and later.
   /// </summary>
-  private static String? GetInsertBeforeQulifiedId(DocumentFormat.OpenXml.Office2010.CustomUI.BackstageTab openXmlElement)
+  private static String? GetInsertBeforeQulifiedId(DXO2010CustUI.BackstageTab openXmlElement)
   {
     return openXmlElement?.InsertBeforeQulifiedId?.Value;
   }
   
-  private static void SetInsertBeforeQulifiedId(DocumentFormat.OpenXml.Office2010.CustomUI.BackstageTab openXmlElement, String? value)
+  private static void SetInsertBeforeQulifiedId(DXO2010CustUI.BackstageTab openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.InsertBeforeQulifiedId = new StringValue { Value = value };
@@ -136,12 +136,12 @@ public static class BackstageTabConverter
   /// <summary>
   /// enabled, this property is only available in Office 2010 and later.
   /// </summary>
-  private static Boolean? GetEnabled(DocumentFormat.OpenXml.Office2010.CustomUI.BackstageTab openXmlElement)
+  private static Boolean? GetEnabled(DXO2010CustUI.BackstageTab openXmlElement)
   {
     return openXmlElement?.Enabled?.Value;
   }
   
-  private static void SetEnabled(DocumentFormat.OpenXml.Office2010.CustomUI.BackstageTab openXmlElement, Boolean? value)
+  private static void SetEnabled(DXO2010CustUI.BackstageTab openXmlElement, Boolean? value)
   {
     if (value != null)
       openXmlElement.Enabled = new BooleanValue { Value = (Boolean)value };
@@ -152,12 +152,12 @@ public static class BackstageTabConverter
   /// <summary>
   /// getEnabled, this property is only available in Office 2010 and later.
   /// </summary>
-  private static String? GetGetEnabled(DocumentFormat.OpenXml.Office2010.CustomUI.BackstageTab openXmlElement)
+  private static String? GetGetEnabled(DXO2010CustUI.BackstageTab openXmlElement)
   {
     return openXmlElement?.GetEnabled?.Value;
   }
   
-  private static void SetGetEnabled(DocumentFormat.OpenXml.Office2010.CustomUI.BackstageTab openXmlElement, String? value)
+  private static void SetGetEnabled(DXO2010CustUI.BackstageTab openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.GetEnabled = new StringValue { Value = value };
@@ -168,12 +168,12 @@ public static class BackstageTabConverter
   /// <summary>
   /// label, this property is only available in Office 2010 and later.
   /// </summary>
-  private static String? GetLabel(DocumentFormat.OpenXml.Office2010.CustomUI.BackstageTab openXmlElement)
+  private static String? GetLabel(DXO2010CustUI.BackstageTab openXmlElement)
   {
     return openXmlElement?.Label?.Value;
   }
   
-  private static void SetLabel(DocumentFormat.OpenXml.Office2010.CustomUI.BackstageTab openXmlElement, String? value)
+  private static void SetLabel(DXO2010CustUI.BackstageTab openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.Label = new StringValue { Value = value };
@@ -184,12 +184,12 @@ public static class BackstageTabConverter
   /// <summary>
   /// getLabel, this property is only available in Office 2010 and later.
   /// </summary>
-  private static String? GetGetLabel(DocumentFormat.OpenXml.Office2010.CustomUI.BackstageTab openXmlElement)
+  private static String? GetGetLabel(DXO2010CustUI.BackstageTab openXmlElement)
   {
     return openXmlElement?.GetLabel?.Value;
   }
   
-  private static void SetGetLabel(DocumentFormat.OpenXml.Office2010.CustomUI.BackstageTab openXmlElement, String? value)
+  private static void SetGetLabel(DXO2010CustUI.BackstageTab openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.GetLabel = new StringValue { Value = value };
@@ -200,12 +200,12 @@ public static class BackstageTabConverter
   /// <summary>
   /// visible, this property is only available in Office 2010 and later.
   /// </summary>
-  private static Boolean? GetVisible(DocumentFormat.OpenXml.Office2010.CustomUI.BackstageTab openXmlElement)
+  private static Boolean? GetVisible(DXO2010CustUI.BackstageTab openXmlElement)
   {
     return openXmlElement?.Visible?.Value;
   }
   
-  private static void SetVisible(DocumentFormat.OpenXml.Office2010.CustomUI.BackstageTab openXmlElement, Boolean? value)
+  private static void SetVisible(DXO2010CustUI.BackstageTab openXmlElement, Boolean? value)
   {
     if (value != null)
       openXmlElement.Visible = new BooleanValue { Value = (Boolean)value };
@@ -216,12 +216,12 @@ public static class BackstageTabConverter
   /// <summary>
   /// getVisible, this property is only available in Office 2010 and later.
   /// </summary>
-  private static String? GetGetVisible(DocumentFormat.OpenXml.Office2010.CustomUI.BackstageTab openXmlElement)
+  private static String? GetGetVisible(DXO2010CustUI.BackstageTab openXmlElement)
   {
     return openXmlElement?.GetVisible?.Value;
   }
   
-  private static void SetGetVisible(DocumentFormat.OpenXml.Office2010.CustomUI.BackstageTab openXmlElement, String? value)
+  private static void SetGetVisible(DXO2010CustUI.BackstageTab openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.GetVisible = new StringValue { Value = value };
@@ -232,12 +232,12 @@ public static class BackstageTabConverter
   /// <summary>
   /// keytip, this property is only available in Office 2010 and later.
   /// </summary>
-  private static String? GetKeytip(DocumentFormat.OpenXml.Office2010.CustomUI.BackstageTab openXmlElement)
+  private static String? GetKeytip(DXO2010CustUI.BackstageTab openXmlElement)
   {
     return openXmlElement?.Keytip?.Value;
   }
   
-  private static void SetKeytip(DocumentFormat.OpenXml.Office2010.CustomUI.BackstageTab openXmlElement, String? value)
+  private static void SetKeytip(DXO2010CustUI.BackstageTab openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.Keytip = new StringValue { Value = value };
@@ -248,12 +248,12 @@ public static class BackstageTabConverter
   /// <summary>
   /// getKeytip, this property is only available in Office 2010 and later.
   /// </summary>
-  private static String? GetGetKeytip(DocumentFormat.OpenXml.Office2010.CustomUI.BackstageTab openXmlElement)
+  private static String? GetGetKeytip(DXO2010CustUI.BackstageTab openXmlElement)
   {
     return openXmlElement?.GetKeytip?.Value;
   }
   
-  private static void SetGetKeytip(DocumentFormat.OpenXml.Office2010.CustomUI.BackstageTab openXmlElement, String? value)
+  private static void SetGetKeytip(DXO2010CustUI.BackstageTab openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.GetKeytip = new StringValue { Value = value };
@@ -264,12 +264,12 @@ public static class BackstageTabConverter
   /// <summary>
   /// title, this property is only available in Office 2010 and later.
   /// </summary>
-  private static String? GetTitle(DocumentFormat.OpenXml.Office2010.CustomUI.BackstageTab openXmlElement)
+  private static String? GetTitle(DXO2010CustUI.BackstageTab openXmlElement)
   {
     return openXmlElement?.Title?.Value;
   }
   
-  private static void SetTitle(DocumentFormat.OpenXml.Office2010.CustomUI.BackstageTab openXmlElement, String? value)
+  private static void SetTitle(DXO2010CustUI.BackstageTab openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.Title = new StringValue { Value = value };
@@ -280,12 +280,12 @@ public static class BackstageTabConverter
   /// <summary>
   /// getTitle, this property is only available in Office 2010 and later.
   /// </summary>
-  private static String? GetGetTitle(DocumentFormat.OpenXml.Office2010.CustomUI.BackstageTab openXmlElement)
+  private static String? GetGetTitle(DXO2010CustUI.BackstageTab openXmlElement)
   {
     return openXmlElement?.GetTitle?.Value;
   }
   
-  private static void SetGetTitle(DocumentFormat.OpenXml.Office2010.CustomUI.BackstageTab openXmlElement, String? value)
+  private static void SetGetTitle(DXO2010CustUI.BackstageTab openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.GetTitle = new StringValue { Value = value };
@@ -296,12 +296,12 @@ public static class BackstageTabConverter
   /// <summary>
   /// columnWidthPercent, this property is only available in Office 2010 and later.
   /// </summary>
-  private static Int64? GetColumnWidthPercent(DocumentFormat.OpenXml.Office2010.CustomUI.BackstageTab openXmlElement)
+  private static Int64? GetColumnWidthPercent(DXO2010CustUI.BackstageTab openXmlElement)
   {
     return openXmlElement.ColumnWidthPercent?.Value;
   }
   
-  private static void SetColumnWidthPercent(DocumentFormat.OpenXml.Office2010.CustomUI.BackstageTab openXmlElement, Int64? value)
+  private static void SetColumnWidthPercent(DXO2010CustUI.BackstageTab openXmlElement, Int64? value)
   {
     openXmlElement.ColumnWidthPercent = value;
   }
@@ -309,12 +309,12 @@ public static class BackstageTabConverter
   /// <summary>
   /// firstColumnMinWidth, this property is only available in Office 2010 and later.
   /// </summary>
-  private static Int64? GetFirstColumnMinWidth(DocumentFormat.OpenXml.Office2010.CustomUI.BackstageTab openXmlElement)
+  private static Int64? GetFirstColumnMinWidth(DXO2010CustUI.BackstageTab openXmlElement)
   {
     return openXmlElement.FirstColumnMinWidth?.Value;
   }
   
-  private static void SetFirstColumnMinWidth(DocumentFormat.OpenXml.Office2010.CustomUI.BackstageTab openXmlElement, Int64? value)
+  private static void SetFirstColumnMinWidth(DXO2010CustUI.BackstageTab openXmlElement, Int64? value)
   {
     openXmlElement.FirstColumnMinWidth = value;
   }
@@ -322,12 +322,12 @@ public static class BackstageTabConverter
   /// <summary>
   /// firstColumnMaxWidth, this property is only available in Office 2010 and later.
   /// </summary>
-  private static Int64? GetFirstColumnMaxWidth(DocumentFormat.OpenXml.Office2010.CustomUI.BackstageTab openXmlElement)
+  private static Int64? GetFirstColumnMaxWidth(DXO2010CustUI.BackstageTab openXmlElement)
   {
     return openXmlElement.FirstColumnMaxWidth?.Value;
   }
   
-  private static void SetFirstColumnMaxWidth(DocumentFormat.OpenXml.Office2010.CustomUI.BackstageTab openXmlElement, Int64? value)
+  private static void SetFirstColumnMaxWidth(DXO2010CustUI.BackstageTab openXmlElement, Int64? value)
   {
     openXmlElement.FirstColumnMaxWidth = value;
   }
@@ -335,12 +335,12 @@ public static class BackstageTabConverter
   /// <summary>
   /// secondColumnMinWidth, this property is only available in Office 2010 and later.
   /// </summary>
-  private static Int64? GetSecondColumnMinWidth(DocumentFormat.OpenXml.Office2010.CustomUI.BackstageTab openXmlElement)
+  private static Int64? GetSecondColumnMinWidth(DXO2010CustUI.BackstageTab openXmlElement)
   {
     return openXmlElement.SecondColumnMinWidth?.Value;
   }
   
-  private static void SetSecondColumnMinWidth(DocumentFormat.OpenXml.Office2010.CustomUI.BackstageTab openXmlElement, Int64? value)
+  private static void SetSecondColumnMinWidth(DXO2010CustUI.BackstageTab openXmlElement, Int64? value)
   {
     openXmlElement.SecondColumnMinWidth = value;
   }
@@ -348,12 +348,12 @@ public static class BackstageTabConverter
   /// <summary>
   /// secondColumnMaxWidth, this property is only available in Office 2010 and later.
   /// </summary>
-  private static Int64? GetSecondColumnMaxWidth(DocumentFormat.OpenXml.Office2010.CustomUI.BackstageTab openXmlElement)
+  private static Int64? GetSecondColumnMaxWidth(DXO2010CustUI.BackstageTab openXmlElement)
   {
     return openXmlElement.SecondColumnMaxWidth?.Value;
   }
   
-  private static void SetSecondColumnMaxWidth(DocumentFormat.OpenXml.Office2010.CustomUI.BackstageTab openXmlElement, Int64? value)
+  private static void SetSecondColumnMaxWidth(DXO2010CustUI.BackstageTab openXmlElement, Int64? value)
   {
     openXmlElement.SecondColumnMaxWidth = value;
   }
@@ -361,22 +361,22 @@ public static class BackstageTabConverter
   /// <summary>
   /// BackstageGroups.
   /// </summary>
-  private static DocumentModel.BackstageGroups? GetBackstageGroups(DocumentFormat.OpenXml.Office2010.CustomUI.BackstageTab openXmlElement)
+  private static DM.BackstageGroups? GetBackstageGroups(DXO2010CustUI.BackstageTab openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office2010.CustomUI.BackstageGroups>();
+    var itemElement = openXmlElement?.GetFirstChild<DXO2010CustUI.BackstageGroups>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.BackstageGroupsConverter.CreateModelElement(itemElement);
+      return DMX.BackstageGroupsConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetBackstageGroups(DocumentFormat.OpenXml.Office2010.CustomUI.BackstageTab openXmlElement, DocumentModel.BackstageGroups? value)
+  private static void SetBackstageGroups(DXO2010CustUI.BackstageTab openXmlElement, DM.BackstageGroups? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2010.CustomUI.BackstageGroups>();
+    var itemElement = openXmlElement.GetFirstChild<DXO2010CustUI.BackstageGroups>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.BackstageGroupsConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2010.CustomUI.BackstageGroups>(value);
+      itemElement = DMX.BackstageGroupsConverter.CreateOpenXmlElement<DXO2010CustUI.BackstageGroups>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
@@ -385,32 +385,32 @@ public static class BackstageTabConverter
   /// <summary>
   /// SimpleGroups.
   /// </summary>
-  private static DocumentModel.SimpleGroups? GetSimpleGroups(DocumentFormat.OpenXml.Office2010.CustomUI.BackstageTab openXmlElement)
+  private static DM.SimpleGroups? GetSimpleGroups(DXO2010CustUI.BackstageTab openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office2010.CustomUI.SimpleGroups>();
+    var itemElement = openXmlElement?.GetFirstChild<DXO2010CustUI.SimpleGroups>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.SimpleGroupsConverter.CreateModelElement(itemElement);
+      return DMX.SimpleGroupsConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetSimpleGroups(DocumentFormat.OpenXml.Office2010.CustomUI.BackstageTab openXmlElement, DocumentModel.SimpleGroups? value)
+  private static void SetSimpleGroups(DXO2010CustUI.BackstageTab openXmlElement, DM.SimpleGroups? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2010.CustomUI.SimpleGroups>();
+    var itemElement = openXmlElement.GetFirstChild<DXO2010CustUI.SimpleGroups>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.SimpleGroupsConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2010.CustomUI.SimpleGroups>(value);
+      itemElement = DMX.SimpleGroupsConverter.CreateOpenXmlElement<DXO2010CustUI.SimpleGroups>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  public static DocumentModel.BackstageTab? CreateModelElement(DocumentFormat.OpenXml.Office2010.CustomUI.BackstageTab? openXmlElement)
+  public static DM.BackstageTab? CreateModelElement(DXO2010CustUI.BackstageTab? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.BackstageTab();
+      var value = new DM.BackstageTab();
       value.Id = GetId(openXmlElement);
       value.QualifiedId = GetQualifiedId(openXmlElement);
       value.Tag = GetTag(openXmlElement);
@@ -441,8 +441,8 @@ public static class BackstageTabConverter
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.BackstageTab? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Office2010.CustomUI.BackstageTab, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DM.BackstageTab? value)
+    where OpenXmlElementType: DXO2010CustUI.BackstageTab, new()
   {
     if (value != null)
     {

@@ -8,22 +8,22 @@ public static class FractionConverter
   /// <summary>
   /// Fraction Properties.
   /// </summary>
-  private static DocumentModel.Math.FractionProperties? GetFractionProperties(DocumentFormat.OpenXml.Math.Fraction openXmlElement)
+  private static DMMath.FractionProperties? GetFractionProperties(DXMath.Fraction openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Math.FractionProperties>();
+    var itemElement = openXmlElement?.GetFirstChild<DXMath.FractionProperties>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Math.FractionPropertiesConverter.CreateModelElement(itemElement);
+      return DMXMath.FractionPropertiesConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetFractionProperties(DocumentFormat.OpenXml.Math.Fraction openXmlElement, DocumentModel.Math.FractionProperties? value)
+  private static void SetFractionProperties(DXMath.Fraction openXmlElement, DMMath.FractionProperties? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Math.FractionProperties>();
+    var itemElement = openXmlElement.GetFirstChild<DXMath.FractionProperties>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Math.FractionPropertiesConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Math.FractionProperties>(value);
+      itemElement = DMXMath.FractionPropertiesConverter.CreateOpenXmlElement<DXMath.FractionProperties>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
@@ -32,22 +32,22 @@ public static class FractionConverter
   /// <summary>
   /// Numerator.
   /// </summary>
-  private static DocumentModel.Math.Numerator? GetNumerator(DocumentFormat.OpenXml.Math.Fraction openXmlElement)
+  private static DMMath.Numerator? GetNumerator(DXMath.Fraction openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Math.Numerator>();
+    var itemElement = openXmlElement?.GetFirstChild<DXMath.Numerator>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Math.NumeratorConverter.CreateModelElement(itemElement);
+      return DMXMath.NumeratorConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetNumerator(DocumentFormat.OpenXml.Math.Fraction openXmlElement, DocumentModel.Math.Numerator? value)
+  private static void SetNumerator(DXMath.Fraction openXmlElement, DMMath.Numerator? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Math.Numerator>();
+    var itemElement = openXmlElement.GetFirstChild<DXMath.Numerator>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Math.NumeratorConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Math.Numerator>(value);
+      itemElement = DMXMath.NumeratorConverter.CreateOpenXmlElement<DXMath.Numerator>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
@@ -56,32 +56,32 @@ public static class FractionConverter
   /// <summary>
   /// Denominator.
   /// </summary>
-  private static DocumentModel.Math.Denominator? GetDenominator(DocumentFormat.OpenXml.Math.Fraction openXmlElement)
+  private static DMMath.Denominator? GetDenominator(DXMath.Fraction openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Math.Denominator>();
+    var itemElement = openXmlElement?.GetFirstChild<DXMath.Denominator>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Math.DenominatorConverter.CreateModelElement(itemElement);
+      return DMXMath.DenominatorConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetDenominator(DocumentFormat.OpenXml.Math.Fraction openXmlElement, DocumentModel.Math.Denominator? value)
+  private static void SetDenominator(DXMath.Fraction openXmlElement, DMMath.Denominator? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Math.Denominator>();
+    var itemElement = openXmlElement.GetFirstChild<DXMath.Denominator>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Math.DenominatorConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Math.Denominator>(value);
+      itemElement = DMXMath.DenominatorConverter.CreateOpenXmlElement<DXMath.Denominator>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  public static DocumentModel.Math.Fraction? CreateModelElement(DocumentFormat.OpenXml.Math.Fraction? openXmlElement)
+  public static DMMath.Fraction? CreateModelElement(DXMath.Fraction? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Math.Fraction();
+      var value = new DMMath.Fraction();
       value.FractionProperties = GetFractionProperties(openXmlElement);
       value.Numerator = GetNumerator(openXmlElement);
       value.Denominator = GetDenominator(openXmlElement);
@@ -90,8 +90,8 @@ public static class FractionConverter
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Math.Fraction? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Math.Fraction, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMMath.Fraction? value)
+    where OpenXmlElementType: DXMath.Fraction, new()
   {
     if (value != null)
     {

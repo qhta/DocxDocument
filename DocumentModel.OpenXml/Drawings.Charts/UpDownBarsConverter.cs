@@ -8,22 +8,22 @@ public static class UpDownBarsConverter
   /// <summary>
   /// Gap Width.
   /// </summary>
-  private static UInt16? GetGapWidth(DocumentFormat.OpenXml.Drawing.Charts.UpDownBars openXmlElement)
+  private static UInt16? GetGapWidth(DXDrawCharts.UpDownBars openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.GapWidth>();
+    var itemElement = openXmlElement?.GetFirstChild<DXDrawCharts.GapWidth>();
     if (itemElement != null)
       return itemElement.Val?.Value;
     return null;
   }
   
-  private static void SetGapWidth(DocumentFormat.OpenXml.Drawing.Charts.UpDownBars openXmlElement, UInt16? value)
+  private static void SetGapWidth(DXDrawCharts.UpDownBars openXmlElement, UInt16? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.GapWidth>();
+    var itemElement = openXmlElement.GetFirstChild<DXDrawCharts.GapWidth>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = new DocumentFormat.OpenXml.Drawing.Charts.GapWidth{ Val = value };
+      itemElement = new DXDrawCharts.GapWidth{ Val = value };
       openXmlElement.AddChild(itemElement);
     }
   }
@@ -31,22 +31,22 @@ public static class UpDownBarsConverter
   /// <summary>
   /// Up Bars.
   /// </summary>
-  private static DocumentModel.Drawings.Charts.UpBars? GetUpBars(DocumentFormat.OpenXml.Drawing.Charts.UpDownBars openXmlElement)
+  private static DMDrawsCharts.UpBars? GetUpBars(DXDrawCharts.UpDownBars openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.UpBars>();
+    var itemElement = openXmlElement?.GetFirstChild<DXDrawCharts.UpBars>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.Charts.UpBarsConverter.CreateModelElement(itemElement);
+      return DMXDrawsCharts.UpBarsConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetUpBars(DocumentFormat.OpenXml.Drawing.Charts.UpDownBars openXmlElement, DocumentModel.Drawings.Charts.UpBars? value)
+  private static void SetUpBars(DXDrawCharts.UpDownBars openXmlElement, DMDrawsCharts.UpBars? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.UpBars>();
+    var itemElement = openXmlElement.GetFirstChild<DXDrawCharts.UpBars>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Drawings.Charts.UpBarsConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Charts.UpBars>(value);
+      itemElement = DMXDrawsCharts.UpBarsConverter.CreateOpenXmlElement<DXDrawCharts.UpBars>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
@@ -55,22 +55,22 @@ public static class UpDownBarsConverter
   /// <summary>
   /// Down Bars.
   /// </summary>
-  private static DocumentModel.Drawings.Charts.DownBars? GetDownBars(DocumentFormat.OpenXml.Drawing.Charts.UpDownBars openXmlElement)
+  private static DMDrawsCharts.DownBars? GetDownBars(DXDrawCharts.UpDownBars openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.DownBars>();
+    var itemElement = openXmlElement?.GetFirstChild<DXDrawCharts.DownBars>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.Charts.DownBarsConverter.CreateModelElement(itemElement);
+      return DMXDrawsCharts.DownBarsConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetDownBars(DocumentFormat.OpenXml.Drawing.Charts.UpDownBars openXmlElement, DocumentModel.Drawings.Charts.DownBars? value)
+  private static void SetDownBars(DXDrawCharts.UpDownBars openXmlElement, DMDrawsCharts.DownBars? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.DownBars>();
+    var itemElement = openXmlElement.GetFirstChild<DXDrawCharts.DownBars>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Drawings.Charts.DownBarsConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Charts.DownBars>(value);
+      itemElement = DMXDrawsCharts.DownBarsConverter.CreateOpenXmlElement<DXDrawCharts.DownBars>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
@@ -79,32 +79,32 @@ public static class UpDownBarsConverter
   /// <summary>
   /// Chart Extensibility.
   /// </summary>
-  private static DocumentModel.Drawings.Charts.ExtensionList? GetExtensionList(DocumentFormat.OpenXml.Drawing.Charts.UpDownBars openXmlElement)
+  private static DMDrawsCharts.ExtensionList? GetExtensionList(DXDrawCharts.UpDownBars openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.ExtensionList>();
+    var itemElement = openXmlElement?.GetFirstChild<DXDrawCharts.ExtensionList>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.Charts.ExtensionListConverter.CreateModelElement(itemElement);
+      return DMXDrawsCharts.ExtensionListConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetExtensionList(DocumentFormat.OpenXml.Drawing.Charts.UpDownBars openXmlElement, DocumentModel.Drawings.Charts.ExtensionList? value)
+  private static void SetExtensionList(DXDrawCharts.UpDownBars openXmlElement, DMDrawsCharts.ExtensionList? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.ExtensionList>();
+    var itemElement = openXmlElement.GetFirstChild<DXDrawCharts.ExtensionList>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Drawings.Charts.ExtensionListConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Charts.ExtensionList>(value);
+      itemElement = DMXDrawsCharts.ExtensionListConverter.CreateOpenXmlElement<DXDrawCharts.ExtensionList>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  public static DocumentModel.Drawings.Charts.UpDownBars? CreateModelElement(DocumentFormat.OpenXml.Drawing.Charts.UpDownBars? openXmlElement)
+  public static DMDrawsCharts.UpDownBars? CreateModelElement(DXDrawCharts.UpDownBars? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.Charts.UpDownBars();
+      var value = new DMDrawsCharts.UpDownBars();
       value.GapWidth = GetGapWidth(openXmlElement);
       value.UpBars = GetUpBars(openXmlElement);
       value.DownBars = GetDownBars(openXmlElement);
@@ -114,8 +114,8 @@ public static class UpDownBarsConverter
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.Charts.UpDownBars? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.Charts.UpDownBars, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDrawsCharts.UpDownBars? value)
+    where OpenXmlElementType: DXDrawCharts.UpDownBars, new()
   {
     if (value != null)
     {

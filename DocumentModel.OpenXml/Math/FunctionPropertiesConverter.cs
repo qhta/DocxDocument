@@ -8,40 +8,40 @@ public static class FunctionPropertiesConverter
   /// <summary>
   /// ControlProperties.
   /// </summary>
-  private static DocumentModel.Math.ControlProperties? GetControlProperties(DocumentFormat.OpenXml.Math.FunctionProperties openXmlElement)
+  private static DMMath.ControlProperties? GetControlProperties(DXMath.FunctionProperties openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Math.ControlProperties>();
+    var itemElement = openXmlElement?.GetFirstChild<DXMath.ControlProperties>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Math.ControlPropertiesConverter.CreateModelElement(itemElement);
+      return DMXMath.ControlPropertiesConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetControlProperties(DocumentFormat.OpenXml.Math.FunctionProperties openXmlElement, DocumentModel.Math.ControlProperties? value)
+  private static void SetControlProperties(DXMath.FunctionProperties openXmlElement, DMMath.ControlProperties? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Math.ControlProperties>();
+    var itemElement = openXmlElement.GetFirstChild<DXMath.ControlProperties>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Math.ControlPropertiesConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Math.ControlProperties>(value);
+      itemElement = DMXMath.ControlPropertiesConverter.CreateOpenXmlElement<DXMath.ControlProperties>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  public static DocumentModel.Math.FunctionProperties? CreateModelElement(DocumentFormat.OpenXml.Math.FunctionProperties? openXmlElement)
+  public static DMMath.FunctionProperties? CreateModelElement(DXMath.FunctionProperties? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Math.FunctionProperties();
+      var value = new DMMath.FunctionProperties();
       value.ControlProperties = GetControlProperties(openXmlElement);
       return value;
     }
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Math.FunctionProperties? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Math.FunctionProperties, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMMath.FunctionProperties? value)
+    where OpenXmlElementType: DXMath.FunctionProperties, new()
   {
     if (value != null)
     {

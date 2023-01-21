@@ -8,12 +8,12 @@ public static class Shadow2Converter
   /// <summary>
   /// blurRad, this property is only available in Office 2010 and later.
   /// </summary>
-  private static Int64? GetBlurRadius(DocumentFormat.OpenXml.Office2010.Word.Shadow openXmlElement)
+  private static Int64? GetBlurRadius(DXO2010W.Shadow openXmlElement)
   {
     return openXmlElement.BlurRadius?.Value;
   }
   
-  private static void SetBlurRadius(DocumentFormat.OpenXml.Office2010.Word.Shadow openXmlElement, Int64? value)
+  private static void SetBlurRadius(DXO2010W.Shadow openXmlElement, Int64? value)
   {
     openXmlElement.BlurRadius = value;
   }
@@ -21,12 +21,12 @@ public static class Shadow2Converter
   /// <summary>
   /// dist, this property is only available in Office 2010 and later.
   /// </summary>
-  private static Int64? GetDistanceFromText(DocumentFormat.OpenXml.Office2010.Word.Shadow openXmlElement)
+  private static Int64? GetDistanceFromText(DXO2010W.Shadow openXmlElement)
   {
     return openXmlElement.DistanceFromText?.Value;
   }
   
-  private static void SetDistanceFromText(DocumentFormat.OpenXml.Office2010.Word.Shadow openXmlElement, Int64? value)
+  private static void SetDistanceFromText(DXO2010W.Shadow openXmlElement, Int64? value)
   {
     openXmlElement.DistanceFromText = value;
   }
@@ -34,12 +34,12 @@ public static class Shadow2Converter
   /// <summary>
   /// dir, this property is only available in Office 2010 and later.
   /// </summary>
-  private static Int32? GetDirectionAngle(DocumentFormat.OpenXml.Office2010.Word.Shadow openXmlElement)
+  private static Int32? GetDirectionAngle(DXO2010W.Shadow openXmlElement)
   {
     return openXmlElement.DirectionAngle?.Value;
   }
   
-  private static void SetDirectionAngle(DocumentFormat.OpenXml.Office2010.Word.Shadow openXmlElement, Int32? value)
+  private static void SetDirectionAngle(DXO2010W.Shadow openXmlElement, Int32? value)
   {
     openXmlElement.DirectionAngle = value;
   }
@@ -47,12 +47,12 @@ public static class Shadow2Converter
   /// <summary>
   /// sx, this property is only available in Office 2010 and later.
   /// </summary>
-  private static Int32? GetHorizontalScalingFactor(DocumentFormat.OpenXml.Office2010.Word.Shadow openXmlElement)
+  private static Int32? GetHorizontalScalingFactor(DXO2010W.Shadow openXmlElement)
   {
     return openXmlElement.HorizontalScalingFactor?.Value;
   }
   
-  private static void SetHorizontalScalingFactor(DocumentFormat.OpenXml.Office2010.Word.Shadow openXmlElement, Int32? value)
+  private static void SetHorizontalScalingFactor(DXO2010W.Shadow openXmlElement, Int32? value)
   {
     openXmlElement.HorizontalScalingFactor = value;
   }
@@ -60,12 +60,12 @@ public static class Shadow2Converter
   /// <summary>
   /// sy, this property is only available in Office 2010 and later.
   /// </summary>
-  private static Int32? GetVerticalScalingFactor(DocumentFormat.OpenXml.Office2010.Word.Shadow openXmlElement)
+  private static Int32? GetVerticalScalingFactor(DXO2010W.Shadow openXmlElement)
   {
     return openXmlElement.VerticalScalingFactor?.Value;
   }
   
-  private static void SetVerticalScalingFactor(DocumentFormat.OpenXml.Office2010.Word.Shadow openXmlElement, Int32? value)
+  private static void SetVerticalScalingFactor(DXO2010W.Shadow openXmlElement, Int32? value)
   {
     openXmlElement.VerticalScalingFactor = value;
   }
@@ -73,12 +73,12 @@ public static class Shadow2Converter
   /// <summary>
   /// kx, this property is only available in Office 2010 and later.
   /// </summary>
-  private static Int32? GetHorizontalSkewAngle(DocumentFormat.OpenXml.Office2010.Word.Shadow openXmlElement)
+  private static Int32? GetHorizontalSkewAngle(DXO2010W.Shadow openXmlElement)
   {
     return openXmlElement.HorizontalSkewAngle?.Value;
   }
   
-  private static void SetHorizontalSkewAngle(DocumentFormat.OpenXml.Office2010.Word.Shadow openXmlElement, Int32? value)
+  private static void SetHorizontalSkewAngle(DXO2010W.Shadow openXmlElement, Int32? value)
   {
     openXmlElement.HorizontalSkewAngle = value;
   }
@@ -86,12 +86,12 @@ public static class Shadow2Converter
   /// <summary>
   /// ky, this property is only available in Office 2010 and later.
   /// </summary>
-  private static Int32? GetVerticalSkewAngle(DocumentFormat.OpenXml.Office2010.Word.Shadow openXmlElement)
+  private static Int32? GetVerticalSkewAngle(DXO2010W.Shadow openXmlElement)
   {
     return openXmlElement.VerticalSkewAngle?.Value;
   }
   
-  private static void SetVerticalSkewAngle(DocumentFormat.OpenXml.Office2010.Word.Shadow openXmlElement, Int32? value)
+  private static void SetVerticalSkewAngle(DXO2010W.Shadow openXmlElement, Int32? value)
   {
     openXmlElement.VerticalSkewAngle = value;
   }
@@ -99,35 +99,35 @@ public static class Shadow2Converter
   /// <summary>
   /// algn, this property is only available in Office 2010 and later.
   /// </summary>
-  private static DocumentModel.Wordprocessing.RectangleAlignmentKind? GetAlignment(DocumentFormat.OpenXml.Office2010.Word.Shadow openXmlElement)
+  private static DMW.RectangleAlignmentKind? GetAlignment(DXO2010W.Shadow openXmlElement)
   {
-    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Office2010.Word.RectangleAlignmentValues, DocumentModel.Wordprocessing.RectangleAlignmentKind>(openXmlElement?.Alignment?.Value);
+    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Office2010.Word.RectangleAlignmentValues, DMW.RectangleAlignmentKind>(openXmlElement?.Alignment?.Value);
   }
   
-  private static void SetAlignment(DocumentFormat.OpenXml.Office2010.Word.Shadow openXmlElement, DocumentModel.Wordprocessing.RectangleAlignmentKind? value)
+  private static void SetAlignment(DXO2010W.Shadow openXmlElement, DMW.RectangleAlignmentKind? value)
   {
-    openXmlElement.Alignment = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Office2010.Word.RectangleAlignmentValues, DocumentModel.Wordprocessing.RectangleAlignmentKind>(value);
+    openXmlElement.Alignment = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Office2010.Word.RectangleAlignmentValues, DMW.RectangleAlignmentKind>(value);
   }
   
   /// <summary>
   /// RgbColorModelHex.
   /// </summary>
-  private static DocumentModel.Wordprocessing.RgbColorModelHex? GetRgbColorModelHex(DocumentFormat.OpenXml.Office2010.Word.Shadow openXmlElement)
+  private static DMW.RgbColorModelHex? GetRgbColorModelHex(DXO2010W.Shadow openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office2010.Word.RgbColorModelHex>();
+    var itemElement = openXmlElement?.GetFirstChild<DXO2010W.RgbColorModelHex>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Wordprocessing.RgbColorModelHexConverter.CreateModelElement(itemElement);
+      return DMXW.RgbColorModelHexConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetRgbColorModelHex(DocumentFormat.OpenXml.Office2010.Word.Shadow openXmlElement, DocumentModel.Wordprocessing.RgbColorModelHex? value)
+  private static void SetRgbColorModelHex(DXO2010W.Shadow openXmlElement, DMW.RgbColorModelHex? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2010.Word.RgbColorModelHex>();
+    var itemElement = openXmlElement.GetFirstChild<DXO2010W.RgbColorModelHex>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Wordprocessing.RgbColorModelHexConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2010.Word.RgbColorModelHex>(value);
+      itemElement = DMXW.RgbColorModelHexConverter.CreateOpenXmlElement<DXO2010W.RgbColorModelHex>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
@@ -136,32 +136,32 @@ public static class Shadow2Converter
   /// <summary>
   /// SchemeColor.
   /// </summary>
-  private static DocumentModel.Wordprocessing.SchemeColor? GetSchemeColor(DocumentFormat.OpenXml.Office2010.Word.Shadow openXmlElement)
+  private static DMW.SchemeColor? GetSchemeColor(DXO2010W.Shadow openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office2010.Word.SchemeColor>();
+    var itemElement = openXmlElement?.GetFirstChild<DXO2010W.SchemeColor>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Wordprocessing.SchemeColorConverter.CreateModelElement(itemElement);
+      return DMXW.SchemeColorConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetSchemeColor(DocumentFormat.OpenXml.Office2010.Word.Shadow openXmlElement, DocumentModel.Wordprocessing.SchemeColor? value)
+  private static void SetSchemeColor(DXO2010W.Shadow openXmlElement, DMW.SchemeColor? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2010.Word.SchemeColor>();
+    var itemElement = openXmlElement.GetFirstChild<DXO2010W.SchemeColor>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Wordprocessing.SchemeColorConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2010.Word.SchemeColor>(value);
+      itemElement = DMXW.SchemeColorConverter.CreateOpenXmlElement<DXO2010W.SchemeColor>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  public static DocumentModel.Wordprocessing.Shadow2? CreateModelElement(DocumentFormat.OpenXml.Office2010.Word.Shadow? openXmlElement)
+  public static DMW.Shadow2? CreateModelElement(DXO2010W.Shadow? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Wordprocessing.Shadow2();
+      var value = new DMW.Shadow2();
       value.BlurRadius = GetBlurRadius(openXmlElement);
       value.DistanceFromText = GetDistanceFromText(openXmlElement);
       value.DirectionAngle = GetDirectionAngle(openXmlElement);
@@ -177,8 +177,8 @@ public static class Shadow2Converter
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.Shadow2? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Office2010.Word.Shadow, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMW.Shadow2? value)
+    where OpenXmlElementType: DXO2010W.Shadow, new()
   {
     if (value != null)
     {

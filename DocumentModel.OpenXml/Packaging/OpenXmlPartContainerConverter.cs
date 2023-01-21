@@ -8,12 +8,12 @@ public static class OpenXmlPartContainerConverter
   /// <summary>
   /// Gets all external relationships.
   /// </summary>
-  private static System.Collections.ObjectModel.Collection<DocumentModel.Packaging.ExternalRelationship> GetExternalRelationships(DocumentFormat.OpenXml.Packaging.OpenXmlPartContainer openXmlElement)
+  private static Collection<DMPack.ExternalRelationship> GetExternalRelationships(DXPack.OpenXmlPartContainer openXmlElement)
   {
-    var collection = new System.Collections.ObjectModel.Collection<DocumentModel.Packaging.ExternalRelationship>();
+    var collection = new Collection<DMPack.ExternalRelationship>();
     foreach (var item in openXmlElement.ExternalRelationships)
     {
-      var newItem = DocumentModel.OpenXml.Packaging.ExternalRelationshipConverter.CreateModelElement(item);
+      var newItem = DMXPack.ExternalRelationshipConverter.CreateModelElement(item);
       if (newItem != null)
         collection.Add(newItem);
     }
@@ -23,12 +23,12 @@ public static class OpenXmlPartContainerConverter
   /// <summary>
   /// Gets all hyperlink relationships.
   /// </summary>
-  private static System.Collections.ObjectModel.Collection<DocumentModel.Packaging.HyperlinkRelationship> GetHyperlinkRelationships(DocumentFormat.OpenXml.Packaging.OpenXmlPartContainer openXmlElement)
+  private static Collection<DMPack.HyperlinkRelationship> GetHyperlinkRelationships(DXPack.OpenXmlPartContainer openXmlElement)
   {
-    var collection = new System.Collections.ObjectModel.Collection<DocumentModel.Packaging.HyperlinkRelationship>();
+    var collection = new Collection<DMPack.HyperlinkRelationship>();
     foreach (var item in openXmlElement.HyperlinkRelationships)
     {
-      var newItem = DocumentModel.OpenXml.Packaging.HyperlinkRelationshipConverter.CreateModelElement(item);
+      var newItem = DMXPack.HyperlinkRelationshipConverter.CreateModelElement(item);
       if (newItem != null)
         collection.Add(newItem);
     }
@@ -38,12 +38,12 @@ public static class OpenXmlPartContainerConverter
   /// <summary>
   /// Gets all  relationships.
   /// </summary>
-  private static System.Collections.ObjectModel.Collection<DocumentModel.Packaging.DataPartReferenceRelationship> GetDataPartReferenceRelationships(DocumentFormat.OpenXml.Packaging.OpenXmlPartContainer openXmlElement)
+  private static Collection<DMPack.DataPartReferenceRelationship> GetDataPartReferenceRelationships(DXPack.OpenXmlPartContainer openXmlElement)
   {
-    var collection = new System.Collections.ObjectModel.Collection<DocumentModel.Packaging.DataPartReferenceRelationship>();
+    var collection = new Collection<DMPack.DataPartReferenceRelationship>();
     foreach (var item in openXmlElement.DataPartReferenceRelationships)
     {
-      var newItem = DocumentModel.OpenXml.Packaging.DataPartReferenceRelationshipConverter.CreateModelElement(item);
+      var newItem = DMXPack.DataPartReferenceRelationshipConverter.CreateModelElement(item);
       if (newItem != null)
         collection.Add(newItem);
     }
@@ -53,23 +53,23 @@ public static class OpenXmlPartContainerConverter
   /// <summary>
   /// Gets all parts which are relationship targets of this part.
   /// </summary>
-  private static System.Collections.ObjectModel.Collection<DocumentModel.Packaging.IdPartPair> GetParts(DocumentFormat.OpenXml.Packaging.OpenXmlPartContainer openXmlElement)
+  private static Collection<DMPack.IdPartPair> GetParts(DXPack.OpenXmlPartContainer openXmlElement)
   {
-    var collection = new System.Collections.ObjectModel.Collection<DocumentModel.Packaging.IdPartPair>();
+    var collection = new Collection<DMPack.IdPartPair>();
     foreach (var item in openXmlElement.Parts)
     {
-      var newItem = DocumentModel.OpenXml.Packaging.IdPartPairConverter.CreateModelElement(item);
+      var newItem = DMXPack.IdPartPairConverter.CreateModelElement(item);
       if (newItem != null)
         collection.Add(newItem);
     }
     return collection;
   }
   
-  public static DocumentModel.Packaging.OpenXmlPartContainer? CreateModelElement(DocumentFormat.OpenXml.Packaging.OpenXmlPartContainer? openXmlElement)
+  public static DMPack.OpenXmlPartContainer? CreateModelElement(DXPack.OpenXmlPartContainer? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Packaging.OpenXmlPartContainer();
+      var value = new DMPack.OpenXmlPartContainer();
       value.ExternalRelationships = GetExternalRelationships(openXmlElement);
       value.HyperlinkRelationships = GetHyperlinkRelationships(openXmlElement);
       value.DataPartReferenceRelationships = GetDataPartReferenceRelationships(openXmlElement);
@@ -79,8 +79,8 @@ public static class OpenXmlPartContainerConverter
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Packaging.OpenXmlPartContainer? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Packaging.OpenXmlPartContainer, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMPack.OpenXmlPartContainer? value)
+    where OpenXmlElementType: DXPack.OpenXmlPartContainer, new()
   {
     if (value != null)
     {

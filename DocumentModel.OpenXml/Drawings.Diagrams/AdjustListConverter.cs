@@ -5,45 +5,45 @@ namespace DocumentModel.OpenXml.Drawings.Diagrams;
 /// </summary>
 public static class AdjustListConverter
 {
-  private static System.Collections.ObjectModel.Collection<DocumentModel.Drawings.Diagrams.Adjust> GetAdjusts(DocumentFormat.OpenXml.Drawing.Diagrams.AdjustList openXmlElement)
+  private static Collection<DMDrawsDgms.Adjust> GetAdjusts(DXDrawDgms.AdjustList openXmlElement)
   {
-    var collection = new System.Collections.ObjectModel.Collection<DocumentModel.Drawings.Diagrams.Adjust>();
-    foreach (var item in openXmlElement.Elements<DocumentFormat.OpenXml.Drawing.Diagrams.Adjust>())
+    var collection = new Collection<DMDrawsDgms.Adjust>();
+    foreach (var item in openXmlElement.Elements<DXDrawDgms.Adjust>())
     {
-      var newItem = DocumentModel.OpenXml.Drawings.Diagrams.AdjustConverter.CreateModelElement(item);
+      var newItem = DMXDrawsDgms.AdjustConverter.CreateModelElement(item);
       if (newItem != null)
         collection.Add(newItem);
     }
     return collection;
   }
   
-  private static void SetAdjusts(DocumentFormat.OpenXml.Drawing.Diagrams.AdjustList openXmlElement, System.Collections.ObjectModel.Collection<DocumentModel.Drawings.Diagrams.Adjust>? value)
+  private static void SetAdjusts(DXDrawDgms.AdjustList openXmlElement, Collection<DMDrawsDgms.Adjust>? value)
   {
-    openXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Drawing.Diagrams.Adjust>();
+    openXmlElement.RemoveAllChildren<DXDrawDgms.Adjust>();
     if (value != null)
     {
       foreach (var item in value)
       {
-        var newItem = DocumentModel.OpenXml.Drawings.Diagrams.AdjustConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Diagrams.Adjust>(item);
+        var newItem = DMXDrawsDgms.AdjustConverter.CreateOpenXmlElement<DXDrawDgms.Adjust>(item);
         if (newItem != null)
           openXmlElement.AddChild(newItem);
       }
     }
   }
   
-  public static DocumentModel.Drawings.Diagrams.AdjustList? CreateModelElement(DocumentFormat.OpenXml.Drawing.Diagrams.AdjustList? openXmlElement)
+  public static DMDrawsDgms.AdjustList? CreateModelElement(DXDrawDgms.AdjustList? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.Diagrams.AdjustList();
+      var value = new DMDrawsDgms.AdjustList();
       value.Adjusts = GetAdjusts(openXmlElement);
       return value;
     }
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.Diagrams.AdjustList? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.Diagrams.AdjustList, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDrawsDgms.AdjustList? value)
+    where OpenXmlElementType: DXDrawDgms.AdjustList, new()
   {
     if (value != null)
     {

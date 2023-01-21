@@ -8,12 +8,12 @@ public static class StyleDefinitionTitleConverter
   /// <summary>
   /// Natural Language
   /// </summary>
-  private static String? GetLanguage(DocumentFormat.OpenXml.Drawing.Diagrams.StyleDefinitionTitle openXmlElement)
+  private static String? GetLanguage(DXDrawDgms.StyleDefinitionTitle openXmlElement)
   {
     return openXmlElement?.Language?.Value;
   }
   
-  private static void SetLanguage(DocumentFormat.OpenXml.Drawing.Diagrams.StyleDefinitionTitle openXmlElement, String? value)
+  private static void SetLanguage(DXDrawDgms.StyleDefinitionTitle openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.Language = new StringValue { Value = value };
@@ -24,12 +24,12 @@ public static class StyleDefinitionTitleConverter
   /// <summary>
   /// Description Value
   /// </summary>
-  private static String? GetVal(DocumentFormat.OpenXml.Drawing.Diagrams.StyleDefinitionTitle openXmlElement)
+  private static String? GetVal(DXDrawDgms.StyleDefinitionTitle openXmlElement)
   {
     return openXmlElement?.Val?.Value;
   }
   
-  private static void SetVal(DocumentFormat.OpenXml.Drawing.Diagrams.StyleDefinitionTitle openXmlElement, String? value)
+  private static void SetVal(DXDrawDgms.StyleDefinitionTitle openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.Val = new StringValue { Value = value };
@@ -37,11 +37,11 @@ public static class StyleDefinitionTitleConverter
       openXmlElement.Val = null;
   }
   
-  public static DocumentModel.Drawings.Diagrams.StyleDefinitionTitle? CreateModelElement(DocumentFormat.OpenXml.Drawing.Diagrams.StyleDefinitionTitle? openXmlElement)
+  public static DMDrawsDgms.StyleDefinitionTitle? CreateModelElement(DXDrawDgms.StyleDefinitionTitle? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.Diagrams.StyleDefinitionTitle();
+      var value = new DMDrawsDgms.StyleDefinitionTitle();
       value.Language = GetLanguage(openXmlElement);
       value.Val = GetVal(openXmlElement);
       return value;
@@ -49,8 +49,8 @@ public static class StyleDefinitionTitleConverter
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.Diagrams.StyleDefinitionTitle? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.Diagrams.StyleDefinitionTitle, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDrawsDgms.StyleDefinitionTitle? value)
+    where OpenXmlElementType: DXDrawDgms.StyleDefinitionTitle, new()
   {
     if (value != null)
     {

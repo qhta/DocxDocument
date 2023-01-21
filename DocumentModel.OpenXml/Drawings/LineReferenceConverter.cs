@@ -5,137 +5,137 @@ namespace DocumentModel.OpenXml.Drawings;
 /// </summary>
 public static class LineReferenceConverter
 {
-  private static DocumentModel.Drawings.RgbColorModelPercentage? GetRgbColorModelPercentage(DocumentFormat.OpenXml.Drawing.LineReference openXmlElement)
+  private static DMDraws.RgbColorModelPercentage? GetRgbColorModelPercentage(DXDraw.LineReference openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.RgbColorModelPercentage>();
+    var itemElement = openXmlElement?.GetFirstChild<DXDraw.RgbColorModelPercentage>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.RgbColorModelPercentageConverter.CreateModelElement(itemElement);
+      return DMXDraws.RgbColorModelPercentageConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetRgbColorModelPercentage(DocumentFormat.OpenXml.Drawing.LineReference openXmlElement, DocumentModel.Drawings.RgbColorModelPercentage? value)
+  private static void SetRgbColorModelPercentage(DXDraw.LineReference openXmlElement, DMDraws.RgbColorModelPercentage? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.RgbColorModelPercentage>();
+    var itemElement = openXmlElement.GetFirstChild<DXDraw.RgbColorModelPercentage>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Drawings.RgbColorModelPercentageConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.RgbColorModelPercentage>(value);
+      itemElement = DMXDraws.RgbColorModelPercentageConverter.CreateOpenXmlElement<DXDraw.RgbColorModelPercentage>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static DocumentModel.Drawings.RgbColorModelHex? GetRgbColorModelHex(DocumentFormat.OpenXml.Drawing.LineReference openXmlElement)
+  private static DMDraws.RgbColorModelHex? GetRgbColorModelHex(DXDraw.LineReference openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.RgbColorModelHex>();
+    var itemElement = openXmlElement?.GetFirstChild<DXDraw.RgbColorModelHex>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.RgbColorModelHexConverter.CreateModelElement(itemElement);
+      return DMXDraws.RgbColorModelHexConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetRgbColorModelHex(DocumentFormat.OpenXml.Drawing.LineReference openXmlElement, DocumentModel.Drawings.RgbColorModelHex? value)
+  private static void SetRgbColorModelHex(DXDraw.LineReference openXmlElement, DMDraws.RgbColorModelHex? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.RgbColorModelHex>();
+    var itemElement = openXmlElement.GetFirstChild<DXDraw.RgbColorModelHex>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Drawings.RgbColorModelHexConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.RgbColorModelHex>(value);
+      itemElement = DMXDraws.RgbColorModelHexConverter.CreateOpenXmlElement<DXDraw.RgbColorModelHex>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static DocumentModel.Drawings.HslColor? GetHslColor(DocumentFormat.OpenXml.Drawing.LineReference openXmlElement)
+  private static DMDraws.HslColor? GetHslColor(DXDraw.LineReference openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.HslColor>();
+    var itemElement = openXmlElement?.GetFirstChild<DXDraw.HslColor>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.HslColorConverter.CreateModelElement(itemElement);
+      return DMXDraws.HslColorConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetHslColor(DocumentFormat.OpenXml.Drawing.LineReference openXmlElement, DocumentModel.Drawings.HslColor? value)
+  private static void SetHslColor(DXDraw.LineReference openXmlElement, DMDraws.HslColor? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.HslColor>();
+    var itemElement = openXmlElement.GetFirstChild<DXDraw.HslColor>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Drawings.HslColorConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.HslColor>(value);
+      itemElement = DMXDraws.HslColorConverter.CreateOpenXmlElement<DXDraw.HslColor>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static DocumentModel.Drawings.SystemColor? GetSystemColor(DocumentFormat.OpenXml.Drawing.LineReference openXmlElement)
+  private static DMDraws.SystemColor? GetSystemColor(DXDraw.LineReference openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.SystemColor>();
+    var itemElement = openXmlElement?.GetFirstChild<DXDraw.SystemColor>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.SystemColorConverter.CreateModelElement(itemElement);
+      return DMXDraws.SystemColorConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetSystemColor(DocumentFormat.OpenXml.Drawing.LineReference openXmlElement, DocumentModel.Drawings.SystemColor? value)
+  private static void SetSystemColor(DXDraw.LineReference openXmlElement, DMDraws.SystemColor? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.SystemColor>();
+    var itemElement = openXmlElement.GetFirstChild<DXDraw.SystemColor>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Drawings.SystemColorConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.SystemColor>(value);
+      itemElement = DMXDraws.SystemColorConverter.CreateOpenXmlElement<DXDraw.SystemColor>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static DocumentModel.Drawings.SchemeColor? GetSchemeColor(DocumentFormat.OpenXml.Drawing.LineReference openXmlElement)
+  private static DMDraws.SchemeColor? GetSchemeColor(DXDraw.LineReference openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.SchemeColor>();
+    var itemElement = openXmlElement?.GetFirstChild<DXDraw.SchemeColor>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.SchemeColorConverter.CreateModelElement(itemElement);
+      return DMXDraws.SchemeColorConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetSchemeColor(DocumentFormat.OpenXml.Drawing.LineReference openXmlElement, DocumentModel.Drawings.SchemeColor? value)
+  private static void SetSchemeColor(DXDraw.LineReference openXmlElement, DMDraws.SchemeColor? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.SchemeColor>();
+    var itemElement = openXmlElement.GetFirstChild<DXDraw.SchemeColor>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Drawings.SchemeColorConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.SchemeColor>(value);
+      itemElement = DMXDraws.SchemeColorConverter.CreateOpenXmlElement<DXDraw.SchemeColor>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static DocumentModel.Drawings.PresetColor? GetPresetColor(DocumentFormat.OpenXml.Drawing.LineReference openXmlElement)
+  private static DMDraws.PresetColor? GetPresetColor(DXDraw.LineReference openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.PresetColor>();
+    var itemElement = openXmlElement?.GetFirstChild<DXDraw.PresetColor>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.PresetColorConverter.CreateModelElement(itemElement);
+      return DMXDraws.PresetColorConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetPresetColor(DocumentFormat.OpenXml.Drawing.LineReference openXmlElement, DocumentModel.Drawings.PresetColor? value)
+  private static void SetPresetColor(DXDraw.LineReference openXmlElement, DMDraws.PresetColor? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.PresetColor>();
+    var itemElement = openXmlElement.GetFirstChild<DXDraw.PresetColor>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Drawings.PresetColorConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.PresetColor>(value);
+      itemElement = DMXDraws.PresetColorConverter.CreateOpenXmlElement<DXDraw.PresetColor>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  public static DocumentModel.Drawings.LineReference? CreateModelElement(DocumentFormat.OpenXml.Drawing.LineReference? openXmlElement)
+  public static DMDraws.LineReference? CreateModelElement(DXDraw.LineReference? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.LineReference();
+      var value = new DMDraws.LineReference();
       value.RgbColorModelPercentage = GetRgbColorModelPercentage(openXmlElement);
       value.RgbColorModelHex = GetRgbColorModelHex(openXmlElement);
       value.HslColor = GetHslColor(openXmlElement);
@@ -147,8 +147,8 @@ public static class LineReferenceConverter
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.LineReference? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.LineReference, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDraws.LineReference? value)
+    where OpenXmlElementType: DXDraw.LineReference, new()
   {
     if (value != null)
     {

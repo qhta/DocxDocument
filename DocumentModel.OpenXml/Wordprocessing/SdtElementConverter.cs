@@ -8,22 +8,22 @@ public static class SdtElementConverter
   /// <summary>
   /// Gets or sets the SdtProperties.
   /// </summary>
-  private static DocumentModel.Wordprocessing.SdtProperties? GetSdtProperties(DocumentFormat.OpenXml.Wordprocessing.SdtElement openXmlElement)
+  private static DMW.SdtProperties? GetSdtProperties(DXW.SdtElement openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.SdtProperties>();
+    var itemElement = openXmlElement?.GetFirstChild<DXW.SdtProperties>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Wordprocessing.SdtPropertiesConverter.CreateModelElement(itemElement);
+      return DMXW.SdtPropertiesConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetSdtProperties(DocumentFormat.OpenXml.Wordprocessing.SdtElement openXmlElement, DocumentModel.Wordprocessing.SdtProperties? value)
+  private static void SetSdtProperties(DXW.SdtElement openXmlElement, DMW.SdtProperties? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.SdtProperties>();
+    var itemElement = openXmlElement.GetFirstChild<DXW.SdtProperties>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Wordprocessing.SdtPropertiesConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.SdtProperties>(value);
+      itemElement = DMXW.SdtPropertiesConverter.CreateOpenXmlElement<DXW.SdtProperties>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
@@ -32,32 +32,32 @@ public static class SdtElementConverter
   /// <summary>
   /// Gets or sets the SdtEndCharProperties.
   /// </summary>
-  private static DocumentModel.Wordprocessing.SdtEndCharProperties? GetSdtEndCharProperties(DocumentFormat.OpenXml.Wordprocessing.SdtElement openXmlElement)
+  private static DMW.SdtEndCharProperties? GetSdtEndCharProperties(DXW.SdtElement openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.SdtEndCharProperties>();
+    var itemElement = openXmlElement?.GetFirstChild<DXW.SdtEndCharProperties>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Wordprocessing.SdtEndCharPropertiesConverter.CreateModelElement(itemElement);
+      return DMXW.SdtEndCharPropertiesConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetSdtEndCharProperties(DocumentFormat.OpenXml.Wordprocessing.SdtElement openXmlElement, DocumentModel.Wordprocessing.SdtEndCharProperties? value)
+  private static void SetSdtEndCharProperties(DXW.SdtElement openXmlElement, DMW.SdtEndCharProperties? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.SdtEndCharProperties>();
+    var itemElement = openXmlElement.GetFirstChild<DXW.SdtEndCharProperties>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Wordprocessing.SdtEndCharPropertiesConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.SdtEndCharProperties>(value);
+      itemElement = DMXW.SdtEndCharPropertiesConverter.CreateOpenXmlElement<DXW.SdtEndCharProperties>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  public static DocumentModel.Wordprocessing.SdtElement? CreateModelElement(DocumentFormat.OpenXml.Wordprocessing.SdtElement? openXmlElement)
+  public static DMW.SdtElement? CreateModelElement(DXW.SdtElement? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Wordprocessing.SdtElement();
+      var value = new DMW.SdtElement();
       value.SdtProperties = GetSdtProperties(openXmlElement);
       value.SdtEndCharProperties = GetSdtEndCharProperties(openXmlElement);
       return value;
@@ -65,8 +65,8 @@ public static class SdtElementConverter
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.SdtElement? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Wordprocessing.SdtElement, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMW.SdtElement? value)
+    where OpenXmlElementType: DXW.SdtElement, new()
   {
     if (value != null)
     {

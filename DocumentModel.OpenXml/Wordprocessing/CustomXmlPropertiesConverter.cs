@@ -8,57 +8,57 @@ public static class CustomXmlPropertiesConverter
   /// <summary>
   /// Custom XML Element Placeholder Text.
   /// </summary>
-  private static String? GetCustomXmlPlaceholder(DocumentFormat.OpenXml.Wordprocessing.CustomXmlProperties openXmlElement)
+  private static String? GetCustomXmlPlaceholder(DXW.CustomXmlProperties openXmlElement)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.CustomXmlPlaceholder>();
+    var itemElement = openXmlElement.GetFirstChild<DXW.CustomXmlPlaceholder>();
     if (itemElement != null)
       return itemElement.Val?.Value;
     return null;
   }
   
-  private static void SetCustomXmlPlaceholder(DocumentFormat.OpenXml.Wordprocessing.CustomXmlProperties openXmlElement, String? value)
+  private static void SetCustomXmlPlaceholder(DXW.CustomXmlProperties openXmlElement, String? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.CustomXmlPlaceholder>();
+    var itemElement = openXmlElement.GetFirstChild<DXW.CustomXmlPlaceholder>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = new DocumentFormat.OpenXml.Wordprocessing.CustomXmlPlaceholder { Val = value };
+      itemElement = new DXW.CustomXmlPlaceholder { Val = value };
       openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static System.Collections.ObjectModel.Collection<DocumentModel.Wordprocessing.CustomXmlAttribute> GetCustomXmlAttributes(DocumentFormat.OpenXml.Wordprocessing.CustomXmlProperties openXmlElement)
+  private static Collection<DMW.CustomXmlAttribute> GetCustomXmlAttributes(DXW.CustomXmlProperties openXmlElement)
   {
-    var collection = new System.Collections.ObjectModel.Collection<DocumentModel.Wordprocessing.CustomXmlAttribute>();
-    foreach (var item in openXmlElement.Elements<DocumentFormat.OpenXml.Wordprocessing.CustomXmlAttribute>())
+    var collection = new Collection<DMW.CustomXmlAttribute>();
+    foreach (var item in openXmlElement.Elements<DXW.CustomXmlAttribute>())
     {
-      var newItem = DocumentModel.OpenXml.Wordprocessing.CustomXmlAttributeConverter.CreateModelElement(item);
+      var newItem = DMXW.CustomXmlAttributeConverter.CreateModelElement(item);
       if (newItem != null)
         collection.Add(newItem);
     }
     return collection;
   }
   
-  private static void SetCustomXmlAttributes(DocumentFormat.OpenXml.Wordprocessing.CustomXmlProperties openXmlElement, System.Collections.ObjectModel.Collection<DocumentModel.Wordprocessing.CustomXmlAttribute>? value)
+  private static void SetCustomXmlAttributes(DXW.CustomXmlProperties openXmlElement, Collection<DMW.CustomXmlAttribute>? value)
   {
-    openXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Wordprocessing.CustomXmlAttribute>();
+    openXmlElement.RemoveAllChildren<DXW.CustomXmlAttribute>();
     if (value != null)
     {
       foreach (var item in value)
       {
-        var newItem = DocumentModel.OpenXml.Wordprocessing.CustomXmlAttributeConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.CustomXmlAttribute>(item);
+        var newItem = DMXW.CustomXmlAttributeConverter.CreateOpenXmlElement<DXW.CustomXmlAttribute>(item);
         if (newItem != null)
           openXmlElement.AddChild(newItem);
       }
     }
   }
   
-  public static DocumentModel.Wordprocessing.CustomXmlProperties? CreateModelElement(DocumentFormat.OpenXml.Wordprocessing.CustomXmlProperties? openXmlElement)
+  public static DMW.CustomXmlProperties? CreateModelElement(DXW.CustomXmlProperties? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Wordprocessing.CustomXmlProperties();
+      var value = new DMW.CustomXmlProperties();
       value.CustomXmlPlaceholder = GetCustomXmlPlaceholder(openXmlElement);
       value.CustomXmlAttributes = GetCustomXmlAttributes(openXmlElement);
       return value;
@@ -66,8 +66,8 @@ public static class CustomXmlPropertiesConverter
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.CustomXmlProperties? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Wordprocessing.CustomXmlProperties, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMW.CustomXmlProperties? value)
+    where OpenXmlElementType: DXW.CustomXmlProperties, new()
   {
     if (value != null)
     {

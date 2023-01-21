@@ -8,12 +8,12 @@ public static class DocPropertiesConverter
   /// <summary>
   /// Application defined unique identifier.
   /// </summary>
-  private static UInt32? GetId(DocumentFormat.OpenXml.Drawing.Wordprocessing.DocProperties openXmlElement)
+  private static UInt32? GetId(DXDrawW.DocProperties openXmlElement)
   {
     return openXmlElement.Id?.Value;
   }
   
-  private static void SetId(DocumentFormat.OpenXml.Drawing.Wordprocessing.DocProperties openXmlElement, UInt32? value)
+  private static void SetId(DXDrawW.DocProperties openXmlElement, UInt32? value)
   {
     openXmlElement.Id = value;
   }
@@ -21,12 +21,12 @@ public static class DocPropertiesConverter
   /// <summary>
   /// Name compatible with Object Model (non-unique).
   /// </summary>
-  private static String? GetName(DocumentFormat.OpenXml.Drawing.Wordprocessing.DocProperties openXmlElement)
+  private static String? GetName(DXDrawW.DocProperties openXmlElement)
   {
     return openXmlElement?.Name?.Value;
   }
   
-  private static void SetName(DocumentFormat.OpenXml.Drawing.Wordprocessing.DocProperties openXmlElement, String? value)
+  private static void SetName(DXDrawW.DocProperties openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.Name = new StringValue { Value = value };
@@ -37,12 +37,12 @@ public static class DocPropertiesConverter
   /// <summary>
   /// Description of the drawing element.
   /// </summary>
-  private static String? GetDescription(DocumentFormat.OpenXml.Drawing.Wordprocessing.DocProperties openXmlElement)
+  private static String? GetDescription(DXDrawW.DocProperties openXmlElement)
   {
     return openXmlElement?.Description?.Value;
   }
   
-  private static void SetDescription(DocumentFormat.OpenXml.Drawing.Wordprocessing.DocProperties openXmlElement, String? value)
+  private static void SetDescription(DXDrawW.DocProperties openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.Description = new StringValue { Value = value };
@@ -53,12 +53,12 @@ public static class DocPropertiesConverter
   /// <summary>
   /// Flag determining to show or hide this element.
   /// </summary>
-  private static Boolean? GetHidden(DocumentFormat.OpenXml.Drawing.Wordprocessing.DocProperties openXmlElement)
+  private static Boolean? GetHidden(DXDrawW.DocProperties openXmlElement)
   {
     return openXmlElement?.Hidden?.Value;
   }
   
-  private static void SetHidden(DocumentFormat.OpenXml.Drawing.Wordprocessing.DocProperties openXmlElement, Boolean? value)
+  private static void SetHidden(DXDrawW.DocProperties openXmlElement, Boolean? value)
   {
     if (value != null)
       openXmlElement.Hidden = new BooleanValue { Value = (Boolean)value };
@@ -69,12 +69,12 @@ public static class DocPropertiesConverter
   /// <summary>
   /// Title
   /// </summary>
-  private static String? GetTitle(DocumentFormat.OpenXml.Drawing.Wordprocessing.DocProperties openXmlElement)
+  private static String? GetTitle(DXDrawW.DocProperties openXmlElement)
   {
     return openXmlElement?.Title?.Value;
   }
   
-  private static void SetTitle(DocumentFormat.OpenXml.Drawing.Wordprocessing.DocProperties openXmlElement, String? value)
+  private static void SetTitle(DXDrawW.DocProperties openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.Title = new StringValue { Value = value };
@@ -85,22 +85,22 @@ public static class DocPropertiesConverter
   /// <summary>
   /// Hyperlink associated with clicking or selecting the element..
   /// </summary>
-  private static DocumentModel.Drawings.HyperlinkOnClick? GetHyperlinkOnClick(DocumentFormat.OpenXml.Drawing.Wordprocessing.DocProperties openXmlElement)
+  private static DMDraws.HyperlinkOnClick? GetHyperlinkOnClick(DXDrawW.DocProperties openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.HyperlinkOnClick>();
+    var itemElement = openXmlElement?.GetFirstChild<DXDraw.HyperlinkOnClick>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.HyperlinkOnClickConverter.CreateModelElement(itemElement);
+      return DMXDraws.HyperlinkOnClickConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetHyperlinkOnClick(DocumentFormat.OpenXml.Drawing.Wordprocessing.DocProperties openXmlElement, DocumentModel.Drawings.HyperlinkOnClick? value)
+  private static void SetHyperlinkOnClick(DXDrawW.DocProperties openXmlElement, DMDraws.HyperlinkOnClick? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.HyperlinkOnClick>();
+    var itemElement = openXmlElement.GetFirstChild<DXDraw.HyperlinkOnClick>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Drawings.HyperlinkOnClickConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.HyperlinkOnClick>(value);
+      itemElement = DMXDraws.HyperlinkOnClickConverter.CreateOpenXmlElement<DXDraw.HyperlinkOnClick>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
@@ -109,22 +109,22 @@ public static class DocPropertiesConverter
   /// <summary>
   /// Hyperlink associated with hovering over the element..
   /// </summary>
-  private static DocumentModel.Drawings.HyperlinkOnHover? GetHyperlinkOnHover(DocumentFormat.OpenXml.Drawing.Wordprocessing.DocProperties openXmlElement)
+  private static DMDraws.HyperlinkOnHover? GetHyperlinkOnHover(DXDrawW.DocProperties openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.HyperlinkOnHover>();
+    var itemElement = openXmlElement?.GetFirstChild<DXDraw.HyperlinkOnHover>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.HyperlinkOnHoverConverter.CreateModelElement(itemElement);
+      return DMXDraws.HyperlinkOnHoverConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetHyperlinkOnHover(DocumentFormat.OpenXml.Drawing.Wordprocessing.DocProperties openXmlElement, DocumentModel.Drawings.HyperlinkOnHover? value)
+  private static void SetHyperlinkOnHover(DXDrawW.DocProperties openXmlElement, DMDraws.HyperlinkOnHover? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.HyperlinkOnHover>();
+    var itemElement = openXmlElement.GetFirstChild<DXDraw.HyperlinkOnHover>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Drawings.HyperlinkOnHoverConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.HyperlinkOnHover>(value);
+      itemElement = DMXDraws.HyperlinkOnHoverConverter.CreateOpenXmlElement<DXDraw.HyperlinkOnHover>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
@@ -133,32 +133,32 @@ public static class DocPropertiesConverter
   /// <summary>
   /// Future extension.
   /// </summary>
-  private static DocumentModel.Drawings.NonVisualDrawingPropertiesExtensionList? GetNonVisualDrawingPropertiesExtensionList(DocumentFormat.OpenXml.Drawing.Wordprocessing.DocProperties openXmlElement)
+  private static DMDraws.NonVisualDrawingPropertiesExtensionList? GetNonVisualDrawingPropertiesExtensionList(DXDrawW.DocProperties openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.NonVisualDrawingPropertiesExtensionList>();
+    var itemElement = openXmlElement?.GetFirstChild<DXDraw.NonVisualDrawingPropertiesExtensionList>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.NonVisualDrawingPropertiesExtensionListConverter.CreateModelElement(itemElement);
+      return DMXDraws.NonVisualDrawingPropertiesExtensionListConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetNonVisualDrawingPropertiesExtensionList(DocumentFormat.OpenXml.Drawing.Wordprocessing.DocProperties openXmlElement, DocumentModel.Drawings.NonVisualDrawingPropertiesExtensionList? value)
+  private static void SetNonVisualDrawingPropertiesExtensionList(DXDrawW.DocProperties openXmlElement, DMDraws.NonVisualDrawingPropertiesExtensionList? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.NonVisualDrawingPropertiesExtensionList>();
+    var itemElement = openXmlElement.GetFirstChild<DXDraw.NonVisualDrawingPropertiesExtensionList>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Drawings.NonVisualDrawingPropertiesExtensionListConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.NonVisualDrawingPropertiesExtensionList>(value);
+      itemElement = DMXDraws.NonVisualDrawingPropertiesExtensionListConverter.CreateOpenXmlElement<DXDraw.NonVisualDrawingPropertiesExtensionList>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  public static DocumentModel.Drawings.Wordprocessing.DocProperties? CreateModelElement(DocumentFormat.OpenXml.Drawing.Wordprocessing.DocProperties? openXmlElement)
+  public static DMDrawsW.DocProperties? CreateModelElement(DXDrawW.DocProperties? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.Wordprocessing.DocProperties();
+      var value = new DMDrawsW.DocProperties();
       value.Id = GetId(openXmlElement);
       value.Name = GetName(openXmlElement);
       value.Description = GetDescription(openXmlElement);
@@ -172,8 +172,8 @@ public static class DocPropertiesConverter
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.Wordprocessing.DocProperties? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.Wordprocessing.DocProperties, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDrawsW.DocProperties? value)
+    where OpenXmlElementType: DXDrawW.DocProperties, new()
   {
     if (value != null)
     {

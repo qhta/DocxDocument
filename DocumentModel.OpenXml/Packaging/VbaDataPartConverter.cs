@@ -5,12 +5,12 @@ namespace DocumentModel.OpenXml.Packaging;
 /// </summary>
 public static class VbaDataPartConverter
 {
-  private static String? GetContentType(DocumentFormat.OpenXml.Packaging.VbaDataPart openXmlElement)
+  private static String? GetContentType(DXPack.VbaDataPart openXmlElement)
   {
     return openXmlElement?.ContentType;
   }
   
-  private static String? GetRelationshipType(DocumentFormat.OpenXml.Packaging.VbaDataPart openXmlElement)
+  private static String? GetRelationshipType(DXPack.VbaDataPart openXmlElement)
   {
     return openXmlElement?.RelationshipType;
   }
@@ -18,28 +18,28 @@ public static class VbaDataPartConverter
   /// <summary>
   /// Gets or sets the root element of this part.
   /// </summary>
-  private static DocumentModel.Wordprocessing.VbaSuppData? GetVbaSuppData(DocumentFormat.OpenXml.Packaging.VbaDataPart openXmlElement)
+  private static DMW.VbaSuppData? GetVbaSuppData(DXPack.VbaDataPart openXmlElement)
   {
-    if (openXmlElement?.RootElement is DocumentFormat.OpenXml.Office.Word.VbaSuppData rootElement)
-      return DocumentModel.OpenXml.Wordprocessing.VbaSuppDataConverter.CreateModelElement(rootElement);
+    if (openXmlElement?.RootElement is DXOW.VbaSuppData rootElement)
+      return DMXW.VbaSuppDataConverter.CreateModelElement(rootElement);
     return null;
   }
   
-  private static void SetVbaSuppData(DocumentFormat.OpenXml.Packaging.VbaDataPart openXmlElement, DocumentModel.Wordprocessing.VbaSuppData? value)
+  private static void SetVbaSuppData(DXPack.VbaDataPart openXmlElement, DMW.VbaSuppData? value)
   {
     if (value != null)
     {
-       var rootElement = DocumentModel.OpenXml.Wordprocessing.VbaSuppDataConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office.Word.VbaSuppData>(value);
+       var rootElement = DMXW.VbaSuppDataConverter.CreateOpenXmlElement<DXOW.VbaSuppData>(value);
        if (rootElement != null)
          openXmlElement.VbaSuppData = rootElement;
     }
   }
   
-  public static DocumentModel.Packaging.VbaDataPart? CreateModelElement(DocumentFormat.OpenXml.Packaging.VbaDataPart? openXmlElement)
+  public static DMPack.VbaDataPart? CreateModelElement(DXPack.VbaDataPart? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Packaging.VbaDataPart();
+      var value = new DMPack.VbaDataPart();
       value.ContentType = GetContentType(openXmlElement);
       value.RelationshipType = GetRelationshipType(openXmlElement);
       value.VbaSuppData = GetVbaSuppData(openXmlElement);
@@ -48,8 +48,8 @@ public static class VbaDataPartConverter
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Packaging.VbaDataPart? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Packaging.VbaDataPart, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMPack.VbaDataPart? value)
+    where OpenXmlElementType: DXPack.VbaDataPart, new()
   {
     if (value != null)
     {

@@ -8,12 +8,12 @@ public static class InlineConverter
   /// <summary>
   /// Distance From Text on Top Edge
   /// </summary>
-  private static UInt32? GetDistanceFromTop(DocumentFormat.OpenXml.Drawing.Wordprocessing.Inline openXmlElement)
+  private static UInt32? GetDistanceFromTop(DXDrawW.Inline openXmlElement)
   {
     return openXmlElement.DistanceFromTop?.Value;
   }
   
-  private static void SetDistanceFromTop(DocumentFormat.OpenXml.Drawing.Wordprocessing.Inline openXmlElement, UInt32? value)
+  private static void SetDistanceFromTop(DXDrawW.Inline openXmlElement, UInt32? value)
   {
     openXmlElement.DistanceFromTop = value;
   }
@@ -21,12 +21,12 @@ public static class InlineConverter
   /// <summary>
   /// Distance From Text on Bottom Edge
   /// </summary>
-  private static UInt32? GetDistanceFromBottom(DocumentFormat.OpenXml.Drawing.Wordprocessing.Inline openXmlElement)
+  private static UInt32? GetDistanceFromBottom(DXDrawW.Inline openXmlElement)
   {
     return openXmlElement.DistanceFromBottom?.Value;
   }
   
-  private static void SetDistanceFromBottom(DocumentFormat.OpenXml.Drawing.Wordprocessing.Inline openXmlElement, UInt32? value)
+  private static void SetDistanceFromBottom(DXDrawW.Inline openXmlElement, UInt32? value)
   {
     openXmlElement.DistanceFromBottom = value;
   }
@@ -34,12 +34,12 @@ public static class InlineConverter
   /// <summary>
   /// Distance From Text on Left Edge
   /// </summary>
-  private static UInt32? GetDistanceFromLeft(DocumentFormat.OpenXml.Drawing.Wordprocessing.Inline openXmlElement)
+  private static UInt32? GetDistanceFromLeft(DXDrawW.Inline openXmlElement)
   {
     return openXmlElement.DistanceFromLeft?.Value;
   }
   
-  private static void SetDistanceFromLeft(DocumentFormat.OpenXml.Drawing.Wordprocessing.Inline openXmlElement, UInt32? value)
+  private static void SetDistanceFromLeft(DXDrawW.Inline openXmlElement, UInt32? value)
   {
     openXmlElement.DistanceFromLeft = value;
   }
@@ -47,12 +47,12 @@ public static class InlineConverter
   /// <summary>
   /// Distance From Text on Right Edge
   /// </summary>
-  private static UInt32? GetDistanceFromRight(DocumentFormat.OpenXml.Drawing.Wordprocessing.Inline openXmlElement)
+  private static UInt32? GetDistanceFromRight(DXDrawW.Inline openXmlElement)
   {
     return openXmlElement.DistanceFromRight?.Value;
   }
   
-  private static void SetDistanceFromRight(DocumentFormat.OpenXml.Drawing.Wordprocessing.Inline openXmlElement, UInt32? value)
+  private static void SetDistanceFromRight(DXDrawW.Inline openXmlElement, UInt32? value)
   {
     openXmlElement.DistanceFromRight = value;
   }
@@ -60,14 +60,14 @@ public static class InlineConverter
   /// <summary>
   /// anchorId, this property is only available in Office 2010 and later.
   /// </summary>
-  private static UInt32? GetAnchorId(DocumentFormat.OpenXml.Drawing.Wordprocessing.Inline openXmlElement)
+  private static UInt32? GetAnchorId(DXDrawW.Inline openXmlElement)
   {
     if (openXmlElement.AnchorId?.Value != null)
       return UInt32.Parse(openXmlElement.AnchorId.Value, NumberStyles.HexNumber);
     return null;
   }
   
-  private static void SetAnchorId(DocumentFormat.OpenXml.Drawing.Wordprocessing.Inline openXmlElement, UInt32? value)
+  private static void SetAnchorId(DXDrawW.Inline openXmlElement, UInt32? value)
   {
       if (value != null)
         openXmlElement.AnchorId = ((UInt32)value).ToString("X8");
@@ -78,14 +78,14 @@ public static class InlineConverter
   /// <summary>
   /// editId, this property is only available in Office 2010 and later.
   /// </summary>
-  private static UInt32? GetEditId(DocumentFormat.OpenXml.Drawing.Wordprocessing.Inline openXmlElement)
+  private static UInt32? GetEditId(DXDrawW.Inline openXmlElement)
   {
     if (openXmlElement.EditId?.Value != null)
       return UInt32.Parse(openXmlElement.EditId.Value, NumberStyles.HexNumber);
     return null;
   }
   
-  private static void SetEditId(DocumentFormat.OpenXml.Drawing.Wordprocessing.Inline openXmlElement, UInt32? value)
+  private static void SetEditId(DXDrawW.Inline openXmlElement, UInt32? value)
   {
       if (value != null)
         openXmlElement.EditId = ((UInt32)value).ToString("X8");
@@ -96,22 +96,22 @@ public static class InlineConverter
   /// <summary>
   /// Drawing Object Size.
   /// </summary>
-  private static DocumentModel.Drawings.Wordprocessing.Extent? GetExtent(DocumentFormat.OpenXml.Drawing.Wordprocessing.Inline openXmlElement)
+  private static DMDrawsW.Extent? GetExtent(DXDrawW.Inline openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.Wordprocessing.Extent>();
+    var itemElement = openXmlElement?.GetFirstChild<DXDrawW.Extent>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.Wordprocessing.ExtentConverter.CreateModelElement(itemElement);
+      return DMXDrawsW.ExtentConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetExtent(DocumentFormat.OpenXml.Drawing.Wordprocessing.Inline openXmlElement, DocumentModel.Drawings.Wordprocessing.Extent? value)
+  private static void SetExtent(DXDrawW.Inline openXmlElement, DMDrawsW.Extent? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Wordprocessing.Extent>();
+    var itemElement = openXmlElement.GetFirstChild<DXDrawW.Extent>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Drawings.Wordprocessing.ExtentConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Wordprocessing.Extent>(value);
+      itemElement = DMXDrawsW.ExtentConverter.CreateOpenXmlElement<DXDrawW.Extent>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
@@ -120,22 +120,22 @@ public static class InlineConverter
   /// <summary>
   /// Inline Wrapping Extent.
   /// </summary>
-  private static DocumentModel.Drawings.Wordprocessing.EffectExtent? GetEffectExtent(DocumentFormat.OpenXml.Drawing.Wordprocessing.Inline openXmlElement)
+  private static DMDrawsW.EffectExtent? GetEffectExtent(DXDrawW.Inline openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.Wordprocessing.EffectExtent>();
+    var itemElement = openXmlElement?.GetFirstChild<DXDrawW.EffectExtent>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.Wordprocessing.EffectExtentConverter.CreateModelElement(itemElement);
+      return DMXDrawsW.EffectExtentConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetEffectExtent(DocumentFormat.OpenXml.Drawing.Wordprocessing.Inline openXmlElement, DocumentModel.Drawings.Wordprocessing.EffectExtent? value)
+  private static void SetEffectExtent(DXDrawW.Inline openXmlElement, DMDrawsW.EffectExtent? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Wordprocessing.EffectExtent>();
+    var itemElement = openXmlElement.GetFirstChild<DXDrawW.EffectExtent>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Drawings.Wordprocessing.EffectExtentConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Wordprocessing.EffectExtent>(value);
+      itemElement = DMXDrawsW.EffectExtentConverter.CreateOpenXmlElement<DXDrawW.EffectExtent>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
@@ -144,22 +144,22 @@ public static class InlineConverter
   /// <summary>
   /// Drawing Object Non-Visual Properties.
   /// </summary>
-  private static DocumentModel.Drawings.Wordprocessing.DocProperties? GetDocProperties(DocumentFormat.OpenXml.Drawing.Wordprocessing.Inline openXmlElement)
+  private static DMDrawsW.DocProperties? GetDocProperties(DXDrawW.Inline openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.Wordprocessing.DocProperties>();
+    var itemElement = openXmlElement?.GetFirstChild<DXDrawW.DocProperties>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.Wordprocessing.DocPropertiesConverter.CreateModelElement(itemElement);
+      return DMXDrawsW.DocPropertiesConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetDocProperties(DocumentFormat.OpenXml.Drawing.Wordprocessing.Inline openXmlElement, DocumentModel.Drawings.Wordprocessing.DocProperties? value)
+  private static void SetDocProperties(DXDrawW.Inline openXmlElement, DMDrawsW.DocProperties? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Wordprocessing.DocProperties>();
+    var itemElement = openXmlElement.GetFirstChild<DXDrawW.DocProperties>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Drawings.Wordprocessing.DocPropertiesConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Wordprocessing.DocProperties>(value);
+      itemElement = DMXDrawsW.DocPropertiesConverter.CreateOpenXmlElement<DXDrawW.DocProperties>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
@@ -168,22 +168,22 @@ public static class InlineConverter
   /// <summary>
   /// Common DrawingML Non-Visual Properties.
   /// </summary>
-  private static DocumentModel.Drawings.Wordprocessing.NonVisualGraphicFrameDrawingProperties? GetNonVisualGraphicFrameDrawingProperties(DocumentFormat.OpenXml.Drawing.Wordprocessing.Inline openXmlElement)
+  private static DMDrawsW.NonVisualGraphicFrameDrawingProperties? GetNonVisualGraphicFrameDrawingProperties(DXDrawW.Inline openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.Wordprocessing.NonVisualGraphicFrameDrawingProperties>();
+    var itemElement = openXmlElement?.GetFirstChild<DXDrawW.NonVisualGraphicFrameDrawingProperties>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.Wordprocessing.NonVisualGraphicFrameDrawingPropertiesConverter.CreateModelElement(itemElement);
+      return DMXDrawsW.NonVisualGraphicFrameDrawingPropertiesConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetNonVisualGraphicFrameDrawingProperties(DocumentFormat.OpenXml.Drawing.Wordprocessing.Inline openXmlElement, DocumentModel.Drawings.Wordprocessing.NonVisualGraphicFrameDrawingProperties? value)
+  private static void SetNonVisualGraphicFrameDrawingProperties(DXDrawW.Inline openXmlElement, DMDrawsW.NonVisualGraphicFrameDrawingProperties? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Wordprocessing.NonVisualGraphicFrameDrawingProperties>();
+    var itemElement = openXmlElement.GetFirstChild<DXDrawW.NonVisualGraphicFrameDrawingProperties>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Drawings.Wordprocessing.NonVisualGraphicFrameDrawingPropertiesConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Wordprocessing.NonVisualGraphicFrameDrawingProperties>(value);
+      itemElement = DMXDrawsW.NonVisualGraphicFrameDrawingPropertiesConverter.CreateOpenXmlElement<DXDrawW.NonVisualGraphicFrameDrawingProperties>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
@@ -192,32 +192,32 @@ public static class InlineConverter
   /// <summary>
   /// Graphic.
   /// </summary>
-  private static DocumentModel.Drawings.Graphic? GetGraphic(DocumentFormat.OpenXml.Drawing.Wordprocessing.Inline openXmlElement)
+  private static DMDraws.Graphic? GetGraphic(DXDrawW.Inline openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.Graphic>();
+    var itemElement = openXmlElement?.GetFirstChild<DXDraw.Graphic>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.GraphicConverter.CreateModelElement(itemElement);
+      return DMXDraws.GraphicConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetGraphic(DocumentFormat.OpenXml.Drawing.Wordprocessing.Inline openXmlElement, DocumentModel.Drawings.Graphic? value)
+  private static void SetGraphic(DXDrawW.Inline openXmlElement, DMDraws.Graphic? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Graphic>();
+    var itemElement = openXmlElement.GetFirstChild<DXDraw.Graphic>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Drawings.GraphicConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Graphic>(value);
+      itemElement = DMXDraws.GraphicConverter.CreateOpenXmlElement<DXDraw.Graphic>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  public static DocumentModel.Drawings.Wordprocessing.Inline? CreateModelElement(DocumentFormat.OpenXml.Drawing.Wordprocessing.Inline? openXmlElement)
+  public static DMDrawsW.Inline? CreateModelElement(DXDrawW.Inline? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.Wordprocessing.Inline();
+      var value = new DMDrawsW.Inline();
       value.DistanceFromTop = GetDistanceFromTop(openXmlElement);
       value.DistanceFromBottom = GetDistanceFromBottom(openXmlElement);
       value.DistanceFromLeft = GetDistanceFromLeft(openXmlElement);
@@ -234,8 +234,8 @@ public static class InlineConverter
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.Wordprocessing.Inline? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.Wordprocessing.Inline, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDrawsW.Inline? value)
+    where OpenXmlElementType: DXDrawW.Inline, new()
   {
     if (value != null)
     {

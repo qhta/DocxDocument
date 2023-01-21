@@ -5,45 +5,45 @@ namespace DocumentModel.OpenXml.Drawings;
 /// </summary>
 public static class OfficeStyleSheetExtensionListConverter
 {
-  private static System.Collections.ObjectModel.Collection<DocumentModel.Drawings.OfficeStyleSheetExtension> GetOfficeStyleSheetExtensions(DocumentFormat.OpenXml.Drawing.OfficeStyleSheetExtensionList openXmlElement)
+  private static Collection<DMDraws.OfficeStyleSheetExtension> GetOfficeStyleSheetExtensions(DXDraw.OfficeStyleSheetExtensionList openXmlElement)
   {
-    var collection = new System.Collections.ObjectModel.Collection<DocumentModel.Drawings.OfficeStyleSheetExtension>();
-    foreach (var item in openXmlElement.Elements<DocumentFormat.OpenXml.Drawing.OfficeStyleSheetExtension>())
+    var collection = new Collection<DMDraws.OfficeStyleSheetExtension>();
+    foreach (var item in openXmlElement.Elements<DXDraw.OfficeStyleSheetExtension>())
     {
-      var newItem = DocumentModel.OpenXml.Drawings.OfficeStyleSheetExtensionConverter.CreateModelElement(item);
+      var newItem = DMXDraws.OfficeStyleSheetExtensionConverter.CreateModelElement(item);
       if (newItem != null)
         collection.Add(newItem);
     }
     return collection;
   }
   
-  private static void SetOfficeStyleSheetExtensions(DocumentFormat.OpenXml.Drawing.OfficeStyleSheetExtensionList openXmlElement, System.Collections.ObjectModel.Collection<DocumentModel.Drawings.OfficeStyleSheetExtension>? value)
+  private static void SetOfficeStyleSheetExtensions(DXDraw.OfficeStyleSheetExtensionList openXmlElement, Collection<DMDraws.OfficeStyleSheetExtension>? value)
   {
-    openXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Drawing.OfficeStyleSheetExtension>();
+    openXmlElement.RemoveAllChildren<DXDraw.OfficeStyleSheetExtension>();
     if (value != null)
     {
       foreach (var item in value)
       {
-        var newItem = DocumentModel.OpenXml.Drawings.OfficeStyleSheetExtensionConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.OfficeStyleSheetExtension>(item);
+        var newItem = DMXDraws.OfficeStyleSheetExtensionConverter.CreateOpenXmlElement<DXDraw.OfficeStyleSheetExtension>(item);
         if (newItem != null)
           openXmlElement.AddChild(newItem);
       }
     }
   }
   
-  public static DocumentModel.Drawings.OfficeStyleSheetExtensionList? CreateModelElement(DocumentFormat.OpenXml.Drawing.OfficeStyleSheetExtensionList? openXmlElement)
+  public static DMDraws.OfficeStyleSheetExtensionList? CreateModelElement(DXDraw.OfficeStyleSheetExtensionList? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.OfficeStyleSheetExtensionList();
+      var value = new DMDraws.OfficeStyleSheetExtensionList();
       value.OfficeStyleSheetExtensions = GetOfficeStyleSheetExtensions(openXmlElement);
       return value;
     }
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.OfficeStyleSheetExtensionList? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.OfficeStyleSheetExtensionList, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDraws.OfficeStyleSheetExtensionList? value)
+    where OpenXmlElementType: DXDraw.OfficeStyleSheetExtensionList, new()
   {
     if (value != null)
     {

@@ -5,53 +5,53 @@ namespace DocumentModel.OpenXml.Drawings;
 /// </summary>
 public static class AdjustHandleListConverter
 {
-  private static DocumentModel.Drawings.AdjustHandleXY? GetAdjustHandleXY(DocumentFormat.OpenXml.Drawing.AdjustHandleList openXmlElement)
+  private static DMDraws.AdjustHandleXY? GetAdjustHandleXY(DXDraw.AdjustHandleList openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.AdjustHandleXY>();
+    var itemElement = openXmlElement?.GetFirstChild<DXDraw.AdjustHandleXY>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.AdjustHandleXYConverter.CreateModelElement(itemElement);
+      return DMXDraws.AdjustHandleXYConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetAdjustHandleXY(DocumentFormat.OpenXml.Drawing.AdjustHandleList openXmlElement, DocumentModel.Drawings.AdjustHandleXY? value)
+  private static void SetAdjustHandleXY(DXDraw.AdjustHandleList openXmlElement, DMDraws.AdjustHandleXY? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.AdjustHandleXY>();
+    var itemElement = openXmlElement.GetFirstChild<DXDraw.AdjustHandleXY>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Drawings.AdjustHandleXYConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.AdjustHandleXY>(value);
+      itemElement = DMXDraws.AdjustHandleXYConverter.CreateOpenXmlElement<DXDraw.AdjustHandleXY>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static DocumentModel.Drawings.AdjustHandlePolar? GetAdjustHandlePolar(DocumentFormat.OpenXml.Drawing.AdjustHandleList openXmlElement)
+  private static DMDraws.AdjustHandlePolar? GetAdjustHandlePolar(DXDraw.AdjustHandleList openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.AdjustHandlePolar>();
+    var itemElement = openXmlElement?.GetFirstChild<DXDraw.AdjustHandlePolar>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.AdjustHandlePolarConverter.CreateModelElement(itemElement);
+      return DMXDraws.AdjustHandlePolarConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetAdjustHandlePolar(DocumentFormat.OpenXml.Drawing.AdjustHandleList openXmlElement, DocumentModel.Drawings.AdjustHandlePolar? value)
+  private static void SetAdjustHandlePolar(DXDraw.AdjustHandleList openXmlElement, DMDraws.AdjustHandlePolar? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.AdjustHandlePolar>();
+    var itemElement = openXmlElement.GetFirstChild<DXDraw.AdjustHandlePolar>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Drawings.AdjustHandlePolarConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.AdjustHandlePolar>(value);
+      itemElement = DMXDraws.AdjustHandlePolarConverter.CreateOpenXmlElement<DXDraw.AdjustHandlePolar>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  public static DocumentModel.Drawings.AdjustHandleList? CreateModelElement(DocumentFormat.OpenXml.Drawing.AdjustHandleList? openXmlElement)
+  public static DMDraws.AdjustHandleList? CreateModelElement(DXDraw.AdjustHandleList? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.AdjustHandleList();
+      var value = new DMDraws.AdjustHandleList();
       value.AdjustHandleXY = GetAdjustHandleXY(openXmlElement);
       value.AdjustHandlePolar = GetAdjustHandlePolar(openXmlElement);
       return value;
@@ -59,8 +59,8 @@ public static class AdjustHandleListConverter
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.AdjustHandleList? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.AdjustHandleList, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDraws.AdjustHandleList? value)
+    where OpenXmlElementType: DXDraw.AdjustHandleList, new()
   {
     if (value != null)
     {

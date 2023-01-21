@@ -8,40 +8,40 @@ public static class FilteredScatterSeriesConverter
   /// <summary>
   /// ScatterChartSeries.
   /// </summary>
-  private static DocumentModel.Drawings.Charts.ScatterChartSeries3? GetScatterChartSeries(DocumentFormat.OpenXml.Office2013.Drawing.Chart.FilteredScatterSeries openXmlElement)
+  private static DMDrawsCharts.ScatterChartSeries3? GetScatterChartSeries(DXO2013DrawChart.FilteredScatterSeries openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office2013.Drawing.Chart.ScatterChartSeries>();
+    var itemElement = openXmlElement?.GetFirstChild<DXO2013DrawChart.ScatterChartSeries>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.Charts.ScatterChartSeries3Converter.CreateModelElement(itemElement);
+      return DMXDrawsCharts.ScatterChartSeries3Converter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetScatterChartSeries(DocumentFormat.OpenXml.Office2013.Drawing.Chart.FilteredScatterSeries openXmlElement, DocumentModel.Drawings.Charts.ScatterChartSeries3? value)
+  private static void SetScatterChartSeries(DXO2013DrawChart.FilteredScatterSeries openXmlElement, DMDrawsCharts.ScatterChartSeries3? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2013.Drawing.Chart.ScatterChartSeries>();
+    var itemElement = openXmlElement.GetFirstChild<DXO2013DrawChart.ScatterChartSeries>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Drawings.Charts.ScatterChartSeries3Converter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2013.Drawing.Chart.ScatterChartSeries>(value);
+      itemElement = DMXDrawsCharts.ScatterChartSeries3Converter.CreateOpenXmlElement<DXO2013DrawChart.ScatterChartSeries>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  public static DocumentModel.Drawings.Charts.FilteredScatterSeries? CreateModelElement(DocumentFormat.OpenXml.Office2013.Drawing.Chart.FilteredScatterSeries? openXmlElement)
+  public static DMDrawsCharts.FilteredScatterSeries? CreateModelElement(DXO2013DrawChart.FilteredScatterSeries? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.Charts.FilteredScatterSeries();
+      var value = new DMDrawsCharts.FilteredScatterSeries();
       value.ScatterChartSeries = GetScatterChartSeries(openXmlElement);
       return value;
     }
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.Charts.FilteredScatterSeries? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Office2013.Drawing.Chart.FilteredScatterSeries, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDrawsCharts.FilteredScatterSeries? value)
+    where OpenXmlElementType: DXO2013DrawChart.FilteredScatterSeries, new()
   {
     if (value != null)
     {

@@ -8,36 +8,36 @@ public static class StylesPartConverter
   /// <summary>
   /// Gets or sets the root element of this part.
   /// </summary>
-  private static DocumentModel.Wordprocessing.Styles? GetStyles(DocumentFormat.OpenXml.Packaging.StylesPart openXmlElement)
+  private static DMW.Styles? GetStyles(DXPack.StylesPart openXmlElement)
   {
-    if (openXmlElement?.RootElement is DocumentFormat.OpenXml.Wordprocessing.Styles rootElement)
-      return DocumentModel.OpenXml.Wordprocessing.StylesConverter.CreateModelElement(rootElement);
+    if (openXmlElement?.RootElement is DXW.Styles rootElement)
+      return DMXW.StylesConverter.CreateModelElement(rootElement);
     return null;
   }
   
-  private static void SetStyles(DocumentFormat.OpenXml.Packaging.StylesPart openXmlElement, DocumentModel.Wordprocessing.Styles? value)
+  private static void SetStyles(DXPack.StylesPart openXmlElement, DMW.Styles? value)
   {
     if (value != null)
     {
-       var rootElement = DocumentModel.OpenXml.Wordprocessing.StylesConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.Styles>(value);
+       var rootElement = DMXW.StylesConverter.CreateOpenXmlElement<DXW.Styles>(value);
        if (rootElement != null)
          openXmlElement.Styles = rootElement;
     }
   }
   
-  public static DocumentModel.Packaging.StylesPart? CreateModelElement(DocumentFormat.OpenXml.Packaging.StylesPart? openXmlElement)
+  public static DMPack.StylesPart? CreateModelElement(DXPack.StylesPart? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Packaging.StylesPart();
+      var value = new DMPack.StylesPart();
       value.Styles = GetStyles(openXmlElement);
       return value;
     }
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Packaging.StylesPart? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Packaging.StylesPart, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMPack.StylesPart? value)
+    where OpenXmlElementType: DXPack.StylesPart, new()
   {
     if (value != null)
     {

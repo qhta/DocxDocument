@@ -8,23 +8,23 @@ public static class SingleDataSourceRecordConverter
   /// <summary>
   /// RecordIncluded.
   /// </summary>
-  private static Boolean? GetRecordIncluded(DocumentFormat.OpenXml.Office.Word.SingleDataSourceRecord openXmlElement)
+  private static Boolean? GetRecordIncluded(DXOW.SingleDataSourceRecord openXmlElement)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office.Word.RecordIncluded>();
+    var itemElement = openXmlElement.GetFirstChild<DXOW.RecordIncluded>();
     return itemElement != null;
   }
   
-  private static void SetRecordIncluded(DocumentFormat.OpenXml.Office.Word.SingleDataSourceRecord openXmlElement, Boolean? value)
+  private static void SetRecordIncluded(DXOW.SingleDataSourceRecord openXmlElement, Boolean? value)
   {
     if (value == false)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office.Word.RecordIncluded>();
+      var itemElement = openXmlElement.GetFirstChild<DXOW.RecordIncluded>();
       if (itemElement != null)
         itemElement.Remove();
     }
     if (value == true)
     {
-      var itemElement = new DocumentFormat.OpenXml.Office.Word.RecordIncluded();
+      var itemElement = new DXOW.RecordIncluded();
       openXmlElement.AddChild(itemElement);
     }
   }
@@ -32,31 +32,31 @@ public static class SingleDataSourceRecordConverter
   /// <summary>
   /// RecordHashCode.
   /// </summary>
-  private static Int64? GetRecordHashCode(DocumentFormat.OpenXml.Office.Word.SingleDataSourceRecord openXmlElement)
+  private static Int64? GetRecordHashCode(DXOW.SingleDataSourceRecord openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office.Word.RecordHashCode>();
+    var itemElement = openXmlElement?.GetFirstChild<DXOW.RecordHashCode>();
     if (itemElement != null)
       return itemElement.Val?.Value;
     return null;
   }
   
-  private static void SetRecordHashCode(DocumentFormat.OpenXml.Office.Word.SingleDataSourceRecord openXmlElement, Int64? value)
+  private static void SetRecordHashCode(DXOW.SingleDataSourceRecord openXmlElement, Int64? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office.Word.RecordHashCode>();
+    var itemElement = openXmlElement.GetFirstChild<DXOW.RecordHashCode>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = new DocumentFormat.OpenXml.Office.Word.RecordHashCode{ Val = value };
+      itemElement = new DXOW.RecordHashCode{ Val = value };
       openXmlElement.AddChild(itemElement);
     }
   }
   
-  public static DocumentModel.Wordprocessing.SingleDataSourceRecord? CreateModelElement(DocumentFormat.OpenXml.Office.Word.SingleDataSourceRecord? openXmlElement)
+  public static DMW.SingleDataSourceRecord? CreateModelElement(DXOW.SingleDataSourceRecord? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Wordprocessing.SingleDataSourceRecord();
+      var value = new DMW.SingleDataSourceRecord();
       value.RecordIncluded = GetRecordIncluded(openXmlElement);
       value.RecordHashCode = GetRecordHashCode(openXmlElement);
       return value;
@@ -64,8 +64,8 @@ public static class SingleDataSourceRecordConverter
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.SingleDataSourceRecord? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Office.Word.SingleDataSourceRecord, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMW.SingleDataSourceRecord? value)
+    where OpenXmlElementType: DXOW.SingleDataSourceRecord, new()
   {
     if (value != null)
     {

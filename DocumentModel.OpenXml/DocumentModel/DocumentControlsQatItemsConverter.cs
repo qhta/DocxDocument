@@ -5,74 +5,74 @@ namespace DocumentModel.OpenXml;
 /// </summary>
 public static class DocumentControlsQatItemsConverter
 {
-  private static DocumentModel.ControlCloneQat? GetControlCloneQat(DocumentFormat.OpenXml.Office2010.CustomUI.DocumentControlsQatItems openXmlElement)
+  private static DM.ControlCloneQat? GetControlCloneQat(DXO2010CustUI.DocumentControlsQatItems openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office2010.CustomUI.ControlCloneQat>();
+    var itemElement = openXmlElement?.GetFirstChild<DXO2010CustUI.ControlCloneQat>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.ControlCloneQatConverter.CreateModelElement(itemElement);
+      return DMX.ControlCloneQatConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetControlCloneQat(DocumentFormat.OpenXml.Office2010.CustomUI.DocumentControlsQatItems openXmlElement, DocumentModel.ControlCloneQat? value)
+  private static void SetControlCloneQat(DXO2010CustUI.DocumentControlsQatItems openXmlElement, DM.ControlCloneQat? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2010.CustomUI.ControlCloneQat>();
+    var itemElement = openXmlElement.GetFirstChild<DXO2010CustUI.ControlCloneQat>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.ControlCloneQatConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2010.CustomUI.ControlCloneQat>(value);
+      itemElement = DMX.ControlCloneQatConverter.CreateOpenXmlElement<DXO2010CustUI.ControlCloneQat>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static DocumentModel.ButtonRegular? GetButtonRegular(DocumentFormat.OpenXml.Office2010.CustomUI.DocumentControlsQatItems openXmlElement)
+  private static DM.ButtonRegular? GetButtonRegular(DXO2010CustUI.DocumentControlsQatItems openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office2010.CustomUI.ButtonRegular>();
+    var itemElement = openXmlElement?.GetFirstChild<DXO2010CustUI.ButtonRegular>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.ButtonRegularConverter.CreateModelElement(itemElement);
+      return DMX.ButtonRegularConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetButtonRegular(DocumentFormat.OpenXml.Office2010.CustomUI.DocumentControlsQatItems openXmlElement, DocumentModel.ButtonRegular? value)
+  private static void SetButtonRegular(DXO2010CustUI.DocumentControlsQatItems openXmlElement, DM.ButtonRegular? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2010.CustomUI.ButtonRegular>();
+    var itemElement = openXmlElement.GetFirstChild<DXO2010CustUI.ButtonRegular>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.ButtonRegularConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2010.CustomUI.ButtonRegular>(value);
+      itemElement = DMX.ButtonRegularConverter.CreateOpenXmlElement<DXO2010CustUI.ButtonRegular>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static DocumentModel.Separator? GetSeparator(DocumentFormat.OpenXml.Office2010.CustomUI.DocumentControlsQatItems openXmlElement)
+  private static DM.Separator? GetSeparator(DXO2010CustUI.DocumentControlsQatItems openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office2010.CustomUI.Separator>();
+    var itemElement = openXmlElement?.GetFirstChild<DXO2010CustUI.Separator>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.SeparatorConverter.CreateModelElement(itemElement);
+      return DMX.SeparatorConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetSeparator(DocumentFormat.OpenXml.Office2010.CustomUI.DocumentControlsQatItems openXmlElement, DocumentModel.Separator? value)
+  private static void SetSeparator(DXO2010CustUI.DocumentControlsQatItems openXmlElement, DM.Separator? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2010.CustomUI.Separator>();
+    var itemElement = openXmlElement.GetFirstChild<DXO2010CustUI.Separator>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.SeparatorConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2010.CustomUI.Separator>(value);
+      itemElement = DMX.SeparatorConverter.CreateOpenXmlElement<DXO2010CustUI.Separator>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  public static DocumentModel.DocumentControlsQatItems? CreateModelElement(DocumentFormat.OpenXml.Office2010.CustomUI.DocumentControlsQatItems? openXmlElement)
+  public static DM.DocumentControlsQatItems? CreateModelElement(DXO2010CustUI.DocumentControlsQatItems? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.DocumentControlsQatItems();
+      var value = new DM.DocumentControlsQatItems();
       value.ControlCloneQat = GetControlCloneQat(openXmlElement);
       value.ButtonRegular = GetButtonRegular(openXmlElement);
       value.Separator = GetSeparator(openXmlElement);
@@ -81,8 +81,8 @@ public static class DocumentControlsQatItemsConverter
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.DocumentControlsQatItems? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Office2010.CustomUI.DocumentControlsQatItems, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DM.DocumentControlsQatItems? value)
+    where OpenXmlElementType: DXO2010CustUI.DocumentControlsQatItems, new()
   {
     if (value != null)
     {

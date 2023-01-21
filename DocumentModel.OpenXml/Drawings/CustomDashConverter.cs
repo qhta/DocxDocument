@@ -5,45 +5,45 @@ namespace DocumentModel.OpenXml.Drawings;
 /// </summary>
 public static class CustomDashConverter
 {
-  private static System.Collections.ObjectModel.Collection<DocumentModel.Drawings.DashStop> GetDashStops(DocumentFormat.OpenXml.Drawing.CustomDash openXmlElement)
+  private static Collection<DMDraws.DashStop> GetDashStops(DXDraw.CustomDash openXmlElement)
   {
-    var collection = new System.Collections.ObjectModel.Collection<DocumentModel.Drawings.DashStop>();
-    foreach (var item in openXmlElement.Elements<DocumentFormat.OpenXml.Drawing.DashStop>())
+    var collection = new Collection<DMDraws.DashStop>();
+    foreach (var item in openXmlElement.Elements<DXDraw.DashStop>())
     {
-      var newItem = DocumentModel.OpenXml.Drawings.DashStopConverter.CreateModelElement(item);
+      var newItem = DMXDraws.DashStopConverter.CreateModelElement(item);
       if (newItem != null)
         collection.Add(newItem);
     }
     return collection;
   }
   
-  private static void SetDashStops(DocumentFormat.OpenXml.Drawing.CustomDash openXmlElement, System.Collections.ObjectModel.Collection<DocumentModel.Drawings.DashStop>? value)
+  private static void SetDashStops(DXDraw.CustomDash openXmlElement, Collection<DMDraws.DashStop>? value)
   {
-    openXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Drawing.DashStop>();
+    openXmlElement.RemoveAllChildren<DXDraw.DashStop>();
     if (value != null)
     {
       foreach (var item in value)
       {
-        var newItem = DocumentModel.OpenXml.Drawings.DashStopConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.DashStop>(item);
+        var newItem = DMXDraws.DashStopConverter.CreateOpenXmlElement<DXDraw.DashStop>(item);
         if (newItem != null)
           openXmlElement.AddChild(newItem);
       }
     }
   }
   
-  public static DocumentModel.Drawings.CustomDash? CreateModelElement(DocumentFormat.OpenXml.Drawing.CustomDash? openXmlElement)
+  public static DMDraws.CustomDash? CreateModelElement(DXDraw.CustomDash? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.CustomDash();
+      var value = new DMDraws.CustomDash();
       value.DashStops = GetDashStops(openXmlElement);
       return value;
     }
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.CustomDash? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.CustomDash, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDraws.CustomDash? value)
+    where OpenXmlElementType: DXDraw.CustomDash, new()
   {
     if (value != null)
     {

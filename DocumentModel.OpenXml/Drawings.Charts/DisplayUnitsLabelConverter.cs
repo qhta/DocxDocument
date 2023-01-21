@@ -8,22 +8,22 @@ public static class DisplayUnitsLabelConverter
   /// <summary>
   /// Layout.
   /// </summary>
-  private static DocumentModel.Drawings.Charts.Layout? GetLayout(DocumentFormat.OpenXml.Drawing.Charts.DisplayUnitsLabel openXmlElement)
+  private static DMDrawsCharts.Layout? GetLayout(DXDrawCharts.DisplayUnitsLabel openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.Layout>();
+    var itemElement = openXmlElement?.GetFirstChild<DXDrawCharts.Layout>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.Charts.LayoutConverter.CreateModelElement(itemElement);
+      return DMXDrawsCharts.LayoutConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetLayout(DocumentFormat.OpenXml.Drawing.Charts.DisplayUnitsLabel openXmlElement, DocumentModel.Drawings.Charts.Layout? value)
+  private static void SetLayout(DXDrawCharts.DisplayUnitsLabel openXmlElement, DMDrawsCharts.Layout? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.Layout>();
+    var itemElement = openXmlElement.GetFirstChild<DXDrawCharts.Layout>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Drawings.Charts.LayoutConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Charts.Layout>(value);
+      itemElement = DMXDrawsCharts.LayoutConverter.CreateOpenXmlElement<DXDrawCharts.Layout>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
@@ -32,22 +32,22 @@ public static class DisplayUnitsLabelConverter
   /// <summary>
   /// ChartText.
   /// </summary>
-  private static DocumentModel.Drawings.Charts.ChartText? GetChartText(DocumentFormat.OpenXml.Drawing.Charts.DisplayUnitsLabel openXmlElement)
+  private static DMDrawsCharts.ChartText? GetChartText(DXDrawCharts.DisplayUnitsLabel openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.ChartText>();
+    var itemElement = openXmlElement?.GetFirstChild<DXDrawCharts.ChartText>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.Charts.ChartTextConverter.CreateModelElement(itemElement);
+      return DMXDrawsCharts.ChartTextConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetChartText(DocumentFormat.OpenXml.Drawing.Charts.DisplayUnitsLabel openXmlElement, DocumentModel.Drawings.Charts.ChartText? value)
+  private static void SetChartText(DXDrawCharts.DisplayUnitsLabel openXmlElement, DMDrawsCharts.ChartText? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.ChartText>();
+    var itemElement = openXmlElement.GetFirstChild<DXDrawCharts.ChartText>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Drawings.Charts.ChartTextConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Charts.ChartText>(value);
+      itemElement = DMXDrawsCharts.ChartTextConverter.CreateOpenXmlElement<DXDrawCharts.ChartText>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
@@ -56,22 +56,22 @@ public static class DisplayUnitsLabelConverter
   /// <summary>
   /// ChartShapeProperties.
   /// </summary>
-  private static DocumentModel.Drawings.Charts.ChartShapeProperties? GetChartShapeProperties(DocumentFormat.OpenXml.Drawing.Charts.DisplayUnitsLabel openXmlElement)
+  private static DMDrawsCharts.ChartShapeProperties? GetChartShapeProperties(DXDrawCharts.DisplayUnitsLabel openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.ChartShapeProperties>();
+    var itemElement = openXmlElement?.GetFirstChild<DXDrawCharts.ChartShapeProperties>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.Charts.ChartShapePropertiesConverter.CreateModelElement(itemElement);
+      return DMXDrawsCharts.ChartShapePropertiesConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetChartShapeProperties(DocumentFormat.OpenXml.Drawing.Charts.DisplayUnitsLabel openXmlElement, DocumentModel.Drawings.Charts.ChartShapeProperties? value)
+  private static void SetChartShapeProperties(DXDrawCharts.DisplayUnitsLabel openXmlElement, DMDrawsCharts.ChartShapeProperties? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.ChartShapeProperties>();
+    var itemElement = openXmlElement.GetFirstChild<DXDrawCharts.ChartShapeProperties>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Drawings.Charts.ChartShapePropertiesConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Charts.ChartShapeProperties>(value);
+      itemElement = DMXDrawsCharts.ChartShapePropertiesConverter.CreateOpenXmlElement<DXDrawCharts.ChartShapeProperties>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
@@ -80,32 +80,32 @@ public static class DisplayUnitsLabelConverter
   /// <summary>
   /// TextProperties.
   /// </summary>
-  private static DocumentModel.Drawings.Charts.TextProperties? GetTextProperties(DocumentFormat.OpenXml.Drawing.Charts.DisplayUnitsLabel openXmlElement)
+  private static DMDrawsCharts.TextProperties? GetTextProperties(DXDrawCharts.DisplayUnitsLabel openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.TextProperties>();
+    var itemElement = openXmlElement?.GetFirstChild<DXDrawCharts.TextProperties>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.Charts.TextPropertiesConverter.CreateModelElement(itemElement);
+      return DMXDrawsCharts.TextPropertiesConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetTextProperties(DocumentFormat.OpenXml.Drawing.Charts.DisplayUnitsLabel openXmlElement, DocumentModel.Drawings.Charts.TextProperties? value)
+  private static void SetTextProperties(DXDrawCharts.DisplayUnitsLabel openXmlElement, DMDrawsCharts.TextProperties? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.TextProperties>();
+    var itemElement = openXmlElement.GetFirstChild<DXDrawCharts.TextProperties>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Drawings.Charts.TextPropertiesConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Charts.TextProperties>(value);
+      itemElement = DMXDrawsCharts.TextPropertiesConverter.CreateOpenXmlElement<DXDrawCharts.TextProperties>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  public static DocumentModel.Drawings.Charts.DisplayUnitsLabel? CreateModelElement(DocumentFormat.OpenXml.Drawing.Charts.DisplayUnitsLabel? openXmlElement)
+  public static DMDrawsCharts.DisplayUnitsLabel? CreateModelElement(DXDrawCharts.DisplayUnitsLabel? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.Charts.DisplayUnitsLabel();
+      var value = new DMDrawsCharts.DisplayUnitsLabel();
       value.Layout = GetLayout(openXmlElement);
       value.ChartText = GetChartText(openXmlElement);
       value.ChartShapeProperties = GetChartShapeProperties(openXmlElement);
@@ -115,8 +115,8 @@ public static class DisplayUnitsLabelConverter
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.Charts.DisplayUnitsLabel? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.Charts.DisplayUnitsLabel, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDrawsCharts.DisplayUnitsLabel? value)
+    where OpenXmlElementType: DXDrawCharts.DisplayUnitsLabel, new()
   {
     if (value != null)
     {

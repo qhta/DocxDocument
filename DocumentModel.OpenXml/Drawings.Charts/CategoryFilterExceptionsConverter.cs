@@ -5,40 +5,40 @@ namespace DocumentModel.OpenXml.Drawings.Charts;
 /// </summary>
 public static class CategoryFilterExceptionsConverter
 {
-  private static DocumentModel.Drawings.Charts.CategoryFilterException? GetCategoryFilterException(DocumentFormat.OpenXml.Office2013.Drawing.Chart.CategoryFilterExceptions openXmlElement)
+  private static DMDrawsCharts.CategoryFilterException? GetCategoryFilterException(DXO2013DrawChart.CategoryFilterExceptions openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office2013.Drawing.Chart.CategoryFilterException>();
+    var itemElement = openXmlElement?.GetFirstChild<DXO2013DrawChart.CategoryFilterException>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.Charts.CategoryFilterExceptionConverter.CreateModelElement(itemElement);
+      return DMXDrawsCharts.CategoryFilterExceptionConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetCategoryFilterException(DocumentFormat.OpenXml.Office2013.Drawing.Chart.CategoryFilterExceptions openXmlElement, DocumentModel.Drawings.Charts.CategoryFilterException? value)
+  private static void SetCategoryFilterException(DXO2013DrawChart.CategoryFilterExceptions openXmlElement, DMDrawsCharts.CategoryFilterException? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2013.Drawing.Chart.CategoryFilterException>();
+    var itemElement = openXmlElement.GetFirstChild<DXO2013DrawChart.CategoryFilterException>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Drawings.Charts.CategoryFilterExceptionConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2013.Drawing.Chart.CategoryFilterException>(value);
+      itemElement = DMXDrawsCharts.CategoryFilterExceptionConverter.CreateOpenXmlElement<DXO2013DrawChart.CategoryFilterException>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  public static DocumentModel.Drawings.Charts.CategoryFilterExceptions? CreateModelElement(DocumentFormat.OpenXml.Office2013.Drawing.Chart.CategoryFilterExceptions? openXmlElement)
+  public static DMDrawsCharts.CategoryFilterExceptions? CreateModelElement(DXO2013DrawChart.CategoryFilterExceptions? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.Charts.CategoryFilterExceptions();
+      var value = new DMDrawsCharts.CategoryFilterExceptions();
       value.CategoryFilterException = GetCategoryFilterException(openXmlElement);
       return value;
     }
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.Charts.CategoryFilterExceptions? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Office2013.Drawing.Chart.CategoryFilterExceptions, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDrawsCharts.CategoryFilterExceptions? value)
+    where OpenXmlElementType: DXO2013DrawChart.CategoryFilterExceptions, new()
   {
     if (value != null)
     {

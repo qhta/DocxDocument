@@ -8,12 +8,12 @@ public static class GraphicDataConverter
   /// <summary>
   /// Uniform Resource Identifier
   /// </summary>
-  private static String? GetUri(DocumentFormat.OpenXml.Drawing.GraphicData openXmlElement)
+  private static String? GetUri(DXDraw.GraphicData openXmlElement)
   {
     return openXmlElement?.Uri?.Value;
   }
   
-  private static void SetUri(DocumentFormat.OpenXml.Drawing.GraphicData openXmlElement, String? value)
+  private static void SetUri(DXDraw.GraphicData openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.Uri = new StringValue { Value = value };
@@ -21,19 +21,19 @@ public static class GraphicDataConverter
       openXmlElement.Uri = null;
   }
   
-  public static DocumentModel.Drawings.GraphicData? CreateModelElement(DocumentFormat.OpenXml.Drawing.GraphicData? openXmlElement)
+  public static DMDraws.GraphicData? CreateModelElement(DXDraw.GraphicData? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.GraphicData();
+      var value = new DMDraws.GraphicData();
       value.Uri = GetUri(openXmlElement);
       return value;
     }
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.GraphicData? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.GraphicData, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDraws.GraphicData? value)
+    where OpenXmlElementType: DXDraw.GraphicData, new()
   {
     if (value != null)
     {

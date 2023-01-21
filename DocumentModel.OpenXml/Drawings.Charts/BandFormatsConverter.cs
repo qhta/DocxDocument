@@ -5,45 +5,45 @@ namespace DocumentModel.OpenXml.Drawings.Charts;
 /// </summary>
 public static class BandFormatsConverter
 {
-  private static System.Collections.ObjectModel.Collection<DocumentModel.Drawings.Charts.BandFormat> GetItems(DocumentFormat.OpenXml.Drawing.Charts.BandFormats openXmlElement)
+  private static Collection<DMDrawsCharts.BandFormat> GetItems(DXDrawCharts.BandFormats openXmlElement)
   {
-    var collection = new System.Collections.ObjectModel.Collection<DocumentModel.Drawings.Charts.BandFormat>();
-    foreach (var item in openXmlElement.Elements<DocumentFormat.OpenXml.Drawing.Charts.BandFormat>())
+    var collection = new Collection<DMDrawsCharts.BandFormat>();
+    foreach (var item in openXmlElement.Elements<DXDrawCharts.BandFormat>())
     {
-      var newItem = DocumentModel.OpenXml.Drawings.Charts.BandFormatConverter.CreateModelElement(item);
+      var newItem = DMXDrawsCharts.BandFormatConverter.CreateModelElement(item);
       if (newItem != null)
         collection.Add(newItem);
     }
     return collection;
   }
   
-  private static void SetItems(DocumentFormat.OpenXml.Drawing.Charts.BandFormats openXmlElement, System.Collections.ObjectModel.Collection<DocumentModel.Drawings.Charts.BandFormat>? value)
+  private static void SetItems(DXDrawCharts.BandFormats openXmlElement, Collection<DMDrawsCharts.BandFormat>? value)
   {
-    openXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Drawing.Charts.BandFormat>();
+    openXmlElement.RemoveAllChildren<DXDrawCharts.BandFormat>();
     if (value != null)
     {
       foreach (var item in value)
       {
-        var newItem = DocumentModel.OpenXml.Drawings.Charts.BandFormatConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Charts.BandFormat>(item);
+        var newItem = DMXDrawsCharts.BandFormatConverter.CreateOpenXmlElement<DXDrawCharts.BandFormat>(item);
         if (newItem != null)
           openXmlElement.AddChild(newItem);
       }
     }
   }
   
-  public static DocumentModel.Drawings.Charts.BandFormats? CreateModelElement(DocumentFormat.OpenXml.Drawing.Charts.BandFormats? openXmlElement)
+  public static DMDrawsCharts.BandFormats? CreateModelElement(DXDrawCharts.BandFormats? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.Charts.BandFormats();
+      var value = new DMDrawsCharts.BandFormats();
       value.Items = GetItems(openXmlElement);
       return value;
     }
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.Charts.BandFormats? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.Charts.BandFormats, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDrawsCharts.BandFormats? value)
+    where OpenXmlElementType: DXDrawCharts.BandFormats, new()
   {
     if (value != null)
     {

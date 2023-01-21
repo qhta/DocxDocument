@@ -8,23 +8,23 @@ public static class ProtectionConverter
   /// <summary>
   /// Chart Object.
   /// </summary>
-  private static Boolean? GetChartObject(DocumentFormat.OpenXml.Drawing.Charts.Protection openXmlElement)
+  private static Boolean? GetChartObject(DXDrawCharts.Protection openXmlElement)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.ChartObject>();
+    var itemElement = openXmlElement.GetFirstChild<DXDrawCharts.ChartObject>();
     return itemElement != null;
   }
   
-  private static void SetChartObject(DocumentFormat.OpenXml.Drawing.Charts.Protection openXmlElement, Boolean? value)
+  private static void SetChartObject(DXDrawCharts.Protection openXmlElement, Boolean? value)
   {
     if (value == false)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.ChartObject>();
+      var itemElement = openXmlElement.GetFirstChild<DXDrawCharts.ChartObject>();
       if (itemElement != null)
         itemElement.Remove();
     }
     if (value == true)
     {
-      var itemElement = new DocumentFormat.OpenXml.Drawing.Charts.ChartObject();
+      var itemElement = new DXDrawCharts.ChartObject();
       openXmlElement.AddChild(itemElement);
     }
   }
@@ -32,23 +32,23 @@ public static class ProtectionConverter
   /// <summary>
   /// Data Cannot Be Changed.
   /// </summary>
-  private static Boolean? GetData(DocumentFormat.OpenXml.Drawing.Charts.Protection openXmlElement)
+  private static Boolean? GetData(DXDrawCharts.Protection openXmlElement)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.Data>();
+    var itemElement = openXmlElement.GetFirstChild<DXDrawCharts.Data>();
     return itemElement != null;
   }
   
-  private static void SetData(DocumentFormat.OpenXml.Drawing.Charts.Protection openXmlElement, Boolean? value)
+  private static void SetData(DXDrawCharts.Protection openXmlElement, Boolean? value)
   {
     if (value == false)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.Data>();
+      var itemElement = openXmlElement.GetFirstChild<DXDrawCharts.Data>();
       if (itemElement != null)
         itemElement.Remove();
     }
     if (value == true)
     {
-      var itemElement = new DocumentFormat.OpenXml.Drawing.Charts.Data();
+      var itemElement = new DXDrawCharts.Data();
       openXmlElement.AddChild(itemElement);
     }
   }
@@ -56,23 +56,23 @@ public static class ProtectionConverter
   /// <summary>
   /// Formatting.
   /// </summary>
-  private static Boolean? GetFormatting(DocumentFormat.OpenXml.Drawing.Charts.Protection openXmlElement)
+  private static Boolean? GetFormatting(DXDrawCharts.Protection openXmlElement)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.Formatting>();
+    var itemElement = openXmlElement.GetFirstChild<DXDrawCharts.Formatting>();
     return itemElement != null;
   }
   
-  private static void SetFormatting(DocumentFormat.OpenXml.Drawing.Charts.Protection openXmlElement, Boolean? value)
+  private static void SetFormatting(DXDrawCharts.Protection openXmlElement, Boolean? value)
   {
     if (value == false)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.Formatting>();
+      var itemElement = openXmlElement.GetFirstChild<DXDrawCharts.Formatting>();
       if (itemElement != null)
         itemElement.Remove();
     }
     if (value == true)
     {
-      var itemElement = new DocumentFormat.OpenXml.Drawing.Charts.Formatting();
+      var itemElement = new DXDrawCharts.Formatting();
       openXmlElement.AddChild(itemElement);
     }
   }
@@ -80,23 +80,23 @@ public static class ProtectionConverter
   /// <summary>
   /// Selection.
   /// </summary>
-  private static Boolean? GetSelection(DocumentFormat.OpenXml.Drawing.Charts.Protection openXmlElement)
+  private static Boolean? GetSelection(DXDrawCharts.Protection openXmlElement)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.Selection>();
+    var itemElement = openXmlElement.GetFirstChild<DXDrawCharts.Selection>();
     return itemElement != null;
   }
   
-  private static void SetSelection(DocumentFormat.OpenXml.Drawing.Charts.Protection openXmlElement, Boolean? value)
+  private static void SetSelection(DXDrawCharts.Protection openXmlElement, Boolean? value)
   {
     if (value == false)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.Selection>();
+      var itemElement = openXmlElement.GetFirstChild<DXDrawCharts.Selection>();
       if (itemElement != null)
         itemElement.Remove();
     }
     if (value == true)
     {
-      var itemElement = new DocumentFormat.OpenXml.Drawing.Charts.Selection();
+      var itemElement = new DXDrawCharts.Selection();
       openXmlElement.AddChild(itemElement);
     }
   }
@@ -104,32 +104,32 @@ public static class ProtectionConverter
   /// <summary>
   /// User Interface.
   /// </summary>
-  private static Boolean? GetUserInterface(DocumentFormat.OpenXml.Drawing.Charts.Protection openXmlElement)
+  private static Boolean? GetUserInterface(DXDrawCharts.Protection openXmlElement)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.UserInterface>();
+    var itemElement = openXmlElement.GetFirstChild<DXDrawCharts.UserInterface>();
     return itemElement != null;
   }
   
-  private static void SetUserInterface(DocumentFormat.OpenXml.Drawing.Charts.Protection openXmlElement, Boolean? value)
+  private static void SetUserInterface(DXDrawCharts.Protection openXmlElement, Boolean? value)
   {
     if (value == false)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.UserInterface>();
+      var itemElement = openXmlElement.GetFirstChild<DXDrawCharts.UserInterface>();
       if (itemElement != null)
         itemElement.Remove();
     }
     if (value == true)
     {
-      var itemElement = new DocumentFormat.OpenXml.Drawing.Charts.UserInterface();
+      var itemElement = new DXDrawCharts.UserInterface();
       openXmlElement.AddChild(itemElement);
     }
   }
   
-  public static DocumentModel.Drawings.Charts.Protection? CreateModelElement(DocumentFormat.OpenXml.Drawing.Charts.Protection? openXmlElement)
+  public static DMDrawsCharts.Protection? CreateModelElement(DXDrawCharts.Protection? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.Charts.Protection();
+      var value = new DMDrawsCharts.Protection();
       value.ChartObject = GetChartObject(openXmlElement);
       value.Data = GetData(openXmlElement);
       value.Formatting = GetFormatting(openXmlElement);
@@ -140,8 +140,8 @@ public static class ProtectionConverter
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.Charts.Protection? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.Charts.Protection, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDrawsCharts.Protection? value)
+    where OpenXmlElementType: DXDrawCharts.Protection, new()
   {
     if (value != null)
     {

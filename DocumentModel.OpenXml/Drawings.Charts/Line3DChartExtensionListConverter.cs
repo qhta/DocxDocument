@@ -5,45 +5,45 @@ namespace DocumentModel.OpenXml.Drawings.Charts;
 /// </summary>
 public static class Line3DChartExtensionListConverter
 {
-  private static System.Collections.ObjectModel.Collection<DocumentModel.Drawings.Charts.Line3DChartExtension> GetLine3DChartExtensions(DocumentFormat.OpenXml.Drawing.Charts.Line3DChartExtensionList openXmlElement)
+  private static Collection<DMDrawsCharts.Line3DChartExtension> GetLine3DChartExtensions(DXDrawCharts.Line3DChartExtensionList openXmlElement)
   {
-    var collection = new System.Collections.ObjectModel.Collection<DocumentModel.Drawings.Charts.Line3DChartExtension>();
-    foreach (var item in openXmlElement.Elements<DocumentFormat.OpenXml.Drawing.Charts.Line3DChartExtension>())
+    var collection = new Collection<DMDrawsCharts.Line3DChartExtension>();
+    foreach (var item in openXmlElement.Elements<DXDrawCharts.Line3DChartExtension>())
     {
-      var newItem = DocumentModel.OpenXml.Drawings.Charts.Line3DChartExtensionConverter.CreateModelElement(item);
+      var newItem = DMXDrawsCharts.Line3DChartExtensionConverter.CreateModelElement(item);
       if (newItem != null)
         collection.Add(newItem);
     }
     return collection;
   }
   
-  private static void SetLine3DChartExtensions(DocumentFormat.OpenXml.Drawing.Charts.Line3DChartExtensionList openXmlElement, System.Collections.ObjectModel.Collection<DocumentModel.Drawings.Charts.Line3DChartExtension>? value)
+  private static void SetLine3DChartExtensions(DXDrawCharts.Line3DChartExtensionList openXmlElement, Collection<DMDrawsCharts.Line3DChartExtension>? value)
   {
-    openXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Drawing.Charts.Line3DChartExtension>();
+    openXmlElement.RemoveAllChildren<DXDrawCharts.Line3DChartExtension>();
     if (value != null)
     {
       foreach (var item in value)
       {
-        var newItem = DocumentModel.OpenXml.Drawings.Charts.Line3DChartExtensionConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Charts.Line3DChartExtension>(item);
+        var newItem = DMXDrawsCharts.Line3DChartExtensionConverter.CreateOpenXmlElement<DXDrawCharts.Line3DChartExtension>(item);
         if (newItem != null)
           openXmlElement.AddChild(newItem);
       }
     }
   }
   
-  public static DocumentModel.Drawings.Charts.Line3DChartExtensionList? CreateModelElement(DocumentFormat.OpenXml.Drawing.Charts.Line3DChartExtensionList? openXmlElement)
+  public static DMDrawsCharts.Line3DChartExtensionList? CreateModelElement(DXDrawCharts.Line3DChartExtensionList? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.Charts.Line3DChartExtensionList();
+      var value = new DMDrawsCharts.Line3DChartExtensionList();
       value.Line3DChartExtensions = GetLine3DChartExtensions(openXmlElement);
       return value;
     }
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.Charts.Line3DChartExtensionList? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.Charts.Line3DChartExtensionList, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDrawsCharts.Line3DChartExtensionList? value)
+    where OpenXmlElementType: DXDrawCharts.Line3DChartExtensionList, new()
   {
     if (value != null)
     {

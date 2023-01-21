@@ -8,12 +8,12 @@ public static class CheckBoxSymbolTypeConverter
   /// <summary>
   /// font, this property is only available in Office 2010 and later.
   /// </summary>
-  private static String? GetFont(DocumentFormat.OpenXml.Office2010.Word.CheckBoxSymbolType openXmlElement)
+  private static String? GetFont(DXO2010W.CheckBoxSymbolType openXmlElement)
   {
     return openXmlElement?.Font?.Value;
   }
   
-  private static void SetFont(DocumentFormat.OpenXml.Office2010.Word.CheckBoxSymbolType openXmlElement, String? value)
+  private static void SetFont(DXO2010W.CheckBoxSymbolType openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.Font = new StringValue { Value = value };
@@ -24,14 +24,14 @@ public static class CheckBoxSymbolTypeConverter
   /// <summary>
   /// val, this property is only available in Office 2010 and later.
   /// </summary>
-  private static Byte[]? GetVal(DocumentFormat.OpenXml.Office2010.Word.CheckBoxSymbolType openXmlElement)
+  private static Byte[]? GetVal(DXO2010W.CheckBoxSymbolType openXmlElement)
   {
     if (openXmlElement.Val?.Value != null)
       return Convert.FromHexString(openXmlElement.Val.Value);
     return null;
   }
   
-  private static void SetVal(DocumentFormat.OpenXml.Office2010.Word.CheckBoxSymbolType openXmlElement, Byte[]? value)
+  private static void SetVal(DXO2010W.CheckBoxSymbolType openXmlElement, Byte[]? value)
   {
     if (value != null)
       openXmlElement.Val = Convert.ToHexString(value);
@@ -39,11 +39,11 @@ public static class CheckBoxSymbolTypeConverter
       openXmlElement.Val = null;
   }
   
-  public static DocumentModel.Wordprocessing.CheckBoxSymbolType? CreateModelElement(DocumentFormat.OpenXml.Office2010.Word.CheckBoxSymbolType? openXmlElement)
+  public static DMW.CheckBoxSymbolType? CreateModelElement(DXO2010W.CheckBoxSymbolType? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Wordprocessing.CheckBoxSymbolType();
+      var value = new DMW.CheckBoxSymbolType();
       value.Font = GetFont(openXmlElement);
       value.Val = GetVal(openXmlElement);
       return value;
@@ -51,8 +51,8 @@ public static class CheckBoxSymbolTypeConverter
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.CheckBoxSymbolType? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Office2010.Word.CheckBoxSymbolType, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMW.CheckBoxSymbolType? value)
+    where OpenXmlElementType: DXO2010W.CheckBoxSymbolType, new()
   {
     if (value != null)
     {

@@ -8,12 +8,12 @@ public static class ArtisticPlasticWrapConverter
   /// <summary>
   /// trans, this property is only available in Office 2010 and later.
   /// </summary>
-  private static Int32? GetTransparancy(DocumentFormat.OpenXml.Office2010.Drawing.ArtisticPlasticWrap openXmlElement)
+  private static Int32? GetTransparancy(DXO2010Draw.ArtisticPlasticWrap openXmlElement)
   {
     return openXmlElement.Transparancy?.Value;
   }
   
-  private static void SetTransparancy(DocumentFormat.OpenXml.Office2010.Drawing.ArtisticPlasticWrap openXmlElement, Int32? value)
+  private static void SetTransparancy(DXO2010Draw.ArtisticPlasticWrap openXmlElement, Int32? value)
   {
     openXmlElement.Transparancy = value;
   }
@@ -21,21 +21,21 @@ public static class ArtisticPlasticWrapConverter
   /// <summary>
   /// smoothness, this property is only available in Office 2010 and later.
   /// </summary>
-  private static Int32? GetSmoothness(DocumentFormat.OpenXml.Office2010.Drawing.ArtisticPlasticWrap openXmlElement)
+  private static Int32? GetSmoothness(DXO2010Draw.ArtisticPlasticWrap openXmlElement)
   {
     return openXmlElement.Smoothness?.Value;
   }
   
-  private static void SetSmoothness(DocumentFormat.OpenXml.Office2010.Drawing.ArtisticPlasticWrap openXmlElement, Int32? value)
+  private static void SetSmoothness(DXO2010Draw.ArtisticPlasticWrap openXmlElement, Int32? value)
   {
     openXmlElement.Smoothness = value;
   }
   
-  public static DocumentModel.Drawings.ArtisticPlasticWrap? CreateModelElement(DocumentFormat.OpenXml.Office2010.Drawing.ArtisticPlasticWrap? openXmlElement)
+  public static DMDraws.ArtisticPlasticWrap? CreateModelElement(DXO2010Draw.ArtisticPlasticWrap? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.ArtisticPlasticWrap();
+      var value = new DMDraws.ArtisticPlasticWrap();
       value.Transparancy = GetTransparancy(openXmlElement);
       value.Smoothness = GetSmoothness(openXmlElement);
       return value;
@@ -43,8 +43,8 @@ public static class ArtisticPlasticWrapConverter
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.ArtisticPlasticWrap? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Office2010.Drawing.ArtisticPlasticWrap, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDraws.ArtisticPlasticWrap? value)
+    where OpenXmlElementType: DXO2010Draw.ArtisticPlasticWrap, new()
   {
     if (value != null)
     {

@@ -8,38 +8,38 @@ public static class WordCommentsExtensiblePartConverter
   /// <summary>
   /// Gets or sets the root element of this part.
   /// </summary>
-  private static DocumentModel.Wordprocessing.CommentsExtensible? GetCommentsExtensible(DocumentFormat.OpenXml.Packaging.WordCommentsExtensiblePart openXmlElement)
+  private static DMW.CommentsExtensible? GetCommentsExtensible(DXPack.WordCommentsExtensiblePart openXmlElement)
   {
-    if (openXmlElement?.RootElement is DocumentFormat.OpenXml.Office2021.Word.CommentsExt.CommentsExtensible rootElement)
-      return DocumentModel.OpenXml.Wordprocessing.CommentsExtensibleConverter.CreateModelElement(rootElement);
+    if (openXmlElement?.RootElement is DXO2021WComtExt.CommentsExtensible rootElement)
+      return DMXW.CommentsExtensibleConverter.CreateModelElement(rootElement);
     return null;
   }
   
-  private static void SetCommentsExtensible(DocumentFormat.OpenXml.Packaging.WordCommentsExtensiblePart openXmlElement, DocumentModel.Wordprocessing.CommentsExtensible? value)
+  private static void SetCommentsExtensible(DXPack.WordCommentsExtensiblePart openXmlElement, DMW.CommentsExtensible? value)
   {
     if (value != null)
     {
-       var rootElement = DocumentModel.OpenXml.Wordprocessing.CommentsExtensibleConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2021.Word.CommentsExt.CommentsExtensible>(value);
+       var rootElement = DMXW.CommentsExtensibleConverter.CreateOpenXmlElement<DXO2021WComtExt.CommentsExtensible>(value);
        if (rootElement != null)
          openXmlElement.CommentsExtensible = rootElement;
     }
   }
   
-  private static String? GetContentType(DocumentFormat.OpenXml.Packaging.WordCommentsExtensiblePart openXmlElement)
+  private static String? GetContentType(DXPack.WordCommentsExtensiblePart openXmlElement)
   {
     return openXmlElement?.ContentType;
   }
   
-  private static String? GetRelationshipType(DocumentFormat.OpenXml.Packaging.WordCommentsExtensiblePart openXmlElement)
+  private static String? GetRelationshipType(DXPack.WordCommentsExtensiblePart openXmlElement)
   {
     return openXmlElement?.RelationshipType;
   }
   
-  public static DocumentModel.Packaging.WordCommentsExtensiblePart? CreateModelElement(DocumentFormat.OpenXml.Packaging.WordCommentsExtensiblePart? openXmlElement)
+  public static DMPack.WordCommentsExtensiblePart? CreateModelElement(DXPack.WordCommentsExtensiblePart? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Packaging.WordCommentsExtensiblePart();
+      var value = new DMPack.WordCommentsExtensiblePart();
       value.CommentsExtensible = GetCommentsExtensible(openXmlElement);
       value.ContentType = GetContentType(openXmlElement);
       value.RelationshipType = GetRelationshipType(openXmlElement);
@@ -48,8 +48,8 @@ public static class WordCommentsExtensiblePartConverter
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Packaging.WordCommentsExtensiblePart? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Packaging.WordCommentsExtensiblePart, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMPack.WordCommentsExtensiblePart? value)
+    where OpenXmlElementType: DXPack.WordCommentsExtensiblePart, new()
   {
     if (value != null)
     {

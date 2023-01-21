@@ -8,23 +8,23 @@ public static class UnderlineFillConverter
   /// <summary>
   /// NoFill.
   /// </summary>
-  private static Boolean? GetNoFill(DocumentFormat.OpenXml.Drawing.UnderlineFill openXmlElement)
+  private static Boolean? GetNoFill(DXDraw.UnderlineFill openXmlElement)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.NoFill>();
+    var itemElement = openXmlElement.GetFirstChild<DXDraw.NoFill>();
     return itemElement != null;
   }
   
-  private static void SetNoFill(DocumentFormat.OpenXml.Drawing.UnderlineFill openXmlElement, Boolean? value)
+  private static void SetNoFill(DXDraw.UnderlineFill openXmlElement, Boolean? value)
   {
     if (value == false)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.NoFill>();
+      var itemElement = openXmlElement.GetFirstChild<DXDraw.NoFill>();
       if (itemElement != null)
         itemElement.Remove();
     }
     if (value == true)
     {
-      var itemElement = new DocumentFormat.OpenXml.Drawing.NoFill();
+      var itemElement = new DXDraw.NoFill();
       openXmlElement.AddChild(itemElement);
     }
   }
@@ -32,22 +32,22 @@ public static class UnderlineFillConverter
   /// <summary>
   /// SolidFill.
   /// </summary>
-  private static DocumentModel.Drawings.SolidFill? GetSolidFill(DocumentFormat.OpenXml.Drawing.UnderlineFill openXmlElement)
+  private static DMDraws.SolidFill? GetSolidFill(DXDraw.UnderlineFill openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.SolidFill>();
+    var itemElement = openXmlElement?.GetFirstChild<DXDraw.SolidFill>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.SolidFillConverter.CreateModelElement(itemElement);
+      return DMXDraws.SolidFillConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetSolidFill(DocumentFormat.OpenXml.Drawing.UnderlineFill openXmlElement, DocumentModel.Drawings.SolidFill? value)
+  private static void SetSolidFill(DXDraw.UnderlineFill openXmlElement, DMDraws.SolidFill? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.SolidFill>();
+    var itemElement = openXmlElement.GetFirstChild<DXDraw.SolidFill>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Drawings.SolidFillConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.SolidFill>(value);
+      itemElement = DMXDraws.SolidFillConverter.CreateOpenXmlElement<DXDraw.SolidFill>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
@@ -56,22 +56,22 @@ public static class UnderlineFillConverter
   /// <summary>
   /// GradientFill.
   /// </summary>
-  private static DocumentModel.Drawings.GradientFill? GetGradientFill(DocumentFormat.OpenXml.Drawing.UnderlineFill openXmlElement)
+  private static DMDraws.GradientFill? GetGradientFill(DXDraw.UnderlineFill openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.GradientFill>();
+    var itemElement = openXmlElement?.GetFirstChild<DXDraw.GradientFill>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.GradientFillConverter.CreateModelElement(itemElement);
+      return DMXDraws.GradientFillConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetGradientFill(DocumentFormat.OpenXml.Drawing.UnderlineFill openXmlElement, DocumentModel.Drawings.GradientFill? value)
+  private static void SetGradientFill(DXDraw.UnderlineFill openXmlElement, DMDraws.GradientFill? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.GradientFill>();
+    var itemElement = openXmlElement.GetFirstChild<DXDraw.GradientFill>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Drawings.GradientFillConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.GradientFill>(value);
+      itemElement = DMXDraws.GradientFillConverter.CreateOpenXmlElement<DXDraw.GradientFill>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
@@ -80,22 +80,22 @@ public static class UnderlineFillConverter
   /// <summary>
   /// BlipFill.
   /// </summary>
-  private static DocumentModel.Drawings.BlipFill? GetBlipFill(DocumentFormat.OpenXml.Drawing.UnderlineFill openXmlElement)
+  private static DMDraws.BlipFill? GetBlipFill(DXDraw.UnderlineFill openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.BlipFill>();
+    var itemElement = openXmlElement?.GetFirstChild<DXDraw.BlipFill>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.BlipFillConverter.CreateModelElement(itemElement);
+      return DMXDraws.BlipFillConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetBlipFill(DocumentFormat.OpenXml.Drawing.UnderlineFill openXmlElement, DocumentModel.Drawings.BlipFill? value)
+  private static void SetBlipFill(DXDraw.UnderlineFill openXmlElement, DMDraws.BlipFill? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.BlipFill>();
+    var itemElement = openXmlElement.GetFirstChild<DXDraw.BlipFill>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Drawings.BlipFillConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.BlipFill>(value);
+      itemElement = DMXDraws.BlipFillConverter.CreateOpenXmlElement<DXDraw.BlipFill>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
@@ -104,22 +104,22 @@ public static class UnderlineFillConverter
   /// <summary>
   /// Pattern Fill.
   /// </summary>
-  private static DocumentModel.Drawings.PatternFill? GetPatternFill(DocumentFormat.OpenXml.Drawing.UnderlineFill openXmlElement)
+  private static DMDraws.PatternFill? GetPatternFill(DXDraw.UnderlineFill openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.PatternFill>();
+    var itemElement = openXmlElement?.GetFirstChild<DXDraw.PatternFill>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.PatternFillConverter.CreateModelElement(itemElement);
+      return DMXDraws.PatternFillConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetPatternFill(DocumentFormat.OpenXml.Drawing.UnderlineFill openXmlElement, DocumentModel.Drawings.PatternFill? value)
+  private static void SetPatternFill(DXDraw.UnderlineFill openXmlElement, DMDraws.PatternFill? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.PatternFill>();
+    var itemElement = openXmlElement.GetFirstChild<DXDraw.PatternFill>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Drawings.PatternFillConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.PatternFill>(value);
+      itemElement = DMXDraws.PatternFillConverter.CreateOpenXmlElement<DXDraw.PatternFill>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
@@ -128,32 +128,32 @@ public static class UnderlineFillConverter
   /// <summary>
   /// Group Fill.
   /// </summary>
-  private static Boolean? GetGroupFill(DocumentFormat.OpenXml.Drawing.UnderlineFill openXmlElement)
+  private static Boolean? GetGroupFill(DXDraw.UnderlineFill openXmlElement)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.GroupFill>();
+    var itemElement = openXmlElement.GetFirstChild<DXDraw.GroupFill>();
     return itemElement != null;
   }
   
-  private static void SetGroupFill(DocumentFormat.OpenXml.Drawing.UnderlineFill openXmlElement, Boolean? value)
+  private static void SetGroupFill(DXDraw.UnderlineFill openXmlElement, Boolean? value)
   {
     if (value == false)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.GroupFill>();
+      var itemElement = openXmlElement.GetFirstChild<DXDraw.GroupFill>();
       if (itemElement != null)
         itemElement.Remove();
     }
     if (value == true)
     {
-      var itemElement = new DocumentFormat.OpenXml.Drawing.GroupFill();
+      var itemElement = new DXDraw.GroupFill();
       openXmlElement.AddChild(itemElement);
     }
   }
   
-  public static DocumentModel.Drawings.UnderlineFill? CreateModelElement(DocumentFormat.OpenXml.Drawing.UnderlineFill? openXmlElement)
+  public static DMDraws.UnderlineFill? CreateModelElement(DXDraw.UnderlineFill? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.UnderlineFill();
+      var value = new DMDraws.UnderlineFill();
       value.NoFill = GetNoFill(openXmlElement);
       value.SolidFill = GetSolidFill(openXmlElement);
       value.GradientFill = GetGradientFill(openXmlElement);
@@ -165,8 +165,8 @@ public static class UnderlineFillConverter
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.UnderlineFill? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.UnderlineFill, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDraws.UnderlineFill? value)
+    where OpenXmlElementType: DXDraw.UnderlineFill, new()
   {
     if (value != null)
     {

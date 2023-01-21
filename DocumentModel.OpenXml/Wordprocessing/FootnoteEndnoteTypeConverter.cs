@@ -8,34 +8,34 @@ public static class FootnoteEndnoteTypeConverter
   /// <summary>
   /// Footnote/Endnote Type
   /// </summary>
-  private static DocumentModel.Wordprocessing.FootnoteEndnoteKind? GetType(DocumentFormat.OpenXml.Wordprocessing.FootnoteEndnoteType openXmlElement)
+  private static DMW.FootnoteEndnoteKind? GetType(DXW.FootnoteEndnoteType openXmlElement)
   {
-    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Wordprocessing.FootnoteEndnoteValues, DocumentModel.Wordprocessing.FootnoteEndnoteKind>(openXmlElement?.Type?.Value);
+    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Wordprocessing.FootnoteEndnoteValues, DMW.FootnoteEndnoteKind>(openXmlElement?.Type?.Value);
   }
   
-  private static void SetType(DocumentFormat.OpenXml.Wordprocessing.FootnoteEndnoteType openXmlElement, DocumentModel.Wordprocessing.FootnoteEndnoteKind? value)
+  private static void SetType(DXW.FootnoteEndnoteType openXmlElement, DMW.FootnoteEndnoteKind? value)
   {
-    openXmlElement.Type = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Wordprocessing.FootnoteEndnoteValues, DocumentModel.Wordprocessing.FootnoteEndnoteKind>(value);
+    openXmlElement.Type = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Wordprocessing.FootnoteEndnoteValues, DMW.FootnoteEndnoteKind>(value);
   }
   
   /// <summary>
   /// Footnote/Endnote ID
   /// </summary>
-  private static Int64? GetId(DocumentFormat.OpenXml.Wordprocessing.FootnoteEndnoteType openXmlElement)
+  private static Int64? GetId(DXW.FootnoteEndnoteType openXmlElement)
   {
     return openXmlElement.Id?.Value;
   }
   
-  private static void SetId(DocumentFormat.OpenXml.Wordprocessing.FootnoteEndnoteType openXmlElement, Int64? value)
+  private static void SetId(DXW.FootnoteEndnoteType openXmlElement, Int64? value)
   {
     openXmlElement.Id = value;
   }
   
-  public static DocumentModel.Wordprocessing.FootnoteEndnoteType? CreateModelElement(DocumentFormat.OpenXml.Wordprocessing.FootnoteEndnoteType? openXmlElement)
+  public static DMW.FootnoteEndnoteType? CreateModelElement(DXW.FootnoteEndnoteType? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Wordprocessing.FootnoteEndnoteType();
+      var value = new DMW.FootnoteEndnoteType();
       value.Type = GetType(openXmlElement);
       value.Id = GetId(openXmlElement);
       return value;
@@ -43,8 +43,8 @@ public static class FootnoteEndnoteTypeConverter
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.FootnoteEndnoteType? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Wordprocessing.FootnoteEndnoteType, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMW.FootnoteEndnoteType? value)
+    where OpenXmlElementType: DXW.FootnoteEndnoteType, new()
   {
     if (value != null)
     {

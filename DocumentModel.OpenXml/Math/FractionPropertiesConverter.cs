@@ -8,22 +8,22 @@ public static class FractionPropertiesConverter
   /// <summary>
   /// Fraction type.
   /// </summary>
-  private static DocumentModel.Math.FractionKind? GetFractionType(DocumentFormat.OpenXml.Math.FractionProperties openXmlElement)
+  private static DMMath.FractionKind? GetFractionType(DXMath.FractionProperties openXmlElement)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Math.FractionType>();
+    var itemElement = openXmlElement.GetFirstChild<DXMath.FractionType>();
     if (itemElement?.Val?.Value != null)
-      return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Math.FractionTypeValues, DocumentModel.Math.FractionKind>(itemElement.Val.Value);
+      return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Math.FractionTypeValues, DMMath.FractionKind>(itemElement.Val.Value);
     return null;
   }
   
-  private static void SetFractionType(DocumentFormat.OpenXml.Math.FractionProperties openXmlElement, DocumentModel.Math.FractionKind? value)
+  private static void SetFractionType(DXMath.FractionProperties openXmlElement, DMMath.FractionKind? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Math.FractionType>();
+    var itemElement = openXmlElement.GetFirstChild<DXMath.FractionType>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = EnumValueConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Math.FractionType, DocumentFormat.OpenXml.Math.FractionTypeValues, DocumentModel.Math.FractionKind>(value);
+      itemElement = EnumValueConverter.CreateOpenXmlElement<DXMath.FractionType, DocumentFormat.OpenXml.Math.FractionTypeValues, DMMath.FractionKind>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
@@ -32,32 +32,32 @@ public static class FractionPropertiesConverter
   /// <summary>
   /// ControlProperties.
   /// </summary>
-  private static DocumentModel.Math.ControlProperties? GetControlProperties(DocumentFormat.OpenXml.Math.FractionProperties openXmlElement)
+  private static DMMath.ControlProperties? GetControlProperties(DXMath.FractionProperties openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Math.ControlProperties>();
+    var itemElement = openXmlElement?.GetFirstChild<DXMath.ControlProperties>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Math.ControlPropertiesConverter.CreateModelElement(itemElement);
+      return DMXMath.ControlPropertiesConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetControlProperties(DocumentFormat.OpenXml.Math.FractionProperties openXmlElement, DocumentModel.Math.ControlProperties? value)
+  private static void SetControlProperties(DXMath.FractionProperties openXmlElement, DMMath.ControlProperties? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Math.ControlProperties>();
+    var itemElement = openXmlElement.GetFirstChild<DXMath.ControlProperties>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Math.ControlPropertiesConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Math.ControlProperties>(value);
+      itemElement = DMXMath.ControlPropertiesConverter.CreateOpenXmlElement<DXMath.ControlProperties>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  public static DocumentModel.Math.FractionProperties? CreateModelElement(DocumentFormat.OpenXml.Math.FractionProperties? openXmlElement)
+  public static DMMath.FractionProperties? CreateModelElement(DXMath.FractionProperties? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Math.FractionProperties();
+      var value = new DMMath.FractionProperties();
       value.FractionType = GetFractionType(openXmlElement);
       value.ControlProperties = GetControlProperties(openXmlElement);
       return value;
@@ -65,8 +65,8 @@ public static class FractionPropertiesConverter
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Math.FractionProperties? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Math.FractionProperties, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMMath.FractionProperties? value)
+    where OpenXmlElementType: DXMath.FractionProperties, new()
   {
     if (value != null)
     {

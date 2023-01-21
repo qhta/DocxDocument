@@ -8,18 +8,18 @@ public static class MailMergeRecipientDataPartConverter
   /// <summary>
   /// Gets or sets the part's root element when the part's content type is MailMergeRecipientDataPartType.OpenXmlMailMergeRecipientData.
   /// </summary>
-  private static DocumentModel.Wordprocessing.Recipients? GetRecipients(DocumentFormat.OpenXml.Packaging.MailMergeRecipientDataPart openXmlElement)
+  private static DMW.Recipients? GetRecipients(DXPack.MailMergeRecipientDataPart openXmlElement)
   {
-    if (openXmlElement?.RootElement is DocumentFormat.OpenXml.Wordprocessing.Recipients rootElement)
-      return DocumentModel.OpenXml.Wordprocessing.RecipientsConverter.CreateModelElement(rootElement);
+    if (openXmlElement?.RootElement is DXW.Recipients rootElement)
+      return DMXW.RecipientsConverter.CreateModelElement(rootElement);
     return null;
   }
   
-  private static void SetRecipients(DocumentFormat.OpenXml.Packaging.MailMergeRecipientDataPart openXmlElement, DocumentModel.Wordprocessing.Recipients? value)
+  private static void SetRecipients(DXPack.MailMergeRecipientDataPart openXmlElement, DMW.Recipients? value)
   {
     if (value != null)
     {
-       var rootElement = DocumentModel.OpenXml.Wordprocessing.RecipientsConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.Recipients>(value);
+       var rootElement = DMXW.RecipientsConverter.CreateOpenXmlElement<DXW.Recipients>(value);
        if (rootElement != null)
          openXmlElement.Recipients = rootElement;
     }
@@ -28,33 +28,33 @@ public static class MailMergeRecipientDataPartConverter
   /// <summary>
   /// Gets or sets the part's root element when the part's content type is MailMergeRecipientDataPartType.MsWordMailMergeRecipientData.
   /// </summary>
-  private static DocumentModel.Wordprocessing.MailMergeRecipients? GetMailMergeRecipients(DocumentFormat.OpenXml.Packaging.MailMergeRecipientDataPart openXmlElement)
+  private static DMW.MailMergeRecipients? GetMailMergeRecipients(DXPack.MailMergeRecipientDataPart openXmlElement)
   {
-    if (openXmlElement?.RootElement is DocumentFormat.OpenXml.Office.Word.MailMergeRecipients rootElement)
-      return DocumentModel.OpenXml.Wordprocessing.MailMergeRecipientsConverter.CreateModelElement(rootElement);
+    if (openXmlElement?.RootElement is DXOW.MailMergeRecipients rootElement)
+      return DMXW.MailMergeRecipientsConverter.CreateModelElement(rootElement);
     return null;
   }
   
-  private static void SetMailMergeRecipients(DocumentFormat.OpenXml.Packaging.MailMergeRecipientDataPart openXmlElement, DocumentModel.Wordprocessing.MailMergeRecipients? value)
+  private static void SetMailMergeRecipients(DXPack.MailMergeRecipientDataPart openXmlElement, DMW.MailMergeRecipients? value)
   {
     if (value != null)
     {
-       var rootElement = DocumentModel.OpenXml.Wordprocessing.MailMergeRecipientsConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office.Word.MailMergeRecipients>(value);
+       var rootElement = DMXW.MailMergeRecipientsConverter.CreateOpenXmlElement<DXOW.MailMergeRecipients>(value);
        if (rootElement != null)
          openXmlElement.MailMergeRecipients = rootElement;
     }
   }
   
-  private static String? GetRelationshipType(DocumentFormat.OpenXml.Packaging.MailMergeRecipientDataPart openXmlElement)
+  private static String? GetRelationshipType(DXPack.MailMergeRecipientDataPart openXmlElement)
   {
     return openXmlElement?.RelationshipType;
   }
   
-  public static DocumentModel.Packaging.MailMergeRecipientDataPart? CreateModelElement(DocumentFormat.OpenXml.Packaging.MailMergeRecipientDataPart? openXmlElement)
+  public static DMPack.MailMergeRecipientDataPart? CreateModelElement(DXPack.MailMergeRecipientDataPart? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Packaging.MailMergeRecipientDataPart();
+      var value = new DMPack.MailMergeRecipientDataPart();
       value.Recipients = GetRecipients(openXmlElement);
       value.MailMergeRecipients = GetMailMergeRecipients(openXmlElement);
       value.RelationshipType = GetRelationshipType(openXmlElement);
@@ -63,8 +63,8 @@ public static class MailMergeRecipientDataPartConverter
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Packaging.MailMergeRecipientDataPart? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Packaging.MailMergeRecipientDataPart, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMPack.MailMergeRecipientDataPart? value)
+    where OpenXmlElementType: DXPack.MailMergeRecipientDataPart, new()
   {
     if (value != null)
     {

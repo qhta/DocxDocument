@@ -5,7 +5,7 @@ namespace DocumentModel.OpenXml.Packaging;
 /// </summary>
 public static class DiagramPersistLayoutPartConverter
 {
-  private static String? GetContentType(DocumentFormat.OpenXml.Packaging.DiagramPersistLayoutPart openXmlElement)
+  private static String? GetContentType(DXPack.DiagramPersistLayoutPart openXmlElement)
   {
     return openXmlElement?.ContentType;
   }
@@ -13,18 +13,18 @@ public static class DiagramPersistLayoutPartConverter
   /// <summary>
   /// Gets or sets the root element of this part.
   /// </summary>
-  private static DocumentModel.Drawings.Office.Drawing? GetDrawing(DocumentFormat.OpenXml.Packaging.DiagramPersistLayoutPart openXmlElement)
+  private static DMDrawsO.Drawing? GetDrawing(DXPack.DiagramPersistLayoutPart openXmlElement)
   {
-    if (openXmlElement?.RootElement is DocumentFormat.OpenXml.Office.Drawing.Drawing rootElement)
-      return DocumentModel.OpenXml.Drawings.Office.DrawingConverter.CreateModelElement(rootElement);
+    if (openXmlElement?.RootElement is DXODraw.Drawing rootElement)
+      return DMXDrawsO.DrawingConverter.CreateModelElement(rootElement);
     return null;
   }
   
-  private static void SetDrawing(DocumentFormat.OpenXml.Packaging.DiagramPersistLayoutPart openXmlElement, DocumentModel.Drawings.Office.Drawing? value)
+  private static void SetDrawing(DXPack.DiagramPersistLayoutPart openXmlElement, DMDrawsO.Drawing? value)
   {
     if (value != null)
     {
-       var rootElement = DocumentModel.OpenXml.Drawings.Office.DrawingConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office.Drawing.Drawing>(value);
+       var rootElement = DMXDrawsO.DrawingConverter.CreateOpenXmlElement<DXODraw.Drawing>(value);
        if (rootElement != null)
          openXmlElement.Drawing = rootElement;
     }
@@ -33,28 +33,28 @@ public static class DiagramPersistLayoutPartConverter
   /// <summary>
   /// Gets the ImageParts of the DiagramPersistLayoutPart
   /// </summary>
-  private static System.Collections.ObjectModel.Collection<DocumentModel.Packaging.ImagePart> GetImageParts(DocumentFormat.OpenXml.Packaging.DiagramPersistLayoutPart openXmlElement)
+  private static Collection<DMPack.ImagePart> GetImageParts(DXPack.DiagramPersistLayoutPart openXmlElement)
   {
-    var collection = new System.Collections.ObjectModel.Collection<DocumentModel.Packaging.ImagePart>();
-    foreach (var item in openXmlElement.GetPartsOfType<DocumentFormat.OpenXml.Packaging.ImagePart>())
+    var collection = new Collection<DMPack.ImagePart>();
+    foreach (var item in openXmlElement.GetPartsOfType<DXPack.ImagePart>())
     {
-      var newItem = DocumentModel.OpenXml.Packaging.ImagePartConverter.CreateModelElement(item);
+      var newItem = DMXPack.ImagePartConverter.CreateModelElement(item);
       if (newItem != null)
         collection.Add(newItem);
     }
     return collection;
   }
   
-  private static String? GetRelationshipType(DocumentFormat.OpenXml.Packaging.DiagramPersistLayoutPart openXmlElement)
+  private static String? GetRelationshipType(DXPack.DiagramPersistLayoutPart openXmlElement)
   {
     return openXmlElement?.RelationshipType;
   }
   
-  public static DocumentModel.Packaging.DiagramPersistLayoutPart? CreateModelElement(DocumentFormat.OpenXml.Packaging.DiagramPersistLayoutPart? openXmlElement)
+  public static DMPack.DiagramPersistLayoutPart? CreateModelElement(DXPack.DiagramPersistLayoutPart? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Packaging.DiagramPersistLayoutPart();
+      var value = new DMPack.DiagramPersistLayoutPart();
       value.ContentType = GetContentType(openXmlElement);
       value.Drawing = GetDrawing(openXmlElement);
       value.ImageParts = GetImageParts(openXmlElement);
@@ -64,8 +64,8 @@ public static class DiagramPersistLayoutPartConverter
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Packaging.DiagramPersistLayoutPart? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Packaging.DiagramPersistLayoutPart, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMPack.DiagramPersistLayoutPart? value)
+    where OpenXmlElementType: DXPack.DiagramPersistLayoutPart, new()
   {
     if (value != null)
     {

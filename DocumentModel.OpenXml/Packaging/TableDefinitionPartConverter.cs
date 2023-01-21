@@ -5,7 +5,7 @@ namespace DocumentModel.OpenXml.Packaging;
 /// </summary>
 public static class TableDefinitionPartConverter
 {
-  private static String? GetContentType(DocumentFormat.OpenXml.Packaging.TableDefinitionPart openXmlElement)
+  private static String? GetContentType(DXPack.TableDefinitionPart openXmlElement)
   {
     return openXmlElement?.ContentType;
   }
@@ -13,28 +13,28 @@ public static class TableDefinitionPartConverter
   /// <summary>
   /// Gets the QueryTableParts of the TableDefinitionPart
   /// </summary>
-  private static System.Collections.ObjectModel.Collection<DocumentModel.Packaging.QueryTablePart> GetQueryTableParts(DocumentFormat.OpenXml.Packaging.TableDefinitionPart openXmlElement)
+  private static Collection<DMPack.QueryTablePart> GetQueryTableParts(DXPack.TableDefinitionPart openXmlElement)
   {
-    var collection = new System.Collections.ObjectModel.Collection<DocumentModel.Packaging.QueryTablePart>();
-    foreach (var item in openXmlElement.GetPartsOfType<DocumentFormat.OpenXml.Packaging.QueryTablePart>())
+    var collection = new Collection<DMPack.QueryTablePart>();
+    foreach (var item in openXmlElement.GetPartsOfType<DXPack.QueryTablePart>())
     {
-      var newItem = DocumentModel.OpenXml.Packaging.QueryTablePartConverter.CreateModelElement(item);
+      var newItem = DMXPack.QueryTablePartConverter.CreateModelElement(item);
       if (newItem != null)
         collection.Add(newItem);
     }
     return collection;
   }
   
-  private static String? GetRelationshipType(DocumentFormat.OpenXml.Packaging.TableDefinitionPart openXmlElement)
+  private static String? GetRelationshipType(DXPack.TableDefinitionPart openXmlElement)
   {
     return openXmlElement?.RelationshipType;
   }
   
-  public static DocumentModel.Packaging.TableDefinitionPart? CreateModelElement(DocumentFormat.OpenXml.Packaging.TableDefinitionPart? openXmlElement)
+  public static DMPack.TableDefinitionPart? CreateModelElement(DXPack.TableDefinitionPart? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Packaging.TableDefinitionPart();
+      var value = new DMPack.TableDefinitionPart();
       value.ContentType = GetContentType(openXmlElement);
       value.QueryTableParts = GetQueryTableParts(openXmlElement);
       value.RelationshipType = GetRelationshipType(openXmlElement);
@@ -43,8 +43,8 @@ public static class TableDefinitionPartConverter
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Packaging.TableDefinitionPart? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Packaging.TableDefinitionPart, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMPack.TableDefinitionPart? value)
+    where OpenXmlElementType: DXPack.TableDefinitionPart, new()
   {
     if (value != null)
     {

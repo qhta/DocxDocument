@@ -8,25 +8,25 @@ public static class ButtonConverter
   /// <summary>
   /// size, this property is only available in Office 2010 and later.
   /// </summary>
-  private static DocumentModel.SizeKind? GetSize(DocumentFormat.OpenXml.Office2010.CustomUI.Button openXmlElement)
+  private static DM.SizeKind? GetSize(DXO2010CustUI.Button openXmlElement)
   {
-    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Office2010.CustomUI.SizeValues, DocumentModel.SizeKind>(openXmlElement?.Size?.Value);
+    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Office2010.CustomUI.SizeValues, DM.SizeKind>(openXmlElement?.Size?.Value);
   }
   
-  private static void SetSize(DocumentFormat.OpenXml.Office2010.CustomUI.Button openXmlElement, DocumentModel.SizeKind? value)
+  private static void SetSize(DXO2010CustUI.Button openXmlElement, DM.SizeKind? value)
   {
-    openXmlElement.Size = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Office2010.CustomUI.SizeValues, DocumentModel.SizeKind>(value);
+    openXmlElement.Size = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Office2010.CustomUI.SizeValues, DM.SizeKind>(value);
   }
   
   /// <summary>
   /// getSize, this property is only available in Office 2010 and later.
   /// </summary>
-  private static String? GetGetSize(DocumentFormat.OpenXml.Office2010.CustomUI.Button openXmlElement)
+  private static String? GetGetSize(DXO2010CustUI.Button openXmlElement)
   {
     return openXmlElement?.GetSize?.Value;
   }
   
-  private static void SetGetSize(DocumentFormat.OpenXml.Office2010.CustomUI.Button openXmlElement, String? value)
+  private static void SetGetSize(DXO2010CustUI.Button openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.GetSize = new StringValue { Value = value };
@@ -37,12 +37,12 @@ public static class ButtonConverter
   /// <summary>
   /// onAction, this property is only available in Office 2010 and later.
   /// </summary>
-  private static String? GetOnAction(DocumentFormat.OpenXml.Office2010.CustomUI.Button openXmlElement)
+  private static String? GetOnAction(DXO2010CustUI.Button openXmlElement)
   {
     return openXmlElement?.OnAction?.Value;
   }
   
-  private static void SetOnAction(DocumentFormat.OpenXml.Office2010.CustomUI.Button openXmlElement, String? value)
+  private static void SetOnAction(DXO2010CustUI.Button openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.OnAction = new StringValue { Value = value };
@@ -53,12 +53,12 @@ public static class ButtonConverter
   /// <summary>
   /// enabled, this property is only available in Office 2010 and later.
   /// </summary>
-  private static Boolean? GetEnabled(DocumentFormat.OpenXml.Office2010.CustomUI.Button openXmlElement)
+  private static Boolean? GetEnabled(DXO2010CustUI.Button openXmlElement)
   {
     return openXmlElement?.Enabled?.Value;
   }
   
-  private static void SetEnabled(DocumentFormat.OpenXml.Office2010.CustomUI.Button openXmlElement, Boolean? value)
+  private static void SetEnabled(DXO2010CustUI.Button openXmlElement, Boolean? value)
   {
     if (value != null)
       openXmlElement.Enabled = new BooleanValue { Value = (Boolean)value };
@@ -69,12 +69,12 @@ public static class ButtonConverter
   /// <summary>
   /// getEnabled, this property is only available in Office 2010 and later.
   /// </summary>
-  private static String? GetGetEnabled(DocumentFormat.OpenXml.Office2010.CustomUI.Button openXmlElement)
+  private static String? GetGetEnabled(DXO2010CustUI.Button openXmlElement)
   {
     return openXmlElement?.GetEnabled?.Value;
   }
   
-  private static void SetGetEnabled(DocumentFormat.OpenXml.Office2010.CustomUI.Button openXmlElement, String? value)
+  private static void SetGetEnabled(DXO2010CustUI.Button openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.GetEnabled = new StringValue { Value = value };
@@ -85,12 +85,12 @@ public static class ButtonConverter
   /// <summary>
   /// description, this property is only available in Office 2010 and later.
   /// </summary>
-  private static String? GetDescription(DocumentFormat.OpenXml.Office2010.CustomUI.Button openXmlElement)
+  private static String? GetDescription(DXO2010CustUI.Button openXmlElement)
   {
     return openXmlElement?.Description?.Value;
   }
   
-  private static void SetDescription(DocumentFormat.OpenXml.Office2010.CustomUI.Button openXmlElement, String? value)
+  private static void SetDescription(DXO2010CustUI.Button openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.Description = new StringValue { Value = value };
@@ -101,12 +101,12 @@ public static class ButtonConverter
   /// <summary>
   /// getDescription, this property is only available in Office 2010 and later.
   /// </summary>
-  private static String? GetGetDescription(DocumentFormat.OpenXml.Office2010.CustomUI.Button openXmlElement)
+  private static String? GetGetDescription(DXO2010CustUI.Button openXmlElement)
   {
     return openXmlElement?.GetDescription?.Value;
   }
   
-  private static void SetGetDescription(DocumentFormat.OpenXml.Office2010.CustomUI.Button openXmlElement, String? value)
+  private static void SetGetDescription(DXO2010CustUI.Button openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.GetDescription = new StringValue { Value = value };
@@ -117,12 +117,12 @@ public static class ButtonConverter
   /// <summary>
   /// image, this property is only available in Office 2010 and later.
   /// </summary>
-  private static String? GetImage(DocumentFormat.OpenXml.Office2010.CustomUI.Button openXmlElement)
+  private static String? GetImage(DXO2010CustUI.Button openXmlElement)
   {
     return openXmlElement?.Image?.Value;
   }
   
-  private static void SetImage(DocumentFormat.OpenXml.Office2010.CustomUI.Button openXmlElement, String? value)
+  private static void SetImage(DXO2010CustUI.Button openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.Image = new StringValue { Value = value };
@@ -133,12 +133,12 @@ public static class ButtonConverter
   /// <summary>
   /// imageMso, this property is only available in Office 2010 and later.
   /// </summary>
-  private static String? GetImageMso(DocumentFormat.OpenXml.Office2010.CustomUI.Button openXmlElement)
+  private static String? GetImageMso(DXO2010CustUI.Button openXmlElement)
   {
     return openXmlElement?.ImageMso?.Value;
   }
   
-  private static void SetImageMso(DocumentFormat.OpenXml.Office2010.CustomUI.Button openXmlElement, String? value)
+  private static void SetImageMso(DXO2010CustUI.Button openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.ImageMso = new StringValue { Value = value };
@@ -149,12 +149,12 @@ public static class ButtonConverter
   /// <summary>
   /// getImage, this property is only available in Office 2010 and later.
   /// </summary>
-  private static String? GetGetImage(DocumentFormat.OpenXml.Office2010.CustomUI.Button openXmlElement)
+  private static String? GetGetImage(DXO2010CustUI.Button openXmlElement)
   {
     return openXmlElement?.GetImage?.Value;
   }
   
-  private static void SetGetImage(DocumentFormat.OpenXml.Office2010.CustomUI.Button openXmlElement, String? value)
+  private static void SetGetImage(DXO2010CustUI.Button openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.GetImage = new StringValue { Value = value };
@@ -165,12 +165,12 @@ public static class ButtonConverter
   /// <summary>
   /// id, this property is only available in Office 2010 and later.
   /// </summary>
-  private static String? GetId(DocumentFormat.OpenXml.Office2010.CustomUI.Button openXmlElement)
+  private static String? GetId(DXO2010CustUI.Button openXmlElement)
   {
     return openXmlElement?.Id?.Value;
   }
   
-  private static void SetId(DocumentFormat.OpenXml.Office2010.CustomUI.Button openXmlElement, String? value)
+  private static void SetId(DXO2010CustUI.Button openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.Id = new StringValue { Value = value };
@@ -181,12 +181,12 @@ public static class ButtonConverter
   /// <summary>
   /// idQ, this property is only available in Office 2010 and later.
   /// </summary>
-  private static String? GetQualifiedId(DocumentFormat.OpenXml.Office2010.CustomUI.Button openXmlElement)
+  private static String? GetQualifiedId(DXO2010CustUI.Button openXmlElement)
   {
     return openXmlElement?.QualifiedId?.Value;
   }
   
-  private static void SetQualifiedId(DocumentFormat.OpenXml.Office2010.CustomUI.Button openXmlElement, String? value)
+  private static void SetQualifiedId(DXO2010CustUI.Button openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.QualifiedId = new StringValue { Value = value };
@@ -197,12 +197,12 @@ public static class ButtonConverter
   /// <summary>
   /// tag, this property is only available in Office 2010 and later.
   /// </summary>
-  private static String? GetTag(DocumentFormat.OpenXml.Office2010.CustomUI.Button openXmlElement)
+  private static String? GetTag(DXO2010CustUI.Button openXmlElement)
   {
     return openXmlElement?.Tag?.Value;
   }
   
-  private static void SetTag(DocumentFormat.OpenXml.Office2010.CustomUI.Button openXmlElement, String? value)
+  private static void SetTag(DXO2010CustUI.Button openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.Tag = new StringValue { Value = value };
@@ -213,12 +213,12 @@ public static class ButtonConverter
   /// <summary>
   /// idMso, this property is only available in Office 2010 and later.
   /// </summary>
-  private static String? GetIdMso(DocumentFormat.OpenXml.Office2010.CustomUI.Button openXmlElement)
+  private static String? GetIdMso(DXO2010CustUI.Button openXmlElement)
   {
     return openXmlElement?.IdMso?.Value;
   }
   
-  private static void SetIdMso(DocumentFormat.OpenXml.Office2010.CustomUI.Button openXmlElement, String? value)
+  private static void SetIdMso(DXO2010CustUI.Button openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.IdMso = new StringValue { Value = value };
@@ -229,12 +229,12 @@ public static class ButtonConverter
   /// <summary>
   /// screentip, this property is only available in Office 2010 and later.
   /// </summary>
-  private static String? GetScreentip(DocumentFormat.OpenXml.Office2010.CustomUI.Button openXmlElement)
+  private static String? GetScreentip(DXO2010CustUI.Button openXmlElement)
   {
     return openXmlElement?.Screentip?.Value;
   }
   
-  private static void SetScreentip(DocumentFormat.OpenXml.Office2010.CustomUI.Button openXmlElement, String? value)
+  private static void SetScreentip(DXO2010CustUI.Button openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.Screentip = new StringValue { Value = value };
@@ -245,12 +245,12 @@ public static class ButtonConverter
   /// <summary>
   /// getScreentip, this property is only available in Office 2010 and later.
   /// </summary>
-  private static String? GetGetScreentip(DocumentFormat.OpenXml.Office2010.CustomUI.Button openXmlElement)
+  private static String? GetGetScreentip(DXO2010CustUI.Button openXmlElement)
   {
     return openXmlElement?.GetScreentip?.Value;
   }
   
-  private static void SetGetScreentip(DocumentFormat.OpenXml.Office2010.CustomUI.Button openXmlElement, String? value)
+  private static void SetGetScreentip(DXO2010CustUI.Button openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.GetScreentip = new StringValue { Value = value };
@@ -261,12 +261,12 @@ public static class ButtonConverter
   /// <summary>
   /// supertip, this property is only available in Office 2010 and later.
   /// </summary>
-  private static String? GetSupertip(DocumentFormat.OpenXml.Office2010.CustomUI.Button openXmlElement)
+  private static String? GetSupertip(DXO2010CustUI.Button openXmlElement)
   {
     return openXmlElement?.Supertip?.Value;
   }
   
-  private static void SetSupertip(DocumentFormat.OpenXml.Office2010.CustomUI.Button openXmlElement, String? value)
+  private static void SetSupertip(DXO2010CustUI.Button openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.Supertip = new StringValue { Value = value };
@@ -277,12 +277,12 @@ public static class ButtonConverter
   /// <summary>
   /// getSupertip, this property is only available in Office 2010 and later.
   /// </summary>
-  private static String? GetGetSupertip(DocumentFormat.OpenXml.Office2010.CustomUI.Button openXmlElement)
+  private static String? GetGetSupertip(DXO2010CustUI.Button openXmlElement)
   {
     return openXmlElement?.GetSupertip?.Value;
   }
   
-  private static void SetGetSupertip(DocumentFormat.OpenXml.Office2010.CustomUI.Button openXmlElement, String? value)
+  private static void SetGetSupertip(DXO2010CustUI.Button openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.GetSupertip = new StringValue { Value = value };
@@ -293,12 +293,12 @@ public static class ButtonConverter
   /// <summary>
   /// label, this property is only available in Office 2010 and later.
   /// </summary>
-  private static String? GetLabel(DocumentFormat.OpenXml.Office2010.CustomUI.Button openXmlElement)
+  private static String? GetLabel(DXO2010CustUI.Button openXmlElement)
   {
     return openXmlElement?.Label?.Value;
   }
   
-  private static void SetLabel(DocumentFormat.OpenXml.Office2010.CustomUI.Button openXmlElement, String? value)
+  private static void SetLabel(DXO2010CustUI.Button openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.Label = new StringValue { Value = value };
@@ -309,12 +309,12 @@ public static class ButtonConverter
   /// <summary>
   /// getLabel, this property is only available in Office 2010 and later.
   /// </summary>
-  private static String? GetGetLabel(DocumentFormat.OpenXml.Office2010.CustomUI.Button openXmlElement)
+  private static String? GetGetLabel(DXO2010CustUI.Button openXmlElement)
   {
     return openXmlElement?.GetLabel?.Value;
   }
   
-  private static void SetGetLabel(DocumentFormat.OpenXml.Office2010.CustomUI.Button openXmlElement, String? value)
+  private static void SetGetLabel(DXO2010CustUI.Button openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.GetLabel = new StringValue { Value = value };
@@ -325,12 +325,12 @@ public static class ButtonConverter
   /// <summary>
   /// insertAfterMso, this property is only available in Office 2010 and later.
   /// </summary>
-  private static String? GetInsertAfterMso(DocumentFormat.OpenXml.Office2010.CustomUI.Button openXmlElement)
+  private static String? GetInsertAfterMso(DXO2010CustUI.Button openXmlElement)
   {
     return openXmlElement?.InsertAfterMso?.Value;
   }
   
-  private static void SetInsertAfterMso(DocumentFormat.OpenXml.Office2010.CustomUI.Button openXmlElement, String? value)
+  private static void SetInsertAfterMso(DXO2010CustUI.Button openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.InsertAfterMso = new StringValue { Value = value };
@@ -341,12 +341,12 @@ public static class ButtonConverter
   /// <summary>
   /// insertBeforeMso, this property is only available in Office 2010 and later.
   /// </summary>
-  private static String? GetInsertBeforeMso(DocumentFormat.OpenXml.Office2010.CustomUI.Button openXmlElement)
+  private static String? GetInsertBeforeMso(DXO2010CustUI.Button openXmlElement)
   {
     return openXmlElement?.InsertBeforeMso?.Value;
   }
   
-  private static void SetInsertBeforeMso(DocumentFormat.OpenXml.Office2010.CustomUI.Button openXmlElement, String? value)
+  private static void SetInsertBeforeMso(DXO2010CustUI.Button openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.InsertBeforeMso = new StringValue { Value = value };
@@ -357,12 +357,12 @@ public static class ButtonConverter
   /// <summary>
   /// insertAfterQ, this property is only available in Office 2010 and later.
   /// </summary>
-  private static String? GetInsertAfterQulifiedId(DocumentFormat.OpenXml.Office2010.CustomUI.Button openXmlElement)
+  private static String? GetInsertAfterQulifiedId(DXO2010CustUI.Button openXmlElement)
   {
     return openXmlElement?.InsertAfterQulifiedId?.Value;
   }
   
-  private static void SetInsertAfterQulifiedId(DocumentFormat.OpenXml.Office2010.CustomUI.Button openXmlElement, String? value)
+  private static void SetInsertAfterQulifiedId(DXO2010CustUI.Button openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.InsertAfterQulifiedId = new StringValue { Value = value };
@@ -373,12 +373,12 @@ public static class ButtonConverter
   /// <summary>
   /// insertBeforeQ, this property is only available in Office 2010 and later.
   /// </summary>
-  private static String? GetInsertBeforeQulifiedId(DocumentFormat.OpenXml.Office2010.CustomUI.Button openXmlElement)
+  private static String? GetInsertBeforeQulifiedId(DXO2010CustUI.Button openXmlElement)
   {
     return openXmlElement?.InsertBeforeQulifiedId?.Value;
   }
   
-  private static void SetInsertBeforeQulifiedId(DocumentFormat.OpenXml.Office2010.CustomUI.Button openXmlElement, String? value)
+  private static void SetInsertBeforeQulifiedId(DXO2010CustUI.Button openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.InsertBeforeQulifiedId = new StringValue { Value = value };
@@ -389,12 +389,12 @@ public static class ButtonConverter
   /// <summary>
   /// visible, this property is only available in Office 2010 and later.
   /// </summary>
-  private static Boolean? GetVisible(DocumentFormat.OpenXml.Office2010.CustomUI.Button openXmlElement)
+  private static Boolean? GetVisible(DXO2010CustUI.Button openXmlElement)
   {
     return openXmlElement?.Visible?.Value;
   }
   
-  private static void SetVisible(DocumentFormat.OpenXml.Office2010.CustomUI.Button openXmlElement, Boolean? value)
+  private static void SetVisible(DXO2010CustUI.Button openXmlElement, Boolean? value)
   {
     if (value != null)
       openXmlElement.Visible = new BooleanValue { Value = (Boolean)value };
@@ -405,12 +405,12 @@ public static class ButtonConverter
   /// <summary>
   /// getVisible, this property is only available in Office 2010 and later.
   /// </summary>
-  private static String? GetGetVisible(DocumentFormat.OpenXml.Office2010.CustomUI.Button openXmlElement)
+  private static String? GetGetVisible(DXO2010CustUI.Button openXmlElement)
   {
     return openXmlElement?.GetVisible?.Value;
   }
   
-  private static void SetGetVisible(DocumentFormat.OpenXml.Office2010.CustomUI.Button openXmlElement, String? value)
+  private static void SetGetVisible(DXO2010CustUI.Button openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.GetVisible = new StringValue { Value = value };
@@ -421,12 +421,12 @@ public static class ButtonConverter
   /// <summary>
   /// keytip, this property is only available in Office 2010 and later.
   /// </summary>
-  private static String? GetKeytip(DocumentFormat.OpenXml.Office2010.CustomUI.Button openXmlElement)
+  private static String? GetKeytip(DXO2010CustUI.Button openXmlElement)
   {
     return openXmlElement?.Keytip?.Value;
   }
   
-  private static void SetKeytip(DocumentFormat.OpenXml.Office2010.CustomUI.Button openXmlElement, String? value)
+  private static void SetKeytip(DXO2010CustUI.Button openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.Keytip = new StringValue { Value = value };
@@ -437,12 +437,12 @@ public static class ButtonConverter
   /// <summary>
   /// getKeytip, this property is only available in Office 2010 and later.
   /// </summary>
-  private static String? GetGetKeytip(DocumentFormat.OpenXml.Office2010.CustomUI.Button openXmlElement)
+  private static String? GetGetKeytip(DXO2010CustUI.Button openXmlElement)
   {
     return openXmlElement?.GetKeytip?.Value;
   }
   
-  private static void SetGetKeytip(DocumentFormat.OpenXml.Office2010.CustomUI.Button openXmlElement, String? value)
+  private static void SetGetKeytip(DXO2010CustUI.Button openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.GetKeytip = new StringValue { Value = value };
@@ -453,12 +453,12 @@ public static class ButtonConverter
   /// <summary>
   /// showLabel, this property is only available in Office 2010 and later.
   /// </summary>
-  private static Boolean? GetShowLabel(DocumentFormat.OpenXml.Office2010.CustomUI.Button openXmlElement)
+  private static Boolean? GetShowLabel(DXO2010CustUI.Button openXmlElement)
   {
     return openXmlElement?.ShowLabel?.Value;
   }
   
-  private static void SetShowLabel(DocumentFormat.OpenXml.Office2010.CustomUI.Button openXmlElement, Boolean? value)
+  private static void SetShowLabel(DXO2010CustUI.Button openXmlElement, Boolean? value)
   {
     if (value != null)
       openXmlElement.ShowLabel = new BooleanValue { Value = (Boolean)value };
@@ -469,12 +469,12 @@ public static class ButtonConverter
   /// <summary>
   /// getShowLabel, this property is only available in Office 2010 and later.
   /// </summary>
-  private static String? GetGetShowLabel(DocumentFormat.OpenXml.Office2010.CustomUI.Button openXmlElement)
+  private static String? GetGetShowLabel(DXO2010CustUI.Button openXmlElement)
   {
     return openXmlElement?.GetShowLabel?.Value;
   }
   
-  private static void SetGetShowLabel(DocumentFormat.OpenXml.Office2010.CustomUI.Button openXmlElement, String? value)
+  private static void SetGetShowLabel(DXO2010CustUI.Button openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.GetShowLabel = new StringValue { Value = value };
@@ -485,12 +485,12 @@ public static class ButtonConverter
   /// <summary>
   /// showImage, this property is only available in Office 2010 and later.
   /// </summary>
-  private static Boolean? GetShowImage(DocumentFormat.OpenXml.Office2010.CustomUI.Button openXmlElement)
+  private static Boolean? GetShowImage(DXO2010CustUI.Button openXmlElement)
   {
     return openXmlElement?.ShowImage?.Value;
   }
   
-  private static void SetShowImage(DocumentFormat.OpenXml.Office2010.CustomUI.Button openXmlElement, Boolean? value)
+  private static void SetShowImage(DXO2010CustUI.Button openXmlElement, Boolean? value)
   {
     if (value != null)
       openXmlElement.ShowImage = new BooleanValue { Value = (Boolean)value };
@@ -501,12 +501,12 @@ public static class ButtonConverter
   /// <summary>
   /// getShowImage, this property is only available in Office 2010 and later.
   /// </summary>
-  private static String? GetGetShowImage(DocumentFormat.OpenXml.Office2010.CustomUI.Button openXmlElement)
+  private static String? GetGetShowImage(DXO2010CustUI.Button openXmlElement)
   {
     return openXmlElement?.GetShowImage?.Value;
   }
   
-  private static void SetGetShowImage(DocumentFormat.OpenXml.Office2010.CustomUI.Button openXmlElement, String? value)
+  private static void SetGetShowImage(DXO2010CustUI.Button openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.GetShowImage = new StringValue { Value = value };
@@ -514,11 +514,11 @@ public static class ButtonConverter
       openXmlElement.GetShowImage = null;
   }
   
-  public static DocumentModel.Button? CreateModelElement(DocumentFormat.OpenXml.Office2010.CustomUI.Button? openXmlElement)
+  public static DM.Button? CreateModelElement(DXO2010CustUI.Button? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Button();
+      var value = new DM.Button();
       value.Size = GetSize(openXmlElement);
       value.GetSize = GetGetSize(openXmlElement);
       value.OnAction = GetOnAction(openXmlElement);
@@ -556,8 +556,8 @@ public static class ButtonConverter
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Button? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Office2010.CustomUI.Button, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DM.Button? value)
+    where OpenXmlElementType: DXO2010CustUI.Button, new()
   {
     if (value != null)
     {

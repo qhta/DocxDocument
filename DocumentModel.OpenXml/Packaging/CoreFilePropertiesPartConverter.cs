@@ -5,21 +5,21 @@ namespace DocumentModel.OpenXml.Packaging;
 /// </summary>
 public static class CoreFilePropertiesPartConverter
 {
-  private static String? GetContentType(DocumentFormat.OpenXml.Packaging.CoreFilePropertiesPart openXmlElement)
+  private static String? GetContentType(DXPack.CoreFilePropertiesPart openXmlElement)
   {
     return openXmlElement?.ContentType;
   }
   
-  private static String? GetRelationshipType(DocumentFormat.OpenXml.Packaging.CoreFilePropertiesPart openXmlElement)
+  private static String? GetRelationshipType(DXPack.CoreFilePropertiesPart openXmlElement)
   {
     return openXmlElement?.RelationshipType;
   }
   
-  public static DocumentModel.Packaging.CoreFilePropertiesPart? CreateModelElement(DocumentFormat.OpenXml.Packaging.CoreFilePropertiesPart? openXmlElement)
+  public static DMPack.CoreFilePropertiesPart? CreateModelElement(DXPack.CoreFilePropertiesPart? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Packaging.CoreFilePropertiesPart();
+      var value = new DMPack.CoreFilePropertiesPart();
       value.ContentType = GetContentType(openXmlElement);
       value.RelationshipType = GetRelationshipType(openXmlElement);
       return value;
@@ -27,8 +27,8 @@ public static class CoreFilePropertiesPartConverter
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Packaging.CoreFilePropertiesPart? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Packaging.CoreFilePropertiesPart, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMPack.CoreFilePropertiesPart? value)
+    where OpenXmlElementType: DXPack.CoreFilePropertiesPart, new()
   {
     if (value != null)
     {

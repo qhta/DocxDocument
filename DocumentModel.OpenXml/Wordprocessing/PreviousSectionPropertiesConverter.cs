@@ -8,14 +8,14 @@ public static class PreviousSectionPropertiesConverter
   /// <summary>
   /// Physical Section Mark Character Revision ID
   /// </summary>
-  private static UInt32? GetRsidRPr(DocumentFormat.OpenXml.Wordprocessing.PreviousSectionProperties openXmlElement)
+  private static UInt32? GetRsidRPr(DXW.PreviousSectionProperties openXmlElement)
   {
     if (openXmlElement.RsidRPr?.Value != null)
       return UInt32.Parse(openXmlElement.RsidRPr.Value, NumberStyles.HexNumber);
     return null;
   }
   
-  private static void SetRsidRPr(DocumentFormat.OpenXml.Wordprocessing.PreviousSectionProperties openXmlElement, UInt32? value)
+  private static void SetRsidRPr(DXW.PreviousSectionProperties openXmlElement, UInt32? value)
   {
       if (value != null)
         openXmlElement.RsidRPr = ((UInt32)value).ToString("X8");
@@ -26,14 +26,14 @@ public static class PreviousSectionPropertiesConverter
   /// <summary>
   /// Section Deletion Revision ID
   /// </summary>
-  private static UInt32? GetRsidDel(DocumentFormat.OpenXml.Wordprocessing.PreviousSectionProperties openXmlElement)
+  private static UInt32? GetRsidDel(DXW.PreviousSectionProperties openXmlElement)
   {
     if (openXmlElement.RsidDel?.Value != null)
       return UInt32.Parse(openXmlElement.RsidDel.Value, NumberStyles.HexNumber);
     return null;
   }
   
-  private static void SetRsidDel(DocumentFormat.OpenXml.Wordprocessing.PreviousSectionProperties openXmlElement, UInt32? value)
+  private static void SetRsidDel(DXW.PreviousSectionProperties openXmlElement, UInt32? value)
   {
       if (value != null)
         openXmlElement.RsidDel = ((UInt32)value).ToString("X8");
@@ -44,14 +44,14 @@ public static class PreviousSectionPropertiesConverter
   /// <summary>
   /// Section Addition Revision ID
   /// </summary>
-  private static UInt32? GetRsidR(DocumentFormat.OpenXml.Wordprocessing.PreviousSectionProperties openXmlElement)
+  private static UInt32? GetRsidR(DXW.PreviousSectionProperties openXmlElement)
   {
     if (openXmlElement.RsidR?.Value != null)
       return UInt32.Parse(openXmlElement.RsidR.Value, NumberStyles.HexNumber);
     return null;
   }
   
-  private static void SetRsidR(DocumentFormat.OpenXml.Wordprocessing.PreviousSectionProperties openXmlElement, UInt32? value)
+  private static void SetRsidR(DXW.PreviousSectionProperties openXmlElement, UInt32? value)
   {
       if (value != null)
         openXmlElement.RsidR = ((UInt32)value).ToString("X8");
@@ -62,14 +62,14 @@ public static class PreviousSectionPropertiesConverter
   /// <summary>
   /// Section Properties Revision ID
   /// </summary>
-  private static UInt32? GetRsidSect(DocumentFormat.OpenXml.Wordprocessing.PreviousSectionProperties openXmlElement)
+  private static UInt32? GetRsidSect(DXW.PreviousSectionProperties openXmlElement)
   {
     if (openXmlElement.RsidSect?.Value != null)
       return UInt32.Parse(openXmlElement.RsidSect.Value, NumberStyles.HexNumber);
     return null;
   }
   
-  private static void SetRsidSect(DocumentFormat.OpenXml.Wordprocessing.PreviousSectionProperties openXmlElement, UInt32? value)
+  private static void SetRsidSect(DXW.PreviousSectionProperties openXmlElement, UInt32? value)
   {
       if (value != null)
         openXmlElement.RsidSect = ((UInt32)value).ToString("X8");
@@ -80,22 +80,22 @@ public static class PreviousSectionPropertiesConverter
   /// <summary>
   /// FootnoteProperties.
   /// </summary>
-  private static DocumentModel.Wordprocessing.FootnoteProperties? GetFootnoteProperties(DocumentFormat.OpenXml.Wordprocessing.PreviousSectionProperties openXmlElement)
+  private static DMW.FootnoteProperties? GetFootnoteProperties(DXW.PreviousSectionProperties openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.FootnoteProperties>();
+    var itemElement = openXmlElement?.GetFirstChild<DXW.FootnoteProperties>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Wordprocessing.FootnotePropertiesConverter.CreateModelElement(itemElement);
+      return DMXW.FootnotePropertiesConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetFootnoteProperties(DocumentFormat.OpenXml.Wordprocessing.PreviousSectionProperties openXmlElement, DocumentModel.Wordprocessing.FootnoteProperties? value)
+  private static void SetFootnoteProperties(DXW.PreviousSectionProperties openXmlElement, DMW.FootnoteProperties? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.FootnoteProperties>();
+    var itemElement = openXmlElement.GetFirstChild<DXW.FootnoteProperties>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Wordprocessing.FootnotePropertiesConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.FootnoteProperties>(value);
+      itemElement = DMXW.FootnotePropertiesConverter.CreateOpenXmlElement<DXW.FootnoteProperties>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
@@ -104,22 +104,22 @@ public static class PreviousSectionPropertiesConverter
   /// <summary>
   /// EndnoteProperties.
   /// </summary>
-  private static DocumentModel.Wordprocessing.EndnoteProperties? GetEndnoteProperties(DocumentFormat.OpenXml.Wordprocessing.PreviousSectionProperties openXmlElement)
+  private static DMW.EndnoteProperties? GetEndnoteProperties(DXW.PreviousSectionProperties openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.EndnoteProperties>();
+    var itemElement = openXmlElement?.GetFirstChild<DXW.EndnoteProperties>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Wordprocessing.EndnotePropertiesConverter.CreateModelElement(itemElement);
+      return DMXW.EndnotePropertiesConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetEndnoteProperties(DocumentFormat.OpenXml.Wordprocessing.PreviousSectionProperties openXmlElement, DocumentModel.Wordprocessing.EndnoteProperties? value)
+  private static void SetEndnoteProperties(DXW.PreviousSectionProperties openXmlElement, DMW.EndnoteProperties? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.EndnoteProperties>();
+    var itemElement = openXmlElement.GetFirstChild<DXW.EndnoteProperties>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Wordprocessing.EndnotePropertiesConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.EndnoteProperties>(value);
+      itemElement = DMXW.EndnotePropertiesConverter.CreateOpenXmlElement<DXW.EndnoteProperties>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
@@ -128,22 +128,22 @@ public static class PreviousSectionPropertiesConverter
   /// <summary>
   /// SectionType.
   /// </summary>
-  private static DocumentModel.Wordprocessing.SectionMarkKind? GetSectionType(DocumentFormat.OpenXml.Wordprocessing.PreviousSectionProperties openXmlElement)
+  private static DMW.SectionMarkKind? GetSectionType(DXW.PreviousSectionProperties openXmlElement)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.SectionType>();
+    var itemElement = openXmlElement.GetFirstChild<DXW.SectionType>();
     if (itemElement?.Val?.Value != null)
-      return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Wordprocessing.SectionMarkValues, DocumentModel.Wordprocessing.SectionMarkKind>(itemElement.Val.Value);
+      return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Wordprocessing.SectionMarkValues, DMW.SectionMarkKind>(itemElement.Val.Value);
     return null;
   }
   
-  private static void SetSectionType(DocumentFormat.OpenXml.Wordprocessing.PreviousSectionProperties openXmlElement, DocumentModel.Wordprocessing.SectionMarkKind? value)
+  private static void SetSectionType(DXW.PreviousSectionProperties openXmlElement, DMW.SectionMarkKind? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.SectionType>();
+    var itemElement = openXmlElement.GetFirstChild<DXW.SectionType>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = EnumValueConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.SectionType, DocumentFormat.OpenXml.Wordprocessing.SectionMarkValues, DocumentModel.Wordprocessing.SectionMarkKind>(value);
+      itemElement = EnumValueConverter.CreateOpenXmlElement<DXW.SectionType, DocumentFormat.OpenXml.Wordprocessing.SectionMarkValues, DMW.SectionMarkKind>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
@@ -152,22 +152,22 @@ public static class PreviousSectionPropertiesConverter
   /// <summary>
   /// PageSize.
   /// </summary>
-  private static DocumentModel.Wordprocessing.PageSize? GetPageSize(DocumentFormat.OpenXml.Wordprocessing.PreviousSectionProperties openXmlElement)
+  private static DMW.PageSize? GetPageSize(DXW.PreviousSectionProperties openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.PageSize>();
+    var itemElement = openXmlElement?.GetFirstChild<DXW.PageSize>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Wordprocessing.PageSizeConverter.CreateModelElement(itemElement);
+      return DMXW.PageSizeConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetPageSize(DocumentFormat.OpenXml.Wordprocessing.PreviousSectionProperties openXmlElement, DocumentModel.Wordprocessing.PageSize? value)
+  private static void SetPageSize(DXW.PreviousSectionProperties openXmlElement, DMW.PageSize? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.PageSize>();
+    var itemElement = openXmlElement.GetFirstChild<DXW.PageSize>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Wordprocessing.PageSizeConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.PageSize>(value);
+      itemElement = DMXW.PageSizeConverter.CreateOpenXmlElement<DXW.PageSize>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
@@ -176,22 +176,22 @@ public static class PreviousSectionPropertiesConverter
   /// <summary>
   /// PageMargin.
   /// </summary>
-  private static DocumentModel.Wordprocessing.PageMargin? GetPageMargin(DocumentFormat.OpenXml.Wordprocessing.PreviousSectionProperties openXmlElement)
+  private static DMW.PageMargin? GetPageMargin(DXW.PreviousSectionProperties openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.PageMargin>();
+    var itemElement = openXmlElement?.GetFirstChild<DXW.PageMargin>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Wordprocessing.PageMarginConverter.CreateModelElement(itemElement);
+      return DMXW.PageMarginConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetPageMargin(DocumentFormat.OpenXml.Wordprocessing.PreviousSectionProperties openXmlElement, DocumentModel.Wordprocessing.PageMargin? value)
+  private static void SetPageMargin(DXW.PreviousSectionProperties openXmlElement, DMW.PageMargin? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.PageMargin>();
+    var itemElement = openXmlElement.GetFirstChild<DXW.PageMargin>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Wordprocessing.PageMarginConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.PageMargin>(value);
+      itemElement = DMXW.PageMarginConverter.CreateOpenXmlElement<DXW.PageMargin>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
@@ -200,22 +200,22 @@ public static class PreviousSectionPropertiesConverter
   /// <summary>
   /// PaperSource.
   /// </summary>
-  private static DocumentModel.Wordprocessing.PaperSource? GetPaperSource(DocumentFormat.OpenXml.Wordprocessing.PreviousSectionProperties openXmlElement)
+  private static DMW.PaperSource? GetPaperSource(DXW.PreviousSectionProperties openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.PaperSource>();
+    var itemElement = openXmlElement?.GetFirstChild<DXW.PaperSource>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Wordprocessing.PaperSourceConverter.CreateModelElement(itemElement);
+      return DMXW.PaperSourceConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetPaperSource(DocumentFormat.OpenXml.Wordprocessing.PreviousSectionProperties openXmlElement, DocumentModel.Wordprocessing.PaperSource? value)
+  private static void SetPaperSource(DXW.PreviousSectionProperties openXmlElement, DMW.PaperSource? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.PaperSource>();
+    var itemElement = openXmlElement.GetFirstChild<DXW.PaperSource>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Wordprocessing.PaperSourceConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.PaperSource>(value);
+      itemElement = DMXW.PaperSourceConverter.CreateOpenXmlElement<DXW.PaperSource>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
@@ -224,22 +224,22 @@ public static class PreviousSectionPropertiesConverter
   /// <summary>
   /// PageBorders.
   /// </summary>
-  private static DocumentModel.Wordprocessing.PageBorders? GetPageBorders(DocumentFormat.OpenXml.Wordprocessing.PreviousSectionProperties openXmlElement)
+  private static DMW.PageBorders? GetPageBorders(DXW.PreviousSectionProperties openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.PageBorders>();
+    var itemElement = openXmlElement?.GetFirstChild<DXW.PageBorders>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Wordprocessing.PageBordersConverter.CreateModelElement(itemElement);
+      return DMXW.PageBordersConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetPageBorders(DocumentFormat.OpenXml.Wordprocessing.PreviousSectionProperties openXmlElement, DocumentModel.Wordprocessing.PageBorders? value)
+  private static void SetPageBorders(DXW.PreviousSectionProperties openXmlElement, DMW.PageBorders? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.PageBorders>();
+    var itemElement = openXmlElement.GetFirstChild<DXW.PageBorders>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Wordprocessing.PageBordersConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.PageBorders>(value);
+      itemElement = DMXW.PageBordersConverter.CreateOpenXmlElement<DXW.PageBorders>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
@@ -248,22 +248,22 @@ public static class PreviousSectionPropertiesConverter
   /// <summary>
   /// LineNumberType.
   /// </summary>
-  private static DocumentModel.Wordprocessing.LineNumberType? GetLineNumberType(DocumentFormat.OpenXml.Wordprocessing.PreviousSectionProperties openXmlElement)
+  private static DMW.LineNumberType? GetLineNumberType(DXW.PreviousSectionProperties openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.LineNumberType>();
+    var itemElement = openXmlElement?.GetFirstChild<DXW.LineNumberType>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Wordprocessing.LineNumberTypeConverter.CreateModelElement(itemElement);
+      return DMXW.LineNumberTypeConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetLineNumberType(DocumentFormat.OpenXml.Wordprocessing.PreviousSectionProperties openXmlElement, DocumentModel.Wordprocessing.LineNumberType? value)
+  private static void SetLineNumberType(DXW.PreviousSectionProperties openXmlElement, DMW.LineNumberType? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.LineNumberType>();
+    var itemElement = openXmlElement.GetFirstChild<DXW.LineNumberType>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Wordprocessing.LineNumberTypeConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.LineNumberType>(value);
+      itemElement = DMXW.LineNumberTypeConverter.CreateOpenXmlElement<DXW.LineNumberType>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
@@ -272,22 +272,22 @@ public static class PreviousSectionPropertiesConverter
   /// <summary>
   /// PageNumberType.
   /// </summary>
-  private static DocumentModel.Wordprocessing.PageNumberType? GetPageNumberType(DocumentFormat.OpenXml.Wordprocessing.PreviousSectionProperties openXmlElement)
+  private static DMW.PageNumberType? GetPageNumberType(DXW.PreviousSectionProperties openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.PageNumberType>();
+    var itemElement = openXmlElement?.GetFirstChild<DXW.PageNumberType>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Wordprocessing.PageNumberTypeConverter.CreateModelElement(itemElement);
+      return DMXW.PageNumberTypeConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetPageNumberType(DocumentFormat.OpenXml.Wordprocessing.PreviousSectionProperties openXmlElement, DocumentModel.Wordprocessing.PageNumberType? value)
+  private static void SetPageNumberType(DXW.PreviousSectionProperties openXmlElement, DMW.PageNumberType? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.PageNumberType>();
+    var itemElement = openXmlElement.GetFirstChild<DXW.PageNumberType>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Wordprocessing.PageNumberTypeConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.PageNumberType>(value);
+      itemElement = DMXW.PageNumberTypeConverter.CreateOpenXmlElement<DXW.PageNumberType>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
@@ -296,22 +296,22 @@ public static class PreviousSectionPropertiesConverter
   /// <summary>
   /// Columns.
   /// </summary>
-  private static DocumentModel.Wordprocessing.Columns? GetColumns(DocumentFormat.OpenXml.Wordprocessing.PreviousSectionProperties openXmlElement)
+  private static DMW.Columns? GetColumns(DXW.PreviousSectionProperties openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.Columns>();
+    var itemElement = openXmlElement?.GetFirstChild<DXW.Columns>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Wordprocessing.ColumnsConverter.CreateModelElement(itemElement);
+      return DMXW.ColumnsConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetColumns(DocumentFormat.OpenXml.Wordprocessing.PreviousSectionProperties openXmlElement, DocumentModel.Wordprocessing.Columns? value)
+  private static void SetColumns(DXW.PreviousSectionProperties openXmlElement, DMW.Columns? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.Columns>();
+    var itemElement = openXmlElement.GetFirstChild<DXW.Columns>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Wordprocessing.ColumnsConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.Columns>(value);
+      itemElement = DMXW.ColumnsConverter.CreateOpenXmlElement<DXW.Columns>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
@@ -320,25 +320,25 @@ public static class PreviousSectionPropertiesConverter
   /// <summary>
   /// FormProtection.
   /// </summary>
-  private static Boolean? GetFormProtection(DocumentFormat.OpenXml.Wordprocessing.PreviousSectionProperties openXmlElement)
+  private static Boolean? GetFormProtection(DXW.PreviousSectionProperties openXmlElement)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.FormProtection>();
+    var itemElement = openXmlElement.GetFirstChild<DXW.FormProtection>();
     if (itemElement?.Val?.Value != null)
       return itemElement.Val.Value;
     return null;
   }
   
-  private static void SetFormProtection(DocumentFormat.OpenXml.Wordprocessing.PreviousSectionProperties openXmlElement, Boolean? value)
+  private static void SetFormProtection(DXW.PreviousSectionProperties openXmlElement, Boolean? value)
   {
     if (value == false)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.FormProtection>();
+      var itemElement = openXmlElement.GetFirstChild<DXW.FormProtection>();
       if (itemElement != null)
         itemElement.Remove();
     }
     if (value == true)
     {
-      var itemElement = new DocumentFormat.OpenXml.Wordprocessing.FormProtection();
+      var itemElement = new DXW.FormProtection();
       openXmlElement.AddChild(itemElement);
     }
   }
@@ -346,22 +346,22 @@ public static class PreviousSectionPropertiesConverter
   /// <summary>
   /// VerticalTextAlignmentOnPage.
   /// </summary>
-  private static DocumentModel.Wordprocessing.VerticalJustificationKind? GetVerticalTextAlignmentOnPage(DocumentFormat.OpenXml.Wordprocessing.PreviousSectionProperties openXmlElement)
+  private static DMW.VerticalJustificationKind? GetVerticalTextAlignmentOnPage(DXW.PreviousSectionProperties openXmlElement)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.VerticalTextAlignmentOnPage>();
+    var itemElement = openXmlElement.GetFirstChild<DXW.VerticalTextAlignmentOnPage>();
     if (itemElement?.Val?.Value != null)
-      return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Wordprocessing.VerticalJustificationValues, DocumentModel.Wordprocessing.VerticalJustificationKind>(itemElement.Val.Value);
+      return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Wordprocessing.VerticalJustificationValues, DMW.VerticalJustificationKind>(itemElement.Val.Value);
     return null;
   }
   
-  private static void SetVerticalTextAlignmentOnPage(DocumentFormat.OpenXml.Wordprocessing.PreviousSectionProperties openXmlElement, DocumentModel.Wordprocessing.VerticalJustificationKind? value)
+  private static void SetVerticalTextAlignmentOnPage(DXW.PreviousSectionProperties openXmlElement, DMW.VerticalJustificationKind? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.VerticalTextAlignmentOnPage>();
+    var itemElement = openXmlElement.GetFirstChild<DXW.VerticalTextAlignmentOnPage>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = EnumValueConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.VerticalTextAlignmentOnPage, DocumentFormat.OpenXml.Wordprocessing.VerticalJustificationValues, DocumentModel.Wordprocessing.VerticalJustificationKind>(value);
+      itemElement = EnumValueConverter.CreateOpenXmlElement<DXW.VerticalTextAlignmentOnPage, DocumentFormat.OpenXml.Wordprocessing.VerticalJustificationValues, DMW.VerticalJustificationKind>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
@@ -370,25 +370,25 @@ public static class PreviousSectionPropertiesConverter
   /// <summary>
   /// NoEndnote.
   /// </summary>
-  private static Boolean? GetNoEndnote(DocumentFormat.OpenXml.Wordprocessing.PreviousSectionProperties openXmlElement)
+  private static Boolean? GetNoEndnote(DXW.PreviousSectionProperties openXmlElement)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.NoEndnote>();
+    var itemElement = openXmlElement.GetFirstChild<DXW.NoEndnote>();
     if (itemElement?.Val?.Value != null)
       return itemElement.Val.Value;
     return null;
   }
   
-  private static void SetNoEndnote(DocumentFormat.OpenXml.Wordprocessing.PreviousSectionProperties openXmlElement, Boolean? value)
+  private static void SetNoEndnote(DXW.PreviousSectionProperties openXmlElement, Boolean? value)
   {
     if (value == false)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.NoEndnote>();
+      var itemElement = openXmlElement.GetFirstChild<DXW.NoEndnote>();
       if (itemElement != null)
         itemElement.Remove();
     }
     if (value == true)
     {
-      var itemElement = new DocumentFormat.OpenXml.Wordprocessing.NoEndnote();
+      var itemElement = new DXW.NoEndnote();
       openXmlElement.AddChild(itemElement);
     }
   }
@@ -396,25 +396,25 @@ public static class PreviousSectionPropertiesConverter
   /// <summary>
   /// TitlePage.
   /// </summary>
-  private static Boolean? GetTitlePage(DocumentFormat.OpenXml.Wordprocessing.PreviousSectionProperties openXmlElement)
+  private static Boolean? GetTitlePage(DXW.PreviousSectionProperties openXmlElement)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.TitlePage>();
+    var itemElement = openXmlElement.GetFirstChild<DXW.TitlePage>();
     if (itemElement?.Val?.Value != null)
       return itemElement.Val.Value;
     return null;
   }
   
-  private static void SetTitlePage(DocumentFormat.OpenXml.Wordprocessing.PreviousSectionProperties openXmlElement, Boolean? value)
+  private static void SetTitlePage(DXW.PreviousSectionProperties openXmlElement, Boolean? value)
   {
     if (value == false)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.TitlePage>();
+      var itemElement = openXmlElement.GetFirstChild<DXW.TitlePage>();
       if (itemElement != null)
         itemElement.Remove();
     }
     if (value == true)
     {
-      var itemElement = new DocumentFormat.OpenXml.Wordprocessing.TitlePage();
+      var itemElement = new DXW.TitlePage();
       openXmlElement.AddChild(itemElement);
     }
   }
@@ -422,22 +422,22 @@ public static class PreviousSectionPropertiesConverter
   /// <summary>
   /// TextDirection.
   /// </summary>
-  private static DocumentModel.Wordprocessing.TextDirectionKind? GetTextDirection(DocumentFormat.OpenXml.Wordprocessing.PreviousSectionProperties openXmlElement)
+  private static DMW.TextDirectionKind? GetTextDirection(DXW.PreviousSectionProperties openXmlElement)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.TextDirection>();
+    var itemElement = openXmlElement.GetFirstChild<DXW.TextDirection>();
     if (itemElement?.Val?.Value != null)
-      return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Wordprocessing.TextDirectionValues, DocumentModel.Wordprocessing.TextDirectionKind>(itemElement.Val.Value);
+      return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Wordprocessing.TextDirectionValues, DMW.TextDirectionKind>(itemElement.Val.Value);
     return null;
   }
   
-  private static void SetTextDirection(DocumentFormat.OpenXml.Wordprocessing.PreviousSectionProperties openXmlElement, DocumentModel.Wordprocessing.TextDirectionKind? value)
+  private static void SetTextDirection(DXW.PreviousSectionProperties openXmlElement, DMW.TextDirectionKind? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.TextDirection>();
+    var itemElement = openXmlElement.GetFirstChild<DXW.TextDirection>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = EnumValueConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.TextDirection, DocumentFormat.OpenXml.Wordprocessing.TextDirectionValues, DocumentModel.Wordprocessing.TextDirectionKind>(value);
+      itemElement = EnumValueConverter.CreateOpenXmlElement<DXW.TextDirection, DocumentFormat.OpenXml.Wordprocessing.TextDirectionValues, DMW.TextDirectionKind>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
@@ -446,25 +446,25 @@ public static class PreviousSectionPropertiesConverter
   /// <summary>
   /// BiDi.
   /// </summary>
-  private static Boolean? GetBiDi(DocumentFormat.OpenXml.Wordprocessing.PreviousSectionProperties openXmlElement)
+  private static Boolean? GetBiDi(DXW.PreviousSectionProperties openXmlElement)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.BiDi>();
+    var itemElement = openXmlElement.GetFirstChild<DXW.BiDi>();
     if (itemElement?.Val?.Value != null)
       return itemElement.Val.Value;
     return null;
   }
   
-  private static void SetBiDi(DocumentFormat.OpenXml.Wordprocessing.PreviousSectionProperties openXmlElement, Boolean? value)
+  private static void SetBiDi(DXW.PreviousSectionProperties openXmlElement, Boolean? value)
   {
     if (value == false)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.BiDi>();
+      var itemElement = openXmlElement.GetFirstChild<DXW.BiDi>();
       if (itemElement != null)
         itemElement.Remove();
     }
     if (value == true)
     {
-      var itemElement = new DocumentFormat.OpenXml.Wordprocessing.BiDi();
+      var itemElement = new DXW.BiDi();
       openXmlElement.AddChild(itemElement);
     }
   }
@@ -472,25 +472,25 @@ public static class PreviousSectionPropertiesConverter
   /// <summary>
   /// GutterOnRight.
   /// </summary>
-  private static Boolean? GetGutterOnRight(DocumentFormat.OpenXml.Wordprocessing.PreviousSectionProperties openXmlElement)
+  private static Boolean? GetGutterOnRight(DXW.PreviousSectionProperties openXmlElement)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.GutterOnRight>();
+    var itemElement = openXmlElement.GetFirstChild<DXW.GutterOnRight>();
     if (itemElement?.Val?.Value != null)
       return itemElement.Val.Value;
     return null;
   }
   
-  private static void SetGutterOnRight(DocumentFormat.OpenXml.Wordprocessing.PreviousSectionProperties openXmlElement, Boolean? value)
+  private static void SetGutterOnRight(DXW.PreviousSectionProperties openXmlElement, Boolean? value)
   {
     if (value == false)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.GutterOnRight>();
+      var itemElement = openXmlElement.GetFirstChild<DXW.GutterOnRight>();
       if (itemElement != null)
         itemElement.Remove();
     }
     if (value == true)
     {
-      var itemElement = new DocumentFormat.OpenXml.Wordprocessing.GutterOnRight();
+      var itemElement = new DXW.GutterOnRight();
       openXmlElement.AddChild(itemElement);
     }
   }
@@ -498,22 +498,22 @@ public static class PreviousSectionPropertiesConverter
   /// <summary>
   /// DocGrid.
   /// </summary>
-  private static DocumentModel.Wordprocessing.DocGrid? GetDocGrid(DocumentFormat.OpenXml.Wordprocessing.PreviousSectionProperties openXmlElement)
+  private static DMW.DocGrid? GetDocGrid(DXW.PreviousSectionProperties openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.DocGrid>();
+    var itemElement = openXmlElement?.GetFirstChild<DXW.DocGrid>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Wordprocessing.DocGridConverter.CreateModelElement(itemElement);
+      return DMXW.DocGridConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetDocGrid(DocumentFormat.OpenXml.Wordprocessing.PreviousSectionProperties openXmlElement, DocumentModel.Wordprocessing.DocGrid? value)
+  private static void SetDocGrid(DXW.PreviousSectionProperties openXmlElement, DMW.DocGrid? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.DocGrid>();
+    var itemElement = openXmlElement.GetFirstChild<DXW.DocGrid>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Wordprocessing.DocGridConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.DocGrid>(value);
+      itemElement = DMXW.DocGridConverter.CreateOpenXmlElement<DXW.DocGrid>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
@@ -522,22 +522,22 @@ public static class PreviousSectionPropertiesConverter
   /// <summary>
   /// PrinterSettingsReference.
   /// </summary>
-  private static DocumentModel.Wordprocessing.RelationshipType? GetPrinterSettingsReference(DocumentFormat.OpenXml.Wordprocessing.PreviousSectionProperties openXmlElement)
+  private static DMW.RelationshipType? GetPrinterSettingsReference(DXW.PreviousSectionProperties openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.PrinterSettingsReference>();
+    var itemElement = openXmlElement?.GetFirstChild<DXW.PrinterSettingsReference>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Wordprocessing.RelationshipTypeConverter.CreateModelElement(itemElement);
+      return DMXW.RelationshipTypeConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetPrinterSettingsReference(DocumentFormat.OpenXml.Wordprocessing.PreviousSectionProperties openXmlElement, DocumentModel.Wordprocessing.RelationshipType? value)
+  private static void SetPrinterSettingsReference(DXW.PreviousSectionProperties openXmlElement, DMW.RelationshipType? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.PrinterSettingsReference>();
+    var itemElement = openXmlElement.GetFirstChild<DXW.PrinterSettingsReference>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Wordprocessing.RelationshipTypeConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.PrinterSettingsReference>(value);
+      itemElement = DMXW.RelationshipTypeConverter.CreateOpenXmlElement<DXW.PrinterSettingsReference>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
@@ -546,31 +546,31 @@ public static class PreviousSectionPropertiesConverter
   /// <summary>
   /// FootnoteColumns, this property is only available in Office 2013 and later..
   /// </summary>
-  private static Int32? GetFootnoteColumns(DocumentFormat.OpenXml.Wordprocessing.PreviousSectionProperties openXmlElement)
+  private static Int32? GetFootnoteColumns(DXW.PreviousSectionProperties openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office2013.Word.FootnoteColumns>();
+    var itemElement = openXmlElement?.GetFirstChild<DXO2013W.FootnoteColumns>();
     if (itemElement != null)
       return itemElement.Val?.Value;
     return null;
   }
   
-  private static void SetFootnoteColumns(DocumentFormat.OpenXml.Wordprocessing.PreviousSectionProperties openXmlElement, Int32? value)
+  private static void SetFootnoteColumns(DXW.PreviousSectionProperties openXmlElement, Int32? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2013.Word.FootnoteColumns>();
+    var itemElement = openXmlElement.GetFirstChild<DXO2013W.FootnoteColumns>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = new DocumentFormat.OpenXml.Office2013.Word.FootnoteColumns{ Val = value };
+      itemElement = new DXO2013W.FootnoteColumns{ Val = value };
       openXmlElement.AddChild(itemElement);
     }
   }
   
-  public static DocumentModel.Wordprocessing.PreviousSectionProperties? CreateModelElement(DocumentFormat.OpenXml.Wordprocessing.PreviousSectionProperties? openXmlElement)
+  public static DMW.PreviousSectionProperties? CreateModelElement(DXW.PreviousSectionProperties? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Wordprocessing.PreviousSectionProperties();
+      var value = new DMW.PreviousSectionProperties();
       value.RsidRPr = GetRsidRPr(openXmlElement);
       value.RsidDel = GetRsidDel(openXmlElement);
       value.RsidR = GetRsidR(openXmlElement);
@@ -600,8 +600,8 @@ public static class PreviousSectionPropertiesConverter
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.PreviousSectionProperties? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Wordprocessing.PreviousSectionProperties, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMW.PreviousSectionProperties? value)
+    where OpenXmlElementType: DXW.PreviousSectionProperties, new()
   {
     if (value != null)
     {

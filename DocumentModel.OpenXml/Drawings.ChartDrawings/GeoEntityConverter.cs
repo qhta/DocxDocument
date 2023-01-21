@@ -8,12 +8,12 @@ public static class GeoEntityConverter
   /// <summary>
   /// entityName, this property is only available in Office 2016 and later.
   /// </summary>
-  private static String? GetEntityName(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.GeoEntity openXmlElement)
+  private static String? GetEntityName(DXO2016DrawChartDraw.GeoEntity openXmlElement)
   {
     return openXmlElement?.EntityName?.Value;
   }
   
-  private static void SetEntityName(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.GeoEntity openXmlElement, String? value)
+  private static void SetEntityName(DXO2016DrawChartDraw.GeoEntity openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.EntityName = new StringValue { Value = value };
@@ -24,21 +24,21 @@ public static class GeoEntityConverter
   /// <summary>
   /// entityType, this property is only available in Office 2016 and later.
   /// </summary>
-  private static DocumentModel.Drawings.ChartDrawings.EntityTypeEnum? GetEntityType(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.GeoEntity openXmlElement)
+  private static DMDrawsChartDraws.EntityTypeEnum? GetEntityType(DXO2016DrawChartDraw.GeoEntity openXmlElement)
   {
-    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.EntityTypeEnum, DocumentModel.Drawings.ChartDrawings.EntityTypeEnum>(openXmlElement?.EntityType?.Value);
+    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.EntityTypeEnum, DMDrawsChartDraws.EntityTypeEnum>(openXmlElement?.EntityType?.Value);
   }
   
-  private static void SetEntityType(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.GeoEntity openXmlElement, DocumentModel.Drawings.ChartDrawings.EntityTypeEnum? value)
+  private static void SetEntityType(DXO2016DrawChartDraw.GeoEntity openXmlElement, DMDrawsChartDraws.EntityTypeEnum? value)
   {
-    openXmlElement.EntityType = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.EntityTypeEnum, DocumentModel.Drawings.ChartDrawings.EntityTypeEnum>(value);
+    openXmlElement.EntityType = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.EntityTypeEnum, DMDrawsChartDraws.EntityTypeEnum>(value);
   }
   
-  public static DocumentModel.Drawings.ChartDrawings.GeoEntity? CreateModelElement(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.GeoEntity? openXmlElement)
+  public static DMDrawsChartDraws.GeoEntity? CreateModelElement(DXO2016DrawChartDraw.GeoEntity? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.ChartDrawings.GeoEntity();
+      var value = new DMDrawsChartDraws.GeoEntity();
       value.EntityName = GetEntityName(openXmlElement);
       value.EntityType = GetEntityType(openXmlElement);
       return value;
@@ -46,8 +46,8 @@ public static class GeoEntityConverter
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.ChartDrawings.GeoEntity? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.GeoEntity, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDrawsChartDraws.GeoEntity? value)
+    where OpenXmlElementType: DXO2016DrawChartDraw.GeoEntity, new()
   {
     if (value != null)
     {

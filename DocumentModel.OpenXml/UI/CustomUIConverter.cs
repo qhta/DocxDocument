@@ -8,12 +8,12 @@ public static class CustomUIConverter
   /// <summary>
   /// onLoad
   /// </summary>
-  private static String? GetOnLoad(DocumentFormat.OpenXml.Office.CustomUI.CustomUI openXmlElement)
+  private static String? GetOnLoad(DXOCustUI.CustomUI openXmlElement)
   {
     return openXmlElement?.OnLoad?.Value;
   }
   
-  private static void SetOnLoad(DocumentFormat.OpenXml.Office.CustomUI.CustomUI openXmlElement, String? value)
+  private static void SetOnLoad(DXOCustUI.CustomUI openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.OnLoad = new StringValue { Value = value };
@@ -24,12 +24,12 @@ public static class CustomUIConverter
   /// <summary>
   /// loadImage
   /// </summary>
-  private static String? GetLoadImage(DocumentFormat.OpenXml.Office.CustomUI.CustomUI openXmlElement)
+  private static String? GetLoadImage(DXOCustUI.CustomUI openXmlElement)
   {
     return openXmlElement?.LoadImage?.Value;
   }
   
-  private static void SetLoadImage(DocumentFormat.OpenXml.Office.CustomUI.CustomUI openXmlElement, String? value)
+  private static void SetLoadImage(DXOCustUI.CustomUI openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.LoadImage = new StringValue { Value = value };
@@ -40,22 +40,22 @@ public static class CustomUIConverter
   /// <summary>
   /// RepurposedCommands.
   /// </summary>
-  private static DocumentModel.UI.RepurposedCommands? GetRepurposedCommands(DocumentFormat.OpenXml.Office.CustomUI.CustomUI openXmlElement)
+  private static DMUI.RepurposedCommands? GetRepurposedCommands(DXOCustUI.CustomUI openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office.CustomUI.RepurposedCommands>();
+    var itemElement = openXmlElement?.GetFirstChild<DXOCustUI.RepurposedCommands>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.UI.RepurposedCommandsConverter.CreateModelElement(itemElement);
+      return DMXUI.RepurposedCommandsConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetRepurposedCommands(DocumentFormat.OpenXml.Office.CustomUI.CustomUI openXmlElement, DocumentModel.UI.RepurposedCommands? value)
+  private static void SetRepurposedCommands(DXOCustUI.CustomUI openXmlElement, DMUI.RepurposedCommands? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office.CustomUI.RepurposedCommands>();
+    var itemElement = openXmlElement.GetFirstChild<DXOCustUI.RepurposedCommands>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.UI.RepurposedCommandsConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office.CustomUI.RepurposedCommands>(value);
+      itemElement = DMXUI.RepurposedCommandsConverter.CreateOpenXmlElement<DXOCustUI.RepurposedCommands>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
@@ -64,32 +64,32 @@ public static class CustomUIConverter
   /// <summary>
   /// Ribbon.
   /// </summary>
-  private static DocumentModel.UI.Ribbon? GetRibbon(DocumentFormat.OpenXml.Office.CustomUI.CustomUI openXmlElement)
+  private static DMUI.Ribbon? GetRibbon(DXOCustUI.CustomUI openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office.CustomUI.Ribbon>();
+    var itemElement = openXmlElement?.GetFirstChild<DXOCustUI.Ribbon>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.UI.RibbonConverter.CreateModelElement(itemElement);
+      return DMXUI.RibbonConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetRibbon(DocumentFormat.OpenXml.Office.CustomUI.CustomUI openXmlElement, DocumentModel.UI.Ribbon? value)
+  private static void SetRibbon(DXOCustUI.CustomUI openXmlElement, DMUI.Ribbon? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office.CustomUI.Ribbon>();
+    var itemElement = openXmlElement.GetFirstChild<DXOCustUI.Ribbon>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.UI.RibbonConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office.CustomUI.Ribbon>(value);
+      itemElement = DMXUI.RibbonConverter.CreateOpenXmlElement<DXOCustUI.Ribbon>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  public static DocumentModel.UI.CustomUI? CreateModelElement(DocumentFormat.OpenXml.Office.CustomUI.CustomUI? openXmlElement)
+  public static DMUI.CustomUI? CreateModelElement(DXOCustUI.CustomUI? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.UI.CustomUI();
+      var value = new DMUI.CustomUI();
       value.OnLoad = GetOnLoad(openXmlElement);
       value.LoadImage = GetLoadImage(openXmlElement);
       value.RepurposedCommands = GetRepurposedCommands(openXmlElement);
@@ -99,8 +99,8 @@ public static class CustomUIConverter
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.UI.CustomUI? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Office.CustomUI.CustomUI, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMUI.CustomUI? value)
+    where OpenXmlElementType: DXOCustUI.CustomUI, new()
   {
     if (value != null)
     {

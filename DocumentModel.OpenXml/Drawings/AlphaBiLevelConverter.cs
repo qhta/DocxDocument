@@ -8,29 +8,29 @@ public static class AlphaBiLevelConverter
   /// <summary>
   /// Threshold
   /// </summary>
-  private static Int32? GetThreshold(DocumentFormat.OpenXml.Drawing.AlphaBiLevel openXmlElement)
+  private static Int32? GetThreshold(DXDraw.AlphaBiLevel openXmlElement)
   {
     return openXmlElement.Threshold?.Value;
   }
   
-  private static void SetThreshold(DocumentFormat.OpenXml.Drawing.AlphaBiLevel openXmlElement, Int32? value)
+  private static void SetThreshold(DXDraw.AlphaBiLevel openXmlElement, Int32? value)
   {
     openXmlElement.Threshold = value;
   }
   
-  public static DocumentModel.Drawings.AlphaBiLevel? CreateModelElement(DocumentFormat.OpenXml.Drawing.AlphaBiLevel? openXmlElement)
+  public static DMDraws.AlphaBiLevel? CreateModelElement(DXDraw.AlphaBiLevel? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.AlphaBiLevel();
+      var value = new DMDraws.AlphaBiLevel();
       value.Threshold = GetThreshold(openXmlElement);
       return value;
     }
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.AlphaBiLevel? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.AlphaBiLevel, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDraws.AlphaBiLevel? value)
+    where OpenXmlElementType: DXDraw.AlphaBiLevel, new()
   {
     if (value != null)
     {

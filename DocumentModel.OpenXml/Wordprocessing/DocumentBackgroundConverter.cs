@@ -8,12 +8,12 @@ public static class DocumentBackgroundConverter
   /// <summary>
   /// color
   /// </summary>
-  private static String? GetColor(DocumentFormat.OpenXml.Wordprocessing.DocumentBackground openXmlElement)
+  private static String? GetColor(DXW.DocumentBackground openXmlElement)
   {
     return openXmlElement?.Color?.Value;
   }
   
-  private static void SetColor(DocumentFormat.OpenXml.Wordprocessing.DocumentBackground openXmlElement, String? value)
+  private static void SetColor(DXW.DocumentBackground openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.Color = new StringValue { Value = value };
@@ -24,25 +24,25 @@ public static class DocumentBackgroundConverter
   /// <summary>
   /// themeColor
   /// </summary>
-  private static DocumentModel.Wordprocessing.ThemeColorKind? GetThemeColor(DocumentFormat.OpenXml.Wordprocessing.DocumentBackground openXmlElement)
+  private static DMW.ThemeColorKind? GetThemeColor(DXW.DocumentBackground openXmlElement)
   {
-    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Wordprocessing.ThemeColorValues, DocumentModel.Wordprocessing.ThemeColorKind>(openXmlElement?.ThemeColor?.Value);
+    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Wordprocessing.ThemeColorValues, DMW.ThemeColorKind>(openXmlElement?.ThemeColor?.Value);
   }
   
-  private static void SetThemeColor(DocumentFormat.OpenXml.Wordprocessing.DocumentBackground openXmlElement, DocumentModel.Wordprocessing.ThemeColorKind? value)
+  private static void SetThemeColor(DXW.DocumentBackground openXmlElement, DMW.ThemeColorKind? value)
   {
-    openXmlElement.ThemeColor = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Wordprocessing.ThemeColorValues, DocumentModel.Wordprocessing.ThemeColorKind>(value);
+    openXmlElement.ThemeColor = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Wordprocessing.ThemeColorValues, DMW.ThemeColorKind>(value);
   }
   
   /// <summary>
   /// themeTint
   /// </summary>
-  private static String? GetThemeTint(DocumentFormat.OpenXml.Wordprocessing.DocumentBackground openXmlElement)
+  private static String? GetThemeTint(DXW.DocumentBackground openXmlElement)
   {
     return openXmlElement?.ThemeTint?.Value;
   }
   
-  private static void SetThemeTint(DocumentFormat.OpenXml.Wordprocessing.DocumentBackground openXmlElement, String? value)
+  private static void SetThemeTint(DXW.DocumentBackground openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.ThemeTint = new StringValue { Value = value };
@@ -53,12 +53,12 @@ public static class DocumentBackgroundConverter
   /// <summary>
   /// themeShade
   /// </summary>
-  private static String? GetThemeShade(DocumentFormat.OpenXml.Wordprocessing.DocumentBackground openXmlElement)
+  private static String? GetThemeShade(DXW.DocumentBackground openXmlElement)
   {
     return openXmlElement?.ThemeShade?.Value;
   }
   
-  private static void SetThemeShade(DocumentFormat.OpenXml.Wordprocessing.DocumentBackground openXmlElement, String? value)
+  private static void SetThemeShade(DXW.DocumentBackground openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.ThemeShade = new StringValue { Value = value };
@@ -69,32 +69,32 @@ public static class DocumentBackgroundConverter
   /// <summary>
   /// Background.
   /// </summary>
-  private static DocumentModel.Vml.Background? GetBackground(DocumentFormat.OpenXml.Wordprocessing.DocumentBackground openXmlElement)
+  private static DMVml.Background? GetBackground(DXW.DocumentBackground openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Vml.Background>();
+    var itemElement = openXmlElement?.GetFirstChild<DXVml.Background>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Vml.BackgroundConverter.CreateModelElement(itemElement);
+      return DMXVml.BackgroundConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetBackground(DocumentFormat.OpenXml.Wordprocessing.DocumentBackground openXmlElement, DocumentModel.Vml.Background? value)
+  private static void SetBackground(DXW.DocumentBackground openXmlElement, DMVml.Background? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Vml.Background>();
+    var itemElement = openXmlElement.GetFirstChild<DXVml.Background>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Vml.BackgroundConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Vml.Background>(value);
+      itemElement = DMXVml.BackgroundConverter.CreateOpenXmlElement<DXVml.Background>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  public static DocumentModel.Wordprocessing.DocumentBackground? CreateModelElement(DocumentFormat.OpenXml.Wordprocessing.DocumentBackground? openXmlElement)
+  public static DMW.DocumentBackground? CreateModelElement(DXW.DocumentBackground? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Wordprocessing.DocumentBackground();
+      var value = new DMW.DocumentBackground();
       value.Color = GetColor(openXmlElement);
       value.ThemeColor = GetThemeColor(openXmlElement);
       value.ThemeTint = GetThemeTint(openXmlElement);
@@ -105,8 +105,8 @@ public static class DocumentBackgroundConverter
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.DocumentBackground? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Wordprocessing.DocumentBackground, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMW.DocumentBackground? value)
+    where OpenXmlElementType: DXW.DocumentBackground, new()
   {
     if (value != null)
     {

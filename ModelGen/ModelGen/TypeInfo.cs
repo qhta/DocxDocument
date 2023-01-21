@@ -4,6 +4,7 @@ using System.Diagnostics.CodeAnalysis;
 using System.Reflection.Metadata.Ecma335;
 using DocumentFormat.OpenXml.Framework.Metadata;
 using System.Runtime.CompilerServices;
+using DocumentFormat.OpenXml.Wordprocessing;
 using DocumentModel;
 using Qhta.TypeUtils;
 
@@ -125,8 +126,9 @@ public class TypeInfo : ModelElement
       }
       aNamespace = nSpace;
     }
-    if (aNamespace == "System")
-      aNamespace = "";
+    //if (aNamespace == "System")
+    //  aNamespace = "";
+    aNamespace = NamespaceShortcut(aNamespace);
     return aNamespace;
   }
 
@@ -145,8 +147,9 @@ public class TypeInfo : ModelElement
       aNamespace = this.Namespace;
       aNamespace = TypeManager.TranslateNamespace(aNamespace);
     }
-    if (aNamespace == "System")
-      aNamespace = "";
+    //if (aNamespace == "System")
+    //  aNamespace = "";
+    aNamespace = NamespaceShortcut(aNamespace);
     if (IsGenericTypeParameter)
       return new FullTypeName(Name, null);
     var result = new FullTypeName(aName, aNamespace);
@@ -174,6 +177,34 @@ public class TypeInfo : ModelElement
       }
     }
     return result;
+  }
+
+  public static string NamespaceShortcut(string ns)
+  {
+    if (ModelData.NamespaceShortcutTable.TryGetValue2(ns, out var shortcut))
+      return shortcut;
+    return ns;
+    //string result = "";
+    //if (ns.StartsWith("DocumentFormat.OpenXml"))
+    //{
+    //  result = "DX";
+    //  ns = ns.Substring("DocumentFormat.OpenXml".Length);
+    //}
+    //else if (ns.StartsWith("DocumentModel"))
+    //{
+    //  result = "DM";
+    //  ns = ns.Substring("DocumentModel".Length);
+    //}
+    //else
+    //  return ns;
+
+    //foreach (var ch in ns)
+    //{
+    //  if (ch >= 'A' && ch <= 'Z')
+    //    result += ch;
+    //}
+    //ModelData.NamespaceShortcutTable.Add(ns, result);
+    //return result;
   }
 
   public override string ToString() => $"{Namespace}.{Name}";

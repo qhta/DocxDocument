@@ -5,21 +5,21 @@ namespace DocumentModel.OpenXml.Packaging;
 /// </summary>
 public static class WordprocessingPrinterSettingsPartConverter
 {
-  private static String? GetContentType(DocumentFormat.OpenXml.Packaging.WordprocessingPrinterSettingsPart openXmlElement)
+  private static String? GetContentType(DXPack.WordprocessingPrinterSettingsPart openXmlElement)
   {
     return openXmlElement?.ContentType;
   }
   
-  private static String? GetRelationshipType(DocumentFormat.OpenXml.Packaging.WordprocessingPrinterSettingsPart openXmlElement)
+  private static String? GetRelationshipType(DXPack.WordprocessingPrinterSettingsPart openXmlElement)
   {
     return openXmlElement?.RelationshipType;
   }
   
-  public static DocumentModel.Packaging.WordprocessingPrinterSettingsPart? CreateModelElement(DocumentFormat.OpenXml.Packaging.WordprocessingPrinterSettingsPart? openXmlElement)
+  public static DMPack.WordprocessingPrinterSettingsPart? CreateModelElement(DXPack.WordprocessingPrinterSettingsPart? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Packaging.WordprocessingPrinterSettingsPart();
+      var value = new DMPack.WordprocessingPrinterSettingsPart();
       value.ContentType = GetContentType(openXmlElement);
       value.RelationshipType = GetRelationshipType(openXmlElement);
       return value;
@@ -27,8 +27,8 @@ public static class WordprocessingPrinterSettingsPartConverter
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Packaging.WordprocessingPrinterSettingsPart? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Packaging.WordprocessingPrinterSettingsPart, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMPack.WordprocessingPrinterSettingsPart? value)
+    where OpenXmlElementType: DXPack.WordprocessingPrinterSettingsPart, new()
   {
     if (value != null)
     {

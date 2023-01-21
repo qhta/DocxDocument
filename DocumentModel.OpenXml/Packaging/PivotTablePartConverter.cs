@@ -5,21 +5,21 @@ namespace DocumentModel.OpenXml.Packaging;
 /// </summary>
 public static class PivotTablePartConverter
 {
-  private static String? GetContentType(DocumentFormat.OpenXml.Packaging.PivotTablePart openXmlElement)
+  private static String? GetContentType(DXPack.PivotTablePart openXmlElement)
   {
     return openXmlElement?.ContentType;
   }
   
-  private static String? GetRelationshipType(DocumentFormat.OpenXml.Packaging.PivotTablePart openXmlElement)
+  private static String? GetRelationshipType(DXPack.PivotTablePart openXmlElement)
   {
     return openXmlElement?.RelationshipType;
   }
   
-  public static DocumentModel.Packaging.PivotTablePart? CreateModelElement(DocumentFormat.OpenXml.Packaging.PivotTablePart? openXmlElement)
+  public static DMPack.PivotTablePart? CreateModelElement(DXPack.PivotTablePart? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Packaging.PivotTablePart();
+      var value = new DMPack.PivotTablePart();
       value.ContentType = GetContentType(openXmlElement);
       value.RelationshipType = GetRelationshipType(openXmlElement);
       return value;
@@ -27,8 +27,8 @@ public static class PivotTablePartConverter
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Packaging.PivotTablePart? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Packaging.PivotTablePart, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMPack.PivotTablePart? value)
+    where OpenXmlElementType: DXPack.PivotTablePart, new()
   {
     if (value != null)
     {

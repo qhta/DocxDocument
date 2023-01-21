@@ -8,12 +8,12 @@ public static class RelationshipIdTypeConverter
   /// <summary>
   /// Relationship Reference
   /// </summary>
-  private static String? GetId(DocumentFormat.OpenXml.Drawing.Charts.RelationshipIdType openXmlElement)
+  private static String? GetId(DXDrawCharts.RelationshipIdType openXmlElement)
   {
     return openXmlElement?.Id?.Value;
   }
   
-  private static void SetId(DocumentFormat.OpenXml.Drawing.Charts.RelationshipIdType openXmlElement, String? value)
+  private static void SetId(DXDrawCharts.RelationshipIdType openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.Id = new StringValue { Value = value };
@@ -21,19 +21,19 @@ public static class RelationshipIdTypeConverter
       openXmlElement.Id = null;
   }
   
-  public static DocumentModel.Drawings.Charts.RelationshipIdType? CreateModelElement(DocumentFormat.OpenXml.Drawing.Charts.RelationshipIdType? openXmlElement)
+  public static DMDrawsCharts.RelationshipIdType? CreateModelElement(DXDrawCharts.RelationshipIdType? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.Charts.RelationshipIdType();
+      var value = new DMDrawsCharts.RelationshipIdType();
       value.Id = GetId(openXmlElement);
       return value;
     }
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.Charts.RelationshipIdType? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.Charts.RelationshipIdType, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDrawsCharts.RelationshipIdType? value)
+    where OpenXmlElementType: DXDrawCharts.RelationshipIdType, new()
   {
     if (value != null)
     {

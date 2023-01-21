@@ -8,12 +8,12 @@ public static class Pie3DChartExtensionConverter
   /// <summary>
   /// URI
   /// </summary>
-  private static String? GetUri(DocumentFormat.OpenXml.Drawing.Charts.Pie3DChartExtension openXmlElement)
+  private static String? GetUri(DXDrawCharts.Pie3DChartExtension openXmlElement)
   {
     return openXmlElement?.Uri?.Value;
   }
   
-  private static void SetUri(DocumentFormat.OpenXml.Drawing.Charts.Pie3DChartExtension openXmlElement, String? value)
+  private static void SetUri(DXDrawCharts.Pie3DChartExtension openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.Uri = new StringValue { Value = value };
@@ -21,32 +21,32 @@ public static class Pie3DChartExtensionConverter
       openXmlElement.Uri = null;
   }
   
-  private static DocumentModel.Drawings.Charts.FilteredPieSeries? GetFilteredPieSeries(DocumentFormat.OpenXml.Drawing.Charts.Pie3DChartExtension openXmlElement)
+  private static DMDrawsCharts.FilteredPieSeries? GetFilteredPieSeries(DXDrawCharts.Pie3DChartExtension openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office2013.Drawing.Chart.FilteredPieSeries>();
+    var itemElement = openXmlElement?.GetFirstChild<DXO2013DrawChart.FilteredPieSeries>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.Charts.FilteredPieSeriesConverter.CreateModelElement(itemElement);
+      return DMXDrawsCharts.FilteredPieSeriesConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetFilteredPieSeries(DocumentFormat.OpenXml.Drawing.Charts.Pie3DChartExtension openXmlElement, DocumentModel.Drawings.Charts.FilteredPieSeries? value)
+  private static void SetFilteredPieSeries(DXDrawCharts.Pie3DChartExtension openXmlElement, DMDrawsCharts.FilteredPieSeries? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2013.Drawing.Chart.FilteredPieSeries>();
+    var itemElement = openXmlElement.GetFirstChild<DXO2013DrawChart.FilteredPieSeries>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Drawings.Charts.FilteredPieSeriesConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2013.Drawing.Chart.FilteredPieSeries>(value);
+      itemElement = DMXDrawsCharts.FilteredPieSeriesConverter.CreateOpenXmlElement<DXO2013DrawChart.FilteredPieSeries>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  public static DocumentModel.Drawings.Charts.Pie3DChartExtension? CreateModelElement(DocumentFormat.OpenXml.Drawing.Charts.Pie3DChartExtension? openXmlElement)
+  public static DMDrawsCharts.Pie3DChartExtension? CreateModelElement(DXDrawCharts.Pie3DChartExtension? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.Charts.Pie3DChartExtension();
+      var value = new DMDrawsCharts.Pie3DChartExtension();
       value.Uri = GetUri(openXmlElement);
       value.FilteredPieSeries = GetFilteredPieSeries(openXmlElement);
       return value;
@@ -54,8 +54,8 @@ public static class Pie3DChartExtensionConverter
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.Charts.Pie3DChartExtension? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.Charts.Pie3DChartExtension, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDrawsCharts.Pie3DChartExtension? value)
+    where OpenXmlElementType: DXDrawCharts.Pie3DChartExtension, new()
   {
     if (value != null)
     {

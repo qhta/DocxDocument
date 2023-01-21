@@ -8,12 +8,12 @@ public static class IndentationConverter
   /// <summary>
   /// Left Indentation
   /// </summary>
-  private static String? GetLeft(DocumentFormat.OpenXml.Wordprocessing.Indentation openXmlElement)
+  private static String? GetLeft(DXW.Indentation openXmlElement)
   {
     return openXmlElement?.Left?.Value;
   }
   
-  private static void SetLeft(DocumentFormat.OpenXml.Wordprocessing.Indentation openXmlElement, String? value)
+  private static void SetLeft(DXW.Indentation openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.Left = new StringValue { Value = value };
@@ -24,12 +24,12 @@ public static class IndentationConverter
   /// <summary>
   /// start, this property is only available in Office 2010 and later.
   /// </summary>
-  private static String? GetStart(DocumentFormat.OpenXml.Wordprocessing.Indentation openXmlElement)
+  private static String? GetStart(DXW.Indentation openXmlElement)
   {
     return openXmlElement?.Start?.Value;
   }
   
-  private static void SetStart(DocumentFormat.OpenXml.Wordprocessing.Indentation openXmlElement, String? value)
+  private static void SetStart(DXW.Indentation openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.Start = new StringValue { Value = value };
@@ -40,12 +40,12 @@ public static class IndentationConverter
   /// <summary>
   /// Left Indentation in Character Units
   /// </summary>
-  private static Int32? GetLeftChars(DocumentFormat.OpenXml.Wordprocessing.Indentation openXmlElement)
+  private static Int32? GetLeftChars(DXW.Indentation openXmlElement)
   {
     return openXmlElement.LeftChars?.Value;
   }
   
-  private static void SetLeftChars(DocumentFormat.OpenXml.Wordprocessing.Indentation openXmlElement, Int32? value)
+  private static void SetLeftChars(DXW.Indentation openXmlElement, Int32? value)
   {
     openXmlElement.LeftChars = value;
   }
@@ -53,12 +53,12 @@ public static class IndentationConverter
   /// <summary>
   /// startChars, this property is only available in Office 2010 and later.
   /// </summary>
-  private static Int32? GetStartCharacters(DocumentFormat.OpenXml.Wordprocessing.Indentation openXmlElement)
+  private static Int32? GetStartCharacters(DXW.Indentation openXmlElement)
   {
     return openXmlElement.StartCharacters?.Value;
   }
   
-  private static void SetStartCharacters(DocumentFormat.OpenXml.Wordprocessing.Indentation openXmlElement, Int32? value)
+  private static void SetStartCharacters(DXW.Indentation openXmlElement, Int32? value)
   {
     openXmlElement.StartCharacters = value;
   }
@@ -66,12 +66,12 @@ public static class IndentationConverter
   /// <summary>
   /// Right Indentation
   /// </summary>
-  private static String? GetRight(DocumentFormat.OpenXml.Wordprocessing.Indentation openXmlElement)
+  private static String? GetRight(DXW.Indentation openXmlElement)
   {
     return openXmlElement?.Right?.Value;
   }
   
-  private static void SetRight(DocumentFormat.OpenXml.Wordprocessing.Indentation openXmlElement, String? value)
+  private static void SetRight(DXW.Indentation openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.Right = new StringValue { Value = value };
@@ -82,12 +82,12 @@ public static class IndentationConverter
   /// <summary>
   /// end, this property is only available in Office 2010 and later.
   /// </summary>
-  private static String? GetEnd(DocumentFormat.OpenXml.Wordprocessing.Indentation openXmlElement)
+  private static String? GetEnd(DXW.Indentation openXmlElement)
   {
     return openXmlElement?.End?.Value;
   }
   
-  private static void SetEnd(DocumentFormat.OpenXml.Wordprocessing.Indentation openXmlElement, String? value)
+  private static void SetEnd(DXW.Indentation openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.End = new StringValue { Value = value };
@@ -98,12 +98,12 @@ public static class IndentationConverter
   /// <summary>
   /// Right Indentation in Character Units
   /// </summary>
-  private static Int32? GetRightChars(DocumentFormat.OpenXml.Wordprocessing.Indentation openXmlElement)
+  private static Int32? GetRightChars(DXW.Indentation openXmlElement)
   {
     return openXmlElement.RightChars?.Value;
   }
   
-  private static void SetRightChars(DocumentFormat.OpenXml.Wordprocessing.Indentation openXmlElement, Int32? value)
+  private static void SetRightChars(DXW.Indentation openXmlElement, Int32? value)
   {
     openXmlElement.RightChars = value;
   }
@@ -111,12 +111,12 @@ public static class IndentationConverter
   /// <summary>
   /// endChars, this property is only available in Office 2010 and later.
   /// </summary>
-  private static Int32? GetEndCharacters(DocumentFormat.OpenXml.Wordprocessing.Indentation openXmlElement)
+  private static Int32? GetEndCharacters(DXW.Indentation openXmlElement)
   {
     return openXmlElement.EndCharacters?.Value;
   }
   
-  private static void SetEndCharacters(DocumentFormat.OpenXml.Wordprocessing.Indentation openXmlElement, Int32? value)
+  private static void SetEndCharacters(DXW.Indentation openXmlElement, Int32? value)
   {
     openXmlElement.EndCharacters = value;
   }
@@ -124,12 +124,12 @@ public static class IndentationConverter
   /// <summary>
   /// Indentation Removed from First Line
   /// </summary>
-  private static String? GetHanging(DocumentFormat.OpenXml.Wordprocessing.Indentation openXmlElement)
+  private static String? GetHanging(DXW.Indentation openXmlElement)
   {
     return openXmlElement?.Hanging?.Value;
   }
   
-  private static void SetHanging(DocumentFormat.OpenXml.Wordprocessing.Indentation openXmlElement, String? value)
+  private static void SetHanging(DXW.Indentation openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.Hanging = new StringValue { Value = value };
@@ -140,12 +140,12 @@ public static class IndentationConverter
   /// <summary>
   /// Indentation Removed From First Line in Character Units
   /// </summary>
-  private static Int32? GetHangingChars(DocumentFormat.OpenXml.Wordprocessing.Indentation openXmlElement)
+  private static Int32? GetHangingChars(DXW.Indentation openXmlElement)
   {
     return openXmlElement.HangingChars?.Value;
   }
   
-  private static void SetHangingChars(DocumentFormat.OpenXml.Wordprocessing.Indentation openXmlElement, Int32? value)
+  private static void SetHangingChars(DXW.Indentation openXmlElement, Int32? value)
   {
     openXmlElement.HangingChars = value;
   }
@@ -153,12 +153,12 @@ public static class IndentationConverter
   /// <summary>
   /// Additional First Line Indentation
   /// </summary>
-  private static String? GetFirstLine(DocumentFormat.OpenXml.Wordprocessing.Indentation openXmlElement)
+  private static String? GetFirstLine(DXW.Indentation openXmlElement)
   {
     return openXmlElement?.FirstLine?.Value;
   }
   
-  private static void SetFirstLine(DocumentFormat.OpenXml.Wordprocessing.Indentation openXmlElement, String? value)
+  private static void SetFirstLine(DXW.Indentation openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.FirstLine = new StringValue { Value = value };
@@ -169,21 +169,21 @@ public static class IndentationConverter
   /// <summary>
   /// Additional First Line Indentation in Character Units
   /// </summary>
-  private static Int32? GetFirstLineChars(DocumentFormat.OpenXml.Wordprocessing.Indentation openXmlElement)
+  private static Int32? GetFirstLineChars(DXW.Indentation openXmlElement)
   {
     return openXmlElement.FirstLineChars?.Value;
   }
   
-  private static void SetFirstLineChars(DocumentFormat.OpenXml.Wordprocessing.Indentation openXmlElement, Int32? value)
+  private static void SetFirstLineChars(DXW.Indentation openXmlElement, Int32? value)
   {
     openXmlElement.FirstLineChars = value;
   }
   
-  public static DocumentModel.Wordprocessing.Indentation? CreateModelElement(DocumentFormat.OpenXml.Wordprocessing.Indentation? openXmlElement)
+  public static DMW.Indentation? CreateModelElement(DXW.Indentation? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Wordprocessing.Indentation();
+      var value = new DMW.Indentation();
       value.Left = GetLeft(openXmlElement);
       value.Start = GetStart(openXmlElement);
       value.LeftChars = GetLeftChars(openXmlElement);
@@ -201,8 +201,8 @@ public static class IndentationConverter
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.Indentation? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Wordprocessing.Indentation, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMW.Indentation? value)
+    where OpenXmlElementType: DXW.Indentation, new()
   {
     if (value != null)
     {

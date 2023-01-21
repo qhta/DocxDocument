@@ -5,45 +5,45 @@ namespace DocumentModel.OpenXml.Drawings;
 /// </summary>
 public static class OfficeArtExtensionList2Converter
 {
-  private static System.Collections.ObjectModel.Collection<DocumentModel.Drawings.Extension> GetExtensions(DocumentFormat.OpenXml.Office2010.Drawing.OfficeArtExtensionList openXmlElement)
+  private static Collection<DMDraws.Extension> GetExtensions(DXO2010Draw.OfficeArtExtensionList openXmlElement)
   {
-    var collection = new System.Collections.ObjectModel.Collection<DocumentModel.Drawings.Extension>();
-    foreach (var item in openXmlElement.Elements<DocumentFormat.OpenXml.Drawing.Extension>())
+    var collection = new Collection<DMDraws.Extension>();
+    foreach (var item in openXmlElement.Elements<DXDraw.Extension>())
     {
-      var newItem = DocumentModel.OpenXml.Drawings.ExtensionConverter.CreateModelElement(item);
+      var newItem = DMXDraws.ExtensionConverter.CreateModelElement(item);
       if (newItem != null)
         collection.Add(newItem);
     }
     return collection;
   }
   
-  private static void SetExtensions(DocumentFormat.OpenXml.Office2010.Drawing.OfficeArtExtensionList openXmlElement, System.Collections.ObjectModel.Collection<DocumentModel.Drawings.Extension>? value)
+  private static void SetExtensions(DXO2010Draw.OfficeArtExtensionList openXmlElement, Collection<DMDraws.Extension>? value)
   {
-    openXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Drawing.Extension>();
+    openXmlElement.RemoveAllChildren<DXDraw.Extension>();
     if (value != null)
     {
       foreach (var item in value)
       {
-        var newItem = DocumentModel.OpenXml.Drawings.ExtensionConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Extension>(item);
+        var newItem = DMXDraws.ExtensionConverter.CreateOpenXmlElement<DXDraw.Extension>(item);
         if (newItem != null)
           openXmlElement.AddChild(newItem);
       }
     }
   }
   
-  public static DocumentModel.Drawings.OfficeArtExtensionList2? CreateModelElement(DocumentFormat.OpenXml.Office2010.Drawing.OfficeArtExtensionList? openXmlElement)
+  public static DMDraws.OfficeArtExtensionList2? CreateModelElement(DXO2010Draw.OfficeArtExtensionList? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.OfficeArtExtensionList2();
+      var value = new DMDraws.OfficeArtExtensionList2();
       value.Extensions = GetExtensions(openXmlElement);
       return value;
     }
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.OfficeArtExtensionList2? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Office2010.Drawing.OfficeArtExtensionList, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDraws.OfficeArtExtensionList2? value)
+    where OpenXmlElementType: DXO2010Draw.OfficeArtExtensionList, new()
   {
     if (value != null)
     {

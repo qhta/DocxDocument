@@ -5,53 +5,53 @@ namespace DocumentModel.OpenXml.Wordprocessing;
 /// </summary>
 public static class ExtrusionColorConverter
 {
-  private static DocumentModel.Wordprocessing.RgbColorModelHex? GetRgbColorModelHex(DocumentFormat.OpenXml.Office2010.Word.ExtrusionColor openXmlElement)
+  private static DMW.RgbColorModelHex? GetRgbColorModelHex(DXO2010W.ExtrusionColor openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office2010.Word.RgbColorModelHex>();
+    var itemElement = openXmlElement?.GetFirstChild<DXO2010W.RgbColorModelHex>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Wordprocessing.RgbColorModelHexConverter.CreateModelElement(itemElement);
+      return DMXW.RgbColorModelHexConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetRgbColorModelHex(DocumentFormat.OpenXml.Office2010.Word.ExtrusionColor openXmlElement, DocumentModel.Wordprocessing.RgbColorModelHex? value)
+  private static void SetRgbColorModelHex(DXO2010W.ExtrusionColor openXmlElement, DMW.RgbColorModelHex? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2010.Word.RgbColorModelHex>();
+    var itemElement = openXmlElement.GetFirstChild<DXO2010W.RgbColorModelHex>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Wordprocessing.RgbColorModelHexConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2010.Word.RgbColorModelHex>(value);
+      itemElement = DMXW.RgbColorModelHexConverter.CreateOpenXmlElement<DXO2010W.RgbColorModelHex>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static DocumentModel.Wordprocessing.SchemeColor? GetSchemeColor(DocumentFormat.OpenXml.Office2010.Word.ExtrusionColor openXmlElement)
+  private static DMW.SchemeColor? GetSchemeColor(DXO2010W.ExtrusionColor openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office2010.Word.SchemeColor>();
+    var itemElement = openXmlElement?.GetFirstChild<DXO2010W.SchemeColor>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Wordprocessing.SchemeColorConverter.CreateModelElement(itemElement);
+      return DMXW.SchemeColorConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetSchemeColor(DocumentFormat.OpenXml.Office2010.Word.ExtrusionColor openXmlElement, DocumentModel.Wordprocessing.SchemeColor? value)
+  private static void SetSchemeColor(DXO2010W.ExtrusionColor openXmlElement, DMW.SchemeColor? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2010.Word.SchemeColor>();
+    var itemElement = openXmlElement.GetFirstChild<DXO2010W.SchemeColor>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Wordprocessing.SchemeColorConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2010.Word.SchemeColor>(value);
+      itemElement = DMXW.SchemeColorConverter.CreateOpenXmlElement<DXO2010W.SchemeColor>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  public static DocumentModel.Wordprocessing.ExtrusionColor? CreateModelElement(DocumentFormat.OpenXml.Office2010.Word.ExtrusionColor? openXmlElement)
+  public static DMW.ExtrusionColor? CreateModelElement(DXO2010W.ExtrusionColor? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Wordprocessing.ExtrusionColor();
+      var value = new DMW.ExtrusionColor();
       value.RgbColorModelHex = GetRgbColorModelHex(openXmlElement);
       value.SchemeColor = GetSchemeColor(openXmlElement);
       return value;
@@ -59,8 +59,8 @@ public static class ExtrusionColorConverter
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.ExtrusionColor? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Office2010.Word.ExtrusionColor, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMW.ExtrusionColor? value)
+    where OpenXmlElementType: DXO2010W.ExtrusionColor, new()
   {
     if (value != null)
     {

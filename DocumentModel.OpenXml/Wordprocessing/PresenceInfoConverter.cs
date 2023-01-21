@@ -8,12 +8,12 @@ public static class PresenceInfoConverter
   /// <summary>
   /// providerId, this property is only available in Office 2013 and later.
   /// </summary>
-  private static String? GetProviderId(DocumentFormat.OpenXml.Office2013.Word.PresenceInfo openXmlElement)
+  private static String? GetProviderId(DXO2013W.PresenceInfo openXmlElement)
   {
     return openXmlElement?.ProviderId?.Value;
   }
   
-  private static void SetProviderId(DocumentFormat.OpenXml.Office2013.Word.PresenceInfo openXmlElement, String? value)
+  private static void SetProviderId(DXO2013W.PresenceInfo openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.ProviderId = new StringValue { Value = value };
@@ -24,12 +24,12 @@ public static class PresenceInfoConverter
   /// <summary>
   /// userId, this property is only available in Office 2013 and later.
   /// </summary>
-  private static String? GetUserId(DocumentFormat.OpenXml.Office2013.Word.PresenceInfo openXmlElement)
+  private static String? GetUserId(DXO2013W.PresenceInfo openXmlElement)
   {
     return openXmlElement?.UserId?.Value;
   }
   
-  private static void SetUserId(DocumentFormat.OpenXml.Office2013.Word.PresenceInfo openXmlElement, String? value)
+  private static void SetUserId(DXO2013W.PresenceInfo openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.UserId = new StringValue { Value = value };
@@ -37,11 +37,11 @@ public static class PresenceInfoConverter
       openXmlElement.UserId = null;
   }
   
-  public static DocumentModel.Wordprocessing.PresenceInfo? CreateModelElement(DocumentFormat.OpenXml.Office2013.Word.PresenceInfo? openXmlElement)
+  public static DMW.PresenceInfo? CreateModelElement(DXO2013W.PresenceInfo? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Wordprocessing.PresenceInfo();
+      var value = new DMW.PresenceInfo();
       value.ProviderId = GetProviderId(openXmlElement);
       value.UserId = GetUserId(openXmlElement);
       return value;
@@ -49,8 +49,8 @@ public static class PresenceInfoConverter
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.PresenceInfo? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Office2013.Word.PresenceInfo, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMW.PresenceInfo? value)
+    where OpenXmlElementType: DXO2013W.PresenceInfo, new()
   {
     if (value != null)
     {

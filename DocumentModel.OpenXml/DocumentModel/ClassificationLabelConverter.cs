@@ -8,12 +8,12 @@ public static class ClassificationLabelConverter
   /// <summary>
   /// id, this property is only available in Office 2021 and later.
   /// </summary>
-  private static String? GetId(DocumentFormat.OpenXml.Office2021.MipLabelMetaData.ClassificationLabel openXmlElement)
+  private static String? GetId(DXO2021MipLabelMeta.ClassificationLabel openXmlElement)
   {
     return openXmlElement?.Id?.Value;
   }
   
-  private static void SetId(DocumentFormat.OpenXml.Office2021.MipLabelMetaData.ClassificationLabel openXmlElement, String? value)
+  private static void SetId(DXO2021MipLabelMeta.ClassificationLabel openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.Id = new StringValue { Value = value };
@@ -24,12 +24,12 @@ public static class ClassificationLabelConverter
   /// <summary>
   /// enabled, this property is only available in Office 2021 and later.
   /// </summary>
-  private static Boolean? GetEnabled(DocumentFormat.OpenXml.Office2021.MipLabelMetaData.ClassificationLabel openXmlElement)
+  private static Boolean? GetEnabled(DXO2021MipLabelMeta.ClassificationLabel openXmlElement)
   {
     return openXmlElement?.Enabled?.Value;
   }
   
-  private static void SetEnabled(DocumentFormat.OpenXml.Office2021.MipLabelMetaData.ClassificationLabel openXmlElement, Boolean? value)
+  private static void SetEnabled(DXO2021MipLabelMeta.ClassificationLabel openXmlElement, Boolean? value)
   {
     if (value != null)
       openXmlElement.Enabled = new BooleanValue { Value = (Boolean)value };
@@ -40,12 +40,12 @@ public static class ClassificationLabelConverter
   /// <summary>
   /// setDate, this property is only available in Office 2021 and later.
   /// </summary>
-  private static String? GetSetDate(DocumentFormat.OpenXml.Office2021.MipLabelMetaData.ClassificationLabel openXmlElement)
+  private static String? GetSetDate(DXO2021MipLabelMeta.ClassificationLabel openXmlElement)
   {
     return openXmlElement?.SetDate?.Value;
   }
   
-  private static void SetSetDate(DocumentFormat.OpenXml.Office2021.MipLabelMetaData.ClassificationLabel openXmlElement, String? value)
+  private static void SetSetDate(DXO2021MipLabelMeta.ClassificationLabel openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.SetDate = new StringValue { Value = value };
@@ -56,12 +56,12 @@ public static class ClassificationLabelConverter
   /// <summary>
   /// method, this property is only available in Office 2021 and later.
   /// </summary>
-  private static String? GetMethod(DocumentFormat.OpenXml.Office2021.MipLabelMetaData.ClassificationLabel openXmlElement)
+  private static String? GetMethod(DXO2021MipLabelMeta.ClassificationLabel openXmlElement)
   {
     return openXmlElement?.Method?.Value;
   }
   
-  private static void SetMethod(DocumentFormat.OpenXml.Office2021.MipLabelMetaData.ClassificationLabel openXmlElement, String? value)
+  private static void SetMethod(DXO2021MipLabelMeta.ClassificationLabel openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.Method = new StringValue { Value = value };
@@ -72,12 +72,12 @@ public static class ClassificationLabelConverter
   /// <summary>
   /// name, this property is only available in Office 2021 and later.
   /// </summary>
-  private static String? GetName(DocumentFormat.OpenXml.Office2021.MipLabelMetaData.ClassificationLabel openXmlElement)
+  private static String? GetName(DXO2021MipLabelMeta.ClassificationLabel openXmlElement)
   {
     return openXmlElement?.Name?.Value;
   }
   
-  private static void SetName(DocumentFormat.OpenXml.Office2021.MipLabelMetaData.ClassificationLabel openXmlElement, String? value)
+  private static void SetName(DXO2021MipLabelMeta.ClassificationLabel openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.Name = new StringValue { Value = value };
@@ -88,12 +88,12 @@ public static class ClassificationLabelConverter
   /// <summary>
   /// siteId, this property is only available in Office 2021 and later.
   /// </summary>
-  private static String? GetSiteId(DocumentFormat.OpenXml.Office2021.MipLabelMetaData.ClassificationLabel openXmlElement)
+  private static String? GetSiteId(DXO2021MipLabelMeta.ClassificationLabel openXmlElement)
   {
     return openXmlElement?.SiteId?.Value;
   }
   
-  private static void SetSiteId(DocumentFormat.OpenXml.Office2021.MipLabelMetaData.ClassificationLabel openXmlElement, String? value)
+  private static void SetSiteId(DXO2021MipLabelMeta.ClassificationLabel openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.SiteId = new StringValue { Value = value };
@@ -104,12 +104,12 @@ public static class ClassificationLabelConverter
   /// <summary>
   /// actionId, this property is only available in Office 2021 and later.
   /// </summary>
-  private static String? GetActionId(DocumentFormat.OpenXml.Office2021.MipLabelMetaData.ClassificationLabel openXmlElement)
+  private static String? GetActionId(DXO2021MipLabelMeta.ClassificationLabel openXmlElement)
   {
     return openXmlElement?.ActionId?.Value;
   }
   
-  private static void SetActionId(DocumentFormat.OpenXml.Office2021.MipLabelMetaData.ClassificationLabel openXmlElement, String? value)
+  private static void SetActionId(DXO2021MipLabelMeta.ClassificationLabel openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.ActionId = new StringValue { Value = value };
@@ -120,12 +120,12 @@ public static class ClassificationLabelConverter
   /// <summary>
   /// contentBits, this property is only available in Office 2021 and later.
   /// </summary>
-  private static UInt32? GetContentBits(DocumentFormat.OpenXml.Office2021.MipLabelMetaData.ClassificationLabel openXmlElement)
+  private static UInt32? GetContentBits(DXO2021MipLabelMeta.ClassificationLabel openXmlElement)
   {
     return openXmlElement.ContentBits?.Value;
   }
   
-  private static void SetContentBits(DocumentFormat.OpenXml.Office2021.MipLabelMetaData.ClassificationLabel openXmlElement, UInt32? value)
+  private static void SetContentBits(DXO2021MipLabelMeta.ClassificationLabel openXmlElement, UInt32? value)
   {
     openXmlElement.ContentBits = value;
   }
@@ -133,12 +133,12 @@ public static class ClassificationLabelConverter
   /// <summary>
   /// removed, this property is only available in Office 2021 and later.
   /// </summary>
-  private static Boolean? GetRemoved(DocumentFormat.OpenXml.Office2021.MipLabelMetaData.ClassificationLabel openXmlElement)
+  private static Boolean? GetRemoved(DXO2021MipLabelMeta.ClassificationLabel openXmlElement)
   {
     return openXmlElement?.Removed?.Value;
   }
   
-  private static void SetRemoved(DocumentFormat.OpenXml.Office2021.MipLabelMetaData.ClassificationLabel openXmlElement, Boolean? value)
+  private static void SetRemoved(DXO2021MipLabelMeta.ClassificationLabel openXmlElement, Boolean? value)
   {
     if (value != null)
       openXmlElement.Removed = new BooleanValue { Value = (Boolean)value };
@@ -146,11 +146,11 @@ public static class ClassificationLabelConverter
       openXmlElement.Removed = null;
   }
   
-  public static DocumentModel.ClassificationLabel? CreateModelElement(DocumentFormat.OpenXml.Office2021.MipLabelMetaData.ClassificationLabel? openXmlElement)
+  public static DM.ClassificationLabel? CreateModelElement(DXO2021MipLabelMeta.ClassificationLabel? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.ClassificationLabel();
+      var value = new DM.ClassificationLabel();
       value.Id = GetId(openXmlElement);
       value.Enabled = GetEnabled(openXmlElement);
       value.SetDate = GetSetDate(openXmlElement);
@@ -165,8 +165,8 @@ public static class ClassificationLabelConverter
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.ClassificationLabel? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Office2021.MipLabelMetaData.ClassificationLabel, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DM.ClassificationLabel? value)
+    where OpenXmlElementType: DXO2021MipLabelMeta.ClassificationLabel, new()
   {
     if (value != null)
     {

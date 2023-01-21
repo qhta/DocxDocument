@@ -8,12 +8,12 @@ public static class PictureAttributionSourceURLConverter
   /// <summary>
   /// id, this property is only available in Office 2019 and later.
   /// </summary>
-  private static String? GetId(DocumentFormat.OpenXml.Office2019.Drawing.PictureAttributionSourceURL openXmlElement)
+  private static String? GetId(DXO2019Draw.PictureAttributionSourceURL openXmlElement)
   {
     return openXmlElement?.Id?.Value;
   }
   
-  private static void SetId(DocumentFormat.OpenXml.Office2019.Drawing.PictureAttributionSourceURL openXmlElement, String? value)
+  private static void SetId(DXO2019Draw.PictureAttributionSourceURL openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.Id = new StringValue { Value = value };
@@ -21,19 +21,19 @@ public static class PictureAttributionSourceURLConverter
       openXmlElement.Id = null;
   }
   
-  public static DocumentModel.Drawings.PictureAttributionSourceURL? CreateModelElement(DocumentFormat.OpenXml.Office2019.Drawing.PictureAttributionSourceURL? openXmlElement)
+  public static DMDraws.PictureAttributionSourceURL? CreateModelElement(DXO2019Draw.PictureAttributionSourceURL? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.PictureAttributionSourceURL();
+      var value = new DMDraws.PictureAttributionSourceURL();
       value.Id = GetId(openXmlElement);
       return value;
     }
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.PictureAttributionSourceURL? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Office2019.Drawing.PictureAttributionSourceURL, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDraws.PictureAttributionSourceURL? value)
+    where OpenXmlElementType: DXO2019Draw.PictureAttributionSourceURL, new()
   {
     if (value != null)
     {

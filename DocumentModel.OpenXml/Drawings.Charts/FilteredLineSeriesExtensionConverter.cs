@@ -8,40 +8,40 @@ public static class FilteredLineSeriesExtensionConverter
   /// <summary>
   /// LineChartSeries.
   /// </summary>
-  private static DocumentModel.Drawings.Charts.LineChartSeries3? GetLineChartSeries(DocumentFormat.OpenXml.Office2013.Drawing.Chart.FilteredLineSeriesExtension openXmlElement)
+  private static DMDrawsCharts.LineChartSeries3? GetLineChartSeries(DXO2013DrawChart.FilteredLineSeriesExtension openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office2013.Drawing.Chart.LineChartSeries>();
+    var itemElement = openXmlElement?.GetFirstChild<DXO2013DrawChart.LineChartSeries>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.Charts.LineChartSeries3Converter.CreateModelElement(itemElement);
+      return DMXDrawsCharts.LineChartSeries3Converter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetLineChartSeries(DocumentFormat.OpenXml.Office2013.Drawing.Chart.FilteredLineSeriesExtension openXmlElement, DocumentModel.Drawings.Charts.LineChartSeries3? value)
+  private static void SetLineChartSeries(DXO2013DrawChart.FilteredLineSeriesExtension openXmlElement, DMDrawsCharts.LineChartSeries3? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2013.Drawing.Chart.LineChartSeries>();
+    var itemElement = openXmlElement.GetFirstChild<DXO2013DrawChart.LineChartSeries>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Drawings.Charts.LineChartSeries3Converter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2013.Drawing.Chart.LineChartSeries>(value);
+      itemElement = DMXDrawsCharts.LineChartSeries3Converter.CreateOpenXmlElement<DXO2013DrawChart.LineChartSeries>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  public static DocumentModel.Drawings.Charts.FilteredLineSeriesExtension? CreateModelElement(DocumentFormat.OpenXml.Office2013.Drawing.Chart.FilteredLineSeriesExtension? openXmlElement)
+  public static DMDrawsCharts.FilteredLineSeriesExtension? CreateModelElement(DXO2013DrawChart.FilteredLineSeriesExtension? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.Charts.FilteredLineSeriesExtension();
+      var value = new DMDrawsCharts.FilteredLineSeriesExtension();
       value.LineChartSeries = GetLineChartSeries(openXmlElement);
       return value;
     }
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.Charts.FilteredLineSeriesExtension? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Office2013.Drawing.Chart.FilteredLineSeriesExtension, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDrawsCharts.FilteredLineSeriesExtension? value)
+    where OpenXmlElementType: DXO2013DrawChart.FilteredLineSeriesExtension, new()
   {
     if (value != null)
     {

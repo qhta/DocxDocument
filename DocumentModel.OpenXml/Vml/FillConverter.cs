@@ -8,12 +8,12 @@ public static class FillConverter
   /// <summary>
   /// Unique Identifier
   /// </summary>
-  private static String? GetId(DocumentFormat.OpenXml.Vml.Fill openXmlElement)
+  private static String? GetId(DXVml.Fill openXmlElement)
   {
     return openXmlElement?.Id?.Value;
   }
   
-  private static void SetId(DocumentFormat.OpenXml.Vml.Fill openXmlElement, String? value)
+  private static void SetId(DXVml.Fill openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.Id = new StringValue { Value = value };
@@ -24,25 +24,25 @@ public static class FillConverter
   /// <summary>
   /// Fill Type
   /// </summary>
-  private static DocumentModel.Vml.FillKind? GetType(DocumentFormat.OpenXml.Vml.Fill openXmlElement)
+  private static DMVml.FillKind? GetType(DXVml.Fill openXmlElement)
   {
-    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Vml.FillTypeValues, DocumentModel.Vml.FillKind>(openXmlElement?.Type?.Value);
+    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Vml.FillTypeValues, DMVml.FillKind>(openXmlElement?.Type?.Value);
   }
   
-  private static void SetType(DocumentFormat.OpenXml.Vml.Fill openXmlElement, DocumentModel.Vml.FillKind? value)
+  private static void SetType(DXVml.Fill openXmlElement, DMVml.FillKind? value)
   {
-    openXmlElement.Type = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Vml.FillTypeValues, DocumentModel.Vml.FillKind>(value);
+    openXmlElement.Type = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Vml.FillTypeValues, DMVml.FillKind>(value);
   }
   
   /// <summary>
   /// Fill Toggle
   /// </summary>
-  private static Boolean? GetOn(DocumentFormat.OpenXml.Vml.Fill openXmlElement)
+  private static Boolean? GetOn(DXVml.Fill openXmlElement)
   {
     return openXmlElement?.On?.Value;
   }
   
-  private static void SetOn(DocumentFormat.OpenXml.Vml.Fill openXmlElement, Boolean? value)
+  private static void SetOn(DXVml.Fill openXmlElement, Boolean? value)
   {
     if (value != null)
       openXmlElement.On = value;
@@ -53,12 +53,12 @@ public static class FillConverter
   /// <summary>
   /// Primary Color
   /// </summary>
-  private static String? GetColor(DocumentFormat.OpenXml.Vml.Fill openXmlElement)
+  private static String? GetColor(DXVml.Fill openXmlElement)
   {
     return openXmlElement?.Color?.Value;
   }
   
-  private static void SetColor(DocumentFormat.OpenXml.Vml.Fill openXmlElement, String? value)
+  private static void SetColor(DXVml.Fill openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.Color = new StringValue { Value = value };
@@ -69,12 +69,12 @@ public static class FillConverter
   /// <summary>
   /// Primary Color Opacity
   /// </summary>
-  private static String? GetOpacity(DocumentFormat.OpenXml.Vml.Fill openXmlElement)
+  private static String? GetOpacity(DXVml.Fill openXmlElement)
   {
     return openXmlElement?.Opacity?.Value;
   }
   
-  private static void SetOpacity(DocumentFormat.OpenXml.Vml.Fill openXmlElement, String? value)
+  private static void SetOpacity(DXVml.Fill openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.Opacity = new StringValue { Value = value };
@@ -85,12 +85,12 @@ public static class FillConverter
   /// <summary>
   /// Secondary Color
   /// </summary>
-  private static String? GetColor2(DocumentFormat.OpenXml.Vml.Fill openXmlElement)
+  private static String? GetColor2(DXVml.Fill openXmlElement)
   {
     return openXmlElement?.Color2?.Value;
   }
   
-  private static void SetColor2(DocumentFormat.OpenXml.Vml.Fill openXmlElement, String? value)
+  private static void SetColor2(DXVml.Fill openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.Color2 = new StringValue { Value = value };
@@ -101,12 +101,12 @@ public static class FillConverter
   /// <summary>
   /// Fill Image Source
   /// </summary>
-  private static String? GetSource(DocumentFormat.OpenXml.Vml.Fill openXmlElement)
+  private static String? GetSource(DXVml.Fill openXmlElement)
   {
     return openXmlElement?.Source?.Value;
   }
   
-  private static void SetSource(DocumentFormat.OpenXml.Vml.Fill openXmlElement, String? value)
+  private static void SetSource(DXVml.Fill openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.Source = new StringValue { Value = value };
@@ -117,12 +117,12 @@ public static class FillConverter
   /// <summary>
   /// Hyperlink Target
   /// </summary>
-  private static String? GetHref(DocumentFormat.OpenXml.Vml.Fill openXmlElement)
+  private static String? GetHref(DXVml.Fill openXmlElement)
   {
     return openXmlElement?.Href?.Value;
   }
   
-  private static void SetHref(DocumentFormat.OpenXml.Vml.Fill openXmlElement, String? value)
+  private static void SetHref(DXVml.Fill openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.Href = new StringValue { Value = value };
@@ -133,12 +133,12 @@ public static class FillConverter
   /// <summary>
   /// Alternate Image Reference Location
   /// </summary>
-  private static String? GetAlternateImageReference(DocumentFormat.OpenXml.Vml.Fill openXmlElement)
+  private static String? GetAlternateImageReference(DXVml.Fill openXmlElement)
   {
     return openXmlElement?.AlternateImageReference?.Value;
   }
   
-  private static void SetAlternateImageReference(DocumentFormat.OpenXml.Vml.Fill openXmlElement, String? value)
+  private static void SetAlternateImageReference(DXVml.Fill openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.AlternateImageReference = new StringValue { Value = value };
@@ -149,12 +149,12 @@ public static class FillConverter
   /// <summary>
   /// Fill Image Size
   /// </summary>
-  private static String? GetSize(DocumentFormat.OpenXml.Vml.Fill openXmlElement)
+  private static String? GetSize(DXVml.Fill openXmlElement)
   {
     return openXmlElement?.Size?.Value;
   }
   
-  private static void SetSize(DocumentFormat.OpenXml.Vml.Fill openXmlElement, String? value)
+  private static void SetSize(DXVml.Fill openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.Size = new StringValue { Value = value };
@@ -165,12 +165,12 @@ public static class FillConverter
   /// <summary>
   /// Fill Image Origin
   /// </summary>
-  private static String? GetOrigin(DocumentFormat.OpenXml.Vml.Fill openXmlElement)
+  private static String? GetOrigin(DXVml.Fill openXmlElement)
   {
     return openXmlElement?.Origin?.Value;
   }
   
-  private static void SetOrigin(DocumentFormat.OpenXml.Vml.Fill openXmlElement, String? value)
+  private static void SetOrigin(DXVml.Fill openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.Origin = new StringValue { Value = value };
@@ -181,12 +181,12 @@ public static class FillConverter
   /// <summary>
   /// Fill Image Position
   /// </summary>
-  private static String? GetPosition(DocumentFormat.OpenXml.Vml.Fill openXmlElement)
+  private static String? GetPosition(DXVml.Fill openXmlElement)
   {
     return openXmlElement?.Position?.Value;
   }
   
-  private static void SetPosition(DocumentFormat.OpenXml.Vml.Fill openXmlElement, String? value)
+  private static void SetPosition(DXVml.Fill openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.Position = new StringValue { Value = value };
@@ -197,25 +197,25 @@ public static class FillConverter
   /// <summary>
   /// Image Aspect Ratio
   /// </summary>
-  private static DocumentModel.Vml.ImageAspectKind? GetAspect(DocumentFormat.OpenXml.Vml.Fill openXmlElement)
+  private static DMVml.ImageAspectKind? GetAspect(DXVml.Fill openXmlElement)
   {
-    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Vml.ImageAspectValues, DocumentModel.Vml.ImageAspectKind>(openXmlElement?.Aspect?.Value);
+    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Vml.ImageAspectValues, DMVml.ImageAspectKind>(openXmlElement?.Aspect?.Value);
   }
   
-  private static void SetAspect(DocumentFormat.OpenXml.Vml.Fill openXmlElement, DocumentModel.Vml.ImageAspectKind? value)
+  private static void SetAspect(DXVml.Fill openXmlElement, DMVml.ImageAspectKind? value)
   {
-    openXmlElement.Aspect = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Vml.ImageAspectValues, DocumentModel.Vml.ImageAspectKind>(value);
+    openXmlElement.Aspect = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Vml.ImageAspectValues, DMVml.ImageAspectKind>(value);
   }
   
   /// <summary>
   /// Intermediate Colors
   /// </summary>
-  private static String? GetColors(DocumentFormat.OpenXml.Vml.Fill openXmlElement)
+  private static String? GetColors(DXVml.Fill openXmlElement)
   {
     return openXmlElement?.Colors?.Value;
   }
   
-  private static void SetColors(DocumentFormat.OpenXml.Vml.Fill openXmlElement, String? value)
+  private static void SetColors(DXVml.Fill openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.Colors = new StringValue { Value = value };
@@ -226,12 +226,12 @@ public static class FillConverter
   /// <summary>
   /// Gradient Angle
   /// </summary>
-  private static Decimal? GetAngle(DocumentFormat.OpenXml.Vml.Fill openXmlElement)
+  private static Decimal? GetAngle(DXVml.Fill openXmlElement)
   {
     return openXmlElement.Angle?.Value;
   }
   
-  private static void SetAngle(DocumentFormat.OpenXml.Vml.Fill openXmlElement, Decimal? value)
+  private static void SetAngle(DXVml.Fill openXmlElement, Decimal? value)
   {
     openXmlElement.Angle = value;
   }
@@ -239,12 +239,12 @@ public static class FillConverter
   /// <summary>
   /// Align Image With Shape
   /// </summary>
-  private static Boolean? GetAlignShape(DocumentFormat.OpenXml.Vml.Fill openXmlElement)
+  private static Boolean? GetAlignShape(DXVml.Fill openXmlElement)
   {
     return openXmlElement?.AlignShape?.Value;
   }
   
-  private static void SetAlignShape(DocumentFormat.OpenXml.Vml.Fill openXmlElement, Boolean? value)
+  private static void SetAlignShape(DXVml.Fill openXmlElement, Boolean? value)
   {
     if (value != null)
       openXmlElement.AlignShape = value;
@@ -255,12 +255,12 @@ public static class FillConverter
   /// <summary>
   /// Gradient Center
   /// </summary>
-  private static String? GetFocus(DocumentFormat.OpenXml.Vml.Fill openXmlElement)
+  private static String? GetFocus(DXVml.Fill openXmlElement)
   {
     return openXmlElement?.Focus?.Value;
   }
   
-  private static void SetFocus(DocumentFormat.OpenXml.Vml.Fill openXmlElement, String? value)
+  private static void SetFocus(DXVml.Fill openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.Focus = new StringValue { Value = value };
@@ -271,12 +271,12 @@ public static class FillConverter
   /// <summary>
   /// Radial Gradient Size
   /// </summary>
-  private static String? GetFocusSize(DocumentFormat.OpenXml.Vml.Fill openXmlElement)
+  private static String? GetFocusSize(DXVml.Fill openXmlElement)
   {
     return openXmlElement?.FocusSize?.Value;
   }
   
-  private static void SetFocusSize(DocumentFormat.OpenXml.Vml.Fill openXmlElement, String? value)
+  private static void SetFocusSize(DXVml.Fill openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.FocusSize = new StringValue { Value = value };
@@ -287,12 +287,12 @@ public static class FillConverter
   /// <summary>
   /// Radial Gradient Center
   /// </summary>
-  private static String? GetFocusPosition(DocumentFormat.OpenXml.Vml.Fill openXmlElement)
+  private static String? GetFocusPosition(DXVml.Fill openXmlElement)
   {
     return openXmlElement?.FocusPosition?.Value;
   }
   
-  private static void SetFocusPosition(DocumentFormat.OpenXml.Vml.Fill openXmlElement, String? value)
+  private static void SetFocusPosition(DXVml.Fill openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.FocusPosition = new StringValue { Value = value };
@@ -303,25 +303,25 @@ public static class FillConverter
   /// <summary>
   /// Gradient Fill Method
   /// </summary>
-  private static DocumentModel.Vml.FillMethodKind? GetMethod(DocumentFormat.OpenXml.Vml.Fill openXmlElement)
+  private static DMVml.FillMethodKind? GetMethod(DXVml.Fill openXmlElement)
   {
-    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Vml.FillMethodValues, DocumentModel.Vml.FillMethodKind>(openXmlElement?.Method?.Value);
+    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Vml.FillMethodValues, DMVml.FillMethodKind>(openXmlElement?.Method?.Value);
   }
   
-  private static void SetMethod(DocumentFormat.OpenXml.Vml.Fill openXmlElement, DocumentModel.Vml.FillMethodKind? value)
+  private static void SetMethod(DXVml.Fill openXmlElement, DMVml.FillMethodKind? value)
   {
-    openXmlElement.Method = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Vml.FillMethodValues, DocumentModel.Vml.FillMethodKind>(value);
+    openXmlElement.Method = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Vml.FillMethodValues, DMVml.FillMethodKind>(value);
   }
   
   /// <summary>
   /// Detect Mouse Click
   /// </summary>
-  private static Boolean? GetDetectMouseClick(DocumentFormat.OpenXml.Vml.Fill openXmlElement)
+  private static Boolean? GetDetectMouseClick(DXVml.Fill openXmlElement)
   {
     return openXmlElement?.DetectMouseClick?.Value;
   }
   
-  private static void SetDetectMouseClick(DocumentFormat.OpenXml.Vml.Fill openXmlElement, Boolean? value)
+  private static void SetDetectMouseClick(DXVml.Fill openXmlElement, Boolean? value)
   {
     if (value != null)
       openXmlElement.DetectMouseClick = value;
@@ -332,12 +332,12 @@ public static class FillConverter
   /// <summary>
   /// Title
   /// </summary>
-  private static String? GetTitle(DocumentFormat.OpenXml.Vml.Fill openXmlElement)
+  private static String? GetTitle(DXVml.Fill openXmlElement)
   {
     return openXmlElement?.Title?.Value;
   }
   
-  private static void SetTitle(DocumentFormat.OpenXml.Vml.Fill openXmlElement, String? value)
+  private static void SetTitle(DXVml.Fill openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.Title = new StringValue { Value = value };
@@ -348,12 +348,12 @@ public static class FillConverter
   /// <summary>
   /// Secondary Color Opacity
   /// </summary>
-  private static String? GetOpacity2(DocumentFormat.OpenXml.Vml.Fill openXmlElement)
+  private static String? GetOpacity2(DXVml.Fill openXmlElement)
   {
     return openXmlElement?.Opacity2?.Value;
   }
   
-  private static void SetOpacity2(DocumentFormat.OpenXml.Vml.Fill openXmlElement, String? value)
+  private static void SetOpacity2(DXVml.Fill openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.Opacity2 = new StringValue { Value = value };
@@ -364,12 +364,12 @@ public static class FillConverter
   /// <summary>
   /// Recolor Fill as Picture
   /// </summary>
-  private static Boolean? GetRecolor(DocumentFormat.OpenXml.Vml.Fill openXmlElement)
+  private static Boolean? GetRecolor(DXVml.Fill openXmlElement)
   {
     return openXmlElement?.Recolor?.Value;
   }
   
-  private static void SetRecolor(DocumentFormat.OpenXml.Vml.Fill openXmlElement, Boolean? value)
+  private static void SetRecolor(DXVml.Fill openXmlElement, Boolean? value)
   {
     if (value != null)
       openXmlElement.Recolor = value;
@@ -380,12 +380,12 @@ public static class FillConverter
   /// <summary>
   /// Rotate Fill with Shape
   /// </summary>
-  private static Boolean? GetRotate(DocumentFormat.OpenXml.Vml.Fill openXmlElement)
+  private static Boolean? GetRotate(DXVml.Fill openXmlElement)
   {
     return openXmlElement?.Rotate?.Value;
   }
   
-  private static void SetRotate(DocumentFormat.OpenXml.Vml.Fill openXmlElement, Boolean? value)
+  private static void SetRotate(DXVml.Fill openXmlElement, Boolean? value)
   {
     if (value != null)
       openXmlElement.Rotate = value;
@@ -396,12 +396,12 @@ public static class FillConverter
   /// <summary>
   /// Relationship to Part
   /// </summary>
-  private static String? GetRelationshipId(DocumentFormat.OpenXml.Vml.Fill openXmlElement)
+  private static String? GetRelationshipId(DXVml.Fill openXmlElement)
   {
     return openXmlElement?.RelationshipId?.Value;
   }
   
-  private static void SetRelationshipId(DocumentFormat.OpenXml.Vml.Fill openXmlElement, String? value)
+  private static void SetRelationshipId(DXVml.Fill openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.RelationshipId = new StringValue { Value = value };
@@ -412,32 +412,32 @@ public static class FillConverter
   /// <summary>
   /// FillExtendedProperties.
   /// </summary>
-  private static DocumentModel.Vml.FillExtendedProperties? GetFillExtendedProperties(DocumentFormat.OpenXml.Vml.Fill openXmlElement)
+  private static DMVml.FillExtendedProperties? GetFillExtendedProperties(DXVml.Fill openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Vml.Office.FillExtendedProperties>();
+    var itemElement = openXmlElement?.GetFirstChild<DXVmlO.FillExtendedProperties>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Vml.FillExtendedPropertiesConverter.CreateModelElement(itemElement);
+      return DMXVml.FillExtendedPropertiesConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetFillExtendedProperties(DocumentFormat.OpenXml.Vml.Fill openXmlElement, DocumentModel.Vml.FillExtendedProperties? value)
+  private static void SetFillExtendedProperties(DXVml.Fill openXmlElement, DMVml.FillExtendedProperties? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Vml.Office.FillExtendedProperties>();
+    var itemElement = openXmlElement.GetFirstChild<DXVmlO.FillExtendedProperties>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Vml.FillExtendedPropertiesConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Vml.Office.FillExtendedProperties>(value);
+      itemElement = DMXVml.FillExtendedPropertiesConverter.CreateOpenXmlElement<DXVmlO.FillExtendedProperties>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  public static DocumentModel.Vml.Fill? CreateModelElement(DocumentFormat.OpenXml.Vml.Fill? openXmlElement)
+  public static DMVml.Fill? CreateModelElement(DXVml.Fill? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Vml.Fill();
+      var value = new DMVml.Fill();
       value.Id = GetId(openXmlElement);
       value.Type = GetType(openXmlElement);
       value.On = GetOn(openXmlElement);
@@ -470,8 +470,8 @@ public static class FillConverter
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Vml.Fill? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Vml.Fill, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMVml.Fill? value)
+    where OpenXmlElementType: DXVml.Fill, new()
   {
     if (value != null)
     {

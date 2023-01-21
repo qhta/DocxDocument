@@ -5,40 +5,40 @@ namespace DocumentModel.OpenXml.Wordprocessing;
 /// </summary>
 public static class RecipientsConverter
 {
-  private static DocumentModel.Wordprocessing.RecipientData? GetRecipientData(DocumentFormat.OpenXml.Wordprocessing.Recipients openXmlElement)
+  private static DMW.RecipientData? GetRecipientData(DXW.Recipients openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.RecipientData>();
+    var itemElement = openXmlElement?.GetFirstChild<DXW.RecipientData>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Wordprocessing.RecipientDataConverter.CreateModelElement(itemElement);
+      return DMXW.RecipientDataConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetRecipientData(DocumentFormat.OpenXml.Wordprocessing.Recipients openXmlElement, DocumentModel.Wordprocessing.RecipientData? value)
+  private static void SetRecipientData(DXW.Recipients openXmlElement, DMW.RecipientData? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.RecipientData>();
+    var itemElement = openXmlElement.GetFirstChild<DXW.RecipientData>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Wordprocessing.RecipientDataConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.RecipientData>(value);
+      itemElement = DMXW.RecipientDataConverter.CreateOpenXmlElement<DXW.RecipientData>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  public static DocumentModel.Wordprocessing.Recipients? CreateModelElement(DocumentFormat.OpenXml.Wordprocessing.Recipients? openXmlElement)
+  public static DMW.Recipients? CreateModelElement(DXW.Recipients? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Wordprocessing.Recipients();
+      var value = new DMW.Recipients();
       value.RecipientData = GetRecipientData(openXmlElement);
       return value;
     }
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.Recipients? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Wordprocessing.Recipients, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMW.Recipients? value)
+    where OpenXmlElementType: DXW.Recipients, new()
   {
     if (value != null)
     {

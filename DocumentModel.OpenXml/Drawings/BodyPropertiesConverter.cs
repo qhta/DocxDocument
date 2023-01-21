@@ -8,12 +8,12 @@ public static class BodyPropertiesConverter
   /// <summary>
   /// Rotation
   /// </summary>
-  private static Int32? GetRotation(DocumentFormat.OpenXml.Drawing.BodyProperties openXmlElement)
+  private static Int32? GetRotation(DXDraw.BodyProperties openXmlElement)
   {
     return openXmlElement.Rotation?.Value;
   }
   
-  private static void SetRotation(DocumentFormat.OpenXml.Drawing.BodyProperties openXmlElement, Int32? value)
+  private static void SetRotation(DXDraw.BodyProperties openXmlElement, Int32? value)
   {
     openXmlElement.Rotation = value;
   }
@@ -21,12 +21,12 @@ public static class BodyPropertiesConverter
   /// <summary>
   /// Paragraph Spacing
   /// </summary>
-  private static Boolean? GetUseParagraphSpacing(DocumentFormat.OpenXml.Drawing.BodyProperties openXmlElement)
+  private static Boolean? GetUseParagraphSpacing(DXDraw.BodyProperties openXmlElement)
   {
     return openXmlElement?.UseParagraphSpacing?.Value;
   }
   
-  private static void SetUseParagraphSpacing(DocumentFormat.OpenXml.Drawing.BodyProperties openXmlElement, Boolean? value)
+  private static void SetUseParagraphSpacing(DXDraw.BodyProperties openXmlElement, Boolean? value)
   {
     if (value != null)
       openXmlElement.UseParagraphSpacing = new BooleanValue { Value = (Boolean)value };
@@ -37,64 +37,64 @@ public static class BodyPropertiesConverter
   /// <summary>
   /// Text Vertical Overflow
   /// </summary>
-  private static DocumentModel.Drawings.TextVerticalOverflowKind? GetVerticalOverflow(DocumentFormat.OpenXml.Drawing.BodyProperties openXmlElement)
+  private static DMDraws.TextVerticalOverflowKind? GetVerticalOverflow(DXDraw.BodyProperties openXmlElement)
   {
-    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Drawing.TextVerticalOverflowValues, DocumentModel.Drawings.TextVerticalOverflowKind>(openXmlElement?.VerticalOverflow?.Value);
+    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Drawing.TextVerticalOverflowValues, DMDraws.TextVerticalOverflowKind>(openXmlElement?.VerticalOverflow?.Value);
   }
   
-  private static void SetVerticalOverflow(DocumentFormat.OpenXml.Drawing.BodyProperties openXmlElement, DocumentModel.Drawings.TextVerticalOverflowKind? value)
+  private static void SetVerticalOverflow(DXDraw.BodyProperties openXmlElement, DMDraws.TextVerticalOverflowKind? value)
   {
-    openXmlElement.VerticalOverflow = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Drawing.TextVerticalOverflowValues, DocumentModel.Drawings.TextVerticalOverflowKind>(value);
+    openXmlElement.VerticalOverflow = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Drawing.TextVerticalOverflowValues, DMDraws.TextVerticalOverflowKind>(value);
   }
   
   /// <summary>
   /// Text Horizontal Overflow
   /// </summary>
-  private static DocumentModel.Drawings.TextHorizontalOverflowKind? GetHorizontalOverflow(DocumentFormat.OpenXml.Drawing.BodyProperties openXmlElement)
+  private static DMDraws.TextHorizontalOverflowKind? GetHorizontalOverflow(DXDraw.BodyProperties openXmlElement)
   {
-    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Drawing.TextHorizontalOverflowValues, DocumentModel.Drawings.TextHorizontalOverflowKind>(openXmlElement?.HorizontalOverflow?.Value);
+    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Drawing.TextHorizontalOverflowValues, DMDraws.TextHorizontalOverflowKind>(openXmlElement?.HorizontalOverflow?.Value);
   }
   
-  private static void SetHorizontalOverflow(DocumentFormat.OpenXml.Drawing.BodyProperties openXmlElement, DocumentModel.Drawings.TextHorizontalOverflowKind? value)
+  private static void SetHorizontalOverflow(DXDraw.BodyProperties openXmlElement, DMDraws.TextHorizontalOverflowKind? value)
   {
-    openXmlElement.HorizontalOverflow = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Drawing.TextHorizontalOverflowValues, DocumentModel.Drawings.TextHorizontalOverflowKind>(value);
+    openXmlElement.HorizontalOverflow = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Drawing.TextHorizontalOverflowValues, DMDraws.TextHorizontalOverflowKind>(value);
   }
   
   /// <summary>
   /// Vertical Text
   /// </summary>
-  private static DocumentModel.Drawings.TextVerticalKind? GetVertical(DocumentFormat.OpenXml.Drawing.BodyProperties openXmlElement)
+  private static DMDraws.TextVerticalKind? GetVertical(DXDraw.BodyProperties openXmlElement)
   {
-    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Drawing.TextVerticalValues, DocumentModel.Drawings.TextVerticalKind>(openXmlElement?.Vertical?.Value);
+    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Drawing.TextVerticalValues, DMDraws.TextVerticalKind>(openXmlElement?.Vertical?.Value);
   }
   
-  private static void SetVertical(DocumentFormat.OpenXml.Drawing.BodyProperties openXmlElement, DocumentModel.Drawings.TextVerticalKind? value)
+  private static void SetVertical(DXDraw.BodyProperties openXmlElement, DMDraws.TextVerticalKind? value)
   {
-    openXmlElement.Vertical = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Drawing.TextVerticalValues, DocumentModel.Drawings.TextVerticalKind>(value);
+    openXmlElement.Vertical = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Drawing.TextVerticalValues, DMDraws.TextVerticalKind>(value);
   }
   
   /// <summary>
   /// Text Wrapping Type
   /// </summary>
-  private static DocumentModel.Drawings.TextWrappingKind? GetWrap(DocumentFormat.OpenXml.Drawing.BodyProperties openXmlElement)
+  private static DMDraws.TextWrappingKind? GetWrap(DXDraw.BodyProperties openXmlElement)
   {
-    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Drawing.TextWrappingValues, DocumentModel.Drawings.TextWrappingKind>(openXmlElement?.Wrap?.Value);
+    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Drawing.TextWrappingValues, DMDraws.TextWrappingKind>(openXmlElement?.Wrap?.Value);
   }
   
-  private static void SetWrap(DocumentFormat.OpenXml.Drawing.BodyProperties openXmlElement, DocumentModel.Drawings.TextWrappingKind? value)
+  private static void SetWrap(DXDraw.BodyProperties openXmlElement, DMDraws.TextWrappingKind? value)
   {
-    openXmlElement.Wrap = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Drawing.TextWrappingValues, DocumentModel.Drawings.TextWrappingKind>(value);
+    openXmlElement.Wrap = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Drawing.TextWrappingValues, DMDraws.TextWrappingKind>(value);
   }
   
   /// <summary>
   /// Left Inset
   /// </summary>
-  private static Int32? GetLeftInset(DocumentFormat.OpenXml.Drawing.BodyProperties openXmlElement)
+  private static Int32? GetLeftInset(DXDraw.BodyProperties openXmlElement)
   {
     return openXmlElement.LeftInset?.Value;
   }
   
-  private static void SetLeftInset(DocumentFormat.OpenXml.Drawing.BodyProperties openXmlElement, Int32? value)
+  private static void SetLeftInset(DXDraw.BodyProperties openXmlElement, Int32? value)
   {
     openXmlElement.LeftInset = value;
   }
@@ -102,12 +102,12 @@ public static class BodyPropertiesConverter
   /// <summary>
   /// Top Inset
   /// </summary>
-  private static Int32? GetTopInset(DocumentFormat.OpenXml.Drawing.BodyProperties openXmlElement)
+  private static Int32? GetTopInset(DXDraw.BodyProperties openXmlElement)
   {
     return openXmlElement.TopInset?.Value;
   }
   
-  private static void SetTopInset(DocumentFormat.OpenXml.Drawing.BodyProperties openXmlElement, Int32? value)
+  private static void SetTopInset(DXDraw.BodyProperties openXmlElement, Int32? value)
   {
     openXmlElement.TopInset = value;
   }
@@ -115,12 +115,12 @@ public static class BodyPropertiesConverter
   /// <summary>
   /// Right Inset
   /// </summary>
-  private static Int32? GetRightInset(DocumentFormat.OpenXml.Drawing.BodyProperties openXmlElement)
+  private static Int32? GetRightInset(DXDraw.BodyProperties openXmlElement)
   {
     return openXmlElement.RightInset?.Value;
   }
   
-  private static void SetRightInset(DocumentFormat.OpenXml.Drawing.BodyProperties openXmlElement, Int32? value)
+  private static void SetRightInset(DXDraw.BodyProperties openXmlElement, Int32? value)
   {
     openXmlElement.RightInset = value;
   }
@@ -128,12 +128,12 @@ public static class BodyPropertiesConverter
   /// <summary>
   /// Bottom Inset
   /// </summary>
-  private static Int32? GetBottomInset(DocumentFormat.OpenXml.Drawing.BodyProperties openXmlElement)
+  private static Int32? GetBottomInset(DXDraw.BodyProperties openXmlElement)
   {
     return openXmlElement.BottomInset?.Value;
   }
   
-  private static void SetBottomInset(DocumentFormat.OpenXml.Drawing.BodyProperties openXmlElement, Int32? value)
+  private static void SetBottomInset(DXDraw.BodyProperties openXmlElement, Int32? value)
   {
     openXmlElement.BottomInset = value;
   }
@@ -141,12 +141,12 @@ public static class BodyPropertiesConverter
   /// <summary>
   /// Number of Columns
   /// </summary>
-  private static Int32? GetColumnCount(DocumentFormat.OpenXml.Drawing.BodyProperties openXmlElement)
+  private static Int32? GetColumnCount(DXDraw.BodyProperties openXmlElement)
   {
     return openXmlElement.ColumnCount?.Value;
   }
   
-  private static void SetColumnCount(DocumentFormat.OpenXml.Drawing.BodyProperties openXmlElement, Int32? value)
+  private static void SetColumnCount(DXDraw.BodyProperties openXmlElement, Int32? value)
   {
     openXmlElement.ColumnCount = value;
   }
@@ -154,12 +154,12 @@ public static class BodyPropertiesConverter
   /// <summary>
   /// Space Between Columns
   /// </summary>
-  private static Int32? GetColumnSpacing(DocumentFormat.OpenXml.Drawing.BodyProperties openXmlElement)
+  private static Int32? GetColumnSpacing(DXDraw.BodyProperties openXmlElement)
   {
     return openXmlElement.ColumnSpacing?.Value;
   }
   
-  private static void SetColumnSpacing(DocumentFormat.OpenXml.Drawing.BodyProperties openXmlElement, Int32? value)
+  private static void SetColumnSpacing(DXDraw.BodyProperties openXmlElement, Int32? value)
   {
     openXmlElement.ColumnSpacing = value;
   }
@@ -167,12 +167,12 @@ public static class BodyPropertiesConverter
   /// <summary>
   /// Columns Right-To-Left
   /// </summary>
-  private static Boolean? GetRightToLeftColumns(DocumentFormat.OpenXml.Drawing.BodyProperties openXmlElement)
+  private static Boolean? GetRightToLeftColumns(DXDraw.BodyProperties openXmlElement)
   {
     return openXmlElement?.RightToLeftColumns?.Value;
   }
   
-  private static void SetRightToLeftColumns(DocumentFormat.OpenXml.Drawing.BodyProperties openXmlElement, Boolean? value)
+  private static void SetRightToLeftColumns(DXDraw.BodyProperties openXmlElement, Boolean? value)
   {
     if (value != null)
       openXmlElement.RightToLeftColumns = new BooleanValue { Value = (Boolean)value };
@@ -183,12 +183,12 @@ public static class BodyPropertiesConverter
   /// <summary>
   /// From WordArt
   /// </summary>
-  private static Boolean? GetFromWordArt(DocumentFormat.OpenXml.Drawing.BodyProperties openXmlElement)
+  private static Boolean? GetFromWordArt(DXDraw.BodyProperties openXmlElement)
   {
     return openXmlElement?.FromWordArt?.Value;
   }
   
-  private static void SetFromWordArt(DocumentFormat.OpenXml.Drawing.BodyProperties openXmlElement, Boolean? value)
+  private static void SetFromWordArt(DXDraw.BodyProperties openXmlElement, Boolean? value)
   {
     if (value != null)
       openXmlElement.FromWordArt = new BooleanValue { Value = (Boolean)value };
@@ -199,25 +199,25 @@ public static class BodyPropertiesConverter
   /// <summary>
   /// Anchor
   /// </summary>
-  private static DocumentModel.Drawings.TextAnchoringKind? GetAnchor(DocumentFormat.OpenXml.Drawing.BodyProperties openXmlElement)
+  private static DMDraws.TextAnchoringKind? GetAnchor(DXDraw.BodyProperties openXmlElement)
   {
-    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Drawing.TextAnchoringTypeValues, DocumentModel.Drawings.TextAnchoringKind>(openXmlElement?.Anchor?.Value);
+    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Drawing.TextAnchoringTypeValues, DMDraws.TextAnchoringKind>(openXmlElement?.Anchor?.Value);
   }
   
-  private static void SetAnchor(DocumentFormat.OpenXml.Drawing.BodyProperties openXmlElement, DocumentModel.Drawings.TextAnchoringKind? value)
+  private static void SetAnchor(DXDraw.BodyProperties openXmlElement, DMDraws.TextAnchoringKind? value)
   {
-    openXmlElement.Anchor = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Drawing.TextAnchoringTypeValues, DocumentModel.Drawings.TextAnchoringKind>(value);
+    openXmlElement.Anchor = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Drawing.TextAnchoringTypeValues, DMDraws.TextAnchoringKind>(value);
   }
   
   /// <summary>
   /// Anchor Center
   /// </summary>
-  private static Boolean? GetAnchorCenter(DocumentFormat.OpenXml.Drawing.BodyProperties openXmlElement)
+  private static Boolean? GetAnchorCenter(DXDraw.BodyProperties openXmlElement)
   {
     return openXmlElement?.AnchorCenter?.Value;
   }
   
-  private static void SetAnchorCenter(DocumentFormat.OpenXml.Drawing.BodyProperties openXmlElement, Boolean? value)
+  private static void SetAnchorCenter(DXDraw.BodyProperties openXmlElement, Boolean? value)
   {
     if (value != null)
       openXmlElement.AnchorCenter = new BooleanValue { Value = (Boolean)value };
@@ -228,12 +228,12 @@ public static class BodyPropertiesConverter
   /// <summary>
   /// Force Anti-Alias
   /// </summary>
-  private static Boolean? GetForceAntiAlias(DocumentFormat.OpenXml.Drawing.BodyProperties openXmlElement)
+  private static Boolean? GetForceAntiAlias(DXDraw.BodyProperties openXmlElement)
   {
     return openXmlElement?.ForceAntiAlias?.Value;
   }
   
-  private static void SetForceAntiAlias(DocumentFormat.OpenXml.Drawing.BodyProperties openXmlElement, Boolean? value)
+  private static void SetForceAntiAlias(DXDraw.BodyProperties openXmlElement, Boolean? value)
   {
     if (value != null)
       openXmlElement.ForceAntiAlias = new BooleanValue { Value = (Boolean)value };
@@ -244,12 +244,12 @@ public static class BodyPropertiesConverter
   /// <summary>
   /// Text Upright
   /// </summary>
-  private static Boolean? GetUpRight(DocumentFormat.OpenXml.Drawing.BodyProperties openXmlElement)
+  private static Boolean? GetUpRight(DXDraw.BodyProperties openXmlElement)
   {
     return openXmlElement?.UpRight?.Value;
   }
   
-  private static void SetUpRight(DocumentFormat.OpenXml.Drawing.BodyProperties openXmlElement, Boolean? value)
+  private static void SetUpRight(DXDraw.BodyProperties openXmlElement, Boolean? value)
   {
     if (value != null)
       openXmlElement.UpRight = new BooleanValue { Value = (Boolean)value };
@@ -260,12 +260,12 @@ public static class BodyPropertiesConverter
   /// <summary>
   /// Compatible Line Spacing
   /// </summary>
-  private static Boolean? GetCompatibleLineSpacing(DocumentFormat.OpenXml.Drawing.BodyProperties openXmlElement)
+  private static Boolean? GetCompatibleLineSpacing(DXDraw.BodyProperties openXmlElement)
   {
     return openXmlElement?.CompatibleLineSpacing?.Value;
   }
   
-  private static void SetCompatibleLineSpacing(DocumentFormat.OpenXml.Drawing.BodyProperties openXmlElement, Boolean? value)
+  private static void SetCompatibleLineSpacing(DXDraw.BodyProperties openXmlElement, Boolean? value)
   {
     if (value != null)
       openXmlElement.CompatibleLineSpacing = new BooleanValue { Value = (Boolean)value };
@@ -276,179 +276,179 @@ public static class BodyPropertiesConverter
   /// <summary>
   /// Preset Text Shape.
   /// </summary>
-  private static DocumentModel.Drawings.PresetTextWrap? GetPresetTextWrap(DocumentFormat.OpenXml.Drawing.BodyProperties openXmlElement)
+  private static DMDraws.PresetTextWrap? GetPresetTextWrap(DXDraw.BodyProperties openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.PresetTextWrap>();
+    var itemElement = openXmlElement?.GetFirstChild<DXDraw.PresetTextWrap>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.PresetTextWrapConverter.CreateModelElement(itemElement);
+      return DMXDraws.PresetTextWrapConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetPresetTextWrap(DocumentFormat.OpenXml.Drawing.BodyProperties openXmlElement, DocumentModel.Drawings.PresetTextWrap? value)
+  private static void SetPresetTextWrap(DXDraw.BodyProperties openXmlElement, DMDraws.PresetTextWrap? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.PresetTextWrap>();
+    var itemElement = openXmlElement.GetFirstChild<DXDraw.PresetTextWrap>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Drawings.PresetTextWrapConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.PresetTextWrap>(value);
+      itemElement = DMXDraws.PresetTextWrapConverter.CreateOpenXmlElement<DXDraw.PresetTextWrap>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static Boolean? GetNoAutoFit(DocumentFormat.OpenXml.Drawing.BodyProperties openXmlElement)
+  private static Boolean? GetNoAutoFit(DXDraw.BodyProperties openXmlElement)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.NoAutoFit>();
+    var itemElement = openXmlElement.GetFirstChild<DXDraw.NoAutoFit>();
     return itemElement != null;
   }
   
-  private static void SetNoAutoFit(DocumentFormat.OpenXml.Drawing.BodyProperties openXmlElement, Boolean? value)
+  private static void SetNoAutoFit(DXDraw.BodyProperties openXmlElement, Boolean? value)
   {
     if (value == false)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.NoAutoFit>();
+      var itemElement = openXmlElement.GetFirstChild<DXDraw.NoAutoFit>();
       if (itemElement != null)
         itemElement.Remove();
     }
     if (value == true)
     {
-      var itemElement = new DocumentFormat.OpenXml.Drawing.NoAutoFit();
+      var itemElement = new DXDraw.NoAutoFit();
       openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static DocumentModel.Drawings.NormalAutoFit? GetNormalAutoFit(DocumentFormat.OpenXml.Drawing.BodyProperties openXmlElement)
+  private static DMDraws.NormalAutoFit? GetNormalAutoFit(DXDraw.BodyProperties openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.NormalAutoFit>();
+    var itemElement = openXmlElement?.GetFirstChild<DXDraw.NormalAutoFit>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.NormalAutoFitConverter.CreateModelElement(itemElement);
+      return DMXDraws.NormalAutoFitConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetNormalAutoFit(DocumentFormat.OpenXml.Drawing.BodyProperties openXmlElement, DocumentModel.Drawings.NormalAutoFit? value)
+  private static void SetNormalAutoFit(DXDraw.BodyProperties openXmlElement, DMDraws.NormalAutoFit? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.NormalAutoFit>();
+    var itemElement = openXmlElement.GetFirstChild<DXDraw.NormalAutoFit>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Drawings.NormalAutoFitConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.NormalAutoFit>(value);
+      itemElement = DMXDraws.NormalAutoFitConverter.CreateOpenXmlElement<DXDraw.NormalAutoFit>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static Boolean? GetShapeAutoFit(DocumentFormat.OpenXml.Drawing.BodyProperties openXmlElement)
+  private static Boolean? GetShapeAutoFit(DXDraw.BodyProperties openXmlElement)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.ShapeAutoFit>();
+    var itemElement = openXmlElement.GetFirstChild<DXDraw.ShapeAutoFit>();
     return itemElement != null;
   }
   
-  private static void SetShapeAutoFit(DocumentFormat.OpenXml.Drawing.BodyProperties openXmlElement, Boolean? value)
+  private static void SetShapeAutoFit(DXDraw.BodyProperties openXmlElement, Boolean? value)
   {
     if (value == false)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.ShapeAutoFit>();
+      var itemElement = openXmlElement.GetFirstChild<DXDraw.ShapeAutoFit>();
       if (itemElement != null)
         itemElement.Remove();
     }
     if (value == true)
     {
-      var itemElement = new DocumentFormat.OpenXml.Drawing.ShapeAutoFit();
+      var itemElement = new DXDraw.ShapeAutoFit();
       openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static DocumentModel.Drawings.Scene3DType? GetScene3DType(DocumentFormat.OpenXml.Drawing.BodyProperties openXmlElement)
+  private static DMDraws.Scene3DType? GetScene3DType(DXDraw.BodyProperties openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.Scene3DType>();
+    var itemElement = openXmlElement?.GetFirstChild<DXDraw.Scene3DType>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.Scene3DTypeConverter.CreateModelElement(itemElement);
+      return DMXDraws.Scene3DTypeConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetScene3DType(DocumentFormat.OpenXml.Drawing.BodyProperties openXmlElement, DocumentModel.Drawings.Scene3DType? value)
+  private static void SetScene3DType(DXDraw.BodyProperties openXmlElement, DMDraws.Scene3DType? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Scene3DType>();
+    var itemElement = openXmlElement.GetFirstChild<DXDraw.Scene3DType>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Drawings.Scene3DTypeConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Scene3DType>(value);
+      itemElement = DMXDraws.Scene3DTypeConverter.CreateOpenXmlElement<DXDraw.Scene3DType>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static DocumentModel.Drawings.Shape3DType? GetShape3DType(DocumentFormat.OpenXml.Drawing.BodyProperties openXmlElement)
+  private static DMDraws.Shape3DType? GetShape3DType(DXDraw.BodyProperties openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.Shape3DType>();
+    var itemElement = openXmlElement?.GetFirstChild<DXDraw.Shape3DType>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.Shape3DTypeConverter.CreateModelElement(itemElement);
+      return DMXDraws.Shape3DTypeConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetShape3DType(DocumentFormat.OpenXml.Drawing.BodyProperties openXmlElement, DocumentModel.Drawings.Shape3DType? value)
+  private static void SetShape3DType(DXDraw.BodyProperties openXmlElement, DMDraws.Shape3DType? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Shape3DType>();
+    var itemElement = openXmlElement.GetFirstChild<DXDraw.Shape3DType>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Drawings.Shape3DTypeConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Shape3DType>(value);
+      itemElement = DMXDraws.Shape3DTypeConverter.CreateOpenXmlElement<DXDraw.Shape3DType>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static DocumentModel.Drawings.FlatText? GetFlatText(DocumentFormat.OpenXml.Drawing.BodyProperties openXmlElement)
+  private static DMDraws.FlatText? GetFlatText(DXDraw.BodyProperties openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.FlatText>();
+    var itemElement = openXmlElement?.GetFirstChild<DXDraw.FlatText>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.FlatTextConverter.CreateModelElement(itemElement);
+      return DMXDraws.FlatTextConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetFlatText(DocumentFormat.OpenXml.Drawing.BodyProperties openXmlElement, DocumentModel.Drawings.FlatText? value)
+  private static void SetFlatText(DXDraw.BodyProperties openXmlElement, DMDraws.FlatText? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.FlatText>();
+    var itemElement = openXmlElement.GetFirstChild<DXDraw.FlatText>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Drawings.FlatTextConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.FlatText>(value);
+      itemElement = DMXDraws.FlatTextConverter.CreateOpenXmlElement<DXDraw.FlatText>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static DocumentModel.Drawings.ExtensionList? GetExtensionList(DocumentFormat.OpenXml.Drawing.BodyProperties openXmlElement)
+  private static DMDraws.ExtensionList? GetExtensionList(DXDraw.BodyProperties openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.ExtensionList>();
+    var itemElement = openXmlElement?.GetFirstChild<DXDraw.ExtensionList>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.ExtensionListConverter.CreateModelElement(itemElement);
+      return DMXDraws.ExtensionListConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetExtensionList(DocumentFormat.OpenXml.Drawing.BodyProperties openXmlElement, DocumentModel.Drawings.ExtensionList? value)
+  private static void SetExtensionList(DXDraw.BodyProperties openXmlElement, DMDraws.ExtensionList? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.ExtensionList>();
+    var itemElement = openXmlElement.GetFirstChild<DXDraw.ExtensionList>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Drawings.ExtensionListConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.ExtensionList>(value);
+      itemElement = DMXDraws.ExtensionListConverter.CreateOpenXmlElement<DXDraw.ExtensionList>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  public static DocumentModel.Drawings.BodyProperties? CreateModelElement(DocumentFormat.OpenXml.Drawing.BodyProperties? openXmlElement)
+  public static DMDraws.BodyProperties? CreateModelElement(DXDraw.BodyProperties? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.BodyProperties();
+      var value = new DMDraws.BodyProperties();
       value.Rotation = GetRotation(openXmlElement);
       value.UseParagraphSpacing = GetUseParagraphSpacing(openXmlElement);
       value.VerticalOverflow = GetVerticalOverflow(openXmlElement);
@@ -481,8 +481,8 @@ public static class BodyPropertiesConverter
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.BodyProperties? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.BodyProperties, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDraws.BodyProperties? value)
+    where OpenXmlElementType: DXDraw.BodyProperties, new()
   {
     if (value != null)
     {

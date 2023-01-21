@@ -8,12 +8,12 @@ public static class ConnectionTypeConverter
   /// <summary>
   /// Identifier
   /// </summary>
-  private static UInt32? GetId(DocumentFormat.OpenXml.Drawing.ConnectionType openXmlElement)
+  private static UInt32? GetId(DXDraw.ConnectionType openXmlElement)
   {
     return openXmlElement.Id?.Value;
   }
   
-  private static void SetId(DocumentFormat.OpenXml.Drawing.ConnectionType openXmlElement, UInt32? value)
+  private static void SetId(DXDraw.ConnectionType openXmlElement, UInt32? value)
   {
     openXmlElement.Id = value;
   }
@@ -21,21 +21,21 @@ public static class ConnectionTypeConverter
   /// <summary>
   /// Index
   /// </summary>
-  private static UInt32? GetIndex(DocumentFormat.OpenXml.Drawing.ConnectionType openXmlElement)
+  private static UInt32? GetIndex(DXDraw.ConnectionType openXmlElement)
   {
     return openXmlElement.Index?.Value;
   }
   
-  private static void SetIndex(DocumentFormat.OpenXml.Drawing.ConnectionType openXmlElement, UInt32? value)
+  private static void SetIndex(DXDraw.ConnectionType openXmlElement, UInt32? value)
   {
     openXmlElement.Index = value;
   }
   
-  public static DocumentModel.Drawings.ConnectionType? CreateModelElement(DocumentFormat.OpenXml.Drawing.ConnectionType? openXmlElement)
+  public static DMDraws.ConnectionType? CreateModelElement(DXDraw.ConnectionType? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.ConnectionType();
+      var value = new DMDraws.ConnectionType();
       value.Id = GetId(openXmlElement);
       value.Index = GetIndex(openXmlElement);
       return value;
@@ -43,8 +43,8 @@ public static class ConnectionTypeConverter
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.ConnectionType? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.ConnectionType, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDraws.ConnectionType? value)
+    where OpenXmlElementType: DXDraw.ConnectionType, new()
   {
     if (value != null)
     {

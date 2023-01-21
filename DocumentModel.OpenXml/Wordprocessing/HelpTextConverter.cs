@@ -8,25 +8,25 @@ public static class HelpTextConverter
   /// <summary>
   /// Help Text Type
   /// </summary>
-  private static DocumentModel.Wordprocessing.InfoTextKind? GetType(DocumentFormat.OpenXml.Wordprocessing.HelpText openXmlElement)
+  private static DMW.InfoTextKind? GetType(DXW.HelpText openXmlElement)
   {
-    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Wordprocessing.InfoTextValues, DocumentModel.Wordprocessing.InfoTextKind>(openXmlElement?.Type?.Value);
+    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Wordprocessing.InfoTextValues, DMW.InfoTextKind>(openXmlElement?.Type?.Value);
   }
   
-  private static void SetType(DocumentFormat.OpenXml.Wordprocessing.HelpText openXmlElement, DocumentModel.Wordprocessing.InfoTextKind? value)
+  private static void SetType(DXW.HelpText openXmlElement, DMW.InfoTextKind? value)
   {
-    openXmlElement.Type = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Wordprocessing.InfoTextValues, DocumentModel.Wordprocessing.InfoTextKind>(value);
+    openXmlElement.Type = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Wordprocessing.InfoTextValues, DMW.InfoTextKind>(value);
   }
   
   /// <summary>
   /// Help Text Value
   /// </summary>
-  private static String? GetVal(DocumentFormat.OpenXml.Wordprocessing.HelpText openXmlElement)
+  private static String? GetVal(DXW.HelpText openXmlElement)
   {
     return openXmlElement?.Val?.Value;
   }
   
-  private static void SetVal(DocumentFormat.OpenXml.Wordprocessing.HelpText openXmlElement, String? value)
+  private static void SetVal(DXW.HelpText openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.Val = new StringValue { Value = value };
@@ -34,11 +34,11 @@ public static class HelpTextConverter
       openXmlElement.Val = null;
   }
   
-  public static DocumentModel.Wordprocessing.HelpText? CreateModelElement(DocumentFormat.OpenXml.Wordprocessing.HelpText? openXmlElement)
+  public static DMW.HelpText? CreateModelElement(DXW.HelpText? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Wordprocessing.HelpText();
+      var value = new DMW.HelpText();
       value.Type = GetType(openXmlElement);
       value.Val = GetVal(openXmlElement);
       return value;
@@ -46,8 +46,8 @@ public static class HelpTextConverter
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.HelpText? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Wordprocessing.HelpText, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMW.HelpText? value)
+    where OpenXmlElementType: DXW.HelpText, new()
   {
     if (value != null)
     {

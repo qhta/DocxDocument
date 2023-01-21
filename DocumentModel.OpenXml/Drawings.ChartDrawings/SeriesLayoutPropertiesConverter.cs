@@ -8,22 +8,22 @@ public static class SeriesLayoutPropertiesConverter
   /// <summary>
   /// ParentLabelLayout.
   /// </summary>
-  private static DocumentModel.Drawings.ChartDrawings.ParentLabelLayout? GetParentLabelLayout(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.SeriesLayoutProperties openXmlElement)
+  private static DMDrawsChartDraws.ParentLabelLayout? GetParentLabelLayout(DXO2016DrawChartDraw.SeriesLayoutProperties openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.ParentLabelLayout>();
+    var itemElement = openXmlElement?.GetFirstChild<DXO2016DrawChartDraw.ParentLabelLayout>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.ChartDrawings.ParentLabelLayoutConverter.CreateModelElement(itemElement);
+      return DMXDrawsChartDraws.ParentLabelLayoutConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetParentLabelLayout(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.SeriesLayoutProperties openXmlElement, DocumentModel.Drawings.ChartDrawings.ParentLabelLayout? value)
+  private static void SetParentLabelLayout(DXO2016DrawChartDraw.SeriesLayoutProperties openXmlElement, DMDrawsChartDraws.ParentLabelLayout? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.ParentLabelLayout>();
+    var itemElement = openXmlElement.GetFirstChild<DXO2016DrawChartDraw.ParentLabelLayout>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Drawings.ChartDrawings.ParentLabelLayoutConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.ParentLabelLayout>(value);
+      itemElement = DMXDrawsChartDraws.ParentLabelLayoutConverter.CreateOpenXmlElement<DXO2016DrawChartDraw.ParentLabelLayout>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
@@ -32,22 +32,22 @@ public static class SeriesLayoutPropertiesConverter
   /// <summary>
   /// RegionLabelLayout.
   /// </summary>
-  private static DocumentModel.Drawings.ChartDrawings.RegionLabelLayoutEnum? GetRegionLabelLayout(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.SeriesLayoutProperties openXmlElement)
+  private static DMDrawsChartDraws.RegionLabelLayoutEnum? GetRegionLabelLayout(DXO2016DrawChartDraw.SeriesLayoutProperties openXmlElement)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.RegionLabelLayout>();
+    var itemElement = openXmlElement.GetFirstChild<DXO2016DrawChartDraw.RegionLabelLayout>();
     if (itemElement?.Val?.Value != null)
-      return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.RegionLabelLayoutEnum, DocumentModel.Drawings.ChartDrawings.RegionLabelLayoutEnum>(itemElement.Val.Value);
+      return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.RegionLabelLayoutEnum, DMDrawsChartDraws.RegionLabelLayoutEnum>(itemElement.Val.Value);
     return null;
   }
   
-  private static void SetRegionLabelLayout(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.SeriesLayoutProperties openXmlElement, DocumentModel.Drawings.ChartDrawings.RegionLabelLayoutEnum? value)
+  private static void SetRegionLabelLayout(DXO2016DrawChartDraw.SeriesLayoutProperties openXmlElement, DMDrawsChartDraws.RegionLabelLayoutEnum? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.RegionLabelLayout>();
+    var itemElement = openXmlElement.GetFirstChild<DXO2016DrawChartDraw.RegionLabelLayout>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = EnumValueConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.RegionLabelLayout, DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.RegionLabelLayoutEnum, DocumentModel.Drawings.ChartDrawings.RegionLabelLayoutEnum>(value);
+      itemElement = EnumValueConverter.CreateOpenXmlElement<DXO2016DrawChartDraw.RegionLabelLayout, DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.RegionLabelLayoutEnum, DMDrawsChartDraws.RegionLabelLayoutEnum>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
@@ -56,158 +56,158 @@ public static class SeriesLayoutPropertiesConverter
   /// <summary>
   /// SeriesElementVisibilities.
   /// </summary>
-  private static DocumentModel.Drawings.ChartDrawings.SeriesElementVisibilities? GetSeriesElementVisibilities(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.SeriesLayoutProperties openXmlElement)
+  private static DMDrawsChartDraws.SeriesElementVisibilities? GetSeriesElementVisibilities(DXO2016DrawChartDraw.SeriesLayoutProperties openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.SeriesElementVisibilities>();
+    var itemElement = openXmlElement?.GetFirstChild<DXO2016DrawChartDraw.SeriesElementVisibilities>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.ChartDrawings.SeriesElementVisibilitiesConverter.CreateModelElement(itemElement);
+      return DMXDrawsChartDraws.SeriesElementVisibilitiesConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetSeriesElementVisibilities(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.SeriesLayoutProperties openXmlElement, DocumentModel.Drawings.ChartDrawings.SeriesElementVisibilities? value)
+  private static void SetSeriesElementVisibilities(DXO2016DrawChartDraw.SeriesLayoutProperties openXmlElement, DMDrawsChartDraws.SeriesElementVisibilities? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.SeriesElementVisibilities>();
+    var itemElement = openXmlElement.GetFirstChild<DXO2016DrawChartDraw.SeriesElementVisibilities>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Drawings.ChartDrawings.SeriesElementVisibilitiesConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.SeriesElementVisibilities>(value);
+      itemElement = DMXDrawsChartDraws.SeriesElementVisibilitiesConverter.CreateOpenXmlElement<DXO2016DrawChartDraw.SeriesElementVisibilities>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static Boolean? GetAggregation(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.SeriesLayoutProperties openXmlElement)
+  private static Boolean? GetAggregation(DXO2016DrawChartDraw.SeriesLayoutProperties openXmlElement)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.Aggregation>();
+    var itemElement = openXmlElement.GetFirstChild<DXO2016DrawChartDraw.Aggregation>();
     return itemElement != null;
   }
   
-  private static void SetAggregation(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.SeriesLayoutProperties openXmlElement, Boolean? value)
+  private static void SetAggregation(DXO2016DrawChartDraw.SeriesLayoutProperties openXmlElement, Boolean? value)
   {
     if (value == false)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.Aggregation>();
+      var itemElement = openXmlElement.GetFirstChild<DXO2016DrawChartDraw.Aggregation>();
       if (itemElement != null)
         itemElement.Remove();
     }
     if (value == true)
     {
-      var itemElement = new DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.Aggregation();
+      var itemElement = new DXO2016DrawChartDraw.Aggregation();
       openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static DocumentModel.Drawings.ChartDrawings.Binning? GetBinning(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.SeriesLayoutProperties openXmlElement)
+  private static DMDrawsChartDraws.Binning? GetBinning(DXO2016DrawChartDraw.SeriesLayoutProperties openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.Binning>();
+    var itemElement = openXmlElement?.GetFirstChild<DXO2016DrawChartDraw.Binning>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.ChartDrawings.BinningConverter.CreateModelElement(itemElement);
+      return DMXDrawsChartDraws.BinningConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetBinning(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.SeriesLayoutProperties openXmlElement, DocumentModel.Drawings.ChartDrawings.Binning? value)
+  private static void SetBinning(DXO2016DrawChartDraw.SeriesLayoutProperties openXmlElement, DMDrawsChartDraws.Binning? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.Binning>();
+    var itemElement = openXmlElement.GetFirstChild<DXO2016DrawChartDraw.Binning>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Drawings.ChartDrawings.BinningConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.Binning>(value);
+      itemElement = DMXDrawsChartDraws.BinningConverter.CreateOpenXmlElement<DXO2016DrawChartDraw.Binning>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static DocumentModel.Drawings.ChartDrawings.Geography? GetGeography(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.SeriesLayoutProperties openXmlElement)
+  private static DMDrawsChartDraws.Geography? GetGeography(DXO2016DrawChartDraw.SeriesLayoutProperties openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.Geography>();
+    var itemElement = openXmlElement?.GetFirstChild<DXO2016DrawChartDraw.Geography>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.ChartDrawings.GeographyConverter.CreateModelElement(itemElement);
+      return DMXDrawsChartDraws.GeographyConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetGeography(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.SeriesLayoutProperties openXmlElement, DocumentModel.Drawings.ChartDrawings.Geography? value)
+  private static void SetGeography(DXO2016DrawChartDraw.SeriesLayoutProperties openXmlElement, DMDrawsChartDraws.Geography? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.Geography>();
+    var itemElement = openXmlElement.GetFirstChild<DXO2016DrawChartDraw.Geography>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Drawings.ChartDrawings.GeographyConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.Geography>(value);
+      itemElement = DMXDrawsChartDraws.GeographyConverter.CreateOpenXmlElement<DXO2016DrawChartDraw.Geography>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static DocumentModel.Drawings.ChartDrawings.Statistics? GetStatistics(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.SeriesLayoutProperties openXmlElement)
+  private static DMDrawsChartDraws.Statistics? GetStatistics(DXO2016DrawChartDraw.SeriesLayoutProperties openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.Statistics>();
+    var itemElement = openXmlElement?.GetFirstChild<DXO2016DrawChartDraw.Statistics>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.ChartDrawings.StatisticsConverter.CreateModelElement(itemElement);
+      return DMXDrawsChartDraws.StatisticsConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetStatistics(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.SeriesLayoutProperties openXmlElement, DocumentModel.Drawings.ChartDrawings.Statistics? value)
+  private static void SetStatistics(DXO2016DrawChartDraw.SeriesLayoutProperties openXmlElement, DMDrawsChartDraws.Statistics? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.Statistics>();
+    var itemElement = openXmlElement.GetFirstChild<DXO2016DrawChartDraw.Statistics>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Drawings.ChartDrawings.StatisticsConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.Statistics>(value);
+      itemElement = DMXDrawsChartDraws.StatisticsConverter.CreateOpenXmlElement<DXO2016DrawChartDraw.Statistics>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static DocumentModel.Drawings.ChartDrawings.Subtotals? GetSubtotals(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.SeriesLayoutProperties openXmlElement)
+  private static DMDrawsChartDraws.Subtotals? GetSubtotals(DXO2016DrawChartDraw.SeriesLayoutProperties openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.Subtotals>();
+    var itemElement = openXmlElement?.GetFirstChild<DXO2016DrawChartDraw.Subtotals>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.ChartDrawings.SubtotalsConverter.CreateModelElement(itemElement);
+      return DMXDrawsChartDraws.SubtotalsConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetSubtotals(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.SeriesLayoutProperties openXmlElement, DocumentModel.Drawings.ChartDrawings.Subtotals? value)
+  private static void SetSubtotals(DXO2016DrawChartDraw.SeriesLayoutProperties openXmlElement, DMDrawsChartDraws.Subtotals? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.Subtotals>();
+    var itemElement = openXmlElement.GetFirstChild<DXO2016DrawChartDraw.Subtotals>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Drawings.ChartDrawings.SubtotalsConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.Subtotals>(value);
+      itemElement = DMXDrawsChartDraws.SubtotalsConverter.CreateOpenXmlElement<DXO2016DrawChartDraw.Subtotals>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static DocumentModel.Drawings.ChartDrawings.ExtensionList? GetExtensionList(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.SeriesLayoutProperties openXmlElement)
+  private static DMDrawsChartDraws.ExtensionList? GetExtensionList(DXO2016DrawChartDraw.SeriesLayoutProperties openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.ExtensionList>();
+    var itemElement = openXmlElement?.GetFirstChild<DXO2016DrawChartDraw.ExtensionList>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.ChartDrawings.ExtensionListConverter.CreateModelElement(itemElement);
+      return DMXDrawsChartDraws.ExtensionListConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetExtensionList(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.SeriesLayoutProperties openXmlElement, DocumentModel.Drawings.ChartDrawings.ExtensionList? value)
+  private static void SetExtensionList(DXO2016DrawChartDraw.SeriesLayoutProperties openXmlElement, DMDrawsChartDraws.ExtensionList? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.ExtensionList>();
+    var itemElement = openXmlElement.GetFirstChild<DXO2016DrawChartDraw.ExtensionList>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Drawings.ChartDrawings.ExtensionListConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.ExtensionList>(value);
+      itemElement = DMXDrawsChartDraws.ExtensionListConverter.CreateOpenXmlElement<DXO2016DrawChartDraw.ExtensionList>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  public static DocumentModel.Drawings.ChartDrawings.SeriesLayoutProperties? CreateModelElement(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.SeriesLayoutProperties? openXmlElement)
+  public static DMDrawsChartDraws.SeriesLayoutProperties? CreateModelElement(DXO2016DrawChartDraw.SeriesLayoutProperties? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.ChartDrawings.SeriesLayoutProperties();
+      var value = new DMDrawsChartDraws.SeriesLayoutProperties();
       value.ParentLabelLayout = GetParentLabelLayout(openXmlElement);
       value.RegionLabelLayout = GetRegionLabelLayout(openXmlElement);
       value.SeriesElementVisibilities = GetSeriesElementVisibilities(openXmlElement);
@@ -222,8 +222,8 @@ public static class SeriesLayoutPropertiesConverter
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.ChartDrawings.SeriesLayoutProperties? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.SeriesLayoutProperties, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDrawsChartDraws.SeriesLayoutProperties? value)
+    where OpenXmlElementType: DXO2016DrawChartDraw.SeriesLayoutProperties, new()
   {
     if (value != null)
     {

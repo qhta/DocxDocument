@@ -5,45 +5,45 @@ namespace DocumentModel.OpenXml.Drawings;
 /// </summary>
 public static class PathListConverter
 {
-  private static System.Collections.ObjectModel.Collection<DocumentModel.Drawings.Path> GetPaths(DocumentFormat.OpenXml.Drawing.PathList openXmlElement)
+  private static Collection<DMDraws.Path> GetPaths(DXDraw.PathList openXmlElement)
   {
-    var collection = new System.Collections.ObjectModel.Collection<DocumentModel.Drawings.Path>();
-    foreach (var item in openXmlElement.Elements<DocumentFormat.OpenXml.Drawing.Path>())
+    var collection = new Collection<DMDraws.Path>();
+    foreach (var item in openXmlElement.Elements<DXDraw.Path>())
     {
-      var newItem = DocumentModel.OpenXml.Drawings.PathConverter.CreateModelElement(item);
+      var newItem = DMXDraws.PathConverter.CreateModelElement(item);
       if (newItem != null)
         collection.Add(newItem);
     }
     return collection;
   }
   
-  private static void SetPaths(DocumentFormat.OpenXml.Drawing.PathList openXmlElement, System.Collections.ObjectModel.Collection<DocumentModel.Drawings.Path>? value)
+  private static void SetPaths(DXDraw.PathList openXmlElement, Collection<DMDraws.Path>? value)
   {
-    openXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Drawing.Path>();
+    openXmlElement.RemoveAllChildren<DXDraw.Path>();
     if (value != null)
     {
       foreach (var item in value)
       {
-        var newItem = DocumentModel.OpenXml.Drawings.PathConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Path>(item);
+        var newItem = DMXDraws.PathConverter.CreateOpenXmlElement<DXDraw.Path>(item);
         if (newItem != null)
           openXmlElement.AddChild(newItem);
       }
     }
   }
   
-  public static DocumentModel.Drawings.PathList? CreateModelElement(DocumentFormat.OpenXml.Drawing.PathList? openXmlElement)
+  public static DMDraws.PathList? CreateModelElement(DXDraw.PathList? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.PathList();
+      var value = new DMDraws.PathList();
       value.Paths = GetPaths(openXmlElement);
       return value;
     }
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.PathList? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.PathList, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDraws.PathList? value)
+    where OpenXmlElementType: DXDraw.PathList, new()
   {
     if (value != null)
     {

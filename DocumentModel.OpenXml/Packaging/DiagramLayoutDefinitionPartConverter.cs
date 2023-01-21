@@ -5,7 +5,7 @@ namespace DocumentModel.OpenXml.Packaging;
 /// </summary>
 public static class DiagramLayoutDefinitionPartConverter
 {
-  private static String? GetContentType(DocumentFormat.OpenXml.Packaging.DiagramLayoutDefinitionPart openXmlElement)
+  private static String? GetContentType(DXPack.DiagramLayoutDefinitionPart openXmlElement)
   {
     return openXmlElement?.ContentType;
   }
@@ -13,12 +13,12 @@ public static class DiagramLayoutDefinitionPartConverter
   /// <summary>
   /// Gets the ImageParts of the DiagramLayoutDefinitionPart
   /// </summary>
-  private static System.Collections.ObjectModel.Collection<DocumentModel.Packaging.ImagePart> GetImageParts(DocumentFormat.OpenXml.Packaging.DiagramLayoutDefinitionPart openXmlElement)
+  private static Collection<DMPack.ImagePart> GetImageParts(DXPack.DiagramLayoutDefinitionPart openXmlElement)
   {
-    var collection = new System.Collections.ObjectModel.Collection<DocumentModel.Packaging.ImagePart>();
-    foreach (var item in openXmlElement.GetPartsOfType<DocumentFormat.OpenXml.Packaging.ImagePart>())
+    var collection = new Collection<DMPack.ImagePart>();
+    foreach (var item in openXmlElement.GetPartsOfType<DXPack.ImagePart>())
     {
-      var newItem = DocumentModel.OpenXml.Packaging.ImagePartConverter.CreateModelElement(item);
+      var newItem = DMXPack.ImagePartConverter.CreateModelElement(item);
       if (newItem != null)
         collection.Add(newItem);
     }
@@ -28,33 +28,33 @@ public static class DiagramLayoutDefinitionPartConverter
   /// <summary>
   /// Gets or sets the root element of this part.
   /// </summary>
-  private static DocumentModel.Drawings.Diagrams.LayoutDefinition? GetLayoutDefinition(DocumentFormat.OpenXml.Packaging.DiagramLayoutDefinitionPart openXmlElement)
+  private static DMDrawsDgms.LayoutDefinition? GetLayoutDefinition(DXPack.DiagramLayoutDefinitionPart openXmlElement)
   {
-    if (openXmlElement?.RootElement is DocumentFormat.OpenXml.Drawing.Diagrams.LayoutDefinition rootElement)
-      return DocumentModel.OpenXml.Drawings.Diagrams.LayoutDefinitionConverter.CreateModelElement(rootElement);
+    if (openXmlElement?.RootElement is DXDrawDgms.LayoutDefinition rootElement)
+      return DMXDrawsDgms.LayoutDefinitionConverter.CreateModelElement(rootElement);
     return null;
   }
   
-  private static void SetLayoutDefinition(DocumentFormat.OpenXml.Packaging.DiagramLayoutDefinitionPart openXmlElement, DocumentModel.Drawings.Diagrams.LayoutDefinition? value)
+  private static void SetLayoutDefinition(DXPack.DiagramLayoutDefinitionPart openXmlElement, DMDrawsDgms.LayoutDefinition? value)
   {
     if (value != null)
     {
-       var rootElement = DocumentModel.OpenXml.Drawings.Diagrams.LayoutDefinitionConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Diagrams.LayoutDefinition>(value);
+       var rootElement = DMXDrawsDgms.LayoutDefinitionConverter.CreateOpenXmlElement<DXDrawDgms.LayoutDefinition>(value);
        if (rootElement != null)
          openXmlElement.LayoutDefinition = rootElement;
     }
   }
   
-  private static String? GetRelationshipType(DocumentFormat.OpenXml.Packaging.DiagramLayoutDefinitionPart openXmlElement)
+  private static String? GetRelationshipType(DXPack.DiagramLayoutDefinitionPart openXmlElement)
   {
     return openXmlElement?.RelationshipType;
   }
   
-  public static DocumentModel.Packaging.DiagramLayoutDefinitionPart? CreateModelElement(DocumentFormat.OpenXml.Packaging.DiagramLayoutDefinitionPart? openXmlElement)
+  public static DMPack.DiagramLayoutDefinitionPart? CreateModelElement(DXPack.DiagramLayoutDefinitionPart? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Packaging.DiagramLayoutDefinitionPart();
+      var value = new DMPack.DiagramLayoutDefinitionPart();
       value.ContentType = GetContentType(openXmlElement);
       value.ImageParts = GetImageParts(openXmlElement);
       value.LayoutDefinition = GetLayoutDefinition(openXmlElement);
@@ -64,8 +64,8 @@ public static class DiagramLayoutDefinitionPartConverter
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Packaging.DiagramLayoutDefinitionPart? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Packaging.DiagramLayoutDefinitionPart, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMPack.DiagramLayoutDefinitionPart? value)
+    where OpenXmlElementType: DXPack.DiagramLayoutDefinitionPart, new()
   {
     if (value != null)
     {

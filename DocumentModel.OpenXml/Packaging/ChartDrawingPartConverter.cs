@@ -5,7 +5,7 @@ namespace DocumentModel.OpenXml.Packaging;
 /// </summary>
 public static class ChartDrawingPartConverter
 {
-  private static String? GetContentType(DocumentFormat.OpenXml.Packaging.ChartDrawingPart openXmlElement)
+  private static String? GetContentType(DXPack.ChartDrawingPart openXmlElement)
   {
     return openXmlElement?.ContentType;
   }
@@ -13,19 +13,19 @@ public static class ChartDrawingPartConverter
   /// <summary>
   /// Gets the ImageParts of the ChartDrawingPart
   /// </summary>
-  private static System.Collections.ObjectModel.Collection<DocumentModel.Packaging.ImagePart> GetImageParts(DocumentFormat.OpenXml.Packaging.ChartDrawingPart openXmlElement)
+  private static Collection<DMPack.ImagePart> GetImageParts(DXPack.ChartDrawingPart openXmlElement)
   {
-    var collection = new System.Collections.ObjectModel.Collection<DocumentModel.Packaging.ImagePart>();
-    foreach (var item in openXmlElement.GetPartsOfType<DocumentFormat.OpenXml.Packaging.ImagePart>())
+    var collection = new Collection<DMPack.ImagePart>();
+    foreach (var item in openXmlElement.GetPartsOfType<DXPack.ImagePart>())
     {
-      var newItem = DocumentModel.OpenXml.Packaging.ImagePartConverter.CreateModelElement(item);
+      var newItem = DMXPack.ImagePartConverter.CreateModelElement(item);
       if (newItem != null)
         collection.Add(newItem);
     }
     return collection;
   }
   
-  private static String? GetRelationshipType(DocumentFormat.OpenXml.Packaging.ChartDrawingPart openXmlElement)
+  private static String? GetRelationshipType(DXPack.ChartDrawingPart openXmlElement)
   {
     return openXmlElement?.RelationshipType;
   }
@@ -33,28 +33,28 @@ public static class ChartDrawingPartConverter
   /// <summary>
   /// Gets or sets the root element of this part.
   /// </summary>
-  private static DocumentModel.Drawings.Charts.UserShapes? GetUserShapes(DocumentFormat.OpenXml.Packaging.ChartDrawingPart openXmlElement)
+  private static DMDrawsCharts.UserShapes? GetUserShapes(DXPack.ChartDrawingPart openXmlElement)
   {
-    if (openXmlElement?.RootElement is DocumentFormat.OpenXml.Drawing.Charts.UserShapes rootElement)
-      return DocumentModel.OpenXml.Drawings.Charts.UserShapesConverter.CreateModelElement(rootElement);
+    if (openXmlElement?.RootElement is DXDrawCharts.UserShapes rootElement)
+      return DMXDrawsCharts.UserShapesConverter.CreateModelElement(rootElement);
     return null;
   }
   
-  private static void SetUserShapes(DocumentFormat.OpenXml.Packaging.ChartDrawingPart openXmlElement, DocumentModel.Drawings.Charts.UserShapes? value)
+  private static void SetUserShapes(DXPack.ChartDrawingPart openXmlElement, DMDrawsCharts.UserShapes? value)
   {
     if (value != null)
     {
-       var rootElement = DocumentModel.OpenXml.Drawings.Charts.UserShapesConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Charts.UserShapes>(value);
+       var rootElement = DMXDrawsCharts.UserShapesConverter.CreateOpenXmlElement<DXDrawCharts.UserShapes>(value);
        if (rootElement != null)
          openXmlElement.UserShapes = rootElement;
     }
   }
   
-  public static DocumentModel.Packaging.ChartDrawingPart? CreateModelElement(DocumentFormat.OpenXml.Packaging.ChartDrawingPart? openXmlElement)
+  public static DMPack.ChartDrawingPart? CreateModelElement(DXPack.ChartDrawingPart? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Packaging.ChartDrawingPart();
+      var value = new DMPack.ChartDrawingPart();
       value.ContentType = GetContentType(openXmlElement);
       value.ImageParts = GetImageParts(openXmlElement);
       value.RelationshipType = GetRelationshipType(openXmlElement);
@@ -64,8 +64,8 @@ public static class ChartDrawingPartConverter
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Packaging.ChartDrawingPart? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Packaging.ChartDrawingPart, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMPack.ChartDrawingPart? value)
+    where OpenXmlElementType: DXPack.ChartDrawingPart, new()
   {
     if (value != null)
     {

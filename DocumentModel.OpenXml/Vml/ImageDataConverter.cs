@@ -8,12 +8,12 @@ public static class ImageDataConverter
   /// <summary>
   /// Unique Identifier
   /// </summary>
-  private static String? GetId(DocumentFormat.OpenXml.Vml.ImageData openXmlElement)
+  private static String? GetId(DXVml.ImageData openXmlElement)
   {
     return openXmlElement?.Id?.Value;
   }
   
-  private static void SetId(DocumentFormat.OpenXml.Vml.ImageData openXmlElement, String? value)
+  private static void SetId(DXVml.ImageData openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.Id = new StringValue { Value = value };
@@ -24,12 +24,12 @@ public static class ImageDataConverter
   /// <summary>
   /// Image Transparency Color
   /// </summary>
-  private static String? GetChromAKey(DocumentFormat.OpenXml.Vml.ImageData openXmlElement)
+  private static String? GetChromAKey(DXVml.ImageData openXmlElement)
   {
     return openXmlElement?.ChromAKey?.Value;
   }
   
-  private static void SetChromAKey(DocumentFormat.OpenXml.Vml.ImageData openXmlElement, String? value)
+  private static void SetChromAKey(DXVml.ImageData openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.ChromAKey = new StringValue { Value = value };
@@ -40,12 +40,12 @@ public static class ImageDataConverter
   /// <summary>
   /// Image Left Crop
   /// </summary>
-  private static String? GetCropLeft(DocumentFormat.OpenXml.Vml.ImageData openXmlElement)
+  private static String? GetCropLeft(DXVml.ImageData openXmlElement)
   {
     return openXmlElement?.CropLeft?.Value;
   }
   
-  private static void SetCropLeft(DocumentFormat.OpenXml.Vml.ImageData openXmlElement, String? value)
+  private static void SetCropLeft(DXVml.ImageData openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.CropLeft = new StringValue { Value = value };
@@ -56,12 +56,12 @@ public static class ImageDataConverter
   /// <summary>
   /// Image Top Crop
   /// </summary>
-  private static String? GetCropTop(DocumentFormat.OpenXml.Vml.ImageData openXmlElement)
+  private static String? GetCropTop(DXVml.ImageData openXmlElement)
   {
     return openXmlElement?.CropTop?.Value;
   }
   
-  private static void SetCropTop(DocumentFormat.OpenXml.Vml.ImageData openXmlElement, String? value)
+  private static void SetCropTop(DXVml.ImageData openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.CropTop = new StringValue { Value = value };
@@ -72,12 +72,12 @@ public static class ImageDataConverter
   /// <summary>
   /// Image Right Crop
   /// </summary>
-  private static String? GetCropRight(DocumentFormat.OpenXml.Vml.ImageData openXmlElement)
+  private static String? GetCropRight(DXVml.ImageData openXmlElement)
   {
     return openXmlElement?.CropRight?.Value;
   }
   
-  private static void SetCropRight(DocumentFormat.OpenXml.Vml.ImageData openXmlElement, String? value)
+  private static void SetCropRight(DXVml.ImageData openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.CropRight = new StringValue { Value = value };
@@ -88,12 +88,12 @@ public static class ImageDataConverter
   /// <summary>
   /// Image Bottom Crop
   /// </summary>
-  private static String? GetCropBottom(DocumentFormat.OpenXml.Vml.ImageData openXmlElement)
+  private static String? GetCropBottom(DXVml.ImageData openXmlElement)
   {
     return openXmlElement?.CropBottom?.Value;
   }
   
-  private static void SetCropBottom(DocumentFormat.OpenXml.Vml.ImageData openXmlElement, String? value)
+  private static void SetCropBottom(DXVml.ImageData openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.CropBottom = new StringValue { Value = value };
@@ -104,12 +104,12 @@ public static class ImageDataConverter
   /// <summary>
   /// Image Intensity
   /// </summary>
-  private static String? GetGain(DocumentFormat.OpenXml.Vml.ImageData openXmlElement)
+  private static String? GetGain(DXVml.ImageData openXmlElement)
   {
     return openXmlElement?.Gain?.Value;
   }
   
-  private static void SetGain(DocumentFormat.OpenXml.Vml.ImageData openXmlElement, String? value)
+  private static void SetGain(DXVml.ImageData openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.Gain = new StringValue { Value = value };
@@ -120,12 +120,12 @@ public static class ImageDataConverter
   /// <summary>
   /// Image Brightness
   /// </summary>
-  private static String? GetBlackLevel(DocumentFormat.OpenXml.Vml.ImageData openXmlElement)
+  private static String? GetBlackLevel(DXVml.ImageData openXmlElement)
   {
     return openXmlElement?.BlackLevel?.Value;
   }
   
-  private static void SetBlackLevel(DocumentFormat.OpenXml.Vml.ImageData openXmlElement, String? value)
+  private static void SetBlackLevel(DXVml.ImageData openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.BlackLevel = new StringValue { Value = value };
@@ -136,12 +136,12 @@ public static class ImageDataConverter
   /// <summary>
   /// Image Gamma Correction
   /// </summary>
-  private static String? GetGamma(DocumentFormat.OpenXml.Vml.ImageData openXmlElement)
+  private static String? GetGamma(DXVml.ImageData openXmlElement)
   {
     return openXmlElement?.Gamma?.Value;
   }
   
-  private static void SetGamma(DocumentFormat.OpenXml.Vml.ImageData openXmlElement, String? value)
+  private static void SetGamma(DXVml.ImageData openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.Gamma = new StringValue { Value = value };
@@ -152,12 +152,12 @@ public static class ImageDataConverter
   /// <summary>
   /// Image Grayscale Toggle
   /// </summary>
-  private static Boolean? GetGrayscale(DocumentFormat.OpenXml.Vml.ImageData openXmlElement)
+  private static Boolean? GetGrayscale(DXVml.ImageData openXmlElement)
   {
     return openXmlElement?.Grayscale?.Value;
   }
   
-  private static void SetGrayscale(DocumentFormat.OpenXml.Vml.ImageData openXmlElement, Boolean? value)
+  private static void SetGrayscale(DXVml.ImageData openXmlElement, Boolean? value)
   {
     if (value != null)
       openXmlElement.Grayscale = value;
@@ -168,12 +168,12 @@ public static class ImageDataConverter
   /// <summary>
   /// Image Bilevel Toggle
   /// </summary>
-  private static Boolean? GetBiLevel(DocumentFormat.OpenXml.Vml.ImageData openXmlElement)
+  private static Boolean? GetBiLevel(DXVml.ImageData openXmlElement)
   {
     return openXmlElement?.BiLevel?.Value;
   }
   
-  private static void SetBiLevel(DocumentFormat.OpenXml.Vml.ImageData openXmlElement, Boolean? value)
+  private static void SetBiLevel(DXVml.ImageData openXmlElement, Boolean? value)
   {
     if (value != null)
       openXmlElement.BiLevel = value;
@@ -184,12 +184,12 @@ public static class ImageDataConverter
   /// <summary>
   /// Embossed Color
   /// </summary>
-  private static String? GetEmbossColor(DocumentFormat.OpenXml.Vml.ImageData openXmlElement)
+  private static String? GetEmbossColor(DXVml.ImageData openXmlElement)
   {
     return openXmlElement?.EmbossColor?.Value;
   }
   
-  private static void SetEmbossColor(DocumentFormat.OpenXml.Vml.ImageData openXmlElement, String? value)
+  private static void SetEmbossColor(DXVml.ImageData openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.EmbossColor = new StringValue { Value = value };
@@ -200,12 +200,12 @@ public static class ImageDataConverter
   /// <summary>
   /// Black Recoloring Color
   /// </summary>
-  private static String? GetRecolorTarget(DocumentFormat.OpenXml.Vml.ImageData openXmlElement)
+  private static String? GetRecolorTarget(DXVml.ImageData openXmlElement)
   {
     return openXmlElement?.RecolorTarget?.Value;
   }
   
-  private static void SetRecolorTarget(DocumentFormat.OpenXml.Vml.ImageData openXmlElement, String? value)
+  private static void SetRecolorTarget(DXVml.ImageData openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.RecolorTarget = new StringValue { Value = value };
@@ -216,12 +216,12 @@ public static class ImageDataConverter
   /// <summary>
   /// Image Data Title
   /// </summary>
-  private static String? GetTitle(DocumentFormat.OpenXml.Vml.ImageData openXmlElement)
+  private static String? GetTitle(DXVml.ImageData openXmlElement)
   {
     return openXmlElement?.Title?.Value;
   }
   
-  private static void SetTitle(DocumentFormat.OpenXml.Vml.ImageData openXmlElement, String? value)
+  private static void SetTitle(DXVml.ImageData openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.Title = new StringValue { Value = value };
@@ -232,12 +232,12 @@ public static class ImageDataConverter
   /// <summary>
   /// Detect Mouse Click
   /// </summary>
-  private static Boolean? GetDetectMouseClick(DocumentFormat.OpenXml.Vml.ImageData openXmlElement)
+  private static Boolean? GetDetectMouseClick(DXVml.ImageData openXmlElement)
   {
     return openXmlElement?.DetectMouseClick?.Value;
   }
   
-  private static void SetDetectMouseClick(DocumentFormat.OpenXml.Vml.ImageData openXmlElement, Boolean? value)
+  private static void SetDetectMouseClick(DXVml.ImageData openXmlElement, Boolean? value)
   {
     if (value != null)
       openXmlElement.DetectMouseClick = value;
@@ -248,12 +248,12 @@ public static class ImageDataConverter
   /// <summary>
   /// Relationship to Part
   /// </summary>
-  private static String? GetRelId(DocumentFormat.OpenXml.Vml.ImageData openXmlElement)
+  private static String? GetRelId(DXVml.ImageData openXmlElement)
   {
     return openXmlElement?.RelId?.Value;
   }
   
-  private static void SetRelId(DocumentFormat.OpenXml.Vml.ImageData openXmlElement, String? value)
+  private static void SetRelId(DXVml.ImageData openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.RelId = new StringValue { Value = value };
@@ -264,12 +264,12 @@ public static class ImageDataConverter
   /// <summary>
   /// Explicit Relationship to Image Data
   /// </summary>
-  private static String? GetRelationshipId(DocumentFormat.OpenXml.Vml.ImageData openXmlElement)
+  private static String? GetRelationshipId(DXVml.ImageData openXmlElement)
   {
     return openXmlElement?.RelationshipId?.Value;
   }
   
-  private static void SetRelationshipId(DocumentFormat.OpenXml.Vml.ImageData openXmlElement, String? value)
+  private static void SetRelationshipId(DXVml.ImageData openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.RelationshipId = new StringValue { Value = value };
@@ -280,12 +280,12 @@ public static class ImageDataConverter
   /// <summary>
   /// Explicit Relationship to Alternate Image Data
   /// </summary>
-  private static String? GetPicture(DocumentFormat.OpenXml.Vml.ImageData openXmlElement)
+  private static String? GetPicture(DXVml.ImageData openXmlElement)
   {
     return openXmlElement?.Picture?.Value;
   }
   
-  private static void SetPicture(DocumentFormat.OpenXml.Vml.ImageData openXmlElement, String? value)
+  private static void SetPicture(DXVml.ImageData openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.Picture = new StringValue { Value = value };
@@ -296,12 +296,12 @@ public static class ImageDataConverter
   /// <summary>
   /// Explicit Relationship to Hyperlink Target
   /// </summary>
-  private static String? GetRelHref(DocumentFormat.OpenXml.Vml.ImageData openXmlElement)
+  private static String? GetRelHref(DXVml.ImageData openXmlElement)
   {
     return openXmlElement?.RelHref?.Value;
   }
   
-  private static void SetRelHref(DocumentFormat.OpenXml.Vml.ImageData openXmlElement, String? value)
+  private static void SetRelHref(DXVml.ImageData openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.RelHref = new StringValue { Value = value };
@@ -309,11 +309,11 @@ public static class ImageDataConverter
       openXmlElement.RelHref = null;
   }
   
-  public static DocumentModel.Vml.ImageData? CreateModelElement(DocumentFormat.OpenXml.Vml.ImageData? openXmlElement)
+  public static DMVml.ImageData? CreateModelElement(DXVml.ImageData? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Vml.ImageData();
+      var value = new DMVml.ImageData();
       value.Id = GetId(openXmlElement);
       value.ChromAKey = GetChromAKey(openXmlElement);
       value.CropLeft = GetCropLeft(openXmlElement);
@@ -338,8 +338,8 @@ public static class ImageDataConverter
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Vml.ImageData? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Vml.ImageData, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMVml.ImageData? value)
+    where OpenXmlElementType: DXVml.ImageData, new()
   {
     if (value != null)
     {

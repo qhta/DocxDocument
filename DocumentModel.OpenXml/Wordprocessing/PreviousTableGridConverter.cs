@@ -5,45 +5,45 @@ namespace DocumentModel.OpenXml.Wordprocessing;
 /// </summary>
 public static class PreviousTableGridConverter
 {
-  private static System.Collections.ObjectModel.Collection<DocumentModel.Wordprocessing.GridColumn> GetGridColumns(DocumentFormat.OpenXml.Wordprocessing.PreviousTableGrid openXmlElement)
+  private static Collection<DMW.GridColumn> GetGridColumns(DXW.PreviousTableGrid openXmlElement)
   {
-    var collection = new System.Collections.ObjectModel.Collection<DocumentModel.Wordprocessing.GridColumn>();
-    foreach (var item in openXmlElement.Elements<DocumentFormat.OpenXml.Wordprocessing.GridColumn>())
+    var collection = new Collection<DMW.GridColumn>();
+    foreach (var item in openXmlElement.Elements<DXW.GridColumn>())
     {
-      var newItem = DocumentModel.OpenXml.Wordprocessing.GridColumnConverter.CreateModelElement(item);
+      var newItem = DMXW.GridColumnConverter.CreateModelElement(item);
       if (newItem != null)
         collection.Add(newItem);
     }
     return collection;
   }
   
-  private static void SetGridColumns(DocumentFormat.OpenXml.Wordprocessing.PreviousTableGrid openXmlElement, System.Collections.ObjectModel.Collection<DocumentModel.Wordprocessing.GridColumn>? value)
+  private static void SetGridColumns(DXW.PreviousTableGrid openXmlElement, Collection<DMW.GridColumn>? value)
   {
-    openXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Wordprocessing.GridColumn>();
+    openXmlElement.RemoveAllChildren<DXW.GridColumn>();
     if (value != null)
     {
       foreach (var item in value)
       {
-        var newItem = DocumentModel.OpenXml.Wordprocessing.GridColumnConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.GridColumn>(item);
+        var newItem = DMXW.GridColumnConverter.CreateOpenXmlElement<DXW.GridColumn>(item);
         if (newItem != null)
           openXmlElement.AddChild(newItem);
       }
     }
   }
   
-  public static DocumentModel.Wordprocessing.PreviousTableGrid? CreateModelElement(DocumentFormat.OpenXml.Wordprocessing.PreviousTableGrid? openXmlElement)
+  public static DMW.PreviousTableGrid? CreateModelElement(DXW.PreviousTableGrid? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Wordprocessing.PreviousTableGrid();
+      var value = new DMW.PreviousTableGrid();
       value.GridColumns = GetGridColumns(openXmlElement);
       return value;
     }
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.PreviousTableGrid? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Wordprocessing.PreviousTableGrid, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMW.PreviousTableGrid? value)
+    where OpenXmlElementType: DXW.PreviousTableGrid, new()
   {
     if (value != null)
     {

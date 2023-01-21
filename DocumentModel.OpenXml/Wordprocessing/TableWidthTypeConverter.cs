@@ -8,12 +8,12 @@ public static class TableWidthTypeConverter
   /// <summary>
   /// Table Width Value
   /// </summary>
-  private static String? GetWidth(DocumentFormat.OpenXml.Wordprocessing.TableWidthType openXmlElement)
+  private static String? GetWidth(DXW.TableWidthType openXmlElement)
   {
     return openXmlElement?.Width?.Value;
   }
   
-  private static void SetWidth(DocumentFormat.OpenXml.Wordprocessing.TableWidthType openXmlElement, String? value)
+  private static void SetWidth(DXW.TableWidthType openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.Width = new StringValue { Value = value };
@@ -24,21 +24,21 @@ public static class TableWidthTypeConverter
   /// <summary>
   /// Table Width Type
   /// </summary>
-  private static DocumentModel.Wordprocessing.TableWidthUnitKind? GetType(DocumentFormat.OpenXml.Wordprocessing.TableWidthType openXmlElement)
+  private static DMW.TableWidthUnitKind? GetType(DXW.TableWidthType openXmlElement)
   {
-    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Wordprocessing.TableWidthUnitValues, DocumentModel.Wordprocessing.TableWidthUnitKind>(openXmlElement?.Type?.Value);
+    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Wordprocessing.TableWidthUnitValues, DMW.TableWidthUnitKind>(openXmlElement?.Type?.Value);
   }
   
-  private static void SetType(DocumentFormat.OpenXml.Wordprocessing.TableWidthType openXmlElement, DocumentModel.Wordprocessing.TableWidthUnitKind? value)
+  private static void SetType(DXW.TableWidthType openXmlElement, DMW.TableWidthUnitKind? value)
   {
-    openXmlElement.Type = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Wordprocessing.TableWidthUnitValues, DocumentModel.Wordprocessing.TableWidthUnitKind>(value);
+    openXmlElement.Type = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Wordprocessing.TableWidthUnitValues, DMW.TableWidthUnitKind>(value);
   }
   
-  public static DocumentModel.Wordprocessing.TableWidthType? CreateModelElement(DocumentFormat.OpenXml.Wordprocessing.TableWidthType? openXmlElement)
+  public static DMW.TableWidthType? CreateModelElement(DXW.TableWidthType? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Wordprocessing.TableWidthType();
+      var value = new DMW.TableWidthType();
       value.Width = GetWidth(openXmlElement);
       value.Type = GetType(openXmlElement);
       return value;
@@ -46,8 +46,8 @@ public static class TableWidthTypeConverter
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.TableWidthType? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Wordprocessing.TableWidthType, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMW.TableWidthType? value)
+    where OpenXmlElementType: DXW.TableWidthType, new()
   {
     if (value != null)
     {

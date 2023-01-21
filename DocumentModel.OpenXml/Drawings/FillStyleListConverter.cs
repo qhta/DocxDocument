@@ -5,137 +5,137 @@ namespace DocumentModel.OpenXml.Drawings;
 /// </summary>
 public static class FillStyleListConverter
 {
-  private static Boolean? GetNoFill(DocumentFormat.OpenXml.Drawing.FillStyleList openXmlElement)
+  private static Boolean? GetNoFill(DXDraw.FillStyleList openXmlElement)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.NoFill>();
+    var itemElement = openXmlElement.GetFirstChild<DXDraw.NoFill>();
     return itemElement != null;
   }
   
-  private static void SetNoFill(DocumentFormat.OpenXml.Drawing.FillStyleList openXmlElement, Boolean? value)
+  private static void SetNoFill(DXDraw.FillStyleList openXmlElement, Boolean? value)
   {
     if (value == false)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.NoFill>();
+      var itemElement = openXmlElement.GetFirstChild<DXDraw.NoFill>();
       if (itemElement != null)
         itemElement.Remove();
     }
     if (value == true)
     {
-      var itemElement = new DocumentFormat.OpenXml.Drawing.NoFill();
+      var itemElement = new DXDraw.NoFill();
       openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static DocumentModel.Drawings.SolidFill? GetSolidFill(DocumentFormat.OpenXml.Drawing.FillStyleList openXmlElement)
+  private static DMDraws.SolidFill? GetSolidFill(DXDraw.FillStyleList openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.SolidFill>();
+    var itemElement = openXmlElement?.GetFirstChild<DXDraw.SolidFill>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.SolidFillConverter.CreateModelElement(itemElement);
+      return DMXDraws.SolidFillConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetSolidFill(DocumentFormat.OpenXml.Drawing.FillStyleList openXmlElement, DocumentModel.Drawings.SolidFill? value)
+  private static void SetSolidFill(DXDraw.FillStyleList openXmlElement, DMDraws.SolidFill? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.SolidFill>();
+    var itemElement = openXmlElement.GetFirstChild<DXDraw.SolidFill>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Drawings.SolidFillConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.SolidFill>(value);
+      itemElement = DMXDraws.SolidFillConverter.CreateOpenXmlElement<DXDraw.SolidFill>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static DocumentModel.Drawings.GradientFill? GetGradientFill(DocumentFormat.OpenXml.Drawing.FillStyleList openXmlElement)
+  private static DMDraws.GradientFill? GetGradientFill(DXDraw.FillStyleList openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.GradientFill>();
+    var itemElement = openXmlElement?.GetFirstChild<DXDraw.GradientFill>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.GradientFillConverter.CreateModelElement(itemElement);
+      return DMXDraws.GradientFillConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetGradientFill(DocumentFormat.OpenXml.Drawing.FillStyleList openXmlElement, DocumentModel.Drawings.GradientFill? value)
+  private static void SetGradientFill(DXDraw.FillStyleList openXmlElement, DMDraws.GradientFill? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.GradientFill>();
+    var itemElement = openXmlElement.GetFirstChild<DXDraw.GradientFill>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Drawings.GradientFillConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.GradientFill>(value);
+      itemElement = DMXDraws.GradientFillConverter.CreateOpenXmlElement<DXDraw.GradientFill>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static DocumentModel.Drawings.BlipFill? GetBlipFill(DocumentFormat.OpenXml.Drawing.FillStyleList openXmlElement)
+  private static DMDraws.BlipFill? GetBlipFill(DXDraw.FillStyleList openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.BlipFill>();
+    var itemElement = openXmlElement?.GetFirstChild<DXDraw.BlipFill>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.BlipFillConverter.CreateModelElement(itemElement);
+      return DMXDraws.BlipFillConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetBlipFill(DocumentFormat.OpenXml.Drawing.FillStyleList openXmlElement, DocumentModel.Drawings.BlipFill? value)
+  private static void SetBlipFill(DXDraw.FillStyleList openXmlElement, DMDraws.BlipFill? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.BlipFill>();
+    var itemElement = openXmlElement.GetFirstChild<DXDraw.BlipFill>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Drawings.BlipFillConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.BlipFill>(value);
+      itemElement = DMXDraws.BlipFillConverter.CreateOpenXmlElement<DXDraw.BlipFill>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static DocumentModel.Drawings.PatternFill? GetPatternFill(DocumentFormat.OpenXml.Drawing.FillStyleList openXmlElement)
+  private static DMDraws.PatternFill? GetPatternFill(DXDraw.FillStyleList openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.PatternFill>();
+    var itemElement = openXmlElement?.GetFirstChild<DXDraw.PatternFill>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.PatternFillConverter.CreateModelElement(itemElement);
+      return DMXDraws.PatternFillConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetPatternFill(DocumentFormat.OpenXml.Drawing.FillStyleList openXmlElement, DocumentModel.Drawings.PatternFill? value)
+  private static void SetPatternFill(DXDraw.FillStyleList openXmlElement, DMDraws.PatternFill? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.PatternFill>();
+    var itemElement = openXmlElement.GetFirstChild<DXDraw.PatternFill>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Drawings.PatternFillConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.PatternFill>(value);
+      itemElement = DMXDraws.PatternFillConverter.CreateOpenXmlElement<DXDraw.PatternFill>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static Boolean? GetGroupFill(DocumentFormat.OpenXml.Drawing.FillStyleList openXmlElement)
+  private static Boolean? GetGroupFill(DXDraw.FillStyleList openXmlElement)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.GroupFill>();
+    var itemElement = openXmlElement.GetFirstChild<DXDraw.GroupFill>();
     return itemElement != null;
   }
   
-  private static void SetGroupFill(DocumentFormat.OpenXml.Drawing.FillStyleList openXmlElement, Boolean? value)
+  private static void SetGroupFill(DXDraw.FillStyleList openXmlElement, Boolean? value)
   {
     if (value == false)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.GroupFill>();
+      var itemElement = openXmlElement.GetFirstChild<DXDraw.GroupFill>();
       if (itemElement != null)
         itemElement.Remove();
     }
     if (value == true)
     {
-      var itemElement = new DocumentFormat.OpenXml.Drawing.GroupFill();
+      var itemElement = new DXDraw.GroupFill();
       openXmlElement.AddChild(itemElement);
     }
   }
   
-  public static DocumentModel.Drawings.FillStyleList? CreateModelElement(DocumentFormat.OpenXml.Drawing.FillStyleList? openXmlElement)
+  public static DMDraws.FillStyleList? CreateModelElement(DXDraw.FillStyleList? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.FillStyleList();
+      var value = new DMDraws.FillStyleList();
       value.NoFill = GetNoFill(openXmlElement);
       value.SolidFill = GetSolidFill(openXmlElement);
       value.GradientFill = GetGradientFill(openXmlElement);
@@ -147,8 +147,8 @@ public static class FillStyleListConverter
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.FillStyleList? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.FillStyleList, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDraws.FillStyleList? value)
+    where OpenXmlElementType: DXDraw.FillStyleList, new()
   {
     if (value != null)
     {

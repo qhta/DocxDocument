@@ -8,22 +8,22 @@ public static class AbsoluteAnchorSizeConverter
   /// <summary>
   /// FromAnchor.
   /// </summary>
-  private static DocumentModel.Drawings.ChartDrawing.FromAnchor? GetFromAnchor(DocumentFormat.OpenXml.Drawing.ChartDrawing.AbsoluteAnchorSize openXmlElement)
+  private static DMDrawsChartDraw.FromAnchor? GetFromAnchor(DXDrawChartDraw.AbsoluteAnchorSize openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.ChartDrawing.FromAnchor>();
+    var itemElement = openXmlElement?.GetFirstChild<DXDrawChartDraw.FromAnchor>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.ChartDrawing.FromAnchorConverter.CreateModelElement(itemElement);
+      return DMXDrawsChartDraw.FromAnchorConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetFromAnchor(DocumentFormat.OpenXml.Drawing.ChartDrawing.AbsoluteAnchorSize openXmlElement, DocumentModel.Drawings.ChartDrawing.FromAnchor? value)
+  private static void SetFromAnchor(DXDrawChartDraw.AbsoluteAnchorSize openXmlElement, DMDrawsChartDraw.FromAnchor? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.ChartDrawing.FromAnchor>();
+    var itemElement = openXmlElement.GetFirstChild<DXDrawChartDraw.FromAnchor>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Drawings.ChartDrawing.FromAnchorConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.ChartDrawing.FromAnchor>(value);
+      itemElement = DMXDrawsChartDraw.FromAnchorConverter.CreateOpenXmlElement<DXDrawChartDraw.FromAnchor>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
@@ -32,137 +32,137 @@ public static class AbsoluteAnchorSizeConverter
   /// <summary>
   /// Shape Extent.
   /// </summary>
-  private static DocumentModel.Drawings.ChartDrawing.Extent? GetExtent(DocumentFormat.OpenXml.Drawing.ChartDrawing.AbsoluteAnchorSize openXmlElement)
+  private static DMDrawsChartDraw.Extent? GetExtent(DXDrawChartDraw.AbsoluteAnchorSize openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.ChartDrawing.Extent>();
+    var itemElement = openXmlElement?.GetFirstChild<DXDrawChartDraw.Extent>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.ChartDrawing.ExtentConverter.CreateModelElement(itemElement);
+      return DMXDrawsChartDraw.ExtentConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetExtent(DocumentFormat.OpenXml.Drawing.ChartDrawing.AbsoluteAnchorSize openXmlElement, DocumentModel.Drawings.ChartDrawing.Extent? value)
+  private static void SetExtent(DXDrawChartDraw.AbsoluteAnchorSize openXmlElement, DMDrawsChartDraw.Extent? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.ChartDrawing.Extent>();
+    var itemElement = openXmlElement.GetFirstChild<DXDrawChartDraw.Extent>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Drawings.ChartDrawing.ExtentConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.ChartDrawing.Extent>(value);
+      itemElement = DMXDrawsChartDraw.ExtentConverter.CreateOpenXmlElement<DXDrawChartDraw.Extent>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static DocumentModel.Drawings.ChartDrawing.Shape? GetShape(DocumentFormat.OpenXml.Drawing.ChartDrawing.AbsoluteAnchorSize openXmlElement)
+  private static DMDrawsChartDraw.Shape? GetShape(DXDrawChartDraw.AbsoluteAnchorSize openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.ChartDrawing.Shape>();
+    var itemElement = openXmlElement?.GetFirstChild<DXDrawChartDraw.Shape>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.ChartDrawing.ShapeConverter.CreateModelElement(itemElement);
+      return DMXDrawsChartDraw.ShapeConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetShape(DocumentFormat.OpenXml.Drawing.ChartDrawing.AbsoluteAnchorSize openXmlElement, DocumentModel.Drawings.ChartDrawing.Shape? value)
+  private static void SetShape(DXDrawChartDraw.AbsoluteAnchorSize openXmlElement, DMDrawsChartDraw.Shape? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.ChartDrawing.Shape>();
+    var itemElement = openXmlElement.GetFirstChild<DXDrawChartDraw.Shape>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Drawings.ChartDrawing.ShapeConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.ChartDrawing.Shape>(value);
+      itemElement = DMXDrawsChartDraw.ShapeConverter.CreateOpenXmlElement<DXDrawChartDraw.Shape>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static DocumentModel.Drawings.ChartDrawing.GroupShape? GetGroupShape(DocumentFormat.OpenXml.Drawing.ChartDrawing.AbsoluteAnchorSize openXmlElement)
+  private static DMDrawsChartDraw.GroupShape? GetGroupShape(DXDrawChartDraw.AbsoluteAnchorSize openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.ChartDrawing.GroupShape>();
+    var itemElement = openXmlElement?.GetFirstChild<DXDrawChartDraw.GroupShape>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.ChartDrawing.GroupShapeConverter.CreateModelElement(itemElement);
+      return DMXDrawsChartDraw.GroupShapeConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetGroupShape(DocumentFormat.OpenXml.Drawing.ChartDrawing.AbsoluteAnchorSize openXmlElement, DocumentModel.Drawings.ChartDrawing.GroupShape? value)
+  private static void SetGroupShape(DXDrawChartDraw.AbsoluteAnchorSize openXmlElement, DMDrawsChartDraw.GroupShape? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.ChartDrawing.GroupShape>();
+    var itemElement = openXmlElement.GetFirstChild<DXDrawChartDraw.GroupShape>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Drawings.ChartDrawing.GroupShapeConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.ChartDrawing.GroupShape>(value);
+      itemElement = DMXDrawsChartDraw.GroupShapeConverter.CreateOpenXmlElement<DXDrawChartDraw.GroupShape>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static DocumentModel.Drawings.ChartDrawing.GraphicFrame? GetGraphicFrame(DocumentFormat.OpenXml.Drawing.ChartDrawing.AbsoluteAnchorSize openXmlElement)
+  private static DMDrawsChartDraw.GraphicFrame? GetGraphicFrame(DXDrawChartDraw.AbsoluteAnchorSize openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.ChartDrawing.GraphicFrame>();
+    var itemElement = openXmlElement?.GetFirstChild<DXDrawChartDraw.GraphicFrame>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.ChartDrawing.GraphicFrameConverter.CreateModelElement(itemElement);
+      return DMXDrawsChartDraw.GraphicFrameConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetGraphicFrame(DocumentFormat.OpenXml.Drawing.ChartDrawing.AbsoluteAnchorSize openXmlElement, DocumentModel.Drawings.ChartDrawing.GraphicFrame? value)
+  private static void SetGraphicFrame(DXDrawChartDraw.AbsoluteAnchorSize openXmlElement, DMDrawsChartDraw.GraphicFrame? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.ChartDrawing.GraphicFrame>();
+    var itemElement = openXmlElement.GetFirstChild<DXDrawChartDraw.GraphicFrame>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Drawings.ChartDrawing.GraphicFrameConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.ChartDrawing.GraphicFrame>(value);
+      itemElement = DMXDrawsChartDraw.GraphicFrameConverter.CreateOpenXmlElement<DXDrawChartDraw.GraphicFrame>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static DocumentModel.Drawings.ChartDrawing.ConnectionShape? GetConnectionShape(DocumentFormat.OpenXml.Drawing.ChartDrawing.AbsoluteAnchorSize openXmlElement)
+  private static DMDrawsChartDraw.ConnectionShape? GetConnectionShape(DXDrawChartDraw.AbsoluteAnchorSize openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.ChartDrawing.ConnectionShape>();
+    var itemElement = openXmlElement?.GetFirstChild<DXDrawChartDraw.ConnectionShape>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.ChartDrawing.ConnectionShapeConverter.CreateModelElement(itemElement);
+      return DMXDrawsChartDraw.ConnectionShapeConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetConnectionShape(DocumentFormat.OpenXml.Drawing.ChartDrawing.AbsoluteAnchorSize openXmlElement, DocumentModel.Drawings.ChartDrawing.ConnectionShape? value)
+  private static void SetConnectionShape(DXDrawChartDraw.AbsoluteAnchorSize openXmlElement, DMDrawsChartDraw.ConnectionShape? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.ChartDrawing.ConnectionShape>();
+    var itemElement = openXmlElement.GetFirstChild<DXDrawChartDraw.ConnectionShape>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Drawings.ChartDrawing.ConnectionShapeConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.ChartDrawing.ConnectionShape>(value);
+      itemElement = DMXDrawsChartDraw.ConnectionShapeConverter.CreateOpenXmlElement<DXDrawChartDraw.ConnectionShape>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static DocumentModel.Drawings.ChartDrawing.Picture? GetPicture(DocumentFormat.OpenXml.Drawing.ChartDrawing.AbsoluteAnchorSize openXmlElement)
+  private static DMDrawsChartDraw.Picture? GetPicture(DXDrawChartDraw.AbsoluteAnchorSize openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.ChartDrawing.Picture>();
+    var itemElement = openXmlElement?.GetFirstChild<DXDrawChartDraw.Picture>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.ChartDrawing.PictureConverter.CreateModelElement(itemElement);
+      return DMXDrawsChartDraw.PictureConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetPicture(DocumentFormat.OpenXml.Drawing.ChartDrawing.AbsoluteAnchorSize openXmlElement, DocumentModel.Drawings.ChartDrawing.Picture? value)
+  private static void SetPicture(DXDrawChartDraw.AbsoluteAnchorSize openXmlElement, DMDrawsChartDraw.Picture? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.ChartDrawing.Picture>();
+    var itemElement = openXmlElement.GetFirstChild<DXDrawChartDraw.Picture>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Drawings.ChartDrawing.PictureConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.ChartDrawing.Picture>(value);
+      itemElement = DMXDrawsChartDraw.PictureConverter.CreateOpenXmlElement<DXDrawChartDraw.Picture>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  public static DocumentModel.Drawings.ChartDrawing.AbsoluteAnchorSize? CreateModelElement(DocumentFormat.OpenXml.Drawing.ChartDrawing.AbsoluteAnchorSize? openXmlElement)
+  public static DMDrawsChartDraw.AbsoluteAnchorSize? CreateModelElement(DXDrawChartDraw.AbsoluteAnchorSize? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.ChartDrawing.AbsoluteAnchorSize();
+      var value = new DMDrawsChartDraw.AbsoluteAnchorSize();
       value.FromAnchor = GetFromAnchor(openXmlElement);
       value.Extent = GetExtent(openXmlElement);
       value.Shape = GetShape(openXmlElement);
@@ -175,8 +175,8 @@ public static class AbsoluteAnchorSizeConverter
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.ChartDrawing.AbsoluteAnchorSize? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.ChartDrawing.AbsoluteAnchorSize, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDrawsChartDraw.AbsoluteAnchorSize? value)
+    where OpenXmlElementType: DXDrawChartDraw.AbsoluteAnchorSize, new()
   {
     if (value != null)
     {

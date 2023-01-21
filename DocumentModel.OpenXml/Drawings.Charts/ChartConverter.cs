@@ -8,22 +8,22 @@ public static class ChartConverter
   /// <summary>
   /// Title data and formatting.
   /// </summary>
-  private static DocumentModel.Drawings.Charts.Title? GetTitle(DocumentFormat.OpenXml.Drawing.Charts.Chart openXmlElement)
+  private static DMDrawsCharts.Title? GetTitle(DXDrawCharts.Chart openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.Title>();
+    var itemElement = openXmlElement?.GetFirstChild<DXDrawCharts.Title>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.Charts.TitleConverter.CreateModelElement(itemElement);
+      return DMXDrawsCharts.TitleConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetTitle(DocumentFormat.OpenXml.Drawing.Charts.Chart openXmlElement, DocumentModel.Drawings.Charts.Title? value)
+  private static void SetTitle(DXDrawCharts.Chart openXmlElement, DMDrawsCharts.Title? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.Title>();
+    var itemElement = openXmlElement.GetFirstChild<DXDrawCharts.Title>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Drawings.Charts.TitleConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Charts.Title>(value);
+      itemElement = DMXDrawsCharts.TitleConverter.CreateOpenXmlElement<DXDrawCharts.Title>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
@@ -32,23 +32,23 @@ public static class ChartConverter
   /// <summary>
   /// True if the chart automatic title has been deleted..
   /// </summary>
-  private static Boolean? GetAutoTitleDeleted(DocumentFormat.OpenXml.Drawing.Charts.Chart openXmlElement)
+  private static Boolean? GetAutoTitleDeleted(DXDrawCharts.Chart openXmlElement)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.AutoTitleDeleted>();
+    var itemElement = openXmlElement.GetFirstChild<DXDrawCharts.AutoTitleDeleted>();
     return itemElement != null;
   }
   
-  private static void SetAutoTitleDeleted(DocumentFormat.OpenXml.Drawing.Charts.Chart openXmlElement, Boolean? value)
+  private static void SetAutoTitleDeleted(DXDrawCharts.Chart openXmlElement, Boolean? value)
   {
     if (value == false)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.AutoTitleDeleted>();
+      var itemElement = openXmlElement.GetFirstChild<DXDrawCharts.AutoTitleDeleted>();
       if (itemElement != null)
         itemElement.Remove();
     }
     if (value == true)
     {
-      var itemElement = new DocumentFormat.OpenXml.Drawing.Charts.AutoTitleDeleted();
+      var itemElement = new DXDrawCharts.AutoTitleDeleted();
       openXmlElement.AddChild(itemElement);
     }
   }
@@ -56,22 +56,22 @@ public static class ChartConverter
   /// <summary>
   /// pivot chart format persistence data.
   /// </summary>
-  private static DocumentModel.Drawings.Charts.PivotFormats? GetPivotFormats(DocumentFormat.OpenXml.Drawing.Charts.Chart openXmlElement)
+  private static DMDrawsCharts.PivotFormats? GetPivotFormats(DXDrawCharts.Chart openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.PivotFormats>();
+    var itemElement = openXmlElement?.GetFirstChild<DXDrawCharts.PivotFormats>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.Charts.PivotFormatsConverter.CreateModelElement(itemElement);
+      return DMXDrawsCharts.PivotFormatsConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetPivotFormats(DocumentFormat.OpenXml.Drawing.Charts.Chart openXmlElement, DocumentModel.Drawings.Charts.PivotFormats? value)
+  private static void SetPivotFormats(DXDrawCharts.Chart openXmlElement, DMDrawsCharts.PivotFormats? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.PivotFormats>();
+    var itemElement = openXmlElement.GetFirstChild<DXDrawCharts.PivotFormats>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Drawings.Charts.PivotFormatsConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Charts.PivotFormats>(value);
+      itemElement = DMXDrawsCharts.PivotFormatsConverter.CreateOpenXmlElement<DXDrawCharts.PivotFormats>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
@@ -80,22 +80,22 @@ public static class ChartConverter
   /// <summary>
   /// 3D view settings.
   /// </summary>
-  private static DocumentModel.Drawings.Charts.View3D? GetView3D(DocumentFormat.OpenXml.Drawing.Charts.Chart openXmlElement)
+  private static DMDrawsCharts.View3D? GetView3D(DXDrawCharts.Chart openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.View3D>();
+    var itemElement = openXmlElement?.GetFirstChild<DXDrawCharts.View3D>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.Charts.View3DConverter.CreateModelElement(itemElement);
+      return DMXDrawsCharts.View3DConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetView3D(DocumentFormat.OpenXml.Drawing.Charts.Chart openXmlElement, DocumentModel.Drawings.Charts.View3D? value)
+  private static void SetView3D(DXDrawCharts.Chart openXmlElement, DMDrawsCharts.View3D? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.View3D>();
+    var itemElement = openXmlElement.GetFirstChild<DXDrawCharts.View3D>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Drawings.Charts.View3DConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Charts.View3D>(value);
+      itemElement = DMXDrawsCharts.View3DConverter.CreateOpenXmlElement<DXDrawCharts.View3D>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
@@ -104,22 +104,22 @@ public static class ChartConverter
   /// <summary>
   /// 3D floor formatting.
   /// </summary>
-  private static DocumentModel.Drawings.Charts.Floor? GetFloor(DocumentFormat.OpenXml.Drawing.Charts.Chart openXmlElement)
+  private static DMDrawsCharts.Floor? GetFloor(DXDrawCharts.Chart openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.Floor>();
+    var itemElement = openXmlElement?.GetFirstChild<DXDrawCharts.Floor>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.Charts.FloorConverter.CreateModelElement(itemElement);
+      return DMXDrawsCharts.FloorConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetFloor(DocumentFormat.OpenXml.Drawing.Charts.Chart openXmlElement, DocumentModel.Drawings.Charts.Floor? value)
+  private static void SetFloor(DXDrawCharts.Chart openXmlElement, DMDrawsCharts.Floor? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.Floor>();
+    var itemElement = openXmlElement.GetFirstChild<DXDrawCharts.Floor>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Drawings.Charts.FloorConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Charts.Floor>(value);
+      itemElement = DMXDrawsCharts.FloorConverter.CreateOpenXmlElement<DXDrawCharts.Floor>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
@@ -128,22 +128,22 @@ public static class ChartConverter
   /// <summary>
   /// 3D side wall formatting.
   /// </summary>
-  private static DocumentModel.Drawings.Charts.SideWall? GetSideWall(DocumentFormat.OpenXml.Drawing.Charts.Chart openXmlElement)
+  private static DMDrawsCharts.SideWall? GetSideWall(DXDrawCharts.Chart openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.SideWall>();
+    var itemElement = openXmlElement?.GetFirstChild<DXDrawCharts.SideWall>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.Charts.SideWallConverter.CreateModelElement(itemElement);
+      return DMXDrawsCharts.SideWallConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetSideWall(DocumentFormat.OpenXml.Drawing.Charts.Chart openXmlElement, DocumentModel.Drawings.Charts.SideWall? value)
+  private static void SetSideWall(DXDrawCharts.Chart openXmlElement, DMDrawsCharts.SideWall? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.SideWall>();
+    var itemElement = openXmlElement.GetFirstChild<DXDrawCharts.SideWall>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Drawings.Charts.SideWallConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Charts.SideWall>(value);
+      itemElement = DMXDrawsCharts.SideWallConverter.CreateOpenXmlElement<DXDrawCharts.SideWall>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
@@ -152,22 +152,22 @@ public static class ChartConverter
   /// <summary>
   /// 3D back wall formatting.
   /// </summary>
-  private static DocumentModel.Drawings.Charts.BackWall? GetBackWall(DocumentFormat.OpenXml.Drawing.Charts.Chart openXmlElement)
+  private static DMDrawsCharts.BackWall? GetBackWall(DXDrawCharts.Chart openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.BackWall>();
+    var itemElement = openXmlElement?.GetFirstChild<DXDrawCharts.BackWall>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.Charts.BackWallConverter.CreateModelElement(itemElement);
+      return DMXDrawsCharts.BackWallConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetBackWall(DocumentFormat.OpenXml.Drawing.Charts.Chart openXmlElement, DocumentModel.Drawings.Charts.BackWall? value)
+  private static void SetBackWall(DXDrawCharts.Chart openXmlElement, DMDrawsCharts.BackWall? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.BackWall>();
+    var itemElement = openXmlElement.GetFirstChild<DXDrawCharts.BackWall>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Drawings.Charts.BackWallConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Charts.BackWall>(value);
+      itemElement = DMXDrawsCharts.BackWallConverter.CreateOpenXmlElement<DXDrawCharts.BackWall>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
@@ -176,22 +176,22 @@ public static class ChartConverter
   /// <summary>
   /// Plot data and formatting.
   /// </summary>
-  private static DocumentModel.Drawings.Charts.PlotArea? GetPlotArea(DocumentFormat.OpenXml.Drawing.Charts.Chart openXmlElement)
+  private static DMDrawsCharts.PlotArea? GetPlotArea(DXDrawCharts.Chart openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.PlotArea>();
+    var itemElement = openXmlElement?.GetFirstChild<DXDrawCharts.PlotArea>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.Charts.PlotAreaConverter.CreateModelElement(itemElement);
+      return DMXDrawsCharts.PlotAreaConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetPlotArea(DocumentFormat.OpenXml.Drawing.Charts.Chart openXmlElement, DocumentModel.Drawings.Charts.PlotArea? value)
+  private static void SetPlotArea(DXDrawCharts.Chart openXmlElement, DMDrawsCharts.PlotArea? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.PlotArea>();
+    var itemElement = openXmlElement.GetFirstChild<DXDrawCharts.PlotArea>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Drawings.Charts.PlotAreaConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Charts.PlotArea>(value);
+      itemElement = DMXDrawsCharts.PlotAreaConverter.CreateOpenXmlElement<DXDrawCharts.PlotArea>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
@@ -200,22 +200,22 @@ public static class ChartConverter
   /// <summary>
   /// Legend data and formatting.
   /// </summary>
-  private static DocumentModel.Drawings.Charts.Legend? GetLegend(DocumentFormat.OpenXml.Drawing.Charts.Chart openXmlElement)
+  private static DMDrawsCharts.Legend? GetLegend(DXDrawCharts.Chart openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.Legend>();
+    var itemElement = openXmlElement?.GetFirstChild<DXDrawCharts.Legend>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.Charts.LegendConverter.CreateModelElement(itemElement);
+      return DMXDrawsCharts.LegendConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetLegend(DocumentFormat.OpenXml.Drawing.Charts.Chart openXmlElement, DocumentModel.Drawings.Charts.Legend? value)
+  private static void SetLegend(DXDrawCharts.Chart openXmlElement, DMDrawsCharts.Legend? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.Legend>();
+    var itemElement = openXmlElement.GetFirstChild<DXDrawCharts.Legend>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Drawings.Charts.LegendConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Charts.Legend>(value);
+      itemElement = DMXDrawsCharts.LegendConverter.CreateOpenXmlElement<DXDrawCharts.Legend>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
@@ -224,23 +224,23 @@ public static class ChartConverter
   /// <summary>
   /// True if only visible cells are plotted..
   /// </summary>
-  private static Boolean? GetPlotVisibleOnly(DocumentFormat.OpenXml.Drawing.Charts.Chart openXmlElement)
+  private static Boolean? GetPlotVisibleOnly(DXDrawCharts.Chart openXmlElement)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.PlotVisibleOnly>();
+    var itemElement = openXmlElement.GetFirstChild<DXDrawCharts.PlotVisibleOnly>();
     return itemElement != null;
   }
   
-  private static void SetPlotVisibleOnly(DocumentFormat.OpenXml.Drawing.Charts.Chart openXmlElement, Boolean? value)
+  private static void SetPlotVisibleOnly(DXDrawCharts.Chart openXmlElement, Boolean? value)
   {
     if (value == false)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.PlotVisibleOnly>();
+      var itemElement = openXmlElement.GetFirstChild<DXDrawCharts.PlotVisibleOnly>();
       if (itemElement != null)
         itemElement.Remove();
     }
     if (value == true)
     {
-      var itemElement = new DocumentFormat.OpenXml.Drawing.Charts.PlotVisibleOnly();
+      var itemElement = new DXDrawCharts.PlotVisibleOnly();
       openXmlElement.AddChild(itemElement);
     }
   }
@@ -248,22 +248,22 @@ public static class ChartConverter
   /// <summary>
   /// The way that blank cells are plotted on a chart..
   /// </summary>
-  private static DocumentModel.Drawings.Charts.DisplayBlanksAsKind? GetDisplayBlanksAs(DocumentFormat.OpenXml.Drawing.Charts.Chart openXmlElement)
+  private static DMDrawsCharts.DisplayBlanksAsKind? GetDisplayBlanksAs(DXDrawCharts.Chart openXmlElement)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.DisplayBlanksAs>();
+    var itemElement = openXmlElement.GetFirstChild<DXDrawCharts.DisplayBlanksAs>();
     if (itemElement?.Val?.Value != null)
-      return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Drawing.Charts.DisplayBlanksAsValues, DocumentModel.Drawings.Charts.DisplayBlanksAsKind>(itemElement.Val.Value);
+      return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Drawing.Charts.DisplayBlanksAsValues, DMDrawsCharts.DisplayBlanksAsKind>(itemElement.Val.Value);
     return null;
   }
   
-  private static void SetDisplayBlanksAs(DocumentFormat.OpenXml.Drawing.Charts.Chart openXmlElement, DocumentModel.Drawings.Charts.DisplayBlanksAsKind? value)
+  private static void SetDisplayBlanksAs(DXDrawCharts.Chart openXmlElement, DMDrawsCharts.DisplayBlanksAsKind? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.DisplayBlanksAs>();
+    var itemElement = openXmlElement.GetFirstChild<DXDrawCharts.DisplayBlanksAs>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = EnumValueConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Charts.DisplayBlanksAs, DocumentFormat.OpenXml.Drawing.Charts.DisplayBlanksAsValues, DocumentModel.Drawings.Charts.DisplayBlanksAsKind>(value);
+      itemElement = EnumValueConverter.CreateOpenXmlElement<DXDrawCharts.DisplayBlanksAs, DocumentFormat.OpenXml.Drawing.Charts.DisplayBlanksAsValues, DMDrawsCharts.DisplayBlanksAsKind>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
@@ -272,23 +272,23 @@ public static class ChartConverter
   /// <summary>
   /// True if we should render datalabels over the maximum scale.
   /// </summary>
-  private static Boolean? GetShowDataLabelsOverMaximum(DocumentFormat.OpenXml.Drawing.Charts.Chart openXmlElement)
+  private static Boolean? GetShowDataLabelsOverMaximum(DXDrawCharts.Chart openXmlElement)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.ShowDataLabelsOverMaximum>();
+    var itemElement = openXmlElement.GetFirstChild<DXDrawCharts.ShowDataLabelsOverMaximum>();
     return itemElement != null;
   }
   
-  private static void SetShowDataLabelsOverMaximum(DocumentFormat.OpenXml.Drawing.Charts.Chart openXmlElement, Boolean? value)
+  private static void SetShowDataLabelsOverMaximum(DXDrawCharts.Chart openXmlElement, Boolean? value)
   {
     if (value == false)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.ShowDataLabelsOverMaximum>();
+      var itemElement = openXmlElement.GetFirstChild<DXDrawCharts.ShowDataLabelsOverMaximum>();
       if (itemElement != null)
         itemElement.Remove();
     }
     if (value == true)
     {
-      var itemElement = new DocumentFormat.OpenXml.Drawing.Charts.ShowDataLabelsOverMaximum();
+      var itemElement = new DXDrawCharts.ShowDataLabelsOverMaximum();
       openXmlElement.AddChild(itemElement);
     }
   }
@@ -296,32 +296,32 @@ public static class ChartConverter
   /// <summary>
   /// Extensibility container.
   /// </summary>
-  private static DocumentModel.Drawings.Charts.ChartExtensionList? GetChartExtensionList(DocumentFormat.OpenXml.Drawing.Charts.Chart openXmlElement)
+  private static DMDrawsCharts.ChartExtensionList? GetChartExtensionList(DXDrawCharts.Chart openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.ChartExtensionList>();
+    var itemElement = openXmlElement?.GetFirstChild<DXDrawCharts.ChartExtensionList>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.Charts.ChartExtensionListConverter.CreateModelElement(itemElement);
+      return DMXDrawsCharts.ChartExtensionListConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetChartExtensionList(DocumentFormat.OpenXml.Drawing.Charts.Chart openXmlElement, DocumentModel.Drawings.Charts.ChartExtensionList? value)
+  private static void SetChartExtensionList(DXDrawCharts.Chart openXmlElement, DMDrawsCharts.ChartExtensionList? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.ChartExtensionList>();
+    var itemElement = openXmlElement.GetFirstChild<DXDrawCharts.ChartExtensionList>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Drawings.Charts.ChartExtensionListConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Charts.ChartExtensionList>(value);
+      itemElement = DMXDrawsCharts.ChartExtensionListConverter.CreateOpenXmlElement<DXDrawCharts.ChartExtensionList>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  public static DocumentModel.Drawings.Charts.Chart? CreateModelElement(DocumentFormat.OpenXml.Drawing.Charts.Chart? openXmlElement)
+  public static DMDrawsCharts.Chart? CreateModelElement(DXDrawCharts.Chart? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.Charts.Chart();
+      var value = new DMDrawsCharts.Chart();
       value.Title = GetTitle(openXmlElement);
       value.AutoTitleDeleted = GetAutoTitleDeleted(openXmlElement);
       value.PivotFormats = GetPivotFormats(openXmlElement);
@@ -340,8 +340,8 @@ public static class ChartConverter
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.Charts.Chart? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.Charts.Chart, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDrawsCharts.Chart? value)
+    where OpenXmlElementType: DXDrawCharts.Chart, new()
   {
     if (value != null)
     {

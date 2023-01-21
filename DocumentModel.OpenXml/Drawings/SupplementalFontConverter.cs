@@ -8,12 +8,12 @@ public static class SupplementalFontConverter
   /// <summary>
   /// Script
   /// </summary>
-  private static String? GetScript(DocumentFormat.OpenXml.Drawing.SupplementalFont openXmlElement)
+  private static String? GetScript(DXDraw.SupplementalFont openXmlElement)
   {
     return openXmlElement?.Script?.Value;
   }
   
-  private static void SetScript(DocumentFormat.OpenXml.Drawing.SupplementalFont openXmlElement, String? value)
+  private static void SetScript(DXDraw.SupplementalFont openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.Script = new StringValue { Value = value };
@@ -24,12 +24,12 @@ public static class SupplementalFontConverter
   /// <summary>
   /// Typeface
   /// </summary>
-  private static String? GetTypeface(DocumentFormat.OpenXml.Drawing.SupplementalFont openXmlElement)
+  private static String? GetTypeface(DXDraw.SupplementalFont openXmlElement)
   {
     return openXmlElement?.Typeface?.Value;
   }
   
-  private static void SetTypeface(DocumentFormat.OpenXml.Drawing.SupplementalFont openXmlElement, String? value)
+  private static void SetTypeface(DXDraw.SupplementalFont openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.Typeface = new StringValue { Value = value };
@@ -37,11 +37,11 @@ public static class SupplementalFontConverter
       openXmlElement.Typeface = null;
   }
   
-  public static DocumentModel.Drawings.SupplementalFont? CreateModelElement(DocumentFormat.OpenXml.Drawing.SupplementalFont? openXmlElement)
+  public static DMDraws.SupplementalFont? CreateModelElement(DXDraw.SupplementalFont? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.SupplementalFont();
+      var value = new DMDraws.SupplementalFont();
       value.Script = GetScript(openXmlElement);
       value.Typeface = GetTypeface(openXmlElement);
       return value;
@@ -49,8 +49,8 @@ public static class SupplementalFontConverter
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.SupplementalFont? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.SupplementalFont, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDraws.SupplementalFont? value)
+    where OpenXmlElementType: DXDraw.SupplementalFont, new()
   {
     if (value != null)
     {

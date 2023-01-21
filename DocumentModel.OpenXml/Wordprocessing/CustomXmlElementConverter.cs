@@ -8,12 +8,12 @@ public static class CustomXmlElementConverter
   /// <summary>
   /// Gets or sets the custom XML Markup Namespace.
   /// </summary>
-  private static String? GetUri(DocumentFormat.OpenXml.Wordprocessing.CustomXmlElement openXmlElement)
+  private static String? GetUri(DXW.CustomXmlElement openXmlElement)
   {
     return openXmlElement?.Uri?.Value;
   }
   
-  private static void SetUri(DocumentFormat.OpenXml.Wordprocessing.CustomXmlElement openXmlElement, String? value)
+  private static void SetUri(DXW.CustomXmlElement openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.Uri = new StringValue { Value = value };
@@ -24,12 +24,12 @@ public static class CustomXmlElementConverter
   /// <summary>
   /// Gets or sets the element name.
   /// </summary>
-  private static String? GetElement(DocumentFormat.OpenXml.Wordprocessing.CustomXmlElement openXmlElement)
+  private static String? GetElement(DXW.CustomXmlElement openXmlElement)
   {
     return openXmlElement?.Element?.Value;
   }
   
-  private static void SetElement(DocumentFormat.OpenXml.Wordprocessing.CustomXmlElement openXmlElement, String? value)
+  private static void SetElement(DXW.CustomXmlElement openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.Element = new StringValue { Value = value };
@@ -40,32 +40,32 @@ public static class CustomXmlElementConverter
   /// <summary>
   /// Gets or sets the CustomXmlProperties which represents the element tag in schema: w:customXmlPr.
   /// </summary>
-  private static DocumentModel.Wordprocessing.CustomXmlProperties? GetCustomXmlProperties(DocumentFormat.OpenXml.Wordprocessing.CustomXmlElement openXmlElement)
+  private static DMW.CustomXmlProperties? GetCustomXmlProperties(DXW.CustomXmlElement openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.CustomXmlProperties>();
+    var itemElement = openXmlElement?.GetFirstChild<DXW.CustomXmlProperties>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Wordprocessing.CustomXmlPropertiesConverter.CreateModelElement(itemElement);
+      return DMXW.CustomXmlPropertiesConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetCustomXmlProperties(DocumentFormat.OpenXml.Wordprocessing.CustomXmlElement openXmlElement, DocumentModel.Wordprocessing.CustomXmlProperties? value)
+  private static void SetCustomXmlProperties(DXW.CustomXmlElement openXmlElement, DMW.CustomXmlProperties? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.CustomXmlProperties>();
+    var itemElement = openXmlElement.GetFirstChild<DXW.CustomXmlProperties>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Wordprocessing.CustomXmlPropertiesConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.CustomXmlProperties>(value);
+      itemElement = DMXW.CustomXmlPropertiesConverter.CreateOpenXmlElement<DXW.CustomXmlProperties>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  public static DocumentModel.Wordprocessing.CustomXmlElement? CreateModelElement(DocumentFormat.OpenXml.Wordprocessing.CustomXmlElement? openXmlElement)
+  public static DMW.CustomXmlElement? CreateModelElement(DXW.CustomXmlElement? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Wordprocessing.CustomXmlElement();
+      var value = new DMW.CustomXmlElement();
       value.Uri = GetUri(openXmlElement);
       value.Element = GetElement(openXmlElement);
       value.CustomXmlProperties = GetCustomXmlProperties(openXmlElement);
@@ -74,8 +74,8 @@ public static class CustomXmlElementConverter
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.CustomXmlElement? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Wordprocessing.CustomXmlElement, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMW.CustomXmlElement? value)
+    where OpenXmlElementType: DXW.CustomXmlElement, new()
   {
     if (value != null)
     {

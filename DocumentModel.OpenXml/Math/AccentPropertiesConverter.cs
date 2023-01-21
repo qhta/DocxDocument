@@ -8,22 +8,22 @@ public static class AccentPropertiesConverter
   /// <summary>
   /// Accent Character.
   /// </summary>
-  private static String? GetAccentChar(DocumentFormat.OpenXml.Math.AccentProperties openXmlElement)
+  private static String? GetAccentChar(DXMath.AccentProperties openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Math.AccentChar>();
+    var itemElement = openXmlElement?.GetFirstChild<DXMath.AccentChar>();
     if (itemElement != null)
       return itemElement.Val?.Value;
     return null;
   }
   
-  private static void SetAccentChar(DocumentFormat.OpenXml.Math.AccentProperties openXmlElement, String? value)
+  private static void SetAccentChar(DXMath.AccentProperties openXmlElement, String? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Math.AccentChar>();
+    var itemElement = openXmlElement.GetFirstChild<DXMath.AccentChar>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = new DocumentFormat.OpenXml.Math.AccentChar { Val = value };
+      itemElement = new DXMath.AccentChar { Val = value };
       openXmlElement.AddChild(itemElement);
     }
   }
@@ -31,32 +31,32 @@ public static class AccentPropertiesConverter
   /// <summary>
   /// Control Properties.
   /// </summary>
-  private static DocumentModel.Math.ControlProperties? GetControlProperties(DocumentFormat.OpenXml.Math.AccentProperties openXmlElement)
+  private static DMMath.ControlProperties? GetControlProperties(DXMath.AccentProperties openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Math.ControlProperties>();
+    var itemElement = openXmlElement?.GetFirstChild<DXMath.ControlProperties>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Math.ControlPropertiesConverter.CreateModelElement(itemElement);
+      return DMXMath.ControlPropertiesConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetControlProperties(DocumentFormat.OpenXml.Math.AccentProperties openXmlElement, DocumentModel.Math.ControlProperties? value)
+  private static void SetControlProperties(DXMath.AccentProperties openXmlElement, DMMath.ControlProperties? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Math.ControlProperties>();
+    var itemElement = openXmlElement.GetFirstChild<DXMath.ControlProperties>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Math.ControlPropertiesConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Math.ControlProperties>(value);
+      itemElement = DMXMath.ControlPropertiesConverter.CreateOpenXmlElement<DXMath.ControlProperties>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  public static DocumentModel.Math.AccentProperties? CreateModelElement(DocumentFormat.OpenXml.Math.AccentProperties? openXmlElement)
+  public static DMMath.AccentProperties? CreateModelElement(DXMath.AccentProperties? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Math.AccentProperties();
+      var value = new DMMath.AccentProperties();
       value.AccentChar = GetAccentChar(openXmlElement);
       value.ControlProperties = GetControlProperties(openXmlElement);
       return value;
@@ -64,8 +64,8 @@ public static class AccentPropertiesConverter
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Math.AccentProperties? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Math.AccentProperties, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMMath.AccentProperties? value)
+    where OpenXmlElementType: DXMath.AccentProperties, new()
   {
     if (value != null)
     {

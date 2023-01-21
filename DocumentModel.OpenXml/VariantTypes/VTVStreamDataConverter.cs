@@ -8,12 +8,12 @@ public static class VTVStreamDataConverter
   /// <summary>
   /// VSTREAM Version Attribute
   /// </summary>
-  private static String? GetVersion(DocumentFormat.OpenXml.VariantTypes.VTVStreamData openXmlElement)
+  private static String? GetVersion(DXVT.VTVStreamData openXmlElement)
   {
     return openXmlElement?.Version?.Value;
   }
   
-  private static void SetVersion(DocumentFormat.OpenXml.VariantTypes.VTVStreamData openXmlElement, String? value)
+  private static void SetVersion(DXVT.VTVStreamData openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.Version = new StringValue { Value = value };
@@ -21,19 +21,19 @@ public static class VTVStreamDataConverter
       openXmlElement.Version = null;
   }
   
-  public static DocumentModel.VariantTypes.VTVStreamData? CreateModelElement(DocumentFormat.OpenXml.VariantTypes.VTVStreamData? openXmlElement)
+  public static DMVT.VTVStreamData? CreateModelElement(DXVT.VTVStreamData? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.VariantTypes.VTVStreamData();
+      var value = new DMVT.VTVStreamData();
       value.Version = GetVersion(openXmlElement);
       return value;
     }
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.VariantTypes.VTVStreamData? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.VariantTypes.VTVStreamData, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMVT.VTVStreamData? value)
+    where OpenXmlElementType: DXVT.VTVStreamData, new()
   {
     if (value != null)
     {

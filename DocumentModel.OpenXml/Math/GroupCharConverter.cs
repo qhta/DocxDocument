@@ -8,22 +8,22 @@ public static class GroupCharConverter
   /// <summary>
   /// Group-Character Properties.
   /// </summary>
-  private static DocumentModel.Math.GroupCharProperties? GetGroupCharProperties(DocumentFormat.OpenXml.Math.GroupChar openXmlElement)
+  private static DMMath.GroupCharProperties? GetGroupCharProperties(DXMath.GroupChar openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Math.GroupCharProperties>();
+    var itemElement = openXmlElement?.GetFirstChild<DXMath.GroupCharProperties>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Math.GroupCharPropertiesConverter.CreateModelElement(itemElement);
+      return DMXMath.GroupCharPropertiesConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetGroupCharProperties(DocumentFormat.OpenXml.Math.GroupChar openXmlElement, DocumentModel.Math.GroupCharProperties? value)
+  private static void SetGroupCharProperties(DXMath.GroupChar openXmlElement, DMMath.GroupCharProperties? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Math.GroupCharProperties>();
+    var itemElement = openXmlElement.GetFirstChild<DXMath.GroupCharProperties>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Math.GroupCharPropertiesConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Math.GroupCharProperties>(value);
+      itemElement = DMXMath.GroupCharPropertiesConverter.CreateOpenXmlElement<DXMath.GroupCharProperties>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
@@ -32,32 +32,32 @@ public static class GroupCharConverter
   /// <summary>
   /// Base.
   /// </summary>
-  private static DocumentModel.Math.Base? GetBase(DocumentFormat.OpenXml.Math.GroupChar openXmlElement)
+  private static DMMath.Base? GetBase(DXMath.GroupChar openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Math.Base>();
+    var itemElement = openXmlElement?.GetFirstChild<DXMath.Base>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Math.BaseConverter.CreateModelElement(itemElement);
+      return DMXMath.BaseConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetBase(DocumentFormat.OpenXml.Math.GroupChar openXmlElement, DocumentModel.Math.Base? value)
+  private static void SetBase(DXMath.GroupChar openXmlElement, DMMath.Base? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Math.Base>();
+    var itemElement = openXmlElement.GetFirstChild<DXMath.Base>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Math.BaseConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Math.Base>(value);
+      itemElement = DMXMath.BaseConverter.CreateOpenXmlElement<DXMath.Base>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  public static DocumentModel.Math.GroupChar? CreateModelElement(DocumentFormat.OpenXml.Math.GroupChar? openXmlElement)
+  public static DMMath.GroupChar? CreateModelElement(DXMath.GroupChar? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Math.GroupChar();
+      var value = new DMMath.GroupChar();
       value.GroupCharProperties = GetGroupCharProperties(openXmlElement);
       value.Base = GetBase(openXmlElement);
       return value;
@@ -65,8 +65,8 @@ public static class GroupCharConverter
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Math.GroupChar? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Math.GroupChar, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMMath.GroupChar? value)
+    where OpenXmlElementType: DXMath.GroupChar, new()
   {
     if (value != null)
     {

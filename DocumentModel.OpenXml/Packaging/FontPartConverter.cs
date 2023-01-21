@@ -5,24 +5,24 @@ namespace DocumentModel.OpenXml.Packaging;
 /// </summary>
 public static class FontPartConverter
 {
-  private static String? GetRelationshipType(DocumentFormat.OpenXml.Packaging.FontPart openXmlElement)
+  private static String? GetRelationshipType(DXPack.FontPart openXmlElement)
   {
     return openXmlElement?.RelationshipType;
   }
   
-  public static DocumentModel.Packaging.FontPart? CreateModelElement(DocumentFormat.OpenXml.Packaging.FontPart? openXmlElement)
+  public static DMPack.FontPart? CreateModelElement(DXPack.FontPart? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Packaging.FontPart();
+      var value = new DMPack.FontPart();
       value.RelationshipType = GetRelationshipType(openXmlElement);
       return value;
     }
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Packaging.FontPart? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Packaging.FontPart, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMPack.FontPart? value)
+    where OpenXmlElementType: DXPack.FontPart, new()
   {
     if (value != null)
     {

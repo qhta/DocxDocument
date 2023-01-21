@@ -5,21 +5,21 @@ namespace DocumentModel.OpenXml.Packaging;
 /// </summary>
 public static class StylesWithEffectsPartConverter
 {
-  private static String? GetContentType(DocumentFormat.OpenXml.Packaging.StylesWithEffectsPart openXmlElement)
+  private static String? GetContentType(DXPack.StylesWithEffectsPart openXmlElement)
   {
     return openXmlElement?.ContentType;
   }
   
-  private static String? GetRelationshipType(DocumentFormat.OpenXml.Packaging.StylesWithEffectsPart openXmlElement)
+  private static String? GetRelationshipType(DXPack.StylesWithEffectsPart openXmlElement)
   {
     return openXmlElement?.RelationshipType;
   }
   
-  public static DocumentModel.Packaging.StylesWithEffectsPart? CreateModelElement(DocumentFormat.OpenXml.Packaging.StylesWithEffectsPart? openXmlElement)
+  public static DMPack.StylesWithEffectsPart? CreateModelElement(DXPack.StylesWithEffectsPart? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Packaging.StylesWithEffectsPart();
+      var value = new DMPack.StylesWithEffectsPart();
       value.ContentType = GetContentType(openXmlElement);
       value.RelationshipType = GetRelationshipType(openXmlElement);
       return value;
@@ -27,8 +27,8 @@ public static class StylesWithEffectsPartConverter
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Packaging.StylesWithEffectsPart? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Packaging.StylesWithEffectsPart, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMPack.StylesWithEffectsPart? value)
+    where OpenXmlElementType: DXPack.StylesWithEffectsPart, new()
   {
     if (value != null)
     {

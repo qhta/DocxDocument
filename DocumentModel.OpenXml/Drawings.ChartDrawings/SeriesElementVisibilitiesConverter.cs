@@ -8,12 +8,12 @@ public static class SeriesElementVisibilitiesConverter
   /// <summary>
   /// connectorLines, this property is only available in Office 2016 and later.
   /// </summary>
-  private static Boolean? GetConnectorLines(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.SeriesElementVisibilities openXmlElement)
+  private static Boolean? GetConnectorLines(DXO2016DrawChartDraw.SeriesElementVisibilities openXmlElement)
   {
     return openXmlElement?.ConnectorLines?.Value;
   }
   
-  private static void SetConnectorLines(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.SeriesElementVisibilities openXmlElement, Boolean? value)
+  private static void SetConnectorLines(DXO2016DrawChartDraw.SeriesElementVisibilities openXmlElement, Boolean? value)
   {
     if (value != null)
       openXmlElement.ConnectorLines = new BooleanValue { Value = (Boolean)value };
@@ -24,12 +24,12 @@ public static class SeriesElementVisibilitiesConverter
   /// <summary>
   /// meanLine, this property is only available in Office 2016 and later.
   /// </summary>
-  private static Boolean? GetMeanLine(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.SeriesElementVisibilities openXmlElement)
+  private static Boolean? GetMeanLine(DXO2016DrawChartDraw.SeriesElementVisibilities openXmlElement)
   {
     return openXmlElement?.MeanLine?.Value;
   }
   
-  private static void SetMeanLine(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.SeriesElementVisibilities openXmlElement, Boolean? value)
+  private static void SetMeanLine(DXO2016DrawChartDraw.SeriesElementVisibilities openXmlElement, Boolean? value)
   {
     if (value != null)
       openXmlElement.MeanLine = new BooleanValue { Value = (Boolean)value };
@@ -40,12 +40,12 @@ public static class SeriesElementVisibilitiesConverter
   /// <summary>
   /// meanMarker, this property is only available in Office 2016 and later.
   /// </summary>
-  private static Boolean? GetMeanMarker(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.SeriesElementVisibilities openXmlElement)
+  private static Boolean? GetMeanMarker(DXO2016DrawChartDraw.SeriesElementVisibilities openXmlElement)
   {
     return openXmlElement?.MeanMarker?.Value;
   }
   
-  private static void SetMeanMarker(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.SeriesElementVisibilities openXmlElement, Boolean? value)
+  private static void SetMeanMarker(DXO2016DrawChartDraw.SeriesElementVisibilities openXmlElement, Boolean? value)
   {
     if (value != null)
       openXmlElement.MeanMarker = new BooleanValue { Value = (Boolean)value };
@@ -56,12 +56,12 @@ public static class SeriesElementVisibilitiesConverter
   /// <summary>
   /// nonoutliers, this property is only available in Office 2016 and later.
   /// </summary>
-  private static Boolean? GetNonoutliers(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.SeriesElementVisibilities openXmlElement)
+  private static Boolean? GetNonoutliers(DXO2016DrawChartDraw.SeriesElementVisibilities openXmlElement)
   {
     return openXmlElement?.Nonoutliers?.Value;
   }
   
-  private static void SetNonoutliers(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.SeriesElementVisibilities openXmlElement, Boolean? value)
+  private static void SetNonoutliers(DXO2016DrawChartDraw.SeriesElementVisibilities openXmlElement, Boolean? value)
   {
     if (value != null)
       openXmlElement.Nonoutliers = new BooleanValue { Value = (Boolean)value };
@@ -72,12 +72,12 @@ public static class SeriesElementVisibilitiesConverter
   /// <summary>
   /// outliers, this property is only available in Office 2016 and later.
   /// </summary>
-  private static Boolean? GetOutliers(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.SeriesElementVisibilities openXmlElement)
+  private static Boolean? GetOutliers(DXO2016DrawChartDraw.SeriesElementVisibilities openXmlElement)
   {
     return openXmlElement?.Outliers?.Value;
   }
   
-  private static void SetOutliers(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.SeriesElementVisibilities openXmlElement, Boolean? value)
+  private static void SetOutliers(DXO2016DrawChartDraw.SeriesElementVisibilities openXmlElement, Boolean? value)
   {
     if (value != null)
       openXmlElement.Outliers = new BooleanValue { Value = (Boolean)value };
@@ -85,11 +85,11 @@ public static class SeriesElementVisibilitiesConverter
       openXmlElement.Outliers = null;
   }
   
-  public static DocumentModel.Drawings.ChartDrawings.SeriesElementVisibilities? CreateModelElement(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.SeriesElementVisibilities? openXmlElement)
+  public static DMDrawsChartDraws.SeriesElementVisibilities? CreateModelElement(DXO2016DrawChartDraw.SeriesElementVisibilities? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.ChartDrawings.SeriesElementVisibilities();
+      var value = new DMDrawsChartDraws.SeriesElementVisibilities();
       value.ConnectorLines = GetConnectorLines(openXmlElement);
       value.MeanLine = GetMeanLine(openXmlElement);
       value.MeanMarker = GetMeanMarker(openXmlElement);
@@ -100,8 +100,8 @@ public static class SeriesElementVisibilitiesConverter
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.ChartDrawings.SeriesElementVisibilities? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.SeriesElementVisibilities, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDrawsChartDraws.SeriesElementVisibilities? value)
+    where OpenXmlElementType: DXO2016DrawChartDraw.SeriesElementVisibilities, new()
   {
     if (value != null)
     {

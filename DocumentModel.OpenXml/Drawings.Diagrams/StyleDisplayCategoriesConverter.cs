@@ -5,45 +5,45 @@ namespace DocumentModel.OpenXml.Drawings.Diagrams;
 /// </summary>
 public static class StyleDisplayCategoriesConverter
 {
-  private static System.Collections.ObjectModel.Collection<DocumentModel.Drawings.Diagrams.StyleDisplayCategory> GetItems(DocumentFormat.OpenXml.Drawing.Diagrams.StyleDisplayCategories openXmlElement)
+  private static Collection<DMDrawsDgms.StyleDisplayCategory> GetItems(DXDrawDgms.StyleDisplayCategories openXmlElement)
   {
-    var collection = new System.Collections.ObjectModel.Collection<DocumentModel.Drawings.Diagrams.StyleDisplayCategory>();
-    foreach (var item in openXmlElement.Elements<DocumentFormat.OpenXml.Drawing.Diagrams.StyleDisplayCategory>())
+    var collection = new Collection<DMDrawsDgms.StyleDisplayCategory>();
+    foreach (var item in openXmlElement.Elements<DXDrawDgms.StyleDisplayCategory>())
     {
-      var newItem = DocumentModel.OpenXml.Drawings.Diagrams.StyleDisplayCategoryConverter.CreateModelElement(item);
+      var newItem = DMXDrawsDgms.StyleDisplayCategoryConverter.CreateModelElement(item);
       if (newItem != null)
         collection.Add(newItem);
     }
     return collection;
   }
   
-  private static void SetItems(DocumentFormat.OpenXml.Drawing.Diagrams.StyleDisplayCategories openXmlElement, System.Collections.ObjectModel.Collection<DocumentModel.Drawings.Diagrams.StyleDisplayCategory>? value)
+  private static void SetItems(DXDrawDgms.StyleDisplayCategories openXmlElement, Collection<DMDrawsDgms.StyleDisplayCategory>? value)
   {
-    openXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Drawing.Diagrams.StyleDisplayCategory>();
+    openXmlElement.RemoveAllChildren<DXDrawDgms.StyleDisplayCategory>();
     if (value != null)
     {
       foreach (var item in value)
       {
-        var newItem = DocumentModel.OpenXml.Drawings.Diagrams.StyleDisplayCategoryConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Diagrams.StyleDisplayCategory>(item);
+        var newItem = DMXDrawsDgms.StyleDisplayCategoryConverter.CreateOpenXmlElement<DXDrawDgms.StyleDisplayCategory>(item);
         if (newItem != null)
           openXmlElement.AddChild(newItem);
       }
     }
   }
   
-  public static DocumentModel.Drawings.Diagrams.StyleDisplayCategories? CreateModelElement(DocumentFormat.OpenXml.Drawing.Diagrams.StyleDisplayCategories? openXmlElement)
+  public static DMDrawsDgms.StyleDisplayCategories? CreateModelElement(DXDrawDgms.StyleDisplayCategories? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.Diagrams.StyleDisplayCategories();
+      var value = new DMDrawsDgms.StyleDisplayCategories();
       value.Items = GetItems(openXmlElement);
       return value;
     }
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.Diagrams.StyleDisplayCategories? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.Diagrams.StyleDisplayCategories, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDrawsDgms.StyleDisplayCategories? value)
+    where OpenXmlElementType: DXDrawDgms.StyleDisplayCategories, new()
   {
     if (value != null)
     {

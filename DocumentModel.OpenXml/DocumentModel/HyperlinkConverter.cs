@@ -8,12 +8,12 @@ public static class HyperlinkConverter
   /// <summary>
   /// id, this property is only available in Office 2010 and later.
   /// </summary>
-  private static String? GetId(DocumentFormat.OpenXml.Office2010.CustomUI.Hyperlink openXmlElement)
+  private static String? GetId(DXO2010CustUI.Hyperlink openXmlElement)
   {
     return openXmlElement?.Id?.Value;
   }
   
-  private static void SetId(DocumentFormat.OpenXml.Office2010.CustomUI.Hyperlink openXmlElement, String? value)
+  private static void SetId(DXO2010CustUI.Hyperlink openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.Id = new StringValue { Value = value };
@@ -24,12 +24,12 @@ public static class HyperlinkConverter
   /// <summary>
   /// idQ, this property is only available in Office 2010 and later.
   /// </summary>
-  private static String? GetQualifiedId(DocumentFormat.OpenXml.Office2010.CustomUI.Hyperlink openXmlElement)
+  private static String? GetQualifiedId(DXO2010CustUI.Hyperlink openXmlElement)
   {
     return openXmlElement?.QualifiedId?.Value;
   }
   
-  private static void SetQualifiedId(DocumentFormat.OpenXml.Office2010.CustomUI.Hyperlink openXmlElement, String? value)
+  private static void SetQualifiedId(DXO2010CustUI.Hyperlink openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.QualifiedId = new StringValue { Value = value };
@@ -40,12 +40,12 @@ public static class HyperlinkConverter
   /// <summary>
   /// tag, this property is only available in Office 2010 and later.
   /// </summary>
-  private static String? GetTag(DocumentFormat.OpenXml.Office2010.CustomUI.Hyperlink openXmlElement)
+  private static String? GetTag(DXO2010CustUI.Hyperlink openXmlElement)
   {
     return openXmlElement?.Tag?.Value;
   }
   
-  private static void SetTag(DocumentFormat.OpenXml.Office2010.CustomUI.Hyperlink openXmlElement, String? value)
+  private static void SetTag(DXO2010CustUI.Hyperlink openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.Tag = new StringValue { Value = value };
@@ -56,38 +56,38 @@ public static class HyperlinkConverter
   /// <summary>
   /// alignLabel, this property is only available in Office 2010 and later.
   /// </summary>
-  private static DocumentModel.ExpandKind? GetAlignLabel(DocumentFormat.OpenXml.Office2010.CustomUI.Hyperlink openXmlElement)
+  private static DM.ExpandKind? GetAlignLabel(DXO2010CustUI.Hyperlink openXmlElement)
   {
-    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Office2010.CustomUI.ExpandValues, DocumentModel.ExpandKind>(openXmlElement?.AlignLabel?.Value);
+    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Office2010.CustomUI.ExpandValues, DM.ExpandKind>(openXmlElement?.AlignLabel?.Value);
   }
   
-  private static void SetAlignLabel(DocumentFormat.OpenXml.Office2010.CustomUI.Hyperlink openXmlElement, DocumentModel.ExpandKind? value)
+  private static void SetAlignLabel(DXO2010CustUI.Hyperlink openXmlElement, DM.ExpandKind? value)
   {
-    openXmlElement.AlignLabel = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Office2010.CustomUI.ExpandValues, DocumentModel.ExpandKind>(value);
+    openXmlElement.AlignLabel = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Office2010.CustomUI.ExpandValues, DM.ExpandKind>(value);
   }
   
   /// <summary>
   /// expand, this property is only available in Office 2010 and later.
   /// </summary>
-  private static DocumentModel.ExpandKind? GetExpand(DocumentFormat.OpenXml.Office2010.CustomUI.Hyperlink openXmlElement)
+  private static DM.ExpandKind? GetExpand(DXO2010CustUI.Hyperlink openXmlElement)
   {
-    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Office2010.CustomUI.ExpandValues, DocumentModel.ExpandKind>(openXmlElement?.Expand?.Value);
+    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Office2010.CustomUI.ExpandValues, DM.ExpandKind>(openXmlElement?.Expand?.Value);
   }
   
-  private static void SetExpand(DocumentFormat.OpenXml.Office2010.CustomUI.Hyperlink openXmlElement, DocumentModel.ExpandKind? value)
+  private static void SetExpand(DXO2010CustUI.Hyperlink openXmlElement, DM.ExpandKind? value)
   {
-    openXmlElement.Expand = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Office2010.CustomUI.ExpandValues, DocumentModel.ExpandKind>(value);
+    openXmlElement.Expand = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Office2010.CustomUI.ExpandValues, DM.ExpandKind>(value);
   }
   
   /// <summary>
   /// enabled, this property is only available in Office 2010 and later.
   /// </summary>
-  private static Boolean? GetEnabled(DocumentFormat.OpenXml.Office2010.CustomUI.Hyperlink openXmlElement)
+  private static Boolean? GetEnabled(DXO2010CustUI.Hyperlink openXmlElement)
   {
     return openXmlElement?.Enabled?.Value;
   }
   
-  private static void SetEnabled(DocumentFormat.OpenXml.Office2010.CustomUI.Hyperlink openXmlElement, Boolean? value)
+  private static void SetEnabled(DXO2010CustUI.Hyperlink openXmlElement, Boolean? value)
   {
     if (value != null)
       openXmlElement.Enabled = new BooleanValue { Value = (Boolean)value };
@@ -98,12 +98,12 @@ public static class HyperlinkConverter
   /// <summary>
   /// getEnabled, this property is only available in Office 2010 and later.
   /// </summary>
-  private static String? GetGetEnabled(DocumentFormat.OpenXml.Office2010.CustomUI.Hyperlink openXmlElement)
+  private static String? GetGetEnabled(DXO2010CustUI.Hyperlink openXmlElement)
   {
     return openXmlElement?.GetEnabled?.Value;
   }
   
-  private static void SetGetEnabled(DocumentFormat.OpenXml.Office2010.CustomUI.Hyperlink openXmlElement, String? value)
+  private static void SetGetEnabled(DXO2010CustUI.Hyperlink openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.GetEnabled = new StringValue { Value = value };
@@ -114,12 +114,12 @@ public static class HyperlinkConverter
   /// <summary>
   /// visible, this property is only available in Office 2010 and later.
   /// </summary>
-  private static Boolean? GetVisible(DocumentFormat.OpenXml.Office2010.CustomUI.Hyperlink openXmlElement)
+  private static Boolean? GetVisible(DXO2010CustUI.Hyperlink openXmlElement)
   {
     return openXmlElement?.Visible?.Value;
   }
   
-  private static void SetVisible(DocumentFormat.OpenXml.Office2010.CustomUI.Hyperlink openXmlElement, Boolean? value)
+  private static void SetVisible(DXO2010CustUI.Hyperlink openXmlElement, Boolean? value)
   {
     if (value != null)
       openXmlElement.Visible = new BooleanValue { Value = (Boolean)value };
@@ -130,12 +130,12 @@ public static class HyperlinkConverter
   /// <summary>
   /// getVisible, this property is only available in Office 2010 and later.
   /// </summary>
-  private static String? GetGetVisible(DocumentFormat.OpenXml.Office2010.CustomUI.Hyperlink openXmlElement)
+  private static String? GetGetVisible(DXO2010CustUI.Hyperlink openXmlElement)
   {
     return openXmlElement?.GetVisible?.Value;
   }
   
-  private static void SetGetVisible(DocumentFormat.OpenXml.Office2010.CustomUI.Hyperlink openXmlElement, String? value)
+  private static void SetGetVisible(DXO2010CustUI.Hyperlink openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.GetVisible = new StringValue { Value = value };
@@ -146,12 +146,12 @@ public static class HyperlinkConverter
   /// <summary>
   /// keytip, this property is only available in Office 2010 and later.
   /// </summary>
-  private static String? GetKeytip(DocumentFormat.OpenXml.Office2010.CustomUI.Hyperlink openXmlElement)
+  private static String? GetKeytip(DXO2010CustUI.Hyperlink openXmlElement)
   {
     return openXmlElement?.Keytip?.Value;
   }
   
-  private static void SetKeytip(DocumentFormat.OpenXml.Office2010.CustomUI.Hyperlink openXmlElement, String? value)
+  private static void SetKeytip(DXO2010CustUI.Hyperlink openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.Keytip = new StringValue { Value = value };
@@ -162,12 +162,12 @@ public static class HyperlinkConverter
   /// <summary>
   /// getKeytip, this property is only available in Office 2010 and later.
   /// </summary>
-  private static String? GetGetKeytip(DocumentFormat.OpenXml.Office2010.CustomUI.Hyperlink openXmlElement)
+  private static String? GetGetKeytip(DXO2010CustUI.Hyperlink openXmlElement)
   {
     return openXmlElement?.GetKeytip?.Value;
   }
   
-  private static void SetGetKeytip(DocumentFormat.OpenXml.Office2010.CustomUI.Hyperlink openXmlElement, String? value)
+  private static void SetGetKeytip(DXO2010CustUI.Hyperlink openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.GetKeytip = new StringValue { Value = value };
@@ -178,12 +178,12 @@ public static class HyperlinkConverter
   /// <summary>
   /// label, this property is only available in Office 2010 and later.
   /// </summary>
-  private static String? GetLabel(DocumentFormat.OpenXml.Office2010.CustomUI.Hyperlink openXmlElement)
+  private static String? GetLabel(DXO2010CustUI.Hyperlink openXmlElement)
   {
     return openXmlElement?.Label?.Value;
   }
   
-  private static void SetLabel(DocumentFormat.OpenXml.Office2010.CustomUI.Hyperlink openXmlElement, String? value)
+  private static void SetLabel(DXO2010CustUI.Hyperlink openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.Label = new StringValue { Value = value };
@@ -194,12 +194,12 @@ public static class HyperlinkConverter
   /// <summary>
   /// getLabel, this property is only available in Office 2010 and later.
   /// </summary>
-  private static String? GetGetLabel(DocumentFormat.OpenXml.Office2010.CustomUI.Hyperlink openXmlElement)
+  private static String? GetGetLabel(DXO2010CustUI.Hyperlink openXmlElement)
   {
     return openXmlElement?.GetLabel?.Value;
   }
   
-  private static void SetGetLabel(DocumentFormat.OpenXml.Office2010.CustomUI.Hyperlink openXmlElement, String? value)
+  private static void SetGetLabel(DXO2010CustUI.Hyperlink openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.GetLabel = new StringValue { Value = value };
@@ -210,12 +210,12 @@ public static class HyperlinkConverter
   /// <summary>
   /// onAction, this property is only available in Office 2010 and later.
   /// </summary>
-  private static String? GetOnAction(DocumentFormat.OpenXml.Office2010.CustomUI.Hyperlink openXmlElement)
+  private static String? GetOnAction(DXO2010CustUI.Hyperlink openXmlElement)
   {
     return openXmlElement?.OnAction?.Value;
   }
   
-  private static void SetOnAction(DocumentFormat.OpenXml.Office2010.CustomUI.Hyperlink openXmlElement, String? value)
+  private static void SetOnAction(DXO2010CustUI.Hyperlink openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.OnAction = new StringValue { Value = value };
@@ -226,12 +226,12 @@ public static class HyperlinkConverter
   /// <summary>
   /// image, this property is only available in Office 2010 and later.
   /// </summary>
-  private static String? GetImage(DocumentFormat.OpenXml.Office2010.CustomUI.Hyperlink openXmlElement)
+  private static String? GetImage(DXO2010CustUI.Hyperlink openXmlElement)
   {
     return openXmlElement?.Image?.Value;
   }
   
-  private static void SetImage(DocumentFormat.OpenXml.Office2010.CustomUI.Hyperlink openXmlElement, String? value)
+  private static void SetImage(DXO2010CustUI.Hyperlink openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.Image = new StringValue { Value = value };
@@ -242,12 +242,12 @@ public static class HyperlinkConverter
   /// <summary>
   /// imageMso, this property is only available in Office 2010 and later.
   /// </summary>
-  private static String? GetImageMso(DocumentFormat.OpenXml.Office2010.CustomUI.Hyperlink openXmlElement)
+  private static String? GetImageMso(DXO2010CustUI.Hyperlink openXmlElement)
   {
     return openXmlElement?.ImageMso?.Value;
   }
   
-  private static void SetImageMso(DocumentFormat.OpenXml.Office2010.CustomUI.Hyperlink openXmlElement, String? value)
+  private static void SetImageMso(DXO2010CustUI.Hyperlink openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.ImageMso = new StringValue { Value = value };
@@ -258,12 +258,12 @@ public static class HyperlinkConverter
   /// <summary>
   /// getImage, this property is only available in Office 2010 and later.
   /// </summary>
-  private static String? GetGetImage(DocumentFormat.OpenXml.Office2010.CustomUI.Hyperlink openXmlElement)
+  private static String? GetGetImage(DXO2010CustUI.Hyperlink openXmlElement)
   {
     return openXmlElement?.GetImage?.Value;
   }
   
-  private static void SetGetImage(DocumentFormat.OpenXml.Office2010.CustomUI.Hyperlink openXmlElement, String? value)
+  private static void SetGetImage(DXO2010CustUI.Hyperlink openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.GetImage = new StringValue { Value = value };
@@ -274,12 +274,12 @@ public static class HyperlinkConverter
   /// <summary>
   /// screentip, this property is only available in Office 2010 and later.
   /// </summary>
-  private static String? GetScreentip(DocumentFormat.OpenXml.Office2010.CustomUI.Hyperlink openXmlElement)
+  private static String? GetScreentip(DXO2010CustUI.Hyperlink openXmlElement)
   {
     return openXmlElement?.Screentip?.Value;
   }
   
-  private static void SetScreentip(DocumentFormat.OpenXml.Office2010.CustomUI.Hyperlink openXmlElement, String? value)
+  private static void SetScreentip(DXO2010CustUI.Hyperlink openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.Screentip = new StringValue { Value = value };
@@ -290,12 +290,12 @@ public static class HyperlinkConverter
   /// <summary>
   /// getScreentip, this property is only available in Office 2010 and later.
   /// </summary>
-  private static String? GetGetScreentip(DocumentFormat.OpenXml.Office2010.CustomUI.Hyperlink openXmlElement)
+  private static String? GetGetScreentip(DXO2010CustUI.Hyperlink openXmlElement)
   {
     return openXmlElement?.GetScreentip?.Value;
   }
   
-  private static void SetGetScreentip(DocumentFormat.OpenXml.Office2010.CustomUI.Hyperlink openXmlElement, String? value)
+  private static void SetGetScreentip(DXO2010CustUI.Hyperlink openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.GetScreentip = new StringValue { Value = value };
@@ -306,12 +306,12 @@ public static class HyperlinkConverter
   /// <summary>
   /// supertip, this property is only available in Office 2010 and later.
   /// </summary>
-  private static String? GetSupertip(DocumentFormat.OpenXml.Office2010.CustomUI.Hyperlink openXmlElement)
+  private static String? GetSupertip(DXO2010CustUI.Hyperlink openXmlElement)
   {
     return openXmlElement?.Supertip?.Value;
   }
   
-  private static void SetSupertip(DocumentFormat.OpenXml.Office2010.CustomUI.Hyperlink openXmlElement, String? value)
+  private static void SetSupertip(DXO2010CustUI.Hyperlink openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.Supertip = new StringValue { Value = value };
@@ -322,12 +322,12 @@ public static class HyperlinkConverter
   /// <summary>
   /// getSupertip, this property is only available in Office 2010 and later.
   /// </summary>
-  private static String? GetGetSupertip(DocumentFormat.OpenXml.Office2010.CustomUI.Hyperlink openXmlElement)
+  private static String? GetGetSupertip(DXO2010CustUI.Hyperlink openXmlElement)
   {
     return openXmlElement?.GetSupertip?.Value;
   }
   
-  private static void SetGetSupertip(DocumentFormat.OpenXml.Office2010.CustomUI.Hyperlink openXmlElement, String? value)
+  private static void SetGetSupertip(DXO2010CustUI.Hyperlink openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.GetSupertip = new StringValue { Value = value };
@@ -338,12 +338,12 @@ public static class HyperlinkConverter
   /// <summary>
   /// target, this property is only available in Office 2010 and later.
   /// </summary>
-  private static String? GetTarget(DocumentFormat.OpenXml.Office2010.CustomUI.Hyperlink openXmlElement)
+  private static String? GetTarget(DXO2010CustUI.Hyperlink openXmlElement)
   {
     return openXmlElement?.Target?.Value;
   }
   
-  private static void SetTarget(DocumentFormat.OpenXml.Office2010.CustomUI.Hyperlink openXmlElement, String? value)
+  private static void SetTarget(DXO2010CustUI.Hyperlink openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.Target = new StringValue { Value = value };
@@ -354,12 +354,12 @@ public static class HyperlinkConverter
   /// <summary>
   /// getTarget, this property is only available in Office 2010 and later.
   /// </summary>
-  private static String? GetGetTarget(DocumentFormat.OpenXml.Office2010.CustomUI.Hyperlink openXmlElement)
+  private static String? GetGetTarget(DXO2010CustUI.Hyperlink openXmlElement)
   {
     return openXmlElement?.GetTarget?.Value;
   }
   
-  private static void SetGetTarget(DocumentFormat.OpenXml.Office2010.CustomUI.Hyperlink openXmlElement, String? value)
+  private static void SetGetTarget(DXO2010CustUI.Hyperlink openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.GetTarget = new StringValue { Value = value };
@@ -367,11 +367,11 @@ public static class HyperlinkConverter
       openXmlElement.GetTarget = null;
   }
   
-  public static DocumentModel.Hyperlink? CreateModelElement(DocumentFormat.OpenXml.Office2010.CustomUI.Hyperlink? openXmlElement)
+  public static DM.Hyperlink? CreateModelElement(DXO2010CustUI.Hyperlink? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Hyperlink();
+      var value = new DM.Hyperlink();
       value.Id = GetId(openXmlElement);
       value.QualifiedId = GetQualifiedId(openXmlElement);
       value.Tag = GetTag(openXmlElement);
@@ -400,8 +400,8 @@ public static class HyperlinkConverter
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Hyperlink? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Office2010.CustomUI.Hyperlink, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DM.Hyperlink? value)
+    where OpenXmlElementType: DXO2010CustUI.Hyperlink, new()
   {
     if (value != null)
     {

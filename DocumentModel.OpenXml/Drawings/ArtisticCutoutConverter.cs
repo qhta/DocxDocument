@@ -8,12 +8,12 @@ public static class ArtisticCutoutConverter
   /// <summary>
   /// trans, this property is only available in Office 2010 and later.
   /// </summary>
-  private static Int32? GetTransparancy(DocumentFormat.OpenXml.Office2010.Drawing.ArtisticCutout openXmlElement)
+  private static Int32? GetTransparancy(DXO2010Draw.ArtisticCutout openXmlElement)
   {
     return openXmlElement.Transparancy?.Value;
   }
   
-  private static void SetTransparancy(DocumentFormat.OpenXml.Office2010.Drawing.ArtisticCutout openXmlElement, Int32? value)
+  private static void SetTransparancy(DXO2010Draw.ArtisticCutout openXmlElement, Int32? value)
   {
     openXmlElement.Transparancy = value;
   }
@@ -21,21 +21,21 @@ public static class ArtisticCutoutConverter
   /// <summary>
   /// numberOfShades, this property is only available in Office 2010 and later.
   /// </summary>
-  private static Int32? GetNumberOfShades(DocumentFormat.OpenXml.Office2010.Drawing.ArtisticCutout openXmlElement)
+  private static Int32? GetNumberOfShades(DXO2010Draw.ArtisticCutout openXmlElement)
   {
     return openXmlElement.NumberOfShades?.Value;
   }
   
-  private static void SetNumberOfShades(DocumentFormat.OpenXml.Office2010.Drawing.ArtisticCutout openXmlElement, Int32? value)
+  private static void SetNumberOfShades(DXO2010Draw.ArtisticCutout openXmlElement, Int32? value)
   {
     openXmlElement.NumberOfShades = value;
   }
   
-  public static DocumentModel.Drawings.ArtisticCutout? CreateModelElement(DocumentFormat.OpenXml.Office2010.Drawing.ArtisticCutout? openXmlElement)
+  public static DMDraws.ArtisticCutout? CreateModelElement(DXO2010Draw.ArtisticCutout? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.ArtisticCutout();
+      var value = new DMDraws.ArtisticCutout();
       value.Transparancy = GetTransparancy(openXmlElement);
       value.NumberOfShades = GetNumberOfShades(openXmlElement);
       return value;
@@ -43,8 +43,8 @@ public static class ArtisticCutoutConverter
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.ArtisticCutout? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Office2010.Drawing.ArtisticCutout, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDraws.ArtisticCutout? value)
+    where OpenXmlElementType: DXO2010Draw.ArtisticCutout, new()
   {
     if (value != null)
     {

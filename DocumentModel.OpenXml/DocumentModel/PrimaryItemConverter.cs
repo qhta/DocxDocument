@@ -8,22 +8,22 @@ public static class PrimaryItemConverter
   /// <summary>
   /// BackstageRegularButton.
   /// </summary>
-  private static DocumentModel.BackstageRegularButton? GetBackstageRegularButton(DocumentFormat.OpenXml.Office2010.CustomUI.PrimaryItem openXmlElement)
+  private static DM.BackstageRegularButton? GetBackstageRegularButton(DXO2010CustUI.PrimaryItem openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office2010.CustomUI.BackstageRegularButton>();
+    var itemElement = openXmlElement?.GetFirstChild<DXO2010CustUI.BackstageRegularButton>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.BackstageRegularButtonConverter.CreateModelElement(itemElement);
+      return DMX.BackstageRegularButtonConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetBackstageRegularButton(DocumentFormat.OpenXml.Office2010.CustomUI.PrimaryItem openXmlElement, DocumentModel.BackstageRegularButton? value)
+  private static void SetBackstageRegularButton(DXO2010CustUI.PrimaryItem openXmlElement, DM.BackstageRegularButton? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2010.CustomUI.BackstageRegularButton>();
+    var itemElement = openXmlElement.GetFirstChild<DXO2010CustUI.BackstageRegularButton>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.BackstageRegularButtonConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2010.CustomUI.BackstageRegularButton>(value);
+      itemElement = DMX.BackstageRegularButtonConverter.CreateOpenXmlElement<DXO2010CustUI.BackstageRegularButton>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
@@ -32,32 +32,32 @@ public static class PrimaryItemConverter
   /// <summary>
   /// BackstagePrimaryMenu.
   /// </summary>
-  private static DocumentModel.BackstagePrimaryMenu? GetBackstagePrimaryMenu(DocumentFormat.OpenXml.Office2010.CustomUI.PrimaryItem openXmlElement)
+  private static DM.BackstagePrimaryMenu? GetBackstagePrimaryMenu(DXO2010CustUI.PrimaryItem openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office2010.CustomUI.BackstagePrimaryMenu>();
+    var itemElement = openXmlElement?.GetFirstChild<DXO2010CustUI.BackstagePrimaryMenu>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.BackstagePrimaryMenuConverter.CreateModelElement(itemElement);
+      return DMX.BackstagePrimaryMenuConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetBackstagePrimaryMenu(DocumentFormat.OpenXml.Office2010.CustomUI.PrimaryItem openXmlElement, DocumentModel.BackstagePrimaryMenu? value)
+  private static void SetBackstagePrimaryMenu(DXO2010CustUI.PrimaryItem openXmlElement, DM.BackstagePrimaryMenu? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2010.CustomUI.BackstagePrimaryMenu>();
+    var itemElement = openXmlElement.GetFirstChild<DXO2010CustUI.BackstagePrimaryMenu>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.BackstagePrimaryMenuConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2010.CustomUI.BackstagePrimaryMenu>(value);
+      itemElement = DMX.BackstagePrimaryMenuConverter.CreateOpenXmlElement<DXO2010CustUI.BackstagePrimaryMenu>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  public static DocumentModel.PrimaryItem? CreateModelElement(DocumentFormat.OpenXml.Office2010.CustomUI.PrimaryItem? openXmlElement)
+  public static DM.PrimaryItem? CreateModelElement(DXO2010CustUI.PrimaryItem? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.PrimaryItem();
+      var value = new DM.PrimaryItem();
       value.BackstageRegularButton = GetBackstageRegularButton(openXmlElement);
       value.BackstagePrimaryMenu = GetBackstagePrimaryMenu(openXmlElement);
       return value;
@@ -65,8 +65,8 @@ public static class PrimaryItemConverter
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.PrimaryItem? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Office2010.CustomUI.PrimaryItem, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DM.PrimaryItem? value)
+    where OpenXmlElementType: DXO2010CustUI.PrimaryItem, new()
   {
     if (value != null)
     {

@@ -5,53 +5,53 @@ namespace DocumentModel.OpenXml.Drawings.Charts;
 /// </summary>
 public static class ValuesConverter
 {
-  private static DocumentModel.Drawings.Charts.NumberReference? GetNumberReference(DocumentFormat.OpenXml.Drawing.Charts.Values openXmlElement)
+  private static DMDrawsCharts.NumberReference? GetNumberReference(DXDrawCharts.Values openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.NumberReference>();
+    var itemElement = openXmlElement?.GetFirstChild<DXDrawCharts.NumberReference>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.Charts.NumberReferenceConverter.CreateModelElement(itemElement);
+      return DMXDrawsCharts.NumberReferenceConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetNumberReference(DocumentFormat.OpenXml.Drawing.Charts.Values openXmlElement, DocumentModel.Drawings.Charts.NumberReference? value)
+  private static void SetNumberReference(DXDrawCharts.Values openXmlElement, DMDrawsCharts.NumberReference? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.NumberReference>();
+    var itemElement = openXmlElement.GetFirstChild<DXDrawCharts.NumberReference>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Drawings.Charts.NumberReferenceConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Charts.NumberReference>(value);
+      itemElement = DMXDrawsCharts.NumberReferenceConverter.CreateOpenXmlElement<DXDrawCharts.NumberReference>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static DocumentModel.Drawings.Charts.NumberLiteral? GetNumberLiteral(DocumentFormat.OpenXml.Drawing.Charts.Values openXmlElement)
+  private static DMDrawsCharts.NumberLiteral? GetNumberLiteral(DXDrawCharts.Values openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.NumberLiteral>();
+    var itemElement = openXmlElement?.GetFirstChild<DXDrawCharts.NumberLiteral>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.Charts.NumberLiteralConverter.CreateModelElement(itemElement);
+      return DMXDrawsCharts.NumberLiteralConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetNumberLiteral(DocumentFormat.OpenXml.Drawing.Charts.Values openXmlElement, DocumentModel.Drawings.Charts.NumberLiteral? value)
+  private static void SetNumberLiteral(DXDrawCharts.Values openXmlElement, DMDrawsCharts.NumberLiteral? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.NumberLiteral>();
+    var itemElement = openXmlElement.GetFirstChild<DXDrawCharts.NumberLiteral>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Drawings.Charts.NumberLiteralConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Charts.NumberLiteral>(value);
+      itemElement = DMXDrawsCharts.NumberLiteralConverter.CreateOpenXmlElement<DXDrawCharts.NumberLiteral>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  public static DocumentModel.Drawings.Charts.Values? CreateModelElement(DocumentFormat.OpenXml.Drawing.Charts.Values? openXmlElement)
+  public static DMDrawsCharts.Values? CreateModelElement(DXDrawCharts.Values? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.Charts.Values();
+      var value = new DMDrawsCharts.Values();
       value.NumberReference = GetNumberReference(openXmlElement);
       value.NumberLiteral = GetNumberLiteral(openXmlElement);
       return value;
@@ -59,8 +59,8 @@ public static class ValuesConverter
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.Charts.Values? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.Charts.Values, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDrawsCharts.Values? value)
+    where OpenXmlElementType: DXDrawCharts.Values, new()
   {
     if (value != null)
     {

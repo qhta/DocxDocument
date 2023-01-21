@@ -8,29 +8,29 @@ public static class ChartStringValueConverter
   /// <summary>
   /// idx, this property is only available in Office 2016 and later.
   /// </summary>
-  private static UInt32? GetIndex(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.ChartStringValue openXmlElement)
+  private static UInt32? GetIndex(DXO2016DrawChartDraw.ChartStringValue openXmlElement)
   {
     return openXmlElement.Index?.Value;
   }
   
-  private static void SetIndex(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.ChartStringValue openXmlElement, UInt32? value)
+  private static void SetIndex(DXO2016DrawChartDraw.ChartStringValue openXmlElement, UInt32? value)
   {
     openXmlElement.Index = value;
   }
   
-  public static DocumentModel.Drawings.ChartDrawings.ChartStringValue? CreateModelElement(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.ChartStringValue? openXmlElement)
+  public static DMDrawsChartDraws.ChartStringValue? CreateModelElement(DXO2016DrawChartDraw.ChartStringValue? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.ChartDrawings.ChartStringValue();
+      var value = new DMDrawsChartDraws.ChartStringValue();
       value.Index = GetIndex(openXmlElement);
       return value;
     }
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.ChartDrawings.ChartStringValue? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.ChartStringValue, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDrawsChartDraws.ChartStringValue? value)
+    where OpenXmlElementType: DXO2016DrawChartDraw.ChartStringValue, new()
   {
     if (value != null)
     {

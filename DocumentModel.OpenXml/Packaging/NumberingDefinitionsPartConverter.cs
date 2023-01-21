@@ -5,7 +5,7 @@ namespace DocumentModel.OpenXml.Packaging;
 /// </summary>
 public static class NumberingDefinitionsPartConverter
 {
-  private static String? GetContentType(DocumentFormat.OpenXml.Packaging.NumberingDefinitionsPart openXmlElement)
+  private static String? GetContentType(DXPack.NumberingDefinitionsPart openXmlElement)
   {
     return openXmlElement?.ContentType;
   }
@@ -13,12 +13,12 @@ public static class NumberingDefinitionsPartConverter
   /// <summary>
   /// Gets the ImageParts of the NumberingDefinitionsPart
   /// </summary>
-  private static System.Collections.ObjectModel.Collection<DocumentModel.Packaging.ImagePart> GetImageParts(DocumentFormat.OpenXml.Packaging.NumberingDefinitionsPart openXmlElement)
+  private static Collection<DMPack.ImagePart> GetImageParts(DXPack.NumberingDefinitionsPart openXmlElement)
   {
-    var collection = new System.Collections.ObjectModel.Collection<DocumentModel.Packaging.ImagePart>();
-    foreach (var item in openXmlElement.GetPartsOfType<DocumentFormat.OpenXml.Packaging.ImagePart>())
+    var collection = new Collection<DMPack.ImagePart>();
+    foreach (var item in openXmlElement.GetPartsOfType<DXPack.ImagePart>())
     {
-      var newItem = DocumentModel.OpenXml.Packaging.ImagePartConverter.CreateModelElement(item);
+      var newItem = DMXPack.ImagePartConverter.CreateModelElement(item);
       if (newItem != null)
         collection.Add(newItem);
     }
@@ -28,33 +28,33 @@ public static class NumberingDefinitionsPartConverter
   /// <summary>
   /// Gets or sets the root element of this part.
   /// </summary>
-  private static DocumentModel.Wordprocessing.Numbering? GetNumbering(DocumentFormat.OpenXml.Packaging.NumberingDefinitionsPart openXmlElement)
+  private static DMW.Numbering? GetNumbering(DXPack.NumberingDefinitionsPart openXmlElement)
   {
-    if (openXmlElement?.RootElement is DocumentFormat.OpenXml.Wordprocessing.Numbering rootElement)
-      return DocumentModel.OpenXml.Wordprocessing.NumberingConverter.CreateModelElement(rootElement);
+    if (openXmlElement?.RootElement is DXW.Numbering rootElement)
+      return DMXW.NumberingConverter.CreateModelElement(rootElement);
     return null;
   }
   
-  private static void SetNumbering(DocumentFormat.OpenXml.Packaging.NumberingDefinitionsPart openXmlElement, DocumentModel.Wordprocessing.Numbering? value)
+  private static void SetNumbering(DXPack.NumberingDefinitionsPart openXmlElement, DMW.Numbering? value)
   {
     if (value != null)
     {
-       var rootElement = DocumentModel.OpenXml.Wordprocessing.NumberingConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.Numbering>(value);
+       var rootElement = DMXW.NumberingConverter.CreateOpenXmlElement<DXW.Numbering>(value);
        if (rootElement != null)
          openXmlElement.Numbering = rootElement;
     }
   }
   
-  private static String? GetRelationshipType(DocumentFormat.OpenXml.Packaging.NumberingDefinitionsPart openXmlElement)
+  private static String? GetRelationshipType(DXPack.NumberingDefinitionsPart openXmlElement)
   {
     return openXmlElement?.RelationshipType;
   }
   
-  public static DocumentModel.Packaging.NumberingDefinitionsPart? CreateModelElement(DocumentFormat.OpenXml.Packaging.NumberingDefinitionsPart? openXmlElement)
+  public static DMPack.NumberingDefinitionsPart? CreateModelElement(DXPack.NumberingDefinitionsPart? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Packaging.NumberingDefinitionsPart();
+      var value = new DMPack.NumberingDefinitionsPart();
       value.ContentType = GetContentType(openXmlElement);
       value.ImageParts = GetImageParts(openXmlElement);
       value.Numbering = GetNumbering(openXmlElement);
@@ -64,8 +64,8 @@ public static class NumberingDefinitionsPartConverter
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Packaging.NumberingDefinitionsPart? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Packaging.NumberingDefinitionsPart, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMPack.NumberingDefinitionsPart? value)
+    where OpenXmlElementType: DXPack.NumberingDefinitionsPart, new()
   {
     if (value != null)
     {

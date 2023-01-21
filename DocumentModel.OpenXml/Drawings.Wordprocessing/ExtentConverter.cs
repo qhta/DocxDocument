@@ -8,12 +8,12 @@ public static class ExtentConverter
   /// <summary>
   /// Extent Length
   /// </summary>
-  private static Int64? GetCx(DocumentFormat.OpenXml.Drawing.Wordprocessing.Extent openXmlElement)
+  private static Int64? GetCx(DXDrawW.Extent openXmlElement)
   {
     return openXmlElement.Cx?.Value;
   }
   
-  private static void SetCx(DocumentFormat.OpenXml.Drawing.Wordprocessing.Extent openXmlElement, Int64? value)
+  private static void SetCx(DXDrawW.Extent openXmlElement, Int64? value)
   {
     openXmlElement.Cx = value;
   }
@@ -21,21 +21,21 @@ public static class ExtentConverter
   /// <summary>
   /// Extent Width
   /// </summary>
-  private static Int64? GetCy(DocumentFormat.OpenXml.Drawing.Wordprocessing.Extent openXmlElement)
+  private static Int64? GetCy(DXDrawW.Extent openXmlElement)
   {
     return openXmlElement.Cy?.Value;
   }
   
-  private static void SetCy(DocumentFormat.OpenXml.Drawing.Wordprocessing.Extent openXmlElement, Int64? value)
+  private static void SetCy(DXDrawW.Extent openXmlElement, Int64? value)
   {
     openXmlElement.Cy = value;
   }
   
-  public static DocumentModel.Drawings.Wordprocessing.Extent? CreateModelElement(DocumentFormat.OpenXml.Drawing.Wordprocessing.Extent? openXmlElement)
+  public static DMDrawsW.Extent? CreateModelElement(DXDrawW.Extent? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.Wordprocessing.Extent();
+      var value = new DMDrawsW.Extent();
       value.Cx = GetCx(openXmlElement);
       value.Cy = GetCy(openXmlElement);
       return value;
@@ -43,8 +43,8 @@ public static class ExtentConverter
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.Wordprocessing.Extent? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.Wordprocessing.Extent, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDrawsW.Extent? value)
+    where OpenXmlElementType: DXDrawW.Extent, new()
   {
     if (value != null)
     {

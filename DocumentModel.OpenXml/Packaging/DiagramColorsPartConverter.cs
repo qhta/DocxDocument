@@ -8,38 +8,38 @@ public static class DiagramColorsPartConverter
   /// <summary>
   /// Gets or sets the root element of this part.
   /// </summary>
-  private static DocumentModel.Drawings.Diagrams.ColorsDefinition? GetColorsDefinition(DocumentFormat.OpenXml.Packaging.DiagramColorsPart openXmlElement)
+  private static DMDrawsDgms.ColorsDefinition? GetColorsDefinition(DXPack.DiagramColorsPart openXmlElement)
   {
-    if (openXmlElement?.RootElement is DocumentFormat.OpenXml.Drawing.Diagrams.ColorsDefinition rootElement)
-      return DocumentModel.OpenXml.Drawings.Diagrams.ColorsDefinitionConverter.CreateModelElement(rootElement);
+    if (openXmlElement?.RootElement is DXDrawDgms.ColorsDefinition rootElement)
+      return DMXDrawsDgms.ColorsDefinitionConverter.CreateModelElement(rootElement);
     return null;
   }
   
-  private static void SetColorsDefinition(DocumentFormat.OpenXml.Packaging.DiagramColorsPart openXmlElement, DocumentModel.Drawings.Diagrams.ColorsDefinition? value)
+  private static void SetColorsDefinition(DXPack.DiagramColorsPart openXmlElement, DMDrawsDgms.ColorsDefinition? value)
   {
     if (value != null)
     {
-       var rootElement = DocumentModel.OpenXml.Drawings.Diagrams.ColorsDefinitionConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Diagrams.ColorsDefinition>(value);
+       var rootElement = DMXDrawsDgms.ColorsDefinitionConverter.CreateOpenXmlElement<DXDrawDgms.ColorsDefinition>(value);
        if (rootElement != null)
          openXmlElement.ColorsDefinition = rootElement;
     }
   }
   
-  private static String? GetContentType(DocumentFormat.OpenXml.Packaging.DiagramColorsPart openXmlElement)
+  private static String? GetContentType(DXPack.DiagramColorsPart openXmlElement)
   {
     return openXmlElement?.ContentType;
   }
   
-  private static String? GetRelationshipType(DocumentFormat.OpenXml.Packaging.DiagramColorsPart openXmlElement)
+  private static String? GetRelationshipType(DXPack.DiagramColorsPart openXmlElement)
   {
     return openXmlElement?.RelationshipType;
   }
   
-  public static DocumentModel.Packaging.DiagramColorsPart? CreateModelElement(DocumentFormat.OpenXml.Packaging.DiagramColorsPart? openXmlElement)
+  public static DMPack.DiagramColorsPart? CreateModelElement(DXPack.DiagramColorsPart? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Packaging.DiagramColorsPart();
+      var value = new DMPack.DiagramColorsPart();
       value.ColorsDefinition = GetColorsDefinition(openXmlElement);
       value.ContentType = GetContentType(openXmlElement);
       value.RelationshipType = GetRelationshipType(openXmlElement);
@@ -48,8 +48,8 @@ public static class DiagramColorsPartConverter
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Packaging.DiagramColorsPart? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Packaging.DiagramColorsPart, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMPack.DiagramColorsPart? value)
+    where OpenXmlElementType: DXPack.DiagramColorsPart, new()
   {
     if (value != null)
     {

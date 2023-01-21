@@ -8,12 +8,12 @@ public static class BackstagePrimaryMenuConverter
   /// <summary>
   /// screentip, this property is only available in Office 2010 and later.
   /// </summary>
-  private static String? GetScreentip(DocumentFormat.OpenXml.Office2010.CustomUI.BackstagePrimaryMenu openXmlElement)
+  private static String? GetScreentip(DXO2010CustUI.BackstagePrimaryMenu openXmlElement)
   {
     return openXmlElement?.Screentip?.Value;
   }
   
-  private static void SetScreentip(DocumentFormat.OpenXml.Office2010.CustomUI.BackstagePrimaryMenu openXmlElement, String? value)
+  private static void SetScreentip(DXO2010CustUI.BackstagePrimaryMenu openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.Screentip = new StringValue { Value = value };
@@ -24,12 +24,12 @@ public static class BackstagePrimaryMenuConverter
   /// <summary>
   /// getScreentip, this property is only available in Office 2010 and later.
   /// </summary>
-  private static String? GetGetScreentip(DocumentFormat.OpenXml.Office2010.CustomUI.BackstagePrimaryMenu openXmlElement)
+  private static String? GetGetScreentip(DXO2010CustUI.BackstagePrimaryMenu openXmlElement)
   {
     return openXmlElement?.GetScreentip?.Value;
   }
   
-  private static void SetGetScreentip(DocumentFormat.OpenXml.Office2010.CustomUI.BackstagePrimaryMenu openXmlElement, String? value)
+  private static void SetGetScreentip(DXO2010CustUI.BackstagePrimaryMenu openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.GetScreentip = new StringValue { Value = value };
@@ -40,12 +40,12 @@ public static class BackstagePrimaryMenuConverter
   /// <summary>
   /// supertip, this property is only available in Office 2010 and later.
   /// </summary>
-  private static String? GetSupertip(DocumentFormat.OpenXml.Office2010.CustomUI.BackstagePrimaryMenu openXmlElement)
+  private static String? GetSupertip(DXO2010CustUI.BackstagePrimaryMenu openXmlElement)
   {
     return openXmlElement?.Supertip?.Value;
   }
   
-  private static void SetSupertip(DocumentFormat.OpenXml.Office2010.CustomUI.BackstagePrimaryMenu openXmlElement, String? value)
+  private static void SetSupertip(DXO2010CustUI.BackstagePrimaryMenu openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.Supertip = new StringValue { Value = value };
@@ -56,12 +56,12 @@ public static class BackstagePrimaryMenuConverter
   /// <summary>
   /// getSupertip, this property is only available in Office 2010 and later.
   /// </summary>
-  private static String? GetGetSupertip(DocumentFormat.OpenXml.Office2010.CustomUI.BackstagePrimaryMenu openXmlElement)
+  private static String? GetGetSupertip(DXO2010CustUI.BackstagePrimaryMenu openXmlElement)
   {
     return openXmlElement?.GetSupertip?.Value;
   }
   
-  private static void SetGetSupertip(DocumentFormat.OpenXml.Office2010.CustomUI.BackstagePrimaryMenu openXmlElement, String? value)
+  private static void SetGetSupertip(DXO2010CustUI.BackstagePrimaryMenu openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.GetSupertip = new StringValue { Value = value };
@@ -72,12 +72,12 @@ public static class BackstagePrimaryMenuConverter
   /// <summary>
   /// id, this property is only available in Office 2010 and later.
   /// </summary>
-  private static String? GetId(DocumentFormat.OpenXml.Office2010.CustomUI.BackstagePrimaryMenu openXmlElement)
+  private static String? GetId(DXO2010CustUI.BackstagePrimaryMenu openXmlElement)
   {
     return openXmlElement?.Id?.Value;
   }
   
-  private static void SetId(DocumentFormat.OpenXml.Office2010.CustomUI.BackstagePrimaryMenu openXmlElement, String? value)
+  private static void SetId(DXO2010CustUI.BackstagePrimaryMenu openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.Id = new StringValue { Value = value };
@@ -88,12 +88,12 @@ public static class BackstagePrimaryMenuConverter
   /// <summary>
   /// idQ, this property is only available in Office 2010 and later.
   /// </summary>
-  private static String? GetQualifiedId(DocumentFormat.OpenXml.Office2010.CustomUI.BackstagePrimaryMenu openXmlElement)
+  private static String? GetQualifiedId(DXO2010CustUI.BackstagePrimaryMenu openXmlElement)
   {
     return openXmlElement?.QualifiedId?.Value;
   }
   
-  private static void SetQualifiedId(DocumentFormat.OpenXml.Office2010.CustomUI.BackstagePrimaryMenu openXmlElement, String? value)
+  private static void SetQualifiedId(DXO2010CustUI.BackstagePrimaryMenu openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.QualifiedId = new StringValue { Value = value };
@@ -104,12 +104,12 @@ public static class BackstagePrimaryMenuConverter
   /// <summary>
   /// tag, this property is only available in Office 2010 and later.
   /// </summary>
-  private static String? GetTag(DocumentFormat.OpenXml.Office2010.CustomUI.BackstagePrimaryMenu openXmlElement)
+  private static String? GetTag(DXO2010CustUI.BackstagePrimaryMenu openXmlElement)
   {
     return openXmlElement?.Tag?.Value;
   }
   
-  private static void SetTag(DocumentFormat.OpenXml.Office2010.CustomUI.BackstagePrimaryMenu openXmlElement, String? value)
+  private static void SetTag(DXO2010CustUI.BackstagePrimaryMenu openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.Tag = new StringValue { Value = value };
@@ -120,12 +120,12 @@ public static class BackstagePrimaryMenuConverter
   /// <summary>
   /// enabled, this property is only available in Office 2010 and later.
   /// </summary>
-  private static Boolean? GetEnabled(DocumentFormat.OpenXml.Office2010.CustomUI.BackstagePrimaryMenu openXmlElement)
+  private static Boolean? GetEnabled(DXO2010CustUI.BackstagePrimaryMenu openXmlElement)
   {
     return openXmlElement?.Enabled?.Value;
   }
   
-  private static void SetEnabled(DocumentFormat.OpenXml.Office2010.CustomUI.BackstagePrimaryMenu openXmlElement, Boolean? value)
+  private static void SetEnabled(DXO2010CustUI.BackstagePrimaryMenu openXmlElement, Boolean? value)
   {
     if (value != null)
       openXmlElement.Enabled = new BooleanValue { Value = (Boolean)value };
@@ -136,12 +136,12 @@ public static class BackstagePrimaryMenuConverter
   /// <summary>
   /// getEnabled, this property is only available in Office 2010 and later.
   /// </summary>
-  private static String? GetGetEnabled(DocumentFormat.OpenXml.Office2010.CustomUI.BackstagePrimaryMenu openXmlElement)
+  private static String? GetGetEnabled(DXO2010CustUI.BackstagePrimaryMenu openXmlElement)
   {
     return openXmlElement?.GetEnabled?.Value;
   }
   
-  private static void SetGetEnabled(DocumentFormat.OpenXml.Office2010.CustomUI.BackstagePrimaryMenu openXmlElement, String? value)
+  private static void SetGetEnabled(DXO2010CustUI.BackstagePrimaryMenu openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.GetEnabled = new StringValue { Value = value };
@@ -152,12 +152,12 @@ public static class BackstagePrimaryMenuConverter
   /// <summary>
   /// label, this property is only available in Office 2010 and later.
   /// </summary>
-  private static String? GetLabel(DocumentFormat.OpenXml.Office2010.CustomUI.BackstagePrimaryMenu openXmlElement)
+  private static String? GetLabel(DXO2010CustUI.BackstagePrimaryMenu openXmlElement)
   {
     return openXmlElement?.Label?.Value;
   }
   
-  private static void SetLabel(DocumentFormat.OpenXml.Office2010.CustomUI.BackstagePrimaryMenu openXmlElement, String? value)
+  private static void SetLabel(DXO2010CustUI.BackstagePrimaryMenu openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.Label = new StringValue { Value = value };
@@ -168,12 +168,12 @@ public static class BackstagePrimaryMenuConverter
   /// <summary>
   /// getLabel, this property is only available in Office 2010 and later.
   /// </summary>
-  private static String? GetGetLabel(DocumentFormat.OpenXml.Office2010.CustomUI.BackstagePrimaryMenu openXmlElement)
+  private static String? GetGetLabel(DXO2010CustUI.BackstagePrimaryMenu openXmlElement)
   {
     return openXmlElement?.GetLabel?.Value;
   }
   
-  private static void SetGetLabel(DocumentFormat.OpenXml.Office2010.CustomUI.BackstagePrimaryMenu openXmlElement, String? value)
+  private static void SetGetLabel(DXO2010CustUI.BackstagePrimaryMenu openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.GetLabel = new StringValue { Value = value };
@@ -184,12 +184,12 @@ public static class BackstagePrimaryMenuConverter
   /// <summary>
   /// visible, this property is only available in Office 2010 and later.
   /// </summary>
-  private static Boolean? GetVisible(DocumentFormat.OpenXml.Office2010.CustomUI.BackstagePrimaryMenu openXmlElement)
+  private static Boolean? GetVisible(DXO2010CustUI.BackstagePrimaryMenu openXmlElement)
   {
     return openXmlElement?.Visible?.Value;
   }
   
-  private static void SetVisible(DocumentFormat.OpenXml.Office2010.CustomUI.BackstagePrimaryMenu openXmlElement, Boolean? value)
+  private static void SetVisible(DXO2010CustUI.BackstagePrimaryMenu openXmlElement, Boolean? value)
   {
     if (value != null)
       openXmlElement.Visible = new BooleanValue { Value = (Boolean)value };
@@ -200,12 +200,12 @@ public static class BackstagePrimaryMenuConverter
   /// <summary>
   /// getVisible, this property is only available in Office 2010 and later.
   /// </summary>
-  private static String? GetGetVisible(DocumentFormat.OpenXml.Office2010.CustomUI.BackstagePrimaryMenu openXmlElement)
+  private static String? GetGetVisible(DXO2010CustUI.BackstagePrimaryMenu openXmlElement)
   {
     return openXmlElement?.GetVisible?.Value;
   }
   
-  private static void SetGetVisible(DocumentFormat.OpenXml.Office2010.CustomUI.BackstagePrimaryMenu openXmlElement, String? value)
+  private static void SetGetVisible(DXO2010CustUI.BackstagePrimaryMenu openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.GetVisible = new StringValue { Value = value };
@@ -216,12 +216,12 @@ public static class BackstagePrimaryMenuConverter
   /// <summary>
   /// image, this property is only available in Office 2010 and later.
   /// </summary>
-  private static String? GetImage(DocumentFormat.OpenXml.Office2010.CustomUI.BackstagePrimaryMenu openXmlElement)
+  private static String? GetImage(DXO2010CustUI.BackstagePrimaryMenu openXmlElement)
   {
     return openXmlElement?.Image?.Value;
   }
   
-  private static void SetImage(DocumentFormat.OpenXml.Office2010.CustomUI.BackstagePrimaryMenu openXmlElement, String? value)
+  private static void SetImage(DXO2010CustUI.BackstagePrimaryMenu openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.Image = new StringValue { Value = value };
@@ -232,12 +232,12 @@ public static class BackstagePrimaryMenuConverter
   /// <summary>
   /// imageMso, this property is only available in Office 2010 and later.
   /// </summary>
-  private static String? GetImageMso(DocumentFormat.OpenXml.Office2010.CustomUI.BackstagePrimaryMenu openXmlElement)
+  private static String? GetImageMso(DXO2010CustUI.BackstagePrimaryMenu openXmlElement)
   {
     return openXmlElement?.ImageMso?.Value;
   }
   
-  private static void SetImageMso(DocumentFormat.OpenXml.Office2010.CustomUI.BackstagePrimaryMenu openXmlElement, String? value)
+  private static void SetImageMso(DXO2010CustUI.BackstagePrimaryMenu openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.ImageMso = new StringValue { Value = value };
@@ -248,12 +248,12 @@ public static class BackstagePrimaryMenuConverter
   /// <summary>
   /// getImage, this property is only available in Office 2010 and later.
   /// </summary>
-  private static String? GetGetImage(DocumentFormat.OpenXml.Office2010.CustomUI.BackstagePrimaryMenu openXmlElement)
+  private static String? GetGetImage(DXO2010CustUI.BackstagePrimaryMenu openXmlElement)
   {
     return openXmlElement?.GetImage?.Value;
   }
   
-  private static void SetGetImage(DocumentFormat.OpenXml.Office2010.CustomUI.BackstagePrimaryMenu openXmlElement, String? value)
+  private static void SetGetImage(DXO2010CustUI.BackstagePrimaryMenu openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.GetImage = new StringValue { Value = value };
@@ -264,12 +264,12 @@ public static class BackstagePrimaryMenuConverter
   /// <summary>
   /// keytip, this property is only available in Office 2010 and later.
   /// </summary>
-  private static String? GetKeytip(DocumentFormat.OpenXml.Office2010.CustomUI.BackstagePrimaryMenu openXmlElement)
+  private static String? GetKeytip(DXO2010CustUI.BackstagePrimaryMenu openXmlElement)
   {
     return openXmlElement?.Keytip?.Value;
   }
   
-  private static void SetKeytip(DocumentFormat.OpenXml.Office2010.CustomUI.BackstagePrimaryMenu openXmlElement, String? value)
+  private static void SetKeytip(DXO2010CustUI.BackstagePrimaryMenu openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.Keytip = new StringValue { Value = value };
@@ -280,12 +280,12 @@ public static class BackstagePrimaryMenuConverter
   /// <summary>
   /// getKeytip, this property is only available in Office 2010 and later.
   /// </summary>
-  private static String? GetGetKeytip(DocumentFormat.OpenXml.Office2010.CustomUI.BackstagePrimaryMenu openXmlElement)
+  private static String? GetGetKeytip(DXO2010CustUI.BackstagePrimaryMenu openXmlElement)
   {
     return openXmlElement?.GetKeytip?.Value;
   }
   
-  private static void SetGetKeytip(DocumentFormat.OpenXml.Office2010.CustomUI.BackstagePrimaryMenu openXmlElement, String? value)
+  private static void SetGetKeytip(DXO2010CustUI.BackstagePrimaryMenu openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.GetKeytip = new StringValue { Value = value };
@@ -293,32 +293,32 @@ public static class BackstagePrimaryMenuConverter
       openXmlElement.GetKeytip = null;
   }
   
-  private static DocumentModel.BackstageMenuGroup? GetBackstageMenuGroup(DocumentFormat.OpenXml.Office2010.CustomUI.BackstagePrimaryMenu openXmlElement)
+  private static DM.BackstageMenuGroup? GetBackstageMenuGroup(DXO2010CustUI.BackstagePrimaryMenu openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office2010.CustomUI.BackstageMenuGroup>();
+    var itemElement = openXmlElement?.GetFirstChild<DXO2010CustUI.BackstageMenuGroup>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.BackstageMenuGroupConverter.CreateModelElement(itemElement);
+      return DMX.BackstageMenuGroupConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetBackstageMenuGroup(DocumentFormat.OpenXml.Office2010.CustomUI.BackstagePrimaryMenu openXmlElement, DocumentModel.BackstageMenuGroup? value)
+  private static void SetBackstageMenuGroup(DXO2010CustUI.BackstagePrimaryMenu openXmlElement, DM.BackstageMenuGroup? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2010.CustomUI.BackstageMenuGroup>();
+    var itemElement = openXmlElement.GetFirstChild<DXO2010CustUI.BackstageMenuGroup>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.BackstageMenuGroupConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2010.CustomUI.BackstageMenuGroup>(value);
+      itemElement = DMX.BackstageMenuGroupConverter.CreateOpenXmlElement<DXO2010CustUI.BackstageMenuGroup>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  public static DocumentModel.BackstagePrimaryMenu? CreateModelElement(DocumentFormat.OpenXml.Office2010.CustomUI.BackstagePrimaryMenu? openXmlElement)
+  public static DM.BackstagePrimaryMenu? CreateModelElement(DXO2010CustUI.BackstagePrimaryMenu? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.BackstagePrimaryMenu();
+      var value = new DM.BackstagePrimaryMenu();
       value.Screentip = GetScreentip(openXmlElement);
       value.GetScreentip = GetGetScreentip(openXmlElement);
       value.Supertip = GetSupertip(openXmlElement);
@@ -343,8 +343,8 @@ public static class BackstagePrimaryMenuConverter
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.BackstagePrimaryMenu? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Office2010.CustomUI.BackstagePrimaryMenu, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DM.BackstagePrimaryMenu? value)
+    where OpenXmlElementType: DXO2010CustUI.BackstagePrimaryMenu, new()
   {
     if (value != null)
     {

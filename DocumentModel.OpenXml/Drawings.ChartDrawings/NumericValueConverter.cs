@@ -8,29 +8,29 @@ public static class NumericValueConverter
   /// <summary>
   /// idx, this property is only available in Office 2016 and later.
   /// </summary>
-  private static UInt32? GetIdx(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.NumericValue openXmlElement)
+  private static UInt32? GetIdx(DXO2016DrawChartDraw.NumericValue openXmlElement)
   {
     return openXmlElement.Idx?.Value;
   }
   
-  private static void SetIdx(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.NumericValue openXmlElement, UInt32? value)
+  private static void SetIdx(DXO2016DrawChartDraw.NumericValue openXmlElement, UInt32? value)
   {
     openXmlElement.Idx = value;
   }
   
-  public static DocumentModel.Drawings.ChartDrawings.NumericValue? CreateModelElement(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.NumericValue? openXmlElement)
+  public static DMDrawsChartDraws.NumericValue? CreateModelElement(DXO2016DrawChartDraw.NumericValue? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.ChartDrawings.NumericValue();
+      var value = new DMDrawsChartDraws.NumericValue();
       value.Idx = GetIdx(openXmlElement);
       return value;
     }
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.ChartDrawings.NumericValue? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.NumericValue, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDrawsChartDraws.NumericValue? value)
+    where OpenXmlElementType: DXO2016DrawChartDraw.NumericValue, new()
   {
     if (value != null)
     {

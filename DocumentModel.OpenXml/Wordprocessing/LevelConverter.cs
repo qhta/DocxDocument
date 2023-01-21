@@ -8,12 +8,12 @@ public static class LevelConverter
   /// <summary>
   /// Numbering Level
   /// </summary>
-  private static Int32? GetLevelIndex(DocumentFormat.OpenXml.Wordprocessing.Level openXmlElement)
+  private static Int32? GetLevelIndex(DXW.Level openXmlElement)
   {
     return openXmlElement.LevelIndex?.Value;
   }
   
-  private static void SetLevelIndex(DocumentFormat.OpenXml.Wordprocessing.Level openXmlElement, Int32? value)
+  private static void SetLevelIndex(DXW.Level openXmlElement, Int32? value)
   {
     openXmlElement.LevelIndex = value;
   }
@@ -21,14 +21,14 @@ public static class LevelConverter
   /// <summary>
   /// Template Code
   /// </summary>
-  private static UInt32? GetTemplateCode(DocumentFormat.OpenXml.Wordprocessing.Level openXmlElement)
+  private static UInt32? GetTemplateCode(DXW.Level openXmlElement)
   {
     if (openXmlElement.TemplateCode?.Value != null)
       return UInt32.Parse(openXmlElement.TemplateCode.Value, NumberStyles.HexNumber);
     return null;
   }
   
-  private static void SetTemplateCode(DocumentFormat.OpenXml.Wordprocessing.Level openXmlElement, UInt32? value)
+  private static void SetTemplateCode(DXW.Level openXmlElement, UInt32? value)
   {
       if (value != null)
         openXmlElement.TemplateCode = ((UInt32)value).ToString("X8");
@@ -39,12 +39,12 @@ public static class LevelConverter
   /// <summary>
   /// Tentative Numbering
   /// </summary>
-  private static Boolean? GetTentative(DocumentFormat.OpenXml.Wordprocessing.Level openXmlElement)
+  private static Boolean? GetTentative(DXW.Level openXmlElement)
   {
     return openXmlElement?.Tentative?.Value;
   }
   
-  private static void SetTentative(DocumentFormat.OpenXml.Wordprocessing.Level openXmlElement, Boolean? value)
+  private static void SetTentative(DXW.Level openXmlElement, Boolean? value)
   {
     if (value != null)
       openXmlElement.Tentative = new OnOffValue { Value = (Boolean)value };
@@ -55,22 +55,22 @@ public static class LevelConverter
   /// <summary>
   /// Starting Value.
   /// </summary>
-  private static Int32? GetStartNumberingValue(DocumentFormat.OpenXml.Wordprocessing.Level openXmlElement)
+  private static Int32? GetStartNumberingValue(DXW.Level openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.StartNumberingValue>();
+    var itemElement = openXmlElement?.GetFirstChild<DXW.StartNumberingValue>();
     if (itemElement != null)
       return itemElement.Val?.Value;
     return null;
   }
   
-  private static void SetStartNumberingValue(DocumentFormat.OpenXml.Wordprocessing.Level openXmlElement, Int32? value)
+  private static void SetStartNumberingValue(DXW.Level openXmlElement, Int32? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.StartNumberingValue>();
+    var itemElement = openXmlElement.GetFirstChild<DXW.StartNumberingValue>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = new DocumentFormat.OpenXml.Wordprocessing.StartNumberingValue{ Val = value };
+      itemElement = new DXW.StartNumberingValue{ Val = value };
       openXmlElement.AddChild(itemElement);
     }
   }
@@ -78,22 +78,22 @@ public static class LevelConverter
   /// <summary>
   /// Numbering Format.
   /// </summary>
-  private static DocumentModel.Wordprocessing.NumberingFormat? GetNumberingFormat(DocumentFormat.OpenXml.Wordprocessing.Level openXmlElement)
+  private static DMW.NumberingFormat? GetNumberingFormat(DXW.Level openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.NumberingFormat>();
+    var itemElement = openXmlElement?.GetFirstChild<DXW.NumberingFormat>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Wordprocessing.NumberingFormatConverter.CreateModelElement(itemElement);
+      return DMXW.NumberingFormatConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetNumberingFormat(DocumentFormat.OpenXml.Wordprocessing.Level openXmlElement, DocumentModel.Wordprocessing.NumberingFormat? value)
+  private static void SetNumberingFormat(DXW.Level openXmlElement, DMW.NumberingFormat? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.NumberingFormat>();
+    var itemElement = openXmlElement.GetFirstChild<DXW.NumberingFormat>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Wordprocessing.NumberingFormatConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.NumberingFormat>(value);
+      itemElement = DMXW.NumberingFormatConverter.CreateOpenXmlElement<DXW.NumberingFormat>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
@@ -102,22 +102,22 @@ public static class LevelConverter
   /// <summary>
   /// Restart Numbering Level Symbol.
   /// </summary>
-  private static Int32? GetLevelRestart(DocumentFormat.OpenXml.Wordprocessing.Level openXmlElement)
+  private static Int32? GetLevelRestart(DXW.Level openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.LevelRestart>();
+    var itemElement = openXmlElement?.GetFirstChild<DXW.LevelRestart>();
     if (itemElement != null)
       return itemElement.Val?.Value;
     return null;
   }
   
-  private static void SetLevelRestart(DocumentFormat.OpenXml.Wordprocessing.Level openXmlElement, Int32? value)
+  private static void SetLevelRestart(DXW.Level openXmlElement, Int32? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.LevelRestart>();
+    var itemElement = openXmlElement.GetFirstChild<DXW.LevelRestart>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = new DocumentFormat.OpenXml.Wordprocessing.LevelRestart{ Val = value };
+      itemElement = new DXW.LevelRestart{ Val = value };
       openXmlElement.AddChild(itemElement);
     }
   }
@@ -125,22 +125,22 @@ public static class LevelConverter
   /// <summary>
   /// Paragraph Style's Associated Numbering Level.
   /// </summary>
-  private static String? GetParagraphStyleIdInLevel(DocumentFormat.OpenXml.Wordprocessing.Level openXmlElement)
+  private static String? GetParagraphStyleIdInLevel(DXW.Level openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.ParagraphStyleIdInLevel>();
+    var itemElement = openXmlElement?.GetFirstChild<DXW.ParagraphStyleIdInLevel>();
     if (itemElement != null)
       return itemElement.Val?.Value;
     return null;
   }
   
-  private static void SetParagraphStyleIdInLevel(DocumentFormat.OpenXml.Wordprocessing.Level openXmlElement, String? value)
+  private static void SetParagraphStyleIdInLevel(DXW.Level openXmlElement, String? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.ParagraphStyleIdInLevel>();
+    var itemElement = openXmlElement.GetFirstChild<DXW.ParagraphStyleIdInLevel>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = new DocumentFormat.OpenXml.Wordprocessing.ParagraphStyleIdInLevel { Val = value };
+      itemElement = new DXW.ParagraphStyleIdInLevel { Val = value };
       openXmlElement.AddChild(itemElement);
     }
   }
@@ -148,25 +148,25 @@ public static class LevelConverter
   /// <summary>
   /// Display All Levels Using Arabic Numerals.
   /// </summary>
-  private static Boolean? GetIsLegalNumberingStyle(DocumentFormat.OpenXml.Wordprocessing.Level openXmlElement)
+  private static Boolean? GetIsLegalNumberingStyle(DXW.Level openXmlElement)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.IsLegalNumberingStyle>();
+    var itemElement = openXmlElement.GetFirstChild<DXW.IsLegalNumberingStyle>();
     if (itemElement?.Val?.Value != null)
       return itemElement.Val.Value;
     return null;
   }
   
-  private static void SetIsLegalNumberingStyle(DocumentFormat.OpenXml.Wordprocessing.Level openXmlElement, Boolean? value)
+  private static void SetIsLegalNumberingStyle(DXW.Level openXmlElement, Boolean? value)
   {
     if (value == false)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.IsLegalNumberingStyle>();
+      var itemElement = openXmlElement.GetFirstChild<DXW.IsLegalNumberingStyle>();
       if (itemElement != null)
         itemElement.Remove();
     }
     if (value == true)
     {
-      var itemElement = new DocumentFormat.OpenXml.Wordprocessing.IsLegalNumberingStyle();
+      var itemElement = new DXW.IsLegalNumberingStyle();
       openXmlElement.AddChild(itemElement);
     }
   }
@@ -174,22 +174,22 @@ public static class LevelConverter
   /// <summary>
   /// Content Between Numbering Symbol and Paragraph Text.
   /// </summary>
-  private static DocumentModel.Wordprocessing.LevelSuffixKind? GetLevelSuffix(DocumentFormat.OpenXml.Wordprocessing.Level openXmlElement)
+  private static DMW.LevelSuffixKind? GetLevelSuffix(DXW.Level openXmlElement)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.LevelSuffix>();
+    var itemElement = openXmlElement.GetFirstChild<DXW.LevelSuffix>();
     if (itemElement?.Val?.Value != null)
-      return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Wordprocessing.LevelSuffixValues, DocumentModel.Wordprocessing.LevelSuffixKind>(itemElement.Val.Value);
+      return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Wordprocessing.LevelSuffixValues, DMW.LevelSuffixKind>(itemElement.Val.Value);
     return null;
   }
   
-  private static void SetLevelSuffix(DocumentFormat.OpenXml.Wordprocessing.Level openXmlElement, DocumentModel.Wordprocessing.LevelSuffixKind? value)
+  private static void SetLevelSuffix(DXW.Level openXmlElement, DMW.LevelSuffixKind? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.LevelSuffix>();
+    var itemElement = openXmlElement.GetFirstChild<DXW.LevelSuffix>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = EnumValueConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.LevelSuffix, DocumentFormat.OpenXml.Wordprocessing.LevelSuffixValues, DocumentModel.Wordprocessing.LevelSuffixKind>(value);
+      itemElement = EnumValueConverter.CreateOpenXmlElement<DXW.LevelSuffix, DocumentFormat.OpenXml.Wordprocessing.LevelSuffixValues, DMW.LevelSuffixKind>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
@@ -198,22 +198,22 @@ public static class LevelConverter
   /// <summary>
   /// Numbering Level Text.
   /// </summary>
-  private static DocumentModel.Wordprocessing.LevelText? GetLevelText(DocumentFormat.OpenXml.Wordprocessing.Level openXmlElement)
+  private static DMW.LevelText? GetLevelText(DXW.Level openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.LevelText>();
+    var itemElement = openXmlElement?.GetFirstChild<DXW.LevelText>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Wordprocessing.LevelTextConverter.CreateModelElement(itemElement);
+      return DMXW.LevelTextConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetLevelText(DocumentFormat.OpenXml.Wordprocessing.Level openXmlElement, DocumentModel.Wordprocessing.LevelText? value)
+  private static void SetLevelText(DXW.Level openXmlElement, DMW.LevelText? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.LevelText>();
+    var itemElement = openXmlElement.GetFirstChild<DXW.LevelText>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Wordprocessing.LevelTextConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.LevelText>(value);
+      itemElement = DMXW.LevelTextConverter.CreateOpenXmlElement<DXW.LevelText>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
@@ -222,22 +222,22 @@ public static class LevelConverter
   /// <summary>
   /// Picture Numbering Symbol Definition Reference.
   /// </summary>
-  private static Int32? GetLevelPictureBulletId(DocumentFormat.OpenXml.Wordprocessing.Level openXmlElement)
+  private static Int32? GetLevelPictureBulletId(DXW.Level openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.LevelPictureBulletId>();
+    var itemElement = openXmlElement?.GetFirstChild<DXW.LevelPictureBulletId>();
     if (itemElement != null)
       return itemElement.Val?.Value;
     return null;
   }
   
-  private static void SetLevelPictureBulletId(DocumentFormat.OpenXml.Wordprocessing.Level openXmlElement, Int32? value)
+  private static void SetLevelPictureBulletId(DXW.Level openXmlElement, Int32? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.LevelPictureBulletId>();
+    var itemElement = openXmlElement.GetFirstChild<DXW.LevelPictureBulletId>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = new DocumentFormat.OpenXml.Wordprocessing.LevelPictureBulletId{ Val = value };
+      itemElement = new DXW.LevelPictureBulletId{ Val = value };
       openXmlElement.AddChild(itemElement);
     }
   }
@@ -245,22 +245,22 @@ public static class LevelConverter
   /// <summary>
   /// Legacy Numbering Level Properties.
   /// </summary>
-  private static DocumentModel.Wordprocessing.LegacyNumbering? GetLegacyNumbering(DocumentFormat.OpenXml.Wordprocessing.Level openXmlElement)
+  private static DMW.LegacyNumbering? GetLegacyNumbering(DXW.Level openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.LegacyNumbering>();
+    var itemElement = openXmlElement?.GetFirstChild<DXW.LegacyNumbering>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Wordprocessing.LegacyNumberingConverter.CreateModelElement(itemElement);
+      return DMXW.LegacyNumberingConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetLegacyNumbering(DocumentFormat.OpenXml.Wordprocessing.Level openXmlElement, DocumentModel.Wordprocessing.LegacyNumbering? value)
+  private static void SetLegacyNumbering(DXW.Level openXmlElement, DMW.LegacyNumbering? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.LegacyNumbering>();
+    var itemElement = openXmlElement.GetFirstChild<DXW.LegacyNumbering>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Wordprocessing.LegacyNumberingConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.LegacyNumbering>(value);
+      itemElement = DMXW.LegacyNumberingConverter.CreateOpenXmlElement<DXW.LegacyNumbering>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
@@ -269,22 +269,22 @@ public static class LevelConverter
   /// <summary>
   /// Justification.
   /// </summary>
-  private static DocumentModel.Wordprocessing.LevelJustificationKind? GetLevelJustification(DocumentFormat.OpenXml.Wordprocessing.Level openXmlElement)
+  private static DMW.LevelJustificationKind? GetLevelJustification(DXW.Level openXmlElement)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.LevelJustification>();
+    var itemElement = openXmlElement.GetFirstChild<DXW.LevelJustification>();
     if (itemElement?.Val?.Value != null)
-      return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Wordprocessing.LevelJustificationValues, DocumentModel.Wordprocessing.LevelJustificationKind>(itemElement.Val.Value);
+      return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Wordprocessing.LevelJustificationValues, DMW.LevelJustificationKind>(itemElement.Val.Value);
     return null;
   }
   
-  private static void SetLevelJustification(DocumentFormat.OpenXml.Wordprocessing.Level openXmlElement, DocumentModel.Wordprocessing.LevelJustificationKind? value)
+  private static void SetLevelJustification(DXW.Level openXmlElement, DMW.LevelJustificationKind? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.LevelJustification>();
+    var itemElement = openXmlElement.GetFirstChild<DXW.LevelJustification>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = EnumValueConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.LevelJustification, DocumentFormat.OpenXml.Wordprocessing.LevelJustificationValues, DocumentModel.Wordprocessing.LevelJustificationKind>(value);
+      itemElement = EnumValueConverter.CreateOpenXmlElement<DXW.LevelJustification, DocumentFormat.OpenXml.Wordprocessing.LevelJustificationValues, DMW.LevelJustificationKind>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
@@ -293,22 +293,22 @@ public static class LevelConverter
   /// <summary>
   /// Numbering Level Associated Paragraph Properties.
   /// </summary>
-  private static DocumentModel.Wordprocessing.PreviousParagraphProperties? GetPreviousParagraphProperties(DocumentFormat.OpenXml.Wordprocessing.Level openXmlElement)
+  private static DMW.PreviousParagraphProperties? GetPreviousParagraphProperties(DXW.Level openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.PreviousParagraphProperties>();
+    var itemElement = openXmlElement?.GetFirstChild<DXW.PreviousParagraphProperties>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Wordprocessing.PreviousParagraphPropertiesConverter.CreateModelElement(itemElement);
+      return DMXW.PreviousParagraphPropertiesConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetPreviousParagraphProperties(DocumentFormat.OpenXml.Wordprocessing.Level openXmlElement, DocumentModel.Wordprocessing.PreviousParagraphProperties? value)
+  private static void SetPreviousParagraphProperties(DXW.Level openXmlElement, DMW.PreviousParagraphProperties? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.PreviousParagraphProperties>();
+    var itemElement = openXmlElement.GetFirstChild<DXW.PreviousParagraphProperties>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Wordprocessing.PreviousParagraphPropertiesConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.PreviousParagraphProperties>(value);
+      itemElement = DMXW.PreviousParagraphPropertiesConverter.CreateOpenXmlElement<DXW.PreviousParagraphProperties>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
@@ -317,32 +317,32 @@ public static class LevelConverter
   /// <summary>
   /// Numbering Symbol Run Properties.
   /// </summary>
-  private static DocumentModel.Wordprocessing.NumberingSymbolRunProperties? GetNumberingSymbolRunProperties(DocumentFormat.OpenXml.Wordprocessing.Level openXmlElement)
+  private static DMW.NumberingSymbolRunProperties? GetNumberingSymbolRunProperties(DXW.Level openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.NumberingSymbolRunProperties>();
+    var itemElement = openXmlElement?.GetFirstChild<DXW.NumberingSymbolRunProperties>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Wordprocessing.NumberingSymbolRunPropertiesConverter.CreateModelElement(itemElement);
+      return DMXW.NumberingSymbolRunPropertiesConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetNumberingSymbolRunProperties(DocumentFormat.OpenXml.Wordprocessing.Level openXmlElement, DocumentModel.Wordprocessing.NumberingSymbolRunProperties? value)
+  private static void SetNumberingSymbolRunProperties(DXW.Level openXmlElement, DMW.NumberingSymbolRunProperties? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.NumberingSymbolRunProperties>();
+    var itemElement = openXmlElement.GetFirstChild<DXW.NumberingSymbolRunProperties>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Wordprocessing.NumberingSymbolRunPropertiesConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.NumberingSymbolRunProperties>(value);
+      itemElement = DMXW.NumberingSymbolRunPropertiesConverter.CreateOpenXmlElement<DXW.NumberingSymbolRunProperties>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  public static DocumentModel.Wordprocessing.Level? CreateModelElement(DocumentFormat.OpenXml.Wordprocessing.Level? openXmlElement)
+  public static DMW.Level? CreateModelElement(DXW.Level? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Wordprocessing.Level();
+      var value = new DMW.Level();
       value.LevelIndex = GetLevelIndex(openXmlElement);
       value.TemplateCode = GetTemplateCode(openXmlElement);
       value.Tentative = GetTentative(openXmlElement);
@@ -363,8 +363,8 @@ public static class LevelConverter
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.Level? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Wordprocessing.Level, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMW.Level? value)
+    where OpenXmlElementType: DXW.Level, new()
   {
     if (value != null)
     {

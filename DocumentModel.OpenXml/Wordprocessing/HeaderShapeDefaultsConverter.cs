@@ -5,53 +5,53 @@ namespace DocumentModel.OpenXml.Wordprocessing;
 /// </summary>
 public static class HeaderShapeDefaultsConverter
 {
-  private static DocumentModel.Vml.ShapeDefaults? GetShapeDefaults(DocumentFormat.OpenXml.Wordprocessing.HeaderShapeDefaults openXmlElement)
+  private static DMVml.ShapeDefaults? GetShapeDefaults(DXW.HeaderShapeDefaults openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Vml.Office.ShapeDefaults>();
+    var itemElement = openXmlElement?.GetFirstChild<DXVmlO.ShapeDefaults>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Vml.ShapeDefaultsConverter.CreateModelElement(itemElement);
+      return DMXVml.ShapeDefaultsConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetShapeDefaults(DocumentFormat.OpenXml.Wordprocessing.HeaderShapeDefaults openXmlElement, DocumentModel.Vml.ShapeDefaults? value)
+  private static void SetShapeDefaults(DXW.HeaderShapeDefaults openXmlElement, DMVml.ShapeDefaults? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Vml.Office.ShapeDefaults>();
+    var itemElement = openXmlElement.GetFirstChild<DXVmlO.ShapeDefaults>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Vml.ShapeDefaultsConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Vml.Office.ShapeDefaults>(value);
+      itemElement = DMXVml.ShapeDefaultsConverter.CreateOpenXmlElement<DXVmlO.ShapeDefaults>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static DocumentModel.Vml.ShapeLayout? GetShapeLayout(DocumentFormat.OpenXml.Wordprocessing.HeaderShapeDefaults openXmlElement)
+  private static DMVml.ShapeLayout? GetShapeLayout(DXW.HeaderShapeDefaults openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Vml.Office.ShapeLayout>();
+    var itemElement = openXmlElement?.GetFirstChild<DXVmlO.ShapeLayout>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Vml.ShapeLayoutConverter.CreateModelElement(itemElement);
+      return DMXVml.ShapeLayoutConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetShapeLayout(DocumentFormat.OpenXml.Wordprocessing.HeaderShapeDefaults openXmlElement, DocumentModel.Vml.ShapeLayout? value)
+  private static void SetShapeLayout(DXW.HeaderShapeDefaults openXmlElement, DMVml.ShapeLayout? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Vml.Office.ShapeLayout>();
+    var itemElement = openXmlElement.GetFirstChild<DXVmlO.ShapeLayout>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Vml.ShapeLayoutConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Vml.Office.ShapeLayout>(value);
+      itemElement = DMXVml.ShapeLayoutConverter.CreateOpenXmlElement<DXVmlO.ShapeLayout>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  public static DocumentModel.Wordprocessing.HeaderShapeDefaults? CreateModelElement(DocumentFormat.OpenXml.Wordprocessing.HeaderShapeDefaults? openXmlElement)
+  public static DMW.HeaderShapeDefaults? CreateModelElement(DXW.HeaderShapeDefaults? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Wordprocessing.HeaderShapeDefaults();
+      var value = new DMW.HeaderShapeDefaults();
       value.ShapeDefaults = GetShapeDefaults(openXmlElement);
       value.ShapeLayout = GetShapeLayout(openXmlElement);
       return value;
@@ -59,8 +59,8 @@ public static class HeaderShapeDefaultsConverter
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.HeaderShapeDefaults? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Wordprocessing.HeaderShapeDefaults, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMW.HeaderShapeDefaults? value)
+    where OpenXmlElementType: DXW.HeaderShapeDefaults, new()
   {
     if (value != null)
     {

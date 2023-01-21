@@ -5,53 +5,53 @@ namespace DocumentModel.OpenXml.Drawings.Charts;
 /// </summary>
 public static class UserShapesConverter
 {
-  private static DocumentModel.Drawings.ChartDrawing.RelativeAnchorSize? GetRelativeAnchorSize(DocumentFormat.OpenXml.Drawing.Charts.UserShapes openXmlElement)
+  private static DMDrawsChartDraw.RelativeAnchorSize? GetRelativeAnchorSize(DXDrawCharts.UserShapes openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.ChartDrawing.RelativeAnchorSize>();
+    var itemElement = openXmlElement?.GetFirstChild<DXDrawChartDraw.RelativeAnchorSize>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.ChartDrawing.RelativeAnchorSizeConverter.CreateModelElement(itemElement);
+      return DMXDrawsChartDraw.RelativeAnchorSizeConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetRelativeAnchorSize(DocumentFormat.OpenXml.Drawing.Charts.UserShapes openXmlElement, DocumentModel.Drawings.ChartDrawing.RelativeAnchorSize? value)
+  private static void SetRelativeAnchorSize(DXDrawCharts.UserShapes openXmlElement, DMDrawsChartDraw.RelativeAnchorSize? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.ChartDrawing.RelativeAnchorSize>();
+    var itemElement = openXmlElement.GetFirstChild<DXDrawChartDraw.RelativeAnchorSize>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Drawings.ChartDrawing.RelativeAnchorSizeConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.ChartDrawing.RelativeAnchorSize>(value);
+      itemElement = DMXDrawsChartDraw.RelativeAnchorSizeConverter.CreateOpenXmlElement<DXDrawChartDraw.RelativeAnchorSize>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static DocumentModel.Drawings.ChartDrawing.AbsoluteAnchorSize? GetAbsoluteAnchorSize(DocumentFormat.OpenXml.Drawing.Charts.UserShapes openXmlElement)
+  private static DMDrawsChartDraw.AbsoluteAnchorSize? GetAbsoluteAnchorSize(DXDrawCharts.UserShapes openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.ChartDrawing.AbsoluteAnchorSize>();
+    var itemElement = openXmlElement?.GetFirstChild<DXDrawChartDraw.AbsoluteAnchorSize>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.ChartDrawing.AbsoluteAnchorSizeConverter.CreateModelElement(itemElement);
+      return DMXDrawsChartDraw.AbsoluteAnchorSizeConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetAbsoluteAnchorSize(DocumentFormat.OpenXml.Drawing.Charts.UserShapes openXmlElement, DocumentModel.Drawings.ChartDrawing.AbsoluteAnchorSize? value)
+  private static void SetAbsoluteAnchorSize(DXDrawCharts.UserShapes openXmlElement, DMDrawsChartDraw.AbsoluteAnchorSize? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.ChartDrawing.AbsoluteAnchorSize>();
+    var itemElement = openXmlElement.GetFirstChild<DXDrawChartDraw.AbsoluteAnchorSize>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Drawings.ChartDrawing.AbsoluteAnchorSizeConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.ChartDrawing.AbsoluteAnchorSize>(value);
+      itemElement = DMXDrawsChartDraw.AbsoluteAnchorSizeConverter.CreateOpenXmlElement<DXDrawChartDraw.AbsoluteAnchorSize>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  public static DocumentModel.Drawings.Charts.UserShapes? CreateModelElement(DocumentFormat.OpenXml.Drawing.Charts.UserShapes? openXmlElement)
+  public static DMDrawsCharts.UserShapes? CreateModelElement(DXDrawCharts.UserShapes? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.Charts.UserShapes();
+      var value = new DMDrawsCharts.UserShapes();
       value.RelativeAnchorSize = GetRelativeAnchorSize(openXmlElement);
       value.AbsoluteAnchorSize = GetAbsoluteAnchorSize(openXmlElement);
       return value;
@@ -59,8 +59,8 @@ public static class UserShapesConverter
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.Charts.UserShapes? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.Charts.UserShapes, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDrawsCharts.UserShapes? value)
+    where OpenXmlElementType: DXDrawCharts.UserShapes, new()
   {
     if (value != null)
     {

@@ -8,12 +8,12 @@ public static class HyperlinkExtensionConverter
   /// <summary>
   /// URI
   /// </summary>
-  private static String? GetUri(DocumentFormat.OpenXml.Drawing.HyperlinkExtension openXmlElement)
+  private static String? GetUri(DXDraw.HyperlinkExtension openXmlElement)
   {
     return openXmlElement?.Uri?.Value;
   }
   
-  private static void SetUri(DocumentFormat.OpenXml.Drawing.HyperlinkExtension openXmlElement, String? value)
+  private static void SetUri(DXDraw.HyperlinkExtension openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.Uri = new StringValue { Value = value };
@@ -21,32 +21,32 @@ public static class HyperlinkExtensionConverter
       openXmlElement.Uri = null;
   }
   
-  private static DocumentModel.Drawings.HyperlinkColorEnum? GetHyperlinkColor(DocumentFormat.OpenXml.Drawing.HyperlinkExtension openXmlElement)
+  private static DMDraws.HyperlinkColorEnum? GetHyperlinkColor(DXDraw.HyperlinkExtension openXmlElement)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2019.Drawing.HyperLinkColor.HyperlinkColor>();
+    var itemElement = openXmlElement.GetFirstChild<DXO2019DrawHLnkClr.HyperlinkColor>();
     if (itemElement?.Val?.Value != null)
-      return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Office2019.Drawing.HyperLinkColor.HyperlinkColorEnum, DocumentModel.Drawings.HyperlinkColorEnum>(itemElement.Val.Value);
+      return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Office2019.Drawing.HyperLinkColor.HyperlinkColorEnum, DMDraws.HyperlinkColorEnum>(itemElement.Val.Value);
     return null;
   }
   
-  private static void SetHyperlinkColor(DocumentFormat.OpenXml.Drawing.HyperlinkExtension openXmlElement, DocumentModel.Drawings.HyperlinkColorEnum? value)
+  private static void SetHyperlinkColor(DXDraw.HyperlinkExtension openXmlElement, DMDraws.HyperlinkColorEnum? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2019.Drawing.HyperLinkColor.HyperlinkColor>();
+    var itemElement = openXmlElement.GetFirstChild<DXO2019DrawHLnkClr.HyperlinkColor>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = EnumValueConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2019.Drawing.HyperLinkColor.HyperlinkColor, DocumentFormat.OpenXml.Office2019.Drawing.HyperLinkColor.HyperlinkColorEnum, DocumentModel.Drawings.HyperlinkColorEnum>(value);
+      itemElement = EnumValueConverter.CreateOpenXmlElement<DXO2019DrawHLnkClr.HyperlinkColor, DocumentFormat.OpenXml.Office2019.Drawing.HyperLinkColor.HyperlinkColorEnum, DMDraws.HyperlinkColorEnum>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  public static DocumentModel.Drawings.HyperlinkExtension? CreateModelElement(DocumentFormat.OpenXml.Drawing.HyperlinkExtension? openXmlElement)
+  public static DMDraws.HyperlinkExtension? CreateModelElement(DXDraw.HyperlinkExtension? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.HyperlinkExtension();
+      var value = new DMDraws.HyperlinkExtension();
       value.Uri = GetUri(openXmlElement);
       value.HyperlinkColor = GetHyperlinkColor(openXmlElement);
       return value;
@@ -54,8 +54,8 @@ public static class HyperlinkExtensionConverter
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.HyperlinkExtension? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.HyperlinkExtension, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDraws.HyperlinkExtension? value)
+    where OpenXmlElementType: DXDraw.HyperlinkExtension, new()
   {
     if (value != null)
     {

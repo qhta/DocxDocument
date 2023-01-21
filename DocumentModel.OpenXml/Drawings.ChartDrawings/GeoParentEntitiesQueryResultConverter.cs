@@ -8,22 +8,22 @@ public static class GeoParentEntitiesQueryResultConverter
   /// <summary>
   /// GeoParentEntitiesQuery.
   /// </summary>
-  private static DocumentModel.Drawings.ChartDrawings.GeoParentEntitiesQuery? GetGeoParentEntitiesQuery(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.GeoParentEntitiesQueryResult openXmlElement)
+  private static DMDrawsChartDraws.GeoParentEntitiesQuery? GetGeoParentEntitiesQuery(DXO2016DrawChartDraw.GeoParentEntitiesQueryResult openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.GeoParentEntitiesQuery>();
+    var itemElement = openXmlElement?.GetFirstChild<DXO2016DrawChartDraw.GeoParentEntitiesQuery>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.ChartDrawings.GeoParentEntitiesQueryConverter.CreateModelElement(itemElement);
+      return DMXDrawsChartDraws.GeoParentEntitiesQueryConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetGeoParentEntitiesQuery(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.GeoParentEntitiesQueryResult openXmlElement, DocumentModel.Drawings.ChartDrawings.GeoParentEntitiesQuery? value)
+  private static void SetGeoParentEntitiesQuery(DXO2016DrawChartDraw.GeoParentEntitiesQueryResult openXmlElement, DMDrawsChartDraws.GeoParentEntitiesQuery? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.GeoParentEntitiesQuery>();
+    var itemElement = openXmlElement.GetFirstChild<DXO2016DrawChartDraw.GeoParentEntitiesQuery>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Drawings.ChartDrawings.GeoParentEntitiesQueryConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.GeoParentEntitiesQuery>(value);
+      itemElement = DMXDrawsChartDraws.GeoParentEntitiesQueryConverter.CreateOpenXmlElement<DXO2016DrawChartDraw.GeoParentEntitiesQuery>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
@@ -32,22 +32,22 @@ public static class GeoParentEntitiesQueryResultConverter
   /// <summary>
   /// GeoEntity.
   /// </summary>
-  private static DocumentModel.Drawings.ChartDrawings.GeoEntity? GetGeoEntity(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.GeoParentEntitiesQueryResult openXmlElement)
+  private static DMDrawsChartDraws.GeoEntity? GetGeoEntity(DXO2016DrawChartDraw.GeoParentEntitiesQueryResult openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.GeoEntity>();
+    var itemElement = openXmlElement?.GetFirstChild<DXO2016DrawChartDraw.GeoEntity>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.ChartDrawings.GeoEntityConverter.CreateModelElement(itemElement);
+      return DMXDrawsChartDraws.GeoEntityConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetGeoEntity(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.GeoParentEntitiesQueryResult openXmlElement, DocumentModel.Drawings.ChartDrawings.GeoEntity? value)
+  private static void SetGeoEntity(DXO2016DrawChartDraw.GeoParentEntitiesQueryResult openXmlElement, DMDrawsChartDraws.GeoEntity? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.GeoEntity>();
+    var itemElement = openXmlElement.GetFirstChild<DXO2016DrawChartDraw.GeoEntity>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Drawings.ChartDrawings.GeoEntityConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.GeoEntity>(value);
+      itemElement = DMXDrawsChartDraws.GeoEntityConverter.CreateOpenXmlElement<DXO2016DrawChartDraw.GeoEntity>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
@@ -56,32 +56,32 @@ public static class GeoParentEntitiesQueryResultConverter
   /// <summary>
   /// GeoParentEntity.
   /// </summary>
-  private static DocumentModel.Drawings.ChartDrawings.GeoParentEntity? GetGeoParentEntity(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.GeoParentEntitiesQueryResult openXmlElement)
+  private static DMDrawsChartDraws.GeoParentEntity? GetGeoParentEntity(DXO2016DrawChartDraw.GeoParentEntitiesQueryResult openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.GeoParentEntity>();
+    var itemElement = openXmlElement?.GetFirstChild<DXO2016DrawChartDraw.GeoParentEntity>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.ChartDrawings.GeoParentEntityConverter.CreateModelElement(itemElement);
+      return DMXDrawsChartDraws.GeoParentEntityConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetGeoParentEntity(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.GeoParentEntitiesQueryResult openXmlElement, DocumentModel.Drawings.ChartDrawings.GeoParentEntity? value)
+  private static void SetGeoParentEntity(DXO2016DrawChartDraw.GeoParentEntitiesQueryResult openXmlElement, DMDrawsChartDraws.GeoParentEntity? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.GeoParentEntity>();
+    var itemElement = openXmlElement.GetFirstChild<DXO2016DrawChartDraw.GeoParentEntity>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Drawings.ChartDrawings.GeoParentEntityConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.GeoParentEntity>(value);
+      itemElement = DMXDrawsChartDraws.GeoParentEntityConverter.CreateOpenXmlElement<DXO2016DrawChartDraw.GeoParentEntity>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  public static DocumentModel.Drawings.ChartDrawings.GeoParentEntitiesQueryResult? CreateModelElement(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.GeoParentEntitiesQueryResult? openXmlElement)
+  public static DMDrawsChartDraws.GeoParentEntitiesQueryResult? CreateModelElement(DXO2016DrawChartDraw.GeoParentEntitiesQueryResult? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.ChartDrawings.GeoParentEntitiesQueryResult();
+      var value = new DMDrawsChartDraws.GeoParentEntitiesQueryResult();
       value.GeoParentEntitiesQuery = GetGeoParentEntitiesQuery(openXmlElement);
       value.GeoEntity = GetGeoEntity(openXmlElement);
       value.GeoParentEntity = GetGeoParentEntity(openXmlElement);
@@ -90,8 +90,8 @@ public static class GeoParentEntitiesQueryResultConverter
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.ChartDrawings.GeoParentEntitiesQueryResult? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.GeoParentEntitiesQueryResult, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDrawsChartDraws.GeoParentEntitiesQueryResult? value)
+    where OpenXmlElementType: DXO2016DrawChartDraw.GeoParentEntitiesQueryResult, new()
   {
     if (value != null)
     {

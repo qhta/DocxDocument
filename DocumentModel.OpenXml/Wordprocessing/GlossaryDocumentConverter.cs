@@ -8,22 +8,22 @@ public static class GlossaryDocumentConverter
   /// <summary>
   /// Document Background.
   /// </summary>
-  private static DocumentModel.Wordprocessing.DocumentBackground? GetDocumentBackground(DocumentFormat.OpenXml.Wordprocessing.GlossaryDocument openXmlElement)
+  private static DMW.DocumentBackground? GetDocumentBackground(DXW.GlossaryDocument openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.DocumentBackground>();
+    var itemElement = openXmlElement?.GetFirstChild<DXW.DocumentBackground>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Wordprocessing.DocumentBackgroundConverter.CreateModelElement(itemElement);
+      return DMXW.DocumentBackgroundConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetDocumentBackground(DocumentFormat.OpenXml.Wordprocessing.GlossaryDocument openXmlElement, DocumentModel.Wordprocessing.DocumentBackground? value)
+  private static void SetDocumentBackground(DXW.GlossaryDocument openXmlElement, DMW.DocumentBackground? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.DocumentBackground>();
+    var itemElement = openXmlElement.GetFirstChild<DXW.DocumentBackground>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Wordprocessing.DocumentBackgroundConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.DocumentBackground>(value);
+      itemElement = DMXW.DocumentBackgroundConverter.CreateOpenXmlElement<DXW.DocumentBackground>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
@@ -32,32 +32,32 @@ public static class GlossaryDocumentConverter
   /// <summary>
   /// List of Glossary Document Entries.
   /// </summary>
-  private static DocumentModel.Wordprocessing.DocParts? GetDocParts(DocumentFormat.OpenXml.Wordprocessing.GlossaryDocument openXmlElement)
+  private static DMW.DocParts? GetDocParts(DXW.GlossaryDocument openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.DocParts>();
+    var itemElement = openXmlElement?.GetFirstChild<DXW.DocParts>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Wordprocessing.DocPartsConverter.CreateModelElement(itemElement);
+      return DMXW.DocPartsConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetDocParts(DocumentFormat.OpenXml.Wordprocessing.GlossaryDocument openXmlElement, DocumentModel.Wordprocessing.DocParts? value)
+  private static void SetDocParts(DXW.GlossaryDocument openXmlElement, DMW.DocParts? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.DocParts>();
+    var itemElement = openXmlElement.GetFirstChild<DXW.DocParts>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Wordprocessing.DocPartsConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.DocParts>(value);
+      itemElement = DMXW.DocPartsConverter.CreateOpenXmlElement<DXW.DocParts>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  public static DocumentModel.Wordprocessing.GlossaryDocument? CreateModelElement(DocumentFormat.OpenXml.Wordprocessing.GlossaryDocument? openXmlElement)
+  public static DMW.GlossaryDocument? CreateModelElement(DXW.GlossaryDocument? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Wordprocessing.GlossaryDocument();
+      var value = new DMW.GlossaryDocument();
       value.DocumentBackground = GetDocumentBackground(openXmlElement);
       value.DocParts = GetDocParts(openXmlElement);
       return value;
@@ -65,8 +65,8 @@ public static class GlossaryDocumentConverter
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.GlossaryDocument? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Wordprocessing.GlossaryDocument, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMW.GlossaryDocument? value)
+    where OpenXmlElementType: DXW.GlossaryDocument, new()
   {
     if (value != null)
     {

@@ -5,45 +5,45 @@ namespace DocumentModel.OpenXml.Drawings;
 /// </summary>
 public static class AdjustValueListConverter
 {
-  private static System.Collections.ObjectModel.Collection<DocumentModel.Drawings.ShapeGuide> GetShapeGuides(DocumentFormat.OpenXml.Drawing.AdjustValueList openXmlElement)
+  private static Collection<DMDraws.ShapeGuide> GetShapeGuides(DXDraw.AdjustValueList openXmlElement)
   {
-    var collection = new System.Collections.ObjectModel.Collection<DocumentModel.Drawings.ShapeGuide>();
-    foreach (var item in openXmlElement.Elements<DocumentFormat.OpenXml.Drawing.ShapeGuide>())
+    var collection = new Collection<DMDraws.ShapeGuide>();
+    foreach (var item in openXmlElement.Elements<DXDraw.ShapeGuide>())
     {
-      var newItem = DocumentModel.OpenXml.Drawings.ShapeGuideConverter.CreateModelElement(item);
+      var newItem = DMXDraws.ShapeGuideConverter.CreateModelElement(item);
       if (newItem != null)
         collection.Add(newItem);
     }
     return collection;
   }
   
-  private static void SetShapeGuides(DocumentFormat.OpenXml.Drawing.AdjustValueList openXmlElement, System.Collections.ObjectModel.Collection<DocumentModel.Drawings.ShapeGuide>? value)
+  private static void SetShapeGuides(DXDraw.AdjustValueList openXmlElement, Collection<DMDraws.ShapeGuide>? value)
   {
-    openXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Drawing.ShapeGuide>();
+    openXmlElement.RemoveAllChildren<DXDraw.ShapeGuide>();
     if (value != null)
     {
       foreach (var item in value)
       {
-        var newItem = DocumentModel.OpenXml.Drawings.ShapeGuideConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.ShapeGuide>(item);
+        var newItem = DMXDraws.ShapeGuideConverter.CreateOpenXmlElement<DXDraw.ShapeGuide>(item);
         if (newItem != null)
           openXmlElement.AddChild(newItem);
       }
     }
   }
   
-  public static DocumentModel.Drawings.AdjustValueList? CreateModelElement(DocumentFormat.OpenXml.Drawing.AdjustValueList? openXmlElement)
+  public static DMDraws.AdjustValueList? CreateModelElement(DXDraw.AdjustValueList? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.AdjustValueList();
+      var value = new DMDraws.AdjustValueList();
       value.ShapeGuides = GetShapeGuides(openXmlElement);
       return value;
     }
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.AdjustValueList? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.AdjustValueList, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDraws.AdjustValueList? value)
+    where OpenXmlElementType: DXDraw.AdjustValueList, new()
   {
     if (value != null)
     {

@@ -5,7 +5,7 @@ namespace DocumentModel.OpenXml.Packaging;
 /// </summary>
 public static class WordprocessingPeoplePartConverter
 {
-  private static String? GetContentType(DocumentFormat.OpenXml.Packaging.WordprocessingPeoplePart openXmlElement)
+  private static String? GetContentType(DXPack.WordprocessingPeoplePart openXmlElement)
   {
     return openXmlElement?.ContentType;
   }
@@ -13,33 +13,33 @@ public static class WordprocessingPeoplePartConverter
   /// <summary>
   /// Gets or sets the root element of this part.
   /// </summary>
-  private static DocumentModel.Wordprocessing.People? GetPeople(DocumentFormat.OpenXml.Packaging.WordprocessingPeoplePart openXmlElement)
+  private static DMW.People? GetPeople(DXPack.WordprocessingPeoplePart openXmlElement)
   {
-    if (openXmlElement?.RootElement is DocumentFormat.OpenXml.Office2013.Word.People rootElement)
-      return DocumentModel.OpenXml.Wordprocessing.PeopleConverter.CreateModelElement(rootElement);
+    if (openXmlElement?.RootElement is DXO2013W.People rootElement)
+      return DMXW.PeopleConverter.CreateModelElement(rootElement);
     return null;
   }
   
-  private static void SetPeople(DocumentFormat.OpenXml.Packaging.WordprocessingPeoplePart openXmlElement, DocumentModel.Wordprocessing.People? value)
+  private static void SetPeople(DXPack.WordprocessingPeoplePart openXmlElement, DMW.People? value)
   {
     if (value != null)
     {
-       var rootElement = DocumentModel.OpenXml.Wordprocessing.PeopleConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2013.Word.People>(value);
+       var rootElement = DMXW.PeopleConverter.CreateOpenXmlElement<DXO2013W.People>(value);
        if (rootElement != null)
          openXmlElement.People = rootElement;
     }
   }
   
-  private static String? GetRelationshipType(DocumentFormat.OpenXml.Packaging.WordprocessingPeoplePart openXmlElement)
+  private static String? GetRelationshipType(DXPack.WordprocessingPeoplePart openXmlElement)
   {
     return openXmlElement?.RelationshipType;
   }
   
-  public static DocumentModel.Packaging.WordprocessingPeoplePart? CreateModelElement(DocumentFormat.OpenXml.Packaging.WordprocessingPeoplePart? openXmlElement)
+  public static DMPack.WordprocessingPeoplePart? CreateModelElement(DXPack.WordprocessingPeoplePart? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Packaging.WordprocessingPeoplePart();
+      var value = new DMPack.WordprocessingPeoplePart();
       value.ContentType = GetContentType(openXmlElement);
       value.People = GetPeople(openXmlElement);
       value.RelationshipType = GetRelationshipType(openXmlElement);
@@ -48,8 +48,8 @@ public static class WordprocessingPeoplePartConverter
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Packaging.WordprocessingPeoplePart? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Packaging.WordprocessingPeoplePart, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMPack.WordprocessingPeoplePart? value)
+    where OpenXmlElementType: DXPack.WordprocessingPeoplePart, new()
   {
     if (value != null)
     {

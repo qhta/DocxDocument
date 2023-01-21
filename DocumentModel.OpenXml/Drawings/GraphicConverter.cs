@@ -8,40 +8,40 @@ public static class GraphicConverter
   /// <summary>
   /// Graphic Object Data.
   /// </summary>
-  private static DocumentModel.Drawings.GraphicData? GetGraphicData(DocumentFormat.OpenXml.Drawing.Graphic openXmlElement)
+  private static DMDraws.GraphicData? GetGraphicData(DXDraw.Graphic openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.GraphicData>();
+    var itemElement = openXmlElement?.GetFirstChild<DXDraw.GraphicData>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.GraphicDataConverter.CreateModelElement(itemElement);
+      return DMXDraws.GraphicDataConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetGraphicData(DocumentFormat.OpenXml.Drawing.Graphic openXmlElement, DocumentModel.Drawings.GraphicData? value)
+  private static void SetGraphicData(DXDraw.Graphic openXmlElement, DMDraws.GraphicData? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.GraphicData>();
+    var itemElement = openXmlElement.GetFirstChild<DXDraw.GraphicData>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Drawings.GraphicDataConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.GraphicData>(value);
+      itemElement = DMXDraws.GraphicDataConverter.CreateOpenXmlElement<DXDraw.GraphicData>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  public static DocumentModel.Drawings.Graphic? CreateModelElement(DocumentFormat.OpenXml.Drawing.Graphic? openXmlElement)
+  public static DMDraws.Graphic? CreateModelElement(DXDraw.Graphic? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.Graphic();
+      var value = new DMDraws.Graphic();
       value.GraphicData = GetGraphicData(openXmlElement);
       return value;
     }
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.Graphic? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.Graphic, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDraws.Graphic? value)
+    where OpenXmlElementType: DXDraw.Graphic, new()
   {
     if (value != null)
     {

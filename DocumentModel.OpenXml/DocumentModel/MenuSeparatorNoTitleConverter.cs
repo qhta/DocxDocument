@@ -8,12 +8,12 @@ public static class MenuSeparatorNoTitleConverter
   /// <summary>
   /// id, this property is only available in Office 2010 and later.
   /// </summary>
-  private static String? GetId(DocumentFormat.OpenXml.Office2010.CustomUI.MenuSeparatorNoTitle openXmlElement)
+  private static String? GetId(DXO2010CustUI.MenuSeparatorNoTitle openXmlElement)
   {
     return openXmlElement?.Id?.Value;
   }
   
-  private static void SetId(DocumentFormat.OpenXml.Office2010.CustomUI.MenuSeparatorNoTitle openXmlElement, String? value)
+  private static void SetId(DXO2010CustUI.MenuSeparatorNoTitle openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.Id = new StringValue { Value = value };
@@ -24,12 +24,12 @@ public static class MenuSeparatorNoTitleConverter
   /// <summary>
   /// idQ, this property is only available in Office 2010 and later.
   /// </summary>
-  private static String? GetQualifiedId(DocumentFormat.OpenXml.Office2010.CustomUI.MenuSeparatorNoTitle openXmlElement)
+  private static String? GetQualifiedId(DXO2010CustUI.MenuSeparatorNoTitle openXmlElement)
   {
     return openXmlElement?.QualifiedId?.Value;
   }
   
-  private static void SetQualifiedId(DocumentFormat.OpenXml.Office2010.CustomUI.MenuSeparatorNoTitle openXmlElement, String? value)
+  private static void SetQualifiedId(DXO2010CustUI.MenuSeparatorNoTitle openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.QualifiedId = new StringValue { Value = value };
@@ -40,12 +40,12 @@ public static class MenuSeparatorNoTitleConverter
   /// <summary>
   /// tag, this property is only available in Office 2010 and later.
   /// </summary>
-  private static String? GetTag(DocumentFormat.OpenXml.Office2010.CustomUI.MenuSeparatorNoTitle openXmlElement)
+  private static String? GetTag(DXO2010CustUI.MenuSeparatorNoTitle openXmlElement)
   {
     return openXmlElement?.Tag?.Value;
   }
   
-  private static void SetTag(DocumentFormat.OpenXml.Office2010.CustomUI.MenuSeparatorNoTitle openXmlElement, String? value)
+  private static void SetTag(DXO2010CustUI.MenuSeparatorNoTitle openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.Tag = new StringValue { Value = value };
@@ -56,12 +56,12 @@ public static class MenuSeparatorNoTitleConverter
   /// <summary>
   /// insertAfterMso, this property is only available in Office 2010 and later.
   /// </summary>
-  private static String? GetInsertAfterMso(DocumentFormat.OpenXml.Office2010.CustomUI.MenuSeparatorNoTitle openXmlElement)
+  private static String? GetInsertAfterMso(DXO2010CustUI.MenuSeparatorNoTitle openXmlElement)
   {
     return openXmlElement?.InsertAfterMso?.Value;
   }
   
-  private static void SetInsertAfterMso(DocumentFormat.OpenXml.Office2010.CustomUI.MenuSeparatorNoTitle openXmlElement, String? value)
+  private static void SetInsertAfterMso(DXO2010CustUI.MenuSeparatorNoTitle openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.InsertAfterMso = new StringValue { Value = value };
@@ -72,12 +72,12 @@ public static class MenuSeparatorNoTitleConverter
   /// <summary>
   /// insertBeforeMso, this property is only available in Office 2010 and later.
   /// </summary>
-  private static String? GetInsertBeforeMso(DocumentFormat.OpenXml.Office2010.CustomUI.MenuSeparatorNoTitle openXmlElement)
+  private static String? GetInsertBeforeMso(DXO2010CustUI.MenuSeparatorNoTitle openXmlElement)
   {
     return openXmlElement?.InsertBeforeMso?.Value;
   }
   
-  private static void SetInsertBeforeMso(DocumentFormat.OpenXml.Office2010.CustomUI.MenuSeparatorNoTitle openXmlElement, String? value)
+  private static void SetInsertBeforeMso(DXO2010CustUI.MenuSeparatorNoTitle openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.InsertBeforeMso = new StringValue { Value = value };
@@ -88,12 +88,12 @@ public static class MenuSeparatorNoTitleConverter
   /// <summary>
   /// insertAfterQ, this property is only available in Office 2010 and later.
   /// </summary>
-  private static String? GetInsertAfterQulifiedId(DocumentFormat.OpenXml.Office2010.CustomUI.MenuSeparatorNoTitle openXmlElement)
+  private static String? GetInsertAfterQulifiedId(DXO2010CustUI.MenuSeparatorNoTitle openXmlElement)
   {
     return openXmlElement?.InsertAfterQulifiedId?.Value;
   }
   
-  private static void SetInsertAfterQulifiedId(DocumentFormat.OpenXml.Office2010.CustomUI.MenuSeparatorNoTitle openXmlElement, String? value)
+  private static void SetInsertAfterQulifiedId(DXO2010CustUI.MenuSeparatorNoTitle openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.InsertAfterQulifiedId = new StringValue { Value = value };
@@ -104,12 +104,12 @@ public static class MenuSeparatorNoTitleConverter
   /// <summary>
   /// insertBeforeQ, this property is only available in Office 2010 and later.
   /// </summary>
-  private static String? GetInsertBeforeQulifiedId(DocumentFormat.OpenXml.Office2010.CustomUI.MenuSeparatorNoTitle openXmlElement)
+  private static String? GetInsertBeforeQulifiedId(DXO2010CustUI.MenuSeparatorNoTitle openXmlElement)
   {
     return openXmlElement?.InsertBeforeQulifiedId?.Value;
   }
   
-  private static void SetInsertBeforeQulifiedId(DocumentFormat.OpenXml.Office2010.CustomUI.MenuSeparatorNoTitle openXmlElement, String? value)
+  private static void SetInsertBeforeQulifiedId(DXO2010CustUI.MenuSeparatorNoTitle openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.InsertBeforeQulifiedId = new StringValue { Value = value };
@@ -117,11 +117,11 @@ public static class MenuSeparatorNoTitleConverter
       openXmlElement.InsertBeforeQulifiedId = null;
   }
   
-  public static DocumentModel.MenuSeparatorNoTitle? CreateModelElement(DocumentFormat.OpenXml.Office2010.CustomUI.MenuSeparatorNoTitle? openXmlElement)
+  public static DM.MenuSeparatorNoTitle? CreateModelElement(DXO2010CustUI.MenuSeparatorNoTitle? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.MenuSeparatorNoTitle();
+      var value = new DM.MenuSeparatorNoTitle();
       value.Id = GetId(openXmlElement);
       value.QualifiedId = GetQualifiedId(openXmlElement);
       value.Tag = GetTag(openXmlElement);
@@ -134,8 +134,8 @@ public static class MenuSeparatorNoTitleConverter
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.MenuSeparatorNoTitle? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Office2010.CustomUI.MenuSeparatorNoTitle, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DM.MenuSeparatorNoTitle? value)
+    where OpenXmlElementType: DXO2010CustUI.MenuSeparatorNoTitle, new()
   {
     if (value != null)
     {

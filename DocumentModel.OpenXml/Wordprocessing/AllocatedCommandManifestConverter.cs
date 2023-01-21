@@ -5,45 +5,45 @@ namespace DocumentModel.OpenXml.Wordprocessing;
 /// </summary>
 public static class AllocatedCommandManifestConverter
 {
-  private static System.Collections.ObjectModel.Collection<DocumentModel.Wordprocessing.AcceleratorKeymapType> GetAllocatedCommandManifestEntries(DocumentFormat.OpenXml.Office.Word.AllocatedCommandManifest openXmlElement)
+  private static Collection<DMW.AcceleratorKeymapType> GetAllocatedCommandManifestEntries(DXOW.AllocatedCommandManifest openXmlElement)
   {
-    var collection = new System.Collections.ObjectModel.Collection<DocumentModel.Wordprocessing.AcceleratorKeymapType>();
-    foreach (var item in openXmlElement.Elements<DocumentFormat.OpenXml.Office.Word.AllocatedCommandManifestEntry>())
+    var collection = new Collection<DMW.AcceleratorKeymapType>();
+    foreach (var item in openXmlElement.Elements<DXOW.AllocatedCommandManifestEntry>())
     {
-      var newItem = DocumentModel.OpenXml.Wordprocessing.AcceleratorKeymapTypeConverter.CreateModelElement(item);
+      var newItem = DMXW.AcceleratorKeymapTypeConverter.CreateModelElement(item);
       if (newItem != null)
         collection.Add(newItem);
     }
     return collection;
   }
   
-  private static void SetAllocatedCommandManifestEntries(DocumentFormat.OpenXml.Office.Word.AllocatedCommandManifest openXmlElement, System.Collections.ObjectModel.Collection<DocumentModel.Wordprocessing.AcceleratorKeymapType>? value)
+  private static void SetAllocatedCommandManifestEntries(DXOW.AllocatedCommandManifest openXmlElement, Collection<DMW.AcceleratorKeymapType>? value)
   {
-    openXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Office.Word.AllocatedCommandManifestEntry>();
+    openXmlElement.RemoveAllChildren<DXOW.AllocatedCommandManifestEntry>();
     if (value != null)
     {
       foreach (var item in value)
       {
-        var newItem = DocumentModel.OpenXml.Wordprocessing.AcceleratorKeymapTypeConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office.Word.AllocatedCommandManifestEntry>(item);
+        var newItem = DMXW.AcceleratorKeymapTypeConverter.CreateOpenXmlElement<DXOW.AllocatedCommandManifestEntry>(item);
         if (newItem != null)
           openXmlElement.AddChild(newItem);
       }
     }
   }
   
-  public static DocumentModel.Wordprocessing.AllocatedCommandManifest? CreateModelElement(DocumentFormat.OpenXml.Office.Word.AllocatedCommandManifest? openXmlElement)
+  public static DMW.AllocatedCommandManifest? CreateModelElement(DXOW.AllocatedCommandManifest? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Wordprocessing.AllocatedCommandManifest();
+      var value = new DMW.AllocatedCommandManifest();
       value.AllocatedCommandManifestEntries = GetAllocatedCommandManifestEntries(openXmlElement);
       return value;
     }
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.AllocatedCommandManifest? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Office.Word.AllocatedCommandManifest, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMW.AllocatedCommandManifest? value)
+    where OpenXmlElementType: DXOW.AllocatedCommandManifest, new()
   {
     if (value != null)
     {

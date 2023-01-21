@@ -8,29 +8,29 @@ public static class DataLabelHiddenConverter
   /// <summary>
   /// idx, this property is only available in Office 2016 and later.
   /// </summary>
-  private static UInt32? GetIdx(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.DataLabelHidden openXmlElement)
+  private static UInt32? GetIdx(DXO2016DrawChartDraw.DataLabelHidden openXmlElement)
   {
     return openXmlElement.Idx?.Value;
   }
   
-  private static void SetIdx(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.DataLabelHidden openXmlElement, UInt32? value)
+  private static void SetIdx(DXO2016DrawChartDraw.DataLabelHidden openXmlElement, UInt32? value)
   {
     openXmlElement.Idx = value;
   }
   
-  public static DocumentModel.Drawings.ChartDrawings.DataLabelHidden? CreateModelElement(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.DataLabelHidden? openXmlElement)
+  public static DMDrawsChartDraws.DataLabelHidden? CreateModelElement(DXO2016DrawChartDraw.DataLabelHidden? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.ChartDrawings.DataLabelHidden();
+      var value = new DMDrawsChartDraws.DataLabelHidden();
       value.Idx = GetIdx(openXmlElement);
       return value;
     }
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.ChartDrawings.DataLabelHidden? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.DataLabelHidden, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDrawsChartDraws.DataLabelHidden? value)
+    where OpenXmlElementType: DXO2016DrawChartDraw.DataLabelHidden, new()
   {
     if (value != null)
     {

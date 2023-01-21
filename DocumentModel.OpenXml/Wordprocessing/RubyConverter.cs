@@ -8,22 +8,22 @@ public static class RubyConverter
   /// <summary>
   /// Phonetic Guide Properties.
   /// </summary>
-  private static DocumentModel.Wordprocessing.RubyProperties? GetRubyProperties(DocumentFormat.OpenXml.Wordprocessing.Ruby openXmlElement)
+  private static DMW.RubyProperties? GetRubyProperties(DXW.Ruby openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.RubyProperties>();
+    var itemElement = openXmlElement?.GetFirstChild<DXW.RubyProperties>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Wordprocessing.RubyPropertiesConverter.CreateModelElement(itemElement);
+      return DMXW.RubyPropertiesConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetRubyProperties(DocumentFormat.OpenXml.Wordprocessing.Ruby openXmlElement, DocumentModel.Wordprocessing.RubyProperties? value)
+  private static void SetRubyProperties(DXW.Ruby openXmlElement, DMW.RubyProperties? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.RubyProperties>();
+    var itemElement = openXmlElement.GetFirstChild<DXW.RubyProperties>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Wordprocessing.RubyPropertiesConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.RubyProperties>(value);
+      itemElement = DMXW.RubyPropertiesConverter.CreateOpenXmlElement<DXW.RubyProperties>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
@@ -32,22 +32,22 @@ public static class RubyConverter
   /// <summary>
   /// Phonetic Guide Text.
   /// </summary>
-  private static DocumentModel.Wordprocessing.RubyContent? GetRubyContent(DocumentFormat.OpenXml.Wordprocessing.Ruby openXmlElement)
+  private static DMW.RubyContent? GetRubyContent(DXW.Ruby openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.RubyContent>();
+    var itemElement = openXmlElement?.GetFirstChild<DXW.RubyContent>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Wordprocessing.RubyContentConverter.CreateModelElement(itemElement);
+      return DMXW.RubyContentConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetRubyContent(DocumentFormat.OpenXml.Wordprocessing.Ruby openXmlElement, DocumentModel.Wordprocessing.RubyContent? value)
+  private static void SetRubyContent(DXW.Ruby openXmlElement, DMW.RubyContent? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.RubyContent>();
+    var itemElement = openXmlElement.GetFirstChild<DXW.RubyContent>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Wordprocessing.RubyContentConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.RubyContent>(value);
+      itemElement = DMXW.RubyContentConverter.CreateOpenXmlElement<DXW.RubyContent>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
@@ -56,32 +56,32 @@ public static class RubyConverter
   /// <summary>
   /// Phonetic Guide Base Text.
   /// </summary>
-  private static DocumentModel.Wordprocessing.RubyBase? GetRubyBase(DocumentFormat.OpenXml.Wordprocessing.Ruby openXmlElement)
+  private static DMW.RubyBase? GetRubyBase(DXW.Ruby openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.RubyBase>();
+    var itemElement = openXmlElement?.GetFirstChild<DXW.RubyBase>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Wordprocessing.RubyBaseConverter.CreateModelElement(itemElement);
+      return DMXW.RubyBaseConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetRubyBase(DocumentFormat.OpenXml.Wordprocessing.Ruby openXmlElement, DocumentModel.Wordprocessing.RubyBase? value)
+  private static void SetRubyBase(DXW.Ruby openXmlElement, DMW.RubyBase? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.RubyBase>();
+    var itemElement = openXmlElement.GetFirstChild<DXW.RubyBase>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Wordprocessing.RubyBaseConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.RubyBase>(value);
+      itemElement = DMXW.RubyBaseConverter.CreateOpenXmlElement<DXW.RubyBase>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  public static DocumentModel.Wordprocessing.Ruby? CreateModelElement(DocumentFormat.OpenXml.Wordprocessing.Ruby? openXmlElement)
+  public static DMW.Ruby? CreateModelElement(DXW.Ruby? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Wordprocessing.Ruby();
+      var value = new DMW.Ruby();
       value.RubyProperties = GetRubyProperties(openXmlElement);
       value.RubyContent = GetRubyContent(openXmlElement);
       value.RubyBase = GetRubyBase(openXmlElement);
@@ -90,8 +90,8 @@ public static class RubyConverter
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.Ruby? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Wordprocessing.Ruby, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMW.Ruby? value)
+    where OpenXmlElementType: DXW.Ruby, new()
   {
     if (value != null)
     {

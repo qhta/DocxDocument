@@ -8,45 +8,45 @@ public static class PresetTextWrapConverter
   /// <summary>
   /// Preset Warp Shape
   /// </summary>
-  private static DocumentModel.Drawings.TextShapeKind? GetPreset(DocumentFormat.OpenXml.Drawing.PresetTextWrap openXmlElement)
+  private static DMDraws.TextShapeKind? GetPreset(DXDraw.PresetTextWrap openXmlElement)
   {
-    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Drawing.TextShapeValues, DocumentModel.Drawings.TextShapeKind>(openXmlElement?.Preset?.Value);
+    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Drawing.TextShapeValues, DMDraws.TextShapeKind>(openXmlElement?.Preset?.Value);
   }
   
-  private static void SetPreset(DocumentFormat.OpenXml.Drawing.PresetTextWrap openXmlElement, DocumentModel.Drawings.TextShapeKind? value)
+  private static void SetPreset(DXDraw.PresetTextWrap openXmlElement, DMDraws.TextShapeKind? value)
   {
-    openXmlElement.Preset = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Drawing.TextShapeValues, DocumentModel.Drawings.TextShapeKind>(value);
+    openXmlElement.Preset = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Drawing.TextShapeValues, DMDraws.TextShapeKind>(value);
   }
   
   /// <summary>
   /// Adjust Value List.
   /// </summary>
-  private static DocumentModel.Drawings.AdjustValueList? GetAdjustValueList(DocumentFormat.OpenXml.Drawing.PresetTextWrap openXmlElement)
+  private static DMDraws.AdjustValueList? GetAdjustValueList(DXDraw.PresetTextWrap openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.AdjustValueList>();
+    var itemElement = openXmlElement?.GetFirstChild<DXDraw.AdjustValueList>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.AdjustValueListConverter.CreateModelElement(itemElement);
+      return DMXDraws.AdjustValueListConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetAdjustValueList(DocumentFormat.OpenXml.Drawing.PresetTextWrap openXmlElement, DocumentModel.Drawings.AdjustValueList? value)
+  private static void SetAdjustValueList(DXDraw.PresetTextWrap openXmlElement, DMDraws.AdjustValueList? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.AdjustValueList>();
+    var itemElement = openXmlElement.GetFirstChild<DXDraw.AdjustValueList>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Drawings.AdjustValueListConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.AdjustValueList>(value);
+      itemElement = DMXDraws.AdjustValueListConverter.CreateOpenXmlElement<DXDraw.AdjustValueList>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  public static DocumentModel.Drawings.PresetTextWrap? CreateModelElement(DocumentFormat.OpenXml.Drawing.PresetTextWrap? openXmlElement)
+  public static DMDraws.PresetTextWrap? CreateModelElement(DXDraw.PresetTextWrap? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.PresetTextWrap();
+      var value = new DMDraws.PresetTextWrap();
       value.Preset = GetPreset(openXmlElement);
       value.AdjustValueList = GetAdjustValueList(openXmlElement);
       return value;
@@ -54,8 +54,8 @@ public static class PresetTextWrapConverter
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.PresetTextWrap? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.PresetTextWrap, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDraws.PresetTextWrap? value)
+    where OpenXmlElementType: DXDraw.PresetTextWrap, new()
   {
     if (value != null)
     {

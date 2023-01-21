@@ -5,12 +5,12 @@ namespace DocumentModel.OpenXml.Packaging;
 /// </summary>
 public static class DocumentTasksPartConverter
 {
-  private static String? GetContentType(DocumentFormat.OpenXml.Packaging.DocumentTasksPart openXmlElement)
+  private static String? GetContentType(DXPack.DocumentTasksPart openXmlElement)
   {
     return openXmlElement?.ContentType;
   }
   
-  private static String? GetRelationshipType(DocumentFormat.OpenXml.Packaging.DocumentTasksPart openXmlElement)
+  private static String? GetRelationshipType(DXPack.DocumentTasksPart openXmlElement)
   {
     return openXmlElement?.RelationshipType;
   }
@@ -18,28 +18,28 @@ public static class DocumentTasksPartConverter
   /// <summary>
   /// Gets or sets the root element of this part.
   /// </summary>
-  private static DocumentModel.Tasks? GetTasks(DocumentFormat.OpenXml.Packaging.DocumentTasksPart openXmlElement)
+  private static DM.Tasks? GetTasks(DXPack.DocumentTasksPart openXmlElement)
   {
-    if (openXmlElement?.RootElement is DocumentFormat.OpenXml.Office2021.DocumentTasks.Tasks rootElement)
-      return DocumentModel.OpenXml.TasksConverter.CreateModelElement(rootElement);
+    if (openXmlElement?.RootElement is DXO2021DocTasks.Tasks rootElement)
+      return DMX.TasksConverter.CreateModelElement(rootElement);
     return null;
   }
   
-  private static void SetTasks(DocumentFormat.OpenXml.Packaging.DocumentTasksPart openXmlElement, DocumentModel.Tasks? value)
+  private static void SetTasks(DXPack.DocumentTasksPart openXmlElement, DM.Tasks? value)
   {
     if (value != null)
     {
-       var rootElement = DocumentModel.OpenXml.TasksConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2021.DocumentTasks.Tasks>(value);
+       var rootElement = DMX.TasksConverter.CreateOpenXmlElement<DXO2021DocTasks.Tasks>(value);
        if (rootElement != null)
          openXmlElement.Tasks = rootElement;
     }
   }
   
-  public static DocumentModel.Packaging.DocumentTasksPart? CreateModelElement(DocumentFormat.OpenXml.Packaging.DocumentTasksPart? openXmlElement)
+  public static DMPack.DocumentTasksPart? CreateModelElement(DXPack.DocumentTasksPart? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Packaging.DocumentTasksPart();
+      var value = new DMPack.DocumentTasksPart();
       value.ContentType = GetContentType(openXmlElement);
       value.RelationshipType = GetRelationshipType(openXmlElement);
       value.Tasks = GetTasks(openXmlElement);
@@ -48,8 +48,8 @@ public static class DocumentTasksPartConverter
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Packaging.DocumentTasksPart? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Packaging.DocumentTasksPart, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMPack.DocumentTasksPart? value)
+    where OpenXmlElementType: DXPack.DocumentTasksPart, new()
   {
     if (value != null)
     {

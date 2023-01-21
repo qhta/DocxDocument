@@ -8,74 +8,74 @@ public static class WholeConverter
   /// <summary>
   /// Outline.
   /// </summary>
-  private static DocumentModel.Drawings.Outline? GetOutline(DocumentFormat.OpenXml.Drawing.Diagrams.Whole openXmlElement)
+  private static DMDraws.Outline? GetOutline(DXDrawDgms.Whole openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.Outline>();
+    var itemElement = openXmlElement?.GetFirstChild<DXDraw.Outline>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.OutlineConverter.CreateModelElement(itemElement);
+      return DMXDraws.OutlineConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetOutline(DocumentFormat.OpenXml.Drawing.Diagrams.Whole openXmlElement, DocumentModel.Drawings.Outline? value)
+  private static void SetOutline(DXDrawDgms.Whole openXmlElement, DMDraws.Outline? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Outline>();
+    var itemElement = openXmlElement.GetFirstChild<DXDraw.Outline>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Drawings.OutlineConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Outline>(value);
+      itemElement = DMXDraws.OutlineConverter.CreateOpenXmlElement<DXDraw.Outline>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static DocumentModel.Drawings.EffectList? GetEffectList(DocumentFormat.OpenXml.Drawing.Diagrams.Whole openXmlElement)
+  private static DMDraws.EffectList? GetEffectList(DXDrawDgms.Whole openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.EffectList>();
+    var itemElement = openXmlElement?.GetFirstChild<DXDraw.EffectList>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.EffectListConverter.CreateModelElement(itemElement);
+      return DMXDraws.EffectListConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetEffectList(DocumentFormat.OpenXml.Drawing.Diagrams.Whole openXmlElement, DocumentModel.Drawings.EffectList? value)
+  private static void SetEffectList(DXDrawDgms.Whole openXmlElement, DMDraws.EffectList? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.EffectList>();
+    var itemElement = openXmlElement.GetFirstChild<DXDraw.EffectList>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Drawings.EffectListConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.EffectList>(value);
+      itemElement = DMXDraws.EffectListConverter.CreateOpenXmlElement<DXDraw.EffectList>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static DocumentModel.Drawings.EffectDag? GetEffectDag(DocumentFormat.OpenXml.Drawing.Diagrams.Whole openXmlElement)
+  private static DMDraws.EffectDag? GetEffectDag(DXDrawDgms.Whole openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.EffectDag>();
+    var itemElement = openXmlElement?.GetFirstChild<DXDraw.EffectDag>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.EffectDagConverter.CreateModelElement(itemElement);
+      return DMXDraws.EffectDagConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetEffectDag(DocumentFormat.OpenXml.Drawing.Diagrams.Whole openXmlElement, DocumentModel.Drawings.EffectDag? value)
+  private static void SetEffectDag(DXDrawDgms.Whole openXmlElement, DMDraws.EffectDag? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.EffectDag>();
+    var itemElement = openXmlElement.GetFirstChild<DXDraw.EffectDag>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Drawings.EffectDagConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.EffectDag>(value);
+      itemElement = DMXDraws.EffectDagConverter.CreateOpenXmlElement<DXDraw.EffectDag>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  public static DocumentModel.Drawings.Diagrams.Whole? CreateModelElement(DocumentFormat.OpenXml.Drawing.Diagrams.Whole? openXmlElement)
+  public static DMDrawsDgms.Whole? CreateModelElement(DXDrawDgms.Whole? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.Diagrams.Whole();
+      var value = new DMDrawsDgms.Whole();
       value.Outline = GetOutline(openXmlElement);
       value.EffectList = GetEffectList(openXmlElement);
       value.EffectDag = GetEffectDag(openXmlElement);
@@ -84,8 +84,8 @@ public static class WholeConverter
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.Diagrams.Whole? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.Diagrams.Whole, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDrawsDgms.Whole? value)
+    where OpenXmlElementType: DXDrawDgms.Whole, new()
   {
     if (value != null)
     {

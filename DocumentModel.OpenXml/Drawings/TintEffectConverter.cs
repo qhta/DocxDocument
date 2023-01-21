@@ -8,12 +8,12 @@ public static class TintEffectConverter
   /// <summary>
   /// Hue
   /// </summary>
-  private static Int32? GetHue(DocumentFormat.OpenXml.Drawing.TintEffect openXmlElement)
+  private static Int32? GetHue(DXDraw.TintEffect openXmlElement)
   {
     return openXmlElement.Hue?.Value;
   }
   
-  private static void SetHue(DocumentFormat.OpenXml.Drawing.TintEffect openXmlElement, Int32? value)
+  private static void SetHue(DXDraw.TintEffect openXmlElement, Int32? value)
   {
     openXmlElement.Hue = value;
   }
@@ -21,21 +21,21 @@ public static class TintEffectConverter
   /// <summary>
   /// Amount
   /// </summary>
-  private static Int32? GetAmount(DocumentFormat.OpenXml.Drawing.TintEffect openXmlElement)
+  private static Int32? GetAmount(DXDraw.TintEffect openXmlElement)
   {
     return openXmlElement.Amount?.Value;
   }
   
-  private static void SetAmount(DocumentFormat.OpenXml.Drawing.TintEffect openXmlElement, Int32? value)
+  private static void SetAmount(DXDraw.TintEffect openXmlElement, Int32? value)
   {
     openXmlElement.Amount = value;
   }
   
-  public static DocumentModel.Drawings.TintEffect? CreateModelElement(DocumentFormat.OpenXml.Drawing.TintEffect? openXmlElement)
+  public static DMDraws.TintEffect? CreateModelElement(DXDraw.TintEffect? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.TintEffect();
+      var value = new DMDraws.TintEffect();
       value.Hue = GetHue(openXmlElement);
       value.Amount = GetAmount(openXmlElement);
       return value;
@@ -43,8 +43,8 @@ public static class TintEffectConverter
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.TintEffect? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.TintEffect, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDraws.TintEffect? value)
+    where OpenXmlElementType: DXDraw.TintEffect, new()
   {
     if (value != null)
     {

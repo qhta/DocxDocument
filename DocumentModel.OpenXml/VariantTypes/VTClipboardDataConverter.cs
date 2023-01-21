@@ -8,12 +8,12 @@ public static class VTClipboardDataConverter
   /// <summary>
   /// Format Attribute
   /// </summary>
-  private static Int32? GetFormat(DocumentFormat.OpenXml.VariantTypes.VTClipboardData openXmlElement)
+  private static Int32? GetFormat(DXVT.VTClipboardData openXmlElement)
   {
     return openXmlElement.Format?.Value;
   }
   
-  private static void SetFormat(DocumentFormat.OpenXml.VariantTypes.VTClipboardData openXmlElement, Int32? value)
+  private static void SetFormat(DXVT.VTClipboardData openXmlElement, Int32? value)
   {
     openXmlElement.Format = value;
   }
@@ -21,21 +21,21 @@ public static class VTClipboardDataConverter
   /// <summary>
   /// size
   /// </summary>
-  private static UInt32? GetSize(DocumentFormat.OpenXml.VariantTypes.VTClipboardData openXmlElement)
+  private static UInt32? GetSize(DXVT.VTClipboardData openXmlElement)
   {
     return openXmlElement.Size?.Value;
   }
   
-  private static void SetSize(DocumentFormat.OpenXml.VariantTypes.VTClipboardData openXmlElement, UInt32? value)
+  private static void SetSize(DXVT.VTClipboardData openXmlElement, UInt32? value)
   {
     openXmlElement.Size = value;
   }
   
-  public static DocumentModel.VariantTypes.VTClipboardData? CreateModelElement(DocumentFormat.OpenXml.VariantTypes.VTClipboardData? openXmlElement)
+  public static DMVT.VTClipboardData? CreateModelElement(DXVT.VTClipboardData? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.VariantTypes.VTClipboardData();
+      var value = new DMVT.VTClipboardData();
       value.Format = GetFormat(openXmlElement);
       value.Size = GetSize(openXmlElement);
       return value;
@@ -43,8 +43,8 @@ public static class VTClipboardDataConverter
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.VariantTypes.VTClipboardData? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.VariantTypes.VTClipboardData, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMVT.VTClipboardData? value)
+    where OpenXmlElementType: DXVT.VTClipboardData, new()
   {
     if (value != null)
     {

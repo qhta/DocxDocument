@@ -8,12 +8,12 @@ public static class ShadowConverter
   /// <summary>
   /// Unique Identifier
   /// </summary>
-  private static String? GetId(DocumentFormat.OpenXml.Vml.Shadow openXmlElement)
+  private static String? GetId(DXVml.Shadow openXmlElement)
   {
     return openXmlElement?.Id?.Value;
   }
   
-  private static void SetId(DocumentFormat.OpenXml.Vml.Shadow openXmlElement, String? value)
+  private static void SetId(DXVml.Shadow openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.Id = new StringValue { Value = value };
@@ -24,12 +24,12 @@ public static class ShadowConverter
   /// <summary>
   /// Shadow Toggle
   /// </summary>
-  private static Boolean? GetOn(DocumentFormat.OpenXml.Vml.Shadow openXmlElement)
+  private static Boolean? GetOn(DXVml.Shadow openXmlElement)
   {
     return openXmlElement?.On?.Value;
   }
   
-  private static void SetOn(DocumentFormat.OpenXml.Vml.Shadow openXmlElement, Boolean? value)
+  private static void SetOn(DXVml.Shadow openXmlElement, Boolean? value)
   {
     if (value != null)
       openXmlElement.On = value;
@@ -40,25 +40,25 @@ public static class ShadowConverter
   /// <summary>
   /// Shadow Type
   /// </summary>
-  private static DocumentModel.Vml.ShadowKind? GetType(DocumentFormat.OpenXml.Vml.Shadow openXmlElement)
+  private static DMVml.ShadowKind? GetType(DXVml.Shadow openXmlElement)
   {
-    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Vml.ShadowValues, DocumentModel.Vml.ShadowKind>(openXmlElement?.Type?.Value);
+    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Vml.ShadowValues, DMVml.ShadowKind>(openXmlElement?.Type?.Value);
   }
   
-  private static void SetType(DocumentFormat.OpenXml.Vml.Shadow openXmlElement, DocumentModel.Vml.ShadowKind? value)
+  private static void SetType(DXVml.Shadow openXmlElement, DMVml.ShadowKind? value)
   {
-    openXmlElement.Type = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Vml.ShadowValues, DocumentModel.Vml.ShadowKind>(value);
+    openXmlElement.Type = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Vml.ShadowValues, DMVml.ShadowKind>(value);
   }
   
   /// <summary>
   /// Shadow Transparency
   /// </summary>
-  private static Boolean? GetObscured(DocumentFormat.OpenXml.Vml.Shadow openXmlElement)
+  private static Boolean? GetObscured(DXVml.Shadow openXmlElement)
   {
     return openXmlElement?.Obscured?.Value;
   }
   
-  private static void SetObscured(DocumentFormat.OpenXml.Vml.Shadow openXmlElement, Boolean? value)
+  private static void SetObscured(DXVml.Shadow openXmlElement, Boolean? value)
   {
     if (value != null)
       openXmlElement.Obscured = value;
@@ -69,12 +69,12 @@ public static class ShadowConverter
   /// <summary>
   /// Shadow Primary Color
   /// </summary>
-  private static String? GetColor(DocumentFormat.OpenXml.Vml.Shadow openXmlElement)
+  private static String? GetColor(DXVml.Shadow openXmlElement)
   {
     return openXmlElement?.Color?.Value;
   }
   
-  private static void SetColor(DocumentFormat.OpenXml.Vml.Shadow openXmlElement, String? value)
+  private static void SetColor(DXVml.Shadow openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.Color = new StringValue { Value = value };
@@ -85,12 +85,12 @@ public static class ShadowConverter
   /// <summary>
   /// Shadow Opacity
   /// </summary>
-  private static String? GetOpacity(DocumentFormat.OpenXml.Vml.Shadow openXmlElement)
+  private static String? GetOpacity(DXVml.Shadow openXmlElement)
   {
     return openXmlElement?.Opacity?.Value;
   }
   
-  private static void SetOpacity(DocumentFormat.OpenXml.Vml.Shadow openXmlElement, String? value)
+  private static void SetOpacity(DXVml.Shadow openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.Opacity = new StringValue { Value = value };
@@ -101,12 +101,12 @@ public static class ShadowConverter
   /// <summary>
   /// Shadow Primary Offset
   /// </summary>
-  private static String? GetOffset(DocumentFormat.OpenXml.Vml.Shadow openXmlElement)
+  private static String? GetOffset(DXVml.Shadow openXmlElement)
   {
     return openXmlElement?.Offset?.Value;
   }
   
-  private static void SetOffset(DocumentFormat.OpenXml.Vml.Shadow openXmlElement, String? value)
+  private static void SetOffset(DXVml.Shadow openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.Offset = new StringValue { Value = value };
@@ -117,12 +117,12 @@ public static class ShadowConverter
   /// <summary>
   /// Shadow Secondary Color
   /// </summary>
-  private static String? GetColor2(DocumentFormat.OpenXml.Vml.Shadow openXmlElement)
+  private static String? GetColor2(DXVml.Shadow openXmlElement)
   {
     return openXmlElement?.Color2?.Value;
   }
   
-  private static void SetColor2(DocumentFormat.OpenXml.Vml.Shadow openXmlElement, String? value)
+  private static void SetColor2(DXVml.Shadow openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.Color2 = new StringValue { Value = value };
@@ -133,12 +133,12 @@ public static class ShadowConverter
   /// <summary>
   /// Shadow Secondary Offset
   /// </summary>
-  private static String? GetOffset2(DocumentFormat.OpenXml.Vml.Shadow openXmlElement)
+  private static String? GetOffset2(DXVml.Shadow openXmlElement)
   {
     return openXmlElement?.Offset2?.Value;
   }
   
-  private static void SetOffset2(DocumentFormat.OpenXml.Vml.Shadow openXmlElement, String? value)
+  private static void SetOffset2(DXVml.Shadow openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.Offset2 = new StringValue { Value = value };
@@ -149,12 +149,12 @@ public static class ShadowConverter
   /// <summary>
   /// Shadow Origin
   /// </summary>
-  private static String? GetOrigin(DocumentFormat.OpenXml.Vml.Shadow openXmlElement)
+  private static String? GetOrigin(DXVml.Shadow openXmlElement)
   {
     return openXmlElement?.Origin?.Value;
   }
   
-  private static void SetOrigin(DocumentFormat.OpenXml.Vml.Shadow openXmlElement, String? value)
+  private static void SetOrigin(DXVml.Shadow openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.Origin = new StringValue { Value = value };
@@ -165,12 +165,12 @@ public static class ShadowConverter
   /// <summary>
   /// Shadow Perspective Matrix
   /// </summary>
-  private static String? GetMatrix(DocumentFormat.OpenXml.Vml.Shadow openXmlElement)
+  private static String? GetMatrix(DXVml.Shadow openXmlElement)
   {
     return openXmlElement?.Matrix?.Value;
   }
   
-  private static void SetMatrix(DocumentFormat.OpenXml.Vml.Shadow openXmlElement, String? value)
+  private static void SetMatrix(DXVml.Shadow openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.Matrix = new StringValue { Value = value };
@@ -178,11 +178,11 @@ public static class ShadowConverter
       openXmlElement.Matrix = null;
   }
   
-  public static DocumentModel.Vml.Shadow? CreateModelElement(DocumentFormat.OpenXml.Vml.Shadow? openXmlElement)
+  public static DMVml.Shadow? CreateModelElement(DXVml.Shadow? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Vml.Shadow();
+      var value = new DMVml.Shadow();
       value.Id = GetId(openXmlElement);
       value.On = GetOn(openXmlElement);
       value.Type = GetType(openXmlElement);
@@ -199,8 +199,8 @@ public static class ShadowConverter
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Vml.Shadow? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Vml.Shadow, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMVml.Shadow? value)
+    where OpenXmlElementType: DXVml.Shadow, new()
   {
     if (value != null)
     {

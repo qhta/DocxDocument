@@ -8,58 +8,58 @@ public static class MatrixConverter
   /// <summary>
   /// Matrix Properties.
   /// </summary>
-  private static DocumentModel.Math.MatrixProperties? GetMatrixProperties(DocumentFormat.OpenXml.Math.Matrix openXmlElement)
+  private static DMMath.MatrixProperties? GetMatrixProperties(DXMath.Matrix openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Math.MatrixProperties>();
+    var itemElement = openXmlElement?.GetFirstChild<DXMath.MatrixProperties>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Math.MatrixPropertiesConverter.CreateModelElement(itemElement);
+      return DMXMath.MatrixPropertiesConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetMatrixProperties(DocumentFormat.OpenXml.Math.Matrix openXmlElement, DocumentModel.Math.MatrixProperties? value)
+  private static void SetMatrixProperties(DXMath.Matrix openXmlElement, DMMath.MatrixProperties? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Math.MatrixProperties>();
+    var itemElement = openXmlElement.GetFirstChild<DXMath.MatrixProperties>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Math.MatrixPropertiesConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Math.MatrixProperties>(value);
+      itemElement = DMXMath.MatrixPropertiesConverter.CreateOpenXmlElement<DXMath.MatrixProperties>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static System.Collections.ObjectModel.Collection<DocumentModel.Math.MatrixRow> GetMatrixRows(DocumentFormat.OpenXml.Math.Matrix openXmlElement)
+  private static Collection<DMMath.MatrixRow> GetMatrixRows(DXMath.Matrix openXmlElement)
   {
-    var collection = new System.Collections.ObjectModel.Collection<DocumentModel.Math.MatrixRow>();
-    foreach (var item in openXmlElement.Elements<DocumentFormat.OpenXml.Math.MatrixRow>())
+    var collection = new Collection<DMMath.MatrixRow>();
+    foreach (var item in openXmlElement.Elements<DXMath.MatrixRow>())
     {
-      var newItem = DocumentModel.OpenXml.Math.MatrixRowConverter.CreateModelElement(item);
+      var newItem = DMXMath.MatrixRowConverter.CreateModelElement(item);
       if (newItem != null)
         collection.Add(newItem);
     }
     return collection;
   }
   
-  private static void SetMatrixRows(DocumentFormat.OpenXml.Math.Matrix openXmlElement, System.Collections.ObjectModel.Collection<DocumentModel.Math.MatrixRow>? value)
+  private static void SetMatrixRows(DXMath.Matrix openXmlElement, Collection<DMMath.MatrixRow>? value)
   {
-    openXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Math.MatrixRow>();
+    openXmlElement.RemoveAllChildren<DXMath.MatrixRow>();
     if (value != null)
     {
       foreach (var item in value)
       {
-        var newItem = DocumentModel.OpenXml.Math.MatrixRowConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Math.MatrixRow>(item);
+        var newItem = DMXMath.MatrixRowConverter.CreateOpenXmlElement<DXMath.MatrixRow>(item);
         if (newItem != null)
           openXmlElement.AddChild(newItem);
       }
     }
   }
   
-  public static DocumentModel.Math.Matrix? CreateModelElement(DocumentFormat.OpenXml.Math.Matrix? openXmlElement)
+  public static DMMath.Matrix? CreateModelElement(DXMath.Matrix? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Math.Matrix();
+      var value = new DMMath.Matrix();
       value.MatrixProperties = GetMatrixProperties(openXmlElement);
       value.MatrixRows = GetMatrixRows(openXmlElement);
       return value;
@@ -67,8 +67,8 @@ public static class MatrixConverter
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Math.Matrix? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Math.Matrix, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMMath.Matrix? value)
+    where OpenXmlElementType: DXMath.Matrix, new()
   {
     if (value != null)
     {

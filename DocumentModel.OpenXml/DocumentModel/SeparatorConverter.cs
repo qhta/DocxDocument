@@ -8,12 +8,12 @@ public static class SeparatorConverter
   /// <summary>
   /// id, this property is only available in Office 2010 and later.
   /// </summary>
-  private static String? GetId(DocumentFormat.OpenXml.Office2010.CustomUI.Separator openXmlElement)
+  private static String? GetId(DXO2010CustUI.Separator openXmlElement)
   {
     return openXmlElement?.Id?.Value;
   }
   
-  private static void SetId(DocumentFormat.OpenXml.Office2010.CustomUI.Separator openXmlElement, String? value)
+  private static void SetId(DXO2010CustUI.Separator openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.Id = new StringValue { Value = value };
@@ -24,12 +24,12 @@ public static class SeparatorConverter
   /// <summary>
   /// idQ, this property is only available in Office 2010 and later.
   /// </summary>
-  private static String? GetQualifiedId(DocumentFormat.OpenXml.Office2010.CustomUI.Separator openXmlElement)
+  private static String? GetQualifiedId(DXO2010CustUI.Separator openXmlElement)
   {
     return openXmlElement?.QualifiedId?.Value;
   }
   
-  private static void SetQualifiedId(DocumentFormat.OpenXml.Office2010.CustomUI.Separator openXmlElement, String? value)
+  private static void SetQualifiedId(DXO2010CustUI.Separator openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.QualifiedId = new StringValue { Value = value };
@@ -40,12 +40,12 @@ public static class SeparatorConverter
   /// <summary>
   /// tag, this property is only available in Office 2010 and later.
   /// </summary>
-  private static String? GetTag(DocumentFormat.OpenXml.Office2010.CustomUI.Separator openXmlElement)
+  private static String? GetTag(DXO2010CustUI.Separator openXmlElement)
   {
     return openXmlElement?.Tag?.Value;
   }
   
-  private static void SetTag(DocumentFormat.OpenXml.Office2010.CustomUI.Separator openXmlElement, String? value)
+  private static void SetTag(DXO2010CustUI.Separator openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.Tag = new StringValue { Value = value };
@@ -56,12 +56,12 @@ public static class SeparatorConverter
   /// <summary>
   /// visible, this property is only available in Office 2010 and later.
   /// </summary>
-  private static Boolean? GetVisible(DocumentFormat.OpenXml.Office2010.CustomUI.Separator openXmlElement)
+  private static Boolean? GetVisible(DXO2010CustUI.Separator openXmlElement)
   {
     return openXmlElement?.Visible?.Value;
   }
   
-  private static void SetVisible(DocumentFormat.OpenXml.Office2010.CustomUI.Separator openXmlElement, Boolean? value)
+  private static void SetVisible(DXO2010CustUI.Separator openXmlElement, Boolean? value)
   {
     if (value != null)
       openXmlElement.Visible = new BooleanValue { Value = (Boolean)value };
@@ -72,12 +72,12 @@ public static class SeparatorConverter
   /// <summary>
   /// getVisible, this property is only available in Office 2010 and later.
   /// </summary>
-  private static String? GetGetVisible(DocumentFormat.OpenXml.Office2010.CustomUI.Separator openXmlElement)
+  private static String? GetGetVisible(DXO2010CustUI.Separator openXmlElement)
   {
     return openXmlElement?.GetVisible?.Value;
   }
   
-  private static void SetGetVisible(DocumentFormat.OpenXml.Office2010.CustomUI.Separator openXmlElement, String? value)
+  private static void SetGetVisible(DXO2010CustUI.Separator openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.GetVisible = new StringValue { Value = value };
@@ -88,12 +88,12 @@ public static class SeparatorConverter
   /// <summary>
   /// insertAfterMso, this property is only available in Office 2010 and later.
   /// </summary>
-  private static String? GetInsertAfterMso(DocumentFormat.OpenXml.Office2010.CustomUI.Separator openXmlElement)
+  private static String? GetInsertAfterMso(DXO2010CustUI.Separator openXmlElement)
   {
     return openXmlElement?.InsertAfterMso?.Value;
   }
   
-  private static void SetInsertAfterMso(DocumentFormat.OpenXml.Office2010.CustomUI.Separator openXmlElement, String? value)
+  private static void SetInsertAfterMso(DXO2010CustUI.Separator openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.InsertAfterMso = new StringValue { Value = value };
@@ -104,12 +104,12 @@ public static class SeparatorConverter
   /// <summary>
   /// insertBeforeMso, this property is only available in Office 2010 and later.
   /// </summary>
-  private static String? GetInsertBeforeMso(DocumentFormat.OpenXml.Office2010.CustomUI.Separator openXmlElement)
+  private static String? GetInsertBeforeMso(DXO2010CustUI.Separator openXmlElement)
   {
     return openXmlElement?.InsertBeforeMso?.Value;
   }
   
-  private static void SetInsertBeforeMso(DocumentFormat.OpenXml.Office2010.CustomUI.Separator openXmlElement, String? value)
+  private static void SetInsertBeforeMso(DXO2010CustUI.Separator openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.InsertBeforeMso = new StringValue { Value = value };
@@ -120,12 +120,12 @@ public static class SeparatorConverter
   /// <summary>
   /// insertAfterQ, this property is only available in Office 2010 and later.
   /// </summary>
-  private static String? GetInsertAfterQulifiedId(DocumentFormat.OpenXml.Office2010.CustomUI.Separator openXmlElement)
+  private static String? GetInsertAfterQulifiedId(DXO2010CustUI.Separator openXmlElement)
   {
     return openXmlElement?.InsertAfterQulifiedId?.Value;
   }
   
-  private static void SetInsertAfterQulifiedId(DocumentFormat.OpenXml.Office2010.CustomUI.Separator openXmlElement, String? value)
+  private static void SetInsertAfterQulifiedId(DXO2010CustUI.Separator openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.InsertAfterQulifiedId = new StringValue { Value = value };
@@ -136,12 +136,12 @@ public static class SeparatorConverter
   /// <summary>
   /// insertBeforeQ, this property is only available in Office 2010 and later.
   /// </summary>
-  private static String? GetInsertBeforeQulifiedId(DocumentFormat.OpenXml.Office2010.CustomUI.Separator openXmlElement)
+  private static String? GetInsertBeforeQulifiedId(DXO2010CustUI.Separator openXmlElement)
   {
     return openXmlElement?.InsertBeforeQulifiedId?.Value;
   }
   
-  private static void SetInsertBeforeQulifiedId(DocumentFormat.OpenXml.Office2010.CustomUI.Separator openXmlElement, String? value)
+  private static void SetInsertBeforeQulifiedId(DXO2010CustUI.Separator openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.InsertBeforeQulifiedId = new StringValue { Value = value };
@@ -149,11 +149,11 @@ public static class SeparatorConverter
       openXmlElement.InsertBeforeQulifiedId = null;
   }
   
-  public static DocumentModel.Separator? CreateModelElement(DocumentFormat.OpenXml.Office2010.CustomUI.Separator? openXmlElement)
+  public static DM.Separator? CreateModelElement(DXO2010CustUI.Separator? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Separator();
+      var value = new DM.Separator();
       value.Id = GetId(openXmlElement);
       value.QualifiedId = GetQualifiedId(openXmlElement);
       value.Tag = GetTag(openXmlElement);
@@ -168,8 +168,8 @@ public static class SeparatorConverter
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Separator? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Office2010.CustomUI.Separator, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DM.Separator? value)
+    where OpenXmlElementType: DXO2010CustUI.Separator, new()
   {
     if (value != null)
     {

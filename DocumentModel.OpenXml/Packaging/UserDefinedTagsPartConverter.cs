@@ -5,21 +5,21 @@ namespace DocumentModel.OpenXml.Packaging;
 /// </summary>
 public static class UserDefinedTagsPartConverter
 {
-  private static String? GetContentType(DocumentFormat.OpenXml.Packaging.UserDefinedTagsPart openXmlElement)
+  private static String? GetContentType(DXPack.UserDefinedTagsPart openXmlElement)
   {
     return openXmlElement?.ContentType;
   }
   
-  private static String? GetRelationshipType(DocumentFormat.OpenXml.Packaging.UserDefinedTagsPart openXmlElement)
+  private static String? GetRelationshipType(DXPack.UserDefinedTagsPart openXmlElement)
   {
     return openXmlElement?.RelationshipType;
   }
   
-  public static DocumentModel.Packaging.UserDefinedTagsPart? CreateModelElement(DocumentFormat.OpenXml.Packaging.UserDefinedTagsPart? openXmlElement)
+  public static DMPack.UserDefinedTagsPart? CreateModelElement(DXPack.UserDefinedTagsPart? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Packaging.UserDefinedTagsPart();
+      var value = new DMPack.UserDefinedTagsPart();
       value.ContentType = GetContentType(openXmlElement);
       value.RelationshipType = GetRelationshipType(openXmlElement);
       return value;
@@ -27,8 +27,8 @@ public static class UserDefinedTagsPartConverter
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Packaging.UserDefinedTagsPart? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Packaging.UserDefinedTagsPart, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMPack.UserDefinedTagsPart? value)
+    where OpenXmlElementType: DXPack.UserDefinedTagsPart, new()
   {
     if (value != null)
     {

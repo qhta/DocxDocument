@@ -8,12 +8,12 @@ public static class DataBindingConverter
   /// <summary>
   /// XML Namespace Prefix Mappings
   /// </summary>
-  private static String? GetPrefixMappings(DocumentFormat.OpenXml.Wordprocessing.DataBinding openXmlElement)
+  private static String? GetPrefixMappings(DXW.DataBinding openXmlElement)
   {
     return openXmlElement?.PrefixMappings?.Value;
   }
   
-  private static void SetPrefixMappings(DocumentFormat.OpenXml.Wordprocessing.DataBinding openXmlElement, String? value)
+  private static void SetPrefixMappings(DXW.DataBinding openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.PrefixMappings = new StringValue { Value = value };
@@ -24,12 +24,12 @@ public static class DataBindingConverter
   /// <summary>
   /// XPath
   /// </summary>
-  private static String? GetXPath(DocumentFormat.OpenXml.Wordprocessing.DataBinding openXmlElement)
+  private static String? GetXPath(DXW.DataBinding openXmlElement)
   {
     return openXmlElement?.XPath?.Value;
   }
   
-  private static void SetXPath(DocumentFormat.OpenXml.Wordprocessing.DataBinding openXmlElement, String? value)
+  private static void SetXPath(DXW.DataBinding openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.XPath = new StringValue { Value = value };
@@ -40,12 +40,12 @@ public static class DataBindingConverter
   /// <summary>
   /// Custom XML Data Storage ID
   /// </summary>
-  private static String? GetStoreItemId(DocumentFormat.OpenXml.Wordprocessing.DataBinding openXmlElement)
+  private static String? GetStoreItemId(DXW.DataBinding openXmlElement)
   {
     return openXmlElement?.StoreItemId?.Value;
   }
   
-  private static void SetStoreItemId(DocumentFormat.OpenXml.Wordprocessing.DataBinding openXmlElement, String? value)
+  private static void SetStoreItemId(DXW.DataBinding openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.StoreItemId = new StringValue { Value = value };
@@ -53,11 +53,11 @@ public static class DataBindingConverter
       openXmlElement.StoreItemId = null;
   }
   
-  public static DocumentModel.Wordprocessing.DataBinding? CreateModelElement(DocumentFormat.OpenXml.Wordprocessing.DataBinding? openXmlElement)
+  public static DMW.DataBinding? CreateModelElement(DXW.DataBinding? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Wordprocessing.DataBinding();
+      var value = new DMW.DataBinding();
       value.PrefixMappings = GetPrefixMappings(openXmlElement);
       value.XPath = GetXPath(openXmlElement);
       value.StoreItemId = GetStoreItemId(openXmlElement);
@@ -66,8 +66,8 @@ public static class DataBindingConverter
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.DataBinding? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Wordprocessing.DataBinding, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMW.DataBinding? value)
+    where OpenXmlElementType: DXW.DataBinding, new()
   {
     if (value != null)
     {

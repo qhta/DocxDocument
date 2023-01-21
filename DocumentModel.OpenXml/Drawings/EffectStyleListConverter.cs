@@ -5,40 +5,40 @@ namespace DocumentModel.OpenXml.Drawings;
 /// </summary>
 public static class EffectStyleListConverter
 {
-  private static DocumentModel.Drawings.EffectStyle? GetEffectStyle(DocumentFormat.OpenXml.Drawing.EffectStyleList openXmlElement)
+  private static DMDraws.EffectStyle? GetEffectStyle(DXDraw.EffectStyleList openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.EffectStyle>();
+    var itemElement = openXmlElement?.GetFirstChild<DXDraw.EffectStyle>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.EffectStyleConverter.CreateModelElement(itemElement);
+      return DMXDraws.EffectStyleConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetEffectStyle(DocumentFormat.OpenXml.Drawing.EffectStyleList openXmlElement, DocumentModel.Drawings.EffectStyle? value)
+  private static void SetEffectStyle(DXDraw.EffectStyleList openXmlElement, DMDraws.EffectStyle? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.EffectStyle>();
+    var itemElement = openXmlElement.GetFirstChild<DXDraw.EffectStyle>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Drawings.EffectStyleConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.EffectStyle>(value);
+      itemElement = DMXDraws.EffectStyleConverter.CreateOpenXmlElement<DXDraw.EffectStyle>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  public static DocumentModel.Drawings.EffectStyleList? CreateModelElement(DocumentFormat.OpenXml.Drawing.EffectStyleList? openXmlElement)
+  public static DMDraws.EffectStyleList? CreateModelElement(DXDraw.EffectStyleList? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.EffectStyleList();
+      var value = new DMDraws.EffectStyleList();
       value.EffectStyle = GetEffectStyle(openXmlElement);
       return value;
     }
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.EffectStyleList? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.EffectStyleList, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDraws.EffectStyleList? value)
+    where OpenXmlElementType: DXDraw.EffectStyleList, new()
   {
     if (value != null)
     {

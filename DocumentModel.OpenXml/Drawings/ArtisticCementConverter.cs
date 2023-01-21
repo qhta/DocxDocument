@@ -8,12 +8,12 @@ public static class ArtisticCementConverter
   /// <summary>
   /// trans, this property is only available in Office 2010 and later.
   /// </summary>
-  private static Int32? GetTransparancy(DocumentFormat.OpenXml.Office2010.Drawing.ArtisticCement openXmlElement)
+  private static Int32? GetTransparancy(DXO2010Draw.ArtisticCement openXmlElement)
   {
     return openXmlElement.Transparancy?.Value;
   }
   
-  private static void SetTransparancy(DocumentFormat.OpenXml.Office2010.Drawing.ArtisticCement openXmlElement, Int32? value)
+  private static void SetTransparancy(DXO2010Draw.ArtisticCement openXmlElement, Int32? value)
   {
     openXmlElement.Transparancy = value;
   }
@@ -21,21 +21,21 @@ public static class ArtisticCementConverter
   /// <summary>
   /// crackSpacing, this property is only available in Office 2010 and later.
   /// </summary>
-  private static Int32? GetCrackSpacing(DocumentFormat.OpenXml.Office2010.Drawing.ArtisticCement openXmlElement)
+  private static Int32? GetCrackSpacing(DXO2010Draw.ArtisticCement openXmlElement)
   {
     return openXmlElement.CrackSpacing?.Value;
   }
   
-  private static void SetCrackSpacing(DocumentFormat.OpenXml.Office2010.Drawing.ArtisticCement openXmlElement, Int32? value)
+  private static void SetCrackSpacing(DXO2010Draw.ArtisticCement openXmlElement, Int32? value)
   {
     openXmlElement.CrackSpacing = value;
   }
   
-  public static DocumentModel.Drawings.ArtisticCement? CreateModelElement(DocumentFormat.OpenXml.Office2010.Drawing.ArtisticCement? openXmlElement)
+  public static DMDraws.ArtisticCement? CreateModelElement(DXO2010Draw.ArtisticCement? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.ArtisticCement();
+      var value = new DMDraws.ArtisticCement();
       value.Transparancy = GetTransparancy(openXmlElement);
       value.CrackSpacing = GetCrackSpacing(openXmlElement);
       return value;
@@ -43,8 +43,8 @@ public static class ArtisticCementConverter
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.ArtisticCement? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Office2010.Drawing.ArtisticCement, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDraws.ArtisticCement? value)
+    where OpenXmlElementType: DXO2010Draw.ArtisticCement, new()
   {
     if (value != null)
     {

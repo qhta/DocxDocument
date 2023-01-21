@@ -5,7 +5,7 @@ namespace DocumentModel.OpenXml.Packaging;
 /// </summary>
 public static class VmlDrawingPartConverter
 {
-  private static String? GetContentType(DocumentFormat.OpenXml.Packaging.VmlDrawingPart openXmlElement)
+  private static String? GetContentType(DXPack.VmlDrawingPart openXmlElement)
   {
     return openXmlElement?.ContentType;
   }
@@ -13,12 +13,12 @@ public static class VmlDrawingPartConverter
   /// <summary>
   /// Gets the ImageParts of the VmlDrawingPart
   /// </summary>
-  private static System.Collections.ObjectModel.Collection<DocumentModel.Packaging.ImagePart> GetImageParts(DocumentFormat.OpenXml.Packaging.VmlDrawingPart openXmlElement)
+  private static Collection<DMPack.ImagePart> GetImageParts(DXPack.VmlDrawingPart openXmlElement)
   {
-    var collection = new System.Collections.ObjectModel.Collection<DocumentModel.Packaging.ImagePart>();
-    foreach (var item in openXmlElement.GetPartsOfType<DocumentFormat.OpenXml.Packaging.ImagePart>())
+    var collection = new Collection<DMPack.ImagePart>();
+    foreach (var item in openXmlElement.GetPartsOfType<DXPack.ImagePart>())
     {
-      var newItem = DocumentModel.OpenXml.Packaging.ImagePartConverter.CreateModelElement(item);
+      var newItem = DMXPack.ImagePartConverter.CreateModelElement(item);
       if (newItem != null)
         collection.Add(newItem);
     }
@@ -28,28 +28,28 @@ public static class VmlDrawingPartConverter
   /// <summary>
   /// Gets the LegacyDiagramTextParts of the VmlDrawingPart
   /// </summary>
-  private static System.Collections.ObjectModel.Collection<DocumentModel.Packaging.LegacyDiagramTextPart> GetLegacyDiagramTextParts(DocumentFormat.OpenXml.Packaging.VmlDrawingPart openXmlElement)
+  private static Collection<DMPack.LegacyDiagramTextPart> GetLegacyDiagramTextParts(DXPack.VmlDrawingPart openXmlElement)
   {
-    var collection = new System.Collections.ObjectModel.Collection<DocumentModel.Packaging.LegacyDiagramTextPart>();
-    foreach (var item in openXmlElement.GetPartsOfType<DocumentFormat.OpenXml.Packaging.LegacyDiagramTextPart>())
+    var collection = new Collection<DMPack.LegacyDiagramTextPart>();
+    foreach (var item in openXmlElement.GetPartsOfType<DXPack.LegacyDiagramTextPart>())
     {
-      var newItem = DocumentModel.OpenXml.Packaging.LegacyDiagramTextPartConverter.CreateModelElement(item);
+      var newItem = DMXPack.LegacyDiagramTextPartConverter.CreateModelElement(item);
       if (newItem != null)
         collection.Add(newItem);
     }
     return collection;
   }
   
-  private static String? GetRelationshipType(DocumentFormat.OpenXml.Packaging.VmlDrawingPart openXmlElement)
+  private static String? GetRelationshipType(DXPack.VmlDrawingPart openXmlElement)
   {
     return openXmlElement?.RelationshipType;
   }
   
-  public static DocumentModel.Packaging.VmlDrawingPart? CreateModelElement(DocumentFormat.OpenXml.Packaging.VmlDrawingPart? openXmlElement)
+  public static DMPack.VmlDrawingPart? CreateModelElement(DXPack.VmlDrawingPart? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Packaging.VmlDrawingPart();
+      var value = new DMPack.VmlDrawingPart();
       value.ContentType = GetContentType(openXmlElement);
       value.ImageParts = GetImageParts(openXmlElement);
       value.LegacyDiagramTextParts = GetLegacyDiagramTextParts(openXmlElement);
@@ -59,8 +59,8 @@ public static class VmlDrawingPartConverter
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Packaging.VmlDrawingPart? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Packaging.VmlDrawingPart, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMPack.VmlDrawingPart? value)
+    where OpenXmlElementType: DXPack.VmlDrawingPart, new()
   {
     if (value != null)
     {

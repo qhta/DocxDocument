@@ -8,29 +8,29 @@ public static class Saturation2Converter
   /// <summary>
   /// sat, this property is only available in Office 2010 and later.
   /// </summary>
-  private static Int32? GetSaturationAmount(DocumentFormat.OpenXml.Office2010.Drawing.Saturation openXmlElement)
+  private static Int32? GetSaturationAmount(DXO2010Draw.Saturation openXmlElement)
   {
     return openXmlElement.SaturationAmount?.Value;
   }
   
-  private static void SetSaturationAmount(DocumentFormat.OpenXml.Office2010.Drawing.Saturation openXmlElement, Int32? value)
+  private static void SetSaturationAmount(DXO2010Draw.Saturation openXmlElement, Int32? value)
   {
     openXmlElement.SaturationAmount = value;
   }
   
-  public static DocumentModel.Drawings.Saturation2? CreateModelElement(DocumentFormat.OpenXml.Office2010.Drawing.Saturation? openXmlElement)
+  public static DMDraws.Saturation2? CreateModelElement(DXO2010Draw.Saturation? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.Saturation2();
+      var value = new DMDraws.Saturation2();
       value.SaturationAmount = GetSaturationAmount(openXmlElement);
       return value;
     }
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.Saturation2? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Office2010.Drawing.Saturation, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDraws.Saturation2? value)
+    where OpenXmlElementType: DXO2010Draw.Saturation, new()
   {
     if (value != null)
     {

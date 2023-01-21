@@ -5,45 +5,45 @@ namespace DocumentModel.OpenXml;
 /// </summary>
 public static class ContextMenusConverter
 {
-  private static System.Collections.ObjectModel.Collection<DocumentModel.ContextMenu> GetItems(DocumentFormat.OpenXml.Office2010.CustomUI.ContextMenus openXmlElement)
+  private static Collection<DM.ContextMenu> GetItems(DXO2010CustUI.ContextMenus openXmlElement)
   {
-    var collection = new System.Collections.ObjectModel.Collection<DocumentModel.ContextMenu>();
-    foreach (var item in openXmlElement.Elements<DocumentFormat.OpenXml.Office2010.CustomUI.ContextMenu>())
+    var collection = new Collection<DM.ContextMenu>();
+    foreach (var item in openXmlElement.Elements<DXO2010CustUI.ContextMenu>())
     {
-      var newItem = DocumentModel.OpenXml.ContextMenuConverter.CreateModelElement(item);
+      var newItem = DMX.ContextMenuConverter.CreateModelElement(item);
       if (newItem != null)
         collection.Add(newItem);
     }
     return collection;
   }
   
-  private static void SetItems(DocumentFormat.OpenXml.Office2010.CustomUI.ContextMenus openXmlElement, System.Collections.ObjectModel.Collection<DocumentModel.ContextMenu>? value)
+  private static void SetItems(DXO2010CustUI.ContextMenus openXmlElement, Collection<DM.ContextMenu>? value)
   {
-    openXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Office2010.CustomUI.ContextMenu>();
+    openXmlElement.RemoveAllChildren<DXO2010CustUI.ContextMenu>();
     if (value != null)
     {
       foreach (var item in value)
       {
-        var newItem = DocumentModel.OpenXml.ContextMenuConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2010.CustomUI.ContextMenu>(item);
+        var newItem = DMX.ContextMenuConverter.CreateOpenXmlElement<DXO2010CustUI.ContextMenu>(item);
         if (newItem != null)
           openXmlElement.AddChild(newItem);
       }
     }
   }
   
-  public static DocumentModel.ContextMenus? CreateModelElement(DocumentFormat.OpenXml.Office2010.CustomUI.ContextMenus? openXmlElement)
+  public static DM.ContextMenus? CreateModelElement(DXO2010CustUI.ContextMenus? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.ContextMenus();
+      var value = new DM.ContextMenus();
       value.Items = GetItems(openXmlElement);
       return value;
     }
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.ContextMenus? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Office2010.CustomUI.ContextMenus, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DM.ContextMenus? value)
+    where OpenXmlElementType: DXO2010CustUI.ContextMenus, new()
   {
     if (value != null)
     {

@@ -5,45 +5,45 @@ namespace DocumentModel.OpenXml.CustomXml;
 /// </summary>
 public static class SchemaLibraryConverter
 {
-  private static System.Collections.ObjectModel.Collection<DocumentModel.CustomXml.Schema> GetSchemas(DocumentFormat.OpenXml.CustomXmlSchemaReferences.SchemaLibrary openXmlElement)
+  private static Collection<DMCustXml.Schema> GetSchemas(DXCustXmlSchRefs.SchemaLibrary openXmlElement)
   {
-    var collection = new System.Collections.ObjectModel.Collection<DocumentModel.CustomXml.Schema>();
-    foreach (var item in openXmlElement.Elements<DocumentFormat.OpenXml.CustomXmlSchemaReferences.Schema>())
+    var collection = new Collection<DMCustXml.Schema>();
+    foreach (var item in openXmlElement.Elements<DXCustXmlSchRefs.Schema>())
     {
-      var newItem = DocumentModel.OpenXml.CustomXml.SchemaConverter.CreateModelElement(item);
+      var newItem = DMXCustXml.SchemaConverter.CreateModelElement(item);
       if (newItem != null)
         collection.Add(newItem);
     }
     return collection;
   }
   
-  private static void SetSchemas(DocumentFormat.OpenXml.CustomXmlSchemaReferences.SchemaLibrary openXmlElement, System.Collections.ObjectModel.Collection<DocumentModel.CustomXml.Schema>? value)
+  private static void SetSchemas(DXCustXmlSchRefs.SchemaLibrary openXmlElement, Collection<DMCustXml.Schema>? value)
   {
-    openXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.CustomXmlSchemaReferences.Schema>();
+    openXmlElement.RemoveAllChildren<DXCustXmlSchRefs.Schema>();
     if (value != null)
     {
       foreach (var item in value)
       {
-        var newItem = DocumentModel.OpenXml.CustomXml.SchemaConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.CustomXmlSchemaReferences.Schema>(item);
+        var newItem = DMXCustXml.SchemaConverter.CreateOpenXmlElement<DXCustXmlSchRefs.Schema>(item);
         if (newItem != null)
           openXmlElement.AddChild(newItem);
       }
     }
   }
   
-  public static DocumentModel.CustomXml.SchemaLibrary? CreateModelElement(DocumentFormat.OpenXml.CustomXmlSchemaReferences.SchemaLibrary? openXmlElement)
+  public static DMCustXml.SchemaLibrary? CreateModelElement(DXCustXmlSchRefs.SchemaLibrary? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.CustomXml.SchemaLibrary();
+      var value = new DMCustXml.SchemaLibrary();
       value.Schemas = GetSchemas(openXmlElement);
       return value;
     }
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.CustomXml.SchemaLibrary? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.CustomXmlSchemaReferences.SchemaLibrary, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMCustXml.SchemaLibrary? value)
+    where OpenXmlElementType: DXCustXmlSchRefs.SchemaLibrary, new()
   {
     if (value != null)
     {

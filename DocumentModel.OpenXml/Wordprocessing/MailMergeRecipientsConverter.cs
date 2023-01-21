@@ -5,40 +5,40 @@ namespace DocumentModel.OpenXml.Wordprocessing;
 /// </summary>
 public static class MailMergeRecipientsConverter
 {
-  private static DocumentModel.Wordprocessing.SingleDataSourceRecord? GetSingleDataSourceRecord(DocumentFormat.OpenXml.Office.Word.MailMergeRecipients openXmlElement)
+  private static DMW.SingleDataSourceRecord? GetSingleDataSourceRecord(DXOW.MailMergeRecipients openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office.Word.SingleDataSourceRecord>();
+    var itemElement = openXmlElement?.GetFirstChild<DXOW.SingleDataSourceRecord>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Wordprocessing.SingleDataSourceRecordConverter.CreateModelElement(itemElement);
+      return DMXW.SingleDataSourceRecordConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetSingleDataSourceRecord(DocumentFormat.OpenXml.Office.Word.MailMergeRecipients openXmlElement, DocumentModel.Wordprocessing.SingleDataSourceRecord? value)
+  private static void SetSingleDataSourceRecord(DXOW.MailMergeRecipients openXmlElement, DMW.SingleDataSourceRecord? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office.Word.SingleDataSourceRecord>();
+    var itemElement = openXmlElement.GetFirstChild<DXOW.SingleDataSourceRecord>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Wordprocessing.SingleDataSourceRecordConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office.Word.SingleDataSourceRecord>(value);
+      itemElement = DMXW.SingleDataSourceRecordConverter.CreateOpenXmlElement<DXOW.SingleDataSourceRecord>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  public static DocumentModel.Wordprocessing.MailMergeRecipients? CreateModelElement(DocumentFormat.OpenXml.Office.Word.MailMergeRecipients? openXmlElement)
+  public static DMW.MailMergeRecipients? CreateModelElement(DXOW.MailMergeRecipients? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Wordprocessing.MailMergeRecipients();
+      var value = new DMW.MailMergeRecipients();
       value.SingleDataSourceRecord = GetSingleDataSourceRecord(openXmlElement);
       return value;
     }
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.MailMergeRecipients? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Office.Word.MailMergeRecipients, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMW.MailMergeRecipients? value)
+    where OpenXmlElementType: DXOW.MailMergeRecipients, new()
   {
     if (value != null)
     {

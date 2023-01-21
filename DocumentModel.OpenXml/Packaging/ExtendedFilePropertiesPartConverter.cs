@@ -5,7 +5,7 @@ namespace DocumentModel.OpenXml.Packaging;
 /// </summary>
 public static class ExtendedFilePropertiesPartConverter
 {
-  private static String? GetContentType(DocumentFormat.OpenXml.Packaging.ExtendedFilePropertiesPart openXmlElement)
+  private static String? GetContentType(DXPack.ExtendedFilePropertiesPart openXmlElement)
   {
     return openXmlElement?.ContentType;
   }
@@ -13,33 +13,33 @@ public static class ExtendedFilePropertiesPartConverter
   /// <summary>
   /// Gets or sets the root element of this part.
   /// </summary>
-  private static DocumentModel.Properties.ExtendedProperties? GetProperties(DocumentFormat.OpenXml.Packaging.ExtendedFilePropertiesPart openXmlElement)
+  private static DMProps.ExtendedProperties? GetProperties(DXPack.ExtendedFilePropertiesPart openXmlElement)
   {
-    if (openXmlElement?.RootElement is DocumentFormat.OpenXml.ExtendedProperties.Properties rootElement)
-      return DocumentModel.OpenXml.Properties.ExtendedPropertiesConverter.CreateModelElement(rootElement);
+    if (openXmlElement?.RootElement is DXExtProps.Properties rootElement)
+      return DMXProps.ExtendedPropertiesConverter.CreateModelElement(rootElement);
     return null;
   }
   
-  private static void SetProperties(DocumentFormat.OpenXml.Packaging.ExtendedFilePropertiesPart openXmlElement, DocumentModel.Properties.ExtendedProperties? value)
+  private static void SetProperties(DXPack.ExtendedFilePropertiesPart openXmlElement, DMProps.ExtendedProperties? value)
   {
     if (value != null)
     {
-       var rootElement = DocumentModel.OpenXml.Properties.ExtendedPropertiesConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.ExtendedProperties.Properties>(value);
+       var rootElement = DMXProps.ExtendedPropertiesConverter.CreateOpenXmlElement<DXExtProps.Properties>(value);
        if (rootElement != null)
          openXmlElement.Properties = rootElement;
     }
   }
   
-  private static String? GetRelationshipType(DocumentFormat.OpenXml.Packaging.ExtendedFilePropertiesPart openXmlElement)
+  private static String? GetRelationshipType(DXPack.ExtendedFilePropertiesPart openXmlElement)
   {
     return openXmlElement?.RelationshipType;
   }
   
-  public static DocumentModel.Packaging.ExtendedFilePropertiesPart? CreateModelElement(DocumentFormat.OpenXml.Packaging.ExtendedFilePropertiesPart? openXmlElement)
+  public static DMPack.ExtendedFilePropertiesPart? CreateModelElement(DXPack.ExtendedFilePropertiesPart? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Packaging.ExtendedFilePropertiesPart();
+      var value = new DMPack.ExtendedFilePropertiesPart();
       value.ContentType = GetContentType(openXmlElement);
       value.Properties = GetProperties(openXmlElement);
       value.RelationshipType = GetRelationshipType(openXmlElement);
@@ -48,8 +48,8 @@ public static class ExtendedFilePropertiesPartConverter
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Packaging.ExtendedFilePropertiesPart? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Packaging.ExtendedFilePropertiesPart, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMPack.ExtendedFilePropertiesPart? value)
+    where OpenXmlElementType: DXPack.ExtendedFilePropertiesPart, new()
   {
     if (value != null)
     {

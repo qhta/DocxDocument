@@ -8,12 +8,12 @@ public static class BookmarkStartConverter
   /// <summary>
   /// name
   /// </summary>
-  private static String? GetName(DocumentFormat.OpenXml.Wordprocessing.BookmarkStart openXmlElement)
+  private static String? GetName(DXW.BookmarkStart openXmlElement)
   {
     return openXmlElement?.Name?.Value;
   }
   
-  private static void SetName(DocumentFormat.OpenXml.Wordprocessing.BookmarkStart openXmlElement, String? value)
+  private static void SetName(DXW.BookmarkStart openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.Name = new StringValue { Value = value };
@@ -24,12 +24,12 @@ public static class BookmarkStartConverter
   /// <summary>
   /// colFirst
   /// </summary>
-  private static Int32? GetColumnFirst(DocumentFormat.OpenXml.Wordprocessing.BookmarkStart openXmlElement)
+  private static Int32? GetColumnFirst(DXW.BookmarkStart openXmlElement)
   {
     return openXmlElement.ColumnFirst?.Value;
   }
   
-  private static void SetColumnFirst(DocumentFormat.OpenXml.Wordprocessing.BookmarkStart openXmlElement, Int32? value)
+  private static void SetColumnFirst(DXW.BookmarkStart openXmlElement, Int32? value)
   {
     openXmlElement.ColumnFirst = value;
   }
@@ -37,12 +37,12 @@ public static class BookmarkStartConverter
   /// <summary>
   /// colLast
   /// </summary>
-  private static Int32? GetColumnLast(DocumentFormat.OpenXml.Wordprocessing.BookmarkStart openXmlElement)
+  private static Int32? GetColumnLast(DXW.BookmarkStart openXmlElement)
   {
     return openXmlElement.ColumnLast?.Value;
   }
   
-  private static void SetColumnLast(DocumentFormat.OpenXml.Wordprocessing.BookmarkStart openXmlElement, Int32? value)
+  private static void SetColumnLast(DXW.BookmarkStart openXmlElement, Int32? value)
   {
     openXmlElement.ColumnLast = value;
   }
@@ -50,25 +50,25 @@ public static class BookmarkStartConverter
   /// <summary>
   /// displacedByCustomXml
   /// </summary>
-  private static DocumentModel.Wordprocessing.DisplacedByCustomXmlKind? GetDisplacedByCustomXml(DocumentFormat.OpenXml.Wordprocessing.BookmarkStart openXmlElement)
+  private static DMW.DisplacedByCustomXmlKind? GetDisplacedByCustomXml(DXW.BookmarkStart openXmlElement)
   {
-    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Wordprocessing.DisplacedByCustomXmlValues, DocumentModel.Wordprocessing.DisplacedByCustomXmlKind>(openXmlElement?.DisplacedByCustomXml?.Value);
+    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Wordprocessing.DisplacedByCustomXmlValues, DMW.DisplacedByCustomXmlKind>(openXmlElement?.DisplacedByCustomXml?.Value);
   }
   
-  private static void SetDisplacedByCustomXml(DocumentFormat.OpenXml.Wordprocessing.BookmarkStart openXmlElement, DocumentModel.Wordprocessing.DisplacedByCustomXmlKind? value)
+  private static void SetDisplacedByCustomXml(DXW.BookmarkStart openXmlElement, DMW.DisplacedByCustomXmlKind? value)
   {
-    openXmlElement.DisplacedByCustomXml = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Wordprocessing.DisplacedByCustomXmlValues, DocumentModel.Wordprocessing.DisplacedByCustomXmlKind>(value);
+    openXmlElement.DisplacedByCustomXml = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Wordprocessing.DisplacedByCustomXmlValues, DMW.DisplacedByCustomXmlKind>(value);
   }
   
   /// <summary>
   /// Annotation Identifier
   /// </summary>
-  private static String? GetId(DocumentFormat.OpenXml.Wordprocessing.BookmarkStart openXmlElement)
+  private static String? GetId(DXW.BookmarkStart openXmlElement)
   {
     return openXmlElement?.Id?.Value;
   }
   
-  private static void SetId(DocumentFormat.OpenXml.Wordprocessing.BookmarkStart openXmlElement, String? value)
+  private static void SetId(DXW.BookmarkStart openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.Id = new StringValue { Value = value };
@@ -76,11 +76,11 @@ public static class BookmarkStartConverter
       openXmlElement.Id = null;
   }
   
-  public static DocumentModel.Wordprocessing.BookmarkStart? CreateModelElement(DocumentFormat.OpenXml.Wordprocessing.BookmarkStart? openXmlElement)
+  public static DMW.BookmarkStart? CreateModelElement(DXW.BookmarkStart? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Wordprocessing.BookmarkStart();
+      var value = new DMW.BookmarkStart();
       value.Name = GetName(openXmlElement);
       value.ColumnFirst = GetColumnFirst(openXmlElement);
       value.ColumnLast = GetColumnLast(openXmlElement);
@@ -91,8 +91,8 @@ public static class BookmarkStartConverter
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.BookmarkStart? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Wordprocessing.BookmarkStart, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMW.BookmarkStart? value)
+    where OpenXmlElementType: DXW.BookmarkStart, new()
   {
     if (value != null)
     {

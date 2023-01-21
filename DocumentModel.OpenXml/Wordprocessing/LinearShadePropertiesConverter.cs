@@ -8,12 +8,12 @@ public static class LinearShadePropertiesConverter
   /// <summary>
   /// ang, this property is only available in Office 2010 and later.
   /// </summary>
-  private static Int32? GetAngle(DocumentFormat.OpenXml.Office2010.Word.LinearShadeProperties openXmlElement)
+  private static Int32? GetAngle(DXO2010W.LinearShadeProperties openXmlElement)
   {
     return openXmlElement.Angle?.Value;
   }
   
-  private static void SetAngle(DocumentFormat.OpenXml.Office2010.Word.LinearShadeProperties openXmlElement, Int32? value)
+  private static void SetAngle(DXO2010W.LinearShadeProperties openXmlElement, Int32? value)
   {
     openXmlElement.Angle = value;
   }
@@ -21,21 +21,21 @@ public static class LinearShadePropertiesConverter
   /// <summary>
   /// scaled, this property is only available in Office 2010 and later.
   /// </summary>
-  private static DocumentModel.Wordprocessing.OnOffKind? GetScaled(DocumentFormat.OpenXml.Office2010.Word.LinearShadeProperties openXmlElement)
+  private static DMW.OnOffKind? GetScaled(DXO2010W.LinearShadeProperties openXmlElement)
   {
-    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Office2010.Word.OnOffValues, DocumentModel.Wordprocessing.OnOffKind>(openXmlElement?.Scaled?.Value);
+    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Office2010.Word.OnOffValues, DMW.OnOffKind>(openXmlElement?.Scaled?.Value);
   }
   
-  private static void SetScaled(DocumentFormat.OpenXml.Office2010.Word.LinearShadeProperties openXmlElement, DocumentModel.Wordprocessing.OnOffKind? value)
+  private static void SetScaled(DXO2010W.LinearShadeProperties openXmlElement, DMW.OnOffKind? value)
   {
-    openXmlElement.Scaled = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Office2010.Word.OnOffValues, DocumentModel.Wordprocessing.OnOffKind>(value);
+    openXmlElement.Scaled = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Office2010.Word.OnOffValues, DMW.OnOffKind>(value);
   }
   
-  public static DocumentModel.Wordprocessing.LinearShadeProperties? CreateModelElement(DocumentFormat.OpenXml.Office2010.Word.LinearShadeProperties? openXmlElement)
+  public static DMW.LinearShadeProperties? CreateModelElement(DXO2010W.LinearShadeProperties? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Wordprocessing.LinearShadeProperties();
+      var value = new DMW.LinearShadeProperties();
       value.Angle = GetAngle(openXmlElement);
       value.Scaled = GetScaled(openXmlElement);
       return value;
@@ -43,8 +43,8 @@ public static class LinearShadePropertiesConverter
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.LinearShadeProperties? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Office2010.Word.LinearShadeProperties, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMW.LinearShadeProperties? value)
+    where OpenXmlElementType: DXO2010W.LinearShadeProperties, new()
   {
     if (value != null)
     {

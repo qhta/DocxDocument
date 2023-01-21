@@ -8,22 +8,22 @@ public static class PreviousTableCellPropertiesConverter
   /// <summary>
   /// ConditionalFormatStyle.
   /// </summary>
-  private static DocumentModel.Wordprocessing.ConditionalFormatStyle? GetConditionalFormatStyle(DocumentFormat.OpenXml.Wordprocessing.PreviousTableCellProperties openXmlElement)
+  private static DMW.ConditionalFormatStyle? GetConditionalFormatStyle(DXW.PreviousTableCellProperties openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.ConditionalFormatStyle>();
+    var itemElement = openXmlElement?.GetFirstChild<DXW.ConditionalFormatStyle>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Wordprocessing.ConditionalFormatStyleConverter.CreateModelElement(itemElement);
+      return DMXW.ConditionalFormatStyleConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetConditionalFormatStyle(DocumentFormat.OpenXml.Wordprocessing.PreviousTableCellProperties openXmlElement, DocumentModel.Wordprocessing.ConditionalFormatStyle? value)
+  private static void SetConditionalFormatStyle(DXW.PreviousTableCellProperties openXmlElement, DMW.ConditionalFormatStyle? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.ConditionalFormatStyle>();
+    var itemElement = openXmlElement.GetFirstChild<DXW.ConditionalFormatStyle>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Wordprocessing.ConditionalFormatStyleConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.ConditionalFormatStyle>(value);
+      itemElement = DMXW.ConditionalFormatStyleConverter.CreateOpenXmlElement<DXW.ConditionalFormatStyle>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
@@ -32,22 +32,22 @@ public static class PreviousTableCellPropertiesConverter
   /// <summary>
   /// TableCellWidth.
   /// </summary>
-  private static DocumentModel.Wordprocessing.TableWidthType? GetTableCellWidth(DocumentFormat.OpenXml.Wordprocessing.PreviousTableCellProperties openXmlElement)
+  private static DMW.TableWidthType? GetTableCellWidth(DXW.PreviousTableCellProperties openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.TableCellWidth>();
+    var itemElement = openXmlElement?.GetFirstChild<DXW.TableCellWidth>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Wordprocessing.TableWidthTypeConverter.CreateModelElement(itemElement);
+      return DMXW.TableWidthTypeConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetTableCellWidth(DocumentFormat.OpenXml.Wordprocessing.PreviousTableCellProperties openXmlElement, DocumentModel.Wordprocessing.TableWidthType? value)
+  private static void SetTableCellWidth(DXW.PreviousTableCellProperties openXmlElement, DMW.TableWidthType? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.TableCellWidth>();
+    var itemElement = openXmlElement.GetFirstChild<DXW.TableCellWidth>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Wordprocessing.TableWidthTypeConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.TableCellWidth>(value);
+      itemElement = DMXW.TableWidthTypeConverter.CreateOpenXmlElement<DXW.TableCellWidth>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
@@ -56,22 +56,22 @@ public static class PreviousTableCellPropertiesConverter
   /// <summary>
   /// GridSpan.
   /// </summary>
-  private static Int32? GetGridSpan(DocumentFormat.OpenXml.Wordprocessing.PreviousTableCellProperties openXmlElement)
+  private static Int32? GetGridSpan(DXW.PreviousTableCellProperties openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.GridSpan>();
+    var itemElement = openXmlElement?.GetFirstChild<DXW.GridSpan>();
     if (itemElement != null)
       return itemElement.Val?.Value;
     return null;
   }
   
-  private static void SetGridSpan(DocumentFormat.OpenXml.Wordprocessing.PreviousTableCellProperties openXmlElement, Int32? value)
+  private static void SetGridSpan(DXW.PreviousTableCellProperties openXmlElement, Int32? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.GridSpan>();
+    var itemElement = openXmlElement.GetFirstChild<DXW.GridSpan>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = new DocumentFormat.OpenXml.Wordprocessing.GridSpan{ Val = value };
+      itemElement = new DXW.GridSpan{ Val = value };
       openXmlElement.AddChild(itemElement);
     }
   }
@@ -79,22 +79,22 @@ public static class PreviousTableCellPropertiesConverter
   /// <summary>
   /// HorizontalMerge.
   /// </summary>
-  private static DocumentModel.Wordprocessing.MergedCellKind? GetHorizontalMerge(DocumentFormat.OpenXml.Wordprocessing.PreviousTableCellProperties openXmlElement)
+  private static DMW.MergedCellKind? GetHorizontalMerge(DXW.PreviousTableCellProperties openXmlElement)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.HorizontalMerge>();
+    var itemElement = openXmlElement.GetFirstChild<DXW.HorizontalMerge>();
     if (itemElement?.Val?.Value != null)
-      return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Wordprocessing.MergedCellValues, DocumentModel.Wordprocessing.MergedCellKind>(itemElement.Val.Value);
+      return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Wordprocessing.MergedCellValues, DMW.MergedCellKind>(itemElement.Val.Value);
     return null;
   }
   
-  private static void SetHorizontalMerge(DocumentFormat.OpenXml.Wordprocessing.PreviousTableCellProperties openXmlElement, DocumentModel.Wordprocessing.MergedCellKind? value)
+  private static void SetHorizontalMerge(DXW.PreviousTableCellProperties openXmlElement, DMW.MergedCellKind? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.HorizontalMerge>();
+    var itemElement = openXmlElement.GetFirstChild<DXW.HorizontalMerge>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = EnumValueConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.HorizontalMerge, DocumentFormat.OpenXml.Wordprocessing.MergedCellValues, DocumentModel.Wordprocessing.MergedCellKind>(value);
+      itemElement = EnumValueConverter.CreateOpenXmlElement<DXW.HorizontalMerge, DocumentFormat.OpenXml.Wordprocessing.MergedCellValues, DMW.MergedCellKind>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
@@ -103,22 +103,22 @@ public static class PreviousTableCellPropertiesConverter
   /// <summary>
   /// VerticalMerge.
   /// </summary>
-  private static DocumentModel.Wordprocessing.MergedCellKind? GetVerticalMerge(DocumentFormat.OpenXml.Wordprocessing.PreviousTableCellProperties openXmlElement)
+  private static DMW.MergedCellKind? GetVerticalMerge(DXW.PreviousTableCellProperties openXmlElement)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.VerticalMerge>();
+    var itemElement = openXmlElement.GetFirstChild<DXW.VerticalMerge>();
     if (itemElement?.Val?.Value != null)
-      return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Wordprocessing.MergedCellValues, DocumentModel.Wordprocessing.MergedCellKind>(itemElement.Val.Value);
+      return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Wordprocessing.MergedCellValues, DMW.MergedCellKind>(itemElement.Val.Value);
     return null;
   }
   
-  private static void SetVerticalMerge(DocumentFormat.OpenXml.Wordprocessing.PreviousTableCellProperties openXmlElement, DocumentModel.Wordprocessing.MergedCellKind? value)
+  private static void SetVerticalMerge(DXW.PreviousTableCellProperties openXmlElement, DMW.MergedCellKind? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.VerticalMerge>();
+    var itemElement = openXmlElement.GetFirstChild<DXW.VerticalMerge>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = EnumValueConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.VerticalMerge, DocumentFormat.OpenXml.Wordprocessing.MergedCellValues, DocumentModel.Wordprocessing.MergedCellKind>(value);
+      itemElement = EnumValueConverter.CreateOpenXmlElement<DXW.VerticalMerge, DocumentFormat.OpenXml.Wordprocessing.MergedCellValues, DMW.MergedCellKind>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
@@ -127,22 +127,22 @@ public static class PreviousTableCellPropertiesConverter
   /// <summary>
   /// TableCellBorders.
   /// </summary>
-  private static DocumentModel.Wordprocessing.TableCellBorders? GetTableCellBorders(DocumentFormat.OpenXml.Wordprocessing.PreviousTableCellProperties openXmlElement)
+  private static DMW.TableCellBorders? GetTableCellBorders(DXW.PreviousTableCellProperties openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.TableCellBorders>();
+    var itemElement = openXmlElement?.GetFirstChild<DXW.TableCellBorders>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Wordprocessing.TableCellBordersConverter.CreateModelElement(itemElement);
+      return DMXW.TableCellBordersConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetTableCellBorders(DocumentFormat.OpenXml.Wordprocessing.PreviousTableCellProperties openXmlElement, DocumentModel.Wordprocessing.TableCellBorders? value)
+  private static void SetTableCellBorders(DXW.PreviousTableCellProperties openXmlElement, DMW.TableCellBorders? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.TableCellBorders>();
+    var itemElement = openXmlElement.GetFirstChild<DXW.TableCellBorders>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Wordprocessing.TableCellBordersConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.TableCellBorders>(value);
+      itemElement = DMXW.TableCellBordersConverter.CreateOpenXmlElement<DXW.TableCellBorders>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
@@ -151,22 +151,22 @@ public static class PreviousTableCellPropertiesConverter
   /// <summary>
   /// Shading.
   /// </summary>
-  private static DocumentModel.Wordprocessing.Shading? GetShading(DocumentFormat.OpenXml.Wordprocessing.PreviousTableCellProperties openXmlElement)
+  private static DMW.Shading? GetShading(DXW.PreviousTableCellProperties openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.Shading>();
+    var itemElement = openXmlElement?.GetFirstChild<DXW.Shading>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Wordprocessing.ShadingConverter.CreateModelElement(itemElement);
+      return DMXW.ShadingConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetShading(DocumentFormat.OpenXml.Wordprocessing.PreviousTableCellProperties openXmlElement, DocumentModel.Wordprocessing.Shading? value)
+  private static void SetShading(DXW.PreviousTableCellProperties openXmlElement, DMW.Shading? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.Shading>();
+    var itemElement = openXmlElement.GetFirstChild<DXW.Shading>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Wordprocessing.ShadingConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.Shading>(value);
+      itemElement = DMXW.ShadingConverter.CreateOpenXmlElement<DXW.Shading>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
@@ -175,22 +175,22 @@ public static class PreviousTableCellPropertiesConverter
   /// <summary>
   /// NoWrap.
   /// </summary>
-  private static DocumentModel.Wordprocessing.OnOffOnlyKind? GetNoWrap(DocumentFormat.OpenXml.Wordprocessing.PreviousTableCellProperties openXmlElement)
+  private static DMW.OnOffOnlyKind? GetNoWrap(DXW.PreviousTableCellProperties openXmlElement)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.NoWrap>();
+    var itemElement = openXmlElement.GetFirstChild<DXW.NoWrap>();
     if (itemElement?.Val?.Value != null)
-      return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Wordprocessing.OnOffOnlyValues, DocumentModel.Wordprocessing.OnOffOnlyKind>(itemElement.Val.Value);
+      return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Wordprocessing.OnOffOnlyValues, DMW.OnOffOnlyKind>(itemElement.Val.Value);
     return null;
   }
   
-  private static void SetNoWrap(DocumentFormat.OpenXml.Wordprocessing.PreviousTableCellProperties openXmlElement, DocumentModel.Wordprocessing.OnOffOnlyKind? value)
+  private static void SetNoWrap(DXW.PreviousTableCellProperties openXmlElement, DMW.OnOffOnlyKind? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.NoWrap>();
+    var itemElement = openXmlElement.GetFirstChild<DXW.NoWrap>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = EnumValueConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.NoWrap, DocumentFormat.OpenXml.Wordprocessing.OnOffOnlyValues, DocumentModel.Wordprocessing.OnOffOnlyKind>(value);
+      itemElement = EnumValueConverter.CreateOpenXmlElement<DXW.NoWrap, DocumentFormat.OpenXml.Wordprocessing.OnOffOnlyValues, DMW.OnOffOnlyKind>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
@@ -199,22 +199,22 @@ public static class PreviousTableCellPropertiesConverter
   /// <summary>
   /// TableCellMargin.
   /// </summary>
-  private static DocumentModel.Wordprocessing.TableCellMargin? GetTableCellMargin(DocumentFormat.OpenXml.Wordprocessing.PreviousTableCellProperties openXmlElement)
+  private static DMW.TableCellMargin? GetTableCellMargin(DXW.PreviousTableCellProperties openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.TableCellMargin>();
+    var itemElement = openXmlElement?.GetFirstChild<DXW.TableCellMargin>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Wordprocessing.TableCellMarginConverter.CreateModelElement(itemElement);
+      return DMXW.TableCellMarginConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetTableCellMargin(DocumentFormat.OpenXml.Wordprocessing.PreviousTableCellProperties openXmlElement, DocumentModel.Wordprocessing.TableCellMargin? value)
+  private static void SetTableCellMargin(DXW.PreviousTableCellProperties openXmlElement, DMW.TableCellMargin? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.TableCellMargin>();
+    var itemElement = openXmlElement.GetFirstChild<DXW.TableCellMargin>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Wordprocessing.TableCellMarginConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.TableCellMargin>(value);
+      itemElement = DMXW.TableCellMarginConverter.CreateOpenXmlElement<DXW.TableCellMargin>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
@@ -223,22 +223,22 @@ public static class PreviousTableCellPropertiesConverter
   /// <summary>
   /// TextDirection.
   /// </summary>
-  private static DocumentModel.Wordprocessing.TextDirectionKind? GetTextDirection(DocumentFormat.OpenXml.Wordprocessing.PreviousTableCellProperties openXmlElement)
+  private static DMW.TextDirectionKind? GetTextDirection(DXW.PreviousTableCellProperties openXmlElement)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.TextDirection>();
+    var itemElement = openXmlElement.GetFirstChild<DXW.TextDirection>();
     if (itemElement?.Val?.Value != null)
-      return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Wordprocessing.TextDirectionValues, DocumentModel.Wordprocessing.TextDirectionKind>(itemElement.Val.Value);
+      return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Wordprocessing.TextDirectionValues, DMW.TextDirectionKind>(itemElement.Val.Value);
     return null;
   }
   
-  private static void SetTextDirection(DocumentFormat.OpenXml.Wordprocessing.PreviousTableCellProperties openXmlElement, DocumentModel.Wordprocessing.TextDirectionKind? value)
+  private static void SetTextDirection(DXW.PreviousTableCellProperties openXmlElement, DMW.TextDirectionKind? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.TextDirection>();
+    var itemElement = openXmlElement.GetFirstChild<DXW.TextDirection>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = EnumValueConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.TextDirection, DocumentFormat.OpenXml.Wordprocessing.TextDirectionValues, DocumentModel.Wordprocessing.TextDirectionKind>(value);
+      itemElement = EnumValueConverter.CreateOpenXmlElement<DXW.TextDirection, DocumentFormat.OpenXml.Wordprocessing.TextDirectionValues, DMW.TextDirectionKind>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
@@ -247,22 +247,22 @@ public static class PreviousTableCellPropertiesConverter
   /// <summary>
   /// TableCellFitText.
   /// </summary>
-  private static DocumentModel.Wordprocessing.OnOffOnlyKind? GetTableCellFitText(DocumentFormat.OpenXml.Wordprocessing.PreviousTableCellProperties openXmlElement)
+  private static DMW.OnOffOnlyKind? GetTableCellFitText(DXW.PreviousTableCellProperties openXmlElement)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.TableCellFitText>();
+    var itemElement = openXmlElement.GetFirstChild<DXW.TableCellFitText>();
     if (itemElement?.Val?.Value != null)
-      return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Wordprocessing.OnOffOnlyValues, DocumentModel.Wordprocessing.OnOffOnlyKind>(itemElement.Val.Value);
+      return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Wordprocessing.OnOffOnlyValues, DMW.OnOffOnlyKind>(itemElement.Val.Value);
     return null;
   }
   
-  private static void SetTableCellFitText(DocumentFormat.OpenXml.Wordprocessing.PreviousTableCellProperties openXmlElement, DocumentModel.Wordprocessing.OnOffOnlyKind? value)
+  private static void SetTableCellFitText(DXW.PreviousTableCellProperties openXmlElement, DMW.OnOffOnlyKind? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.TableCellFitText>();
+    var itemElement = openXmlElement.GetFirstChild<DXW.TableCellFitText>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = EnumValueConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.TableCellFitText, DocumentFormat.OpenXml.Wordprocessing.OnOffOnlyValues, DocumentModel.Wordprocessing.OnOffOnlyKind>(value);
+      itemElement = EnumValueConverter.CreateOpenXmlElement<DXW.TableCellFitText, DocumentFormat.OpenXml.Wordprocessing.OnOffOnlyValues, DMW.OnOffOnlyKind>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
@@ -271,22 +271,22 @@ public static class PreviousTableCellPropertiesConverter
   /// <summary>
   /// TableCellVerticalAlignment.
   /// </summary>
-  private static DocumentModel.Wordprocessing.TableVerticalAlignmentKind? GetTableCellVerticalAlignment(DocumentFormat.OpenXml.Wordprocessing.PreviousTableCellProperties openXmlElement)
+  private static DMW.TableVerticalAlignmentKind? GetTableCellVerticalAlignment(DXW.PreviousTableCellProperties openXmlElement)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.TableCellVerticalAlignment>();
+    var itemElement = openXmlElement.GetFirstChild<DXW.TableCellVerticalAlignment>();
     if (itemElement?.Val?.Value != null)
-      return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Wordprocessing.TableVerticalAlignmentValues, DocumentModel.Wordprocessing.TableVerticalAlignmentKind>(itemElement.Val.Value);
+      return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Wordprocessing.TableVerticalAlignmentValues, DMW.TableVerticalAlignmentKind>(itemElement.Val.Value);
     return null;
   }
   
-  private static void SetTableCellVerticalAlignment(DocumentFormat.OpenXml.Wordprocessing.PreviousTableCellProperties openXmlElement, DocumentModel.Wordprocessing.TableVerticalAlignmentKind? value)
+  private static void SetTableCellVerticalAlignment(DXW.PreviousTableCellProperties openXmlElement, DMW.TableVerticalAlignmentKind? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.TableCellVerticalAlignment>();
+    var itemElement = openXmlElement.GetFirstChild<DXW.TableCellVerticalAlignment>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = EnumValueConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.TableCellVerticalAlignment, DocumentFormat.OpenXml.Wordprocessing.TableVerticalAlignmentValues, DocumentModel.Wordprocessing.TableVerticalAlignmentKind>(value);
+      itemElement = EnumValueConverter.CreateOpenXmlElement<DXW.TableCellVerticalAlignment, DocumentFormat.OpenXml.Wordprocessing.TableVerticalAlignmentValues, DMW.TableVerticalAlignmentKind>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
@@ -295,95 +295,95 @@ public static class PreviousTableCellPropertiesConverter
   /// <summary>
   /// HideMark.
   /// </summary>
-  private static DocumentModel.Wordprocessing.OnOffOnlyKind? GetHideMark(DocumentFormat.OpenXml.Wordprocessing.PreviousTableCellProperties openXmlElement)
+  private static DMW.OnOffOnlyKind? GetHideMark(DXW.PreviousTableCellProperties openXmlElement)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.HideMark>();
+    var itemElement = openXmlElement.GetFirstChild<DXW.HideMark>();
     if (itemElement?.Val?.Value != null)
-      return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Wordprocessing.OnOffOnlyValues, DocumentModel.Wordprocessing.OnOffOnlyKind>(itemElement.Val.Value);
+      return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Wordprocessing.OnOffOnlyValues, DMW.OnOffOnlyKind>(itemElement.Val.Value);
     return null;
   }
   
-  private static void SetHideMark(DocumentFormat.OpenXml.Wordprocessing.PreviousTableCellProperties openXmlElement, DocumentModel.Wordprocessing.OnOffOnlyKind? value)
+  private static void SetHideMark(DXW.PreviousTableCellProperties openXmlElement, DMW.OnOffOnlyKind? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.HideMark>();
+    var itemElement = openXmlElement.GetFirstChild<DXW.HideMark>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = EnumValueConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.HideMark, DocumentFormat.OpenXml.Wordprocessing.OnOffOnlyValues, DocumentModel.Wordprocessing.OnOffOnlyKind>(value);
+      itemElement = EnumValueConverter.CreateOpenXmlElement<DXW.HideMark, DocumentFormat.OpenXml.Wordprocessing.OnOffOnlyValues, DMW.OnOffOnlyKind>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static DocumentModel.Wordprocessing.TrackChangeType? GetCellInsertion(DocumentFormat.OpenXml.Wordprocessing.PreviousTableCellProperties openXmlElement)
+  private static DMW.TrackChangeType? GetCellInsertion(DXW.PreviousTableCellProperties openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.CellInsertion>();
+    var itemElement = openXmlElement?.GetFirstChild<DXW.CellInsertion>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Wordprocessing.TrackChangeTypeConverter.CreateModelElement(itemElement);
+      return DMXW.TrackChangeTypeConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetCellInsertion(DocumentFormat.OpenXml.Wordprocessing.PreviousTableCellProperties openXmlElement, DocumentModel.Wordprocessing.TrackChangeType? value)
+  private static void SetCellInsertion(DXW.PreviousTableCellProperties openXmlElement, DMW.TrackChangeType? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.CellInsertion>();
+    var itemElement = openXmlElement.GetFirstChild<DXW.CellInsertion>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Wordprocessing.TrackChangeTypeConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.CellInsertion>(value);
+      itemElement = DMXW.TrackChangeTypeConverter.CreateOpenXmlElement<DXW.CellInsertion>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static DocumentModel.Wordprocessing.TrackChangeType? GetCellDeletion(DocumentFormat.OpenXml.Wordprocessing.PreviousTableCellProperties openXmlElement)
+  private static DMW.TrackChangeType? GetCellDeletion(DXW.PreviousTableCellProperties openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.CellDeletion>();
+    var itemElement = openXmlElement?.GetFirstChild<DXW.CellDeletion>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Wordprocessing.TrackChangeTypeConverter.CreateModelElement(itemElement);
+      return DMXW.TrackChangeTypeConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetCellDeletion(DocumentFormat.OpenXml.Wordprocessing.PreviousTableCellProperties openXmlElement, DocumentModel.Wordprocessing.TrackChangeType? value)
+  private static void SetCellDeletion(DXW.PreviousTableCellProperties openXmlElement, DMW.TrackChangeType? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.CellDeletion>();
+    var itemElement = openXmlElement.GetFirstChild<DXW.CellDeletion>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Wordprocessing.TrackChangeTypeConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.CellDeletion>(value);
+      itemElement = DMXW.TrackChangeTypeConverter.CreateOpenXmlElement<DXW.CellDeletion>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static DocumentModel.Wordprocessing.CellMerge? GetCellMerge(DocumentFormat.OpenXml.Wordprocessing.PreviousTableCellProperties openXmlElement)
+  private static DMW.CellMerge? GetCellMerge(DXW.PreviousTableCellProperties openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.CellMerge>();
+    var itemElement = openXmlElement?.GetFirstChild<DXW.CellMerge>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Wordprocessing.CellMergeConverter.CreateModelElement(itemElement);
+      return DMXW.CellMergeConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetCellMerge(DocumentFormat.OpenXml.Wordprocessing.PreviousTableCellProperties openXmlElement, DocumentModel.Wordprocessing.CellMerge? value)
+  private static void SetCellMerge(DXW.PreviousTableCellProperties openXmlElement, DMW.CellMerge? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.CellMerge>();
+    var itemElement = openXmlElement.GetFirstChild<DXW.CellMerge>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Wordprocessing.CellMergeConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.CellMerge>(value);
+      itemElement = DMXW.CellMergeConverter.CreateOpenXmlElement<DXW.CellMerge>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  public static DocumentModel.Wordprocessing.PreviousTableCellProperties? CreateModelElement(DocumentFormat.OpenXml.Wordprocessing.PreviousTableCellProperties? openXmlElement)
+  public static DMW.PreviousTableCellProperties? CreateModelElement(DXW.PreviousTableCellProperties? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Wordprocessing.PreviousTableCellProperties();
+      var value = new DMW.PreviousTableCellProperties();
       value.ConditionalFormatStyle = GetConditionalFormatStyle(openXmlElement);
       value.TableCellWidth = GetTableCellWidth(openXmlElement);
       value.GridSpan = GetGridSpan(openXmlElement);
@@ -405,8 +405,8 @@ public static class PreviousTableCellPropertiesConverter
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.PreviousTableCellProperties? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Wordprocessing.PreviousTableCellProperties, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMW.PreviousTableCellProperties? value)
+    where OpenXmlElementType: DXW.PreviousTableCellProperties, new()
   {
     if (value != null)
     {

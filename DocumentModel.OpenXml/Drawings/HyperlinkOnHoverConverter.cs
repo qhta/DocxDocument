@@ -5,53 +5,53 @@ namespace DocumentModel.OpenXml.Drawings;
 /// </summary>
 public static class HyperlinkOnHoverConverter
 {
-  private static DocumentModel.Drawings.EmbeddedWavAudioFileType? GetHyperlinkSound(DocumentFormat.OpenXml.Drawing.HyperlinkOnHover openXmlElement)
+  private static DMDraws.EmbeddedWavAudioFileType? GetHyperlinkSound(DXDraw.HyperlinkOnHover openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.HyperlinkSound>();
+    var itemElement = openXmlElement?.GetFirstChild<DXDraw.HyperlinkSound>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.EmbeddedWavAudioFileTypeConverter.CreateModelElement(itemElement);
+      return DMXDraws.EmbeddedWavAudioFileTypeConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetHyperlinkSound(DocumentFormat.OpenXml.Drawing.HyperlinkOnHover openXmlElement, DocumentModel.Drawings.EmbeddedWavAudioFileType? value)
+  private static void SetHyperlinkSound(DXDraw.HyperlinkOnHover openXmlElement, DMDraws.EmbeddedWavAudioFileType? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.HyperlinkSound>();
+    var itemElement = openXmlElement.GetFirstChild<DXDraw.HyperlinkSound>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Drawings.EmbeddedWavAudioFileTypeConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.HyperlinkSound>(value);
+      itemElement = DMXDraws.EmbeddedWavAudioFileTypeConverter.CreateOpenXmlElement<DXDraw.HyperlinkSound>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static DocumentModel.Drawings.HyperlinkExtensionList? GetHyperlinkExtensionList(DocumentFormat.OpenXml.Drawing.HyperlinkOnHover openXmlElement)
+  private static DMDraws.HyperlinkExtensionList? GetHyperlinkExtensionList(DXDraw.HyperlinkOnHover openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.HyperlinkExtensionList>();
+    var itemElement = openXmlElement?.GetFirstChild<DXDraw.HyperlinkExtensionList>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.HyperlinkExtensionListConverter.CreateModelElement(itemElement);
+      return DMXDraws.HyperlinkExtensionListConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetHyperlinkExtensionList(DocumentFormat.OpenXml.Drawing.HyperlinkOnHover openXmlElement, DocumentModel.Drawings.HyperlinkExtensionList? value)
+  private static void SetHyperlinkExtensionList(DXDraw.HyperlinkOnHover openXmlElement, DMDraws.HyperlinkExtensionList? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.HyperlinkExtensionList>();
+    var itemElement = openXmlElement.GetFirstChild<DXDraw.HyperlinkExtensionList>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Drawings.HyperlinkExtensionListConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.HyperlinkExtensionList>(value);
+      itemElement = DMXDraws.HyperlinkExtensionListConverter.CreateOpenXmlElement<DXDraw.HyperlinkExtensionList>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  public static DocumentModel.Drawings.HyperlinkOnHover? CreateModelElement(DocumentFormat.OpenXml.Drawing.HyperlinkOnHover? openXmlElement)
+  public static DMDraws.HyperlinkOnHover? CreateModelElement(DXDraw.HyperlinkOnHover? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.HyperlinkOnHover();
+      var value = new DMDraws.HyperlinkOnHover();
       value.HyperlinkSound = GetHyperlinkSound(openXmlElement);
       value.HyperlinkExtensionList = GetHyperlinkExtensionList(openXmlElement);
       return value;
@@ -59,8 +59,8 @@ public static class HyperlinkOnHoverConverter
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.HyperlinkOnHover? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.HyperlinkOnHover, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDraws.HyperlinkOnHover? value)
+    where OpenXmlElementType: DXDraw.HyperlinkOnHover, new()
   {
     if (value != null)
     {

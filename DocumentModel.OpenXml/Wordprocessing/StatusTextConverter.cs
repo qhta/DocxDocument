@@ -8,25 +8,25 @@ public static class StatusTextConverter
   /// <summary>
   /// Status Text Type
   /// </summary>
-  private static DocumentModel.Wordprocessing.InfoTextKind? GetType(DocumentFormat.OpenXml.Wordprocessing.StatusText openXmlElement)
+  private static DMW.InfoTextKind? GetType(DXW.StatusText openXmlElement)
   {
-    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Wordprocessing.InfoTextValues, DocumentModel.Wordprocessing.InfoTextKind>(openXmlElement?.Type?.Value);
+    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Wordprocessing.InfoTextValues, DMW.InfoTextKind>(openXmlElement?.Type?.Value);
   }
   
-  private static void SetType(DocumentFormat.OpenXml.Wordprocessing.StatusText openXmlElement, DocumentModel.Wordprocessing.InfoTextKind? value)
+  private static void SetType(DXW.StatusText openXmlElement, DMW.InfoTextKind? value)
   {
-    openXmlElement.Type = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Wordprocessing.InfoTextValues, DocumentModel.Wordprocessing.InfoTextKind>(value);
+    openXmlElement.Type = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Wordprocessing.InfoTextValues, DMW.InfoTextKind>(value);
   }
   
   /// <summary>
   /// Status Text Value
   /// </summary>
-  private static String? GetVal(DocumentFormat.OpenXml.Wordprocessing.StatusText openXmlElement)
+  private static String? GetVal(DXW.StatusText openXmlElement)
   {
     return openXmlElement?.Val?.Value;
   }
   
-  private static void SetVal(DocumentFormat.OpenXml.Wordprocessing.StatusText openXmlElement, String? value)
+  private static void SetVal(DXW.StatusText openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.Val = new StringValue { Value = value };
@@ -34,11 +34,11 @@ public static class StatusTextConverter
       openXmlElement.Val = null;
   }
   
-  public static DocumentModel.Wordprocessing.StatusText? CreateModelElement(DocumentFormat.OpenXml.Wordprocessing.StatusText? openXmlElement)
+  public static DMW.StatusText? CreateModelElement(DXW.StatusText? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Wordprocessing.StatusText();
+      var value = new DMW.StatusText();
       value.Type = GetType(openXmlElement);
       value.Val = GetVal(openXmlElement);
       return value;
@@ -46,8 +46,8 @@ public static class StatusTextConverter
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.StatusText? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Wordprocessing.StatusText, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMW.StatusText? value)
+    where OpenXmlElementType: DXW.StatusText, new()
   {
     if (value != null)
     {

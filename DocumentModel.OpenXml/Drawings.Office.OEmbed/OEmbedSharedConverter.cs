@@ -8,12 +8,12 @@ public static class OEmbedSharedConverter
   /// <summary>
   /// srcUrl, this property is only available in Microsoft365 and later.
   /// </summary>
-  private static String? GetSrcUrl(DocumentFormat.OpenXml.Office.Drawing.Y2021.OEmbed.OEmbedShared openXmlElement)
+  private static String? GetSrcUrl(DXODrawY2021OEmb.OEmbedShared openXmlElement)
   {
     return openXmlElement?.SrcUrl?.Value;
   }
   
-  private static void SetSrcUrl(DocumentFormat.OpenXml.Office.Drawing.Y2021.OEmbed.OEmbedShared openXmlElement, String? value)
+  private static void SetSrcUrl(DXODrawY2021OEmb.OEmbedShared openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.SrcUrl = new StringValue { Value = value };
@@ -24,12 +24,12 @@ public static class OEmbedSharedConverter
   /// <summary>
   /// type, this property is only available in Microsoft365 and later.
   /// </summary>
-  private static String? GetType(DocumentFormat.OpenXml.Office.Drawing.Y2021.OEmbed.OEmbedShared openXmlElement)
+  private static String? GetType(DXODrawY2021OEmb.OEmbedShared openXmlElement)
   {
     return openXmlElement?.Type?.Value;
   }
   
-  private static void SetType(DocumentFormat.OpenXml.Office.Drawing.Y2021.OEmbed.OEmbedShared openXmlElement, String? value)
+  private static void SetType(DXODrawY2021OEmb.OEmbedShared openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.Type = new StringValue { Value = value };
@@ -40,32 +40,32 @@ public static class OEmbedSharedConverter
   /// <summary>
   /// OfficeArtExtensionList.
   /// </summary>
-  private static DocumentModel.Drawings.Office.OEmbed.OfficeArtExtensionList? GetOfficeArtExtensionList(DocumentFormat.OpenXml.Office.Drawing.Y2021.OEmbed.OEmbedShared openXmlElement)
+  private static DMDrawsOOEmb.OfficeArtExtensionList? GetOfficeArtExtensionList(DXODrawY2021OEmb.OEmbedShared openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office.Drawing.Y2021.OEmbed.OfficeArtExtensionList>();
+    var itemElement = openXmlElement?.GetFirstChild<DXODrawY2021OEmb.OfficeArtExtensionList>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.Office.OEmbed.OfficeArtExtensionListConverter.CreateModelElement(itemElement);
+      return DMXDrawsOOEmb.OfficeArtExtensionListConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetOfficeArtExtensionList(DocumentFormat.OpenXml.Office.Drawing.Y2021.OEmbed.OEmbedShared openXmlElement, DocumentModel.Drawings.Office.OEmbed.OfficeArtExtensionList? value)
+  private static void SetOfficeArtExtensionList(DXODrawY2021OEmb.OEmbedShared openXmlElement, DMDrawsOOEmb.OfficeArtExtensionList? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office.Drawing.Y2021.OEmbed.OfficeArtExtensionList>();
+    var itemElement = openXmlElement.GetFirstChild<DXODrawY2021OEmb.OfficeArtExtensionList>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Drawings.Office.OEmbed.OfficeArtExtensionListConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office.Drawing.Y2021.OEmbed.OfficeArtExtensionList>(value);
+      itemElement = DMXDrawsOOEmb.OfficeArtExtensionListConverter.CreateOpenXmlElement<DXODrawY2021OEmb.OfficeArtExtensionList>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  public static DocumentModel.Drawings.Office.OEmbed.OEmbedShared? CreateModelElement(DocumentFormat.OpenXml.Office.Drawing.Y2021.OEmbed.OEmbedShared? openXmlElement)
+  public static DMDrawsOOEmb.OEmbedShared? CreateModelElement(DXODrawY2021OEmb.OEmbedShared? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.Office.OEmbed.OEmbedShared();
+      var value = new DMDrawsOOEmb.OEmbedShared();
       value.SrcUrl = GetSrcUrl(openXmlElement);
       value.Type = GetType(openXmlElement);
       value.OfficeArtExtensionList = GetOfficeArtExtensionList(openXmlElement);
@@ -74,8 +74,8 @@ public static class OEmbedSharedConverter
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.Office.OEmbed.OEmbedShared? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Office.Drawing.Y2021.OEmbed.OEmbedShared, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDrawsOOEmb.OEmbedShared? value)
+    where OpenXmlElementType: DXODrawY2021OEmb.OEmbedShared, new()
   {
     if (value != null)
     {

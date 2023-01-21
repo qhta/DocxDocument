@@ -8,12 +8,12 @@ public static class SpacingBetweenLinesConverter
   /// <summary>
   /// Spacing Above Paragraph
   /// </summary>
-  private static String? GetBefore(DocumentFormat.OpenXml.Wordprocessing.SpacingBetweenLines openXmlElement)
+  private static String? GetBefore(DXW.SpacingBetweenLines openXmlElement)
   {
     return openXmlElement?.Before?.Value;
   }
   
-  private static void SetBefore(DocumentFormat.OpenXml.Wordprocessing.SpacingBetweenLines openXmlElement, String? value)
+  private static void SetBefore(DXW.SpacingBetweenLines openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.Before = new StringValue { Value = value };
@@ -24,12 +24,12 @@ public static class SpacingBetweenLinesConverter
   /// <summary>
   /// Spacing Above Paragraph IN Line Units
   /// </summary>
-  private static Int32? GetBeforeLines(DocumentFormat.OpenXml.Wordprocessing.SpacingBetweenLines openXmlElement)
+  private static Int32? GetBeforeLines(DXW.SpacingBetweenLines openXmlElement)
   {
     return openXmlElement.BeforeLines?.Value;
   }
   
-  private static void SetBeforeLines(DocumentFormat.OpenXml.Wordprocessing.SpacingBetweenLines openXmlElement, Int32? value)
+  private static void SetBeforeLines(DXW.SpacingBetweenLines openXmlElement, Int32? value)
   {
     openXmlElement.BeforeLines = value;
   }
@@ -37,12 +37,12 @@ public static class SpacingBetweenLinesConverter
   /// <summary>
   /// Automatically Determine Spacing Above Paragraph
   /// </summary>
-  private static Boolean? GetBeforeAutoSpacing(DocumentFormat.OpenXml.Wordprocessing.SpacingBetweenLines openXmlElement)
+  private static Boolean? GetBeforeAutoSpacing(DXW.SpacingBetweenLines openXmlElement)
   {
     return openXmlElement?.BeforeAutoSpacing?.Value;
   }
   
-  private static void SetBeforeAutoSpacing(DocumentFormat.OpenXml.Wordprocessing.SpacingBetweenLines openXmlElement, Boolean? value)
+  private static void SetBeforeAutoSpacing(DXW.SpacingBetweenLines openXmlElement, Boolean? value)
   {
     if (value != null)
       openXmlElement.BeforeAutoSpacing = new OnOffValue { Value = (Boolean)value };
@@ -53,12 +53,12 @@ public static class SpacingBetweenLinesConverter
   /// <summary>
   /// Spacing Below Paragraph
   /// </summary>
-  private static String? GetAfter(DocumentFormat.OpenXml.Wordprocessing.SpacingBetweenLines openXmlElement)
+  private static String? GetAfter(DXW.SpacingBetweenLines openXmlElement)
   {
     return openXmlElement?.After?.Value;
   }
   
-  private static void SetAfter(DocumentFormat.OpenXml.Wordprocessing.SpacingBetweenLines openXmlElement, String? value)
+  private static void SetAfter(DXW.SpacingBetweenLines openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.After = new StringValue { Value = value };
@@ -69,12 +69,12 @@ public static class SpacingBetweenLinesConverter
   /// <summary>
   /// Spacing Below Paragraph in Line Units
   /// </summary>
-  private static Int32? GetAfterLines(DocumentFormat.OpenXml.Wordprocessing.SpacingBetweenLines openXmlElement)
+  private static Int32? GetAfterLines(DXW.SpacingBetweenLines openXmlElement)
   {
     return openXmlElement.AfterLines?.Value;
   }
   
-  private static void SetAfterLines(DocumentFormat.OpenXml.Wordprocessing.SpacingBetweenLines openXmlElement, Int32? value)
+  private static void SetAfterLines(DXW.SpacingBetweenLines openXmlElement, Int32? value)
   {
     openXmlElement.AfterLines = value;
   }
@@ -82,12 +82,12 @@ public static class SpacingBetweenLinesConverter
   /// <summary>
   /// Automatically Determine Spacing Below Paragraph
   /// </summary>
-  private static Boolean? GetAfterAutoSpacing(DocumentFormat.OpenXml.Wordprocessing.SpacingBetweenLines openXmlElement)
+  private static Boolean? GetAfterAutoSpacing(DXW.SpacingBetweenLines openXmlElement)
   {
     return openXmlElement?.AfterAutoSpacing?.Value;
   }
   
-  private static void SetAfterAutoSpacing(DocumentFormat.OpenXml.Wordprocessing.SpacingBetweenLines openXmlElement, Boolean? value)
+  private static void SetAfterAutoSpacing(DXW.SpacingBetweenLines openXmlElement, Boolean? value)
   {
     if (value != null)
       openXmlElement.AfterAutoSpacing = new OnOffValue { Value = (Boolean)value };
@@ -98,12 +98,12 @@ public static class SpacingBetweenLinesConverter
   /// <summary>
   /// Spacing Between Lines in Paragraph
   /// </summary>
-  private static String? GetLine(DocumentFormat.OpenXml.Wordprocessing.SpacingBetweenLines openXmlElement)
+  private static String? GetLine(DXW.SpacingBetweenLines openXmlElement)
   {
     return openXmlElement?.Line?.Value;
   }
   
-  private static void SetLine(DocumentFormat.OpenXml.Wordprocessing.SpacingBetweenLines openXmlElement, String? value)
+  private static void SetLine(DXW.SpacingBetweenLines openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.Line = new StringValue { Value = value };
@@ -114,21 +114,21 @@ public static class SpacingBetweenLinesConverter
   /// <summary>
   /// Type of Spacing Between Lines
   /// </summary>
-  private static DocumentModel.Wordprocessing.LineSpacingRuleKind? GetLineRule(DocumentFormat.OpenXml.Wordprocessing.SpacingBetweenLines openXmlElement)
+  private static DMW.LineSpacingRuleKind? GetLineRule(DXW.SpacingBetweenLines openXmlElement)
   {
-    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Wordprocessing.LineSpacingRuleValues, DocumentModel.Wordprocessing.LineSpacingRuleKind>(openXmlElement?.LineRule?.Value);
+    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Wordprocessing.LineSpacingRuleValues, DMW.LineSpacingRuleKind>(openXmlElement?.LineRule?.Value);
   }
   
-  private static void SetLineRule(DocumentFormat.OpenXml.Wordprocessing.SpacingBetweenLines openXmlElement, DocumentModel.Wordprocessing.LineSpacingRuleKind? value)
+  private static void SetLineRule(DXW.SpacingBetweenLines openXmlElement, DMW.LineSpacingRuleKind? value)
   {
-    openXmlElement.LineRule = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Wordprocessing.LineSpacingRuleValues, DocumentModel.Wordprocessing.LineSpacingRuleKind>(value);
+    openXmlElement.LineRule = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Wordprocessing.LineSpacingRuleValues, DMW.LineSpacingRuleKind>(value);
   }
   
-  public static DocumentModel.Wordprocessing.SpacingBetweenLines? CreateModelElement(DocumentFormat.OpenXml.Wordprocessing.SpacingBetweenLines? openXmlElement)
+  public static DMW.SpacingBetweenLines? CreateModelElement(DXW.SpacingBetweenLines? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Wordprocessing.SpacingBetweenLines();
+      var value = new DMW.SpacingBetweenLines();
       value.Before = GetBefore(openXmlElement);
       value.BeforeLines = GetBeforeLines(openXmlElement);
       value.BeforeAutoSpacing = GetBeforeAutoSpacing(openXmlElement);
@@ -142,8 +142,8 @@ public static class SpacingBetweenLinesConverter
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.SpacingBetweenLines? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Wordprocessing.SpacingBetweenLines, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMW.SpacingBetweenLines? value)
+    where OpenXmlElementType: DXW.SpacingBetweenLines, new()
   {
     if (value != null)
     {

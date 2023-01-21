@@ -5,45 +5,45 @@ namespace DocumentModel.OpenXml.UI;
 /// </summary>
 public static class RepurposedCommandsConverter
 {
-  private static System.Collections.ObjectModel.Collection<DocumentModel.UI.RepurposedCommand> GetItems(DocumentFormat.OpenXml.Office.CustomUI.RepurposedCommands openXmlElement)
+  private static Collection<DMUI.RepurposedCommand> GetItems(DXOCustUI.RepurposedCommands openXmlElement)
   {
-    var collection = new System.Collections.ObjectModel.Collection<DocumentModel.UI.RepurposedCommand>();
-    foreach (var item in openXmlElement.Elements<DocumentFormat.OpenXml.Office.CustomUI.RepurposedCommand>())
+    var collection = new Collection<DMUI.RepurposedCommand>();
+    foreach (var item in openXmlElement.Elements<DXOCustUI.RepurposedCommand>())
     {
-      var newItem = DocumentModel.OpenXml.UI.RepurposedCommandConverter.CreateModelElement(item);
+      var newItem = DMXUI.RepurposedCommandConverter.CreateModelElement(item);
       if (newItem != null)
         collection.Add(newItem);
     }
     return collection;
   }
   
-  private static void SetItems(DocumentFormat.OpenXml.Office.CustomUI.RepurposedCommands openXmlElement, System.Collections.ObjectModel.Collection<DocumentModel.UI.RepurposedCommand>? value)
+  private static void SetItems(DXOCustUI.RepurposedCommands openXmlElement, Collection<DMUI.RepurposedCommand>? value)
   {
-    openXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Office.CustomUI.RepurposedCommand>();
+    openXmlElement.RemoveAllChildren<DXOCustUI.RepurposedCommand>();
     if (value != null)
     {
       foreach (var item in value)
       {
-        var newItem = DocumentModel.OpenXml.UI.RepurposedCommandConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office.CustomUI.RepurposedCommand>(item);
+        var newItem = DMXUI.RepurposedCommandConverter.CreateOpenXmlElement<DXOCustUI.RepurposedCommand>(item);
         if (newItem != null)
           openXmlElement.AddChild(newItem);
       }
     }
   }
   
-  public static DocumentModel.UI.RepurposedCommands? CreateModelElement(DocumentFormat.OpenXml.Office.CustomUI.RepurposedCommands? openXmlElement)
+  public static DMUI.RepurposedCommands? CreateModelElement(DXOCustUI.RepurposedCommands? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.UI.RepurposedCommands();
+      var value = new DMUI.RepurposedCommands();
       value.Items = GetItems(openXmlElement);
       return value;
     }
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.UI.RepurposedCommands? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Office.CustomUI.RepurposedCommands, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMUI.RepurposedCommands? value)
+    where OpenXmlElementType: DXOCustUI.RepurposedCommands, new()
   {
     if (value != null)
     {

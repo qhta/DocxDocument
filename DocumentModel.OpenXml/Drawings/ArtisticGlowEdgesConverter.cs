@@ -8,12 +8,12 @@ public static class ArtisticGlowEdgesConverter
   /// <summary>
   /// trans, this property is only available in Office 2010 and later.
   /// </summary>
-  private static Int32? GetTransparancy(DocumentFormat.OpenXml.Office2010.Drawing.ArtisticGlowEdges openXmlElement)
+  private static Int32? GetTransparancy(DXO2010Draw.ArtisticGlowEdges openXmlElement)
   {
     return openXmlElement.Transparancy?.Value;
   }
   
-  private static void SetTransparancy(DocumentFormat.OpenXml.Office2010.Drawing.ArtisticGlowEdges openXmlElement, Int32? value)
+  private static void SetTransparancy(DXO2010Draw.ArtisticGlowEdges openXmlElement, Int32? value)
   {
     openXmlElement.Transparancy = value;
   }
@@ -21,21 +21,21 @@ public static class ArtisticGlowEdgesConverter
   /// <summary>
   /// smoothness, this property is only available in Office 2010 and later.
   /// </summary>
-  private static Int32? GetSmoothness(DocumentFormat.OpenXml.Office2010.Drawing.ArtisticGlowEdges openXmlElement)
+  private static Int32? GetSmoothness(DXO2010Draw.ArtisticGlowEdges openXmlElement)
   {
     return openXmlElement.Smoothness?.Value;
   }
   
-  private static void SetSmoothness(DocumentFormat.OpenXml.Office2010.Drawing.ArtisticGlowEdges openXmlElement, Int32? value)
+  private static void SetSmoothness(DXO2010Draw.ArtisticGlowEdges openXmlElement, Int32? value)
   {
     openXmlElement.Smoothness = value;
   }
   
-  public static DocumentModel.Drawings.ArtisticGlowEdges? CreateModelElement(DocumentFormat.OpenXml.Office2010.Drawing.ArtisticGlowEdges? openXmlElement)
+  public static DMDraws.ArtisticGlowEdges? CreateModelElement(DXO2010Draw.ArtisticGlowEdges? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.ArtisticGlowEdges();
+      var value = new DMDraws.ArtisticGlowEdges();
       value.Transparancy = GetTransparancy(openXmlElement);
       value.Smoothness = GetSmoothness(openXmlElement);
       return value;
@@ -43,8 +43,8 @@ public static class ArtisticGlowEdgesConverter
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.ArtisticGlowEdges? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Office2010.Drawing.ArtisticGlowEdges, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDraws.ArtisticGlowEdges? value)
+    where OpenXmlElementType: DXO2010Draw.ArtisticGlowEdges, new()
   {
     if (value != null)
     {

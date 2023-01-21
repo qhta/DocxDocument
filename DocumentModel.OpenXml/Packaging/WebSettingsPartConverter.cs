@@ -5,12 +5,12 @@ namespace DocumentModel.OpenXml.Packaging;
 /// </summary>
 public static class WebSettingsPartConverter
 {
-  private static String? GetContentType(DocumentFormat.OpenXml.Packaging.WebSettingsPart openXmlElement)
+  private static String? GetContentType(DXPack.WebSettingsPart openXmlElement)
   {
     return openXmlElement?.ContentType;
   }
   
-  private static String? GetRelationshipType(DocumentFormat.OpenXml.Packaging.WebSettingsPart openXmlElement)
+  private static String? GetRelationshipType(DXPack.WebSettingsPart openXmlElement)
   {
     return openXmlElement?.RelationshipType;
   }
@@ -18,28 +18,28 @@ public static class WebSettingsPartConverter
   /// <summary>
   /// Gets or sets the root element of this part.
   /// </summary>
-  private static DocumentModel.Wordprocessing.WebSettings? GetWebSettings(DocumentFormat.OpenXml.Packaging.WebSettingsPart openXmlElement)
+  private static DMW.WebSettings? GetWebSettings(DXPack.WebSettingsPart openXmlElement)
   {
-    if (openXmlElement?.RootElement is DocumentFormat.OpenXml.Wordprocessing.WebSettings rootElement)
-      return DocumentModel.OpenXml.Wordprocessing.WebSettingsConverter.CreateModelElement(rootElement);
+    if (openXmlElement?.RootElement is DXW.WebSettings rootElement)
+      return DMXW.WebSettingsConverter.CreateModelElement(rootElement);
     return null;
   }
   
-  private static void SetWebSettings(DocumentFormat.OpenXml.Packaging.WebSettingsPart openXmlElement, DocumentModel.Wordprocessing.WebSettings? value)
+  private static void SetWebSettings(DXPack.WebSettingsPart openXmlElement, DMW.WebSettings? value)
   {
     if (value != null)
     {
-       var rootElement = DocumentModel.OpenXml.Wordprocessing.WebSettingsConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.WebSettings>(value);
+       var rootElement = DMXW.WebSettingsConverter.CreateOpenXmlElement<DXW.WebSettings>(value);
        if (rootElement != null)
          openXmlElement.WebSettings = rootElement;
     }
   }
   
-  public static DocumentModel.Packaging.WebSettingsPart? CreateModelElement(DocumentFormat.OpenXml.Packaging.WebSettingsPart? openXmlElement)
+  public static DMPack.WebSettingsPart? CreateModelElement(DXPack.WebSettingsPart? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Packaging.WebSettingsPart();
+      var value = new DMPack.WebSettingsPart();
       value.ContentType = GetContentType(openXmlElement);
       value.RelationshipType = GetRelationshipType(openXmlElement);
       value.WebSettings = GetWebSettings(openXmlElement);
@@ -48,8 +48,8 @@ public static class WebSettingsPartConverter
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Packaging.WebSettingsPart? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Packaging.WebSettingsPart, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMPack.WebSettingsPart? value)
+    where OpenXmlElementType: DXPack.WebSettingsPart, new()
   {
     if (value != null)
     {

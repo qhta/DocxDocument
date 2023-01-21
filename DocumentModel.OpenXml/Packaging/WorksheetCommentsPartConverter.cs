@@ -5,21 +5,21 @@ namespace DocumentModel.OpenXml.Packaging;
 /// </summary>
 public static class WorksheetCommentsPartConverter
 {
-  private static String? GetContentType(DocumentFormat.OpenXml.Packaging.WorksheetCommentsPart openXmlElement)
+  private static String? GetContentType(DXPack.WorksheetCommentsPart openXmlElement)
   {
     return openXmlElement?.ContentType;
   }
   
-  private static String? GetRelationshipType(DocumentFormat.OpenXml.Packaging.WorksheetCommentsPart openXmlElement)
+  private static String? GetRelationshipType(DXPack.WorksheetCommentsPart openXmlElement)
   {
     return openXmlElement?.RelationshipType;
   }
   
-  public static DocumentModel.Packaging.WorksheetCommentsPart? CreateModelElement(DocumentFormat.OpenXml.Packaging.WorksheetCommentsPart? openXmlElement)
+  public static DMPack.WorksheetCommentsPart? CreateModelElement(DXPack.WorksheetCommentsPart? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Packaging.WorksheetCommentsPart();
+      var value = new DMPack.WorksheetCommentsPart();
       value.ContentType = GetContentType(openXmlElement);
       value.RelationshipType = GetRelationshipType(openXmlElement);
       return value;
@@ -27,8 +27,8 @@ public static class WorksheetCommentsPartConverter
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Packaging.WorksheetCommentsPart? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Packaging.WorksheetCommentsPart, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMPack.WorksheetCommentsPart? value)
+    where OpenXmlElementType: DXPack.WorksheetCommentsPart, new()
   {
     if (value != null)
     {

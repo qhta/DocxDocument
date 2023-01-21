@@ -8,12 +8,12 @@ public static class BlipExtensionConverter
   /// <summary>
   /// URI
   /// </summary>
-  private static String? GetUri(DocumentFormat.OpenXml.Drawing.BlipExtension openXmlElement)
+  private static String? GetUri(DXDraw.BlipExtension openXmlElement)
   {
     return openXmlElement?.Uri?.Value;
   }
   
-  private static void SetUri(DocumentFormat.OpenXml.Drawing.BlipExtension openXmlElement, String? value)
+  private static void SetUri(DXDraw.BlipExtension openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.Uri = new StringValue { Value = value };
@@ -21,158 +21,158 @@ public static class BlipExtensionConverter
       openXmlElement.Uri = null;
   }
   
-  private static DocumentModel.Drawings.ImageProperties? GetImageProperties(DocumentFormat.OpenXml.Drawing.BlipExtension openXmlElement)
+  private static DMDraws.ImageProperties? GetImageProperties(DXDraw.BlipExtension openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office2010.Drawing.ImageProperties>();
+    var itemElement = openXmlElement?.GetFirstChild<DXO2010Draw.ImageProperties>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.ImagePropertiesConverter.CreateModelElement(itemElement);
+      return DMXDraws.ImagePropertiesConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetImageProperties(DocumentFormat.OpenXml.Drawing.BlipExtension openXmlElement, DocumentModel.Drawings.ImageProperties? value)
+  private static void SetImageProperties(DXDraw.BlipExtension openXmlElement, DMDraws.ImageProperties? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2010.Drawing.ImageProperties>();
+    var itemElement = openXmlElement.GetFirstChild<DXO2010Draw.ImageProperties>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Drawings.ImagePropertiesConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2010.Drawing.ImageProperties>(value);
+      itemElement = DMXDraws.ImagePropertiesConverter.CreateOpenXmlElement<DXO2010Draw.ImageProperties>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static Boolean? GetUseLocalDpi(DocumentFormat.OpenXml.Drawing.BlipExtension openXmlElement)
+  private static Boolean? GetUseLocalDpi(DXDraw.BlipExtension openXmlElement)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2010.Drawing.UseLocalDpi>();
+    var itemElement = openXmlElement.GetFirstChild<DXO2010Draw.UseLocalDpi>();
     return itemElement != null;
   }
   
-  private static void SetUseLocalDpi(DocumentFormat.OpenXml.Drawing.BlipExtension openXmlElement, Boolean? value)
+  private static void SetUseLocalDpi(DXDraw.BlipExtension openXmlElement, Boolean? value)
   {
     if (value == false)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2010.Drawing.UseLocalDpi>();
+      var itemElement = openXmlElement.GetFirstChild<DXO2010Draw.UseLocalDpi>();
       if (itemElement != null)
         itemElement.Remove();
     }
     if (value == true)
     {
-      var itemElement = new DocumentFormat.OpenXml.Office2010.Drawing.UseLocalDpi();
+      var itemElement = new DXO2010Draw.UseLocalDpi();
       openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static DocumentModel.Drawings.Wordprocessing.WebVideoProperty? GetWebVideoProperty(DocumentFormat.OpenXml.Drawing.BlipExtension openXmlElement)
+  private static DMDrawsW.WebVideoProperty? GetWebVideoProperty(DXDraw.BlipExtension openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office2013.Word.Drawing.WebVideoProperty>();
+    var itemElement = openXmlElement?.GetFirstChild<DXO2013WDraw.WebVideoProperty>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.Wordprocessing.WebVideoPropertyConverter.CreateModelElement(itemElement);
+      return DMXDrawsW.WebVideoPropertyConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetWebVideoProperty(DocumentFormat.OpenXml.Drawing.BlipExtension openXmlElement, DocumentModel.Drawings.Wordprocessing.WebVideoProperty? value)
+  private static void SetWebVideoProperty(DXDraw.BlipExtension openXmlElement, DMDrawsW.WebVideoProperty? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2013.Word.Drawing.WebVideoProperty>();
+    var itemElement = openXmlElement.GetFirstChild<DXO2013WDraw.WebVideoProperty>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Drawings.Wordprocessing.WebVideoPropertyConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2013.Word.Drawing.WebVideoProperty>(value);
+      itemElement = DMXDrawsW.WebVideoPropertyConverter.CreateOpenXmlElement<DXO2013WDraw.WebVideoProperty>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static DocumentModel.Drawings.SVG.SVGBlip? GetSVGBlip(DocumentFormat.OpenXml.Drawing.BlipExtension openXmlElement)
+  private static DMDrawsSVG.SVGBlip? GetSVGBlip(DXDraw.BlipExtension openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office2019.Drawing.SVG.SVGBlip>();
+    var itemElement = openXmlElement?.GetFirstChild<DXO2019DrawSVG.SVGBlip>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.SVG.SVGBlipConverter.CreateModelElement(itemElement);
+      return DMXDrawsSVG.SVGBlipConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetSVGBlip(DocumentFormat.OpenXml.Drawing.BlipExtension openXmlElement, DocumentModel.Drawings.SVG.SVGBlip? value)
+  private static void SetSVGBlip(DXDraw.BlipExtension openXmlElement, DMDrawsSVG.SVGBlip? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2019.Drawing.SVG.SVGBlip>();
+    var itemElement = openXmlElement.GetFirstChild<DXO2019DrawSVG.SVGBlip>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Drawings.SVG.SVGBlipConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2019.Drawing.SVG.SVGBlip>(value);
+      itemElement = DMXDrawsSVG.SVGBlipConverter.CreateOpenXmlElement<DXO2019DrawSVG.SVGBlip>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static DocumentModel.Drawings.PictureAttributionSourceURL? GetPictureAttributionSourceURL(DocumentFormat.OpenXml.Drawing.BlipExtension openXmlElement)
+  private static DMDraws.PictureAttributionSourceURL? GetPictureAttributionSourceURL(DXDraw.BlipExtension openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office2019.Drawing.PictureAttributionSourceURL>();
+    var itemElement = openXmlElement?.GetFirstChild<DXO2019Draw.PictureAttributionSourceURL>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.PictureAttributionSourceURLConverter.CreateModelElement(itemElement);
+      return DMXDraws.PictureAttributionSourceURLConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetPictureAttributionSourceURL(DocumentFormat.OpenXml.Drawing.BlipExtension openXmlElement, DocumentModel.Drawings.PictureAttributionSourceURL? value)
+  private static void SetPictureAttributionSourceURL(DXDraw.BlipExtension openXmlElement, DMDraws.PictureAttributionSourceURL? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2019.Drawing.PictureAttributionSourceURL>();
+    var itemElement = openXmlElement.GetFirstChild<DXO2019Draw.PictureAttributionSourceURL>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Drawings.PictureAttributionSourceURLConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2019.Drawing.PictureAttributionSourceURL>(value);
+      itemElement = DMXDraws.PictureAttributionSourceURLConverter.CreateOpenXmlElement<DXO2019Draw.PictureAttributionSourceURL>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static DocumentModel.Wordprocessing.OEmbed.OEmbed? GetOEmbed(DocumentFormat.OpenXml.Drawing.BlipExtension openXmlElement)
+  private static DMWOEmb.OEmbed? GetOEmbed(DXDraw.BlipExtension openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office.Word.Y2020.OEmbed.OEmbed>();
+    var itemElement = openXmlElement?.GetFirstChild<DXOWY2020OEmb.OEmbed>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Wordprocessing.OEmbed.OEmbedConverter.CreateModelElement(itemElement);
+      return DMXWOEmb.OEmbedConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetOEmbed(DocumentFormat.OpenXml.Drawing.BlipExtension openXmlElement, DocumentModel.Wordprocessing.OEmbed.OEmbed? value)
+  private static void SetOEmbed(DXDraw.BlipExtension openXmlElement, DMWOEmb.OEmbed? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office.Word.Y2020.OEmbed.OEmbed>();
+    var itemElement = openXmlElement.GetFirstChild<DXOWY2020OEmb.OEmbed>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Wordprocessing.OEmbed.OEmbedConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office.Word.Y2020.OEmbed.OEmbed>(value);
+      itemElement = DMXWOEmb.OEmbedConverter.CreateOpenXmlElement<DXOWY2020OEmb.OEmbed>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static DocumentModel.Drawings.Office.OEmbed.OEmbedShared? GetOEmbedShared(DocumentFormat.OpenXml.Drawing.BlipExtension openXmlElement)
+  private static DMDrawsOOEmb.OEmbedShared? GetOEmbedShared(DXDraw.BlipExtension openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office.Drawing.Y2021.OEmbed.OEmbedShared>();
+    var itemElement = openXmlElement?.GetFirstChild<DXODrawY2021OEmb.OEmbedShared>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.Office.OEmbed.OEmbedSharedConverter.CreateModelElement(itemElement);
+      return DMXDrawsOOEmb.OEmbedSharedConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetOEmbedShared(DocumentFormat.OpenXml.Drawing.BlipExtension openXmlElement, DocumentModel.Drawings.Office.OEmbed.OEmbedShared? value)
+  private static void SetOEmbedShared(DXDraw.BlipExtension openXmlElement, DMDrawsOOEmb.OEmbedShared? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office.Drawing.Y2021.OEmbed.OEmbedShared>();
+    var itemElement = openXmlElement.GetFirstChild<DXODrawY2021OEmb.OEmbedShared>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Drawings.Office.OEmbed.OEmbedSharedConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office.Drawing.Y2021.OEmbed.OEmbedShared>(value);
+      itemElement = DMXDrawsOOEmb.OEmbedSharedConverter.CreateOpenXmlElement<DXODrawY2021OEmb.OEmbedShared>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  public static DocumentModel.Drawings.BlipExtension? CreateModelElement(DocumentFormat.OpenXml.Drawing.BlipExtension? openXmlElement)
+  public static DMDraws.BlipExtension? CreateModelElement(DXDraw.BlipExtension? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.BlipExtension();
+      var value = new DMDraws.BlipExtension();
       value.Uri = GetUri(openXmlElement);
       value.ImageProperties = GetImageProperties(openXmlElement);
       value.UseLocalDpi = GetUseLocalDpi(openXmlElement);
@@ -186,8 +186,8 @@ public static class BlipExtensionConverter
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.BlipExtension? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.BlipExtension, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDraws.BlipExtension? value)
+    where OpenXmlElementType: DXDraw.BlipExtension, new()
   {
     if (value != null)
     {

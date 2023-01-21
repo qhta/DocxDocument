@@ -8,40 +8,40 @@ public static class FilteredAreaSeriesConverter
   /// <summary>
   /// AreaChartSeries.
   /// </summary>
-  private static DocumentModel.Drawings.Charts.AreaChartSeries3? GetAreaChartSeries(DocumentFormat.OpenXml.Office2013.Drawing.Chart.FilteredAreaSeries openXmlElement)
+  private static DMDrawsCharts.AreaChartSeries3? GetAreaChartSeries(DXO2013DrawChart.FilteredAreaSeries openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office2013.Drawing.Chart.AreaChartSeries>();
+    var itemElement = openXmlElement?.GetFirstChild<DXO2013DrawChart.AreaChartSeries>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.Charts.AreaChartSeries3Converter.CreateModelElement(itemElement);
+      return DMXDrawsCharts.AreaChartSeries3Converter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetAreaChartSeries(DocumentFormat.OpenXml.Office2013.Drawing.Chart.FilteredAreaSeries openXmlElement, DocumentModel.Drawings.Charts.AreaChartSeries3? value)
+  private static void SetAreaChartSeries(DXO2013DrawChart.FilteredAreaSeries openXmlElement, DMDrawsCharts.AreaChartSeries3? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2013.Drawing.Chart.AreaChartSeries>();
+    var itemElement = openXmlElement.GetFirstChild<DXO2013DrawChart.AreaChartSeries>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Drawings.Charts.AreaChartSeries3Converter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2013.Drawing.Chart.AreaChartSeries>(value);
+      itemElement = DMXDrawsCharts.AreaChartSeries3Converter.CreateOpenXmlElement<DXO2013DrawChart.AreaChartSeries>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  public static DocumentModel.Drawings.Charts.FilteredAreaSeries? CreateModelElement(DocumentFormat.OpenXml.Office2013.Drawing.Chart.FilteredAreaSeries? openXmlElement)
+  public static DMDrawsCharts.FilteredAreaSeries? CreateModelElement(DXO2013DrawChart.FilteredAreaSeries? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.Charts.FilteredAreaSeries();
+      var value = new DMDrawsCharts.FilteredAreaSeries();
       value.AreaChartSeries = GetAreaChartSeries(openXmlElement);
       return value;
     }
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.Charts.FilteredAreaSeries? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Office2013.Drawing.Chart.FilteredAreaSeries, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDrawsCharts.FilteredAreaSeries? value)
+    where OpenXmlElementType: DXO2013DrawChart.FilteredAreaSeries, new()
   {
     if (value != null)
     {

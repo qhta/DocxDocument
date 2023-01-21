@@ -8,12 +8,12 @@ public static class ArtisticMarkerConverter
   /// <summary>
   /// trans, this property is only available in Office 2010 and later.
   /// </summary>
-  private static Int32? GetTransparancy(DocumentFormat.OpenXml.Office2010.Drawing.ArtisticMarker openXmlElement)
+  private static Int32? GetTransparancy(DXO2010Draw.ArtisticMarker openXmlElement)
   {
     return openXmlElement.Transparancy?.Value;
   }
   
-  private static void SetTransparancy(DocumentFormat.OpenXml.Office2010.Drawing.ArtisticMarker openXmlElement, Int32? value)
+  private static void SetTransparancy(DXO2010Draw.ArtisticMarker openXmlElement, Int32? value)
   {
     openXmlElement.Transparancy = value;
   }
@@ -21,21 +21,21 @@ public static class ArtisticMarkerConverter
   /// <summary>
   /// size, this property is only available in Office 2010 and later.
   /// </summary>
-  private static Int32? GetSize(DocumentFormat.OpenXml.Office2010.Drawing.ArtisticMarker openXmlElement)
+  private static Int32? GetSize(DXO2010Draw.ArtisticMarker openXmlElement)
   {
     return openXmlElement.Size?.Value;
   }
   
-  private static void SetSize(DocumentFormat.OpenXml.Office2010.Drawing.ArtisticMarker openXmlElement, Int32? value)
+  private static void SetSize(DXO2010Draw.ArtisticMarker openXmlElement, Int32? value)
   {
     openXmlElement.Size = value;
   }
   
-  public static DocumentModel.Drawings.ArtisticMarker? CreateModelElement(DocumentFormat.OpenXml.Office2010.Drawing.ArtisticMarker? openXmlElement)
+  public static DMDraws.ArtisticMarker? CreateModelElement(DXO2010Draw.ArtisticMarker? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.ArtisticMarker();
+      var value = new DMDraws.ArtisticMarker();
       value.Transparancy = GetTransparancy(openXmlElement);
       value.Size = GetSize(openXmlElement);
       return value;
@@ -43,8 +43,8 @@ public static class ArtisticMarkerConverter
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.ArtisticMarker? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Office2010.Drawing.ArtisticMarker, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDraws.ArtisticMarker? value)
+    where OpenXmlElementType: DXO2010Draw.ArtisticMarker, new()
   {
     if (value != null)
     {

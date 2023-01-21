@@ -8,22 +8,22 @@ public static class TableStyleConditionalFormattingTablePropertiesConverter
   /// <summary>
   /// TableJustification.
   /// </summary>
-  private static DocumentModel.Wordprocessing.TableRowAlignmentKind? GetTableJustification(DocumentFormat.OpenXml.Wordprocessing.TableStyleConditionalFormattingTableProperties openXmlElement)
+  private static DMW.TableRowAlignmentKind? GetTableJustification(DXW.TableStyleConditionalFormattingTableProperties openXmlElement)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.TableJustification>();
+    var itemElement = openXmlElement.GetFirstChild<DXW.TableJustification>();
     if (itemElement?.Val?.Value != null)
-      return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Wordprocessing.TableRowAlignmentValues, DocumentModel.Wordprocessing.TableRowAlignmentKind>(itemElement.Val.Value);
+      return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Wordprocessing.TableRowAlignmentValues, DMW.TableRowAlignmentKind>(itemElement.Val.Value);
     return null;
   }
   
-  private static void SetTableJustification(DocumentFormat.OpenXml.Wordprocessing.TableStyleConditionalFormattingTableProperties openXmlElement, DocumentModel.Wordprocessing.TableRowAlignmentKind? value)
+  private static void SetTableJustification(DXW.TableStyleConditionalFormattingTableProperties openXmlElement, DMW.TableRowAlignmentKind? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.TableJustification>();
+    var itemElement = openXmlElement.GetFirstChild<DXW.TableJustification>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = EnumValueConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.TableJustification, DocumentFormat.OpenXml.Wordprocessing.TableRowAlignmentValues, DocumentModel.Wordprocessing.TableRowAlignmentKind>(value);
+      itemElement = EnumValueConverter.CreateOpenXmlElement<DXW.TableJustification, DocumentFormat.OpenXml.Wordprocessing.TableRowAlignmentValues, DMW.TableRowAlignmentKind>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
@@ -32,22 +32,22 @@ public static class TableStyleConditionalFormattingTablePropertiesConverter
   /// <summary>
   /// TableCellSpacing.
   /// </summary>
-  private static DocumentModel.Wordprocessing.TableWidthType? GetTableCellSpacing(DocumentFormat.OpenXml.Wordprocessing.TableStyleConditionalFormattingTableProperties openXmlElement)
+  private static DMW.TableWidthType? GetTableCellSpacing(DXW.TableStyleConditionalFormattingTableProperties openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.TableCellSpacing>();
+    var itemElement = openXmlElement?.GetFirstChild<DXW.TableCellSpacing>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Wordprocessing.TableWidthTypeConverter.CreateModelElement(itemElement);
+      return DMXW.TableWidthTypeConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetTableCellSpacing(DocumentFormat.OpenXml.Wordprocessing.TableStyleConditionalFormattingTableProperties openXmlElement, DocumentModel.Wordprocessing.TableWidthType? value)
+  private static void SetTableCellSpacing(DXW.TableStyleConditionalFormattingTableProperties openXmlElement, DMW.TableWidthType? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.TableCellSpacing>();
+    var itemElement = openXmlElement.GetFirstChild<DXW.TableCellSpacing>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Wordprocessing.TableWidthTypeConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.TableCellSpacing>(value);
+      itemElement = DMXW.TableWidthTypeConverter.CreateOpenXmlElement<DXW.TableCellSpacing>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
@@ -56,22 +56,22 @@ public static class TableStyleConditionalFormattingTablePropertiesConverter
   /// <summary>
   /// TableIndentation.
   /// </summary>
-  private static DocumentModel.Wordprocessing.TableIndentation? GetTableIndentation(DocumentFormat.OpenXml.Wordprocessing.TableStyleConditionalFormattingTableProperties openXmlElement)
+  private static DMW.TableIndentation? GetTableIndentation(DXW.TableStyleConditionalFormattingTableProperties openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.TableIndentation>();
+    var itemElement = openXmlElement?.GetFirstChild<DXW.TableIndentation>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Wordprocessing.TableIndentationConverter.CreateModelElement(itemElement);
+      return DMXW.TableIndentationConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetTableIndentation(DocumentFormat.OpenXml.Wordprocessing.TableStyleConditionalFormattingTableProperties openXmlElement, DocumentModel.Wordprocessing.TableIndentation? value)
+  private static void SetTableIndentation(DXW.TableStyleConditionalFormattingTableProperties openXmlElement, DMW.TableIndentation? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.TableIndentation>();
+    var itemElement = openXmlElement.GetFirstChild<DXW.TableIndentation>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Wordprocessing.TableIndentationConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.TableIndentation>(value);
+      itemElement = DMXW.TableIndentationConverter.CreateOpenXmlElement<DXW.TableIndentation>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
@@ -80,22 +80,22 @@ public static class TableStyleConditionalFormattingTablePropertiesConverter
   /// <summary>
   /// TableBorders.
   /// </summary>
-  private static DocumentModel.Wordprocessing.TableBorders? GetTableBorders(DocumentFormat.OpenXml.Wordprocessing.TableStyleConditionalFormattingTableProperties openXmlElement)
+  private static DMW.TableBorders? GetTableBorders(DXW.TableStyleConditionalFormattingTableProperties openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.TableBorders>();
+    var itemElement = openXmlElement?.GetFirstChild<DXW.TableBorders>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Wordprocessing.TableBordersConverter.CreateModelElement(itemElement);
+      return DMXW.TableBordersConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetTableBorders(DocumentFormat.OpenXml.Wordprocessing.TableStyleConditionalFormattingTableProperties openXmlElement, DocumentModel.Wordprocessing.TableBorders? value)
+  private static void SetTableBorders(DXW.TableStyleConditionalFormattingTableProperties openXmlElement, DMW.TableBorders? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.TableBorders>();
+    var itemElement = openXmlElement.GetFirstChild<DXW.TableBorders>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Wordprocessing.TableBordersConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.TableBorders>(value);
+      itemElement = DMXW.TableBordersConverter.CreateOpenXmlElement<DXW.TableBorders>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
@@ -104,22 +104,22 @@ public static class TableStyleConditionalFormattingTablePropertiesConverter
   /// <summary>
   /// Shading.
   /// </summary>
-  private static DocumentModel.Wordprocessing.Shading? GetShading(DocumentFormat.OpenXml.Wordprocessing.TableStyleConditionalFormattingTableProperties openXmlElement)
+  private static DMW.Shading? GetShading(DXW.TableStyleConditionalFormattingTableProperties openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.Shading>();
+    var itemElement = openXmlElement?.GetFirstChild<DXW.Shading>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Wordprocessing.ShadingConverter.CreateModelElement(itemElement);
+      return DMXW.ShadingConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetShading(DocumentFormat.OpenXml.Wordprocessing.TableStyleConditionalFormattingTableProperties openXmlElement, DocumentModel.Wordprocessing.Shading? value)
+  private static void SetShading(DXW.TableStyleConditionalFormattingTableProperties openXmlElement, DMW.Shading? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.Shading>();
+    var itemElement = openXmlElement.GetFirstChild<DXW.Shading>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Wordprocessing.ShadingConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.Shading>(value);
+      itemElement = DMXW.ShadingConverter.CreateOpenXmlElement<DXW.Shading>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
@@ -128,32 +128,32 @@ public static class TableStyleConditionalFormattingTablePropertiesConverter
   /// <summary>
   /// TableCellMarginDefault.
   /// </summary>
-  private static DocumentModel.Wordprocessing.TableCellMarginDefault? GetTableCellMarginDefault(DocumentFormat.OpenXml.Wordprocessing.TableStyleConditionalFormattingTableProperties openXmlElement)
+  private static DMW.TableCellMarginDefault? GetTableCellMarginDefault(DXW.TableStyleConditionalFormattingTableProperties openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.TableCellMarginDefault>();
+    var itemElement = openXmlElement?.GetFirstChild<DXW.TableCellMarginDefault>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Wordprocessing.TableCellMarginDefaultConverter.CreateModelElement(itemElement);
+      return DMXW.TableCellMarginDefaultConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetTableCellMarginDefault(DocumentFormat.OpenXml.Wordprocessing.TableStyleConditionalFormattingTableProperties openXmlElement, DocumentModel.Wordprocessing.TableCellMarginDefault? value)
+  private static void SetTableCellMarginDefault(DXW.TableStyleConditionalFormattingTableProperties openXmlElement, DMW.TableCellMarginDefault? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.TableCellMarginDefault>();
+    var itemElement = openXmlElement.GetFirstChild<DXW.TableCellMarginDefault>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Wordprocessing.TableCellMarginDefaultConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.TableCellMarginDefault>(value);
+      itemElement = DMXW.TableCellMarginDefaultConverter.CreateOpenXmlElement<DXW.TableCellMarginDefault>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  public static DocumentModel.Wordprocessing.TableStyleConditionalFormattingTableProperties? CreateModelElement(DocumentFormat.OpenXml.Wordprocessing.TableStyleConditionalFormattingTableProperties? openXmlElement)
+  public static DMW.TableStyleConditionalFormattingTableProperties? CreateModelElement(DXW.TableStyleConditionalFormattingTableProperties? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Wordprocessing.TableStyleConditionalFormattingTableProperties();
+      var value = new DMW.TableStyleConditionalFormattingTableProperties();
       value.TableJustification = GetTableJustification(openXmlElement);
       value.TableCellSpacing = GetTableCellSpacing(openXmlElement);
       value.TableIndentation = GetTableIndentation(openXmlElement);
@@ -165,8 +165,8 @@ public static class TableStyleConditionalFormattingTablePropertiesConverter
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.TableStyleConditionalFormattingTableProperties? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Wordprocessing.TableStyleConditionalFormattingTableProperties, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMW.TableStyleConditionalFormattingTableProperties? value)
+    where OpenXmlElementType: DXW.TableStyleConditionalFormattingTableProperties, new()
   {
     if (value != null)
     {

@@ -8,25 +8,25 @@ public static class RsidsConverter
   /// <summary>
   /// Original Document Revision Save ID.
   /// </summary>
-  private static UInt32? GetRsidRoot(DocumentFormat.OpenXml.Wordprocessing.Rsids openXmlElement)
+  private static UInt32? GetRsidRoot(DXW.Rsids openXmlElement)
   {
     if (openXmlElement.RsidRoot?.Val?.Value != null)
       return UInt32.Parse(openXmlElement.RsidRoot.Val.Value, NumberStyles.HexNumber);
     return null;
   }
   
-  private static void SetRsidRoot(DocumentFormat.OpenXml.Wordprocessing.Rsids openXmlElement, UInt32? value)
+  private static void SetRsidRoot(DXW.Rsids openXmlElement, UInt32? value)
   {
       if (value != null)
-        openXmlElement.RsidRoot = new DocumentFormat.OpenXml.Wordprocessing.RsidRoot { Val = ((UInt32)value).ToString("X8") };
+        openXmlElement.RsidRoot = new DXW.RsidRoot { Val = ((UInt32)value).ToString("X8") };
       else
         openXmlElement.RsidRoot = null;
   }
   
-  private static System.Collections.ObjectModel.Collection<UInt32> GetItems(DocumentFormat.OpenXml.Wordprocessing.Rsids openXmlElement)
+  private static Collection<UInt32> GetItems(DXW.Rsids openXmlElement)
   {
-    var collection = new System.Collections.ObjectModel.Collection<UInt32>();
-    foreach (var item in openXmlElement.Elements<DocumentFormat.OpenXml.Wordprocessing.Rsid>())
+    var collection = new Collection<UInt32>();
+    foreach (var item in openXmlElement.Elements<DXW.Rsid>())
     {
       var newItem = UInt32ValueConverter.GetValue(item);
       if (newItem != null)
@@ -35,25 +35,25 @@ public static class RsidsConverter
     return collection;
   }
   
-  private static void SetItems(DocumentFormat.OpenXml.Wordprocessing.Rsids openXmlElement, System.Collections.ObjectModel.Collection<UInt32>? value)
+  private static void SetItems(DXW.Rsids openXmlElement, Collection<UInt32>? value)
   {
-    openXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Wordprocessing.Rsid>();
+    openXmlElement.RemoveAllChildren<DXW.Rsid>();
     if (value != null)
     {
       foreach (var item in value)
       {
-        var newItem = UInt32ValueConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.Rsid>(item);
+        var newItem = UInt32ValueConverter.CreateOpenXmlElement<DXW.Rsid>(item);
         if (newItem != null)
           openXmlElement.AddChild(newItem);
       }
     }
   }
   
-  public static DocumentModel.Wordprocessing.Rsids? CreateModelElement(DocumentFormat.OpenXml.Wordprocessing.Rsids? openXmlElement)
+  public static DMW.Rsids? CreateModelElement(DXW.Rsids? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Wordprocessing.Rsids();
+      var value = new DMW.Rsids();
       value.RsidRoot = GetRsidRoot(openXmlElement);
       value.Items = GetItems(openXmlElement);
       return value;
@@ -61,8 +61,8 @@ public static class RsidsConverter
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.Rsids? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Wordprocessing.Rsids, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMW.Rsids? value)
+    where OpenXmlElementType: DXW.Rsids, new()
   {
     if (value != null)
     {

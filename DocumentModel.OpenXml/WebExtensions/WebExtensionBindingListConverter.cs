@@ -5,45 +5,45 @@ namespace DocumentModel.OpenXml.WebExtensions;
 /// </summary>
 public static class WebExtensionBindingListConverter
 {
-  private static System.Collections.ObjectModel.Collection<DocumentModel.WebExtensions.WebExtensionBinding> GetWebExtensionBindings(DocumentFormat.OpenXml.Office2013.WebExtension.WebExtensionBindingList openXmlElement)
+  private static Collection<DMWebExt.WebExtensionBinding> GetWebExtensionBindings(DXO2013WebExt.WebExtensionBindingList openXmlElement)
   {
-    var collection = new System.Collections.ObjectModel.Collection<DocumentModel.WebExtensions.WebExtensionBinding>();
-    foreach (var item in openXmlElement.Elements<DocumentFormat.OpenXml.Office2013.WebExtension.WebExtensionBinding>())
+    var collection = new Collection<DMWebExt.WebExtensionBinding>();
+    foreach (var item in openXmlElement.Elements<DXO2013WebExt.WebExtensionBinding>())
     {
-      var newItem = DocumentModel.OpenXml.WebExtensions.WebExtensionBindingConverter.CreateModelElement(item);
+      var newItem = DMXWebExt.WebExtensionBindingConverter.CreateModelElement(item);
       if (newItem != null)
         collection.Add(newItem);
     }
     return collection;
   }
   
-  private static void SetWebExtensionBindings(DocumentFormat.OpenXml.Office2013.WebExtension.WebExtensionBindingList openXmlElement, System.Collections.ObjectModel.Collection<DocumentModel.WebExtensions.WebExtensionBinding>? value)
+  private static void SetWebExtensionBindings(DXO2013WebExt.WebExtensionBindingList openXmlElement, Collection<DMWebExt.WebExtensionBinding>? value)
   {
-    openXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Office2013.WebExtension.WebExtensionBinding>();
+    openXmlElement.RemoveAllChildren<DXO2013WebExt.WebExtensionBinding>();
     if (value != null)
     {
       foreach (var item in value)
       {
-        var newItem = DocumentModel.OpenXml.WebExtensions.WebExtensionBindingConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2013.WebExtension.WebExtensionBinding>(item);
+        var newItem = DMXWebExt.WebExtensionBindingConverter.CreateOpenXmlElement<DXO2013WebExt.WebExtensionBinding>(item);
         if (newItem != null)
           openXmlElement.AddChild(newItem);
       }
     }
   }
   
-  public static DocumentModel.WebExtensions.WebExtensionBindingList? CreateModelElement(DocumentFormat.OpenXml.Office2013.WebExtension.WebExtensionBindingList? openXmlElement)
+  public static DMWebExt.WebExtensionBindingList? CreateModelElement(DXO2013WebExt.WebExtensionBindingList? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.WebExtensions.WebExtensionBindingList();
+      var value = new DMWebExt.WebExtensionBindingList();
       value.WebExtensionBindings = GetWebExtensionBindings(openXmlElement);
       return value;
     }
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.WebExtensions.WebExtensionBindingList? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Office2013.WebExtension.WebExtensionBindingList, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMWebExt.WebExtensionBindingList? value)
+    where OpenXmlElementType: DXO2013WebExt.WebExtensionBindingList, new()
   {
     if (value != null)
     {

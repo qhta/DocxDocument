@@ -8,74 +8,74 @@ public static class GradientFillPropertiesConverter
   /// <summary>
   /// GradientStopList.
   /// </summary>
-  private static DocumentModel.Wordprocessing.GradientStopList? GetGradientStopList(DocumentFormat.OpenXml.Office2010.Word.GradientFillProperties openXmlElement)
+  private static DMW.GradientStopList? GetGradientStopList(DXO2010W.GradientFillProperties openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office2010.Word.GradientStopList>();
+    var itemElement = openXmlElement?.GetFirstChild<DXO2010W.GradientStopList>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Wordprocessing.GradientStopListConverter.CreateModelElement(itemElement);
+      return DMXW.GradientStopListConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetGradientStopList(DocumentFormat.OpenXml.Office2010.Word.GradientFillProperties openXmlElement, DocumentModel.Wordprocessing.GradientStopList? value)
+  private static void SetGradientStopList(DXO2010W.GradientFillProperties openXmlElement, DMW.GradientStopList? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2010.Word.GradientStopList>();
+    var itemElement = openXmlElement.GetFirstChild<DXO2010W.GradientStopList>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Wordprocessing.GradientStopListConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2010.Word.GradientStopList>(value);
+      itemElement = DMXW.GradientStopListConverter.CreateOpenXmlElement<DXO2010W.GradientStopList>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static DocumentModel.Wordprocessing.LinearShadeProperties? GetLinearShadeProperties(DocumentFormat.OpenXml.Office2010.Word.GradientFillProperties openXmlElement)
+  private static DMW.LinearShadeProperties? GetLinearShadeProperties(DXO2010W.GradientFillProperties openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office2010.Word.LinearShadeProperties>();
+    var itemElement = openXmlElement?.GetFirstChild<DXO2010W.LinearShadeProperties>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Wordprocessing.LinearShadePropertiesConverter.CreateModelElement(itemElement);
+      return DMXW.LinearShadePropertiesConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetLinearShadeProperties(DocumentFormat.OpenXml.Office2010.Word.GradientFillProperties openXmlElement, DocumentModel.Wordprocessing.LinearShadeProperties? value)
+  private static void SetLinearShadeProperties(DXO2010W.GradientFillProperties openXmlElement, DMW.LinearShadeProperties? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2010.Word.LinearShadeProperties>();
+    var itemElement = openXmlElement.GetFirstChild<DXO2010W.LinearShadeProperties>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Wordprocessing.LinearShadePropertiesConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2010.Word.LinearShadeProperties>(value);
+      itemElement = DMXW.LinearShadePropertiesConverter.CreateOpenXmlElement<DXO2010W.LinearShadeProperties>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static DocumentModel.Wordprocessing.PathShadeProperties? GetPathShadeProperties(DocumentFormat.OpenXml.Office2010.Word.GradientFillProperties openXmlElement)
+  private static DMW.PathShadeProperties? GetPathShadeProperties(DXO2010W.GradientFillProperties openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office2010.Word.PathShadeProperties>();
+    var itemElement = openXmlElement?.GetFirstChild<DXO2010W.PathShadeProperties>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Wordprocessing.PathShadePropertiesConverter.CreateModelElement(itemElement);
+      return DMXW.PathShadePropertiesConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetPathShadeProperties(DocumentFormat.OpenXml.Office2010.Word.GradientFillProperties openXmlElement, DocumentModel.Wordprocessing.PathShadeProperties? value)
+  private static void SetPathShadeProperties(DXO2010W.GradientFillProperties openXmlElement, DMW.PathShadeProperties? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2010.Word.PathShadeProperties>();
+    var itemElement = openXmlElement.GetFirstChild<DXO2010W.PathShadeProperties>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Wordprocessing.PathShadePropertiesConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2010.Word.PathShadeProperties>(value);
+      itemElement = DMXW.PathShadePropertiesConverter.CreateOpenXmlElement<DXO2010W.PathShadeProperties>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  public static DocumentModel.Wordprocessing.GradientFillProperties? CreateModelElement(DocumentFormat.OpenXml.Office2010.Word.GradientFillProperties? openXmlElement)
+  public static DMW.GradientFillProperties? CreateModelElement(DXO2010W.GradientFillProperties? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Wordprocessing.GradientFillProperties();
+      var value = new DMW.GradientFillProperties();
       value.GradientStopList = GetGradientStopList(openXmlElement);
       value.LinearShadeProperties = GetLinearShadeProperties(openXmlElement);
       value.PathShadeProperties = GetPathShadeProperties(openXmlElement);
@@ -84,8 +84,8 @@ public static class GradientFillPropertiesConverter
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.GradientFillProperties? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Office2010.Word.GradientFillProperties, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMW.GradientFillProperties? value)
+    where OpenXmlElementType: DXO2010W.GradientFillProperties, new()
   {
     if (value != null)
     {

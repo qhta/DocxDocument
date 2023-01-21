@@ -5,21 +5,21 @@ namespace DocumentModel.OpenXml.Packaging;
 /// </summary>
 public static class XmlSignaturePartConverter
 {
-  private static String? GetContentType(DocumentFormat.OpenXml.Packaging.XmlSignaturePart openXmlElement)
+  private static String? GetContentType(DXPack.XmlSignaturePart openXmlElement)
   {
     return openXmlElement?.ContentType;
   }
   
-  private static String? GetRelationshipType(DocumentFormat.OpenXml.Packaging.XmlSignaturePart openXmlElement)
+  private static String? GetRelationshipType(DXPack.XmlSignaturePart openXmlElement)
   {
     return openXmlElement?.RelationshipType;
   }
   
-  public static DocumentModel.Packaging.XmlSignaturePart? CreateModelElement(DocumentFormat.OpenXml.Packaging.XmlSignaturePart? openXmlElement)
+  public static DMPack.XmlSignaturePart? CreateModelElement(DXPack.XmlSignaturePart? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Packaging.XmlSignaturePart();
+      var value = new DMPack.XmlSignaturePart();
       value.ContentType = GetContentType(openXmlElement);
       value.RelationshipType = GetRelationshipType(openXmlElement);
       return value;
@@ -27,8 +27,8 @@ public static class XmlSignaturePartConverter
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Packaging.XmlSignaturePart? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Packaging.XmlSignaturePart, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMPack.XmlSignaturePart? value)
+    where OpenXmlElementType: DXPack.XmlSignaturePart, new()
   {
     if (value != null)
     {

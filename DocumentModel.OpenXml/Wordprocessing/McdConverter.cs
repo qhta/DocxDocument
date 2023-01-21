@@ -8,12 +8,12 @@ public static class McdConverter
   /// <summary>
   /// macroName
   /// </summary>
-  private static String? GetMacroName(DocumentFormat.OpenXml.Office.Word.Mcd openXmlElement)
+  private static String? GetMacroName(DXOW.Mcd openXmlElement)
   {
     return openXmlElement?.MacroName?.Value;
   }
   
-  private static void SetMacroName(DocumentFormat.OpenXml.Office.Word.Mcd openXmlElement, String? value)
+  private static void SetMacroName(DXOW.Mcd openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.MacroName = new StringValue { Value = value };
@@ -24,12 +24,12 @@ public static class McdConverter
   /// <summary>
   /// name
   /// </summary>
-  private static String? GetName(DocumentFormat.OpenXml.Office.Word.Mcd openXmlElement)
+  private static String? GetName(DXOW.Mcd openXmlElement)
   {
     return openXmlElement?.Name?.Value;
   }
   
-  private static void SetName(DocumentFormat.OpenXml.Office.Word.Mcd openXmlElement, String? value)
+  private static void SetName(DXOW.Mcd openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.Name = new StringValue { Value = value };
@@ -40,12 +40,12 @@ public static class McdConverter
   /// <summary>
   /// menuHelp
   /// </summary>
-  private static String? GetMenuHelp(DocumentFormat.OpenXml.Office.Word.Mcd openXmlElement)
+  private static String? GetMenuHelp(DXOW.Mcd openXmlElement)
   {
     return openXmlElement?.MenuHelp?.Value;
   }
   
-  private static void SetMenuHelp(DocumentFormat.OpenXml.Office.Word.Mcd openXmlElement, String? value)
+  private static void SetMenuHelp(DXOW.Mcd openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.MenuHelp = new StringValue { Value = value };
@@ -56,14 +56,14 @@ public static class McdConverter
   /// <summary>
   /// bEncrypt
   /// </summary>
-  private static Byte? GetBEncrypt(DocumentFormat.OpenXml.Office.Word.Mcd openXmlElement)
+  private static Byte? GetBEncrypt(DXOW.Mcd openXmlElement)
   {
     if (openXmlElement.BEncrypt?.Value != null)
       return Byte.Parse(openXmlElement.BEncrypt.Value, NumberStyles.HexNumber);
     return null;
   }
   
-  private static void SetBEncrypt(DocumentFormat.OpenXml.Office.Word.Mcd openXmlElement, Byte? value)
+  private static void SetBEncrypt(DXOW.Mcd openXmlElement, Byte? value)
   {
       if (value != null)
         openXmlElement.BEncrypt = ((UInt16)value).ToString("X2");
@@ -74,14 +74,14 @@ public static class McdConverter
   /// <summary>
   /// cmg
   /// </summary>
-  private static Byte? GetCmg(DocumentFormat.OpenXml.Office.Word.Mcd openXmlElement)
+  private static Byte? GetCmg(DXOW.Mcd openXmlElement)
   {
     if (openXmlElement.Cmg?.Value != null)
       return Byte.Parse(openXmlElement.Cmg.Value, NumberStyles.HexNumber);
     return null;
   }
   
-  private static void SetCmg(DocumentFormat.OpenXml.Office.Word.Mcd openXmlElement, Byte? value)
+  private static void SetCmg(DXOW.Mcd openXmlElement, Byte? value)
   {
       if (value != null)
         openXmlElement.Cmg = ((UInt16)value).ToString("X2");
@@ -89,11 +89,11 @@ public static class McdConverter
         openXmlElement.Cmg = null;
   }
   
-  public static DocumentModel.Wordprocessing.Mcd? CreateModelElement(DocumentFormat.OpenXml.Office.Word.Mcd? openXmlElement)
+  public static DMW.Mcd? CreateModelElement(DXOW.Mcd? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Wordprocessing.Mcd();
+      var value = new DMW.Mcd();
       value.MacroName = GetMacroName(openXmlElement);
       value.Name = GetName(openXmlElement);
       value.MenuHelp = GetMenuHelp(openXmlElement);
@@ -104,8 +104,8 @@ public static class McdConverter
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.Mcd? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Office.Word.Mcd, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMW.Mcd? value)
+    where OpenXmlElementType: DXOW.Mcd, new()
   {
     if (value != null)
     {

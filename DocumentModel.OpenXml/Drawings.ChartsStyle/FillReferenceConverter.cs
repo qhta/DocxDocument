@@ -5,158 +5,158 @@ namespace DocumentModel.OpenXml.Drawings.ChartsStyle;
 /// </summary>
 public static class FillReferenceConverter
 {
-  private static DocumentModel.Drawings.RgbColorModelPercentage? GetRgbColorModelPercentage(DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.FillReference openXmlElement)
+  private static DMDraws.RgbColorModelPercentage? GetRgbColorModelPercentage(DXO2013DrawChartStyle.FillReference openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.RgbColorModelPercentage>();
+    var itemElement = openXmlElement?.GetFirstChild<DXDraw.RgbColorModelPercentage>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.RgbColorModelPercentageConverter.CreateModelElement(itemElement);
+      return DMXDraws.RgbColorModelPercentageConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetRgbColorModelPercentage(DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.FillReference openXmlElement, DocumentModel.Drawings.RgbColorModelPercentage? value)
+  private static void SetRgbColorModelPercentage(DXO2013DrawChartStyle.FillReference openXmlElement, DMDraws.RgbColorModelPercentage? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.RgbColorModelPercentage>();
+    var itemElement = openXmlElement.GetFirstChild<DXDraw.RgbColorModelPercentage>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Drawings.RgbColorModelPercentageConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.RgbColorModelPercentage>(value);
+      itemElement = DMXDraws.RgbColorModelPercentageConverter.CreateOpenXmlElement<DXDraw.RgbColorModelPercentage>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static DocumentModel.Drawings.RgbColorModelHex? GetRgbColorModelHex(DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.FillReference openXmlElement)
+  private static DMDraws.RgbColorModelHex? GetRgbColorModelHex(DXO2013DrawChartStyle.FillReference openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.RgbColorModelHex>();
+    var itemElement = openXmlElement?.GetFirstChild<DXDraw.RgbColorModelHex>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.RgbColorModelHexConverter.CreateModelElement(itemElement);
+      return DMXDraws.RgbColorModelHexConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetRgbColorModelHex(DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.FillReference openXmlElement, DocumentModel.Drawings.RgbColorModelHex? value)
+  private static void SetRgbColorModelHex(DXO2013DrawChartStyle.FillReference openXmlElement, DMDraws.RgbColorModelHex? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.RgbColorModelHex>();
+    var itemElement = openXmlElement.GetFirstChild<DXDraw.RgbColorModelHex>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Drawings.RgbColorModelHexConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.RgbColorModelHex>(value);
+      itemElement = DMXDraws.RgbColorModelHexConverter.CreateOpenXmlElement<DXDraw.RgbColorModelHex>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static DocumentModel.Drawings.HslColor? GetHslColor(DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.FillReference openXmlElement)
+  private static DMDraws.HslColor? GetHslColor(DXO2013DrawChartStyle.FillReference openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.HslColor>();
+    var itemElement = openXmlElement?.GetFirstChild<DXDraw.HslColor>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.HslColorConverter.CreateModelElement(itemElement);
+      return DMXDraws.HslColorConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetHslColor(DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.FillReference openXmlElement, DocumentModel.Drawings.HslColor? value)
+  private static void SetHslColor(DXO2013DrawChartStyle.FillReference openXmlElement, DMDraws.HslColor? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.HslColor>();
+    var itemElement = openXmlElement.GetFirstChild<DXDraw.HslColor>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Drawings.HslColorConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.HslColor>(value);
+      itemElement = DMXDraws.HslColorConverter.CreateOpenXmlElement<DXDraw.HslColor>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static DocumentModel.Drawings.SystemColor? GetSystemColor(DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.FillReference openXmlElement)
+  private static DMDraws.SystemColor? GetSystemColor(DXO2013DrawChartStyle.FillReference openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.SystemColor>();
+    var itemElement = openXmlElement?.GetFirstChild<DXDraw.SystemColor>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.SystemColorConverter.CreateModelElement(itemElement);
+      return DMXDraws.SystemColorConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetSystemColor(DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.FillReference openXmlElement, DocumentModel.Drawings.SystemColor? value)
+  private static void SetSystemColor(DXO2013DrawChartStyle.FillReference openXmlElement, DMDraws.SystemColor? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.SystemColor>();
+    var itemElement = openXmlElement.GetFirstChild<DXDraw.SystemColor>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Drawings.SystemColorConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.SystemColor>(value);
+      itemElement = DMXDraws.SystemColorConverter.CreateOpenXmlElement<DXDraw.SystemColor>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static DocumentModel.Drawings.SchemeColor? GetSchemeColor(DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.FillReference openXmlElement)
+  private static DMDraws.SchemeColor? GetSchemeColor(DXO2013DrawChartStyle.FillReference openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.SchemeColor>();
+    var itemElement = openXmlElement?.GetFirstChild<DXDraw.SchemeColor>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.SchemeColorConverter.CreateModelElement(itemElement);
+      return DMXDraws.SchemeColorConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetSchemeColor(DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.FillReference openXmlElement, DocumentModel.Drawings.SchemeColor? value)
+  private static void SetSchemeColor(DXO2013DrawChartStyle.FillReference openXmlElement, DMDraws.SchemeColor? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.SchemeColor>();
+    var itemElement = openXmlElement.GetFirstChild<DXDraw.SchemeColor>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Drawings.SchemeColorConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.SchemeColor>(value);
+      itemElement = DMXDraws.SchemeColorConverter.CreateOpenXmlElement<DXDraw.SchemeColor>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static DocumentModel.Drawings.PresetColor? GetPresetColor(DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.FillReference openXmlElement)
+  private static DMDraws.PresetColor? GetPresetColor(DXO2013DrawChartStyle.FillReference openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.PresetColor>();
+    var itemElement = openXmlElement?.GetFirstChild<DXDraw.PresetColor>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.PresetColorConverter.CreateModelElement(itemElement);
+      return DMXDraws.PresetColorConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetPresetColor(DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.FillReference openXmlElement, DocumentModel.Drawings.PresetColor? value)
+  private static void SetPresetColor(DXO2013DrawChartStyle.FillReference openXmlElement, DMDraws.PresetColor? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.PresetColor>();
+    var itemElement = openXmlElement.GetFirstChild<DXDraw.PresetColor>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Drawings.PresetColorConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.PresetColor>(value);
+      itemElement = DMXDraws.PresetColorConverter.CreateOpenXmlElement<DXDraw.PresetColor>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static DocumentModel.Drawings.ChartsStyle.StyleColor? GetStyleColor(DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.FillReference openXmlElement)
+  private static DMDrawsChartsStyle.StyleColor? GetStyleColor(DXO2013DrawChartStyle.FillReference openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.StyleColor>();
+    var itemElement = openXmlElement?.GetFirstChild<DXO2013DrawChartStyle.StyleColor>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.ChartsStyle.StyleColorConverter.CreateModelElement(itemElement);
+      return DMXDrawsChartsStyle.StyleColorConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetStyleColor(DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.FillReference openXmlElement, DocumentModel.Drawings.ChartsStyle.StyleColor? value)
+  private static void SetStyleColor(DXO2013DrawChartStyle.FillReference openXmlElement, DMDrawsChartsStyle.StyleColor? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.StyleColor>();
+    var itemElement = openXmlElement.GetFirstChild<DXO2013DrawChartStyle.StyleColor>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Drawings.ChartsStyle.StyleColorConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.StyleColor>(value);
+      itemElement = DMXDrawsChartsStyle.StyleColorConverter.CreateOpenXmlElement<DXO2013DrawChartStyle.StyleColor>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  public static DocumentModel.Drawings.ChartsStyle.FillReference? CreateModelElement(DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.FillReference? openXmlElement)
+  public static DMDrawsChartsStyle.FillReference? CreateModelElement(DXO2013DrawChartStyle.FillReference? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.ChartsStyle.FillReference();
+      var value = new DMDrawsChartsStyle.FillReference();
       value.RgbColorModelPercentage = GetRgbColorModelPercentage(openXmlElement);
       value.RgbColorModelHex = GetRgbColorModelHex(openXmlElement);
       value.HslColor = GetHslColor(openXmlElement);
@@ -169,8 +169,8 @@ public static class FillReferenceConverter
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.ChartsStyle.FillReference? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.FillReference, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDrawsChartsStyle.FillReference? value)
+    where OpenXmlElementType: DXO2013DrawChartStyle.FillReference, new()
   {
     if (value != null)
     {

@@ -8,29 +8,29 @@ public static class AlphaOutsetConverter
   /// <summary>
   /// Radius
   /// </summary>
-  private static Int64? GetRadius(DocumentFormat.OpenXml.Drawing.AlphaOutset openXmlElement)
+  private static Int64? GetRadius(DXDraw.AlphaOutset openXmlElement)
   {
     return openXmlElement.Radius?.Value;
   }
   
-  private static void SetRadius(DocumentFormat.OpenXml.Drawing.AlphaOutset openXmlElement, Int64? value)
+  private static void SetRadius(DXDraw.AlphaOutset openXmlElement, Int64? value)
   {
     openXmlElement.Radius = value;
   }
   
-  public static DocumentModel.Drawings.AlphaOutset? CreateModelElement(DocumentFormat.OpenXml.Drawing.AlphaOutset? openXmlElement)
+  public static DMDraws.AlphaOutset? CreateModelElement(DXDraw.AlphaOutset? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.AlphaOutset();
+      var value = new DMDraws.AlphaOutset();
       value.Radius = GetRadius(openXmlElement);
       return value;
     }
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.AlphaOutset? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.AlphaOutset, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDraws.AlphaOutset? value)
+    where OpenXmlElementType: DXDraw.AlphaOutset, new()
   {
     if (value != null)
     {

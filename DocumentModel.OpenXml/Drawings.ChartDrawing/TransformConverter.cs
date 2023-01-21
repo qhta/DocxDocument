@@ -8,12 +8,12 @@ public static class TransformConverter
   /// <summary>
   /// Rotation
   /// </summary>
-  private static Int32? GetRotation(DocumentFormat.OpenXml.Drawing.ChartDrawing.Transform openXmlElement)
+  private static Int32? GetRotation(DXDrawChartDraw.Transform openXmlElement)
   {
     return openXmlElement.Rotation?.Value;
   }
   
-  private static void SetRotation(DocumentFormat.OpenXml.Drawing.ChartDrawing.Transform openXmlElement, Int32? value)
+  private static void SetRotation(DXDrawChartDraw.Transform openXmlElement, Int32? value)
   {
     openXmlElement.Rotation = value;
   }
@@ -21,12 +21,12 @@ public static class TransformConverter
   /// <summary>
   /// Horizontal Flip
   /// </summary>
-  private static Boolean? GetHorizontalFlip(DocumentFormat.OpenXml.Drawing.ChartDrawing.Transform openXmlElement)
+  private static Boolean? GetHorizontalFlip(DXDrawChartDraw.Transform openXmlElement)
   {
     return openXmlElement?.HorizontalFlip?.Value;
   }
   
-  private static void SetHorizontalFlip(DocumentFormat.OpenXml.Drawing.ChartDrawing.Transform openXmlElement, Boolean? value)
+  private static void SetHorizontalFlip(DXDrawChartDraw.Transform openXmlElement, Boolean? value)
   {
     if (value != null)
       openXmlElement.HorizontalFlip = new BooleanValue { Value = (Boolean)value };
@@ -37,12 +37,12 @@ public static class TransformConverter
   /// <summary>
   /// Vertical Flip
   /// </summary>
-  private static Boolean? GetVerticalFlip(DocumentFormat.OpenXml.Drawing.ChartDrawing.Transform openXmlElement)
+  private static Boolean? GetVerticalFlip(DXDrawChartDraw.Transform openXmlElement)
   {
     return openXmlElement?.VerticalFlip?.Value;
   }
   
-  private static void SetVerticalFlip(DocumentFormat.OpenXml.Drawing.ChartDrawing.Transform openXmlElement, Boolean? value)
+  private static void SetVerticalFlip(DXDrawChartDraw.Transform openXmlElement, Boolean? value)
   {
     if (value != null)
       openXmlElement.VerticalFlip = new BooleanValue { Value = (Boolean)value };
@@ -53,22 +53,22 @@ public static class TransformConverter
   /// <summary>
   /// Offset.
   /// </summary>
-  private static DocumentModel.Drawings.Point2DType? GetOffset(DocumentFormat.OpenXml.Drawing.ChartDrawing.Transform openXmlElement)
+  private static DMDraws.Point2DType? GetOffset(DXDrawChartDraw.Transform openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.Offset>();
+    var itemElement = openXmlElement?.GetFirstChild<DXDraw.Offset>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.Point2DTypeConverter.CreateModelElement(itemElement);
+      return DMXDraws.Point2DTypeConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetOffset(DocumentFormat.OpenXml.Drawing.ChartDrawing.Transform openXmlElement, DocumentModel.Drawings.Point2DType? value)
+  private static void SetOffset(DXDrawChartDraw.Transform openXmlElement, DMDraws.Point2DType? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Offset>();
+    var itemElement = openXmlElement.GetFirstChild<DXDraw.Offset>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Drawings.Point2DTypeConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Offset>(value);
+      itemElement = DMXDraws.Point2DTypeConverter.CreateOpenXmlElement<DXDraw.Offset>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
@@ -77,32 +77,32 @@ public static class TransformConverter
   /// <summary>
   /// Extents.
   /// </summary>
-  private static DocumentModel.Drawings.PositiveSize2DType? GetExtents(DocumentFormat.OpenXml.Drawing.ChartDrawing.Transform openXmlElement)
+  private static DMDraws.PositiveSize2DType? GetExtents(DXDrawChartDraw.Transform openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.Extents>();
+    var itemElement = openXmlElement?.GetFirstChild<DXDraw.Extents>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.PositiveSize2DTypeConverter.CreateModelElement(itemElement);
+      return DMXDraws.PositiveSize2DTypeConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetExtents(DocumentFormat.OpenXml.Drawing.ChartDrawing.Transform openXmlElement, DocumentModel.Drawings.PositiveSize2DType? value)
+  private static void SetExtents(DXDrawChartDraw.Transform openXmlElement, DMDraws.PositiveSize2DType? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Extents>();
+    var itemElement = openXmlElement.GetFirstChild<DXDraw.Extents>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Drawings.PositiveSize2DTypeConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Extents>(value);
+      itemElement = DMXDraws.PositiveSize2DTypeConverter.CreateOpenXmlElement<DXDraw.Extents>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  public static DocumentModel.Drawings.ChartDrawing.Transform? CreateModelElement(DocumentFormat.OpenXml.Drawing.ChartDrawing.Transform? openXmlElement)
+  public static DMDrawsChartDraw.Transform? CreateModelElement(DXDrawChartDraw.Transform? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.ChartDrawing.Transform();
+      var value = new DMDrawsChartDraw.Transform();
       value.Rotation = GetRotation(openXmlElement);
       value.HorizontalFlip = GetHorizontalFlip(openXmlElement);
       value.VerticalFlip = GetVerticalFlip(openXmlElement);
@@ -113,8 +113,8 @@ public static class TransformConverter
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.ChartDrawing.Transform? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.ChartDrawing.Transform, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDrawsChartDraw.Transform? value)
+    where OpenXmlElementType: DXDrawChartDraw.Transform, new()
   {
     if (value != null)
     {

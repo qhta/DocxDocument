@@ -8,12 +8,12 @@ public static class ColumnsConverter
   /// <summary>
   /// Equal Column Widths
   /// </summary>
-  private static Boolean? GetEqualWidth(DocumentFormat.OpenXml.Wordprocessing.Columns openXmlElement)
+  private static Boolean? GetEqualWidth(DXW.Columns openXmlElement)
   {
     return openXmlElement?.EqualWidth?.Value;
   }
   
-  private static void SetEqualWidth(DocumentFormat.OpenXml.Wordprocessing.Columns openXmlElement, Boolean? value)
+  private static void SetEqualWidth(DXW.Columns openXmlElement, Boolean? value)
   {
     if (value != null)
       openXmlElement.EqualWidth = new OnOffValue { Value = (Boolean)value };
@@ -24,12 +24,12 @@ public static class ColumnsConverter
   /// <summary>
   /// Spacing Between Equal Width Columns
   /// </summary>
-  private static String? GetSpace(DocumentFormat.OpenXml.Wordprocessing.Columns openXmlElement)
+  private static String? GetSpace(DXW.Columns openXmlElement)
   {
     return openXmlElement?.Space?.Value;
   }
   
-  private static void SetSpace(DocumentFormat.OpenXml.Wordprocessing.Columns openXmlElement, String? value)
+  private static void SetSpace(DXW.Columns openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.Space = new StringValue { Value = value };
@@ -40,12 +40,12 @@ public static class ColumnsConverter
   /// <summary>
   /// Number of Equal Width Columns
   /// </summary>
-  private static Int16? GetColumnCount(DocumentFormat.OpenXml.Wordprocessing.Columns openXmlElement)
+  private static Int16? GetColumnCount(DXW.Columns openXmlElement)
   {
     return openXmlElement.ColumnCount?.Value;
   }
   
-  private static void SetColumnCount(DocumentFormat.OpenXml.Wordprocessing.Columns openXmlElement, Int16? value)
+  private static void SetColumnCount(DXW.Columns openXmlElement, Int16? value)
   {
     openXmlElement.ColumnCount = value;
   }
@@ -53,12 +53,12 @@ public static class ColumnsConverter
   /// <summary>
   /// Draw Line Between Columns
   /// </summary>
-  private static Boolean? GetSeparator(DocumentFormat.OpenXml.Wordprocessing.Columns openXmlElement)
+  private static Boolean? GetSeparator(DXW.Columns openXmlElement)
   {
     return openXmlElement?.Separator?.Value;
   }
   
-  private static void SetSeparator(DocumentFormat.OpenXml.Wordprocessing.Columns openXmlElement, Boolean? value)
+  private static void SetSeparator(DXW.Columns openXmlElement, Boolean? value)
   {
     if (value != null)
       openXmlElement.Separator = new OnOffValue { Value = (Boolean)value };
@@ -66,37 +66,37 @@ public static class ColumnsConverter
       openXmlElement.Separator = null;
   }
   
-  private static System.Collections.ObjectModel.Collection<DocumentModel.Wordprocessing.Column> GetItems(DocumentFormat.OpenXml.Wordprocessing.Columns openXmlElement)
+  private static Collection<DMW.Column> GetItems(DXW.Columns openXmlElement)
   {
-    var collection = new System.Collections.ObjectModel.Collection<DocumentModel.Wordprocessing.Column>();
-    foreach (var item in openXmlElement.Elements<DocumentFormat.OpenXml.Wordprocessing.Column>())
+    var collection = new Collection<DMW.Column>();
+    foreach (var item in openXmlElement.Elements<DXW.Column>())
     {
-      var newItem = DocumentModel.OpenXml.Wordprocessing.ColumnConverter.CreateModelElement(item);
+      var newItem = DMXW.ColumnConverter.CreateModelElement(item);
       if (newItem != null)
         collection.Add(newItem);
     }
     return collection;
   }
   
-  private static void SetItems(DocumentFormat.OpenXml.Wordprocessing.Columns openXmlElement, System.Collections.ObjectModel.Collection<DocumentModel.Wordprocessing.Column>? value)
+  private static void SetItems(DXW.Columns openXmlElement, Collection<DMW.Column>? value)
   {
-    openXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Wordprocessing.Column>();
+    openXmlElement.RemoveAllChildren<DXW.Column>();
     if (value != null)
     {
       foreach (var item in value)
       {
-        var newItem = DocumentModel.OpenXml.Wordprocessing.ColumnConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.Column>(item);
+        var newItem = DMXW.ColumnConverter.CreateOpenXmlElement<DXW.Column>(item);
         if (newItem != null)
           openXmlElement.AddChild(newItem);
       }
     }
   }
   
-  public static DocumentModel.Wordprocessing.Columns? CreateModelElement(DocumentFormat.OpenXml.Wordprocessing.Columns? openXmlElement)
+  public static DMW.Columns? CreateModelElement(DXW.Columns? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Wordprocessing.Columns();
+      var value = new DMW.Columns();
       value.EqualWidth = GetEqualWidth(openXmlElement);
       value.Space = GetSpace(openXmlElement);
       value.ColumnCount = GetColumnCount(openXmlElement);
@@ -107,8 +107,8 @@ public static class ColumnsConverter
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.Columns? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Wordprocessing.Columns, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMW.Columns? value)
+    where OpenXmlElementType: DXW.Columns, new()
   {
     if (value != null)
     {

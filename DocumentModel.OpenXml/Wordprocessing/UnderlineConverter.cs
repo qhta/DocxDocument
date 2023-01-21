@@ -8,25 +8,25 @@ public static class UnderlineConverter
   /// <summary>
   /// Underline Style
   /// </summary>
-  private static DocumentModel.Wordprocessing.UnderlineKind? GetVal(DocumentFormat.OpenXml.Wordprocessing.Underline openXmlElement)
+  private static DMW.UnderlineKind? GetVal(DXW.Underline openXmlElement)
   {
-    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Wordprocessing.UnderlineValues, DocumentModel.Wordprocessing.UnderlineKind>(openXmlElement?.Val?.Value);
+    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Wordprocessing.UnderlineValues, DMW.UnderlineKind>(openXmlElement?.Val?.Value);
   }
   
-  private static void SetVal(DocumentFormat.OpenXml.Wordprocessing.Underline openXmlElement, DocumentModel.Wordprocessing.UnderlineKind? value)
+  private static void SetVal(DXW.Underline openXmlElement, DMW.UnderlineKind? value)
   {
-    openXmlElement.Val = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Wordprocessing.UnderlineValues, DocumentModel.Wordprocessing.UnderlineKind>(value);
+    openXmlElement.Val = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Wordprocessing.UnderlineValues, DMW.UnderlineKind>(value);
   }
   
   /// <summary>
   /// Underline Color
   /// </summary>
-  private static String? GetColor(DocumentFormat.OpenXml.Wordprocessing.Underline openXmlElement)
+  private static String? GetColor(DXW.Underline openXmlElement)
   {
     return openXmlElement?.Color?.Value;
   }
   
-  private static void SetColor(DocumentFormat.OpenXml.Wordprocessing.Underline openXmlElement, String? value)
+  private static void SetColor(DXW.Underline openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.Color = new StringValue { Value = value };
@@ -37,25 +37,25 @@ public static class UnderlineConverter
   /// <summary>
   /// Underline Theme Color
   /// </summary>
-  private static DocumentModel.Wordprocessing.ThemeColorKind? GetThemeColor(DocumentFormat.OpenXml.Wordprocessing.Underline openXmlElement)
+  private static DMW.ThemeColorKind? GetThemeColor(DXW.Underline openXmlElement)
   {
-    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Wordprocessing.ThemeColorValues, DocumentModel.Wordprocessing.ThemeColorKind>(openXmlElement?.ThemeColor?.Value);
+    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Wordprocessing.ThemeColorValues, DMW.ThemeColorKind>(openXmlElement?.ThemeColor?.Value);
   }
   
-  private static void SetThemeColor(DocumentFormat.OpenXml.Wordprocessing.Underline openXmlElement, DocumentModel.Wordprocessing.ThemeColorKind? value)
+  private static void SetThemeColor(DXW.Underline openXmlElement, DMW.ThemeColorKind? value)
   {
-    openXmlElement.ThemeColor = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Wordprocessing.ThemeColorValues, DocumentModel.Wordprocessing.ThemeColorKind>(value);
+    openXmlElement.ThemeColor = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Wordprocessing.ThemeColorValues, DMW.ThemeColorKind>(value);
   }
   
   /// <summary>
   /// Underline Theme Color Tint
   /// </summary>
-  private static String? GetThemeTint(DocumentFormat.OpenXml.Wordprocessing.Underline openXmlElement)
+  private static String? GetThemeTint(DXW.Underline openXmlElement)
   {
     return openXmlElement?.ThemeTint?.Value;
   }
   
-  private static void SetThemeTint(DocumentFormat.OpenXml.Wordprocessing.Underline openXmlElement, String? value)
+  private static void SetThemeTint(DXW.Underline openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.ThemeTint = new StringValue { Value = value };
@@ -66,12 +66,12 @@ public static class UnderlineConverter
   /// <summary>
   /// Underline Theme Color Shade
   /// </summary>
-  private static String? GetThemeShade(DocumentFormat.OpenXml.Wordprocessing.Underline openXmlElement)
+  private static String? GetThemeShade(DXW.Underline openXmlElement)
   {
     return openXmlElement?.ThemeShade?.Value;
   }
   
-  private static void SetThemeShade(DocumentFormat.OpenXml.Wordprocessing.Underline openXmlElement, String? value)
+  private static void SetThemeShade(DXW.Underline openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.ThemeShade = new StringValue { Value = value };
@@ -79,11 +79,11 @@ public static class UnderlineConverter
       openXmlElement.ThemeShade = null;
   }
   
-  public static DocumentModel.Wordprocessing.Underline? CreateModelElement(DocumentFormat.OpenXml.Wordprocessing.Underline? openXmlElement)
+  public static DMW.Underline? CreateModelElement(DXW.Underline? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Wordprocessing.Underline();
+      var value = new DMW.Underline();
       value.Val = GetVal(openXmlElement);
       value.Color = GetColor(openXmlElement);
       value.ThemeColor = GetThemeColor(openXmlElement);
@@ -94,8 +94,8 @@ public static class UnderlineConverter
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.Underline? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Wordprocessing.Underline, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMW.Underline? value)
+    where OpenXmlElementType: DXW.Underline, new()
   {
     if (value != null)
     {

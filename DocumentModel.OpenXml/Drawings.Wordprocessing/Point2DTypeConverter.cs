@@ -8,12 +8,12 @@ public static class Point2DTypeConverter
   /// <summary>
   /// X-Axis Coordinate
   /// </summary>
-  private static Int64? GetX(DocumentFormat.OpenXml.Drawing.Wordprocessing.Point2DType openXmlElement)
+  private static Int64? GetX(DXDrawW.Point2DType openXmlElement)
   {
     return openXmlElement.X?.Value;
   }
   
-  private static void SetX(DocumentFormat.OpenXml.Drawing.Wordprocessing.Point2DType openXmlElement, Int64? value)
+  private static void SetX(DXDrawW.Point2DType openXmlElement, Int64? value)
   {
     openXmlElement.X = value;
   }
@@ -21,21 +21,21 @@ public static class Point2DTypeConverter
   /// <summary>
   /// Y-Axis Coordinate
   /// </summary>
-  private static Int64? GetY(DocumentFormat.OpenXml.Drawing.Wordprocessing.Point2DType openXmlElement)
+  private static Int64? GetY(DXDrawW.Point2DType openXmlElement)
   {
     return openXmlElement.Y?.Value;
   }
   
-  private static void SetY(DocumentFormat.OpenXml.Drawing.Wordprocessing.Point2DType openXmlElement, Int64? value)
+  private static void SetY(DXDrawW.Point2DType openXmlElement, Int64? value)
   {
     openXmlElement.Y = value;
   }
   
-  public static DocumentModel.Drawings.Wordprocessing.Point2DType? CreateModelElement(DocumentFormat.OpenXml.Drawing.Wordprocessing.Point2DType? openXmlElement)
+  public static DMDrawsW.Point2DType? CreateModelElement(DXDrawW.Point2DType? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.Wordprocessing.Point2DType();
+      var value = new DMDrawsW.Point2DType();
       value.X = GetX(openXmlElement);
       value.Y = GetY(openXmlElement);
       return value;
@@ -43,8 +43,8 @@ public static class Point2DTypeConverter
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.Wordprocessing.Point2DType? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.Wordprocessing.Point2DType, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDrawsW.Point2DType? value)
+    where OpenXmlElementType: DXDrawW.Point2DType, new()
   {
     if (value != null)
     {

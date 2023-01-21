@@ -8,12 +8,12 @@ public static class FixedCommandKeyboardCustomizationConverter
   /// <summary>
   /// fciName
   /// </summary>
-  private static String? GetCommandName(DocumentFormat.OpenXml.Office.Word.FixedCommandKeyboardCustomization openXmlElement)
+  private static String? GetCommandName(DXOW.FixedCommandKeyboardCustomization openXmlElement)
   {
     return openXmlElement?.CommandName?.Value;
   }
   
-  private static void SetCommandName(DocumentFormat.OpenXml.Office.Word.FixedCommandKeyboardCustomization openXmlElement, String? value)
+  private static void SetCommandName(DXOW.FixedCommandKeyboardCustomization openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.CommandName = new StringValue { Value = value };
@@ -24,14 +24,14 @@ public static class FixedCommandKeyboardCustomizationConverter
   /// <summary>
   /// fciIndex
   /// </summary>
-  private static UInt16? GetCommandIndex(DocumentFormat.OpenXml.Office.Word.FixedCommandKeyboardCustomization openXmlElement)
+  private static UInt16? GetCommandIndex(DXOW.FixedCommandKeyboardCustomization openXmlElement)
   {
     if (openXmlElement.CommandIndex?.Value != null)
       return UInt16.Parse(openXmlElement.CommandIndex.Value, NumberStyles.HexNumber);
     return null;
   }
   
-  private static void SetCommandIndex(DocumentFormat.OpenXml.Office.Word.FixedCommandKeyboardCustomization openXmlElement, UInt16? value)
+  private static void SetCommandIndex(DXOW.FixedCommandKeyboardCustomization openXmlElement, UInt16? value)
   {
       if (value != null)
         openXmlElement.CommandIndex = ((UInt16)value).ToString("X4");
@@ -42,14 +42,14 @@ public static class FixedCommandKeyboardCustomizationConverter
   /// <summary>
   /// swArg
   /// </summary>
-  private static UInt16? GetArgument(DocumentFormat.OpenXml.Office.Word.FixedCommandKeyboardCustomization openXmlElement)
+  private static UInt16? GetArgument(DXOW.FixedCommandKeyboardCustomization openXmlElement)
   {
     if (openXmlElement.Argument?.Value != null)
       return UInt16.Parse(openXmlElement.Argument.Value, NumberStyles.HexNumber);
     return null;
   }
   
-  private static void SetArgument(DocumentFormat.OpenXml.Office.Word.FixedCommandKeyboardCustomization openXmlElement, UInt16? value)
+  private static void SetArgument(DXOW.FixedCommandKeyboardCustomization openXmlElement, UInt16? value)
   {
       if (value != null)
         openXmlElement.Argument = ((UInt16)value).ToString("X4");
@@ -57,11 +57,11 @@ public static class FixedCommandKeyboardCustomizationConverter
         openXmlElement.Argument = null;
   }
   
-  public static DocumentModel.Wordprocessing.FixedCommandKeyboardCustomization? CreateModelElement(DocumentFormat.OpenXml.Office.Word.FixedCommandKeyboardCustomization? openXmlElement)
+  public static DMW.FixedCommandKeyboardCustomization? CreateModelElement(DXOW.FixedCommandKeyboardCustomization? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Wordprocessing.FixedCommandKeyboardCustomization();
+      var value = new DMW.FixedCommandKeyboardCustomization();
       value.CommandName = GetCommandName(openXmlElement);
       value.CommandIndex = GetCommandIndex(openXmlElement);
       value.Argument = GetArgument(openXmlElement);
@@ -70,8 +70,8 @@ public static class FixedCommandKeyboardCustomizationConverter
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.FixedCommandKeyboardCustomization? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Office.Word.FixedCommandKeyboardCustomization, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMW.FixedCommandKeyboardCustomization? value)
+    where OpenXmlElementType: DXOW.FixedCommandKeyboardCustomization, new()
   {
     if (value != null)
     {

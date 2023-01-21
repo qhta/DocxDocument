@@ -8,12 +8,12 @@ public static class ColorConverter
   /// <summary>
   /// Run Content Color
   /// </summary>
-  private static String? GetVal(DocumentFormat.OpenXml.Wordprocessing.Color openXmlElement)
+  private static String? GetVal(DXW.Color openXmlElement)
   {
     return openXmlElement?.Val?.Value;
   }
   
-  private static void SetVal(DocumentFormat.OpenXml.Wordprocessing.Color openXmlElement, String? value)
+  private static void SetVal(DXW.Color openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.Val = new StringValue { Value = value };
@@ -24,25 +24,25 @@ public static class ColorConverter
   /// <summary>
   /// Run Content Theme Color
   /// </summary>
-  private static DocumentModel.Wordprocessing.ThemeColorKind? GetThemeColor(DocumentFormat.OpenXml.Wordprocessing.Color openXmlElement)
+  private static DMW.ThemeColorKind? GetThemeColor(DXW.Color openXmlElement)
   {
-    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Wordprocessing.ThemeColorValues, DocumentModel.Wordprocessing.ThemeColorKind>(openXmlElement?.ThemeColor?.Value);
+    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Wordprocessing.ThemeColorValues, DMW.ThemeColorKind>(openXmlElement?.ThemeColor?.Value);
   }
   
-  private static void SetThemeColor(DocumentFormat.OpenXml.Wordprocessing.Color openXmlElement, DocumentModel.Wordprocessing.ThemeColorKind? value)
+  private static void SetThemeColor(DXW.Color openXmlElement, DMW.ThemeColorKind? value)
   {
-    openXmlElement.ThemeColor = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Wordprocessing.ThemeColorValues, DocumentModel.Wordprocessing.ThemeColorKind>(value);
+    openXmlElement.ThemeColor = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Wordprocessing.ThemeColorValues, DMW.ThemeColorKind>(value);
   }
   
   /// <summary>
   /// Run Content Theme Color Tint
   /// </summary>
-  private static String? GetThemeTint(DocumentFormat.OpenXml.Wordprocessing.Color openXmlElement)
+  private static String? GetThemeTint(DXW.Color openXmlElement)
   {
     return openXmlElement?.ThemeTint?.Value;
   }
   
-  private static void SetThemeTint(DocumentFormat.OpenXml.Wordprocessing.Color openXmlElement, String? value)
+  private static void SetThemeTint(DXW.Color openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.ThemeTint = new StringValue { Value = value };
@@ -53,12 +53,12 @@ public static class ColorConverter
   /// <summary>
   /// Run Content Theme Color Shade
   /// </summary>
-  private static String? GetThemeShade(DocumentFormat.OpenXml.Wordprocessing.Color openXmlElement)
+  private static String? GetThemeShade(DXW.Color openXmlElement)
   {
     return openXmlElement?.ThemeShade?.Value;
   }
   
-  private static void SetThemeShade(DocumentFormat.OpenXml.Wordprocessing.Color openXmlElement, String? value)
+  private static void SetThemeShade(DXW.Color openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.ThemeShade = new StringValue { Value = value };
@@ -66,11 +66,11 @@ public static class ColorConverter
       openXmlElement.ThemeShade = null;
   }
   
-  public static DocumentModel.Wordprocessing.Color? CreateModelElement(DocumentFormat.OpenXml.Wordprocessing.Color? openXmlElement)
+  public static DMW.Color? CreateModelElement(DXW.Color? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Wordprocessing.Color();
+      var value = new DMW.Color();
       value.Val = GetVal(openXmlElement);
       value.ThemeColor = GetThemeColor(openXmlElement);
       value.ThemeTint = GetThemeTint(openXmlElement);
@@ -80,8 +80,8 @@ public static class ColorConverter
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.Color? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Wordprocessing.Color, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMW.Color? value)
+    where OpenXmlElementType: DXW.Color, new()
   {
     if (value != null)
     {

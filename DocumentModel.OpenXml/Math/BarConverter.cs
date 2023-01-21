@@ -8,22 +8,22 @@ public static class BarConverter
   /// <summary>
   /// Bar Properties.
   /// </summary>
-  private static DocumentModel.Math.BarProperties? GetBarProperties(DocumentFormat.OpenXml.Math.Bar openXmlElement)
+  private static DMMath.BarProperties? GetBarProperties(DXMath.Bar openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Math.BarProperties>();
+    var itemElement = openXmlElement?.GetFirstChild<DXMath.BarProperties>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Math.BarPropertiesConverter.CreateModelElement(itemElement);
+      return DMXMath.BarPropertiesConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetBarProperties(DocumentFormat.OpenXml.Math.Bar openXmlElement, DocumentModel.Math.BarProperties? value)
+  private static void SetBarProperties(DXMath.Bar openXmlElement, DMMath.BarProperties? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Math.BarProperties>();
+    var itemElement = openXmlElement.GetFirstChild<DXMath.BarProperties>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Math.BarPropertiesConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Math.BarProperties>(value);
+      itemElement = DMXMath.BarPropertiesConverter.CreateOpenXmlElement<DXMath.BarProperties>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
@@ -32,32 +32,32 @@ public static class BarConverter
   /// <summary>
   /// Base.
   /// </summary>
-  private static DocumentModel.Math.Base? GetBase(DocumentFormat.OpenXml.Math.Bar openXmlElement)
+  private static DMMath.Base? GetBase(DXMath.Bar openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Math.Base>();
+    var itemElement = openXmlElement?.GetFirstChild<DXMath.Base>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Math.BaseConverter.CreateModelElement(itemElement);
+      return DMXMath.BaseConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetBase(DocumentFormat.OpenXml.Math.Bar openXmlElement, DocumentModel.Math.Base? value)
+  private static void SetBase(DXMath.Bar openXmlElement, DMMath.Base? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Math.Base>();
+    var itemElement = openXmlElement.GetFirstChild<DXMath.Base>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Math.BaseConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Math.Base>(value);
+      itemElement = DMXMath.BaseConverter.CreateOpenXmlElement<DXMath.Base>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  public static DocumentModel.Math.Bar? CreateModelElement(DocumentFormat.OpenXml.Math.Bar? openXmlElement)
+  public static DMMath.Bar? CreateModelElement(DXMath.Bar? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Math.Bar();
+      var value = new DMMath.Bar();
       value.BarProperties = GetBarProperties(openXmlElement);
       value.Base = GetBase(openXmlElement);
       return value;
@@ -65,8 +65,8 @@ public static class BarConverter
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Math.Bar? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Math.Bar, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMMath.Bar? value)
+    where OpenXmlElementType: DXMath.Bar, new()
   {
     if (value != null)
     {

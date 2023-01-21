@@ -5,45 +5,45 @@ namespace DocumentModel.OpenXml.Drawings.Charts;
 /// </summary>
 public static class BarChartExtensionListConverter
 {
-  private static System.Collections.ObjectModel.Collection<DocumentModel.Drawings.Charts.BarChartExtension> GetBarChartExtensions(DocumentFormat.OpenXml.Drawing.Charts.BarChartExtensionList openXmlElement)
+  private static Collection<DMDrawsCharts.BarChartExtension> GetBarChartExtensions(DXDrawCharts.BarChartExtensionList openXmlElement)
   {
-    var collection = new System.Collections.ObjectModel.Collection<DocumentModel.Drawings.Charts.BarChartExtension>();
-    foreach (var item in openXmlElement.Elements<DocumentFormat.OpenXml.Drawing.Charts.BarChartExtension>())
+    var collection = new Collection<DMDrawsCharts.BarChartExtension>();
+    foreach (var item in openXmlElement.Elements<DXDrawCharts.BarChartExtension>())
     {
-      var newItem = DocumentModel.OpenXml.Drawings.Charts.BarChartExtensionConverter.CreateModelElement(item);
+      var newItem = DMXDrawsCharts.BarChartExtensionConverter.CreateModelElement(item);
       if (newItem != null)
         collection.Add(newItem);
     }
     return collection;
   }
   
-  private static void SetBarChartExtensions(DocumentFormat.OpenXml.Drawing.Charts.BarChartExtensionList openXmlElement, System.Collections.ObjectModel.Collection<DocumentModel.Drawings.Charts.BarChartExtension>? value)
+  private static void SetBarChartExtensions(DXDrawCharts.BarChartExtensionList openXmlElement, Collection<DMDrawsCharts.BarChartExtension>? value)
   {
-    openXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Drawing.Charts.BarChartExtension>();
+    openXmlElement.RemoveAllChildren<DXDrawCharts.BarChartExtension>();
     if (value != null)
     {
       foreach (var item in value)
       {
-        var newItem = DocumentModel.OpenXml.Drawings.Charts.BarChartExtensionConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Charts.BarChartExtension>(item);
+        var newItem = DMXDrawsCharts.BarChartExtensionConverter.CreateOpenXmlElement<DXDrawCharts.BarChartExtension>(item);
         if (newItem != null)
           openXmlElement.AddChild(newItem);
       }
     }
   }
   
-  public static DocumentModel.Drawings.Charts.BarChartExtensionList? CreateModelElement(DocumentFormat.OpenXml.Drawing.Charts.BarChartExtensionList? openXmlElement)
+  public static DMDrawsCharts.BarChartExtensionList? CreateModelElement(DXDrawCharts.BarChartExtensionList? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.Charts.BarChartExtensionList();
+      var value = new DMDrawsCharts.BarChartExtensionList();
       value.BarChartExtensions = GetBarChartExtensions(openXmlElement);
       return value;
     }
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.Charts.BarChartExtensionList? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.Charts.BarChartExtensionList, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDrawsCharts.BarChartExtensionList? value)
+    where OpenXmlElementType: DXDrawCharts.BarChartExtensionList, new()
   {
     if (value != null)
     {

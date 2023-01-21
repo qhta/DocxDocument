@@ -8,12 +8,12 @@ public static class SchemaReferenceConverter
   /// <summary>
   /// Target Namespace of Associated XML Schema
   /// </summary>
-  private static String? GetUri(DocumentFormat.OpenXml.CustomXmlDataProperties.SchemaReference openXmlElement)
+  private static String? GetUri(DXCustXmlDataProps.SchemaReference openXmlElement)
   {
     return openXmlElement?.Uri?.Value;
   }
   
-  private static void SetUri(DocumentFormat.OpenXml.CustomXmlDataProperties.SchemaReference openXmlElement, String? value)
+  private static void SetUri(DXCustXmlDataProps.SchemaReference openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.Uri = new StringValue { Value = value };
@@ -21,19 +21,19 @@ public static class SchemaReferenceConverter
       openXmlElement.Uri = null;
   }
   
-  public static DocumentModel.CustomXml.SchemaReference? CreateModelElement(DocumentFormat.OpenXml.CustomXmlDataProperties.SchemaReference? openXmlElement)
+  public static DMCustXml.SchemaReference? CreateModelElement(DXCustXmlDataProps.SchemaReference? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.CustomXml.SchemaReference();
+      var value = new DMCustXml.SchemaReference();
       value.Uri = GetUri(openXmlElement);
       return value;
     }
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.CustomXml.SchemaReference? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.CustomXmlDataProperties.SchemaReference, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMCustXml.SchemaReference? value)
+    where OpenXmlElementType: DXCustXmlDataProps.SchemaReference, new()
   {
     if (value != null)
     {

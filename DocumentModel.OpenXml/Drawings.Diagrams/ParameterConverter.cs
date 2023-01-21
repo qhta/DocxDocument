@@ -8,25 +8,25 @@ public static class ParameterConverter
   /// <summary>
   /// Parameter Type
   /// </summary>
-  private static DocumentModel.Drawings.Diagrams.ParameterIdKind? GetType(DocumentFormat.OpenXml.Drawing.Diagrams.Parameter openXmlElement)
+  private static DMDrawsDgms.ParameterIdKind? GetType(DXDrawDgms.Parameter openXmlElement)
   {
-    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Drawing.Diagrams.ParameterIdValues, DocumentModel.Drawings.Diagrams.ParameterIdKind>(openXmlElement?.Type?.Value);
+    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Drawing.Diagrams.ParameterIdValues, DMDrawsDgms.ParameterIdKind>(openXmlElement?.Type?.Value);
   }
   
-  private static void SetType(DocumentFormat.OpenXml.Drawing.Diagrams.Parameter openXmlElement, DocumentModel.Drawings.Diagrams.ParameterIdKind? value)
+  private static void SetType(DXDrawDgms.Parameter openXmlElement, DMDrawsDgms.ParameterIdKind? value)
   {
-    openXmlElement.Type = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Drawing.Diagrams.ParameterIdValues, DocumentModel.Drawings.Diagrams.ParameterIdKind>(value);
+    openXmlElement.Type = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Drawing.Diagrams.ParameterIdValues, DMDrawsDgms.ParameterIdKind>(value);
   }
   
   /// <summary>
   /// Value
   /// </summary>
-  private static String? GetVal(DocumentFormat.OpenXml.Drawing.Diagrams.Parameter openXmlElement)
+  private static String? GetVal(DXDrawDgms.Parameter openXmlElement)
   {
     return openXmlElement?.Val?.Value;
   }
   
-  private static void SetVal(DocumentFormat.OpenXml.Drawing.Diagrams.Parameter openXmlElement, String? value)
+  private static void SetVal(DXDrawDgms.Parameter openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.Val = new StringValue { Value = value };
@@ -34,11 +34,11 @@ public static class ParameterConverter
       openXmlElement.Val = null;
   }
   
-  public static DocumentModel.Drawings.Diagrams.Parameter? CreateModelElement(DocumentFormat.OpenXml.Drawing.Diagrams.Parameter? openXmlElement)
+  public static DMDrawsDgms.Parameter? CreateModelElement(DXDrawDgms.Parameter? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.Diagrams.Parameter();
+      var value = new DMDrawsDgms.Parameter();
       value.Type = GetType(openXmlElement);
       value.Val = GetVal(openXmlElement);
       return value;
@@ -46,8 +46,8 @@ public static class ParameterConverter
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.Diagrams.Parameter? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.Diagrams.Parameter, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDrawsDgms.Parameter? value)
+    where OpenXmlElementType: DXDrawDgms.Parameter, new()
   {
     if (value != null)
     {

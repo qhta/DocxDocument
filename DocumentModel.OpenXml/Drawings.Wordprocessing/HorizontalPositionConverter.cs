@@ -8,35 +8,35 @@ public static class HorizontalPositionConverter
   /// <summary>
   /// Horizontal Position Relative Base
   /// </summary>
-  private static DocumentModel.Drawings.Wordprocessing.HorizontalRelativePositionKind? GetRelativeFrom(DocumentFormat.OpenXml.Drawing.Wordprocessing.HorizontalPosition openXmlElement)
+  private static DMDrawsW.HorizontalRelativePositionKind? GetRelativeFrom(DXDrawW.HorizontalPosition openXmlElement)
   {
-    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Drawing.Wordprocessing.HorizontalRelativePositionValues, DocumentModel.Drawings.Wordprocessing.HorizontalRelativePositionKind>(openXmlElement?.RelativeFrom?.Value);
+    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Drawing.Wordprocessing.HorizontalRelativePositionValues, DMDrawsW.HorizontalRelativePositionKind>(openXmlElement?.RelativeFrom?.Value);
   }
   
-  private static void SetRelativeFrom(DocumentFormat.OpenXml.Drawing.Wordprocessing.HorizontalPosition openXmlElement, DocumentModel.Drawings.Wordprocessing.HorizontalRelativePositionKind? value)
+  private static void SetRelativeFrom(DXDrawW.HorizontalPosition openXmlElement, DMDrawsW.HorizontalRelativePositionKind? value)
   {
-    openXmlElement.RelativeFrom = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Drawing.Wordprocessing.HorizontalRelativePositionValues, DocumentModel.Drawings.Wordprocessing.HorizontalRelativePositionKind>(value);
+    openXmlElement.RelativeFrom = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Drawing.Wordprocessing.HorizontalRelativePositionValues, DMDrawsW.HorizontalRelativePositionKind>(value);
   }
   
   /// <summary>
   /// Relative Horizontal Alignment.
   /// </summary>
-  private static String? GetHorizontalAlignment(DocumentFormat.OpenXml.Drawing.Wordprocessing.HorizontalPosition openXmlElement)
+  private static String? GetHorizontalAlignment(DXDrawW.HorizontalPosition openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.Wordprocessing.HorizontalAlignment>();
+    var itemElement = openXmlElement?.GetFirstChild<DXDrawW.HorizontalAlignment>();
     if (itemElement != null)
       return itemElement.Text;
     return null;
   }
   
-  private static void SetHorizontalAlignment(DocumentFormat.OpenXml.Drawing.Wordprocessing.HorizontalPosition openXmlElement, String? value)
+  private static void SetHorizontalAlignment(DXDrawW.HorizontalPosition openXmlElement, String? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Wordprocessing.HorizontalAlignment>();
+    var itemElement = openXmlElement.GetFirstChild<DXDrawW.HorizontalAlignment>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = new DocumentFormat.OpenXml.Drawing.Wordprocessing.HorizontalAlignment { Text = value };
+      itemElement = new DXDrawW.HorizontalAlignment { Text = value };
       openXmlElement.AddChild(itemElement);
     }
   }
@@ -44,22 +44,22 @@ public static class HorizontalPositionConverter
   /// <summary>
   /// Absolute Position Offset.
   /// </summary>
-  private static String? GetPositionOffset(DocumentFormat.OpenXml.Drawing.Wordprocessing.HorizontalPosition openXmlElement)
+  private static String? GetPositionOffset(DXDrawW.HorizontalPosition openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.Wordprocessing.PositionOffset>();
+    var itemElement = openXmlElement?.GetFirstChild<DXDrawW.PositionOffset>();
     if (itemElement != null)
       return itemElement.Text;
     return null;
   }
   
-  private static void SetPositionOffset(DocumentFormat.OpenXml.Drawing.Wordprocessing.HorizontalPosition openXmlElement, String? value)
+  private static void SetPositionOffset(DXDrawW.HorizontalPosition openXmlElement, String? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Wordprocessing.PositionOffset>();
+    var itemElement = openXmlElement.GetFirstChild<DXDrawW.PositionOffset>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = new DocumentFormat.OpenXml.Drawing.Wordprocessing.PositionOffset { Text = value };
+      itemElement = new DXDrawW.PositionOffset { Text = value };
       openXmlElement.AddChild(itemElement);
     }
   }
@@ -67,31 +67,31 @@ public static class HorizontalPositionConverter
   /// <summary>
   /// PercentagePositionHeightOffset, this property is only available in Office 2010 and later..
   /// </summary>
-  private static String? GetPercentagePositionHeightOffset(DocumentFormat.OpenXml.Drawing.Wordprocessing.HorizontalPosition openXmlElement)
+  private static String? GetPercentagePositionHeightOffset(DXDrawW.HorizontalPosition openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office2010.Word.Drawing.PercentagePositionHeightOffset>();
+    var itemElement = openXmlElement?.GetFirstChild<DXO2010WDraw.PercentagePositionHeightOffset>();
     if (itemElement != null)
       return itemElement.Text;
     return null;
   }
   
-  private static void SetPercentagePositionHeightOffset(DocumentFormat.OpenXml.Drawing.Wordprocessing.HorizontalPosition openXmlElement, String? value)
+  private static void SetPercentagePositionHeightOffset(DXDrawW.HorizontalPosition openXmlElement, String? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2010.Word.Drawing.PercentagePositionHeightOffset>();
+    var itemElement = openXmlElement.GetFirstChild<DXO2010WDraw.PercentagePositionHeightOffset>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = new DocumentFormat.OpenXml.Office2010.Word.Drawing.PercentagePositionHeightOffset { Text = value };
+      itemElement = new DXO2010WDraw.PercentagePositionHeightOffset { Text = value };
       openXmlElement.AddChild(itemElement);
     }
   }
   
-  public static DocumentModel.Drawings.Wordprocessing.HorizontalPosition? CreateModelElement(DocumentFormat.OpenXml.Drawing.Wordprocessing.HorizontalPosition? openXmlElement)
+  public static DMDrawsW.HorizontalPosition? CreateModelElement(DXDrawW.HorizontalPosition? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.Wordprocessing.HorizontalPosition();
+      var value = new DMDrawsW.HorizontalPosition();
       value.RelativeFrom = GetRelativeFrom(openXmlElement);
       value.HorizontalAlignment = GetHorizontalAlignment(openXmlElement);
       value.PositionOffset = GetPositionOffset(openXmlElement);
@@ -101,8 +101,8 @@ public static class HorizontalPositionConverter
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.Wordprocessing.HorizontalPosition? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.Wordprocessing.HorizontalPosition, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDrawsW.HorizontalPosition? value)
+    where OpenXmlElementType: DXDrawW.HorizontalPosition, new()
   {
     if (value != null)
     {

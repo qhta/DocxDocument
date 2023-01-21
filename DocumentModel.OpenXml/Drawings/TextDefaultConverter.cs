@@ -5,116 +5,116 @@ namespace DocumentModel.OpenXml.Drawings;
 /// </summary>
 public static class TextDefaultConverter
 {
-  private static DocumentModel.Drawings.ShapeProperties? GetShapeProperties(DocumentFormat.OpenXml.Drawing.TextDefault openXmlElement)
+  private static DMDraws.ShapeProperties? GetShapeProperties(DXDraw.TextDefault openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.ShapeProperties>();
+    var itemElement = openXmlElement?.GetFirstChild<DXDraw.ShapeProperties>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.ShapePropertiesConverter.CreateModelElement(itemElement);
+      return DMXDraws.ShapePropertiesConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetShapeProperties(DocumentFormat.OpenXml.Drawing.TextDefault openXmlElement, DocumentModel.Drawings.ShapeProperties? value)
+  private static void SetShapeProperties(DXDraw.TextDefault openXmlElement, DMDraws.ShapeProperties? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.ShapeProperties>();
+    var itemElement = openXmlElement.GetFirstChild<DXDraw.ShapeProperties>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Drawings.ShapePropertiesConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.ShapeProperties>(value);
+      itemElement = DMXDraws.ShapePropertiesConverter.CreateOpenXmlElement<DXDraw.ShapeProperties>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static DocumentModel.Drawings.BodyProperties? GetBodyProperties(DocumentFormat.OpenXml.Drawing.TextDefault openXmlElement)
+  private static DMDraws.BodyProperties? GetBodyProperties(DXDraw.TextDefault openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.BodyProperties>();
+    var itemElement = openXmlElement?.GetFirstChild<DXDraw.BodyProperties>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.BodyPropertiesConverter.CreateModelElement(itemElement);
+      return DMXDraws.BodyPropertiesConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetBodyProperties(DocumentFormat.OpenXml.Drawing.TextDefault openXmlElement, DocumentModel.Drawings.BodyProperties? value)
+  private static void SetBodyProperties(DXDraw.TextDefault openXmlElement, DMDraws.BodyProperties? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.BodyProperties>();
+    var itemElement = openXmlElement.GetFirstChild<DXDraw.BodyProperties>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Drawings.BodyPropertiesConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.BodyProperties>(value);
+      itemElement = DMXDraws.BodyPropertiesConverter.CreateOpenXmlElement<DXDraw.BodyProperties>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static DocumentModel.Drawings.ListStyle? GetListStyle(DocumentFormat.OpenXml.Drawing.TextDefault openXmlElement)
+  private static DMDraws.ListStyle? GetListStyle(DXDraw.TextDefault openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.ListStyle>();
+    var itemElement = openXmlElement?.GetFirstChild<DXDraw.ListStyle>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.ListStyleConverter.CreateModelElement(itemElement);
+      return DMXDraws.ListStyleConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetListStyle(DocumentFormat.OpenXml.Drawing.TextDefault openXmlElement, DocumentModel.Drawings.ListStyle? value)
+  private static void SetListStyle(DXDraw.TextDefault openXmlElement, DMDraws.ListStyle? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.ListStyle>();
+    var itemElement = openXmlElement.GetFirstChild<DXDraw.ListStyle>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Drawings.ListStyleConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.ListStyle>(value);
+      itemElement = DMXDraws.ListStyleConverter.CreateOpenXmlElement<DXDraw.ListStyle>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static DocumentModel.Drawings.ShapeStyle? GetShapeStyle(DocumentFormat.OpenXml.Drawing.TextDefault openXmlElement)
+  private static DMDraws.ShapeStyle? GetShapeStyle(DXDraw.TextDefault openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.ShapeStyle>();
+    var itemElement = openXmlElement?.GetFirstChild<DXDraw.ShapeStyle>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.ShapeStyleConverter.CreateModelElement(itemElement);
+      return DMXDraws.ShapeStyleConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetShapeStyle(DocumentFormat.OpenXml.Drawing.TextDefault openXmlElement, DocumentModel.Drawings.ShapeStyle? value)
+  private static void SetShapeStyle(DXDraw.TextDefault openXmlElement, DMDraws.ShapeStyle? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.ShapeStyle>();
+    var itemElement = openXmlElement.GetFirstChild<DXDraw.ShapeStyle>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Drawings.ShapeStyleConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.ShapeStyle>(value);
+      itemElement = DMXDraws.ShapeStyleConverter.CreateOpenXmlElement<DXDraw.ShapeStyle>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static DocumentModel.Drawings.ExtensionList? GetExtensionList(DocumentFormat.OpenXml.Drawing.TextDefault openXmlElement)
+  private static DMDraws.ExtensionList? GetExtensionList(DXDraw.TextDefault openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.ExtensionList>();
+    var itemElement = openXmlElement?.GetFirstChild<DXDraw.ExtensionList>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.ExtensionListConverter.CreateModelElement(itemElement);
+      return DMXDraws.ExtensionListConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetExtensionList(DocumentFormat.OpenXml.Drawing.TextDefault openXmlElement, DocumentModel.Drawings.ExtensionList? value)
+  private static void SetExtensionList(DXDraw.TextDefault openXmlElement, DMDraws.ExtensionList? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.ExtensionList>();
+    var itemElement = openXmlElement.GetFirstChild<DXDraw.ExtensionList>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Drawings.ExtensionListConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.ExtensionList>(value);
+      itemElement = DMXDraws.ExtensionListConverter.CreateOpenXmlElement<DXDraw.ExtensionList>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  public static DocumentModel.Drawings.TextDefault? CreateModelElement(DocumentFormat.OpenXml.Drawing.TextDefault? openXmlElement)
+  public static DMDraws.TextDefault? CreateModelElement(DXDraw.TextDefault? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.TextDefault();
+      var value = new DMDraws.TextDefault();
       value.ShapeProperties = GetShapeProperties(openXmlElement);
       value.BodyProperties = GetBodyProperties(openXmlElement);
       value.ListStyle = GetListStyle(openXmlElement);
@@ -125,8 +125,8 @@ public static class TextDefaultConverter
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.TextDefault? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.TextDefault, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDraws.TextDefault? value)
+    where OpenXmlElementType: DXDraw.TextDefault, new()
   {
     if (value != null)
     {

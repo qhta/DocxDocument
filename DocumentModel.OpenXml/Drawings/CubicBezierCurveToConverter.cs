@@ -5,45 +5,45 @@ namespace DocumentModel.OpenXml.Drawings;
 /// </summary>
 public static class CubicBezierCurveToConverter
 {
-  private static System.Collections.ObjectModel.Collection<DocumentModel.Drawings.AdjustPoint2DType> GetPoints(DocumentFormat.OpenXml.Drawing.CubicBezierCurveTo openXmlElement)
+  private static Collection<DMDraws.AdjustPoint2DType> GetPoints(DXDraw.CubicBezierCurveTo openXmlElement)
   {
-    var collection = new System.Collections.ObjectModel.Collection<DocumentModel.Drawings.AdjustPoint2DType>();
-    foreach (var item in openXmlElement.Elements<DocumentFormat.OpenXml.Drawing.Point>())
+    var collection = new Collection<DMDraws.AdjustPoint2DType>();
+    foreach (var item in openXmlElement.Elements<DXDraw.Point>())
     {
-      var newItem = DocumentModel.OpenXml.Drawings.AdjustPoint2DTypeConverter.CreateModelElement(item);
+      var newItem = DMXDraws.AdjustPoint2DTypeConverter.CreateModelElement(item);
       if (newItem != null)
         collection.Add(newItem);
     }
     return collection;
   }
   
-  private static void SetPoints(DocumentFormat.OpenXml.Drawing.CubicBezierCurveTo openXmlElement, System.Collections.ObjectModel.Collection<DocumentModel.Drawings.AdjustPoint2DType>? value)
+  private static void SetPoints(DXDraw.CubicBezierCurveTo openXmlElement, Collection<DMDraws.AdjustPoint2DType>? value)
   {
-    openXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Drawing.Point>();
+    openXmlElement.RemoveAllChildren<DXDraw.Point>();
     if (value != null)
     {
       foreach (var item in value)
       {
-        var newItem = DocumentModel.OpenXml.Drawings.AdjustPoint2DTypeConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Point>(item);
+        var newItem = DMXDraws.AdjustPoint2DTypeConverter.CreateOpenXmlElement<DXDraw.Point>(item);
         if (newItem != null)
           openXmlElement.AddChild(newItem);
       }
     }
   }
   
-  public static DocumentModel.Drawings.CubicBezierCurveTo? CreateModelElement(DocumentFormat.OpenXml.Drawing.CubicBezierCurveTo? openXmlElement)
+  public static DMDraws.CubicBezierCurveTo? CreateModelElement(DXDraw.CubicBezierCurveTo? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.CubicBezierCurveTo();
+      var value = new DMDraws.CubicBezierCurveTo();
       value.Points = GetPoints(openXmlElement);
       return value;
     }
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.CubicBezierCurveTo? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.CubicBezierCurveTo, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDraws.CubicBezierCurveTo? value)
+    where OpenXmlElementType: DXDraw.CubicBezierCurveTo, new()
   {
     if (value != null)
     {

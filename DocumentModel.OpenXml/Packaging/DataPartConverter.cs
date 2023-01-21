@@ -8,7 +8,7 @@ public static class DataPartConverter
   /// <summary>
   /// Gets the internal part path in the package.
   /// </summary>
-  private static Uri? GetUri(DocumentFormat.OpenXml.Packaging.DataPart openXmlElement)
+  private static Uri? GetUri(DXPack.DataPart openXmlElement)
   {
     return openXmlElement?.Uri;
   }
@@ -16,16 +16,16 @@ public static class DataPartConverter
   /// <summary>
   /// Gets the content type (MIME type) of the data in the part.
   /// </summary>
-  private static String? GetContentType(DocumentFormat.OpenXml.Packaging.DataPart openXmlElement)
+  private static String? GetContentType(DXPack.DataPart openXmlElement)
   {
     return openXmlElement?.ContentType;
   }
   
-  public static DocumentModel.Packaging.DataPart? CreateModelElement(DocumentFormat.OpenXml.Packaging.DataPart? openXmlElement)
+  public static DMPack.DataPart? CreateModelElement(DXPack.DataPart? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Packaging.DataPart();
+      var value = new DMPack.DataPart();
       value.Uri = GetUri(openXmlElement);
       value.ContentType = GetContentType(openXmlElement);
       return value;
@@ -33,8 +33,8 @@ public static class DataPartConverter
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Packaging.DataPart? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Packaging.DataPart, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMPack.DataPart? value)
+    where OpenXmlElementType: DXPack.DataPart, new()
   {
     if (value != null)
     {

@@ -8,22 +8,22 @@ public static class BackdropConverter
   /// <summary>
   /// Anchor Point.
   /// </summary>
-  private static DocumentModel.Drawings.Anchor? GetAnchor(DocumentFormat.OpenXml.Drawing.Backdrop openXmlElement)
+  private static DMDraws.Anchor? GetAnchor(DXDraw.Backdrop openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.Anchor>();
+    var itemElement = openXmlElement?.GetFirstChild<DXDraw.Anchor>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.AnchorConverter.CreateModelElement(itemElement);
+      return DMXDraws.AnchorConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetAnchor(DocumentFormat.OpenXml.Drawing.Backdrop openXmlElement, DocumentModel.Drawings.Anchor? value)
+  private static void SetAnchor(DXDraw.Backdrop openXmlElement, DMDraws.Anchor? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Anchor>();
+    var itemElement = openXmlElement.GetFirstChild<DXDraw.Anchor>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Drawings.AnchorConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Anchor>(value);
+      itemElement = DMXDraws.AnchorConverter.CreateOpenXmlElement<DXDraw.Anchor>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
@@ -32,22 +32,22 @@ public static class BackdropConverter
   /// <summary>
   /// Normal.
   /// </summary>
-  private static DocumentModel.Drawings.Vector3DType? GetNormal(DocumentFormat.OpenXml.Drawing.Backdrop openXmlElement)
+  private static DMDraws.Vector3DType? GetNormal(DXDraw.Backdrop openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.Normal>();
+    var itemElement = openXmlElement?.GetFirstChild<DXDraw.Normal>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.Vector3DTypeConverter.CreateModelElement(itemElement);
+      return DMXDraws.Vector3DTypeConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetNormal(DocumentFormat.OpenXml.Drawing.Backdrop openXmlElement, DocumentModel.Drawings.Vector3DType? value)
+  private static void SetNormal(DXDraw.Backdrop openXmlElement, DMDraws.Vector3DType? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Normal>();
+    var itemElement = openXmlElement.GetFirstChild<DXDraw.Normal>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Drawings.Vector3DTypeConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Normal>(value);
+      itemElement = DMXDraws.Vector3DTypeConverter.CreateOpenXmlElement<DXDraw.Normal>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
@@ -56,22 +56,22 @@ public static class BackdropConverter
   /// <summary>
   /// Up Vector.
   /// </summary>
-  private static DocumentModel.Drawings.Vector3DType? GetUpVector(DocumentFormat.OpenXml.Drawing.Backdrop openXmlElement)
+  private static DMDraws.Vector3DType? GetUpVector(DXDraw.Backdrop openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.UpVector>();
+    var itemElement = openXmlElement?.GetFirstChild<DXDraw.UpVector>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.Vector3DTypeConverter.CreateModelElement(itemElement);
+      return DMXDraws.Vector3DTypeConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetUpVector(DocumentFormat.OpenXml.Drawing.Backdrop openXmlElement, DocumentModel.Drawings.Vector3DType? value)
+  private static void SetUpVector(DXDraw.Backdrop openXmlElement, DMDraws.Vector3DType? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.UpVector>();
+    var itemElement = openXmlElement.GetFirstChild<DXDraw.UpVector>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Drawings.Vector3DTypeConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.UpVector>(value);
+      itemElement = DMXDraws.Vector3DTypeConverter.CreateOpenXmlElement<DXDraw.UpVector>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
@@ -80,32 +80,32 @@ public static class BackdropConverter
   /// <summary>
   /// ExtensionList.
   /// </summary>
-  private static DocumentModel.Drawings.ExtensionList? GetExtensionList(DocumentFormat.OpenXml.Drawing.Backdrop openXmlElement)
+  private static DMDraws.ExtensionList? GetExtensionList(DXDraw.Backdrop openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.ExtensionList>();
+    var itemElement = openXmlElement?.GetFirstChild<DXDraw.ExtensionList>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.ExtensionListConverter.CreateModelElement(itemElement);
+      return DMXDraws.ExtensionListConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetExtensionList(DocumentFormat.OpenXml.Drawing.Backdrop openXmlElement, DocumentModel.Drawings.ExtensionList? value)
+  private static void SetExtensionList(DXDraw.Backdrop openXmlElement, DMDraws.ExtensionList? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.ExtensionList>();
+    var itemElement = openXmlElement.GetFirstChild<DXDraw.ExtensionList>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Drawings.ExtensionListConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.ExtensionList>(value);
+      itemElement = DMXDraws.ExtensionListConverter.CreateOpenXmlElement<DXDraw.ExtensionList>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  public static DocumentModel.Drawings.Backdrop? CreateModelElement(DocumentFormat.OpenXml.Drawing.Backdrop? openXmlElement)
+  public static DMDraws.Backdrop? CreateModelElement(DXDraw.Backdrop? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.Backdrop();
+      var value = new DMDraws.Backdrop();
       value.Anchor = GetAnchor(openXmlElement);
       value.Normal = GetNormal(openXmlElement);
       value.UpVector = GetUpVector(openXmlElement);
@@ -115,8 +115,8 @@ public static class BackdropConverter
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.Backdrop? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.Backdrop, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDraws.Backdrop? value)
+    where OpenXmlElementType: DXDraw.Backdrop, new()
   {
     if (value != null)
     {

@@ -8,25 +8,25 @@ public static class WrapSquareConverter
   /// <summary>
   /// Text Wrapping Location
   /// </summary>
-  private static DocumentModel.Drawings.Wordprocessing.WrapTextKind? GetWrapText(DocumentFormat.OpenXml.Drawing.Wordprocessing.WrapSquare openXmlElement)
+  private static DMDrawsW.WrapTextKind? GetWrapText(DXDrawW.WrapSquare openXmlElement)
   {
-    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Drawing.Wordprocessing.WrapTextValues, DocumentModel.Drawings.Wordprocessing.WrapTextKind>(openXmlElement?.WrapText?.Value);
+    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Drawing.Wordprocessing.WrapTextValues, DMDrawsW.WrapTextKind>(openXmlElement?.WrapText?.Value);
   }
   
-  private static void SetWrapText(DocumentFormat.OpenXml.Drawing.Wordprocessing.WrapSquare openXmlElement, DocumentModel.Drawings.Wordprocessing.WrapTextKind? value)
+  private static void SetWrapText(DXDrawW.WrapSquare openXmlElement, DMDrawsW.WrapTextKind? value)
   {
-    openXmlElement.WrapText = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Drawing.Wordprocessing.WrapTextValues, DocumentModel.Drawings.Wordprocessing.WrapTextKind>(value);
+    openXmlElement.WrapText = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Drawing.Wordprocessing.WrapTextValues, DMDrawsW.WrapTextKind>(value);
   }
   
   /// <summary>
   /// Distance From Text (Top)
   /// </summary>
-  private static UInt32? GetDistanceFromTop(DocumentFormat.OpenXml.Drawing.Wordprocessing.WrapSquare openXmlElement)
+  private static UInt32? GetDistanceFromTop(DXDrawW.WrapSquare openXmlElement)
   {
     return openXmlElement.DistanceFromTop?.Value;
   }
   
-  private static void SetDistanceFromTop(DocumentFormat.OpenXml.Drawing.Wordprocessing.WrapSquare openXmlElement, UInt32? value)
+  private static void SetDistanceFromTop(DXDrawW.WrapSquare openXmlElement, UInt32? value)
   {
     openXmlElement.DistanceFromTop = value;
   }
@@ -34,12 +34,12 @@ public static class WrapSquareConverter
   /// <summary>
   /// Distance From Text on Bottom Edge
   /// </summary>
-  private static UInt32? GetDistanceFromBottom(DocumentFormat.OpenXml.Drawing.Wordprocessing.WrapSquare openXmlElement)
+  private static UInt32? GetDistanceFromBottom(DXDrawW.WrapSquare openXmlElement)
   {
     return openXmlElement.DistanceFromBottom?.Value;
   }
   
-  private static void SetDistanceFromBottom(DocumentFormat.OpenXml.Drawing.Wordprocessing.WrapSquare openXmlElement, UInt32? value)
+  private static void SetDistanceFromBottom(DXDrawW.WrapSquare openXmlElement, UInt32? value)
   {
     openXmlElement.DistanceFromBottom = value;
   }
@@ -47,12 +47,12 @@ public static class WrapSquareConverter
   /// <summary>
   /// Distance From Text on Left Edge
   /// </summary>
-  private static UInt32? GetDistanceFromLeft(DocumentFormat.OpenXml.Drawing.Wordprocessing.WrapSquare openXmlElement)
+  private static UInt32? GetDistanceFromLeft(DXDrawW.WrapSquare openXmlElement)
   {
     return openXmlElement.DistanceFromLeft?.Value;
   }
   
-  private static void SetDistanceFromLeft(DocumentFormat.OpenXml.Drawing.Wordprocessing.WrapSquare openXmlElement, UInt32? value)
+  private static void SetDistanceFromLeft(DXDrawW.WrapSquare openXmlElement, UInt32? value)
   {
     openXmlElement.DistanceFromLeft = value;
   }
@@ -60,12 +60,12 @@ public static class WrapSquareConverter
   /// <summary>
   /// Distance From Text on Right Edge
   /// </summary>
-  private static UInt32? GetDistanceFromRight(DocumentFormat.OpenXml.Drawing.Wordprocessing.WrapSquare openXmlElement)
+  private static UInt32? GetDistanceFromRight(DXDrawW.WrapSquare openXmlElement)
   {
     return openXmlElement.DistanceFromRight?.Value;
   }
   
-  private static void SetDistanceFromRight(DocumentFormat.OpenXml.Drawing.Wordprocessing.WrapSquare openXmlElement, UInt32? value)
+  private static void SetDistanceFromRight(DXDrawW.WrapSquare openXmlElement, UInt32? value)
   {
     openXmlElement.DistanceFromRight = value;
   }
@@ -73,32 +73,32 @@ public static class WrapSquareConverter
   /// <summary>
   /// Object Extents Including Effects.
   /// </summary>
-  private static DocumentModel.Drawings.Wordprocessing.EffectExtent? GetEffectExtent(DocumentFormat.OpenXml.Drawing.Wordprocessing.WrapSquare openXmlElement)
+  private static DMDrawsW.EffectExtent? GetEffectExtent(DXDrawW.WrapSquare openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.Wordprocessing.EffectExtent>();
+    var itemElement = openXmlElement?.GetFirstChild<DXDrawW.EffectExtent>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.Wordprocessing.EffectExtentConverter.CreateModelElement(itemElement);
+      return DMXDrawsW.EffectExtentConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetEffectExtent(DocumentFormat.OpenXml.Drawing.Wordprocessing.WrapSquare openXmlElement, DocumentModel.Drawings.Wordprocessing.EffectExtent? value)
+  private static void SetEffectExtent(DXDrawW.WrapSquare openXmlElement, DMDrawsW.EffectExtent? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Wordprocessing.EffectExtent>();
+    var itemElement = openXmlElement.GetFirstChild<DXDrawW.EffectExtent>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Drawings.Wordprocessing.EffectExtentConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Wordprocessing.EffectExtent>(value);
+      itemElement = DMXDrawsW.EffectExtentConverter.CreateOpenXmlElement<DXDrawW.EffectExtent>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  public static DocumentModel.Drawings.Wordprocessing.WrapSquare? CreateModelElement(DocumentFormat.OpenXml.Drawing.Wordprocessing.WrapSquare? openXmlElement)
+  public static DMDrawsW.WrapSquare? CreateModelElement(DXDrawW.WrapSquare? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.Wordprocessing.WrapSquare();
+      var value = new DMDrawsW.WrapSquare();
       value.WrapText = GetWrapText(openXmlElement);
       value.DistanceFromTop = GetDistanceFromTop(openXmlElement);
       value.DistanceFromBottom = GetDistanceFromBottom(openXmlElement);
@@ -110,8 +110,8 @@ public static class WrapSquareConverter
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.Wordprocessing.WrapSquare? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.Wordprocessing.WrapSquare, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDrawsW.WrapSquare? value)
+    where OpenXmlElementType: DXDrawW.WrapSquare, new()
   {
     if (value != null)
     {

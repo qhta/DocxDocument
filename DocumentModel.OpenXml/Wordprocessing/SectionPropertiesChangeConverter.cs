@@ -8,12 +8,12 @@ public static class SectionPropertiesChangeConverter
   /// <summary>
   /// author
   /// </summary>
-  private static String? GetAuthor(DocumentFormat.OpenXml.Wordprocessing.SectionPropertiesChange openXmlElement)
+  private static String? GetAuthor(DXW.SectionPropertiesChange openXmlElement)
   {
     return openXmlElement?.Author?.Value;
   }
   
-  private static void SetAuthor(DocumentFormat.OpenXml.Wordprocessing.SectionPropertiesChange openXmlElement, String? value)
+  private static void SetAuthor(DXW.SectionPropertiesChange openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.Author = new StringValue { Value = value };
@@ -24,12 +24,12 @@ public static class SectionPropertiesChangeConverter
   /// <summary>
   /// date
   /// </summary>
-  private static DateTime? GetDate(DocumentFormat.OpenXml.Wordprocessing.SectionPropertiesChange openXmlElement)
+  private static DateTime? GetDate(DXW.SectionPropertiesChange openXmlElement)
   {
     return openXmlElement.Date?.Value;
   }
   
-  private static void SetDate(DocumentFormat.OpenXml.Wordprocessing.SectionPropertiesChange openXmlElement, DateTime? value)
+  private static void SetDate(DXW.SectionPropertiesChange openXmlElement, DateTime? value)
   {
     openXmlElement.Date = value;
   }
@@ -37,12 +37,12 @@ public static class SectionPropertiesChangeConverter
   /// <summary>
   /// Annotation Identifier
   /// </summary>
-  private static String? GetId(DocumentFormat.OpenXml.Wordprocessing.SectionPropertiesChange openXmlElement)
+  private static String? GetId(DXW.SectionPropertiesChange openXmlElement)
   {
     return openXmlElement?.Id?.Value;
   }
   
-  private static void SetId(DocumentFormat.OpenXml.Wordprocessing.SectionPropertiesChange openXmlElement, String? value)
+  private static void SetId(DXW.SectionPropertiesChange openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.Id = new StringValue { Value = value };
@@ -53,32 +53,32 @@ public static class SectionPropertiesChangeConverter
   /// <summary>
   /// Previous Section Properties.
   /// </summary>
-  private static DocumentModel.Wordprocessing.PreviousSectionProperties? GetPreviousSectionProperties(DocumentFormat.OpenXml.Wordprocessing.SectionPropertiesChange openXmlElement)
+  private static DMW.PreviousSectionProperties? GetPreviousSectionProperties(DXW.SectionPropertiesChange openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.PreviousSectionProperties>();
+    var itemElement = openXmlElement?.GetFirstChild<DXW.PreviousSectionProperties>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Wordprocessing.PreviousSectionPropertiesConverter.CreateModelElement(itemElement);
+      return DMXW.PreviousSectionPropertiesConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetPreviousSectionProperties(DocumentFormat.OpenXml.Wordprocessing.SectionPropertiesChange openXmlElement, DocumentModel.Wordprocessing.PreviousSectionProperties? value)
+  private static void SetPreviousSectionProperties(DXW.SectionPropertiesChange openXmlElement, DMW.PreviousSectionProperties? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.PreviousSectionProperties>();
+    var itemElement = openXmlElement.GetFirstChild<DXW.PreviousSectionProperties>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Wordprocessing.PreviousSectionPropertiesConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.PreviousSectionProperties>(value);
+      itemElement = DMXW.PreviousSectionPropertiesConverter.CreateOpenXmlElement<DXW.PreviousSectionProperties>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  public static DocumentModel.Wordprocessing.SectionPropertiesChange? CreateModelElement(DocumentFormat.OpenXml.Wordprocessing.SectionPropertiesChange? openXmlElement)
+  public static DMW.SectionPropertiesChange? CreateModelElement(DXW.SectionPropertiesChange? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Wordprocessing.SectionPropertiesChange();
+      var value = new DMW.SectionPropertiesChange();
       value.Author = GetAuthor(openXmlElement);
       value.Date = GetDate(openXmlElement);
       value.Id = GetId(openXmlElement);
@@ -88,8 +88,8 @@ public static class SectionPropertiesChangeConverter
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.SectionPropertiesChange? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Wordprocessing.SectionPropertiesChange, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMW.SectionPropertiesChange? value)
+    where OpenXmlElementType: DXW.SectionPropertiesChange, new()
   {
     if (value != null)
     {

@@ -8,25 +8,25 @@ public static class ShapeDefaultsConverter
   /// <summary>
   /// VML Extension Handling Behavior
   /// </summary>
-  private static DocumentModel.Vml.ExtensionHandlingBehaviorKind? GetExtension(DocumentFormat.OpenXml.Vml.Office.ShapeDefaults openXmlElement)
+  private static DMVml.ExtensionHandlingBehaviorKind? GetExtension(DXVmlO.ShapeDefaults openXmlElement)
   {
-    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Vml.ExtensionHandlingBehaviorValues, DocumentModel.Vml.ExtensionHandlingBehaviorKind>(openXmlElement?.Extension?.Value);
+    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Vml.ExtensionHandlingBehaviorValues, DMVml.ExtensionHandlingBehaviorKind>(openXmlElement?.Extension?.Value);
   }
   
-  private static void SetExtension(DocumentFormat.OpenXml.Vml.Office.ShapeDefaults openXmlElement, DocumentModel.Vml.ExtensionHandlingBehaviorKind? value)
+  private static void SetExtension(DXVmlO.ShapeDefaults openXmlElement, DMVml.ExtensionHandlingBehaviorKind? value)
   {
-    openXmlElement.Extension = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Vml.ExtensionHandlingBehaviorValues, DocumentModel.Vml.ExtensionHandlingBehaviorKind>(value);
+    openXmlElement.Extension = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Vml.ExtensionHandlingBehaviorValues, DMVml.ExtensionHandlingBehaviorKind>(value);
   }
   
   /// <summary>
   /// Shape ID Optional Storage
   /// </summary>
-  private static Int64? GetMaxShapeId(DocumentFormat.OpenXml.Vml.Office.ShapeDefaults openXmlElement)
+  private static Int64? GetMaxShapeId(DXVmlO.ShapeDefaults openXmlElement)
   {
     return openXmlElement.MaxShapeId?.Value;
   }
   
-  private static void SetMaxShapeId(DocumentFormat.OpenXml.Vml.Office.ShapeDefaults openXmlElement, Int64? value)
+  private static void SetMaxShapeId(DXVmlO.ShapeDefaults openXmlElement, Int64? value)
   {
     openXmlElement.MaxShapeId = value;
   }
@@ -34,12 +34,12 @@ public static class ShapeDefaultsConverter
   /// <summary>
   /// style
   /// </summary>
-  private static String? GetStyle(DocumentFormat.OpenXml.Vml.Office.ShapeDefaults openXmlElement)
+  private static String? GetStyle(DXVmlO.ShapeDefaults openXmlElement)
   {
     return openXmlElement?.Style?.Value;
   }
   
-  private static void SetStyle(DocumentFormat.OpenXml.Vml.Office.ShapeDefaults openXmlElement, String? value)
+  private static void SetStyle(DXVmlO.ShapeDefaults openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.Style = new StringValue { Value = value };
@@ -50,12 +50,12 @@ public static class ShapeDefaultsConverter
   /// <summary>
   /// Shape Fill Toggle
   /// </summary>
-  private static Boolean? GetBeFilled(DocumentFormat.OpenXml.Vml.Office.ShapeDefaults openXmlElement)
+  private static Boolean? GetBeFilled(DXVmlO.ShapeDefaults openXmlElement)
   {
     return openXmlElement?.BeFilled?.Value;
   }
   
-  private static void SetBeFilled(DocumentFormat.OpenXml.Vml.Office.ShapeDefaults openXmlElement, Boolean? value)
+  private static void SetBeFilled(DXVmlO.ShapeDefaults openXmlElement, Boolean? value)
   {
     if (value != null)
       openXmlElement.BeFilled = value;
@@ -66,12 +66,12 @@ public static class ShapeDefaultsConverter
   /// <summary>
   /// Default Fill Color
   /// </summary>
-  private static String? GetFillColor(DocumentFormat.OpenXml.Vml.Office.ShapeDefaults openXmlElement)
+  private static String? GetFillColor(DXVmlO.ShapeDefaults openXmlElement)
   {
     return openXmlElement?.FillColor?.Value;
   }
   
-  private static void SetFillColor(DocumentFormat.OpenXml.Vml.Office.ShapeDefaults openXmlElement, String? value)
+  private static void SetFillColor(DXVmlO.ShapeDefaults openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.FillColor = new StringValue { Value = value };
@@ -82,12 +82,12 @@ public static class ShapeDefaultsConverter
   /// <summary>
   /// Shape Stroke Toggle
   /// </summary>
-  private static Boolean? GetIsStroke(DocumentFormat.OpenXml.Vml.Office.ShapeDefaults openXmlElement)
+  private static Boolean? GetIsStroke(DXVmlO.ShapeDefaults openXmlElement)
   {
     return openXmlElement?.IsStroke?.Value;
   }
   
-  private static void SetIsStroke(DocumentFormat.OpenXml.Vml.Office.ShapeDefaults openXmlElement, Boolean? value)
+  private static void SetIsStroke(DXVmlO.ShapeDefaults openXmlElement, Boolean? value)
   {
     if (value != null)
       openXmlElement.IsStroke = value;
@@ -98,12 +98,12 @@ public static class ShapeDefaultsConverter
   /// <summary>
   /// Shape Stroke Color
   /// </summary>
-  private static String? GetStrokeColor(DocumentFormat.OpenXml.Vml.Office.ShapeDefaults openXmlElement)
+  private static String? GetStrokeColor(DXVmlO.ShapeDefaults openXmlElement)
   {
     return openXmlElement?.StrokeColor?.Value;
   }
   
-  private static void SetStrokeColor(DocumentFormat.OpenXml.Vml.Office.ShapeDefaults openXmlElement, String? value)
+  private static void SetStrokeColor(DXVmlO.ShapeDefaults openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.StrokeColor = new StringValue { Value = value };
@@ -114,12 +114,12 @@ public static class ShapeDefaultsConverter
   /// <summary>
   /// Allow in Table Cell
   /// </summary>
-  private static Boolean? GetAllowInCell(DocumentFormat.OpenXml.Vml.Office.ShapeDefaults openXmlElement)
+  private static Boolean? GetAllowInCell(DXVmlO.ShapeDefaults openXmlElement)
   {
     return openXmlElement?.AllowInCell?.Value;
   }
   
-  private static void SetAllowInCell(DocumentFormat.OpenXml.Vml.Office.ShapeDefaults openXmlElement, Boolean? value)
+  private static void SetAllowInCell(DXVmlO.ShapeDefaults openXmlElement, Boolean? value)
   {
     if (value != null)
       openXmlElement.AllowInCell = value;
@@ -130,12 +130,12 @@ public static class ShapeDefaultsConverter
   /// <summary>
   /// allowoverlap
   /// </summary>
-  private static Boolean? GetAllowOverlap(DocumentFormat.OpenXml.Vml.Office.ShapeDefaults openXmlElement)
+  private static Boolean? GetAllowOverlap(DXVmlO.ShapeDefaults openXmlElement)
   {
     return openXmlElement?.AllowOverlap?.Value;
   }
   
-  private static void SetAllowOverlap(DocumentFormat.OpenXml.Vml.Office.ShapeDefaults openXmlElement, Boolean? value)
+  private static void SetAllowOverlap(DXVmlO.ShapeDefaults openXmlElement, Boolean? value)
   {
     if (value != null)
       openXmlElement.AllowOverlap = value;
@@ -146,35 +146,35 @@ public static class ShapeDefaultsConverter
   /// <summary>
   /// insetmode
   /// </summary>
-  private static DocumentModel.Vml.InsetMarginKind? GetInsetMode(DocumentFormat.OpenXml.Vml.Office.ShapeDefaults openXmlElement)
+  private static DMVml.InsetMarginKind? GetInsetMode(DXVmlO.ShapeDefaults openXmlElement)
   {
-    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Vml.Office.InsetMarginValues, DocumentModel.Vml.InsetMarginKind>(openXmlElement?.InsetMode?.Value);
+    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Vml.Office.InsetMarginValues, DMVml.InsetMarginKind>(openXmlElement?.InsetMode?.Value);
   }
   
-  private static void SetInsetMode(DocumentFormat.OpenXml.Vml.Office.ShapeDefaults openXmlElement, DocumentModel.Vml.InsetMarginKind? value)
+  private static void SetInsetMode(DXVmlO.ShapeDefaults openXmlElement, DMVml.InsetMarginKind? value)
   {
-    openXmlElement.InsetMode = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Vml.Office.InsetMarginValues, DocumentModel.Vml.InsetMarginKind>(value);
+    openXmlElement.InsetMode = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Vml.Office.InsetMarginValues, DMVml.InsetMarginKind>(value);
   }
   
   /// <summary>
   /// Fill.
   /// </summary>
-  private static DocumentModel.Vml.Fill? GetFill(DocumentFormat.OpenXml.Vml.Office.ShapeDefaults openXmlElement)
+  private static DMVml.Fill? GetFill(DXVmlO.ShapeDefaults openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Vml.Fill>();
+    var itemElement = openXmlElement?.GetFirstChild<DXVml.Fill>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Vml.FillConverter.CreateModelElement(itemElement);
+      return DMXVml.FillConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetFill(DocumentFormat.OpenXml.Vml.Office.ShapeDefaults openXmlElement, DocumentModel.Vml.Fill? value)
+  private static void SetFill(DXVmlO.ShapeDefaults openXmlElement, DMVml.Fill? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Vml.Fill>();
+    var itemElement = openXmlElement.GetFirstChild<DXVml.Fill>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Vml.FillConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Vml.Fill>(value);
+      itemElement = DMXVml.FillConverter.CreateOpenXmlElement<DXVml.Fill>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
@@ -183,22 +183,22 @@ public static class ShapeDefaultsConverter
   /// <summary>
   /// ImageData.
   /// </summary>
-  private static DocumentModel.Vml.ImageData? GetImageData(DocumentFormat.OpenXml.Vml.Office.ShapeDefaults openXmlElement)
+  private static DMVml.ImageData? GetImageData(DXVmlO.ShapeDefaults openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Vml.ImageData>();
+    var itemElement = openXmlElement?.GetFirstChild<DXVml.ImageData>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Vml.ImageDataConverter.CreateModelElement(itemElement);
+      return DMXVml.ImageDataConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetImageData(DocumentFormat.OpenXml.Vml.Office.ShapeDefaults openXmlElement, DocumentModel.Vml.ImageData? value)
+  private static void SetImageData(DXVmlO.ShapeDefaults openXmlElement, DMVml.ImageData? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Vml.ImageData>();
+    var itemElement = openXmlElement.GetFirstChild<DXVml.ImageData>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Vml.ImageDataConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Vml.ImageData>(value);
+      itemElement = DMXVml.ImageDataConverter.CreateOpenXmlElement<DXVml.ImageData>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
@@ -207,22 +207,22 @@ public static class ShapeDefaultsConverter
   /// <summary>
   /// Stroke.
   /// </summary>
-  private static DocumentModel.Vml.Stroke? GetStroke(DocumentFormat.OpenXml.Vml.Office.ShapeDefaults openXmlElement)
+  private static DMVml.Stroke? GetStroke(DXVmlO.ShapeDefaults openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Vml.Stroke>();
+    var itemElement = openXmlElement?.GetFirstChild<DXVml.Stroke>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Vml.StrokeConverter.CreateModelElement(itemElement);
+      return DMXVml.StrokeConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetStroke(DocumentFormat.OpenXml.Vml.Office.ShapeDefaults openXmlElement, DocumentModel.Vml.Stroke? value)
+  private static void SetStroke(DXVmlO.ShapeDefaults openXmlElement, DMVml.Stroke? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Vml.Stroke>();
+    var itemElement = openXmlElement.GetFirstChild<DXVml.Stroke>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Vml.StrokeConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Vml.Stroke>(value);
+      itemElement = DMXVml.StrokeConverter.CreateOpenXmlElement<DXVml.Stroke>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
@@ -231,22 +231,22 @@ public static class ShapeDefaultsConverter
   /// <summary>
   /// TextBox.
   /// </summary>
-  private static DocumentModel.Vml.TextBox? GetTextBox(DocumentFormat.OpenXml.Vml.Office.ShapeDefaults openXmlElement)
+  private static DMVml.TextBox? GetTextBox(DXVmlO.ShapeDefaults openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Vml.TextBox>();
+    var itemElement = openXmlElement?.GetFirstChild<DXVml.TextBox>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Vml.TextBoxConverter.CreateModelElement(itemElement);
+      return DMXVml.TextBoxConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetTextBox(DocumentFormat.OpenXml.Vml.Office.ShapeDefaults openXmlElement, DocumentModel.Vml.TextBox? value)
+  private static void SetTextBox(DXVmlO.ShapeDefaults openXmlElement, DMVml.TextBox? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Vml.TextBox>();
+    var itemElement = openXmlElement.GetFirstChild<DXVml.TextBox>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Vml.TextBoxConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Vml.TextBox>(value);
+      itemElement = DMXVml.TextBoxConverter.CreateOpenXmlElement<DXVml.TextBox>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
@@ -255,22 +255,22 @@ public static class ShapeDefaultsConverter
   /// <summary>
   /// Shadow.
   /// </summary>
-  private static DocumentModel.Vml.Shadow? GetShadow(DocumentFormat.OpenXml.Vml.Office.ShapeDefaults openXmlElement)
+  private static DMVml.Shadow? GetShadow(DXVmlO.ShapeDefaults openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Vml.Shadow>();
+    var itemElement = openXmlElement?.GetFirstChild<DXVml.Shadow>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Vml.ShadowConverter.CreateModelElement(itemElement);
+      return DMXVml.ShadowConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetShadow(DocumentFormat.OpenXml.Vml.Office.ShapeDefaults openXmlElement, DocumentModel.Vml.Shadow? value)
+  private static void SetShadow(DXVmlO.ShapeDefaults openXmlElement, DMVml.Shadow? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Vml.Shadow>();
+    var itemElement = openXmlElement.GetFirstChild<DXVml.Shadow>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Vml.ShadowConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Vml.Shadow>(value);
+      itemElement = DMXVml.ShadowConverter.CreateOpenXmlElement<DXVml.Shadow>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
@@ -279,22 +279,22 @@ public static class ShapeDefaultsConverter
   /// <summary>
   /// Skew.
   /// </summary>
-  private static DocumentModel.Vml.Skew? GetSkew(DocumentFormat.OpenXml.Vml.Office.ShapeDefaults openXmlElement)
+  private static DMVml.Skew? GetSkew(DXVmlO.ShapeDefaults openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Vml.Office.Skew>();
+    var itemElement = openXmlElement?.GetFirstChild<DXVmlO.Skew>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Vml.SkewConverter.CreateModelElement(itemElement);
+      return DMXVml.SkewConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetSkew(DocumentFormat.OpenXml.Vml.Office.ShapeDefaults openXmlElement, DocumentModel.Vml.Skew? value)
+  private static void SetSkew(DXVmlO.ShapeDefaults openXmlElement, DMVml.Skew? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Vml.Office.Skew>();
+    var itemElement = openXmlElement.GetFirstChild<DXVmlO.Skew>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Vml.SkewConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Vml.Office.Skew>(value);
+      itemElement = DMXVml.SkewConverter.CreateOpenXmlElement<DXVmlO.Skew>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
@@ -303,22 +303,22 @@ public static class ShapeDefaultsConverter
   /// <summary>
   /// Extrusion.
   /// </summary>
-  private static DocumentModel.Vml.Extrusion? GetExtrusion(DocumentFormat.OpenXml.Vml.Office.ShapeDefaults openXmlElement)
+  private static DMVml.Extrusion? GetExtrusion(DXVmlO.ShapeDefaults openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Vml.Office.Extrusion>();
+    var itemElement = openXmlElement?.GetFirstChild<DXVmlO.Extrusion>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Vml.ExtrusionConverter.CreateModelElement(itemElement);
+      return DMXVml.ExtrusionConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetExtrusion(DocumentFormat.OpenXml.Vml.Office.ShapeDefaults openXmlElement, DocumentModel.Vml.Extrusion? value)
+  private static void SetExtrusion(DXVmlO.ShapeDefaults openXmlElement, DMVml.Extrusion? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Vml.Office.Extrusion>();
+    var itemElement = openXmlElement.GetFirstChild<DXVmlO.Extrusion>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Vml.ExtrusionConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Vml.Office.Extrusion>(value);
+      itemElement = DMXVml.ExtrusionConverter.CreateOpenXmlElement<DXVmlO.Extrusion>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
@@ -327,22 +327,22 @@ public static class ShapeDefaultsConverter
   /// <summary>
   /// Callout.
   /// </summary>
-  private static DocumentModel.Vml.Callout? GetCallout(DocumentFormat.OpenXml.Vml.Office.ShapeDefaults openXmlElement)
+  private static DMVml.Callout? GetCallout(DXVmlO.ShapeDefaults openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Vml.Office.Callout>();
+    var itemElement = openXmlElement?.GetFirstChild<DXVmlO.Callout>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Vml.CalloutConverter.CreateModelElement(itemElement);
+      return DMXVml.CalloutConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetCallout(DocumentFormat.OpenXml.Vml.Office.ShapeDefaults openXmlElement, DocumentModel.Vml.Callout? value)
+  private static void SetCallout(DXVmlO.ShapeDefaults openXmlElement, DMVml.Callout? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Vml.Office.Callout>();
+    var itemElement = openXmlElement.GetFirstChild<DXVmlO.Callout>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Vml.CalloutConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Vml.Office.Callout>(value);
+      itemElement = DMXVml.CalloutConverter.CreateOpenXmlElement<DXVmlO.Callout>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
@@ -351,22 +351,22 @@ public static class ShapeDefaultsConverter
   /// <summary>
   /// Shape Protections.
   /// </summary>
-  private static DocumentModel.Vml.Lock? GetLock(DocumentFormat.OpenXml.Vml.Office.ShapeDefaults openXmlElement)
+  private static DMVml.Lock? GetLock(DXVmlO.ShapeDefaults openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Vml.Office.Lock>();
+    var itemElement = openXmlElement?.GetFirstChild<DXVmlO.Lock>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Vml.LockConverter.CreateModelElement(itemElement);
+      return DMXVml.LockConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetLock(DocumentFormat.OpenXml.Vml.Office.ShapeDefaults openXmlElement, DocumentModel.Vml.Lock? value)
+  private static void SetLock(DXVmlO.ShapeDefaults openXmlElement, DMVml.Lock? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Vml.Office.Lock>();
+    var itemElement = openXmlElement.GetFirstChild<DXVmlO.Lock>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Vml.LockConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Vml.Office.Lock>(value);
+      itemElement = DMXVml.LockConverter.CreateOpenXmlElement<DXVmlO.Lock>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
@@ -375,22 +375,22 @@ public static class ShapeDefaultsConverter
   /// <summary>
   /// Most Recently Used Colors.
   /// </summary>
-  private static DocumentModel.Vml.ColorMostRecentlyUsed? GetColorMostRecentlyUsed(DocumentFormat.OpenXml.Vml.Office.ShapeDefaults openXmlElement)
+  private static DMVml.ColorMostRecentlyUsed? GetColorMostRecentlyUsed(DXVmlO.ShapeDefaults openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Vml.Office.ColorMostRecentlyUsed>();
+    var itemElement = openXmlElement?.GetFirstChild<DXVmlO.ColorMostRecentlyUsed>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Vml.ColorMostRecentlyUsedConverter.CreateModelElement(itemElement);
+      return DMXVml.ColorMostRecentlyUsedConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetColorMostRecentlyUsed(DocumentFormat.OpenXml.Vml.Office.ShapeDefaults openXmlElement, DocumentModel.Vml.ColorMostRecentlyUsed? value)
+  private static void SetColorMostRecentlyUsed(DXVmlO.ShapeDefaults openXmlElement, DMVml.ColorMostRecentlyUsed? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Vml.Office.ColorMostRecentlyUsed>();
+    var itemElement = openXmlElement.GetFirstChild<DXVmlO.ColorMostRecentlyUsed>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Vml.ColorMostRecentlyUsedConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Vml.Office.ColorMostRecentlyUsed>(value);
+      itemElement = DMXVml.ColorMostRecentlyUsedConverter.CreateOpenXmlElement<DXVmlO.ColorMostRecentlyUsed>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
@@ -399,32 +399,32 @@ public static class ShapeDefaultsConverter
   /// <summary>
   /// UI Default Colors.
   /// </summary>
-  private static DocumentModel.Vml.ColorMenu? GetColorMenu(DocumentFormat.OpenXml.Vml.Office.ShapeDefaults openXmlElement)
+  private static DMVml.ColorMenu? GetColorMenu(DXVmlO.ShapeDefaults openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Vml.Office.ColorMenu>();
+    var itemElement = openXmlElement?.GetFirstChild<DXVmlO.ColorMenu>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Vml.ColorMenuConverter.CreateModelElement(itemElement);
+      return DMXVml.ColorMenuConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetColorMenu(DocumentFormat.OpenXml.Vml.Office.ShapeDefaults openXmlElement, DocumentModel.Vml.ColorMenu? value)
+  private static void SetColorMenu(DXVmlO.ShapeDefaults openXmlElement, DMVml.ColorMenu? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Vml.Office.ColorMenu>();
+    var itemElement = openXmlElement.GetFirstChild<DXVmlO.ColorMenu>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Vml.ColorMenuConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Vml.Office.ColorMenu>(value);
+      itemElement = DMXVml.ColorMenuConverter.CreateOpenXmlElement<DXVmlO.ColorMenu>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  public static DocumentModel.Vml.ShapeDefaults? CreateModelElement(DocumentFormat.OpenXml.Vml.Office.ShapeDefaults? openXmlElement)
+  public static DMVml.ShapeDefaults? CreateModelElement(DXVmlO.ShapeDefaults? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Vml.ShapeDefaults();
+      var value = new DMVml.ShapeDefaults();
       value.Extension = GetExtension(openXmlElement);
       value.MaxShapeId = GetMaxShapeId(openXmlElement);
       value.Style = GetStyle(openXmlElement);
@@ -451,8 +451,8 @@ public static class ShapeDefaultsConverter
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Vml.ShapeDefaults? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Vml.Office.ShapeDefaults, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMVml.ShapeDefaults? value)
+    where OpenXmlElementType: DXVmlO.ShapeDefaults, new()
   {
     if (value != null)
     {

@@ -8,12 +8,12 @@ public static class PageMarginsConverter
   /// <summary>
   /// l, this property is only available in Office 2016 and later.
   /// </summary>
-  private static Double? GetL(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.PageMargins openXmlElement)
+  private static Double? GetL(DXO2016DrawChartDraw.PageMargins openXmlElement)
   {
     return openXmlElement.L?.Value;
   }
   
-  private static void SetL(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.PageMargins openXmlElement, Double? value)
+  private static void SetL(DXO2016DrawChartDraw.PageMargins openXmlElement, Double? value)
   {
     openXmlElement.L = value;
   }
@@ -21,12 +21,12 @@ public static class PageMarginsConverter
   /// <summary>
   /// r, this property is only available in Office 2016 and later.
   /// </summary>
-  private static Double? GetR(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.PageMargins openXmlElement)
+  private static Double? GetR(DXO2016DrawChartDraw.PageMargins openXmlElement)
   {
     return openXmlElement.R?.Value;
   }
   
-  private static void SetR(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.PageMargins openXmlElement, Double? value)
+  private static void SetR(DXO2016DrawChartDraw.PageMargins openXmlElement, Double? value)
   {
     openXmlElement.R = value;
   }
@@ -34,12 +34,12 @@ public static class PageMarginsConverter
   /// <summary>
   /// t, this property is only available in Office 2016 and later.
   /// </summary>
-  private static Double? GetT(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.PageMargins openXmlElement)
+  private static Double? GetT(DXO2016DrawChartDraw.PageMargins openXmlElement)
   {
     return openXmlElement.T?.Value;
   }
   
-  private static void SetT(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.PageMargins openXmlElement, Double? value)
+  private static void SetT(DXO2016DrawChartDraw.PageMargins openXmlElement, Double? value)
   {
     openXmlElement.T = value;
   }
@@ -47,12 +47,12 @@ public static class PageMarginsConverter
   /// <summary>
   /// b, this property is only available in Office 2016 and later.
   /// </summary>
-  private static Double? GetB(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.PageMargins openXmlElement)
+  private static Double? GetB(DXO2016DrawChartDraw.PageMargins openXmlElement)
   {
     return openXmlElement.B?.Value;
   }
   
-  private static void SetB(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.PageMargins openXmlElement, Double? value)
+  private static void SetB(DXO2016DrawChartDraw.PageMargins openXmlElement, Double? value)
   {
     openXmlElement.B = value;
   }
@@ -60,12 +60,12 @@ public static class PageMarginsConverter
   /// <summary>
   /// header, this property is only available in Office 2016 and later.
   /// </summary>
-  private static Double? GetHeader(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.PageMargins openXmlElement)
+  private static Double? GetHeader(DXO2016DrawChartDraw.PageMargins openXmlElement)
   {
     return openXmlElement.Header?.Value;
   }
   
-  private static void SetHeader(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.PageMargins openXmlElement, Double? value)
+  private static void SetHeader(DXO2016DrawChartDraw.PageMargins openXmlElement, Double? value)
   {
     openXmlElement.Header = value;
   }
@@ -73,21 +73,21 @@ public static class PageMarginsConverter
   /// <summary>
   /// footer, this property is only available in Office 2016 and later.
   /// </summary>
-  private static Double? GetFooter(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.PageMargins openXmlElement)
+  private static Double? GetFooter(DXO2016DrawChartDraw.PageMargins openXmlElement)
   {
     return openXmlElement.Footer?.Value;
   }
   
-  private static void SetFooter(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.PageMargins openXmlElement, Double? value)
+  private static void SetFooter(DXO2016DrawChartDraw.PageMargins openXmlElement, Double? value)
   {
     openXmlElement.Footer = value;
   }
   
-  public static DocumentModel.Drawings.ChartDrawings.PageMargins? CreateModelElement(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.PageMargins? openXmlElement)
+  public static DMDrawsChartDraws.PageMargins? CreateModelElement(DXO2016DrawChartDraw.PageMargins? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.ChartDrawings.PageMargins();
+      var value = new DMDrawsChartDraws.PageMargins();
       value.L = GetL(openXmlElement);
       value.R = GetR(openXmlElement);
       value.T = GetT(openXmlElement);
@@ -99,8 +99,8 @@ public static class PageMarginsConverter
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.ChartDrawings.PageMargins? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.PageMargins, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDrawsChartDraws.PageMargins? value)
+    where OpenXmlElementType: DXO2016DrawChartDraw.PageMargins, new()
   {
     if (value != null)
     {

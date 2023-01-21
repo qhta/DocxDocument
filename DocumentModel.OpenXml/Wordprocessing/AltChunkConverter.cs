@@ -8,12 +8,12 @@ public static class AltChunkConverter
   /// <summary>
   /// Relationship to Part
   /// </summary>
-  private static String? GetId(DocumentFormat.OpenXml.Wordprocessing.AltChunk openXmlElement)
+  private static String? GetId(DXW.AltChunk openXmlElement)
   {
     return openXmlElement?.Id?.Value;
   }
   
-  private static void SetId(DocumentFormat.OpenXml.Wordprocessing.AltChunk openXmlElement, String? value)
+  private static void SetId(DXW.AltChunk openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.Id = new StringValue { Value = value };
@@ -24,32 +24,32 @@ public static class AltChunkConverter
   /// <summary>
   /// External Content Import Properties.
   /// </summary>
-  private static DocumentModel.Wordprocessing.AltChunkProperties? GetAltChunkProperties(DocumentFormat.OpenXml.Wordprocessing.AltChunk openXmlElement)
+  private static DMW.AltChunkProperties? GetAltChunkProperties(DXW.AltChunk openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.AltChunkProperties>();
+    var itemElement = openXmlElement?.GetFirstChild<DXW.AltChunkProperties>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Wordprocessing.AltChunkPropertiesConverter.CreateModelElement(itemElement);
+      return DMXW.AltChunkPropertiesConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetAltChunkProperties(DocumentFormat.OpenXml.Wordprocessing.AltChunk openXmlElement, DocumentModel.Wordprocessing.AltChunkProperties? value)
+  private static void SetAltChunkProperties(DXW.AltChunk openXmlElement, DMW.AltChunkProperties? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.AltChunkProperties>();
+    var itemElement = openXmlElement.GetFirstChild<DXW.AltChunkProperties>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Wordprocessing.AltChunkPropertiesConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.AltChunkProperties>(value);
+      itemElement = DMXW.AltChunkPropertiesConverter.CreateOpenXmlElement<DXW.AltChunkProperties>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  public static DocumentModel.Wordprocessing.AltChunk? CreateModelElement(DocumentFormat.OpenXml.Wordprocessing.AltChunk? openXmlElement)
+  public static DMW.AltChunk? CreateModelElement(DXW.AltChunk? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Wordprocessing.AltChunk();
+      var value = new DMW.AltChunk();
       value.Id = GetId(openXmlElement);
       value.AltChunkProperties = GetAltChunkProperties(openXmlElement);
       return value;
@@ -57,8 +57,8 @@ public static class AltChunkConverter
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.AltChunk? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Wordprocessing.AltChunk, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMW.AltChunk? value)
+    where OpenXmlElementType: DXW.AltChunk, new()
   {
     if (value != null)
     {

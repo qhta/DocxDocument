@@ -8,12 +8,12 @@ public static class NonVisualDrawingPropertiesExtensionConverter
   /// <summary>
   /// URI
   /// </summary>
-  private static String? GetUri(DocumentFormat.OpenXml.Drawing.NonVisualDrawingPropertiesExtension openXmlElement)
+  private static String? GetUri(DXDraw.NonVisualDrawingPropertiesExtension openXmlElement)
   {
     return openXmlElement?.Uri?.Value;
   }
   
-  private static void SetUri(DocumentFormat.OpenXml.Drawing.NonVisualDrawingPropertiesExtension openXmlElement, String? value)
+  private static void SetUri(DXDraw.NonVisualDrawingPropertiesExtension openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.Uri = new StringValue { Value = value };
@@ -21,158 +21,158 @@ public static class NonVisualDrawingPropertiesExtensionConverter
       openXmlElement.Uri = null;
   }
   
-  private static DocumentModel.Drawings.CompatExtension? GetCompatExtension(DocumentFormat.OpenXml.Drawing.NonVisualDrawingPropertiesExtension openXmlElement)
+  private static DMDraws.CompatExtension? GetCompatExtension(DXDraw.NonVisualDrawingPropertiesExtension openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office2010.Drawing.CompatExtension>();
+    var itemElement = openXmlElement?.GetFirstChild<DXO2010Draw.CompatExtension>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.CompatExtensionConverter.CreateModelElement(itemElement);
+      return DMXDraws.CompatExtensionConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetCompatExtension(DocumentFormat.OpenXml.Drawing.NonVisualDrawingPropertiesExtension openXmlElement, DocumentModel.Drawings.CompatExtension? value)
+  private static void SetCompatExtension(DXDraw.NonVisualDrawingPropertiesExtension openXmlElement, DMDraws.CompatExtension? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2010.Drawing.CompatExtension>();
+    var itemElement = openXmlElement.GetFirstChild<DXO2010Draw.CompatExtension>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Drawings.CompatExtensionConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2010.Drawing.CompatExtension>(value);
+      itemElement = DMXDraws.CompatExtensionConverter.CreateOpenXmlElement<DXO2010Draw.CompatExtension>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static DocumentModel.Drawings.BackgroundProperties? GetBackgroundProperties(DocumentFormat.OpenXml.Drawing.NonVisualDrawingPropertiesExtension openXmlElement)
+  private static DMDraws.BackgroundProperties? GetBackgroundProperties(DXDraw.NonVisualDrawingPropertiesExtension openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office2013.Drawing.BackgroundProperties>();
+    var itemElement = openXmlElement?.GetFirstChild<DXO2013Draw.BackgroundProperties>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.BackgroundPropertiesConverter.CreateModelElement(itemElement);
+      return DMXDraws.BackgroundPropertiesConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetBackgroundProperties(DocumentFormat.OpenXml.Drawing.NonVisualDrawingPropertiesExtension openXmlElement, DocumentModel.Drawings.BackgroundProperties? value)
+  private static void SetBackgroundProperties(DXDraw.NonVisualDrawingPropertiesExtension openXmlElement, DMDraws.BackgroundProperties? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2013.Drawing.BackgroundProperties>();
+    var itemElement = openXmlElement.GetFirstChild<DXO2013Draw.BackgroundProperties>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Drawings.BackgroundPropertiesConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2013.Drawing.BackgroundProperties>(value);
+      itemElement = DMXDraws.BackgroundPropertiesConverter.CreateOpenXmlElement<DXO2013Draw.BackgroundProperties>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static DocumentModel.Drawings.CreationId? GetCreationId(DocumentFormat.OpenXml.Drawing.NonVisualDrawingPropertiesExtension openXmlElement)
+  private static DMDraws.CreationId? GetCreationId(DXDraw.NonVisualDrawingPropertiesExtension openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office2016.Drawing.CreationId>();
+    var itemElement = openXmlElement?.GetFirstChild<DXO2016Draw.CreationId>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.CreationIdConverter.CreateModelElement(itemElement);
+      return DMXDraws.CreationIdConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetCreationId(DocumentFormat.OpenXml.Drawing.NonVisualDrawingPropertiesExtension openXmlElement, DocumentModel.Drawings.CreationId? value)
+  private static void SetCreationId(DXDraw.NonVisualDrawingPropertiesExtension openXmlElement, DMDraws.CreationId? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2016.Drawing.CreationId>();
+    var itemElement = openXmlElement.GetFirstChild<DXO2016Draw.CreationId>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Drawings.CreationIdConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2016.Drawing.CreationId>(value);
+      itemElement = DMXDraws.CreationIdConverter.CreateOpenXmlElement<DXO2016Draw.CreationId>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static DocumentModel.Drawings.PredecessorDrawingElementReference? GetPredecessorDrawingElementReference(DocumentFormat.OpenXml.Drawing.NonVisualDrawingPropertiesExtension openXmlElement)
+  private static DMDraws.PredecessorDrawingElementReference? GetPredecessorDrawingElementReference(DXDraw.NonVisualDrawingPropertiesExtension openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office2016.Drawing.PredecessorDrawingElementReference>();
+    var itemElement = openXmlElement?.GetFirstChild<DXO2016Draw.PredecessorDrawingElementReference>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.PredecessorDrawingElementReferenceConverter.CreateModelElement(itemElement);
+      return DMXDraws.PredecessorDrawingElementReferenceConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetPredecessorDrawingElementReference(DocumentFormat.OpenXml.Drawing.NonVisualDrawingPropertiesExtension openXmlElement, DocumentModel.Drawings.PredecessorDrawingElementReference? value)
+  private static void SetPredecessorDrawingElementReference(DXDraw.NonVisualDrawingPropertiesExtension openXmlElement, DMDraws.PredecessorDrawingElementReference? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2016.Drawing.PredecessorDrawingElementReference>();
+    var itemElement = openXmlElement.GetFirstChild<DXO2016Draw.PredecessorDrawingElementReference>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Drawings.PredecessorDrawingElementReferenceConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2016.Drawing.PredecessorDrawingElementReference>(value);
+      itemElement = DMXDraws.PredecessorDrawingElementReferenceConverter.CreateOpenXmlElement<DXO2016Draw.PredecessorDrawingElementReference>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static Boolean? GetDecorative(DocumentFormat.OpenXml.Drawing.NonVisualDrawingPropertiesExtension openXmlElement)
+  private static Boolean? GetDecorative(DXDraw.NonVisualDrawingPropertiesExtension openXmlElement)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2019.Drawing.Decorative>();
+    var itemElement = openXmlElement.GetFirstChild<DXO2019Draw.Decorative>();
     return itemElement != null;
   }
   
-  private static void SetDecorative(DocumentFormat.OpenXml.Drawing.NonVisualDrawingPropertiesExtension openXmlElement, Boolean? value)
+  private static void SetDecorative(DXDraw.NonVisualDrawingPropertiesExtension openXmlElement, Boolean? value)
   {
     if (value == false)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2019.Drawing.Decorative>();
+      var itemElement = openXmlElement.GetFirstChild<DXO2019Draw.Decorative>();
       if (itemElement != null)
         itemElement.Remove();
     }
     if (value == true)
     {
-      var itemElement = new DocumentFormat.OpenXml.Office2019.Drawing.Decorative();
+      var itemElement = new DXO2019Draw.Decorative();
       openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static DocumentModel.Drawings.ClassificationOutcome? GetClassificationOutcome(DocumentFormat.OpenXml.Drawing.NonVisualDrawingPropertiesExtension openXmlElement)
+  private static DMDraws.ClassificationOutcome? GetClassificationOutcome(DXDraw.NonVisualDrawingPropertiesExtension openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office2021.Drawing.DocumentClassification.ClassificationOutcome>();
+    var itemElement = openXmlElement?.GetFirstChild<DXO2021DrawDocCls.ClassificationOutcome>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.ClassificationOutcomeConverter.CreateModelElement(itemElement);
+      return DMXDraws.ClassificationOutcomeConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetClassificationOutcome(DocumentFormat.OpenXml.Drawing.NonVisualDrawingPropertiesExtension openXmlElement, DocumentModel.Drawings.ClassificationOutcome? value)
+  private static void SetClassificationOutcome(DXDraw.NonVisualDrawingPropertiesExtension openXmlElement, DMDraws.ClassificationOutcome? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2021.Drawing.DocumentClassification.ClassificationOutcome>();
+    var itemElement = openXmlElement.GetFirstChild<DXO2021DrawDocCls.ClassificationOutcome>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Drawings.ClassificationOutcomeConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2021.Drawing.DocumentClassification.ClassificationOutcome>(value);
+      itemElement = DMXDraws.ClassificationOutcomeConverter.CreateOpenXmlElement<DXO2021DrawDocCls.ClassificationOutcome>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static DocumentModel.Drawings.Office.ScriptLink.ScriptLink? GetScriptLink(DocumentFormat.OpenXml.Drawing.NonVisualDrawingPropertiesExtension openXmlElement)
+  private static DMDrawsOScptLnk.ScriptLink? GetScriptLink(DXDraw.NonVisualDrawingPropertiesExtension openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office.Drawing.Y2021.ScriptLink.ScriptLink>();
+    var itemElement = openXmlElement?.GetFirstChild<DXODrawY2021ScptLnk.ScriptLink>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.Office.ScriptLink.ScriptLinkConverter.CreateModelElement(itemElement);
+      return DMXDrawsOScptLnk.ScriptLinkConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetScriptLink(DocumentFormat.OpenXml.Drawing.NonVisualDrawingPropertiesExtension openXmlElement, DocumentModel.Drawings.Office.ScriptLink.ScriptLink? value)
+  private static void SetScriptLink(DXDraw.NonVisualDrawingPropertiesExtension openXmlElement, DMDrawsOScptLnk.ScriptLink? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office.Drawing.Y2021.ScriptLink.ScriptLink>();
+    var itemElement = openXmlElement.GetFirstChild<DXODrawY2021ScptLnk.ScriptLink>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Drawings.Office.ScriptLink.ScriptLinkConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office.Drawing.Y2021.ScriptLink.ScriptLink>(value);
+      itemElement = DMXDrawsOScptLnk.ScriptLinkConverter.CreateOpenXmlElement<DXODrawY2021ScptLnk.ScriptLink>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  public static DocumentModel.Drawings.NonVisualDrawingPropertiesExtension? CreateModelElement(DocumentFormat.OpenXml.Drawing.NonVisualDrawingPropertiesExtension? openXmlElement)
+  public static DMDraws.NonVisualDrawingPropertiesExtension? CreateModelElement(DXDraw.NonVisualDrawingPropertiesExtension? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.NonVisualDrawingPropertiesExtension();
+      var value = new DMDraws.NonVisualDrawingPropertiesExtension();
       value.Uri = GetUri(openXmlElement);
       value.CompatExtension = GetCompatExtension(openXmlElement);
       value.BackgroundProperties = GetBackgroundProperties(openXmlElement);
@@ -186,8 +186,8 @@ public static class NonVisualDrawingPropertiesExtensionConverter
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.NonVisualDrawingPropertiesExtension? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.NonVisualDrawingPropertiesExtension, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDraws.NonVisualDrawingPropertiesExtension? value)
+    where OpenXmlElementType: DXDraw.NonVisualDrawingPropertiesExtension, new()
   {
     if (value != null)
     {

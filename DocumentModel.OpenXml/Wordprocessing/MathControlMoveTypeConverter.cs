@@ -8,12 +8,12 @@ public static class MathControlMoveTypeConverter
   /// <summary>
   /// author
   /// </summary>
-  private static String? GetAuthor(DocumentFormat.OpenXml.Wordprocessing.MathControlMoveType openXmlElement)
+  private static String? GetAuthor(DXW.MathControlMoveType openXmlElement)
   {
     return openXmlElement?.Author?.Value;
   }
   
-  private static void SetAuthor(DocumentFormat.OpenXml.Wordprocessing.MathControlMoveType openXmlElement, String? value)
+  private static void SetAuthor(DXW.MathControlMoveType openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.Author = new StringValue { Value = value };
@@ -24,12 +24,12 @@ public static class MathControlMoveTypeConverter
   /// <summary>
   /// date
   /// </summary>
-  private static DateTime? GetDate(DocumentFormat.OpenXml.Wordprocessing.MathControlMoveType openXmlElement)
+  private static DateTime? GetDate(DXW.MathControlMoveType openXmlElement)
   {
     return openXmlElement.Date?.Value;
   }
   
-  private static void SetDate(DocumentFormat.OpenXml.Wordprocessing.MathControlMoveType openXmlElement, DateTime? value)
+  private static void SetDate(DXW.MathControlMoveType openXmlElement, DateTime? value)
   {
     openXmlElement.Date = value;
   }
@@ -37,12 +37,12 @@ public static class MathControlMoveTypeConverter
   /// <summary>
   /// Annotation Identifier
   /// </summary>
-  private static String? GetId(DocumentFormat.OpenXml.Wordprocessing.MathControlMoveType openXmlElement)
+  private static String? GetId(DXW.MathControlMoveType openXmlElement)
   {
     return openXmlElement?.Id?.Value;
   }
   
-  private static void SetId(DocumentFormat.OpenXml.Wordprocessing.MathControlMoveType openXmlElement, String? value)
+  private static void SetId(DXW.MathControlMoveType openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.Id = new StringValue { Value = value };
@@ -50,11 +50,11 @@ public static class MathControlMoveTypeConverter
       openXmlElement.Id = null;
   }
   
-  public static DocumentModel.Wordprocessing.MathControlMoveType? CreateModelElement(DocumentFormat.OpenXml.Wordprocessing.MathControlMoveType? openXmlElement)
+  public static DMW.MathControlMoveType? CreateModelElement(DXW.MathControlMoveType? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Wordprocessing.MathControlMoveType();
+      var value = new DMW.MathControlMoveType();
       value.Author = GetAuthor(openXmlElement);
       value.Date = GetDate(openXmlElement);
       value.Id = GetId(openXmlElement);
@@ -63,8 +63,8 @@ public static class MathControlMoveTypeConverter
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.MathControlMoveType? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Wordprocessing.MathControlMoveType, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMW.MathControlMoveType? value)
+    where OpenXmlElementType: DXW.MathControlMoveType, new()
   {
     if (value != null)
     {

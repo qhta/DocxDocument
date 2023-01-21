@@ -5,45 +5,45 @@ namespace DocumentModel.OpenXml.Drawings.Charts;
 /// </summary>
 public static class NumRefExtensionListConverter
 {
-  private static System.Collections.ObjectModel.Collection<DocumentModel.Drawings.Charts.NumRefExtension> GetNumRefExtensions(DocumentFormat.OpenXml.Drawing.Charts.NumRefExtensionList openXmlElement)
+  private static Collection<DMDrawsCharts.NumRefExtension> GetNumRefExtensions(DXDrawCharts.NumRefExtensionList openXmlElement)
   {
-    var collection = new System.Collections.ObjectModel.Collection<DocumentModel.Drawings.Charts.NumRefExtension>();
-    foreach (var item in openXmlElement.Elements<DocumentFormat.OpenXml.Drawing.Charts.NumRefExtension>())
+    var collection = new Collection<DMDrawsCharts.NumRefExtension>();
+    foreach (var item in openXmlElement.Elements<DXDrawCharts.NumRefExtension>())
     {
-      var newItem = DocumentModel.OpenXml.Drawings.Charts.NumRefExtensionConverter.CreateModelElement(item);
+      var newItem = DMXDrawsCharts.NumRefExtensionConverter.CreateModelElement(item);
       if (newItem != null)
         collection.Add(newItem);
     }
     return collection;
   }
   
-  private static void SetNumRefExtensions(DocumentFormat.OpenXml.Drawing.Charts.NumRefExtensionList openXmlElement, System.Collections.ObjectModel.Collection<DocumentModel.Drawings.Charts.NumRefExtension>? value)
+  private static void SetNumRefExtensions(DXDrawCharts.NumRefExtensionList openXmlElement, Collection<DMDrawsCharts.NumRefExtension>? value)
   {
-    openXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Drawing.Charts.NumRefExtension>();
+    openXmlElement.RemoveAllChildren<DXDrawCharts.NumRefExtension>();
     if (value != null)
     {
       foreach (var item in value)
       {
-        var newItem = DocumentModel.OpenXml.Drawings.Charts.NumRefExtensionConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Charts.NumRefExtension>(item);
+        var newItem = DMXDrawsCharts.NumRefExtensionConverter.CreateOpenXmlElement<DXDrawCharts.NumRefExtension>(item);
         if (newItem != null)
           openXmlElement.AddChild(newItem);
       }
     }
   }
   
-  public static DocumentModel.Drawings.Charts.NumRefExtensionList? CreateModelElement(DocumentFormat.OpenXml.Drawing.Charts.NumRefExtensionList? openXmlElement)
+  public static DMDrawsCharts.NumRefExtensionList? CreateModelElement(DXDrawCharts.NumRefExtensionList? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.Charts.NumRefExtensionList();
+      var value = new DMDrawsCharts.NumRefExtensionList();
       value.NumRefExtensions = GetNumRefExtensions(openXmlElement);
       return value;
     }
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.Charts.NumRefExtensionList? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.Charts.NumRefExtensionList, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDrawsCharts.NumRefExtensionList? value)
+    where OpenXmlElementType: DXDrawCharts.NumRefExtensionList, new()
   {
     if (value != null)
     {

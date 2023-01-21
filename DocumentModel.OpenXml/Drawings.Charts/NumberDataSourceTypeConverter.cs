@@ -8,22 +8,22 @@ public static class NumberDataSourceTypeConverter
   /// <summary>
   /// Number Reference.
   /// </summary>
-  private static DocumentModel.Drawings.Charts.NumberReference? GetNumberReference(DocumentFormat.OpenXml.Drawing.Charts.NumberDataSourceType openXmlElement)
+  private static DMDrawsCharts.NumberReference? GetNumberReference(DXDrawCharts.NumberDataSourceType openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.NumberReference>();
+    var itemElement = openXmlElement?.GetFirstChild<DXDrawCharts.NumberReference>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.Charts.NumberReferenceConverter.CreateModelElement(itemElement);
+      return DMXDrawsCharts.NumberReferenceConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetNumberReference(DocumentFormat.OpenXml.Drawing.Charts.NumberDataSourceType openXmlElement, DocumentModel.Drawings.Charts.NumberReference? value)
+  private static void SetNumberReference(DXDrawCharts.NumberDataSourceType openXmlElement, DMDrawsCharts.NumberReference? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.NumberReference>();
+    var itemElement = openXmlElement.GetFirstChild<DXDrawCharts.NumberReference>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Drawings.Charts.NumberReferenceConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Charts.NumberReference>(value);
+      itemElement = DMXDrawsCharts.NumberReferenceConverter.CreateOpenXmlElement<DXDrawCharts.NumberReference>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
@@ -32,32 +32,32 @@ public static class NumberDataSourceTypeConverter
   /// <summary>
   /// Number Literal.
   /// </summary>
-  private static DocumentModel.Drawings.Charts.NumberLiteral? GetNumberLiteral(DocumentFormat.OpenXml.Drawing.Charts.NumberDataSourceType openXmlElement)
+  private static DMDrawsCharts.NumberLiteral? GetNumberLiteral(DXDrawCharts.NumberDataSourceType openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.NumberLiteral>();
+    var itemElement = openXmlElement?.GetFirstChild<DXDrawCharts.NumberLiteral>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.Charts.NumberLiteralConverter.CreateModelElement(itemElement);
+      return DMXDrawsCharts.NumberLiteralConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetNumberLiteral(DocumentFormat.OpenXml.Drawing.Charts.NumberDataSourceType openXmlElement, DocumentModel.Drawings.Charts.NumberLiteral? value)
+  private static void SetNumberLiteral(DXDrawCharts.NumberDataSourceType openXmlElement, DMDrawsCharts.NumberLiteral? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.NumberLiteral>();
+    var itemElement = openXmlElement.GetFirstChild<DXDrawCharts.NumberLiteral>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Drawings.Charts.NumberLiteralConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Charts.NumberLiteral>(value);
+      itemElement = DMXDrawsCharts.NumberLiteralConverter.CreateOpenXmlElement<DXDrawCharts.NumberLiteral>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  public static DocumentModel.Drawings.Charts.NumberDataSourceType? CreateModelElement(DocumentFormat.OpenXml.Drawing.Charts.NumberDataSourceType? openXmlElement)
+  public static DMDrawsCharts.NumberDataSourceType? CreateModelElement(DXDrawCharts.NumberDataSourceType? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.Charts.NumberDataSourceType();
+      var value = new DMDrawsCharts.NumberDataSourceType();
       value.NumberReference = GetNumberReference(openXmlElement);
       value.NumberLiteral = GetNumberLiteral(openXmlElement);
       return value;
@@ -65,8 +65,8 @@ public static class NumberDataSourceTypeConverter
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.Charts.NumberDataSourceType? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.Charts.NumberDataSourceType, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDrawsCharts.NumberDataSourceType? value)
+    where OpenXmlElementType: DXDrawCharts.NumberDataSourceType, new()
   {
     if (value != null)
     {

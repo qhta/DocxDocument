@@ -8,22 +8,22 @@ public static class BorderBoxPropertiesConverter
   /// <summary>
   /// Hide Top Edge.
   /// </summary>
-  private static DocumentModel.Math.BooleanKind? GetHideTop(DocumentFormat.OpenXml.Math.BorderBoxProperties openXmlElement)
+  private static DMMath.BooleanKind? GetHideTop(DXMath.BorderBoxProperties openXmlElement)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Math.HideTop>();
+    var itemElement = openXmlElement.GetFirstChild<DXMath.HideTop>();
     if (itemElement?.Val?.Value != null)
-      return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Math.BooleanValues, DocumentModel.Math.BooleanKind>(itemElement.Val.Value);
+      return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Math.BooleanValues, DMMath.BooleanKind>(itemElement.Val.Value);
     return null;
   }
   
-  private static void SetHideTop(DocumentFormat.OpenXml.Math.BorderBoxProperties openXmlElement, DocumentModel.Math.BooleanKind? value)
+  private static void SetHideTop(DXMath.BorderBoxProperties openXmlElement, DMMath.BooleanKind? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Math.HideTop>();
+    var itemElement = openXmlElement.GetFirstChild<DXMath.HideTop>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = EnumValueConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Math.HideTop, DocumentFormat.OpenXml.Math.BooleanValues, DocumentModel.Math.BooleanKind>(value);
+      itemElement = EnumValueConverter.CreateOpenXmlElement<DXMath.HideTop, DocumentFormat.OpenXml.Math.BooleanValues, DMMath.BooleanKind>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
@@ -32,22 +32,22 @@ public static class BorderBoxPropertiesConverter
   /// <summary>
   /// Hide Bottom Edge.
   /// </summary>
-  private static DocumentModel.Math.BooleanKind? GetHideBottom(DocumentFormat.OpenXml.Math.BorderBoxProperties openXmlElement)
+  private static DMMath.BooleanKind? GetHideBottom(DXMath.BorderBoxProperties openXmlElement)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Math.HideBottom>();
+    var itemElement = openXmlElement.GetFirstChild<DXMath.HideBottom>();
     if (itemElement?.Val?.Value != null)
-      return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Math.BooleanValues, DocumentModel.Math.BooleanKind>(itemElement.Val.Value);
+      return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Math.BooleanValues, DMMath.BooleanKind>(itemElement.Val.Value);
     return null;
   }
   
-  private static void SetHideBottom(DocumentFormat.OpenXml.Math.BorderBoxProperties openXmlElement, DocumentModel.Math.BooleanKind? value)
+  private static void SetHideBottom(DXMath.BorderBoxProperties openXmlElement, DMMath.BooleanKind? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Math.HideBottom>();
+    var itemElement = openXmlElement.GetFirstChild<DXMath.HideBottom>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = EnumValueConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Math.HideBottom, DocumentFormat.OpenXml.Math.BooleanValues, DocumentModel.Math.BooleanKind>(value);
+      itemElement = EnumValueConverter.CreateOpenXmlElement<DXMath.HideBottom, DocumentFormat.OpenXml.Math.BooleanValues, DMMath.BooleanKind>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
@@ -56,22 +56,22 @@ public static class BorderBoxPropertiesConverter
   /// <summary>
   /// Hide Left Edge.
   /// </summary>
-  private static DocumentModel.Math.BooleanKind? GetHideLeft(DocumentFormat.OpenXml.Math.BorderBoxProperties openXmlElement)
+  private static DMMath.BooleanKind? GetHideLeft(DXMath.BorderBoxProperties openXmlElement)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Math.HideLeft>();
+    var itemElement = openXmlElement.GetFirstChild<DXMath.HideLeft>();
     if (itemElement?.Val?.Value != null)
-      return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Math.BooleanValues, DocumentModel.Math.BooleanKind>(itemElement.Val.Value);
+      return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Math.BooleanValues, DMMath.BooleanKind>(itemElement.Val.Value);
     return null;
   }
   
-  private static void SetHideLeft(DocumentFormat.OpenXml.Math.BorderBoxProperties openXmlElement, DocumentModel.Math.BooleanKind? value)
+  private static void SetHideLeft(DXMath.BorderBoxProperties openXmlElement, DMMath.BooleanKind? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Math.HideLeft>();
+    var itemElement = openXmlElement.GetFirstChild<DXMath.HideLeft>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = EnumValueConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Math.HideLeft, DocumentFormat.OpenXml.Math.BooleanValues, DocumentModel.Math.BooleanKind>(value);
+      itemElement = EnumValueConverter.CreateOpenXmlElement<DXMath.HideLeft, DocumentFormat.OpenXml.Math.BooleanValues, DMMath.BooleanKind>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
@@ -80,22 +80,22 @@ public static class BorderBoxPropertiesConverter
   /// <summary>
   /// Hide Right Edge.
   /// </summary>
-  private static DocumentModel.Math.BooleanKind? GetHideRight(DocumentFormat.OpenXml.Math.BorderBoxProperties openXmlElement)
+  private static DMMath.BooleanKind? GetHideRight(DXMath.BorderBoxProperties openXmlElement)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Math.HideRight>();
+    var itemElement = openXmlElement.GetFirstChild<DXMath.HideRight>();
     if (itemElement?.Val?.Value != null)
-      return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Math.BooleanValues, DocumentModel.Math.BooleanKind>(itemElement.Val.Value);
+      return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Math.BooleanValues, DMMath.BooleanKind>(itemElement.Val.Value);
     return null;
   }
   
-  private static void SetHideRight(DocumentFormat.OpenXml.Math.BorderBoxProperties openXmlElement, DocumentModel.Math.BooleanKind? value)
+  private static void SetHideRight(DXMath.BorderBoxProperties openXmlElement, DMMath.BooleanKind? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Math.HideRight>();
+    var itemElement = openXmlElement.GetFirstChild<DXMath.HideRight>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = EnumValueConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Math.HideRight, DocumentFormat.OpenXml.Math.BooleanValues, DocumentModel.Math.BooleanKind>(value);
+      itemElement = EnumValueConverter.CreateOpenXmlElement<DXMath.HideRight, DocumentFormat.OpenXml.Math.BooleanValues, DMMath.BooleanKind>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
@@ -104,22 +104,22 @@ public static class BorderBoxPropertiesConverter
   /// <summary>
   /// Border Box Strikethrough Horizontal.
   /// </summary>
-  private static DocumentModel.Math.BooleanKind? GetStrikeHorizontal(DocumentFormat.OpenXml.Math.BorderBoxProperties openXmlElement)
+  private static DMMath.BooleanKind? GetStrikeHorizontal(DXMath.BorderBoxProperties openXmlElement)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Math.StrikeHorizontal>();
+    var itemElement = openXmlElement.GetFirstChild<DXMath.StrikeHorizontal>();
     if (itemElement?.Val?.Value != null)
-      return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Math.BooleanValues, DocumentModel.Math.BooleanKind>(itemElement.Val.Value);
+      return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Math.BooleanValues, DMMath.BooleanKind>(itemElement.Val.Value);
     return null;
   }
   
-  private static void SetStrikeHorizontal(DocumentFormat.OpenXml.Math.BorderBoxProperties openXmlElement, DocumentModel.Math.BooleanKind? value)
+  private static void SetStrikeHorizontal(DXMath.BorderBoxProperties openXmlElement, DMMath.BooleanKind? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Math.StrikeHorizontal>();
+    var itemElement = openXmlElement.GetFirstChild<DXMath.StrikeHorizontal>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = EnumValueConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Math.StrikeHorizontal, DocumentFormat.OpenXml.Math.BooleanValues, DocumentModel.Math.BooleanKind>(value);
+      itemElement = EnumValueConverter.CreateOpenXmlElement<DXMath.StrikeHorizontal, DocumentFormat.OpenXml.Math.BooleanValues, DMMath.BooleanKind>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
@@ -128,22 +128,22 @@ public static class BorderBoxPropertiesConverter
   /// <summary>
   /// Border Box Strikethrough Vertical.
   /// </summary>
-  private static DocumentModel.Math.BooleanKind? GetStrikeVertical(DocumentFormat.OpenXml.Math.BorderBoxProperties openXmlElement)
+  private static DMMath.BooleanKind? GetStrikeVertical(DXMath.BorderBoxProperties openXmlElement)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Math.StrikeVertical>();
+    var itemElement = openXmlElement.GetFirstChild<DXMath.StrikeVertical>();
     if (itemElement?.Val?.Value != null)
-      return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Math.BooleanValues, DocumentModel.Math.BooleanKind>(itemElement.Val.Value);
+      return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Math.BooleanValues, DMMath.BooleanKind>(itemElement.Val.Value);
     return null;
   }
   
-  private static void SetStrikeVertical(DocumentFormat.OpenXml.Math.BorderBoxProperties openXmlElement, DocumentModel.Math.BooleanKind? value)
+  private static void SetStrikeVertical(DXMath.BorderBoxProperties openXmlElement, DMMath.BooleanKind? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Math.StrikeVertical>();
+    var itemElement = openXmlElement.GetFirstChild<DXMath.StrikeVertical>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = EnumValueConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Math.StrikeVertical, DocumentFormat.OpenXml.Math.BooleanValues, DocumentModel.Math.BooleanKind>(value);
+      itemElement = EnumValueConverter.CreateOpenXmlElement<DXMath.StrikeVertical, DocumentFormat.OpenXml.Math.BooleanValues, DMMath.BooleanKind>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
@@ -152,22 +152,22 @@ public static class BorderBoxPropertiesConverter
   /// <summary>
   /// Border Box Strikethrough Bottom-Left to Top-Right.
   /// </summary>
-  private static DocumentModel.Math.BooleanKind? GetStrikeBottomLeftToTopRight(DocumentFormat.OpenXml.Math.BorderBoxProperties openXmlElement)
+  private static DMMath.BooleanKind? GetStrikeBottomLeftToTopRight(DXMath.BorderBoxProperties openXmlElement)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Math.StrikeBottomLeftToTopRight>();
+    var itemElement = openXmlElement.GetFirstChild<DXMath.StrikeBottomLeftToTopRight>();
     if (itemElement?.Val?.Value != null)
-      return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Math.BooleanValues, DocumentModel.Math.BooleanKind>(itemElement.Val.Value);
+      return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Math.BooleanValues, DMMath.BooleanKind>(itemElement.Val.Value);
     return null;
   }
   
-  private static void SetStrikeBottomLeftToTopRight(DocumentFormat.OpenXml.Math.BorderBoxProperties openXmlElement, DocumentModel.Math.BooleanKind? value)
+  private static void SetStrikeBottomLeftToTopRight(DXMath.BorderBoxProperties openXmlElement, DMMath.BooleanKind? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Math.StrikeBottomLeftToTopRight>();
+    var itemElement = openXmlElement.GetFirstChild<DXMath.StrikeBottomLeftToTopRight>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = EnumValueConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Math.StrikeBottomLeftToTopRight, DocumentFormat.OpenXml.Math.BooleanValues, DocumentModel.Math.BooleanKind>(value);
+      itemElement = EnumValueConverter.CreateOpenXmlElement<DXMath.StrikeBottomLeftToTopRight, DocumentFormat.OpenXml.Math.BooleanValues, DMMath.BooleanKind>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
@@ -176,22 +176,22 @@ public static class BorderBoxPropertiesConverter
   /// <summary>
   /// Border Box Strikethrough Top-Left to Bottom-Right.
   /// </summary>
-  private static DocumentModel.Math.BooleanKind? GetStrikeTopLeftToBottomRight(DocumentFormat.OpenXml.Math.BorderBoxProperties openXmlElement)
+  private static DMMath.BooleanKind? GetStrikeTopLeftToBottomRight(DXMath.BorderBoxProperties openXmlElement)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Math.StrikeTopLeftToBottomRight>();
+    var itemElement = openXmlElement.GetFirstChild<DXMath.StrikeTopLeftToBottomRight>();
     if (itemElement?.Val?.Value != null)
-      return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Math.BooleanValues, DocumentModel.Math.BooleanKind>(itemElement.Val.Value);
+      return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Math.BooleanValues, DMMath.BooleanKind>(itemElement.Val.Value);
     return null;
   }
   
-  private static void SetStrikeTopLeftToBottomRight(DocumentFormat.OpenXml.Math.BorderBoxProperties openXmlElement, DocumentModel.Math.BooleanKind? value)
+  private static void SetStrikeTopLeftToBottomRight(DXMath.BorderBoxProperties openXmlElement, DMMath.BooleanKind? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Math.StrikeTopLeftToBottomRight>();
+    var itemElement = openXmlElement.GetFirstChild<DXMath.StrikeTopLeftToBottomRight>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = EnumValueConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Math.StrikeTopLeftToBottomRight, DocumentFormat.OpenXml.Math.BooleanValues, DocumentModel.Math.BooleanKind>(value);
+      itemElement = EnumValueConverter.CreateOpenXmlElement<DXMath.StrikeTopLeftToBottomRight, DocumentFormat.OpenXml.Math.BooleanValues, DMMath.BooleanKind>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
@@ -200,32 +200,32 @@ public static class BorderBoxPropertiesConverter
   /// <summary>
   /// ControlProperties.
   /// </summary>
-  private static DocumentModel.Math.ControlProperties? GetControlProperties(DocumentFormat.OpenXml.Math.BorderBoxProperties openXmlElement)
+  private static DMMath.ControlProperties? GetControlProperties(DXMath.BorderBoxProperties openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Math.ControlProperties>();
+    var itemElement = openXmlElement?.GetFirstChild<DXMath.ControlProperties>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Math.ControlPropertiesConverter.CreateModelElement(itemElement);
+      return DMXMath.ControlPropertiesConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetControlProperties(DocumentFormat.OpenXml.Math.BorderBoxProperties openXmlElement, DocumentModel.Math.ControlProperties? value)
+  private static void SetControlProperties(DXMath.BorderBoxProperties openXmlElement, DMMath.ControlProperties? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Math.ControlProperties>();
+    var itemElement = openXmlElement.GetFirstChild<DXMath.ControlProperties>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Math.ControlPropertiesConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Math.ControlProperties>(value);
+      itemElement = DMXMath.ControlPropertiesConverter.CreateOpenXmlElement<DXMath.ControlProperties>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  public static DocumentModel.Math.BorderBoxProperties? CreateModelElement(DocumentFormat.OpenXml.Math.BorderBoxProperties? openXmlElement)
+  public static DMMath.BorderBoxProperties? CreateModelElement(DXMath.BorderBoxProperties? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Math.BorderBoxProperties();
+      var value = new DMMath.BorderBoxProperties();
       value.HideTop = GetHideTop(openXmlElement);
       value.HideBottom = GetHideBottom(openXmlElement);
       value.HideLeft = GetHideLeft(openXmlElement);
@@ -240,8 +240,8 @@ public static class BorderBoxPropertiesConverter
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Math.BorderBoxProperties? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Math.BorderBoxProperties, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMMath.BorderBoxProperties? value)
+    where OpenXmlElementType: DXMath.BorderBoxProperties, new()
   {
     if (value != null)
     {

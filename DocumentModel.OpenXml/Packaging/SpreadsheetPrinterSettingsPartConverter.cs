@@ -5,21 +5,21 @@ namespace DocumentModel.OpenXml.Packaging;
 /// </summary>
 public static class SpreadsheetPrinterSettingsPartConverter
 {
-  private static String? GetContentType(DocumentFormat.OpenXml.Packaging.SpreadsheetPrinterSettingsPart openXmlElement)
+  private static String? GetContentType(DXPack.SpreadsheetPrinterSettingsPart openXmlElement)
   {
     return openXmlElement?.ContentType;
   }
   
-  private static String? GetRelationshipType(DocumentFormat.OpenXml.Packaging.SpreadsheetPrinterSettingsPart openXmlElement)
+  private static String? GetRelationshipType(DXPack.SpreadsheetPrinterSettingsPart openXmlElement)
   {
     return openXmlElement?.RelationshipType;
   }
   
-  public static DocumentModel.Packaging.SpreadsheetPrinterSettingsPart? CreateModelElement(DocumentFormat.OpenXml.Packaging.SpreadsheetPrinterSettingsPart? openXmlElement)
+  public static DMPack.SpreadsheetPrinterSettingsPart? CreateModelElement(DXPack.SpreadsheetPrinterSettingsPart? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Packaging.SpreadsheetPrinterSettingsPart();
+      var value = new DMPack.SpreadsheetPrinterSettingsPart();
       value.ContentType = GetContentType(openXmlElement);
       value.RelationshipType = GetRelationshipType(openXmlElement);
       return value;
@@ -27,8 +27,8 @@ public static class SpreadsheetPrinterSettingsPartConverter
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Packaging.SpreadsheetPrinterSettingsPart? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Packaging.SpreadsheetPrinterSettingsPart, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMPack.SpreadsheetPrinterSettingsPart? value)
+    where OpenXmlElementType: DXPack.SpreadsheetPrinterSettingsPart, new()
   {
     if (value != null)
     {

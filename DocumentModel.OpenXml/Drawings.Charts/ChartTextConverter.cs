@@ -8,22 +8,22 @@ public static class ChartTextConverter
   /// <summary>
   /// String Reference.
   /// </summary>
-  private static DocumentModel.Drawings.Charts.StringReference? GetStringReference(DocumentFormat.OpenXml.Drawing.Charts.ChartText openXmlElement)
+  private static DMDrawsCharts.StringReference? GetStringReference(DXDrawCharts.ChartText openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.StringReference>();
+    var itemElement = openXmlElement?.GetFirstChild<DXDrawCharts.StringReference>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.Charts.StringReferenceConverter.CreateModelElement(itemElement);
+      return DMXDrawsCharts.StringReferenceConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetStringReference(DocumentFormat.OpenXml.Drawing.Charts.ChartText openXmlElement, DocumentModel.Drawings.Charts.StringReference? value)
+  private static void SetStringReference(DXDrawCharts.ChartText openXmlElement, DMDrawsCharts.StringReference? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.StringReference>();
+    var itemElement = openXmlElement.GetFirstChild<DXDrawCharts.StringReference>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Drawings.Charts.StringReferenceConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Charts.StringReference>(value);
+      itemElement = DMXDrawsCharts.StringReferenceConverter.CreateOpenXmlElement<DXDrawCharts.StringReference>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
@@ -32,22 +32,22 @@ public static class ChartTextConverter
   /// <summary>
   /// Rich Text.
   /// </summary>
-  private static DocumentModel.Drawings.Charts.RichText? GetRichText(DocumentFormat.OpenXml.Drawing.Charts.ChartText openXmlElement)
+  private static DMDrawsCharts.RichText? GetRichText(DXDrawCharts.ChartText openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.RichText>();
+    var itemElement = openXmlElement?.GetFirstChild<DXDrawCharts.RichText>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.Charts.RichTextConverter.CreateModelElement(itemElement);
+      return DMXDrawsCharts.RichTextConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetRichText(DocumentFormat.OpenXml.Drawing.Charts.ChartText openXmlElement, DocumentModel.Drawings.Charts.RichText? value)
+  private static void SetRichText(DXDrawCharts.ChartText openXmlElement, DMDrawsCharts.RichText? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.RichText>();
+    var itemElement = openXmlElement.GetFirstChild<DXDrawCharts.RichText>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Drawings.Charts.RichTextConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Charts.RichText>(value);
+      itemElement = DMXDrawsCharts.RichTextConverter.CreateOpenXmlElement<DXDrawCharts.RichText>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
@@ -56,32 +56,32 @@ public static class ChartTextConverter
   /// <summary>
   /// String Literal.
   /// </summary>
-  private static DocumentModel.Drawings.Charts.StringLiteral? GetStringLiteral(DocumentFormat.OpenXml.Drawing.Charts.ChartText openXmlElement)
+  private static DMDrawsCharts.StringLiteral? GetStringLiteral(DXDrawCharts.ChartText openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.StringLiteral>();
+    var itemElement = openXmlElement?.GetFirstChild<DXDrawCharts.StringLiteral>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.Charts.StringLiteralConverter.CreateModelElement(itemElement);
+      return DMXDrawsCharts.StringLiteralConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetStringLiteral(DocumentFormat.OpenXml.Drawing.Charts.ChartText openXmlElement, DocumentModel.Drawings.Charts.StringLiteral? value)
+  private static void SetStringLiteral(DXDrawCharts.ChartText openXmlElement, DMDrawsCharts.StringLiteral? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.StringLiteral>();
+    var itemElement = openXmlElement.GetFirstChild<DXDrawCharts.StringLiteral>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Drawings.Charts.StringLiteralConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Charts.StringLiteral>(value);
+      itemElement = DMXDrawsCharts.StringLiteralConverter.CreateOpenXmlElement<DXDrawCharts.StringLiteral>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  public static DocumentModel.Drawings.Charts.ChartText? CreateModelElement(DocumentFormat.OpenXml.Drawing.Charts.ChartText? openXmlElement)
+  public static DMDrawsCharts.ChartText? CreateModelElement(DXDrawCharts.ChartText? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.Charts.ChartText();
+      var value = new DMDrawsCharts.ChartText();
       value.StringReference = GetStringReference(openXmlElement);
       value.RichText = GetRichText(openXmlElement);
       value.StringLiteral = GetStringLiteral(openXmlElement);
@@ -90,8 +90,8 @@ public static class ChartTextConverter
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.Charts.ChartText? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.Charts.ChartText, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDrawsCharts.ChartText? value)
+    where OpenXmlElementType: DXDrawCharts.ChartText, new()
   {
     if (value != null)
     {

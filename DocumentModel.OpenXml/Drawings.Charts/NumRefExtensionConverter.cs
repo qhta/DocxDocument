@@ -8,12 +8,12 @@ public static class NumRefExtensionConverter
   /// <summary>
   /// URI
   /// </summary>
-  private static String? GetUri(DocumentFormat.OpenXml.Drawing.Charts.NumRefExtension openXmlElement)
+  private static String? GetUri(DXDrawCharts.NumRefExtension openXmlElement)
   {
     return openXmlElement?.Uri?.Value;
   }
   
-  private static void SetUri(DocumentFormat.OpenXml.Drawing.Charts.NumRefExtension openXmlElement, String? value)
+  private static void SetUri(DXDrawCharts.NumRefExtension openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.Uri = new StringValue { Value = value };
@@ -21,74 +21,74 @@ public static class NumRefExtensionConverter
       openXmlElement.Uri = null;
   }
   
-  private static DocumentModel.Drawings.Charts.FullReference? GetFullReference(DocumentFormat.OpenXml.Drawing.Charts.NumRefExtension openXmlElement)
+  private static DMDrawsCharts.FullReference? GetFullReference(DXDrawCharts.NumRefExtension openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office2013.Drawing.Chart.FullReference>();
+    var itemElement = openXmlElement?.GetFirstChild<DXO2013DrawChart.FullReference>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.Charts.FullReferenceConverter.CreateModelElement(itemElement);
+      return DMXDrawsCharts.FullReferenceConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetFullReference(DocumentFormat.OpenXml.Drawing.Charts.NumRefExtension openXmlElement, DocumentModel.Drawings.Charts.FullReference? value)
+  private static void SetFullReference(DXDrawCharts.NumRefExtension openXmlElement, DMDrawsCharts.FullReference? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2013.Drawing.Chart.FullReference>();
+    var itemElement = openXmlElement.GetFirstChild<DXO2013DrawChart.FullReference>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Drawings.Charts.FullReferenceConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2013.Drawing.Chart.FullReference>(value);
+      itemElement = DMXDrawsCharts.FullReferenceConverter.CreateOpenXmlElement<DXO2013DrawChart.FullReference>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static DocumentModel.Drawings.Charts.LevelReference? GetLevelReference(DocumentFormat.OpenXml.Drawing.Charts.NumRefExtension openXmlElement)
+  private static DMDrawsCharts.LevelReference? GetLevelReference(DXDrawCharts.NumRefExtension openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office2013.Drawing.Chart.LevelReference>();
+    var itemElement = openXmlElement?.GetFirstChild<DXO2013DrawChart.LevelReference>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.Charts.LevelReferenceConverter.CreateModelElement(itemElement);
+      return DMXDrawsCharts.LevelReferenceConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetLevelReference(DocumentFormat.OpenXml.Drawing.Charts.NumRefExtension openXmlElement, DocumentModel.Drawings.Charts.LevelReference? value)
+  private static void SetLevelReference(DXDrawCharts.NumRefExtension openXmlElement, DMDrawsCharts.LevelReference? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2013.Drawing.Chart.LevelReference>();
+    var itemElement = openXmlElement.GetFirstChild<DXO2013DrawChart.LevelReference>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Drawings.Charts.LevelReferenceConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2013.Drawing.Chart.LevelReference>(value);
+      itemElement = DMXDrawsCharts.LevelReferenceConverter.CreateOpenXmlElement<DXO2013DrawChart.LevelReference>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static DocumentModel.Drawings.Charts.FormulaReference? GetFormulaReference(DocumentFormat.OpenXml.Drawing.Charts.NumRefExtension openXmlElement)
+  private static DMDrawsCharts.FormulaReference? GetFormulaReference(DXDrawCharts.NumRefExtension openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office2013.Drawing.Chart.FormulaReference>();
+    var itemElement = openXmlElement?.GetFirstChild<DXO2013DrawChart.FormulaReference>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.Charts.FormulaReferenceConverter.CreateModelElement(itemElement);
+      return DMXDrawsCharts.FormulaReferenceConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetFormulaReference(DocumentFormat.OpenXml.Drawing.Charts.NumRefExtension openXmlElement, DocumentModel.Drawings.Charts.FormulaReference? value)
+  private static void SetFormulaReference(DXDrawCharts.NumRefExtension openXmlElement, DMDrawsCharts.FormulaReference? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2013.Drawing.Chart.FormulaReference>();
+    var itemElement = openXmlElement.GetFirstChild<DXO2013DrawChart.FormulaReference>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Drawings.Charts.FormulaReferenceConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2013.Drawing.Chart.FormulaReference>(value);
+      itemElement = DMXDrawsCharts.FormulaReferenceConverter.CreateOpenXmlElement<DXO2013DrawChart.FormulaReference>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  public static DocumentModel.Drawings.Charts.NumRefExtension? CreateModelElement(DocumentFormat.OpenXml.Drawing.Charts.NumRefExtension? openXmlElement)
+  public static DMDrawsCharts.NumRefExtension? CreateModelElement(DXDrawCharts.NumRefExtension? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.Charts.NumRefExtension();
+      var value = new DMDrawsCharts.NumRefExtension();
       value.Uri = GetUri(openXmlElement);
       value.FullReference = GetFullReference(openXmlElement);
       value.LevelReference = GetLevelReference(openXmlElement);
@@ -98,8 +98,8 @@ public static class NumRefExtensionConverter
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.Charts.NumRefExtension? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.Charts.NumRefExtension, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDrawsCharts.NumRefExtension? value)
+    where OpenXmlElementType: DXDrawCharts.NumRefExtension, new()
   {
     if (value != null)
     {

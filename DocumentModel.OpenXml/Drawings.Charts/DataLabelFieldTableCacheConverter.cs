@@ -5,78 +5,78 @@ namespace DocumentModel.OpenXml.Drawings.Charts;
 /// </summary>
 public static class DataLabelFieldTableCacheConverter
 {
-  private static UInt32? GetPointCount(DocumentFormat.OpenXml.Office2013.Drawing.Chart.DataLabelFieldTableCache openXmlElement)
+  private static UInt32? GetPointCount(DXO2013DrawChart.DataLabelFieldTableCache openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.PointCount>();
+    var itemElement = openXmlElement?.GetFirstChild<DXDrawCharts.PointCount>();
     if (itemElement != null)
       return itemElement.Val?.Value;
     return null;
   }
   
-  private static void SetPointCount(DocumentFormat.OpenXml.Office2013.Drawing.Chart.DataLabelFieldTableCache openXmlElement, UInt32? value)
+  private static void SetPointCount(DXO2013DrawChart.DataLabelFieldTableCache openXmlElement, UInt32? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.PointCount>();
+    var itemElement = openXmlElement.GetFirstChild<DXDrawCharts.PointCount>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = new DocumentFormat.OpenXml.Drawing.Charts.PointCount{ Val = value };
+      itemElement = new DXDrawCharts.PointCount{ Val = value };
       openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static System.Collections.ObjectModel.Collection<DocumentModel.Drawings.Charts.StringPoint> GetStringPoints(DocumentFormat.OpenXml.Office2013.Drawing.Chart.DataLabelFieldTableCache openXmlElement)
+  private static Collection<DMDrawsCharts.StringPoint> GetStringPoints(DXO2013DrawChart.DataLabelFieldTableCache openXmlElement)
   {
-    var collection = new System.Collections.ObjectModel.Collection<DocumentModel.Drawings.Charts.StringPoint>();
-    foreach (var item in openXmlElement.Elements<DocumentFormat.OpenXml.Drawing.Charts.StringPoint>())
+    var collection = new Collection<DMDrawsCharts.StringPoint>();
+    foreach (var item in openXmlElement.Elements<DXDrawCharts.StringPoint>())
     {
-      var newItem = DocumentModel.OpenXml.Drawings.Charts.StringPointConverter.CreateModelElement(item);
+      var newItem = DMXDrawsCharts.StringPointConverter.CreateModelElement(item);
       if (newItem != null)
         collection.Add(newItem);
     }
     return collection;
   }
   
-  private static void SetStringPoints(DocumentFormat.OpenXml.Office2013.Drawing.Chart.DataLabelFieldTableCache openXmlElement, System.Collections.ObjectModel.Collection<DocumentModel.Drawings.Charts.StringPoint>? value)
+  private static void SetStringPoints(DXO2013DrawChart.DataLabelFieldTableCache openXmlElement, Collection<DMDrawsCharts.StringPoint>? value)
   {
-    openXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Drawing.Charts.StringPoint>();
+    openXmlElement.RemoveAllChildren<DXDrawCharts.StringPoint>();
     if (value != null)
     {
       foreach (var item in value)
       {
-        var newItem = DocumentModel.OpenXml.Drawings.Charts.StringPointConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Charts.StringPoint>(item);
+        var newItem = DMXDrawsCharts.StringPointConverter.CreateOpenXmlElement<DXDrawCharts.StringPoint>(item);
         if (newItem != null)
           openXmlElement.AddChild(newItem);
       }
     }
   }
   
-  private static DocumentModel.Drawings.Charts.StrDataExtensionList? GetStrDataExtensionList(DocumentFormat.OpenXml.Office2013.Drawing.Chart.DataLabelFieldTableCache openXmlElement)
+  private static DMDrawsCharts.StrDataExtensionList? GetStrDataExtensionList(DXO2013DrawChart.DataLabelFieldTableCache openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.StrDataExtensionList>();
+    var itemElement = openXmlElement?.GetFirstChild<DXDrawCharts.StrDataExtensionList>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.Charts.StrDataExtensionListConverter.CreateModelElement(itemElement);
+      return DMXDrawsCharts.StrDataExtensionListConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetStrDataExtensionList(DocumentFormat.OpenXml.Office2013.Drawing.Chart.DataLabelFieldTableCache openXmlElement, DocumentModel.Drawings.Charts.StrDataExtensionList? value)
+  private static void SetStrDataExtensionList(DXO2013DrawChart.DataLabelFieldTableCache openXmlElement, DMDrawsCharts.StrDataExtensionList? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.StrDataExtensionList>();
+    var itemElement = openXmlElement.GetFirstChild<DXDrawCharts.StrDataExtensionList>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Drawings.Charts.StrDataExtensionListConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Charts.StrDataExtensionList>(value);
+      itemElement = DMXDrawsCharts.StrDataExtensionListConverter.CreateOpenXmlElement<DXDrawCharts.StrDataExtensionList>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  public static DocumentModel.Drawings.Charts.DataLabelFieldTableCache? CreateModelElement(DocumentFormat.OpenXml.Office2013.Drawing.Chart.DataLabelFieldTableCache? openXmlElement)
+  public static DMDrawsCharts.DataLabelFieldTableCache? CreateModelElement(DXO2013DrawChart.DataLabelFieldTableCache? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.Charts.DataLabelFieldTableCache();
+      var value = new DMDrawsCharts.DataLabelFieldTableCache();
       value.PointCount = GetPointCount(openXmlElement);
       value.StringPoints = GetStringPoints(openXmlElement);
       value.StrDataExtensionList = GetStrDataExtensionList(openXmlElement);
@@ -85,8 +85,8 @@ public static class DataLabelFieldTableCacheConverter
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.Charts.DataLabelFieldTableCache? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Office2013.Drawing.Chart.DataLabelFieldTableCache, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDrawsCharts.DataLabelFieldTableCache? value)
+    where OpenXmlElementType: DXO2013DrawChart.DataLabelFieldTableCache, new()
   {
     if (value != null)
     {

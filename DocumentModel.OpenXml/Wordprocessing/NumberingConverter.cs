@@ -5,109 +5,109 @@ namespace DocumentModel.OpenXml.Wordprocessing;
 /// </summary>
 public static class NumberingConverter
 {
-  private static System.Collections.ObjectModel.Collection<DocumentModel.Wordprocessing.NumberingPictureBullet> GetNumberingPictureBullets(DocumentFormat.OpenXml.Wordprocessing.Numbering openXmlElement)
+  private static Collection<DMW.NumberingPictureBullet> GetNumberingPictureBullets(DXW.Numbering openXmlElement)
   {
-    var collection = new System.Collections.ObjectModel.Collection<DocumentModel.Wordprocessing.NumberingPictureBullet>();
-    foreach (var item in openXmlElement.Elements<DocumentFormat.OpenXml.Wordprocessing.NumberingPictureBullet>())
+    var collection = new Collection<DMW.NumberingPictureBullet>();
+    foreach (var item in openXmlElement.Elements<DXW.NumberingPictureBullet>())
     {
-      var newItem = DocumentModel.OpenXml.Wordprocessing.NumberingPictureBulletConverter.CreateModelElement(item);
+      var newItem = DMXW.NumberingPictureBulletConverter.CreateModelElement(item);
       if (newItem != null)
         collection.Add(newItem);
     }
     return collection;
   }
   
-  private static void SetNumberingPictureBullets(DocumentFormat.OpenXml.Wordprocessing.Numbering openXmlElement, System.Collections.ObjectModel.Collection<DocumentModel.Wordprocessing.NumberingPictureBullet>? value)
+  private static void SetNumberingPictureBullets(DXW.Numbering openXmlElement, Collection<DMW.NumberingPictureBullet>? value)
   {
-    openXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Wordprocessing.NumberingPictureBullet>();
+    openXmlElement.RemoveAllChildren<DXW.NumberingPictureBullet>();
     if (value != null)
     {
       foreach (var item in value)
       {
-        var newItem = DocumentModel.OpenXml.Wordprocessing.NumberingPictureBulletConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.NumberingPictureBullet>(item);
+        var newItem = DMXW.NumberingPictureBulletConverter.CreateOpenXmlElement<DXW.NumberingPictureBullet>(item);
         if (newItem != null)
           openXmlElement.AddChild(newItem);
       }
     }
   }
   
-  private static System.Collections.ObjectModel.Collection<DocumentModel.Wordprocessing.AbstractNum> GetAbstractNums(DocumentFormat.OpenXml.Wordprocessing.Numbering openXmlElement)
+  private static Collection<DMW.AbstractNum> GetAbstractNums(DXW.Numbering openXmlElement)
   {
-    var collection = new System.Collections.ObjectModel.Collection<DocumentModel.Wordprocessing.AbstractNum>();
-    foreach (var item in openXmlElement.Elements<DocumentFormat.OpenXml.Wordprocessing.AbstractNum>())
+    var collection = new Collection<DMW.AbstractNum>();
+    foreach (var item in openXmlElement.Elements<DXW.AbstractNum>())
     {
-      var newItem = DocumentModel.OpenXml.Wordprocessing.AbstractNumConverter.CreateModelElement(item);
+      var newItem = DMXW.AbstractNumConverter.CreateModelElement(item);
       if (newItem != null)
         collection.Add(newItem);
     }
     return collection;
   }
   
-  private static void SetAbstractNums(DocumentFormat.OpenXml.Wordprocessing.Numbering openXmlElement, System.Collections.ObjectModel.Collection<DocumentModel.Wordprocessing.AbstractNum>? value)
+  private static void SetAbstractNums(DXW.Numbering openXmlElement, Collection<DMW.AbstractNum>? value)
   {
-    openXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Wordprocessing.AbstractNum>();
+    openXmlElement.RemoveAllChildren<DXW.AbstractNum>();
     if (value != null)
     {
       foreach (var item in value)
       {
-        var newItem = DocumentModel.OpenXml.Wordprocessing.AbstractNumConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.AbstractNum>(item);
+        var newItem = DMXW.AbstractNumConverter.CreateOpenXmlElement<DXW.AbstractNum>(item);
         if (newItem != null)
           openXmlElement.AddChild(newItem);
       }
     }
   }
   
-  private static System.Collections.ObjectModel.Collection<DocumentModel.Wordprocessing.NumberingInstance> GetNumberingInstances(DocumentFormat.OpenXml.Wordprocessing.Numbering openXmlElement)
+  private static Collection<DMW.NumberingInstance> GetNumberingInstances(DXW.Numbering openXmlElement)
   {
-    var collection = new System.Collections.ObjectModel.Collection<DocumentModel.Wordprocessing.NumberingInstance>();
-    foreach (var item in openXmlElement.Elements<DocumentFormat.OpenXml.Wordprocessing.NumberingInstance>())
+    var collection = new Collection<DMW.NumberingInstance>();
+    foreach (var item in openXmlElement.Elements<DXW.NumberingInstance>())
     {
-      var newItem = DocumentModel.OpenXml.Wordprocessing.NumberingInstanceConverter.CreateModelElement(item);
+      var newItem = DMXW.NumberingInstanceConverter.CreateModelElement(item);
       if (newItem != null)
         collection.Add(newItem);
     }
     return collection;
   }
   
-  private static void SetNumberingInstances(DocumentFormat.OpenXml.Wordprocessing.Numbering openXmlElement, System.Collections.ObjectModel.Collection<DocumentModel.Wordprocessing.NumberingInstance>? value)
+  private static void SetNumberingInstances(DXW.Numbering openXmlElement, Collection<DMW.NumberingInstance>? value)
   {
-    openXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Wordprocessing.NumberingInstance>();
+    openXmlElement.RemoveAllChildren<DXW.NumberingInstance>();
     if (value != null)
     {
       foreach (var item in value)
       {
-        var newItem = DocumentModel.OpenXml.Wordprocessing.NumberingInstanceConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.NumberingInstance>(item);
+        var newItem = DMXW.NumberingInstanceConverter.CreateOpenXmlElement<DXW.NumberingInstance>(item);
         if (newItem != null)
           openXmlElement.AddChild(newItem);
       }
     }
   }
   
-  private static Int32? GetNumberingIdMacAtCleanup(DocumentFormat.OpenXml.Wordprocessing.Numbering openXmlElement)
+  private static Int32? GetNumberingIdMacAtCleanup(DXW.Numbering openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.NumberingIdMacAtCleanup>();
+    var itemElement = openXmlElement?.GetFirstChild<DXW.NumberingIdMacAtCleanup>();
     if (itemElement != null)
       return itemElement.Val?.Value;
     return null;
   }
   
-  private static void SetNumberingIdMacAtCleanup(DocumentFormat.OpenXml.Wordprocessing.Numbering openXmlElement, Int32? value)
+  private static void SetNumberingIdMacAtCleanup(DXW.Numbering openXmlElement, Int32? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.NumberingIdMacAtCleanup>();
+    var itemElement = openXmlElement.GetFirstChild<DXW.NumberingIdMacAtCleanup>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = new DocumentFormat.OpenXml.Wordprocessing.NumberingIdMacAtCleanup{ Val = value };
+      itemElement = new DXW.NumberingIdMacAtCleanup{ Val = value };
       openXmlElement.AddChild(itemElement);
     }
   }
   
-  public static DocumentModel.Wordprocessing.Numbering? CreateModelElement(DocumentFormat.OpenXml.Wordprocessing.Numbering? openXmlElement)
+  public static DMW.Numbering? CreateModelElement(DXW.Numbering? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Wordprocessing.Numbering();
+      var value = new DMW.Numbering();
       value.NumberingPictureBullets = GetNumberingPictureBullets(openXmlElement);
       value.AbstractNums = GetAbstractNums(openXmlElement);
       value.NumberingInstances = GetNumberingInstances(openXmlElement);
@@ -117,8 +117,8 @@ public static class NumberingConverter
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.Numbering? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Wordprocessing.Numbering, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMW.Numbering? value)
+    where OpenXmlElementType: DXW.Numbering, new()
   {
     if (value != null)
     {

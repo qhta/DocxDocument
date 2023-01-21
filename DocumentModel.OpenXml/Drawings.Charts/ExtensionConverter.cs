@@ -8,12 +8,12 @@ public static class ExtensionConverter
   /// <summary>
   /// Uniform Resource Identifier
   /// </summary>
-  private static String? GetUri(DocumentFormat.OpenXml.Drawing.Charts.Extension openXmlElement)
+  private static String? GetUri(DXDrawCharts.Extension openXmlElement)
   {
     return openXmlElement?.Uri?.Value;
   }
   
-  private static void SetUri(DocumentFormat.OpenXml.Drawing.Charts.Extension openXmlElement, String? value)
+  private static void SetUri(DXDrawCharts.Extension openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.Uri = new StringValue { Value = value };
@@ -21,19 +21,19 @@ public static class ExtensionConverter
       openXmlElement.Uri = null;
   }
   
-  public static DocumentModel.Drawings.Charts.Extension? CreateModelElement(DocumentFormat.OpenXml.Drawing.Charts.Extension? openXmlElement)
+  public static DMDrawsCharts.Extension? CreateModelElement(DXDrawCharts.Extension? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.Charts.Extension();
+      var value = new DMDrawsCharts.Extension();
       value.Uri = GetUri(openXmlElement);
       return value;
     }
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.Charts.Extension? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.Charts.Extension, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDrawsCharts.Extension? value)
+    where OpenXmlElementType: DXDrawCharts.Extension, new()
   {
     if (value != null)
     {

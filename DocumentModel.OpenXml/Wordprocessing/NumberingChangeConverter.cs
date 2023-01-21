@@ -8,12 +8,12 @@ public static class NumberingChangeConverter
   /// <summary>
   /// original
   /// </summary>
-  private static String? GetOriginal(DocumentFormat.OpenXml.Wordprocessing.NumberingChange openXmlElement)
+  private static String? GetOriginal(DXW.NumberingChange openXmlElement)
   {
     return openXmlElement?.Original?.Value;
   }
   
-  private static void SetOriginal(DocumentFormat.OpenXml.Wordprocessing.NumberingChange openXmlElement, String? value)
+  private static void SetOriginal(DXW.NumberingChange openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.Original = new StringValue { Value = value };
@@ -24,12 +24,12 @@ public static class NumberingChangeConverter
   /// <summary>
   /// author
   /// </summary>
-  private static String? GetAuthor(DocumentFormat.OpenXml.Wordprocessing.NumberingChange openXmlElement)
+  private static String? GetAuthor(DXW.NumberingChange openXmlElement)
   {
     return openXmlElement?.Author?.Value;
   }
   
-  private static void SetAuthor(DocumentFormat.OpenXml.Wordprocessing.NumberingChange openXmlElement, String? value)
+  private static void SetAuthor(DXW.NumberingChange openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.Author = new StringValue { Value = value };
@@ -40,12 +40,12 @@ public static class NumberingChangeConverter
   /// <summary>
   /// date
   /// </summary>
-  private static DateTime? GetDate(DocumentFormat.OpenXml.Wordprocessing.NumberingChange openXmlElement)
+  private static DateTime? GetDate(DXW.NumberingChange openXmlElement)
   {
     return openXmlElement.Date?.Value;
   }
   
-  private static void SetDate(DocumentFormat.OpenXml.Wordprocessing.NumberingChange openXmlElement, DateTime? value)
+  private static void SetDate(DXW.NumberingChange openXmlElement, DateTime? value)
   {
     openXmlElement.Date = value;
   }
@@ -53,12 +53,12 @@ public static class NumberingChangeConverter
   /// <summary>
   /// Annotation Identifier
   /// </summary>
-  private static String? GetId(DocumentFormat.OpenXml.Wordprocessing.NumberingChange openXmlElement)
+  private static String? GetId(DXW.NumberingChange openXmlElement)
   {
     return openXmlElement?.Id?.Value;
   }
   
-  private static void SetId(DocumentFormat.OpenXml.Wordprocessing.NumberingChange openXmlElement, String? value)
+  private static void SetId(DXW.NumberingChange openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.Id = new StringValue { Value = value };
@@ -66,11 +66,11 @@ public static class NumberingChangeConverter
       openXmlElement.Id = null;
   }
   
-  public static DocumentModel.Wordprocessing.NumberingChange? CreateModelElement(DocumentFormat.OpenXml.Wordprocessing.NumberingChange? openXmlElement)
+  public static DMW.NumberingChange? CreateModelElement(DXW.NumberingChange? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Wordprocessing.NumberingChange();
+      var value = new DMW.NumberingChange();
       value.Original = GetOriginal(openXmlElement);
       value.Author = GetAuthor(openXmlElement);
       value.Date = GetDate(openXmlElement);
@@ -80,8 +80,8 @@ public static class NumberingChangeConverter
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.NumberingChange? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Wordprocessing.NumberingChange, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMW.NumberingChange? value)
+    where OpenXmlElementType: DXW.NumberingChange, new()
   {
     if (value != null)
     {

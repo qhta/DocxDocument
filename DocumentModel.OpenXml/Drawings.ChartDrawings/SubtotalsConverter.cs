@@ -5,10 +5,10 @@ namespace DocumentModel.OpenXml.Drawings.ChartDrawings;
 /// </summary>
 public static class SubtotalsConverter
 {
-  private static System.Collections.ObjectModel.Collection<UInt32> GetUnsignedIntegerTypes(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.Subtotals openXmlElement)
+  private static Collection<UInt32> GetUnsignedIntegerTypes(DXO2016DrawChartDraw.Subtotals openXmlElement)
   {
-    var collection = new System.Collections.ObjectModel.Collection<UInt32>();
-    foreach (var item in openXmlElement.Elements<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.UnsignedIntegerType>())
+    var collection = new Collection<UInt32>();
+    foreach (var item in openXmlElement.Elements<DXO2016DrawChartDraw.UnsignedIntegerType>())
     {
       var newItem = UInt32ValueConverter.GetValue(item);
       if (newItem != null)
@@ -17,33 +17,33 @@ public static class SubtotalsConverter
     return collection;
   }
   
-  private static void SetUnsignedIntegerTypes(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.Subtotals openXmlElement, System.Collections.ObjectModel.Collection<UInt32>? value)
+  private static void SetUnsignedIntegerTypes(DXO2016DrawChartDraw.Subtotals openXmlElement, Collection<UInt32>? value)
   {
-    openXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.UnsignedIntegerType>();
+    openXmlElement.RemoveAllChildren<DXO2016DrawChartDraw.UnsignedIntegerType>();
     if (value != null)
     {
       foreach (var item in value)
       {
-        var newItem = UInt32ValueConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.UnsignedIntegerType>(item);
+        var newItem = UInt32ValueConverter.CreateOpenXmlElement<DXO2016DrawChartDraw.UnsignedIntegerType>(item);
         if (newItem != null)
           openXmlElement.AddChild(newItem);
       }
     }
   }
   
-  public static DocumentModel.Drawings.ChartDrawings.Subtotals? CreateModelElement(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.Subtotals? openXmlElement)
+  public static DMDrawsChartDraws.Subtotals? CreateModelElement(DXO2016DrawChartDraw.Subtotals? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.ChartDrawings.Subtotals();
+      var value = new DMDrawsChartDraws.Subtotals();
       value.UnsignedIntegerTypes = GetUnsignedIntegerTypes(openXmlElement);
       return value;
     }
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.ChartDrawings.Subtotals? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.Subtotals, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDrawsChartDraws.Subtotals? value)
+    where OpenXmlElementType: DXO2016DrawChartDraw.Subtotals, new()
   {
     if (value != null)
     {

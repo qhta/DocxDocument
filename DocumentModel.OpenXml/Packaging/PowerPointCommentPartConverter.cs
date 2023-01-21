@@ -5,21 +5,21 @@ namespace DocumentModel.OpenXml.Packaging;
 /// </summary>
 public static class PowerPointCommentPartConverter
 {
-  private static String? GetContentType(DocumentFormat.OpenXml.Packaging.PowerPointCommentPart openXmlElement)
+  private static String? GetContentType(DXPack.PowerPointCommentPart openXmlElement)
   {
     return openXmlElement?.ContentType;
   }
   
-  private static String? GetRelationshipType(DocumentFormat.OpenXml.Packaging.PowerPointCommentPart openXmlElement)
+  private static String? GetRelationshipType(DXPack.PowerPointCommentPart openXmlElement)
   {
     return openXmlElement?.RelationshipType;
   }
   
-  public static DocumentModel.Packaging.PowerPointCommentPart? CreateModelElement(DocumentFormat.OpenXml.Packaging.PowerPointCommentPart? openXmlElement)
+  public static DMPack.PowerPointCommentPart? CreateModelElement(DXPack.PowerPointCommentPart? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Packaging.PowerPointCommentPart();
+      var value = new DMPack.PowerPointCommentPart();
       value.ContentType = GetContentType(openXmlElement);
       value.RelationshipType = GetRelationshipType(openXmlElement);
       return value;
@@ -27,8 +27,8 @@ public static class PowerPointCommentPartConverter
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Packaging.PowerPointCommentPart? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Packaging.PowerPointCommentPart, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMPack.PowerPointCommentPart? value)
+    where OpenXmlElementType: DXPack.PowerPointCommentPart, new()
   {
     if (value != null)
     {

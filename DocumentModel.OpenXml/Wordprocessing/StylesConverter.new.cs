@@ -1,6 +1,3 @@
-using DMW = DocumentModel.Wordprocessing;
-using DXW = DocumentFormat.OpenXml.Wordprocessing;
-
 namespace DocumentModel.OpenXml.Wordprocessing;
 
 /// <summary>

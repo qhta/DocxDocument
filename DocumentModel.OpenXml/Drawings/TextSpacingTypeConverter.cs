@@ -8,22 +8,22 @@ public static class TextSpacingTypeConverter
   /// <summary>
   /// Spacing Percent.
   /// </summary>
-  private static Int32? GetSpacingPercent(DocumentFormat.OpenXml.Drawing.TextSpacingType openXmlElement)
+  private static Int32? GetSpacingPercent(DXDraw.TextSpacingType openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.SpacingPercent>();
+    var itemElement = openXmlElement?.GetFirstChild<DXDraw.SpacingPercent>();
     if (itemElement != null)
       return itemElement.Val?.Value;
     return null;
   }
   
-  private static void SetSpacingPercent(DocumentFormat.OpenXml.Drawing.TextSpacingType openXmlElement, Int32? value)
+  private static void SetSpacingPercent(DXDraw.TextSpacingType openXmlElement, Int32? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.SpacingPercent>();
+    var itemElement = openXmlElement.GetFirstChild<DXDraw.SpacingPercent>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = new DocumentFormat.OpenXml.Drawing.SpacingPercent{ Val = value };
+      itemElement = new DXDraw.SpacingPercent{ Val = value };
       openXmlElement.AddChild(itemElement);
     }
   }
@@ -31,31 +31,31 @@ public static class TextSpacingTypeConverter
   /// <summary>
   /// Spacing Points.
   /// </summary>
-  private static Int32? GetSpacingPoints(DocumentFormat.OpenXml.Drawing.TextSpacingType openXmlElement)
+  private static Int32? GetSpacingPoints(DXDraw.TextSpacingType openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.SpacingPoints>();
+    var itemElement = openXmlElement?.GetFirstChild<DXDraw.SpacingPoints>();
     if (itemElement != null)
       return itemElement.Val?.Value;
     return null;
   }
   
-  private static void SetSpacingPoints(DocumentFormat.OpenXml.Drawing.TextSpacingType openXmlElement, Int32? value)
+  private static void SetSpacingPoints(DXDraw.TextSpacingType openXmlElement, Int32? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.SpacingPoints>();
+    var itemElement = openXmlElement.GetFirstChild<DXDraw.SpacingPoints>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = new DocumentFormat.OpenXml.Drawing.SpacingPoints{ Val = value };
+      itemElement = new DXDraw.SpacingPoints{ Val = value };
       openXmlElement.AddChild(itemElement);
     }
   }
   
-  public static DocumentModel.Drawings.TextSpacingType? CreateModelElement(DocumentFormat.OpenXml.Drawing.TextSpacingType? openXmlElement)
+  public static DMDraws.TextSpacingType? CreateModelElement(DXDraw.TextSpacingType? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.TextSpacingType();
+      var value = new DMDraws.TextSpacingType();
       value.SpacingPercent = GetSpacingPercent(openXmlElement);
       value.SpacingPoints = GetSpacingPoints(openXmlElement);
       return value;
@@ -63,8 +63,8 @@ public static class TextSpacingTypeConverter
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.TextSpacingType? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.TextSpacingType, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDraws.TextSpacingType? value)
+    where OpenXmlElementType: DXDraw.TextSpacingType, new()
   {
     if (value != null)
     {

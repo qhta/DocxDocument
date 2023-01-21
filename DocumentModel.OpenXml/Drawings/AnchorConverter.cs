@@ -8,12 +8,12 @@ public static class AnchorConverter
   /// <summary>
   /// X-Coordinate in 3D
   /// </summary>
-  private static Int64? GetX(DocumentFormat.OpenXml.Drawing.Anchor openXmlElement)
+  private static Int64? GetX(DXDraw.Anchor openXmlElement)
   {
     return openXmlElement.X?.Value;
   }
   
-  private static void SetX(DocumentFormat.OpenXml.Drawing.Anchor openXmlElement, Int64? value)
+  private static void SetX(DXDraw.Anchor openXmlElement, Int64? value)
   {
     openXmlElement.X = value;
   }
@@ -21,12 +21,12 @@ public static class AnchorConverter
   /// <summary>
   /// Y-Coordinate in 3D
   /// </summary>
-  private static Int64? GetY(DocumentFormat.OpenXml.Drawing.Anchor openXmlElement)
+  private static Int64? GetY(DXDraw.Anchor openXmlElement)
   {
     return openXmlElement.Y?.Value;
   }
   
-  private static void SetY(DocumentFormat.OpenXml.Drawing.Anchor openXmlElement, Int64? value)
+  private static void SetY(DXDraw.Anchor openXmlElement, Int64? value)
   {
     openXmlElement.Y = value;
   }
@@ -34,21 +34,21 @@ public static class AnchorConverter
   /// <summary>
   /// Z-Coordinate in 3D
   /// </summary>
-  private static Int64? GetZ(DocumentFormat.OpenXml.Drawing.Anchor openXmlElement)
+  private static Int64? GetZ(DXDraw.Anchor openXmlElement)
   {
     return openXmlElement.Z?.Value;
   }
   
-  private static void SetZ(DocumentFormat.OpenXml.Drawing.Anchor openXmlElement, Int64? value)
+  private static void SetZ(DXDraw.Anchor openXmlElement, Int64? value)
   {
     openXmlElement.Z = value;
   }
   
-  public static DocumentModel.Drawings.Anchor? CreateModelElement(DocumentFormat.OpenXml.Drawing.Anchor? openXmlElement)
+  public static DMDraws.Anchor? CreateModelElement(DXDraw.Anchor? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.Anchor();
+      var value = new DMDraws.Anchor();
       value.X = GetX(openXmlElement);
       value.Y = GetY(openXmlElement);
       value.Z = GetZ(openXmlElement);
@@ -57,8 +57,8 @@ public static class AnchorConverter
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.Anchor? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.Anchor, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDraws.Anchor? value)
+    where OpenXmlElementType: DXDraw.Anchor, new()
   {
     if (value != null)
     {

@@ -8,12 +8,12 @@ public static class TrackChangeType2Converter
   /// <summary>
   /// author
   /// </summary>
-  private static String? GetAuthor(DocumentFormat.OpenXml.Office2010.Word.TrackChangeType openXmlElement)
+  private static String? GetAuthor(DXO2010W.TrackChangeType openXmlElement)
   {
     return openXmlElement?.Author?.Value;
   }
   
-  private static void SetAuthor(DocumentFormat.OpenXml.Office2010.Word.TrackChangeType openXmlElement, String? value)
+  private static void SetAuthor(DXO2010W.TrackChangeType openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.Author = new StringValue { Value = value };
@@ -24,12 +24,12 @@ public static class TrackChangeType2Converter
   /// <summary>
   /// date
   /// </summary>
-  private static DateTime? GetDate(DocumentFormat.OpenXml.Office2010.Word.TrackChangeType openXmlElement)
+  private static DateTime? GetDate(DXO2010W.TrackChangeType openXmlElement)
   {
     return openXmlElement.Date?.Value;
   }
   
-  private static void SetDate(DocumentFormat.OpenXml.Office2010.Word.TrackChangeType openXmlElement, DateTime? value)
+  private static void SetDate(DXO2010W.TrackChangeType openXmlElement, DateTime? value)
   {
     openXmlElement.Date = value;
   }
@@ -37,12 +37,12 @@ public static class TrackChangeType2Converter
   /// <summary>
   /// Annotation Identifier
   /// </summary>
-  private static String? GetId(DocumentFormat.OpenXml.Office2010.Word.TrackChangeType openXmlElement)
+  private static String? GetId(DXO2010W.TrackChangeType openXmlElement)
   {
     return openXmlElement?.Id?.Value;
   }
   
-  private static void SetId(DocumentFormat.OpenXml.Office2010.Word.TrackChangeType openXmlElement, String? value)
+  private static void SetId(DXO2010W.TrackChangeType openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.Id = new StringValue { Value = value };
@@ -50,11 +50,11 @@ public static class TrackChangeType2Converter
       openXmlElement.Id = null;
   }
   
-  public static DocumentModel.Wordprocessing.TrackChangeType2? CreateModelElement(DocumentFormat.OpenXml.Office2010.Word.TrackChangeType? openXmlElement)
+  public static DMW.TrackChangeType2? CreateModelElement(DXO2010W.TrackChangeType? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Wordprocessing.TrackChangeType2();
+      var value = new DMW.TrackChangeType2();
       value.Author = GetAuthor(openXmlElement);
       value.Date = GetDate(openXmlElement);
       value.Id = GetId(openXmlElement);
@@ -63,8 +63,8 @@ public static class TrackChangeType2Converter
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.TrackChangeType2? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Office2010.Word.TrackChangeType, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMW.TrackChangeType2? value)
+    where OpenXmlElementType: DXO2010W.TrackChangeType, new()
   {
     if (value != null)
     {

@@ -8,22 +8,22 @@ public static class ScatterChartConverter
   /// <summary>
   /// ScatterStyle.
   /// </summary>
-  private static DocumentModel.Drawings.Charts.ScatterStyleKind? GetScatterStyle(DocumentFormat.OpenXml.Drawing.Charts.ScatterChart openXmlElement)
+  private static DMDrawsCharts.ScatterStyleKind? GetScatterStyle(DXDrawCharts.ScatterChart openXmlElement)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.ScatterStyle>();
+    var itemElement = openXmlElement.GetFirstChild<DXDrawCharts.ScatterStyle>();
     if (itemElement?.Val?.Value != null)
-      return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Drawing.Charts.ScatterStyleValues, DocumentModel.Drawings.Charts.ScatterStyleKind>(itemElement.Val.Value);
+      return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Drawing.Charts.ScatterStyleValues, DMDrawsCharts.ScatterStyleKind>(itemElement.Val.Value);
     return null;
   }
   
-  private static void SetScatterStyle(DocumentFormat.OpenXml.Drawing.Charts.ScatterChart openXmlElement, DocumentModel.Drawings.Charts.ScatterStyleKind? value)
+  private static void SetScatterStyle(DXDrawCharts.ScatterChart openXmlElement, DMDrawsCharts.ScatterStyleKind? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.ScatterStyle>();
+    var itemElement = openXmlElement.GetFirstChild<DXDrawCharts.ScatterStyle>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = EnumValueConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Charts.ScatterStyle, DocumentFormat.OpenXml.Drawing.Charts.ScatterStyleValues, DocumentModel.Drawings.Charts.ScatterStyleKind>(value);
+      itemElement = EnumValueConverter.CreateOpenXmlElement<DXDrawCharts.ScatterStyle, DocumentFormat.OpenXml.Drawing.Charts.ScatterStyleValues, DMDrawsCharts.ScatterStyleKind>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
@@ -32,78 +32,78 @@ public static class ScatterChartConverter
   /// <summary>
   /// VaryColors.
   /// </summary>
-  private static Boolean? GetVaryColors(DocumentFormat.OpenXml.Drawing.Charts.ScatterChart openXmlElement)
+  private static Boolean? GetVaryColors(DXDrawCharts.ScatterChart openXmlElement)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.VaryColors>();
+    var itemElement = openXmlElement.GetFirstChild<DXDrawCharts.VaryColors>();
     return itemElement != null;
   }
   
-  private static void SetVaryColors(DocumentFormat.OpenXml.Drawing.Charts.ScatterChart openXmlElement, Boolean? value)
+  private static void SetVaryColors(DXDrawCharts.ScatterChart openXmlElement, Boolean? value)
   {
     if (value == false)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.VaryColors>();
+      var itemElement = openXmlElement.GetFirstChild<DXDrawCharts.VaryColors>();
       if (itemElement != null)
         itemElement.Remove();
     }
     if (value == true)
     {
-      var itemElement = new DocumentFormat.OpenXml.Drawing.Charts.VaryColors();
+      var itemElement = new DXDrawCharts.VaryColors();
       openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static System.Collections.ObjectModel.Collection<DocumentModel.Drawings.Charts.ScatterChartSeries> GetScatterChartSerieses(DocumentFormat.OpenXml.Drawing.Charts.ScatterChart openXmlElement)
+  private static Collection<DMDrawsCharts.ScatterChartSeries> GetScatterChartSerieses(DXDrawCharts.ScatterChart openXmlElement)
   {
-    var collection = new System.Collections.ObjectModel.Collection<DocumentModel.Drawings.Charts.ScatterChartSeries>();
-    foreach (var item in openXmlElement.Elements<DocumentFormat.OpenXml.Drawing.Charts.ScatterChartSeries>())
+    var collection = new Collection<DMDrawsCharts.ScatterChartSeries>();
+    foreach (var item in openXmlElement.Elements<DXDrawCharts.ScatterChartSeries>())
     {
-      var newItem = DocumentModel.OpenXml.Drawings.Charts.ScatterChartSeriesConverter.CreateModelElement(item);
+      var newItem = DMXDrawsCharts.ScatterChartSeriesConverter.CreateModelElement(item);
       if (newItem != null)
         collection.Add(newItem);
     }
     return collection;
   }
   
-  private static void SetScatterChartSerieses(DocumentFormat.OpenXml.Drawing.Charts.ScatterChart openXmlElement, System.Collections.ObjectModel.Collection<DocumentModel.Drawings.Charts.ScatterChartSeries>? value)
+  private static void SetScatterChartSerieses(DXDrawCharts.ScatterChart openXmlElement, Collection<DMDrawsCharts.ScatterChartSeries>? value)
   {
-    openXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Drawing.Charts.ScatterChartSeries>();
+    openXmlElement.RemoveAllChildren<DXDrawCharts.ScatterChartSeries>();
     if (value != null)
     {
       foreach (var item in value)
       {
-        var newItem = DocumentModel.OpenXml.Drawings.Charts.ScatterChartSeriesConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Charts.ScatterChartSeries>(item);
+        var newItem = DMXDrawsCharts.ScatterChartSeriesConverter.CreateOpenXmlElement<DXDrawCharts.ScatterChartSeries>(item);
         if (newItem != null)
           openXmlElement.AddChild(newItem);
       }
     }
   }
   
-  private static DocumentModel.Drawings.Charts.DataLabels? GetDataLabels(DocumentFormat.OpenXml.Drawing.Charts.ScatterChart openXmlElement)
+  private static DMDrawsCharts.DataLabels? GetDataLabels(DXDrawCharts.ScatterChart openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.DataLabels>();
+    var itemElement = openXmlElement?.GetFirstChild<DXDrawCharts.DataLabels>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.Charts.DataLabelsConverter.CreateModelElement(itemElement);
+      return DMXDrawsCharts.DataLabelsConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetDataLabels(DocumentFormat.OpenXml.Drawing.Charts.ScatterChart openXmlElement, DocumentModel.Drawings.Charts.DataLabels? value)
+  private static void SetDataLabels(DXDrawCharts.ScatterChart openXmlElement, DMDrawsCharts.DataLabels? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.DataLabels>();
+    var itemElement = openXmlElement.GetFirstChild<DXDrawCharts.DataLabels>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Drawings.Charts.DataLabelsConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Charts.DataLabels>(value);
+      itemElement = DMXDrawsCharts.DataLabelsConverter.CreateOpenXmlElement<DXDrawCharts.DataLabels>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static System.Collections.ObjectModel.Collection<UInt32> GetAxisIds(DocumentFormat.OpenXml.Drawing.Charts.ScatterChart openXmlElement)
+  private static Collection<UInt32> GetAxisIds(DXDrawCharts.ScatterChart openXmlElement)
   {
-    var collection = new System.Collections.ObjectModel.Collection<UInt32>();
-    foreach (var item in openXmlElement.Elements<DocumentFormat.OpenXml.Drawing.Charts.AxisId>())
+    var collection = new Collection<UInt32>();
+    foreach (var item in openXmlElement.Elements<DXDrawCharts.AxisId>())
     {
       var newItem = UInt32ValueConverter.GetValue(item);
       if (newItem != null)
@@ -112,46 +112,46 @@ public static class ScatterChartConverter
     return collection;
   }
   
-  private static void SetAxisIds(DocumentFormat.OpenXml.Drawing.Charts.ScatterChart openXmlElement, System.Collections.ObjectModel.Collection<UInt32>? value)
+  private static void SetAxisIds(DXDrawCharts.ScatterChart openXmlElement, Collection<UInt32>? value)
   {
-    openXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Drawing.Charts.AxisId>();
+    openXmlElement.RemoveAllChildren<DXDrawCharts.AxisId>();
     if (value != null)
     {
       foreach (var item in value)
       {
-        var newItem = UInt32ValueConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Charts.AxisId>(item);
+        var newItem = UInt32ValueConverter.CreateOpenXmlElement<DXDrawCharts.AxisId>(item);
         if (newItem != null)
           openXmlElement.AddChild(newItem);
       }
     }
   }
   
-  private static DocumentModel.Drawings.Charts.ScatterChartExtensionList? GetScatterChartExtensionList(DocumentFormat.OpenXml.Drawing.Charts.ScatterChart openXmlElement)
+  private static DMDrawsCharts.ScatterChartExtensionList? GetScatterChartExtensionList(DXDrawCharts.ScatterChart openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.ScatterChartExtensionList>();
+    var itemElement = openXmlElement?.GetFirstChild<DXDrawCharts.ScatterChartExtensionList>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.Charts.ScatterChartExtensionListConverter.CreateModelElement(itemElement);
+      return DMXDrawsCharts.ScatterChartExtensionListConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetScatterChartExtensionList(DocumentFormat.OpenXml.Drawing.Charts.ScatterChart openXmlElement, DocumentModel.Drawings.Charts.ScatterChartExtensionList? value)
+  private static void SetScatterChartExtensionList(DXDrawCharts.ScatterChart openXmlElement, DMDrawsCharts.ScatterChartExtensionList? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.ScatterChartExtensionList>();
+    var itemElement = openXmlElement.GetFirstChild<DXDrawCharts.ScatterChartExtensionList>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Drawings.Charts.ScatterChartExtensionListConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Charts.ScatterChartExtensionList>(value);
+      itemElement = DMXDrawsCharts.ScatterChartExtensionListConverter.CreateOpenXmlElement<DXDrawCharts.ScatterChartExtensionList>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  public static DocumentModel.Drawings.Charts.ScatterChart? CreateModelElement(DocumentFormat.OpenXml.Drawing.Charts.ScatterChart? openXmlElement)
+  public static DMDrawsCharts.ScatterChart? CreateModelElement(DXDrawCharts.ScatterChart? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.Charts.ScatterChart();
+      var value = new DMDrawsCharts.ScatterChart();
       value.ScatterStyle = GetScatterStyle(openXmlElement);
       value.VaryColors = GetVaryColors(openXmlElement);
       value.ScatterChartSerieses = GetScatterChartSerieses(openXmlElement);
@@ -163,8 +163,8 @@ public static class ScatterChartConverter
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.Charts.ScatterChart? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.Charts.ScatterChart, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDrawsCharts.ScatterChart? value)
+    where OpenXmlElementType: DXDrawCharts.ScatterChart, new()
   {
     if (value != null)
     {

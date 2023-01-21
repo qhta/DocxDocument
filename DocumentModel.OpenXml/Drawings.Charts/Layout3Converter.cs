@@ -8,22 +8,22 @@ public static class Layout3Converter
   /// <summary>
   /// Manual Layout.
   /// </summary>
-  private static DocumentModel.Drawings.Charts.ManualLayout? GetManualLayout(DocumentFormat.OpenXml.Office2013.Drawing.Chart.Layout openXmlElement)
+  private static DMDrawsCharts.ManualLayout? GetManualLayout(DXO2013DrawChart.Layout openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.ManualLayout>();
+    var itemElement = openXmlElement?.GetFirstChild<DXDrawCharts.ManualLayout>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.Charts.ManualLayoutConverter.CreateModelElement(itemElement);
+      return DMXDrawsCharts.ManualLayoutConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetManualLayout(DocumentFormat.OpenXml.Office2013.Drawing.Chart.Layout openXmlElement, DocumentModel.Drawings.Charts.ManualLayout? value)
+  private static void SetManualLayout(DXO2013DrawChart.Layout openXmlElement, DMDrawsCharts.ManualLayout? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.ManualLayout>();
+    var itemElement = openXmlElement.GetFirstChild<DXDrawCharts.ManualLayout>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Drawings.Charts.ManualLayoutConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Charts.ManualLayout>(value);
+      itemElement = DMXDrawsCharts.ManualLayoutConverter.CreateOpenXmlElement<DXDrawCharts.ManualLayout>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
@@ -32,32 +32,32 @@ public static class Layout3Converter
   /// <summary>
   /// Chart Extensibility.
   /// </summary>
-  private static DocumentModel.Drawings.Charts.ExtensionList? GetExtensionList(DocumentFormat.OpenXml.Office2013.Drawing.Chart.Layout openXmlElement)
+  private static DMDrawsCharts.ExtensionList? GetExtensionList(DXO2013DrawChart.Layout openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.ExtensionList>();
+    var itemElement = openXmlElement?.GetFirstChild<DXDrawCharts.ExtensionList>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.Charts.ExtensionListConverter.CreateModelElement(itemElement);
+      return DMXDrawsCharts.ExtensionListConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetExtensionList(DocumentFormat.OpenXml.Office2013.Drawing.Chart.Layout openXmlElement, DocumentModel.Drawings.Charts.ExtensionList? value)
+  private static void SetExtensionList(DXO2013DrawChart.Layout openXmlElement, DMDrawsCharts.ExtensionList? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.ExtensionList>();
+    var itemElement = openXmlElement.GetFirstChild<DXDrawCharts.ExtensionList>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Drawings.Charts.ExtensionListConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Charts.ExtensionList>(value);
+      itemElement = DMXDrawsCharts.ExtensionListConverter.CreateOpenXmlElement<DXDrawCharts.ExtensionList>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  public static DocumentModel.Drawings.Charts.Layout3? CreateModelElement(DocumentFormat.OpenXml.Office2013.Drawing.Chart.Layout? openXmlElement)
+  public static DMDrawsCharts.Layout3? CreateModelElement(DXO2013DrawChart.Layout? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.Charts.Layout3();
+      var value = new DMDrawsCharts.Layout3();
       value.ManualLayout = GetManualLayout(openXmlElement);
       value.ExtensionList = GetExtensionList(openXmlElement);
       return value;
@@ -65,8 +65,8 @@ public static class Layout3Converter
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.Charts.Layout3? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Office2013.Drawing.Chart.Layout, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDrawsCharts.Layout3? value)
+    where OpenXmlElementType: DXO2013DrawChart.Layout, new()
   {
     if (value != null)
     {

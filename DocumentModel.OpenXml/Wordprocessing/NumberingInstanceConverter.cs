@@ -8,12 +8,12 @@ public static class NumberingInstanceConverter
   /// <summary>
   /// numId
   /// </summary>
-  private static Int32? GetNumberID(DocumentFormat.OpenXml.Wordprocessing.NumberingInstance openXmlElement)
+  private static Int32? GetNumberID(DXW.NumberingInstance openXmlElement)
   {
     return openXmlElement.NumberID?.Value;
   }
   
-  private static void SetNumberID(DocumentFormat.OpenXml.Wordprocessing.NumberingInstance openXmlElement, Int32? value)
+  private static void SetNumberID(DXW.NumberingInstance openXmlElement, Int32? value)
   {
     openXmlElement.NumberID = value;
   }
@@ -21,12 +21,12 @@ public static class NumberingInstanceConverter
   /// <summary>
   /// durableId
   /// </summary>
-  private static Int32? GetDurableId(DocumentFormat.OpenXml.Wordprocessing.NumberingInstance openXmlElement)
+  private static Int32? GetDurableId(DXW.NumberingInstance openXmlElement)
   {
     return openXmlElement.DurableId?.Value;
   }
   
-  private static void SetDurableId(DocumentFormat.OpenXml.Wordprocessing.NumberingInstance openXmlElement, Int32? value)
+  private static void SetDurableId(DXW.NumberingInstance openXmlElement, Int32? value)
   {
     openXmlElement.DurableId = value;
   }
@@ -34,57 +34,57 @@ public static class NumberingInstanceConverter
   /// <summary>
   /// AbstractNumId.
   /// </summary>
-  private static Int32? GetAbstractNumId(DocumentFormat.OpenXml.Wordprocessing.NumberingInstance openXmlElement)
+  private static Int32? GetAbstractNumId(DXW.NumberingInstance openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.AbstractNumId>();
+    var itemElement = openXmlElement?.GetFirstChild<DXW.AbstractNumId>();
     if (itemElement != null)
       return itemElement.Val?.Value;
     return null;
   }
   
-  private static void SetAbstractNumId(DocumentFormat.OpenXml.Wordprocessing.NumberingInstance openXmlElement, Int32? value)
+  private static void SetAbstractNumId(DXW.NumberingInstance openXmlElement, Int32? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.AbstractNumId>();
+    var itemElement = openXmlElement.GetFirstChild<DXW.AbstractNumId>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = new DocumentFormat.OpenXml.Wordprocessing.AbstractNumId{ Val = value };
+      itemElement = new DXW.AbstractNumId{ Val = value };
       openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static System.Collections.ObjectModel.Collection<DocumentModel.Wordprocessing.LevelOverride> GetLevelOverrides(DocumentFormat.OpenXml.Wordprocessing.NumberingInstance openXmlElement)
+  private static Collection<DMW.LevelOverride> GetLevelOverrides(DXW.NumberingInstance openXmlElement)
   {
-    var collection = new System.Collections.ObjectModel.Collection<DocumentModel.Wordprocessing.LevelOverride>();
-    foreach (var item in openXmlElement.Elements<DocumentFormat.OpenXml.Wordprocessing.LevelOverride>())
+    var collection = new Collection<DMW.LevelOverride>();
+    foreach (var item in openXmlElement.Elements<DXW.LevelOverride>())
     {
-      var newItem = DocumentModel.OpenXml.Wordprocessing.LevelOverrideConverter.CreateModelElement(item);
+      var newItem = DMXW.LevelOverrideConverter.CreateModelElement(item);
       if (newItem != null)
         collection.Add(newItem);
     }
     return collection;
   }
   
-  private static void SetLevelOverrides(DocumentFormat.OpenXml.Wordprocessing.NumberingInstance openXmlElement, System.Collections.ObjectModel.Collection<DocumentModel.Wordprocessing.LevelOverride>? value)
+  private static void SetLevelOverrides(DXW.NumberingInstance openXmlElement, Collection<DMW.LevelOverride>? value)
   {
-    openXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Wordprocessing.LevelOverride>();
+    openXmlElement.RemoveAllChildren<DXW.LevelOverride>();
     if (value != null)
     {
       foreach (var item in value)
       {
-        var newItem = DocumentModel.OpenXml.Wordprocessing.LevelOverrideConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.LevelOverride>(item);
+        var newItem = DMXW.LevelOverrideConverter.CreateOpenXmlElement<DXW.LevelOverride>(item);
         if (newItem != null)
           openXmlElement.AddChild(newItem);
       }
     }
   }
   
-  public static DocumentModel.Wordprocessing.NumberingInstance? CreateModelElement(DocumentFormat.OpenXml.Wordprocessing.NumberingInstance? openXmlElement)
+  public static DMW.NumberingInstance? CreateModelElement(DXW.NumberingInstance? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Wordprocessing.NumberingInstance();
+      var value = new DMW.NumberingInstance();
       value.NumberID = GetNumberID(openXmlElement);
       value.DurableId = GetDurableId(openXmlElement);
       value.AbstractNumId = GetAbstractNumId(openXmlElement);
@@ -94,8 +94,8 @@ public static class NumberingInstanceConverter
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.NumberingInstance? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Wordprocessing.NumberingInstance, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMW.NumberingInstance? value)
+    where OpenXmlElementType: DXW.NumberingInstance, new()
   {
     if (value != null)
     {

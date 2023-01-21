@@ -8,22 +8,22 @@ public static class FieldMapDataConverter
   /// <summary>
   /// Merge Field Mapping.
   /// </summary>
-  private static DocumentModel.Wordprocessing.MailMergeOdsoFieldKind? GetMailMergeFieldType(DocumentFormat.OpenXml.Wordprocessing.FieldMapData openXmlElement)
+  private static DMW.MailMergeOdsoFieldKind? GetMailMergeFieldType(DXW.FieldMapData openXmlElement)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.MailMergeFieldType>();
+    var itemElement = openXmlElement.GetFirstChild<DXW.MailMergeFieldType>();
     if (itemElement?.Val?.Value != null)
-      return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Wordprocessing.MailMergeOdsoFieldValues, DocumentModel.Wordprocessing.MailMergeOdsoFieldKind>(itemElement.Val.Value);
+      return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Wordprocessing.MailMergeOdsoFieldValues, DMW.MailMergeOdsoFieldKind>(itemElement.Val.Value);
     return null;
   }
   
-  private static void SetMailMergeFieldType(DocumentFormat.OpenXml.Wordprocessing.FieldMapData openXmlElement, DocumentModel.Wordprocessing.MailMergeOdsoFieldKind? value)
+  private static void SetMailMergeFieldType(DXW.FieldMapData openXmlElement, DMW.MailMergeOdsoFieldKind? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.MailMergeFieldType>();
+    var itemElement = openXmlElement.GetFirstChild<DXW.MailMergeFieldType>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = EnumValueConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.MailMergeFieldType, DocumentFormat.OpenXml.Wordprocessing.MailMergeOdsoFieldValues, DocumentModel.Wordprocessing.MailMergeOdsoFieldKind>(value);
+      itemElement = EnumValueConverter.CreateOpenXmlElement<DXW.MailMergeFieldType, DocumentFormat.OpenXml.Wordprocessing.MailMergeOdsoFieldValues, DMW.MailMergeOdsoFieldKind>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
@@ -32,22 +32,22 @@ public static class FieldMapDataConverter
   /// <summary>
   /// Data Source Name for Column.
   /// </summary>
-  private static String? GetName(DocumentFormat.OpenXml.Wordprocessing.FieldMapData openXmlElement)
+  private static String? GetName(DXW.FieldMapData openXmlElement)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.Name>();
+    var itemElement = openXmlElement.GetFirstChild<DXW.Name>();
     if (itemElement != null)
       return itemElement.Val?.Value;
     return null;
   }
   
-  private static void SetName(DocumentFormat.OpenXml.Wordprocessing.FieldMapData openXmlElement, String? value)
+  private static void SetName(DXW.FieldMapData openXmlElement, String? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.Name>();
+    var itemElement = openXmlElement.GetFirstChild<DXW.Name>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = new DocumentFormat.OpenXml.Wordprocessing.Name { Val = value };
+      itemElement = new DXW.Name { Val = value };
       openXmlElement.AddChild(itemElement);
     }
   }
@@ -55,22 +55,22 @@ public static class FieldMapDataConverter
   /// <summary>
   /// Predefined Merge Field Name.
   /// </summary>
-  private static String? GetMappedName(DocumentFormat.OpenXml.Wordprocessing.FieldMapData openXmlElement)
+  private static String? GetMappedName(DXW.FieldMapData openXmlElement)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.MappedName>();
+    var itemElement = openXmlElement.GetFirstChild<DXW.MappedName>();
     if (itemElement != null)
       return itemElement.Val?.Value;
     return null;
   }
   
-  private static void SetMappedName(DocumentFormat.OpenXml.Wordprocessing.FieldMapData openXmlElement, String? value)
+  private static void SetMappedName(DXW.FieldMapData openXmlElement, String? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.MappedName>();
+    var itemElement = openXmlElement.GetFirstChild<DXW.MappedName>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = new DocumentFormat.OpenXml.Wordprocessing.MappedName { Val = value };
+      itemElement = new DXW.MappedName { Val = value };
       openXmlElement.AddChild(itemElement);
     }
   }
@@ -78,22 +78,22 @@ public static class FieldMapDataConverter
   /// <summary>
   /// Index of Column Being Mapped.
   /// </summary>
-  private static UInt32? GetColumnIndex(DocumentFormat.OpenXml.Wordprocessing.FieldMapData openXmlElement)
+  private static UInt32? GetColumnIndex(DXW.FieldMapData openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.ColumnIndex>();
+    var itemElement = openXmlElement?.GetFirstChild<DXW.ColumnIndex>();
     if (itemElement != null)
       return itemElement.Val?.Value;
     return null;
   }
   
-  private static void SetColumnIndex(DocumentFormat.OpenXml.Wordprocessing.FieldMapData openXmlElement, UInt32? value)
+  private static void SetColumnIndex(DXW.FieldMapData openXmlElement, UInt32? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.ColumnIndex>();
+    var itemElement = openXmlElement.GetFirstChild<DXW.ColumnIndex>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = new DocumentFormat.OpenXml.Wordprocessing.ColumnIndex{ Val = value };
+      itemElement = new DXW.ColumnIndex{ Val = value };
       openXmlElement.AddChild(itemElement);
     }
   }
@@ -101,22 +101,22 @@ public static class FieldMapDataConverter
   /// <summary>
   /// Merge Field Name Language ID.
   /// </summary>
-  private static String? GetLanguageId(DocumentFormat.OpenXml.Wordprocessing.FieldMapData openXmlElement)
+  private static String? GetLanguageId(DXW.FieldMapData openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.LanguageId>();
+    var itemElement = openXmlElement?.GetFirstChild<DXW.LanguageId>();
     if (itemElement != null)
       return itemElement.Val?.Value;
     return null;
   }
   
-  private static void SetLanguageId(DocumentFormat.OpenXml.Wordprocessing.FieldMapData openXmlElement, String? value)
+  private static void SetLanguageId(DXW.FieldMapData openXmlElement, String? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.LanguageId>();
+    var itemElement = openXmlElement.GetFirstChild<DXW.LanguageId>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = new DocumentFormat.OpenXml.Wordprocessing.LanguageId { Val = value };
+      itemElement = new DXW.LanguageId { Val = value };
       openXmlElement.AddChild(itemElement);
     }
   }
@@ -124,34 +124,34 @@ public static class FieldMapDataConverter
   /// <summary>
   /// Use Country/Region-Based Address Field Ordering.
   /// </summary>
-  private static Boolean? GetDynamicAddress(DocumentFormat.OpenXml.Wordprocessing.FieldMapData openXmlElement)
+  private static Boolean? GetDynamicAddress(DXW.FieldMapData openXmlElement)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.DynamicAddress>();
+    var itemElement = openXmlElement.GetFirstChild<DXW.DynamicAddress>();
     if (itemElement?.Val?.Value != null)
       return itemElement.Val.Value;
     return null;
   }
   
-  private static void SetDynamicAddress(DocumentFormat.OpenXml.Wordprocessing.FieldMapData openXmlElement, Boolean? value)
+  private static void SetDynamicAddress(DXW.FieldMapData openXmlElement, Boolean? value)
   {
     if (value == false)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.DynamicAddress>();
+      var itemElement = openXmlElement.GetFirstChild<DXW.DynamicAddress>();
       if (itemElement != null)
         itemElement.Remove();
     }
     if (value == true)
     {
-      var itemElement = new DocumentFormat.OpenXml.Wordprocessing.DynamicAddress();
+      var itemElement = new DXW.DynamicAddress();
       openXmlElement.AddChild(itemElement);
     }
   }
   
-  public static DocumentModel.Wordprocessing.FieldMapData? CreateModelElement(DocumentFormat.OpenXml.Wordprocessing.FieldMapData? openXmlElement)
+  public static DMW.FieldMapData? CreateModelElement(DXW.FieldMapData? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Wordprocessing.FieldMapData();
+      var value = new DMW.FieldMapData();
       value.MailMergeFieldType = GetMailMergeFieldType(openXmlElement);
       value.Name = GetName(openXmlElement);
       value.MappedName = GetMappedName(openXmlElement);
@@ -163,8 +163,8 @@ public static class FieldMapDataConverter
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.FieldMapData? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Wordprocessing.FieldMapData, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMW.FieldMapData? value)
+    where OpenXmlElementType: DXW.FieldMapData, new()
   {
     if (value != null)
     {

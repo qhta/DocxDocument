@@ -8,12 +8,12 @@ public static class ImageControlConverter
   /// <summary>
   /// id, this property is only available in Office 2010 and later.
   /// </summary>
-  private static String? GetId(DocumentFormat.OpenXml.Office2010.CustomUI.ImageControl openXmlElement)
+  private static String? GetId(DXO2010CustUI.ImageControl openXmlElement)
   {
     return openXmlElement?.Id?.Value;
   }
   
-  private static void SetId(DocumentFormat.OpenXml.Office2010.CustomUI.ImageControl openXmlElement, String? value)
+  private static void SetId(DXO2010CustUI.ImageControl openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.Id = new StringValue { Value = value };
@@ -24,12 +24,12 @@ public static class ImageControlConverter
   /// <summary>
   /// idQ, this property is only available in Office 2010 and later.
   /// </summary>
-  private static String? GetQualifiedId(DocumentFormat.OpenXml.Office2010.CustomUI.ImageControl openXmlElement)
+  private static String? GetQualifiedId(DXO2010CustUI.ImageControl openXmlElement)
   {
     return openXmlElement?.QualifiedId?.Value;
   }
   
-  private static void SetQualifiedId(DocumentFormat.OpenXml.Office2010.CustomUI.ImageControl openXmlElement, String? value)
+  private static void SetQualifiedId(DXO2010CustUI.ImageControl openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.QualifiedId = new StringValue { Value = value };
@@ -40,12 +40,12 @@ public static class ImageControlConverter
   /// <summary>
   /// tag, this property is only available in Office 2010 and later.
   /// </summary>
-  private static String? GetTag(DocumentFormat.OpenXml.Office2010.CustomUI.ImageControl openXmlElement)
+  private static String? GetTag(DXO2010CustUI.ImageControl openXmlElement)
   {
     return openXmlElement?.Tag?.Value;
   }
   
-  private static void SetTag(DocumentFormat.OpenXml.Office2010.CustomUI.ImageControl openXmlElement, String? value)
+  private static void SetTag(DXO2010CustUI.ImageControl openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.Tag = new StringValue { Value = value };
@@ -56,12 +56,12 @@ public static class ImageControlConverter
   /// <summary>
   /// enabled, this property is only available in Office 2010 and later.
   /// </summary>
-  private static Boolean? GetEnabled(DocumentFormat.OpenXml.Office2010.CustomUI.ImageControl openXmlElement)
+  private static Boolean? GetEnabled(DXO2010CustUI.ImageControl openXmlElement)
   {
     return openXmlElement?.Enabled?.Value;
   }
   
-  private static void SetEnabled(DocumentFormat.OpenXml.Office2010.CustomUI.ImageControl openXmlElement, Boolean? value)
+  private static void SetEnabled(DXO2010CustUI.ImageControl openXmlElement, Boolean? value)
   {
     if (value != null)
       openXmlElement.Enabled = new BooleanValue { Value = (Boolean)value };
@@ -72,12 +72,12 @@ public static class ImageControlConverter
   /// <summary>
   /// getEnabled, this property is only available in Office 2010 and later.
   /// </summary>
-  private static String? GetGetEnabled(DocumentFormat.OpenXml.Office2010.CustomUI.ImageControl openXmlElement)
+  private static String? GetGetEnabled(DXO2010CustUI.ImageControl openXmlElement)
   {
     return openXmlElement?.GetEnabled?.Value;
   }
   
-  private static void SetGetEnabled(DocumentFormat.OpenXml.Office2010.CustomUI.ImageControl openXmlElement, String? value)
+  private static void SetGetEnabled(DXO2010CustUI.ImageControl openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.GetEnabled = new StringValue { Value = value };
@@ -88,12 +88,12 @@ public static class ImageControlConverter
   /// <summary>
   /// visible, this property is only available in Office 2010 and later.
   /// </summary>
-  private static Boolean? GetVisible(DocumentFormat.OpenXml.Office2010.CustomUI.ImageControl openXmlElement)
+  private static Boolean? GetVisible(DXO2010CustUI.ImageControl openXmlElement)
   {
     return openXmlElement?.Visible?.Value;
   }
   
-  private static void SetVisible(DocumentFormat.OpenXml.Office2010.CustomUI.ImageControl openXmlElement, Boolean? value)
+  private static void SetVisible(DXO2010CustUI.ImageControl openXmlElement, Boolean? value)
   {
     if (value != null)
       openXmlElement.Visible = new BooleanValue { Value = (Boolean)value };
@@ -104,12 +104,12 @@ public static class ImageControlConverter
   /// <summary>
   /// getVisible, this property is only available in Office 2010 and later.
   /// </summary>
-  private static String? GetGetVisible(DocumentFormat.OpenXml.Office2010.CustomUI.ImageControl openXmlElement)
+  private static String? GetGetVisible(DXO2010CustUI.ImageControl openXmlElement)
   {
     return openXmlElement?.GetVisible?.Value;
   }
   
-  private static void SetGetVisible(DocumentFormat.OpenXml.Office2010.CustomUI.ImageControl openXmlElement, String? value)
+  private static void SetGetVisible(DXO2010CustUI.ImageControl openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.GetVisible = new StringValue { Value = value };
@@ -120,12 +120,12 @@ public static class ImageControlConverter
   /// <summary>
   /// image, this property is only available in Office 2010 and later.
   /// </summary>
-  private static String? GetImage(DocumentFormat.OpenXml.Office2010.CustomUI.ImageControl openXmlElement)
+  private static String? GetImage(DXO2010CustUI.ImageControl openXmlElement)
   {
     return openXmlElement?.Image?.Value;
   }
   
-  private static void SetImage(DocumentFormat.OpenXml.Office2010.CustomUI.ImageControl openXmlElement, String? value)
+  private static void SetImage(DXO2010CustUI.ImageControl openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.Image = new StringValue { Value = value };
@@ -136,12 +136,12 @@ public static class ImageControlConverter
   /// <summary>
   /// imageMso, this property is only available in Office 2010 and later.
   /// </summary>
-  private static String? GetImageMso(DocumentFormat.OpenXml.Office2010.CustomUI.ImageControl openXmlElement)
+  private static String? GetImageMso(DXO2010CustUI.ImageControl openXmlElement)
   {
     return openXmlElement?.ImageMso?.Value;
   }
   
-  private static void SetImageMso(DocumentFormat.OpenXml.Office2010.CustomUI.ImageControl openXmlElement, String? value)
+  private static void SetImageMso(DXO2010CustUI.ImageControl openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.ImageMso = new StringValue { Value = value };
@@ -152,12 +152,12 @@ public static class ImageControlConverter
   /// <summary>
   /// getImage, this property is only available in Office 2010 and later.
   /// </summary>
-  private static String? GetGetImage(DocumentFormat.OpenXml.Office2010.CustomUI.ImageControl openXmlElement)
+  private static String? GetGetImage(DXO2010CustUI.ImageControl openXmlElement)
   {
     return openXmlElement?.GetImage?.Value;
   }
   
-  private static void SetGetImage(DocumentFormat.OpenXml.Office2010.CustomUI.ImageControl openXmlElement, String? value)
+  private static void SetGetImage(DXO2010CustUI.ImageControl openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.GetImage = new StringValue { Value = value };
@@ -168,12 +168,12 @@ public static class ImageControlConverter
   /// <summary>
   /// altText, this property is only available in Office 2010 and later.
   /// </summary>
-  private static String? GetAltText(DocumentFormat.OpenXml.Office2010.CustomUI.ImageControl openXmlElement)
+  private static String? GetAltText(DXO2010CustUI.ImageControl openXmlElement)
   {
     return openXmlElement?.AltText?.Value;
   }
   
-  private static void SetAltText(DocumentFormat.OpenXml.Office2010.CustomUI.ImageControl openXmlElement, String? value)
+  private static void SetAltText(DXO2010CustUI.ImageControl openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.AltText = new StringValue { Value = value };
@@ -184,12 +184,12 @@ public static class ImageControlConverter
   /// <summary>
   /// getAltText, this property is only available in Office 2010 and later.
   /// </summary>
-  private static String? GetGetAltText(DocumentFormat.OpenXml.Office2010.CustomUI.ImageControl openXmlElement)
+  private static String? GetGetAltText(DXO2010CustUI.ImageControl openXmlElement)
   {
     return openXmlElement?.GetAltText?.Value;
   }
   
-  private static void SetGetAltText(DocumentFormat.OpenXml.Office2010.CustomUI.ImageControl openXmlElement, String? value)
+  private static void SetGetAltText(DXO2010CustUI.ImageControl openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.GetAltText = new StringValue { Value = value };
@@ -197,11 +197,11 @@ public static class ImageControlConverter
       openXmlElement.GetAltText = null;
   }
   
-  public static DocumentModel.ImageControl? CreateModelElement(DocumentFormat.OpenXml.Office2010.CustomUI.ImageControl? openXmlElement)
+  public static DM.ImageControl? CreateModelElement(DXO2010CustUI.ImageControl? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.ImageControl();
+      var value = new DM.ImageControl();
       value.Id = GetId(openXmlElement);
       value.QualifiedId = GetQualifiedId(openXmlElement);
       value.Tag = GetTag(openXmlElement);
@@ -219,8 +219,8 @@ public static class ImageControlConverter
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.ImageControl? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Office2010.CustomUI.ImageControl, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DM.ImageControl? value)
+    where OpenXmlElementType: DXO2010CustUI.ImageControl, new()
   {
     if (value != null)
     {

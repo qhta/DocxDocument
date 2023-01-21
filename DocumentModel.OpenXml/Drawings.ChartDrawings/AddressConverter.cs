@@ -8,12 +8,12 @@ public static class AddressConverter
   /// <summary>
   /// address1, this property is only available in Office 2016 and later.
   /// </summary>
-  private static String? GetAddress1(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.Address openXmlElement)
+  private static String? GetAddress1(DXO2016DrawChartDraw.Address openXmlElement)
   {
     return openXmlElement?.Address1?.Value;
   }
   
-  private static void SetAddress1(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.Address openXmlElement, String? value)
+  private static void SetAddress1(DXO2016DrawChartDraw.Address openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.Address1 = new StringValue { Value = value };
@@ -24,12 +24,12 @@ public static class AddressConverter
   /// <summary>
   /// countryRegion, this property is only available in Office 2016 and later.
   /// </summary>
-  private static String? GetCountryRegion(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.Address openXmlElement)
+  private static String? GetCountryRegion(DXO2016DrawChartDraw.Address openXmlElement)
   {
     return openXmlElement?.CountryRegion?.Value;
   }
   
-  private static void SetCountryRegion(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.Address openXmlElement, String? value)
+  private static void SetCountryRegion(DXO2016DrawChartDraw.Address openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.CountryRegion = new StringValue { Value = value };
@@ -40,12 +40,12 @@ public static class AddressConverter
   /// <summary>
   /// adminDistrict1, this property is only available in Office 2016 and later.
   /// </summary>
-  private static String? GetAdminDistrict1(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.Address openXmlElement)
+  private static String? GetAdminDistrict1(DXO2016DrawChartDraw.Address openXmlElement)
   {
     return openXmlElement?.AdminDistrict1?.Value;
   }
   
-  private static void SetAdminDistrict1(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.Address openXmlElement, String? value)
+  private static void SetAdminDistrict1(DXO2016DrawChartDraw.Address openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.AdminDistrict1 = new StringValue { Value = value };
@@ -56,12 +56,12 @@ public static class AddressConverter
   /// <summary>
   /// adminDistrict2, this property is only available in Office 2016 and later.
   /// </summary>
-  private static String? GetAdminDistrict2(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.Address openXmlElement)
+  private static String? GetAdminDistrict2(DXO2016DrawChartDraw.Address openXmlElement)
   {
     return openXmlElement?.AdminDistrict2?.Value;
   }
   
-  private static void SetAdminDistrict2(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.Address openXmlElement, String? value)
+  private static void SetAdminDistrict2(DXO2016DrawChartDraw.Address openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.AdminDistrict2 = new StringValue { Value = value };
@@ -72,12 +72,12 @@ public static class AddressConverter
   /// <summary>
   /// postalCode, this property is only available in Office 2016 and later.
   /// </summary>
-  private static String? GetPostalCode(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.Address openXmlElement)
+  private static String? GetPostalCode(DXO2016DrawChartDraw.Address openXmlElement)
   {
     return openXmlElement?.PostalCode?.Value;
   }
   
-  private static void SetPostalCode(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.Address openXmlElement, String? value)
+  private static void SetPostalCode(DXO2016DrawChartDraw.Address openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.PostalCode = new StringValue { Value = value };
@@ -88,12 +88,12 @@ public static class AddressConverter
   /// <summary>
   /// locality, this property is only available in Office 2016 and later.
   /// </summary>
-  private static String? GetLocality(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.Address openXmlElement)
+  private static String? GetLocality(DXO2016DrawChartDraw.Address openXmlElement)
   {
     return openXmlElement?.Locality?.Value;
   }
   
-  private static void SetLocality(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.Address openXmlElement, String? value)
+  private static void SetLocality(DXO2016DrawChartDraw.Address openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.Locality = new StringValue { Value = value };
@@ -104,12 +104,12 @@ public static class AddressConverter
   /// <summary>
   /// isoCountryCode, this property is only available in Office 2016 and later.
   /// </summary>
-  private static String? GetIsoCountryCode(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.Address openXmlElement)
+  private static String? GetIsoCountryCode(DXO2016DrawChartDraw.Address openXmlElement)
   {
     return openXmlElement?.IsoCountryCode?.Value;
   }
   
-  private static void SetIsoCountryCode(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.Address openXmlElement, String? value)
+  private static void SetIsoCountryCode(DXO2016DrawChartDraw.Address openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.IsoCountryCode = new StringValue { Value = value };
@@ -117,11 +117,11 @@ public static class AddressConverter
       openXmlElement.IsoCountryCode = null;
   }
   
-  public static DocumentModel.Drawings.ChartDrawings.Address? CreateModelElement(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.Address? openXmlElement)
+  public static DMDrawsChartDraws.Address? CreateModelElement(DXO2016DrawChartDraw.Address? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.ChartDrawings.Address();
+      var value = new DMDrawsChartDraws.Address();
       value.Address1 = GetAddress1(openXmlElement);
       value.CountryRegion = GetCountryRegion(openXmlElement);
       value.AdminDistrict1 = GetAdminDistrict1(openXmlElement);
@@ -134,8 +134,8 @@ public static class AddressConverter
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.ChartDrawings.Address? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.Address, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDrawsChartDraws.Address? value)
+    where OpenXmlElementType: DXO2016DrawChartDraw.Address, new()
   {
     if (value != null)
     {

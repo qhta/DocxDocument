@@ -8,12 +8,12 @@ public static class DLblsExtensionConverter
   /// <summary>
   /// URI
   /// </summary>
-  private static String? GetUri(DocumentFormat.OpenXml.Drawing.Charts.DLblsExtension openXmlElement)
+  private static String? GetUri(DXDrawCharts.DLblsExtension openXmlElement)
   {
     return openXmlElement?.Uri?.Value;
   }
   
-  private static void SetUri(DocumentFormat.OpenXml.Drawing.Charts.DLblsExtension openXmlElement, String? value)
+  private static void SetUri(DXDrawCharts.DLblsExtension openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.Uri = new StringValue { Value = value };
@@ -21,158 +21,158 @@ public static class DLblsExtensionConverter
       openXmlElement.Uri = null;
   }
   
-  private static DocumentModel.Drawings.Charts.ChartText3? GetChartText(DocumentFormat.OpenXml.Drawing.Charts.DLblsExtension openXmlElement)
+  private static DMDrawsCharts.ChartText3? GetChartText(DXDrawCharts.DLblsExtension openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office2013.Drawing.Chart.ChartText>();
+    var itemElement = openXmlElement?.GetFirstChild<DXO2013DrawChart.ChartText>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.Charts.ChartText3Converter.CreateModelElement(itemElement);
+      return DMXDrawsCharts.ChartText3Converter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetChartText(DocumentFormat.OpenXml.Drawing.Charts.DLblsExtension openXmlElement, DocumentModel.Drawings.Charts.ChartText3? value)
+  private static void SetChartText(DXDrawCharts.DLblsExtension openXmlElement, DMDrawsCharts.ChartText3? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2013.Drawing.Chart.ChartText>();
+    var itemElement = openXmlElement.GetFirstChild<DXO2013DrawChart.ChartText>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Drawings.Charts.ChartText3Converter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2013.Drawing.Chart.ChartText>(value);
+      itemElement = DMXDrawsCharts.ChartText3Converter.CreateOpenXmlElement<DXO2013DrawChart.ChartText>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static DocumentModel.Drawings.Charts.DataLabelFieldTable? GetDataLabelFieldTable(DocumentFormat.OpenXml.Drawing.Charts.DLblsExtension openXmlElement)
+  private static DMDrawsCharts.DataLabelFieldTable? GetDataLabelFieldTable(DXDrawCharts.DLblsExtension openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office2013.Drawing.Chart.DataLabelFieldTable>();
+    var itemElement = openXmlElement?.GetFirstChild<DXO2013DrawChart.DataLabelFieldTable>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.Charts.DataLabelFieldTableConverter.CreateModelElement(itemElement);
+      return DMXDrawsCharts.DataLabelFieldTableConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetDataLabelFieldTable(DocumentFormat.OpenXml.Drawing.Charts.DLblsExtension openXmlElement, DocumentModel.Drawings.Charts.DataLabelFieldTable? value)
+  private static void SetDataLabelFieldTable(DXDrawCharts.DLblsExtension openXmlElement, DMDrawsCharts.DataLabelFieldTable? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2013.Drawing.Chart.DataLabelFieldTable>();
+    var itemElement = openXmlElement.GetFirstChild<DXO2013DrawChart.DataLabelFieldTable>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Drawings.Charts.DataLabelFieldTableConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2013.Drawing.Chart.DataLabelFieldTable>(value);
+      itemElement = DMXDrawsCharts.DataLabelFieldTableConverter.CreateOpenXmlElement<DXO2013DrawChart.DataLabelFieldTable>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static Boolean? GetShowDataLabelsRange(DocumentFormat.OpenXml.Drawing.Charts.DLblsExtension openXmlElement)
+  private static Boolean? GetShowDataLabelsRange(DXDrawCharts.DLblsExtension openXmlElement)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2013.Drawing.Chart.ShowDataLabelsRange>();
+    var itemElement = openXmlElement.GetFirstChild<DXO2013DrawChart.ShowDataLabelsRange>();
     return itemElement != null;
   }
   
-  private static void SetShowDataLabelsRange(DocumentFormat.OpenXml.Drawing.Charts.DLblsExtension openXmlElement, Boolean? value)
+  private static void SetShowDataLabelsRange(DXDrawCharts.DLblsExtension openXmlElement, Boolean? value)
   {
     if (value == false)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2013.Drawing.Chart.ShowDataLabelsRange>();
+      var itemElement = openXmlElement.GetFirstChild<DXO2013DrawChart.ShowDataLabelsRange>();
       if (itemElement != null)
         itemElement.Remove();
     }
     if (value == true)
     {
-      var itemElement = new DocumentFormat.OpenXml.Office2013.Drawing.Chart.ShowDataLabelsRange();
+      var itemElement = new DXO2013DrawChart.ShowDataLabelsRange();
       openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static DocumentModel.Drawings.Charts.ShapeProperties3? GetShapeProperties(DocumentFormat.OpenXml.Drawing.Charts.DLblsExtension openXmlElement)
+  private static DMDrawsCharts.ShapeProperties3? GetShapeProperties(DXDrawCharts.DLblsExtension openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office2013.Drawing.Chart.ShapeProperties>();
+    var itemElement = openXmlElement?.GetFirstChild<DXO2013DrawChart.ShapeProperties>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.Charts.ShapeProperties3Converter.CreateModelElement(itemElement);
+      return DMXDrawsCharts.ShapeProperties3Converter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetShapeProperties(DocumentFormat.OpenXml.Drawing.Charts.DLblsExtension openXmlElement, DocumentModel.Drawings.Charts.ShapeProperties3? value)
+  private static void SetShapeProperties(DXDrawCharts.DLblsExtension openXmlElement, DMDrawsCharts.ShapeProperties3? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2013.Drawing.Chart.ShapeProperties>();
+    var itemElement = openXmlElement.GetFirstChild<DXO2013DrawChart.ShapeProperties>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Drawings.Charts.ShapeProperties3Converter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2013.Drawing.Chart.ShapeProperties>(value);
+      itemElement = DMXDrawsCharts.ShapeProperties3Converter.CreateOpenXmlElement<DXO2013DrawChart.ShapeProperties>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static DocumentModel.Drawings.Charts.Layout3? GetLayout(DocumentFormat.OpenXml.Drawing.Charts.DLblsExtension openXmlElement)
+  private static DMDrawsCharts.Layout3? GetLayout(DXDrawCharts.DLblsExtension openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office2013.Drawing.Chart.Layout>();
+    var itemElement = openXmlElement?.GetFirstChild<DXO2013DrawChart.Layout>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.Charts.Layout3Converter.CreateModelElement(itemElement);
+      return DMXDrawsCharts.Layout3Converter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetLayout(DocumentFormat.OpenXml.Drawing.Charts.DLblsExtension openXmlElement, DocumentModel.Drawings.Charts.Layout3? value)
+  private static void SetLayout(DXDrawCharts.DLblsExtension openXmlElement, DMDrawsCharts.Layout3? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2013.Drawing.Chart.Layout>();
+    var itemElement = openXmlElement.GetFirstChild<DXO2013DrawChart.Layout>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Drawings.Charts.Layout3Converter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2013.Drawing.Chart.Layout>(value);
+      itemElement = DMXDrawsCharts.Layout3Converter.CreateOpenXmlElement<DXO2013DrawChart.Layout>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static Boolean? GetShowLeaderLines(DocumentFormat.OpenXml.Drawing.Charts.DLblsExtension openXmlElement)
+  private static Boolean? GetShowLeaderLines(DXDrawCharts.DLblsExtension openXmlElement)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2013.Drawing.Chart.ShowLeaderLines>();
+    var itemElement = openXmlElement.GetFirstChild<DXO2013DrawChart.ShowLeaderLines>();
     return itemElement != null;
   }
   
-  private static void SetShowLeaderLines(DocumentFormat.OpenXml.Drawing.Charts.DLblsExtension openXmlElement, Boolean? value)
+  private static void SetShowLeaderLines(DXDrawCharts.DLblsExtension openXmlElement, Boolean? value)
   {
     if (value == false)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2013.Drawing.Chart.ShowLeaderLines>();
+      var itemElement = openXmlElement.GetFirstChild<DXO2013DrawChart.ShowLeaderLines>();
       if (itemElement != null)
         itemElement.Remove();
     }
     if (value == true)
     {
-      var itemElement = new DocumentFormat.OpenXml.Office2013.Drawing.Chart.ShowLeaderLines();
+      var itemElement = new DXO2013DrawChart.ShowLeaderLines();
       openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static DocumentModel.Drawings.Charts.LeaderLines3? GetLeaderLines(DocumentFormat.OpenXml.Drawing.Charts.DLblsExtension openXmlElement)
+  private static DMDrawsCharts.LeaderLines3? GetLeaderLines(DXDrawCharts.DLblsExtension openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office2013.Drawing.Chart.LeaderLines>();
+    var itemElement = openXmlElement?.GetFirstChild<DXO2013DrawChart.LeaderLines>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.Charts.LeaderLines3Converter.CreateModelElement(itemElement);
+      return DMXDrawsCharts.LeaderLines3Converter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetLeaderLines(DocumentFormat.OpenXml.Drawing.Charts.DLblsExtension openXmlElement, DocumentModel.Drawings.Charts.LeaderLines3? value)
+  private static void SetLeaderLines(DXDrawCharts.DLblsExtension openXmlElement, DMDrawsCharts.LeaderLines3? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2013.Drawing.Chart.LeaderLines>();
+    var itemElement = openXmlElement.GetFirstChild<DXO2013DrawChart.LeaderLines>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Drawings.Charts.LeaderLines3Converter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2013.Drawing.Chart.LeaderLines>(value);
+      itemElement = DMXDrawsCharts.LeaderLines3Converter.CreateOpenXmlElement<DXO2013DrawChart.LeaderLines>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  public static DocumentModel.Drawings.Charts.DLblsExtension? CreateModelElement(DocumentFormat.OpenXml.Drawing.Charts.DLblsExtension? openXmlElement)
+  public static DMDrawsCharts.DLblsExtension? CreateModelElement(DXDrawCharts.DLblsExtension? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.Charts.DLblsExtension();
+      var value = new DMDrawsCharts.DLblsExtension();
       value.Uri = GetUri(openXmlElement);
       value.ChartText = GetChartText(openXmlElement);
       value.DataLabelFieldTable = GetDataLabelFieldTable(openXmlElement);
@@ -186,8 +186,8 @@ public static class DLblsExtensionConverter
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.Charts.DLblsExtension? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.Charts.DLblsExtension, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDrawsCharts.DLblsExtension? value)
+    where OpenXmlElementType: DXDrawCharts.DLblsExtension, new()
   {
     if (value != null)
     {

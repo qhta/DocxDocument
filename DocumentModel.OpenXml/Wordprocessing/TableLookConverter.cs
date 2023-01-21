@@ -8,14 +8,14 @@ public static class TableLookConverter
   /// <summary>
   /// val
   /// </summary>
-  private static UInt16? GetVal(DocumentFormat.OpenXml.Wordprocessing.TableLook openXmlElement)
+  private static UInt16? GetVal(DXW.TableLook openXmlElement)
   {
     if (openXmlElement.Val?.Value != null)
       return UInt16.Parse(openXmlElement.Val.Value, NumberStyles.HexNumber);
     return null;
   }
   
-  private static void SetVal(DocumentFormat.OpenXml.Wordprocessing.TableLook openXmlElement, UInt16? value)
+  private static void SetVal(DXW.TableLook openXmlElement, UInt16? value)
   {
       if (value != null)
         openXmlElement.Val = ((UInt16)value).ToString("X4");
@@ -26,12 +26,12 @@ public static class TableLookConverter
   /// <summary>
   /// firstRow, this property is only available in Office 2010 and later.
   /// </summary>
-  private static Boolean? GetFirstRow(DocumentFormat.OpenXml.Wordprocessing.TableLook openXmlElement)
+  private static Boolean? GetFirstRow(DXW.TableLook openXmlElement)
   {
     return openXmlElement?.FirstRow?.Value;
   }
   
-  private static void SetFirstRow(DocumentFormat.OpenXml.Wordprocessing.TableLook openXmlElement, Boolean? value)
+  private static void SetFirstRow(DXW.TableLook openXmlElement, Boolean? value)
   {
     if (value != null)
       openXmlElement.FirstRow = new OnOffValue { Value = (Boolean)value };
@@ -42,12 +42,12 @@ public static class TableLookConverter
   /// <summary>
   /// lastRow, this property is only available in Office 2010 and later.
   /// </summary>
-  private static Boolean? GetLastRow(DocumentFormat.OpenXml.Wordprocessing.TableLook openXmlElement)
+  private static Boolean? GetLastRow(DXW.TableLook openXmlElement)
   {
     return openXmlElement?.LastRow?.Value;
   }
   
-  private static void SetLastRow(DocumentFormat.OpenXml.Wordprocessing.TableLook openXmlElement, Boolean? value)
+  private static void SetLastRow(DXW.TableLook openXmlElement, Boolean? value)
   {
     if (value != null)
       openXmlElement.LastRow = new OnOffValue { Value = (Boolean)value };
@@ -58,12 +58,12 @@ public static class TableLookConverter
   /// <summary>
   /// firstColumn, this property is only available in Office 2010 and later.
   /// </summary>
-  private static Boolean? GetFirstColumn(DocumentFormat.OpenXml.Wordprocessing.TableLook openXmlElement)
+  private static Boolean? GetFirstColumn(DXW.TableLook openXmlElement)
   {
     return openXmlElement?.FirstColumn?.Value;
   }
   
-  private static void SetFirstColumn(DocumentFormat.OpenXml.Wordprocessing.TableLook openXmlElement, Boolean? value)
+  private static void SetFirstColumn(DXW.TableLook openXmlElement, Boolean? value)
   {
     if (value != null)
       openXmlElement.FirstColumn = new OnOffValue { Value = (Boolean)value };
@@ -74,12 +74,12 @@ public static class TableLookConverter
   /// <summary>
   /// lastColumn, this property is only available in Office 2010 and later.
   /// </summary>
-  private static Boolean? GetLastColumn(DocumentFormat.OpenXml.Wordprocessing.TableLook openXmlElement)
+  private static Boolean? GetLastColumn(DXW.TableLook openXmlElement)
   {
     return openXmlElement?.LastColumn?.Value;
   }
   
-  private static void SetLastColumn(DocumentFormat.OpenXml.Wordprocessing.TableLook openXmlElement, Boolean? value)
+  private static void SetLastColumn(DXW.TableLook openXmlElement, Boolean? value)
   {
     if (value != null)
       openXmlElement.LastColumn = new OnOffValue { Value = (Boolean)value };
@@ -90,12 +90,12 @@ public static class TableLookConverter
   /// <summary>
   /// noHBand, this property is only available in Office 2010 and later.
   /// </summary>
-  private static Boolean? GetNoHorizontalBand(DocumentFormat.OpenXml.Wordprocessing.TableLook openXmlElement)
+  private static Boolean? GetNoHorizontalBand(DXW.TableLook openXmlElement)
   {
     return openXmlElement?.NoHorizontalBand?.Value;
   }
   
-  private static void SetNoHorizontalBand(DocumentFormat.OpenXml.Wordprocessing.TableLook openXmlElement, Boolean? value)
+  private static void SetNoHorizontalBand(DXW.TableLook openXmlElement, Boolean? value)
   {
     if (value != null)
       openXmlElement.NoHorizontalBand = new OnOffValue { Value = (Boolean)value };
@@ -106,12 +106,12 @@ public static class TableLookConverter
   /// <summary>
   /// noVBand, this property is only available in Office 2010 and later.
   /// </summary>
-  private static Boolean? GetNoVerticalBand(DocumentFormat.OpenXml.Wordprocessing.TableLook openXmlElement)
+  private static Boolean? GetNoVerticalBand(DXW.TableLook openXmlElement)
   {
     return openXmlElement?.NoVerticalBand?.Value;
   }
   
-  private static void SetNoVerticalBand(DocumentFormat.OpenXml.Wordprocessing.TableLook openXmlElement, Boolean? value)
+  private static void SetNoVerticalBand(DXW.TableLook openXmlElement, Boolean? value)
   {
     if (value != null)
       openXmlElement.NoVerticalBand = new OnOffValue { Value = (Boolean)value };
@@ -119,11 +119,11 @@ public static class TableLookConverter
       openXmlElement.NoVerticalBand = null;
   }
   
-  public static DocumentModel.Wordprocessing.TableLook? CreateModelElement(DocumentFormat.OpenXml.Wordprocessing.TableLook? openXmlElement)
+  public static DMW.TableLook? CreateModelElement(DXW.TableLook? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Wordprocessing.TableLook();
+      var value = new DMW.TableLook();
       value.Val = GetVal(openXmlElement);
       value.FirstRow = GetFirstRow(openXmlElement);
       value.LastRow = GetLastRow(openXmlElement);
@@ -136,8 +136,8 @@ public static class TableLookConverter
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.TableLook? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Wordprocessing.TableLook, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMW.TableLook? value)
+    where OpenXmlElementType: DXW.TableLook, new()
   {
     if (value != null)
     {

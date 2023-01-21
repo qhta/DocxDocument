@@ -5,21 +5,21 @@ namespace DocumentModel.OpenXml.Packaging;
 /// </summary>
 public static class TimeLinePartConverter
 {
-  private static String? GetContentType(DocumentFormat.OpenXml.Packaging.TimeLinePart openXmlElement)
+  private static String? GetContentType(DXPack.TimeLinePart openXmlElement)
   {
     return openXmlElement?.ContentType;
   }
   
-  private static String? GetRelationshipType(DocumentFormat.OpenXml.Packaging.TimeLinePart openXmlElement)
+  private static String? GetRelationshipType(DXPack.TimeLinePart openXmlElement)
   {
     return openXmlElement?.RelationshipType;
   }
   
-  public static DocumentModel.Packaging.TimeLinePart? CreateModelElement(DocumentFormat.OpenXml.Packaging.TimeLinePart? openXmlElement)
+  public static DMPack.TimeLinePart? CreateModelElement(DXPack.TimeLinePart? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Packaging.TimeLinePart();
+      var value = new DMPack.TimeLinePart();
       value.ContentType = GetContentType(openXmlElement);
       value.RelationshipType = GetRelationshipType(openXmlElement);
       return value;
@@ -27,8 +27,8 @@ public static class TimeLinePartConverter
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Packaging.TimeLinePart? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Packaging.TimeLinePart, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMPack.TimeLinePart? value)
+    where OpenXmlElementType: DXPack.TimeLinePart, new()
   {
     if (value != null)
     {

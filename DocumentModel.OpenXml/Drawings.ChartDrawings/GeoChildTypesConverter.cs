@@ -5,10 +5,10 @@ namespace DocumentModel.OpenXml.Drawings.ChartDrawings;
 /// </summary>
 public static class GeoChildTypesConverter
 {
-  private static System.Collections.ObjectModel.Collection<String> GetEntityTypes(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.GeoChildTypes openXmlElement)
+  private static Collection<String> GetEntityTypes(DXO2016DrawChartDraw.GeoChildTypes openXmlElement)
   {
-    var collection = new System.Collections.ObjectModel.Collection<String>();
-    foreach (var item in openXmlElement.Elements<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.EntityType>())
+    var collection = new Collection<String>();
+    foreach (var item in openXmlElement.Elements<DXO2016DrawChartDraw.EntityType>())
     {
       var newItem = StringValueConverter.GetValue(item);
       if (newItem != null)
@@ -17,33 +17,33 @@ public static class GeoChildTypesConverter
     return collection;
   }
   
-  private static void SetEntityTypes(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.GeoChildTypes openXmlElement, System.Collections.ObjectModel.Collection<String>? value)
+  private static void SetEntityTypes(DXO2016DrawChartDraw.GeoChildTypes openXmlElement, Collection<String>? value)
   {
-    openXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.EntityType>();
+    openXmlElement.RemoveAllChildren<DXO2016DrawChartDraw.EntityType>();
     if (value != null)
     {
       foreach (var item in value)
       {
-        var newItem = StringValueConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.EntityType>(item);
+        var newItem = StringValueConverter.CreateOpenXmlElement<DXO2016DrawChartDraw.EntityType>(item);
         if (newItem != null)
           openXmlElement.AddChild(newItem);
       }
     }
   }
   
-  public static DocumentModel.Drawings.ChartDrawings.GeoChildTypes? CreateModelElement(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.GeoChildTypes? openXmlElement)
+  public static DMDrawsChartDraws.GeoChildTypes? CreateModelElement(DXO2016DrawChartDraw.GeoChildTypes? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.ChartDrawings.GeoChildTypes();
+      var value = new DMDrawsChartDraws.GeoChildTypes();
       value.EntityTypes = GetEntityTypes(openXmlElement);
       return value;
     }
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.ChartDrawings.GeoChildTypes? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.GeoChildTypes, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDrawsChartDraws.GeoChildTypes? value)
+    where OpenXmlElementType: DXO2016DrawChartDraw.GeoChildTypes, new()
   {
     if (value != null)
     {

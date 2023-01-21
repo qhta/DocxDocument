@@ -8,12 +8,12 @@ public static class VideoFromFileConverter
   /// <summary>
   /// Linked Relationship ID
   /// </summary>
-  private static String? GetLink(DocumentFormat.OpenXml.Drawing.VideoFromFile openXmlElement)
+  private static String? GetLink(DXDraw.VideoFromFile openXmlElement)
   {
     return openXmlElement?.Link?.Value;
   }
   
-  private static void SetLink(DocumentFormat.OpenXml.Drawing.VideoFromFile openXmlElement, String? value)
+  private static void SetLink(DXDraw.VideoFromFile openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.Link = new StringValue { Value = value };
@@ -24,32 +24,32 @@ public static class VideoFromFileConverter
   /// <summary>
   /// ExtensionList.
   /// </summary>
-  private static DocumentModel.Drawings.ExtensionList? GetExtensionList(DocumentFormat.OpenXml.Drawing.VideoFromFile openXmlElement)
+  private static DMDraws.ExtensionList? GetExtensionList(DXDraw.VideoFromFile openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.ExtensionList>();
+    var itemElement = openXmlElement?.GetFirstChild<DXDraw.ExtensionList>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.ExtensionListConverter.CreateModelElement(itemElement);
+      return DMXDraws.ExtensionListConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetExtensionList(DocumentFormat.OpenXml.Drawing.VideoFromFile openXmlElement, DocumentModel.Drawings.ExtensionList? value)
+  private static void SetExtensionList(DXDraw.VideoFromFile openXmlElement, DMDraws.ExtensionList? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.ExtensionList>();
+    var itemElement = openXmlElement.GetFirstChild<DXDraw.ExtensionList>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Drawings.ExtensionListConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.ExtensionList>(value);
+      itemElement = DMXDraws.ExtensionListConverter.CreateOpenXmlElement<DXDraw.ExtensionList>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  public static DocumentModel.Drawings.VideoFromFile? CreateModelElement(DocumentFormat.OpenXml.Drawing.VideoFromFile? openXmlElement)
+  public static DMDraws.VideoFromFile? CreateModelElement(DXDraw.VideoFromFile? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.VideoFromFile();
+      var value = new DMDraws.VideoFromFile();
       value.Link = GetLink(openXmlElement);
       value.ExtensionList = GetExtensionList(openXmlElement);
       return value;
@@ -57,8 +57,8 @@ public static class VideoFromFileConverter
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.VideoFromFile? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.VideoFromFile, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDraws.VideoFromFile? value)
+    where OpenXmlElementType: DXDraw.VideoFromFile, new()
   {
     if (value != null)
     {

@@ -8,40 +8,40 @@ public static class DrawingConverter
   /// <summary>
   /// ShapeTree.
   /// </summary>
-  private static DocumentModel.Drawings.Office.ShapeTree? GetShapeTree(DocumentFormat.OpenXml.Office.Drawing.Drawing openXmlElement)
+  private static DMDrawsO.ShapeTree? GetShapeTree(DXODraw.Drawing openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office.Drawing.ShapeTree>();
+    var itemElement = openXmlElement?.GetFirstChild<DXODraw.ShapeTree>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.Office.ShapeTreeConverter.CreateModelElement(itemElement);
+      return DMXDrawsO.ShapeTreeConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetShapeTree(DocumentFormat.OpenXml.Office.Drawing.Drawing openXmlElement, DocumentModel.Drawings.Office.ShapeTree? value)
+  private static void SetShapeTree(DXODraw.Drawing openXmlElement, DMDrawsO.ShapeTree? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office.Drawing.ShapeTree>();
+    var itemElement = openXmlElement.GetFirstChild<DXODraw.ShapeTree>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Drawings.Office.ShapeTreeConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office.Drawing.ShapeTree>(value);
+      itemElement = DMXDrawsO.ShapeTreeConverter.CreateOpenXmlElement<DXODraw.ShapeTree>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  public static DocumentModel.Drawings.Office.Drawing? CreateModelElement(DocumentFormat.OpenXml.Office.Drawing.Drawing? openXmlElement)
+  public static DMDrawsO.Drawing? CreateModelElement(DXODraw.Drawing? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.Office.Drawing();
+      var value = new DMDrawsO.Drawing();
       value.ShapeTree = GetShapeTree(openXmlElement);
       return value;
     }
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.Office.Drawing? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Office.Drawing.Drawing, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDrawsO.Drawing? value)
+    where OpenXmlElementType: DXODraw.Drawing, new()
   {
     if (value != null)
     {

@@ -8,12 +8,12 @@ public static class BuildDiagramConverter
   /// <summary>
   /// Build
   /// </summary>
-  private static String? GetBuild(DocumentFormat.OpenXml.Drawing.BuildDiagram openXmlElement)
+  private static String? GetBuild(DXDraw.BuildDiagram openXmlElement)
   {
     return openXmlElement?.Build?.Value;
   }
   
-  private static void SetBuild(DocumentFormat.OpenXml.Drawing.BuildDiagram openXmlElement, String? value)
+  private static void SetBuild(DXDraw.BuildDiagram openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.Build = new StringValue { Value = value };
@@ -24,12 +24,12 @@ public static class BuildDiagramConverter
   /// <summary>
   /// Reverse Animation
   /// </summary>
-  private static Boolean? GetReverseAnimation(DocumentFormat.OpenXml.Drawing.BuildDiagram openXmlElement)
+  private static Boolean? GetReverseAnimation(DXDraw.BuildDiagram openXmlElement)
   {
     return openXmlElement?.ReverseAnimation?.Value;
   }
   
-  private static void SetReverseAnimation(DocumentFormat.OpenXml.Drawing.BuildDiagram openXmlElement, Boolean? value)
+  private static void SetReverseAnimation(DXDraw.BuildDiagram openXmlElement, Boolean? value)
   {
     if (value != null)
       openXmlElement.ReverseAnimation = new BooleanValue { Value = (Boolean)value };
@@ -37,11 +37,11 @@ public static class BuildDiagramConverter
       openXmlElement.ReverseAnimation = null;
   }
   
-  public static DocumentModel.Drawings.BuildDiagram? CreateModelElement(DocumentFormat.OpenXml.Drawing.BuildDiagram? openXmlElement)
+  public static DMDraws.BuildDiagram? CreateModelElement(DXDraw.BuildDiagram? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.BuildDiagram();
+      var value = new DMDraws.BuildDiagram();
       value.Build = GetBuild(openXmlElement);
       value.ReverseAnimation = GetReverseAnimation(openXmlElement);
       return value;
@@ -49,8 +49,8 @@ public static class BuildDiagramConverter
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.BuildDiagram? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.BuildDiagram, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDraws.BuildDiagram? value)
+    where OpenXmlElementType: DXDraw.BuildDiagram, new()
   {
     if (value != null)
     {

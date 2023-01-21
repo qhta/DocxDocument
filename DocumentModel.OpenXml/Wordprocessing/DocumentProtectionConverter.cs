@@ -8,25 +8,25 @@ public static class DocumentProtectionConverter
   /// <summary>
   /// Document Editing Restrictions
   /// </summary>
-  private static DocumentModel.Wordprocessing.DocumentProtectionKind? GetEdit(DocumentFormat.OpenXml.Wordprocessing.DocumentProtection openXmlElement)
+  private static DMW.DocumentProtectionKind? GetEdit(DXW.DocumentProtection openXmlElement)
   {
-    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Wordprocessing.DocumentProtectionValues, DocumentModel.Wordprocessing.DocumentProtectionKind>(openXmlElement?.Edit?.Value);
+    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Wordprocessing.DocumentProtectionValues, DMW.DocumentProtectionKind>(openXmlElement?.Edit?.Value);
   }
   
-  private static void SetEdit(DocumentFormat.OpenXml.Wordprocessing.DocumentProtection openXmlElement, DocumentModel.Wordprocessing.DocumentProtectionKind? value)
+  private static void SetEdit(DXW.DocumentProtection openXmlElement, DMW.DocumentProtectionKind? value)
   {
-    openXmlElement.Edit = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Wordprocessing.DocumentProtectionValues, DocumentModel.Wordprocessing.DocumentProtectionKind>(value);
+    openXmlElement.Edit = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Wordprocessing.DocumentProtectionValues, DMW.DocumentProtectionKind>(value);
   }
   
   /// <summary>
   /// Only Allow Formatting With Unlocked Styles
   /// </summary>
-  private static Boolean? GetFormatting(DocumentFormat.OpenXml.Wordprocessing.DocumentProtection openXmlElement)
+  private static Boolean? GetFormatting(DXW.DocumentProtection openXmlElement)
   {
     return openXmlElement?.Formatting?.Value;
   }
   
-  private static void SetFormatting(DocumentFormat.OpenXml.Wordprocessing.DocumentProtection openXmlElement, Boolean? value)
+  private static void SetFormatting(DXW.DocumentProtection openXmlElement, Boolean? value)
   {
     if (value != null)
       openXmlElement.Formatting = new OnOffValue { Value = (Boolean)value };
@@ -37,12 +37,12 @@ public static class DocumentProtectionConverter
   /// <summary>
   /// Enforce Document Protection Settings
   /// </summary>
-  private static Boolean? GetEnforcement(DocumentFormat.OpenXml.Wordprocessing.DocumentProtection openXmlElement)
+  private static Boolean? GetEnforcement(DXW.DocumentProtection openXmlElement)
   {
     return openXmlElement?.Enforcement?.Value;
   }
   
-  private static void SetEnforcement(DocumentFormat.OpenXml.Wordprocessing.DocumentProtection openXmlElement, Boolean? value)
+  private static void SetEnforcement(DXW.DocumentProtection openXmlElement, Boolean? value)
   {
     if (value != null)
       openXmlElement.Enforcement = new OnOffValue { Value = (Boolean)value };
@@ -53,51 +53,51 @@ public static class DocumentProtectionConverter
   /// <summary>
   /// Cryptographic Provider Type
   /// </summary>
-  private static DocumentModel.Wordprocessing.CryptProviderKind? GetCryptographicProviderType(DocumentFormat.OpenXml.Wordprocessing.DocumentProtection openXmlElement)
+  private static DMW.CryptProviderKind? GetCryptographicProviderType(DXW.DocumentProtection openXmlElement)
   {
-    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Wordprocessing.CryptProviderValues, DocumentModel.Wordprocessing.CryptProviderKind>(openXmlElement?.CryptographicProviderType?.Value);
+    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Wordprocessing.CryptProviderValues, DMW.CryptProviderKind>(openXmlElement?.CryptographicProviderType?.Value);
   }
   
-  private static void SetCryptographicProviderType(DocumentFormat.OpenXml.Wordprocessing.DocumentProtection openXmlElement, DocumentModel.Wordprocessing.CryptProviderKind? value)
+  private static void SetCryptographicProviderType(DXW.DocumentProtection openXmlElement, DMW.CryptProviderKind? value)
   {
-    openXmlElement.CryptographicProviderType = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Wordprocessing.CryptProviderValues, DocumentModel.Wordprocessing.CryptProviderKind>(value);
+    openXmlElement.CryptographicProviderType = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Wordprocessing.CryptProviderValues, DMW.CryptProviderKind>(value);
   }
   
   /// <summary>
   /// Cryptographic Algorithm Class
   /// </summary>
-  private static DocumentModel.Wordprocessing.CryptAlgorithmClassKind? GetCryptographicAlgorithmClass(DocumentFormat.OpenXml.Wordprocessing.DocumentProtection openXmlElement)
+  private static DMW.CryptAlgorithmClassKind? GetCryptographicAlgorithmClass(DXW.DocumentProtection openXmlElement)
   {
-    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Wordprocessing.CryptAlgorithmClassValues, DocumentModel.Wordprocessing.CryptAlgorithmClassKind>(openXmlElement?.CryptographicAlgorithmClass?.Value);
+    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Wordprocessing.CryptAlgorithmClassValues, DMW.CryptAlgorithmClassKind>(openXmlElement?.CryptographicAlgorithmClass?.Value);
   }
   
-  private static void SetCryptographicAlgorithmClass(DocumentFormat.OpenXml.Wordprocessing.DocumentProtection openXmlElement, DocumentModel.Wordprocessing.CryptAlgorithmClassKind? value)
+  private static void SetCryptographicAlgorithmClass(DXW.DocumentProtection openXmlElement, DMW.CryptAlgorithmClassKind? value)
   {
-    openXmlElement.CryptographicAlgorithmClass = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Wordprocessing.CryptAlgorithmClassValues, DocumentModel.Wordprocessing.CryptAlgorithmClassKind>(value);
+    openXmlElement.CryptographicAlgorithmClass = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Wordprocessing.CryptAlgorithmClassValues, DMW.CryptAlgorithmClassKind>(value);
   }
   
   /// <summary>
   /// Cryptographic Algorithm Type
   /// </summary>
-  private static DocumentModel.Wordprocessing.CryptAlgorithmKind? GetCryptographicAlgorithmType(DocumentFormat.OpenXml.Wordprocessing.DocumentProtection openXmlElement)
+  private static DMW.CryptAlgorithmKind? GetCryptographicAlgorithmType(DXW.DocumentProtection openXmlElement)
   {
-    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Wordprocessing.CryptAlgorithmValues, DocumentModel.Wordprocessing.CryptAlgorithmKind>(openXmlElement?.CryptographicAlgorithmType?.Value);
+    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Wordprocessing.CryptAlgorithmValues, DMW.CryptAlgorithmKind>(openXmlElement?.CryptographicAlgorithmType?.Value);
   }
   
-  private static void SetCryptographicAlgorithmType(DocumentFormat.OpenXml.Wordprocessing.DocumentProtection openXmlElement, DocumentModel.Wordprocessing.CryptAlgorithmKind? value)
+  private static void SetCryptographicAlgorithmType(DXW.DocumentProtection openXmlElement, DMW.CryptAlgorithmKind? value)
   {
-    openXmlElement.CryptographicAlgorithmType = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Wordprocessing.CryptAlgorithmValues, DocumentModel.Wordprocessing.CryptAlgorithmKind>(value);
+    openXmlElement.CryptographicAlgorithmType = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Wordprocessing.CryptAlgorithmValues, DMW.CryptAlgorithmKind>(value);
   }
   
   /// <summary>
   /// Cryptographic Hashing Algorithm
   /// </summary>
-  private static Int32? GetCryptographicAlgorithmSid(DocumentFormat.OpenXml.Wordprocessing.DocumentProtection openXmlElement)
+  private static Int32? GetCryptographicAlgorithmSid(DXW.DocumentProtection openXmlElement)
   {
     return openXmlElement.CryptographicAlgorithmSid?.Value;
   }
   
-  private static void SetCryptographicAlgorithmSid(DocumentFormat.OpenXml.Wordprocessing.DocumentProtection openXmlElement, Int32? value)
+  private static void SetCryptographicAlgorithmSid(DXW.DocumentProtection openXmlElement, Int32? value)
   {
     openXmlElement.CryptographicAlgorithmSid = value;
   }
@@ -105,12 +105,12 @@ public static class DocumentProtectionConverter
   /// <summary>
   /// Iterations to Run Hashing Algorithm
   /// </summary>
-  private static UInt32? GetCryptographicSpinCount(DocumentFormat.OpenXml.Wordprocessing.DocumentProtection openXmlElement)
+  private static UInt32? GetCryptographicSpinCount(DXW.DocumentProtection openXmlElement)
   {
     return openXmlElement.CryptographicSpinCount?.Value;
   }
   
-  private static void SetCryptographicSpinCount(DocumentFormat.OpenXml.Wordprocessing.DocumentProtection openXmlElement, UInt32? value)
+  private static void SetCryptographicSpinCount(DXW.DocumentProtection openXmlElement, UInt32? value)
   {
     openXmlElement.CryptographicSpinCount = value;
   }
@@ -118,12 +118,12 @@ public static class DocumentProtectionConverter
   /// <summary>
   /// Cryptographic Provider
   /// </summary>
-  private static String? GetCryptographicProvider(DocumentFormat.OpenXml.Wordprocessing.DocumentProtection openXmlElement)
+  private static String? GetCryptographicProvider(DXW.DocumentProtection openXmlElement)
   {
     return openXmlElement?.CryptographicProvider?.Value;
   }
   
-  private static void SetCryptographicProvider(DocumentFormat.OpenXml.Wordprocessing.DocumentProtection openXmlElement, String? value)
+  private static void SetCryptographicProvider(DXW.DocumentProtection openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.CryptographicProvider = new StringValue { Value = value };
@@ -134,14 +134,14 @@ public static class DocumentProtectionConverter
   /// <summary>
   /// Cryptographic Algorithm Extensibility
   /// </summary>
-  private static UInt32? GetAlgorithmIdExtensibility(DocumentFormat.OpenXml.Wordprocessing.DocumentProtection openXmlElement)
+  private static UInt32? GetAlgorithmIdExtensibility(DXW.DocumentProtection openXmlElement)
   {
     if (openXmlElement.AlgorithmIdExtensibility?.Value != null)
       return UInt32.Parse(openXmlElement.AlgorithmIdExtensibility.Value, NumberStyles.HexNumber);
     return null;
   }
   
-  private static void SetAlgorithmIdExtensibility(DocumentFormat.OpenXml.Wordprocessing.DocumentProtection openXmlElement, UInt32? value)
+  private static void SetAlgorithmIdExtensibility(DXW.DocumentProtection openXmlElement, UInt32? value)
   {
       if (value != null)
         openXmlElement.AlgorithmIdExtensibility = ((UInt32)value).ToString("X8");
@@ -152,12 +152,12 @@ public static class DocumentProtectionConverter
   /// <summary>
   /// Algorithm Extensibility Source
   /// </summary>
-  private static String? GetAlgorithmIdExtensibilitySource(DocumentFormat.OpenXml.Wordprocessing.DocumentProtection openXmlElement)
+  private static String? GetAlgorithmIdExtensibilitySource(DXW.DocumentProtection openXmlElement)
   {
     return openXmlElement?.AlgorithmIdExtensibilitySource?.Value;
   }
   
-  private static void SetAlgorithmIdExtensibilitySource(DocumentFormat.OpenXml.Wordprocessing.DocumentProtection openXmlElement, String? value)
+  private static void SetAlgorithmIdExtensibilitySource(DXW.DocumentProtection openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.AlgorithmIdExtensibilitySource = new StringValue { Value = value };
@@ -168,14 +168,14 @@ public static class DocumentProtectionConverter
   /// <summary>
   /// Cryptographic Provider Type Extensibility
   /// </summary>
-  private static UInt32? GetCryptographicProviderTypeExtensibility(DocumentFormat.OpenXml.Wordprocessing.DocumentProtection openXmlElement)
+  private static UInt32? GetCryptographicProviderTypeExtensibility(DXW.DocumentProtection openXmlElement)
   {
     if (openXmlElement.CryptographicProviderTypeExtensibility?.Value != null)
       return UInt32.Parse(openXmlElement.CryptographicProviderTypeExtensibility.Value, NumberStyles.HexNumber);
     return null;
   }
   
-  private static void SetCryptographicProviderTypeExtensibility(DocumentFormat.OpenXml.Wordprocessing.DocumentProtection openXmlElement, UInt32? value)
+  private static void SetCryptographicProviderTypeExtensibility(DXW.DocumentProtection openXmlElement, UInt32? value)
   {
       if (value != null)
         openXmlElement.CryptographicProviderTypeExtensibility = ((UInt32)value).ToString("X8");
@@ -186,12 +186,12 @@ public static class DocumentProtectionConverter
   /// <summary>
   /// Provider Type Extensibility Source
   /// </summary>
-  private static String? GetCryptographicProviderTypeExtSource(DocumentFormat.OpenXml.Wordprocessing.DocumentProtection openXmlElement)
+  private static String? GetCryptographicProviderTypeExtSource(DXW.DocumentProtection openXmlElement)
   {
     return openXmlElement?.CryptographicProviderTypeExtSource?.Value;
   }
   
-  private static void SetCryptographicProviderTypeExtSource(DocumentFormat.OpenXml.Wordprocessing.DocumentProtection openXmlElement, String? value)
+  private static void SetCryptographicProviderTypeExtSource(DXW.DocumentProtection openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.CryptographicProviderTypeExtSource = new StringValue { Value = value };
@@ -202,14 +202,14 @@ public static class DocumentProtectionConverter
   /// <summary>
   /// Password Hash
   /// </summary>
-  private static Byte[]? GetHash(DocumentFormat.OpenXml.Wordprocessing.DocumentProtection openXmlElement)
+  private static Byte[]? GetHash(DXW.DocumentProtection openXmlElement)
   {
     if (openXmlElement.Hash?.Value != null)
       return Convert.FromBase64String(openXmlElement.Hash.Value);
     return null;
   }
   
-  private static void SetHash(DocumentFormat.OpenXml.Wordprocessing.DocumentProtection openXmlElement, Byte[]? value)
+  private static void SetHash(DXW.DocumentProtection openXmlElement, Byte[]? value)
   {
     if (value != null)
       openXmlElement.Hash = Convert.ToBase64String(value);
@@ -220,14 +220,14 @@ public static class DocumentProtectionConverter
   /// <summary>
   /// Salt for Password Verifier
   /// </summary>
-  private static Byte[]? GetSalt(DocumentFormat.OpenXml.Wordprocessing.DocumentProtection openXmlElement)
+  private static Byte[]? GetSalt(DXW.DocumentProtection openXmlElement)
   {
     if (openXmlElement.Salt?.Value != null)
       return Convert.FromBase64String(openXmlElement.Salt.Value);
     return null;
   }
   
-  private static void SetSalt(DocumentFormat.OpenXml.Wordprocessing.DocumentProtection openXmlElement, Byte[]? value)
+  private static void SetSalt(DXW.DocumentProtection openXmlElement, Byte[]? value)
   {
     if (value != null)
       openXmlElement.Salt = Convert.ToBase64String(value);
@@ -238,12 +238,12 @@ public static class DocumentProtectionConverter
   /// <summary>
   /// algorithmName, this property is only available in Office 2010 and later.
   /// </summary>
-  private static String? GetAlgorithmName(DocumentFormat.OpenXml.Wordprocessing.DocumentProtection openXmlElement)
+  private static String? GetAlgorithmName(DXW.DocumentProtection openXmlElement)
   {
     return openXmlElement?.AlgorithmName?.Value;
   }
   
-  private static void SetAlgorithmName(DocumentFormat.OpenXml.Wordprocessing.DocumentProtection openXmlElement, String? value)
+  private static void SetAlgorithmName(DXW.DocumentProtection openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.AlgorithmName = new StringValue { Value = value };
@@ -254,14 +254,14 @@ public static class DocumentProtectionConverter
   /// <summary>
   /// hashValue, this property is only available in Office 2010 and later.
   /// </summary>
-  private static Byte[]? GetHashValue(DocumentFormat.OpenXml.Wordprocessing.DocumentProtection openXmlElement)
+  private static Byte[]? GetHashValue(DXW.DocumentProtection openXmlElement)
   {
     if (openXmlElement.HashValue?.Value != null)
       return Convert.FromBase64String(openXmlElement.HashValue.Value);
     return null;
   }
   
-  private static void SetHashValue(DocumentFormat.OpenXml.Wordprocessing.DocumentProtection openXmlElement, Byte[]? value)
+  private static void SetHashValue(DXW.DocumentProtection openXmlElement, Byte[]? value)
   {
     if (value != null)
       openXmlElement.HashValue = Convert.ToBase64String(value);
@@ -272,14 +272,14 @@ public static class DocumentProtectionConverter
   /// <summary>
   /// saltValue, this property is only available in Office 2010 and later.
   /// </summary>
-  private static Byte[]? GetSaltValue(DocumentFormat.OpenXml.Wordprocessing.DocumentProtection openXmlElement)
+  private static Byte[]? GetSaltValue(DXW.DocumentProtection openXmlElement)
   {
     if (openXmlElement.SaltValue?.Value != null)
       return Convert.FromBase64String(openXmlElement.SaltValue.Value);
     return null;
   }
   
-  private static void SetSaltValue(DocumentFormat.OpenXml.Wordprocessing.DocumentProtection openXmlElement, Byte[]? value)
+  private static void SetSaltValue(DXW.DocumentProtection openXmlElement, Byte[]? value)
   {
     if (value != null)
       openXmlElement.SaltValue = Convert.ToBase64String(value);
@@ -290,21 +290,21 @@ public static class DocumentProtectionConverter
   /// <summary>
   /// spinCount, this property is only available in Office 2010 and later.
   /// </summary>
-  private static Int32? GetSpinCount(DocumentFormat.OpenXml.Wordprocessing.DocumentProtection openXmlElement)
+  private static Int32? GetSpinCount(DXW.DocumentProtection openXmlElement)
   {
     return openXmlElement.SpinCount?.Value;
   }
   
-  private static void SetSpinCount(DocumentFormat.OpenXml.Wordprocessing.DocumentProtection openXmlElement, Int32? value)
+  private static void SetSpinCount(DXW.DocumentProtection openXmlElement, Int32? value)
   {
     openXmlElement.SpinCount = value;
   }
   
-  public static DocumentModel.Wordprocessing.DocumentProtection? CreateModelElement(DocumentFormat.OpenXml.Wordprocessing.DocumentProtection? openXmlElement)
+  public static DMW.DocumentProtection? CreateModelElement(DXW.DocumentProtection? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Wordprocessing.DocumentProtection();
+      var value = new DMW.DocumentProtection();
       value.Edit = GetEdit(openXmlElement);
       value.Formatting = GetFormatting(openXmlElement);
       value.Enforcement = GetEnforcement(openXmlElement);
@@ -329,8 +329,8 @@ public static class DocumentProtectionConverter
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.DocumentProtection? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Wordprocessing.DocumentProtection, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMW.DocumentProtection? value)
+    where OpenXmlElementType: DXW.DocumentProtection, new()
   {
     if (value != null)
     {

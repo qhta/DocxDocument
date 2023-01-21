@@ -8,38 +8,38 @@ public static class ChartColorStylePartConverter
   /// <summary>
   /// Gets or sets the root element of this part.
   /// </summary>
-  private static DocumentModel.Drawings.ChartsStyle.ColorStyle? GetColorStyle(DocumentFormat.OpenXml.Packaging.ChartColorStylePart openXmlElement)
+  private static DMDrawsChartsStyle.ColorStyle? GetColorStyle(DXPack.ChartColorStylePart openXmlElement)
   {
-    if (openXmlElement?.RootElement is DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.ColorStyle rootElement)
-      return DocumentModel.OpenXml.Drawings.ChartsStyle.ColorStyleConverter.CreateModelElement(rootElement);
+    if (openXmlElement?.RootElement is DXO2013DrawChartStyle.ColorStyle rootElement)
+      return DMXDrawsChartsStyle.ColorStyleConverter.CreateModelElement(rootElement);
     return null;
   }
   
-  private static void SetColorStyle(DocumentFormat.OpenXml.Packaging.ChartColorStylePart openXmlElement, DocumentModel.Drawings.ChartsStyle.ColorStyle? value)
+  private static void SetColorStyle(DXPack.ChartColorStylePart openXmlElement, DMDrawsChartsStyle.ColorStyle? value)
   {
     if (value != null)
     {
-       var rootElement = DocumentModel.OpenXml.Drawings.ChartsStyle.ColorStyleConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.ColorStyle>(value);
+       var rootElement = DMXDrawsChartsStyle.ColorStyleConverter.CreateOpenXmlElement<DXO2013DrawChartStyle.ColorStyle>(value);
        if (rootElement != null)
          openXmlElement.ColorStyle = rootElement;
     }
   }
   
-  private static String? GetContentType(DocumentFormat.OpenXml.Packaging.ChartColorStylePart openXmlElement)
+  private static String? GetContentType(DXPack.ChartColorStylePart openXmlElement)
   {
     return openXmlElement?.ContentType;
   }
   
-  private static String? GetRelationshipType(DocumentFormat.OpenXml.Packaging.ChartColorStylePart openXmlElement)
+  private static String? GetRelationshipType(DXPack.ChartColorStylePart openXmlElement)
   {
     return openXmlElement?.RelationshipType;
   }
   
-  public static DocumentModel.Packaging.ChartColorStylePart? CreateModelElement(DocumentFormat.OpenXml.Packaging.ChartColorStylePart? openXmlElement)
+  public static DMPack.ChartColorStylePart? CreateModelElement(DXPack.ChartColorStylePart? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Packaging.ChartColorStylePart();
+      var value = new DMPack.ChartColorStylePart();
       value.ColorStyle = GetColorStyle(openXmlElement);
       value.ContentType = GetContentType(openXmlElement);
       value.RelationshipType = GetRelationshipType(openXmlElement);
@@ -48,8 +48,8 @@ public static class ChartColorStylePartConverter
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Packaging.ChartColorStylePart? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Packaging.ChartColorStylePart, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMPack.ChartColorStylePart? value)
+    where OpenXmlElementType: DXPack.ChartColorStylePart, new()
   {
     if (value != null)
     {

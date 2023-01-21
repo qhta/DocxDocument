@@ -8,22 +8,22 @@ public static class SeriesTextConverter
   /// <summary>
   /// StringReference.
   /// </summary>
-  private static DocumentModel.Drawings.Charts.StringReference? GetStringReference(DocumentFormat.OpenXml.Drawing.Charts.SeriesText openXmlElement)
+  private static DMDrawsCharts.StringReference? GetStringReference(DXDrawCharts.SeriesText openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.StringReference>();
+    var itemElement = openXmlElement?.GetFirstChild<DXDrawCharts.StringReference>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.Charts.StringReferenceConverter.CreateModelElement(itemElement);
+      return DMXDrawsCharts.StringReferenceConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetStringReference(DocumentFormat.OpenXml.Drawing.Charts.SeriesText openXmlElement, DocumentModel.Drawings.Charts.StringReference? value)
+  private static void SetStringReference(DXDrawCharts.SeriesText openXmlElement, DMDrawsCharts.StringReference? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.StringReference>();
+    var itemElement = openXmlElement.GetFirstChild<DXDrawCharts.StringReference>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Drawings.Charts.StringReferenceConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Charts.StringReference>(value);
+      itemElement = DMXDrawsCharts.StringReferenceConverter.CreateOpenXmlElement<DXDrawCharts.StringReference>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
@@ -32,31 +32,31 @@ public static class SeriesTextConverter
   /// <summary>
   /// NumericValue.
   /// </summary>
-  private static String? GetNumericValue(DocumentFormat.OpenXml.Drawing.Charts.SeriesText openXmlElement)
+  private static String? GetNumericValue(DXDrawCharts.SeriesText openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.NumericValue>();
+    var itemElement = openXmlElement?.GetFirstChild<DXDrawCharts.NumericValue>();
     if (itemElement != null)
       return itemElement.Text;
     return null;
   }
   
-  private static void SetNumericValue(DocumentFormat.OpenXml.Drawing.Charts.SeriesText openXmlElement, String? value)
+  private static void SetNumericValue(DXDrawCharts.SeriesText openXmlElement, String? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.NumericValue>();
+    var itemElement = openXmlElement.GetFirstChild<DXDrawCharts.NumericValue>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = new DocumentFormat.OpenXml.Drawing.Charts.NumericValue { Text = value };
+      itemElement = new DXDrawCharts.NumericValue { Text = value };
       openXmlElement.AddChild(itemElement);
     }
   }
   
-  public static DocumentModel.Drawings.Charts.SeriesText? CreateModelElement(DocumentFormat.OpenXml.Drawing.Charts.SeriesText? openXmlElement)
+  public static DMDrawsCharts.SeriesText? CreateModelElement(DXDrawCharts.SeriesText? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.Charts.SeriesText();
+      var value = new DMDrawsCharts.SeriesText();
       value.StringReference = GetStringReference(openXmlElement);
       value.NumericValue = GetNumericValue(openXmlElement);
       return value;
@@ -64,8 +64,8 @@ public static class SeriesTextConverter
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.Charts.SeriesText? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.Charts.SeriesText, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDrawsCharts.SeriesText? value)
+    where OpenXmlElementType: DXDrawCharts.SeriesText, new()
   {
     if (value != null)
     {

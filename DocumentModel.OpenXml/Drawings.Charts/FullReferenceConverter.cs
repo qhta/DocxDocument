@@ -8,39 +8,39 @@ public static class FullReferenceConverter
   /// <summary>
   /// SequenceOfReferences.
   /// </summary>
-  private static String? GetSequenceOfReferences(DocumentFormat.OpenXml.Office2013.Drawing.Chart.FullReference openXmlElement)
+  private static String? GetSequenceOfReferences(DXO2013DrawChart.FullReference openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office2013.Drawing.Chart.SequenceOfReferences>();
+    var itemElement = openXmlElement?.GetFirstChild<DXO2013DrawChart.SequenceOfReferences>();
     if (itemElement != null)
       return itemElement.Text;
     return null;
   }
   
-  private static void SetSequenceOfReferences(DocumentFormat.OpenXml.Office2013.Drawing.Chart.FullReference openXmlElement, String? value)
+  private static void SetSequenceOfReferences(DXO2013DrawChart.FullReference openXmlElement, String? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2013.Drawing.Chart.SequenceOfReferences>();
+    var itemElement = openXmlElement.GetFirstChild<DXO2013DrawChart.SequenceOfReferences>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = new DocumentFormat.OpenXml.Office2013.Drawing.Chart.SequenceOfReferences { Text = value };
+      itemElement = new DXO2013DrawChart.SequenceOfReferences { Text = value };
       openXmlElement.AddChild(itemElement);
     }
   }
   
-  public static DocumentModel.Drawings.Charts.FullReference? CreateModelElement(DocumentFormat.OpenXml.Office2013.Drawing.Chart.FullReference? openXmlElement)
+  public static DMDrawsCharts.FullReference? CreateModelElement(DXO2013DrawChart.FullReference? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.Charts.FullReference();
+      var value = new DMDrawsCharts.FullReference();
       value.SequenceOfReferences = GetSequenceOfReferences(openXmlElement);
       return value;
     }
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.Charts.FullReference? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Office2013.Drawing.Chart.FullReference, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDrawsCharts.FullReference? value)
+    where OpenXmlElementType: DXO2013DrawChart.FullReference, new()
   {
     if (value != null)
     {

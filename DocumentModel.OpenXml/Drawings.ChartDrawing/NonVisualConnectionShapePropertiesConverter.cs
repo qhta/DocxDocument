@@ -8,22 +8,22 @@ public static class NonVisualConnectionShapePropertiesConverter
   /// <summary>
   /// Connection Shape Locks.
   /// </summary>
-  private static DocumentModel.Drawings.ConnectionShapeLocks? GetConnectionShapeLocks(DocumentFormat.OpenXml.Drawing.ChartDrawing.NonVisualConnectionShapeProperties openXmlElement)
+  private static DMDraws.ConnectionShapeLocks? GetConnectionShapeLocks(DXDrawChartDraw.NonVisualConnectionShapeProperties openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.ConnectionShapeLocks>();
+    var itemElement = openXmlElement?.GetFirstChild<DXDraw.ConnectionShapeLocks>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.ConnectionShapeLocksConverter.CreateModelElement(itemElement);
+      return DMXDraws.ConnectionShapeLocksConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetConnectionShapeLocks(DocumentFormat.OpenXml.Drawing.ChartDrawing.NonVisualConnectionShapeProperties openXmlElement, DocumentModel.Drawings.ConnectionShapeLocks? value)
+  private static void SetConnectionShapeLocks(DXDrawChartDraw.NonVisualConnectionShapeProperties openXmlElement, DMDraws.ConnectionShapeLocks? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.ConnectionShapeLocks>();
+    var itemElement = openXmlElement.GetFirstChild<DXDraw.ConnectionShapeLocks>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Drawings.ConnectionShapeLocksConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.ConnectionShapeLocks>(value);
+      itemElement = DMXDraws.ConnectionShapeLocksConverter.CreateOpenXmlElement<DXDraw.ConnectionShapeLocks>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
@@ -32,22 +32,22 @@ public static class NonVisualConnectionShapePropertiesConverter
   /// <summary>
   /// Connection Start.
   /// </summary>
-  private static DocumentModel.Drawings.ConnectionType? GetStartConnection(DocumentFormat.OpenXml.Drawing.ChartDrawing.NonVisualConnectionShapeProperties openXmlElement)
+  private static DMDraws.ConnectionType? GetStartConnection(DXDrawChartDraw.NonVisualConnectionShapeProperties openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.StartConnection>();
+    var itemElement = openXmlElement?.GetFirstChild<DXDraw.StartConnection>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.ConnectionTypeConverter.CreateModelElement(itemElement);
+      return DMXDraws.ConnectionTypeConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetStartConnection(DocumentFormat.OpenXml.Drawing.ChartDrawing.NonVisualConnectionShapeProperties openXmlElement, DocumentModel.Drawings.ConnectionType? value)
+  private static void SetStartConnection(DXDrawChartDraw.NonVisualConnectionShapeProperties openXmlElement, DMDraws.ConnectionType? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.StartConnection>();
+    var itemElement = openXmlElement.GetFirstChild<DXDraw.StartConnection>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Drawings.ConnectionTypeConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.StartConnection>(value);
+      itemElement = DMXDraws.ConnectionTypeConverter.CreateOpenXmlElement<DXDraw.StartConnection>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
@@ -56,22 +56,22 @@ public static class NonVisualConnectionShapePropertiesConverter
   /// <summary>
   /// Connection End.
   /// </summary>
-  private static DocumentModel.Drawings.ConnectionType? GetEndConnection(DocumentFormat.OpenXml.Drawing.ChartDrawing.NonVisualConnectionShapeProperties openXmlElement)
+  private static DMDraws.ConnectionType? GetEndConnection(DXDrawChartDraw.NonVisualConnectionShapeProperties openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.EndConnection>();
+    var itemElement = openXmlElement?.GetFirstChild<DXDraw.EndConnection>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.ConnectionTypeConverter.CreateModelElement(itemElement);
+      return DMXDraws.ConnectionTypeConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetEndConnection(DocumentFormat.OpenXml.Drawing.ChartDrawing.NonVisualConnectionShapeProperties openXmlElement, DocumentModel.Drawings.ConnectionType? value)
+  private static void SetEndConnection(DXDrawChartDraw.NonVisualConnectionShapeProperties openXmlElement, DMDraws.ConnectionType? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.EndConnection>();
+    var itemElement = openXmlElement.GetFirstChild<DXDraw.EndConnection>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Drawings.ConnectionTypeConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.EndConnection>(value);
+      itemElement = DMXDraws.ConnectionTypeConverter.CreateOpenXmlElement<DXDraw.EndConnection>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
@@ -80,32 +80,32 @@ public static class NonVisualConnectionShapePropertiesConverter
   /// <summary>
   /// ExtensionList.
   /// </summary>
-  private static DocumentModel.Drawings.ExtensionList? GetExtensionList(DocumentFormat.OpenXml.Drawing.ChartDrawing.NonVisualConnectionShapeProperties openXmlElement)
+  private static DMDraws.ExtensionList? GetExtensionList(DXDrawChartDraw.NonVisualConnectionShapeProperties openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.ExtensionList>();
+    var itemElement = openXmlElement?.GetFirstChild<DXDraw.ExtensionList>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.ExtensionListConverter.CreateModelElement(itemElement);
+      return DMXDraws.ExtensionListConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetExtensionList(DocumentFormat.OpenXml.Drawing.ChartDrawing.NonVisualConnectionShapeProperties openXmlElement, DocumentModel.Drawings.ExtensionList? value)
+  private static void SetExtensionList(DXDrawChartDraw.NonVisualConnectionShapeProperties openXmlElement, DMDraws.ExtensionList? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.ExtensionList>();
+    var itemElement = openXmlElement.GetFirstChild<DXDraw.ExtensionList>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Drawings.ExtensionListConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.ExtensionList>(value);
+      itemElement = DMXDraws.ExtensionListConverter.CreateOpenXmlElement<DXDraw.ExtensionList>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  public static DocumentModel.Drawings.ChartDrawing.NonVisualConnectionShapeProperties? CreateModelElement(DocumentFormat.OpenXml.Drawing.ChartDrawing.NonVisualConnectionShapeProperties? openXmlElement)
+  public static DMDrawsChartDraw.NonVisualConnectionShapeProperties? CreateModelElement(DXDrawChartDraw.NonVisualConnectionShapeProperties? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.ChartDrawing.NonVisualConnectionShapeProperties();
+      var value = new DMDrawsChartDraw.NonVisualConnectionShapeProperties();
       value.ConnectionShapeLocks = GetConnectionShapeLocks(openXmlElement);
       value.StartConnection = GetStartConnection(openXmlElement);
       value.EndConnection = GetEndConnection(openXmlElement);
@@ -115,8 +115,8 @@ public static class NonVisualConnectionShapePropertiesConverter
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.ChartDrawing.NonVisualConnectionShapeProperties? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.ChartDrawing.NonVisualConnectionShapeProperties, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDrawsChartDraw.NonVisualConnectionShapeProperties? value)
+    where OpenXmlElementType: DXDrawChartDraw.NonVisualConnectionShapeProperties, new()
   {
     if (value != null)
     {

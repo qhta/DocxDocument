@@ -8,12 +8,12 @@ public static class StyleLabelConverter
   /// <summary>
   /// Style Name
   /// </summary>
-  private static String? GetName(DocumentFormat.OpenXml.Drawing.Diagrams.StyleLabel openXmlElement)
+  private static String? GetName(DXDrawDgms.StyleLabel openXmlElement)
   {
     return openXmlElement?.Name?.Value;
   }
   
-  private static void SetName(DocumentFormat.OpenXml.Drawing.Diagrams.StyleLabel openXmlElement, String? value)
+  private static void SetName(DXDrawDgms.StyleLabel openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.Name = new StringValue { Value = value };
@@ -24,22 +24,22 @@ public static class StyleLabelConverter
   /// <summary>
   /// 3-D Scene.
   /// </summary>
-  private static DocumentModel.Drawings.Diagrams.Scene3D? GetScene3D(DocumentFormat.OpenXml.Drawing.Diagrams.StyleLabel openXmlElement)
+  private static DMDrawsDgms.Scene3D? GetScene3D(DXDrawDgms.StyleLabel openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.Diagrams.Scene3D>();
+    var itemElement = openXmlElement?.GetFirstChild<DXDrawDgms.Scene3D>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.Diagrams.Scene3DConverter.CreateModelElement(itemElement);
+      return DMXDrawsDgms.Scene3DConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetScene3D(DocumentFormat.OpenXml.Drawing.Diagrams.StyleLabel openXmlElement, DocumentModel.Drawings.Diagrams.Scene3D? value)
+  private static void SetScene3D(DXDrawDgms.StyleLabel openXmlElement, DMDrawsDgms.Scene3D? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Diagrams.Scene3D>();
+    var itemElement = openXmlElement.GetFirstChild<DXDrawDgms.Scene3D>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Drawings.Diagrams.Scene3DConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Diagrams.Scene3D>(value);
+      itemElement = DMXDrawsDgms.Scene3DConverter.CreateOpenXmlElement<DXDrawDgms.Scene3D>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
@@ -48,22 +48,22 @@ public static class StyleLabelConverter
   /// <summary>
   /// 3-D Shape Properties.
   /// </summary>
-  private static DocumentModel.Drawings.Diagrams.Shape3D? GetShape3D(DocumentFormat.OpenXml.Drawing.Diagrams.StyleLabel openXmlElement)
+  private static DMDrawsDgms.Shape3D? GetShape3D(DXDrawDgms.StyleLabel openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.Diagrams.Shape3D>();
+    var itemElement = openXmlElement?.GetFirstChild<DXDrawDgms.Shape3D>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.Diagrams.Shape3DConverter.CreateModelElement(itemElement);
+      return DMXDrawsDgms.Shape3DConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetShape3D(DocumentFormat.OpenXml.Drawing.Diagrams.StyleLabel openXmlElement, DocumentModel.Drawings.Diagrams.Shape3D? value)
+  private static void SetShape3D(DXDrawDgms.StyleLabel openXmlElement, DMDrawsDgms.Shape3D? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Diagrams.Shape3D>();
+    var itemElement = openXmlElement.GetFirstChild<DXDrawDgms.Shape3D>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Drawings.Diagrams.Shape3DConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Diagrams.Shape3D>(value);
+      itemElement = DMXDrawsDgms.Shape3DConverter.CreateOpenXmlElement<DXDrawDgms.Shape3D>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
@@ -72,22 +72,22 @@ public static class StyleLabelConverter
   /// <summary>
   /// Text Properties.
   /// </summary>
-  private static DocumentModel.Drawings.Diagrams.TextProperties? GetTextProperties(DocumentFormat.OpenXml.Drawing.Diagrams.StyleLabel openXmlElement)
+  private static DMDrawsDgms.TextProperties? GetTextProperties(DXDrawDgms.StyleLabel openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.Diagrams.TextProperties>();
+    var itemElement = openXmlElement?.GetFirstChild<DXDrawDgms.TextProperties>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.Diagrams.TextPropertiesConverter.CreateModelElement(itemElement);
+      return DMXDrawsDgms.TextPropertiesConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetTextProperties(DocumentFormat.OpenXml.Drawing.Diagrams.StyleLabel openXmlElement, DocumentModel.Drawings.Diagrams.TextProperties? value)
+  private static void SetTextProperties(DXDrawDgms.StyleLabel openXmlElement, DMDrawsDgms.TextProperties? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Diagrams.TextProperties>();
+    var itemElement = openXmlElement.GetFirstChild<DXDrawDgms.TextProperties>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Drawings.Diagrams.TextPropertiesConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Diagrams.TextProperties>(value);
+      itemElement = DMXDrawsDgms.TextPropertiesConverter.CreateOpenXmlElement<DXDrawDgms.TextProperties>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
@@ -96,22 +96,22 @@ public static class StyleLabelConverter
   /// <summary>
   /// Shape Style.
   /// </summary>
-  private static DocumentModel.Drawings.Diagrams.Style? GetStyle(DocumentFormat.OpenXml.Drawing.Diagrams.StyleLabel openXmlElement)
+  private static DMDrawsDgms.Style? GetStyle(DXDrawDgms.StyleLabel openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.Diagrams.Style>();
+    var itemElement = openXmlElement?.GetFirstChild<DXDrawDgms.Style>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.Diagrams.StyleConverter.CreateModelElement(itemElement);
+      return DMXDrawsDgms.StyleConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetStyle(DocumentFormat.OpenXml.Drawing.Diagrams.StyleLabel openXmlElement, DocumentModel.Drawings.Diagrams.Style? value)
+  private static void SetStyle(DXDrawDgms.StyleLabel openXmlElement, DMDrawsDgms.Style? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Diagrams.Style>();
+    var itemElement = openXmlElement.GetFirstChild<DXDrawDgms.Style>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Drawings.Diagrams.StyleConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Diagrams.Style>(value);
+      itemElement = DMXDrawsDgms.StyleConverter.CreateOpenXmlElement<DXDrawDgms.Style>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
@@ -120,32 +120,32 @@ public static class StyleLabelConverter
   /// <summary>
   /// ExtensionList.
   /// </summary>
-  private static DocumentModel.Drawings.Diagrams.ExtensionList? GetExtensionList(DocumentFormat.OpenXml.Drawing.Diagrams.StyleLabel openXmlElement)
+  private static DMDrawsDgms.ExtensionList? GetExtensionList(DXDrawDgms.StyleLabel openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.Diagrams.ExtensionList>();
+    var itemElement = openXmlElement?.GetFirstChild<DXDrawDgms.ExtensionList>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.Diagrams.ExtensionListConverter.CreateModelElement(itemElement);
+      return DMXDrawsDgms.ExtensionListConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetExtensionList(DocumentFormat.OpenXml.Drawing.Diagrams.StyleLabel openXmlElement, DocumentModel.Drawings.Diagrams.ExtensionList? value)
+  private static void SetExtensionList(DXDrawDgms.StyleLabel openXmlElement, DMDrawsDgms.ExtensionList? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Diagrams.ExtensionList>();
+    var itemElement = openXmlElement.GetFirstChild<DXDrawDgms.ExtensionList>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Drawings.Diagrams.ExtensionListConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Diagrams.ExtensionList>(value);
+      itemElement = DMXDrawsDgms.ExtensionListConverter.CreateOpenXmlElement<DXDrawDgms.ExtensionList>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  public static DocumentModel.Drawings.Diagrams.StyleLabel? CreateModelElement(DocumentFormat.OpenXml.Drawing.Diagrams.StyleLabel? openXmlElement)
+  public static DMDrawsDgms.StyleLabel? CreateModelElement(DXDrawDgms.StyleLabel? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.Diagrams.StyleLabel();
+      var value = new DMDrawsDgms.StyleLabel();
       value.Name = GetName(openXmlElement);
       value.Scene3D = GetScene3D(openXmlElement);
       value.Shape3D = GetShape3D(openXmlElement);
@@ -157,8 +157,8 @@ public static class StyleLabelConverter
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.Diagrams.StyleLabel? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.Diagrams.StyleLabel, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDrawsDgms.StyleLabel? value)
+    where OpenXmlElementType: DXDrawDgms.StyleLabel, new()
   {
     if (value != null)
     {

@@ -8,12 +8,12 @@ public static class ShapeHandleConverter
   /// <summary>
   /// Handle Position
   /// </summary>
-  private static String? GetPosition(DocumentFormat.OpenXml.Vml.ShapeHandle openXmlElement)
+  private static String? GetPosition(DXVml.ShapeHandle openXmlElement)
   {
     return openXmlElement?.Position?.Value;
   }
   
-  private static void SetPosition(DocumentFormat.OpenXml.Vml.ShapeHandle openXmlElement, String? value)
+  private static void SetPosition(DXVml.ShapeHandle openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.Position = new StringValue { Value = value };
@@ -24,12 +24,12 @@ public static class ShapeHandleConverter
   /// <summary>
   /// Handle Polar Center
   /// </summary>
-  private static String? GetPolar(DocumentFormat.OpenXml.Vml.ShapeHandle openXmlElement)
+  private static String? GetPolar(DXVml.ShapeHandle openXmlElement)
   {
     return openXmlElement?.Polar?.Value;
   }
   
-  private static void SetPolar(DocumentFormat.OpenXml.Vml.ShapeHandle openXmlElement, String? value)
+  private static void SetPolar(DXVml.ShapeHandle openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.Polar = new StringValue { Value = value };
@@ -40,12 +40,12 @@ public static class ShapeHandleConverter
   /// <summary>
   /// Handle Coordinate Mapping
   /// </summary>
-  private static String? GetMap(DocumentFormat.OpenXml.Vml.ShapeHandle openXmlElement)
+  private static String? GetMap(DXVml.ShapeHandle openXmlElement)
   {
     return openXmlElement?.Map?.Value;
   }
   
-  private static void SetMap(DocumentFormat.OpenXml.Vml.ShapeHandle openXmlElement, String? value)
+  private static void SetMap(DXVml.ShapeHandle openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.Map = new StringValue { Value = value };
@@ -56,12 +56,12 @@ public static class ShapeHandleConverter
   /// <summary>
   /// Invert Handle's X Position
   /// </summary>
-  private static Boolean? GetInvertX(DocumentFormat.OpenXml.Vml.ShapeHandle openXmlElement)
+  private static Boolean? GetInvertX(DXVml.ShapeHandle openXmlElement)
   {
     return openXmlElement?.InvertX?.Value;
   }
   
-  private static void SetInvertX(DocumentFormat.OpenXml.Vml.ShapeHandle openXmlElement, Boolean? value)
+  private static void SetInvertX(DXVml.ShapeHandle openXmlElement, Boolean? value)
   {
     if (value != null)
       openXmlElement.InvertX = value;
@@ -72,12 +72,12 @@ public static class ShapeHandleConverter
   /// <summary>
   /// Invert Handle's Y Position
   /// </summary>
-  private static Boolean? GetInvertY(DocumentFormat.OpenXml.Vml.ShapeHandle openXmlElement)
+  private static Boolean? GetInvertY(DXVml.ShapeHandle openXmlElement)
   {
     return openXmlElement?.InvertY?.Value;
   }
   
-  private static void SetInvertY(DocumentFormat.OpenXml.Vml.ShapeHandle openXmlElement, Boolean? value)
+  private static void SetInvertY(DXVml.ShapeHandle openXmlElement, Boolean? value)
   {
     if (value != null)
       openXmlElement.InvertY = value;
@@ -88,12 +88,12 @@ public static class ShapeHandleConverter
   /// <summary>
   /// Handle Inversion Toggle
   /// </summary>
-  private static Boolean? GetSwitch(DocumentFormat.OpenXml.Vml.ShapeHandle openXmlElement)
+  private static Boolean? GetSwitch(DXVml.ShapeHandle openXmlElement)
   {
     return openXmlElement?.Switch?.Value;
   }
   
-  private static void SetSwitch(DocumentFormat.OpenXml.Vml.ShapeHandle openXmlElement, Boolean? value)
+  private static void SetSwitch(DXVml.ShapeHandle openXmlElement, Boolean? value)
   {
     if (value != null)
       openXmlElement.Switch = value;
@@ -104,12 +104,12 @@ public static class ShapeHandleConverter
   /// <summary>
   /// Handle X Position Range
   /// </summary>
-  private static String? GetXRange(DocumentFormat.OpenXml.Vml.ShapeHandle openXmlElement)
+  private static String? GetXRange(DXVml.ShapeHandle openXmlElement)
   {
     return openXmlElement?.XRange?.Value;
   }
   
-  private static void SetXRange(DocumentFormat.OpenXml.Vml.ShapeHandle openXmlElement, String? value)
+  private static void SetXRange(DXVml.ShapeHandle openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.XRange = new StringValue { Value = value };
@@ -120,12 +120,12 @@ public static class ShapeHandleConverter
   /// <summary>
   /// Handle Y Position Range
   /// </summary>
-  private static String? GetYRange(DocumentFormat.OpenXml.Vml.ShapeHandle openXmlElement)
+  private static String? GetYRange(DXVml.ShapeHandle openXmlElement)
   {
     return openXmlElement?.YRange?.Value;
   }
   
-  private static void SetYRange(DocumentFormat.OpenXml.Vml.ShapeHandle openXmlElement, String? value)
+  private static void SetYRange(DXVml.ShapeHandle openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.YRange = new StringValue { Value = value };
@@ -136,12 +136,12 @@ public static class ShapeHandleConverter
   /// <summary>
   /// Handle Polar Radius Range
   /// </summary>
-  private static String? GetRadiusRange(DocumentFormat.OpenXml.Vml.ShapeHandle openXmlElement)
+  private static String? GetRadiusRange(DXVml.ShapeHandle openXmlElement)
   {
     return openXmlElement?.RadiusRange?.Value;
   }
   
-  private static void SetRadiusRange(DocumentFormat.OpenXml.Vml.ShapeHandle openXmlElement, String? value)
+  private static void SetRadiusRange(DXVml.ShapeHandle openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.RadiusRange = new StringValue { Value = value };
@@ -149,11 +149,11 @@ public static class ShapeHandleConverter
       openXmlElement.RadiusRange = null;
   }
   
-  public static DocumentModel.Vml.ShapeHandle? CreateModelElement(DocumentFormat.OpenXml.Vml.ShapeHandle? openXmlElement)
+  public static DMVml.ShapeHandle? CreateModelElement(DXVml.ShapeHandle? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Vml.ShapeHandle();
+      var value = new DMVml.ShapeHandle();
       value.Position = GetPosition(openXmlElement);
       value.Polar = GetPolar(openXmlElement);
       value.Map = GetMap(openXmlElement);
@@ -168,8 +168,8 @@ public static class ShapeHandleConverter
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Vml.ShapeHandle? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Vml.ShapeHandle, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMVml.ShapeHandle? value)
+    where OpenXmlElementType: DXVml.ShapeHandle, new()
   {
     if (value != null)
     {

@@ -5,10 +5,10 @@ namespace DocumentModel.OpenXml.Drawings.ChartDrawings;
 /// </summary>
 public static class CopyrightsConverter
 {
-  private static System.Collections.ObjectModel.Collection<String> GetCopyrightXsdstrings(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.Copyrights openXmlElement)
+  private static Collection<String> GetCopyrightXsdstrings(DXO2016DrawChartDraw.Copyrights openXmlElement)
   {
-    var collection = new System.Collections.ObjectModel.Collection<String>();
-    foreach (var item in openXmlElement.Elements<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.CopyrightXsdstring>())
+    var collection = new Collection<String>();
+    foreach (var item in openXmlElement.Elements<DXO2016DrawChartDraw.CopyrightXsdstring>())
     {
       var newItem = StringValueConverter.GetValue(item);
       if (newItem != null)
@@ -17,33 +17,33 @@ public static class CopyrightsConverter
     return collection;
   }
   
-  private static void SetCopyrightXsdstrings(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.Copyrights openXmlElement, System.Collections.ObjectModel.Collection<String>? value)
+  private static void SetCopyrightXsdstrings(DXO2016DrawChartDraw.Copyrights openXmlElement, Collection<String>? value)
   {
-    openXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.CopyrightXsdstring>();
+    openXmlElement.RemoveAllChildren<DXO2016DrawChartDraw.CopyrightXsdstring>();
     if (value != null)
     {
       foreach (var item in value)
       {
-        var newItem = StringValueConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.CopyrightXsdstring>(item);
+        var newItem = StringValueConverter.CreateOpenXmlElement<DXO2016DrawChartDraw.CopyrightXsdstring>(item);
         if (newItem != null)
           openXmlElement.AddChild(newItem);
       }
     }
   }
   
-  public static DocumentModel.Drawings.ChartDrawings.Copyrights? CreateModelElement(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.Copyrights? openXmlElement)
+  public static DMDrawsChartDraws.Copyrights? CreateModelElement(DXO2016DrawChartDraw.Copyrights? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.ChartDrawings.Copyrights();
+      var value = new DMDrawsChartDraws.Copyrights();
       value.CopyrightXsdstrings = GetCopyrightXsdstrings(openXmlElement);
       return value;
     }
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.ChartDrawings.Copyrights? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.Copyrights, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDrawsChartDraws.Copyrights? value)
+    where OpenXmlElementType: DXO2016DrawChartDraw.Copyrights, new()
   {
     if (value != null)
     {

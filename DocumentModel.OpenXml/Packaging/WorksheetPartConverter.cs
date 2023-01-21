@@ -5,7 +5,7 @@ namespace DocumentModel.OpenXml.Packaging;
 /// </summary>
 public static class WorksheetPartConverter
 {
-  private static String? GetContentType(DocumentFormat.OpenXml.Packaging.WorksheetPart openXmlElement)
+  private static String? GetContentType(DXPack.WorksheetPart openXmlElement)
   {
     return openXmlElement?.ContentType;
   }
@@ -13,12 +13,12 @@ public static class WorksheetPartConverter
   /// <summary>
   /// Gets the ControlPropertiesParts of the WorksheetPart
   /// </summary>
-  private static System.Collections.ObjectModel.Collection<DocumentModel.Packaging.ControlPropertiesPart> GetControlPropertiesParts(DocumentFormat.OpenXml.Packaging.WorksheetPart openXmlElement)
+  private static Collection<DMPack.ControlPropertiesPart> GetControlPropertiesParts(DXPack.WorksheetPart openXmlElement)
   {
-    var collection = new System.Collections.ObjectModel.Collection<DocumentModel.Packaging.ControlPropertiesPart>();
-    foreach (var item in openXmlElement.GetPartsOfType<DocumentFormat.OpenXml.Packaging.ControlPropertiesPart>())
+    var collection = new Collection<DMPack.ControlPropertiesPart>();
+    foreach (var item in openXmlElement.GetPartsOfType<DXPack.ControlPropertiesPart>())
     {
-      var newItem = DocumentModel.OpenXml.Packaging.ControlPropertiesPartConverter.CreateModelElement(item);
+      var newItem = DMXPack.ControlPropertiesPartConverter.CreateModelElement(item);
       if (newItem != null)
         collection.Add(newItem);
     }
@@ -28,12 +28,12 @@ public static class WorksheetPartConverter
   /// <summary>
   /// Gets the CustomPropertyParts of the WorksheetPart
   /// </summary>
-  private static System.Collections.ObjectModel.Collection<DocumentModel.Packaging.CustomPropertyPart> GetCustomPropertyParts(DocumentFormat.OpenXml.Packaging.WorksheetPart openXmlElement)
+  private static Collection<DMPack.CustomPropertyPart> GetCustomPropertyParts(DXPack.WorksheetPart openXmlElement)
   {
-    var collection = new System.Collections.ObjectModel.Collection<DocumentModel.Packaging.CustomPropertyPart>();
-    foreach (var item in openXmlElement.GetPartsOfType<DocumentFormat.OpenXml.Packaging.CustomPropertyPart>())
+    var collection = new Collection<DMPack.CustomPropertyPart>();
+    foreach (var item in openXmlElement.GetPartsOfType<DXPack.CustomPropertyPart>())
     {
-      var newItem = DocumentModel.OpenXml.Packaging.CustomPropertyPartConverter.CreateModelElement(item);
+      var newItem = DMXPack.CustomPropertyPartConverter.CreateModelElement(item);
       if (newItem != null)
         collection.Add(newItem);
     }
@@ -43,12 +43,12 @@ public static class WorksheetPartConverter
   /// <summary>
   /// Gets the EmbeddedControlPersistenceBinaryDataParts of the WorksheetPart
   /// </summary>
-  private static System.Collections.ObjectModel.Collection<DocumentModel.Packaging.EmbeddedControlPersistenceBinaryDataPart> GetEmbeddedControlPersistenceBinaryDataParts(DocumentFormat.OpenXml.Packaging.WorksheetPart openXmlElement)
+  private static Collection<DMPack.EmbeddedControlPersistenceBinaryDataPart> GetEmbeddedControlPersistenceBinaryDataParts(DXPack.WorksheetPart openXmlElement)
   {
-    var collection = new System.Collections.ObjectModel.Collection<DocumentModel.Packaging.EmbeddedControlPersistenceBinaryDataPart>();
-    foreach (var item in openXmlElement.GetPartsOfType<DocumentFormat.OpenXml.Packaging.EmbeddedControlPersistenceBinaryDataPart>())
+    var collection = new Collection<DMPack.EmbeddedControlPersistenceBinaryDataPart>();
+    foreach (var item in openXmlElement.GetPartsOfType<DXPack.EmbeddedControlPersistenceBinaryDataPart>())
     {
-      var newItem = DocumentModel.OpenXml.Packaging.EmbeddedControlPersistenceBinaryDataPartConverter.CreateModelElement(item);
+      var newItem = DMXPack.EmbeddedControlPersistenceBinaryDataPartConverter.CreateModelElement(item);
       if (newItem != null)
         collection.Add(newItem);
     }
@@ -58,12 +58,12 @@ public static class WorksheetPartConverter
   /// <summary>
   /// Gets the EmbeddedControlPersistenceParts of the WorksheetPart
   /// </summary>
-  private static System.Collections.ObjectModel.Collection<DocumentModel.Packaging.EmbeddedControlPersistencePart> GetEmbeddedControlPersistenceParts(DocumentFormat.OpenXml.Packaging.WorksheetPart openXmlElement)
+  private static Collection<DMPack.EmbeddedControlPersistencePart> GetEmbeddedControlPersistenceParts(DXPack.WorksheetPart openXmlElement)
   {
-    var collection = new System.Collections.ObjectModel.Collection<DocumentModel.Packaging.EmbeddedControlPersistencePart>();
-    foreach (var item in openXmlElement.GetPartsOfType<DocumentFormat.OpenXml.Packaging.EmbeddedControlPersistencePart>())
+    var collection = new Collection<DMPack.EmbeddedControlPersistencePart>();
+    foreach (var item in openXmlElement.GetPartsOfType<DXPack.EmbeddedControlPersistencePart>())
     {
-      var newItem = DocumentModel.OpenXml.Packaging.EmbeddedControlPersistencePartConverter.CreateModelElement(item);
+      var newItem = DMXPack.EmbeddedControlPersistencePartConverter.CreateModelElement(item);
       if (newItem != null)
         collection.Add(newItem);
     }
@@ -73,12 +73,12 @@ public static class WorksheetPartConverter
   /// <summary>
   /// Gets the EmbeddedObjectParts of the WorksheetPart
   /// </summary>
-  private static System.Collections.ObjectModel.Collection<DocumentModel.Packaging.EmbeddedObjectPart> GetEmbeddedObjectParts(DocumentFormat.OpenXml.Packaging.WorksheetPart openXmlElement)
+  private static Collection<DMPack.EmbeddedObjectPart> GetEmbeddedObjectParts(DXPack.WorksheetPart openXmlElement)
   {
-    var collection = new System.Collections.ObjectModel.Collection<DocumentModel.Packaging.EmbeddedObjectPart>();
-    foreach (var item in openXmlElement.GetPartsOfType<DocumentFormat.OpenXml.Packaging.EmbeddedObjectPart>())
+    var collection = new Collection<DMPack.EmbeddedObjectPart>();
+    foreach (var item in openXmlElement.GetPartsOfType<DXPack.EmbeddedObjectPart>())
     {
-      var newItem = DocumentModel.OpenXml.Packaging.EmbeddedObjectPartConverter.CreateModelElement(item);
+      var newItem = DMXPack.EmbeddedObjectPartConverter.CreateModelElement(item);
       if (newItem != null)
         collection.Add(newItem);
     }
@@ -88,12 +88,12 @@ public static class WorksheetPartConverter
   /// <summary>
   /// Gets the EmbeddedPackageParts of the WorksheetPart
   /// </summary>
-  private static System.Collections.ObjectModel.Collection<DocumentModel.Packaging.EmbeddedPackagePart> GetEmbeddedPackageParts(DocumentFormat.OpenXml.Packaging.WorksheetPart openXmlElement)
+  private static Collection<DMPack.EmbeddedPackagePart> GetEmbeddedPackageParts(DXPack.WorksheetPart openXmlElement)
   {
-    var collection = new System.Collections.ObjectModel.Collection<DocumentModel.Packaging.EmbeddedPackagePart>();
-    foreach (var item in openXmlElement.GetPartsOfType<DocumentFormat.OpenXml.Packaging.EmbeddedPackagePart>())
+    var collection = new Collection<DMPack.EmbeddedPackagePart>();
+    foreach (var item in openXmlElement.GetPartsOfType<DXPack.EmbeddedPackagePart>())
     {
-      var newItem = DocumentModel.OpenXml.Packaging.EmbeddedPackagePartConverter.CreateModelElement(item);
+      var newItem = DMXPack.EmbeddedPackagePartConverter.CreateModelElement(item);
       if (newItem != null)
         collection.Add(newItem);
     }
@@ -103,12 +103,12 @@ public static class WorksheetPartConverter
   /// <summary>
   /// Gets the ImageParts of the WorksheetPart
   /// </summary>
-  private static System.Collections.ObjectModel.Collection<DocumentModel.Packaging.ImagePart> GetImageParts(DocumentFormat.OpenXml.Packaging.WorksheetPart openXmlElement)
+  private static Collection<DMPack.ImagePart> GetImageParts(DXPack.WorksheetPart openXmlElement)
   {
-    var collection = new System.Collections.ObjectModel.Collection<DocumentModel.Packaging.ImagePart>();
-    foreach (var item in openXmlElement.GetPartsOfType<DocumentFormat.OpenXml.Packaging.ImagePart>())
+    var collection = new Collection<DMPack.ImagePart>();
+    foreach (var item in openXmlElement.GetPartsOfType<DXPack.ImagePart>())
     {
-      var newItem = DocumentModel.OpenXml.Packaging.ImagePartConverter.CreateModelElement(item);
+      var newItem = DMXPack.ImagePartConverter.CreateModelElement(item);
       if (newItem != null)
         collection.Add(newItem);
     }
@@ -118,12 +118,12 @@ public static class WorksheetPartConverter
   /// <summary>
   /// Gets the Model3DReferenceRelationshipParts of the WorksheetPart
   /// </summary>
-  private static System.Collections.ObjectModel.Collection<DocumentModel.Packaging.Model3DReferenceRelationshipPart> GetModel3DReferenceRelationshipParts(DocumentFormat.OpenXml.Packaging.WorksheetPart openXmlElement)
+  private static Collection<DMPack.Model3DReferenceRelationshipPart> GetModel3DReferenceRelationshipParts(DXPack.WorksheetPart openXmlElement)
   {
-    var collection = new System.Collections.ObjectModel.Collection<DocumentModel.Packaging.Model3DReferenceRelationshipPart>();
-    foreach (var item in openXmlElement.GetPartsOfType<DocumentFormat.OpenXml.Packaging.Model3DReferenceRelationshipPart>())
+    var collection = new Collection<DMPack.Model3DReferenceRelationshipPart>();
+    foreach (var item in openXmlElement.GetPartsOfType<DXPack.Model3DReferenceRelationshipPart>())
     {
-      var newItem = DocumentModel.OpenXml.Packaging.Model3DReferenceRelationshipPartConverter.CreateModelElement(item);
+      var newItem = DMXPack.Model3DReferenceRelationshipPartConverter.CreateModelElement(item);
       if (newItem != null)
         collection.Add(newItem);
     }
@@ -133,12 +133,12 @@ public static class WorksheetPartConverter
   /// <summary>
   /// Gets the NamedSheetViewsParts of the WorksheetPart
   /// </summary>
-  private static System.Collections.ObjectModel.Collection<DocumentModel.Packaging.NamedSheetViewsPart> GetNamedSheetViewsParts(DocumentFormat.OpenXml.Packaging.WorksheetPart openXmlElement)
+  private static Collection<DMPack.NamedSheetViewsPart> GetNamedSheetViewsParts(DXPack.WorksheetPart openXmlElement)
   {
-    var collection = new System.Collections.ObjectModel.Collection<DocumentModel.Packaging.NamedSheetViewsPart>();
-    foreach (var item in openXmlElement.GetPartsOfType<DocumentFormat.OpenXml.Packaging.NamedSheetViewsPart>())
+    var collection = new Collection<DMPack.NamedSheetViewsPart>();
+    foreach (var item in openXmlElement.GetPartsOfType<DXPack.NamedSheetViewsPart>())
     {
-      var newItem = DocumentModel.OpenXml.Packaging.NamedSheetViewsPartConverter.CreateModelElement(item);
+      var newItem = DMXPack.NamedSheetViewsPartConverter.CreateModelElement(item);
       if (newItem != null)
         collection.Add(newItem);
     }
@@ -148,12 +148,12 @@ public static class WorksheetPartConverter
   /// <summary>
   /// Gets the PivotTableParts of the WorksheetPart
   /// </summary>
-  private static System.Collections.ObjectModel.Collection<DocumentModel.Packaging.PivotTablePart> GetPivotTableParts(DocumentFormat.OpenXml.Packaging.WorksheetPart openXmlElement)
+  private static Collection<DMPack.PivotTablePart> GetPivotTableParts(DXPack.WorksheetPart openXmlElement)
   {
-    var collection = new System.Collections.ObjectModel.Collection<DocumentModel.Packaging.PivotTablePart>();
-    foreach (var item in openXmlElement.GetPartsOfType<DocumentFormat.OpenXml.Packaging.PivotTablePart>())
+    var collection = new Collection<DMPack.PivotTablePart>();
+    foreach (var item in openXmlElement.GetPartsOfType<DXPack.PivotTablePart>())
     {
-      var newItem = DocumentModel.OpenXml.Packaging.PivotTablePartConverter.CreateModelElement(item);
+      var newItem = DMXPack.PivotTablePartConverter.CreateModelElement(item);
       if (newItem != null)
         collection.Add(newItem);
     }
@@ -163,19 +163,19 @@ public static class WorksheetPartConverter
   /// <summary>
   /// Gets the QueryTableParts of the WorksheetPart
   /// </summary>
-  private static System.Collections.ObjectModel.Collection<DocumentModel.Packaging.QueryTablePart> GetQueryTableParts(DocumentFormat.OpenXml.Packaging.WorksheetPart openXmlElement)
+  private static Collection<DMPack.QueryTablePart> GetQueryTableParts(DXPack.WorksheetPart openXmlElement)
   {
-    var collection = new System.Collections.ObjectModel.Collection<DocumentModel.Packaging.QueryTablePart>();
-    foreach (var item in openXmlElement.GetPartsOfType<DocumentFormat.OpenXml.Packaging.QueryTablePart>())
+    var collection = new Collection<DMPack.QueryTablePart>();
+    foreach (var item in openXmlElement.GetPartsOfType<DXPack.QueryTablePart>())
     {
-      var newItem = DocumentModel.OpenXml.Packaging.QueryTablePartConverter.CreateModelElement(item);
+      var newItem = DMXPack.QueryTablePartConverter.CreateModelElement(item);
       if (newItem != null)
         collection.Add(newItem);
     }
     return collection;
   }
   
-  private static String? GetRelationshipType(DocumentFormat.OpenXml.Packaging.WorksheetPart openXmlElement)
+  private static String? GetRelationshipType(DXPack.WorksheetPart openXmlElement)
   {
     return openXmlElement?.RelationshipType;
   }
@@ -183,12 +183,12 @@ public static class WorksheetPartConverter
   /// <summary>
   /// Gets the SlicersParts of the WorksheetPart
   /// </summary>
-  private static System.Collections.ObjectModel.Collection<DocumentModel.Packaging.SlicersPart> GetSlicersParts(DocumentFormat.OpenXml.Packaging.WorksheetPart openXmlElement)
+  private static Collection<DMPack.SlicersPart> GetSlicersParts(DXPack.WorksheetPart openXmlElement)
   {
-    var collection = new System.Collections.ObjectModel.Collection<DocumentModel.Packaging.SlicersPart>();
-    foreach (var item in openXmlElement.GetPartsOfType<DocumentFormat.OpenXml.Packaging.SlicersPart>())
+    var collection = new Collection<DMPack.SlicersPart>();
+    foreach (var item in openXmlElement.GetPartsOfType<DXPack.SlicersPart>())
     {
-      var newItem = DocumentModel.OpenXml.Packaging.SlicersPartConverter.CreateModelElement(item);
+      var newItem = DMXPack.SlicersPartConverter.CreateModelElement(item);
       if (newItem != null)
         collection.Add(newItem);
     }
@@ -198,12 +198,12 @@ public static class WorksheetPartConverter
   /// <summary>
   /// Gets the SpreadsheetPrinterSettingsParts of the WorksheetPart
   /// </summary>
-  private static System.Collections.ObjectModel.Collection<DocumentModel.Packaging.SpreadsheetPrinterSettingsPart> GetSpreadsheetPrinterSettingsParts(DocumentFormat.OpenXml.Packaging.WorksheetPart openXmlElement)
+  private static Collection<DMPack.SpreadsheetPrinterSettingsPart> GetSpreadsheetPrinterSettingsParts(DXPack.WorksheetPart openXmlElement)
   {
-    var collection = new System.Collections.ObjectModel.Collection<DocumentModel.Packaging.SpreadsheetPrinterSettingsPart>();
-    foreach (var item in openXmlElement.GetPartsOfType<DocumentFormat.OpenXml.Packaging.SpreadsheetPrinterSettingsPart>())
+    var collection = new Collection<DMPack.SpreadsheetPrinterSettingsPart>();
+    foreach (var item in openXmlElement.GetPartsOfType<DXPack.SpreadsheetPrinterSettingsPart>())
     {
-      var newItem = DocumentModel.OpenXml.Packaging.SpreadsheetPrinterSettingsPartConverter.CreateModelElement(item);
+      var newItem = DMXPack.SpreadsheetPrinterSettingsPartConverter.CreateModelElement(item);
       if (newItem != null)
         collection.Add(newItem);
     }
@@ -213,12 +213,12 @@ public static class WorksheetPartConverter
   /// <summary>
   /// Gets the TableDefinitionParts of the WorksheetPart
   /// </summary>
-  private static System.Collections.ObjectModel.Collection<DocumentModel.Packaging.TableDefinitionPart> GetTableDefinitionParts(DocumentFormat.OpenXml.Packaging.WorksheetPart openXmlElement)
+  private static Collection<DMPack.TableDefinitionPart> GetTableDefinitionParts(DXPack.WorksheetPart openXmlElement)
   {
-    var collection = new System.Collections.ObjectModel.Collection<DocumentModel.Packaging.TableDefinitionPart>();
-    foreach (var item in openXmlElement.GetPartsOfType<DocumentFormat.OpenXml.Packaging.TableDefinitionPart>())
+    var collection = new Collection<DMPack.TableDefinitionPart>();
+    foreach (var item in openXmlElement.GetPartsOfType<DXPack.TableDefinitionPart>())
     {
-      var newItem = DocumentModel.OpenXml.Packaging.TableDefinitionPartConverter.CreateModelElement(item);
+      var newItem = DMXPack.TableDefinitionPartConverter.CreateModelElement(item);
       if (newItem != null)
         collection.Add(newItem);
     }
@@ -228,12 +228,12 @@ public static class WorksheetPartConverter
   /// <summary>
   /// Gets the TimeLineParts of the WorksheetPart
   /// </summary>
-  private static System.Collections.ObjectModel.Collection<DocumentModel.Packaging.TimeLinePart> GetTimeLineParts(DocumentFormat.OpenXml.Packaging.WorksheetPart openXmlElement)
+  private static Collection<DMPack.TimeLinePart> GetTimeLineParts(DXPack.WorksheetPart openXmlElement)
   {
-    var collection = new System.Collections.ObjectModel.Collection<DocumentModel.Packaging.TimeLinePart>();
-    foreach (var item in openXmlElement.GetPartsOfType<DocumentFormat.OpenXml.Packaging.TimeLinePart>())
+    var collection = new Collection<DMPack.TimeLinePart>();
+    foreach (var item in openXmlElement.GetPartsOfType<DXPack.TimeLinePart>())
     {
-      var newItem = DocumentModel.OpenXml.Packaging.TimeLinePartConverter.CreateModelElement(item);
+      var newItem = DMXPack.TimeLinePartConverter.CreateModelElement(item);
       if (newItem != null)
         collection.Add(newItem);
     }
@@ -243,12 +243,12 @@ public static class WorksheetPartConverter
   /// <summary>
   /// Gets the VmlDrawingParts of the WorksheetPart
   /// </summary>
-  private static System.Collections.ObjectModel.Collection<DocumentModel.Packaging.VmlDrawingPart> GetVmlDrawingParts(DocumentFormat.OpenXml.Packaging.WorksheetPart openXmlElement)
+  private static Collection<DMPack.VmlDrawingPart> GetVmlDrawingParts(DXPack.WorksheetPart openXmlElement)
   {
-    var collection = new System.Collections.ObjectModel.Collection<DocumentModel.Packaging.VmlDrawingPart>();
-    foreach (var item in openXmlElement.GetPartsOfType<DocumentFormat.OpenXml.Packaging.VmlDrawingPart>())
+    var collection = new Collection<DMPack.VmlDrawingPart>();
+    foreach (var item in openXmlElement.GetPartsOfType<DXPack.VmlDrawingPart>())
     {
-      var newItem = DocumentModel.OpenXml.Packaging.VmlDrawingPartConverter.CreateModelElement(item);
+      var newItem = DMXPack.VmlDrawingPartConverter.CreateModelElement(item);
       if (newItem != null)
         collection.Add(newItem);
     }
@@ -258,23 +258,23 @@ public static class WorksheetPartConverter
   /// <summary>
   /// Gets the WorksheetThreadedCommentsParts of the WorksheetPart
   /// </summary>
-  private static System.Collections.ObjectModel.Collection<DocumentModel.Packaging.WorksheetThreadedCommentsPart> GetWorksheetThreadedCommentsParts(DocumentFormat.OpenXml.Packaging.WorksheetPart openXmlElement)
+  private static Collection<DMPack.WorksheetThreadedCommentsPart> GetWorksheetThreadedCommentsParts(DXPack.WorksheetPart openXmlElement)
   {
-    var collection = new System.Collections.ObjectModel.Collection<DocumentModel.Packaging.WorksheetThreadedCommentsPart>();
-    foreach (var item in openXmlElement.GetPartsOfType<DocumentFormat.OpenXml.Packaging.WorksheetThreadedCommentsPart>())
+    var collection = new Collection<DMPack.WorksheetThreadedCommentsPart>();
+    foreach (var item in openXmlElement.GetPartsOfType<DXPack.WorksheetThreadedCommentsPart>())
     {
-      var newItem = DocumentModel.OpenXml.Packaging.WorksheetThreadedCommentsPartConverter.CreateModelElement(item);
+      var newItem = DMXPack.WorksheetThreadedCommentsPartConverter.CreateModelElement(item);
       if (newItem != null)
         collection.Add(newItem);
     }
     return collection;
   }
   
-  public static DocumentModel.Packaging.WorksheetPart? CreateModelElement(DocumentFormat.OpenXml.Packaging.WorksheetPart? openXmlElement)
+  public static DMPack.WorksheetPart? CreateModelElement(DXPack.WorksheetPart? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Packaging.WorksheetPart();
+      var value = new DMPack.WorksheetPart();
       value.ContentType = GetContentType(openXmlElement);
       value.ControlPropertiesParts = GetControlPropertiesParts(openXmlElement);
       value.CustomPropertyParts = GetCustomPropertyParts(openXmlElement);
@@ -299,8 +299,8 @@ public static class WorksheetPartConverter
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Packaging.WorksheetPart? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Packaging.WorksheetPart, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMPack.WorksheetPart? value)
+    where OpenXmlElementType: DXPack.WorksheetPart, new()
   {
     if (value != null)
     {

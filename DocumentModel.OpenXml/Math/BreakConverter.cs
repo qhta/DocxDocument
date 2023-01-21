@@ -8,12 +8,12 @@ public static class BreakConverter
   /// <summary>
   /// Index of Operator to Align To
   /// </summary>
-  private static Int64? GetAlignAt(DocumentFormat.OpenXml.Math.Break openXmlElement)
+  private static Int64? GetAlignAt(DXMath.Break openXmlElement)
   {
     return openXmlElement.AlignAt?.Value;
   }
   
-  private static void SetAlignAt(DocumentFormat.OpenXml.Math.Break openXmlElement, Int64? value)
+  private static void SetAlignAt(DXMath.Break openXmlElement, Int64? value)
   {
     openXmlElement.AlignAt = value;
   }
@@ -21,21 +21,21 @@ public static class BreakConverter
   /// <summary>
   /// Index of Operator to Align To
   /// </summary>
-  private static Int64? GetVal(DocumentFormat.OpenXml.Math.Break openXmlElement)
+  private static Int64? GetVal(DXMath.Break openXmlElement)
   {
     return openXmlElement.Val?.Value;
   }
   
-  private static void SetVal(DocumentFormat.OpenXml.Math.Break openXmlElement, Int64? value)
+  private static void SetVal(DXMath.Break openXmlElement, Int64? value)
   {
     openXmlElement.Val = value;
   }
   
-  public static DocumentModel.Math.Break? CreateModelElement(DocumentFormat.OpenXml.Math.Break? openXmlElement)
+  public static DMMath.Break? CreateModelElement(DXMath.Break? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Math.Break();
+      var value = new DMMath.Break();
       value.AlignAt = GetAlignAt(openXmlElement);
       value.Val = GetVal(openXmlElement);
       return value;
@@ -43,8 +43,8 @@ public static class BreakConverter
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Math.Break? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Math.Break, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMMath.Break? value)
+    where OpenXmlElementType: DXMath.Break, new()
   {
     if (value != null)
     {

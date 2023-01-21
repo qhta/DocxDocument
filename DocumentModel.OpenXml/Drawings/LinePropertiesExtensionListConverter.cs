@@ -5,45 +5,45 @@ namespace DocumentModel.OpenXml.Drawings;
 /// </summary>
 public static class LinePropertiesExtensionListConverter
 {
-  private static System.Collections.ObjectModel.Collection<DocumentModel.Drawings.LinePropertiesExtension> GetLinePropertiesExtensions(DocumentFormat.OpenXml.Drawing.LinePropertiesExtensionList openXmlElement)
+  private static Collection<DMDraws.LinePropertiesExtension> GetLinePropertiesExtensions(DXDraw.LinePropertiesExtensionList openXmlElement)
   {
-    var collection = new System.Collections.ObjectModel.Collection<DocumentModel.Drawings.LinePropertiesExtension>();
-    foreach (var item in openXmlElement.Elements<DocumentFormat.OpenXml.Drawing.LinePropertiesExtension>())
+    var collection = new Collection<DMDraws.LinePropertiesExtension>();
+    foreach (var item in openXmlElement.Elements<DXDraw.LinePropertiesExtension>())
     {
-      var newItem = DocumentModel.OpenXml.Drawings.LinePropertiesExtensionConverter.CreateModelElement(item);
+      var newItem = DMXDraws.LinePropertiesExtensionConverter.CreateModelElement(item);
       if (newItem != null)
         collection.Add(newItem);
     }
     return collection;
   }
   
-  private static void SetLinePropertiesExtensions(DocumentFormat.OpenXml.Drawing.LinePropertiesExtensionList openXmlElement, System.Collections.ObjectModel.Collection<DocumentModel.Drawings.LinePropertiesExtension>? value)
+  private static void SetLinePropertiesExtensions(DXDraw.LinePropertiesExtensionList openXmlElement, Collection<DMDraws.LinePropertiesExtension>? value)
   {
-    openXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Drawing.LinePropertiesExtension>();
+    openXmlElement.RemoveAllChildren<DXDraw.LinePropertiesExtension>();
     if (value != null)
     {
       foreach (var item in value)
       {
-        var newItem = DocumentModel.OpenXml.Drawings.LinePropertiesExtensionConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.LinePropertiesExtension>(item);
+        var newItem = DMXDraws.LinePropertiesExtensionConverter.CreateOpenXmlElement<DXDraw.LinePropertiesExtension>(item);
         if (newItem != null)
           openXmlElement.AddChild(newItem);
       }
     }
   }
   
-  public static DocumentModel.Drawings.LinePropertiesExtensionList? CreateModelElement(DocumentFormat.OpenXml.Drawing.LinePropertiesExtensionList? openXmlElement)
+  public static DMDraws.LinePropertiesExtensionList? CreateModelElement(DXDraw.LinePropertiesExtensionList? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.LinePropertiesExtensionList();
+      var value = new DMDraws.LinePropertiesExtensionList();
       value.LinePropertiesExtensions = GetLinePropertiesExtensions(openXmlElement);
       return value;
     }
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.LinePropertiesExtensionList? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.LinePropertiesExtensionList, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDraws.LinePropertiesExtensionList? value)
+    where OpenXmlElementType: DXDraw.LinePropertiesExtensionList, new()
   {
     if (value != null)
     {

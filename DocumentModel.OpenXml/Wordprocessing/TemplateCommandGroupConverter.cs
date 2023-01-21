@@ -5,110 +5,110 @@ namespace DocumentModel.OpenXml.Wordprocessing;
 /// </summary>
 public static class TemplateCommandGroupConverter
 {
-  private static System.Collections.ObjectModel.Collection<DocumentModel.Wordprocessing.KeyMapCustomizations> GetKeyMapCustomizationses(DocumentFormat.OpenXml.Office.Word.TemplateCommandGroup openXmlElement)
+  private static Collection<DMW.KeyMapCustomizations> GetKeyMapCustomizationses(DXOW.TemplateCommandGroup openXmlElement)
   {
-    var collection = new System.Collections.ObjectModel.Collection<DocumentModel.Wordprocessing.KeyMapCustomizations>();
-    foreach (var item in openXmlElement.Elements<DocumentFormat.OpenXml.Office.Word.KeyMapCustomizations>())
+    var collection = new Collection<DMW.KeyMapCustomizations>();
+    foreach (var item in openXmlElement.Elements<DXOW.KeyMapCustomizations>())
     {
-      var newItem = DocumentModel.OpenXml.Wordprocessing.KeyMapCustomizationsConverter.CreateModelElement(item);
+      var newItem = DMXW.KeyMapCustomizationsConverter.CreateModelElement(item);
       if (newItem != null)
         collection.Add(newItem);
     }
     return collection;
   }
   
-  private static void SetKeyMapCustomizationses(DocumentFormat.OpenXml.Office.Word.TemplateCommandGroup openXmlElement, System.Collections.ObjectModel.Collection<DocumentModel.Wordprocessing.KeyMapCustomizations>? value)
+  private static void SetKeyMapCustomizationses(DXOW.TemplateCommandGroup openXmlElement, Collection<DMW.KeyMapCustomizations>? value)
   {
-    openXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Office.Word.KeyMapCustomizations>();
+    openXmlElement.RemoveAllChildren<DXOW.KeyMapCustomizations>();
     if (value != null)
     {
       foreach (var item in value)
       {
-        var newItem = DocumentModel.OpenXml.Wordprocessing.KeyMapCustomizationsConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office.Word.KeyMapCustomizations>(item);
+        var newItem = DMXW.KeyMapCustomizationsConverter.CreateOpenXmlElement<DXOW.KeyMapCustomizations>(item);
         if (newItem != null)
           openXmlElement.AddChild(newItem);
       }
     }
   }
   
-  private static System.Collections.ObjectModel.Collection<DocumentModel.Wordprocessing.MismatchedKeyMapCustomization> GetMismatchedKeyMapCustomizations(DocumentFormat.OpenXml.Office.Word.TemplateCommandGroup openXmlElement)
+  private static Collection<DMW.MismatchedKeyMapCustomization> GetMismatchedKeyMapCustomizations(DXOW.TemplateCommandGroup openXmlElement)
   {
-    var collection = new System.Collections.ObjectModel.Collection<DocumentModel.Wordprocessing.MismatchedKeyMapCustomization>();
-    foreach (var item in openXmlElement.Elements<DocumentFormat.OpenXml.Office.Word.MismatchedKeyMapCustomization>())
+    var collection = new Collection<DMW.MismatchedKeyMapCustomization>();
+    foreach (var item in openXmlElement.Elements<DXOW.MismatchedKeyMapCustomization>())
     {
-      var newItem = DocumentModel.OpenXml.Wordprocessing.MismatchedKeyMapCustomizationConverter.CreateModelElement(item);
+      var newItem = DMXW.MismatchedKeyMapCustomizationConverter.CreateModelElement(item);
       if (newItem != null)
         collection.Add(newItem);
     }
     return collection;
   }
   
-  private static void SetMismatchedKeyMapCustomizations(DocumentFormat.OpenXml.Office.Word.TemplateCommandGroup openXmlElement, System.Collections.ObjectModel.Collection<DocumentModel.Wordprocessing.MismatchedKeyMapCustomization>? value)
+  private static void SetMismatchedKeyMapCustomizations(DXOW.TemplateCommandGroup openXmlElement, Collection<DMW.MismatchedKeyMapCustomization>? value)
   {
-    openXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Office.Word.MismatchedKeyMapCustomization>();
+    openXmlElement.RemoveAllChildren<DXOW.MismatchedKeyMapCustomization>();
     if (value != null)
     {
       foreach (var item in value)
       {
-        var newItem = DocumentModel.OpenXml.Wordprocessing.MismatchedKeyMapCustomizationConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office.Word.MismatchedKeyMapCustomization>(item);
+        var newItem = DMXW.MismatchedKeyMapCustomizationConverter.CreateOpenXmlElement<DXOW.MismatchedKeyMapCustomization>(item);
         if (newItem != null)
           openXmlElement.AddChild(newItem);
       }
     }
   }
   
-  private static DocumentModel.Wordprocessing.Toolbars? GetToolbars(DocumentFormat.OpenXml.Office.Word.TemplateCommandGroup openXmlElement)
+  private static DMW.Toolbars? GetToolbars(DXOW.TemplateCommandGroup openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office.Word.Toolbars>();
+    var itemElement = openXmlElement?.GetFirstChild<DXOW.Toolbars>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Wordprocessing.ToolbarsConverter.CreateModelElement(itemElement);
+      return DMXW.ToolbarsConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetToolbars(DocumentFormat.OpenXml.Office.Word.TemplateCommandGroup openXmlElement, DocumentModel.Wordprocessing.Toolbars? value)
+  private static void SetToolbars(DXOW.TemplateCommandGroup openXmlElement, DMW.Toolbars? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office.Word.Toolbars>();
+    var itemElement = openXmlElement.GetFirstChild<DXOW.Toolbars>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Wordprocessing.ToolbarsConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office.Word.Toolbars>(value);
+      itemElement = DMXW.ToolbarsConverter.CreateOpenXmlElement<DXOW.Toolbars>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static System.Collections.ObjectModel.Collection<DocumentModel.Wordprocessing.AllocatedCommands> GetAllocatedCommandses(DocumentFormat.OpenXml.Office.Word.TemplateCommandGroup openXmlElement)
+  private static Collection<DMW.AllocatedCommands> GetAllocatedCommandses(DXOW.TemplateCommandGroup openXmlElement)
   {
-    var collection = new System.Collections.ObjectModel.Collection<DocumentModel.Wordprocessing.AllocatedCommands>();
-    foreach (var item in openXmlElement.Elements<DocumentFormat.OpenXml.Office.Word.AllocatedCommands>())
+    var collection = new Collection<DMW.AllocatedCommands>();
+    foreach (var item in openXmlElement.Elements<DXOW.AllocatedCommands>())
     {
-      var newItem = DocumentModel.OpenXml.Wordprocessing.AllocatedCommandsConverter.CreateModelElement(item);
+      var newItem = DMXW.AllocatedCommandsConverter.CreateModelElement(item);
       if (newItem != null)
         collection.Add(newItem);
     }
     return collection;
   }
   
-  private static void SetAllocatedCommandses(DocumentFormat.OpenXml.Office.Word.TemplateCommandGroup openXmlElement, System.Collections.ObjectModel.Collection<DocumentModel.Wordprocessing.AllocatedCommands>? value)
+  private static void SetAllocatedCommandses(DXOW.TemplateCommandGroup openXmlElement, Collection<DMW.AllocatedCommands>? value)
   {
-    openXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Office.Word.AllocatedCommands>();
+    openXmlElement.RemoveAllChildren<DXOW.AllocatedCommands>();
     if (value != null)
     {
       foreach (var item in value)
       {
-        var newItem = DocumentModel.OpenXml.Wordprocessing.AllocatedCommandsConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office.Word.AllocatedCommands>(item);
+        var newItem = DMXW.AllocatedCommandsConverter.CreateOpenXmlElement<DXOW.AllocatedCommands>(item);
         if (newItem != null)
           openXmlElement.AddChild(newItem);
       }
     }
   }
   
-  public static DocumentModel.Wordprocessing.TemplateCommandGroup? CreateModelElement(DocumentFormat.OpenXml.Office.Word.TemplateCommandGroup? openXmlElement)
+  public static DMW.TemplateCommandGroup? CreateModelElement(DXOW.TemplateCommandGroup? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Wordprocessing.TemplateCommandGroup();
+      var value = new DMW.TemplateCommandGroup();
       value.KeyMapCustomizationses = GetKeyMapCustomizationses(openXmlElement);
       value.MismatchedKeyMapCustomizations = GetMismatchedKeyMapCustomizations(openXmlElement);
       value.Toolbars = GetToolbars(openXmlElement);
@@ -118,8 +118,8 @@ public static class TemplateCommandGroupConverter
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.TemplateCommandGroup? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Office.Word.TemplateCommandGroup, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMW.TemplateCommandGroup? value)
+    where OpenXmlElementType: DXOW.TemplateCommandGroup, new()
   {
     if (value != null)
     {

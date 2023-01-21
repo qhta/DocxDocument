@@ -8,12 +8,12 @@ public static class AreaChartExtensionConverter
   /// <summary>
   /// URI
   /// </summary>
-  private static String? GetUri(DocumentFormat.OpenXml.Drawing.Charts.AreaChartExtension openXmlElement)
+  private static String? GetUri(DXDrawCharts.AreaChartExtension openXmlElement)
   {
     return openXmlElement?.Uri?.Value;
   }
   
-  private static void SetUri(DocumentFormat.OpenXml.Drawing.Charts.AreaChartExtension openXmlElement, String? value)
+  private static void SetUri(DXDrawCharts.AreaChartExtension openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.Uri = new StringValue { Value = value };
@@ -21,32 +21,32 @@ public static class AreaChartExtensionConverter
       openXmlElement.Uri = null;
   }
   
-  private static DocumentModel.Drawings.Charts.FilteredAreaSeries? GetFilteredAreaSeries(DocumentFormat.OpenXml.Drawing.Charts.AreaChartExtension openXmlElement)
+  private static DMDrawsCharts.FilteredAreaSeries? GetFilteredAreaSeries(DXDrawCharts.AreaChartExtension openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office2013.Drawing.Chart.FilteredAreaSeries>();
+    var itemElement = openXmlElement?.GetFirstChild<DXO2013DrawChart.FilteredAreaSeries>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.Charts.FilteredAreaSeriesConverter.CreateModelElement(itemElement);
+      return DMXDrawsCharts.FilteredAreaSeriesConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetFilteredAreaSeries(DocumentFormat.OpenXml.Drawing.Charts.AreaChartExtension openXmlElement, DocumentModel.Drawings.Charts.FilteredAreaSeries? value)
+  private static void SetFilteredAreaSeries(DXDrawCharts.AreaChartExtension openXmlElement, DMDrawsCharts.FilteredAreaSeries? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2013.Drawing.Chart.FilteredAreaSeries>();
+    var itemElement = openXmlElement.GetFirstChild<DXO2013DrawChart.FilteredAreaSeries>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Drawings.Charts.FilteredAreaSeriesConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2013.Drawing.Chart.FilteredAreaSeries>(value);
+      itemElement = DMXDrawsCharts.FilteredAreaSeriesConverter.CreateOpenXmlElement<DXO2013DrawChart.FilteredAreaSeries>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  public static DocumentModel.Drawings.Charts.AreaChartExtension? CreateModelElement(DocumentFormat.OpenXml.Drawing.Charts.AreaChartExtension? openXmlElement)
+  public static DMDrawsCharts.AreaChartExtension? CreateModelElement(DXDrawCharts.AreaChartExtension? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.Charts.AreaChartExtension();
+      var value = new DMDrawsCharts.AreaChartExtension();
       value.Uri = GetUri(openXmlElement);
       value.FilteredAreaSeries = GetFilteredAreaSeries(openXmlElement);
       return value;
@@ -54,8 +54,8 @@ public static class AreaChartExtensionConverter
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.Charts.AreaChartExtension? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.Charts.AreaChartExtension, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDrawsCharts.AreaChartExtension? value)
+    where OpenXmlElementType: DXDrawCharts.AreaChartExtension, new()
   {
     if (value != null)
     {

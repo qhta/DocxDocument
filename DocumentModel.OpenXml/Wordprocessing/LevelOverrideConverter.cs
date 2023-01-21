@@ -8,12 +8,12 @@ public static class LevelOverrideConverter
   /// <summary>
   /// Numbering Level ID
   /// </summary>
-  private static Int32? GetLevelIndex(DocumentFormat.OpenXml.Wordprocessing.LevelOverride openXmlElement)
+  private static Int32? GetLevelIndex(DXW.LevelOverride openXmlElement)
   {
     return openXmlElement.LevelIndex?.Value;
   }
   
-  private static void SetLevelIndex(DocumentFormat.OpenXml.Wordprocessing.LevelOverride openXmlElement, Int32? value)
+  private static void SetLevelIndex(DXW.LevelOverride openXmlElement, Int32? value)
   {
     openXmlElement.LevelIndex = value;
   }
@@ -21,22 +21,22 @@ public static class LevelOverrideConverter
   /// <summary>
   /// Numbering Level Starting Value Override.
   /// </summary>
-  private static Int32? GetStartOverrideNumberingValue(DocumentFormat.OpenXml.Wordprocessing.LevelOverride openXmlElement)
+  private static Int32? GetStartOverrideNumberingValue(DXW.LevelOverride openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.StartOverrideNumberingValue>();
+    var itemElement = openXmlElement?.GetFirstChild<DXW.StartOverrideNumberingValue>();
     if (itemElement != null)
       return itemElement.Val?.Value;
     return null;
   }
   
-  private static void SetStartOverrideNumberingValue(DocumentFormat.OpenXml.Wordprocessing.LevelOverride openXmlElement, Int32? value)
+  private static void SetStartOverrideNumberingValue(DXW.LevelOverride openXmlElement, Int32? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.StartOverrideNumberingValue>();
+    var itemElement = openXmlElement.GetFirstChild<DXW.StartOverrideNumberingValue>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = new DocumentFormat.OpenXml.Wordprocessing.StartOverrideNumberingValue{ Val = value };
+      itemElement = new DXW.StartOverrideNumberingValue{ Val = value };
       openXmlElement.AddChild(itemElement);
     }
   }
@@ -44,32 +44,32 @@ public static class LevelOverrideConverter
   /// <summary>
   /// Numbering Level Override Definition.
   /// </summary>
-  private static DocumentModel.Wordprocessing.Level? GetLevel(DocumentFormat.OpenXml.Wordprocessing.LevelOverride openXmlElement)
+  private static DMW.Level? GetLevel(DXW.LevelOverride openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.Level>();
+    var itemElement = openXmlElement?.GetFirstChild<DXW.Level>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Wordprocessing.LevelConverter.CreateModelElement(itemElement);
+      return DMXW.LevelConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetLevel(DocumentFormat.OpenXml.Wordprocessing.LevelOverride openXmlElement, DocumentModel.Wordprocessing.Level? value)
+  private static void SetLevel(DXW.LevelOverride openXmlElement, DMW.Level? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.Level>();
+    var itemElement = openXmlElement.GetFirstChild<DXW.Level>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Wordprocessing.LevelConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.Level>(value);
+      itemElement = DMXW.LevelConverter.CreateOpenXmlElement<DXW.Level>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  public static DocumentModel.Wordprocessing.LevelOverride? CreateModelElement(DocumentFormat.OpenXml.Wordprocessing.LevelOverride? openXmlElement)
+  public static DMW.LevelOverride? CreateModelElement(DXW.LevelOverride? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Wordprocessing.LevelOverride();
+      var value = new DMW.LevelOverride();
       value.LevelIndex = GetLevelIndex(openXmlElement);
       value.StartOverrideNumberingValue = GetStartOverrideNumberingValue(openXmlElement);
       value.Level = GetLevel(openXmlElement);
@@ -78,8 +78,8 @@ public static class LevelOverrideConverter
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.LevelOverride? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Wordprocessing.LevelOverride, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMW.LevelOverride? value)
+    where OpenXmlElementType: DXW.LevelOverride, new()
   {
     if (value != null)
     {

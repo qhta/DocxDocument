@@ -8,29 +8,29 @@ public static class AlphaModulationFixedConverter
   /// <summary>
   /// Amount
   /// </summary>
-  private static Int32? GetAmount(DocumentFormat.OpenXml.Drawing.AlphaModulationFixed openXmlElement)
+  private static Int32? GetAmount(DXDraw.AlphaModulationFixed openXmlElement)
   {
     return openXmlElement.Amount?.Value;
   }
   
-  private static void SetAmount(DocumentFormat.OpenXml.Drawing.AlphaModulationFixed openXmlElement, Int32? value)
+  private static void SetAmount(DXDraw.AlphaModulationFixed openXmlElement, Int32? value)
   {
     openXmlElement.Amount = value;
   }
   
-  public static DocumentModel.Drawings.AlphaModulationFixed? CreateModelElement(DocumentFormat.OpenXml.Drawing.AlphaModulationFixed? openXmlElement)
+  public static DMDraws.AlphaModulationFixed? CreateModelElement(DXDraw.AlphaModulationFixed? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.AlphaModulationFixed();
+      var value = new DMDraws.AlphaModulationFixed();
       value.Amount = GetAmount(openXmlElement);
       return value;
     }
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.AlphaModulationFixed? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.AlphaModulationFixed, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDraws.AlphaModulationFixed? value)
+    where OpenXmlElementType: DXDraw.AlphaModulationFixed, new()
   {
     if (value != null)
     {

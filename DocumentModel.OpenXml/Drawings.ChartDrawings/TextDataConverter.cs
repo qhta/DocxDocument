@@ -5,52 +5,52 @@ namespace DocumentModel.OpenXml.Drawings.ChartDrawings;
 /// </summary>
 public static class TextDataConverter
 {
-  private static DocumentModel.Drawings.ChartDrawings.OpenXmlFormulaElement? GetFormula(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.TextData openXmlElement)
+  private static DMDrawsChartDraws.OpenXmlFormulaElement? GetFormula(DXO2016DrawChartDraw.TextData openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.Formula>();
+    var itemElement = openXmlElement?.GetFirstChild<DXO2016DrawChartDraw.Formula>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.ChartDrawings.OpenXmlFormulaElementConverter.CreateModelElement(itemElement);
+      return DMXDrawsChartDraws.OpenXmlFormulaElementConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetFormula(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.TextData openXmlElement, DocumentModel.Drawings.ChartDrawings.OpenXmlFormulaElement? value)
+  private static void SetFormula(DXO2016DrawChartDraw.TextData openXmlElement, DMDrawsChartDraws.OpenXmlFormulaElement? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.Formula>();
+    var itemElement = openXmlElement.GetFirstChild<DXO2016DrawChartDraw.Formula>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Drawings.ChartDrawings.OpenXmlFormulaElementConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.Formula>(value);
+      itemElement = DMXDrawsChartDraws.OpenXmlFormulaElementConverter.CreateOpenXmlElement<DXO2016DrawChartDraw.Formula>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static String? GetVXsdstring(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.TextData openXmlElement)
+  private static String? GetVXsdstring(DXO2016DrawChartDraw.TextData openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.VXsdstring>();
+    var itemElement = openXmlElement?.GetFirstChild<DXO2016DrawChartDraw.VXsdstring>();
     if (itemElement != null)
       return itemElement.Text;
     return null;
   }
   
-  private static void SetVXsdstring(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.TextData openXmlElement, String? value)
+  private static void SetVXsdstring(DXO2016DrawChartDraw.TextData openXmlElement, String? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.VXsdstring>();
+    var itemElement = openXmlElement.GetFirstChild<DXO2016DrawChartDraw.VXsdstring>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = new DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.VXsdstring { Text = value };
+      itemElement = new DXO2016DrawChartDraw.VXsdstring { Text = value };
       openXmlElement.AddChild(itemElement);
     }
   }
   
-  public static DocumentModel.Drawings.ChartDrawings.TextData? CreateModelElement(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.TextData? openXmlElement)
+  public static DMDrawsChartDraws.TextData? CreateModelElement(DXO2016DrawChartDraw.TextData? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.ChartDrawings.TextData();
+      var value = new DMDrawsChartDraws.TextData();
       value.Formula = GetFormula(openXmlElement);
       value.VXsdstring = GetVXsdstring(openXmlElement);
       return value;
@@ -58,8 +58,8 @@ public static class TextDataConverter
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.ChartDrawings.TextData? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.TextData, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDrawsChartDraws.TextData? value)
+    where OpenXmlElementType: DXO2016DrawChartDraw.TextData, new()
   {
     if (value != null)
     {

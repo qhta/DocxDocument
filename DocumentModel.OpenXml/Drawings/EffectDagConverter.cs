@@ -5,641 +5,641 @@ namespace DocumentModel.OpenXml.Drawings;
 /// </summary>
 public static class EffectDagConverter
 {
-  private static DocumentModel.Drawings.EffectContainer? GetEffectContainer(DocumentFormat.OpenXml.Drawing.EffectDag openXmlElement)
+  private static DMDraws.EffectContainer? GetEffectContainer(DXDraw.EffectDag openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.EffectContainer>();
+    var itemElement = openXmlElement?.GetFirstChild<DXDraw.EffectContainer>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.EffectContainerConverter.CreateModelElement(itemElement);
+      return DMXDraws.EffectContainerConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetEffectContainer(DocumentFormat.OpenXml.Drawing.EffectDag openXmlElement, DocumentModel.Drawings.EffectContainer? value)
+  private static void SetEffectContainer(DXDraw.EffectDag openXmlElement, DMDraws.EffectContainer? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.EffectContainer>();
+    var itemElement = openXmlElement.GetFirstChild<DXDraw.EffectContainer>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Drawings.EffectContainerConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.EffectContainer>(value);
+      itemElement = DMXDraws.EffectContainerConverter.CreateOpenXmlElement<DXDraw.EffectContainer>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static DocumentModel.Drawings.Effect? GetEffect(DocumentFormat.OpenXml.Drawing.EffectDag openXmlElement)
+  private static DMDraws.Effect? GetEffect(DXDraw.EffectDag openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.Effect>();
+    var itemElement = openXmlElement?.GetFirstChild<DXDraw.Effect>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.EffectConverter.CreateModelElement(itemElement);
+      return DMXDraws.EffectConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetEffect(DocumentFormat.OpenXml.Drawing.EffectDag openXmlElement, DocumentModel.Drawings.Effect? value)
+  private static void SetEffect(DXDraw.EffectDag openXmlElement, DMDraws.Effect? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Effect>();
+    var itemElement = openXmlElement.GetFirstChild<DXDraw.Effect>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Drawings.EffectConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Effect>(value);
+      itemElement = DMXDraws.EffectConverter.CreateOpenXmlElement<DXDraw.Effect>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static DocumentModel.Drawings.AlphaBiLevel? GetAlphaBiLevel(DocumentFormat.OpenXml.Drawing.EffectDag openXmlElement)
+  private static DMDraws.AlphaBiLevel? GetAlphaBiLevel(DXDraw.EffectDag openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.AlphaBiLevel>();
+    var itemElement = openXmlElement?.GetFirstChild<DXDraw.AlphaBiLevel>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.AlphaBiLevelConverter.CreateModelElement(itemElement);
+      return DMXDraws.AlphaBiLevelConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetAlphaBiLevel(DocumentFormat.OpenXml.Drawing.EffectDag openXmlElement, DocumentModel.Drawings.AlphaBiLevel? value)
+  private static void SetAlphaBiLevel(DXDraw.EffectDag openXmlElement, DMDraws.AlphaBiLevel? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.AlphaBiLevel>();
+    var itemElement = openXmlElement.GetFirstChild<DXDraw.AlphaBiLevel>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Drawings.AlphaBiLevelConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.AlphaBiLevel>(value);
+      itemElement = DMXDraws.AlphaBiLevelConverter.CreateOpenXmlElement<DXDraw.AlphaBiLevel>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static Boolean? GetAlphaCeiling(DocumentFormat.OpenXml.Drawing.EffectDag openXmlElement)
+  private static Boolean? GetAlphaCeiling(DXDraw.EffectDag openXmlElement)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.AlphaCeiling>();
+    var itemElement = openXmlElement.GetFirstChild<DXDraw.AlphaCeiling>();
     return itemElement != null;
   }
   
-  private static void SetAlphaCeiling(DocumentFormat.OpenXml.Drawing.EffectDag openXmlElement, Boolean? value)
+  private static void SetAlphaCeiling(DXDraw.EffectDag openXmlElement, Boolean? value)
   {
     if (value == false)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.AlphaCeiling>();
+      var itemElement = openXmlElement.GetFirstChild<DXDraw.AlphaCeiling>();
       if (itemElement != null)
         itemElement.Remove();
     }
     if (value == true)
     {
-      var itemElement = new DocumentFormat.OpenXml.Drawing.AlphaCeiling();
+      var itemElement = new DXDraw.AlphaCeiling();
       openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static Boolean? GetAlphaFloor(DocumentFormat.OpenXml.Drawing.EffectDag openXmlElement)
+  private static Boolean? GetAlphaFloor(DXDraw.EffectDag openXmlElement)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.AlphaFloor>();
+    var itemElement = openXmlElement.GetFirstChild<DXDraw.AlphaFloor>();
     return itemElement != null;
   }
   
-  private static void SetAlphaFloor(DocumentFormat.OpenXml.Drawing.EffectDag openXmlElement, Boolean? value)
+  private static void SetAlphaFloor(DXDraw.EffectDag openXmlElement, Boolean? value)
   {
     if (value == false)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.AlphaFloor>();
+      var itemElement = openXmlElement.GetFirstChild<DXDraw.AlphaFloor>();
       if (itemElement != null)
         itemElement.Remove();
     }
     if (value == true)
     {
-      var itemElement = new DocumentFormat.OpenXml.Drawing.AlphaFloor();
+      var itemElement = new DXDraw.AlphaFloor();
       openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static DocumentModel.Drawings.AlphaInverse? GetAlphaInverse(DocumentFormat.OpenXml.Drawing.EffectDag openXmlElement)
+  private static DMDraws.AlphaInverse? GetAlphaInverse(DXDraw.EffectDag openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.AlphaInverse>();
+    var itemElement = openXmlElement?.GetFirstChild<DXDraw.AlphaInverse>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.AlphaInverseConverter.CreateModelElement(itemElement);
+      return DMXDraws.AlphaInverseConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetAlphaInverse(DocumentFormat.OpenXml.Drawing.EffectDag openXmlElement, DocumentModel.Drawings.AlphaInverse? value)
+  private static void SetAlphaInverse(DXDraw.EffectDag openXmlElement, DMDraws.AlphaInverse? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.AlphaInverse>();
+    var itemElement = openXmlElement.GetFirstChild<DXDraw.AlphaInverse>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Drawings.AlphaInverseConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.AlphaInverse>(value);
+      itemElement = DMXDraws.AlphaInverseConverter.CreateOpenXmlElement<DXDraw.AlphaInverse>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static DocumentModel.Drawings.AlphaModulationEffect? GetAlphaModulationEffect(DocumentFormat.OpenXml.Drawing.EffectDag openXmlElement)
+  private static DMDraws.AlphaModulationEffect? GetAlphaModulationEffect(DXDraw.EffectDag openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.AlphaModulationEffect>();
+    var itemElement = openXmlElement?.GetFirstChild<DXDraw.AlphaModulationEffect>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.AlphaModulationEffectConverter.CreateModelElement(itemElement);
+      return DMXDraws.AlphaModulationEffectConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetAlphaModulationEffect(DocumentFormat.OpenXml.Drawing.EffectDag openXmlElement, DocumentModel.Drawings.AlphaModulationEffect? value)
+  private static void SetAlphaModulationEffect(DXDraw.EffectDag openXmlElement, DMDraws.AlphaModulationEffect? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.AlphaModulationEffect>();
+    var itemElement = openXmlElement.GetFirstChild<DXDraw.AlphaModulationEffect>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Drawings.AlphaModulationEffectConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.AlphaModulationEffect>(value);
+      itemElement = DMXDraws.AlphaModulationEffectConverter.CreateOpenXmlElement<DXDraw.AlphaModulationEffect>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static DocumentModel.Drawings.AlphaModulationFixed? GetAlphaModulationFixed(DocumentFormat.OpenXml.Drawing.EffectDag openXmlElement)
+  private static DMDraws.AlphaModulationFixed? GetAlphaModulationFixed(DXDraw.EffectDag openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.AlphaModulationFixed>();
+    var itemElement = openXmlElement?.GetFirstChild<DXDraw.AlphaModulationFixed>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.AlphaModulationFixedConverter.CreateModelElement(itemElement);
+      return DMXDraws.AlphaModulationFixedConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetAlphaModulationFixed(DocumentFormat.OpenXml.Drawing.EffectDag openXmlElement, DocumentModel.Drawings.AlphaModulationFixed? value)
+  private static void SetAlphaModulationFixed(DXDraw.EffectDag openXmlElement, DMDraws.AlphaModulationFixed? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.AlphaModulationFixed>();
+    var itemElement = openXmlElement.GetFirstChild<DXDraw.AlphaModulationFixed>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Drawings.AlphaModulationFixedConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.AlphaModulationFixed>(value);
+      itemElement = DMXDraws.AlphaModulationFixedConverter.CreateOpenXmlElement<DXDraw.AlphaModulationFixed>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static DocumentModel.Drawings.AlphaOutset? GetAlphaOutset(DocumentFormat.OpenXml.Drawing.EffectDag openXmlElement)
+  private static DMDraws.AlphaOutset? GetAlphaOutset(DXDraw.EffectDag openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.AlphaOutset>();
+    var itemElement = openXmlElement?.GetFirstChild<DXDraw.AlphaOutset>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.AlphaOutsetConverter.CreateModelElement(itemElement);
+      return DMXDraws.AlphaOutsetConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetAlphaOutset(DocumentFormat.OpenXml.Drawing.EffectDag openXmlElement, DocumentModel.Drawings.AlphaOutset? value)
+  private static void SetAlphaOutset(DXDraw.EffectDag openXmlElement, DMDraws.AlphaOutset? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.AlphaOutset>();
+    var itemElement = openXmlElement.GetFirstChild<DXDraw.AlphaOutset>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Drawings.AlphaOutsetConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.AlphaOutset>(value);
+      itemElement = DMXDraws.AlphaOutsetConverter.CreateOpenXmlElement<DXDraw.AlphaOutset>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static DocumentModel.Drawings.AlphaReplace? GetAlphaReplace(DocumentFormat.OpenXml.Drawing.EffectDag openXmlElement)
+  private static DMDraws.AlphaReplace? GetAlphaReplace(DXDraw.EffectDag openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.AlphaReplace>();
+    var itemElement = openXmlElement?.GetFirstChild<DXDraw.AlphaReplace>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.AlphaReplaceConverter.CreateModelElement(itemElement);
+      return DMXDraws.AlphaReplaceConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetAlphaReplace(DocumentFormat.OpenXml.Drawing.EffectDag openXmlElement, DocumentModel.Drawings.AlphaReplace? value)
+  private static void SetAlphaReplace(DXDraw.EffectDag openXmlElement, DMDraws.AlphaReplace? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.AlphaReplace>();
+    var itemElement = openXmlElement.GetFirstChild<DXDraw.AlphaReplace>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Drawings.AlphaReplaceConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.AlphaReplace>(value);
+      itemElement = DMXDraws.AlphaReplaceConverter.CreateOpenXmlElement<DXDraw.AlphaReplace>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static DocumentModel.Drawings.BiLevel? GetBiLevel(DocumentFormat.OpenXml.Drawing.EffectDag openXmlElement)
+  private static DMDraws.BiLevel? GetBiLevel(DXDraw.EffectDag openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.BiLevel>();
+    var itemElement = openXmlElement?.GetFirstChild<DXDraw.BiLevel>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.BiLevelConverter.CreateModelElement(itemElement);
+      return DMXDraws.BiLevelConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetBiLevel(DocumentFormat.OpenXml.Drawing.EffectDag openXmlElement, DocumentModel.Drawings.BiLevel? value)
+  private static void SetBiLevel(DXDraw.EffectDag openXmlElement, DMDraws.BiLevel? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.BiLevel>();
+    var itemElement = openXmlElement.GetFirstChild<DXDraw.BiLevel>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Drawings.BiLevelConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.BiLevel>(value);
+      itemElement = DMXDraws.BiLevelConverter.CreateOpenXmlElement<DXDraw.BiLevel>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static DocumentModel.Drawings.Blend? GetBlend(DocumentFormat.OpenXml.Drawing.EffectDag openXmlElement)
+  private static DMDraws.Blend? GetBlend(DXDraw.EffectDag openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.Blend>();
+    var itemElement = openXmlElement?.GetFirstChild<DXDraw.Blend>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.BlendConverter.CreateModelElement(itemElement);
+      return DMXDraws.BlendConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetBlend(DocumentFormat.OpenXml.Drawing.EffectDag openXmlElement, DocumentModel.Drawings.Blend? value)
+  private static void SetBlend(DXDraw.EffectDag openXmlElement, DMDraws.Blend? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Blend>();
+    var itemElement = openXmlElement.GetFirstChild<DXDraw.Blend>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Drawings.BlendConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Blend>(value);
+      itemElement = DMXDraws.BlendConverter.CreateOpenXmlElement<DXDraw.Blend>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static DocumentModel.Drawings.Blur? GetBlur(DocumentFormat.OpenXml.Drawing.EffectDag openXmlElement)
+  private static DMDraws.Blur? GetBlur(DXDraw.EffectDag openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.Blur>();
+    var itemElement = openXmlElement?.GetFirstChild<DXDraw.Blur>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.BlurConverter.CreateModelElement(itemElement);
+      return DMXDraws.BlurConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetBlur(DocumentFormat.OpenXml.Drawing.EffectDag openXmlElement, DocumentModel.Drawings.Blur? value)
+  private static void SetBlur(DXDraw.EffectDag openXmlElement, DMDraws.Blur? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Blur>();
+    var itemElement = openXmlElement.GetFirstChild<DXDraw.Blur>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Drawings.BlurConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Blur>(value);
+      itemElement = DMXDraws.BlurConverter.CreateOpenXmlElement<DXDraw.Blur>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static DocumentModel.Drawings.ColorChange? GetColorChange(DocumentFormat.OpenXml.Drawing.EffectDag openXmlElement)
+  private static DMDraws.ColorChange? GetColorChange(DXDraw.EffectDag openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.ColorChange>();
+    var itemElement = openXmlElement?.GetFirstChild<DXDraw.ColorChange>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.ColorChangeConverter.CreateModelElement(itemElement);
+      return DMXDraws.ColorChangeConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetColorChange(DocumentFormat.OpenXml.Drawing.EffectDag openXmlElement, DocumentModel.Drawings.ColorChange? value)
+  private static void SetColorChange(DXDraw.EffectDag openXmlElement, DMDraws.ColorChange? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.ColorChange>();
+    var itemElement = openXmlElement.GetFirstChild<DXDraw.ColorChange>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Drawings.ColorChangeConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.ColorChange>(value);
+      itemElement = DMXDraws.ColorChangeConverter.CreateOpenXmlElement<DXDraw.ColorChange>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static DocumentModel.Drawings.ColorReplacement? GetColorReplacement(DocumentFormat.OpenXml.Drawing.EffectDag openXmlElement)
+  private static DMDraws.ColorReplacement? GetColorReplacement(DXDraw.EffectDag openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.ColorReplacement>();
+    var itemElement = openXmlElement?.GetFirstChild<DXDraw.ColorReplacement>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.ColorReplacementConverter.CreateModelElement(itemElement);
+      return DMXDraws.ColorReplacementConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetColorReplacement(DocumentFormat.OpenXml.Drawing.EffectDag openXmlElement, DocumentModel.Drawings.ColorReplacement? value)
+  private static void SetColorReplacement(DXDraw.EffectDag openXmlElement, DMDraws.ColorReplacement? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.ColorReplacement>();
+    var itemElement = openXmlElement.GetFirstChild<DXDraw.ColorReplacement>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Drawings.ColorReplacementConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.ColorReplacement>(value);
+      itemElement = DMXDraws.ColorReplacementConverter.CreateOpenXmlElement<DXDraw.ColorReplacement>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static DocumentModel.Drawings.Duotone? GetDuotone(DocumentFormat.OpenXml.Drawing.EffectDag openXmlElement)
+  private static DMDraws.Duotone? GetDuotone(DXDraw.EffectDag openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.Duotone>();
+    var itemElement = openXmlElement?.GetFirstChild<DXDraw.Duotone>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.DuotoneConverter.CreateModelElement(itemElement);
+      return DMXDraws.DuotoneConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetDuotone(DocumentFormat.OpenXml.Drawing.EffectDag openXmlElement, DocumentModel.Drawings.Duotone? value)
+  private static void SetDuotone(DXDraw.EffectDag openXmlElement, DMDraws.Duotone? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Duotone>();
+    var itemElement = openXmlElement.GetFirstChild<DXDraw.Duotone>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Drawings.DuotoneConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Duotone>(value);
+      itemElement = DMXDraws.DuotoneConverter.CreateOpenXmlElement<DXDraw.Duotone>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static DocumentModel.Drawings.Fill? GetFill(DocumentFormat.OpenXml.Drawing.EffectDag openXmlElement)
+  private static DMDraws.Fill? GetFill(DXDraw.EffectDag openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.Fill>();
+    var itemElement = openXmlElement?.GetFirstChild<DXDraw.Fill>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.FillConverter.CreateModelElement(itemElement);
+      return DMXDraws.FillConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetFill(DocumentFormat.OpenXml.Drawing.EffectDag openXmlElement, DocumentModel.Drawings.Fill? value)
+  private static void SetFill(DXDraw.EffectDag openXmlElement, DMDraws.Fill? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Fill>();
+    var itemElement = openXmlElement.GetFirstChild<DXDraw.Fill>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Drawings.FillConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Fill>(value);
+      itemElement = DMXDraws.FillConverter.CreateOpenXmlElement<DXDraw.Fill>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static DocumentModel.Drawings.FillOverlay? GetFillOverlay(DocumentFormat.OpenXml.Drawing.EffectDag openXmlElement)
+  private static DMDraws.FillOverlay? GetFillOverlay(DXDraw.EffectDag openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.FillOverlay>();
+    var itemElement = openXmlElement?.GetFirstChild<DXDraw.FillOverlay>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.FillOverlayConverter.CreateModelElement(itemElement);
+      return DMXDraws.FillOverlayConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetFillOverlay(DocumentFormat.OpenXml.Drawing.EffectDag openXmlElement, DocumentModel.Drawings.FillOverlay? value)
+  private static void SetFillOverlay(DXDraw.EffectDag openXmlElement, DMDraws.FillOverlay? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.FillOverlay>();
+    var itemElement = openXmlElement.GetFirstChild<DXDraw.FillOverlay>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Drawings.FillOverlayConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.FillOverlay>(value);
+      itemElement = DMXDraws.FillOverlayConverter.CreateOpenXmlElement<DXDraw.FillOverlay>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static DocumentModel.Drawings.Glow? GetGlow(DocumentFormat.OpenXml.Drawing.EffectDag openXmlElement)
+  private static DMDraws.Glow? GetGlow(DXDraw.EffectDag openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.Glow>();
+    var itemElement = openXmlElement?.GetFirstChild<DXDraw.Glow>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.GlowConverter.CreateModelElement(itemElement);
+      return DMXDraws.GlowConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetGlow(DocumentFormat.OpenXml.Drawing.EffectDag openXmlElement, DocumentModel.Drawings.Glow? value)
+  private static void SetGlow(DXDraw.EffectDag openXmlElement, DMDraws.Glow? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Glow>();
+    var itemElement = openXmlElement.GetFirstChild<DXDraw.Glow>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Drawings.GlowConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Glow>(value);
+      itemElement = DMXDraws.GlowConverter.CreateOpenXmlElement<DXDraw.Glow>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static Boolean? GetGrayscale(DocumentFormat.OpenXml.Drawing.EffectDag openXmlElement)
+  private static Boolean? GetGrayscale(DXDraw.EffectDag openXmlElement)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Grayscale>();
+    var itemElement = openXmlElement.GetFirstChild<DXDraw.Grayscale>();
     return itemElement != null;
   }
   
-  private static void SetGrayscale(DocumentFormat.OpenXml.Drawing.EffectDag openXmlElement, Boolean? value)
+  private static void SetGrayscale(DXDraw.EffectDag openXmlElement, Boolean? value)
   {
     if (value == false)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Grayscale>();
+      var itemElement = openXmlElement.GetFirstChild<DXDraw.Grayscale>();
       if (itemElement != null)
         itemElement.Remove();
     }
     if (value == true)
     {
-      var itemElement = new DocumentFormat.OpenXml.Drawing.Grayscale();
+      var itemElement = new DXDraw.Grayscale();
       openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static DocumentModel.Drawings.Hsl? GetHsl(DocumentFormat.OpenXml.Drawing.EffectDag openXmlElement)
+  private static DMDraws.Hsl? GetHsl(DXDraw.EffectDag openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.Hsl>();
+    var itemElement = openXmlElement?.GetFirstChild<DXDraw.Hsl>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.HslConverter.CreateModelElement(itemElement);
+      return DMXDraws.HslConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetHsl(DocumentFormat.OpenXml.Drawing.EffectDag openXmlElement, DocumentModel.Drawings.Hsl? value)
+  private static void SetHsl(DXDraw.EffectDag openXmlElement, DMDraws.Hsl? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Hsl>();
+    var itemElement = openXmlElement.GetFirstChild<DXDraw.Hsl>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Drawings.HslConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Hsl>(value);
+      itemElement = DMXDraws.HslConverter.CreateOpenXmlElement<DXDraw.Hsl>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static DocumentModel.Drawings.InnerShadow? GetInnerShadow(DocumentFormat.OpenXml.Drawing.EffectDag openXmlElement)
+  private static DMDraws.InnerShadow? GetInnerShadow(DXDraw.EffectDag openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.InnerShadow>();
+    var itemElement = openXmlElement?.GetFirstChild<DXDraw.InnerShadow>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.InnerShadowConverter.CreateModelElement(itemElement);
+      return DMXDraws.InnerShadowConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetInnerShadow(DocumentFormat.OpenXml.Drawing.EffectDag openXmlElement, DocumentModel.Drawings.InnerShadow? value)
+  private static void SetInnerShadow(DXDraw.EffectDag openXmlElement, DMDraws.InnerShadow? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.InnerShadow>();
+    var itemElement = openXmlElement.GetFirstChild<DXDraw.InnerShadow>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Drawings.InnerShadowConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.InnerShadow>(value);
+      itemElement = DMXDraws.InnerShadowConverter.CreateOpenXmlElement<DXDraw.InnerShadow>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static DocumentModel.Drawings.LuminanceEffect? GetLuminanceEffect(DocumentFormat.OpenXml.Drawing.EffectDag openXmlElement)
+  private static DMDraws.LuminanceEffect? GetLuminanceEffect(DXDraw.EffectDag openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.LuminanceEffect>();
+    var itemElement = openXmlElement?.GetFirstChild<DXDraw.LuminanceEffect>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.LuminanceEffectConverter.CreateModelElement(itemElement);
+      return DMXDraws.LuminanceEffectConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetLuminanceEffect(DocumentFormat.OpenXml.Drawing.EffectDag openXmlElement, DocumentModel.Drawings.LuminanceEffect? value)
+  private static void SetLuminanceEffect(DXDraw.EffectDag openXmlElement, DMDraws.LuminanceEffect? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.LuminanceEffect>();
+    var itemElement = openXmlElement.GetFirstChild<DXDraw.LuminanceEffect>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Drawings.LuminanceEffectConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.LuminanceEffect>(value);
+      itemElement = DMXDraws.LuminanceEffectConverter.CreateOpenXmlElement<DXDraw.LuminanceEffect>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static DocumentModel.Drawings.OuterShadow? GetOuterShadow(DocumentFormat.OpenXml.Drawing.EffectDag openXmlElement)
+  private static DMDraws.OuterShadow? GetOuterShadow(DXDraw.EffectDag openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.OuterShadow>();
+    var itemElement = openXmlElement?.GetFirstChild<DXDraw.OuterShadow>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.OuterShadowConverter.CreateModelElement(itemElement);
+      return DMXDraws.OuterShadowConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetOuterShadow(DocumentFormat.OpenXml.Drawing.EffectDag openXmlElement, DocumentModel.Drawings.OuterShadow? value)
+  private static void SetOuterShadow(DXDraw.EffectDag openXmlElement, DMDraws.OuterShadow? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.OuterShadow>();
+    var itemElement = openXmlElement.GetFirstChild<DXDraw.OuterShadow>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Drawings.OuterShadowConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.OuterShadow>(value);
+      itemElement = DMXDraws.OuterShadowConverter.CreateOpenXmlElement<DXDraw.OuterShadow>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static DocumentModel.Drawings.PresetShadow? GetPresetShadow(DocumentFormat.OpenXml.Drawing.EffectDag openXmlElement)
+  private static DMDraws.PresetShadow? GetPresetShadow(DXDraw.EffectDag openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.PresetShadow>();
+    var itemElement = openXmlElement?.GetFirstChild<DXDraw.PresetShadow>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.PresetShadowConverter.CreateModelElement(itemElement);
+      return DMXDraws.PresetShadowConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetPresetShadow(DocumentFormat.OpenXml.Drawing.EffectDag openXmlElement, DocumentModel.Drawings.PresetShadow? value)
+  private static void SetPresetShadow(DXDraw.EffectDag openXmlElement, DMDraws.PresetShadow? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.PresetShadow>();
+    var itemElement = openXmlElement.GetFirstChild<DXDraw.PresetShadow>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Drawings.PresetShadowConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.PresetShadow>(value);
+      itemElement = DMXDraws.PresetShadowConverter.CreateOpenXmlElement<DXDraw.PresetShadow>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static DocumentModel.Drawings.Reflection? GetReflection(DocumentFormat.OpenXml.Drawing.EffectDag openXmlElement)
+  private static DMDraws.Reflection? GetReflection(DXDraw.EffectDag openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.Reflection>();
+    var itemElement = openXmlElement?.GetFirstChild<DXDraw.Reflection>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.ReflectionConverter.CreateModelElement(itemElement);
+      return DMXDraws.ReflectionConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetReflection(DocumentFormat.OpenXml.Drawing.EffectDag openXmlElement, DocumentModel.Drawings.Reflection? value)
+  private static void SetReflection(DXDraw.EffectDag openXmlElement, DMDraws.Reflection? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Reflection>();
+    var itemElement = openXmlElement.GetFirstChild<DXDraw.Reflection>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Drawings.ReflectionConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Reflection>(value);
+      itemElement = DMXDraws.ReflectionConverter.CreateOpenXmlElement<DXDraw.Reflection>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static DocumentModel.Drawings.RelativeOffset? GetRelativeOffset(DocumentFormat.OpenXml.Drawing.EffectDag openXmlElement)
+  private static DMDraws.RelativeOffset? GetRelativeOffset(DXDraw.EffectDag openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.RelativeOffset>();
+    var itemElement = openXmlElement?.GetFirstChild<DXDraw.RelativeOffset>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.RelativeOffsetConverter.CreateModelElement(itemElement);
+      return DMXDraws.RelativeOffsetConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetRelativeOffset(DocumentFormat.OpenXml.Drawing.EffectDag openXmlElement, DocumentModel.Drawings.RelativeOffset? value)
+  private static void SetRelativeOffset(DXDraw.EffectDag openXmlElement, DMDraws.RelativeOffset? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.RelativeOffset>();
+    var itemElement = openXmlElement.GetFirstChild<DXDraw.RelativeOffset>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Drawings.RelativeOffsetConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.RelativeOffset>(value);
+      itemElement = DMXDraws.RelativeOffsetConverter.CreateOpenXmlElement<DXDraw.RelativeOffset>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static DocumentModel.Drawings.SoftEdge? GetSoftEdge(DocumentFormat.OpenXml.Drawing.EffectDag openXmlElement)
+  private static DMDraws.SoftEdge? GetSoftEdge(DXDraw.EffectDag openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.SoftEdge>();
+    var itemElement = openXmlElement?.GetFirstChild<DXDraw.SoftEdge>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.SoftEdgeConverter.CreateModelElement(itemElement);
+      return DMXDraws.SoftEdgeConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetSoftEdge(DocumentFormat.OpenXml.Drawing.EffectDag openXmlElement, DocumentModel.Drawings.SoftEdge? value)
+  private static void SetSoftEdge(DXDraw.EffectDag openXmlElement, DMDraws.SoftEdge? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.SoftEdge>();
+    var itemElement = openXmlElement.GetFirstChild<DXDraw.SoftEdge>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Drawings.SoftEdgeConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.SoftEdge>(value);
+      itemElement = DMXDraws.SoftEdgeConverter.CreateOpenXmlElement<DXDraw.SoftEdge>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static DocumentModel.Drawings.TintEffect? GetTintEffect(DocumentFormat.OpenXml.Drawing.EffectDag openXmlElement)
+  private static DMDraws.TintEffect? GetTintEffect(DXDraw.EffectDag openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.TintEffect>();
+    var itemElement = openXmlElement?.GetFirstChild<DXDraw.TintEffect>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.TintEffectConverter.CreateModelElement(itemElement);
+      return DMXDraws.TintEffectConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetTintEffect(DocumentFormat.OpenXml.Drawing.EffectDag openXmlElement, DocumentModel.Drawings.TintEffect? value)
+  private static void SetTintEffect(DXDraw.EffectDag openXmlElement, DMDraws.TintEffect? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.TintEffect>();
+    var itemElement = openXmlElement.GetFirstChild<DXDraw.TintEffect>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Drawings.TintEffectConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.TintEffect>(value);
+      itemElement = DMXDraws.TintEffectConverter.CreateOpenXmlElement<DXDraw.TintEffect>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static DocumentModel.Drawings.TransformEffect? GetTransformEffect(DocumentFormat.OpenXml.Drawing.EffectDag openXmlElement)
+  private static DMDraws.TransformEffect? GetTransformEffect(DXDraw.EffectDag openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.TransformEffect>();
+    var itemElement = openXmlElement?.GetFirstChild<DXDraw.TransformEffect>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.TransformEffectConverter.CreateModelElement(itemElement);
+      return DMXDraws.TransformEffectConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetTransformEffect(DocumentFormat.OpenXml.Drawing.EffectDag openXmlElement, DocumentModel.Drawings.TransformEffect? value)
+  private static void SetTransformEffect(DXDraw.EffectDag openXmlElement, DMDraws.TransformEffect? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.TransformEffect>();
+    var itemElement = openXmlElement.GetFirstChild<DXDraw.TransformEffect>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Drawings.TransformEffectConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.TransformEffect>(value);
+      itemElement = DMXDraws.TransformEffectConverter.CreateOpenXmlElement<DXDraw.TransformEffect>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  public static DocumentModel.Drawings.EffectDag? CreateModelElement(DocumentFormat.OpenXml.Drawing.EffectDag? openXmlElement)
+  public static DMDraws.EffectDag? CreateModelElement(DXDraw.EffectDag? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.EffectDag();
+      var value = new DMDraws.EffectDag();
       value.EffectContainer = GetEffectContainer(openXmlElement);
       value.Effect = GetEffect(openXmlElement);
       value.AlphaBiLevel = GetAlphaBiLevel(openXmlElement);
@@ -675,8 +675,8 @@ public static class EffectDagConverter
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.EffectDag? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.EffectDag, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDraws.EffectDag? value)
+    where OpenXmlElementType: DXDraw.EffectDag, new()
   {
     if (value != null)
     {

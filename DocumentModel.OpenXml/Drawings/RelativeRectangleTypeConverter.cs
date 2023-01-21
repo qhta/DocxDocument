@@ -8,12 +8,12 @@ public static class RelativeRectangleTypeConverter
   /// <summary>
   /// Left Offset
   /// </summary>
-  private static Int32? GetLeft(DocumentFormat.OpenXml.Drawing.RelativeRectangleType openXmlElement)
+  private static Int32? GetLeft(DXDraw.RelativeRectangleType openXmlElement)
   {
     return openXmlElement.Left?.Value;
   }
   
-  private static void SetLeft(DocumentFormat.OpenXml.Drawing.RelativeRectangleType openXmlElement, Int32? value)
+  private static void SetLeft(DXDraw.RelativeRectangleType openXmlElement, Int32? value)
   {
     openXmlElement.Left = value;
   }
@@ -21,12 +21,12 @@ public static class RelativeRectangleTypeConverter
   /// <summary>
   /// Top Offset
   /// </summary>
-  private static Int32? GetTop(DocumentFormat.OpenXml.Drawing.RelativeRectangleType openXmlElement)
+  private static Int32? GetTop(DXDraw.RelativeRectangleType openXmlElement)
   {
     return openXmlElement.Top?.Value;
   }
   
-  private static void SetTop(DocumentFormat.OpenXml.Drawing.RelativeRectangleType openXmlElement, Int32? value)
+  private static void SetTop(DXDraw.RelativeRectangleType openXmlElement, Int32? value)
   {
     openXmlElement.Top = value;
   }
@@ -34,12 +34,12 @@ public static class RelativeRectangleTypeConverter
   /// <summary>
   /// Right Offset
   /// </summary>
-  private static Int32? GetRight(DocumentFormat.OpenXml.Drawing.RelativeRectangleType openXmlElement)
+  private static Int32? GetRight(DXDraw.RelativeRectangleType openXmlElement)
   {
     return openXmlElement.Right?.Value;
   }
   
-  private static void SetRight(DocumentFormat.OpenXml.Drawing.RelativeRectangleType openXmlElement, Int32? value)
+  private static void SetRight(DXDraw.RelativeRectangleType openXmlElement, Int32? value)
   {
     openXmlElement.Right = value;
   }
@@ -47,21 +47,21 @@ public static class RelativeRectangleTypeConverter
   /// <summary>
   /// Bottom Offset
   /// </summary>
-  private static Int32? GetBottom(DocumentFormat.OpenXml.Drawing.RelativeRectangleType openXmlElement)
+  private static Int32? GetBottom(DXDraw.RelativeRectangleType openXmlElement)
   {
     return openXmlElement.Bottom?.Value;
   }
   
-  private static void SetBottom(DocumentFormat.OpenXml.Drawing.RelativeRectangleType openXmlElement, Int32? value)
+  private static void SetBottom(DXDraw.RelativeRectangleType openXmlElement, Int32? value)
   {
     openXmlElement.Bottom = value;
   }
   
-  public static DocumentModel.Drawings.RelativeRectangleType? CreateModelElement(DocumentFormat.OpenXml.Drawing.RelativeRectangleType? openXmlElement)
+  public static DMDraws.RelativeRectangleType? CreateModelElement(DXDraw.RelativeRectangleType? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.RelativeRectangleType();
+      var value = new DMDraws.RelativeRectangleType();
       value.Left = GetLeft(openXmlElement);
       value.Top = GetTop(openXmlElement);
       value.Right = GetRight(openXmlElement);
@@ -71,8 +71,8 @@ public static class RelativeRectangleTypeConverter
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.RelativeRectangleType? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.RelativeRectangleType, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDraws.RelativeRectangleType? value)
+    where OpenXmlElementType: DXDraw.RelativeRectangleType, new()
   {
     if (value != null)
     {

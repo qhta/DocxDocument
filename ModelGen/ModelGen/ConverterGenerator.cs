@@ -4,6 +4,7 @@ using DocumentFormat.OpenXml.Packaging;
 using DocumentFormat.OpenXml.Wordprocessing;
 using DocumentModel;
 using Qhta.TypeUtils;
+using Qhta.TextUtils;
 using Text = DocumentFormat.OpenXml.Drawing.Text;
 
 namespace ModelGen;
@@ -154,7 +155,7 @@ public class ConverterGenerator : BaseCodeGenerator
     var aNamespace = typeInfo.Namespace;
     if (aNamespace != null)
     {
-      aNamespace = aNamespace.Replace("DocumentModel", "DocumentModel.OpenXml");
+      aNamespace = aNamespace.ReplaceStart("DocumentModel", "DocumentModel.OpenXml");
       Writer.WriteLine($"namespace {aNamespace};");
       Writer.WriteLine();
     }
@@ -1334,7 +1335,7 @@ public class ConverterGenerator : BaseCodeGenerator
     var targetItemType = targetPropType.GetGenericTypeArguments().FirstOrDefault();
     var origItemTypeName = origItemType?.GetFullName(true);
     var targetItemTypeName = targetItemType?.GetFullName();
-    Writer.WriteLine($"var collection = new System.Collections.ObjectModel.Collection<{targetItemTypeName}>();");
+    Writer.WriteLine($"var collection = new Collection<{targetItemTypeName}>();");
     Writer.WriteLine($"foreach (var item in openXmlElement.Elements<{origItemTypeName}>())");
     Writer.WriteLine("{");
     Writer.WriteLine($"  var newItem = {ConverterGetMethodName(prop)}(item);");
@@ -1376,7 +1377,7 @@ public class ConverterGenerator : BaseCodeGenerator
     var targetItemType = targetPropType.GetGenericTypeArguments().FirstOrDefault();
     var origItemTypeName = origItemType?.GetFullName(true);
     var targetItemTypeName = targetItemType?.GetFullName();
-    Writer.WriteLine($"var collection = new System.Collections.ObjectModel.Collection<{targetItemTypeName}>();");
+    Writer.WriteLine($"var collection = new Collection<{targetItemTypeName}>();");
     if (origItemTypeName?.Name == "IdPartPair")
       Writer.WriteLine("foreach (var item in openXmlElement.Parts)");
     else if (origItemTypeName?.Name == "DataPart")
@@ -1423,7 +1424,7 @@ public class ConverterGenerator : BaseCodeGenerator
     var targetItemType = targetPropType.GetGenericTypeArguments().FirstOrDefault();
     var origItemTypeName = origItemType?.GetFullName(true);
     var targetItemTypeName = targetItemType?.GetFullName();
-    Writer.WriteLine($"var collection = new System.Collections.ObjectModel.Collection<{targetItemTypeName}>();");
+    Writer.WriteLine($"var collection = new Collection<{targetItemTypeName}>();");
     Writer.WriteLine($"foreach (var item in openXmlElement.{origItemTypeName?.Name}s)");
     Writer.WriteLine("{");
     Writer.WriteLine($"  var newItem = {ConverterGetMethodName(prop)}(item);");
@@ -1503,17 +1504,17 @@ public class ConverterGenerator : BaseCodeGenerator
         return SimpleTypeConverterGetMethodName(targetItemType.GetFullName(), origItemType.GetFullName());
 
       convPropName = new FullTypeName(targetItemType.Name + "Converter",
-        targetItemType.Namespace?.Replace("DocumentModel", "DocumentModel.OpenXml"));
+        TypeInfo.NamespaceShortcut(targetItemType.Namespace.ReplaceStart("DocumentModel", "DocumentModel.OpenXml")));
     }
     else if (targetPropTypeName.Name == "Byte[]")
     {
-      convPropName = new FullTypeName("HexBinaryConverter", "DocumentModel.OpenXml");
+      convPropName = new FullTypeName("HexBinaryConverter", "DMX");
       return $"{convPropName}.GetValue";
     }
     else
     {
       convPropName = new FullTypeName(targetPropTypeName.Name + "Converter",
-        targetPropTypeName.Namespace?.Replace("DocumentModel", "DocumentModel.OpenXml"));
+        TypeInfo.NamespaceShortcut((targetPropType?.Namespace ?? "").ReplaceStart("DocumentModel", "DocumentModel.OpenXml")));
     }
     return $"{convPropName}.CreateModelElement";
   }
@@ -1559,17 +1560,17 @@ public class ConverterGenerator : BaseCodeGenerator
         return SimpleTypeConverterCreateMethodName(targetItemType.GetFullName(), origItemType.GetFullName(true));
 
       convPropName = new FullTypeName(targetItemType.Name + "Converter",
-        targetItemType.Namespace?.Replace("DocumentModel", "DocumentModel.OpenXml"));
+        TypeInfo.NamespaceShortcut((targetItemType?.Namespace ?? "").ReplaceStart("DocumentModel", "DocumentModel.OpenXml")));
       origPropTypeName = origItemType.GetFullName(true);
     }
     else if (targetPropTypeName.Name == "Byte[]")
     {
-      convPropName = new FullTypeName("HexBinaryConverter", "DocumentModel.OpenXml");
+      convPropName = new FullTypeName("HexBinaryConverter", "DMX");
     }
     else
     {
       convPropName = new FullTypeName(targetPropTypeName.Name + "Converter",
-        (targetPropTypeName.Namespace ?? "").Replace("DocumentModel", "DocumentModel.OpenXml"));
+        TypeInfo.NamespaceShortcut((targetPropType.Namespace ?? "").ReplaceStart("DocumentModel", "DocumentModel.OpenXml")));
     }
     var convCreateMethodName = $"{convPropName}.CreateOpenXmlElement";
     if (generic)

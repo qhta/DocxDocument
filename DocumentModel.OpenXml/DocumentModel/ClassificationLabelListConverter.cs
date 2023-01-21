@@ -5,58 +5,58 @@ namespace DocumentModel.OpenXml;
 /// </summary>
 public static class ClassificationLabelListConverter
 {
-  private static System.Collections.ObjectModel.Collection<DocumentModel.ClassificationLabel> GetClassificationLabels(DocumentFormat.OpenXml.Office2021.MipLabelMetaData.ClassificationLabelList openXmlElement)
+  private static Collection<DM.ClassificationLabel> GetClassificationLabels(DXO2021MipLabelMeta.ClassificationLabelList openXmlElement)
   {
-    var collection = new System.Collections.ObjectModel.Collection<DocumentModel.ClassificationLabel>();
-    foreach (var item in openXmlElement.Elements<DocumentFormat.OpenXml.Office2021.MipLabelMetaData.ClassificationLabel>())
+    var collection = new Collection<DM.ClassificationLabel>();
+    foreach (var item in openXmlElement.Elements<DXO2021MipLabelMeta.ClassificationLabel>())
     {
-      var newItem = DocumentModel.OpenXml.ClassificationLabelConverter.CreateModelElement(item);
+      var newItem = DMX.ClassificationLabelConverter.CreateModelElement(item);
       if (newItem != null)
         collection.Add(newItem);
     }
     return collection;
   }
   
-  private static void SetClassificationLabels(DocumentFormat.OpenXml.Office2021.MipLabelMetaData.ClassificationLabelList openXmlElement, System.Collections.ObjectModel.Collection<DocumentModel.ClassificationLabel>? value)
+  private static void SetClassificationLabels(DXO2021MipLabelMeta.ClassificationLabelList openXmlElement, Collection<DM.ClassificationLabel>? value)
   {
-    openXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Office2021.MipLabelMetaData.ClassificationLabel>();
+    openXmlElement.RemoveAllChildren<DXO2021MipLabelMeta.ClassificationLabel>();
     if (value != null)
     {
       foreach (var item in value)
       {
-        var newItem = DocumentModel.OpenXml.ClassificationLabelConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2021.MipLabelMetaData.ClassificationLabel>(item);
+        var newItem = DMX.ClassificationLabelConverter.CreateOpenXmlElement<DXO2021MipLabelMeta.ClassificationLabel>(item);
         if (newItem != null)
           openXmlElement.AddChild(newItem);
       }
     }
   }
   
-  private static DocumentModel.ClassificationExtensionList? GetClassificationExtensionList(DocumentFormat.OpenXml.Office2021.MipLabelMetaData.ClassificationLabelList openXmlElement)
+  private static DM.ClassificationExtensionList? GetClassificationExtensionList(DXO2021MipLabelMeta.ClassificationLabelList openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office2021.MipLabelMetaData.ClassificationExtensionList>();
+    var itemElement = openXmlElement?.GetFirstChild<DXO2021MipLabelMeta.ClassificationExtensionList>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.ClassificationExtensionListConverter.CreateModelElement(itemElement);
+      return DMX.ClassificationExtensionListConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetClassificationExtensionList(DocumentFormat.OpenXml.Office2021.MipLabelMetaData.ClassificationLabelList openXmlElement, DocumentModel.ClassificationExtensionList? value)
+  private static void SetClassificationExtensionList(DXO2021MipLabelMeta.ClassificationLabelList openXmlElement, DM.ClassificationExtensionList? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2021.MipLabelMetaData.ClassificationExtensionList>();
+    var itemElement = openXmlElement.GetFirstChild<DXO2021MipLabelMeta.ClassificationExtensionList>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.ClassificationExtensionListConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2021.MipLabelMetaData.ClassificationExtensionList>(value);
+      itemElement = DMX.ClassificationExtensionListConverter.CreateOpenXmlElement<DXO2021MipLabelMeta.ClassificationExtensionList>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  public static DocumentModel.ClassificationLabelList? CreateModelElement(DocumentFormat.OpenXml.Office2021.MipLabelMetaData.ClassificationLabelList? openXmlElement)
+  public static DM.ClassificationLabelList? CreateModelElement(DXO2021MipLabelMeta.ClassificationLabelList? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.ClassificationLabelList();
+      var value = new DM.ClassificationLabelList();
       value.ClassificationLabels = GetClassificationLabels(openXmlElement);
       value.ClassificationExtensionList = GetClassificationExtensionList(openXmlElement);
       return value;
@@ -64,8 +64,8 @@ public static class ClassificationLabelListConverter
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.ClassificationLabelList? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Office2021.MipLabelMetaData.ClassificationLabelList, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DM.ClassificationLabelList? value)
+    where OpenXmlElementType: DXO2021MipLabelMeta.ClassificationLabelList, new()
   {
     if (value != null)
     {

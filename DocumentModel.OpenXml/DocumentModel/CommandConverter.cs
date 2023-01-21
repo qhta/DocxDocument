@@ -8,12 +8,12 @@ public static class CommandConverter
   /// <summary>
   /// onAction, this property is only available in Office 2010 and later.
   /// </summary>
-  private static String? GetOnAction(DocumentFormat.OpenXml.Office2010.CustomUI.Command openXmlElement)
+  private static String? GetOnAction(DXO2010CustUI.Command openXmlElement)
   {
     return openXmlElement?.OnAction?.Value;
   }
   
-  private static void SetOnAction(DocumentFormat.OpenXml.Office2010.CustomUI.Command openXmlElement, String? value)
+  private static void SetOnAction(DXO2010CustUI.Command openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.OnAction = new StringValue { Value = value };
@@ -24,12 +24,12 @@ public static class CommandConverter
   /// <summary>
   /// enabled, this property is only available in Office 2010 and later.
   /// </summary>
-  private static Boolean? GetEnabled(DocumentFormat.OpenXml.Office2010.CustomUI.Command openXmlElement)
+  private static Boolean? GetEnabled(DXO2010CustUI.Command openXmlElement)
   {
     return openXmlElement?.Enabled?.Value;
   }
   
-  private static void SetEnabled(DocumentFormat.OpenXml.Office2010.CustomUI.Command openXmlElement, Boolean? value)
+  private static void SetEnabled(DXO2010CustUI.Command openXmlElement, Boolean? value)
   {
     if (value != null)
       openXmlElement.Enabled = new BooleanValue { Value = (Boolean)value };
@@ -40,12 +40,12 @@ public static class CommandConverter
   /// <summary>
   /// getEnabled, this property is only available in Office 2010 and later.
   /// </summary>
-  private static String? GetGetEnabled(DocumentFormat.OpenXml.Office2010.CustomUI.Command openXmlElement)
+  private static String? GetGetEnabled(DXO2010CustUI.Command openXmlElement)
   {
     return openXmlElement?.GetEnabled?.Value;
   }
   
-  private static void SetGetEnabled(DocumentFormat.OpenXml.Office2010.CustomUI.Command openXmlElement, String? value)
+  private static void SetGetEnabled(DXO2010CustUI.Command openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.GetEnabled = new StringValue { Value = value };
@@ -56,12 +56,12 @@ public static class CommandConverter
   /// <summary>
   /// idMso, this property is only available in Office 2010 and later.
   /// </summary>
-  private static String? GetIdMso(DocumentFormat.OpenXml.Office2010.CustomUI.Command openXmlElement)
+  private static String? GetIdMso(DXO2010CustUI.Command openXmlElement)
   {
     return openXmlElement?.IdMso?.Value;
   }
   
-  private static void SetIdMso(DocumentFormat.OpenXml.Office2010.CustomUI.Command openXmlElement, String? value)
+  private static void SetIdMso(DXO2010CustUI.Command openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.IdMso = new StringValue { Value = value };
@@ -69,11 +69,11 @@ public static class CommandConverter
       openXmlElement.IdMso = null;
   }
   
-  public static DocumentModel.Command? CreateModelElement(DocumentFormat.OpenXml.Office2010.CustomUI.Command? openXmlElement)
+  public static DM.Command? CreateModelElement(DXO2010CustUI.Command? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Command();
+      var value = new DM.Command();
       value.OnAction = GetOnAction(openXmlElement);
       value.Enabled = GetEnabled(openXmlElement);
       value.GetEnabled = GetGetEnabled(openXmlElement);
@@ -83,8 +83,8 @@ public static class CommandConverter
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Command? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Office2010.CustomUI.Command, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DM.Command? value)
+    where OpenXmlElementType: DXO2010CustUI.Command, new()
   {
     if (value != null)
     {

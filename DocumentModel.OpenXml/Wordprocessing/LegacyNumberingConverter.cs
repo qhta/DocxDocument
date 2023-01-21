@@ -8,12 +8,12 @@ public static class LegacyNumberingConverter
   /// <summary>
   /// Use Legacy Numbering Properties
   /// </summary>
-  private static Boolean? GetLegacy(DocumentFormat.OpenXml.Wordprocessing.LegacyNumbering openXmlElement)
+  private static Boolean? GetLegacy(DXW.LegacyNumbering openXmlElement)
   {
     return openXmlElement?.Legacy?.Value;
   }
   
-  private static void SetLegacy(DocumentFormat.OpenXml.Wordprocessing.LegacyNumbering openXmlElement, Boolean? value)
+  private static void SetLegacy(DXW.LegacyNumbering openXmlElement, Boolean? value)
   {
     if (value != null)
       openXmlElement.Legacy = new OnOffValue { Value = (Boolean)value };
@@ -24,12 +24,12 @@ public static class LegacyNumberingConverter
   /// <summary>
   /// Legacy Spacing
   /// </summary>
-  private static String? GetLegacySpace(DocumentFormat.OpenXml.Wordprocessing.LegacyNumbering openXmlElement)
+  private static String? GetLegacySpace(DXW.LegacyNumbering openXmlElement)
   {
     return openXmlElement?.LegacySpace?.Value;
   }
   
-  private static void SetLegacySpace(DocumentFormat.OpenXml.Wordprocessing.LegacyNumbering openXmlElement, String? value)
+  private static void SetLegacySpace(DXW.LegacyNumbering openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.LegacySpace = new StringValue { Value = value };
@@ -40,12 +40,12 @@ public static class LegacyNumberingConverter
   /// <summary>
   /// Legacy Indent
   /// </summary>
-  private static String? GetLegacyIndent(DocumentFormat.OpenXml.Wordprocessing.LegacyNumbering openXmlElement)
+  private static String? GetLegacyIndent(DXW.LegacyNumbering openXmlElement)
   {
     return openXmlElement?.LegacyIndent?.Value;
   }
   
-  private static void SetLegacyIndent(DocumentFormat.OpenXml.Wordprocessing.LegacyNumbering openXmlElement, String? value)
+  private static void SetLegacyIndent(DXW.LegacyNumbering openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.LegacyIndent = new StringValue { Value = value };
@@ -53,11 +53,11 @@ public static class LegacyNumberingConverter
       openXmlElement.LegacyIndent = null;
   }
   
-  public static DocumentModel.Wordprocessing.LegacyNumbering? CreateModelElement(DocumentFormat.OpenXml.Wordprocessing.LegacyNumbering? openXmlElement)
+  public static DMW.LegacyNumbering? CreateModelElement(DXW.LegacyNumbering? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Wordprocessing.LegacyNumbering();
+      var value = new DMW.LegacyNumbering();
       value.Legacy = GetLegacy(openXmlElement);
       value.LegacySpace = GetLegacySpace(openXmlElement);
       value.LegacyIndent = GetLegacyIndent(openXmlElement);
@@ -66,8 +66,8 @@ public static class LegacyNumberingConverter
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.LegacyNumbering? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Wordprocessing.LegacyNumbering, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMW.LegacyNumbering? value)
+    where OpenXmlElementType: DXW.LegacyNumbering, new()
   {
     if (value != null)
     {

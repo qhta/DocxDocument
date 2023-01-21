@@ -8,22 +8,22 @@ public static class Scene3DConverter
   /// <summary>
   /// Camera.
   /// </summary>
-  private static DocumentModel.Wordprocessing.Camera? GetCamera(DocumentFormat.OpenXml.Office2010.Word.Scene3D openXmlElement)
+  private static DMW.Camera? GetCamera(DXO2010W.Scene3D openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office2010.Word.Camera>();
+    var itemElement = openXmlElement?.GetFirstChild<DXO2010W.Camera>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Wordprocessing.CameraConverter.CreateModelElement(itemElement);
+      return DMXW.CameraConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetCamera(DocumentFormat.OpenXml.Office2010.Word.Scene3D openXmlElement, DocumentModel.Wordprocessing.Camera? value)
+  private static void SetCamera(DXO2010W.Scene3D openXmlElement, DMW.Camera? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2010.Word.Camera>();
+    var itemElement = openXmlElement.GetFirstChild<DXO2010W.Camera>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Wordprocessing.CameraConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2010.Word.Camera>(value);
+      itemElement = DMXW.CameraConverter.CreateOpenXmlElement<DXO2010W.Camera>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
@@ -32,32 +32,32 @@ public static class Scene3DConverter
   /// <summary>
   /// LightRig.
   /// </summary>
-  private static DocumentModel.Wordprocessing.LightRig? GetLightRig(DocumentFormat.OpenXml.Office2010.Word.Scene3D openXmlElement)
+  private static DMW.LightRig? GetLightRig(DXO2010W.Scene3D openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office2010.Word.LightRig>();
+    var itemElement = openXmlElement?.GetFirstChild<DXO2010W.LightRig>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Wordprocessing.LightRigConverter.CreateModelElement(itemElement);
+      return DMXW.LightRigConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetLightRig(DocumentFormat.OpenXml.Office2010.Word.Scene3D openXmlElement, DocumentModel.Wordprocessing.LightRig? value)
+  private static void SetLightRig(DXO2010W.Scene3D openXmlElement, DMW.LightRig? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2010.Word.LightRig>();
+    var itemElement = openXmlElement.GetFirstChild<DXO2010W.LightRig>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Wordprocessing.LightRigConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2010.Word.LightRig>(value);
+      itemElement = DMXW.LightRigConverter.CreateOpenXmlElement<DXO2010W.LightRig>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  public static DocumentModel.Wordprocessing.Scene3D? CreateModelElement(DocumentFormat.OpenXml.Office2010.Word.Scene3D? openXmlElement)
+  public static DMW.Scene3D? CreateModelElement(DXO2010W.Scene3D? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Wordprocessing.Scene3D();
+      var value = new DMW.Scene3D();
       value.Camera = GetCamera(openXmlElement);
       value.LightRig = GetLightRig(openXmlElement);
       return value;
@@ -65,8 +65,8 @@ public static class Scene3DConverter
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.Scene3D? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Office2010.Word.Scene3D, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMW.Scene3D? value)
+    where OpenXmlElementType: DXO2010W.Scene3D, new()
   {
     if (value != null)
     {

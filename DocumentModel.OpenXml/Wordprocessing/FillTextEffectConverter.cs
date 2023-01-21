@@ -8,23 +8,23 @@ public static class FillTextEffectConverter
   /// <summary>
   /// NoFillEmpty.
   /// </summary>
-  private static Boolean? GetNoFillEmpty(DocumentFormat.OpenXml.Office2010.Word.FillTextEffect openXmlElement)
+  private static Boolean? GetNoFillEmpty(DXO2010W.FillTextEffect openXmlElement)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2010.Word.NoFillEmpty>();
+    var itemElement = openXmlElement.GetFirstChild<DXO2010W.NoFillEmpty>();
     return itemElement != null;
   }
   
-  private static void SetNoFillEmpty(DocumentFormat.OpenXml.Office2010.Word.FillTextEffect openXmlElement, Boolean? value)
+  private static void SetNoFillEmpty(DXO2010W.FillTextEffect openXmlElement, Boolean? value)
   {
     if (value == false)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2010.Word.NoFillEmpty>();
+      var itemElement = openXmlElement.GetFirstChild<DXO2010W.NoFillEmpty>();
       if (itemElement != null)
         itemElement.Remove();
     }
     if (value == true)
     {
-      var itemElement = new DocumentFormat.OpenXml.Office2010.Word.NoFillEmpty();
+      var itemElement = new DXO2010W.NoFillEmpty();
       openXmlElement.AddChild(itemElement);
     }
   }
@@ -32,22 +32,22 @@ public static class FillTextEffectConverter
   /// <summary>
   /// SolidColorFillProperties.
   /// </summary>
-  private static DocumentModel.Wordprocessing.SolidColorFillProperties? GetSolidColorFillProperties(DocumentFormat.OpenXml.Office2010.Word.FillTextEffect openXmlElement)
+  private static DMW.SolidColorFillProperties? GetSolidColorFillProperties(DXO2010W.FillTextEffect openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office2010.Word.SolidColorFillProperties>();
+    var itemElement = openXmlElement?.GetFirstChild<DXO2010W.SolidColorFillProperties>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Wordprocessing.SolidColorFillPropertiesConverter.CreateModelElement(itemElement);
+      return DMXW.SolidColorFillPropertiesConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetSolidColorFillProperties(DocumentFormat.OpenXml.Office2010.Word.FillTextEffect openXmlElement, DocumentModel.Wordprocessing.SolidColorFillProperties? value)
+  private static void SetSolidColorFillProperties(DXO2010W.FillTextEffect openXmlElement, DMW.SolidColorFillProperties? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2010.Word.SolidColorFillProperties>();
+    var itemElement = openXmlElement.GetFirstChild<DXO2010W.SolidColorFillProperties>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Wordprocessing.SolidColorFillPropertiesConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2010.Word.SolidColorFillProperties>(value);
+      itemElement = DMXW.SolidColorFillPropertiesConverter.CreateOpenXmlElement<DXO2010W.SolidColorFillProperties>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
@@ -56,32 +56,32 @@ public static class FillTextEffectConverter
   /// <summary>
   /// GradientFillProperties.
   /// </summary>
-  private static DocumentModel.Wordprocessing.GradientFillProperties? GetGradientFillProperties(DocumentFormat.OpenXml.Office2010.Word.FillTextEffect openXmlElement)
+  private static DMW.GradientFillProperties? GetGradientFillProperties(DXO2010W.FillTextEffect openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office2010.Word.GradientFillProperties>();
+    var itemElement = openXmlElement?.GetFirstChild<DXO2010W.GradientFillProperties>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Wordprocessing.GradientFillPropertiesConverter.CreateModelElement(itemElement);
+      return DMXW.GradientFillPropertiesConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetGradientFillProperties(DocumentFormat.OpenXml.Office2010.Word.FillTextEffect openXmlElement, DocumentModel.Wordprocessing.GradientFillProperties? value)
+  private static void SetGradientFillProperties(DXO2010W.FillTextEffect openXmlElement, DMW.GradientFillProperties? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2010.Word.GradientFillProperties>();
+    var itemElement = openXmlElement.GetFirstChild<DXO2010W.GradientFillProperties>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Wordprocessing.GradientFillPropertiesConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2010.Word.GradientFillProperties>(value);
+      itemElement = DMXW.GradientFillPropertiesConverter.CreateOpenXmlElement<DXO2010W.GradientFillProperties>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  public static DocumentModel.Wordprocessing.FillTextEffect? CreateModelElement(DocumentFormat.OpenXml.Office2010.Word.FillTextEffect? openXmlElement)
+  public static DMW.FillTextEffect? CreateModelElement(DXO2010W.FillTextEffect? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Wordprocessing.FillTextEffect();
+      var value = new DMW.FillTextEffect();
       value.NoFillEmpty = GetNoFillEmpty(openXmlElement);
       value.SolidColorFillProperties = GetSolidColorFillProperties(openXmlElement);
       value.GradientFillProperties = GetGradientFillProperties(openXmlElement);
@@ -90,8 +90,8 @@ public static class FillTextEffectConverter
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.FillTextEffect? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Office2010.Word.FillTextEffect, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMW.FillTextEffect? value)
+    where OpenXmlElementType: DXO2010W.FillTextEffect, new()
   {
     if (value != null)
     {

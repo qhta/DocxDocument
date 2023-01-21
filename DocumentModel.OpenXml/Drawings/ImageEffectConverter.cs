@@ -8,12 +8,12 @@ public static class ImageEffectConverter
   /// <summary>
   /// visible, this property is only available in Office 2010 and later.
   /// </summary>
-  private static Boolean? GetVisible(DocumentFormat.OpenXml.Office2010.Drawing.ImageEffect openXmlElement)
+  private static Boolean? GetVisible(DXO2010Draw.ImageEffect openXmlElement)
   {
     return openXmlElement?.Visible?.Value;
   }
   
-  private static void SetVisible(DocumentFormat.OpenXml.Office2010.Drawing.ImageEffect openXmlElement, Boolean? value)
+  private static void SetVisible(DXO2010Draw.ImageEffect openXmlElement, Boolean? value)
   {
     if (value != null)
       openXmlElement.Visible = new BooleanValue { Value = (Boolean)value };
@@ -24,22 +24,22 @@ public static class ImageEffectConverter
   /// <summary>
   /// ArtisticBlur.
   /// </summary>
-  private static DocumentModel.Drawings.ArtisticBlur? GetArtisticBlur(DocumentFormat.OpenXml.Office2010.Drawing.ImageEffect openXmlElement)
+  private static DMDraws.ArtisticBlur? GetArtisticBlur(DXO2010Draw.ImageEffect openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office2010.Drawing.ArtisticBlur>();
+    var itemElement = openXmlElement?.GetFirstChild<DXO2010Draw.ArtisticBlur>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.ArtisticBlurConverter.CreateModelElement(itemElement);
+      return DMXDraws.ArtisticBlurConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetArtisticBlur(DocumentFormat.OpenXml.Office2010.Drawing.ImageEffect openXmlElement, DocumentModel.Drawings.ArtisticBlur? value)
+  private static void SetArtisticBlur(DXO2010Draw.ImageEffect openXmlElement, DMDraws.ArtisticBlur? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2010.Drawing.ArtisticBlur>();
+    var itemElement = openXmlElement.GetFirstChild<DXO2010Draw.ArtisticBlur>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Drawings.ArtisticBlurConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2010.Drawing.ArtisticBlur>(value);
+      itemElement = DMXDraws.ArtisticBlurConverter.CreateOpenXmlElement<DXO2010Draw.ArtisticBlur>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
@@ -48,22 +48,22 @@ public static class ImageEffectConverter
   /// <summary>
   /// ArtisticCement.
   /// </summary>
-  private static DocumentModel.Drawings.ArtisticCement? GetArtisticCement(DocumentFormat.OpenXml.Office2010.Drawing.ImageEffect openXmlElement)
+  private static DMDraws.ArtisticCement? GetArtisticCement(DXO2010Draw.ImageEffect openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office2010.Drawing.ArtisticCement>();
+    var itemElement = openXmlElement?.GetFirstChild<DXO2010Draw.ArtisticCement>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.ArtisticCementConverter.CreateModelElement(itemElement);
+      return DMXDraws.ArtisticCementConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetArtisticCement(DocumentFormat.OpenXml.Office2010.Drawing.ImageEffect openXmlElement, DocumentModel.Drawings.ArtisticCement? value)
+  private static void SetArtisticCement(DXO2010Draw.ImageEffect openXmlElement, DMDraws.ArtisticCement? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2010.Drawing.ArtisticCement>();
+    var itemElement = openXmlElement.GetFirstChild<DXO2010Draw.ArtisticCement>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Drawings.ArtisticCementConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2010.Drawing.ArtisticCement>(value);
+      itemElement = DMXDraws.ArtisticCementConverter.CreateOpenXmlElement<DXO2010Draw.ArtisticCement>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
@@ -72,22 +72,22 @@ public static class ImageEffectConverter
   /// <summary>
   /// ArtisticChalkSketch.
   /// </summary>
-  private static DocumentModel.Drawings.ArtisticChalkSketch? GetArtisticChalkSketch(DocumentFormat.OpenXml.Office2010.Drawing.ImageEffect openXmlElement)
+  private static DMDraws.ArtisticChalkSketch? GetArtisticChalkSketch(DXO2010Draw.ImageEffect openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office2010.Drawing.ArtisticChalkSketch>();
+    var itemElement = openXmlElement?.GetFirstChild<DXO2010Draw.ArtisticChalkSketch>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.ArtisticChalkSketchConverter.CreateModelElement(itemElement);
+      return DMXDraws.ArtisticChalkSketchConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetArtisticChalkSketch(DocumentFormat.OpenXml.Office2010.Drawing.ImageEffect openXmlElement, DocumentModel.Drawings.ArtisticChalkSketch? value)
+  private static void SetArtisticChalkSketch(DXO2010Draw.ImageEffect openXmlElement, DMDraws.ArtisticChalkSketch? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2010.Drawing.ArtisticChalkSketch>();
+    var itemElement = openXmlElement.GetFirstChild<DXO2010Draw.ArtisticChalkSketch>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Drawings.ArtisticChalkSketchConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2010.Drawing.ArtisticChalkSketch>(value);
+      itemElement = DMXDraws.ArtisticChalkSketchConverter.CreateOpenXmlElement<DXO2010Draw.ArtisticChalkSketch>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
@@ -96,22 +96,22 @@ public static class ImageEffectConverter
   /// <summary>
   /// ArtisticCrisscrossEtching.
   /// </summary>
-  private static DocumentModel.Drawings.ArtisticCrisscrossEtching? GetArtisticCrisscrossEtching(DocumentFormat.OpenXml.Office2010.Drawing.ImageEffect openXmlElement)
+  private static DMDraws.ArtisticCrisscrossEtching? GetArtisticCrisscrossEtching(DXO2010Draw.ImageEffect openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office2010.Drawing.ArtisticCrisscrossEtching>();
+    var itemElement = openXmlElement?.GetFirstChild<DXO2010Draw.ArtisticCrisscrossEtching>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.ArtisticCrisscrossEtchingConverter.CreateModelElement(itemElement);
+      return DMXDraws.ArtisticCrisscrossEtchingConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetArtisticCrisscrossEtching(DocumentFormat.OpenXml.Office2010.Drawing.ImageEffect openXmlElement, DocumentModel.Drawings.ArtisticCrisscrossEtching? value)
+  private static void SetArtisticCrisscrossEtching(DXO2010Draw.ImageEffect openXmlElement, DMDraws.ArtisticCrisscrossEtching? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2010.Drawing.ArtisticCrisscrossEtching>();
+    var itemElement = openXmlElement.GetFirstChild<DXO2010Draw.ArtisticCrisscrossEtching>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Drawings.ArtisticCrisscrossEtchingConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2010.Drawing.ArtisticCrisscrossEtching>(value);
+      itemElement = DMXDraws.ArtisticCrisscrossEtchingConverter.CreateOpenXmlElement<DXO2010Draw.ArtisticCrisscrossEtching>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
@@ -120,22 +120,22 @@ public static class ImageEffectConverter
   /// <summary>
   /// ArtisticCutout.
   /// </summary>
-  private static DocumentModel.Drawings.ArtisticCutout? GetArtisticCutout(DocumentFormat.OpenXml.Office2010.Drawing.ImageEffect openXmlElement)
+  private static DMDraws.ArtisticCutout? GetArtisticCutout(DXO2010Draw.ImageEffect openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office2010.Drawing.ArtisticCutout>();
+    var itemElement = openXmlElement?.GetFirstChild<DXO2010Draw.ArtisticCutout>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.ArtisticCutoutConverter.CreateModelElement(itemElement);
+      return DMXDraws.ArtisticCutoutConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetArtisticCutout(DocumentFormat.OpenXml.Office2010.Drawing.ImageEffect openXmlElement, DocumentModel.Drawings.ArtisticCutout? value)
+  private static void SetArtisticCutout(DXO2010Draw.ImageEffect openXmlElement, DMDraws.ArtisticCutout? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2010.Drawing.ArtisticCutout>();
+    var itemElement = openXmlElement.GetFirstChild<DXO2010Draw.ArtisticCutout>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Drawings.ArtisticCutoutConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2010.Drawing.ArtisticCutout>(value);
+      itemElement = DMXDraws.ArtisticCutoutConverter.CreateOpenXmlElement<DXO2010Draw.ArtisticCutout>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
@@ -144,22 +144,22 @@ public static class ImageEffectConverter
   /// <summary>
   /// ArtisticFilmGrain.
   /// </summary>
-  private static DocumentModel.Drawings.ArtisticFilmGrain? GetArtisticFilmGrain(DocumentFormat.OpenXml.Office2010.Drawing.ImageEffect openXmlElement)
+  private static DMDraws.ArtisticFilmGrain? GetArtisticFilmGrain(DXO2010Draw.ImageEffect openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office2010.Drawing.ArtisticFilmGrain>();
+    var itemElement = openXmlElement?.GetFirstChild<DXO2010Draw.ArtisticFilmGrain>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.ArtisticFilmGrainConverter.CreateModelElement(itemElement);
+      return DMXDraws.ArtisticFilmGrainConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetArtisticFilmGrain(DocumentFormat.OpenXml.Office2010.Drawing.ImageEffect openXmlElement, DocumentModel.Drawings.ArtisticFilmGrain? value)
+  private static void SetArtisticFilmGrain(DXO2010Draw.ImageEffect openXmlElement, DMDraws.ArtisticFilmGrain? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2010.Drawing.ArtisticFilmGrain>();
+    var itemElement = openXmlElement.GetFirstChild<DXO2010Draw.ArtisticFilmGrain>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Drawings.ArtisticFilmGrainConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2010.Drawing.ArtisticFilmGrain>(value);
+      itemElement = DMXDraws.ArtisticFilmGrainConverter.CreateOpenXmlElement<DXO2010Draw.ArtisticFilmGrain>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
@@ -168,22 +168,22 @@ public static class ImageEffectConverter
   /// <summary>
   /// ArtisticGlass.
   /// </summary>
-  private static DocumentModel.Drawings.ArtisticGlass? GetArtisticGlass(DocumentFormat.OpenXml.Office2010.Drawing.ImageEffect openXmlElement)
+  private static DMDraws.ArtisticGlass? GetArtisticGlass(DXO2010Draw.ImageEffect openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office2010.Drawing.ArtisticGlass>();
+    var itemElement = openXmlElement?.GetFirstChild<DXO2010Draw.ArtisticGlass>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.ArtisticGlassConverter.CreateModelElement(itemElement);
+      return DMXDraws.ArtisticGlassConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetArtisticGlass(DocumentFormat.OpenXml.Office2010.Drawing.ImageEffect openXmlElement, DocumentModel.Drawings.ArtisticGlass? value)
+  private static void SetArtisticGlass(DXO2010Draw.ImageEffect openXmlElement, DMDraws.ArtisticGlass? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2010.Drawing.ArtisticGlass>();
+    var itemElement = openXmlElement.GetFirstChild<DXO2010Draw.ArtisticGlass>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Drawings.ArtisticGlassConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2010.Drawing.ArtisticGlass>(value);
+      itemElement = DMXDraws.ArtisticGlassConverter.CreateOpenXmlElement<DXO2010Draw.ArtisticGlass>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
@@ -192,22 +192,22 @@ public static class ImageEffectConverter
   /// <summary>
   /// ArtisticGlowDiffused.
   /// </summary>
-  private static DocumentModel.Drawings.ArtisticGlowDiffused? GetArtisticGlowDiffused(DocumentFormat.OpenXml.Office2010.Drawing.ImageEffect openXmlElement)
+  private static DMDraws.ArtisticGlowDiffused? GetArtisticGlowDiffused(DXO2010Draw.ImageEffect openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office2010.Drawing.ArtisticGlowDiffused>();
+    var itemElement = openXmlElement?.GetFirstChild<DXO2010Draw.ArtisticGlowDiffused>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.ArtisticGlowDiffusedConverter.CreateModelElement(itemElement);
+      return DMXDraws.ArtisticGlowDiffusedConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetArtisticGlowDiffused(DocumentFormat.OpenXml.Office2010.Drawing.ImageEffect openXmlElement, DocumentModel.Drawings.ArtisticGlowDiffused? value)
+  private static void SetArtisticGlowDiffused(DXO2010Draw.ImageEffect openXmlElement, DMDraws.ArtisticGlowDiffused? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2010.Drawing.ArtisticGlowDiffused>();
+    var itemElement = openXmlElement.GetFirstChild<DXO2010Draw.ArtisticGlowDiffused>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Drawings.ArtisticGlowDiffusedConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2010.Drawing.ArtisticGlowDiffused>(value);
+      itemElement = DMXDraws.ArtisticGlowDiffusedConverter.CreateOpenXmlElement<DXO2010Draw.ArtisticGlowDiffused>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
@@ -216,22 +216,22 @@ public static class ImageEffectConverter
   /// <summary>
   /// ArtisticGlowEdges.
   /// </summary>
-  private static DocumentModel.Drawings.ArtisticGlowEdges? GetArtisticGlowEdges(DocumentFormat.OpenXml.Office2010.Drawing.ImageEffect openXmlElement)
+  private static DMDraws.ArtisticGlowEdges? GetArtisticGlowEdges(DXO2010Draw.ImageEffect openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office2010.Drawing.ArtisticGlowEdges>();
+    var itemElement = openXmlElement?.GetFirstChild<DXO2010Draw.ArtisticGlowEdges>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.ArtisticGlowEdgesConverter.CreateModelElement(itemElement);
+      return DMXDraws.ArtisticGlowEdgesConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetArtisticGlowEdges(DocumentFormat.OpenXml.Office2010.Drawing.ImageEffect openXmlElement, DocumentModel.Drawings.ArtisticGlowEdges? value)
+  private static void SetArtisticGlowEdges(DXO2010Draw.ImageEffect openXmlElement, DMDraws.ArtisticGlowEdges? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2010.Drawing.ArtisticGlowEdges>();
+    var itemElement = openXmlElement.GetFirstChild<DXO2010Draw.ArtisticGlowEdges>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Drawings.ArtisticGlowEdgesConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2010.Drawing.ArtisticGlowEdges>(value);
+      itemElement = DMXDraws.ArtisticGlowEdgesConverter.CreateOpenXmlElement<DXO2010Draw.ArtisticGlowEdges>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
@@ -240,22 +240,22 @@ public static class ImageEffectConverter
   /// <summary>
   /// ArtisticLightScreen.
   /// </summary>
-  private static DocumentModel.Drawings.ArtisticLightScreen? GetArtisticLightScreen(DocumentFormat.OpenXml.Office2010.Drawing.ImageEffect openXmlElement)
+  private static DMDraws.ArtisticLightScreen? GetArtisticLightScreen(DXO2010Draw.ImageEffect openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office2010.Drawing.ArtisticLightScreen>();
+    var itemElement = openXmlElement?.GetFirstChild<DXO2010Draw.ArtisticLightScreen>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.ArtisticLightScreenConverter.CreateModelElement(itemElement);
+      return DMXDraws.ArtisticLightScreenConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetArtisticLightScreen(DocumentFormat.OpenXml.Office2010.Drawing.ImageEffect openXmlElement, DocumentModel.Drawings.ArtisticLightScreen? value)
+  private static void SetArtisticLightScreen(DXO2010Draw.ImageEffect openXmlElement, DMDraws.ArtisticLightScreen? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2010.Drawing.ArtisticLightScreen>();
+    var itemElement = openXmlElement.GetFirstChild<DXO2010Draw.ArtisticLightScreen>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Drawings.ArtisticLightScreenConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2010.Drawing.ArtisticLightScreen>(value);
+      itemElement = DMXDraws.ArtisticLightScreenConverter.CreateOpenXmlElement<DXO2010Draw.ArtisticLightScreen>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
@@ -264,22 +264,22 @@ public static class ImageEffectConverter
   /// <summary>
   /// ArtisticLineDrawing.
   /// </summary>
-  private static DocumentModel.Drawings.ArtisticLineDrawing? GetArtisticLineDrawing(DocumentFormat.OpenXml.Office2010.Drawing.ImageEffect openXmlElement)
+  private static DMDraws.ArtisticLineDrawing? GetArtisticLineDrawing(DXO2010Draw.ImageEffect openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office2010.Drawing.ArtisticLineDrawing>();
+    var itemElement = openXmlElement?.GetFirstChild<DXO2010Draw.ArtisticLineDrawing>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.ArtisticLineDrawingConverter.CreateModelElement(itemElement);
+      return DMXDraws.ArtisticLineDrawingConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetArtisticLineDrawing(DocumentFormat.OpenXml.Office2010.Drawing.ImageEffect openXmlElement, DocumentModel.Drawings.ArtisticLineDrawing? value)
+  private static void SetArtisticLineDrawing(DXO2010Draw.ImageEffect openXmlElement, DMDraws.ArtisticLineDrawing? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2010.Drawing.ArtisticLineDrawing>();
+    var itemElement = openXmlElement.GetFirstChild<DXO2010Draw.ArtisticLineDrawing>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Drawings.ArtisticLineDrawingConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2010.Drawing.ArtisticLineDrawing>(value);
+      itemElement = DMXDraws.ArtisticLineDrawingConverter.CreateOpenXmlElement<DXO2010Draw.ArtisticLineDrawing>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
@@ -288,22 +288,22 @@ public static class ImageEffectConverter
   /// <summary>
   /// ArtisticMarker.
   /// </summary>
-  private static DocumentModel.Drawings.ArtisticMarker? GetArtisticMarker(DocumentFormat.OpenXml.Office2010.Drawing.ImageEffect openXmlElement)
+  private static DMDraws.ArtisticMarker? GetArtisticMarker(DXO2010Draw.ImageEffect openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office2010.Drawing.ArtisticMarker>();
+    var itemElement = openXmlElement?.GetFirstChild<DXO2010Draw.ArtisticMarker>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.ArtisticMarkerConverter.CreateModelElement(itemElement);
+      return DMXDraws.ArtisticMarkerConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetArtisticMarker(DocumentFormat.OpenXml.Office2010.Drawing.ImageEffect openXmlElement, DocumentModel.Drawings.ArtisticMarker? value)
+  private static void SetArtisticMarker(DXO2010Draw.ImageEffect openXmlElement, DMDraws.ArtisticMarker? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2010.Drawing.ArtisticMarker>();
+    var itemElement = openXmlElement.GetFirstChild<DXO2010Draw.ArtisticMarker>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Drawings.ArtisticMarkerConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2010.Drawing.ArtisticMarker>(value);
+      itemElement = DMXDraws.ArtisticMarkerConverter.CreateOpenXmlElement<DXO2010Draw.ArtisticMarker>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
@@ -312,22 +312,22 @@ public static class ImageEffectConverter
   /// <summary>
   /// ArtisticMosaicBubbles.
   /// </summary>
-  private static DocumentModel.Drawings.ArtisticMosaicBubbles? GetArtisticMosaicBubbles(DocumentFormat.OpenXml.Office2010.Drawing.ImageEffect openXmlElement)
+  private static DMDraws.ArtisticMosaicBubbles? GetArtisticMosaicBubbles(DXO2010Draw.ImageEffect openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office2010.Drawing.ArtisticMosaicBubbles>();
+    var itemElement = openXmlElement?.GetFirstChild<DXO2010Draw.ArtisticMosaicBubbles>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.ArtisticMosaicBubblesConverter.CreateModelElement(itemElement);
+      return DMXDraws.ArtisticMosaicBubblesConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetArtisticMosaicBubbles(DocumentFormat.OpenXml.Office2010.Drawing.ImageEffect openXmlElement, DocumentModel.Drawings.ArtisticMosaicBubbles? value)
+  private static void SetArtisticMosaicBubbles(DXO2010Draw.ImageEffect openXmlElement, DMDraws.ArtisticMosaicBubbles? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2010.Drawing.ArtisticMosaicBubbles>();
+    var itemElement = openXmlElement.GetFirstChild<DXO2010Draw.ArtisticMosaicBubbles>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Drawings.ArtisticMosaicBubblesConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2010.Drawing.ArtisticMosaicBubbles>(value);
+      itemElement = DMXDraws.ArtisticMosaicBubblesConverter.CreateOpenXmlElement<DXO2010Draw.ArtisticMosaicBubbles>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
@@ -336,22 +336,22 @@ public static class ImageEffectConverter
   /// <summary>
   /// ArtisticPaintStrokes.
   /// </summary>
-  private static DocumentModel.Drawings.ArtisticPaintStrokes? GetArtisticPaintStrokes(DocumentFormat.OpenXml.Office2010.Drawing.ImageEffect openXmlElement)
+  private static DMDraws.ArtisticPaintStrokes? GetArtisticPaintStrokes(DXO2010Draw.ImageEffect openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office2010.Drawing.ArtisticPaintStrokes>();
+    var itemElement = openXmlElement?.GetFirstChild<DXO2010Draw.ArtisticPaintStrokes>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.ArtisticPaintStrokesConverter.CreateModelElement(itemElement);
+      return DMXDraws.ArtisticPaintStrokesConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetArtisticPaintStrokes(DocumentFormat.OpenXml.Office2010.Drawing.ImageEffect openXmlElement, DocumentModel.Drawings.ArtisticPaintStrokes? value)
+  private static void SetArtisticPaintStrokes(DXO2010Draw.ImageEffect openXmlElement, DMDraws.ArtisticPaintStrokes? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2010.Drawing.ArtisticPaintStrokes>();
+    var itemElement = openXmlElement.GetFirstChild<DXO2010Draw.ArtisticPaintStrokes>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Drawings.ArtisticPaintStrokesConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2010.Drawing.ArtisticPaintStrokes>(value);
+      itemElement = DMXDraws.ArtisticPaintStrokesConverter.CreateOpenXmlElement<DXO2010Draw.ArtisticPaintStrokes>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
@@ -360,22 +360,22 @@ public static class ImageEffectConverter
   /// <summary>
   /// ArtisticPaintBrush.
   /// </summary>
-  private static DocumentModel.Drawings.ArtisticPaintBrush? GetArtisticPaintBrush(DocumentFormat.OpenXml.Office2010.Drawing.ImageEffect openXmlElement)
+  private static DMDraws.ArtisticPaintBrush? GetArtisticPaintBrush(DXO2010Draw.ImageEffect openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office2010.Drawing.ArtisticPaintBrush>();
+    var itemElement = openXmlElement?.GetFirstChild<DXO2010Draw.ArtisticPaintBrush>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.ArtisticPaintBrushConverter.CreateModelElement(itemElement);
+      return DMXDraws.ArtisticPaintBrushConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetArtisticPaintBrush(DocumentFormat.OpenXml.Office2010.Drawing.ImageEffect openXmlElement, DocumentModel.Drawings.ArtisticPaintBrush? value)
+  private static void SetArtisticPaintBrush(DXO2010Draw.ImageEffect openXmlElement, DMDraws.ArtisticPaintBrush? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2010.Drawing.ArtisticPaintBrush>();
+    var itemElement = openXmlElement.GetFirstChild<DXO2010Draw.ArtisticPaintBrush>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Drawings.ArtisticPaintBrushConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2010.Drawing.ArtisticPaintBrush>(value);
+      itemElement = DMXDraws.ArtisticPaintBrushConverter.CreateOpenXmlElement<DXO2010Draw.ArtisticPaintBrush>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
@@ -384,22 +384,22 @@ public static class ImageEffectConverter
   /// <summary>
   /// ArtisticPastelsSmooth.
   /// </summary>
-  private static DocumentModel.Drawings.ArtisticPastelsSmooth? GetArtisticPastelsSmooth(DocumentFormat.OpenXml.Office2010.Drawing.ImageEffect openXmlElement)
+  private static DMDraws.ArtisticPastelsSmooth? GetArtisticPastelsSmooth(DXO2010Draw.ImageEffect openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office2010.Drawing.ArtisticPastelsSmooth>();
+    var itemElement = openXmlElement?.GetFirstChild<DXO2010Draw.ArtisticPastelsSmooth>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.ArtisticPastelsSmoothConverter.CreateModelElement(itemElement);
+      return DMXDraws.ArtisticPastelsSmoothConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetArtisticPastelsSmooth(DocumentFormat.OpenXml.Office2010.Drawing.ImageEffect openXmlElement, DocumentModel.Drawings.ArtisticPastelsSmooth? value)
+  private static void SetArtisticPastelsSmooth(DXO2010Draw.ImageEffect openXmlElement, DMDraws.ArtisticPastelsSmooth? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2010.Drawing.ArtisticPastelsSmooth>();
+    var itemElement = openXmlElement.GetFirstChild<DXO2010Draw.ArtisticPastelsSmooth>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Drawings.ArtisticPastelsSmoothConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2010.Drawing.ArtisticPastelsSmooth>(value);
+      itemElement = DMXDraws.ArtisticPastelsSmoothConverter.CreateOpenXmlElement<DXO2010Draw.ArtisticPastelsSmooth>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
@@ -408,22 +408,22 @@ public static class ImageEffectConverter
   /// <summary>
   /// ArtisticPencilGrayscale.
   /// </summary>
-  private static DocumentModel.Drawings.ArtisticPencilGrayscale? GetArtisticPencilGrayscale(DocumentFormat.OpenXml.Office2010.Drawing.ImageEffect openXmlElement)
+  private static DMDraws.ArtisticPencilGrayscale? GetArtisticPencilGrayscale(DXO2010Draw.ImageEffect openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office2010.Drawing.ArtisticPencilGrayscale>();
+    var itemElement = openXmlElement?.GetFirstChild<DXO2010Draw.ArtisticPencilGrayscale>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.ArtisticPencilGrayscaleConverter.CreateModelElement(itemElement);
+      return DMXDraws.ArtisticPencilGrayscaleConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetArtisticPencilGrayscale(DocumentFormat.OpenXml.Office2010.Drawing.ImageEffect openXmlElement, DocumentModel.Drawings.ArtisticPencilGrayscale? value)
+  private static void SetArtisticPencilGrayscale(DXO2010Draw.ImageEffect openXmlElement, DMDraws.ArtisticPencilGrayscale? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2010.Drawing.ArtisticPencilGrayscale>();
+    var itemElement = openXmlElement.GetFirstChild<DXO2010Draw.ArtisticPencilGrayscale>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Drawings.ArtisticPencilGrayscaleConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2010.Drawing.ArtisticPencilGrayscale>(value);
+      itemElement = DMXDraws.ArtisticPencilGrayscaleConverter.CreateOpenXmlElement<DXO2010Draw.ArtisticPencilGrayscale>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
@@ -432,22 +432,22 @@ public static class ImageEffectConverter
   /// <summary>
   /// ArtisticPencilSketch.
   /// </summary>
-  private static DocumentModel.Drawings.ArtisticPencilSketch? GetArtisticPencilSketch(DocumentFormat.OpenXml.Office2010.Drawing.ImageEffect openXmlElement)
+  private static DMDraws.ArtisticPencilSketch? GetArtisticPencilSketch(DXO2010Draw.ImageEffect openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office2010.Drawing.ArtisticPencilSketch>();
+    var itemElement = openXmlElement?.GetFirstChild<DXO2010Draw.ArtisticPencilSketch>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.ArtisticPencilSketchConverter.CreateModelElement(itemElement);
+      return DMXDraws.ArtisticPencilSketchConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetArtisticPencilSketch(DocumentFormat.OpenXml.Office2010.Drawing.ImageEffect openXmlElement, DocumentModel.Drawings.ArtisticPencilSketch? value)
+  private static void SetArtisticPencilSketch(DXO2010Draw.ImageEffect openXmlElement, DMDraws.ArtisticPencilSketch? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2010.Drawing.ArtisticPencilSketch>();
+    var itemElement = openXmlElement.GetFirstChild<DXO2010Draw.ArtisticPencilSketch>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Drawings.ArtisticPencilSketchConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2010.Drawing.ArtisticPencilSketch>(value);
+      itemElement = DMXDraws.ArtisticPencilSketchConverter.CreateOpenXmlElement<DXO2010Draw.ArtisticPencilSketch>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
@@ -456,22 +456,22 @@ public static class ImageEffectConverter
   /// <summary>
   /// ArtisticPhotocopy.
   /// </summary>
-  private static DocumentModel.Drawings.ArtisticPhotocopy? GetArtisticPhotocopy(DocumentFormat.OpenXml.Office2010.Drawing.ImageEffect openXmlElement)
+  private static DMDraws.ArtisticPhotocopy? GetArtisticPhotocopy(DXO2010Draw.ImageEffect openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office2010.Drawing.ArtisticPhotocopy>();
+    var itemElement = openXmlElement?.GetFirstChild<DXO2010Draw.ArtisticPhotocopy>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.ArtisticPhotocopyConverter.CreateModelElement(itemElement);
+      return DMXDraws.ArtisticPhotocopyConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetArtisticPhotocopy(DocumentFormat.OpenXml.Office2010.Drawing.ImageEffect openXmlElement, DocumentModel.Drawings.ArtisticPhotocopy? value)
+  private static void SetArtisticPhotocopy(DXO2010Draw.ImageEffect openXmlElement, DMDraws.ArtisticPhotocopy? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2010.Drawing.ArtisticPhotocopy>();
+    var itemElement = openXmlElement.GetFirstChild<DXO2010Draw.ArtisticPhotocopy>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Drawings.ArtisticPhotocopyConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2010.Drawing.ArtisticPhotocopy>(value);
+      itemElement = DMXDraws.ArtisticPhotocopyConverter.CreateOpenXmlElement<DXO2010Draw.ArtisticPhotocopy>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
@@ -480,22 +480,22 @@ public static class ImageEffectConverter
   /// <summary>
   /// ArtisticPlasticWrap.
   /// </summary>
-  private static DocumentModel.Drawings.ArtisticPlasticWrap? GetArtisticPlasticWrap(DocumentFormat.OpenXml.Office2010.Drawing.ImageEffect openXmlElement)
+  private static DMDraws.ArtisticPlasticWrap? GetArtisticPlasticWrap(DXO2010Draw.ImageEffect openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office2010.Drawing.ArtisticPlasticWrap>();
+    var itemElement = openXmlElement?.GetFirstChild<DXO2010Draw.ArtisticPlasticWrap>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.ArtisticPlasticWrapConverter.CreateModelElement(itemElement);
+      return DMXDraws.ArtisticPlasticWrapConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetArtisticPlasticWrap(DocumentFormat.OpenXml.Office2010.Drawing.ImageEffect openXmlElement, DocumentModel.Drawings.ArtisticPlasticWrap? value)
+  private static void SetArtisticPlasticWrap(DXO2010Draw.ImageEffect openXmlElement, DMDraws.ArtisticPlasticWrap? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2010.Drawing.ArtisticPlasticWrap>();
+    var itemElement = openXmlElement.GetFirstChild<DXO2010Draw.ArtisticPlasticWrap>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Drawings.ArtisticPlasticWrapConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2010.Drawing.ArtisticPlasticWrap>(value);
+      itemElement = DMXDraws.ArtisticPlasticWrapConverter.CreateOpenXmlElement<DXO2010Draw.ArtisticPlasticWrap>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
@@ -504,22 +504,22 @@ public static class ImageEffectConverter
   /// <summary>
   /// ArtisticTexturizer.
   /// </summary>
-  private static DocumentModel.Drawings.ArtisticTexturizer? GetArtisticTexturizer(DocumentFormat.OpenXml.Office2010.Drawing.ImageEffect openXmlElement)
+  private static DMDraws.ArtisticTexturizer? GetArtisticTexturizer(DXO2010Draw.ImageEffect openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office2010.Drawing.ArtisticTexturizer>();
+    var itemElement = openXmlElement?.GetFirstChild<DXO2010Draw.ArtisticTexturizer>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.ArtisticTexturizerConverter.CreateModelElement(itemElement);
+      return DMXDraws.ArtisticTexturizerConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetArtisticTexturizer(DocumentFormat.OpenXml.Office2010.Drawing.ImageEffect openXmlElement, DocumentModel.Drawings.ArtisticTexturizer? value)
+  private static void SetArtisticTexturizer(DXO2010Draw.ImageEffect openXmlElement, DMDraws.ArtisticTexturizer? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2010.Drawing.ArtisticTexturizer>();
+    var itemElement = openXmlElement.GetFirstChild<DXO2010Draw.ArtisticTexturizer>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Drawings.ArtisticTexturizerConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2010.Drawing.ArtisticTexturizer>(value);
+      itemElement = DMXDraws.ArtisticTexturizerConverter.CreateOpenXmlElement<DXO2010Draw.ArtisticTexturizer>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
@@ -528,22 +528,22 @@ public static class ImageEffectConverter
   /// <summary>
   /// ArtisticWatercolorSponge.
   /// </summary>
-  private static DocumentModel.Drawings.ArtisticWatercolorSponge? GetArtisticWatercolorSponge(DocumentFormat.OpenXml.Office2010.Drawing.ImageEffect openXmlElement)
+  private static DMDraws.ArtisticWatercolorSponge? GetArtisticWatercolorSponge(DXO2010Draw.ImageEffect openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office2010.Drawing.ArtisticWatercolorSponge>();
+    var itemElement = openXmlElement?.GetFirstChild<DXO2010Draw.ArtisticWatercolorSponge>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.ArtisticWatercolorSpongeConverter.CreateModelElement(itemElement);
+      return DMXDraws.ArtisticWatercolorSpongeConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetArtisticWatercolorSponge(DocumentFormat.OpenXml.Office2010.Drawing.ImageEffect openXmlElement, DocumentModel.Drawings.ArtisticWatercolorSponge? value)
+  private static void SetArtisticWatercolorSponge(DXO2010Draw.ImageEffect openXmlElement, DMDraws.ArtisticWatercolorSponge? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2010.Drawing.ArtisticWatercolorSponge>();
+    var itemElement = openXmlElement.GetFirstChild<DXO2010Draw.ArtisticWatercolorSponge>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Drawings.ArtisticWatercolorSpongeConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2010.Drawing.ArtisticWatercolorSponge>(value);
+      itemElement = DMXDraws.ArtisticWatercolorSpongeConverter.CreateOpenXmlElement<DXO2010Draw.ArtisticWatercolorSponge>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
@@ -552,22 +552,22 @@ public static class ImageEffectConverter
   /// <summary>
   /// BackgroundRemoval.
   /// </summary>
-  private static DocumentModel.Drawings.BackgroundRemoval? GetBackgroundRemoval(DocumentFormat.OpenXml.Office2010.Drawing.ImageEffect openXmlElement)
+  private static DMDraws.BackgroundRemoval? GetBackgroundRemoval(DXO2010Draw.ImageEffect openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office2010.Drawing.BackgroundRemoval>();
+    var itemElement = openXmlElement?.GetFirstChild<DXO2010Draw.BackgroundRemoval>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.BackgroundRemovalConverter.CreateModelElement(itemElement);
+      return DMXDraws.BackgroundRemovalConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetBackgroundRemoval(DocumentFormat.OpenXml.Office2010.Drawing.ImageEffect openXmlElement, DocumentModel.Drawings.BackgroundRemoval? value)
+  private static void SetBackgroundRemoval(DXO2010Draw.ImageEffect openXmlElement, DMDraws.BackgroundRemoval? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2010.Drawing.BackgroundRemoval>();
+    var itemElement = openXmlElement.GetFirstChild<DXO2010Draw.BackgroundRemoval>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Drawings.BackgroundRemovalConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2010.Drawing.BackgroundRemoval>(value);
+      itemElement = DMXDraws.BackgroundRemovalConverter.CreateOpenXmlElement<DXO2010Draw.BackgroundRemoval>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
@@ -576,22 +576,22 @@ public static class ImageEffectConverter
   /// <summary>
   /// BrightnessContrast.
   /// </summary>
-  private static DocumentModel.Drawings.BrightnessContrast? GetBrightnessContrast(DocumentFormat.OpenXml.Office2010.Drawing.ImageEffect openXmlElement)
+  private static DMDraws.BrightnessContrast? GetBrightnessContrast(DXO2010Draw.ImageEffect openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office2010.Drawing.BrightnessContrast>();
+    var itemElement = openXmlElement?.GetFirstChild<DXO2010Draw.BrightnessContrast>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.BrightnessContrastConverter.CreateModelElement(itemElement);
+      return DMXDraws.BrightnessContrastConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetBrightnessContrast(DocumentFormat.OpenXml.Office2010.Drawing.ImageEffect openXmlElement, DocumentModel.Drawings.BrightnessContrast? value)
+  private static void SetBrightnessContrast(DXO2010Draw.ImageEffect openXmlElement, DMDraws.BrightnessContrast? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2010.Drawing.BrightnessContrast>();
+    var itemElement = openXmlElement.GetFirstChild<DXO2010Draw.BrightnessContrast>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Drawings.BrightnessContrastConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2010.Drawing.BrightnessContrast>(value);
+      itemElement = DMXDraws.BrightnessContrastConverter.CreateOpenXmlElement<DXO2010Draw.BrightnessContrast>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
@@ -600,22 +600,22 @@ public static class ImageEffectConverter
   /// <summary>
   /// ColorTemperature.
   /// </summary>
-  private static DocumentModel.Drawings.ColorTemperature? GetColorTemperature(DocumentFormat.OpenXml.Office2010.Drawing.ImageEffect openXmlElement)
+  private static DMDraws.ColorTemperature? GetColorTemperature(DXO2010Draw.ImageEffect openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office2010.Drawing.ColorTemperature>();
+    var itemElement = openXmlElement?.GetFirstChild<DXO2010Draw.ColorTemperature>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.ColorTemperatureConverter.CreateModelElement(itemElement);
+      return DMXDraws.ColorTemperatureConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetColorTemperature(DocumentFormat.OpenXml.Office2010.Drawing.ImageEffect openXmlElement, DocumentModel.Drawings.ColorTemperature? value)
+  private static void SetColorTemperature(DXO2010Draw.ImageEffect openXmlElement, DMDraws.ColorTemperature? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2010.Drawing.ColorTemperature>();
+    var itemElement = openXmlElement.GetFirstChild<DXO2010Draw.ColorTemperature>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Drawings.ColorTemperatureConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2010.Drawing.ColorTemperature>(value);
+      itemElement = DMXDraws.ColorTemperatureConverter.CreateOpenXmlElement<DXO2010Draw.ColorTemperature>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
@@ -624,22 +624,22 @@ public static class ImageEffectConverter
   /// <summary>
   /// Saturation.
   /// </summary>
-  private static DocumentModel.Drawings.Saturation2? GetSaturation(DocumentFormat.OpenXml.Office2010.Drawing.ImageEffect openXmlElement)
+  private static DMDraws.Saturation2? GetSaturation(DXO2010Draw.ImageEffect openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office2010.Drawing.Saturation>();
+    var itemElement = openXmlElement?.GetFirstChild<DXO2010Draw.Saturation>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.Saturation2Converter.CreateModelElement(itemElement);
+      return DMXDraws.Saturation2Converter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetSaturation(DocumentFormat.OpenXml.Office2010.Drawing.ImageEffect openXmlElement, DocumentModel.Drawings.Saturation2? value)
+  private static void SetSaturation(DXO2010Draw.ImageEffect openXmlElement, DMDraws.Saturation2? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2010.Drawing.Saturation>();
+    var itemElement = openXmlElement.GetFirstChild<DXO2010Draw.Saturation>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Drawings.Saturation2Converter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2010.Drawing.Saturation>(value);
+      itemElement = DMXDraws.Saturation2Converter.CreateOpenXmlElement<DXO2010Draw.Saturation>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
@@ -648,32 +648,32 @@ public static class ImageEffectConverter
   /// <summary>
   /// SharpenSoften.
   /// </summary>
-  private static DocumentModel.Drawings.SharpenSoften? GetSharpenSoften(DocumentFormat.OpenXml.Office2010.Drawing.ImageEffect openXmlElement)
+  private static DMDraws.SharpenSoften? GetSharpenSoften(DXO2010Draw.ImageEffect openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office2010.Drawing.SharpenSoften>();
+    var itemElement = openXmlElement?.GetFirstChild<DXO2010Draw.SharpenSoften>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.SharpenSoftenConverter.CreateModelElement(itemElement);
+      return DMXDraws.SharpenSoftenConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetSharpenSoften(DocumentFormat.OpenXml.Office2010.Drawing.ImageEffect openXmlElement, DocumentModel.Drawings.SharpenSoften? value)
+  private static void SetSharpenSoften(DXO2010Draw.ImageEffect openXmlElement, DMDraws.SharpenSoften? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2010.Drawing.SharpenSoften>();
+    var itemElement = openXmlElement.GetFirstChild<DXO2010Draw.SharpenSoften>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Drawings.SharpenSoftenConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2010.Drawing.SharpenSoften>(value);
+      itemElement = DMXDraws.SharpenSoftenConverter.CreateOpenXmlElement<DXO2010Draw.SharpenSoften>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  public static DocumentModel.Drawings.ImageEffect? CreateModelElement(DocumentFormat.OpenXml.Office2010.Drawing.ImageEffect? openXmlElement)
+  public static DMDraws.ImageEffect? CreateModelElement(DXO2010Draw.ImageEffect? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.ImageEffect();
+      var value = new DMDraws.ImageEffect();
       value.Visible = GetVisible(openXmlElement);
       value.ArtisticBlur = GetArtisticBlur(openXmlElement);
       value.ArtisticCement = GetArtisticCement(openXmlElement);
@@ -707,8 +707,8 @@ public static class ImageEffectConverter
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.ImageEffect? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Office2010.Drawing.ImageEffect, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDraws.ImageEffect? value)
+    where OpenXmlElementType: DXO2010Draw.ImageEffect, new()
   {
     if (value != null)
     {

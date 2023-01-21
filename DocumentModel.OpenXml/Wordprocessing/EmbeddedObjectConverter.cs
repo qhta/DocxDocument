@@ -8,12 +8,12 @@ public static class EmbeddedObjectConverter
   /// <summary>
   /// dxaOrig
   /// </summary>
-  private static String? GetDxaOriginal(DocumentFormat.OpenXml.Wordprocessing.EmbeddedObject openXmlElement)
+  private static String? GetDxaOriginal(DXW.EmbeddedObject openXmlElement)
   {
     return openXmlElement?.DxaOriginal?.Value;
   }
   
-  private static void SetDxaOriginal(DocumentFormat.OpenXml.Wordprocessing.EmbeddedObject openXmlElement, String? value)
+  private static void SetDxaOriginal(DXW.EmbeddedObject openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.DxaOriginal = new StringValue { Value = value };
@@ -24,12 +24,12 @@ public static class EmbeddedObjectConverter
   /// <summary>
   /// dyaOrig
   /// </summary>
-  private static String? GetDyaOriginal(DocumentFormat.OpenXml.Wordprocessing.EmbeddedObject openXmlElement)
+  private static String? GetDyaOriginal(DXW.EmbeddedObject openXmlElement)
   {
     return openXmlElement?.DyaOriginal?.Value;
   }
   
-  private static void SetDyaOriginal(DocumentFormat.OpenXml.Wordprocessing.EmbeddedObject openXmlElement, String? value)
+  private static void SetDyaOriginal(DXW.EmbeddedObject openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.DyaOriginal = new StringValue { Value = value };
@@ -40,14 +40,14 @@ public static class EmbeddedObjectConverter
   /// <summary>
   /// anchorId, this property is only available in Office 2010 and later.
   /// </summary>
-  private static UInt32? GetAnchorId(DocumentFormat.OpenXml.Wordprocessing.EmbeddedObject openXmlElement)
+  private static UInt32? GetAnchorId(DXW.EmbeddedObject openXmlElement)
   {
     if (openXmlElement.AnchorId?.Value != null)
       return UInt32.Parse(openXmlElement.AnchorId.Value, NumberStyles.HexNumber);
     return null;
   }
   
-  private static void SetAnchorId(DocumentFormat.OpenXml.Wordprocessing.EmbeddedObject openXmlElement, UInt32? value)
+  private static void SetAnchorId(DXW.EmbeddedObject openXmlElement, UInt32? value)
   {
       if (value != null)
         openXmlElement.AnchorId = ((UInt32)value).ToString("X8");
@@ -55,347 +55,347 @@ public static class EmbeddedObjectConverter
         openXmlElement.AnchorId = null;
   }
   
-  private static DocumentModel.Vml.Group? GetGroup(DocumentFormat.OpenXml.Wordprocessing.EmbeddedObject openXmlElement)
+  private static DMVml.Group? GetGroup(DXW.EmbeddedObject openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Vml.Group>();
+    var itemElement = openXmlElement?.GetFirstChild<DXVml.Group>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Vml.GroupConverter.CreateModelElement(itemElement);
+      return DMXVml.GroupConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetGroup(DocumentFormat.OpenXml.Wordprocessing.EmbeddedObject openXmlElement, DocumentModel.Vml.Group? value)
+  private static void SetGroup(DXW.EmbeddedObject openXmlElement, DMVml.Group? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Vml.Group>();
+    var itemElement = openXmlElement.GetFirstChild<DXVml.Group>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Vml.GroupConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Vml.Group>(value);
+      itemElement = DMXVml.GroupConverter.CreateOpenXmlElement<DXVml.Group>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static DocumentModel.Vml.ImageFile? GetImageFile(DocumentFormat.OpenXml.Wordprocessing.EmbeddedObject openXmlElement)
+  private static DMVml.ImageFile? GetImageFile(DXW.EmbeddedObject openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Vml.ImageFile>();
+    var itemElement = openXmlElement?.GetFirstChild<DXVml.ImageFile>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Vml.ImageFileConverter.CreateModelElement(itemElement);
+      return DMXVml.ImageFileConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetImageFile(DocumentFormat.OpenXml.Wordprocessing.EmbeddedObject openXmlElement, DocumentModel.Vml.ImageFile? value)
+  private static void SetImageFile(DXW.EmbeddedObject openXmlElement, DMVml.ImageFile? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Vml.ImageFile>();
+    var itemElement = openXmlElement.GetFirstChild<DXVml.ImageFile>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Vml.ImageFileConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Vml.ImageFile>(value);
+      itemElement = DMXVml.ImageFileConverter.CreateOpenXmlElement<DXVml.ImageFile>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static DocumentModel.Vml.Line? GetLine(DocumentFormat.OpenXml.Wordprocessing.EmbeddedObject openXmlElement)
+  private static DMVml.Line? GetLine(DXW.EmbeddedObject openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Vml.Line>();
+    var itemElement = openXmlElement?.GetFirstChild<DXVml.Line>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Vml.LineConverter.CreateModelElement(itemElement);
+      return DMXVml.LineConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetLine(DocumentFormat.OpenXml.Wordprocessing.EmbeddedObject openXmlElement, DocumentModel.Vml.Line? value)
+  private static void SetLine(DXW.EmbeddedObject openXmlElement, DMVml.Line? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Vml.Line>();
+    var itemElement = openXmlElement.GetFirstChild<DXVml.Line>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Vml.LineConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Vml.Line>(value);
+      itemElement = DMXVml.LineConverter.CreateOpenXmlElement<DXVml.Line>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static DocumentModel.Vml.Oval? GetOval(DocumentFormat.OpenXml.Wordprocessing.EmbeddedObject openXmlElement)
+  private static DMVml.Oval? GetOval(DXW.EmbeddedObject openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Vml.Oval>();
+    var itemElement = openXmlElement?.GetFirstChild<DXVml.Oval>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Vml.OvalConverter.CreateModelElement(itemElement);
+      return DMXVml.OvalConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetOval(DocumentFormat.OpenXml.Wordprocessing.EmbeddedObject openXmlElement, DocumentModel.Vml.Oval? value)
+  private static void SetOval(DXW.EmbeddedObject openXmlElement, DMVml.Oval? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Vml.Oval>();
+    var itemElement = openXmlElement.GetFirstChild<DXVml.Oval>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Vml.OvalConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Vml.Oval>(value);
+      itemElement = DMXVml.OvalConverter.CreateOpenXmlElement<DXVml.Oval>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static DocumentModel.Vml.PolyLine? GetPolyLine(DocumentFormat.OpenXml.Wordprocessing.EmbeddedObject openXmlElement)
+  private static DMVml.PolyLine? GetPolyLine(DXW.EmbeddedObject openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Vml.PolyLine>();
+    var itemElement = openXmlElement?.GetFirstChild<DXVml.PolyLine>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Vml.PolyLineConverter.CreateModelElement(itemElement);
+      return DMXVml.PolyLineConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetPolyLine(DocumentFormat.OpenXml.Wordprocessing.EmbeddedObject openXmlElement, DocumentModel.Vml.PolyLine? value)
+  private static void SetPolyLine(DXW.EmbeddedObject openXmlElement, DMVml.PolyLine? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Vml.PolyLine>();
+    var itemElement = openXmlElement.GetFirstChild<DXVml.PolyLine>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Vml.PolyLineConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Vml.PolyLine>(value);
+      itemElement = DMXVml.PolyLineConverter.CreateOpenXmlElement<DXVml.PolyLine>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static DocumentModel.Vml.Rectangle? GetRectangle(DocumentFormat.OpenXml.Wordprocessing.EmbeddedObject openXmlElement)
+  private static DMVml.Rectangle? GetRectangle(DXW.EmbeddedObject openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Vml.Rectangle>();
+    var itemElement = openXmlElement?.GetFirstChild<DXVml.Rectangle>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Vml.RectangleConverter.CreateModelElement(itemElement);
+      return DMXVml.RectangleConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetRectangle(DocumentFormat.OpenXml.Wordprocessing.EmbeddedObject openXmlElement, DocumentModel.Vml.Rectangle? value)
+  private static void SetRectangle(DXW.EmbeddedObject openXmlElement, DMVml.Rectangle? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Vml.Rectangle>();
+    var itemElement = openXmlElement.GetFirstChild<DXVml.Rectangle>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Vml.RectangleConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Vml.Rectangle>(value);
+      itemElement = DMXVml.RectangleConverter.CreateOpenXmlElement<DXVml.Rectangle>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static DocumentModel.Vml.RoundRectangle? GetRoundRectangle(DocumentFormat.OpenXml.Wordprocessing.EmbeddedObject openXmlElement)
+  private static DMVml.RoundRectangle? GetRoundRectangle(DXW.EmbeddedObject openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Vml.RoundRectangle>();
+    var itemElement = openXmlElement?.GetFirstChild<DXVml.RoundRectangle>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Vml.RoundRectangleConverter.CreateModelElement(itemElement);
+      return DMXVml.RoundRectangleConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetRoundRectangle(DocumentFormat.OpenXml.Wordprocessing.EmbeddedObject openXmlElement, DocumentModel.Vml.RoundRectangle? value)
+  private static void SetRoundRectangle(DXW.EmbeddedObject openXmlElement, DMVml.RoundRectangle? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Vml.RoundRectangle>();
+    var itemElement = openXmlElement.GetFirstChild<DXVml.RoundRectangle>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Vml.RoundRectangleConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Vml.RoundRectangle>(value);
+      itemElement = DMXVml.RoundRectangleConverter.CreateOpenXmlElement<DXVml.RoundRectangle>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static DocumentModel.Vml.Shape? GetShape(DocumentFormat.OpenXml.Wordprocessing.EmbeddedObject openXmlElement)
+  private static DMVml.Shape? GetShape(DXW.EmbeddedObject openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Vml.Shape>();
+    var itemElement = openXmlElement?.GetFirstChild<DXVml.Shape>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Vml.ShapeConverter.CreateModelElement(itemElement);
+      return DMXVml.ShapeConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetShape(DocumentFormat.OpenXml.Wordprocessing.EmbeddedObject openXmlElement, DocumentModel.Vml.Shape? value)
+  private static void SetShape(DXW.EmbeddedObject openXmlElement, DMVml.Shape? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Vml.Shape>();
+    var itemElement = openXmlElement.GetFirstChild<DXVml.Shape>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Vml.ShapeConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Vml.Shape>(value);
+      itemElement = DMXVml.ShapeConverter.CreateOpenXmlElement<DXVml.Shape>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static DocumentModel.Vml.Shapetype? GetShapetype(DocumentFormat.OpenXml.Wordprocessing.EmbeddedObject openXmlElement)
+  private static DMVml.Shapetype? GetShapetype(DXW.EmbeddedObject openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Vml.Shapetype>();
+    var itemElement = openXmlElement?.GetFirstChild<DXVml.Shapetype>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Vml.ShapetypeConverter.CreateModelElement(itemElement);
+      return DMXVml.ShapetypeConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetShapetype(DocumentFormat.OpenXml.Wordprocessing.EmbeddedObject openXmlElement, DocumentModel.Vml.Shapetype? value)
+  private static void SetShapetype(DXW.EmbeddedObject openXmlElement, DMVml.Shapetype? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Vml.Shapetype>();
+    var itemElement = openXmlElement.GetFirstChild<DXVml.Shapetype>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Vml.ShapetypeConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Vml.Shapetype>(value);
+      itemElement = DMXVml.ShapetypeConverter.CreateOpenXmlElement<DXVml.Shapetype>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static DocumentModel.Vml.Arc? GetArc(DocumentFormat.OpenXml.Wordprocessing.EmbeddedObject openXmlElement)
+  private static DMVml.Arc? GetArc(DXW.EmbeddedObject openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Vml.Arc>();
+    var itemElement = openXmlElement?.GetFirstChild<DXVml.Arc>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Vml.ArcConverter.CreateModelElement(itemElement);
+      return DMXVml.ArcConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetArc(DocumentFormat.OpenXml.Wordprocessing.EmbeddedObject openXmlElement, DocumentModel.Vml.Arc? value)
+  private static void SetArc(DXW.EmbeddedObject openXmlElement, DMVml.Arc? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Vml.Arc>();
+    var itemElement = openXmlElement.GetFirstChild<DXVml.Arc>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Vml.ArcConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Vml.Arc>(value);
+      itemElement = DMXVml.ArcConverter.CreateOpenXmlElement<DXVml.Arc>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static DocumentModel.Vml.Curve? GetCurve(DocumentFormat.OpenXml.Wordprocessing.EmbeddedObject openXmlElement)
+  private static DMVml.Curve? GetCurve(DXW.EmbeddedObject openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Vml.Curve>();
+    var itemElement = openXmlElement?.GetFirstChild<DXVml.Curve>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Vml.CurveConverter.CreateModelElement(itemElement);
+      return DMXVml.CurveConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetCurve(DocumentFormat.OpenXml.Wordprocessing.EmbeddedObject openXmlElement, DocumentModel.Vml.Curve? value)
+  private static void SetCurve(DXW.EmbeddedObject openXmlElement, DMVml.Curve? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Vml.Curve>();
+    var itemElement = openXmlElement.GetFirstChild<DXVml.Curve>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Vml.CurveConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Vml.Curve>(value);
+      itemElement = DMXVml.CurveConverter.CreateOpenXmlElement<DXVml.Curve>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static DocumentModel.Vml.OleObject? GetOleObject(DocumentFormat.OpenXml.Wordprocessing.EmbeddedObject openXmlElement)
+  private static DMVml.OleObject? GetOleObject(DXW.EmbeddedObject openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Vml.Office.OleObject>();
+    var itemElement = openXmlElement?.GetFirstChild<DXVmlO.OleObject>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Vml.OleObjectConverter.CreateModelElement(itemElement);
+      return DMXVml.OleObjectConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetOleObject(DocumentFormat.OpenXml.Wordprocessing.EmbeddedObject openXmlElement, DocumentModel.Vml.OleObject? value)
+  private static void SetOleObject(DXW.EmbeddedObject openXmlElement, DMVml.OleObject? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Vml.Office.OleObject>();
+    var itemElement = openXmlElement.GetFirstChild<DXVmlO.OleObject>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Vml.OleObjectConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Vml.Office.OleObject>(value);
+      itemElement = DMXVml.OleObjectConverter.CreateOpenXmlElement<DXVmlO.OleObject>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static DocumentModel.Wordprocessing.Drawing? GetDrawing(DocumentFormat.OpenXml.Wordprocessing.EmbeddedObject openXmlElement)
+  private static DMW.Drawing? GetDrawing(DXW.EmbeddedObject openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.Drawing>();
+    var itemElement = openXmlElement?.GetFirstChild<DXW.Drawing>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Wordprocessing.DrawingConverter.CreateModelElement(itemElement);
+      return DMXW.DrawingConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetDrawing(DocumentFormat.OpenXml.Wordprocessing.EmbeddedObject openXmlElement, DocumentModel.Wordprocessing.Drawing? value)
+  private static void SetDrawing(DXW.EmbeddedObject openXmlElement, DMW.Drawing? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.Drawing>();
+    var itemElement = openXmlElement.GetFirstChild<DXW.Drawing>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Wordprocessing.DrawingConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.Drawing>(value);
+      itemElement = DMXW.DrawingConverter.CreateOpenXmlElement<DXW.Drawing>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static DocumentModel.Wordprocessing.Control? GetControl(DocumentFormat.OpenXml.Wordprocessing.EmbeddedObject openXmlElement)
+  private static DMW.Control? GetControl(DXW.EmbeddedObject openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.Control>();
+    var itemElement = openXmlElement?.GetFirstChild<DXW.Control>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Wordprocessing.ControlConverter.CreateModelElement(itemElement);
+      return DMXW.ControlConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetControl(DocumentFormat.OpenXml.Wordprocessing.EmbeddedObject openXmlElement, DocumentModel.Wordprocessing.Control? value)
+  private static void SetControl(DXW.EmbeddedObject openXmlElement, DMW.Control? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.Control>();
+    var itemElement = openXmlElement.GetFirstChild<DXW.Control>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Wordprocessing.ControlConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.Control>(value);
+      itemElement = DMXW.ControlConverter.CreateOpenXmlElement<DXW.Control>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static DocumentModel.Wordprocessing.ObjectEmbed? GetObjectEmbed(DocumentFormat.OpenXml.Wordprocessing.EmbeddedObject openXmlElement)
+  private static DMW.ObjectEmbed? GetObjectEmbed(DXW.EmbeddedObject openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.ObjectEmbed>();
+    var itemElement = openXmlElement?.GetFirstChild<DXW.ObjectEmbed>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Wordprocessing.ObjectEmbedConverter.CreateModelElement(itemElement);
+      return DMXW.ObjectEmbedConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetObjectEmbed(DocumentFormat.OpenXml.Wordprocessing.EmbeddedObject openXmlElement, DocumentModel.Wordprocessing.ObjectEmbed? value)
+  private static void SetObjectEmbed(DXW.EmbeddedObject openXmlElement, DMW.ObjectEmbed? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.ObjectEmbed>();
+    var itemElement = openXmlElement.GetFirstChild<DXW.ObjectEmbed>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Wordprocessing.ObjectEmbedConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.ObjectEmbed>(value);
+      itemElement = DMXW.ObjectEmbedConverter.CreateOpenXmlElement<DXW.ObjectEmbed>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static DocumentModel.Wordprocessing.ObjectLink? GetObjectLink(DocumentFormat.OpenXml.Wordprocessing.EmbeddedObject openXmlElement)
+  private static DMW.ObjectLink? GetObjectLink(DXW.EmbeddedObject openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.ObjectLink>();
+    var itemElement = openXmlElement?.GetFirstChild<DXW.ObjectLink>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Wordprocessing.ObjectLinkConverter.CreateModelElement(itemElement);
+      return DMXW.ObjectLinkConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetObjectLink(DocumentFormat.OpenXml.Wordprocessing.EmbeddedObject openXmlElement, DocumentModel.Wordprocessing.ObjectLink? value)
+  private static void SetObjectLink(DXW.EmbeddedObject openXmlElement, DMW.ObjectLink? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.ObjectLink>();
+    var itemElement = openXmlElement.GetFirstChild<DXW.ObjectLink>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Wordprocessing.ObjectLinkConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.ObjectLink>(value);
+      itemElement = DMXW.ObjectLinkConverter.CreateOpenXmlElement<DXW.ObjectLink>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  public static DocumentModel.Wordprocessing.EmbeddedObject? CreateModelElement(DocumentFormat.OpenXml.Wordprocessing.EmbeddedObject? openXmlElement)
+  public static DMW.EmbeddedObject? CreateModelElement(DXW.EmbeddedObject? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Wordprocessing.EmbeddedObject();
+      var value = new DMW.EmbeddedObject();
       value.DxaOriginal = GetDxaOriginal(openXmlElement);
       value.DyaOriginal = GetDyaOriginal(openXmlElement);
       value.AnchorId = GetAnchorId(openXmlElement);
@@ -420,8 +420,8 @@ public static class EmbeddedObjectConverter
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.EmbeddedObject? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Wordprocessing.EmbeddedObject, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMW.EmbeddedObject? value)
+    where OpenXmlElementType: DXW.EmbeddedObject, new()
   {
     if (value != null)
     {

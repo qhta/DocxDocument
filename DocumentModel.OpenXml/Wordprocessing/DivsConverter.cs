@@ -5,40 +5,40 @@ namespace DocumentModel.OpenXml.Wordprocessing;
 /// </summary>
 public static class DivsConverter
 {
-  private static DocumentModel.Wordprocessing.Div? GetDiv(DocumentFormat.OpenXml.Wordprocessing.Divs openXmlElement)
+  private static DMW.Div? GetDiv(DXW.Divs openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.Div>();
+    var itemElement = openXmlElement?.GetFirstChild<DXW.Div>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Wordprocessing.DivConverter.CreateModelElement(itemElement);
+      return DMXW.DivConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetDiv(DocumentFormat.OpenXml.Wordprocessing.Divs openXmlElement, DocumentModel.Wordprocessing.Div? value)
+  private static void SetDiv(DXW.Divs openXmlElement, DMW.Div? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.Div>();
+    var itemElement = openXmlElement.GetFirstChild<DXW.Div>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Wordprocessing.DivConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.Div>(value);
+      itemElement = DMXW.DivConverter.CreateOpenXmlElement<DXW.Div>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  public static DocumentModel.Wordprocessing.Divs? CreateModelElement(DocumentFormat.OpenXml.Wordprocessing.Divs? openXmlElement)
+  public static DMW.Divs? CreateModelElement(DXW.Divs? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Wordprocessing.Divs();
+      var value = new DMW.Divs();
       value.Div = GetDiv(openXmlElement);
       return value;
     }
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.Divs? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Wordprocessing.Divs, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMW.Divs? value)
+    where OpenXmlElementType: DXW.Divs, new()
   {
     if (value != null)
     {

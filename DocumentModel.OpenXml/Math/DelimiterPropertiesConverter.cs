@@ -8,22 +8,22 @@ public static class DelimiterPropertiesConverter
   /// <summary>
   /// Delimiter Beginning Character.
   /// </summary>
-  private static String? GetBeginChar(DocumentFormat.OpenXml.Math.DelimiterProperties openXmlElement)
+  private static String? GetBeginChar(DXMath.DelimiterProperties openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Math.BeginChar>();
+    var itemElement = openXmlElement?.GetFirstChild<DXMath.BeginChar>();
     if (itemElement != null)
       return itemElement.Val?.Value;
     return null;
   }
   
-  private static void SetBeginChar(DocumentFormat.OpenXml.Math.DelimiterProperties openXmlElement, String? value)
+  private static void SetBeginChar(DXMath.DelimiterProperties openXmlElement, String? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Math.BeginChar>();
+    var itemElement = openXmlElement.GetFirstChild<DXMath.BeginChar>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = new DocumentFormat.OpenXml.Math.BeginChar { Val = value };
+      itemElement = new DXMath.BeginChar { Val = value };
       openXmlElement.AddChild(itemElement);
     }
   }
@@ -31,22 +31,22 @@ public static class DelimiterPropertiesConverter
   /// <summary>
   /// Delimiter Separator Character.
   /// </summary>
-  private static String? GetSeparatorChar(DocumentFormat.OpenXml.Math.DelimiterProperties openXmlElement)
+  private static String? GetSeparatorChar(DXMath.DelimiterProperties openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Math.SeparatorChar>();
+    var itemElement = openXmlElement?.GetFirstChild<DXMath.SeparatorChar>();
     if (itemElement != null)
       return itemElement.Val?.Value;
     return null;
   }
   
-  private static void SetSeparatorChar(DocumentFormat.OpenXml.Math.DelimiterProperties openXmlElement, String? value)
+  private static void SetSeparatorChar(DXMath.DelimiterProperties openXmlElement, String? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Math.SeparatorChar>();
+    var itemElement = openXmlElement.GetFirstChild<DXMath.SeparatorChar>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = new DocumentFormat.OpenXml.Math.SeparatorChar { Val = value };
+      itemElement = new DXMath.SeparatorChar { Val = value };
       openXmlElement.AddChild(itemElement);
     }
   }
@@ -54,22 +54,22 @@ public static class DelimiterPropertiesConverter
   /// <summary>
   /// Delimiter Ending Character.
   /// </summary>
-  private static String? GetEndChar(DocumentFormat.OpenXml.Math.DelimiterProperties openXmlElement)
+  private static String? GetEndChar(DXMath.DelimiterProperties openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Math.EndChar>();
+    var itemElement = openXmlElement?.GetFirstChild<DXMath.EndChar>();
     if (itemElement != null)
       return itemElement.Val?.Value;
     return null;
   }
   
-  private static void SetEndChar(DocumentFormat.OpenXml.Math.DelimiterProperties openXmlElement, String? value)
+  private static void SetEndChar(DXMath.DelimiterProperties openXmlElement, String? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Math.EndChar>();
+    var itemElement = openXmlElement.GetFirstChild<DXMath.EndChar>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = new DocumentFormat.OpenXml.Math.EndChar { Val = value };
+      itemElement = new DXMath.EndChar { Val = value };
       openXmlElement.AddChild(itemElement);
     }
   }
@@ -77,22 +77,22 @@ public static class DelimiterPropertiesConverter
   /// <summary>
   /// Delimiter Grow.
   /// </summary>
-  private static DocumentModel.Math.BooleanKind? GetGrowOperators(DocumentFormat.OpenXml.Math.DelimiterProperties openXmlElement)
+  private static DMMath.BooleanKind? GetGrowOperators(DXMath.DelimiterProperties openXmlElement)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Math.GrowOperators>();
+    var itemElement = openXmlElement.GetFirstChild<DXMath.GrowOperators>();
     if (itemElement?.Val?.Value != null)
-      return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Math.BooleanValues, DocumentModel.Math.BooleanKind>(itemElement.Val.Value);
+      return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Math.BooleanValues, DMMath.BooleanKind>(itemElement.Val.Value);
     return null;
   }
   
-  private static void SetGrowOperators(DocumentFormat.OpenXml.Math.DelimiterProperties openXmlElement, DocumentModel.Math.BooleanKind? value)
+  private static void SetGrowOperators(DXMath.DelimiterProperties openXmlElement, DMMath.BooleanKind? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Math.GrowOperators>();
+    var itemElement = openXmlElement.GetFirstChild<DXMath.GrowOperators>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = EnumValueConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Math.GrowOperators, DocumentFormat.OpenXml.Math.BooleanValues, DocumentModel.Math.BooleanKind>(value);
+      itemElement = EnumValueConverter.CreateOpenXmlElement<DXMath.GrowOperators, DocumentFormat.OpenXml.Math.BooleanValues, DMMath.BooleanKind>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
@@ -101,22 +101,22 @@ public static class DelimiterPropertiesConverter
   /// <summary>
   /// Shape (Delimiters).
   /// </summary>
-  private static DocumentModel.Math.ShapeDelimiterKind? GetShape(DocumentFormat.OpenXml.Math.DelimiterProperties openXmlElement)
+  private static DMMath.ShapeDelimiterKind? GetShape(DXMath.DelimiterProperties openXmlElement)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Math.Shape>();
+    var itemElement = openXmlElement.GetFirstChild<DXMath.Shape>();
     if (itemElement?.Val?.Value != null)
-      return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Math.ShapeDelimiterValues, DocumentModel.Math.ShapeDelimiterKind>(itemElement.Val.Value);
+      return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Math.ShapeDelimiterValues, DMMath.ShapeDelimiterKind>(itemElement.Val.Value);
     return null;
   }
   
-  private static void SetShape(DocumentFormat.OpenXml.Math.DelimiterProperties openXmlElement, DocumentModel.Math.ShapeDelimiterKind? value)
+  private static void SetShape(DXMath.DelimiterProperties openXmlElement, DMMath.ShapeDelimiterKind? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Math.Shape>();
+    var itemElement = openXmlElement.GetFirstChild<DXMath.Shape>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = EnumValueConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Math.Shape, DocumentFormat.OpenXml.Math.ShapeDelimiterValues, DocumentModel.Math.ShapeDelimiterKind>(value);
+      itemElement = EnumValueConverter.CreateOpenXmlElement<DXMath.Shape, DocumentFormat.OpenXml.Math.ShapeDelimiterValues, DMMath.ShapeDelimiterKind>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
@@ -125,32 +125,32 @@ public static class DelimiterPropertiesConverter
   /// <summary>
   /// ControlProperties.
   /// </summary>
-  private static DocumentModel.Math.ControlProperties? GetControlProperties(DocumentFormat.OpenXml.Math.DelimiterProperties openXmlElement)
+  private static DMMath.ControlProperties? GetControlProperties(DXMath.DelimiterProperties openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Math.ControlProperties>();
+    var itemElement = openXmlElement?.GetFirstChild<DXMath.ControlProperties>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Math.ControlPropertiesConverter.CreateModelElement(itemElement);
+      return DMXMath.ControlPropertiesConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetControlProperties(DocumentFormat.OpenXml.Math.DelimiterProperties openXmlElement, DocumentModel.Math.ControlProperties? value)
+  private static void SetControlProperties(DXMath.DelimiterProperties openXmlElement, DMMath.ControlProperties? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Math.ControlProperties>();
+    var itemElement = openXmlElement.GetFirstChild<DXMath.ControlProperties>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Math.ControlPropertiesConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Math.ControlProperties>(value);
+      itemElement = DMXMath.ControlPropertiesConverter.CreateOpenXmlElement<DXMath.ControlProperties>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  public static DocumentModel.Math.DelimiterProperties? CreateModelElement(DocumentFormat.OpenXml.Math.DelimiterProperties? openXmlElement)
+  public static DMMath.DelimiterProperties? CreateModelElement(DXMath.DelimiterProperties? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Math.DelimiterProperties();
+      var value = new DMMath.DelimiterProperties();
       value.BeginChar = GetBeginChar(openXmlElement);
       value.SeparatorChar = GetSeparatorChar(openXmlElement);
       value.EndChar = GetEndChar(openXmlElement);
@@ -162,8 +162,8 @@ public static class DelimiterPropertiesConverter
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Math.DelimiterProperties? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Math.DelimiterProperties, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMMath.DelimiterProperties? value)
+    where OpenXmlElementType: DXMath.DelimiterProperties, new()
   {
     if (value != null)
     {

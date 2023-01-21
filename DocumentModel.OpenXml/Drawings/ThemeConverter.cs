@@ -8,12 +8,12 @@ public static class ThemeConverter
   /// <summary>
   /// name
   /// </summary>
-  private static String? GetName(DocumentFormat.OpenXml.Drawing.Theme openXmlElement)
+  private static String? GetName(DXDraw.Theme openXmlElement)
   {
     return openXmlElement?.Name?.Value;
   }
   
-  private static void SetName(DocumentFormat.OpenXml.Drawing.Theme openXmlElement, String? value)
+  private static void SetName(DXDraw.Theme openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.Name = new StringValue { Value = value };
@@ -24,12 +24,12 @@ public static class ThemeConverter
   /// <summary>
   /// id, this property is only available in Office 2013 and later.
   /// </summary>
-  private static String? GetThemeId(DocumentFormat.OpenXml.Drawing.Theme openXmlElement)
+  private static String? GetThemeId(DXDraw.Theme openXmlElement)
   {
     return openXmlElement?.ThemeId?.Value;
   }
   
-  private static void SetThemeId(DocumentFormat.OpenXml.Drawing.Theme openXmlElement, String? value)
+  private static void SetThemeId(DXDraw.Theme openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.ThemeId = new StringValue { Value = value };
@@ -40,22 +40,22 @@ public static class ThemeConverter
   /// <summary>
   /// ThemeElements.
   /// </summary>
-  private static DocumentModel.Drawings.ThemeElements? GetThemeElements(DocumentFormat.OpenXml.Drawing.Theme openXmlElement)
+  private static DMDraws.ThemeElements? GetThemeElements(DXDraw.Theme openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.ThemeElements>();
+    var itemElement = openXmlElement?.GetFirstChild<DXDraw.ThemeElements>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.ThemeElementsConverter.CreateModelElement(itemElement);
+      return DMXDraws.ThemeElementsConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetThemeElements(DocumentFormat.OpenXml.Drawing.Theme openXmlElement, DocumentModel.Drawings.ThemeElements? value)
+  private static void SetThemeElements(DXDraw.Theme openXmlElement, DMDraws.ThemeElements? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.ThemeElements>();
+    var itemElement = openXmlElement.GetFirstChild<DXDraw.ThemeElements>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Drawings.ThemeElementsConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.ThemeElements>(value);
+      itemElement = DMXDraws.ThemeElementsConverter.CreateOpenXmlElement<DXDraw.ThemeElements>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
@@ -64,22 +64,22 @@ public static class ThemeConverter
   /// <summary>
   /// ObjectDefaults.
   /// </summary>
-  private static DocumentModel.Drawings.ObjectDefaults? GetObjectDefaults(DocumentFormat.OpenXml.Drawing.Theme openXmlElement)
+  private static DMDraws.ObjectDefaults? GetObjectDefaults(DXDraw.Theme openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.ObjectDefaults>();
+    var itemElement = openXmlElement?.GetFirstChild<DXDraw.ObjectDefaults>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.ObjectDefaultsConverter.CreateModelElement(itemElement);
+      return DMXDraws.ObjectDefaultsConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetObjectDefaults(DocumentFormat.OpenXml.Drawing.Theme openXmlElement, DocumentModel.Drawings.ObjectDefaults? value)
+  private static void SetObjectDefaults(DXDraw.Theme openXmlElement, DMDraws.ObjectDefaults? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.ObjectDefaults>();
+    var itemElement = openXmlElement.GetFirstChild<DXDraw.ObjectDefaults>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Drawings.ObjectDefaultsConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.ObjectDefaults>(value);
+      itemElement = DMXDraws.ObjectDefaultsConverter.CreateOpenXmlElement<DXDraw.ObjectDefaults>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
@@ -88,22 +88,22 @@ public static class ThemeConverter
   /// <summary>
   /// ExtraColorSchemeList.
   /// </summary>
-  private static DocumentModel.Drawings.ExtraColorSchemeList? GetExtraColorSchemeList(DocumentFormat.OpenXml.Drawing.Theme openXmlElement)
+  private static DMDraws.ExtraColorSchemeList? GetExtraColorSchemeList(DXDraw.Theme openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.ExtraColorSchemeList>();
+    var itemElement = openXmlElement?.GetFirstChild<DXDraw.ExtraColorSchemeList>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.ExtraColorSchemeListConverter.CreateModelElement(itemElement);
+      return DMXDraws.ExtraColorSchemeListConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetExtraColorSchemeList(DocumentFormat.OpenXml.Drawing.Theme openXmlElement, DocumentModel.Drawings.ExtraColorSchemeList? value)
+  private static void SetExtraColorSchemeList(DXDraw.Theme openXmlElement, DMDraws.ExtraColorSchemeList? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.ExtraColorSchemeList>();
+    var itemElement = openXmlElement.GetFirstChild<DXDraw.ExtraColorSchemeList>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Drawings.ExtraColorSchemeListConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.ExtraColorSchemeList>(value);
+      itemElement = DMXDraws.ExtraColorSchemeListConverter.CreateOpenXmlElement<DXDraw.ExtraColorSchemeList>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
@@ -112,22 +112,22 @@ public static class ThemeConverter
   /// <summary>
   /// CustomColorList.
   /// </summary>
-  private static DocumentModel.Drawings.CustomColorList? GetCustomColorList(DocumentFormat.OpenXml.Drawing.Theme openXmlElement)
+  private static DMDraws.CustomColorList? GetCustomColorList(DXDraw.Theme openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.CustomColorList>();
+    var itemElement = openXmlElement?.GetFirstChild<DXDraw.CustomColorList>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.CustomColorListConverter.CreateModelElement(itemElement);
+      return DMXDraws.CustomColorListConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetCustomColorList(DocumentFormat.OpenXml.Drawing.Theme openXmlElement, DocumentModel.Drawings.CustomColorList? value)
+  private static void SetCustomColorList(DXDraw.Theme openXmlElement, DMDraws.CustomColorList? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.CustomColorList>();
+    var itemElement = openXmlElement.GetFirstChild<DXDraw.CustomColorList>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Drawings.CustomColorListConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.CustomColorList>(value);
+      itemElement = DMXDraws.CustomColorListConverter.CreateOpenXmlElement<DXDraw.CustomColorList>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
@@ -136,32 +136,32 @@ public static class ThemeConverter
   /// <summary>
   /// OfficeStyleSheetExtensionList.
   /// </summary>
-  private static DocumentModel.Drawings.OfficeStyleSheetExtensionList? GetOfficeStyleSheetExtensionList(DocumentFormat.OpenXml.Drawing.Theme openXmlElement)
+  private static DMDraws.OfficeStyleSheetExtensionList? GetOfficeStyleSheetExtensionList(DXDraw.Theme openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.OfficeStyleSheetExtensionList>();
+    var itemElement = openXmlElement?.GetFirstChild<DXDraw.OfficeStyleSheetExtensionList>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.OfficeStyleSheetExtensionListConverter.CreateModelElement(itemElement);
+      return DMXDraws.OfficeStyleSheetExtensionListConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetOfficeStyleSheetExtensionList(DocumentFormat.OpenXml.Drawing.Theme openXmlElement, DocumentModel.Drawings.OfficeStyleSheetExtensionList? value)
+  private static void SetOfficeStyleSheetExtensionList(DXDraw.Theme openXmlElement, DMDraws.OfficeStyleSheetExtensionList? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.OfficeStyleSheetExtensionList>();
+    var itemElement = openXmlElement.GetFirstChild<DXDraw.OfficeStyleSheetExtensionList>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Drawings.OfficeStyleSheetExtensionListConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.OfficeStyleSheetExtensionList>(value);
+      itemElement = DMXDraws.OfficeStyleSheetExtensionListConverter.CreateOpenXmlElement<DXDraw.OfficeStyleSheetExtensionList>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  public static DocumentModel.Drawings.Theme? CreateModelElement(DocumentFormat.OpenXml.Drawing.Theme? openXmlElement)
+  public static DMDraws.Theme? CreateModelElement(DXDraw.Theme? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.Theme();
+      var value = new DMDraws.Theme();
       value.Name = GetName(openXmlElement);
       value.ThemeId = GetThemeId(openXmlElement);
       value.ThemeElements = GetThemeElements(openXmlElement);
@@ -174,8 +174,8 @@ public static class ThemeConverter
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.Theme? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.Theme, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDraws.Theme? value)
+    where OpenXmlElementType: DXDraw.Theme, new()
   {
     if (value != null)
     {

@@ -8,12 +8,12 @@ public static class HslConverter
   /// <summary>
   /// Hue
   /// </summary>
-  private static Int32? GetHue(DocumentFormat.OpenXml.Drawing.Hsl openXmlElement)
+  private static Int32? GetHue(DXDraw.Hsl openXmlElement)
   {
     return openXmlElement.Hue?.Value;
   }
   
-  private static void SetHue(DocumentFormat.OpenXml.Drawing.Hsl openXmlElement, Int32? value)
+  private static void SetHue(DXDraw.Hsl openXmlElement, Int32? value)
   {
     openXmlElement.Hue = value;
   }
@@ -21,12 +21,12 @@ public static class HslConverter
   /// <summary>
   /// Saturation
   /// </summary>
-  private static Int32? GetSaturation(DocumentFormat.OpenXml.Drawing.Hsl openXmlElement)
+  private static Int32? GetSaturation(DXDraw.Hsl openXmlElement)
   {
     return openXmlElement.Saturation?.Value;
   }
   
-  private static void SetSaturation(DocumentFormat.OpenXml.Drawing.Hsl openXmlElement, Int32? value)
+  private static void SetSaturation(DXDraw.Hsl openXmlElement, Int32? value)
   {
     openXmlElement.Saturation = value;
   }
@@ -34,21 +34,21 @@ public static class HslConverter
   /// <summary>
   /// Luminance
   /// </summary>
-  private static Int32? GetLuminance(DocumentFormat.OpenXml.Drawing.Hsl openXmlElement)
+  private static Int32? GetLuminance(DXDraw.Hsl openXmlElement)
   {
     return openXmlElement.Luminance?.Value;
   }
   
-  private static void SetLuminance(DocumentFormat.OpenXml.Drawing.Hsl openXmlElement, Int32? value)
+  private static void SetLuminance(DXDraw.Hsl openXmlElement, Int32? value)
   {
     openXmlElement.Luminance = value;
   }
   
-  public static DocumentModel.Drawings.Hsl? CreateModelElement(DocumentFormat.OpenXml.Drawing.Hsl? openXmlElement)
+  public static DMDraws.Hsl? CreateModelElement(DXDraw.Hsl? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.Hsl();
+      var value = new DMDraws.Hsl();
       value.Hue = GetHue(openXmlElement);
       value.Saturation = GetSaturation(openXmlElement);
       value.Luminance = GetLuminance(openXmlElement);
@@ -57,8 +57,8 @@ public static class HslConverter
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.Hsl? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.Hsl, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDraws.Hsl? value)
+    where OpenXmlElementType: DXDraw.Hsl, new()
   {
     if (value != null)
     {

@@ -8,25 +8,25 @@ public static class SignatureLineConverter
   /// <summary>
   /// VML Extension Handling Behavior
   /// </summary>
-  private static DocumentModel.Vml.ExtensionHandlingBehaviorKind? GetExtension(DocumentFormat.OpenXml.Vml.Office.SignatureLine openXmlElement)
+  private static DMVml.ExtensionHandlingBehaviorKind? GetExtension(DXVmlO.SignatureLine openXmlElement)
   {
-    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Vml.ExtensionHandlingBehaviorValues, DocumentModel.Vml.ExtensionHandlingBehaviorKind>(openXmlElement?.Extension?.Value);
+    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Vml.ExtensionHandlingBehaviorValues, DMVml.ExtensionHandlingBehaviorKind>(openXmlElement?.Extension?.Value);
   }
   
-  private static void SetExtension(DocumentFormat.OpenXml.Vml.Office.SignatureLine openXmlElement, DocumentModel.Vml.ExtensionHandlingBehaviorKind? value)
+  private static void SetExtension(DXVmlO.SignatureLine openXmlElement, DMVml.ExtensionHandlingBehaviorKind? value)
   {
-    openXmlElement.Extension = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Vml.ExtensionHandlingBehaviorValues, DocumentModel.Vml.ExtensionHandlingBehaviorKind>(value);
+    openXmlElement.Extension = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Vml.ExtensionHandlingBehaviorValues, DMVml.ExtensionHandlingBehaviorKind>(value);
   }
   
   /// <summary>
   /// Signature Line Flag
   /// </summary>
-  private static Boolean? GetIsSignatureLine(DocumentFormat.OpenXml.Vml.Office.SignatureLine openXmlElement)
+  private static Boolean? GetIsSignatureLine(DXVmlO.SignatureLine openXmlElement)
   {
     return openXmlElement?.IsSignatureLine?.Value;
   }
   
-  private static void SetIsSignatureLine(DocumentFormat.OpenXml.Vml.Office.SignatureLine openXmlElement, Boolean? value)
+  private static void SetIsSignatureLine(DXVmlO.SignatureLine openXmlElement, Boolean? value)
   {
     if (value != null)
       openXmlElement.IsSignatureLine = value;
@@ -37,12 +37,12 @@ public static class SignatureLineConverter
   /// <summary>
   /// Unique ID
   /// </summary>
-  private static String? GetId(DocumentFormat.OpenXml.Vml.Office.SignatureLine openXmlElement)
+  private static String? GetId(DXVmlO.SignatureLine openXmlElement)
   {
     return openXmlElement?.Id?.Value;
   }
   
-  private static void SetId(DocumentFormat.OpenXml.Vml.Office.SignatureLine openXmlElement, String? value)
+  private static void SetId(DXVmlO.SignatureLine openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.Id = new StringValue { Value = value };
@@ -53,12 +53,12 @@ public static class SignatureLineConverter
   /// <summary>
   /// Signature Provider ID
   /// </summary>
-  private static String? GetProviderId(DocumentFormat.OpenXml.Vml.Office.SignatureLine openXmlElement)
+  private static String? GetProviderId(DXVmlO.SignatureLine openXmlElement)
   {
     return openXmlElement?.ProviderId?.Value;
   }
   
-  private static void SetProviderId(DocumentFormat.OpenXml.Vml.Office.SignatureLine openXmlElement, String? value)
+  private static void SetProviderId(DXVmlO.SignatureLine openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.ProviderId = new StringValue { Value = value };
@@ -69,12 +69,12 @@ public static class SignatureLineConverter
   /// <summary>
   /// Use Signing Instructions Flag
   /// </summary>
-  private static Boolean? GetSigningInstructionsSet(DocumentFormat.OpenXml.Vml.Office.SignatureLine openXmlElement)
+  private static Boolean? GetSigningInstructionsSet(DXVmlO.SignatureLine openXmlElement)
   {
     return openXmlElement?.SigningInstructionsSet?.Value;
   }
   
-  private static void SetSigningInstructionsSet(DocumentFormat.OpenXml.Vml.Office.SignatureLine openXmlElement, Boolean? value)
+  private static void SetSigningInstructionsSet(DXVmlO.SignatureLine openXmlElement, Boolean? value)
   {
     if (value != null)
       openXmlElement.SigningInstructionsSet = value;
@@ -85,12 +85,12 @@ public static class SignatureLineConverter
   /// <summary>
   /// User-specified Comments Flag
   /// </summary>
-  private static Boolean? GetAllowComments(DocumentFormat.OpenXml.Vml.Office.SignatureLine openXmlElement)
+  private static Boolean? GetAllowComments(DXVmlO.SignatureLine openXmlElement)
   {
     return openXmlElement?.AllowComments?.Value;
   }
   
-  private static void SetAllowComments(DocumentFormat.OpenXml.Vml.Office.SignatureLine openXmlElement, Boolean? value)
+  private static void SetAllowComments(DXVmlO.SignatureLine openXmlElement, Boolean? value)
   {
     if (value != null)
       openXmlElement.AllowComments = value;
@@ -101,12 +101,12 @@ public static class SignatureLineConverter
   /// <summary>
   /// Show Signed Date Flag
   /// </summary>
-  private static Boolean? GetShowSignDate(DocumentFormat.OpenXml.Vml.Office.SignatureLine openXmlElement)
+  private static Boolean? GetShowSignDate(DXVmlO.SignatureLine openXmlElement)
   {
     return openXmlElement?.ShowSignDate?.Value;
   }
   
-  private static void SetShowSignDate(DocumentFormat.OpenXml.Vml.Office.SignatureLine openXmlElement, Boolean? value)
+  private static void SetShowSignDate(DXVmlO.SignatureLine openXmlElement, Boolean? value)
   {
     if (value != null)
       openXmlElement.ShowSignDate = value;
@@ -117,12 +117,12 @@ public static class SignatureLineConverter
   /// <summary>
   /// Suggested Signer Line 1
   /// </summary>
-  private static String? GetSuggestedSigner(DocumentFormat.OpenXml.Vml.Office.SignatureLine openXmlElement)
+  private static String? GetSuggestedSigner(DXVmlO.SignatureLine openXmlElement)
   {
     return openXmlElement?.SuggestedSigner?.Value;
   }
   
-  private static void SetSuggestedSigner(DocumentFormat.OpenXml.Vml.Office.SignatureLine openXmlElement, String? value)
+  private static void SetSuggestedSigner(DXVmlO.SignatureLine openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.SuggestedSigner = new StringValue { Value = value };
@@ -133,12 +133,12 @@ public static class SignatureLineConverter
   /// <summary>
   /// Suggested Signer Line 2
   /// </summary>
-  private static String? GetSuggestedSigner2(DocumentFormat.OpenXml.Vml.Office.SignatureLine openXmlElement)
+  private static String? GetSuggestedSigner2(DXVmlO.SignatureLine openXmlElement)
   {
     return openXmlElement?.SuggestedSigner2?.Value;
   }
   
-  private static void SetSuggestedSigner2(DocumentFormat.OpenXml.Vml.Office.SignatureLine openXmlElement, String? value)
+  private static void SetSuggestedSigner2(DXVmlO.SignatureLine openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.SuggestedSigner2 = new StringValue { Value = value };
@@ -149,12 +149,12 @@ public static class SignatureLineConverter
   /// <summary>
   /// Suggested Signer E-mail Address
   /// </summary>
-  private static String? GetSuggestedSignerEmail(DocumentFormat.OpenXml.Vml.Office.SignatureLine openXmlElement)
+  private static String? GetSuggestedSignerEmail(DXVmlO.SignatureLine openXmlElement)
   {
     return openXmlElement?.SuggestedSignerEmail?.Value;
   }
   
-  private static void SetSuggestedSignerEmail(DocumentFormat.OpenXml.Vml.Office.SignatureLine openXmlElement, String? value)
+  private static void SetSuggestedSignerEmail(DXVmlO.SignatureLine openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.SuggestedSignerEmail = new StringValue { Value = value };
@@ -165,12 +165,12 @@ public static class SignatureLineConverter
   /// <summary>
   /// Instructions for Signing
   /// </summary>
-  private static String? GetSigningInstructions(DocumentFormat.OpenXml.Vml.Office.SignatureLine openXmlElement)
+  private static String? GetSigningInstructions(DXVmlO.SignatureLine openXmlElement)
   {
     return openXmlElement?.SigningInstructions?.Value;
   }
   
-  private static void SetSigningInstructions(DocumentFormat.OpenXml.Vml.Office.SignatureLine openXmlElement, String? value)
+  private static void SetSigningInstructions(DXVmlO.SignatureLine openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.SigningInstructions = new StringValue { Value = value };
@@ -181,12 +181,12 @@ public static class SignatureLineConverter
   /// <summary>
   /// Additional Signature Information
   /// </summary>
-  private static String? GetAdditionalXml(DocumentFormat.OpenXml.Vml.Office.SignatureLine openXmlElement)
+  private static String? GetAdditionalXml(DXVmlO.SignatureLine openXmlElement)
   {
     return openXmlElement?.AdditionalXml?.Value;
   }
   
-  private static void SetAdditionalXml(DocumentFormat.OpenXml.Vml.Office.SignatureLine openXmlElement, String? value)
+  private static void SetAdditionalXml(DXVmlO.SignatureLine openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.AdditionalXml = new StringValue { Value = value };
@@ -197,12 +197,12 @@ public static class SignatureLineConverter
   /// <summary>
   /// Signature Provider Download URL
   /// </summary>
-  private static String? GetSignatureProviderUrl(DocumentFormat.OpenXml.Vml.Office.SignatureLine openXmlElement)
+  private static String? GetSignatureProviderUrl(DXVmlO.SignatureLine openXmlElement)
   {
     return openXmlElement?.SignatureProviderUrl?.Value;
   }
   
-  private static void SetSignatureProviderUrl(DocumentFormat.OpenXml.Vml.Office.SignatureLine openXmlElement, String? value)
+  private static void SetSignatureProviderUrl(DXVmlO.SignatureLine openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.SignatureProviderUrl = new StringValue { Value = value };
@@ -210,11 +210,11 @@ public static class SignatureLineConverter
       openXmlElement.SignatureProviderUrl = null;
   }
   
-  public static DocumentModel.Vml.SignatureLine? CreateModelElement(DocumentFormat.OpenXml.Vml.Office.SignatureLine? openXmlElement)
+  public static DMVml.SignatureLine? CreateModelElement(DXVmlO.SignatureLine? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Vml.SignatureLine();
+      var value = new DMVml.SignatureLine();
       value.Extension = GetExtension(openXmlElement);
       value.IsSignatureLine = GetIsSignatureLine(openXmlElement);
       value.Id = GetId(openXmlElement);
@@ -233,8 +233,8 @@ public static class SignatureLineConverter
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Vml.SignatureLine? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Vml.Office.SignatureLine, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMVml.SignatureLine? value)
+    where OpenXmlElementType: DXVmlO.SignatureLine, new()
   {
     if (value != null)
     {

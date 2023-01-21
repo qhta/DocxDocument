@@ -5,45 +5,45 @@ namespace DocumentModel.OpenXml.Drawings.Diagram1;
 /// </summary>
 public static class NumberDiagramInfoListConverter
 {
-  private static System.Collections.ObjectModel.Collection<DocumentModel.Drawings.Diagram1.NumberDiagramInfo> GetNumberDiagramInfos(DocumentFormat.OpenXml.Office2019.Drawing.Diagram11.NumberDiagramInfoList openXmlElement)
+  private static Collection<DMDrawsDgm1.NumberDiagramInfo> GetNumberDiagramInfos(DXO2019DrawDgm11.NumberDiagramInfoList openXmlElement)
   {
-    var collection = new System.Collections.ObjectModel.Collection<DocumentModel.Drawings.Diagram1.NumberDiagramInfo>();
-    foreach (var item in openXmlElement.Elements<DocumentFormat.OpenXml.Office2019.Drawing.Diagram11.NumberDiagramInfo>())
+    var collection = new Collection<DMDrawsDgm1.NumberDiagramInfo>();
+    foreach (var item in openXmlElement.Elements<DXO2019DrawDgm11.NumberDiagramInfo>())
     {
-      var newItem = DocumentModel.OpenXml.Drawings.Diagram1.NumberDiagramInfoConverter.CreateModelElement(item);
+      var newItem = DMXDrawsDgm1.NumberDiagramInfoConverter.CreateModelElement(item);
       if (newItem != null)
         collection.Add(newItem);
     }
     return collection;
   }
   
-  private static void SetNumberDiagramInfos(DocumentFormat.OpenXml.Office2019.Drawing.Diagram11.NumberDiagramInfoList openXmlElement, System.Collections.ObjectModel.Collection<DocumentModel.Drawings.Diagram1.NumberDiagramInfo>? value)
+  private static void SetNumberDiagramInfos(DXO2019DrawDgm11.NumberDiagramInfoList openXmlElement, Collection<DMDrawsDgm1.NumberDiagramInfo>? value)
   {
-    openXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Office2019.Drawing.Diagram11.NumberDiagramInfo>();
+    openXmlElement.RemoveAllChildren<DXO2019DrawDgm11.NumberDiagramInfo>();
     if (value != null)
     {
       foreach (var item in value)
       {
-        var newItem = DocumentModel.OpenXml.Drawings.Diagram1.NumberDiagramInfoConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2019.Drawing.Diagram11.NumberDiagramInfo>(item);
+        var newItem = DMXDrawsDgm1.NumberDiagramInfoConverter.CreateOpenXmlElement<DXO2019DrawDgm11.NumberDiagramInfo>(item);
         if (newItem != null)
           openXmlElement.AddChild(newItem);
       }
     }
   }
   
-  public static DocumentModel.Drawings.Diagram1.NumberDiagramInfoList? CreateModelElement(DocumentFormat.OpenXml.Office2019.Drawing.Diagram11.NumberDiagramInfoList? openXmlElement)
+  public static DMDrawsDgm1.NumberDiagramInfoList? CreateModelElement(DXO2019DrawDgm11.NumberDiagramInfoList? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.Diagram1.NumberDiagramInfoList();
+      var value = new DMDrawsDgm1.NumberDiagramInfoList();
       value.NumberDiagramInfos = GetNumberDiagramInfos(openXmlElement);
       return value;
     }
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.Diagram1.NumberDiagramInfoList? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Office2019.Drawing.Diagram11.NumberDiagramInfoList, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDrawsDgm1.NumberDiagramInfoList? value)
+    where OpenXmlElementType: DXO2019DrawDgm11.NumberDiagramInfoList, new()
   {
     if (value != null)
     {

@@ -8,12 +8,12 @@ public static class GraphicFrameConverter
   /// <summary>
   /// Reference to Custom Function
   /// </summary>
-  private static String? GetMacro(DocumentFormat.OpenXml.Drawing.ChartDrawing.GraphicFrame openXmlElement)
+  private static String? GetMacro(DXDrawChartDraw.GraphicFrame openXmlElement)
   {
     return openXmlElement?.Macro?.Value;
   }
   
-  private static void SetMacro(DocumentFormat.OpenXml.Drawing.ChartDrawing.GraphicFrame openXmlElement, String? value)
+  private static void SetMacro(DXDrawChartDraw.GraphicFrame openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.Macro = new StringValue { Value = value };
@@ -24,12 +24,12 @@ public static class GraphicFrameConverter
   /// <summary>
   /// Publish To Server
   /// </summary>
-  private static Boolean? GetPublished(DocumentFormat.OpenXml.Drawing.ChartDrawing.GraphicFrame openXmlElement)
+  private static Boolean? GetPublished(DXDrawChartDraw.GraphicFrame openXmlElement)
   {
     return openXmlElement?.Published?.Value;
   }
   
-  private static void SetPublished(DocumentFormat.OpenXml.Drawing.ChartDrawing.GraphicFrame openXmlElement, Boolean? value)
+  private static void SetPublished(DXDrawChartDraw.GraphicFrame openXmlElement, Boolean? value)
   {
     if (value != null)
       openXmlElement.Published = new BooleanValue { Value = (Boolean)value };
@@ -40,22 +40,22 @@ public static class GraphicFrameConverter
   /// <summary>
   /// Non-Visual Graphic Frame Properties.
   /// </summary>
-  private static DocumentModel.Drawings.ChartDrawing.NonVisualGraphicFrameProperties? GetNonVisualGraphicFrameProperties(DocumentFormat.OpenXml.Drawing.ChartDrawing.GraphicFrame openXmlElement)
+  private static DMDrawsChartDraw.NonVisualGraphicFrameProperties? GetNonVisualGraphicFrameProperties(DXDrawChartDraw.GraphicFrame openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.ChartDrawing.NonVisualGraphicFrameProperties>();
+    var itemElement = openXmlElement?.GetFirstChild<DXDrawChartDraw.NonVisualGraphicFrameProperties>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.ChartDrawing.NonVisualGraphicFramePropertiesConverter.CreateModelElement(itemElement);
+      return DMXDrawsChartDraw.NonVisualGraphicFramePropertiesConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetNonVisualGraphicFrameProperties(DocumentFormat.OpenXml.Drawing.ChartDrawing.GraphicFrame openXmlElement, DocumentModel.Drawings.ChartDrawing.NonVisualGraphicFrameProperties? value)
+  private static void SetNonVisualGraphicFrameProperties(DXDrawChartDraw.GraphicFrame openXmlElement, DMDrawsChartDraw.NonVisualGraphicFrameProperties? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.ChartDrawing.NonVisualGraphicFrameProperties>();
+    var itemElement = openXmlElement.GetFirstChild<DXDrawChartDraw.NonVisualGraphicFrameProperties>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Drawings.ChartDrawing.NonVisualGraphicFramePropertiesConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.ChartDrawing.NonVisualGraphicFrameProperties>(value);
+      itemElement = DMXDrawsChartDraw.NonVisualGraphicFramePropertiesConverter.CreateOpenXmlElement<DXDrawChartDraw.NonVisualGraphicFrameProperties>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
@@ -64,22 +64,22 @@ public static class GraphicFrameConverter
   /// <summary>
   /// Graphic Frame Transform.
   /// </summary>
-  private static DocumentModel.Drawings.ChartDrawing.Transform? GetTransform(DocumentFormat.OpenXml.Drawing.ChartDrawing.GraphicFrame openXmlElement)
+  private static DMDrawsChartDraw.Transform? GetTransform(DXDrawChartDraw.GraphicFrame openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.ChartDrawing.Transform>();
+    var itemElement = openXmlElement?.GetFirstChild<DXDrawChartDraw.Transform>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.ChartDrawing.TransformConverter.CreateModelElement(itemElement);
+      return DMXDrawsChartDraw.TransformConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetTransform(DocumentFormat.OpenXml.Drawing.ChartDrawing.GraphicFrame openXmlElement, DocumentModel.Drawings.ChartDrawing.Transform? value)
+  private static void SetTransform(DXDrawChartDraw.GraphicFrame openXmlElement, DMDrawsChartDraw.Transform? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.ChartDrawing.Transform>();
+    var itemElement = openXmlElement.GetFirstChild<DXDrawChartDraw.Transform>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Drawings.ChartDrawing.TransformConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.ChartDrawing.Transform>(value);
+      itemElement = DMXDrawsChartDraw.TransformConverter.CreateOpenXmlElement<DXDrawChartDraw.Transform>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
@@ -88,32 +88,32 @@ public static class GraphicFrameConverter
   /// <summary>
   /// Graphical Object.
   /// </summary>
-  private static DocumentModel.Drawings.Graphic? GetGraphic(DocumentFormat.OpenXml.Drawing.ChartDrawing.GraphicFrame openXmlElement)
+  private static DMDraws.Graphic? GetGraphic(DXDrawChartDraw.GraphicFrame openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.Graphic>();
+    var itemElement = openXmlElement?.GetFirstChild<DXDraw.Graphic>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.GraphicConverter.CreateModelElement(itemElement);
+      return DMXDraws.GraphicConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetGraphic(DocumentFormat.OpenXml.Drawing.ChartDrawing.GraphicFrame openXmlElement, DocumentModel.Drawings.Graphic? value)
+  private static void SetGraphic(DXDrawChartDraw.GraphicFrame openXmlElement, DMDraws.Graphic? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Graphic>();
+    var itemElement = openXmlElement.GetFirstChild<DXDraw.Graphic>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Drawings.GraphicConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Graphic>(value);
+      itemElement = DMXDraws.GraphicConverter.CreateOpenXmlElement<DXDraw.Graphic>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  public static DocumentModel.Drawings.ChartDrawing.GraphicFrame? CreateModelElement(DocumentFormat.OpenXml.Drawing.ChartDrawing.GraphicFrame? openXmlElement)
+  public static DMDrawsChartDraw.GraphicFrame? CreateModelElement(DXDrawChartDraw.GraphicFrame? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.ChartDrawing.GraphicFrame();
+      var value = new DMDrawsChartDraw.GraphicFrame();
       value.Macro = GetMacro(openXmlElement);
       value.Published = GetPublished(openXmlElement);
       value.NonVisualGraphicFrameProperties = GetNonVisualGraphicFrameProperties(openXmlElement);
@@ -124,8 +124,8 @@ public static class GraphicFrameConverter
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.ChartDrawing.GraphicFrame? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.ChartDrawing.GraphicFrame, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDrawsChartDraw.GraphicFrame? value)
+    where OpenXmlElementType: DXDrawChartDraw.GraphicFrame, new()
   {
     if (value != null)
     {

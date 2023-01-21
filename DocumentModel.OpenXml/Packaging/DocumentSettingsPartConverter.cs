@@ -5,7 +5,7 @@ namespace DocumentModel.OpenXml.Packaging;
 /// </summary>
 public static class DocumentSettingsPartConverter
 {
-  private static String? GetContentType(DocumentFormat.OpenXml.Packaging.DocumentSettingsPart openXmlElement)
+  private static String? GetContentType(DXPack.DocumentSettingsPart openXmlElement)
   {
     return openXmlElement?.ContentType;
   }
@@ -13,19 +13,19 @@ public static class DocumentSettingsPartConverter
   /// <summary>
   /// Gets the ImageParts of the DocumentSettingsPart
   /// </summary>
-  private static System.Collections.ObjectModel.Collection<DocumentModel.Packaging.ImagePart> GetImageParts(DocumentFormat.OpenXml.Packaging.DocumentSettingsPart openXmlElement)
+  private static Collection<DMPack.ImagePart> GetImageParts(DXPack.DocumentSettingsPart openXmlElement)
   {
-    var collection = new System.Collections.ObjectModel.Collection<DocumentModel.Packaging.ImagePart>();
-    foreach (var item in openXmlElement.GetPartsOfType<DocumentFormat.OpenXml.Packaging.ImagePart>())
+    var collection = new Collection<DMPack.ImagePart>();
+    foreach (var item in openXmlElement.GetPartsOfType<DXPack.ImagePart>())
     {
-      var newItem = DocumentModel.OpenXml.Packaging.ImagePartConverter.CreateModelElement(item);
+      var newItem = DMXPack.ImagePartConverter.CreateModelElement(item);
       if (newItem != null)
         collection.Add(newItem);
     }
     return collection;
   }
   
-  private static String? GetRelationshipType(DocumentFormat.OpenXml.Packaging.DocumentSettingsPart openXmlElement)
+  private static String? GetRelationshipType(DXPack.DocumentSettingsPart openXmlElement)
   {
     return openXmlElement?.RelationshipType;
   }
@@ -33,28 +33,28 @@ public static class DocumentSettingsPartConverter
   /// <summary>
   /// Gets or sets the root element of this part.
   /// </summary>
-  private static DocumentModel.Wordprocessing.Settings? GetSettings(DocumentFormat.OpenXml.Packaging.DocumentSettingsPart openXmlElement)
+  private static DMW.Settings? GetSettings(DXPack.DocumentSettingsPart openXmlElement)
   {
-    if (openXmlElement?.RootElement is DocumentFormat.OpenXml.Wordprocessing.Settings rootElement)
-      return DocumentModel.OpenXml.Wordprocessing.SettingsConverter.CreateModelElement(rootElement);
+    if (openXmlElement?.RootElement is DXW.Settings rootElement)
+      return DMXW.SettingsConverter.CreateModelElement(rootElement);
     return null;
   }
   
-  private static void SetSettings(DocumentFormat.OpenXml.Packaging.DocumentSettingsPart openXmlElement, DocumentModel.Wordprocessing.Settings? value)
+  private static void SetSettings(DXPack.DocumentSettingsPart openXmlElement, DMW.Settings? value)
   {
     if (value != null)
     {
-       var rootElement = DocumentModel.OpenXml.Wordprocessing.SettingsConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.Settings>(value);
+       var rootElement = DMXW.SettingsConverter.CreateOpenXmlElement<DXW.Settings>(value);
        if (rootElement != null)
          openXmlElement.Settings = rootElement;
     }
   }
   
-  public static DocumentModel.Packaging.DocumentSettingsPart? CreateModelElement(DocumentFormat.OpenXml.Packaging.DocumentSettingsPart? openXmlElement)
+  public static DMPack.DocumentSettingsPart? CreateModelElement(DXPack.DocumentSettingsPart? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Packaging.DocumentSettingsPart();
+      var value = new DMPack.DocumentSettingsPart();
       value.ContentType = GetContentType(openXmlElement);
       value.ImageParts = GetImageParts(openXmlElement);
       value.RelationshipType = GetRelationshipType(openXmlElement);
@@ -64,8 +64,8 @@ public static class DocumentSettingsPartConverter
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Packaging.DocumentSettingsPart? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Packaging.DocumentSettingsPart, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMPack.DocumentSettingsPart? value)
+    where OpenXmlElementType: DXPack.DocumentSettingsPart, new()
   {
     if (value != null)
     {

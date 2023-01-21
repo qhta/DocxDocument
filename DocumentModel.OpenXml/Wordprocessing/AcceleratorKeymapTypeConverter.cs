@@ -8,12 +8,12 @@ public static class AcceleratorKeymapTypeConverter
   /// <summary>
   /// acdName
   /// </summary>
-  private static String? GetAcceleratorName(DocumentFormat.OpenXml.Office.Word.AcceleratorKeymapType openXmlElement)
+  private static String? GetAcceleratorName(DXOW.AcceleratorKeymapType openXmlElement)
   {
     return openXmlElement?.AcceleratorName?.Value;
   }
   
-  private static void SetAcceleratorName(DocumentFormat.OpenXml.Office.Word.AcceleratorKeymapType openXmlElement, String? value)
+  private static void SetAcceleratorName(DXOW.AcceleratorKeymapType openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.AcceleratorName = new StringValue { Value = value };
@@ -21,19 +21,19 @@ public static class AcceleratorKeymapTypeConverter
       openXmlElement.AcceleratorName = null;
   }
   
-  public static DocumentModel.Wordprocessing.AcceleratorKeymapType? CreateModelElement(DocumentFormat.OpenXml.Office.Word.AcceleratorKeymapType? openXmlElement)
+  public static DMW.AcceleratorKeymapType? CreateModelElement(DXOW.AcceleratorKeymapType? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Wordprocessing.AcceleratorKeymapType();
+      var value = new DMW.AcceleratorKeymapType();
       value.AcceleratorName = GetAcceleratorName(openXmlElement);
       return value;
     }
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.AcceleratorKeymapType? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Office.Word.AcceleratorKeymapType, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMW.AcceleratorKeymapType? value)
+    where OpenXmlElementType: DXOW.AcceleratorKeymapType, new()
   {
     if (value != null)
     {

@@ -8,22 +8,22 @@ public static class BorderBoxConverter
   /// <summary>
   /// Border Box Properties.
   /// </summary>
-  private static DocumentModel.Math.BorderBoxProperties? GetBorderBoxProperties(DocumentFormat.OpenXml.Math.BorderBox openXmlElement)
+  private static DMMath.BorderBoxProperties? GetBorderBoxProperties(DXMath.BorderBox openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Math.BorderBoxProperties>();
+    var itemElement = openXmlElement?.GetFirstChild<DXMath.BorderBoxProperties>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Math.BorderBoxPropertiesConverter.CreateModelElement(itemElement);
+      return DMXMath.BorderBoxPropertiesConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetBorderBoxProperties(DocumentFormat.OpenXml.Math.BorderBox openXmlElement, DocumentModel.Math.BorderBoxProperties? value)
+  private static void SetBorderBoxProperties(DXMath.BorderBox openXmlElement, DMMath.BorderBoxProperties? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Math.BorderBoxProperties>();
+    var itemElement = openXmlElement.GetFirstChild<DXMath.BorderBoxProperties>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Math.BorderBoxPropertiesConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Math.BorderBoxProperties>(value);
+      itemElement = DMXMath.BorderBoxPropertiesConverter.CreateOpenXmlElement<DXMath.BorderBoxProperties>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
@@ -32,32 +32,32 @@ public static class BorderBoxConverter
   /// <summary>
   /// Base.
   /// </summary>
-  private static DocumentModel.Math.Base? GetBase(DocumentFormat.OpenXml.Math.BorderBox openXmlElement)
+  private static DMMath.Base? GetBase(DXMath.BorderBox openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Math.Base>();
+    var itemElement = openXmlElement?.GetFirstChild<DXMath.Base>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Math.BaseConverter.CreateModelElement(itemElement);
+      return DMXMath.BaseConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetBase(DocumentFormat.OpenXml.Math.BorderBox openXmlElement, DocumentModel.Math.Base? value)
+  private static void SetBase(DXMath.BorderBox openXmlElement, DMMath.Base? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Math.Base>();
+    var itemElement = openXmlElement.GetFirstChild<DXMath.Base>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Math.BaseConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Math.Base>(value);
+      itemElement = DMXMath.BaseConverter.CreateOpenXmlElement<DXMath.Base>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  public static DocumentModel.Math.BorderBox? CreateModelElement(DocumentFormat.OpenXml.Math.BorderBox? openXmlElement)
+  public static DMMath.BorderBox? CreateModelElement(DXMath.BorderBox? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Math.BorderBox();
+      var value = new DMMath.BorderBox();
       value.BorderBoxProperties = GetBorderBoxProperties(openXmlElement);
       value.Base = GetBase(openXmlElement);
       return value;
@@ -65,8 +65,8 @@ public static class BorderBoxConverter
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Math.BorderBox? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Math.BorderBox, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMMath.BorderBox? value)
+    where OpenXmlElementType: DXMath.BorderBox, new()
   {
     if (value != null)
     {

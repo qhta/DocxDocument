@@ -8,35 +8,35 @@ public static class DocumentConverter
   /// <summary>
   /// conformance
   /// </summary>
-  private static DocumentModel.Wordprocessing.DocumentConformance? GetConformance(DocumentFormat.OpenXml.Wordprocessing.Document openXmlElement)
+  private static DMW.DocumentConformance? GetConformance(DXW.Document openXmlElement)
   {
-    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Wordprocessing.DocumentConformance, DocumentModel.Wordprocessing.DocumentConformance>(openXmlElement?.Conformance?.Value);
+    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Wordprocessing.DocumentConformance, DMW.DocumentConformance>(openXmlElement?.Conformance?.Value);
   }
   
-  private static void SetConformance(DocumentFormat.OpenXml.Wordprocessing.Document openXmlElement, DocumentModel.Wordprocessing.DocumentConformance? value)
+  private static void SetConformance(DXW.Document openXmlElement, DMW.DocumentConformance? value)
   {
-    openXmlElement.Conformance = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Wordprocessing.DocumentConformance, DocumentModel.Wordprocessing.DocumentConformance>(value);
+    openXmlElement.Conformance = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Wordprocessing.DocumentConformance, DMW.DocumentConformance>(value);
   }
   
   /// <summary>
   /// Document Background.
   /// </summary>
-  private static DocumentModel.Wordprocessing.DocumentBackground? GetDocumentBackground(DocumentFormat.OpenXml.Wordprocessing.Document openXmlElement)
+  private static DMW.DocumentBackground? GetDocumentBackground(DXW.Document openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.DocumentBackground>();
+    var itemElement = openXmlElement?.GetFirstChild<DXW.DocumentBackground>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Wordprocessing.DocumentBackgroundConverter.CreateModelElement(itemElement);
+      return DMXW.DocumentBackgroundConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetDocumentBackground(DocumentFormat.OpenXml.Wordprocessing.Document openXmlElement, DocumentModel.Wordprocessing.DocumentBackground? value)
+  private static void SetDocumentBackground(DXW.Document openXmlElement, DMW.DocumentBackground? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.DocumentBackground>();
+    var itemElement = openXmlElement.GetFirstChild<DXW.DocumentBackground>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Wordprocessing.DocumentBackgroundConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.DocumentBackground>(value);
+      itemElement = DMXW.DocumentBackgroundConverter.CreateOpenXmlElement<DXW.DocumentBackground>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
@@ -45,32 +45,32 @@ public static class DocumentConverter
   /// <summary>
   /// Body.
   /// </summary>
-  private static DocumentModel.Wordprocessing.Body? GetBody(DocumentFormat.OpenXml.Wordprocessing.Document openXmlElement)
+  private static DMW.Body? GetBody(DXW.Document openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.Body>();
+    var itemElement = openXmlElement?.GetFirstChild<DXW.Body>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Wordprocessing.BodyConverter.CreateModelElement(itemElement);
+      return DMXW.BodyConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetBody(DocumentFormat.OpenXml.Wordprocessing.Document openXmlElement, DocumentModel.Wordprocessing.Body? value)
+  private static void SetBody(DXW.Document openXmlElement, DMW.Body? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.Body>();
+    var itemElement = openXmlElement.GetFirstChild<DXW.Body>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Wordprocessing.BodyConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.Body>(value);
+      itemElement = DMXW.BodyConverter.CreateOpenXmlElement<DXW.Body>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  public static DocumentModel.Wordprocessing.Document? CreateModelElement(DocumentFormat.OpenXml.Wordprocessing.Document? openXmlElement)
+  public static DMW.Document? CreateModelElement(DXW.Document? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Wordprocessing.Document();
+      var value = new DMW.Document();
       value.Conformance = GetConformance(openXmlElement);
       value.DocumentBackground = GetDocumentBackground(openXmlElement);
       value.Body = GetBody(openXmlElement);
@@ -79,8 +79,8 @@ public static class DocumentConverter
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.Document? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Wordprocessing.Document, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMW.Document? value)
+    where OpenXmlElementType: DXW.Document, new()
   {
     if (value != null)
     {

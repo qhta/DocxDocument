@@ -5,45 +5,45 @@ namespace DocumentModel.OpenXml.Drawings.Charts;
 /// </summary>
 public static class StockChartExtensionListConverter
 {
-  private static System.Collections.ObjectModel.Collection<DocumentModel.Drawings.Charts.StockChartExtension> GetStockChartExtensions(DocumentFormat.OpenXml.Drawing.Charts.StockChartExtensionList openXmlElement)
+  private static Collection<DMDrawsCharts.StockChartExtension> GetStockChartExtensions(DXDrawCharts.StockChartExtensionList openXmlElement)
   {
-    var collection = new System.Collections.ObjectModel.Collection<DocumentModel.Drawings.Charts.StockChartExtension>();
-    foreach (var item in openXmlElement.Elements<DocumentFormat.OpenXml.Drawing.Charts.StockChartExtension>())
+    var collection = new Collection<DMDrawsCharts.StockChartExtension>();
+    foreach (var item in openXmlElement.Elements<DXDrawCharts.StockChartExtension>())
     {
-      var newItem = DocumentModel.OpenXml.Drawings.Charts.StockChartExtensionConverter.CreateModelElement(item);
+      var newItem = DMXDrawsCharts.StockChartExtensionConverter.CreateModelElement(item);
       if (newItem != null)
         collection.Add(newItem);
     }
     return collection;
   }
   
-  private static void SetStockChartExtensions(DocumentFormat.OpenXml.Drawing.Charts.StockChartExtensionList openXmlElement, System.Collections.ObjectModel.Collection<DocumentModel.Drawings.Charts.StockChartExtension>? value)
+  private static void SetStockChartExtensions(DXDrawCharts.StockChartExtensionList openXmlElement, Collection<DMDrawsCharts.StockChartExtension>? value)
   {
-    openXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Drawing.Charts.StockChartExtension>();
+    openXmlElement.RemoveAllChildren<DXDrawCharts.StockChartExtension>();
     if (value != null)
     {
       foreach (var item in value)
       {
-        var newItem = DocumentModel.OpenXml.Drawings.Charts.StockChartExtensionConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Charts.StockChartExtension>(item);
+        var newItem = DMXDrawsCharts.StockChartExtensionConverter.CreateOpenXmlElement<DXDrawCharts.StockChartExtension>(item);
         if (newItem != null)
           openXmlElement.AddChild(newItem);
       }
     }
   }
   
-  public static DocumentModel.Drawings.Charts.StockChartExtensionList? CreateModelElement(DocumentFormat.OpenXml.Drawing.Charts.StockChartExtensionList? openXmlElement)
+  public static DMDrawsCharts.StockChartExtensionList? CreateModelElement(DXDrawCharts.StockChartExtensionList? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.Charts.StockChartExtensionList();
+      var value = new DMDrawsCharts.StockChartExtensionList();
       value.StockChartExtensions = GetStockChartExtensions(openXmlElement);
       return value;
     }
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.Charts.StockChartExtensionList? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.Charts.StockChartExtensionList, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDrawsCharts.StockChartExtensionList? value)
+    where OpenXmlElementType: DXDrawCharts.StockChartExtensionList, new()
   {
     if (value != null)
     {

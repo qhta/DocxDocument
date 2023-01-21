@@ -8,12 +8,12 @@ public static class RibbonConverter
   /// <summary>
   /// startFromScratch, this property is only available in Office 2010 and later.
   /// </summary>
-  private static Boolean? GetStartFromScratch(DocumentFormat.OpenXml.Office2010.CustomUI.Ribbon openXmlElement)
+  private static Boolean? GetStartFromScratch(DXO2010CustUI.Ribbon openXmlElement)
   {
     return openXmlElement?.StartFromScratch?.Value;
   }
   
-  private static void SetStartFromScratch(DocumentFormat.OpenXml.Office2010.CustomUI.Ribbon openXmlElement, Boolean? value)
+  private static void SetStartFromScratch(DXO2010CustUI.Ribbon openXmlElement, Boolean? value)
   {
     if (value != null)
       openXmlElement.StartFromScratch = new BooleanValue { Value = (Boolean)value };
@@ -24,22 +24,22 @@ public static class RibbonConverter
   /// <summary>
   /// QuickAccessToolbar.
   /// </summary>
-  private static DocumentModel.QuickAccessToolbar? GetQuickAccessToolbar(DocumentFormat.OpenXml.Office2010.CustomUI.Ribbon openXmlElement)
+  private static DM.QuickAccessToolbar? GetQuickAccessToolbar(DXO2010CustUI.Ribbon openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office2010.CustomUI.QuickAccessToolbar>();
+    var itemElement = openXmlElement?.GetFirstChild<DXO2010CustUI.QuickAccessToolbar>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.QuickAccessToolbarConverter.CreateModelElement(itemElement);
+      return DMX.QuickAccessToolbarConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetQuickAccessToolbar(DocumentFormat.OpenXml.Office2010.CustomUI.Ribbon openXmlElement, DocumentModel.QuickAccessToolbar? value)
+  private static void SetQuickAccessToolbar(DXO2010CustUI.Ribbon openXmlElement, DM.QuickAccessToolbar? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2010.CustomUI.QuickAccessToolbar>();
+    var itemElement = openXmlElement.GetFirstChild<DXO2010CustUI.QuickAccessToolbar>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.QuickAccessToolbarConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2010.CustomUI.QuickAccessToolbar>(value);
+      itemElement = DMX.QuickAccessToolbarConverter.CreateOpenXmlElement<DXO2010CustUI.QuickAccessToolbar>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
@@ -48,22 +48,22 @@ public static class RibbonConverter
   /// <summary>
   /// Tabs.
   /// </summary>
-  private static DocumentModel.Tabs? GetTabs(DocumentFormat.OpenXml.Office2010.CustomUI.Ribbon openXmlElement)
+  private static DM.Tabs? GetTabs(DXO2010CustUI.Ribbon openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office2010.CustomUI.Tabs>();
+    var itemElement = openXmlElement?.GetFirstChild<DXO2010CustUI.Tabs>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.TabsConverter.CreateModelElement(itemElement);
+      return DMX.TabsConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetTabs(DocumentFormat.OpenXml.Office2010.CustomUI.Ribbon openXmlElement, DocumentModel.Tabs? value)
+  private static void SetTabs(DXO2010CustUI.Ribbon openXmlElement, DM.Tabs? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2010.CustomUI.Tabs>();
+    var itemElement = openXmlElement.GetFirstChild<DXO2010CustUI.Tabs>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.TabsConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2010.CustomUI.Tabs>(value);
+      itemElement = DMX.TabsConverter.CreateOpenXmlElement<DXO2010CustUI.Tabs>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
@@ -72,32 +72,32 @@ public static class RibbonConverter
   /// <summary>
   /// ContextualTabs.
   /// </summary>
-  private static DocumentModel.ContextualTabs? GetContextualTabs(DocumentFormat.OpenXml.Office2010.CustomUI.Ribbon openXmlElement)
+  private static DM.ContextualTabs? GetContextualTabs(DXO2010CustUI.Ribbon openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office2010.CustomUI.ContextualTabs>();
+    var itemElement = openXmlElement?.GetFirstChild<DXO2010CustUI.ContextualTabs>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.ContextualTabsConverter.CreateModelElement(itemElement);
+      return DMX.ContextualTabsConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetContextualTabs(DocumentFormat.OpenXml.Office2010.CustomUI.Ribbon openXmlElement, DocumentModel.ContextualTabs? value)
+  private static void SetContextualTabs(DXO2010CustUI.Ribbon openXmlElement, DM.ContextualTabs? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2010.CustomUI.ContextualTabs>();
+    var itemElement = openXmlElement.GetFirstChild<DXO2010CustUI.ContextualTabs>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.ContextualTabsConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2010.CustomUI.ContextualTabs>(value);
+      itemElement = DMX.ContextualTabsConverter.CreateOpenXmlElement<DXO2010CustUI.ContextualTabs>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  public static DocumentModel.Ribbon? CreateModelElement(DocumentFormat.OpenXml.Office2010.CustomUI.Ribbon? openXmlElement)
+  public static DM.Ribbon? CreateModelElement(DXO2010CustUI.Ribbon? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Ribbon();
+      var value = new DM.Ribbon();
       value.StartFromScratch = GetStartFromScratch(openXmlElement);
       value.QuickAccessToolbar = GetQuickAccessToolbar(openXmlElement);
       value.Tabs = GetTabs(openXmlElement);
@@ -107,8 +107,8 @@ public static class RibbonConverter
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Ribbon? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Office2010.CustomUI.Ribbon, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DM.Ribbon? value)
+    where OpenXmlElementType: DXO2010CustUI.Ribbon, new()
   {
     if (value != null)
     {

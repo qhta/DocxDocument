@@ -8,12 +8,12 @@ public static class ExtensionConverter
   /// <summary>
   /// uri, this property is only available in Office 2021 and later.
   /// </summary>
-  private static String? GetUri(DocumentFormat.OpenXml.Office2021.Word.ExtensionList.Extension openXmlElement)
+  private static String? GetUri(DXO2021WExtList.Extension openXmlElement)
   {
     return openXmlElement?.Uri?.Value;
   }
   
-  private static void SetUri(DocumentFormat.OpenXml.Office2021.Word.ExtensionList.Extension openXmlElement, String? value)
+  private static void SetUri(DXO2021WExtList.Extension openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.Uri = new StringValue { Value = value };
@@ -21,19 +21,19 @@ public static class ExtensionConverter
       openXmlElement.Uri = null;
   }
   
-  public static DocumentModel.Wordprocessing.Extension? CreateModelElement(DocumentFormat.OpenXml.Office2021.Word.ExtensionList.Extension? openXmlElement)
+  public static DMW.Extension? CreateModelElement(DXO2021WExtList.Extension? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Wordprocessing.Extension();
+      var value = new DMW.Extension();
       value.Uri = GetUri(openXmlElement);
       return value;
     }
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.Extension? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Office2021.Word.ExtensionList.Extension, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMW.Extension? value)
+    where OpenXmlElementType: DXO2021WExtList.Extension, new()
   {
     if (value != null)
     {

@@ -8,12 +8,12 @@ public static class WrapTopBottomConverter
   /// <summary>
   /// Distance From Text on Top Edge
   /// </summary>
-  private static UInt32? GetDistanceFromTop(DocumentFormat.OpenXml.Drawing.Wordprocessing.WrapTopBottom openXmlElement)
+  private static UInt32? GetDistanceFromTop(DXDrawW.WrapTopBottom openXmlElement)
   {
     return openXmlElement.DistanceFromTop?.Value;
   }
   
-  private static void SetDistanceFromTop(DocumentFormat.OpenXml.Drawing.Wordprocessing.WrapTopBottom openXmlElement, UInt32? value)
+  private static void SetDistanceFromTop(DXDrawW.WrapTopBottom openXmlElement, UInt32? value)
   {
     openXmlElement.DistanceFromTop = value;
   }
@@ -21,12 +21,12 @@ public static class WrapTopBottomConverter
   /// <summary>
   /// Distance From Text on Bottom Edge
   /// </summary>
-  private static UInt32? GetDistanceFromBottom(DocumentFormat.OpenXml.Drawing.Wordprocessing.WrapTopBottom openXmlElement)
+  private static UInt32? GetDistanceFromBottom(DXDrawW.WrapTopBottom openXmlElement)
   {
     return openXmlElement.DistanceFromBottom?.Value;
   }
   
-  private static void SetDistanceFromBottom(DocumentFormat.OpenXml.Drawing.Wordprocessing.WrapTopBottom openXmlElement, UInt32? value)
+  private static void SetDistanceFromBottom(DXDrawW.WrapTopBottom openXmlElement, UInt32? value)
   {
     openXmlElement.DistanceFromBottom = value;
   }
@@ -34,32 +34,32 @@ public static class WrapTopBottomConverter
   /// <summary>
   /// Wrapping Boundaries.
   /// </summary>
-  private static DocumentModel.Drawings.Wordprocessing.EffectExtent? GetEffectExtent(DocumentFormat.OpenXml.Drawing.Wordprocessing.WrapTopBottom openXmlElement)
+  private static DMDrawsW.EffectExtent? GetEffectExtent(DXDrawW.WrapTopBottom openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.Wordprocessing.EffectExtent>();
+    var itemElement = openXmlElement?.GetFirstChild<DXDrawW.EffectExtent>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.Wordprocessing.EffectExtentConverter.CreateModelElement(itemElement);
+      return DMXDrawsW.EffectExtentConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetEffectExtent(DocumentFormat.OpenXml.Drawing.Wordprocessing.WrapTopBottom openXmlElement, DocumentModel.Drawings.Wordprocessing.EffectExtent? value)
+  private static void SetEffectExtent(DXDrawW.WrapTopBottom openXmlElement, DMDrawsW.EffectExtent? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Wordprocessing.EffectExtent>();
+    var itemElement = openXmlElement.GetFirstChild<DXDrawW.EffectExtent>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Drawings.Wordprocessing.EffectExtentConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Wordprocessing.EffectExtent>(value);
+      itemElement = DMXDrawsW.EffectExtentConverter.CreateOpenXmlElement<DXDrawW.EffectExtent>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  public static DocumentModel.Drawings.Wordprocessing.WrapTopBottom? CreateModelElement(DocumentFormat.OpenXml.Drawing.Wordprocessing.WrapTopBottom? openXmlElement)
+  public static DMDrawsW.WrapTopBottom? CreateModelElement(DXDrawW.WrapTopBottom? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.Wordprocessing.WrapTopBottom();
+      var value = new DMDrawsW.WrapTopBottom();
       value.DistanceFromTop = GetDistanceFromTop(openXmlElement);
       value.DistanceFromBottom = GetDistanceFromBottom(openXmlElement);
       value.EffectExtent = GetEffectExtent(openXmlElement);
@@ -68,8 +68,8 @@ public static class WrapTopBottomConverter
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.Wordprocessing.WrapTopBottom? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.Wordprocessing.WrapTopBottom, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDrawsW.WrapTopBottom? value)
+    where OpenXmlElementType: DXDrawW.WrapTopBottom, new()
   {
     if (value != null)
     {

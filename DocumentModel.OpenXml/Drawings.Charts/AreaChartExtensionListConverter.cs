@@ -5,45 +5,45 @@ namespace DocumentModel.OpenXml.Drawings.Charts;
 /// </summary>
 public static class AreaChartExtensionListConverter
 {
-  private static System.Collections.ObjectModel.Collection<DocumentModel.Drawings.Charts.AreaChartExtension> GetAreaChartExtensions(DocumentFormat.OpenXml.Drawing.Charts.AreaChartExtensionList openXmlElement)
+  private static Collection<DMDrawsCharts.AreaChartExtension> GetAreaChartExtensions(DXDrawCharts.AreaChartExtensionList openXmlElement)
   {
-    var collection = new System.Collections.ObjectModel.Collection<DocumentModel.Drawings.Charts.AreaChartExtension>();
-    foreach (var item in openXmlElement.Elements<DocumentFormat.OpenXml.Drawing.Charts.AreaChartExtension>())
+    var collection = new Collection<DMDrawsCharts.AreaChartExtension>();
+    foreach (var item in openXmlElement.Elements<DXDrawCharts.AreaChartExtension>())
     {
-      var newItem = DocumentModel.OpenXml.Drawings.Charts.AreaChartExtensionConverter.CreateModelElement(item);
+      var newItem = DMXDrawsCharts.AreaChartExtensionConverter.CreateModelElement(item);
       if (newItem != null)
         collection.Add(newItem);
     }
     return collection;
   }
   
-  private static void SetAreaChartExtensions(DocumentFormat.OpenXml.Drawing.Charts.AreaChartExtensionList openXmlElement, System.Collections.ObjectModel.Collection<DocumentModel.Drawings.Charts.AreaChartExtension>? value)
+  private static void SetAreaChartExtensions(DXDrawCharts.AreaChartExtensionList openXmlElement, Collection<DMDrawsCharts.AreaChartExtension>? value)
   {
-    openXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Drawing.Charts.AreaChartExtension>();
+    openXmlElement.RemoveAllChildren<DXDrawCharts.AreaChartExtension>();
     if (value != null)
     {
       foreach (var item in value)
       {
-        var newItem = DocumentModel.OpenXml.Drawings.Charts.AreaChartExtensionConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Charts.AreaChartExtension>(item);
+        var newItem = DMXDrawsCharts.AreaChartExtensionConverter.CreateOpenXmlElement<DXDrawCharts.AreaChartExtension>(item);
         if (newItem != null)
           openXmlElement.AddChild(newItem);
       }
     }
   }
   
-  public static DocumentModel.Drawings.Charts.AreaChartExtensionList? CreateModelElement(DocumentFormat.OpenXml.Drawing.Charts.AreaChartExtensionList? openXmlElement)
+  public static DMDrawsCharts.AreaChartExtensionList? CreateModelElement(DXDrawCharts.AreaChartExtensionList? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.Charts.AreaChartExtensionList();
+      var value = new DMDrawsCharts.AreaChartExtensionList();
       value.AreaChartExtensions = GetAreaChartExtensions(openXmlElement);
       return value;
     }
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.Charts.AreaChartExtensionList? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.Charts.AreaChartExtensionList, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDrawsCharts.AreaChartExtensionList? value)
+    where OpenXmlElementType: DXDrawCharts.AreaChartExtensionList, new()
   {
     if (value != null)
     {

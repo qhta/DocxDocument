@@ -8,22 +8,22 @@ public static class RubyPropertiesConverter
   /// <summary>
   /// Phonetic Guide Text Alignment.
   /// </summary>
-  private static DocumentModel.Wordprocessing.RubyAlignKind? GetRubyAlign(DocumentFormat.OpenXml.Wordprocessing.RubyProperties openXmlElement)
+  private static DMW.RubyAlignKind? GetRubyAlign(DXW.RubyProperties openXmlElement)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.RubyAlign>();
+    var itemElement = openXmlElement.GetFirstChild<DXW.RubyAlign>();
     if (itemElement?.Val?.Value != null)
-      return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Wordprocessing.RubyAlignValues, DocumentModel.Wordprocessing.RubyAlignKind>(itemElement.Val.Value);
+      return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Wordprocessing.RubyAlignValues, DMW.RubyAlignKind>(itemElement.Val.Value);
     return null;
   }
   
-  private static void SetRubyAlign(DocumentFormat.OpenXml.Wordprocessing.RubyProperties openXmlElement, DocumentModel.Wordprocessing.RubyAlignKind? value)
+  private static void SetRubyAlign(DXW.RubyProperties openXmlElement, DMW.RubyAlignKind? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.RubyAlign>();
+    var itemElement = openXmlElement.GetFirstChild<DXW.RubyAlign>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = EnumValueConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.RubyAlign, DocumentFormat.OpenXml.Wordprocessing.RubyAlignValues, DocumentModel.Wordprocessing.RubyAlignKind>(value);
+      itemElement = EnumValueConverter.CreateOpenXmlElement<DXW.RubyAlign, DocumentFormat.OpenXml.Wordprocessing.RubyAlignValues, DMW.RubyAlignKind>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
@@ -32,22 +32,22 @@ public static class RubyPropertiesConverter
   /// <summary>
   /// Phonetic Guide Text Font Size.
   /// </summary>
-  private static String? GetPhoneticGuideTextFontSize(DocumentFormat.OpenXml.Wordprocessing.RubyProperties openXmlElement)
+  private static String? GetPhoneticGuideTextFontSize(DXW.RubyProperties openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.PhoneticGuideTextFontSize>();
+    var itemElement = openXmlElement?.GetFirstChild<DXW.PhoneticGuideTextFontSize>();
     if (itemElement != null)
       return itemElement.Val?.Value;
     return null;
   }
   
-  private static void SetPhoneticGuideTextFontSize(DocumentFormat.OpenXml.Wordprocessing.RubyProperties openXmlElement, String? value)
+  private static void SetPhoneticGuideTextFontSize(DXW.RubyProperties openXmlElement, String? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.PhoneticGuideTextFontSize>();
+    var itemElement = openXmlElement.GetFirstChild<DXW.PhoneticGuideTextFontSize>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = new DocumentFormat.OpenXml.Wordprocessing.PhoneticGuideTextFontSize { Val = value };
+      itemElement = new DXW.PhoneticGuideTextFontSize { Val = value };
       openXmlElement.AddChild(itemElement);
     }
   }
@@ -55,22 +55,22 @@ public static class RubyPropertiesConverter
   /// <summary>
   /// Distance Between Phonetic Guide Text and Phonetic Guide Base Text.
   /// </summary>
-  private static Int16? GetPhoneticGuideRaise(DocumentFormat.OpenXml.Wordprocessing.RubyProperties openXmlElement)
+  private static Int16? GetPhoneticGuideRaise(DXW.RubyProperties openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.PhoneticGuideRaise>();
+    var itemElement = openXmlElement?.GetFirstChild<DXW.PhoneticGuideRaise>();
     if (itemElement != null)
       return itemElement.Val?.Value;
     return null;
   }
   
-  private static void SetPhoneticGuideRaise(DocumentFormat.OpenXml.Wordprocessing.RubyProperties openXmlElement, Int16? value)
+  private static void SetPhoneticGuideRaise(DXW.RubyProperties openXmlElement, Int16? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.PhoneticGuideRaise>();
+    var itemElement = openXmlElement.GetFirstChild<DXW.PhoneticGuideRaise>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = new DocumentFormat.OpenXml.Wordprocessing.PhoneticGuideRaise{ Val = value };
+      itemElement = new DXW.PhoneticGuideRaise{ Val = value };
       openXmlElement.AddChild(itemElement);
     }
   }
@@ -78,22 +78,22 @@ public static class RubyPropertiesConverter
   /// <summary>
   /// Phonetic Guide Base Text Font Size.
   /// </summary>
-  private static String? GetPhoneticGuideBaseTextSize(DocumentFormat.OpenXml.Wordprocessing.RubyProperties openXmlElement)
+  private static String? GetPhoneticGuideBaseTextSize(DXW.RubyProperties openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.PhoneticGuideBaseTextSize>();
+    var itemElement = openXmlElement?.GetFirstChild<DXW.PhoneticGuideBaseTextSize>();
     if (itemElement != null)
       return itemElement.Val?.Value;
     return null;
   }
   
-  private static void SetPhoneticGuideBaseTextSize(DocumentFormat.OpenXml.Wordprocessing.RubyProperties openXmlElement, String? value)
+  private static void SetPhoneticGuideBaseTextSize(DXW.RubyProperties openXmlElement, String? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.PhoneticGuideBaseTextSize>();
+    var itemElement = openXmlElement.GetFirstChild<DXW.PhoneticGuideBaseTextSize>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = new DocumentFormat.OpenXml.Wordprocessing.PhoneticGuideBaseTextSize { Val = value };
+      itemElement = new DXW.PhoneticGuideBaseTextSize { Val = value };
       openXmlElement.AddChild(itemElement);
     }
   }
@@ -101,22 +101,22 @@ public static class RubyPropertiesConverter
   /// <summary>
   /// Language ID for Phonetic Guide.
   /// </summary>
-  private static String? GetLanguageId(DocumentFormat.OpenXml.Wordprocessing.RubyProperties openXmlElement)
+  private static String? GetLanguageId(DXW.RubyProperties openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.LanguageId>();
+    var itemElement = openXmlElement?.GetFirstChild<DXW.LanguageId>();
     if (itemElement != null)
       return itemElement.Val?.Value;
     return null;
   }
   
-  private static void SetLanguageId(DocumentFormat.OpenXml.Wordprocessing.RubyProperties openXmlElement, String? value)
+  private static void SetLanguageId(DXW.RubyProperties openXmlElement, String? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.LanguageId>();
+    var itemElement = openXmlElement.GetFirstChild<DXW.LanguageId>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = new DocumentFormat.OpenXml.Wordprocessing.LanguageId { Val = value };
+      itemElement = new DXW.LanguageId { Val = value };
       openXmlElement.AddChild(itemElement);
     }
   }
@@ -124,34 +124,34 @@ public static class RubyPropertiesConverter
   /// <summary>
   /// Invalidated Field Cache.
   /// </summary>
-  private static Boolean? GetDirty(DocumentFormat.OpenXml.Wordprocessing.RubyProperties openXmlElement)
+  private static Boolean? GetDirty(DXW.RubyProperties openXmlElement)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.Dirty>();
+    var itemElement = openXmlElement.GetFirstChild<DXW.Dirty>();
     if (itemElement?.Val?.Value != null)
       return itemElement.Val.Value;
     return null;
   }
   
-  private static void SetDirty(DocumentFormat.OpenXml.Wordprocessing.RubyProperties openXmlElement, Boolean? value)
+  private static void SetDirty(DXW.RubyProperties openXmlElement, Boolean? value)
   {
     if (value == false)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.Dirty>();
+      var itemElement = openXmlElement.GetFirstChild<DXW.Dirty>();
       if (itemElement != null)
         itemElement.Remove();
     }
     if (value == true)
     {
-      var itemElement = new DocumentFormat.OpenXml.Wordprocessing.Dirty();
+      var itemElement = new DXW.Dirty();
       openXmlElement.AddChild(itemElement);
     }
   }
   
-  public static DocumentModel.Wordprocessing.RubyProperties? CreateModelElement(DocumentFormat.OpenXml.Wordprocessing.RubyProperties? openXmlElement)
+  public static DMW.RubyProperties? CreateModelElement(DXW.RubyProperties? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Wordprocessing.RubyProperties();
+      var value = new DMW.RubyProperties();
       value.RubyAlign = GetRubyAlign(openXmlElement);
       value.PhoneticGuideTextFontSize = GetPhoneticGuideTextFontSize(openXmlElement);
       value.PhoneticGuideRaise = GetPhoneticGuideRaise(openXmlElement);
@@ -163,8 +163,8 @@ public static class RubyPropertiesConverter
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.RubyProperties? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Wordprocessing.RubyProperties, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMW.RubyProperties? value)
+    where OpenXmlElementType: DXW.RubyProperties, new()
   {
     if (value != null)
     {

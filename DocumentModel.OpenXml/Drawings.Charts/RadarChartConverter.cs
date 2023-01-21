@@ -8,22 +8,22 @@ public static class RadarChartConverter
   /// <summary>
   /// RadarStyle.
   /// </summary>
-  private static DocumentModel.Drawings.Charts.RadarStyleKind? GetRadarStyle(DocumentFormat.OpenXml.Drawing.Charts.RadarChart openXmlElement)
+  private static DMDrawsCharts.RadarStyleKind? GetRadarStyle(DXDrawCharts.RadarChart openXmlElement)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.RadarStyle>();
+    var itemElement = openXmlElement.GetFirstChild<DXDrawCharts.RadarStyle>();
     if (itemElement?.Val?.Value != null)
-      return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Drawing.Charts.RadarStyleValues, DocumentModel.Drawings.Charts.RadarStyleKind>(itemElement.Val.Value);
+      return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Drawing.Charts.RadarStyleValues, DMDrawsCharts.RadarStyleKind>(itemElement.Val.Value);
     return null;
   }
   
-  private static void SetRadarStyle(DocumentFormat.OpenXml.Drawing.Charts.RadarChart openXmlElement, DocumentModel.Drawings.Charts.RadarStyleKind? value)
+  private static void SetRadarStyle(DXDrawCharts.RadarChart openXmlElement, DMDrawsCharts.RadarStyleKind? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.RadarStyle>();
+    var itemElement = openXmlElement.GetFirstChild<DXDrawCharts.RadarStyle>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = EnumValueConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Charts.RadarStyle, DocumentFormat.OpenXml.Drawing.Charts.RadarStyleValues, DocumentModel.Drawings.Charts.RadarStyleKind>(value);
+      itemElement = EnumValueConverter.CreateOpenXmlElement<DXDrawCharts.RadarStyle, DocumentFormat.OpenXml.Drawing.Charts.RadarStyleValues, DMDrawsCharts.RadarStyleKind>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
@@ -32,78 +32,78 @@ public static class RadarChartConverter
   /// <summary>
   /// VaryColors.
   /// </summary>
-  private static Boolean? GetVaryColors(DocumentFormat.OpenXml.Drawing.Charts.RadarChart openXmlElement)
+  private static Boolean? GetVaryColors(DXDrawCharts.RadarChart openXmlElement)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.VaryColors>();
+    var itemElement = openXmlElement.GetFirstChild<DXDrawCharts.VaryColors>();
     return itemElement != null;
   }
   
-  private static void SetVaryColors(DocumentFormat.OpenXml.Drawing.Charts.RadarChart openXmlElement, Boolean? value)
+  private static void SetVaryColors(DXDrawCharts.RadarChart openXmlElement, Boolean? value)
   {
     if (value == false)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.VaryColors>();
+      var itemElement = openXmlElement.GetFirstChild<DXDrawCharts.VaryColors>();
       if (itemElement != null)
         itemElement.Remove();
     }
     if (value == true)
     {
-      var itemElement = new DocumentFormat.OpenXml.Drawing.Charts.VaryColors();
+      var itemElement = new DXDrawCharts.VaryColors();
       openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static System.Collections.ObjectModel.Collection<DocumentModel.Drawings.Charts.RadarChartSeries> GetRadarChartSerieses(DocumentFormat.OpenXml.Drawing.Charts.RadarChart openXmlElement)
+  private static Collection<DMDrawsCharts.RadarChartSeries> GetRadarChartSerieses(DXDrawCharts.RadarChart openXmlElement)
   {
-    var collection = new System.Collections.ObjectModel.Collection<DocumentModel.Drawings.Charts.RadarChartSeries>();
-    foreach (var item in openXmlElement.Elements<DocumentFormat.OpenXml.Drawing.Charts.RadarChartSeries>())
+    var collection = new Collection<DMDrawsCharts.RadarChartSeries>();
+    foreach (var item in openXmlElement.Elements<DXDrawCharts.RadarChartSeries>())
     {
-      var newItem = DocumentModel.OpenXml.Drawings.Charts.RadarChartSeriesConverter.CreateModelElement(item);
+      var newItem = DMXDrawsCharts.RadarChartSeriesConverter.CreateModelElement(item);
       if (newItem != null)
         collection.Add(newItem);
     }
     return collection;
   }
   
-  private static void SetRadarChartSerieses(DocumentFormat.OpenXml.Drawing.Charts.RadarChart openXmlElement, System.Collections.ObjectModel.Collection<DocumentModel.Drawings.Charts.RadarChartSeries>? value)
+  private static void SetRadarChartSerieses(DXDrawCharts.RadarChart openXmlElement, Collection<DMDrawsCharts.RadarChartSeries>? value)
   {
-    openXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Drawing.Charts.RadarChartSeries>();
+    openXmlElement.RemoveAllChildren<DXDrawCharts.RadarChartSeries>();
     if (value != null)
     {
       foreach (var item in value)
       {
-        var newItem = DocumentModel.OpenXml.Drawings.Charts.RadarChartSeriesConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Charts.RadarChartSeries>(item);
+        var newItem = DMXDrawsCharts.RadarChartSeriesConverter.CreateOpenXmlElement<DXDrawCharts.RadarChartSeries>(item);
         if (newItem != null)
           openXmlElement.AddChild(newItem);
       }
     }
   }
   
-  private static DocumentModel.Drawings.Charts.DataLabels? GetDataLabels(DocumentFormat.OpenXml.Drawing.Charts.RadarChart openXmlElement)
+  private static DMDrawsCharts.DataLabels? GetDataLabels(DXDrawCharts.RadarChart openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.DataLabels>();
+    var itemElement = openXmlElement?.GetFirstChild<DXDrawCharts.DataLabels>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.Charts.DataLabelsConverter.CreateModelElement(itemElement);
+      return DMXDrawsCharts.DataLabelsConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetDataLabels(DocumentFormat.OpenXml.Drawing.Charts.RadarChart openXmlElement, DocumentModel.Drawings.Charts.DataLabels? value)
+  private static void SetDataLabels(DXDrawCharts.RadarChart openXmlElement, DMDrawsCharts.DataLabels? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.DataLabels>();
+    var itemElement = openXmlElement.GetFirstChild<DXDrawCharts.DataLabels>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Drawings.Charts.DataLabelsConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Charts.DataLabels>(value);
+      itemElement = DMXDrawsCharts.DataLabelsConverter.CreateOpenXmlElement<DXDrawCharts.DataLabels>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static System.Collections.ObjectModel.Collection<UInt32> GetAxisIds(DocumentFormat.OpenXml.Drawing.Charts.RadarChart openXmlElement)
+  private static Collection<UInt32> GetAxisIds(DXDrawCharts.RadarChart openXmlElement)
   {
-    var collection = new System.Collections.ObjectModel.Collection<UInt32>();
-    foreach (var item in openXmlElement.Elements<DocumentFormat.OpenXml.Drawing.Charts.AxisId>())
+    var collection = new Collection<UInt32>();
+    foreach (var item in openXmlElement.Elements<DXDrawCharts.AxisId>())
     {
       var newItem = UInt32ValueConverter.GetValue(item);
       if (newItem != null)
@@ -112,46 +112,46 @@ public static class RadarChartConverter
     return collection;
   }
   
-  private static void SetAxisIds(DocumentFormat.OpenXml.Drawing.Charts.RadarChart openXmlElement, System.Collections.ObjectModel.Collection<UInt32>? value)
+  private static void SetAxisIds(DXDrawCharts.RadarChart openXmlElement, Collection<UInt32>? value)
   {
-    openXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Drawing.Charts.AxisId>();
+    openXmlElement.RemoveAllChildren<DXDrawCharts.AxisId>();
     if (value != null)
     {
       foreach (var item in value)
       {
-        var newItem = UInt32ValueConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Charts.AxisId>(item);
+        var newItem = UInt32ValueConverter.CreateOpenXmlElement<DXDrawCharts.AxisId>(item);
         if (newItem != null)
           openXmlElement.AddChild(newItem);
       }
     }
   }
   
-  private static DocumentModel.Drawings.Charts.RadarChartExtensionList? GetRadarChartExtensionList(DocumentFormat.OpenXml.Drawing.Charts.RadarChart openXmlElement)
+  private static DMDrawsCharts.RadarChartExtensionList? GetRadarChartExtensionList(DXDrawCharts.RadarChart openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.RadarChartExtensionList>();
+    var itemElement = openXmlElement?.GetFirstChild<DXDrawCharts.RadarChartExtensionList>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.Charts.RadarChartExtensionListConverter.CreateModelElement(itemElement);
+      return DMXDrawsCharts.RadarChartExtensionListConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetRadarChartExtensionList(DocumentFormat.OpenXml.Drawing.Charts.RadarChart openXmlElement, DocumentModel.Drawings.Charts.RadarChartExtensionList? value)
+  private static void SetRadarChartExtensionList(DXDrawCharts.RadarChart openXmlElement, DMDrawsCharts.RadarChartExtensionList? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.RadarChartExtensionList>();
+    var itemElement = openXmlElement.GetFirstChild<DXDrawCharts.RadarChartExtensionList>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Drawings.Charts.RadarChartExtensionListConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Charts.RadarChartExtensionList>(value);
+      itemElement = DMXDrawsCharts.RadarChartExtensionListConverter.CreateOpenXmlElement<DXDrawCharts.RadarChartExtensionList>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  public static DocumentModel.Drawings.Charts.RadarChart? CreateModelElement(DocumentFormat.OpenXml.Drawing.Charts.RadarChart? openXmlElement)
+  public static DMDrawsCharts.RadarChart? CreateModelElement(DXDrawCharts.RadarChart? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.Charts.RadarChart();
+      var value = new DMDrawsCharts.RadarChart();
       value.RadarStyle = GetRadarStyle(openXmlElement);
       value.VaryColors = GetVaryColors(openXmlElement);
       value.RadarChartSerieses = GetRadarChartSerieses(openXmlElement);
@@ -163,8 +163,8 @@ public static class RadarChartConverter
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.Charts.RadarChart? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.Charts.RadarChart, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDrawsCharts.RadarChart? value)
+    where OpenXmlElementType: DXDrawCharts.RadarChart, new()
   {
     if (value != null)
     {

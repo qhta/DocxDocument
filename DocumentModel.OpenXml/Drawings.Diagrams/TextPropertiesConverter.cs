@@ -8,22 +8,22 @@ public static class TextPropertiesConverter
   /// <summary>
   /// Apply 3D shape properties.
   /// </summary>
-  private static DocumentModel.Drawings.Shape3DType? GetShape3DType(DocumentFormat.OpenXml.Drawing.Diagrams.TextProperties openXmlElement)
+  private static DMDraws.Shape3DType? GetShape3DType(DXDrawDgms.TextProperties openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.Shape3DType>();
+    var itemElement = openXmlElement?.GetFirstChild<DXDraw.Shape3DType>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.Shape3DTypeConverter.CreateModelElement(itemElement);
+      return DMXDraws.Shape3DTypeConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetShape3DType(DocumentFormat.OpenXml.Drawing.Diagrams.TextProperties openXmlElement, DocumentModel.Drawings.Shape3DType? value)
+  private static void SetShape3DType(DXDrawDgms.TextProperties openXmlElement, DMDraws.Shape3DType? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Shape3DType>();
+    var itemElement = openXmlElement.GetFirstChild<DXDraw.Shape3DType>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Drawings.Shape3DTypeConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Shape3DType>(value);
+      itemElement = DMXDraws.Shape3DTypeConverter.CreateOpenXmlElement<DXDraw.Shape3DType>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
@@ -32,32 +32,32 @@ public static class TextPropertiesConverter
   /// <summary>
   /// No text in 3D scene.
   /// </summary>
-  private static DocumentModel.Drawings.FlatText? GetFlatText(DocumentFormat.OpenXml.Drawing.Diagrams.TextProperties openXmlElement)
+  private static DMDraws.FlatText? GetFlatText(DXDrawDgms.TextProperties openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.FlatText>();
+    var itemElement = openXmlElement?.GetFirstChild<DXDraw.FlatText>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.FlatTextConverter.CreateModelElement(itemElement);
+      return DMXDraws.FlatTextConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetFlatText(DocumentFormat.OpenXml.Drawing.Diagrams.TextProperties openXmlElement, DocumentModel.Drawings.FlatText? value)
+  private static void SetFlatText(DXDrawDgms.TextProperties openXmlElement, DMDraws.FlatText? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.FlatText>();
+    var itemElement = openXmlElement.GetFirstChild<DXDraw.FlatText>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Drawings.FlatTextConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.FlatText>(value);
+      itemElement = DMXDraws.FlatTextConverter.CreateOpenXmlElement<DXDraw.FlatText>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  public static DocumentModel.Drawings.Diagrams.TextProperties? CreateModelElement(DocumentFormat.OpenXml.Drawing.Diagrams.TextProperties? openXmlElement)
+  public static DMDrawsDgms.TextProperties? CreateModelElement(DXDrawDgms.TextProperties? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.Diagrams.TextProperties();
+      var value = new DMDrawsDgms.TextProperties();
       value.Shape3DType = GetShape3DType(openXmlElement);
       value.FlatText = GetFlatText(openXmlElement);
       return value;
@@ -65,8 +65,8 @@ public static class TextPropertiesConverter
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.Diagrams.TextProperties? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.Diagrams.TextProperties, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDrawsDgms.TextProperties? value)
+    where OpenXmlElementType: DXDrawDgms.TextProperties, new()
   {
     if (value != null)
     {

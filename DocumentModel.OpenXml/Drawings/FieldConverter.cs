@@ -8,12 +8,12 @@ public static class FieldConverter
   /// <summary>
   /// Field ID
   /// </summary>
-  private static String? GetId(DocumentFormat.OpenXml.Drawing.Field openXmlElement)
+  private static String? GetId(DXDraw.Field openXmlElement)
   {
     return openXmlElement?.Id?.Value;
   }
   
-  private static void SetId(DocumentFormat.OpenXml.Drawing.Field openXmlElement, String? value)
+  private static void SetId(DXDraw.Field openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.Id = new StringValue { Value = value };
@@ -24,12 +24,12 @@ public static class FieldConverter
   /// <summary>
   /// Field Type
   /// </summary>
-  private static String? GetType(DocumentFormat.OpenXml.Drawing.Field openXmlElement)
+  private static String? GetType(DXDraw.Field openXmlElement)
   {
     return openXmlElement?.Type?.Value;
   }
   
-  private static void SetType(DocumentFormat.OpenXml.Drawing.Field openXmlElement, String? value)
+  private static void SetType(DXDraw.Field openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.Type = new StringValue { Value = value };
@@ -40,22 +40,22 @@ public static class FieldConverter
   /// <summary>
   /// Text Character Properties.
   /// </summary>
-  private static DocumentModel.Drawings.RunProperties? GetRunProperties(DocumentFormat.OpenXml.Drawing.Field openXmlElement)
+  private static DMDraws.RunProperties? GetRunProperties(DXDraw.Field openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.RunProperties>();
+    var itemElement = openXmlElement?.GetFirstChild<DXDraw.RunProperties>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.RunPropertiesConverter.CreateModelElement(itemElement);
+      return DMXDraws.RunPropertiesConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetRunProperties(DocumentFormat.OpenXml.Drawing.Field openXmlElement, DocumentModel.Drawings.RunProperties? value)
+  private static void SetRunProperties(DXDraw.Field openXmlElement, DMDraws.RunProperties? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.RunProperties>();
+    var itemElement = openXmlElement.GetFirstChild<DXDraw.RunProperties>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Drawings.RunPropertiesConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.RunProperties>(value);
+      itemElement = DMXDraws.RunPropertiesConverter.CreateOpenXmlElement<DXDraw.RunProperties>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
@@ -64,22 +64,22 @@ public static class FieldConverter
   /// <summary>
   /// Text Paragraph Properties.
   /// </summary>
-  private static DocumentModel.Drawings.ParagraphProperties? GetParagraphProperties(DocumentFormat.OpenXml.Drawing.Field openXmlElement)
+  private static DMDraws.ParagraphProperties? GetParagraphProperties(DXDraw.Field openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.ParagraphProperties>();
+    var itemElement = openXmlElement?.GetFirstChild<DXDraw.ParagraphProperties>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.ParagraphPropertiesConverter.CreateModelElement(itemElement);
+      return DMXDraws.ParagraphPropertiesConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetParagraphProperties(DocumentFormat.OpenXml.Drawing.Field openXmlElement, DocumentModel.Drawings.ParagraphProperties? value)
+  private static void SetParagraphProperties(DXDraw.Field openXmlElement, DMDraws.ParagraphProperties? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.ParagraphProperties>();
+    var itemElement = openXmlElement.GetFirstChild<DXDraw.ParagraphProperties>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Drawings.ParagraphPropertiesConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.ParagraphProperties>(value);
+      itemElement = DMXDraws.ParagraphPropertiesConverter.CreateOpenXmlElement<DXDraw.ParagraphProperties>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
@@ -88,24 +88,24 @@ public static class FieldConverter
   /// <summary>
   /// Text.
   /// </summary>
-  private static String? GetText(DocumentFormat.OpenXml.Drawing.Field openXmlElement)
+  private static String? GetText(DXDraw.Field openXmlElement)
   {
     return openXmlElement?.Text?.Text;
   }
   
-  private static void SetText(DocumentFormat.OpenXml.Drawing.Field openXmlElement, String? value)
+  private static void SetText(DXDraw.Field openXmlElement, String? value)
   {
     if (value != null)
-      openXmlElement.Text = new DocumentFormat.OpenXml.Drawing.Text(value);
+      openXmlElement.Text = new DXDraw.Text(value);
     else
       openXmlElement.Text = null;
   }
   
-  public static DocumentModel.Drawings.Field? CreateModelElement(DocumentFormat.OpenXml.Drawing.Field? openXmlElement)
+  public static DMDraws.Field? CreateModelElement(DXDraw.Field? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.Field();
+      var value = new DMDraws.Field();
       value.Id = GetId(openXmlElement);
       value.Type = GetType(openXmlElement);
       value.RunProperties = GetRunProperties(openXmlElement);
@@ -116,8 +116,8 @@ public static class FieldConverter
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.Field? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.Field, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDraws.Field? value)
+    where OpenXmlElementType: DXDraw.Field, new()
   {
     if (value != null)
     {

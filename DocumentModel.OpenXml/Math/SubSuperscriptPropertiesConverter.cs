@@ -8,22 +8,22 @@ public static class SubSuperscriptPropertiesConverter
   /// <summary>
   /// Align Scripts.
   /// </summary>
-  private static DocumentModel.Math.BooleanKind? GetAlignScripts(DocumentFormat.OpenXml.Math.SubSuperscriptProperties openXmlElement)
+  private static DMMath.BooleanKind? GetAlignScripts(DXMath.SubSuperscriptProperties openXmlElement)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Math.AlignScripts>();
+    var itemElement = openXmlElement.GetFirstChild<DXMath.AlignScripts>();
     if (itemElement?.Val?.Value != null)
-      return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Math.BooleanValues, DocumentModel.Math.BooleanKind>(itemElement.Val.Value);
+      return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Math.BooleanValues, DMMath.BooleanKind>(itemElement.Val.Value);
     return null;
   }
   
-  private static void SetAlignScripts(DocumentFormat.OpenXml.Math.SubSuperscriptProperties openXmlElement, DocumentModel.Math.BooleanKind? value)
+  private static void SetAlignScripts(DXMath.SubSuperscriptProperties openXmlElement, DMMath.BooleanKind? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Math.AlignScripts>();
+    var itemElement = openXmlElement.GetFirstChild<DXMath.AlignScripts>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = EnumValueConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Math.AlignScripts, DocumentFormat.OpenXml.Math.BooleanValues, DocumentModel.Math.BooleanKind>(value);
+      itemElement = EnumValueConverter.CreateOpenXmlElement<DXMath.AlignScripts, DocumentFormat.OpenXml.Math.BooleanValues, DMMath.BooleanKind>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
@@ -32,32 +32,32 @@ public static class SubSuperscriptPropertiesConverter
   /// <summary>
   /// ControlProperties.
   /// </summary>
-  private static DocumentModel.Math.ControlProperties? GetControlProperties(DocumentFormat.OpenXml.Math.SubSuperscriptProperties openXmlElement)
+  private static DMMath.ControlProperties? GetControlProperties(DXMath.SubSuperscriptProperties openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Math.ControlProperties>();
+    var itemElement = openXmlElement?.GetFirstChild<DXMath.ControlProperties>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Math.ControlPropertiesConverter.CreateModelElement(itemElement);
+      return DMXMath.ControlPropertiesConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetControlProperties(DocumentFormat.OpenXml.Math.SubSuperscriptProperties openXmlElement, DocumentModel.Math.ControlProperties? value)
+  private static void SetControlProperties(DXMath.SubSuperscriptProperties openXmlElement, DMMath.ControlProperties? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Math.ControlProperties>();
+    var itemElement = openXmlElement.GetFirstChild<DXMath.ControlProperties>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Math.ControlPropertiesConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Math.ControlProperties>(value);
+      itemElement = DMXMath.ControlPropertiesConverter.CreateOpenXmlElement<DXMath.ControlProperties>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  public static DocumentModel.Math.SubSuperscriptProperties? CreateModelElement(DocumentFormat.OpenXml.Math.SubSuperscriptProperties? openXmlElement)
+  public static DMMath.SubSuperscriptProperties? CreateModelElement(DXMath.SubSuperscriptProperties? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Math.SubSuperscriptProperties();
+      var value = new DMMath.SubSuperscriptProperties();
       value.AlignScripts = GetAlignScripts(openXmlElement);
       value.ControlProperties = GetControlProperties(openXmlElement);
       return value;
@@ -65,8 +65,8 @@ public static class SubSuperscriptPropertiesConverter
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Math.SubSuperscriptProperties? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Math.SubSuperscriptProperties, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMMath.SubSuperscriptProperties? value)
+    where OpenXmlElementType: DXMath.SubSuperscriptProperties, new()
   {
     if (value != null)
     {

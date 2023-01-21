@@ -5,18 +5,18 @@ namespace DocumentModel.OpenXml.Packaging;
 /// </summary>
 public static class DataPartReferenceRelationshipConverter
 {
-  public static DocumentModel.Packaging.DataPartReferenceRelationship? CreateModelElement(DocumentFormat.OpenXml.Packaging.DataPartReferenceRelationship? openXmlElement)
+  public static DMPack.DataPartReferenceRelationship? CreateModelElement(DXPack.DataPartReferenceRelationship? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Packaging.DataPartReferenceRelationship();
+      var value = new DMPack.DataPartReferenceRelationship();
       return value;
     }
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Packaging.DataPartReferenceRelationship? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Packaging.DataPartReferenceRelationship, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMPack.DataPartReferenceRelationship? value)
+    where OpenXmlElementType: DXPack.DataPartReferenceRelationship, new()
   {
     if (value != null)
     {

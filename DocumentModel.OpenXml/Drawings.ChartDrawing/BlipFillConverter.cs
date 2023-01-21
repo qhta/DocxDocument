@@ -8,12 +8,12 @@ public static class BlipFillConverter
   /// <summary>
   /// DPI Setting
   /// </summary>
-  private static UInt32? GetDpi(DocumentFormat.OpenXml.Drawing.ChartDrawing.BlipFill openXmlElement)
+  private static UInt32? GetDpi(DXDrawChartDraw.BlipFill openXmlElement)
   {
     return openXmlElement.Dpi?.Value;
   }
   
-  private static void SetDpi(DocumentFormat.OpenXml.Drawing.ChartDrawing.BlipFill openXmlElement, UInt32? value)
+  private static void SetDpi(DXDrawChartDraw.BlipFill openXmlElement, UInt32? value)
   {
     openXmlElement.Dpi = value;
   }
@@ -21,12 +21,12 @@ public static class BlipFillConverter
   /// <summary>
   /// Rotate With Shape
   /// </summary>
-  private static Boolean? GetRotateWithShape(DocumentFormat.OpenXml.Drawing.ChartDrawing.BlipFill openXmlElement)
+  private static Boolean? GetRotateWithShape(DXDrawChartDraw.BlipFill openXmlElement)
   {
     return openXmlElement?.RotateWithShape?.Value;
   }
   
-  private static void SetRotateWithShape(DocumentFormat.OpenXml.Drawing.ChartDrawing.BlipFill openXmlElement, Boolean? value)
+  private static void SetRotateWithShape(DXDrawChartDraw.BlipFill openXmlElement, Boolean? value)
   {
     if (value != null)
       openXmlElement.RotateWithShape = new BooleanValue { Value = (Boolean)value };
@@ -37,22 +37,22 @@ public static class BlipFillConverter
   /// <summary>
   /// Blip.
   /// </summary>
-  private static DocumentModel.Drawings.Blip? GetBlip(DocumentFormat.OpenXml.Drawing.ChartDrawing.BlipFill openXmlElement)
+  private static DMDraws.Blip? GetBlip(DXDrawChartDraw.BlipFill openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.Blip>();
+    var itemElement = openXmlElement?.GetFirstChild<DXDraw.Blip>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.BlipConverter.CreateModelElement(itemElement);
+      return DMXDraws.BlipConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetBlip(DocumentFormat.OpenXml.Drawing.ChartDrawing.BlipFill openXmlElement, DocumentModel.Drawings.Blip? value)
+  private static void SetBlip(DXDrawChartDraw.BlipFill openXmlElement, DMDraws.Blip? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Blip>();
+    var itemElement = openXmlElement.GetFirstChild<DXDraw.Blip>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Drawings.BlipConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Blip>(value);
+      itemElement = DMXDraws.BlipConverter.CreateOpenXmlElement<DXDraw.Blip>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
@@ -61,74 +61,74 @@ public static class BlipFillConverter
   /// <summary>
   /// Source Rectangle.
   /// </summary>
-  private static DocumentModel.Drawings.RelativeRectangleType? GetSourceRectangle(DocumentFormat.OpenXml.Drawing.ChartDrawing.BlipFill openXmlElement)
+  private static DMDraws.RelativeRectangleType? GetSourceRectangle(DXDrawChartDraw.BlipFill openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.SourceRectangle>();
+    var itemElement = openXmlElement?.GetFirstChild<DXDraw.SourceRectangle>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.RelativeRectangleTypeConverter.CreateModelElement(itemElement);
+      return DMXDraws.RelativeRectangleTypeConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetSourceRectangle(DocumentFormat.OpenXml.Drawing.ChartDrawing.BlipFill openXmlElement, DocumentModel.Drawings.RelativeRectangleType? value)
+  private static void SetSourceRectangle(DXDrawChartDraw.BlipFill openXmlElement, DMDraws.RelativeRectangleType? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.SourceRectangle>();
+    var itemElement = openXmlElement.GetFirstChild<DXDraw.SourceRectangle>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Drawings.RelativeRectangleTypeConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.SourceRectangle>(value);
+      itemElement = DMXDraws.RelativeRectangleTypeConverter.CreateOpenXmlElement<DXDraw.SourceRectangle>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static DocumentModel.Drawings.Tile? GetTile(DocumentFormat.OpenXml.Drawing.ChartDrawing.BlipFill openXmlElement)
+  private static DMDraws.Tile? GetTile(DXDrawChartDraw.BlipFill openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.Tile>();
+    var itemElement = openXmlElement?.GetFirstChild<DXDraw.Tile>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.TileConverter.CreateModelElement(itemElement);
+      return DMXDraws.TileConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetTile(DocumentFormat.OpenXml.Drawing.ChartDrawing.BlipFill openXmlElement, DocumentModel.Drawings.Tile? value)
+  private static void SetTile(DXDrawChartDraw.BlipFill openXmlElement, DMDraws.Tile? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Tile>();
+    var itemElement = openXmlElement.GetFirstChild<DXDraw.Tile>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Drawings.TileConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Tile>(value);
+      itemElement = DMXDraws.TileConverter.CreateOpenXmlElement<DXDraw.Tile>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static DocumentModel.Drawings.Stretch? GetStretch(DocumentFormat.OpenXml.Drawing.ChartDrawing.BlipFill openXmlElement)
+  private static DMDraws.Stretch? GetStretch(DXDrawChartDraw.BlipFill openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.Stretch>();
+    var itemElement = openXmlElement?.GetFirstChild<DXDraw.Stretch>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.StretchConverter.CreateModelElement(itemElement);
+      return DMXDraws.StretchConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetStretch(DocumentFormat.OpenXml.Drawing.ChartDrawing.BlipFill openXmlElement, DocumentModel.Drawings.Stretch? value)
+  private static void SetStretch(DXDrawChartDraw.BlipFill openXmlElement, DMDraws.Stretch? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Stretch>();
+    var itemElement = openXmlElement.GetFirstChild<DXDraw.Stretch>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Drawings.StretchConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Stretch>(value);
+      itemElement = DMXDraws.StretchConverter.CreateOpenXmlElement<DXDraw.Stretch>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  public static DocumentModel.Drawings.ChartDrawing.BlipFill? CreateModelElement(DocumentFormat.OpenXml.Drawing.ChartDrawing.BlipFill? openXmlElement)
+  public static DMDrawsChartDraw.BlipFill? CreateModelElement(DXDrawChartDraw.BlipFill? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.ChartDrawing.BlipFill();
+      var value = new DMDrawsChartDraw.BlipFill();
       value.Dpi = GetDpi(openXmlElement);
       value.RotateWithShape = GetRotateWithShape(openXmlElement);
       value.Blip = GetBlip(openXmlElement);
@@ -140,8 +140,8 @@ public static class BlipFillConverter
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.ChartDrawing.BlipFill? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.ChartDrawing.BlipFill, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDrawsChartDraw.BlipFill? value)
+    where OpenXmlElementType: DXDrawChartDraw.BlipFill, new()
   {
     if (value != null)
     {

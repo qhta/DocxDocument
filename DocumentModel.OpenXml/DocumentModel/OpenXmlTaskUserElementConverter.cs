@@ -8,12 +8,12 @@ public static class OpenXmlTaskUserElementConverter
   /// <summary>
   /// userId, this property is only available in Office 2021 and later.
   /// </summary>
-  private static String? GetUserId(DocumentFormat.OpenXml.Office2021.DocumentTasks.OpenXmlTaskUserElement openXmlElement)
+  private static String? GetUserId(DXO2021DocTasks.OpenXmlTaskUserElement openXmlElement)
   {
     return openXmlElement?.UserId?.Value;
   }
   
-  private static void SetUserId(DocumentFormat.OpenXml.Office2021.DocumentTasks.OpenXmlTaskUserElement openXmlElement, String? value)
+  private static void SetUserId(DXO2021DocTasks.OpenXmlTaskUserElement openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.UserId = new StringValue { Value = value };
@@ -24,12 +24,12 @@ public static class OpenXmlTaskUserElementConverter
   /// <summary>
   /// userName, this property is only available in Office 2021 and later.
   /// </summary>
-  private static String? GetUserName(DocumentFormat.OpenXml.Office2021.DocumentTasks.OpenXmlTaskUserElement openXmlElement)
+  private static String? GetUserName(DXO2021DocTasks.OpenXmlTaskUserElement openXmlElement)
   {
     return openXmlElement?.UserName?.Value;
   }
   
-  private static void SetUserName(DocumentFormat.OpenXml.Office2021.DocumentTasks.OpenXmlTaskUserElement openXmlElement, String? value)
+  private static void SetUserName(DXO2021DocTasks.OpenXmlTaskUserElement openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.UserName = new StringValue { Value = value };
@@ -40,12 +40,12 @@ public static class OpenXmlTaskUserElementConverter
   /// <summary>
   /// userProvider, this property is only available in Office 2021 and later.
   /// </summary>
-  private static String? GetUserProvider(DocumentFormat.OpenXml.Office2021.DocumentTasks.OpenXmlTaskUserElement openXmlElement)
+  private static String? GetUserProvider(DXO2021DocTasks.OpenXmlTaskUserElement openXmlElement)
   {
     return openXmlElement?.UserProvider?.Value;
   }
   
-  private static void SetUserProvider(DocumentFormat.OpenXml.Office2021.DocumentTasks.OpenXmlTaskUserElement openXmlElement, String? value)
+  private static void SetUserProvider(DXO2021DocTasks.OpenXmlTaskUserElement openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.UserProvider = new StringValue { Value = value };
@@ -53,11 +53,11 @@ public static class OpenXmlTaskUserElementConverter
       openXmlElement.UserProvider = null;
   }
   
-  public static DocumentModel.OpenXmlTaskUserElement? CreateModelElement(DocumentFormat.OpenXml.Office2021.DocumentTasks.OpenXmlTaskUserElement? openXmlElement)
+  public static DM.OpenXmlTaskUserElement? CreateModelElement(DXO2021DocTasks.OpenXmlTaskUserElement? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.OpenXmlTaskUserElement();
+      var value = new DM.OpenXmlTaskUserElement();
       value.UserId = GetUserId(openXmlElement);
       value.UserName = GetUserName(openXmlElement);
       value.UserProvider = GetUserProvider(openXmlElement);
@@ -66,8 +66,8 @@ public static class OpenXmlTaskUserElementConverter
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.OpenXmlTaskUserElement? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Office2021.DocumentTasks.OpenXmlTaskUserElement, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DM.OpenXmlTaskUserElement? value)
+    where OpenXmlElementType: DXO2021DocTasks.OpenXmlTaskUserElement, new()
   {
     if (value != null)
     {

@@ -8,36 +8,36 @@ public static class CustomUIPartConverter
   /// <summary>
   /// Gets or sets the root element of this part.
   /// </summary>
-  private static DocumentModel.UI.CustomUI? GetCustomUI(DocumentFormat.OpenXml.Packaging.CustomUIPart openXmlElement)
+  private static DMUI.CustomUI? GetCustomUI(DXPack.CustomUIPart openXmlElement)
   {
-    if (openXmlElement?.RootElement is DocumentFormat.OpenXml.Office.CustomUI.CustomUI rootElement)
-      return DocumentModel.OpenXml.UI.CustomUIConverter.CreateModelElement(rootElement);
+    if (openXmlElement?.RootElement is DXOCustUI.CustomUI rootElement)
+      return DMXUI.CustomUIConverter.CreateModelElement(rootElement);
     return null;
   }
   
-  private static void SetCustomUI(DocumentFormat.OpenXml.Packaging.CustomUIPart openXmlElement, DocumentModel.UI.CustomUI? value)
+  private static void SetCustomUI(DXPack.CustomUIPart openXmlElement, DMUI.CustomUI? value)
   {
     if (value != null)
     {
-       var rootElement = DocumentModel.OpenXml.UI.CustomUIConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office.CustomUI.CustomUI>(value);
+       var rootElement = DMXUI.CustomUIConverter.CreateOpenXmlElement<DXOCustUI.CustomUI>(value);
        if (rootElement != null)
          openXmlElement.CustomUI = rootElement;
     }
   }
   
-  public static DocumentModel.Packaging.CustomUIPart? CreateModelElement(DocumentFormat.OpenXml.Packaging.CustomUIPart? openXmlElement)
+  public static DMPack.CustomUIPart? CreateModelElement(DXPack.CustomUIPart? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Packaging.CustomUIPart();
+      var value = new DMPack.CustomUIPart();
       value.CustomUI = GetCustomUI(openXmlElement);
       return value;
     }
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Packaging.CustomUIPart? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Packaging.CustomUIPart, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMPack.CustomUIPart? value)
+    where OpenXmlElementType: DXPack.CustomUIPart, new()
   {
     if (value != null)
     {

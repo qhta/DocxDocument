@@ -5,21 +5,21 @@ namespace DocumentModel.OpenXml.Packaging;
 /// </summary>
 public static class PivotTableCacheDefinitionPartConverter
 {
-  private static String? GetContentType(DocumentFormat.OpenXml.Packaging.PivotTableCacheDefinitionPart openXmlElement)
+  private static String? GetContentType(DXPack.PivotTableCacheDefinitionPart openXmlElement)
   {
     return openXmlElement?.ContentType;
   }
   
-  private static String? GetRelationshipType(DocumentFormat.OpenXml.Packaging.PivotTableCacheDefinitionPart openXmlElement)
+  private static String? GetRelationshipType(DXPack.PivotTableCacheDefinitionPart openXmlElement)
   {
     return openXmlElement?.RelationshipType;
   }
   
-  public static DocumentModel.Packaging.PivotTableCacheDefinitionPart? CreateModelElement(DocumentFormat.OpenXml.Packaging.PivotTableCacheDefinitionPart? openXmlElement)
+  public static DMPack.PivotTableCacheDefinitionPart? CreateModelElement(DXPack.PivotTableCacheDefinitionPart? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Packaging.PivotTableCacheDefinitionPart();
+      var value = new DMPack.PivotTableCacheDefinitionPart();
       value.ContentType = GetContentType(openXmlElement);
       value.RelationshipType = GetRelationshipType(openXmlElement);
       return value;
@@ -27,8 +27,8 @@ public static class PivotTableCacheDefinitionPartConverter
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Packaging.PivotTableCacheDefinitionPart? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Packaging.PivotTableCacheDefinitionPart, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMPack.PivotTableCacheDefinitionPart? value)
+    where OpenXmlElementType: DXPack.PivotTableCacheDefinitionPart, new()
   {
     if (value != null)
     {

@@ -8,47 +8,47 @@ public static class LineEndPropertiesTypeConverter
   /// <summary>
   /// Line Head/End Type
   /// </summary>
-  private static DocumentModel.Drawings.LineEndKind? GetType(DocumentFormat.OpenXml.Drawing.LineEndPropertiesType openXmlElement)
+  private static DMDraws.LineEndKind? GetType(DXDraw.LineEndPropertiesType openXmlElement)
   {
-    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Drawing.LineEndValues, DocumentModel.Drawings.LineEndKind>(openXmlElement?.Type?.Value);
+    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Drawing.LineEndValues, DMDraws.LineEndKind>(openXmlElement?.Type?.Value);
   }
   
-  private static void SetType(DocumentFormat.OpenXml.Drawing.LineEndPropertiesType openXmlElement, DocumentModel.Drawings.LineEndKind? value)
+  private static void SetType(DXDraw.LineEndPropertiesType openXmlElement, DMDraws.LineEndKind? value)
   {
-    openXmlElement.Type = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Drawing.LineEndValues, DocumentModel.Drawings.LineEndKind>(value);
+    openXmlElement.Type = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Drawing.LineEndValues, DMDraws.LineEndKind>(value);
   }
   
   /// <summary>
   /// Width of Head/End
   /// </summary>
-  private static DocumentModel.Drawings.LineEndWidthKind? GetWidth(DocumentFormat.OpenXml.Drawing.LineEndPropertiesType openXmlElement)
+  private static DMDraws.LineEndWidthKind? GetWidth(DXDraw.LineEndPropertiesType openXmlElement)
   {
-    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Drawing.LineEndWidthValues, DocumentModel.Drawings.LineEndWidthKind>(openXmlElement?.Width?.Value);
+    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Drawing.LineEndWidthValues, DMDraws.LineEndWidthKind>(openXmlElement?.Width?.Value);
   }
   
-  private static void SetWidth(DocumentFormat.OpenXml.Drawing.LineEndPropertiesType openXmlElement, DocumentModel.Drawings.LineEndWidthKind? value)
+  private static void SetWidth(DXDraw.LineEndPropertiesType openXmlElement, DMDraws.LineEndWidthKind? value)
   {
-    openXmlElement.Width = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Drawing.LineEndWidthValues, DocumentModel.Drawings.LineEndWidthKind>(value);
+    openXmlElement.Width = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Drawing.LineEndWidthValues, DMDraws.LineEndWidthKind>(value);
   }
   
   /// <summary>
   /// Length of Head/End
   /// </summary>
-  private static DocumentModel.Drawings.LineEndLengthKind? GetLength(DocumentFormat.OpenXml.Drawing.LineEndPropertiesType openXmlElement)
+  private static DMDraws.LineEndLengthKind? GetLength(DXDraw.LineEndPropertiesType openXmlElement)
   {
-    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Drawing.LineEndLengthValues, DocumentModel.Drawings.LineEndLengthKind>(openXmlElement?.Length?.Value);
+    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Drawing.LineEndLengthValues, DMDraws.LineEndLengthKind>(openXmlElement?.Length?.Value);
   }
   
-  private static void SetLength(DocumentFormat.OpenXml.Drawing.LineEndPropertiesType openXmlElement, DocumentModel.Drawings.LineEndLengthKind? value)
+  private static void SetLength(DXDraw.LineEndPropertiesType openXmlElement, DMDraws.LineEndLengthKind? value)
   {
-    openXmlElement.Length = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Drawing.LineEndLengthValues, DocumentModel.Drawings.LineEndLengthKind>(value);
+    openXmlElement.Length = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Drawing.LineEndLengthValues, DMDraws.LineEndLengthKind>(value);
   }
   
-  public static DocumentModel.Drawings.LineEndPropertiesType? CreateModelElement(DocumentFormat.OpenXml.Drawing.LineEndPropertiesType? openXmlElement)
+  public static DMDraws.LineEndPropertiesType? CreateModelElement(DXDraw.LineEndPropertiesType? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.LineEndPropertiesType();
+      var value = new DMDraws.LineEndPropertiesType();
       value.Type = GetType(openXmlElement);
       value.Width = GetWidth(openXmlElement);
       value.Length = GetLength(openXmlElement);
@@ -57,8 +57,8 @@ public static class LineEndPropertiesTypeConverter
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.LineEndPropertiesType? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.LineEndPropertiesType, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDraws.LineEndPropertiesType? value)
+    where OpenXmlElementType: DXDraw.LineEndPropertiesType, new()
   {
     if (value != null)
     {

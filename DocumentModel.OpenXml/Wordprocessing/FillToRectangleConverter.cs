@@ -8,12 +8,12 @@ public static class FillToRectangleConverter
   /// <summary>
   /// l, this property is only available in Office 2010 and later.
   /// </summary>
-  private static Int32? GetLeft(DocumentFormat.OpenXml.Office2010.Word.FillToRectangle openXmlElement)
+  private static Int32? GetLeft(DXO2010W.FillToRectangle openXmlElement)
   {
     return openXmlElement.Left?.Value;
   }
   
-  private static void SetLeft(DocumentFormat.OpenXml.Office2010.Word.FillToRectangle openXmlElement, Int32? value)
+  private static void SetLeft(DXO2010W.FillToRectangle openXmlElement, Int32? value)
   {
     openXmlElement.Left = value;
   }
@@ -21,12 +21,12 @@ public static class FillToRectangleConverter
   /// <summary>
   /// t, this property is only available in Office 2010 and later.
   /// </summary>
-  private static Int32? GetTop(DocumentFormat.OpenXml.Office2010.Word.FillToRectangle openXmlElement)
+  private static Int32? GetTop(DXO2010W.FillToRectangle openXmlElement)
   {
     return openXmlElement.Top?.Value;
   }
   
-  private static void SetTop(DocumentFormat.OpenXml.Office2010.Word.FillToRectangle openXmlElement, Int32? value)
+  private static void SetTop(DXO2010W.FillToRectangle openXmlElement, Int32? value)
   {
     openXmlElement.Top = value;
   }
@@ -34,12 +34,12 @@ public static class FillToRectangleConverter
   /// <summary>
   /// r, this property is only available in Office 2010 and later.
   /// </summary>
-  private static Int32? GetRight(DocumentFormat.OpenXml.Office2010.Word.FillToRectangle openXmlElement)
+  private static Int32? GetRight(DXO2010W.FillToRectangle openXmlElement)
   {
     return openXmlElement.Right?.Value;
   }
   
-  private static void SetRight(DocumentFormat.OpenXml.Office2010.Word.FillToRectangle openXmlElement, Int32? value)
+  private static void SetRight(DXO2010W.FillToRectangle openXmlElement, Int32? value)
   {
     openXmlElement.Right = value;
   }
@@ -47,21 +47,21 @@ public static class FillToRectangleConverter
   /// <summary>
   /// b, this property is only available in Office 2010 and later.
   /// </summary>
-  private static Int32? GetBottom(DocumentFormat.OpenXml.Office2010.Word.FillToRectangle openXmlElement)
+  private static Int32? GetBottom(DXO2010W.FillToRectangle openXmlElement)
   {
     return openXmlElement.Bottom?.Value;
   }
   
-  private static void SetBottom(DocumentFormat.OpenXml.Office2010.Word.FillToRectangle openXmlElement, Int32? value)
+  private static void SetBottom(DXO2010W.FillToRectangle openXmlElement, Int32? value)
   {
     openXmlElement.Bottom = value;
   }
   
-  public static DocumentModel.Wordprocessing.FillToRectangle? CreateModelElement(DocumentFormat.OpenXml.Office2010.Word.FillToRectangle? openXmlElement)
+  public static DMW.FillToRectangle? CreateModelElement(DXO2010W.FillToRectangle? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Wordprocessing.FillToRectangle();
+      var value = new DMW.FillToRectangle();
       value.Left = GetLeft(openXmlElement);
       value.Top = GetTop(openXmlElement);
       value.Right = GetRight(openXmlElement);
@@ -71,8 +71,8 @@ public static class FillToRectangleConverter
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.FillToRectangle? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Office2010.Word.FillToRectangle, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMW.FillToRectangle? value)
+    where OpenXmlElementType: DXO2010W.FillToRectangle, new()
   {
     if (value != null)
     {
