@@ -2,8 +2,6 @@ using System.IO.Packaging;
 using DocumentFormat.OpenXml.Packaging;
 using DocumentModel.OpenXml.Properties;
 using DocumentModel.Properties;
-using DataPart = DocumentModel.Packaging.DataPart;
-using MarkupCompatibilityProcessSettings = DocumentModel.Packaging.MarkupCompatibilityProcessSettings;
 
 namespace DocumentModel.OpenXml.Packaging;
 
@@ -78,11 +76,11 @@ public static class OpenXmlPackageConverter
   /// <summary>
   ///   Gets all the  parts in the document package.
   /// </summary>
-  public static Collection<DataPart>? GetDataParts(OpenXmlPackage? openXmlElement)
+  public static Collection<DMPack.DataPart>? GetDataParts(OpenXmlPackage? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var collection = new Collection<DataPart>();
+      var collection = new Collection<DMPack.DataPart>();
       foreach (var item in openXmlElement.DataParts)
       {
         var newItem = DataPartConverter.CreateModelElement(item);
@@ -97,7 +95,7 @@ public static class OpenXmlPackageConverter
   /// <summary>
   ///   Gets the markup compatibility settings applied at loading time.
   /// </summary>
-  public static MarkupCompatibilityProcessSettings? GetMarkupCompatibilityProcessSettings(OpenXmlPackage? openXmlElement)
+  public static DMPack.MarkupCompatibilityProcessSettings? GetMarkupCompatibilityProcessSettings(OpenXmlPackage? openXmlElement)
   {
     return MarkupCompatibilityProcessSettingsConverter.CreateModelElement(openXmlElement?.MarkupCompatibilityProcessSettings);
   }
