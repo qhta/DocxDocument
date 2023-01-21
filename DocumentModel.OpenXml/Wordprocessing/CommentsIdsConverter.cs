@@ -5,45 +5,45 @@ namespace DocumentModel.OpenXml.Wordprocessing;
 /// </summary>
 public static class CommentsIdsConverter
 {
-  private static System.Collections.ObjectModel.Collection<DocumentModel.Wordprocessing.CommentId> GetCommentIds(DocumentFormat.OpenXml.Office2019.Word.Cid.CommentsIds openXmlElement)
+  private static Collection<DMW.CommentId> GetCommentIds(DXO2019WCid.CommentsIds openXmlElement)
   {
-    var collection = new System.Collections.ObjectModel.Collection<DocumentModel.Wordprocessing.CommentId>();
-    foreach (var item in openXmlElement.Elements<DocumentFormat.OpenXml.Office2019.Word.Cid.CommentId>())
+    var collection = new Collection<DMW.CommentId>();
+    foreach (var item in openXmlElement.Elements<DXO2019WCid.CommentId>())
     {
-      var newItem = DocumentModel.OpenXml.Wordprocessing.CommentIdConverter.CreateModelElement(item);
+      var newItem = DMXW.CommentIdConverter.CreateModelElement(item);
       if (newItem != null)
         collection.Add(newItem);
     }
     return collection;
   }
   
-  private static void SetCommentIds(DocumentFormat.OpenXml.Office2019.Word.Cid.CommentsIds openXmlElement, System.Collections.ObjectModel.Collection<DocumentModel.Wordprocessing.CommentId>? value)
+  private static void SetCommentIds(DXO2019WCid.CommentsIds openXmlElement, Collection<DMW.CommentId>? value)
   {
-    openXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Office2019.Word.Cid.CommentId>();
+    openXmlElement.RemoveAllChildren<DXO2019WCid.CommentId>();
     if (value != null)
     {
       foreach (var item in value)
       {
-        var newItem = DocumentModel.OpenXml.Wordprocessing.CommentIdConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2019.Word.Cid.CommentId>(item);
+        var newItem = DMXW.CommentIdConverter.CreateOpenXmlElement<DXO2019WCid.CommentId>(item);
         if (newItem != null)
           openXmlElement.AddChild(newItem);
       }
     }
   }
   
-  public static DocumentModel.Wordprocessing.CommentsIds? CreateModelElement(DocumentFormat.OpenXml.Office2019.Word.Cid.CommentsIds? openXmlElement)
+  public static DMW.CommentsIds? CreateModelElement(DXO2019WCid.CommentsIds? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Wordprocessing.CommentsIds();
+      var value = new DMW.CommentsIds();
       value.CommentIds = GetCommentIds(openXmlElement);
       return value;
     }
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.CommentsIds? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Office2019.Word.Cid.CommentsIds, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMW.CommentsIds? value)
+    where OpenXmlElementType: DXO2019WCid.CommentsIds, new()
   {
     if (value != null)
     {

@@ -8,12 +8,12 @@ public static class ExternalDataConverter
   /// <summary>
   /// RelId of the relationship for the external data, this property is only available in Office 2016 and later.
   /// </summary>
-  private static String? GetId(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.ExternalData openXmlElement)
+  private static String? GetId(DXO2016DrawChartDraw.ExternalData openXmlElement)
   {
     return openXmlElement?.Id?.Value;
   }
   
-  private static void SetId(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.ExternalData openXmlElement, String? value)
+  private static void SetId(DXO2016DrawChartDraw.ExternalData openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.Id = new StringValue { Value = value };
@@ -24,12 +24,12 @@ public static class ExternalDataConverter
   /// <summary>
   /// True if the external link should automatically update, this property is only available in Office 2016 and later.
   /// </summary>
-  private static Boolean? GetAutoUpdate(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.ExternalData openXmlElement)
+  private static Boolean? GetAutoUpdate(DXO2016DrawChartDraw.ExternalData openXmlElement)
   {
     return openXmlElement?.AutoUpdate?.Value;
   }
   
-  private static void SetAutoUpdate(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.ExternalData openXmlElement, Boolean? value)
+  private static void SetAutoUpdate(DXO2016DrawChartDraw.ExternalData openXmlElement, Boolean? value)
   {
     if (value != null)
       openXmlElement.AutoUpdate = new BooleanValue { Value = (Boolean)value };
@@ -37,11 +37,11 @@ public static class ExternalDataConverter
       openXmlElement.AutoUpdate = null;
   }
   
-  public static DocumentModel.Drawings.ChartDrawings.ExternalData? CreateModelElement(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.ExternalData? openXmlElement)
+  public static DMDrawsChartDraws.ExternalData? CreateModelElement(DXO2016DrawChartDraw.ExternalData? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.ChartDrawings.ExternalData();
+      var value = new DMDrawsChartDraws.ExternalData();
       value.Id = GetId(openXmlElement);
       value.AutoUpdate = GetAutoUpdate(openXmlElement);
       return value;
@@ -49,8 +49,8 @@ public static class ExternalDataConverter
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.ChartDrawings.ExternalData? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.ExternalData, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDrawsChartDraws.ExternalData? value)
+    where OpenXmlElementType: DXO2016DrawChartDraw.ExternalData, new()
   {
     if (value != null)
     {

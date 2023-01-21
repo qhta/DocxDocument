@@ -8,12 +8,12 @@ public static class ProxyConverter
   /// <summary>
   /// Start Point Connection Flag
   /// </summary>
-  private static Boolean? GetStart(DocumentFormat.OpenXml.Vml.Office.Proxy openXmlElement)
+  private static Boolean? GetStart(DXVmlO.Proxy openXmlElement)
   {
     return openXmlElement?.Start?.Value;
   }
   
-  private static void SetStart(DocumentFormat.OpenXml.Vml.Office.Proxy openXmlElement, Boolean? value)
+  private static void SetStart(DXVmlO.Proxy openXmlElement, Boolean? value)
   {
     if (value != null)
       openXmlElement.Start = value;
@@ -24,12 +24,12 @@ public static class ProxyConverter
   /// <summary>
   /// End Point Connection Flag
   /// </summary>
-  private static Boolean? GetEnd(DocumentFormat.OpenXml.Vml.Office.Proxy openXmlElement)
+  private static Boolean? GetEnd(DXVmlO.Proxy openXmlElement)
   {
     return openXmlElement?.End?.Value;
   }
   
-  private static void SetEnd(DocumentFormat.OpenXml.Vml.Office.Proxy openXmlElement, Boolean? value)
+  private static void SetEnd(DXVmlO.Proxy openXmlElement, Boolean? value)
   {
     if (value != null)
       openXmlElement.End = value;
@@ -40,12 +40,12 @@ public static class ProxyConverter
   /// <summary>
   /// Proxy Shape Reference
   /// </summary>
-  private static String? GetShapeReference(DocumentFormat.OpenXml.Vml.Office.Proxy openXmlElement)
+  private static String? GetShapeReference(DXVmlO.Proxy openXmlElement)
   {
     return openXmlElement?.ShapeReference?.Value;
   }
   
-  private static void SetShapeReference(DocumentFormat.OpenXml.Vml.Office.Proxy openXmlElement, String? value)
+  private static void SetShapeReference(DXVmlO.Proxy openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.ShapeReference = new StringValue { Value = value };
@@ -56,21 +56,21 @@ public static class ProxyConverter
   /// <summary>
   /// Connection Location
   /// </summary>
-  private static Int32? GetConnectionLocation(DocumentFormat.OpenXml.Vml.Office.Proxy openXmlElement)
+  private static Int32? GetConnectionLocation(DXVmlO.Proxy openXmlElement)
   {
     return openXmlElement.ConnectionLocation?.Value;
   }
   
-  private static void SetConnectionLocation(DocumentFormat.OpenXml.Vml.Office.Proxy openXmlElement, Int32? value)
+  private static void SetConnectionLocation(DXVmlO.Proxy openXmlElement, Int32? value)
   {
     openXmlElement.ConnectionLocation = value;
   }
   
-  public static DocumentModel.Vml.Proxy? CreateModelElement(DocumentFormat.OpenXml.Vml.Office.Proxy? openXmlElement)
+  public static DMVml.Proxy? CreateModelElement(DXVmlO.Proxy? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Vml.Proxy();
+      var value = new DMVml.Proxy();
       value.Start = GetStart(openXmlElement);
       value.End = GetEnd(openXmlElement);
       value.ShapeReference = GetShapeReference(openXmlElement);
@@ -80,8 +80,8 @@ public static class ProxyConverter
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Vml.Proxy? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Vml.Office.Proxy, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMVml.Proxy? value)
+    where OpenXmlElementType: DXVmlO.Proxy, new()
   {
     if (value != null)
     {

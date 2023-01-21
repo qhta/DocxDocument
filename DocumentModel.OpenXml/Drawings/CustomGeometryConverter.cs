@@ -8,22 +8,22 @@ public static class CustomGeometryConverter
   /// <summary>
   /// Adjust Value List.
   /// </summary>
-  private static DocumentModel.Drawings.AdjustValueList? GetAdjustValueList(DocumentFormat.OpenXml.Drawing.CustomGeometry openXmlElement)
+  private static DMDraws.AdjustValueList? GetAdjustValueList(DXDraw.CustomGeometry openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.AdjustValueList>();
+    var itemElement = openXmlElement?.GetFirstChild<DXDraw.AdjustValueList>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.AdjustValueListConverter.CreateModelElement(itemElement);
+      return DMXDraws.AdjustValueListConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetAdjustValueList(DocumentFormat.OpenXml.Drawing.CustomGeometry openXmlElement, DocumentModel.Drawings.AdjustValueList? value)
+  private static void SetAdjustValueList(DXDraw.CustomGeometry openXmlElement, DMDraws.AdjustValueList? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.AdjustValueList>();
+    var itemElement = openXmlElement.GetFirstChild<DXDraw.AdjustValueList>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Drawings.AdjustValueListConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.AdjustValueList>(value);
+      itemElement = DMXDraws.AdjustValueListConverter.CreateOpenXmlElement<DXDraw.AdjustValueList>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
@@ -32,22 +32,22 @@ public static class CustomGeometryConverter
   /// <summary>
   /// List of Shape Guides.
   /// </summary>
-  private static DocumentModel.Drawings.ShapeGuideList? GetShapeGuideList(DocumentFormat.OpenXml.Drawing.CustomGeometry openXmlElement)
+  private static DMDraws.ShapeGuideList? GetShapeGuideList(DXDraw.CustomGeometry openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.ShapeGuideList>();
+    var itemElement = openXmlElement?.GetFirstChild<DXDraw.ShapeGuideList>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.ShapeGuideListConverter.CreateModelElement(itemElement);
+      return DMXDraws.ShapeGuideListConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetShapeGuideList(DocumentFormat.OpenXml.Drawing.CustomGeometry openXmlElement, DocumentModel.Drawings.ShapeGuideList? value)
+  private static void SetShapeGuideList(DXDraw.CustomGeometry openXmlElement, DMDraws.ShapeGuideList? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.ShapeGuideList>();
+    var itemElement = openXmlElement.GetFirstChild<DXDraw.ShapeGuideList>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Drawings.ShapeGuideListConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.ShapeGuideList>(value);
+      itemElement = DMXDraws.ShapeGuideListConverter.CreateOpenXmlElement<DXDraw.ShapeGuideList>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
@@ -56,22 +56,22 @@ public static class CustomGeometryConverter
   /// <summary>
   /// List of Shape Adjust Handles.
   /// </summary>
-  private static DocumentModel.Drawings.AdjustHandleList? GetAdjustHandleList(DocumentFormat.OpenXml.Drawing.CustomGeometry openXmlElement)
+  private static DMDraws.AdjustHandleList? GetAdjustHandleList(DXDraw.CustomGeometry openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.AdjustHandleList>();
+    var itemElement = openXmlElement?.GetFirstChild<DXDraw.AdjustHandleList>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.AdjustHandleListConverter.CreateModelElement(itemElement);
+      return DMXDraws.AdjustHandleListConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetAdjustHandleList(DocumentFormat.OpenXml.Drawing.CustomGeometry openXmlElement, DocumentModel.Drawings.AdjustHandleList? value)
+  private static void SetAdjustHandleList(DXDraw.CustomGeometry openXmlElement, DMDraws.AdjustHandleList? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.AdjustHandleList>();
+    var itemElement = openXmlElement.GetFirstChild<DXDraw.AdjustHandleList>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Drawings.AdjustHandleListConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.AdjustHandleList>(value);
+      itemElement = DMXDraws.AdjustHandleListConverter.CreateOpenXmlElement<DXDraw.AdjustHandleList>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
@@ -80,22 +80,22 @@ public static class CustomGeometryConverter
   /// <summary>
   /// List of Shape Connection Sites.
   /// </summary>
-  private static DocumentModel.Drawings.ConnectionSiteList? GetConnectionSiteList(DocumentFormat.OpenXml.Drawing.CustomGeometry openXmlElement)
+  private static DMDraws.ConnectionSiteList? GetConnectionSiteList(DXDraw.CustomGeometry openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.ConnectionSiteList>();
+    var itemElement = openXmlElement?.GetFirstChild<DXDraw.ConnectionSiteList>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.ConnectionSiteListConverter.CreateModelElement(itemElement);
+      return DMXDraws.ConnectionSiteListConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetConnectionSiteList(DocumentFormat.OpenXml.Drawing.CustomGeometry openXmlElement, DocumentModel.Drawings.ConnectionSiteList? value)
+  private static void SetConnectionSiteList(DXDraw.CustomGeometry openXmlElement, DMDraws.ConnectionSiteList? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.ConnectionSiteList>();
+    var itemElement = openXmlElement.GetFirstChild<DXDraw.ConnectionSiteList>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Drawings.ConnectionSiteListConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.ConnectionSiteList>(value);
+      itemElement = DMXDraws.ConnectionSiteListConverter.CreateOpenXmlElement<DXDraw.ConnectionSiteList>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
@@ -104,22 +104,22 @@ public static class CustomGeometryConverter
   /// <summary>
   /// Shape Text Rectangle.
   /// </summary>
-  private static DocumentModel.Drawings.Rectangle? GetRectangle(DocumentFormat.OpenXml.Drawing.CustomGeometry openXmlElement)
+  private static DMDraws.Rectangle? GetRectangle(DXDraw.CustomGeometry openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.Rectangle>();
+    var itemElement = openXmlElement?.GetFirstChild<DXDraw.Rectangle>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.RectangleConverter.CreateModelElement(itemElement);
+      return DMXDraws.RectangleConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetRectangle(DocumentFormat.OpenXml.Drawing.CustomGeometry openXmlElement, DocumentModel.Drawings.Rectangle? value)
+  private static void SetRectangle(DXDraw.CustomGeometry openXmlElement, DMDraws.Rectangle? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Rectangle>();
+    var itemElement = openXmlElement.GetFirstChild<DXDraw.Rectangle>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Drawings.RectangleConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Rectangle>(value);
+      itemElement = DMXDraws.RectangleConverter.CreateOpenXmlElement<DXDraw.Rectangle>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
@@ -128,32 +128,32 @@ public static class CustomGeometryConverter
   /// <summary>
   /// List of Shape Paths.
   /// </summary>
-  private static DocumentModel.Drawings.PathList? GetPathList(DocumentFormat.OpenXml.Drawing.CustomGeometry openXmlElement)
+  private static DMDraws.PathList? GetPathList(DXDraw.CustomGeometry openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.PathList>();
+    var itemElement = openXmlElement?.GetFirstChild<DXDraw.PathList>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.PathListConverter.CreateModelElement(itemElement);
+      return DMXDraws.PathListConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetPathList(DocumentFormat.OpenXml.Drawing.CustomGeometry openXmlElement, DocumentModel.Drawings.PathList? value)
+  private static void SetPathList(DXDraw.CustomGeometry openXmlElement, DMDraws.PathList? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.PathList>();
+    var itemElement = openXmlElement.GetFirstChild<DXDraw.PathList>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Drawings.PathListConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.PathList>(value);
+      itemElement = DMXDraws.PathListConverter.CreateOpenXmlElement<DXDraw.PathList>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  public static DocumentModel.Drawings.CustomGeometry? CreateModelElement(DocumentFormat.OpenXml.Drawing.CustomGeometry? openXmlElement)
+  public static DMDraws.CustomGeometry? CreateModelElement(DXDraw.CustomGeometry? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.CustomGeometry();
+      var value = new DMDraws.CustomGeometry();
       value.AdjustValueList = GetAdjustValueList(openXmlElement);
       value.ShapeGuideList = GetShapeGuideList(openXmlElement);
       value.AdjustHandleList = GetAdjustHandleList(openXmlElement);
@@ -165,8 +165,8 @@ public static class CustomGeometryConverter
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.CustomGeometry? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.CustomGeometry, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDraws.CustomGeometry? value)
+    where OpenXmlElementType: DXDraw.CustomGeometry, new()
   {
     if (value != null)
     {

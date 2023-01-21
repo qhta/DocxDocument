@@ -8,29 +8,29 @@ public static class TextTypeConverter
   /// <summary>
   /// space
   /// </summary>
-  private static DocumentModel.SpaceProcessingMode? GetSpace(DocumentFormat.OpenXml.Wordprocessing.TextType openXmlElement)
+  private static DM.SpaceProcessingMode? GetSpace(DXW.TextType openXmlElement)
   {
-    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.SpaceProcessingModeValues, DocumentModel.SpaceProcessingMode>(openXmlElement?.Space?.Value);
+    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.SpaceProcessingModeValues, DM.SpaceProcessingMode>(openXmlElement?.Space?.Value);
   }
   
-  private static void SetSpace(DocumentFormat.OpenXml.Wordprocessing.TextType openXmlElement, DocumentModel.SpaceProcessingMode? value)
+  private static void SetSpace(DXW.TextType openXmlElement, DM.SpaceProcessingMode? value)
   {
-    openXmlElement.Space = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.SpaceProcessingModeValues, DocumentModel.SpaceProcessingMode>(value);
+    openXmlElement.Space = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.SpaceProcessingModeValues, DM.SpaceProcessingMode>(value);
   }
   
-  public static DocumentModel.Wordprocessing.TextType? CreateModelElement(DocumentFormat.OpenXml.Wordprocessing.TextType? openXmlElement)
+  public static DMW.TextType? CreateModelElement(DXW.TextType? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Wordprocessing.TextType();
+      var value = new DMW.TextType();
       value.Space = GetSpace(openXmlElement);
       return value;
     }
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.TextType? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Wordprocessing.TextType, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMW.TextType? value)
+    where OpenXmlElementType: DXW.TextType, new()
   {
     if (value != null)
     {

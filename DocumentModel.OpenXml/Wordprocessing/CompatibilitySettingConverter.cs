@@ -8,25 +8,25 @@ public static class CompatibilitySettingConverter
   /// <summary>
   /// name
   /// </summary>
-  private static DocumentModel.Wordprocessing.CompatSettingNameKind? GetName(DocumentFormat.OpenXml.Wordprocessing.CompatibilitySetting openXmlElement)
+  private static DMW.CompatSettingNameKind? GetName(DXW.CompatibilitySetting openXmlElement)
   {
-    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Wordprocessing.CompatSettingNameValues, DocumentModel.Wordprocessing.CompatSettingNameKind>(openXmlElement?.Name?.Value);
+    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Wordprocessing.CompatSettingNameValues, DMW.CompatSettingNameKind>(openXmlElement?.Name?.Value);
   }
   
-  private static void SetName(DocumentFormat.OpenXml.Wordprocessing.CompatibilitySetting openXmlElement, DocumentModel.Wordprocessing.CompatSettingNameKind? value)
+  private static void SetName(DXW.CompatibilitySetting openXmlElement, DMW.CompatSettingNameKind? value)
   {
-    openXmlElement.Name = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Wordprocessing.CompatSettingNameValues, DocumentModel.Wordprocessing.CompatSettingNameKind>(value);
+    openXmlElement.Name = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Wordprocessing.CompatSettingNameValues, DMW.CompatSettingNameKind>(value);
   }
   
   /// <summary>
   /// uri
   /// </summary>
-  private static String? GetUri(DocumentFormat.OpenXml.Wordprocessing.CompatibilitySetting openXmlElement)
+  private static String? GetUri(DXW.CompatibilitySetting openXmlElement)
   {
     return openXmlElement?.Uri?.Value;
   }
   
-  private static void SetUri(DocumentFormat.OpenXml.Wordprocessing.CompatibilitySetting openXmlElement, String? value)
+  private static void SetUri(DXW.CompatibilitySetting openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.Uri = new StringValue { Value = value };
@@ -37,12 +37,12 @@ public static class CompatibilitySettingConverter
   /// <summary>
   /// val
   /// </summary>
-  private static String? GetVal(DocumentFormat.OpenXml.Wordprocessing.CompatibilitySetting openXmlElement)
+  private static String? GetVal(DXW.CompatibilitySetting openXmlElement)
   {
     return openXmlElement?.Val?.Value;
   }
   
-  private static void SetVal(DocumentFormat.OpenXml.Wordprocessing.CompatibilitySetting openXmlElement, String? value)
+  private static void SetVal(DXW.CompatibilitySetting openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.Val = new StringValue { Value = value };
@@ -50,11 +50,11 @@ public static class CompatibilitySettingConverter
       openXmlElement.Val = null;
   }
   
-  public static DocumentModel.Wordprocessing.CompatibilitySetting? CreateModelElement(DocumentFormat.OpenXml.Wordprocessing.CompatibilitySetting? openXmlElement)
+  public static DMW.CompatibilitySetting? CreateModelElement(DXW.CompatibilitySetting? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Wordprocessing.CompatibilitySetting();
+      var value = new DMW.CompatibilitySetting();
       value.Name = GetName(openXmlElement);
       value.Uri = GetUri(openXmlElement);
       value.Val = GetVal(openXmlElement);
@@ -63,8 +63,8 @@ public static class CompatibilitySettingConverter
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.CompatibilitySetting? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Wordprocessing.CompatibilitySetting, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMW.CompatibilitySetting? value)
+    where OpenXmlElementType: DXW.CompatibilitySetting, new()
   {
     if (value != null)
     {

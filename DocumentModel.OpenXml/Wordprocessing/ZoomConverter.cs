@@ -8,25 +8,25 @@ public static class ZoomConverter
   /// <summary>
   /// Zoom Type
   /// </summary>
-  private static DocumentModel.Wordprocessing.PresetZoomKind? GetVal(DocumentFormat.OpenXml.Wordprocessing.Zoom openXmlElement)
+  private static DMW.PresetZoomKind? GetVal(DXW.Zoom openXmlElement)
   {
-    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Wordprocessing.PresetZoomValues, DocumentModel.Wordprocessing.PresetZoomKind>(openXmlElement?.Val?.Value);
+    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Wordprocessing.PresetZoomValues, DMW.PresetZoomKind>(openXmlElement?.Val?.Value);
   }
   
-  private static void SetVal(DocumentFormat.OpenXml.Wordprocessing.Zoom openXmlElement, DocumentModel.Wordprocessing.PresetZoomKind? value)
+  private static void SetVal(DXW.Zoom openXmlElement, DMW.PresetZoomKind? value)
   {
-    openXmlElement.Val = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Wordprocessing.PresetZoomValues, DocumentModel.Wordprocessing.PresetZoomKind>(value);
+    openXmlElement.Val = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Wordprocessing.PresetZoomValues, DMW.PresetZoomKind>(value);
   }
   
   /// <summary>
   /// Zoom Percentage
   /// </summary>
-  private static String? GetPercent(DocumentFormat.OpenXml.Wordprocessing.Zoom openXmlElement)
+  private static String? GetPercent(DXW.Zoom openXmlElement)
   {
     return openXmlElement?.Percent?.Value;
   }
   
-  private static void SetPercent(DocumentFormat.OpenXml.Wordprocessing.Zoom openXmlElement, String? value)
+  private static void SetPercent(DXW.Zoom openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.Percent = new StringValue { Value = value };
@@ -34,11 +34,11 @@ public static class ZoomConverter
       openXmlElement.Percent = null;
   }
   
-  public static DocumentModel.Wordprocessing.Zoom? CreateModelElement(DocumentFormat.OpenXml.Wordprocessing.Zoom? openXmlElement)
+  public static DMW.Zoom? CreateModelElement(DXW.Zoom? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Wordprocessing.Zoom();
+      var value = new DMW.Zoom();
       value.Val = GetVal(openXmlElement);
       value.Percent = GetPercent(openXmlElement);
       return value;
@@ -46,8 +46,8 @@ public static class ZoomConverter
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.Zoom? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Wordprocessing.Zoom, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMW.Zoom? value)
+    where OpenXmlElementType: DXW.Zoom, new()
   {
     if (value != null)
     {

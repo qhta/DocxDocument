@@ -8,12 +8,12 @@ public static class NonVisualGroupDrawingShapePropsExtensionConverter
   /// <summary>
   /// URI
   /// </summary>
-  private static String? GetUri(DocumentFormat.OpenXml.Drawing.NonVisualGroupDrawingShapePropsExtension openXmlElement)
+  private static String? GetUri(DXDraw.NonVisualGroupDrawingShapePropsExtension openXmlElement)
   {
     return openXmlElement?.Uri?.Value;
   }
   
-  private static void SetUri(DocumentFormat.OpenXml.Drawing.NonVisualGroupDrawingShapePropsExtension openXmlElement, String? value)
+  private static void SetUri(DXDraw.NonVisualGroupDrawingShapePropsExtension openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.Uri = new StringValue { Value = value };
@@ -21,32 +21,32 @@ public static class NonVisualGroupDrawingShapePropsExtensionConverter
       openXmlElement.Uri = null;
   }
   
-  private static DocumentModel.Drawings.NonVisualGroupProperties? GetNonVisualGroupProperties(DocumentFormat.OpenXml.Drawing.NonVisualGroupDrawingShapePropsExtension openXmlElement)
+  private static DMDraws.NonVisualGroupProperties? GetNonVisualGroupProperties(DXDraw.NonVisualGroupDrawingShapePropsExtension openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office2013.Drawing.NonVisualGroupProperties>();
+    var itemElement = openXmlElement?.GetFirstChild<DXO2013Draw.NonVisualGroupProperties>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.NonVisualGroupPropertiesConverter.CreateModelElement(itemElement);
+      return DMXDraws.NonVisualGroupPropertiesConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetNonVisualGroupProperties(DocumentFormat.OpenXml.Drawing.NonVisualGroupDrawingShapePropsExtension openXmlElement, DocumentModel.Drawings.NonVisualGroupProperties? value)
+  private static void SetNonVisualGroupProperties(DXDraw.NonVisualGroupDrawingShapePropsExtension openXmlElement, DMDraws.NonVisualGroupProperties? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2013.Drawing.NonVisualGroupProperties>();
+    var itemElement = openXmlElement.GetFirstChild<DXO2013Draw.NonVisualGroupProperties>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Drawings.NonVisualGroupPropertiesConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2013.Drawing.NonVisualGroupProperties>(value);
+      itemElement = DMXDraws.NonVisualGroupPropertiesConverter.CreateOpenXmlElement<DXO2013Draw.NonVisualGroupProperties>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  public static DocumentModel.Drawings.NonVisualGroupDrawingShapePropsExtension? CreateModelElement(DocumentFormat.OpenXml.Drawing.NonVisualGroupDrawingShapePropsExtension? openXmlElement)
+  public static DMDraws.NonVisualGroupDrawingShapePropsExtension? CreateModelElement(DXDraw.NonVisualGroupDrawingShapePropsExtension? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.NonVisualGroupDrawingShapePropsExtension();
+      var value = new DMDraws.NonVisualGroupDrawingShapePropsExtension();
       value.Uri = GetUri(openXmlElement);
       value.NonVisualGroupProperties = GetNonVisualGroupProperties(openXmlElement);
       return value;
@@ -54,8 +54,8 @@ public static class NonVisualGroupDrawingShapePropsExtensionConverter
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.NonVisualGroupDrawingShapePropsExtension? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.NonVisualGroupDrawingShapePropsExtension, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDraws.NonVisualGroupDrawingShapePropsExtension? value)
+    where OpenXmlElementType: DXDraw.NonVisualGroupDrawingShapePropsExtension, new()
   {
     if (value != null)
     {

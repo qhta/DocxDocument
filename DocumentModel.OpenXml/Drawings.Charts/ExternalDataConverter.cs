@@ -8,12 +8,12 @@ public static class ExternalDataConverter
   /// <summary>
   /// Relationship Reference
   /// </summary>
-  private static String? GetId(DocumentFormat.OpenXml.Drawing.Charts.ExternalData openXmlElement)
+  private static String? GetId(DXDrawCharts.ExternalData openXmlElement)
   {
     return openXmlElement?.Id?.Value;
   }
   
-  private static void SetId(DocumentFormat.OpenXml.Drawing.Charts.ExternalData openXmlElement, String? value)
+  private static void SetId(DXDrawCharts.ExternalData openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.Id = new StringValue { Value = value };
@@ -24,32 +24,32 @@ public static class ExternalDataConverter
   /// <summary>
   /// Update Automatically.
   /// </summary>
-  private static Boolean? GetAutoUpdate(DocumentFormat.OpenXml.Drawing.Charts.ExternalData openXmlElement)
+  private static Boolean? GetAutoUpdate(DXDrawCharts.ExternalData openXmlElement)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.AutoUpdate>();
+    var itemElement = openXmlElement.GetFirstChild<DXDrawCharts.AutoUpdate>();
     return itemElement != null;
   }
   
-  private static void SetAutoUpdate(DocumentFormat.OpenXml.Drawing.Charts.ExternalData openXmlElement, Boolean? value)
+  private static void SetAutoUpdate(DXDrawCharts.ExternalData openXmlElement, Boolean? value)
   {
     if (value == false)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.AutoUpdate>();
+      var itemElement = openXmlElement.GetFirstChild<DXDrawCharts.AutoUpdate>();
       if (itemElement != null)
         itemElement.Remove();
     }
     if (value == true)
     {
-      var itemElement = new DocumentFormat.OpenXml.Drawing.Charts.AutoUpdate();
+      var itemElement = new DXDrawCharts.AutoUpdate();
       openXmlElement.AddChild(itemElement);
     }
   }
   
-  public static DocumentModel.Drawings.Charts.ExternalData? CreateModelElement(DocumentFormat.OpenXml.Drawing.Charts.ExternalData? openXmlElement)
+  public static DMDrawsCharts.ExternalData? CreateModelElement(DXDrawCharts.ExternalData? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.Charts.ExternalData();
+      var value = new DMDrawsCharts.ExternalData();
       value.Id = GetId(openXmlElement);
       value.AutoUpdate = GetAutoUpdate(openXmlElement);
       return value;
@@ -57,8 +57,8 @@ public static class ExternalDataConverter
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.Charts.ExternalData? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.Charts.ExternalData, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDrawsCharts.ExternalData? value)
+    where OpenXmlElementType: DXDrawCharts.ExternalData, new()
   {
     if (value != null)
     {

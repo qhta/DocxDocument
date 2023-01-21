@@ -8,12 +8,12 @@ public static class PageMarginsConverter
   /// <summary>
   /// Left
   /// </summary>
-  private static Double? GetLeft(DocumentFormat.OpenXml.Drawing.Charts.PageMargins openXmlElement)
+  private static Double? GetLeft(DXDrawCharts.PageMargins openXmlElement)
   {
     return openXmlElement.Left?.Value;
   }
   
-  private static void SetLeft(DocumentFormat.OpenXml.Drawing.Charts.PageMargins openXmlElement, Double? value)
+  private static void SetLeft(DXDrawCharts.PageMargins openXmlElement, Double? value)
   {
     openXmlElement.Left = value;
   }
@@ -21,12 +21,12 @@ public static class PageMarginsConverter
   /// <summary>
   /// Right
   /// </summary>
-  private static Double? GetRight(DocumentFormat.OpenXml.Drawing.Charts.PageMargins openXmlElement)
+  private static Double? GetRight(DXDrawCharts.PageMargins openXmlElement)
   {
     return openXmlElement.Right?.Value;
   }
   
-  private static void SetRight(DocumentFormat.OpenXml.Drawing.Charts.PageMargins openXmlElement, Double? value)
+  private static void SetRight(DXDrawCharts.PageMargins openXmlElement, Double? value)
   {
     openXmlElement.Right = value;
   }
@@ -34,12 +34,12 @@ public static class PageMarginsConverter
   /// <summary>
   /// Top
   /// </summary>
-  private static Double? GetTop(DocumentFormat.OpenXml.Drawing.Charts.PageMargins openXmlElement)
+  private static Double? GetTop(DXDrawCharts.PageMargins openXmlElement)
   {
     return openXmlElement.Top?.Value;
   }
   
-  private static void SetTop(DocumentFormat.OpenXml.Drawing.Charts.PageMargins openXmlElement, Double? value)
+  private static void SetTop(DXDrawCharts.PageMargins openXmlElement, Double? value)
   {
     openXmlElement.Top = value;
   }
@@ -47,12 +47,12 @@ public static class PageMarginsConverter
   /// <summary>
   /// Bottom
   /// </summary>
-  private static Double? GetBottom(DocumentFormat.OpenXml.Drawing.Charts.PageMargins openXmlElement)
+  private static Double? GetBottom(DXDrawCharts.PageMargins openXmlElement)
   {
     return openXmlElement.Bottom?.Value;
   }
   
-  private static void SetBottom(DocumentFormat.OpenXml.Drawing.Charts.PageMargins openXmlElement, Double? value)
+  private static void SetBottom(DXDrawCharts.PageMargins openXmlElement, Double? value)
   {
     openXmlElement.Bottom = value;
   }
@@ -60,12 +60,12 @@ public static class PageMarginsConverter
   /// <summary>
   /// Header
   /// </summary>
-  private static Double? GetHeader(DocumentFormat.OpenXml.Drawing.Charts.PageMargins openXmlElement)
+  private static Double? GetHeader(DXDrawCharts.PageMargins openXmlElement)
   {
     return openXmlElement.Header?.Value;
   }
   
-  private static void SetHeader(DocumentFormat.OpenXml.Drawing.Charts.PageMargins openXmlElement, Double? value)
+  private static void SetHeader(DXDrawCharts.PageMargins openXmlElement, Double? value)
   {
     openXmlElement.Header = value;
   }
@@ -73,21 +73,21 @@ public static class PageMarginsConverter
   /// <summary>
   /// Footer
   /// </summary>
-  private static Double? GetFooter(DocumentFormat.OpenXml.Drawing.Charts.PageMargins openXmlElement)
+  private static Double? GetFooter(DXDrawCharts.PageMargins openXmlElement)
   {
     return openXmlElement.Footer?.Value;
   }
   
-  private static void SetFooter(DocumentFormat.OpenXml.Drawing.Charts.PageMargins openXmlElement, Double? value)
+  private static void SetFooter(DXDrawCharts.PageMargins openXmlElement, Double? value)
   {
     openXmlElement.Footer = value;
   }
   
-  public static DocumentModel.Drawings.Charts.PageMargins? CreateModelElement(DocumentFormat.OpenXml.Drawing.Charts.PageMargins? openXmlElement)
+  public static DMDrawsCharts.PageMargins? CreateModelElement(DXDrawCharts.PageMargins? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.Charts.PageMargins();
+      var value = new DMDrawsCharts.PageMargins();
       value.Left = GetLeft(openXmlElement);
       value.Right = GetRight(openXmlElement);
       value.Top = GetTop(openXmlElement);
@@ -99,8 +99,8 @@ public static class PageMarginsConverter
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.Charts.PageMargins? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.Charts.PageMargins, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDrawsCharts.PageMargins? value)
+    where OpenXmlElementType: DXDrawCharts.PageMargins, new()
   {
     if (value != null)
     {

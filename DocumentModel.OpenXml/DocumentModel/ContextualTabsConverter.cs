@@ -5,45 +5,45 @@ namespace DocumentModel.OpenXml;
 /// </summary>
 public static class ContextualTabsConverter
 {
-  private static System.Collections.ObjectModel.Collection<DocumentModel.TabSet> GetTabSets(DocumentFormat.OpenXml.Office2010.CustomUI.ContextualTabs openXmlElement)
+  private static Collection<DM.TabSet> GetTabSets(DXO2010CustUI.ContextualTabs openXmlElement)
   {
-    var collection = new System.Collections.ObjectModel.Collection<DocumentModel.TabSet>();
-    foreach (var item in openXmlElement.Elements<DocumentFormat.OpenXml.Office2010.CustomUI.TabSet>())
+    var collection = new Collection<DM.TabSet>();
+    foreach (var item in openXmlElement.Elements<DXO2010CustUI.TabSet>())
     {
-      var newItem = DocumentModel.OpenXml.TabSetConverter.CreateModelElement(item);
+      var newItem = DMX.TabSetConverter.CreateModelElement(item);
       if (newItem != null)
         collection.Add(newItem);
     }
     return collection;
   }
   
-  private static void SetTabSets(DocumentFormat.OpenXml.Office2010.CustomUI.ContextualTabs openXmlElement, System.Collections.ObjectModel.Collection<DocumentModel.TabSet>? value)
+  private static void SetTabSets(DXO2010CustUI.ContextualTabs openXmlElement, Collection<DM.TabSet>? value)
   {
-    openXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Office2010.CustomUI.TabSet>();
+    openXmlElement.RemoveAllChildren<DXO2010CustUI.TabSet>();
     if (value != null)
     {
       foreach (var item in value)
       {
-        var newItem = DocumentModel.OpenXml.TabSetConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2010.CustomUI.TabSet>(item);
+        var newItem = DMX.TabSetConverter.CreateOpenXmlElement<DXO2010CustUI.TabSet>(item);
         if (newItem != null)
           openXmlElement.AddChild(newItem);
       }
     }
   }
   
-  public static DocumentModel.ContextualTabs? CreateModelElement(DocumentFormat.OpenXml.Office2010.CustomUI.ContextualTabs? openXmlElement)
+  public static DM.ContextualTabs? CreateModelElement(DXO2010CustUI.ContextualTabs? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.ContextualTabs();
+      var value = new DM.ContextualTabs();
       value.TabSets = GetTabSets(openXmlElement);
       return value;
     }
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.ContextualTabs? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Office2010.CustomUI.ContextualTabs, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DM.ContextualTabs? value)
+    where OpenXmlElementType: DXO2010CustUI.ContextualTabs, new()
   {
     if (value != null)
     {

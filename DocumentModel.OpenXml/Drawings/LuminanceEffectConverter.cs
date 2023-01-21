@@ -8,12 +8,12 @@ public static class LuminanceEffectConverter
   /// <summary>
   /// Brightness
   /// </summary>
-  private static Int32? GetBrightness(DocumentFormat.OpenXml.Drawing.LuminanceEffect openXmlElement)
+  private static Int32? GetBrightness(DXDraw.LuminanceEffect openXmlElement)
   {
     return openXmlElement.Brightness?.Value;
   }
   
-  private static void SetBrightness(DocumentFormat.OpenXml.Drawing.LuminanceEffect openXmlElement, Int32? value)
+  private static void SetBrightness(DXDraw.LuminanceEffect openXmlElement, Int32? value)
   {
     openXmlElement.Brightness = value;
   }
@@ -21,21 +21,21 @@ public static class LuminanceEffectConverter
   /// <summary>
   /// Contrast
   /// </summary>
-  private static Int32? GetContrast(DocumentFormat.OpenXml.Drawing.LuminanceEffect openXmlElement)
+  private static Int32? GetContrast(DXDraw.LuminanceEffect openXmlElement)
   {
     return openXmlElement.Contrast?.Value;
   }
   
-  private static void SetContrast(DocumentFormat.OpenXml.Drawing.LuminanceEffect openXmlElement, Int32? value)
+  private static void SetContrast(DXDraw.LuminanceEffect openXmlElement, Int32? value)
   {
     openXmlElement.Contrast = value;
   }
   
-  public static DocumentModel.Drawings.LuminanceEffect? CreateModelElement(DocumentFormat.OpenXml.Drawing.LuminanceEffect? openXmlElement)
+  public static DMDraws.LuminanceEffect? CreateModelElement(DXDraw.LuminanceEffect? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.LuminanceEffect();
+      var value = new DMDraws.LuminanceEffect();
       value.Brightness = GetBrightness(openXmlElement);
       value.Contrast = GetContrast(openXmlElement);
       return value;
@@ -43,8 +43,8 @@ public static class LuminanceEffectConverter
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.LuminanceEffect? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.LuminanceEffect, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDraws.LuminanceEffect? value)
+    where OpenXmlElementType: DXDraw.LuminanceEffect, new()
   {
     if (value != null)
     {

@@ -8,60 +8,60 @@ public static class TextWrapConverter
   /// <summary>
   /// Wrapping type
   /// </summary>
-  private static DocumentModel.Wordprocessing.Vml.WrapKind? GetType(DocumentFormat.OpenXml.Vml.Wordprocessing.TextWrap openXmlElement)
+  private static DMWVml.WrapKind? GetType(DXVmlW.TextWrap openXmlElement)
   {
-    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Vml.Wordprocessing.WrapValues, DocumentModel.Wordprocessing.Vml.WrapKind>(openXmlElement?.Type?.Value);
+    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Vml.Wordprocessing.WrapValues, DMWVml.WrapKind>(openXmlElement?.Type?.Value);
   }
   
-  private static void SetType(DocumentFormat.OpenXml.Vml.Wordprocessing.TextWrap openXmlElement, DocumentModel.Wordprocessing.Vml.WrapKind? value)
+  private static void SetType(DXVmlW.TextWrap openXmlElement, DMWVml.WrapKind? value)
   {
-    openXmlElement.Type = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Vml.Wordprocessing.WrapValues, DocumentModel.Wordprocessing.Vml.WrapKind>(value);
+    openXmlElement.Type = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Vml.Wordprocessing.WrapValues, DMWVml.WrapKind>(value);
   }
   
   /// <summary>
   /// Wrapping side
   /// </summary>
-  private static DocumentModel.Wordprocessing.Vml.WrapSideKind? GetSide(DocumentFormat.OpenXml.Vml.Wordprocessing.TextWrap openXmlElement)
+  private static DMWVml.WrapSideKind? GetSide(DXVmlW.TextWrap openXmlElement)
   {
-    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Vml.Wordprocessing.WrapSideValues, DocumentModel.Wordprocessing.Vml.WrapSideKind>(openXmlElement?.Side?.Value);
+    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Vml.Wordprocessing.WrapSideValues, DMWVml.WrapSideKind>(openXmlElement?.Side?.Value);
   }
   
-  private static void SetSide(DocumentFormat.OpenXml.Vml.Wordprocessing.TextWrap openXmlElement, DocumentModel.Wordprocessing.Vml.WrapSideKind? value)
+  private static void SetSide(DXVmlW.TextWrap openXmlElement, DMWVml.WrapSideKind? value)
   {
-    openXmlElement.Side = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Vml.Wordprocessing.WrapSideValues, DocumentModel.Wordprocessing.Vml.WrapSideKind>(value);
+    openXmlElement.Side = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Vml.Wordprocessing.WrapSideValues, DMWVml.WrapSideKind>(value);
   }
   
   /// <summary>
   /// Horizontal Positioning Base
   /// </summary>
-  private static DocumentModel.Wordprocessing.Vml.HorizontalAnchorKind? GetAnchorX(DocumentFormat.OpenXml.Vml.Wordprocessing.TextWrap openXmlElement)
+  private static DMWVml.HorizontalAnchorKind? GetAnchorX(DXVmlW.TextWrap openXmlElement)
   {
-    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Vml.Wordprocessing.HorizontalAnchorValues, DocumentModel.Wordprocessing.Vml.HorizontalAnchorKind>(openXmlElement?.AnchorX?.Value);
+    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Vml.Wordprocessing.HorizontalAnchorValues, DMWVml.HorizontalAnchorKind>(openXmlElement?.AnchorX?.Value);
   }
   
-  private static void SetAnchorX(DocumentFormat.OpenXml.Vml.Wordprocessing.TextWrap openXmlElement, DocumentModel.Wordprocessing.Vml.HorizontalAnchorKind? value)
+  private static void SetAnchorX(DXVmlW.TextWrap openXmlElement, DMWVml.HorizontalAnchorKind? value)
   {
-    openXmlElement.AnchorX = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Vml.Wordprocessing.HorizontalAnchorValues, DocumentModel.Wordprocessing.Vml.HorizontalAnchorKind>(value);
+    openXmlElement.AnchorX = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Vml.Wordprocessing.HorizontalAnchorValues, DMWVml.HorizontalAnchorKind>(value);
   }
   
   /// <summary>
   /// Vertical Positioning Base
   /// </summary>
-  private static DocumentModel.Wordprocessing.Vml.VerticalAnchorKind? GetAnchorY(DocumentFormat.OpenXml.Vml.Wordprocessing.TextWrap openXmlElement)
+  private static DMWVml.VerticalAnchorKind? GetAnchorY(DXVmlW.TextWrap openXmlElement)
   {
-    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Vml.Wordprocessing.VerticalAnchorValues, DocumentModel.Wordprocessing.Vml.VerticalAnchorKind>(openXmlElement?.AnchorY?.Value);
+    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Vml.Wordprocessing.VerticalAnchorValues, DMWVml.VerticalAnchorKind>(openXmlElement?.AnchorY?.Value);
   }
   
-  private static void SetAnchorY(DocumentFormat.OpenXml.Vml.Wordprocessing.TextWrap openXmlElement, DocumentModel.Wordprocessing.Vml.VerticalAnchorKind? value)
+  private static void SetAnchorY(DXVmlW.TextWrap openXmlElement, DMWVml.VerticalAnchorKind? value)
   {
-    openXmlElement.AnchorY = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Vml.Wordprocessing.VerticalAnchorValues, DocumentModel.Wordprocessing.Vml.VerticalAnchorKind>(value);
+    openXmlElement.AnchorY = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Vml.Wordprocessing.VerticalAnchorValues, DMWVml.VerticalAnchorKind>(value);
   }
   
-  public static DocumentModel.Wordprocessing.Vml.TextWrap? CreateModelElement(DocumentFormat.OpenXml.Vml.Wordprocessing.TextWrap? openXmlElement)
+  public static DMWVml.TextWrap? CreateModelElement(DXVmlW.TextWrap? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Wordprocessing.Vml.TextWrap();
+      var value = new DMWVml.TextWrap();
       value.Type = GetType(openXmlElement);
       value.Side = GetSide(openXmlElement);
       value.AnchorX = GetAnchorX(openXmlElement);
@@ -71,8 +71,8 @@ public static class TextWrapConverter
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.Vml.TextWrap? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Vml.Wordprocessing.TextWrap, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMWVml.TextWrap? value)
+    where OpenXmlElementType: DXVmlW.TextWrap, new()
   {
     if (value != null)
     {

@@ -8,12 +8,12 @@ public static class GraphicFrameLocksConverter
   /// <summary>
   /// Disallow Shape Grouping
   /// </summary>
-  private static Boolean? GetNoGrouping(DocumentFormat.OpenXml.Drawing.GraphicFrameLocks openXmlElement)
+  private static Boolean? GetNoGrouping(DXDraw.GraphicFrameLocks openXmlElement)
   {
     return openXmlElement?.NoGrouping?.Value;
   }
   
-  private static void SetNoGrouping(DocumentFormat.OpenXml.Drawing.GraphicFrameLocks openXmlElement, Boolean? value)
+  private static void SetNoGrouping(DXDraw.GraphicFrameLocks openXmlElement, Boolean? value)
   {
     if (value != null)
       openXmlElement.NoGrouping = new BooleanValue { Value = (Boolean)value };
@@ -24,12 +24,12 @@ public static class GraphicFrameLocksConverter
   /// <summary>
   /// Disallow Selection of Child Shapes
   /// </summary>
-  private static Boolean? GetNoDrilldown(DocumentFormat.OpenXml.Drawing.GraphicFrameLocks openXmlElement)
+  private static Boolean? GetNoDrilldown(DXDraw.GraphicFrameLocks openXmlElement)
   {
     return openXmlElement?.NoDrilldown?.Value;
   }
   
-  private static void SetNoDrilldown(DocumentFormat.OpenXml.Drawing.GraphicFrameLocks openXmlElement, Boolean? value)
+  private static void SetNoDrilldown(DXDraw.GraphicFrameLocks openXmlElement, Boolean? value)
   {
     if (value != null)
       openXmlElement.NoDrilldown = new BooleanValue { Value = (Boolean)value };
@@ -40,12 +40,12 @@ public static class GraphicFrameLocksConverter
   /// <summary>
   /// Disallow Shape Selection
   /// </summary>
-  private static Boolean? GetNoSelection(DocumentFormat.OpenXml.Drawing.GraphicFrameLocks openXmlElement)
+  private static Boolean? GetNoSelection(DXDraw.GraphicFrameLocks openXmlElement)
   {
     return openXmlElement?.NoSelection?.Value;
   }
   
-  private static void SetNoSelection(DocumentFormat.OpenXml.Drawing.GraphicFrameLocks openXmlElement, Boolean? value)
+  private static void SetNoSelection(DXDraw.GraphicFrameLocks openXmlElement, Boolean? value)
   {
     if (value != null)
       openXmlElement.NoSelection = new BooleanValue { Value = (Boolean)value };
@@ -56,12 +56,12 @@ public static class GraphicFrameLocksConverter
   /// <summary>
   /// Disallow Aspect Ratio Change
   /// </summary>
-  private static Boolean? GetNoChangeAspect(DocumentFormat.OpenXml.Drawing.GraphicFrameLocks openXmlElement)
+  private static Boolean? GetNoChangeAspect(DXDraw.GraphicFrameLocks openXmlElement)
   {
     return openXmlElement?.NoChangeAspect?.Value;
   }
   
-  private static void SetNoChangeAspect(DocumentFormat.OpenXml.Drawing.GraphicFrameLocks openXmlElement, Boolean? value)
+  private static void SetNoChangeAspect(DXDraw.GraphicFrameLocks openXmlElement, Boolean? value)
   {
     if (value != null)
       openXmlElement.NoChangeAspect = new BooleanValue { Value = (Boolean)value };
@@ -72,12 +72,12 @@ public static class GraphicFrameLocksConverter
   /// <summary>
   /// Disallow Shape Movement
   /// </summary>
-  private static Boolean? GetNoMove(DocumentFormat.OpenXml.Drawing.GraphicFrameLocks openXmlElement)
+  private static Boolean? GetNoMove(DXDraw.GraphicFrameLocks openXmlElement)
   {
     return openXmlElement?.NoMove?.Value;
   }
   
-  private static void SetNoMove(DocumentFormat.OpenXml.Drawing.GraphicFrameLocks openXmlElement, Boolean? value)
+  private static void SetNoMove(DXDraw.GraphicFrameLocks openXmlElement, Boolean? value)
   {
     if (value != null)
       openXmlElement.NoMove = new BooleanValue { Value = (Boolean)value };
@@ -88,12 +88,12 @@ public static class GraphicFrameLocksConverter
   /// <summary>
   /// Disallow Shape Resize
   /// </summary>
-  private static Boolean? GetNoResize(DocumentFormat.OpenXml.Drawing.GraphicFrameLocks openXmlElement)
+  private static Boolean? GetNoResize(DXDraw.GraphicFrameLocks openXmlElement)
   {
     return openXmlElement?.NoResize?.Value;
   }
   
-  private static void SetNoResize(DocumentFormat.OpenXml.Drawing.GraphicFrameLocks openXmlElement, Boolean? value)
+  private static void SetNoResize(DXDraw.GraphicFrameLocks openXmlElement, Boolean? value)
   {
     if (value != null)
       openXmlElement.NoResize = new BooleanValue { Value = (Boolean)value };
@@ -104,32 +104,32 @@ public static class GraphicFrameLocksConverter
   /// <summary>
   /// ExtensionList.
   /// </summary>
-  private static DocumentModel.Drawings.ExtensionList? GetExtensionList(DocumentFormat.OpenXml.Drawing.GraphicFrameLocks openXmlElement)
+  private static DMDraws.ExtensionList? GetExtensionList(DXDraw.GraphicFrameLocks openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.ExtensionList>();
+    var itemElement = openXmlElement?.GetFirstChild<DXDraw.ExtensionList>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.ExtensionListConverter.CreateModelElement(itemElement);
+      return DMXDraws.ExtensionListConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetExtensionList(DocumentFormat.OpenXml.Drawing.GraphicFrameLocks openXmlElement, DocumentModel.Drawings.ExtensionList? value)
+  private static void SetExtensionList(DXDraw.GraphicFrameLocks openXmlElement, DMDraws.ExtensionList? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.ExtensionList>();
+    var itemElement = openXmlElement.GetFirstChild<DXDraw.ExtensionList>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Drawings.ExtensionListConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.ExtensionList>(value);
+      itemElement = DMXDraws.ExtensionListConverter.CreateOpenXmlElement<DXDraw.ExtensionList>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  public static DocumentModel.Drawings.GraphicFrameLocks? CreateModelElement(DocumentFormat.OpenXml.Drawing.GraphicFrameLocks? openXmlElement)
+  public static DMDraws.GraphicFrameLocks? CreateModelElement(DXDraw.GraphicFrameLocks? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.GraphicFrameLocks();
+      var value = new DMDraws.GraphicFrameLocks();
       value.NoGrouping = GetNoGrouping(openXmlElement);
       value.NoDrilldown = GetNoDrilldown(openXmlElement);
       value.NoSelection = GetNoSelection(openXmlElement);
@@ -142,8 +142,8 @@ public static class GraphicFrameLocksConverter
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.GraphicFrameLocks? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.GraphicFrameLocks, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDraws.GraphicFrameLocks? value)
+    where OpenXmlElementType: DXDraw.GraphicFrameLocks, new()
   {
     if (value != null)
     {

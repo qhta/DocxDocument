@@ -8,12 +8,12 @@ public static class WebExtensionBindingConverter
   /// <summary>
   /// id, this property is only available in Office 2013 and later.
   /// </summary>
-  private static String? GetId(DocumentFormat.OpenXml.Office2013.WebExtension.WebExtensionBinding openXmlElement)
+  private static String? GetId(DXO2013WebExt.WebExtensionBinding openXmlElement)
   {
     return openXmlElement?.Id?.Value;
   }
   
-  private static void SetId(DocumentFormat.OpenXml.Office2013.WebExtension.WebExtensionBinding openXmlElement, String? value)
+  private static void SetId(DXO2013WebExt.WebExtensionBinding openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.Id = new StringValue { Value = value };
@@ -24,12 +24,12 @@ public static class WebExtensionBindingConverter
   /// <summary>
   /// type, this property is only available in Office 2013 and later.
   /// </summary>
-  private static String? GetType(DocumentFormat.OpenXml.Office2013.WebExtension.WebExtensionBinding openXmlElement)
+  private static String? GetType(DXO2013WebExt.WebExtensionBinding openXmlElement)
   {
     return openXmlElement?.Type?.Value;
   }
   
-  private static void SetType(DocumentFormat.OpenXml.Office2013.WebExtension.WebExtensionBinding openXmlElement, String? value)
+  private static void SetType(DXO2013WebExt.WebExtensionBinding openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.Type = new StringValue { Value = value };
@@ -40,12 +40,12 @@ public static class WebExtensionBindingConverter
   /// <summary>
   /// appref, this property is only available in Office 2013 and later.
   /// </summary>
-  private static String? GetAppReference(DocumentFormat.OpenXml.Office2013.WebExtension.WebExtensionBinding openXmlElement)
+  private static String? GetAppReference(DXO2013WebExt.WebExtensionBinding openXmlElement)
   {
     return openXmlElement?.AppReference?.Value;
   }
   
-  private static void SetAppReference(DocumentFormat.OpenXml.Office2013.WebExtension.WebExtensionBinding openXmlElement, String? value)
+  private static void SetAppReference(DXO2013WebExt.WebExtensionBinding openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.AppReference = new StringValue { Value = value };
@@ -56,32 +56,32 @@ public static class WebExtensionBindingConverter
   /// <summary>
   /// OfficeArtExtensionList.
   /// </summary>
-  private static DocumentModel.WebExtensions.OfficeArtExtensionList? GetOfficeArtExtensionList(DocumentFormat.OpenXml.Office2013.WebExtension.WebExtensionBinding openXmlElement)
+  private static DMWebExt.OfficeArtExtensionList? GetOfficeArtExtensionList(DXO2013WebExt.WebExtensionBinding openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office2013.WebExtension.OfficeArtExtensionList>();
+    var itemElement = openXmlElement?.GetFirstChild<DXO2013WebExt.OfficeArtExtensionList>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.WebExtensions.OfficeArtExtensionListConverter.CreateModelElement(itemElement);
+      return DMXWebExt.OfficeArtExtensionListConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetOfficeArtExtensionList(DocumentFormat.OpenXml.Office2013.WebExtension.WebExtensionBinding openXmlElement, DocumentModel.WebExtensions.OfficeArtExtensionList? value)
+  private static void SetOfficeArtExtensionList(DXO2013WebExt.WebExtensionBinding openXmlElement, DMWebExt.OfficeArtExtensionList? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2013.WebExtension.OfficeArtExtensionList>();
+    var itemElement = openXmlElement.GetFirstChild<DXO2013WebExt.OfficeArtExtensionList>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.WebExtensions.OfficeArtExtensionListConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2013.WebExtension.OfficeArtExtensionList>(value);
+      itemElement = DMXWebExt.OfficeArtExtensionListConverter.CreateOpenXmlElement<DXO2013WebExt.OfficeArtExtensionList>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  public static DocumentModel.WebExtensions.WebExtensionBinding? CreateModelElement(DocumentFormat.OpenXml.Office2013.WebExtension.WebExtensionBinding? openXmlElement)
+  public static DMWebExt.WebExtensionBinding? CreateModelElement(DXO2013WebExt.WebExtensionBinding? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.WebExtensions.WebExtensionBinding();
+      var value = new DMWebExt.WebExtensionBinding();
       value.Id = GetId(openXmlElement);
       value.Type = GetType(openXmlElement);
       value.AppReference = GetAppReference(openXmlElement);
@@ -91,8 +91,8 @@ public static class WebExtensionBindingConverter
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.WebExtensions.WebExtensionBinding? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Office2013.WebExtension.WebExtensionBinding, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMWebExt.WebExtensionBinding? value)
+    where OpenXmlElementType: DXO2013WebExt.WebExtensionBinding, new()
   {
     if (value != null)
     {

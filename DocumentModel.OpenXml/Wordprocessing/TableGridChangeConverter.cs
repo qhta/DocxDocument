@@ -8,12 +8,12 @@ public static class TableGridChangeConverter
   /// <summary>
   /// Annotation Identifier
   /// </summary>
-  private static String? GetId(DocumentFormat.OpenXml.Wordprocessing.TableGridChange openXmlElement)
+  private static String? GetId(DXW.TableGridChange openXmlElement)
   {
     return openXmlElement?.Id?.Value;
   }
   
-  private static void SetId(DocumentFormat.OpenXml.Wordprocessing.TableGridChange openXmlElement, String? value)
+  private static void SetId(DXW.TableGridChange openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.Id = new StringValue { Value = value };
@@ -24,32 +24,32 @@ public static class TableGridChangeConverter
   /// <summary>
   /// Previous Table Grid.
   /// </summary>
-  private static DocumentModel.Wordprocessing.PreviousTableGrid? GetPreviousTableGrid(DocumentFormat.OpenXml.Wordprocessing.TableGridChange openXmlElement)
+  private static DMW.PreviousTableGrid? GetPreviousTableGrid(DXW.TableGridChange openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.PreviousTableGrid>();
+    var itemElement = openXmlElement?.GetFirstChild<DXW.PreviousTableGrid>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Wordprocessing.PreviousTableGridConverter.CreateModelElement(itemElement);
+      return DMXW.PreviousTableGridConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetPreviousTableGrid(DocumentFormat.OpenXml.Wordprocessing.TableGridChange openXmlElement, DocumentModel.Wordprocessing.PreviousTableGrid? value)
+  private static void SetPreviousTableGrid(DXW.TableGridChange openXmlElement, DMW.PreviousTableGrid? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.PreviousTableGrid>();
+    var itemElement = openXmlElement.GetFirstChild<DXW.PreviousTableGrid>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Wordprocessing.PreviousTableGridConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.PreviousTableGrid>(value);
+      itemElement = DMXW.PreviousTableGridConverter.CreateOpenXmlElement<DXW.PreviousTableGrid>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  public static DocumentModel.Wordprocessing.TableGridChange? CreateModelElement(DocumentFormat.OpenXml.Wordprocessing.TableGridChange? openXmlElement)
+  public static DMW.TableGridChange? CreateModelElement(DXW.TableGridChange? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Wordprocessing.TableGridChange();
+      var value = new DMW.TableGridChange();
       value.Id = GetId(openXmlElement);
       value.PreviousTableGrid = GetPreviousTableGrid(openXmlElement);
       return value;
@@ -57,8 +57,8 @@ public static class TableGridChangeConverter
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.TableGridChange? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Wordprocessing.TableGridChange, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMW.TableGridChange? value)
+    where OpenXmlElementType: DXW.TableGridChange, new()
   {
     if (value != null)
     {

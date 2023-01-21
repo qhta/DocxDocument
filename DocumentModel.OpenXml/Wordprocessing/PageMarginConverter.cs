@@ -8,12 +8,12 @@ public static class PageMarginConverter
   /// <summary>
   /// Top Margin Spacing
   /// </summary>
-  private static Int32? GetTop(DocumentFormat.OpenXml.Wordprocessing.PageMargin openXmlElement)
+  private static Int32? GetTop(DXW.PageMargin openXmlElement)
   {
     return openXmlElement.Top?.Value;
   }
   
-  private static void SetTop(DocumentFormat.OpenXml.Wordprocessing.PageMargin openXmlElement, Int32? value)
+  private static void SetTop(DXW.PageMargin openXmlElement, Int32? value)
   {
     openXmlElement.Top = value;
   }
@@ -21,12 +21,12 @@ public static class PageMarginConverter
   /// <summary>
   /// Right Margin Spacing
   /// </summary>
-  private static UInt32? GetRight(DocumentFormat.OpenXml.Wordprocessing.PageMargin openXmlElement)
+  private static UInt32? GetRight(DXW.PageMargin openXmlElement)
   {
     return openXmlElement.Right?.Value;
   }
   
-  private static void SetRight(DocumentFormat.OpenXml.Wordprocessing.PageMargin openXmlElement, UInt32? value)
+  private static void SetRight(DXW.PageMargin openXmlElement, UInt32? value)
   {
     openXmlElement.Right = value;
   }
@@ -34,12 +34,12 @@ public static class PageMarginConverter
   /// <summary>
   /// Page Bottom Spacing
   /// </summary>
-  private static Int32? GetBottom(DocumentFormat.OpenXml.Wordprocessing.PageMargin openXmlElement)
+  private static Int32? GetBottom(DXW.PageMargin openXmlElement)
   {
     return openXmlElement.Bottom?.Value;
   }
   
-  private static void SetBottom(DocumentFormat.OpenXml.Wordprocessing.PageMargin openXmlElement, Int32? value)
+  private static void SetBottom(DXW.PageMargin openXmlElement, Int32? value)
   {
     openXmlElement.Bottom = value;
   }
@@ -47,12 +47,12 @@ public static class PageMarginConverter
   /// <summary>
   /// Left Margin Spacing
   /// </summary>
-  private static UInt32? GetLeft(DocumentFormat.OpenXml.Wordprocessing.PageMargin openXmlElement)
+  private static UInt32? GetLeft(DXW.PageMargin openXmlElement)
   {
     return openXmlElement.Left?.Value;
   }
   
-  private static void SetLeft(DocumentFormat.OpenXml.Wordprocessing.PageMargin openXmlElement, UInt32? value)
+  private static void SetLeft(DXW.PageMargin openXmlElement, UInt32? value)
   {
     openXmlElement.Left = value;
   }
@@ -60,12 +60,12 @@ public static class PageMarginConverter
   /// <summary>
   /// Spacing to Top of Header
   /// </summary>
-  private static UInt32? GetHeader(DocumentFormat.OpenXml.Wordprocessing.PageMargin openXmlElement)
+  private static UInt32? GetHeader(DXW.PageMargin openXmlElement)
   {
     return openXmlElement.Header?.Value;
   }
   
-  private static void SetHeader(DocumentFormat.OpenXml.Wordprocessing.PageMargin openXmlElement, UInt32? value)
+  private static void SetHeader(DXW.PageMargin openXmlElement, UInt32? value)
   {
     openXmlElement.Header = value;
   }
@@ -73,12 +73,12 @@ public static class PageMarginConverter
   /// <summary>
   /// Spacing to Bottom of Footer
   /// </summary>
-  private static UInt32? GetFooter(DocumentFormat.OpenXml.Wordprocessing.PageMargin openXmlElement)
+  private static UInt32? GetFooter(DXW.PageMargin openXmlElement)
   {
     return openXmlElement.Footer?.Value;
   }
   
-  private static void SetFooter(DocumentFormat.OpenXml.Wordprocessing.PageMargin openXmlElement, UInt32? value)
+  private static void SetFooter(DXW.PageMargin openXmlElement, UInt32? value)
   {
     openXmlElement.Footer = value;
   }
@@ -86,21 +86,21 @@ public static class PageMarginConverter
   /// <summary>
   /// Page Gutter Spacing
   /// </summary>
-  private static UInt32? GetGutter(DocumentFormat.OpenXml.Wordprocessing.PageMargin openXmlElement)
+  private static UInt32? GetGutter(DXW.PageMargin openXmlElement)
   {
     return openXmlElement.Gutter?.Value;
   }
   
-  private static void SetGutter(DocumentFormat.OpenXml.Wordprocessing.PageMargin openXmlElement, UInt32? value)
+  private static void SetGutter(DXW.PageMargin openXmlElement, UInt32? value)
   {
     openXmlElement.Gutter = value;
   }
   
-  public static DocumentModel.Wordprocessing.PageMargin? CreateModelElement(DocumentFormat.OpenXml.Wordprocessing.PageMargin? openXmlElement)
+  public static DMW.PageMargin? CreateModelElement(DXW.PageMargin? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Wordprocessing.PageMargin();
+      var value = new DMW.PageMargin();
       value.Top = GetTop(openXmlElement);
       value.Right = GetRight(openXmlElement);
       value.Bottom = GetBottom(openXmlElement);
@@ -113,8 +113,8 @@ public static class PageMarginConverter
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.PageMargin? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Wordprocessing.PageMargin, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMW.PageMargin? value)
+    where OpenXmlElementType: DXW.PageMargin, new()
   {
     if (value != null)
     {

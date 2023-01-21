@@ -8,12 +8,12 @@ public static class LanguageTypeConverter
   /// <summary>
   /// Latin Language
   /// </summary>
-  private static String? GetVal(DocumentFormat.OpenXml.Wordprocessing.LanguageType openXmlElement)
+  private static String? GetVal(DXW.LanguageType openXmlElement)
   {
     return openXmlElement?.Val?.Value;
   }
   
-  private static void SetVal(DocumentFormat.OpenXml.Wordprocessing.LanguageType openXmlElement, String? value)
+  private static void SetVal(DXW.LanguageType openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.Val = new StringValue { Value = value };
@@ -24,12 +24,12 @@ public static class LanguageTypeConverter
   /// <summary>
   /// East Asian Language
   /// </summary>
-  private static String? GetEastAsia(DocumentFormat.OpenXml.Wordprocessing.LanguageType openXmlElement)
+  private static String? GetEastAsia(DXW.LanguageType openXmlElement)
   {
     return openXmlElement?.EastAsia?.Value;
   }
   
-  private static void SetEastAsia(DocumentFormat.OpenXml.Wordprocessing.LanguageType openXmlElement, String? value)
+  private static void SetEastAsia(DXW.LanguageType openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.EastAsia = new StringValue { Value = value };
@@ -40,12 +40,12 @@ public static class LanguageTypeConverter
   /// <summary>
   /// Complex Script Language
   /// </summary>
-  private static String? GetBidi(DocumentFormat.OpenXml.Wordprocessing.LanguageType openXmlElement)
+  private static String? GetBidi(DXW.LanguageType openXmlElement)
   {
     return openXmlElement?.Bidi?.Value;
   }
   
-  private static void SetBidi(DocumentFormat.OpenXml.Wordprocessing.LanguageType openXmlElement, String? value)
+  private static void SetBidi(DXW.LanguageType openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.Bidi = new StringValue { Value = value };
@@ -53,11 +53,11 @@ public static class LanguageTypeConverter
       openXmlElement.Bidi = null;
   }
   
-  public static DocumentModel.Wordprocessing.LanguageType? CreateModelElement(DocumentFormat.OpenXml.Wordprocessing.LanguageType? openXmlElement)
+  public static DMW.LanguageType? CreateModelElement(DXW.LanguageType? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Wordprocessing.LanguageType();
+      var value = new DMW.LanguageType();
       value.Val = GetVal(openXmlElement);
       value.EastAsia = GetEastAsia(openXmlElement);
       value.Bidi = GetBidi(openXmlElement);
@@ -66,8 +66,8 @@ public static class LanguageTypeConverter
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.LanguageType? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Wordprocessing.LanguageType, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMW.LanguageType? value)
+    where OpenXmlElementType: DXW.LanguageType, new()
   {
     if (value != null)
     {

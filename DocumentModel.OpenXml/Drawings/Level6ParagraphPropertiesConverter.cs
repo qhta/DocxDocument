@@ -5,366 +5,366 @@ namespace DocumentModel.OpenXml.Drawings;
 /// </summary>
 public static class Level6ParagraphPropertiesConverter
 {
-  private static DocumentModel.Drawings.LineSpacing? GetLineSpacing(DocumentFormat.OpenXml.Drawing.Level6ParagraphProperties openXmlElement)
+  private static DMDraws.LineSpacing? GetLineSpacing(DXDraw.Level6ParagraphProperties openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.LineSpacing>();
+    var itemElement = openXmlElement?.GetFirstChild<DXDraw.LineSpacing>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.LineSpacingConverter.CreateModelElement(itemElement);
+      return DMXDraws.LineSpacingConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetLineSpacing(DocumentFormat.OpenXml.Drawing.Level6ParagraphProperties openXmlElement, DocumentModel.Drawings.LineSpacing? value)
+  private static void SetLineSpacing(DXDraw.Level6ParagraphProperties openXmlElement, DMDraws.LineSpacing? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.LineSpacing>();
+    var itemElement = openXmlElement.GetFirstChild<DXDraw.LineSpacing>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Drawings.LineSpacingConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.LineSpacing>(value);
+      itemElement = DMXDraws.LineSpacingConverter.CreateOpenXmlElement<DXDraw.LineSpacing>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static DocumentModel.Drawings.SpaceBefore? GetSpaceBefore(DocumentFormat.OpenXml.Drawing.Level6ParagraphProperties openXmlElement)
+  private static DMDraws.SpaceBefore? GetSpaceBefore(DXDraw.Level6ParagraphProperties openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.SpaceBefore>();
+    var itemElement = openXmlElement?.GetFirstChild<DXDraw.SpaceBefore>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.SpaceBeforeConverter.CreateModelElement(itemElement);
+      return DMXDraws.SpaceBeforeConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetSpaceBefore(DocumentFormat.OpenXml.Drawing.Level6ParagraphProperties openXmlElement, DocumentModel.Drawings.SpaceBefore? value)
+  private static void SetSpaceBefore(DXDraw.Level6ParagraphProperties openXmlElement, DMDraws.SpaceBefore? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.SpaceBefore>();
+    var itemElement = openXmlElement.GetFirstChild<DXDraw.SpaceBefore>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Drawings.SpaceBeforeConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.SpaceBefore>(value);
+      itemElement = DMXDraws.SpaceBeforeConverter.CreateOpenXmlElement<DXDraw.SpaceBefore>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static DocumentModel.Drawings.SpaceAfter? GetSpaceAfter(DocumentFormat.OpenXml.Drawing.Level6ParagraphProperties openXmlElement)
+  private static DMDraws.SpaceAfter? GetSpaceAfter(DXDraw.Level6ParagraphProperties openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.SpaceAfter>();
+    var itemElement = openXmlElement?.GetFirstChild<DXDraw.SpaceAfter>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.SpaceAfterConverter.CreateModelElement(itemElement);
+      return DMXDraws.SpaceAfterConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetSpaceAfter(DocumentFormat.OpenXml.Drawing.Level6ParagraphProperties openXmlElement, DocumentModel.Drawings.SpaceAfter? value)
+  private static void SetSpaceAfter(DXDraw.Level6ParagraphProperties openXmlElement, DMDraws.SpaceAfter? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.SpaceAfter>();
+    var itemElement = openXmlElement.GetFirstChild<DXDraw.SpaceAfter>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Drawings.SpaceAfterConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.SpaceAfter>(value);
+      itemElement = DMXDraws.SpaceAfterConverter.CreateOpenXmlElement<DXDraw.SpaceAfter>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static Boolean? GetBulletColorText(DocumentFormat.OpenXml.Drawing.Level6ParagraphProperties openXmlElement)
+  private static Boolean? GetBulletColorText(DXDraw.Level6ParagraphProperties openXmlElement)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.BulletColorText>();
+    var itemElement = openXmlElement.GetFirstChild<DXDraw.BulletColorText>();
     return itemElement != null;
   }
   
-  private static void SetBulletColorText(DocumentFormat.OpenXml.Drawing.Level6ParagraphProperties openXmlElement, Boolean? value)
+  private static void SetBulletColorText(DXDraw.Level6ParagraphProperties openXmlElement, Boolean? value)
   {
     if (value == false)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.BulletColorText>();
+      var itemElement = openXmlElement.GetFirstChild<DXDraw.BulletColorText>();
       if (itemElement != null)
         itemElement.Remove();
     }
     if (value == true)
     {
-      var itemElement = new DocumentFormat.OpenXml.Drawing.BulletColorText();
+      var itemElement = new DXDraw.BulletColorText();
       openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static DocumentModel.Drawings.BulletColor? GetBulletColor(DocumentFormat.OpenXml.Drawing.Level6ParagraphProperties openXmlElement)
+  private static DMDraws.BulletColor? GetBulletColor(DXDraw.Level6ParagraphProperties openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.BulletColor>();
+    var itemElement = openXmlElement?.GetFirstChild<DXDraw.BulletColor>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.BulletColorConverter.CreateModelElement(itemElement);
+      return DMXDraws.BulletColorConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetBulletColor(DocumentFormat.OpenXml.Drawing.Level6ParagraphProperties openXmlElement, DocumentModel.Drawings.BulletColor? value)
+  private static void SetBulletColor(DXDraw.Level6ParagraphProperties openXmlElement, DMDraws.BulletColor? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.BulletColor>();
+    var itemElement = openXmlElement.GetFirstChild<DXDraw.BulletColor>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Drawings.BulletColorConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.BulletColor>(value);
+      itemElement = DMXDraws.BulletColorConverter.CreateOpenXmlElement<DXDraw.BulletColor>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static Boolean? GetBulletSizeText(DocumentFormat.OpenXml.Drawing.Level6ParagraphProperties openXmlElement)
+  private static Boolean? GetBulletSizeText(DXDraw.Level6ParagraphProperties openXmlElement)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.BulletSizeText>();
+    var itemElement = openXmlElement.GetFirstChild<DXDraw.BulletSizeText>();
     return itemElement != null;
   }
   
-  private static void SetBulletSizeText(DocumentFormat.OpenXml.Drawing.Level6ParagraphProperties openXmlElement, Boolean? value)
+  private static void SetBulletSizeText(DXDraw.Level6ParagraphProperties openXmlElement, Boolean? value)
   {
     if (value == false)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.BulletSizeText>();
+      var itemElement = openXmlElement.GetFirstChild<DXDraw.BulletSizeText>();
       if (itemElement != null)
         itemElement.Remove();
     }
     if (value == true)
     {
-      var itemElement = new DocumentFormat.OpenXml.Drawing.BulletSizeText();
+      var itemElement = new DXDraw.BulletSizeText();
       openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static Int32? GetBulletSizePercentage(DocumentFormat.OpenXml.Drawing.Level6ParagraphProperties openXmlElement)
+  private static Int32? GetBulletSizePercentage(DXDraw.Level6ParagraphProperties openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.BulletSizePercentage>();
+    var itemElement = openXmlElement?.GetFirstChild<DXDraw.BulletSizePercentage>();
     if (itemElement != null)
       return itemElement.Val?.Value;
     return null;
   }
   
-  private static void SetBulletSizePercentage(DocumentFormat.OpenXml.Drawing.Level6ParagraphProperties openXmlElement, Int32? value)
+  private static void SetBulletSizePercentage(DXDraw.Level6ParagraphProperties openXmlElement, Int32? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.BulletSizePercentage>();
+    var itemElement = openXmlElement.GetFirstChild<DXDraw.BulletSizePercentage>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = new DocumentFormat.OpenXml.Drawing.BulletSizePercentage{ Val = value };
+      itemElement = new DXDraw.BulletSizePercentage{ Val = value };
       openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static Int32? GetBulletSizePoints(DocumentFormat.OpenXml.Drawing.Level6ParagraphProperties openXmlElement)
+  private static Int32? GetBulletSizePoints(DXDraw.Level6ParagraphProperties openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.BulletSizePoints>();
+    var itemElement = openXmlElement?.GetFirstChild<DXDraw.BulletSizePoints>();
     if (itemElement != null)
       return itemElement.Val?.Value;
     return null;
   }
   
-  private static void SetBulletSizePoints(DocumentFormat.OpenXml.Drawing.Level6ParagraphProperties openXmlElement, Int32? value)
+  private static void SetBulletSizePoints(DXDraw.Level6ParagraphProperties openXmlElement, Int32? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.BulletSizePoints>();
+    var itemElement = openXmlElement.GetFirstChild<DXDraw.BulletSizePoints>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = new DocumentFormat.OpenXml.Drawing.BulletSizePoints{ Val = value };
+      itemElement = new DXDraw.BulletSizePoints{ Val = value };
       openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static Boolean? GetBulletFontText(DocumentFormat.OpenXml.Drawing.Level6ParagraphProperties openXmlElement)
+  private static Boolean? GetBulletFontText(DXDraw.Level6ParagraphProperties openXmlElement)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.BulletFontText>();
+    var itemElement = openXmlElement.GetFirstChild<DXDraw.BulletFontText>();
     return itemElement != null;
   }
   
-  private static void SetBulletFontText(DocumentFormat.OpenXml.Drawing.Level6ParagraphProperties openXmlElement, Boolean? value)
+  private static void SetBulletFontText(DXDraw.Level6ParagraphProperties openXmlElement, Boolean? value)
   {
     if (value == false)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.BulletFontText>();
+      var itemElement = openXmlElement.GetFirstChild<DXDraw.BulletFontText>();
       if (itemElement != null)
         itemElement.Remove();
     }
     if (value == true)
     {
-      var itemElement = new DocumentFormat.OpenXml.Drawing.BulletFontText();
+      var itemElement = new DXDraw.BulletFontText();
       openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static DocumentModel.Drawings.TextFontType? GetBulletFont(DocumentFormat.OpenXml.Drawing.Level6ParagraphProperties openXmlElement)
+  private static DMDraws.TextFontType? GetBulletFont(DXDraw.Level6ParagraphProperties openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.BulletFont>();
+    var itemElement = openXmlElement?.GetFirstChild<DXDraw.BulletFont>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.TextFontTypeConverter.CreateModelElement(itemElement);
+      return DMXDraws.TextFontTypeConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetBulletFont(DocumentFormat.OpenXml.Drawing.Level6ParagraphProperties openXmlElement, DocumentModel.Drawings.TextFontType? value)
+  private static void SetBulletFont(DXDraw.Level6ParagraphProperties openXmlElement, DMDraws.TextFontType? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.BulletFont>();
+    var itemElement = openXmlElement.GetFirstChild<DXDraw.BulletFont>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Drawings.TextFontTypeConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.BulletFont>(value);
+      itemElement = DMXDraws.TextFontTypeConverter.CreateOpenXmlElement<DXDraw.BulletFont>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static Boolean? GetNoBullet(DocumentFormat.OpenXml.Drawing.Level6ParagraphProperties openXmlElement)
+  private static Boolean? GetNoBullet(DXDraw.Level6ParagraphProperties openXmlElement)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.NoBullet>();
+    var itemElement = openXmlElement.GetFirstChild<DXDraw.NoBullet>();
     return itemElement != null;
   }
   
-  private static void SetNoBullet(DocumentFormat.OpenXml.Drawing.Level6ParagraphProperties openXmlElement, Boolean? value)
+  private static void SetNoBullet(DXDraw.Level6ParagraphProperties openXmlElement, Boolean? value)
   {
     if (value == false)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.NoBullet>();
+      var itemElement = openXmlElement.GetFirstChild<DXDraw.NoBullet>();
       if (itemElement != null)
         itemElement.Remove();
     }
     if (value == true)
     {
-      var itemElement = new DocumentFormat.OpenXml.Drawing.NoBullet();
+      var itemElement = new DXDraw.NoBullet();
       openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static DocumentModel.Drawings.AutoNumberedBullet? GetAutoNumberedBullet(DocumentFormat.OpenXml.Drawing.Level6ParagraphProperties openXmlElement)
+  private static DMDraws.AutoNumberedBullet? GetAutoNumberedBullet(DXDraw.Level6ParagraphProperties openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.AutoNumberedBullet>();
+    var itemElement = openXmlElement?.GetFirstChild<DXDraw.AutoNumberedBullet>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.AutoNumberedBulletConverter.CreateModelElement(itemElement);
+      return DMXDraws.AutoNumberedBulletConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetAutoNumberedBullet(DocumentFormat.OpenXml.Drawing.Level6ParagraphProperties openXmlElement, DocumentModel.Drawings.AutoNumberedBullet? value)
+  private static void SetAutoNumberedBullet(DXDraw.Level6ParagraphProperties openXmlElement, DMDraws.AutoNumberedBullet? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.AutoNumberedBullet>();
+    var itemElement = openXmlElement.GetFirstChild<DXDraw.AutoNumberedBullet>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Drawings.AutoNumberedBulletConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.AutoNumberedBullet>(value);
+      itemElement = DMXDraws.AutoNumberedBulletConverter.CreateOpenXmlElement<DXDraw.AutoNumberedBullet>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static DocumentModel.Drawings.CharacterBullet? GetCharacterBullet(DocumentFormat.OpenXml.Drawing.Level6ParagraphProperties openXmlElement)
+  private static DMDraws.CharacterBullet? GetCharacterBullet(DXDraw.Level6ParagraphProperties openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.CharacterBullet>();
+    var itemElement = openXmlElement?.GetFirstChild<DXDraw.CharacterBullet>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.CharacterBulletConverter.CreateModelElement(itemElement);
+      return DMXDraws.CharacterBulletConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetCharacterBullet(DocumentFormat.OpenXml.Drawing.Level6ParagraphProperties openXmlElement, DocumentModel.Drawings.CharacterBullet? value)
+  private static void SetCharacterBullet(DXDraw.Level6ParagraphProperties openXmlElement, DMDraws.CharacterBullet? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.CharacterBullet>();
+    var itemElement = openXmlElement.GetFirstChild<DXDraw.CharacterBullet>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Drawings.CharacterBulletConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.CharacterBullet>(value);
+      itemElement = DMXDraws.CharacterBulletConverter.CreateOpenXmlElement<DXDraw.CharacterBullet>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static DocumentModel.Drawings.PictureBullet? GetPictureBullet(DocumentFormat.OpenXml.Drawing.Level6ParagraphProperties openXmlElement)
+  private static DMDraws.PictureBullet? GetPictureBullet(DXDraw.Level6ParagraphProperties openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.PictureBullet>();
+    var itemElement = openXmlElement?.GetFirstChild<DXDraw.PictureBullet>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.PictureBulletConverter.CreateModelElement(itemElement);
+      return DMXDraws.PictureBulletConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetPictureBullet(DocumentFormat.OpenXml.Drawing.Level6ParagraphProperties openXmlElement, DocumentModel.Drawings.PictureBullet? value)
+  private static void SetPictureBullet(DXDraw.Level6ParagraphProperties openXmlElement, DMDraws.PictureBullet? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.PictureBullet>();
+    var itemElement = openXmlElement.GetFirstChild<DXDraw.PictureBullet>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Drawings.PictureBulletConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.PictureBullet>(value);
+      itemElement = DMXDraws.PictureBulletConverter.CreateOpenXmlElement<DXDraw.PictureBullet>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static DocumentModel.Drawings.TabStopList? GetTabStopList(DocumentFormat.OpenXml.Drawing.Level6ParagraphProperties openXmlElement)
+  private static DMDraws.TabStopList? GetTabStopList(DXDraw.Level6ParagraphProperties openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.TabStopList>();
+    var itemElement = openXmlElement?.GetFirstChild<DXDraw.TabStopList>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.TabStopListConverter.CreateModelElement(itemElement);
+      return DMXDraws.TabStopListConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetTabStopList(DocumentFormat.OpenXml.Drawing.Level6ParagraphProperties openXmlElement, DocumentModel.Drawings.TabStopList? value)
+  private static void SetTabStopList(DXDraw.Level6ParagraphProperties openXmlElement, DMDraws.TabStopList? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.TabStopList>();
+    var itemElement = openXmlElement.GetFirstChild<DXDraw.TabStopList>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Drawings.TabStopListConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.TabStopList>(value);
+      itemElement = DMXDraws.TabStopListConverter.CreateOpenXmlElement<DXDraw.TabStopList>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static DocumentModel.Drawings.DefaultRunProperties? GetDefaultRunProperties(DocumentFormat.OpenXml.Drawing.Level6ParagraphProperties openXmlElement)
+  private static DMDraws.DefaultRunProperties? GetDefaultRunProperties(DXDraw.Level6ParagraphProperties openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.DefaultRunProperties>();
+    var itemElement = openXmlElement?.GetFirstChild<DXDraw.DefaultRunProperties>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.DefaultRunPropertiesConverter.CreateModelElement(itemElement);
+      return DMXDraws.DefaultRunPropertiesConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetDefaultRunProperties(DocumentFormat.OpenXml.Drawing.Level6ParagraphProperties openXmlElement, DocumentModel.Drawings.DefaultRunProperties? value)
+  private static void SetDefaultRunProperties(DXDraw.Level6ParagraphProperties openXmlElement, DMDraws.DefaultRunProperties? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.DefaultRunProperties>();
+    var itemElement = openXmlElement.GetFirstChild<DXDraw.DefaultRunProperties>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Drawings.DefaultRunPropertiesConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.DefaultRunProperties>(value);
+      itemElement = DMXDraws.DefaultRunPropertiesConverter.CreateOpenXmlElement<DXDraw.DefaultRunProperties>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static DocumentModel.Drawings.ExtensionList? GetExtensionList(DocumentFormat.OpenXml.Drawing.Level6ParagraphProperties openXmlElement)
+  private static DMDraws.ExtensionList? GetExtensionList(DXDraw.Level6ParagraphProperties openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.ExtensionList>();
+    var itemElement = openXmlElement?.GetFirstChild<DXDraw.ExtensionList>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.ExtensionListConverter.CreateModelElement(itemElement);
+      return DMXDraws.ExtensionListConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetExtensionList(DocumentFormat.OpenXml.Drawing.Level6ParagraphProperties openXmlElement, DocumentModel.Drawings.ExtensionList? value)
+  private static void SetExtensionList(DXDraw.Level6ParagraphProperties openXmlElement, DMDraws.ExtensionList? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.ExtensionList>();
+    var itemElement = openXmlElement.GetFirstChild<DXDraw.ExtensionList>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Drawings.ExtensionListConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.ExtensionList>(value);
+      itemElement = DMXDraws.ExtensionListConverter.CreateOpenXmlElement<DXDraw.ExtensionList>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  public static DocumentModel.Drawings.Level6ParagraphProperties? CreateModelElement(DocumentFormat.OpenXml.Drawing.Level6ParagraphProperties? openXmlElement)
+  public static DMDraws.Level6ParagraphProperties? CreateModelElement(DXDraw.Level6ParagraphProperties? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.Level6ParagraphProperties();
+      var value = new DMDraws.Level6ParagraphProperties();
       value.LineSpacing = GetLineSpacing(openXmlElement);
       value.SpaceBefore = GetSpaceBefore(openXmlElement);
       value.SpaceAfter = GetSpaceAfter(openXmlElement);
@@ -387,8 +387,8 @@ public static class Level6ParagraphPropertiesConverter
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.Level6ParagraphProperties? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.Level6ParagraphProperties, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDraws.Level6ParagraphProperties? value)
+    where OpenXmlElementType: DXDraw.Level6ParagraphProperties, new()
   {
     if (value != null)
     {

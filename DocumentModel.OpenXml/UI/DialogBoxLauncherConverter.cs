@@ -8,40 +8,40 @@ public static class DialogBoxLauncherConverter
   /// <summary>
   /// UnsizedButton.
   /// </summary>
-  private static DocumentModel.UI.UnsizedButton? GetUnsizedButton(DocumentFormat.OpenXml.Office.CustomUI.DialogBoxLauncher openXmlElement)
+  private static DMUI.UnsizedButton? GetUnsizedButton(DXOCustUI.DialogBoxLauncher openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office.CustomUI.UnsizedButton>();
+    var itemElement = openXmlElement?.GetFirstChild<DXOCustUI.UnsizedButton>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.UI.UnsizedButtonConverter.CreateModelElement(itemElement);
+      return DMXUI.UnsizedButtonConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetUnsizedButton(DocumentFormat.OpenXml.Office.CustomUI.DialogBoxLauncher openXmlElement, DocumentModel.UI.UnsizedButton? value)
+  private static void SetUnsizedButton(DXOCustUI.DialogBoxLauncher openXmlElement, DMUI.UnsizedButton? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office.CustomUI.UnsizedButton>();
+    var itemElement = openXmlElement.GetFirstChild<DXOCustUI.UnsizedButton>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.UI.UnsizedButtonConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office.CustomUI.UnsizedButton>(value);
+      itemElement = DMXUI.UnsizedButtonConverter.CreateOpenXmlElement<DXOCustUI.UnsizedButton>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  public static DocumentModel.UI.DialogBoxLauncher? CreateModelElement(DocumentFormat.OpenXml.Office.CustomUI.DialogBoxLauncher? openXmlElement)
+  public static DMUI.DialogBoxLauncher? CreateModelElement(DXOCustUI.DialogBoxLauncher? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.UI.DialogBoxLauncher();
+      var value = new DMUI.DialogBoxLauncher();
       value.UnsizedButton = GetUnsizedButton(openXmlElement);
       return value;
     }
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.UI.DialogBoxLauncher? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Office.CustomUI.DialogBoxLauncher, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMUI.DialogBoxLauncher? value)
+    where OpenXmlElementType: DXOCustUI.DialogBoxLauncher, new()
   {
     if (value != null)
     {

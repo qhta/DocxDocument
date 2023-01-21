@@ -8,12 +8,12 @@ public static class SdtContentDropDownListConverter
   /// <summary>
   /// Drop-down List Last Saved Value
   /// </summary>
-  private static String? GetLastValue(DocumentFormat.OpenXml.Wordprocessing.SdtContentDropDownList openXmlElement)
+  private static String? GetLastValue(DXW.SdtContentDropDownList openXmlElement)
   {
     return openXmlElement?.LastValue?.Value;
   }
   
-  private static void SetLastValue(DocumentFormat.OpenXml.Wordprocessing.SdtContentDropDownList openXmlElement, String? value)
+  private static void SetLastValue(DXW.SdtContentDropDownList openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.LastValue = new StringValue { Value = value };
@@ -21,37 +21,37 @@ public static class SdtContentDropDownListConverter
       openXmlElement.LastValue = null;
   }
   
-  private static System.Collections.ObjectModel.Collection<DocumentModel.Wordprocessing.ListItem> GetListItems(DocumentFormat.OpenXml.Wordprocessing.SdtContentDropDownList openXmlElement)
+  private static Collection<DMW.ListItem> GetListItems(DXW.SdtContentDropDownList openXmlElement)
   {
-    var collection = new System.Collections.ObjectModel.Collection<DocumentModel.Wordprocessing.ListItem>();
-    foreach (var item in openXmlElement.Elements<DocumentFormat.OpenXml.Wordprocessing.ListItem>())
+    var collection = new Collection<DMW.ListItem>();
+    foreach (var item in openXmlElement.Elements<DXW.ListItem>())
     {
-      var newItem = DocumentModel.OpenXml.Wordprocessing.ListItemConverter.CreateModelElement(item);
+      var newItem = DMXW.ListItemConverter.CreateModelElement(item);
       if (newItem != null)
         collection.Add(newItem);
     }
     return collection;
   }
   
-  private static void SetListItems(DocumentFormat.OpenXml.Wordprocessing.SdtContentDropDownList openXmlElement, System.Collections.ObjectModel.Collection<DocumentModel.Wordprocessing.ListItem>? value)
+  private static void SetListItems(DXW.SdtContentDropDownList openXmlElement, Collection<DMW.ListItem>? value)
   {
-    openXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Wordprocessing.ListItem>();
+    openXmlElement.RemoveAllChildren<DXW.ListItem>();
     if (value != null)
     {
       foreach (var item in value)
       {
-        var newItem = DocumentModel.OpenXml.Wordprocessing.ListItemConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.ListItem>(item);
+        var newItem = DMXW.ListItemConverter.CreateOpenXmlElement<DXW.ListItem>(item);
         if (newItem != null)
           openXmlElement.AddChild(newItem);
       }
     }
   }
   
-  public static DocumentModel.Wordprocessing.SdtContentDropDownList? CreateModelElement(DocumentFormat.OpenXml.Wordprocessing.SdtContentDropDownList? openXmlElement)
+  public static DMW.SdtContentDropDownList? CreateModelElement(DXW.SdtContentDropDownList? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Wordprocessing.SdtContentDropDownList();
+      var value = new DMW.SdtContentDropDownList();
       value.LastValue = GetLastValue(openXmlElement);
       value.ListItems = GetListItems(openXmlElement);
       return value;
@@ -59,8 +59,8 @@ public static class SdtContentDropDownListConverter
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.SdtContentDropDownList? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Wordprocessing.SdtContentDropDownList, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMW.SdtContentDropDownList? value)
+    where OpenXmlElementType: DXW.SdtContentDropDownList, new()
   {
     if (value != null)
     {

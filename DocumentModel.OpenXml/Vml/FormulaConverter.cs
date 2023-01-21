@@ -8,12 +8,12 @@ public static class FormulaConverter
   /// <summary>
   /// Equation
   /// </summary>
-  private static String? GetEquation(DocumentFormat.OpenXml.Vml.Formula openXmlElement)
+  private static String? GetEquation(DXVml.Formula openXmlElement)
   {
     return openXmlElement?.Equation?.Value;
   }
   
-  private static void SetEquation(DocumentFormat.OpenXml.Vml.Formula openXmlElement, String? value)
+  private static void SetEquation(DXVml.Formula openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.Equation = new StringValue { Value = value };
@@ -21,19 +21,19 @@ public static class FormulaConverter
       openXmlElement.Equation = null;
   }
   
-  public static DocumentModel.Vml.Formula? CreateModelElement(DocumentFormat.OpenXml.Vml.Formula? openXmlElement)
+  public static DMVml.Formula? CreateModelElement(DXVml.Formula? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Vml.Formula();
+      var value = new DMVml.Formula();
       value.Equation = GetEquation(openXmlElement);
       return value;
     }
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Vml.Formula? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Vml.Formula, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMVml.Formula? value)
+    where OpenXmlElementType: DXVml.Formula, new()
   {
     if (value != null)
     {

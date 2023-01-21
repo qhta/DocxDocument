@@ -5,45 +5,45 @@ namespace DocumentModel.OpenXml.Drawings.Diagrams;
 /// </summary>
 public static class ColorTransformCategoriesConverter
 {
-  private static System.Collections.ObjectModel.Collection<DocumentModel.Drawings.Diagrams.ColorTransformCategory> GetItems(DocumentFormat.OpenXml.Drawing.Diagrams.ColorTransformCategories openXmlElement)
+  private static Collection<DMDrawsDgms.ColorTransformCategory> GetItems(DXDrawDgms.ColorTransformCategories openXmlElement)
   {
-    var collection = new System.Collections.ObjectModel.Collection<DocumentModel.Drawings.Diagrams.ColorTransformCategory>();
-    foreach (var item in openXmlElement.Elements<DocumentFormat.OpenXml.Drawing.Diagrams.ColorTransformCategory>())
+    var collection = new Collection<DMDrawsDgms.ColorTransformCategory>();
+    foreach (var item in openXmlElement.Elements<DXDrawDgms.ColorTransformCategory>())
     {
-      var newItem = DocumentModel.OpenXml.Drawings.Diagrams.ColorTransformCategoryConverter.CreateModelElement(item);
+      var newItem = DMXDrawsDgms.ColorTransformCategoryConverter.CreateModelElement(item);
       if (newItem != null)
         collection.Add(newItem);
     }
     return collection;
   }
   
-  private static void SetItems(DocumentFormat.OpenXml.Drawing.Diagrams.ColorTransformCategories openXmlElement, System.Collections.ObjectModel.Collection<DocumentModel.Drawings.Diagrams.ColorTransformCategory>? value)
+  private static void SetItems(DXDrawDgms.ColorTransformCategories openXmlElement, Collection<DMDrawsDgms.ColorTransformCategory>? value)
   {
-    openXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Drawing.Diagrams.ColorTransformCategory>();
+    openXmlElement.RemoveAllChildren<DXDrawDgms.ColorTransformCategory>();
     if (value != null)
     {
       foreach (var item in value)
       {
-        var newItem = DocumentModel.OpenXml.Drawings.Diagrams.ColorTransformCategoryConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Diagrams.ColorTransformCategory>(item);
+        var newItem = DMXDrawsDgms.ColorTransformCategoryConverter.CreateOpenXmlElement<DXDrawDgms.ColorTransformCategory>(item);
         if (newItem != null)
           openXmlElement.AddChild(newItem);
       }
     }
   }
   
-  public static DocumentModel.Drawings.Diagrams.ColorTransformCategories? CreateModelElement(DocumentFormat.OpenXml.Drawing.Diagrams.ColorTransformCategories? openXmlElement)
+  public static DMDrawsDgms.ColorTransformCategories? CreateModelElement(DXDrawDgms.ColorTransformCategories? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.Diagrams.ColorTransformCategories();
+      var value = new DMDrawsDgms.ColorTransformCategories();
       value.Items = GetItems(openXmlElement);
       return value;
     }
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.Diagrams.ColorTransformCategories? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.Diagrams.ColorTransformCategories, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDrawsDgms.ColorTransformCategories? value)
+    where OpenXmlElementType: DXDrawDgms.ColorTransformCategories, new()
   {
     if (value != null)
     {

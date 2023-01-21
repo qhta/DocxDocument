@@ -5,45 +5,45 @@ namespace DocumentModel.OpenXml;
 /// </summary>
 public static class ExtensionListConverter
 {
-  private static System.Collections.ObjectModel.Collection<DocumentModel.Extension> GetExtensions(DocumentFormat.OpenXml.Office2021.DocumentTasks.ExtensionList openXmlElement)
+  private static Collection<DM.Extension> GetExtensions(DXO2021DocTasks.ExtensionList openXmlElement)
   {
-    var collection = new System.Collections.ObjectModel.Collection<DocumentModel.Extension>();
-    foreach (var item in openXmlElement.Elements<DocumentFormat.OpenXml.Office2021.OfficeExtLst.Extension>())
+    var collection = new Collection<DM.Extension>();
+    foreach (var item in openXmlElement.Elements<DXO2021OExtLst.Extension>())
     {
-      var newItem = DocumentModel.OpenXml.ExtensionConverter.CreateModelElement(item);
+      var newItem = DMX.ExtensionConverter.CreateModelElement(item);
       if (newItem != null)
         collection.Add(newItem);
     }
     return collection;
   }
   
-  private static void SetExtensions(DocumentFormat.OpenXml.Office2021.DocumentTasks.ExtensionList openXmlElement, System.Collections.ObjectModel.Collection<DocumentModel.Extension>? value)
+  private static void SetExtensions(DXO2021DocTasks.ExtensionList openXmlElement, Collection<DM.Extension>? value)
   {
-    openXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Office2021.OfficeExtLst.Extension>();
+    openXmlElement.RemoveAllChildren<DXO2021OExtLst.Extension>();
     if (value != null)
     {
       foreach (var item in value)
       {
-        var newItem = DocumentModel.OpenXml.ExtensionConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2021.OfficeExtLst.Extension>(item);
+        var newItem = DMX.ExtensionConverter.CreateOpenXmlElement<DXO2021OExtLst.Extension>(item);
         if (newItem != null)
           openXmlElement.AddChild(newItem);
       }
     }
   }
   
-  public static DocumentModel.ExtensionList? CreateModelElement(DocumentFormat.OpenXml.Office2021.DocumentTasks.ExtensionList? openXmlElement)
+  public static DM.ExtensionList? CreateModelElement(DXO2021DocTasks.ExtensionList? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.ExtensionList();
+      var value = new DM.ExtensionList();
       value.Extensions = GetExtensions(openXmlElement);
       return value;
     }
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.ExtensionList? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Office2021.DocumentTasks.ExtensionList, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DM.ExtensionList? value)
+    where OpenXmlElementType: DXO2021DocTasks.ExtensionList, new()
   {
     if (value != null)
     {

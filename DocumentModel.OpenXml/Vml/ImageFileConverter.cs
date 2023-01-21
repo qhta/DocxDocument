@@ -8,12 +8,12 @@ public static class ImageFileConverter
   /// <summary>
   /// Unique Identifier
   /// </summary>
-  private static String? GetId(DocumentFormat.OpenXml.Vml.ImageFile openXmlElement)
+  private static String? GetId(DXVml.ImageFile openXmlElement)
   {
     return openXmlElement?.Id?.Value;
   }
   
-  private static void SetId(DocumentFormat.OpenXml.Vml.ImageFile openXmlElement, String? value)
+  private static void SetId(DXVml.ImageFile openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.Id = new StringValue { Value = value };
@@ -24,12 +24,12 @@ public static class ImageFileConverter
   /// <summary>
   /// style
   /// </summary>
-  private static String? GetStyle(DocumentFormat.OpenXml.Vml.ImageFile openXmlElement)
+  private static String? GetStyle(DXVml.ImageFile openXmlElement)
   {
     return openXmlElement?.Style?.Value;
   }
   
-  private static void SetStyle(DocumentFormat.OpenXml.Vml.ImageFile openXmlElement, String? value)
+  private static void SetStyle(DXVml.ImageFile openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.Style = new StringValue { Value = value };
@@ -40,12 +40,12 @@ public static class ImageFileConverter
   /// <summary>
   /// href
   /// </summary>
-  private static String? GetHref(DocumentFormat.OpenXml.Vml.ImageFile openXmlElement)
+  private static String? GetHref(DXVml.ImageFile openXmlElement)
   {
     return openXmlElement?.Href?.Value;
   }
   
-  private static void SetHref(DocumentFormat.OpenXml.Vml.ImageFile openXmlElement, String? value)
+  private static void SetHref(DXVml.ImageFile openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.Href = new StringValue { Value = value };
@@ -56,12 +56,12 @@ public static class ImageFileConverter
   /// <summary>
   /// target
   /// </summary>
-  private static String? GetTarget(DocumentFormat.OpenXml.Vml.ImageFile openXmlElement)
+  private static String? GetTarget(DXVml.ImageFile openXmlElement)
   {
     return openXmlElement?.Target?.Value;
   }
   
-  private static void SetTarget(DocumentFormat.OpenXml.Vml.ImageFile openXmlElement, String? value)
+  private static void SetTarget(DXVml.ImageFile openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.Target = new StringValue { Value = value };
@@ -72,12 +72,12 @@ public static class ImageFileConverter
   /// <summary>
   /// class
   /// </summary>
-  private static String? GetClass(DocumentFormat.OpenXml.Vml.ImageFile openXmlElement)
+  private static String? GetClass(DXVml.ImageFile openXmlElement)
   {
     return openXmlElement?.Class?.Value;
   }
   
-  private static void SetClass(DocumentFormat.OpenXml.Vml.ImageFile openXmlElement, String? value)
+  private static void SetClass(DXVml.ImageFile openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.Class = new StringValue { Value = value };
@@ -88,12 +88,12 @@ public static class ImageFileConverter
   /// <summary>
   /// title
   /// </summary>
-  private static String? GetTitle(DocumentFormat.OpenXml.Vml.ImageFile openXmlElement)
+  private static String? GetTitle(DXVml.ImageFile openXmlElement)
   {
     return openXmlElement?.Title?.Value;
   }
   
-  private static void SetTitle(DocumentFormat.OpenXml.Vml.ImageFile openXmlElement, String? value)
+  private static void SetTitle(DXVml.ImageFile openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.Title = new StringValue { Value = value };
@@ -104,12 +104,12 @@ public static class ImageFileConverter
   /// <summary>
   /// alt
   /// </summary>
-  private static String? GetAlternate(DocumentFormat.OpenXml.Vml.ImageFile openXmlElement)
+  private static String? GetAlternate(DXVml.ImageFile openXmlElement)
   {
     return openXmlElement?.Alternate?.Value;
   }
   
-  private static void SetAlternate(DocumentFormat.OpenXml.Vml.ImageFile openXmlElement, String? value)
+  private static void SetAlternate(DXVml.ImageFile openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.Alternate = new StringValue { Value = value };
@@ -120,12 +120,12 @@ public static class ImageFileConverter
   /// <summary>
   /// coordsize
   /// </summary>
-  private static String? GetCoordinateSize(DocumentFormat.OpenXml.Vml.ImageFile openXmlElement)
+  private static String? GetCoordinateSize(DXVml.ImageFile openXmlElement)
   {
     return openXmlElement?.CoordinateSize?.Value;
   }
   
-  private static void SetCoordinateSize(DocumentFormat.OpenXml.Vml.ImageFile openXmlElement, String? value)
+  private static void SetCoordinateSize(DXVml.ImageFile openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.CoordinateSize = new StringValue { Value = value };
@@ -136,12 +136,12 @@ public static class ImageFileConverter
   /// <summary>
   /// wrapcoords
   /// </summary>
-  private static String? GetWrapCoordinates(DocumentFormat.OpenXml.Vml.ImageFile openXmlElement)
+  private static String? GetWrapCoordinates(DXVml.ImageFile openXmlElement)
   {
     return openXmlElement?.WrapCoordinates?.Value;
   }
   
-  private static void SetWrapCoordinates(DocumentFormat.OpenXml.Vml.ImageFile openXmlElement, String? value)
+  private static void SetWrapCoordinates(DXVml.ImageFile openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.WrapCoordinates = new StringValue { Value = value };
@@ -152,12 +152,12 @@ public static class ImageFileConverter
   /// <summary>
   /// print
   /// </summary>
-  private static Boolean? GetPrint(DocumentFormat.OpenXml.Vml.ImageFile openXmlElement)
+  private static Boolean? GetPrint(DXVml.ImageFile openXmlElement)
   {
     return openXmlElement?.Print?.Value;
   }
   
-  private static void SetPrint(DocumentFormat.OpenXml.Vml.ImageFile openXmlElement, Boolean? value)
+  private static void SetPrint(DXVml.ImageFile openXmlElement, Boolean? value)
   {
     if (value != null)
       openXmlElement.Print = value;
@@ -168,12 +168,12 @@ public static class ImageFileConverter
   /// <summary>
   /// Optional String
   /// </summary>
-  private static String? GetOptionalString(DocumentFormat.OpenXml.Vml.ImageFile openXmlElement)
+  private static String? GetOptionalString(DXVml.ImageFile openXmlElement)
   {
     return openXmlElement?.OptionalString?.Value;
   }
   
-  private static void SetOptionalString(DocumentFormat.OpenXml.Vml.ImageFile openXmlElement, String? value)
+  private static void SetOptionalString(DXVml.ImageFile openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.OptionalString = new StringValue { Value = value };
@@ -184,12 +184,12 @@ public static class ImageFileConverter
   /// <summary>
   /// Shape Handle Toggle
   /// </summary>
-  private static Boolean? GetOned(DocumentFormat.OpenXml.Vml.ImageFile openXmlElement)
+  private static Boolean? GetOned(DXVml.ImageFile openXmlElement)
   {
     return openXmlElement?.Oned?.Value;
   }
   
-  private static void SetOned(DocumentFormat.OpenXml.Vml.ImageFile openXmlElement, Boolean? value)
+  private static void SetOned(DXVml.ImageFile openXmlElement, Boolean? value)
   {
     if (value != null)
       openXmlElement.Oned = value;
@@ -200,12 +200,12 @@ public static class ImageFileConverter
   /// <summary>
   /// Regroup ID
   /// </summary>
-  private static Int64? GetRegroupId(DocumentFormat.OpenXml.Vml.ImageFile openXmlElement)
+  private static Int64? GetRegroupId(DXVml.ImageFile openXmlElement)
   {
     return openXmlElement.RegroupId?.Value;
   }
   
-  private static void SetRegroupId(DocumentFormat.OpenXml.Vml.ImageFile openXmlElement, Int64? value)
+  private static void SetRegroupId(DXVml.ImageFile openXmlElement, Int64? value)
   {
     openXmlElement.RegroupId = value;
   }
@@ -213,12 +213,12 @@ public static class ImageFileConverter
   /// <summary>
   /// Double-click Notification Toggle
   /// </summary>
-  private static Boolean? GetDoubleClickNotify(DocumentFormat.OpenXml.Vml.ImageFile openXmlElement)
+  private static Boolean? GetDoubleClickNotify(DXVml.ImageFile openXmlElement)
   {
     return openXmlElement?.DoubleClickNotify?.Value;
   }
   
-  private static void SetDoubleClickNotify(DocumentFormat.OpenXml.Vml.ImageFile openXmlElement, Boolean? value)
+  private static void SetDoubleClickNotify(DXVml.ImageFile openXmlElement, Boolean? value)
   {
     if (value != null)
       openXmlElement.DoubleClickNotify = value;
@@ -229,12 +229,12 @@ public static class ImageFileConverter
   /// <summary>
   /// Button Behavior Toggle
   /// </summary>
-  private static Boolean? GetButton(DocumentFormat.OpenXml.Vml.ImageFile openXmlElement)
+  private static Boolean? GetButton(DXVml.ImageFile openXmlElement)
   {
     return openXmlElement?.Button?.Value;
   }
   
-  private static void SetButton(DocumentFormat.OpenXml.Vml.ImageFile openXmlElement, Boolean? value)
+  private static void SetButton(DXVml.ImageFile openXmlElement, Boolean? value)
   {
     if (value != null)
       openXmlElement.Button = value;
@@ -245,12 +245,12 @@ public static class ImageFileConverter
   /// <summary>
   /// Hide Script Anchors
   /// </summary>
-  private static Boolean? GetUserHidden(DocumentFormat.OpenXml.Vml.ImageFile openXmlElement)
+  private static Boolean? GetUserHidden(DXVml.ImageFile openXmlElement)
   {
     return openXmlElement?.UserHidden?.Value;
   }
   
-  private static void SetUserHidden(DocumentFormat.OpenXml.Vml.ImageFile openXmlElement, Boolean? value)
+  private static void SetUserHidden(DXVml.ImageFile openXmlElement, Boolean? value)
   {
     if (value != null)
       openXmlElement.UserHidden = value;
@@ -261,12 +261,12 @@ public static class ImageFileConverter
   /// <summary>
   /// Graphical Bullet
   /// </summary>
-  private static Boolean? GetBullet(DocumentFormat.OpenXml.Vml.ImageFile openXmlElement)
+  private static Boolean? GetBullet(DXVml.ImageFile openXmlElement)
   {
     return openXmlElement?.Bullet?.Value;
   }
   
-  private static void SetBullet(DocumentFormat.OpenXml.Vml.ImageFile openXmlElement, Boolean? value)
+  private static void SetBullet(DXVml.ImageFile openXmlElement, Boolean? value)
   {
     if (value != null)
       openXmlElement.Bullet = value;
@@ -277,12 +277,12 @@ public static class ImageFileConverter
   /// <summary>
   /// Horizontal Rule Toggle
   /// </summary>
-  private static Boolean? GetHorizontal(DocumentFormat.OpenXml.Vml.ImageFile openXmlElement)
+  private static Boolean? GetHorizontal(DXVml.ImageFile openXmlElement)
   {
     return openXmlElement?.Horizontal?.Value;
   }
   
-  private static void SetHorizontal(DocumentFormat.OpenXml.Vml.ImageFile openXmlElement, Boolean? value)
+  private static void SetHorizontal(DXVml.ImageFile openXmlElement, Boolean? value)
   {
     if (value != null)
       openXmlElement.Horizontal = value;
@@ -293,12 +293,12 @@ public static class ImageFileConverter
   /// <summary>
   /// Horizontal Rule Standard Display Toggle
   /// </summary>
-  private static Boolean? GetHorizontalStandard(DocumentFormat.OpenXml.Vml.ImageFile openXmlElement)
+  private static Boolean? GetHorizontalStandard(DXVml.ImageFile openXmlElement)
   {
     return openXmlElement?.HorizontalStandard?.Value;
   }
   
-  private static void SetHorizontalStandard(DocumentFormat.OpenXml.Vml.ImageFile openXmlElement, Boolean? value)
+  private static void SetHorizontalStandard(DXVml.ImageFile openXmlElement, Boolean? value)
   {
     if (value != null)
       openXmlElement.HorizontalStandard = value;
@@ -309,12 +309,12 @@ public static class ImageFileConverter
   /// <summary>
   /// Horizontal Rule 3D Shading Toggle
   /// </summary>
-  private static Boolean? GetHorizontalNoShade(DocumentFormat.OpenXml.Vml.ImageFile openXmlElement)
+  private static Boolean? GetHorizontalNoShade(DXVml.ImageFile openXmlElement)
   {
     return openXmlElement?.HorizontalNoShade?.Value;
   }
   
-  private static void SetHorizontalNoShade(DocumentFormat.OpenXml.Vml.ImageFile openXmlElement, Boolean? value)
+  private static void SetHorizontalNoShade(DXVml.ImageFile openXmlElement, Boolean? value)
   {
     if (value != null)
       openXmlElement.HorizontalNoShade = value;
@@ -325,12 +325,12 @@ public static class ImageFileConverter
   /// <summary>
   /// Horizontal Rule Length Percentage
   /// </summary>
-  private static Single? GetHorizontalPercentage(DocumentFormat.OpenXml.Vml.ImageFile openXmlElement)
+  private static Single? GetHorizontalPercentage(DXVml.ImageFile openXmlElement)
   {
     return openXmlElement.HorizontalPercentage?.Value;
   }
   
-  private static void SetHorizontalPercentage(DocumentFormat.OpenXml.Vml.ImageFile openXmlElement, Single? value)
+  private static void SetHorizontalPercentage(DXVml.ImageFile openXmlElement, Single? value)
   {
     openXmlElement.HorizontalPercentage = value;
   }
@@ -338,25 +338,25 @@ public static class ImageFileConverter
   /// <summary>
   /// Horizontal Rule Alignment
   /// </summary>
-  private static DocumentModel.Vml.HorizontalRuleAlignmentKind? GetHorizontalAlignment(DocumentFormat.OpenXml.Vml.ImageFile openXmlElement)
+  private static DMVml.HorizontalRuleAlignmentKind? GetHorizontalAlignment(DXVml.ImageFile openXmlElement)
   {
-    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Vml.Office.HorizontalRuleAlignmentValues, DocumentModel.Vml.HorizontalRuleAlignmentKind>(openXmlElement?.HorizontalAlignment?.Value);
+    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Vml.Office.HorizontalRuleAlignmentValues, DMVml.HorizontalRuleAlignmentKind>(openXmlElement?.HorizontalAlignment?.Value);
   }
   
-  private static void SetHorizontalAlignment(DocumentFormat.OpenXml.Vml.ImageFile openXmlElement, DocumentModel.Vml.HorizontalRuleAlignmentKind? value)
+  private static void SetHorizontalAlignment(DXVml.ImageFile openXmlElement, DMVml.HorizontalRuleAlignmentKind? value)
   {
-    openXmlElement.HorizontalAlignment = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Vml.Office.HorizontalRuleAlignmentValues, DocumentModel.Vml.HorizontalRuleAlignmentKind>(value);
+    openXmlElement.HorizontalAlignment = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Vml.Office.HorizontalRuleAlignmentValues, DMVml.HorizontalRuleAlignmentKind>(value);
   }
   
   /// <summary>
   /// Allow in Table Cell
   /// </summary>
-  private static Boolean? GetAllowInCell(DocumentFormat.OpenXml.Vml.ImageFile openXmlElement)
+  private static Boolean? GetAllowInCell(DXVml.ImageFile openXmlElement)
   {
     return openXmlElement?.AllowInCell?.Value;
   }
   
-  private static void SetAllowInCell(DocumentFormat.OpenXml.Vml.ImageFile openXmlElement, Boolean? value)
+  private static void SetAllowInCell(DXVml.ImageFile openXmlElement, Boolean? value)
   {
     if (value != null)
       openXmlElement.AllowInCell = value;
@@ -367,12 +367,12 @@ public static class ImageFileConverter
   /// <summary>
   /// Allow Shape Overlap
   /// </summary>
-  private static Boolean? GetAllowOverlap(DocumentFormat.OpenXml.Vml.ImageFile openXmlElement)
+  private static Boolean? GetAllowOverlap(DXVml.ImageFile openXmlElement)
   {
     return openXmlElement?.AllowOverlap?.Value;
   }
   
-  private static void SetAllowOverlap(DocumentFormat.OpenXml.Vml.ImageFile openXmlElement, Boolean? value)
+  private static void SetAllowOverlap(DXVml.ImageFile openXmlElement, Boolean? value)
   {
     if (value != null)
       openXmlElement.AllowOverlap = value;
@@ -383,12 +383,12 @@ public static class ImageFileConverter
   /// <summary>
   /// Exists In Master Slide
   /// </summary>
-  private static Boolean? GetUserDrawn(DocumentFormat.OpenXml.Vml.ImageFile openXmlElement)
+  private static Boolean? GetUserDrawn(DXVml.ImageFile openXmlElement)
   {
     return openXmlElement?.UserDrawn?.Value;
   }
   
-  private static void SetUserDrawn(DocumentFormat.OpenXml.Vml.ImageFile openXmlElement, Boolean? value)
+  private static void SetUserDrawn(DXVml.ImageFile openXmlElement, Boolean? value)
   {
     if (value != null)
       openXmlElement.UserDrawn = value;
@@ -399,12 +399,12 @@ public static class ImageFileConverter
   /// <summary>
   /// Border Top Color
   /// </summary>
-  private static String? GetBorderTopColor(DocumentFormat.OpenXml.Vml.ImageFile openXmlElement)
+  private static String? GetBorderTopColor(DXVml.ImageFile openXmlElement)
   {
     return openXmlElement?.BorderTopColor?.Value;
   }
   
-  private static void SetBorderTopColor(DocumentFormat.OpenXml.Vml.ImageFile openXmlElement, String? value)
+  private static void SetBorderTopColor(DXVml.ImageFile openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.BorderTopColor = new StringValue { Value = value };
@@ -415,12 +415,12 @@ public static class ImageFileConverter
   /// <summary>
   /// Border Left Color
   /// </summary>
-  private static String? GetBorderLeftColor(DocumentFormat.OpenXml.Vml.ImageFile openXmlElement)
+  private static String? GetBorderLeftColor(DXVml.ImageFile openXmlElement)
   {
     return openXmlElement?.BorderLeftColor?.Value;
   }
   
-  private static void SetBorderLeftColor(DocumentFormat.OpenXml.Vml.ImageFile openXmlElement, String? value)
+  private static void SetBorderLeftColor(DXVml.ImageFile openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.BorderLeftColor = new StringValue { Value = value };
@@ -431,12 +431,12 @@ public static class ImageFileConverter
   /// <summary>
   /// Bottom Border Color
   /// </summary>
-  private static String? GetBorderBottomColor(DocumentFormat.OpenXml.Vml.ImageFile openXmlElement)
+  private static String? GetBorderBottomColor(DXVml.ImageFile openXmlElement)
   {
     return openXmlElement?.BorderBottomColor?.Value;
   }
   
-  private static void SetBorderBottomColor(DocumentFormat.OpenXml.Vml.ImageFile openXmlElement, String? value)
+  private static void SetBorderBottomColor(DXVml.ImageFile openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.BorderBottomColor = new StringValue { Value = value };
@@ -447,12 +447,12 @@ public static class ImageFileConverter
   /// <summary>
   /// Border Right Color
   /// </summary>
-  private static String? GetBorderRightColor(DocumentFormat.OpenXml.Vml.ImageFile openXmlElement)
+  private static String? GetBorderRightColor(DXVml.ImageFile openXmlElement)
   {
     return openXmlElement?.BorderRightColor?.Value;
   }
   
-  private static void SetBorderRightColor(DocumentFormat.OpenXml.Vml.ImageFile openXmlElement, String? value)
+  private static void SetBorderRightColor(DXVml.ImageFile openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.BorderRightColor = new StringValue { Value = value };
@@ -463,12 +463,12 @@ public static class ImageFileConverter
   /// <summary>
   /// Diagram Node Layout Identifier
   /// </summary>
-  private static Int64? GetDiagramLayout(DocumentFormat.OpenXml.Vml.ImageFile openXmlElement)
+  private static Int64? GetDiagramLayout(DXVml.ImageFile openXmlElement)
   {
     return openXmlElement.DiagramLayout?.Value;
   }
   
-  private static void SetDiagramLayout(DocumentFormat.OpenXml.Vml.ImageFile openXmlElement, Int64? value)
+  private static void SetDiagramLayout(DXVml.ImageFile openXmlElement, Int64? value)
   {
     openXmlElement.DiagramLayout = value;
   }
@@ -476,12 +476,12 @@ public static class ImageFileConverter
   /// <summary>
   /// Diagram Node Identifier
   /// </summary>
-  private static Int64? GetDiagramNodeKind(DocumentFormat.OpenXml.Vml.ImageFile openXmlElement)
+  private static Int64? GetDiagramNodeKind(DXVml.ImageFile openXmlElement)
   {
     return openXmlElement.DiagramNodeKind?.Value;
   }
   
-  private static void SetDiagramNodeKind(DocumentFormat.OpenXml.Vml.ImageFile openXmlElement, Int64? value)
+  private static void SetDiagramNodeKind(DXVml.ImageFile openXmlElement, Int64? value)
   {
     openXmlElement.DiagramNodeKind = value;
   }
@@ -489,12 +489,12 @@ public static class ImageFileConverter
   /// <summary>
   /// Diagram Node Recent Layout Identifier
   /// </summary>
-  private static Int64? GetDiagramLayoutMostRecentUsed(DocumentFormat.OpenXml.Vml.ImageFile openXmlElement)
+  private static Int64? GetDiagramLayoutMostRecentUsed(DXVml.ImageFile openXmlElement)
   {
     return openXmlElement.DiagramLayoutMostRecentUsed?.Value;
   }
   
-  private static void SetDiagramLayoutMostRecentUsed(DocumentFormat.OpenXml.Vml.ImageFile openXmlElement, Int64? value)
+  private static void SetDiagramLayoutMostRecentUsed(DXVml.ImageFile openXmlElement, Int64? value)
   {
     openXmlElement.DiagramLayoutMostRecentUsed = value;
   }
@@ -502,25 +502,25 @@ public static class ImageFileConverter
   /// <summary>
   /// Text Inset Mode
   /// </summary>
-  private static DocumentModel.Vml.InsetMarginKind? GetInsetMode(DocumentFormat.OpenXml.Vml.ImageFile openXmlElement)
+  private static DMVml.InsetMarginKind? GetInsetMode(DXVml.ImageFile openXmlElement)
   {
-    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Vml.Office.InsetMarginValues, DocumentModel.Vml.InsetMarginKind>(openXmlElement?.InsetMode?.Value);
+    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Vml.Office.InsetMarginValues, DMVml.InsetMarginKind>(openXmlElement?.InsetMode?.Value);
   }
   
-  private static void SetInsetMode(DocumentFormat.OpenXml.Vml.ImageFile openXmlElement, DocumentModel.Vml.InsetMarginKind? value)
+  private static void SetInsetMode(DXVml.ImageFile openXmlElement, DMVml.InsetMarginKind? value)
   {
-    openXmlElement.InsetMode = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Vml.Office.InsetMarginValues, DocumentModel.Vml.InsetMarginKind>(value);
+    openXmlElement.InsetMode = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Vml.Office.InsetMarginValues, DMVml.InsetMarginKind>(value);
   }
   
   /// <summary>
   /// Shape Fill Toggle
   /// </summary>
-  private static Boolean? GetFilled(DocumentFormat.OpenXml.Vml.ImageFile openXmlElement)
+  private static Boolean? GetFilled(DXVml.ImageFile openXmlElement)
   {
     return openXmlElement?.Filled?.Value;
   }
   
-  private static void SetFilled(DocumentFormat.OpenXml.Vml.ImageFile openXmlElement, Boolean? value)
+  private static void SetFilled(DXVml.ImageFile openXmlElement, Boolean? value)
   {
     if (value != null)
       openXmlElement.Filled = value;
@@ -531,12 +531,12 @@ public static class ImageFileConverter
   /// <summary>
   /// Fill Color
   /// </summary>
-  private static String? GetFillColor(DocumentFormat.OpenXml.Vml.ImageFile openXmlElement)
+  private static String? GetFillColor(DXVml.ImageFile openXmlElement)
   {
     return openXmlElement?.FillColor?.Value;
   }
   
-  private static void SetFillColor(DocumentFormat.OpenXml.Vml.ImageFile openXmlElement, String? value)
+  private static void SetFillColor(DXVml.ImageFile openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.FillColor = new StringValue { Value = value };
@@ -547,12 +547,12 @@ public static class ImageFileConverter
   /// <summary>
   /// Shape Stroke Toggle
   /// </summary>
-  private static Boolean? GetStroked(DocumentFormat.OpenXml.Vml.ImageFile openXmlElement)
+  private static Boolean? GetStroked(DXVml.ImageFile openXmlElement)
   {
     return openXmlElement?.Stroked?.Value;
   }
   
-  private static void SetStroked(DocumentFormat.OpenXml.Vml.ImageFile openXmlElement, Boolean? value)
+  private static void SetStroked(DXVml.ImageFile openXmlElement, Boolean? value)
   {
     if (value != null)
       openXmlElement.Stroked = value;
@@ -563,12 +563,12 @@ public static class ImageFileConverter
   /// <summary>
   /// Shape Stroke Color
   /// </summary>
-  private static String? GetStrokeColor(DocumentFormat.OpenXml.Vml.ImageFile openXmlElement)
+  private static String? GetStrokeColor(DXVml.ImageFile openXmlElement)
   {
     return openXmlElement?.StrokeColor?.Value;
   }
   
-  private static void SetStrokeColor(DocumentFormat.OpenXml.Vml.ImageFile openXmlElement, String? value)
+  private static void SetStrokeColor(DXVml.ImageFile openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.StrokeColor = new StringValue { Value = value };
@@ -579,12 +579,12 @@ public static class ImageFileConverter
   /// <summary>
   /// Shape Stroke Weight
   /// </summary>
-  private static String? GetStrokeWeight(DocumentFormat.OpenXml.Vml.ImageFile openXmlElement)
+  private static String? GetStrokeWeight(DXVml.ImageFile openXmlElement)
   {
     return openXmlElement?.StrokeWeight?.Value;
   }
   
-  private static void SetStrokeWeight(DocumentFormat.OpenXml.Vml.ImageFile openXmlElement, String? value)
+  private static void SetStrokeWeight(DXVml.ImageFile openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.StrokeWeight = new StringValue { Value = value };
@@ -595,12 +595,12 @@ public static class ImageFileConverter
   /// <summary>
   /// Inset Border From Path
   /// </summary>
-  private static Boolean? GetInsetPen(DocumentFormat.OpenXml.Vml.ImageFile openXmlElement)
+  private static Boolean? GetInsetPen(DXVml.ImageFile openXmlElement)
   {
     return openXmlElement?.InsetPen?.Value;
   }
   
-  private static void SetInsetPen(DocumentFormat.OpenXml.Vml.ImageFile openXmlElement, Boolean? value)
+  private static void SetInsetPen(DXVml.ImageFile openXmlElement, Boolean? value)
   {
     if (value != null)
       openXmlElement.InsetPen = value;
@@ -611,12 +611,12 @@ public static class ImageFileConverter
   /// <summary>
   /// Optional Number
   /// </summary>
-  private static Int32? GetOptionalNumber(DocumentFormat.OpenXml.Vml.ImageFile openXmlElement)
+  private static Int32? GetOptionalNumber(DXVml.ImageFile openXmlElement)
   {
     return openXmlElement.OptionalNumber?.Value;
   }
   
-  private static void SetOptionalNumber(DocumentFormat.OpenXml.Vml.ImageFile openXmlElement, Int32? value)
+  private static void SetOptionalNumber(DXVml.ImageFile openXmlElement, Int32? value)
   {
     openXmlElement.OptionalNumber = value;
   }
@@ -624,64 +624,64 @@ public static class ImageFileConverter
   /// <summary>
   /// Shape Connector Type
   /// </summary>
-  private static DocumentModel.Vml.ConnectorKind? GetConnectorType(DocumentFormat.OpenXml.Vml.ImageFile openXmlElement)
+  private static DMVml.ConnectorKind? GetConnectorType(DXVml.ImageFile openXmlElement)
   {
-    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Vml.Office.ConnectorValues, DocumentModel.Vml.ConnectorKind>(openXmlElement?.ConnectorType?.Value);
+    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Vml.Office.ConnectorValues, DMVml.ConnectorKind>(openXmlElement?.ConnectorType?.Value);
   }
   
-  private static void SetConnectorType(DocumentFormat.OpenXml.Vml.ImageFile openXmlElement, DocumentModel.Vml.ConnectorKind? value)
+  private static void SetConnectorType(DXVml.ImageFile openXmlElement, DMVml.ConnectorKind? value)
   {
-    openXmlElement.ConnectorType = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Vml.Office.ConnectorValues, DocumentModel.Vml.ConnectorKind>(value);
+    openXmlElement.ConnectorType = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Vml.Office.ConnectorValues, DMVml.ConnectorKind>(value);
   }
   
   /// <summary>
   /// Black-and-White Mode
   /// </summary>
-  private static DocumentModel.Vml.BlackAndWhiteMode? GetBlackWhiteMode(DocumentFormat.OpenXml.Vml.ImageFile openXmlElement)
+  private static DMVml.BlackAndWhiteMode? GetBlackWhiteMode(DXVml.ImageFile openXmlElement)
   {
-    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Vml.Office.BlackAndWhiteModeValues, DocumentModel.Vml.BlackAndWhiteMode>(openXmlElement?.BlackWhiteMode?.Value);
+    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Vml.Office.BlackAndWhiteModeValues, DMVml.BlackAndWhiteMode>(openXmlElement?.BlackWhiteMode?.Value);
   }
   
-  private static void SetBlackWhiteMode(DocumentFormat.OpenXml.Vml.ImageFile openXmlElement, DocumentModel.Vml.BlackAndWhiteMode? value)
+  private static void SetBlackWhiteMode(DXVml.ImageFile openXmlElement, DMVml.BlackAndWhiteMode? value)
   {
-    openXmlElement.BlackWhiteMode = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Vml.Office.BlackAndWhiteModeValues, DocumentModel.Vml.BlackAndWhiteMode>(value);
+    openXmlElement.BlackWhiteMode = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Vml.Office.BlackAndWhiteModeValues, DMVml.BlackAndWhiteMode>(value);
   }
   
   /// <summary>
   /// Pure Black-and-White Mode
   /// </summary>
-  private static DocumentModel.Vml.BlackAndWhiteMode? GetPureBlackWhiteMode(DocumentFormat.OpenXml.Vml.ImageFile openXmlElement)
+  private static DMVml.BlackAndWhiteMode? GetPureBlackWhiteMode(DXVml.ImageFile openXmlElement)
   {
-    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Vml.Office.BlackAndWhiteModeValues, DocumentModel.Vml.BlackAndWhiteMode>(openXmlElement?.PureBlackWhiteMode?.Value);
+    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Vml.Office.BlackAndWhiteModeValues, DMVml.BlackAndWhiteMode>(openXmlElement?.PureBlackWhiteMode?.Value);
   }
   
-  private static void SetPureBlackWhiteMode(DocumentFormat.OpenXml.Vml.ImageFile openXmlElement, DocumentModel.Vml.BlackAndWhiteMode? value)
+  private static void SetPureBlackWhiteMode(DXVml.ImageFile openXmlElement, DMVml.BlackAndWhiteMode? value)
   {
-    openXmlElement.PureBlackWhiteMode = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Vml.Office.BlackAndWhiteModeValues, DocumentModel.Vml.BlackAndWhiteMode>(value);
+    openXmlElement.PureBlackWhiteMode = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Vml.Office.BlackAndWhiteModeValues, DMVml.BlackAndWhiteMode>(value);
   }
   
   /// <summary>
   /// Normal Black-and-White Mode
   /// </summary>
-  private static DocumentModel.Vml.BlackAndWhiteMode? GetNormalBlackWhiteMode(DocumentFormat.OpenXml.Vml.ImageFile openXmlElement)
+  private static DMVml.BlackAndWhiteMode? GetNormalBlackWhiteMode(DXVml.ImageFile openXmlElement)
   {
-    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Vml.Office.BlackAndWhiteModeValues, DocumentModel.Vml.BlackAndWhiteMode>(openXmlElement?.NormalBlackWhiteMode?.Value);
+    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Vml.Office.BlackAndWhiteModeValues, DMVml.BlackAndWhiteMode>(openXmlElement?.NormalBlackWhiteMode?.Value);
   }
   
-  private static void SetNormalBlackWhiteMode(DocumentFormat.OpenXml.Vml.ImageFile openXmlElement, DocumentModel.Vml.BlackAndWhiteMode? value)
+  private static void SetNormalBlackWhiteMode(DXVml.ImageFile openXmlElement, DMVml.BlackAndWhiteMode? value)
   {
-    openXmlElement.NormalBlackWhiteMode = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Vml.Office.BlackAndWhiteModeValues, DocumentModel.Vml.BlackAndWhiteMode>(value);
+    openXmlElement.NormalBlackWhiteMode = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Vml.Office.BlackAndWhiteModeValues, DMVml.BlackAndWhiteMode>(value);
   }
   
   /// <summary>
   /// Force Dashed Outline
   /// </summary>
-  private static Boolean? GetForceDash(DocumentFormat.OpenXml.Vml.ImageFile openXmlElement)
+  private static Boolean? GetForceDash(DXVml.ImageFile openXmlElement)
   {
     return openXmlElement?.ForceDash?.Value;
   }
   
-  private static void SetForceDash(DocumentFormat.OpenXml.Vml.ImageFile openXmlElement, Boolean? value)
+  private static void SetForceDash(DXVml.ImageFile openXmlElement, Boolean? value)
   {
     if (value != null)
       openXmlElement.ForceDash = value;
@@ -692,12 +692,12 @@ public static class ImageFileConverter
   /// <summary>
   /// Embedded Object Icon Toggle
   /// </summary>
-  private static Boolean? GetOleIcon(DocumentFormat.OpenXml.Vml.ImageFile openXmlElement)
+  private static Boolean? GetOleIcon(DXVml.ImageFile openXmlElement)
   {
     return openXmlElement?.OleIcon?.Value;
   }
   
-  private static void SetOleIcon(DocumentFormat.OpenXml.Vml.ImageFile openXmlElement, Boolean? value)
+  private static void SetOleIcon(DXVml.ImageFile openXmlElement, Boolean? value)
   {
     if (value != null)
       openXmlElement.OleIcon = value;
@@ -708,12 +708,12 @@ public static class ImageFileConverter
   /// <summary>
   /// Embedded Object Toggle
   /// </summary>
-  private static Boolean? GetOle(DocumentFormat.OpenXml.Vml.ImageFile openXmlElement)
+  private static Boolean? GetOle(DXVml.ImageFile openXmlElement)
   {
     return openXmlElement?.Ole?.Value;
   }
   
-  private static void SetOle(DocumentFormat.OpenXml.Vml.ImageFile openXmlElement, Boolean? value)
+  private static void SetOle(DXVml.ImageFile openXmlElement, Boolean? value)
   {
     if (value != null)
       openXmlElement.Ole = value;
@@ -724,12 +724,12 @@ public static class ImageFileConverter
   /// <summary>
   /// Relative Resize Toggle
   /// </summary>
-  private static Boolean? GetPreferRelative(DocumentFormat.OpenXml.Vml.ImageFile openXmlElement)
+  private static Boolean? GetPreferRelative(DXVml.ImageFile openXmlElement)
   {
     return openXmlElement?.PreferRelative?.Value;
   }
   
-  private static void SetPreferRelative(DocumentFormat.OpenXml.Vml.ImageFile openXmlElement, Boolean? value)
+  private static void SetPreferRelative(DXVml.ImageFile openXmlElement, Boolean? value)
   {
     if (value != null)
       openXmlElement.PreferRelative = value;
@@ -740,12 +740,12 @@ public static class ImageFileConverter
   /// <summary>
   /// Clip to Wrapping Polygon
   /// </summary>
-  private static Boolean? GetClipToWrap(DocumentFormat.OpenXml.Vml.ImageFile openXmlElement)
+  private static Boolean? GetClipToWrap(DXVml.ImageFile openXmlElement)
   {
     return openXmlElement?.ClipToWrap?.Value;
   }
   
-  private static void SetClipToWrap(DocumentFormat.OpenXml.Vml.ImageFile openXmlElement, Boolean? value)
+  private static void SetClipToWrap(DXVml.ImageFile openXmlElement, Boolean? value)
   {
     if (value != null)
       openXmlElement.ClipToWrap = value;
@@ -756,12 +756,12 @@ public static class ImageFileConverter
   /// <summary>
   /// Clipping Toggle
   /// </summary>
-  private static Boolean? GetClip(DocumentFormat.OpenXml.Vml.ImageFile openXmlElement)
+  private static Boolean? GetClip(DXVml.ImageFile openXmlElement)
   {
     return openXmlElement?.Clip?.Value;
   }
   
-  private static void SetClip(DocumentFormat.OpenXml.Vml.ImageFile openXmlElement, Boolean? value)
+  private static void SetClip(DXVml.ImageFile openXmlElement, Boolean? value)
   {
     if (value != null)
       openXmlElement.Clip = value;
@@ -772,12 +772,12 @@ public static class ImageFileConverter
   /// <summary>
   /// Image Source
   /// </summary>
-  private static String? GetSource(DocumentFormat.OpenXml.Vml.ImageFile openXmlElement)
+  private static String? GetSource(DXVml.ImageFile openXmlElement)
   {
     return openXmlElement?.Source?.Value;
   }
   
-  private static void SetSource(DocumentFormat.OpenXml.Vml.ImageFile openXmlElement, String? value)
+  private static void SetSource(DXVml.ImageFile openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.Source = new StringValue { Value = value };
@@ -788,12 +788,12 @@ public static class ImageFileConverter
   /// <summary>
   /// Image Left Crop
   /// </summary>
-  private static String? GetCropLeft(DocumentFormat.OpenXml.Vml.ImageFile openXmlElement)
+  private static String? GetCropLeft(DXVml.ImageFile openXmlElement)
   {
     return openXmlElement?.CropLeft?.Value;
   }
   
-  private static void SetCropLeft(DocumentFormat.OpenXml.Vml.ImageFile openXmlElement, String? value)
+  private static void SetCropLeft(DXVml.ImageFile openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.CropLeft = new StringValue { Value = value };
@@ -804,12 +804,12 @@ public static class ImageFileConverter
   /// <summary>
   /// Image Top Crop
   /// </summary>
-  private static String? GetCropTop(DocumentFormat.OpenXml.Vml.ImageFile openXmlElement)
+  private static String? GetCropTop(DXVml.ImageFile openXmlElement)
   {
     return openXmlElement?.CropTop?.Value;
   }
   
-  private static void SetCropTop(DocumentFormat.OpenXml.Vml.ImageFile openXmlElement, String? value)
+  private static void SetCropTop(DXVml.ImageFile openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.CropTop = new StringValue { Value = value };
@@ -820,12 +820,12 @@ public static class ImageFileConverter
   /// <summary>
   /// Image Right Crop
   /// </summary>
-  private static String? GetCropRight(DocumentFormat.OpenXml.Vml.ImageFile openXmlElement)
+  private static String? GetCropRight(DXVml.ImageFile openXmlElement)
   {
     return openXmlElement?.CropRight?.Value;
   }
   
-  private static void SetCropRight(DocumentFormat.OpenXml.Vml.ImageFile openXmlElement, String? value)
+  private static void SetCropRight(DXVml.ImageFile openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.CropRight = new StringValue { Value = value };
@@ -836,12 +836,12 @@ public static class ImageFileConverter
   /// <summary>
   /// Image Bottom Crop
   /// </summary>
-  private static String? GetCropBottom(DocumentFormat.OpenXml.Vml.ImageFile openXmlElement)
+  private static String? GetCropBottom(DXVml.ImageFile openXmlElement)
   {
     return openXmlElement?.CropBottom?.Value;
   }
   
-  private static void SetCropBottom(DocumentFormat.OpenXml.Vml.ImageFile openXmlElement, String? value)
+  private static void SetCropBottom(DXVml.ImageFile openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.CropBottom = new StringValue { Value = value };
@@ -852,12 +852,12 @@ public static class ImageFileConverter
   /// <summary>
   /// Image Intensity
   /// </summary>
-  private static String? GetGain(DocumentFormat.OpenXml.Vml.ImageFile openXmlElement)
+  private static String? GetGain(DXVml.ImageFile openXmlElement)
   {
     return openXmlElement?.Gain?.Value;
   }
   
-  private static void SetGain(DocumentFormat.OpenXml.Vml.ImageFile openXmlElement, String? value)
+  private static void SetGain(DXVml.ImageFile openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.Gain = new StringValue { Value = value };
@@ -868,12 +868,12 @@ public static class ImageFileConverter
   /// <summary>
   /// Image Brightness
   /// </summary>
-  private static String? GetBlackLevel(DocumentFormat.OpenXml.Vml.ImageFile openXmlElement)
+  private static String? GetBlackLevel(DXVml.ImageFile openXmlElement)
   {
     return openXmlElement?.BlackLevel?.Value;
   }
   
-  private static void SetBlackLevel(DocumentFormat.OpenXml.Vml.ImageFile openXmlElement, String? value)
+  private static void SetBlackLevel(DXVml.ImageFile openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.BlackLevel = new StringValue { Value = value };
@@ -884,12 +884,12 @@ public static class ImageFileConverter
   /// <summary>
   /// Image Gamma Correction
   /// </summary>
-  private static String? GetGamma(DocumentFormat.OpenXml.Vml.ImageFile openXmlElement)
+  private static String? GetGamma(DXVml.ImageFile openXmlElement)
   {
     return openXmlElement?.Gamma?.Value;
   }
   
-  private static void SetGamma(DocumentFormat.OpenXml.Vml.ImageFile openXmlElement, String? value)
+  private static void SetGamma(DXVml.ImageFile openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.Gamma = new StringValue { Value = value };
@@ -900,12 +900,12 @@ public static class ImageFileConverter
   /// <summary>
   /// Image Grayscale Toggle
   /// </summary>
-  private static Boolean? GetGrayScale(DocumentFormat.OpenXml.Vml.ImageFile openXmlElement)
+  private static Boolean? GetGrayScale(DXVml.ImageFile openXmlElement)
   {
     return openXmlElement?.GrayScale?.Value;
   }
   
-  private static void SetGrayScale(DocumentFormat.OpenXml.Vml.ImageFile openXmlElement, Boolean? value)
+  private static void SetGrayScale(DXVml.ImageFile openXmlElement, Boolean? value)
   {
     if (value != null)
       openXmlElement.GrayScale = value;
@@ -916,12 +916,12 @@ public static class ImageFileConverter
   /// <summary>
   /// Image Bilevel Toggle
   /// </summary>
-  private static Boolean? GetBiLevel(DocumentFormat.OpenXml.Vml.ImageFile openXmlElement)
+  private static Boolean? GetBiLevel(DXVml.ImageFile openXmlElement)
   {
     return openXmlElement?.BiLevel?.Value;
   }
   
-  private static void SetBiLevel(DocumentFormat.OpenXml.Vml.ImageFile openXmlElement, Boolean? value)
+  private static void SetBiLevel(DXVml.ImageFile openXmlElement, Boolean? value)
   {
     if (value != null)
       openXmlElement.BiLevel = value;
@@ -932,14 +932,14 @@ public static class ImageFileConverter
   /// <summary>
   /// Encoded Package
   /// </summary>
-  private static Byte[]? GetGfxdata(DocumentFormat.OpenXml.Vml.ImageFile openXmlElement)
+  private static Byte[]? GetGfxdata(DXVml.ImageFile openXmlElement)
   {
     if (openXmlElement.Gfxdata?.Value != null)
       return Convert.FromBase64String(openXmlElement.Gfxdata.Value);
     return null;
   }
   
-  private static void SetGfxdata(DocumentFormat.OpenXml.Vml.ImageFile openXmlElement, Byte[]? value)
+  private static void SetGfxdata(DXVml.ImageFile openXmlElement, Byte[]? value)
   {
     if (value != null)
       openXmlElement.Gfxdata = Convert.ToBase64String(value);
@@ -947,452 +947,452 @@ public static class ImageFileConverter
       openXmlElement.Gfxdata = null;
   }
   
-  private static DocumentModel.Vml.Path? GetPath(DocumentFormat.OpenXml.Vml.ImageFile openXmlElement)
+  private static DMVml.Path? GetPath(DXVml.ImageFile openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Vml.Path>();
+    var itemElement = openXmlElement?.GetFirstChild<DXVml.Path>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Vml.PathConverter.CreateModelElement(itemElement);
+      return DMXVml.PathConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetPath(DocumentFormat.OpenXml.Vml.ImageFile openXmlElement, DocumentModel.Vml.Path? value)
+  private static void SetPath(DXVml.ImageFile openXmlElement, DMVml.Path? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Vml.Path>();
+    var itemElement = openXmlElement.GetFirstChild<DXVml.Path>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Vml.PathConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Vml.Path>(value);
+      itemElement = DMXVml.PathConverter.CreateOpenXmlElement<DXVml.Path>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static DocumentModel.Vml.Formulas? GetFormulas(DocumentFormat.OpenXml.Vml.ImageFile openXmlElement)
+  private static DMVml.Formulas? GetFormulas(DXVml.ImageFile openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Vml.Formulas>();
+    var itemElement = openXmlElement?.GetFirstChild<DXVml.Formulas>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Vml.FormulasConverter.CreateModelElement(itemElement);
+      return DMXVml.FormulasConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetFormulas(DocumentFormat.OpenXml.Vml.ImageFile openXmlElement, DocumentModel.Vml.Formulas? value)
+  private static void SetFormulas(DXVml.ImageFile openXmlElement, DMVml.Formulas? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Vml.Formulas>();
+    var itemElement = openXmlElement.GetFirstChild<DXVml.Formulas>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Vml.FormulasConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Vml.Formulas>(value);
+      itemElement = DMXVml.FormulasConverter.CreateOpenXmlElement<DXVml.Formulas>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static DocumentModel.Vml.ShapeHandles? GetShapeHandles(DocumentFormat.OpenXml.Vml.ImageFile openXmlElement)
+  private static DMVml.ShapeHandles? GetShapeHandles(DXVml.ImageFile openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Vml.ShapeHandles>();
+    var itemElement = openXmlElement?.GetFirstChild<DXVml.ShapeHandles>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Vml.ShapeHandlesConverter.CreateModelElement(itemElement);
+      return DMXVml.ShapeHandlesConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetShapeHandles(DocumentFormat.OpenXml.Vml.ImageFile openXmlElement, DocumentModel.Vml.ShapeHandles? value)
+  private static void SetShapeHandles(DXVml.ImageFile openXmlElement, DMVml.ShapeHandles? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Vml.ShapeHandles>();
+    var itemElement = openXmlElement.GetFirstChild<DXVml.ShapeHandles>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Vml.ShapeHandlesConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Vml.ShapeHandles>(value);
+      itemElement = DMXVml.ShapeHandlesConverter.CreateOpenXmlElement<DXVml.ShapeHandles>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static DocumentModel.Vml.Fill? GetFill(DocumentFormat.OpenXml.Vml.ImageFile openXmlElement)
+  private static DMVml.Fill? GetFill(DXVml.ImageFile openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Vml.Fill>();
+    var itemElement = openXmlElement?.GetFirstChild<DXVml.Fill>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Vml.FillConverter.CreateModelElement(itemElement);
+      return DMXVml.FillConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetFill(DocumentFormat.OpenXml.Vml.ImageFile openXmlElement, DocumentModel.Vml.Fill? value)
+  private static void SetFill(DXVml.ImageFile openXmlElement, DMVml.Fill? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Vml.Fill>();
+    var itemElement = openXmlElement.GetFirstChild<DXVml.Fill>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Vml.FillConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Vml.Fill>(value);
+      itemElement = DMXVml.FillConverter.CreateOpenXmlElement<DXVml.Fill>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static DocumentModel.Vml.Stroke? GetStroke(DocumentFormat.OpenXml.Vml.ImageFile openXmlElement)
+  private static DMVml.Stroke? GetStroke(DXVml.ImageFile openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Vml.Stroke>();
+    var itemElement = openXmlElement?.GetFirstChild<DXVml.Stroke>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Vml.StrokeConverter.CreateModelElement(itemElement);
+      return DMXVml.StrokeConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetStroke(DocumentFormat.OpenXml.Vml.ImageFile openXmlElement, DocumentModel.Vml.Stroke? value)
+  private static void SetStroke(DXVml.ImageFile openXmlElement, DMVml.Stroke? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Vml.Stroke>();
+    var itemElement = openXmlElement.GetFirstChild<DXVml.Stroke>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Vml.StrokeConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Vml.Stroke>(value);
+      itemElement = DMXVml.StrokeConverter.CreateOpenXmlElement<DXVml.Stroke>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static DocumentModel.Vml.Shadow? GetShadow(DocumentFormat.OpenXml.Vml.ImageFile openXmlElement)
+  private static DMVml.Shadow? GetShadow(DXVml.ImageFile openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Vml.Shadow>();
+    var itemElement = openXmlElement?.GetFirstChild<DXVml.Shadow>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Vml.ShadowConverter.CreateModelElement(itemElement);
+      return DMXVml.ShadowConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetShadow(DocumentFormat.OpenXml.Vml.ImageFile openXmlElement, DocumentModel.Vml.Shadow? value)
+  private static void SetShadow(DXVml.ImageFile openXmlElement, DMVml.Shadow? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Vml.Shadow>();
+    var itemElement = openXmlElement.GetFirstChild<DXVml.Shadow>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Vml.ShadowConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Vml.Shadow>(value);
+      itemElement = DMXVml.ShadowConverter.CreateOpenXmlElement<DXVml.Shadow>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static DocumentModel.Vml.TextBox? GetTextBox(DocumentFormat.OpenXml.Vml.ImageFile openXmlElement)
+  private static DMVml.TextBox? GetTextBox(DXVml.ImageFile openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Vml.TextBox>();
+    var itemElement = openXmlElement?.GetFirstChild<DXVml.TextBox>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Vml.TextBoxConverter.CreateModelElement(itemElement);
+      return DMXVml.TextBoxConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetTextBox(DocumentFormat.OpenXml.Vml.ImageFile openXmlElement, DocumentModel.Vml.TextBox? value)
+  private static void SetTextBox(DXVml.ImageFile openXmlElement, DMVml.TextBox? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Vml.TextBox>();
+    var itemElement = openXmlElement.GetFirstChild<DXVml.TextBox>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Vml.TextBoxConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Vml.TextBox>(value);
+      itemElement = DMXVml.TextBoxConverter.CreateOpenXmlElement<DXVml.TextBox>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static DocumentModel.Vml.TextPath? GetTextPath(DocumentFormat.OpenXml.Vml.ImageFile openXmlElement)
+  private static DMVml.TextPath? GetTextPath(DXVml.ImageFile openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Vml.TextPath>();
+    var itemElement = openXmlElement?.GetFirstChild<DXVml.TextPath>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Vml.TextPathConverter.CreateModelElement(itemElement);
+      return DMXVml.TextPathConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetTextPath(DocumentFormat.OpenXml.Vml.ImageFile openXmlElement, DocumentModel.Vml.TextPath? value)
+  private static void SetTextPath(DXVml.ImageFile openXmlElement, DMVml.TextPath? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Vml.TextPath>();
+    var itemElement = openXmlElement.GetFirstChild<DXVml.TextPath>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Vml.TextPathConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Vml.TextPath>(value);
+      itemElement = DMXVml.TextPathConverter.CreateOpenXmlElement<DXVml.TextPath>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static DocumentModel.Vml.ImageData? GetImageData(DocumentFormat.OpenXml.Vml.ImageFile openXmlElement)
+  private static DMVml.ImageData? GetImageData(DXVml.ImageFile openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Vml.ImageData>();
+    var itemElement = openXmlElement?.GetFirstChild<DXVml.ImageData>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Vml.ImageDataConverter.CreateModelElement(itemElement);
+      return DMXVml.ImageDataConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetImageData(DocumentFormat.OpenXml.Vml.ImageFile openXmlElement, DocumentModel.Vml.ImageData? value)
+  private static void SetImageData(DXVml.ImageFile openXmlElement, DMVml.ImageData? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Vml.ImageData>();
+    var itemElement = openXmlElement.GetFirstChild<DXVml.ImageData>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Vml.ImageDataConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Vml.ImageData>(value);
+      itemElement = DMXVml.ImageDataConverter.CreateOpenXmlElement<DXVml.ImageData>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static DocumentModel.Vml.Skew? GetSkew(DocumentFormat.OpenXml.Vml.ImageFile openXmlElement)
+  private static DMVml.Skew? GetSkew(DXVml.ImageFile openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Vml.Office.Skew>();
+    var itemElement = openXmlElement?.GetFirstChild<DXVmlO.Skew>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Vml.SkewConverter.CreateModelElement(itemElement);
+      return DMXVml.SkewConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetSkew(DocumentFormat.OpenXml.Vml.ImageFile openXmlElement, DocumentModel.Vml.Skew? value)
+  private static void SetSkew(DXVml.ImageFile openXmlElement, DMVml.Skew? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Vml.Office.Skew>();
+    var itemElement = openXmlElement.GetFirstChild<DXVmlO.Skew>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Vml.SkewConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Vml.Office.Skew>(value);
+      itemElement = DMXVml.SkewConverter.CreateOpenXmlElement<DXVmlO.Skew>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static DocumentModel.Vml.Extrusion? GetExtrusion(DocumentFormat.OpenXml.Vml.ImageFile openXmlElement)
+  private static DMVml.Extrusion? GetExtrusion(DXVml.ImageFile openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Vml.Office.Extrusion>();
+    var itemElement = openXmlElement?.GetFirstChild<DXVmlO.Extrusion>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Vml.ExtrusionConverter.CreateModelElement(itemElement);
+      return DMXVml.ExtrusionConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetExtrusion(DocumentFormat.OpenXml.Vml.ImageFile openXmlElement, DocumentModel.Vml.Extrusion? value)
+  private static void SetExtrusion(DXVml.ImageFile openXmlElement, DMVml.Extrusion? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Vml.Office.Extrusion>();
+    var itemElement = openXmlElement.GetFirstChild<DXVmlO.Extrusion>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Vml.ExtrusionConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Vml.Office.Extrusion>(value);
+      itemElement = DMXVml.ExtrusionConverter.CreateOpenXmlElement<DXVmlO.Extrusion>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static DocumentModel.Vml.Callout? GetCallout(DocumentFormat.OpenXml.Vml.ImageFile openXmlElement)
+  private static DMVml.Callout? GetCallout(DXVml.ImageFile openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Vml.Office.Callout>();
+    var itemElement = openXmlElement?.GetFirstChild<DXVmlO.Callout>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Vml.CalloutConverter.CreateModelElement(itemElement);
+      return DMXVml.CalloutConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetCallout(DocumentFormat.OpenXml.Vml.ImageFile openXmlElement, DocumentModel.Vml.Callout? value)
+  private static void SetCallout(DXVml.ImageFile openXmlElement, DMVml.Callout? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Vml.Office.Callout>();
+    var itemElement = openXmlElement.GetFirstChild<DXVmlO.Callout>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Vml.CalloutConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Vml.Office.Callout>(value);
+      itemElement = DMXVml.CalloutConverter.CreateOpenXmlElement<DXVmlO.Callout>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static DocumentModel.Vml.Lock? GetLock(DocumentFormat.OpenXml.Vml.ImageFile openXmlElement)
+  private static DMVml.Lock? GetLock(DXVml.ImageFile openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Vml.Office.Lock>();
+    var itemElement = openXmlElement?.GetFirstChild<DXVmlO.Lock>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Vml.LockConverter.CreateModelElement(itemElement);
+      return DMXVml.LockConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetLock(DocumentFormat.OpenXml.Vml.ImageFile openXmlElement, DocumentModel.Vml.Lock? value)
+  private static void SetLock(DXVml.ImageFile openXmlElement, DMVml.Lock? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Vml.Office.Lock>();
+    var itemElement = openXmlElement.GetFirstChild<DXVmlO.Lock>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Vml.LockConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Vml.Office.Lock>(value);
+      itemElement = DMXVml.LockConverter.CreateOpenXmlElement<DXVmlO.Lock>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static DocumentModel.Vml.ClipPath? GetClipPath(DocumentFormat.OpenXml.Vml.ImageFile openXmlElement)
+  private static DMVml.ClipPath? GetClipPath(DXVml.ImageFile openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Vml.Office.ClipPath>();
+    var itemElement = openXmlElement?.GetFirstChild<DXVmlO.ClipPath>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Vml.ClipPathConverter.CreateModelElement(itemElement);
+      return DMXVml.ClipPathConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetClipPath(DocumentFormat.OpenXml.Vml.ImageFile openXmlElement, DocumentModel.Vml.ClipPath? value)
+  private static void SetClipPath(DXVml.ImageFile openXmlElement, DMVml.ClipPath? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Vml.Office.ClipPath>();
+    var itemElement = openXmlElement.GetFirstChild<DXVmlO.ClipPath>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Vml.ClipPathConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Vml.Office.ClipPath>(value);
+      itemElement = DMXVml.ClipPathConverter.CreateOpenXmlElement<DXVmlO.ClipPath>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static DocumentModel.Vml.SignatureLine? GetSignatureLine(DocumentFormat.OpenXml.Vml.ImageFile openXmlElement)
+  private static DMVml.SignatureLine? GetSignatureLine(DXVml.ImageFile openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Vml.Office.SignatureLine>();
+    var itemElement = openXmlElement?.GetFirstChild<DXVmlO.SignatureLine>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Vml.SignatureLineConverter.CreateModelElement(itemElement);
+      return DMXVml.SignatureLineConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetSignatureLine(DocumentFormat.OpenXml.Vml.ImageFile openXmlElement, DocumentModel.Vml.SignatureLine? value)
+  private static void SetSignatureLine(DXVml.ImageFile openXmlElement, DMVml.SignatureLine? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Vml.Office.SignatureLine>();
+    var itemElement = openXmlElement.GetFirstChild<DXVmlO.SignatureLine>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Vml.SignatureLineConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Vml.Office.SignatureLine>(value);
+      itemElement = DMXVml.SignatureLineConverter.CreateOpenXmlElement<DXVmlO.SignatureLine>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static DocumentModel.Wordprocessing.Vml.TextWrap? GetTextWrap(DocumentFormat.OpenXml.Vml.ImageFile openXmlElement)
+  private static DMWVml.TextWrap? GetTextWrap(DXVml.ImageFile openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Vml.Wordprocessing.TextWrap>();
+    var itemElement = openXmlElement?.GetFirstChild<DXVmlW.TextWrap>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Wordprocessing.Vml.TextWrapConverter.CreateModelElement(itemElement);
+      return DMXWVml.TextWrapConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetTextWrap(DocumentFormat.OpenXml.Vml.ImageFile openXmlElement, DocumentModel.Wordprocessing.Vml.TextWrap? value)
+  private static void SetTextWrap(DXVml.ImageFile openXmlElement, DMWVml.TextWrap? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Vml.Wordprocessing.TextWrap>();
+    var itemElement = openXmlElement.GetFirstChild<DXVmlW.TextWrap>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Wordprocessing.Vml.TextWrapConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Vml.Wordprocessing.TextWrap>(value);
+      itemElement = DMXWVml.TextWrapConverter.CreateOpenXmlElement<DXVmlW.TextWrap>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static Boolean? GetAnchorLock(DocumentFormat.OpenXml.Vml.ImageFile openXmlElement)
+  private static Boolean? GetAnchorLock(DXVml.ImageFile openXmlElement)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Vml.Wordprocessing.AnchorLock>();
+    var itemElement = openXmlElement.GetFirstChild<DXVmlW.AnchorLock>();
     return itemElement != null;
   }
   
-  private static void SetAnchorLock(DocumentFormat.OpenXml.Vml.ImageFile openXmlElement, Boolean? value)
+  private static void SetAnchorLock(DXVml.ImageFile openXmlElement, Boolean? value)
   {
     if (value == false)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Vml.Wordprocessing.AnchorLock>();
+      var itemElement = openXmlElement.GetFirstChild<DXVmlW.AnchorLock>();
       if (itemElement != null)
         itemElement.Remove();
     }
     if (value == true)
     {
-      var itemElement = new DocumentFormat.OpenXml.Vml.Wordprocessing.AnchorLock();
+      var itemElement = new DXVmlW.AnchorLock();
       openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static DocumentModel.Wordprocessing.Vml.BorderType? GetTopBorder(DocumentFormat.OpenXml.Vml.ImageFile openXmlElement)
+  private static DMWVml.BorderType? GetTopBorder(DXVml.ImageFile openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Vml.Wordprocessing.TopBorder>();
+    var itemElement = openXmlElement?.GetFirstChild<DXVmlW.TopBorder>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Wordprocessing.Vml.BorderTypeConverter.CreateModelElement(itemElement);
+      return DMXWVml.BorderTypeConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetTopBorder(DocumentFormat.OpenXml.Vml.ImageFile openXmlElement, DocumentModel.Wordprocessing.Vml.BorderType? value)
+  private static void SetTopBorder(DXVml.ImageFile openXmlElement, DMWVml.BorderType? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Vml.Wordprocessing.TopBorder>();
+    var itemElement = openXmlElement.GetFirstChild<DXVmlW.TopBorder>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Wordprocessing.Vml.BorderTypeConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Vml.Wordprocessing.TopBorder>(value);
+      itemElement = DMXWVml.BorderTypeConverter.CreateOpenXmlElement<DXVmlW.TopBorder>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static DocumentModel.Wordprocessing.Vml.BorderType? GetBottomBorder(DocumentFormat.OpenXml.Vml.ImageFile openXmlElement)
+  private static DMWVml.BorderType? GetBottomBorder(DXVml.ImageFile openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Vml.Wordprocessing.BottomBorder>();
+    var itemElement = openXmlElement?.GetFirstChild<DXVmlW.BottomBorder>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Wordprocessing.Vml.BorderTypeConverter.CreateModelElement(itemElement);
+      return DMXWVml.BorderTypeConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetBottomBorder(DocumentFormat.OpenXml.Vml.ImageFile openXmlElement, DocumentModel.Wordprocessing.Vml.BorderType? value)
+  private static void SetBottomBorder(DXVml.ImageFile openXmlElement, DMWVml.BorderType? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Vml.Wordprocessing.BottomBorder>();
+    var itemElement = openXmlElement.GetFirstChild<DXVmlW.BottomBorder>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Wordprocessing.Vml.BorderTypeConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Vml.Wordprocessing.BottomBorder>(value);
+      itemElement = DMXWVml.BorderTypeConverter.CreateOpenXmlElement<DXVmlW.BottomBorder>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static DocumentModel.Wordprocessing.Vml.BorderType? GetLeftBorder(DocumentFormat.OpenXml.Vml.ImageFile openXmlElement)
+  private static DMWVml.BorderType? GetLeftBorder(DXVml.ImageFile openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Vml.Wordprocessing.LeftBorder>();
+    var itemElement = openXmlElement?.GetFirstChild<DXVmlW.LeftBorder>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Wordprocessing.Vml.BorderTypeConverter.CreateModelElement(itemElement);
+      return DMXWVml.BorderTypeConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetLeftBorder(DocumentFormat.OpenXml.Vml.ImageFile openXmlElement, DocumentModel.Wordprocessing.Vml.BorderType? value)
+  private static void SetLeftBorder(DXVml.ImageFile openXmlElement, DMWVml.BorderType? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Vml.Wordprocessing.LeftBorder>();
+    var itemElement = openXmlElement.GetFirstChild<DXVmlW.LeftBorder>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Wordprocessing.Vml.BorderTypeConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Vml.Wordprocessing.LeftBorder>(value);
+      itemElement = DMXWVml.BorderTypeConverter.CreateOpenXmlElement<DXVmlW.LeftBorder>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static DocumentModel.Wordprocessing.Vml.BorderType? GetRightBorder(DocumentFormat.OpenXml.Vml.ImageFile openXmlElement)
+  private static DMWVml.BorderType? GetRightBorder(DXVml.ImageFile openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Vml.Wordprocessing.RightBorder>();
+    var itemElement = openXmlElement?.GetFirstChild<DXVmlW.RightBorder>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Wordprocessing.Vml.BorderTypeConverter.CreateModelElement(itemElement);
+      return DMXWVml.BorderTypeConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetRightBorder(DocumentFormat.OpenXml.Vml.ImageFile openXmlElement, DocumentModel.Wordprocessing.Vml.BorderType? value)
+  private static void SetRightBorder(DXVml.ImageFile openXmlElement, DMWVml.BorderType? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Vml.Wordprocessing.RightBorder>();
+    var itemElement = openXmlElement.GetFirstChild<DXVmlW.RightBorder>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Wordprocessing.Vml.BorderTypeConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Vml.Wordprocessing.RightBorder>(value);
+      itemElement = DMXWVml.BorderTypeConverter.CreateOpenXmlElement<DXVmlW.RightBorder>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  public static DocumentModel.Vml.ImageFile? CreateModelElement(DocumentFormat.OpenXml.Vml.ImageFile? openXmlElement)
+  public static DMVml.ImageFile? CreateModelElement(DXVml.ImageFile? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Vml.ImageFile();
+      var value = new DMVml.ImageFile();
       value.Id = GetId(openXmlElement);
       value.Style = GetStyle(openXmlElement);
       value.Href = GetHref(openXmlElement);
@@ -1480,8 +1480,8 @@ public static class ImageFileConverter
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Vml.ImageFile? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Vml.ImageFile, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMVml.ImageFile? value)
+    where OpenXmlElementType: DXVml.ImageFile, new()
   {
     if (value != null)
     {

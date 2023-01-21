@@ -8,12 +8,12 @@ public static class ArtisticLineDrawingConverter
   /// <summary>
   /// trans, this property is only available in Office 2010 and later.
   /// </summary>
-  private static Int32? GetTransparancy(DocumentFormat.OpenXml.Office2010.Drawing.ArtisticLineDrawing openXmlElement)
+  private static Int32? GetTransparancy(DXO2010Draw.ArtisticLineDrawing openXmlElement)
   {
     return openXmlElement.Transparancy?.Value;
   }
   
-  private static void SetTransparancy(DocumentFormat.OpenXml.Office2010.Drawing.ArtisticLineDrawing openXmlElement, Int32? value)
+  private static void SetTransparancy(DXO2010Draw.ArtisticLineDrawing openXmlElement, Int32? value)
   {
     openXmlElement.Transparancy = value;
   }
@@ -21,21 +21,21 @@ public static class ArtisticLineDrawingConverter
   /// <summary>
   /// pencilSize, this property is only available in Office 2010 and later.
   /// </summary>
-  private static Int32? GetPencilSize(DocumentFormat.OpenXml.Office2010.Drawing.ArtisticLineDrawing openXmlElement)
+  private static Int32? GetPencilSize(DXO2010Draw.ArtisticLineDrawing openXmlElement)
   {
     return openXmlElement.PencilSize?.Value;
   }
   
-  private static void SetPencilSize(DocumentFormat.OpenXml.Office2010.Drawing.ArtisticLineDrawing openXmlElement, Int32? value)
+  private static void SetPencilSize(DXO2010Draw.ArtisticLineDrawing openXmlElement, Int32? value)
   {
     openXmlElement.PencilSize = value;
   }
   
-  public static DocumentModel.Drawings.ArtisticLineDrawing? CreateModelElement(DocumentFormat.OpenXml.Office2010.Drawing.ArtisticLineDrawing? openXmlElement)
+  public static DMDraws.ArtisticLineDrawing? CreateModelElement(DXO2010Draw.ArtisticLineDrawing? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.ArtisticLineDrawing();
+      var value = new DMDraws.ArtisticLineDrawing();
       value.Transparancy = GetTransparancy(openXmlElement);
       value.PencilSize = GetPencilSize(openXmlElement);
       return value;
@@ -43,8 +43,8 @@ public static class ArtisticLineDrawingConverter
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.ArtisticLineDrawing? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Office2010.Drawing.ArtisticLineDrawing, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDraws.ArtisticLineDrawing? value)
+    where OpenXmlElementType: DXO2010Draw.ArtisticLineDrawing, new()
   {
     if (value != null)
     {

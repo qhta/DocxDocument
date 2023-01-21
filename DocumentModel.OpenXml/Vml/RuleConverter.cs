@@ -8,12 +8,12 @@ public static class RuleConverter
   /// <summary>
   /// Rule ID
   /// </summary>
-  private static String? GetId(DocumentFormat.OpenXml.Vml.Office.Rule openXmlElement)
+  private static String? GetId(DXVmlO.Rule openXmlElement)
   {
     return openXmlElement?.Id?.Value;
   }
   
-  private static void SetId(DocumentFormat.OpenXml.Vml.Office.Rule openXmlElement, String? value)
+  private static void SetId(DXVmlO.Rule openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.Id = new StringValue { Value = value };
@@ -24,38 +24,38 @@ public static class RuleConverter
   /// <summary>
   /// Rule Type
   /// </summary>
-  private static DocumentModel.Vml.RuleKind? GetType(DocumentFormat.OpenXml.Vml.Office.Rule openXmlElement)
+  private static DMVml.RuleKind? GetType(DXVmlO.Rule openXmlElement)
   {
-    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Vml.Office.RuleValues, DocumentModel.Vml.RuleKind>(openXmlElement?.Type?.Value);
+    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Vml.Office.RuleValues, DMVml.RuleKind>(openXmlElement?.Type?.Value);
   }
   
-  private static void SetType(DocumentFormat.OpenXml.Vml.Office.Rule openXmlElement, DocumentModel.Vml.RuleKind? value)
+  private static void SetType(DXVmlO.Rule openXmlElement, DMVml.RuleKind? value)
   {
-    openXmlElement.Type = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Vml.Office.RuleValues, DocumentModel.Vml.RuleKind>(value);
+    openXmlElement.Type = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Vml.Office.RuleValues, DMVml.RuleKind>(value);
   }
   
   /// <summary>
   /// Alignment Rule Type
   /// </summary>
-  private static DocumentModel.Vml.AlignmentKind? GetHow(DocumentFormat.OpenXml.Vml.Office.Rule openXmlElement)
+  private static DMVml.AlignmentKind? GetHow(DXVmlO.Rule openXmlElement)
   {
-    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Vml.Office.AlignmentValues, DocumentModel.Vml.AlignmentKind>(openXmlElement?.How?.Value);
+    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Vml.Office.AlignmentValues, DMVml.AlignmentKind>(openXmlElement?.How?.Value);
   }
   
-  private static void SetHow(DocumentFormat.OpenXml.Vml.Office.Rule openXmlElement, DocumentModel.Vml.AlignmentKind? value)
+  private static void SetHow(DXVmlO.Rule openXmlElement, DMVml.AlignmentKind? value)
   {
-    openXmlElement.How = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Vml.Office.AlignmentValues, DocumentModel.Vml.AlignmentKind>(value);
+    openXmlElement.How = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Vml.Office.AlignmentValues, DMVml.AlignmentKind>(value);
   }
   
   /// <summary>
   /// Rule Shape Reference
   /// </summary>
-  private static String? GetShapeReference(DocumentFormat.OpenXml.Vml.Office.Rule openXmlElement)
+  private static String? GetShapeReference(DXVmlO.Rule openXmlElement)
   {
     return openXmlElement?.ShapeReference?.Value;
   }
   
-  private static void SetShapeReference(DocumentFormat.OpenXml.Vml.Office.Rule openXmlElement, String? value)
+  private static void SetShapeReference(DXVmlO.Rule openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.ShapeReference = new StringValue { Value = value };
@@ -63,37 +63,37 @@ public static class RuleConverter
       openXmlElement.ShapeReference = null;
   }
   
-  private static System.Collections.ObjectModel.Collection<DocumentModel.Vml.Proxy> GetProxies(DocumentFormat.OpenXml.Vml.Office.Rule openXmlElement)
+  private static Collection<DMVml.Proxy> GetProxies(DXVmlO.Rule openXmlElement)
   {
-    var collection = new System.Collections.ObjectModel.Collection<DocumentModel.Vml.Proxy>();
-    foreach (var item in openXmlElement.Elements<DocumentFormat.OpenXml.Vml.Office.Proxy>())
+    var collection = new Collection<DMVml.Proxy>();
+    foreach (var item in openXmlElement.Elements<DXVmlO.Proxy>())
     {
-      var newItem = DocumentModel.OpenXml.Vml.ProxyConverter.CreateModelElement(item);
+      var newItem = DMXVml.ProxyConverter.CreateModelElement(item);
       if (newItem != null)
         collection.Add(newItem);
     }
     return collection;
   }
   
-  private static void SetProxies(DocumentFormat.OpenXml.Vml.Office.Rule openXmlElement, System.Collections.ObjectModel.Collection<DocumentModel.Vml.Proxy>? value)
+  private static void SetProxies(DXVmlO.Rule openXmlElement, Collection<DMVml.Proxy>? value)
   {
-    openXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Vml.Office.Proxy>();
+    openXmlElement.RemoveAllChildren<DXVmlO.Proxy>();
     if (value != null)
     {
       foreach (var item in value)
       {
-        var newItem = DocumentModel.OpenXml.Vml.ProxyConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Vml.Office.Proxy>(item);
+        var newItem = DMXVml.ProxyConverter.CreateOpenXmlElement<DXVmlO.Proxy>(item);
         if (newItem != null)
           openXmlElement.AddChild(newItem);
       }
     }
   }
   
-  public static DocumentModel.Vml.Rule? CreateModelElement(DocumentFormat.OpenXml.Vml.Office.Rule? openXmlElement)
+  public static DMVml.Rule? CreateModelElement(DXVmlO.Rule? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Vml.Rule();
+      var value = new DMVml.Rule();
       value.Id = GetId(openXmlElement);
       value.Type = GetType(openXmlElement);
       value.How = GetHow(openXmlElement);
@@ -104,8 +104,8 @@ public static class RuleConverter
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Vml.Rule? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Vml.Office.Rule, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMVml.Rule? value)
+    where OpenXmlElementType: DXVmlO.Rule, new()
   {
     if (value != null)
     {

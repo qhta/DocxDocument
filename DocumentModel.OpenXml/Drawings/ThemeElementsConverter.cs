@@ -8,22 +8,22 @@ public static class ThemeElementsConverter
   /// <summary>
   /// ColorScheme.
   /// </summary>
-  private static DocumentModel.Drawings.ColorScheme? GetColorScheme(DocumentFormat.OpenXml.Drawing.ThemeElements openXmlElement)
+  private static DMDraws.ColorScheme? GetColorScheme(DXDraw.ThemeElements openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.ColorScheme>();
+    var itemElement = openXmlElement?.GetFirstChild<DXDraw.ColorScheme>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.ColorSchemeConverter.CreateModelElement(itemElement);
+      return DMXDraws.ColorSchemeConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetColorScheme(DocumentFormat.OpenXml.Drawing.ThemeElements openXmlElement, DocumentModel.Drawings.ColorScheme? value)
+  private static void SetColorScheme(DXDraw.ThemeElements openXmlElement, DMDraws.ColorScheme? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.ColorScheme>();
+    var itemElement = openXmlElement.GetFirstChild<DXDraw.ColorScheme>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Drawings.ColorSchemeConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.ColorScheme>(value);
+      itemElement = DMXDraws.ColorSchemeConverter.CreateOpenXmlElement<DXDraw.ColorScheme>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
@@ -32,22 +32,22 @@ public static class ThemeElementsConverter
   /// <summary>
   /// Font Scheme.
   /// </summary>
-  private static DocumentModel.Drawings.FontScheme? GetFontScheme(DocumentFormat.OpenXml.Drawing.ThemeElements openXmlElement)
+  private static DMDraws.FontScheme? GetFontScheme(DXDraw.ThemeElements openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.FontScheme>();
+    var itemElement = openXmlElement?.GetFirstChild<DXDraw.FontScheme>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.FontSchemeConverter.CreateModelElement(itemElement);
+      return DMXDraws.FontSchemeConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetFontScheme(DocumentFormat.OpenXml.Drawing.ThemeElements openXmlElement, DocumentModel.Drawings.FontScheme? value)
+  private static void SetFontScheme(DXDraw.ThemeElements openXmlElement, DMDraws.FontScheme? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.FontScheme>();
+    var itemElement = openXmlElement.GetFirstChild<DXDraw.FontScheme>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Drawings.FontSchemeConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.FontScheme>(value);
+      itemElement = DMXDraws.FontSchemeConverter.CreateOpenXmlElement<DXDraw.FontScheme>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
@@ -56,22 +56,22 @@ public static class ThemeElementsConverter
   /// <summary>
   /// Format Scheme.
   /// </summary>
-  private static DocumentModel.Drawings.FormatScheme? GetFormatScheme(DocumentFormat.OpenXml.Drawing.ThemeElements openXmlElement)
+  private static DMDraws.FormatScheme? GetFormatScheme(DXDraw.ThemeElements openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.FormatScheme>();
+    var itemElement = openXmlElement?.GetFirstChild<DXDraw.FormatScheme>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.FormatSchemeConverter.CreateModelElement(itemElement);
+      return DMXDraws.FormatSchemeConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetFormatScheme(DocumentFormat.OpenXml.Drawing.ThemeElements openXmlElement, DocumentModel.Drawings.FormatScheme? value)
+  private static void SetFormatScheme(DXDraw.ThemeElements openXmlElement, DMDraws.FormatScheme? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.FormatScheme>();
+    var itemElement = openXmlElement.GetFirstChild<DXDraw.FormatScheme>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Drawings.FormatSchemeConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.FormatScheme>(value);
+      itemElement = DMXDraws.FormatSchemeConverter.CreateOpenXmlElement<DXDraw.FormatScheme>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
@@ -80,32 +80,32 @@ public static class ThemeElementsConverter
   /// <summary>
   /// ExtensionList.
   /// </summary>
-  private static DocumentModel.Drawings.ExtensionList? GetExtensionList(DocumentFormat.OpenXml.Drawing.ThemeElements openXmlElement)
+  private static DMDraws.ExtensionList? GetExtensionList(DXDraw.ThemeElements openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.ExtensionList>();
+    var itemElement = openXmlElement?.GetFirstChild<DXDraw.ExtensionList>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.ExtensionListConverter.CreateModelElement(itemElement);
+      return DMXDraws.ExtensionListConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetExtensionList(DocumentFormat.OpenXml.Drawing.ThemeElements openXmlElement, DocumentModel.Drawings.ExtensionList? value)
+  private static void SetExtensionList(DXDraw.ThemeElements openXmlElement, DMDraws.ExtensionList? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.ExtensionList>();
+    var itemElement = openXmlElement.GetFirstChild<DXDraw.ExtensionList>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Drawings.ExtensionListConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.ExtensionList>(value);
+      itemElement = DMXDraws.ExtensionListConverter.CreateOpenXmlElement<DXDraw.ExtensionList>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  public static DocumentModel.Drawings.ThemeElements? CreateModelElement(DocumentFormat.OpenXml.Drawing.ThemeElements? openXmlElement)
+  public static DMDraws.ThemeElements? CreateModelElement(DXDraw.ThemeElements? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.ThemeElements();
+      var value = new DMDraws.ThemeElements();
       value.ColorScheme = GetColorScheme(openXmlElement);
       value.FontScheme = GetFontScheme(openXmlElement);
       value.FormatScheme = GetFormatScheme(openXmlElement);
@@ -115,8 +115,8 @@ public static class ThemeElementsConverter
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.ThemeElements? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.ThemeElements, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDraws.ThemeElements? value)
+    where OpenXmlElementType: DXDraw.ThemeElements, new()
   {
     if (value != null)
     {

@@ -5,21 +5,21 @@ namespace DocumentModel.OpenXml.Packaging;
 /// </summary>
 public static class WordAttachedToolbarsPartConverter
 {
-  private static String? GetContentType(DocumentFormat.OpenXml.Packaging.WordAttachedToolbarsPart openXmlElement)
+  private static String? GetContentType(DXPack.WordAttachedToolbarsPart openXmlElement)
   {
     return openXmlElement?.ContentType;
   }
   
-  private static String? GetRelationshipType(DocumentFormat.OpenXml.Packaging.WordAttachedToolbarsPart openXmlElement)
+  private static String? GetRelationshipType(DXPack.WordAttachedToolbarsPart openXmlElement)
   {
     return openXmlElement?.RelationshipType;
   }
   
-  public static DocumentModel.Packaging.WordAttachedToolbarsPart? CreateModelElement(DocumentFormat.OpenXml.Packaging.WordAttachedToolbarsPart? openXmlElement)
+  public static DMPack.WordAttachedToolbarsPart? CreateModelElement(DXPack.WordAttachedToolbarsPart? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Packaging.WordAttachedToolbarsPart();
+      var value = new DMPack.WordAttachedToolbarsPart();
       value.ContentType = GetContentType(openXmlElement);
       value.RelationshipType = GetRelationshipType(openXmlElement);
       return value;
@@ -27,8 +27,8 @@ public static class WordAttachedToolbarsPartConverter
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Packaging.WordAttachedToolbarsPart? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Packaging.WordAttachedToolbarsPart, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMPack.WordAttachedToolbarsPart? value)
+    where OpenXmlElementType: DXPack.WordAttachedToolbarsPart, new()
   {
     if (value != null)
     {

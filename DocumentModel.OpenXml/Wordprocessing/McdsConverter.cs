@@ -5,45 +5,45 @@ namespace DocumentModel.OpenXml.Wordprocessing;
 /// </summary>
 public static class McdsConverter
 {
-  private static System.Collections.ObjectModel.Collection<DocumentModel.Wordprocessing.Mcd> GetItems(DocumentFormat.OpenXml.Office.Word.Mcds openXmlElement)
+  private static Collection<DMW.Mcd> GetItems(DXOW.Mcds openXmlElement)
   {
-    var collection = new System.Collections.ObjectModel.Collection<DocumentModel.Wordprocessing.Mcd>();
-    foreach (var item in openXmlElement.Elements<DocumentFormat.OpenXml.Office.Word.Mcd>())
+    var collection = new Collection<DMW.Mcd>();
+    foreach (var item in openXmlElement.Elements<DXOW.Mcd>())
     {
-      var newItem = DocumentModel.OpenXml.Wordprocessing.McdConverter.CreateModelElement(item);
+      var newItem = DMXW.McdConverter.CreateModelElement(item);
       if (newItem != null)
         collection.Add(newItem);
     }
     return collection;
   }
   
-  private static void SetItems(DocumentFormat.OpenXml.Office.Word.Mcds openXmlElement, System.Collections.ObjectModel.Collection<DocumentModel.Wordprocessing.Mcd>? value)
+  private static void SetItems(DXOW.Mcds openXmlElement, Collection<DMW.Mcd>? value)
   {
-    openXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Office.Word.Mcd>();
+    openXmlElement.RemoveAllChildren<DXOW.Mcd>();
     if (value != null)
     {
       foreach (var item in value)
       {
-        var newItem = DocumentModel.OpenXml.Wordprocessing.McdConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office.Word.Mcd>(item);
+        var newItem = DMXW.McdConverter.CreateOpenXmlElement<DXOW.Mcd>(item);
         if (newItem != null)
           openXmlElement.AddChild(newItem);
       }
     }
   }
   
-  public static DocumentModel.Wordprocessing.Mcds? CreateModelElement(DocumentFormat.OpenXml.Office.Word.Mcds? openXmlElement)
+  public static DMW.Mcds? CreateModelElement(DXOW.Mcds? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Wordprocessing.Mcds();
+      var value = new DMW.Mcds();
       value.Items = GetItems(openXmlElement);
       return value;
     }
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.Mcds? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Office.Word.Mcds, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMW.Mcds? value)
+    where OpenXmlElementType: DXOW.Mcds, new()
   {
     if (value != null)
     {

@@ -5,98 +5,98 @@ namespace DocumentModel.OpenXml.Drawings.Charts;
 /// </summary>
 public static class NumberingCacheConverter
 {
-  private static String? GetFormatCode(DocumentFormat.OpenXml.Drawing.Charts.NumberingCache openXmlElement)
+  private static String? GetFormatCode(DXDrawCharts.NumberingCache openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.FormatCode>();
+    var itemElement = openXmlElement?.GetFirstChild<DXDrawCharts.FormatCode>();
     if (itemElement != null)
       return itemElement.Text;
     return null;
   }
   
-  private static void SetFormatCode(DocumentFormat.OpenXml.Drawing.Charts.NumberingCache openXmlElement, String? value)
+  private static void SetFormatCode(DXDrawCharts.NumberingCache openXmlElement, String? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.FormatCode>();
+    var itemElement = openXmlElement.GetFirstChild<DXDrawCharts.FormatCode>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = new DocumentFormat.OpenXml.Drawing.Charts.FormatCode { Text = value };
+      itemElement = new DXDrawCharts.FormatCode { Text = value };
       openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static UInt32? GetPointCount(DocumentFormat.OpenXml.Drawing.Charts.NumberingCache openXmlElement)
+  private static UInt32? GetPointCount(DXDrawCharts.NumberingCache openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.PointCount>();
+    var itemElement = openXmlElement?.GetFirstChild<DXDrawCharts.PointCount>();
     if (itemElement != null)
       return itemElement.Val?.Value;
     return null;
   }
   
-  private static void SetPointCount(DocumentFormat.OpenXml.Drawing.Charts.NumberingCache openXmlElement, UInt32? value)
+  private static void SetPointCount(DXDrawCharts.NumberingCache openXmlElement, UInt32? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.PointCount>();
+    var itemElement = openXmlElement.GetFirstChild<DXDrawCharts.PointCount>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = new DocumentFormat.OpenXml.Drawing.Charts.PointCount{ Val = value };
+      itemElement = new DXDrawCharts.PointCount{ Val = value };
       openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static System.Collections.ObjectModel.Collection<DocumentModel.Drawings.Charts.NumericPoint> GetNumericPoints(DocumentFormat.OpenXml.Drawing.Charts.NumberingCache openXmlElement)
+  private static Collection<DMDrawsCharts.NumericPoint> GetNumericPoints(DXDrawCharts.NumberingCache openXmlElement)
   {
-    var collection = new System.Collections.ObjectModel.Collection<DocumentModel.Drawings.Charts.NumericPoint>();
-    foreach (var item in openXmlElement.Elements<DocumentFormat.OpenXml.Drawing.Charts.NumericPoint>())
+    var collection = new Collection<DMDrawsCharts.NumericPoint>();
+    foreach (var item in openXmlElement.Elements<DXDrawCharts.NumericPoint>())
     {
-      var newItem = DocumentModel.OpenXml.Drawings.Charts.NumericPointConverter.CreateModelElement(item);
+      var newItem = DMXDrawsCharts.NumericPointConverter.CreateModelElement(item);
       if (newItem != null)
         collection.Add(newItem);
     }
     return collection;
   }
   
-  private static void SetNumericPoints(DocumentFormat.OpenXml.Drawing.Charts.NumberingCache openXmlElement, System.Collections.ObjectModel.Collection<DocumentModel.Drawings.Charts.NumericPoint>? value)
+  private static void SetNumericPoints(DXDrawCharts.NumberingCache openXmlElement, Collection<DMDrawsCharts.NumericPoint>? value)
   {
-    openXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Drawing.Charts.NumericPoint>();
+    openXmlElement.RemoveAllChildren<DXDrawCharts.NumericPoint>();
     if (value != null)
     {
       foreach (var item in value)
       {
-        var newItem = DocumentModel.OpenXml.Drawings.Charts.NumericPointConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Charts.NumericPoint>(item);
+        var newItem = DMXDrawsCharts.NumericPointConverter.CreateOpenXmlElement<DXDrawCharts.NumericPoint>(item);
         if (newItem != null)
           openXmlElement.AddChild(newItem);
       }
     }
   }
   
-  private static DocumentModel.Drawings.Charts.ExtensionList? GetExtensionList(DocumentFormat.OpenXml.Drawing.Charts.NumberingCache openXmlElement)
+  private static DMDrawsCharts.ExtensionList? GetExtensionList(DXDrawCharts.NumberingCache openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.ExtensionList>();
+    var itemElement = openXmlElement?.GetFirstChild<DXDrawCharts.ExtensionList>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.Charts.ExtensionListConverter.CreateModelElement(itemElement);
+      return DMXDrawsCharts.ExtensionListConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetExtensionList(DocumentFormat.OpenXml.Drawing.Charts.NumberingCache openXmlElement, DocumentModel.Drawings.Charts.ExtensionList? value)
+  private static void SetExtensionList(DXDrawCharts.NumberingCache openXmlElement, DMDrawsCharts.ExtensionList? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.ExtensionList>();
+    var itemElement = openXmlElement.GetFirstChild<DXDrawCharts.ExtensionList>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Drawings.Charts.ExtensionListConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Charts.ExtensionList>(value);
+      itemElement = DMXDrawsCharts.ExtensionListConverter.CreateOpenXmlElement<DXDrawCharts.ExtensionList>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  public static DocumentModel.Drawings.Charts.NumberingCache? CreateModelElement(DocumentFormat.OpenXml.Drawing.Charts.NumberingCache? openXmlElement)
+  public static DMDrawsCharts.NumberingCache? CreateModelElement(DXDrawCharts.NumberingCache? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.Charts.NumberingCache();
+      var value = new DMDrawsCharts.NumberingCache();
       value.FormatCode = GetFormatCode(openXmlElement);
       value.PointCount = GetPointCount(openXmlElement);
       value.NumericPoints = GetNumericPoints(openXmlElement);
@@ -106,8 +106,8 @@ public static class NumberingCacheConverter
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.Charts.NumberingCache? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.Charts.NumberingCache, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDrawsCharts.NumberingCache? value)
+    where OpenXmlElementType: DXDrawCharts.NumberingCache, new()
   {
     if (value != null)
     {

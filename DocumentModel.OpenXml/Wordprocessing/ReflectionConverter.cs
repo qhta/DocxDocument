@@ -8,12 +8,12 @@ public static class ReflectionConverter
   /// <summary>
   /// blurRad, this property is only available in Office 2010 and later.
   /// </summary>
-  private static Int64? GetBlurRadius(DocumentFormat.OpenXml.Office2010.Word.Reflection openXmlElement)
+  private static Int64? GetBlurRadius(DXO2010W.Reflection openXmlElement)
   {
     return openXmlElement.BlurRadius?.Value;
   }
   
-  private static void SetBlurRadius(DocumentFormat.OpenXml.Office2010.Word.Reflection openXmlElement, Int64? value)
+  private static void SetBlurRadius(DXO2010W.Reflection openXmlElement, Int64? value)
   {
     openXmlElement.BlurRadius = value;
   }
@@ -21,12 +21,12 @@ public static class ReflectionConverter
   /// <summary>
   /// stA, this property is only available in Office 2010 and later.
   /// </summary>
-  private static Int32? GetStartingOpacity(DocumentFormat.OpenXml.Office2010.Word.Reflection openXmlElement)
+  private static Int32? GetStartingOpacity(DXO2010W.Reflection openXmlElement)
   {
     return openXmlElement.StartingOpacity?.Value;
   }
   
-  private static void SetStartingOpacity(DocumentFormat.OpenXml.Office2010.Word.Reflection openXmlElement, Int32? value)
+  private static void SetStartingOpacity(DXO2010W.Reflection openXmlElement, Int32? value)
   {
     openXmlElement.StartingOpacity = value;
   }
@@ -34,12 +34,12 @@ public static class ReflectionConverter
   /// <summary>
   /// stPos, this property is only available in Office 2010 and later.
   /// </summary>
-  private static Int32? GetStartPosition(DocumentFormat.OpenXml.Office2010.Word.Reflection openXmlElement)
+  private static Int32? GetStartPosition(DXO2010W.Reflection openXmlElement)
   {
     return openXmlElement.StartPosition?.Value;
   }
   
-  private static void SetStartPosition(DocumentFormat.OpenXml.Office2010.Word.Reflection openXmlElement, Int32? value)
+  private static void SetStartPosition(DXO2010W.Reflection openXmlElement, Int32? value)
   {
     openXmlElement.StartPosition = value;
   }
@@ -47,12 +47,12 @@ public static class ReflectionConverter
   /// <summary>
   /// endA, this property is only available in Office 2010 and later.
   /// </summary>
-  private static Int32? GetEndingOpacity(DocumentFormat.OpenXml.Office2010.Word.Reflection openXmlElement)
+  private static Int32? GetEndingOpacity(DXO2010W.Reflection openXmlElement)
   {
     return openXmlElement.EndingOpacity?.Value;
   }
   
-  private static void SetEndingOpacity(DocumentFormat.OpenXml.Office2010.Word.Reflection openXmlElement, Int32? value)
+  private static void SetEndingOpacity(DXO2010W.Reflection openXmlElement, Int32? value)
   {
     openXmlElement.EndingOpacity = value;
   }
@@ -60,12 +60,12 @@ public static class ReflectionConverter
   /// <summary>
   /// endPos, this property is only available in Office 2010 and later.
   /// </summary>
-  private static Int32? GetEndPosition(DocumentFormat.OpenXml.Office2010.Word.Reflection openXmlElement)
+  private static Int32? GetEndPosition(DXO2010W.Reflection openXmlElement)
   {
     return openXmlElement.EndPosition?.Value;
   }
   
-  private static void SetEndPosition(DocumentFormat.OpenXml.Office2010.Word.Reflection openXmlElement, Int32? value)
+  private static void SetEndPosition(DXO2010W.Reflection openXmlElement, Int32? value)
   {
     openXmlElement.EndPosition = value;
   }
@@ -73,12 +73,12 @@ public static class ReflectionConverter
   /// <summary>
   /// dist, this property is only available in Office 2010 and later.
   /// </summary>
-  private static Int64? GetDistanceFromText(DocumentFormat.OpenXml.Office2010.Word.Reflection openXmlElement)
+  private static Int64? GetDistanceFromText(DXO2010W.Reflection openXmlElement)
   {
     return openXmlElement.DistanceFromText?.Value;
   }
   
-  private static void SetDistanceFromText(DocumentFormat.OpenXml.Office2010.Word.Reflection openXmlElement, Int64? value)
+  private static void SetDistanceFromText(DXO2010W.Reflection openXmlElement, Int64? value)
   {
     openXmlElement.DistanceFromText = value;
   }
@@ -86,12 +86,12 @@ public static class ReflectionConverter
   /// <summary>
   /// dir, this property is only available in Office 2010 and later.
   /// </summary>
-  private static Int32? GetDirectionAngle(DocumentFormat.OpenXml.Office2010.Word.Reflection openXmlElement)
+  private static Int32? GetDirectionAngle(DXO2010W.Reflection openXmlElement)
   {
     return openXmlElement.DirectionAngle?.Value;
   }
   
-  private static void SetDirectionAngle(DocumentFormat.OpenXml.Office2010.Word.Reflection openXmlElement, Int32? value)
+  private static void SetDirectionAngle(DXO2010W.Reflection openXmlElement, Int32? value)
   {
     openXmlElement.DirectionAngle = value;
   }
@@ -99,12 +99,12 @@ public static class ReflectionConverter
   /// <summary>
   /// fadeDir, this property is only available in Office 2010 and later.
   /// </summary>
-  private static Int32? GetFadeDirection(DocumentFormat.OpenXml.Office2010.Word.Reflection openXmlElement)
+  private static Int32? GetFadeDirection(DXO2010W.Reflection openXmlElement)
   {
     return openXmlElement.FadeDirection?.Value;
   }
   
-  private static void SetFadeDirection(DocumentFormat.OpenXml.Office2010.Word.Reflection openXmlElement, Int32? value)
+  private static void SetFadeDirection(DXO2010W.Reflection openXmlElement, Int32? value)
   {
     openXmlElement.FadeDirection = value;
   }
@@ -112,12 +112,12 @@ public static class ReflectionConverter
   /// <summary>
   /// sx, this property is only available in Office 2010 and later.
   /// </summary>
-  private static Int32? GetHorizontalScalingFactor(DocumentFormat.OpenXml.Office2010.Word.Reflection openXmlElement)
+  private static Int32? GetHorizontalScalingFactor(DXO2010W.Reflection openXmlElement)
   {
     return openXmlElement.HorizontalScalingFactor?.Value;
   }
   
-  private static void SetHorizontalScalingFactor(DocumentFormat.OpenXml.Office2010.Word.Reflection openXmlElement, Int32? value)
+  private static void SetHorizontalScalingFactor(DXO2010W.Reflection openXmlElement, Int32? value)
   {
     openXmlElement.HorizontalScalingFactor = value;
   }
@@ -125,12 +125,12 @@ public static class ReflectionConverter
   /// <summary>
   /// sy, this property is only available in Office 2010 and later.
   /// </summary>
-  private static Int32? GetVerticalScalingFactor(DocumentFormat.OpenXml.Office2010.Word.Reflection openXmlElement)
+  private static Int32? GetVerticalScalingFactor(DXO2010W.Reflection openXmlElement)
   {
     return openXmlElement.VerticalScalingFactor?.Value;
   }
   
-  private static void SetVerticalScalingFactor(DocumentFormat.OpenXml.Office2010.Word.Reflection openXmlElement, Int32? value)
+  private static void SetVerticalScalingFactor(DXO2010W.Reflection openXmlElement, Int32? value)
   {
     openXmlElement.VerticalScalingFactor = value;
   }
@@ -138,12 +138,12 @@ public static class ReflectionConverter
   /// <summary>
   /// kx, this property is only available in Office 2010 and later.
   /// </summary>
-  private static Int32? GetHorizontalSkewAngle(DocumentFormat.OpenXml.Office2010.Word.Reflection openXmlElement)
+  private static Int32? GetHorizontalSkewAngle(DXO2010W.Reflection openXmlElement)
   {
     return openXmlElement.HorizontalSkewAngle?.Value;
   }
   
-  private static void SetHorizontalSkewAngle(DocumentFormat.OpenXml.Office2010.Word.Reflection openXmlElement, Int32? value)
+  private static void SetHorizontalSkewAngle(DXO2010W.Reflection openXmlElement, Int32? value)
   {
     openXmlElement.HorizontalSkewAngle = value;
   }
@@ -151,12 +151,12 @@ public static class ReflectionConverter
   /// <summary>
   /// ky, this property is only available in Office 2010 and later.
   /// </summary>
-  private static Int32? GetVerticalSkewAngle(DocumentFormat.OpenXml.Office2010.Word.Reflection openXmlElement)
+  private static Int32? GetVerticalSkewAngle(DXO2010W.Reflection openXmlElement)
   {
     return openXmlElement.VerticalSkewAngle?.Value;
   }
   
-  private static void SetVerticalSkewAngle(DocumentFormat.OpenXml.Office2010.Word.Reflection openXmlElement, Int32? value)
+  private static void SetVerticalSkewAngle(DXO2010W.Reflection openXmlElement, Int32? value)
   {
     openXmlElement.VerticalSkewAngle = value;
   }
@@ -164,21 +164,21 @@ public static class ReflectionConverter
   /// <summary>
   /// algn, this property is only available in Office 2010 and later.
   /// </summary>
-  private static DocumentModel.Wordprocessing.RectangleAlignmentKind? GetAlignment(DocumentFormat.OpenXml.Office2010.Word.Reflection openXmlElement)
+  private static DMW.RectangleAlignmentKind? GetAlignment(DXO2010W.Reflection openXmlElement)
   {
-    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Office2010.Word.RectangleAlignmentValues, DocumentModel.Wordprocessing.RectangleAlignmentKind>(openXmlElement?.Alignment?.Value);
+    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Office2010.Word.RectangleAlignmentValues, DMW.RectangleAlignmentKind>(openXmlElement?.Alignment?.Value);
   }
   
-  private static void SetAlignment(DocumentFormat.OpenXml.Office2010.Word.Reflection openXmlElement, DocumentModel.Wordprocessing.RectangleAlignmentKind? value)
+  private static void SetAlignment(DXO2010W.Reflection openXmlElement, DMW.RectangleAlignmentKind? value)
   {
-    openXmlElement.Alignment = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Office2010.Word.RectangleAlignmentValues, DocumentModel.Wordprocessing.RectangleAlignmentKind>(value);
+    openXmlElement.Alignment = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Office2010.Word.RectangleAlignmentValues, DMW.RectangleAlignmentKind>(value);
   }
   
-  public static DocumentModel.Wordprocessing.Reflection? CreateModelElement(DocumentFormat.OpenXml.Office2010.Word.Reflection? openXmlElement)
+  public static DMW.Reflection? CreateModelElement(DXO2010W.Reflection? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Wordprocessing.Reflection();
+      var value = new DMW.Reflection();
       value.BlurRadius = GetBlurRadius(openXmlElement);
       value.StartingOpacity = GetStartingOpacity(openXmlElement);
       value.StartPosition = GetStartPosition(openXmlElement);
@@ -197,8 +197,8 @@ public static class ReflectionConverter
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.Reflection? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Office2010.Word.Reflection, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMW.Reflection? value)
+    where OpenXmlElementType: DXO2010W.Reflection, new()
   {
     if (value != null)
     {

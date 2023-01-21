@@ -5,21 +5,21 @@ namespace DocumentModel.OpenXml.Packaging;
 /// </summary>
 public static class StyleDefinitionsPartConverter
 {
-  private static String? GetContentType(DocumentFormat.OpenXml.Packaging.StyleDefinitionsPart openXmlElement)
+  private static String? GetContentType(DXPack.StyleDefinitionsPart openXmlElement)
   {
     return openXmlElement?.ContentType;
   }
   
-  private static String? GetRelationshipType(DocumentFormat.OpenXml.Packaging.StyleDefinitionsPart openXmlElement)
+  private static String? GetRelationshipType(DXPack.StyleDefinitionsPart openXmlElement)
   {
     return openXmlElement?.RelationshipType;
   }
   
-  public static DocumentModel.Packaging.StyleDefinitionsPart? CreateModelElement(DocumentFormat.OpenXml.Packaging.StyleDefinitionsPart? openXmlElement)
+  public static DMPack.StyleDefinitionsPart? CreateModelElement(DXPack.StyleDefinitionsPart? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Packaging.StyleDefinitionsPart();
+      var value = new DMPack.StyleDefinitionsPart();
       value.ContentType = GetContentType(openXmlElement);
       value.RelationshipType = GetRelationshipType(openXmlElement);
       return value;
@@ -27,8 +27,8 @@ public static class StyleDefinitionsPartConverter
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Packaging.StyleDefinitionsPart? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Packaging.StyleDefinitionsPart, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMPack.StyleDefinitionsPart? value)
+    where OpenXmlElementType: DXPack.StyleDefinitionsPart, new()
   {
     if (value != null)
     {

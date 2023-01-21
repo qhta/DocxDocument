@@ -8,25 +8,25 @@ public static class BinningConverter
   /// <summary>
   /// intervalClosed, this property is only available in Office 2016 and later.
   /// </summary>
-  private static DocumentModel.Drawings.ChartDrawings.IntervalClosedSide? GetIntervalClosed(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.Binning openXmlElement)
+  private static DMDrawsChartDraws.IntervalClosedSide? GetIntervalClosed(DXO2016DrawChartDraw.Binning openXmlElement)
   {
-    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.IntervalClosedSide, DocumentModel.Drawings.ChartDrawings.IntervalClosedSide>(openXmlElement?.IntervalClosed?.Value);
+    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.IntervalClosedSide, DMDrawsChartDraws.IntervalClosedSide>(openXmlElement?.IntervalClosed?.Value);
   }
   
-  private static void SetIntervalClosed(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.Binning openXmlElement, DocumentModel.Drawings.ChartDrawings.IntervalClosedSide? value)
+  private static void SetIntervalClosed(DXO2016DrawChartDraw.Binning openXmlElement, DMDrawsChartDraws.IntervalClosedSide? value)
   {
-    openXmlElement.IntervalClosed = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.IntervalClosedSide, DocumentModel.Drawings.ChartDrawings.IntervalClosedSide>(value);
+    openXmlElement.IntervalClosed = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.IntervalClosedSide, DMDrawsChartDraws.IntervalClosedSide>(value);
   }
   
   /// <summary>
   /// underflow, this property is only available in Office 2016 and later.
   /// </summary>
-  private static String? GetUnderflow(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.Binning openXmlElement)
+  private static String? GetUnderflow(DXO2016DrawChartDraw.Binning openXmlElement)
   {
     return openXmlElement?.Underflow?.Value;
   }
   
-  private static void SetUnderflow(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.Binning openXmlElement, String? value)
+  private static void SetUnderflow(DXO2016DrawChartDraw.Binning openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.Underflow = new StringValue { Value = value };
@@ -37,12 +37,12 @@ public static class BinningConverter
   /// <summary>
   /// overflow, this property is only available in Office 2016 and later.
   /// </summary>
-  private static String? GetOverflow(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.Binning openXmlElement)
+  private static String? GetOverflow(DXO2016DrawChartDraw.Binning openXmlElement)
   {
     return openXmlElement?.Overflow?.Value;
   }
   
-  private static void SetOverflow(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.Binning openXmlElement, String? value)
+  private static void SetOverflow(DXO2016DrawChartDraw.Binning openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.Overflow = new StringValue { Value = value };
@@ -53,22 +53,22 @@ public static class BinningConverter
   /// <summary>
   /// Xsddouble.
   /// </summary>
-  private static String? GetXsddouble(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.Binning openXmlElement)
+  private static String? GetXsddouble(DXO2016DrawChartDraw.Binning openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.Xsddouble>();
+    var itemElement = openXmlElement?.GetFirstChild<DXO2016DrawChartDraw.Xsddouble>();
     if (itemElement != null)
       return itemElement.Text;
     return null;
   }
   
-  private static void SetXsddouble(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.Binning openXmlElement, String? value)
+  private static void SetXsddouble(DXO2016DrawChartDraw.Binning openXmlElement, String? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.Xsddouble>();
+    var itemElement = openXmlElement.GetFirstChild<DXO2016DrawChartDraw.Xsddouble>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = new DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.Xsddouble { Text = value };
+      itemElement = new DXO2016DrawChartDraw.Xsddouble { Text = value };
       openXmlElement.AddChild(itemElement);
     }
   }
@@ -76,31 +76,31 @@ public static class BinningConverter
   /// <summary>
   /// BinCountXsdunsignedInt.
   /// </summary>
-  private static String? GetBinCountXsdunsignedInt(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.Binning openXmlElement)
+  private static String? GetBinCountXsdunsignedInt(DXO2016DrawChartDraw.Binning openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.BinCountXsdunsignedInt>();
+    var itemElement = openXmlElement?.GetFirstChild<DXO2016DrawChartDraw.BinCountXsdunsignedInt>();
     if (itemElement != null)
       return itemElement.Text;
     return null;
   }
   
-  private static void SetBinCountXsdunsignedInt(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.Binning openXmlElement, String? value)
+  private static void SetBinCountXsdunsignedInt(DXO2016DrawChartDraw.Binning openXmlElement, String? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.BinCountXsdunsignedInt>();
+    var itemElement = openXmlElement.GetFirstChild<DXO2016DrawChartDraw.BinCountXsdunsignedInt>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = new DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.BinCountXsdunsignedInt { Text = value };
+      itemElement = new DXO2016DrawChartDraw.BinCountXsdunsignedInt { Text = value };
       openXmlElement.AddChild(itemElement);
     }
   }
   
-  public static DocumentModel.Drawings.ChartDrawings.Binning? CreateModelElement(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.Binning? openXmlElement)
+  public static DMDrawsChartDraws.Binning? CreateModelElement(DXO2016DrawChartDraw.Binning? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.ChartDrawings.Binning();
+      var value = new DMDrawsChartDraws.Binning();
       value.IntervalClosed = GetIntervalClosed(openXmlElement);
       value.Underflow = GetUnderflow(openXmlElement);
       value.Overflow = GetOverflow(openXmlElement);
@@ -111,8 +111,8 @@ public static class BinningConverter
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.ChartDrawings.Binning? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.Binning, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDrawsChartDraws.Binning? value)
+    where OpenXmlElementType: DXO2016DrawChartDraw.Binning, new()
   {
     if (value != null)
     {

@@ -8,12 +8,12 @@ public static class WebVideoPropertyConverter
   /// <summary>
   /// embeddedHtml, this property is only available in Office 2013 and later.
   /// </summary>
-  private static String? GetEmbeddedHtml(DocumentFormat.OpenXml.Office2013.Word.Drawing.WebVideoProperty openXmlElement)
+  private static String? GetEmbeddedHtml(DXO2013WDraw.WebVideoProperty openXmlElement)
   {
     return openXmlElement?.EmbeddedHtml?.Value;
   }
   
-  private static void SetEmbeddedHtml(DocumentFormat.OpenXml.Office2013.Word.Drawing.WebVideoProperty openXmlElement, String? value)
+  private static void SetEmbeddedHtml(DXO2013WDraw.WebVideoProperty openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.EmbeddedHtml = new StringValue { Value = value };
@@ -24,12 +24,12 @@ public static class WebVideoPropertyConverter
   /// <summary>
   /// h, this property is only available in Office 2013 and later.
   /// </summary>
-  private static UInt32? GetHeight(DocumentFormat.OpenXml.Office2013.Word.Drawing.WebVideoProperty openXmlElement)
+  private static UInt32? GetHeight(DXO2013WDraw.WebVideoProperty openXmlElement)
   {
     return openXmlElement.Height?.Value;
   }
   
-  private static void SetHeight(DocumentFormat.OpenXml.Office2013.Word.Drawing.WebVideoProperty openXmlElement, UInt32? value)
+  private static void SetHeight(DXO2013WDraw.WebVideoProperty openXmlElement, UInt32? value)
   {
     openXmlElement.Height = value;
   }
@@ -37,21 +37,21 @@ public static class WebVideoPropertyConverter
   /// <summary>
   /// w, this property is only available in Office 2013 and later.
   /// </summary>
-  private static UInt32? GetWidth(DocumentFormat.OpenXml.Office2013.Word.Drawing.WebVideoProperty openXmlElement)
+  private static UInt32? GetWidth(DXO2013WDraw.WebVideoProperty openXmlElement)
   {
     return openXmlElement.Width?.Value;
   }
   
-  private static void SetWidth(DocumentFormat.OpenXml.Office2013.Word.Drawing.WebVideoProperty openXmlElement, UInt32? value)
+  private static void SetWidth(DXO2013WDraw.WebVideoProperty openXmlElement, UInt32? value)
   {
     openXmlElement.Width = value;
   }
   
-  public static DocumentModel.Drawings.Wordprocessing.WebVideoProperty? CreateModelElement(DocumentFormat.OpenXml.Office2013.Word.Drawing.WebVideoProperty? openXmlElement)
+  public static DMDrawsW.WebVideoProperty? CreateModelElement(DXO2013WDraw.WebVideoProperty? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.Wordprocessing.WebVideoProperty();
+      var value = new DMDrawsW.WebVideoProperty();
       value.EmbeddedHtml = GetEmbeddedHtml(openXmlElement);
       value.Height = GetHeight(openXmlElement);
       value.Width = GetWidth(openXmlElement);
@@ -60,8 +60,8 @@ public static class WebVideoPropertyConverter
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.Wordprocessing.WebVideoProperty? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Office2013.Word.Drawing.WebVideoProperty, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDrawsW.WebVideoProperty? value)
+    where OpenXmlElementType: DXO2013WDraw.WebVideoProperty, new()
   {
     if (value != null)
     {

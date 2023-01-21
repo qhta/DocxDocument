@@ -8,12 +8,12 @@ public static class TextLabelConverter
   /// <summary>
   /// id
   /// </summary>
-  private static String? GetId(DocumentFormat.OpenXml.Office.CustomUI.TextLabel openXmlElement)
+  private static String? GetId(DXOCustUI.TextLabel openXmlElement)
   {
     return openXmlElement?.Id?.Value;
   }
   
-  private static void SetId(DocumentFormat.OpenXml.Office.CustomUI.TextLabel openXmlElement, String? value)
+  private static void SetId(DXOCustUI.TextLabel openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.Id = new StringValue { Value = value };
@@ -24,12 +24,12 @@ public static class TextLabelConverter
   /// <summary>
   /// idQ
   /// </summary>
-  private static String? GetIdQ(DocumentFormat.OpenXml.Office.CustomUI.TextLabel openXmlElement)
+  private static String? GetIdQ(DXOCustUI.TextLabel openXmlElement)
   {
     return openXmlElement?.IdQ?.Value;
   }
   
-  private static void SetIdQ(DocumentFormat.OpenXml.Office.CustomUI.TextLabel openXmlElement, String? value)
+  private static void SetIdQ(DXOCustUI.TextLabel openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.IdQ = new StringValue { Value = value };
@@ -40,12 +40,12 @@ public static class TextLabelConverter
   /// <summary>
   /// idMso
   /// </summary>
-  private static String? GetIdMso(DocumentFormat.OpenXml.Office.CustomUI.TextLabel openXmlElement)
+  private static String? GetIdMso(DXOCustUI.TextLabel openXmlElement)
   {
     return openXmlElement?.IdMso?.Value;
   }
   
-  private static void SetIdMso(DocumentFormat.OpenXml.Office.CustomUI.TextLabel openXmlElement, String? value)
+  private static void SetIdMso(DXOCustUI.TextLabel openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.IdMso = new StringValue { Value = value };
@@ -56,12 +56,12 @@ public static class TextLabelConverter
   /// <summary>
   /// tag
   /// </summary>
-  private static String? GetTag(DocumentFormat.OpenXml.Office.CustomUI.TextLabel openXmlElement)
+  private static String? GetTag(DXOCustUI.TextLabel openXmlElement)
   {
     return openXmlElement?.Tag?.Value;
   }
   
-  private static void SetTag(DocumentFormat.OpenXml.Office.CustomUI.TextLabel openXmlElement, String? value)
+  private static void SetTag(DXOCustUI.TextLabel openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.Tag = new StringValue { Value = value };
@@ -72,12 +72,12 @@ public static class TextLabelConverter
   /// <summary>
   /// screentip
   /// </summary>
-  private static String? GetScreentip(DocumentFormat.OpenXml.Office.CustomUI.TextLabel openXmlElement)
+  private static String? GetScreentip(DXOCustUI.TextLabel openXmlElement)
   {
     return openXmlElement?.Screentip?.Value;
   }
   
-  private static void SetScreentip(DocumentFormat.OpenXml.Office.CustomUI.TextLabel openXmlElement, String? value)
+  private static void SetScreentip(DXOCustUI.TextLabel openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.Screentip = new StringValue { Value = value };
@@ -88,12 +88,12 @@ public static class TextLabelConverter
   /// <summary>
   /// getScreentip
   /// </summary>
-  private static String? GetGetScreentip(DocumentFormat.OpenXml.Office.CustomUI.TextLabel openXmlElement)
+  private static String? GetGetScreentip(DXOCustUI.TextLabel openXmlElement)
   {
     return openXmlElement?.GetScreentip?.Value;
   }
   
-  private static void SetGetScreentip(DocumentFormat.OpenXml.Office.CustomUI.TextLabel openXmlElement, String? value)
+  private static void SetGetScreentip(DXOCustUI.TextLabel openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.GetScreentip = new StringValue { Value = value };
@@ -104,12 +104,12 @@ public static class TextLabelConverter
   /// <summary>
   /// supertip
   /// </summary>
-  private static String? GetSupertip(DocumentFormat.OpenXml.Office.CustomUI.TextLabel openXmlElement)
+  private static String? GetSupertip(DXOCustUI.TextLabel openXmlElement)
   {
     return openXmlElement?.Supertip?.Value;
   }
   
-  private static void SetSupertip(DocumentFormat.OpenXml.Office.CustomUI.TextLabel openXmlElement, String? value)
+  private static void SetSupertip(DXOCustUI.TextLabel openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.Supertip = new StringValue { Value = value };
@@ -120,12 +120,12 @@ public static class TextLabelConverter
   /// <summary>
   /// getSupertip
   /// </summary>
-  private static String? GetGetSupertip(DocumentFormat.OpenXml.Office.CustomUI.TextLabel openXmlElement)
+  private static String? GetGetSupertip(DXOCustUI.TextLabel openXmlElement)
   {
     return openXmlElement?.GetSupertip?.Value;
   }
   
-  private static void SetGetSupertip(DocumentFormat.OpenXml.Office.CustomUI.TextLabel openXmlElement, String? value)
+  private static void SetGetSupertip(DXOCustUI.TextLabel openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.GetSupertip = new StringValue { Value = value };
@@ -136,12 +136,12 @@ public static class TextLabelConverter
   /// <summary>
   /// enabled
   /// </summary>
-  private static Boolean? GetEnabled(DocumentFormat.OpenXml.Office.CustomUI.TextLabel openXmlElement)
+  private static Boolean? GetEnabled(DXOCustUI.TextLabel openXmlElement)
   {
     return openXmlElement?.Enabled?.Value;
   }
   
-  private static void SetEnabled(DocumentFormat.OpenXml.Office.CustomUI.TextLabel openXmlElement, Boolean? value)
+  private static void SetEnabled(DXOCustUI.TextLabel openXmlElement, Boolean? value)
   {
     if (value != null)
       openXmlElement.Enabled = new BooleanValue { Value = (Boolean)value };
@@ -152,12 +152,12 @@ public static class TextLabelConverter
   /// <summary>
   /// getEnabled
   /// </summary>
-  private static String? GetGetEnabled(DocumentFormat.OpenXml.Office.CustomUI.TextLabel openXmlElement)
+  private static String? GetGetEnabled(DXOCustUI.TextLabel openXmlElement)
   {
     return openXmlElement?.GetEnabled?.Value;
   }
   
-  private static void SetGetEnabled(DocumentFormat.OpenXml.Office.CustomUI.TextLabel openXmlElement, String? value)
+  private static void SetGetEnabled(DXOCustUI.TextLabel openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.GetEnabled = new StringValue { Value = value };
@@ -168,12 +168,12 @@ public static class TextLabelConverter
   /// <summary>
   /// label
   /// </summary>
-  private static String? GetLabel(DocumentFormat.OpenXml.Office.CustomUI.TextLabel openXmlElement)
+  private static String? GetLabel(DXOCustUI.TextLabel openXmlElement)
   {
     return openXmlElement?.Label?.Value;
   }
   
-  private static void SetLabel(DocumentFormat.OpenXml.Office.CustomUI.TextLabel openXmlElement, String? value)
+  private static void SetLabel(DXOCustUI.TextLabel openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.Label = new StringValue { Value = value };
@@ -184,12 +184,12 @@ public static class TextLabelConverter
   /// <summary>
   /// getLabel
   /// </summary>
-  private static String? GetGetLabel(DocumentFormat.OpenXml.Office.CustomUI.TextLabel openXmlElement)
+  private static String? GetGetLabel(DXOCustUI.TextLabel openXmlElement)
   {
     return openXmlElement?.GetLabel?.Value;
   }
   
-  private static void SetGetLabel(DocumentFormat.OpenXml.Office.CustomUI.TextLabel openXmlElement, String? value)
+  private static void SetGetLabel(DXOCustUI.TextLabel openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.GetLabel = new StringValue { Value = value };
@@ -200,12 +200,12 @@ public static class TextLabelConverter
   /// <summary>
   /// insertAfterMso
   /// </summary>
-  private static String? GetInsertAfterMso(DocumentFormat.OpenXml.Office.CustomUI.TextLabel openXmlElement)
+  private static String? GetInsertAfterMso(DXOCustUI.TextLabel openXmlElement)
   {
     return openXmlElement?.InsertAfterMso?.Value;
   }
   
-  private static void SetInsertAfterMso(DocumentFormat.OpenXml.Office.CustomUI.TextLabel openXmlElement, String? value)
+  private static void SetInsertAfterMso(DXOCustUI.TextLabel openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.InsertAfterMso = new StringValue { Value = value };
@@ -216,12 +216,12 @@ public static class TextLabelConverter
   /// <summary>
   /// insertBeforeMso
   /// </summary>
-  private static String? GetInsertBeforeMso(DocumentFormat.OpenXml.Office.CustomUI.TextLabel openXmlElement)
+  private static String? GetInsertBeforeMso(DXOCustUI.TextLabel openXmlElement)
   {
     return openXmlElement?.InsertBeforeMso?.Value;
   }
   
-  private static void SetInsertBeforeMso(DocumentFormat.OpenXml.Office.CustomUI.TextLabel openXmlElement, String? value)
+  private static void SetInsertBeforeMso(DXOCustUI.TextLabel openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.InsertBeforeMso = new StringValue { Value = value };
@@ -232,12 +232,12 @@ public static class TextLabelConverter
   /// <summary>
   /// insertAfterQ
   /// </summary>
-  private static String? GetInsertAfterQ(DocumentFormat.OpenXml.Office.CustomUI.TextLabel openXmlElement)
+  private static String? GetInsertAfterQ(DXOCustUI.TextLabel openXmlElement)
   {
     return openXmlElement?.InsertAfterQ?.Value;
   }
   
-  private static void SetInsertAfterQ(DocumentFormat.OpenXml.Office.CustomUI.TextLabel openXmlElement, String? value)
+  private static void SetInsertAfterQ(DXOCustUI.TextLabel openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.InsertAfterQ = new StringValue { Value = value };
@@ -248,12 +248,12 @@ public static class TextLabelConverter
   /// <summary>
   /// insertBeforeQ
   /// </summary>
-  private static String? GetInsertBeforeQ(DocumentFormat.OpenXml.Office.CustomUI.TextLabel openXmlElement)
+  private static String? GetInsertBeforeQ(DXOCustUI.TextLabel openXmlElement)
   {
     return openXmlElement?.InsertBeforeQ?.Value;
   }
   
-  private static void SetInsertBeforeQ(DocumentFormat.OpenXml.Office.CustomUI.TextLabel openXmlElement, String? value)
+  private static void SetInsertBeforeQ(DXOCustUI.TextLabel openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.InsertBeforeQ = new StringValue { Value = value };
@@ -264,12 +264,12 @@ public static class TextLabelConverter
   /// <summary>
   /// visible
   /// </summary>
-  private static Boolean? GetVisible(DocumentFormat.OpenXml.Office.CustomUI.TextLabel openXmlElement)
+  private static Boolean? GetVisible(DXOCustUI.TextLabel openXmlElement)
   {
     return openXmlElement?.Visible?.Value;
   }
   
-  private static void SetVisible(DocumentFormat.OpenXml.Office.CustomUI.TextLabel openXmlElement, Boolean? value)
+  private static void SetVisible(DXOCustUI.TextLabel openXmlElement, Boolean? value)
   {
     if (value != null)
       openXmlElement.Visible = new BooleanValue { Value = (Boolean)value };
@@ -280,12 +280,12 @@ public static class TextLabelConverter
   /// <summary>
   /// getVisible
   /// </summary>
-  private static String? GetGetVisible(DocumentFormat.OpenXml.Office.CustomUI.TextLabel openXmlElement)
+  private static String? GetGetVisible(DXOCustUI.TextLabel openXmlElement)
   {
     return openXmlElement?.GetVisible?.Value;
   }
   
-  private static void SetGetVisible(DocumentFormat.OpenXml.Office.CustomUI.TextLabel openXmlElement, String? value)
+  private static void SetGetVisible(DXOCustUI.TextLabel openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.GetVisible = new StringValue { Value = value };
@@ -296,12 +296,12 @@ public static class TextLabelConverter
   /// <summary>
   /// showLabel
   /// </summary>
-  private static Boolean? GetShowLabel(DocumentFormat.OpenXml.Office.CustomUI.TextLabel openXmlElement)
+  private static Boolean? GetShowLabel(DXOCustUI.TextLabel openXmlElement)
   {
     return openXmlElement?.ShowLabel?.Value;
   }
   
-  private static void SetShowLabel(DocumentFormat.OpenXml.Office.CustomUI.TextLabel openXmlElement, Boolean? value)
+  private static void SetShowLabel(DXOCustUI.TextLabel openXmlElement, Boolean? value)
   {
     if (value != null)
       openXmlElement.ShowLabel = new BooleanValue { Value = (Boolean)value };
@@ -312,12 +312,12 @@ public static class TextLabelConverter
   /// <summary>
   /// getShowLabel
   /// </summary>
-  private static String? GetGetShowLabel(DocumentFormat.OpenXml.Office.CustomUI.TextLabel openXmlElement)
+  private static String? GetGetShowLabel(DXOCustUI.TextLabel openXmlElement)
   {
     return openXmlElement?.GetShowLabel?.Value;
   }
   
-  private static void SetGetShowLabel(DocumentFormat.OpenXml.Office.CustomUI.TextLabel openXmlElement, String? value)
+  private static void SetGetShowLabel(DXOCustUI.TextLabel openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.GetShowLabel = new StringValue { Value = value };
@@ -325,11 +325,11 @@ public static class TextLabelConverter
       openXmlElement.GetShowLabel = null;
   }
   
-  public static DocumentModel.UI.TextLabel? CreateModelElement(DocumentFormat.OpenXml.Office.CustomUI.TextLabel? openXmlElement)
+  public static DMUI.TextLabel? CreateModelElement(DXOCustUI.TextLabel? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.UI.TextLabel();
+      var value = new DMUI.TextLabel();
       value.Id = GetId(openXmlElement);
       value.IdQ = GetIdQ(openXmlElement);
       value.IdMso = GetIdMso(openXmlElement);
@@ -355,8 +355,8 @@ public static class TextLabelConverter
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.UI.TextLabel? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Office.CustomUI.TextLabel, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMUI.TextLabel? value)
+    where OpenXmlElementType: DXOCustUI.TextLabel, new()
   {
     if (value != null)
     {

@@ -8,12 +8,12 @@ public static class DashStopConverter
   /// <summary>
   /// Dash Length
   /// </summary>
-  private static Int32? GetDashLength(DocumentFormat.OpenXml.Drawing.DashStop openXmlElement)
+  private static Int32? GetDashLength(DXDraw.DashStop openXmlElement)
   {
     return openXmlElement.DashLength?.Value;
   }
   
-  private static void SetDashLength(DocumentFormat.OpenXml.Drawing.DashStop openXmlElement, Int32? value)
+  private static void SetDashLength(DXDraw.DashStop openXmlElement, Int32? value)
   {
     openXmlElement.DashLength = value;
   }
@@ -21,21 +21,21 @@ public static class DashStopConverter
   /// <summary>
   /// Space Length
   /// </summary>
-  private static Int32? GetSpaceLength(DocumentFormat.OpenXml.Drawing.DashStop openXmlElement)
+  private static Int32? GetSpaceLength(DXDraw.DashStop openXmlElement)
   {
     return openXmlElement.SpaceLength?.Value;
   }
   
-  private static void SetSpaceLength(DocumentFormat.OpenXml.Drawing.DashStop openXmlElement, Int32? value)
+  private static void SetSpaceLength(DXDraw.DashStop openXmlElement, Int32? value)
   {
     openXmlElement.SpaceLength = value;
   }
   
-  public static DocumentModel.Drawings.DashStop? CreateModelElement(DocumentFormat.OpenXml.Drawing.DashStop? openXmlElement)
+  public static DMDraws.DashStop? CreateModelElement(DXDraw.DashStop? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.DashStop();
+      var value = new DMDraws.DashStop();
       value.DashLength = GetDashLength(openXmlElement);
       value.SpaceLength = GetSpaceLength(openXmlElement);
       return value;
@@ -43,8 +43,8 @@ public static class DashStopConverter
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.DashStop? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.DashStop, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDraws.DashStop? value)
+    where OpenXmlElementType: DXDraw.DashStop, new()
   {
     if (value != null)
     {

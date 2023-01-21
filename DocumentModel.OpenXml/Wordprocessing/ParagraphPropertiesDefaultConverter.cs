@@ -8,40 +8,40 @@ public static class ParagraphPropertiesDefaultConverter
   /// <summary>
   /// Paragraph Properties.
   /// </summary>
-  private static DocumentModel.Wordprocessing.ParagraphPropertiesBaseStyle? GetParagraphPropertiesBaseStyle(DocumentFormat.OpenXml.Wordprocessing.ParagraphPropertiesDefault openXmlElement)
+  private static DMW.ParagraphPropertiesBaseStyle? GetParagraphPropertiesBaseStyle(DXW.ParagraphPropertiesDefault openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.ParagraphPropertiesBaseStyle>();
+    var itemElement = openXmlElement?.GetFirstChild<DXW.ParagraphPropertiesBaseStyle>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Wordprocessing.ParagraphPropertiesBaseStyleConverter.CreateModelElement(itemElement);
+      return DMXW.ParagraphPropertiesBaseStyleConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetParagraphPropertiesBaseStyle(DocumentFormat.OpenXml.Wordprocessing.ParagraphPropertiesDefault openXmlElement, DocumentModel.Wordprocessing.ParagraphPropertiesBaseStyle? value)
+  private static void SetParagraphPropertiesBaseStyle(DXW.ParagraphPropertiesDefault openXmlElement, DMW.ParagraphPropertiesBaseStyle? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.ParagraphPropertiesBaseStyle>();
+    var itemElement = openXmlElement.GetFirstChild<DXW.ParagraphPropertiesBaseStyle>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Wordprocessing.ParagraphPropertiesBaseStyleConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.ParagraphPropertiesBaseStyle>(value);
+      itemElement = DMXW.ParagraphPropertiesBaseStyleConverter.CreateOpenXmlElement<DXW.ParagraphPropertiesBaseStyle>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  public static DocumentModel.Wordprocessing.ParagraphPropertiesDefault? CreateModelElement(DocumentFormat.OpenXml.Wordprocessing.ParagraphPropertiesDefault? openXmlElement)
+  public static DMW.ParagraphPropertiesDefault? CreateModelElement(DXW.ParagraphPropertiesDefault? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Wordprocessing.ParagraphPropertiesDefault();
+      var value = new DMW.ParagraphPropertiesDefault();
       value.ParagraphPropertiesBaseStyle = GetParagraphPropertiesBaseStyle(openXmlElement);
       return value;
     }
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.ParagraphPropertiesDefault? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Wordprocessing.ParagraphPropertiesDefault, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMW.ParagraphPropertiesDefault? value)
+    where OpenXmlElementType: DXW.ParagraphPropertiesDefault, new()
   {
     if (value != null)
     {

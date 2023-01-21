@@ -5,45 +5,45 @@ namespace DocumentModel.OpenXml.Drawings.Diagrams;
 /// </summary>
 public static class CategoryListConverter
 {
-  private static System.Collections.ObjectModel.Collection<DocumentModel.Drawings.Diagrams.Category> GetCategories(DocumentFormat.OpenXml.Drawing.Diagrams.CategoryList openXmlElement)
+  private static Collection<DMDrawsDgms.Category> GetCategories(DXDrawDgms.CategoryList openXmlElement)
   {
-    var collection = new System.Collections.ObjectModel.Collection<DocumentModel.Drawings.Diagrams.Category>();
-    foreach (var item in openXmlElement.Elements<DocumentFormat.OpenXml.Drawing.Diagrams.Category>())
+    var collection = new Collection<DMDrawsDgms.Category>();
+    foreach (var item in openXmlElement.Elements<DXDrawDgms.Category>())
     {
-      var newItem = DocumentModel.OpenXml.Drawings.Diagrams.CategoryConverter.CreateModelElement(item);
+      var newItem = DMXDrawsDgms.CategoryConverter.CreateModelElement(item);
       if (newItem != null)
         collection.Add(newItem);
     }
     return collection;
   }
   
-  private static void SetCategories(DocumentFormat.OpenXml.Drawing.Diagrams.CategoryList openXmlElement, System.Collections.ObjectModel.Collection<DocumentModel.Drawings.Diagrams.Category>? value)
+  private static void SetCategories(DXDrawDgms.CategoryList openXmlElement, Collection<DMDrawsDgms.Category>? value)
   {
-    openXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Drawing.Diagrams.Category>();
+    openXmlElement.RemoveAllChildren<DXDrawDgms.Category>();
     if (value != null)
     {
       foreach (var item in value)
       {
-        var newItem = DocumentModel.OpenXml.Drawings.Diagrams.CategoryConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Diagrams.Category>(item);
+        var newItem = DMXDrawsDgms.CategoryConverter.CreateOpenXmlElement<DXDrawDgms.Category>(item);
         if (newItem != null)
           openXmlElement.AddChild(newItem);
       }
     }
   }
   
-  public static DocumentModel.Drawings.Diagrams.CategoryList? CreateModelElement(DocumentFormat.OpenXml.Drawing.Diagrams.CategoryList? openXmlElement)
+  public static DMDrawsDgms.CategoryList? CreateModelElement(DXDrawDgms.CategoryList? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.Diagrams.CategoryList();
+      var value = new DMDrawsDgms.CategoryList();
       value.Categories = GetCategories(openXmlElement);
       return value;
     }
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.Diagrams.CategoryList? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.Diagrams.CategoryList, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDrawsDgms.CategoryList? value)
+    where OpenXmlElementType: DXDrawDgms.CategoryList, new()
   {
     if (value != null)
     {

@@ -8,25 +8,25 @@ public static class PermStartConverter
   /// <summary>
   /// edGrp
   /// </summary>
-  private static DocumentModel.Wordprocessing.RangePermissionEditingGroupKind? GetEditorGroup(DocumentFormat.OpenXml.Wordprocessing.PermStart openXmlElement)
+  private static DMW.RangePermissionEditingGroupKind? GetEditorGroup(DXW.PermStart openXmlElement)
   {
-    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Wordprocessing.RangePermissionEditingGroupValues, DocumentModel.Wordprocessing.RangePermissionEditingGroupKind>(openXmlElement?.EditorGroup?.Value);
+    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Wordprocessing.RangePermissionEditingGroupValues, DMW.RangePermissionEditingGroupKind>(openXmlElement?.EditorGroup?.Value);
   }
   
-  private static void SetEditorGroup(DocumentFormat.OpenXml.Wordprocessing.PermStart openXmlElement, DocumentModel.Wordprocessing.RangePermissionEditingGroupKind? value)
+  private static void SetEditorGroup(DXW.PermStart openXmlElement, DMW.RangePermissionEditingGroupKind? value)
   {
-    openXmlElement.EditorGroup = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Wordprocessing.RangePermissionEditingGroupValues, DocumentModel.Wordprocessing.RangePermissionEditingGroupKind>(value);
+    openXmlElement.EditorGroup = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Wordprocessing.RangePermissionEditingGroupValues, DMW.RangePermissionEditingGroupKind>(value);
   }
   
   /// <summary>
   /// ed
   /// </summary>
-  private static String? GetEd(DocumentFormat.OpenXml.Wordprocessing.PermStart openXmlElement)
+  private static String? GetEd(DXW.PermStart openXmlElement)
   {
     return openXmlElement?.Ed?.Value;
   }
   
-  private static void SetEd(DocumentFormat.OpenXml.Wordprocessing.PermStart openXmlElement, String? value)
+  private static void SetEd(DXW.PermStart openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.Ed = new StringValue { Value = value };
@@ -37,12 +37,12 @@ public static class PermStartConverter
   /// <summary>
   /// colFirst
   /// </summary>
-  private static Int32? GetColumnFirst(DocumentFormat.OpenXml.Wordprocessing.PermStart openXmlElement)
+  private static Int32? GetColumnFirst(DXW.PermStart openXmlElement)
   {
     return openXmlElement.ColumnFirst?.Value;
   }
   
-  private static void SetColumnFirst(DocumentFormat.OpenXml.Wordprocessing.PermStart openXmlElement, Int32? value)
+  private static void SetColumnFirst(DXW.PermStart openXmlElement, Int32? value)
   {
     openXmlElement.ColumnFirst = value;
   }
@@ -50,12 +50,12 @@ public static class PermStartConverter
   /// <summary>
   /// colLast
   /// </summary>
-  private static Int32? GetColumnLast(DocumentFormat.OpenXml.Wordprocessing.PermStart openXmlElement)
+  private static Int32? GetColumnLast(DXW.PermStart openXmlElement)
   {
     return openXmlElement.ColumnLast?.Value;
   }
   
-  private static void SetColumnLast(DocumentFormat.OpenXml.Wordprocessing.PermStart openXmlElement, Int32? value)
+  private static void SetColumnLast(DXW.PermStart openXmlElement, Int32? value)
   {
     openXmlElement.ColumnLast = value;
   }
@@ -63,12 +63,12 @@ public static class PermStartConverter
   /// <summary>
   /// Annotation ID
   /// </summary>
-  private static Int32? GetId(DocumentFormat.OpenXml.Wordprocessing.PermStart openXmlElement)
+  private static Int32? GetId(DXW.PermStart openXmlElement)
   {
     return openXmlElement.Id?.Value;
   }
   
-  private static void SetId(DocumentFormat.OpenXml.Wordprocessing.PermStart openXmlElement, Int32? value)
+  private static void SetId(DXW.PermStart openXmlElement, Int32? value)
   {
     openXmlElement.Id = value;
   }
@@ -76,21 +76,21 @@ public static class PermStartConverter
   /// <summary>
   /// Annotation Displaced By Custom XML Markup
   /// </summary>
-  private static DocumentModel.Wordprocessing.DisplacedByCustomXmlKind? GetDisplacedByCustomXml(DocumentFormat.OpenXml.Wordprocessing.PermStart openXmlElement)
+  private static DMW.DisplacedByCustomXmlKind? GetDisplacedByCustomXml(DXW.PermStart openXmlElement)
   {
-    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Wordprocessing.DisplacedByCustomXmlValues, DocumentModel.Wordprocessing.DisplacedByCustomXmlKind>(openXmlElement?.DisplacedByCustomXml?.Value);
+    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Wordprocessing.DisplacedByCustomXmlValues, DMW.DisplacedByCustomXmlKind>(openXmlElement?.DisplacedByCustomXml?.Value);
   }
   
-  private static void SetDisplacedByCustomXml(DocumentFormat.OpenXml.Wordprocessing.PermStart openXmlElement, DocumentModel.Wordprocessing.DisplacedByCustomXmlKind? value)
+  private static void SetDisplacedByCustomXml(DXW.PermStart openXmlElement, DMW.DisplacedByCustomXmlKind? value)
   {
-    openXmlElement.DisplacedByCustomXml = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Wordprocessing.DisplacedByCustomXmlValues, DocumentModel.Wordprocessing.DisplacedByCustomXmlKind>(value);
+    openXmlElement.DisplacedByCustomXml = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Wordprocessing.DisplacedByCustomXmlValues, DMW.DisplacedByCustomXmlKind>(value);
   }
   
-  public static DocumentModel.Wordprocessing.PermStart? CreateModelElement(DocumentFormat.OpenXml.Wordprocessing.PermStart? openXmlElement)
+  public static DMW.PermStart? CreateModelElement(DXW.PermStart? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Wordprocessing.PermStart();
+      var value = new DMW.PermStart();
       value.EditorGroup = GetEditorGroup(openXmlElement);
       value.Ed = GetEd(openXmlElement);
       value.ColumnFirst = GetColumnFirst(openXmlElement);
@@ -102,8 +102,8 @@ public static class PermStartConverter
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.PermStart? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Wordprocessing.PermStart, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMW.PermStart? value)
+    where OpenXmlElementType: DXW.PermStart, new()
   {
     if (value != null)
     {

@@ -8,12 +8,12 @@ public static class TableRowPropertiesChangeConverter
   /// <summary>
   /// author
   /// </summary>
-  private static String? GetAuthor(DocumentFormat.OpenXml.Wordprocessing.TableRowPropertiesChange openXmlElement)
+  private static String? GetAuthor(DXW.TableRowPropertiesChange openXmlElement)
   {
     return openXmlElement?.Author?.Value;
   }
   
-  private static void SetAuthor(DocumentFormat.OpenXml.Wordprocessing.TableRowPropertiesChange openXmlElement, String? value)
+  private static void SetAuthor(DXW.TableRowPropertiesChange openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.Author = new StringValue { Value = value };
@@ -24,12 +24,12 @@ public static class TableRowPropertiesChangeConverter
   /// <summary>
   /// date
   /// </summary>
-  private static DateTime? GetDate(DocumentFormat.OpenXml.Wordprocessing.TableRowPropertiesChange openXmlElement)
+  private static DateTime? GetDate(DXW.TableRowPropertiesChange openXmlElement)
   {
     return openXmlElement.Date?.Value;
   }
   
-  private static void SetDate(DocumentFormat.OpenXml.Wordprocessing.TableRowPropertiesChange openXmlElement, DateTime? value)
+  private static void SetDate(DXW.TableRowPropertiesChange openXmlElement, DateTime? value)
   {
     openXmlElement.Date = value;
   }
@@ -37,12 +37,12 @@ public static class TableRowPropertiesChangeConverter
   /// <summary>
   /// Annotation Identifier
   /// </summary>
-  private static String? GetId(DocumentFormat.OpenXml.Wordprocessing.TableRowPropertiesChange openXmlElement)
+  private static String? GetId(DXW.TableRowPropertiesChange openXmlElement)
   {
     return openXmlElement?.Id?.Value;
   }
   
-  private static void SetId(DocumentFormat.OpenXml.Wordprocessing.TableRowPropertiesChange openXmlElement, String? value)
+  private static void SetId(DXW.TableRowPropertiesChange openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.Id = new StringValue { Value = value };
@@ -53,32 +53,32 @@ public static class TableRowPropertiesChangeConverter
   /// <summary>
   /// Previous Table Row Properties.
   /// </summary>
-  private static DocumentModel.Wordprocessing.PreviousTableRowProperties? GetPreviousTableRowProperties(DocumentFormat.OpenXml.Wordprocessing.TableRowPropertiesChange openXmlElement)
+  private static DMW.PreviousTableRowProperties? GetPreviousTableRowProperties(DXW.TableRowPropertiesChange openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.PreviousTableRowProperties>();
+    var itemElement = openXmlElement?.GetFirstChild<DXW.PreviousTableRowProperties>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Wordprocessing.PreviousTableRowPropertiesConverter.CreateModelElement(itemElement);
+      return DMXW.PreviousTableRowPropertiesConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetPreviousTableRowProperties(DocumentFormat.OpenXml.Wordprocessing.TableRowPropertiesChange openXmlElement, DocumentModel.Wordprocessing.PreviousTableRowProperties? value)
+  private static void SetPreviousTableRowProperties(DXW.TableRowPropertiesChange openXmlElement, DMW.PreviousTableRowProperties? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.PreviousTableRowProperties>();
+    var itemElement = openXmlElement.GetFirstChild<DXW.PreviousTableRowProperties>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Wordprocessing.PreviousTableRowPropertiesConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.PreviousTableRowProperties>(value);
+      itemElement = DMXW.PreviousTableRowPropertiesConverter.CreateOpenXmlElement<DXW.PreviousTableRowProperties>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  public static DocumentModel.Wordprocessing.TableRowPropertiesChange? CreateModelElement(DocumentFormat.OpenXml.Wordprocessing.TableRowPropertiesChange? openXmlElement)
+  public static DMW.TableRowPropertiesChange? CreateModelElement(DXW.TableRowPropertiesChange? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Wordprocessing.TableRowPropertiesChange();
+      var value = new DMW.TableRowPropertiesChange();
       value.Author = GetAuthor(openXmlElement);
       value.Date = GetDate(openXmlElement);
       value.Id = GetId(openXmlElement);
@@ -88,8 +88,8 @@ public static class TableRowPropertiesChangeConverter
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.TableRowPropertiesChange? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Wordprocessing.TableRowPropertiesChange, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMW.TableRowPropertiesChange? value)
+    where OpenXmlElementType: DXW.TableRowPropertiesChange, new()
   {
     if (value != null)
     {

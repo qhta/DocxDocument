@@ -8,12 +8,12 @@ public static class DateAxExtensionConverter
   /// <summary>
   /// URI
   /// </summary>
-  private static String? GetUri(DocumentFormat.OpenXml.Drawing.Charts.DateAxExtension openXmlElement)
+  private static String? GetUri(DXDrawCharts.DateAxExtension openXmlElement)
   {
     return openXmlElement?.Uri?.Value;
   }
   
-  private static void SetUri(DocumentFormat.OpenXml.Drawing.Charts.DateAxExtension openXmlElement, String? value)
+  private static void SetUri(DXDrawCharts.DateAxExtension openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.Uri = new StringValue { Value = value };
@@ -21,32 +21,32 @@ public static class DateAxExtensionConverter
       openXmlElement.Uri = null;
   }
   
-  private static DocumentModel.Drawings.Charts.NumberingFormat3? GetNumberingFormat(DocumentFormat.OpenXml.Drawing.Charts.DateAxExtension openXmlElement)
+  private static DMDrawsCharts.NumberingFormat3? GetNumberingFormat(DXDrawCharts.DateAxExtension openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office2013.Drawing.Chart.NumberingFormat>();
+    var itemElement = openXmlElement?.GetFirstChild<DXO2013DrawChart.NumberingFormat>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.Charts.NumberingFormat3Converter.CreateModelElement(itemElement);
+      return DMXDrawsCharts.NumberingFormat3Converter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetNumberingFormat(DocumentFormat.OpenXml.Drawing.Charts.DateAxExtension openXmlElement, DocumentModel.Drawings.Charts.NumberingFormat3? value)
+  private static void SetNumberingFormat(DXDrawCharts.DateAxExtension openXmlElement, DMDrawsCharts.NumberingFormat3? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2013.Drawing.Chart.NumberingFormat>();
+    var itemElement = openXmlElement.GetFirstChild<DXO2013DrawChart.NumberingFormat>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Drawings.Charts.NumberingFormat3Converter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2013.Drawing.Chart.NumberingFormat>(value);
+      itemElement = DMXDrawsCharts.NumberingFormat3Converter.CreateOpenXmlElement<DXO2013DrawChart.NumberingFormat>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  public static DocumentModel.Drawings.Charts.DateAxExtension? CreateModelElement(DocumentFormat.OpenXml.Drawing.Charts.DateAxExtension? openXmlElement)
+  public static DMDrawsCharts.DateAxExtension? CreateModelElement(DXDrawCharts.DateAxExtension? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.Charts.DateAxExtension();
+      var value = new DMDrawsCharts.DateAxExtension();
       value.Uri = GetUri(openXmlElement);
       value.NumberingFormat = GetNumberingFormat(openXmlElement);
       return value;
@@ -54,8 +54,8 @@ public static class DateAxExtensionConverter
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.Charts.DateAxExtension? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.Charts.DateAxExtension, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDrawsCharts.DateAxExtension? value)
+    where OpenXmlElementType: DXDrawCharts.DateAxExtension, new()
   {
     if (value != null)
     {

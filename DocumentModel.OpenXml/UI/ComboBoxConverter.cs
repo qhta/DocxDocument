@@ -8,12 +8,12 @@ public static class ComboBoxConverter
   /// <summary>
   /// showItemImage
   /// </summary>
-  private static Boolean? GetShowItemImage(DocumentFormat.OpenXml.Office.CustomUI.ComboBox openXmlElement)
+  private static Boolean? GetShowItemImage(DXOCustUI.ComboBox openXmlElement)
   {
     return openXmlElement?.ShowItemImage?.Value;
   }
   
-  private static void SetShowItemImage(DocumentFormat.OpenXml.Office.CustomUI.ComboBox openXmlElement, Boolean? value)
+  private static void SetShowItemImage(DXOCustUI.ComboBox openXmlElement, Boolean? value)
   {
     if (value != null)
       openXmlElement.ShowItemImage = new BooleanValue { Value = (Boolean)value };
@@ -24,12 +24,12 @@ public static class ComboBoxConverter
   /// <summary>
   /// getItemCount
   /// </summary>
-  private static String? GetGetItemCount(DocumentFormat.OpenXml.Office.CustomUI.ComboBox openXmlElement)
+  private static String? GetGetItemCount(DXOCustUI.ComboBox openXmlElement)
   {
     return openXmlElement?.GetItemCount?.Value;
   }
   
-  private static void SetGetItemCount(DocumentFormat.OpenXml.Office.CustomUI.ComboBox openXmlElement, String? value)
+  private static void SetGetItemCount(DXOCustUI.ComboBox openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.GetItemCount = new StringValue { Value = value };
@@ -40,12 +40,12 @@ public static class ComboBoxConverter
   /// <summary>
   /// getItemLabel
   /// </summary>
-  private static String? GetGetItemLabel(DocumentFormat.OpenXml.Office.CustomUI.ComboBox openXmlElement)
+  private static String? GetGetItemLabel(DXOCustUI.ComboBox openXmlElement)
   {
     return openXmlElement?.GetItemLabel?.Value;
   }
   
-  private static void SetGetItemLabel(DocumentFormat.OpenXml.Office.CustomUI.ComboBox openXmlElement, String? value)
+  private static void SetGetItemLabel(DXOCustUI.ComboBox openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.GetItemLabel = new StringValue { Value = value };
@@ -56,12 +56,12 @@ public static class ComboBoxConverter
   /// <summary>
   /// getItemScreentip
   /// </summary>
-  private static String? GetGetItemScreentip(DocumentFormat.OpenXml.Office.CustomUI.ComboBox openXmlElement)
+  private static String? GetGetItemScreentip(DXOCustUI.ComboBox openXmlElement)
   {
     return openXmlElement?.GetItemScreentip?.Value;
   }
   
-  private static void SetGetItemScreentip(DocumentFormat.OpenXml.Office.CustomUI.ComboBox openXmlElement, String? value)
+  private static void SetGetItemScreentip(DXOCustUI.ComboBox openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.GetItemScreentip = new StringValue { Value = value };
@@ -72,12 +72,12 @@ public static class ComboBoxConverter
   /// <summary>
   /// getItemSupertip
   /// </summary>
-  private static String? GetGetItemSupertip(DocumentFormat.OpenXml.Office.CustomUI.ComboBox openXmlElement)
+  private static String? GetGetItemSupertip(DXOCustUI.ComboBox openXmlElement)
   {
     return openXmlElement?.GetItemSupertip?.Value;
   }
   
-  private static void SetGetItemSupertip(DocumentFormat.OpenXml.Office.CustomUI.ComboBox openXmlElement, String? value)
+  private static void SetGetItemSupertip(DXOCustUI.ComboBox openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.GetItemSupertip = new StringValue { Value = value };
@@ -88,12 +88,12 @@ public static class ComboBoxConverter
   /// <summary>
   /// getItemImage
   /// </summary>
-  private static String? GetGetItemImage(DocumentFormat.OpenXml.Office.CustomUI.ComboBox openXmlElement)
+  private static String? GetGetItemImage(DXOCustUI.ComboBox openXmlElement)
   {
     return openXmlElement?.GetItemImage?.Value;
   }
   
-  private static void SetGetItemImage(DocumentFormat.OpenXml.Office.CustomUI.ComboBox openXmlElement, String? value)
+  private static void SetGetItemImage(DXOCustUI.ComboBox openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.GetItemImage = new StringValue { Value = value };
@@ -104,12 +104,12 @@ public static class ComboBoxConverter
   /// <summary>
   /// getItemID
   /// </summary>
-  private static String? GetGetItemID(DocumentFormat.OpenXml.Office.CustomUI.ComboBox openXmlElement)
+  private static String? GetGetItemID(DXOCustUI.ComboBox openXmlElement)
   {
     return openXmlElement?.GetItemID?.Value;
   }
   
-  private static void SetGetItemID(DocumentFormat.OpenXml.Office.CustomUI.ComboBox openXmlElement, String? value)
+  private static void SetGetItemID(DXOCustUI.ComboBox openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.GetItemID = new StringValue { Value = value };
@@ -120,12 +120,12 @@ public static class ComboBoxConverter
   /// <summary>
   /// sizeString
   /// </summary>
-  private static String? GetSizeString(DocumentFormat.OpenXml.Office.CustomUI.ComboBox openXmlElement)
+  private static String? GetSizeString(DXOCustUI.ComboBox openXmlElement)
   {
     return openXmlElement?.SizeString?.Value;
   }
   
-  private static void SetSizeString(DocumentFormat.OpenXml.Office.CustomUI.ComboBox openXmlElement, String? value)
+  private static void SetSizeString(DXOCustUI.ComboBox openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.SizeString = new StringValue { Value = value };
@@ -136,12 +136,12 @@ public static class ComboBoxConverter
   /// <summary>
   /// invalidateContentOnDrop
   /// </summary>
-  private static Boolean? GetInvalidateContentOnDrop(DocumentFormat.OpenXml.Office.CustomUI.ComboBox openXmlElement)
+  private static Boolean? GetInvalidateContentOnDrop(DXOCustUI.ComboBox openXmlElement)
   {
     return openXmlElement?.InvalidateContentOnDrop?.Value;
   }
   
-  private static void SetInvalidateContentOnDrop(DocumentFormat.OpenXml.Office.CustomUI.ComboBox openXmlElement, Boolean? value)
+  private static void SetInvalidateContentOnDrop(DXOCustUI.ComboBox openXmlElement, Boolean? value)
   {
     if (value != null)
       openXmlElement.InvalidateContentOnDrop = new BooleanValue { Value = (Boolean)value };
@@ -152,12 +152,12 @@ public static class ComboBoxConverter
   /// <summary>
   /// enabled
   /// </summary>
-  private static Boolean? GetEnabled(DocumentFormat.OpenXml.Office.CustomUI.ComboBox openXmlElement)
+  private static Boolean? GetEnabled(DXOCustUI.ComboBox openXmlElement)
   {
     return openXmlElement?.Enabled?.Value;
   }
   
-  private static void SetEnabled(DocumentFormat.OpenXml.Office.CustomUI.ComboBox openXmlElement, Boolean? value)
+  private static void SetEnabled(DXOCustUI.ComboBox openXmlElement, Boolean? value)
   {
     if (value != null)
       openXmlElement.Enabled = new BooleanValue { Value = (Boolean)value };
@@ -168,12 +168,12 @@ public static class ComboBoxConverter
   /// <summary>
   /// getEnabled
   /// </summary>
-  private static String? GetGetEnabled(DocumentFormat.OpenXml.Office.CustomUI.ComboBox openXmlElement)
+  private static String? GetGetEnabled(DXOCustUI.ComboBox openXmlElement)
   {
     return openXmlElement?.GetEnabled?.Value;
   }
   
-  private static void SetGetEnabled(DocumentFormat.OpenXml.Office.CustomUI.ComboBox openXmlElement, String? value)
+  private static void SetGetEnabled(DXOCustUI.ComboBox openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.GetEnabled = new StringValue { Value = value };
@@ -184,12 +184,12 @@ public static class ComboBoxConverter
   /// <summary>
   /// image
   /// </summary>
-  private static String? GetImage(DocumentFormat.OpenXml.Office.CustomUI.ComboBox openXmlElement)
+  private static String? GetImage(DXOCustUI.ComboBox openXmlElement)
   {
     return openXmlElement?.Image?.Value;
   }
   
-  private static void SetImage(DocumentFormat.OpenXml.Office.CustomUI.ComboBox openXmlElement, String? value)
+  private static void SetImage(DXOCustUI.ComboBox openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.Image = new StringValue { Value = value };
@@ -200,12 +200,12 @@ public static class ComboBoxConverter
   /// <summary>
   /// imageMso
   /// </summary>
-  private static String? GetImageMso(DocumentFormat.OpenXml.Office.CustomUI.ComboBox openXmlElement)
+  private static String? GetImageMso(DXOCustUI.ComboBox openXmlElement)
   {
     return openXmlElement?.ImageMso?.Value;
   }
   
-  private static void SetImageMso(DocumentFormat.OpenXml.Office.CustomUI.ComboBox openXmlElement, String? value)
+  private static void SetImageMso(DXOCustUI.ComboBox openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.ImageMso = new StringValue { Value = value };
@@ -216,12 +216,12 @@ public static class ComboBoxConverter
   /// <summary>
   /// getImage
   /// </summary>
-  private static String? GetGetImage(DocumentFormat.OpenXml.Office.CustomUI.ComboBox openXmlElement)
+  private static String? GetGetImage(DXOCustUI.ComboBox openXmlElement)
   {
     return openXmlElement?.GetImage?.Value;
   }
   
-  private static void SetGetImage(DocumentFormat.OpenXml.Office.CustomUI.ComboBox openXmlElement, String? value)
+  private static void SetGetImage(DXOCustUI.ComboBox openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.GetImage = new StringValue { Value = value };
@@ -232,12 +232,12 @@ public static class ComboBoxConverter
   /// <summary>
   /// maxLength
   /// </summary>
-  private static Int64? GetMaxLength(DocumentFormat.OpenXml.Office.CustomUI.ComboBox openXmlElement)
+  private static Int64? GetMaxLength(DXOCustUI.ComboBox openXmlElement)
   {
     return openXmlElement.MaxLength?.Value;
   }
   
-  private static void SetMaxLength(DocumentFormat.OpenXml.Office.CustomUI.ComboBox openXmlElement, Int64? value)
+  private static void SetMaxLength(DXOCustUI.ComboBox openXmlElement, Int64? value)
   {
     openXmlElement.MaxLength = value;
   }
@@ -245,12 +245,12 @@ public static class ComboBoxConverter
   /// <summary>
   /// getText
   /// </summary>
-  private static String? GetGetText(DocumentFormat.OpenXml.Office.CustomUI.ComboBox openXmlElement)
+  private static String? GetGetText(DXOCustUI.ComboBox openXmlElement)
   {
     return openXmlElement?.GetText?.Value;
   }
   
-  private static void SetGetText(DocumentFormat.OpenXml.Office.CustomUI.ComboBox openXmlElement, String? value)
+  private static void SetGetText(DXOCustUI.ComboBox openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.GetText = new StringValue { Value = value };
@@ -261,12 +261,12 @@ public static class ComboBoxConverter
   /// <summary>
   /// onChange
   /// </summary>
-  private static String? GetOnChange(DocumentFormat.OpenXml.Office.CustomUI.ComboBox openXmlElement)
+  private static String? GetOnChange(DXOCustUI.ComboBox openXmlElement)
   {
     return openXmlElement?.OnChange?.Value;
   }
   
-  private static void SetOnChange(DocumentFormat.OpenXml.Office.CustomUI.ComboBox openXmlElement, String? value)
+  private static void SetOnChange(DXOCustUI.ComboBox openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.OnChange = new StringValue { Value = value };
@@ -277,12 +277,12 @@ public static class ComboBoxConverter
   /// <summary>
   /// id
   /// </summary>
-  private static String? GetId(DocumentFormat.OpenXml.Office.CustomUI.ComboBox openXmlElement)
+  private static String? GetId(DXOCustUI.ComboBox openXmlElement)
   {
     return openXmlElement?.Id?.Value;
   }
   
-  private static void SetId(DocumentFormat.OpenXml.Office.CustomUI.ComboBox openXmlElement, String? value)
+  private static void SetId(DXOCustUI.ComboBox openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.Id = new StringValue { Value = value };
@@ -293,12 +293,12 @@ public static class ComboBoxConverter
   /// <summary>
   /// idQ
   /// </summary>
-  private static String? GetIdQ(DocumentFormat.OpenXml.Office.CustomUI.ComboBox openXmlElement)
+  private static String? GetIdQ(DXOCustUI.ComboBox openXmlElement)
   {
     return openXmlElement?.IdQ?.Value;
   }
   
-  private static void SetIdQ(DocumentFormat.OpenXml.Office.CustomUI.ComboBox openXmlElement, String? value)
+  private static void SetIdQ(DXOCustUI.ComboBox openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.IdQ = new StringValue { Value = value };
@@ -309,12 +309,12 @@ public static class ComboBoxConverter
   /// <summary>
   /// idMso
   /// </summary>
-  private static String? GetIdMso(DocumentFormat.OpenXml.Office.CustomUI.ComboBox openXmlElement)
+  private static String? GetIdMso(DXOCustUI.ComboBox openXmlElement)
   {
     return openXmlElement?.IdMso?.Value;
   }
   
-  private static void SetIdMso(DocumentFormat.OpenXml.Office.CustomUI.ComboBox openXmlElement, String? value)
+  private static void SetIdMso(DXOCustUI.ComboBox openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.IdMso = new StringValue { Value = value };
@@ -325,12 +325,12 @@ public static class ComboBoxConverter
   /// <summary>
   /// tag
   /// </summary>
-  private static String? GetTag(DocumentFormat.OpenXml.Office.CustomUI.ComboBox openXmlElement)
+  private static String? GetTag(DXOCustUI.ComboBox openXmlElement)
   {
     return openXmlElement?.Tag?.Value;
   }
   
-  private static void SetTag(DocumentFormat.OpenXml.Office.CustomUI.ComboBox openXmlElement, String? value)
+  private static void SetTag(DXOCustUI.ComboBox openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.Tag = new StringValue { Value = value };
@@ -341,12 +341,12 @@ public static class ComboBoxConverter
   /// <summary>
   /// screentip
   /// </summary>
-  private static String? GetScreentip(DocumentFormat.OpenXml.Office.CustomUI.ComboBox openXmlElement)
+  private static String? GetScreentip(DXOCustUI.ComboBox openXmlElement)
   {
     return openXmlElement?.Screentip?.Value;
   }
   
-  private static void SetScreentip(DocumentFormat.OpenXml.Office.CustomUI.ComboBox openXmlElement, String? value)
+  private static void SetScreentip(DXOCustUI.ComboBox openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.Screentip = new StringValue { Value = value };
@@ -357,12 +357,12 @@ public static class ComboBoxConverter
   /// <summary>
   /// getScreentip
   /// </summary>
-  private static String? GetGetScreentip(DocumentFormat.OpenXml.Office.CustomUI.ComboBox openXmlElement)
+  private static String? GetGetScreentip(DXOCustUI.ComboBox openXmlElement)
   {
     return openXmlElement?.GetScreentip?.Value;
   }
   
-  private static void SetGetScreentip(DocumentFormat.OpenXml.Office.CustomUI.ComboBox openXmlElement, String? value)
+  private static void SetGetScreentip(DXOCustUI.ComboBox openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.GetScreentip = new StringValue { Value = value };
@@ -373,12 +373,12 @@ public static class ComboBoxConverter
   /// <summary>
   /// supertip
   /// </summary>
-  private static String? GetSupertip(DocumentFormat.OpenXml.Office.CustomUI.ComboBox openXmlElement)
+  private static String? GetSupertip(DXOCustUI.ComboBox openXmlElement)
   {
     return openXmlElement?.Supertip?.Value;
   }
   
-  private static void SetSupertip(DocumentFormat.OpenXml.Office.CustomUI.ComboBox openXmlElement, String? value)
+  private static void SetSupertip(DXOCustUI.ComboBox openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.Supertip = new StringValue { Value = value };
@@ -389,12 +389,12 @@ public static class ComboBoxConverter
   /// <summary>
   /// getSupertip
   /// </summary>
-  private static String? GetGetSupertip(DocumentFormat.OpenXml.Office.CustomUI.ComboBox openXmlElement)
+  private static String? GetGetSupertip(DXOCustUI.ComboBox openXmlElement)
   {
     return openXmlElement?.GetSupertip?.Value;
   }
   
-  private static void SetGetSupertip(DocumentFormat.OpenXml.Office.CustomUI.ComboBox openXmlElement, String? value)
+  private static void SetGetSupertip(DXOCustUI.ComboBox openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.GetSupertip = new StringValue { Value = value };
@@ -405,12 +405,12 @@ public static class ComboBoxConverter
   /// <summary>
   /// label
   /// </summary>
-  private static String? GetLabel(DocumentFormat.OpenXml.Office.CustomUI.ComboBox openXmlElement)
+  private static String? GetLabel(DXOCustUI.ComboBox openXmlElement)
   {
     return openXmlElement?.Label?.Value;
   }
   
-  private static void SetLabel(DocumentFormat.OpenXml.Office.CustomUI.ComboBox openXmlElement, String? value)
+  private static void SetLabel(DXOCustUI.ComboBox openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.Label = new StringValue { Value = value };
@@ -421,12 +421,12 @@ public static class ComboBoxConverter
   /// <summary>
   /// getLabel
   /// </summary>
-  private static String? GetGetLabel(DocumentFormat.OpenXml.Office.CustomUI.ComboBox openXmlElement)
+  private static String? GetGetLabel(DXOCustUI.ComboBox openXmlElement)
   {
     return openXmlElement?.GetLabel?.Value;
   }
   
-  private static void SetGetLabel(DocumentFormat.OpenXml.Office.CustomUI.ComboBox openXmlElement, String? value)
+  private static void SetGetLabel(DXOCustUI.ComboBox openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.GetLabel = new StringValue { Value = value };
@@ -437,12 +437,12 @@ public static class ComboBoxConverter
   /// <summary>
   /// insertAfterMso
   /// </summary>
-  private static String? GetInsertAfterMso(DocumentFormat.OpenXml.Office.CustomUI.ComboBox openXmlElement)
+  private static String? GetInsertAfterMso(DXOCustUI.ComboBox openXmlElement)
   {
     return openXmlElement?.InsertAfterMso?.Value;
   }
   
-  private static void SetInsertAfterMso(DocumentFormat.OpenXml.Office.CustomUI.ComboBox openXmlElement, String? value)
+  private static void SetInsertAfterMso(DXOCustUI.ComboBox openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.InsertAfterMso = new StringValue { Value = value };
@@ -453,12 +453,12 @@ public static class ComboBoxConverter
   /// <summary>
   /// insertBeforeMso
   /// </summary>
-  private static String? GetInsertBeforeMso(DocumentFormat.OpenXml.Office.CustomUI.ComboBox openXmlElement)
+  private static String? GetInsertBeforeMso(DXOCustUI.ComboBox openXmlElement)
   {
     return openXmlElement?.InsertBeforeMso?.Value;
   }
   
-  private static void SetInsertBeforeMso(DocumentFormat.OpenXml.Office.CustomUI.ComboBox openXmlElement, String? value)
+  private static void SetInsertBeforeMso(DXOCustUI.ComboBox openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.InsertBeforeMso = new StringValue { Value = value };
@@ -469,12 +469,12 @@ public static class ComboBoxConverter
   /// <summary>
   /// insertAfterQ
   /// </summary>
-  private static String? GetInsertAfterQ(DocumentFormat.OpenXml.Office.CustomUI.ComboBox openXmlElement)
+  private static String? GetInsertAfterQ(DXOCustUI.ComboBox openXmlElement)
   {
     return openXmlElement?.InsertAfterQ?.Value;
   }
   
-  private static void SetInsertAfterQ(DocumentFormat.OpenXml.Office.CustomUI.ComboBox openXmlElement, String? value)
+  private static void SetInsertAfterQ(DXOCustUI.ComboBox openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.InsertAfterQ = new StringValue { Value = value };
@@ -485,12 +485,12 @@ public static class ComboBoxConverter
   /// <summary>
   /// insertBeforeQ
   /// </summary>
-  private static String? GetInsertBeforeQ(DocumentFormat.OpenXml.Office.CustomUI.ComboBox openXmlElement)
+  private static String? GetInsertBeforeQ(DXOCustUI.ComboBox openXmlElement)
   {
     return openXmlElement?.InsertBeforeQ?.Value;
   }
   
-  private static void SetInsertBeforeQ(DocumentFormat.OpenXml.Office.CustomUI.ComboBox openXmlElement, String? value)
+  private static void SetInsertBeforeQ(DXOCustUI.ComboBox openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.InsertBeforeQ = new StringValue { Value = value };
@@ -501,12 +501,12 @@ public static class ComboBoxConverter
   /// <summary>
   /// visible
   /// </summary>
-  private static Boolean? GetVisible(DocumentFormat.OpenXml.Office.CustomUI.ComboBox openXmlElement)
+  private static Boolean? GetVisible(DXOCustUI.ComboBox openXmlElement)
   {
     return openXmlElement?.Visible?.Value;
   }
   
-  private static void SetVisible(DocumentFormat.OpenXml.Office.CustomUI.ComboBox openXmlElement, Boolean? value)
+  private static void SetVisible(DXOCustUI.ComboBox openXmlElement, Boolean? value)
   {
     if (value != null)
       openXmlElement.Visible = new BooleanValue { Value = (Boolean)value };
@@ -517,12 +517,12 @@ public static class ComboBoxConverter
   /// <summary>
   /// getVisible
   /// </summary>
-  private static String? GetGetVisible(DocumentFormat.OpenXml.Office.CustomUI.ComboBox openXmlElement)
+  private static String? GetGetVisible(DXOCustUI.ComboBox openXmlElement)
   {
     return openXmlElement?.GetVisible?.Value;
   }
   
-  private static void SetGetVisible(DocumentFormat.OpenXml.Office.CustomUI.ComboBox openXmlElement, String? value)
+  private static void SetGetVisible(DXOCustUI.ComboBox openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.GetVisible = new StringValue { Value = value };
@@ -533,12 +533,12 @@ public static class ComboBoxConverter
   /// <summary>
   /// keytip
   /// </summary>
-  private static String? GetKeytip(DocumentFormat.OpenXml.Office.CustomUI.ComboBox openXmlElement)
+  private static String? GetKeytip(DXOCustUI.ComboBox openXmlElement)
   {
     return openXmlElement?.Keytip?.Value;
   }
   
-  private static void SetKeytip(DocumentFormat.OpenXml.Office.CustomUI.ComboBox openXmlElement, String? value)
+  private static void SetKeytip(DXOCustUI.ComboBox openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.Keytip = new StringValue { Value = value };
@@ -549,12 +549,12 @@ public static class ComboBoxConverter
   /// <summary>
   /// getKeytip
   /// </summary>
-  private static String? GetGetKeytip(DocumentFormat.OpenXml.Office.CustomUI.ComboBox openXmlElement)
+  private static String? GetGetKeytip(DXOCustUI.ComboBox openXmlElement)
   {
     return openXmlElement?.GetKeytip?.Value;
   }
   
-  private static void SetGetKeytip(DocumentFormat.OpenXml.Office.CustomUI.ComboBox openXmlElement, String? value)
+  private static void SetGetKeytip(DXOCustUI.ComboBox openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.GetKeytip = new StringValue { Value = value };
@@ -565,12 +565,12 @@ public static class ComboBoxConverter
   /// <summary>
   /// showLabel
   /// </summary>
-  private static Boolean? GetShowLabel(DocumentFormat.OpenXml.Office.CustomUI.ComboBox openXmlElement)
+  private static Boolean? GetShowLabel(DXOCustUI.ComboBox openXmlElement)
   {
     return openXmlElement?.ShowLabel?.Value;
   }
   
-  private static void SetShowLabel(DocumentFormat.OpenXml.Office.CustomUI.ComboBox openXmlElement, Boolean? value)
+  private static void SetShowLabel(DXOCustUI.ComboBox openXmlElement, Boolean? value)
   {
     if (value != null)
       openXmlElement.ShowLabel = new BooleanValue { Value = (Boolean)value };
@@ -581,12 +581,12 @@ public static class ComboBoxConverter
   /// <summary>
   /// getShowLabel
   /// </summary>
-  private static String? GetGetShowLabel(DocumentFormat.OpenXml.Office.CustomUI.ComboBox openXmlElement)
+  private static String? GetGetShowLabel(DXOCustUI.ComboBox openXmlElement)
   {
     return openXmlElement?.GetShowLabel?.Value;
   }
   
-  private static void SetGetShowLabel(DocumentFormat.OpenXml.Office.CustomUI.ComboBox openXmlElement, String? value)
+  private static void SetGetShowLabel(DXOCustUI.ComboBox openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.GetShowLabel = new StringValue { Value = value };
@@ -597,12 +597,12 @@ public static class ComboBoxConverter
   /// <summary>
   /// showImage
   /// </summary>
-  private static Boolean? GetShowImage(DocumentFormat.OpenXml.Office.CustomUI.ComboBox openXmlElement)
+  private static Boolean? GetShowImage(DXOCustUI.ComboBox openXmlElement)
   {
     return openXmlElement?.ShowImage?.Value;
   }
   
-  private static void SetShowImage(DocumentFormat.OpenXml.Office.CustomUI.ComboBox openXmlElement, Boolean? value)
+  private static void SetShowImage(DXOCustUI.ComboBox openXmlElement, Boolean? value)
   {
     if (value != null)
       openXmlElement.ShowImage = new BooleanValue { Value = (Boolean)value };
@@ -613,12 +613,12 @@ public static class ComboBoxConverter
   /// <summary>
   /// getShowImage
   /// </summary>
-  private static String? GetGetShowImage(DocumentFormat.OpenXml.Office.CustomUI.ComboBox openXmlElement)
+  private static String? GetGetShowImage(DXOCustUI.ComboBox openXmlElement)
   {
     return openXmlElement?.GetShowImage?.Value;
   }
   
-  private static void SetGetShowImage(DocumentFormat.OpenXml.Office.CustomUI.ComboBox openXmlElement, String? value)
+  private static void SetGetShowImage(DXOCustUI.ComboBox openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.GetShowImage = new StringValue { Value = value };
@@ -626,37 +626,37 @@ public static class ComboBoxConverter
       openXmlElement.GetShowImage = null;
   }
   
-  private static System.Collections.ObjectModel.Collection<DocumentModel.UI.Item> GetItems(DocumentFormat.OpenXml.Office.CustomUI.ComboBox openXmlElement)
+  private static Collection<DMUI.Item> GetItems(DXOCustUI.ComboBox openXmlElement)
   {
-    var collection = new System.Collections.ObjectModel.Collection<DocumentModel.UI.Item>();
-    foreach (var item in openXmlElement.Elements<DocumentFormat.OpenXml.Office.CustomUI.Item>())
+    var collection = new Collection<DMUI.Item>();
+    foreach (var item in openXmlElement.Elements<DXOCustUI.Item>())
     {
-      var newItem = DocumentModel.OpenXml.UI.ItemConverter.CreateModelElement(item);
+      var newItem = DMXUI.ItemConverter.CreateModelElement(item);
       if (newItem != null)
         collection.Add(newItem);
     }
     return collection;
   }
   
-  private static void SetItems(DocumentFormat.OpenXml.Office.CustomUI.ComboBox openXmlElement, System.Collections.ObjectModel.Collection<DocumentModel.UI.Item>? value)
+  private static void SetItems(DXOCustUI.ComboBox openXmlElement, Collection<DMUI.Item>? value)
   {
-    openXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Office.CustomUI.Item>();
+    openXmlElement.RemoveAllChildren<DXOCustUI.Item>();
     if (value != null)
     {
       foreach (var item in value)
       {
-        var newItem = DocumentModel.OpenXml.UI.ItemConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office.CustomUI.Item>(item);
+        var newItem = DMXUI.ItemConverter.CreateOpenXmlElement<DXOCustUI.Item>(item);
         if (newItem != null)
           openXmlElement.AddChild(newItem);
       }
     }
   }
   
-  public static DocumentModel.UI.ComboBox? CreateModelElement(DocumentFormat.OpenXml.Office.CustomUI.ComboBox? openXmlElement)
+  public static DMUI.ComboBox? CreateModelElement(DXOCustUI.ComboBox? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.UI.ComboBox();
+      var value = new DMUI.ComboBox();
       value.ShowItemImage = GetShowItemImage(openXmlElement);
       value.GetItemCount = GetGetItemCount(openXmlElement);
       value.GetItemLabel = GetGetItemLabel(openXmlElement);
@@ -702,8 +702,8 @@ public static class ComboBoxConverter
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.UI.ComboBox? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Office.CustomUI.ComboBox, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMUI.ComboBox? value)
+    where OpenXmlElementType: DXOCustUI.ComboBox, new()
   {
     if (value != null)
     {

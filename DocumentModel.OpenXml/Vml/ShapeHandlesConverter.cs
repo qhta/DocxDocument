@@ -5,45 +5,45 @@ namespace DocumentModel.OpenXml.Vml;
 /// </summary>
 public static class ShapeHandlesConverter
 {
-  private static System.Collections.ObjectModel.Collection<DocumentModel.Vml.ShapeHandle> GetItems(DocumentFormat.OpenXml.Vml.ShapeHandles openXmlElement)
+  private static Collection<DMVml.ShapeHandle> GetItems(DXVml.ShapeHandles openXmlElement)
   {
-    var collection = new System.Collections.ObjectModel.Collection<DocumentModel.Vml.ShapeHandle>();
-    foreach (var item in openXmlElement.Elements<DocumentFormat.OpenXml.Vml.ShapeHandle>())
+    var collection = new Collection<DMVml.ShapeHandle>();
+    foreach (var item in openXmlElement.Elements<DXVml.ShapeHandle>())
     {
-      var newItem = DocumentModel.OpenXml.Vml.ShapeHandleConverter.CreateModelElement(item);
+      var newItem = DMXVml.ShapeHandleConverter.CreateModelElement(item);
       if (newItem != null)
         collection.Add(newItem);
     }
     return collection;
   }
   
-  private static void SetItems(DocumentFormat.OpenXml.Vml.ShapeHandles openXmlElement, System.Collections.ObjectModel.Collection<DocumentModel.Vml.ShapeHandle>? value)
+  private static void SetItems(DXVml.ShapeHandles openXmlElement, Collection<DMVml.ShapeHandle>? value)
   {
-    openXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Vml.ShapeHandle>();
+    openXmlElement.RemoveAllChildren<DXVml.ShapeHandle>();
     if (value != null)
     {
       foreach (var item in value)
       {
-        var newItem = DocumentModel.OpenXml.Vml.ShapeHandleConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Vml.ShapeHandle>(item);
+        var newItem = DMXVml.ShapeHandleConverter.CreateOpenXmlElement<DXVml.ShapeHandle>(item);
         if (newItem != null)
           openXmlElement.AddChild(newItem);
       }
     }
   }
   
-  public static DocumentModel.Vml.ShapeHandles? CreateModelElement(DocumentFormat.OpenXml.Vml.ShapeHandles? openXmlElement)
+  public static DMVml.ShapeHandles? CreateModelElement(DXVml.ShapeHandles? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Vml.ShapeHandles();
+      var value = new DMVml.ShapeHandles();
       value.Items = GetItems(openXmlElement);
       return value;
     }
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Vml.ShapeHandles? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Vml.ShapeHandles, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMVml.ShapeHandles? value)
+    where OpenXmlElementType: DXVml.ShapeHandles, new()
   {
     if (value != null)
     {

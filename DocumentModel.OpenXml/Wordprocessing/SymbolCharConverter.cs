@@ -8,12 +8,12 @@ public static class SymbolCharConverter
   /// <summary>
   /// Symbol Character Font
   /// </summary>
-  private static String? GetFont(DocumentFormat.OpenXml.Wordprocessing.SymbolChar openXmlElement)
+  private static String? GetFont(DXW.SymbolChar openXmlElement)
   {
     return openXmlElement?.Font?.Value;
   }
   
-  private static void SetFont(DocumentFormat.OpenXml.Wordprocessing.SymbolChar openXmlElement, String? value)
+  private static void SetFont(DXW.SymbolChar openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.Font = new StringValue { Value = value };
@@ -24,14 +24,14 @@ public static class SymbolCharConverter
   /// <summary>
   /// Symbol Character Code
   /// </summary>
-  private static UInt16? GetChar(DocumentFormat.OpenXml.Wordprocessing.SymbolChar openXmlElement)
+  private static UInt16? GetChar(DXW.SymbolChar openXmlElement)
   {
     if (openXmlElement.Char?.Value != null)
       return UInt16.Parse(openXmlElement.Char.Value, NumberStyles.HexNumber);
     return null;
   }
   
-  private static void SetChar(DocumentFormat.OpenXml.Wordprocessing.SymbolChar openXmlElement, UInt16? value)
+  private static void SetChar(DXW.SymbolChar openXmlElement, UInt16? value)
   {
       if (value != null)
         openXmlElement.Char = ((UInt16)value).ToString("X4");
@@ -39,11 +39,11 @@ public static class SymbolCharConverter
         openXmlElement.Char = null;
   }
   
-  public static DocumentModel.Wordprocessing.SymbolChar? CreateModelElement(DocumentFormat.OpenXml.Wordprocessing.SymbolChar? openXmlElement)
+  public static DMW.SymbolChar? CreateModelElement(DXW.SymbolChar? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Wordprocessing.SymbolChar();
+      var value = new DMW.SymbolChar();
       value.Font = GetFont(openXmlElement);
       value.Char = GetChar(openXmlElement);
       return value;
@@ -51,8 +51,8 @@ public static class SymbolCharConverter
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.SymbolChar? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Wordprocessing.SymbolChar, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMW.SymbolChar? value)
+    where OpenXmlElementType: DXW.SymbolChar, new()
   {
     if (value != null)
     {

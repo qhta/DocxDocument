@@ -8,40 +8,40 @@ public static class FilteredBarSeriesConverter
   /// <summary>
   /// BarChartSeries.
   /// </summary>
-  private static DocumentModel.Drawings.Charts.BarChartSeries3? GetBarChartSeries(DocumentFormat.OpenXml.Office2013.Drawing.Chart.FilteredBarSeries openXmlElement)
+  private static DMDrawsCharts.BarChartSeries3? GetBarChartSeries(DXO2013DrawChart.FilteredBarSeries openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office2013.Drawing.Chart.BarChartSeries>();
+    var itemElement = openXmlElement?.GetFirstChild<DXO2013DrawChart.BarChartSeries>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.Charts.BarChartSeries3Converter.CreateModelElement(itemElement);
+      return DMXDrawsCharts.BarChartSeries3Converter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetBarChartSeries(DocumentFormat.OpenXml.Office2013.Drawing.Chart.FilteredBarSeries openXmlElement, DocumentModel.Drawings.Charts.BarChartSeries3? value)
+  private static void SetBarChartSeries(DXO2013DrawChart.FilteredBarSeries openXmlElement, DMDrawsCharts.BarChartSeries3? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2013.Drawing.Chart.BarChartSeries>();
+    var itemElement = openXmlElement.GetFirstChild<DXO2013DrawChart.BarChartSeries>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Drawings.Charts.BarChartSeries3Converter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2013.Drawing.Chart.BarChartSeries>(value);
+      itemElement = DMXDrawsCharts.BarChartSeries3Converter.CreateOpenXmlElement<DXO2013DrawChart.BarChartSeries>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  public static DocumentModel.Drawings.Charts.FilteredBarSeries? CreateModelElement(DocumentFormat.OpenXml.Office2013.Drawing.Chart.FilteredBarSeries? openXmlElement)
+  public static DMDrawsCharts.FilteredBarSeries? CreateModelElement(DXO2013DrawChart.FilteredBarSeries? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.Charts.FilteredBarSeries();
+      var value = new DMDrawsCharts.FilteredBarSeries();
       value.BarChartSeries = GetBarChartSeries(openXmlElement);
       return value;
     }
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.Charts.FilteredBarSeries? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Office2013.Drawing.Chart.FilteredBarSeries, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDrawsCharts.FilteredBarSeries? value)
+    where OpenXmlElementType: DXO2013DrawChart.FilteredBarSeries, new()
   {
     if (value != null)
     {

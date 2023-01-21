@@ -8,29 +8,29 @@ public static class BiLevelConverter
   /// <summary>
   /// Threshold
   /// </summary>
-  private static Int32? GetThreshold(DocumentFormat.OpenXml.Drawing.BiLevel openXmlElement)
+  private static Int32? GetThreshold(DXDraw.BiLevel openXmlElement)
   {
     return openXmlElement.Threshold?.Value;
   }
   
-  private static void SetThreshold(DocumentFormat.OpenXml.Drawing.BiLevel openXmlElement, Int32? value)
+  private static void SetThreshold(DXDraw.BiLevel openXmlElement, Int32? value)
   {
     openXmlElement.Threshold = value;
   }
   
-  public static DocumentModel.Drawings.BiLevel? CreateModelElement(DocumentFormat.OpenXml.Drawing.BiLevel? openXmlElement)
+  public static DMDraws.BiLevel? CreateModelElement(DXDraw.BiLevel? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.BiLevel();
+      var value = new DMDraws.BiLevel();
       value.Threshold = GetThreshold(openXmlElement);
       return value;
     }
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.BiLevel? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.BiLevel, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDraws.BiLevel? value)
+    where OpenXmlElementType: DXDraw.BiLevel, new()
   {
     if (value != null)
     {

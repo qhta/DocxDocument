@@ -8,25 +8,25 @@ public static class BorderTypeConverter
   /// <summary>
   /// Border Style
   /// </summary>
-  private static DocumentModel.Wordprocessing.Vml.BorderKind? GetType(DocumentFormat.OpenXml.Vml.Wordprocessing.BorderType openXmlElement)
+  private static DMWVml.BorderKind? GetType(DXVmlW.BorderType openXmlElement)
   {
-    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Vml.Wordprocessing.BorderValues, DocumentModel.Wordprocessing.Vml.BorderKind>(openXmlElement?.Type?.Value);
+    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Vml.Wordprocessing.BorderValues, DMWVml.BorderKind>(openXmlElement?.Type?.Value);
   }
   
-  private static void SetType(DocumentFormat.OpenXml.Vml.Wordprocessing.BorderType openXmlElement, DocumentModel.Wordprocessing.Vml.BorderKind? value)
+  private static void SetType(DXVmlW.BorderType openXmlElement, DMWVml.BorderKind? value)
   {
-    openXmlElement.Type = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Vml.Wordprocessing.BorderValues, DocumentModel.Wordprocessing.Vml.BorderKind>(value);
+    openXmlElement.Type = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Vml.Wordprocessing.BorderValues, DMWVml.BorderKind>(value);
   }
   
   /// <summary>
   /// Border Width
   /// </summary>
-  private static Int64? GetWidth(DocumentFormat.OpenXml.Vml.Wordprocessing.BorderType openXmlElement)
+  private static Int64? GetWidth(DXVmlW.BorderType openXmlElement)
   {
     return openXmlElement.Width?.Value;
   }
   
-  private static void SetWidth(DocumentFormat.OpenXml.Vml.Wordprocessing.BorderType openXmlElement, Int64? value)
+  private static void SetWidth(DXVmlW.BorderType openXmlElement, Int64? value)
   {
     openXmlElement.Width = value;
   }
@@ -34,12 +34,12 @@ public static class BorderTypeConverter
   /// <summary>
   /// Border shadow
   /// </summary>
-  private static Boolean? GetShadow(DocumentFormat.OpenXml.Vml.Wordprocessing.BorderType openXmlElement)
+  private static Boolean? GetShadow(DXVmlW.BorderType openXmlElement)
   {
     return openXmlElement?.Shadow?.Value;
   }
   
-  private static void SetShadow(DocumentFormat.OpenXml.Vml.Wordprocessing.BorderType openXmlElement, Boolean? value)
+  private static void SetShadow(DXVmlW.BorderType openXmlElement, Boolean? value)
   {
     if (value != null)
       openXmlElement.Shadow = value;
@@ -47,11 +47,11 @@ public static class BorderTypeConverter
       openXmlElement.Shadow = null;
   }
   
-  public static DocumentModel.Wordprocessing.Vml.BorderType? CreateModelElement(DocumentFormat.OpenXml.Vml.Wordprocessing.BorderType? openXmlElement)
+  public static DMWVml.BorderType? CreateModelElement(DXVmlW.BorderType? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Wordprocessing.Vml.BorderType();
+      var value = new DMWVml.BorderType();
       value.Type = GetType(openXmlElement);
       value.Width = GetWidth(openXmlElement);
       value.Shadow = GetShadow(openXmlElement);
@@ -60,8 +60,8 @@ public static class BorderTypeConverter
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.Vml.BorderType? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Vml.Wordprocessing.BorderType, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMWVml.BorderType? value)
+    where OpenXmlElementType: DXVmlW.BorderType, new()
   {
     if (value != null)
     {

@@ -5,116 +5,116 @@ namespace DocumentModel.OpenXml.Drawings.Charts;
 /// </summary>
 public static class XValuesConverter
 {
-  private static DocumentModel.Drawings.Charts.MultiLevelStringReference? GetMultiLevelStringReference(DocumentFormat.OpenXml.Drawing.Charts.XValues openXmlElement)
+  private static DMDrawsCharts.MultiLevelStringReference? GetMultiLevelStringReference(DXDrawCharts.XValues openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.MultiLevelStringReference>();
+    var itemElement = openXmlElement?.GetFirstChild<DXDrawCharts.MultiLevelStringReference>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.Charts.MultiLevelStringReferenceConverter.CreateModelElement(itemElement);
+      return DMXDrawsCharts.MultiLevelStringReferenceConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetMultiLevelStringReference(DocumentFormat.OpenXml.Drawing.Charts.XValues openXmlElement, DocumentModel.Drawings.Charts.MultiLevelStringReference? value)
+  private static void SetMultiLevelStringReference(DXDrawCharts.XValues openXmlElement, DMDrawsCharts.MultiLevelStringReference? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.MultiLevelStringReference>();
+    var itemElement = openXmlElement.GetFirstChild<DXDrawCharts.MultiLevelStringReference>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Drawings.Charts.MultiLevelStringReferenceConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Charts.MultiLevelStringReference>(value);
+      itemElement = DMXDrawsCharts.MultiLevelStringReferenceConverter.CreateOpenXmlElement<DXDrawCharts.MultiLevelStringReference>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static DocumentModel.Drawings.Charts.NumberReference? GetNumberReference(DocumentFormat.OpenXml.Drawing.Charts.XValues openXmlElement)
+  private static DMDrawsCharts.NumberReference? GetNumberReference(DXDrawCharts.XValues openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.NumberReference>();
+    var itemElement = openXmlElement?.GetFirstChild<DXDrawCharts.NumberReference>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.Charts.NumberReferenceConverter.CreateModelElement(itemElement);
+      return DMXDrawsCharts.NumberReferenceConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetNumberReference(DocumentFormat.OpenXml.Drawing.Charts.XValues openXmlElement, DocumentModel.Drawings.Charts.NumberReference? value)
+  private static void SetNumberReference(DXDrawCharts.XValues openXmlElement, DMDrawsCharts.NumberReference? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.NumberReference>();
+    var itemElement = openXmlElement.GetFirstChild<DXDrawCharts.NumberReference>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Drawings.Charts.NumberReferenceConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Charts.NumberReference>(value);
+      itemElement = DMXDrawsCharts.NumberReferenceConverter.CreateOpenXmlElement<DXDrawCharts.NumberReference>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static DocumentModel.Drawings.Charts.NumberLiteral? GetNumberLiteral(DocumentFormat.OpenXml.Drawing.Charts.XValues openXmlElement)
+  private static DMDrawsCharts.NumberLiteral? GetNumberLiteral(DXDrawCharts.XValues openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.NumberLiteral>();
+    var itemElement = openXmlElement?.GetFirstChild<DXDrawCharts.NumberLiteral>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.Charts.NumberLiteralConverter.CreateModelElement(itemElement);
+      return DMXDrawsCharts.NumberLiteralConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetNumberLiteral(DocumentFormat.OpenXml.Drawing.Charts.XValues openXmlElement, DocumentModel.Drawings.Charts.NumberLiteral? value)
+  private static void SetNumberLiteral(DXDrawCharts.XValues openXmlElement, DMDrawsCharts.NumberLiteral? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.NumberLiteral>();
+    var itemElement = openXmlElement.GetFirstChild<DXDrawCharts.NumberLiteral>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Drawings.Charts.NumberLiteralConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Charts.NumberLiteral>(value);
+      itemElement = DMXDrawsCharts.NumberLiteralConverter.CreateOpenXmlElement<DXDrawCharts.NumberLiteral>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static DocumentModel.Drawings.Charts.StringReference? GetStringReference(DocumentFormat.OpenXml.Drawing.Charts.XValues openXmlElement)
+  private static DMDrawsCharts.StringReference? GetStringReference(DXDrawCharts.XValues openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.StringReference>();
+    var itemElement = openXmlElement?.GetFirstChild<DXDrawCharts.StringReference>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.Charts.StringReferenceConverter.CreateModelElement(itemElement);
+      return DMXDrawsCharts.StringReferenceConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetStringReference(DocumentFormat.OpenXml.Drawing.Charts.XValues openXmlElement, DocumentModel.Drawings.Charts.StringReference? value)
+  private static void SetStringReference(DXDrawCharts.XValues openXmlElement, DMDrawsCharts.StringReference? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.StringReference>();
+    var itemElement = openXmlElement.GetFirstChild<DXDrawCharts.StringReference>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Drawings.Charts.StringReferenceConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Charts.StringReference>(value);
+      itemElement = DMXDrawsCharts.StringReferenceConverter.CreateOpenXmlElement<DXDrawCharts.StringReference>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static DocumentModel.Drawings.Charts.StringLiteral? GetStringLiteral(DocumentFormat.OpenXml.Drawing.Charts.XValues openXmlElement)
+  private static DMDrawsCharts.StringLiteral? GetStringLiteral(DXDrawCharts.XValues openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.StringLiteral>();
+    var itemElement = openXmlElement?.GetFirstChild<DXDrawCharts.StringLiteral>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.Charts.StringLiteralConverter.CreateModelElement(itemElement);
+      return DMXDrawsCharts.StringLiteralConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetStringLiteral(DocumentFormat.OpenXml.Drawing.Charts.XValues openXmlElement, DocumentModel.Drawings.Charts.StringLiteral? value)
+  private static void SetStringLiteral(DXDrawCharts.XValues openXmlElement, DMDrawsCharts.StringLiteral? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Charts.StringLiteral>();
+    var itemElement = openXmlElement.GetFirstChild<DXDrawCharts.StringLiteral>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Drawings.Charts.StringLiteralConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Charts.StringLiteral>(value);
+      itemElement = DMXDrawsCharts.StringLiteralConverter.CreateOpenXmlElement<DXDrawCharts.StringLiteral>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  public static DocumentModel.Drawings.Charts.XValues? CreateModelElement(DocumentFormat.OpenXml.Drawing.Charts.XValues? openXmlElement)
+  public static DMDrawsCharts.XValues? CreateModelElement(DXDrawCharts.XValues? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.Charts.XValues();
+      var value = new DMDrawsCharts.XValues();
       value.MultiLevelStringReference = GetMultiLevelStringReference(openXmlElement);
       value.NumberReference = GetNumberReference(openXmlElement);
       value.NumberLiteral = GetNumberLiteral(openXmlElement);
@@ -125,8 +125,8 @@ public static class XValuesConverter
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.Charts.XValues? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.Charts.XValues, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDrawsCharts.XValues? value)
+    where OpenXmlElementType: DXDrawCharts.XValues, new()
   {
     if (value != null)
     {

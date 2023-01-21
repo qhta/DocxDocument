@@ -8,40 +8,40 @@ public static class FilteredCategoryTitleConverter
   /// <summary>
   /// AxisDataSourceType.
   /// </summary>
-  private static DocumentModel.Drawings.Charts.AxisDataSourceType3? GetAxisDataSourceType(DocumentFormat.OpenXml.Office2013.Drawing.Chart.FilteredCategoryTitle openXmlElement)
+  private static DMDrawsCharts.AxisDataSourceType3? GetAxisDataSourceType(DXO2013DrawChart.FilteredCategoryTitle openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office2013.Drawing.Chart.AxisDataSourceType>();
+    var itemElement = openXmlElement?.GetFirstChild<DXO2013DrawChart.AxisDataSourceType>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.Charts.AxisDataSourceType3Converter.CreateModelElement(itemElement);
+      return DMXDrawsCharts.AxisDataSourceType3Converter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetAxisDataSourceType(DocumentFormat.OpenXml.Office2013.Drawing.Chart.FilteredCategoryTitle openXmlElement, DocumentModel.Drawings.Charts.AxisDataSourceType3? value)
+  private static void SetAxisDataSourceType(DXO2013DrawChart.FilteredCategoryTitle openXmlElement, DMDrawsCharts.AxisDataSourceType3? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2013.Drawing.Chart.AxisDataSourceType>();
+    var itemElement = openXmlElement.GetFirstChild<DXO2013DrawChart.AxisDataSourceType>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Drawings.Charts.AxisDataSourceType3Converter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2013.Drawing.Chart.AxisDataSourceType>(value);
+      itemElement = DMXDrawsCharts.AxisDataSourceType3Converter.CreateOpenXmlElement<DXO2013DrawChart.AxisDataSourceType>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  public static DocumentModel.Drawings.Charts.FilteredCategoryTitle? CreateModelElement(DocumentFormat.OpenXml.Office2013.Drawing.Chart.FilteredCategoryTitle? openXmlElement)
+  public static DMDrawsCharts.FilteredCategoryTitle? CreateModelElement(DXO2013DrawChart.FilteredCategoryTitle? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.Charts.FilteredCategoryTitle();
+      var value = new DMDrawsCharts.FilteredCategoryTitle();
       value.AxisDataSourceType = GetAxisDataSourceType(openXmlElement);
       return value;
     }
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.Charts.FilteredCategoryTitle? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Office2013.Drawing.Chart.FilteredCategoryTitle, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDrawsCharts.FilteredCategoryTitle? value)
+    where OpenXmlElementType: DXO2013DrawChart.FilteredCategoryTitle, new()
   {
     if (value != null)
     {

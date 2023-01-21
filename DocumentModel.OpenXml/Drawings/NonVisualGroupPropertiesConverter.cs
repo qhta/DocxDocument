@@ -8,12 +8,12 @@ public static class NonVisualGroupPropertiesConverter
   /// <summary>
   /// isLegacyGroup, this property is only available in Office 2013 and later.
   /// </summary>
-  private static Boolean? GetIsLegacyGroup(DocumentFormat.OpenXml.Office2013.Drawing.NonVisualGroupProperties openXmlElement)
+  private static Boolean? GetIsLegacyGroup(DXO2013Draw.NonVisualGroupProperties openXmlElement)
   {
     return openXmlElement?.IsLegacyGroup?.Value;
   }
   
-  private static void SetIsLegacyGroup(DocumentFormat.OpenXml.Office2013.Drawing.NonVisualGroupProperties openXmlElement, Boolean? value)
+  private static void SetIsLegacyGroup(DXO2013Draw.NonVisualGroupProperties openXmlElement, Boolean? value)
   {
     if (value != null)
       openXmlElement.IsLegacyGroup = new BooleanValue { Value = (Boolean)value };
@@ -21,19 +21,19 @@ public static class NonVisualGroupPropertiesConverter
       openXmlElement.IsLegacyGroup = null;
   }
   
-  public static DocumentModel.Drawings.NonVisualGroupProperties? CreateModelElement(DocumentFormat.OpenXml.Office2013.Drawing.NonVisualGroupProperties? openXmlElement)
+  public static DMDraws.NonVisualGroupProperties? CreateModelElement(DXO2013Draw.NonVisualGroupProperties? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.NonVisualGroupProperties();
+      var value = new DMDraws.NonVisualGroupProperties();
       value.IsLegacyGroup = GetIsLegacyGroup(openXmlElement);
       return value;
     }
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.NonVisualGroupProperties? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Office2013.Drawing.NonVisualGroupProperties, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDraws.NonVisualGroupProperties? value)
+    where OpenXmlElementType: DXO2013Draw.NonVisualGroupProperties, new()
   {
     if (value != null)
     {

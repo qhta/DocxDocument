@@ -8,12 +8,12 @@ public static class ColorTransformDescriptionConverter
   /// <summary>
   /// Language
   /// </summary>
-  private static String? GetLanguage(DocumentFormat.OpenXml.Drawing.Diagrams.ColorTransformDescription openXmlElement)
+  private static String? GetLanguage(DXDrawDgms.ColorTransformDescription openXmlElement)
   {
     return openXmlElement?.Language?.Value;
   }
   
-  private static void SetLanguage(DocumentFormat.OpenXml.Drawing.Diagrams.ColorTransformDescription openXmlElement, String? value)
+  private static void SetLanguage(DXDrawDgms.ColorTransformDescription openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.Language = new StringValue { Value = value };
@@ -24,12 +24,12 @@ public static class ColorTransformDescriptionConverter
   /// <summary>
   /// Description Value
   /// </summary>
-  private static String? GetVal(DocumentFormat.OpenXml.Drawing.Diagrams.ColorTransformDescription openXmlElement)
+  private static String? GetVal(DXDrawDgms.ColorTransformDescription openXmlElement)
   {
     return openXmlElement?.Val?.Value;
   }
   
-  private static void SetVal(DocumentFormat.OpenXml.Drawing.Diagrams.ColorTransformDescription openXmlElement, String? value)
+  private static void SetVal(DXDrawDgms.ColorTransformDescription openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.Val = new StringValue { Value = value };
@@ -37,11 +37,11 @@ public static class ColorTransformDescriptionConverter
       openXmlElement.Val = null;
   }
   
-  public static DocumentModel.Drawings.Diagrams.ColorTransformDescription? CreateModelElement(DocumentFormat.OpenXml.Drawing.Diagrams.ColorTransformDescription? openXmlElement)
+  public static DMDrawsDgms.ColorTransformDescription? CreateModelElement(DXDrawDgms.ColorTransformDescription? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.Diagrams.ColorTransformDescription();
+      var value = new DMDrawsDgms.ColorTransformDescription();
       value.Language = GetLanguage(openXmlElement);
       value.Val = GetVal(openXmlElement);
       return value;
@@ -49,8 +49,8 @@ public static class ColorTransformDescriptionConverter
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.Diagrams.ColorTransformDescription? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.Diagrams.ColorTransformDescription, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDrawsDgms.ColorTransformDescription? value)
+    where OpenXmlElementType: DXDrawDgms.ColorTransformDescription, new()
   {
     if (value != null)
     {

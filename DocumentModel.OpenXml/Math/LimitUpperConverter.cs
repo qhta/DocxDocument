@@ -8,22 +8,22 @@ public static class LimitUpperConverter
   /// <summary>
   /// Upper Limit Properties.
   /// </summary>
-  private static DocumentModel.Math.LimitUpperProperties? GetLimitUpperProperties(DocumentFormat.OpenXml.Math.LimitUpper openXmlElement)
+  private static DMMath.LimitUpperProperties? GetLimitUpperProperties(DXMath.LimitUpper openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Math.LimitUpperProperties>();
+    var itemElement = openXmlElement?.GetFirstChild<DXMath.LimitUpperProperties>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Math.LimitUpperPropertiesConverter.CreateModelElement(itemElement);
+      return DMXMath.LimitUpperPropertiesConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetLimitUpperProperties(DocumentFormat.OpenXml.Math.LimitUpper openXmlElement, DocumentModel.Math.LimitUpperProperties? value)
+  private static void SetLimitUpperProperties(DXMath.LimitUpper openXmlElement, DMMath.LimitUpperProperties? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Math.LimitUpperProperties>();
+    var itemElement = openXmlElement.GetFirstChild<DXMath.LimitUpperProperties>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Math.LimitUpperPropertiesConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Math.LimitUpperProperties>(value);
+      itemElement = DMXMath.LimitUpperPropertiesConverter.CreateOpenXmlElement<DXMath.LimitUpperProperties>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
@@ -32,22 +32,22 @@ public static class LimitUpperConverter
   /// <summary>
   /// Base.
   /// </summary>
-  private static DocumentModel.Math.Base? GetBase(DocumentFormat.OpenXml.Math.LimitUpper openXmlElement)
+  private static DMMath.Base? GetBase(DXMath.LimitUpper openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Math.Base>();
+    var itemElement = openXmlElement?.GetFirstChild<DXMath.Base>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Math.BaseConverter.CreateModelElement(itemElement);
+      return DMXMath.BaseConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetBase(DocumentFormat.OpenXml.Math.LimitUpper openXmlElement, DocumentModel.Math.Base? value)
+  private static void SetBase(DXMath.LimitUpper openXmlElement, DMMath.Base? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Math.Base>();
+    var itemElement = openXmlElement.GetFirstChild<DXMath.Base>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Math.BaseConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Math.Base>(value);
+      itemElement = DMXMath.BaseConverter.CreateOpenXmlElement<DXMath.Base>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
@@ -56,32 +56,32 @@ public static class LimitUpperConverter
   /// <summary>
   /// Limit (Upper).
   /// </summary>
-  private static DocumentModel.Math.Limit? GetLimit(DocumentFormat.OpenXml.Math.LimitUpper openXmlElement)
+  private static DMMath.Limit? GetLimit(DXMath.LimitUpper openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Math.Limit>();
+    var itemElement = openXmlElement?.GetFirstChild<DXMath.Limit>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Math.LimitConverter.CreateModelElement(itemElement);
+      return DMXMath.LimitConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetLimit(DocumentFormat.OpenXml.Math.LimitUpper openXmlElement, DocumentModel.Math.Limit? value)
+  private static void SetLimit(DXMath.LimitUpper openXmlElement, DMMath.Limit? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Math.Limit>();
+    var itemElement = openXmlElement.GetFirstChild<DXMath.Limit>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Math.LimitConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Math.Limit>(value);
+      itemElement = DMXMath.LimitConverter.CreateOpenXmlElement<DXMath.Limit>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  public static DocumentModel.Math.LimitUpper? CreateModelElement(DocumentFormat.OpenXml.Math.LimitUpper? openXmlElement)
+  public static DMMath.LimitUpper? CreateModelElement(DXMath.LimitUpper? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Math.LimitUpper();
+      var value = new DMMath.LimitUpper();
       value.LimitUpperProperties = GetLimitUpperProperties(openXmlElement);
       value.Base = GetBase(openXmlElement);
       value.Limit = GetLimit(openXmlElement);
@@ -90,8 +90,8 @@ public static class LimitUpperConverter
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Math.LimitUpper? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Math.LimitUpper, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMMath.LimitUpper? value)
+    where OpenXmlElementType: DXMath.LimitUpper, new()
   {
     if (value != null)
     {

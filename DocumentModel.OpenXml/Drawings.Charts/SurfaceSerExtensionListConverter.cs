@@ -5,45 +5,45 @@ namespace DocumentModel.OpenXml.Drawings.Charts;
 /// </summary>
 public static class SurfaceSerExtensionListConverter
 {
-  private static System.Collections.ObjectModel.Collection<DocumentModel.Drawings.Charts.SurfaceSerExtension> GetSurfaceSerExtensions(DocumentFormat.OpenXml.Drawing.Charts.SurfaceSerExtensionList openXmlElement)
+  private static Collection<DMDrawsCharts.SurfaceSerExtension> GetSurfaceSerExtensions(DXDrawCharts.SurfaceSerExtensionList openXmlElement)
   {
-    var collection = new System.Collections.ObjectModel.Collection<DocumentModel.Drawings.Charts.SurfaceSerExtension>();
-    foreach (var item in openXmlElement.Elements<DocumentFormat.OpenXml.Drawing.Charts.SurfaceSerExtension>())
+    var collection = new Collection<DMDrawsCharts.SurfaceSerExtension>();
+    foreach (var item in openXmlElement.Elements<DXDrawCharts.SurfaceSerExtension>())
     {
-      var newItem = DocumentModel.OpenXml.Drawings.Charts.SurfaceSerExtensionConverter.CreateModelElement(item);
+      var newItem = DMXDrawsCharts.SurfaceSerExtensionConverter.CreateModelElement(item);
       if (newItem != null)
         collection.Add(newItem);
     }
     return collection;
   }
   
-  private static void SetSurfaceSerExtensions(DocumentFormat.OpenXml.Drawing.Charts.SurfaceSerExtensionList openXmlElement, System.Collections.ObjectModel.Collection<DocumentModel.Drawings.Charts.SurfaceSerExtension>? value)
+  private static void SetSurfaceSerExtensions(DXDrawCharts.SurfaceSerExtensionList openXmlElement, Collection<DMDrawsCharts.SurfaceSerExtension>? value)
   {
-    openXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Drawing.Charts.SurfaceSerExtension>();
+    openXmlElement.RemoveAllChildren<DXDrawCharts.SurfaceSerExtension>();
     if (value != null)
     {
       foreach (var item in value)
       {
-        var newItem = DocumentModel.OpenXml.Drawings.Charts.SurfaceSerExtensionConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Charts.SurfaceSerExtension>(item);
+        var newItem = DMXDrawsCharts.SurfaceSerExtensionConverter.CreateOpenXmlElement<DXDrawCharts.SurfaceSerExtension>(item);
         if (newItem != null)
           openXmlElement.AddChild(newItem);
       }
     }
   }
   
-  public static DocumentModel.Drawings.Charts.SurfaceSerExtensionList? CreateModelElement(DocumentFormat.OpenXml.Drawing.Charts.SurfaceSerExtensionList? openXmlElement)
+  public static DMDrawsCharts.SurfaceSerExtensionList? CreateModelElement(DXDrawCharts.SurfaceSerExtensionList? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.Charts.SurfaceSerExtensionList();
+      var value = new DMDrawsCharts.SurfaceSerExtensionList();
       value.SurfaceSerExtensions = GetSurfaceSerExtensions(openXmlElement);
       return value;
     }
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.Charts.SurfaceSerExtensionList? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.Charts.SurfaceSerExtensionList, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDrawsCharts.SurfaceSerExtensionList? value)
+    where OpenXmlElementType: DXDrawCharts.SurfaceSerExtensionList, new()
   {
     if (value != null)
     {

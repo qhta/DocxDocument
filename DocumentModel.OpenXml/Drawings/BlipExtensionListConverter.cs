@@ -5,45 +5,45 @@ namespace DocumentModel.OpenXml.Drawings;
 /// </summary>
 public static class BlipExtensionListConverter
 {
-  private static System.Collections.ObjectModel.Collection<DocumentModel.Drawings.BlipExtension> GetBlipExtensions(DocumentFormat.OpenXml.Drawing.BlipExtensionList openXmlElement)
+  private static Collection<DMDraws.BlipExtension> GetBlipExtensions(DXDraw.BlipExtensionList openXmlElement)
   {
-    var collection = new System.Collections.ObjectModel.Collection<DocumentModel.Drawings.BlipExtension>();
-    foreach (var item in openXmlElement.Elements<DocumentFormat.OpenXml.Drawing.BlipExtension>())
+    var collection = new Collection<DMDraws.BlipExtension>();
+    foreach (var item in openXmlElement.Elements<DXDraw.BlipExtension>())
     {
-      var newItem = DocumentModel.OpenXml.Drawings.BlipExtensionConverter.CreateModelElement(item);
+      var newItem = DMXDraws.BlipExtensionConverter.CreateModelElement(item);
       if (newItem != null)
         collection.Add(newItem);
     }
     return collection;
   }
   
-  private static void SetBlipExtensions(DocumentFormat.OpenXml.Drawing.BlipExtensionList openXmlElement, System.Collections.ObjectModel.Collection<DocumentModel.Drawings.BlipExtension>? value)
+  private static void SetBlipExtensions(DXDraw.BlipExtensionList openXmlElement, Collection<DMDraws.BlipExtension>? value)
   {
-    openXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Drawing.BlipExtension>();
+    openXmlElement.RemoveAllChildren<DXDraw.BlipExtension>();
     if (value != null)
     {
       foreach (var item in value)
       {
-        var newItem = DocumentModel.OpenXml.Drawings.BlipExtensionConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.BlipExtension>(item);
+        var newItem = DMXDraws.BlipExtensionConverter.CreateOpenXmlElement<DXDraw.BlipExtension>(item);
         if (newItem != null)
           openXmlElement.AddChild(newItem);
       }
     }
   }
   
-  public static DocumentModel.Drawings.BlipExtensionList? CreateModelElement(DocumentFormat.OpenXml.Drawing.BlipExtensionList? openXmlElement)
+  public static DMDraws.BlipExtensionList? CreateModelElement(DXDraw.BlipExtensionList? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.BlipExtensionList();
+      var value = new DMDraws.BlipExtensionList();
       value.BlipExtensions = GetBlipExtensions(openXmlElement);
       return value;
     }
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.BlipExtensionList? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.BlipExtensionList, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDraws.BlipExtensionList? value)
+    where OpenXmlElementType: DXDraw.BlipExtensionList, new()
   {
     if (value != null)
     {

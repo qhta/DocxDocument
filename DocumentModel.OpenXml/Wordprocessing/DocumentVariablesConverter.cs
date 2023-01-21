@@ -5,45 +5,45 @@ namespace DocumentModel.OpenXml.Wordprocessing;
 /// </summary>
 public static class DocumentVariablesConverter
 {
-  private static System.Collections.ObjectModel.Collection<DocumentModel.Wordprocessing.DocumentVariable> GetItems(DocumentFormat.OpenXml.Wordprocessing.DocumentVariables openXmlElement)
+  private static Collection<DMW.DocumentVariable> GetItems(DXW.DocumentVariables openXmlElement)
   {
-    var collection = new System.Collections.ObjectModel.Collection<DocumentModel.Wordprocessing.DocumentVariable>();
-    foreach (var item in openXmlElement.Elements<DocumentFormat.OpenXml.Wordprocessing.DocumentVariable>())
+    var collection = new Collection<DMW.DocumentVariable>();
+    foreach (var item in openXmlElement.Elements<DXW.DocumentVariable>())
     {
-      var newItem = DocumentModel.OpenXml.Wordprocessing.DocumentVariableConverter.CreateModelElement(item);
+      var newItem = DMXW.DocumentVariableConverter.CreateModelElement(item);
       if (newItem != null)
         collection.Add(newItem);
     }
     return collection;
   }
   
-  private static void SetItems(DocumentFormat.OpenXml.Wordprocessing.DocumentVariables openXmlElement, System.Collections.ObjectModel.Collection<DocumentModel.Wordprocessing.DocumentVariable>? value)
+  private static void SetItems(DXW.DocumentVariables openXmlElement, Collection<DMW.DocumentVariable>? value)
   {
-    openXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Wordprocessing.DocumentVariable>();
+    openXmlElement.RemoveAllChildren<DXW.DocumentVariable>();
     if (value != null)
     {
       foreach (var item in value)
       {
-        var newItem = DocumentModel.OpenXml.Wordprocessing.DocumentVariableConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.DocumentVariable>(item);
+        var newItem = DMXW.DocumentVariableConverter.CreateOpenXmlElement<DXW.DocumentVariable>(item);
         if (newItem != null)
           openXmlElement.AddChild(newItem);
       }
     }
   }
   
-  public static DocumentModel.Wordprocessing.DocumentVariables? CreateModelElement(DocumentFormat.OpenXml.Wordprocessing.DocumentVariables? openXmlElement)
+  public static DMW.DocumentVariables? CreateModelElement(DXW.DocumentVariables? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Wordprocessing.DocumentVariables();
+      var value = new DMW.DocumentVariables();
       value.Items = GetItems(openXmlElement);
       return value;
     }
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.DocumentVariables? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Wordprocessing.DocumentVariables, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMW.DocumentVariables? value)
+    where OpenXmlElementType: DXW.DocumentVariables, new()
   {
     if (value != null)
     {

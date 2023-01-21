@@ -8,29 +8,29 @@ public static class ProofErrorConverter
   /// <summary>
   /// Proofing Error Anchor Type
   /// </summary>
-  private static DocumentModel.Wordprocessing.ProofingErrorKind? GetType(DocumentFormat.OpenXml.Wordprocessing.ProofError openXmlElement)
+  private static DMW.ProofingErrorKind? GetType(DXW.ProofError openXmlElement)
   {
-    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Wordprocessing.ProofingErrorValues, DocumentModel.Wordprocessing.ProofingErrorKind>(openXmlElement?.Type?.Value);
+    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Wordprocessing.ProofingErrorValues, DMW.ProofingErrorKind>(openXmlElement?.Type?.Value);
   }
   
-  private static void SetType(DocumentFormat.OpenXml.Wordprocessing.ProofError openXmlElement, DocumentModel.Wordprocessing.ProofingErrorKind? value)
+  private static void SetType(DXW.ProofError openXmlElement, DMW.ProofingErrorKind? value)
   {
-    openXmlElement.Type = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Wordprocessing.ProofingErrorValues, DocumentModel.Wordprocessing.ProofingErrorKind>(value);
+    openXmlElement.Type = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Wordprocessing.ProofingErrorValues, DMW.ProofingErrorKind>(value);
   }
   
-  public static DocumentModel.Wordprocessing.ProofError? CreateModelElement(DocumentFormat.OpenXml.Wordprocessing.ProofError? openXmlElement)
+  public static DMW.ProofError? CreateModelElement(DXW.ProofError? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Wordprocessing.ProofError();
+      var value = new DMW.ProofError();
       value.Type = GetType(openXmlElement);
       return value;
     }
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.ProofError? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Wordprocessing.ProofError, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMW.ProofError? value)
+    where OpenXmlElementType: DXW.ProofError, new()
   {
     if (value != null)
     {

@@ -8,25 +8,25 @@ public static class GeoDataPointQueryConverter
   /// <summary>
   /// entityType, this property is only available in Office 2016 and later.
   /// </summary>
-  private static DocumentModel.Drawings.ChartDrawings.EntityTypeEnum? GetEntityType(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.GeoDataPointQuery openXmlElement)
+  private static DMDrawsChartDraws.EntityTypeEnum? GetEntityType(DXO2016DrawChartDraw.GeoDataPointQuery openXmlElement)
   {
-    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.EntityTypeEnum, DocumentModel.Drawings.ChartDrawings.EntityTypeEnum>(openXmlElement?.EntityType?.Value);
+    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.EntityTypeEnum, DMDrawsChartDraws.EntityTypeEnum>(openXmlElement?.EntityType?.Value);
   }
   
-  private static void SetEntityType(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.GeoDataPointQuery openXmlElement, DocumentModel.Drawings.ChartDrawings.EntityTypeEnum? value)
+  private static void SetEntityType(DXO2016DrawChartDraw.GeoDataPointQuery openXmlElement, DMDrawsChartDraws.EntityTypeEnum? value)
   {
-    openXmlElement.EntityType = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.EntityTypeEnum, DocumentModel.Drawings.ChartDrawings.EntityTypeEnum>(value);
+    openXmlElement.EntityType = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.EntityTypeEnum, DMDrawsChartDraws.EntityTypeEnum>(value);
   }
   
   /// <summary>
   /// latitude, this property is only available in Office 2016 and later.
   /// </summary>
-  private static Double? GetLatitude(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.GeoDataPointQuery openXmlElement)
+  private static Double? GetLatitude(DXO2016DrawChartDraw.GeoDataPointQuery openXmlElement)
   {
     return openXmlElement.Latitude?.Value;
   }
   
-  private static void SetLatitude(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.GeoDataPointQuery openXmlElement, Double? value)
+  private static void SetLatitude(DXO2016DrawChartDraw.GeoDataPointQuery openXmlElement, Double? value)
   {
     openXmlElement.Latitude = value;
   }
@@ -34,21 +34,21 @@ public static class GeoDataPointQueryConverter
   /// <summary>
   /// longitude, this property is only available in Office 2016 and later.
   /// </summary>
-  private static Double? GetLongitude(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.GeoDataPointQuery openXmlElement)
+  private static Double? GetLongitude(DXO2016DrawChartDraw.GeoDataPointQuery openXmlElement)
   {
     return openXmlElement.Longitude?.Value;
   }
   
-  private static void SetLongitude(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.GeoDataPointQuery openXmlElement, Double? value)
+  private static void SetLongitude(DXO2016DrawChartDraw.GeoDataPointQuery openXmlElement, Double? value)
   {
     openXmlElement.Longitude = value;
   }
   
-  public static DocumentModel.Drawings.ChartDrawings.GeoDataPointQuery? CreateModelElement(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.GeoDataPointQuery? openXmlElement)
+  public static DMDrawsChartDraws.GeoDataPointQuery? CreateModelElement(DXO2016DrawChartDraw.GeoDataPointQuery? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.ChartDrawings.GeoDataPointQuery();
+      var value = new DMDrawsChartDraws.GeoDataPointQuery();
       value.EntityType = GetEntityType(openXmlElement);
       value.Latitude = GetLatitude(openXmlElement);
       value.Longitude = GetLongitude(openXmlElement);
@@ -57,8 +57,8 @@ public static class GeoDataPointQueryConverter
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.ChartDrawings.GeoDataPointQuery? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.GeoDataPointQuery, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDrawsChartDraws.GeoDataPointQuery? value)
+    where OpenXmlElementType: DXO2016DrawChartDraw.GeoDataPointQuery, new()
   {
     if (value != null)
     {

@@ -8,22 +8,22 @@ public static class NumberingPropertiesConverter
   /// <summary>
   /// Numbering Level Reference.
   /// </summary>
-  private static Int32? GetNumberingLevelReference(DocumentFormat.OpenXml.Wordprocessing.NumberingProperties openXmlElement)
+  private static Int32? GetNumberingLevelReference(DXW.NumberingProperties openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.NumberingLevelReference>();
+    var itemElement = openXmlElement?.GetFirstChild<DXW.NumberingLevelReference>();
     if (itemElement != null)
       return itemElement.Val?.Value;
     return null;
   }
   
-  private static void SetNumberingLevelReference(DocumentFormat.OpenXml.Wordprocessing.NumberingProperties openXmlElement, Int32? value)
+  private static void SetNumberingLevelReference(DXW.NumberingProperties openXmlElement, Int32? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.NumberingLevelReference>();
+    var itemElement = openXmlElement.GetFirstChild<DXW.NumberingLevelReference>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = new DocumentFormat.OpenXml.Wordprocessing.NumberingLevelReference{ Val = value };
+      itemElement = new DXW.NumberingLevelReference{ Val = value };
       openXmlElement.AddChild(itemElement);
     }
   }
@@ -31,22 +31,22 @@ public static class NumberingPropertiesConverter
   /// <summary>
   /// Numbering Definition Instance Reference.
   /// </summary>
-  private static Int32? GetNumberingId(DocumentFormat.OpenXml.Wordprocessing.NumberingProperties openXmlElement)
+  private static Int32? GetNumberingId(DXW.NumberingProperties openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.NumberingId>();
+    var itemElement = openXmlElement?.GetFirstChild<DXW.NumberingId>();
     if (itemElement != null)
       return itemElement.Val?.Value;
     return null;
   }
   
-  private static void SetNumberingId(DocumentFormat.OpenXml.Wordprocessing.NumberingProperties openXmlElement, Int32? value)
+  private static void SetNumberingId(DXW.NumberingProperties openXmlElement, Int32? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.NumberingId>();
+    var itemElement = openXmlElement.GetFirstChild<DXW.NumberingId>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = new DocumentFormat.OpenXml.Wordprocessing.NumberingId{ Val = value };
+      itemElement = new DXW.NumberingId{ Val = value };
       openXmlElement.AddChild(itemElement);
     }
   }
@@ -54,22 +54,22 @@ public static class NumberingPropertiesConverter
   /// <summary>
   /// Previous Paragraph Numbering Properties.
   /// </summary>
-  private static DocumentModel.Wordprocessing.NumberingChange? GetNumberingChange(DocumentFormat.OpenXml.Wordprocessing.NumberingProperties openXmlElement)
+  private static DMW.NumberingChange? GetNumberingChange(DXW.NumberingProperties openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.NumberingChange>();
+    var itemElement = openXmlElement?.GetFirstChild<DXW.NumberingChange>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Wordprocessing.NumberingChangeConverter.CreateModelElement(itemElement);
+      return DMXW.NumberingChangeConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetNumberingChange(DocumentFormat.OpenXml.Wordprocessing.NumberingProperties openXmlElement, DocumentModel.Wordprocessing.NumberingChange? value)
+  private static void SetNumberingChange(DXW.NumberingProperties openXmlElement, DMW.NumberingChange? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.NumberingChange>();
+    var itemElement = openXmlElement.GetFirstChild<DXW.NumberingChange>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Wordprocessing.NumberingChangeConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.NumberingChange>(value);
+      itemElement = DMXW.NumberingChangeConverter.CreateOpenXmlElement<DXW.NumberingChange>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
@@ -78,32 +78,32 @@ public static class NumberingPropertiesConverter
   /// <summary>
   /// Inserted Numbering Properties.
   /// </summary>
-  private static DocumentModel.Wordprocessing.TrackChangeType? GetInserted(DocumentFormat.OpenXml.Wordprocessing.NumberingProperties openXmlElement)
+  private static DMW.TrackChangeType? GetInserted(DXW.NumberingProperties openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.Inserted>();
+    var itemElement = openXmlElement?.GetFirstChild<DXW.Inserted>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Wordprocessing.TrackChangeTypeConverter.CreateModelElement(itemElement);
+      return DMXW.TrackChangeTypeConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetInserted(DocumentFormat.OpenXml.Wordprocessing.NumberingProperties openXmlElement, DocumentModel.Wordprocessing.TrackChangeType? value)
+  private static void SetInserted(DXW.NumberingProperties openXmlElement, DMW.TrackChangeType? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.Inserted>();
+    var itemElement = openXmlElement.GetFirstChild<DXW.Inserted>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Wordprocessing.TrackChangeTypeConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.Inserted>(value);
+      itemElement = DMXW.TrackChangeTypeConverter.CreateOpenXmlElement<DXW.Inserted>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  public static DocumentModel.Wordprocessing.NumberingProperties? CreateModelElement(DocumentFormat.OpenXml.Wordprocessing.NumberingProperties? openXmlElement)
+  public static DMW.NumberingProperties? CreateModelElement(DXW.NumberingProperties? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Wordprocessing.NumberingProperties();
+      var value = new DMW.NumberingProperties();
       value.NumberingLevelReference = GetNumberingLevelReference(openXmlElement);
       value.NumberingId = GetNumberingId(openXmlElement);
       value.NumberingChange = GetNumberingChange(openXmlElement);
@@ -113,8 +113,8 @@ public static class NumberingPropertiesConverter
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.NumberingProperties? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Wordprocessing.NumberingProperties, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMW.NumberingProperties? value)
+    where OpenXmlElementType: DXW.NumberingProperties, new()
   {
     if (value != null)
     {

@@ -2,7 +2,7 @@
 
 public static class Base64BinaryConverter
 {
-  public static byte[] GetValue(TypedOpenXmlLeafElement element)
+  public static byte[] GetValue(DX.TypedOpenXmlLeafElement element)
   {
     var valProperty = element.GetType().GetProperty("Val");
     if (valProperty != null)
@@ -15,7 +15,7 @@ public static class Base64BinaryConverter
   }
 
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(byte[] value)
-    where OpenXmlElementType : OpenXmlElement, new()
+    where OpenXmlElementType : DX.OpenXmlElement, new()
   {
     var element = new OpenXmlElementType();
     var valProperty = typeof(OpenXmlElementType).GetProperty("Val");

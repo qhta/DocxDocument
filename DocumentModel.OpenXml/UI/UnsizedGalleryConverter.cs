@@ -8,12 +8,12 @@ public static class UnsizedGalleryConverter
   /// <summary>
   /// description
   /// </summary>
-  private static String? GetDescription(DocumentFormat.OpenXml.Office.CustomUI.UnsizedGallery openXmlElement)
+  private static String? GetDescription(DXOCustUI.UnsizedGallery openXmlElement)
   {
     return openXmlElement?.Description?.Value;
   }
   
-  private static void SetDescription(DocumentFormat.OpenXml.Office.CustomUI.UnsizedGallery openXmlElement, String? value)
+  private static void SetDescription(DXOCustUI.UnsizedGallery openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.Description = new StringValue { Value = value };
@@ -24,12 +24,12 @@ public static class UnsizedGalleryConverter
   /// <summary>
   /// getDescription
   /// </summary>
-  private static String? GetGetDescription(DocumentFormat.OpenXml.Office.CustomUI.UnsizedGallery openXmlElement)
+  private static String? GetGetDescription(DXOCustUI.UnsizedGallery openXmlElement)
   {
     return openXmlElement?.GetDescription?.Value;
   }
   
-  private static void SetGetDescription(DocumentFormat.OpenXml.Office.CustomUI.UnsizedGallery openXmlElement, String? value)
+  private static void SetGetDescription(DXOCustUI.UnsizedGallery openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.GetDescription = new StringValue { Value = value };
@@ -40,12 +40,12 @@ public static class UnsizedGalleryConverter
   /// <summary>
   /// invalidateContentOnDrop
   /// </summary>
-  private static Boolean? GetInvalidateContentOnDrop(DocumentFormat.OpenXml.Office.CustomUI.UnsizedGallery openXmlElement)
+  private static Boolean? GetInvalidateContentOnDrop(DXOCustUI.UnsizedGallery openXmlElement)
   {
     return openXmlElement?.InvalidateContentOnDrop?.Value;
   }
   
-  private static void SetInvalidateContentOnDrop(DocumentFormat.OpenXml.Office.CustomUI.UnsizedGallery openXmlElement, Boolean? value)
+  private static void SetInvalidateContentOnDrop(DXOCustUI.UnsizedGallery openXmlElement, Boolean? value)
   {
     if (value != null)
       openXmlElement.InvalidateContentOnDrop = new BooleanValue { Value = (Boolean)value };
@@ -56,12 +56,12 @@ public static class UnsizedGalleryConverter
   /// <summary>
   /// columns
   /// </summary>
-  private static Int64? GetColumns(DocumentFormat.OpenXml.Office.CustomUI.UnsizedGallery openXmlElement)
+  private static Int64? GetColumns(DXOCustUI.UnsizedGallery openXmlElement)
   {
     return openXmlElement.Columns?.Value;
   }
   
-  private static void SetColumns(DocumentFormat.OpenXml.Office.CustomUI.UnsizedGallery openXmlElement, Int64? value)
+  private static void SetColumns(DXOCustUI.UnsizedGallery openXmlElement, Int64? value)
   {
     openXmlElement.Columns = value;
   }
@@ -69,12 +69,12 @@ public static class UnsizedGalleryConverter
   /// <summary>
   /// rows
   /// </summary>
-  private static Int64? GetRows(DocumentFormat.OpenXml.Office.CustomUI.UnsizedGallery openXmlElement)
+  private static Int64? GetRows(DXOCustUI.UnsizedGallery openXmlElement)
   {
     return openXmlElement.Rows?.Value;
   }
   
-  private static void SetRows(DocumentFormat.OpenXml.Office.CustomUI.UnsizedGallery openXmlElement, Int64? value)
+  private static void SetRows(DXOCustUI.UnsizedGallery openXmlElement, Int64? value)
   {
     openXmlElement.Rows = value;
   }
@@ -82,12 +82,12 @@ public static class UnsizedGalleryConverter
   /// <summary>
   /// itemWidth
   /// </summary>
-  private static Int64? GetItemWidth(DocumentFormat.OpenXml.Office.CustomUI.UnsizedGallery openXmlElement)
+  private static Int64? GetItemWidth(DXOCustUI.UnsizedGallery openXmlElement)
   {
     return openXmlElement.ItemWidth?.Value;
   }
   
-  private static void SetItemWidth(DocumentFormat.OpenXml.Office.CustomUI.UnsizedGallery openXmlElement, Int64? value)
+  private static void SetItemWidth(DXOCustUI.UnsizedGallery openXmlElement, Int64? value)
   {
     openXmlElement.ItemWidth = value;
   }
@@ -95,12 +95,12 @@ public static class UnsizedGalleryConverter
   /// <summary>
   /// itemHeight
   /// </summary>
-  private static Int64? GetItemHeight(DocumentFormat.OpenXml.Office.CustomUI.UnsizedGallery openXmlElement)
+  private static Int64? GetItemHeight(DXOCustUI.UnsizedGallery openXmlElement)
   {
     return openXmlElement.ItemHeight?.Value;
   }
   
-  private static void SetItemHeight(DocumentFormat.OpenXml.Office.CustomUI.UnsizedGallery openXmlElement, Int64? value)
+  private static void SetItemHeight(DXOCustUI.UnsizedGallery openXmlElement, Int64? value)
   {
     openXmlElement.ItemHeight = value;
   }
@@ -108,12 +108,12 @@ public static class UnsizedGalleryConverter
   /// <summary>
   /// getItemWidth
   /// </summary>
-  private static String? GetGetItemWidth(DocumentFormat.OpenXml.Office.CustomUI.UnsizedGallery openXmlElement)
+  private static String? GetGetItemWidth(DXOCustUI.UnsizedGallery openXmlElement)
   {
     return openXmlElement?.GetItemWidth?.Value;
   }
   
-  private static void SetGetItemWidth(DocumentFormat.OpenXml.Office.CustomUI.UnsizedGallery openXmlElement, String? value)
+  private static void SetGetItemWidth(DXOCustUI.UnsizedGallery openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.GetItemWidth = new StringValue { Value = value };
@@ -124,12 +124,12 @@ public static class UnsizedGalleryConverter
   /// <summary>
   /// getItemHeight
   /// </summary>
-  private static String? GetGetItemHeight(DocumentFormat.OpenXml.Office.CustomUI.UnsizedGallery openXmlElement)
+  private static String? GetGetItemHeight(DXOCustUI.UnsizedGallery openXmlElement)
   {
     return openXmlElement?.GetItemHeight?.Value;
   }
   
-  private static void SetGetItemHeight(DocumentFormat.OpenXml.Office.CustomUI.UnsizedGallery openXmlElement, String? value)
+  private static void SetGetItemHeight(DXOCustUI.UnsizedGallery openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.GetItemHeight = new StringValue { Value = value };
@@ -140,12 +140,12 @@ public static class UnsizedGalleryConverter
   /// <summary>
   /// showItemLabel
   /// </summary>
-  private static Boolean? GetShowItemLabel(DocumentFormat.OpenXml.Office.CustomUI.UnsizedGallery openXmlElement)
+  private static Boolean? GetShowItemLabel(DXOCustUI.UnsizedGallery openXmlElement)
   {
     return openXmlElement?.ShowItemLabel?.Value;
   }
   
-  private static void SetShowItemLabel(DocumentFormat.OpenXml.Office.CustomUI.UnsizedGallery openXmlElement, Boolean? value)
+  private static void SetShowItemLabel(DXOCustUI.UnsizedGallery openXmlElement, Boolean? value)
   {
     if (value != null)
       openXmlElement.ShowItemLabel = new BooleanValue { Value = (Boolean)value };
@@ -156,12 +156,12 @@ public static class UnsizedGalleryConverter
   /// <summary>
   /// onAction
   /// </summary>
-  private static String? GetOnAction(DocumentFormat.OpenXml.Office.CustomUI.UnsizedGallery openXmlElement)
+  private static String? GetOnAction(DXOCustUI.UnsizedGallery openXmlElement)
   {
     return openXmlElement?.OnAction?.Value;
   }
   
-  private static void SetOnAction(DocumentFormat.OpenXml.Office.CustomUI.UnsizedGallery openXmlElement, String? value)
+  private static void SetOnAction(DXOCustUI.UnsizedGallery openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.OnAction = new StringValue { Value = value };
@@ -172,12 +172,12 @@ public static class UnsizedGalleryConverter
   /// <summary>
   /// enabled
   /// </summary>
-  private static Boolean? GetEnabled(DocumentFormat.OpenXml.Office.CustomUI.UnsizedGallery openXmlElement)
+  private static Boolean? GetEnabled(DXOCustUI.UnsizedGallery openXmlElement)
   {
     return openXmlElement?.Enabled?.Value;
   }
   
-  private static void SetEnabled(DocumentFormat.OpenXml.Office.CustomUI.UnsizedGallery openXmlElement, Boolean? value)
+  private static void SetEnabled(DXOCustUI.UnsizedGallery openXmlElement, Boolean? value)
   {
     if (value != null)
       openXmlElement.Enabled = new BooleanValue { Value = (Boolean)value };
@@ -188,12 +188,12 @@ public static class UnsizedGalleryConverter
   /// <summary>
   /// getEnabled
   /// </summary>
-  private static String? GetGetEnabled(DocumentFormat.OpenXml.Office.CustomUI.UnsizedGallery openXmlElement)
+  private static String? GetGetEnabled(DXOCustUI.UnsizedGallery openXmlElement)
   {
     return openXmlElement?.GetEnabled?.Value;
   }
   
-  private static void SetGetEnabled(DocumentFormat.OpenXml.Office.CustomUI.UnsizedGallery openXmlElement, String? value)
+  private static void SetGetEnabled(DXOCustUI.UnsizedGallery openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.GetEnabled = new StringValue { Value = value };
@@ -204,12 +204,12 @@ public static class UnsizedGalleryConverter
   /// <summary>
   /// image
   /// </summary>
-  private static String? GetImage(DocumentFormat.OpenXml.Office.CustomUI.UnsizedGallery openXmlElement)
+  private static String? GetImage(DXOCustUI.UnsizedGallery openXmlElement)
   {
     return openXmlElement?.Image?.Value;
   }
   
-  private static void SetImage(DocumentFormat.OpenXml.Office.CustomUI.UnsizedGallery openXmlElement, String? value)
+  private static void SetImage(DXOCustUI.UnsizedGallery openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.Image = new StringValue { Value = value };
@@ -220,12 +220,12 @@ public static class UnsizedGalleryConverter
   /// <summary>
   /// imageMso
   /// </summary>
-  private static String? GetImageMso(DocumentFormat.OpenXml.Office.CustomUI.UnsizedGallery openXmlElement)
+  private static String? GetImageMso(DXOCustUI.UnsizedGallery openXmlElement)
   {
     return openXmlElement?.ImageMso?.Value;
   }
   
-  private static void SetImageMso(DocumentFormat.OpenXml.Office.CustomUI.UnsizedGallery openXmlElement, String? value)
+  private static void SetImageMso(DXOCustUI.UnsizedGallery openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.ImageMso = new StringValue { Value = value };
@@ -236,12 +236,12 @@ public static class UnsizedGalleryConverter
   /// <summary>
   /// getImage
   /// </summary>
-  private static String? GetGetImage(DocumentFormat.OpenXml.Office.CustomUI.UnsizedGallery openXmlElement)
+  private static String? GetGetImage(DXOCustUI.UnsizedGallery openXmlElement)
   {
     return openXmlElement?.GetImage?.Value;
   }
   
-  private static void SetGetImage(DocumentFormat.OpenXml.Office.CustomUI.UnsizedGallery openXmlElement, String? value)
+  private static void SetGetImage(DXOCustUI.UnsizedGallery openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.GetImage = new StringValue { Value = value };
@@ -252,12 +252,12 @@ public static class UnsizedGalleryConverter
   /// <summary>
   /// showItemImage
   /// </summary>
-  private static Boolean? GetShowItemImage(DocumentFormat.OpenXml.Office.CustomUI.UnsizedGallery openXmlElement)
+  private static Boolean? GetShowItemImage(DXOCustUI.UnsizedGallery openXmlElement)
   {
     return openXmlElement?.ShowItemImage?.Value;
   }
   
-  private static void SetShowItemImage(DocumentFormat.OpenXml.Office.CustomUI.UnsizedGallery openXmlElement, Boolean? value)
+  private static void SetShowItemImage(DXOCustUI.UnsizedGallery openXmlElement, Boolean? value)
   {
     if (value != null)
       openXmlElement.ShowItemImage = new BooleanValue { Value = (Boolean)value };
@@ -268,12 +268,12 @@ public static class UnsizedGalleryConverter
   /// <summary>
   /// getItemCount
   /// </summary>
-  private static String? GetGetItemCount(DocumentFormat.OpenXml.Office.CustomUI.UnsizedGallery openXmlElement)
+  private static String? GetGetItemCount(DXOCustUI.UnsizedGallery openXmlElement)
   {
     return openXmlElement?.GetItemCount?.Value;
   }
   
-  private static void SetGetItemCount(DocumentFormat.OpenXml.Office.CustomUI.UnsizedGallery openXmlElement, String? value)
+  private static void SetGetItemCount(DXOCustUI.UnsizedGallery openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.GetItemCount = new StringValue { Value = value };
@@ -284,12 +284,12 @@ public static class UnsizedGalleryConverter
   /// <summary>
   /// getItemLabel
   /// </summary>
-  private static String? GetGetItemLabel(DocumentFormat.OpenXml.Office.CustomUI.UnsizedGallery openXmlElement)
+  private static String? GetGetItemLabel(DXOCustUI.UnsizedGallery openXmlElement)
   {
     return openXmlElement?.GetItemLabel?.Value;
   }
   
-  private static void SetGetItemLabel(DocumentFormat.OpenXml.Office.CustomUI.UnsizedGallery openXmlElement, String? value)
+  private static void SetGetItemLabel(DXOCustUI.UnsizedGallery openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.GetItemLabel = new StringValue { Value = value };
@@ -300,12 +300,12 @@ public static class UnsizedGalleryConverter
   /// <summary>
   /// getItemScreentip
   /// </summary>
-  private static String? GetGetItemScreentip(DocumentFormat.OpenXml.Office.CustomUI.UnsizedGallery openXmlElement)
+  private static String? GetGetItemScreentip(DXOCustUI.UnsizedGallery openXmlElement)
   {
     return openXmlElement?.GetItemScreentip?.Value;
   }
   
-  private static void SetGetItemScreentip(DocumentFormat.OpenXml.Office.CustomUI.UnsizedGallery openXmlElement, String? value)
+  private static void SetGetItemScreentip(DXOCustUI.UnsizedGallery openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.GetItemScreentip = new StringValue { Value = value };
@@ -316,12 +316,12 @@ public static class UnsizedGalleryConverter
   /// <summary>
   /// getItemSupertip
   /// </summary>
-  private static String? GetGetItemSupertip(DocumentFormat.OpenXml.Office.CustomUI.UnsizedGallery openXmlElement)
+  private static String? GetGetItemSupertip(DXOCustUI.UnsizedGallery openXmlElement)
   {
     return openXmlElement?.GetItemSupertip?.Value;
   }
   
-  private static void SetGetItemSupertip(DocumentFormat.OpenXml.Office.CustomUI.UnsizedGallery openXmlElement, String? value)
+  private static void SetGetItemSupertip(DXOCustUI.UnsizedGallery openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.GetItemSupertip = new StringValue { Value = value };
@@ -332,12 +332,12 @@ public static class UnsizedGalleryConverter
   /// <summary>
   /// getItemImage
   /// </summary>
-  private static String? GetGetItemImage(DocumentFormat.OpenXml.Office.CustomUI.UnsizedGallery openXmlElement)
+  private static String? GetGetItemImage(DXOCustUI.UnsizedGallery openXmlElement)
   {
     return openXmlElement?.GetItemImage?.Value;
   }
   
-  private static void SetGetItemImage(DocumentFormat.OpenXml.Office.CustomUI.UnsizedGallery openXmlElement, String? value)
+  private static void SetGetItemImage(DXOCustUI.UnsizedGallery openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.GetItemImage = new StringValue { Value = value };
@@ -348,12 +348,12 @@ public static class UnsizedGalleryConverter
   /// <summary>
   /// getItemID
   /// </summary>
-  private static String? GetGetItemID(DocumentFormat.OpenXml.Office.CustomUI.UnsizedGallery openXmlElement)
+  private static String? GetGetItemID(DXOCustUI.UnsizedGallery openXmlElement)
   {
     return openXmlElement?.GetItemID?.Value;
   }
   
-  private static void SetGetItemID(DocumentFormat.OpenXml.Office.CustomUI.UnsizedGallery openXmlElement, String? value)
+  private static void SetGetItemID(DXOCustUI.UnsizedGallery openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.GetItemID = new StringValue { Value = value };
@@ -364,12 +364,12 @@ public static class UnsizedGalleryConverter
   /// <summary>
   /// sizeString
   /// </summary>
-  private static String? GetSizeString(DocumentFormat.OpenXml.Office.CustomUI.UnsizedGallery openXmlElement)
+  private static String? GetSizeString(DXOCustUI.UnsizedGallery openXmlElement)
   {
     return openXmlElement?.SizeString?.Value;
   }
   
-  private static void SetSizeString(DocumentFormat.OpenXml.Office.CustomUI.UnsizedGallery openXmlElement, String? value)
+  private static void SetSizeString(DXOCustUI.UnsizedGallery openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.SizeString = new StringValue { Value = value };
@@ -380,12 +380,12 @@ public static class UnsizedGalleryConverter
   /// <summary>
   /// getSelectedItemID
   /// </summary>
-  private static String? GetGetSelectedItemID(DocumentFormat.OpenXml.Office.CustomUI.UnsizedGallery openXmlElement)
+  private static String? GetGetSelectedItemID(DXOCustUI.UnsizedGallery openXmlElement)
   {
     return openXmlElement?.GetSelectedItemID?.Value;
   }
   
-  private static void SetGetSelectedItemID(DocumentFormat.OpenXml.Office.CustomUI.UnsizedGallery openXmlElement, String? value)
+  private static void SetGetSelectedItemID(DXOCustUI.UnsizedGallery openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.GetSelectedItemID = new StringValue { Value = value };
@@ -396,12 +396,12 @@ public static class UnsizedGalleryConverter
   /// <summary>
   /// getSelectedItemIndex
   /// </summary>
-  private static String? GetGetSelectedItemIndex(DocumentFormat.OpenXml.Office.CustomUI.UnsizedGallery openXmlElement)
+  private static String? GetGetSelectedItemIndex(DXOCustUI.UnsizedGallery openXmlElement)
   {
     return openXmlElement?.GetSelectedItemIndex?.Value;
   }
   
-  private static void SetGetSelectedItemIndex(DocumentFormat.OpenXml.Office.CustomUI.UnsizedGallery openXmlElement, String? value)
+  private static void SetGetSelectedItemIndex(DXOCustUI.UnsizedGallery openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.GetSelectedItemIndex = new StringValue { Value = value };
@@ -412,12 +412,12 @@ public static class UnsizedGalleryConverter
   /// <summary>
   /// id
   /// </summary>
-  private static String? GetId(DocumentFormat.OpenXml.Office.CustomUI.UnsizedGallery openXmlElement)
+  private static String? GetId(DXOCustUI.UnsizedGallery openXmlElement)
   {
     return openXmlElement?.Id?.Value;
   }
   
-  private static void SetId(DocumentFormat.OpenXml.Office.CustomUI.UnsizedGallery openXmlElement, String? value)
+  private static void SetId(DXOCustUI.UnsizedGallery openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.Id = new StringValue { Value = value };
@@ -428,12 +428,12 @@ public static class UnsizedGalleryConverter
   /// <summary>
   /// idQ
   /// </summary>
-  private static String? GetIdQ(DocumentFormat.OpenXml.Office.CustomUI.UnsizedGallery openXmlElement)
+  private static String? GetIdQ(DXOCustUI.UnsizedGallery openXmlElement)
   {
     return openXmlElement?.IdQ?.Value;
   }
   
-  private static void SetIdQ(DocumentFormat.OpenXml.Office.CustomUI.UnsizedGallery openXmlElement, String? value)
+  private static void SetIdQ(DXOCustUI.UnsizedGallery openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.IdQ = new StringValue { Value = value };
@@ -444,12 +444,12 @@ public static class UnsizedGalleryConverter
   /// <summary>
   /// idMso
   /// </summary>
-  private static String? GetIdMso(DocumentFormat.OpenXml.Office.CustomUI.UnsizedGallery openXmlElement)
+  private static String? GetIdMso(DXOCustUI.UnsizedGallery openXmlElement)
   {
     return openXmlElement?.IdMso?.Value;
   }
   
-  private static void SetIdMso(DocumentFormat.OpenXml.Office.CustomUI.UnsizedGallery openXmlElement, String? value)
+  private static void SetIdMso(DXOCustUI.UnsizedGallery openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.IdMso = new StringValue { Value = value };
@@ -460,12 +460,12 @@ public static class UnsizedGalleryConverter
   /// <summary>
   /// tag
   /// </summary>
-  private static String? GetTag(DocumentFormat.OpenXml.Office.CustomUI.UnsizedGallery openXmlElement)
+  private static String? GetTag(DXOCustUI.UnsizedGallery openXmlElement)
   {
     return openXmlElement?.Tag?.Value;
   }
   
-  private static void SetTag(DocumentFormat.OpenXml.Office.CustomUI.UnsizedGallery openXmlElement, String? value)
+  private static void SetTag(DXOCustUI.UnsizedGallery openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.Tag = new StringValue { Value = value };
@@ -476,12 +476,12 @@ public static class UnsizedGalleryConverter
   /// <summary>
   /// screentip
   /// </summary>
-  private static String? GetScreentip(DocumentFormat.OpenXml.Office.CustomUI.UnsizedGallery openXmlElement)
+  private static String? GetScreentip(DXOCustUI.UnsizedGallery openXmlElement)
   {
     return openXmlElement?.Screentip?.Value;
   }
   
-  private static void SetScreentip(DocumentFormat.OpenXml.Office.CustomUI.UnsizedGallery openXmlElement, String? value)
+  private static void SetScreentip(DXOCustUI.UnsizedGallery openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.Screentip = new StringValue { Value = value };
@@ -492,12 +492,12 @@ public static class UnsizedGalleryConverter
   /// <summary>
   /// getScreentip
   /// </summary>
-  private static String? GetGetScreentip(DocumentFormat.OpenXml.Office.CustomUI.UnsizedGallery openXmlElement)
+  private static String? GetGetScreentip(DXOCustUI.UnsizedGallery openXmlElement)
   {
     return openXmlElement?.GetScreentip?.Value;
   }
   
-  private static void SetGetScreentip(DocumentFormat.OpenXml.Office.CustomUI.UnsizedGallery openXmlElement, String? value)
+  private static void SetGetScreentip(DXOCustUI.UnsizedGallery openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.GetScreentip = new StringValue { Value = value };
@@ -508,12 +508,12 @@ public static class UnsizedGalleryConverter
   /// <summary>
   /// supertip
   /// </summary>
-  private static String? GetSupertip(DocumentFormat.OpenXml.Office.CustomUI.UnsizedGallery openXmlElement)
+  private static String? GetSupertip(DXOCustUI.UnsizedGallery openXmlElement)
   {
     return openXmlElement?.Supertip?.Value;
   }
   
-  private static void SetSupertip(DocumentFormat.OpenXml.Office.CustomUI.UnsizedGallery openXmlElement, String? value)
+  private static void SetSupertip(DXOCustUI.UnsizedGallery openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.Supertip = new StringValue { Value = value };
@@ -524,12 +524,12 @@ public static class UnsizedGalleryConverter
   /// <summary>
   /// getSupertip
   /// </summary>
-  private static String? GetGetSupertip(DocumentFormat.OpenXml.Office.CustomUI.UnsizedGallery openXmlElement)
+  private static String? GetGetSupertip(DXOCustUI.UnsizedGallery openXmlElement)
   {
     return openXmlElement?.GetSupertip?.Value;
   }
   
-  private static void SetGetSupertip(DocumentFormat.OpenXml.Office.CustomUI.UnsizedGallery openXmlElement, String? value)
+  private static void SetGetSupertip(DXOCustUI.UnsizedGallery openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.GetSupertip = new StringValue { Value = value };
@@ -540,12 +540,12 @@ public static class UnsizedGalleryConverter
   /// <summary>
   /// label
   /// </summary>
-  private static String? GetLabel(DocumentFormat.OpenXml.Office.CustomUI.UnsizedGallery openXmlElement)
+  private static String? GetLabel(DXOCustUI.UnsizedGallery openXmlElement)
   {
     return openXmlElement?.Label?.Value;
   }
   
-  private static void SetLabel(DocumentFormat.OpenXml.Office.CustomUI.UnsizedGallery openXmlElement, String? value)
+  private static void SetLabel(DXOCustUI.UnsizedGallery openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.Label = new StringValue { Value = value };
@@ -556,12 +556,12 @@ public static class UnsizedGalleryConverter
   /// <summary>
   /// getLabel
   /// </summary>
-  private static String? GetGetLabel(DocumentFormat.OpenXml.Office.CustomUI.UnsizedGallery openXmlElement)
+  private static String? GetGetLabel(DXOCustUI.UnsizedGallery openXmlElement)
   {
     return openXmlElement?.GetLabel?.Value;
   }
   
-  private static void SetGetLabel(DocumentFormat.OpenXml.Office.CustomUI.UnsizedGallery openXmlElement, String? value)
+  private static void SetGetLabel(DXOCustUI.UnsizedGallery openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.GetLabel = new StringValue { Value = value };
@@ -572,12 +572,12 @@ public static class UnsizedGalleryConverter
   /// <summary>
   /// insertAfterMso
   /// </summary>
-  private static String? GetInsertAfterMso(DocumentFormat.OpenXml.Office.CustomUI.UnsizedGallery openXmlElement)
+  private static String? GetInsertAfterMso(DXOCustUI.UnsizedGallery openXmlElement)
   {
     return openXmlElement?.InsertAfterMso?.Value;
   }
   
-  private static void SetInsertAfterMso(DocumentFormat.OpenXml.Office.CustomUI.UnsizedGallery openXmlElement, String? value)
+  private static void SetInsertAfterMso(DXOCustUI.UnsizedGallery openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.InsertAfterMso = new StringValue { Value = value };
@@ -588,12 +588,12 @@ public static class UnsizedGalleryConverter
   /// <summary>
   /// insertBeforeMso
   /// </summary>
-  private static String? GetInsertBeforeMso(DocumentFormat.OpenXml.Office.CustomUI.UnsizedGallery openXmlElement)
+  private static String? GetInsertBeforeMso(DXOCustUI.UnsizedGallery openXmlElement)
   {
     return openXmlElement?.InsertBeforeMso?.Value;
   }
   
-  private static void SetInsertBeforeMso(DocumentFormat.OpenXml.Office.CustomUI.UnsizedGallery openXmlElement, String? value)
+  private static void SetInsertBeforeMso(DXOCustUI.UnsizedGallery openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.InsertBeforeMso = new StringValue { Value = value };
@@ -604,12 +604,12 @@ public static class UnsizedGalleryConverter
   /// <summary>
   /// insertAfterQ
   /// </summary>
-  private static String? GetInsertAfterQ(DocumentFormat.OpenXml.Office.CustomUI.UnsizedGallery openXmlElement)
+  private static String? GetInsertAfterQ(DXOCustUI.UnsizedGallery openXmlElement)
   {
     return openXmlElement?.InsertAfterQ?.Value;
   }
   
-  private static void SetInsertAfterQ(DocumentFormat.OpenXml.Office.CustomUI.UnsizedGallery openXmlElement, String? value)
+  private static void SetInsertAfterQ(DXOCustUI.UnsizedGallery openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.InsertAfterQ = new StringValue { Value = value };
@@ -620,12 +620,12 @@ public static class UnsizedGalleryConverter
   /// <summary>
   /// insertBeforeQ
   /// </summary>
-  private static String? GetInsertBeforeQ(DocumentFormat.OpenXml.Office.CustomUI.UnsizedGallery openXmlElement)
+  private static String? GetInsertBeforeQ(DXOCustUI.UnsizedGallery openXmlElement)
   {
     return openXmlElement?.InsertBeforeQ?.Value;
   }
   
-  private static void SetInsertBeforeQ(DocumentFormat.OpenXml.Office.CustomUI.UnsizedGallery openXmlElement, String? value)
+  private static void SetInsertBeforeQ(DXOCustUI.UnsizedGallery openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.InsertBeforeQ = new StringValue { Value = value };
@@ -636,12 +636,12 @@ public static class UnsizedGalleryConverter
   /// <summary>
   /// visible
   /// </summary>
-  private static Boolean? GetVisible(DocumentFormat.OpenXml.Office.CustomUI.UnsizedGallery openXmlElement)
+  private static Boolean? GetVisible(DXOCustUI.UnsizedGallery openXmlElement)
   {
     return openXmlElement?.Visible?.Value;
   }
   
-  private static void SetVisible(DocumentFormat.OpenXml.Office.CustomUI.UnsizedGallery openXmlElement, Boolean? value)
+  private static void SetVisible(DXOCustUI.UnsizedGallery openXmlElement, Boolean? value)
   {
     if (value != null)
       openXmlElement.Visible = new BooleanValue { Value = (Boolean)value };
@@ -652,12 +652,12 @@ public static class UnsizedGalleryConverter
   /// <summary>
   /// getVisible
   /// </summary>
-  private static String? GetGetVisible(DocumentFormat.OpenXml.Office.CustomUI.UnsizedGallery openXmlElement)
+  private static String? GetGetVisible(DXOCustUI.UnsizedGallery openXmlElement)
   {
     return openXmlElement?.GetVisible?.Value;
   }
   
-  private static void SetGetVisible(DocumentFormat.OpenXml.Office.CustomUI.UnsizedGallery openXmlElement, String? value)
+  private static void SetGetVisible(DXOCustUI.UnsizedGallery openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.GetVisible = new StringValue { Value = value };
@@ -668,12 +668,12 @@ public static class UnsizedGalleryConverter
   /// <summary>
   /// keytip
   /// </summary>
-  private static String? GetKeytip(DocumentFormat.OpenXml.Office.CustomUI.UnsizedGallery openXmlElement)
+  private static String? GetKeytip(DXOCustUI.UnsizedGallery openXmlElement)
   {
     return openXmlElement?.Keytip?.Value;
   }
   
-  private static void SetKeytip(DocumentFormat.OpenXml.Office.CustomUI.UnsizedGallery openXmlElement, String? value)
+  private static void SetKeytip(DXOCustUI.UnsizedGallery openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.Keytip = new StringValue { Value = value };
@@ -684,12 +684,12 @@ public static class UnsizedGalleryConverter
   /// <summary>
   /// getKeytip
   /// </summary>
-  private static String? GetGetKeytip(DocumentFormat.OpenXml.Office.CustomUI.UnsizedGallery openXmlElement)
+  private static String? GetGetKeytip(DXOCustUI.UnsizedGallery openXmlElement)
   {
     return openXmlElement?.GetKeytip?.Value;
   }
   
-  private static void SetGetKeytip(DocumentFormat.OpenXml.Office.CustomUI.UnsizedGallery openXmlElement, String? value)
+  private static void SetGetKeytip(DXOCustUI.UnsizedGallery openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.GetKeytip = new StringValue { Value = value };
@@ -700,12 +700,12 @@ public static class UnsizedGalleryConverter
   /// <summary>
   /// showLabel
   /// </summary>
-  private static Boolean? GetShowLabel(DocumentFormat.OpenXml.Office.CustomUI.UnsizedGallery openXmlElement)
+  private static Boolean? GetShowLabel(DXOCustUI.UnsizedGallery openXmlElement)
   {
     return openXmlElement?.ShowLabel?.Value;
   }
   
-  private static void SetShowLabel(DocumentFormat.OpenXml.Office.CustomUI.UnsizedGallery openXmlElement, Boolean? value)
+  private static void SetShowLabel(DXOCustUI.UnsizedGallery openXmlElement, Boolean? value)
   {
     if (value != null)
       openXmlElement.ShowLabel = new BooleanValue { Value = (Boolean)value };
@@ -716,12 +716,12 @@ public static class UnsizedGalleryConverter
   /// <summary>
   /// getShowLabel
   /// </summary>
-  private static String? GetGetShowLabel(DocumentFormat.OpenXml.Office.CustomUI.UnsizedGallery openXmlElement)
+  private static String? GetGetShowLabel(DXOCustUI.UnsizedGallery openXmlElement)
   {
     return openXmlElement?.GetShowLabel?.Value;
   }
   
-  private static void SetGetShowLabel(DocumentFormat.OpenXml.Office.CustomUI.UnsizedGallery openXmlElement, String? value)
+  private static void SetGetShowLabel(DXOCustUI.UnsizedGallery openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.GetShowLabel = new StringValue { Value = value };
@@ -732,12 +732,12 @@ public static class UnsizedGalleryConverter
   /// <summary>
   /// showImage
   /// </summary>
-  private static Boolean? GetShowImage(DocumentFormat.OpenXml.Office.CustomUI.UnsizedGallery openXmlElement)
+  private static Boolean? GetShowImage(DXOCustUI.UnsizedGallery openXmlElement)
   {
     return openXmlElement?.ShowImage?.Value;
   }
   
-  private static void SetShowImage(DocumentFormat.OpenXml.Office.CustomUI.UnsizedGallery openXmlElement, Boolean? value)
+  private static void SetShowImage(DXOCustUI.UnsizedGallery openXmlElement, Boolean? value)
   {
     if (value != null)
       openXmlElement.ShowImage = new BooleanValue { Value = (Boolean)value };
@@ -748,12 +748,12 @@ public static class UnsizedGalleryConverter
   /// <summary>
   /// getShowImage
   /// </summary>
-  private static String? GetGetShowImage(DocumentFormat.OpenXml.Office.CustomUI.UnsizedGallery openXmlElement)
+  private static String? GetGetShowImage(DXOCustUI.UnsizedGallery openXmlElement)
   {
     return openXmlElement?.GetShowImage?.Value;
   }
   
-  private static void SetGetShowImage(DocumentFormat.OpenXml.Office.CustomUI.UnsizedGallery openXmlElement, String? value)
+  private static void SetGetShowImage(DXOCustUI.UnsizedGallery openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.GetShowImage = new StringValue { Value = value };
@@ -761,63 +761,63 @@ public static class UnsizedGalleryConverter
       openXmlElement.GetShowImage = null;
   }
   
-  private static System.Collections.ObjectModel.Collection<DocumentModel.UI.Item> GetItems(DocumentFormat.OpenXml.Office.CustomUI.UnsizedGallery openXmlElement)
+  private static Collection<DMUI.Item> GetItems(DXOCustUI.UnsizedGallery openXmlElement)
   {
-    var collection = new System.Collections.ObjectModel.Collection<DocumentModel.UI.Item>();
-    foreach (var item in openXmlElement.Elements<DocumentFormat.OpenXml.Office.CustomUI.Item>())
+    var collection = new Collection<DMUI.Item>();
+    foreach (var item in openXmlElement.Elements<DXOCustUI.Item>())
     {
-      var newItem = DocumentModel.OpenXml.UI.ItemConverter.CreateModelElement(item);
+      var newItem = DMXUI.ItemConverter.CreateModelElement(item);
       if (newItem != null)
         collection.Add(newItem);
     }
     return collection;
   }
   
-  private static void SetItems(DocumentFormat.OpenXml.Office.CustomUI.UnsizedGallery openXmlElement, System.Collections.ObjectModel.Collection<DocumentModel.UI.Item>? value)
+  private static void SetItems(DXOCustUI.UnsizedGallery openXmlElement, Collection<DMUI.Item>? value)
   {
-    openXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Office.CustomUI.Item>();
+    openXmlElement.RemoveAllChildren<DXOCustUI.Item>();
     if (value != null)
     {
       foreach (var item in value)
       {
-        var newItem = DocumentModel.OpenXml.UI.ItemConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office.CustomUI.Item>(item);
+        var newItem = DMXUI.ItemConverter.CreateOpenXmlElement<DXOCustUI.Item>(item);
         if (newItem != null)
           openXmlElement.AddChild(newItem);
       }
     }
   }
   
-  private static System.Collections.ObjectModel.Collection<DocumentModel.UI.UnsizedButton> GetUnsizedButtons(DocumentFormat.OpenXml.Office.CustomUI.UnsizedGallery openXmlElement)
+  private static Collection<DMUI.UnsizedButton> GetUnsizedButtons(DXOCustUI.UnsizedGallery openXmlElement)
   {
-    var collection = new System.Collections.ObjectModel.Collection<DocumentModel.UI.UnsizedButton>();
-    foreach (var item in openXmlElement.Elements<DocumentFormat.OpenXml.Office.CustomUI.UnsizedButton>())
+    var collection = new Collection<DMUI.UnsizedButton>();
+    foreach (var item in openXmlElement.Elements<DXOCustUI.UnsizedButton>())
     {
-      var newItem = DocumentModel.OpenXml.UI.UnsizedButtonConverter.CreateModelElement(item);
+      var newItem = DMXUI.UnsizedButtonConverter.CreateModelElement(item);
       if (newItem != null)
         collection.Add(newItem);
     }
     return collection;
   }
   
-  private static void SetUnsizedButtons(DocumentFormat.OpenXml.Office.CustomUI.UnsizedGallery openXmlElement, System.Collections.ObjectModel.Collection<DocumentModel.UI.UnsizedButton>? value)
+  private static void SetUnsizedButtons(DXOCustUI.UnsizedGallery openXmlElement, Collection<DMUI.UnsizedButton>? value)
   {
-    openXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Office.CustomUI.UnsizedButton>();
+    openXmlElement.RemoveAllChildren<DXOCustUI.UnsizedButton>();
     if (value != null)
     {
       foreach (var item in value)
       {
-        var newItem = DocumentModel.OpenXml.UI.UnsizedButtonConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office.CustomUI.UnsizedButton>(item);
+        var newItem = DMXUI.UnsizedButtonConverter.CreateOpenXmlElement<DXOCustUI.UnsizedButton>(item);
         if (newItem != null)
           openXmlElement.AddChild(newItem);
       }
     }
   }
   
-  public static DocumentModel.UI.UnsizedGallery? CreateModelElement(DocumentFormat.OpenXml.Office.CustomUI.UnsizedGallery? openXmlElement)
+  public static DMUI.UnsizedGallery? CreateModelElement(DXOCustUI.UnsizedGallery? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.UI.UnsizedGallery();
+      var value = new DMUI.UnsizedGallery();
       value.Description = GetDescription(openXmlElement);
       value.GetDescription = GetGetDescription(openXmlElement);
       value.InvalidateContentOnDrop = GetInvalidateContentOnDrop(openXmlElement);
@@ -873,8 +873,8 @@ public static class UnsizedGalleryConverter
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.UI.UnsizedGallery? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Office.CustomUI.UnsizedGallery, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMUI.UnsizedGallery? value)
+    where OpenXmlElementType: DXOCustUI.UnsizedGallery, new()
   {
     if (value != null)
     {

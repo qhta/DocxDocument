@@ -8,39 +8,39 @@ public static class SdtPlaceholderConverter
   /// <summary>
   /// Document Part Reference.
   /// </summary>
-  private static String? GetDocPartReference(DocumentFormat.OpenXml.Wordprocessing.SdtPlaceholder openXmlElement)
+  private static String? GetDocPartReference(DXW.SdtPlaceholder openXmlElement)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.DocPartReference>();
+    var itemElement = openXmlElement.GetFirstChild<DXW.DocPartReference>();
     if (itemElement != null)
       return itemElement.Val?.Value;
     return null;
   }
   
-  private static void SetDocPartReference(DocumentFormat.OpenXml.Wordprocessing.SdtPlaceholder openXmlElement, String? value)
+  private static void SetDocPartReference(DXW.SdtPlaceholder openXmlElement, String? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.DocPartReference>();
+    var itemElement = openXmlElement.GetFirstChild<DXW.DocPartReference>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = new DocumentFormat.OpenXml.Wordprocessing.DocPartReference { Val = value };
+      itemElement = new DXW.DocPartReference { Val = value };
       openXmlElement.AddChild(itemElement);
     }
   }
   
-  public static DocumentModel.Wordprocessing.SdtPlaceholder? CreateModelElement(DocumentFormat.OpenXml.Wordprocessing.SdtPlaceholder? openXmlElement)
+  public static DMW.SdtPlaceholder? CreateModelElement(DXW.SdtPlaceholder? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Wordprocessing.SdtPlaceholder();
+      var value = new DMW.SdtPlaceholder();
       value.DocPartReference = GetDocPartReference(openXmlElement);
       return value;
     }
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.SdtPlaceholder? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Wordprocessing.SdtPlaceholder, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMW.SdtPlaceholder? value)
+    where OpenXmlElementType: DXW.SdtPlaceholder, new()
   {
     if (value != null)
     {

@@ -8,12 +8,12 @@ public static class Point2DTypeConverter
   /// <summary>
   /// X-Axis Coordinate
   /// </summary>
-  private static Int64? GetX(DocumentFormat.OpenXml.Drawing.Point2DType openXmlElement)
+  private static Int64? GetX(DXDraw.Point2DType openXmlElement)
   {
     return openXmlElement.X?.Value;
   }
   
-  private static void SetX(DocumentFormat.OpenXml.Drawing.Point2DType openXmlElement, Int64? value)
+  private static void SetX(DXDraw.Point2DType openXmlElement, Int64? value)
   {
     openXmlElement.X = value;
   }
@@ -21,21 +21,21 @@ public static class Point2DTypeConverter
   /// <summary>
   /// Y-Axis Coordinate
   /// </summary>
-  private static Int64? GetY(DocumentFormat.OpenXml.Drawing.Point2DType openXmlElement)
+  private static Int64? GetY(DXDraw.Point2DType openXmlElement)
   {
     return openXmlElement.Y?.Value;
   }
   
-  private static void SetY(DocumentFormat.OpenXml.Drawing.Point2DType openXmlElement, Int64? value)
+  private static void SetY(DXDraw.Point2DType openXmlElement, Int64? value)
   {
     openXmlElement.Y = value;
   }
   
-  public static DocumentModel.Drawings.Point2DType? CreateModelElement(DocumentFormat.OpenXml.Drawing.Point2DType? openXmlElement)
+  public static DMDraws.Point2DType? CreateModelElement(DXDraw.Point2DType? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.Point2DType();
+      var value = new DMDraws.Point2DType();
       value.X = GetX(openXmlElement);
       value.Y = GetY(openXmlElement);
       return value;
@@ -43,8 +43,8 @@ public static class Point2DTypeConverter
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.Point2DType? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.Point2DType, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDraws.Point2DType? value)
+    where OpenXmlElementType: DXDraw.Point2DType, new()
   {
     if (value != null)
     {

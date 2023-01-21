@@ -8,29 +8,29 @@ public static class LineJoinMiterPropertiesConverter
   /// <summary>
   /// lim, this property is only available in Office 2010 and later.
   /// </summary>
-  private static Int32? GetLimit(DocumentFormat.OpenXml.Office2010.Word.LineJoinMiterProperties openXmlElement)
+  private static Int32? GetLimit(DXO2010W.LineJoinMiterProperties openXmlElement)
   {
     return openXmlElement.Limit?.Value;
   }
   
-  private static void SetLimit(DocumentFormat.OpenXml.Office2010.Word.LineJoinMiterProperties openXmlElement, Int32? value)
+  private static void SetLimit(DXO2010W.LineJoinMiterProperties openXmlElement, Int32? value)
   {
     openXmlElement.Limit = value;
   }
   
-  public static DocumentModel.Wordprocessing.LineJoinMiterProperties? CreateModelElement(DocumentFormat.OpenXml.Office2010.Word.LineJoinMiterProperties? openXmlElement)
+  public static DMW.LineJoinMiterProperties? CreateModelElement(DXO2010W.LineJoinMiterProperties? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Wordprocessing.LineJoinMiterProperties();
+      var value = new DMW.LineJoinMiterProperties();
       value.Limit = GetLimit(openXmlElement);
       return value;
     }
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.LineJoinMiterProperties? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Office2010.Word.LineJoinMiterProperties, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMW.LineJoinMiterProperties? value)
+    where OpenXmlElementType: DXO2010W.LineJoinMiterProperties, new()
   {
     if (value != null)
     {

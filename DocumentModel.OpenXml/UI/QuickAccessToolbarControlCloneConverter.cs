@@ -8,12 +8,12 @@ public static class QuickAccessToolbarControlCloneConverter
   /// <summary>
   /// id
   /// </summary>
-  private static String? GetId(DocumentFormat.OpenXml.Office.CustomUI.QuickAccessToolbarControlClone openXmlElement)
+  private static String? GetId(DXOCustUI.QuickAccessToolbarControlClone openXmlElement)
   {
     return openXmlElement?.Id?.Value;
   }
   
-  private static void SetId(DocumentFormat.OpenXml.Office.CustomUI.QuickAccessToolbarControlClone openXmlElement, String? value)
+  private static void SetId(DXOCustUI.QuickAccessToolbarControlClone openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.Id = new StringValue { Value = value };
@@ -24,12 +24,12 @@ public static class QuickAccessToolbarControlCloneConverter
   /// <summary>
   /// idQ
   /// </summary>
-  private static String? GetIdQ(DocumentFormat.OpenXml.Office.CustomUI.QuickAccessToolbarControlClone openXmlElement)
+  private static String? GetIdQ(DXOCustUI.QuickAccessToolbarControlClone openXmlElement)
   {
     return openXmlElement?.IdQ?.Value;
   }
   
-  private static void SetIdQ(DocumentFormat.OpenXml.Office.CustomUI.QuickAccessToolbarControlClone openXmlElement, String? value)
+  private static void SetIdQ(DXOCustUI.QuickAccessToolbarControlClone openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.IdQ = new StringValue { Value = value };
@@ -40,12 +40,12 @@ public static class QuickAccessToolbarControlCloneConverter
   /// <summary>
   /// idMso
   /// </summary>
-  private static String? GetIdMso(DocumentFormat.OpenXml.Office.CustomUI.QuickAccessToolbarControlClone openXmlElement)
+  private static String? GetIdMso(DXOCustUI.QuickAccessToolbarControlClone openXmlElement)
   {
     return openXmlElement?.IdMso?.Value;
   }
   
-  private static void SetIdMso(DocumentFormat.OpenXml.Office.CustomUI.QuickAccessToolbarControlClone openXmlElement, String? value)
+  private static void SetIdMso(DXOCustUI.QuickAccessToolbarControlClone openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.IdMso = new StringValue { Value = value };
@@ -56,12 +56,12 @@ public static class QuickAccessToolbarControlCloneConverter
   /// <summary>
   /// description
   /// </summary>
-  private static String? GetDescription(DocumentFormat.OpenXml.Office.CustomUI.QuickAccessToolbarControlClone openXmlElement)
+  private static String? GetDescription(DXOCustUI.QuickAccessToolbarControlClone openXmlElement)
   {
     return openXmlElement?.Description?.Value;
   }
   
-  private static void SetDescription(DocumentFormat.OpenXml.Office.CustomUI.QuickAccessToolbarControlClone openXmlElement, String? value)
+  private static void SetDescription(DXOCustUI.QuickAccessToolbarControlClone openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.Description = new StringValue { Value = value };
@@ -72,12 +72,12 @@ public static class QuickAccessToolbarControlCloneConverter
   /// <summary>
   /// getDescription
   /// </summary>
-  private static String? GetGetDescription(DocumentFormat.OpenXml.Office.CustomUI.QuickAccessToolbarControlClone openXmlElement)
+  private static String? GetGetDescription(DXOCustUI.QuickAccessToolbarControlClone openXmlElement)
   {
     return openXmlElement?.GetDescription?.Value;
   }
   
-  private static void SetGetDescription(DocumentFormat.OpenXml.Office.CustomUI.QuickAccessToolbarControlClone openXmlElement, String? value)
+  private static void SetGetDescription(DXOCustUI.QuickAccessToolbarControlClone openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.GetDescription = new StringValue { Value = value };
@@ -88,25 +88,25 @@ public static class QuickAccessToolbarControlCloneConverter
   /// <summary>
   /// size
   /// </summary>
-  private static DocumentModel.UI.SizeKind? GetSize(DocumentFormat.OpenXml.Office.CustomUI.QuickAccessToolbarControlClone openXmlElement)
+  private static DMUI.SizeKind? GetSize(DXOCustUI.QuickAccessToolbarControlClone openXmlElement)
   {
-    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Office.CustomUI.SizeValues, DocumentModel.UI.SizeKind>(openXmlElement?.Size?.Value);
+    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Office.CustomUI.SizeValues, DMUI.SizeKind>(openXmlElement?.Size?.Value);
   }
   
-  private static void SetSize(DocumentFormat.OpenXml.Office.CustomUI.QuickAccessToolbarControlClone openXmlElement, DocumentModel.UI.SizeKind? value)
+  private static void SetSize(DXOCustUI.QuickAccessToolbarControlClone openXmlElement, DMUI.SizeKind? value)
   {
-    openXmlElement.Size = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Office.CustomUI.SizeValues, DocumentModel.UI.SizeKind>(value);
+    openXmlElement.Size = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Office.CustomUI.SizeValues, DMUI.SizeKind>(value);
   }
   
   /// <summary>
   /// getSize
   /// </summary>
-  private static String? GetGetSize(DocumentFormat.OpenXml.Office.CustomUI.QuickAccessToolbarControlClone openXmlElement)
+  private static String? GetGetSize(DXOCustUI.QuickAccessToolbarControlClone openXmlElement)
   {
     return openXmlElement?.GetSize?.Value;
   }
   
-  private static void SetGetSize(DocumentFormat.OpenXml.Office.CustomUI.QuickAccessToolbarControlClone openXmlElement, String? value)
+  private static void SetGetSize(DXOCustUI.QuickAccessToolbarControlClone openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.GetSize = new StringValue { Value = value };
@@ -117,12 +117,12 @@ public static class QuickAccessToolbarControlCloneConverter
   /// <summary>
   /// image
   /// </summary>
-  private static String? GetImage(DocumentFormat.OpenXml.Office.CustomUI.QuickAccessToolbarControlClone openXmlElement)
+  private static String? GetImage(DXOCustUI.QuickAccessToolbarControlClone openXmlElement)
   {
     return openXmlElement?.Image?.Value;
   }
   
-  private static void SetImage(DocumentFormat.OpenXml.Office.CustomUI.QuickAccessToolbarControlClone openXmlElement, String? value)
+  private static void SetImage(DXOCustUI.QuickAccessToolbarControlClone openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.Image = new StringValue { Value = value };
@@ -133,12 +133,12 @@ public static class QuickAccessToolbarControlCloneConverter
   /// <summary>
   /// imageMso
   /// </summary>
-  private static String? GetImageMso(DocumentFormat.OpenXml.Office.CustomUI.QuickAccessToolbarControlClone openXmlElement)
+  private static String? GetImageMso(DXOCustUI.QuickAccessToolbarControlClone openXmlElement)
   {
     return openXmlElement?.ImageMso?.Value;
   }
   
-  private static void SetImageMso(DocumentFormat.OpenXml.Office.CustomUI.QuickAccessToolbarControlClone openXmlElement, String? value)
+  private static void SetImageMso(DXOCustUI.QuickAccessToolbarControlClone openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.ImageMso = new StringValue { Value = value };
@@ -149,12 +149,12 @@ public static class QuickAccessToolbarControlCloneConverter
   /// <summary>
   /// getImage
   /// </summary>
-  private static String? GetGetImage(DocumentFormat.OpenXml.Office.CustomUI.QuickAccessToolbarControlClone openXmlElement)
+  private static String? GetGetImage(DXOCustUI.QuickAccessToolbarControlClone openXmlElement)
   {
     return openXmlElement?.GetImage?.Value;
   }
   
-  private static void SetGetImage(DocumentFormat.OpenXml.Office.CustomUI.QuickAccessToolbarControlClone openXmlElement, String? value)
+  private static void SetGetImage(DXOCustUI.QuickAccessToolbarControlClone openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.GetImage = new StringValue { Value = value };
@@ -165,12 +165,12 @@ public static class QuickAccessToolbarControlCloneConverter
   /// <summary>
   /// screentip
   /// </summary>
-  private static String? GetScreentip(DocumentFormat.OpenXml.Office.CustomUI.QuickAccessToolbarControlClone openXmlElement)
+  private static String? GetScreentip(DXOCustUI.QuickAccessToolbarControlClone openXmlElement)
   {
     return openXmlElement?.Screentip?.Value;
   }
   
-  private static void SetScreentip(DocumentFormat.OpenXml.Office.CustomUI.QuickAccessToolbarControlClone openXmlElement, String? value)
+  private static void SetScreentip(DXOCustUI.QuickAccessToolbarControlClone openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.Screentip = new StringValue { Value = value };
@@ -181,12 +181,12 @@ public static class QuickAccessToolbarControlCloneConverter
   /// <summary>
   /// getScreentip
   /// </summary>
-  private static String? GetGetScreentip(DocumentFormat.OpenXml.Office.CustomUI.QuickAccessToolbarControlClone openXmlElement)
+  private static String? GetGetScreentip(DXOCustUI.QuickAccessToolbarControlClone openXmlElement)
   {
     return openXmlElement?.GetScreentip?.Value;
   }
   
-  private static void SetGetScreentip(DocumentFormat.OpenXml.Office.CustomUI.QuickAccessToolbarControlClone openXmlElement, String? value)
+  private static void SetGetScreentip(DXOCustUI.QuickAccessToolbarControlClone openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.GetScreentip = new StringValue { Value = value };
@@ -197,12 +197,12 @@ public static class QuickAccessToolbarControlCloneConverter
   /// <summary>
   /// supertip
   /// </summary>
-  private static String? GetSupertip(DocumentFormat.OpenXml.Office.CustomUI.QuickAccessToolbarControlClone openXmlElement)
+  private static String? GetSupertip(DXOCustUI.QuickAccessToolbarControlClone openXmlElement)
   {
     return openXmlElement?.Supertip?.Value;
   }
   
-  private static void SetSupertip(DocumentFormat.OpenXml.Office.CustomUI.QuickAccessToolbarControlClone openXmlElement, String? value)
+  private static void SetSupertip(DXOCustUI.QuickAccessToolbarControlClone openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.Supertip = new StringValue { Value = value };
@@ -213,12 +213,12 @@ public static class QuickAccessToolbarControlCloneConverter
   /// <summary>
   /// getSupertip
   /// </summary>
-  private static String? GetGetSupertip(DocumentFormat.OpenXml.Office.CustomUI.QuickAccessToolbarControlClone openXmlElement)
+  private static String? GetGetSupertip(DXOCustUI.QuickAccessToolbarControlClone openXmlElement)
   {
     return openXmlElement?.GetSupertip?.Value;
   }
   
-  private static void SetGetSupertip(DocumentFormat.OpenXml.Office.CustomUI.QuickAccessToolbarControlClone openXmlElement, String? value)
+  private static void SetGetSupertip(DXOCustUI.QuickAccessToolbarControlClone openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.GetSupertip = new StringValue { Value = value };
@@ -229,12 +229,12 @@ public static class QuickAccessToolbarControlCloneConverter
   /// <summary>
   /// enabled
   /// </summary>
-  private static Boolean? GetEnabled(DocumentFormat.OpenXml.Office.CustomUI.QuickAccessToolbarControlClone openXmlElement)
+  private static Boolean? GetEnabled(DXOCustUI.QuickAccessToolbarControlClone openXmlElement)
   {
     return openXmlElement?.Enabled?.Value;
   }
   
-  private static void SetEnabled(DocumentFormat.OpenXml.Office.CustomUI.QuickAccessToolbarControlClone openXmlElement, Boolean? value)
+  private static void SetEnabled(DXOCustUI.QuickAccessToolbarControlClone openXmlElement, Boolean? value)
   {
     if (value != null)
       openXmlElement.Enabled = new BooleanValue { Value = (Boolean)value };
@@ -245,12 +245,12 @@ public static class QuickAccessToolbarControlCloneConverter
   /// <summary>
   /// getEnabled
   /// </summary>
-  private static String? GetGetEnabled(DocumentFormat.OpenXml.Office.CustomUI.QuickAccessToolbarControlClone openXmlElement)
+  private static String? GetGetEnabled(DXOCustUI.QuickAccessToolbarControlClone openXmlElement)
   {
     return openXmlElement?.GetEnabled?.Value;
   }
   
-  private static void SetGetEnabled(DocumentFormat.OpenXml.Office.CustomUI.QuickAccessToolbarControlClone openXmlElement, String? value)
+  private static void SetGetEnabled(DXOCustUI.QuickAccessToolbarControlClone openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.GetEnabled = new StringValue { Value = value };
@@ -261,12 +261,12 @@ public static class QuickAccessToolbarControlCloneConverter
   /// <summary>
   /// label
   /// </summary>
-  private static String? GetLabel(DocumentFormat.OpenXml.Office.CustomUI.QuickAccessToolbarControlClone openXmlElement)
+  private static String? GetLabel(DXOCustUI.QuickAccessToolbarControlClone openXmlElement)
   {
     return openXmlElement?.Label?.Value;
   }
   
-  private static void SetLabel(DocumentFormat.OpenXml.Office.CustomUI.QuickAccessToolbarControlClone openXmlElement, String? value)
+  private static void SetLabel(DXOCustUI.QuickAccessToolbarControlClone openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.Label = new StringValue { Value = value };
@@ -277,12 +277,12 @@ public static class QuickAccessToolbarControlCloneConverter
   /// <summary>
   /// getLabel
   /// </summary>
-  private static String? GetGetLabel(DocumentFormat.OpenXml.Office.CustomUI.QuickAccessToolbarControlClone openXmlElement)
+  private static String? GetGetLabel(DXOCustUI.QuickAccessToolbarControlClone openXmlElement)
   {
     return openXmlElement?.GetLabel?.Value;
   }
   
-  private static void SetGetLabel(DocumentFormat.OpenXml.Office.CustomUI.QuickAccessToolbarControlClone openXmlElement, String? value)
+  private static void SetGetLabel(DXOCustUI.QuickAccessToolbarControlClone openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.GetLabel = new StringValue { Value = value };
@@ -293,12 +293,12 @@ public static class QuickAccessToolbarControlCloneConverter
   /// <summary>
   /// insertAfterMso
   /// </summary>
-  private static String? GetInsertAfterMso(DocumentFormat.OpenXml.Office.CustomUI.QuickAccessToolbarControlClone openXmlElement)
+  private static String? GetInsertAfterMso(DXOCustUI.QuickAccessToolbarControlClone openXmlElement)
   {
     return openXmlElement?.InsertAfterMso?.Value;
   }
   
-  private static void SetInsertAfterMso(DocumentFormat.OpenXml.Office.CustomUI.QuickAccessToolbarControlClone openXmlElement, String? value)
+  private static void SetInsertAfterMso(DXOCustUI.QuickAccessToolbarControlClone openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.InsertAfterMso = new StringValue { Value = value };
@@ -309,12 +309,12 @@ public static class QuickAccessToolbarControlCloneConverter
   /// <summary>
   /// insertBeforeMso
   /// </summary>
-  private static String? GetInsertBeforeMso(DocumentFormat.OpenXml.Office.CustomUI.QuickAccessToolbarControlClone openXmlElement)
+  private static String? GetInsertBeforeMso(DXOCustUI.QuickAccessToolbarControlClone openXmlElement)
   {
     return openXmlElement?.InsertBeforeMso?.Value;
   }
   
-  private static void SetInsertBeforeMso(DocumentFormat.OpenXml.Office.CustomUI.QuickAccessToolbarControlClone openXmlElement, String? value)
+  private static void SetInsertBeforeMso(DXOCustUI.QuickAccessToolbarControlClone openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.InsertBeforeMso = new StringValue { Value = value };
@@ -325,12 +325,12 @@ public static class QuickAccessToolbarControlCloneConverter
   /// <summary>
   /// insertAfterQ
   /// </summary>
-  private static String? GetInsertAfterQ(DocumentFormat.OpenXml.Office.CustomUI.QuickAccessToolbarControlClone openXmlElement)
+  private static String? GetInsertAfterQ(DXOCustUI.QuickAccessToolbarControlClone openXmlElement)
   {
     return openXmlElement?.InsertAfterQ?.Value;
   }
   
-  private static void SetInsertAfterQ(DocumentFormat.OpenXml.Office.CustomUI.QuickAccessToolbarControlClone openXmlElement, String? value)
+  private static void SetInsertAfterQ(DXOCustUI.QuickAccessToolbarControlClone openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.InsertAfterQ = new StringValue { Value = value };
@@ -341,12 +341,12 @@ public static class QuickAccessToolbarControlCloneConverter
   /// <summary>
   /// insertBeforeQ
   /// </summary>
-  private static String? GetInsertBeforeQ(DocumentFormat.OpenXml.Office.CustomUI.QuickAccessToolbarControlClone openXmlElement)
+  private static String? GetInsertBeforeQ(DXOCustUI.QuickAccessToolbarControlClone openXmlElement)
   {
     return openXmlElement?.InsertBeforeQ?.Value;
   }
   
-  private static void SetInsertBeforeQ(DocumentFormat.OpenXml.Office.CustomUI.QuickAccessToolbarControlClone openXmlElement, String? value)
+  private static void SetInsertBeforeQ(DXOCustUI.QuickAccessToolbarControlClone openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.InsertBeforeQ = new StringValue { Value = value };
@@ -357,12 +357,12 @@ public static class QuickAccessToolbarControlCloneConverter
   /// <summary>
   /// visible
   /// </summary>
-  private static Boolean? GetVisible(DocumentFormat.OpenXml.Office.CustomUI.QuickAccessToolbarControlClone openXmlElement)
+  private static Boolean? GetVisible(DXOCustUI.QuickAccessToolbarControlClone openXmlElement)
   {
     return openXmlElement?.Visible?.Value;
   }
   
-  private static void SetVisible(DocumentFormat.OpenXml.Office.CustomUI.QuickAccessToolbarControlClone openXmlElement, Boolean? value)
+  private static void SetVisible(DXOCustUI.QuickAccessToolbarControlClone openXmlElement, Boolean? value)
   {
     if (value != null)
       openXmlElement.Visible = new BooleanValue { Value = (Boolean)value };
@@ -373,12 +373,12 @@ public static class QuickAccessToolbarControlCloneConverter
   /// <summary>
   /// getVisible
   /// </summary>
-  private static String? GetGetVisible(DocumentFormat.OpenXml.Office.CustomUI.QuickAccessToolbarControlClone openXmlElement)
+  private static String? GetGetVisible(DXOCustUI.QuickAccessToolbarControlClone openXmlElement)
   {
     return openXmlElement?.GetVisible?.Value;
   }
   
-  private static void SetGetVisible(DocumentFormat.OpenXml.Office.CustomUI.QuickAccessToolbarControlClone openXmlElement, String? value)
+  private static void SetGetVisible(DXOCustUI.QuickAccessToolbarControlClone openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.GetVisible = new StringValue { Value = value };
@@ -389,12 +389,12 @@ public static class QuickAccessToolbarControlCloneConverter
   /// <summary>
   /// keytip
   /// </summary>
-  private static String? GetKeytip(DocumentFormat.OpenXml.Office.CustomUI.QuickAccessToolbarControlClone openXmlElement)
+  private static String? GetKeytip(DXOCustUI.QuickAccessToolbarControlClone openXmlElement)
   {
     return openXmlElement?.Keytip?.Value;
   }
   
-  private static void SetKeytip(DocumentFormat.OpenXml.Office.CustomUI.QuickAccessToolbarControlClone openXmlElement, String? value)
+  private static void SetKeytip(DXOCustUI.QuickAccessToolbarControlClone openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.Keytip = new StringValue { Value = value };
@@ -405,12 +405,12 @@ public static class QuickAccessToolbarControlCloneConverter
   /// <summary>
   /// getKeytip
   /// </summary>
-  private static String? GetGetKeytip(DocumentFormat.OpenXml.Office.CustomUI.QuickAccessToolbarControlClone openXmlElement)
+  private static String? GetGetKeytip(DXOCustUI.QuickAccessToolbarControlClone openXmlElement)
   {
     return openXmlElement?.GetKeytip?.Value;
   }
   
-  private static void SetGetKeytip(DocumentFormat.OpenXml.Office.CustomUI.QuickAccessToolbarControlClone openXmlElement, String? value)
+  private static void SetGetKeytip(DXOCustUI.QuickAccessToolbarControlClone openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.GetKeytip = new StringValue { Value = value };
@@ -421,12 +421,12 @@ public static class QuickAccessToolbarControlCloneConverter
   /// <summary>
   /// showLabel
   /// </summary>
-  private static Boolean? GetShowLabel(DocumentFormat.OpenXml.Office.CustomUI.QuickAccessToolbarControlClone openXmlElement)
+  private static Boolean? GetShowLabel(DXOCustUI.QuickAccessToolbarControlClone openXmlElement)
   {
     return openXmlElement?.ShowLabel?.Value;
   }
   
-  private static void SetShowLabel(DocumentFormat.OpenXml.Office.CustomUI.QuickAccessToolbarControlClone openXmlElement, Boolean? value)
+  private static void SetShowLabel(DXOCustUI.QuickAccessToolbarControlClone openXmlElement, Boolean? value)
   {
     if (value != null)
       openXmlElement.ShowLabel = new BooleanValue { Value = (Boolean)value };
@@ -437,12 +437,12 @@ public static class QuickAccessToolbarControlCloneConverter
   /// <summary>
   /// getShowLabel
   /// </summary>
-  private static String? GetGetShowLabel(DocumentFormat.OpenXml.Office.CustomUI.QuickAccessToolbarControlClone openXmlElement)
+  private static String? GetGetShowLabel(DXOCustUI.QuickAccessToolbarControlClone openXmlElement)
   {
     return openXmlElement?.GetShowLabel?.Value;
   }
   
-  private static void SetGetShowLabel(DocumentFormat.OpenXml.Office.CustomUI.QuickAccessToolbarControlClone openXmlElement, String? value)
+  private static void SetGetShowLabel(DXOCustUI.QuickAccessToolbarControlClone openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.GetShowLabel = new StringValue { Value = value };
@@ -453,12 +453,12 @@ public static class QuickAccessToolbarControlCloneConverter
   /// <summary>
   /// showImage
   /// </summary>
-  private static Boolean? GetShowImage(DocumentFormat.OpenXml.Office.CustomUI.QuickAccessToolbarControlClone openXmlElement)
+  private static Boolean? GetShowImage(DXOCustUI.QuickAccessToolbarControlClone openXmlElement)
   {
     return openXmlElement?.ShowImage?.Value;
   }
   
-  private static void SetShowImage(DocumentFormat.OpenXml.Office.CustomUI.QuickAccessToolbarControlClone openXmlElement, Boolean? value)
+  private static void SetShowImage(DXOCustUI.QuickAccessToolbarControlClone openXmlElement, Boolean? value)
   {
     if (value != null)
       openXmlElement.ShowImage = new BooleanValue { Value = (Boolean)value };
@@ -469,12 +469,12 @@ public static class QuickAccessToolbarControlCloneConverter
   /// <summary>
   /// getShowImage
   /// </summary>
-  private static String? GetGetShowImage(DocumentFormat.OpenXml.Office.CustomUI.QuickAccessToolbarControlClone openXmlElement)
+  private static String? GetGetShowImage(DXOCustUI.QuickAccessToolbarControlClone openXmlElement)
   {
     return openXmlElement?.GetShowImage?.Value;
   }
   
-  private static void SetGetShowImage(DocumentFormat.OpenXml.Office.CustomUI.QuickAccessToolbarControlClone openXmlElement, String? value)
+  private static void SetGetShowImage(DXOCustUI.QuickAccessToolbarControlClone openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.GetShowImage = new StringValue { Value = value };
@@ -482,11 +482,11 @@ public static class QuickAccessToolbarControlCloneConverter
       openXmlElement.GetShowImage = null;
   }
   
-  public static DocumentModel.UI.QuickAccessToolbarControlClone? CreateModelElement(DocumentFormat.OpenXml.Office.CustomUI.QuickAccessToolbarControlClone? openXmlElement)
+  public static DMUI.QuickAccessToolbarControlClone? CreateModelElement(DXOCustUI.QuickAccessToolbarControlClone? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.UI.QuickAccessToolbarControlClone();
+      var value = new DMUI.QuickAccessToolbarControlClone();
       value.Id = GetId(openXmlElement);
       value.IdQ = GetIdQ(openXmlElement);
       value.IdMso = GetIdMso(openXmlElement);
@@ -522,8 +522,8 @@ public static class QuickAccessToolbarControlCloneConverter
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.UI.QuickAccessToolbarControlClone? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Office.CustomUI.QuickAccessToolbarControlClone, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMUI.QuickAccessToolbarControlClone? value)
+    where OpenXmlElementType: DXOCustUI.QuickAccessToolbarControlClone, new()
   {
     if (value != null)
     {

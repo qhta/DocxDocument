@@ -8,12 +8,12 @@ public static class TransformEffectConverter
   /// <summary>
   /// Horizontal Ratio
   /// </summary>
-  private static Int32? GetHorizontalRatio(DocumentFormat.OpenXml.Drawing.TransformEffect openXmlElement)
+  private static Int32? GetHorizontalRatio(DXDraw.TransformEffect openXmlElement)
   {
     return openXmlElement.HorizontalRatio?.Value;
   }
   
-  private static void SetHorizontalRatio(DocumentFormat.OpenXml.Drawing.TransformEffect openXmlElement, Int32? value)
+  private static void SetHorizontalRatio(DXDraw.TransformEffect openXmlElement, Int32? value)
   {
     openXmlElement.HorizontalRatio = value;
   }
@@ -21,12 +21,12 @@ public static class TransformEffectConverter
   /// <summary>
   /// Vertical Ratio
   /// </summary>
-  private static Int32? GetVerticalRatio(DocumentFormat.OpenXml.Drawing.TransformEffect openXmlElement)
+  private static Int32? GetVerticalRatio(DXDraw.TransformEffect openXmlElement)
   {
     return openXmlElement.VerticalRatio?.Value;
   }
   
-  private static void SetVerticalRatio(DocumentFormat.OpenXml.Drawing.TransformEffect openXmlElement, Int32? value)
+  private static void SetVerticalRatio(DXDraw.TransformEffect openXmlElement, Int32? value)
   {
     openXmlElement.VerticalRatio = value;
   }
@@ -34,12 +34,12 @@ public static class TransformEffectConverter
   /// <summary>
   /// Horizontal Skew
   /// </summary>
-  private static Int32? GetHorizontalSkew(DocumentFormat.OpenXml.Drawing.TransformEffect openXmlElement)
+  private static Int32? GetHorizontalSkew(DXDraw.TransformEffect openXmlElement)
   {
     return openXmlElement.HorizontalSkew?.Value;
   }
   
-  private static void SetHorizontalSkew(DocumentFormat.OpenXml.Drawing.TransformEffect openXmlElement, Int32? value)
+  private static void SetHorizontalSkew(DXDraw.TransformEffect openXmlElement, Int32? value)
   {
     openXmlElement.HorizontalSkew = value;
   }
@@ -47,12 +47,12 @@ public static class TransformEffectConverter
   /// <summary>
   /// Vertical Skew
   /// </summary>
-  private static Int32? GetVerticalSkew(DocumentFormat.OpenXml.Drawing.TransformEffect openXmlElement)
+  private static Int32? GetVerticalSkew(DXDraw.TransformEffect openXmlElement)
   {
     return openXmlElement.VerticalSkew?.Value;
   }
   
-  private static void SetVerticalSkew(DocumentFormat.OpenXml.Drawing.TransformEffect openXmlElement, Int32? value)
+  private static void SetVerticalSkew(DXDraw.TransformEffect openXmlElement, Int32? value)
   {
     openXmlElement.VerticalSkew = value;
   }
@@ -60,12 +60,12 @@ public static class TransformEffectConverter
   /// <summary>
   /// Horizontal Shift
   /// </summary>
-  private static Int64? GetHorizontalShift(DocumentFormat.OpenXml.Drawing.TransformEffect openXmlElement)
+  private static Int64? GetHorizontalShift(DXDraw.TransformEffect openXmlElement)
   {
     return openXmlElement.HorizontalShift?.Value;
   }
   
-  private static void SetHorizontalShift(DocumentFormat.OpenXml.Drawing.TransformEffect openXmlElement, Int64? value)
+  private static void SetHorizontalShift(DXDraw.TransformEffect openXmlElement, Int64? value)
   {
     openXmlElement.HorizontalShift = value;
   }
@@ -73,21 +73,21 @@ public static class TransformEffectConverter
   /// <summary>
   /// Vertical Shift
   /// </summary>
-  private static Int64? GetVerticalShift(DocumentFormat.OpenXml.Drawing.TransformEffect openXmlElement)
+  private static Int64? GetVerticalShift(DXDraw.TransformEffect openXmlElement)
   {
     return openXmlElement.VerticalShift?.Value;
   }
   
-  private static void SetVerticalShift(DocumentFormat.OpenXml.Drawing.TransformEffect openXmlElement, Int64? value)
+  private static void SetVerticalShift(DXDraw.TransformEffect openXmlElement, Int64? value)
   {
     openXmlElement.VerticalShift = value;
   }
   
-  public static DocumentModel.Drawings.TransformEffect? CreateModelElement(DocumentFormat.OpenXml.Drawing.TransformEffect? openXmlElement)
+  public static DMDraws.TransformEffect? CreateModelElement(DXDraw.TransformEffect? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.TransformEffect();
+      var value = new DMDraws.TransformEffect();
       value.HorizontalRatio = GetHorizontalRatio(openXmlElement);
       value.VerticalRatio = GetVerticalRatio(openXmlElement);
       value.HorizontalSkew = GetHorizontalSkew(openXmlElement);
@@ -99,8 +99,8 @@ public static class TransformEffectConverter
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.TransformEffect? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.TransformEffect, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDraws.TransformEffect? value)
+    where OpenXmlElementType: DXDraw.TransformEffect, new()
   {
     if (value != null)
     {

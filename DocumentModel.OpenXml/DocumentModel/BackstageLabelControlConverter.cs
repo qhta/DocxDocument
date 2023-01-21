@@ -8,12 +8,12 @@ public static class BackstageLabelControlConverter
   /// <summary>
   /// id, this property is only available in Office 2010 and later.
   /// </summary>
-  private static String? GetId(DocumentFormat.OpenXml.Office2010.CustomUI.BackstageLabelControl openXmlElement)
+  private static String? GetId(DXO2010CustUI.BackstageLabelControl openXmlElement)
   {
     return openXmlElement?.Id?.Value;
   }
   
-  private static void SetId(DocumentFormat.OpenXml.Office2010.CustomUI.BackstageLabelControl openXmlElement, String? value)
+  private static void SetId(DXO2010CustUI.BackstageLabelControl openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.Id = new StringValue { Value = value };
@@ -24,12 +24,12 @@ public static class BackstageLabelControlConverter
   /// <summary>
   /// idQ, this property is only available in Office 2010 and later.
   /// </summary>
-  private static String? GetQualifiedId(DocumentFormat.OpenXml.Office2010.CustomUI.BackstageLabelControl openXmlElement)
+  private static String? GetQualifiedId(DXO2010CustUI.BackstageLabelControl openXmlElement)
   {
     return openXmlElement?.QualifiedId?.Value;
   }
   
-  private static void SetQualifiedId(DocumentFormat.OpenXml.Office2010.CustomUI.BackstageLabelControl openXmlElement, String? value)
+  private static void SetQualifiedId(DXO2010CustUI.BackstageLabelControl openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.QualifiedId = new StringValue { Value = value };
@@ -40,12 +40,12 @@ public static class BackstageLabelControlConverter
   /// <summary>
   /// tag, this property is only available in Office 2010 and later.
   /// </summary>
-  private static String? GetTag(DocumentFormat.OpenXml.Office2010.CustomUI.BackstageLabelControl openXmlElement)
+  private static String? GetTag(DXO2010CustUI.BackstageLabelControl openXmlElement)
   {
     return openXmlElement?.Tag?.Value;
   }
   
-  private static void SetTag(DocumentFormat.OpenXml.Office2010.CustomUI.BackstageLabelControl openXmlElement, String? value)
+  private static void SetTag(DXO2010CustUI.BackstageLabelControl openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.Tag = new StringValue { Value = value };
@@ -56,38 +56,38 @@ public static class BackstageLabelControlConverter
   /// <summary>
   /// alignLabel, this property is only available in Office 2010 and later.
   /// </summary>
-  private static DocumentModel.ExpandKind? GetAlignLabel(DocumentFormat.OpenXml.Office2010.CustomUI.BackstageLabelControl openXmlElement)
+  private static DM.ExpandKind? GetAlignLabel(DXO2010CustUI.BackstageLabelControl openXmlElement)
   {
-    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Office2010.CustomUI.ExpandValues, DocumentModel.ExpandKind>(openXmlElement?.AlignLabel?.Value);
+    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Office2010.CustomUI.ExpandValues, DM.ExpandKind>(openXmlElement?.AlignLabel?.Value);
   }
   
-  private static void SetAlignLabel(DocumentFormat.OpenXml.Office2010.CustomUI.BackstageLabelControl openXmlElement, DocumentModel.ExpandKind? value)
+  private static void SetAlignLabel(DXO2010CustUI.BackstageLabelControl openXmlElement, DM.ExpandKind? value)
   {
-    openXmlElement.AlignLabel = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Office2010.CustomUI.ExpandValues, DocumentModel.ExpandKind>(value);
+    openXmlElement.AlignLabel = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Office2010.CustomUI.ExpandValues, DM.ExpandKind>(value);
   }
   
   /// <summary>
   /// expand, this property is only available in Office 2010 and later.
   /// </summary>
-  private static DocumentModel.ExpandKind? GetExpand(DocumentFormat.OpenXml.Office2010.CustomUI.BackstageLabelControl openXmlElement)
+  private static DM.ExpandKind? GetExpand(DXO2010CustUI.BackstageLabelControl openXmlElement)
   {
-    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Office2010.CustomUI.ExpandValues, DocumentModel.ExpandKind>(openXmlElement?.Expand?.Value);
+    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Office2010.CustomUI.ExpandValues, DM.ExpandKind>(openXmlElement?.Expand?.Value);
   }
   
-  private static void SetExpand(DocumentFormat.OpenXml.Office2010.CustomUI.BackstageLabelControl openXmlElement, DocumentModel.ExpandKind? value)
+  private static void SetExpand(DXO2010CustUI.BackstageLabelControl openXmlElement, DM.ExpandKind? value)
   {
-    openXmlElement.Expand = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Office2010.CustomUI.ExpandValues, DocumentModel.ExpandKind>(value);
+    openXmlElement.Expand = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Office2010.CustomUI.ExpandValues, DM.ExpandKind>(value);
   }
   
   /// <summary>
   /// enabled, this property is only available in Office 2010 and later.
   /// </summary>
-  private static Boolean? GetEnabled(DocumentFormat.OpenXml.Office2010.CustomUI.BackstageLabelControl openXmlElement)
+  private static Boolean? GetEnabled(DXO2010CustUI.BackstageLabelControl openXmlElement)
   {
     return openXmlElement?.Enabled?.Value;
   }
   
-  private static void SetEnabled(DocumentFormat.OpenXml.Office2010.CustomUI.BackstageLabelControl openXmlElement, Boolean? value)
+  private static void SetEnabled(DXO2010CustUI.BackstageLabelControl openXmlElement, Boolean? value)
   {
     if (value != null)
       openXmlElement.Enabled = new BooleanValue { Value = (Boolean)value };
@@ -98,12 +98,12 @@ public static class BackstageLabelControlConverter
   /// <summary>
   /// getEnabled, this property is only available in Office 2010 and later.
   /// </summary>
-  private static String? GetGetEnabled(DocumentFormat.OpenXml.Office2010.CustomUI.BackstageLabelControl openXmlElement)
+  private static String? GetGetEnabled(DXO2010CustUI.BackstageLabelControl openXmlElement)
   {
     return openXmlElement?.GetEnabled?.Value;
   }
   
-  private static void SetGetEnabled(DocumentFormat.OpenXml.Office2010.CustomUI.BackstageLabelControl openXmlElement, String? value)
+  private static void SetGetEnabled(DXO2010CustUI.BackstageLabelControl openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.GetEnabled = new StringValue { Value = value };
@@ -114,12 +114,12 @@ public static class BackstageLabelControlConverter
   /// <summary>
   /// label, this property is only available in Office 2010 and later.
   /// </summary>
-  private static String? GetLabel(DocumentFormat.OpenXml.Office2010.CustomUI.BackstageLabelControl openXmlElement)
+  private static String? GetLabel(DXO2010CustUI.BackstageLabelControl openXmlElement)
   {
     return openXmlElement?.Label?.Value;
   }
   
-  private static void SetLabel(DocumentFormat.OpenXml.Office2010.CustomUI.BackstageLabelControl openXmlElement, String? value)
+  private static void SetLabel(DXO2010CustUI.BackstageLabelControl openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.Label = new StringValue { Value = value };
@@ -130,12 +130,12 @@ public static class BackstageLabelControlConverter
   /// <summary>
   /// getLabel, this property is only available in Office 2010 and later.
   /// </summary>
-  private static String? GetGetLabel(DocumentFormat.OpenXml.Office2010.CustomUI.BackstageLabelControl openXmlElement)
+  private static String? GetGetLabel(DXO2010CustUI.BackstageLabelControl openXmlElement)
   {
     return openXmlElement?.GetLabel?.Value;
   }
   
-  private static void SetGetLabel(DocumentFormat.OpenXml.Office2010.CustomUI.BackstageLabelControl openXmlElement, String? value)
+  private static void SetGetLabel(DXO2010CustUI.BackstageLabelControl openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.GetLabel = new StringValue { Value = value };
@@ -146,12 +146,12 @@ public static class BackstageLabelControlConverter
   /// <summary>
   /// visible, this property is only available in Office 2010 and later.
   /// </summary>
-  private static Boolean? GetVisible(DocumentFormat.OpenXml.Office2010.CustomUI.BackstageLabelControl openXmlElement)
+  private static Boolean? GetVisible(DXO2010CustUI.BackstageLabelControl openXmlElement)
   {
     return openXmlElement?.Visible?.Value;
   }
   
-  private static void SetVisible(DocumentFormat.OpenXml.Office2010.CustomUI.BackstageLabelControl openXmlElement, Boolean? value)
+  private static void SetVisible(DXO2010CustUI.BackstageLabelControl openXmlElement, Boolean? value)
   {
     if (value != null)
       openXmlElement.Visible = new BooleanValue { Value = (Boolean)value };
@@ -162,12 +162,12 @@ public static class BackstageLabelControlConverter
   /// <summary>
   /// getVisible, this property is only available in Office 2010 and later.
   /// </summary>
-  private static String? GetGetVisible(DocumentFormat.OpenXml.Office2010.CustomUI.BackstageLabelControl openXmlElement)
+  private static String? GetGetVisible(DXO2010CustUI.BackstageLabelControl openXmlElement)
   {
     return openXmlElement?.GetVisible?.Value;
   }
   
-  private static void SetGetVisible(DocumentFormat.OpenXml.Office2010.CustomUI.BackstageLabelControl openXmlElement, String? value)
+  private static void SetGetVisible(DXO2010CustUI.BackstageLabelControl openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.GetVisible = new StringValue { Value = value };
@@ -178,12 +178,12 @@ public static class BackstageLabelControlConverter
   /// <summary>
   /// noWrap, this property is only available in Office 2010 and later.
   /// </summary>
-  private static Boolean? GetNoWrap(DocumentFormat.OpenXml.Office2010.CustomUI.BackstageLabelControl openXmlElement)
+  private static Boolean? GetNoWrap(DXO2010CustUI.BackstageLabelControl openXmlElement)
   {
     return openXmlElement?.NoWrap?.Value;
   }
   
-  private static void SetNoWrap(DocumentFormat.OpenXml.Office2010.CustomUI.BackstageLabelControl openXmlElement, Boolean? value)
+  private static void SetNoWrap(DXO2010CustUI.BackstageLabelControl openXmlElement, Boolean? value)
   {
     if (value != null)
       openXmlElement.NoWrap = new BooleanValue { Value = (Boolean)value };
@@ -191,11 +191,11 @@ public static class BackstageLabelControlConverter
       openXmlElement.NoWrap = null;
   }
   
-  public static DocumentModel.BackstageLabelControl? CreateModelElement(DocumentFormat.OpenXml.Office2010.CustomUI.BackstageLabelControl? openXmlElement)
+  public static DM.BackstageLabelControl? CreateModelElement(DXO2010CustUI.BackstageLabelControl? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.BackstageLabelControl();
+      var value = new DM.BackstageLabelControl();
       value.Id = GetId(openXmlElement);
       value.QualifiedId = GetQualifiedId(openXmlElement);
       value.Tag = GetTag(openXmlElement);
@@ -213,8 +213,8 @@ public static class BackstageLabelControlConverter
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.BackstageLabelControl? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Office2010.CustomUI.BackstageLabelControl, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DM.BackstageLabelControl? value)
+    where OpenXmlElementType: DXO2010CustUI.BackstageLabelControl, new()
   {
     if (value != null)
     {

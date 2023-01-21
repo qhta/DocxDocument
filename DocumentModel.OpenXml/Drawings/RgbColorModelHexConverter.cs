@@ -8,14 +8,14 @@ public static class RgbColorModelHexConverter
   /// <summary>
   /// Value
   /// </summary>
-  private static DocumentModel.RGB? GetVal(DocumentFormat.OpenXml.Drawing.RgbColorModelHex openXmlElement)
+  private static DM.RGB? GetVal(DXDraw.RgbColorModelHex openXmlElement)
   {
     if (openXmlElement.Val?.Value != null)
       return (DocumentModel.RGB)UInt32.Parse(openXmlElement.Val.Value, NumberStyles.HexNumber);
     return null;
   }
   
-  private static void SetVal(DocumentFormat.OpenXml.Drawing.RgbColorModelHex openXmlElement, DocumentModel.RGB? value)
+  private static void SetVal(DXDraw.RgbColorModelHex openXmlElement, DM.RGB? value)
   {
       if (value != null)
         openXmlElement.Val = ((UInt32)value).ToString("X6");
@@ -26,586 +26,586 @@ public static class RgbColorModelHexConverter
   /// <summary>
   /// legacySpreadsheetColorIndex, this property is only available in Office 2010 and later.
   /// </summary>
-  private static Int32? GetLegacySpreadsheetColorIndex(DocumentFormat.OpenXml.Drawing.RgbColorModelHex openXmlElement)
+  private static Int32? GetLegacySpreadsheetColorIndex(DXDraw.RgbColorModelHex openXmlElement)
   {
     return openXmlElement.LegacySpreadsheetColorIndex?.Value;
   }
   
-  private static void SetLegacySpreadsheetColorIndex(DocumentFormat.OpenXml.Drawing.RgbColorModelHex openXmlElement, Int32? value)
+  private static void SetLegacySpreadsheetColorIndex(DXDraw.RgbColorModelHex openXmlElement, Int32? value)
   {
     openXmlElement.LegacySpreadsheetColorIndex = value;
   }
   
-  private static Int32? GetTint(DocumentFormat.OpenXml.Drawing.RgbColorModelHex openXmlElement)
+  private static Int32? GetTint(DXDraw.RgbColorModelHex openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.Tint>();
+    var itemElement = openXmlElement?.GetFirstChild<DXDraw.Tint>();
     if (itemElement != null)
       return itemElement.Val?.Value;
     return null;
   }
   
-  private static void SetTint(DocumentFormat.OpenXml.Drawing.RgbColorModelHex openXmlElement, Int32? value)
+  private static void SetTint(DXDraw.RgbColorModelHex openXmlElement, Int32? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Tint>();
+    var itemElement = openXmlElement.GetFirstChild<DXDraw.Tint>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = new DocumentFormat.OpenXml.Drawing.Tint{ Val = value };
+      itemElement = new DXDraw.Tint{ Val = value };
       openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static Int32? GetShade(DocumentFormat.OpenXml.Drawing.RgbColorModelHex openXmlElement)
+  private static Int32? GetShade(DXDraw.RgbColorModelHex openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.Shade>();
+    var itemElement = openXmlElement?.GetFirstChild<DXDraw.Shade>();
     if (itemElement != null)
       return itemElement.Val?.Value;
     return null;
   }
   
-  private static void SetShade(DocumentFormat.OpenXml.Drawing.RgbColorModelHex openXmlElement, Int32? value)
+  private static void SetShade(DXDraw.RgbColorModelHex openXmlElement, Int32? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Shade>();
+    var itemElement = openXmlElement.GetFirstChild<DXDraw.Shade>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = new DocumentFormat.OpenXml.Drawing.Shade{ Val = value };
+      itemElement = new DXDraw.Shade{ Val = value };
       openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static Boolean? GetComplement(DocumentFormat.OpenXml.Drawing.RgbColorModelHex openXmlElement)
+  private static Boolean? GetComplement(DXDraw.RgbColorModelHex openXmlElement)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Complement>();
+    var itemElement = openXmlElement.GetFirstChild<DXDraw.Complement>();
     return itemElement != null;
   }
   
-  private static void SetComplement(DocumentFormat.OpenXml.Drawing.RgbColorModelHex openXmlElement, Boolean? value)
+  private static void SetComplement(DXDraw.RgbColorModelHex openXmlElement, Boolean? value)
   {
     if (value == false)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Complement>();
+      var itemElement = openXmlElement.GetFirstChild<DXDraw.Complement>();
       if (itemElement != null)
         itemElement.Remove();
     }
     if (value == true)
     {
-      var itemElement = new DocumentFormat.OpenXml.Drawing.Complement();
+      var itemElement = new DXDraw.Complement();
       openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static Boolean? GetInverse(DocumentFormat.OpenXml.Drawing.RgbColorModelHex openXmlElement)
+  private static Boolean? GetInverse(DXDraw.RgbColorModelHex openXmlElement)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Inverse>();
+    var itemElement = openXmlElement.GetFirstChild<DXDraw.Inverse>();
     return itemElement != null;
   }
   
-  private static void SetInverse(DocumentFormat.OpenXml.Drawing.RgbColorModelHex openXmlElement, Boolean? value)
+  private static void SetInverse(DXDraw.RgbColorModelHex openXmlElement, Boolean? value)
   {
     if (value == false)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Inverse>();
+      var itemElement = openXmlElement.GetFirstChild<DXDraw.Inverse>();
       if (itemElement != null)
         itemElement.Remove();
     }
     if (value == true)
     {
-      var itemElement = new DocumentFormat.OpenXml.Drawing.Inverse();
+      var itemElement = new DXDraw.Inverse();
       openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static Boolean? GetGray(DocumentFormat.OpenXml.Drawing.RgbColorModelHex openXmlElement)
+  private static Boolean? GetGray(DXDraw.RgbColorModelHex openXmlElement)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Gray>();
+    var itemElement = openXmlElement.GetFirstChild<DXDraw.Gray>();
     return itemElement != null;
   }
   
-  private static void SetGray(DocumentFormat.OpenXml.Drawing.RgbColorModelHex openXmlElement, Boolean? value)
+  private static void SetGray(DXDraw.RgbColorModelHex openXmlElement, Boolean? value)
   {
     if (value == false)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Gray>();
+      var itemElement = openXmlElement.GetFirstChild<DXDraw.Gray>();
       if (itemElement != null)
         itemElement.Remove();
     }
     if (value == true)
     {
-      var itemElement = new DocumentFormat.OpenXml.Drawing.Gray();
+      var itemElement = new DXDraw.Gray();
       openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static Int32? GetAlpha(DocumentFormat.OpenXml.Drawing.RgbColorModelHex openXmlElement)
+  private static Int32? GetAlpha(DXDraw.RgbColorModelHex openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.Alpha>();
+    var itemElement = openXmlElement?.GetFirstChild<DXDraw.Alpha>();
     if (itemElement != null)
       return itemElement.Val?.Value;
     return null;
   }
   
-  private static void SetAlpha(DocumentFormat.OpenXml.Drawing.RgbColorModelHex openXmlElement, Int32? value)
+  private static void SetAlpha(DXDraw.RgbColorModelHex openXmlElement, Int32? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Alpha>();
+    var itemElement = openXmlElement.GetFirstChild<DXDraw.Alpha>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = new DocumentFormat.OpenXml.Drawing.Alpha{ Val = value };
+      itemElement = new DXDraw.Alpha{ Val = value };
       openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static Int32? GetAlphaOffset(DocumentFormat.OpenXml.Drawing.RgbColorModelHex openXmlElement)
+  private static Int32? GetAlphaOffset(DXDraw.RgbColorModelHex openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.AlphaOffset>();
+    var itemElement = openXmlElement?.GetFirstChild<DXDraw.AlphaOffset>();
     if (itemElement != null)
       return itemElement.Val?.Value;
     return null;
   }
   
-  private static void SetAlphaOffset(DocumentFormat.OpenXml.Drawing.RgbColorModelHex openXmlElement, Int32? value)
+  private static void SetAlphaOffset(DXDraw.RgbColorModelHex openXmlElement, Int32? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.AlphaOffset>();
+    var itemElement = openXmlElement.GetFirstChild<DXDraw.AlphaOffset>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = new DocumentFormat.OpenXml.Drawing.AlphaOffset{ Val = value };
+      itemElement = new DXDraw.AlphaOffset{ Val = value };
       openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static Int32? GetAlphaModulation(DocumentFormat.OpenXml.Drawing.RgbColorModelHex openXmlElement)
+  private static Int32? GetAlphaModulation(DXDraw.RgbColorModelHex openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.AlphaModulation>();
+    var itemElement = openXmlElement?.GetFirstChild<DXDraw.AlphaModulation>();
     if (itemElement != null)
       return itemElement.Val?.Value;
     return null;
   }
   
-  private static void SetAlphaModulation(DocumentFormat.OpenXml.Drawing.RgbColorModelHex openXmlElement, Int32? value)
+  private static void SetAlphaModulation(DXDraw.RgbColorModelHex openXmlElement, Int32? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.AlphaModulation>();
+    var itemElement = openXmlElement.GetFirstChild<DXDraw.AlphaModulation>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = new DocumentFormat.OpenXml.Drawing.AlphaModulation{ Val = value };
+      itemElement = new DXDraw.AlphaModulation{ Val = value };
       openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static Int32? GetHue(DocumentFormat.OpenXml.Drawing.RgbColorModelHex openXmlElement)
+  private static Int32? GetHue(DXDraw.RgbColorModelHex openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.Hue>();
+    var itemElement = openXmlElement?.GetFirstChild<DXDraw.Hue>();
     if (itemElement != null)
       return itemElement.Val?.Value;
     return null;
   }
   
-  private static void SetHue(DocumentFormat.OpenXml.Drawing.RgbColorModelHex openXmlElement, Int32? value)
+  private static void SetHue(DXDraw.RgbColorModelHex openXmlElement, Int32? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Hue>();
+    var itemElement = openXmlElement.GetFirstChild<DXDraw.Hue>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = new DocumentFormat.OpenXml.Drawing.Hue{ Val = value };
+      itemElement = new DXDraw.Hue{ Val = value };
       openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static Int32? GetHueOffset(DocumentFormat.OpenXml.Drawing.RgbColorModelHex openXmlElement)
+  private static Int32? GetHueOffset(DXDraw.RgbColorModelHex openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.HueOffset>();
+    var itemElement = openXmlElement?.GetFirstChild<DXDraw.HueOffset>();
     if (itemElement != null)
       return itemElement.Val?.Value;
     return null;
   }
   
-  private static void SetHueOffset(DocumentFormat.OpenXml.Drawing.RgbColorModelHex openXmlElement, Int32? value)
+  private static void SetHueOffset(DXDraw.RgbColorModelHex openXmlElement, Int32? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.HueOffset>();
+    var itemElement = openXmlElement.GetFirstChild<DXDraw.HueOffset>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = new DocumentFormat.OpenXml.Drawing.HueOffset{ Val = value };
+      itemElement = new DXDraw.HueOffset{ Val = value };
       openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static Int32? GetHueModulation(DocumentFormat.OpenXml.Drawing.RgbColorModelHex openXmlElement)
+  private static Int32? GetHueModulation(DXDraw.RgbColorModelHex openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.HueModulation>();
+    var itemElement = openXmlElement?.GetFirstChild<DXDraw.HueModulation>();
     if (itemElement != null)
       return itemElement.Val?.Value;
     return null;
   }
   
-  private static void SetHueModulation(DocumentFormat.OpenXml.Drawing.RgbColorModelHex openXmlElement, Int32? value)
+  private static void SetHueModulation(DXDraw.RgbColorModelHex openXmlElement, Int32? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.HueModulation>();
+    var itemElement = openXmlElement.GetFirstChild<DXDraw.HueModulation>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = new DocumentFormat.OpenXml.Drawing.HueModulation{ Val = value };
+      itemElement = new DXDraw.HueModulation{ Val = value };
       openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static Int32? GetSaturation(DocumentFormat.OpenXml.Drawing.RgbColorModelHex openXmlElement)
+  private static Int32? GetSaturation(DXDraw.RgbColorModelHex openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.Saturation>();
+    var itemElement = openXmlElement?.GetFirstChild<DXDraw.Saturation>();
     if (itemElement != null)
       return itemElement.Val?.Value;
     return null;
   }
   
-  private static void SetSaturation(DocumentFormat.OpenXml.Drawing.RgbColorModelHex openXmlElement, Int32? value)
+  private static void SetSaturation(DXDraw.RgbColorModelHex openXmlElement, Int32? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Saturation>();
+    var itemElement = openXmlElement.GetFirstChild<DXDraw.Saturation>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = new DocumentFormat.OpenXml.Drawing.Saturation{ Val = value };
+      itemElement = new DXDraw.Saturation{ Val = value };
       openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static Int32? GetSaturationOffset(DocumentFormat.OpenXml.Drawing.RgbColorModelHex openXmlElement)
+  private static Int32? GetSaturationOffset(DXDraw.RgbColorModelHex openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.SaturationOffset>();
+    var itemElement = openXmlElement?.GetFirstChild<DXDraw.SaturationOffset>();
     if (itemElement != null)
       return itemElement.Val?.Value;
     return null;
   }
   
-  private static void SetSaturationOffset(DocumentFormat.OpenXml.Drawing.RgbColorModelHex openXmlElement, Int32? value)
+  private static void SetSaturationOffset(DXDraw.RgbColorModelHex openXmlElement, Int32? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.SaturationOffset>();
+    var itemElement = openXmlElement.GetFirstChild<DXDraw.SaturationOffset>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = new DocumentFormat.OpenXml.Drawing.SaturationOffset{ Val = value };
+      itemElement = new DXDraw.SaturationOffset{ Val = value };
       openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static Int32? GetSaturationModulation(DocumentFormat.OpenXml.Drawing.RgbColorModelHex openXmlElement)
+  private static Int32? GetSaturationModulation(DXDraw.RgbColorModelHex openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.SaturationModulation>();
+    var itemElement = openXmlElement?.GetFirstChild<DXDraw.SaturationModulation>();
     if (itemElement != null)
       return itemElement.Val?.Value;
     return null;
   }
   
-  private static void SetSaturationModulation(DocumentFormat.OpenXml.Drawing.RgbColorModelHex openXmlElement, Int32? value)
+  private static void SetSaturationModulation(DXDraw.RgbColorModelHex openXmlElement, Int32? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.SaturationModulation>();
+    var itemElement = openXmlElement.GetFirstChild<DXDraw.SaturationModulation>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = new DocumentFormat.OpenXml.Drawing.SaturationModulation{ Val = value };
+      itemElement = new DXDraw.SaturationModulation{ Val = value };
       openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static Int32? GetLuminance(DocumentFormat.OpenXml.Drawing.RgbColorModelHex openXmlElement)
+  private static Int32? GetLuminance(DXDraw.RgbColorModelHex openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.Luminance>();
+    var itemElement = openXmlElement?.GetFirstChild<DXDraw.Luminance>();
     if (itemElement != null)
       return itemElement.Val?.Value;
     return null;
   }
   
-  private static void SetLuminance(DocumentFormat.OpenXml.Drawing.RgbColorModelHex openXmlElement, Int32? value)
+  private static void SetLuminance(DXDraw.RgbColorModelHex openXmlElement, Int32? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Luminance>();
+    var itemElement = openXmlElement.GetFirstChild<DXDraw.Luminance>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = new DocumentFormat.OpenXml.Drawing.Luminance{ Val = value };
+      itemElement = new DXDraw.Luminance{ Val = value };
       openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static Int32? GetLuminanceOffset(DocumentFormat.OpenXml.Drawing.RgbColorModelHex openXmlElement)
+  private static Int32? GetLuminanceOffset(DXDraw.RgbColorModelHex openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.LuminanceOffset>();
+    var itemElement = openXmlElement?.GetFirstChild<DXDraw.LuminanceOffset>();
     if (itemElement != null)
       return itemElement.Val?.Value;
     return null;
   }
   
-  private static void SetLuminanceOffset(DocumentFormat.OpenXml.Drawing.RgbColorModelHex openXmlElement, Int32? value)
+  private static void SetLuminanceOffset(DXDraw.RgbColorModelHex openXmlElement, Int32? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.LuminanceOffset>();
+    var itemElement = openXmlElement.GetFirstChild<DXDraw.LuminanceOffset>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = new DocumentFormat.OpenXml.Drawing.LuminanceOffset{ Val = value };
+      itemElement = new DXDraw.LuminanceOffset{ Val = value };
       openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static Int32? GetLuminanceModulation(DocumentFormat.OpenXml.Drawing.RgbColorModelHex openXmlElement)
+  private static Int32? GetLuminanceModulation(DXDraw.RgbColorModelHex openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.LuminanceModulation>();
+    var itemElement = openXmlElement?.GetFirstChild<DXDraw.LuminanceModulation>();
     if (itemElement != null)
       return itemElement.Val?.Value;
     return null;
   }
   
-  private static void SetLuminanceModulation(DocumentFormat.OpenXml.Drawing.RgbColorModelHex openXmlElement, Int32? value)
+  private static void SetLuminanceModulation(DXDraw.RgbColorModelHex openXmlElement, Int32? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.LuminanceModulation>();
+    var itemElement = openXmlElement.GetFirstChild<DXDraw.LuminanceModulation>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = new DocumentFormat.OpenXml.Drawing.LuminanceModulation{ Val = value };
+      itemElement = new DXDraw.LuminanceModulation{ Val = value };
       openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static Int32? GetRed(DocumentFormat.OpenXml.Drawing.RgbColorModelHex openXmlElement)
+  private static Int32? GetRed(DXDraw.RgbColorModelHex openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.Red>();
+    var itemElement = openXmlElement?.GetFirstChild<DXDraw.Red>();
     if (itemElement != null)
       return itemElement.Val?.Value;
     return null;
   }
   
-  private static void SetRed(DocumentFormat.OpenXml.Drawing.RgbColorModelHex openXmlElement, Int32? value)
+  private static void SetRed(DXDraw.RgbColorModelHex openXmlElement, Int32? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Red>();
+    var itemElement = openXmlElement.GetFirstChild<DXDraw.Red>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = new DocumentFormat.OpenXml.Drawing.Red{ Val = value };
+      itemElement = new DXDraw.Red{ Val = value };
       openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static Int32? GetRedOffset(DocumentFormat.OpenXml.Drawing.RgbColorModelHex openXmlElement)
+  private static Int32? GetRedOffset(DXDraw.RgbColorModelHex openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.RedOffset>();
+    var itemElement = openXmlElement?.GetFirstChild<DXDraw.RedOffset>();
     if (itemElement != null)
       return itemElement.Val?.Value;
     return null;
   }
   
-  private static void SetRedOffset(DocumentFormat.OpenXml.Drawing.RgbColorModelHex openXmlElement, Int32? value)
+  private static void SetRedOffset(DXDraw.RgbColorModelHex openXmlElement, Int32? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.RedOffset>();
+    var itemElement = openXmlElement.GetFirstChild<DXDraw.RedOffset>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = new DocumentFormat.OpenXml.Drawing.RedOffset{ Val = value };
+      itemElement = new DXDraw.RedOffset{ Val = value };
       openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static Int32? GetRedModulation(DocumentFormat.OpenXml.Drawing.RgbColorModelHex openXmlElement)
+  private static Int32? GetRedModulation(DXDraw.RgbColorModelHex openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.RedModulation>();
+    var itemElement = openXmlElement?.GetFirstChild<DXDraw.RedModulation>();
     if (itemElement != null)
       return itemElement.Val?.Value;
     return null;
   }
   
-  private static void SetRedModulation(DocumentFormat.OpenXml.Drawing.RgbColorModelHex openXmlElement, Int32? value)
+  private static void SetRedModulation(DXDraw.RgbColorModelHex openXmlElement, Int32? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.RedModulation>();
+    var itemElement = openXmlElement.GetFirstChild<DXDraw.RedModulation>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = new DocumentFormat.OpenXml.Drawing.RedModulation{ Val = value };
+      itemElement = new DXDraw.RedModulation{ Val = value };
       openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static Int32? GetGreen(DocumentFormat.OpenXml.Drawing.RgbColorModelHex openXmlElement)
+  private static Int32? GetGreen(DXDraw.RgbColorModelHex openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.Green>();
+    var itemElement = openXmlElement?.GetFirstChild<DXDraw.Green>();
     if (itemElement != null)
       return itemElement.Val?.Value;
     return null;
   }
   
-  private static void SetGreen(DocumentFormat.OpenXml.Drawing.RgbColorModelHex openXmlElement, Int32? value)
+  private static void SetGreen(DXDraw.RgbColorModelHex openXmlElement, Int32? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Green>();
+    var itemElement = openXmlElement.GetFirstChild<DXDraw.Green>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = new DocumentFormat.OpenXml.Drawing.Green{ Val = value };
+      itemElement = new DXDraw.Green{ Val = value };
       openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static Int32? GetGreenOffset(DocumentFormat.OpenXml.Drawing.RgbColorModelHex openXmlElement)
+  private static Int32? GetGreenOffset(DXDraw.RgbColorModelHex openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.GreenOffset>();
+    var itemElement = openXmlElement?.GetFirstChild<DXDraw.GreenOffset>();
     if (itemElement != null)
       return itemElement.Val?.Value;
     return null;
   }
   
-  private static void SetGreenOffset(DocumentFormat.OpenXml.Drawing.RgbColorModelHex openXmlElement, Int32? value)
+  private static void SetGreenOffset(DXDraw.RgbColorModelHex openXmlElement, Int32? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.GreenOffset>();
+    var itemElement = openXmlElement.GetFirstChild<DXDraw.GreenOffset>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = new DocumentFormat.OpenXml.Drawing.GreenOffset{ Val = value };
+      itemElement = new DXDraw.GreenOffset{ Val = value };
       openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static Int32? GetGreenModulation(DocumentFormat.OpenXml.Drawing.RgbColorModelHex openXmlElement)
+  private static Int32? GetGreenModulation(DXDraw.RgbColorModelHex openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.GreenModulation>();
+    var itemElement = openXmlElement?.GetFirstChild<DXDraw.GreenModulation>();
     if (itemElement != null)
       return itemElement.Val?.Value;
     return null;
   }
   
-  private static void SetGreenModulation(DocumentFormat.OpenXml.Drawing.RgbColorModelHex openXmlElement, Int32? value)
+  private static void SetGreenModulation(DXDraw.RgbColorModelHex openXmlElement, Int32? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.GreenModulation>();
+    var itemElement = openXmlElement.GetFirstChild<DXDraw.GreenModulation>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = new DocumentFormat.OpenXml.Drawing.GreenModulation{ Val = value };
+      itemElement = new DXDraw.GreenModulation{ Val = value };
       openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static Int32? GetBlue(DocumentFormat.OpenXml.Drawing.RgbColorModelHex openXmlElement)
+  private static Int32? GetBlue(DXDraw.RgbColorModelHex openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.Blue>();
+    var itemElement = openXmlElement?.GetFirstChild<DXDraw.Blue>();
     if (itemElement != null)
       return itemElement.Val?.Value;
     return null;
   }
   
-  private static void SetBlue(DocumentFormat.OpenXml.Drawing.RgbColorModelHex openXmlElement, Int32? value)
+  private static void SetBlue(DXDraw.RgbColorModelHex openXmlElement, Int32? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Blue>();
+    var itemElement = openXmlElement.GetFirstChild<DXDraw.Blue>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = new DocumentFormat.OpenXml.Drawing.Blue{ Val = value };
+      itemElement = new DXDraw.Blue{ Val = value };
       openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static Int32? GetBlueOffset(DocumentFormat.OpenXml.Drawing.RgbColorModelHex openXmlElement)
+  private static Int32? GetBlueOffset(DXDraw.RgbColorModelHex openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.BlueOffset>();
+    var itemElement = openXmlElement?.GetFirstChild<DXDraw.BlueOffset>();
     if (itemElement != null)
       return itemElement.Val?.Value;
     return null;
   }
   
-  private static void SetBlueOffset(DocumentFormat.OpenXml.Drawing.RgbColorModelHex openXmlElement, Int32? value)
+  private static void SetBlueOffset(DXDraw.RgbColorModelHex openXmlElement, Int32? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.BlueOffset>();
+    var itemElement = openXmlElement.GetFirstChild<DXDraw.BlueOffset>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = new DocumentFormat.OpenXml.Drawing.BlueOffset{ Val = value };
+      itemElement = new DXDraw.BlueOffset{ Val = value };
       openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static Int32? GetBlueModulation(DocumentFormat.OpenXml.Drawing.RgbColorModelHex openXmlElement)
+  private static Int32? GetBlueModulation(DXDraw.RgbColorModelHex openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.BlueModulation>();
+    var itemElement = openXmlElement?.GetFirstChild<DXDraw.BlueModulation>();
     if (itemElement != null)
       return itemElement.Val?.Value;
     return null;
   }
   
-  private static void SetBlueModulation(DocumentFormat.OpenXml.Drawing.RgbColorModelHex openXmlElement, Int32? value)
+  private static void SetBlueModulation(DXDraw.RgbColorModelHex openXmlElement, Int32? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.BlueModulation>();
+    var itemElement = openXmlElement.GetFirstChild<DXDraw.BlueModulation>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = new DocumentFormat.OpenXml.Drawing.BlueModulation{ Val = value };
+      itemElement = new DXDraw.BlueModulation{ Val = value };
       openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static Boolean? GetGamma(DocumentFormat.OpenXml.Drawing.RgbColorModelHex openXmlElement)
+  private static Boolean? GetGamma(DXDraw.RgbColorModelHex openXmlElement)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Gamma>();
+    var itemElement = openXmlElement.GetFirstChild<DXDraw.Gamma>();
     return itemElement != null;
   }
   
-  private static void SetGamma(DocumentFormat.OpenXml.Drawing.RgbColorModelHex openXmlElement, Boolean? value)
+  private static void SetGamma(DXDraw.RgbColorModelHex openXmlElement, Boolean? value)
   {
     if (value == false)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Gamma>();
+      var itemElement = openXmlElement.GetFirstChild<DXDraw.Gamma>();
       if (itemElement != null)
         itemElement.Remove();
     }
     if (value == true)
     {
-      var itemElement = new DocumentFormat.OpenXml.Drawing.Gamma();
+      var itemElement = new DXDraw.Gamma();
       openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static Boolean? GetInverseGamma(DocumentFormat.OpenXml.Drawing.RgbColorModelHex openXmlElement)
+  private static Boolean? GetInverseGamma(DXDraw.RgbColorModelHex openXmlElement)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.InverseGamma>();
+    var itemElement = openXmlElement.GetFirstChild<DXDraw.InverseGamma>();
     return itemElement != null;
   }
   
-  private static void SetInverseGamma(DocumentFormat.OpenXml.Drawing.RgbColorModelHex openXmlElement, Boolean? value)
+  private static void SetInverseGamma(DXDraw.RgbColorModelHex openXmlElement, Boolean? value)
   {
     if (value == false)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.InverseGamma>();
+      var itemElement = openXmlElement.GetFirstChild<DXDraw.InverseGamma>();
       if (itemElement != null)
         itemElement.Remove();
     }
     if (value == true)
     {
-      var itemElement = new DocumentFormat.OpenXml.Drawing.InverseGamma();
+      var itemElement = new DXDraw.InverseGamma();
       openXmlElement.AddChild(itemElement);
     }
   }
   
-  public static DocumentModel.Drawings.RgbColorModelHex? CreateModelElement(DocumentFormat.OpenXml.Drawing.RgbColorModelHex? openXmlElement)
+  public static DMDraws.RgbColorModelHex? CreateModelElement(DXDraw.RgbColorModelHex? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.RgbColorModelHex();
+      var value = new DMDraws.RgbColorModelHex();
       value.Val = GetVal(openXmlElement);
       value.LegacySpreadsheetColorIndex = GetLegacySpreadsheetColorIndex(openXmlElement);
       value.Tint = GetTint(openXmlElement);
@@ -641,8 +641,8 @@ public static class RgbColorModelHexConverter
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.RgbColorModelHex? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.RgbColorModelHex, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDraws.RgbColorModelHex? value)
+    where OpenXmlElementType: DXDraw.RgbColorModelHex, new()
   {
     if (value != null)
     {

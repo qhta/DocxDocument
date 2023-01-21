@@ -8,40 +8,40 @@ public static class AlphaModulationEffectConverter
   /// <summary>
   /// EffectContainer.
   /// </summary>
-  private static DocumentModel.Drawings.EffectContainer? GetEffectContainer(DocumentFormat.OpenXml.Drawing.AlphaModulationEffect openXmlElement)
+  private static DMDraws.EffectContainer? GetEffectContainer(DXDraw.AlphaModulationEffect openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.EffectContainer>();
+    var itemElement = openXmlElement?.GetFirstChild<DXDraw.EffectContainer>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.EffectContainerConverter.CreateModelElement(itemElement);
+      return DMXDraws.EffectContainerConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetEffectContainer(DocumentFormat.OpenXml.Drawing.AlphaModulationEffect openXmlElement, DocumentModel.Drawings.EffectContainer? value)
+  private static void SetEffectContainer(DXDraw.AlphaModulationEffect openXmlElement, DMDraws.EffectContainer? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.EffectContainer>();
+    var itemElement = openXmlElement.GetFirstChild<DXDraw.EffectContainer>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Drawings.EffectContainerConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.EffectContainer>(value);
+      itemElement = DMXDraws.EffectContainerConverter.CreateOpenXmlElement<DXDraw.EffectContainer>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  public static DocumentModel.Drawings.AlphaModulationEffect? CreateModelElement(DocumentFormat.OpenXml.Drawing.AlphaModulationEffect? openXmlElement)
+  public static DMDraws.AlphaModulationEffect? CreateModelElement(DXDraw.AlphaModulationEffect? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.AlphaModulationEffect();
+      var value = new DMDraws.AlphaModulationEffect();
       value.EffectContainer = GetEffectContainer(openXmlElement);
       return value;
     }
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.AlphaModulationEffect? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.AlphaModulationEffect, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDraws.AlphaModulationEffect? value)
+    where OpenXmlElementType: DXDraw.AlphaModulationEffect, new()
   {
     if (value != null)
     {

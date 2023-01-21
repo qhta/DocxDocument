@@ -8,12 +8,12 @@ public static class RevisionViewConverter
   /// <summary>
   /// Display Visual Indicator Of Markup Area
   /// </summary>
-  private static Boolean? GetMarkup(DocumentFormat.OpenXml.Wordprocessing.RevisionView openXmlElement)
+  private static Boolean? GetMarkup(DXW.RevisionView openXmlElement)
   {
     return openXmlElement?.Markup?.Value;
   }
   
-  private static void SetMarkup(DocumentFormat.OpenXml.Wordprocessing.RevisionView openXmlElement, Boolean? value)
+  private static void SetMarkup(DXW.RevisionView openXmlElement, Boolean? value)
   {
     if (value != null)
       openXmlElement.Markup = new OnOffValue { Value = (Boolean)value };
@@ -24,12 +24,12 @@ public static class RevisionViewConverter
   /// <summary>
   /// Display Comments
   /// </summary>
-  private static Boolean? GetComments(DocumentFormat.OpenXml.Wordprocessing.RevisionView openXmlElement)
+  private static Boolean? GetComments(DXW.RevisionView openXmlElement)
   {
     return openXmlElement?.Comments?.Value;
   }
   
-  private static void SetComments(DocumentFormat.OpenXml.Wordprocessing.RevisionView openXmlElement, Boolean? value)
+  private static void SetComments(DXW.RevisionView openXmlElement, Boolean? value)
   {
     if (value != null)
       openXmlElement.Comments = new OnOffValue { Value = (Boolean)value };
@@ -40,12 +40,12 @@ public static class RevisionViewConverter
   /// <summary>
   /// Display Content Revisions
   /// </summary>
-  private static Boolean? GetDisplayRevision(DocumentFormat.OpenXml.Wordprocessing.RevisionView openXmlElement)
+  private static Boolean? GetDisplayRevision(DXW.RevisionView openXmlElement)
   {
     return openXmlElement?.DisplayRevision?.Value;
   }
   
-  private static void SetDisplayRevision(DocumentFormat.OpenXml.Wordprocessing.RevisionView openXmlElement, Boolean? value)
+  private static void SetDisplayRevision(DXW.RevisionView openXmlElement, Boolean? value)
   {
     if (value != null)
       openXmlElement.DisplayRevision = new OnOffValue { Value = (Boolean)value };
@@ -56,12 +56,12 @@ public static class RevisionViewConverter
   /// <summary>
   /// Display Formatting Revisions
   /// </summary>
-  private static Boolean? GetFormatting(DocumentFormat.OpenXml.Wordprocessing.RevisionView openXmlElement)
+  private static Boolean? GetFormatting(DXW.RevisionView openXmlElement)
   {
     return openXmlElement?.Formatting?.Value;
   }
   
-  private static void SetFormatting(DocumentFormat.OpenXml.Wordprocessing.RevisionView openXmlElement, Boolean? value)
+  private static void SetFormatting(DXW.RevisionView openXmlElement, Boolean? value)
   {
     if (value != null)
       openXmlElement.Formatting = new OnOffValue { Value = (Boolean)value };
@@ -72,12 +72,12 @@ public static class RevisionViewConverter
   /// <summary>
   /// Display Ink Annotations
   /// </summary>
-  private static Boolean? GetInkAnnotations(DocumentFormat.OpenXml.Wordprocessing.RevisionView openXmlElement)
+  private static Boolean? GetInkAnnotations(DXW.RevisionView openXmlElement)
   {
     return openXmlElement?.InkAnnotations?.Value;
   }
   
-  private static void SetInkAnnotations(DocumentFormat.OpenXml.Wordprocessing.RevisionView openXmlElement, Boolean? value)
+  private static void SetInkAnnotations(DXW.RevisionView openXmlElement, Boolean? value)
   {
     if (value != null)
       openXmlElement.InkAnnotations = new OnOffValue { Value = (Boolean)value };
@@ -85,11 +85,11 @@ public static class RevisionViewConverter
       openXmlElement.InkAnnotations = null;
   }
   
-  public static DocumentModel.Wordprocessing.RevisionView? CreateModelElement(DocumentFormat.OpenXml.Wordprocessing.RevisionView? openXmlElement)
+  public static DMW.RevisionView? CreateModelElement(DXW.RevisionView? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Wordprocessing.RevisionView();
+      var value = new DMW.RevisionView();
       value.Markup = GetMarkup(openXmlElement);
       value.Comments = GetComments(openXmlElement);
       value.DisplayRevision = GetDisplayRevision(openXmlElement);
@@ -100,8 +100,8 @@ public static class RevisionViewConverter
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.RevisionView? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Wordprocessing.RevisionView, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMW.RevisionView? value)
+    where OpenXmlElementType: DXW.RevisionView, new()
   {
     if (value != null)
     {

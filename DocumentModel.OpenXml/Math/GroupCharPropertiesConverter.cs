@@ -8,22 +8,22 @@ public static class GroupCharPropertiesConverter
   /// <summary>
   /// Group Character (Grouping Character).
   /// </summary>
-  private static String? GetAccentChar(DocumentFormat.OpenXml.Math.GroupCharProperties openXmlElement)
+  private static String? GetAccentChar(DXMath.GroupCharProperties openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Math.AccentChar>();
+    var itemElement = openXmlElement?.GetFirstChild<DXMath.AccentChar>();
     if (itemElement != null)
       return itemElement.Val?.Value;
     return null;
   }
   
-  private static void SetAccentChar(DocumentFormat.OpenXml.Math.GroupCharProperties openXmlElement, String? value)
+  private static void SetAccentChar(DXMath.GroupCharProperties openXmlElement, String? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Math.AccentChar>();
+    var itemElement = openXmlElement.GetFirstChild<DXMath.AccentChar>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = new DocumentFormat.OpenXml.Math.AccentChar { Val = value };
+      itemElement = new DXMath.AccentChar { Val = value };
       openXmlElement.AddChild(itemElement);
     }
   }
@@ -31,22 +31,22 @@ public static class GroupCharPropertiesConverter
   /// <summary>
   /// Position (Group Character).
   /// </summary>
-  private static DocumentModel.Math.VerticalJustificationKind? GetPosition(DocumentFormat.OpenXml.Math.GroupCharProperties openXmlElement)
+  private static DMMath.VerticalJustificationKind? GetPosition(DXMath.GroupCharProperties openXmlElement)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Math.Position>();
+    var itemElement = openXmlElement.GetFirstChild<DXMath.Position>();
     if (itemElement?.Val?.Value != null)
-      return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Math.VerticalJustificationValues, DocumentModel.Math.VerticalJustificationKind>(itemElement.Val.Value);
+      return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Math.VerticalJustificationValues, DMMath.VerticalJustificationKind>(itemElement.Val.Value);
     return null;
   }
   
-  private static void SetPosition(DocumentFormat.OpenXml.Math.GroupCharProperties openXmlElement, DocumentModel.Math.VerticalJustificationKind? value)
+  private static void SetPosition(DXMath.GroupCharProperties openXmlElement, DMMath.VerticalJustificationKind? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Math.Position>();
+    var itemElement = openXmlElement.GetFirstChild<DXMath.Position>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = EnumValueConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Math.Position, DocumentFormat.OpenXml.Math.VerticalJustificationValues, DocumentModel.Math.VerticalJustificationKind>(value);
+      itemElement = EnumValueConverter.CreateOpenXmlElement<DXMath.Position, DocumentFormat.OpenXml.Math.VerticalJustificationValues, DMMath.VerticalJustificationKind>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
@@ -55,22 +55,22 @@ public static class GroupCharPropertiesConverter
   /// <summary>
   /// Vertical Justification.
   /// </summary>
-  private static DocumentModel.Math.VerticalJustificationKind? GetVerticalJustification(DocumentFormat.OpenXml.Math.GroupCharProperties openXmlElement)
+  private static DMMath.VerticalJustificationKind? GetVerticalJustification(DXMath.GroupCharProperties openXmlElement)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Math.VerticalJustification>();
+    var itemElement = openXmlElement.GetFirstChild<DXMath.VerticalJustification>();
     if (itemElement?.Val?.Value != null)
-      return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Math.VerticalJustificationValues, DocumentModel.Math.VerticalJustificationKind>(itemElement.Val.Value);
+      return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Math.VerticalJustificationValues, DMMath.VerticalJustificationKind>(itemElement.Val.Value);
     return null;
   }
   
-  private static void SetVerticalJustification(DocumentFormat.OpenXml.Math.GroupCharProperties openXmlElement, DocumentModel.Math.VerticalJustificationKind? value)
+  private static void SetVerticalJustification(DXMath.GroupCharProperties openXmlElement, DMMath.VerticalJustificationKind? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Math.VerticalJustification>();
+    var itemElement = openXmlElement.GetFirstChild<DXMath.VerticalJustification>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = EnumValueConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Math.VerticalJustification, DocumentFormat.OpenXml.Math.VerticalJustificationValues, DocumentModel.Math.VerticalJustificationKind>(value);
+      itemElement = EnumValueConverter.CreateOpenXmlElement<DXMath.VerticalJustification, DocumentFormat.OpenXml.Math.VerticalJustificationValues, DMMath.VerticalJustificationKind>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
@@ -79,32 +79,32 @@ public static class GroupCharPropertiesConverter
   /// <summary>
   /// ControlProperties.
   /// </summary>
-  private static DocumentModel.Math.ControlProperties? GetControlProperties(DocumentFormat.OpenXml.Math.GroupCharProperties openXmlElement)
+  private static DMMath.ControlProperties? GetControlProperties(DXMath.GroupCharProperties openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Math.ControlProperties>();
+    var itemElement = openXmlElement?.GetFirstChild<DXMath.ControlProperties>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Math.ControlPropertiesConverter.CreateModelElement(itemElement);
+      return DMXMath.ControlPropertiesConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetControlProperties(DocumentFormat.OpenXml.Math.GroupCharProperties openXmlElement, DocumentModel.Math.ControlProperties? value)
+  private static void SetControlProperties(DXMath.GroupCharProperties openXmlElement, DMMath.ControlProperties? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Math.ControlProperties>();
+    var itemElement = openXmlElement.GetFirstChild<DXMath.ControlProperties>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Math.ControlPropertiesConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Math.ControlProperties>(value);
+      itemElement = DMXMath.ControlPropertiesConverter.CreateOpenXmlElement<DXMath.ControlProperties>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  public static DocumentModel.Math.GroupCharProperties? CreateModelElement(DocumentFormat.OpenXml.Math.GroupCharProperties? openXmlElement)
+  public static DMMath.GroupCharProperties? CreateModelElement(DXMath.GroupCharProperties? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Math.GroupCharProperties();
+      var value = new DMMath.GroupCharProperties();
       value.AccentChar = GetAccentChar(openXmlElement);
       value.Position = GetPosition(openXmlElement);
       value.VerticalJustification = GetVerticalJustification(openXmlElement);
@@ -114,8 +114,8 @@ public static class GroupCharPropertiesConverter
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Math.GroupCharProperties? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Math.GroupCharProperties, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMMath.GroupCharProperties? value)
+    where OpenXmlElementType: DXMath.GroupCharProperties, new()
   {
     if (value != null)
     {

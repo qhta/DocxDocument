@@ -8,22 +8,22 @@ public static class TextBodyTypeConverter
   /// <summary>
   /// Body Properties.
   /// </summary>
-  private static DocumentModel.Drawings.BodyProperties? GetBodyProperties(DocumentFormat.OpenXml.Drawing.Charts.TextBodyType openXmlElement)
+  private static DMDraws.BodyProperties? GetBodyProperties(DXDrawCharts.TextBodyType openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.BodyProperties>();
+    var itemElement = openXmlElement?.GetFirstChild<DXDraw.BodyProperties>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.BodyPropertiesConverter.CreateModelElement(itemElement);
+      return DMXDraws.BodyPropertiesConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetBodyProperties(DocumentFormat.OpenXml.Drawing.Charts.TextBodyType openXmlElement, DocumentModel.Drawings.BodyProperties? value)
+  private static void SetBodyProperties(DXDrawCharts.TextBodyType openXmlElement, DMDraws.BodyProperties? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.BodyProperties>();
+    var itemElement = openXmlElement.GetFirstChild<DXDraw.BodyProperties>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Drawings.BodyPropertiesConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.BodyProperties>(value);
+      itemElement = DMXDraws.BodyPropertiesConverter.CreateOpenXmlElement<DXDraw.BodyProperties>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
@@ -32,32 +32,32 @@ public static class TextBodyTypeConverter
   /// <summary>
   /// Text List Styles.
   /// </summary>
-  private static DocumentModel.Drawings.ListStyle? GetListStyle(DocumentFormat.OpenXml.Drawing.Charts.TextBodyType openXmlElement)
+  private static DMDraws.ListStyle? GetListStyle(DXDrawCharts.TextBodyType openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.ListStyle>();
+    var itemElement = openXmlElement?.GetFirstChild<DXDraw.ListStyle>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.ListStyleConverter.CreateModelElement(itemElement);
+      return DMXDraws.ListStyleConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetListStyle(DocumentFormat.OpenXml.Drawing.Charts.TextBodyType openXmlElement, DocumentModel.Drawings.ListStyle? value)
+  private static void SetListStyle(DXDrawCharts.TextBodyType openXmlElement, DMDraws.ListStyle? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.ListStyle>();
+    var itemElement = openXmlElement.GetFirstChild<DXDraw.ListStyle>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Drawings.ListStyleConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.ListStyle>(value);
+      itemElement = DMXDraws.ListStyleConverter.CreateOpenXmlElement<DXDraw.ListStyle>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  public static DocumentModel.Drawings.Charts.TextBodyType? CreateModelElement(DocumentFormat.OpenXml.Drawing.Charts.TextBodyType? openXmlElement)
+  public static DMDrawsCharts.TextBodyType? CreateModelElement(DXDrawCharts.TextBodyType? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.Charts.TextBodyType();
+      var value = new DMDrawsCharts.TextBodyType();
       value.BodyProperties = GetBodyProperties(openXmlElement);
       value.ListStyle = GetListStyle(openXmlElement);
       return value;
@@ -65,8 +65,8 @@ public static class TextBodyTypeConverter
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.Charts.TextBodyType? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.Charts.TextBodyType, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDrawsCharts.TextBodyType? value)
+    where OpenXmlElementType: DXDrawCharts.TextBodyType, new()
   {
     if (value != null)
     {

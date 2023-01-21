@@ -5,58 +5,58 @@ namespace DocumentModel.OpenXml;
 /// </summary>
 public static class TasksConverter
 {
-  private static System.Collections.ObjectModel.Collection<DocumentModel.Task> GetItems(DocumentFormat.OpenXml.Office2021.DocumentTasks.Tasks openXmlElement)
+  private static Collection<DM.Task> GetItems(DXO2021DocTasks.Tasks openXmlElement)
   {
-    var collection = new System.Collections.ObjectModel.Collection<DocumentModel.Task>();
-    foreach (var item in openXmlElement.Elements<DocumentFormat.OpenXml.Office2021.DocumentTasks.Task>())
+    var collection = new Collection<DM.Task>();
+    foreach (var item in openXmlElement.Elements<DXO2021DocTasks.Task>())
     {
-      var newItem = DocumentModel.OpenXml.TaskConverter.CreateModelElement(item);
+      var newItem = DMX.TaskConverter.CreateModelElement(item);
       if (newItem != null)
         collection.Add(newItem);
     }
     return collection;
   }
   
-  private static void SetItems(DocumentFormat.OpenXml.Office2021.DocumentTasks.Tasks openXmlElement, System.Collections.ObjectModel.Collection<DocumentModel.Task>? value)
+  private static void SetItems(DXO2021DocTasks.Tasks openXmlElement, Collection<DM.Task>? value)
   {
-    openXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Office2021.DocumentTasks.Task>();
+    openXmlElement.RemoveAllChildren<DXO2021DocTasks.Task>();
     if (value != null)
     {
       foreach (var item in value)
       {
-        var newItem = DocumentModel.OpenXml.TaskConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2021.DocumentTasks.Task>(item);
+        var newItem = DMX.TaskConverter.CreateOpenXmlElement<DXO2021DocTasks.Task>(item);
         if (newItem != null)
           openXmlElement.AddChild(newItem);
       }
     }
   }
   
-  private static DocumentModel.ExtensionList? GetExtensionList(DocumentFormat.OpenXml.Office2021.DocumentTasks.Tasks openXmlElement)
+  private static DM.ExtensionList? GetExtensionList(DXO2021DocTasks.Tasks openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office2021.DocumentTasks.ExtensionList>();
+    var itemElement = openXmlElement?.GetFirstChild<DXO2021DocTasks.ExtensionList>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.ExtensionListConverter.CreateModelElement(itemElement);
+      return DMX.ExtensionListConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetExtensionList(DocumentFormat.OpenXml.Office2021.DocumentTasks.Tasks openXmlElement, DocumentModel.ExtensionList? value)
+  private static void SetExtensionList(DXO2021DocTasks.Tasks openXmlElement, DM.ExtensionList? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2021.DocumentTasks.ExtensionList>();
+    var itemElement = openXmlElement.GetFirstChild<DXO2021DocTasks.ExtensionList>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.ExtensionListConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2021.DocumentTasks.ExtensionList>(value);
+      itemElement = DMX.ExtensionListConverter.CreateOpenXmlElement<DXO2021DocTasks.ExtensionList>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  public static DocumentModel.Tasks? CreateModelElement(DocumentFormat.OpenXml.Office2021.DocumentTasks.Tasks? openXmlElement)
+  public static DM.Tasks? CreateModelElement(DXO2021DocTasks.Tasks? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Tasks();
+      var value = new DM.Tasks();
       value.Items = GetItems(openXmlElement);
       value.ExtensionList = GetExtensionList(openXmlElement);
       return value;
@@ -64,8 +64,8 @@ public static class TasksConverter
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Tasks? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Office2021.DocumentTasks.Tasks, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DM.Tasks? value)
+    where OpenXmlElementType: DXO2021DocTasks.Tasks, new()
   {
     if (value != null)
     {

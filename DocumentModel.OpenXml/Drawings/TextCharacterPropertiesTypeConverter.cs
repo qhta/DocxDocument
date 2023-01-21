@@ -8,12 +8,12 @@ public static class TextCharacterPropertiesTypeConverter
   /// <summary>
   /// Gets or sets the  value. It is only available for backwards compatibility
   /// </summary>
-  private static Boolean? GetSmtClean(DocumentFormat.OpenXml.Drawing.TextCharacterPropertiesType openXmlElement)
+  private static Boolean? GetSmtClean(DXDraw.TextCharacterPropertiesType openXmlElement)
   {
     return openXmlElement?.SmtClean?.Value;
   }
   
-  private static void SetSmtClean(DocumentFormat.OpenXml.Drawing.TextCharacterPropertiesType openXmlElement, Boolean? value)
+  private static void SetSmtClean(DXDraw.TextCharacterPropertiesType openXmlElement, Boolean? value)
   {
     if (value != null)
       openXmlElement.SmtClean = new BooleanValue { Value = (Boolean)value };
@@ -24,12 +24,12 @@ public static class TextCharacterPropertiesTypeConverter
   /// <summary>
   /// Gets or sets the  value. It is only available for backwards compatibility
   /// </summary>
-  private static UInt32? GetSmtId(DocumentFormat.OpenXml.Drawing.TextCharacterPropertiesType openXmlElement)
+  private static UInt32? GetSmtId(DXDraw.TextCharacterPropertiesType openXmlElement)
   {
     return openXmlElement.SmtId?.Value;
   }
   
-  private static void SetSmtId(DocumentFormat.OpenXml.Drawing.TextCharacterPropertiesType openXmlElement, UInt32? value)
+  private static void SetSmtId(DXDraw.TextCharacterPropertiesType openXmlElement, UInt32? value)
   {
     openXmlElement.SmtId = value;
   }
@@ -37,12 +37,12 @@ public static class TextCharacterPropertiesTypeConverter
   /// <summary>
   /// kumimoji
   /// </summary>
-  private static Boolean? GetKumimoji(DocumentFormat.OpenXml.Drawing.TextCharacterPropertiesType openXmlElement)
+  private static Boolean? GetKumimoji(DXDraw.TextCharacterPropertiesType openXmlElement)
   {
     return openXmlElement?.Kumimoji?.Value;
   }
   
-  private static void SetKumimoji(DocumentFormat.OpenXml.Drawing.TextCharacterPropertiesType openXmlElement, Boolean? value)
+  private static void SetKumimoji(DXDraw.TextCharacterPropertiesType openXmlElement, Boolean? value)
   {
     if (value != null)
       openXmlElement.Kumimoji = new BooleanValue { Value = (Boolean)value };
@@ -53,12 +53,12 @@ public static class TextCharacterPropertiesTypeConverter
   /// <summary>
   /// lang
   /// </summary>
-  private static String? GetLanguage(DocumentFormat.OpenXml.Drawing.TextCharacterPropertiesType openXmlElement)
+  private static String? GetLanguage(DXDraw.TextCharacterPropertiesType openXmlElement)
   {
     return openXmlElement?.Language?.Value;
   }
   
-  private static void SetLanguage(DocumentFormat.OpenXml.Drawing.TextCharacterPropertiesType openXmlElement, String? value)
+  private static void SetLanguage(DXDraw.TextCharacterPropertiesType openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.Language = new StringValue { Value = value };
@@ -69,12 +69,12 @@ public static class TextCharacterPropertiesTypeConverter
   /// <summary>
   /// altLang
   /// </summary>
-  private static String? GetAlternativeLanguage(DocumentFormat.OpenXml.Drawing.TextCharacterPropertiesType openXmlElement)
+  private static String? GetAlternativeLanguage(DXDraw.TextCharacterPropertiesType openXmlElement)
   {
     return openXmlElement?.AlternativeLanguage?.Value;
   }
   
-  private static void SetAlternativeLanguage(DocumentFormat.OpenXml.Drawing.TextCharacterPropertiesType openXmlElement, String? value)
+  private static void SetAlternativeLanguage(DXDraw.TextCharacterPropertiesType openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.AlternativeLanguage = new StringValue { Value = value };
@@ -85,12 +85,12 @@ public static class TextCharacterPropertiesTypeConverter
   /// <summary>
   /// sz
   /// </summary>
-  private static Int32? GetFontSize(DocumentFormat.OpenXml.Drawing.TextCharacterPropertiesType openXmlElement)
+  private static Int32? GetFontSize(DXDraw.TextCharacterPropertiesType openXmlElement)
   {
     return openXmlElement.FontSize?.Value;
   }
   
-  private static void SetFontSize(DocumentFormat.OpenXml.Drawing.TextCharacterPropertiesType openXmlElement, Int32? value)
+  private static void SetFontSize(DXDraw.TextCharacterPropertiesType openXmlElement, Int32? value)
   {
     openXmlElement.FontSize = value;
   }
@@ -98,12 +98,12 @@ public static class TextCharacterPropertiesTypeConverter
   /// <summary>
   /// b
   /// </summary>
-  private static Boolean? GetBold(DocumentFormat.OpenXml.Drawing.TextCharacterPropertiesType openXmlElement)
+  private static Boolean? GetBold(DXDraw.TextCharacterPropertiesType openXmlElement)
   {
     return openXmlElement?.Bold?.Value;
   }
   
-  private static void SetBold(DocumentFormat.OpenXml.Drawing.TextCharacterPropertiesType openXmlElement, Boolean? value)
+  private static void SetBold(DXDraw.TextCharacterPropertiesType openXmlElement, Boolean? value)
   {
     if (value != null)
       openXmlElement.Bold = new BooleanValue { Value = (Boolean)value };
@@ -114,12 +114,12 @@ public static class TextCharacterPropertiesTypeConverter
   /// <summary>
   /// i
   /// </summary>
-  private static Boolean? GetItalic(DocumentFormat.OpenXml.Drawing.TextCharacterPropertiesType openXmlElement)
+  private static Boolean? GetItalic(DXDraw.TextCharacterPropertiesType openXmlElement)
   {
     return openXmlElement?.Italic?.Value;
   }
   
-  private static void SetItalic(DocumentFormat.OpenXml.Drawing.TextCharacterPropertiesType openXmlElement, Boolean? value)
+  private static void SetItalic(DXDraw.TextCharacterPropertiesType openXmlElement, Boolean? value)
   {
     if (value != null)
       openXmlElement.Italic = new BooleanValue { Value = (Boolean)value };
@@ -130,38 +130,38 @@ public static class TextCharacterPropertiesTypeConverter
   /// <summary>
   /// u
   /// </summary>
-  private static DocumentModel.Drawings.TextUnderlineKind? GetUnderline(DocumentFormat.OpenXml.Drawing.TextCharacterPropertiesType openXmlElement)
+  private static DMDraws.TextUnderlineKind? GetUnderline(DXDraw.TextCharacterPropertiesType openXmlElement)
   {
-    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Drawing.TextUnderlineValues, DocumentModel.Drawings.TextUnderlineKind>(openXmlElement?.Underline?.Value);
+    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Drawing.TextUnderlineValues, DMDraws.TextUnderlineKind>(openXmlElement?.Underline?.Value);
   }
   
-  private static void SetUnderline(DocumentFormat.OpenXml.Drawing.TextCharacterPropertiesType openXmlElement, DocumentModel.Drawings.TextUnderlineKind? value)
+  private static void SetUnderline(DXDraw.TextCharacterPropertiesType openXmlElement, DMDraws.TextUnderlineKind? value)
   {
-    openXmlElement.Underline = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Drawing.TextUnderlineValues, DocumentModel.Drawings.TextUnderlineKind>(value);
+    openXmlElement.Underline = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Drawing.TextUnderlineValues, DMDraws.TextUnderlineKind>(value);
   }
   
   /// <summary>
   /// strike
   /// </summary>
-  private static DocumentModel.Drawings.TextStrikeKind? GetStrike(DocumentFormat.OpenXml.Drawing.TextCharacterPropertiesType openXmlElement)
+  private static DMDraws.TextStrikeKind? GetStrike(DXDraw.TextCharacterPropertiesType openXmlElement)
   {
-    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Drawing.TextStrikeValues, DocumentModel.Drawings.TextStrikeKind>(openXmlElement?.Strike?.Value);
+    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Drawing.TextStrikeValues, DMDraws.TextStrikeKind>(openXmlElement?.Strike?.Value);
   }
   
-  private static void SetStrike(DocumentFormat.OpenXml.Drawing.TextCharacterPropertiesType openXmlElement, DocumentModel.Drawings.TextStrikeKind? value)
+  private static void SetStrike(DXDraw.TextCharacterPropertiesType openXmlElement, DMDraws.TextStrikeKind? value)
   {
-    openXmlElement.Strike = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Drawing.TextStrikeValues, DocumentModel.Drawings.TextStrikeKind>(value);
+    openXmlElement.Strike = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Drawing.TextStrikeValues, DMDraws.TextStrikeKind>(value);
   }
   
   /// <summary>
   /// kern
   /// </summary>
-  private static Int32? GetKerning(DocumentFormat.OpenXml.Drawing.TextCharacterPropertiesType openXmlElement)
+  private static Int32? GetKerning(DXDraw.TextCharacterPropertiesType openXmlElement)
   {
     return openXmlElement.Kerning?.Value;
   }
   
-  private static void SetKerning(DocumentFormat.OpenXml.Drawing.TextCharacterPropertiesType openXmlElement, Int32? value)
+  private static void SetKerning(DXDraw.TextCharacterPropertiesType openXmlElement, Int32? value)
   {
     openXmlElement.Kerning = value;
   }
@@ -169,25 +169,25 @@ public static class TextCharacterPropertiesTypeConverter
   /// <summary>
   /// cap
   /// </summary>
-  private static DocumentModel.Drawings.TextCapsKind? GetCapital(DocumentFormat.OpenXml.Drawing.TextCharacterPropertiesType openXmlElement)
+  private static DMDraws.TextCapsKind? GetCapital(DXDraw.TextCharacterPropertiesType openXmlElement)
   {
-    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Drawing.TextCapsValues, DocumentModel.Drawings.TextCapsKind>(openXmlElement?.Capital?.Value);
+    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Drawing.TextCapsValues, DMDraws.TextCapsKind>(openXmlElement?.Capital?.Value);
   }
   
-  private static void SetCapital(DocumentFormat.OpenXml.Drawing.TextCharacterPropertiesType openXmlElement, DocumentModel.Drawings.TextCapsKind? value)
+  private static void SetCapital(DXDraw.TextCharacterPropertiesType openXmlElement, DMDraws.TextCapsKind? value)
   {
-    openXmlElement.Capital = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Drawing.TextCapsValues, DocumentModel.Drawings.TextCapsKind>(value);
+    openXmlElement.Capital = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Drawing.TextCapsValues, DMDraws.TextCapsKind>(value);
   }
   
   /// <summary>
   /// spc
   /// </summary>
-  private static Int32? GetSpacing(DocumentFormat.OpenXml.Drawing.TextCharacterPropertiesType openXmlElement)
+  private static Int32? GetSpacing(DXDraw.TextCharacterPropertiesType openXmlElement)
   {
     return openXmlElement.Spacing?.Value;
   }
   
-  private static void SetSpacing(DocumentFormat.OpenXml.Drawing.TextCharacterPropertiesType openXmlElement, Int32? value)
+  private static void SetSpacing(DXDraw.TextCharacterPropertiesType openXmlElement, Int32? value)
   {
     openXmlElement.Spacing = value;
   }
@@ -195,12 +195,12 @@ public static class TextCharacterPropertiesTypeConverter
   /// <summary>
   /// normalizeH
   /// </summary>
-  private static Boolean? GetNormalizeHeight(DocumentFormat.OpenXml.Drawing.TextCharacterPropertiesType openXmlElement)
+  private static Boolean? GetNormalizeHeight(DXDraw.TextCharacterPropertiesType openXmlElement)
   {
     return openXmlElement?.NormalizeHeight?.Value;
   }
   
-  private static void SetNormalizeHeight(DocumentFormat.OpenXml.Drawing.TextCharacterPropertiesType openXmlElement, Boolean? value)
+  private static void SetNormalizeHeight(DXDraw.TextCharacterPropertiesType openXmlElement, Boolean? value)
   {
     if (value != null)
       openXmlElement.NormalizeHeight = new BooleanValue { Value = (Boolean)value };
@@ -211,12 +211,12 @@ public static class TextCharacterPropertiesTypeConverter
   /// <summary>
   /// baseline
   /// </summary>
-  private static Int32? GetBaseline(DocumentFormat.OpenXml.Drawing.TextCharacterPropertiesType openXmlElement)
+  private static Int32? GetBaseline(DXDraw.TextCharacterPropertiesType openXmlElement)
   {
     return openXmlElement.Baseline?.Value;
   }
   
-  private static void SetBaseline(DocumentFormat.OpenXml.Drawing.TextCharacterPropertiesType openXmlElement, Int32? value)
+  private static void SetBaseline(DXDraw.TextCharacterPropertiesType openXmlElement, Int32? value)
   {
     openXmlElement.Baseline = value;
   }
@@ -224,12 +224,12 @@ public static class TextCharacterPropertiesTypeConverter
   /// <summary>
   /// noProof
   /// </summary>
-  private static Boolean? GetNoProof(DocumentFormat.OpenXml.Drawing.TextCharacterPropertiesType openXmlElement)
+  private static Boolean? GetNoProof(DXDraw.TextCharacterPropertiesType openXmlElement)
   {
     return openXmlElement?.NoProof?.Value;
   }
   
-  private static void SetNoProof(DocumentFormat.OpenXml.Drawing.TextCharacterPropertiesType openXmlElement, Boolean? value)
+  private static void SetNoProof(DXDraw.TextCharacterPropertiesType openXmlElement, Boolean? value)
   {
     if (value != null)
       openXmlElement.NoProof = new BooleanValue { Value = (Boolean)value };
@@ -240,12 +240,12 @@ public static class TextCharacterPropertiesTypeConverter
   /// <summary>
   /// dirty
   /// </summary>
-  private static Boolean? GetDirty(DocumentFormat.OpenXml.Drawing.TextCharacterPropertiesType openXmlElement)
+  private static Boolean? GetDirty(DXDraw.TextCharacterPropertiesType openXmlElement)
   {
     return openXmlElement?.Dirty?.Value;
   }
   
-  private static void SetDirty(DocumentFormat.OpenXml.Drawing.TextCharacterPropertiesType openXmlElement, Boolean? value)
+  private static void SetDirty(DXDraw.TextCharacterPropertiesType openXmlElement, Boolean? value)
   {
     if (value != null)
       openXmlElement.Dirty = new BooleanValue { Value = (Boolean)value };
@@ -256,12 +256,12 @@ public static class TextCharacterPropertiesTypeConverter
   /// <summary>
   /// err
   /// </summary>
-  private static Boolean? GetSpellingError(DocumentFormat.OpenXml.Drawing.TextCharacterPropertiesType openXmlElement)
+  private static Boolean? GetSpellingError(DXDraw.TextCharacterPropertiesType openXmlElement)
   {
     return openXmlElement?.SpellingError?.Value;
   }
   
-  private static void SetSpellingError(DocumentFormat.OpenXml.Drawing.TextCharacterPropertiesType openXmlElement, Boolean? value)
+  private static void SetSpellingError(DXDraw.TextCharacterPropertiesType openXmlElement, Boolean? value)
   {
     if (value != null)
       openXmlElement.SpellingError = new BooleanValue { Value = (Boolean)value };
@@ -272,12 +272,12 @@ public static class TextCharacterPropertiesTypeConverter
   /// <summary>
   /// smtClean
   /// </summary>
-  private static Boolean? GetSmartTagClean(DocumentFormat.OpenXml.Drawing.TextCharacterPropertiesType openXmlElement)
+  private static Boolean? GetSmartTagClean(DXDraw.TextCharacterPropertiesType openXmlElement)
   {
     return openXmlElement?.SmartTagClean?.Value;
   }
   
-  private static void SetSmartTagClean(DocumentFormat.OpenXml.Drawing.TextCharacterPropertiesType openXmlElement, Boolean? value)
+  private static void SetSmartTagClean(DXDraw.TextCharacterPropertiesType openXmlElement, Boolean? value)
   {
     if (value != null)
       openXmlElement.SmartTagClean = new BooleanValue { Value = (Boolean)value };
@@ -288,12 +288,12 @@ public static class TextCharacterPropertiesTypeConverter
   /// <summary>
   /// smtId
   /// </summary>
-  private static UInt32? GetSmartTagId(DocumentFormat.OpenXml.Drawing.TextCharacterPropertiesType openXmlElement)
+  private static UInt32? GetSmartTagId(DXDraw.TextCharacterPropertiesType openXmlElement)
   {
     return openXmlElement.SmartTagId?.Value;
   }
   
-  private static void SetSmartTagId(DocumentFormat.OpenXml.Drawing.TextCharacterPropertiesType openXmlElement, UInt32? value)
+  private static void SetSmartTagId(DXDraw.TextCharacterPropertiesType openXmlElement, UInt32? value)
   {
     openXmlElement.SmartTagId = value;
   }
@@ -301,12 +301,12 @@ public static class TextCharacterPropertiesTypeConverter
   /// <summary>
   /// bmk
   /// </summary>
-  private static String? GetBookmark(DocumentFormat.OpenXml.Drawing.TextCharacterPropertiesType openXmlElement)
+  private static String? GetBookmark(DXDraw.TextCharacterPropertiesType openXmlElement)
   {
     return openXmlElement?.Bookmark?.Value;
   }
   
-  private static void SetBookmark(DocumentFormat.OpenXml.Drawing.TextCharacterPropertiesType openXmlElement, String? value)
+  private static void SetBookmark(DXDraw.TextCharacterPropertiesType openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.Bookmark = new StringValue { Value = value };
@@ -317,32 +317,32 @@ public static class TextCharacterPropertiesTypeConverter
   /// <summary>
   /// Outline.
   /// </summary>
-  private static DocumentModel.Drawings.Outline? GetOutline(DocumentFormat.OpenXml.Drawing.TextCharacterPropertiesType openXmlElement)
+  private static DMDraws.Outline? GetOutline(DXDraw.TextCharacterPropertiesType openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.Outline>();
+    var itemElement = openXmlElement?.GetFirstChild<DXDraw.Outline>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.OutlineConverter.CreateModelElement(itemElement);
+      return DMXDraws.OutlineConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetOutline(DocumentFormat.OpenXml.Drawing.TextCharacterPropertiesType openXmlElement, DocumentModel.Drawings.Outline? value)
+  private static void SetOutline(DXDraw.TextCharacterPropertiesType openXmlElement, DMDraws.Outline? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Outline>();
+    var itemElement = openXmlElement.GetFirstChild<DXDraw.Outline>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Drawings.OutlineConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Outline>(value);
+      itemElement = DMXDraws.OutlineConverter.CreateOpenXmlElement<DXDraw.Outline>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  public static DocumentModel.Drawings.TextCharacterPropertiesType? CreateModelElement(DocumentFormat.OpenXml.Drawing.TextCharacterPropertiesType? openXmlElement)
+  public static DMDraws.TextCharacterPropertiesType? CreateModelElement(DXDraw.TextCharacterPropertiesType? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.TextCharacterPropertiesType();
+      var value = new DMDraws.TextCharacterPropertiesType();
       value.SmtClean = GetSmtClean(openXmlElement);
       value.SmtId = GetSmtId(openXmlElement);
       value.Kumimoji = GetKumimoji(openXmlElement);
@@ -370,8 +370,8 @@ public static class TextCharacterPropertiesTypeConverter
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.TextCharacterPropertiesType? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.TextCharacterPropertiesType, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDraws.TextCharacterPropertiesType? value)
+    where OpenXmlElementType: DXDraw.TextCharacterPropertiesType, new()
   {
     if (value != null)
     {

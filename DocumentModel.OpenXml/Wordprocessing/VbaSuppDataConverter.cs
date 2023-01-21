@@ -8,22 +8,22 @@ public static class VbaSuppDataConverter
   /// <summary>
   /// DocEvents.
   /// </summary>
-  private static DocumentModel.Wordprocessing.DocEvents? GetDocEvents(DocumentFormat.OpenXml.Office.Word.VbaSuppData openXmlElement)
+  private static DMW.DocEvents? GetDocEvents(DXOW.VbaSuppData openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office.Word.DocEvents>();
+    var itemElement = openXmlElement?.GetFirstChild<DXOW.DocEvents>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Wordprocessing.DocEventsConverter.CreateModelElement(itemElement);
+      return DMXW.DocEventsConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetDocEvents(DocumentFormat.OpenXml.Office.Word.VbaSuppData openXmlElement, DocumentModel.Wordprocessing.DocEvents? value)
+  private static void SetDocEvents(DXOW.VbaSuppData openXmlElement, DMW.DocEvents? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office.Word.DocEvents>();
+    var itemElement = openXmlElement.GetFirstChild<DXOW.DocEvents>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Wordprocessing.DocEventsConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office.Word.DocEvents>(value);
+      itemElement = DMXW.DocEventsConverter.CreateOpenXmlElement<DXOW.DocEvents>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
@@ -32,32 +32,32 @@ public static class VbaSuppDataConverter
   /// <summary>
   /// Mcds.
   /// </summary>
-  private static DocumentModel.Wordprocessing.Mcds? GetMcds(DocumentFormat.OpenXml.Office.Word.VbaSuppData openXmlElement)
+  private static DMW.Mcds? GetMcds(DXOW.VbaSuppData openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office.Word.Mcds>();
+    var itemElement = openXmlElement?.GetFirstChild<DXOW.Mcds>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Wordprocessing.McdsConverter.CreateModelElement(itemElement);
+      return DMXW.McdsConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetMcds(DocumentFormat.OpenXml.Office.Word.VbaSuppData openXmlElement, DocumentModel.Wordprocessing.Mcds? value)
+  private static void SetMcds(DXOW.VbaSuppData openXmlElement, DMW.Mcds? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office.Word.Mcds>();
+    var itemElement = openXmlElement.GetFirstChild<DXOW.Mcds>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Wordprocessing.McdsConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office.Word.Mcds>(value);
+      itemElement = DMXW.McdsConverter.CreateOpenXmlElement<DXOW.Mcds>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  public static DocumentModel.Wordprocessing.VbaSuppData? CreateModelElement(DocumentFormat.OpenXml.Office.Word.VbaSuppData? openXmlElement)
+  public static DMW.VbaSuppData? CreateModelElement(DXOW.VbaSuppData? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Wordprocessing.VbaSuppData();
+      var value = new DMW.VbaSuppData();
       value.DocEvents = GetDocEvents(openXmlElement);
       value.Mcds = GetMcds(openXmlElement);
       return value;
@@ -65,8 +65,8 @@ public static class VbaSuppDataConverter
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.VbaSuppData? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Office.Word.VbaSuppData, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMW.VbaSuppData? value)
+    where OpenXmlElementType: DXOW.VbaSuppData, new()
   {
     if (value != null)
     {

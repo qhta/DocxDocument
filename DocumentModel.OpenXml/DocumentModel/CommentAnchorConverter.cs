@@ -8,12 +8,12 @@ public static class CommentAnchorConverter
   /// <summary>
   /// id, this property is only available in Office 2021 and later.
   /// </summary>
-  private static String? GetId(DocumentFormat.OpenXml.Office2021.DocumentTasks.CommentAnchor openXmlElement)
+  private static String? GetId(DXO2021DocTasks.CommentAnchor openXmlElement)
   {
     return openXmlElement?.Id?.Value;
   }
   
-  private static void SetId(DocumentFormat.OpenXml.Office2021.DocumentTasks.CommentAnchor openXmlElement, String? value)
+  private static void SetId(DXO2021DocTasks.CommentAnchor openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.Id = new StringValue { Value = value };
@@ -21,19 +21,19 @@ public static class CommentAnchorConverter
       openXmlElement.Id = null;
   }
   
-  public static DocumentModel.CommentAnchor? CreateModelElement(DocumentFormat.OpenXml.Office2021.DocumentTasks.CommentAnchor? openXmlElement)
+  public static DM.CommentAnchor? CreateModelElement(DXO2021DocTasks.CommentAnchor? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.CommentAnchor();
+      var value = new DM.CommentAnchor();
       value.Id = GetId(openXmlElement);
       return value;
     }
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.CommentAnchor? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Office2021.DocumentTasks.CommentAnchor, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DM.CommentAnchor? value)
+    where OpenXmlElementType: DXO2021DocTasks.CommentAnchor, new()
   {
     if (value != null)
     {

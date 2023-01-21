@@ -5,24 +5,24 @@ namespace DocumentModel.OpenXml.Packaging;
 /// </summary>
 public static class CustomPropertyPartConverter
 {
-  private static String? GetRelationshipType(DocumentFormat.OpenXml.Packaging.CustomPropertyPart openXmlElement)
+  private static String? GetRelationshipType(DXPack.CustomPropertyPart openXmlElement)
   {
     return openXmlElement?.RelationshipType;
   }
   
-  public static DocumentModel.Packaging.CustomPropertyPart? CreateModelElement(DocumentFormat.OpenXml.Packaging.CustomPropertyPart? openXmlElement)
+  public static DMPack.CustomPropertyPart? CreateModelElement(DXPack.CustomPropertyPart? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Packaging.CustomPropertyPart();
+      var value = new DMPack.CustomPropertyPart();
       value.RelationshipType = GetRelationshipType(openXmlElement);
       return value;
     }
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Packaging.CustomPropertyPart? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Packaging.CustomPropertyPart, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMPack.CustomPropertyPart? value)
+    where OpenXmlElementType: DXPack.CustomPropertyPart, new()
   {
     if (value != null)
     {

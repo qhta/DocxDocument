@@ -5,53 +5,53 @@ namespace DocumentModel.OpenXml.Wordprocessing;
 /// </summary>
 public static class CaptionsConverter
 {
-  private static DocumentModel.Wordprocessing.Caption? GetCaption(DocumentFormat.OpenXml.Wordprocessing.Captions openXmlElement)
+  private static DMW.Caption? GetCaption(DXW.Captions openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.Caption>();
+    var itemElement = openXmlElement?.GetFirstChild<DXW.Caption>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Wordprocessing.CaptionConverter.CreateModelElement(itemElement);
+      return DMXW.CaptionConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetCaption(DocumentFormat.OpenXml.Wordprocessing.Captions openXmlElement, DocumentModel.Wordprocessing.Caption? value)
+  private static void SetCaption(DXW.Captions openXmlElement, DMW.Caption? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.Caption>();
+    var itemElement = openXmlElement.GetFirstChild<DXW.Caption>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Wordprocessing.CaptionConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.Caption>(value);
+      itemElement = DMXW.CaptionConverter.CreateOpenXmlElement<DXW.Caption>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static DocumentModel.Wordprocessing.AutoCaptions? GetAutoCaptions(DocumentFormat.OpenXml.Wordprocessing.Captions openXmlElement)
+  private static DMW.AutoCaptions? GetAutoCaptions(DXW.Captions openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.AutoCaptions>();
+    var itemElement = openXmlElement?.GetFirstChild<DXW.AutoCaptions>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Wordprocessing.AutoCaptionsConverter.CreateModelElement(itemElement);
+      return DMXW.AutoCaptionsConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetAutoCaptions(DocumentFormat.OpenXml.Wordprocessing.Captions openXmlElement, DocumentModel.Wordprocessing.AutoCaptions? value)
+  private static void SetAutoCaptions(DXW.Captions openXmlElement, DMW.AutoCaptions? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.AutoCaptions>();
+    var itemElement = openXmlElement.GetFirstChild<DXW.AutoCaptions>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Wordprocessing.AutoCaptionsConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.AutoCaptions>(value);
+      itemElement = DMXW.AutoCaptionsConverter.CreateOpenXmlElement<DXW.AutoCaptions>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  public static DocumentModel.Wordprocessing.Captions? CreateModelElement(DocumentFormat.OpenXml.Wordprocessing.Captions? openXmlElement)
+  public static DMW.Captions? CreateModelElement(DXW.Captions? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Wordprocessing.Captions();
+      var value = new DMW.Captions();
       value.Caption = GetCaption(openXmlElement);
       value.AutoCaptions = GetAutoCaptions(openXmlElement);
       return value;
@@ -59,8 +59,8 @@ public static class CaptionsConverter
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.Captions? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Wordprocessing.Captions, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMW.Captions? value)
+    where OpenXmlElementType: DXW.Captions, new()
   {
     if (value != null)
     {

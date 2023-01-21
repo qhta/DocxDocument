@@ -8,12 +8,12 @@ public static class TaskFormGroupCategoryConverter
   /// <summary>
   /// id, this property is only available in Office 2010 and later.
   /// </summary>
-  private static String? GetId(DocumentFormat.OpenXml.Office2010.CustomUI.TaskFormGroupCategory openXmlElement)
+  private static String? GetId(DXO2010CustUI.TaskFormGroupCategory openXmlElement)
   {
     return openXmlElement?.Id?.Value;
   }
   
-  private static void SetId(DocumentFormat.OpenXml.Office2010.CustomUI.TaskFormGroupCategory openXmlElement, String? value)
+  private static void SetId(DXO2010CustUI.TaskFormGroupCategory openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.Id = new StringValue { Value = value };
@@ -24,12 +24,12 @@ public static class TaskFormGroupCategoryConverter
   /// <summary>
   /// idQ, this property is only available in Office 2010 and later.
   /// </summary>
-  private static String? GetQualifiedId(DocumentFormat.OpenXml.Office2010.CustomUI.TaskFormGroupCategory openXmlElement)
+  private static String? GetQualifiedId(DXO2010CustUI.TaskFormGroupCategory openXmlElement)
   {
     return openXmlElement?.QualifiedId?.Value;
   }
   
-  private static void SetQualifiedId(DocumentFormat.OpenXml.Office2010.CustomUI.TaskFormGroupCategory openXmlElement, String? value)
+  private static void SetQualifiedId(DXO2010CustUI.TaskFormGroupCategory openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.QualifiedId = new StringValue { Value = value };
@@ -40,12 +40,12 @@ public static class TaskFormGroupCategoryConverter
   /// <summary>
   /// tag, this property is only available in Office 2010 and later.
   /// </summary>
-  private static String? GetTag(DocumentFormat.OpenXml.Office2010.CustomUI.TaskFormGroupCategory openXmlElement)
+  private static String? GetTag(DXO2010CustUI.TaskFormGroupCategory openXmlElement)
   {
     return openXmlElement?.Tag?.Value;
   }
   
-  private static void SetTag(DocumentFormat.OpenXml.Office2010.CustomUI.TaskFormGroupCategory openXmlElement, String? value)
+  private static void SetTag(DXO2010CustUI.TaskFormGroupCategory openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.Tag = new StringValue { Value = value };
@@ -56,12 +56,12 @@ public static class TaskFormGroupCategoryConverter
   /// <summary>
   /// idMso, this property is only available in Office 2010 and later.
   /// </summary>
-  private static String? GetIdMso(DocumentFormat.OpenXml.Office2010.CustomUI.TaskFormGroupCategory openXmlElement)
+  private static String? GetIdMso(DXO2010CustUI.TaskFormGroupCategory openXmlElement)
   {
     return openXmlElement?.IdMso?.Value;
   }
   
-  private static void SetIdMso(DocumentFormat.OpenXml.Office2010.CustomUI.TaskFormGroupCategory openXmlElement, String? value)
+  private static void SetIdMso(DXO2010CustUI.TaskFormGroupCategory openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.IdMso = new StringValue { Value = value };
@@ -72,12 +72,12 @@ public static class TaskFormGroupCategoryConverter
   /// <summary>
   /// insertAfterMso, this property is only available in Office 2010 and later.
   /// </summary>
-  private static String? GetInsertAfterMso(DocumentFormat.OpenXml.Office2010.CustomUI.TaskFormGroupCategory openXmlElement)
+  private static String? GetInsertAfterMso(DXO2010CustUI.TaskFormGroupCategory openXmlElement)
   {
     return openXmlElement?.InsertAfterMso?.Value;
   }
   
-  private static void SetInsertAfterMso(DocumentFormat.OpenXml.Office2010.CustomUI.TaskFormGroupCategory openXmlElement, String? value)
+  private static void SetInsertAfterMso(DXO2010CustUI.TaskFormGroupCategory openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.InsertAfterMso = new StringValue { Value = value };
@@ -88,12 +88,12 @@ public static class TaskFormGroupCategoryConverter
   /// <summary>
   /// insertBeforeMso, this property is only available in Office 2010 and later.
   /// </summary>
-  private static String? GetInsertBeforeMso(DocumentFormat.OpenXml.Office2010.CustomUI.TaskFormGroupCategory openXmlElement)
+  private static String? GetInsertBeforeMso(DXO2010CustUI.TaskFormGroupCategory openXmlElement)
   {
     return openXmlElement?.InsertBeforeMso?.Value;
   }
   
-  private static void SetInsertBeforeMso(DocumentFormat.OpenXml.Office2010.CustomUI.TaskFormGroupCategory openXmlElement, String? value)
+  private static void SetInsertBeforeMso(DXO2010CustUI.TaskFormGroupCategory openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.InsertBeforeMso = new StringValue { Value = value };
@@ -104,12 +104,12 @@ public static class TaskFormGroupCategoryConverter
   /// <summary>
   /// insertAfterQ, this property is only available in Office 2010 and later.
   /// </summary>
-  private static String? GetInsertAfterQulifiedId(DocumentFormat.OpenXml.Office2010.CustomUI.TaskFormGroupCategory openXmlElement)
+  private static String? GetInsertAfterQulifiedId(DXO2010CustUI.TaskFormGroupCategory openXmlElement)
   {
     return openXmlElement?.InsertAfterQulifiedId?.Value;
   }
   
-  private static void SetInsertAfterQulifiedId(DocumentFormat.OpenXml.Office2010.CustomUI.TaskFormGroupCategory openXmlElement, String? value)
+  private static void SetInsertAfterQulifiedId(DXO2010CustUI.TaskFormGroupCategory openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.InsertAfterQulifiedId = new StringValue { Value = value };
@@ -120,12 +120,12 @@ public static class TaskFormGroupCategoryConverter
   /// <summary>
   /// insertBeforeQ, this property is only available in Office 2010 and later.
   /// </summary>
-  private static String? GetInsertBeforeQulifiedId(DocumentFormat.OpenXml.Office2010.CustomUI.TaskFormGroupCategory openXmlElement)
+  private static String? GetInsertBeforeQulifiedId(DXO2010CustUI.TaskFormGroupCategory openXmlElement)
   {
     return openXmlElement?.InsertBeforeQulifiedId?.Value;
   }
   
-  private static void SetInsertBeforeQulifiedId(DocumentFormat.OpenXml.Office2010.CustomUI.TaskFormGroupCategory openXmlElement, String? value)
+  private static void SetInsertBeforeQulifiedId(DXO2010CustUI.TaskFormGroupCategory openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.InsertBeforeQulifiedId = new StringValue { Value = value };
@@ -136,12 +136,12 @@ public static class TaskFormGroupCategoryConverter
   /// <summary>
   /// visible, this property is only available in Office 2010 and later.
   /// </summary>
-  private static Boolean? GetVisible(DocumentFormat.OpenXml.Office2010.CustomUI.TaskFormGroupCategory openXmlElement)
+  private static Boolean? GetVisible(DXO2010CustUI.TaskFormGroupCategory openXmlElement)
   {
     return openXmlElement?.Visible?.Value;
   }
   
-  private static void SetVisible(DocumentFormat.OpenXml.Office2010.CustomUI.TaskFormGroupCategory openXmlElement, Boolean? value)
+  private static void SetVisible(DXO2010CustUI.TaskFormGroupCategory openXmlElement, Boolean? value)
   {
     if (value != null)
       openXmlElement.Visible = new BooleanValue { Value = (Boolean)value };
@@ -152,12 +152,12 @@ public static class TaskFormGroupCategoryConverter
   /// <summary>
   /// getVisible, this property is only available in Office 2010 and later.
   /// </summary>
-  private static String? GetGetVisible(DocumentFormat.OpenXml.Office2010.CustomUI.TaskFormGroupCategory openXmlElement)
+  private static String? GetGetVisible(DXO2010CustUI.TaskFormGroupCategory openXmlElement)
   {
     return openXmlElement?.GetVisible?.Value;
   }
   
-  private static void SetGetVisible(DocumentFormat.OpenXml.Office2010.CustomUI.TaskFormGroupCategory openXmlElement, String? value)
+  private static void SetGetVisible(DXO2010CustUI.TaskFormGroupCategory openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.GetVisible = new StringValue { Value = value };
@@ -168,12 +168,12 @@ public static class TaskFormGroupCategoryConverter
   /// <summary>
   /// label, this property is only available in Office 2010 and later.
   /// </summary>
-  private static String? GetLabel(DocumentFormat.OpenXml.Office2010.CustomUI.TaskFormGroupCategory openXmlElement)
+  private static String? GetLabel(DXO2010CustUI.TaskFormGroupCategory openXmlElement)
   {
     return openXmlElement?.Label?.Value;
   }
   
-  private static void SetLabel(DocumentFormat.OpenXml.Office2010.CustomUI.TaskFormGroupCategory openXmlElement, String? value)
+  private static void SetLabel(DXO2010CustUI.TaskFormGroupCategory openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.Label = new StringValue { Value = value };
@@ -184,12 +184,12 @@ public static class TaskFormGroupCategoryConverter
   /// <summary>
   /// getLabel, this property is only available in Office 2010 and later.
   /// </summary>
-  private static String? GetGetLabel(DocumentFormat.OpenXml.Office2010.CustomUI.TaskFormGroupCategory openXmlElement)
+  private static String? GetGetLabel(DXO2010CustUI.TaskFormGroupCategory openXmlElement)
   {
     return openXmlElement?.GetLabel?.Value;
   }
   
-  private static void SetGetLabel(DocumentFormat.OpenXml.Office2010.CustomUI.TaskFormGroupCategory openXmlElement, String? value)
+  private static void SetGetLabel(DXO2010CustUI.TaskFormGroupCategory openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.GetLabel = new StringValue { Value = value };
@@ -197,37 +197,37 @@ public static class TaskFormGroupCategoryConverter
       openXmlElement.GetLabel = null;
   }
   
-  private static System.Collections.ObjectModel.Collection<DocumentModel.TaskFormGroupTask> GetTaskFormGroupTasks(DocumentFormat.OpenXml.Office2010.CustomUI.TaskFormGroupCategory openXmlElement)
+  private static Collection<DM.TaskFormGroupTask> GetTaskFormGroupTasks(DXO2010CustUI.TaskFormGroupCategory openXmlElement)
   {
-    var collection = new System.Collections.ObjectModel.Collection<DocumentModel.TaskFormGroupTask>();
-    foreach (var item in openXmlElement.Elements<DocumentFormat.OpenXml.Office2010.CustomUI.TaskFormGroupTask>())
+    var collection = new Collection<DM.TaskFormGroupTask>();
+    foreach (var item in openXmlElement.Elements<DXO2010CustUI.TaskFormGroupTask>())
     {
-      var newItem = DocumentModel.OpenXml.TaskFormGroupTaskConverter.CreateModelElement(item);
+      var newItem = DMX.TaskFormGroupTaskConverter.CreateModelElement(item);
       if (newItem != null)
         collection.Add(newItem);
     }
     return collection;
   }
   
-  private static void SetTaskFormGroupTasks(DocumentFormat.OpenXml.Office2010.CustomUI.TaskFormGroupCategory openXmlElement, System.Collections.ObjectModel.Collection<DocumentModel.TaskFormGroupTask>? value)
+  private static void SetTaskFormGroupTasks(DXO2010CustUI.TaskFormGroupCategory openXmlElement, Collection<DM.TaskFormGroupTask>? value)
   {
-    openXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Office2010.CustomUI.TaskFormGroupTask>();
+    openXmlElement.RemoveAllChildren<DXO2010CustUI.TaskFormGroupTask>();
     if (value != null)
     {
       foreach (var item in value)
       {
-        var newItem = DocumentModel.OpenXml.TaskFormGroupTaskConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2010.CustomUI.TaskFormGroupTask>(item);
+        var newItem = DMX.TaskFormGroupTaskConverter.CreateOpenXmlElement<DXO2010CustUI.TaskFormGroupTask>(item);
         if (newItem != null)
           openXmlElement.AddChild(newItem);
       }
     }
   }
   
-  public static DocumentModel.TaskFormGroupCategory? CreateModelElement(DocumentFormat.OpenXml.Office2010.CustomUI.TaskFormGroupCategory? openXmlElement)
+  public static DM.TaskFormGroupCategory? CreateModelElement(DXO2010CustUI.TaskFormGroupCategory? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.TaskFormGroupCategory();
+      var value = new DM.TaskFormGroupCategory();
       value.Id = GetId(openXmlElement);
       value.QualifiedId = GetQualifiedId(openXmlElement);
       value.Tag = GetTag(openXmlElement);
@@ -246,8 +246,8 @@ public static class TaskFormGroupCategoryConverter
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.TaskFormGroupCategory? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Office2010.CustomUI.TaskFormGroupCategory, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DM.TaskFormGroupCategory? value)
+    where OpenXmlElementType: DXO2010CustUI.TaskFormGroupCategory, new()
   {
     if (value != null)
     {

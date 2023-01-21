@@ -8,12 +8,12 @@ public static class AudioCDTimeTypeConverter
   /// <summary>
   /// Track
   /// </summary>
-  private static Byte? GetTrack(DocumentFormat.OpenXml.Drawing.AudioCDTimeType openXmlElement)
+  private static Byte? GetTrack(DXDraw.AudioCDTimeType openXmlElement)
   {
     return openXmlElement.Track?.Value;
   }
   
-  private static void SetTrack(DocumentFormat.OpenXml.Drawing.AudioCDTimeType openXmlElement, Byte? value)
+  private static void SetTrack(DXDraw.AudioCDTimeType openXmlElement, Byte? value)
   {
     openXmlElement.Track = value;
   }
@@ -21,21 +21,21 @@ public static class AudioCDTimeTypeConverter
   /// <summary>
   /// Time
   /// </summary>
-  private static UInt32? GetTime(DocumentFormat.OpenXml.Drawing.AudioCDTimeType openXmlElement)
+  private static UInt32? GetTime(DXDraw.AudioCDTimeType openXmlElement)
   {
     return openXmlElement.Time?.Value;
   }
   
-  private static void SetTime(DocumentFormat.OpenXml.Drawing.AudioCDTimeType openXmlElement, UInt32? value)
+  private static void SetTime(DXDraw.AudioCDTimeType openXmlElement, UInt32? value)
   {
     openXmlElement.Time = value;
   }
   
-  public static DocumentModel.Drawings.AudioCDTimeType? CreateModelElement(DocumentFormat.OpenXml.Drawing.AudioCDTimeType? openXmlElement)
+  public static DMDraws.AudioCDTimeType? CreateModelElement(DXDraw.AudioCDTimeType? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.AudioCDTimeType();
+      var value = new DMDraws.AudioCDTimeType();
       value.Track = GetTrack(openXmlElement);
       value.Time = GetTime(openXmlElement);
       return value;
@@ -43,8 +43,8 @@ public static class AudioCDTimeTypeConverter
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.AudioCDTimeType? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.AudioCDTimeType, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDraws.AudioCDTimeType? value)
+    where OpenXmlElementType: DXDraw.AudioCDTimeType, new()
   {
     if (value != null)
     {

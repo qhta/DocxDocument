@@ -8,12 +8,12 @@ public static class ExtentConverter
   /// <summary>
   /// Extent Length
   /// </summary>
-  private static Int64? GetCx(DocumentFormat.OpenXml.Drawing.ChartDrawing.Extent openXmlElement)
+  private static Int64? GetCx(DXDrawChartDraw.Extent openXmlElement)
   {
     return openXmlElement.Cx?.Value;
   }
   
-  private static void SetCx(DocumentFormat.OpenXml.Drawing.ChartDrawing.Extent openXmlElement, Int64? value)
+  private static void SetCx(DXDrawChartDraw.Extent openXmlElement, Int64? value)
   {
     openXmlElement.Cx = value;
   }
@@ -21,21 +21,21 @@ public static class ExtentConverter
   /// <summary>
   /// Extent Width
   /// </summary>
-  private static Int64? GetCy(DocumentFormat.OpenXml.Drawing.ChartDrawing.Extent openXmlElement)
+  private static Int64? GetCy(DXDrawChartDraw.Extent openXmlElement)
   {
     return openXmlElement.Cy?.Value;
   }
   
-  private static void SetCy(DocumentFormat.OpenXml.Drawing.ChartDrawing.Extent openXmlElement, Int64? value)
+  private static void SetCy(DXDrawChartDraw.Extent openXmlElement, Int64? value)
   {
     openXmlElement.Cy = value;
   }
   
-  public static DocumentModel.Drawings.ChartDrawing.Extent? CreateModelElement(DocumentFormat.OpenXml.Drawing.ChartDrawing.Extent? openXmlElement)
+  public static DMDrawsChartDraw.Extent? CreateModelElement(DXDrawChartDraw.Extent? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.ChartDrawing.Extent();
+      var value = new DMDrawsChartDraw.Extent();
       value.Cx = GetCx(openXmlElement);
       value.Cy = GetCy(openXmlElement);
       return value;
@@ -43,8 +43,8 @@ public static class ExtentConverter
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.ChartDrawing.Extent? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.ChartDrawing.Extent, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDrawsChartDraw.Extent? value)
+    where OpenXmlElementType: DXDrawChartDraw.Extent, new()
   {
     if (value != null)
     {

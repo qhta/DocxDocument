@@ -8,12 +8,12 @@ public static class PictureConverter
   /// <summary>
   /// Reference to Custom Function
   /// </summary>
-  private static String? GetMacro(DocumentFormat.OpenXml.Drawing.ChartDrawing.Picture openXmlElement)
+  private static String? GetMacro(DXDrawChartDraw.Picture openXmlElement)
   {
     return openXmlElement?.Macro?.Value;
   }
   
-  private static void SetMacro(DocumentFormat.OpenXml.Drawing.ChartDrawing.Picture openXmlElement, String? value)
+  private static void SetMacro(DXDrawChartDraw.Picture openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.Macro = new StringValue { Value = value };
@@ -24,12 +24,12 @@ public static class PictureConverter
   /// <summary>
   /// Publish to Server
   /// </summary>
-  private static Boolean? GetPublished(DocumentFormat.OpenXml.Drawing.ChartDrawing.Picture openXmlElement)
+  private static Boolean? GetPublished(DXDrawChartDraw.Picture openXmlElement)
   {
     return openXmlElement?.Published?.Value;
   }
   
-  private static void SetPublished(DocumentFormat.OpenXml.Drawing.ChartDrawing.Picture openXmlElement, Boolean? value)
+  private static void SetPublished(DXDrawChartDraw.Picture openXmlElement, Boolean? value)
   {
     if (value != null)
       openXmlElement.Published = new BooleanValue { Value = (Boolean)value };
@@ -40,22 +40,22 @@ public static class PictureConverter
   /// <summary>
   /// Non-Visual Picture Properties.
   /// </summary>
-  private static DocumentModel.Drawings.ChartDrawing.NonVisualPictureProperties? GetNonVisualPictureProperties(DocumentFormat.OpenXml.Drawing.ChartDrawing.Picture openXmlElement)
+  private static DMDrawsChartDraw.NonVisualPictureProperties? GetNonVisualPictureProperties(DXDrawChartDraw.Picture openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.ChartDrawing.NonVisualPictureProperties>();
+    var itemElement = openXmlElement?.GetFirstChild<DXDrawChartDraw.NonVisualPictureProperties>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.ChartDrawing.NonVisualPicturePropertiesConverter.CreateModelElement(itemElement);
+      return DMXDrawsChartDraw.NonVisualPicturePropertiesConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetNonVisualPictureProperties(DocumentFormat.OpenXml.Drawing.ChartDrawing.Picture openXmlElement, DocumentModel.Drawings.ChartDrawing.NonVisualPictureProperties? value)
+  private static void SetNonVisualPictureProperties(DXDrawChartDraw.Picture openXmlElement, DMDrawsChartDraw.NonVisualPictureProperties? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.ChartDrawing.NonVisualPictureProperties>();
+    var itemElement = openXmlElement.GetFirstChild<DXDrawChartDraw.NonVisualPictureProperties>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Drawings.ChartDrawing.NonVisualPicturePropertiesConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.ChartDrawing.NonVisualPictureProperties>(value);
+      itemElement = DMXDrawsChartDraw.NonVisualPicturePropertiesConverter.CreateOpenXmlElement<DXDrawChartDraw.NonVisualPictureProperties>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
@@ -64,22 +64,22 @@ public static class PictureConverter
   /// <summary>
   /// Picture Fill.
   /// </summary>
-  private static DocumentModel.Drawings.ChartDrawing.BlipFill? GetBlipFill(DocumentFormat.OpenXml.Drawing.ChartDrawing.Picture openXmlElement)
+  private static DMDrawsChartDraw.BlipFill? GetBlipFill(DXDrawChartDraw.Picture openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.ChartDrawing.BlipFill>();
+    var itemElement = openXmlElement?.GetFirstChild<DXDrawChartDraw.BlipFill>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.ChartDrawing.BlipFillConverter.CreateModelElement(itemElement);
+      return DMXDrawsChartDraw.BlipFillConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetBlipFill(DocumentFormat.OpenXml.Drawing.ChartDrawing.Picture openXmlElement, DocumentModel.Drawings.ChartDrawing.BlipFill? value)
+  private static void SetBlipFill(DXDrawChartDraw.Picture openXmlElement, DMDrawsChartDraw.BlipFill? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.ChartDrawing.BlipFill>();
+    var itemElement = openXmlElement.GetFirstChild<DXDrawChartDraw.BlipFill>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Drawings.ChartDrawing.BlipFillConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.ChartDrawing.BlipFill>(value);
+      itemElement = DMXDrawsChartDraw.BlipFillConverter.CreateOpenXmlElement<DXDrawChartDraw.BlipFill>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
@@ -88,22 +88,22 @@ public static class PictureConverter
   /// <summary>
   /// ShapeProperties.
   /// </summary>
-  private static DocumentModel.Drawings.ChartDrawing.ShapeProperties? GetShapeProperties(DocumentFormat.OpenXml.Drawing.ChartDrawing.Picture openXmlElement)
+  private static DMDrawsChartDraw.ShapeProperties? GetShapeProperties(DXDrawChartDraw.Picture openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.ChartDrawing.ShapeProperties>();
+    var itemElement = openXmlElement?.GetFirstChild<DXDrawChartDraw.ShapeProperties>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.ChartDrawing.ShapePropertiesConverter.CreateModelElement(itemElement);
+      return DMXDrawsChartDraw.ShapePropertiesConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetShapeProperties(DocumentFormat.OpenXml.Drawing.ChartDrawing.Picture openXmlElement, DocumentModel.Drawings.ChartDrawing.ShapeProperties? value)
+  private static void SetShapeProperties(DXDrawChartDraw.Picture openXmlElement, DMDrawsChartDraw.ShapeProperties? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.ChartDrawing.ShapeProperties>();
+    var itemElement = openXmlElement.GetFirstChild<DXDrawChartDraw.ShapeProperties>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Drawings.ChartDrawing.ShapePropertiesConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.ChartDrawing.ShapeProperties>(value);
+      itemElement = DMXDrawsChartDraw.ShapePropertiesConverter.CreateOpenXmlElement<DXDrawChartDraw.ShapeProperties>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
@@ -112,32 +112,32 @@ public static class PictureConverter
   /// <summary>
   /// Style.
   /// </summary>
-  private static DocumentModel.Drawings.ChartDrawing.Style? GetStyle(DocumentFormat.OpenXml.Drawing.ChartDrawing.Picture openXmlElement)
+  private static DMDrawsChartDraw.Style? GetStyle(DXDrawChartDraw.Picture openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.ChartDrawing.Style>();
+    var itemElement = openXmlElement?.GetFirstChild<DXDrawChartDraw.Style>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.ChartDrawing.StyleConverter.CreateModelElement(itemElement);
+      return DMXDrawsChartDraw.StyleConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetStyle(DocumentFormat.OpenXml.Drawing.ChartDrawing.Picture openXmlElement, DocumentModel.Drawings.ChartDrawing.Style? value)
+  private static void SetStyle(DXDrawChartDraw.Picture openXmlElement, DMDrawsChartDraw.Style? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.ChartDrawing.Style>();
+    var itemElement = openXmlElement.GetFirstChild<DXDrawChartDraw.Style>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Drawings.ChartDrawing.StyleConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.ChartDrawing.Style>(value);
+      itemElement = DMXDrawsChartDraw.StyleConverter.CreateOpenXmlElement<DXDrawChartDraw.Style>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  public static DocumentModel.Drawings.ChartDrawing.Picture? CreateModelElement(DocumentFormat.OpenXml.Drawing.ChartDrawing.Picture? openXmlElement)
+  public static DMDrawsChartDraw.Picture? CreateModelElement(DXDrawChartDraw.Picture? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.ChartDrawing.Picture();
+      var value = new DMDrawsChartDraw.Picture();
       value.Macro = GetMacro(openXmlElement);
       value.Published = GetPublished(openXmlElement);
       value.NonVisualPictureProperties = GetNonVisualPictureProperties(openXmlElement);
@@ -149,8 +149,8 @@ public static class PictureConverter
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.ChartDrawing.Picture? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.ChartDrawing.Picture, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDrawsChartDraw.Picture? value)
+    where OpenXmlElementType: DXDrawChartDraw.Picture, new()
   {
     if (value != null)
     {

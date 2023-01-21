@@ -8,12 +8,12 @@ public static class RoundRectangleConverter
   /// <summary>
   /// Unique Identifier
   /// </summary>
-  private static String? GetId(DocumentFormat.OpenXml.Vml.RoundRectangle openXmlElement)
+  private static String? GetId(DXVml.RoundRectangle openXmlElement)
   {
     return openXmlElement?.Id?.Value;
   }
   
-  private static void SetId(DocumentFormat.OpenXml.Vml.RoundRectangle openXmlElement, String? value)
+  private static void SetId(DXVml.RoundRectangle openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.Id = new StringValue { Value = value };
@@ -24,12 +24,12 @@ public static class RoundRectangleConverter
   /// <summary>
   /// style
   /// </summary>
-  private static String? GetStyle(DocumentFormat.OpenXml.Vml.RoundRectangle openXmlElement)
+  private static String? GetStyle(DXVml.RoundRectangle openXmlElement)
   {
     return openXmlElement?.Style?.Value;
   }
   
-  private static void SetStyle(DocumentFormat.OpenXml.Vml.RoundRectangle openXmlElement, String? value)
+  private static void SetStyle(DXVml.RoundRectangle openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.Style = new StringValue { Value = value };
@@ -40,12 +40,12 @@ public static class RoundRectangleConverter
   /// <summary>
   /// href
   /// </summary>
-  private static String? GetHref(DocumentFormat.OpenXml.Vml.RoundRectangle openXmlElement)
+  private static String? GetHref(DXVml.RoundRectangle openXmlElement)
   {
     return openXmlElement?.Href?.Value;
   }
   
-  private static void SetHref(DocumentFormat.OpenXml.Vml.RoundRectangle openXmlElement, String? value)
+  private static void SetHref(DXVml.RoundRectangle openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.Href = new StringValue { Value = value };
@@ -56,12 +56,12 @@ public static class RoundRectangleConverter
   /// <summary>
   /// target
   /// </summary>
-  private static String? GetTarget(DocumentFormat.OpenXml.Vml.RoundRectangle openXmlElement)
+  private static String? GetTarget(DXVml.RoundRectangle openXmlElement)
   {
     return openXmlElement?.Target?.Value;
   }
   
-  private static void SetTarget(DocumentFormat.OpenXml.Vml.RoundRectangle openXmlElement, String? value)
+  private static void SetTarget(DXVml.RoundRectangle openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.Target = new StringValue { Value = value };
@@ -72,12 +72,12 @@ public static class RoundRectangleConverter
   /// <summary>
   /// class
   /// </summary>
-  private static String? GetClass(DocumentFormat.OpenXml.Vml.RoundRectangle openXmlElement)
+  private static String? GetClass(DXVml.RoundRectangle openXmlElement)
   {
     return openXmlElement?.Class?.Value;
   }
   
-  private static void SetClass(DocumentFormat.OpenXml.Vml.RoundRectangle openXmlElement, String? value)
+  private static void SetClass(DXVml.RoundRectangle openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.Class = new StringValue { Value = value };
@@ -88,12 +88,12 @@ public static class RoundRectangleConverter
   /// <summary>
   /// title
   /// </summary>
-  private static String? GetTitle(DocumentFormat.OpenXml.Vml.RoundRectangle openXmlElement)
+  private static String? GetTitle(DXVml.RoundRectangle openXmlElement)
   {
     return openXmlElement?.Title?.Value;
   }
   
-  private static void SetTitle(DocumentFormat.OpenXml.Vml.RoundRectangle openXmlElement, String? value)
+  private static void SetTitle(DXVml.RoundRectangle openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.Title = new StringValue { Value = value };
@@ -104,12 +104,12 @@ public static class RoundRectangleConverter
   /// <summary>
   /// alt
   /// </summary>
-  private static String? GetAlternate(DocumentFormat.OpenXml.Vml.RoundRectangle openXmlElement)
+  private static String? GetAlternate(DXVml.RoundRectangle openXmlElement)
   {
     return openXmlElement?.Alternate?.Value;
   }
   
-  private static void SetAlternate(DocumentFormat.OpenXml.Vml.RoundRectangle openXmlElement, String? value)
+  private static void SetAlternate(DXVml.RoundRectangle openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.Alternate = new StringValue { Value = value };
@@ -120,12 +120,12 @@ public static class RoundRectangleConverter
   /// <summary>
   /// coordsize
   /// </summary>
-  private static String? GetCoordinateSize(DocumentFormat.OpenXml.Vml.RoundRectangle openXmlElement)
+  private static String? GetCoordinateSize(DXVml.RoundRectangle openXmlElement)
   {
     return openXmlElement?.CoordinateSize?.Value;
   }
   
-  private static void SetCoordinateSize(DocumentFormat.OpenXml.Vml.RoundRectangle openXmlElement, String? value)
+  private static void SetCoordinateSize(DXVml.RoundRectangle openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.CoordinateSize = new StringValue { Value = value };
@@ -136,12 +136,12 @@ public static class RoundRectangleConverter
   /// <summary>
   /// wrapcoords
   /// </summary>
-  private static String? GetWrapCoordinates(DocumentFormat.OpenXml.Vml.RoundRectangle openXmlElement)
+  private static String? GetWrapCoordinates(DXVml.RoundRectangle openXmlElement)
   {
     return openXmlElement?.WrapCoordinates?.Value;
   }
   
-  private static void SetWrapCoordinates(DocumentFormat.OpenXml.Vml.RoundRectangle openXmlElement, String? value)
+  private static void SetWrapCoordinates(DXVml.RoundRectangle openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.WrapCoordinates = new StringValue { Value = value };
@@ -152,12 +152,12 @@ public static class RoundRectangleConverter
   /// <summary>
   /// print
   /// </summary>
-  private static Boolean? GetPrint(DocumentFormat.OpenXml.Vml.RoundRectangle openXmlElement)
+  private static Boolean? GetPrint(DXVml.RoundRectangle openXmlElement)
   {
     return openXmlElement?.Print?.Value;
   }
   
-  private static void SetPrint(DocumentFormat.OpenXml.Vml.RoundRectangle openXmlElement, Boolean? value)
+  private static void SetPrint(DXVml.RoundRectangle openXmlElement, Boolean? value)
   {
     if (value != null)
       openXmlElement.Print = value;
@@ -168,12 +168,12 @@ public static class RoundRectangleConverter
   /// <summary>
   /// Optional String
   /// </summary>
-  private static String? GetOptionalString(DocumentFormat.OpenXml.Vml.RoundRectangle openXmlElement)
+  private static String? GetOptionalString(DXVml.RoundRectangle openXmlElement)
   {
     return openXmlElement?.OptionalString?.Value;
   }
   
-  private static void SetOptionalString(DocumentFormat.OpenXml.Vml.RoundRectangle openXmlElement, String? value)
+  private static void SetOptionalString(DXVml.RoundRectangle openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.OptionalString = new StringValue { Value = value };
@@ -184,12 +184,12 @@ public static class RoundRectangleConverter
   /// <summary>
   /// Shape Handle Toggle
   /// </summary>
-  private static Boolean? GetOned(DocumentFormat.OpenXml.Vml.RoundRectangle openXmlElement)
+  private static Boolean? GetOned(DXVml.RoundRectangle openXmlElement)
   {
     return openXmlElement?.Oned?.Value;
   }
   
-  private static void SetOned(DocumentFormat.OpenXml.Vml.RoundRectangle openXmlElement, Boolean? value)
+  private static void SetOned(DXVml.RoundRectangle openXmlElement, Boolean? value)
   {
     if (value != null)
       openXmlElement.Oned = value;
@@ -200,12 +200,12 @@ public static class RoundRectangleConverter
   /// <summary>
   /// Regroup ID
   /// </summary>
-  private static Int64? GetRegroupId(DocumentFormat.OpenXml.Vml.RoundRectangle openXmlElement)
+  private static Int64? GetRegroupId(DXVml.RoundRectangle openXmlElement)
   {
     return openXmlElement.RegroupId?.Value;
   }
   
-  private static void SetRegroupId(DocumentFormat.OpenXml.Vml.RoundRectangle openXmlElement, Int64? value)
+  private static void SetRegroupId(DXVml.RoundRectangle openXmlElement, Int64? value)
   {
     openXmlElement.RegroupId = value;
   }
@@ -213,12 +213,12 @@ public static class RoundRectangleConverter
   /// <summary>
   /// Double-click Notification Toggle
   /// </summary>
-  private static Boolean? GetDoubleClickNotify(DocumentFormat.OpenXml.Vml.RoundRectangle openXmlElement)
+  private static Boolean? GetDoubleClickNotify(DXVml.RoundRectangle openXmlElement)
   {
     return openXmlElement?.DoubleClickNotify?.Value;
   }
   
-  private static void SetDoubleClickNotify(DocumentFormat.OpenXml.Vml.RoundRectangle openXmlElement, Boolean? value)
+  private static void SetDoubleClickNotify(DXVml.RoundRectangle openXmlElement, Boolean? value)
   {
     if (value != null)
       openXmlElement.DoubleClickNotify = value;
@@ -229,12 +229,12 @@ public static class RoundRectangleConverter
   /// <summary>
   /// Button Behavior Toggle
   /// </summary>
-  private static Boolean? GetButton(DocumentFormat.OpenXml.Vml.RoundRectangle openXmlElement)
+  private static Boolean? GetButton(DXVml.RoundRectangle openXmlElement)
   {
     return openXmlElement?.Button?.Value;
   }
   
-  private static void SetButton(DocumentFormat.OpenXml.Vml.RoundRectangle openXmlElement, Boolean? value)
+  private static void SetButton(DXVml.RoundRectangle openXmlElement, Boolean? value)
   {
     if (value != null)
       openXmlElement.Button = value;
@@ -245,12 +245,12 @@ public static class RoundRectangleConverter
   /// <summary>
   /// Hide Script Anchors
   /// </summary>
-  private static Boolean? GetUserHidden(DocumentFormat.OpenXml.Vml.RoundRectangle openXmlElement)
+  private static Boolean? GetUserHidden(DXVml.RoundRectangle openXmlElement)
   {
     return openXmlElement?.UserHidden?.Value;
   }
   
-  private static void SetUserHidden(DocumentFormat.OpenXml.Vml.RoundRectangle openXmlElement, Boolean? value)
+  private static void SetUserHidden(DXVml.RoundRectangle openXmlElement, Boolean? value)
   {
     if (value != null)
       openXmlElement.UserHidden = value;
@@ -261,12 +261,12 @@ public static class RoundRectangleConverter
   /// <summary>
   /// Graphical Bullet
   /// </summary>
-  private static Boolean? GetBullet(DocumentFormat.OpenXml.Vml.RoundRectangle openXmlElement)
+  private static Boolean? GetBullet(DXVml.RoundRectangle openXmlElement)
   {
     return openXmlElement?.Bullet?.Value;
   }
   
-  private static void SetBullet(DocumentFormat.OpenXml.Vml.RoundRectangle openXmlElement, Boolean? value)
+  private static void SetBullet(DXVml.RoundRectangle openXmlElement, Boolean? value)
   {
     if (value != null)
       openXmlElement.Bullet = value;
@@ -277,12 +277,12 @@ public static class RoundRectangleConverter
   /// <summary>
   /// Horizontal Rule Toggle
   /// </summary>
-  private static Boolean? GetHorizontal(DocumentFormat.OpenXml.Vml.RoundRectangle openXmlElement)
+  private static Boolean? GetHorizontal(DXVml.RoundRectangle openXmlElement)
   {
     return openXmlElement?.Horizontal?.Value;
   }
   
-  private static void SetHorizontal(DocumentFormat.OpenXml.Vml.RoundRectangle openXmlElement, Boolean? value)
+  private static void SetHorizontal(DXVml.RoundRectangle openXmlElement, Boolean? value)
   {
     if (value != null)
       openXmlElement.Horizontal = value;
@@ -293,12 +293,12 @@ public static class RoundRectangleConverter
   /// <summary>
   /// Horizontal Rule Standard Display Toggle
   /// </summary>
-  private static Boolean? GetHorizontalStandard(DocumentFormat.OpenXml.Vml.RoundRectangle openXmlElement)
+  private static Boolean? GetHorizontalStandard(DXVml.RoundRectangle openXmlElement)
   {
     return openXmlElement?.HorizontalStandard?.Value;
   }
   
-  private static void SetHorizontalStandard(DocumentFormat.OpenXml.Vml.RoundRectangle openXmlElement, Boolean? value)
+  private static void SetHorizontalStandard(DXVml.RoundRectangle openXmlElement, Boolean? value)
   {
     if (value != null)
       openXmlElement.HorizontalStandard = value;
@@ -309,12 +309,12 @@ public static class RoundRectangleConverter
   /// <summary>
   /// Horizontal Rule 3D Shading Toggle
   /// </summary>
-  private static Boolean? GetHorizontalNoShade(DocumentFormat.OpenXml.Vml.RoundRectangle openXmlElement)
+  private static Boolean? GetHorizontalNoShade(DXVml.RoundRectangle openXmlElement)
   {
     return openXmlElement?.HorizontalNoShade?.Value;
   }
   
-  private static void SetHorizontalNoShade(DocumentFormat.OpenXml.Vml.RoundRectangle openXmlElement, Boolean? value)
+  private static void SetHorizontalNoShade(DXVml.RoundRectangle openXmlElement, Boolean? value)
   {
     if (value != null)
       openXmlElement.HorizontalNoShade = value;
@@ -325,12 +325,12 @@ public static class RoundRectangleConverter
   /// <summary>
   /// Horizontal Rule Length Percentage
   /// </summary>
-  private static Single? GetHorizontalPercentage(DocumentFormat.OpenXml.Vml.RoundRectangle openXmlElement)
+  private static Single? GetHorizontalPercentage(DXVml.RoundRectangle openXmlElement)
   {
     return openXmlElement.HorizontalPercentage?.Value;
   }
   
-  private static void SetHorizontalPercentage(DocumentFormat.OpenXml.Vml.RoundRectangle openXmlElement, Single? value)
+  private static void SetHorizontalPercentage(DXVml.RoundRectangle openXmlElement, Single? value)
   {
     openXmlElement.HorizontalPercentage = value;
   }
@@ -338,25 +338,25 @@ public static class RoundRectangleConverter
   /// <summary>
   /// Horizontal Rule Alignment
   /// </summary>
-  private static DocumentModel.Vml.HorizontalRuleAlignmentKind? GetHorizontalAlignment(DocumentFormat.OpenXml.Vml.RoundRectangle openXmlElement)
+  private static DMVml.HorizontalRuleAlignmentKind? GetHorizontalAlignment(DXVml.RoundRectangle openXmlElement)
   {
-    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Vml.Office.HorizontalRuleAlignmentValues, DocumentModel.Vml.HorizontalRuleAlignmentKind>(openXmlElement?.HorizontalAlignment?.Value);
+    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Vml.Office.HorizontalRuleAlignmentValues, DMVml.HorizontalRuleAlignmentKind>(openXmlElement?.HorizontalAlignment?.Value);
   }
   
-  private static void SetHorizontalAlignment(DocumentFormat.OpenXml.Vml.RoundRectangle openXmlElement, DocumentModel.Vml.HorizontalRuleAlignmentKind? value)
+  private static void SetHorizontalAlignment(DXVml.RoundRectangle openXmlElement, DMVml.HorizontalRuleAlignmentKind? value)
   {
-    openXmlElement.HorizontalAlignment = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Vml.Office.HorizontalRuleAlignmentValues, DocumentModel.Vml.HorizontalRuleAlignmentKind>(value);
+    openXmlElement.HorizontalAlignment = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Vml.Office.HorizontalRuleAlignmentValues, DMVml.HorizontalRuleAlignmentKind>(value);
   }
   
   /// <summary>
   /// Allow in Table Cell
   /// </summary>
-  private static Boolean? GetAllowInCell(DocumentFormat.OpenXml.Vml.RoundRectangle openXmlElement)
+  private static Boolean? GetAllowInCell(DXVml.RoundRectangle openXmlElement)
   {
     return openXmlElement?.AllowInCell?.Value;
   }
   
-  private static void SetAllowInCell(DocumentFormat.OpenXml.Vml.RoundRectangle openXmlElement, Boolean? value)
+  private static void SetAllowInCell(DXVml.RoundRectangle openXmlElement, Boolean? value)
   {
     if (value != null)
       openXmlElement.AllowInCell = value;
@@ -367,12 +367,12 @@ public static class RoundRectangleConverter
   /// <summary>
   /// Allow Shape Overlap
   /// </summary>
-  private static Boolean? GetAllowOverlap(DocumentFormat.OpenXml.Vml.RoundRectangle openXmlElement)
+  private static Boolean? GetAllowOverlap(DXVml.RoundRectangle openXmlElement)
   {
     return openXmlElement?.AllowOverlap?.Value;
   }
   
-  private static void SetAllowOverlap(DocumentFormat.OpenXml.Vml.RoundRectangle openXmlElement, Boolean? value)
+  private static void SetAllowOverlap(DXVml.RoundRectangle openXmlElement, Boolean? value)
   {
     if (value != null)
       openXmlElement.AllowOverlap = value;
@@ -383,12 +383,12 @@ public static class RoundRectangleConverter
   /// <summary>
   /// Exists In Master Slide
   /// </summary>
-  private static Boolean? GetUserDrawn(DocumentFormat.OpenXml.Vml.RoundRectangle openXmlElement)
+  private static Boolean? GetUserDrawn(DXVml.RoundRectangle openXmlElement)
   {
     return openXmlElement?.UserDrawn?.Value;
   }
   
-  private static void SetUserDrawn(DocumentFormat.OpenXml.Vml.RoundRectangle openXmlElement, Boolean? value)
+  private static void SetUserDrawn(DXVml.RoundRectangle openXmlElement, Boolean? value)
   {
     if (value != null)
       openXmlElement.UserDrawn = value;
@@ -399,12 +399,12 @@ public static class RoundRectangleConverter
   /// <summary>
   /// Border Top Color
   /// </summary>
-  private static String? GetBorderTopColor(DocumentFormat.OpenXml.Vml.RoundRectangle openXmlElement)
+  private static String? GetBorderTopColor(DXVml.RoundRectangle openXmlElement)
   {
     return openXmlElement?.BorderTopColor?.Value;
   }
   
-  private static void SetBorderTopColor(DocumentFormat.OpenXml.Vml.RoundRectangle openXmlElement, String? value)
+  private static void SetBorderTopColor(DXVml.RoundRectangle openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.BorderTopColor = new StringValue { Value = value };
@@ -415,12 +415,12 @@ public static class RoundRectangleConverter
   /// <summary>
   /// Border Left Color
   /// </summary>
-  private static String? GetBorderLeftColor(DocumentFormat.OpenXml.Vml.RoundRectangle openXmlElement)
+  private static String? GetBorderLeftColor(DXVml.RoundRectangle openXmlElement)
   {
     return openXmlElement?.BorderLeftColor?.Value;
   }
   
-  private static void SetBorderLeftColor(DocumentFormat.OpenXml.Vml.RoundRectangle openXmlElement, String? value)
+  private static void SetBorderLeftColor(DXVml.RoundRectangle openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.BorderLeftColor = new StringValue { Value = value };
@@ -431,12 +431,12 @@ public static class RoundRectangleConverter
   /// <summary>
   /// Bottom Border Color
   /// </summary>
-  private static String? GetBorderBottomColor(DocumentFormat.OpenXml.Vml.RoundRectangle openXmlElement)
+  private static String? GetBorderBottomColor(DXVml.RoundRectangle openXmlElement)
   {
     return openXmlElement?.BorderBottomColor?.Value;
   }
   
-  private static void SetBorderBottomColor(DocumentFormat.OpenXml.Vml.RoundRectangle openXmlElement, String? value)
+  private static void SetBorderBottomColor(DXVml.RoundRectangle openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.BorderBottomColor = new StringValue { Value = value };
@@ -447,12 +447,12 @@ public static class RoundRectangleConverter
   /// <summary>
   /// Border Right Color
   /// </summary>
-  private static String? GetBorderRightColor(DocumentFormat.OpenXml.Vml.RoundRectangle openXmlElement)
+  private static String? GetBorderRightColor(DXVml.RoundRectangle openXmlElement)
   {
     return openXmlElement?.BorderRightColor?.Value;
   }
   
-  private static void SetBorderRightColor(DocumentFormat.OpenXml.Vml.RoundRectangle openXmlElement, String? value)
+  private static void SetBorderRightColor(DXVml.RoundRectangle openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.BorderRightColor = new StringValue { Value = value };
@@ -463,12 +463,12 @@ public static class RoundRectangleConverter
   /// <summary>
   /// Diagram Node Layout Identifier
   /// </summary>
-  private static Int64? GetDiagramLayout(DocumentFormat.OpenXml.Vml.RoundRectangle openXmlElement)
+  private static Int64? GetDiagramLayout(DXVml.RoundRectangle openXmlElement)
   {
     return openXmlElement.DiagramLayout?.Value;
   }
   
-  private static void SetDiagramLayout(DocumentFormat.OpenXml.Vml.RoundRectangle openXmlElement, Int64? value)
+  private static void SetDiagramLayout(DXVml.RoundRectangle openXmlElement, Int64? value)
   {
     openXmlElement.DiagramLayout = value;
   }
@@ -476,12 +476,12 @@ public static class RoundRectangleConverter
   /// <summary>
   /// Diagram Node Identifier
   /// </summary>
-  private static Int64? GetDiagramNodeKind(DocumentFormat.OpenXml.Vml.RoundRectangle openXmlElement)
+  private static Int64? GetDiagramNodeKind(DXVml.RoundRectangle openXmlElement)
   {
     return openXmlElement.DiagramNodeKind?.Value;
   }
   
-  private static void SetDiagramNodeKind(DocumentFormat.OpenXml.Vml.RoundRectangle openXmlElement, Int64? value)
+  private static void SetDiagramNodeKind(DXVml.RoundRectangle openXmlElement, Int64? value)
   {
     openXmlElement.DiagramNodeKind = value;
   }
@@ -489,12 +489,12 @@ public static class RoundRectangleConverter
   /// <summary>
   /// Diagram Node Recent Layout Identifier
   /// </summary>
-  private static Int64? GetDiagramLayoutMostRecentUsed(DocumentFormat.OpenXml.Vml.RoundRectangle openXmlElement)
+  private static Int64? GetDiagramLayoutMostRecentUsed(DXVml.RoundRectangle openXmlElement)
   {
     return openXmlElement.DiagramLayoutMostRecentUsed?.Value;
   }
   
-  private static void SetDiagramLayoutMostRecentUsed(DocumentFormat.OpenXml.Vml.RoundRectangle openXmlElement, Int64? value)
+  private static void SetDiagramLayoutMostRecentUsed(DXVml.RoundRectangle openXmlElement, Int64? value)
   {
     openXmlElement.DiagramLayoutMostRecentUsed = value;
   }
@@ -502,25 +502,25 @@ public static class RoundRectangleConverter
   /// <summary>
   /// Text Inset Mode
   /// </summary>
-  private static DocumentModel.Vml.InsetMarginKind? GetInsetMode(DocumentFormat.OpenXml.Vml.RoundRectangle openXmlElement)
+  private static DMVml.InsetMarginKind? GetInsetMode(DXVml.RoundRectangle openXmlElement)
   {
-    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Vml.Office.InsetMarginValues, DocumentModel.Vml.InsetMarginKind>(openXmlElement?.InsetMode?.Value);
+    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Vml.Office.InsetMarginValues, DMVml.InsetMarginKind>(openXmlElement?.InsetMode?.Value);
   }
   
-  private static void SetInsetMode(DocumentFormat.OpenXml.Vml.RoundRectangle openXmlElement, DocumentModel.Vml.InsetMarginKind? value)
+  private static void SetInsetMode(DXVml.RoundRectangle openXmlElement, DMVml.InsetMarginKind? value)
   {
-    openXmlElement.InsetMode = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Vml.Office.InsetMarginValues, DocumentModel.Vml.InsetMarginKind>(value);
+    openXmlElement.InsetMode = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Vml.Office.InsetMarginValues, DMVml.InsetMarginKind>(value);
   }
   
   /// <summary>
   /// Shape Fill Toggle
   /// </summary>
-  private static Boolean? GetFilled(DocumentFormat.OpenXml.Vml.RoundRectangle openXmlElement)
+  private static Boolean? GetFilled(DXVml.RoundRectangle openXmlElement)
   {
     return openXmlElement?.Filled?.Value;
   }
   
-  private static void SetFilled(DocumentFormat.OpenXml.Vml.RoundRectangle openXmlElement, Boolean? value)
+  private static void SetFilled(DXVml.RoundRectangle openXmlElement, Boolean? value)
   {
     if (value != null)
       openXmlElement.Filled = value;
@@ -531,12 +531,12 @@ public static class RoundRectangleConverter
   /// <summary>
   /// Fill Color
   /// </summary>
-  private static String? GetFillColor(DocumentFormat.OpenXml.Vml.RoundRectangle openXmlElement)
+  private static String? GetFillColor(DXVml.RoundRectangle openXmlElement)
   {
     return openXmlElement?.FillColor?.Value;
   }
   
-  private static void SetFillColor(DocumentFormat.OpenXml.Vml.RoundRectangle openXmlElement, String? value)
+  private static void SetFillColor(DXVml.RoundRectangle openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.FillColor = new StringValue { Value = value };
@@ -547,12 +547,12 @@ public static class RoundRectangleConverter
   /// <summary>
   /// Shape Stroke Toggle
   /// </summary>
-  private static Boolean? GetStroked(DocumentFormat.OpenXml.Vml.RoundRectangle openXmlElement)
+  private static Boolean? GetStroked(DXVml.RoundRectangle openXmlElement)
   {
     return openXmlElement?.Stroked?.Value;
   }
   
-  private static void SetStroked(DocumentFormat.OpenXml.Vml.RoundRectangle openXmlElement, Boolean? value)
+  private static void SetStroked(DXVml.RoundRectangle openXmlElement, Boolean? value)
   {
     if (value != null)
       openXmlElement.Stroked = value;
@@ -563,12 +563,12 @@ public static class RoundRectangleConverter
   /// <summary>
   /// Shape Stroke Color
   /// </summary>
-  private static String? GetStrokeColor(DocumentFormat.OpenXml.Vml.RoundRectangle openXmlElement)
+  private static String? GetStrokeColor(DXVml.RoundRectangle openXmlElement)
   {
     return openXmlElement?.StrokeColor?.Value;
   }
   
-  private static void SetStrokeColor(DocumentFormat.OpenXml.Vml.RoundRectangle openXmlElement, String? value)
+  private static void SetStrokeColor(DXVml.RoundRectangle openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.StrokeColor = new StringValue { Value = value };
@@ -579,12 +579,12 @@ public static class RoundRectangleConverter
   /// <summary>
   /// Shape Stroke Weight
   /// </summary>
-  private static String? GetStrokeWeight(DocumentFormat.OpenXml.Vml.RoundRectangle openXmlElement)
+  private static String? GetStrokeWeight(DXVml.RoundRectangle openXmlElement)
   {
     return openXmlElement?.StrokeWeight?.Value;
   }
   
-  private static void SetStrokeWeight(DocumentFormat.OpenXml.Vml.RoundRectangle openXmlElement, String? value)
+  private static void SetStrokeWeight(DXVml.RoundRectangle openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.StrokeWeight = new StringValue { Value = value };
@@ -595,12 +595,12 @@ public static class RoundRectangleConverter
   /// <summary>
   /// Inset Border From Path
   /// </summary>
-  private static Boolean? GetInsetPen(DocumentFormat.OpenXml.Vml.RoundRectangle openXmlElement)
+  private static Boolean? GetInsetPen(DXVml.RoundRectangle openXmlElement)
   {
     return openXmlElement?.InsetPen?.Value;
   }
   
-  private static void SetInsetPen(DocumentFormat.OpenXml.Vml.RoundRectangle openXmlElement, Boolean? value)
+  private static void SetInsetPen(DXVml.RoundRectangle openXmlElement, Boolean? value)
   {
     if (value != null)
       openXmlElement.InsetPen = value;
@@ -611,12 +611,12 @@ public static class RoundRectangleConverter
   /// <summary>
   /// Optional Number
   /// </summary>
-  private static Int32? GetOptionalNumber(DocumentFormat.OpenXml.Vml.RoundRectangle openXmlElement)
+  private static Int32? GetOptionalNumber(DXVml.RoundRectangle openXmlElement)
   {
     return openXmlElement.OptionalNumber?.Value;
   }
   
-  private static void SetOptionalNumber(DocumentFormat.OpenXml.Vml.RoundRectangle openXmlElement, Int32? value)
+  private static void SetOptionalNumber(DXVml.RoundRectangle openXmlElement, Int32? value)
   {
     openXmlElement.OptionalNumber = value;
   }
@@ -624,64 +624,64 @@ public static class RoundRectangleConverter
   /// <summary>
   /// Shape Connector Type
   /// </summary>
-  private static DocumentModel.Vml.ConnectorKind? GetConnectorType(DocumentFormat.OpenXml.Vml.RoundRectangle openXmlElement)
+  private static DMVml.ConnectorKind? GetConnectorType(DXVml.RoundRectangle openXmlElement)
   {
-    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Vml.Office.ConnectorValues, DocumentModel.Vml.ConnectorKind>(openXmlElement?.ConnectorType?.Value);
+    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Vml.Office.ConnectorValues, DMVml.ConnectorKind>(openXmlElement?.ConnectorType?.Value);
   }
   
-  private static void SetConnectorType(DocumentFormat.OpenXml.Vml.RoundRectangle openXmlElement, DocumentModel.Vml.ConnectorKind? value)
+  private static void SetConnectorType(DXVml.RoundRectangle openXmlElement, DMVml.ConnectorKind? value)
   {
-    openXmlElement.ConnectorType = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Vml.Office.ConnectorValues, DocumentModel.Vml.ConnectorKind>(value);
+    openXmlElement.ConnectorType = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Vml.Office.ConnectorValues, DMVml.ConnectorKind>(value);
   }
   
   /// <summary>
   /// Black-and-White Mode
   /// </summary>
-  private static DocumentModel.Vml.BlackAndWhiteMode? GetBlackWhiteMode(DocumentFormat.OpenXml.Vml.RoundRectangle openXmlElement)
+  private static DMVml.BlackAndWhiteMode? GetBlackWhiteMode(DXVml.RoundRectangle openXmlElement)
   {
-    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Vml.Office.BlackAndWhiteModeValues, DocumentModel.Vml.BlackAndWhiteMode>(openXmlElement?.BlackWhiteMode?.Value);
+    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Vml.Office.BlackAndWhiteModeValues, DMVml.BlackAndWhiteMode>(openXmlElement?.BlackWhiteMode?.Value);
   }
   
-  private static void SetBlackWhiteMode(DocumentFormat.OpenXml.Vml.RoundRectangle openXmlElement, DocumentModel.Vml.BlackAndWhiteMode? value)
+  private static void SetBlackWhiteMode(DXVml.RoundRectangle openXmlElement, DMVml.BlackAndWhiteMode? value)
   {
-    openXmlElement.BlackWhiteMode = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Vml.Office.BlackAndWhiteModeValues, DocumentModel.Vml.BlackAndWhiteMode>(value);
+    openXmlElement.BlackWhiteMode = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Vml.Office.BlackAndWhiteModeValues, DMVml.BlackAndWhiteMode>(value);
   }
   
   /// <summary>
   /// Pure Black-and-White Mode
   /// </summary>
-  private static DocumentModel.Vml.BlackAndWhiteMode? GetPureBlackWhiteMode(DocumentFormat.OpenXml.Vml.RoundRectangle openXmlElement)
+  private static DMVml.BlackAndWhiteMode? GetPureBlackWhiteMode(DXVml.RoundRectangle openXmlElement)
   {
-    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Vml.Office.BlackAndWhiteModeValues, DocumentModel.Vml.BlackAndWhiteMode>(openXmlElement?.PureBlackWhiteMode?.Value);
+    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Vml.Office.BlackAndWhiteModeValues, DMVml.BlackAndWhiteMode>(openXmlElement?.PureBlackWhiteMode?.Value);
   }
   
-  private static void SetPureBlackWhiteMode(DocumentFormat.OpenXml.Vml.RoundRectangle openXmlElement, DocumentModel.Vml.BlackAndWhiteMode? value)
+  private static void SetPureBlackWhiteMode(DXVml.RoundRectangle openXmlElement, DMVml.BlackAndWhiteMode? value)
   {
-    openXmlElement.PureBlackWhiteMode = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Vml.Office.BlackAndWhiteModeValues, DocumentModel.Vml.BlackAndWhiteMode>(value);
+    openXmlElement.PureBlackWhiteMode = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Vml.Office.BlackAndWhiteModeValues, DMVml.BlackAndWhiteMode>(value);
   }
   
   /// <summary>
   /// Normal Black-and-White Mode
   /// </summary>
-  private static DocumentModel.Vml.BlackAndWhiteMode? GetNormalBlackWhiteMode(DocumentFormat.OpenXml.Vml.RoundRectangle openXmlElement)
+  private static DMVml.BlackAndWhiteMode? GetNormalBlackWhiteMode(DXVml.RoundRectangle openXmlElement)
   {
-    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Vml.Office.BlackAndWhiteModeValues, DocumentModel.Vml.BlackAndWhiteMode>(openXmlElement?.NormalBlackWhiteMode?.Value);
+    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Vml.Office.BlackAndWhiteModeValues, DMVml.BlackAndWhiteMode>(openXmlElement?.NormalBlackWhiteMode?.Value);
   }
   
-  private static void SetNormalBlackWhiteMode(DocumentFormat.OpenXml.Vml.RoundRectangle openXmlElement, DocumentModel.Vml.BlackAndWhiteMode? value)
+  private static void SetNormalBlackWhiteMode(DXVml.RoundRectangle openXmlElement, DMVml.BlackAndWhiteMode? value)
   {
-    openXmlElement.NormalBlackWhiteMode = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Vml.Office.BlackAndWhiteModeValues, DocumentModel.Vml.BlackAndWhiteMode>(value);
+    openXmlElement.NormalBlackWhiteMode = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Vml.Office.BlackAndWhiteModeValues, DMVml.BlackAndWhiteMode>(value);
   }
   
   /// <summary>
   /// Force Dashed Outline
   /// </summary>
-  private static Boolean? GetForceDash(DocumentFormat.OpenXml.Vml.RoundRectangle openXmlElement)
+  private static Boolean? GetForceDash(DXVml.RoundRectangle openXmlElement)
   {
     return openXmlElement?.ForceDash?.Value;
   }
   
-  private static void SetForceDash(DocumentFormat.OpenXml.Vml.RoundRectangle openXmlElement, Boolean? value)
+  private static void SetForceDash(DXVml.RoundRectangle openXmlElement, Boolean? value)
   {
     if (value != null)
       openXmlElement.ForceDash = value;
@@ -692,12 +692,12 @@ public static class RoundRectangleConverter
   /// <summary>
   /// Embedded Object Icon Toggle
   /// </summary>
-  private static Boolean? GetOleIcon(DocumentFormat.OpenXml.Vml.RoundRectangle openXmlElement)
+  private static Boolean? GetOleIcon(DXVml.RoundRectangle openXmlElement)
   {
     return openXmlElement?.OleIcon?.Value;
   }
   
-  private static void SetOleIcon(DocumentFormat.OpenXml.Vml.RoundRectangle openXmlElement, Boolean? value)
+  private static void SetOleIcon(DXVml.RoundRectangle openXmlElement, Boolean? value)
   {
     if (value != null)
       openXmlElement.OleIcon = value;
@@ -708,12 +708,12 @@ public static class RoundRectangleConverter
   /// <summary>
   /// Embedded Object Toggle
   /// </summary>
-  private static Boolean? GetOle(DocumentFormat.OpenXml.Vml.RoundRectangle openXmlElement)
+  private static Boolean? GetOle(DXVml.RoundRectangle openXmlElement)
   {
     return openXmlElement?.Ole?.Value;
   }
   
-  private static void SetOle(DocumentFormat.OpenXml.Vml.RoundRectangle openXmlElement, Boolean? value)
+  private static void SetOle(DXVml.RoundRectangle openXmlElement, Boolean? value)
   {
     if (value != null)
       openXmlElement.Ole = value;
@@ -724,12 +724,12 @@ public static class RoundRectangleConverter
   /// <summary>
   /// Relative Resize Toggle
   /// </summary>
-  private static Boolean? GetPreferRelative(DocumentFormat.OpenXml.Vml.RoundRectangle openXmlElement)
+  private static Boolean? GetPreferRelative(DXVml.RoundRectangle openXmlElement)
   {
     return openXmlElement?.PreferRelative?.Value;
   }
   
-  private static void SetPreferRelative(DocumentFormat.OpenXml.Vml.RoundRectangle openXmlElement, Boolean? value)
+  private static void SetPreferRelative(DXVml.RoundRectangle openXmlElement, Boolean? value)
   {
     if (value != null)
       openXmlElement.PreferRelative = value;
@@ -740,12 +740,12 @@ public static class RoundRectangleConverter
   /// <summary>
   /// Clip to Wrapping Polygon
   /// </summary>
-  private static Boolean? GetClipToWrap(DocumentFormat.OpenXml.Vml.RoundRectangle openXmlElement)
+  private static Boolean? GetClipToWrap(DXVml.RoundRectangle openXmlElement)
   {
     return openXmlElement?.ClipToWrap?.Value;
   }
   
-  private static void SetClipToWrap(DocumentFormat.OpenXml.Vml.RoundRectangle openXmlElement, Boolean? value)
+  private static void SetClipToWrap(DXVml.RoundRectangle openXmlElement, Boolean? value)
   {
     if (value != null)
       openXmlElement.ClipToWrap = value;
@@ -756,12 +756,12 @@ public static class RoundRectangleConverter
   /// <summary>
   /// Clipping Toggle
   /// </summary>
-  private static Boolean? GetClip(DocumentFormat.OpenXml.Vml.RoundRectangle openXmlElement)
+  private static Boolean? GetClip(DXVml.RoundRectangle openXmlElement)
   {
     return openXmlElement?.Clip?.Value;
   }
   
-  private static void SetClip(DocumentFormat.OpenXml.Vml.RoundRectangle openXmlElement, Boolean? value)
+  private static void SetClip(DXVml.RoundRectangle openXmlElement, Boolean? value)
   {
     if (value != null)
       openXmlElement.Clip = value;
@@ -772,14 +772,14 @@ public static class RoundRectangleConverter
   /// <summary>
   /// Encoded Package
   /// </summary>
-  private static Byte[]? GetGfxdata(DocumentFormat.OpenXml.Vml.RoundRectangle openXmlElement)
+  private static Byte[]? GetGfxdata(DXVml.RoundRectangle openXmlElement)
   {
     if (openXmlElement.Gfxdata?.Value != null)
       return Convert.FromBase64String(openXmlElement.Gfxdata.Value);
     return null;
   }
   
-  private static void SetGfxdata(DocumentFormat.OpenXml.Vml.RoundRectangle openXmlElement, Byte[]? value)
+  private static void SetGfxdata(DXVml.RoundRectangle openXmlElement, Byte[]? value)
   {
     if (value != null)
       openXmlElement.Gfxdata = Convert.ToBase64String(value);
@@ -790,12 +790,12 @@ public static class RoundRectangleConverter
   /// <summary>
   /// Rounded Corner Arc Size
   /// </summary>
-  private static String? GetArcSize(DocumentFormat.OpenXml.Vml.RoundRectangle openXmlElement)
+  private static String? GetArcSize(DXVml.RoundRectangle openXmlElement)
   {
     return openXmlElement?.ArcSize?.Value;
   }
   
-  private static void SetArcSize(DocumentFormat.OpenXml.Vml.RoundRectangle openXmlElement, String? value)
+  private static void SetArcSize(DXVml.RoundRectangle openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.ArcSize = new StringValue { Value = value };
@@ -803,452 +803,452 @@ public static class RoundRectangleConverter
       openXmlElement.ArcSize = null;
   }
   
-  private static DocumentModel.Vml.Path? GetPath(DocumentFormat.OpenXml.Vml.RoundRectangle openXmlElement)
+  private static DMVml.Path? GetPath(DXVml.RoundRectangle openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Vml.Path>();
+    var itemElement = openXmlElement?.GetFirstChild<DXVml.Path>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Vml.PathConverter.CreateModelElement(itemElement);
+      return DMXVml.PathConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetPath(DocumentFormat.OpenXml.Vml.RoundRectangle openXmlElement, DocumentModel.Vml.Path? value)
+  private static void SetPath(DXVml.RoundRectangle openXmlElement, DMVml.Path? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Vml.Path>();
+    var itemElement = openXmlElement.GetFirstChild<DXVml.Path>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Vml.PathConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Vml.Path>(value);
+      itemElement = DMXVml.PathConverter.CreateOpenXmlElement<DXVml.Path>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static DocumentModel.Vml.Formulas? GetFormulas(DocumentFormat.OpenXml.Vml.RoundRectangle openXmlElement)
+  private static DMVml.Formulas? GetFormulas(DXVml.RoundRectangle openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Vml.Formulas>();
+    var itemElement = openXmlElement?.GetFirstChild<DXVml.Formulas>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Vml.FormulasConverter.CreateModelElement(itemElement);
+      return DMXVml.FormulasConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetFormulas(DocumentFormat.OpenXml.Vml.RoundRectangle openXmlElement, DocumentModel.Vml.Formulas? value)
+  private static void SetFormulas(DXVml.RoundRectangle openXmlElement, DMVml.Formulas? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Vml.Formulas>();
+    var itemElement = openXmlElement.GetFirstChild<DXVml.Formulas>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Vml.FormulasConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Vml.Formulas>(value);
+      itemElement = DMXVml.FormulasConverter.CreateOpenXmlElement<DXVml.Formulas>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static DocumentModel.Vml.ShapeHandles? GetShapeHandles(DocumentFormat.OpenXml.Vml.RoundRectangle openXmlElement)
+  private static DMVml.ShapeHandles? GetShapeHandles(DXVml.RoundRectangle openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Vml.ShapeHandles>();
+    var itemElement = openXmlElement?.GetFirstChild<DXVml.ShapeHandles>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Vml.ShapeHandlesConverter.CreateModelElement(itemElement);
+      return DMXVml.ShapeHandlesConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetShapeHandles(DocumentFormat.OpenXml.Vml.RoundRectangle openXmlElement, DocumentModel.Vml.ShapeHandles? value)
+  private static void SetShapeHandles(DXVml.RoundRectangle openXmlElement, DMVml.ShapeHandles? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Vml.ShapeHandles>();
+    var itemElement = openXmlElement.GetFirstChild<DXVml.ShapeHandles>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Vml.ShapeHandlesConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Vml.ShapeHandles>(value);
+      itemElement = DMXVml.ShapeHandlesConverter.CreateOpenXmlElement<DXVml.ShapeHandles>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static DocumentModel.Vml.Fill? GetFill(DocumentFormat.OpenXml.Vml.RoundRectangle openXmlElement)
+  private static DMVml.Fill? GetFill(DXVml.RoundRectangle openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Vml.Fill>();
+    var itemElement = openXmlElement?.GetFirstChild<DXVml.Fill>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Vml.FillConverter.CreateModelElement(itemElement);
+      return DMXVml.FillConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetFill(DocumentFormat.OpenXml.Vml.RoundRectangle openXmlElement, DocumentModel.Vml.Fill? value)
+  private static void SetFill(DXVml.RoundRectangle openXmlElement, DMVml.Fill? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Vml.Fill>();
+    var itemElement = openXmlElement.GetFirstChild<DXVml.Fill>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Vml.FillConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Vml.Fill>(value);
+      itemElement = DMXVml.FillConverter.CreateOpenXmlElement<DXVml.Fill>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static DocumentModel.Vml.Stroke? GetStroke(DocumentFormat.OpenXml.Vml.RoundRectangle openXmlElement)
+  private static DMVml.Stroke? GetStroke(DXVml.RoundRectangle openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Vml.Stroke>();
+    var itemElement = openXmlElement?.GetFirstChild<DXVml.Stroke>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Vml.StrokeConverter.CreateModelElement(itemElement);
+      return DMXVml.StrokeConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetStroke(DocumentFormat.OpenXml.Vml.RoundRectangle openXmlElement, DocumentModel.Vml.Stroke? value)
+  private static void SetStroke(DXVml.RoundRectangle openXmlElement, DMVml.Stroke? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Vml.Stroke>();
+    var itemElement = openXmlElement.GetFirstChild<DXVml.Stroke>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Vml.StrokeConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Vml.Stroke>(value);
+      itemElement = DMXVml.StrokeConverter.CreateOpenXmlElement<DXVml.Stroke>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static DocumentModel.Vml.Shadow? GetShadow(DocumentFormat.OpenXml.Vml.RoundRectangle openXmlElement)
+  private static DMVml.Shadow? GetShadow(DXVml.RoundRectangle openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Vml.Shadow>();
+    var itemElement = openXmlElement?.GetFirstChild<DXVml.Shadow>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Vml.ShadowConverter.CreateModelElement(itemElement);
+      return DMXVml.ShadowConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetShadow(DocumentFormat.OpenXml.Vml.RoundRectangle openXmlElement, DocumentModel.Vml.Shadow? value)
+  private static void SetShadow(DXVml.RoundRectangle openXmlElement, DMVml.Shadow? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Vml.Shadow>();
+    var itemElement = openXmlElement.GetFirstChild<DXVml.Shadow>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Vml.ShadowConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Vml.Shadow>(value);
+      itemElement = DMXVml.ShadowConverter.CreateOpenXmlElement<DXVml.Shadow>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static DocumentModel.Vml.TextBox? GetTextBox(DocumentFormat.OpenXml.Vml.RoundRectangle openXmlElement)
+  private static DMVml.TextBox? GetTextBox(DXVml.RoundRectangle openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Vml.TextBox>();
+    var itemElement = openXmlElement?.GetFirstChild<DXVml.TextBox>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Vml.TextBoxConverter.CreateModelElement(itemElement);
+      return DMXVml.TextBoxConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetTextBox(DocumentFormat.OpenXml.Vml.RoundRectangle openXmlElement, DocumentModel.Vml.TextBox? value)
+  private static void SetTextBox(DXVml.RoundRectangle openXmlElement, DMVml.TextBox? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Vml.TextBox>();
+    var itemElement = openXmlElement.GetFirstChild<DXVml.TextBox>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Vml.TextBoxConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Vml.TextBox>(value);
+      itemElement = DMXVml.TextBoxConverter.CreateOpenXmlElement<DXVml.TextBox>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static DocumentModel.Vml.TextPath? GetTextPath(DocumentFormat.OpenXml.Vml.RoundRectangle openXmlElement)
+  private static DMVml.TextPath? GetTextPath(DXVml.RoundRectangle openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Vml.TextPath>();
+    var itemElement = openXmlElement?.GetFirstChild<DXVml.TextPath>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Vml.TextPathConverter.CreateModelElement(itemElement);
+      return DMXVml.TextPathConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetTextPath(DocumentFormat.OpenXml.Vml.RoundRectangle openXmlElement, DocumentModel.Vml.TextPath? value)
+  private static void SetTextPath(DXVml.RoundRectangle openXmlElement, DMVml.TextPath? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Vml.TextPath>();
+    var itemElement = openXmlElement.GetFirstChild<DXVml.TextPath>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Vml.TextPathConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Vml.TextPath>(value);
+      itemElement = DMXVml.TextPathConverter.CreateOpenXmlElement<DXVml.TextPath>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static DocumentModel.Vml.ImageData? GetImageData(DocumentFormat.OpenXml.Vml.RoundRectangle openXmlElement)
+  private static DMVml.ImageData? GetImageData(DXVml.RoundRectangle openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Vml.ImageData>();
+    var itemElement = openXmlElement?.GetFirstChild<DXVml.ImageData>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Vml.ImageDataConverter.CreateModelElement(itemElement);
+      return DMXVml.ImageDataConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetImageData(DocumentFormat.OpenXml.Vml.RoundRectangle openXmlElement, DocumentModel.Vml.ImageData? value)
+  private static void SetImageData(DXVml.RoundRectangle openXmlElement, DMVml.ImageData? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Vml.ImageData>();
+    var itemElement = openXmlElement.GetFirstChild<DXVml.ImageData>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Vml.ImageDataConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Vml.ImageData>(value);
+      itemElement = DMXVml.ImageDataConverter.CreateOpenXmlElement<DXVml.ImageData>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static DocumentModel.Vml.Skew? GetSkew(DocumentFormat.OpenXml.Vml.RoundRectangle openXmlElement)
+  private static DMVml.Skew? GetSkew(DXVml.RoundRectangle openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Vml.Office.Skew>();
+    var itemElement = openXmlElement?.GetFirstChild<DXVmlO.Skew>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Vml.SkewConverter.CreateModelElement(itemElement);
+      return DMXVml.SkewConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetSkew(DocumentFormat.OpenXml.Vml.RoundRectangle openXmlElement, DocumentModel.Vml.Skew? value)
+  private static void SetSkew(DXVml.RoundRectangle openXmlElement, DMVml.Skew? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Vml.Office.Skew>();
+    var itemElement = openXmlElement.GetFirstChild<DXVmlO.Skew>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Vml.SkewConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Vml.Office.Skew>(value);
+      itemElement = DMXVml.SkewConverter.CreateOpenXmlElement<DXVmlO.Skew>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static DocumentModel.Vml.Extrusion? GetExtrusion(DocumentFormat.OpenXml.Vml.RoundRectangle openXmlElement)
+  private static DMVml.Extrusion? GetExtrusion(DXVml.RoundRectangle openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Vml.Office.Extrusion>();
+    var itemElement = openXmlElement?.GetFirstChild<DXVmlO.Extrusion>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Vml.ExtrusionConverter.CreateModelElement(itemElement);
+      return DMXVml.ExtrusionConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetExtrusion(DocumentFormat.OpenXml.Vml.RoundRectangle openXmlElement, DocumentModel.Vml.Extrusion? value)
+  private static void SetExtrusion(DXVml.RoundRectangle openXmlElement, DMVml.Extrusion? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Vml.Office.Extrusion>();
+    var itemElement = openXmlElement.GetFirstChild<DXVmlO.Extrusion>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Vml.ExtrusionConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Vml.Office.Extrusion>(value);
+      itemElement = DMXVml.ExtrusionConverter.CreateOpenXmlElement<DXVmlO.Extrusion>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static DocumentModel.Vml.Callout? GetCallout(DocumentFormat.OpenXml.Vml.RoundRectangle openXmlElement)
+  private static DMVml.Callout? GetCallout(DXVml.RoundRectangle openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Vml.Office.Callout>();
+    var itemElement = openXmlElement?.GetFirstChild<DXVmlO.Callout>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Vml.CalloutConverter.CreateModelElement(itemElement);
+      return DMXVml.CalloutConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetCallout(DocumentFormat.OpenXml.Vml.RoundRectangle openXmlElement, DocumentModel.Vml.Callout? value)
+  private static void SetCallout(DXVml.RoundRectangle openXmlElement, DMVml.Callout? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Vml.Office.Callout>();
+    var itemElement = openXmlElement.GetFirstChild<DXVmlO.Callout>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Vml.CalloutConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Vml.Office.Callout>(value);
+      itemElement = DMXVml.CalloutConverter.CreateOpenXmlElement<DXVmlO.Callout>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static DocumentModel.Vml.Lock? GetLock(DocumentFormat.OpenXml.Vml.RoundRectangle openXmlElement)
+  private static DMVml.Lock? GetLock(DXVml.RoundRectangle openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Vml.Office.Lock>();
+    var itemElement = openXmlElement?.GetFirstChild<DXVmlO.Lock>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Vml.LockConverter.CreateModelElement(itemElement);
+      return DMXVml.LockConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetLock(DocumentFormat.OpenXml.Vml.RoundRectangle openXmlElement, DocumentModel.Vml.Lock? value)
+  private static void SetLock(DXVml.RoundRectangle openXmlElement, DMVml.Lock? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Vml.Office.Lock>();
+    var itemElement = openXmlElement.GetFirstChild<DXVmlO.Lock>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Vml.LockConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Vml.Office.Lock>(value);
+      itemElement = DMXVml.LockConverter.CreateOpenXmlElement<DXVmlO.Lock>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static DocumentModel.Vml.ClipPath? GetClipPath(DocumentFormat.OpenXml.Vml.RoundRectangle openXmlElement)
+  private static DMVml.ClipPath? GetClipPath(DXVml.RoundRectangle openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Vml.Office.ClipPath>();
+    var itemElement = openXmlElement?.GetFirstChild<DXVmlO.ClipPath>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Vml.ClipPathConverter.CreateModelElement(itemElement);
+      return DMXVml.ClipPathConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetClipPath(DocumentFormat.OpenXml.Vml.RoundRectangle openXmlElement, DocumentModel.Vml.ClipPath? value)
+  private static void SetClipPath(DXVml.RoundRectangle openXmlElement, DMVml.ClipPath? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Vml.Office.ClipPath>();
+    var itemElement = openXmlElement.GetFirstChild<DXVmlO.ClipPath>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Vml.ClipPathConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Vml.Office.ClipPath>(value);
+      itemElement = DMXVml.ClipPathConverter.CreateOpenXmlElement<DXVmlO.ClipPath>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static DocumentModel.Vml.SignatureLine? GetSignatureLine(DocumentFormat.OpenXml.Vml.RoundRectangle openXmlElement)
+  private static DMVml.SignatureLine? GetSignatureLine(DXVml.RoundRectangle openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Vml.Office.SignatureLine>();
+    var itemElement = openXmlElement?.GetFirstChild<DXVmlO.SignatureLine>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Vml.SignatureLineConverter.CreateModelElement(itemElement);
+      return DMXVml.SignatureLineConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetSignatureLine(DocumentFormat.OpenXml.Vml.RoundRectangle openXmlElement, DocumentModel.Vml.SignatureLine? value)
+  private static void SetSignatureLine(DXVml.RoundRectangle openXmlElement, DMVml.SignatureLine? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Vml.Office.SignatureLine>();
+    var itemElement = openXmlElement.GetFirstChild<DXVmlO.SignatureLine>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Vml.SignatureLineConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Vml.Office.SignatureLine>(value);
+      itemElement = DMXVml.SignatureLineConverter.CreateOpenXmlElement<DXVmlO.SignatureLine>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static DocumentModel.Wordprocessing.Vml.TextWrap? GetTextWrap(DocumentFormat.OpenXml.Vml.RoundRectangle openXmlElement)
+  private static DMWVml.TextWrap? GetTextWrap(DXVml.RoundRectangle openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Vml.Wordprocessing.TextWrap>();
+    var itemElement = openXmlElement?.GetFirstChild<DXVmlW.TextWrap>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Wordprocessing.Vml.TextWrapConverter.CreateModelElement(itemElement);
+      return DMXWVml.TextWrapConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetTextWrap(DocumentFormat.OpenXml.Vml.RoundRectangle openXmlElement, DocumentModel.Wordprocessing.Vml.TextWrap? value)
+  private static void SetTextWrap(DXVml.RoundRectangle openXmlElement, DMWVml.TextWrap? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Vml.Wordprocessing.TextWrap>();
+    var itemElement = openXmlElement.GetFirstChild<DXVmlW.TextWrap>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Wordprocessing.Vml.TextWrapConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Vml.Wordprocessing.TextWrap>(value);
+      itemElement = DMXWVml.TextWrapConverter.CreateOpenXmlElement<DXVmlW.TextWrap>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static Boolean? GetAnchorLock(DocumentFormat.OpenXml.Vml.RoundRectangle openXmlElement)
+  private static Boolean? GetAnchorLock(DXVml.RoundRectangle openXmlElement)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Vml.Wordprocessing.AnchorLock>();
+    var itemElement = openXmlElement.GetFirstChild<DXVmlW.AnchorLock>();
     return itemElement != null;
   }
   
-  private static void SetAnchorLock(DocumentFormat.OpenXml.Vml.RoundRectangle openXmlElement, Boolean? value)
+  private static void SetAnchorLock(DXVml.RoundRectangle openXmlElement, Boolean? value)
   {
     if (value == false)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Vml.Wordprocessing.AnchorLock>();
+      var itemElement = openXmlElement.GetFirstChild<DXVmlW.AnchorLock>();
       if (itemElement != null)
         itemElement.Remove();
     }
     if (value == true)
     {
-      var itemElement = new DocumentFormat.OpenXml.Vml.Wordprocessing.AnchorLock();
+      var itemElement = new DXVmlW.AnchorLock();
       openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static DocumentModel.Wordprocessing.Vml.BorderType? GetTopBorder(DocumentFormat.OpenXml.Vml.RoundRectangle openXmlElement)
+  private static DMWVml.BorderType? GetTopBorder(DXVml.RoundRectangle openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Vml.Wordprocessing.TopBorder>();
+    var itemElement = openXmlElement?.GetFirstChild<DXVmlW.TopBorder>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Wordprocessing.Vml.BorderTypeConverter.CreateModelElement(itemElement);
+      return DMXWVml.BorderTypeConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetTopBorder(DocumentFormat.OpenXml.Vml.RoundRectangle openXmlElement, DocumentModel.Wordprocessing.Vml.BorderType? value)
+  private static void SetTopBorder(DXVml.RoundRectangle openXmlElement, DMWVml.BorderType? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Vml.Wordprocessing.TopBorder>();
+    var itemElement = openXmlElement.GetFirstChild<DXVmlW.TopBorder>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Wordprocessing.Vml.BorderTypeConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Vml.Wordprocessing.TopBorder>(value);
+      itemElement = DMXWVml.BorderTypeConverter.CreateOpenXmlElement<DXVmlW.TopBorder>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static DocumentModel.Wordprocessing.Vml.BorderType? GetBottomBorder(DocumentFormat.OpenXml.Vml.RoundRectangle openXmlElement)
+  private static DMWVml.BorderType? GetBottomBorder(DXVml.RoundRectangle openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Vml.Wordprocessing.BottomBorder>();
+    var itemElement = openXmlElement?.GetFirstChild<DXVmlW.BottomBorder>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Wordprocessing.Vml.BorderTypeConverter.CreateModelElement(itemElement);
+      return DMXWVml.BorderTypeConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetBottomBorder(DocumentFormat.OpenXml.Vml.RoundRectangle openXmlElement, DocumentModel.Wordprocessing.Vml.BorderType? value)
+  private static void SetBottomBorder(DXVml.RoundRectangle openXmlElement, DMWVml.BorderType? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Vml.Wordprocessing.BottomBorder>();
+    var itemElement = openXmlElement.GetFirstChild<DXVmlW.BottomBorder>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Wordprocessing.Vml.BorderTypeConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Vml.Wordprocessing.BottomBorder>(value);
+      itemElement = DMXWVml.BorderTypeConverter.CreateOpenXmlElement<DXVmlW.BottomBorder>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static DocumentModel.Wordprocessing.Vml.BorderType? GetLeftBorder(DocumentFormat.OpenXml.Vml.RoundRectangle openXmlElement)
+  private static DMWVml.BorderType? GetLeftBorder(DXVml.RoundRectangle openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Vml.Wordprocessing.LeftBorder>();
+    var itemElement = openXmlElement?.GetFirstChild<DXVmlW.LeftBorder>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Wordprocessing.Vml.BorderTypeConverter.CreateModelElement(itemElement);
+      return DMXWVml.BorderTypeConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetLeftBorder(DocumentFormat.OpenXml.Vml.RoundRectangle openXmlElement, DocumentModel.Wordprocessing.Vml.BorderType? value)
+  private static void SetLeftBorder(DXVml.RoundRectangle openXmlElement, DMWVml.BorderType? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Vml.Wordprocessing.LeftBorder>();
+    var itemElement = openXmlElement.GetFirstChild<DXVmlW.LeftBorder>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Wordprocessing.Vml.BorderTypeConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Vml.Wordprocessing.LeftBorder>(value);
+      itemElement = DMXWVml.BorderTypeConverter.CreateOpenXmlElement<DXVmlW.LeftBorder>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static DocumentModel.Wordprocessing.Vml.BorderType? GetRightBorder(DocumentFormat.OpenXml.Vml.RoundRectangle openXmlElement)
+  private static DMWVml.BorderType? GetRightBorder(DXVml.RoundRectangle openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Vml.Wordprocessing.RightBorder>();
+    var itemElement = openXmlElement?.GetFirstChild<DXVmlW.RightBorder>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Wordprocessing.Vml.BorderTypeConverter.CreateModelElement(itemElement);
+      return DMXWVml.BorderTypeConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetRightBorder(DocumentFormat.OpenXml.Vml.RoundRectangle openXmlElement, DocumentModel.Wordprocessing.Vml.BorderType? value)
+  private static void SetRightBorder(DXVml.RoundRectangle openXmlElement, DMWVml.BorderType? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Vml.Wordprocessing.RightBorder>();
+    var itemElement = openXmlElement.GetFirstChild<DXVmlW.RightBorder>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Wordprocessing.Vml.BorderTypeConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Vml.Wordprocessing.RightBorder>(value);
+      itemElement = DMXWVml.BorderTypeConverter.CreateOpenXmlElement<DXVmlW.RightBorder>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  public static DocumentModel.Vml.RoundRectangle? CreateModelElement(DocumentFormat.OpenXml.Vml.RoundRectangle? openXmlElement)
+  public static DMVml.RoundRectangle? CreateModelElement(DXVml.RoundRectangle? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Vml.RoundRectangle();
+      var value = new DMVml.RoundRectangle();
       value.Id = GetId(openXmlElement);
       value.Style = GetStyle(openXmlElement);
       value.Href = GetHref(openXmlElement);
@@ -1327,8 +1327,8 @@ public static class RoundRectangleConverter
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Vml.RoundRectangle? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Vml.RoundRectangle, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMVml.RoundRectangle? value)
+    where OpenXmlElementType: DXVml.RoundRectangle, new()
   {
     if (value != null)
     {

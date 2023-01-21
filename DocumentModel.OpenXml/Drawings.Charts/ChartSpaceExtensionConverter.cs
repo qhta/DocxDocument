@@ -8,12 +8,12 @@ public static class ChartSpaceExtensionConverter
   /// <summary>
   /// URI
   /// </summary>
-  private static String? GetUri(DocumentFormat.OpenXml.Drawing.Charts.ChartSpaceExtension openXmlElement)
+  private static String? GetUri(DXDrawCharts.ChartSpaceExtension openXmlElement)
   {
     return openXmlElement?.Uri?.Value;
   }
   
-  private static void SetUri(DocumentFormat.OpenXml.Drawing.Charts.ChartSpaceExtension openXmlElement, String? value)
+  private static void SetUri(DXDrawCharts.ChartSpaceExtension openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.Uri = new StringValue { Value = value };
@@ -21,74 +21,74 @@ public static class ChartSpaceExtensionConverter
       openXmlElement.Uri = null;
   }
   
-  private static DocumentModel.Drawings.Charts.PivotOptions? GetPivotOptions(DocumentFormat.OpenXml.Drawing.Charts.ChartSpaceExtension openXmlElement)
+  private static DMDrawsCharts.PivotOptions? GetPivotOptions(DXDrawCharts.ChartSpaceExtension openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office2010.Drawing.Charts.PivotOptions>();
+    var itemElement = openXmlElement?.GetFirstChild<DXO2010DrawCharts.PivotOptions>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.Charts.PivotOptionsConverter.CreateModelElement(itemElement);
+      return DMXDrawsCharts.PivotOptionsConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetPivotOptions(DocumentFormat.OpenXml.Drawing.Charts.ChartSpaceExtension openXmlElement, DocumentModel.Drawings.Charts.PivotOptions? value)
+  private static void SetPivotOptions(DXDrawCharts.ChartSpaceExtension openXmlElement, DMDrawsCharts.PivotOptions? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2010.Drawing.Charts.PivotOptions>();
+    var itemElement = openXmlElement.GetFirstChild<DXO2010DrawCharts.PivotOptions>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Drawings.Charts.PivotOptionsConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2010.Drawing.Charts.PivotOptions>(value);
+      itemElement = DMXDrawsCharts.PivotOptionsConverter.CreateOpenXmlElement<DXO2010DrawCharts.PivotOptions>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static DocumentModel.Drawings.Charts.SketchOptions? GetSketchOptions(DocumentFormat.OpenXml.Drawing.Charts.ChartSpaceExtension openXmlElement)
+  private static DMDrawsCharts.SketchOptions? GetSketchOptions(DXDrawCharts.ChartSpaceExtension openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office2010.Drawing.Charts.SketchOptions>();
+    var itemElement = openXmlElement?.GetFirstChild<DXO2010DrawCharts.SketchOptions>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.Charts.SketchOptionsConverter.CreateModelElement(itemElement);
+      return DMXDrawsCharts.SketchOptionsConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetSketchOptions(DocumentFormat.OpenXml.Drawing.Charts.ChartSpaceExtension openXmlElement, DocumentModel.Drawings.Charts.SketchOptions? value)
+  private static void SetSketchOptions(DXDrawCharts.ChartSpaceExtension openXmlElement, DMDrawsCharts.SketchOptions? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2010.Drawing.Charts.SketchOptions>();
+    var itemElement = openXmlElement.GetFirstChild<DXO2010DrawCharts.SketchOptions>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Drawings.Charts.SketchOptionsConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2010.Drawing.Charts.SketchOptions>(value);
+      itemElement = DMXDrawsCharts.SketchOptionsConverter.CreateOpenXmlElement<DXO2010DrawCharts.SketchOptions>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static DocumentModel.Drawings.Charts.PivotSource3? GetPivotSource(DocumentFormat.OpenXml.Drawing.Charts.ChartSpaceExtension openXmlElement)
+  private static DMDrawsCharts.PivotSource3? GetPivotSource(DXDrawCharts.ChartSpaceExtension openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office2013.Drawing.Chart.PivotSource>();
+    var itemElement = openXmlElement?.GetFirstChild<DXO2013DrawChart.PivotSource>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.Charts.PivotSource3Converter.CreateModelElement(itemElement);
+      return DMXDrawsCharts.PivotSource3Converter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetPivotSource(DocumentFormat.OpenXml.Drawing.Charts.ChartSpaceExtension openXmlElement, DocumentModel.Drawings.Charts.PivotSource3? value)
+  private static void SetPivotSource(DXDrawCharts.ChartSpaceExtension openXmlElement, DMDrawsCharts.PivotSource3? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2013.Drawing.Chart.PivotSource>();
+    var itemElement = openXmlElement.GetFirstChild<DXO2013DrawChart.PivotSource>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Drawings.Charts.PivotSource3Converter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2013.Drawing.Chart.PivotSource>(value);
+      itemElement = DMXDrawsCharts.PivotSource3Converter.CreateOpenXmlElement<DXO2013DrawChart.PivotSource>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  public static DocumentModel.Drawings.Charts.ChartSpaceExtension? CreateModelElement(DocumentFormat.OpenXml.Drawing.Charts.ChartSpaceExtension? openXmlElement)
+  public static DMDrawsCharts.ChartSpaceExtension? CreateModelElement(DXDrawCharts.ChartSpaceExtension? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.Charts.ChartSpaceExtension();
+      var value = new DMDrawsCharts.ChartSpaceExtension();
       value.Uri = GetUri(openXmlElement);
       value.PivotOptions = GetPivotOptions(openXmlElement);
       value.SketchOptions = GetSketchOptions(openXmlElement);
@@ -98,8 +98,8 @@ public static class ChartSpaceExtensionConverter
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.Charts.ChartSpaceExtension? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.Charts.ChartSpaceExtension, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDrawsCharts.ChartSpaceExtension? value)
+    where OpenXmlElementType: DXDrawCharts.ChartSpaceExtension, new()
   {
     if (value != null)
     {

@@ -8,12 +8,12 @@ public static class PointConverter
   /// <summary>
   /// Model Identifier
   /// </summary>
-  private static String? GetModelId(DocumentFormat.OpenXml.Drawing.Diagrams.Point openXmlElement)
+  private static String? GetModelId(DXDrawDgms.Point openXmlElement)
   {
     return openXmlElement?.ModelId?.Value;
   }
   
-  private static void SetModelId(DocumentFormat.OpenXml.Drawing.Diagrams.Point openXmlElement, String? value)
+  private static void SetModelId(DXDrawDgms.Point openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.ModelId = new StringValue { Value = value };
@@ -24,25 +24,25 @@ public static class PointConverter
   /// <summary>
   /// Point Type
   /// </summary>
-  private static DocumentModel.Drawings.Diagrams.PointKind? GetType(DocumentFormat.OpenXml.Drawing.Diagrams.Point openXmlElement)
+  private static DMDrawsDgms.PointKind? GetType(DXDrawDgms.Point openXmlElement)
   {
-    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Drawing.Diagrams.PointValues, DocumentModel.Drawings.Diagrams.PointKind>(openXmlElement?.Type?.Value);
+    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Drawing.Diagrams.PointValues, DMDrawsDgms.PointKind>(openXmlElement?.Type?.Value);
   }
   
-  private static void SetType(DocumentFormat.OpenXml.Drawing.Diagrams.Point openXmlElement, DocumentModel.Drawings.Diagrams.PointKind? value)
+  private static void SetType(DXDrawDgms.Point openXmlElement, DMDrawsDgms.PointKind? value)
   {
-    openXmlElement.Type = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Drawing.Diagrams.PointValues, DocumentModel.Drawings.Diagrams.PointKind>(value);
+    openXmlElement.Type = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Drawing.Diagrams.PointValues, DMDrawsDgms.PointKind>(value);
   }
   
   /// <summary>
   /// Connection Identifier
   /// </summary>
-  private static String? GetConnectionId(DocumentFormat.OpenXml.Drawing.Diagrams.Point openXmlElement)
+  private static String? GetConnectionId(DXDrawDgms.Point openXmlElement)
   {
     return openXmlElement?.ConnectionId?.Value;
   }
   
-  private static void SetConnectionId(DocumentFormat.OpenXml.Drawing.Diagrams.Point openXmlElement, String? value)
+  private static void SetConnectionId(DXDrawDgms.Point openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.ConnectionId = new StringValue { Value = value };
@@ -53,22 +53,22 @@ public static class PointConverter
   /// <summary>
   /// Property Set.
   /// </summary>
-  private static DocumentModel.Drawings.Diagrams.PropertySet? GetPropertySet(DocumentFormat.OpenXml.Drawing.Diagrams.Point openXmlElement)
+  private static DMDrawsDgms.PropertySet? GetPropertySet(DXDrawDgms.Point openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.Diagrams.PropertySet>();
+    var itemElement = openXmlElement?.GetFirstChild<DXDrawDgms.PropertySet>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.Diagrams.PropertySetConverter.CreateModelElement(itemElement);
+      return DMXDrawsDgms.PropertySetConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetPropertySet(DocumentFormat.OpenXml.Drawing.Diagrams.Point openXmlElement, DocumentModel.Drawings.Diagrams.PropertySet? value)
+  private static void SetPropertySet(DXDrawDgms.Point openXmlElement, DMDrawsDgms.PropertySet? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Diagrams.PropertySet>();
+    var itemElement = openXmlElement.GetFirstChild<DXDrawDgms.PropertySet>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Drawings.Diagrams.PropertySetConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Diagrams.PropertySet>(value);
+      itemElement = DMXDrawsDgms.PropertySetConverter.CreateOpenXmlElement<DXDrawDgms.PropertySet>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
@@ -77,22 +77,22 @@ public static class PointConverter
   /// <summary>
   /// Shape Properties.
   /// </summary>
-  private static DocumentModel.Drawings.Diagrams.ShapeProperties? GetShapeProperties(DocumentFormat.OpenXml.Drawing.Diagrams.Point openXmlElement)
+  private static DMDrawsDgms.ShapeProperties? GetShapeProperties(DXDrawDgms.Point openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.Diagrams.ShapeProperties>();
+    var itemElement = openXmlElement?.GetFirstChild<DXDrawDgms.ShapeProperties>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.Diagrams.ShapePropertiesConverter.CreateModelElement(itemElement);
+      return DMXDrawsDgms.ShapePropertiesConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetShapeProperties(DocumentFormat.OpenXml.Drawing.Diagrams.Point openXmlElement, DocumentModel.Drawings.Diagrams.ShapeProperties? value)
+  private static void SetShapeProperties(DXDrawDgms.Point openXmlElement, DMDrawsDgms.ShapeProperties? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Diagrams.ShapeProperties>();
+    var itemElement = openXmlElement.GetFirstChild<DXDrawDgms.ShapeProperties>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Drawings.Diagrams.ShapePropertiesConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Diagrams.ShapeProperties>(value);
+      itemElement = DMXDrawsDgms.ShapePropertiesConverter.CreateOpenXmlElement<DXDrawDgms.ShapeProperties>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
@@ -101,22 +101,22 @@ public static class PointConverter
   /// <summary>
   /// Text Body.
   /// </summary>
-  private static DocumentModel.Drawings.Diagrams.TextBody? GetTextBody(DocumentFormat.OpenXml.Drawing.Diagrams.Point openXmlElement)
+  private static DMDrawsDgms.TextBody? GetTextBody(DXDrawDgms.Point openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.Diagrams.TextBody>();
+    var itemElement = openXmlElement?.GetFirstChild<DXDrawDgms.TextBody>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.Diagrams.TextBodyConverter.CreateModelElement(itemElement);
+      return DMXDrawsDgms.TextBodyConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetTextBody(DocumentFormat.OpenXml.Drawing.Diagrams.Point openXmlElement, DocumentModel.Drawings.Diagrams.TextBody? value)
+  private static void SetTextBody(DXDrawDgms.Point openXmlElement, DMDrawsDgms.TextBody? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Diagrams.TextBody>();
+    var itemElement = openXmlElement.GetFirstChild<DXDrawDgms.TextBody>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Drawings.Diagrams.TextBodyConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Diagrams.TextBody>(value);
+      itemElement = DMXDrawsDgms.TextBodyConverter.CreateOpenXmlElement<DXDrawDgms.TextBody>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
@@ -125,32 +125,32 @@ public static class PointConverter
   /// <summary>
   /// PtExtensionList.
   /// </summary>
-  private static DocumentModel.Drawings.Diagrams.PtExtensionList? GetPtExtensionList(DocumentFormat.OpenXml.Drawing.Diagrams.Point openXmlElement)
+  private static DMDrawsDgms.PtExtensionList? GetPtExtensionList(DXDrawDgms.Point openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.Diagrams.PtExtensionList>();
+    var itemElement = openXmlElement?.GetFirstChild<DXDrawDgms.PtExtensionList>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.Diagrams.PtExtensionListConverter.CreateModelElement(itemElement);
+      return DMXDrawsDgms.PtExtensionListConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetPtExtensionList(DocumentFormat.OpenXml.Drawing.Diagrams.Point openXmlElement, DocumentModel.Drawings.Diagrams.PtExtensionList? value)
+  private static void SetPtExtensionList(DXDrawDgms.Point openXmlElement, DMDrawsDgms.PtExtensionList? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Diagrams.PtExtensionList>();
+    var itemElement = openXmlElement.GetFirstChild<DXDrawDgms.PtExtensionList>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Drawings.Diagrams.PtExtensionListConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Diagrams.PtExtensionList>(value);
+      itemElement = DMXDrawsDgms.PtExtensionListConverter.CreateOpenXmlElement<DXDrawDgms.PtExtensionList>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  public static DocumentModel.Drawings.Diagrams.Point? CreateModelElement(DocumentFormat.OpenXml.Drawing.Diagrams.Point? openXmlElement)
+  public static DMDrawsDgms.Point? CreateModelElement(DXDrawDgms.Point? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.Diagrams.Point();
+      var value = new DMDrawsDgms.Point();
       value.ModelId = GetModelId(openXmlElement);
       value.Type = GetType(openXmlElement);
       value.ConnectionId = GetConnectionId(openXmlElement);
@@ -163,8 +163,8 @@ public static class PointConverter
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.Diagrams.Point? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.Diagrams.Point, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDrawsDgms.Point? value)
+    where OpenXmlElementType: DXDrawDgms.Point, new()
   {
     if (value != null)
     {

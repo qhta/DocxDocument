@@ -5,45 +5,45 @@ namespace DocumentModel.OpenXml.Wordprocessing;
 /// </summary>
 public static class PeopleConverter
 {
-  private static System.Collections.ObjectModel.Collection<DocumentModel.Wordprocessing.Person> GetPersons(DocumentFormat.OpenXml.Office2013.Word.People openXmlElement)
+  private static Collection<DMW.Person> GetPersons(DXO2013W.People openXmlElement)
   {
-    var collection = new System.Collections.ObjectModel.Collection<DocumentModel.Wordprocessing.Person>();
-    foreach (var item in openXmlElement.Elements<DocumentFormat.OpenXml.Office2013.Word.Person>())
+    var collection = new Collection<DMW.Person>();
+    foreach (var item in openXmlElement.Elements<DXO2013W.Person>())
     {
-      var newItem = DocumentModel.OpenXml.Wordprocessing.PersonConverter.CreateModelElement(item);
+      var newItem = DMXW.PersonConverter.CreateModelElement(item);
       if (newItem != null)
         collection.Add(newItem);
     }
     return collection;
   }
   
-  private static void SetPersons(DocumentFormat.OpenXml.Office2013.Word.People openXmlElement, System.Collections.ObjectModel.Collection<DocumentModel.Wordprocessing.Person>? value)
+  private static void SetPersons(DXO2013W.People openXmlElement, Collection<DMW.Person>? value)
   {
-    openXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Office2013.Word.Person>();
+    openXmlElement.RemoveAllChildren<DXO2013W.Person>();
     if (value != null)
     {
       foreach (var item in value)
       {
-        var newItem = DocumentModel.OpenXml.Wordprocessing.PersonConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2013.Word.Person>(item);
+        var newItem = DMXW.PersonConverter.CreateOpenXmlElement<DXO2013W.Person>(item);
         if (newItem != null)
           openXmlElement.AddChild(newItem);
       }
     }
   }
   
-  public static DocumentModel.Wordprocessing.People? CreateModelElement(DocumentFormat.OpenXml.Office2013.Word.People? openXmlElement)
+  public static DMW.People? CreateModelElement(DXO2013W.People? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Wordprocessing.People();
+      var value = new DMW.People();
       value.Persons = GetPersons(openXmlElement);
       return value;
     }
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.People? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Office2013.Word.People, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMW.People? value)
+    where OpenXmlElementType: DXO2013W.People, new()
   {
     if (value != null)
     {

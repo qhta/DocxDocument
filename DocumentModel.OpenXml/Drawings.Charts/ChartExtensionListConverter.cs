@@ -5,45 +5,45 @@ namespace DocumentModel.OpenXml.Drawings.Charts;
 /// </summary>
 public static class ChartExtensionListConverter
 {
-  private static System.Collections.ObjectModel.Collection<DocumentModel.Drawings.Charts.DataDisplayOptions16> GetDataDisplayOptions16s(DocumentFormat.OpenXml.Drawing.Charts.ChartExtensionList openXmlElement)
+  private static Collection<DMDrawsCharts.DataDisplayOptions16> GetDataDisplayOptions16s(DXDrawCharts.ChartExtensionList openXmlElement)
   {
-    var collection = new System.Collections.ObjectModel.Collection<DocumentModel.Drawings.Charts.DataDisplayOptions16>();
-    foreach (var item in openXmlElement.Elements<DocumentFormat.OpenXml.Drawing.Charts.DataDisplayOptions16>())
+    var collection = new Collection<DMDrawsCharts.DataDisplayOptions16>();
+    foreach (var item in openXmlElement.Elements<DXDrawCharts.DataDisplayOptions16>())
     {
-      var newItem = DocumentModel.OpenXml.Drawings.Charts.DataDisplayOptions16Converter.CreateModelElement(item);
+      var newItem = DMXDrawsCharts.DataDisplayOptions16Converter.CreateModelElement(item);
       if (newItem != null)
         collection.Add(newItem);
     }
     return collection;
   }
   
-  private static void SetDataDisplayOptions16s(DocumentFormat.OpenXml.Drawing.Charts.ChartExtensionList openXmlElement, System.Collections.ObjectModel.Collection<DocumentModel.Drawings.Charts.DataDisplayOptions16>? value)
+  private static void SetDataDisplayOptions16s(DXDrawCharts.ChartExtensionList openXmlElement, Collection<DMDrawsCharts.DataDisplayOptions16>? value)
   {
-    openXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Drawing.Charts.DataDisplayOptions16>();
+    openXmlElement.RemoveAllChildren<DXDrawCharts.DataDisplayOptions16>();
     if (value != null)
     {
       foreach (var item in value)
       {
-        var newItem = DocumentModel.OpenXml.Drawings.Charts.DataDisplayOptions16Converter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Charts.DataDisplayOptions16>(item);
+        var newItem = DMXDrawsCharts.DataDisplayOptions16Converter.CreateOpenXmlElement<DXDrawCharts.DataDisplayOptions16>(item);
         if (newItem != null)
           openXmlElement.AddChild(newItem);
       }
     }
   }
   
-  public static DocumentModel.Drawings.Charts.ChartExtensionList? CreateModelElement(DocumentFormat.OpenXml.Drawing.Charts.ChartExtensionList? openXmlElement)
+  public static DMDrawsCharts.ChartExtensionList? CreateModelElement(DXDrawCharts.ChartExtensionList? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.Charts.ChartExtensionList();
+      var value = new DMDrawsCharts.ChartExtensionList();
       value.DataDisplayOptions16s = GetDataDisplayOptions16s(openXmlElement);
       return value;
     }
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.Charts.ChartExtensionList? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.Charts.ChartExtensionList, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDrawsCharts.ChartExtensionList? value)
+    where OpenXmlElementType: DXDrawCharts.ChartExtensionList, new()
   {
     if (value != null)
     {

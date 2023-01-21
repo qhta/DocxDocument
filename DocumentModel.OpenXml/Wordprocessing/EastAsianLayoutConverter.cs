@@ -8,12 +8,12 @@ public static class EastAsianLayoutConverter
   /// <summary>
   /// East Asian Typography Run ID
   /// </summary>
-  private static Int32? GetId(DocumentFormat.OpenXml.Wordprocessing.EastAsianLayout openXmlElement)
+  private static Int32? GetId(DXW.EastAsianLayout openXmlElement)
   {
     return openXmlElement.Id?.Value;
   }
   
-  private static void SetId(DocumentFormat.OpenXml.Wordprocessing.EastAsianLayout openXmlElement, Int32? value)
+  private static void SetId(DXW.EastAsianLayout openXmlElement, Int32? value)
   {
     openXmlElement.Id = value;
   }
@@ -21,12 +21,12 @@ public static class EastAsianLayoutConverter
   /// <summary>
   /// Two Lines in One
   /// </summary>
-  private static Boolean? GetCombine(DocumentFormat.OpenXml.Wordprocessing.EastAsianLayout openXmlElement)
+  private static Boolean? GetCombine(DXW.EastAsianLayout openXmlElement)
   {
     return openXmlElement?.Combine?.Value;
   }
   
-  private static void SetCombine(DocumentFormat.OpenXml.Wordprocessing.EastAsianLayout openXmlElement, Boolean? value)
+  private static void SetCombine(DXW.EastAsianLayout openXmlElement, Boolean? value)
   {
     if (value != null)
       openXmlElement.Combine = new OnOffValue { Value = (Boolean)value };
@@ -37,25 +37,25 @@ public static class EastAsianLayoutConverter
   /// <summary>
   /// Display Brackets Around Two Lines in One
   /// </summary>
-  private static DocumentModel.Wordprocessing.CombineBracketKind? GetCombineBrackets(DocumentFormat.OpenXml.Wordprocessing.EastAsianLayout openXmlElement)
+  private static DMW.CombineBracketKind? GetCombineBrackets(DXW.EastAsianLayout openXmlElement)
   {
-    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Wordprocessing.CombineBracketValues, DocumentModel.Wordprocessing.CombineBracketKind>(openXmlElement?.CombineBrackets?.Value);
+    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Wordprocessing.CombineBracketValues, DMW.CombineBracketKind>(openXmlElement?.CombineBrackets?.Value);
   }
   
-  private static void SetCombineBrackets(DocumentFormat.OpenXml.Wordprocessing.EastAsianLayout openXmlElement, DocumentModel.Wordprocessing.CombineBracketKind? value)
+  private static void SetCombineBrackets(DXW.EastAsianLayout openXmlElement, DMW.CombineBracketKind? value)
   {
-    openXmlElement.CombineBrackets = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Wordprocessing.CombineBracketValues, DocumentModel.Wordprocessing.CombineBracketKind>(value);
+    openXmlElement.CombineBrackets = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Wordprocessing.CombineBracketValues, DMW.CombineBracketKind>(value);
   }
   
   /// <summary>
   /// Horizontal in Vertical (Rotate Text)
   /// </summary>
-  private static Boolean? GetVertical(DocumentFormat.OpenXml.Wordprocessing.EastAsianLayout openXmlElement)
+  private static Boolean? GetVertical(DXW.EastAsianLayout openXmlElement)
   {
     return openXmlElement?.Vertical?.Value;
   }
   
-  private static void SetVertical(DocumentFormat.OpenXml.Wordprocessing.EastAsianLayout openXmlElement, Boolean? value)
+  private static void SetVertical(DXW.EastAsianLayout openXmlElement, Boolean? value)
   {
     if (value != null)
       openXmlElement.Vertical = new OnOffValue { Value = (Boolean)value };
@@ -66,12 +66,12 @@ public static class EastAsianLayoutConverter
   /// <summary>
   /// Compress Rotated Text to Line Height
   /// </summary>
-  private static Boolean? GetVerticalCompress(DocumentFormat.OpenXml.Wordprocessing.EastAsianLayout openXmlElement)
+  private static Boolean? GetVerticalCompress(DXW.EastAsianLayout openXmlElement)
   {
     return openXmlElement?.VerticalCompress?.Value;
   }
   
-  private static void SetVerticalCompress(DocumentFormat.OpenXml.Wordprocessing.EastAsianLayout openXmlElement, Boolean? value)
+  private static void SetVerticalCompress(DXW.EastAsianLayout openXmlElement, Boolean? value)
   {
     if (value != null)
       openXmlElement.VerticalCompress = new OnOffValue { Value = (Boolean)value };
@@ -79,11 +79,11 @@ public static class EastAsianLayoutConverter
       openXmlElement.VerticalCompress = null;
   }
   
-  public static DocumentModel.Wordprocessing.EastAsianLayout? CreateModelElement(DocumentFormat.OpenXml.Wordprocessing.EastAsianLayout? openXmlElement)
+  public static DMW.EastAsianLayout? CreateModelElement(DXW.EastAsianLayout? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Wordprocessing.EastAsianLayout();
+      var value = new DMW.EastAsianLayout();
       value.Id = GetId(openXmlElement);
       value.Combine = GetCombine(openXmlElement);
       value.CombineBrackets = GetCombineBrackets(openXmlElement);
@@ -94,8 +94,8 @@ public static class EastAsianLayoutConverter
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.EastAsianLayout? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Wordprocessing.EastAsianLayout, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMW.EastAsianLayout? value)
+    where OpenXmlElementType: DXW.EastAsianLayout, new()
   {
     if (value != null)
     {

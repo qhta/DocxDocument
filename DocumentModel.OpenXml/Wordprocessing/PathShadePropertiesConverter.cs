@@ -8,45 +8,45 @@ public static class PathShadePropertiesConverter
   /// <summary>
   /// path, this property is only available in Office 2010 and later.
   /// </summary>
-  private static DocumentModel.Wordprocessing.PathShadeKind? GetPath(DocumentFormat.OpenXml.Office2010.Word.PathShadeProperties openXmlElement)
+  private static DMW.PathShadeKind? GetPath(DXO2010W.PathShadeProperties openXmlElement)
   {
-    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Office2010.Word.PathShadeTypeValues, DocumentModel.Wordprocessing.PathShadeKind>(openXmlElement?.Path?.Value);
+    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Office2010.Word.PathShadeTypeValues, DMW.PathShadeKind>(openXmlElement?.Path?.Value);
   }
   
-  private static void SetPath(DocumentFormat.OpenXml.Office2010.Word.PathShadeProperties openXmlElement, DocumentModel.Wordprocessing.PathShadeKind? value)
+  private static void SetPath(DXO2010W.PathShadeProperties openXmlElement, DMW.PathShadeKind? value)
   {
-    openXmlElement.Path = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Office2010.Word.PathShadeTypeValues, DocumentModel.Wordprocessing.PathShadeKind>(value);
+    openXmlElement.Path = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Office2010.Word.PathShadeTypeValues, DMW.PathShadeKind>(value);
   }
   
   /// <summary>
   /// FillToRectangle.
   /// </summary>
-  private static DocumentModel.Wordprocessing.FillToRectangle? GetFillToRectangle(DocumentFormat.OpenXml.Office2010.Word.PathShadeProperties openXmlElement)
+  private static DMW.FillToRectangle? GetFillToRectangle(DXO2010W.PathShadeProperties openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office2010.Word.FillToRectangle>();
+    var itemElement = openXmlElement?.GetFirstChild<DXO2010W.FillToRectangle>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Wordprocessing.FillToRectangleConverter.CreateModelElement(itemElement);
+      return DMXW.FillToRectangleConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetFillToRectangle(DocumentFormat.OpenXml.Office2010.Word.PathShadeProperties openXmlElement, DocumentModel.Wordprocessing.FillToRectangle? value)
+  private static void SetFillToRectangle(DXO2010W.PathShadeProperties openXmlElement, DMW.FillToRectangle? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2010.Word.FillToRectangle>();
+    var itemElement = openXmlElement.GetFirstChild<DXO2010W.FillToRectangle>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Wordprocessing.FillToRectangleConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2010.Word.FillToRectangle>(value);
+      itemElement = DMXW.FillToRectangleConverter.CreateOpenXmlElement<DXO2010W.FillToRectangle>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  public static DocumentModel.Wordprocessing.PathShadeProperties? CreateModelElement(DocumentFormat.OpenXml.Office2010.Word.PathShadeProperties? openXmlElement)
+  public static DMW.PathShadeProperties? CreateModelElement(DXO2010W.PathShadeProperties? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Wordprocessing.PathShadeProperties();
+      var value = new DMW.PathShadeProperties();
       value.Path = GetPath(openXmlElement);
       value.FillToRectangle = GetFillToRectangle(openXmlElement);
       return value;
@@ -54,8 +54,8 @@ public static class PathShadePropertiesConverter
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.PathShadeProperties? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Office2010.Word.PathShadeProperties, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMW.PathShadeProperties? value)
+    where OpenXmlElementType: DXO2010W.PathShadeProperties, new()
   {
     if (value != null)
     {

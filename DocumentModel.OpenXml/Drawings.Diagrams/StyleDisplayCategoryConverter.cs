@@ -8,12 +8,12 @@ public static class StyleDisplayCategoryConverter
   /// <summary>
   /// Category Type
   /// </summary>
-  private static String? GetType(DocumentFormat.OpenXml.Drawing.Diagrams.StyleDisplayCategory openXmlElement)
+  private static String? GetType(DXDrawDgms.StyleDisplayCategory openXmlElement)
   {
     return openXmlElement?.Type?.Value;
   }
   
-  private static void SetType(DocumentFormat.OpenXml.Drawing.Diagrams.StyleDisplayCategory openXmlElement, String? value)
+  private static void SetType(DXDrawDgms.StyleDisplayCategory openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.Type = new StringValue { Value = value };
@@ -24,21 +24,21 @@ public static class StyleDisplayCategoryConverter
   /// <summary>
   /// Priority
   /// </summary>
-  private static UInt32? GetPriority(DocumentFormat.OpenXml.Drawing.Diagrams.StyleDisplayCategory openXmlElement)
+  private static UInt32? GetPriority(DXDrawDgms.StyleDisplayCategory openXmlElement)
   {
     return openXmlElement.Priority?.Value;
   }
   
-  private static void SetPriority(DocumentFormat.OpenXml.Drawing.Diagrams.StyleDisplayCategory openXmlElement, UInt32? value)
+  private static void SetPriority(DXDrawDgms.StyleDisplayCategory openXmlElement, UInt32? value)
   {
     openXmlElement.Priority = value;
   }
   
-  public static DocumentModel.Drawings.Diagrams.StyleDisplayCategory? CreateModelElement(DocumentFormat.OpenXml.Drawing.Diagrams.StyleDisplayCategory? openXmlElement)
+  public static DMDrawsDgms.StyleDisplayCategory? CreateModelElement(DXDrawDgms.StyleDisplayCategory? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.Diagrams.StyleDisplayCategory();
+      var value = new DMDrawsDgms.StyleDisplayCategory();
       value.Type = GetType(openXmlElement);
       value.Priority = GetPriority(openXmlElement);
       return value;
@@ -46,8 +46,8 @@ public static class StyleDisplayCategoryConverter
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.Diagrams.StyleDisplayCategory? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.Diagrams.StyleDisplayCategory, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDrawsDgms.StyleDisplayCategory? value)
+    where OpenXmlElementType: DXDrawDgms.StyleDisplayCategory, new()
   {
     if (value != null)
     {

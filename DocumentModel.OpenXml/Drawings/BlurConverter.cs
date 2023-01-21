@@ -8,12 +8,12 @@ public static class BlurConverter
   /// <summary>
   /// Radius
   /// </summary>
-  private static Int64? GetRadius(DocumentFormat.OpenXml.Drawing.Blur openXmlElement)
+  private static Int64? GetRadius(DXDraw.Blur openXmlElement)
   {
     return openXmlElement.Radius?.Value;
   }
   
-  private static void SetRadius(DocumentFormat.OpenXml.Drawing.Blur openXmlElement, Int64? value)
+  private static void SetRadius(DXDraw.Blur openXmlElement, Int64? value)
   {
     openXmlElement.Radius = value;
   }
@@ -21,12 +21,12 @@ public static class BlurConverter
   /// <summary>
   /// Grow Bounds
   /// </summary>
-  private static Boolean? GetGrow(DocumentFormat.OpenXml.Drawing.Blur openXmlElement)
+  private static Boolean? GetGrow(DXDraw.Blur openXmlElement)
   {
     return openXmlElement?.Grow?.Value;
   }
   
-  private static void SetGrow(DocumentFormat.OpenXml.Drawing.Blur openXmlElement, Boolean? value)
+  private static void SetGrow(DXDraw.Blur openXmlElement, Boolean? value)
   {
     if (value != null)
       openXmlElement.Grow = new BooleanValue { Value = (Boolean)value };
@@ -34,11 +34,11 @@ public static class BlurConverter
       openXmlElement.Grow = null;
   }
   
-  public static DocumentModel.Drawings.Blur? CreateModelElement(DocumentFormat.OpenXml.Drawing.Blur? openXmlElement)
+  public static DMDraws.Blur? CreateModelElement(DXDraw.Blur? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.Blur();
+      var value = new DMDraws.Blur();
       value.Radius = GetRadius(openXmlElement);
       value.Grow = GetGrow(openXmlElement);
       return value;
@@ -46,8 +46,8 @@ public static class BlurConverter
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.Blur? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.Blur, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDraws.Blur? value)
+    where OpenXmlElementType: DXDraw.Blur, new()
   {
     if (value != null)
     {

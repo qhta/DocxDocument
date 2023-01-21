@@ -8,12 +8,12 @@ public static class TabConverter
   /// <summary>
   /// id
   /// </summary>
-  private static String? GetId(DocumentFormat.OpenXml.Office.CustomUI.Tab openXmlElement)
+  private static String? GetId(DXOCustUI.Tab openXmlElement)
   {
     return openXmlElement?.Id?.Value;
   }
   
-  private static void SetId(DocumentFormat.OpenXml.Office.CustomUI.Tab openXmlElement, String? value)
+  private static void SetId(DXOCustUI.Tab openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.Id = new StringValue { Value = value };
@@ -24,12 +24,12 @@ public static class TabConverter
   /// <summary>
   /// idQ
   /// </summary>
-  private static String? GetIdQ(DocumentFormat.OpenXml.Office.CustomUI.Tab openXmlElement)
+  private static String? GetIdQ(DXOCustUI.Tab openXmlElement)
   {
     return openXmlElement?.IdQ?.Value;
   }
   
-  private static void SetIdQ(DocumentFormat.OpenXml.Office.CustomUI.Tab openXmlElement, String? value)
+  private static void SetIdQ(DXOCustUI.Tab openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.IdQ = new StringValue { Value = value };
@@ -40,12 +40,12 @@ public static class TabConverter
   /// <summary>
   /// idMso
   /// </summary>
-  private static String? GetIdMso(DocumentFormat.OpenXml.Office.CustomUI.Tab openXmlElement)
+  private static String? GetIdMso(DXOCustUI.Tab openXmlElement)
   {
     return openXmlElement?.IdMso?.Value;
   }
   
-  private static void SetIdMso(DocumentFormat.OpenXml.Office.CustomUI.Tab openXmlElement, String? value)
+  private static void SetIdMso(DXOCustUI.Tab openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.IdMso = new StringValue { Value = value };
@@ -56,12 +56,12 @@ public static class TabConverter
   /// <summary>
   /// tag
   /// </summary>
-  private static String? GetTag(DocumentFormat.OpenXml.Office.CustomUI.Tab openXmlElement)
+  private static String? GetTag(DXOCustUI.Tab openXmlElement)
   {
     return openXmlElement?.Tag?.Value;
   }
   
-  private static void SetTag(DocumentFormat.OpenXml.Office.CustomUI.Tab openXmlElement, String? value)
+  private static void SetTag(DXOCustUI.Tab openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.Tag = new StringValue { Value = value };
@@ -72,12 +72,12 @@ public static class TabConverter
   /// <summary>
   /// label
   /// </summary>
-  private static String? GetLabel(DocumentFormat.OpenXml.Office.CustomUI.Tab openXmlElement)
+  private static String? GetLabel(DXOCustUI.Tab openXmlElement)
   {
     return openXmlElement?.Label?.Value;
   }
   
-  private static void SetLabel(DocumentFormat.OpenXml.Office.CustomUI.Tab openXmlElement, String? value)
+  private static void SetLabel(DXOCustUI.Tab openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.Label = new StringValue { Value = value };
@@ -88,12 +88,12 @@ public static class TabConverter
   /// <summary>
   /// getLabel
   /// </summary>
-  private static String? GetGetLabel(DocumentFormat.OpenXml.Office.CustomUI.Tab openXmlElement)
+  private static String? GetGetLabel(DXOCustUI.Tab openXmlElement)
   {
     return openXmlElement?.GetLabel?.Value;
   }
   
-  private static void SetGetLabel(DocumentFormat.OpenXml.Office.CustomUI.Tab openXmlElement, String? value)
+  private static void SetGetLabel(DXOCustUI.Tab openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.GetLabel = new StringValue { Value = value };
@@ -104,12 +104,12 @@ public static class TabConverter
   /// <summary>
   /// insertAfterMso
   /// </summary>
-  private static String? GetInsertAfterMso(DocumentFormat.OpenXml.Office.CustomUI.Tab openXmlElement)
+  private static String? GetInsertAfterMso(DXOCustUI.Tab openXmlElement)
   {
     return openXmlElement?.InsertAfterMso?.Value;
   }
   
-  private static void SetInsertAfterMso(DocumentFormat.OpenXml.Office.CustomUI.Tab openXmlElement, String? value)
+  private static void SetInsertAfterMso(DXOCustUI.Tab openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.InsertAfterMso = new StringValue { Value = value };
@@ -120,12 +120,12 @@ public static class TabConverter
   /// <summary>
   /// insertBeforeMso
   /// </summary>
-  private static String? GetInsertBeforeMso(DocumentFormat.OpenXml.Office.CustomUI.Tab openXmlElement)
+  private static String? GetInsertBeforeMso(DXOCustUI.Tab openXmlElement)
   {
     return openXmlElement?.InsertBeforeMso?.Value;
   }
   
-  private static void SetInsertBeforeMso(DocumentFormat.OpenXml.Office.CustomUI.Tab openXmlElement, String? value)
+  private static void SetInsertBeforeMso(DXOCustUI.Tab openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.InsertBeforeMso = new StringValue { Value = value };
@@ -136,12 +136,12 @@ public static class TabConverter
   /// <summary>
   /// insertAfterQ
   /// </summary>
-  private static String? GetInsertAfterQ(DocumentFormat.OpenXml.Office.CustomUI.Tab openXmlElement)
+  private static String? GetInsertAfterQ(DXOCustUI.Tab openXmlElement)
   {
     return openXmlElement?.InsertAfterQ?.Value;
   }
   
-  private static void SetInsertAfterQ(DocumentFormat.OpenXml.Office.CustomUI.Tab openXmlElement, String? value)
+  private static void SetInsertAfterQ(DXOCustUI.Tab openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.InsertAfterQ = new StringValue { Value = value };
@@ -152,12 +152,12 @@ public static class TabConverter
   /// <summary>
   /// insertBeforeQ
   /// </summary>
-  private static String? GetInsertBeforeQ(DocumentFormat.OpenXml.Office.CustomUI.Tab openXmlElement)
+  private static String? GetInsertBeforeQ(DXOCustUI.Tab openXmlElement)
   {
     return openXmlElement?.InsertBeforeQ?.Value;
   }
   
-  private static void SetInsertBeforeQ(DocumentFormat.OpenXml.Office.CustomUI.Tab openXmlElement, String? value)
+  private static void SetInsertBeforeQ(DXOCustUI.Tab openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.InsertBeforeQ = new StringValue { Value = value };
@@ -168,12 +168,12 @@ public static class TabConverter
   /// <summary>
   /// visible
   /// </summary>
-  private static Boolean? GetVisible(DocumentFormat.OpenXml.Office.CustomUI.Tab openXmlElement)
+  private static Boolean? GetVisible(DXOCustUI.Tab openXmlElement)
   {
     return openXmlElement?.Visible?.Value;
   }
   
-  private static void SetVisible(DocumentFormat.OpenXml.Office.CustomUI.Tab openXmlElement, Boolean? value)
+  private static void SetVisible(DXOCustUI.Tab openXmlElement, Boolean? value)
   {
     if (value != null)
       openXmlElement.Visible = new BooleanValue { Value = (Boolean)value };
@@ -184,12 +184,12 @@ public static class TabConverter
   /// <summary>
   /// getVisible
   /// </summary>
-  private static String? GetGetVisible(DocumentFormat.OpenXml.Office.CustomUI.Tab openXmlElement)
+  private static String? GetGetVisible(DXOCustUI.Tab openXmlElement)
   {
     return openXmlElement?.GetVisible?.Value;
   }
   
-  private static void SetGetVisible(DocumentFormat.OpenXml.Office.CustomUI.Tab openXmlElement, String? value)
+  private static void SetGetVisible(DXOCustUI.Tab openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.GetVisible = new StringValue { Value = value };
@@ -200,12 +200,12 @@ public static class TabConverter
   /// <summary>
   /// keytip
   /// </summary>
-  private static String? GetKeytip(DocumentFormat.OpenXml.Office.CustomUI.Tab openXmlElement)
+  private static String? GetKeytip(DXOCustUI.Tab openXmlElement)
   {
     return openXmlElement?.Keytip?.Value;
   }
   
-  private static void SetKeytip(DocumentFormat.OpenXml.Office.CustomUI.Tab openXmlElement, String? value)
+  private static void SetKeytip(DXOCustUI.Tab openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.Keytip = new StringValue { Value = value };
@@ -216,12 +216,12 @@ public static class TabConverter
   /// <summary>
   /// getKeytip
   /// </summary>
-  private static String? GetGetKeytip(DocumentFormat.OpenXml.Office.CustomUI.Tab openXmlElement)
+  private static String? GetGetKeytip(DXOCustUI.Tab openXmlElement)
   {
     return openXmlElement?.GetKeytip?.Value;
   }
   
-  private static void SetGetKeytip(DocumentFormat.OpenXml.Office.CustomUI.Tab openXmlElement, String? value)
+  private static void SetGetKeytip(DXOCustUI.Tab openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.GetKeytip = new StringValue { Value = value };
@@ -229,32 +229,32 @@ public static class TabConverter
       openXmlElement.GetKeytip = null;
   }
   
-  private static DocumentModel.UI.Group? GetGroup(DocumentFormat.OpenXml.Office.CustomUI.Tab openXmlElement)
+  private static DMUI.Group? GetGroup(DXOCustUI.Tab openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office.CustomUI.Group>();
+    var itemElement = openXmlElement?.GetFirstChild<DXOCustUI.Group>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.UI.GroupConverter.CreateModelElement(itemElement);
+      return DMXUI.GroupConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetGroup(DocumentFormat.OpenXml.Office.CustomUI.Tab openXmlElement, DocumentModel.UI.Group? value)
+  private static void SetGroup(DXOCustUI.Tab openXmlElement, DMUI.Group? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office.CustomUI.Group>();
+    var itemElement = openXmlElement.GetFirstChild<DXOCustUI.Group>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.UI.GroupConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office.CustomUI.Group>(value);
+      itemElement = DMXUI.GroupConverter.CreateOpenXmlElement<DXOCustUI.Group>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  public static DocumentModel.UI.Tab? CreateModelElement(DocumentFormat.OpenXml.Office.CustomUI.Tab? openXmlElement)
+  public static DMUI.Tab? CreateModelElement(DXOCustUI.Tab? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.UI.Tab();
+      var value = new DMUI.Tab();
       value.Id = GetId(openXmlElement);
       value.IdQ = GetIdQ(openXmlElement);
       value.IdMso = GetIdMso(openXmlElement);
@@ -275,8 +275,8 @@ public static class TabConverter
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.UI.Tab? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Office.CustomUI.Tab, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMUI.Tab? value)
+    where OpenXmlElementType: DXOCustUI.Tab, new()
   {
     if (value != null)
     {

@@ -5,45 +5,45 @@ namespace DocumentModel.OpenXml.Drawings.Diagrams;
 /// </summary>
 public static class ConnectionListConverter
 {
-  private static System.Collections.ObjectModel.Collection<DocumentModel.Drawings.Diagrams.Connection> GetConnections(DocumentFormat.OpenXml.Drawing.Diagrams.ConnectionList openXmlElement)
+  private static Collection<DMDrawsDgms.Connection> GetConnections(DXDrawDgms.ConnectionList openXmlElement)
   {
-    var collection = new System.Collections.ObjectModel.Collection<DocumentModel.Drawings.Diagrams.Connection>();
-    foreach (var item in openXmlElement.Elements<DocumentFormat.OpenXml.Drawing.Diagrams.Connection>())
+    var collection = new Collection<DMDrawsDgms.Connection>();
+    foreach (var item in openXmlElement.Elements<DXDrawDgms.Connection>())
     {
-      var newItem = DocumentModel.OpenXml.Drawings.Diagrams.ConnectionConverter.CreateModelElement(item);
+      var newItem = DMXDrawsDgms.ConnectionConverter.CreateModelElement(item);
       if (newItem != null)
         collection.Add(newItem);
     }
     return collection;
   }
   
-  private static void SetConnections(DocumentFormat.OpenXml.Drawing.Diagrams.ConnectionList openXmlElement, System.Collections.ObjectModel.Collection<DocumentModel.Drawings.Diagrams.Connection>? value)
+  private static void SetConnections(DXDrawDgms.ConnectionList openXmlElement, Collection<DMDrawsDgms.Connection>? value)
   {
-    openXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Drawing.Diagrams.Connection>();
+    openXmlElement.RemoveAllChildren<DXDrawDgms.Connection>();
     if (value != null)
     {
       foreach (var item in value)
       {
-        var newItem = DocumentModel.OpenXml.Drawings.Diagrams.ConnectionConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Diagrams.Connection>(item);
+        var newItem = DMXDrawsDgms.ConnectionConverter.CreateOpenXmlElement<DXDrawDgms.Connection>(item);
         if (newItem != null)
           openXmlElement.AddChild(newItem);
       }
     }
   }
   
-  public static DocumentModel.Drawings.Diagrams.ConnectionList? CreateModelElement(DocumentFormat.OpenXml.Drawing.Diagrams.ConnectionList? openXmlElement)
+  public static DMDrawsDgms.ConnectionList? CreateModelElement(DXDrawDgms.ConnectionList? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.Diagrams.ConnectionList();
+      var value = new DMDrawsDgms.ConnectionList();
       value.Connections = GetConnections(openXmlElement);
       return value;
     }
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.Diagrams.ConnectionList? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.Diagrams.ConnectionList, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDrawsDgms.ConnectionList? value)
+    where OpenXmlElementType: DXDrawDgms.ConnectionList, new()
   {
     if (value != null)
     {

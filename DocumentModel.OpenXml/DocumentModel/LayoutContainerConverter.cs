@@ -8,12 +8,12 @@ public static class LayoutContainerConverter
   /// <summary>
   /// id, this property is only available in Office 2010 and later.
   /// </summary>
-  private static String? GetId(DocumentFormat.OpenXml.Office2010.CustomUI.LayoutContainer openXmlElement)
+  private static String? GetId(DXO2010CustUI.LayoutContainer openXmlElement)
   {
     return openXmlElement?.Id?.Value;
   }
   
-  private static void SetId(DocumentFormat.OpenXml.Office2010.CustomUI.LayoutContainer openXmlElement, String? value)
+  private static void SetId(DXO2010CustUI.LayoutContainer openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.Id = new StringValue { Value = value };
@@ -24,12 +24,12 @@ public static class LayoutContainerConverter
   /// <summary>
   /// idQ, this property is only available in Office 2010 and later.
   /// </summary>
-  private static String? GetQualifiedId(DocumentFormat.OpenXml.Office2010.CustomUI.LayoutContainer openXmlElement)
+  private static String? GetQualifiedId(DXO2010CustUI.LayoutContainer openXmlElement)
   {
     return openXmlElement?.QualifiedId?.Value;
   }
   
-  private static void SetQualifiedId(DocumentFormat.OpenXml.Office2010.CustomUI.LayoutContainer openXmlElement, String? value)
+  private static void SetQualifiedId(DXO2010CustUI.LayoutContainer openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.QualifiedId = new StringValue { Value = value };
@@ -40,12 +40,12 @@ public static class LayoutContainerConverter
   /// <summary>
   /// tag, this property is only available in Office 2010 and later.
   /// </summary>
-  private static String? GetTag(DocumentFormat.OpenXml.Office2010.CustomUI.LayoutContainer openXmlElement)
+  private static String? GetTag(DXO2010CustUI.LayoutContainer openXmlElement)
   {
     return openXmlElement?.Tag?.Value;
   }
   
-  private static void SetTag(DocumentFormat.OpenXml.Office2010.CustomUI.LayoutContainer openXmlElement, String? value)
+  private static void SetTag(DXO2010CustUI.LayoutContainer openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.Tag = new StringValue { Value = value };
@@ -56,278 +56,278 @@ public static class LayoutContainerConverter
   /// <summary>
   /// align, this property is only available in Office 2010 and later.
   /// </summary>
-  private static DocumentModel.ExpandKind? GetAlign(DocumentFormat.OpenXml.Office2010.CustomUI.LayoutContainer openXmlElement)
+  private static DM.ExpandKind? GetAlign(DXO2010CustUI.LayoutContainer openXmlElement)
   {
-    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Office2010.CustomUI.ExpandValues, DocumentModel.ExpandKind>(openXmlElement?.Align?.Value);
+    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Office2010.CustomUI.ExpandValues, DM.ExpandKind>(openXmlElement?.Align?.Value);
   }
   
-  private static void SetAlign(DocumentFormat.OpenXml.Office2010.CustomUI.LayoutContainer openXmlElement, DocumentModel.ExpandKind? value)
+  private static void SetAlign(DXO2010CustUI.LayoutContainer openXmlElement, DM.ExpandKind? value)
   {
-    openXmlElement.Align = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Office2010.CustomUI.ExpandValues, DocumentModel.ExpandKind>(value);
+    openXmlElement.Align = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Office2010.CustomUI.ExpandValues, DM.ExpandKind>(value);
   }
   
   /// <summary>
   /// expand, this property is only available in Office 2010 and later.
   /// </summary>
-  private static DocumentModel.ExpandKind? GetExpand(DocumentFormat.OpenXml.Office2010.CustomUI.LayoutContainer openXmlElement)
+  private static DM.ExpandKind? GetExpand(DXO2010CustUI.LayoutContainer openXmlElement)
   {
-    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Office2010.CustomUI.ExpandValues, DocumentModel.ExpandKind>(openXmlElement?.Expand?.Value);
+    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Office2010.CustomUI.ExpandValues, DM.ExpandKind>(openXmlElement?.Expand?.Value);
   }
   
-  private static void SetExpand(DocumentFormat.OpenXml.Office2010.CustomUI.LayoutContainer openXmlElement, DocumentModel.ExpandKind? value)
+  private static void SetExpand(DXO2010CustUI.LayoutContainer openXmlElement, DM.ExpandKind? value)
   {
-    openXmlElement.Expand = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Office2010.CustomUI.ExpandValues, DocumentModel.ExpandKind>(value);
+    openXmlElement.Expand = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Office2010.CustomUI.ExpandValues, DM.ExpandKind>(value);
   }
   
   /// <summary>
   /// layoutChildren, this property is only available in Office 2010 and later.
   /// </summary>
-  private static DocumentModel.LayoutChildrenKind? GetLayoutChildren(DocumentFormat.OpenXml.Office2010.CustomUI.LayoutContainer openXmlElement)
+  private static DM.LayoutChildrenKind? GetLayoutChildren(DXO2010CustUI.LayoutContainer openXmlElement)
   {
-    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Office2010.CustomUI.LayoutChildrenValues, DocumentModel.LayoutChildrenKind>(openXmlElement?.LayoutChildren?.Value);
+    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Office2010.CustomUI.LayoutChildrenValues, DM.LayoutChildrenKind>(openXmlElement?.LayoutChildren?.Value);
   }
   
-  private static void SetLayoutChildren(DocumentFormat.OpenXml.Office2010.CustomUI.LayoutContainer openXmlElement, DocumentModel.LayoutChildrenKind? value)
+  private static void SetLayoutChildren(DXO2010CustUI.LayoutContainer openXmlElement, DM.LayoutChildrenKind? value)
   {
-    openXmlElement.LayoutChildren = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Office2010.CustomUI.LayoutChildrenValues, DocumentModel.LayoutChildrenKind>(value);
+    openXmlElement.LayoutChildren = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Office2010.CustomUI.LayoutChildrenValues, DM.LayoutChildrenKind>(value);
   }
   
-  private static DocumentModel.BackstageGroupButton? GetBackstageGroupButton(DocumentFormat.OpenXml.Office2010.CustomUI.LayoutContainer openXmlElement)
+  private static DM.BackstageGroupButton? GetBackstageGroupButton(DXO2010CustUI.LayoutContainer openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office2010.CustomUI.BackstageGroupButton>();
+    var itemElement = openXmlElement?.GetFirstChild<DXO2010CustUI.BackstageGroupButton>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.BackstageGroupButtonConverter.CreateModelElement(itemElement);
+      return DMX.BackstageGroupButtonConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetBackstageGroupButton(DocumentFormat.OpenXml.Office2010.CustomUI.LayoutContainer openXmlElement, DocumentModel.BackstageGroupButton? value)
+  private static void SetBackstageGroupButton(DXO2010CustUI.LayoutContainer openXmlElement, DM.BackstageGroupButton? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2010.CustomUI.BackstageGroupButton>();
+    var itemElement = openXmlElement.GetFirstChild<DXO2010CustUI.BackstageGroupButton>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.BackstageGroupButtonConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2010.CustomUI.BackstageGroupButton>(value);
+      itemElement = DMX.BackstageGroupButtonConverter.CreateOpenXmlElement<DXO2010CustUI.BackstageGroupButton>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static DocumentModel.BackstageCheckBox? GetBackstageCheckBox(DocumentFormat.OpenXml.Office2010.CustomUI.LayoutContainer openXmlElement)
+  private static DM.BackstageCheckBox? GetBackstageCheckBox(DXO2010CustUI.LayoutContainer openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office2010.CustomUI.BackstageCheckBox>();
+    var itemElement = openXmlElement?.GetFirstChild<DXO2010CustUI.BackstageCheckBox>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.BackstageCheckBoxConverter.CreateModelElement(itemElement);
+      return DMX.BackstageCheckBoxConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetBackstageCheckBox(DocumentFormat.OpenXml.Office2010.CustomUI.LayoutContainer openXmlElement, DocumentModel.BackstageCheckBox? value)
+  private static void SetBackstageCheckBox(DXO2010CustUI.LayoutContainer openXmlElement, DM.BackstageCheckBox? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2010.CustomUI.BackstageCheckBox>();
+    var itemElement = openXmlElement.GetFirstChild<DXO2010CustUI.BackstageCheckBox>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.BackstageCheckBoxConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2010.CustomUI.BackstageCheckBox>(value);
+      itemElement = DMX.BackstageCheckBoxConverter.CreateOpenXmlElement<DXO2010CustUI.BackstageCheckBox>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static DocumentModel.BackstageEditBox? GetBackstageEditBox(DocumentFormat.OpenXml.Office2010.CustomUI.LayoutContainer openXmlElement)
+  private static DM.BackstageEditBox? GetBackstageEditBox(DXO2010CustUI.LayoutContainer openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office2010.CustomUI.BackstageEditBox>();
+    var itemElement = openXmlElement?.GetFirstChild<DXO2010CustUI.BackstageEditBox>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.BackstageEditBoxConverter.CreateModelElement(itemElement);
+      return DMX.BackstageEditBoxConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetBackstageEditBox(DocumentFormat.OpenXml.Office2010.CustomUI.LayoutContainer openXmlElement, DocumentModel.BackstageEditBox? value)
+  private static void SetBackstageEditBox(DXO2010CustUI.LayoutContainer openXmlElement, DM.BackstageEditBox? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2010.CustomUI.BackstageEditBox>();
+    var itemElement = openXmlElement.GetFirstChild<DXO2010CustUI.BackstageEditBox>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.BackstageEditBoxConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2010.CustomUI.BackstageEditBox>(value);
+      itemElement = DMX.BackstageEditBoxConverter.CreateOpenXmlElement<DXO2010CustUI.BackstageEditBox>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static DocumentModel.BackstageDropDown? GetBackstageDropDown(DocumentFormat.OpenXml.Office2010.CustomUI.LayoutContainer openXmlElement)
+  private static DM.BackstageDropDown? GetBackstageDropDown(DXO2010CustUI.LayoutContainer openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office2010.CustomUI.BackstageDropDown>();
+    var itemElement = openXmlElement?.GetFirstChild<DXO2010CustUI.BackstageDropDown>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.BackstageDropDownConverter.CreateModelElement(itemElement);
+      return DMX.BackstageDropDownConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetBackstageDropDown(DocumentFormat.OpenXml.Office2010.CustomUI.LayoutContainer openXmlElement, DocumentModel.BackstageDropDown? value)
+  private static void SetBackstageDropDown(DXO2010CustUI.LayoutContainer openXmlElement, DM.BackstageDropDown? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2010.CustomUI.BackstageDropDown>();
+    var itemElement = openXmlElement.GetFirstChild<DXO2010CustUI.BackstageDropDown>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.BackstageDropDownConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2010.CustomUI.BackstageDropDown>(value);
+      itemElement = DMX.BackstageDropDownConverter.CreateOpenXmlElement<DXO2010CustUI.BackstageDropDown>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static DocumentModel.RadioGroup? GetRadioGroup(DocumentFormat.OpenXml.Office2010.CustomUI.LayoutContainer openXmlElement)
+  private static DM.RadioGroup? GetRadioGroup(DXO2010CustUI.LayoutContainer openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office2010.CustomUI.RadioGroup>();
+    var itemElement = openXmlElement?.GetFirstChild<DXO2010CustUI.RadioGroup>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.RadioGroupConverter.CreateModelElement(itemElement);
+      return DMX.RadioGroupConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetRadioGroup(DocumentFormat.OpenXml.Office2010.CustomUI.LayoutContainer openXmlElement, DocumentModel.RadioGroup? value)
+  private static void SetRadioGroup(DXO2010CustUI.LayoutContainer openXmlElement, DM.RadioGroup? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2010.CustomUI.RadioGroup>();
+    var itemElement = openXmlElement.GetFirstChild<DXO2010CustUI.RadioGroup>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.RadioGroupConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2010.CustomUI.RadioGroup>(value);
+      itemElement = DMX.RadioGroupConverter.CreateOpenXmlElement<DXO2010CustUI.RadioGroup>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static DocumentModel.BackstageComboBox? GetBackstageComboBox(DocumentFormat.OpenXml.Office2010.CustomUI.LayoutContainer openXmlElement)
+  private static DM.BackstageComboBox? GetBackstageComboBox(DXO2010CustUI.LayoutContainer openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office2010.CustomUI.BackstageComboBox>();
+    var itemElement = openXmlElement?.GetFirstChild<DXO2010CustUI.BackstageComboBox>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.BackstageComboBoxConverter.CreateModelElement(itemElement);
+      return DMX.BackstageComboBoxConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetBackstageComboBox(DocumentFormat.OpenXml.Office2010.CustomUI.LayoutContainer openXmlElement, DocumentModel.BackstageComboBox? value)
+  private static void SetBackstageComboBox(DXO2010CustUI.LayoutContainer openXmlElement, DM.BackstageComboBox? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2010.CustomUI.BackstageComboBox>();
+    var itemElement = openXmlElement.GetFirstChild<DXO2010CustUI.BackstageComboBox>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.BackstageComboBoxConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2010.CustomUI.BackstageComboBox>(value);
+      itemElement = DMX.BackstageComboBoxConverter.CreateOpenXmlElement<DXO2010CustUI.BackstageComboBox>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static DocumentModel.Hyperlink? GetHyperlink(DocumentFormat.OpenXml.Office2010.CustomUI.LayoutContainer openXmlElement)
+  private static DM.Hyperlink? GetHyperlink(DXO2010CustUI.LayoutContainer openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office2010.CustomUI.Hyperlink>();
+    var itemElement = openXmlElement?.GetFirstChild<DXO2010CustUI.Hyperlink>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.HyperlinkConverter.CreateModelElement(itemElement);
+      return DMX.HyperlinkConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetHyperlink(DocumentFormat.OpenXml.Office2010.CustomUI.LayoutContainer openXmlElement, DocumentModel.Hyperlink? value)
+  private static void SetHyperlink(DXO2010CustUI.LayoutContainer openXmlElement, DM.Hyperlink? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2010.CustomUI.Hyperlink>();
+    var itemElement = openXmlElement.GetFirstChild<DXO2010CustUI.Hyperlink>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.HyperlinkConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2010.CustomUI.Hyperlink>(value);
+      itemElement = DMX.HyperlinkConverter.CreateOpenXmlElement<DXO2010CustUI.Hyperlink>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static DocumentModel.BackstageLabelControl? GetBackstageLabelControl(DocumentFormat.OpenXml.Office2010.CustomUI.LayoutContainer openXmlElement)
+  private static DM.BackstageLabelControl? GetBackstageLabelControl(DXO2010CustUI.LayoutContainer openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office2010.CustomUI.BackstageLabelControl>();
+    var itemElement = openXmlElement?.GetFirstChild<DXO2010CustUI.BackstageLabelControl>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.BackstageLabelControlConverter.CreateModelElement(itemElement);
+      return DMX.BackstageLabelControlConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetBackstageLabelControl(DocumentFormat.OpenXml.Office2010.CustomUI.LayoutContainer openXmlElement, DocumentModel.BackstageLabelControl? value)
+  private static void SetBackstageLabelControl(DXO2010CustUI.LayoutContainer openXmlElement, DM.BackstageLabelControl? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2010.CustomUI.BackstageLabelControl>();
+    var itemElement = openXmlElement.GetFirstChild<DXO2010CustUI.BackstageLabelControl>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.BackstageLabelControlConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2010.CustomUI.BackstageLabelControl>(value);
+      itemElement = DMX.BackstageLabelControlConverter.CreateOpenXmlElement<DXO2010CustUI.BackstageLabelControl>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static DocumentModel.GroupBox? GetGroupBox(DocumentFormat.OpenXml.Office2010.CustomUI.LayoutContainer openXmlElement)
+  private static DM.GroupBox? GetGroupBox(DXO2010CustUI.LayoutContainer openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office2010.CustomUI.GroupBox>();
+    var itemElement = openXmlElement?.GetFirstChild<DXO2010CustUI.GroupBox>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.GroupBoxConverter.CreateModelElement(itemElement);
+      return DMX.GroupBoxConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetGroupBox(DocumentFormat.OpenXml.Office2010.CustomUI.LayoutContainer openXmlElement, DocumentModel.GroupBox? value)
+  private static void SetGroupBox(DXO2010CustUI.LayoutContainer openXmlElement, DM.GroupBox? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2010.CustomUI.GroupBox>();
+    var itemElement = openXmlElement.GetFirstChild<DXO2010CustUI.GroupBox>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.GroupBoxConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2010.CustomUI.GroupBox>(value);
+      itemElement = DMX.GroupBoxConverter.CreateOpenXmlElement<DXO2010CustUI.GroupBox>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static DocumentModel.LayoutContainer? GetChildLayoutContainer(DocumentFormat.OpenXml.Office2010.CustomUI.LayoutContainer openXmlElement)
+  private static DM.LayoutContainer? GetChildLayoutContainer(DXO2010CustUI.LayoutContainer openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office2010.CustomUI.LayoutContainer>();
+    var itemElement = openXmlElement?.GetFirstChild<DXO2010CustUI.LayoutContainer>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.LayoutContainerConverter.CreateModelElement(itemElement);
+      return DMX.LayoutContainerConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetChildLayoutContainer(DocumentFormat.OpenXml.Office2010.CustomUI.LayoutContainer openXmlElement, DocumentModel.LayoutContainer? value)
+  private static void SetChildLayoutContainer(DXO2010CustUI.LayoutContainer openXmlElement, DM.LayoutContainer? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2010.CustomUI.LayoutContainer>();
+    var itemElement = openXmlElement.GetFirstChild<DXO2010CustUI.LayoutContainer>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.LayoutContainerConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2010.CustomUI.LayoutContainer>(value);
+      itemElement = DMX.LayoutContainerConverter.CreateOpenXmlElement<DXO2010CustUI.LayoutContainer>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static DocumentModel.ImageControl? GetImageControl(DocumentFormat.OpenXml.Office2010.CustomUI.LayoutContainer openXmlElement)
+  private static DM.ImageControl? GetImageControl(DXO2010CustUI.LayoutContainer openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office2010.CustomUI.ImageControl>();
+    var itemElement = openXmlElement?.GetFirstChild<DXO2010CustUI.ImageControl>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.ImageControlConverter.CreateModelElement(itemElement);
+      return DMX.ImageControlConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetImageControl(DocumentFormat.OpenXml.Office2010.CustomUI.LayoutContainer openXmlElement, DocumentModel.ImageControl? value)
+  private static void SetImageControl(DXO2010CustUI.LayoutContainer openXmlElement, DM.ImageControl? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2010.CustomUI.ImageControl>();
+    var itemElement = openXmlElement.GetFirstChild<DXO2010CustUI.ImageControl>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.ImageControlConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2010.CustomUI.ImageControl>(value);
+      itemElement = DMX.ImageControlConverter.CreateOpenXmlElement<DXO2010CustUI.ImageControl>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  public static DocumentModel.LayoutContainer? CreateModelElement(DocumentFormat.OpenXml.Office2010.CustomUI.LayoutContainer? openXmlElement)
+  public static DM.LayoutContainer? CreateModelElement(DXO2010CustUI.LayoutContainer? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.LayoutContainer();
+      var value = new DM.LayoutContainer();
       value.Id = GetId(openXmlElement);
       value.QualifiedId = GetQualifiedId(openXmlElement);
       value.Tag = GetTag(openXmlElement);
@@ -350,8 +350,8 @@ public static class LayoutContainerConverter
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.LayoutContainer? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Office2010.CustomUI.LayoutContainer, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DM.LayoutContainer? value)
+    where OpenXmlElementType: DXO2010CustUI.LayoutContainer, new()
   {
     if (value != null)
     {

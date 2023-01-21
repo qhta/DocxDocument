@@ -8,40 +8,40 @@ public static class ImagePropertiesConverter
   /// <summary>
   /// ImageLayer.
   /// </summary>
-  private static DocumentModel.Drawings.ImageLayer? GetImageLayer(DocumentFormat.OpenXml.Office2010.Drawing.ImageProperties openXmlElement)
+  private static DMDraws.ImageLayer? GetImageLayer(DXO2010Draw.ImageProperties openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office2010.Drawing.ImageLayer>();
+    var itemElement = openXmlElement?.GetFirstChild<DXO2010Draw.ImageLayer>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.ImageLayerConverter.CreateModelElement(itemElement);
+      return DMXDraws.ImageLayerConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetImageLayer(DocumentFormat.OpenXml.Office2010.Drawing.ImageProperties openXmlElement, DocumentModel.Drawings.ImageLayer? value)
+  private static void SetImageLayer(DXO2010Draw.ImageProperties openXmlElement, DMDraws.ImageLayer? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2010.Drawing.ImageLayer>();
+    var itemElement = openXmlElement.GetFirstChild<DXO2010Draw.ImageLayer>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Drawings.ImageLayerConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2010.Drawing.ImageLayer>(value);
+      itemElement = DMXDraws.ImageLayerConverter.CreateOpenXmlElement<DXO2010Draw.ImageLayer>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  public static DocumentModel.Drawings.ImageProperties? CreateModelElement(DocumentFormat.OpenXml.Office2010.Drawing.ImageProperties? openXmlElement)
+  public static DMDraws.ImageProperties? CreateModelElement(DXO2010Draw.ImageProperties? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.ImageProperties();
+      var value = new DMDraws.ImageProperties();
       value.ImageLayer = GetImageLayer(openXmlElement);
       return value;
     }
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.ImageProperties? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Office2010.Drawing.ImageProperties, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDraws.ImageProperties? value)
+    where OpenXmlElementType: DXO2010Draw.ImageProperties, new()
   {
     if (value != null)
     {

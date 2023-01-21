@@ -8,22 +8,22 @@ public static class TextBodyConverter
   /// <summary>
   /// Body Properties.
   /// </summary>
-  private static DocumentModel.Drawings.BodyProperties? GetBodyProperties(DocumentFormat.OpenXml.Drawing.ChartDrawing.TextBody openXmlElement)
+  private static DMDraws.BodyProperties? GetBodyProperties(DXDrawChartDraw.TextBody openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.BodyProperties>();
+    var itemElement = openXmlElement?.GetFirstChild<DXDraw.BodyProperties>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.BodyPropertiesConverter.CreateModelElement(itemElement);
+      return DMXDraws.BodyPropertiesConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetBodyProperties(DocumentFormat.OpenXml.Drawing.ChartDrawing.TextBody openXmlElement, DocumentModel.Drawings.BodyProperties? value)
+  private static void SetBodyProperties(DXDrawChartDraw.TextBody openXmlElement, DMDraws.BodyProperties? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.BodyProperties>();
+    var itemElement = openXmlElement.GetFirstChild<DXDraw.BodyProperties>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Drawings.BodyPropertiesConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.BodyProperties>(value);
+      itemElement = DMXDraws.BodyPropertiesConverter.CreateOpenXmlElement<DXDraw.BodyProperties>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
@@ -32,53 +32,53 @@ public static class TextBodyConverter
   /// <summary>
   /// Text List Styles.
   /// </summary>
-  private static DocumentModel.Drawings.ListStyle? GetListStyle(DocumentFormat.OpenXml.Drawing.ChartDrawing.TextBody openXmlElement)
+  private static DMDraws.ListStyle? GetListStyle(DXDrawChartDraw.TextBody openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.ListStyle>();
+    var itemElement = openXmlElement?.GetFirstChild<DXDraw.ListStyle>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.ListStyleConverter.CreateModelElement(itemElement);
+      return DMXDraws.ListStyleConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetListStyle(DocumentFormat.OpenXml.Drawing.ChartDrawing.TextBody openXmlElement, DocumentModel.Drawings.ListStyle? value)
+  private static void SetListStyle(DXDrawChartDraw.TextBody openXmlElement, DMDraws.ListStyle? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.ListStyle>();
+    var itemElement = openXmlElement.GetFirstChild<DXDraw.ListStyle>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Drawings.ListStyleConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.ListStyle>(value);
+      itemElement = DMXDraws.ListStyleConverter.CreateOpenXmlElement<DXDraw.ListStyle>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static DocumentModel.Drawings.Paragraph? GetParagraph(DocumentFormat.OpenXml.Drawing.ChartDrawing.TextBody openXmlElement)
+  private static DMDraws.Paragraph? GetParagraph(DXDrawChartDraw.TextBody openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.Paragraph>();
+    var itemElement = openXmlElement?.GetFirstChild<DXDraw.Paragraph>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.ParagraphConverter.CreateModelElement(itemElement);
+      return DMXDraws.ParagraphConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetParagraph(DocumentFormat.OpenXml.Drawing.ChartDrawing.TextBody openXmlElement, DocumentModel.Drawings.Paragraph? value)
+  private static void SetParagraph(DXDrawChartDraw.TextBody openXmlElement, DMDraws.Paragraph? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Paragraph>();
+    var itemElement = openXmlElement.GetFirstChild<DXDraw.Paragraph>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Drawings.ParagraphConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Paragraph>(value);
+      itemElement = DMXDraws.ParagraphConverter.CreateOpenXmlElement<DXDraw.Paragraph>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  public static DocumentModel.Drawings.ChartDrawing.TextBody? CreateModelElement(DocumentFormat.OpenXml.Drawing.ChartDrawing.TextBody? openXmlElement)
+  public static DMDrawsChartDraw.TextBody? CreateModelElement(DXDrawChartDraw.TextBody? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.ChartDrawing.TextBody();
+      var value = new DMDrawsChartDraw.TextBody();
       value.BodyProperties = GetBodyProperties(openXmlElement);
       value.ListStyle = GetListStyle(openXmlElement);
       value.Paragraph = GetParagraph(openXmlElement);
@@ -87,8 +87,8 @@ public static class TextBodyConverter
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.ChartDrawing.TextBody? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.ChartDrawing.TextBody, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDrawsChartDraw.TextBody? value)
+    where OpenXmlElementType: DXDrawChartDraw.TextBody, new()
   {
     if (value != null)
     {

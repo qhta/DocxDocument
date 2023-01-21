@@ -5,12 +5,12 @@ namespace DocumentModel.OpenXml.Packaging;
 /// </summary>
 public static class WebExTaskpanesPartConverter
 {
-  private static String? GetContentType(DocumentFormat.OpenXml.Packaging.WebExTaskpanesPart openXmlElement)
+  private static String? GetContentType(DXPack.WebExTaskpanesPart openXmlElement)
   {
     return openXmlElement?.ContentType;
   }
   
-  private static String? GetRelationshipType(DocumentFormat.OpenXml.Packaging.WebExTaskpanesPart openXmlElement)
+  private static String? GetRelationshipType(DXPack.WebExTaskpanesPart openXmlElement)
   {
     return openXmlElement?.RelationshipType;
   }
@@ -18,18 +18,18 @@ public static class WebExTaskpanesPartConverter
   /// <summary>
   /// Gets or sets the root element of this part.
   /// </summary>
-  private static DocumentModel.WebExtensions.UI.Taskpanes? GetTaskpanes(DocumentFormat.OpenXml.Packaging.WebExTaskpanesPart openXmlElement)
+  private static DMWebExtUI.Taskpanes? GetTaskpanes(DXPack.WebExTaskpanesPart openXmlElement)
   {
-    if (openXmlElement?.RootElement is DocumentFormat.OpenXml.Office2013.WebExtentionPane.Taskpanes rootElement)
-      return DocumentModel.OpenXml.WebExtensions.UI.TaskpanesConverter.CreateModelElement(rootElement);
+    if (openXmlElement?.RootElement is DXO2013WebExtPane.Taskpanes rootElement)
+      return DMXWebExtUI.TaskpanesConverter.CreateModelElement(rootElement);
     return null;
   }
   
-  private static void SetTaskpanes(DocumentFormat.OpenXml.Packaging.WebExTaskpanesPart openXmlElement, DocumentModel.WebExtensions.UI.Taskpanes? value)
+  private static void SetTaskpanes(DXPack.WebExTaskpanesPart openXmlElement, DMWebExtUI.Taskpanes? value)
   {
     if (value != null)
     {
-       var rootElement = DocumentModel.OpenXml.WebExtensions.UI.TaskpanesConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2013.WebExtentionPane.Taskpanes>(value);
+       var rootElement = DMXWebExtUI.TaskpanesConverter.CreateOpenXmlElement<DXO2013WebExtPane.Taskpanes>(value);
        if (rootElement != null)
          openXmlElement.Taskpanes = rootElement;
     }
@@ -38,23 +38,23 @@ public static class WebExTaskpanesPartConverter
   /// <summary>
   /// Gets the WebExtensionParts of the WebExTaskpanesPart
   /// </summary>
-  private static System.Collections.ObjectModel.Collection<DocumentModel.Packaging.WebExtensionPart> GetWebExtensionParts(DocumentFormat.OpenXml.Packaging.WebExTaskpanesPart openXmlElement)
+  private static Collection<DMPack.WebExtensionPart> GetWebExtensionParts(DXPack.WebExTaskpanesPart openXmlElement)
   {
-    var collection = new System.Collections.ObjectModel.Collection<DocumentModel.Packaging.WebExtensionPart>();
-    foreach (var item in openXmlElement.GetPartsOfType<DocumentFormat.OpenXml.Packaging.WebExtensionPart>())
+    var collection = new Collection<DMPack.WebExtensionPart>();
+    foreach (var item in openXmlElement.GetPartsOfType<DXPack.WebExtensionPart>())
     {
-      var newItem = DocumentModel.OpenXml.Packaging.WebExtensionPartConverter.CreateModelElement(item);
+      var newItem = DMXPack.WebExtensionPartConverter.CreateModelElement(item);
       if (newItem != null)
         collection.Add(newItem);
     }
     return collection;
   }
   
-  public static DocumentModel.Packaging.WebExTaskpanesPart? CreateModelElement(DocumentFormat.OpenXml.Packaging.WebExTaskpanesPart? openXmlElement)
+  public static DMPack.WebExTaskpanesPart? CreateModelElement(DXPack.WebExTaskpanesPart? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Packaging.WebExTaskpanesPart();
+      var value = new DMPack.WebExTaskpanesPart();
       value.ContentType = GetContentType(openXmlElement);
       value.RelationshipType = GetRelationshipType(openXmlElement);
       value.Taskpanes = GetTaskpanes(openXmlElement);
@@ -64,8 +64,8 @@ public static class WebExTaskpanesPartConverter
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Packaging.WebExTaskpanesPart? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Packaging.WebExTaskpanesPart, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMPack.WebExTaskpanesPart? value)
+    where OpenXmlElementType: DXPack.WebExTaskpanesPart, new()
   {
     if (value != null)
     {

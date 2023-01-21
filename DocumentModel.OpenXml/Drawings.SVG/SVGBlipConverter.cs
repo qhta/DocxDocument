@@ -8,12 +8,12 @@ public static class SVGBlipConverter
   /// <summary>
   /// Embedded Picture Reference
   /// </summary>
-  private static String? GetEmbed(DocumentFormat.OpenXml.Office2019.Drawing.SVG.SVGBlip openXmlElement)
+  private static String? GetEmbed(DXO2019DrawSVG.SVGBlip openXmlElement)
   {
     return openXmlElement?.Embed?.Value;
   }
   
-  private static void SetEmbed(DocumentFormat.OpenXml.Office2019.Drawing.SVG.SVGBlip openXmlElement, String? value)
+  private static void SetEmbed(DXO2019DrawSVG.SVGBlip openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.Embed = new StringValue { Value = value };
@@ -24,12 +24,12 @@ public static class SVGBlipConverter
   /// <summary>
   /// Linked Picture Reference
   /// </summary>
-  private static String? GetLink(DocumentFormat.OpenXml.Office2019.Drawing.SVG.SVGBlip openXmlElement)
+  private static String? GetLink(DXO2019DrawSVG.SVGBlip openXmlElement)
   {
     return openXmlElement?.Link?.Value;
   }
   
-  private static void SetLink(DocumentFormat.OpenXml.Office2019.Drawing.SVG.SVGBlip openXmlElement, String? value)
+  private static void SetLink(DXO2019DrawSVG.SVGBlip openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.Link = new StringValue { Value = value };
@@ -37,11 +37,11 @@ public static class SVGBlipConverter
       openXmlElement.Link = null;
   }
   
-  public static DocumentModel.Drawings.SVG.SVGBlip? CreateModelElement(DocumentFormat.OpenXml.Office2019.Drawing.SVG.SVGBlip? openXmlElement)
+  public static DMDrawsSVG.SVGBlip? CreateModelElement(DXO2019DrawSVG.SVGBlip? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.SVG.SVGBlip();
+      var value = new DMDrawsSVG.SVGBlip();
       value.Embed = GetEmbed(openXmlElement);
       value.Link = GetLink(openXmlElement);
       return value;
@@ -49,8 +49,8 @@ public static class SVGBlipConverter
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.SVG.SVGBlip? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Office2019.Drawing.SVG.SVGBlip, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDrawsSVG.SVGBlip? value)
+    where OpenXmlElementType: DXO2019DrawSVG.SVGBlip, new()
   {
     if (value != null)
     {

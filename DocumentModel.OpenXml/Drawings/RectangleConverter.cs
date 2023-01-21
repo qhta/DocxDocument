@@ -8,12 +8,12 @@ public static class RectangleConverter
   /// <summary>
   /// Left
   /// </summary>
-  private static String? GetLeft(DocumentFormat.OpenXml.Drawing.Rectangle openXmlElement)
+  private static String? GetLeft(DXDraw.Rectangle openXmlElement)
   {
     return openXmlElement?.Left?.Value;
   }
   
-  private static void SetLeft(DocumentFormat.OpenXml.Drawing.Rectangle openXmlElement, String? value)
+  private static void SetLeft(DXDraw.Rectangle openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.Left = new StringValue { Value = value };
@@ -24,12 +24,12 @@ public static class RectangleConverter
   /// <summary>
   /// Top
   /// </summary>
-  private static String? GetTop(DocumentFormat.OpenXml.Drawing.Rectangle openXmlElement)
+  private static String? GetTop(DXDraw.Rectangle openXmlElement)
   {
     return openXmlElement?.Top?.Value;
   }
   
-  private static void SetTop(DocumentFormat.OpenXml.Drawing.Rectangle openXmlElement, String? value)
+  private static void SetTop(DXDraw.Rectangle openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.Top = new StringValue { Value = value };
@@ -40,12 +40,12 @@ public static class RectangleConverter
   /// <summary>
   /// Right
   /// </summary>
-  private static String? GetRight(DocumentFormat.OpenXml.Drawing.Rectangle openXmlElement)
+  private static String? GetRight(DXDraw.Rectangle openXmlElement)
   {
     return openXmlElement?.Right?.Value;
   }
   
-  private static void SetRight(DocumentFormat.OpenXml.Drawing.Rectangle openXmlElement, String? value)
+  private static void SetRight(DXDraw.Rectangle openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.Right = new StringValue { Value = value };
@@ -56,12 +56,12 @@ public static class RectangleConverter
   /// <summary>
   /// Bottom Position
   /// </summary>
-  private static String? GetBottom(DocumentFormat.OpenXml.Drawing.Rectangle openXmlElement)
+  private static String? GetBottom(DXDraw.Rectangle openXmlElement)
   {
     return openXmlElement?.Bottom?.Value;
   }
   
-  private static void SetBottom(DocumentFormat.OpenXml.Drawing.Rectangle openXmlElement, String? value)
+  private static void SetBottom(DXDraw.Rectangle openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.Bottom = new StringValue { Value = value };
@@ -69,11 +69,11 @@ public static class RectangleConverter
       openXmlElement.Bottom = null;
   }
   
-  public static DocumentModel.Drawings.Rectangle? CreateModelElement(DocumentFormat.OpenXml.Drawing.Rectangle? openXmlElement)
+  public static DMDraws.Rectangle? CreateModelElement(DXDraw.Rectangle? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.Rectangle();
+      var value = new DMDraws.Rectangle();
       value.Left = GetLeft(openXmlElement);
       value.Top = GetTop(openXmlElement);
       value.Right = GetRight(openXmlElement);
@@ -83,8 +83,8 @@ public static class RectangleConverter
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.Rectangle? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.Rectangle, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDraws.Rectangle? value)
+    where OpenXmlElementType: DXDraw.Rectangle, new()
   {
     if (value != null)
     {

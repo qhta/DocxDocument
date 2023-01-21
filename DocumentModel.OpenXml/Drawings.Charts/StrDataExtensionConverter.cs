@@ -8,12 +8,12 @@ public static class StrDataExtensionConverter
   /// <summary>
   /// URI
   /// </summary>
-  private static String? GetUri(DocumentFormat.OpenXml.Drawing.Charts.StrDataExtension openXmlElement)
+  private static String? GetUri(DXDrawCharts.StrDataExtension openXmlElement)
   {
     return openXmlElement?.Uri?.Value;
   }
   
-  private static void SetUri(DocumentFormat.OpenXml.Drawing.Charts.StrDataExtension openXmlElement, String? value)
+  private static void SetUri(DXDrawCharts.StrDataExtension openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.Uri = new StringValue { Value = value };
@@ -21,32 +21,32 @@ public static class StrDataExtensionConverter
       openXmlElement.Uri = null;
   }
   
-  private static Boolean? GetAutoGeneneratedCategories(DocumentFormat.OpenXml.Drawing.Charts.StrDataExtension openXmlElement)
+  private static Boolean? GetAutoGeneneratedCategories(DXDrawCharts.StrDataExtension openXmlElement)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2013.Drawing.Chart.AutoGeneneratedCategories>();
+    var itemElement = openXmlElement.GetFirstChild<DXO2013DrawChart.AutoGeneneratedCategories>();
     return itemElement != null;
   }
   
-  private static void SetAutoGeneneratedCategories(DocumentFormat.OpenXml.Drawing.Charts.StrDataExtension openXmlElement, Boolean? value)
+  private static void SetAutoGeneneratedCategories(DXDrawCharts.StrDataExtension openXmlElement, Boolean? value)
   {
     if (value == false)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2013.Drawing.Chart.AutoGeneneratedCategories>();
+      var itemElement = openXmlElement.GetFirstChild<DXO2013DrawChart.AutoGeneneratedCategories>();
       if (itemElement != null)
         itemElement.Remove();
     }
     if (value == true)
     {
-      var itemElement = new DocumentFormat.OpenXml.Office2013.Drawing.Chart.AutoGeneneratedCategories();
+      var itemElement = new DXO2013DrawChart.AutoGeneneratedCategories();
       openXmlElement.AddChild(itemElement);
     }
   }
   
-  public static DocumentModel.Drawings.Charts.StrDataExtension? CreateModelElement(DocumentFormat.OpenXml.Drawing.Charts.StrDataExtension? openXmlElement)
+  public static DMDrawsCharts.StrDataExtension? CreateModelElement(DXDrawCharts.StrDataExtension? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.Charts.StrDataExtension();
+      var value = new DMDrawsCharts.StrDataExtension();
       value.Uri = GetUri(openXmlElement);
       value.AutoGeneneratedCategories = GetAutoGeneneratedCategories(openXmlElement);
       return value;
@@ -54,8 +54,8 @@ public static class StrDataExtensionConverter
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.Charts.StrDataExtension? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.Charts.StrDataExtension, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDrawsCharts.StrDataExtension? value)
+    where OpenXmlElementType: DXDrawCharts.StrDataExtension, new()
   {
     if (value != null)
     {

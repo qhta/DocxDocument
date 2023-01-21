@@ -8,29 +8,29 @@ public static class OpenXmlFormulaElementConverter
   /// <summary>
   /// dir, this property is only available in Office 2016 and later.
   /// </summary>
-  private static DocumentModel.Drawings.ChartDrawings.FormulaDirection? GetDir(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.OpenXmlFormulaElement openXmlElement)
+  private static DMDrawsChartDraws.FormulaDirection? GetDir(DXO2016DrawChartDraw.OpenXmlFormulaElement openXmlElement)
   {
-    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.FormulaDirection, DocumentModel.Drawings.ChartDrawings.FormulaDirection>(openXmlElement?.Dir?.Value);
+    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.FormulaDirection, DMDrawsChartDraws.FormulaDirection>(openXmlElement?.Dir?.Value);
   }
   
-  private static void SetDir(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.OpenXmlFormulaElement openXmlElement, DocumentModel.Drawings.ChartDrawings.FormulaDirection? value)
+  private static void SetDir(DXO2016DrawChartDraw.OpenXmlFormulaElement openXmlElement, DMDrawsChartDraws.FormulaDirection? value)
   {
-    openXmlElement.Dir = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.FormulaDirection, DocumentModel.Drawings.ChartDrawings.FormulaDirection>(value);
+    openXmlElement.Dir = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.FormulaDirection, DMDrawsChartDraws.FormulaDirection>(value);
   }
   
-  public static DocumentModel.Drawings.ChartDrawings.OpenXmlFormulaElement? CreateModelElement(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.OpenXmlFormulaElement? openXmlElement)
+  public static DMDrawsChartDraws.OpenXmlFormulaElement? CreateModelElement(DXO2016DrawChartDraw.OpenXmlFormulaElement? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.ChartDrawings.OpenXmlFormulaElement();
+      var value = new DMDrawsChartDraws.OpenXmlFormulaElement();
       value.Dir = GetDir(openXmlElement);
       return value;
     }
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.ChartDrawings.OpenXmlFormulaElement? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.OpenXmlFormulaElement, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDrawsChartDraws.OpenXmlFormulaElement? value)
+    where OpenXmlElementType: DXO2016DrawChartDraw.OpenXmlFormulaElement, new()
   {
     if (value != null)
     {

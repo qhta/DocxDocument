@@ -5,40 +5,40 @@ namespace DocumentModel.OpenXml.Wordprocessing;
 /// </summary>
 public static class TabsConverter
 {
-  private static DocumentModel.Wordprocessing.TabStop? GetTabStop(DocumentFormat.OpenXml.Wordprocessing.Tabs openXmlElement)
+  private static DMW.TabStop? GetTabStop(DXW.Tabs openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.TabStop>();
+    var itemElement = openXmlElement?.GetFirstChild<DXW.TabStop>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Wordprocessing.TabStopConverter.CreateModelElement(itemElement);
+      return DMXW.TabStopConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetTabStop(DocumentFormat.OpenXml.Wordprocessing.Tabs openXmlElement, DocumentModel.Wordprocessing.TabStop? value)
+  private static void SetTabStop(DXW.Tabs openXmlElement, DMW.TabStop? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.TabStop>();
+    var itemElement = openXmlElement.GetFirstChild<DXW.TabStop>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Wordprocessing.TabStopConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.TabStop>(value);
+      itemElement = DMXW.TabStopConverter.CreateOpenXmlElement<DXW.TabStop>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  public static DocumentModel.Wordprocessing.Tabs? CreateModelElement(DocumentFormat.OpenXml.Wordprocessing.Tabs? openXmlElement)
+  public static DMW.Tabs? CreateModelElement(DXW.Tabs? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Wordprocessing.Tabs();
+      var value = new DMW.Tabs();
       value.TabStop = GetTabStop(openXmlElement);
       return value;
     }
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.Tabs? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Wordprocessing.Tabs, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMW.Tabs? value)
+    where OpenXmlElementType: DXW.Tabs, new()
   {
     if (value != null)
     {

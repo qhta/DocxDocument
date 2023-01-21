@@ -8,29 +8,29 @@ public static class CameraConverter
   /// <summary>
   /// prst, this property is only available in Office 2010 and later.
   /// </summary>
-  private static DocumentModel.Wordprocessing.PresetCameraKind? GetPresetCameraType(DocumentFormat.OpenXml.Office2010.Word.Camera openXmlElement)
+  private static DMW.PresetCameraKind? GetPresetCameraType(DXO2010W.Camera openXmlElement)
   {
-    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Office2010.Word.PresetCameraTypeValues, DocumentModel.Wordprocessing.PresetCameraKind>(openXmlElement?.PresetCameraType?.Value);
+    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Office2010.Word.PresetCameraTypeValues, DMW.PresetCameraKind>(openXmlElement?.PresetCameraType?.Value);
   }
   
-  private static void SetPresetCameraType(DocumentFormat.OpenXml.Office2010.Word.Camera openXmlElement, DocumentModel.Wordprocessing.PresetCameraKind? value)
+  private static void SetPresetCameraType(DXO2010W.Camera openXmlElement, DMW.PresetCameraKind? value)
   {
-    openXmlElement.PresetCameraType = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Office2010.Word.PresetCameraTypeValues, DocumentModel.Wordprocessing.PresetCameraKind>(value);
+    openXmlElement.PresetCameraType = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Office2010.Word.PresetCameraTypeValues, DMW.PresetCameraKind>(value);
   }
   
-  public static DocumentModel.Wordprocessing.Camera? CreateModelElement(DocumentFormat.OpenXml.Office2010.Word.Camera? openXmlElement)
+  public static DMW.Camera? CreateModelElement(DXO2010W.Camera? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Wordprocessing.Camera();
+      var value = new DMW.Camera();
       value.PresetCameraType = GetPresetCameraType(openXmlElement);
       return value;
     }
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.Camera? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Office2010.Word.Camera, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMW.Camera? value)
+    where OpenXmlElementType: DXO2010W.Camera, new()
   {
     if (value != null)
     {

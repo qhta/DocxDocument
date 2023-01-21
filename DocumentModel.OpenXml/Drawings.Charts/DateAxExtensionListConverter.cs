@@ -5,45 +5,45 @@ namespace DocumentModel.OpenXml.Drawings.Charts;
 /// </summary>
 public static class DateAxExtensionListConverter
 {
-  private static System.Collections.ObjectModel.Collection<DocumentModel.Drawings.Charts.DateAxExtension> GetDateAxExtensions(DocumentFormat.OpenXml.Drawing.Charts.DateAxExtensionList openXmlElement)
+  private static Collection<DMDrawsCharts.DateAxExtension> GetDateAxExtensions(DXDrawCharts.DateAxExtensionList openXmlElement)
   {
-    var collection = new System.Collections.ObjectModel.Collection<DocumentModel.Drawings.Charts.DateAxExtension>();
-    foreach (var item in openXmlElement.Elements<DocumentFormat.OpenXml.Drawing.Charts.DateAxExtension>())
+    var collection = new Collection<DMDrawsCharts.DateAxExtension>();
+    foreach (var item in openXmlElement.Elements<DXDrawCharts.DateAxExtension>())
     {
-      var newItem = DocumentModel.OpenXml.Drawings.Charts.DateAxExtensionConverter.CreateModelElement(item);
+      var newItem = DMXDrawsCharts.DateAxExtensionConverter.CreateModelElement(item);
       if (newItem != null)
         collection.Add(newItem);
     }
     return collection;
   }
   
-  private static void SetDateAxExtensions(DocumentFormat.OpenXml.Drawing.Charts.DateAxExtensionList openXmlElement, System.Collections.ObjectModel.Collection<DocumentModel.Drawings.Charts.DateAxExtension>? value)
+  private static void SetDateAxExtensions(DXDrawCharts.DateAxExtensionList openXmlElement, Collection<DMDrawsCharts.DateAxExtension>? value)
   {
-    openXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Drawing.Charts.DateAxExtension>();
+    openXmlElement.RemoveAllChildren<DXDrawCharts.DateAxExtension>();
     if (value != null)
     {
       foreach (var item in value)
       {
-        var newItem = DocumentModel.OpenXml.Drawings.Charts.DateAxExtensionConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Charts.DateAxExtension>(item);
+        var newItem = DMXDrawsCharts.DateAxExtensionConverter.CreateOpenXmlElement<DXDrawCharts.DateAxExtension>(item);
         if (newItem != null)
           openXmlElement.AddChild(newItem);
       }
     }
   }
   
-  public static DocumentModel.Drawings.Charts.DateAxExtensionList? CreateModelElement(DocumentFormat.OpenXml.Drawing.Charts.DateAxExtensionList? openXmlElement)
+  public static DMDrawsCharts.DateAxExtensionList? CreateModelElement(DXDrawCharts.DateAxExtensionList? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.Charts.DateAxExtensionList();
+      var value = new DMDrawsCharts.DateAxExtensionList();
       value.DateAxExtensions = GetDateAxExtensions(openXmlElement);
       return value;
     }
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.Charts.DateAxExtensionList? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.Charts.DateAxExtensionList, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDrawsCharts.DateAxExtensionList? value)
+    where OpenXmlElementType: DXDrawCharts.DateAxExtensionList, new()
   {
     if (value != null)
     {

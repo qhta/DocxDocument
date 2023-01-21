@@ -8,12 +8,12 @@ public static class CreationIdConverter
   /// <summary>
   /// id, this property is only available in Office 2016 and later.
   /// </summary>
-  private static String? GetId(DocumentFormat.OpenXml.Office2016.Drawing.CreationId openXmlElement)
+  private static String? GetId(DXO2016Draw.CreationId openXmlElement)
   {
     return openXmlElement?.Id?.Value;
   }
   
-  private static void SetId(DocumentFormat.OpenXml.Office2016.Drawing.CreationId openXmlElement, String? value)
+  private static void SetId(DXO2016Draw.CreationId openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.Id = new StringValue { Value = value };
@@ -21,19 +21,19 @@ public static class CreationIdConverter
       openXmlElement.Id = null;
   }
   
-  public static DocumentModel.Drawings.CreationId? CreateModelElement(DocumentFormat.OpenXml.Office2016.Drawing.CreationId? openXmlElement)
+  public static DMDraws.CreationId? CreateModelElement(DXO2016Draw.CreationId? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.CreationId();
+      var value = new DMDraws.CreationId();
       value.Id = GetId(openXmlElement);
       return value;
     }
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.CreationId? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Office2016.Drawing.CreationId, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDraws.CreationId? value)
+    where OpenXmlElementType: DXO2016Draw.CreationId, new()
   {
     if (value != null)
     {

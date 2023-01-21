@@ -5,21 +5,21 @@ namespace DocumentModel.OpenXml.Packaging;
 /// </summary>
 public static class Model3DReferenceRelationshipPartConverter
 {
-  private static String? GetContentType(DocumentFormat.OpenXml.Packaging.Model3DReferenceRelationshipPart openXmlElement)
+  private static String? GetContentType(DXPack.Model3DReferenceRelationshipPart openXmlElement)
   {
     return openXmlElement?.ContentType;
   }
   
-  private static String? GetRelationshipType(DocumentFormat.OpenXml.Packaging.Model3DReferenceRelationshipPart openXmlElement)
+  private static String? GetRelationshipType(DXPack.Model3DReferenceRelationshipPart openXmlElement)
   {
     return openXmlElement?.RelationshipType;
   }
   
-  public static DocumentModel.Packaging.Model3DReferenceRelationshipPart? CreateModelElement(DocumentFormat.OpenXml.Packaging.Model3DReferenceRelationshipPart? openXmlElement)
+  public static DMPack.Model3DReferenceRelationshipPart? CreateModelElement(DXPack.Model3DReferenceRelationshipPart? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Packaging.Model3DReferenceRelationshipPart();
+      var value = new DMPack.Model3DReferenceRelationshipPart();
       value.ContentType = GetContentType(openXmlElement);
       value.RelationshipType = GetRelationshipType(openXmlElement);
       return value;
@@ -27,8 +27,8 @@ public static class Model3DReferenceRelationshipPartConverter
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Packaging.Model3DReferenceRelationshipPart? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Packaging.Model3DReferenceRelationshipPart, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMPack.Model3DReferenceRelationshipPart? value)
+    where OpenXmlElementType: DXPack.Model3DReferenceRelationshipPart, new()
   {
     if (value != null)
     {

@@ -8,12 +8,12 @@ public static class NumberingFormat3Converter
   /// <summary>
   /// Number Format Code
   /// </summary>
-  private static String? GetFormatCode(DocumentFormat.OpenXml.Office2013.Drawing.Chart.NumberingFormat openXmlElement)
+  private static String? GetFormatCode(DXO2013DrawChart.NumberingFormat openXmlElement)
   {
     return openXmlElement?.FormatCode?.Value;
   }
   
-  private static void SetFormatCode(DocumentFormat.OpenXml.Office2013.Drawing.Chart.NumberingFormat openXmlElement, String? value)
+  private static void SetFormatCode(DXO2013DrawChart.NumberingFormat openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.FormatCode = new StringValue { Value = value };
@@ -24,12 +24,12 @@ public static class NumberingFormat3Converter
   /// <summary>
   /// Linked to Source
   /// </summary>
-  private static Boolean? GetSourceLinked(DocumentFormat.OpenXml.Office2013.Drawing.Chart.NumberingFormat openXmlElement)
+  private static Boolean? GetSourceLinked(DXO2013DrawChart.NumberingFormat openXmlElement)
   {
     return openXmlElement?.SourceLinked?.Value;
   }
   
-  private static void SetSourceLinked(DocumentFormat.OpenXml.Office2013.Drawing.Chart.NumberingFormat openXmlElement, Boolean? value)
+  private static void SetSourceLinked(DXO2013DrawChart.NumberingFormat openXmlElement, Boolean? value)
   {
     if (value != null)
       openXmlElement.SourceLinked = new BooleanValue { Value = (Boolean)value };
@@ -37,11 +37,11 @@ public static class NumberingFormat3Converter
       openXmlElement.SourceLinked = null;
   }
   
-  public static DocumentModel.Drawings.Charts.NumberingFormat3? CreateModelElement(DocumentFormat.OpenXml.Office2013.Drawing.Chart.NumberingFormat? openXmlElement)
+  public static DMDrawsCharts.NumberingFormat3? CreateModelElement(DXO2013DrawChart.NumberingFormat? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.Charts.NumberingFormat3();
+      var value = new DMDrawsCharts.NumberingFormat3();
       value.FormatCode = GetFormatCode(openXmlElement);
       value.SourceLinked = GetSourceLinked(openXmlElement);
       return value;
@@ -49,8 +49,8 @@ public static class NumberingFormat3Converter
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.Charts.NumberingFormat3? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Office2013.Drawing.Chart.NumberingFormat, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDrawsCharts.NumberingFormat3? value)
+    where OpenXmlElementType: DXO2013DrawChart.NumberingFormat, new()
   {
     if (value != null)
     {

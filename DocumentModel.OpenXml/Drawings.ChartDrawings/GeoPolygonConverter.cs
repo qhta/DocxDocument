@@ -8,12 +8,12 @@ public static class GeoPolygonConverter
   /// <summary>
   /// polygonId, this property is only available in Office 2016 and later.
   /// </summary>
-  private static String? GetPolygonId(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.GeoPolygon openXmlElement)
+  private static String? GetPolygonId(DXO2016DrawChartDraw.GeoPolygon openXmlElement)
   {
     return openXmlElement?.PolygonId?.Value;
   }
   
-  private static void SetPolygonId(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.GeoPolygon openXmlElement, String? value)
+  private static void SetPolygonId(DXO2016DrawChartDraw.GeoPolygon openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.PolygonId = new StringValue { Value = value };
@@ -24,12 +24,12 @@ public static class GeoPolygonConverter
   /// <summary>
   /// numPoints, this property is only available in Office 2016 and later.
   /// </summary>
-  private static Int64? GetNumPoints(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.GeoPolygon openXmlElement)
+  private static Int64? GetNumPoints(DXO2016DrawChartDraw.GeoPolygon openXmlElement)
   {
     return openXmlElement.NumPoints?.Value;
   }
   
-  private static void SetNumPoints(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.GeoPolygon openXmlElement, Int64? value)
+  private static void SetNumPoints(DXO2016DrawChartDraw.GeoPolygon openXmlElement, Int64? value)
   {
     openXmlElement.NumPoints = value;
   }
@@ -37,12 +37,12 @@ public static class GeoPolygonConverter
   /// <summary>
   /// pcaRings, this property is only available in Office 2016 and later.
   /// </summary>
-  private static String? GetPcaRings(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.GeoPolygon openXmlElement)
+  private static String? GetPcaRings(DXO2016DrawChartDraw.GeoPolygon openXmlElement)
   {
     return openXmlElement?.PcaRings?.Value;
   }
   
-  private static void SetPcaRings(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.GeoPolygon openXmlElement, String? value)
+  private static void SetPcaRings(DXO2016DrawChartDraw.GeoPolygon openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.PcaRings = new StringValue { Value = value };
@@ -50,11 +50,11 @@ public static class GeoPolygonConverter
       openXmlElement.PcaRings = null;
   }
   
-  public static DocumentModel.Drawings.ChartDrawings.GeoPolygon? CreateModelElement(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.GeoPolygon? openXmlElement)
+  public static DMDrawsChartDraws.GeoPolygon? CreateModelElement(DXO2016DrawChartDraw.GeoPolygon? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.ChartDrawings.GeoPolygon();
+      var value = new DMDrawsChartDraws.GeoPolygon();
       value.PolygonId = GetPolygonId(openXmlElement);
       value.NumPoints = GetNumPoints(openXmlElement);
       value.PcaRings = GetPcaRings(openXmlElement);
@@ -63,8 +63,8 @@ public static class GeoPolygonConverter
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.ChartDrawings.GeoPolygon? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.GeoPolygon, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDrawsChartDraws.GeoPolygon? value)
+    where OpenXmlElementType: DXO2016DrawChartDraw.GeoPolygon, new()
   {
     if (value != null)
     {

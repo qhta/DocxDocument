@@ -5,45 +5,45 @@ namespace DocumentModel.OpenXml.CustomXml;
 /// </summary>
 public static class SchemaReferencesConverter
 {
-  private static System.Collections.ObjectModel.Collection<DocumentModel.CustomXml.SchemaReference> GetItems(DocumentFormat.OpenXml.CustomXmlDataProperties.SchemaReferences openXmlElement)
+  private static Collection<DMCustXml.SchemaReference> GetItems(DXCustXmlDataProps.SchemaReferences openXmlElement)
   {
-    var collection = new System.Collections.ObjectModel.Collection<DocumentModel.CustomXml.SchemaReference>();
-    foreach (var item in openXmlElement.Elements<DocumentFormat.OpenXml.CustomXmlDataProperties.SchemaReference>())
+    var collection = new Collection<DMCustXml.SchemaReference>();
+    foreach (var item in openXmlElement.Elements<DXCustXmlDataProps.SchemaReference>())
     {
-      var newItem = DocumentModel.OpenXml.CustomXml.SchemaReferenceConverter.CreateModelElement(item);
+      var newItem = DMXCustXml.SchemaReferenceConverter.CreateModelElement(item);
       if (newItem != null)
         collection.Add(newItem);
     }
     return collection;
   }
   
-  private static void SetItems(DocumentFormat.OpenXml.CustomXmlDataProperties.SchemaReferences openXmlElement, System.Collections.ObjectModel.Collection<DocumentModel.CustomXml.SchemaReference>? value)
+  private static void SetItems(DXCustXmlDataProps.SchemaReferences openXmlElement, Collection<DMCustXml.SchemaReference>? value)
   {
-    openXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.CustomXmlDataProperties.SchemaReference>();
+    openXmlElement.RemoveAllChildren<DXCustXmlDataProps.SchemaReference>();
     if (value != null)
     {
       foreach (var item in value)
       {
-        var newItem = DocumentModel.OpenXml.CustomXml.SchemaReferenceConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.CustomXmlDataProperties.SchemaReference>(item);
+        var newItem = DMXCustXml.SchemaReferenceConverter.CreateOpenXmlElement<DXCustXmlDataProps.SchemaReference>(item);
         if (newItem != null)
           openXmlElement.AddChild(newItem);
       }
     }
   }
   
-  public static DocumentModel.CustomXml.SchemaReferences? CreateModelElement(DocumentFormat.OpenXml.CustomXmlDataProperties.SchemaReferences? openXmlElement)
+  public static DMCustXml.SchemaReferences? CreateModelElement(DXCustXmlDataProps.SchemaReferences? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.CustomXml.SchemaReferences();
+      var value = new DMCustXml.SchemaReferences();
       value.Items = GetItems(openXmlElement);
       return value;
     }
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.CustomXml.SchemaReferences? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.CustomXmlDataProperties.SchemaReferences, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMCustXml.SchemaReferences? value)
+    where OpenXmlElementType: DXCustXmlDataProps.SchemaReferences, new()
   {
     if (value != null)
     {

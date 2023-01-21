@@ -8,79 +8,79 @@ public static class PlotAreaRegionConverter
   /// <summary>
   /// PlotSurface.
   /// </summary>
-  private static DocumentModel.Drawings.ChartDrawings.PlotSurface? GetPlotSurface(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.PlotAreaRegion openXmlElement)
+  private static DMDrawsChartDraws.PlotSurface? GetPlotSurface(DXO2016DrawChartDraw.PlotAreaRegion openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.PlotSurface>();
+    var itemElement = openXmlElement?.GetFirstChild<DXO2016DrawChartDraw.PlotSurface>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.ChartDrawings.PlotSurfaceConverter.CreateModelElement(itemElement);
+      return DMXDrawsChartDraws.PlotSurfaceConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetPlotSurface(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.PlotAreaRegion openXmlElement, DocumentModel.Drawings.ChartDrawings.PlotSurface? value)
+  private static void SetPlotSurface(DXO2016DrawChartDraw.PlotAreaRegion openXmlElement, DMDrawsChartDraws.PlotSurface? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.PlotSurface>();
+    var itemElement = openXmlElement.GetFirstChild<DXO2016DrawChartDraw.PlotSurface>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Drawings.ChartDrawings.PlotSurfaceConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.PlotSurface>(value);
+      itemElement = DMXDrawsChartDraws.PlotSurfaceConverter.CreateOpenXmlElement<DXO2016DrawChartDraw.PlotSurface>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static System.Collections.ObjectModel.Collection<DocumentModel.Drawings.ChartDrawings.Series> GetSerieses(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.PlotAreaRegion openXmlElement)
+  private static Collection<DMDrawsChartDraws.Series> GetSerieses(DXO2016DrawChartDraw.PlotAreaRegion openXmlElement)
   {
-    var collection = new System.Collections.ObjectModel.Collection<DocumentModel.Drawings.ChartDrawings.Series>();
-    foreach (var item in openXmlElement.Elements<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.Series>())
+    var collection = new Collection<DMDrawsChartDraws.Series>();
+    foreach (var item in openXmlElement.Elements<DXO2016DrawChartDraw.Series>())
     {
-      var newItem = DocumentModel.OpenXml.Drawings.ChartDrawings.SeriesConverter.CreateModelElement(item);
+      var newItem = DMXDrawsChartDraws.SeriesConverter.CreateModelElement(item);
       if (newItem != null)
         collection.Add(newItem);
     }
     return collection;
   }
   
-  private static void SetSerieses(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.PlotAreaRegion openXmlElement, System.Collections.ObjectModel.Collection<DocumentModel.Drawings.ChartDrawings.Series>? value)
+  private static void SetSerieses(DXO2016DrawChartDraw.PlotAreaRegion openXmlElement, Collection<DMDrawsChartDraws.Series>? value)
   {
-    openXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.Series>();
+    openXmlElement.RemoveAllChildren<DXO2016DrawChartDraw.Series>();
     if (value != null)
     {
       foreach (var item in value)
       {
-        var newItem = DocumentModel.OpenXml.Drawings.ChartDrawings.SeriesConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.Series>(item);
+        var newItem = DMXDrawsChartDraws.SeriesConverter.CreateOpenXmlElement<DXO2016DrawChartDraw.Series>(item);
         if (newItem != null)
           openXmlElement.AddChild(newItem);
       }
     }
   }
   
-  private static DocumentModel.Drawings.ChartDrawings.ExtensionList? GetExtensionList(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.PlotAreaRegion openXmlElement)
+  private static DMDrawsChartDraws.ExtensionList? GetExtensionList(DXO2016DrawChartDraw.PlotAreaRegion openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.ExtensionList>();
+    var itemElement = openXmlElement?.GetFirstChild<DXO2016DrawChartDraw.ExtensionList>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.ChartDrawings.ExtensionListConverter.CreateModelElement(itemElement);
+      return DMXDrawsChartDraws.ExtensionListConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetExtensionList(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.PlotAreaRegion openXmlElement, DocumentModel.Drawings.ChartDrawings.ExtensionList? value)
+  private static void SetExtensionList(DXO2016DrawChartDraw.PlotAreaRegion openXmlElement, DMDrawsChartDraws.ExtensionList? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.ExtensionList>();
+    var itemElement = openXmlElement.GetFirstChild<DXO2016DrawChartDraw.ExtensionList>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Drawings.ChartDrawings.ExtensionListConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.ExtensionList>(value);
+      itemElement = DMXDrawsChartDraws.ExtensionListConverter.CreateOpenXmlElement<DXO2016DrawChartDraw.ExtensionList>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  public static DocumentModel.Drawings.ChartDrawings.PlotAreaRegion? CreateModelElement(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.PlotAreaRegion? openXmlElement)
+  public static DMDrawsChartDraws.PlotAreaRegion? CreateModelElement(DXO2016DrawChartDraw.PlotAreaRegion? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.ChartDrawings.PlotAreaRegion();
+      var value = new DMDrawsChartDraws.PlotAreaRegion();
       value.PlotSurface = GetPlotSurface(openXmlElement);
       value.Serieses = GetSerieses(openXmlElement);
       value.ExtensionList = GetExtensionList(openXmlElement);
@@ -89,8 +89,8 @@ public static class PlotAreaRegionConverter
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.ChartDrawings.PlotAreaRegion? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.PlotAreaRegion, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDrawsChartDraws.PlotAreaRegion? value)
+    where OpenXmlElementType: DXO2016DrawChartDraw.PlotAreaRegion, new()
   {
     if (value != null)
     {

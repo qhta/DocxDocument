@@ -8,12 +8,12 @@ public static class DiagramAutoBulletConverter
   /// <summary>
   /// prefix, this property is only available in Office 2019 and later.
   /// </summary>
-  private static String? GetAutoBulletPrefix(DocumentFormat.OpenXml.Office2019.Drawing.Diagram11.DiagramAutoBullet openXmlElement)
+  private static String? GetAutoBulletPrefix(DXO2019DrawDgm11.DiagramAutoBullet openXmlElement)
   {
     return openXmlElement?.AutoBulletPrefix?.Value;
   }
   
-  private static void SetAutoBulletPrefix(DocumentFormat.OpenXml.Office2019.Drawing.Diagram11.DiagramAutoBullet openXmlElement, String? value)
+  private static void SetAutoBulletPrefix(DXO2019DrawDgm11.DiagramAutoBullet openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.AutoBulletPrefix = new StringValue { Value = value };
@@ -24,12 +24,12 @@ public static class DiagramAutoBulletConverter
   /// <summary>
   /// leadZeros, this property is only available in Office 2019 and later.
   /// </summary>
-  private static Boolean? GetLeadZeros(DocumentFormat.OpenXml.Office2019.Drawing.Diagram11.DiagramAutoBullet openXmlElement)
+  private static Boolean? GetLeadZeros(DXO2019DrawDgm11.DiagramAutoBullet openXmlElement)
   {
     return openXmlElement?.LeadZeros?.Value;
   }
   
-  private static void SetLeadZeros(DocumentFormat.OpenXml.Office2019.Drawing.Diagram11.DiagramAutoBullet openXmlElement, Boolean? value)
+  private static void SetLeadZeros(DXO2019DrawDgm11.DiagramAutoBullet openXmlElement, Boolean? value)
   {
     if (value != null)
       openXmlElement.LeadZeros = new BooleanValue { Value = (Boolean)value };
@@ -40,23 +40,23 @@ public static class DiagramAutoBulletConverter
   /// <summary>
   /// No Bullet.
   /// </summary>
-  private static Boolean? GetNoBullet(DocumentFormat.OpenXml.Office2019.Drawing.Diagram11.DiagramAutoBullet openXmlElement)
+  private static Boolean? GetNoBullet(DXO2019DrawDgm11.DiagramAutoBullet openXmlElement)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.NoBullet>();
+    var itemElement = openXmlElement.GetFirstChild<DXDraw.NoBullet>();
     return itemElement != null;
   }
   
-  private static void SetNoBullet(DocumentFormat.OpenXml.Office2019.Drawing.Diagram11.DiagramAutoBullet openXmlElement, Boolean? value)
+  private static void SetNoBullet(DXO2019DrawDgm11.DiagramAutoBullet openXmlElement, Boolean? value)
   {
     if (value == false)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.NoBullet>();
+      var itemElement = openXmlElement.GetFirstChild<DXDraw.NoBullet>();
       if (itemElement != null)
         itemElement.Remove();
     }
     if (value == true)
     {
-      var itemElement = new DocumentFormat.OpenXml.Drawing.NoBullet();
+      var itemElement = new DXDraw.NoBullet();
       openXmlElement.AddChild(itemElement);
     }
   }
@@ -64,22 +64,22 @@ public static class DiagramAutoBulletConverter
   /// <summary>
   /// Auto-Numbered Bullet.
   /// </summary>
-  private static DocumentModel.Drawings.AutoNumberedBullet? GetAutoNumberedBullet(DocumentFormat.OpenXml.Office2019.Drawing.Diagram11.DiagramAutoBullet openXmlElement)
+  private static DMDraws.AutoNumberedBullet? GetAutoNumberedBullet(DXO2019DrawDgm11.DiagramAutoBullet openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.AutoNumberedBullet>();
+    var itemElement = openXmlElement?.GetFirstChild<DXDraw.AutoNumberedBullet>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.AutoNumberedBulletConverter.CreateModelElement(itemElement);
+      return DMXDraws.AutoNumberedBulletConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetAutoNumberedBullet(DocumentFormat.OpenXml.Office2019.Drawing.Diagram11.DiagramAutoBullet openXmlElement, DocumentModel.Drawings.AutoNumberedBullet? value)
+  private static void SetAutoNumberedBullet(DXO2019DrawDgm11.DiagramAutoBullet openXmlElement, DMDraws.AutoNumberedBullet? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.AutoNumberedBullet>();
+    var itemElement = openXmlElement.GetFirstChild<DXDraw.AutoNumberedBullet>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Drawings.AutoNumberedBulletConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.AutoNumberedBullet>(value);
+      itemElement = DMXDraws.AutoNumberedBulletConverter.CreateOpenXmlElement<DXDraw.AutoNumberedBullet>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
@@ -88,22 +88,22 @@ public static class DiagramAutoBulletConverter
   /// <summary>
   /// Character Bullet.
   /// </summary>
-  private static DocumentModel.Drawings.CharacterBullet? GetCharacterBullet(DocumentFormat.OpenXml.Office2019.Drawing.Diagram11.DiagramAutoBullet openXmlElement)
+  private static DMDraws.CharacterBullet? GetCharacterBullet(DXO2019DrawDgm11.DiagramAutoBullet openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.CharacterBullet>();
+    var itemElement = openXmlElement?.GetFirstChild<DXDraw.CharacterBullet>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.CharacterBulletConverter.CreateModelElement(itemElement);
+      return DMXDraws.CharacterBulletConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetCharacterBullet(DocumentFormat.OpenXml.Office2019.Drawing.Diagram11.DiagramAutoBullet openXmlElement, DocumentModel.Drawings.CharacterBullet? value)
+  private static void SetCharacterBullet(DXO2019DrawDgm11.DiagramAutoBullet openXmlElement, DMDraws.CharacterBullet? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.CharacterBullet>();
+    var itemElement = openXmlElement.GetFirstChild<DXDraw.CharacterBullet>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Drawings.CharacterBulletConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.CharacterBullet>(value);
+      itemElement = DMXDraws.CharacterBulletConverter.CreateOpenXmlElement<DXDraw.CharacterBullet>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
@@ -112,32 +112,32 @@ public static class DiagramAutoBulletConverter
   /// <summary>
   /// Picture Bullet.
   /// </summary>
-  private static DocumentModel.Drawings.PictureBullet? GetPictureBullet(DocumentFormat.OpenXml.Office2019.Drawing.Diagram11.DiagramAutoBullet openXmlElement)
+  private static DMDraws.PictureBullet? GetPictureBullet(DXO2019DrawDgm11.DiagramAutoBullet openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.PictureBullet>();
+    var itemElement = openXmlElement?.GetFirstChild<DXDraw.PictureBullet>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.PictureBulletConverter.CreateModelElement(itemElement);
+      return DMXDraws.PictureBulletConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetPictureBullet(DocumentFormat.OpenXml.Office2019.Drawing.Diagram11.DiagramAutoBullet openXmlElement, DocumentModel.Drawings.PictureBullet? value)
+  private static void SetPictureBullet(DXO2019DrawDgm11.DiagramAutoBullet openXmlElement, DMDraws.PictureBullet? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.PictureBullet>();
+    var itemElement = openXmlElement.GetFirstChild<DXDraw.PictureBullet>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Drawings.PictureBulletConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.PictureBullet>(value);
+      itemElement = DMXDraws.PictureBulletConverter.CreateOpenXmlElement<DXDraw.PictureBullet>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  public static DocumentModel.Drawings.Diagram1.DiagramAutoBullet? CreateModelElement(DocumentFormat.OpenXml.Office2019.Drawing.Diagram11.DiagramAutoBullet? openXmlElement)
+  public static DMDrawsDgm1.DiagramAutoBullet? CreateModelElement(DXO2019DrawDgm11.DiagramAutoBullet? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.Diagram1.DiagramAutoBullet();
+      var value = new DMDrawsDgm1.DiagramAutoBullet();
       value.AutoBulletPrefix = GetAutoBulletPrefix(openXmlElement);
       value.LeadZeros = GetLeadZeros(openXmlElement);
       value.NoBullet = GetNoBullet(openXmlElement);
@@ -149,8 +149,8 @@ public static class DiagramAutoBulletConverter
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.Diagram1.DiagramAutoBullet? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Office2019.Drawing.Diagram11.DiagramAutoBullet, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDrawsDgm1.DiagramAutoBullet? value)
+    where OpenXmlElementType: DXO2019DrawDgm11.DiagramAutoBullet, new()
   {
     if (value != null)
     {

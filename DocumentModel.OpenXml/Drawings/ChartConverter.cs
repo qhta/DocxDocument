@@ -8,12 +8,12 @@ public static class ChartConverter
   /// <summary>
   /// Series Index
   /// </summary>
-  private static Int32? GetSeriesIndex(DocumentFormat.OpenXml.Drawing.Chart openXmlElement)
+  private static Int32? GetSeriesIndex(DXDraw.Chart openXmlElement)
   {
     return openXmlElement.SeriesIndex?.Value;
   }
   
-  private static void SetSeriesIndex(DocumentFormat.OpenXml.Drawing.Chart openXmlElement, Int32? value)
+  private static void SetSeriesIndex(DXDraw.Chart openXmlElement, Int32? value)
   {
     openXmlElement.SeriesIndex = value;
   }
@@ -21,12 +21,12 @@ public static class ChartConverter
   /// <summary>
   /// Category Index
   /// </summary>
-  private static Int32? GetCategoryIndex(DocumentFormat.OpenXml.Drawing.Chart openXmlElement)
+  private static Int32? GetCategoryIndex(DXDraw.Chart openXmlElement)
   {
     return openXmlElement.CategoryIndex?.Value;
   }
   
-  private static void SetCategoryIndex(DocumentFormat.OpenXml.Drawing.Chart openXmlElement, Int32? value)
+  private static void SetCategoryIndex(DXDraw.Chart openXmlElement, Int32? value)
   {
     openXmlElement.CategoryIndex = value;
   }
@@ -34,21 +34,21 @@ public static class ChartConverter
   /// <summary>
   /// Animation Build Step
   /// </summary>
-  private static DocumentModel.Drawings.ChartBuildStepKind? GetBuildStep(DocumentFormat.OpenXml.Drawing.Chart openXmlElement)
+  private static DMDraws.ChartBuildStepKind? GetBuildStep(DXDraw.Chart openXmlElement)
   {
-    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Drawing.ChartBuildStepValues, DocumentModel.Drawings.ChartBuildStepKind>(openXmlElement?.BuildStep?.Value);
+    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Drawing.ChartBuildStepValues, DMDraws.ChartBuildStepKind>(openXmlElement?.BuildStep?.Value);
   }
   
-  private static void SetBuildStep(DocumentFormat.OpenXml.Drawing.Chart openXmlElement, DocumentModel.Drawings.ChartBuildStepKind? value)
+  private static void SetBuildStep(DXDraw.Chart openXmlElement, DMDraws.ChartBuildStepKind? value)
   {
-    openXmlElement.BuildStep = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Drawing.ChartBuildStepValues, DocumentModel.Drawings.ChartBuildStepKind>(value);
+    openXmlElement.BuildStep = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Drawing.ChartBuildStepValues, DMDraws.ChartBuildStepKind>(value);
   }
   
-  public static DocumentModel.Drawings.Chart? CreateModelElement(DocumentFormat.OpenXml.Drawing.Chart? openXmlElement)
+  public static DMDraws.Chart? CreateModelElement(DXDraw.Chart? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.Chart();
+      var value = new DMDraws.Chart();
       value.SeriesIndex = GetSeriesIndex(openXmlElement);
       value.CategoryIndex = GetCategoryIndex(openXmlElement);
       value.BuildStep = GetBuildStep(openXmlElement);
@@ -57,8 +57,8 @@ public static class ChartConverter
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.Chart? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.Chart, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDraws.Chart? value)
+    where OpenXmlElementType: DXDraw.Chart, new()
   {
     if (value != null)
     {

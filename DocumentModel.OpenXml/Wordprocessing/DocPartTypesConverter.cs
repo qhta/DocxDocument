@@ -8,12 +8,12 @@ public static class DocPartTypesConverter
   /// <summary>
   /// Entry Is Of All Types
   /// </summary>
-  private static Boolean? GetAll(DocumentFormat.OpenXml.Wordprocessing.DocPartTypes openXmlElement)
+  private static Boolean? GetAll(DXW.DocPartTypes openXmlElement)
   {
     return openXmlElement?.All?.Value;
   }
   
-  private static void SetAll(DocumentFormat.OpenXml.Wordprocessing.DocPartTypes openXmlElement, Boolean? value)
+  private static void SetAll(DXW.DocPartTypes openXmlElement, Boolean? value)
   {
     if (value != null)
       openXmlElement.All = new OnOffValue { Value = (Boolean)value };
@@ -21,32 +21,32 @@ public static class DocPartTypesConverter
       openXmlElement.All = null;
   }
   
-  private static DocumentModel.Wordprocessing.DocPartKind? GetDocPartType(DocumentFormat.OpenXml.Wordprocessing.DocPartTypes openXmlElement)
+  private static DMW.DocPartKind? GetDocPartType(DXW.DocPartTypes openXmlElement)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.DocPartType>();
+    var itemElement = openXmlElement.GetFirstChild<DXW.DocPartType>();
     if (itemElement?.Val?.Value != null)
-      return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Wordprocessing.DocPartValues, DocumentModel.Wordprocessing.DocPartKind>(itemElement.Val.Value);
+      return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Wordprocessing.DocPartValues, DMW.DocPartKind>(itemElement.Val.Value);
     return null;
   }
   
-  private static void SetDocPartType(DocumentFormat.OpenXml.Wordprocessing.DocPartTypes openXmlElement, DocumentModel.Wordprocessing.DocPartKind? value)
+  private static void SetDocPartType(DXW.DocPartTypes openXmlElement, DMW.DocPartKind? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.DocPartType>();
+    var itemElement = openXmlElement.GetFirstChild<DXW.DocPartType>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = EnumValueConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.DocPartType, DocumentFormat.OpenXml.Wordprocessing.DocPartValues, DocumentModel.Wordprocessing.DocPartKind>(value);
+      itemElement = EnumValueConverter.CreateOpenXmlElement<DXW.DocPartType, DocumentFormat.OpenXml.Wordprocessing.DocPartValues, DMW.DocPartKind>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  public static DocumentModel.Wordprocessing.DocPartTypes? CreateModelElement(DocumentFormat.OpenXml.Wordprocessing.DocPartTypes? openXmlElement)
+  public static DMW.DocPartTypes? CreateModelElement(DXW.DocPartTypes? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Wordprocessing.DocPartTypes();
+      var value = new DMW.DocPartTypes();
       value.All = GetAll(openXmlElement);
       value.DocPartType = GetDocPartType(openXmlElement);
       return value;
@@ -54,8 +54,8 @@ public static class DocPartTypesConverter
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.DocPartTypes? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Wordprocessing.DocPartTypes, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMW.DocPartTypes? value)
+    where OpenXmlElementType: DXW.DocPartTypes, new()
   {
     if (value != null)
     {

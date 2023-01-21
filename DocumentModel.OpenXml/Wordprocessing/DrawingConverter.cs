@@ -8,22 +8,22 @@ public static class DrawingConverter
   /// <summary>
   /// Drawing Element Anchor.
   /// </summary>
-  private static DocumentModel.Drawings.Wordprocessing.Anchor? GetAnchor(DocumentFormat.OpenXml.Wordprocessing.Drawing openXmlElement)
+  private static DMDrawsW.Anchor? GetAnchor(DXW.Drawing openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.Wordprocessing.Anchor>();
+    var itemElement = openXmlElement?.GetFirstChild<DXDrawW.Anchor>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.Wordprocessing.AnchorConverter.CreateModelElement(itemElement);
+      return DMXDrawsW.AnchorConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetAnchor(DocumentFormat.OpenXml.Wordprocessing.Drawing openXmlElement, DocumentModel.Drawings.Wordprocessing.Anchor? value)
+  private static void SetAnchor(DXW.Drawing openXmlElement, DMDrawsW.Anchor? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Wordprocessing.Anchor>();
+    var itemElement = openXmlElement.GetFirstChild<DXDrawW.Anchor>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Drawings.Wordprocessing.AnchorConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Wordprocessing.Anchor>(value);
+      itemElement = DMXDrawsW.AnchorConverter.CreateOpenXmlElement<DXDrawW.Anchor>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
@@ -32,32 +32,32 @@ public static class DrawingConverter
   /// <summary>
   /// Inline Drawing Object.
   /// </summary>
-  private static DocumentModel.Drawings.Wordprocessing.Inline? GetInline(DocumentFormat.OpenXml.Wordprocessing.Drawing openXmlElement)
+  private static DMDrawsW.Inline? GetInline(DXW.Drawing openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.Wordprocessing.Inline>();
+    var itemElement = openXmlElement?.GetFirstChild<DXDrawW.Inline>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.Wordprocessing.InlineConverter.CreateModelElement(itemElement);
+      return DMXDrawsW.InlineConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetInline(DocumentFormat.OpenXml.Wordprocessing.Drawing openXmlElement, DocumentModel.Drawings.Wordprocessing.Inline? value)
+  private static void SetInline(DXW.Drawing openXmlElement, DMDrawsW.Inline? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Wordprocessing.Inline>();
+    var itemElement = openXmlElement.GetFirstChild<DXDrawW.Inline>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Drawings.Wordprocessing.InlineConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Wordprocessing.Inline>(value);
+      itemElement = DMXDrawsW.InlineConverter.CreateOpenXmlElement<DXDrawW.Inline>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  public static DocumentModel.Wordprocessing.Drawing? CreateModelElement(DocumentFormat.OpenXml.Wordprocessing.Drawing? openXmlElement)
+  public static DMW.Drawing? CreateModelElement(DXW.Drawing? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Wordprocessing.Drawing();
+      var value = new DMW.Drawing();
       value.Anchor = GetAnchor(openXmlElement);
       value.Inline = GetInline(openXmlElement);
       return value;
@@ -65,8 +65,8 @@ public static class DrawingConverter
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.Drawing? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Wordprocessing.Drawing, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMW.Drawing? value)
+    where OpenXmlElementType: DXW.Drawing, new()
   {
     if (value != null)
     {

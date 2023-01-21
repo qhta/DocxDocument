@@ -8,12 +8,12 @@ public static class StringLevelConverter
   /// <summary>
   /// ptCount, this property is only available in Office 2016 and later.
   /// </summary>
-  private static UInt32? GetPtCount(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.StringLevel openXmlElement)
+  private static UInt32? GetPtCount(DXO2016DrawChartDraw.StringLevel openXmlElement)
   {
     return openXmlElement.PtCount?.Value;
   }
   
-  private static void SetPtCount(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.StringLevel openXmlElement, UInt32? value)
+  private static void SetPtCount(DXO2016DrawChartDraw.StringLevel openXmlElement, UInt32? value)
   {
     openXmlElement.PtCount = value;
   }
@@ -21,12 +21,12 @@ public static class StringLevelConverter
   /// <summary>
   /// name, this property is only available in Office 2016 and later.
   /// </summary>
-  private static String? GetName(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.StringLevel openXmlElement)
+  private static String? GetName(DXO2016DrawChartDraw.StringLevel openXmlElement)
   {
     return openXmlElement?.Name?.Value;
   }
   
-  private static void SetName(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.StringLevel openXmlElement, String? value)
+  private static void SetName(DXO2016DrawChartDraw.StringLevel openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.Name = new StringValue { Value = value };
@@ -34,37 +34,37 @@ public static class StringLevelConverter
       openXmlElement.Name = null;
   }
   
-  private static System.Collections.ObjectModel.Collection<DocumentModel.Drawings.ChartDrawings.ChartStringValue> GetChartStringValues(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.StringLevel openXmlElement)
+  private static Collection<DMDrawsChartDraws.ChartStringValue> GetChartStringValues(DXO2016DrawChartDraw.StringLevel openXmlElement)
   {
-    var collection = new System.Collections.ObjectModel.Collection<DocumentModel.Drawings.ChartDrawings.ChartStringValue>();
-    foreach (var item in openXmlElement.Elements<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.ChartStringValue>())
+    var collection = new Collection<DMDrawsChartDraws.ChartStringValue>();
+    foreach (var item in openXmlElement.Elements<DXO2016DrawChartDraw.ChartStringValue>())
     {
-      var newItem = DocumentModel.OpenXml.Drawings.ChartDrawings.ChartStringValueConverter.CreateModelElement(item);
+      var newItem = DMXDrawsChartDraws.ChartStringValueConverter.CreateModelElement(item);
       if (newItem != null)
         collection.Add(newItem);
     }
     return collection;
   }
   
-  private static void SetChartStringValues(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.StringLevel openXmlElement, System.Collections.ObjectModel.Collection<DocumentModel.Drawings.ChartDrawings.ChartStringValue>? value)
+  private static void SetChartStringValues(DXO2016DrawChartDraw.StringLevel openXmlElement, Collection<DMDrawsChartDraws.ChartStringValue>? value)
   {
-    openXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.ChartStringValue>();
+    openXmlElement.RemoveAllChildren<DXO2016DrawChartDraw.ChartStringValue>();
     if (value != null)
     {
       foreach (var item in value)
       {
-        var newItem = DocumentModel.OpenXml.Drawings.ChartDrawings.ChartStringValueConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.ChartStringValue>(item);
+        var newItem = DMXDrawsChartDraws.ChartStringValueConverter.CreateOpenXmlElement<DXO2016DrawChartDraw.ChartStringValue>(item);
         if (newItem != null)
           openXmlElement.AddChild(newItem);
       }
     }
   }
   
-  public static DocumentModel.Drawings.ChartDrawings.StringLevel? CreateModelElement(DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.StringLevel? openXmlElement)
+  public static DMDrawsChartDraws.StringLevel? CreateModelElement(DXO2016DrawChartDraw.StringLevel? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.ChartDrawings.StringLevel();
+      var value = new DMDrawsChartDraws.StringLevel();
       value.PtCount = GetPtCount(openXmlElement);
       value.Name = GetName(openXmlElement);
       value.ChartStringValues = GetChartStringValues(openXmlElement);
@@ -73,8 +73,8 @@ public static class StringLevelConverter
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.ChartDrawings.StringLevel? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.StringLevel, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDrawsChartDraws.StringLevel? value)
+    where OpenXmlElementType: DXO2016DrawChartDraw.StringLevel, new()
   {
     if (value != null)
     {

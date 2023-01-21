@@ -8,45 +8,45 @@ public static class PresetGeometryConverter
   /// <summary>
   /// Preset Shape
   /// </summary>
-  private static DocumentModel.Drawings.ShapeKind? GetPreset(DocumentFormat.OpenXml.Drawing.PresetGeometry openXmlElement)
+  private static DMDraws.ShapeKind? GetPreset(DXDraw.PresetGeometry openXmlElement)
   {
-    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Drawing.ShapeTypeValues, DocumentModel.Drawings.ShapeKind>(openXmlElement?.Preset?.Value);
+    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Drawing.ShapeTypeValues, DMDraws.ShapeKind>(openXmlElement?.Preset?.Value);
   }
   
-  private static void SetPreset(DocumentFormat.OpenXml.Drawing.PresetGeometry openXmlElement, DocumentModel.Drawings.ShapeKind? value)
+  private static void SetPreset(DXDraw.PresetGeometry openXmlElement, DMDraws.ShapeKind? value)
   {
-    openXmlElement.Preset = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Drawing.ShapeTypeValues, DocumentModel.Drawings.ShapeKind>(value);
+    openXmlElement.Preset = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Drawing.ShapeTypeValues, DMDraws.ShapeKind>(value);
   }
   
   /// <summary>
   /// List of Shape Adjust Values.
   /// </summary>
-  private static DocumentModel.Drawings.AdjustValueList? GetAdjustValueList(DocumentFormat.OpenXml.Drawing.PresetGeometry openXmlElement)
+  private static DMDraws.AdjustValueList? GetAdjustValueList(DXDraw.PresetGeometry openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.AdjustValueList>();
+    var itemElement = openXmlElement?.GetFirstChild<DXDraw.AdjustValueList>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.AdjustValueListConverter.CreateModelElement(itemElement);
+      return DMXDraws.AdjustValueListConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetAdjustValueList(DocumentFormat.OpenXml.Drawing.PresetGeometry openXmlElement, DocumentModel.Drawings.AdjustValueList? value)
+  private static void SetAdjustValueList(DXDraw.PresetGeometry openXmlElement, DMDraws.AdjustValueList? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.AdjustValueList>();
+    var itemElement = openXmlElement.GetFirstChild<DXDraw.AdjustValueList>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Drawings.AdjustValueListConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.AdjustValueList>(value);
+      itemElement = DMXDraws.AdjustValueListConverter.CreateOpenXmlElement<DXDraw.AdjustValueList>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  public static DocumentModel.Drawings.PresetGeometry? CreateModelElement(DocumentFormat.OpenXml.Drawing.PresetGeometry? openXmlElement)
+  public static DMDraws.PresetGeometry? CreateModelElement(DXDraw.PresetGeometry? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.PresetGeometry();
+      var value = new DMDraws.PresetGeometry();
       value.Preset = GetPreset(openXmlElement);
       value.AdjustValueList = GetAdjustValueList(openXmlElement);
       return value;
@@ -54,8 +54,8 @@ public static class PresetGeometryConverter
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.PresetGeometry? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.PresetGeometry, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDraws.PresetGeometry? value)
+    where OpenXmlElementType: DXDraw.PresetGeometry, new()
   {
     if (value != null)
     {

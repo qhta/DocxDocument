@@ -8,137 +8,137 @@ public static class ParagraphConverter
   /// <summary>
   /// Text Paragraph Properties.
   /// </summary>
-  private static DocumentModel.Drawings.ParagraphProperties? GetParagraphProperties(DocumentFormat.OpenXml.Drawing.Paragraph openXmlElement)
+  private static DMDraws.ParagraphProperties? GetParagraphProperties(DXDraw.Paragraph openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.ParagraphProperties>();
+    var itemElement = openXmlElement?.GetFirstChild<DXDraw.ParagraphProperties>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.ParagraphPropertiesConverter.CreateModelElement(itemElement);
+      return DMXDraws.ParagraphPropertiesConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetParagraphProperties(DocumentFormat.OpenXml.Drawing.Paragraph openXmlElement, DocumentModel.Drawings.ParagraphProperties? value)
+  private static void SetParagraphProperties(DXDraw.Paragraph openXmlElement, DMDraws.ParagraphProperties? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.ParagraphProperties>();
+    var itemElement = openXmlElement.GetFirstChild<DXDraw.ParagraphProperties>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Drawings.ParagraphPropertiesConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.ParagraphProperties>(value);
+      itemElement = DMXDraws.ParagraphPropertiesConverter.CreateOpenXmlElement<DXDraw.ParagraphProperties>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static DocumentModel.Drawings.Run? GetRun(DocumentFormat.OpenXml.Drawing.Paragraph openXmlElement)
+  private static DMDraws.Run? GetRun(DXDraw.Paragraph openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.Run>();
+    var itemElement = openXmlElement?.GetFirstChild<DXDraw.Run>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.RunConverter.CreateModelElement(itemElement);
+      return DMXDraws.RunConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetRun(DocumentFormat.OpenXml.Drawing.Paragraph openXmlElement, DocumentModel.Drawings.Run? value)
+  private static void SetRun(DXDraw.Paragraph openXmlElement, DMDraws.Run? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Run>();
+    var itemElement = openXmlElement.GetFirstChild<DXDraw.Run>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Drawings.RunConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Run>(value);
+      itemElement = DMXDraws.RunConverter.CreateOpenXmlElement<DXDraw.Run>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static DocumentModel.Drawings.Break? GetBreak(DocumentFormat.OpenXml.Drawing.Paragraph openXmlElement)
+  private static DMDraws.Break? GetBreak(DXDraw.Paragraph openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.Break>();
+    var itemElement = openXmlElement?.GetFirstChild<DXDraw.Break>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.BreakConverter.CreateModelElement(itemElement);
+      return DMXDraws.BreakConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetBreak(DocumentFormat.OpenXml.Drawing.Paragraph openXmlElement, DocumentModel.Drawings.Break? value)
+  private static void SetBreak(DXDraw.Paragraph openXmlElement, DMDraws.Break? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Break>();
+    var itemElement = openXmlElement.GetFirstChild<DXDraw.Break>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Drawings.BreakConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Break>(value);
+      itemElement = DMXDraws.BreakConverter.CreateOpenXmlElement<DXDraw.Break>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static DocumentModel.Drawings.Field? GetField(DocumentFormat.OpenXml.Drawing.Paragraph openXmlElement)
+  private static DMDraws.Field? GetField(DXDraw.Paragraph openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.Field>();
+    var itemElement = openXmlElement?.GetFirstChild<DXDraw.Field>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.FieldConverter.CreateModelElement(itemElement);
+      return DMXDraws.FieldConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetField(DocumentFormat.OpenXml.Drawing.Paragraph openXmlElement, DocumentModel.Drawings.Field? value)
+  private static void SetField(DXDraw.Paragraph openXmlElement, DMDraws.Field? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Field>();
+    var itemElement = openXmlElement.GetFirstChild<DXDraw.Field>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Drawings.FieldConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Field>(value);
+      itemElement = DMXDraws.FieldConverter.CreateOpenXmlElement<DXDraw.Field>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static Boolean? GetTextMath(DocumentFormat.OpenXml.Drawing.Paragraph openXmlElement)
+  private static Boolean? GetTextMath(DXDraw.Paragraph openXmlElement)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2010.Drawing.TextMath>();
+    var itemElement = openXmlElement.GetFirstChild<DXO2010Draw.TextMath>();
     return itemElement != null;
   }
   
-  private static void SetTextMath(DocumentFormat.OpenXml.Drawing.Paragraph openXmlElement, Boolean? value)
+  private static void SetTextMath(DXDraw.Paragraph openXmlElement, Boolean? value)
   {
     if (value == false)
     {
-      var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2010.Drawing.TextMath>();
+      var itemElement = openXmlElement.GetFirstChild<DXO2010Draw.TextMath>();
       if (itemElement != null)
         itemElement.Remove();
     }
     if (value == true)
     {
-      var itemElement = new DocumentFormat.OpenXml.Office2010.Drawing.TextMath();
+      var itemElement = new DXO2010Draw.TextMath();
       openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static DocumentModel.Drawings.EndParagraphRunProperties? GetEndParagraphRunProperties(DocumentFormat.OpenXml.Drawing.Paragraph openXmlElement)
+  private static DMDraws.EndParagraphRunProperties? GetEndParagraphRunProperties(DXDraw.Paragraph openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.EndParagraphRunProperties>();
+    var itemElement = openXmlElement?.GetFirstChild<DXDraw.EndParagraphRunProperties>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.EndParagraphRunPropertiesConverter.CreateModelElement(itemElement);
+      return DMXDraws.EndParagraphRunPropertiesConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetEndParagraphRunProperties(DocumentFormat.OpenXml.Drawing.Paragraph openXmlElement, DocumentModel.Drawings.EndParagraphRunProperties? value)
+  private static void SetEndParagraphRunProperties(DXDraw.Paragraph openXmlElement, DMDraws.EndParagraphRunProperties? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.EndParagraphRunProperties>();
+    var itemElement = openXmlElement.GetFirstChild<DXDraw.EndParagraphRunProperties>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Drawings.EndParagraphRunPropertiesConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.EndParagraphRunProperties>(value);
+      itemElement = DMXDraws.EndParagraphRunPropertiesConverter.CreateOpenXmlElement<DXDraw.EndParagraphRunProperties>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  public static DocumentModel.Drawings.Paragraph? CreateModelElement(DocumentFormat.OpenXml.Drawing.Paragraph? openXmlElement)
+  public static DMDraws.Paragraph? CreateModelElement(DXDraw.Paragraph? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.Paragraph();
+      var value = new DMDraws.Paragraph();
       value.ParagraphProperties = GetParagraphProperties(openXmlElement);
       value.Run = GetRun(openXmlElement);
       value.Break = GetBreak(openXmlElement);
@@ -150,8 +150,8 @@ public static class ParagraphConverter
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.Paragraph? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.Paragraph, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDraws.Paragraph? value)
+    where OpenXmlElementType: DXDraw.Paragraph, new()
   {
     if (value != null)
     {

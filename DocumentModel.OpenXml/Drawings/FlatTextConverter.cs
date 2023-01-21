@@ -8,29 +8,29 @@ public static class FlatTextConverter
   /// <summary>
   /// Z Coordinate
   /// </summary>
-  private static Int64? GetZ(DocumentFormat.OpenXml.Drawing.FlatText openXmlElement)
+  private static Int64? GetZ(DXDraw.FlatText openXmlElement)
   {
     return openXmlElement.Z?.Value;
   }
   
-  private static void SetZ(DocumentFormat.OpenXml.Drawing.FlatText openXmlElement, Int64? value)
+  private static void SetZ(DXDraw.FlatText openXmlElement, Int64? value)
   {
     openXmlElement.Z = value;
   }
   
-  public static DocumentModel.Drawings.FlatText? CreateModelElement(DocumentFormat.OpenXml.Drawing.FlatText? openXmlElement)
+  public static DMDraws.FlatText? CreateModelElement(DXDraw.FlatText? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.FlatText();
+      var value = new DMDraws.FlatText();
       value.Z = GetZ(openXmlElement);
       return value;
     }
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.FlatText? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.FlatText, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDraws.FlatText? value)
+    where OpenXmlElementType: DXDraw.FlatText, new()
   {
     if (value != null)
     {

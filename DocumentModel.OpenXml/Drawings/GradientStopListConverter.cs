@@ -5,40 +5,40 @@ namespace DocumentModel.OpenXml.Drawings;
 /// </summary>
 public static class GradientStopListConverter
 {
-  private static DocumentModel.Drawings.GradientStop? GetGradientStop(DocumentFormat.OpenXml.Drawing.GradientStopList openXmlElement)
+  private static DMDraws.GradientStop? GetGradientStop(DXDraw.GradientStopList openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.GradientStop>();
+    var itemElement = openXmlElement?.GetFirstChild<DXDraw.GradientStop>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.GradientStopConverter.CreateModelElement(itemElement);
+      return DMXDraws.GradientStopConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetGradientStop(DocumentFormat.OpenXml.Drawing.GradientStopList openXmlElement, DocumentModel.Drawings.GradientStop? value)
+  private static void SetGradientStop(DXDraw.GradientStopList openXmlElement, DMDraws.GradientStop? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.GradientStop>();
+    var itemElement = openXmlElement.GetFirstChild<DXDraw.GradientStop>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Drawings.GradientStopConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.GradientStop>(value);
+      itemElement = DMXDraws.GradientStopConverter.CreateOpenXmlElement<DXDraw.GradientStop>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  public static DocumentModel.Drawings.GradientStopList? CreateModelElement(DocumentFormat.OpenXml.Drawing.GradientStopList? openXmlElement)
+  public static DMDraws.GradientStopList? CreateModelElement(DXDraw.GradientStopList? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.GradientStopList();
+      var value = new DMDraws.GradientStopList();
       value.GradientStop = GetGradientStop(openXmlElement);
       return value;
     }
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.GradientStopList? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.GradientStopList, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDraws.GradientStopList? value)
+    where OpenXmlElementType: DXDraw.GradientStopList, new()
   {
     if (value != null)
     {

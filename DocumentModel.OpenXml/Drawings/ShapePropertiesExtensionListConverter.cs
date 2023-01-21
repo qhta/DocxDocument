@@ -5,45 +5,45 @@ namespace DocumentModel.OpenXml.Drawings;
 /// </summary>
 public static class ShapePropertiesExtensionListConverter
 {
-  private static System.Collections.ObjectModel.Collection<DocumentModel.Drawings.ShapePropertiesExtension> GetShapePropertiesExtensions(DocumentFormat.OpenXml.Drawing.ShapePropertiesExtensionList openXmlElement)
+  private static Collection<DMDraws.ShapePropertiesExtension> GetShapePropertiesExtensions(DXDraw.ShapePropertiesExtensionList openXmlElement)
   {
-    var collection = new System.Collections.ObjectModel.Collection<DocumentModel.Drawings.ShapePropertiesExtension>();
-    foreach (var item in openXmlElement.Elements<DocumentFormat.OpenXml.Drawing.ShapePropertiesExtension>())
+    var collection = new Collection<DMDraws.ShapePropertiesExtension>();
+    foreach (var item in openXmlElement.Elements<DXDraw.ShapePropertiesExtension>())
     {
-      var newItem = DocumentModel.OpenXml.Drawings.ShapePropertiesExtensionConverter.CreateModelElement(item);
+      var newItem = DMXDraws.ShapePropertiesExtensionConverter.CreateModelElement(item);
       if (newItem != null)
         collection.Add(newItem);
     }
     return collection;
   }
   
-  private static void SetShapePropertiesExtensions(DocumentFormat.OpenXml.Drawing.ShapePropertiesExtensionList openXmlElement, System.Collections.ObjectModel.Collection<DocumentModel.Drawings.ShapePropertiesExtension>? value)
+  private static void SetShapePropertiesExtensions(DXDraw.ShapePropertiesExtensionList openXmlElement, Collection<DMDraws.ShapePropertiesExtension>? value)
   {
-    openXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Drawing.ShapePropertiesExtension>();
+    openXmlElement.RemoveAllChildren<DXDraw.ShapePropertiesExtension>();
     if (value != null)
     {
       foreach (var item in value)
       {
-        var newItem = DocumentModel.OpenXml.Drawings.ShapePropertiesExtensionConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.ShapePropertiesExtension>(item);
+        var newItem = DMXDraws.ShapePropertiesExtensionConverter.CreateOpenXmlElement<DXDraw.ShapePropertiesExtension>(item);
         if (newItem != null)
           openXmlElement.AddChild(newItem);
       }
     }
   }
   
-  public static DocumentModel.Drawings.ShapePropertiesExtensionList? CreateModelElement(DocumentFormat.OpenXml.Drawing.ShapePropertiesExtensionList? openXmlElement)
+  public static DMDraws.ShapePropertiesExtensionList? CreateModelElement(DXDraw.ShapePropertiesExtensionList? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.ShapePropertiesExtensionList();
+      var value = new DMDraws.ShapePropertiesExtensionList();
       value.ShapePropertiesExtensions = GetShapePropertiesExtensions(openXmlElement);
       return value;
     }
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.ShapePropertiesExtensionList? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.ShapePropertiesExtensionList, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDraws.ShapePropertiesExtensionList? value)
+    where OpenXmlElementType: DXDraw.ShapePropertiesExtensionList, new()
   {
     if (value != null)
     {

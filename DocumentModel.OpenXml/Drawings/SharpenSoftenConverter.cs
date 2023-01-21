@@ -8,29 +8,29 @@ public static class SharpenSoftenConverter
   /// <summary>
   /// amount, this property is only available in Office 2010 and later.
   /// </summary>
-  private static Int32? GetAmount(DocumentFormat.OpenXml.Office2010.Drawing.SharpenSoften openXmlElement)
+  private static Int32? GetAmount(DXO2010Draw.SharpenSoften openXmlElement)
   {
     return openXmlElement.Amount?.Value;
   }
   
-  private static void SetAmount(DocumentFormat.OpenXml.Office2010.Drawing.SharpenSoften openXmlElement, Int32? value)
+  private static void SetAmount(DXO2010Draw.SharpenSoften openXmlElement, Int32? value)
   {
     openXmlElement.Amount = value;
   }
   
-  public static DocumentModel.Drawings.SharpenSoften? CreateModelElement(DocumentFormat.OpenXml.Office2010.Drawing.SharpenSoften? openXmlElement)
+  public static DMDraws.SharpenSoften? CreateModelElement(DXO2010Draw.SharpenSoften? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.SharpenSoften();
+      var value = new DMDraws.SharpenSoften();
       value.Amount = GetAmount(openXmlElement);
       return value;
     }
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.SharpenSoften? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Office2010.Drawing.SharpenSoften, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDraws.SharpenSoften? value)
+    where OpenXmlElementType: DXO2010Draw.SharpenSoften, new()
   {
     if (value != null)
     {

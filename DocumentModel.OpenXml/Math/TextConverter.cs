@@ -8,29 +8,29 @@ public static class TextConverter
   /// <summary>
   /// space
   /// </summary>
-  private static DocumentModel.SpaceProcessingMode? GetSpace(DocumentFormat.OpenXml.Math.Text openXmlElement)
+  private static DM.SpaceProcessingMode? GetSpace(DXMath.Text openXmlElement)
   {
-    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.SpaceProcessingModeValues, DocumentModel.SpaceProcessingMode>(openXmlElement?.Space?.Value);
+    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.SpaceProcessingModeValues, DM.SpaceProcessingMode>(openXmlElement?.Space?.Value);
   }
   
-  private static void SetSpace(DocumentFormat.OpenXml.Math.Text openXmlElement, DocumentModel.SpaceProcessingMode? value)
+  private static void SetSpace(DXMath.Text openXmlElement, DM.SpaceProcessingMode? value)
   {
-    openXmlElement.Space = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.SpaceProcessingModeValues, DocumentModel.SpaceProcessingMode>(value);
+    openXmlElement.Space = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.SpaceProcessingModeValues, DM.SpaceProcessingMode>(value);
   }
   
-  public static DocumentModel.Math.Text? CreateModelElement(DocumentFormat.OpenXml.Math.Text? openXmlElement)
+  public static DMMath.Text? CreateModelElement(DXMath.Text? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Math.Text();
+      var value = new DMMath.Text();
       value.Space = GetSpace(openXmlElement);
       return value;
     }
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Math.Text? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Math.Text, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMMath.Text? value)
+    where OpenXmlElementType: DXMath.Text, new()
   {
     if (value != null)
     {

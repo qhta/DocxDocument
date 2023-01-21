@@ -8,12 +8,12 @@ public static class NonVisualPicturePropertiesExtensionConverter
   /// <summary>
   /// URI
   /// </summary>
-  private static String? GetUri(DocumentFormat.OpenXml.Drawing.NonVisualPicturePropertiesExtension openXmlElement)
+  private static String? GetUri(DXDraw.NonVisualPicturePropertiesExtension openXmlElement)
   {
     return openXmlElement?.Uri?.Value;
   }
   
-  private static void SetUri(DocumentFormat.OpenXml.Drawing.NonVisualPicturePropertiesExtension openXmlElement, String? value)
+  private static void SetUri(DXDraw.NonVisualPicturePropertiesExtension openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.Uri = new StringValue { Value = value };
@@ -21,95 +21,95 @@ public static class NonVisualPicturePropertiesExtensionConverter
       openXmlElement.Uri = null;
   }
   
-  private static DocumentModel.Drawings.CameraTool? GetCameraTool(DocumentFormat.OpenXml.Drawing.NonVisualPicturePropertiesExtension openXmlElement)
+  private static DMDraws.CameraTool? GetCameraTool(DXDraw.NonVisualPicturePropertiesExtension openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office2010.Drawing.CameraTool>();
+    var itemElement = openXmlElement?.GetFirstChild<DXO2010Draw.CameraTool>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.CameraToolConverter.CreateModelElement(itemElement);
+      return DMXDraws.CameraToolConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetCameraTool(DocumentFormat.OpenXml.Drawing.NonVisualPicturePropertiesExtension openXmlElement, DocumentModel.Drawings.CameraTool? value)
+  private static void SetCameraTool(DXDraw.NonVisualPicturePropertiesExtension openXmlElement, DMDraws.CameraTool? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2010.Drawing.CameraTool>();
+    var itemElement = openXmlElement.GetFirstChild<DXO2010Draw.CameraTool>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Drawings.CameraToolConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2010.Drawing.CameraTool>(value);
+      itemElement = DMXDraws.CameraToolConverter.CreateOpenXmlElement<DXO2010Draw.CameraTool>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static DocumentModel.Drawings.SignatureLine? GetSignatureLine(DocumentFormat.OpenXml.Drawing.NonVisualPicturePropertiesExtension openXmlElement)
+  private static DMDraws.SignatureLine? GetSignatureLine(DXDraw.NonVisualPicturePropertiesExtension openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office2013.Drawing.SignatureLine>();
+    var itemElement = openXmlElement?.GetFirstChild<DXO2013Draw.SignatureLine>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.SignatureLineConverter.CreateModelElement(itemElement);
+      return DMXDraws.SignatureLineConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetSignatureLine(DocumentFormat.OpenXml.Drawing.NonVisualPicturePropertiesExtension openXmlElement, DocumentModel.Drawings.SignatureLine? value)
+  private static void SetSignatureLine(DXDraw.NonVisualPicturePropertiesExtension openXmlElement, DMDraws.SignatureLine? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2013.Drawing.SignatureLine>();
+    var itemElement = openXmlElement.GetFirstChild<DXO2013Draw.SignatureLine>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Drawings.SignatureLineConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2013.Drawing.SignatureLine>(value);
+      itemElement = DMXDraws.SignatureLineConverter.CreateOpenXmlElement<DXO2013Draw.SignatureLine>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static DocumentModel.Drawings.ObjectProperties? GetObjectProperties(DocumentFormat.OpenXml.Drawing.NonVisualPicturePropertiesExtension openXmlElement)
+  private static DMDraws.ObjectProperties? GetObjectProperties(DXDraw.NonVisualPicturePropertiesExtension openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office2013.Drawing.ObjectProperties>();
+    var itemElement = openXmlElement?.GetFirstChild<DXO2013Draw.ObjectProperties>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.ObjectPropertiesConverter.CreateModelElement(itemElement);
+      return DMXDraws.ObjectPropertiesConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetObjectProperties(DocumentFormat.OpenXml.Drawing.NonVisualPicturePropertiesExtension openXmlElement, DocumentModel.Drawings.ObjectProperties? value)
+  private static void SetObjectProperties(DXDraw.NonVisualPicturePropertiesExtension openXmlElement, DMDraws.ObjectProperties? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2013.Drawing.ObjectProperties>();
+    var itemElement = openXmlElement.GetFirstChild<DXO2013Draw.ObjectProperties>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Drawings.ObjectPropertiesConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2013.Drawing.ObjectProperties>(value);
+      itemElement = DMXDraws.ObjectPropertiesConverter.CreateOpenXmlElement<DXO2013Draw.ObjectProperties>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static DocumentModel.Drawings.LiveFeedProperties? GetLiveFeedProperties(DocumentFormat.OpenXml.Drawing.NonVisualPicturePropertiesExtension openXmlElement)
+  private static DMDraws.LiveFeedProperties? GetLiveFeedProperties(DXDraw.NonVisualPicturePropertiesExtension openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Office2021.Drawing.Livefeed.LiveFeedProperties>();
+    var itemElement = openXmlElement?.GetFirstChild<DXO2021DrawLivefeed.LiveFeedProperties>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.LiveFeedPropertiesConverter.CreateModelElement(itemElement);
+      return DMXDraws.LiveFeedPropertiesConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetLiveFeedProperties(DocumentFormat.OpenXml.Drawing.NonVisualPicturePropertiesExtension openXmlElement, DocumentModel.Drawings.LiveFeedProperties? value)
+  private static void SetLiveFeedProperties(DXDraw.NonVisualPicturePropertiesExtension openXmlElement, DMDraws.LiveFeedProperties? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Office2021.Drawing.Livefeed.LiveFeedProperties>();
+    var itemElement = openXmlElement.GetFirstChild<DXO2021DrawLivefeed.LiveFeedProperties>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Drawings.LiveFeedPropertiesConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Office2021.Drawing.Livefeed.LiveFeedProperties>(value);
+      itemElement = DMXDraws.LiveFeedPropertiesConverter.CreateOpenXmlElement<DXO2021DrawLivefeed.LiveFeedProperties>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  public static DocumentModel.Drawings.NonVisualPicturePropertiesExtension? CreateModelElement(DocumentFormat.OpenXml.Drawing.NonVisualPicturePropertiesExtension? openXmlElement)
+  public static DMDraws.NonVisualPicturePropertiesExtension? CreateModelElement(DXDraw.NonVisualPicturePropertiesExtension? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.NonVisualPicturePropertiesExtension();
+      var value = new DMDraws.NonVisualPicturePropertiesExtension();
       value.Uri = GetUri(openXmlElement);
       value.CameraTool = GetCameraTool(openXmlElement);
       value.SignatureLine = GetSignatureLine(openXmlElement);
@@ -120,8 +120,8 @@ public static class NonVisualPicturePropertiesExtensionConverter
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.NonVisualPicturePropertiesExtension? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.NonVisualPicturePropertiesExtension, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDraws.NonVisualPicturePropertiesExtension? value)
+    where OpenXmlElementType: DXDraw.NonVisualPicturePropertiesExtension, new()
   {
     if (value != null)
     {

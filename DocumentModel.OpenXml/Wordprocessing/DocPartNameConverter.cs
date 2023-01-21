@@ -8,12 +8,12 @@ public static class DocPartNameConverter
   /// <summary>
   /// Name Value
   /// </summary>
-  private static String? GetVal(DocumentFormat.OpenXml.Wordprocessing.DocPartName openXmlElement)
+  private static String? GetVal(DXW.DocPartName openXmlElement)
   {
     return openXmlElement?.Val?.Value;
   }
   
-  private static void SetVal(DocumentFormat.OpenXml.Wordprocessing.DocPartName openXmlElement, String? value)
+  private static void SetVal(DXW.DocPartName openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.Val = new StringValue { Value = value };
@@ -24,12 +24,12 @@ public static class DocPartNameConverter
   /// <summary>
   /// Built-In Entry
   /// </summary>
-  private static Boolean? GetDecorated(DocumentFormat.OpenXml.Wordprocessing.DocPartName openXmlElement)
+  private static Boolean? GetDecorated(DXW.DocPartName openXmlElement)
   {
     return openXmlElement?.Decorated?.Value;
   }
   
-  private static void SetDecorated(DocumentFormat.OpenXml.Wordprocessing.DocPartName openXmlElement, Boolean? value)
+  private static void SetDecorated(DXW.DocPartName openXmlElement, Boolean? value)
   {
     if (value != null)
       openXmlElement.Decorated = new OnOffValue { Value = (Boolean)value };
@@ -37,11 +37,11 @@ public static class DocPartNameConverter
       openXmlElement.Decorated = null;
   }
   
-  public static DocumentModel.Wordprocessing.DocPartName? CreateModelElement(DocumentFormat.OpenXml.Wordprocessing.DocPartName? openXmlElement)
+  public static DMW.DocPartName? CreateModelElement(DXW.DocPartName? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Wordprocessing.DocPartName();
+      var value = new DMW.DocPartName();
       value.Val = GetVal(openXmlElement);
       value.Decorated = GetDecorated(openXmlElement);
       return value;
@@ -49,8 +49,8 @@ public static class DocPartNameConverter
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.DocPartName? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Wordprocessing.DocPartName, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMW.DocPartName? value)
+    where OpenXmlElementType: DXW.DocPartName, new()
   {
     if (value != null)
     {

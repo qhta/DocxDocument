@@ -8,12 +8,12 @@ public static class ConnectorLockingExtensionConverter
   /// <summary>
   /// URI
   /// </summary>
-  private static String? GetUri(DocumentFormat.OpenXml.Drawing.ConnectorLockingExtension openXmlElement)
+  private static String? GetUri(DXDraw.ConnectorLockingExtension openXmlElement)
   {
     return openXmlElement?.Uri?.Value;
   }
   
-  private static void SetUri(DocumentFormat.OpenXml.Drawing.ConnectorLockingExtension openXmlElement, String? value)
+  private static void SetUri(DXDraw.ConnectorLockingExtension openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.Uri = new StringValue { Value = value };
@@ -21,32 +21,32 @@ public static class ConnectorLockingExtensionConverter
       openXmlElement.Uri = null;
   }
   
-  private static DocumentModel.Drawings.Graphic? GetGraphic(DocumentFormat.OpenXml.Drawing.ConnectorLockingExtension openXmlElement)
+  private static DMDraws.Graphic? GetGraphic(DXDraw.ConnectorLockingExtension openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Drawing.Graphic>();
+    var itemElement = openXmlElement?.GetFirstChild<DXDraw.Graphic>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Drawings.GraphicConverter.CreateModelElement(itemElement);
+      return DMXDraws.GraphicConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetGraphic(DocumentFormat.OpenXml.Drawing.ConnectorLockingExtension openXmlElement, DocumentModel.Drawings.Graphic? value)
+  private static void SetGraphic(DXDraw.ConnectorLockingExtension openXmlElement, DMDraws.Graphic? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Drawing.Graphic>();
+    var itemElement = openXmlElement.GetFirstChild<DXDraw.Graphic>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Drawings.GraphicConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Graphic>(value);
+      itemElement = DMXDraws.GraphicConverter.CreateOpenXmlElement<DXDraw.Graphic>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  public static DocumentModel.Drawings.ConnectorLockingExtension? CreateModelElement(DocumentFormat.OpenXml.Drawing.ConnectorLockingExtension? openXmlElement)
+  public static DMDraws.ConnectorLockingExtension? CreateModelElement(DXDraw.ConnectorLockingExtension? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.ConnectorLockingExtension();
+      var value = new DMDraws.ConnectorLockingExtension();
       value.Uri = GetUri(openXmlElement);
       value.Graphic = GetGraphic(openXmlElement);
       return value;
@@ -54,8 +54,8 @@ public static class ConnectorLockingExtensionConverter
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Drawings.ConnectorLockingExtension? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Drawing.ConnectorLockingExtension, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDraws.ConnectorLockingExtension? value)
+    where OpenXmlElementType: DXDraw.ConnectorLockingExtension, new()
   {
     if (value != null)
     {

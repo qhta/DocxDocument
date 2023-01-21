@@ -8,22 +8,22 @@ public static class DropDownListFormFieldConverter
   /// <summary>
   /// Drop-Down List Selection.
   /// </summary>
-  private static Int32? GetDropDownListSelection(DocumentFormat.OpenXml.Wordprocessing.DropDownListFormField openXmlElement)
+  private static Int32? GetDropDownListSelection(DXW.DropDownListFormField openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.DropDownListSelection>();
+    var itemElement = openXmlElement?.GetFirstChild<DXW.DropDownListSelection>();
     if (itemElement != null)
       return itemElement.Val?.Value;
     return null;
   }
   
-  private static void SetDropDownListSelection(DocumentFormat.OpenXml.Wordprocessing.DropDownListFormField openXmlElement, Int32? value)
+  private static void SetDropDownListSelection(DXW.DropDownListFormField openXmlElement, Int32? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.DropDownListSelection>();
+    var itemElement = openXmlElement.GetFirstChild<DXW.DropDownListSelection>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = new DocumentFormat.OpenXml.Wordprocessing.DropDownListSelection{ Val = value };
+      itemElement = new DXW.DropDownListSelection{ Val = value };
       openXmlElement.AddChild(itemElement);
     }
   }
@@ -31,30 +31,30 @@ public static class DropDownListFormFieldConverter
   /// <summary>
   /// Default Drop-Down List Item Index.
   /// </summary>
-  private static Int32? GetDefaultDropDownListItemIndex(DocumentFormat.OpenXml.Wordprocessing.DropDownListFormField openXmlElement)
+  private static Int32? GetDefaultDropDownListItemIndex(DXW.DropDownListFormField openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.DefaultDropDownListItemIndex>();
+    var itemElement = openXmlElement?.GetFirstChild<DXW.DefaultDropDownListItemIndex>();
     if (itemElement != null)
       return itemElement.Val?.Value;
     return null;
   }
   
-  private static void SetDefaultDropDownListItemIndex(DocumentFormat.OpenXml.Wordprocessing.DropDownListFormField openXmlElement, Int32? value)
+  private static void SetDefaultDropDownListItemIndex(DXW.DropDownListFormField openXmlElement, Int32? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.DefaultDropDownListItemIndex>();
+    var itemElement = openXmlElement.GetFirstChild<DXW.DefaultDropDownListItemIndex>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = new DocumentFormat.OpenXml.Wordprocessing.DefaultDropDownListItemIndex{ Val = value };
+      itemElement = new DXW.DefaultDropDownListItemIndex{ Val = value };
       openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static System.Collections.ObjectModel.Collection<String> GetListEntryFormFields(DocumentFormat.OpenXml.Wordprocessing.DropDownListFormField openXmlElement)
+  private static Collection<String> GetListEntryFormFields(DXW.DropDownListFormField openXmlElement)
   {
-    var collection = new System.Collections.ObjectModel.Collection<String>();
-    foreach (var item in openXmlElement.Elements<DocumentFormat.OpenXml.Wordprocessing.ListEntryFormField>())
+    var collection = new Collection<String>();
+    foreach (var item in openXmlElement.Elements<DXW.ListEntryFormField>())
     {
       var newItem = StringValueConverter.GetValue(item);
       if (newItem != null)
@@ -63,25 +63,25 @@ public static class DropDownListFormFieldConverter
     return collection;
   }
   
-  private static void SetListEntryFormFields(DocumentFormat.OpenXml.Wordprocessing.DropDownListFormField openXmlElement, System.Collections.ObjectModel.Collection<String>? value)
+  private static void SetListEntryFormFields(DXW.DropDownListFormField openXmlElement, Collection<String>? value)
   {
-    openXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Wordprocessing.ListEntryFormField>();
+    openXmlElement.RemoveAllChildren<DXW.ListEntryFormField>();
     if (value != null)
     {
       foreach (var item in value)
       {
-        var newItem = StringValueConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.ListEntryFormField>(item);
+        var newItem = StringValueConverter.CreateOpenXmlElement<DXW.ListEntryFormField>(item);
         if (newItem != null)
           openXmlElement.AddChild(newItem);
       }
     }
   }
   
-  public static DocumentModel.Wordprocessing.DropDownListFormField? CreateModelElement(DocumentFormat.OpenXml.Wordprocessing.DropDownListFormField? openXmlElement)
+  public static DMW.DropDownListFormField? CreateModelElement(DXW.DropDownListFormField? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Wordprocessing.DropDownListFormField();
+      var value = new DMW.DropDownListFormField();
       value.DropDownListSelection = GetDropDownListSelection(openXmlElement);
       value.DefaultDropDownListItemIndex = GetDefaultDropDownListItemIndex(openXmlElement);
       value.ListEntryFormFields = GetListEntryFormFields(openXmlElement);
@@ -90,8 +90,8 @@ public static class DropDownListFormFieldConverter
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.DropDownListFormField? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Wordprocessing.DropDownListFormField, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMW.DropDownListFormField? value)
+    where OpenXmlElementType: DXW.DropDownListFormField, new()
   {
     if (value != null)
     {

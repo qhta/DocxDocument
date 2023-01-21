@@ -5,116 +5,116 @@ namespace DocumentModel.OpenXml.Math;
 /// </summary>
 public static class ControlPropertiesConverter
 {
-  private static DocumentModel.Wordprocessing.RunProperties? GetRunProperties(DocumentFormat.OpenXml.Math.ControlProperties openXmlElement)
+  private static DMW.RunProperties? GetRunProperties(DXMath.ControlProperties openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.RunProperties>();
+    var itemElement = openXmlElement?.GetFirstChild<DXW.RunProperties>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Wordprocessing.RunPropertiesConverter.CreateModelElement(itemElement);
+      return DMXW.RunPropertiesConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetRunProperties(DocumentFormat.OpenXml.Math.ControlProperties openXmlElement, DocumentModel.Wordprocessing.RunProperties? value)
+  private static void SetRunProperties(DXMath.ControlProperties openXmlElement, DMW.RunProperties? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.RunProperties>();
+    var itemElement = openXmlElement.GetFirstChild<DXW.RunProperties>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Wordprocessing.RunPropertiesConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.RunProperties>(value);
+      itemElement = DMXW.RunPropertiesConverter.CreateOpenXmlElement<DXW.RunProperties>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static DocumentModel.Wordprocessing.InsertedMathControl? GetInsertedMathControl(DocumentFormat.OpenXml.Math.ControlProperties openXmlElement)
+  private static DMW.InsertedMathControl? GetInsertedMathControl(DXMath.ControlProperties openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.InsertedMathControl>();
+    var itemElement = openXmlElement?.GetFirstChild<DXW.InsertedMathControl>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Wordprocessing.InsertedMathControlConverter.CreateModelElement(itemElement);
+      return DMXW.InsertedMathControlConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetInsertedMathControl(DocumentFormat.OpenXml.Math.ControlProperties openXmlElement, DocumentModel.Wordprocessing.InsertedMathControl? value)
+  private static void SetInsertedMathControl(DXMath.ControlProperties openXmlElement, DMW.InsertedMathControl? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.InsertedMathControl>();
+    var itemElement = openXmlElement.GetFirstChild<DXW.InsertedMathControl>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Wordprocessing.InsertedMathControlConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.InsertedMathControl>(value);
+      itemElement = DMXW.InsertedMathControlConverter.CreateOpenXmlElement<DXW.InsertedMathControl>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static DocumentModel.Wordprocessing.DeletedMathControl? GetDeletedMathControl(DocumentFormat.OpenXml.Math.ControlProperties openXmlElement)
+  private static DMW.DeletedMathControl? GetDeletedMathControl(DXMath.ControlProperties openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.DeletedMathControl>();
+    var itemElement = openXmlElement?.GetFirstChild<DXW.DeletedMathControl>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Wordprocessing.DeletedMathControlConverter.CreateModelElement(itemElement);
+      return DMXW.DeletedMathControlConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetDeletedMathControl(DocumentFormat.OpenXml.Math.ControlProperties openXmlElement, DocumentModel.Wordprocessing.DeletedMathControl? value)
+  private static void SetDeletedMathControl(DXMath.ControlProperties openXmlElement, DMW.DeletedMathControl? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.DeletedMathControl>();
+    var itemElement = openXmlElement.GetFirstChild<DXW.DeletedMathControl>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Wordprocessing.DeletedMathControlConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.DeletedMathControl>(value);
+      itemElement = DMXW.DeletedMathControlConverter.CreateOpenXmlElement<DXW.DeletedMathControl>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static DocumentModel.Wordprocessing.MoveFromMathControl? GetMoveFromMathControl(DocumentFormat.OpenXml.Math.ControlProperties openXmlElement)
+  private static DMW.MoveFromMathControl? GetMoveFromMathControl(DXMath.ControlProperties openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.MoveFromMathControl>();
+    var itemElement = openXmlElement?.GetFirstChild<DXW.MoveFromMathControl>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Wordprocessing.MoveFromMathControlConverter.CreateModelElement(itemElement);
+      return DMXW.MoveFromMathControlConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetMoveFromMathControl(DocumentFormat.OpenXml.Math.ControlProperties openXmlElement, DocumentModel.Wordprocessing.MoveFromMathControl? value)
+  private static void SetMoveFromMathControl(DXMath.ControlProperties openXmlElement, DMW.MoveFromMathControl? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.MoveFromMathControl>();
+    var itemElement = openXmlElement.GetFirstChild<DXW.MoveFromMathControl>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Wordprocessing.MoveFromMathControlConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.MoveFromMathControl>(value);
+      itemElement = DMXW.MoveFromMathControlConverter.CreateOpenXmlElement<DXW.MoveFromMathControl>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static DocumentModel.Wordprocessing.MoveToMathControl? GetMoveToMathControl(DocumentFormat.OpenXml.Math.ControlProperties openXmlElement)
+  private static DMW.MoveToMathControl? GetMoveToMathControl(DXMath.ControlProperties openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.MoveToMathControl>();
+    var itemElement = openXmlElement?.GetFirstChild<DXW.MoveToMathControl>();
     if (itemElement != null)
-      return DocumentModel.OpenXml.Wordprocessing.MoveToMathControlConverter.CreateModelElement(itemElement);
+      return DMXW.MoveToMathControlConverter.CreateModelElement(itemElement);
     return null;
   }
   
-  private static void SetMoveToMathControl(DocumentFormat.OpenXml.Math.ControlProperties openXmlElement, DocumentModel.Wordprocessing.MoveToMathControl? value)
+  private static void SetMoveToMathControl(DXMath.ControlProperties openXmlElement, DMW.MoveToMathControl? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.MoveToMathControl>();
+    var itemElement = openXmlElement.GetFirstChild<DXW.MoveToMathControl>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DocumentModel.OpenXml.Wordprocessing.MoveToMathControlConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.MoveToMathControl>(value);
+      itemElement = DMXW.MoveToMathControlConverter.CreateOpenXmlElement<DXW.MoveToMathControl>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  public static DocumentModel.Math.ControlProperties? CreateModelElement(DocumentFormat.OpenXml.Math.ControlProperties? openXmlElement)
+  public static DMMath.ControlProperties? CreateModelElement(DXMath.ControlProperties? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Math.ControlProperties();
+      var value = new DMMath.ControlProperties();
       value.RunProperties = GetRunProperties(openXmlElement);
       value.InsertedMathControl = GetInsertedMathControl(openXmlElement);
       value.DeletedMathControl = GetDeletedMathControl(openXmlElement);
@@ -125,8 +125,8 @@ public static class ControlPropertiesConverter
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Math.ControlProperties? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Math.ControlProperties, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMMath.ControlProperties? value)
+    where OpenXmlElementType: DXMath.ControlProperties, new()
   {
     if (value != null)
     {

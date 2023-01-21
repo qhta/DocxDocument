@@ -8,12 +8,12 @@ public static class FontRelationshipTypeConverter
   /// <summary>
   /// fontKey
   /// </summary>
-  private static String? GetFontKey(DocumentFormat.OpenXml.Wordprocessing.FontRelationshipType openXmlElement)
+  private static String? GetFontKey(DXW.FontRelationshipType openXmlElement)
   {
     return openXmlElement?.FontKey?.Value;
   }
   
-  private static void SetFontKey(DocumentFormat.OpenXml.Wordprocessing.FontRelationshipType openXmlElement, String? value)
+  private static void SetFontKey(DXW.FontRelationshipType openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.FontKey = new StringValue { Value = value };
@@ -24,12 +24,12 @@ public static class FontRelationshipTypeConverter
   /// <summary>
   /// subsetted
   /// </summary>
-  private static Boolean? GetSubsetted(DocumentFormat.OpenXml.Wordprocessing.FontRelationshipType openXmlElement)
+  private static Boolean? GetSubsetted(DXW.FontRelationshipType openXmlElement)
   {
     return openXmlElement?.Subsetted?.Value;
   }
   
-  private static void SetSubsetted(DocumentFormat.OpenXml.Wordprocessing.FontRelationshipType openXmlElement, Boolean? value)
+  private static void SetSubsetted(DXW.FontRelationshipType openXmlElement, Boolean? value)
   {
     if (value != null)
       openXmlElement.Subsetted = new OnOffValue { Value = (Boolean)value };
@@ -40,12 +40,12 @@ public static class FontRelationshipTypeConverter
   /// <summary>
   /// Relationship to Part
   /// </summary>
-  private static String? GetId(DocumentFormat.OpenXml.Wordprocessing.FontRelationshipType openXmlElement)
+  private static String? GetId(DXW.FontRelationshipType openXmlElement)
   {
     return openXmlElement?.Id?.Value;
   }
   
-  private static void SetId(DocumentFormat.OpenXml.Wordprocessing.FontRelationshipType openXmlElement, String? value)
+  private static void SetId(DXW.FontRelationshipType openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.Id = new StringValue { Value = value };
@@ -53,11 +53,11 @@ public static class FontRelationshipTypeConverter
       openXmlElement.Id = null;
   }
   
-  public static DocumentModel.Wordprocessing.FontRelationshipType? CreateModelElement(DocumentFormat.OpenXml.Wordprocessing.FontRelationshipType? openXmlElement)
+  public static DMW.FontRelationshipType? CreateModelElement(DXW.FontRelationshipType? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Wordprocessing.FontRelationshipType();
+      var value = new DMW.FontRelationshipType();
       value.FontKey = GetFontKey(openXmlElement);
       value.Subsetted = GetSubsetted(openXmlElement);
       value.Id = GetId(openXmlElement);
@@ -66,8 +66,8 @@ public static class FontRelationshipTypeConverter
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.FontRelationshipType? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Wordprocessing.FontRelationshipType, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMW.FontRelationshipType? value)
+    where OpenXmlElementType: DXW.FontRelationshipType, new()
   {
     if (value != null)
     {

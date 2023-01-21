@@ -5,45 +5,45 @@ namespace DocumentModel.OpenXml.Wordprocessing;
 /// </summary>
 public static class CommentsConverter
 {
-  private static System.Collections.ObjectModel.Collection<DocumentModel.Wordprocessing.Comment> GetItems(DocumentFormat.OpenXml.Wordprocessing.Comments openXmlElement)
+  private static Collection<DMW.Comment> GetItems(DXW.Comments openXmlElement)
   {
-    var collection = new System.Collections.ObjectModel.Collection<DocumentModel.Wordprocessing.Comment>();
-    foreach (var item in openXmlElement.Elements<DocumentFormat.OpenXml.Wordprocessing.Comment>())
+    var collection = new Collection<DMW.Comment>();
+    foreach (var item in openXmlElement.Elements<DXW.Comment>())
     {
-      var newItem = DocumentModel.OpenXml.Wordprocessing.CommentConverter.CreateModelElement(item);
+      var newItem = DMXW.CommentConverter.CreateModelElement(item);
       if (newItem != null)
         collection.Add(newItem);
     }
     return collection;
   }
   
-  private static void SetItems(DocumentFormat.OpenXml.Wordprocessing.Comments openXmlElement, System.Collections.ObjectModel.Collection<DocumentModel.Wordprocessing.Comment>? value)
+  private static void SetItems(DXW.Comments openXmlElement, Collection<DMW.Comment>? value)
   {
-    openXmlElement.RemoveAllChildren<DocumentFormat.OpenXml.Wordprocessing.Comment>();
+    openXmlElement.RemoveAllChildren<DXW.Comment>();
     if (value != null)
     {
       foreach (var item in value)
       {
-        var newItem = DocumentModel.OpenXml.Wordprocessing.CommentConverter.CreateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.Comment>(item);
+        var newItem = DMXW.CommentConverter.CreateOpenXmlElement<DXW.Comment>(item);
         if (newItem != null)
           openXmlElement.AddChild(newItem);
       }
     }
   }
   
-  public static DocumentModel.Wordprocessing.Comments? CreateModelElement(DocumentFormat.OpenXml.Wordprocessing.Comments? openXmlElement)
+  public static DMW.Comments? CreateModelElement(DXW.Comments? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Wordprocessing.Comments();
+      var value = new DMW.Comments();
       value.Items = GetItems(openXmlElement);
       return value;
     }
     return null;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DocumentModel.Wordprocessing.Comments? value)
-    where OpenXmlElementType: DocumentFormat.OpenXml.Wordprocessing.Comments, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMW.Comments? value)
+    where OpenXmlElementType: DXW.Comments, new()
   {
     if (value != null)
     {
