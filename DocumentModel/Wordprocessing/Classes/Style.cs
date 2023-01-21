@@ -120,5 +120,5 @@ public partial class Style
   /// </summary>
   public StyleTableCellProperties? StyleTableCellProperties { get; set; }
 
-  public Collection<TableStyleProperties>? TableStylePropertieses { get; set; }
+  public Collection<TableStyleProperties>? TableStyleProperties { get; set; }
 }
